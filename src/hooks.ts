@@ -7,11 +7,15 @@ export function useSearchLocation(): [
   const [location, setLocation] = useState<[number, number] | null>(null);
 
   const search = async (query: string) => {
-    if (!query.trim()) return setLocation(null);
+    if (!query.trim()) {
+      setLocation(null);
+      return null;
+    }
     const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}`;
     const res = await fetch(url);
-    const data = await res.json();
-    if (data && data.length > 0) {
+    const json = await res.json();
+    const data = Array.isArray(json) ? json as {lat: string; lon: string;}[] : [];
+    if (data.length > 0) {
       const { lat, lon } = data[0];
       const loc: [number, number] = [parseFloat(lat), parseFloat(lon)];
       setLocation(loc);

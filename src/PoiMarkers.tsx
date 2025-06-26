@@ -86,14 +86,14 @@ const RenderMarkerContents: React.FC<{ marker: MarkerData }> = ({ marker }) => {
           if (key === "fee" && value === "yes") return null;
           if (["leisure", "type", "amenity"].includes(key)) return null;
 
-          // Replace any ":" with space in key and show as key=value
-          const displayKey = key.replace(/:/g, " ") + "=" + value;
+          const displayKey = key.replace(/:/g, " ");
 
           return (
             <table key={key} style={{ width: "100%", minWidth: "200px", tableLayout: "fixed" }}>
               <tbody>
                 <tr>
-                  <td colSpan={6}>{displayKey}</td>
+                  <td style={{ fontWeight: 500 }}>{displayKey}</td>
+                  <td>{value}</td>
                 </tr>
               </tbody>
             </table>

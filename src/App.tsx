@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, ZoomControl, useMapEvent } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, ZoomControl, useMapEvent, GeoJSON } from "react-leaflet";
 import PoiMarkers from "./PoiMarkers";
 import SearchBar from "./SearchBar";
 import CategorySelect from "./CategorySelect";
@@ -9,9 +9,13 @@ import { Button } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import MyLocationIcon from '@mui/icons-material/MyLocation';
 import CircleIcon from '@mui/icons-material/Circle';
+import DirectionsIcon from '@mui/icons-material/Directions';
 import { fetchOverpassMarkers } from "./api/overpass";
 import L from 'leaflet';
 import { renderToString } from "react-dom/server";
+import RoutesBar from "./RoutesBar";
+import { fetchRouteGeoJSON } from "./api/ors";
+import { geocodeLocation } from "./api/nominatim";
 
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
@@ -28,9 +32,11 @@ const App = () => {
   const [category, setCategory] = useState<string[]>(["leisure=playground"]);
   const [loading, setLoading] = useState(false);
   const [displaySearch, setDisplaySearch] = useState(false);
+  const [displaySearchItem, setDisplaySearchItem] = useState<string | null>(null); // "search" | "routes" | null
   const [markers, setMarkers] = useState<any[]>([]);
   const [map, setMap] = useState<any>(null);
   const [hasCentered, setHasCentered] = useState(false);
+  const [routeGeoJson, setRouteGeoJson] = useState<any | null>(null);
 
   // Only center the map to user position once, when it becomes available
   useEffect(() => {
@@ -65,13 +71,14 @@ const App = () => {
       console.error("Error fetching markers:", e);
     }
     setLoading(false);
+    setDisplaySearch(false);
   }, [map, category, searchPosition]);
 
   useEffect(() => {
     fetchMarkers(true);
     if (map && searchPosition) map.setView(searchPosition);
     setDisplaySearch(false);
-  }, [searchPosition, map, fetchMarkers]);
+  }, [searchPosition]);
 
   const handleSearch = async (query: string) => {
     setDisplaySearch(false);
@@ -89,6 +96,49 @@ const App = () => {
     }
   };
 
+  const handleRouteSearch = async (start: string, end: string) => {
+    try {
+      setLoading(true); // Start loading
+      // Geocode start and end locations
+      const startCoords = await geocodeLocation(start);
+      const endCoords = await geocodeLocation(end);
+
+      if (!startCoords || !endCoords) {
+        alert("Could not geocode start or end location.");
+        setLoading(false);
+        return;
+      }
+
+      // Call OpenRouteService API (API key is now read from env in fetchRouteGeoJSON)
+      const routeGeoJson = await fetchRouteGeoJSON({
+        start: [startCoords[1], startCoords[0]], // ORS expects [lng, lat]
+        end: [endCoords[1], endCoords[0]], // ORS expects [lng, lat]
+      });
+
+      // Store route in state and display on map
+      setRouteGeoJson(routeGeoJson);
+      setMarkers([]); // Reset markers after successful route search
+
+      // Zoom map to bbox of the route
+      if (routeGeoJson && routeGeoJson.bbox && map) {
+        // bbox: [minLon, minLat, maxLon, maxLat]
+        const [[minLat, minLon], [maxLat, maxLon]] = [
+          [routeGeoJson.bbox[1], routeGeoJson.bbox[0]],
+          [routeGeoJson.bbox[3], routeGeoJson.bbox[2]],
+        ];
+        const bounds = L.latLngBounds(
+          [minLat, minLon],
+          [maxLat, maxLon]
+        );
+        map.fitBounds(bounds, { padding: [40, 40] });
+      }
+      setLoading(false); // End loading
+    } catch (err) {
+      setLoading(false);
+      alert("Failed to fetch route: " + err);
+    }
+  };
+
   return (
     <MapContainer
       center={[60, 25]}
@@ -100,20 +150,29 @@ const App = () => {
     >
       <MapPanHandler onMove={handleMapPan} />
       <Loading active={loading} />
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
-        <SearchBar onSearch={handleSearch} />
+      <div style={{ display: "flex", flexWrap: "wrap", flexDirection: "column" }}>
+        <SearchBar onSearch={handleSearch} visible={displaySearchItem === "search"} />
+        <RoutesBar
+          onSearch={handleRouteSearch}
+          deleteRoute={() => {
+            setRouteGeoJson(null);
+            setMarkers([]); // Reset markers when route is deleted
+          }}
+          visible={displaySearchItem === "routes"}
+          displayRouteInfo={!!routeGeoJson}
+        />
         <CategorySelect
           value={category}
           onChange={setCategory}
-          onClose={fetchMarkers}
+          onClose={() => fetchMarkers(false)}
         />
       </div>
       <div
         style={{
           zIndex: 1000,
-          marginTop: "1em",
-          justifyContent: "center",
+          margin: "1em 0 0 1.5em",
           display: displaySearch ? "flex" : "none",
+          justifyContent: "center"
         }}
       >
         <Button
@@ -134,7 +193,31 @@ const App = () => {
       <div
         style={{
           position: "absolute",
-          bottom: 24,
+          bottom: 100,
+          right: 24,
+          zIndex: 1200,
+          background: displaySearchItem === "search" ? "#1976d2" : "white",
+          borderRadius: "50%",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+          padding: 10,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: "pointer",
+          marginBottom: 8,
+        }}
+        onClick={() => displaySearchItem === "search" ? setDisplaySearchItem(null) :setDisplaySearchItem("search")}
+        title="Show/hide search bar"
+      >
+        <SearchIcon
+          fontSize="medium"
+          style={{ color: displaySearchItem === "search" ? "white" : "black" }}
+        />
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: 50,
           right: 24,
           zIndex: 1200,
           background: "#fff",
@@ -149,7 +232,29 @@ const App = () => {
         onClick={handleMyLocationClick}
         title="Center map to your location"
       >
-        <MyLocationIcon fontSize="medium" style={{color: "black"}} />
+        <MyLocationIcon fontSize="medium" style={{ color: "black" }} />
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          bottom: 160,
+          right: 24,
+          zIndex: 1200,
+          background: displaySearchItem === "routes" ? "#1976d2" : "white",
+          color: displaySearchItem === "routes" ? "white" : "black",
+          borderRadius: "50%",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+          padding: 10,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: "pointer",
+          marginBottom: 8,
+        }}
+        title="Directions"
+        onClick={() => displaySearchItem === "routes" ? setDisplaySearchItem(null) : setDisplaySearchItem("routes")} 
+      >
+        <DirectionsIcon fontSize="medium" />
       </div>
       <ZoomControl position="bottomleft" />
       <TileLayer
@@ -185,6 +290,16 @@ const App = () => {
         setLoading={setLoading}
         fetchMarkers={fetchMarkers}
       />
+      {routeGeoJson && displaySearchItem === "routes" && (
+        <GeoJSON
+          data={routeGeoJson}
+          style={{
+            color: "#1976d2",
+            weight: 5,
+            opacity: 0.8,
+          }}
+        />
+      )}
     </MapContainer>
   );
 };

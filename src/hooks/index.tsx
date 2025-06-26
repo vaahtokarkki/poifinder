@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { geocodeLocation } from "../api/nominatim";
 
 type LatLng = {
   lat?: number;
@@ -26,19 +27,9 @@ export function useSearchLocation(): [
   const [location, setLocation] = useState<[number, number] | null>(null);
 
   const search = async (query: string) => {
-    if (!query.trim()) return null;
-    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
-      query
-    )}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    if (data && data.length > 0) {
-      const { lat, lon } = data[0];
-      const loc: [number, number] = [parseFloat(lat), parseFloat(lon)];
-      setLocation(loc);
-      return loc;
-    }
-    return null;
+    const loc = await geocodeLocation(query);
+    if (loc) setLocation(loc);
+    return loc;
   };
 
   return [location, search];

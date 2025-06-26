@@ -25,7 +25,9 @@ const CategorySelect: React.FC<CategorySelectProps & { onClose?: () => void }> =
   <div
     style={{
       zIndex: 1000,
-      minWidth: 250,
+      flexGrow: 1,
+      marginRight: "1em",
+      maxWidth: 350
     }}
   >
     <FormControl fullWidth size="small">
@@ -47,7 +49,7 @@ const CategorySelect: React.FC<CategorySelectProps & { onClose?: () => void }> =
             })}
           </Box>
         )}
-        style={{background: "#fff", borderRadius: "1em", margin: ".75em 0 0 1em", padding: 0, maxWidth: 250}}
+        style={{background: "#fff", borderRadius: "1em", margin: ".75em 0 0 1em", padding: 0, }}
       >
         {categories.map((cat) => (
           <MenuItem key={cat.value} value={cat.value}>

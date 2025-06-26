@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import SearchIcon from '@mui/icons-material/Search';
-import { Input, InputAdornment } from "@mui/material";
+import GeocodeAutocomplete from "./GeocodeAutocomplete";
 
 type SearchBarProps = {
-  onSearch: (query: string) => void;
+  onSearch: (query: string, coords?: [number, number]) => void;
   placeholder?: string;
   visible?: boolean;
+  searchPosition?: [number, number] | null;
 };
 
 const SearchBar: React.FC<SearchBarProps> = ({
@@ -23,19 +23,13 @@ const SearchBar: React.FC<SearchBarProps> = ({
   if (!visible) return null;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Input
-        disableUnderline={true}
-        type="text"
+    <form onSubmit={handleSubmit} style={{ display: "flex", alignItems: "center" }}>
+      <GeocodeAutocomplete
+        onSelect={(selected, coords) => {
+          setValue(selected);
+          onSearch(selected, coords);
+        }}
         placeholder={placeholder}
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        style={{ background: "#fff", zIndex: 1000, borderRadius: "1.5em", margin: ".75em 1em 0 1em", padding: ".5em", display: "flex", flexGrow: 1, maxWidth: 350}}
-        startAdornment={
-          <InputAdornment position="start">
-            <SearchIcon />
-          </InputAdornment>
-        }
       />
     </form>
   );

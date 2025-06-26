@@ -16,7 +16,7 @@ import { fetchRouteGeoJSON } from "./api/ors";
 import { fetchOverpassMarkers, OverpassMarkerData } from "./api/overpass";
 import Loading from "./components/Loading";
 import SearchPoisButton from "./components/SearchPoisButton";
-import { useSearchLocation, useUserPosition } from "./hooks/index";
+import { useUserPosition } from "./hooks/index";
 
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
@@ -29,7 +29,7 @@ const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void 
 
 const App = () => {
   const { position: userPosition } = useUserPosition();
-  const [searchPosition, search] = useSearchLocation();
+  const [searchPosition, setSearchPosition] = useState<[number, number] | null>(null);
   const [category, setCategory] = useState<string[]>(["leisure=playground"]);
   const [loading, setLoading] = useState(false);
   const [displaySearch, setDisplaySearch] = useState(false);
@@ -92,12 +92,6 @@ const App = () => {
     setDisplaySearch(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchPosition]); // Remove fetchMarkers from deps
-
-  const handleSearch = async (query: string) => {
-    setDisplaySearch(false);
-    if (query.trim() === "" ) return;
-    await search(query);
-  };
 
   const handleMapPan = () => {
     setDisplaySearch(true);
@@ -191,7 +185,15 @@ const App = () => {
       <MapPanHandler onMove={handleMapPan} />
       <Loading active={loading} />
       <div style={{ display: "flex", flexWrap: "wrap", flexDirection: "column" }}>
-        <SearchBar onSearch={handleSearch} visible={displaySearchItem === "search"} />
+        <SearchBar
+          onSearch={(_, coords) => {
+            if (coords && Array.isArray(coords) && coords.length === 2) {
+              setSearchPosition(coords);
+            }
+          }}
+          visible={displaySearchItem === "search"}
+          searchPosition={searchPosition}
+        />
         <RoutesBar
           onSearch={handleRouteSearch}
           deleteRoute={() => {

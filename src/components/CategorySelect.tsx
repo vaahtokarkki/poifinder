@@ -16,6 +16,7 @@ const categories = [
   { label: "Post boxes", value: "amenity=post_box" },
   { label: "Toilets", value: "amenity=toilets" },
   { label: "Gas station", value: "amenity=fuel" },
+  { label: "Parking", value: "amenity=parking" },
 ];
 
 const CategorySelect: React.FC<CategorySelectProps & { onClose?: () => void }> = ({

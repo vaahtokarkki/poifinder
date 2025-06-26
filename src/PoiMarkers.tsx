@@ -49,20 +49,21 @@ const RenderMarkerIcon = (
   });
 };
 
-// Map marker data to icon
+// Map marker tag key-value to icon
+const markerIconMap: Record<string, React.ReactElement> = {
+  "leisure=playground": <ParkIcon />,
+  "amenity=toilets": <WcIcon />,
+  "amenity=fuel": <LocalGasStationIcon />,
+  "amenity=post_box": <LocalPostOfficeIcon />,
+};
+
 const getMarkerIcon = (marker: MarkerData) => {
   if (marker.tags) {
-    if (marker.tags["leisure"] === "playground") {
-      return RenderMarkerIcon(<ParkIcon />, "green");
-    }
-    if (marker.tags["amenity"] === "toilets") {
-      return RenderMarkerIcon(<WcIcon />, "blue");
-    }
-    if (marker.tags["amenity"] === "fuel") {
-      return RenderMarkerIcon(<LocalGasStationIcon />);
-    }
-    if (marker.tags["amenity"] === "post_box") {
-      return RenderMarkerIcon(<LocalPostOfficeIcon />);
+    for (const [key, value] of Object.entries(marker.tags)) {
+      const mapKey = `${key}=${value}`;
+      if (markerIconMap[mapKey]) {
+        return RenderMarkerIcon(markerIconMap[mapKey]);
+      }
     }
   }
   // Default icon
@@ -79,12 +80,14 @@ const RenderMarkerContents: React.FC<{ marker: MarkerData }> = ({ marker }) => {
           if (key === "fee" && value === "yes") return null;
           if (["leisure", "type", "amenity"].includes(key)) return null;
 
+          // Replace any ":" with space in key and show as key=value
+          const displayKey = key.replace(/:/g, " ") + "=" + value;
+
           return (
             <table key={key} style={{ width: "100%", minWidth: "200px", tableLayout: "fixed" }}>
               <tbody>
                 <tr>
-                  <td colSpan={3}>{key}</td>
-                  <td colSpan={3}>{value}</td>
+                  <td colSpan={6}>{displayKey}</td>
                 </tr>
               </tbody>
             </table>

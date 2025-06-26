@@ -1,10 +1,16 @@
-import { Feature, Polygon, getCoords } from "@turf/turf";
+import { getCoords } from "@turf/turf";
+import { Feature, Polygon } from "geojson"
 
 export type OverpassMarkerData = {
   position: [number, number];
   name?: string;
   tags?: Record<string, string>;
   type?: string;
+};
+
+const extraFilterMap: Record<string, string | undefined> = {
+  "amenity=parking": "[access!=private]",
+  // Add more mappings here if needed
 };
 
 const buildOverpassQueryForSingleLocation = (
@@ -15,15 +21,20 @@ const buildOverpassQueryForSingleLocation = (
 ) => {
   const filterArr = Array.isArray(filters) ? filters : [filters];
 
-  // For each filter, generate all element types with that filter
   const elementTypes = ["node", "way", "relation"];
   const locationStr = center
-    ? (type: string, filter: string) => `${type}[${filter}](around:${radius},${center[0]},${center[1]});`
-    : (type: string, filter: string) => `${type}[${filter}](${bbox.join(",")});`;
+    ? (type: string, filter: string, extra: string = "") =>
+        `${type}[${filter}]${extra}(around:${radius},${center[0]},${center[1]});`
+    : (type: string, filter: string, extra: string = "") =>
+        `${type}[${filter}]${extra}(${bbox.join(",")});`;
 
   const filterBlocks = filterArr
     .map(filter =>
-      elementTypes.map(type => locationStr(type, filter)).join("\n")
+      elementTypes
+        .map(type =>
+          locationStr(type, filter, extraFilterMap[filter] || "")
+        )
+        .join("\n")
     )
     .join("\n");
 
@@ -52,13 +63,15 @@ export function buildOverpassQueryForPolygon(
   const coords = getCoords(polygon)[0]; // outer ring
   const polyString = coords.map(([lng, lat]) => `${lat} ${lng}`).join(" ");
 
-  // Build for all element types and all filters, each on its own line
   const elementTypes = ["node", "way", "relation"];
   const filterBlocks = filterArr
     .map(filter =>
-      elementTypes.map(
-        type => `${type}[${filter}](poly:"${polyString}");`
-      ).join("\n")
+      elementTypes
+        .map(
+          type =>
+            `${type}[${filter}]${extraFilterMap[filter] || ""}(poly:"${polyString}");`
+        )
+        .join("\n")
     )
     .join("\n");
 

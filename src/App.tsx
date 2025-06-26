@@ -1,22 +1,22 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, ZoomControl, useMapEvent, GeoJSON } from "react-leaflet";
-import PoiMarkers from "./PoiMarkers";
-import SearchBar from "./SearchBar";
-import CategorySelect from "./CategorySelect";
-import Loading from "./components/Loading";
-import { useSearchLocation, useUserPosition } from "./hooks/index";
-import { Button } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
-import MyLocationIcon from '@mui/icons-material/MyLocation';
-import CircleIcon from '@mui/icons-material/Circle';
 import DirectionsIcon from '@mui/icons-material/Directions';
-import { fetchOverpassMarkers } from "./api/overpass";
-import L from 'leaflet';
-import { renderToString } from "react-dom/server";
-import RoutesBar from "./RoutesBar";
-import { fetchRouteGeoJSON } from "./api/ors";
-import { geocodeLocation } from "./api/nominatim";
+import MyLocationIcon from '@mui/icons-material/MyLocation';
+import SearchIcon from '@mui/icons-material/Search';
 import { buffer } from "@turf/turf";
+import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
+import L from 'leaflet';
+import { useEffect, useState } from "react";
+import { GeoJSON, MapContainer, TileLayer, useMapEvent, ZoomControl } from "react-leaflet";
+import CategorySelect from "./components/CategorySelect";
+import PoiMarkers from "./PoiMarkers";
+import RoutesBar from "./components/RoutesBar";
+import SearchBar from "./components/SearchBar";
+import UserPositionMarker from "./components/UserPositionMarker";
+import { geocodeLocation } from "./api/nominatim";
+import { fetchRouteGeoJSON } from "./api/ors";
+import { fetchOverpassMarkers, OverpassMarkerData } from "./api/overpass";
+import Loading from "./components/Loading";
+import SearchPoisButton from "./components/SearchPoisButton";
+import { useSearchLocation, useUserPosition } from "./hooks/index";
 
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
@@ -34,10 +34,10 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [displaySearch, setDisplaySearch] = useState(false);
   const [displaySearchItem, setDisplaySearchItem] = useState<string | null>(null); // "search" | "routes" | null
-  const [markers, setMarkers] = useState<any[]>([]);
-  const [map, setMap] = useState<any>(null);
+  const [markers, setMarkers] = useState<OverpassMarkerData[]>([]);
+  const [map, setMap] = useState<L.Map | null>(null);
   const [hasCentered, setHasCentered] = useState(false);
-  const [routeGeoJson, setRouteGeoJson] = useState<any | null>(null);
+  const [routeGeoJson, setRouteGeoJson] = useState<FeatureCollection | null>(null);
 
   // Only center the map to user position once, when it becomes available
   useEffect(() => {
@@ -53,7 +53,7 @@ const App = () => {
     }
   }, [userPosition, hasCentered, map]);
 
-  const fetchMarkers = useCallback(async (useSearchLocation: boolean = false) => {
+  const fetchMarkers = async (useSearchLocation: boolean = false) => {
     if (!map) return;
     setLoading(true);
     const bounds = map.getBounds();
@@ -61,12 +61,12 @@ const App = () => {
     const northEast = bounds.getNorthEast();
     const bbox: [number, number, number, number] = [southWest.lat, southWest.lng, northEast.lat, northEast.lng];
 
-    let polygon = null;
+    let polygon: Feature<Polygon | MultiPolygon> | undefined = undefined;
     if (
       displaySearchItem === "routes" &&
       routeGeoJson
     ) {
-      const feature = routeGeoJson.features[0].geometry
+      const feature = routeGeoJson.features[0]
       polygon = buffer(feature, 500, { units: 'meters' });
     }
 
@@ -84,13 +84,14 @@ const App = () => {
     }
     setLoading(false);
     setDisplaySearch(false);
-  }, [map, category, searchPosition, displaySearchItem, routeGeoJson]);
+  };
 
   useEffect(() => {
     fetchMarkers(true);
     if (map && searchPosition) map.setView(searchPosition);
     setDisplaySearch(false);
-  }, [searchPosition]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchPosition]); // Remove fetchMarkers from deps
 
   const handleSearch = async (query: string) => {
     setDisplaySearch(false);
@@ -149,6 +150,7 @@ const App = () => {
           [maxLat, maxLon]
         );
         map.fitBounds(bounds, { padding: [40, 40] });
+        fetchMarkers(false); // Fetch markers after route search
       }
       setLoading(false);
     } catch (err) {
@@ -205,29 +207,10 @@ const App = () => {
           onClose={() => fetchMarkers(false)}
         />
       </div>
-      <div
-        style={{
-          zIndex: 1000,
-          margin: "1em 0 0 1.5em",
-          display: displaySearch ? "flex" : "none",
-          justifyContent: "center"
-        }}
-      >
-        <Button
-          variant="contained"
-          endIcon={<SearchIcon />}
-          style={{
-            borderRadius: "1em",
-            textTransform: "none",
-            zIndex: 1000,
-            background: "#fff",
-            color: "black",
-          }}
-          onClick={() => fetchMarkers()}
-        >
-          Search from this area
-        </Button>
-      </div>
+      <SearchPoisButton
+        onClick={() => fetchMarkers()}
+        visible={displaySearch && displaySearchItem !== "routes"}
+      />
       <div
         style={{
           position: "absolute",
@@ -299,30 +282,14 @@ const App = () => {
         attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
         url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
       />
-      {userPosition.initialized && (
-        <Marker
-          position={[userPosition.lat, userPosition.lng]}
-          icon={L.divIcon({
-            className: "",
-            html: `<div style="display:flex;align-items:center;justify-content:center;">
-              <span style="
-                background:#fff;
-                border-radius:50%;
-                box-shadow:0 2px 8px rgba(0,0,0,0.15);
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                border: 3px solid #fff;
-              ">
-                ${renderToString(<CircleIcon style={{ color: "#1976d2", fontSize: 20 }} />)}
-              </span>
-            </div>`,
-            iconSize: [36, 36],
-            iconAnchor: [18, 36],
-            popupAnchor: [0, -36],
-          })}
-        />
-      )}
+      <UserPositionMarker
+        position={
+          typeof userPosition.lat === "number" && typeof userPosition.lng === "number"
+            ? [userPosition.lat, userPosition.lng]
+            : [0, 0]
+        }
+        isVisible={userPosition.initialized && typeof userPosition.lat === "number" && typeof userPosition.lng === "number"}
+      />
       <PoiMarkers
         markers={markers}
         setLoading={setLoading}

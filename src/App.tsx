@@ -155,7 +155,7 @@ const App = () => {
         );
         map.fitBounds(bounds, { padding: [40, 40] });
       }
-      setLoading(false); // End loading
+      setLoading(false);
     } catch (err) {
       setLoading(false);
       alert("Failed to fetch route: " + err);
@@ -214,7 +214,7 @@ const App = () => {
         style={{
           zIndex: 1000,
           margin: "1em 0 0 1.5em",
-          display: displaySearch && displaySearchItem !== "routes" ? "flex" : "none",
+          display: displaySearch ? "flex" : "none",
           justifyContent: "center"
         }}
       >

@@ -4,6 +4,7 @@ import ParkIcon from '@mui/icons-material/Park';
 import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
 import WcIcon from '@mui/icons-material/Wc';
 import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
+import LocalParkingIcon from '@mui/icons-material/LocalParking';
 import { renderToString } from "react-dom/server";
 import L from "leaflet";
 
@@ -49,12 +50,16 @@ const RenderMarkerIcon = (
   });
 };
 
-// Map marker tag key-value to icon
-const markerIconMap: Record<string, React.ReactElement> = {
-  "leisure=playground": <ParkIcon />,
-  "amenity=toilets": <WcIcon />,
-  "amenity=fuel": <LocalGasStationIcon />,
-  "amenity=post_box": <LocalPostOfficeIcon />,
+// Map marker tag key-value to icon and color
+const markerIconMap: Record<
+  string,
+  { icon: React.ReactElement; color: string }
+> = {
+  "leisure=playground": { icon: <ParkIcon />, color: "#1B5E20" },
+  "amenity=toilets": { icon: <WcIcon />, color: "#1A237E" },
+  "amenity=fuel": { icon: <LocalGasStationIcon />, color: "#1A237E" },
+  "amenity=parking": { icon: <LocalParkingIcon />, color: "#1A237E" },
+  "amenity=post_box": { icon: <LocalPostOfficeIcon />, color: "#3E2723" },
 };
 
 const getMarkerIcon = (marker: MarkerData) => {
@@ -62,7 +67,8 @@ const getMarkerIcon = (marker: MarkerData) => {
     for (const [key, value] of Object.entries(marker.tags)) {
       const mapKey = `${key}=${value}`;
       if (markerIconMap[mapKey]) {
-        return RenderMarkerIcon(markerIconMap[mapKey]);
+        const { icon, color } = markerIconMap[mapKey];
+        return RenderMarkerIcon(icon, color);
       }
     }
   }

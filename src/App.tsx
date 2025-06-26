@@ -11,7 +11,6 @@ import PoiMarkers from "./PoiMarkers";
 import RoutesBar from "./components/RoutesBar";
 import SearchBar from "./components/SearchBar";
 import UserPositionMarker from "./components/UserPositionMarker";
-import { geocodeLocation } from "./api/nominatim";
 import { fetchRouteGeoJSON } from "./api/ors";
 import { fetchOverpassMarkers, OverpassMarkerData } from "./api/overpass";
 import Loading from "./components/Loading";
@@ -90,7 +89,7 @@ const App = () => {
     fetchMarkers(true);
     if (map && searchPosition) map.setView(searchPosition);
     setDisplaySearch(false);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [searchPosition]); // Remove fetchMarkers from deps
 
   const handleMapPan = () => {
@@ -188,7 +187,7 @@ const App = () => {
     ) {
       fetchMarkers(false);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [routeGeoJson, displaySearchItem]);
 
   return (

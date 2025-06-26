@@ -8,7 +8,7 @@ export async function fetchRouteGeoJSON({
   start: [number, number];
   end: [number, number];
   apiKey?: string;
-}): Promise<any> {
+}): Promise<GeoJSON.FeatureCollection> {
   if (!apiKey) {
     throw new Error("OpenRouteService API key is missing.");
   }

@@ -84,13 +84,21 @@ export function buildOverpassQueryForPolygon(
   `;
 }
 
+type OverpassElement = {
+  type: "node" | "way" | "relation";
+  lat?: number;
+  lon?: number;
+  center?: { lat: number; lon: number };
+  tags?: Record<string, string>;
+};
+
 export async function fetchOverpassMarkers(
   center: [number, number] | null,
   radius: number,
   query: string[],
   bbox: [number, number, number, number],
   polygon?: Feature<Polygon> | null
-): Promise<OverpassMarkerData[]> {
+): Promise<OverpassElement[]> {
   const overpassUrl = "https://overpass-api.de/api/interpreter";
   const body = polygon ? buildOverpassQueryForPolygon(polygon, query) : buildOverpassQueryForSingleLocation(center, radius, query, bbox);
 
@@ -100,10 +108,11 @@ export async function fetchOverpassMarkers(
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
   });
   const data = await res.json();
-  const elements = data.elements || [];
+
+  const elements: OverpassElement[] = data.elements || [];
   return elements
-    .map((el: any) => {
-      if (el.type === "node" && el.lat && el.lon) {
+    .map((el: OverpassElement) => {
+      if (el.type === "node" && el.lat !== undefined && el.lon !== undefined) {
         return {
           position: [el.lat, el.lon] as [number, number],
           name: el.tags?.name,

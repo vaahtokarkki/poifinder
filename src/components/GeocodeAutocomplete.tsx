@@ -15,6 +15,18 @@ type Suggestion = {
   coords: [number, number];
 };
 
+type PhotonFeature = {
+  properties?: {
+    label?: string;
+    name?: string;
+    city?: string;
+    country?: string;
+  };
+  geometry?: {
+    coordinates?: [number, number];
+  };
+};
+
 const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
   onSelect,
   placeholder = "Type a location",
@@ -47,9 +59,10 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
       }
       const res = await fetch(url);
       const data = await res.json();
+
       setOptions(
         (data.features || []).map(
-          (item: any) => {
+          (item: PhotonFeature) => {
             const label =
               item.properties &&
               (item.properties.label ||
@@ -72,6 +85,7 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
     setLoading(false);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleInputChange = (_: any, value: string, reason: string) => {
     setInputValue(value);
     // Only fetch suggestions if the change is from user input, not from option selection

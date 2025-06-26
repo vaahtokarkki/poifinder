@@ -6,7 +6,8 @@ type GeocodeAutoCompleteProps = {
   label?: string;
   onSelect: (value: string, coords?: [number, number]) => void;
   placeholder?: string;
-  styles?: React.CSSProperties; // <-- add this prop
+  styles?: React.CSSProperties;
+  onClear?: () => void; // <-- add this prop
 };
 
 type Suggestion = {
@@ -18,6 +19,7 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
   onSelect,
   placeholder = "Type a location",
   styles,
+  onClear,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const [options, setOptions] = useState<Suggestion[]>([]);
@@ -78,6 +80,9 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
       debounceRef.current = setTimeout(() => {
         fetchSuggestions(value);
       }, 400);
+      if (value === "" && typeof onClear === "function") {
+        onClear();
+      }
     }
   };
 

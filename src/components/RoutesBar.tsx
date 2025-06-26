@@ -4,7 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import GeocodeAutoComplete from "./GeocodeAutocomplete";
 
 type RoutesBarProps = {
-  onSearch: (start: [number, number], end: [number, number]) => void;
+  onSearch: (start: [number, number] | null, end: [number, number]) => void;
   placeholder?: string;
   visible?: boolean;
   displayRouteInfo?: boolean;
@@ -19,12 +19,12 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
 }) => {
   const [startLocationValue, setStartLocationValue] = useState("");
   const [endLocationValue, setEndLocationValue] = useState("");
-  const [startCoords, setStartCoords] = useState<[number, number] | undefined>();
-  const [endCoords, setEndCoords] = useState<[number, number] | undefined>();
+  const [startCoords, setStartCoords] = useState<[number, number] | null>(null);
+  const [endCoords, setEndCoords] = useState<[number, number] | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!startCoords || !endCoords) {
+    if (!endCoords) {
       // Prevent submit if either coordinate is missing
       return;
     }
@@ -46,7 +46,13 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
             startIcon={<DeleteIcon />}
             color="error"
             style={{padding: ".2em .5em", marginTop: ".5em", textTransform: "none"}}
-            onClick={deleteRoute}
+            onClick={() => {
+              setStartLocationValue("");
+              setEndLocationValue("");
+              setStartCoords(undefined);
+              setEndCoords(undefined);
+              if (deleteRoute) deleteRoute();
+            }}
           >
             Reset route
           </Button>
@@ -63,6 +69,10 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
           setStartLocationValue(label);
           setStartCoords(coords);
         }}
+        onClear={() => {
+          setStartLocationValue("");
+          setStartCoords(undefined);
+        }}
         styles={{margin: 0}}
       />
       <GeocodeAutoComplete
@@ -71,6 +81,10 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
           setEndLocationValue(label);
           setEndCoords(coords);
         }}
+        onClear={() => {
+          setEndLocationValue("");
+          setEndCoords(undefined);
+        }}
         styles={{margin: 0}}
       />
       <Button
@@ -78,7 +92,7 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
         style={{ textTransform: "none", margin: "0 .5em" }}
         onClick={handleSubmit}
         sx={{marginTop: ".5em"}}
-        disabled={!startCoords || !endCoords}
+        disabled={!endCoords}
       >
         Search route
       </Button>

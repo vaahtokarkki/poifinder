@@ -104,14 +104,14 @@ const App = () => {
   };
 
   const handleRouteSearch = async (
-    start: [number, number],
+    start: [number, number] | null,
     end: [number, number]
   ) => {
     try {
       setLoading(true); // Start loading
 
-      // Use user position if start is not provided (should not happen with non-nullable)
-      let startCoords: [number, number] = start;
+      // Use user position if start is not provided or invalid
+      let startCoords: [number, number] | undefined = start ?? undefined;
       if (
         (!start || start.length !== 2) &&
         userPosition &&

@@ -16,7 +16,7 @@ import { renderToString } from "react-dom/server";
 import RoutesBar from "./RoutesBar";
 import { fetchRouteGeoJSON } from "./api/ors";
 import { geocodeLocation } from "./api/nominatim";
-import { bufferPointsToPolygon } from "./geo/index";
+import { buffer } from "@turf/turf";
 
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
@@ -67,12 +67,7 @@ const App = () => {
       routeGeoJson
     ) {
       const feature = routeGeoJson.features[0].geometry
-
-      // Extract points from routeGeoJson and buffer them
-      const points: [number, number][] = feature.coordinates.map(
-        ([lng, lat]: [number, number]) => [lat, lng]
-      );
-      polygon = bufferPointsToPolygon(points);
+      polygon = buffer(feature, 500, { units: 'meters' });
     }
 
     try {

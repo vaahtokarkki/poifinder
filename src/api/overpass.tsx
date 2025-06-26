@@ -52,7 +52,6 @@ export function buildOverpassQueryForPolygon(
   // Get coordinates as [lng, lat] and flatten to Overpass poly string (lat lon pairs)
   const coords = getCoords(polygon)[0]; // outer ring
   const polyString = coords.map(([lng, lat]) => `${lat} ${lng}`).join(" ");
-
   // Compose filter string
   const filterString = `[${filterArr.join("]|[")}]`;
 

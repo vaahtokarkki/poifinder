@@ -16,6 +16,7 @@ const categories = [
   { label: "Post boxes", value: "amenity=post_box" },
   { label: "Toilets", value: "amenity=toilets" },
   { label: "Gas station", value: "amenity=fuel" },
+  { label: "Charging station", value: "amenity=charging_station" },
   { label: "Parking", value: "amenity=parking" },
 ];
 

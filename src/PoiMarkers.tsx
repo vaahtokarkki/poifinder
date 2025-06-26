@@ -5,6 +5,7 @@ import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
 import WcIcon from '@mui/icons-material/Wc';
 import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 import LocalParkingIcon from '@mui/icons-material/LocalParking';
+import EvStationIcon from '@mui/icons-material/EvStation';
 import { renderToString } from "react-dom/server";
 import L from "leaflet";
 
@@ -58,6 +59,7 @@ const markerIconMap: Record<
   "leisure=playground": { icon: <ParkIcon />, color: "#1B5E20" },
   "amenity=toilets": { icon: <WcIcon />, color: "#1A237E" },
   "amenity=fuel": { icon: <LocalGasStationIcon />, color: "#1A237E" },
+  "amenity=charging_station": { icon: <EvStationIcon />, color: "#1A237E" },
   "amenity=parking": { icon: <LocalParkingIcon />, color: "#1A237E" },
   "amenity=post_box": { icon: <LocalPostOfficeIcon />, color: "#3E2723" },
 };

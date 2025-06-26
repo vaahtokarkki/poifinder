@@ -103,21 +103,29 @@ const App = () => {
     }
   };
 
-  const handleRouteSearch = async (start: string, end: string) => {
+  const handleRouteSearch = async (
+    start: [number, number],
+    end: [number, number]
+  ) => {
     try {
       setLoading(true); // Start loading
 
-      // Use user position if start is empty, otherwise geocode
-      let startCoords: [number, number] | null = null;
-      if (!start.trim() && userPosition && userPosition.initialized && typeof userPosition.lat === "number" && typeof userPosition.lng === "number") {
+      // Use user position if start is not provided (should not happen with non-nullable)
+      let startCoords: [number, number] = start;
+      if (
+        (!start || start.length !== 2) &&
+        userPosition &&
+        userPosition.initialized &&
+        typeof userPosition.lat === "number" &&
+        typeof userPosition.lng === "number"
+      ) {
         startCoords = [userPosition.lat, userPosition.lng];
-      } else {
-        startCoords = await geocodeLocation(start);
       }
-      const endCoords = await geocodeLocation(end);
+
+      const endCoords: [number, number] = end;
 
       if (!startCoords || !endCoords) {
-        alert("Could not geocode start or end location.");
+        alert("Could not get start or end location coordinates.");
         setLoading(false);
         return;
       }
@@ -144,7 +152,6 @@ const App = () => {
           [maxLat, maxLon]
         );
         map.fitBounds(bounds, { padding: [40, 40] });
-        fetchMarkers(false); // Fetch markers after route search
       }
       setLoading(false);
     } catch (err) {
@@ -172,6 +179,17 @@ const App = () => {
       map.fitBounds(bounds, { padding: [40, 40] });
     }
   }, [displaySearchItem, routeGeoJson, map]);
+
+  useEffect(() => {
+    if (
+      displaySearchItem === "routes" &&
+      routeGeoJson &&
+      markers.length === 0 // Only fetch if markers are empty
+    ) {
+      fetchMarkers(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [routeGeoJson, displaySearchItem]);
 
   return (
     <MapContainer

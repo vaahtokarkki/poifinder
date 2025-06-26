@@ -6,6 +6,7 @@ type GeocodeAutoCompleteProps = {
   label?: string;
   onSelect: (value: string, coords?: [number, number]) => void;
   placeholder?: string;
+  styles?: React.CSSProperties; // <-- add this prop
 };
 
 type Suggestion = {
@@ -16,6 +17,7 @@ type Suggestion = {
 const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
   onSelect,
   placeholder = "Type a location",
+  styles,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const [options, setOptions] = useState<Suggestion[]>([]);
@@ -119,15 +121,16 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
         background: "#fff",
         zIndex: 1000,
         borderRadius: "1.5em",
-        margin: ".5em 1.5em",
+        margin: ".5em 1em .5em 1em",
         padding: "0",
         display: "flex",
         flexGrow: 1,
         maxWidth: 350,
+        ...(typeof (styles) === "object" ? styles : {}),
       }}
       sx={{
-            ".MuiAutocomplete-inputRoot": { padding: ".2em" },
-          }}
+        ".MuiAutocomplete-inputRoot": { padding: ".2em" },
+      }}
     />
   );
 };

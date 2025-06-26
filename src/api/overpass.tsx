@@ -15,16 +15,15 @@ const buildOverpassQueryForSingleLocation = (
 ) => {
   const filterArr = Array.isArray(filters) ? filters : [filters];
 
-  // Determine the location filter string for each element type
-  const locationFilter = center
-    ? (type: string) => `[${filterArr.join("]|[")}]` + `(around:${radius},${center[0]},${center[1]})`
-    : (type: string) => `[${filterArr.join("]|[")}]` + `(${bbox.join(",")})`;
-
-  // Build the Overpass QL for all element types with all filters
+  // For each filter, generate all element types with that filter
   const elementTypes = ["node", "way", "relation"];
-  const filterBlocks = elementTypes
-    .map(
-      (type) => `${type}${locationFilter(type)};`
+  const locationStr = center
+    ? (type: string, filter: string) => `${type}[${filter}](around:${radius},${center[0]},${center[1]});`
+    : (type: string, filter: string) => `${type}[${filter}](${bbox.join(",")});`;
+
+  const filterBlocks = filterArr
+    .map(filter =>
+      elementTypes.map(type => locationStr(type, filter)).join("\n")
     )
     .join("\n");
 
@@ -52,14 +51,14 @@ export function buildOverpassQueryForPolygon(
   // Get coordinates as [lng, lat] and flatten to Overpass poly string (lat lon pairs)
   const coords = getCoords(polygon)[0]; // outer ring
   const polyString = coords.map(([lng, lat]) => `${lat} ${lng}`).join(" ");
-  // Compose filter string
-  const filterString = `[${filterArr.join("]|[")}]`;
 
-  // Build for all element types
+  // Build for all element types and all filters, each on its own line
   const elementTypes = ["node", "way", "relation"];
-  const filterBlocks = elementTypes
-    .map(
-      (type) => `${type}${filterString}(poly:"${polyString}");`
+  const filterBlocks = filterArr
+    .map(filter =>
+      elementTypes.map(
+        type => `${type}[${filter}](poly:"${polyString}");`
+      ).join("\n")
     )
     .join("\n");
 

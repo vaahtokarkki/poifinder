@@ -3,6 +3,7 @@ import { Marker, Popup } from "react-leaflet";
 import ParkIcon from '@mui/icons-material/Park';
 import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
 import WcIcon from '@mui/icons-material/Wc';
+import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 import { renderToString } from "react-dom/server";
 import L from "leaflet";
 
@@ -56,6 +57,9 @@ const getMarkerIcon = (marker: MarkerData) => {
     }
     if (marker.tags["amenity"] === "toilets") {
       return RenderMarkerIcon(<WcIcon />, "blue");
+    }
+    if (marker.tags["amenity"] === "fuel") {
+      return RenderMarkerIcon(<LocalGasStationIcon />);
     }
     if (marker.tags["amenity"] === "post_box") {
       return RenderMarkerIcon(<LocalPostOfficeIcon />);

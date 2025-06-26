@@ -15,6 +15,7 @@ const categories = [
   { label: "Playgrounds", value: "leisure=playground" },
   { label: "Post boxes", value: "amenity=post_box" },
   { label: "Toilets", value: "amenity=toilets" },
+  { label: "Gas station", value: "amenity=fuel" },
 ];
 
 const CategorySelect: React.FC<CategorySelectProps & { onClose?: () => void }> = ({
@@ -27,7 +28,7 @@ const CategorySelect: React.FC<CategorySelectProps & { onClose?: () => void }> =
       zIndex: 1000,
       flexGrow: 1,
       maxWidth: 400,
-      padding: "0 0.5em",
+      margin: ".5em 1em .5em 1em",
     }}
   >
     <FormControl fullWidth size="small">
@@ -52,7 +53,7 @@ const CategorySelect: React.FC<CategorySelectProps & { onClose?: () => void }> =
             })}
           </Box>
         )}
-        style={{background: "#fff", borderRadius: "1em", margin: "0 1em 0 1em", padding: 0, }}
+        style={{background: "#fff", borderRadius: "1em", padding: 0, }}
       >
         {categories.map((cat) => (
           <MenuItem key={cat.value} value={cat.value}>

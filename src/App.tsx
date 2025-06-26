@@ -16,6 +16,7 @@ import { renderToString } from "react-dom/server";
 import RoutesBar from "./RoutesBar";
 import { fetchRouteGeoJSON } from "./api/ors";
 import { geocodeLocation } from "./api/nominatim";
+import { bufferPointsToPolygon } from "./geo/index";
 
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
@@ -59,12 +60,28 @@ const App = () => {
     const southWest = bounds.getSouthWest();
     const northEast = bounds.getNorthEast();
     const bbox: [number, number, number, number] = [southWest.lat, southWest.lng, northEast.lat, northEast.lng];
+
+    let polygon = null;
+    if (
+      displaySearchItem === "routes" &&
+      routeGeoJson
+    ) {
+      const feature = routeGeoJson.features[0].geometry
+
+      // Extract points from routeGeoJson and buffer them
+      const points: [number, number][] = feature.coordinates.map(
+        ([lng, lat]: [number, number]) => [lat, lng]
+      );
+      polygon = bufferPointsToPolygon(points);
+    }
+
     try {
       const data = await fetchOverpassMarkers(
         useSearchLocation ? searchPosition : null,
         1000,
         category,
-        bbox
+        bbox,
+        polygon
       );
       setMarkers(data);
     } catch (e) {
@@ -72,7 +89,7 @@ const App = () => {
     }
     setLoading(false);
     setDisplaySearch(false);
-  }, [map, category, searchPosition]);
+  }, [map, category, searchPosition, displaySearchItem, routeGeoJson]);
 
   useEffect(() => {
     fetchMarkers(true);
@@ -99,8 +116,14 @@ const App = () => {
   const handleRouteSearch = async (start: string, end: string) => {
     try {
       setLoading(true); // Start loading
-      // Geocode start and end locations
-      const startCoords = await geocodeLocation(start);
+
+      // Use user position if start is empty, otherwise geocode
+      let startCoords: [number, number] | null = null;
+      if (!start.trim() && userPosition && userPosition.initialized && typeof userPosition.lat === "number" && typeof userPosition.lng === "number") {
+        startCoords = [userPosition.lat, userPosition.lng];
+      } else {
+        startCoords = await geocodeLocation(start);
+      }
       const endCoords = await geocodeLocation(end);
 
       if (!startCoords || !endCoords) {
@@ -139,6 +162,26 @@ const App = () => {
     }
   };
 
+  useEffect(() => {
+    if (
+      displaySearchItem === "routes" &&
+      routeGeoJson &&
+      routeGeoJson.bbox &&
+      map
+    ) {
+      // bbox: [minLon, minLat, maxLon, maxLat]
+      const [[minLat, minLon], [maxLat, maxLon]] = [
+        [routeGeoJson.bbox[1], routeGeoJson.bbox[0]],
+        [routeGeoJson.bbox[3], routeGeoJson.bbox[2]],
+      ];
+      const bounds = L.latLngBounds(
+        [minLat, minLon],
+        [maxLat, maxLon]
+      );
+      map.fitBounds(bounds, { padding: [40, 40] });
+    }
+  }, [displaySearchItem, routeGeoJson, map]);
+
   return (
     <MapContainer
       center={[60, 25]}
@@ -171,7 +214,7 @@ const App = () => {
         style={{
           zIndex: 1000,
           margin: "1em 0 0 1.5em",
-          display: displaySearch ? "flex" : "none",
+          display: displaySearch && displaySearchItem !== "routes" ? "flex" : "none",
           justifyContent: "center"
         }}
       >

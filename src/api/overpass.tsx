@@ -1,3 +1,5 @@
+import { Feature, Polygon, getCoords } from "@turf/turf";
+
 export type OverpassMarkerData = {
   position: [number, number];
   name?: string;
@@ -13,21 +15,16 @@ const buildOverpassQueryForSingleLocation = (
 ) => {
   const filterArr = Array.isArray(filters) ? filters : [filters];
 
-  // Build the Overpass QL for all filters
-  const filterBlocks = filterArr
+  // Determine the location filter string for each element type
+  const locationFilter = center
+    ? (type: string) => `[${filterArr.join("]|[")}]` + `(around:${radius},${center[0]},${center[1]})`
+    : (type: string) => `[${filterArr.join("]|[")}]` + `(${bbox.join(",")})`;
+
+  // Build the Overpass QL for all element types with all filters
+  const elementTypes = ["node", "way", "relation"];
+  const filterBlocks = elementTypes
     .map(
-      (filter) =>
-        center
-          ? `
-        node[${filter}](around:${radius},${center[0]},${center[1]});
-        way[${filter}](around:${radius},${center[0]},${center[1]});
-        relation[${filter}](around:${radius},${center[0]},${center[1]});
-      `
-          : `
-        node[${filter}](${bbox.join(",")});
-        way[${filter}](${bbox.join(",")});
-        relation[${filter}](${bbox.join(",")});
-      `
+      (type) => `${type}${locationFilter(type)};`
     )
     .join("\n");
 
@@ -40,14 +37,51 @@ const buildOverpassQueryForSingleLocation = (
   `;
 };
 
+/**
+ * Build Overpass QL query for a polygon area using the 'poly' filter.
+ * @param polygon A turf.js Polygon feature (GeoJSON)
+ * @param filters Array of Overpass filter strings (e.g. ["leisure=playground"])
+ * @returns Overpass QL string
+ */
+export function buildOverpassQueryForPolygon(
+  polygon: Feature<Polygon>,
+  filters: string[]
+) {
+  const filterArr = Array.isArray(filters) ? filters : [filters];
+
+  // Get coordinates as [lng, lat] and flatten to Overpass poly string (lat lon pairs)
+  const coords = getCoords(polygon)[0]; // outer ring
+  const polyString = coords.map(([lng, lat]) => `${lat} ${lng}`).join(" ");
+
+  // Compose filter string
+  const filterString = `[${filterArr.join("]|[")}]`;
+
+  // Build for all element types
+  const elementTypes = ["node", "way", "relation"];
+  const filterBlocks = elementTypes
+    .map(
+      (type) => `${type}${filterString}(poly:"${polyString}");`
+    )
+    .join("\n");
+
+  return `
+    [out:json];
+    (
+      ${filterBlocks}
+    );
+    out center;
+  `;
+}
+
 export async function fetchOverpassMarkers(
   center: [number, number] | null,
   radius: number,
   query: string[],
-  bbox: [number, number, number, number]
+  bbox: [number, number, number, number],
+  polygon?: Feature<Polygon> | null
 ): Promise<OverpassMarkerData[]> {
   const overpassUrl = "https://overpass-api.de/api/interpreter";
-  const body = buildOverpassQueryForSingleLocation(center, radius, query, bbox);
+  const body = polygon ? buildOverpassQueryForPolygon(polygon, query) : buildOverpassQueryForSingleLocation(center, radius, query, bbox);
 
   const res = await fetch(overpassUrl, {
     method: "POST",

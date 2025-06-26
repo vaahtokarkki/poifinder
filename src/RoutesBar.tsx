@@ -33,7 +33,7 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
       <Card style={{ margin: "1em 1em 0 1em", borderRadius: "1em", maxWidth: 350, zIndex: 1000, padding: "1em 1.5em"}}>
         <CardContent style={{padding: 0}}>
           <Typography variant="body2" >
-            Search POIs along {startLocationValue || "-"} and {endLocationValue || "-"}
+            Search POIs along {startLocationValue || "your location"} and {endLocationValue || "-"}
           </Typography>
           <Button
             size="small"
@@ -55,7 +55,7 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
       <Input
         type="text"
         disableUnderline={true}
-        placeholder="Start location"
+        placeholder="Your location"
         value={startLocationValue}
         onChange={(e) => setStartLocationValue(e.target.value)}
         style={{ background: "#fff", zIndex: 1000, margin: ".5em"}}

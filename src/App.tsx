@@ -16,6 +16,7 @@ import { fetchOverpassMarkers, OverpassMarkerData } from "./api/overpass";
 import Loading from "./components/Loading";
 import SearchPoisButton from "./components/SearchPoisButton";
 import { useUserPosition } from "./hooks/index";
+import { CATEGORIES } from "./constants";
 
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
@@ -29,7 +30,7 @@ const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void 
 const App = () => {
   const { position: userPosition } = useUserPosition();
   const [searchPosition, setSearchPosition] = useState<[number, number] | null>(null);
-  const [category, setCategory] = useState<string[]>(["leisure=playground"]);
+  const [category, setCategory] = useState<CATEGORIES[]>([CATEGORIES.Playgrounds]);
   const [loading, setLoading] = useState(false);
   const [displaySearch, setDisplaySearch] = useState(false);
   const [displaySearchItem, setDisplaySearchItem] = useState<string | null>(null); // "search" | "routes" | null
@@ -69,6 +70,7 @@ const App = () => {
       polygon = buffer(feature, 500, { units: 'meters' });
     }
 
+    // Pass the categories directly (no mapping)
     try {
       const data = await fetchOverpassMarkers(
         useSearchLocation ? searchPosition : null,

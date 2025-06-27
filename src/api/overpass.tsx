@@ -1,5 +1,6 @@
 import { getCoords } from "@turf/turf";
-import { Feature, Polygon } from "geojson"
+import { Feature, Polygon } from "geojson";
+import { CATEGORIES, CATEGORY_FILTERS } from "../constants";
 
 export type OverpassMarkerData = {
   position: [number, number];
@@ -8,33 +9,16 @@ export type OverpassMarkerData = {
   type?: string;
 };
 
-const extraFilterMap: Record<string, string | undefined> = {
-  "amenity=parking": "[access!=private]",
-  // Add more mappings here if needed
-};
-
-const buildOverpassQueryForSingleLocation = (
-  center: [number, number] | null,
-  radius: number,
+const buildBaseOverpassQuery = (
   filters: string[],
-  bbox: [number, number, number, number]
+  spatialFilter: string,
 ) => {
-  const filterArr = Array.isArray(filters) ? filters : [filters];
+  // ${center ? `(around:${radius},${center[0]},${center[1]})` : `(${bbox.join(",")})`};`;
+  const queryStr = (filter: string) => `nwr${filter}${spatialFilter};`;
 
-  const elementTypes = ["node", "way", "relation"];
-  const locationStr = center
-    ? (type: string, filter: string, extra: string = "") =>
-        `${type}[${filter}]${extra}(around:${radius},${center[0]},${center[1]});`
-    : (type: string, filter: string, extra: string = "") =>
-        `${type}[${filter}]${extra}(${bbox.join(",")});`;
-
-  const filterBlocks = filterArr
+  const filterBlocks = filters
     .map(filter =>
-      elementTypes
-        .map(type =>
-          locationStr(type, filter, extraFilterMap[filter] || "")
-        )
-        .join("\n")
+      queryStr(filter)
     )
     .join("\n");
 
@@ -45,7 +29,14 @@ const buildOverpassQueryForSingleLocation = (
     );
     out center;
   `;
-};
+}
+
+const buildOverpassQueryForSingleLocation = (
+  center: [number, number] | null,
+  radius: number,
+  filters: string[],
+  bbox: [number, number, number, number]
+) => buildBaseOverpassQuery(filters, (center ? `(around:${radius},${center[0]},${center[1]})` : `(${bbox.join(",")})`));
 
 /**
  * Build Overpass QL query for a polygon area using the 'poly' filter.
@@ -57,31 +48,10 @@ export function buildOverpassQueryForPolygon(
   polygon: Feature<Polygon>,
   filters: string[]
 ) {
-  const filterArr = Array.isArray(filters) ? filters : [filters];
-
   // Get coordinates as [lng, lat] and flatten to Overpass poly string (lat lon pairs)
   const coords = getCoords(polygon)[0]; // outer ring
   const polyString = coords.map(([lng, lat]) => `${lat} ${lng}`).join(" ");
-
-  const elementTypes = ["node", "way", "relation"];
-  const filterBlocks = filterArr
-    .map(filter =>
-      elementTypes
-        .map(
-          type =>
-            `${type}[${filter}]${extraFilterMap[filter] || ""}(poly:"${polyString}");`
-        )
-        .join("\n")
-    )
-    .join("\n");
-
-  return `
-    [out:json];
-    (
-      ${filterBlocks}
-    );
-    out center;
-  `;
+  return buildBaseOverpassQuery(filters, `(poly:"${polyString}")`);
 }
 
 type OverpassElement = {
@@ -95,12 +65,17 @@ type OverpassElement = {
 export async function fetchOverpassMarkers(
   center: [number, number] | null,
   radius: number,
-  query: string[],
+  categories: CATEGORIES[],
   bbox: [number, number, number, number],
   polygon?: Feature<Polygon> | null
 ): Promise<OverpassElement[]> {
+  // Map categories to filter strings using CATEGORY_FILTERS
+  const filters = categories.flatMap(cat => CATEGORY_FILTERS[cat] || []);
+
   const overpassUrl = "https://overpass-api.de/api/interpreter";
-  const body = polygon ? buildOverpassQueryForPolygon(polygon, query) : buildOverpassQueryForSingleLocation(center, radius, query, bbox);
+  const body = polygon
+    ? buildOverpassQueryForPolygon(polygon, filters)
+    : buildOverpassQueryForSingleLocation(center, radius, filters, bbox);
 
   const res = await fetch(overpassUrl, {
     method: "POST",

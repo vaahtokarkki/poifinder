@@ -5,22 +5,21 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import React from "react";
+import { CATEGORIES, CATEGORY_OPTIONS } from "../constants";
 
 type CategorySelectProps = {
-  value: string[];
-  onChange: (value: string[]) => void;
+  value: CATEGORIES[];
+  onChange: (value: CATEGORIES[]) => void;
+  onClose?: () => void;
 };
 
-const categories = [
-  { label: "Playgrounds", value: "leisure=playground" },
-  { label: "Post boxes", value: "amenity=post_box" },
-  { label: "Toilets", value: "amenity=toilets" },
-  { label: "Gas station", value: "amenity=fuel" },
-  { label: "Charging station", value: "amenity=charging_station" },
-  { label: "Parking", value: "amenity=parking" },
-];
+// Build categories array from CATEGORY_OPTIONS
+const categories = Object.entries(CATEGORY_OPTIONS).map(([key, label]) => ({
+  label,
+  value: Number(key) as CATEGORIES,
+}));
 
-const CategorySelect: React.FC<CategorySelectProps & { onClose?: () => void }> = ({
+const CategorySelect: React.FC<CategorySelectProps> = ({
   value,
   onChange,
   onClose,
@@ -43,7 +42,7 @@ const CategorySelect: React.FC<CategorySelectProps & { onClose?: () => void }> =
           "& fieldset": { border: 'none' },
         }}
         onChange={(e) => {
-          const selected = e.target.value as string[];
+          const selected = e.target.value as CATEGORIES[];
           onChange(selected);
         }}
         onClose={onClose}

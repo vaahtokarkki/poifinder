@@ -1,6 +1,6 @@
 import { getCoords } from "@turf/turf";
 import { Feature, Polygon } from "geojson";
-import { CATEGORIES, CATEGORY_FILTERS } from "../constants";
+import { CATEGORIES, CATEGORY_CONFIG } from "../constants";
 
 export type OverpassMarkerData = {
   position: [number, number];
@@ -69,8 +69,8 @@ export async function fetchOverpassMarkers(
   bbox: [number, number, number, number],
   polygon?: Feature<Polygon> | null
 ): Promise<OverpassElement[]> {
-  // Map categories to filter strings using CATEGORY_FILTERS
-  const filters = categories.flatMap(cat => CATEGORY_FILTERS[cat] || []);
+  // Map categories to filter strings using CATEGORY_CONFIG
+  const filters = categories.flatMap(cat => CATEGORY_CONFIG[cat].filters || []);
 
   const overpassUrl = "https://overpass-api.de/api/interpreter";
   const body = polygon

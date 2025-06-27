@@ -8,6 +8,7 @@ import LocalParkingIcon from '@mui/icons-material/LocalParking';
 import EvStationIcon from '@mui/icons-material/EvStation';
 import { renderToString } from "react-dom/server";
 import L from "leaflet";
+import { CATEGORY_CONFIG, CATEGORIES, parseFilterString } from "./constants";
 
 type MarkerData = {
   position: [number, number];
@@ -51,30 +52,24 @@ const RenderMarkerIcon = (
   });
 };
 
-// Map marker tag key-value to icon and color
-const markerIconMap: Record<
-  string,
-  { icon: React.ReactElement; color: string }
-> = {
-  "leisure=playground": { icon: <ParkIcon />, color: "#1B5E20" },
-  "amenity=toilets": { icon: <WcIcon />, color: "#1A237E" },
-  "amenity=fuel": { icon: <LocalGasStationIcon />, color: "#1A237E" },
-  "amenity=charging_station": { icon: <EvStationIcon />, color: "#1A237E" },
-  "amenity=parking": { icon: <LocalParkingIcon />, color: "#1A237E" },
-  "amenity=post_box": { icon: <LocalPostOfficeIcon />, color: "#3E2723" },
-};
 
 const getMarkerIcon = (marker: MarkerData) => {
   if (marker.tags) {
-    for (const [key, value] of Object.entries(marker.tags)) {
-      const mapKey = `${key}=${value}`;
-      if (markerIconMap[mapKey]) {
-        const { icon, color } = markerIconMap[mapKey];
-        return RenderMarkerIcon(icon, color);
+    // For each category, check if all keys in the parsed filter match the marker's tags
+    for (const cat of Object.values(CATEGORIES).filter(v => typeof v === "number") as number[]) {
+      const config = CATEGORY_CONFIG[cat as CATEGORIES];
+      for (const filter of config.filters) {
+        const filterObj = parseFilterString(filter);
+        const isMatch = Object.entries(filterObj).every(
+          ([k, v]) => marker.tags && marker.tags[k] === v
+        );
+        if (isMatch) {
+          return RenderMarkerIcon(config.icon, config.color);
+        }
       }
     }
   }
-  // Default icon
+  // Default icon if no match
   return RenderMarkerIcon(<ParkIcon />);
 };
 
@@ -108,6 +103,7 @@ const RenderMarkerContents: React.FC<{ marker: MarkerData }> = ({ marker }) => {
 const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   markers,
 }) => {
+  console.log("Rendering POI markers:", markers);
   return (
     <>
       {markers.map((marker) => (

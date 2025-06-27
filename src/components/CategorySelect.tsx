@@ -5,7 +5,7 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import React from "react";
-import { CATEGORIES, CATEGORY_OPTIONS } from "../constants";
+import { CATEGORIES, CATEGORY_CONFIG } from "../constants";
 
 type CategorySelectProps = {
   value: CATEGORIES[];
@@ -13,10 +13,11 @@ type CategorySelectProps = {
   onClose?: () => void;
 };
 
-// Build categories array from CATEGORY_OPTIONS
-const categories = Object.entries(CATEGORY_OPTIONS).map(([key, label]) => ({
-  label,
+// Build categories array from CATEGORY_CONFIG
+const categories = Object.entries(CATEGORY_CONFIG).map(([key, config]) => ({
+  label: config.display,
   value: Number(key) as CATEGORIES,
+  // icon and color are omitted for select
 }));
 
 const CategorySelect: React.FC<CategorySelectProps> = ({
@@ -50,7 +51,12 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
             {selected.map((val) => {
               const cat = categories.find((c) => c.value === val);
-              return <Chip key={val} label={cat ? cat.label : val} />;
+              return (
+                <Chip
+                  key={val}
+                  label={cat ? cat.label : val}
+                />
+              );
             })}
           </Box>
         )}

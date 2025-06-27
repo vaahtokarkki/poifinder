@@ -7,6 +7,7 @@ import LocalParkingIcon from "@mui/icons-material/LocalParking";
 import IcecreamIcon from "@mui/icons-material/Icecream";
 import DeckIcon from '@mui/icons-material/Deck';
 import BedtimeIcon from '@mui/icons-material/Bedtime';
+import PetsIcon from '@mui/icons-material/Pets';
 import * as React from "react";
 
 export enum CATEGORIES {
@@ -18,7 +19,8 @@ export enum CATEGORIES {
   Parking,
   Icecream,
   Shelter,
-  TentSite
+  TentSite,
+  DogPark,
 }
 
 export enum CATEGORY_GROUP {
@@ -100,6 +102,13 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     display: "Camp site",
     icon: React.createElement(BedtimeIcon),
     color: "balck",
+    group: CATEGORY_GROUP.Nature,
+  },
+  [CATEGORIES.DogPark]: {
+    filters: ["[leisure=dog_park]"],
+    display: "Dog park",
+    icon: React.createElement(PetsIcon),
+    color: "#3E2723",
     group: CATEGORY_GROUP.Nature,
   },
 };

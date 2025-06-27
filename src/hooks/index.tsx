@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { geocodeLocation } from "../api/nominatim";
 
 type LatLng = {
   lat?: number;
@@ -43,18 +42,3 @@ export const useUserPosition = (): { position: LatLng } => {
 
   return { position };
 };
-
-export function useSearchLocation(): [
-  [number, number] | null,
-  (query: string) => Promise<[number, number] | null>
-] {
-  const [location, setLocation] = useState<[number, number] | null>(null);
-
-  const search = async (query: string) => {
-    const loc = await geocodeLocation(query);
-    if (loc) setLocation(loc);
-    return loc;
-  };
-
-  return [location, search];
-}

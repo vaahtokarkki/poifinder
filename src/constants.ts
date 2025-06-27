@@ -17,12 +17,19 @@ export enum CATEGORIES {
   Icecream,
 }
 
+export enum CATEGORY_GROUP {
+  Essentials,
+  Car,
+  Food
+}
+
 // Category config type
 export type CategoryConfig = {
   filters: string[];
   display: string;
   icon: React.ReactElement;
   color: string;
+  group: CATEGORY_GROUP; 
 };
 
 // Main config object
@@ -32,42 +39,49 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     display: "Playgrounds",
     icon: React.createElement(ParkIcon),
     color: "#388e3c",
+    group: CATEGORY_GROUP.Essentials,
   },
   [CATEGORIES.PostBoxes]: {
     filters: ["[amenity=post_box]"],
     display: "Post boxes",
     icon: React.createElement(LocalPostOfficeIcon),
     color: "#d32f2f",
+    group: CATEGORY_GROUP.Essentials,
   },
   [CATEGORIES.Toilets]: {
     filters: ["[amenity=toilets]", "[building=retail][toilets=yes]"],
     display: "Toilets",
     icon: React.createElement(WcIcon),
     color: "#1976d2",
+    group: CATEGORY_GROUP.Essentials,
   },
   [CATEGORIES.GasStation]: {
     filters: ["[amenity=fuel]"],
     display: "Gas stations",
     icon: React.createElement(LocalGasStationIcon),
     color: "#fbc02d",
+    group: CATEGORY_GROUP.Car,
   },
   [CATEGORIES.ChargingStation]: {
     filters: ["[amenity=charging_station]"],
     display: "Charging stations",
     icon: React.createElement(EvStationIcon),
     color: "#388e3c",
+    group: CATEGORY_GROUP.Car,
   },
   [CATEGORIES.Parking]: {
     filters: ["[amenity=parking][access!=private]"],
     display: "Parking",
     icon: React.createElement(LocalParkingIcon),
     color: "#1976d2",
+    group: CATEGORY_GROUP.Car,
   },
   [CATEGORIES.Icecream]: {
     filters: ["[amenity=ice_cream]", "[shop=ice_cream]", "[cuisine=ice_cream]"],
     display: "Ice cream",
     icon: React.createElement(IcecreamIcon),
     color: "#ffb300",
+    group: CATEGORY_GROUP.Food,
   },
 };
 
@@ -89,3 +103,9 @@ export const CATEGORY_MARKER_MAPPING: Record<CATEGORIES, Record<string, string>[
     config.filters.map(parseFilterString),
   ])
 ) as Record<CATEGORIES, Record<string, string>[]>;
+
+export const CATEGORY_GROUP_DISPLAY: Record<CATEGORY_GROUP, string> = {
+  [CATEGORY_GROUP.Essentials]: "Essentials",
+  [CATEGORY_GROUP.Car]: "Car",
+  [CATEGORY_GROUP.Food]: "Food",
+};

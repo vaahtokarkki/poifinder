@@ -90,6 +90,8 @@ const RenderMarkerContents: React.FC<{ marker: MarkerData }> = ({ marker }) => {
               // Exclude tags starting with any of these prefixes
               const excludePrefixes = ["ref", "addr", "building", "wiki", "roof"];
               if (excludePrefixes.some(prefix => key.startsWith(prefix))) return null;
+              // Exclude keys that start with "name" but are not exactly "name" (e.g. name_ru)
+              if (key.startsWith("name") && key !== "name") return null;
 
               const displayKey = formatDisplay(key);
 

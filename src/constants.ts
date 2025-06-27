@@ -5,6 +5,8 @@ import LocalPostOfficeIcon from "@mui/icons-material/LocalPostOffice";
 import EvStationIcon from "@mui/icons-material/EvStation";
 import LocalParkingIcon from "@mui/icons-material/LocalParking";
 import IcecreamIcon from "@mui/icons-material/Icecream";
+import DeckIcon from '@mui/icons-material/Deck';
+import BedtimeIcon from '@mui/icons-material/Bedtime';
 import * as React from "react";
 
 export enum CATEGORIES {
@@ -15,12 +17,15 @@ export enum CATEGORIES {
   ChargingStation,
   Parking,
   Icecream,
+  Shelter,
+  TentSite
 }
 
 export enum CATEGORY_GROUP {
   Essentials,
   Car,
-  Food
+  Food,
+  Nature,
 }
 
 // Category config type
@@ -83,6 +88,20 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     color: "#ffb300",
     group: CATEGORY_GROUP.Food,
   },
+  [CATEGORIES.Shelter]: {
+    filters: ['[amenity=shelter][shelter_type~"^(picnic_shelter|lean_to|weather_shelter|basic_hut)$"]', "[fireplace=yes][access!=private]", "[tourism=wilderness_hut]"],
+    display: "Shelter",
+    icon: React.createElement(DeckIcon),
+    color: "#1B5E20",
+    group: CATEGORY_GROUP.Nature,
+  },
+  [CATEGORIES.TentSite]: {
+    filters: ["[tourism=camp_site]"],
+    display: "Camp site",
+    icon: React.createElement(BedtimeIcon),
+    color: "balck",
+    group: CATEGORY_GROUP.Nature,
+  },
 };
 
 // Helper to parse a filter string like "[amenity=retail][toilets=yes]" into { amenity: "retail", toilets: "yes" }
@@ -108,4 +127,5 @@ export const CATEGORY_GROUP_DISPLAY: Record<CATEGORY_GROUP, string> = {
   [CATEGORY_GROUP.Essentials]: "Essentials",
   [CATEGORY_GROUP.Car]: "Car",
   [CATEGORY_GROUP.Food]: "Food",
+  [CATEGORY_GROUP.Nature]: "Nature",
 };

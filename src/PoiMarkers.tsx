@@ -73,29 +73,44 @@ const getMarkerIcon = (marker: MarkerData) => {
   return RenderMarkerIcon(<ParkIcon />);
 };
 
+const formatDisplay = (str: string) =>
+  str.replace(/[:_]/g, " ").replace(/^\w/, c => c.toUpperCase());
+
 const RenderMarkerContents: React.FC<{ marker: MarkerData }> = ({ marker }) => {
   return (
     <div>
       <b>{marker.name || "No name"}</b>
-      {marker.tags &&
-        Object.entries(marker.tags).map(([key, value]) => {
-          if (key === "access" && value === "yes") return null;
-          if (key === "fee" && value === "yes") return null;
-          if (["leisure", "type", "amenity"].includes(key)) return null;
+      {marker.tags && (
+        <table style={{ width: "100%", minWidth: "180px", marginTop: 6 }}>
+          <tbody>
+            {Object.entries(marker.tags).map(([key, value]) => {
+              if (key === "access" && value === "yes") return null;
+              if (key === "fee" && value === "yes") return null;
+              if (["leisure", "type", "amenity"].includes(key)) return null;
+              // Exclude tags starting with any of these prefixes
+              const excludePrefixes = ["ref", "addr", "building", "wiki", "roof"];
+              if (excludePrefixes.some(prefix => key.startsWith(prefix))) return null;
 
-          const displayKey = key.replace(/:/g, " ");
+              const displayKey = formatDisplay(key);
 
-          return (
-            <table key={key} style={{ width: "100%", minWidth: "200px", tableLayout: "fixed" }}>
-              <tbody>
-                <tr>
-                  <td style={{ fontWeight: 500 }}>{displayKey}</td>
-                  <td>{value}</td>
+              return (
+                <tr key={key}>
+                  <td style={{ fontWeight: 500, paddingRight: 8, verticalAlign: "top" }}>{displayKey}</td>
+                  <td style={{ verticalAlign: "top" }}>
+                    {key === "website" || key === "url" ? (
+                      <a href={String(value)} target="_blank" rel="noopener noreferrer">
+                        Open website
+                      </a>
+                    ) : (
+                      formatDisplay(String(value))
+                    )}
+                  </td>
                 </tr>
-              </tbody>
-            </table>
-          );
-        })}
+              );
+            })}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 };

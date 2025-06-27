@@ -64,7 +64,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     color: "#1976d2",
   },
   [CATEGORIES.Icecream]: {
-    filters: ["[amenity=ice_cream]"],
+    filters: ["[amenity=ice_cream]", "[shop=ice_cream]", "[cuisine=ice_cream]"],
     display: "Ice cream",
     icon: React.createElement(IcecreamIcon),
     color: "#ffb300",

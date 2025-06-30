@@ -19,6 +19,7 @@ import { useUserPosition } from "./hooks/index";
 import { CATEGORIES } from "./constants";
 import { fetchSuggestions } from "./api/geocode";
 import { parseCityFromPath, parseCategoryFromPath } from "./utils";
+import JsonLdSeo from "./components/JsonLdSeo";
 
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
@@ -304,133 +305,136 @@ const App = () => {
   }, [category, map]);
 
   return (
-    <MapContainer
-      center={[60, 25]}
-      zoom={13}
-      scrollWheelZoom={true}
-      style={{ minHeight: "100vh", minWidth: "100vw" }}
-      zoomControl={false}
-      ref={setMap}
-    >
-      <MapPanHandler onMove={handleMapPan} />
-      <Loading active={loading} />
-      <div style={{ display: "flex", flexWrap: "wrap", flexDirection: "column" }}>
-        <SearchBar
-          onSearch={(_, coords) => {
-            if (coords && Array.isArray(coords) && coords.length === 2) {
-              setSearchPosition(coords);
-            }
-          }}
-          visible={displaySearchItem === "search"}
-          searchPosition={searchPosition}
-        />
-        <RoutesBar
-          onSearch={handleRouteSearch}
-          deleteRoute={() => {
-            setRouteGeoJson(null);
-            setMarkers([]); // Reset markers when route is deleted
-          }}
-          visible={displaySearchItem === "routes"}
-          displayRouteInfo={!!routeGeoJson}
-        />
-        <CategorySelect
-          value={category}
-          onChange={setCategory}
-          onClose={() => fetchMarkers(false)}
-        />
-      </div>
-      <SearchPoisButton
-        onClick={() => fetchMarkers()}
-        visible={displaySearch && displaySearchItem !== "routes"}
-      />
-      <div
-        style={{
-          position: "absolute",
-          bottom: 100,
-          right: 24,
-          zIndex: 1200,
-          background: displaySearchItem === "search" ? "#1976d2" : "white",
-          borderRadius: "50%",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
-          padding: 10,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          cursor: "pointer",
-          marginBottom: 8,
-        }}
-        onClick={() => displaySearchItem === "search" ? setDisplaySearchItem(null) :setDisplaySearchItem("search")}
-        title="Show/hide search bar"
+    <>
+      <JsonLdSeo markers={markers} />
+      <MapContainer
+        center={[60, 25]}
+        zoom={13}
+        scrollWheelZoom={true}
+        style={{ minHeight: "100vh", minWidth: "100vw" }}
+        zoomControl={false}
+        ref={setMap}
       >
-        <SearchIcon
-          fontSize="medium"
-          style={{ color: displaySearchItem === "search" ? "white" : "black" }}
+        <MapPanHandler onMove={handleMapPan} />
+        <Loading active={loading} />
+        <div style={{ display: "flex", flexWrap: "wrap", flexDirection: "column" }}>
+          <SearchBar
+            onSearch={(_, coords) => {
+              if (coords && Array.isArray(coords) && coords.length === 2) {
+                setSearchPosition(coords);
+              }
+            }}
+            visible={displaySearchItem === "search"}
+            searchPosition={searchPosition}
+          />
+          <RoutesBar
+            onSearch={handleRouteSearch}
+            deleteRoute={() => {
+              setRouteGeoJson(null);
+              setMarkers([]); // Reset markers when route is deleted
+            }}
+            visible={displaySearchItem === "routes"}
+            displayRouteInfo={!!routeGeoJson}
+          />
+          <CategorySelect
+            value={category}
+            onChange={setCategory}
+            onClose={() => fetchMarkers(false)}
+          />
+        </div>
+        <SearchPoisButton
+          onClick={() => fetchMarkers()}
+          visible={displaySearch && displaySearchItem !== "routes"}
         />
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          bottom: 50,
-          right: 24,
-          zIndex: 1200,
-          background: "#fff",
-          borderRadius: "50%",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
-          padding: 10,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          cursor: "pointer",
-        }}
-        onClick={handleMyLocationClick}
-        title="Center map to your location"
-      >
-        <MyLocationIcon fontSize="medium" style={{ color: "black" }} />
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          bottom: 160,
-          right: 24,
-          zIndex: 1200,
-          background: displaySearchItem === "routes" ? "#1976d2" : "white",
-          color: displaySearchItem === "routes" ? "white" : "black",
-          borderRadius: "50%",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
-          padding: 10,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          cursor: "pointer",
-          marginBottom: 8,
-        }}
-        title="Directions"
-        onClick={() => displaySearchItem === "routes" ? setDisplaySearchItem(null) : setDisplaySearchItem("routes")} 
-      >
-        <DirectionsIcon fontSize="medium" />
-      </div>
-      <ZoomControl position="bottomleft" />
-      <TileLayer
-        attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
-        url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-      />
-      <UserPositionMarker />
-      <PoiMarkers
-        markers={markers}
-        setLoading={setLoading}
-        fetchMarkers={fetchMarkers}
-      />
-      {routeGeoJson && displaySearchItem === "routes" && (
-        <GeoJSON
-          data={routeGeoJson}
+        <div
           style={{
-            color: "#1976d2",
-            weight: 5,
-            opacity: 0.8,
+            position: "absolute",
+            bottom: 100,
+            right: 24,
+            zIndex: 1200,
+            background: displaySearchItem === "search" ? "#1976d2" : "white",
+            borderRadius: "50%",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+            padding: 10,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            marginBottom: 8,
           }}
+          onClick={() => displaySearchItem === "search" ? setDisplaySearchItem(null) :setDisplaySearchItem("search")}
+          title="Show/hide search bar"
+        >
+          <SearchIcon
+            fontSize="medium"
+            style={{ color: displaySearchItem === "search" ? "white" : "black" }}
+          />
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 50,
+            right: 24,
+            zIndex: 1200,
+            background: "#fff",
+            borderRadius: "50%",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+            padding: 10,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+          }}
+          onClick={handleMyLocationClick}
+          title="Center map to your location"
+        >
+          <MyLocationIcon fontSize="medium" style={{ color: "black" }} />
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 160,
+            right: 24,
+            zIndex: 1200,
+            background: displaySearchItem === "routes" ? "#1976d2" : "white",
+            color: displaySearchItem === "routes" ? "white" : "black",
+            borderRadius: "50%",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+            padding: 10,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            marginBottom: 8,
+          }}
+          title="Directions"
+          onClick={() => displaySearchItem === "routes" ? setDisplaySearchItem(null) : setDisplaySearchItem("routes")} 
+        >
+          <DirectionsIcon fontSize="medium" />
+        </div>
+        <ZoomControl position="bottomleft" />
+        <TileLayer
+          attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
+          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
         />
-      )}
-    </MapContainer>
+        <UserPositionMarker />
+        <PoiMarkers
+          markers={markers}
+          setLoading={setLoading}
+          fetchMarkers={fetchMarkers}
+        />
+        {routeGeoJson && displaySearchItem === "routes" && (
+          <GeoJSON
+            data={routeGeoJson}
+            style={{
+              color: "#1976d2",
+              weight: 5,
+              opacity: 0.8,
+            }}
+          />
+        )}
+      </MapContainer>
+    </>
   );
 };
 

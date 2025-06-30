@@ -3,6 +3,7 @@ import { Feature, Polygon } from "geojson";
 import { CATEGORIES, CATEGORY_CONFIG } from "../constants";
 
 export type OverpassMarkerData = {
+  id: number | string;
   position: [number, number];
   name?: string;
   tags?: Record<string, string>;
@@ -13,7 +14,6 @@ const buildBaseOverpassQuery = (
   filters: string[],
   spatialFilter: string,
 ) => {
-  // ${center ? `(around:${radius},${center[0]},${center[1]})` : `(${bbox.join(",")})`};`;
   const queryStr = (filter: string) => `nwr${filter}${spatialFilter};`;
 
   const filterBlocks = filters
@@ -38,23 +38,17 @@ const buildOverpassQueryForSingleLocation = (
   bbox: [number, number, number, number]
 ) => buildBaseOverpassQuery(filters, (center ? `(around:${radius},${center[0]},${center[1]})` : `(${bbox.join(",")})`));
 
-/**
- * Build Overpass QL query for a polygon area using the 'poly' filter.
- * @param polygon A turf.js Polygon feature (GeoJSON)
- * @param filters Array of Overpass filter strings (e.g. ["leisure=playground"])
- * @returns Overpass QL string
- */
 export function buildOverpassQueryForPolygon(
   polygon: Feature<Polygon>,
   filters: string[]
 ) {
-  // Get coordinates as [lng, lat] and flatten to Overpass poly string (lat lon pairs)
   const coords = getCoords(polygon)[0]; // outer ring
   const polyString = coords.map(([lng, lat]) => `${lat} ${lng}`).join(" ");
   return buildBaseOverpassQuery(filters, `(poly:"${polyString}")`);
 }
 
 type OverpassElement = {
+  id: number | string;
   type: "node" | "way" | "relation";
   lat?: number;
   lon?: number;
@@ -68,8 +62,7 @@ export async function fetchOverpassMarkers(
   categories: CATEGORIES[],
   bbox: [number, number, number, number],
   polygon?: Feature<Polygon> | null
-): Promise<OverpassElement[]> {
-  // Map categories to filter strings using CATEGORY_CONFIG
+): Promise<OverpassMarkerData[]> {
   const filters = categories.flatMap(cat => CATEGORY_CONFIG[cat].filters || []);
 
   const overpassUrl = "https://overpass-api.de/api/interpreter";
@@ -89,6 +82,7 @@ export async function fetchOverpassMarkers(
     .map((el: OverpassElement) => {
       if (el.type === "node" && el.lat !== undefined && el.lon !== undefined) {
         return {
+          id: el.id,
           position: [el.lat, el.lon] as [number, number],
           name: el.tags?.name,
           tags: el.tags,
@@ -97,6 +91,7 @@ export async function fetchOverpassMarkers(
       }
       if (el.type !== "node" && el.center) {
         return {
+          id: el.id,
           position: [el.center.lat, el.center.lon] as [number, number],
           name: el.tags?.name,
           tags: el.tags,
@@ -105,5 +100,5 @@ export async function fetchOverpassMarkers(
       }
       return null;
     })
-    .filter(Boolean);
+    .filter(Boolean) as OverpassMarkerData[];
 }

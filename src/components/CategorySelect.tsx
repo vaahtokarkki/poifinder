@@ -72,28 +72,31 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
         >
           {Object.values(CATEGORY_GROUP)
             .filter((g) => typeof g === "number")
-            .map((group) => (
-              <React.Fragment key={group as unknown as string}>
-                <ListSubheader style={{ lineHeight: "2em", padding: ".2em 1em"}}>{CATEGORY_GROUP_DISPLAY[group as CATEGORY_GROUP]}</ListSubheader>
-                {groupedCategories[group as CATEGORY_GROUP].map((cat) => (
-                  <MenuItem
-                    key={cat.value}
-                    value={cat.value}
-                    style={{ padding: "0 1em" }}
-                    onClick={() => {
-                      const alreadySelected = value.includes(cat.value);
-                      const newSelected = alreadySelected
-                        ? value.filter((v) => v !== cat.value)
-                        : [...value, cat.value];
-                      onChange(newSelected);
-                    }}
-                  >
-                    <Checkbox checked={value.indexOf(cat.value) > -1} style={{ padding: ".4em .5em"}}/>
-                    <ListItemText primary={cat.label} />
-                  </MenuItem>
-                ))}
-              </React.Fragment>
-            ))}
+            .flatMap((group) => [
+              <ListSubheader
+                key={`subheader-${group}`}
+                style={{ lineHeight: "2em", padding: ".2em 1em"}}
+              >
+                {CATEGORY_GROUP_DISPLAY[group as CATEGORY_GROUP]}
+              </ListSubheader>,
+              ...groupedCategories[group as CATEGORY_GROUP].map((cat) => (
+                <MenuItem
+                  key={cat.value}
+                  value={cat.value}
+                  style={{ padding: "0 1em" }}
+                  onClick={() => {
+                    const alreadySelected = value.includes(cat.value);
+                    const newSelected = alreadySelected
+                      ? value.filter((v) => v !== cat.value)
+                      : [...value, cat.value];
+                    onChange(newSelected);
+                  }}
+                >
+                  <Checkbox checked={value.indexOf(cat.value) > -1} style={{ padding: ".4em .5em"}}/>
+                  <ListItemText primary={cat.label} />
+                </MenuItem>
+              ))
+            ])}
         </Select>
       </FormControl>
     </div>

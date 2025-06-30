@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Autocomplete, TextField, CircularProgress } from "@mui/material";
 import { useUserPosition } from "../hooks/index";
+import { fetchSuggestions, Suggestion } from "../api/geocode";
 
 type GeocodeAutoCompleteProps = {
   label?: string;
@@ -8,23 +9,6 @@ type GeocodeAutoCompleteProps = {
   placeholder?: string;
   styles?: React.CSSProperties;
   onClear?: () => void; // <-- add this prop
-};
-
-type Suggestion = {
-  label: string;
-  coords: [number, number];
-};
-
-type PhotonFeature = {
-  properties?: {
-    label?: string;
-    name?: string;
-    city?: string;
-    country?: string;
-  };
-  geometry?: {
-    coordinates?: [number, number];
-  };
 };
 
 const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
@@ -41,43 +25,16 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
   // Use user position from hook
   const { position: userPosition } = useUserPosition();
 
-  // Fetch suggestions from photon.komoot.io
-  const fetchSuggestions = async (query: string) => {
+  // Fetch suggestions from photon.komoot.io (now imported)
+  const handleFetchSuggestions = async (query: string) => {
     if (!query.trim()) {
       setOptions([]);
       return;
     }
     setLoading(true);
     try {
-      let url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query)}&limit=8`;
-      if (
-        userPosition &&
-        typeof userPosition.lat === "number" &&
-        typeof userPosition.lng === "number"
-      ) {
-        url += `&lat=${userPosition.lat}&lon=${userPosition.lng}`;
-      }
-      const res = await fetch(url);
-      const data = await res.json();
-
-      setOptions(
-        (data.features || []).map(
-          (item: PhotonFeature) => {
-            const label =
-              item.properties &&
-              (item.properties.label ||
-                item.properties.name ||
-                item.properties.city ||
-                item.properties.country);
-            const coords =
-              item.geometry &&
-              Array.isArray(item.geometry.coordinates)
-                ? [item.geometry.coordinates[1], item.geometry.coordinates[0]]
-                : undefined;
-            return label && coords ? { label, coords } : null;
-          }
-        ).filter(Boolean)
-      );
+      const results = await fetchSuggestions(query, userPosition);
+      setOptions(results);
     } catch (error) {
       console.error("Error fetching suggestions:", error);
       setOptions([]);
@@ -92,7 +49,7 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
     if (reason === "input") {
       if (debounceRef.current) clearTimeout(debounceRef.current);
       debounceRef.current = setTimeout(() => {
-        fetchSuggestions(value);
+        handleFetchSuggestions(value);
       }, 400);
       if (value === "" && typeof onClear === "function") {
         onClear();

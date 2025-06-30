@@ -96,7 +96,7 @@ const RenderMarkerContents: React.FC<{ marker: MarkerData }> = ({ marker }) => {
               const displayKey = formatDisplay(key);
 
               return (
-                <tr key={key}>
+                <tr key={`${marker.position.join(",")}-${key}`}>
                   <td style={{ fontWeight: 500, paddingRight: 8, verticalAlign: "top" }}>{displayKey}</td>
                   <td style={{ verticalAlign: "top" }}>
                     {key === "website" || key === "url" ? (
@@ -119,23 +119,18 @@ const RenderMarkerContents: React.FC<{ marker: MarkerData }> = ({ marker }) => {
 
 const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   markers,
-}) => {
-  console.log("Rendering POI markers:", markers);
-  return (
-    <>
-      {markers.map((marker) => (
-        <Marker
-          key={String(marker.position)}
-          position={marker.position}
-          icon={getMarkerIcon(marker)}
-        >
-          <Popup>
-            <RenderMarkerContents marker={marker} />
-          </Popup>
-        </Marker>
-      ))}
-    </>
-  );
-};
+}) => <>
+  {markers.map((marker) => (
+    <Marker
+      key={String(marker.position) + (marker.name || "") + (marker.type || "")}
+      position={marker.position}
+      icon={getMarkerIcon(marker)}
+    >
+      <Popup>
+        <RenderMarkerContents marker={marker} />
+      </Popup>
+    </Marker>
+  ))}
+</>
 
 export default PoiMarkers;

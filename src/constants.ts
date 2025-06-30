@@ -10,6 +10,7 @@ import BedtimeIcon from '@mui/icons-material/Bedtime';
 import PetsIcon from '@mui/icons-material/Pets';
 import NaturePeopleIcon from '@mui/icons-material/NaturePeople';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
+import RecyclingIcon from '@mui/icons-material/Recycling';
 import * as React from "react";
 
 export enum CATEGORIES {
@@ -24,7 +25,8 @@ export enum CATEGORIES {
   TentSite,
   DogPark,
   RestArea,
-  Beach
+  Beach,
+  Recycling,
 }
 
 export enum CATEGORY_GROUP {
@@ -128,6 +130,13 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(NaturePeopleIcon),
     color: "#0D47A1",
     group: CATEGORY_GROUP.Car,
+  },
+  [CATEGORIES.Recycling]: {
+    filters: ["[amenity=recycling]"],
+    display: "Recycling",
+    icon: React.createElement(RecyclingIcon),
+    color: "green",
+    group: CATEGORY_GROUP.Essentials,
   },
 };
 

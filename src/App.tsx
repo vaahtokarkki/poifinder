@@ -256,6 +256,7 @@ const App = () => {
         );
         if (categoryEntry) {
           setCategory([categoryEntry[1] as CATEGORIES]);
+          categoriesSet = true;
         } else {
           // Try to match by display string in CATEGORY_CONFIG
           const { CATEGORY_CONFIG } = await import("./constants");
@@ -264,9 +265,16 @@ const App = () => {
           );
           if (found) {
             setCategory([parseInt(found[0], 10) as CATEGORIES]);
+            categoriesSet = true;
           }
         }
       }
+
+      // If no category found from URL or query, set Playgrounds and Toilets as default
+      if (!categoriesSet) {
+        setCategory([CATEGORIES.Playgrounds, CATEGORIES.Toilets]);
+      }
+
       setAppInitialized(true); // <-- set initialized after parsing
     };
     parseAndSetFromUrl();

@@ -68,7 +68,7 @@ const JsonLdSeo: React.FC<JsonLdSeoProps> = ({ markers }) => {
   return (
     <>
       <title>{title}</title>
-      <script type="application/ld+json">
+      <script className='structured-data-list'  type="application/ld+json">
         {JSON.stringify(jsonLd)}
       </script>
     </>

@@ -3,7 +3,7 @@ import MyLocationIcon from '@mui/icons-material/MyLocation';
 import SearchIcon from '@mui/icons-material/Search';
 import { buffer } from "@turf/turf";
 import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
-import L from 'leaflet';
+import { Map, latLngBounds } from 'leaflet';
 import { useEffect, useState } from "react";
 import { GeoJSON, MapContainer, TileLayer, useMapEvent, ZoomControl } from "react-leaflet";
 import CategorySelect from "./components/CategorySelect";
@@ -20,6 +20,7 @@ import { CATEGORIES } from "./constants";
 import { fetchSuggestions } from "./api/geocode";
 import { parseCityFromPath, parseCategoryFromPath } from "./utils";
 import JsonLdSeo from "./components/JsonLdSeo";
+import { Typography } from '@mui/material';
 
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
@@ -38,7 +39,7 @@ const App = () => {
   const [displaySearch, setDisplaySearch] = useState(false);
   const [displaySearchItem, setDisplaySearchItem] = useState<string | null>(null); // "search" | "routes" | null
   const [markers, setMarkers] = useState<OverpassMarkerData[]>([]);
-  const [map, setMap] = useState<L.Map | null>(null);
+  const [map, setMap] = useState<Map | null>(null);
   const [routeGeoJson, setRouteGeoJson] = useState<FeatureCollection | null>(null);
   const [appInitialized, setAppInitialized] = useState(false); // <-- add this line
 
@@ -172,7 +173,7 @@ const App = () => {
           [routeGeoJson.bbox[1], routeGeoJson.bbox[0]],
           [routeGeoJson.bbox[3], routeGeoJson.bbox[2]],
         ];
-        const bounds = L.latLngBounds(
+        const bounds = latLngBounds(
           [minLat, minLon],
           [maxLat, maxLon]
         );
@@ -197,7 +198,7 @@ const App = () => {
         [routeGeoJson.bbox[1], routeGeoJson.bbox[0]],
         [routeGeoJson.bbox[3], routeGeoJson.bbox[2]],
       ];
-      const bounds = L.latLngBounds(
+      const bounds = latLngBounds(
         [minLat, minLon],
         [maxLat, maxLon]
       );
@@ -312,6 +313,33 @@ const App = () => {
     }
   }, [category, map]);
 
+  // Listen for user position and fetch markers if no city in URL and user position becomes available or markers are empty
+  useEffect(() => {
+    const city = parseCityFromPath(window.location.pathname);
+    if (
+      !city &&
+      userPosition &&
+      userPosition.initialized &&
+      typeof userPosition.lat === "number" &&
+      typeof userPosition.lng === "number" &&
+      markers.length === 0
+    ) {
+      setSearchPosition([userPosition.lat, userPosition.lng]);
+      fetchMarkers(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userPosition.initialized, userPosition.lat, userPosition.lng, map]);
+
+  function getBrowsePointsTitle() {
+    const city = parseCityFromPath(window.location.pathname);
+    if (city) {
+      // Capitalize first letter
+      const cityDisplay = city.charAt(0).toUpperCase() + city.slice(1);
+      return `Browse points near ${cityDisplay} by selecting categories`;
+    }
+    return "Browse points by selecting categories";
+  }
+
   return (
     <>
       <JsonLdSeo markers={markers} />
@@ -325,7 +353,9 @@ const App = () => {
       >
         <MapPanHandler onMove={handleMapPan} />
         <Loading active={loading} />
-        <div style={{ display: "flex", flexWrap: "wrap", flexDirection: "column" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", flexDirection: "column", position: "relative", padding: "1.5em 1.25em 1em 1.25em", zIndex: 1000, backdropFilter: "blur(5px)", margin: ".5em 1em", borderRadius: "1em", background: "rgba(255, 255, 255, 0.77)" }}>
+          <Typography variant="h1" style={{fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em"}}>{getBrowsePointsTitle()}</Typography>
+
           <SearchBar
             onSearch={(_, coords) => {
               if (coords && Array.isArray(coords) && coords.length === 2) {

@@ -2,7 +2,7 @@ import React from "react";
 import { Marker, Popup } from "react-leaflet";
 import ParkIcon from '@mui/icons-material/Park';
 import { renderToString } from "react-dom/server";
-import L from "leaflet";
+import { divIcon } from "leaflet";
 import { CATEGORY_CONFIG, CATEGORIES, parseFilterString } from "./constants";
 import { OverpassMarkerData } from "./api/overpass"; // <-- Import the type
 
@@ -19,7 +19,7 @@ const RenderMarkerIcon = (
   color: string = "black"
 ) => {
   const size = 25;
-  return L.divIcon({
+  return divIcon({
     className: "",
     html: `<div style="display:flex;align-items:center;justify-content:center;">
       <span style="

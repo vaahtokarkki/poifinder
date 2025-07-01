@@ -38,7 +38,6 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
         zIndex: 1000,
         flexGrow: 1,
         maxWidth: 400,
-        margin: ".5em 1em .5em 1em",
       }}
     >
       <FormControl fullWidth size="small">
@@ -68,7 +67,7 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
               })}
             </Box>
           )}
-          style={{background: "#fff", borderRadius: "1em", padding: 0, }}
+          style={{background: "#fff", borderRadius: "1em", padding: 0, border: "1px solid #0000001a" }}
         >
           {Object.values(CATEGORY_GROUP)
             .filter((g) => typeof g === "number")

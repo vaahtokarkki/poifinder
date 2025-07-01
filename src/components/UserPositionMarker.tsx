@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Marker, useMap } from "react-leaflet";
-import L from "leaflet";
+import { divIcon } from "leaflet";
 import CircleIcon from "@mui/icons-material/Circle";
 import { renderToString } from "react-dom/server";
 import { useUserPosition } from "../hooks";
@@ -49,7 +49,7 @@ const UserPositionMarker: React.FC = () => {
   return (
     <Marker
       position={[position.lat, position.lng]}
-      icon={L.divIcon({
+      icon={divIcon({
         className: "",
         html: `<div style="display:flex;align-items:center;justify-content:center;">
           <span style="

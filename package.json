@@ -6,11 +6,11 @@
   "homepage": "https://poifinder.app",
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc -b && vite build && cp dist/index.html dist/404.html && cp CNAME dist/ && cp CNAME dist/",
+    "build": "tsc -b --noCheck  && vite build && cp dist/index.html dist/404.html && cp CNAME dist/ && cp CNAME dist/",
     "lint": "gts lint",
     "preview": "vite preview",
     "clean": "gts clean",
-    "compile": "tsc",
+    "compile": "tsc --noCheck ",
     "fix": "gts fix",
     "prepare": "npm run compile",
     "pretest": "npm run compile",

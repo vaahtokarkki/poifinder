@@ -10,6 +10,7 @@ type CategorySelectProps = {
   value: CATEGORIES[];
   onChange: (value: CATEGORIES[]) => void;
   onClose?: () => void;
+  visible: bool,
 };
 
 // Build categories array from CATEGORY_CONFIG, including group
@@ -31,7 +32,9 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
   value,
   onChange,
   onClose,
+  visible,
 }) => {
+  if (!visible) return null
   return (
     <div
       style={{
@@ -62,6 +65,7 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
                   <Chip
                     key={val}
                     label={cat ? cat.label : val}
+                    style={{background: "rgba(0, 0, 0, 0.04)"}}
                   />
                 );
               })}

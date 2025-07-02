@@ -2,6 +2,7 @@ import React from "react";
 import { OverpassMarkerData } from "../api/overpass";
 import { parseCityFromPath, parseCategoryFromPath } from "../utils";
 import { fetchSuggestions } from "../api/geocode";
+import { getCoords } from "@turf/invariant";
 
 type JsonLdSeoProps = {
   markers: OverpassMarkerData[];
@@ -54,15 +55,18 @@ const JsonLdSeo: React.FC<JsonLdSeoProps> = ({ markers }) => {
         "longitude": cityCoords[1]
       }
     },
-    "hasPart": pois.map((poi) => ({
-      "@type": "Place",
-      "name": poi.name,
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": poi.position[0],
-        "longitude": poi.position[1]
+    "hasPart": pois.map((poi) => {
+      const coords = getCoords(poi.geom);
+      return {
+        "@type": "Place",
+        "name": poi.name,
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": coords[1],
+          "longitude": coords[0]
+        }
       }
-    }))
+    })
   };
 
   return (

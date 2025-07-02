@@ -35,68 +35,71 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
 
   if (displayRouteInfo) {
     return (
-      <Card style={{ margin: "1em 1em 0 1em", borderRadius: "1em", maxWidth: 350, zIndex: 1000, padding: "1em 1.5em", boxShadow: "0 2px 8px rgba(0,0,0,0.15)"}}>
-        <CardContent style={{padding: 0}}>
-          <Typography variant="body2" >
-            Search POIs along {startLocationValue || "your location"} and {endLocationValue || "-"}
-          </Typography>
-          <Button
-            size="small"
-            variant="outlined"
-            startIcon={<DeleteIcon />}
-            color="error"
-            style={{padding: ".2em .5em", marginTop: ".5em", textTransform: "none"}}
-            onClick={() => {
-              setStartLocationValue("");
-              setEndLocationValue("");
-              setStartCoords(undefined);
-              setEndCoords(undefined);
-              if (deleteRoute) deleteRoute();
-            }}
-          >
-            Reset route
-          </Button>
-        </CardContent>
-      </Card>
+      <div>
+        <Typography variant="h1" style={{fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em"}}>
+            Displaying points along route from {startLocationValue || "your location"} to {endLocationValue || "-"}
+        </Typography>
+        <Button
+          size="small"
+          variant="outlined"
+          startIcon={<DeleteIcon />}
+          color="error"
+          style={{margin: "0 1em", marginTop: ".5em", textTransform: "none"}}
+          onClick={() => {
+            setStartLocationValue("");
+            setEndLocationValue("");
+            setStartCoords(undefined);
+            setEndCoords(undefined);
+            if (deleteRoute) deleteRoute();
+          }}
+        >
+          Reset route
+        </Button>
+      </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", padding: "0.5em", margin: "1em 1em 0 1em", borderRadius:"1em", background: "white", zIndex: 1000, maxWidth: 350}} >
-      <GeocodeAutoComplete
-        placeholder="Your location"
-        onSelect={(label, coords) => {
-          setStartLocationValue(label);
-          setStartCoords(coords);
-        }}
-        onClear={() => {
-          setStartLocationValue("");
-          setStartCoords(undefined);
-        }}
-        styles={{margin: 0}}
-      />
-      <GeocodeAutoComplete
-        placeholder="Destination location"
-        onSelect={(label, coords) => {
-          setEndLocationValue(label);
-          setEndCoords(coords);
-        }}
-        onClear={() => {
-          setEndLocationValue("");
-          setEndCoords(undefined);
-        }}
-        styles={{margin: 0}}
-      />
-      <Button
-        variant="outlined"
-        style={{ textTransform: "none", margin: "0 .5em" }}
-        onClick={handleSubmit}
-        sx={{marginTop: ".5em"}}
-        disabled={!endCoords}
-      >
-        Search route
-      </Button>
-    </form>
+    <>
+      <Typography variant="h1" style={{fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em"}}>
+          Search points along route
+      </Typography>
+      <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", zIndex: 1000, maxWidth: 350}} >
+        <GeocodeAutoComplete
+          placeholder="Your location"
+          onSelect={(label, coords) => {
+            setStartLocationValue(label);
+            setStartCoords(coords);
+          }}
+          onClear={() => {
+            setStartLocationValue("");
+            setStartCoords(undefined);
+          }}
+          styles={{border: "1px solid #0000001a"}}
+        />
+        <GeocodeAutoComplete
+          placeholder="Destination location"
+          onSelect={(label, coords) => {
+            setEndLocationValue(label);
+            setEndCoords(coords);
+          }}
+          onClear={() => {
+            setEndLocationValue("");
+            setEndCoords(undefined);
+          }}
+          styles={{border: "1px solid #0000001a"}}
+        />
+        <Button
+          variant="outlined"
+          style={{ textTransform: "none", margin: "0 .5em" }}
+          onClick={handleSubmit}
+          sx={{marginTop: ".5em"}}
+          disabled={!endCoords}
+        >
+          Search route
+        </Button>
+      </form>
+    </>
   );
 };
 

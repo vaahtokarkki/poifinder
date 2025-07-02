@@ -3,6 +3,7 @@ import { Marker, Popup } from "react-leaflet";
 import ParkIcon from '@mui/icons-material/Park';
 import { renderToString } from "react-dom/server";
 import { divIcon } from "leaflet";
+import { getCoords } from "@turf/invariant";
 import { CATEGORY_CONFIG, CATEGORIES, parseFilterString } from "./constants";
 import { OverpassMarkerData } from "./api/overpass"; // <-- Import the type
 
@@ -107,9 +108,10 @@ const RenderMarkerContents: React.FC<{ marker: OverpassMarkerData }> = ({ marker
 
 const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   markers,
-}) => <>
-  {markers.map((marker) => (
-    <Marker
+}) => {
+return <>
+  {markers.map((marker) => {
+    return <Marker
       key={String(marker.id)}
       position={marker.position}
       icon={getMarkerIcon(marker)}
@@ -118,7 +120,8 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
         <RenderMarkerContents marker={marker} />
       </Popup>
     </Marker>
-  ))}
+  })}
 </>
+}
 
 export default PoiMarkers;

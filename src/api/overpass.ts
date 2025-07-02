@@ -1,10 +1,12 @@
 import { getCoords } from "@turf/turf";
-import { Feature, Polygon } from "geojson";
+import { point } from "@turf/helpers";
+import type { Feature, Polygon, Point} from "geojson";
 import { CATEGORIES, CATEGORY_CONFIG } from "../constants";
 
 export type OverpassMarkerData = {
   id: number | string;
-  position: [number, number];
+  geom: Feature<Point>;
+  position?: [number, number]; // Leaflet expects position as [lng, lat]
   name?: string;
   tags?: Record<string, string>;
   type?: string;
@@ -84,6 +86,7 @@ export async function fetchOverpassMarkers(
         return {
           id: el.id,
           position: [el.lat, el.lon] as [number, number],
+          geom: point([el.lon, el.lat]),
           name: el.tags?.name,
           tags: el.tags,
           type: el.type,
@@ -93,6 +96,7 @@ export async function fetchOverpassMarkers(
         return {
           id: el.id,
           position: [el.center.lat, el.center.lon] as [number, number],
+          geom: point([el.center.lon, el.center.lat]),
           name: el.tags?.name,
           tags: el.tags,
           type: el.type,

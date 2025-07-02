@@ -11,14 +11,15 @@ import PoiMarkers from "./PoiMarkers";
 import RoutesBar from "./components/RoutesBar";
 import SearchBar from "./components/SearchBar";
 import UserPositionMarker from "./components/UserPositionMarker";
-import { fetchRouteGeoJSON } from "./api/ors";
-import { fetchOverpassMarkers, OverpassMarkerData } from "./api/overpass";
+import { fetchRouteGeoJSON } from "./api/ors.ts";
+import { fetchOverpassMarkers, OverpassMarkerData } from "./api/overpass.ts";
 import Loading from "./components/Loading";
 import SearchPoisButton from "./components/SearchPoisButton";
 import { useUserPosition } from "./hooks/index";
 import { CATEGORIES } from "./constants";
 import { fetchSuggestions } from "./api/geocode";
 import { parseCityFromPath, parseCategoryFromPath } from "./utils";
+import { filterMarkersInBbox } from "./geo";
 import JsonLdSeo from "./components/JsonLdSeo";
 import { Typography } from '@mui/material';
 
@@ -39,6 +40,7 @@ const App = () => {
   const [displaySearch, setDisplaySearch] = useState(false);
   const [displaySearchItem, setDisplaySearchItem] = useState<string | null>(null); // "search" | "routes" | null
   const [markers, setMarkers] = useState<OverpassMarkerData[]>([]);
+  const [filteredMarkers, setFilteredMarkers] = useState<OverpassMarkerData[]>([]);
   const [map, setMap] = useState<Map | null>(null);
   const [routeGeoJson, setRouteGeoJson] = useState<FeatureCollection | null>(null);
   const [appInitialized, setAppInitialized] = useState(false); // <-- add this line
@@ -69,6 +71,7 @@ const App = () => {
         polygon
       );
       setMarkers(data);
+      setFilteredMarkers(filterMarkersInBbox(data, bbox));
     } catch (e) {
       console.error("Error fetching markers:", e);
     }
@@ -223,13 +226,10 @@ const App = () => {
       const city = parseCityFromPath(window.location.pathname);
       const categoryStr = parseCategoryFromPath(window.location.pathname);
 
-      // Set city position
-      let citySet = false;
       if (city) {
         const results = await fetchSuggestions(city);
         if (results && results.length > 0) {
           setSearchPosition(results[0].coords);
-          citySet = true;
         }
       }
 
@@ -330,6 +330,23 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userPosition.initialized, userPosition.lat, userPosition.lng, map]);
 
+    // Listen for user panning
+  useEffect(() => {
+    const events = ["dragend", "zoomend", "resize"];
+    if (!map) return;
+    const onMove = () => {  
+      const bounds = map.getBounds();
+      const southWest = bounds.getSouthWest();
+      const northEast = bounds.getNorthEast();
+      const bbox: [number, number, number, number] = [southWest.lat, southWest.lng, northEast.lat, northEast.lng];
+      setFilteredMarkers(filterMarkersInBbox(markers, bbox));
+    };
+    events.forEach(event => map.on(event, onMove));
+    return () => {
+      events.forEach(event => map.off(event, onMove));
+    };
+  }, [map, markers]);
+
   function getBrowsePointsTitle() {
     const city = parseCityFromPath(window.location.pathname);
     if (city) {
@@ -354,12 +371,16 @@ const App = () => {
         <MapPanHandler onMove={handleMapPan} />
         <Loading active={loading} />
         <div style={{ display: "flex", flexWrap: "wrap", flexDirection: "column", position: "relative", padding: "1.5em 1.25em 1em 1.25em", zIndex: 1000, backdropFilter: "blur(5px)", margin: ".5em 1em", borderRadius: "1em", background: "rgba(255, 255, 255, 0.77)" }}>
-          <Typography variant="h1" style={{fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em"}}>{getBrowsePointsTitle()}</Typography>
-
+          {displaySearchItem !== "routes" ? 
+            <Typography variant="h1" style={{fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em"}}>
+             {getBrowsePointsTitle()}
+            </Typography>
+          : null}
           <SearchBar
             onSearch={(_, coords) => {
               if (coords && Array.isArray(coords) && coords.length === 2) {
                 setSearchPosition(coords);
+                setDisplaySearchItem("")
               }
             }}
             visible={displaySearchItem === "search"}
@@ -377,6 +398,7 @@ const App = () => {
           <CategorySelect
             value={category}
             onChange={setCategory}
+            visible={!displaySearchItem}
             onClose={() => fetchMarkers(false)}
           />
         </div>
@@ -457,7 +479,7 @@ const App = () => {
         />
         <UserPositionMarker />
         <PoiMarkers
-          markers={markers}
+          markers={filteredMarkers}
           setLoading={setLoading}
           fetchMarkers={fetchMarkers}
         />

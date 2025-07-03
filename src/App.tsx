@@ -1,6 +1,3 @@
-import DirectionsIcon from '@mui/icons-material/Directions';
-import MyLocationIcon from '@mui/icons-material/MyLocation';
-import SearchIcon from '@mui/icons-material/Search';
 import { buffer } from "@turf/turf";
 import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
 import { Map, latLngBounds } from 'leaflet';
@@ -18,10 +15,13 @@ import SearchPoisButton from "./components/SearchPoisButton";
 import { useUserPosition } from "./hooks/index";
 import { CATEGORIES } from "./constants";
 import { fetchSuggestions } from "./api/geocode";
-import { parseCityFromPath, parseCategoryFromPath } from "./utils";
+import { parseCityFromPath, parseCategoryFromPath, capitalize } from "./utils";
 import { filterMarkersInBbox } from "./geo";
 import JsonLdSeo from "./components/JsonLdSeo";
 import { Typography } from '@mui/material';
+import SearchIconButton from './components/SearchIconButton.tsx';
+import MyLocationIconButton from './components/MyLocationIconButton.tsx';
+import DirectionsIconButton from './components/DirectionsIconButton.tsx';
 
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
@@ -100,7 +100,7 @@ const App = () => {
   // On mount, if lat/lon or categories query params exist, set map center and categories (only if no city in path)
   useEffect(() => {
     if (map) {
-      const city = parseCityFromPath(window.location.pathname);
+      const city = parseCityFromPath();
 
       // Only update map center and categories from query params if no city in path
       if (!city) {
@@ -217,14 +217,14 @@ const App = () => {
     ) {
       fetchMarkers(false);
     }
-     
+
   }, [routeGeoJson, displaySearchItem]);
 
   // 1. Parse city/category/query params on mount (no fetchMarkers here)
   useEffect(() => {
     const parseAndSetFromUrl = async () => {
-      const city = parseCityFromPath(window.location.pathname);
-      const categoryStr = parseCategoryFromPath(window.location.pathname);
+      const city = parseCityFromPath();
+      const categoryStr = parseCategoryFromPath();
 
       if (city) {
         const results = await fetchSuggestions(city);
@@ -301,7 +301,7 @@ const App = () => {
 
   // Update categories in URL query params when category changes (if no city in path)
   useEffect(() => {
-    const city = parseCityFromPath(window.location.pathname);
+    const city = parseCityFromPath();
     if (!city) {
       const url = new URL(window.location.href);
       if (category && category.length > 0) {
@@ -315,7 +315,7 @@ const App = () => {
 
   // Listen for user position and fetch markers if no city in URL and user position becomes available or markers are empty
   useEffect(() => {
-    const city = parseCityFromPath(window.location.pathname);
+    const city = parseCityFromPath();
     if (
       !city &&
       userPosition &&
@@ -330,11 +330,11 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userPosition.initialized, userPosition.lat, userPosition.lng, map]);
 
-    // Listen for user panning
+  // Listen for user panning
   useEffect(() => {
     const events = ["dragend", "zoomend", "resize"];
     if (!map) return;
-    const onMove = () => {  
+    const onMove = () => {
       const bounds = map.getBounds();
       const southWest = bounds.getSouthWest();
       const northEast = bounds.getNorthEast();
@@ -348,11 +348,10 @@ const App = () => {
   }, [map, markers]);
 
   function getBrowsePointsTitle() {
-    const city = parseCityFromPath(window.location.pathname);
+    const city = parseCityFromPath();
+    const category = parseCategoryFromPath();
     if (city) {
-      // Capitalize first letter
-      const cityDisplay = city.charAt(0).toUpperCase() + city.slice(1);
-      return `Browse points near ${cityDisplay} by selecting categories`;
+      return `Browse ${category ? capitalize(category) : 'points'} near ${capitalize(city)} ${!category ? 'by selecting categories' : ''}`;
     }
     return "Browse points by selecting categories";
   }
@@ -371,11 +370,11 @@ const App = () => {
         <MapPanHandler onMove={handleMapPan} />
         <Loading active={loading} />
         <div style={{ display: "flex", flexWrap: "wrap", flexDirection: "column", position: "relative", padding: "1.5em 1.25em 1em 1.25em", zIndex: 1000, backdropFilter: "blur(5px)", margin: ".5em 1em", borderRadius: "1em", background: "rgba(255, 255, 255, 0.77)" }}>
-          {displaySearchItem !== "routes" ? 
-            <Typography variant="h1" style={{fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em"}}>
-             {getBrowsePointsTitle()}
+          {displaySearchItem !== "routes" ?
+            <Typography variant="h1" style={{ fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em" }}>
+              {getBrowsePointsTitle()}
             </Typography>
-          : null}
+            : null}
           <SearchBar
             onSearch={(_, coords) => {
               if (coords && Array.isArray(coords) && coords.length === 2) {
@@ -406,72 +405,15 @@ const App = () => {
           onClick={() => fetchMarkers()}
           visible={displaySearch && displaySearchItem !== "routes"}
         />
-        <div
-          style={{
-            position: "absolute",
-            bottom: 100,
-            right: 24,
-            zIndex: 1200,
-            background: displaySearchItem === "search" ? "#1976d2" : "white",
-            borderRadius: "50%",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
-            padding: 10,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-            marginBottom: 8,
-          }}
-          onClick={() => displaySearchItem === "search" ? setDisplaySearchItem(null) :setDisplaySearchItem("search")}
-          title="Show/hide search bar"
-        >
-          <SearchIcon
-            fontSize="medium"
-            style={{ color: displaySearchItem === "search" ? "white" : "black" }}
-          />
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            bottom: 50,
-            right: 24,
-            zIndex: 1200,
-            background: "#fff",
-            borderRadius: "50%",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
-            padding: 10,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-          }}
-          onClick={handleMyLocationClick}
-          title="Center map to your location"
-        >
-          <MyLocationIcon fontSize="medium" style={{ color: "black" }} />
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            bottom: 160,
-            right: 24,
-            zIndex: 1200,
-            background: displaySearchItem === "routes" ? "#1976d2" : "white",
-            color: displaySearchItem === "routes" ? "white" : "black",
-            borderRadius: "50%",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
-            padding: 10,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-            marginBottom: 8,
-          }}
-          title="Directions"
-          onClick={() => displaySearchItem === "routes" ? setDisplaySearchItem(null) : setDisplaySearchItem("routes")} 
-        >
-          <DirectionsIcon fontSize="medium" />
-        </div>
+        <SearchIconButton
+          active={displaySearchItem === "search"}
+          onClick={() => setDisplaySearchItem(displaySearchItem === "search" ? null : "search")} />
+        <MyLocationIconButton
+          onClick={handleMyLocationClick} />
+        <DirectionsIconButton
+          onClick={() => setDisplaySearchItem(displaySearchItem === "routes" ? null : "routes")}
+          active={displaySearchItem === "routes"}
+        />
         <ZoomControl position="bottomleft" />
         <TileLayer
           attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'

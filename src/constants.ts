@@ -165,3 +165,19 @@ export const CATEGORY_GROUP_DISPLAY: Record<CATEGORY_GROUP, string> = {
   [CATEGORY_GROUP.Food]: "Food",
   [CATEGORY_GROUP.Nature]: "Nature",
 };
+
+// Overpass API configuration with fallback URLs
+export const OVERPASS_API_CONFIG = {
+  URLS: [
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+    "https://overpass.openstreetmap.ru/cgi/interpreter",
+    "https://lz4.overpass-api.de/api/interpreter",
+  ],
+  RETRY: {
+    maxRetries: 3,
+    initialDelayMs: 5000,
+    backoffMultiplier: 2,
+    jitterPercent: 10,
+  },
+} as const;

@@ -18,10 +18,12 @@ import { fetchSuggestions } from "./api/geocode";
 import { parseCityFromPath, parseCategoryFromPath, capitalize } from "./utils";
 import { filterMarkersInBbox } from "./geo";
 import JsonLdSeo from "./components/JsonLdSeo";
-import { Typography } from '@mui/material';
+import { Typography, Alert, Snackbar } from '@mui/material';
 import SearchIconButton from './components/SearchIconButton.tsx';
 import MyLocationIconButton from './components/MyLocationIconButton.tsx';
 import DirectionsIconButton from './components/DirectionsIconButton.tsx';
+import { saveMapLocation, loadMapLocation } from "./utils/mapLocationStorage";
+import { loadGPSLocation } from "./utils/gpsLocationStorage";
 
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
@@ -43,9 +45,10 @@ const App = () => {
   const [filteredMarkers, setFilteredMarkers] = useState<OverpassMarkerData[]>([]);
   const [map, setMap] = useState<Map | null>(null);
   const [routeGeoJson, setRouteGeoJson] = useState<FeatureCollection | null>(null);
-  const [appInitialized, setAppInitialized] = useState(false); // <-- add this line
+  const [appInitialized, setAppInitialized] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const fetchMarkers = async (useSearchLocation: boolean = false) => {
+  const fetchMarkers = async () => {
     if (!map) return;
     setLoading(true);
     const bounds = map.getBounds();
@@ -64,7 +67,7 @@ const App = () => {
 
     try {
       const data = await fetchOverpassMarkers(
-        useSearchLocation ? searchPosition : null,
+        null, // Don't use GPS-based around query, only bbox
         1000,
         category,
         bbox,
@@ -72,24 +75,35 @@ const App = () => {
       );
       setMarkers(data);
       setFilteredMarkers(filterMarkersInBbox(data, bbox));
+      setErrorMessage(null); // Clear error on success
     } catch (e) {
+      const errorMsg = e instanceof Error ? e.message : "Failed to fetch markers from Overpass API. Please try again.";
       console.error("Error fetching markers:", e);
+      setErrorMessage(errorMsg);
     }
     setLoading(false);
     setDisplaySearch(false);
   };
 
   useEffect(() => {
-    fetchMarkers(true);
-    if (map && searchPosition) map.setView(searchPosition);
+    // When user searches for a location, center the map and fetch markers from new bbox
+    if (map && searchPosition) {
+      map.setView(searchPosition);
+      // Fetch markers after map centers on search result
+      fetchMarkers();
+    }
     setDisplaySearch(false);
-  }, [searchPosition]); // Remove fetchMarkers from deps
+  }, [searchPosition, map]);
 
   // Update URL with current map center on pan
   const handleMapPan = () => {
     setDisplaySearch(true);
     if (map) {
       const center = map.getCenter();
+      const zoom = map.getZoom();
+      // Save to localStorage
+      saveMapLocation({ lat: center.lat, lng: center.lng, zoom });
+      // Update URL
       const url = new URL(window.location.href);
       url.searchParams.set("lat", center.lat.toFixed(6));
       url.searchParams.set("lon", center.lng.toFixed(6));
@@ -109,6 +123,17 @@ const App = () => {
         const lon = params.get("lon");
         if (lat && lon && !isNaN(Number(lat)) && !isNaN(Number(lon))) {
           map.setView([parseFloat(lat), parseFloat(lon)]);
+        } else {
+          // Fall back to GPS location from localStorage first, then map location
+          const gpsLocation = loadGPSLocation();
+          if (gpsLocation) {
+            map.setView([gpsLocation.lat, gpsLocation.lng]);
+          } else {
+            const savedLocation = loadMapLocation();
+            if (savedLocation) {
+              map.setView([savedLocation.lat, savedLocation.lng], savedLocation.zoom || 15);
+            }
+          }
         }
 
         // Parse categories from query params
@@ -215,7 +240,7 @@ const App = () => {
       routeGeoJson &&
       markers.length === 0 // Only fetch if markers are empty
     ) {
-      fetchMarkers(false);
+      fetchMarkers();
     }
 
   }, [routeGeoJson, displaySearchItem]);
@@ -282,22 +307,14 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // 2. When map and either searchPosition or lat/lon in query are ready, fetch markers (only once)
+  // 2. When map is ready and initialized, fetch markers (only once)
   useEffect(() => {
     if (!map || !appInitialized) return;
-    const params = new URLSearchParams(window.location.search);
-    const lat = params.get("lat");
-    const lon = params.get("lon");
-    // If lat/lon in query or searchPosition set by city, fetch markers
-    if (
-      (lat && lon && !isNaN(Number(lat)) && !isNaN(Number(lon))) ||
-      searchPosition
-    ) {
-      fetchMarkers(false);
-      setAppInitialized(false); // <-- prevent further runs
-    }
+    // Fetch markers on initial app load using current map bounds
+    fetchMarkers();
+    setAppInitialized(false); // <-- prevent further runs
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [map, searchPosition, appInitialized]);
+  }, [map, appInitialized]);
 
   // Update categories in URL query params when category changes (if no city in path)
   useEffect(() => {
@@ -312,23 +329,6 @@ const App = () => {
       window.history.replaceState({}, "", url.toString());
     }
   }, [category, map]);
-
-  // Listen for user position and fetch markers if no city in URL and user position becomes available or markers are empty
-  useEffect(() => {
-    const city = parseCityFromPath();
-    if (
-      !city &&
-      userPosition &&
-      userPosition.initialized &&
-      typeof userPosition.lat === "number" &&
-      typeof userPosition.lng === "number" &&
-      markers.length === 0
-    ) {
-      setSearchPosition([userPosition.lat, userPosition.lng]);
-      fetchMarkers(true);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userPosition.initialized, userPosition.lat, userPosition.lng, map]);
 
   // Listen for user panning
   useEffect(() => {
@@ -361,7 +361,7 @@ const App = () => {
       <JsonLdSeo markers={markers} />
       <MapContainer
         center={[60, 25]}
-        zoom={13}
+        zoom={15}
         scrollWheelZoom={true}
         style={{ minHeight: "100vh", minWidth: "100vw" }}
         zoomControl={false}
@@ -436,6 +436,20 @@ const App = () => {
           />
         )}
       </MapContainer>
+      <Snackbar
+        open={!!errorMessage}
+        autoHideDuration={6000}
+        onClose={() => setErrorMessage(null)}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setErrorMessage(null)}
+          severity="error"
+          sx={{ width: "100%" }}
+        >
+          {errorMessage}
+        </Alert>
+      </Snackbar>
     </>
   );
 };

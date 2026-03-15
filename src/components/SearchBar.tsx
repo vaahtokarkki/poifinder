@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GeocodeAutocomplete from "./GeocodeAutocomplete";
 
 type SearchBarProps = {
@@ -14,6 +14,14 @@ const SearchBar: React.FC<SearchBarProps> = ({
   visible = true,
 }) => {
   const [value, setValue] = useState("");
+  const [autoFocus, setAutoFocus] = useState(false);
+
+  // Auto-focus input when SearchBar becomes visible
+  useEffect(() => {
+    if (visible) {
+      setAutoFocus(true);
+    }
+  }, [visible]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,6 +38,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           onSearch(selected, coords);
         }}
         placeholder={placeholder}
+        autoFocus={autoFocus}
       />
     </form>
   );

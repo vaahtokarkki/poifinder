@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Autocomplete, TextField, CircularProgress } from "@mui/material";
 import { useUserPosition } from "../hooks/index";
 import { fetchSuggestions, Suggestion } from "../api/geocode";
@@ -8,7 +8,8 @@ type GeocodeAutoCompleteProps = {
   onSelect: (value: string, coords?: [number, number]) => void;
   placeholder?: string;
   styles?: React.CSSProperties;
-  onClear?: () => void; // <-- add this prop
+  onClear?: () => void;
+  autoFocus?: boolean;
 };
 
 const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
@@ -16,14 +17,23 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
   placeholder = "Type a location",
   styles,
   onClear,
+  autoFocus = false,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const [options, setOptions] = useState<Suggestion[]>([]);
   const [loading, setLoading] = useState(false);
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   // Use user position from hook
   const { position: userPosition } = useUserPosition();
+
+  // Auto-focus input when autoFocus prop changes to true
+  useEffect(() => {
+    if (autoFocus && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [autoFocus]);
 
   // Fetch suggestions from photon.komoot.io (now imported)
   const handleFetchSuggestions = async (query: string) => {
@@ -76,6 +86,7 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
       inputValue={inputValue}
       renderInput={(params) => (
         <TextField
+          inputRef={inputRef}
           style={{ zIndex:1000, background: "#fff", borderRadius: "2em", padding: "0" }}
           {...params}
           placeholder={placeholder}

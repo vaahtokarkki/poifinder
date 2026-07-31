@@ -47,6 +47,7 @@ const App = () => {
   const [routeGeoJson, setRouteGeoJson] = useState<FeatureCollection | null>(null);
   const [appInitialized, setAppInitialized] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [loadingStatus, setLoadingStatus] = useState<string | null>(null);
 
   const fetchMarkers = async () => {
     if (!map) return;
@@ -71,7 +72,8 @@ const App = () => {
         1000,
         category,
         bbox,
-        polygon
+        polygon,
+        setLoadingStatus
       );
       setMarkers(data);
       setFilteredMarkers(filterMarkersInBbox(data, bbox));
@@ -82,6 +84,7 @@ const App = () => {
       setErrorMessage(errorMsg);
     }
     setLoading(false);
+    setLoadingStatus(null);
     setDisplaySearch(false);
   };
 
@@ -368,7 +371,7 @@ const App = () => {
         ref={setMap}
       >
         <MapPanHandler onMove={handleMapPan} />
-        <Loading active={loading} />
+        <Loading active={loading} status={loadingStatus} />
         <div style={{ display: "flex", flexWrap: "wrap", flexDirection: "column", position: "relative", padding: "1.5em 1.25em 1em 1.25em", zIndex: 1000, backdropFilter: "blur(5px)", margin: ".5em 1em", borderRadius: "1em", background: "rgba(255, 255, 255, 0.77)" }}>
           {displaySearchItem !== "routes" ?
             <Typography variant="h1" style={{ fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em" }}>

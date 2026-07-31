@@ -8,6 +8,7 @@ export interface RetryConfig {
   initialDelayMs?: number;
   backoffMultiplier?: number;
   jitterPercent?: number;
+  timeoutMs?: number;
   isRetryableError?: (response: Response) => boolean | Promise<boolean>;
 }
 
@@ -16,6 +17,7 @@ const DEFAULT_CONFIG: Required<RetryConfig> = {
   initialDelayMs: 5000,
   backoffMultiplier: 2,
   jitterPercent: 10,
+  timeoutMs: 10000,
   isRetryableError: (response: Response) => response.status === 429,
 };
 
@@ -68,18 +70,58 @@ export async function fetchWithRetry(
 
   for (let attempt = 0; attempt <= finalConfig.maxRetries; attempt++) {
     try {
-      const response = await fetch(input, init);
-      lastResponse = response;
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), finalConfig.timeoutMs);
 
-      // If not retryable or it's the last attempt, return the response
-      if (
-        attempt === finalConfig.maxRetries ||
-        !(await finalConfig.isRetryableError(response))
-      ) {
-        return response;
+      try {
+        const response = await fetch(input, {
+          ...init,
+          signal: controller.signal,
+        });
+        clearTimeout(timeoutId);
+        lastResponse = response;
+
+        // If not retryable or it's the last attempt, return the response
+        if (
+          attempt === finalConfig.maxRetries ||
+          !(await finalConfig.isRetryableError(response))
+        ) {
+          return response;
+        }
+
+        // Response indicates a retryable error, calculate delay and retry
+        const delayMs = finalConfig.initialDelayMs *
+          Math.pow(finalConfig.backoffMultiplier, attempt);
+        const delayWithJitter = addJitter(
+          delayMs,
+          finalConfig.jitterPercent
+        );
+
+        console.debug(
+          `[fetchWithRetry] Rate limit detected. Attempt ${attempt + 1}/${finalConfig.maxRetries + 1}. ` +
+            `Retrying after ${Math.round(delayWithJitter)}ms...`
+        );
+
+        await sleep(delayWithJitter);
+      } catch (fetchError) {
+        clearTimeout(timeoutId);
+        throw fetchError;
+      }
+    } catch (error) {
+      lastError = error as Error;
+      const isTimeout = error instanceof Error && error.name === 'AbortError';
+
+      // If it's the last attempt, throw the error
+      if (attempt === finalConfig.maxRetries) {
+        throw new Error(isTimeout ? `Request timeout after ${finalConfig.timeoutMs}ms` : lastError.message);
       }
 
-      // Response indicates a retryable error, calculate delay and retry
+      // For timeout and network errors, retry; for other errors, re-throw immediately
+      if (!isTimeout) {
+        throw error;
+      }
+
+      // Log timeout and continue to next attempt
       const delayMs = finalConfig.initialDelayMs *
         Math.pow(finalConfig.backoffMultiplier, attempt);
       const delayWithJitter = addJitter(
@@ -88,22 +130,11 @@ export async function fetchWithRetry(
       );
 
       console.debug(
-        `[fetchWithRetry] Rate limit detected. Attempt ${attempt + 1}/${finalConfig.maxRetries + 1}. ` +
+        `[fetchWithRetry] Request timeout. Attempt ${attempt + 1}/${finalConfig.maxRetries + 1}. ` +
           `Retrying after ${Math.round(delayWithJitter)}ms...`
       );
 
       await sleep(delayWithJitter);
-    } catch (error) {
-      lastError = error as Error;
-
-      // If it's the last attempt, throw the error
-      if (attempt === finalConfig.maxRetries) {
-        throw error;
-      }
-
-      // For network errors, we could optionally retry
-      // For now, we re-throw immediately
-      throw error;
     }
   }
 

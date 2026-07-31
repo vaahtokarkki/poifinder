@@ -64,7 +64,8 @@ export async function fetchOverpassMarkers(
   radius: number,
   categories: CATEGORIES[],
   bbox: [number, number, number, number],
-  polygon?: Feature<Polygon> | null
+  polygon?: Feature<Polygon> | null,
+  onStatusChange?: (status: string) => void
 ): Promise<OverpassMarkerData[]> {
   const filters = categories.flatMap(cat => CATEGORY_CONFIG[cat].filters || []);
 
@@ -158,9 +159,9 @@ export async function fetchOverpassMarkers(
   for (let urlIndex = 0; urlIndex < OVERPASS_API_CONFIG.URLS.length; urlIndex++) {
     const url = OVERPASS_API_CONFIG.URLS[urlIndex];
     try {
-      if (urlIndex > 0) {
-        console.debug(`[Overpass] Pass 1: Trying URL ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}: ${url}`);
-      }
+      const status = `Loading from server ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}...`;
+      onStatusChange?.(status);
+      console.debug(`[Overpass] Pass 1: Trying URL ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}: ${url}`);
 
       const result = await tryFetchFromURL(url, 0, 1); // maxRetries: 0 for pass 1
       console.debug(`[Overpass] Pass 1: Successfully fetched from URL ${urlIndex + 1}`);
@@ -168,16 +169,21 @@ export async function fetchOverpassMarkers(
     } catch (error) {
       const errorMsg = error instanceof Error ? error.message : String(error);
       pass1Errors.push(`${url}: ${errorMsg}`);
+      const status = `Server ${urlIndex + 1} failed (${errorMsg}). Trying next...`;
+      onStatusChange?.(status);
       console.debug(`[Overpass] Pass 1: URL ${urlIndex + 1} failed (${errorMsg}), trying next...`);
     }
   }
 
   // Pass 2: All URLs failed in pass 1, now retry with exponential backoff
   console.debug("[Overpass] Pass 1 failed, starting pass 2: retrying all URLs with exponential backoff");
+  onStatusChange?.("All servers failed. Retrying with exponential backoff...");
   const pass2Errors: string[] = [];
   for (let urlIndex = 0; urlIndex < OVERPASS_API_CONFIG.URLS.length; urlIndex++) {
     const url = OVERPASS_API_CONFIG.URLS[urlIndex];
     try {
+      const status = `Retrying server ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length} with backoff...`;
+      onStatusChange?.(status);
       console.debug(`[Overpass] Pass 2: Retrying URL ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}: ${url}`);
 
       const result = await tryFetchFromURL(url, OVERPASS_API_CONFIG.RETRY.maxRetries, 2); // maxRetries: 3 for pass 2
@@ -186,6 +192,8 @@ export async function fetchOverpassMarkers(
     } catch (error) {
       const errorMsg = error instanceof Error ? error.message : String(error);
       pass2Errors.push(`${url}: ${errorMsg}`);
+      const status = `Server ${urlIndex + 1} failed after retries (${errorMsg}). Trying next...`;
+      onStatusChange?.(status);
       console.debug(`[Overpass] Pass 2: URL ${urlIndex + 1} failed even after retries (${errorMsg})`);
     }
   }

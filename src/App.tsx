@@ -1,7 +1,7 @@
 import { buffer } from "@turf/turf";
 import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
 import { Map, latLngBounds } from 'leaflet';
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { GeoJSON, MapContainer, TileLayer, useMapEvent, ZoomControl } from "react-leaflet";
 import CategorySelect from "./components/CategorySelect";
 import PoiMarkers from "./PoiMarkers";
@@ -24,6 +24,7 @@ import MyLocationIconButton from './components/MyLocationIconButton.tsx';
 import DirectionsIconButton from './components/DirectionsIconButton.tsx';
 import { saveMapLocation, loadMapLocation } from "./utils/mapLocationStorage";
 import { loadGPSLocation } from "./utils/gpsLocationStorage";
+import { loadPois, savePois, poiCacheMatchesCategories, isPoiCacheUpToDate } from "./utils/poiStorage";
 
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
@@ -49,13 +50,42 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [loadingStatus, setLoadingStatus] = useState<string | null>(null);
 
-  const fetchMarkers = async () => {
-    if (!map) return;
-    setLoading(true);
+  // The map must not be re-centered on GPS lock once the user has taken control
+  const userMovedMapRef = useRef(false);
+  // Timestamp of the latest setView we triggered ourselves, to tell our own
+  // moves apart from the user zooming or dragging
+  const programmaticMoveAtRef = useRef(0);
+  const initialViewAppliedRef = useRef(false);
+  const gpsLockCenteringDoneRef = useRef(false);
+  // Bounding box the markers have been loaded or requested for
+  const requestedBboxRef = useRef<[number, number, number, number] | null>(null);
+
+  const setMapView = useCallback(
+    (center: [number, number], zoom?: number) => {
+      if (!map) return;
+      programmaticMoveAtRef.current = Date.now();
+      // Move without animating, so the new bounds are readable right away
+      map.setView(center, zoom ?? map.getZoom(), { animate: false });
+    },
+    [map]
+  );
+
+  /** True while a move we triggered ourselves is being handled */
+  const isProgrammaticMove = () => Date.now() - programmaticMoveAtRef.current <= 1000;
+
+  const getBbox = (): [number, number, number, number] | null => {
+    if (!map) return null;
     const bounds = map.getBounds();
     const southWest = bounds.getSouthWest();
     const northEast = bounds.getNorthEast();
-    const bbox: [number, number, number, number] = [southWest.lat, southWest.lng, northEast.lat, northEast.lng];
+    return [southWest.lat, southWest.lng, northEast.lat, northEast.lng];
+  };
+
+  const fetchMarkers = async () => {
+    const bbox = getBbox();
+    if (!map || !bbox) return;
+    setLoading(true);
+    requestedBboxRef.current = bbox;
 
     let polygon: Feature<Polygon | MultiPolygon> | undefined = undefined;
     if (
@@ -77,6 +107,7 @@ const App = () => {
       );
       setMarkers(data);
       setFilteredMarkers(filterMarkersInBbox(data, bbox));
+      savePois({ markers: data, bbox, categories: category });
       setErrorMessage(null); // Clear error on success
     } catch (e) {
       const errorMsg = e instanceof Error ? e.message : "Failed to fetch markers from Overpass API. Please try again.";
@@ -91,51 +122,77 @@ const App = () => {
   useEffect(() => {
     // When user searches for a location, center the map and fetch markers from new bbox
     if (map && searchPosition) {
-      map.setView(searchPosition);
+      // A search result is a deliberate choice, keep GPS lock from overriding it
+      userMovedMapRef.current = true;
+      setMapView(searchPosition);
       // Fetch markers after map centers on search result
       fetchMarkers();
     }
     setDisplaySearch(false);
   }, [searchPosition, map]);
 
-  // Update URL with current map center on pan
+  // Persist the current map center so it can be restored on the next visit
   const handleMapPan = () => {
-    setDisplaySearch(true);
+    // Moves we made ourselves must not ask the user to search the area again
+    if (!isProgrammaticMove()) {
+      setDisplaySearch(true);
+    }
     if (map) {
       const center = map.getCenter();
       const zoom = map.getZoom();
-      // Save to localStorage
       saveMapLocation({ lat: center.lat, lng: center.lng, zoom });
-      // Update URL
-      const url = new URL(window.location.href);
-      url.searchParams.set("lat", center.lat.toFixed(6));
-      url.searchParams.set("lon", center.lng.toFixed(6));
-      window.history.replaceState({}, "", url.toString());
     }
   };
 
+  // Track whether the user has moved the map themselves since initialization
+  useEffect(() => {
+    if (!map) return;
+    const onDragStart = () => {
+      userMovedMapRef.current = true;
+    };
+    const onZoomStart = () => {
+      // Zooms right after one of our own setView calls are not user initiated
+      if (!isProgrammaticMove()) {
+        userMovedMapRef.current = true;
+      }
+    };
+    map.on("dragstart", onDragStart);
+    map.on("zoomstart", onZoomStart);
+    return () => {
+      map.off("dragstart", onDragStart);
+      map.off("zoomstart", onZoomStart);
+    };
+  }, [map]);
+
   // On mount, if lat/lon or categories query params exist, set map center and categories (only if no city in path)
   useEffect(() => {
-    if (map) {
+    if (map && !initialViewAppliedRef.current) {
+      initialViewAppliedRef.current = true;
       const city = parseCityFromPath();
+
+      // A city in the path is an explicit location, it wins over the GPS lock
+      if (city) {
+        userMovedMapRef.current = true;
+      }
 
       // Only update map center and categories from query params if no city in path
       if (!city) {
         const params = new URLSearchParams(window.location.search);
         const lat = params.get("lat");
         const lon = params.get("lon");
+        const savedLocation = loadMapLocation();
         if (lat && lon && !isNaN(Number(lat)) && !isNaN(Number(lon))) {
-          map.setView([parseFloat(lat), parseFloat(lon)]);
+          // Coordinates in the URL are explicit, they win over the GPS lock too
+          userMovedMapRef.current = true;
+          setMapView([parseFloat(lat), parseFloat(lon)], savedLocation?.zoom);
         } else {
-          // Fall back to GPS location from localStorage first, then map location
+          // Center on the last known position: GPS location from localStorage
+          // first, then the last map location
           const gpsLocation = loadGPSLocation();
           if (gpsLocation) {
-            map.setView([gpsLocation.lat, gpsLocation.lng]);
-          } else {
-            const savedLocation = loadMapLocation();
-            if (savedLocation) {
-              map.setView([savedLocation.lat, savedLocation.lng], savedLocation.zoom || 15);
-            }
+            setMapView([gpsLocation.lat, gpsLocation.lng], savedLocation?.zoom);
+          } else if (savedLocation) {
+            setMapView([savedLocation.lat, savedLocation.lng], savedLocation.zoom || 15);
           }
         }
 
@@ -155,10 +212,42 @@ const App = () => {
   }, [map]);
 
   const handleMyLocationClick = () => {
-    if (map && userPosition && userPosition.initialized) {
-      map.setView([userPosition.lat, userPosition.lng], map.getZoom());
+    if (map && typeof userPosition.lat === "number" && typeof userPosition.lng === "number") {
+      setMapView([userPosition.lat, userPosition.lng]);
     }
   };
+
+  // Center on the user once GPS locks, unless the map was moved since init
+  useEffect(() => {
+    if (
+      !map ||
+      !userPosition.hasGpsLock ||
+      gpsLockCenteringDoneRef.current ||
+      typeof userPosition.lat !== "number" ||
+      typeof userPosition.lng !== "number"
+    ) {
+      return;
+    }
+    gpsLockCenteringDoneRef.current = true;
+    if (userMovedMapRef.current) return;
+
+    setMapView([userPosition.lat, userPosition.lng]);
+
+    // The markers loaded so far can be from another area, e.g. when the user
+    // has moved since the last visit, in which case fetch the new surroundings.
+    // Without categories the app is still initializing, the initial load below
+    // then takes care of the fetch.
+    const loaded = requestedBboxRef.current;
+    const isCovered =
+      loaded &&
+      userPosition.lat >= loaded[0] &&
+      userPosition.lat <= loaded[2] &&
+      userPosition.lng >= loaded[1] &&
+      userPosition.lng <= loaded[3];
+    if (!isCovered && category.length > 0) {
+      fetchMarkers();
+    }
+  }, [map, userPosition, setMapView]);
 
   const handleRouteSearch = async (
     start: [number, number] | null,
@@ -208,6 +297,7 @@ const App = () => {
           [minLat, minLon],
           [maxLat, maxLon]
         );
+        userMovedMapRef.current = true;
         map.fitBounds(bounds, { padding: [40, 40] });
       }
       setLoading(false);
@@ -233,6 +323,7 @@ const App = () => {
         [minLat, minLon],
         [maxLat, maxLon]
       );
+      userMovedMapRef.current = true;
       map.fitBounds(bounds, { padding: [40, 40] });
     }
   }, [displaySearchItem, routeGeoJson, map]);
@@ -310,12 +401,27 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // 2. When map is ready and initialized, fetch markers (only once)
+  // 2. When map is ready and initialized, load the cached markers and fetch
+  // fresh ones if the cache does not cover the current view (only once)
   useEffect(() => {
     if (!map || !appInitialized) return;
-    // Fetch markers on initial app load using current map bounds
-    fetchMarkers();
     setAppInitialized(false); // <-- prevent further runs
+
+    const bbox = getBbox();
+    const cache = loadPois();
+
+    // Show cached markers right away, but only the ones of the active
+    // categories, so the map is never empty while a fetch is running
+    if (cache && bbox && poiCacheMatchesCategories(cache, category)) {
+      setMarkers(cache.markers);
+      setFilteredMarkers(filterMarkersInBbox(cache.markers, bbox));
+      requestedBboxRef.current = cache.bbox;
+    }
+
+    // Only hit the network when the cache is stale or from another area
+    if (!cache || !isPoiCacheUpToDate(cache, category, map.getCenter())) {
+      fetchMarkers();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map, appInitialized]);
 
@@ -335,7 +441,8 @@ const App = () => {
 
   // Listen for user panning
   useEffect(() => {
-    const events = ["dragend", "zoomend", "resize"];
+    // moveend covers dragend and zoomend, and also our own setView calls
+    const events = ["moveend", "resize"];
     if (!map) return;
     const onMove = () => {
       const bounds = map.getBounds();
@@ -422,7 +529,7 @@ const App = () => {
           attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
         />
-        <UserPositionMarker />
+        <UserPositionMarker position={userPosition} />
         <PoiMarkers
           markers={filteredMarkers}
           setLoading={setLoading}

@@ -14,8 +14,8 @@ const JsonLdSeo: React.FC<JsonLdSeoProps> = ({ markers }) => {
   const [category, setCategory] = React.useState<string>("");
 
   React.useEffect(() => {
-    const cityStr = parseCityFromPath(window.location.pathname);
-    const categoryStr = parseCategoryFromPath(window.location.pathname);
+    const cityStr = parseCityFromPath();
+    const categoryStr = parseCategoryFromPath();
     setCity(cityStr);
     setCategory(categoryStr);
 
@@ -45,7 +45,7 @@ const JsonLdSeo: React.FC<JsonLdSeoProps> = ({ markers }) => {
     "@type": "WebPage",
     "name": title,
     "description": `Interactive map of ${category} in ${city} powered by OpenStreetMap.`,
-    "url": `https://poifinder.app/${city}/${category.replace(/\s+/g, "-")}`,
+    "url": `https://wayside.cc/${city}/${category.replace(/\s+/g, "-")}`,
     "mainEntity": {
       "@type": "Place",
       "name": title,

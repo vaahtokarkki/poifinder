@@ -1,11 +1,17 @@
 /**
+ * Split the current URL path into segments,
+ * e.g. "/helsinki/toilets" -> ["helsinki", "toilets"].
+ */
+function pathSegments(): string[] {
+  return window.location.pathname.replace(/^\/+|\/+$/g, "").split("/");
+}
+
+/**
  * Parse city from a URL path.
  * Returns a lowercased city string (only a-z), or "" if not present.
  */
 export function parseCityFromPath(): string {
-  let path = window.location.pathname.replace(/^\/+|\/+$/g, "");
-  path = path.replace(/^poifinder\/?/i, "");
-  const [cityRaw] = path.split("/");
+  const [cityRaw] = pathSegments();
   return cityRaw && cityRaw.match(/^[a-zA-Z]+$/) ? cityRaw.toLowerCase() : "";
 }
 
@@ -14,9 +20,7 @@ export function parseCityFromPath(): string {
  * Returns a lowercased category string (a-z and dashes allowed, dashes become spaces), or "" if not present.
  */
 export function parseCategoryFromPath(): string {
-  let path = window.location.pathname.replace(/^\/+|\/+$/g, "");
-  path = path.replace(/^poifinder\/?/i, "");
-  const [, categoryRaw] = path.split("/");
+  const [, categoryRaw] = pathSegments();
   return categoryRaw && categoryRaw.match(/^[a-zA-Z\-]+$/)
     ? categoryRaw.toLowerCase().replace(/-/g, " ")
     : "";

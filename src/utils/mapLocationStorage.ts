@@ -8,7 +8,7 @@ export interface MapLocation {
   zoom?: number;
 }
 
-const STORAGE_KEY = "poifinder_map_location";
+const STORAGE_KEY = "wayside_map_location";
 
 /**
  * Save the map location to localStorage.

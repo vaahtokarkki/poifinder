@@ -8,7 +8,7 @@ export interface GPSLocation {
   timestamp: number;
 }
 
-const STORAGE_KEY = "poifinder_gps_location";
+const STORAGE_KEY = "wayside_gps_location";
 
 /**
  * Save the GPS location to localStorage.

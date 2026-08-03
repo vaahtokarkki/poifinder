@@ -1,54 +1,29 @@
-import React, { useEffect, useRef } from "react";
-import { Marker, useMap } from "react-leaflet";
+import React from "react";
+import { Marker } from "react-leaflet";
 import { divIcon } from "leaflet";
 import CircleIcon from "@mui/icons-material/Circle";
 import { renderToString } from "react-dom/server";
-import { useUserPosition } from "../hooks";
-import { parseCityFromPath } from "../utils";
+import type { LatLng } from "../hooks";
 
-const UserPositionMarker: React.FC = () => {
-  const { position } = useUserPosition();
-  const map = useMap();
-  const hasPanned = useRef(false);
+type UserPositionMarkerProps = {
+  position: LatLng;
+};
 
-  // Listen for user panning
-  useEffect(() => {
-    const onMove = () => {
-      hasPanned.current = true;
-    };
-    map.on("dragstart", onMove);
-    return () => {
-      map.off("dragstart", onMove);
-    };
-  }, [map]);
+// Grey while the position still comes from the cache, blue once GPS has locked
+const NO_GPS_LOCK_COLOR = "#9e9e9e";
+const GPS_LOCK_COLOR = "#1976d2";
 
-  // Center only if not panned yet, no city in path, and no lat/lon in query params
-  useEffect(() => {
-    const city = parseCityFromPath(window.location.pathname);
-    const params = new URLSearchParams(window.location.search);
-    const lat = params.get("lat");
-    const lon = params.get("lon");
-    const hasLatLon = lat && lon && !isNaN(Number(lat)) && !isNaN(Number(lon));
-
-    if (
-      !city &&
-      !hasLatLon &&
-      position.initialized &&
-      typeof position.lat === "number" &&
-      typeof position.lng === "number" &&
-      !hasPanned.current
-    ) {
-      map.setView([position.lat, position.lng]);
-    }
-  }, [position, map]);
-
+const UserPositionMarker: React.FC<UserPositionMarkerProps> = ({ position }) => {
   if (!position.initialized || typeof position.lat !== "number" || typeof position.lng !== "number") {
     return null;
   }
 
+  const color = position.hasGpsLock ? GPS_LOCK_COLOR : NO_GPS_LOCK_COLOR;
+
   return (
     <Marker
       position={[position.lat, position.lng]}
+      opacity={position.hasGpsLock ? 1 : 0.75}
       icon={divIcon({
         className: "",
         html: `<div style="display:flex;align-items:center;justify-content:center;">
@@ -61,7 +36,7 @@ const UserPositionMarker: React.FC = () => {
             justify-content:center;
             border: 3px solid #fff;
           ">
-            ${renderToString(<CircleIcon style={{ color: "#1976d2", fontSize: 20 }} />)}
+            ${renderToString(<CircleIcon style={{ color, fontSize: 20 }} />)}
           </span>
         </div>`,
         iconSize: [36, 36],

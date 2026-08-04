@@ -10,6 +10,8 @@ type GeocodeAutoCompleteProps = {
   styles?: React.CSSProperties;
   onClear?: () => void;
   autoFocus?: boolean;
+  /** Replaces the built in clear button at the end of the field */
+  endAction?: React.ReactNode;
 };
 
 const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
@@ -18,6 +20,7 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
   styles,
   onClear,
   autoFocus = false,
+  endAction,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const [options, setOptions] = useState<Suggestion[]>([]);
@@ -98,7 +101,8 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
             endAdornment: (
               <>
                 {loading ? <CircularProgress color="inherit" size={18} /> : null}
-                {params.InputProps.endAdornment}
+                {/* One button at the end of the field, never two */}
+                {endAction ?? params.InputProps.endAdornment}
               </>
             ),
           }}

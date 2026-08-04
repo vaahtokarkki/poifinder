@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import CloseIcon from "@mui/icons-material/Close";
+import IconButton from "@mui/material/IconButton";
 import GeocodeAutocomplete from "./GeocodeAutocomplete";
 
 type SearchBarProps = {
@@ -6,12 +8,15 @@ type SearchBarProps = {
   placeholder?: string;
   visible?: boolean;
   searchPosition?: [number, number] | null;
+  /** Closes the search bar and brings the category select back */
+  onClose?: () => void;
 };
 
 const SearchBar: React.FC<SearchBarProps> = ({
   onSearch,
   placeholder = "Search for location",
   visible = true,
+  onClose,
 }) => {
   const [value, setValue] = useState("");
   const [autoFocus, setAutoFocus] = useState(false);
@@ -31,7 +36,17 @@ const SearchBar: React.FC<SearchBarProps> = ({
   if (!visible) return null;
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", alignItems: "center" }}>
+    <form
+      onSubmit={handleSubmit}
+      className="search-bar-row"
+      // Escape is the way out of a search box, on top of the close button
+      onKeyDown={(e) => {
+        if (e.key === "Escape" && onClose) {
+          e.stopPropagation();
+          onClose();
+        }
+      }}
+    >
       <GeocodeAutocomplete
         onSelect={(selected, coords) => {
           setValue(selected);
@@ -39,6 +54,25 @@ const SearchBar: React.FC<SearchBarProps> = ({
         }}
         placeholder={placeholder}
         autoFocus={autoFocus}
+        // Match the pill look of the other controls on top of the map
+        styles={{
+          margin: 0,
+          maxWidth: 380,
+          borderRadius: "999px",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+        }}
+        endAction={
+          onClose && (
+            <IconButton
+              size="small"
+              onClick={onClose}
+              title="Close search"
+              aria-label="Close search"
+            >
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          )
+        }
       />
     </form>
   );

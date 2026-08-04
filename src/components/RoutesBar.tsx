@@ -36,7 +36,7 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
   if (displayRouteInfo) {
     return (
       <div>
-        <Typography variant="h1" style={{fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em"}}>
+        <Typography variant="h2" style={{fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em"}}>
             Displaying points along route from {startLocationValue || "your location"} to {endLocationValue || "-"}
         </Typography>
         <Button
@@ -61,7 +61,7 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
 
   return (
     <>
-      <Typography variant="h1" style={{fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em"}}>
+      <Typography variant="h2" style={{fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em"}}>
           Search points along route
       </Typography>
       <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", zIndex: 1000, maxWidth: 350}} >

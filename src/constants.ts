@@ -18,6 +18,11 @@ import LandscapeIcon from '@mui/icons-material/Landscape';
 import WaterDropIcon from '@mui/icons-material/WaterDrop';
 import RvHookupIcon from '@mui/icons-material/RvHookup';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
+import CabinIcon from '@mui/icons-material/Cabin';
+import HikingIcon from '@mui/icons-material/Hiking';
+import StorefrontIcon from '@mui/icons-material/Storefront';
 import * as React from "react";
 
 export enum CATEGORIES {
@@ -52,11 +57,16 @@ export enum CATEGORY_GROUP {
   Nature,
 }
 
+/** An icon element that can be re-rendered in another size */
+export type CategoryIcon = React.ReactElement<{
+  fontSize?: "inherit" | "small" | "medium" | "large";
+}>;
+
 // Category config type
 export type CategoryConfig = {
   filters: string[];
   display: string;
-  icon: React.ReactElement;
+  icon: CategoryIcon;
   color: string;
   group: CATEGORY_GROUP; 
 };
@@ -216,6 +226,102 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     group: CATEGORY_GROUP.Nature,
   },
 };
+
+export type CategoryPreset = {
+  label: string;
+  icon: CategoryIcon;
+  /** Tints the icon, so the presets are told apart at a glance */
+  color: string;
+  categories: CATEGORIES[];
+};
+
+/**
+ * Ready made category combinations for the most common trips, so that the app
+ * is useful without picking the categories one by one.
+ */
+export const CATEGORY_PRESETS: CategoryPreset[] = [
+  {
+    label: "Family",
+    icon: React.createElement(FamilyRestroomIcon),
+    color: "#2E7D32",
+    categories: [CATEGORIES.Playgrounds, CATEGORIES.Toilets],
+  },
+  {
+    label: "Road trip",
+    icon: React.createElement(DirectionsCarIcon),
+    color: "#1565C0",
+    categories: [
+      CATEGORIES.GasStation,
+      CATEGORIES.ChargingStation,
+      CATEGORIES.Toilets,
+      CATEGORIES.RestArea,
+    ],
+  },
+  {
+    label: "Camping",
+    icon: React.createElement(CabinIcon),
+    color: "#EF6C00",
+    categories: [
+      CATEGORIES.TentSite,
+      CATEGORIES.Shelter,
+      CATEGORIES.DrinkingWater,
+      CATEGORIES.Toilets,
+    ],
+  },
+  {
+    label: "Van life",
+    icon: React.createElement(RvHookupIcon),
+    color: "#6A1B9A",
+    categories: [
+      CATEGORIES.SanitaryDumpStation,
+      CATEGORIES.DrinkingWater,
+      CATEGORIES.Toilets,
+      CATEGORIES.Parking,
+      CATEGORIES.Recycling,
+    ],
+  },
+  {
+    label: "Outdoors",
+    icon: React.createElement(HikingIcon),
+    color: "#00838F",
+    categories: [
+      CATEGORIES.Viewpoint,
+      CATEGORIES.Picnic,
+      CATEGORIES.DrinkingWater,
+      CATEGORIES.OutdoorGym,
+    ],
+  },
+  {
+    label: "Dog walk",
+    icon: React.createElement(PetsIcon),
+    color: "#8D6E63",
+    categories: [
+      CATEGORIES.DogPark,
+      CATEGORIES.DrinkingWater,
+      CATEGORIES.Toilets,
+    ],
+  },
+  {
+    label: "Errands",
+    icon: React.createElement(StorefrontIcon),
+    color: "#C62828",
+    categories: [
+      CATEGORIES.Atm,
+      CATEGORIES.PostBoxes,
+      CATEGORIES.Recycling,
+      CATEGORIES.LuggageStorage,
+    ],
+  },
+];
+
+/** True when the selection is exactly the categories of the preset */
+export function isPresetActive(
+  preset: CategoryPreset,
+  selected: CATEGORIES[]
+): boolean {
+  if (preset.categories.length !== selected.length) return false;
+  return preset.categories.every((category) => selected.includes(category));
+}
 
 // Helper to parse a filter string like "[amenity=retail][toilets=yes]" into { amenity: "retail", toilets: "yes" }
 export function parseFilterString(filter: string): Record<string, string> {

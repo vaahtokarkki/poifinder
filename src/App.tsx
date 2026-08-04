@@ -2,7 +2,7 @@ import { buffer } from "@turf/turf";
 import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
 import { Map, latLngBounds } from 'leaflet';
 import { useCallback, useEffect, useRef, useState } from "react";
-import { GeoJSON, MapContainer, TileLayer, useMapEvent, ZoomControl } from "react-leaflet";
+import { GeoJSON, MapContainer, TileLayer, useMapEvent } from "react-leaflet";
 import CategorySelect from "./components/CategorySelect";
 import PoiMarkers from "./PoiMarkers";
 import RoutesBar from "./components/RoutesBar";
@@ -18,7 +18,10 @@ import { fetchSuggestions } from "./api/geocode";
 import { parseCityFromPath, parseCategoryFromPath, capitalize } from "./utils";
 import { filterMarkersInBbox } from "./geo";
 import JsonLdSeo from "./components/JsonLdSeo";
-import { Typography, Alert, Snackbar } from '@mui/material';
+import { Alert, Snackbar } from '@mui/material';
+import CategoryPresets from './components/CategoryPresets.tsx';
+import BottomSheet from './components/BottomSheet.tsx';
+import { InfoSheetContent, InfoSheetHeader } from './components/AppInfoPanel.tsx';
 import SearchIconButton from './components/SearchIconButton.tsx';
 import MyLocationIconButton from './components/MyLocationIconButton.tsx';
 import DirectionsIconButton from './components/DirectionsIconButton.tsx';
@@ -53,6 +56,8 @@ const App = () => {
   const [shareMessage, setShareMessage] = useState<string | null>(null);
   const [loadingStatus, setLoadingStatus] = useState<string | null>(null);
 
+  // Controls drawn on top of the map, their gestures are not map gestures
+  const overlayRef = useRef<HTMLDivElement | null>(null);
   // The map must not be re-centered on GPS lock once the user has taken control
   const userMovedMapRef = useRef(false);
   // Timestamp of the latest setView we triggered ourselves, to tell our own
@@ -84,12 +89,18 @@ const App = () => {
     return [southWest.lat, southWest.lng, northEast.lat, northEast.lng];
   };
 
-  const fetchMarkers = async () => {
+  /**
+   * Load the points of the current view. The categories can be given, so that
+   * a selection made in the same event handler does not have to be in state yet
+   */
+  const fetchMarkers = async (categoriesOverride?: CATEGORIES[]) => {
     const bbox = getBbox();
     if (!map || !bbox) return;
 
+    const categories = categoriesOverride ?? category;
+
     // Without categories there is nothing to query for, just empty the map
-    if (category.length === 0) {
+    if (categories.length === 0) {
       setMarkers([]);
       setFilteredMarkers([]);
       requestedBboxRef.current = null;
@@ -113,14 +124,14 @@ const App = () => {
       const data = await fetchOverpassMarkers(
         null, // Don't use GPS-based around query, only bbox
         1000,
-        category,
+        categories,
         bbox,
         polygon,
         setLoadingStatus
       );
       setMarkers(data);
       setFilteredMarkers(filterMarkersInBbox(data, bbox));
-      savePois({ markers: data, bbox, categories: category });
+      savePois({ markers: data, bbox, categories });
       setErrorMessage(null); // Clear error on success
     } catch (e) {
       const errorMsg = e instanceof Error ? e.message : "Failed to fetch markers from Overpass API. Please try again.";
@@ -156,6 +167,37 @@ const App = () => {
       saveMapLocation({ lat: center.lat, lng: center.lng, zoom });
     }
   };
+
+  // Scrolling the preset row sideways or opening a select must not drag the map.
+  // Leaflet's disableClickPropagation cannot be used here: it stops mousedown
+  // at the overlay, and React listens for it further up on the root element, so
+  // the controls inside would stop reacting altogether. Turning the map gesture
+  // off for the duration of the press leaves the DOM events untouched.
+  useEffect(() => {
+    const overlay = overlayRef.current;
+    if (!overlay || !map) return;
+
+    const pauseMapDrag = () => map.dragging.disable();
+    const resumeMapDrag = () => map.dragging.enable();
+    // The map has no business zooming while the pointer is over a control
+    const stopMapZoom = (e: Event) => e.stopPropagation();
+
+    overlay.addEventListener("pointerdown", pauseMapDrag);
+    overlay.addEventListener("wheel", stopMapZoom);
+    overlay.addEventListener("dblclick", stopMapZoom);
+    // The press can end anywhere, e.g. over the menu a select just opened
+    document.addEventListener("pointerup", resumeMapDrag);
+    document.addEventListener("pointercancel", resumeMapDrag);
+
+    return () => {
+      overlay.removeEventListener("pointerdown", pauseMapDrag);
+      overlay.removeEventListener("wheel", stopMapZoom);
+      overlay.removeEventListener("dblclick", stopMapZoom);
+      document.removeEventListener("pointerup", resumeMapDrag);
+      document.removeEventListener("pointercancel", resumeMapDrag);
+      map.dragging.enable();
+    };
+  }, [map]);
 
   // Track whether the user has moved the map themselves since initialization
   useEffect(() => {
@@ -489,13 +531,20 @@ const App = () => {
     };
   }, [map, markers]);
 
+  // A preset is a one tap selection, so search for its points right away
+  const handlePresetSelect = (categories: CATEGORIES[]) => {
+    setCategory(categories);
+    fetchMarkers(categories);
+  };
+
+  // The heading of the info sheet, also the h1 of the page
   function getBrowsePointsTitle() {
     const city = parseCityFromPath();
     const category = parseCategoryFromPath();
     if (city) {
-      return `Browse ${category ? capitalize(category) : 'points'} near ${capitalize(city)} ${!category ? 'by selecting categories' : ''}`;
+      return `${capitalize(category || "points of interest")} near ${capitalize(city)}`;
     }
-    return "Browse points by selecting categories";
+    return "Find the useful places around you";
   }
 
   return (
@@ -505,59 +554,66 @@ const App = () => {
         center={[60, 25]}
         zoom={15}
         scrollWheelZoom={true}
-        style={{ minHeight: "100vh", minWidth: "100vw" }}
+        className="map-root"
         zoomControl={false}
         ref={setMap}
       >
         <MapPanHandler onMove={handleMapPan} />
         <Loading active={loading} status={loadingStatus} />
-        <div style={{ display: "flex", flexWrap: "wrap", flexDirection: "column", position: "relative", padding: "1.5em 1.25em 1em 1.25em", zIndex: 1000, backdropFilter: "blur(5px)", margin: ".5em 1em", borderRadius: "1em", background: "rgba(255, 255, 255, 0.77)" }}>
-          {displaySearchItem !== "routes" ?
-            <Typography variant="h1" style={{ fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em" }}>
-              {getBrowsePointsTitle()}
-            </Typography>
-            : null}
+        <div className="map-overlay-top" ref={overlayRef}>
           <SearchBar
             onSearch={(_, coords) => {
               if (coords && Array.isArray(coords) && coords.length === 2) {
                 setSearchPosition(coords);
-                setDisplaySearchItem("")
+                setDisplaySearchItem(null);
               }
             }}
             visible={displaySearchItem === "search"}
             searchPosition={searchPosition}
+            onClose={() => setDisplaySearchItem(null)}
           />
-          <RoutesBar
-            onSearch={handleRouteSearch}
-            deleteRoute={() => {
-              setRouteGeoJson(null);
-              setMarkers([]); // Reset markers when route is deleted
-            }}
-            visible={displaySearchItem === "routes"}
-            displayRouteInfo={!!routeGeoJson}
-          />
+          {displaySearchItem === "routes" && (
+            <div className="routes-card">
+              <RoutesBar
+                onSearch={handleRouteSearch}
+                deleteRoute={() => {
+                  setRouteGeoJson(null);
+                  setMarkers([]); // Reset markers when route is deleted
+                }}
+                visible
+                displayRouteInfo={!!routeGeoJson}
+              />
+            </div>
+          )}
           <CategorySelect
             value={category}
             onChange={setCategory}
+            // The search bar takes this slot while it is open
             visible={!displaySearchItem}
-            onClose={() => fetchMarkers(false)}
+            onCommit={() => fetchMarkers()}
+          />
+          <CategoryPresets
+            value={category}
+            onSelect={handlePresetSelect}
+            visible={displaySearchItem !== "routes"}
           />
         </div>
         <SearchPoisButton
           onClick={() => fetchMarkers()}
           visible={displaySearch && displaySearchItem !== "routes"}
         />
-        <ShareIconButton onClick={handleShareClick} />
-        <SearchIconButton
-          active={displaySearchItem === "search"}
-          onClick={() => setDisplaySearchItem(displaySearchItem === "search" ? null : "search")} />
-        <MyLocationIconButton
-          onClick={handleMyLocationClick} />
-        <DirectionsIconButton
-          onClick={() => setDisplaySearchItem(displaySearchItem === "routes" ? null : "routes")}
-          active={displaySearchItem === "routes"}
-        />
-        <ZoomControl position="bottomleft" />
+        <div className="map-controls">
+          <ShareIconButton onClick={handleShareClick} />
+          <DirectionsIconButton
+            onClick={() => setDisplaySearchItem(displaySearchItem === "routes" ? null : "routes")}
+            active={displaySearchItem === "routes"}
+          />
+          <SearchIconButton
+            active={displaySearchItem === "search"}
+            onClick={() => setDisplaySearchItem(displaySearchItem === "search" ? null : "search")} />
+          <MyLocationIconButton
+            onClick={handleMyLocationClick} />
+        </div>
         <TileLayer
           attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
@@ -579,11 +635,17 @@ const App = () => {
           />
         )}
       </MapContainer>
+      <BottomSheet>
+        <InfoSheetHeader title={getBrowsePointsTitle()} />
+        <InfoSheetContent />
+      </BottomSheet>
       <Snackbar
         open={!!errorMessage}
         autoHideDuration={6000}
         onClose={() => setErrorMessage(null)}
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        // The sheet is drawn above the loading overlay, messages above both
+        sx={{ zIndex: 2200 }}
       >
         <Alert
           onClose={() => setErrorMessage(null)}
@@ -598,6 +660,7 @@ const App = () => {
         autoHideDuration={4000}
         onClose={() => setShareMessage(null)}
         anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        sx={{ zIndex: 2200 }}
       >
         <Alert
           onClose={() => setShareMessage(null)}

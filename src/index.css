@@ -7,18 +7,33 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
+  /* Vertical rhythm of the controls stacked on top of the map */
+  --overlay-gap: 0.75em;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/*
+ * The map fills the window. The body must not be a flex container: a flex item
+ * is sized from its content, which let the widest overlay row (the preset chips)
+ * stretch the map past the width of the screen.
+ */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  /* The dynamic unit keeps the app inside the visible area on mobile, where
+     100vh reaches under the browser toolbars */
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+  overflow: hidden;
 }
 
 
@@ -33,4 +48,303 @@ body {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.map-root {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* ---------- Map overlay: categories and presets ---------- */
+
+.map-overlay-top {
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  /* One gap for every control stacked on the map, the search button included */
+  gap: var(--overlay-gap);
+  padding: 0.75em 1em 0 1em;
+  /* Never wider than the screen, whatever the widest row inside is */
+  width: 100%;
+  max-width: min(620px, 100vw);
+  box-sizing: border-box;
+  /* Let taps between the controls reach the map */
+  pointer-events: none;
+}
+
+.map-overlay-top > * {
+  pointer-events: auto;
+}
+
+.category-select {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* The search bar takes the place of the category select while it is open */
+.search-bar-row {
+  display: flex;
+  align-items: center;
+}
+
+.category-presets {
+  display: flex;
+  gap: 0.5em;
+  overflow-x: auto;
+  /* Bleed over the overlay padding, so the row scrolls edge to edge */
+  margin: 0 -1em;
+  padding: 0 1em 2px 1em;
+  scrollbar-width: none;
+}
+
+.category-presets::-webkit-scrollbar {
+  display: none;
+}
+
+.search-area-button {
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  margin-top: var(--overlay-gap);
+  /* The row spans the map, only the button itself may catch a tap */
+  pointer-events: none;
+}
+
+.search-area-button > * {
+  pointer-events: auto;
+}
+
+/* The routes bar keeps a card of its own, it is a form and not a single pill */
+.routes-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  border-radius: 1em;
+  padding: 1.25em 0.5em 1em 0.5em;
+}
+
+@media (min-width: 900px) {
+  .category-select {
+    max-width: 380px;
+  }
+
+  /* There is room to see every preset at once, no need to scroll sideways */
+  .category-presets {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* ---------- Floating map controls ---------- */
+
+.map-controls {
+  /* Fixed, not absolute: the map container reaches under the mobile browser
+     toolbars, its bottom edge is not where the screen ends */
+  position: fixed;
+  right: 24px;
+  bottom: calc(24px + var(--sheet-offset, 0px));
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: bottom 0.28s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+.map-icon-button {
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* The Leaflet attribution rides above the sheet as well */
+.leaflet-bottom.leaflet-right {
+  transform: translateY(calc(-1 * var(--sheet-offset, 0px)));
+  transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+/* ---------- Bottom sheet ---------- */
+
+.bottom-sheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Above the loading overlay, the sheet stays usable while points load */
+  z-index: 2100;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #202124;
+  border-radius: 1em 1em 0 0;
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+/* Only the grab handle stays put, the heading scrolls away with the content */
+.bottom-sheet-handle {
+  flex: 0 0 auto;
+  padding: 10px 0 8px 0;
+  cursor: grab;
+  /* The drag must not turn into a page scroll or a map pan */
+  touch-action: none;
+  user-select: none;
+}
+
+.bottom-sheet-handle:active {
+  cursor: grabbing;
+}
+
+.bottom-sheet-grabber {
+  width: 40px;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: 2px;
+  background: #bdc1c6;
+}
+
+.bottom-sheet-content {
+  flex: 1 1 auto;
+  padding: 0.6em 1.25em 1.5em 1.25em;
+  overscroll-behavior: contain;
+  user-select: none;
+}
+
+@media (min-width: 900px) {
+  /* Under the map controls in the lower right corner, so the buttons and the
+     sheet make up one column that moves together */
+  .bottom-sheet {
+    left: auto;
+    right: 16px;
+    width: 400px;
+  }
+}
+
+/* ---------- Info sheet content ---------- */
+
+.info-sheet-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.4em 0;
+  line-height: 1.3;
+}
+
+.info-sheet-summary {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: #5f6368;
+}
+
+.info-sheet-section {
+  margin-top: 1.4em;
+}
+
+.info-sheet-heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.6em 0;
+}
+
+.info-sheet-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  font-size: 0.875rem;
+  color: #3c4043;
+}
+
+.info-sheet-steps li {
+  display: flex;
+  gap: 0.7em;
+  align-items: flex-start;
+}
+
+.info-sheet-step-number {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #e8f0fe;
+  color: #1976d2;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-sheet-presets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  font-size: 0.875rem;
+  color: #3c4043;
+}
+
+.info-sheet-presets li {
+  display: flex;
+  gap: 0.7em;
+  align-items: flex-start;
+}
+
+.info-sheet-preset-icon {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-sheet-preset-icon svg {
+  font-size: 0.95rem;
+}
+
+.info-sheet-preset-categories {
+  display: block;
+  font-size: 0.8rem;
+  color: #5f6368;
+}
+
+.info-sheet-note {
+  margin: 0.9em 0 0 0;
+  font-size: 0.8rem;
+  color: #5f6368;
+}
+
+.info-sheet-tips {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: 0.875rem;
+  color: #3c4043;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.info-sheet-footer {
+  display: block;
+  margin: 1.4em 0 0 0;
+  font-size: 0.75rem;
+  color: #5f6368;
+}
+
+.info-sheet-footer a {
+  color: #1976d2;
 }

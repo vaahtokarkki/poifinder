@@ -22,9 +22,11 @@ import { Typography, Alert, Snackbar } from '@mui/material';
 import SearchIconButton from './components/SearchIconButton.tsx';
 import MyLocationIconButton from './components/MyLocationIconButton.tsx';
 import DirectionsIconButton from './components/DirectionsIconButton.tsx';
+import ShareIconButton from './components/ShareIconButton.tsx';
 import { saveMapLocation, loadMapLocation } from "./utils/mapLocationStorage";
 import { loadGPSLocation } from "./utils/gpsLocationStorage";
 import { loadPois, savePois, poiCacheMatchesCategories, isPoiCacheUpToDate } from "./utils/poiStorage";
+import { loadCategories, saveCategories, parseCategories, serializeCategories } from "./utils/categoryStorage";
 
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
@@ -48,6 +50,7 @@ const App = () => {
   const [routeGeoJson, setRouteGeoJson] = useState<FeatureCollection | null>(null);
   const [appInitialized, setAppInitialized] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [shareMessage, setShareMessage] = useState<string | null>(null);
   const [loadingStatus, setLoadingStatus] = useState<string | null>(null);
 
   // The map must not be re-centered on GPS lock once the user has taken control
@@ -84,6 +87,16 @@ const App = () => {
   const fetchMarkers = async () => {
     const bbox = getBbox();
     if (!map || !bbox) return;
+
+    // Without categories there is nothing to query for, just empty the map
+    if (category.length === 0) {
+      setMarkers([]);
+      setFilteredMarkers([]);
+      requestedBboxRef.current = null;
+      setDisplaySearch(false);
+      return;
+    }
+
     setLoading(true);
     requestedBboxRef.current = bbox;
 
@@ -164,7 +177,8 @@ const App = () => {
     };
   }, [map]);
 
-  // On mount, if lat/lon or categories query params exist, set map center and categories (only if no city in path)
+  // On mount, center the map on the lat/lon query params, or on the last known
+  // position (only if no city in path, which is resolved and centered below)
   useEffect(() => {
     if (map && !initialViewAppliedRef.current) {
       initialViewAppliedRef.current = true;
@@ -175,7 +189,7 @@ const App = () => {
         userMovedMapRef.current = true;
       }
 
-      // Only update map center and categories from query params if no city in path
+      // Only update the map center from the query params if no city in path
       if (!city) {
         const params = new URLSearchParams(window.location.search);
         const lat = params.get("lat");
@@ -195,21 +209,43 @@ const App = () => {
             setMapView([savedLocation.lat, savedLocation.lng], savedLocation.zoom || 15);
           }
         }
-
-        // Parse categories from query params
-        const categoriesParam = params.get("categories");
-        if (categoriesParam) {
-          const catArr = categoriesParam
-            .split(",")
-            .map((v) => parseInt(v, 10))
-            .filter((v) => !isNaN(v) && Object.values(CATEGORIES).includes(v));
-          if (catArr.length > 0) {
-            setCategory(catArr as CATEGORIES[]);
-          }
-        }
       }
     }
   }, [map]);
+
+  /**
+   * Build a link to the current view: the map center and the selected
+   * categories. The zoom level is not part of it, the app has no zoom param.
+   */
+  const buildShareUrl = (): string => {
+    const url = new URL(import.meta.env.BASE_URL, window.location.origin);
+    const center = map?.getCenter();
+    if (center) {
+      url.searchParams.set("lat", center.lat.toFixed(6));
+      url.searchParams.set("lon", center.lng.toFixed(6));
+    }
+    if (category.length > 0) {
+      url.searchParams.set("categories", serializeCategories(category));
+    }
+    return url.toString();
+  };
+
+  const handleShareClick = async () => {
+    const shareUrl = buildShareUrl();
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: document.title, url: shareUrl });
+        return;
+      }
+      await navigator.clipboard.writeText(shareUrl);
+      setShareMessage("Link copied to clipboard");
+    } catch (e) {
+      // Dismissing the share sheet is not an error
+      if (e instanceof Error && e.name === "AbortError") return;
+      console.error("Error sharing the current view:", e);
+      setErrorMessage("Could not copy the link to the clipboard.");
+    }
+  };
 
   const handleMyLocationClick = () => {
     if (map && typeof userPosition.lat === "number" && typeof userPosition.lng === "number") {
@@ -352,19 +388,13 @@ const App = () => {
         }
       }
 
-      // Check for categories in query params first
+      // Categories in the query params come from a shared link, they win
       const params = new URLSearchParams(window.location.search);
-      const categoriesParam = params.get("categories");
+      const paramCategories = parseCategories(params.get("categories"));
       let categoriesSet = false;
-      if (categoriesParam) {
-        const catArr = categoriesParam
-          .split(",")
-          .map((v) => parseInt(v, 10))
-          .filter((v) => !isNaN(v) && Object.values(CATEGORIES).includes(v));
-        if (catArr.length > 0) {
-          setCategory(catArr as CATEGORIES[]);
-          categoriesSet = true;
-        }
+      if (paramCategories.length > 0) {
+        setCategory(paramCategories);
+        categoriesSet = true;
       }
 
       // Set category if found in CATEGORIES enum (case-insensitive match to display string)
@@ -390,7 +420,16 @@ const App = () => {
         }
       }
 
-      // If no category found from URL or query, set Playgrounds and Toilets as default
+      // Nothing in the URL, fall back to the categories selected last time
+      if (!categoriesSet) {
+        const storedCategories = loadCategories();
+        if (storedCategories.length > 0) {
+          setCategory(storedCategories);
+          categoriesSet = true;
+        }
+      }
+
+      // If no category found from URL, storage or query, set Playgrounds and Toilets as default
       if (!categoriesSet) {
         setCategory([CATEGORIES.Playgrounds, CATEGORIES.Toilets]);
       }
@@ -425,19 +464,12 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map, appInitialized]);
 
-  // Update categories in URL query params when category changes (if no city in path)
+  // Remember the selected categories, so they can be restored on the next visit
   useEffect(() => {
-    const city = parseCityFromPath();
-    if (!city) {
-      const url = new URL(window.location.href);
-      if (category && category.length > 0) {
-        url.searchParams.set("categories", category.join(","));
-      } else {
-        url.searchParams.delete("categories");
-      }
-      window.history.replaceState({}, "", url.toString());
+    if (category.length > 0) {
+      saveCategories(category);
     }
-  }, [category, map]);
+  }, [category]);
 
   // Listen for user panning
   useEffect(() => {
@@ -515,6 +547,7 @@ const App = () => {
           onClick={() => fetchMarkers()}
           visible={displaySearch && displaySearchItem !== "routes"}
         />
+        <ShareIconButton onClick={handleShareClick} />
         <SearchIconButton
           active={displaySearchItem === "search"}
           onClick={() => setDisplaySearchItem(displaySearchItem === "search" ? null : "search")} />
@@ -558,6 +591,20 @@ const App = () => {
           sx={{ width: "100%" }}
         >
           {errorMessage}
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        open={!!shareMessage}
+        autoHideDuration={4000}
+        onClose={() => setShareMessage(null)}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+      >
+        <Alert
+          onClose={() => setShareMessage(null)}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          {shareMessage}
         </Alert>
       </Snackbar>
     </>

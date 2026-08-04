@@ -3,8 +3,12 @@ import Checkbox from "@mui/material/Checkbox";
 import ListItemText from "@mui/material/ListItemText";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import ClearAllIcon from "@mui/icons-material/ClearAll";
 import React from "react";
 import { CATEGORIES, CATEGORY_CONFIG, CATEGORY_GROUP, CATEGORY_GROUP_DISPLAY } from "../constants";
+
+// Value of the clear action, kept apart from the numeric category values
+const CLEAR_ALL = "clear-all";
 
 type CategorySelectProps = {
   value: CATEGORIES[];
@@ -53,8 +57,14 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
             "& fieldset": { border: 'none' },
           }}
           onChange={(e) => {
-            const selected = e.target.value as CATEGORIES[];
-            onChange(selected);
+            const selected = e.target.value as (CATEGORIES | string)[];
+            // The clear action is a menu item of its own, picking it empties
+            // the selection instead of adding to it
+            if (selected.includes(CLEAR_ALL)) {
+              onChange([]);
+              return;
+            }
+            onChange(selected as CATEGORIES[]);
           }}
           onClose={onClose}
           renderValue={(selected) => (
@@ -73,6 +83,17 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
           )}
           style={{background: "#fff", borderRadius: "1em", padding: 0, border: "1px solid #0000001a" }}
         >
+          <MenuItem
+            value={CLEAR_ALL}
+            disabled={value.length === 0}
+            style={{
+              padding: "0 1em",
+              borderBottom: "1px solid #0000001a",
+            }}
+          >
+            <ClearAllIcon fontSize="small" style={{ margin: ".4em .7em .4em .5em" }} />
+            <ListItemText primary="Clear all selections" />
+          </MenuItem>
           {Object.values(CATEGORY_GROUP)
             .filter((g) => typeof g === "number")
             .flatMap((group) => [

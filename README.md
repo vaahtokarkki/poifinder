@@ -1,4 +1,63 @@
-# React + TypeScript + Vite
+# Wayside
+
+A map of the small points of interest that are hard to find anywhere else:
+public toilets, drinking water, playgrounds, post boxes, luggage lockers,
+shelters and more, from OpenStreetMap.
+
+## Prerendered pages
+
+The app is a client side map, but every indexable URL is a real static HTML
+file. `/helsinki/toilets` is written at build time with its own title,
+description, canonical, structured data and a list of named points; it does not
+depend on a crawler running our JavaScript, or on Overpass answering.
+
+The pipeline has two halves, deliberately separated so a build never touches
+the network:
+
+| Command | What it does |
+| --- | --- |
+| `npm run seo:data` | Queries Overpass and refreshes `data/poi/*.json`. Slow, rate limited, run on a schedule. |
+| `npm run prerender` | Reads `data/poi/`, writes one HTML file per route plus `sitemap.xml` and `404.html`. No network. |
+| `npm run build` | `vite build` followed by the prerender. |
+
+`data/poi/` is committed. That makes builds deterministic and means a broken
+Overpass mirror can never empty the site.
+
+### Refreshing the OpenStreetMap extract
+
+```bash
+npm run seo:data                          # refresh anything older than 7 days
+npm run seo:data -- --cities=helsinki     # one city
+npm run seo:data -- --force               # ignore freshness
+npm run seo:data -- --max-age-days=14     # change what counts as stale
+```
+
+A full refresh is thousands of queries against donated infrastructure and takes
+hours. The throttle is intentional. Weekly is plenty for these categories.
+
+### Adding a city or a category
+
+- A city is one entry in [`src/seo/cities.ts`](src/seo/cities.ts): slug, name,
+  country, coordinates, tier. Everything else follows from it.
+- A category needs an entry in `CATEGORY_CONFIG`
+  ([`src/constants.ts`](src/constants.ts)) for the Overpass filters, and one in
+  [`src/seo/categories.ts`](src/seo/categories.ts) for the slug and the page
+  copy.
+
+A route is only published when it has at least `MIN_POIS_FOR_PAGE` points, so
+thin pages never reach the index and internal links never point at a 404.
+
+### Why the content is duplicated in two places, and why it is not
+
+It is not duplicated. [`PrerenderedPage`](src/components/PrerenderedPage.tsx) is
+rendered to static markup by the prerender and rendered again by the running app
+inside the bottom sheet, from the same JSON payload embedded in the page. The
+crawler and the visitor read the same words by construction. The static copy is
+removed once React has mounted, so the page never says everything twice.
+
+---
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

@@ -15,9 +15,12 @@ import SearchPoisButton from "./components/SearchPoisButton";
 import { useUserPosition } from "./hooks/index";
 import { CATEGORIES } from "./constants";
 import { fetchSuggestions } from "./api/geocode";
-import { parseCityFromPath, parseCategoryFromPath, capitalize } from "./utils";
+import { parseCitySlugFromPath, parseCategorySlugFromPath, slugToTitle } from "./utils";
 import { filterMarkersInBbox } from "./geo";
-import JsonLdSeo from "./components/JsonLdSeo";
+import { findCity } from "./seo/cities";
+import { findCategorySeo } from "./seo/categories";
+import { readPageData } from "./seo/pageData";
+import PrerenderedPage from "./components/PrerenderedPage";
 import { Alert, Snackbar } from '@mui/material';
 import CategoryPresets from './components/CategoryPresets.tsx';
 import BottomSheet from './components/BottomSheet.tsx';
@@ -55,6 +58,9 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [shareMessage, setShareMessage] = useState<string | null>(null);
   const [loadingStatus, setLoadingStatus] = useState<string | null>(null);
+  // The build time payload of a prerendered page, absent on a shared link or
+  // an area search. Read once: a page load is the only thing that changes it
+  const [pageData] = useState(readPageData);
 
   // Controls drawn on top of the map, their gestures are not map gestures
   const overlayRef = useRef<HTMLDivElement | null>(null);
@@ -224,7 +230,7 @@ const App = () => {
   useEffect(() => {
     if (map && !initialViewAppliedRef.current) {
       initialViewAppliedRef.current = true;
-      const city = parseCityFromPath();
+      const city = parseCitySlugFromPath();
 
       // A city in the path is an explicit location, it wins over the GPS lock
       if (city) {
@@ -420,13 +426,20 @@ const App = () => {
   // 1. Parse city/category/query params on mount (no fetchMarkers here)
   useEffect(() => {
     const parseAndSetFromUrl = async () => {
-      const city = parseCityFromPath();
-      const categoryStr = parseCategoryFromPath();
+      const citySlug = parseCitySlugFromPath();
+      const categorySlug = parseCategorySlugFromPath();
 
-      if (city) {
-        const results = await fetchSuggestions(city);
-        if (results && results.length > 0) {
-          setSearchPosition(results[0].coords);
+      if (citySlug) {
+        // A city we prerender carries its own coordinates, so the map centers
+        // on the first frame instead of waiting for a geocoder
+        const city = findCity(citySlug);
+        if (city) {
+          setSearchPosition([city.lat, city.lon]);
+        } else {
+          const results = await fetchSuggestions(citySlug.replace(/-/g, " "));
+          if (results && results.length > 0) {
+            setSearchPosition(results[0].coords);
+          }
         }
       }
 
@@ -439,26 +452,13 @@ const App = () => {
         categoriesSet = true;
       }
 
-      // Set category if found in CATEGORIES enum (case-insensitive match to display string)
-      if (!categoriesSet && categoryStr) {
-        const categoryEntry = Object.entries(CATEGORIES).find(
-          ([key, val]) =>
-            typeof val === "number" &&
-            key.toLowerCase() === categoryStr.replace(/ /g, "")
-        );
-        if (categoryEntry) {
-          setCategory([categoryEntry[1] as CATEGORIES]);
+      // The category of the path, via the slug registry so that the aliases of
+      // earlier sitemaps keep resolving
+      if (!categoriesSet && categorySlug) {
+        const categorySeo = findCategorySeo(categorySlug);
+        if (categorySeo) {
+          setCategory([categorySeo.category]);
           categoriesSet = true;
-        } else {
-          // Try to match by display string in CATEGORY_CONFIG
-          const { CATEGORY_CONFIG } = await import("./constants");
-          const found = Object.entries(CATEGORY_CONFIG).find(
-            ([, config]) => config.display.toLowerCase() === categoryStr
-          );
-          if (found) {
-            setCategory([parseInt(found[0], 10) as CATEGORIES]);
-            categoriesSet = true;
-          }
         }
       }
 
@@ -537,19 +537,28 @@ const App = () => {
     fetchMarkers(categories);
   };
 
-  // The heading of the info sheet, also the h1 of the page
+  /**
+   * The heading of a route we did not prerender: a shared link, or a city that
+   * is not in the registry yet. Prerendered pages bring their own h1
+   */
   function getBrowsePointsTitle() {
-    const city = parseCityFromPath();
-    const category = parseCategoryFromPath();
-    if (city) {
-      return `${capitalize(category || "points of interest")} near ${capitalize(city)}`;
+    const citySlug = parseCitySlugFromPath();
+    const categorySeo = findCategorySeo(parseCategorySlugFromPath());
+    if (citySlug) {
+      return `${categorySeo?.heading ?? "Points of interest"} in ${slugToTitle(citySlug)}`;
     }
     return "Find the useful places around you";
   }
 
+  // The static markup the prerender left behind is only there to carry the
+  // page before React is running. Now that the sheet renders the same content,
+  // drop it rather than leave the page saying everything twice
+  useEffect(() => {
+    document.getElementById("seo-prerender")?.remove();
+  }, []);
+
   return (
     <>
-      <JsonLdSeo markers={markers} />
       <MapContainer
         center={[60, 25]}
         zoom={15}
@@ -636,8 +645,19 @@ const App = () => {
         )}
       </MapContainer>
       <BottomSheet>
-        <InfoSheetHeader title={getBrowsePointsTitle()} />
-        <InfoSheetContent />
+        {pageData ? (
+          <>
+            <PrerenderedPage data={pageData} />
+            {/* The map root is also where a shared link lands, so it keeps the
+                guide to the app under the city index */}
+            {pageData.kind === "home" && <InfoSheetContent />}
+          </>
+        ) : (
+          <>
+            <InfoSheetHeader title={getBrowsePointsTitle()} />
+            <InfoSheetContent />
+          </>
+        )}
       </BottomSheet>
       <Snackbar
         open={!!errorMessage}

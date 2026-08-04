@@ -348,3 +348,111 @@ body {
 .info-sheet-footer a {
   color: #1976d2;
 }
+
+/* ---------- Prerendered page content ---------- */
+
+/*
+ * What the prerender leaves in the HTML, so the page is readable before the
+ * bundle has run. It is styled as the sheet it is about to become, and App
+ * removes it as soon as React renders the same content for real.
+ */
+#seo-prerender {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2100;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: #fff;
+  color: #202124;
+  border-radius: 1em 1em 0 0;
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.18);
+}
+
+.seo-prerender-inner {
+  padding: 1.25em 1.25em 1.5em 1.25em;
+}
+
+@media (min-width: 900px) {
+  #seo-prerender {
+    left: auto;
+    right: 16px;
+    width: 400px;
+  }
+}
+
+/* ---------- POI list, questions and links ---------- */
+
+.poi-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  font-size: 0.875rem;
+  color: #3c4043;
+}
+
+.poi-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+}
+
+.poi-name {
+  font-weight: 500;
+}
+
+.poi-meta {
+  font-size: 0.8rem;
+  color: #5f6368;
+}
+
+.poi-faq {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.poi-faq dt {
+  font-weight: 600;
+  color: #202124;
+  margin-top: 0.9em;
+}
+
+.poi-faq dt:first-child {
+  margin-top: 0;
+}
+
+.poi-faq dd {
+  margin: 0.25em 0 0 0;
+  color: #3c4043;
+  line-height: 1.5;
+}
+
+.poi-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45em;
+  font-size: 0.875rem;
+}
+
+.poi-links li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75em;
+}
+
+.poi-links a {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.poi-links a:hover {
+  text-decoration: underline;
+}

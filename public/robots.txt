@@ -1,0 +1,12 @@
+# wayside.cc
+# Every indexable page is prerendered and listed in the sitemap.
+
+User-agent: *
+Allow: /
+
+# Shared links are one view of the map with coordinates in the query string.
+# They are not pages, and they are not blocked here on purpose: every one of
+# them carries a canonical back to the map root, which folds them into it.
+# Disallowing them instead would stop a crawler ever reading that canonical.
+
+Sitemap: https://wayside.cc/sitemap.xml

@@ -1,0 +1,64 @@
+name: Refresh OpenStreetMap extract
+
+# The prerendered pages carry a lastmod and tell visitors when the data was
+# last refreshed. This job is what makes those claims true.
+#
+# A full refresh is thousands of Overpass queries, far more than fits in one
+# runner, so each run takes a slice of the cities that have gone stale. At 20
+# cities a day the whole registry comes round about once a week, which is as
+# fast as this kind of OSM data actually changes.
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+    inputs:
+      cities:
+        description: "Comma separated city slugs, empty for the stale ones"
+        required: false
+      force:
+        description: "Refresh even if the data is still fresh"
+        type: boolean
+        default: false
+
+concurrency:
+  group: refresh-poi-data
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    # Overpass queries are slow and the throttle is deliberate, so give the
+    # slice room. Well under the 6 hour ceiling a runner has
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Refresh
+        run: |
+          node scripts/fetch-poi-data.mjs \
+            --max-cities=20 \
+            ${{ inputs.cities && format('--cities={0}', inputs.cities) || '' }} \
+            ${{ inputs.force && '--force' || '' }}
+
+      - name: Commit
+        run: |
+          if git diff --quiet -- data/poi; then
+            echo "Nothing changed, every city was still fresh."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/poi
+          git commit -m "chore: refresh OpenStreetMap extract"
+          git push

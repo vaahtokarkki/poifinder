@@ -11,6 +11,13 @@ import PetsIcon from '@mui/icons-material/Pets';
 import NaturePeopleIcon from '@mui/icons-material/NaturePeople';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import RecyclingIcon from '@mui/icons-material/Recycling';
+import LocalAtmIcon from '@mui/icons-material/LocalAtm';
+import TableRestaurantIcon from '@mui/icons-material/TableRestaurant';
+import LuggageIcon from '@mui/icons-material/Luggage';
+import LandscapeIcon from '@mui/icons-material/Landscape';
+import WaterDropIcon from '@mui/icons-material/WaterDrop';
+import RvHookupIcon from '@mui/icons-material/RvHookup';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import * as React from "react";
 
 export enum CATEGORIES {
@@ -27,6 +34,15 @@ export enum CATEGORIES {
   RestArea,
   Beach,
   Recycling,
+  // Append only: these numbers are what share links and localStorage store,
+  // so inserting in the middle would silently repoint existing selections
+  Atm,
+  Picnic,
+  LuggageStorage,
+  Viewpoint,
+  DrinkingWater,
+  SanitaryDumpStation,
+  OutdoorGym,
 }
 
 export enum CATEGORY_GROUP {
@@ -111,8 +127,8 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     group: CATEGORY_GROUP.Nature,
   },
   [CATEGORIES.Beach]: {
-    filters: ["[natural=beach]"],
-    display: "Beach",
+    filters: ["[natural=beach]", "[leisure=swimming_area]"],
+    display: "Beach & swimming",
     icon: React.createElement(BeachAccessIcon),
     color: "#FFD600",
     group: CATEGORY_GROUP.Nature,
@@ -137,6 +153,67 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(RecyclingIcon),
     color: "green",
     group: CATEGORY_GROUP.Essentials,
+  },
+  [CATEGORIES.Atm]: {
+    // Standalone machines, plus banks and shops that have one
+    filters: ["[amenity=atm]", "[atm=yes]"],
+    display: "ATM",
+    icon: React.createElement(LocalAtmIcon),
+    color: "#2E7D32",
+    group: CATEGORY_GROUP.Essentials,
+  },
+  [CATEGORIES.Picnic]: {
+    // A single table, or a whole picnic area
+    filters: ["[leisure=picnic_table]", "[tourism=picnic_site]"],
+    display: "Picnic spots",
+    icon: React.createElement(TableRestaurantIcon),
+    color: "#795548",
+    group: CATEGORY_GROUP.Nature,
+  },
+  [CATEGORIES.LuggageStorage]: {
+    filters: ["[amenity=luggage_locker]", "[amenity=left_luggage]"],
+    display: "Luggage storage",
+    icon: React.createElement(LuggageIcon),
+    color: "#455A64",
+    group: CATEGORY_GROUP.Essentials,
+  },
+  [CATEGORIES.Viewpoint]: {
+    filters: ["[tourism=viewpoint]"],
+    display: "Viewpoints",
+    icon: React.createElement(LandscapeIcon),
+    color: "#7B1FA2",
+    group: CATEGORY_GROUP.Nature,
+  },
+  [CATEGORIES.DrinkingWater]: {
+    // Every common way a free, potable water source is tagged. Plain
+    // amenity=drinking_water can carry drinking_water=no when it is out of use
+    filters: [
+      "[amenity=drinking_water][drinking_water!=no]",
+      "[amenity=water_point]",
+      "[man_made=water_tap][drinking_water=yes]",
+      "[man_made=drinking_fountain]",
+      "[amenity=fountain][drinking_water=yes]",
+      "[fountain=drinking]",
+    ],
+    display: "Drinking water",
+    icon: React.createElement(WaterDropIcon),
+    color: "#0288D1",
+    group: CATEGORY_GROUP.Essentials,
+  },
+  [CATEGORIES.SanitaryDumpStation]: {
+    filters: ["[amenity=sanitary_dump_station]"],
+    display: "Dump station",
+    icon: React.createElement(RvHookupIcon),
+    color: "#5D4037",
+    group: CATEGORY_GROUP.Car,
+  },
+  [CATEGORIES.OutdoorGym]: {
+    // Outdoor gyms are tagged both as fitness stations and as fitness pitches
+    filters: ["[leisure=fitness_station]", "[leisure=pitch][sport=fitness]"],
+    display: "Outdoor gym",
+    icon: React.createElement(FitnessCenterIcon),
+    color: "#E64A19",
+    group: CATEGORY_GROUP.Nature,
   },
 };
 

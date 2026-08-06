@@ -1,6 +1,7 @@
 import React from "react";
 import { findCity } from "../seo/cities";
 import type { HomePageData } from "../seo/pageData";
+import { InfoSheetSummary } from "./AppInfoPanel";
 
 /**
  * The content of the map root. Its job is the city index: the one URL that
@@ -13,19 +14,10 @@ const HomePageSection: React.FC<{ data: HomePageData }> = ({ data }) => {
   return (
     <>
       <h1 className="info-sheet-title">Find the small things, anywhere</h1>
-      <p className="info-sheet-summary">
-        Wayside maps what other maps skip: public toilets, drinking water, playgrounds,
-        post boxes, luggage lockers and many more categories, from
-        OpenStreetMap. Search any area of the map, or start from a city below.
-      </p>
-
-      <p className="info-sheet-footer">
-        Points come from{" "}
-        <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
-          OpenStreetMap
-        </a>{" "}
-        contributors. Something missing? Add it there and it shows up here.
-      </p>
+      {/* The same sentence every other route shows in the sheet. Someone who
+          lands on the map root and someone who follows a shared link should be
+          told the same thing about what this is */}
+      <InfoSheetSummary />
     </>
   );
 };

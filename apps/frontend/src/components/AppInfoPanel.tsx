@@ -2,18 +2,28 @@ import React from "react";
 import { CATEGORY_CONFIG, CATEGORY_PRESETS } from "../constants";
 
 /**
- * The always visible part of the info sheet: the page heading and a one
- * sentence summary, so a first time visitor sees what the app is for without
- * opening the sheet.
+ * What the app is for, in one sentence.
+ *
+ * Its own component because two different sheets open on it: the prerendered
+ * home page and every route we did not prerender. Written once so the two can
+ * never drift into describing the same app differently.
+ */
+export const InfoSheetSummary: React.FC = () => (
+  <p className="info-sheet-summary">
+    Wayside maps the small things that are hard to find when you are out:
+    toilets, playgrounds, drinking water, parking etc. Pick a
+    preset or your own categories, and search any area of the map.
+  </p>
+);
+
+/**
+ * The always visible part of the info sheet: the page heading and the summary,
+ * so a first time visitor sees what the app is for without opening the sheet.
  */
 export const InfoSheetHeader: React.FC<{ title: string }> = ({ title }) => (
   <>
     <h1 className="info-sheet-title">{title}</h1>
-    <p className="info-sheet-summary">
-      Wayside maps the small things that are hard to find when you are out:
-      toilets, playgrounds, drinking water, parking etc. Pick a
-      preset or your own categories, and search any area of the map.
-    </p>
+    <InfoSheetSummary />
   </>
 );
 

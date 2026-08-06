@@ -16,6 +16,10 @@
  * many hours. That is deliberate: Overpass is donated infrastructure and the
  * throttle here is the price of using it politely. Use --max-cities to take
  * the work in daily slices instead of one job that outlives its runner.
+ *
+ * Set OVERPASS_API_URL to a self hosted instance (see apps/overpass) and none
+ * of that applies: the queries go there alone, at speed, and a whole refresh
+ * is minutes rather than days.
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -35,9 +39,16 @@ const QUERY_TIMEOUT = 180;
  * the whole run with nothing in the log to say so
  */
 const REQUEST_TIMEOUT_MS = (QUERY_TIMEOUT + 60) * 1000;
-/** Wait between queries. Overpass answers 429 readily, so err on the slow side */
-const DELAY_MS = 2500;
-const MAX_ATTEMPTS = 4;
+/** A self hosted interpreter, e.g. http://localhost:12345/api/interpreter */
+const SELF_HOSTED_URL = process.env.OVERPASS_API_URL?.trim();
+/**
+ * Wait between queries. Overpass answers 429 readily, so err on the slow side.
+ * Our own instance has no such limit, and its data has no other user to be
+ * polite to, so it gets the queries as fast as it can answer them
+ */
+const DELAY_MS = SELF_HOSTED_URL ? 100 : 2500;
+/** One retry against our own server, four across four donated mirrors */
+const MAX_ATTEMPTS = SELF_HOSTED_URL ? 2 : 4;
 
 const args = new Map(
   process.argv.slice(2).map((arg) => {
@@ -146,6 +157,27 @@ function toPois(elements, city) {
     .map(({ _distance, ...poi }) => poi);
 }
 
+/**
+ * How stale a city is, in days: the age of its *least* recently refreshed
+ * category, and Infinity when any is missing altogether.
+ *
+ * A single city level timestamp cannot express this. A run where one query
+ * failed would still stamp the city as refreshed, the next run would see a
+ * fresh city and skip it, and the category that failed would never be picked
+ * up again. Asking the categories themselves makes a partial run naturally
+ * retry only what it lost.
+ */
+function staleness(existing, categories) {
+  let oldest = 0;
+  for (const categorySeo of categories) {
+    const entry = existing.categories?.[categorySeo.slug];
+    const stamp = entry?.updatedAt ?? (entry ? existing.generatedAt : null);
+    if (!stamp) return Infinity;
+    oldest = Math.max(oldest, (Date.now() - Date.parse(stamp)) / 86400000);
+  }
+  return oldest;
+}
+
 async function main() {
   const server = await createServer({
     server: { middlewareMode: true, hmr: false, watch: null },
@@ -160,7 +192,8 @@ async function main() {
       "/src/constants.ts"
     );
 
-    const endpoints = [...OVERPASS_API_CONFIG.URLS];
+    const endpoints = SELF_HOSTED_URL ? [SELF_HOSTED_URL] : [...OVERPASS_API_CONFIG.URLS];
+    if (SELF_HOSTED_URL) console.log(`Using self hosted Overpass at ${SELF_HOSTED_URL}`);
     const force = args.get("force") === "true";
     const maxAgeDays = Number(args.get("max-age-days") ?? 7);
     const cityFilter = args.get("cities")?.split(",").map((s) => s.trim());
@@ -192,9 +225,7 @@ async function main() {
         existing = JSON.parse(await readFile(file, "utf8"));
       }
 
-      const ageDays = existing.generatedAt
-        ? (Date.now() - Date.parse(existing.generatedAt)) / 86400000
-        : Infinity;
+      const ageDays = staleness(existing, categories);
       if (!force && ageDays < maxAgeDays) {
         console.log(`- ${city.slug}: fresh (${ageDays.toFixed(1)}d old), skipping`);
         continue;
@@ -208,28 +239,20 @@ async function main() {
       console.log(`- ${city.slug}`);
       const radius = cityRadius(city);
       const result = { ...existing.categories };
-      let failures = 0;
 
       /**
        * Written after every category rather than once at the end. A city is
        * twenty slow queries; a run that gets killed two thirds of the way
        * through should keep what it has rather than start over next time.
        *
-       * generatedAt is when to consider the city stale again, so a run that
-       * lost a query stays stale and the next one picks that category back up.
+       * generatedAt records when a run last touched the city. It is not what
+       * decides staleness, see staleness() for why.
        */
-      const save = async (done) =>
+      const save = async () =>
         writeFile(
           file,
           JSON.stringify(
-            {
-              city: city.slug,
-              generatedAt:
-                done && failures === 0
-                  ? new Date().toISOString()
-                  : (existing.generatedAt ?? new Date(0).toISOString()),
-              categories: result,
-            },
+            { city: city.slug, generatedAt: new Date().toISOString(), categories: result },
             null,
             2
           ) + "\n"
@@ -238,6 +261,14 @@ async function main() {
       for (const categorySeo of categories) {
         const filters = CATEGORY_CONFIG[categorySeo.category]?.filters ?? [];
         if (filters.length === 0) continue;
+
+        // The city being stale does not make every category stale. When one
+        // query failed last time, retrying it should cost one query, not
+        // twenty, so ask each category for its own age
+        if (!force && staleness(existing, [categorySeo]) < maxAgeDays) {
+          console.log(`    ${categorySeo.slug}: still fresh, skipping`);
+          continue;
+        }
 
         try {
           const data = await runQuery(buildQuery(filters, city.lat, city.lon, radius), endpoints);
@@ -251,15 +282,14 @@ async function main() {
           };
           console.log(`    ${categorySeo.slug}: ${elements.length}`);
         } catch (error) {
-          failures++;
           // Leave the previous numbers in place rather than publishing a zero
           console.error(`    ${categorySeo.slug}: FAILED, keeping previous (${error.message})`);
         }
-        await save(false);
+        await save();
         await sleep(DELAY_MS);
       }
 
-      await save(true);
+      await save();
     }
 
     console.log("Done.");

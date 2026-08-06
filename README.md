@@ -4,110 +4,58 @@ A map of the small points of interest that are hard to find anywhere else:
 public toilets, drinking water, playgrounds, post boxes, luggage lockers,
 shelters and more, from OpenStreetMap.
 
-## Prerendered pages
+## Layout
 
-The app is a client side map, but every indexable URL is a real static HTML
-file. `/helsinki/toilets` is written at build time with its own title,
-description, canonical, structured data and a list of named points; it does not
-depend on a crawler running our JavaScript, or on Overpass answering.
+| Directory | What it is |
+| --- | --- |
+| [`apps/frontend`](apps/frontend) | The app: React, Leaflet, and the prerender that turns every route into a real HTML file. Deployed to Cloudflare |
+| [`apps/overpass`](apps/overpass) | A self hosted Overpass API, holding only the categories the app queries. Docker, one container |
 
-The pipeline has two halves, deliberately separated so a build never touches
-the network:
+The two halves are independent. The app runs against the public Overpass
+mirrors out of the box and only talks to `apps/overpass` when
+`VITE_OVERPASS_API_URL` is set, so nothing here needs a server to develop
+against.
+
+## Getting started
+
+```bash
+npm install        # workspaces, so this installs the frontend too
+npm run dev        # the app, against the public Overpass mirrors
+npm run build      # bundle, then prerender every indexable route
+```
+
+### With your own Overpass
+
+The public mirrors are shared, slow under load and rate limited, which is why
+the client carries four fallback URLs and two passes of exponential backoff.
+Running your own removes all of that:
+
+```bash
+cd apps/overpass
+cp .env.example .env
+docker compose up -d --build     # first run imports the extract, give it time
+```
+
+Then, in `apps/frontend/.env`:
+
+```
+VITE_OVERPASS_API_URL=http://localhost:12345/api/interpreter
+```
+
+With that set the app sends one request per search and no retries, and
+`npm run seo:data` (`OVERPASS_API_URL=...`) finishes in minutes rather than
+days. See [`apps/overpass/README.md`](apps/overpass/README.md).
+
+## Scripts
+
+Run from the repo root; each delegates to the workspace that owns it.
 
 | Command | What it does |
 | --- | --- |
-| `npm run seo:data` | Queries Overpass and refreshes `data/poi/*.json`. Slow, rate limited, run on a schedule. |
-| `npm run prerender` | Reads `data/poi/`, writes one HTML file per route plus `sitemap.xml` and `404.html`. No network. |
-| `npm run build` | `vite build` followed by the prerender. |
-
-`data/poi/` is committed. That makes builds deterministic and means a broken
-Overpass mirror can never empty the site.
-
-### Refreshing the OpenStreetMap extract
-
-```bash
-npm run seo:data                          # refresh anything older than 7 days
-npm run seo:data -- --cities=helsinki     # one city
-npm run seo:data -- --force               # ignore freshness
-npm run seo:data -- --max-age-days=14     # change what counts as stale
-```
-
-A full refresh is thousands of queries against donated infrastructure and takes
-hours. The throttle is intentional. Weekly is plenty for these categories.
-
-### Adding a city or a category
-
-- A city is one entry in [`src/seo/cities.ts`](src/seo/cities.ts): slug, name,
-  country, coordinates, tier. Everything else follows from it.
-- A category needs an entry in `CATEGORY_CONFIG`
-  ([`src/constants.ts`](src/constants.ts)) for the Overpass filters, and one in
-  [`src/seo/categories.ts`](src/seo/categories.ts) for the slug and the page
-  copy.
-
-A route is only published when it has at least `MIN_POIS_FOR_PAGE` points, so
-thin pages never reach the index and internal links never point at a 404.
-
-### Why the content is duplicated in two places, and why it is not
-
-It is not duplicated. [`PrerenderedPage`](src/components/PrerenderedPage.tsx) is
-rendered to static markup by the prerender and rendered again by the running app
-inside the bottom sheet, from the same JSON payload embedded in the page. The
-crawler and the visitor read the same words by construction. The static copy is
-removed once React has mounted, so the page never says everything twice.
-
----
-
-## React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+| `npm run dev` | The app, on `--host` so a phone on the same network can open it |
+| `npm run build` | `vite build` then the prerender |
+| `npm run seo:data` | Refreshes `apps/frontend/data/poi/*.json` from Overpass |
+| `npm run deploy` | Builds and pushes to Cloudflare |
+| `npm run overpass:filters` | Regenerates `apps/overpass/osmium-filter.txt` from `CATEGORY_CONFIG` |
+| `npm run overpass:up` | Builds and starts the Overpass container |
+| `npm run overpass:update` | Reimports its database from a fresh extract |

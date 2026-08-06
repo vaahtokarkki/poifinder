@@ -1,7 +1,12 @@
 import { getCoords } from "@turf/turf";
 import { point } from "@turf/helpers";
 import type { Feature, Polygon, Point} from "geojson";
-import { CATEGORIES, CATEGORY_CONFIG, OVERPASS_API_CONFIG } from "../constants";
+import {
+  CATEGORIES,
+  CATEGORY_CONFIG,
+  OVERPASS_API_CONFIG,
+  SELF_HOSTED_OVERPASS_URL,
+} from "../constants";
 import { fetchWithRetry } from "../utils/retryFetch";
 
 export type OverpassMarkerData = {
@@ -92,8 +97,7 @@ export async function fetchOverpassMarkers(
 
   const tryFetchFromURL = async (
     url: string,
-    maxRetries: number,
-    passNumber: number
+    maxRetries: number
   ): Promise<OverpassMarkerData[]> => {
     const res = await fetchWithRetry(
       url,
@@ -153,6 +157,17 @@ export async function fetchOverpassMarkers(
       .filter(Boolean) as OverpassMarkerData[];
   };
 
+  // A self hosted instance is the whole story when there is one: a single
+  // request, no failover and no backoff. There is no mirror to fall back to
+  // and no shared rate limit to be polite about, so an error there is a real
+  // error and the caller should see it immediately rather than after a minute
+  // of retries against servers we are not using anyway.
+  if (SELF_HOSTED_OVERPASS_URL) {
+    console.debug(`[Overpass] Using self hosted instance: ${SELF_HOSTED_OVERPASS_URL}`);
+    onStatusChange?.("Loading...");
+    return tryFetchFromURL(SELF_HOSTED_OVERPASS_URL, 0);
+  }
+
   // Pass 1: Try each URL once (no retries, fast failover)
   console.debug("[Overpass] Starting pass 1: trying each URL once (quick failover)");
   const pass1Errors: string[] = [];
@@ -163,7 +178,7 @@ export async function fetchOverpassMarkers(
       onStatusChange?.(status);
       console.debug(`[Overpass] Pass 1: Trying URL ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}: ${url}`);
 
-      const result = await tryFetchFromURL(url, 0, 1); // maxRetries: 0 for pass 1
+      const result = await tryFetchFromURL(url, 0); // maxRetries: 0 for pass 1
       console.debug(`[Overpass] Pass 1: Successfully fetched from URL ${urlIndex + 1}`);
       return result;
     } catch (error) {
@@ -186,7 +201,7 @@ export async function fetchOverpassMarkers(
       onStatusChange?.(status);
       console.debug(`[Overpass] Pass 2: Retrying URL ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}: ${url}`);
 
-      const result = await tryFetchFromURL(url, OVERPASS_API_CONFIG.RETRY.maxRetries, 2); // maxRetries: 3 for pass 2
+      const result = await tryFetchFromURL(url, OVERPASS_API_CONFIG.RETRY.maxRetries); // maxRetries: 3 for pass 2
       console.debug(`[Overpass] Pass 2: Successfully fetched from URL ${urlIndex + 1} after retries`);
       return result;
     } catch (error) {

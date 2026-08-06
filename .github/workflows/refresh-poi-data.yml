@@ -34,6 +34,9 @@ jobs:
     # Overpass queries are slow and the throttle is deliberate, so give the
     # slice room. Well under the 6 hour ceiling a runner has
     timeout-minutes: 300
+    defaults:
+      run:
+        working-directory: apps/frontend
     steps:
       - uses: actions/checkout@v4
 
@@ -42,7 +45,9 @@ jobs:
           node-version: 22
           cache: npm
 
+      # The lockfile and the workspaces live at the root
       - run: npm ci
+        working-directory: .
 
       - name: Refresh
         run: |
@@ -50,6 +55,11 @@ jobs:
             --max-cities=20 \
             ${{ inputs.cities && format('--cities={0}', inputs.cities) || '' }} \
             ${{ inputs.force && '--force' || '' }}
+        env:
+          # A self hosted instance, when the repository has one. Reachable from
+          # a GitHub runner means public, so an unset variable simply keeps the
+          # public mirrors and the throttle that goes with them
+          OVERPASS_API_URL: ${{ vars.OVERPASS_API_URL }}
 
       - name: Commit
         run: |

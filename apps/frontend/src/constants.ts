@@ -349,7 +349,17 @@ export const CATEGORY_GROUP_DISPLAY: Record<CATEGORY_GROUP, string> = {
   [CATEGORY_GROUP.Nature]: "Nature",
 };
 
-// Overpass API configuration with fallback URLs
+/**
+ * A self hosted Overpass instance, when the build was given one
+ * (VITE_OVERPASS_API_URL, see apps/overpass). It replaces the public mirrors
+ * outright: the instance is ours, it holds only the categories below, and
+ * nobody else is competing for it, so a failure there is a real failure worth
+ * reporting rather than something to hide behind the next donated server.
+ */
+export const SELF_HOSTED_OVERPASS_URL: string | undefined =
+  import.meta.env.VITE_OVERPASS_API_URL?.trim() || undefined;
+
+// Public Overpass mirrors, used when no self hosted instance is configured
 export const OVERPASS_API_CONFIG = {
   URLS: [
     "https://overpass-api.de/api/interpreter",

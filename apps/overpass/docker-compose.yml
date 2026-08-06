@@ -1,0 +1,96 @@
+# Self hosted Overpass API for Wayside.
+#
+#   docker compose up -d --build          start it
+#   docker compose logs -f                watch the first import
+#   docker compose exec overpass update-poi-db    refresh the data
+#
+# The first run downloads the extract, filters it to the tags in
+# osmium-filter.txt and imports it. That takes minutes for a country and hours
+# for a continent; the API answers nothing until it is done.
+#
+# Copy .env.example to .env to change the region, the port or the origin.
+
+services:
+  overpass:
+    build:
+      context: .
+      args:
+        OVERPASS_VERSION: ${OVERPASS_VERSION:-v0.7.62.11}
+    image: wayside/overpass:latest
+    container_name: wayside-overpass
+    restart: unless-stopped
+
+    ports:
+      # Plain HTTP on the host. Put a reverse proxy in front of it for TLS:
+      # a browser on an https page cannot call an http API
+      - "${OVERPASS_PORT:-12345}:80"
+
+    volumes:
+      # The database, and the only state worth keeping. Deleting it means
+      # another full import, nothing worse
+      - overpass-db:/db
+
+    environment:
+      # Build the database from an extract. The alternative, clone, copies a
+      # whole planet database off someone else's server, which is the thing
+      # this container exists to stop doing
+      OVERPASS_MODE: init
+      OVERPASS_PLANET_URL: ${OVERPASS_PLANET_URL:-https://download.geofabrik.de/europe/finland-latest.osm.pbf}
+
+      # Throw away everything the app never asks about, before the import ever
+      # sees it. This is what keeps a country in a few hundred megabytes
+      OVERPASS_PLANET_PREPROCESS: filter-osm-extract /db/planet.osm.bz2
+
+      # Who edited an object and when. The app shows none of it and it roughly
+      # doubles the database
+      OVERPASS_META: "no"
+
+      # Areas are a permanent background job that computes something we never
+      # query: every query here is around:, bbox or poly
+      OVERPASS_USE_AREAS: "false"
+
+      # Keep serving once the import finishes instead of exiting
+      OVERPASS_STOP_AFTER_INIT: "false"
+
+      # No minute diffs: this database is filtered, and a diff carries objects
+      # the filter dropped. update-poi-db reimports instead. Setting
+      # OVERPASS_DIFF_URL here would slowly undo the filtering
+
+      # Two identical queries at once are ordinary here: a user pans back to
+      # where they were, or several users sit behind one address
+      OVERPASS_ALLOW_DUPLICATE_QUERIES: "yes"
+
+      # The app's queries are small and interactive. One that is neither should
+      # be killed rather than allowed to take the server down with it
+      OVERPASS_MAX_TIMEOUT: ${OVERPASS_MAX_TIMEOUT:-180s}
+      OVERPASS_SPACE: ${OVERPASS_SPACE:-2147483648}
+      OVERPASS_RATE_LIMIT: ${OVERPASS_RATE_LIMIT:-8}
+
+      # Which origins may read the answers, "*" for anyone. See initdb.d/10-cors.sh
+      OVERPASS_CORS_ORIGIN: ${OVERPASS_CORS_ORIGIN:-*}
+
+    healthcheck:
+      # -g because the brackets in the query are a glob range to curl otherwise
+      test:
+        [
+          "CMD-SHELL",
+          "curl -sfg --noproxy '*' 'http://localhost/api/interpreter?data=[out:json];node(1);out;' | grep -q Overpass",
+        ]
+      interval: 60s
+      timeout: 30s
+      retries: 3
+      # Nothing answers during the first import, and that is not a failure
+      start_period: ${OVERPASS_IMPORT_TIME:-6h}
+
+    # An import killed halfway through is simply redone on the next start, but
+    # give a running query a moment to finish first
+    stop_grace_period: 30s
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  overpass-db:

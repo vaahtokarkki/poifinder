@@ -1,0 +1,15 @@
+{
+  // Resolved through node, not by path: in the workspace the dependency is
+  // hoisted to the repo root and there is no apps/frontend/node_modules/gts
+  "extends": "gts/tsconfig-google.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "build",
+    "skipLibCheck": true,
+    "strict": false
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ]
+}

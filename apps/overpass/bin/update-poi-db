@@ -1,0 +1,174 @@
+#!/bin/bash
+#
+# Rebuild the POI database from a fresh OpenStreetMap extract.
+#
+#   docker compose exec overpass update-poi-db
+#
+#   --url=URL        extract to import, default $OVERPASS_PLANET_URL
+#   --skip-download  reuse the extract left by a previous run
+#   --keep-extract   do not delete the extract afterwards
+#
+# Overpass normally keeps itself current by applying minute diffs. This
+# instance cannot: a diff carries every object in the region, and nothing in it
+# says which of them our filtered import kept, so applying one would slowly
+# refill the database with the objects we deliberately left out. Playgrounds
+# and post boxes do not move often, so a periodic reimport is both simpler and
+# honest about what it does. Run it weekly from cron.
+#
+# The new database is built alongside the live one and only swapped in at the
+# end, so queries are answered throughout the import and the API is down for
+# the second it takes to rename two directories.
+
+set -euo pipefail
+
+DB_DIR=/db/db
+WORK_DIR=/db/update
+NEW_DB="${WORK_DIR}/db"
+EXTRACT="${WORK_DIR}/planet.osm.bz2"
+LOCK_FILE=/db/update-poi-db.lock
+
+PLANET_URL=${OVERPASS_PLANET_URL:-}
+SKIP_DOWNLOAD=false
+KEEP_EXTRACT=false
+
+for arg in "$@"; do
+	case "$arg" in
+	--url=*) PLANET_URL="${arg#--url=}" ;;
+	--skip-download) SKIP_DOWNLOAD=true ;;
+	--keep-extract) KEEP_EXTRACT=true ;;
+	-h | --help)
+		cat <<-'USAGE'
+			Usage: update-poi-db [--url=URL] [--skip-download] [--keep-extract]
+
+			Rebuilds the database from a fresh OpenStreetMap extract, filtered to
+			the tags the app queries. The live database keeps answering until the
+			new one is ready.
+
+			  --url=URL        extract to import, default $OVERPASS_PLANET_URL
+			  --skip-download  reuse the extract left by a previous run
+			  --keep-extract   do not delete the extract afterwards
+		USAGE
+		exit 0
+		;;
+	*)
+		echo "update-poi-db: unknown argument $arg" >&2
+		exit 1
+		;;
+	esac
+done
+
+if [[ -z $PLANET_URL && $SKIP_DOWNLOAD == false ]]; then
+	echo "update-poi-db: no extract to import. Set OVERPASS_PLANET_URL or pass --url=" >&2
+	exit 1
+fi
+
+# An import is hours of CPU and a second copy of the database on disk. Two at
+# once would race over the same directories and fill the volume
+exec 9>"$LOCK_FILE"
+if ! flock -n 9; then
+	echo "update-poi-db: another update is already running" >&2
+	exit 1
+fi
+
+log() { echo "update-poi-db: $(date '+%F %T') $*"; }
+
+# Settings the live database was built with. Reading the same variables the
+# entrypoint reads is what keeps the replacement readable by the same server
+OVERPASS_META=${OVERPASS_META:-no}
+OVERPASS_COMPRESSION=${OVERPASS_COMPRESSION:-gz}
+OVERPASS_FLUSH_SIZE=${OVERPASS_FLUSH_SIZE:-16}
+OVERPASS_USE_AREAS=${OVERPASS_USE_AREAS:-true}
+
+if [[ $OVERPASS_META == "attic" ]]; then
+	META="--keep-attic"
+elif [[ $OVERPASS_META == "yes" ]]; then
+	META="--meta"
+else
+	META=""
+fi
+
+STARTED=$(date +%s)
+mkdir -p "$WORK_DIR"
+rm -rf "$NEW_DB"
+
+if [[ $SKIP_DOWNLOAD == true ]]; then
+	if [[ ! -s $EXTRACT ]]; then
+		echo "update-poi-db: --skip-download but $EXTRACT is missing." >&2
+		echo "update-poi-db: only a run given --keep-extract leaves one behind" >&2
+		exit 1
+	fi
+	log "reusing $EXTRACT"
+else
+	log "downloading $PLANET_URL"
+	curl -fL --retry 3 --retry-delay 30 -o "$EXTRACT" "$PLANET_URL"
+	log "filtering"
+	filter-osm-extract "$EXTRACT"
+fi
+
+log "importing into $NEW_DB (the live database keeps answering)"
+mkdir -p "$NEW_DB"
+/app/bin/init_osm3s.sh "$EXTRACT" "$NEW_DB" /app "$META" \
+	"--version=$(osmium fileinfo -e -g data.timestamp.last "$EXTRACT") --compression-method=${OVERPASS_COMPRESSION} --map-compression-method=${OVERPASS_COMPRESSION} --flush-size=${OVERPASS_FLUSH_SIZE}"
+cp -r /app/etc/rules "$NEW_DB"
+chown -R overpass:overpass "$WORK_DIR"
+
+# The dispatcher holds the live database open and puts its socket inside it,
+# so it has to be down while the directories change places. Supervisor restarts
+# it on its own if it dies, which is why it is stopped properly rather than
+# killed.
+#
+# The config lives where the image put it, which is not one of the paths
+# supervisorctl looks in on its own
+SUPERVISORCTL=(supervisorctl -c /etc/supervisor/conf.d/supervisord.conf)
+UNDER_SUPERVISOR=false
+# `version` and not `status`: status answers 3 when any program is stopped,
+# which here only means areas are switched off
+if "${SUPERVISORCTL[@]}" version >/dev/null 2>&1; then
+	UNDER_SUPERVISOR=true
+	log "stopping the dispatcher"
+	"${SUPERVISORCTL[@]}" stop overpass_dispatch dispatcher_areas >/dev/null || true
+	# A stopped dispatcher leaves its shared memory file behind, and the next
+	# one refuses to start on top of it:
+	#   File_Error File exists 17 /osm3s_osm_base Dispatcher_Server::1
+	# The entrypoint clears the same thing for the areas dispatcher on boot
+	rm -f /dev/shm/osm3s_osm_base /dev/shm/osm3s_areas
+fi
+
+log "swapping the database in"
+rm -rf "${DB_DIR}.old"
+if [[ -d $DB_DIR ]]; then
+	mv "$DB_DIR" "${DB_DIR}.old"
+fi
+mv "$NEW_DB" "$DB_DIR"
+touch /db/init_done
+
+if [[ $UNDER_SUPERVISOR == true ]]; then
+	log "starting the dispatcher"
+	if ! "${SUPERVISORCTL[@]}" start overpass_dispatch >/dev/null; then
+		echo "update-poi-db: the dispatcher did not come back up." >&2
+		echo "update-poi-db: the database that was live is still at ${DB_DIR}.old" >&2
+		exit 1
+	fi
+	if [[ $OVERPASS_USE_AREAS == "true" ]]; then
+		"${SUPERVISORCTL[@]}" start dispatcher_areas >/dev/null || true
+		# Through the dispatcher, on the database that is now live, the way
+		# rules_loop.sh does it. Building them beside the live database instead
+		# would have two processes fighting over one shared memory file
+		log "generating areas"
+		/app/bin/osm3s_query --progress --rules <"${DB_DIR}/rules/areas.osm3s"
+	fi
+fi
+
+# Only now, so a failure anywhere above leaves the old database in place
+rm -rf "${DB_DIR}.old"
+if [[ $KEEP_EXTRACT == true ]]; then
+	log "extract kept at $EXTRACT"
+else
+	rm -rf "$WORK_DIR"
+fi
+
+log "done in $((($(date +%s) - STARTED) / 60)) min, database is $(du -sh "$DB_DIR" | cut -f1)"
+
+if [[ $UNDER_SUPERVISOR == false ]]; then
+	echo "update-poi-db: no supervisor here, restart the container to serve the new database"
+fi

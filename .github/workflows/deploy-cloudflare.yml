@@ -13,6 +13,11 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # npm ci belongs at the root, where the workspaces and the lockfile are.
+    # Everything after it is the frontend's own
+    defaults:
+      run:
+        working-directory: apps/frontend
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,11 +30,15 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        working-directory: .
 
       - name: Build
         run: npm run build
         env:
           VITE_ORS_API_KEY: ${{ secrets.VITE_ORS_API_KEY }}
+          # Unset unless the repository defines it, in which case the app
+          # queries that instance instead of the public mirrors
+          VITE_OVERPASS_API_URL: ${{ vars.VITE_OVERPASS_API_URL }}
 
       - name: Deploy
         run: npx wrangler deploy

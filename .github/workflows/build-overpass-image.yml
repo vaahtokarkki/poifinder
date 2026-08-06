@@ -1,0 +1,124 @@
+name: Build and publish the Overpass image
+
+# Publishes apps/overpass to the GitHub container registry.
+#
+# The image is the server and the tag filter, and nothing else: no OSM data is
+# baked into it. A container downloads and imports its own extract on first
+# start, which is what keeps this build a minute long and the image a thin
+# layer on top of wiktorn/overpass-api. It also means the same image serves
+# Finland or Bavaria depending only on OVERPASS_PLANET_URL.
+#
+# Pull it instead of building locally:
+#   docker pull ghcr.io/<owner>/poifinder/overpass:latest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/overpass/**"
+      - ".github/workflows/build-overpass-image.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: build-overpass-image
+  cancel-in-progress: true
+
+env:
+  # Package names must be lowercase, which every owner/repo here already is
+  IMAGE: ghcr.io/${{ github.repository }}/overpass
+
+jobs:
+  # The filter file is generated from CATEGORY_CONFIG, and a stale one is
+  # invisible: the image builds, the server runs, and a category quietly
+  # returns nothing. Catch it before it is published rather than after
+  check-filter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Addressed to the workspace: npm drops the arguments on the way through
+      # a root script that only forwards to another npm run
+      - run: npm run -w @wayside/frontend overpass:filters -- --check
+
+  build:
+    needs: check-filter
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      # The upstream image is published for arm64 too, and a small server is
+      # as likely to be one as not
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE }}
+          tags: |
+            type=raw,value=latest
+            type=sha,format=long
+
+      # Built for the runner's own architecture first, so the scripts and the
+      # patched nginx config are exercised before anything is pushed
+      - name: Build for testing
+        uses: docker/build-push-action@v6
+        with:
+          context: apps/overpass
+          load: true
+          tags: wayside-overpass:test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Smoke test
+        run: |
+          docker run --rm --entrypoint /bin/bash wayside-overpass:test -euo pipefail -c '
+            bash -n /usr/local/bin/filter-osm-extract
+            bash -n /usr/local/bin/update-poi-db
+
+            # The filter file has to parse, comments and all: osmium reads it
+            # in the middle of an hours long import, where a typo is expensive
+            printf "%s" "<?xml version=\"1.0\"?><osm version=\"0.6\"></osm>" > /tmp/empty.osm
+            osmium tags-filter --expressions=/opt/wayside/osmium-filter.txt \
+              --output=/tmp/out.osm --overwrite /tmp/empty.osm
+
+            # And nginx has to accept the config the CORS hook rewrites
+            /docker-entrypoint-initdb.d/10-cors.sh
+            /docker-entrypoint-initdb.d/20-supervisorctl.sh
+            OVERPASS_MAX_TIMEOUT=180s OVERPASS_MAX_SIZE=1M \
+              envsubst "\${OVERPASS_MAX_TIMEOUT} \${OVERPASS_MAX_SIZE}" \
+              < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
+            grep -q "Access-Control-Allow-Origin" /etc/nginx/nginx.conf
+            nginx -t
+
+            # supervisord has no --test, so start it and see that it stays up:
+            # a config it dislikes makes it exit within the second, and it took
+            # a real container to notice that the first time
+            export OVERPASS_USE_AREAS=false OVERPASS_RULES_LOAD=1 OVERPASS_ALLOW_DUPLICATE_QUERIES=no
+            timeout 5 supervisord -n -c /etc/supervisor/conf.d/supervisord.conf > /tmp/supervisord.log 2>&1 || status=$?
+            if [ "${status:-0}" != "124" ]; then cat /tmp/supervisord.log; exit 1; fi
+          '
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: apps/overpass
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

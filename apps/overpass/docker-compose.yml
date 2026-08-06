@@ -21,9 +21,12 @@ services:
     restart: unless-stopped
 
     ports:
-      # Plain HTTP on the host. Put a reverse proxy in front of it for TLS:
-      # a browser on an https page cannot call an http API
-      - "${OVERPASS_PORT:-12345}:80"
+      # Plain HTTP, so something in front has to terminate TLS: a browser on an
+      # https page cannot call an http API. When that something runs on the
+      # same host (a Tailscale funnel, cloudflared, nginx), set
+      # OVERPASS_BIND_ADDR=127.0.0.1 and the container stops being reachable
+      # from the network at all, tunnel or nothing
+      - "${OVERPASS_BIND_ADDR:-0.0.0.0}:${OVERPASS_PORT:-12345}:80"
 
     volumes:
       # The database, and the only state worth keeping. Deleting it means

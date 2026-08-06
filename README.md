@@ -42,7 +42,8 @@ Then, in `apps/frontend/.env`:
 VITE_OVERPASS_API_URL=http://localhost:12345/api/interpreter
 ```
 
-With that set the app sends one request per search and no retries, and
+With that set the app sends one request per search and no retries, keeping the
+mirrors only as a fallback for when that instance cannot answer, and
 `npm run seo:data` (`OVERPASS_API_URL=...`) finishes in minutes rather than
 days. See [`apps/overpass/README.md`](apps/overpass/README.md).
 

@@ -1,0 +1,162 @@
+# Overpass API on the server, with the settings written in rather than read
+# from a .env file. This one file is the whole deployment: copy it to the box
+# and `docker compose -f docker-compose.prod.yml up -d`.
+#
+#   docker compose -f docker-compose.prod.yml up -d        start, or apply a change
+#   docker compose -f docker-compose.prod.yml logs -f      watch the first import
+#   docker compose -f docker-compose.prod.yml exec overpass update-poi-db
+#
+# That last one is what keeps the data current, and ofelia below runs it every
+# Sunday on its own: nothing goes in the host's crontab, and a machine that has
+# this file has the whole schedule with it.
+#
+# It pulls the image the repository publishes instead of building, and lets
+# watchtower replace it when a new one is pushed. Nothing here rebuilds the
+# database: an image update restarts the server on the same volume, and the
+# data is only ever refreshed by update-poi-db.
+#
+# The values below are the ones worth checking before the first start:
+# OVERPASS_PLANET_URL (which region), and OVERPASS_CORS_ORIGIN (which site).
+#
+# This one covers all of Europe. The app's city list reaches further than that,
+# and a search outside the extract comes back empty rather than failing, so the
+# map simply has nothing to show in New York or Tokyo.
+
+services:
+  overpass:
+    image: ghcr.io/vaahtokarkki/poifinder/overpass:latest
+    container_name: wayside-overpass
+    restart: unless-stopped
+
+    ports:
+      # Localhost only: the funnel runs on this same host and is the one thing
+      # that should reach the API. An unauthenticated Overpass on the LAN is
+      # not something to hand out by accident
+      - "127.0.0.1:12345:80"
+
+    volumes:
+      - overpass-db:/db
+
+    labels:
+      # Watchtower only touches what carries this, so the rest of the machine
+      # keeps whatever versions it was given
+      com.centurylinklabs.watchtower.enable: "true"
+
+      # The weekly reimport, read by ofelia from this container rather than
+      # written in the host's crontab. Sunday 04:30, six fields: the first is
+      # seconds.
+      #
+      # no-overlap because an import of Europe is hours of work: if one is
+      # somehow still running when the next is due, the right thing is to skip
+      # the new one, not to start a second download beside it
+      ofelia.enabled: "true"
+      ofelia.job-exec.update-poi-db.schedule: "0 30 4 * * 0"
+      ofelia.job-exec.update-poi-db.command: "update-poi-db"
+      ofelia.job-exec.update-poi-db.no-overlap: "true"
+
+    environment:
+      # Which region the database covers. Changing it needs a reimport:
+      # `exec overpass update-poi-db` after the change, not just a restart.
+      #
+      # All of Europe: a 32 GB download that osmium reads several times over to
+      # cut it down, so the first import is a matter of hours and wants tens of
+      # gigabytes of free disk while it runs. Every update-poi-db pulls those
+      # 32 GB again, which is why the reimport below is weekly and not nightly
+      OVERPASS_PLANET_URL: https://download.geofabrik.de/europe-latest.osm.pbf
+      OVERPASS_MODE: init
+      OVERPASS_PLANET_PREPROCESS: filter-osm-extract /db/planet.osm.bz2
+
+      # Which origins a browser may read the answers from. Not access control:
+      # anything can still query it with curl
+      OVERPASS_CORS_ORIGIN: https://wayside.cc
+
+      OVERPASS_META: "no"
+      OVERPASS_USE_AREAS: "false"
+      OVERPASS_STOP_AFTER_INIT: "false"
+      OVERPASS_ALLOW_DUPLICATE_QUERIES: "yes"
+
+      # Bounds for one query, not budgets for the server: the app's queries
+      # need far less, these are here so a bad one dies on its own
+      OVERPASS_MAX_TIMEOUT: 180s
+      OVERPASS_SPACE: "2147483648"
+      OVERPASS_RATE_LIMIT: "8"
+
+    healthcheck:
+      # -g because the brackets in the query are a glob range to curl otherwise
+      test:
+        [
+          "CMD-SHELL",
+          "curl -sfg --noproxy '*' 'http://localhost/api/interpreter?data=[out:json];node(1);out;' | grep -q Overpass",
+        ]
+      interval: 60s
+      timeout: 30s
+      retries: 3
+      # Nothing answers while Europe is downloading, filtering and importing,
+      # and that is not a failure. Generous on purpose: an unhealthy container
+      # is a thing to act on, not a progress bar
+      start_period: 12h
+
+    stop_grace_period: 30s
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: wayside-watchtower
+    restart: unless-stopped
+
+    volumes:
+      # How it pulls and replaces containers. This is root on the host in
+      # practice, which is the reason for the label filter above
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    environment:
+      # Only containers labelled above
+      WATCHTOWER_LABEL_ENABLE: "true"
+
+      # A GitHub package is private until it is made public. If it stays
+      # private, watchtower needs a token that can read it: a classic PAT with
+      # read:packages, kept in the shell environment rather than written here
+      # REPO_USER: vaahtokarkki
+      # REPO_PASS: ${GHCR_TOKEN}
+
+      # Delete the image it replaced, rather than filling the disk with them
+      WATCHTOWER_CLEANUP: "true"
+      # Wednesday 04:00, three days clear of the Sunday reimport. A fixed time
+      # rather than an interval, and weekly rather than daily, because
+      # restarting the container mid import throws away hours of work and the
+      # data then waits a week for the next attempt
+      WATCHTOWER_SCHEDULE: "0 0 4 * * 3"
+      TZ: Europe/Helsinki
+
+  # Cron, as a container, reading its jobs from the labels above. It runs
+  # `docker exec` against the overpass container at the scheduled time, so a
+  # job is defined next to the thing it acts on and travels with this file
+  ofelia:
+    image: mcuadros/ofelia:latest
+    container_name: wayside-ofelia
+    restart: unless-stopped
+    depends_on:
+      - overpass
+    command: daemon --docker
+
+    volumes:
+      # Read only is what ofelia's own documentation uses. It stops nothing the
+      # API allows, so this is still a container that can exec into others
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+    environment:
+      TZ: Europe/Helsinki
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  overpass-db:

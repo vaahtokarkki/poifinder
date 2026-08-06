@@ -10,9 +10,16 @@ By default, the public mirrors in `OVERPASS_API_CONFIG`
 again with exponential backoff, because they are donated and shared.
 
 Set `VITE_OVERPASS_API_URL` (see [`.env.example`](.env.example)) and that whole
-apparatus is skipped. The app sends one request to that instance and reports
-what comes back, because a server we run has no rate limit to dance around and
-no sibling to fail over to. [`apps/overpass`](../overpass) is such an instance.
+apparatus moves out of the way. The instance is asked first and asked once: it
+is ours, so there is no rate limit to dance around and nothing for a retry loop
+to wait out. [`apps/overpass`](../overpass) is such an instance.
+
+The mirrors stay behind it as a fallback, because one machine on one connection
+is a single point of failure and an empty map is a worse answer than a slow
+one. Nothing appears in the loading screen while the instance is answering
+normally — a status line that flashes for 200 ms is noise. It appears only once
+the fallback is in use, since those searches are slower and the reason ought to
+be visible.
 
 `npm run seo:data` reads the same setting from `OVERPASS_API_URL` in the
 environment, and drops its 2.5 second throttle when it is set.

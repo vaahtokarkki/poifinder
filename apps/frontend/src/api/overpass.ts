@@ -157,15 +157,37 @@ export async function fetchOverpassMarkers(
       .filter(Boolean) as OverpassMarkerData[];
   };
 
-  // A self hosted instance is the whole story when there is one: a single
-  // request, no failover and no backoff. There is no mirror to fall back to
-  // and no shared rate limit to be polite about, so an error there is a real
-  // error and the caller should see it immediately rather than after a minute
-  // of retries against servers we are not using anyway.
+  /**
+   * True once the self hosted instance has been tried and has failed, which is
+   * the only thing that puts a configured deployment on the public mirrors.
+   * The loading text says so from then on, because the searches that follow
+   * are slower and it should be clear that this is a degraded state rather
+   * than how the app normally behaves
+   */
+  let usingFallback = false;
+
+  const status = (text: string) =>
+    onStatusChange?.(usingFallback ? `Our server is down, using a public one. ${text}` : text);
+
+  // A self hosted instance is asked once, with no retries and no backoff:
+  // there is no shared rate limit to be polite about, and a slow retry loop
+  // against our own server helps nobody. Nothing is said in the loading screen
+  // for it either. The normal case is one fast request, and a line of status
+  // text that appears and disappears is noise rather than information.
+  //
+  // Should it fail, the public mirrors are still there, and using them beats
+  // showing an empty map because one machine is rebooting.
   if (SELF_HOSTED_OVERPASS_URL) {
     console.debug(`[Overpass] Using self hosted instance: ${SELF_HOSTED_OVERPASS_URL}`);
-    onStatusChange?.("Loading...");
-    return tryFetchFromURL(SELF_HOSTED_OVERPASS_URL, 0);
+    try {
+      return await tryFetchFromURL(SELF_HOSTED_OVERPASS_URL, 0);
+    } catch (error) {
+      const errorMsg = error instanceof Error ? error.message : String(error);
+      console.warn(
+        `[Overpass] Self hosted instance failed (${errorMsg}), falling back to the public mirrors`
+      );
+      usingFallback = true;
+    }
   }
 
   // Pass 1: Try each URL once (no retries, fast failover)
@@ -174,8 +196,7 @@ export async function fetchOverpassMarkers(
   for (let urlIndex = 0; urlIndex < OVERPASS_API_CONFIG.URLS.length; urlIndex++) {
     const url = OVERPASS_API_CONFIG.URLS[urlIndex];
     try {
-      const status = `Loading from server ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}...`;
-      onStatusChange?.(status);
+      status(`Loading from server ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}...`);
       console.debug(`[Overpass] Pass 1: Trying URL ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}: ${url}`);
 
       const result = await tryFetchFromURL(url, 0); // maxRetries: 0 for pass 1
@@ -184,21 +205,19 @@ export async function fetchOverpassMarkers(
     } catch (error) {
       const errorMsg = error instanceof Error ? error.message : String(error);
       pass1Errors.push(`${url}: ${errorMsg}`);
-      const status = `Server ${urlIndex + 1} failed (${errorMsg}). Trying next...`;
-      onStatusChange?.(status);
+      status(`Server ${urlIndex + 1} failed (${errorMsg}). Trying next...`);
       console.debug(`[Overpass] Pass 1: URL ${urlIndex + 1} failed (${errorMsg}), trying next...`);
     }
   }
 
   // Pass 2: All URLs failed in pass 1, now retry with exponential backoff
   console.debug("[Overpass] Pass 1 failed, starting pass 2: retrying all URLs with exponential backoff");
-  onStatusChange?.("All servers failed. Retrying with exponential backoff...");
+  status("All servers failed. Retrying with exponential backoff...");
   const pass2Errors: string[] = [];
   for (let urlIndex = 0; urlIndex < OVERPASS_API_CONFIG.URLS.length; urlIndex++) {
     const url = OVERPASS_API_CONFIG.URLS[urlIndex];
     try {
-      const status = `Retrying server ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length} with backoff...`;
-      onStatusChange?.(status);
+      status(`Retrying server ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length} with backoff...`);
       console.debug(`[Overpass] Pass 2: Retrying URL ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}: ${url}`);
 
       const result = await tryFetchFromURL(url, OVERPASS_API_CONFIG.RETRY.maxRetries); // maxRetries: 3 for pass 2
@@ -207,13 +226,16 @@ export async function fetchOverpassMarkers(
     } catch (error) {
       const errorMsg = error instanceof Error ? error.message : String(error);
       pass2Errors.push(`${url}: ${errorMsg}`);
-      const status = `Server ${urlIndex + 1} failed after retries (${errorMsg}). Trying next...`;
-      onStatusChange?.(status);
+      status(`Server ${urlIndex + 1} failed after retries (${errorMsg}). Trying next...`);
       console.debug(`[Overpass] Pass 2: URL ${urlIndex + 1} failed even after retries (${errorMsg})`);
     }
   }
 
   // All passes exhausted
   console.error("[Overpass] All passes exhausted. Pass 1 errors:", pass1Errors, "Pass 2 errors:", pass2Errors);
-  throw new Error(`All Overpass API servers are unavailable. Tried: ${OVERPASS_API_CONFIG.URLS.length} server(s).`);
+  throw new Error(
+    `All Overpass API servers are unavailable. Tried: ${
+      OVERPASS_API_CONFIG.URLS.length + (usingFallback ? 1 : 0)
+    } server(s).`
+  );
 }

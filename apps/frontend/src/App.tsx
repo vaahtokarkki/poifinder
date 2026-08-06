@@ -24,6 +24,7 @@ import PrerenderedPage from "./components/PrerenderedPage";
 import { Alert, Snackbar } from '@mui/material';
 import CategoryPresets from './components/CategoryPresets.tsx';
 import BottomSheet from './components/BottomSheet.tsx';
+import MapNotices, { type MapNotice } from './components/MapNotices.tsx';
 import { InfoSheetContent, InfoSheetHeader } from './components/AppInfoPanel.tsx';
 import SearchIconButton from './components/SearchIconButton.tsx';
 import MyLocationIconButton from './components/MyLocationIconButton.tsx';
@@ -57,10 +58,28 @@ const App = () => {
   const [appInitialized, setAppInitialized] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [shareMessage, setShareMessage] = useState<string | null>(null);
+  /** Passing remarks rather than outcomes: no icon, no dismiss button */
+  const [notices, setNotices] = useState<MapNotice[]>([]);
+  const nextNoticeId = useRef(0);
   const [loadingStatus, setLoadingStatus] = useState<string | null>(null);
   // The build time payload of a prerendered page, absent on a shared link or
   // an area search. Read once: a page load is the only thing that changes it
   const [pageData] = useState(readPageData);
+
+  /**
+   * Stable across renders on purpose: PoiMarkers only re-renders when this or
+   * the markers change, and re-rendering it rebuilds every marker on the map
+   */
+  const showNotice = useCallback((message: string) => {
+    const id = ++nextNoticeId.current;
+    // A run of quick taps stacks, but only three deep: past that the map is
+    // covered by remarks about points nobody is looking at any more
+    setNotices((current) => [...current, { id, message }].slice(-3));
+    window.setTimeout(
+      () => setNotices((current) => current.filter((notice) => notice.id !== id)),
+      2600
+    );
+  }, []);
 
   // Controls drawn on top of the map, their gestures are not map gestures
   const overlayRef = useRef<HTMLDivElement | null>(null);
@@ -628,11 +647,7 @@ const App = () => {
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
         />
         <UserPositionMarker position={userPosition} />
-        <PoiMarkers
-          markers={filteredMarkers}
-          setLoading={setLoading}
-          fetchMarkers={fetchMarkers}
-        />
+        <PoiMarkers markers={filteredMarkers} onNotice={showNotice} />
         {routeGeoJson && displaySearchItem === "routes" && (
           <GeoJSON
             data={routeGeoJson}
@@ -690,6 +705,9 @@ const App = () => {
           {shareMessage}
         </Alert>
       </Snackbar>
+      {/* Tapping a point with nothing to say should not cost a popup over the
+          map, so it says it down here and goes away on its own */}
+      <MapNotices notices={notices} />
     </>
   );
 };

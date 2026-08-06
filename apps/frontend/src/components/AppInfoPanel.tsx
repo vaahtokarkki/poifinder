@@ -11,7 +11,7 @@ export const InfoSheetHeader: React.FC<{ title: string }> = ({ title }) => (
     <h1 className="info-sheet-title">{title}</h1>
     <p className="info-sheet-summary">
       Wayside maps the small things that are hard to find when you are out:
-      toilets, playgrounds, drinking water, parking, shelters and more. Pick a
+      toilets, playgrounds, drinking water, parking etc. Pick a
       preset or your own categories, and search any area of the map.
     </p>
   </>
@@ -79,8 +79,7 @@ export const InfoSheetContent: React.FC = () => (
         ))}
       </ul>
       <p className="info-sheet-note">
-        Not what you are after? The picker has every category on its own, from
-        ATMs to viewpoints.
+        Not what you are after? The picker has every category on its own.
       </p>
     </section>
 
@@ -99,6 +98,14 @@ export const InfoSheetContent: React.FC = () => (
         OpenStreetMap
       </a>{" "}
       contributors. Something missing? Add it there and it shows up here.
+    </p>
+
+    <p className="info-sheet-footer">
+      Wayside is open source:{" "}
+      <a href="https://github.com/vaahtokarkki/poifinder" target="_blank" rel="noreferrer">
+        the code is on GitHub
+      </a>
+      .
     </p>
   </>
 );

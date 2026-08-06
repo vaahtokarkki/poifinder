@@ -133,7 +133,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     filters: ["[tourism=camp_site]"],
     display: "Camp site",
     icon: React.createElement(BedtimeIcon),
-    color: "balck",
+    color: "#212121",
     group: CATEGORY_GROUP.Nature,
   },
   [CATEGORIES.Beach]: {
@@ -351,10 +351,13 @@ export const CATEGORY_GROUP_DISPLAY: Record<CATEGORY_GROUP, string> = {
 
 /**
  * A self hosted Overpass instance, when the build was given one
- * (VITE_OVERPASS_API_URL, see apps/overpass). It replaces the public mirrors
- * outright: the instance is ours, it holds only the categories below, and
- * nobody else is competing for it, so a failure there is a real failure worth
- * reporting rather than something to hide behind the next donated server.
+ * (VITE_OVERPASS_API_URL, see apps/overpass). It is asked first and asked once:
+ * the instance is ours, it holds only the categories below, and nobody else is
+ * competing for it, so there is nothing for a retry loop to wait out.
+ *
+ * The mirrors below stay as a fallback for when it cannot answer at all. One
+ * machine on a home connection is a single point of failure, and an empty map
+ * is a worse answer than a slow one.
  */
 export const SELF_HOSTED_OVERPASS_URL: string | undefined =
   import.meta.env.VITE_OVERPASS_API_URL?.trim() || undefined;

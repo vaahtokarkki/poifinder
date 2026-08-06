@@ -15,23 +15,9 @@ const HomePageSection: React.FC<{ data: HomePageData }> = ({ data }) => {
       <h1 className="info-sheet-title">Find the small things, anywhere</h1>
       <p className="info-sheet-summary">
         Wayside maps what other maps skip: public toilets, drinking water, playgrounds,
-        post boxes, luggage lockers, shelters and fourteen more categories, from
+        post boxes, luggage lockers and many more categories, from
         OpenStreetMap. Search any area of the map, or start from a city below.
       </p>
-
-      {cities.length > 0 && (
-        <section className="info-sheet-section">
-          <h2 className="info-sheet-heading">Cities</h2>
-          <ul className="poi-links">
-            {cities.map((city) => (
-              <li key={city.slug}>
-                <a href={`/${city.slug}`}>{city.name}</a>
-                <span className="poi-meta">{city.country}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
 
       <p className="info-sheet-footer">
         Points come from{" "}

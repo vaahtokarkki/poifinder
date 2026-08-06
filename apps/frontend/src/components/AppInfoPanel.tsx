@@ -34,7 +34,7 @@ const STEPS = [
   },
   {
     title: "Move the map",
-    text: 'Pan or zoom anywhere, then tap "Search from this area" to load the points there.',
+    text: "Pan or zoom anywhere and the points of the new view load on their own, as soon as the map settles.",
   },
   {
     title: "Open a point",

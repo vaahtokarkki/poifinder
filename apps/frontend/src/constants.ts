@@ -74,7 +74,7 @@ export type CategoryConfig = {
 // Main config object
 export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
   [CATEGORIES.Playgrounds]: {
-    filters: ["[leisure=playground]"],
+    filters: ["[leisure=playground][access!=private]"],
     display: "Playgrounds",
     icon: React.createElement(ParkIcon),
     color: "#388e3c",

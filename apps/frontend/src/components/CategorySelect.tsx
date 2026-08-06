@@ -46,11 +46,20 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
   // The selection as it was when the menu was opened, to tell whether closing
   // it is worth a new query
   const valueOnOpenRef = React.useRef<CATEGORIES[]>(value);
+  // Controlled, so the adornment can open the menu as well: the icon sits
+  // beside the trigger, a tap on it never reaches the select itself
+  const [open, setOpen] = React.useState(false);
 
   if (!visible) return null;
 
   const selectionChanged = (before: CATEGORIES[], after: CATEGORIES[]) =>
     before.length !== after.length || before.some((cat) => !after.includes(cat));
+
+  const handleOpen = () => {
+    valueOnOpenRef.current = value;
+    setOpen(true);
+  };
+
   return (
     <FormControl className="category-select" size="small">
       <Select
@@ -61,9 +70,23 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
         value={value}
         title="Select the categories to show on the map"
         startAdornment={
-          <TuneIcon fontSize="small" sx={{ color: "#5f6368", ml: 0.5, mr: 0.75 }} />
+          <TuneIcon
+            fontSize="small"
+            role="button"
+            aria-label="Select the categories to show on the map"
+            sx={{ color: "#5f6368", ml: 0.5, mr: 0.75, cursor: "pointer" }}
+            // The icon is not a focus target, the menu takes the focus itself
+            onMouseDown={(e: React.MouseEvent) => e.preventDefault()}
+            onClick={handleOpen}
+          />
         }
-        MenuProps={{ sx: { maxHeight: "70vh" } }}
+        MenuProps={{
+          sx: { maxHeight: "70vh" },
+          // Without this MUI focuses the selected item on every render of the
+          // open menu, which scrolls the list back to the top as soon as the
+          // last selection is cleared
+          disableAutoFocusItem: true,
+        }}
         sx={{
           background: "#fff",
           borderRadius: "999px",
@@ -88,10 +111,10 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
           }
           onChange(selected as CATEGORIES[]);
         }}
-        onOpen={() => {
-          valueOnOpenRef.current = value;
-        }}
+        open={open}
+        onOpen={handleOpen}
         onClose={() => {
+          setOpen(false);
           if (selectionChanged(valueOnOpenRef.current, value)) onCommit?.();
         }}
         renderValue={(selected) => {

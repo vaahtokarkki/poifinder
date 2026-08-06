@@ -103,17 +103,17 @@ body {
   display: none;
 }
 
-.search-area-button {
+.map-hint {
   position: relative;
   z-index: 1000;
   display: flex;
   justify-content: center;
   margin-top: var(--overlay-gap);
-  /* The row spans the map, only the button itself may catch a tap */
+  /* The row spans the map, only the hint itself may catch a tap */
   pointer-events: none;
 }
 
-.search-area-button > * {
+.map-hint > * {
   pointer-events: auto;
 }
 

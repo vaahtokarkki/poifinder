@@ -11,7 +11,7 @@ import UserPositionMarker from "./components/UserPositionMarker";
 import { fetchRouteGeoJSON } from "./api/ors.ts";
 import { fetchOverpassMarkers, OverpassMarkerData } from "./api/overpass.ts";
 import Loading from "./components/Loading";
-import SearchPoisButton from "./components/SearchPoisButton";
+import ZoomInHint from "./components/ZoomInHint";
 import { useUserPosition } from "./hooks/index";
 import { CATEGORIES } from "./constants";
 import { fetchSuggestions } from "./api/geocode";
@@ -35,6 +35,39 @@ import { loadGPSLocation } from "./utils/gpsLocationStorage";
 import { loadPois, savePois, poiCacheMatchesCategories, isPoiCacheUpToDate } from "./utils/poiStorage";
 import { loadCategories, saveCategories, parseCategories, serializeCategories } from "./utils/categoryStorage";
 
+/**
+ * Points are only loaded from this zoom in. Further out the view spans a whole
+ * region, which Overpass answers slowly and the map cannot draw readably
+ */
+const MIN_POI_ZOOM = 10;
+
+/** How long the map has to stand still before the new view is loaded */
+const AUTO_FETCH_DELAY_MS = 700;
+
+/**
+ * The query covers a little more than the screen on every side, so that a short
+ * pan stays inside the loaded area instead of costing another Overpass query
+ */
+const FETCH_BBOX_PADDING = 0.25;
+
+/** Grow a [south, west, north, east] box by {@link FETCH_BBOX_PADDING} */
+const padBbox = ([south, west, north, east]: [number, number, number, number]):
+  [number, number, number, number] => {
+  const latPad = (north - south) * FETCH_BBOX_PADDING;
+  const lngPad = (east - west) * FETCH_BBOX_PADDING;
+  return [south - latPad, west - lngPad, north + latPad, east + lngPad];
+};
+
+/** Whether the whole of `inner` lies within `outer` */
+const bboxContains = (
+  outer: [number, number, number, number],
+  inner: [number, number, number, number]
+) =>
+  inner[0] >= outer[0] &&
+  inner[1] >= outer[1] &&
+  inner[2] <= outer[2] &&
+  inner[3] <= outer[3];
+
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
     const map = e.target;
@@ -49,8 +82,9 @@ const App = () => {
   const [searchPosition, setSearchPosition] = useState<[number, number] | null>(null);
   const [category, setCategory] = useState<CATEGORIES[]>([]);
   const [loading, setLoading] = useState(false);
-  const [displaySearch, setDisplaySearch] = useState(false);
   const [displaySearchItem, setDisplaySearchItem] = useState<string | null>(null); // "search" | "routes" | null
+  // Only kept in state so the zoom hint can be rendered from it
+  const [zoom, setZoom] = useState<number | null>(null);
   const [markers, setMarkers] = useState<OverpassMarkerData[]>([]);
   const [filteredMarkers, setFilteredMarkers] = useState<OverpassMarkerData[]>([]);
   const [map, setMap] = useState<Map | null>(null);
@@ -92,6 +126,10 @@ const App = () => {
   const gpsLockCenteringDoneRef = useRef(false);
   // Bounding box the markers have been loaded or requested for
   const requestedBboxRef = useRef<[number, number, number, number] | null>(null);
+  // A pending auto load of the view the map was left in
+  const autoFetchTimerRef = useRef<number | null>(null);
+  // True while a query is running, so a pan does not race it with a second one
+  const fetchInFlightRef = useRef(false);
 
   const setMapView = useCallback(
     (center: [number, number], zoom?: number) => {
@@ -129,12 +167,19 @@ const App = () => {
       setMarkers([]);
       setFilteredMarkers([]);
       requestedBboxRef.current = null;
-      setDisplaySearch(false);
       return;
     }
 
+    // Too far out to query, the hint asks for a closer look instead
+    if (map.getZoom() < MIN_POI_ZOOM) return;
+
+    // Query a little wider than the screen, so the points are already there
+    // when the user nudges the map
+    const fetchBbox = padBbox(bbox);
+
     setLoading(true);
-    requestedBboxRef.current = bbox;
+    fetchInFlightRef.current = true;
+    requestedBboxRef.current = fetchBbox;
 
     let polygon: Feature<Polygon | MultiPolygon> | undefined = undefined;
     if (
@@ -150,23 +195,60 @@ const App = () => {
         null, // Don't use GPS-based around query, only bbox
         1000,
         categories,
-        bbox,
+        fetchBbox,
         polygon,
         setLoadingStatus
       );
       setMarkers(data);
       setFilteredMarkers(filterMarkersInBbox(data, bbox));
-      savePois({ markers: data, bbox, categories });
+      savePois({ markers: data, bbox: fetchBbox, categories });
       setErrorMessage(null); // Clear error on success
     } catch (e) {
       const errorMsg = e instanceof Error ? e.message : "Failed to fetch markers from Overpass API. Please try again.";
       console.error("Error fetching markers:", e);
       setErrorMessage(errorMsg);
+      // A failed query leaves nothing loaded, so the next pan may retry
+      requestedBboxRef.current = null;
     }
+    fetchInFlightRef.current = false;
     setLoading(false);
     setLoadingStatus(null);
-    setDisplaySearch(false);
   };
+
+  /**
+   * Load the points of the current view once the map settles. A drag or a fling
+   * ends in a run of moveend events, so the load waits for the last of them,
+   * and is skipped altogether while the view is inside the loaded area.
+   */
+  const scheduleAutoFetch = () => {
+    if (autoFetchTimerRef.current) window.clearTimeout(autoFetchTimerRef.current);
+    autoFetchTimerRef.current = window.setTimeout(() => {
+      autoFetchTimerRef.current = null;
+      if (!map || category.length === 0 || map.getZoom() < MIN_POI_ZOOM) return;
+      // A route query follows the route rather than the view, panning along it
+      // would only ask for the same points again
+      if (displaySearchItem === "routes") return;
+
+      const bbox = getBbox();
+      if (!bbox) return;
+      const loaded = requestedBboxRef.current;
+      if (loaded && bboxContains(loaded, bbox)) return;
+
+      // Wait for the running query rather than race it
+      if (fetchInFlightRef.current) {
+        scheduleAutoFetch();
+        return;
+      }
+      fetchMarkers();
+    }, AUTO_FETCH_DELAY_MS);
+  };
+
+  useEffect(
+    () => () => {
+      if (autoFetchTimerRef.current) window.clearTimeout(autoFetchTimerRef.current);
+    },
+    []
+  );
 
   useEffect(() => {
     // When user searches for a location, center the map and fetch markers from new bbox
@@ -177,20 +259,20 @@ const App = () => {
       // Fetch markers after map centers on search result
       fetchMarkers();
     }
-    setDisplaySearch(false);
   }, [searchPosition, map]);
 
-  // Persist the current map center so it can be restored on the next visit
+  // Persist the current map center so it can be restored on the next visit,
+  // and load the points of wherever the map was left
   const handleMapPan = () => {
-    // Moves we made ourselves must not ask the user to search the area again
-    if (!isProgrammaticMove()) {
-      setDisplaySearch(true);
-    }
     if (map) {
       const center = map.getCenter();
-      const zoom = map.getZoom();
-      saveMapLocation({ lat: center.lat, lng: center.lng, zoom });
+      const currentZoom = map.getZoom();
+      setZoom(currentZoom);
+      saveMapLocation({ lat: center.lat, lng: center.lng, zoom: currentZoom });
     }
+    // Moves we made ourselves load their own points where they need to, and
+    // the coverage check keeps this from repeating the query
+    scheduleAutoFetch();
   };
 
   // Scrolling the preset row sideways or opening a select must not drag the map.
@@ -312,6 +394,14 @@ const App = () => {
       console.error("Error sharing the current view:", e);
       setErrorMessage("Could not copy the link to the clipboard.");
     }
+  };
+
+  // Taking the hint: come in to the closest view that still loads points,
+  // keeping the area the user was looking at in the middle
+  const handleZoomInClick = () => {
+    const center = map?.getCenter();
+    if (!center) return;
+    setMapView([center.lat, center.lng], MIN_POI_ZOOM);
   };
 
   const handleMyLocationClick = () => {
@@ -532,6 +622,18 @@ const App = () => {
     }
   }, [category]);
 
+  // Keep the zoom in state from the first frame on: the hint has to be right
+  // before the map is ever moved
+  useEffect(() => {
+    if (!map) return;
+    const syncZoom = () => setZoom(map.getZoom());
+    syncZoom();
+    map.on("zoomend", syncZoom);
+    return () => {
+      map.off("zoomend", syncZoom);
+    };
+  }, [map]);
+
   // Listen for user panning
   useEffect(() => {
     // moveend covers dragend and zoomend, and also our own setView calls
@@ -626,9 +728,11 @@ const App = () => {
             visible={displaySearchItem !== "routes"}
           />
         </div>
-        <SearchPoisButton
-          onClick={() => fetchMarkers()}
-          visible={displaySearch && displaySearchItem !== "routes"}
+        <ZoomInHint
+          onClick={handleZoomInClick}
+          visible={
+            zoom !== null && zoom < MIN_POI_ZOOM && displaySearchItem !== "routes"
+          }
         />
         <div className="map-controls">
           <ShareIconButton onClick={handleShareClick} />

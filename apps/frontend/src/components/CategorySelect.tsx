@@ -29,11 +29,16 @@ const categories = Object.entries(CATEGORY_CONFIG).map(([key, config]) => ({
   group: config.group,
 }));
 
-// Group categories by group
+// Group categories by group, alphabetically within each. CATEGORY_CONFIG is
+// ordered by category id, which is the order they were added in and means
+// nothing to someone looking for one. filter returns a new array, so sorting
+// it here leaves the categories list above alone
 const groupedCategories: Record<CATEGORY_GROUP, typeof categories> = Object.values(CATEGORY_GROUP)
   .filter((g) => typeof g === "number")
   .reduce((acc, group) => {
-    acc[group as CATEGORY_GROUP] = categories.filter((cat) => cat.group === group);
+    acc[group as CATEGORY_GROUP] = categories
+      .filter((cat) => cat.group === group)
+      .sort((a, b) => a.label.localeCompare(b.label));
     return acc;
   }, {} as Record<CATEGORY_GROUP, typeof categories>);
 

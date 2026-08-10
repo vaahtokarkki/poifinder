@@ -42,7 +42,12 @@ services:
 
       # Throw away everything the app never asks about, before the import ever
       # sees it. This is what keeps a country in a few hundred megabytes
-      OVERPASS_PLANET_PREPROCESS: filter-osm-extract /db/planet.osm.bz2
+      OVERPASS_PLANET_PREPROCESS: ${OVERPASS_PLANET_PREPROCESS:-filter-osm-extract /db/planet.osm.bz2}
+
+      # Empty here: one country is one download, and there is nothing to
+      # assemble. Set it, along with the two above, to cover a continent
+      # without ever holding one on the disk. See .env.example
+      WAYSIDE_REGION_LIST: ${WAYSIDE_REGION_LIST:-}
 
       # Who edited an object and when. The app shows none of it and it roughly
       # doubles the database
@@ -68,6 +73,11 @@ services:
       OVERPASS_MAX_TIMEOUT: ${OVERPASS_MAX_TIMEOUT:-180s}
       OVERPASS_SPACE: ${OVERPASS_SPACE:-2147483648}
       OVERPASS_RATE_LIMIT: ${OVERPASS_RATE_LIMIT:-8}
+
+      # How much the importer buffers before it writes. Lower is slower and
+      # wants less RAM, which is what a machine that got OOM killed during an
+      # import needs
+      OVERPASS_FLUSH_SIZE: ${OVERPASS_FLUSH_SIZE:-16}
 
       # Which origins may read the answers, "*" for anyone. See initdb.d/10-cors.sh
       OVERPASS_CORS_ORIGIN: ${OVERPASS_CORS_ORIGIN:-*}

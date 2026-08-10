@@ -11,15 +11,19 @@ objects instead of ten billion.
 
 ## What is in it
 
-One container. Overpass is a set of files under `/db` read by the process that
-answers queries, so there is no separate database server to run: the volume
-`overpass-db` *is* the database.
+Overpass is a set of files under `/db` read by the process that answers
+queries, so there is no separate database server to run: the directory *is* the
+database. One container is enough to develop against. On a server it is two,
+one answering queries and one building the data, sharing that directory —
+"On a server" below says why.
 
 The extract is filtered before it is imported. `osmium-filter.txt` is generated
 from `CATEGORY_CONFIG` in the app, so the database holds drinking fountains,
 playgrounds, post boxes and the seventeen other categories, and nothing else.
-On the Monaco extract used to test this, the filter keeps about 3% of the file;
-the ratio is what decides whether a country fits on a small server.
+On the Netherlands extract, 1.4 GB of OpenStreetMap comes out as 21 MB, or
+about 1.5%, member nodes included. That ratio is what lets a continent fit on
+a small server; it is not what decides whether the *import* fits, which is
+"Covering a continent" below.
 
 The tradeoff is that it only answers *our* queries. Ask it for restaurants and
 it will honestly tell you there are none.
@@ -53,13 +57,15 @@ curl -s 'http://localhost:12345/api/interpreter' \
 ## Keeping it current
 
 ```bash
-docker compose exec overpass update-poi-db
+docker compose exec overpass update-poi-db            # one container
+docker compose -f docker-compose.prod.yml exec importer update-poi-db   # on a server
 ```
 
 Downloads the extract again, filters it, builds a second database next to the
 live one and swaps them at the end. Queries are answered throughout; the API is
-down for the second the swap takes. Weekly is plenty for these categories, and
-on a server that schedule is already in
+down for the second the swap takes, plus the restart if the server is in
+another container. Weekly is plenty for these categories, and on a server that
+schedule is already in
 [`docker-compose.prod.yml`](docker-compose.prod.yml) — see below.
 
 It needs room for the extract plus a second copy of the database while it runs.
@@ -68,6 +74,90 @@ Why a reimport rather than the minute diffs Overpass normally applies: a diff
 carries every object in the region, and nothing in it says which of them our
 filter kept. Applying diffs would slowly refill the database with exactly the
 objects we left out. `OVERPASS_DIFF_URL` is deliberately unset.
+
+## Covering a continent
+
+One country is one download and needs nothing special. A continent does:
+`europe-latest.osm.pbf` is 35 GB, and filtering it means holding all 35 GB on
+the disk while osmium reads it four times over. That is what gets a small
+server killed, and it gets killed hours in, having downloaded all 35 GB first.
+
+Set a region list and the extract is built out of the countries in
+[`europe-regions.txt`](europe-regions.txt) instead, one at a time: download,
+filter, throw the download away, keep the few megabytes that survived, and
+merge the fifty pieces at the end. Same continent, same bytes over the wire,
+but nothing ever holds more than the largest single country.
+
+`WAYSIDE_REGION_LIST` is the whole setting, and where it goes depends on which
+half of the work you are configuring:
+
+```yaml
+WAYSIDE_REGION_LIST: /opt/wayside/europe-regions.txt
+```
+
+On a server that is the importer's, and `update-poi-db` builds the database
+from it — no `OVERPASS_PLANET_URL` involved at all, because nothing imports on
+startup there. See "On a server" below.
+
+To do the same in a single container, where the entrypoint's own init is what
+imports, it takes two more settings, because that entrypoint insists on
+downloading `OVERPASS_PLANET_URL` before it will run anything:
+
+```yaml
+WAYSIDE_REGION_LIST: /opt/wayside/europe-regions.txt
+OVERPASS_PLANET_URL: https://download.geofabrik.de/europe/monaco-latest.osm.pbf
+OVERPASS_PLANET_PREPROCESS: build-region-extract /db/planet.osm.bz2
+```
+
+Monaco is the smallest thing Geofabrik publishes, and `build-region-extract`
+replaces it in place before the import ever sees it.
+
+The list is URLs, one per line, comments allowed. Any extract works; the only
+rule is that the regions must not overlap, or their shared objects are imported
+twice. Geofabrik's four European aggregates are left out for exactly that
+reason, and the file says so.
+
+A run that dies is resumable: a region already downloaded and filtered is not
+fetched again, so the next attempt picks up where it stopped rather than
+starting 35 GB over. Parts older than a day are refetched, so next week's
+refresh cannot quietly ship a country from the week before.
+
+### What it costs
+
+Splitting by country fixes disk and makes the job resumable. It does **not**
+meaningfully lower the memory the filter needs, and it is worth being clear
+about why.
+
+`osmium tags-filter` has to know which nodes the ways it keeps are built from,
+and it tracks them in a bitmap indexed by node id. The bitmap is sized by the
+largest node id in OpenStreetMap — around 13 billion — rather than by how many
+nodes are actually kept. Filtering the Netherlands, a 1.4 GB extract, measured:
+
+| | peak RSS |
+| --- | --- |
+| `tags-filter`, following references | 2.2 GB |
+| `tags-filter --omit-referenced` | 153 MB |
+
+The difference is the bitmap, and Monaco pays for the same one Europe does.
+Omitting references is not an option: without the member nodes, Overpass cannot
+place a way, and `out center` on every parking, playground and beach comes back
+empty.
+
+So budget **around 3 GB of usable memory** for the filter step whatever the
+region, and add swap if the machine does not have it:
+
+```bash
+sudo fallocate -l 8G /swapfile && sudo chmod 600 /swapfile
+sudo mkswap /swapfile && sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```
+
+Swap is enough here because this is a weekly batch job rather than something in
+the request path — it will be slower, and it will finish.
+
+The import that follows is the other half. `OVERPASS_FLUSH_SIZE` is how much it
+buffers before writing: the image defaults to 16, `docker-compose.prod.yml`
+sets 8, and 2 will get a very small machine through at the cost of speed.
 
 ## After changing the categories
 
@@ -90,8 +180,11 @@ refuses to publish a stale filter, with
 | --- | --- |
 | `Dockerfile` | `wiktorn/overpass-api` plus the filter, the two commands and the entrypoint hooks |
 | `docker-compose.yml` | The service, its volume and every setting worth changing |
+| `docker-compose.prod.yml` | The deployment: serving and importing split in two, on a host directory |
 | `osmium-filter.txt` | Generated from `CATEGORY_CONFIG`. Do not edit |
+| `europe-regions.txt` | The countries `europe-latest.osm.pbf` is made of, for building it a piece at a time |
 | `bin/filter-osm-extract` | Cuts an extract down to the tags in the filter |
+| `bin/build-region-extract` | Downloads and filters a region list one country at a time, and merges the result |
 | `bin/update-poi-db` | Rebuild and swap, with the API up throughout |
 | `initdb.d/05-db-permissions.sh` | Lets the FastCGI worker reach the dispatcher's socket |
 | `initdb.d/10-cors.sh` | Replaces the interpreter's fixed `Access-Control-Allow-Origin` with a configurable one |
@@ -105,41 +198,107 @@ this use, and each says why in its own header.
 
 [`docker-compose.prod.yml`](docker-compose.prod.yml) is the deployment: one
 self contained file with the settings written in, so there is no `.env` to keep
-in step on the box. Copy it over and start it:
+in step on the box. Copy it over, make the database directory, start it, and
+build the data once:
 
 ```bash
 scp apps/overpass/docker-compose.prod.yml server:/srv/wayside/
-ssh server 'cd /srv/wayside && docker compose -f docker-compose.prod.yml up -d'
+ssh server '
+  mkdir -p /srv/wayside/db
+  cd /srv/wayside
+  docker compose -f docker-compose.prod.yml up -d
+  docker compose -f docker-compose.prod.yml exec importer update-poi-db
+'
 ```
 
-It differs from the development compose in three ways. It pulls
+That last line is not optional. Nothing in this stack builds a database on its
+own, by design, and until it has run the API answers nothing.
+
+It differs from the development compose in four ways. It pulls
 `ghcr.io/vaahtokarkki/poifinder/overpass:latest` instead of building. It binds
 the port to `127.0.0.1`, because the tunnel is on the same host and nothing
-else should reach an unauthenticated API. And it runs watchtower, which
-replaces the container when a new image is published.
+else should reach an unauthenticated API. It runs watchtower, which replaces
+containers when a new image is published. And it splits the work in two.
+
+### Two containers
+
+`overpass` answers queries. `importer` builds the data. They share the database
+directory and nothing else.
+
+The serving container sets `OVERPASS_MODE: serve`, which is not a mode the
+upstream entrypoint recognises — and that is the point. The entrypoint
+downloads and imports under `init` and `clone` only, so under any other value
+it goes straight to serving whatever is already in `/db`. There is no
+`OVERPASS_PLANET_URL` in that service at all. Restarting it is eight seconds
+and no network.
+
+That matters more than it sounds. With the import in the serving container's
+startup path, an import that died left no `/db/init_done` behind, and
+`restart: unless-stopped` then started the 35 GB download again from the top,
+and again after that. An out of memory kill during the first import turned into
+a machine that downloaded Europe forever.
+
+The importer holds the region list, the CPU limit and the Docker socket, and
+its entrypoint is `sleep infinity`. It does nothing until something runs
+`update-poi-db` in it. The database directory is swapped by rename, and because
+the server has the old files open and would go on using them, the importer then
+restarts it through the Docker API — which is what the socket is for, and why
+the old directory is only deleted once that has worked. If the restart fails,
+the previous database is left in place and the log says what to do by hand.
+
+```bash
+docker compose -f docker-compose.prod.yml exec importer update-poi-db
+```
+
+The importer is capped at `cpus: 1.0` so that a filter measured in hours cannot
+take the API down with it, with `OSMIUM_POOL_THREADS: 1` to match — `cpus` is a
+share of the machine's time rather than a smaller machine, so osmium would
+otherwise start a thread per core and have them take turns on one core's worth.
+It is much slower this way. That is the trade: the import is a weekly batch job,
+the API is what people are waiting on.
 
 Watchtower only touches containers carrying
 `com.centurylinklabs.watchtower.enable=true`, so it leaves the rest of the
 machine alone.
 
 The weekly reimport is in the stack too, so nothing goes in the host's crontab:
-ofelia reads its jobs from labels on the overpass container and runs
-`update-poi-db` there every Sunday at 04:30. The job is defined next to the
-thing it acts on and travels with this file, which is the point — a server
-rebuilt from this compose file is a server that is already scheduled.
+ofelia reads its jobs from labels on the importer and runs `update-poi-db`
+there every Sunday at 04:30. The job is defined next to the thing it acts on
+and travels with this file, which is the point — a server rebuilt from this
+compose file is a server that is already scheduled.
 
-The two are deliberately days apart, ofelia on Sunday and watchtower on
-Wednesday. Restarting the container mid import throws away hours of work and
-leaves the data waiting a week for the next attempt, so an image update must
-never be able to land inside the reimport window.
+Ofelia and watchtower are deliberately days apart, Sunday and Wednesday.
+Replacing the importer mid run throws away hours of work and leaves the data
+waiting a week for the next attempt, so an image update must never be able to
+land inside the reimport window.
 
 ```bash
 # what is scheduled, and what happened when it last ran
 docker compose -f docker-compose.prod.yml logs ofelia
 ```
 
-An image update is not a data update. It restarts the server on the same
-volume; the database is only ever rebuilt by `update-poi-db`.
+An image update is not a data update. It restarts the containers on the same
+database directory; the data is only ever rebuilt by `update-poi-db`.
+
+### Where the database lives
+
+`/srv/wayside/db` on the host, bound to `/db` in both containers, rather than a
+named volume — so it is somewhere you can point `df` at, back up, or move to a
+bigger disk. It has to hold the live database, a second copy of it while the
+swap happens, and the importer's working files: the country being downloaded
+(France, 5 GB, the largest) plus the filtered pieces of the ones before it.
+
+Moving an existing deployment off the old named volume means copying the data
+across, or the next start finds an empty directory and the API answers nothing
+until you have run the importer again:
+
+```bash
+docker compose -f docker-compose.prod.yml down
+mkdir -p /srv/wayside/db
+docker run --rm -v overpass-db:/from -v /srv/wayside/db:/to alpine \
+  sh -c 'cd /from && cp -a . /to'
+docker compose -f docker-compose.prod.yml up -d
+```
 
 If the GitHub package is private, watchtower cannot pull it. Either make the
 package public in its settings, or give watchtower a token with
@@ -204,9 +363,13 @@ start. To run that instead of building locally, replace the `build:` block in
 
 ## Notes on the settings
 
-- **Region.** `OVERPASS_PLANET_URL` is the whole of it. Country extracts from
-  [Geofabrik](https://download.geofabrik.de/), city sized ones from
-  [download.openstreetmap.fr](https://download.openstreetmap.fr/extracts/).
+- **Region.** `OVERPASS_PLANET_URL` is the whole of it for one country. Country
+  extracts from [Geofabrik](https://download.geofabrik.de/), city sized ones
+  from [download.openstreetmap.fr](https://download.openstreetmap.fr/extracts/).
+  For a continent, set `WAYSIDE_REGION_LIST` as well and see "Covering a
+  continent" above.
+- **Import memory.** `OVERPASS_FLUSH_SIZE` bounds the importer, and nothing
+  bounds the filter: budget about 3 GB for it whatever the region.
 - **Meta data is off.** Who edited an object and when roughly doubles the
   database and the app shows none of it.
 - **Areas are off.** Area queries need a background job rebuilding them

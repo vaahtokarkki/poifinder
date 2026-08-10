@@ -87,6 +87,7 @@ jobs:
         run: |
           docker run --rm --entrypoint /bin/bash wayside-overpass:test -euo pipefail -c '
             bash -n /usr/local/bin/filter-osm-extract
+            bash -n /usr/local/bin/build-region-extract
             bash -n /usr/local/bin/update-poi-db
 
             # The filter file has to parse, comments and all: osmium reads it
@@ -94,6 +95,54 @@ jobs:
             printf "%s" "<?xml version=\"1.0\"?><osm version=\"0.6\"></osm>" > /tmp/empty.osm
             osmium tags-filter --expressions=/opt/wayside/osmium-filter.txt \
               --output=/tmp/out.osm --overwrite /tmp/empty.osm
+
+            # Two handmade regions through the whole of build-region-extract,
+            # over file:// so the test needs no network and no Geofabrik. What
+            # it is really here to catch is the region list arriving as one
+            # concatenated line, which downloads a single nonsense URL and is
+            # invisible until the map comes back missing every country but the
+            # last. Node 9999 is in both regions and must come out once
+            mkdir -p /tmp/r /tmp/w
+            T="2026-01-01T00:00:00Z"
+            {
+              printf "%s" "<?xml version=\"1.0\"?><osm version=\"0.6\">"
+              printf "<node id=\"1001\" version=\"1\" timestamp=\"$T\" lat=\"60.17\" lon=\"24.94\"><tag k=\"amenity\" v=\"drinking_water\"/></node>"
+              printf "<node id=\"1002\" version=\"1\" timestamp=\"$T\" lat=\"60.171\" lon=\"24.941\"/>"
+              printf "<node id=\"1003\" version=\"1\" timestamp=\"$T\" lat=\"60.172\" lon=\"24.942\"/>"
+              printf "<node id=\"2001\" version=\"1\" timestamp=\"$T\" lat=\"60.18\" lon=\"24.95\"><tag k=\"shop\" v=\"bakery\"/></node>"
+              printf "<node id=\"9999\" version=\"1\" timestamp=\"$T\" lat=\"60.5\" lon=\"24.5\"><tag k=\"amenity\" v=\"post_box\"/></node>"
+              printf "<way id=\"3001\" version=\"1\" timestamp=\"$T\"><nd ref=\"1002\"/><nd ref=\"1003\"/><tag k=\"leisure\" v=\"playground\"/></way>"
+              printf "%s" "</osm>"
+            } > /tmp/r/alpha.osm
+            {
+              printf "%s" "<?xml version=\"1.0\"?><osm version=\"0.6\">"
+              printf "<node id=\"5001\" version=\"1\" timestamp=\"$T\" lat=\"59.33\" lon=\"18.06\"><tag k=\"amenity\" v=\"toilets\"/></node>"
+              printf "<node id=\"9999\" version=\"1\" timestamp=\"$T\" lat=\"60.5\" lon=\"24.5\"><tag k=\"amenity\" v=\"post_box\"/></node>"
+              printf "%s" "</osm>"
+            } > /tmp/r/beta.osm
+            osmium cat -O --output-header=osmosis_replication_timestamp=2026-01-02T00:00:00Z -o /tmp/r/alpha.osm.pbf /tmp/r/alpha.osm
+            osmium cat -O --output-header=osmosis_replication_timestamp=2026-01-09T00:00:00Z -o /tmp/r/beta.osm.pbf /tmp/r/beta.osm
+            printf "# a comment\n\nfile:///tmp/r/alpha.osm.pbf\nfile:///tmp/r/beta.osm.pbf\n" > /tmp/r/regions.txt
+
+            WAYSIDE_REGION_PAUSE=0 build-region-extract --list=/tmp/r/regions.txt /tmp/w/planet.osm.bz2
+
+            nodes=$(osmium fileinfo -e -g data.count.nodes /tmp/w/planet.osm.bz2)
+            ways=$(osmium fileinfo -e -g data.count.ways /tmp/w/planet.osm.bz2)
+            # 1001 drinking water, 1002 and 1003 because the playground is
+            # built from them, 5001 toilets, 9999 post box once. Not the bakery
+            test "$nodes" = "5" || { echo "expected 5 nodes, got $nodes"; exit 1; }
+            test "$ways" = "1" || { echo "expected 1 way, got $ways"; exit 1; }
+            test "$(cat /tmp/w/planet.osm.bz2.timestamp)" = "2026-01-09T00:00:00Z" || {
+              echo "the merged extract should be dated by its newest region"; exit 1; }
+
+            # The region list is what says which countries exist, so a URL that
+            # answers with a web page has to stop the run rather than be filtered
+            printf "file:///tmp/r/alpha.osm.pbf\nfile:///tmp/r/notthere.osm.pbf\n" > /tmp/r/bad.txt
+            printf "%s" "<!DOCTYPE html><html><body>404</body></html>" > /tmp/r/notthere.osm.pbf
+            if WAYSIDE_REGION_PAUSE=0 WAYSIDE_RETRY_BACKOFF=0 WAYSIDE_DOWNLOAD_TRIES=1 \
+                 build-region-extract --list=/tmp/r/bad.txt /tmp/w/bad.osm.bz2 2>/dev/null; then
+              echo "a region that returned HTML should have failed the run"; exit 1
+            fi
 
             # And nginx has to accept the config the CORS hook rewrites
             /docker-entrypoint-initdb.d/10-cors.sh

@@ -15,8 +15,12 @@ FROM wiktorn/overpass-api:${OVERPASS_VERSION}
 # than mounted, so an image always says which categories it was built for
 COPY osmium-filter.txt /opt/wayside/osmium-filter.txt
 
-COPY bin/filter-osm-extract bin/update-poi-db /usr/local/bin/
+# The countries europe-latest.osm.pbf is made of, for the servers that build
+# their extract a country at a time rather than a continent at once
+COPY europe-regions.txt /opt/wayside/europe-regions.txt
+
+COPY bin/filter-osm-extract bin/build-region-extract bin/update-poi-db /usr/local/bin/
 COPY initdb.d/ /docker-entrypoint-initdb.d/
 
-RUN chmod a+rx /usr/local/bin/filter-osm-extract /usr/local/bin/update-poi-db \
-    /docker-entrypoint-initdb.d/*.sh
+RUN chmod a+rx /usr/local/bin/filter-osm-extract /usr/local/bin/build-region-extract \
+    /usr/local/bin/update-poi-db /docker-entrypoint-initdb.d/*.sh

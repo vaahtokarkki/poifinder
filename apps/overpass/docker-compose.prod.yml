@@ -2,25 +2,55 @@
 # from a .env file. This one file is the whole deployment: copy it to the box
 # and `docker compose -f docker-compose.prod.yml up -d`.
 #
-#   docker compose -f docker-compose.prod.yml up -d        start, or apply a change
-#   docker compose -f docker-compose.prod.yml logs -f      watch the first import
-#   docker compose -f docker-compose.prod.yml exec overpass update-poi-db
+#   docker compose -f docker-compose.prod.yml up -d          start, or apply a change
+#   docker compose -f docker-compose.prod.yml logs -f        watch it
+#   docker compose -f docker-compose.prod.yml exec importer update-poi-db
 #
-# That last one is what keeps the data current, and ofelia below runs it every
-# Sunday on its own: nothing goes in the host's crontab, and a machine that has
-# this file has the whole schedule with it.
+# That last one builds the database. It is also the first thing to run on a new
+# machine, because nothing else here ever will: see "First start" below. Once
+# there is a database, ofelia runs the same command every Sunday on its own, so
+# nothing goes in the host's crontab and a machine that has this file has the
+# whole schedule with it.
 #
-# It pulls the image the repository publishes instead of building, and lets
-# watchtower replace it when a new one is pushed. Nothing here rebuilds the
-# database: an image update restarts the server on the same volume, and the
-# data is only ever refreshed by update-poi-db.
+# Two containers, deliberately:
 #
-# The values below are the ones worth checking before the first start:
-# OVERPASS_PLANET_URL (which region), and OVERPASS_CORS_ORIGIN (which site).
+#   overpass   answers queries and nothing else. OVERPASS_MODE is not "init",
+#              so its entrypoint will never download or import anything, on an
+#              empty volume or otherwise. Restarting it is always cheap and
+#              always safe, which is the entire point of the split.
+#   importer   holds the region list, the CPU limit and the Docker socket, and
+#              sleeps until something runs update-poi-db in it. Restarting it
+#              downloads nothing either; it only ever works when told to.
 #
-# This one covers all of Europe. The app's city list reaches further than that,
-# and a search outside the extract comes back empty rather than failing, so the
-# map simply has nothing to show in New York or Tokyo.
+# Before the split, the download lived in the serving container's startup path,
+# where an import that died left no /db/init_done behind, and `restart:
+# unless-stopped` then began the 35 GB download again from the top, forever.
+#
+# The values worth checking before the first start: WAYSIDE_REGION_LIST (which
+# region), OVERPASS_CORS_ORIGIN (which site), and the database path below.
+#
+# This one covers all of Europe, assembled a country at a time so that neither
+# the disk nor the download ever has to hold the whole continent. The app's
+# city list reaches further than that, and a search outside the extract comes
+# back empty rather than failing, so the map simply has nothing to show in New
+# York or Tokyo.
+#
+# What the machine needs: about 3 GB of memory free during the filter step,
+# which is a fixed cost of the filtering and not something the region list
+# brings down, and room on the database path for the largest single country
+# (France, 5 GB) plus a second copy of the database while the swap happens. Add
+# swap if the box does not have the memory — this is a weekly batch job, so
+# slower is fine and killed is not. The reasoning, and the measurements behind
+# it, are under "Covering a continent" in README.md.
+#
+# First start, once:
+#
+#   mkdir -p /srv/wayside/db
+#   docker compose -f docker-compose.prod.yml up -d
+#   docker compose -f docker-compose.prod.yml exec importer update-poi-db
+#
+# The API answers nothing until that finishes, which for Europe is hours. It
+# is resumable: a run that dies picks up at the country it stopped on.
 
 services:
   overpass:
@@ -35,11 +65,90 @@ services:
       - "127.0.0.1:12345:80"
 
     volumes:
-      - overpass-db:/db
+      # A path on the host rather than a named volume, so the database is
+      # somewhere you can point df at, back up, or move to a bigger disk. It
+      # holds the live database, a second copy of it during the swap, and the
+      # importer's working files, so give it room
+      - /srv/wayside/db:/db
 
     labels:
       # Watchtower only touches what carries this, so the rest of the machine
       # keeps whatever versions it was given
+      com.centurylinklabs.watchtower.enable: "true"
+
+    environment:
+      # Not "init", and that is the whole configuration of this container's
+      # startup: the entrypoint downloads and imports only under "init" or
+      # "clone", so this one always goes straight to serving whatever is in
+      # /db. There is no OVERPASS_PLANET_URL here on purpose. The importer owns
+      # every setting that has to do with building the data
+      OVERPASS_MODE: serve
+
+      # Which origins a browser may read the answers from. Not access control:
+      # anything can still query it with curl
+      OVERPASS_CORS_ORIGIN: https://wayside.cc
+
+      OVERPASS_META: "no"
+      OVERPASS_USE_AREAS: "false"
+      OVERPASS_ALLOW_DUPLICATE_QUERIES: "yes"
+
+      # Bounds for one query, not budgets for the server: the app's queries
+      # need far less, these are here so a bad one dies on its own
+      OVERPASS_MAX_TIMEOUT: 180s
+      OVERPASS_SPACE: "2147483648"
+      OVERPASS_RATE_LIMIT: "8"
+
+    # No cpus limit here on purpose. This is the interactive half and it should
+    # have the machine; the importer below is the one that gets held back
+
+    healthcheck:
+      # -g because the brackets in the query are a glob range to curl otherwise
+      test:
+        [
+          "CMD-SHELL",
+          "curl -sfg --noproxy '*' 'http://localhost/api/interpreter?data=[out:json];node(1);out;' | grep -q Overpass",
+        ]
+      interval: 60s
+      timeout: 30s
+      retries: 3
+      # This container no longer imports anything, so it is either serving
+      # within the minute or genuinely unwell. The long grace period the first
+      # import used to need belongs to the importer now
+      start_period: 2m
+
+    stop_grace_period: 30s
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # The data build, in a container of its own so that none of it is in the
+  # serving container's startup path. It does nothing at all until update-poi-db
+  # is run in it, by ofelia on Sunday or by hand.
+  importer:
+    image: ghcr.io/vaahtokarkki/poifinder/overpass:latest
+    container_name: wayside-importer
+    restart: unless-stopped
+
+    # Sleep, and wait to be told. Overriding the entrypoint matters as much as
+    # the command: the image's own entrypoint is the thing that would otherwise
+    # try to import on start
+    entrypoint: ["sleep", "infinity"]
+
+    volumes:
+      # The same directory the server reads, which is how the swap is a rename
+      # rather than a copy
+      - /srv/wayside/db:/db
+
+      # So update-poi-db can restart the server once the new database is in
+      # place. It talks to the Docker API with curl rather than the CLI, which
+      # is not in this image. This is root on the host in practice, the same
+      # trade ofelia and watchtower below already make
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    labels:
       com.centurylinklabs.watchtower.enable: "true"
 
       # The weekly reimport, read by ofelia from this container rather than
@@ -55,48 +164,54 @@ services:
       ofelia.job-exec.update-poi-db.no-overlap: "true"
 
     environment:
-      # Which region the database covers. Changing it needs a reimport:
-      # `exec overpass update-poi-db` after the change, not just a restart.
+      # Which region the database covers, and how it is assembled. All of
+      # Europe, built one country at a time: europe-latest.osm.pbf is a single
+      # 35 GB file, and filtering it means holding all 35 GB on the disk while
+      # osmium reads it four times over, where the country files in
+      # europe-regions.txt are the same continent and the same bytes over the
+      # wire with nothing ever held but the largest of them (France, 5 GB). A
+      # run that dies also resumes rather than starting the download again.
       #
-      # All of Europe: a 32 GB download that osmium reads several times over to
-      # cut it down, so the first import is a matter of hours and wants tens of
-      # gigabytes of free disk while it runs. Every update-poi-db pulls those
-      # 32 GB again, which is why the reimport below is weekly and not nightly
-      OVERPASS_PLANET_URL: https://download.geofabrik.de/europe-latest.osm.pbf
-      OVERPASS_MODE: init
-      OVERPASS_PLANET_PREPROCESS: filter-osm-extract /db/planet.osm.bz2
+      # This does not lower the memory the filter needs. See OVERPASS_FLUSH_SIZE
+      # below and "What it costs" in the README
+      WAYSIDE_REGION_LIST: /opt/wayside/europe-regions.txt
 
-      # Which origins a browser may read the answers from. Not access control:
-      # anything can still query it with curl
-      OVERPASS_CORS_ORIGIN: https://wayside.cc
+      # Which container to restart when the new database is in place. Without
+      # it the swap still happens, but the server goes on answering from the
+      # files it already has open and says so in the log
+      WAYSIDE_RESTART_CONTAINER: wayside-overpass
 
+      # The settings the database is built with. They have to match what the
+      # server expects to read, which is why they are repeated rather than
+      # shared: two containers, one on disk format
       OVERPASS_META: "no"
       OVERPASS_USE_AREAS: "false"
-      OVERPASS_STOP_AFTER_INIT: "false"
-      OVERPASS_ALLOW_DUPLICATE_QUERIES: "yes"
 
-      # Bounds for one query, not budgets for the server: the app's queries
-      # need far less, these are here so a bad one dies on its own
-      OVERPASS_MAX_TIMEOUT: 180s
-      OVERPASS_SPACE: "2147483648"
-      OVERPASS_RATE_LIMIT: "8"
+      # How much the importer buffers before it writes. The image's default is
+      # 16, which is a "plenty of RAM" number; the import runs right after a
+      # filter pass that needed 2 GB of its own, and on a small server the two
+      # together are what the kernel notices. Raise it again on a big machine,
+      # it is the difference between a fast import and a slow one
+      OVERPASS_FLUSH_SIZE: "8"
 
-    healthcheck:
-      # -g because the brackets in the query are a glob range to curl otherwise
-      test:
-        [
-          "CMD-SHELL",
-          "curl -sfg --noproxy '*' 'http://localhost/api/interpreter?data=[out:json];node(1);out;' | grep -q Overpass",
-        ]
-      interval: 60s
-      timeout: 30s
-      retries: 3
-      # Nothing answers while Europe is downloading, filtering and importing,
-      # and that is not a failure. Generous on purpose: an unhealthy container
-      # is a thing to act on, not a progress bar
-      start_period: 12h
+      # How many threads osmium's pool runs. `cpus` below is a share of the
+      # machine's time rather than a smaller machine, so osmium still sees
+      # every core and would start eight threads to take turns on one core's
+      # worth of it. Saying so outright is the same work with less of it spent
+      # changing threads
+      OSMIUM_POOL_THREADS: "1"
 
-    stop_grace_period: 30s
+    # One core, so that a download and filter measured in hours cannot take the
+    # API down with it. osmium and bzip2 both scale with cores and this makes
+    # them markedly slower, which is the trade: the import is a weekly batch
+    # job and the API is what people are waiting on
+    cpus: 1.0
+
+    # Uncomment once you know what the box has. A limit here means the kernel
+    # kills the importer rather than picking a victim itself, which on a small
+    # machine is otherwise as likely to be the API. It has to be above what the
+    # filter actually needs, around 3 GB, or no import will ever finish
+    # mem_limit: 3g
 
     logging:
       driver: json-file
@@ -128,20 +243,20 @@ services:
       WATCHTOWER_CLEANUP: "true"
       # Wednesday 04:00, three days clear of the Sunday reimport. A fixed time
       # rather than an interval, and weekly rather than daily, because
-      # restarting the container mid import throws away hours of work and the
-      # data then waits a week for the next attempt
+      # replacing the importer mid run throws away hours of work and the data
+      # then waits a week for the next attempt
       WATCHTOWER_SCHEDULE: "0 0 4 * * 3"
       TZ: Europe/Helsinki
 
   # Cron, as a container, reading its jobs from the labels above. It runs
-  # `docker exec` against the overpass container at the scheduled time, so a
-  # job is defined next to the thing it acts on and travels with this file
+  # `docker exec` against the importer at the scheduled time, so a job is
+  # defined next to the thing it acts on and travels with this file
   ofelia:
     image: mcuadros/ofelia:latest
     container_name: wayside-ofelia
     restart: unless-stopped
     depends_on:
-      - overpass
+      - importer
     command: daemon --docker
 
     volumes:
@@ -157,6 +272,3 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
-
-volumes:
-  overpass-db:

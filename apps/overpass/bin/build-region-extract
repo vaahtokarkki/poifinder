@@ -1,0 +1,235 @@
+#!/bin/bash
+#
+# Build one filtered OSM extract out of a list of smaller regional ones.
+#
+#   build-region-extract [FILE]      default /db/planet.osm.bz2
+#
+#   --list=FILE       region list to read, default $WAYSIDE_REGION_LIST
+#   --fresh           re-download everything, ignoring a half finished run
+#   --keep-parts      leave the per region files behind
+#
+# FILE is replaced by a bzip2 XML file holding the filtered contents of every
+# region in the list, which is the same thing filter-osm-extract produces from
+# a continent file and is what init_osm3s.sh will bunzip2 into the importer.
+#
+# Why not just filter the continent file. osmium tags-filter has to know which
+# nodes the ways it keeps are built from, and it tracks that in a bitmap sized
+# by the largest node id in the input rather than by how many nodes it ends up
+# keeping. Against europe-latest.osm.pbf that is a fixed cost of well over a
+# gigabyte no setting brings down, on top of a 35 GB download that has to sit
+# on the disk in one piece while osmium reads it twice. A small server gets OOM
+# killed, and it gets OOM killed hours in, having downloaded all 35 GB first.
+#
+# Fifty country files cost the same bytes over the wire and rather more wall
+# clock, and in exchange nothing here ever holds more than the largest single
+# country. They also make the job interruptible: a region already filtered is
+# not filtered again, so a run that dies picks up where it stopped rather than
+# starting the download over.
+#
+# The regions must not overlap, or their shared objects are imported twice.
+# See the header of europe-regions.txt.
+
+set -euo pipefail
+
+REGION_LIST=${WAYSIDE_REGION_LIST:-/opt/wayside/europe-regions.txt}
+TARGET=/db/planet.osm.bz2
+FRESH=false
+KEEP_PARTS=false
+
+# How old a part may be and still be reused. Long enough that a run resuming
+# after a crash keeps this morning's work, short enough that next week's
+# refresh cannot quietly ship a region from the week before
+REUSE_HOURS=${WAYSIDE_REGION_REUSE_HOURS:-24}
+
+# Seconds to wait between regions, and how long to wait before trying again
+# when what came back was not an extract. Fifty files in a row off a free
+# download server is worth being unhurried about; a few seconds each is nothing
+# against an import measured in hours
+REGION_PAUSE=${WAYSIDE_REGION_PAUSE:-5}
+RETRY_BACKOFF=${WAYSIDE_RETRY_BACKOFF:-60}
+DOWNLOAD_TRIES=${WAYSIDE_DOWNLOAD_TRIES:-3}
+
+for arg in "$@"; do
+	case "$arg" in
+	--list=*) REGION_LIST="${arg#--list=}" ;;
+	--fresh) FRESH=true ;;
+	--keep-parts) KEEP_PARTS=true ;;
+	-h | --help)
+		cat <<-'USAGE'
+			Usage: build-region-extract [--list=FILE] [--fresh] [--keep-parts] [FILE]
+
+			Downloads and filters every extract in the region list, one at a time,
+			and merges the results into FILE (default /db/planet.osm.bz2) as the
+			bzip2 XML the Overpass importer reads.
+
+			  --list=FILE     region list to read, default $WAYSIDE_REGION_LIST
+			  --fresh         re-download everything, ignoring a half finished run
+			  --keep-parts    leave the per region files behind
+		USAGE
+		exit 0
+		;;
+	-*)
+		echo "build-region-extract: unknown option $arg" >&2
+		exit 1
+		;;
+	*) TARGET="$arg" ;;
+	esac
+done
+
+if [[ ! -s $REGION_LIST ]]; then
+	echo "build-region-extract: $REGION_LIST is missing or empty" >&2
+	exit 1
+fi
+
+# Beside the target, so both callers land on the /db volume: the first import
+# passes /db/planet.osm.bz2 and update-poi-db passes /db/update/planet.osm.bz2
+WORK="$(dirname "$TARGET")/regions"
+STAMP_FILE="${TARGET}.timestamp"
+
+log() { echo "build-region-extract: $(date '+%F %T') $*"; }
+
+# Is this an OSM extract, or is it the download server talking to us. Geofabrik
+# answers a URL it does not recognise with its web page and a 200 rather than a
+# 404, so curl -f is happy and osmium dies on "Unknown top-level element: html"
+# however many minutes of download later, the magic bytes having said that a
+# file starting with < is XML. Better to say so before the filter runs
+looks_like_osm() {
+	case "$(od -An -tx1 -N4 "$1" | tr -d ' \n')" in
+	425a68* | 1f8b*) return 0 ;;                           # bzip2, gzip
+	0000*) return 0 ;;                                     # pbf, a big endian blob length
+	3c*) head -c 4096 "$1" | grep -q '<osm' && return 0 ;; # XML, but whose
+	esac
+	return 1
+}
+
+# Comments and blank lines out, so the list can explain itself. Trimming is per
+# line and deliberately not `tr -d [:space:]`, which eats the newlines too and
+# hands the loop all fifty URLs concatenated into one
+mapfile -t URLS < <(sed 's/#.*//; s/^[[:space:]]*//; s/[[:space:]]*$//' "$REGION_LIST" | grep -v '^$')
+if [[ ${#URLS[@]} -eq 0 ]]; then
+	echo "build-region-extract: no regions in $REGION_LIST" >&2
+	exit 1
+fi
+
+if [[ $FRESH == true ]]; then
+	rm -rf "$WORK"
+fi
+mkdir -p "$WORK"
+
+STARTED=$(date +%s)
+log "${#URLS[@]} regions from $REGION_LIST"
+
+PARTS=()
+NAMES=()
+NEWEST=""
+INDEX=0
+
+for URL in "${URLS[@]}"; do
+	INDEX=$((INDEX + 1))
+	NAME=$(basename "$URL")
+	NAME=${NAME%%.*}
+	NAME=${NAME%-latest}
+	PART="${WORK}/${NAME}.osm.pbf"
+	RAW="${WORK}/${NAME}.download"
+
+	# Two URLs whose names collide would write over each other's part and
+	# leave the merge reading one of them twice, which is a region quietly
+	# missing from the map rather than anything that looks like a failure
+	if [[ " ${NAMES[*]} " == *" $NAME "* ]]; then
+		echo "build-region-extract: two regions in $REGION_LIST are both called $NAME" >&2
+		exit 1
+	fi
+	NAMES+=("$NAME")
+	PARTS+=("$PART")
+
+	if [[ $FRESH == false && -s $PART ]] &&
+		find "$PART" -newermt "-${REUSE_HOURS} hours" | grep -q .; then
+		log "[$INDEX/${#URLS[@]}] $NAME: reusing $(numfmt --to=iec "$(stat -c %s "$PART")") from an earlier run"
+	else
+		ATTEMPT=0
+		while true; do
+			ATTEMPT=$((ATTEMPT + 1))
+			if [[ $ATTEMPT -eq 1 ]]; then
+				log "[$INDEX/${#URLS[@]}] $NAME: downloading"
+			else
+				log "[$INDEX/${#URLS[@]}] $NAME: downloading, attempt $ATTEMPT of $DOWNLOAD_TRIES"
+			fi
+
+			# A region list that has gone stale 404s, and a missing country is
+			# not something to discover as a hole in the map weeks later.
+			# --retry already covers 429 and the 5xx range, so a failure here
+			# is the URL itself
+			# --no-progress-meter rather than -s: fifty progress bars is not
+			# what the container log is for, but a curl error still is
+			if ! curl -fL --no-progress-meter --retry 3 --retry-delay 30 -o "$RAW" "$URL"; then
+				echo "build-region-extract: could not download $URL" >&2
+				echo "build-region-extract: if the region was renamed or withdrawn, fix $REGION_LIST" >&2
+				exit 1
+			fi
+
+			looks_like_osm "$RAW" && break
+
+			if [[ $ATTEMPT -ge $DOWNLOAD_TRIES ]]; then
+				echo "build-region-extract: $URL answered with something that is not an OSM extract" >&2
+				echo "build-region-extract: check the URL in $REGION_LIST. It began:" >&2
+				head -c 200 "$RAW" | tr -d '\0' >&2
+				echo >&2
+				exit 1
+			fi
+
+			# Could be a bad URL, could be the server having a moment. One is
+			# worth waiting out and the other is not, and they look alike here
+			BACKOFF=$((RETRY_BACKOFF * ATTEMPT))
+			log "[$INDEX/${#URLS[@]}] $NAME: not an OSM extract, retrying in ${BACKOFF}s"
+			sleep "$BACKOFF"
+		done
+
+		log "[$INDEX/${#URLS[@]}] $NAME: filtering"
+		filter-osm-extract "$RAW" "$PART"
+		rm -f "$RAW"
+
+		# Fifty downloads back to back is the kind of traffic that gets a
+		# client throttled in the first place, and a few seconds each is
+		# nothing against an import measured in hours
+		if [[ $INDEX -lt ${#URLS[@]} ]]; then
+			sleep "$REGION_PAUSE"
+		fi
+	fi
+
+	# When the region was last current, from the pbf header the filter carried
+	# through, which costs a read of the first few kilobytes. Reading it from
+	# the part rather than the download is both cheaper and the only version
+	# that works on the reuse path, where the download is long gone.
+	#
+	# The newest region is what the merged file is current as of. An import
+	# older than that is simply one that will catch up next week
+	REGION_STAMP=$(osmium fileinfo -g header.option.osmosis_replication_timestamp "$PART" 2>/dev/null || true)
+	if [[ -n $REGION_STAMP && $REGION_STAMP > ${NEWEST:-} ]]; then
+		NEWEST=$REGION_STAMP
+	fi
+done
+
+log "merging ${#PARTS[@]} regions into $TARGET"
+
+# Every part is sorted by type and id, which is what merge needs, and it drops
+# an object that turns up in two of them. Borders are where that happens: a
+# Geofabrik extract carries whole ways across its edge, so a beach on the
+# Dutch-Belgian line is in both files
+osmium merge \
+	--verbose \
+	--overwrite \
+	--output-format=osm.bz2 \
+	--output="$TARGET" \
+	"${PARTS[@]}"
+
+if [[ -n $NEWEST ]]; then
+	printf '%s\n' "$NEWEST" >"$STAMP_FILE"
+else
+	rm -f "$STAMP_FILE"
+fi
+
+if [[ $KEEP_PARTS == false ]]; then
+	rm -rf "$WORK"
+fi
+
+log "done in $((($(date +%s) - STARTED) / 60)) min, $(numfmt --to=iec "$(stat -c %s "$TARGET")") of bzip2 XML${NEWEST:+, data as of $NEWEST}"

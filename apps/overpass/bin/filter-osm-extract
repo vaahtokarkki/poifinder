@@ -2,60 +2,98 @@
 #
 # Cut an OpenStreetMap extract down to the objects the app can ask for.
 #
-#   filter-osm-extract [FILE]        default /db/planet.osm.bz2
+#   filter-osm-extract [FILE]           replace FILE, in place, with bzip2 XML
+#   filter-osm-extract SRC DEST         read SRC, write DEST, format from DEST
 #
-# FILE is replaced, in place, by a bzip2 XML file holding only the objects
-# carrying one of the tags in osmium-filter.txt, plus the nodes those objects
-# are built from, which Overpass needs to place a way or a relation on the map.
+# The result holds only the objects carrying one of the tags in
+# osmium-filter.txt, plus the nodes those objects are built from, which
+# Overpass needs to place a way or a relation on the map.
 #
-# The name is what the caller already expects: the container entrypoint hands
-# us /db/planet.osm.bz2 (whatever OVERPASS_PLANET_URL actually pointed at) and
+# The one argument form is what the container entrypoint expects: it hands us
+# /db/planet.osm.bz2 (whatever OVERPASS_PLANET_URL actually pointed at) and
 # then feeds the same path to bunzip2, so a real .osm.bz2 has to come back.
 #
-# Used twice: by OVERPASS_PLANET_PREPROCESS on the first import, and by
-# update-poi-db on every refresh. Both must filter identically, which is the
-# reason this is one script rather than a line of shell in the compose file.
+# The two argument form is for build-region-extract, which filters fifty
+# country extracts in a row and wants each result as a .osm.pbf: bzip2 is the
+# slowest thing here by a wide margin and there is no reason to pay for it on
+# an intermediate file that osmium merge is about to read straight back.
+#
+# Used from three places: OVERPASS_PLANET_PREPROCESS on the first import,
+# update-poi-db on every refresh, and build-region-extract once per region.
+# All of them must filter identically, which is the reason this is one script
+# rather than a line of shell in the compose file.
+#
+# Memory: without --omit-referenced, osmium builds an index of every node id a
+# matched way refers to, and that index is sized by the largest id in the file
+# rather than by how many are kept. It is the reason a whole continent in one
+# file is what gets a small server OOM killed, and the reason for
+# build-region-extract.
 
 set -euo pipefail
 
 FILTER_FILE=${WAYSIDE_FILTER_FILE:-/opt/wayside/osmium-filter.txt}
-TARGET=${1:-/db/planet.osm.bz2}
-RAW="${TARGET}.raw"
 
-if [[ ! -s $TARGET ]]; then
-	echo "filter-osm-extract: $TARGET is missing or empty" >&2
-	exit 1
+if [[ $# -ge 2 ]]; then
+	SOURCE=$1
+	TARGET=$2
+	IN_PLACE=false
+else
+	TARGET=${1:-/db/planet.osm.bz2}
+	SOURCE="${TARGET}.raw"
+	IN_PLACE=true
 fi
+
 if [[ ! -s $FILTER_FILE ]]; then
 	echo "filter-osm-extract: $FILTER_FILE is missing or empty" >&2
 	exit 1
 fi
 
-mv -f "$TARGET" "$RAW"
+if [[ $IN_PLACE == true ]]; then
+	if [[ ! -s $TARGET ]]; then
+		echo "filter-osm-extract: $TARGET is missing or empty" >&2
+		exit 1
+	fi
+	mv -f "$TARGET" "$SOURCE"
+elif [[ ! -s $SOURCE ]]; then
+	echo "filter-osm-extract: $SOURCE is missing or empty" >&2
+	exit 1
+fi
 
-# osmium takes the format from the file name, and we have just taken the file
-# name away from it. Read the magic bytes instead: the extract is normally a
-# .pbf, but a .osm.bz2 URL has to work too
-case "$(od -An -tx1 -N4 "$RAW" | tr -d ' \n')" in
+# osmium takes the format from the file name, and the input here rarely has one
+# worth trusting: in place we have just renamed it, and a download is named
+# after its region rather than its format. Read the magic bytes instead
+case "$(od -An -tx1 -N4 "$SOURCE" | tr -d ' \n')" in
 425a68*) FORMAT=osm.bz2 ;; # "BZh"
 1f8b*) FORMAT=osm.gz ;;
 3c*) FORMAT=osm ;; # "<", uncompressed XML
 *) FORMAT=pbf ;;
 esac
 
-BEFORE=$(stat -c %s "$RAW")
+# In place has to come back as the .osm.bz2 the entrypoint will bunzip2. With
+# an explicit destination the name says what it wants, and osmium reads it
+if [[ $IN_PLACE == true ]]; then
+	OUTPUT_FORMAT=(--output-format=osm.bz2)
+	OUTPUT_LABEL="bzip2 XML"
+else
+	OUTPUT_FORMAT=()
+	OUTPUT_LABEL="${TARGET##*/}"
+fi
+
+BEFORE=$(stat -c %s "$SOURCE")
 echo "filter-osm-extract: filtering $(numfmt --to=iec "$BEFORE") of $FORMAT with $FILTER_FILE"
 
 osmium tags-filter \
 	--verbose \
 	--overwrite \
 	--input-format="$FORMAT" \
-	--output-format=osm.bz2 \
+	"${OUTPUT_FORMAT[@]}" \
 	--expressions="$FILTER_FILE" \
 	--output="$TARGET" \
-	"$RAW"
+	"$SOURCE"
 
 AFTER=$(stat -c %s "$TARGET")
-echo "filter-osm-extract: $(numfmt --to=iec "$BEFORE") -> $(numfmt --to=iec "$AFTER") (bzip2 XML)"
+echo "filter-osm-extract: $(numfmt --to=iec "$BEFORE") -> $(numfmt --to=iec "$AFTER") ($OUTPUT_LABEL)"
 
-rm -f "$RAW"
+if [[ $IN_PLACE == true ]]; then
+	rm -f "$SOURCE"
+fi

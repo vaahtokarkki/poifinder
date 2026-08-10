@@ -1,0 +1,71 @@
+# The regions that together make up europe-latest.osm.pbf, one URL per line.
+#
+# Read by bin/build-region-extract, which downloads and filters these one at a
+# time instead of the 35 GB continent file. See apps/overpass/README.md.
+#
+# Geofabrik lists 53 children under europe. Four of them are aggregates that
+# overlap the rest and are left out here, or their objects would be imported
+# twice: alps, dach (Germany/Austria/Switzerland), britain-and-ireland, and
+# united-kingdom (great-britain plus Northern Ireland, both of which are
+# already covered by great-britain and ireland-and-northern-ireland).
+#
+# Russia is not in this list because it is not in europe-latest either:
+# Geofabrik files it as a continent of its own. Adding russia-latest.osm.pbf
+# here is all it would take.
+#
+# Any OSM extract works, from Geofabrik or anywhere else. Order does not
+# matter: osmium merge sorts the pieces back together at the end.
+#
+# Regenerate from Geofabrik's index, dropping the four aggregates by hand:
+#   curl -s https://download.geofabrik.de/index-v1.json | \
+#     jq -r '.features[].properties | select(.parent=="europe") | .urls.pbf' | sort
+
+https://download.geofabrik.de/europe/albania-latest.osm.pbf
+https://download.geofabrik.de/europe/andorra-latest.osm.pbf
+https://download.geofabrik.de/europe/austria-latest.osm.pbf
+https://download.geofabrik.de/europe/azores-latest.osm.pbf
+https://download.geofabrik.de/europe/belarus-latest.osm.pbf
+https://download.geofabrik.de/europe/belgium-latest.osm.pbf
+https://download.geofabrik.de/europe/bosnia-herzegovina-latest.osm.pbf
+https://download.geofabrik.de/europe/bulgaria-latest.osm.pbf
+https://download.geofabrik.de/europe/croatia-latest.osm.pbf
+https://download.geofabrik.de/europe/cyprus-latest.osm.pbf
+https://download.geofabrik.de/europe/czech-republic-latest.osm.pbf
+https://download.geofabrik.de/europe/denmark-latest.osm.pbf
+https://download.geofabrik.de/europe/estonia-latest.osm.pbf
+https://download.geofabrik.de/europe/faroe-islands-latest.osm.pbf
+https://download.geofabrik.de/europe/finland-latest.osm.pbf
+https://download.geofabrik.de/europe/france-latest.osm.pbf
+https://download.geofabrik.de/europe/georgia-latest.osm.pbf
+https://download.geofabrik.de/europe/germany-latest.osm.pbf
+https://download.geofabrik.de/europe/great-britain-latest.osm.pbf
+https://download.geofabrik.de/europe/greece-latest.osm.pbf
+https://download.geofabrik.de/europe/guernsey-jersey-latest.osm.pbf
+https://download.geofabrik.de/europe/hungary-latest.osm.pbf
+https://download.geofabrik.de/europe/iceland-latest.osm.pbf
+https://download.geofabrik.de/europe/ireland-and-northern-ireland-latest.osm.pbf
+https://download.geofabrik.de/europe/isle-of-man-latest.osm.pbf
+https://download.geofabrik.de/europe/italy-latest.osm.pbf
+https://download.geofabrik.de/europe/kosovo-latest.osm.pbf
+https://download.geofabrik.de/europe/latvia-latest.osm.pbf
+https://download.geofabrik.de/europe/liechtenstein-latest.osm.pbf
+https://download.geofabrik.de/europe/lithuania-latest.osm.pbf
+https://download.geofabrik.de/europe/luxembourg-latest.osm.pbf
+https://download.geofabrik.de/europe/macedonia-latest.osm.pbf
+https://download.geofabrik.de/europe/malta-latest.osm.pbf
+https://download.geofabrik.de/europe/moldova-latest.osm.pbf
+https://download.geofabrik.de/europe/monaco-latest.osm.pbf
+https://download.geofabrik.de/europe/montenegro-latest.osm.pbf
+https://download.geofabrik.de/europe/netherlands-latest.osm.pbf
+https://download.geofabrik.de/europe/norway-latest.osm.pbf
+https://download.geofabrik.de/europe/poland-latest.osm.pbf
+https://download.geofabrik.de/europe/portugal-latest.osm.pbf
+https://download.geofabrik.de/europe/romania-latest.osm.pbf
+https://download.geofabrik.de/europe/serbia-latest.osm.pbf
+https://download.geofabrik.de/europe/slovakia-latest.osm.pbf
+https://download.geofabrik.de/europe/slovenia-latest.osm.pbf
+https://download.geofabrik.de/europe/spain-latest.osm.pbf
+https://download.geofabrik.de/europe/sweden-latest.osm.pbf
+https://download.geofabrik.de/europe/switzerland-latest.osm.pbf
+https://download.geofabrik.de/europe/turkey-latest.osm.pbf
+https://download.geofabrik.de/europe/ukraine-latest.osm.pbf

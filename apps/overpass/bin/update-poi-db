@@ -5,6 +5,7 @@
 #   docker compose exec overpass update-poi-db
 #
 #   --url=URL        extract to import, default $OVERPASS_PLANET_URL
+#   --regions=FILE   build the extract from a region list instead of one URL
 #   --skip-download  reuse the extract left by a previous run
 #   --keep-extract   do not delete the extract afterwards
 #
@@ -18,6 +19,12 @@
 # The new database is built alongside the live one and only swapped in at the
 # end, so queries are answered throughout the import and the API is down for
 # the second it takes to rename two directories.
+#
+# It runs in either of two places. Inside the serving container, where it stops
+# and starts the dispatcher through supervisor. Or in a container of its own
+# that shares the /db volume, where there is no supervisor to talk to and
+# WAYSIDE_RESTART_CONTAINER names the container to restart instead. The second
+# is what keeps a 35 GB download out of the server's startup path entirely.
 
 set -euo pipefail
 
@@ -28,23 +35,40 @@ EXTRACT="${WORK_DIR}/planet.osm.bz2"
 LOCK_FILE=/db/update-poi-db.lock
 
 PLANET_URL=${OVERPASS_PLANET_URL:-}
+
+# A whole continent in one file is what gets a small server OOM killed, hours
+# in and 35 GB down. With this set the extract is built out of the countries in
+# the list instead, one at a time, and nothing here ever holds more than the
+# largest of them. See bin/build-region-extract
+REGION_LIST=${WAYSIDE_REGION_LIST:-}
+
+# Which container to restart once the new database is in place, for the layout
+# where building and serving are two containers and this one cannot reach the
+# other's supervisor. Needs the Docker socket mounted here. Empty when the
+# server is in this same container, which is the case the supervisor branch
+# below handles on its own
+RESTART_CONTAINER=${WAYSIDE_RESTART_CONTAINER:-}
+DOCKER_SOCKET=${WAYSIDE_DOCKER_SOCKET:-/var/run/docker.sock}
+
 SKIP_DOWNLOAD=false
 KEEP_EXTRACT=false
 
 for arg in "$@"; do
 	case "$arg" in
 	--url=*) PLANET_URL="${arg#--url=}" ;;
+	--regions=*) REGION_LIST="${arg#--regions=}" ;;
 	--skip-download) SKIP_DOWNLOAD=true ;;
 	--keep-extract) KEEP_EXTRACT=true ;;
 	-h | --help)
 		cat <<-'USAGE'
-			Usage: update-poi-db [--url=URL] [--skip-download] [--keep-extract]
+			Usage: update-poi-db [--url=URL] [--regions=FILE] [--skip-download] [--keep-extract]
 
 			Rebuilds the database from a fresh OpenStreetMap extract, filtered to
 			the tags the app queries. The live database keeps answering until the
 			new one is ready.
 
 			  --url=URL        extract to import, default $OVERPASS_PLANET_URL
+			  --regions=FILE   build the extract from a region list instead of one URL
 			  --skip-download  reuse the extract left by a previous run
 			  --keep-extract   do not delete the extract afterwards
 		USAGE
@@ -57,8 +81,13 @@ for arg in "$@"; do
 	esac
 done
 
-if [[ -z $PLANET_URL && $SKIP_DOWNLOAD == false ]]; then
-	echo "update-poi-db: no extract to import. Set OVERPASS_PLANET_URL or pass --url=" >&2
+if [[ -z $PLANET_URL && -z $REGION_LIST && $SKIP_DOWNLOAD == false ]]; then
+	echo "update-poi-db: no extract to import. Set OVERPASS_PLANET_URL or WAYSIDE_REGION_LIST," >&2
+	echo "update-poi-db: or pass --url= or --regions=" >&2
+	exit 1
+fi
+if [[ -n $REGION_LIST && ! -s $REGION_LIST ]]; then
+	echo "update-poi-db: region list $REGION_LIST is missing or empty" >&2
 	exit 1
 fi
 
@@ -98,6 +127,12 @@ if [[ $SKIP_DOWNLOAD == true ]]; then
 		exit 1
 	fi
 	log "reusing $EXTRACT"
+elif [[ -n $REGION_LIST ]]; then
+	# Downloads, filters and merges the regions itself, and leaves a
+	# .timestamp beside the result so the import below does not have to
+	# decompress the whole thing again to date it
+	log "building the extract from $REGION_LIST"
+	build-region-extract --list="$REGION_LIST" "$EXTRACT"
 else
 	log "downloading $PLANET_URL"
 	curl -fL --retry 3 --retry-delay 30 -o "$EXTRACT" "$PLANET_URL"
@@ -105,10 +140,22 @@ else
 	filter-osm-extract "$EXTRACT"
 fi
 
+# How current the data is, which Overpass reports back in every answer.
+# `fileinfo -e` reads every object to work it out, and on a bzip2 Europe that
+# is a full decompress for one timestamp. build-region-extract already took it
+# from the region headers, so use that when it is there
+if [[ -s "${EXTRACT}.timestamp" ]]; then
+	VERSION=$(cat "${EXTRACT}.timestamp")
+	log "data is current as of $VERSION"
+else
+	log "reading the extract's timestamp"
+	VERSION=$(osmium fileinfo -e -g data.timestamp.last "$EXTRACT")
+fi
+
 log "importing into $NEW_DB (the live database keeps answering)"
 mkdir -p "$NEW_DB"
 /app/bin/init_osm3s.sh "$EXTRACT" "$NEW_DB" /app "$META" \
-	"--version=$(osmium fileinfo -e -g data.timestamp.last "$EXTRACT") --compression-method=${OVERPASS_COMPRESSION} --map-compression-method=${OVERPASS_COMPRESSION} --flush-size=${OVERPASS_FLUSH_SIZE}"
+	"--version=${VERSION} --compression-method=${OVERPASS_COMPRESSION} --map-compression-method=${OVERPASS_COMPRESSION} --flush-size=${OVERPASS_FLUSH_SIZE}"
 cp -r /app/etc/rules "$NEW_DB"
 chown -R overpass:overpass "$WORK_DIR"
 
@@ -157,10 +204,37 @@ if [[ $UNDER_SUPERVISOR == true ]]; then
 		log "generating areas"
 		/app/bin/osm3s_query --progress --rules <"${DB_DIR}/rules/areas.osm3s"
 	fi
+	SERVER_RELOADED=true
+else
+	# Nothing to stop here, because the server is in another container: this
+	# one only builds. It has been answering from the old directory all along
+	# and, having opened those files at boot, it goes on answering from them
+	# after the rename. Only a restart makes it look at the new database
+	SERVER_RELOADED=false
+	if [[ -n $RESTART_CONTAINER ]]; then
+		log "restarting $RESTART_CONTAINER to pick up the new database"
+		# The Docker API over the mounted socket, because the docker CLI is not
+		# in this image and curl is. 204 is the documented success
+		STATUS=$(curl -s -o /dev/null -w '%{http_code}' --unix-socket "$DOCKER_SOCKET" \
+			-X POST "http://localhost/containers/${RESTART_CONTAINER}/restart?t=30" || echo 000)
+		if [[ $STATUS == "204" ]]; then
+			SERVER_RELOADED=true
+		else
+			echo "update-poi-db: could not restart $RESTART_CONTAINER, Docker answered $STATUS" >&2
+		fi
+	fi
 fi
 
-# Only now, so a failure anywhere above leaves the old database in place
-rm -rf "${DB_DIR}.old"
+# The old database goes only once nothing is reading it any more. A server that
+# has not been restarted still has these files open, and deleting them under it
+# leaves it answering until the first query that needs a file it can no longer
+# open. Leaving the directory behind costs disk and nothing else
+if [[ $SERVER_RELOADED == true ]]; then
+	rm -rf "${DB_DIR}.old"
+else
+	log "leaving the previous database at ${DB_DIR}.old until the server has restarted"
+fi
+
 if [[ $KEEP_EXTRACT == true ]]; then
 	log "extract kept at $EXTRACT"
 else
@@ -169,6 +243,8 @@ fi
 
 log "done in $((($(date +%s) - STARTED) / 60)) min, database is $(du -sh "$DB_DIR" | cut -f1)"
 
-if [[ $UNDER_SUPERVISOR == false ]]; then
-	echo "update-poi-db: no supervisor here, restart the container to serve the new database"
+if [[ $SERVER_RELOADED == false ]]; then
+	echo "update-poi-db: the new database is in place, but the server is still answering"
+	echo "update-poi-db: from the old one. Restart the Overpass container, then remove"
+	echo "update-poi-db: ${DB_DIR}.old"
 fi

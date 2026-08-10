@@ -183,8 +183,13 @@ fi
 
 log "swapping the database in"
 rm -rf "${DB_DIR}.old"
+# Whether there was anything here before decides what has to happen next: a
+# server holding an older database open has to be restarted off it, and a
+# server that has never had one only has to notice that it now does
+REPLACED_A_DATABASE=false
 if [[ -d $DB_DIR ]]; then
 	mv "$DB_DIR" "${DB_DIR}.old"
+	REPLACED_A_DATABASE=true
 fi
 mv "$NEW_DB" "$DB_DIR"
 touch /db/init_done
@@ -205,18 +210,29 @@ if [[ $UNDER_SUPERVISOR == true ]]; then
 		/app/bin/osm3s_query --progress --rules <"${DB_DIR}/rules/areas.osm3s"
 	fi
 	SERVER_RELOADED=true
+elif [[ $REPLACED_A_DATABASE == false ]]; then
+	# Nothing was here before, so nothing has the old files open and there is
+	# nothing to restart off them. A server in another container is sitting in
+	# the wait hook watching for exactly this directory and starts on its own
+	# within the minute; restarting it here would only interrupt that, and
+	# while it waits it is a bash script as PID 1, which ignores SIGTERM and
+	# turns a restart into the full timeout followed by a kill
+	log "first database, so the server can start on it by itself"
+	SERVER_RELOADED=true
 else
-	# Nothing to stop here, because the server is in another container: this
-	# one only builds. It has been answering from the old directory all along
-	# and, having opened those files at boot, it goes on answering from them
-	# after the rename. Only a restart makes it look at the new database
+	# The server is in another container: this one only builds. It has been
+	# answering from the old directory all along and, having opened those files
+	# at boot, it goes on answering from them after the rename. Only a restart
+	# makes it look at the new database
 	SERVER_RELOADED=false
 	if [[ -n $RESTART_CONTAINER ]]; then
 		log "restarting $RESTART_CONTAINER to pick up the new database"
 		# The Docker API over the mounted socket, because the docker CLI is not
-		# in this image and curl is. 204 is the documented success
+		# in this image and curl is. 204 is the documented success. t is the
+		# grace period before it is killed, and a serving container takes about
+		# five seconds to stop, so ten is room to spare rather than a wait
 		STATUS=$(curl -s -o /dev/null -w '%{http_code}' --unix-socket "$DOCKER_SOCKET" \
-			-X POST "http://localhost/containers/${RESTART_CONTAINER}/restart?t=30" || echo 000)
+			-X POST "http://localhost/containers/${RESTART_CONTAINER}/restart?t=10" || echo 000)
 		if [[ $STATUS == "204" ]]; then
 			SERVER_RELOADED=true
 		else
@@ -231,7 +247,7 @@ fi
 # open. Leaving the directory behind costs disk and nothing else
 if [[ $SERVER_RELOADED == true ]]; then
 	rm -rf "${DB_DIR}.old"
-else
+elif [[ $REPLACED_A_DATABASE == true ]]; then
 	log "leaving the previous database at ${DB_DIR}.old until the server has restarted"
 fi
 
@@ -244,7 +260,12 @@ fi
 log "done in $((($(date +%s) - STARTED) / 60)) min, database is $(du -sh "$DB_DIR" | cut -f1)"
 
 if [[ $SERVER_RELOADED == false ]]; then
-	echo "update-poi-db: the new database is in place, but the server is still answering"
-	echo "update-poi-db: from the old one. Restart the Overpass container, then remove"
-	echo "update-poi-db: ${DB_DIR}.old"
+	if [[ $REPLACED_A_DATABASE == true ]]; then
+		echo "update-poi-db: the new database is in place, but a server that was already"
+		echo "update-poi-db: running has the old one open and goes on answering from it."
+		echo "update-poi-db: Restart the Overpass container, then remove ${DB_DIR}.old"
+	else
+		echo "update-poi-db: the database is in place. A server waiting for one starts"
+		echo "update-poi-db: serving it within the minute, and there is nothing else to do"
+	fi
 fi

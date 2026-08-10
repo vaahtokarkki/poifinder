@@ -144,6 +144,24 @@ jobs:
               echo "a region that returned HTML should have failed the run"; exit 1
             fi
 
+            # The wait hook stands between the entrypoint and the server, so
+            # the ways it must NOT block are worth pinning down: it holds only
+            # a serving container with no database. Under init the entrypoint
+            # is about to create one, and blocking there would wait forever for
+            # something only this hook could unblock
+            timeout 10 env OVERPASS_MODE=init /docker-entrypoint-initdb.d/30-wait-for-database.sh \
+              || { echo "the wait hook must not block under OVERPASS_MODE=init"; exit 1; }
+            mkdir -p /db/db
+            timeout 10 env OVERPASS_MODE=serve /docker-entrypoint-initdb.d/30-wait-for-database.sh \
+              || { echo "the wait hook must not block when a database is present"; exit 1; }
+            # And it does block when there is nothing to serve. 124 is timeout
+            # having had to stop it, which is the pass. Captured through || so
+            # that set -e does not take the non-zero exit as a failure first
+            rmdir /db/db
+            waited=0
+            timeout 5 env OVERPASS_MODE=serve /docker-entrypoint-initdb.d/30-wait-for-database.sh || waited=$?
+            test "$waited" = "124" || { echo "the wait hook should have waited, got $waited"; exit 1; }
+
             # And nginx has to accept the config the CORS hook rewrites
             /docker-entrypoint-initdb.d/10-cors.sh
             /docker-entrypoint-initdb.d/20-supervisorctl.sh

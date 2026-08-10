@@ -189,6 +189,7 @@ refuses to publish a stale filter, with
 | `initdb.d/05-db-permissions.sh` | Lets the FastCGI worker reach the dispatcher's socket |
 | `initdb.d/10-cors.sh` | Replaces the interpreter's fixed `Access-Control-Allow-Origin` with a configurable one |
 | `initdb.d/20-supervisorctl.sh` | Gives supervisorctl a socket, so the swap can stop the dispatcher properly |
+| `initdb.d/30-wait-for-database.sh` | Holds a serving container back until there is a database, instead of letting it crash into FATAL |
 
 The `initdb.d` scripts are hooks the upstream entrypoint runs on every start,
 before the server comes up. Each patches something the image gets wrong for
@@ -238,13 +239,22 @@ startup path, an import that died left no `/db/init_done` behind, and
 and again after that. An out of memory kill during the first import turned into
 a machine that downloaded Europe forever.
 
+On a machine with no database yet, the serving container waits rather than
+starting. Without that, supervisord starts the dispatcher, the dispatcher exits
+because `/db/db` is not there, and after four tries in eight seconds supervisor
+gives up permanently — `FATAL` is forever, so a database appearing an hour
+later would not bring it back. It waits instead, says so once a minute, and
+starts on its own the moment one appears.
+
 The importer holds the region list, the CPU limit and the Docker socket, and
 its entrypoint is `sleep infinity`. It does nothing until something runs
 `update-poi-db` in it. The database directory is swapped by rename, and because
-the server has the old files open and would go on using them, the importer then
-restarts it through the Docker API — which is what the socket is for, and why
-the old directory is only deleted once that has worked. If the restart fails,
-the previous database is left in place and the log says what to do by hand.
+a server that was already running has the old files open and would go on using
+them, the importer then restarts it through the Docker API — which is what the
+socket is for, and why the old directory is only deleted once that has worked.
+If the restart fails, the previous database is left in place and the log says
+what to do by hand. On the very first import there is nothing to restart off,
+so it does not: the waiting container picks the database up by itself.
 
 ```bash
 docker compose -f docker-compose.prod.yml exec importer update-poi-db
@@ -303,6 +313,17 @@ docker compose -f docker-compose.prod.yml up -d
 If the GitHub package is private, watchtower cannot pull it. Either make the
 package public in its settings, or give watchtower a token with
 `read:packages` (see the commented `REPO_USER` / `REPO_PASS` in the file).
+
+Watchtower also needs `DOCKER_API_VERSION: "1.40"`, which is set. Its Docker
+client asks for API 1.25 and a current daemon refuses anything below 1.40:
+
+```
+client version 1.25 is too old. Minimum supported API version is 1.40
+```
+
+It exits 1 and restarts forever on that. Only watchtower is affected — ofelia
+negotiates a version, so the weekly reimport runs either way. If you ever see
+the same message from something else in the stack, this is the setting.
 
 ## Publishing it
 

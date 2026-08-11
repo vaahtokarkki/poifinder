@@ -3,6 +3,7 @@ import { findCity } from "../seo/cities";
 import type { City } from "../seo/cities";
 import { findCategorySeo } from "../seo/categories";
 import { formatCount } from "../seo/format";
+import { categoryPath, cityPath } from "../seo/pageMeta";
 import type { CityPageData } from "../seo/pageData";
 
 /**
@@ -41,7 +42,7 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data }) => {
         <ul className="poi-links">
           {entries.map((entry) => (
             <li key={entry.categorySeo.slug}>
-              <a href={`/${city.slug}/${entry.categorySeo.slug}`}>
+              <a href={categoryPath(city.slug, entry.categorySeo.slug)}>
                 {entry.categorySeo.heading} in {city.name}
               </a>
               <span className="poi-meta">{formatCount(entry.count)} mapped</span>
@@ -56,7 +57,7 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data }) => {
           <ul className="poi-links">
             {neighbours.map((neighbour) => (
               <li key={neighbour.slug}>
-                <a href={`/${neighbour.slug}`}>{neighbour.name}</a>
+                <a href={cityPath(neighbour.slug)}>{neighbour.name}</a>
                 <span className="poi-meta">{neighbour.country}</span>
               </li>
             ))}

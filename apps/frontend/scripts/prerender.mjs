@@ -93,9 +93,19 @@ async function main() {
     }
 
     /**
-     * Work out which routes qualify before rendering any of them: the internal
-     * links must only ever point at pages that exist, or the link graph is a
-     * field of 404s.
+     * Work out which routes exist and which of those are worth indexing,
+     * before rendering any of them.
+     *
+     * These are two different questions and used to be one. A route we have
+     * data for gets a real page whatever the count, because the app can render
+     * it and a URL that works has no business answering 404 — that was
+     * /helsinki/luggage-storage, four points, serving the 404 page to a visitor
+     * who then watched React draw the map anyway. What the thresholds decide is
+     * only whether the page is fit to be indexed: below them it is written with
+     * a noindex, left out of the sitemap, and not linked to from anywhere.
+     *
+     * Internal links still point only at indexable pages, so the link graph a
+     * crawler walks is the one we are actually asking it to index.
      */
     const routes = [];
     for (const city of CITIES) {
@@ -103,12 +113,17 @@ async function main() {
       if (!cityData) continue;
       for (const categorySeo of CATEGORY_SEO) {
         const entry = cityData.categories?.[categorySeo.slug];
-        if (!entry || entry.count < meta.MIN_POIS_FOR_PAGE) continue;
+        // No data at all is not the same as an empty result: we cannot write a
+        // truthful count for a category that was never queried, and a page
+        // claiming zero while the map draws forty is worse than no page
+        if (!entry || entry.count < 1) continue;
+        const pois = entry.pois ?? [];
         routes.push({
           city,
           categorySeo,
           count: entry.count,
-          pois: entry.pois ?? [],
+          pois,
+          indexable: meta.isIndexable(entry.count, pois.length),
           // This category's own refresh date, so a page whose query failed
           // last time does not inherit a freshness it does not have
           updatedAt: (entry.updatedAt ?? cityData.generatedAt ?? new Date().toISOString()).slice(
@@ -119,21 +134,34 @@ async function main() {
       }
     }
 
+    const indexableRoutes = routes.filter((route) => route.indexable);
     const publishedRoutes = new Set(
-      routes.map((route) => `${route.city.slug}/${route.categorySeo.slug}`)
+      indexableRoutes.map((route) => `${route.city.slug}/${route.categorySeo.slug}`)
     );
-    const publishedCities = new Set(routes.map((route) => route.city.slug));
+    const publishedCities = new Set(indexableRoutes.map((route) => route.city.slug));
     const hasPage = (citySlug, categorySlug) =>
       publishedRoutes.has(`${citySlug}/${categorySlug}`);
 
     const written = [];
 
     /** Assemble a page from the shell: head tags in, content after #root */
-    async function writePage({ urlPath, title, description, canonical, jsonLd, pageData }) {
+    async function writePage({
+      urlPath,
+      title,
+      description,
+      canonical,
+      jsonLd,
+      pageData,
+      noindex = false,
+    }) {
       const head = [
         `<title>${escapeAttr(title)}</title>`,
         `<meta name="description" content="${escapeAttr(description)}">`,
         `<link rel="canonical" href="${escapeAttr(canonical)}">`,
+        // Written, reachable, and deliberately not in the index. "follow" so
+        // the links out of it still carry, which is the only reason a crawler
+        // that lands here should bother reading it
+        ...(noindex ? [`<meta name="robots" content="noindex, follow">`] : []),
         `<meta property="og:type" content="website">`,
         `<meta property="og:site_name" content="${meta.SITE_NAME}">`,
         `<meta property="og:title" content="${escapeAttr(title)}">`,
@@ -201,10 +229,14 @@ async function main() {
         canonical: meta.categoryUrl(route.city.slug, route.categorySeo.slug),
         jsonLd: meta.buildJsonLd(routeArg, pageData),
         pageData,
+        noindex: !route.indexable,
       });
     }
 
     // ---- City hub pages ----
+    // A hub lists only the categories it can send a visitor to a real page
+    // for. A city whose every category is thin still gets a hub, so the URL
+    // resolves, but it is noindex and lists nothing
     const citiesWithPages = new Map();
     for (const route of routes) {
       if (!citiesWithPages.has(route.city.slug)) {
@@ -215,7 +247,9 @@ async function main() {
         });
       }
       const hub = citiesWithPages.get(route.city.slug);
-      hub.entries.push({ categorySeo: route.categorySeo, count: route.count });
+      if (route.indexable) {
+        hub.entries.push({ categorySeo: route.categorySeo, count: route.count });
+      }
       // The hub is as current as its most recently refreshed category
       if (route.updatedAt > hub.updatedAt) hub.updatedAt = route.updatedAt;
     }
@@ -239,6 +273,7 @@ async function main() {
           nearbyCities: meta.neighbourCitiesFor(city, (slug) => publishedCities.has(slug)),
           updatedAt,
         },
+        noindex: entries.length === 0,
       });
     }
 
@@ -252,11 +287,14 @@ async function main() {
         "Find the small points of interest that are hard to look up elsewhere: public " +
         "toilets, drinking water, playgrounds, post boxes and 16 more categories, " +
         "anywhere in the world. Free, no signup, built on OpenStreetMap.",
-      canonical: meta.SITE_URL,
+      canonical: meta.HOME_URL,
       jsonLd: meta.buildHomeJsonLd(),
       pageData: {
         kind: "home",
-        citySlugs: [...citiesWithPages.keys()],
+        // Only the cities with something to land on. The root is the index a
+        // crawler walks, so a link from here is a promise the page is worth
+        // reading
+        citySlugs: [...citiesWithPages.keys()].filter((slug) => publishedCities.has(slug)),
       },
     });
 
@@ -281,15 +319,20 @@ async function main() {
     await writeFile(path.join(DIST, "404.html"), notFound);
 
     // ---- Sitemap ----
+    // Indexable routes only. A sitemap is a list of pages we are asking to have
+    // indexed, so listing a noindex page in it is a contradiction a crawler
+    // spends budget discovering
     const priorityFor = (tier) => (tier === 1 ? "0.9" : tier === 2 ? "0.7" : "0.5");
     const urls = [
-      `<url><loc>${meta.SITE_URL}</loc><priority>1.0</priority></url>`,
-      ...[...citiesWithPages.values()].map(
-        ({ city, updatedAt }) =>
-          `<url><loc>${meta.cityUrl(city.slug)}</loc><lastmod>${updatedAt}</lastmod>` +
-          `<priority>${priorityFor(city.tier)}</priority></url>`
-      ),
-      ...routes.map(
+      `<url><loc>${meta.HOME_URL}</loc><priority>1.0</priority></url>`,
+      ...[...citiesWithPages.values()]
+        .filter(({ entries }) => entries.length > 0)
+        .map(
+          ({ city, updatedAt }) =>
+            `<url><loc>${meta.cityUrl(city.slug)}</loc><lastmod>${updatedAt}</lastmod>` +
+            `<priority>${priorityFor(city.tier)}</priority></url>`
+        ),
+      ...indexableRoutes.map(
         (route) =>
           `<url><loc>${meta.categoryUrl(route.city.slug, route.categorySeo.slug)}</loc>` +
           `<lastmod>${route.updatedAt}</lastmod>` +
@@ -304,16 +347,25 @@ async function main() {
         )}\n</urlset>\n`
     );
 
+    const indexableCities = [...citiesWithPages.values()].filter(
+      ({ entries }) => entries.length > 0
+    ).length;
     console.log(
       `Prerendered ${written.length} pages ` +
         `(${routes.length} category, ${citiesWithPages.size} city, 1 root), ` +
         `sitemap has ${urls.length} URLs.`
     );
+    console.log(
+      `Indexable: ${indexableRoutes.length} category, ${indexableCities} city. ` +
+        `${routes.length - indexableRoutes.length} category pages are noindex ` +
+        `(under ${meta.MIN_POIS_FOR_PAGE} points or ${meta.MIN_NAMED_POIS_FOR_PAGE} named).`
+    );
 
-    const skipped = CITIES.length * CATEGORY_SEO.length - routes.length;
-    if (skipped > 0) {
+    const noData = CITIES.length * CATEGORY_SEO.length - routes.length;
+    if (noData > 0) {
       console.log(
-        `Skipped ${skipped} routes: under ${meta.MIN_POIS_FOR_PAGE} points, or no data yet.`
+        `${noData} routes have no data and no page, so they 404. ` +
+          `Run \`npm run seo:data\` to fill them in.`
       );
     }
   } finally {

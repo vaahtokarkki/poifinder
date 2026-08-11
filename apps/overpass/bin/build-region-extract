@@ -40,7 +40,12 @@
 # starting the download over.
 #
 # The regions must not overlap, or their shared objects are imported twice.
-# See the header of europe-regions.txt.
+# See the header of europe-regions.txt or world-regions.txt.
+#
+# A list line is a URL, optionally followed by the name the region goes by in
+# --refresh and in the parts directory. Without one the name is the basename,
+# which is unique for countries and not below them: europe/georgia and
+# us/georgia are both "georgia", and two regions with one name is an error.
 
 set -euo pipefail
 
@@ -135,22 +140,38 @@ looks_like_osm() {
 # Comments and blank lines out, so the list can explain itself. Trimming is per
 # line and deliberately not `tr -d [:space:]`, which eats the newlines too and
 # hands the loop all fifty URLs concatenated into one
-mapfile -t URLS < <(sed 's/#.*//; s/^[[:space:]]*//; s/[[:space:]]*$//' "$REGION_LIST" | grep -v '^$')
-if [[ ${#URLS[@]} -eq 0 ]]; then
+mapfile -t ENTRIES < <(sed 's/#.*//; s/^[[:space:]]*//; s/[[:space:]]*$//' "$REGION_LIST" | grep -v '^$')
+if [[ ${#ENTRIES[@]} -eq 0 ]]; then
 	echo "build-region-extract: no regions in $REGION_LIST" >&2
 	exit 1
 fi
 
-# The name a URL is known by, here and in --refresh
+# The URL half of a region list line, which may carry a name after it
+entry_url() {
+	local url
+	read -r url _ <<<"$1"
+	printf '%s' "$url"
+}
+
+# The name a region is known by, here and in --refresh. The basename by
+# default, or the second field of the line when it has one. Below country level
+# the basename is not unique — europe/georgia and us/georgia are both "georgia"
+# — and two regions sharing a name is an error rather than something to
+# resolve, so those lines name themselves
 region_name() {
-	local name
-	name=$(basename "$1")
+	local url name
+	read -r url name <<<"$1"
+	if [[ -n ${name:-} ]]; then
+		printf '%s' "$name"
+		return
+	fi
+	name=$(basename "$url")
 	name=${name%%.*}
 	printf '%s' "${name%-latest}"
 }
 
 ALL_NAMES=()
-for u in "${URLS[@]}"; do ALL_NAMES+=("$(region_name "$u")"); done
+for e in "${ENTRIES[@]}"; do ALL_NAMES+=("$(region_name "$e")"); done
 
 mkdir -p "$WORK"
 
@@ -209,16 +230,17 @@ fi
 mkdir -p "$WORK"
 
 STARTED=$(date +%s)
-log "${#URLS[@]} regions from $REGION_LIST"
+log "${#ENTRIES[@]} regions from $REGION_LIST"
 
 PARTS=()
 NAMES=()
 NEWEST=""
 INDEX=0
 
-for URL in "${URLS[@]}"; do
+for ENTRY in "${ENTRIES[@]}"; do
 	INDEX=$((INDEX + 1))
-	NAME=$(region_name "$URL")
+	URL=$(entry_url "$ENTRY")
+	NAME=$(region_name "$ENTRY")
 	PART="${WORK}/${NAME}.osm.pbf"
 	RAW="${WORK}/${NAME}.download"
 
@@ -247,15 +269,15 @@ for URL in "${URLS[@]}"; do
 	fi
 
 	if [[ $FETCH == false ]]; then
-		log "[$INDEX/${#URLS[@]}] $NAME: keeping $(numfmt --to=iec "$(stat -c %s "$PART")") from $(date -r "$PART" '+%F')"
+		log "[$INDEX/${#ENTRIES[@]}] $NAME: keeping $(numfmt --to=iec "$(stat -c %s "$PART")") from $(date -r "$PART" '+%F')"
 	else
 		ATTEMPT=0
 		while true; do
 			ATTEMPT=$((ATTEMPT + 1))
 			if [[ $ATTEMPT -eq 1 ]]; then
-				log "[$INDEX/${#URLS[@]}] $NAME: downloading"
+				log "[$INDEX/${#ENTRIES[@]}] $NAME: downloading"
 			else
-				log "[$INDEX/${#URLS[@]}] $NAME: downloading, attempt $ATTEMPT of $DOWNLOAD_TRIES"
+				log "[$INDEX/${#ENTRIES[@]}] $NAME: downloading, attempt $ATTEMPT of $DOWNLOAD_TRIES"
 			fi
 
 			# A region list that has gone stale 404s, and a missing country is
@@ -283,18 +305,18 @@ for URL in "${URLS[@]}"; do
 			# Could be a bad URL, could be the server having a moment. One is
 			# worth waiting out and the other is not, and they look alike here
 			BACKOFF=$((RETRY_BACKOFF * ATTEMPT))
-			log "[$INDEX/${#URLS[@]}] $NAME: not an OSM extract, retrying in ${BACKOFF}s"
+			log "[$INDEX/${#ENTRIES[@]}] $NAME: not an OSM extract, retrying in ${BACKOFF}s"
 			sleep "$BACKOFF"
 		done
 
-		log "[$INDEX/${#URLS[@]}] $NAME: filtering"
+		log "[$INDEX/${#ENTRIES[@]}] $NAME: filtering"
 		filter-osm-extract "$RAW" "$PART"
 		rm -f "$RAW"
 
 		# Fifty downloads back to back is the kind of traffic that gets a
 		# client throttled in the first place, and a few seconds each is
 		# nothing against an import measured in hours
-		if [[ $INDEX -lt ${#URLS[@]} ]]; then
+		if [[ $INDEX -lt ${#ENTRIES[@]} ]]; then
 			sleep "$REGION_PAUSE"
 		fi
 	fi

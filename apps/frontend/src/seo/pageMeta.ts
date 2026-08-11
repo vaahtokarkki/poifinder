@@ -9,11 +9,33 @@ export const SITE_URL = "https://wayside.cc";
 export const SITE_NAME = "Wayside";
 
 /**
- * Below this many points a page has nothing to say, and publishing it would
- * only add a thin duplicate to the index. The prerender skips those routes and
- * the sitemap never lists them.
+ * What a route needs before it is worth putting in the index.
+ *
+ * Two thresholds rather than one, because they measure different things. The
+ * count is how much the map has to show; the named points are the only part of
+ * the page that is not a template. Everything else — the intro, all seven FAQ
+ * answers, the link groups — is generated from the city name and a number, so a
+ * route with a large count and no named points renders three hundred words that
+ * differ from another city's only in the proper nouns. One of those is a page.
+ * Three thousand is a thin-content pattern, and the risk is not that they fail
+ * to rank but that they set how the whole directory is classified.
+ *
+ * Helsinki post boxes is the case that prompted this: 224 mapped points, none
+ * of them named, published on the strength of the count alone.
+ *
+ * A route that clears neither is still written as a real page — see the
+ * prerender — it is simply marked noindex and kept out of the sitemap and the
+ * internal links.
  */
 export const MIN_POIS_FOR_PAGE = 8;
+
+/** Named points a route needs before the list is substantive enough to index */
+export const MIN_NAMED_POIS_FOR_PAGE = 5;
+
+/** Whether a route has enough behind it to be worth indexing */
+export function isIndexable(count: number, namedCount: number): boolean {
+  return count >= MIN_POIS_FOR_PAGE && namedCount >= MIN_NAMED_POIS_FOR_PAGE;
+}
 
 /** How many named points the list renders. Enough to be substantive, not a dump */
 export const MAX_LISTED_POIS = 25;
@@ -23,13 +45,35 @@ export type Route = {
   categorySeo: CategorySeo;
 };
 
+/**
+ * Every URL this file builds ends in a slash, because that is the one Cloudflare
+ * serves. A page written to `dist/helsinki/toilets/index.html` is served at
+ * `/helsinki/toilets/`, and the un-slashed form is a 307 to it. Claiming the
+ * un-slashed form as canonical therefore pointed every page's canonical, og:url,
+ * breadcrumb and sitemap entry at a redirect: resolvable, but a wasted hop per
+ * URL and a standing source of "Alternate page with proper canonical tag".
+ *
+ * The app is indifferent — `pathSegments` in utils.ts trims slashes off both
+ * ends before reading the city and category out of the path.
+ */
+export function categoryPath(citySlug: string, categorySlug: string): string {
+  return `/${citySlug}/${categorySlug}/`;
+}
+
+export function cityPath(citySlug: string): string {
+  return `/${citySlug}/`;
+}
+
 export function categoryUrl(citySlug: string, categorySlug: string): string {
-  return `${SITE_URL}/${citySlug}/${categorySlug}`;
+  return `${SITE_URL}${categoryPath(citySlug, categorySlug)}`;
 }
 
 export function cityUrl(citySlug: string): string {
-  return `${SITE_URL}/${citySlug}`;
+  return `${SITE_URL}${cityPath(citySlug)}`;
 }
+
+/** The root, which is the one page whose slash is the whole path */
+export const HOME_URL = `${SITE_URL}/`;
 
 export function titleFor(route: Route, count: number): string {
   const { city, categorySeo } = route;
@@ -55,6 +99,12 @@ export function headingFor(route: Route): string {
  * that promises luggage lockers it has no page for is a bounced visitor
  */
 export function cityTitleFor(city: City, categories: CategorySeo[]): string {
+  // A hub with nothing to list is written anyway, as a noindex page, so that
+  // the URL resolves for anyone who lands on it. It still needs a title that
+  // reads like one
+  if (categories.length === 0) {
+    return `Points of interest in ${city.name} | ${SITE_NAME}`;
+  }
   const named = categories.slice(0, 3).map((entry) => entry.plural);
   const more = categories.length > named.length ? " and more" : "";
   return `${city.name}: ${named.join(", ")}${more} | ${SITE_NAME}`;
@@ -65,6 +115,12 @@ export function cityDescriptionFor(
   categories: CategorySeo[],
   totalPoints: number
 ): string {
+  if (categories.length === 0) {
+    return (
+      `The map of ${city.name}: public toilets, drinking water, playgrounds and more, ` +
+      `from OpenStreetMap. Not enough is mapped here yet for a page of its own.`
+    );
+  }
   const named = categories.slice(0, 4).map((entry) => entry.plural);
   const rest = categories.length - named.length;
   return (
@@ -103,7 +159,9 @@ export function internalLinksFor(route: Route, data: CategoryPageData): LinkGrou
   const otherCategories = data.siblingCategories.flatMap((slug) => {
     const other = findCategorySeo(slug);
     if (!other || other.slug === categorySeo.slug) return [];
-    return [{ href: `/${city.slug}/${other.slug}`, label: `${other.heading} in ${city.name}` }];
+    return [
+      { href: categoryPath(city.slug, other.slug), label: `${other.heading} in ${city.name}` },
+    ];
   });
 
   const sameCategoryElsewhere = data.nearbyCities.flatMap((slug) => {
@@ -111,7 +169,7 @@ export function internalLinksFor(route: Route, data: CategoryPageData): LinkGrou
     if (!other) return [];
     return [
       {
-        href: `/${other.slug}/${categorySeo.slug}`,
+        href: categoryPath(other.slug, categorySeo.slug),
         label: `${categorySeo.heading} in ${other.name}`,
       },
     ];
@@ -221,7 +279,7 @@ export function buildJsonLd(route: Route, data: CategoryPageData): object[] {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: SITE_NAME, item: SITE_URL },
+      { "@type": "ListItem", position: 1, name: SITE_NAME, item: HOME_URL },
       { "@type": "ListItem", position: 2, name: city.name, item: cityUrl(city.slug) },
       { "@type": "ListItem", position: 3, name: categorySeo.heading, item: url },
     ],
@@ -277,7 +335,7 @@ export function buildCityJsonLd(
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: SITE_NAME, item: SITE_URL },
+        { "@type": "ListItem", position: 1, name: SITE_NAME, item: HOME_URL },
         { "@type": "ListItem", position: 2, name: city.name, item: cityUrl(city.slug) },
       ],
     },
@@ -291,7 +349,7 @@ export function buildHomeJsonLd(): object[] {
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
       description:
         "A map of the small points of interest that are hard to find elsewhere: " +
         "public toilets, drinking water, playgrounds, shelters and more, from OpenStreetMap.",
@@ -300,7 +358,7 @@ export function buildHomeJsonLd(): object[] {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       name: SITE_NAME,
-      url: SITE_URL,
+      url: HOME_URL,
       applicationCategory: "TravelApplication",
       operatingSystem: "Any",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

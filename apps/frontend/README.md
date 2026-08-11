@@ -27,7 +27,7 @@ environment, and drops its 2.5 second throttle when it is set.
 ## Prerendered pages
 
 The app is a client side map, but every indexable URL is a real static HTML
-file. `/helsinki/toilets` is written at build time with its own title,
+file. `/helsinki/toilets/` is written at build time with its own title,
 description, canonical, structured data and a list of named points; it does not
 depend on a crawler running our JavaScript, or on Overpass answering.
 
@@ -38,6 +38,17 @@ the network:
 | --- | --- |
 | `npm run seo:data` | Queries Overpass and refreshes `data/poi/*.json`. Slow, rate limited, run on a schedule. |
 | `npm run prerender` | Reads `data/poi/`, writes one HTML file per route plus `sitemap.xml` and `404.html`. No network. |
+
+### Trailing slashes
+
+Every URL the site claims for itself ends in one. A page written to
+`dist/helsinki/toilets/index.html` is what Cloudflare serves at
+`/helsinki/toilets/`, and it answers the un-slashed form with a 307 to it — so
+canonicals, `og:url`, breadcrumbs, the sitemap and the internal links all use
+the slashed form, and none of them cost a redirect hop. `categoryPath`,
+`cityPath` and their `*Url` counterparts in [`src/seo/pageMeta.ts`](src/seo/pageMeta.ts)
+are the only places that build one. The app itself does not care: `pathSegments`
+in [`src/utils.ts`](src/utils.ts) trims slashes off both ends.
 | `npm run build` | `vite build` followed by the prerender. |
 
 `data/poi/` is committed. That makes builds deterministic and means a broken
@@ -66,8 +77,38 @@ hours. The throttle is intentional. Weekly is plenty for these categories.
   `npm run overpass:filters` and a reimport, or the objects are not in the
   database to be found: see [`apps/overpass`](../overpass).
 
-A route is only published when it has at least `MIN_POIS_FOR_PAGE` points, so
-thin pages never reach the index and internal links never point at a 404.
+### Which routes get a page, and which get indexed
+
+These are two questions, and conflating them is what put `/helsinki/toilets`
+and `/helsinki/luggage-storage` on opposite sides of a 404.
+
+Every route we have data for gets a real HTML file, whatever the count. The app
+can render it, so a URL that works has no business answering 404 while React
+draws the map behind the error page.
+
+What the thresholds decide is whether that page is fit to be indexed:
+
+| Threshold | Why |
+| --- | --- |
+| `MIN_POIS_FOR_PAGE` (8) | How much the map has to show |
+| `MIN_NAMED_POIS_FOR_PAGE` (5) | How much of the page is not a template |
+
+The second one matters more than it looks. The intro, all seven FAQ answers and
+the link groups are generated from the city name and a number; the list of
+named points is the only part that is genuinely this page's. A route with 224
+points and none of them named — Helsinki post boxes, which is the case that
+prompted the rule — renders three hundred words that differ from another city's
+only in the proper nouns. One of those is a page. Three thousand is a
+thin-content pattern, and the risk is not that they fail to rank but that they
+set how the whole directory gets classified.
+
+A route below either threshold is written with `noindex, follow`, kept out of
+`sitemap.xml`, and not linked to from any other page. So internal links still
+only ever point at pages we are asking to have indexed, and nothing 404s that
+did not deserve to.
+
+A route with no data at all still 404s, because there is no truthful count to
+put on it. That is what `npm run seo:data` is for.
 
 ### Why the content is duplicated in two places, and why it is not
 

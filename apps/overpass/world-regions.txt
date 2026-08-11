@@ -1,0 +1,130 @@
+# Every region the map covers, one per line, as the URL of a Geofabrik extract.
+#
+# Read by bin/build-region-extract, which downloads and filters these one at a
+# time and merges the results. See apps/overpass/README.md.
+#
+# This is europe-regions.txt plus the rest of the world, and the two are
+# alternatives: point WAYSIDE_REGION_LIST at one of them, never both. A region
+# renamed upstream has to be fixed in whichever list is in use, and a stale URL
+# fails the build loudly rather than quietly dropping a country.
+#
+# Regions must not overlap, or their shared objects are imported twice. That is
+# why the aggregates are left out (alps, dach, britain-and-ireland,
+# united-kingdom), why this takes Hong Kong on its own rather than all of
+# China, and why the United States is here as states rather than as
+# us-latest.osm.pbf.
+#
+# A line may carry a name after the URL, which is what --refresh and the part
+# files use. Without one the name is the basename, and that is ambiguous for
+# anything below country level: europe/georgia and us/georgia are both
+# "georgia". Subdivisions are therefore named explicitly, countries are not.
+#
+# Why states and provinces rather than whole countries. Peak disk is the
+# largest single region, and us-latest.osm.pbf is 11 GB against France's 4.7,
+# which would more than double what the filter has to hold. The nineteen states
+# below are 6.4 GB together and 1.2 GB at the largest, so adding the world
+# leaves the disk budget where Europe already put it. They are the states with
+# a city in src/seo/cities.ts; adding another is one line.
+#
+# Regenerate the Europe half from Geofabrik's index, dropping the aggregates:
+#   curl -s https://download.geofabrik.de/index-v1.json | \
+#     jq -r '.features[].properties | select(.parent=="europe") | .urls.pbf' | sort
+
+# ---- Europe ----
+https://download.geofabrik.de/europe/albania-latest.osm.pbf
+https://download.geofabrik.de/europe/andorra-latest.osm.pbf
+https://download.geofabrik.de/europe/austria-latest.osm.pbf
+https://download.geofabrik.de/europe/azores-latest.osm.pbf
+https://download.geofabrik.de/europe/belarus-latest.osm.pbf
+https://download.geofabrik.de/europe/belgium-latest.osm.pbf
+https://download.geofabrik.de/europe/bosnia-herzegovina-latest.osm.pbf
+https://download.geofabrik.de/europe/bulgaria-latest.osm.pbf
+https://download.geofabrik.de/europe/croatia-latest.osm.pbf
+https://download.geofabrik.de/europe/cyprus-latest.osm.pbf
+https://download.geofabrik.de/europe/czech-republic-latest.osm.pbf
+https://download.geofabrik.de/europe/denmark-latest.osm.pbf
+https://download.geofabrik.de/europe/estonia-latest.osm.pbf
+https://download.geofabrik.de/europe/faroe-islands-latest.osm.pbf
+https://download.geofabrik.de/europe/finland-latest.osm.pbf
+https://download.geofabrik.de/europe/france-latest.osm.pbf
+https://download.geofabrik.de/europe/georgia-latest.osm.pbf
+https://download.geofabrik.de/europe/germany-latest.osm.pbf
+https://download.geofabrik.de/europe/great-britain-latest.osm.pbf
+https://download.geofabrik.de/europe/greece-latest.osm.pbf
+https://download.geofabrik.de/europe/guernsey-jersey-latest.osm.pbf
+https://download.geofabrik.de/europe/hungary-latest.osm.pbf
+https://download.geofabrik.de/europe/iceland-latest.osm.pbf
+https://download.geofabrik.de/europe/ireland-and-northern-ireland-latest.osm.pbf
+https://download.geofabrik.de/europe/isle-of-man-latest.osm.pbf
+https://download.geofabrik.de/europe/italy-latest.osm.pbf
+https://download.geofabrik.de/europe/kosovo-latest.osm.pbf
+https://download.geofabrik.de/europe/latvia-latest.osm.pbf
+https://download.geofabrik.de/europe/liechtenstein-latest.osm.pbf
+https://download.geofabrik.de/europe/lithuania-latest.osm.pbf
+https://download.geofabrik.de/europe/luxembourg-latest.osm.pbf
+https://download.geofabrik.de/europe/macedonia-latest.osm.pbf
+https://download.geofabrik.de/europe/malta-latest.osm.pbf
+https://download.geofabrik.de/europe/moldova-latest.osm.pbf
+https://download.geofabrik.de/europe/monaco-latest.osm.pbf
+https://download.geofabrik.de/europe/montenegro-latest.osm.pbf
+https://download.geofabrik.de/europe/netherlands-latest.osm.pbf
+https://download.geofabrik.de/europe/norway-latest.osm.pbf
+https://download.geofabrik.de/europe/poland-latest.osm.pbf
+https://download.geofabrik.de/europe/portugal-latest.osm.pbf
+https://download.geofabrik.de/europe/romania-latest.osm.pbf
+https://download.geofabrik.de/europe/serbia-latest.osm.pbf
+https://download.geofabrik.de/europe/slovakia-latest.osm.pbf
+https://download.geofabrik.de/europe/slovenia-latest.osm.pbf
+https://download.geofabrik.de/europe/spain-latest.osm.pbf
+https://download.geofabrik.de/europe/sweden-latest.osm.pbf
+https://download.geofabrik.de/europe/switzerland-latest.osm.pbf
+https://download.geofabrik.de/europe/turkey-latest.osm.pbf
+https://download.geofabrik.de/europe/ukraine-latest.osm.pbf
+
+# ---- North America ----
+https://download.geofabrik.de/north-america/us/new-york-latest.osm.pbf  us-new-york
+https://download.geofabrik.de/north-america/us/california-latest.osm.pbf  us-california
+https://download.geofabrik.de/north-america/us/illinois-latest.osm.pbf  us-illinois
+https://download.geofabrik.de/north-america/us/washington-latest.osm.pbf  us-washington
+https://download.geofabrik.de/north-america/us/massachusetts-latest.osm.pbf  us-massachusetts
+https://download.geofabrik.de/north-america/us/district-of-columbia-latest.osm.pbf  us-district-of-columbia
+https://download.geofabrik.de/north-america/us/oregon-latest.osm.pbf  us-oregon
+https://download.geofabrik.de/north-america/us/texas-latest.osm.pbf  us-texas
+https://download.geofabrik.de/north-america/us/colorado-latest.osm.pbf  us-colorado
+https://download.geofabrik.de/north-america/us/pennsylvania-latest.osm.pbf  us-pennsylvania
+https://download.geofabrik.de/north-america/us/florida-latest.osm.pbf  us-florida
+https://download.geofabrik.de/north-america/us/georgia-latest.osm.pbf  us-georgia
+https://download.geofabrik.de/north-america/us/arizona-latest.osm.pbf  us-arizona
+https://download.geofabrik.de/north-america/us/minnesota-latest.osm.pbf  us-minnesota
+https://download.geofabrik.de/north-america/us/louisiana-latest.osm.pbf  us-louisiana
+https://download.geofabrik.de/north-america/us/tennessee-latest.osm.pbf  us-tennessee
+https://download.geofabrik.de/north-america/us/nevada-latest.osm.pbf  us-nevada
+https://download.geofabrik.de/north-america/us/michigan-latest.osm.pbf  us-michigan
+https://download.geofabrik.de/north-america/us/hawaii-latest.osm.pbf  us-hawaii
+https://download.geofabrik.de/north-america/canada/ontario-latest.osm.pbf  ca-ontario
+https://download.geofabrik.de/north-america/canada/british-columbia-latest.osm.pbf  ca-british-columbia
+https://download.geofabrik.de/north-america/canada/quebec-latest.osm.pbf  ca-quebec
+https://download.geofabrik.de/north-america/canada/alberta-latest.osm.pbf  ca-alberta
+https://download.geofabrik.de/north-america/mexico-latest.osm.pbf
+
+# ---- Asia ----
+https://download.geofabrik.de/asia/japan-latest.osm.pbf
+https://download.geofabrik.de/asia/south-korea-latest.osm.pbf
+https://download.geofabrik.de/asia/taiwan-latest.osm.pbf
+https://download.geofabrik.de/asia/malaysia-singapore-brunei-latest.osm.pbf
+https://download.geofabrik.de/asia/thailand-latest.osm.pbf
+https://download.geofabrik.de/asia/israel-and-palestine-latest.osm.pbf
+https://download.geofabrik.de/asia/gcc-states-latest.osm.pbf
+https://download.geofabrik.de/asia/china/hong-kong-latest.osm.pbf
+
+# ---- Oceania ----
+https://download.geofabrik.de/australia-oceania/australia-latest.osm.pbf
+https://download.geofabrik.de/australia-oceania/new-zealand-latest.osm.pbf
+
+# ---- South America ----
+https://download.geofabrik.de/south-america/argentina-latest.osm.pbf
+https://download.geofabrik.de/south-america/brazil-latest.osm.pbf
+https://download.geofabrik.de/south-america/chile-latest.osm.pbf
+
+# ---- Africa ----
+https://download.geofabrik.de/africa/south-africa-latest.osm.pbf

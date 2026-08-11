@@ -82,17 +82,35 @@ One country is one download and needs nothing special. A continent does:
 the disk while osmium reads it four times over. That is what gets a small
 server killed, and it gets killed hours in, having downloaded all 35 GB first.
 
-Set a region list and the extract is built out of the countries in
-[`europe-regions.txt`](europe-regions.txt) instead, one at a time: download,
-filter, throw the download away, keep the few megabytes that survived, and
-merge the fifty pieces at the end. Same continent, same bytes over the wire,
-but nothing ever holds more than the largest single country.
+Set a region list and the extract is built out of the regions in that list
+instead, one at a time: download, filter, throw the download away, keep the few
+megabytes that survived, and merge the pieces at the end. Same places, same
+bytes over the wire, but nothing ever holds more than the largest single
+region.
+
+Two lists ship in the image, and they are alternatives rather than layers:
+
+| List | Regions | Download | Covers |
+| --- | --- | --- | --- |
+| [`world-regions.txt`](world-regions.txt) | 87 | ~54 GB | every city in `src/seo/cities.ts` |
+| [`europe-regions.txt`](europe-regions.txt) | 49 | ~35 GB | Europe, which is 88 of those cities |
+
+The world list is Europe's countries plus the regions the other 60 cities sit
+in. Most are whole countries; the United States and Canada are the states and
+provinces that have a city in them, because `us-latest.osm.pbf` alone is 11 GB
+against France's 4.7 and would more than double the peak the whole design
+exists to keep down. The nineteen states are 6.4 GB together and 1.2 GB at the
+largest, so going from Europe to the world costs download time and leaves peak
+disk exactly where it was.
+
+A search outside whichever list is in use comes back empty rather than failing,
+so on the Europe list the map simply has nothing to show in New York or Tokyo.
 
 `WAYSIDE_REGION_LIST` is the whole setting, and where it goes depends on which
 half of the work you are configuring:
 
 ```yaml
-WAYSIDE_REGION_LIST: /opt/wayside/europe-regions.txt
+WAYSIDE_REGION_LIST: /opt/wayside/world-regions.txt
 ```
 
 On a server that is the importer's, and `update-poi-db` builds the database
@@ -104,7 +122,7 @@ imports, it takes two more settings, because that entrypoint insists on
 downloading `OVERPASS_PLANET_URL` before it will run anything:
 
 ```yaml
-WAYSIDE_REGION_LIST: /opt/wayside/europe-regions.txt
+WAYSIDE_REGION_LIST: /opt/wayside/world-regions.txt
 OVERPASS_PLANET_URL: https://download.geofabrik.de/europe/monaco-latest.osm.pbf
 OVERPASS_PLANET_PREPROCESS: build-region-extract /db/planet.osm.bz2
 ```
@@ -115,7 +133,21 @@ replaces it in place before the import ever sees it.
 The list is URLs, one per line, comments allowed. Any extract works; the only
 rule is that the regions must not overlap, or their shared objects are imported
 twice. Geofabrik's four European aggregates are left out for exactly that
-reason, and the file says so.
+reason, and the file says so; so is all of China, in favour of the Hong Kong
+extract on its own.
+
+A line may carry a name after the URL, which is what `--refresh` and the files
+in `/db/regions` use:
+
+```
+https://download.geofabrik.de/north-america/us/georgia-latest.osm.pbf  us-georgia
+```
+
+Without one the name is the basename, which is unique for countries and not
+below them — `europe/georgia` and `us/georgia` are both `georgia`, and two
+regions answering to one name is an error rather than something the build
+guesses at. Subdivisions in `world-regions.txt` are therefore named
+explicitly, countries are not.
 
 A run that dies is resumable: a region already downloaded and filtered is not
 fetched again, so the next attempt picks up where it stopped rather than
@@ -129,7 +161,7 @@ what lets a refresh be one country rather than a continent:
 
 ```bash
 update-poi-db --refresh=finland   # this one, everything else as it stands
-update-poi-db --refresh=random    # one of the 49, picked by dice
+update-poi-db --refresh=random    # one of the 87, picked by dice
 update-poi-db --refresh=oldest    # the one refreshed longest ago
 update-poi-db                     # all of them, the full rebuild
 ```
@@ -138,15 +170,17 @@ A region with no part yet is always fetched, whatever `--refresh` says, so a
 country cannot quietly go missing from the map.
 
 **This makes the download smaller and nothing else smaller.** Overpass cannot
-update part of a database, so every one of these still merges all 49 parts,
+update part of a database, so every one of these still merges all 87 parts,
 compresses them and imports the lot. A nightly one country refresh is one
-country downloaded and the whole of Europe imported, seven times a week — more
+country downloaded and the whole world imported, seven times a week — more
 total CPU than one weekly rebuild, spread thinner. That is the trade, and it is
 worth making on purpose rather than by accident.
 
-`oldest` is worth preferring over `random` if the aim is coverage: with 49
-regions and a nightly run it guarantees every country is refreshed within 49
-days, where random leaves some waiting much longer than that.
+`oldest` is worth preferring over `random` if the aim is coverage: with 87
+regions and a nightly run it guarantees every region is refreshed within 87
+days, where random leaves some waiting much longer than that. On the world list
+that bound is worth checking against how often you actually run it — every
+other night makes it closer to six months.
 
 Because regions now age independently, the database reports the **oldest** of
 them as its `timestamp_osm_base` rather than the newest. Reporting the newest
@@ -219,6 +253,7 @@ refuses to publish a stale filter, with
 | `docker-compose.prod.yml` | The deployment: serving and importing split in two, on a host directory |
 | `osmium-filter.txt` | Generated from `CATEGORY_CONFIG`. Do not edit |
 | `europe-regions.txt` | The countries `europe-latest.osm.pbf` is made of, for building it a piece at a time |
+| `world-regions.txt` | Those plus every other region a city in the app sits in. The default |
 | `bin/filter-osm-extract` | Cuts an extract down to the tags in the filter |
 | `bin/build-region-extract` | Downloads and filters a region list one country at a time, and merges the result |
 | `bin/update-poi-db` | Rebuild and swap, with the API up throughout |
@@ -313,12 +348,18 @@ there. The jobs are defined next to the thing they act on and travel with this
 file, which is the point — a server rebuilt from this compose file is a server
 that is already scheduled.
 
-There are two, both at 04:30:
+There are two:
 
 | When | Job | What it refreshes |
 | --- | --- | --- |
-| Sunday | `refresh-finland` | Finland, every week |
-| Monday–Saturday | `refresh-rotating` | one region at random out of the 49 |
+| Sunday 04:30 | `refresh-finland` | Finland, every week |
+| Every other night, 02:30 | `refresh-rotating` | the least recently refreshed of the 87 |
+
+Note that the two schedules are written in different dialects: ofelia takes six
+cron fields with seconds first, which `refresh-finland` uses, while
+`refresh-rotating` is a five field expression. Both parse, but if you edit
+either, count the fields first — a five field expression read as six shifts
+every unit by one.
 
 Finland is the map most likely to be looked at, so it gets a week's cadence;
 everywhere else comes round on a rotation of roughly two months. The days do
@@ -347,8 +388,9 @@ database directory; the data is only ever rebuilt by `update-poi-db`.
 `/srv/wayside/db` on the host, bound to `/db` in both containers, rather than a
 named volume — so it is somewhere you can point `df` at, back up, or move to a
 bigger disk. It has to hold the live database, a second copy of it while the
-swap happens, and the importer's working files: the country being downloaded
-(France, 5 GB, the largest) plus the filtered pieces of the ones before it.
+swap happens, and the importer's working files: the region being downloaded
+(France, 4.7 GB, the largest on either list) plus the filtered pieces of the
+ones before it.
 
 Moving an existing deployment off the old named volume means copying the data
 across, or the next start finds an empty directory and the API answers nothing

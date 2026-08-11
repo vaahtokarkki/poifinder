@@ -29,19 +29,22 @@
 # The values worth checking before the first start: WAYSIDE_REGION_LIST (which
 # region), OVERPASS_CORS_ORIGIN (which site), and the database path below.
 #
-# This one covers all of Europe, assembled a country at a time so that neither
-# the disk nor the download ever has to hold the whole continent. The app's
-# city list reaches further than that, and a search outside the extract comes
-# back empty rather than failing, so the map simply has nothing to show in New
-# York or Tokyo.
+# This one covers every region the app has a city in, assembled a country at a
+# time so that neither the disk nor the download ever has to hold more than one
+# of them. Europe is whole countries; the United States and Canada are the
+# states and provinces with a city in them, because us-latest.osm.pbf is 11 GB
+# against France's 4.7 and would more than double the peak on its own.
 #
 # What the machine needs: about 3 GB of memory free during the filter step,
 # which is a fixed cost of the filtering and not something the region list
-# brings down, and room on the database path for the largest single country
-# (France, 5 GB) plus a second copy of the database while the swap happens. Add
-# swap if the box does not have the memory — this is a weekly batch job, so
-# slower is fine and killed is not. The reasoning, and the measurements behind
-# it, are under "Covering a continent" in README.md.
+# brings down, and room on the database path for the largest single region
+# (France, 4.7 GB) plus a second copy of the database while the swap happens.
+# Note that adding the world did not move that number: the largest region
+# outside Europe is Japan at 2.3 GB. What it does move is the total download,
+# from about 35 GB to about 54 GB, and the time a full rebuild takes. Add swap
+# if the box does not have the memory — this is a weekly batch job, so slower
+# is fine and killed is not. The reasoning, and the measurements behind it, are
+# under "Covering a continent" in README.md.
 #
 # First start, once:
 #
@@ -155,9 +158,10 @@ services:
       # in the host's crontab. Six cron fields here, the first is seconds.
       #
       # Two jobs, because the map is not equally interesting everywhere. Finland
-      # is refreshed every Sunday. The other six nights take one region at
-      # random out of the forty nine, which comes to a rotation of roughly two
-      # months for everywhere else.
+      # is refreshed every Sunday. The other nights take the least recently
+      # refreshed region out of the 87, which at every other night comes to a
+      # rotation of roughly six months for everywhere else. That is slower than
+      # it was at 49 regions; raise the frequency here if the box can take it.
       #
       # The days do not overlap on purpose: Sunday is Finland's and the random
       # job is Monday to Saturday. update-poi-db takes a lock either way, so a
@@ -180,17 +184,21 @@ services:
       ofelia.job-exec.refresh-rotating.no-overlap: "true"
 
     environment:
-      # Which region the database covers, and how it is assembled. All of
-      # Europe, built one country at a time: europe-latest.osm.pbf is a single
-      # 35 GB file, and filtering it means holding all 35 GB on the disk while
-      # osmium reads it four times over, where the country files in
-      # europe-regions.txt are the same continent and the same bytes over the
-      # wire with nothing ever held but the largest of them (France, 5 GB). A
-      # run that dies also resumes rather than starting the download again.
+      # Which regions the database covers, and how it is assembled. Everywhere
+      # the app has a city, built one region at a time: the continent files are
+      # single downloads of 35 GB and up, and filtering one means holding all of
+      # it on the disk while osmium reads it four times over, where the 87
+      # regions in world-regions.txt are the same places and the same bytes over
+      # the wire with nothing ever held but the largest of them (France,
+      # 4.7 GB). A run that dies also resumes rather than starting again.
+      #
+      # Swap this for europe-regions.txt to go back to Europe only, which is
+      # about a third of the download and leaves the other 60 cities in
+      # src/seo/cities.ts answering empty.
       #
       # This does not lower the memory the filter needs. See OVERPASS_FLUSH_SIZE
       # below and "What it costs" in the README
-      WAYSIDE_REGION_LIST: /opt/wayside/europe-regions.txt
+      WAYSIDE_REGION_LIST: /opt/wayside/world-regions.txt
 
       # Which container to restart when the new database is in place. Without
       # it the swap still happens, but the server goes on answering from the
@@ -265,11 +273,17 @@ services:
 
       # Delete the image it replaced, rather than filling the disk with them
       WATCHTOWER_CLEANUP: "true"
-      # Wednesday 04:00, three days clear of the Sunday reimport. A fixed time
-      # rather than an interval, and weekly rather than daily, because
-      # replacing the importer mid run throws away hours of work and the data
-      # then waits a week for the next attempt
-      WATCHTOWER_SCHEDULE: "0 0 4 * * 3"
+      # Every ten minutes. Six cron fields, the first is seconds.
+      #
+      # Note what this trades away: the schedule used to be Wednesday 04:00,
+      # weekly and three days clear of the Sunday reimport, because watchtower
+      # replacing the importer mid run kills it and throws away however many
+      # hours of downloading and filtering it had done, and the data then waits
+      # for the next scheduled attempt. At ten minutes a pushed image will
+      # eventually land inside a run. The importer is resumable, so what is lost
+      # is the region in flight rather than the whole rebuild, but it is a real
+      # cost on a full world build
+      WATCHTOWER_SCHEDULE: "0 */10 * * * *"
       TZ: Europe/Helsinki
 
   # Cron, as a container, reading its jobs from the labels above. It runs

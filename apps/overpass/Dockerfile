@@ -15,9 +15,11 @@ FROM wiktorn/overpass-api:${OVERPASS_VERSION}
 # than mounted, so an image always says which categories it was built for
 COPY osmium-filter.txt /opt/wayside/osmium-filter.txt
 
-# The countries europe-latest.osm.pbf is made of, for the servers that build
-# their extract a country at a time rather than a continent at once
-COPY europe-regions.txt /opt/wayside/europe-regions.txt
+# The region lists, for the servers that build their extract a country at a
+# time rather than a continent at once. europe-regions.txt is the countries
+# europe-latest.osm.pbf is made of; world-regions.txt is those plus every other
+# region a city in the app sits in. Pick one with WAYSIDE_REGION_LIST
+COPY europe-regions.txt world-regions.txt /opt/wayside/
 
 COPY bin/filter-osm-extract bin/build-region-extract bin/update-poi-db /usr/local/bin/
 COPY initdb.d/ /docker-entrypoint-initdb.d/

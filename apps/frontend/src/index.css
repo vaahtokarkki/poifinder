@@ -463,6 +463,34 @@ body {
   text-decoration: underline;
 }
 
+/*
+ * The city index on the map root. A few hundred names read better wrapped in
+ * rows under their country than as one column a screen and a half long, so
+ * this overrides the column layout .poi-links sets for everything else
+ */
+.info-sheet-subsection {
+  margin-top: 1em;
+}
+
+.info-sheet-subheading {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #5f6368;
+  margin: 0 0 0.4em 0;
+}
+
+.poi-links-inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 0.9em;
+  row-gap: 0.35em;
+}
+
+.poi-links-inline li {
+  display: inline;
+  justify-content: flex-start;
+}
+
 /* ---------- Map popup ---------- */
 
 /*

@@ -90,7 +90,16 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     group: CATEGORY_GROUP.Essentials,
   },
   [CATEGORIES.Toilets]: {
-    filters: ["[amenity=toilets]", "[building=retail][toilets=yes]"],
+    // The second filter is buildings that say they have a toilet without being
+    // one: shopping centres, supermarkets, museums, libraries and town halls,
+    // campuses. One regex rather than a filter per value, because each filter
+    // is its own statement in the Overpass query and this is a category people
+    // run on a phone. `toilets=yes` is what all of them have to carry, so the
+    // osmium import tag is unchanged and the extract needs no reimport
+    filters: [
+      "[amenity=toilets]",
+      '[building~"^(retail|supermarket|museum|public|university)$"][toilets=yes]',
+    ],
     display: "Toilets",
     icon: React.createElement(WcIcon),
     color: "#1976d2",

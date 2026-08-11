@@ -175,10 +175,8 @@ services:
       ofelia.job-exec.refresh-finland.command: "update-poi-db --refresh=finland"
       ofelia.job-exec.refresh-finland.no-overlap: "true"
 
-      # --refresh=oldest instead would give the same rotation with a bound on
-      # how long a country can wait, rather than trusting the dice
-      ofelia.job-exec.refresh-rotating.schedule: "0 30 4 * * 1-6"
-      ofelia.job-exec.refresh-rotating.command: "update-poi-db --refresh=random"
+      ofelia.job-exec.refresh-rotating.schedule: "30 2 */2 * *"
+      ofelia.job-exec.refresh-rotating.command: "update-poi-db --refresh=oldest"
       ofelia.job-exec.refresh-rotating.no-overlap: "true"
 
     environment:

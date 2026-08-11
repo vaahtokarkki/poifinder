@@ -23,6 +23,7 @@ import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
 import CabinIcon from '@mui/icons-material/Cabin';
 import HikingIcon from '@mui/icons-material/Hiking';
 import StorefrontIcon from '@mui/icons-material/Storefront';
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import * as React from "react";
 
 export enum CATEGORIES {
@@ -48,6 +49,7 @@ export enum CATEGORIES {
   DrinkingWater,
   SanitaryDumpStation,
   OutdoorGym,
+  Library,
 }
 
 export enum CATEGORY_GROUP {
@@ -224,6 +226,14 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(FitnessCenterIcon),
     color: "#E64A19",
     group: CATEGORY_GROUP.Nature,
+  },
+  [CATEGORIES.Library]: {
+    // Public libraries, plus the street bookcases and book exchange boxes
+    filters: ["[amenity=library]", "[amenity=public_bookcase]"],
+    display: "Libraries",
+    icon: React.createElement(LocalLibraryIcon),
+    color: "#6D4C41",
+    group: CATEGORY_GROUP.Essentials,
   },
 };
 

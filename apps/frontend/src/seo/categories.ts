@@ -348,6 +348,33 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     ],
   },
   {
+    category: CATEGORIES.Library,
+    slug: "libraries",
+    plural: "libraries",
+    heading: "Libraries",
+    schemaType: "Library",
+    intro: (city, count) =>
+      `${count} libraries are mapped in ${city}, from the main city library to branch libraries, mobile library stops and the street bookcases where books are swapped for free. Where the data says so, you also get opening hours and whether the building is step free.`,
+    faq: (city, count) => [
+      {
+        q: `Where is the nearest library in ${city}?`,
+        a: `Allow location access and the map centres on you with the closest of the ${count} mapped libraries around it, or pan to any area and search there. Tap a marker for its position, opening hours when known, and walking directions.`,
+      },
+      {
+        q: `Are the libraries in ${city} free to use?`,
+        a: `Public libraries normally are, both for reading on site and for using the toilets, wifi and workspace. Borrowing usually needs a library card, which is typically free for residents.`,
+      },
+      {
+        q: `Are opening hours shown?`,
+        a: `Where OpenStreetMap has them. Branch libraries often keep shorter and more variable hours than the main library, and some have self service hours outside staffed times, so confirm before a special trip.`,
+      },
+      {
+        q: `What is a public bookcase?`,
+        a: `A street cabinet or shelf where anyone can take a book and leave one, sometimes called a little free library. They are included here alongside proper libraries, and they are the kind of small fixture only OpenStreetMap bothers to map.`,
+      },
+    ],
+  },
+  {
     category: CATEGORIES.OutdoorGym,
     slug: "outdoor-gyms",
     plural: "outdoor gyms",

@@ -5,8 +5,21 @@
 #   build-region-extract [FILE]      default /db/planet.osm.bz2
 #
 #   --list=FILE       region list to read, default $WAYSIDE_REGION_LIST
+#   --refresh=WHICH   which regions to fetch again: all, random, oldest, or
+#                     a comma separated list of names. Default all
+#   --parts-dir=DIR   where the per region files are kept between runs
 #   --fresh           re-download everything, ignoring a half finished run
-#   --keep-parts      leave the per region files behind
+#   --keep-parts      no-op, kept for callers that still pass it
+#
+# The per region files are kept between runs, which is what makes a partial
+# refresh possible: --refresh=finland fetches Finland and reuses the other
+# forty eight as they are. Anything missing is always fetched, whatever
+# --refresh says, so a region can never quietly go absent from the map.
+#
+# What that does not avoid is the rest of the work. Overpass cannot update part
+# of a database, so every run still merges all the parts, compresses them and
+# imports the lot. A nightly one country refresh is a smaller download and the
+# same import, seven times a week.
 #
 # FILE is replaced by a bzip2 XML file holding the filtered contents of every
 # region in the list, which is the same thing filter-osm-extract produces from
@@ -34,11 +47,18 @@ set -euo pipefail
 REGION_LIST=${WAYSIDE_REGION_LIST:-/opt/wayside/europe-regions.txt}
 TARGET=/db/planet.osm.bz2
 FRESH=false
-KEEP_PARTS=false
+PARTS_DIR=${WAYSIDE_PARTS_DIR:-}
 
-# How old a part may be and still be reused. Long enough that a run resuming
-# after a crash keeps this morning's work, short enough that next week's
-# refresh cannot quietly ship a region from the week before
+# Which regions to fetch again. "all" is the whole continent in one go and what
+# a weekly rebuild wants; a name, or "random", or "oldest", refreshes that one
+# and leaves the rest of the parts alone
+REFRESH=${WAYSIDE_REFRESH:-all}
+
+# How old a part may be and still be reused, under --refresh=all only. Long
+# enough that a run resuming after a crash keeps this morning's work, short
+# enough that a rebuild cannot quietly ship a region from the week before.
+# A named, random or oldest refresh ignores this: there the age of the other
+# parts is the point rather than a problem
 REUSE_HOURS=${WAYSIDE_REGION_REUSE_HOURS:-24}
 
 # Seconds to wait between regions, and how long to wait before trying again
@@ -52,19 +72,27 @@ DOWNLOAD_TRIES=${WAYSIDE_DOWNLOAD_TRIES:-3}
 for arg in "$@"; do
 	case "$arg" in
 	--list=*) REGION_LIST="${arg#--list=}" ;;
+	--refresh=*) REFRESH="${arg#--refresh=}" ;;
+	--parts-dir=*) PARTS_DIR="${arg#--parts-dir=}" ;;
 	--fresh) FRESH=true ;;
-	--keep-parts) KEEP_PARTS=true ;;
+	--keep-parts) ;; # parts are always kept now
 	-h | --help)
 		cat <<-'USAGE'
-			Usage: build-region-extract [--list=FILE] [--fresh] [--keep-parts] [FILE]
+			Usage: build-region-extract [--list=FILE] [--refresh=WHICH] [--parts-dir=DIR] [--fresh] [FILE]
 
-			Downloads and filters every extract in the region list, one at a time,
+			Downloads and filters the extracts in the region list, one at a time,
 			and merges the results into FILE (default /db/planet.osm.bz2) as the
 			bzip2 XML the Overpass importer reads.
 
 			  --list=FILE     region list to read, default $WAYSIDE_REGION_LIST
+			  --refresh=WHICH which regions to fetch again, default all:
+			                    all       every region, the whole continent
+			                    random    one picked at random
+			                    oldest    the one refreshed longest ago
+			                    a,b,c     these regions by name
+			                  Regions with no part yet are always fetched.
+			  --parts-dir=DIR where per region files are kept between runs
 			  --fresh         re-download everything, ignoring a half finished run
-			  --keep-parts    leave the per region files behind
 		USAGE
 		exit 0
 		;;
@@ -81,9 +109,11 @@ if [[ ! -s $REGION_LIST ]]; then
 	exit 1
 fi
 
-# Beside the target, so both callers land on the /db volume: the first import
-# passes /db/planet.osm.bz2 and update-poi-db passes /db/update/planet.osm.bz2
-WORK="$(dirname "$TARGET")/regions"
+# Where the parts live between runs. Beside the target by default, which keeps
+# a one off invocation self contained; update-poi-db points this at /db/regions
+# instead, outside the working directory it wipes, because a part kept is a
+# country that does not have to be downloaded again tonight
+WORK=${PARTS_DIR:-"$(dirname "$TARGET")/regions"}
 STAMP_FILE="${TARGET}.timestamp"
 
 log() { echo "build-region-extract: $(date '+%F %T') $*"; }
@@ -111,6 +141,68 @@ if [[ ${#URLS[@]} -eq 0 ]]; then
 	exit 1
 fi
 
+# The name a URL is known by, here and in --refresh
+region_name() {
+	local name
+	name=$(basename "$1")
+	name=${name%%.*}
+	printf '%s' "${name%-latest}"
+}
+
+ALL_NAMES=()
+for u in "${URLS[@]}"; do ALL_NAMES+=("$(region_name "$u")"); done
+
+mkdir -p "$WORK"
+
+# Work out which regions this run fetches again. Missing parts are added later,
+# per region, so this set is only about the ones already on disk
+REFRESH_SET=()
+case "$REFRESH" in
+all)
+	REFRESH_SET=("${ALL_NAMES[@]}")
+	;;
+random)
+	# One at random. Over 49 regions and a nightly run that is roughly a two
+	# month rotation, but only roughly: random means some regions wait a good
+	# deal longer. --refresh=oldest is the same idea with a bound on the wait
+	REFRESH_SET=("${ALL_NAMES[RANDOM % ${#ALL_NAMES[@]}]}")
+	log "picked ${REFRESH_SET[0]} at random out of ${#ALL_NAMES[@]}"
+	;;
+oldest)
+	# The part refreshed longest ago, so the rotation is even and the worst
+	# case staleness is the number of regions times the interval, rather than
+	# whatever the dice say
+	OLDEST_NAME=""
+	OLDEST_TIME=""
+	for name in "${ALL_NAMES[@]}"; do
+		part="${WORK}/${name}.osm.pbf"
+		[[ -s $part ]] || continue
+		mtime=$(stat -c %Y "$part")
+		if [[ -z $OLDEST_TIME || $mtime -lt $OLDEST_TIME ]]; then
+			OLDEST_TIME=$mtime
+			OLDEST_NAME=$name
+		fi
+	done
+	if [[ -n $OLDEST_NAME ]]; then
+		REFRESH_SET=("$OLDEST_NAME")
+		log "$OLDEST_NAME is the least recently refreshed, last done $(date -d "@$OLDEST_TIME" '+%F %T')"
+	else
+		# Nothing on disk yet, so everything is about to be fetched anyway
+		log "no parts yet, so this is a first build rather than a refresh"
+	fi
+	;;
+*)
+	IFS=',' read -r -a REFRESH_SET <<<"$REFRESH"
+	for name in "${REFRESH_SET[@]}"; do
+		if [[ " ${ALL_NAMES[*]} " != *" $name "* ]]; then
+			echo "build-region-extract: no region called $name in $REGION_LIST" >&2
+			echo "build-region-extract: known regions: ${ALL_NAMES[*]}" >&2
+			exit 1
+		fi
+	done
+	;;
+esac
+
 if [[ $FRESH == true ]]; then
 	rm -rf "$WORK"
 fi
@@ -126,9 +218,7 @@ INDEX=0
 
 for URL in "${URLS[@]}"; do
 	INDEX=$((INDEX + 1))
-	NAME=$(basename "$URL")
-	NAME=${NAME%%.*}
-	NAME=${NAME%-latest}
+	NAME=$(region_name "$URL")
 	PART="${WORK}/${NAME}.osm.pbf"
 	RAW="${WORK}/${NAME}.download"
 
@@ -142,9 +232,22 @@ for URL in "${URLS[@]}"; do
 	NAMES+=("$NAME")
 	PARTS+=("$PART")
 
-	if [[ $FRESH == false && -s $PART ]] &&
-		find "$PART" -newermt "-${REUSE_HOURS} hours" | grep -q .; then
-		log "[$INDEX/${#URLS[@]}] $NAME: reusing $(numfmt --to=iec "$(stat -c %s "$PART")") from an earlier run"
+	# Fetch when there is nothing to reuse, or when this run is refreshing this
+	# region. Under --refresh=all the age of the part decides instead, so that a
+	# rebuild interrupted halfway resumes rather than starting over
+	FETCH=false
+	if [[ $FRESH == true || ! -s $PART ]]; then
+		FETCH=true
+	elif [[ " ${REFRESH_SET[*]:-} " == *" $NAME "* ]]; then
+		if [[ $REFRESH == "all" ]]; then
+			find "$PART" -newermt "-${REUSE_HOURS} hours" | grep -q . || FETCH=true
+		else
+			FETCH=true
+		fi
+	fi
+
+	if [[ $FETCH == false ]]; then
+		log "[$INDEX/${#URLS[@]}] $NAME: keeping $(numfmt --to=iec "$(stat -c %s "$PART")") from $(date -r "$PART" '+%F')"
 	else
 		ATTEMPT=0
 		while true; do
@@ -199,13 +302,11 @@ for URL in "${URLS[@]}"; do
 	# When the region was last current, from the pbf header the filter carried
 	# through, which costs a read of the first few kilobytes. Reading it from
 	# the part rather than the download is both cheaper and the only version
-	# that works on the reuse path, where the download is long gone.
-	#
-	# The newest region is what the merged file is current as of. An import
-	# older than that is simply one that will catch up next week
+	# that works on the reuse path, where the download is long gone
 	REGION_STAMP=$(osmium fileinfo -g header.option.osmosis_replication_timestamp "$PART" 2>/dev/null || true)
-	if [[ -n $REGION_STAMP && $REGION_STAMP > ${NEWEST:-} ]]; then
-		NEWEST=$REGION_STAMP
+	if [[ -n $REGION_STAMP ]]; then
+		if [[ -z ${NEWEST:-} || $REGION_STAMP > $NEWEST ]]; then NEWEST=$REGION_STAMP; fi
+		if [[ -z ${OLDEST:-} || $REGION_STAMP < $OLDEST ]]; then OLDEST=$REGION_STAMP; fi
 	fi
 done
 
@@ -222,14 +323,21 @@ osmium merge \
 	--output="$TARGET" \
 	"${PARTS[@]}"
 
-if [[ -n $NEWEST ]]; then
-	printf '%s\n' "$NEWEST" >"$STAMP_FILE"
+# The oldest region, not the newest, is what this database is current as of.
+# With regions refreshed one at a time the newest is always today, and saying
+# so would claim the whole map is a day old when one country is and the rest
+# are weeks behind. Overpass reports this back in every answer as
+# timestamp_osm_base, so it is a claim made to everyone who queries
+if [[ -n ${OLDEST:-} ]]; then
+	printf '%s\n' "$OLDEST" >"$STAMP_FILE"
 else
 	rm -f "$STAMP_FILE"
 fi
 
-if [[ $KEEP_PARTS == false ]]; then
-	rm -rf "$WORK"
+# The parts stay. They are the reason a refresh can be one country rather than
+# a continent, and for Europe they come to a few hundred megabytes
+log "done in $((($(date +%s) - STARTED) / 60)) min, $(numfmt --to=iec "$(stat -c %s "$TARGET")") of bzip2 XML"
+if [[ -n ${OLDEST:-} ]]; then
+	log "regions span $OLDEST (oldest, and what the database reports) to ${NEWEST} (newest)"
 fi
-
-log "done in $((($(date +%s) - STARTED) / 60)) min, $(numfmt --to=iec "$(stat -c %s "$TARGET")") of bzip2 XML${NEWEST:+, data as of $NEWEST}"
+log "parts kept in $WORK, $(du -sh "$WORK" 2>/dev/null | cut -f1) across ${#PARTS[@]} regions"

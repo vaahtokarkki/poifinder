@@ -126,14 +126,37 @@ jobs:
 
             WAYSIDE_REGION_PAUSE=0 build-region-extract --list=/tmp/r/regions.txt /tmp/w/planet.osm.bz2
 
+            # A partial refresh has to leave the other regions exactly as they
+            # were, and has to fetch anything missing regardless. Getting this
+            # wrong drops a country off the map without failing anything
+            WAYSIDE_REGION_PAUSE=0 build-region-extract --list=/tmp/r/regions.txt \
+              --parts-dir=/tmp/parts --refresh=beta /tmp/w/partial.osm.bz2
+            touch -d "2020-01-01" /tmp/parts/alpha.osm.pbf
+            WAYSIDE_REGION_PAUSE=0 build-region-extract --list=/tmp/r/regions.txt \
+              --parts-dir=/tmp/parts --refresh=beta /tmp/w/partial.osm.bz2
+            test "$(date -r /tmp/parts/alpha.osm.pbf +%Y)" = "2020" || {
+              echo "a refresh of beta must not have touched alpha"; exit 1; }
+            rm -f /tmp/parts/beta.osm.pbf
+            WAYSIDE_REGION_PAUSE=0 build-region-extract --list=/tmp/r/regions.txt \
+              --parts-dir=/tmp/parts --refresh=alpha /tmp/w/partial.osm.bz2
+            test -s /tmp/parts/beta.osm.pbf || {
+              echo "a missing region must be fetched even when not named"; exit 1; }
+            # And the merged file is dated by its oldest region, not its newest,
+            # or a map two months behind would claim to be a day old
+            test "$(cat /tmp/w/partial.osm.bz2.timestamp)" = "2026-01-02T00:00:00Z" || {
+              echo "expected the oldest timestamp, got $(cat /tmp/w/partial.osm.bz2.timestamp)"; exit 1; }
+
             nodes=$(osmium fileinfo -e -g data.count.nodes /tmp/w/planet.osm.bz2)
             ways=$(osmium fileinfo -e -g data.count.ways /tmp/w/planet.osm.bz2)
             # 1001 drinking water, 1002 and 1003 because the playground is
             # built from them, 5001 toilets, 9999 post box once. Not the bakery
             test "$nodes" = "5" || { echo "expected 5 nodes, got $nodes"; exit 1; }
             test "$ways" = "1" || { echo "expected 1 way, got $ways"; exit 1; }
-            test "$(cat /tmp/w/planet.osm.bz2.timestamp)" = "2026-01-09T00:00:00Z" || {
-              echo "the merged extract should be dated by its newest region"; exit 1; }
+            # Dated by its OLDEST region: regions are refreshed one at a time,
+            # so the newest is always today and would claim the whole map is
+            # current when only one country is
+            test "$(cat /tmp/w/planet.osm.bz2.timestamp)" = "2026-01-02T00:00:00Z" || {
+              echo "the merged extract should be dated by its oldest region"; exit 1; }
 
             # The region list is what says which countries exist, so a URL that
             # answers with a web page has to stop the run rather than be filtered

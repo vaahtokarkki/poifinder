@@ -119,8 +119,44 @@ reason, and the file says so.
 
 A run that dies is resumable: a region already downloaded and filtered is not
 fetched again, so the next attempt picks up where it stopped rather than
-starting 35 GB over. Parts older than a day are refetched, so next week's
-refresh cannot quietly ship a country from the week before.
+starting 35 GB over. Under `--refresh=all` parts older than a day are refetched,
+so a rebuild cannot quietly ship a country from the week before.
+
+### Refreshing one country at a time
+
+The filtered per region files are kept in `/db/regions` between runs, which is
+what lets a refresh be one country rather than a continent:
+
+```bash
+update-poi-db --refresh=finland   # this one, everything else as it stands
+update-poi-db --refresh=random    # one of the 49, picked by dice
+update-poi-db --refresh=oldest    # the one refreshed longest ago
+update-poi-db                     # all of them, the full rebuild
+```
+
+A region with no part yet is always fetched, whatever `--refresh` says, so a
+country cannot quietly go missing from the map.
+
+**This makes the download smaller and nothing else smaller.** Overpass cannot
+update part of a database, so every one of these still merges all 49 parts,
+compresses them and imports the lot. A nightly one country refresh is one
+country downloaded and the whole of Europe imported, seven times a week — more
+total CPU than one weekly rebuild, spread thinner. That is the trade, and it is
+worth making on purpose rather than by accident.
+
+`oldest` is worth preferring over `random` if the aim is coverage: with 49
+regions and a nightly run it guarantees every country is refreshed within 49
+days, where random leaves some waiting much longer than that.
+
+Because regions now age independently, the database reports the **oldest** of
+them as its `timestamp_osm_base` rather than the newest. Reporting the newest
+would say the map is a day old on the strength of the one country refreshed
+last night, while the rest of the continent is two months behind. Each run logs
+the full span:
+
+```
+regions span 2026-06-14T20:21:23Z (oldest, and what the database reports) to 2026-08-11T20:21:23Z (newest)
+```
 
 ### What it costs
 
@@ -271,11 +307,27 @@ Watchtower only touches containers carrying
 `com.centurylinklabs.watchtower.enable=true`, so it leaves the rest of the
 machine alone.
 
-The weekly reimport is in the stack too, so nothing goes in the host's crontab:
+The reimports are in the stack too, so nothing goes in the host's crontab:
 ofelia reads its jobs from labels on the importer and runs `update-poi-db`
-there every Sunday at 04:30. The job is defined next to the thing it acts on
-and travels with this file, which is the point — a server rebuilt from this
-compose file is a server that is already scheduled.
+there. The jobs are defined next to the thing they act on and travel with this
+file, which is the point — a server rebuilt from this compose file is a server
+that is already scheduled.
+
+There are two, both at 04:30:
+
+| When | Job | What it refreshes |
+| --- | --- | --- |
+| Sunday | `refresh-finland` | Finland, every week |
+| Monday–Saturday | `refresh-rotating` | one region at random out of the 49 |
+
+Finland is the map most likely to be looked at, so it gets a week's cadence;
+everywhere else comes round on a rotation of roughly two months. The days do
+not overlap on purpose. `update-poi-db` takes a lock either way, so a collision
+would be skipped rather than corrupt anything, but a skipped night is a night's
+work thrown away.
+
+Both still rebuild and reimport the whole of Europe — see "Refreshing one
+country at a time" above for what that costs.
 
 Ofelia and watchtower are deliberately days apart, Sunday and Wednesday.
 Replacing the importer mid run throws away hours of work and leaves the data

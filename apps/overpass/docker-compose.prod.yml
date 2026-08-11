@@ -151,17 +151,35 @@ services:
     labels:
       com.centurylinklabs.watchtower.enable: "true"
 
-      # The weekly reimport, read by ofelia from this container rather than
-      # written in the host's crontab. Sunday 04:30, six fields: the first is
-      # seconds.
+      # The reimports, read by ofelia from this container rather than written
+      # in the host's crontab. Six cron fields here, the first is seconds.
       #
-      # no-overlap because an import of Europe is hours of work: if one is
-      # somehow still running when the next is due, the right thing is to skip
-      # the new one, not to start a second download beside it
+      # Two jobs, because the map is not equally interesting everywhere. Finland
+      # is refreshed every Sunday. The other six nights take one region at
+      # random out of the forty nine, which comes to a rotation of roughly two
+      # months for everywhere else.
+      #
+      # The days do not overlap on purpose: Sunday is Finland's and the random
+      # job is Monday to Saturday. update-poi-db takes a lock either way, so a
+      # collision would be skipped rather than corrupt anything, but a skipped
+      # night is a night's work thrown away.
+      #
+      # What this does not make cheaper is the import. Overpass cannot update
+      # part of a database, so every one of these rebuilds and reimports the
+      # whole of Europe from the parts on disk; only the download shrinks, from
+      # a continent to one country. Seven small nights cost more CPU in total
+      # than one big one, and spread it thinner, which is the trade
       ofelia.enabled: "true"
-      ofelia.job-exec.update-poi-db.schedule: "0 30 4 * * 0"
-      ofelia.job-exec.update-poi-db.command: "update-poi-db"
-      ofelia.job-exec.update-poi-db.no-overlap: "true"
+
+      ofelia.job-exec.refresh-finland.schedule: "0 30 4 * * 0"
+      ofelia.job-exec.refresh-finland.command: "update-poi-db --refresh=finland"
+      ofelia.job-exec.refresh-finland.no-overlap: "true"
+
+      # --refresh=oldest instead would give the same rotation with a bound on
+      # how long a country can wait, rather than trusting the dice
+      ofelia.job-exec.refresh-rotating.schedule: "0 30 4 * * 1-6"
+      ofelia.job-exec.refresh-rotating.command: "update-poi-db --refresh=random"
+      ofelia.job-exec.refresh-rotating.no-overlap: "true"
 
     environment:
       # Which region the database covers, and how it is assembled. All of

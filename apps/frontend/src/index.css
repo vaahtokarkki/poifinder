@@ -129,14 +129,6 @@ body {
   .category-select {
     max-width: 380px;
   }
-
-  /* There is room to see every preset at once, no need to scroll sideways */
-  .category-presets {
-    flex-wrap: wrap;
-    overflow-x: visible;
-    margin: 0;
-    padding: 0;
-  }
 }
 
 /* ---------- Floating map controls ---------- */
@@ -219,12 +211,21 @@ body {
 }
 
 @media (min-width: 900px) {
-  /* Under the map controls in the lower right corner, so the buttons and the
-     sheet make up one column that moves together */
+  /* In the lower left corner, out of the way of the map controls, which keep
+     the right hand side to themselves */
   .bottom-sheet {
-    left: auto;
-    right: 16px;
-    width: 400px;
+    left: 16px;
+    right: auto;
+    width: 460px;
+  }
+
+  /* Nothing sits above the sheet any more, the controls stay where they are */
+  .map-controls {
+    bottom: 24px;
+  }
+
+  .leaflet-bottom.leaflet-right {
+    transform: none;
   }
 }
 

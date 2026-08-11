@@ -6,6 +6,8 @@
 #
 #   --url=URL        extract to import, default $OVERPASS_PLANET_URL
 #   --regions=FILE   build the extract from a region list instead of one URL
+#   --refresh=WHICH  which regions to download again: all, random, oldest, or
+#                    names. Default all
 #   --skip-download  reuse the extract left by a previous run
 #   --keep-extract   do not delete the extract afterwards
 #
@@ -32,6 +34,11 @@ DB_DIR=/db/db
 WORK_DIR=/db/update
 NEW_DB="${WORK_DIR}/db"
 EXTRACT="${WORK_DIR}/planet.osm.bz2"
+
+# The filtered per region files, kept between runs and so deliberately not
+# under WORK_DIR, which is wiped at the end of every one. They are what lets a
+# refresh be one country instead of a continent
+PARTS_DIR=${WAYSIDE_PARTS_DIR:-/db/regions}
 LOCK_FILE=/db/update-poi-db.lock
 
 PLANET_URL=${OVERPASS_PLANET_URL:-}
@@ -41,6 +48,12 @@ PLANET_URL=${OVERPASS_PLANET_URL:-}
 # the list instead, one at a time, and nothing here ever holds more than the
 # largest of them. See bin/build-region-extract
 REGION_LIST=${WAYSIDE_REGION_LIST:-}
+
+# Which regions to download again, passed straight through to
+# build-region-extract: all, random, oldest, or names. Anything short of "all"
+# rebuilds the database from parts already on disk, refreshing only what is
+# named, which is a much smaller download and exactly the same import
+REFRESH=${WAYSIDE_REFRESH:-all}
 
 # Which container to restart once the new database is in place, for the layout
 # where building and serving are two containers and this one cannot reach the
@@ -57,6 +70,7 @@ for arg in "$@"; do
 	case "$arg" in
 	--url=*) PLANET_URL="${arg#--url=}" ;;
 	--regions=*) REGION_LIST="${arg#--regions=}" ;;
+	--refresh=*) REFRESH="${arg#--refresh=}" ;;
 	--skip-download) SKIP_DOWNLOAD=true ;;
 	--keep-extract) KEEP_EXTRACT=true ;;
 	-h | --help)
@@ -69,6 +83,10 @@ for arg in "$@"; do
 
 			  --url=URL        extract to import, default $OVERPASS_PLANET_URL
 			  --regions=FILE   build the extract from a region list instead of one URL
+			  --refresh=WHICH  which regions to download again: all, random,
+			                   oldest, or a comma separated list of names.
+			                   Anything but "all" reuses the parts on disk for
+			                   every other region. Default all
 			  --skip-download  reuse the extract left by a previous run
 			  --keep-extract   do not delete the extract afterwards
 		USAGE
@@ -131,8 +149,9 @@ elif [[ -n $REGION_LIST ]]; then
 	# Downloads, filters and merges the regions itself, and leaves a
 	# .timestamp beside the result so the import below does not have to
 	# decompress the whole thing again to date it
-	log "building the extract from $REGION_LIST"
-	build-region-extract --list="$REGION_LIST" "$EXTRACT"
+	log "building the extract from $REGION_LIST, refreshing: $REFRESH"
+	build-region-extract --list="$REGION_LIST" --refresh="$REFRESH" \
+		--parts-dir="$PARTS_DIR" "$EXTRACT"
 else
 	log "downloading $PLANET_URL"
 	curl -fL --retry 3 --retry-delay 30 -o "$EXTRACT" "$PLANET_URL"

@@ -11,7 +11,7 @@ type CategoryPresetsProps = {
 
 /**
  * A row of ready made category combinations, e.g. "Road trip" or "With kids".
- * Scrolls horizontally on narrow screens and wraps to several rows on desktop.
+ * Always one line, scrolled sideways when the presets do not all fit.
  */
 const CategoryPresets: React.FC<CategoryPresetsProps> = ({
   value,

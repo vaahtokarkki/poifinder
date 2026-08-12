@@ -648,6 +648,23 @@ body {
   color: #3c4043;
 }
 
+/*
+ * The row label doubles as a link to what the tag means. It is left looking
+ * exactly like the label it is: the reader came for the place, not for the
+ * wiki, and a column of blue underlined labels would read as the point of the
+ * popup. It shows itself on hover, and keeps a focus ring for the keyboard
+ */
+.poi-popup-tag-link {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+}
+
+.poi-popup-tag-link:hover {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
 .poi-popup-link {
   color: #1976d2;
   font-weight: 500;

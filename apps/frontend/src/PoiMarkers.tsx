@@ -3,7 +3,12 @@ import { Marker, Popup } from "react-leaflet";
 import ParkIcon from '@mui/icons-material/Park';
 import { renderToString } from "react-dom/server";
 import { divIcon } from "leaflet";
-import { CATEGORY_CONFIG, CATEGORIES, parseFilterString } from "./constants";
+import {
+  CATEGORY_CONFIG,
+  CATEGORIES,
+  filterMatchesPrimaryTag,
+  matchesFilter,
+} from "./constants";
 import { OverpassMarkerData } from "./api/overpass"; // <-- Import the type
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
 
@@ -57,20 +62,25 @@ const RenderMarkerIcon = (
  * The category a point belongs to, found with the same filters it was fetched
  * with. The marker takes its icon and colour from this, and the popup its
  * heading, so a point looks like the same thing in both places.
+ *
+ * A point can satisfy two categories at once, because some filters ask what a
+ * place has rather than what it is: a library with a toilet matches both the
+ * library filter and the toilets one that looks for a public building with a
+ * toilet in it. The filter naming the place itself wins, whatever order the
+ * categories are declared in; otherwise the first match stands.
  */
 const findCategory = (marker: OverpassMarkerData): CATEGORIES | null => {
   if (!marker.tags) return null;
+  let fallback: CATEGORIES | null = null;
   for (const cat of Object.values(CATEGORIES).filter(v => typeof v === "number") as number[]) {
     const config = CATEGORY_CONFIG[cat as CATEGORIES];
     for (const filter of config.filters) {
-      const filterObj = parseFilterString(filter);
-      const isMatch = Object.entries(filterObj).every(
-        ([k, v]) => marker.tags && marker.tags[k] === v
-      );
-      if (isMatch) return cat as CATEGORIES;
+      if (!matchesFilter(marker.tags, filter)) continue;
+      if (filterMatchesPrimaryTag(filter)) return cat as CATEGORIES;
+      if (fallback === null) fallback = cat as CATEGORIES;
     }
   }
-  return null;
+  return fallback;
 };
 
 /**
@@ -130,6 +140,15 @@ const isDisplayableTag = (key: string, value: string) => {
   if (key === "access" && value === "yes") return false;
   if (key === "fee" && value === "yes") return false;
   if (["leisure", "type", "amenity"].includes(key)) return false;
+  /**
+   * What kind of building it is, and how it is put together. A point standing
+   * in a building is largely described by that building — a toilet found in a
+   * retail block, a library in a school — and hiding it left those popups with
+   * nothing to say. `building=yes` is the exception: it only repeats that the
+   * thing on the map is a building
+   */
+  if (key === "building") return value !== "yes";
+  if (key.startsWith("building:")) return true;
   if (["ref", "addr", "building", "wiki", "roof"].some(prefix => key.startsWith(prefix))) return false;
   if (key.startsWith("name") && key !== "name") return false;
   return true;
@@ -152,6 +171,14 @@ const SHORT_ANSWERS = new Set([
   "customers",
   "destination",
 ]);
+
+/**
+ * The wiki page for a tag key, where what the values mean is written down.
+ * Reached through the row's own label rather than an icon next to it: the
+ * label already names the tag, and a popup on a phone has no room for more.
+ */
+const tagWikiUrl = (key: string) =>
+  `https://wiki.openstreetmap.org/wiki/Key:${encodeURIComponent(key)}`;
 
 /** The tags worth putting in front of somebody, in the order OSM gave them */
 const getDisplayableTags = (marker: OverpassMarkerData) =>
@@ -213,7 +240,17 @@ const RenderMarkerContents: React.FC<{ marker: OverpassMarkerData }> = ({ marker
                 className={`poi-popup-row${isProse ? " poi-popup-row-stacked" : ""}`}
                 key={`${marker.id}-${key}`}
               >
-                <dt>{formatDisplay(key)}</dt>
+                <dt>
+                  <a
+                    className="poi-popup-tag-link"
+                    href={tagWikiUrl(key)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`${key} on the OpenStreetMap wiki`}
+                  >
+                    {formatDisplay(key)}
+                  </a>
+                </dt>
                 <dd>
                   {key === "website" || key === "url" || isUrl(valueStr) ? (
                     <a

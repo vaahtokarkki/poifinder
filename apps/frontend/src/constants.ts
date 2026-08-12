@@ -342,24 +342,94 @@ export function isPresetActive(
   return preset.categories.every((category) => selected.includes(category));
 }
 
-// Helper to parse a filter string like "[amenity=retail][toilets=yes]" into { amenity: "retail", toilets: "yes" }
-export function parseFilterString(filter: string): Record<string, string> {
-  const obj: Record<string, string> = {};
-  const regex = /\[([a-zA-Z0-9:_-]+)=([^\]]+)\]/g;
+/** One condition of an Overpass filter: `[key=value]`, `!=`, `~` or `!~` */
+export type FilterCondition = {
+  key: string;
+  /** The literal value, or the pattern when `isRegex` */
+  value: string;
+  isRegex: boolean;
+  isNegated: boolean;
+  pattern?: RegExp;
+};
+
+/**
+ * The conditions of a filter string like `[building~"^(retail|public)$"][toilets=yes]`.
+ *
+ * Every operator Overpass takes, not just `=`. Reading only `=` meant a filter
+ * lost the conditions written any other way, and the ones that survived were
+ * matched on their own: the toilets filter above came out as "anything tagged
+ * toilets=yes", which is every library with a toilet in it.
+ */
+export function parseFilterString(filter: string): FilterCondition[] {
+  const conditions: FilterCondition[] = [];
+  const regex = /\[([a-zA-Z0-9:_-]+)(!?[=~])(?:"([^"]*)"|([^\]]*))\]/g;
   let match;
   while ((match = regex.exec(filter)) !== null) {
-    obj[match[1]] = match[2];
+    const [, key, operator, quoted, bare] = match;
+    const value = quoted ?? bare;
+    const isRegex = operator.endsWith("~");
+    conditions.push({
+      key,
+      value,
+      isRegex,
+      isNegated: operator.startsWith("!"),
+      pattern: isRegex ? new RegExp(value) : undefined,
+    });
   }
-  return obj;
+  return conditions;
 }
 
-// CATEGORY_MARKER_MAPPING: Record<CATEGORIES, Array<Record<string, string>>>
-export const CATEGORY_MARKER_MAPPING: Record<CATEGORIES, Record<string, string>[]> = Object.fromEntries(
-  Object.entries(CATEGORY_CONFIG).map(([cat, config]) => [
-    Number(cat),
-    config.filters.map(parseFilterString),
-  ])
-) as Record<CATEGORIES, Record<string, string>[]>;
+/** Parsed once per filter string, then reused for every marker on the map */
+const filterCache = new Map<string, FilterCondition[]>();
+
+const getFilterConditions = (filter: string): FilterCondition[] => {
+  let conditions = filterCache.get(filter);
+  if (!conditions) {
+    conditions = parseFilterString(filter);
+    filterCache.set(filter, conditions);
+  }
+  return conditions;
+};
+
+/**
+ * Whether a point's tags satisfy a filter, the way Overpass read it when the
+ * point was fetched. A missing tag satisfies a negated condition: `[access!=private]`
+ * is there to drop the private ones, not to demand an access tag.
+ */
+export function matchesFilter(
+  tags: Record<string, string> | undefined,
+  filter: string
+): boolean {
+  const conditions = getFilterConditions(filter);
+  if (conditions.length === 0) return false;
+  return conditions.every(({ key, value, isNegated, pattern }) => {
+    const actual = tags?.[key];
+    const hit =
+      actual === undefined ? false : pattern ? pattern.test(actual) : actual === value;
+    return isNegated ? !hit : hit;
+  });
+}
+
+/**
+ * The tags that say what a place is, rather than what it happens to have.
+ * A filter pinned to one of these describes the point itself, and is taken
+ * over one that is not: a library with a toilet in it is still a library.
+ */
+export const PRIMARY_TAG_KEYS = new Set([
+  "amenity",
+  "leisure",
+  "tourism",
+  "shop",
+  "natural",
+  "highway",
+  "man_made",
+]);
+
+/** True when the filter pins one of the tags that say what a place is */
+export const filterMatchesPrimaryTag = (filter: string): boolean =>
+  getFilterConditions(filter).some(
+    ({ key, isNegated }) => !isNegated && PRIMARY_TAG_KEYS.has(key)
+  );
 
 export const CATEGORY_GROUP_DISPLAY: Record<CATEGORY_GROUP, string> = {
   [CATEGORY_GROUP.Essentials]: "Essentials",

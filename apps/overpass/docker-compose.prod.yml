@@ -155,32 +155,39 @@ services:
       com.centurylinklabs.watchtower.enable: "true"
 
       # The reimports, read by ofelia from this container rather than written
-      # in the host's crontab. Six cron fields here, the first is seconds.
+      # in the host's crontab. Five cron fields, minutes first. ofelia also
+      # takes six with seconds in front, so count them before editing: the same
+      # string read in the other dialect shifts every unit by one place.
       #
-      # Two jobs, because the map is not equally interesting everywhere. Finland
-      # is refreshed every Sunday. The other nights take the least recently
-      # refreshed region out of the 87, which at every other night comes to a
-      # rotation of roughly six months for everywhere else. That is slower than
-      # it was at 49 regions; raise the frequency here if the box can take it.
+      # What runs: Finland every night, and on odd numbered days the least
+      # recently refreshed of the other 86 as well. Finland is the map most
+      # likely to be looked at; everywhere else comes round on a rotation of
+      # roughly six months.
       #
-      # The days do not overlap on purpose: Sunday is Finland's and the random
-      # job is Monday to Saturday. update-poi-db takes a lock either way, so a
-      # collision would be skipped rather than corrupt anything, but a skipped
-      # night is a night's work thrown away.
+      # Two jobs on days that cannot overlap rather than two jobs that race.
+      # 1-31/2 is the odd days and 2-30/2 the even ones, so exactly one fires
+      # each night, both at 02:30. A Finland job every night beside an oldest
+      # job every other night reads more simply and does not work: a full
+      # rebuild is measured in hours, so the oldest run would still be going
+      # when the Finland run fired, update-poi-db's lock would skip the second,
+      # and Finland would end up refreshed every *other* day — the one thing
+      # this schedule exists to prevent.
       #
-      # What this does not make cheaper is the import. Overpass cannot update
-      # part of a database, so every one of these rebuilds and reimports the
-      # whole of Europe from the parts on disk; only the download shrinks, from
-      # a continent to one country. Seven small nights cost more CPU in total
-      # than one big one, and spread it thinner, which is the trade
+      # Asking for both regions in one invocation is also the cheaper half of
+      # the trade, because what this does not make cheaper is the import.
+      # Overpass cannot update part of a database, so a run rebuilds and
+      # reimports all 87 parts whichever ones it downloaded; only the download
+      # shrinks, from a continent to one country. Naming two regions therefore
+      # costs one extra download and no extra import, where two separate runs
+      # would cost two imports
       ofelia.enabled: "true"
 
-      ofelia.job-exec.refresh-finland.schedule: "30 4 * * 0"
+      ofelia.job-exec.refresh-finland.schedule: "30 2 2-30/2 * *"
       ofelia.job-exec.refresh-finland.command: "update-poi-db --refresh=finland"
       ofelia.job-exec.refresh-finland.no-overlap: "true"
 
-      ofelia.job-exec.refresh-rotating.schedule: "30 2 */2 * *"
-      ofelia.job-exec.refresh-rotating.command: "update-poi-db --refresh=oldest"
+      ofelia.job-exec.refresh-rotating.schedule: "30 2 1-31/2 * *"
+      ofelia.job-exec.refresh-rotating.command: "update-poi-db --refresh=finland,oldest"
       ofelia.job-exec.refresh-rotating.no-overlap: "true"
 
     environment:

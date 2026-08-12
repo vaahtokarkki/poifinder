@@ -5,8 +5,9 @@
 #   build-region-extract [FILE]      default /db/planet.osm.bz2
 #
 #   --list=FILE       region list to read, default $WAYSIDE_REGION_LIST
-#   --refresh=WHICH   which regions to fetch again: all, random, oldest, or
-#                     a comma separated list of names. Default all
+#   --refresh=WHICH   which regions to fetch again: all, or a comma separated
+#                     list of names in which "oldest" and "random" may stand in
+#                     for one. Default all
 #   --parts-dir=DIR   where the per region files are kept between runs
 #   --fresh           re-download everything, ignoring a half finished run
 #   --keep-parts      no-op, kept for callers that still pass it
@@ -91,11 +92,14 @@ for arg in "$@"; do
 
 			  --list=FILE     region list to read, default $WAYSIDE_REGION_LIST
 			  --refresh=WHICH which regions to fetch again, default all:
-			                    all       every region, the whole continent
+			                    all       every region, the whole list
 			                    random    one picked at random
 			                    oldest    the one refreshed longest ago
 			                    a,b,c     these regions by name
-			                  Regions with no part yet are always fetched.
+			                  The list may mix them: finland,oldest refreshes
+			                  Finland and whatever has waited longest, in one
+			                  import rather than two. Regions with no part yet
+			                  are always fetched.
 			  --parts-dir=DIR where per region files are kept between runs
 			  --fresh         re-download everything, ignoring a half finished run
 		USAGE
@@ -175,54 +179,71 @@ for e in "${ENTRIES[@]}"; do ALL_NAMES+=("$(region_name "$e")"); done
 
 mkdir -p "$WORK"
 
-# Work out which regions this run fetches again. Missing parts are added later,
-# per region, so this set is only about the ones already on disk
-REFRESH_SET=()
-case "$REFRESH" in
-all)
-	REFRESH_SET=("${ALL_NAMES[@]}")
-	;;
-random)
-	# One at random. Over 49 regions and a nightly run that is roughly a two
-	# month rotation, but only roughly: random means some regions wait a good
-	# deal longer. --refresh=oldest is the same idea with a bound on the wait
-	REFRESH_SET=("${ALL_NAMES[RANDOM % ${#ALL_NAMES[@]}]}")
-	log "picked ${REFRESH_SET[0]} at random out of ${#ALL_NAMES[@]}"
-	;;
-oldest)
-	# The part refreshed longest ago, so the rotation is even and the worst
-	# case staleness is the number of regions times the interval, rather than
-	# whatever the dice say
-	OLDEST_NAME=""
-	OLDEST_TIME=""
+# The part refreshed longest ago, so the rotation is even and the worst case
+# staleness is the number of regions times the interval, rather than whatever
+# the dice say. Prints "name<tab>mtime", or nothing when no part exists yet
+oldest_region() {
+	local name part mtime best_name="" best_time=""
 	for name in "${ALL_NAMES[@]}"; do
 		part="${WORK}/${name}.osm.pbf"
 		[[ -s $part ]] || continue
 		mtime=$(stat -c %Y "$part")
-		if [[ -z $OLDEST_TIME || $mtime -lt $OLDEST_TIME ]]; then
-			OLDEST_TIME=$mtime
-			OLDEST_NAME=$name
+		if [[ -z $best_time || $mtime -lt $best_time ]]; then
+			best_time=$mtime
+			best_name=$name
 		fi
 	done
-	if [[ -n $OLDEST_NAME ]]; then
-		REFRESH_SET=("$OLDEST_NAME")
-		log "$OLDEST_NAME is the least recently refreshed, last done $(date -d "@$OLDEST_TIME" '+%F %T')"
-	else
-		# Nothing on disk yet, so everything is about to be fetched anyway
-		log "no parts yet, so this is a first build rather than a refresh"
-	fi
-	;;
-*)
-	IFS=',' read -r -a REFRESH_SET <<<"$REFRESH"
-	for name in "${REFRESH_SET[@]}"; do
-		if [[ " ${ALL_NAMES[*]} " != *" $name "* ]]; then
-			echo "build-region-extract: no region called $name in $REGION_LIST" >&2
-			echo "build-region-extract: known regions: ${ALL_NAMES[*]}" >&2
-			exit 1
-		fi
+	[[ -n $best_name ]] && printf '%s\t%s' "$best_name" "$best_time"
+	return 0
+}
+
+# Work out which regions this run fetches again. Missing parts are added later,
+# per region, so this set is only about the ones already on disk.
+#
+# "all" is every region. Anything else is a comma separated list, in which
+# "oldest" and "random" may stand in for a name. That is what lets one run
+# refresh Finland *and* whatever has waited longest, and it matters more than it
+# looks: Overpass cannot update part of a database, so every run reimports all
+# 87 parts whichever ones it downloaded. Two runs in a day is two full imports
+# for no more data than one run asking for both regions.
+REFRESH_SET=()
+if [[ $REFRESH == all ]]; then
+	REFRESH_SET=("${ALL_NAMES[@]}")
+else
+	IFS=',' read -r -a REFRESH_TOKENS <<<"$REFRESH"
+	for token in "${REFRESH_TOKENS[@]}"; do
+		case "$token" in
+		random)
+			# Over 87 regions this is roughly an even rotation, but only
+			# roughly: random leaves some regions waiting a good deal longer.
+			# "oldest" is the same idea with a bound on the wait
+			PICK="${ALL_NAMES[RANDOM % ${#ALL_NAMES[@]}]}"
+			log "picked $PICK at random out of ${#ALL_NAMES[@]}"
+			REFRESH_SET+=("$PICK")
+			;;
+		oldest)
+			FOUND=$(oldest_region)
+			if [[ -n $FOUND ]]; then
+				PICK=${FOUND%%$'\t'*}
+				WHEN=${FOUND##*$'\t'}
+				log "$PICK is the least recently refreshed, last done $(date -d "@$WHEN" '+%F %T')"
+				REFRESH_SET+=("$PICK")
+			else
+				# Nothing on disk yet, so everything is about to be fetched anyway
+				log "no parts yet, so this is a first build rather than a refresh"
+			fi
+			;;
+		*)
+			if [[ " ${ALL_NAMES[*]} " != *" $token "* ]]; then
+				echo "build-region-extract: no region called $token in $REGION_LIST" >&2
+				echo "build-region-extract: known regions: ${ALL_NAMES[*]}" >&2
+				exit 1
+			fi
+			REFRESH_SET+=("$token")
+			;;
+		esac
 	done
-	;;
-esac
+fi
 
 if [[ $FRESH == true ]]; then
 	rm -rf "$WORK"

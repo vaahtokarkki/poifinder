@@ -175,7 +175,7 @@ services:
       # than one big one, and spread it thinner, which is the trade
       ofelia.enabled: "true"
 
-      ofelia.job-exec.refresh-finland.schedule: "0 30 4 * * 0"
+      ofelia.job-exec.refresh-finland.schedule: "30 4 * * 0"
       ofelia.job-exec.refresh-finland.command: "update-poi-db --refresh=finland"
       ofelia.job-exec.refresh-finland.no-overlap: "true"
 

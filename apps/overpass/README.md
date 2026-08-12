@@ -355,11 +355,9 @@ There are two:
 | Sunday 04:30 | `refresh-finland` | Finland, every week |
 | Every other night, 02:30 | `refresh-rotating` | the least recently refreshed of the 87 |
 
-Note that the two schedules are written in different dialects: ofelia takes six
-cron fields with seconds first, which `refresh-finland` uses, while
-`refresh-rotating` is a five field expression. Both parse, but if you edit
-either, count the fields first — a five field expression read as six shifts
-every unit by one.
+Both are five field expressions, minutes first. ofelia also accepts six fields
+with seconds in front, so if you edit either one, count the fields first — the
+same string read in the other dialect shifts every unit by one place.
 
 Finland is the map most likely to be looked at, so it gets a week's cadence;
 everywhere else comes round on a rotation of roughly two months. The days do

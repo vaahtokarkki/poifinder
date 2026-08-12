@@ -3,10 +3,15 @@ name: Refresh OpenStreetMap extract
 # The prerendered pages carry a lastmod and tell visitors when the data was
 # last refreshed. This job is what makes those claims true.
 #
-# A full refresh is thousands of Overpass queries, far more than fits in one
-# runner, so each run takes a slice of the cities that have gone stale. At 20
-# cities a day the whole registry comes round about once a week, which is as
-# fast as this kind of OSM data actually changes.
+# A full refresh is thousands of Overpass queries. Against the public mirrors
+# that is far more than fits in one runner; against the self hosted instance it
+# is under an hour, because a query there answers in about a second rather than
+# timing out at a hundred and fifty.
+#
+# So there is no slice any more, only a deadline. The run takes every stale city
+# it can reach in four hours and stops itself with an hour to spare, which is
+# what keeps the commit step reachable — a job the runner cancels at
+# timeout-minutes skips it, and the whole night's fetching goes in the bin.
 
 on:
   schedule:
@@ -52,16 +57,30 @@ jobs:
       - name: Refresh
         run: |
           node scripts/fetch-poi-data.mjs \
-            --max-cities=20 \
+            --deadline-minutes=240 \
             ${{ inputs.cities && format('--cities={0}', inputs.cities) || '' }} \
             ${{ inputs.force && '--force' || '' }}
         env:
           # A self hosted instance, when the repository has one. Reachable from
           # a GitHub runner means public, so an unset variable simply keeps the
-          # public mirrors and the throttle that goes with them
-          OVERPASS_API_URL: ${{ vars.OVERPASS_API_URL }}
+          # public mirrors and the throttle that goes with them.
+          #
+          # VITE_OVERPASS_API_URL is the fallback because it is the same
+          # endpoint under the name the deploy job needs it in: Vite only
+          # exposes variables to the bundle when they carry that prefix, and
+          # this script, being plain Node, has no such rule. Two names for one
+          # URL is how this job spent eight nights on the public mirrors while
+          # a self hosted instance sat there answering the app in under a second
+          OVERPASS_API_URL: ${{ vars.OVERPASS_API_URL || vars.VITE_OVERPASS_API_URL }}
 
+      # always(), so that a run which overruns anyway still keeps what it
+      # fetched. fetch-poi-data.mjs stops itself on its own deadline and this
+      # step then runs normally; this is the net under that, because a job the
+      # runner cancels skips every remaining step, and a skipped commit is how
+      # eight consecutive nightly runs each spent five hours querying Overpass
+      # and left no data behind
       - name: Commit
+        if: always()
         run: |
           if git diff --quiet -- data/poi; then
             echo "Nothing changed, every city was still fresh."

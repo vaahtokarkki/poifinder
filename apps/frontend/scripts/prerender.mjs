@@ -319,33 +319,88 @@ async function main() {
     await writeFile(path.join(DIST, "404.html"), notFound);
 
     // ---- Sitemap ----
+    // ---- Sitemaps ----
+    //
     // Indexable routes only. A sitemap is a list of pages we are asking to have
     // indexed, so listing a noindex page in it is a contradiction a crawler
-    // spends budget discovering
+    // spends budget discovering.
+    //
+    // Split one file per category, behind an index at the old address, because
+    // Search Console reports coverage per sitemap. One blended "1 of 25
+    // indexed" says nothing about what to do next; twenty-one lines saying
+    // toilets are indexed and picnic spots are not is the difference between
+    // pruning the category list deliberately and guessing at it. Nothing here
+    // is near the 50,000 URL limit — the split is for the reporting.
     const priorityFor = (tier) => (tier === 1 ? "0.9" : tier === 2 ? "0.7" : "0.5");
-    const urls = [
-      `<url><loc>${meta.HOME_URL}</loc><priority>1.0</priority></url>`,
-      ...[...citiesWithPages.values()]
-        .filter(({ entries }) => entries.length > 0)
-        .map(
-          ({ city, updatedAt }) =>
-            `<url><loc>${meta.cityUrl(city.slug)}</loc><lastmod>${updatedAt}</lastmod>` +
-            `<priority>${priorityFor(city.tier)}</priority></url>`
+    // Google ignores <priority> and has for years; it stays because Bing still
+    // documents it and it costs a few bytes. <lastmod> is the one that counts,
+    // and ours is per category rather than the build clock, which is the only
+    // reason it is worth sending
+    const urlEntry = (loc, lastmod, tier) =>
+      `<url><loc>${loc}</loc>` +
+      (lastmod ? `<lastmod>${lastmod}</lastmod>` : "") +
+      `<priority>${tier === null ? "1.0" : priorityFor(tier)}</priority></url>`;
+
+    /** A child sitemap, and the newest lastmod in it for the index */
+    const children = [];
+    const addChild = (name, urls, lastmods) => {
+      if (urls.length === 0) return;
+      children.push({ name, count: urls.length, lastmod: lastmods.sort().at(-1) });
+      return writeFile(
+        path.join(DIST, name),
+        `<?xml version="1.0" encoding="UTF-8"?>\n` +
+          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join(
+            "\n"
+          )}\n</urlset>\n`
+      );
+    };
+
+    // The root and the city hubs. Kept together because they are one job —
+    // "is the shape of the site indexed" — separate from any single category
+    const hubs = [...citiesWithPages.values()].filter(({ entries }) => entries.length > 0);
+    await addChild(
+      "sitemap-cities.xml",
+      [
+        urlEntry(meta.HOME_URL, null, null),
+        ...hubs.map(({ city, updatedAt }) => urlEntry(meta.cityUrl(city.slug), updatedAt, city.tier)),
+      ],
+      hubs.map(({ updatedAt }) => updatedAt)
+    );
+
+    for (const categorySeo of CATEGORY_SEO) {
+      const forCategory = indexableRoutes.filter(
+        (route) => route.categorySeo.slug === categorySeo.slug
+      );
+      await addChild(
+        `sitemap-${categorySeo.slug}.xml`,
+        forCategory.map((route) =>
+          urlEntry(
+            meta.categoryUrl(route.city.slug, route.categorySeo.slug),
+            route.updatedAt,
+            route.city.tier
+          )
         ),
-      ...indexableRoutes.map(
-        (route) =>
-          `<url><loc>${meta.categoryUrl(route.city.slug, route.categorySeo.slug)}</loc>` +
-          `<lastmod>${route.updatedAt}</lastmod>` +
-          `<priority>${priorityFor(route.city.tier)}</priority></url>`
-      ),
-    ];
+        forCategory.map((route) => route.updatedAt)
+      );
+    }
+
+    // The index keeps the address robots.txt already advertises and Search
+    // Console is already submitted against, so the split costs no resubmission
     await writeFile(
       path.join(DIST, "sitemap.xml"),
       `<?xml version="1.0" encoding="UTF-8"?>\n` +
-        `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join(
-          "\n"
-        )}\n</urlset>\n`
+        `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
+        children
+          .map(
+            ({ name, lastmod }) =>
+              `<sitemap><loc>${meta.SITE_URL}/${name}</loc>` +
+              (lastmod ? `<lastmod>${lastmod}</lastmod>` : "") +
+              `</sitemap>`
+          )
+          .join("\n") +
+        `\n</sitemapindex>\n`
     );
+    const urls = children.reduce((sum, child) => sum + child.count, 0);
 
     const indexableCities = [...citiesWithPages.values()].filter(
       ({ entries }) => entries.length > 0
@@ -353,7 +408,7 @@ async function main() {
     console.log(
       `Prerendered ${written.length} pages ` +
         `(${routes.length} category, ${citiesWithPages.size} city, 1 root), ` +
-        `sitemap has ${urls.length} URLs.`
+        `${urls} URLs across ${children.length} sitemaps behind sitemap.xml.`
     );
     console.log(
       `Indexable: ${indexableRoutes.length} category, ${indexableCities} city. ` +

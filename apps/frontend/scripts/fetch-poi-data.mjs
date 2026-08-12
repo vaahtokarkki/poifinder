@@ -11,6 +11,7 @@
  *   node scripts/fetch-poi-data.mjs --force               ignore freshness
  *   node scripts/fetch-poi-data.mjs --max-age-days=14     what counts as stale
  *   node scripts/fetch-poi-data.mjs --max-cities=20       stop after 20 cities
+ *   node scripts/fetch-poi-data.mjs --deadline-minutes=240  stop after 4 hours
  *
  * A full refresh of every city is thousands of Overpass queries and takes
  * many hours. That is deliberate: Overpass is donated infrastructure and the
@@ -210,6 +211,26 @@ async function main() {
     const maxCities = Number(args.get("max-cities") ?? Infinity);
     let refreshed = 0;
 
+    /**
+     * When to stop asking for more and let the caller have its exit code.
+     *
+     * The runner kills the job at `timeout-minutes` and marks it cancelled,
+     * which skips every remaining step — including the one that commits. Eight
+     * scheduled runs in a row spent five hours each querying Overpass and threw
+     * all of it away on the way out, because a cancelled job never reached
+     * `git commit`. The queries were not the problem; stopping was.
+     *
+     * So the run stops itself, a good margin inside the runner's patience, and
+     * exits normally with whatever it managed to fetch. Everything is already
+     * on disk — see `save` below, which writes after every single category.
+     */
+    const deadlineMinutes = Number(args.get("deadline-minutes") ?? Infinity);
+    const deadline = Number.isFinite(deadlineMinutes)
+      ? Date.now() + deadlineMinutes * 60000
+      : Infinity;
+    const outOfTime = () => Date.now() >= deadline;
+    let stoppedEarly = false;
+
     console.log(
       `Refreshing ${cities.length} cities x ${categories.length} categories ` +
         `(${cities.length * categories.length} queries, ~${Math.round(
@@ -232,6 +253,13 @@ async function main() {
       }
       if (refreshed >= maxCities) {
         console.log(`Reached --max-cities=${maxCities}, leaving the rest for the next run.`);
+        break;
+      }
+      if (outOfTime()) {
+        console.log(
+          `Out of time after ${refreshed} cities, leaving the rest for the next run.`
+        );
+        stoppedEarly = true;
         break;
       }
       refreshed++;
@@ -270,6 +298,15 @@ async function main() {
           continue;
         }
 
+        // Mid city too, not only between cities. One city is twenty odd queries
+        // and against the public mirrors that can be hours, which is long
+        // enough to overrun the deadline several times over
+        if (outOfTime()) {
+          console.log(`    out of time, leaving the rest of ${city.slug} for the next run`);
+          stoppedEarly = true;
+          break;
+        }
+
         try {
           const data = await runQuery(buildQuery(filters, city.lat, city.lon, radius), endpoints);
           const elements = data.elements ?? [];
@@ -292,7 +329,12 @@ async function main() {
       await save();
     }
 
-    console.log("Done.");
+    console.log(
+      stoppedEarly
+        ? `Stopped on the ${deadlineMinutes} minute deadline. Everything fetched is on ` +
+            `disk and committed; the next run picks up where this one stopped.`
+        : "Done."
+    );
   } finally {
     await server.close();
   }

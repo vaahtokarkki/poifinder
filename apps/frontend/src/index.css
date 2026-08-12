@@ -654,13 +654,15 @@ body {
  * wiki, and a column of blue underlined labels would read as the point of the
  * popup. It shows itself on hover, and keeps a focus ring for the keyboard
  */
-.poi-popup-tag-link {
+/* Selected through the dt it sits in, to outrank Leaflet's own `.leaflet-container a`,
+   which paints every link in a popup its blue */
+.poi-popup-row dt .poi-popup-tag-link {
   color: inherit;
   font: inherit;
   text-decoration: none;
 }
 
-.poi-popup-tag-link:hover {
+.poi-popup-row dt .poi-popup-tag-link:hover {
   text-decoration: underline;
   text-decoration-style: dotted;
 }

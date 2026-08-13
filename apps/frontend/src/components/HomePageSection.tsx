@@ -22,8 +22,18 @@ const HomePageSection: React.FC<{ data: HomePageData }> = ({ data }) => (
         told the same thing about what this is */}
     <InfoSheetSummary />
 
+    {/* Small print, and it has to stay in *this* component to be small print
+        safely. The rest of the sheet's footer lives in InfoSheetContent, which
+        the prerender never renders — it is added by the app after React mounts.
+        A link moved there would be absent from the static HTML, and the static
+        HTML is the only version of the root that a crawler is guaranteed to
+        read. Footer position costs a link very little; being rendered by
+        JavaScript is what costs it everything.
+
+        The anchor text carries the word "cities" for the same reason: it is
+        the only text anywhere on the root that says what is on the other end */}
     {data.cityCount > 0 && (
-      <p className="info-sheet-summary">
+      <p className="info-sheet-footer">
         <a href={CITIES_PATH}>
           Browse {formatCount(data.cityCount)}{" "}
           {data.cityCount === 1 ? "city" : "cities"} with a page of their own

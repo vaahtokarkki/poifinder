@@ -48,8 +48,14 @@ const TIPS = [
   "Share the current view, categories included, with the share button.",
 ];
 
-/** The rest of the info sheet, revealed by sliding it fully open */
-export const InfoSheetContent: React.FC = () => (
+/**
+ * The guide: what the app does and how to work it.
+ *
+ * Split from the credits below so the home page can put its own line between
+ * the two. See InfoSheetContent, which is still the pair of them together for
+ * every caller that wants the whole thing.
+ */
+export const InfoSheetGuide: React.FC = () => (
   <>
     <section className="info-sheet-section">
       <h2 className="info-sheet-heading">How it works</h2>
@@ -102,6 +108,12 @@ export const InfoSheetContent: React.FC = () => (
       </ul>
     </section>
 
+  </>
+);
+
+/** The small print at the very bottom of the sheet: where the data and the code come from */
+export const InfoSheetCredits: React.FC = () => (
+  <>
     <p className="info-sheet-footer">
       Points come from{" "}
       <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
@@ -117,5 +129,13 @@ export const InfoSheetContent: React.FC = () => (
       </a>
       .
     </p>
+  </>
+);
+
+/** The rest of the info sheet, revealed by sliding it fully open */
+export const InfoSheetContent: React.FC = () => (
+  <>
+    <InfoSheetGuide />
+    <InfoSheetCredits />
   </>
 );

@@ -765,12 +765,12 @@ const App = () => {
       </MapContainer>
       <BottomSheet>
         {pageData ? (
-          <>
-            <PrerenderedPage data={pageData} />
-            {/* The map root is also where a shared link lands, so it keeps the
-                guide to the app under the city index */}
-            {pageData.kind === "home" && <InfoSheetContent />}
-          </>
+          // The whole sheet, guide included. The root used to have the guide
+          // appended here instead, which put it below the prerendered block at
+          // runtime and left it out of the static HTML entirely; HomePageSection
+          // renders it now, so what a crawler reads and what a visitor scrolls
+          // through are one component in one order
+          <PrerenderedPage data={pageData} />
         ) : (
           <>
             <InfoSheetHeader title={getBrowsePointsTitle()} />

@@ -16,9 +16,24 @@
 
   // wayside.cc must already exist as a zone in this Cloudflare account.
   // Wrangler creates and points the DNS record itself on first deploy.
+  //
+  // www is here because the zone already has a proxied DNS record for it and
+  // nothing was answering behind it: every www URL returned 522, Cloudflare's
+  // "no origin". A hostname people type by habit has to resolve to something.
+  //
+  // It serves the same files as the apex rather than redirecting, because a
+  // static-assets Worker has no code in it to redirect with. That is two
+  // hostnames answering with identical HTML, which is only safe because every
+  // canonical, og:url, sitemap entry and internal link in it is absolute and
+  // points at the apex — see SITE_URL in src/seo/pageMeta.ts. A crawler that
+  // arrives at www is told where the page really lives and folds the two.
+  //
+  // The tidier finish is a Cloudflare Redirect Rule, 301 from www to the apex.
+  // It runs at the edge before any of this, costs no Worker code, and means
+  // the duplicate hostname never serves a page at all. Add it in the dashboard
+  // under Rules -> Redirect Rules; this entry can stay either way.
   "routes": [
-    { "pattern": "wayside.cc", "custom_domain": true }
-    // Uncomment to also serve the www subdomain:
-    // { "pattern": "www.wayside.cc", "custom_domain": true }
+    { "pattern": "wayside.cc", "custom_domain": true },
+    { "pattern": "www.wayside.cc", "custom_domain": true }
   ]
 }

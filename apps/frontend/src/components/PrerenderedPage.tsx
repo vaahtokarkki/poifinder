@@ -2,6 +2,7 @@ import React from "react";
 import { findCity } from "../seo/cities";
 import { findCategorySeo } from "../seo/categories";
 import type { PageData } from "../seo/pageData";
+import CitiesPageSection from "./CitiesPageSection";
 import CityPageSection from "./CityPageSection";
 import HomePageSection from "./HomePageSection";
 import PoiPageSection from "./PoiPageSection";
@@ -16,6 +17,10 @@ import PoiPageSection from "./PoiPageSection";
 const PrerenderedPage: React.FC<{ data: PageData }> = ({ data }) => {
   if (data.kind === "home") {
     return <HomePageSection data={data} />;
+  }
+
+  if (data.kind === "cities") {
+    return <CitiesPageSection data={data} />;
   }
 
   const city = findCity(data.citySlug);

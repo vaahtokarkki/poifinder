@@ -1,57 +1,36 @@
 import React from "react";
-import { findCity } from "../seo/cities";
-import { cityPath } from "../seo/pageMeta";
+import { CITIES_PATH } from "../seo/pageMeta";
+import { formatCount } from "../seo/format";
 import type { HomePageData } from "../seo/pageData";
 import { InfoSheetSummary } from "./AppInfoPanel";
 
 /**
- * The content of the map root. Its job is the city index: the one URL that
- * gets linked from outside has to be the door to every hub page, otherwise the
- * long tail cities are orphans no crawler ever reaches.
+ * The content of the map root.
  *
- * Grouped by country rather than listed flat, because a few hundred bare city
- * names is a wall a reader skips and a crawler reads as boilerplate.
+ * The city index used to be here, on the grounds that the root is the one URL
+ * linked from outside and the hub pages have to be reachable from it. That is
+ * still true and it is why the link below is not optional — it is the only
+ * thing standing between 87 hub pages and being orphans — but the index itself
+ * is /cities now. Someone opening a map wants the map, not a directory, and a
+ * crawler follows one link as readily as a hundred.
  */
-const HomePageSection: React.FC<{ data: HomePageData }> = ({ data }) => {
-  const cities = data.citySlugs.map(findCity).filter((city) => city !== undefined);
+const HomePageSection: React.FC<{ data: HomePageData }> = ({ data }) => (
+  <>
+    <h1 className="info-sheet-title">Find the small things, anywhere</h1>
+    {/* The same sentence every other route shows in the sheet. Someone who
+        lands on the map root and someone who follows a shared link should be
+        told the same thing about what this is */}
+    <InfoSheetSummary />
 
-  const byCountry = new Map<string, typeof cities>();
-  for (const city of cities) {
-    const group = byCountry.get(city.country);
-    if (group) group.push(city);
-    else byCountry.set(city.country, [city]);
-  }
-  const countries = [...byCountry.entries()].sort((a, b) => a[0].localeCompare(b[0]));
-
-  return (
-    <>
-      <h1 className="info-sheet-title">Find the small things, anywhere</h1>
-      {/* The same sentence every other route shows in the sheet. Someone who
-          lands on the map root and someone who follows a shared link should be
-          told the same thing about what this is */}
-      <InfoSheetSummary />
-
-      {cities.length > 0 && (
-        <section className="info-sheet-section">
-          <h2 className="info-sheet-heading">
-            {cities.length} {cities.length === 1 ? "city" : "cities"} with a page of their own
-          </h2>
-          {countries.map(([country, group]) => (
-            <section className="info-sheet-subsection" key={country}>
-              <h3 className="info-sheet-subheading">{country}</h3>
-              <ul className="poi-links poi-links-inline">
-                {group.map((city) => (
-                  <li key={city.slug}>
-                    <a href={cityPath(city.slug)}>{city.name}</a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))}
-        </section>
-      )}
-    </>
-  );
-};
+    {data.cityCount > 0 && (
+      <p className="info-sheet-summary">
+        <a href={CITIES_PATH}>
+          Browse {formatCount(data.cityCount)}{" "}
+          {data.cityCount === 1 ? "city" : "cities"} with a page of their own
+        </a>
+      </p>
+    )}
+  </>
+);
 
 export default HomePageSection;

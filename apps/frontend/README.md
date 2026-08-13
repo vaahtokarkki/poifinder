@@ -110,6 +110,36 @@ did not deserve to.
 A route with no data at all still 404s, because there is no truthful count to
 put on it. That is what `npm run seo:data` is for.
 
+### How the pages reach each other
+
+Only one URL on this site gets linked from outside, and it is the root. Every
+other page has to be reachable from it or it is an orphan — indexed at best on
+the strength of the sitemap, with nothing pointing at it and no anchor text
+saying what it is. A sitemap gets a page discovered; it does not stand in for a
+link.
+
+So there is a path down and a path back up at every level:
+
+```
+/                 the map. One link: "Browse N cities with a page of their own"
+  /cities/        the index, grouped by country. Links to every hub
+    /helsinki/    the hub. Links to its categories, six nearby cities, /cities/
+      /helsinki/toilets/   links to its siblings, the same category in nearby
+                           cities, its own hub, and /cities/
+```
+
+The index is a page rather than a section of the root because the root is a
+map, and someone who opens a map does not want to read a directory of a few
+hundred city names first. Moving it cost the hubs nothing: a crawler follows
+one link as readily as a hundred, and the hubs now also get a link from every
+category page under them, which the breadcrumb had been claiming all along
+without the page ever having one.
+
+`/cities` is a reserved first path segment, listed in `RESERVED_SLUGS` in
+[`src/utils.ts`](src/utils.ts). Without that the app would read it as a place
+name and send it to the geocoder, because an unknown first segment is how a
+city we have no page for still centres the map.
+
 ### Why the content is duplicated in two places, and why it is not
 
 It is not duplicated. [`PrerenderedPage`](src/components/PrerenderedPage.tsx) is

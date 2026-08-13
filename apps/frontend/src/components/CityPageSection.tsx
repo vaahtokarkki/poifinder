@@ -3,7 +3,7 @@ import { findCity } from "../seo/cities";
 import type { City } from "../seo/cities";
 import { findCategorySeo } from "../seo/categories";
 import { formatCount } from "../seo/format";
-import { categoryPath, cityPath } from "../seo/pageMeta";
+import { CITIES_PATH, categoryPath, cityPath } from "../seo/pageMeta";
 import type { CityPageData } from "../seo/pageData";
 
 /**
@@ -64,6 +64,13 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data }) => {
           </ul>
         </section>
       )}
+
+      {/* The way back up. Neighbour links only ever reach the cities nearest
+          this one, so without this a crawler that lands on a hub can walk the
+          region it is in and never find the other continents */}
+      <p className="info-sheet-summary">
+        <a href={CITIES_PATH}>All cities on Wayside</a>
+      </p>
 
       <p className="info-sheet-footer">
         Points come from{" "}

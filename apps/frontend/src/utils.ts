@@ -17,6 +17,18 @@ function toSlug(raw: string | undefined): string {
 }
 
 /**
+ * First path segments that are pages of our own rather than a city. A city can
+ * never be named one of these, and the parsers below have to say so: the app
+ * reads an unknown first segment as a place name and sends it to the geocoder,
+ * so without this /cities would pan the map to whatever Photon thinks "cities"
+ * is and ignore the visitor's own position.
+ *
+ * The paths themselves are built in seo/pageMeta.ts from these same strings.
+ */
+export const CITIES_SLUG = "cities";
+const RESERVED_SLUGS = new Set<string>([CITIES_SLUG]);
+
+/**
  * The city slug of a URL path, e.g. "new-york", or "" when there is none.
  *
  * Dashes are part of a slug: an earlier version rejected them, which quietly
@@ -24,7 +36,8 @@ function toSlug(raw: string | undefined): string {
  */
 export function parseCitySlugFromPath(pathname?: string): string {
   const [city] = pathSegments(pathname);
-  return toSlug(city);
+  const slug = toSlug(city);
+  return RESERVED_SLUGS.has(slug) ? "" : slug;
 }
 
 /** The category slug of a URL path, e.g. "dog-parks", or "" when there is none */

@@ -4,6 +4,7 @@ import { CATEGORY_SEO, commonFaq, findCategorySeo } from "./categories";
 import type { CategorySeo, FaqEntry } from "./categories";
 import type { CategoryPageData } from "./pageData";
 import { formatCount } from "./format";
+import { CITIES_SLUG } from "../utils";
 
 export const SITE_URL = "https://wayside.cc";
 export const SITE_NAME = "Wayside";
@@ -74,6 +75,71 @@ export function cityUrl(citySlug: string): string {
 
 /** The root, which is the one page whose slash is the whole path */
 export const HOME_URL = `${SITE_URL}/`;
+
+/**
+ * The city index.
+ *
+ * It is a page rather than a section of the root because the root is the map,
+ * and a wall of city names is not what someone who opens a map wants to read.
+ * The link graph still has to work: the root links here, here links to every
+ * hub, and every hub links back. Cut this page out and the hubs are orphans
+ * that only the sitemap knows about — discovered, but with nothing pointing at
+ * them and no anchor text saying what they are.
+ *
+ * `CITIES_SLUG` lives in utils.ts, next to the parser that has to know this
+ * segment is not a city.
+ */
+export const CITIES_PATH = `/${CITIES_SLUG}/`;
+export const CITIES_URL = `${SITE_URL}${CITIES_PATH}`;
+
+export function citiesTitle(cityCount: number): string {
+  return `Cities on ${SITE_NAME} — ${formatCount(cityCount)} city maps`;
+}
+
+export function citiesDescription(cityCount: number, countryCount: number): string {
+  return (
+    `Every city with a map of its own on ${SITE_NAME}: ${formatCount(cityCount)} cities in ` +
+    `${formatCount(countryCount)} countries, each with public toilets, drinking water, ` +
+    `playgrounds and 17 more categories from OpenStreetMap. Free, and no signup.`
+  );
+}
+
+/** Structured data of the city index */
+export function buildCitiesJsonLd(cities: City[]): object[] {
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: `Cities on ${SITE_NAME}`,
+      description: citiesDescription(
+        cities.length,
+        new Set(cities.map((city) => city.country)).size
+      ),
+      url: CITIES_URL,
+      // The list itself, in the order the page renders it. This is the one
+      // page whose whole content is a set of links, so saying so in the
+      // markup is worth the bytes
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: cities.length,
+        itemListElement: cities.map((city, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: city.name,
+          item: cityUrl(city.slug),
+        })),
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: SITE_NAME, item: HOME_URL },
+        { "@type": "ListItem", position: 2, name: "Cities", item: CITIES_URL },
+      ],
+    },
+  ];
+}
 
 export function titleFor(route: Route, count: number): string {
   const { city, categorySeo } = route;
@@ -275,13 +341,17 @@ export function buildJsonLd(route: Route, data: CategoryPageData): object[] {
     })),
   };
 
+  // Site → Cities → City → Category, which is both the click path and the
+  // link path a crawler walks. It named the city as a child of the root while
+  // the index lived on the root; the index is /cities now and the trail says so
   const breadcrumbs = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: SITE_NAME, item: HOME_URL },
-      { "@type": "ListItem", position: 2, name: city.name, item: cityUrl(city.slug) },
-      { "@type": "ListItem", position: 3, name: categorySeo.heading, item: url },
+      { "@type": "ListItem", position: 2, name: "Cities", item: CITIES_URL },
+      { "@type": "ListItem", position: 3, name: city.name, item: cityUrl(city.slug) },
+      { "@type": "ListItem", position: 4, name: categorySeo.heading, item: url },
     ],
   };
 
@@ -336,7 +406,8 @@ export function buildCityJsonLd(
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: SITE_NAME, item: HOME_URL },
-        { "@type": "ListItem", position: 2, name: city.name, item: cityUrl(city.slug) },
+        { "@type": "ListItem", position: 2, name: "Cities", item: CITIES_URL },
+        { "@type": "ListItem", position: 3, name: city.name, item: cityUrl(city.slug) },
       ],
     },
   ];

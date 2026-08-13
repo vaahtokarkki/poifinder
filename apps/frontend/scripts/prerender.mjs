@@ -277,9 +277,33 @@ async function main() {
       });
     }
 
+    // ---- City index ----
+    // Only the cities with something to land on: this page is the one path
+    // into the hubs, so a link from here is a promise the page is worth
+    // reading, and a hub left out of it has nothing pointing at it at all
+    const indexedCities = [...citiesWithPages.values()]
+      .filter(({ city }) => publishedCities.has(city.slug))
+      .map(({ city }) => city);
+    const countryCount = new Set(indexedCities.map((city) => city.country)).size;
+
+    if (indexedCities.length > 0) {
+      await writePage({
+        urlPath: "cities",
+        title: meta.citiesTitle(indexedCities.length),
+        description: meta.citiesDescription(indexedCities.length, countryCount),
+        canonical: meta.CITIES_URL,
+        jsonLd: meta.buildCitiesJsonLd(indexedCities),
+        pageData: {
+          kind: "cities",
+          citySlugs: indexedCities.map((city) => city.slug),
+        },
+      });
+    }
+
     // ---- Map root ----
-    // Its content is the city index, which is how a crawler reaches every hub
-    // page from the one URL that gets linked externally
+    // It links to the index above rather than being it. That link is the whole
+    // of the root's job in the link graph and the only reason the hub pages are
+    // reachable from the one URL anything external points at
     await writePage({
       urlPath: "",
       title: "Wayside — public toilets, drinking water and playgrounds on one map",
@@ -291,10 +315,7 @@ async function main() {
       jsonLd: meta.buildHomeJsonLd(),
       pageData: {
         kind: "home",
-        // Only the cities with something to land on. The root is the index a
-        // crawler walks, so a link from here is a promise the page is worth
-        // reading
-        citySlugs: [...citiesWithPages.keys()].filter((slug) => publishedCities.has(slug)),
+        cityCount: indexedCities.length,
       },
     });
 
@@ -313,7 +334,14 @@ async function main() {
           `    <div id="seo-prerender"><div class="seo-prerender-inner">` +
           `<h1 class="info-sheet-title">Page not found</h1>` +
           `<p class="info-sheet-summary">There is no page at this address. ` +
-          `<a href="/">Open the map</a> and search from any area instead.</p>` +
+          `<a href="/">Open the map</a> and search from any area instead` +
+          // The address that got here is usually a city we have no page for,
+          // so the index is the more useful of the two offers. It is noindex
+          // above, so this is for the visitor rather than for a crawler
+          (indexedCities.length > 0
+            ? `, or see the <a href="${meta.CITIES_PATH}">cities with a page of their own</a>.`
+            : `.`) +
+          `</p>` +
           `</div></div>\n    ${BODY_CLOSE}`
       );
     await writeFile(path.join(DIST, "404.html"), notFound);
@@ -358,10 +386,14 @@ async function main() {
     // The root and the city hubs. Kept together because they are one job —
     // "is the shape of the site indexed" — separate from any single category
     const hubs = [...citiesWithPages.values()].filter(({ entries }) => entries.length > 0);
+    // The index sits between them and is as current as the newest hub in it:
+    // its content is the list, so it changes exactly when the list does
+    const hubsLastmod = hubs.map(({ updatedAt }) => updatedAt).sort().at(-1);
     await addChild(
       "sitemap-cities.xml",
       [
         urlEntry(meta.HOME_URL, null, null),
+        ...(indexedCities.length > 0 ? [urlEntry(meta.CITIES_URL, hubsLastmod, 1)] : []),
         ...hubs.map(({ city, updatedAt }) => urlEntry(meta.cityUrl(city.slug), updatedAt, city.tier)),
       ],
       hubs.map(({ updatedAt }) => updatedAt)
@@ -407,7 +439,8 @@ async function main() {
     ).length;
     console.log(
       `Prerendered ${written.length} pages ` +
-        `(${routes.length} category, ${citiesWithPages.size} city, 1 root), ` +
+        `(${routes.length} category, ${citiesWithPages.size} city, ` +
+        `${indexedCities.length > 0 ? "1 index, " : ""}1 root), ` +
         `${urls} URLs across ${children.length} sitemaps behind sitemap.xml.`
     );
     console.log(

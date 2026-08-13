@@ -51,13 +51,23 @@ export type CityPageData = {
   updatedAt: string;
 };
 
-/** The map root: the index of every city that has pages */
+/**
+ * The map root. It carries a count rather than the list itself: the index is a
+ * page of its own now, and the root's one job in the link graph is to point at
+ * it. See CitiesPageData
+ */
 export type HomePageData = {
   kind: "home";
+  cityCount: number;
+};
+
+/** /cities: the index of every city that has pages, grouped by country */
+export type CitiesPageData = {
+  kind: "cities";
   citySlugs: string[];
 };
 
-export type PageData = CategoryPageData | CityPageData | HomePageData;
+export type PageData = CategoryPageData | CityPageData | HomePageData | CitiesPageData;
 
 /**
  * The payload of the page currently loaded, or null on a route that was not

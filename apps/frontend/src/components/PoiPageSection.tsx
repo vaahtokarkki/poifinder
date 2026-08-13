@@ -1,6 +1,13 @@
 import React from "react";
 import type { CategoryPageData, PoiEntry } from "../seo/pageData";
-import { MAX_LISTED_POIS, faqFor, headingFor, internalLinksFor } from "../seo/pageMeta";
+import {
+  CITIES_PATH,
+  MAX_LISTED_POIS,
+  cityPath,
+  faqFor,
+  headingFor,
+  internalLinksFor,
+} from "../seo/pageMeta";
 import { formatCount } from "../seo/format";
 import type { Route } from "../seo/pageMeta";
 
@@ -92,6 +99,17 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data }) => {
           </ul>
         </section>
       ))}
+
+      {/* The trail back up, which the breadcrumb has always claimed and the
+          page never actually had: the link groups above go sideways to
+          neighbouring categories and cities, and none of them go up. A hub
+          that every one of its category pages links to is also a stronger hub
+          than one only the index points at */}
+      <p className="info-sheet-summary">
+        <a href={cityPath(city.slug)}>All points of interest in {city.name}</a>
+        {" · "}
+        <a href={CITIES_PATH}>All cities on Wayside</a>
+      </p>
 
       <p className="info-sheet-footer">
         Points come from{" "}

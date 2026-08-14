@@ -1,5 +1,1396 @@
 {
   "city": "malmo",
-  "generatedAt": "2026-08-13T05:07:08.408Z",
-  "categories": {}
+  "generatedAt": "2026-08-14T05:03:28.451Z",
+  "categories": {
+    "toilets": {
+      "count": 89,
+      "pois": [
+        {
+          "id": "node/1932929646",
+          "name": "Fintoa",
+          "lat": 55.602709,
+          "lon": 12.999601,
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 11:00-15:45; Su off",
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "node/9294286247",
+          "name": "Harbour toilet",
+          "lat": 55.617234,
+          "lon": 12.989526,
+          "fee": "yes"
+        },
+        {
+          "id": "way/102401414",
+          "name": "Hamnkontor Västra Hamnen",
+          "lat": 55.60965,
+          "lon": 12.975118,
+          "address": "Propellergatan 10",
+          "openingHours": "Mo-Su,PH 09:00-18:00",
+          "wheelchair": "yes",
+          "fee": "no"
+        },
+        {
+          "id": "way/41241895",
+          "name": "IKEA",
+          "lat": 55.55264,
+          "lon": 12.98631,
+          "address": "Kulthusgatan 1",
+          "openingHours": "Mo-Fr 10:00-20:00; Sa-Su 10:00-19:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/1427250261",
+          "name": "Biltema",
+          "lat": 55.616753,
+          "lon": 13.111445,
+          "address": "Vassvägen 40",
+          "openingHours": "Mo-Fr 07:00-20:00, Sa-Su 09:00-18:00",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:17.801Z"
+    },
+    "drinking-water": {
+      "count": 35,
+      "pois": [
+        {
+          "id": "node/12894348558",
+          "name": "Water tap",
+          "lat": 55.608669,
+          "lon": 13.008896,
+          "fee": "no"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:18.440Z"
+    },
+    "playgrounds": {
+      "count": 662,
+      "pois": [
+        {
+          "id": "way/40870848",
+          "name": "Sagolekplatsen",
+          "lat": 55.600365,
+          "lon": 12.99199
+        },
+        {
+          "id": "node/9582634820",
+          "name": "Spielplatz Norra",
+          "lat": 55.596001,
+          "lon": 13.005407
+        },
+        {
+          "id": "way/42632391",
+          "name": "Spirallekplatsen",
+          "lat": 55.595714,
+          "lon": 12.998142
+        },
+        {
+          "id": "relation/19103211",
+          "name": "Solhöjdsparken",
+          "lat": 55.60949,
+          "lon": 12.986491
+        },
+        {
+          "id": "node/1668852379",
+          "name": "Teaterlekplatsen",
+          "lat": 55.593619,
+          "lon": 12.994437
+        },
+        {
+          "id": "way/42634048",
+          "name": "Fiskelekplatsen",
+          "lat": 55.590408,
+          "lon": 13.011169,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/620987476",
+          "name": "Mary Anderssons lekplats",
+          "lat": 55.59451,
+          "lon": 13.024101
+        },
+        {
+          "id": "way/255106854",
+          "name": "Spindellekplatsen",
+          "lat": 55.591742,
+          "lon": 12.987604
+        },
+        {
+          "id": "way/620648722",
+          "name": "Torekovsplans Lekplats",
+          "lat": 55.592553,
+          "lon": 13.022535
+        },
+        {
+          "id": "way/161847338",
+          "name": "Göingeplan lekplatsen",
+          "lat": 55.590324,
+          "lon": 13.018166
+        },
+        {
+          "id": "way/42629479",
+          "name": "Sollekplatsen",
+          "lat": 55.615161,
+          "lon": 12.980087
+        },
+        {
+          "id": "way/339358211",
+          "name": "Skogslekplatsen",
+          "lat": 55.595852,
+          "lon": 12.975302
+        },
+        {
+          "id": "way/141934097",
+          "name": "Rörelselekplatsen",
+          "lat": 55.589032,
+          "lon": 13.023146
+        },
+        {
+          "id": "way/1156126402",
+          "name": "Leklunden",
+          "lat": 55.583718,
+          "lon": 13.001266,
+          "wheelchair": "limited"
+        },
+        {
+          "id": "way/43119390",
+          "name": "Djurlekplatsen",
+          "lat": 55.610159,
+          "lon": 13.04847
+        },
+        {
+          "id": "way/43119226",
+          "name": "Musiklekplatsen",
+          "lat": 55.579977,
+          "lon": 13.023221
+        },
+        {
+          "id": "way/448024428",
+          "name": "Cronheimsparken lekplats",
+          "lat": 55.590685,
+          "lon": 13.046976
+        },
+        {
+          "id": "way/43119300",
+          "name": "Vattenlekplatsen",
+          "lat": 55.582513,
+          "lon": 13.039027
+        },
+        {
+          "id": "way/285710846",
+          "name": "Almängen",
+          "lat": 55.575397,
+          "lon": 13.023019
+        },
+        {
+          "id": "way/389802141",
+          "name": "Cirkuslekplatsen",
+          "lat": 55.572819,
+          "lon": 13.015608
+        },
+        {
+          "id": "way/778823091",
+          "name": "Öresundslekplatsen",
+          "lat": 55.597961,
+          "lon": 12.94643,
+          "wheelchair": "limited"
+        },
+        {
+          "id": "way/579118752",
+          "name": "Brandkårslekplatsen",
+          "lat": 55.590644,
+          "lon": 13.05696
+        },
+        {
+          "id": "way/660054032",
+          "name": "Äventyrslekplatsen",
+          "lat": 55.573764,
+          "lon": 12.981608
+        },
+        {
+          "id": "way/43119566",
+          "name": "Bondgårdslekplatsen",
+          "lat": 55.589776,
+          "lon": 13.065803
+        },
+        {
+          "id": "relation/12756215",
+          "name": "Sportbynlekplatsen",
+          "lat": 55.569614,
+          "lon": 12.973885
+        },
+        {
+          "id": "way/951540077",
+          "name": "Kalvhagen",
+          "lat": 55.570136,
+          "lon": 12.965994
+        },
+        {
+          "id": "way/951540085",
+          "name": "Kohagen",
+          "lat": 55.570695,
+          "lon": 12.961949
+        },
+        {
+          "id": "way/42630960",
+          "name": "Rymdlekplatsen",
+          "lat": 55.559288,
+          "lon": 12.989519
+        },
+        {
+          "id": "way/149033020",
+          "name": "Grönalundsparken",
+          "lat": 55.578394,
+          "lon": 12.936357
+        },
+        {
+          "id": "node/13666997401",
+          "name": "Hyllievångsskolans Skatepark",
+          "lat": 55.559261,
+          "lon": 12.981202,
+          "openingHours": "24/7"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:19.304Z"
+    },
+    "parking": {
+      "count": 1359,
+      "pois": [
+        {
+          "id": "node/1670830929",
+          "name": "Citygaraget Malmö",
+          "lat": 55.604204,
+          "lon": 13.004395,
+          "fee": "yes"
+        },
+        {
+          "id": "way/34732337",
+          "name": "Petri P-hus",
+          "lat": 55.606528,
+          "lon": 13.005381,
+          "fee": "yes"
+        },
+        {
+          "id": "node/1670827846",
+          "name": "Hansacompagniet",
+          "lat": 55.603001,
+          "lon": 13.00366,
+          "fee": "yes"
+        },
+        {
+          "id": "node/3361367588",
+          "name": "P-huset Väster",
+          "lat": 55.603716,
+          "lon": 12.997774,
+          "fee": "yes"
+        },
+        {
+          "id": "way/28486137",
+          "name": "P-hus Anna",
+          "lat": 55.601181,
+          "lon": 13.004811,
+          "fee": "yes"
+        },
+        {
+          "id": "way/28482119",
+          "name": "Sparven",
+          "lat": 55.600198,
+          "lon": 13.002702
+        },
+        {
+          "id": "node/2016689442",
+          "name": "P-huset Bagers Plats",
+          "lat": 55.608115,
+          "lon": 12.996771,
+          "fee": "yes"
+        },
+        {
+          "id": "node/3744635806",
+          "name": "P-huset Davida",
+          "lat": 55.599804,
+          "lon": 13.007053,
+          "openingHours": "06:30-21:00",
+          "fee": "yes"
+        },
+        {
+          "id": "node/13860336432",
+          "name": "Niagaragaraget",
+          "lat": 55.609274,
+          "lon": 12.994474,
+          "address": "Bassänggatan 2",
+          "fee": "yes"
+        },
+        {
+          "id": "node/2308779887",
+          "name": "Qpark Öresund",
+          "lat": 55.611994,
+          "lon": 12.999006,
+          "fee": "yes"
+        },
+        {
+          "id": "way/191082402",
+          "name": "P-hus Godsmagasinet",
+          "lat": 55.607563,
+          "lon": 12.990989,
+          "openingHours": "06:00-24:00",
+          "fee": "yes"
+        },
+        {
+          "id": "node/3789119415",
+          "name": "P-huset Trollhättan",
+          "lat": 55.610992,
+          "lon": 12.993707,
+          "openingHours": "Mo-Su 06:30-21:00",
+          "fee": "yes"
+        },
+        {
+          "id": "way/89219328",
+          "name": "P-huset Dockan",
+          "lat": 55.613332,
+          "lon": 12.989582,
+          "openingHours": "Mo-Fr 06:00-19:00",
+          "wheelchair": "limited",
+          "fee": "yes"
+        },
+        {
+          "id": "way/289469638",
+          "name": "P-hus Smedjegatan",
+          "lat": 55.592091,
+          "lon": 13.004343,
+          "address": "Smedjegatan 5",
+          "openingHours": "Mo-Fr 09:00-22:00, Sa-Su 09:00-20:00",
+          "fee": "yes"
+        },
+        {
+          "id": "way/155329210",
+          "name": "Aimo Park Erika",
+          "lat": 55.613237,
+          "lon": 12.985421,
+          "fee": "yes"
+        },
+        {
+          "id": "way/1243545101",
+          "name": "P-Huset Öglan",
+          "lat": 55.610708,
+          "lon": 12.980947,
+          "fee": "yes"
+        },
+        {
+          "id": "way/96192199",
+          "name": "Centralplatsen",
+          "lat": 55.590128,
+          "lon": 12.992864,
+          "fee": "yes"
+        },
+        {
+          "id": "way/28806991",
+          "name": "P-huset Södervärn",
+          "lat": 55.58719,
+          "lon": 13.005207,
+          "openingHours": "Mo-Su,PH 00:00-24:00",
+          "fee": "yes"
+        },
+        {
+          "id": "way/807662927",
+          "name": "P-hus centrumhuset",
+          "lat": 55.58208,
+          "lon": 13.00545,
+          "address": "Per Albin Hanssons väg 40",
+          "fee": "no"
+        },
+        {
+          "id": "node/9722176899",
+          "name": "Södra P-huset",
+          "lat": 55.579333,
+          "lon": 13.004587,
+          "address": "Per Albin Hanssons väg 40",
+          "openingHours": "Mo-Su 06:00-21:30",
+          "fee": "no"
+        },
+        {
+          "id": "way/1193926051",
+          "name": "P-huset Hyllieäng",
+          "lat": 55.568257,
+          "lon": 12.977117,
+          "fee": "yes"
+        },
+        {
+          "id": "way/1037358762",
+          "name": "Emporia",
+          "lat": 55.565657,
+          "lon": 12.973258,
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "way/767104990",
+          "name": "P-Huset Sjöstaden",
+          "lat": 55.589242,
+          "lon": 12.932895,
+          "address": "Packhusgatan 11B",
+          "openingHours": "Mo-Su 06:00-22:00",
+          "fee": "yes"
+        },
+        {
+          "id": "way/866559626",
+          "name": "Formen",
+          "lat": 55.590609,
+          "lon": 12.929909,
+          "fee": "yes"
+        },
+        {
+          "id": "way/94780041",
+          "name": "P-huset Hyllie",
+          "lat": 55.562639,
+          "lon": 12.977662,
+          "fee": "yes"
+        },
+        {
+          "id": "way/912216435",
+          "name": "Aimo Park",
+          "lat": 55.582209,
+          "lon": 12.934041,
+          "fee": "yes"
+        },
+        {
+          "id": "way/584109418",
+          "name": "P-Huset Hyllie Allé",
+          "lat": 55.560174,
+          "lon": 12.979807,
+          "fee": "yes"
+        },
+        {
+          "id": "way/155720151",
+          "name": "Hotel Parking",
+          "lat": 55.569574,
+          "lon": 13.060995
+        },
+        {
+          "id": "way/132401800",
+          "name": "Fosieanstaltens parkering",
+          "lat": 55.554651,
+          "lon": 13.061077
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:20.153Z"
+    },
+    "charging-stations": {
+      "count": 87,
+      "pois": [
+        {
+          "id": "node/10742011782",
+          "name": "Mer Citygaraget Malmö",
+          "lat": 55.60432,
+          "lon": 13.00445
+        },
+        {
+          "id": "node/10742011657",
+          "name": "Rundelsgatan 19",
+          "lat": 55.60637,
+          "lon": 13.00507
+        },
+        {
+          "id": "node/10742002839",
+          "name": "Petri p-hus, Malmö",
+          "lat": 55.60607,
+          "lon": 13.00606
+        },
+        {
+          "id": "node/10742011722",
+          "name": "Hotel Mäster Johan",
+          "lat": 55.60584,
+          "lon": 12.99795
+        },
+        {
+          "id": "node/10732310439",
+          "name": "E.ON P-Huset Anna",
+          "lat": 55.60112,
+          "lon": 13.005028,
+          "fee": "yes"
+        },
+        {
+          "id": "node/8948924217",
+          "name": "InCharge",
+          "lat": 55.609802,
+          "lon": 13.001975
+        },
+        {
+          "id": "node/10732390749",
+          "name": "E.ON Bagers Plats",
+          "lat": 55.607931,
+          "lon": 12.996811,
+          "fee": "yes"
+        },
+        {
+          "id": "node/10732390747",
+          "name": "Parkeringshuset Davida",
+          "lat": 55.599836,
+          "lon": 13.007143,
+          "fee": "yes"
+        },
+        {
+          "id": "node/10732390751",
+          "name": "E.ON P-huset Malmö Live",
+          "lat": 55.607248,
+          "lon": 12.992675,
+          "fee": "yes"
+        },
+        {
+          "id": "node/10742011709",
+          "name": "E.ON CMP-parkeringen",
+          "lat": 55.612192,
+          "lon": 13.002812
+        },
+        {
+          "id": "node/10742011711",
+          "name": "Utställningsgatan 4",
+          "lat": 55.61192,
+          "lon": 12.99958
+        },
+        {
+          "id": "node/10742011697",
+          "name": "Södra Neptunigatan 4",
+          "lat": 55.60775,
+          "lon": 12.99128
+        },
+        {
+          "id": "node/10732390752",
+          "name": "E.ON Citadellsvägen 5",
+          "lat": 55.607615,
+          "lon": 12.99116,
+          "fee": "yes"
+        },
+        {
+          "id": "node/10742002904",
+          "name": "Mer Centralstationen Malmö",
+          "lat": 55.61176,
+          "lon": 12.99739
+        },
+        {
+          "id": "node/10742011783",
+          "name": "Vasakronan Triangeln",
+          "lat": 55.59702,
+          "lon": 13.0016
+        },
+        {
+          "id": "node/10742011727",
+          "name": "E.ON CG1 gästparkering",
+          "lat": 55.59855,
+          "lon": 12.98767
+        },
+        {
+          "id": "node/10742011779",
+          "name": "E.ON parkering",
+          "lat": 55.59845,
+          "lon": 12.98687
+        },
+        {
+          "id": "node/9162692001",
+          "name": "E.ON Fågelbacksgatan",
+          "lat": 55.596802,
+          "lon": 12.98892,
+          "fee": "yes"
+        },
+        {
+          "id": "node/10742002836",
+          "name": "P-hus Dockan Wihlborgs",
+          "lat": 55.61352,
+          "lon": 12.98929
+        },
+        {
+          "id": "node/10742011809",
+          "name": "E.ON Elnät Nobelvägen",
+          "lat": 55.59932,
+          "lon": 13.0237
+        },
+        {
+          "id": "node/10742002855",
+          "name": "P-hus Erika Malmö",
+          "lat": 55.61319,
+          "lon": 12.98585
+        },
+        {
+          "id": "node/10742011723",
+          "name": "E.ON Nobelvägen 66",
+          "lat": 55.59822,
+          "lon": 13.02368
+        },
+        {
+          "id": "node/10742011775",
+          "name": "E.ON Dockan Malmö",
+          "lat": 55.61499,
+          "lon": 12.98835
+        },
+        {
+          "id": "node/10742011751",
+          "name": "Circle K Lundavägen 24",
+          "lat": 55.60834,
+          "lon": 13.02837
+        },
+        {
+          "id": "node/10732714770",
+          "name": "Mobilitetshuset Öglan",
+          "lat": 55.610751,
+          "lon": 12.980487,
+          "fee": "yes"
+        },
+        {
+          "id": "node/10742011748",
+          "name": "E.ON p-hus Ubåten Wihlborgs",
+          "lat": 55.61508,
+          "lon": 12.98528
+        },
+        {
+          "id": "node/10732714771",
+          "name": "P-hus Masten ICA",
+          "lat": 55.611261,
+          "lon": 12.979736,
+          "fee": "yes"
+        },
+        {
+          "id": "node/10742002842",
+          "name": "Västra varvsgatan",
+          "lat": 55.61544,
+          "lon": 12.98439
+        },
+        {
+          "id": "node/10732717491",
+          "name": "Märsgränd",
+          "lat": 55.61198,
+          "lon": 12.979899,
+          "fee": "yes"
+        },
+        {
+          "id": "node/10742011828",
+          "name": "Kockum Fritid",
+          "lat": 55.608527,
+          "lon": 12.977185
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:20.560Z"
+    },
+    "gas-stations": {
+      "count": 60,
+      "pois": [
+        {
+          "id": "node/253856437",
+          "name": "E.ON Nobelv.",
+          "lat": 55.599393,
+          "lon": 13.023734,
+          "address": "Industrigatan 5",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/253357181",
+          "name": "Circle K",
+          "lat": 55.608283,
+          "lon": 13.028418
+        },
+        {
+          "id": "node/9245864371",
+          "name": "Q8",
+          "lat": 55.614664,
+          "lon": 13.032068
+        },
+        {
+          "id": "node/488806953",
+          "name": "Ingo Malmö Lorensborgsgatan",
+          "lat": 55.589128,
+          "lon": 12.982472,
+          "address": "Lorensborgsgatan 1"
+        },
+        {
+          "id": "way/37006402",
+          "name": "Ingo Malmö/Sallerupsvägen",
+          "lat": 55.600531,
+          "lon": 13.038776,
+          "address": "Knivgatan",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/247135492",
+          "name": "Ingo Malmö Lundavägen",
+          "lat": 55.613355,
+          "lon": 13.038903
+        },
+        {
+          "id": "way/102209313",
+          "name": "St1",
+          "lat": 55.583881,
+          "lon": 13.018596,
+          "openingHours": "Mo-Su,PH 00:00-24:00"
+        },
+        {
+          "id": "node/247135003",
+          "name": "Preem",
+          "lat": 55.585236,
+          "lon": 12.98169
+        },
+        {
+          "id": "node/1705981553",
+          "name": "Ingo",
+          "lat": 55.615924,
+          "lon": 13.044822
+        },
+        {
+          "id": "node/253854635",
+          "name": "OKQ8",
+          "lat": 55.578496,
+          "lon": 13.004502,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/10116996561",
+          "name": "OKQ8 Ids Malmö Hamn",
+          "lat": 55.627827,
+          "lon": 13.028854,
+          "address": "Ljusterögatan 8",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/2919733008",
+          "name": "E.ON Ystadvägen",
+          "lat": 55.577179,
+          "lon": 13.025525,
+          "address": "Ystadvägen 54",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/247135491",
+          "name": "INGO Malmö, Rosengård",
+          "lat": 55.587141,
+          "lon": 13.047688
+        },
+        {
+          "id": "node/669891453",
+          "name": "St1 Malmö Holmavångsvägen",
+          "lat": 55.574878,
+          "lon": 12.989897,
+          "address": "Holmavångsvägen 2",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/271652710",
+          "name": "CNG Sege EON",
+          "lat": 55.629198,
+          "lon": 13.045081,
+          "address": "Hemsögatan 51",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/56988668",
+          "name": "OKQ8 Malmö Högaholm",
+          "lat": 55.563703,
+          "lon": 13.007407,
+          "address": "Kvartettgatan 1",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/247135498",
+          "name": "Ingo Malmö/Jägersro",
+          "lat": 55.572381,
+          "lon": 13.057459
+        },
+        {
+          "id": "node/247135778",
+          "name": "Tanka-Malmö",
+          "lat": 55.570321,
+          "lon": 13.054378,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/112014678",
+          "name": "St1 Arlöv",
+          "lat": 55.638833,
+          "lon": 13.060249,
+          "address": "Västkustvägen 36"
+        },
+        {
+          "id": "node/2218569525",
+          "name": "St1 Limhamn Hyllie Kyrkoväg",
+          "lat": 55.578713,
+          "lon": 12.929221
+        },
+        {
+          "id": "node/2992594637",
+          "name": "Circle K Truck",
+          "lat": 55.607741,
+          "lon": 13.094362
+        },
+        {
+          "id": "node/6691090885",
+          "name": "CNG S Sallerup",
+          "lat": 55.594874,
+          "lon": 13.100471,
+          "address": "Batterigatan 2",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/252108691",
+          "name": "St1 Malmö Bronsåldersgatan",
+          "lat": 55.551001,
+          "lon": 13.033224,
+          "address": "Bronsåldersgatan",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/6482864413",
+          "name": "OKQ8 minipris",
+          "lat": 55.612391,
+          "lon": 13.10302
+        },
+        {
+          "id": "node/13120640820",
+          "name": "Costco",
+          "lat": 55.613856,
+          "lon": 13.106145
+        },
+        {
+          "id": "way/212317035",
+          "name": "Ingo Malmö Bunkeflostrand",
+          "lat": 55.560372,
+          "lon": 12.919929,
+          "address": "Klagshamnsvägen 12"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:21.035Z"
+    },
+    "ice-cream": {
+      "count": 22,
+      "pois": [
+        {
+          "id": "way/1036504111",
+          "name": "Augusta",
+          "lat": 55.602112,
+          "lon": 13.001331
+        },
+        {
+          "id": "way/1093128538",
+          "name": "Lejonet & Björnen",
+          "lat": 55.605119,
+          "lon": 12.997685,
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/444822081",
+          "name": "Dolce Sicilia",
+          "lat": 55.608189,
+          "lon": 13.010822,
+          "openingHours": "Jan PH,Tu-Su 11:00-17:00; Feb,Dec PH,Mo-Su 11:00-17:00; Mar,Nov PH,Mo-Su 11:00-18:00; Apr,Jul-Aug PH,Mo-Su 11:00-20:00; May-Jun PH,Mo-Su 11:00-21:00; Sep-Oct PH,Mo-Su 11:00-19:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/9949485305",
+          "name": "glassfabrik Signes",
+          "lat": 55.598801,
+          "lon": 13.001244
+        },
+        {
+          "id": "node/9576546411",
+          "name": "Augusta Glass",
+          "lat": 55.609606,
+          "lon": 12.993862,
+          "address": "Beijerskajen 2",
+          "openingHours": "Mo-Su 11:30-17:00"
+        },
+        {
+          "id": "node/13860369503",
+          "name": "Favvo Glass",
+          "lat": 55.607857,
+          "lon": 12.991047,
+          "openingHours": "Mo-Th 11:00-20:00; Fr,Sa 11:00-21:00; Su 11:00-17:00"
+        },
+        {
+          "id": "node/3051074416",
+          "name": "Lilla Glassfabriken",
+          "lat": 55.598072,
+          "lon": 12.997415,
+          "openingHours": "Mo-Su 12:00-18:00"
+        },
+        {
+          "id": "node/10130500625",
+          "name": "Köld",
+          "lat": 55.594974,
+          "lon": 13.005858,
+          "address": "Friisgatan 14",
+          "openingHours": "Mo-Fr 12:00-19:00; Sa 13:00-18:00; Su 13:00-17:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/12836554259",
+          "name": "Örum Mejeri",
+          "lat": 55.606461,
+          "lon": 12.985191,
+          "openingHours": "Th-Fr 11:00-18:00; Sa-Su 11:00-17:00"
+        },
+        {
+          "id": "node/12996767197",
+          "name": "Legato",
+          "lat": 55.592123,
+          "lon": 13.008656,
+          "address": "Ängelholmsgatan 9B",
+          "openingHours": "Mo-Th,Su 12:00-19:00; Fr-Sa 12:00-24:00"
+        },
+        {
+          "id": "node/8078205797",
+          "name": "St. Jakobs Glass",
+          "lat": 55.598802,
+          "lon": 12.981634,
+          "openingHours": "Mo-Fr 09:00-18:00; Sa-Su 10:00-18:00"
+        },
+        {
+          "id": "node/13914172101",
+          "name": "Paleterian",
+          "lat": 55.589505,
+          "lon": 13.009329
+        },
+        {
+          "id": "node/9570858912",
+          "name": "Gelato by Smak",
+          "lat": 55.610425,
+          "lon": 12.973622,
+          "openingHours": "Sa-Su 12:00-18:00"
+        },
+        {
+          "id": "node/1670692580",
+          "name": "Bar Italia",
+          "lat": 55.612472,
+          "lon": 12.972367
+        },
+        {
+          "id": "node/11125986305",
+          "name": "Vaganza Gelato",
+          "lat": 55.616926,
+          "lon": 12.974544,
+          "address": "Ankarstigen"
+        },
+        {
+          "id": "node/10754157945",
+          "name": "Yogiboost",
+          "lat": 55.580723,
+          "lon": 13.004337
+        },
+        {
+          "id": "node/2469122693",
+          "name": "Ribban Green Golf",
+          "lat": 55.599849,
+          "lon": 12.960411,
+          "address": "Limhamnsvägen",
+          "openingHours": "Su-Th 12:00-18:00, Fr-Sa 12:00-19:00"
+        },
+        {
+          "id": "way/235026319",
+          "name": "Café Blå Kiosken",
+          "lat": 55.599123,
+          "lon": 12.95597
+        },
+        {
+          "id": "node/9576546404",
+          "name": "Augusta Glassmejeri",
+          "lat": 55.583513,
+          "lon": 12.932077,
+          "address": "Järnvägsgatan 28",
+          "openingHours": "Mo-Su 12:00-18:00"
+        },
+        {
+          "id": "way/395053199",
+          "name": "Cellos glassbar",
+          "lat": 55.578863,
+          "lon": 12.931581,
+          "openingHours": "\"12-18 mid Apr-end of Aug; 12-19 end of Aug-mid Sep\""
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:21.509Z"
+    },
+    "dog-parks": {
+      "count": 43,
+      "pois": [
+        {
+          "id": "way/1183767728",
+          "name": "Hundrastgården",
+          "lat": 55.592231,
+          "lon": 13.006885,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/161847838",
+          "name": "Falsterboplan",
+          "lat": 55.589798,
+          "lon": 13.014572,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/100076164",
+          "name": "Ribersborgs hundrastplats",
+          "lat": 55.606942,
+          "lon": 12.974033,
+          "wheelchair": "no"
+        },
+        {
+          "id": "way/590191992",
+          "name": "Ellstorpsparken",
+          "lat": 55.603708,
+          "lon": 13.034525
+        },
+        {
+          "id": "way/620987477",
+          "name": "Enskifteshagens Hundrastplats",
+          "lat": 55.588673,
+          "lon": 13.027028,
+          "wheelchair": "limited"
+        },
+        {
+          "id": "way/999860085",
+          "name": "Augustenborgsparken",
+          "lat": 55.579563,
+          "lon": 13.024404
+        },
+        {
+          "id": "way/999860083",
+          "name": "Almängen",
+          "lat": 55.575132,
+          "lon": 13.022511
+        },
+        {
+          "id": "way/1173125260",
+          "name": "Remonthagen",
+          "lat": 55.573981,
+          "lon": 13.071701
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:21.935Z"
+    },
+    "picnic-spots": {
+      "count": 332,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:03:22.516Z"
+    },
+    "viewpoints": {
+      "count": 7,
+      "pois": [
+        {
+          "id": "node/2951480558",
+          "name": "Kalkbrottet",
+          "lat": 55.566087,
+          "lon": 12.943251
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:22.993Z"
+    },
+    "beaches": {
+      "count": 7,
+      "pois": [
+        {
+          "id": "way/41173569",
+          "name": "Ribersborgsstranden",
+          "lat": 55.602398,
+          "lon": 12.960453
+        },
+        {
+          "id": "node/14084816859",
+          "name": "Nudism beach",
+          "lat": 55.597822,
+          "lon": 12.939942
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:23.465Z"
+    },
+    "atms": {
+      "count": 71,
+      "pois": [
+        {
+          "id": "node/3402729550",
+          "name": "SEB",
+          "lat": 55.607724,
+          "lon": 13.00295,
+          "openingHours": "Mo-We,Fr 10:00-15:00, Th 10:00-18:00"
+        },
+        {
+          "id": "node/2903663006",
+          "name": "Nordea",
+          "lat": 55.581988,
+          "lon": 13.006356,
+          "address": "Trelleborgsvägen 14",
+          "openingHours": "Mo-Fr 10:00-16:00; Th 10:00-18:00"
+        },
+        {
+          "id": "node/12307305007",
+          "name": "Kontanten",
+          "lat": 55.590354,
+          "lon": 12.971115
+        },
+        {
+          "id": "node/3319507064",
+          "name": "Swedbank",
+          "lat": 55.58571,
+          "lon": 13.044749
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:23.988Z"
+    },
+    "post-boxes": {
+      "count": 60,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:03:24.464Z"
+    },
+    "recycling": {
+      "count": 102,
+      "pois": [
+        {
+          "id": "way/1329502178",
+          "name": "Norra Hamnens återvinningscentral",
+          "lat": 55.628011,
+          "lon": 13.025417,
+          "address": "Bjurögatan 20 B",
+          "openingHours": "Mo-Th 11:00-18:00; Fr-Su 09:00-15:00"
+        },
+        {
+          "id": "node/2987191900",
+          "name": "Harrysbilskrot AB",
+          "lat": 55.629749,
+          "lon": 13.056915
+        },
+        {
+          "id": "way/1023748789",
+          "name": "Brf Henriksdals parkering",
+          "lat": 55.566116,
+          "lon": 12.988464
+        },
+        {
+          "id": "way/1339076279",
+          "name": "Hyreshusets soprum",
+          "lat": 55.632245,
+          "lon": 13.07182
+        },
+        {
+          "id": "way/282210566",
+          "name": "Bunkeflo återvinningscentral",
+          "lat": 55.558494,
+          "lon": 12.943389,
+          "address": "Gottorpsvägen 52",
+          "openingHours": "Mo-Th 08:00-20:00; Fr-Su 09:00-15:00"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:24.985Z"
+    },
+    "luggage-storage": {
+      "count": 3,
+      "pois": [
+        {
+          "id": "node/13594624260",
+          "name": "Speed Box",
+          "lat": 55.60967,
+          "lon": 13.001494
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:25.415Z"
+    },
+    "libraries": {
+      "count": 17,
+      "pois": [
+        {
+          "id": "way/37892687",
+          "name": "Malmö Stadsbibliotek",
+          "lat": 55.60046,
+          "lon": 12.993984,
+          "address": "Kung Oscars väg 11",
+          "openingHours": "Mo-Th 08:30-20:00; Fr 10:00-18:00; Sa-Su 10:00-17:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/12123899982",
+          "name": "Orkanenbiblioteket",
+          "lat": 55.610715,
+          "lon": 12.995349,
+          "openingHours": "Mo-Th 08:00-20:00; Sa 11:00-16:00; Fr 08:00-17:00; Jun 06-Jul 10, Aug 03-Aug 07: Mo-Fr 10:00-14:00; Jun 19, Jul 11-Aug 02: off; Aug 10-Aug 23: Mo-Fr 10:00-17:00"
+        },
+        {
+          "id": "node/1860964339",
+          "name": "Stadsarkivet",
+          "lat": 55.594337,
+          "lon": 13.008644,
+          "address": "-",
+          "openingHours": "Mo,Tu 14:00-18:00; We,Th 10:00-18:00; Fr 12:00-16:00; Sa 11:00-15:00"
+        },
+        {
+          "id": "node/7263456122",
+          "name": "Bibliotek Masten 2",
+          "lat": 55.612065,
+          "lon": 12.979978,
+          "address": "Mastgränd 4",
+          "openingHours": "Mo,We 10:00-14:00; Fr,Sa 13:00-17:00; Tu 15:00-19:00; Sa,Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/12078407397",
+          "name": "Medicinska fakultetens bibliotek",
+          "lat": 55.588543,
+          "lon": 12.999072,
+          "address": "Jan Waldenströms gata 35",
+          "openingHours": "Mo-Tu 12:00-16:00; We 10:00-16:00; Th-Fr 12:00-16:00"
+        },
+        {
+          "id": "way/76092447",
+          "name": "Stadsdelsbiblioteket Garaget",
+          "lat": 55.585047,
+          "lon": 13.017426,
+          "openingHours": "Mo, We, Fr 11:00-18:00; Tu 11:00-20:00; Th 09:00-16:00; Sa 12:00-16:00"
+        },
+        {
+          "id": "node/5247956057",
+          "name": "Kirsebergsbiblioteket",
+          "lat": 55.611348,
+          "lon": 13.043193
+        },
+        {
+          "id": "way/997033849",
+          "name": "Bellevuegårdsbiblioteket",
+          "lat": 55.581316,
+          "lon": 12.976763,
+          "address": "Svansjögatan 9",
+          "openingHours": "Mo 10:00-19:00; Tu,Th,Fr 10:00-17:00; We 13:00-19:00; Su 13:00-16:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3319507067",
+          "name": "Rosengårds bibliotek",
+          "lat": 55.58521,
+          "lon": 13.044579,
+          "address": "Dicksons väg 6",
+          "openingHours": "Mo-Tu 11:00-17:00; We 09:00-15:00; Th-Fr 11:00-17:00"
+        },
+        {
+          "id": "node/9598116852",
+          "name": "Little Free Library",
+          "lat": 55.574037,
+          "lon": 12.95844,
+          "address": "Baldringegatan 87",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/1836561506",
+          "name": "Husie stadsdelsbibliotek",
+          "lat": 55.590857,
+          "lon": 13.070876,
+          "address": "Videdalsvägen 13"
+        },
+        {
+          "id": "node/12803947640",
+          "name": "Hylliebiblioteket",
+          "lat": 55.562854,
+          "lon": 12.974631,
+          "address": "Hyllie boulevard 21",
+          "openingHours": "Tu 10:00-16:00; We 13:00-19:00; Th 10:00-19:00; Fr 10:00-16:00; Sa 12:00-17:00"
+        },
+        {
+          "id": "node/9520450513",
+          "name": "Limhamnsbiblioteket",
+          "lat": 55.582302,
+          "lon": 12.933134,
+          "address": "Odengatan 43",
+          "openingHours": "Mo 11:00-19:00; Tu 10:00-19:00; We-Th 10:00-17:00; Fr 11:00-17:00; Sa 10:00-13:00; Sa 13:15-21:00 \"med Meröppet\"; Jun-Aug Mo 13:00-18:00; Jun-Aug Tu-Fr 10:00-15:00; Jun-Aug We-Fr 15:15-21:00 \"med Meröppet\"; Jun-Aug Sa-Su 10:00-21:00 \"med Meröppet\""
+        },
+        {
+          "id": "node/10754116874",
+          "name": "Lindängenbiblioteket",
+          "lat": 55.559353,
+          "lon": 13.014943
+        },
+        {
+          "id": "way/89610390",
+          "name": "Burlövs Bibliotek",
+          "lat": 55.632207,
+          "lon": 13.070403
+        },
+        {
+          "id": "node/3690978124",
+          "name": "Arlövs bibliotek",
+          "lat": 55.632299,
+          "lon": 13.070713
+        },
+        {
+          "id": "way/133957846",
+          "name": "Hyllie Park Bibliotekshuset",
+          "lat": 55.567982,
+          "lon": 12.951849,
+          "address": "Elinelundsvägen 55B"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:25.890Z"
+    },
+    "outdoor-gyms": {
+      "count": 26,
+      "pois": [
+        {
+          "id": "way/705830361",
+          "name": "Sorgenfri utegym",
+          "lat": 55.600617,
+          "lon": 13.020165
+        },
+        {
+          "id": "way/635619313",
+          "name": "Gamla vattentornets utegym",
+          "lat": 55.590297,
+          "lon": 12.996802
+        },
+        {
+          "id": "way/998003803",
+          "name": "Skogens utegym",
+          "lat": 55.588816,
+          "lon": 12.987495
+        },
+        {
+          "id": "way/791056954",
+          "name": "Djupadalsparkens utegym",
+          "lat": 55.576714,
+          "lon": 12.95357
+        },
+        {
+          "id": "way/509210050",
+          "name": "Sibbarps utegym",
+          "lat": 55.575071,
+          "lon": 12.909721
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:26.355Z"
+    },
+    "camp-sites": {
+      "count": 1,
+      "pois": [
+        {
+          "id": "way/296888614",
+          "name": "First Camp Malmö Sibbarp",
+          "lat": 55.571827,
+          "lon": 12.908289,
+          "address": "Strandgatan 101",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:26.792Z"
+    },
+    "shelters": {
+      "count": 2,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:03:27.515Z"
+    },
+    "rest-areas": {
+      "count": 1,
+      "pois": [
+        {
+          "id": "relation/10529666",
+          "name": "Skånegården",
+          "lat": 55.559755,
+          "lon": 12.935514
+        }
+      ],
+      "updatedAt": "2026-08-14T05:03:27.955Z"
+    },
+    "dump-stations": {
+      "count": 2,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:03:28.349Z"
+    }
+  }
 }

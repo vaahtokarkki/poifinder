@@ -1,5 +1,1632 @@
 {
   "city": "lille",
-  "generatedAt": "2026-08-13T05:28:02.146Z",
-  "categories": {}
+  "generatedAt": "2026-08-14T05:16:47.954Z",
+  "categories": {
+    "toilets": {
+      "count": 125,
+      "pois": [
+        {
+          "id": "way/42465721",
+          "name": "Le Printemps",
+          "lat": 50.635793,
+          "lon": 3.06125,
+          "openingHours": "Mo-Sa 09:30-20:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/9351530281",
+          "name": "Toilette Euralille",
+          "lat": 50.637394,
+          "lon": 3.074036,
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "way/94965208",
+          "name": "Euralille",
+          "lat": 50.637324,
+          "lon": 3.074366,
+          "openingHours": "Mo-Sa 10:00-20:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/783259399",
+          "name": "Lillenium",
+          "lat": 50.615871,
+          "lon": 3.046541
+        },
+        {
+          "id": "node/12918610351",
+          "name": "Toilettes",
+          "lat": 50.614607,
+          "lon": 3.070163
+        },
+        {
+          "id": "way/77109470",
+          "name": "Centre Commercial Flers Villeneuve D’ascq",
+          "lat": 50.636513,
+          "lon": 3.119431,
+          "openingHours": "Mo-Sa 08:30-20:30; Su 09:00-12:30"
+        },
+        {
+          "id": "way/1050980828",
+          "name": "WC",
+          "lat": 50.630921,
+          "lon": 2.96944,
+          "wheelchair": "yes",
+          "fee": "no"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:36.158Z"
+    },
+    "drinking-water": {
+      "count": 93,
+      "pois": [
+        {
+          "id": "node/622396564",
+          "name": "Fontaine Wallace",
+          "lat": 50.637588,
+          "lon": 3.065861
+        },
+        {
+          "id": "node/1270619276",
+          "name": "Quai Léon Jouhaux",
+          "lat": 50.637143,
+          "lon": 3.047656
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:36.819Z"
+    },
+    "playgrounds": {
+      "count": 558,
+      "pois": [
+        {
+          "id": "node/1525093503",
+          "name": "Jeux de raquettes",
+          "lat": 50.627109,
+          "lon": 3.071028
+        },
+        {
+          "id": "way/841239169",
+          "name": "Square Charles Six",
+          "lat": 50.622419,
+          "lon": 3.046979
+        },
+        {
+          "id": "node/13821023984",
+          "name": "Smallicieux",
+          "lat": 50.61602,
+          "lon": 3.046847,
+          "openingHours": "Mo,Tu,Th,Fr 14:00-19:00; We,Sa,Su 10:00-19:00; PH 10:00-19:00; SH Mo-Su 10:00-19:00",
+          "fee": "yes"
+        },
+        {
+          "id": "way/672905745",
+          "name": "Square Massenet",
+          "lat": 50.63041,
+          "lon": 3.088534
+        },
+        {
+          "id": "node/3874670557",
+          "name": "Square Gavarni",
+          "lat": 50.633386,
+          "lon": 3.026258,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/672329694",
+          "name": "Square de la Briqueterie",
+          "lat": 50.604687,
+          "lon": 3.052624
+        },
+        {
+          "id": "way/663492397",
+          "name": "Jardin des Trampolines",
+          "lat": 50.603207,
+          "lon": 3.052714
+        },
+        {
+          "id": "way/663492329",
+          "name": "Square Pierre Loti",
+          "lat": 50.602387,
+          "lon": 3.05007
+        },
+        {
+          "id": "way/271952812",
+          "name": "Square Cornil",
+          "lat": 50.653319,
+          "lon": 3.091648
+        },
+        {
+          "id": "way/270654540",
+          "name": "Terrain de Jeux",
+          "lat": 50.648402,
+          "lon": 3.099642
+        },
+        {
+          "id": "way/165832593",
+          "name": "City stade Cité Familiale",
+          "lat": 50.659636,
+          "lon": 3.010988
+        },
+        {
+          "id": "way/825874737",
+          "name": "Les Peupliers",
+          "lat": 50.614986,
+          "lon": 3.130391
+        },
+        {
+          "id": "way/798194257",
+          "name": "Offenbach 1",
+          "lat": 50.622133,
+          "lon": 3.139525
+        },
+        {
+          "id": "way/183858515",
+          "name": "Labyrinthe végétal",
+          "lat": 50.656058,
+          "lon": 2.985889,
+          "wheelchair": "limited"
+        },
+        {
+          "id": "way/798194256",
+          "name": "Offenbach 2",
+          "lat": 50.620974,
+          "lon": 3.139916
+        },
+        {
+          "id": "node/13065379919",
+          "name": "Parcours sportif",
+          "lat": 50.683592,
+          "lon": 3.058059
+        },
+        {
+          "id": "way/313867111",
+          "name": "Prairie des Sportifs (Aire de Jeux)",
+          "lat": 50.644219,
+          "lon": 3.140573
+        },
+        {
+          "id": "node/13059636805",
+          "name": "Tyrolienne",
+          "lat": 50.655416,
+          "lon": 2.981018
+        },
+        {
+          "id": "way/606132800",
+          "name": "Place Rouge",
+          "lat": 50.620976,
+          "lon": 3.14393
+        },
+        {
+          "id": "way/313867103",
+          "name": "Aire de jeu pour enfants",
+          "lat": 50.644858,
+          "lon": 3.142955
+        },
+        {
+          "id": "way/495264478",
+          "name": "Mikis-Théodorakis",
+          "lat": 50.615292,
+          "lon": 3.145758,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/373487013",
+          "name": "Aire de jeu Lucie Aubrac",
+          "lat": 50.644131,
+          "lon": 2.962091
+        },
+        {
+          "id": "way/851368618",
+          "name": "Square Jean Desmarets",
+          "lat": 50.666069,
+          "lon": 3.140408,
+          "wheelchair": "no"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:37.675Z"
+    },
+    "parking": {
+      "count": 3750,
+      "pois": [
+        {
+          "id": "way/50997113",
+          "name": "Parking du sébastopol",
+          "lat": 50.628828,
+          "lon": 3.058283,
+          "fee": "yes"
+        },
+        {
+          "id": "way/89116990",
+          "name": "Place des Halles",
+          "lat": 50.63187,
+          "lon": 3.054376,
+          "fee": "yes"
+        },
+        {
+          "id": "node/802008613",
+          "name": "Parking Republique",
+          "lat": 50.630874,
+          "lon": 3.062069,
+          "wheelchair": "no",
+          "fee": "yes"
+        },
+        {
+          "id": "node/8627243506",
+          "name": "Parking Plaza",
+          "lat": 50.634645,
+          "lon": 3.058794,
+          "fee": "yes"
+        },
+        {
+          "id": "way/39178021",
+          "name": "Place de la Nouvelle Aventure",
+          "lat": 50.62603,
+          "lon": 3.049868,
+          "fee": "no"
+        },
+        {
+          "id": "node/802008552",
+          "name": "Parking Rihour-Printemps",
+          "lat": 50.635391,
+          "lon": 3.061169,
+          "openingHours": "Tu-Su 08:00-21:00",
+          "fee": "yes"
+        },
+        {
+          "id": "node/2419557170",
+          "name": "Parking Bethune-Lafayette",
+          "lat": 50.634145,
+          "lon": 3.065006,
+          "fee": "yes"
+        },
+        {
+          "id": "relation/4153378",
+          "name": "Parking Nouveau Siècle",
+          "lat": 50.637032,
+          "lon": 3.059587,
+          "address": "Place Pierre Mendès France 19",
+          "fee": "yes"
+        },
+        {
+          "id": "node/4832535501",
+          "name": "Parking du Nouveau Siècle",
+          "lat": 50.637105,
+          "lon": 3.059595,
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "way/303247098",
+          "name": "Parking Les Tanneurs",
+          "lat": 50.634876,
+          "lon": 3.066363,
+          "fee": "yes"
+        },
+        {
+          "id": "relation/3738019",
+          "name": "Parking Grand Place",
+          "lat": 50.636925,
+          "lon": 3.063166,
+          "fee": "yes"
+        },
+        {
+          "id": "way/40917083",
+          "name": "Parking Public Place Augustin Laurent",
+          "lat": 50.63122,
+          "lon": 3.071252,
+          "fee": "yes"
+        },
+        {
+          "id": "node/5041699849",
+          "name": "Le Palais Lillois L'Automobile",
+          "lat": 50.637624,
+          "lon": 3.066697,
+          "fee": "yes"
+        },
+        {
+          "id": "way/673567792",
+          "name": "Dépose minute gare Lille Flandres",
+          "lat": 50.634973,
+          "lon": 3.070806,
+          "fee": "yes"
+        },
+        {
+          "id": "way/776521844",
+          "name": "Parking Liberté",
+          "lat": 50.639191,
+          "lon": 3.051386,
+          "fee": "yes"
+        },
+        {
+          "id": "relation/10754119",
+          "name": "Réservé aux militaires",
+          "lat": 50.639224,
+          "lon": 3.049999
+        },
+        {
+          "id": "relation/1624693",
+          "name": "Parking Opera",
+          "lat": 50.639131,
+          "lon": 3.06579,
+          "fee": "yes"
+        },
+        {
+          "id": "node/8760980506",
+          "name": "Parking Opéra",
+          "lat": 50.639116,
+          "lon": 3.065923,
+          "fee": "yes"
+        },
+        {
+          "id": "way/379136888",
+          "name": "Parking Gare Lille Flandres",
+          "lat": 50.634939,
+          "lon": 3.073632,
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "way/549411630",
+          "name": "Porte des Postes",
+          "lat": 50.617556,
+          "lon": 3.049752,
+          "fee": "yes"
+        },
+        {
+          "id": "way/95012744",
+          "name": "Porte d'Arras",
+          "lat": 50.617054,
+          "lon": 3.063668,
+          "fee": "no"
+        },
+        {
+          "id": "node/8627243493",
+          "name": "Parking Vieux Lille",
+          "lat": 50.641579,
+          "lon": 3.064338,
+          "fee": "yes"
+        },
+        {
+          "id": "way/48289828",
+          "name": "Place du Concert",
+          "lat": 50.642353,
+          "lon": 3.061055,
+          "fee": "yes"
+        },
+        {
+          "id": "node/2265506453",
+          "name": "Parking Grand Palais",
+          "lat": 50.631598,
+          "lon": 3.078577,
+          "fee": "yes"
+        },
+        {
+          "id": "node/553493223",
+          "name": "Parking Euralille",
+          "lat": 50.636468,
+          "lon": 3.075876,
+          "fee": "yes"
+        },
+        {
+          "id": "way/559455132",
+          "name": "Pool MEL",
+          "lat": 50.630929,
+          "lon": 3.080536,
+          "fee": "no"
+        },
+        {
+          "id": "way/558810385",
+          "name": "Parking Petit Paradis",
+          "lat": 50.643918,
+          "lon": 3.048923,
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "node/2061592744",
+          "name": "Parking Tours",
+          "lat": 50.638595,
+          "lon": 3.07705,
+          "fee": "yes"
+        },
+        {
+          "id": "node/7959147784",
+          "name": "Parking Euralille Gare B (Tours)",
+          "lat": 50.639036,
+          "lon": 3.076773,
+          "openingHours": "Mo-Su 05:00-01:00",
+          "fee": "yes"
+        },
+        {
+          "id": "node/553492175",
+          "name": "Parking Euralille Gare A (Indigo)",
+          "lat": 50.639626,
+          "lon": 3.076169,
+          "address": "Avenue de Cologne",
+          "openingHours": "Mo-Su 05:00-01:00",
+          "wheelchair": "yes",
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:38.849Z"
+    },
+    "charging-stations": {
+      "count": 219,
+      "pois": [
+        {
+          "id": "node/5536470939",
+          "name": "Intermarché Mons-en-Barœul",
+          "lat": 50.645438,
+          "lon": 3.098758,
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "way/1410320842",
+          "name": "Lille Supercharger",
+          "lat": 50.583385,
+          "lon": 3.089844,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "node/13031969232",
+          "name": "Milence Charging Hub Lille Lesquin",
+          "lat": 50.581077,
+          "lon": 3.091814,
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "way/1232723886",
+          "name": "Englos Supercharger",
+          "lat": 50.629909,
+          "lon": 2.970864,
+          "address": "352 Route Nationale",
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "node/3444636128",
+          "name": "Ikea - Borne de rechage",
+          "lat": 50.650261,
+          "lon": 2.976997,
+          "fee": "no"
+        },
+        {
+          "id": "node/9709766888",
+          "name": "ZE Watt - Galerie Marchande Auchan",
+          "lat": 50.633648,
+          "lon": 2.96743,
+          "fee": "yes"
+        },
+        {
+          "id": "node/10978516515",
+          "name": "pass pass électrique - Parc relais Saint-Philibert",
+          "lat": 50.652766,
+          "lon": 2.974926,
+          "address": "Rue du Grand But",
+          "fee": "yes"
+        },
+        {
+          "id": "node/7741480669",
+          "name": "Auchan Englos - Borne de recharge",
+          "lat": 50.631831,
+          "lon": 2.966835
+        },
+        {
+          "id": "node/10683165885",
+          "name": "Power Dot - Ibis Styles - Marcq-en-Baroeul",
+          "lat": 50.675552,
+          "lon": 3.116933,
+          "address": "Avenue de la Marne 340",
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "node/10683165886",
+          "name": "Power Dot - Hotel Mercure - Marcq en Baroeul",
+          "lat": 50.679541,
+          "lon": 3.110512,
+          "address": "Avenue de la Marne 157",
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "node/7741480670",
+          "name": "AREA Englos - Borne de recharge",
+          "lat": 50.625359,
+          "lon": 2.960255,
+          "openingHours": "Mo-Fr 09:00-19:00",
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "node/7294912586",
+          "name": "Hallennes lez Haubourdin - Eglise",
+          "lat": 50.615388,
+          "lon": 2.960626,
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "node/7294912587",
+          "name": "Englos - Rue Paul Procureur",
+          "lat": 50.628153,
+          "lon": 2.95626,
+          "openingHours": "24/7",
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:39.397Z"
+    },
+    "gas-stations": {
+      "count": 55,
+      "pois": [
+        {
+          "id": "way/40917087",
+          "name": "Esso",
+          "lat": 50.632254,
+          "lon": 3.070369,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/737952230",
+          "name": "Total Access",
+          "lat": 50.618411,
+          "lon": 3.051054,
+          "openingHours": "24/7",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/372049246",
+          "name": "TotalEnergies",
+          "lat": 50.629603,
+          "lon": 3.035629,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/1770704310",
+          "name": "Total Relai Esquermes",
+          "lat": 50.625785,
+          "lon": 3.035501,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/321479851",
+          "name": "Esso Express",
+          "lat": 50.644659,
+          "lon": 3.028118,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/108793146",
+          "name": "Carrefour",
+          "lat": 50.653415,
+          "lon": 3.061592,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/686049260",
+          "name": "Total Energies",
+          "lat": 50.628923,
+          "lon": 3.017753,
+          "address": "Rue Hegel 16",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/4656656239",
+          "name": "Avia",
+          "lat": 50.638976,
+          "lon": 3.020657,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/233920008",
+          "name": "Station Service E. Leclerc",
+          "lat": 50.634212,
+          "lon": 3.098695,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/787158918",
+          "name": "Total",
+          "lat": 50.629562,
+          "lon": 3.10187,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/10983829727",
+          "name": "Station Intermarché",
+          "lat": 50.646045,
+          "lon": 3.098228,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/10983829729",
+          "name": "Intermarché",
+          "lat": 50.642298,
+          "lon": 3.012161,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/13467904598",
+          "name": "Station U",
+          "lat": 50.661352,
+          "lon": 3.069187
+        },
+        {
+          "id": "node/8714866819",
+          "name": "Total Access (Poids Lourds)",
+          "lat": 50.616552,
+          "lon": 3.119185,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/300009151",
+          "name": "Esso La Pilaterie",
+          "lat": 50.652476,
+          "lon": 3.126654,
+          "address": "Rue de la Couture",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/52032547",
+          "name": "C. C. Carrefour",
+          "lat": 50.649395,
+          "lon": 2.980455,
+          "address": "Rue du Grand But 130",
+          "openingHours": "24/7",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/25210138",
+          "name": "Station Total Access",
+          "lat": 50.682857,
+          "lon": 3.085286,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/4416314483",
+          "name": "BP",
+          "lat": 50.643389,
+          "lon": 3.143818,
+          "address": "Boulevard de Mons",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/880748462",
+          "name": "L/CNG station",
+          "lat": 50.581902,
+          "lon": 3.107822,
+          "address": "Rue du Pic Au Vent",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/95232422",
+          "name": "Auchan",
+          "lat": 50.62619,
+          "lon": 2.96672,
+          "openingHours": "Mo-Su,PH 00:00-00:00"
+        },
+        {
+          "id": "node/4416314473",
+          "name": "AS24",
+          "lat": 50.581829,
+          "lon": 3.111564
+        },
+        {
+          "id": "node/4416314467",
+          "name": "Shell",
+          "lat": 50.58121,
+          "lon": 3.111309,
+          "address": "Rue du Pic Au Vent 103",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/4682124036",
+          "name": "Station Match",
+          "lat": 50.664666,
+          "lon": 3.140544,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/737336493",
+          "name": "Elan",
+          "lat": 50.680241,
+          "lon": 2.996883
+        },
+        {
+          "id": "node/25211004",
+          "name": "Station Carrefour",
+          "lat": 50.682232,
+          "lon": 3.127385,
+          "address": "Avenue du Grand Cottignies",
+          "openingHours": "24/7",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/1415657475",
+          "name": "Station Service E.Leclerc",
+          "lat": 50.60478,
+          "lon": 2.95328,
+          "address": "Rue Paul Colette 7",
+          "openingHours": "24/7"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:39.937Z"
+    },
+    "ice-cream": {
+      "count": 13,
+      "pois": [
+        {
+          "id": "node/12252968338",
+          "name": "Häagen-Dazs",
+          "lat": 50.63527,
+          "lon": 3.0647,
+          "openingHours": "Su-Th 13:00-21:00; Fr 13:00-22:00; Sa 13:00-23:00"
+        },
+        {
+          "id": "node/13907574701",
+          "name": "Glaces Moustache",
+          "lat": 50.638165,
+          "lon": 3.062243,
+          "openingHours": "Mo 12:00-19:00; Tu-Th 12:00-22:00; Fr-Sa 12:00-23:00; Su 12:00-19:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13775129288",
+          "name": "Moustache",
+          "lat": 50.638187,
+          "lon": 3.062316,
+          "address": "Rue du Curé Saint-Étienne 9",
+          "openingHours": "Mo,Su 12:00-19:00; Tu-Th 12:00-20:00; Fr,Sa 12:00-22:00"
+        },
+        {
+          "id": "node/5274974090",
+          "name": "Gelato & Coffee",
+          "lat": 50.638813,
+          "lon": 3.061943,
+          "openingHours": "Mo-Sa 12:00-19:30; Su 13:00-19:30"
+        },
+        {
+          "id": "node/12069524016",
+          "name": "Astral Glace",
+          "lat": 50.639284,
+          "lon": 3.062128,
+          "openingHours": "Tu-Su 12:30-19:00"
+        },
+        {
+          "id": "node/5579032485",
+          "name": "Lille Aux Gourmandises",
+          "lat": 50.639496,
+          "lon": 3.061939
+        },
+        {
+          "id": "way/1119884827",
+          "name": "Glaces en boules et italiennes",
+          "lat": 50.639468,
+          "lon": 3.04878
+        },
+        {
+          "id": "node/12598254041",
+          "name": "Yogurt Factory",
+          "lat": 50.637765,
+          "lon": 3.074338
+        },
+        {
+          "id": "node/13893407201",
+          "name": "Promis Juré",
+          "lat": 50.647234,
+          "lon": 3.06176,
+          "address": "Avenue du Peuple Belge 108A"
+        },
+        {
+          "id": "way/125777133",
+          "name": "Van den Casteele",
+          "lat": 50.666998,
+          "lon": 3.032875
+        },
+        {
+          "id": "node/4547916844",
+          "name": "Glaces Ruiz",
+          "lat": 50.681287,
+          "lon": 3.083515
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:40.461Z"
+    },
+    "dog-parks": {
+      "count": 50,
+      "pois": [
+        {
+          "id": "node/12976924191",
+          "name": "Caniparc",
+          "lat": 50.637079,
+          "lon": 3.078226
+        },
+        {
+          "id": "way/114791111",
+          "name": "Parc canin de la Madeleine",
+          "lat": 50.647639,
+          "lon": 3.081944,
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/11387402036",
+          "name": "Espace canin",
+          "lat": 50.645285,
+          "lon": 3.022284,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/713076233",
+          "name": "Union Canine des Flandres",
+          "lat": 50.655647,
+          "lon": 2.992565
+        },
+        {
+          "id": "way/939889012",
+          "name": "Parc Cynophile",
+          "lat": 50.592482,
+          "lon": 3.115376
+        },
+        {
+          "id": "way/32698013",
+          "name": "Parc à Chiens",
+          "lat": 50.622271,
+          "lon": 3.148529,
+          "wheelchair": "limited"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:40.876Z"
+    },
+    "picnic-spots": {
+      "count": 489,
+      "pois": [
+        {
+          "id": "node/7042146151",
+          "name": "Aire de Pique-Nique du Lac des Espagnols",
+          "lat": 50.635445,
+          "lon": 3.138076
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:41.597Z"
+    },
+    "viewpoints": {
+      "count": 7,
+      "pois": [
+        {
+          "id": "node/1802947836",
+          "name": "Butte du Petit Paradis",
+          "lat": 50.681848,
+          "lon": 3.058679
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:42.033Z"
+    },
+    "beaches": {
+      "count": 1,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:16:42.501Z"
+    },
+    "atms": {
+      "count": 269,
+      "pois": [
+        {
+          "id": "node/3160414747",
+          "name": "LCL",
+          "lat": 50.630322,
+          "lon": 3.056262
+        },
+        {
+          "id": "way/42776050",
+          "name": "CIC",
+          "lat": 50.631034,
+          "lon": 3.05929,
+          "openingHours": "Mo off; Tu,We 08:45-12:30,13:30-18:00; Th 08:45-12:30,14:30-18:00; Fr 08:45-12:30,14:00-18:00; Sa 08:30-13:00; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/43225795",
+          "name": "Banque Populaire",
+          "lat": 50.628756,
+          "lon": 3.053294,
+          "openingHours": "Mo off; Tu-Fr 09:00-12:15, 13:45-18:00; Sa 09:00-12:15; Su off"
+        },
+        {
+          "id": "way/42054234",
+          "name": "La Poste",
+          "lat": 50.630624,
+          "lon": 3.060706,
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-12:00; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/5163093749",
+          "name": "Crédit Agricole",
+          "lat": 50.631482,
+          "lon": 3.059455
+        },
+        {
+          "id": "node/3002299472",
+          "name": "La Banque Postale",
+          "lat": 50.630893,
+          "lon": 3.060565
+        },
+        {
+          "id": "way/150473306",
+          "name": "Société Générale",
+          "lat": 50.628445,
+          "lon": 3.052564,
+          "openingHours": "Mo off; Tu-We 08:45-12:15, 13:30-18:00; Th 08:45-12:15, 14:00-18:00; Fr 08:45-12:15, 13:30-18:00; Sa 08:45-12:45; Su off"
+        },
+        {
+          "id": "way/42819603",
+          "name": "Caisse d'Épargne",
+          "lat": 50.628393,
+          "lon": 3.051391,
+          "openingHours": "Mo off; Tu-We 09:00-12:00, 13:30-18:00; Th 09:00-12:00, 14:30-18:00; Fr 09:00-12:00, 13:30-18:00; Sa 09:00-13:00; Su off"
+        },
+        {
+          "id": "node/3158789884",
+          "name": "SG",
+          "lat": 50.62769,
+          "lon": 3.051519,
+          "openingHours": "Mo-Sa 09:00-19:00; Su off"
+        },
+        {
+          "id": "node/3161673268",
+          "name": "Crédit Mutuel",
+          "lat": 50.632159,
+          "lon": 3.061513,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/150511385",
+          "name": "Crédit du Nord",
+          "lat": 50.627313,
+          "lon": 3.049931,
+          "openingHours": "Mo off; Tu-Fr 08:45-12:15, 13:45-18:00; Sa 08:30-12:00; Su off"
+        },
+        {
+          "id": "node/1402192792",
+          "name": "Crédit Municipal de Lille",
+          "lat": 50.623724,
+          "lon": 3.059045,
+          "openingHours": "Mo-Fr 09:00-12:00, Mo-Fr 13:30-17:00"
+        },
+        {
+          "id": "node/3161697316",
+          "name": "HSBC",
+          "lat": 50.635345,
+          "lon": 3.058209,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13082707833",
+          "name": "CCF",
+          "lat": 50.635473,
+          "lon": 3.058204,
+          "openingHours": "Mo-Fr 08:45-17:00; Sa-Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/6431771376",
+          "name": "Crédit coopératif",
+          "lat": 50.635797,
+          "lon": 3.055833
+        },
+        {
+          "id": "way/42145524",
+          "name": "BNP Paribas",
+          "lat": 50.624529,
+          "lon": 3.067184,
+          "openingHours": "Mo off; Tu-Fr 09:00-12:30, 13:45-18:00; Sa 09:00-13:00; Su off"
+        },
+        {
+          "id": "node/5348005213",
+          "name": "Lille Opera",
+          "lat": 50.636457,
+          "lon": 3.065772,
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-12:30; PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/8006507259",
+          "name": "Lille Place Cormontaigne",
+          "lat": 50.625787,
+          "lon": 3.041207,
+          "openingHours": "Mo 09:00-12:30,13:30-18:00; Tu 09:00-12:00,15:00-18:00; We-Fr 09:00-12:30,13:30-18:00; Sa 09:00-12:30; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/2400566318",
+          "name": "La Poste - Lille Esquermes BP",
+          "lat": 50.619157,
+          "lon": 3.041439,
+          "openingHours": "Tu-We, Fr-Sa 09:00-12:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/108764536",
+          "name": "Société générale - Crédit du Nord",
+          "lat": 50.614998,
+          "lon": 3.048819,
+          "openingHours": "Mo-Fr 08:45-12:15,14:00-17:45; Sa-Su off"
+        },
+        {
+          "id": "node/1802834105",
+          "name": "La Poste - Lille Saint-Martin",
+          "lat": 50.644686,
+          "lon": 3.060806,
+          "openingHours": "closed",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/108767572",
+          "name": "La Poste - Lille Sud BP",
+          "lat": 50.614136,
+          "lon": 3.048032,
+          "openingHours": "Tu,Th-Sa 09:00-12:00, We 10:45-12:00,13:30-17:30, Tu,Th,Fr 13:30-17:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1737871665",
+          "name": "La Poste - Bois Blancs",
+          "lat": 50.629975,
+          "lon": 3.025616,
+          "openingHours": "Mo off; Tu-Fr 09:00-12:00, 13:30-16:30; Sa 09:00-12:00; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/85087982",
+          "name": "Lille Fives",
+          "lat": 50.632983,
+          "lon": 3.089477,
+          "address": "Rue Pierre Legrand 121",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:30-12:30; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/39301269",
+          "name": "Société Générale - Lille - Canteleu",
+          "lat": 50.637014,
+          "lon": 3.02461,
+          "openingHours": "Mo off; Tu,We 09:00-12:15,13:30-18:00; Th 09:00-12:15,14:30-18:00; Fr 09:00-12:15,13:30-18:00; Sa 09:00-12:45; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/84352883",
+          "name": "La Poste - Faches Thumesnil BP",
+          "lat": 50.607228,
+          "lon": 3.065978,
+          "openingHours": "Mo-Fr 09:00-12:15, 13:30-17:30; Sa 09:00-12:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/84941495",
+          "name": "La Poste - Lille Saint-Maurice",
+          "lat": 50.642523,
+          "lon": 3.087633,
+          "openingHours": "Tu-Fr 09:00-12:00, Sa 09:00-12:00, Tu-Fr 14:00-17:30; Su off; Mo,PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/40322681",
+          "name": "Bureau de Poste de La Madeleine",
+          "lat": 50.653806,
+          "lon": 3.070008,
+          "address": "Rue Georges Pompidou 16",
+          "openingHours": "Mo-Fr 09:00-12:30,14:00-18:00; Sa 09:00-12:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/127726961",
+          "name": "Ronchin",
+          "lat": 50.605125,
+          "lon": 3.07733,
+          "address": "Rue Lavoisier 1",
+          "openingHours": "Mo,We-Fr 08:30-12:15,13:30-17:30; Tu 08:30-12:15,13:30-17:30; Sa 09:00-12:30; PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/125876892",
+          "name": "Bureau de Poste de Lambersart",
+          "lat": 50.650346,
+          "lon": 3.028058,
+          "address": "Avenue du Maréchal Leclerc 203",
+          "openingHours": "Mo-Fr 08:30-18:00, Sa 09:00-12:30",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:43.161Z"
+    },
+    "post-boxes": {
+      "count": 510,
+      "pois": [
+        {
+          "id": "node/931255177",
+          "name": "Le Sart",
+          "lat": 50.660277,
+          "lon": 3.139316,
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:43.720Z"
+    },
+    "recycling": {
+      "count": 598,
+      "pois": [
+        {
+          "id": "node/9229930818",
+          "name": "Composteur Résidence Rives",
+          "lat": 50.624425,
+          "lon": 3.057931
+        },
+        {
+          "id": "node/7363009465",
+          "name": "Médiathèque Jean Lévy",
+          "lat": 50.632718,
+          "lon": 3.066025
+        },
+        {
+          "id": "way/95012737",
+          "name": "Déchetterie de Lille - Boulevard d'Alsace",
+          "lat": 50.617019,
+          "lon": 3.064366,
+          "address": "Boulevard d'Alsace",
+          "openingHours": "Apr-Oct: Mo-Sa 07:30-19:00; Nov-Mar: Mo-Sa 07:30-18:00; Su 08:00-13:00; Jan 01 off; May 01 off; Dec 25 off"
+        },
+        {
+          "id": "node/7363009469",
+          "name": "Square de la Houblonnière",
+          "lat": 50.62761,
+          "lon": 3.03451
+        },
+        {
+          "id": "node/7315194887",
+          "name": "Composteur Jardin du Sud",
+          "lat": 50.614283,
+          "lon": 3.049385
+        },
+        {
+          "id": "node/12465117064",
+          "name": "bac à verre",
+          "lat": 50.64555,
+          "lon": 3.057191,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/7617785671",
+          "name": "Composteur Jardin Lazare Garden",
+          "lat": 50.612443,
+          "lon": 3.055624
+        },
+        {
+          "id": "node/7362649748",
+          "name": "Espace jeunesse Herriot",
+          "lat": 50.62013,
+          "lon": 3.079616
+        },
+        {
+          "id": "node/7363009464",
+          "name": "Ferme Marcel Dhénin",
+          "lat": 50.637847,
+          "lon": 3.080583
+        },
+        {
+          "id": "node/8473463189",
+          "name": "Composteur plaine des vachers",
+          "lat": 50.631362,
+          "lon": 3.029898
+        },
+        {
+          "id": "node/7362649750",
+          "name": "Résidence Clément Ader",
+          "lat": 50.631864,
+          "lon": 3.029927
+        },
+        {
+          "id": "way/137192463",
+          "name": "Déchetterie de Lille - Rue Borda",
+          "lat": 50.616227,
+          "lon": 3.038331,
+          "address": "Rue Jean-Charles Borda",
+          "openingHours": "Apr-Oct: Mo-Sa 07:30-19:00; Nov-Mar: Mo-Sa 07:30-18:00; Su 08:00-13:00; Jan 01 off; May 01 off; Dec 25 off"
+        },
+        {
+          "id": "node/7363009466",
+          "name": "Jardin des Herbes Folles",
+          "lat": 50.610625,
+          "lon": 3.068678
+        },
+        {
+          "id": "node/7363009470",
+          "name": "Jardin des Passereaux",
+          "lat": 50.631698,
+          "lon": 3.025891
+        },
+        {
+          "id": "node/7551360491",
+          "name": "Bac à compost",
+          "lat": 50.649326,
+          "lon": 3.055414
+        },
+        {
+          "id": "node/7362649751",
+          "name": "Résidence Armor",
+          "lat": 50.635844,
+          "lon": 3.026943
+        },
+        {
+          "id": "node/7932206239",
+          "name": "Composteur Parc Tudor",
+          "lat": 50.608936,
+          "lon": 3.062912
+        },
+        {
+          "id": "node/9507446029",
+          "name": "Composteur Jardins de la Collose",
+          "lat": 50.617364,
+          "lon": 3.030461
+        },
+        {
+          "id": "node/13495248338",
+          "name": "Composteur Bayart",
+          "lat": 50.628627,
+          "lon": 3.024194
+        },
+        {
+          "id": "node/10089715432",
+          "name": "Composteur Ada Lovelace",
+          "lat": 50.63073,
+          "lon": 3.02333
+        },
+        {
+          "id": "node/7350281044",
+          "name": "Composteur Square Paul Bardou",
+          "lat": 50.607573,
+          "lon": 3.057742
+        },
+        {
+          "id": "node/7932232548",
+          "name": "Composteur Broca",
+          "lat": 50.625102,
+          "lon": 3.091209
+        },
+        {
+          "id": "node/7362649749",
+          "name": "Résidence 171",
+          "lat": 50.605937,
+          "lon": 3.058909
+        },
+        {
+          "id": "node/7617753977",
+          "name": "Composteur Jardin des Agrions",
+          "lat": 50.626308,
+          "lon": 3.020272
+        },
+        {
+          "id": "node/6984936725",
+          "name": "Composteur Jardin André Ballet",
+          "lat": 50.629081,
+          "lon": 3.095997
+        },
+        {
+          "id": "node/7596075769",
+          "name": "Composteur Jardin de Méta'Lunaire",
+          "lat": 50.614775,
+          "lon": 3.025736
+        },
+        {
+          "id": "node/7900246164",
+          "name": "Composteur L'îlot 26 / Un bio potager au Marais",
+          "lat": 50.631227,
+          "lon": 3.018412
+        },
+        {
+          "id": "node/7315113397",
+          "name": "Composteur Le Bizardin",
+          "lat": 50.627263,
+          "lon": 3.098159
+        },
+        {
+          "id": "node/7363009467",
+          "name": "Jardin des Cultures",
+          "lat": 50.603652,
+          "lon": 3.048285
+        },
+        {
+          "id": "node/6853279586",
+          "name": "FRT Achats Fers et Métaux",
+          "lat": 50.626331,
+          "lon": 3.016042
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:44.436Z"
+    },
+    "luggage-storage": {
+      "count": 3,
+      "pois": [
+        {
+          "id": "node/13808256137",
+          "name": "LockIn",
+          "lat": 50.638052,
+          "lon": 3.066854,
+          "fee": "yes"
+        },
+        {
+          "id": "way/1167157299",
+          "name": "services aux voyageurs",
+          "lat": 50.637918,
+          "lon": 3.076626
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:44.820Z"
+    },
+    "libraries": {
+      "count": 97,
+      "pois": [
+        {
+          "id": "way/1392847641",
+          "name": "Bibliothèque de l'I.E.P",
+          "lat": 50.628014,
+          "lon": 3.065337
+        },
+        {
+          "id": "node/1808960728",
+          "name": "Médiathèque de Wazemmes",
+          "lat": 50.624837,
+          "lon": 3.05047,
+          "openingHours": "Tu-Sa 14:00-18:00, We,Sa 10:00-13:00"
+        },
+        {
+          "id": "way/40995416",
+          "name": "Médiathèque Municipale Jean Lévy",
+          "lat": 50.632417,
+          "lon": 3.065933,
+          "address": "Rue Édouard Delesalle 32-34",
+          "openingHours": "Mo-Tu 14:00-19:00; We,Th,Sa 10:00-19:00; Fr 12:00-20:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1457327184",
+          "name": "Bibliothèque universitaire Vauban",
+          "lat": 50.632294,
+          "lon": 3.045438
+        },
+        {
+          "id": "way/272015961",
+          "name": "Bibliothèque universitaire de droit-gestion",
+          "lat": 50.619101,
+          "lon": 3.068579
+        },
+        {
+          "id": "node/1559451471",
+          "name": "Médiathèque du Vieux Lille",
+          "lat": 50.640948,
+          "lon": 3.064544,
+          "openingHours": "Tu,Th-Sa 14:00-18:00, We 10:00-13:00, Sa 10:00-13:00"
+        },
+        {
+          "id": "node/11641326050",
+          "name": "Médiathèque Municipale du Faubourg de Béthune",
+          "lat": 50.618579,
+          "lon": 3.045137
+        },
+        {
+          "id": "node/1808960729",
+          "name": "Médiathèque des Bois-Blancs",
+          "lat": 50.635347,
+          "lon": 3.034101,
+          "address": "Avenue Marx Dormoy 36",
+          "openingHours": "Tu,Th,Fr 14:00-18:00; We,Sa 10:00-13:00,14:00-18:00"
+        },
+        {
+          "id": "node/5607352583",
+          "name": "Centre de documentation de l’IAE",
+          "lat": 50.646369,
+          "lon": 3.061983
+        },
+        {
+          "id": "node/7073232986",
+          "name": "Maison Régionale de l'Environment et des Solidarités",
+          "lat": 50.632273,
+          "lon": 3.086268,
+          "address": "Rue Jules de Vicq 5",
+          "openingHours": "Tu-Th 14:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/108761072",
+          "name": "Médiathèque de Lille Sud",
+          "lat": 50.610014,
+          "lon": 3.054965
+        },
+        {
+          "id": "way/85092314",
+          "name": "Médiathèque de Fives",
+          "lat": 50.631272,
+          "lon": 3.089093,
+          "openingHours": "Tu-Sa 14:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/5737364590",
+          "name": "Bibliothèque Jeanne d'Arc",
+          "lat": 50.64125,
+          "lon": 3.02498
+        },
+        {
+          "id": "node/6514032485",
+          "name": "Centre culturel du Canon d'Or",
+          "lat": 50.652127,
+          "lon": 3.040118,
+          "openingHours": "Mo,We,Sa 14:30-16:30; We 09:30-11:30"
+        },
+        {
+          "id": "way/206102198",
+          "name": "Bibliothèque universitaire de médecine, pôle recherche",
+          "lat": 50.607051,
+          "lon": 3.037447
+        },
+        {
+          "id": "node/7152634215",
+          "name": "Bibliothèque municipale",
+          "lat": 50.605801,
+          "lon": 3.078564,
+          "address": "Avenue Jean Jaurès 650"
+        },
+        {
+          "id": "way/58251170",
+          "name": "Médiathèque de La Madeleine",
+          "lat": 50.655301,
+          "lon": 3.068462,
+          "address": "Rue Gambetta 72",
+          "openingHours": "Tu 14:00-19:00; We-Sa 10:00-18:00; Th off"
+        },
+        {
+          "id": "node/8940738788",
+          "name": "Médiathèque Marguerite Yourcenar",
+          "lat": 50.601281,
+          "lon": 3.06789,
+          "address": "Rue Sadi Carnot 199"
+        },
+        {
+          "id": "node/13516481913",
+          "name": "Médiathèque Départementale du Nord",
+          "lat": 50.6234,
+          "lon": 3.103031,
+          "address": "Rue Ferdinand Mathias 140 bis",
+          "openingHours": "Mo-Fr 08:30-17:30"
+        },
+        {
+          "id": "node/5607090843",
+          "name": "Bibliothèque universitaire Santé",
+          "lat": 50.6049,
+          "lon": 3.029472,
+          "address": "Avenue Eugène Avinée 310"
+        },
+        {
+          "id": "way/84935876",
+          "name": "Bibliothèque pour tous",
+          "lat": 50.650055,
+          "lon": 3.091757,
+          "openingHours": "Tu 16:00-18:00; We 10:00-12:00,16:00-18:00; Sa 10:00-12:00"
+        },
+        {
+          "id": "way/81721767",
+          "name": "Bibliothèque du Square",
+          "lat": 50.614921,
+          "lon": 3.013385
+        },
+        {
+          "id": "node/11025741902",
+          "name": "Médiathèque Jules Verne",
+          "lat": 50.653779,
+          "lon": 3.026536
+        },
+        {
+          "id": "node/9931883792",
+          "name": "Médiathèque d'Hellemmes",
+          "lat": 50.627745,
+          "lon": 3.111356,
+          "address": "Rue Faidherbe 48"
+        },
+        {
+          "id": "node/4960130189",
+          "name": "Ferme du Mont Garin",
+          "lat": 50.657752,
+          "lon": 3.019219
+        },
+        {
+          "id": "way/79711988",
+          "name": "Médiathèque",
+          "lat": 50.614509,
+          "lon": 3.115907
+        },
+        {
+          "id": "node/3980803409",
+          "name": "Bibliothèque municipale \"Le Fort\"",
+          "lat": 50.644689,
+          "lon": 3.119874,
+          "address": "Rue de Normandie 2",
+          "openingHours": "Tu 14:00-18:00; We 10:00-12:30,14:00-18:00; Fr 14:00-18:00; Sa 10:00-12:30,14:00-18:00; Th,Su,Mo off"
+        },
+        {
+          "id": "node/4076727325",
+          "name": "Bibliothèque",
+          "lat": 50.627868,
+          "lon": 3.124722
+        },
+        {
+          "id": "way/108109476",
+          "name": "L’Odyssée Médiathèque",
+          "lat": 50.64661,
+          "lon": 2.994621,
+          "address": "Avenue de Dunkerque 794",
+          "openingHours": "Tu-Fr 14:00-18:00; We 10:00-18:00; Su 10:00-13:00; 2026 Jul 07-2026 Aug 29 Tu-Sa 09:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/520115321",
+          "name": "Agora - Bibliothèque universitaire",
+          "lat": 50.627229,
+          "lon": 3.127922
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:45.295Z"
+    },
+    "outdoor-gyms": {
+      "count": 82,
+      "pois": [
+        {
+          "id": "way/1053934816",
+          "name": "Plaine Félix Grimonprez",
+          "lat": 50.645749,
+          "lon": 3.047839
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:45.767Z"
+    },
+    "camp-sites": {
+      "count": 1,
+      "pois": [
+        {
+          "id": "way/259525141",
+          "name": "Camping des Ramiers",
+          "lat": 50.699716,
+          "lon": 3.075998,
+          "address": "Chemin des Ramiers 1"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:46.207Z"
+    },
+    "shelters": {
+      "count": 9,
+      "pois": [
+        {
+          "id": "way/338669844",
+          "name": "Préau",
+          "lat": 50.649916,
+          "lon": 2.998513
+        }
+      ],
+      "updatedAt": "2026-08-14T05:16:47.019Z"
+    },
+    "rest-areas": {
+      "count": 0,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:16:47.461Z"
+    },
+    "dump-stations": {
+      "count": 0,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:16:47.854Z"
+    }
+  }
 }

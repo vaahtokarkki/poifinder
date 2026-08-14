@@ -1,5 +1,1622 @@
 {
   "city": "bologna",
-  "generatedAt": "2026-08-13T05:33:14.847Z",
-  "categories": {}
+  "generatedAt": "2026-08-14T05:19:57.187Z",
+  "categories": {
+    "toilets": {
+      "count": 97,
+      "pois": [
+        {
+          "id": "node/4053203987",
+          "name": "Coop",
+          "lat": 44.501811,
+          "lon": 11.340561,
+          "address": "Piazza dei Martiri 1943-1945 1",
+          "openingHours": "Mo-Sa 08:00-21:00; Su 09:00-21:00; PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/149899546",
+          "name": "Casa gialla",
+          "lat": 44.501739,
+          "lon": 11.345663,
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "node/5930885747",
+          "name": "Servizi Igienici Comunali",
+          "lat": 44.50568,
+          "lon": 11.334248,
+          "address": "via Paolo Bovi Campeggi 11",
+          "openingHours": "24/7",
+          "wheelchair": "no",
+          "fee": "no"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:46.248Z"
+    },
+    "drinking-water": {
+      "count": 170,
+      "pois": [
+        {
+          "id": "node/4418782806",
+          "name": "Fontanella Lunetta Gamberini campi",
+          "lat": 44.476892,
+          "lon": 11.375168
+        },
+        {
+          "id": "node/14032163258",
+          "name": "Bamboza",
+          "lat": 44.479262,
+          "lon": 11.285515,
+          "fee": "no"
+        },
+        {
+          "id": "node/3076903337",
+          "name": "Fontana",
+          "lat": 44.456742,
+          "lon": 11.374793
+        },
+        {
+          "id": "node/4198319198",
+          "name": "1886 il Comune per il popolo",
+          "lat": 44.477136,
+          "lon": 11.277634,
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/4144210249",
+          "name": "Casa dell'Acqua",
+          "lat": 44.54599,
+          "lon": 11.358637
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:46.906Z"
+    },
+    "playgrounds": {
+      "count": 195,
+      "pois": [
+        {
+          "id": "node/1875877122",
+          "name": "Parco",
+          "lat": 44.486522,
+          "lon": 11.316819,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/629735102",
+          "name": "Casa Gialla",
+          "lat": 44.520428,
+          "lon": 11.326561
+        },
+        {
+          "id": "node/12843716693",
+          "name": "Parco Giochi",
+          "lat": 44.470107,
+          "lon": 11.395962
+        },
+        {
+          "id": "way/435000456",
+          "name": "Parco del Tarassaco",
+          "lat": 44.475575,
+          "lon": 11.28429,
+          "openingHours": "Mo-Fr 16:30-20:00; Sa,Su,PH 09:00-20:00"
+        },
+        {
+          "id": "way/1387209210",
+          "name": "Tribu",
+          "lat": 44.463855,
+          "lon": 11.39148
+        },
+        {
+          "id": "way/1167144039",
+          "name": "Giardino dei Platani",
+          "lat": 44.51777,
+          "lon": 11.279777
+        },
+        {
+          "id": "way/953298942",
+          "name": "Parco Primo sport",
+          "lat": 44.473688,
+          "lon": 11.409151
+        },
+        {
+          "id": "node/10559765463",
+          "name": "Lunafarm",
+          "lat": 44.515114,
+          "lon": 11.410673
+        },
+        {
+          "id": "node/12860643417",
+          "name": "Parco Avventura Cavaioni",
+          "lat": 44.444184,
+          "lon": 11.303807,
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:47.550Z"
+    },
+    "parking": {
+      "count": 1932,
+      "pois": [
+        {
+          "id": "way/23296945",
+          "name": "Piazza Franklin Delano Roosvelt",
+          "lat": 44.494216,
+          "lon": 11.340324,
+          "fee": "yes"
+        },
+        {
+          "id": "way/326630597",
+          "name": "Piazza Galileo Galilei",
+          "lat": 44.493522,
+          "lon": 11.340765,
+          "fee": "no"
+        },
+        {
+          "id": "node/4696869889",
+          "name": "Garage Autosystem",
+          "lat": 44.492991,
+          "lon": 11.340453,
+          "fee": "yes"
+        },
+        {
+          "id": "node/12842623330",
+          "name": "Garage Marconi",
+          "lat": 44.498883,
+          "lon": 11.338891,
+          "address": "Via Riva di Reno 65",
+          "fee": "yes"
+        },
+        {
+          "id": "way/30326491",
+          "name": "Piazza San Michele",
+          "lat": 44.493332,
+          "lon": 11.34937,
+          "address": "Piazza San Michele",
+          "fee": "yes"
+        },
+        {
+          "id": "way/1134004657",
+          "name": "Parcheggio interrato Piazza VIII Agosto",
+          "lat": 44.500382,
+          "lon": 11.345364,
+          "fee": "yes"
+        },
+        {
+          "id": "way/42861976",
+          "name": "Sferisterio",
+          "lat": 44.50131,
+          "lon": 11.34682,
+          "fee": "yes"
+        },
+        {
+          "id": "node/2997986687",
+          "name": "Parcheggio Riva Reno",
+          "lat": 44.501048,
+          "lon": 11.336441,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "way/1184813617",
+          "name": "Viale XII Giugno Parking",
+          "lat": 44.48606,
+          "lon": 11.346889
+        },
+        {
+          "id": "way/1172201973",
+          "name": "Parcheggio Corrente",
+          "lat": 44.504234,
+          "lon": 11.345789,
+          "fee": "no"
+        },
+        {
+          "id": "way/339332512",
+          "name": "Parcheggio Staveco",
+          "lat": 44.485154,
+          "lon": 11.344275,
+          "openingHours": "Mo-Su 00:00-01:00,07:00-24:00",
+          "fee": "yes"
+        },
+        {
+          "id": "way/49480925",
+          "name": "Piazza di Porta Castiglione",
+          "lat": 44.484943,
+          "lon": 11.348884,
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "node/4449687705",
+          "name": "Kiss & Ride",
+          "lat": 44.506984,
+          "lon": 11.343291,
+          "wheelchair": "yes",
+          "fee": "no"
+        },
+        {
+          "id": "way/148808954",
+          "name": "Parcheggio P1",
+          "lat": 44.506398,
+          "lon": 11.348619,
+          "fee": "yes"
+        },
+        {
+          "id": "way/23960126",
+          "name": "Viale del Risorgimento",
+          "lat": 44.488122,
+          "lon": 11.328173,
+          "fee": "yes"
+        },
+        {
+          "id": "way/1185055156",
+          "name": "Parcheggio di Piazza del Baraccano",
+          "lat": 44.485095,
+          "lon": 11.353773,
+          "fee": "yes"
+        },
+        {
+          "id": "node/12210808057",
+          "name": "Bologna Centrale P3",
+          "lat": 44.507753,
+          "lon": 11.338396,
+          "openingHours": "Mo-Su 05:30-23:00",
+          "fee": "yes"
+        },
+        {
+          "id": "way/148996646",
+          "name": "Nuovo Parcheggio Stazione Multipiano",
+          "lat": 44.508809,
+          "lon": 11.339818,
+          "openingHours": "PH,Mo-Su 00:00-24:00",
+          "fee": "yes"
+        },
+        {
+          "id": "way/1185564975",
+          "name": "Parcheggio Sant'Orsola-Malpighi",
+          "lat": 44.489514,
+          "lon": 11.362325,
+          "fee": "yes"
+        },
+        {
+          "id": "way/912952874",
+          "name": "Parcheggio Eurospin",
+          "lat": 44.50308,
+          "lon": 11.360884,
+          "address": "Via del Lavoro 8"
+        },
+        {
+          "id": "way/260210048",
+          "name": "Piazza Trento e Trieste",
+          "lat": 44.487673,
+          "lon": 11.361681,
+          "fee": "yes"
+        },
+        {
+          "id": "node/10589287390",
+          "name": "Garage Sant'Orsola",
+          "lat": 44.493032,
+          "lon": 11.364914,
+          "fee": "yes"
+        },
+        {
+          "id": "way/1196822748",
+          "name": "Piazzale Katia Bertasi, Mirella Fornasari, Euridia Bergianti, Nilla Natali e Rita Verde",
+          "lat": 44.511863,
+          "lon": 11.340632
+        },
+        {
+          "id": "way/150338543",
+          "name": "Tanari",
+          "lat": 44.507137,
+          "lon": 11.325755,
+          "fee": "yes"
+        },
+        {
+          "id": "node/3875307937",
+          "name": "Minganti",
+          "lat": 44.511445,
+          "lon": 11.352856,
+          "fee": "yes"
+        },
+        {
+          "id": "way/1185788731",
+          "name": "Campo Costituzione",
+          "lat": 44.510812,
+          "lon": 11.359673,
+          "fee": "yes"
+        },
+        {
+          "id": "relation/16031320",
+          "name": "Parcheggio Costituzione",
+          "lat": 44.511424,
+          "lon": 11.359494,
+          "fee": "yes"
+        },
+        {
+          "id": "node/11016003203",
+          "name": "Parcheggio Aldo Moro",
+          "lat": 44.510067,
+          "lon": 11.362254
+        },
+        {
+          "id": "way/415602716",
+          "name": "Parcheggio Ospedale Maggiore",
+          "lat": 44.50405,
+          "lon": 11.315416,
+          "address": "Largo Bartolo Nigrisoli 2",
+          "fee": "yes"
+        },
+        {
+          "id": "way/149144563",
+          "name": "Area 42",
+          "lat": 44.511562,
+          "lon": 11.364211
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:48.522Z"
+    },
+    "charging-stations": {
+      "count": 117,
+      "pois": [
+        {
+          "id": "node/2401541441",
+          "name": "Enel - stazione di ricarica",
+          "lat": 44.49413,
+          "lon": 11.33997
+        },
+        {
+          "id": "node/2401541395",
+          "name": "Enel",
+          "lat": 44.50262,
+          "lon": 11.33997
+        },
+        {
+          "id": "node/9807883766",
+          "name": "Enel X",
+          "lat": 44.48824,
+          "lon": 11.328162
+        },
+        {
+          "id": "node/5436964974",
+          "name": "DINAclub - Stazione di Ricarica e-Bike",
+          "lat": 44.509544,
+          "lon": 11.339088
+        },
+        {
+          "id": "node/12301113731",
+          "name": "Be Charge Charging Station",
+          "lat": 44.503172,
+          "lon": 11.360639,
+          "address": "Via Giacinta Pezzana 2"
+        },
+        {
+          "id": "node/10098586024",
+          "name": "HeraRicarica",
+          "lat": 44.508915,
+          "lon": 11.354742,
+          "fee": "yes"
+        },
+        {
+          "id": "node/11613769942",
+          "name": "Be Charge",
+          "lat": 44.49317,
+          "lon": 11.318654,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/6987061292",
+          "name": "Enel X Charging Station",
+          "lat": 44.513016,
+          "lon": 11.339755
+        },
+        {
+          "id": "node/9919419916",
+          "name": "Enerhub Charging Station",
+          "lat": 44.513805,
+          "lon": 11.328356
+        },
+        {
+          "id": "node/8491524290",
+          "name": "BeCharge",
+          "lat": 44.502883,
+          "lon": 11.313866
+        },
+        {
+          "id": "node/11630263694",
+          "name": "Hera",
+          "lat": 44.490955,
+          "lon": 11.31185
+        },
+        {
+          "id": "node/9919392795",
+          "name": "Rev Charging Station",
+          "lat": 44.505298,
+          "lon": 11.308538
+        },
+        {
+          "id": "node/8602683693",
+          "name": "COLONNINA CA 2 PRESE",
+          "lat": 44.49362,
+          "lon": 11.288379
+        },
+        {
+          "id": "node/10657916365",
+          "name": "Bologna - Casalecchio di Reno Supercharger",
+          "lat": 44.48375,
+          "lon": 11.268051,
+          "address": "Via Aldo Moro 64",
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "node/11390357169",
+          "name": "Ionity Bologna West",
+          "lat": 44.518941,
+          "lon": 11.264332,
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:48.941Z"
+    },
+    "gas-stations": {
+      "count": 139,
+      "pois": [
+        {
+          "id": "node/228026277",
+          "name": "Eni",
+          "lat": 44.498883,
+          "lon": 11.332837,
+          "openingHours": "PH,Mo-Su 00:00-24:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/428354775",
+          "name": "Q8",
+          "lat": 44.486512,
+          "lon": 11.34018
+        },
+        {
+          "id": "way/288790151",
+          "name": "Q8 Easy",
+          "lat": 44.503187,
+          "lon": 11.334032,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/312603815",
+          "name": "Enilive",
+          "lat": 44.499359,
+          "lon": 11.356791
+        },
+        {
+          "id": "node/228026499",
+          "name": "IP",
+          "lat": 44.500958,
+          "lon": 11.329501
+        },
+        {
+          "id": "node/228040390",
+          "name": "Esso",
+          "lat": 44.484166,
+          "lon": 11.356602
+        },
+        {
+          "id": "node/227581286",
+          "name": "Benzinaio Self Bertelli",
+          "lat": 44.506048,
+          "lon": 11.358827,
+          "address": "Via del Lavoro 21",
+          "openingHours": "00:00-24:00"
+        },
+        {
+          "id": "node/227622168",
+          "name": "Eni Selfy",
+          "lat": 44.485807,
+          "lon": 11.368204,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/227719529",
+          "name": "Ego",
+          "lat": 44.517425,
+          "lon": 11.324395
+        },
+        {
+          "id": "node/3190954069",
+          "name": "Sprint Gas",
+          "lat": 44.519899,
+          "lon": 11.362312
+        },
+        {
+          "id": "node/226931028",
+          "name": "Api",
+          "lat": 44.487561,
+          "lon": 11.38781
+        },
+        {
+          "id": "node/226951180",
+          "name": "Spring Gas",
+          "lat": 44.49736,
+          "lon": 11.295363
+        },
+        {
+          "id": "node/228086286",
+          "name": "REL",
+          "lat": 44.466126,
+          "lon": 11.370575,
+          "address": "Via Toscana 47"
+        },
+        {
+          "id": "way/1457833986",
+          "name": "Conad",
+          "lat": 44.498003,
+          "lon": 11.392622,
+          "address": "Via Arturo Gazzoni 4/2",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/227957395",
+          "name": "BC Energia",
+          "lat": 44.49402,
+          "lon": 11.395134,
+          "address": "Via Enrico Mattei 9"
+        },
+        {
+          "id": "node/4144210255",
+          "name": "Q8Easy",
+          "lat": 44.532793,
+          "lon": 11.354204
+        },
+        {
+          "id": "node/228041511",
+          "name": "Agip",
+          "lat": 44.535876,
+          "lon": 11.341652
+        },
+        {
+          "id": "node/228039746",
+          "name": "Metano",
+          "lat": 44.494554,
+          "lon": 11.400497,
+          "openingHours": "Mo-Su 06:10-00:45"
+        },
+        {
+          "id": "node/228265003",
+          "name": "Erg",
+          "lat": 44.45595,
+          "lon": 11.368304
+        },
+        {
+          "id": "node/227745007",
+          "name": "BC Borgo Panigale",
+          "lat": 44.517047,
+          "lon": 11.27687,
+          "address": "Via Marco Emilio Lepido 37"
+        },
+        {
+          "id": "way/158913200",
+          "name": "Stazione di Servizio",
+          "lat": 44.532499,
+          "lon": 11.287008
+        },
+        {
+          "id": "way/294267491",
+          "name": "Carburante AVGAS 100LL",
+          "lat": 44.532678,
+          "lon": 11.286529
+        },
+        {
+          "id": "node/11230082345",
+          "name": "REL Carburanti",
+          "lat": 44.488913,
+          "lon": 11.421018,
+          "address": "Via Galeazzo Marescotti 61"
+        },
+        {
+          "id": "node/10596741038",
+          "name": "Enercoop",
+          "lat": 44.488582,
+          "lon": 11.422538,
+          "address": "Via Galeazzo Marescotti"
+        },
+        {
+          "id": "node/227795460",
+          "name": "GPL Beyfin",
+          "lat": 44.468734,
+          "lon": 11.269844
+        },
+        {
+          "id": "node/3998396447",
+          "name": "Tartarini",
+          "lat": 44.553047,
+          "lon": 11.350295,
+          "openingHours": "Mo-Sa 07:00-19:30; Su 07:00-12:30"
+        },
+        {
+          "id": "node/11854170722",
+          "name": "Shell",
+          "lat": 44.515656,
+          "lon": 11.265184
+        },
+        {
+          "id": "way/294267502",
+          "name": "Carburante Jet A1",
+          "lat": 44.535197,
+          "lon": 11.279452
+        },
+        {
+          "id": "node/227652072",
+          "name": "Beyfin",
+          "lat": 44.528892,
+          "lon": 11.271597
+        },
+        {
+          "id": "node/228039733",
+          "name": "Bipiemme",
+          "lat": 44.525288,
+          "lon": 11.2553,
+          "address": "Via Alberelli 1",
+          "openingHours": "Mo-Su 06:00-21:50"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:49.466Z"
+    },
+    "ice-cream": {
+      "count": 101,
+      "pois": [
+        {
+          "id": "node/9848278126",
+          "name": "Officina gelato gusto italiano",
+          "lat": 44.494478,
+          "lon": 11.344145
+        },
+        {
+          "id": "node/11613037137",
+          "name": "Venchi",
+          "lat": 44.496182,
+          "lon": 11.342805,
+          "address": "Via dell'Indipendenza 8q"
+        },
+        {
+          "id": "node/13875890701",
+          "name": "il gelato di carducci",
+          "lat": 44.493958,
+          "lon": 11.344411
+        },
+        {
+          "id": "node/1312716239",
+          "name": "Gelateria Gianni",
+          "lat": 44.495847,
+          "lon": 11.340161,
+          "address": "Via Monte Grappa a11",
+          "openingHours": "Mo,Tu,Th 12:00-23:00; We 12:00-22:00; Fr,Sa 12:00-23:30; Su,PH 11:00-23:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/4275254542",
+          "name": "Grom",
+          "lat": 44.492836,
+          "lon": 11.342001,
+          "address": "Via Massimo D'Azeglio 13a",
+          "openingHours": "Su-Th 12:00-23:00; Fr,Sa 11:30-23:30"
+        },
+        {
+          "id": "node/5180652954",
+          "name": "Il Gelato di San Crispino",
+          "lat": 44.493976,
+          "lon": 11.34681,
+          "openingHours": "Mo-Su 12:00-00:00"
+        },
+        {
+          "id": "node/6425583572",
+          "name": "oggi",
+          "lat": 44.495704,
+          "lon": 11.338098
+        },
+        {
+          "id": "node/5426719921",
+          "name": "Majori Gelati",
+          "lat": 44.497209,
+          "lon": 11.346047,
+          "address": "Via Guglielmo Oberdan 24",
+          "openingHours": "Mo-Su 11:00-00:00"
+        },
+        {
+          "id": "node/2879533201",
+          "name": "Gelateria Caffetteria Saverio",
+          "lat": 44.498391,
+          "lon": 11.343741,
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/5951006893",
+          "name": "Cremeria Cavour",
+          "lat": 44.491134,
+          "lon": 11.344229,
+          "openingHours": "Tu-Sa 12:00-22:00; Su 11:00-22:00"
+        },
+        {
+          "id": "node/9970891685",
+          "name": "Cremeria la Vecchia Stalla",
+          "lat": 44.493004,
+          "lon": 11.347459,
+          "address": "Via Santo Stefano 14a",
+          "openingHours": "Mo-Sa 12:00-22:00; Su 11:00-22:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/5599684121",
+          "name": "Lilasù - Gelateria di Corte",
+          "lat": 44.493195,
+          "lon": 11.348763,
+          "address": "Strada Maggiore 19"
+        },
+        {
+          "id": "node/3646474020",
+          "name": "Gelateria delle Moline",
+          "lat": 44.498522,
+          "lon": 11.346842,
+          "address": "Via delle Moline 13b",
+          "openingHours": "We-Mo 09:00-01:00; Th 15:30-23:59"
+        },
+        {
+          "id": "node/1704530845",
+          "name": "Missbake",
+          "lat": 44.489916,
+          "lon": 11.341463,
+          "address": "Via Marsili 1c"
+        },
+        {
+          "id": "node/3752424159",
+          "name": "Delizie Bolognesi",
+          "lat": 44.499088,
+          "lon": 11.337775,
+          "address": "Via Riva di Reno 76g"
+        },
+        {
+          "id": "node/6976037585",
+          "name": "Galliera 49",
+          "lat": 44.500316,
+          "lon": 11.343102,
+          "address": "Via Galliera 49b"
+        },
+        {
+          "id": "node/4110033957",
+          "name": "Cremeria San Francesco",
+          "lat": 44.494735,
+          "lon": 11.334432,
+          "address": "Piazza San Francesco 1b",
+          "openingHours": "Mo off; Tu-Sa 12:30-22:00; Su 11:30-14:00,15:30-21:00"
+        },
+        {
+          "id": "node/11242036874",
+          "name": "Maritozzi & Gelato",
+          "lat": 44.494671,
+          "lon": 11.334418,
+          "openingHours": "Mo 16:00-23:00; Tu-Th 12:00-23:30; Fr, Sa 12:00-00:00; Su 11:00-23:00"
+        },
+        {
+          "id": "node/4708391495",
+          "name": "Cremeria Mascarella",
+          "lat": 44.498888,
+          "lon": 11.349576,
+          "address": "Via Mascarella 30b"
+        },
+        {
+          "id": "node/10221479372",
+          "name": "Sablé gelato",
+          "lat": 44.501371,
+          "lon": 11.344234,
+          "address": "Via dei Mille 3a",
+          "openingHours": "We-Su 11:30-19:00"
+        },
+        {
+          "id": "node/13994909501",
+          "name": "Princéss",
+          "lat": 44.500403,
+          "lon": 11.348079,
+          "address": "Via Irnerio 10/C"
+        },
+        {
+          "id": "node/1704575385",
+          "name": "La Sorbetteria Castiglione",
+          "lat": 44.487803,
+          "lon": 11.34818,
+          "address": "Via Castiglione 44",
+          "openingHours": "Mo,Sa-Su 09:00-23:00; Tu-Fr 11:00-23:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/1704757052",
+          "name": "Cremeria D'Azeglio",
+          "lat": 44.486836,
+          "lon": 11.339472,
+          "address": "Via Massimo D'Azeglio 75C"
+        },
+        {
+          "id": "node/4708239490",
+          "name": "Gelateria Crema di Latte",
+          "lat": 44.503338,
+          "lon": 11.340658
+        },
+        {
+          "id": "node/1242905075",
+          "name": "Il Gelatauro",
+          "lat": 44.494122,
+          "lon": 11.354702,
+          "address": "Via San Vitale 98b",
+          "openingHours": "Tu-Sa 10:00-21:00; Su 09:00-21:00"
+        },
+        {
+          "id": "node/14048999634",
+          "name": "Cremeria Islanda",
+          "lat": 44.490269,
+          "lon": 11.331722
+        },
+        {
+          "id": "node/13904756558",
+          "name": "M La Gelateria Artigianale",
+          "lat": 44.500573,
+          "lon": 11.332734
+        },
+        {
+          "id": "node/7484364208",
+          "name": "Cardo",
+          "lat": 44.488166,
+          "lon": 11.35222,
+          "address": "Via Santo Stefano 70b"
+        },
+        {
+          "id": "node/4319222530",
+          "name": "Cremeria Santo Stefano",
+          "lat": 44.488078,
+          "lon": 11.3523,
+          "address": "Via Santo Stefano 70c",
+          "openingHours": "We-Su 12:00-22:00"
+        },
+        {
+          "id": "node/11711587459",
+          "name": "La Sorbetteria Saragozza",
+          "lat": 44.490528,
+          "lon": 11.328651
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:49.949Z"
+    },
+    "dog-parks": {
+      "count": 27,
+      "pois": [
+        {
+          "id": "way/292553353",
+          "name": "Area sgambamento per cani",
+          "lat": 44.535775,
+          "lon": 11.304447
+        },
+        {
+          "id": "way/726856398",
+          "name": "Area sgambamento cani",
+          "lat": 44.506571,
+          "lon": 11.25706
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:50.407Z"
+    },
+    "picnic-spots": {
+      "count": 106,
+      "pois": [
+        {
+          "id": "node/12290307360",
+          "name": "La storia del baco da seta",
+          "lat": 44.517605,
+          "lon": 11.333347
+        },
+        {
+          "id": "node/12861014621",
+          "name": "Tavolo - foglia",
+          "lat": 44.517788,
+          "lon": 11.333094
+        },
+        {
+          "id": "node/12843736256",
+          "name": "Tavolo e panche",
+          "lat": 44.470059,
+          "lon": 11.395791
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:50.986Z"
+    },
+    "viewpoints": {
+      "count": 19,
+      "pois": [
+        {
+          "id": "node/4934938422",
+          "name": "Torre Azzoguidi",
+          "lat": 44.495212,
+          "lon": 11.344354
+        },
+        {
+          "id": "node/3797492433",
+          "name": "Villa Aldini",
+          "lat": 44.481596,
+          "lon": 11.330582,
+          "address": "Via dell'Osservanza"
+        },
+        {
+          "id": "node/13885871307",
+          "name": "view on Basilica",
+          "lat": 44.47667,
+          "lon": 11.294807
+        },
+        {
+          "id": "node/10911168097",
+          "name": "Punto osservazione Bregoli",
+          "lat": 44.47559,
+          "lon": 11.291614
+        },
+        {
+          "id": "node/8915946779",
+          "name": "Dolina della Spipola",
+          "lat": 44.446636,
+          "lon": 11.379998
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:51.459Z"
+    },
+    "beaches": {
+      "count": 2,
+      "pois": [
+        {
+          "id": "node/429594288",
+          "name": "Lido di Casalecchio",
+          "lat": 44.471148,
+          "lon": 11.280979,
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:51.936Z"
+    },
+    "atms": {
+      "count": 204,
+      "pois": [
+        {
+          "id": "node/3247428987",
+          "name": "Sparkasse - Cassa di Risparmio",
+          "lat": 44.495115,
+          "lon": 11.342503,
+          "address": "Via dell'Indipendenza 2c"
+        },
+        {
+          "id": "node/3645848565",
+          "name": "Monte dei Paschi di Siena",
+          "lat": 44.494855,
+          "lon": 11.343303,
+          "address": "Via Francesco Rizzoli 6"
+        },
+        {
+          "id": "node/1299949001",
+          "name": "Banca di Bologna",
+          "lat": 44.493528,
+          "lon": 11.342503,
+          "address": "Piazza Maggiore 5d"
+        },
+        {
+          "id": "node/4275242130",
+          "name": "UniCredit",
+          "lat": 44.493491,
+          "lon": 11.341795
+        },
+        {
+          "id": "node/3606935371",
+          "name": "BPER Banca",
+          "lat": 44.494656,
+          "lon": 11.344733,
+          "address": "Via Francesco Rizzoli 20"
+        },
+        {
+          "id": "node/3247425707",
+          "name": "Banco BPM",
+          "lat": 44.494064,
+          "lon": 11.344677,
+          "address": "Via degli Orefici 6"
+        },
+        {
+          "id": "node/3606935370",
+          "name": "BNL",
+          "lat": 44.494618,
+          "lon": 11.344993,
+          "address": "Via Francesco Rizzoli 26"
+        },
+        {
+          "id": "node/4696856492",
+          "name": "Cassa di Risparmio di Ravenna",
+          "lat": 44.493138,
+          "lon": 11.340491,
+          "address": "Piazza Galileo Galilei 6",
+          "openingHours": "Mo-Th 08:20-12:50/14:30-16:45; Fr 08:20-12:50/14:30-16:15"
+        },
+        {
+          "id": "node/5525082827",
+          "name": "Postamat",
+          "lat": 44.492139,
+          "lon": 11.345429
+        },
+        {
+          "id": "node/3614829607",
+          "name": "Banca D'Italia",
+          "lat": 44.490949,
+          "lon": 11.343577,
+          "address": "Piazza Cavour 6",
+          "openingHours": "Mo-Fr 08:15-13:30"
+        },
+        {
+          "id": "node/5493297260",
+          "name": "Credem",
+          "lat": 44.493659,
+          "lon": 11.348052,
+          "address": "Strada Maggiore 16",
+          "openingHours": "Mo-Fr 08:20-13:20/14:30-16:45"
+        },
+        {
+          "id": "node/583412438",
+          "name": "Deutsche Bank",
+          "lat": 44.497436,
+          "lon": 11.337973
+        },
+        {
+          "id": "node/4897780660",
+          "name": "Crédit Agricole",
+          "lat": 44.497044,
+          "lon": 11.337427
+        },
+        {
+          "id": "node/13434760085",
+          "name": "Banca Sella",
+          "lat": 44.491528,
+          "lon": 11.347703,
+          "address": "Via Luigi Carlo Farini 28/2",
+          "openingHours": "Mo-Fr 08:20-13:20,14:30-15:30; Sa-Su closed"
+        },
+        {
+          "id": "node/4275280760",
+          "name": "Banco S.Geminiano e S.Prospero",
+          "lat": 44.500265,
+          "lon": 11.344304
+        },
+        {
+          "id": "node/3982333857",
+          "name": "Cambiano",
+          "lat": 44.499522,
+          "lon": 11.346976,
+          "address": "Via Alessandrini 15"
+        },
+        {
+          "id": "node/3636735215",
+          "name": "Poste Italiane",
+          "lat": 44.500269,
+          "lon": 11.346076
+        },
+        {
+          "id": "node/13260231610",
+          "name": "Mediobanca Premier",
+          "lat": 44.498256,
+          "lon": 11.335475,
+          "address": "Via Riva di Reno 37",
+          "openingHours": "Mo-Th 08:30-13:15, 14:40-16:30; Fr 08:30-13:15, 14:40-16:00"
+        },
+        {
+          "id": "node/3636980670",
+          "name": "Intesa Sanpaolo",
+          "lat": 44.500496,
+          "lon": 11.347758,
+          "address": "Via Irnerio 8f"
+        },
+        {
+          "id": "node/5493297264",
+          "name": "Banco S. Geminiano e S. Prospero",
+          "lat": 44.49208,
+          "lon": 11.35226
+        },
+        {
+          "id": "node/3993449274",
+          "name": "Banca Etica",
+          "lat": 44.504607,
+          "lon": 11.346935,
+          "address": "Viale Angelo Masini 4",
+          "openingHours": "Mo-Fr 08:45-13:15,14:30-16:30; PH -1 day 08:45-11:20; Sa,Su,PH off"
+        },
+        {
+          "id": "node/2381353221",
+          "name": "Carisbo",
+          "lat": 44.505834,
+          "lon": 11.342052
+        },
+        {
+          "id": "node/6606336161",
+          "name": "Banca Reale",
+          "lat": 44.486855,
+          "lon": 11.354084
+        },
+        {
+          "id": "node/961415400",
+          "name": "UniCredit Bank",
+          "lat": 44.494878,
+          "lon": 11.326051
+        },
+        {
+          "id": "node/2942610554",
+          "name": "Agenzia",
+          "lat": 44.507133,
+          "lon": 11.345242,
+          "address": "Via de' Carracci 7"
+        },
+        {
+          "id": "node/2942610555",
+          "name": "Banque Chaabi du Maroc",
+          "lat": 44.507162,
+          "lon": 11.345049,
+          "address": "Via de' Carracci 7"
+        },
+        {
+          "id": "node/415812409",
+          "name": "Bologna 15",
+          "lat": 44.510021,
+          "lon": 11.340126,
+          "address": "Piazza Liber Paradisus 19b",
+          "openingHours": "Mo-Fr 08:20-19:05; Sa 08:20-12:35"
+        },
+        {
+          "id": "node/4280372677",
+          "name": "Pam",
+          "lat": 44.487582,
+          "lon": 11.362302,
+          "address": "Piazza Trento e Trieste 1d",
+          "openingHours": "Mo-Su 09:00-22:00"
+        },
+        {
+          "id": "node/418820727",
+          "name": "Via Turati",
+          "lat": 44.490603,
+          "lon": 11.320965,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/6832257193",
+          "name": "Unipol",
+          "lat": 44.490268,
+          "lon": 11.310263,
+          "openingHours": "24/7"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:52.577Z"
+    },
+    "post-boxes": {
+      "count": 46,
+      "pois": [
+        {
+          "id": "node/4807308428",
+          "name": "Poste Italiane",
+          "lat": 44.49246,
+          "lon": 11.341146
+        },
+        {
+          "id": "node/4708260294",
+          "name": "Mail Boxes Etc",
+          "lat": 44.502795,
+          "lon": 11.340074
+        },
+        {
+          "id": "node/4524690890",
+          "name": "UnipolSai",
+          "lat": 44.495075,
+          "lon": 11.391075
+        },
+        {
+          "id": "node/4693593989",
+          "name": "Fototessere",
+          "lat": 44.483554,
+          "lon": 11.270607
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:53.017Z"
+    },
+    "recycling": {
+      "count": 1150,
+      "pois": [
+        {
+          "id": "node/2303794112",
+          "name": "raccattaraee.net",
+          "lat": 44.4876,
+          "lon": 11.343137
+        },
+        {
+          "id": "node/3799143552",
+          "name": "Raccolta ndumenti usati",
+          "lat": 44.51778,
+          "lon": 11.353529,
+          "address": "Via Vittorio Alfieri"
+        },
+        {
+          "id": "node/13096539939",
+          "name": "Riciclaggio dei rifiuti",
+          "lat": 44.477157,
+          "lon": 11.370687
+        },
+        {
+          "id": "way/156670333",
+          "name": "Stazione ecologica di Bologna Ferrarese",
+          "lat": 44.524951,
+          "lon": 11.362437,
+          "address": "Via Ferrarese 211"
+        },
+        {
+          "id": "node/8457794720",
+          "name": "Stazione Ecologica di Bologna Stradelli",
+          "lat": 44.484554,
+          "lon": 11.413334
+        },
+        {
+          "id": "node/8457788431",
+          "name": "Stazione Ecologica di Bologna CAAB",
+          "lat": 44.520045,
+          "lon": 11.407535
+        },
+        {
+          "id": "way/312572844",
+          "name": "Isola Ecologica HERA S.p.A.",
+          "lat": 44.521691,
+          "lon": 11.261983,
+          "address": "Via Marco Emilio Lepido"
+        },
+        {
+          "id": "node/13450296701",
+          "name": "Second life - area del riuso di Bologna",
+          "lat": 44.521671,
+          "lon": 11.261894,
+          "address": "Via Marco Emilio Lepido 186/7",
+          "openingHours": "We-Th 14:00-17:30; Fr 09:00-12:30; Sa 09:00-12:30, 14:00-17:30"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:53.679Z"
+    },
+    "luggage-storage": {
+      "count": 9,
+      "pois": [
+        {
+          "id": "node/11771938293",
+          "name": "Deposito Bagagli Bologna",
+          "lat": 44.494488,
+          "lon": 11.34838,
+          "address": "Via San Vitale 7b",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/447736953",
+          "name": "Deposito bagagli",
+          "lat": 44.504008,
+          "lon": 11.346552
+        },
+        {
+          "id": "node/12157432879",
+          "name": "Stow Your Bags",
+          "lat": 44.50552,
+          "lon": 11.339754,
+          "address": "Viale Pietro Pietramellara 27c",
+          "openingHours": "Mo-Su 07:00-23:00",
+          "fee": "yes"
+        },
+        {
+          "id": "way/1233591963",
+          "name": "Ki Point",
+          "lat": 44.505696,
+          "lon": 11.341331,
+          "openingHours": "07:00-22:00"
+        },
+        {
+          "id": "node/13457955239",
+          "name": "Kibag",
+          "lat": 44.506119,
+          "lon": 11.342013,
+          "openingHours": "Mo-Su 07:00-22:00"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:54.054Z"
+    },
+    "libraries": {
+      "count": 100,
+      "pois": [
+        {
+          "id": "node/11073703456",
+          "name": "Salaborsa Ragazzi",
+          "lat": 44.494574,
+          "lon": 11.341789,
+          "address": "Piazza del Nettuno 3"
+        },
+        {
+          "id": "node/599688245",
+          "name": "Biblioteca Salaborsa",
+          "lat": 44.494773,
+          "lon": 11.341423,
+          "address": "Piazza del Nettuno 3",
+          "openingHours": "Mo 14:30-20:00; Tu-Fr 10:00-20:00; Sa 10:00-19:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11078422555",
+          "name": "Biblioteca del Museo Civico del Risorgimento",
+          "lat": 44.492999,
+          "lon": 11.344352,
+          "address": "Via de' Musei 8"
+        },
+        {
+          "id": "node/4556891292",
+          "name": "Biblioteca Comunale dell'Archiginnasio",
+          "lat": 44.491872,
+          "lon": 11.343854,
+          "address": "Piazza Galvani 1",
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 09:00-14:00"
+        },
+        {
+          "id": "node/2089000042",
+          "name": "Biblioteca d'arte e di storia di San Giorgio in Poggiale",
+          "lat": 44.497444,
+          "lon": 11.339158,
+          "address": "Via Nazario Sauro 20/2"
+        },
+        {
+          "id": "node/11458251766",
+          "name": "Mediateca Giuseppe Guglielmi",
+          "lat": 44.496768,
+          "lon": 11.346985,
+          "address": "Via Marsala 31"
+        },
+        {
+          "id": "node/9880886176",
+          "name": "Biblioteca Fondazione Gramsci ER",
+          "lat": 44.497404,
+          "lon": 11.347484
+        },
+        {
+          "id": "node/9849925635",
+          "name": "Biblioteca delle Arti. Sezione di Musica e Spettacolo",
+          "lat": 44.491357,
+          "lon": 11.339011,
+          "address": "Via Barberia 4",
+          "openingHours": "Mo-Fr 09:00-18:40",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/11338072272",
+          "name": "biblioteca Spagna",
+          "lat": 44.490857,
+          "lon": 11.339336
+        },
+        {
+          "id": "node/3790680081",
+          "name": "Biblioteca del Conservatorio Statale di Musica Gian Battista Martini",
+          "lat": 44.495152,
+          "lon": 11.349205
+        },
+        {
+          "id": "node/9770098458",
+          "name": "Biblioteca del Dipartimento di Storia Culture Civiltà - DiSCi. Sezione di Scienze del Moderno",
+          "lat": 44.490558,
+          "lon": 11.34783,
+          "address": "Piazza San Giovanni in Monte 2"
+        },
+        {
+          "id": "node/9785587991",
+          "name": "Biblioteca Universitaria del Dipartimento di Storia Culture Civiltà. Sezione di Archeologia",
+          "lat": 44.490519,
+          "lon": 11.347893,
+          "address": "Piazza San Giovanni in Monte 2",
+          "openingHours": "Mo-Fr 09:00-18:00"
+        },
+        {
+          "id": "node/9785625714",
+          "name": "Biblioteca Universitaria del Dipartimento di Storia Culture Civiltà. Sezione Storia Medievale",
+          "lat": 44.490477,
+          "lon": 11.347968,
+          "address": "Piazza San Giovanni in Monte 2",
+          "openingHours": "Mo-Fr 09:00-18:00"
+        },
+        {
+          "id": "node/9785542067",
+          "name": "Biblioteca Universitaria \"Ezio Raimondi\" del Dipartimento di Filologia Classica e Italianistica",
+          "lat": 44.49657,
+          "lon": 11.35111,
+          "openingHours": "Mo-Fr 09:00-18:30"
+        },
+        {
+          "id": "node/11051615178",
+          "name": "Istituto storico Parri",
+          "lat": 44.493491,
+          "lon": 11.33385,
+          "address": "Via Sant'Isaia 18"
+        },
+        {
+          "id": "node/2952615496",
+          "name": "Sala Studio Petroni",
+          "lat": 44.495084,
+          "lon": 11.351665,
+          "address": "Via Giuseppe Petroni 13b",
+          "openingHours": "Mo-Su 09:00-23:45"
+        },
+        {
+          "id": "node/1685776652",
+          "name": "Biblioteca di discipline umanistiche",
+          "lat": 44.496954,
+          "lon": 11.351242,
+          "address": "Via Zamboni 36",
+          "openingHours": "Mo-Fr 09:00-23:50; Sa,Su 11:00-19:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13468906601",
+          "name": "Biblioteca Universitaria \"Ezio Raimondi\" - Sezione di Discipline Umanistiche",
+          "lat": 44.496704,
+          "lon": 11.351522,
+          "address": "Via Zamboni 36",
+          "openingHours": "Mo-Fr 09:00-23:50; Sa-Su 11:00-19:00"
+        },
+        {
+          "id": "node/9772645276",
+          "name": "Biblioteca Universitaria del Dipartimento di Filosofia e Comunicazione",
+          "lat": 44.500704,
+          "lon": 11.337911,
+          "address": "Via Azzo Gardino 23",
+          "openingHours": "Mo-Fr 08:30-18:30"
+        },
+        {
+          "id": "node/9817265329",
+          "name": "Biblioteca del Dipartimento di Filosofia e Comunicazione - FILCOM. Sezione di Filosofia",
+          "lat": 44.496821,
+          "lon": 11.35163,
+          "address": "Via Zamboni 38",
+          "openingHours": "Mo-Th 09:00-18:00; Fr 09:00-14:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1704264322",
+          "name": "Biblioteca Giuridica Antonio Cicu",
+          "lat": 44.49658,
+          "lon": 11.351726,
+          "address": "Via Zamboni 27/29",
+          "openingHours": "Mo-Fr 08:30-19:00; Sa 08:30-13:30"
+        },
+        {
+          "id": "node/9819401976",
+          "name": "Biblioteca del Dipartimento di Lingue, Letterature e Culture moderne - LILEC",
+          "lat": 44.489867,
+          "lon": 11.348916,
+          "address": "Cartoleria 5",
+          "openingHours": "Mo-Fr 09:00-18:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/9819513060",
+          "name": "Biblioteca del Dipartimento di Storia Culture Civiltà - DiSCi. Sezione di Storia antica",
+          "lat": 44.496833,
+          "lon": 11.351844,
+          "address": "Via Zamboni 38",
+          "openingHours": "Mo-Fr 09:00-18:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/9853501780",
+          "name": "Biblioteca del Dipartimento di Scienze economiche - DSE",
+          "lat": 44.49762,
+          "lon": 11.351684,
+          "address": "Via delle Belle Arti 33",
+          "openingHours": "Mo-Fr 08:00-24:00; Sa 08:00- 17:45; Su 09:00- 17:45"
+        },
+        {
+          "id": "way/1230063602",
+          "name": "Biblioteca Walter Bigiavi",
+          "lat": 44.497631,
+          "lon": 11.351806,
+          "openingHours": "Mo-Fr 08:00-24:00; Sa 08:00-17:45; Su 09:00-17:45"
+        },
+        {
+          "id": "node/9781314873",
+          "name": "Biblioteca Universitaria di Discipline Economico Aziendali \"Walter Bigiavi\"",
+          "lat": 44.497579,
+          "lon": 11.351866,
+          "address": "Via delle Belle Arti 33",
+          "openingHours": "Mo-Fr 08:00-24:00; Sa 08:00- 17:45; Su 09:00- 17:45"
+        },
+        {
+          "id": "node/9781360643",
+          "name": "Biblioteca Universitaria Giuseppe Testoni del Dipartimento di Scienze Aziendali",
+          "lat": 44.497179,
+          "lon": 11.352081,
+          "address": "Piazza Antonino Scaravilli 1"
+        },
+        {
+          "id": "node/9769811762",
+          "name": "Biblioteca universitaria del Dipartimento di Scienze Statistiche \"Paolo Fortunati\"",
+          "lat": 44.497607,
+          "lon": 11.352285,
+          "address": "Via delle Belle Arti 41",
+          "openingHours": "Mo-Fr 09:00-19:00",
+          "wheelchair": "wheelchair_access"
+        },
+        {
+          "id": "node/9850204575",
+          "name": "Biblioteca del Dipartimento di Storia Culture Civiltà - DiSCi. Sezione di Orientalistica e Antropologia",
+          "lat": 44.496668,
+          "lon": 11.35293,
+          "address": "Via Zamboni 33",
+          "openingHours": "Mo-Fr 09:00-16:30"
+        },
+        {
+          "id": "node/655135677",
+          "name": "Biblioteca Universitaria",
+          "lat": 44.497078,
+          "lon": 11.35302,
+          "address": "Via Zamboni 33",
+          "openingHours": "Mo-Fr 09:00-18:45; Sa 09:00-13:30; PH off",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:54.678Z"
+    },
+    "outdoor-gyms": {
+      "count": 22,
+      "pois": [
+        {
+          "id": "node/9006076674",
+          "name": "Calisthenics",
+          "lat": 44.470034,
+          "lon": 11.400905
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:55.098Z"
+    },
+    "camp-sites": {
+      "count": 1,
+      "pois": [
+        {
+          "id": "way/265892092",
+          "name": "Centro Turistico Città di Bologna",
+          "lat": 44.524613,
+          "lon": 11.37513
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:55.531Z"
+    },
+    "shelters": {
+      "count": 11,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:19:56.256Z"
+    },
+    "rest-areas": {
+      "count": 2,
+      "pois": [
+        {
+          "id": "way/1534496147",
+          "name": "Area di sosta La Palazza",
+          "lat": 44.448126,
+          "lon": 11.378301
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:56.693Z"
+    },
+    "dump-stations": {
+      "count": 2,
+      "pois": [
+        {
+          "id": "node/4913527401",
+          "name": "Camper Service San Lazzaro di Savena",
+          "lat": 44.470618,
+          "lon": 11.41947,
+          "wheelchair": "yes",
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:57.086Z"
+    }
+  }
 }

@@ -1,5 +1,948 @@
 {
   "city": "venice",
-  "generatedAt": "2026-08-13T05:32:15.846Z",
-  "categories": {}
+  "generatedAt": "2026-08-14T05:19:23.095Z",
+  "categories": {
+    "toilets": {
+      "count": 88,
+      "pois": [
+        {
+          "id": "way/206333242",
+          "name": "Biblioteca Nazionale Marciana",
+          "lat": 45.433479,
+          "lon": 12.339234,
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:00-13:30; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/138801055",
+          "name": "Serra dei Giardini",
+          "lat": 45.430736,
+          "lon": 12.355412,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/132766062",
+          "name": "Lidl",
+          "lat": 45.484957,
+          "lon": 12.281015,
+          "openingHours": "Mo-Sa 08:00-20:30; Su 08:30-20:00",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:12.925Z"
+    },
+    "drinking-water": {
+      "count": 179,
+      "pois": [
+        {
+          "id": "node/9952303217",
+          "name": "Campo San Leonardo",
+          "lat": 45.443597,
+          "lon": 12.326863,
+          "address": "Strada Nova"
+        },
+        {
+          "id": "node/5368105261",
+          "name": "Fontana",
+          "lat": 45.434163,
+          "lon": 12.323624,
+          "wheelchair": "yes",
+          "fee": "no"
+        },
+        {
+          "id": "node/1504407864",
+          "name": "Ponte del Squero",
+          "lat": 45.4321,
+          "lon": 12.325422
+        },
+        {
+          "id": "node/1504407916",
+          "name": "Sacca Fisola Boat Stop",
+          "lat": 45.428805,
+          "lon": 12.316524
+        },
+        {
+          "id": "node/1504407646",
+          "name": "Chiesa del Santissimo Redentore",
+          "lat": 45.425343,
+          "lon": 12.332283
+        },
+        {
+          "id": "node/5554615421",
+          "name": "Acqua potabile",
+          "lat": 45.454523,
+          "lon": 12.388822
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:13.528Z"
+    },
+    "playgrounds": {
+      "count": 23,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:19:14.168Z"
+    },
+    "parking": {
+      "count": 94,
+      "pois": [
+        {
+          "id": "way/1392199147",
+          "name": "Park 280",
+          "lat": 45.440857,
+          "lon": 12.314112,
+          "fee": "yes"
+        },
+        {
+          "id": "way/358532490",
+          "name": "P5",
+          "lat": 45.439626,
+          "lon": 12.312218,
+          "fee": "yes"
+        },
+        {
+          "id": "way/138843473",
+          "name": "Autorimessa Comunale",
+          "lat": 45.43842,
+          "lon": 12.31736,
+          "wheelchair": "limited",
+          "fee": "yes"
+        },
+        {
+          "id": "node/5631920280",
+          "name": "Parcheggio Sant'Andrea",
+          "lat": 45.438005,
+          "lon": 12.317273,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "node/12673770797",
+          "name": "Cruise Parking",
+          "lat": 45.438781,
+          "lon": 12.311732,
+          "address": "Marittima Fabbricato 248",
+          "fee": "yes"
+        },
+        {
+          "id": "way/138843184",
+          "name": "San Marco",
+          "lat": 45.437457,
+          "lon": 12.316781,
+          "wheelchair": "no",
+          "fee": "yes"
+        },
+        {
+          "id": "way/1467466135",
+          "name": "Autopark Doge",
+          "lat": 45.437417,
+          "lon": 12.317772,
+          "fee": "yes"
+        },
+        {
+          "id": "way/53130440",
+          "name": "Венеция",
+          "lat": 45.437467,
+          "lon": 12.318653,
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "node/13752447677",
+          "name": "Interparking Venezia",
+          "lat": 45.44332,
+          "lon": 12.307635
+        },
+        {
+          "id": "way/23243985",
+          "name": "Tronchetto Parking",
+          "lat": 45.442535,
+          "lon": 12.306692,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "way/1434694905",
+          "name": "Venice Parking Service - Parcheggio Venezia Tronchetto",
+          "lat": 45.440054,
+          "lon": 12.304619
+        },
+        {
+          "id": "way/350633261",
+          "name": "Porta Gialla",
+          "lat": 45.467547,
+          "lon": 12.279802,
+          "fee": "yes"
+        },
+        {
+          "id": "way/47951273",
+          "name": "Venice City Park",
+          "lat": 45.467645,
+          "lon": 12.266325,
+          "address": "Via dei Petroli",
+          "fee": "yes"
+        },
+        {
+          "id": "way/1198412579",
+          "name": "Parcheggio Terminal Service",
+          "lat": 45.468582,
+          "lon": 12.266225,
+          "address": "Via dei Petroli 3",
+          "fee": "yes"
+        },
+        {
+          "id": "way/1198412567",
+          "name": "Park Terminal Service",
+          "lat": 45.469274,
+          "lon": 12.265959,
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "way/661256546",
+          "name": "Porta Blu",
+          "lat": 45.473161,
+          "lon": 12.27042,
+          "fee": "yes"
+        },
+        {
+          "id": "way/98230150",
+          "name": "Fusina Parking",
+          "lat": 45.420377,
+          "lon": 12.255052,
+          "fee": "yes"
+        },
+        {
+          "id": "way/202415523",
+          "name": "Porta Rossa",
+          "lat": 45.475641,
+          "lon": 12.26865,
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:14.903Z"
+    },
+    "charging-stations": {
+      "count": 10,
+      "pois": [
+        {
+          "id": "node/2401540659",
+          "name": "Enel - stazione di ricarica",
+          "lat": 45.43903,
+          "lon": 12.31248
+        },
+        {
+          "id": "node/11122125013",
+          "name": "Enel X",
+          "lat": 45.467326,
+          "lon": 12.280032,
+          "openingHours": "24/7",
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:15.336Z"
+    },
+    "gas-stations": {
+      "count": 16,
+      "pois": [
+        {
+          "id": "node/228126141",
+          "name": "Eni",
+          "lat": 45.441429,
+          "lon": 12.315613
+        },
+        {
+          "id": "node/4737693659",
+          "name": "IP",
+          "lat": 45.447759,
+          "lon": 12.320438
+        },
+        {
+          "id": "node/1434172753",
+          "name": "Total",
+          "lat": 45.419888,
+          "lon": 12.375257,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/227705434",
+          "name": "Beyfin",
+          "lat": 45.484744,
+          "lon": 12.286266,
+          "openingHours": "24/7",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/228107096",
+          "name": "Shell",
+          "lat": 45.480788,
+          "lon": 12.272301,
+          "openingHours": "24/7",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/5851834891",
+          "name": "Esso",
+          "lat": 45.484981,
+          "lon": 12.273441
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:15.803Z"
+    },
+    "ice-cream": {
+      "count": 69,
+      "pois": [
+        {
+          "id": "node/13894545144",
+          "name": "Aroma Gelato Artigianale",
+          "lat": 45.438802,
+          "lon": 12.318587,
+          "address": "Santa Croce 520/A",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3690028533",
+          "name": "Grom",
+          "lat": 45.440971,
+          "lon": 12.32089,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/4212022706",
+          "name": "Venchi",
+          "lat": 45.441224,
+          "lon": 12.321193,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13894339050",
+          "name": "Cannaregio 55",
+          "lat": 45.441364,
+          "lon": 12.322311,
+          "address": "Cannaregio 55"
+        },
+        {
+          "id": "node/1522280955",
+          "name": "Polo Nord",
+          "lat": 45.436816,
+          "lon": 12.319889
+        },
+        {
+          "id": "node/3527984723",
+          "name": "Il Golosone",
+          "lat": 45.441729,
+          "lon": 12.322773,
+          "openingHours": "Mo-Su 10:00-01:00"
+        },
+        {
+          "id": "node/6337806743",
+          "name": "Vision Bar",
+          "lat": 45.440857,
+          "lon": 12.323101
+        },
+        {
+          "id": "node/10788293661",
+          "name": "Gelateria dei Fiori",
+          "lat": 45.436404,
+          "lon": 12.320018
+        },
+        {
+          "id": "node/13994633933",
+          "name": "Bella Ciao",
+          "lat": 45.436917,
+          "lon": 12.321841
+        },
+        {
+          "id": "node/2959456458",
+          "name": "Gelateria Alaska",
+          "lat": 45.440639,
+          "lon": 12.325003
+        },
+        {
+          "id": "node/1522322379",
+          "name": "Al Garzoti",
+          "lat": 45.439932,
+          "lon": 12.325492
+        },
+        {
+          "id": "node/6334340685",
+          "name": "SKB Gelato Italiano",
+          "lat": 45.434678,
+          "lon": 12.323498,
+          "address": "Calle del Forno 2975"
+        },
+        {
+          "id": "node/3523457968",
+          "name": "Gelateria Artigianale",
+          "lat": 45.443633,
+          "lon": 12.32665
+        },
+        {
+          "id": "node/7424651657",
+          "name": "Millevoglie 2.0 (da tarcisio)",
+          "lat": 45.436451,
+          "lon": 12.326153,
+          "openingHours": "10:00-24:00; Dec-Jan 10:00-23:00"
+        },
+        {
+          "id": "node/13979780436",
+          "name": "Maravegia",
+          "lat": 45.435679,
+          "lon": 12.325798,
+          "address": "Crosera 3835",
+          "openingHours": "Mo 10:00-23:30; We-Su 10:00-23:30"
+        },
+        {
+          "id": "node/3389313404",
+          "name": "Gelato di Natura",
+          "lat": 45.440517,
+          "lon": 12.328186,
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/2262139777",
+          "name": "Gelateria il Doge",
+          "lat": 45.433857,
+          "lon": 12.324087,
+          "address": "Rio Terà Canal 3058a"
+        },
+        {
+          "id": "node/7804961785",
+          "name": "Il doge",
+          "lat": 45.436216,
+          "lon": 12.327826
+        },
+        {
+          "id": "node/2486203145",
+          "name": "Il Gelatone",
+          "lat": 45.443452,
+          "lon": 12.330504
+        },
+        {
+          "id": "node/10008734856",
+          "name": "Squero",
+          "lat": 45.430849,
+          "lon": 12.326666,
+          "openingHours": "Mo-Sa 11:00-18:00; Su 12:00-18:00"
+        },
+        {
+          "id": "node/1879269057",
+          "name": "Gelateria Paolin",
+          "lat": 45.433705,
+          "lon": 12.33052
+        },
+        {
+          "id": "node/4368513896",
+          "name": "Bacaro del Gelato",
+          "lat": 45.444067,
+          "lon": 12.333047,
+          "address": "Fondamenta de la Misericordia 2499",
+          "openingHours": "Mo-Su 10:00-22:00"
+        },
+        {
+          "id": "node/9688417545",
+          "name": "Gelateria Gelsomino & Bubble Tea",
+          "lat": 45.439328,
+          "lon": 12.333878
+        },
+        {
+          "id": "node/5827778185",
+          "name": "Amorino",
+          "lat": 45.43871,
+          "lon": 12.334338,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3202404674",
+          "name": "Gelateria Nico",
+          "lat": 45.429609,
+          "lon": 12.326144,
+          "address": "Fondamenta Zattere al Ponte Longo 922",
+          "openingHours": "Su 07:30-22:30; Mo-Sa 07:00-22:30; PH closed",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/7931958785",
+          "name": "Gelateria Igloo",
+          "lat": 45.43473,
+          "lon": 12.332807,
+          "address": "Calle de la Mandola 3651"
+        },
+        {
+          "id": "node/4851771735",
+          "name": "Gelateria Ca' d'Oro",
+          "lat": 45.440715,
+          "lon": 12.33511,
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/9385783086",
+          "name": "Gelateria al campanile",
+          "lat": 45.432943,
+          "lon": 12.331764,
+          "openingHours": "Mo-Su 11:15-19:00; PH closed",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11536663669",
+          "name": "Suso Baku",
+          "lat": 45.438891,
+          "lon": 12.336276
+        },
+        {
+          "id": "node/7143011585",
+          "name": "Gelato di Natura - Campo Santi Apostoli",
+          "lat": 45.440133,
+          "lon": 12.336665
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:16.280Z"
+    },
+    "dog-parks": {
+      "count": 3,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:19:16.710Z"
+    },
+    "picnic-spots": {
+      "count": 22,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:19:17.223Z"
+    },
+    "viewpoints": {
+      "count": 18,
+      "pois": [
+        {
+          "id": "node/7578687313",
+          "name": "Campanile di San Marco",
+          "lat": 45.434042,
+          "lon": 12.339046,
+          "wheelchair": "no",
+          "fee": "yes"
+        },
+        {
+          "id": "node/6603976551",
+          "name": "Punta della Dogana",
+          "lat": 45.430949,
+          "lon": 12.337091,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/7599929782",
+          "name": "Campanile di San Giorgio Maggiore",
+          "lat": 45.429496,
+          "lon": 12.34381,
+          "fee": "yes"
+        },
+        {
+          "id": "node/6328980392",
+          "name": "Renazurra Lido",
+          "lat": 45.41378,
+          "lon": 12.373774
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:17.698Z"
+    },
+    "beaches": {
+      "count": 4,
+      "pois": [
+        {
+          "id": "node/7746305567",
+          "name": "Spiaggia libera",
+          "lat": 45.418086,
+          "lon": 12.383049,
+          "fee": "no"
+        },
+        {
+          "id": "way/264206535",
+          "name": "Lido di Venezia",
+          "lat": 45.412607,
+          "lon": 12.380655
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:18.178Z"
+    },
+    "atms": {
+      "count": 97,
+      "pois": [
+        {
+          "id": "node/4072529688",
+          "name": "Agenzia 365",
+          "lat": 45.441184,
+          "lon": 12.321155,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3393916514",
+          "name": "Monte dei Paschi di Siena",
+          "lat": 45.440741,
+          "lon": 12.322716
+        },
+        {
+          "id": "node/443122696",
+          "name": "Banco BPM",
+          "lat": 45.441552,
+          "lon": 12.322741,
+          "openingHours": "Mo-Fr 08:30-13:30,14:45-16:05",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/5226259512",
+          "name": "UniCredit",
+          "lat": 45.435452,
+          "lon": 12.324922,
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/10922234737",
+          "name": "Euronet",
+          "lat": 45.443772,
+          "lon": 12.327933
+        },
+        {
+          "id": "node/10799300409",
+          "name": "Postamat",
+          "lat": 45.437127,
+          "lon": 12.330077
+        },
+        {
+          "id": "node/443122704",
+          "name": "Centromarca Banca",
+          "lat": 45.441453,
+          "lon": 12.33349,
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/443122706",
+          "name": "Intesa Sanpaolo",
+          "lat": 45.440852,
+          "lon": 12.334786,
+          "openingHours": "Mo-Fr 08:30-13:00,14:15-16:55",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/5909823667",
+          "name": "Credem",
+          "lat": 45.435702,
+          "lon": 12.334462
+        },
+        {
+          "id": "node/12361451676",
+          "name": "Banco San Marco",
+          "lat": 45.435179,
+          "lon": 12.334173
+        },
+        {
+          "id": "node/5909823664",
+          "name": "Deutsche Bank",
+          "lat": 45.436172,
+          "lon": 12.334988,
+          "address": "San Marco 4602/A",
+          "openingHours": "Mo-Fr 08:20-13:20,14:40-16:00"
+        },
+        {
+          "id": "node/9200788862",
+          "name": "Banca Popolare",
+          "lat": 45.440717,
+          "lon": 12.336384
+        },
+        {
+          "id": "node/8049981189",
+          "name": "Triv. Sali Tabacchi Valori Bollati",
+          "lat": 45.43275,
+          "lon": 12.332951
+        },
+        {
+          "id": "node/5909823659",
+          "name": "Carige",
+          "lat": 45.435471,
+          "lon": 12.335698
+        },
+        {
+          "id": "node/13985489968",
+          "name": "Banca della Marca",
+          "lat": 45.434905,
+          "lon": 12.335799,
+          "address": "Calle Goldoni 4403"
+        },
+        {
+          "id": "node/12899064271",
+          "name": "BNL",
+          "lat": 45.434627,
+          "lon": 12.336533,
+          "address": "Campo San Gallo 1117"
+        },
+        {
+          "id": "node/5226259511",
+          "name": "UniCredit Bank",
+          "lat": 45.434922,
+          "lon": 12.338726
+        },
+        {
+          "id": "node/9933708829",
+          "name": "Euronet Worldwide",
+          "lat": 45.435346,
+          "lon": 12.342838
+        },
+        {
+          "id": "node/10075349420",
+          "name": "Euronet ATM",
+          "lat": 45.426319,
+          "lon": 12.337583
+        },
+        {
+          "id": "node/5937826385",
+          "name": "Poste Italiane",
+          "lat": 45.431973,
+          "lon": 12.351401,
+          "address": "Via Giuseppe Garibaldi",
+          "openingHours": "Mo-Fr 08:20-13:35; Sa 08:20-12:35; Su, PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3838960158",
+          "name": "Cassa di Risparmio di Venezia",
+          "lat": 45.431712,
+          "lon": 12.351767,
+          "openingHours": "Mo-Fr 08:30-13:00,14:15-16:55; Sa-Su closed; PH closed",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/8042729112",
+          "name": "ATM Credit Agricole",
+          "lat": 45.416539,
+          "lon": 12.370616
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:18.641Z"
+    },
+    "post-boxes": {
+      "count": 44,
+      "pois": [
+        {
+          "id": "node/11309955447",
+          "name": "Tabacchi Bottazzo",
+          "lat": 45.438282,
+          "lon": 12.318108
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:19.113Z"
+    },
+    "recycling": {
+      "count": 16,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:19:19.639Z"
+    },
+    "luggage-storage": {
+      "count": 7,
+      "pois": [
+        {
+          "id": "node/4819973621",
+          "name": "KiPoint",
+          "lat": 45.442065,
+          "lon": 12.320529,
+          "openingHours": "Mo-Su 07:00-23:00"
+        },
+        {
+          "id": "node/12762819942",
+          "name": "Wonderful Italy",
+          "lat": 45.437153,
+          "lon": 12.319152
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:20.070Z"
+    },
+    "libraries": {
+      "count": 24,
+      "pois": [
+        {
+          "id": "node/13523874391",
+          "name": "Biblioteca San Toma'",
+          "lat": 45.436147,
+          "lon": 12.327139,
+          "openingHours": "Mo,We,Sa 09:00-13:00; Tu,Th,Fr 14:00-19:00"
+        },
+        {
+          "id": "node/5136930922",
+          "name": "Centro Tedesco di Studi Veneziani",
+          "lat": 45.436236,
+          "lon": 12.329351,
+          "address": "Calle Corner 2765 / A"
+        },
+        {
+          "id": "node/9591908000",
+          "name": "Ca’ Foscari Zattere",
+          "lat": 45.429939,
+          "lon": 12.324934,
+          "address": "Fondamenta Zattere al Ponte Longo 1392",
+          "openingHours": "Mo-Fr 09:00-24:00; Sa 09:00-20:00; Su 14:00-24:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/138800762",
+          "name": "Biblioteca del Consiglio regionale del Veneto",
+          "lat": 45.434741,
+          "lon": 12.336427,
+          "address": "Campo San Gallo 1122"
+        },
+        {
+          "id": "way/206333242",
+          "name": "Biblioteca Nazionale Marciana",
+          "lat": 45.433479,
+          "lon": 12.339234,
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:00-13:30; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11299845465",
+          "name": "Biblioteca Bettini junior",
+          "lat": 45.435192,
+          "lon": 12.342735,
+          "address": "Campo San Provolo 4704a",
+          "openingHours": "Mo-Tu 14:30-18:30; We-Sa 09:00-18:30; Su closed; PH closed",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/9726829858",
+          "name": "Biblioteca della Giudecca",
+          "lat": 45.424903,
+          "lon": 12.336038
+        },
+        {
+          "id": "node/676820131",
+          "name": "Biblioteca di Castello",
+          "lat": 45.436941,
+          "lon": 12.345796,
+          "address": "Campo de la Chiesa 5065i",
+          "openingHours": "Mo,Th 13:00-14:00,14:00-18:00; Tu-We,Fr-Sa 09:00-13:15; Su closed; PH closed"
+        },
+        {
+          "id": "node/7600620945",
+          "name": "Fondazione Giorgio Cini",
+          "lat": 45.429026,
+          "lon": 12.344954
+        },
+        {
+          "id": "node/765801527",
+          "name": "Fondazione Eni Enrico Mattei",
+          "lat": 45.428958,
+          "lon": 12.344918
+        },
+        {
+          "id": "node/5363741507",
+          "name": "Biblioteca \"Dante Alighieri\"",
+          "lat": 45.435186,
+          "lon": 12.349532,
+          "address": "Ponte del Purgatorio 2409",
+          "openingHours": "Mo-Fr 08:30-12:30,14:00-16:00; Sa-Su closed; Fr 08:30-12:30; PH closed"
+        },
+        {
+          "id": "node/9975140349",
+          "name": "Biblioteca di Murano",
+          "lat": 45.453216,
+          "lon": 12.354425,
+          "openingHours": "Sep 1-Jun 30 Mo 14:00-19:00; Sep 1-Jun 30 Tu,Th-Sa 09:00-13:00; Jul 1-Aug 31 Mo,We 10:00-13:00,14:00-19:00; Jul 1-Aug 31 Tu,Th-Fr 09:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/138804505",
+          "name": "Padiglione Centrale",
+          "lat": 45.429836,
+          "lon": 12.358821,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11298084486",
+          "name": "Biblioteca del Comitato veneziano della Società Dante Alighieri",
+          "lat": 45.427537,
+          "lon": 12.365596,
+          "address": "Campo de la Chiesa 3",
+          "openingHours": "closed"
+        },
+        {
+          "id": "way/1136329028",
+          "name": "Biblioteca galleggiante",
+          "lat": 45.437632,
+          "lon": 12.378844,
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/12770878002",
+          "name": "Biblioteca di Forte Marghera",
+          "lat": 45.475837,
+          "lon": 12.261519,
+          "openingHours": "Tu-Su 14:00-19:00; Apr 01-Oct 30 Tu-Su 14:00-21:00"
+        },
+        {
+          "id": "node/13962084868",
+          "name": "Biblioteca \"Hugo Pratt\" del Lido",
+          "lat": 45.397251,
+          "lon": 12.356107,
+          "address": "Via Sandro Gallo 136b",
+          "openingHours": "Mo-Sa 09:00-19:00; Su off",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:20.541Z"
+    },
+    "outdoor-gyms": {
+      "count": 7,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:19:21.019Z"
+    },
+    "camp-sites": {
+      "count": 4,
+      "pois": [
+        {
+          "id": "way/28491597",
+          "name": "Camping Fusina",
+          "lat": 45.420636,
+          "lon": 12.257703,
+          "address": "Via Moranzani 93",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/364977852",
+          "name": "Camping Rialto",
+          "lat": 45.483414,
+          "lon": 12.283811,
+          "address": "Via Orlanda",
+          "wheelchair": "no",
+          "fee": "yes"
+        },
+        {
+          "id": "way/166670053",
+          "name": "Camping Venezia Village",
+          "lat": 45.480304,
+          "lon": 12.274653,
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "way/370137356",
+          "name": "Camping San Nicolò",
+          "lat": 45.431555,
+          "lon": 12.384461,
+          "openingHours": "Apr 28 - Sep 30",
+          "wheelchair": "no",
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:19:21.451Z"
+    },
+    "shelters": {
+      "count": 0,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:19:22.186Z"
+    },
+    "rest-areas": {
+      "count": 0,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:19:22.585Z"
+    },
+    "dump-stations": {
+      "count": 3,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:19:22.994Z"
+    }
+  }
 }

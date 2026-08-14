@@ -1,5 +1,1356 @@
 {
   "city": "leeds",
-  "generatedAt": "2026-08-13T05:22:10.138Z",
-  "categories": {}
+  "generatedAt": "2026-08-14T05:13:14.464Z",
+  "categories": {
+    "toilets": {
+      "count": 69,
+      "pois": [
+        {
+          "id": "way/1093406812",
+          "name": "Marks & Spencer",
+          "lat": 53.796886,
+          "lon": -1.543151,
+          "address": "Albion Street Ground Floor",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 08:00-19:00; Su 11:00-17:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/452484191",
+          "name": "John Lewis",
+          "lat": 53.798219,
+          "lon": -1.537385,
+          "address": "Harewood Street",
+          "openingHours": "Mo-Sa 10:00-19:00; Su 10:30-10:30, 11:00-17:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/203009426",
+          "name": "M&S Foodhall",
+          "lat": 53.788877,
+          "lon": -1.539612,
+          "address": "Junction Street",
+          "openingHours": "Mo-Sa 08:30-20:00; Su 11:00-17:00"
+        },
+        {
+          "id": "node/8343497096",
+          "name": "Hand & Boot Wash",
+          "lat": 53.785012,
+          "lon": -1.45721,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/561712859",
+          "name": "Morrisons",
+          "lat": 53.838269,
+          "lon": -1.640619,
+          "address": "Town Street 61-69",
+          "openingHours": "Mo-Sa 07:00-22:00; Su 10:00-16:00"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:03.764Z"
+    },
+    "drinking-water": {
+      "count": 13,
+      "pois": [
+        {
+          "id": "node/11759089380",
+          "name": "Leeds Water Point",
+          "lat": 53.792977,
+          "lon": -1.552759
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:04.404Z"
+    },
+    "playgrounds": {
+      "count": 186,
+      "pois": [
+        {
+          "id": "node/5648164582",
+          "name": "Leeds Play Network",
+          "lat": 53.80038,
+          "lon": -1.543723,
+          "address": "Albion Street 110-118"
+        },
+        {
+          "id": "way/440266927",
+          "name": "Little London Play Area",
+          "lat": 53.808091,
+          "lon": -1.540217
+        },
+        {
+          "id": "way/100370744",
+          "name": "Woodhouse Moor Playground",
+          "lat": 53.813251,
+          "lon": -1.562311
+        },
+        {
+          "id": "way/473996228",
+          "name": "Burley Lawn Playground",
+          "lat": 53.807339,
+          "lon": -1.572624
+        },
+        {
+          "id": "way/234154951",
+          "name": "Kirkstall Road Playground",
+          "lat": 53.805583,
+          "lon": -1.577486
+        },
+        {
+          "id": "way/440362275",
+          "name": "Ashton Road Childrens Play",
+          "lat": 53.811223,
+          "lon": -1.514547
+        },
+        {
+          "id": "way/259253556",
+          "name": "Harehills Park Infants Play Area",
+          "lat": 53.809319,
+          "lon": -1.499894
+        },
+        {
+          "id": "way/901900975",
+          "name": "Sandford Playground",
+          "lat": 53.814113,
+          "lon": -1.598002
+        },
+        {
+          "id": "way/33126147",
+          "name": "Lakeside Playground",
+          "lat": 53.835699,
+          "lon": -1.497601
+        },
+        {
+          "id": "way/145821691",
+          "name": "Jubilee playground",
+          "lat": 53.856767,
+          "lon": -1.564206
+        },
+        {
+          "id": "way/650257235",
+          "name": "Little Bees Play and Party",
+          "lat": 53.827053,
+          "lon": -1.463071,
+          "address": "Limewood Road"
+        },
+        {
+          "id": "way/156721922",
+          "name": "Phys-Cap Playground",
+          "lat": 53.786959,
+          "lon": -1.455083
+        },
+        {
+          "id": "node/5545788876",
+          "name": "Munchkins",
+          "lat": 53.750762,
+          "lon": -1.601413,
+          "address": "Bank Avenue",
+          "fee": "yes"
+        },
+        {
+          "id": "node/8688924906",
+          "name": "Ninja Warrior UK",
+          "lat": 53.82636,
+          "lon": -1.45923
+        },
+        {
+          "id": "node/3904815770",
+          "name": "Kids Clubhouse",
+          "lat": 53.831892,
+          "lon": -1.640554,
+          "address": "New Road Side 75A",
+          "openingHours": "Mo-We 09:30-15:30; Th-Fr 09:30-17:30; Sa-Su 10:00-17:00",
+          "fee": "yes"
+        },
+        {
+          "id": "node/6799342785",
+          "name": "Litton Way Play Area",
+          "lat": 53.83515,
+          "lon": -1.459017
+        },
+        {
+          "id": "node/6540158122",
+          "name": "Jigsaw Juniors",
+          "lat": 53.837398,
+          "lon": -1.641042,
+          "address": "Town Street 30"
+        },
+        {
+          "id": "way/1089886356",
+          "name": "Holywell Lane",
+          "lat": 53.856735,
+          "lon": -1.485003
+        },
+        {
+          "id": "node/6710198181",
+          "name": "Little Burrowers",
+          "lat": 53.804403,
+          "lon": -1.668369,
+          "address": "ABS Business Park"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:05.062Z"
+    },
+    "parking": {
+      "count": 1365,
+      "pois": [
+        {
+          "id": "node/8175751317",
+          "name": "Q-Park The Light",
+          "lat": 53.800189,
+          "lon": -1.546288,
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "node/3393775167",
+          "name": "Rose Bowl",
+          "lat": 53.803028,
+          "lon": -1.547218,
+          "fee": "yes"
+        },
+        {
+          "id": "node/299171010",
+          "name": "St Johns Centre",
+          "lat": 53.80008,
+          "lon": -1.543505,
+          "fee": "yes"
+        },
+        {
+          "id": "way/27776429",
+          "name": "Leeds General Infirmary Visitors Car Park",
+          "lat": 53.803886,
+          "lon": -1.551495,
+          "fee": "yes"
+        },
+        {
+          "id": "way/204570551",
+          "name": "Q Park Albion Street",
+          "lat": 53.797844,
+          "lon": -1.545772,
+          "fee": "yes"
+        },
+        {
+          "id": "way/204559062",
+          "name": "NCP The Core",
+          "lat": 53.798349,
+          "lon": -1.544659,
+          "address": "Albion Street",
+          "openingHours": "Mo-Su 06:00-00:00",
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "way/676684414",
+          "name": "CitiPark - Merrion Centre",
+          "lat": 53.802134,
+          "lon": -1.54317,
+          "fee": "yes"
+        },
+        {
+          "id": "way/52123770",
+          "name": "Woodhouse Lane Car Park",
+          "lat": 53.804872,
+          "lon": -1.546767,
+          "address": "Woodhouse Lane",
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "way/474017213",
+          "name": "Leeds General Infirmary Clarendon Wing",
+          "lat": 53.802418,
+          "lon": -1.555939,
+          "fee": "yes"
+        },
+        {
+          "id": "way/414220737",
+          "name": "Multistorey Car Park",
+          "lat": 53.804982,
+          "lon": -1.551346,
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "way/375068085",
+          "name": "Wellington Street Car Park",
+          "lat": 53.797422,
+          "lon": -1.55545,
+          "openingHours": "06:00-21:30",
+          "fee": "yes"
+        },
+        {
+          "id": "way/375109497",
+          "name": "West One Car Park",
+          "lat": 53.797429,
+          "lon": -1.555822,
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "way/878543048",
+          "name": "Set down/ Drop Off Only",
+          "lat": 53.795521,
+          "lon": -1.548609
+        },
+        {
+          "id": "way/162138995",
+          "name": "Leeds Station Car Park",
+          "lat": 53.795295,
+          "lon": -1.548523,
+          "fee": "yes"
+        },
+        {
+          "id": "way/24914907",
+          "name": "Leeds Station Multistorey",
+          "lat": 53.794969,
+          "lon": -1.54935,
+          "fee": "yes"
+        },
+        {
+          "id": "way/204634384",
+          "name": "Edward Street Car Park",
+          "lat": 53.799536,
+          "lon": -1.539069,
+          "fee": "yes"
+        },
+        {
+          "id": "way/913036213",
+          "name": "Buses",
+          "lat": 53.799592,
+          "lon": -1.538806,
+          "fee": "no"
+        },
+        {
+          "id": "way/878565862",
+          "name": "Trinity Leeds Car Park",
+          "lat": 53.795154,
+          "lon": -1.544613,
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "way/895751711",
+          "name": "Swinegate",
+          "lat": 53.794412,
+          "lon": -1.545136
+        },
+        {
+          "id": "way/5949168",
+          "name": "Templar Street Car Park",
+          "lat": 53.800264,
+          "lon": -1.537483,
+          "fee": "yes"
+        },
+        {
+          "id": "way/8048894",
+          "name": "Trafalgar Street",
+          "lat": 53.801202,
+          "lon": -1.537233,
+          "fee": "yes"
+        },
+        {
+          "id": "way/1414970664",
+          "name": "NCP Leeds - Lovell Park Hill",
+          "lat": 53.80451,
+          "lon": -1.538891,
+          "fee": "yes"
+        },
+        {
+          "id": "way/155224833",
+          "name": "Q-Park Criterion Place",
+          "lat": 53.79423,
+          "lon": -1.544629,
+          "fee": "yes"
+        },
+        {
+          "id": "way/221577977",
+          "name": "Wellington Place",
+          "lat": 53.796115,
+          "lon": -1.558875,
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "way/216890875",
+          "name": "West Street Car Park",
+          "lat": 53.798025,
+          "lon": -1.56078,
+          "fee": "yes"
+        },
+        {
+          "id": "way/204244556",
+          "name": "Crown Street Car Park",
+          "lat": 53.795946,
+          "lon": -1.538891,
+          "fee": "yes"
+        },
+        {
+          "id": "way/452484192",
+          "name": "Victoria Gate Car Park",
+          "lat": 53.798176,
+          "lon": -1.536692,
+          "fee": "yes"
+        },
+        {
+          "id": "way/4372120",
+          "name": "The Markets Car Park",
+          "lat": 53.796822,
+          "lon": -1.537128,
+          "openingHours": "Mo-Su 06:00-23:00",
+          "fee": "yes"
+        },
+        {
+          "id": "way/878352318",
+          "name": "Premier Inn Parking",
+          "lat": 53.797615,
+          "lon": -1.562227,
+          "fee": "yes"
+        },
+        {
+          "id": "way/155081005",
+          "name": "Byron Street",
+          "lat": 53.802086,
+          "lon": -1.534889,
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:06.028Z"
+    },
+    "charging-stations": {
+      "count": 51,
+      "pois": [
+        {
+          "id": "node/8176265155",
+          "name": "LiFE",
+          "lat": 53.798053,
+          "lon": -1.546007
+        },
+        {
+          "id": "node/8176160673",
+          "name": "Polar",
+          "lat": 53.795115,
+          "lon": -1.552835
+        },
+        {
+          "id": "node/8176265154",
+          "name": "Pod Point",
+          "lat": 53.794987,
+          "lon": -1.544717,
+          "fee": "no"
+        },
+        {
+          "id": "node/8176265153",
+          "name": "Crowne Plaza Leeds",
+          "lat": 53.796858,
+          "lon": -1.558462,
+          "fee": "yes"
+        },
+        {
+          "id": "node/7742495074",
+          "name": "Genie Point",
+          "lat": 53.787131,
+          "lon": -1.534104
+        },
+        {
+          "id": "node/5229164858",
+          "name": "Rolec",
+          "lat": 53.797939,
+          "lon": -1.577614,
+          "fee": "yes"
+        },
+        {
+          "id": "node/5597269702",
+          "name": "Leeds-Whitehouse Street Supercharger",
+          "lat": 53.784538,
+          "lon": -1.532429,
+          "address": "Whitehouse Street 7",
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "node/6401269739",
+          "name": "Elland Road Park and Ride",
+          "lat": 53.777175,
+          "lon": -1.576293
+        },
+        {
+          "id": "node/5897440017",
+          "name": "Lidl Charging station",
+          "lat": 53.813742,
+          "lon": -1.493699
+        },
+        {
+          "id": "node/8173090769",
+          "name": "PodPoint",
+          "lat": 53.817545,
+          "lon": -1.605041
+        },
+        {
+          "id": "node/6669744709",
+          "name": "Blink",
+          "lat": 53.777861,
+          "lon": -1.480124,
+          "fee": "yes"
+        },
+        {
+          "id": "node/6275450625",
+          "name": "InstaVolt",
+          "lat": 53.808584,
+          "lon": -1.467654
+        },
+        {
+          "id": "way/810024887",
+          "name": "Ionity",
+          "lat": 53.773227,
+          "lon": -1.473793
+        },
+        {
+          "id": "node/8066090042",
+          "name": "Chargemaster",
+          "lat": 53.748502,
+          "lon": -1.530637
+        },
+        {
+          "id": "node/13713155440",
+          "name": "Evyve Lord Darcy Leeds",
+          "lat": 53.856688,
+          "lon": -1.529795,
+          "fee": "yes"
+        },
+        {
+          "id": "node/3993603082",
+          "name": "Leeds Supercharger",
+          "lat": 53.732738,
+          "lon": -1.585653,
+          "address": "Capitol Boulevard",
+          "openingHours": "24/7",
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:06.451Z"
+    },
+    "gas-stations": {
+      "count": 64,
+      "pois": [
+        {
+          "id": "way/426157920",
+          "name": "Shell",
+          "lat": 53.80276,
+          "lon": -1.532496,
+          "address": "Regent Street 24",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/536571865",
+          "name": "Phoenix Filling Station",
+          "lat": 53.815657,
+          "lon": -1.546523,
+          "address": "Meanwood Road 277"
+        },
+        {
+          "id": "way/936224660",
+          "name": "Esso",
+          "lat": 53.798248,
+          "lon": -1.576563,
+          "address": "Armley Road 120"
+        },
+        {
+          "id": "way/201505244",
+          "name": "Jet",
+          "lat": 53.787063,
+          "lon": -1.533851,
+          "address": "Hunslet Road 169-171"
+        },
+        {
+          "id": "way/473638785",
+          "name": "BP",
+          "lat": 53.808116,
+          "lon": -1.574556
+        },
+        {
+          "id": "way/201078242",
+          "name": "Calderview Service Station",
+          "lat": 53.780991,
+          "lon": -1.525981,
+          "address": "Hunslet Road",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/762385247",
+          "name": "Morrisons",
+          "lat": 53.77823,
+          "lon": -1.529616,
+          "address": "Church Street"
+        },
+        {
+          "id": "node/301022542",
+          "name": "BP - Riverside Filling Station",
+          "lat": 53.808674,
+          "lon": -1.590031
+        },
+        {
+          "id": "way/539869087",
+          "name": "Scott Hall Service Station",
+          "lat": 53.832839,
+          "lon": -1.544207,
+          "address": "Scott Hall Road 631a"
+        },
+        {
+          "id": "way/567465380",
+          "name": "Asda",
+          "lat": 53.768171,
+          "lon": -1.564897
+        },
+        {
+          "id": "way/173273548",
+          "name": "Queens Service Station",
+          "lat": 53.772024,
+          "lon": -1.516735,
+          "openingHours": "Mo-Sa 00:00-24:00; Su 08:00-22:00"
+        },
+        {
+          "id": "way/462802001",
+          "name": "BP St.Chads",
+          "lat": 53.828962,
+          "lon": -1.585003
+        },
+        {
+          "id": "way/284436751",
+          "name": "BP Pudsey Road Service Station",
+          "lat": 53.7968,
+          "lon": -1.622499,
+          "address": "Pudsey Road 174"
+        },
+        {
+          "id": "way/754993478",
+          "name": "Gateway Service Station",
+          "lat": 53.779201,
+          "lon": -1.48066,
+          "address": "Aire Valley Drive 2a",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/330656593",
+          "name": "Moortown Service Station",
+          "lat": 53.847702,
+          "lon": -1.535064,
+          "address": "Harrogate Road 401"
+        },
+        {
+          "id": "way/864999345",
+          "name": "Sainsbury's",
+          "lat": 53.75443,
+          "lon": -1.572333
+        },
+        {
+          "id": "way/734854395",
+          "name": "ASDA Fuel",
+          "lat": 53.8447,
+          "lon": -1.511958
+        },
+        {
+          "id": "way/302567056",
+          "name": "Texaco",
+          "lat": 53.838355,
+          "lon": -1.605941,
+          "address": "Ring Road West Park"
+        },
+        {
+          "id": "way/611644514",
+          "name": "Middleton Park Service Station",
+          "lat": 53.748046,
+          "lon": -1.549806,
+          "address": "Middleton Park Road"
+        },
+        {
+          "id": "way/1234479696",
+          "name": "Lawnswood Service Station",
+          "lat": 53.848969,
+          "lon": -1.592183,
+          "address": "Otley Road"
+        },
+        {
+          "id": "node/5209962934",
+          "name": "Asda Express",
+          "lat": 53.856534,
+          "lon": -1.530974,
+          "address": "Harrogate Road 495"
+        },
+        {
+          "id": "way/535698895",
+          "name": "Tesco",
+          "lat": 53.821492,
+          "lon": -1.458658,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/2059658303",
+          "name": "Morley Service Station",
+          "lat": 53.752154,
+          "lon": -1.601263,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/331675740",
+          "name": "Coronation Service Station",
+          "lat": 53.840373,
+          "lon": -1.470194,
+          "address": "Wetherby Road 213"
+        },
+        {
+          "id": "way/201505235",
+          "name": "Robin Hood Service Station",
+          "lat": 53.741342,
+          "lon": -1.50899,
+          "address": "Leeds Road"
+        },
+        {
+          "id": "way/462048636",
+          "name": "The Wharrels Service Station",
+          "lat": 53.797918,
+          "lon": -1.658092,
+          "address": "Lowtown 90"
+        },
+        {
+          "id": "way/331793522",
+          "name": "Red Hall Service Station",
+          "lat": 53.844041,
+          "lon": -1.466549,
+          "address": "Wetherby Road"
+        },
+        {
+          "id": "way/460588018",
+          "name": "Robin Lane Services (Texaco)",
+          "lat": 53.791933,
+          "lon": -1.660791
+        },
+        {
+          "id": "way/637206501",
+          "name": "Thorpe Service Station",
+          "lat": 53.799853,
+          "lon": -1.664352
+        },
+        {
+          "id": "way/80509447",
+          "name": "Sainsbury's Leeds Colton",
+          "lat": 53.793171,
+          "lon": -1.432474,
+          "address": "Stile Hill Way 17"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:06.918Z"
+    },
+    "ice-cream": {
+      "count": 16,
+      "pois": [
+        {
+          "id": "node/5358898101",
+          "name": "Ice Stone Gelato",
+          "lat": 53.79999,
+          "lon": -1.544695,
+          "address": "Albion Street 110-118"
+        },
+        {
+          "id": "node/12875925569",
+          "name": "Tsujiri",
+          "lat": 53.797593,
+          "lon": -1.539645,
+          "address": "Ludgate Hill 17"
+        },
+        {
+          "id": "node/5349515909",
+          "name": "Amorino",
+          "lat": 53.798088,
+          "lon": -1.538973,
+          "address": "Eastgate",
+          "openingHours": "Mo-Fr 10:00-19:00, Sa 09:00-19:00, Su 11:00-17:00"
+        },
+        {
+          "id": "node/5981573980",
+          "name": "Roberto Gelato",
+          "lat": 53.796924,
+          "lon": -1.539855,
+          "address": "Kirkgate"
+        },
+        {
+          "id": "node/319428948",
+          "name": "Ice Scoop Gelato",
+          "lat": 53.810634,
+          "lon": -1.569824,
+          "address": "Queens Road 41",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/3225929668",
+          "name": "Duke’s Donuts",
+          "lat": 53.810741,
+          "lon": -1.575565,
+          "address": "Cardigan Road 148A",
+          "openingHours": "Mo-Su 11:00-02:00"
+        },
+        {
+          "id": "node/5478423468",
+          "name": "Divine Gelato Factory",
+          "lat": 53.79965,
+          "lon": -1.584373,
+          "address": "Ledgard Way Reprographic House"
+        },
+        {
+          "id": "node/5550688224",
+          "name": "Delices Desserts",
+          "lat": 53.797156,
+          "lon": -1.59125,
+          "address": "Gelder Road 4"
+        },
+        {
+          "id": "node/7431404792",
+          "name": "Heavenley Desserts",
+          "lat": 53.822606,
+          "lon": -1.578745,
+          "address": "Otley Road 30-31"
+        },
+        {
+          "id": "node/5448636115",
+          "name": "Gelato Passion",
+          "lat": 53.770922,
+          "lon": -1.550052,
+          "address": "Dewsbury Road 342"
+        },
+        {
+          "id": "way/219481913",
+          "name": "Sunday's",
+          "lat": 53.842966,
+          "lon": -1.533239,
+          "address": "Harrogate Road 372"
+        },
+        {
+          "id": "node/13469175562",
+          "name": "Pino",
+          "lat": 53.796326,
+          "lon": -1.661689,
+          "address": "Robin Lane 6"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:07.396Z"
+    },
+    "dog-parks": {
+      "count": 4,
+      "pois": [
+        {
+          "id": "way/1180534599",
+          "name": "Leeds Dock Dog Park",
+          "lat": 53.791871,
+          "lon": -1.535354
+        },
+        {
+          "id": "node/6298175147",
+          "name": "The Pudsey Dog Park",
+          "lat": 53.780677,
+          "lon": -1.641362
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:07.831Z"
+    },
+    "picnic-spots": {
+      "count": 67,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:13:08.413Z"
+    },
+    "viewpoints": {
+      "count": 10,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:13:08.885Z"
+    },
+    "beaches": {
+      "count": 2,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:13:09.362Z"
+    },
+    "atms": {
+      "count": 174,
+      "pois": [
+        {
+          "id": "node/333799087",
+          "name": "TSB",
+          "lat": 53.799419,
+          "lon": -1.546591
+        },
+        {
+          "id": "node/244334812",
+          "name": "Santander",
+          "lat": 53.798315,
+          "lon": -1.546924
+        },
+        {
+          "id": "node/339923496",
+          "name": "NatWest",
+          "lat": 53.798281,
+          "lon": -1.546943
+        },
+        {
+          "id": "node/339923495",
+          "name": "HSBC",
+          "lat": 53.798029,
+          "lon": -1.547216
+        },
+        {
+          "id": "node/343131666",
+          "name": "Yorkshire Bank ATM",
+          "lat": 53.801865,
+          "lon": -1.544256
+        },
+        {
+          "id": "way/1415965173",
+          "name": "Yorkshire Bank ATM's",
+          "lat": 53.801876,
+          "lon": -1.544206
+        },
+        {
+          "id": "node/339923493",
+          "name": "HSBC UK",
+          "lat": 53.797902,
+          "lon": -1.547294,
+          "address": "Park Row 33",
+          "openingHours": "Mo-Fr 09:00-18:00; Tu 09:30-18:00; Th 09:00-19:00; Sa 09:00-17:00"
+        },
+        {
+          "id": "node/5512348985",
+          "name": "Barclays",
+          "lat": 53.798052,
+          "lon": -1.545322,
+          "address": "Albion Street 69",
+          "openingHours": "Mo-Fr 09:30-15:00; Sa 09:30-13:00; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/6022850201",
+          "name": "Skipton Building Society",
+          "lat": 53.797476,
+          "lon": -1.546212,
+          "address": "Bond Street 7-9",
+          "openingHours": "Mo,Tu,Th,Fr 09:30-16:30; We 10:00-16:30; Sa 09:30-12:00; Su off"
+        },
+        {
+          "id": "node/343131667",
+          "name": "Yorkshire Bank",
+          "lat": 53.801494,
+          "lon": -1.542338
+        },
+        {
+          "id": "node/6022850207",
+          "name": "The Co-operative Bank",
+          "lat": 53.797446,
+          "lon": -1.544547,
+          "address": "Commercial Street 19-20",
+          "openingHours": "Mo-Fr 09:00-16:00"
+        },
+        {
+          "id": "node/6022850214",
+          "name": "Halifax",
+          "lat": 53.797295,
+          "lon": -1.544209,
+          "address": "Commercial Street 32"
+        },
+        {
+          "id": "node/333799015",
+          "name": "Virgin Money",
+          "lat": 53.798681,
+          "lon": -1.541824,
+          "address": "Briggate 94-96",
+          "openingHours": "Mo-Fr 09:30-16:30; Sa 09:30-13:00"
+        },
+        {
+          "id": "node/5340856636",
+          "name": "Lloyds Bank",
+          "lat": 53.798024,
+          "lon": -1.542329
+        },
+        {
+          "id": "node/333467225",
+          "name": "Yorkshire Building Society",
+          "lat": 53.796109,
+          "lon": -1.542352
+        },
+        {
+          "id": "node/8173070324",
+          "name": "NoteMachine",
+          "lat": 53.800708,
+          "lon": -1.564784
+        },
+        {
+          "id": "node/3145367892",
+          "name": "Sainsbury Local ATM",
+          "lat": 53.7937,
+          "lon": -1.538193
+        },
+        {
+          "id": "node/5457251558",
+          "name": "Best-one",
+          "lat": 53.798707,
+          "lon": -1.508552,
+          "address": "York Road 268-272",
+          "openingHours": "Mo-Th,Su 07:00-23:00; Fr-Sa 00:00-24:00"
+        },
+        {
+          "id": "way/178412938",
+          "name": "Nisa Local",
+          "lat": 53.772553,
+          "lon": -1.56587,
+          "address": "Town Street 1-9"
+        },
+        {
+          "id": "way/338466705",
+          "name": "Michael Lewin Solicitors",
+          "lat": 53.826086,
+          "lon": -1.507105,
+          "address": "Roundhay Road 635"
+        },
+        {
+          "id": "node/1423100513",
+          "name": "Street Lane",
+          "lat": 53.84412,
+          "lon": -1.509482,
+          "address": "Street Lane 61",
+          "openingHours": "Su-Th 06:00-21:00; Fr-Sa 06:00-22:00"
+        },
+        {
+          "id": "node/7593715030",
+          "name": "RBS",
+          "lat": 53.82222,
+          "lon": -1.46047,
+          "fee": "no"
+        },
+        {
+          "id": "node/2888241515",
+          "name": "Cash Machine",
+          "lat": 53.794515,
+          "lon": -1.434765
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:09.938Z"
+    },
+    "post-boxes": {
+      "count": 665,
+      "pois": [
+        {
+          "id": "node/442573061",
+          "name": "Halton Post Office",
+          "lat": 53.799202,
+          "lon": -1.464735
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:10.505Z"
+    },
+    "recycling": {
+      "count": 136,
+      "pois": [
+        {
+          "id": "way/415151782",
+          "name": "Meanwood Road Waste Sorting Site",
+          "lat": 53.819597,
+          "lon": -1.553253
+        },
+        {
+          "id": "way/203426733",
+          "name": "European Metal Recycling",
+          "lat": 53.773587,
+          "lon": -1.511022
+        },
+        {
+          "id": "way/582384287",
+          "name": "Middleton Recycling Centre",
+          "lat": 53.748948,
+          "lon": -1.528524
+        },
+        {
+          "id": "way/669834681",
+          "name": "Seacroft (East Leeds) Recycling Site",
+          "lat": 53.828041,
+          "lon": -1.464731,
+          "address": "Limewood Road",
+          "openingHours": "Mo-Su 08:00-18:00"
+        },
+        {
+          "id": "way/903065812",
+          "name": "Cash 4 Clothes",
+          "lat": 53.805632,
+          "lon": -1.451464
+        },
+        {
+          "id": "way/928979134",
+          "name": "Pudsey Household Waste Recycling Centre",
+          "lat": 53.805121,
+          "lon": -1.654746
+        },
+        {
+          "id": "node/1825650336",
+          "name": "Freedom House",
+          "lat": 53.729664,
+          "lon": -1.560804
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:10.977Z"
+    },
+    "luggage-storage": {
+      "count": 0,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:13:11.418Z"
+    },
+    "libraries": {
+      "count": 60,
+      "pois": [
+        {
+          "id": "node/21468571",
+          "name": "Leeds Central Library",
+          "lat": 53.800156,
+          "lon": -1.548691,
+          "address": "Calverley Street",
+          "openingHours": "Mo-Th 09:00-20:00; Fr 09:00-17:00; Sa 10:00-16:00; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/920423335",
+          "name": "The Leeds Library",
+          "lat": 53.797471,
+          "lon": -1.544459,
+          "address": "Commercial Street 18"
+        },
+        {
+          "id": "way/148436017",
+          "name": "Health Sciences Library",
+          "lat": 53.803306,
+          "lon": -1.555901
+        },
+        {
+          "id": "way/445549207",
+          "name": "Laidlaw Library",
+          "lat": 53.806796,
+          "lon": -1.551921
+        },
+        {
+          "id": "way/72849274",
+          "name": "Edward Boyle Library",
+          "lat": 53.806107,
+          "lon": -1.554745,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/10746442301",
+          "name": "Little Free Library",
+          "lat": 53.795729,
+          "lon": -1.55625
+        },
+        {
+          "id": "node/9356627362",
+          "name": "Library and Community Hub",
+          "lat": 53.79688,
+          "lon": -1.539057,
+          "address": "Kirkgate"
+        },
+        {
+          "id": "way/84749523",
+          "name": "Brotherton Library",
+          "lat": 53.807969,
+          "lon": -1.553747
+        },
+        {
+          "id": "node/5377558721",
+          "name": "Leeds Conservatoire Library",
+          "lat": 53.797495,
+          "lon": -1.534443,
+          "address": "St Peters Street"
+        },
+        {
+          "id": "way/659012598",
+          "name": "Richmond Hill Rec Hall & library",
+          "lat": 53.797456,
+          "lon": -1.519884
+        },
+        {
+          "id": "way/221597826",
+          "name": "St James's Hospital Library",
+          "lat": 53.807901,
+          "lon": -1.519858
+        },
+        {
+          "id": "node/12534572927",
+          "name": "Chapeltown Library",
+          "lat": 53.81789,
+          "lon": -1.532
+        },
+        {
+          "id": "node/5940856055",
+          "name": "Dewsbury Road Library",
+          "lat": 53.779057,
+          "lon": -1.545681,
+          "address": "Dewsbury Road 190"
+        },
+        {
+          "id": "way/516780596",
+          "name": "Armley One Stop Centre",
+          "lat": 53.797087,
+          "lon": -1.58797,
+          "openingHours": "Mo,Th-Sa 09:00-17:00, Tu 10:00-17:00, We 09:00-19:00, Sa 10:00-16:00"
+        },
+        {
+          "id": "node/13142468551",
+          "name": "Compton Centre Library",
+          "lat": 53.808939,
+          "lon": -1.509804,
+          "address": "Harehills Lane",
+          "openingHours": "Mo,Th-Fr 09:00-17:00; Tu 10:00-17:00; We 09:00-19:00; Sa 10:00-16:00; Su off"
+        },
+        {
+          "id": "way/78500848",
+          "name": "Hunslet Library",
+          "lat": 53.779549,
+          "lon": -1.527588
+        },
+        {
+          "id": "node/6799166158",
+          "name": "Chapel Allerton Public Library",
+          "lat": 53.828625,
+          "lon": -1.537515
+        },
+        {
+          "id": "node/506820829",
+          "name": "Beeston Library",
+          "lat": 53.772467,
+          "lon": -1.566564
+        },
+        {
+          "id": "node/5642115187",
+          "name": "Leeds Little Library #12",
+          "lat": 53.824632,
+          "lon": -1.583022
+        },
+        {
+          "id": "node/1299655091",
+          "name": "Oakwood Library",
+          "lat": 53.827183,
+          "lon": -1.503825
+        },
+        {
+          "id": "node/343108208",
+          "name": "Armley leeds council office",
+          "lat": 53.795989,
+          "lon": -1.61621,
+          "openingHours": "9-5"
+        },
+        {
+          "id": "node/14070740741",
+          "name": "Landseer Grove Free Little Library",
+          "lat": 53.811572,
+          "lon": -1.619371
+        },
+        {
+          "id": "way/1169660150",
+          "name": "Moor Allerton Library",
+          "lat": 53.845758,
+          "lon": -1.549786,
+          "address": "King Lane",
+          "openingHours": "Mo,Th-Fr 09:00-17:00; Tu 10:00-17:00; We 09:00-19:00; Sa 10:00-16:00; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/6052603818",
+          "name": "Belle Isle Library",
+          "lat": 53.756655,
+          "lon": -1.527464,
+          "address": "Aberfield Gate"
+        },
+        {
+          "id": "way/681396803",
+          "name": "Halton Library",
+          "lat": 53.796667,
+          "lon": -1.468929,
+          "address": "Selby Road 273"
+        },
+        {
+          "id": "way/483466853",
+          "name": "Bramley Library",
+          "lat": 53.810447,
+          "lon": -1.630098,
+          "openingHours": "Mo 09:00-19:00; Tu 09:00-18:00; We,Fr 09:00-17:00; Th 10:00-17:00; Sa 10:00-15:00; Su 11:00-14:00"
+        },
+        {
+          "id": "node/2295333373",
+          "name": "Middleton Library",
+          "lat": 53.747716,
+          "lon": -1.53179
+        },
+        {
+          "id": "node/5262528832",
+          "name": "Seacroft Library",
+          "lat": 53.820968,
+          "lon": -1.459321
+        },
+        {
+          "id": "way/902102948",
+          "name": "Crossgates Library",
+          "lat": 53.806304,
+          "lon": -1.451167,
+          "address": "Station Road 9-10"
+        },
+        {
+          "id": "node/7692963486",
+          "name": "Mini library",
+          "lat": 53.739587,
+          "lon": -1.538212
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:11.888Z"
+    },
+    "outdoor-gyms": {
+      "count": 31,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:13:12.368Z"
+    },
+    "camp-sites": {
+      "count": 0,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:13:12.793Z"
+    },
+    "shelters": {
+      "count": 5,
+      "pois": [
+        {
+          "id": "node/13014851517",
+          "name": "Pho 37",
+          "lat": 53.8016,
+          "lon": -1.544936,
+          "address": "Woodhouse Lane 40",
+          "openingHours": "Su-We 12:00-21:00, Th-Sa 12:00-22:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/6724415576",
+          "name": "PizzaExpress",
+          "lat": 53.802545,
+          "lon": -1.544483,
+          "address": "Merrion Way 23",
+          "openingHours": "Mo-Th 11:30-21:00, Fr-Sa 11:30-22:00, Su 11:30-21:30",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:13.518Z"
+    },
+    "rest-areas": {
+      "count": 3,
+      "pois": [
+        {
+          "id": "way/1416376393",
+          "name": "The Library",
+          "lat": 53.801454,
+          "lon": -1.54443
+        }
+      ],
+      "updatedAt": "2026-08-14T05:13:13.956Z"
+    },
+    "dump-stations": {
+      "count": 0,
+      "pois": [],
+      "updatedAt": "2026-08-14T05:13:14.363Z"
+    }
+  }
 }

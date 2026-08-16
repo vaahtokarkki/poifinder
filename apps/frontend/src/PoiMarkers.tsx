@@ -26,6 +26,8 @@ const CLUSTER_RADIUS_PX = 14;
 
 type DynamicMarkersProps = {
   markers: OverpassMarkerData[]; // <-- Use OverpassMarkerData here
+  /** The categories switched on, which is why these points are on the map */
+  categories: CATEGORIES[];
   /** Said in a line at the bottom of the screen, for points with nothing to show */
   onNotice?: (message: string) => void;
 };
@@ -58,10 +60,14 @@ const RenderMarkerIcon = (
   });
 };
 
+/** Every category, in declaration order, which is what makes the search below
+ * deterministic: the selection arrives in the order it was clicked in */
+const ALL_CATEGORIES = Object.values(CATEGORIES).filter(
+  (value): value is CATEGORIES => typeof value === "number"
+);
+
 /**
- * The category a point belongs to, found with the same filters it was fetched
- * with. The marker takes its icon and colour from this, and the popup its
- * heading, so a point looks like the same thing in both places.
+ * The best category for a point among the ones offered, or null.
  *
  * A point can satisfy two categories at once, because some filters ask what a
  * place has rather than what it is: a library with a toilet matches both the
@@ -69,19 +75,43 @@ const RenderMarkerIcon = (
  * toilet in it. The filter naming the place itself wins, whatever order the
  * categories are declared in; otherwise the first match stands.
  */
-const findCategory = (marker: OverpassMarkerData): CATEGORIES | null => {
+const findCategoryAmong = (
+  marker: OverpassMarkerData,
+  candidates: readonly CATEGORIES[]
+): CATEGORIES | null => {
   if (!marker.tags) return null;
   let fallback: CATEGORIES | null = null;
-  for (const cat of Object.values(CATEGORIES).filter(v => typeof v === "number") as number[]) {
-    const config = CATEGORY_CONFIG[cat as CATEGORIES];
-    for (const filter of config.filters) {
+  for (const cat of candidates) {
+    for (const filter of CATEGORY_CONFIG[cat].filters) {
       if (!matchesFilter(marker.tags, filter)) continue;
-      if (filterMatchesPrimaryTag(filter)) return cat as CATEGORIES;
-      if (fallback === null) fallback = cat as CATEGORIES;
+      if (filterMatchesPrimaryTag(filter)) return cat;
+      if (fallback === null) fallback = cat;
     }
   }
   return fallback;
 };
+
+/**
+ * The category a point belongs to, found with the same filters it was fetched
+ * with. The marker takes its icon and colour from this, and the popup its
+ * heading, so a point looks like the same thing in both places.
+ *
+ * Only the categories that are switched on are considered, because they are
+ * the reason the point is on the map at all. Searching every category instead
+ * meant a library with a toilet in it came back as a library while the user
+ * was looking for a toilet: the right answer to a question nobody asked, and
+ * an icon that made the point look like it did not belong in the results.
+ *
+ * Something that matches nothing selected still gets an icon rather than the
+ * uncategorised one. That is a point left over from the previous selection,
+ * on screen until the next search replaces it, and it should keep looking
+ * like whatever it is until then.
+ */
+const findCategory = (
+  marker: OverpassMarkerData,
+  selected: readonly CATEGORIES[]
+): CATEGORIES | null =>
+  findCategoryAmong(marker, selected) ?? findCategoryAmong(marker, ALL_CATEGORIES);
 
 /**
  * One icon per category, built once and handed to every marker of that kind.
@@ -94,8 +124,8 @@ const findCategory = (marker: OverpassMarkerData): CATEGORIES | null => {
  */
 const iconCache = new Map<CATEGORIES | "uncategorised", ReturnType<typeof divIcon>>();
 
-const getMarkerIcon = (marker: OverpassMarkerData) => {
-  const category = findCategory(marker);
+const getMarkerIcon = (marker: OverpassMarkerData, selected: readonly CATEGORIES[]) => {
+  const category = findCategory(marker, selected);
   // Not ?? : category 0 is a real category and a falsy number
   const key = category === null ? "uncategorised" : category;
 
@@ -187,8 +217,8 @@ const getDisplayableTags = (marker: OverpassMarkerData) =>
   );
 
 /** What to call a point, and what to say underneath */
-const describeMarker = (marker: OverpassMarkerData) => {
-  const category = findCategory(marker);
+const describeMarker = (marker: OverpassMarkerData, selected: readonly CATEGORIES[]) => {
+  const category = findCategory(marker, selected);
   const config = category !== null ? CATEGORY_CONFIG[category] : null;
   const name = marker.name?.trim();
 
@@ -202,8 +232,11 @@ const describeMarker = (marker: OverpassMarkerData) => {
   };
 };
 
-const RenderMarkerContents: React.FC<{ marker: OverpassMarkerData }> = ({ marker }) => {
-  const { config, title, subtitle } = describeMarker(marker);
+const RenderMarkerContents: React.FC<{
+  marker: OverpassMarkerData;
+  categories: readonly CATEGORIES[];
+}> = ({ marker, categories }) => {
+  const { config, title, subtitle } = describeMarker(marker, categories);
   const rows = getDisplayableTags(marker);
 
   return (
@@ -310,6 +343,7 @@ const createClusterIcon = (cluster: { getChildCount: () => number }) => {
 
 const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   markers,
+  categories,
   onNotice,
 }) => {
 return <MarkerClusterGroup
@@ -330,19 +364,19 @@ return <MarkerClusterGroup
     // the map to do it, so those points get a line at the bottom of the screen
     // instead and the map stays where it is
     const hasDetails = getDisplayableTags(marker).length > 0;
-    const { title } = describeMarker(marker);
+    const { title } = describeMarker(marker, categories);
 
     return <Marker
       key={String(marker.id)}
       position={marker.position}
-      icon={getMarkerIcon(marker)}
+      icon={getMarkerIcon(marker, categories)}
       eventHandlers={
         hasDetails ? undefined : { click: () => onNotice?.(`${title} — no extra details`) }
       }
     >
       {hasDetails && (
         <Popup className="poi-popup" maxWidth={380} minWidth={260} autoPanPadding={[24, 24]}>
-          <RenderMarkerContents marker={marker} />
+          <RenderMarkerContents marker={marker} categories={categories} />
         </Popup>
       )}
     </Marker>

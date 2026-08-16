@@ -63,7 +63,7 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     heading: "Drinking water",
     schemaType: "Place",
     intro: (city, count) =>
-      `${count} places to refill a bottle are mapped in ${city}: public drinking fountains, tap points, and fountains where the water is confirmed potable. Points that are tagged as non potable are filtered out, so what you see is water you can actually drink.`,
+      `${count} places to refill a bottle are mapped in ${city}: public drinking fountains, tap points, wells, and fountains where the water is confirmed potable. Points that are tagged as non potable are filtered out, so what you see is water you can actually drink.`,
     faq: (city, count) => [
       {
         q: `Where can I refill a water bottle in ${city}?`,
@@ -236,7 +236,7 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     heading: "Viewpoints",
     schemaType: "TouristAttraction",
     intro: (city, count) =>
-      `${count} viewpoints are mapped around ${city}: the marked spots where the view is the point, from towers and terraces to unmarked ridges that locals have surveyed.`,
+      `${count} viewpoints are mapped around ${city}: the marked spots where the view is the point, from observation towers and terraces to bird hides and unmarked ridges that locals have surveyed.`,
     faq: (city, count) => [
       {
         q: `What are the best viewpoints in ${city}?`,
@@ -400,11 +400,15 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     heading: "Camp sites",
     schemaType: "Campground",
     intro: (city, count) =>
-      `${count} camp sites are mapped around ${city}, from commercial campgrounds to the basic tent pitches that only a local survey would record.`,
+      `${count} camp and caravan sites are mapped around ${city}, from commercial campgrounds and motorhome stops to the basic tent pitches that only a local survey would record.`,
     faq: (city, count) => [
       {
         q: `Where can I camp near ${city}?`,
-        a: `The map shows ${count} mapped camp sites. Pair them with shelters, drinking water and toilets using the "Camping" preset.`,
+        a: `The map shows ${count} mapped camp and caravan sites. Pair them with shelters, drinking water and toilets using the "Camping" preset.`,
+      },
+      {
+        q: `Are motorhome and caravan sites included?`,
+        a: `Yes. Sites tagged for caravans are shown alongside the tent ones, which is the difference between arriving somewhere you can park a van and arriving at a field. The "Van life" preset adds dump stations, water and showers on top.`,
       },
       {
         q: `Do I need to book?`,
@@ -419,19 +423,23 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     heading: "Shelters and huts",
     schemaType: "Place",
     intro: (city, count) =>
-      `${count} shelters, lean tos, wilderness huts and public fireplaces are mapped around ${city}. These are the trailside structures you plan a hike around, and they are close to impossible to find on a commercial map.`,
+      `${count} shelters, lean tos, wilderness huts and alpine huts are mapped around ${city}. These are the trailside structures you plan a hike around, and they are close to impossible to find on a commercial map.`,
     faq: (city, count) => [
       {
         q: `Where are the wilderness huts near ${city}?`,
-        a: `The map shows ${count} mapped shelters and huts, including lean tos, weather shelters and open wilderness huts.`,
+        a: `The map shows ${count} mapped shelters and huts, including lean tos, weather shelters, open wilderness huts and alpine huts.`,
       },
       {
         q: `Are they free to use?`,
-        a: `Open wilderness huts and lean tos generally are, on a first come basis. Reservable huts are a separate thing and usually charge.`,
+        a: `Open wilderness huts and lean tos generally are, on a first come basis. Alpine and reservable huts are a separate thing and usually charge.`,
       },
       {
         q: `Can I light a fire?`,
-        a: `Points tagged with a fireplace are included here, but regional fire bans override anything a map says. Check local restrictions, particularly in summer.`,
+        a: `Fireplaces and barbecue spots have their own category now, so turn that on as well: many shelters have one beside them, but plenty stand alone. Regional fire bans override anything a map says, so check local restrictions, particularly in summer.`,
+      },
+      {
+        q: `Why are bus stop shelters not included?`,
+        a: `Because a shelter is only useful here if you know what it is. Points that record their type as a hut, lean to, picnic or weather shelter are shown; the untyped ones, which in towns are mostly bus stops, are left out.`,
       },
     ],
   },
@@ -442,15 +450,19 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     heading: "Rest areas",
     schemaType: "Place",
     intro: (city, count) =>
-      `${count} highway rest areas are mapped around ${city}: the laybys and stopping places along main roads, which is where you actually want toilets and a break on a long drive.`,
+      `${count} rest areas and motorway services are mapped around ${city}: the laybys and stopping places along main roads, and the full service areas with fuel and a building, which is where you actually want toilets and a break on a long drive.`,
     faq: (city, count) => [
       {
         q: `Where are the rest areas near ${city}?`,
-        a: `The map shows ${count} mapped rest areas. The "Road trip" preset combines them with fuel, charging and toilets, which is the more useful view when driving.`,
+        a: `The map shows ${count} mapped rest areas and service areas. The "Road trip" preset combines them with fuel, charging and toilets, which is the more useful view when driving.`,
+      },
+      {
+        q: `What is the difference between a rest area and services?`,
+        a: `A rest area is usually a layby with parking and maybe a toilet block. Services is the larger stop with a fuel station, food and staffed facilities. Both are shown here, because at hour four of a drive you want whichever comes first.`,
       },
       {
         q: `Do rest areas have toilets?`,
-        a: `Larger ones usually do, smaller laybys often do not. Turn on the toilets category as well and you can see both layers at once.`,
+        a: `Larger ones and service areas usually do, smaller laybys often do not. Turn on the toilets category as well and you can see both layers at once.`,
       },
     ],
   },
@@ -470,6 +482,121 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
       {
         q: `Are dump stations free?`,
         a: `Campsite ones usually charge, municipal and fuel station ones are often free or cheap. OpenStreetMap rarely records the fee, so carry change.`,
+      },
+    ],
+  },
+  {
+    category: CATEGORIES.PostOffice,
+    slug: "post-offices",
+    plural: "post offices",
+    heading: "Post offices",
+    schemaType: "PostOffice",
+    intro: (city, count) =>
+      `${count} post offices are mapped in ${city}, including the counters inside supermarkets and kiosks that carry the postal service without looking like a post office from the street. Where the data says so, you also get opening hours and whether the entrance is step free.`,
+    faq: (city, count) => [
+      {
+        q: `Where is the nearest post office in ${city}?`,
+        a: `The map shows ${count} mapped post offices. Allow location access and it centres on you with the closest ones around it. Tap a marker for opening hours, when a contributor recorded them, and walking directions.`,
+      },
+      {
+        q: `How is this different from the post boxes category?`,
+        a: `A post box is a slot in a wall for letters you have already stamped, and there are far more of them. A post office is a staffed counter where you can weigh a parcel, buy postage and collect something. They are separate categories here because they answer different errands.`,
+      },
+      {
+        q: `Are post office opening hours reliable?`,
+        a: `Treat them as a guide. Hours are an optional tag, counters inside shops often follow the shop's hours rather than their own, and neither updates the moment an operator changes them. Check before a special trip.`,
+      },
+    ],
+  },
+  {
+    category: CATEGORIES.Shower,
+    slug: "showers",
+    plural: "public showers",
+    heading: "Showers",
+    schemaType: "Place",
+    intro: (city, count) =>
+      `${count} public showers are mapped in and around ${city}: the ones at beaches and lidos, at campsites and marinas, and in the sports facilities that let anyone in. A category almost no mainstream map bothers with, and the one you want after a long drive or a swim.`,
+    faq: (city, count) => [
+      {
+        q: `Where can I take a shower in ${city}?`,
+        a: `The map shows ${count} mapped showers. Beach and pool showers are usually cold and open air, while campsite and marina ones are enclosed and often heated, so it is worth tapping the marker before making the trip.`,
+      },
+      {
+        q: `Are they free?`,
+        a: `Beach rinse showers normally are. Campsite, marina and station showers usually charge, sometimes by coin or token. OpenStreetMap records the fee only some of the time, so carry change.`,
+      },
+      {
+        q: `Can I shower if I am travelling in a van?`,
+        a: `Campsites and marinas are the reliable options, and both are on this map alongside dump stations and drinking water in the "Van life" preset. Some fuel stations along motorways also have showers for drivers.`,
+      },
+    ],
+  },
+  {
+    category: CATEGORIES.Fireplace,
+    slug: "fireplaces",
+    plural: "fireplaces and barbecue spots",
+    heading: "Fireplaces and BBQ spots",
+    schemaType: "Place",
+    intro: (city, count) =>
+      `${count} public fireplaces and barbecue spots are mapped around ${city}: the fire rings at hiking shelters, the built grills in parks, and the maintained cooking spots along trails. These are exactly the fixtures a local survey records and a commercial map never does.`,
+    faq: (city, count) => [
+      {
+        q: `Where can I grill or make a fire near ${city}?`,
+        a: `The map shows ${count} mapped fireplaces and barbecue spots. Many sit beside a shelter or a picnic site, so turning those categories on too gives you the whole stopping place rather than just the fire ring.`,
+      },
+      {
+        q: `Am I allowed to light a fire there?`,
+        a: `A mapped fireplace means the structure exists, not that a fire is legal today. Regional fire bans in dry weather override everything, and in some countries they are announced daily. Check the local restriction before you strike a match.`,
+      },
+      {
+        q: `Is firewood provided?`,
+        a: `At maintained wilderness sites in the Nordics and the Alps it often is, in a woodshed beside the fireplace. Elsewhere assume not. OpenStreetMap rarely records it either way.`,
+      },
+    ],
+  },
+  {
+    category: CATEGORIES.CompressedAir,
+    slug: "air-pumps",
+    plural: "air pumps",
+    heading: "Air pumps",
+    schemaType: "Place",
+    intro: (city, count) =>
+      `${count} places to inflate a tyre are mapped in ${city}: the compressed air points at fuel stations and car parks, and the public pumps cyclists can use. Usually free, usually unsigned, and near impossible to search for anywhere else.`,
+    faq: (city, count) => [
+      {
+        q: `Where can I pump up a tyre in ${city}?`,
+        a: `The map shows ${count} mapped air points. Most are at fuel stations, tucked at the edge of the forecourt where the sign is easy to miss from the road.`,
+      },
+      {
+        q: `Do they work for bicycles?`,
+        a: `Many forecourt units have a Presta or Schrader adapter and plenty of cyclists use them, but the pressure gauges are made for cars and read poorly at road bike pressures. Dedicated bicycle pumps are tagged separately in OpenStreetMap and are not all included here.`,
+      },
+      {
+        q: `Are they free?`,
+        a: `Often, though some are coin operated or need a purchase at the till. Where OpenStreetMap records a fee it shows in the point details.`,
+      },
+    ],
+  },
+  {
+    category: CATEGORIES.Bench,
+    slug: "benches",
+    plural: "benches",
+    heading: "Benches",
+    schemaType: "Place",
+    intro: (city, count) =>
+      `${count} public benches are mapped in ${city}. It is the largest category here and the most quietly useful one: if you are walking with a bad knee, a small child or a heavy bag, knowing where the next place to sit down is changes the route you take.`,
+    faq: (city, count) => [
+      {
+        q: `Where are the benches in ${city}?`,
+        a: `The map shows ${count} mapped benches, clustered until you zoom in far enough for them to separate. Parks, promenades and bus stops are where they concentrate.`,
+      },
+      {
+        q: `Is every bench in ${city} on the map?`,
+        a: `No. Benches are mapped by whoever walked past and cared, so coverage swings hard between neighbourhoods: a well surveyed park can have every one recorded while the next street over has none. Absence here is weaker evidence than in any other category.`,
+      },
+      {
+        q: `Does it say whether a bench has a backrest?`,
+        a: `Sometimes. OpenStreetMap can record a backrest, the material and how many people fit, and surveyors who map benches deliberately tend to add them. Where they exist, they show in the point details.`,
       },
     ],
   },

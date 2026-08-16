@@ -31,7 +31,7 @@ const OUTPUT = path.resolve(ROOT, "..", "overpass", "osmium-filter.txt");
  * we keep: [building=retail][toilets=yes] is a handful of shops, but keeping
  * every retail building would pull in a large part of the extract.
  */
-const BROAD_TAGS = new Set(["building=retail", "leisure=pitch"]);
+const BROAD_TAGS = new Set(["building=retail", "leisure=pitch", "man_made=tower"]);
 
 /**
  * Split "[amenity=fuel]" or '[a=b][c~"d"]' into its conditions. Values may

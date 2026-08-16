@@ -4,9 +4,12 @@
 # Objects carrying any of these tags are kept when the raw OSM extract is
 # imported. Everything else is dropped before Overpass ever sees it.
 #
-# 37 tags, covering 21 categories.
+# 49 tags, covering 26 categories.
 nwr/amenity=atm  # Atm
+nwr/amenity=bbq  # Fireplace
+nwr/amenity=bench  # Bench
 nwr/amenity=charging_station  # ChargingStation
+nwr/amenity=compressed_air  # CompressedAir
 nwr/amenity=drinking_water  # DrinkingWater
 nwr/amenity=fountain  # DrinkingWater
 nwr/amenity=fuel  # GasStation
@@ -16,29 +19,38 @@ nwr/amenity=library  # Library
 nwr/amenity=luggage_locker  # LuggageStorage
 nwr/amenity=parking  # Parking
 nwr/amenity=post_box  # PostBoxes
+nwr/amenity=post_office  # PostOffice
 nwr/amenity=public_bookcase  # Library
 nwr/amenity=recycling  # Recycling
 nwr/amenity=sanitary_dump_station  # SanitaryDumpStation
 nwr/amenity=shelter  # Shelter
+nwr/amenity=shower  # Shower
 nwr/amenity=toilets  # Toilets
 nwr/amenity=water_point  # DrinkingWater
 nwr/atm=yes  # Atm
 nwr/cuisine=ice_cream  # Icecream
-nwr/fireplace=yes  # Shelter
+nwr/fireplace=yes  # Fireplace
 nwr/fountain=drinking  # DrinkingWater
 nwr/highway=rest_area  # RestArea
+nwr/highway=services  # RestArea
+nwr/leisure=bird_hide  # Viewpoint
 nwr/leisure=dog_park  # DogPark
+nwr/leisure=firepit  # Fireplace
 nwr/leisure=fitness_station  # OutdoorGym
 nwr/leisure=picnic_table  # Picnic
 nwr/leisure=playground  # Playgrounds
 nwr/leisure=swimming_area  # Beach
 nwr/man_made=drinking_fountain  # DrinkingWater
 nwr/man_made=water_tap  # DrinkingWater
+nwr/man_made=water_well  # DrinkingWater
 nwr/natural=beach  # Beach
 nwr/shop=ice_cream  # Icecream
 nwr/sport=fitness  # OutdoorGym
 nwr/toilets=yes  # Toilets
+nwr/tourism=alpine_hut  # Shelter
 nwr/tourism=camp_site  # TentSite
+nwr/tourism=caravan_site  # TentSite
 nwr/tourism=picnic_site  # Picnic
 nwr/tourism=viewpoint  # Viewpoint
 nwr/tourism=wilderness_hut  # Shelter
+nwr/tower:type=observation  # Viewpoint

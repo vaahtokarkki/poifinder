@@ -751,7 +751,7 @@ const App = () => {
           url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
         />
         <UserPositionMarker position={userPosition} />
-        <PoiMarkers markers={filteredMarkers} onNotice={showNotice} />
+        <PoiMarkers markers={filteredMarkers} categories={category} onNotice={showNotice} />
         {routeGeoJson && displaySearchItem === "routes" && (
           <GeoJSON
             data={routeGeoJson}

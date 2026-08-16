@@ -19,7 +19,7 @@ one answering queries and one building the data, sharing that directory —
 
 The extract is filtered before it is imported. `osmium-filter.txt` is generated
 from `CATEGORY_CONFIG` in the app, so the database holds drinking fountains,
-playgrounds, post boxes and the seventeen other categories, and nothing else.
+playgrounds, post boxes and the twenty-odd other categories, and nothing else.
 On the Netherlands extract, 1.4 GB of OpenStreetMap comes out as 21 MB, or
 about 1.5%, member nodes included. That ratio is what lets a continent fit on
 a small server; it is not what decides whether the *import* fits, which is

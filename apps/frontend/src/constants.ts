@@ -24,6 +24,11 @@ import CabinIcon from '@mui/icons-material/Cabin';
 import HikingIcon from '@mui/icons-material/Hiking';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
+import MarkunreadMailboxIcon from '@mui/icons-material/MarkunreadMailbox';
+import ShowerIcon from '@mui/icons-material/Shower';
+import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
+import TireRepairIcon from '@mui/icons-material/TireRepair';
+import ChairAltIcon from '@mui/icons-material/ChairAlt';
 import * as React from "react";
 
 export enum CATEGORIES {
@@ -50,6 +55,11 @@ export enum CATEGORIES {
   SanitaryDumpStation,
   OutdoorGym,
   Library,
+  PostOffice,
+  Shower,
+  Fireplace,
+  CompressedAir,
+  Bench,
 }
 
 export enum CATEGORY_GROUP {
@@ -92,13 +102,14 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
   [CATEGORIES.Toilets]: {
     // The second filter is buildings that say they have a toilet without being
     // one: shopping centres, supermarkets, museums, libraries and town halls,
-    // campuses. One regex rather than a filter per value, because each filter
-    // is its own statement in the Overpass query and this is a category people
-    // run on a phone. `toilets=yes` is what all of them have to carry, so the
-    // osmium import tag is unchanged and the extract needs no reimport
+    // campuses, stations. One regex rather than a filter per value, because
+    // each filter is its own statement in the Overpass query and this is a
+    // category people run on a phone. `toilets=yes` is what all of them have
+    // to carry, so the osmium import tag is unchanged and the extract needs no
+    // reimport when this list grows
     filters: [
       "[amenity=toilets]",
-      '[building~"^(retail|supermarket|museum|public|university)$"][toilets=yes]',
+      '[building~"^(retail|supermarket|mall|commercial|museum|public|university|train_station)$"][toilets=yes]',
     ],
     display: "Toilets",
     icon: React.createElement(WcIcon),
@@ -134,14 +145,24 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     group: CATEGORY_GROUP.Food,
   },
   [CATEGORIES.Shelter]: {
-    filters: ['[amenity=shelter][shelter_type~"^(picnic_shelter|lean_to|weather_shelter|basic_hut)$"]', "[fireplace=yes][access!=private]", "[tourism=wilderness_hut]"],
+    // Only shelters that say what kind they are: an untyped amenity=shelter is
+    // as likely to be a bus stop as a hut. Fireplaces used to live here and are
+    // their own category now, because a fire ring in a park is not a structure
+    // you can sit out a rainstorm in
+    filters: [
+      '[amenity=shelter][shelter_type~"^(picnic_shelter|lean_to|weather_shelter|basic_hut)$"]',
+      "[tourism=wilderness_hut]",
+      "[tourism=alpine_hut]",
+    ],
     display: "Shelter",
     icon: React.createElement(DeckIcon),
     color: "#1B5E20",
     group: CATEGORY_GROUP.Nature,
   },
   [CATEGORIES.TentSite]: {
-    filters: ["[tourism=camp_site]"],
+    // Caravan sites alongside the tent ones: the van life preset sends people
+    // here, and a motorhome cannot use half of what camp_site alone returns
+    filters: ["[tourism=camp_site]", "[tourism=caravan_site]"],
     display: "Camp site",
     icon: React.createElement(BedtimeIcon),
     color: "#212121",
@@ -162,7 +183,9 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     group: CATEGORY_GROUP.Nature,
   },
   [CATEGORIES.RestArea]: {
-    filters: ["[highway=rest_area]"],
+    // rest_area is the layby, services is the full motorway stop with fuel and
+    // a building. Both are what someone driving means by "somewhere to stop"
+    filters: ["[highway=rest_area]", "[highway=services]"],
     display: "Rest area",
     icon: React.createElement(NaturePeopleIcon),
     color: "#0D47A1",
@@ -199,7 +222,13 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     group: CATEGORY_GROUP.Essentials,
   },
   [CATEGORIES.Viewpoint]: {
-    filters: ["[tourism=viewpoint]"],
+    // The structures people climb for a view, not just the marked spots:
+    // observation towers, and the bird hides that are the same idea with walls
+    filters: [
+      "[tourism=viewpoint]",
+      "[man_made=tower][tower:type=observation]",
+      "[leisure=bird_hide]",
+    ],
     display: "Viewpoints",
     icon: React.createElement(LandscapeIcon),
     color: "#7B1FA2",
@@ -215,6 +244,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
       "[man_made=drinking_fountain]",
       "[amenity=fountain][drinking_water=yes]",
       "[fountain=drinking]",
+      "[man_made=water_well][drinking_water=yes]",
     ],
     display: "Drinking water",
     icon: React.createElement(WaterDropIcon),
@@ -242,6 +272,49 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     display: "Libraries",
     icon: React.createElement(LocalLibraryIcon),
     color: "#6D4C41",
+    group: CATEGORY_GROUP.Essentials,
+  },
+  [CATEGORIES.PostOffice]: {
+    // The counter you post a parcel over, kept apart from the post boxes: one
+    // has opening hours and the other is a slot in a wall
+    filters: ["[amenity=post_office]"],
+    display: "Post offices",
+    icon: React.createElement(MarkunreadMailboxIcon),
+    color: "#AD1457",
+    group: CATEGORY_GROUP.Essentials,
+  },
+  [CATEGORIES.Shower]: {
+    filters: ["[amenity=shower]"],
+    display: "Showers",
+    icon: React.createElement(ShowerIcon),
+    color: "#00897B",
+    group: CATEGORY_GROUP.Essentials,
+  },
+  [CATEGORIES.Fireplace]: {
+    // The primary tags first: a fire ring in a park is leisure=firepit or
+    // amenity=bbq, and only the ones attached to something else (a shelter, a
+    // picnic site) carry the fireplace=yes that used to be all this matched
+    filters: ["[leisure=firepit]", "[amenity=bbq]", "[fireplace=yes][access!=private]"],
+    display: "Fireplaces & BBQ",
+    icon: React.createElement(OutdoorGrillIcon),
+    color: "#FF6F00",
+    group: CATEGORY_GROUP.Nature,
+  },
+  [CATEGORIES.CompressedAir]: {
+    filters: ["[amenity=compressed_air]"],
+    display: "Air pumps",
+    icon: React.createElement(TireRepairIcon),
+    color: "#607D8B",
+    group: CATEGORY_GROUP.Car,
+  },
+  [CATEGORIES.Bench]: {
+    // By far the largest category here, and the reason the extract grew. Worth
+    // it: where you can sit down is exactly the kind of thing no commercial
+    // map records and someone with a bad knee plans a walk around
+    filters: ["[amenity=bench]"],
+    display: "Benches",
+    icon: React.createElement(ChairAltIcon),
+    color: "#9E9D24",
     group: CATEGORY_GROUP.Essentials,
   },
 };

@@ -9,6 +9,10 @@
 
   /* Vertical rhythm of the controls stacked on top of the map */
   --overlay-gap: 0.75em;
+  /* Collapsed height of the bottom sheet. Both the prerendered block and the
+     sheet itself read this, so the static page opens at the same height React
+     renders a moment later and there is nothing to flash */
+  --sheet-peek-height: 172px;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -359,8 +363,11 @@ body {
 
 /*
  * What the prerender leaves in the HTML, so the page is readable before the
- * bundle has run. It is styled as the sheet it is about to become, and App
- * removes it as soon as React renders the same content for real.
+ * bundle has run. It is styled as the sheet it is about to become, down to the
+ * collapsed height and the grab handle, so the swap when App removes it is
+ * invisible. Rendering it full height instead flashed a maximised sheet on
+ * every load. The overflow clips the rest of the content, which stays in the
+ * markup for the crawler.
  */
 #seo-prerender {
   position: fixed;
@@ -368,23 +375,35 @@ body {
   right: 0;
   bottom: 0;
   z-index: 2100;
-  max-height: 85vh;
-  overflow-y: auto;
+  height: min(var(--sheet-peek-height), 85vh);
+  overflow: hidden;
   background: #fff;
   color: #202124;
   border-radius: 1em 1em 0 0;
   box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.18);
 }
 
+/* Stands in for .bottom-sheet-handle, which has no markup here */
+#seo-prerender::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 4px;
+  margin: 10px auto 8px auto;
+  border-radius: 2px;
+  background: #bdc1c6;
+}
+
+/* Matches .bottom-sheet-content, so the text does not shift on the swap */
 .seo-prerender-inner {
-  padding: 1.25em 1.25em 1.5em 1.25em;
+  padding: 0.6em 1.25em 1.5em 1.25em;
 }
 
 @media (min-width: 900px) {
   #seo-prerender {
-    left: auto;
-    right: 16px;
-    width: 400px;
+    left: 16px;
+    right: auto;
+    width: 460px;
   }
 }
 

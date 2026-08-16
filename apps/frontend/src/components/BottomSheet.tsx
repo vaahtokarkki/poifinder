@@ -9,6 +9,9 @@ const TAP_THRESHOLD = 6;
 /** A drag longer than this moves on in the drag direction */
 const DIRECTION_THRESHOLD = 50;
 
+/** The collapsed height the prerendered block already drew, when it parses */
+const DEFAULT_PEEK_HEIGHT = 172;
+
 type BottomSheetProps = {
   /** Height of the collapsed state, enough for a short summary */
   peekHeight?: number;
@@ -19,14 +22,26 @@ const fullHeightForWindow = () =>
   Math.min(Math.round(window.innerHeight * 0.85), 680);
 
 /**
+ * The static markup the prerender leaves behind opens the sheet at the height
+ * --sheet-peek-height gives it, before any of this has run. Reading the same
+ * property keeps the sheet from resizing the moment React takes over.
+ */
+const peekHeightFromStyles = () => {
+  const value = getComputedStyle(document.documentElement).getPropertyValue(
+    "--sheet-peek-height"
+  );
+  const parsed = Number.parseFloat(value);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : DEFAULT_PEEK_HEIGHT;
+};
+
+/**
  * A bottom sheet that can be dragged between three states: peek, full and
  * hidden. Dragging it all the way down dismisses it for the rest of the visit,
  * as in the Google Maps app.
  */
-const BottomSheet: React.FC<BottomSheetProps> = ({
-  peekHeight = 172,
-  children,
-}) => {
+const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, children }) => {
+  const [measuredPeek] = useState(peekHeightFromStyles);
+  const collapsedHeight = peekHeight ?? measuredPeek;
   const [fullHeight, setFullHeight] = useState(fullHeightForWindow);
   const [snap, setSnap] = useState<SheetSnap>("peek");
   const [dragging, setDragging] = useState(false);
@@ -34,10 +49,10 @@ const BottomSheet: React.FC<BottomSheetProps> = ({
   const heightFor = useCallback(
     (target: SheetSnap) => {
       if (target === "hidden") return HIDDEN_HEIGHT;
-      if (target === "peek") return Math.min(peekHeight, fullHeight);
+      if (target === "peek") return Math.min(collapsedHeight, fullHeight);
       return fullHeight;
     },
-    [peekHeight, fullHeight]
+    [collapsedHeight, fullHeight]
   );
 
   const [visible, setVisible] = useState(() => heightFor("peek"));

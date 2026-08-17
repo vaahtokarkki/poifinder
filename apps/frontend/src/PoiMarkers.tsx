@@ -16,16 +16,17 @@ import MarkerClusterGroup from "./components/MarkerClusterGroup";
 import PoiShape from "./components/PoiShape";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
 import {
+  ADDRESS_RANK,
   CONSUMED_KEYS,
   TRANSLATABLE_KEYS,
   capitaliseFirst,
   describeAddress,
-  describeLocation,
   describeSurvey,
   formatOpeningHours,
   isTimetableKey,
   labelFor,
   rankForKey,
+  wikipediaLabel,
   wikipediaUrl,
 } from "./poiPopup";
 
@@ -258,9 +259,9 @@ const formatLinkLabel = (href: string) => {
 const isDisplayableTag = (key: string, value: string) => {
   if (key === "access" && value === "yes") return false;
   /**
-   * Read by a row that is written rather than listed: the address, where in the
-   * building it is, and when it was last checked. Listing them again underneath
-   * would say everything twice, in worse words the second time
+   * Read by a row that is written rather than listed: the address, and when it
+   * was last checked. Listing them again underneath would say everything twice,
+   * in worse words the second time
    */
   if (CONSUMED_KEYS.has(key)) return false;
   if (key.startsWith("check_date")) return false;
@@ -482,44 +483,50 @@ type PopupRow = {
   written?: boolean;
   /** Rendered as a link to here, when the value is not itself a URL */
   href?: string;
+  /** What the link says, where the host it points at is not the useful part */
+  linkLabel?: string;
 };
 
 /**
  * Everything worth putting in front of somebody, in the order it is worth
  * saying it.
  *
- * The written rows come first because they answer "where is it, exactly", which
- * is the question a person holding a phone in a shopping centre has, and no
- * single tag answers.
+ * The address is ranked alongside the tags rather than prepended to them, so
+ * that `indoor`, `level` and `location` can sit above it: the question a person
+ * holding a phone in a shopping centre has is which floor, and the address of a
+ * building they are already standing in answers nothing.
  */
 const buildPopupRows = (marker: OverpassMarkerData): PopupRow[] => {
   const tags = marker.tags ?? {};
-  const rows: PopupRow[] = [];
-
-  const location = describeLocation(tags);
-  if (location) rows.push({ key: "level", label: "Where", value: location, written: true });
+  const rows: (PopupRow & { rank: number })[] = [];
 
   const address = describeAddress(tags);
-  if (address) rows.push({ key: "addr", label: "Address", value: address, written: true });
+  if (address)
+    rows.push({
+      key: "addr",
+      label: "Address",
+      value: address,
+      written: true,
+      rank: ADDRESS_RANK,
+    });
 
-  const tagRows = Object.entries(tags)
-    .filter(([key, value]) => isDisplayableTag(key, String(value)))
-    .map(([key, rawValue]) => {
-      const value = String(rawValue);
-      const timetable = isTimetableKey(key);
-      return {
-        key,
-        label: labelFor(key),
-        value: timetable ? formatOpeningHours(value) : value,
-        written: timetable,
-        href: key === "wikipedia" ? wikipediaUrl(value) : undefined,
-        rank: rankForKey(key),
-      };
-    })
-    // Stable, so tags of equal rank keep the order the contributor wrote them
-    .sort((a, b) => a.rank - b.rank);
+  for (const [key, rawValue] of Object.entries(tags)) {
+    const value = String(rawValue);
+    if (!isDisplayableTag(key, value)) continue;
+    const timetable = isTimetableKey(key);
+    rows.push({
+      key,
+      label: labelFor(key),
+      value: timetable ? formatOpeningHours(value) : value,
+      written: timetable,
+      href: key === "wikipedia" ? wikipediaUrl(value) : undefined,
+      linkLabel: key === "wikipedia" ? wikipediaLabel(value) : undefined,
+      rank: rankForKey(key),
+    });
+  }
 
-  return [...rows, ...tagRows];
+  // Stable, so tags of equal rank keep the order the contributor wrote them
+  return rows.sort((a, b) => a.rank - b.rank);
 };
 
 /** What to call a point, and what to say underneath */
@@ -564,7 +571,7 @@ const RenderMarkerContents: React.FC<{
 
       {rows.length > 0 && (
         <dl className="poi-popup-rows">
-          {rows.map(({ key, label, value: valueStr, written, href: rowHref }) => {
+          {rows.map(({ key, label, value: valueStr, written, href: rowHref, linkLabel }) => {
             const isShortAnswer = !written && SHORT_ANSWERS.has(valueStr.toLowerCase());
             const href =
               rowHref ?? (valueStr.startsWith("http") ? valueStr : `https://${valueStr}`);
@@ -606,7 +613,7 @@ const RenderMarkerContents: React.FC<{
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {formatLinkLabel(href)}
+                      {linkLabel ?? formatLinkLabel(href)}
                     </a>
                   ) : isShortAnswer ? (
                     <span

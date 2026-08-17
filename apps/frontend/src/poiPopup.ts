@@ -102,55 +102,13 @@ export const isTimetableKey = (key: string) =>
 
 /* ---------- Where the point is, when the point is not simply on the map ---------- */
 
-/** "Ground floor" beats "Level 0", and "basement" beats "Level -1" */
-const levelName = (level: number): string => {
-  if (level === 0) return "ground floor";
-  if (level === -1) return "basement";
-  if (level < -1) return `basement level ${Math.abs(level)}`;
-  return `level ${level}`;
-};
-
 /**
- * A level value, which is a number, a list of them (`0;1`) or a range (`0-2`).
- * Only the single number is worth naming; the rest are read back as they were
- * written, because a toilet spanning two floors is a rare enough thing that
- * guessing at prose for it would be inventing information.
+ * `indoor`, `level` and `location` are not assembled into a sentence: each one
+ * is listed as itself, at the top of the popup, ranked in TAG_RANKS below. A
+ * composite "Where: indoors, level 2" line read as prose the popup had written
+ * about the place, and a reader who wanted to know which floor had to parse a
+ * clause to find it. "Level — 2" is one glance.
  */
-const formatLevel = (value: string): string | null => {
-  const single = Number(value.trim());
-  if (Number.isFinite(single)) return levelName(single);
-  const many = value.trim().replace(/\s*[;,]\s*/g, ", ").replace(/\s*-\s*/g, "–");
-  return many ? `levels ${many}` : null;
-};
-
-/** What `location` says, for the values that describe a place rather than a pipe */
-const LOCATION_WORDS: Record<string, string> = {
-  underground: "underground",
-  overground: "above ground",
-  rooftop: "on the roof",
-  roof: "on the roof",
-  indoor: "indoors",
-};
-
-/**
- * Where to find the point once you are at the address: indoors or out, which
- * floor, underground or on the roof.
- *
- * This is the tag set that decides whether a mapped toilet is findable at all.
- * A shopping centre is one dot on the map and six floors on the ground, and
- * `level=2` sitting anonymously in a list of tags is the difference between a
- * two minute walk and a wander. Assembled into one line because that is how a
- * person would say it, rather than as three rows nobody joins up.
- */
-export const describeLocation = (tags: Record<string, string>): string | null => {
-  const parts: string[] = [];
-  const location = LOCATION_WORDS[tags.location?.toLowerCase()];
-  if (tags.indoor === "yes" && location !== "indoors") parts.push("indoors");
-  if (location) parts.push(location);
-  const level = tags.level !== undefined ? formatLevel(tags.level) : null;
-  if (level) parts.push(level);
-  return parts.length > 0 ? capitaliseFirst(parts.join(", ")) : null;
-};
 
 /**
  * The street address, in the shape the prerendered pages already use.
@@ -174,7 +132,7 @@ export const describeAddress = (tags: Record<string, string>): string | null => 
 export const CHECK_DATE_KEYS = ["check_date", "survey:date", "survey_date", "last_checked"];
 
 /** The tags read by a written row, and therefore not listed as themselves */
-export const CONSUMED_KEYS = new Set(["level", "indoor", "location", ...CHECK_DATE_KEYS]);
+export const CONSUMED_KEYS = new Set(CHECK_DATE_KEYS);
 
 /** Whole months, because a survey date is not accurate to the day it names */
 const monthsSince = (date: Date, now: Date): number =>
@@ -240,6 +198,18 @@ export const describeSurvey = (
  * whatever order the contributor typed them, which answers no question first.
  */
 const TAG_RANKS: Record<string, number> = {
+  /** What it is called, which is the first thing anybody reads */
+  name: 0,
+  /**
+   * Then, and above the address: these are the tags that decide whether a
+   * mapped toilet is findable at all. A shopping centre is one dot on the map
+   * and six floors on the ground, and `level=2` sitting anonymously further
+   * down a list of tags is the difference between a two minute walk and a
+   * wander.
+   */
+  level: 1,
+  indoor: 2,
+  location: 3,
   opening_hours: 10,
   collection_times: 10,
   service_times: 11,
@@ -278,6 +248,14 @@ const TAG_RANK_PREFIXES: [string, number][] = [
   ["socket:", 48],
   ["contact:", 63],
 ];
+
+/**
+ * Where the address goes: after the tags that say where in the building it is,
+ * and before everything about the place itself. It is not a tag row — the
+ * street, the number and the unit are assembled from three of them — so it
+ * carries its rank here rather than in the table above.
+ */
+export const ADDRESS_RANK = 5;
 
 /** Where a tag with no opinion about it goes: after the specifics, before the prose */
 const DEFAULT_TAG_RANK = 55;
@@ -322,14 +300,30 @@ export const labelFor = (key: string): string => {
   return formatKey(key);
 };
 
+/** A language code and an article title, which is what the tag holds */
+const WIKIPEDIA_VALUE = /^([a-z-]{2,}):(.+)$/i;
+
 /**
  * `wikipedia=fi:Kauppatori` is a language and an article, not a URL. Turned into
  * one it is the only link in the popup that leads somewhere worth reading about
  * a viewpoint, a memorial or an old building.
  */
 export const wikipediaUrl = (value: string): string | undefined => {
-  const match = value.match(/^([a-z-]{2,}):(.+)$/i);
+  const match = value.match(WIKIPEDIA_VALUE);
   if (!match) return undefined;
   const [, language, article] = match;
   return `https://${language}.wikipedia.org/wiki/${encodeURIComponent(article.replace(/ /g, "_"))}`;
+};
+
+/**
+ * What the link is called: the article's title, and nothing else.
+ *
+ * Every other link in the popup is labelled by its host, because where a link
+ * goes is the thing worth knowing before tapping it. Here the row already says
+ * Wikipedia, so "fi.wikipedia.org/wiki/Kauppatori" spends most of a narrow
+ * column repeating the label and leaves the one useful word to be truncated.
+ */
+export const wikipediaLabel = (value: string): string | undefined => {
+  const article = value.match(WIKIPEDIA_VALUE)?.[2];
+  return article?.replace(/_/g, " ").trim() || undefined;
 };

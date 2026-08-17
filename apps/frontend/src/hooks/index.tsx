@@ -73,6 +73,10 @@ const startWatching = () => {
       if (error) console.debug("Geolocation error (cached):", error.message);
     },
     {
+      // Ask for GPS rather than the network provider. Wi-Fi based positioning
+      // makes Chrome request Android's "nearby devices" permission, which is
+      // alarming out of context.
+      enableHighAccuracy: true,
       maximumAge: 5 * 60 * 1000, // Accept cached position up to 5 minutes old
       timeout: 5000, // Don't wait more than 5 seconds for GPS
     }
@@ -86,7 +90,7 @@ const startWatching = () => {
       if (error) console.debug("Geolocation watch error:", error.message);
     },
     {
-      enableHighAccuracy: false, // Use standard accuracy for speed
+      enableHighAccuracy: true, // GPS only, see the note above
       timeout: 10000, // Wait up to 10s for fresh GPS
       maximumAge: 0, // Always get fresh GPS for watchPosition
     }

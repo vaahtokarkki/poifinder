@@ -69,11 +69,11 @@ function formatOpeningHoursRule(rule: string): string {
   let text = rule.trim();
   if (!text) return "";
   // The whole rule, and it says two separate things: every day, and all day
-  if (/^24\/7$/i.test(text)) return "Every day, all day";
+  if (/^24\/7$/i.test(text)) return "24/7";
   // A quoted comment is a mapper writing prose inside the syntax
   text = text.replace(/"([^"]*)"/g, "$1");
   // Midnight to midnight is how the syntax spells a full day
-  text = text.replace(/\b00:00\s*-\s*24:00\b/g, "all day");
+  text = text.replace(/\b00:00\s*-\s*24:00\b/g, "24h");
   text = text.replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su|PH|SH)\b/g, word => OPENING_HOURS_WORDS[word]);
   text = text.replace(/\boff\b/gi, "closed");
   // A hyphen spans days, dates and times alike, and a dash is what a span

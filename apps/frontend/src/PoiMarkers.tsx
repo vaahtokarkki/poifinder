@@ -13,6 +13,7 @@ import { OverpassMarkerData } from "./api/overpass"; // <-- Import the type
 import { TranslationError, translate } from "./api/translate";
 import type { TranslationFailure } from "./api/translate";
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
+import PoiShape from "./components/PoiShape";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
 import {
   CONSUMED_KEYS,
@@ -164,6 +165,24 @@ const CHANGING_TABLE_COLOR = "#E91E63";
 const hasChangingTable = (category: CATEGORIES | null, marker: OverpassMarkerData) =>
   category === CATEGORIES.Toilets && marker.tags?.changing_table === "yes";
 
+/** The default of {@link RenderMarkerIcon}, for a point of no known category */
+const UNCATEGORISED_COLOR = "black";
+
+/**
+ * The colour a point is drawn in, wherever it is drawn: the marker, the popup
+ * heading, and the outline of the way or relation behind it. One point is one
+ * colour, so the shape that appears under an open popup is recognisably the
+ * thing whose popup it is.
+ */
+const getMarkerColor = (
+  marker: OverpassMarkerData,
+  selected: readonly CATEGORIES[]
+): string => {
+  const category = findCategory(marker, selected);
+  if (hasChangingTable(category, marker)) return CHANGING_TABLE_COLOR;
+  return category !== null ? CATEGORY_CONFIG[category].color : UNCATEGORISED_COLOR;
+};
+
 const getMarkerIcon = (marker: OverpassMarkerData, selected: readonly CATEGORIES[]) => {
   const category = findCategory(marker, selected);
   const paidIcon = marker.tags?.fee === "yes" && category !== null
@@ -188,7 +207,7 @@ const getMarkerIcon = (marker: OverpassMarkerData, selected: readonly CATEGORIES
         ? RenderMarkerIcon(<ParkIcon />)
         : RenderMarkerIcon(
             paidIcon ?? CATEGORY_CONFIG[category].icon,
-            changingTable ? CHANGING_TABLE_COLOR : CATEGORY_CONFIG[category].color
+            getMarkerColor(marker, selected)
           );
     iconCache.set(key, icon);
   }
@@ -655,47 +674,91 @@ const createClusterIcon = (cluster: { getChildCount: () => number }) => {
   });
 };
 
+/**
+ * Whether this point is something OpenStreetMap drew rather than dropped: a
+ * way or a relation, which has an outline worth showing. A node is the marker
+ * and nothing more.
+ */
+const isDrawn = (marker: OverpassMarkerData) =>
+  marker.type === "way" || marker.type === "relation";
+
+/** Tells a way apart from a relation of the same number, which do coexist */
+const shapeKey = (marker: OverpassMarkerData) => `${marker.type}/${marker.id}`;
+
 const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   markers,
   categories,
   onNotice,
 }) => {
-return <MarkerClusterGroup
-  maxClusterRadius={CLUSTER_RADIUS_PX}
-  iconCreateFunction={createClusterIcon}
-  // Points that are truly on top of each other cannot be separated by zooming,
-  // so a click fans them out around the spot instead
-  spiderfyOnMaxZoom
-  spiderfyDistanceMultiplier={1.6}
-  // The hull drawn around a group of two is noise at this scale
-  showCoverageOnHover={false}
-  // Adding a thousand markers at once should not freeze the map
-  chunkedLoading
->
-  {markers.map((marker) => {
-    // Most points carry nothing but the tag that put them on the map. A popup
-    // holding only the name repeats what the marker already said, and covers
-    // the map to do it, so those points get a line at the bottom of the screen
-    // instead and the map stays where it is
-    const hasDetails = buildPopupRows(marker).length > 0 || describeSurvey(marker.tags) !== null;
-    const { title } = describeMarker(marker, categories);
+  /**
+   * The point whose outline is on the map, which is the point whose popup is
+   * open. Only ever one: see PoiShape
+   */
+  const [openShape, setOpenShape] = React.useState<string | null>(null);
 
-    return <Marker
-      key={String(marker.id)}
-      position={marker.position}
-      icon={getMarkerIcon(marker, categories)}
-      eventHandlers={
-        hasDetails ? undefined : { click: () => onNotice?.(`${title} — no extra details`) }
-      }
-    >
-      {hasDetails && (
-        <Popup className="poi-popup" maxWidth={380} minWidth={260} autoPanPadding={[24, 24]}>
-          <RenderMarkerContents marker={marker} categories={categories} />
-        </Popup>
+  const shapeMarker = markers.find(marker => shapeKey(marker) === openShape) ?? null;
+
+  return (
+    <>
+      <MarkerClusterGroup
+        maxClusterRadius={CLUSTER_RADIUS_PX}
+        iconCreateFunction={createClusterIcon}
+        // Points that are truly on top of each other cannot be separated by zooming,
+        // so a click fans them out around the spot instead
+        spiderfyOnMaxZoom
+        spiderfyDistanceMultiplier={1.6}
+        // The hull drawn around a group of two is noise at this scale
+        showCoverageOnHover={false}
+        // Adding a thousand markers at once should not freeze the map
+        chunkedLoading
+      >
+        {markers.map((marker) => {
+          // Most points carry nothing but the tag that put them on the map. A popup
+          // holding only the name repeats what the marker already said, and covers
+          // the map to do it, so those points get a line at the bottom of the screen
+          // instead and the map stays where it is
+          const hasDetails = buildPopupRows(marker).length > 0 || describeSurvey(marker.tags) !== null;
+          const { title } = describeMarker(marker, categories);
+
+          const key = shapeKey(marker);
+          const eventHandlers = !hasDetails
+            ? { click: () => onNotice?.(`${title} — no extra details`) }
+            : isDrawn(marker)
+              ? {
+                  popupopen: () => setOpenShape(key),
+                  // Only if it is still ours: opening another popup closes this
+                  // one, and the close arrives after the open it was caused by
+                  popupclose: () =>
+                    setOpenShape(current => (current === key ? null : current)),
+                }
+              : undefined;
+
+          return <Marker
+            key={String(marker.id)}
+            position={marker.position}
+            icon={getMarkerIcon(marker, categories)}
+            eventHandlers={eventHandlers}
+          >
+            {hasDetails && (
+              <Popup className="poi-popup" maxWidth={380} minWidth={260} autoPanPadding={[24, 24]}>
+                <RenderMarkerContents marker={marker} categories={categories} />
+              </Popup>
+            )}
+          </Marker>
+        })}
+      </MarkerClusterGroup>
+      {/* Outside the cluster group, which takes its children to be markers.
+          Keyed by the point, so switching between two open popups starts a new
+          fetch rather than redrawing the first one in the second one's colour */}
+      {shapeMarker && (
+        <PoiShape
+          key={shapeKey(shapeMarker)}
+          marker={shapeMarker}
+          color={getMarkerColor(shapeMarker, categories)}
+        />
       )}
-    </Marker>
-  })}
-</MarkerClusterGroup>
+    </>
+  );
 }
 
 /**

@@ -16,6 +16,13 @@ export type OverpassMarkerData = {
   name?: string;
   tags?: Record<string, string>;
   type?: string;
+  /**
+   * When the object was last edited, as OpenStreetMap's own ISO timestamp.
+   * Absent from anything cached before the query started asking for it, and
+   * from any server whose database was imported without metadata, so the popup
+   * treats it as optional rather than assuming it
+   */
+  timestamp?: string;
 };
 
 const buildBaseOverpassQuery = (
@@ -30,12 +37,21 @@ const buildBaseOverpassQuery = (
     )
     .join("\n");
 
+  /**
+   * `meta` is what carries the last edit date, which the popup shows under the
+   * survey date. It is not free on the server side: a database imported without
+   * metadata answers `out meta` with **no elements at all**, rather than with
+   * the objects minus their timestamps. So a self hosted instance has to be
+   * imported with OVERPASS_META=yes — see apps/overpass/README.md — before this
+   * query reaches it, or it goes silently empty while the public mirrors carry
+   * on working.
+   */
   return `
     [out:json];
     (
       ${filterBlocks}
     );
-    out center;
+    out meta center;
   `;
 }
 
@@ -74,6 +90,8 @@ type OverpassElement = {
     geometry?: OverpassGeomPoint[];
   }[];
   tags?: Record<string, string>;
+  /** Written by `out meta`, and only by a server that imported metadata */
+  timestamp?: string;
 };
 
 /**
@@ -425,6 +443,7 @@ export async function fetchOverpassMarkers(
           name: el.tags?.name,
           tags: el.tags,
           type: el.type,
+          timestamp: el.timestamp,
         };
       }
       if (el.type !== "node" && el.center) {
@@ -435,6 +454,7 @@ export async function fetchOverpassMarkers(
           name: el.tags?.name,
           tags: el.tags,
           type: el.type,
+          timestamp: el.timestamp,
         };
       }
       return null;

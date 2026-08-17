@@ -21,6 +21,7 @@ import {
   TRANSLATABLE_KEYS,
   capitaliseFirst,
   describeAddress,
+  describeEdit,
   describeSurvey,
   formatOpeningHours,
   isTimetableKey,
@@ -552,6 +553,7 @@ const RenderMarkerContents: React.FC<{
   const { config, title, subtitle } = describeMarker(marker, categories);
   const rows = buildPopupRows(marker);
   const survey = describeSurvey(marker.tags);
+  const edited = describeEdit(marker.timestamp);
 
   return (
     <div className="poi-popup-body">
@@ -647,9 +649,14 @@ const RenderMarkerContents: React.FC<{
         </dl>
       )}
 
-      {/* Below the rows and set quieter than them, because it is a fact about
-          the data rather than about the place */}
+      {/* Below the rows and set quieter than them, because these are facts
+          about the data rather than about the place. Two lines rather than one
+          joined by a separator: when a place has both, they say different
+          things — somebody stood there in June, somebody edited the record in
+          August — and running them together invites reading the second as
+          confirmation of the first */}
       {survey && <p className="poi-popup-survey">{survey}</p>}
+      {edited && <p className="poi-popup-edited">{edited}</p>}
     </div>
   );
 };

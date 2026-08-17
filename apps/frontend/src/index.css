@@ -751,6 +751,18 @@ body {
   color: #80868b;
 }
 
+/*
+ * When the record itself was last edited, which is a weaker claim than a survey
+ * and set weaker still: same size, closer to the line above it, because the two
+ * belong together as one footnote about the data. It follows the survey line
+ * when there is one, and stands alone when there is not.
+ */
+.poi-popup-edited {
+  margin: 0.15em 0 0 0;
+  font-size: 0.7rem;
+  color: #9aa0a6;
+}
+
 /* Machine translation notices and the reason one could not be had. Both are
    asides about the text rather than the text, and are set to say so */
 .poi-popup-translate-note {

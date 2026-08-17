@@ -404,6 +404,25 @@ docker compose -f docker-compose.prod.yml logs ofelia
 An image update is not a data update. It restarts the containers on the same
 database directory; the data is only ever rebuilt by `update-poi-db`.
 
+### Changing a setting the database is built with
+
+`OVERPASS_META` is one of these, and so is `OVERPASS_COMPRESSION`: they describe
+the files on disk, not the running server, so editing the compose file changes
+nothing until the data is built again. `update-poi-db` reads the variable from
+its own environment, which means the importer has to be recreated before it is
+run, or it rebuilds with the value it started with:
+
+```bash
+# recreate both containers so they see the new value, then rebuild the data
+docker compose -f docker-compose.prod.yml up -d
+docker compose -f docker-compose.prod.yml exec importer update-poi-db
+```
+
+The reimport is a full one — Overpass cannot add metadata to a database that was
+built without it — so it costs whatever a rebuild of the region costs, plus the
+3 seconds in 111 that the metadata itself adds. Queries are answered from the
+old database throughout and the swap at the end takes a second.
+
 ### Where the database lives
 
 `/srv/wayside/db` on the host, bound to `/db` in both containers, rather than a
@@ -506,8 +525,23 @@ start. To run that instead of building locally, replace the `build:` block in
   continent" above.
 - **Import memory.** `OVERPASS_FLUSH_SIZE` bounds the importer, and nothing
   bounds the filter: budget about 3 GB for it whatever the region.
-- **Meta data is off.** Who edited an object and when roughly doubles the
-  database and the app shows none of it.
+- **Meta data is on, and has to stay on.** `OVERPASS_META=yes` is what makes
+  `out meta` return the last edit date, which the popup shows under the survey
+  date. A database imported without it does not answer such a query with the
+  objects minus their timestamps — it answers with **no elements at all**, so
+  the map goes empty while the public mirrors carry on working. Measured on the
+  Finland extract (900,822 objects after filtering): the database goes from
+  2,778,327,394 to 2,785,130,890 bytes, **+6.8 MB, or +0.24%**, and the import
+  from 111 to 114 seconds. The cost is five files — `nodes_meta.bin` 5.5 MB,
+  `ways_meta.bin` 1.1 MB, `relations_meta.bin` 16 KB, `user_data.bin` 131 KB,
+  `user_indices.bin` 33 KB — or about 7.5 bytes an object. Nearly all of the
+  2.6 GB is `nodes.map` and `ways.map`, which meta does not touch: those are
+  sized by how far the kept ids are scattered across the global id space, which
+  a filtered extract maximises. An earlier version of this note claimed meta
+  "roughly doubles the database", which is true of neither this database nor
+  this setting — `OVERPASS_META=attic` keeps every historic version of every
+  object and is the expensive one. Note that Geofabrik's public extracts carry
+  `version+timestamp` only, so `changeset` comes back as 0 and `user` empty.
 - **Areas are off.** Area queries need a background job rebuilding them
   continuously. Every query the app makes is `around:`, a bbox or a polygon.
 - **TLS.** The container speaks plain HTTP, so something has to terminate TLS

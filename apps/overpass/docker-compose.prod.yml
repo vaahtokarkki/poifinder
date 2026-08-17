@@ -91,7 +91,9 @@ services:
       # anything can still query it with curl
       OVERPASS_CORS_ORIGIN: https://wayside.cc
 
-      OVERPASS_META: "no"
+      # Has to match the importer's setting below: this is an on disk format,
+      # and the server only returns edit dates from a database built with them
+      OVERPASS_META: "yes"
       OVERPASS_USE_AREAS: "false"
       OVERPASS_ALLOW_DUPLICATE_QUERIES: "yes"
 
@@ -215,7 +217,11 @@ services:
       # The settings the database is built with. They have to match what the
       # server expects to read, which is why they are repeated rather than
       # shared: two containers, one on disk format
-      OVERPASS_META: "no"
+      #
+      # Metadata is what carries the last edit date the popup shows. It costs
+      # +6.8 MB of 2.6 GB and 3 seconds of 111, measured on Finland. Changing it
+      # needs a full reimport, which is the only thing update-poi-db does
+      OVERPASS_META: "yes"
       OVERPASS_USE_AREAS: "false"
 
       # How much the importer buffers before it writes. The image's default is

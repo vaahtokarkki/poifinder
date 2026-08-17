@@ -49,9 +49,16 @@ services:
       # without ever holding one on the disk. See .env.example
       WAYSIDE_REGION_LIST: ${WAYSIDE_REGION_LIST:-}
 
-      # Who edited an object and when. The app shows none of it and it roughly
-      # doubles the database
-      OVERPASS_META: "no"
+      # When an object was last edited, which the popup shows under the survey
+      # date. Measured on the Finland extract: +6.8 MB on a 2.6 GB database and
+      # +3 seconds on a 111 second import, so a quarter of one percent rather
+      # than the doubling this comment used to claim. "attic" is the expensive
+      # one — it keeps every historic version — and the app has no use for it.
+      #
+      # Not optional while the frontend asks for `out meta`: a database imported
+      # without this answers such a query with no elements at all, so turning it
+      # off means an empty map rather than a map without edit dates
+      OVERPASS_META: "yes"
 
       # Areas are a permanent background job that computes something we never
       # query: every query here is around:, bbox or poly

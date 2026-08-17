@@ -189,6 +189,45 @@ export const describeSurvey = (
   return months < 0 ? `Last checked ${when}` : `Last checked ${when} · ${relativeAge(months)}`;
 };
 
+/**
+ * When the record was last edited, which is a different fact from when it was
+ * last checked and is deliberately worded to keep the two apart.
+ *
+ * An edit is a change to the *record*: a bot retagging a key, somebody fixing a
+ * spelling, a geometry nudged by ten metres. It says a person or a script
+ * touched this entry recently, not that anybody has been to the place — a
+ * fountain edited last week may have been ripped out in 2019 and nobody has
+ * noticed. That is why it sits under the survey line rather than substituting
+ * for it: an absent `check_date` is not repaired by a recent edit.
+ *
+ * Worth showing anyway, because the alternative is silence. A point last touched
+ * in 2011 with no survey date has told the reader something real about how much
+ * to trust it.
+ *
+ * The timestamp comes from `out meta`, so it is written by the server rather
+ * than typed by a mapper: an unparseable one is a bug or a server that answered
+ * oddly, not evidence, and is dropped rather than shown raw.
+ */
+export const describeEdit = (
+  timestamp: string | undefined,
+  now = new Date()
+): string | null => {
+  if (!timestamp) return null;
+  const date = new Date(timestamp);
+  if (Number.isNaN(date.getTime())) return null;
+
+  // Day precision, unlike a survey date: this one is exact, and an edit made
+  // yesterday is worth telling apart from one made at the start of the month
+  const when = date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
+  const months = monthsSince(date, now);
+  return months < 0 ? `Last edited ${when}` : `Last edited ${when} · ${relativeAge(months)}`;
+};
+
 /* ---------- What order the rows go in, and what they are called ---------- */
 
 /**

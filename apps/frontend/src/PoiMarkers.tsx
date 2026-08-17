@@ -10,6 +10,8 @@ import {
   matchesFilter,
 } from "./constants";
 import { OverpassMarkerData } from "./api/overpass"; // <-- Import the type
+import { TranslationError, translate } from "./api/translate";
+import type { TranslationFailure } from "./api/translate";
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
 
@@ -273,6 +275,175 @@ const SHORT_ANSWERS = new Set([
 ]);
 
 /**
+ * The tags whose value is a sentence somebody wrote, rather than a value picked
+ * from a list. Only these are offered a translation.
+ *
+ * `name` is deliberately absent, and it is the important absence: a name is a
+ * proper noun, it is what is written on the door, and translating "Kauppatori"
+ * to "Market Square" gives the reader a phrase nobody standing in the street
+ * would recognise. `opening_hours` is a syntax rather than a language, an
+ * address is a place, and a website is a website. What is left is the prose:
+ * `description`, `note`, `inscription`, and the qualified forms of the first
+ * two — `wheelchair:description`, `operational_status:note`.
+ *
+ * `fixme` is prose too, and is left out on purpose: it is a message from one
+ * mapper to the next about work outstanding, not something written for the
+ * person standing in front of the place.
+ */
+const TRANSLATABLE_KEYS =
+  /^(description|note|inscription)(:[a-z-]+)?$|^[a-z_]+:(description|note)$/;
+
+/**
+ * Words that are cheap to spot and very hard to write by accident in another
+ * language. Present in useful numbers, the text is English.
+ */
+const ENGLISH_FUNCTION_WORDS =
+  /\b(the|and|of|is|are|at|for|with|to|in|on|from|free|open|next|near|only|during)\b/g;
+
+/** Letters English never uses, which no amount of function words outweighs */
+const NON_ENGLISH_LETTERS = /[äöåøæßñçéèêëüõšžłđğ]/i;
+
+/** Greek, Cyrillic, Hebrew, Arabic, kana and Han: not English, no guesswork */
+const NON_LATIN_SCRIPT =
+  /[Ͱ-ϿЀ-ӿ֐-׿؀-ۿ぀-ヿ一-鿿]/;
+
+/**
+ * Whether a value reads as English.
+ *
+ * Two distinct function words is the bar, and it is set there because one is
+ * not enough: German "Eingang in der Halle" contains "in", and suppressing the
+ * translation on that basis would hide the link from exactly the reader who
+ * needed it. The exception is a value too short to contain two of anything —
+ * "Free public toilet" is three words and unambiguously English — where one
+ * will do provided the text is otherwise plain ASCII.
+ */
+function looksEnglish(value: string): boolean {
+  const hits = new Set(value.toLowerCase().match(ENGLISH_FUNCTION_WORDS) ?? []).size;
+  if (hits >= 2) return true;
+  const words = value.trim().split(/\s+/).length;
+  return hits === 1 && words <= 3 && !NON_ENGLISH_LETTERS.test(value);
+}
+
+/**
+ * Whether to put a translate link under a value.
+ *
+ * The two mistakes this can make are not equally bad. Offering a translation of
+ * text that turned out to be English costs the reader a link they ignore;
+ * withholding one from text they cannot read costs them the feature entirely,
+ * silently, in the one case it existed for. So the answer defaults to yes, and
+ * only positive evidence — the tag naming its own language, or English sitting
+ * there in plain sight — takes the link away.
+ */
+function shouldOfferTranslation(key: string, value: string): boolean {
+  if (!TRANSLATABLE_KEYS.test(key)) return false;
+  // A URL, a phone number, a bare reference: nothing a translator can help with
+  if (isUrl(value) || !/\p{L}\p{L}/u.test(value)) return false;
+  if (SHORT_ANSWERS.has(value.toLowerCase())) return false;
+
+  // `description:en` says what it is in, which beats anything guessed from the
+  // text itself. A suffix is only a language when it is two letters long:
+  // `wheelchair:description` ends in a word, not a code
+  const tagged = key.match(/:([a-z]{2})$/)?.[1];
+  if (tagged) return tagged !== "en";
+
+  if (NON_LATIN_SCRIPT.test(value)) return true;
+  if (looksEnglish(value)) return false;
+  return true;
+}
+
+/** What to say when the service declined, in the reader's terms rather than its own */
+const FAILURE_MESSAGES: Record<TranslationFailure, string> = {
+  "same-language": "Already in English",
+  quota: "Translation limit reached for today",
+  failed: "Translation unavailable",
+};
+
+/**
+ * A tag value with a translate link under it.
+ *
+ * The translation replaces the value in place rather than appearing beside it,
+ * because a popup on a phone has no room to show a sentence twice, and the link
+ * turns into the way back. Nothing is fetched until it is asked for: the
+ * allowance this spends belongs to the visitor, and a popup that translated
+ * itself on open would spend it on values nobody read.
+ */
+const TranslatableValue: React.FC<{value: string; isProse: boolean}> = ({
+  value,
+  isProse,
+}) => {
+  const [translation, setTranslation] = React.useState<string | null>(null);
+  const [showTranslation, setShowTranslation] = React.useState(false);
+  const [pending, setPending] = React.useState(false);
+  const [failure, setFailure] = React.useState<TranslationFailure | null>(null);
+
+  const handleClick = () => {
+    if (translation) {
+      setShowTranslation(current => !current);
+      return;
+    }
+    setPending(true);
+    setFailure(null);
+    translate(value).then(
+      result => {
+        setTranslation(result);
+        setShowTranslation(true);
+        setPending(false);
+      },
+      error => {
+        setFailure(error instanceof TranslationError ? error.reason : "failed");
+        setPending(false);
+      }
+    );
+  };
+
+  const showing = showTranslation && translation !== null;
+  /**
+   * The original goes through the same formatting it would have had without
+   * this component wrapped around it. A translation does not: it comes back as
+   * a sentence, and formatValue rewrites the punctuation of tag values
+   */
+  const text = showing ? translation : isProse ? value : formatValue(value);
+
+  // Asking again after the quota ran out, or after being told the text is
+  // already readable, spends a request to be told the same thing
+  const retryable = failure === null || failure === "failed";
+
+  const label = pending
+    ? "Translating…"
+    : translation
+      ? showing
+        ? "Show original"
+        : "Show translation"
+      : "Translate";
+
+  return (
+    <>
+      {text}
+      {/* The notes come first so the action itself ends up flush against the
+          right margin, where every other value in the popup ends */}
+      <span className="poi-popup-translate-line">
+        {/* Said plainly, because a machine translation of a sign is a guess at
+            what the sign says and the reader is the one standing in front of it */}
+        {showing && <span className="poi-popup-translate-note">Machine translation</span>}
+        {failure && (
+          <span className="poi-popup-translate-note">{FAILURE_MESSAGES[failure]}</span>
+        )}
+        {retryable && (
+          <button
+            type="button"
+            className="poi-popup-translate"
+            onClick={handleClick}
+            disabled={pending}
+          >
+            {label}
+          </button>
+        )}
+      </span>
+    </>
+  );
+};
+
+/**
  * The wiki page for a tag key, where what the values mean is written down.
  * Reached through the row's own label rather than an icon next to it: the
  * label already names the tag, and a popup on a phone has no room for more.
@@ -337,6 +508,7 @@ const RenderMarkerContents: React.FC<{
              * row turns into a label with a paragraph under it
              */
             const isProse = valueStr.includes("\n") || valueStr.length > 40;
+            const canTranslate = shouldOfferTranslation(key, valueStr);
 
             return (
               <div
@@ -355,7 +527,9 @@ const RenderMarkerContents: React.FC<{
                   </a>
                 </dt>
                 <dd>
-                  {key === "website" || key === "url" || isUrl(valueStr) ? (
+                  {canTranslate ? (
+                    <TranslatableValue value={valueStr} isProse={isProse} />
+                  ) : key === "website" || key === "url" || isUrl(valueStr) ? (
                     <a
                       className="poi-popup-link"
                       href={href}

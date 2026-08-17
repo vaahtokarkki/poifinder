@@ -696,6 +696,57 @@ body {
   text-decoration: underline;
 }
 
+/*
+ * The translate toggle. A button in the markup because it acts on the page
+ * rather than going anywhere, and a link to look at because that is the affair
+ * it is: one line of a popup, quiet enough that a description with one under it
+ * still reads as a description.
+ *
+ * On its own line and against the right margin, which is where every value in
+ * this popup ends and so where the eye already is when it finishes reading one.
+ * A "Machine translation" note sits to its left rather than after it, so the
+ * action stays at the edge and the aside never comes between it and the margin.
+ */
+.poi-popup-translate-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 0.6em;
+  margin-top: 3px;
+  text-align: right;
+  /* The value column is pre-line so a description keeps its line breaks; this
+     row is laid out rather than typed, and should not inherit that */
+  white-space: normal;
+}
+
+.poi-popup-row dd .poi-popup-translate {
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 0.75rem;
+  color: #1976d2;
+  cursor: pointer;
+}
+
+.poi-popup-row dd .poi-popup-translate:hover {
+  text-decoration: underline;
+}
+
+.poi-popup-row dd .poi-popup-translate:disabled {
+  color: #5f6368;
+  cursor: default;
+  text-decoration: none;
+}
+
+/* Machine translation notices and the reason one could not be had. Both are
+   asides about the text rather than the text, and are set to say so */
+.poi-popup-translate-note {
+  font-size: 0.7rem;
+  color: #5f6368;
+}
+
 /* ---------- Passing remarks ---------- */
 
 /*

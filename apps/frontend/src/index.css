@@ -740,6 +740,17 @@ body {
   text-decoration: none;
 }
 
+/*
+ * When a surveyor last stood in front of the place. An aside about the data
+ * rather than a fact about the place, so it sits under the rows, quieter than
+ * any of them, and is separated by space rather than by another rule line.
+ */
+.poi-popup-survey {
+  margin: 0.7em 0 0 0;
+  font-size: 0.7rem;
+  color: #80868b;
+}
+
 /* Machine translation notices and the reason one could not be had. Both are
    asides about the text rather than the text, and are set to say so */
 .poi-popup-translate-note {

@@ -14,6 +14,19 @@ import { TranslationError, translate } from "./api/translate";
 import type { TranslationFailure } from "./api/translate";
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
+import {
+  CONSUMED_KEYS,
+  TRANSLATABLE_KEYS,
+  capitaliseFirst,
+  describeAddress,
+  describeLocation,
+  describeSurvey,
+  formatOpeningHours,
+  isTimetableKey,
+  labelFor,
+  rankForKey,
+  wikipediaUrl,
+} from "./poiPopup";
 
 /**
  * How close two points have to be, in pixels on the screen, before they are
@@ -182,14 +195,6 @@ const getMarkerIcon = (marker: OverpassMarkerData, selected: readonly CATEGORIES
   return icon;
 };
 
-const capitaliseFirst = (str: string) => str.replace(/^\w/, c => c.toUpperCase());
-
-/**
- * A tag key is punctuated for machines: `changing_table`, `addr:street`. Both
- * separators become spaces, because neither means anything to a reader.
- */
-const formatKey = (key: string) => capitaliseFirst(key.replace(/[:_]/g, " "));
-
 /**
  * A value is punctuated for people, and the two marks need opposite treatment.
  *
@@ -234,6 +239,13 @@ const formatLinkLabel = (href: string) => {
 const isDisplayableTag = (key: string, value: string) => {
   if (key === "access" && value === "yes") return false;
   /**
+   * Read by a row that is written rather than listed: the address, where in the
+   * building it is, and when it was last checked. Listing them again underneath
+   * would say everything twice, in worse words the second time
+   */
+  if (CONSUMED_KEYS.has(key)) return false;
+  if (key.startsWith("check_date")) return false;
+  /**
    * `fee=yes` used to be hidden here alongside access=yes, on the grounds that
    * it was one more thing to say about a point that was already saying enough.
    * It has to be shown now: the marker carries a currency badge for it, and a
@@ -251,6 +263,12 @@ const isDisplayableTag = (key: string, value: string) => {
    */
   if (key === "building") return value !== "yes";
   if (key.startsWith("building:")) return true;
+  /**
+   * The exception among the wiki tags, which are otherwise cross references
+   * between databases. This one is an article about the thing on the map, and
+   * for a memorial or a viewpoint it is the only tag with anything to say
+   */
+  if (key === "wikipedia") return wikipediaUrl(value) !== undefined;
   if (["ref", "addr", "building", "wiki", "roof"].some(prefix => key.startsWith(prefix))) return false;
   if (key.startsWith("name") && key !== "name") return false;
   return true;
@@ -273,25 +291,6 @@ const SHORT_ANSWERS = new Set([
   "customers",
   "destination",
 ]);
-
-/**
- * The tags whose value is a sentence somebody wrote, rather than a value picked
- * from a list. Only these are offered a translation.
- *
- * `name` is deliberately absent, and it is the important absence: a name is a
- * proper noun, it is what is written on the door, and translating "Kauppatori"
- * to "Market Square" gives the reader a phrase nobody standing in the street
- * would recognise. `opening_hours` is a syntax rather than a language, an
- * address is a place, and a website is a website. What is left is the prose:
- * `description`, `note`, `inscription`, and the qualified forms of the first
- * two — `wheelchair:description`, `operational_status:note`.
- *
- * `fixme` is prose too, and is left out on purpose: it is a message from one
- * mapper to the next about work outstanding, not something written for the
- * person standing in front of the place.
- */
-const TRANSLATABLE_KEYS =
-  /^(description|note|inscription)(:[a-z-]+)?$|^[a-z_]+:(description|note)$/;
 
 /**
  * Words that are cheap to spot and very hard to write by accident in another
@@ -451,11 +450,58 @@ const TranslatableValue: React.FC<{value: string; isProse: boolean}> = ({
 const tagWikiUrl = (key: string) =>
   `https://wiki.openstreetmap.org/wiki/Key:${encodeURIComponent(key)}`;
 
-/** The tags worth putting in front of somebody, in the order OSM gave them */
-const getDisplayableTags = (marker: OverpassMarkerData) =>
-  Object.entries(marker.tags ?? {}).filter(([key, value]) =>
-    isDisplayableTag(key, String(value))
-  );
+/** One line of the popup: a label, a value, and how the value should be read */
+type PopupRow = {
+  /** React key, and the tag the label links to on the wiki */
+  key: string;
+  label: string;
+  value: string;
+  /**
+   * Already written for a reader. Formatting a value is for tag syntax, and
+   * running it over a sentence this file composed itself would only undo it
+   */
+  written?: boolean;
+  /** Rendered as a link to here, when the value is not itself a URL */
+  href?: string;
+};
+
+/**
+ * Everything worth putting in front of somebody, in the order it is worth
+ * saying it.
+ *
+ * The written rows come first because they answer "where is it, exactly", which
+ * is the question a person holding a phone in a shopping centre has, and no
+ * single tag answers.
+ */
+const buildPopupRows = (marker: OverpassMarkerData): PopupRow[] => {
+  const tags = marker.tags ?? {};
+  const rows: PopupRow[] = [];
+
+  const location = describeLocation(tags);
+  if (location) rows.push({ key: "level", label: "Where", value: location, written: true });
+
+  const address = describeAddress(tags);
+  if (address) rows.push({ key: "addr", label: "Address", value: address, written: true });
+
+  const tagRows = Object.entries(tags)
+    .filter(([key, value]) => isDisplayableTag(key, String(value)))
+    .map(([key, rawValue]) => {
+      const value = String(rawValue);
+      const timetable = isTimetableKey(key);
+      return {
+        key,
+        label: labelFor(key),
+        value: timetable ? formatOpeningHours(value) : value,
+        written: timetable,
+        href: key === "wikipedia" ? wikipediaUrl(value) : undefined,
+        rank: rankForKey(key),
+      };
+    })
+    // Stable, so tags of equal rank keep the order the contributor wrote them
+    .sort((a, b) => a.rank - b.rank);
+
+  return [...rows, ...tagRows];
+};
 
 /** What to call a point, and what to say underneath */
 const describeMarker = (marker: OverpassMarkerData, selected: readonly CATEGORIES[]) => {
@@ -478,7 +524,8 @@ const RenderMarkerContents: React.FC<{
   categories: readonly CATEGORIES[];
 }> = ({ marker, categories }) => {
   const { config, title, subtitle } = describeMarker(marker, categories);
-  const rows = getDisplayableTags(marker);
+  const rows = buildPopupRows(marker);
+  const survey = describeSurvey(marker.tags);
 
   return (
     <div className="poi-popup-body">
@@ -498,21 +545,25 @@ const RenderMarkerContents: React.FC<{
 
       {rows.length > 0 && (
         <dl className="poi-popup-rows">
-          {rows.map(([key, value]) => {
-            const valueStr = String(value);
-            const isShortAnswer = SHORT_ANSWERS.has(valueStr.toLowerCase());
-            const href = valueStr.startsWith("http") ? valueStr : `https://${valueStr}`;
+          {rows.map(({ key, label, value: valueStr, written, href: rowHref }) => {
+            const isShortAnswer = !written && SHORT_ANSWERS.has(valueStr.toLowerCase());
+            const href =
+              rowHref ?? (valueStr.startsWith("http") ? valueStr : `https://${valueStr}`);
             /**
-             * Prose, not a tag value: a description carries its own line
-             * breaks and is far too long to sit in a right hand column, so the
-             * row turns into a label with a paragraph under it
+             * Prose, not a tag value: a description carries its own line breaks
+             * and is far too long to sit in a right hand column, so the row
+             * turns into a label with a paragraph under it. A timetable is
+             * written rather than prose, and takes the same shape for the same
+             * reason: several rules stacked in the right hand column wrap into
+             * an unreadable column of fragments
              */
-            const isProse = valueStr.includes("\n") || valueStr.length > 40;
-            const canTranslate = shouldOfferTranslation(key, valueStr);
+            const isProse = !written && (valueStr.includes("\n") || valueStr.length > 40);
+            const isStacked = isProse || valueStr.includes("\n");
+            const canTranslate = !written && shouldOfferTranslation(key, valueStr);
 
             return (
               <div
-                className={`poi-popup-row${isProse ? " poi-popup-row-stacked" : ""}`}
+                className={`poi-popup-row${isStacked ? " poi-popup-row-stacked" : ""}`}
                 key={`${marker.id}-${key}`}
               >
                 <dt>
@@ -523,13 +574,13 @@ const RenderMarkerContents: React.FC<{
                     rel="noopener noreferrer"
                     title={`${key} on the OpenStreetMap wiki`}
                   >
-                    {formatKey(key)}
+                    {label}
                   </a>
                 </dt>
                 <dd>
                   {canTranslate ? (
                     <TranslatableValue value={valueStr} isProse={isProse} />
-                  ) : key === "website" || key === "url" || isUrl(valueStr) ? (
+                  ) : rowHref || key === "website" || key === "url" || isUrl(valueStr) ? (
                     <a
                       className="poi-popup-link"
                       href={href}
@@ -555,10 +606,10 @@ const RenderMarkerContents: React.FC<{
                     >
                       {formatValue(valueStr)}
                     </span>
-                  ) : isProse ? (
+                  ) : isProse || written ? (
                     // Verbatim: formatValue rewrites underscores and semicolons,
                     // which is right for a tag value and wrong for a sentence
-                    // somebody wrote
+                    // somebody wrote, or for a line this file wrote itself
                     valueStr
                   ) : (
                     formatValue(valueStr)
@@ -569,6 +620,10 @@ const RenderMarkerContents: React.FC<{
           })}
         </dl>
       )}
+
+      {/* Below the rows and set quieter than them, because it is a fact about
+          the data rather than about the place */}
+      {survey && <p className="poi-popup-survey">{survey}</p>}
     </div>
   );
 };
@@ -622,7 +677,7 @@ return <MarkerClusterGroup
     // holding only the name repeats what the marker already said, and covers
     // the map to do it, so those points get a line at the bottom of the screen
     // instead and the map stays where it is
-    const hasDetails = getDisplayableTags(marker).length > 0;
+    const hasDetails = buildPopupRows(marker).length > 0 || describeSurvey(marker.tags) !== null;
     const { title } = describeMarker(marker, categories);
 
     return <Marker

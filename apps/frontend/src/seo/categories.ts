@@ -556,9 +556,9 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
   },
   {
     category: CATEGORIES.CompressedAir,
-    slug: "air-pumps",
-    plural: "air pumps",
-    heading: "Air pumps",
+    slug: "compressed-air",
+    plural: "compressed air points",
+    heading: "Compressed air",
     schemaType: "Place",
     intro: (city, count) =>
       `${count} places to inflate a tyre are mapped in ${city}: the compressed air points at fuel stations and car parks, and the public pumps cyclists can use. Usually free, usually unsigned, and near impossible to search for anywhere else.`,

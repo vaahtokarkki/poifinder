@@ -11,6 +11,7 @@ import {
 } from "./constants";
 import { OverpassMarkerData } from "./api/overpass"; // <-- Import the type
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
+import { PaidParkingIcon, PaidToiletIcon } from "./icons";
 
 /**
  * How close two points have to be, in pixels on the screen, before they are
@@ -122,26 +123,88 @@ const findCategory = (
  * rebuilt every marker on the map, and a click that spanned one of those
  * rebuilds was lost: the first tap after a message appeared did nothing.
  */
-const iconCache = new Map<CATEGORIES | "uncategorised", ReturnType<typeof divIcon>>();
+const iconCache = new Map<string, ReturnType<typeof divIcon>>();
+
+/**
+ * The badged shape to use when a point of this category charges. Only the
+ * categories people actually expect to be free sometimes and not others are
+ * here: a fee on a fuel station says nothing, a fee on a toilet or a car park
+ * decides whether you walk there at all.
+ */
+const PAID_ICONS: Partial<Record<CATEGORIES, React.ReactElement>> = {
+  [CATEGORIES.Toilets]: <PaidToiletIcon />,
+  [CATEGORIES.Parking]: <PaidParkingIcon />,
+};
+
+/**
+ * Pink for a toilet with a changing table.
+ *
+ * Colour rather than another badge, because the corner is already spoken for by
+ * the fee and these two facts are independent: a toilet can charge and have a
+ * changing table, and someone carrying a baby needs to see both. Two facts, two
+ * channels, no precedence to get wrong.
+ */
+const CHANGING_TABLE_COLOR = "#E91E63";
+
+const hasChangingTable = (category: CATEGORIES | null, marker: OverpassMarkerData) =>
+  category === CATEGORIES.Toilets && marker.tags?.changing_table === "yes";
 
 const getMarkerIcon = (marker: OverpassMarkerData, selected: readonly CATEGORIES[]) => {
   const category = findCategory(marker, selected);
-  // Not ?? : category 0 is a real category and a falsy number
-  const key = category === null ? "uncategorised" : category;
+  const paidIcon = marker.tags?.fee === "yes" && category !== null
+    ? PAID_ICONS[category]
+    : undefined;
+  const changingTable = hasChangingTable(category, marker);
+
+  /**
+   * Keyed as a string so the variants share the cache with everything else.
+   * Category 0 is a real category and a falsy number, so the null check stays
+   * explicit rather than becoming a ??
+   */
+  const key =
+    category === null
+      ? "uncategorised"
+      : `${category}:${paidIcon ? "paid" : "free"}:${changingTable ? "baby" : "plain"}`;
 
   let icon = iconCache.get(key);
   if (!icon) {
     icon =
       category === null
         ? RenderMarkerIcon(<ParkIcon />)
-        : RenderMarkerIcon(CATEGORY_CONFIG[category].icon, CATEGORY_CONFIG[category].color);
+        : RenderMarkerIcon(
+            paidIcon ?? CATEGORY_CONFIG[category].icon,
+            changingTable ? CHANGING_TABLE_COLOR : CATEGORY_CONFIG[category].color
+          );
     iconCache.set(key, icon);
   }
   return icon;
 };
 
-const formatDisplay = (str: string) =>
-  str.replace(/[:_]/g, " ").replace(/^\w/, c => c.toUpperCase());
+const capitaliseFirst = (str: string) => str.replace(/^\w/, c => c.toUpperCase());
+
+/**
+ * A tag key is punctuated for machines: `changing_table`, `addr:street`. Both
+ * separators become spaces, because neither means anything to a reader.
+ */
+const formatKey = (key: string) => capitaliseFirst(key.replace(/[:_]/g, " "));
+
+/**
+ * A value is punctuated for people, and the two marks need opposite treatment.
+ *
+ * The underscore is still a machine separator — `fine_gravel` is meant to be
+ * read as "fine gravel" — so it goes. The colon is not: in a value it is a
+ * clock, and turning it into a space renders `05:00-24:00` as `05 00-24 00`,
+ * which is how opening hours came out looking broken. Keys can lose their
+ * colons because no key holds a time; values cannot.
+ *
+ * A semicolon is how OpenStreetMap writes a list inside one value:
+ * `diaper=room;bench`, `cuisine=pizza;pasta`. Rendered raw it reads as a typo
+ * rather than as two answers, so it becomes the comma a reader expects. The
+ * surrounding whitespace goes with it, because contributors write the separator
+ * as ";", "; " and " ; " interchangeably and all three mean one thing.
+ */
+const formatValue = (value: string) =>
+  capitaliseFirst(value.replace(/\s*;\s*/g, ", ").replace(/_/g, " "));
 
 const isUrl = (val: string) => /^https?:\/\/|^www\./i.test(val);
 
@@ -168,7 +231,14 @@ const formatLinkLabel = (href: string) => {
  */
 const isDisplayableTag = (key: string, value: string) => {
   if (key === "access" && value === "yes") return false;
-  if (key === "fee" && value === "yes") return false;
+  /**
+   * `fee=yes` used to be hidden here alongside access=yes, on the grounds that
+   * it was one more thing to say about a point that was already saying enough.
+   * It has to be shown now: the marker carries a currency badge for it, and a
+   * point that advertises a fee on the map and then omits it from the popup
+   * reads as the map having got it wrong. access=yes stays hidden, because
+   * being allowed in is what a reader already assumes of a point on this map.
+   */
   if (["leisure", "type", "amenity"].includes(key)) return false;
   /**
    * What kind of building it is, and how it is put together. A point standing
@@ -281,7 +351,7 @@ const RenderMarkerContents: React.FC<{
                     rel="noopener noreferrer"
                     title={`${key} on the OpenStreetMap wiki`}
                   >
-                    {formatDisplay(key)}
+                    {formatKey(key)}
                   </a>
                 </dt>
                 <dd>
@@ -295,14 +365,29 @@ const RenderMarkerContents: React.FC<{
                       {formatLinkLabel(href)}
                     </a>
                   ) : isShortAnswer ? (
-                    <span className="poi-popup-chip">{formatDisplay(valueStr)}</span>
+                    <span
+                      className="poi-popup-chip"
+                      /**
+                       * The one chip that is not grey. It carries the same pink
+                       * the marker does, so a point somebody picked out of the
+                       * map by its colour says the same thing when it opens.
+                       * Every other short answer keeps the neutral pill.
+                       */
+                      style={
+                        key === "changing_table" && valueStr.toLowerCase() === "yes"
+                          ? { background: CHANGING_TABLE_COLOR, color: "#fff" }
+                          : undefined
+                      }
+                    >
+                      {formatValue(valueStr)}
+                    </span>
                   ) : isProse ? (
-                    // Verbatim: formatDisplay turns every colon and underscore
-                    // into a space, which is right for a tag value and wrong
-                    // for a sentence somebody wrote
+                    // Verbatim: formatValue rewrites underscores and semicolons,
+                    // which is right for a tag value and wrong for a sentence
+                    // somebody wrote
                     valueStr
                   ) : (
-                    formatDisplay(valueStr)
+                    formatValue(valueStr)
                   )}
                 </dd>
               </div>

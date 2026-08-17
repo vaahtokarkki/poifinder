@@ -1,5 +1,5 @@
 import ParkIcon from "@mui/icons-material/Park";
-import WcIcon from "@mui/icons-material/Wc";
+import { ToiletIcon } from "./icons";
 import LocalGasStationIcon from "@mui/icons-material/LocalGasStation";
 import LocalPostOfficeIcon from "@mui/icons-material/LocalPostOffice";
 import EvStationIcon from "@mui/icons-material/EvStation";
@@ -112,7 +112,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
       '[building~"^(retail|supermarket|mall|commercial|museum|public|university|train_station)$"][toilets=yes]',
     ],
     display: "Toilets",
-    icon: React.createElement(WcIcon),
+    icon: React.createElement(ToiletIcon),
     color: "#1976d2",
     group: CATEGORY_GROUP.Essentials,
   },
@@ -293,8 +293,15 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
   [CATEGORIES.Fireplace]: {
     // The primary tags first: a fire ring in a park is leisure=firepit or
     // amenity=bbq, and only the ones attached to something else (a shelter, a
-    // picnic site) carry the fireplace=yes that used to be all this matched
-    filters: ["[leisure=firepit]", "[amenity=bbq]", "[fireplace=yes][access!=private]"],
+    // picnic site) carry the fireplace=yes that used to be all this matched.
+    // access!=private on every branch: a grill in a private garden or a members
+    // only club is mapped the same way as a public one, and turning up to a
+    // fireplace you are not allowed to use is worse than not finding it
+    filters: [
+      "[leisure=firepit][access!=private]",
+      "[amenity=bbq][access!=private]",
+      "[fireplace=yes][access!=private]",
+    ],
     display: "Fireplaces & BBQ",
     icon: React.createElement(OutdoorGrillIcon),
     color: "#FF6F00",
@@ -302,7 +309,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
   },
   [CATEGORIES.CompressedAir]: {
     filters: ["[amenity=compressed_air]"],
-    display: "Air pumps",
+    display: "Compressed air",
     icon: React.createElement(TireRepairIcon),
     color: "#607D8B",
     group: CATEGORY_GROUP.Car,

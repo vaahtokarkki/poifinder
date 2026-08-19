@@ -122,7 +122,8 @@ const App = () => {
 
   // Controls drawn on top of the map, their gestures are not map gestures
   const overlayRef = useRef<HTMLDivElement | null>(null);
-  // The map must not be re-centered on GPS lock once the user has taken control
+  // The map must not be re-centered on GPS lock once the user has taken
+  // control, or when it was restored to the view the last visit was left in
   const userMovedMapRef = useRef(false);
   // Timestamp of the latest setView we triggered ourselves, to tell our own
   // moves apart from the user zooming or dragging
@@ -353,14 +354,18 @@ const App = () => {
           // Coordinates in the URL are explicit, they win over the GPS lock too
           userMovedMapRef.current = true;
           setMapView([parseFloat(lat), parseFloat(lon)], savedLocation?.zoom);
+        } else if (savedLocation) {
+          // Pick up where the last visit left off. That view is a deliberate
+          // choice as much as a search is, so the GPS lock must not pull the
+          // map away from it once the fix arrives
+          userMovedMapRef.current = true;
+          setMapView([savedLocation.lat, savedLocation.lng], savedLocation.zoom || 15);
         } else {
-          // Center on the last known position: GPS location from localStorage
-          // first, then the last map location
+          // Nothing saved yet: the GPS position of an earlier session is the
+          // best guess to hold the map until this session gets its own fix
           const gpsLocation = loadGPSLocation();
           if (gpsLocation) {
-            setMapView([gpsLocation.lat, gpsLocation.lng], savedLocation?.zoom);
-          } else if (savedLocation) {
-            setMapView([savedLocation.lat, savedLocation.lng], savedLocation.zoom || 15);
+            setMapView([gpsLocation.lat, gpsLocation.lng]);
           }
         }
       }
@@ -415,7 +420,8 @@ const App = () => {
     }
   };
 
-  // Center on the user once GPS locks, unless the map was moved since init
+  // Center on the user once GPS locks, unless the map was moved since init or
+  // it already shows a restored view of the previous visit
   useEffect(() => {
     if (
       !map ||

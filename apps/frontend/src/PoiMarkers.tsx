@@ -3,6 +3,7 @@ import { Marker, Popup } from "react-leaflet";
 import ParkIcon from '@mui/icons-material/Park';
 import { renderToString } from "react-dom/server";
 import { divIcon } from "leaflet";
+import type { PointExpression } from "leaflet";
 import {
   CATEGORY_CONFIG,
   CATEGORIES,
@@ -30,6 +31,35 @@ import {
   wikipediaLabel,
   wikipediaUrl,
 } from "./poiPopup";
+
+/** Breathing room between an open popup and the edges of the map. */
+const POPUP_EDGE_GAP_PX = 24;
+
+/**
+ * How far Leaflet keeps an open popup from the top left of the map when it pans
+ * to fit it on the screen.
+ *
+ * The top edge that matters is not the top of the map but the bottom of the
+ * controls floating over it: panning a popup to y = 24 tucks its heading under
+ * the category select and the preset chips. That overlay changes height as the
+ * search bar opens, the chips come and go, or the phone is turned, and Leaflet
+ * reads these values when it pans rather than when the popup is created, so it
+ * gets an object that measures the overlay at that moment instead of a number
+ * that was right when the marker was drawn.
+ */
+const AUTO_PAN_PADDING_TOP_LEFT = {
+  get x() {
+    return POPUP_EDGE_GAP_PX;
+  },
+  get y() {
+    const overlay = document.querySelector(".map-overlay-top");
+    const overlayHeight = overlay?.getBoundingClientRect().height ?? 0;
+    return Math.round(overlayHeight) + POPUP_EDGE_GAP_PX;
+  },
+  // Leaflet takes any { x, y } here and reads the pair as it pans, which is
+  // what makes the getters above worth having. Its types only name the two
+  // shapes that get written literally, a Point or a tuple
+} as unknown as PointExpression;
 
 /**
  * How close two points have to be, in pixels on the screen, before they are
@@ -751,7 +781,13 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
             eventHandlers={eventHandlers}
           >
             {hasDetails && (
-              <Popup className="poi-popup" maxWidth={380} minWidth={260} autoPanPadding={[24, 24]}>
+              <Popup
+                className="poi-popup"
+                maxWidth={380}
+                minWidth={260}
+                autoPanPaddingTopLeft={AUTO_PAN_PADDING_TOP_LEFT}
+                autoPanPaddingBottomRight={[POPUP_EDGE_GAP_PX, POPUP_EDGE_GAP_PX]}
+              >
                 <RenderMarkerContents marker={marker} categories={categories} />
               </Popup>
             )}

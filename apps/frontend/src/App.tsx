@@ -23,13 +23,15 @@ import { readPageData } from "./seo/pageData";
 import PrerenderedPage from "./components/PrerenderedPage";
 import { Alert, Snackbar } from '@mui/material';
 import CategoryPresets from './components/CategoryPresets.tsx';
-import BottomSheet from './components/BottomSheet.tsx';
+import BottomSheet, { type BottomSheetHandle } from './components/BottomSheet.tsx';
 import MapNotices, { type MapNotice } from './components/MapNotices.tsx';
 import { InfoSheetContent, InfoSheetHeader } from './components/AppInfoPanel.tsx';
 import SearchIconButton from './components/SearchIconButton.tsx';
 import MyLocationIconButton from './components/MyLocationIconButton.tsx';
 import DirectionsIconButton from './components/DirectionsIconButton.tsx';
 import ShareIconButton from './components/ShareIconButton.tsx';
+import MoreControlsIconButton from './components/MoreControlsIconButton.tsx';
+import InfoIconButton from './components/InfoIconButton.tsx';
 import { saveMapLocation, loadMapLocation } from "./utils/mapLocationStorage";
 import { loadGPSLocation } from "./utils/gpsLocationStorage";
 import { loadPois, savePois, poiCacheMatchesCategories, isPoiCacheUpToDate } from "./utils/poiStorage";
@@ -99,6 +101,9 @@ const App = () => {
   // The build time payload of a prerendered page, absent on a shared link or
   // an area search. Read once: a page load is the only thing that changes it
   const [pageData] = useState(readPageData);
+  // The map tools start folded behind a single button, the column stays short
+  const [controlsExpanded, setControlsExpanded] = useState(false);
+  const sheetRef = useRef<BottomSheetHandle>(null);
 
   /**
    * Stable across renders on purpose: PoiMarkers only re-renders when this or
@@ -735,14 +740,28 @@ const App = () => {
           }
         />
         <div className="map-controls">
-          <ShareIconButton onClick={handleShareClick} />
-          <DirectionsIconButton
-            onClick={() => setDisplaySearchItem(displaySearchItem === "routes" ? null : "routes")}
-            active={displaySearchItem === "routes"}
+          <div
+            className={`map-controls-group${controlsExpanded ? " open" : ""}`}
+            // Folded away the buttons are still in the layout, so keep them out
+            // of the tab order and out of the accessibility tree
+            inert={!controlsExpanded}
+          >
+            <div className="map-controls-group-inner">
+              <InfoIconButton onClick={() => sheetRef.current?.expand()} />
+              <ShareIconButton onClick={handleShareClick} />
+              <DirectionsIconButton
+                onClick={() => setDisplaySearchItem(displaySearchItem === "routes" ? null : "routes")}
+                active={displaySearchItem === "routes"}
+              />
+              <SearchIconButton
+                active={displaySearchItem === "search"}
+                onClick={() => setDisplaySearchItem(displaySearchItem === "search" ? null : "search")} />
+            </div>
+          </div>
+          <MoreControlsIconButton
+            expanded={controlsExpanded}
+            onClick={() => setControlsExpanded(!controlsExpanded)}
           />
-          <SearchIconButton
-            active={displaySearchItem === "search"}
-            onClick={() => setDisplaySearchItem(displaySearchItem === "search" ? null : "search")} />
           <MyLocationIconButton
             onClick={handleMyLocationClick} />
         </div>
@@ -763,7 +782,7 @@ const App = () => {
           />
         )}
       </MapContainer>
-      <BottomSheet>
+      <BottomSheet ref={sheetRef}>
         {pageData ? (
           // The whole sheet, guide included. The root used to have the guide
           // appended here instead, which put it below the prerendered block at

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useImperativeHandle, useRef, useState } from "react";
 
 export type SheetSnap = "hidden" | "peek" | "full";
 
@@ -12,9 +12,16 @@ const DIRECTION_THRESHOLD = 50;
 /** The collapsed height the prerendered block already drew, when it parses */
 const DEFAULT_PEEK_HEIGHT = 172;
 
+export type BottomSheetHandle = {
+  /** Open the sheet all the way, even after it has been dismissed */
+  expand: () => void;
+};
+
 type BottomSheetProps = {
   /** Height of the collapsed state, enough for a short summary */
   peekHeight?: number;
+  /** Lets the map controls bring the sheet back up */
+  ref?: React.Ref<BottomSheetHandle>;
   children: React.ReactNode;
 };
 
@@ -39,7 +46,7 @@ const peekHeightFromStyles = () => {
  * hidden. Dragging it all the way down dismisses it for the rest of the visit,
  * as in the Google Maps app.
  */
-const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, children }) => {
+const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, children }) => {
   const [measuredPeek] = useState(peekHeightFromStyles);
   const collapsedHeight = peekHeight ?? measuredPeek;
   const [fullHeight, setFullHeight] = useState(fullHeightForWindow);
@@ -88,6 +95,8 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, children }) => {
     setSnap(target);
     setVisible(heightFor(target));
   };
+
+  useImperativeHandle(ref, () => ({ expand: () => applySnap("full") }));
 
   const snapPoints: { snap: SheetSnap; height: number }[] = [
     { snap: "hidden", height: heightFor("hidden") },

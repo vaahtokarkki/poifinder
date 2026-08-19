@@ -161,6 +161,38 @@ body {
   cursor: pointer;
 }
 
+/* The folded tools. The rows collapse to nothing so the toggle button keeps
+   its place at the bottom of the column while they slide out above it */
+.map-controls-group {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.24s cubic-bezier(0.2, 0.8, 0.3, 1),
+    opacity 0.18s ease,
+    margin-bottom 0.24s cubic-bezier(0.2, 0.8, 0.3, 1);
+  /* Collapsed the group is empty, its share of the column gap goes with it */
+  margin-bottom: -12px;
+}
+
+.map-controls-group.open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-bottom: 0;
+}
+
+.map-controls-group-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  overflow: hidden;
+  /* The overflow that hides the collapsed rows would cut the round shadows off
+     as well, so the buttons get room to cast them inside the clip */
+  padding: 8px;
+  margin: -8px;
+}
+
 /* The Leaflet attribution rides above the sheet as well */
 .leaflet-bottom.leaflet-right {
   transform: translateY(calc(-1 * var(--sheet-offset, 0px)));
@@ -741,11 +773,22 @@ body {
 }
 
 /*
+ * Both footnote lines are scoped through `.leaflet-popup-content` for the
+ * margins alone. Leaflet sets `margin: 1.3em 0` on every <p> in a popup, and
+ * `.leaflet-popup-content p` outranks a single class — so a bare
+ * `.poi-popup-edited` states a margin that never reaches the screen, and the
+ * two lines stand 1.3em apart instead of touching. Losing the tie is not the
+ * only problem either: this file is imported before Leaflet's stylesheet, so
+ * matching its specificity would not be enough. Keep a descendant selector
+ * here, or the spacing below quietly stops meaning anything.
+ */
+
+/*
  * When a surveyor last stood in front of the place. An aside about the data
  * rather than a fact about the place, so it sits under the rows, quieter than
  * any of them, and is separated by space rather than by another rule line.
  */
-.poi-popup-survey {
+.poi-popup .leaflet-popup-content .poi-popup-survey {
   margin: 0.7em 0 0 0;
   font-size: 0.7rem;
   color: #80868b;
@@ -757,7 +800,7 @@ body {
  * belong together as one footnote about the data. It follows the survey line
  * when there is one, and stands alone when there is not.
  */
-.poi-popup-edited {
+.poi-popup .leaflet-popup-content .poi-popup-edited {
   margin: 0.15em 0 0 0;
   font-size: 0.7rem;
   color: #9aa0a6;

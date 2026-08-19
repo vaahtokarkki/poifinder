@@ -101,7 +101,7 @@ services:
       # need far less, these are here so a bad one dies on its own
       OVERPASS_MAX_TIMEOUT: 180s
       OVERPASS_SPACE: "2147483648"
-      OVERPASS_RATE_LIMIT: "8"
+      OVERPASS_RATE_LIMIT: "30"
 
     # No cpus limit here on purpose. This is the interactive half and it should
     # have the machine; the importer below is the one that gets held back

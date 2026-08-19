@@ -442,9 +442,6 @@ const TranslatableValue: React.FC<{value: string; isProse: boolean}> = ({
       {/* The notes come first so the action itself ends up flush against the
           right margin, where every other value in the popup ends */}
       <span className="poi-popup-translate-line">
-        {/* Said plainly, because a machine translation of a sign is a guess at
-            what the sign says and the reader is the one standing in front of it */}
-        {showing && <span className="poi-popup-translate-note">Machine translation</span>}
         {failure && (
           <span className="poi-popup-translate-note">{FAILURE_MESSAGES[failure]}</span>
         )}

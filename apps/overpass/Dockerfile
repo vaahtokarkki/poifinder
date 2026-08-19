@@ -2,8 +2,8 @@
 #
 # Everything the server needs is already in the upstream image: the Overpass
 # binaries, nginx, supervisor, curl and osmium-tool. What we add is the tag
-# filter the extract is cut down with, the two commands that apply it, and two
-# entrypoint hooks (CORS, and a socket for supervisorctl).
+# filter the extract is cut down with, the three commands that apply it, and
+# two entrypoint hooks (CORS, and a socket for supervisorctl).
 #
 # The database is a directory of files under /db, read by the same process that
 # answers queries. There is no separate database server, which is why this
@@ -21,8 +21,9 @@ COPY osmium-filter.txt /opt/wayside/osmium-filter.txt
 # region a city in the app sits in. Pick one with WAYSIDE_REGION_LIST
 COPY europe-regions.txt world-regions.txt /opt/wayside/
 
-COPY bin/filter-osm-extract bin/build-region-extract bin/update-poi-db /usr/local/bin/
+COPY bin/filter-osm-extract bin/join-buildings bin/build-region-extract bin/update-poi-db /usr/local/bin/
 COPY initdb.d/ /docker-entrypoint-initdb.d/
 
-RUN chmod a+rx /usr/local/bin/filter-osm-extract /usr/local/bin/build-region-extract \
-    /usr/local/bin/update-poi-db /docker-entrypoint-initdb.d/*.sh
+RUN chmod a+rx /usr/local/bin/filter-osm-extract /usr/local/bin/join-buildings \
+    /usr/local/bin/build-region-extract /usr/local/bin/update-poi-db \
+    /docker-entrypoint-initdb.d/*.sh

@@ -9,6 +9,12 @@
 # osmium-filter.txt, plus the nodes those objects are built from, which
 # Overpass needs to place a way or a relation on the map.
 #
+# And, unless WAYSIDE_JOIN_BUILDINGS says otherwise, the buildings those points
+# stand in: a toilet in a shopping centre is a node with `amenity=toilets` and
+# nothing else on it, and everything else worth knowing about it — the centre's
+# name, its address, its outline on the map — belongs to a building the filter
+# would otherwise drop. See bin/join-buildings.
+#
 # The one argument form is what the container entrypoint expects: it hands us
 # /db/planet.osm.bz2 (whatever OVERPASS_PLANET_URL actually pointed at) and
 # then feeds the same path to bunzip2, so a real .osm.bz2 has to come back.
@@ -32,6 +38,13 @@
 set -euo pipefail
 
 FILTER_FILE=${WAYSIDE_FILTER_FILE:-/opt/wayside/osmium-filter.txt}
+
+# Whether to put the buildings the points stand in back into the extract. On
+# for everyone, because a toilet the app cannot name the building of is most of
+# a toilet nobody finds. Turn it off on a machine where the extra pass over the
+# extract, or the copy of its buildings on the disk while it runs, is the thing
+# that will not fit
+JOIN_BUILDINGS=${WAYSIDE_JOIN_BUILDINGS:-true}
 
 if [[ $# -ge 2 ]]; then
 	SOURCE=$1
@@ -82,14 +95,38 @@ fi
 BEFORE=$(stat -c %s "$SOURCE")
 echo "filter-osm-extract: filtering $(numfmt --to=iec "$BEFORE") of $FORMAT with $FILTER_FILE"
 
+# With the join on, the filter writes somewhere else and the join writes the
+# target, out of that and the buildings it goes back to the source for. pbf in
+# between whatever the target is: it is read twice more before it is the answer,
+# and bzip2 is the slowest thing in this script by a wide margin
+if [[ $JOIN_BUILDINGS == true ]]; then
+	FILTERED="${TARGET}.filtered.osm.pbf"
+	FILTER_OUTPUT=(--output-format=pbf --output="$FILTERED")
+	trap 'rm -f "$FILTERED"' EXIT
+else
+	FILTERED="$TARGET"
+	FILTER_OUTPUT=("${OUTPUT_FORMAT[@]}" --output="$TARGET")
+fi
+
 osmium tags-filter \
 	--verbose \
 	--overwrite \
 	--input-format="$FORMAT" \
-	"${OUTPUT_FORMAT[@]}" \
+	"${FILTER_OUTPUT[@]}" \
 	--expressions="$FILTER_FILE" \
-	--output="$TARGET" \
 	"$SOURCE"
+
+if [[ $JOIN_BUILDINGS == true ]]; then
+	join-buildings \
+		--source="$SOURCE" \
+		--source-format="$FORMAT" \
+		--pois="$FILTERED" \
+		--expressions="$FILTER_FILE" \
+		--output="$TARGET" \
+		"${OUTPUT_FORMAT[@]}"
+	rm -f "$FILTERED"
+	trap - EXIT
+fi
 
 AFTER=$(stat -c %s "$TARGET")
 echo "filter-osm-extract: $(numfmt --to=iec "$BEFORE") -> $(numfmt --to=iec "$AFTER") ($OUTPUT_LABEL)"

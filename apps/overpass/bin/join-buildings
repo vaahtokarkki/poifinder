@@ -1,0 +1,428 @@
+#!/usr/bin/env python3
+#
+# Put the buildings the points stand in back into the extract.
+#
+#   join-buildings --source=RAW --pois=FILTERED --output=OUT [--output-format=F]
+#
+# A toilet in a shopping centre is a node with `amenity=toilets` on it and
+# nothing else. Everything a person needs to find it — that it is in the Iso
+# Omena centre, at Piispansilta 11, on level 2 — is on the building around it,
+# which is a separate object the tag filter throws away. This puts those
+# buildings back, and only those: a building is kept when it contains one of
+# the points the filter already decided to keep.
+#
+# What comes out is the filtered extract plus those buildings, unchanged and
+# untagged: real OpenStreetMap ways and relations with the nodes they are drawn
+# from, exactly as they appear in the extract. Nothing is written onto the
+# points, and nothing in the database says which point belongs to which
+# building. The app works that out for itself, by asking for the buildings near
+# a point when its popup opens and testing which one contains it.
+#
+# Which makes this file a filter rather than a join, whatever its name says:
+# the selection is the product. Doing it any other way would put a tag no
+# mapper wrote into a database that otherwise holds only OpenStreetMap's own
+# data, and would leave the app with two ways of finding a building — the tag
+# on our server, the geometry everywhere else — where one works in both places.
+#
+# What it buys, given the app could do the geometry against any Overpass: this
+# database has no buildings in it at all otherwise. The tag filter drops every
+# one of them, so without this step the app asks our server for the building
+# around a toilet and is told, correctly, that there are none.
+#
+# The work is split between osmium and this script along the line where each is
+# good. osmium reads the extract, assembles the building outlines out of their
+# nodes and ways, and writes the result; that is all C++ over the whole file.
+# This script only ever sees the outlines as GeoJSON, one to a line, and the
+# few hundred thousand points to test them against, which is a grid lookup and
+# a ray cast per candidate.
+#
+# What it costs, on top of the filter that would have run anyway: one more pass
+# over the extract to pull the buildings out, one to build their geometry, and
+# a copy of the buildings on the disk while it happens. On Bremen that is
+# seconds; on a country it is minutes. Set WAYSIDE_JOIN_BUILDINGS=false to skip
+# it entirely and get the old, smaller, less useful extract back.
+
+import argparse
+import json
+import os
+import shutil
+import subprocess
+import sys
+import tempfile
+import time
+
+# Values of `building` that are not a building anybody stands in.
+# `building=no` exists to say "the thing you would assume is a building here is
+# not one", and keeping one on a toilet's account would put a building in the
+# database that the app, applying the same rule, will never show. The app has
+# the same list: see ENCLOSING_BUILDING in apps/frontend/src/api/overpass.ts
+NOT_A_BUILDING = {"no"}
+
+# How big one cell of the lookup grid is, in degrees. Roughly 200 m north to
+# south, and less east to west the further from the equator, which is the right
+# order of magnitude: nearly every building fits in one or two cells, so a
+# building's candidate points are one or two dict lookups, and the cells that
+# hold no point at all — almost all of them, since points are what is scarce
+# here — are never created
+GRID_DEGREES = 0.002
+
+
+# Header fields worth carrying from the extract into what this writes.
+#
+# The replication timestamp is the one that matters: build-region-extract reads
+# it back off every part to work out how current the database is, and Overpass
+# reports that date to everyone who queries it. osmium copies the header when a
+# command has one input and drops it when it has two, and the last thing here
+# is a merge, so it has to be put back by hand or a region silently loses its
+# date and the database claims to be as old as whatever else is in the list
+HEADER_OPTIONS = (
+    "osmosis_replication_base_url",
+    "osmosis_replication_sequence_number",
+    "osmosis_replication_timestamp",
+    "timestamp",
+)
+
+
+def log(message):
+    print(f"join-buildings: {message}", flush=True)
+
+
+def run(command):
+    """osmium, with its own output left on our stderr so a failure says why."""
+    subprocess.run(command, check=True)
+
+
+def header_arguments(path):
+    """The header of an extract, as the arguments that write it out again."""
+    info = json.loads(
+        subprocess.run(
+            ["osmium", "fileinfo", "--json", path],
+            check=True, capture_output=True, text=True,
+        ).stdout
+    )
+    options = info.get("header", {}).get("option", {})
+    return [
+        argument
+        for name in HEADER_OPTIONS
+        if options.get(name)
+        for argument in ("--output-header", f"{name}={options[name]}")
+    ]
+
+
+def export_features(source, geometry_type, tags):
+    """
+    The geometry of an extract, as one GeoJSON feature at a time.
+
+    osmium does the reading, the node lookups and the ring assembly, and hands
+    the result over a pipe rather than through a file. That is not a detail:
+    Bremen's 197,467 buildings are 54 MB of GeoJSON, so a country is gigabytes
+    and a large one is more temporary disk than the extract it came from. Read
+    a line at a time, none of it is ever anywhere.
+
+    `include_tags` is the other half of the same economy. The default export
+    writes every tag an object carries — a building's address, its height, its
+    roof, its source — and this only ever branches on one of them.
+
+    RFC 8142 puts a record separator, 0x1e, in front of every record, so a
+    reader can resynchronise in a stream that has been cut. osmium writes them
+    and json does not eat them, so they come off here.
+    """
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as config:
+        json.dump({"include_tags": tags}, config)
+        config_path = config.name
+
+    command = [
+        "osmium", "export", source,
+        "--config", config_path,
+        "--geometry-types", geometry_type,
+        "--add-unique-id", "type_id",
+        "--index-type", os.environ.get("WAYSIDE_INDEX_TYPE", "flex_mem"),
+        "--output-format", "geojsonseq",
+        "--output", "-",
+    ]
+    reader = subprocess.Popen(command, stdout=subprocess.PIPE, text=True)
+    try:
+        for line in reader.stdout:
+            line = line.strip("\x1e \t\r\n")
+            if line:
+                yield json.loads(line)
+    finally:
+        reader.stdout.close()
+        status = reader.wait()
+        os.unlink(config_path)
+        # An export that died halfway is a short answer rather than an error:
+        # without this the join would quietly place fewer points and nothing
+        # would say why
+        if status != 0:
+            raise subprocess.CalledProcessError(status, command)
+
+
+def object_ref(unique_id):
+    """
+    `n123`, `w123` or the `a246` an area is written as, in the `way/123` form
+    the app reads and a person can recognise.
+
+    An area is not an OSM object: osmium invents one for every way and relation
+    it can close into a polygon, and numbers it so that the two id spaces do
+    not collide — a way's area is its id doubled, a relation's is doubled plus
+    one. Undoing that is what turns the polygon back into something the app can
+    ask Overpass for.
+    """
+    kind, number = unique_id[0], int(unique_id[1:])
+    if kind == "a":
+        return f"relation/{number // 2}" if number % 2 else f"way/{number // 2}"
+    return {"n": "node", "w": "way", "r": "relation"}[kind] + f"/{number}"
+
+
+def cell(lon, lat):
+    return (int(lon // GRID_DEGREES), int(lat // GRID_DEGREES))
+
+
+def load_points(features):
+    """
+    Every point of interest in the filtered extract, in a grid of cells.
+
+    Only nodes: a point is what this joins, and a playground drawn as a way is
+    already an outline of its own on the map. Its id is kept as the number
+    Overpass knows it by, because that is what the tag will name.
+    """
+    grid = {}
+    count = 0
+    for feature in features:
+        lon, lat = feature["geometry"]["coordinates"]
+        grid.setdefault(cell(lon, lat), []).append((lon, lat, int(feature["id"][1:])))
+        count += 1
+    return grid, count
+
+
+def ring_contains(ring, lon, lat):
+    """Whether a point is inside a ring, by the usual ray crossing count."""
+    inside = False
+    previous_lon, previous_lat = ring[-1]
+    for point_lon, point_lat in ring:
+        if (point_lat > lat) != (previous_lat > lat):
+            crossing = (previous_lon - point_lon) * (lat - point_lat) / (
+                previous_lat - point_lat
+            ) + point_lon
+            if lon < crossing:
+                inside = not inside
+        previous_lon, previous_lat = point_lon, point_lat
+    return inside
+
+
+def polygon_contains(polygon, lon, lat):
+    """A point is in a polygon when it is in its outer ring and in none of its holes."""
+    outer, *holes = polygon
+    if not ring_contains(outer, lon, lat):
+        return False
+    return not any(ring_contains(hole, lon, lat) for hole in holes)
+
+
+def ring_area(ring):
+    """
+    The shoelace area of a ring, in square degrees.
+
+    Square degrees are not an area anybody would quote, and they do not have to
+    be: this is only ever used to compare two buildings that contain the same
+    point, where the smaller one is the more specific answer. Converting to
+    square metres would change none of those comparisons.
+    """
+    total = 0.0
+    previous_lon, previous_lat = ring[-1]
+    for lon, lat in ring:
+        total += previous_lon * lat - lon * previous_lat
+        previous_lon, previous_lat = lon, lat
+    return abs(total) / 2
+
+
+def join(points, buildings):
+    """
+    Which building each point stands in, and therefore which buildings to keep.
+
+    Read as a stream, because the building side is the whole reason this is not
+    a two line script: a country has tens of millions of them and only the few
+    thousand that contain something are worth remembering. A building whose
+    bounding box holds no candidate point — which is nearly all of them — costs
+    one pass over its coordinates and a handful of dict lookups.
+
+    Where buildings overlap, the smallest wins. That is a hall inside a
+    terminal, a shop unit inside a shopping centre: both contain the toilet,
+    and the one a person needs to be told about is the one they would name.
+    The app picks the same way when it looks at what came back, so the two
+    agree — and against a mirror holding every building, where the choice is
+    the app's alone, it still gets the shop unit rather than the centre.
+    """
+    grid, point_count = load_points(points)
+    log(f"{point_count} points to place")
+
+    # The point's node id to the building it stands in, and that building's
+    # area, kept so a later, smaller building can take the point over
+    best = {}
+    buildings_read = 0
+
+    for feature in buildings:
+        buildings_read += 1
+        if feature.get("properties", {}).get("building") in NOT_A_BUILDING:
+            continue
+
+        geometry = feature["geometry"]
+        polygons = (
+            geometry["coordinates"]
+            if geometry["type"] == "MultiPolygon"
+            else [geometry["coordinates"]]
+        )
+
+        # The bounding box, from the outer rings only: a hole cannot reach
+        # outside the ring it is a hole in
+        longitudes = [lon for polygon in polygons for lon, _ in polygon[0]]
+        latitudes = [lat for polygon in polygons for _, lat in polygon[0]]
+        west, east = min(longitudes), max(longitudes)
+        south, north = min(latitudes), max(latitudes)
+
+        candidates = []
+        for grid_x in range(int(west // GRID_DEGREES), int(east // GRID_DEGREES) + 1):
+            for grid_y in range(
+                int(south // GRID_DEGREES), int(north // GRID_DEGREES) + 1
+            ):
+                for lon, lat, node_id in grid.get((grid_x, grid_y), ()):
+                    if west <= lon <= east and south <= lat <= north:
+                        candidates.append((lon, lat, node_id))
+        if not candidates:
+            continue
+
+        ref = object_ref(feature["id"])
+        area = sum(ring_area(polygon[0]) for polygon in polygons)
+        for lon, lat, node_id in candidates:
+            if not any(polygon_contains(polygon, lon, lat) for polygon in polygons):
+                continue
+            current = best.get(node_id)
+            if current is None or area < current[1]:
+                best[node_id] = (ref, area)
+
+    joined = {node_id: ref for node_id, (ref, _) in best.items()}
+    log(
+        f"{buildings_read} buildings read, "
+        f"{len(set(joined.values()))} of them contain one of {len(joined)} points"
+    )
+    return joined
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Add the buildings that contain a point of interest to a filtered extract"
+    )
+    parser.add_argument("--source", required=True, help="the raw extract, before filtering")
+    parser.add_argument(
+        "--source-format",
+        default="",
+        help="osmium's name for its format, for a download whose name does not say",
+    )
+    parser.add_argument("--pois", required=True, help="the filtered extract to add to")
+    parser.add_argument("--output", required=True)
+    parser.add_argument(
+        "--expressions",
+        default=os.environ.get("WAYSIDE_FILTER_FILE", "/opt/wayside/osmium-filter.txt"),
+        help="the tag filter the extract was cut down with, to tell a point from a corner",
+    )
+    parser.add_argument(
+        "--output-format", default="", help="osmium's name for it, when the suffix does not say"
+    )
+    parser.add_argument(
+        "--work-dir", default="", help="where the intermediate files go, default beside the output"
+    )
+    arguments = parser.parse_args()
+
+    started = time.time()
+    work = arguments.work_dir or os.path.dirname(os.path.abspath(arguments.output))
+    work = tempfile.mkdtemp(prefix="join-buildings.", dir=work)
+    output_format = ["--output-format", arguments.output_format] if arguments.output_format else []
+    header = header_arguments(arguments.pois)
+
+    try:
+        matched = os.path.join(work, "matched.osm.pbf")
+        buildings = os.path.join(work, "buildings.osm.pbf")
+        keep_ids = os.path.join(work, "keep.txt")
+        kept = os.path.join(work, "kept.osm.pbf")
+
+        # The points first, off the filtered extract, which is small and has
+        # already had every decision about what belongs in this database made
+        # for it.
+        #
+        # Through the tag filter a second time, though, and this time without
+        # the objects the filter drags in behind the ones it matched. A kept
+        # way brings its nodes with it, some of those nodes carry tags of their
+        # own — an entrance, a door, the corner of an escalator — and on Bremen
+        # they are 727 of the 7709 tagged nodes in the file. None of them is a
+        # point on the map, so joining them to a building would keep buildings
+        # nothing will ever be shown inside
+        log("finding the points")
+        run([
+            "osmium", "tags-filter", arguments.pois,
+            "--expressions", arguments.expressions, "--omit-referenced",
+            "--output", matched, "--overwrite",
+        ])
+
+        # Then every building in the region, with the nodes they are drawn
+        # from, which is the expensive half and the reason this runs against
+        # the raw extract rather than the filtered one: the filter dropped
+        # exactly these
+        log("pulling the buildings out of the extract")
+        source_format = (
+            ["--input-format", arguments.source_format] if arguments.source_format else []
+        )
+        run([
+            "osmium", "tags-filter", arguments.source, *source_format,
+            "w/building", "r/building",
+            "--output", buildings, "--overwrite",
+        ])
+        # Both sides of the join are read as they are produced, so the pass
+        # over the points finishes before the one over the buildings starts
+        log("assembling their outlines")
+        joined = join(
+            export_features(matched, "point", []),
+            export_features(buildings, "polygon", ["building"]),
+        )
+
+        if not joined:
+            # Nothing to add and nothing to write, so the filtered extract is
+            # already the answer. A region with no point inside any building is
+            # unusual but not wrong: an extract can be one island
+            log("no point is inside a building, so the extract is unchanged")
+            run(["osmium", "cat", arguments.pois, "--output", arguments.output,
+                 "--overwrite", *output_format, *header])
+            return
+
+        with open(keep_ids, "w", encoding="utf-8") as handle:
+            for ref in sorted(set(joined.values())):
+                kind, number = ref.split("/")
+                handle.write(f"{kind[0]}{number}\n")
+
+        # Out of the buildings file rather than the source: it holds the same
+        # objects and is a fraction of the size, and getid has to read its
+        # input twice to collect the nodes a kept way is drawn from
+        log("taking the buildings that contain something out again")
+        run([
+            "osmium", "getid", buildings,
+            "--id-file", keep_ids, "--add-referenced",
+            "--output", kept, "--overwrite",
+        ])
+
+        # The points as they were filtered and the buildings as they are in
+        # OpenStreetMap, in one sorted file. An object in both — a library that
+        # is a point of interest and also the building a toilet is in — is
+        # written once, which is merge's own behaviour and the right one here
+        log("merging")
+        run(["osmium", "merge", arguments.pois, kept,
+             "--output", arguments.output, "--overwrite", *output_format, *header])
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+
+    log(f"done in {int(time.time() - started)}s")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except subprocess.CalledProcessError as error:
+        print(f"join-buildings: {error.cmd[0]} {error.cmd[1]} failed", file=sys.stderr)
+        sys.exit(1)

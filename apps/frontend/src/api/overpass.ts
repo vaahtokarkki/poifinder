@@ -398,23 +398,152 @@ const shapeFromElements = (elements: OverpassElement[]): OverpassShape | null =>
 };
 
 /**
- * The outline of one way or relation, asked for by id.
+ * One way or relation, named the way the rest of the app names them:
+ * `way/1234`, `relation/5678`. The same string is the cache key and the React
+ * key, so there is one spelling to get right.
+ */
+export type OsmRef = `${"way" | "relation"}/${string}`;
+
+/** One way or relation asked for by id: what it is drawn as, and what it says */
+export type OverpassElementDetails = {
+  shape: OverpassShape | null;
+  tags: Record<string, string>;
+};
+
+/**
+ * One way or relation, asked for by id.
  *
  * Fetched a point at a time, when its popup opens, rather than with the search
  * that put it on the map: geometry is by far the bulk of an Overpass answer,
  * and a query for a screenful of car parks that carried every corner of every
  * one of them would cost the reader a slower map for outlines they will never
  * look at.
+ *
+ * The tags come back with the geometry because they cost nothing extra — the
+ * answer to `out geom` carries them either way — and because the two callers
+ * want one each: the outline on the map, and the popup's account of the
+ * building a point stands in.
  */
-export async function fetchOverpassShape(
+export async function fetchOverpassElement(
   type: "way" | "relation",
   id: number | string
-): Promise<OverpassShape | null> {
+): Promise<OverpassElementDetails> {
   const statement = type === "way" ? "way" : "rel";
   const elements = await runOverpassQuery(
     `[out:json];${statement}(id:${id});out geom;`
   );
-  return shapeFromElements(elements);
+  const self = elements.find(
+    element => element.type === type && String(element.id) === String(id)
+  );
+  return { shape: shapeFromElements(elements), tags: self?.tags ?? {} };
+}
+
+/* ---------- The building a point is standing in ---------- */
+
+/**
+ * How the app finds out which building a point is inside.
+ *
+ * There is no link in OpenStreetMap between a toilet and the shopping centre
+ * around it — they are two objects that happen to overlap — and no Overpass
+ * query asks the question directly either. `is_in` would, but it needs areas,
+ * which are a permanent background job our own instance deliberately does not
+ * run. So the app asks for the buildings *near* the point and works out which
+ * one contains it here, with the same ray casting the outlines already use.
+ *
+ * The radius is what makes that honest, and it is measured rather than picked.
+ * Across every point Bremen's import joins to a building, the median sits 3.4 m
+ * from its building's nearest wall, the 99th percentile 36 m and the deepest
+ * 93 m; `around:` measures to a way's walls rather than to its corners, so 150
+ * covers all of them with room over. Something enormous — an airport concourse
+ * — could still have a middle further from any wall than this, and would come
+ * back with no building rather than with the wrong one.
+ *
+ * What it costs is one query when a popup opens, which is the same bargain the
+ * outlines already make. Against our own instance, which holds only the
+ * buildings that contain something, that is 6 to 26 KB. Against a public mirror
+ * holding every building in the city it is about 40 KB, and still the right
+ * answer: the containment test does not care how many candidates it is given.
+ */
+const ENCLOSING_BUILDING = {
+  /** Metres. See above: 150 covers every joined point measured on Bremen */
+  RADIUS: 150,
+  /**
+   * `building=no` is a mapper saying "the thing you would take for a building
+   * here is not one". The import applies the same rule when it decides which
+   * buildings to keep — see NOT_A_BUILDING in apps/overpass/bin/join-buildings
+   * — so that our server and the public mirrors answer alike
+   */
+  NOT_A_BUILDING: new Set(["no"]),
+} as const;
+
+/** The building a point stands in: which object it is, and what it says */
+export type EnclosingBuilding = OverpassElementDetails & { ref: OsmRef };
+
+/** Whether a point is inside a shape: in one of its rings and in none of its holes */
+const shapeContains = (shape: OverpassShape, point: [number, number]) =>
+  shape.polygons.some(
+    ([outer, ...holes]) =>
+      ringContains(outer, point) && !holes.some(hole => ringContains(hole, point))
+  );
+
+/**
+ * The area a shape covers, in square degrees.
+ *
+ * Not an area anybody would quote, and it does not have to be: it is only ever
+ * used to compare two buildings that both contain the same point, and no
+ * conversion would change which of them is smaller.
+ */
+const shapeArea = (shape: OverpassShape) =>
+  shape.polygons.reduce((total, [outer]) => {
+    let doubled = 0;
+    for (let i = 0, j = outer.length - 1; i < outer.length; j = i++) {
+      doubled += outer[j][0] * outer[i][1] - outer[i][0] * outer[j][1];
+    }
+    return total + Math.abs(doubled) / 2;
+  }, 0);
+
+/**
+ * The building a point is standing in, or null if it is standing outside.
+ *
+ * The smallest one wins where several contain the point, which is a shop unit
+ * inside a shopping centre or a hall inside a terminal: both are true, and the
+ * smaller is the one somebody would use to say where they are. Our own import
+ * chooses the same way when it decides which buildings to keep, so the answer
+ * does not depend on which server answered.
+ */
+export async function fetchEnclosingBuilding(
+  [lat, lng]: [number, number]
+): Promise<EnclosingBuilding | null> {
+  const elements = await runOverpassQuery(
+    `[out:json];wr[building](around:${ENCLOSING_BUILDING.RADIUS},${lat},${lng});out geom;`
+  );
+
+  let best: { building: EnclosingBuilding; area: number } | null = null;
+  for (const element of elements) {
+    const building = element.tags?.building;
+    if (!building || ENCLOSING_BUILDING.NOT_A_BUILDING.has(building)) continue;
+
+    // One element at a time, because these are candidates rather than parts of
+    // one thing: shapeFromElements folds everything it is given into a single
+    // shape, which is right for the ways of one relation and wrong for a
+    // street's worth of separate buildings
+    const shape = shapeFromElements([element]);
+    if (!shape || !shapeContains(shape, [lat, lng])) continue;
+
+    const area = shapeArea(shape);
+    if (best === null || area < best.area) {
+      best = {
+        area,
+        building: {
+          ref: `${element.type as "way" | "relation"}/${element.id}`,
+          shape,
+          tags: element.tags ?? {},
+        },
+      };
+    }
+  }
+
+  return best?.building ?? null;
 }
 
 export async function fetchOverpassMarkers(

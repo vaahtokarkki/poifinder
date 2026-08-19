@@ -773,6 +773,44 @@ body {
 }
 
 /*
+ * The building a point stands in, when the database knows which one: the
+ * shopping centre a toilet is inside, the station a locker is in.
+ *
+ * Its own section under the point's own rows, separated by a line a shade
+ * stronger than the ones between rows. Everything in it is true of the
+ * building and not of the point — a centre's opening hours are not the
+ * toilet's — and two lists set identically would be read as one list.
+ */
+.poi-popup-building {
+  margin-top: 0.85em;
+  padding-top: 0.7em;
+  border-top: 1px solid #dadce0;
+}
+
+/*
+ * Names it, which for most readers is the whole answer: "In Kamppi". Set as a
+ * heading rather than as another label-and-value row, because it is what the
+ * section is about rather than one more fact in it.
+ *
+ * Scoped through `.leaflet-popup-content` for its margins, the same way the
+ * footnote lines below are and for the same reason: Leaflet's own rule for a
+ * <p> inside a popup outranks a single class, and left to it this line would
+ * stand 1.3em clear of the rows it belongs to.
+ */
+.poi-popup .leaflet-popup-content .poi-popup-building-label {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #3c4043;
+  overflow-wrap: break-word;
+}
+
+/* Against the name above them rather than adrift from it */
+.poi-popup-building .poi-popup-rows {
+  margin-top: 0.45em;
+}
+
+/*
  * Both footnote lines are scoped through `.leaflet-popup-content` for the
  * margins alone. Leaflet sets `margin: 1.3em 0` on every <p> in a popup, and
  * `.leaflet-popup-content p` outranks a single class — so a bare

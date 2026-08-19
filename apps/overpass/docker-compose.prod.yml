@@ -209,6 +209,12 @@ services:
       # below and "What it costs" in the README
       WAYSIDE_REGION_LIST: /opt/wayside/world-regions.txt
 
+      # Keep the buildings the points stand in, so a toilet in a shopping
+      # centre can say which centre. It is another pass over each region and a
+      # buildings-only copy of it on the disk while that runs, and the app does
+      # the rest from the geometry. See bin/join-buildings
+      WAYSIDE_JOIN_BUILDINGS: "true"
+
       # Which container to restart when the new database is in place. Without
       # it the swap still happens, but the server goes on answering from the
       # files it already has open and says so in the log

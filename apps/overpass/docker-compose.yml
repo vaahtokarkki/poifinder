@@ -49,6 +49,13 @@ services:
       # without ever holding one on the disk. See .env.example
       WAYSIDE_REGION_LIST: ${WAYSIDE_REGION_LIST:-}
 
+      # Put the buildings the points stand in back into the extract, so the app
+      # can say which shopping centre a toilet is in and draw the centre around
+      # it. They go back untouched: the app works out which building holds
+      # which point from the geometry. Costs another pass over the extract and
+      # a copy of its buildings on the disk while it runs. See bin/join-buildings
+      WAYSIDE_JOIN_BUILDINGS: ${WAYSIDE_JOIN_BUILDINGS:-true}
+
       # When an object was last edited, which the popup shows under the survey
       # date. Measured on the Finland extract: +6.8 MB on a 2.6 GB database and
       # +3 seconds on a 111 second import, so a quarter of one percent rather

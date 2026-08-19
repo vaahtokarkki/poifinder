@@ -24,6 +24,36 @@ be visible.
 `npm run seo:data` reads the same setting from `OVERPASS_API_URL` in the
 environment, and drops its 2.5 second throttle when it is set.
 
+### How a popup knows which building a toilet is in
+
+It works it out. When the popup for a point opens, the app asks for the
+buildings within 150 m and tests which one contains it, by ray casting in
+`fetchEnclosingBuilding` ([`src/api/overpass.ts`](src/api/overpass.ts)). The
+smallest containing one wins — a shop unit rather than the mall it is in — and
+its outline is drawn behind the marker in a dashed line, with its tags listed
+under the point's own.
+
+OpenStreetMap has no link between the two objects, and Overpass has no query
+that asks the question directly: `is_in` would, but it wants areas, which our
+own instance deliberately does not build. Geometry is the only honest answer,
+and it is the same answer whichever server gives it — this works against the
+public mirrors as well as against ours.
+
+The radius is measured rather than picked. Across every point Bremen's import
+joins to a building, the median sits 3.4 m from its building's nearest wall,
+the 99th percentile 36 m, the deepest 93 m; `around:` measures to a way's walls
+rather than to its corners, so 150 m reaches all of them. One query costs 6–26
+KB against our instance and about 40 KB against a mirror holding every building
+in the city, and it is asked once per popup, cached for the page, and shared
+between the outline and the popup text.
+
+What [`apps/overpass`](../overpass) contributes is having any buildings there
+to find. Its extract is filtered down to the app's own categories, which drops
+every building in the region, so
+[`bin/join-buildings`](../overpass/bin/join-buildings) puts back exactly the
+ones that contain a point — untouched, and with nothing written onto the points
+to mark them.
+
 ## Prerendered pages
 
 The app is a client side map, but every indexable URL is a real static HTML

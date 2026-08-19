@@ -1,7 +1,8 @@
 import React from "react";
 import { Polygon, Polyline } from "react-leaflet";
-import { fetchOverpassShape } from "../api/overpass";
-import type { OverpassMarkerData, OverpassShape } from "../api/overpass";
+import { useEnclosingBuilding, useOsmElement } from "../hooks/useOsmElement";
+import type { OsmRef } from "../api/overpass";
+import type { OverpassMarkerData } from "../api/overpass";
 
 /**
  * How solidly the area is filled in. Low on purpose: the outline is what says
@@ -14,71 +15,59 @@ const FILL_OPACITY = 0.15;
 const STROKE_WEIGHT = 3;
 
 /**
- * Outlines already fetched, kept for the life of the page.
+ * The same outline when it belongs to the building a point stands in rather
+ * than to the point itself, set a step back in every channel: thinner, dashed,
+ * and barely filled.
  *
- * Reopening a popup is the common case — a reader compares two car parks, or
- * taps back to the one they had — and the geometry of a way does not change
- * while they are looking at it. A point with no geometry to draw is cached as
- * null, so a relation nobody can render is not asked for again either.
+ * It has to be legible as a different kind of statement. A solid shape in the
+ * category's colour says "this is the thing you tapped", and drawing a whole
+ * shopping centre that way would claim the centre is the toilet. Dashed and
+ * faint says "the toilet is somewhere in here", which is exactly what the
+ * containment test knows and the most a building outline can honestly say.
  */
-const shapeCache = new Map<string, OverpassShape | null>();
-
-const cacheKey = (marker: OverpassMarkerData) => `${marker.type}/${marker.id}`;
+const ENCLOSING_FILL_OPACITY = 0.06;
+const ENCLOSING_STROKE_WEIGHT = 2;
+const ENCLOSING_DASH = "6 5";
 
 /**
- * The outline of the point whose popup is open, if it has one.
+ * The outline on the map under an open popup, if the point turns out to have
+ * one.
  *
- * Only one is ever on the map: a point is drawn while it is being read about
- * and disappears with its popup. Leaving them behind would build up an area
- * map nobody asked for, and the colours it is drawn in are the categories',
- * so several at once stop meaning anything.
+ * Two different questions, and which one is asked depends on what the point
+ * is. A car park drawn as a way has an outline of its own — this is where the
+ * place ends — and it is fetched by id. A toilet is a node with no outline at
+ * all, and the only shape worth drawing for it is the building it is standing
+ * in, which has to be found by looking at what is nearby. Both hooks are
+ * called either way, as hooks must be; the one that does not apply is handed a
+ * null and asks nothing.
+ *
+ * Whichever it is, only one is ever on the map: a shape is drawn while its
+ * point is being read about and disappears with the popup. Leaving them behind
+ * would build up an area map nobody asked for, and the colours they are drawn
+ * in are the categories', so several at once stop meaning anything.
  */
-const PoiShape: React.FC<{ marker: OverpassMarkerData; color: string }> = ({
-  marker,
-  color,
-}) => {
-  const key = cacheKey(marker);
-  const [shape, setShape] = React.useState<OverpassShape | null>(
-    () => shapeCache.get(key) ?? null
+const PoiShape: React.FC<{
+  marker: OverpassMarkerData;
+  color: string;
+  /** True for a node, whose outline can only be the building around it */
+  enclosing: boolean;
+}> = ({ marker, color, enclosing }) => {
+  const own = useOsmElement(
+    enclosing ? null : (`${marker.type}/${marker.id}` as OsmRef)
   );
-
-  React.useEffect(() => {
-    if (shapeCache.has(key)) {
-      setShape(shapeCache.get(key) ?? null);
-      return;
-    }
-
-    // The popup can be closed again long before Overpass answers, and a point
-    // whose outline arrives after the reader has moved on must not draw itself
-    let current = true;
-    setShape(null);
-
-    fetchOverpassShape(marker.type as "way" | "relation", marker.id).then(
-      result => {
-        shapeCache.set(key, result);
-        if (current) setShape(result);
-      },
-      error => {
-        // Nothing is said about this. The outline is an extra on top of a popup
-        // that is already open and already answering the question that was
-        // asked, and a failure notice over the map would be worse than the
-        // missing shape
-        console.debug("[Overpass] Could not load the outline of the point", error);
-      }
-    );
-
-    return () => {
-      current = false;
-    };
-  }, [key, marker.id, marker.type]);
+  const building = useEnclosingBuilding(
+    enclosing && marker.position ? marker.position : null
+  );
+  const shape = (enclosing ? building?.shape : own?.shape) ?? null;
 
   if (!shape) return null;
 
   const pathOptions = {
     color,
-    weight: STROKE_WEIGHT,
+    weight: enclosing ? ENCLOSING_STROKE_WEIGHT : STROKE_WEIGHT,
+    dashArray: enclosing ? ENCLOSING_DASH : undefined,
     fillColor: color,
-    fillOpacity: FILL_OPACITY,
+    fillOpacity: enclosing ? ENCLOSING_FILL_OPACITY : FILL_OPACITY,
   };
 
   return (

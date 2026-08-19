@@ -28,6 +28,31 @@ a small server; it is not what decides whether the *import* fits, which is
 The tradeoff is that it only answers *our* queries. Ask it for restaurants and
 it will honestly tell you there are none.
 
+### And the buildings those points stand in
+
+One thing goes back in after the filter. A toilet in a shopping centre is a
+node with `amenity=toilets` on it and nothing else: which centre it is, what
+street it is on and when the doors are open all belong to the building around
+it, which the filter drops. `bin/join-buildings` works out which building
+contains which point and puts those buildings back — and only those.
+
+They go back **as they are**: real ways and relations with the nodes they are
+drawn from, no tag added to them and none added to the points either. Nothing
+in the database says which point belongs to which building. The app asks for
+the buildings within 150 m of a point when its popup opens and tests which one
+contains it, which is the same work done in the one place that can also do it
+against a mirror we do not own.
+
+That is the reason this step exists at all, rather than a shortcut it takes:
+the app could do the geometry against any Overpass, but *this* database has no
+buildings in it whatsoever without it. The tag filter drops every one, so the
+question comes back honestly answered "there are none".
+
+On Bremen, 843 of 6982 points land inside one of 578 buildings, and the extract
+grows about a sixth — 602 KB to 714 KB. Set `WAYSIDE_JOIN_BUILDINGS=false` to
+leave it out; the app then finds no building on this server and says nothing
+about one, exactly as it did before any of this existed.
+
 ## Running it
 
 ```bash
@@ -235,6 +260,14 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 Swap is enough here because this is a weekly batch job rather than something in
 the request path — it will be slower, and it will finish.
 
+The join adds a pass of its own: `bin/join-buildings` reads the extract again
+for the buildings, and holds a copy of them on the disk while it assembles
+their outlines. Reckon on the filter step taking about twice as long and on
+room for a buildings-only copy of the region — for Bremen, 21 MB of extract
+means 9 MB of buildings and six seconds instead of three. Memory is the same
+bitmap as above, paid once more. `WAYSIDE_JOIN_BUILDINGS=false` turns it off on
+a machine where that is the thing that will not fit.
+
 The import that follows is the other half. `OVERPASS_FLUSH_SIZE` is how much it
 buffers before writing: the image defaults to 16, `docker-compose.prod.yml`
 sets 8, and 2 will get a very small machine through at the cost of speed.
@@ -258,13 +291,14 @@ refuses to publish a stale filter, with
 
 | File | What it is |
 | --- | --- |
-| `Dockerfile` | `wiktorn/overpass-api` plus the filter, the two commands and the entrypoint hooks |
+| `Dockerfile` | `wiktorn/overpass-api` plus the filter, the three commands and the entrypoint hooks |
 | `docker-compose.yml` | The service, its volume and every setting worth changing |
 | `docker-compose.prod.yml` | The deployment: serving and importing split in two, on a host directory |
 | `osmium-filter.txt` | Generated from `CATEGORY_CONFIG`. Do not edit |
 | `europe-regions.txt` | The countries `europe-latest.osm.pbf` is made of, for building it a piece at a time |
 | `world-regions.txt` | Those plus every other region a city in the app sits in. The default |
-| `bin/filter-osm-extract` | Cuts an extract down to the tags in the filter |
+| `bin/filter-osm-extract` | Cuts an extract down to the tags in the filter, and calls the join |
+| `bin/join-buildings` | Puts the buildings the points stand in back, as they are in OpenStreetMap |
 | `bin/build-region-extract` | Downloads and filters a region list one country at a time, and merges the result |
 | `bin/update-poi-db` | Rebuild and swap, with the API up throughout |
 | `initdb.d/05-db-permissions.sh` | Lets the FastCGI worker reach the dispatcher's socket |

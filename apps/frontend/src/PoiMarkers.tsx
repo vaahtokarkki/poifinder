@@ -15,6 +15,7 @@ import { TranslationError, translate } from "./api/translate";
 import type { TranslationFailure } from "./api/translate";
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
 import PoiShape from "./components/PoiShape";
+import { useEnclosingBuilding } from "./hooks/useOsmElement";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
 import {
   ADDRESS_RANK,
@@ -313,7 +314,14 @@ const isDisplayableTag = (key: string, value: string) => {
    * thing on the map is a building
    */
   if (key === "building") return value !== "yes";
-  if (key.startsWith("building:")) return true;
+  /**
+   * What it is made of and how tall it is, which is how somebody picks the
+   * right red brick building out of a street. `building:parts` and
+   * `building:min_level` are the exceptions: they are notes about how the 3D
+   * model of the building is put together, and mean nothing on the ground
+   */
+  if (key.startsWith("building:"))
+    return key !== "building:parts" && key !== "building:min_level";
   /**
    * The exception among the wiki tags, which are otherwise cross references
    * between databases. This one is an article about the thing on the map, and
@@ -524,8 +532,7 @@ type PopupRow = {
  * holding a phone in a shopping centre has is which floor, and the address of a
  * building they are already standing in answers nothing.
  */
-const buildPopupRows = (marker: OverpassMarkerData): PopupRow[] => {
-  const tags = marker.tags ?? {};
+const buildPopupRows = (tags: Record<string, string> = {}): PopupRow[] => {
   const rows: (PopupRow & { rank: number })[] = [];
 
   const address = describeAddress(tags);
@@ -573,12 +580,156 @@ const describeMarker = (marker: OverpassMarkerData, selected: readonly CATEGORIE
   };
 };
 
+/**
+ * The rows of a popup, whether they describe the point or the building it
+ * stands in. One renderer for both, because a fact about a place should not
+ * change how it is set out depending on which object in OpenStreetMap happens
+ * to be carrying it: an address is an address, and a timetable on a shopping
+ * centre reads the same way as one on the toilet inside it.
+ */
+const PopupRows: React.FC<{ rows: PopupRow[]; keyPrefix: string }> = ({
+  rows,
+  keyPrefix,
+}) => (
+  <dl className="poi-popup-rows">
+    {rows.map(({ key, label, value: valueStr, written, href: rowHref, linkLabel }) => {
+      const isShortAnswer = !written && SHORT_ANSWERS.has(valueStr.toLowerCase());
+      const href =
+        rowHref ?? (valueStr.startsWith("http") ? valueStr : `https://${valueStr}`);
+      /**
+       * Prose, not a tag value: a description carries its own line breaks
+       * and is far too long to sit in a right hand column, so the row
+       * turns into a label with a paragraph under it. A timetable is
+       * written rather than prose, and takes the same shape for the same
+       * reason: several rules stacked in the right hand column wrap into
+       * an unreadable column of fragments
+       */
+      const isProse = !written && (valueStr.includes("\n") || valueStr.length > 40);
+      const isStacked = isProse || valueStr.includes("\n");
+      const canTranslate = !written && shouldOfferTranslation(key, valueStr);
+
+      return (
+        <div
+          className={`poi-popup-row${isStacked ? " poi-popup-row-stacked" : ""}`}
+          key={`${keyPrefix}-${key}`}
+        >
+          <dt>
+            <a
+              className="poi-popup-tag-link"
+              href={tagWikiUrl(key)}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={`${key} on the OpenStreetMap wiki`}
+            >
+              {label}
+            </a>
+          </dt>
+          <dd>
+            {canTranslate ? (
+              <TranslatableValue value={valueStr} isProse={isProse} />
+            ) : rowHref || key === "website" || key === "url" || isUrl(valueStr) ? (
+              <a
+                className="poi-popup-link"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {linkLabel ?? formatLinkLabel(href)}
+              </a>
+            ) : isShortAnswer ? (
+              <span
+                className="poi-popup-chip"
+                /**
+                 * The one chip that is not grey. It carries the same pink
+                 * the marker does, so a point somebody picked out of the
+                 * map by its colour says the same thing when it opens.
+                 * Every other short answer keeps the neutral pill.
+                 */
+                style={
+                  key === "changing_table" && valueStr.toLowerCase() === "yes"
+                    ? { background: CHANGING_TABLE_COLOR, color: "#fff" }
+                    : undefined
+                }
+              >
+                {formatValue(valueStr)}
+              </span>
+            ) : isProse || written ? (
+              // Verbatim: formatValue rewrites underscores and semicolons,
+              // which is right for a tag value and wrong for a sentence
+              // somebody wrote, or for a line this file wrote itself
+              valueStr
+            ) : (
+              formatValue(valueStr)
+            )}
+          </dd>
+        </div>
+      );
+    })}
+  </dl>
+);
+
+/**
+ * What the popup says about the building the point stands in.
+ *
+ * The question a person holding a phone actually has about a toilet in a
+ * shopping centre is which shopping centre, and the node they tapped does not
+ * know: the name, the street and the opening hours are all on the building
+ * around it, which is a different object in OpenStreetMap with nothing in
+ * either of them pointing at the other. Which one it is has to be worked out
+ * from the geometry, and fetchEnclosingBuilding is where that happens.
+ *
+ * Only for a node. A point drawn as a way is already an area on the map, and
+ * the building it overlaps is a neighbour rather than a container.
+ *
+ * Nothing is fetched until the popup opens, because this only ever renders
+ * inside one: react-leaflet mounts a popup's contents when Leaflet opens it,
+ * so a screenful of markers is a screenful of markers rather than a hundred
+ * queries for buildings nobody looked at. The outline on the map is asking the
+ * same question at the same moment and gets the same answer without a second
+ * request; see the lookups in hooks/useOsmElement.
+ *
+ * It is its own section rather than more rows, and it is the last thing before
+ * the footnotes, because everything in it is true of the building and not of
+ * the point. A toilet that is free inside a shopping centre that charges for
+ * parking must not end up with one "Fee" row and no way to tell which is which.
+ */
+const EnclosingBuilding: React.FC<{
+  marker: OverpassMarkerData;
+  /** What the point has already said, so the building does not say it again */
+  shown: PopupRow[];
+}> = ({ marker, shown }) => {
+  const building = useEnclosingBuilding(
+    isDrawn(marker) || !marker.position ? null : marker.position
+  );
+  if (!building) return null;
+
+  const name = building.tags.name?.trim();
+  const rows = buildPopupRows(building.tags).filter(
+    row =>
+      // The name is the heading of this section, and a row repeating it would
+      // be the only thing in the popup said twice in two lines
+      row.key !== "name" &&
+      !shown.some(already => already.key === row.key && already.value === row.value)
+  );
+
+  return (
+    <div className="poi-popup-building">
+      <p className="poi-popup-building-label">
+        {name ? `In ${name}` : "In this building"}
+      </p>
+      {rows.length > 0 && (
+        <PopupRows rows={rows} keyPrefix={`${marker.id}-building`} />
+      )}
+    </div>
+  );
+};
+
 const RenderMarkerContents: React.FC<{
   marker: OverpassMarkerData;
   categories: readonly CATEGORIES[];
 }> = ({ marker, categories }) => {
   const { config, title, subtitle } = describeMarker(marker, categories);
-  const rows = buildPopupRows(marker);
+  const rows = buildPopupRows(marker.tags);
   const survey = describeSurvey(marker.tags);
   const edited = describeEdit(marker.timestamp);
 
@@ -598,83 +749,9 @@ const RenderMarkerContents: React.FC<{
         </div>
       </div>
 
-      {rows.length > 0 && (
-        <dl className="poi-popup-rows">
-          {rows.map(({ key, label, value: valueStr, written, href: rowHref, linkLabel }) => {
-            const isShortAnswer = !written && SHORT_ANSWERS.has(valueStr.toLowerCase());
-            const href =
-              rowHref ?? (valueStr.startsWith("http") ? valueStr : `https://${valueStr}`);
-            /**
-             * Prose, not a tag value: a description carries its own line breaks
-             * and is far too long to sit in a right hand column, so the row
-             * turns into a label with a paragraph under it. A timetable is
-             * written rather than prose, and takes the same shape for the same
-             * reason: several rules stacked in the right hand column wrap into
-             * an unreadable column of fragments
-             */
-            const isProse = !written && (valueStr.includes("\n") || valueStr.length > 40);
-            const isStacked = isProse || valueStr.includes("\n");
-            const canTranslate = !written && shouldOfferTranslation(key, valueStr);
+      {rows.length > 0 && <PopupRows rows={rows} keyPrefix={String(marker.id)} />}
 
-            return (
-              <div
-                className={`poi-popup-row${isStacked ? " poi-popup-row-stacked" : ""}`}
-                key={`${marker.id}-${key}`}
-              >
-                <dt>
-                  <a
-                    className="poi-popup-tag-link"
-                    href={tagWikiUrl(key)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={`${key} on the OpenStreetMap wiki`}
-                  >
-                    {label}
-                  </a>
-                </dt>
-                <dd>
-                  {canTranslate ? (
-                    <TranslatableValue value={valueStr} isProse={isProse} />
-                  ) : rowHref || key === "website" || key === "url" || isUrl(valueStr) ? (
-                    <a
-                      className="poi-popup-link"
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {linkLabel ?? formatLinkLabel(href)}
-                    </a>
-                  ) : isShortAnswer ? (
-                    <span
-                      className="poi-popup-chip"
-                      /**
-                       * The one chip that is not grey. It carries the same pink
-                       * the marker does, so a point somebody picked out of the
-                       * map by its colour says the same thing when it opens.
-                       * Every other short answer keeps the neutral pill.
-                       */
-                      style={
-                        key === "changing_table" && valueStr.toLowerCase() === "yes"
-                          ? { background: CHANGING_TABLE_COLOR, color: "#fff" }
-                          : undefined
-                      }
-                    >
-                      {formatValue(valueStr)}
-                    </span>
-                  ) : isProse || written ? (
-                    // Verbatim: formatValue rewrites underscores and semicolons,
-                    // which is right for a tag value and wrong for a sentence
-                    // somebody wrote, or for a line this file wrote itself
-                    valueStr
-                  ) : (
-                    formatValue(valueStr)
-                  )}
-                </dd>
-              </div>
-            );
-          })}
-        </dl>
-      )}
+      <EnclosingBuilding marker={marker} shown={rows} />
 
       {/* Below the rows and set quieter than them, because these are facts
           about the data rather than about the place. Two lines rather than one
@@ -757,22 +834,31 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
           // Most points carry nothing but the tag that put them on the map. A popup
           // holding only the name repeats what the marker already said, and covers
           // the map to do it, so those points get a line at the bottom of the screen
-          // instead and the map stays where it is
-          const hasDetails = buildPopupRows(marker).length > 0 || describeSurvey(marker.tags) !== null;
+          // instead and the map stays where it is.
+          //
+          // Whether there is a building around the point is not part of this,
+          // and cannot be: it takes a query to find out, and asking for every
+          // marker on the screen is exactly what this app does not do. So a
+          // point carrying nothing but `amenity=toilets` still gets the line
+          // rather than a popup, even standing in a shopping centre. On Bremen
+          // that is 18 of the 843 points inside a building
+          const hasDetails =
+            buildPopupRows(marker.tags).length > 0 || describeSurvey(marker.tags) !== null;
           const { title } = describeMarker(marker, categories);
 
           const key = shapeKey(marker);
+          // Every point with a popup opens the shape slot, drawn or not: a node
+          // may turn out to be standing in a building, and there is no telling
+          // which until its popup asks
           const eventHandlers = !hasDetails
             ? { click: () => onNotice?.(`${title} — no extra details`) }
-            : isDrawn(marker)
-              ? {
-                  popupopen: () => setOpenShape(key),
-                  // Only if it is still ours: opening another popup closes this
-                  // one, and the close arrives after the open it was caused by
-                  popupclose: () =>
-                    setOpenShape(current => (current === key ? null : current)),
-                }
-              : undefined;
+            : {
+                popupopen: () => setOpenShape(key),
+                // Only if it is still ours: opening another popup closes this
+                // one, and the close arrives after the open it was caused by
+                popupclose: () =>
+                  setOpenShape(current => (current === key ? null : current)),
+              };
 
           return <Marker
             key={String(marker.id)}
@@ -802,6 +888,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
           key={shapeKey(shapeMarker)}
           marker={shapeMarker}
           color={getMarkerColor(shapeMarker, categories)}
+          enclosing={!isDrawn(shapeMarker)}
         />
       )}
     </>

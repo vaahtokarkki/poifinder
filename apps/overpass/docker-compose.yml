@@ -96,6 +96,13 @@ services:
       # Which origins may read the answers, "*" for anyone. See initdb.d/10-cors.sh
       OVERPASS_CORS_ORIGIN: ${OVERPASS_CORS_ORIGIN:-*}
 
+      # One JSON line per request in /db/logs/access.log, with the client
+      # address and the query that was posted, rotated daily and kept for ten
+      # days. On the volume rather than in the Docker log, so it survives the
+      # container being replaced. See initdb.d/15-access-log.sh
+      WAYSIDE_ACCESS_LOG: ${WAYSIDE_ACCESS_LOG:-true}
+      WAYSIDE_ACCESS_LOG_DAYS: ${WAYSIDE_ACCESS_LOG_DAYS:-10}
+
     healthcheck:
       # -g because the brackets in the query are a glob range to curl otherwise
       test:

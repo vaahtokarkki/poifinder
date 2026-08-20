@@ -301,8 +301,10 @@ refuses to publish a stale filter, with
 | `bin/join-buildings` | Puts the buildings the points stand in back, as they are in OpenStreetMap |
 | `bin/build-region-extract` | Downloads and filters a region list one country at a time, and merges the result |
 | `bin/update-poi-db` | Rebuild and swap, with the API up throughout |
+| `bin/rotate-access-log` | The timer for the log rotation, because the image has no cron |
 | `initdb.d/05-db-permissions.sh` | Lets the FastCGI worker reach the dispatcher's socket |
 | `initdb.d/10-cors.sh` | Replaces the interpreter's fixed `Access-Control-Allow-Origin` with a configurable one |
+| `initdb.d/15-access-log.sh` | Moves the access log to the volume as JSON, with the real client address, and rotates it |
 | `initdb.d/20-supervisorctl.sh` | Gives supervisorctl a socket, so the swap can stop the dispatcher properly |
 | `initdb.d/30-wait-for-database.sh` | Holds a serving container back until there is a database, instead of letting it crash into FATAL |
 
@@ -384,7 +386,24 @@ the API is what people are waiting on.
 
 Watchtower only touches containers carrying
 `com.centurylinklabs.watchtower.enable=true`, so it leaves the rest of the
-machine alone.
+machine alone. Both containers here carry it, and it checks every ten minutes
+(`WATCHTOWER_POLL_INTERVAL: 600`). They are updated together on purpose: they
+share an on disk format, and a database written by one version and read by
+another is the failure worth avoiding.
+
+Replacing the server is a restart on the same database directory and costs the
+queries in flight. Replacing the importer costs more, and this is the trade the
+ten minute interval makes: a push can land in the middle of a rebuild and kill
+it. `update-poi-db` is resumable, so what is lost is the region in flight
+rather than the whole run, and the next scheduled run continues from there — on
+a full world build, an hour or two of downloading and filtering. Worth checking
+before pushing an image if a rebuild is running:
+
+```bash
+# silent means a rebuild is running: the lock is held
+docker compose -f docker-compose.prod.yml exec importer \
+  flock -n /db/update-poi-db.lock -c 'echo no rebuild running'
+```
 
 The reimports are in the stack too, so nothing goes in the host's crontab:
 ofelia reads its jobs from labels on the importer and runs `update-poi-db`
@@ -425,10 +444,11 @@ imports.
 Both still rebuild and reimport the whole of Europe — see "Refreshing one
 country at a time" above for what that costs.
 
-Ofelia and watchtower are deliberately days apart, Sunday and Wednesday.
-Replacing the importer mid run throws away hours of work and leaves the data
-waiting a week for the next attempt, so an image update must never be able to
-land inside the reimport window.
+Ofelia and watchtower used to be kept days apart, Sunday and Wednesday, so that
+an image update could never land inside the reimport window. They are not any
+more: watchtower runs every ten minutes and the importer is updated with the
+server, so the schedules do cross. What makes that survivable rather than
+prevented is that `update-poi-db` resumes at the region it stopped on.
 
 ```bash
 # what is scheduled, and what happened when it last ran
@@ -541,6 +561,91 @@ Whichever is used, `VITE_OVERPASS_API_URL` in the frontend build is the public
 https URL with `/api/interpreter` on the end, and `OVERPASS_CORS_ORIGIN` should
 name the site's origin unless the instance is meant for anyone.
 
+## Access logs
+
+Every request is written to `logs/access.log` on the database volume, one JSON
+object per line. On the server that is `/mnt/hdd1/wayside/logs/`.
+
+It is a file rather than the Docker log on purpose. The image points
+`/var/log/nginx/access.log` at stdout, which means the requests land in the
+Docker log, capped at 30 MB and thrown away with the container — and watchtower
+replaces the serving container whenever a new image is published. Nothing else
+moves: the dispatcher, the importer and nginx's errors still go to stdout, so
+`docker compose logs` is now the container's own story without a line per
+request in the way.
+
+A line looks like this, wrapped:
+
+```json
+{"time":"2026-08-20T16:24:28+00:00","ip":"203.0.113.45","proxy_ip":"172.17.0.1",
+ "xff":"203.0.113.45","country":"","method":"POST","uri":"/api/interpreter",
+ "status":200,"bytes":399,"request_length":315,"duration":0.032,
+ "referer":"https://wayside.cc/","ua":"Mozilla/5.0 ...",
+ "query":"data=[out:json];nwr[tourism=viewpoint](around:1000,60.1,24.9);out meta center;"}
+```
+
+Two fields are worth explaining.
+
+**`ip` is the client, not the tunnel.** Nothing reaches this container except
+through whatever terminates TLS on the host, so every connection arrives from
+the Docker bridge and without `real_ip` every line would read `172.17.0.1`. The
+hook trusts `X-Forwarded-For` from the loopback and the private ranges only —
+which is every address that can physically reach the port — and `proxy_ip`
+keeps the address that actually connected, so a line still says where it came
+in. Both the Tailscale funnel and `cloudflared` set the header.
+
+**`query` is the Overpass QL the app posted**, which is what says *what* was
+asked for: the categories, the radius, the map area. nginx can only log a body
+it still holds in memory, so it is empty for a query above
+`client_body_buffer_size` — a large polygon search — and the rest of the line
+is written either way.
+
+The health check is not logged. It runs `curl` inside the container once a
+minute, and it is the only thing that can reach nginx from `127.0.0.1`, so a
+`map` on the connecting address drops it and nothing else.
+
+### Rotation
+
+`logrotate` runs from supervisor, since the image has no cron:
+`bin/rotate-access-log` wakes every hour and lets logrotate decide whether a
+day has passed. Hourly rather than daily because a restart is a sleep that
+starts again — with a 24 hour timer, a container replaced shortly before
+midnight each day would never rotate at all. The schedule lives in
+`logs/logrotate.state`, beside the logs, so a restart does not lose it either.
+
+Ten days are kept, `WAYSIDE_ACCESS_LOG_DAYS`, and the files are dated rather
+than numbered:
+
+```
+access.log                     today
+access.log-2026-08-19          yesterday, not yet compressed
+access.log-2026-08-18.gz       and back to ten days
+```
+
+Ten days is the retention policy in full. What is worth knowing about traffic
+is knowable within days, and the file pairs an address with the coordinates
+somebody searched around, which is not something to keep for longer than it is
+being used. `WAYSIDE_ACCESS_LOG=false` turns the whole thing off and puts the
+requests back in the Docker log.
+
+### Reading it
+
+```bash
+cd /mnt/hdd1/wayside/logs
+
+# busiest addresses today
+jq -r .ip access.log | sort | uniq -c | sort -rn | head
+
+# how many queries, and how slow, over ten days
+zcat -f access.log* | jq -r '[.status, .duration] | @tsv' | sort | uniq -c
+
+# which categories people actually ask for
+jq -r '.query' access.log | grep -o '\[[a-z_:"]*=[^]]*\]' | sort | uniq -c | sort -rn | head -20
+```
+
+`zcat -f` reads the plain files and the compressed ones alike, which is what
+makes the whole ten days one command.
+
 ## Prebuilt image
 
 [`build-overpass-image.yml`](../../.github/workflows/build-overpass-image.yml)
@@ -559,6 +664,9 @@ start. To run that instead of building locally, replace the `build:` block in
   continent" above.
 - **Import memory.** `OVERPASS_FLUSH_SIZE` bounds the importer, and nothing
   bounds the filter: budget about 3 GB for it whatever the region.
+- **Access logs.** `WAYSIDE_ACCESS_LOG` and `WAYSIDE_ACCESS_LOG_DAYS` decide
+  whether requests are written to the volume and for how long. See "Access
+  logs" above.
 - **Meta data is on, and has to stay on.** `OVERPASS_META=yes` is what makes
   `out meta` return the last edit date, which the popup shows under the survey
   date. A database imported without it does not answer such a query with the

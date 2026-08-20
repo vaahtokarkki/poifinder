@@ -76,7 +76,8 @@ services:
 
     labels:
       # Watchtower only touches what carries this, so the rest of the machine
-      # keeps whatever versions it was given
+      # keeps whatever versions it was given. Recreating this one is a restart
+      # on the same database directory, costing the queries in flight
       com.centurylinklabs.watchtower.enable: "true"
 
     environment:
@@ -90,6 +91,16 @@ services:
       # Which origins a browser may read the answers from. Not access control:
       # anything can still query it with curl
       OVERPASS_CORS_ORIGIN: https://wayside.cc
+
+      # One JSON line per request in /mnt/hdd1/wayside/logs/access.log: client
+      # address, status, duration and the Overpass query that was posted. It is
+      # on the volume rather than in the Docker log because watchtower replaces
+      # this container whenever a new image is pushed, and the Docker log goes
+      # with it. Ten days, rotated daily — long enough to see a pattern, short
+      # enough that a file of addresses is not kept for no reason.
+      # See initdb.d/15-access-log.sh, and "Access logs" in README.md
+      WAYSIDE_ACCESS_LOG: "true"
+      WAYSIDE_ACCESS_LOG_DAYS: "10"
 
       # Has to match the importer's setting below: this is an on disk format,
       # and the server only returns edit dates from a database built with them
@@ -154,6 +165,17 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 
     labels:
+      # Updated with the server, so the two never sit on different images: they
+      # share an on disk format, and the one thing worth avoiding is a database
+      # written by one version and read by another.
+      #
+      # What it costs, with the ten minute interval below: a push can land in
+      # the middle of a rebuild, and watchtower replacing this container kills
+      # it. update-poi-db is resumable, so what is lost is the region in flight
+      # rather than the whole run, and the next scheduled run picks up where it
+      # stopped. On a full world build that is still an hour or two of
+      # downloading and filtering thrown away, so time a push accordingly if
+      # one is running
       com.centurylinklabs.watchtower.enable: "true"
 
       # The reimports, read by ofelia from this container rather than written
@@ -292,17 +314,17 @@ services:
 
       # Delete the image it replaced, rather than filling the disk with them
       WATCHTOWER_CLEANUP: "true"
-      # Every ten minutes. Six cron fields, the first is seconds.
+
+      # Every ten minutes, from whenever the container last started, rather than
+      # a cron expression: there is no hour of the day this should prefer, and
+      # an interval says that more plainly than six cron fields do.
       #
-      # Note what this trades away: the schedule used to be Wednesday 04:00,
-      # weekly and three days clear of the Sunday reimport, because watchtower
-      # replacing the importer mid run kills it and throws away however many
-      # hours of downloading and filtering it had done, and the data then waits
-      # for the next scheduled attempt. At ten minutes a pushed image will
-      # eventually land inside a run. The importer is resumable, so what is lost
-      # is the region in flight rather than the whole rebuild, but it is a real
-      # cost on a full world build
-      WATCHTOWER_SCHEDULE: "0 */10 * * * *"
+      # It used to be a weekly window kept days clear of the reimport, because
+      # watchtower replacing the importer mid run kills the rebuild. Both
+      # containers carry the label and this runs all day, so that is no longer
+      # prevented, only survivable: the importer resumes at the region it
+      # stopped on. See its labels above
+      WATCHTOWER_POLL_INTERVAL: "600"
       TZ: Europe/Helsinki
 
   # Cron, as a container, reading its jobs from the labels above. It runs

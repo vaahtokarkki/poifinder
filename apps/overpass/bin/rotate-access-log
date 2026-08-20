@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Rotate the nginx access log, forever.
+#
+# The image has no cron and adding one for a single daily job is more moving
+# parts than the job is worth, so this is the timer: wake up every hour and let
+# logrotate decide whether a rotation is due. Hourly rather than daily because
+# a container that restarts is a process that starts counting again — with a
+# 24 hour sleep, a restart shortly before midnight every day would mean the log
+# never rotated at all. logrotate keeps the schedule in its state file, so the
+# frequent checks are nearly free and the rotation still happens once a day.
+#
+# The state file lives beside the logs on the volume for the same reason: a
+# restart must not lose the record of when the last rotation was.
+#
+# Started by supervisor, from initdb.d/15-access-log.sh, only when access
+# logging is on.
+
+set -uo pipefail
+
+LOG_DIR=${WAYSIDE_ACCESS_LOG_DIR:-/db/logs}
+CONFIG=/etc/logrotate.d/wayside-access-log
+STATE="${LOG_DIR}/logrotate.state"
+INTERVAL=${WAYSIDE_LOGROTATE_INTERVAL:-3600}
+
+while true; do
+	# Not fatal: a rotation that fails once should be retried on the next
+	# wake up, not take the process into supervisor's restart loop
+	if ! logrotate --state "$STATE" "$CONFIG"; then
+		echo "rotate-access-log: logrotate failed, retrying in ${INTERVAL}s" >&2
+	fi
+	sleep "$INTERVAL"
+done

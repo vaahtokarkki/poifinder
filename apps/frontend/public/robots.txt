@@ -9,4 +9,36 @@ Allow: /
 # them carries a canonical back to the map root, which folds them into it.
 # Disallowing them instead would stop a crawler ever reading that canonical.
 
+
+# Two AI crawlers are turned away below, and the line between them and the
+# ones still allowed is what the crawl is *for*, not who runs it.
+#
+# A crawler that answers a question someone is asking right now cites where
+# the answer came from, and that citation is a person arriving on the site.
+# That is the same trade as a search index, so those agents keep their access:
+# GPTBot, OAI-SearchBot and ChatGPT-User, Googlebot and GoogleOther, Applebot.
+#
+# A crawler gathering a training corpus sends nothing back. Over the week of
+# 13-20 Aug 2026 meta-externalagent alone made 7,346 requests, 32% of all
+# traffic to the zone and roughly thirty times the number of human requests
+# in the same period, and produced no referrals. ClaudeBot's 1,199 are the
+# same shape at smaller scale. Neither is malicious and both honour robots;
+# they are simply taking a copy and giving no reason to host it.
+#
+# These are the training tokens only. Anthropic's user-facing agents,
+# Claude-User and Claude-SearchBot, fetch pages because a person asked a
+# question, so they fall on the allowed side with OAI-SearchBot and stay
+# under the wildcard above. Meta's meta-externalfetch is likewise the
+# link-preview agent, not the corpus crawler.
+#
+# Both tokens are matched by prefix and neither collides with an allowed
+# agent, so no ordering games are needed: a crawler that matches a named
+# group here ignores the "User-agent: *" group entirely.
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
 Sitemap: https://wayside.cc/sitemap.xml

@@ -226,7 +226,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     // observation towers, and the bird hides that are the same idea with walls
     filters: [
       "[tourism=viewpoint]",
-      "[man_made=tower][tower:type=observation]",
+      '[man_made=tower]["tower:type"=observation]',
       "[leisure=bird_hide]",
     ],
     display: "Viewpoints",
@@ -442,10 +442,13 @@ export type FilterCondition = {
  */
 export function parseFilterString(filter: string): FilterCondition[] {
   const conditions: FilterCondition[] = [];
-  const regex = /\[([a-zA-Z0-9:_-]+)(!?[=~])(?:"([^"]*)"|([^\]]*))\]/g;
+  // The key can be quoted as well as the value: Overpass QL demands it for
+  // anything with a colon in it, such as tower:type
+  const regex = /\[(?:"([^"]*)"|([a-zA-Z0-9:_-]+))(!?[=~])(?:"([^"]*)"|([^\]]*))\]/g;
   let match;
   while ((match = regex.exec(filter)) !== null) {
-    const [, key, operator, quoted, bare] = match;
+    const [, quotedKey, bareKey, operator, quoted, bare] = match;
+    const key = quotedKey ?? bareKey;
     const value = quoted ?? bare;
     const isRegex = operator.endsWith("~");
     conditions.push({

@@ -43,7 +43,9 @@ function parseConditions(filter) {
     const match = body.match(/^([^!=~]+)(!=|!~|=|~)(.*)$/);
     if (!match) throw new Error(`Cannot parse condition "[${body}]"`);
     const [, key, operator, value] = match;
-    return { key: key.trim(), operator, value: value.trim().replace(/^"|"$/g, "") };
+    // Either side may be quoted: Overpass QL needs it for a key with a colon
+    const unquote = (text) => text.trim().replace(/^"|"$/g, "");
+    return { key: unquote(key), operator, value: unquote(value) };
   });
 }
 

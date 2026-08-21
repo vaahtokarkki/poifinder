@@ -1,9 +1,9 @@
 {
   "city": "nagoya",
-  "generatedAt": "2026-08-18T03:58:48.065Z",
+  "generatedAt": "2026-08-21T04:06:51.133Z",
   "categories": {
     "toilets": {
-      "count": 283,
+      "count": 284,
       "pois": [
         {
           "id": "node/2399117374",
@@ -37,6 +37,12 @@
           "lat": 35.169586,
           "lon": 136.884616,
           "openingHours": "09:00-21:00"
+        },
+        {
+          "id": "way/150869553",
+          "name": "千種駅",
+          "lat": 35.170167,
+          "lon": 136.93068
         },
         {
           "id": "way/624611609",
@@ -91,7 +97,7 @@
           "lon": 136.975643
         }
       ],
-      "updatedAt": "2026-08-13T05:43:53.906Z"
+      "updatedAt": "2026-08-21T04:06:39.220Z"
     },
     "drinking-water": {
       "count": 73,
@@ -104,10 +110,10 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-13T05:43:54.720Z"
+      "updatedAt": "2026-08-21T04:06:39.951Z"
     },
     "playgrounds": {
-      "count": 166,
+      "count": 167,
       "pois": [
         {
           "id": "node/10547695296",
@@ -218,6 +224,12 @@
           "lon": 136.900187
         },
         {
+          "id": "way/1550032518",
+          "name": "へび公園",
+          "lat": 35.129607,
+          "lon": 136.902129
+        },
+        {
           "id": "way/1363323386",
           "name": "久地野郷廻児童遊園",
           "lat": 35.235597,
@@ -282,18 +294,12 @@
           "name": "高田寺屋敷児童遊園",
           "lat": 35.24188,
           "lon": 136.891795
-        },
-        {
-          "id": "way/1329413058",
-          "name": "名古屋市守山児童交通遊園",
-          "lat": 35.203323,
-          "lon": 136.977655
         }
       ],
-      "updatedAt": "2026-08-13T05:43:55.454Z"
+      "updatedAt": "2026-08-21T04:06:40.603Z"
     },
     "parking": {
-      "count": 25960,
+      "count": 26195,
       "pois": [
         {
           "id": "way/1338616936",
@@ -494,16 +500,23 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-13T05:43:57.670Z"
+      "updatedAt": "2026-08-21T04:06:42.984Z"
     },
     "charging-stations": {
-      "count": 6,
+      "count": 7,
       "pois": [
         {
           "id": "node/14086319289",
           "name": "Supercharger Nagoya - Noritake, Japan",
           "lat": 35.179432,
           "lon": 136.879312,
+          "fee": "yes"
+        },
+        {
+          "id": "way/1550187566",
+          "name": "Supercharger Nagoya - Kita, Japan",
+          "lat": 35.224559,
+          "lon": 136.885483,
           "fee": "yes"
         },
         {
@@ -521,7 +534,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-13T05:43:58.145Z"
+      "updatedAt": "2026-08-21T04:06:43.411Z"
     },
     "gas-stations": {
       "count": 182,
@@ -682,7 +695,7 @@
           "lon": 136.829166
         }
       ],
-      "updatedAt": "2026-08-13T05:43:58.827Z"
+      "updatedAt": "2026-08-21T04:06:43.919Z"
     },
     "ice-cream": {
       "count": 6,
@@ -725,20 +738,20 @@
           "lon": 136.990668
         }
       ],
-      "updatedAt": "2026-08-13T05:43:59.422Z"
+      "updatedAt": "2026-08-21T04:06:44.432Z"
     },
     "dog-parks": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-13T05:43:59.780Z"
+      "updatedAt": "2026-08-21T04:06:44.772Z"
     },
     "picnic-spots": {
       "count": 13,
       "pois": [],
-      "updatedAt": "2026-08-13T05:44:00.517Z"
+      "updatedAt": "2026-08-21T04:06:45.291Z"
     },
     "viewpoints": {
-      "count": 121,
+      "count": 122,
       "pois": [
         {
           "id": "node/12513777501",
@@ -763,6 +776,13 @@
           "name": "名古屋城の西側からの眺め",
           "lat": 35.184306,
           "lon": 136.895875
+        },
+        {
+          "id": "way/51778897",
+          "name": "名古屋テレビ塔",
+          "lat": 35.172297,
+          "lon": 136.908334,
+          "wheelchair": "yes"
         },
         {
           "id": "node/12513800801",
@@ -810,12 +830,12 @@
           "lon": 136.966085
         }
       ],
-      "updatedAt": "2026-08-13T05:44:00.992Z"
+      "updatedAt": "2026-08-21T04:06:45.796Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-13T05:44:01.518Z"
+      "updatedAt": "2026-08-21T04:06:46.221Z"
     },
     "atms": {
       "count": 374,
@@ -1021,7 +1041,7 @@
           "openingHours": "Mo-Fr 09:00-15:00"
         }
       ],
-      "updatedAt": "2026-08-13T05:44:02.389Z"
+      "updatedAt": "2026-08-21T04:06:46.868Z"
     },
     "post-boxes": {
       "count": 325,
@@ -1063,7 +1083,7 @@
           "lon": 136.984326
         }
       ],
-      "updatedAt": "2026-08-13T05:44:03.017Z"
+      "updatedAt": "2026-08-21T04:06:47.414Z"
     },
     "recycling": {
       "count": 7,
@@ -1081,12 +1101,12 @@
           "lon": 136.946293
         }
       ],
-      "updatedAt": "2026-08-13T05:44:03.512Z"
+      "updatedAt": "2026-08-21T04:06:47.864Z"
     },
     "luggage-storage": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-13T05:44:03.983Z"
+      "updatedAt": "2026-08-21T04:06:48.250Z"
     },
     "libraries": {
       "count": 25,
@@ -1233,7 +1253,7 @@
           "lon": 136.88546
         }
       ],
-      "updatedAt": "2026-08-13T05:44:04.425Z"
+      "updatedAt": "2026-08-21T04:06:48.703Z"
     },
     "outdoor-gyms": {
       "count": 10,
@@ -1245,12 +1265,12 @@
           "lon": 136.90564
         }
       ],
-      "updatedAt": "2026-08-13T05:44:04.945Z"
+      "updatedAt": "2026-08-21T04:06:49.138Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-13T05:44:05.426Z"
+      "updatedAt": "2026-08-21T04:06:49.591Z"
     },
     "shelters": {
       "count": 10,
@@ -1268,7 +1288,7 @@
           "lon": 136.922643
         }
       ],
-      "updatedAt": "2026-08-13T05:44:06.332Z"
+      "updatedAt": "2026-08-21T04:06:50.225Z"
     },
     "rest-areas": {
       "count": 4,
@@ -1280,12 +1300,12 @@
           "lon": 136.965347
         }
       ],
-      "updatedAt": "2026-08-13T05:44:06.860Z"
+      "updatedAt": "2026-08-21T04:06:50.673Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-13T05:44:07.372Z"
+      "updatedAt": "2026-08-21T04:06:51.032Z"
     },
     "post-offices": {
       "count": 44,

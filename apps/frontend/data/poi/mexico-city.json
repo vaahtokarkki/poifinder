@@ -1,9 +1,9 @@
 {
   "city": "mexico-city",
-  "generatedAt": "2026-08-18T03:58:42.691Z",
+  "generatedAt": "2026-08-21T04:04:08.973Z",
   "categories": {
     "toilets": {
-      "count": 208,
+      "count": 212,
       "pois": [
         {
           "id": "node/5622802869",
@@ -25,6 +25,14 @@
           "lon": -99.151252,
           "address": "Avenida Morelos 62",
           "openingHours": "Mo-Th 07:00-23:00; Fr-Sa 07:00-23:00; Su 08:00-23:00"
+        },
+        {
+          "id": "way/371544487",
+          "name": "ISSSTE Centro Comercial",
+          "lat": 19.428019,
+          "lon": -99.150978,
+          "address": "Calle Tolsá 9",
+          "openingHours": "Mo-Su 08:00-20:00"
         },
         {
           "id": "way/153883455",
@@ -84,12 +92,30 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/337285372",
+          "name": "City Shops del Valle",
+          "lat": 19.372939,
+          "lon": -99.172844,
+          "address": "Félix Cuevas 374",
+          "openingHours": "Mo-Su 07:00-24:00",
+          "wheelchair": "limited"
+        },
+        {
           "id": "way/28920701",
           "name": "Walmart Supercenter",
           "lat": 19.371741,
           "lon": -99.176274,
           "address": "San Francisco 1621",
           "openingHours": "Mo-Su,PH 07:00-23:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/527672038",
+          "name": "Liverpool",
+          "lat": 19.372648,
+          "lon": -99.178807,
+          "address": "Avenida Insurgentes Sur 1310",
+          "openingHours": "Mo-Su 11:00-21:00",
           "wheelchair": "yes"
         },
         {
@@ -108,10 +134,10 @@
           "openingHours": "Mo-Su 05:00-18:00"
         }
       ],
-      "updatedAt": "2026-08-13T05:40:40.594Z"
+      "updatedAt": "2026-08-21T04:03:59.635Z"
     },
     "drinking-water": {
-      "count": 35,
+      "count": 40,
       "pois": [
         {
           "id": "node/10977062419",
@@ -126,13 +152,31 @@
           "lon": -99.108361
         },
         {
+          "id": "way/1194189747",
+          "name": "Pozo Albert y Berlín",
+          "lat": 19.370319,
+          "lon": -99.140347
+        },
+        {
+          "id": "node/7238108998",
+          "name": "Pozo San Lorenzo Tezonco",
+          "lat": 19.378884,
+          "lon": -99.084754
+        },
+        {
           "id": "node/7010141595",
           "name": "BBUA",
           "lat": 19.409485,
           "lon": -99.050667
+        },
+        {
+          "id": "node/7238132000",
+          "name": "Pozo Mirador 2",
+          "lat": 19.342378,
+          "lon": -99.100498
         }
       ],
-      "updatedAt": "2026-08-13T05:40:41.232Z"
+      "updatedAt": "2026-08-21T04:04:00.215Z"
     },
     "playgrounds": {
       "count": 404,
@@ -333,10 +377,10 @@
           "lon": -99.102549
         }
       ],
-      "updatedAt": "2026-08-13T05:40:41.955Z"
+      "updatedAt": "2026-08-21T04:04:00.872Z"
     },
     "parking": {
-      "count": 1774,
+      "count": 1784,
       "pois": [
         {
           "id": "node/13851250890",
@@ -541,7 +585,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-13T05:40:43.617Z"
+      "updatedAt": "2026-08-21T04:04:01.691Z"
     },
     "charging-stations": {
       "count": 7,
@@ -553,7 +597,7 @@
           "lon": -99.040932
         }
       ],
-      "updatedAt": "2026-08-13T05:40:44.154Z"
+      "updatedAt": "2026-08-21T04:04:02.038Z"
     },
     "gas-stations": {
       "count": 436,
@@ -765,7 +809,7 @@
           "address": "Avenida Parque de Chapultepec"
         }
       ],
-      "updatedAt": "2026-08-13T05:40:44.855Z"
+      "updatedAt": "2026-08-21T04:04:02.566Z"
     },
     "ice-cream": {
       "count": 217,
@@ -970,7 +1014,7 @@
           "lon": -99.148516
         }
       ],
-      "updatedAt": "2026-08-13T05:40:45.486Z"
+      "updatedAt": "2026-08-21T04:04:03.021Z"
     },
     "dog-parks": {
       "count": 27,
@@ -1014,10 +1058,10 @@
           "lon": -99.174421
         }
       ],
-      "updatedAt": "2026-08-13T05:40:45.873Z"
+      "updatedAt": "2026-08-21T04:04:03.392Z"
     },
     "picnic-spots": {
-      "count": 225,
+      "count": 226,
       "pois": [
         {
           "id": "node/5917390253",
@@ -1060,10 +1104,10 @@
           "lon": -99.16991
         }
       ],
-      "updatedAt": "2026-08-13T05:40:46.385Z"
+      "updatedAt": "2026-08-21T04:04:03.888Z"
     },
     "viewpoints": {
-      "count": 31,
+      "count": 35,
       "pois": [
         {
           "id": "node/12686438131",
@@ -1114,6 +1158,12 @@
           "lon": -99.21
         },
         {
+          "id": "node/11872720414",
+          "name": "Torre forestal Zacatenco",
+          "lat": 19.510925,
+          "lon": -99.113927
+        },
+        {
           "id": "node/12010146925",
           "name": "Mirador El OVNI",
           "lat": 19.400955,
@@ -1126,7 +1176,7 @@
           "lon": -99.219715
         }
       ],
-      "updatedAt": "2026-08-13T05:40:46.826Z"
+      "updatedAt": "2026-08-21T04:04:04.335Z"
     },
     "beaches": {
       "count": 4,
@@ -1156,7 +1206,7 @@
           "lon": -99.199158
         }
       ],
-      "updatedAt": "2026-08-13T05:40:47.247Z"
+      "updatedAt": "2026-08-21T04:04:04.720Z"
     },
     "atms": {
       "count": 371,
@@ -1356,7 +1406,7 @@
           "lon": -99.113322
         }
       ],
-      "updatedAt": "2026-08-13T05:40:47.753Z"
+      "updatedAt": "2026-08-21T04:04:05.262Z"
     },
     "post-boxes": {
       "count": 9,
@@ -1390,7 +1440,7 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-13T05:40:48.207Z"
+      "updatedAt": "2026-08-21T04:04:05.633Z"
     },
     "recycling": {
       "count": 37,
@@ -1460,15 +1510,15 @@
           "lon": -99.142082
         }
       ],
-      "updatedAt": "2026-08-13T05:40:48.645Z"
+      "updatedAt": "2026-08-21T04:04:06.079Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-13T05:40:49.052Z"
+      "updatedAt": "2026-08-21T04:04:06.395Z"
     },
     "libraries": {
-      "count": 118,
+      "count": 119,
       "pois": [
         {
           "id": "node/10884154704",
@@ -1669,7 +1719,7 @@
           "openingHours": "Mo-Fr 10:00-20:00; Sa-Su 10:00-15:00"
         }
       ],
-      "updatedAt": "2026-08-13T05:40:49.538Z"
+      "updatedAt": "2026-08-21T04:04:06.816Z"
     },
     "outdoor-gyms": {
       "count": 206,
@@ -1748,10 +1798,10 @@
           "lon": -99.060095
         }
       ],
-      "updatedAt": "2026-08-13T05:40:50.087Z"
+      "updatedAt": "2026-08-21T04:04:07.276Z"
     },
     "camp-sites": {
-      "count": 1,
+      "count": 2,
       "pois": [
         {
           "id": "node/5833677588",
@@ -1760,10 +1810,10 @@
           "lon": -99.062649
         }
       ],
-      "updatedAt": "2026-08-13T05:40:50.517Z"
+      "updatedAt": "2026-08-21T04:04:07.621Z"
     },
     "shelters": {
-      "count": 188,
+      "count": 191,
       "pois": [
         {
           "id": "way/1312945102",
@@ -1784,17 +1834,25 @@
           "lon": -99.14782
         }
       ],
-      "updatedAt": "2026-08-13T05:40:51.340Z"
+      "updatedAt": "2026-08-21T04:04:08.198Z"
     },
     "rest-areas": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-13T05:40:51.750Z"
+      "count": 6,
+      "pois": [
+        {
+          "id": "node/7392913152",
+          "name": "Verificentro",
+          "lat": 19.464571,
+          "lon": -99.158022,
+          "openingHours": "Mo-Su 08:00-20:00"
+        }
+      ],
+      "updatedAt": "2026-08-21T04:04:08.540Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-13T05:40:52.152Z"
+      "updatedAt": "2026-08-21T04:04:08.872Z"
     },
     "post-offices": {
       "count": 0,

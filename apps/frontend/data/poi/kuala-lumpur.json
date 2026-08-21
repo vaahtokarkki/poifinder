@@ -1,9 +1,9 @@
 {
   "city": "kuala-lumpur",
-  "generatedAt": "2026-08-18T03:58:50.828Z",
+  "generatedAt": "2026-08-21T04:08:13.592Z",
   "categories": {
     "toilets": {
-      "count": 189,
+      "count": 193,
       "pois": [
         {
           "id": "way/773663259",
@@ -18,6 +18,29 @@
           "lat": 3.144839,
           "lon": 101.697963,
           "fee": "yes"
+        },
+        {
+          "id": "way/1060208509",
+          "name": "GMBB",
+          "lat": 3.14476,
+          "lon": 101.704535,
+          "address": "Jalan Robertson 2",
+          "openingHours": "Mo-Su 11:00-20:00"
+        },
+        {
+          "id": "way/1447921006",
+          "name": "The Gardens Mall",
+          "lat": 3.118543,
+          "lon": 101.676021
+        },
+        {
+          "id": "way/922804567",
+          "name": "Mid Valley Megamall",
+          "lat": 3.117656,
+          "lon": 101.677294,
+          "address": "Lingkaran Syed Putra Mid Valley City",
+          "openingHours": "10:00-22:00",
+          "wheelchair": "yes"
         },
         {
           "id": "way/28271270",
@@ -122,6 +145,14 @@
           "openingHours": "Mo-Su 09:00-22:00"
         },
         {
+          "id": "way/857749335",
+          "name": "Sera by Aposto",
+          "lat": 3.155562,
+          "lon": 101.622955,
+          "address": "Lorong Rahim Kajai 14 38A",
+          "openingHours": "Tues - Sun 5.30pm - 11pm"
+        },
+        {
           "id": "way/1312888891",
           "name": "Tandas Awam Jalan SS 2/61",
           "lat": 3.117509,
@@ -134,7 +165,7 @@
           "lon": 101.66079
         }
       ],
-      "updatedAt": "2026-08-13T05:45:35.565Z"
+      "updatedAt": "2026-08-21T04:08:04.857Z"
     },
     "drinking-water": {
       "count": 31,
@@ -166,10 +197,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-13T05:45:36.142Z"
+      "updatedAt": "2026-08-21T04:08:05.378Z"
     },
     "playgrounds": {
-      "count": 181,
+      "count": 182,
       "pois": [
         {
           "id": "way/323298042",
@@ -250,10 +281,10 @@
           "lon": 101.717355
         }
       ],
-      "updatedAt": "2026-08-13T05:45:36.891Z"
+      "updatedAt": "2026-08-21T04:08:05.960Z"
     },
     "parking": {
-      "count": 1084,
+      "count": 1087,
       "pois": [
         {
           "id": "way/472304337",
@@ -448,10 +479,10 @@
           "address": "Jalan Pantai Baharu"
         }
       ],
-      "updatedAt": "2026-08-13T05:45:37.835Z"
+      "updatedAt": "2026-08-21T04:08:06.767Z"
     },
     "charging-stations": {
-      "count": 42,
+      "count": 43,
       "pois": [
         {
           "id": "node/12533954008",
@@ -576,9 +607,16 @@
           "lat": 3.160606,
           "lon": 101.741542,
           "fee": "no"
+        },
+        {
+          "id": "node/14100171189",
+          "name": "EV Charging",
+          "lat": 3.15472,
+          "lon": 101.751826,
+          "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-13T05:45:38.244Z"
+      "updatedAt": "2026-08-21T04:08:07.125Z"
     },
     "gas-stations": {
       "count": 216,
@@ -667,8 +705,8 @@
         {
           "id": "way/773876674",
           "name": "BHPetrol Pahang",
-          "lat": 3.182833,
-          "lon": 101.702453,
+          "lat": 3.182855,
+          "lon": 101.702421,
           "address": "Jalan Pahang"
         },
         {
@@ -794,7 +832,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-13T05:45:38.862Z"
+      "updatedAt": "2026-08-21T04:08:07.611Z"
     },
     "ice-cream": {
       "count": 37,
@@ -986,12 +1024,12 @@
           "openingHours": "Mo-Fr 14:00-23:00; Sa-Su 13:00-23:00"
         }
       ],
-      "updatedAt": "2026-08-13T05:45:39.445Z"
+      "updatedAt": "2026-08-21T04:08:07.959Z"
     },
     "dog-parks": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-13T05:45:39.839Z"
+      "updatedAt": "2026-08-21T04:08:08.280Z"
     },
     "picnic-spots": {
       "count": 25,
@@ -1003,10 +1041,10 @@
           "lon": 101.635495
         }
       ],
-      "updatedAt": "2026-08-13T05:45:40.568Z"
+      "updatedAt": "2026-08-21T04:08:08.721Z"
     },
     "viewpoints": {
-      "count": 33,
+      "count": 35,
       "pois": [
         {
           "id": "node/5316288322",
@@ -1021,10 +1059,24 @@
           "lon": 101.698602
         },
         {
+          "id": "node/7192886086",
+          "name": "Gazebo @ CP30",
+          "lat": 3.152146,
+          "lon": 101.684746
+        },
+        {
           "id": "node/6259611407",
           "name": "Viewpoint of KL TV Tower between 2 buildings",
           "lat": 3.140097,
           "lon": 101.705436
+        },
+        {
+          "id": "node/5839389988",
+          "name": "Menara Kuala Lumpur",
+          "lat": 3.152859,
+          "lon": 101.70376,
+          "address": "Jalan Puncak 2",
+          "openingHours": "Mo-Su 09:00-22:00"
         },
         {
           "id": "node/10904707515",
@@ -1124,15 +1176,15 @@
           "lon": 101.633785
         }
       ],
-      "updatedAt": "2026-08-13T05:45:41.085Z"
+      "updatedAt": "2026-08-21T04:08:09.113Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-13T05:45:41.515Z"
+      "updatedAt": "2026-08-21T04:08:09.473Z"
     },
     "atms": {
-      "count": 359,
+      "count": 361,
       "pois": [
         {
           "id": "node/4434690614",
@@ -1330,7 +1382,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-13T05:45:42.217Z"
+      "updatedAt": "2026-08-21T04:08:09.993Z"
     },
     "post-boxes": {
       "count": 49,
@@ -1396,7 +1448,7 @@
           "lon": 101.673087
         }
       ],
-      "updatedAt": "2026-08-13T05:45:42.746Z"
+      "updatedAt": "2026-08-21T04:08:10.432Z"
     },
     "recycling": {
       "count": 29,
@@ -1457,7 +1509,7 @@
           "lon": 101.632292
         }
       ],
-      "updatedAt": "2026-08-13T05:45:43.263Z"
+      "updatedAt": "2026-08-21T04:08:10.872Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -1469,7 +1521,7 @@
           "lon": 101.70035
         }
       ],
-      "updatedAt": "2026-08-13T05:45:43.665Z"
+      "updatedAt": "2026-08-21T04:08:11.190Z"
     },
     "libraries": {
       "count": 34,
@@ -1662,7 +1714,7 @@
           "lon": 101.621777
         }
       ],
-      "updatedAt": "2026-08-13T05:45:44.194Z"
+      "updatedAt": "2026-08-21T04:08:11.542Z"
     },
     "outdoor-gyms": {
       "count": 34,
@@ -1736,7 +1788,7 @@
           "lon": 101.634803
         }
       ],
-      "updatedAt": "2026-08-13T05:45:44.633Z"
+      "updatedAt": "2026-08-21T04:08:11.900Z"
     },
     "camp-sites": {
       "count": 1,
@@ -1748,7 +1800,7 @@
           "lon": 101.70271
         }
       ],
-      "updatedAt": "2026-08-13T05:45:45.027Z"
+      "updatedAt": "2026-08-21T04:08:12.256Z"
     },
     "shelters": {
       "count": 48,
@@ -1760,24 +1812,30 @@
           "lon": 101.63457
         }
       ],
-      "updatedAt": "2026-08-13T05:45:45.766Z"
+      "updatedAt": "2026-08-21T04:08:12.821Z"
     },
     "rest-areas": {
-      "count": 6,
+      "count": 9,
       "pois": [
         {
           "id": "node/9912106181",
           "name": "Ruby Lounge",
           "lat": 3.13456,
           "lon": 101.685812
+        },
+        {
+          "id": "way/833841357",
+          "name": "Petronas",
+          "lat": 3.105615,
+          "lon": 101.732304
         }
       ],
-      "updatedAt": "2026-08-13T05:45:46.075Z"
+      "updatedAt": "2026-08-21T04:08:13.170Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-13T05:45:46.407Z"
+      "updatedAt": "2026-08-21T04:08:13.491Z"
     },
     "post-offices": {
       "count": 0,

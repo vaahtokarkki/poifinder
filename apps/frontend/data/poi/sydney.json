@@ -1,9 +1,9 @@
 {
   "city": "sydney",
-  "generatedAt": "2026-08-18T03:58:43.089Z",
+  "generatedAt": "2026-08-21T04:04:20.736Z",
   "categories": {
     "toilets": {
-      "count": 1042,
+      "count": 1044,
       "pois": [
         {
           "id": "way/40717424",
@@ -19,6 +19,16 @@
           "lat": -33.872476,
           "lon": 151.207815,
           "openingHours": "Fr-We 09:00-21:00; Th 09:00-22:30",
+          "wheelchair": "yes",
+          "fee": "no"
+        },
+        {
+          "id": "way/409035048",
+          "name": "Museum of Sydney",
+          "lat": -33.863753,
+          "lon": 151.21148,
+          "address": "Bridge Street",
+          "openingHours": "Mo-Su 10:00-17:00",
           "wheelchair": "yes",
           "fee": "no"
         },
@@ -75,6 +85,13 @@
           "openingHours": "24/7",
           "wheelchair": "no",
           "fee": "no"
+        },
+        {
+          "id": "way/501890909",
+          "name": "International Convention Centre Sydney",
+          "lat": -33.875145,
+          "lon": 151.199924,
+          "wheelchair": "yes"
         },
         {
           "id": "node/2529492667",
@@ -260,26 +277,9 @@
           "openingHours": "sunrise-sunset",
           "wheelchair": "designated",
           "fee": "no"
-        },
-        {
-          "id": "way/1486282292",
-          "name": "Public Toilet Balls Head Reserve",
-          "lat": -33.846797,
-          "lon": 151.196354,
-          "address": "Balls Head Drive",
-          "openingHours": "24/7",
-          "wheelchair": "yes",
-          "fee": "no"
-        },
-        {
-          "id": "node/1720434544",
-          "name": "Paddington Markets",
-          "lat": -33.887442,
-          "lon": 151.229858,
-          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-13T05:40:53.144Z"
+      "updatedAt": "2026-08-21T04:04:09.708Z"
     },
     "drinking-water": {
       "count": 1306,
@@ -305,10 +305,10 @@
           "lon": 151.128646
         }
       ],
-      "updatedAt": "2026-08-13T05:40:54.011Z"
+      "updatedAt": "2026-08-21T04:04:10.533Z"
     },
     "playgrounds": {
-      "count": 822,
+      "count": 824,
       "pois": [
         {
           "id": "way/271608910",
@@ -498,7 +498,7 @@
           "lon": 151.200901
         }
       ],
-      "updatedAt": "2026-08-13T05:40:54.980Z"
+      "updatedAt": "2026-08-21T04:04:11.339Z"
     },
     "parking": {
       "count": 2490,
@@ -709,10 +709,10 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-13T05:40:56.192Z"
+      "updatedAt": "2026-08-21T04:04:12.380Z"
     },
     "charging-stations": {
-      "count": 104,
+      "count": 105,
       "pois": [
         {
           "id": "node/5438383393",
@@ -766,7 +766,7 @@
           "address": "King Street 338"
         }
       ],
-      "updatedAt": "2026-08-13T05:40:56.726Z"
+      "updatedAt": "2026-08-21T04:04:12.860Z"
     },
     "gas-stations": {
       "count": 190,
@@ -972,7 +972,7 @@
           "openingHours": "Mo-Sa 06:00-23:00; Su 06:00-22:00"
         }
       ],
-      "updatedAt": "2026-08-13T05:40:57.366Z"
+      "updatedAt": "2026-08-21T04:04:13.389Z"
     },
     "ice-cream": {
       "count": 101,
@@ -1178,7 +1178,7 @@
           "openingHours": "Mo-Su 08:00-10:00"
         }
       ],
-      "updatedAt": "2026-08-13T05:40:57.808Z"
+      "updatedAt": "2026-08-21T04:04:13.915Z"
     },
     "dog-parks": {
       "count": 39,
@@ -1243,10 +1243,10 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-13T05:40:58.152Z"
+      "updatedAt": "2026-08-21T04:04:14.257Z"
     },
     "picnic-spots": {
-      "count": 1391,
+      "count": 1392,
       "pois": [
         {
           "id": "node/599159185",
@@ -1435,11 +1435,19 @@
           "lon": 151.147412
         }
       ],
-      "updatedAt": "2026-08-13T05:40:59.009Z"
+      "updatedAt": "2026-08-21T04:04:14.886Z"
     },
     "viewpoints": {
-      "count": 279,
+      "count": 293,
       "pois": [
+        {
+          "id": "way/197801072",
+          "name": "Sydney Tower",
+          "lat": -33.870495,
+          "lon": 151.208948,
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
         {
           "id": "way/1305666255",
           "name": "Sydney Tower Eye",
@@ -1453,6 +1461,12 @@
           "lat": -33.861255,
           "lon": 151.210658,
           "wheelchair": "yes"
+        },
+        {
+          "id": "way/1241018461",
+          "name": "Marina Control Tower",
+          "lat": -33.873641,
+          "lon": 151.20053
         },
         {
           "id": "node/5821679554",
@@ -1603,6 +1617,12 @@
           "wheelchair": "no"
         },
         {
+          "id": "way/985131154",
+          "name": "Elephant Tower",
+          "lat": -33.84438,
+          "lon": 151.240594
+        },
+        {
           "id": "node/1845959177",
           "name": "Bellevue Hill Lookout",
           "lat": -33.886941,
@@ -1613,33 +1633,12 @@
           "name": "Tobruk Avenue Lookout",
           "lat": -33.82029,
           "lon": 151.227883
-        },
-        {
-          "id": "node/12048699759",
-          "name": "Headland Park Lookout",
-          "lat": -33.83138,
-          "lon": 151.258711,
-          "openingHours": "24/7",
-          "wheelchair": "no"
-        },
-        {
-          "id": "node/4378249128",
-          "name": "Johnstons Lookout",
-          "lat": -33.859077,
-          "lon": 151.275866
-        },
-        {
-          "id": "node/6702324728",
-          "name": "Coronation Viewpoint",
-          "lat": -33.817711,
-          "lon": 151.180263,
-          "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-13T05:40:59.617Z"
+      "updatedAt": "2026-08-21T04:04:15.492Z"
     },
     "beaches": {
-      "count": 214,
+      "count": 215,
       "pois": [
         {
           "id": "relation/17379719",
@@ -1827,10 +1826,10 @@
           "lon": 151.279109
         }
       ],
-      "updatedAt": "2026-08-13T05:41:00.232Z"
+      "updatedAt": "2026-08-21T04:04:16.021Z"
     },
     "atms": {
-      "count": 213,
+      "count": 211,
       "pois": [
         {
           "id": "node/2525930243",
@@ -2047,7 +2046,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-13T05:41:00.854Z"
+      "updatedAt": "2026-08-21T04:04:16.576Z"
     },
     "post-boxes": {
       "count": 435,
@@ -2110,7 +2109,7 @@
           "address": "Cavell Avenue 15"
         }
       ],
-      "updatedAt": "2026-08-13T05:41:01.467Z"
+      "updatedAt": "2026-08-21T04:04:17.179Z"
     },
     "recycling": {
       "count": 176,
@@ -2231,12 +2230,12 @@
           "lon": 151.144249
         }
       ],
-      "updatedAt": "2026-08-13T05:41:01.953Z"
+      "updatedAt": "2026-08-21T04:04:17.621Z"
     },
     "luggage-storage": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-13T05:41:02.392Z"
+      "updatedAt": "2026-08-21T04:04:17.962Z"
     },
     "libraries": {
       "count": 210,
@@ -2450,7 +2449,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-13T05:41:03.006Z"
+      "updatedAt": "2026-08-21T04:04:18.489Z"
     },
     "outdoor-gyms": {
       "count": 159,
@@ -2484,10 +2483,10 @@
           "lon": 151.280395
         }
       ],
-      "updatedAt": "2026-08-13T05:41:03.426Z"
+      "updatedAt": "2026-08-21T04:04:18.881Z"
     },
     "camp-sites": {
-      "count": 1,
+      "count": 3,
       "pois": [
         {
           "id": "way/186090198",
@@ -2495,9 +2494,23 @@
           "lat": -33.846431,
           "lon": 151.171545,
           "fee": "yes"
+        },
+        {
+          "id": "way/22991995",
+          "name": "Lane Cove River Tourist Park",
+          "lat": -33.790134,
+          "lon": 151.143798,
+          "fee": "no"
+        },
+        {
+          "id": "way/20107593",
+          "name": "Sheralee Tourist Caravan Park",
+          "lat": -33.952201,
+          "lon": 151.151363,
+          "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-13T05:41:03.850Z"
+      "updatedAt": "2026-08-21T04:04:19.271Z"
     },
     "shelters": {
       "count": 284,
@@ -2605,12 +2618,12 @@
           "lon": 151.146675
         }
       ],
-      "updatedAt": "2026-08-13T05:41:04.687Z"
+      "updatedAt": "2026-08-21T04:04:19.925Z"
     },
     "rest-areas": {
-      "count": 0,
+      "count": 12,
       "pois": [],
-      "updatedAt": "2026-08-13T05:41:05.181Z"
+      "updatedAt": "2026-08-21T04:04:20.305Z"
     },
     "dump-stations": {
       "count": 1,
@@ -2624,7 +2637,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-13T05:41:05.666Z"
+      "updatedAt": "2026-08-21T04:04:20.635Z"
     },
     "post-offices": {
       "count": 0,

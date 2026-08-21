@@ -1,10 +1,18 @@
 {
   "city": "canberra",
-  "generatedAt": "2026-08-18T03:58:44.810Z",
+  "generatedAt": "2026-08-21T04:05:12.384Z",
   "categories": {
     "toilets": {
-      "count": 157,
+      "count": 163,
       "pois": [
+        {
+          "id": "way/46081156",
+          "name": "Canberra Centre",
+          "lat": -35.279923,
+          "lon": 149.134093,
+          "openingHours": "Mo-Th 09:00-17:30; Fr 09:00-21:00; Sa 09:00-17:00; PH,Su 10:00-16:00",
+          "wheelchair": "yes"
+        },
         {
           "id": "node/570695189",
           "name": "Black Mountain Peninsula District Park",
@@ -12,6 +20,20 @@
           "lon": 149.101296,
           "wheelchair": "no",
           "fee": "no"
+        },
+        {
+          "id": "way/317020061",
+          "name": "Canberra Station",
+          "lat": -35.319402,
+          "lon": 149.149387,
+          "address": "Burke Crescent 41",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/1083640753",
+          "name": "Fyshwick Fresh Food Market",
+          "lat": -35.323809,
+          "lon": 149.155261
         },
         {
           "id": "way/444343479",
@@ -99,10 +121,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-13T05:41:55.994Z"
+      "updatedAt": "2026-08-21T04:05:03.391Z"
     },
     "drinking-water": {
-      "count": 172,
+      "count": 173,
       "pois": [
         {
           "id": "way/209284699",
@@ -117,10 +139,10 @@
           "lon": 149.137207
         }
       ],
-      "updatedAt": "2026-08-13T05:41:56.666Z"
+      "updatedAt": "2026-08-21T04:05:03.965Z"
     },
     "playgrounds": {
-      "count": 169,
+      "count": 168,
       "pois": [
         {
           "id": "way/23172850",
@@ -305,10 +327,10 @@
           "lon": 149.149216
         }
       ],
-      "updatedAt": "2026-08-13T05:41:57.320Z"
+      "updatedAt": "2026-08-21T04:05:04.537Z"
     },
     "parking": {
-      "count": 1891,
+      "count": 1892,
       "pois": [
         {
           "id": "way/23115127",
@@ -512,10 +534,10 @@
           "lon": 149.112574
         }
       ],
-      "updatedAt": "2026-08-13T05:41:58.379Z"
+      "updatedAt": "2026-08-21T04:05:05.389Z"
     },
     "charging-stations": {
-      "count": 13,
+      "count": 14,
       "pois": [
         {
           "id": "node/8660496889",
@@ -546,7 +568,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-13T05:41:58.861Z"
+      "updatedAt": "2026-08-21T04:05:05.807Z"
     },
     "gas-stations": {
       "count": 34,
@@ -705,7 +727,7 @@
           "lon": 149.142758
         }
       ],
-      "updatedAt": "2026-08-13T05:41:59.333Z"
+      "updatedAt": "2026-08-21T04:05:06.203Z"
     },
     "ice-cream": {
       "count": 9,
@@ -756,7 +778,7 @@
           "openingHours": "Mo-Th 09:00-17:30; Fr 09:00-21:00; Sa 09:00-17:00; Su 10:00-16:00"
         }
       ],
-      "updatedAt": "2026-08-13T05:41:59.807Z"
+      "updatedAt": "2026-08-21T04:05:06.587Z"
     },
     "dog-parks": {
       "count": 4,
@@ -776,10 +798,10 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-13T05:42:00.202Z"
+      "updatedAt": "2026-08-21T04:05:06.915Z"
     },
     "picnic-spots": {
-      "count": 474,
+      "count": 475,
       "pois": [
         {
           "id": "node/570695205",
@@ -824,10 +846,10 @@
           "lon": 149.090389
         }
       ],
-      "updatedAt": "2026-08-13T05:42:00.848Z"
+      "updatedAt": "2026-08-21T04:05:07.432Z"
     },
     "viewpoints": {
-      "count": 47,
+      "count": 53,
       "pois": [
         {
           "id": "node/4379806113",
@@ -879,6 +901,37 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/206946725",
+          "name": "Fulica",
+          "lat": -35.314882,
+          "lon": 149.157603,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/235895146",
+          "name": "Ardea",
+          "lat": -35.313932,
+          "lon": 149.161871
+        },
+        {
+          "id": "node/6814907873",
+          "name": "Snipe",
+          "lat": -35.31446,
+          "lon": 149.161046
+        },
+        {
+          "id": "way/235895145",
+          "name": "Bittern",
+          "lat": -35.314276,
+          "lon": 149.162383
+        },
+        {
+          "id": "way/206947444",
+          "name": "Cygnus",
+          "lat": -35.31512,
+          "lon": 149.163078
+        },
+        {
           "id": "node/4379806112",
           "name": "Red Hill Lookout",
           "lat": -35.324111,
@@ -908,9 +961,15 @@
           "name": "Dairy Farmers Hill Lookout",
           "lat": -35.292413,
           "lon": 149.06467
+        },
+        {
+          "id": "way/293589172",
+          "name": "Air Traffic Control Tower",
+          "lat": -35.301631,
+          "lon": 149.197366
         }
       ],
-      "updatedAt": "2026-08-13T05:42:01.285Z"
+      "updatedAt": "2026-08-21T04:05:07.878Z"
     },
     "beaches": {
       "count": 15,
@@ -928,7 +987,7 @@
           "lon": 149.074003
         }
       ],
-      "updatedAt": "2026-08-13T05:42:01.852Z"
+      "updatedAt": "2026-08-21T04:05:08.265Z"
     },
     "atms": {
       "count": 68,
@@ -1041,7 +1100,7 @@
           "openingHours": "Mo-Fr 09:30-16:00; Th 09:30-17:00; PH off; Sa-Su off"
         }
       ],
-      "updatedAt": "2026-08-13T05:42:02.323Z"
+      "updatedAt": "2026-08-21T04:05:08.664Z"
     },
     "post-boxes": {
       "count": 48,
@@ -1053,7 +1112,7 @@
           "lon": 149.139724
         }
       ],
-      "updatedAt": "2026-08-13T05:42:02.725Z"
+      "updatedAt": "2026-08-21T04:05:09.059Z"
     },
     "recycling": {
       "count": 23,
@@ -1110,12 +1169,12 @@
           "lon": 149.147761
         }
       ],
-      "updatedAt": "2026-08-13T05:42:03.237Z"
+      "updatedAt": "2026-08-21T04:05:09.520Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-13T05:42:03.592Z"
+      "updatedAt": "2026-08-21T04:05:09.860Z"
     },
     "libraries": {
       "count": 24,
@@ -1269,7 +1328,7 @@
           "lon": 149.07247
         }
       ],
-      "updatedAt": "2026-08-13T05:42:04.330Z"
+      "updatedAt": "2026-08-21T04:05:10.258Z"
     },
     "outdoor-gyms": {
       "count": 40,
@@ -1281,11 +1340,19 @@
           "lon": 149.118751
         }
       ],
-      "updatedAt": "2026-08-13T05:42:04.851Z"
+      "updatedAt": "2026-08-21T04:05:10.639Z"
     },
     "camp-sites": {
-      "count": 3,
+      "count": 6,
       "pois": [
+        {
+          "id": "relation/9558364",
+          "name": "Alivio Tourist Park",
+          "lat": -35.256988,
+          "lon": 149.105146,
+          "openingHours": "Mo-Su 07:30-22:30",
+          "fee": "yes"
+        },
         {
           "id": "node/8441973436",
           "name": "Exhibition Park Camground",
@@ -1304,24 +1371,37 @@
           "name": "Yarralumla BNT campsite",
           "lat": -35.31127,
           "lon": 149.071112
+        },
+        {
+          "id": "way/53150816",
+          "name": "Canberra Holiday Village",
+          "lat": -35.334044,
+          "lon": 149.163567,
+          "address": "Canberra Avenue 250"
+        },
+        {
+          "id": "relation/11063030",
+          "name": "Narrabundah Long Stay Caravan Park",
+          "lat": -35.348104,
+          "lon": 149.152533
         }
       ],
-      "updatedAt": "2026-08-13T05:42:05.272Z"
+      "updatedAt": "2026-08-21T04:05:11.040Z"
     },
     "shelters": {
       "count": 45,
       "pois": [],
-      "updatedAt": "2026-08-13T05:42:06.005Z"
+      "updatedAt": "2026-08-21T04:05:11.620Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-13T05:42:06.333Z"
+      "updatedAt": "2026-08-21T04:05:11.955Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-13T05:42:06.657Z"
+      "updatedAt": "2026-08-21T04:05:12.283Z"
     },
     "post-offices": {
       "count": 0,

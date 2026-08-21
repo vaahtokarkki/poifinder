@@ -1,10 +1,19 @@
 {
   "city": "houston",
-  "generatedAt": "2026-08-18T03:58:37.529Z",
+  "generatedAt": "2026-08-21T04:01:32.507Z",
   "categories": {
     "toilets": {
-      "count": 125,
+      "count": 128,
       "pois": [
+        {
+          "id": "way/361929130",
+          "name": "Momentum Rock Climbing",
+          "lat": 29.771091,
+          "lon": -95.37774,
+          "address": "Silver Street 1401",
+          "openingHours": "Mo-Fr 06:00-23:00; Sa 10:00-22:00; Su 10:00-20:00; PH 10:00-18:00",
+          "fee": "yes"
+        },
         {
           "id": "way/692347197",
           "name": "Target",
@@ -30,6 +39,15 @@
           "address": "Durham Drive 1710"
         },
         {
+          "id": "way/1022098745",
+          "name": "Uberrito Mexican Grill",
+          "lat": 29.775274,
+          "lon": -95.411011,
+          "address": "Durham Drive 1609",
+          "openingHours": "off \"Closed until further notice due to fire\"",
+          "wheelchair": "yes"
+        },
+        {
           "id": "way/694016955",
           "name": "El Rey Taqueria",
           "lat": 29.812304,
@@ -53,6 +71,15 @@
           "lon": -95.379579,
           "address": "East Crosstimbers Street 10",
           "openingHours": "Mo-Th,Su 09:00-01:00; Fr-Sa 09:00-02:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/397536037",
+          "name": "Barbecue Inn",
+          "lat": 29.828569,
+          "lon": -95.400308,
+          "address": "West Crosstimbers Street 116",
+          "openingHours": "Tu-Sa 10:30-21:00; Su-Mo closed",
           "wheelchair": "yes"
         },
         {
@@ -116,12 +143,12 @@
           "address": "Bellaire Boulevard 7175"
         }
       ],
-      "updatedAt": "2026-08-13T05:37:39.629Z"
+      "updatedAt": "2026-08-21T04:01:22.597Z"
     },
     "drinking-water": {
       "count": 166,
       "pois": [],
-      "updatedAt": "2026-08-13T05:37:40.294Z"
+      "updatedAt": "2026-08-21T04:01:23.240Z"
     },
     "playgrounds": {
       "count": 471,
@@ -249,10 +276,10 @@
           "lon": -95.467523
         }
       ],
-      "updatedAt": "2026-08-13T05:37:41.268Z"
+      "updatedAt": "2026-08-21T04:01:23.984Z"
     },
     "parking": {
-      "count": 5325,
+      "count": 5324,
       "pois": [
         {
           "id": "way/1086503114",
@@ -463,10 +490,10 @@
           "lon": -95.356003
         }
       ],
-      "updatedAt": "2026-08-13T05:37:42.506Z"
+      "updatedAt": "2026-08-21T04:01:24.944Z"
     },
     "charging-stations": {
-      "count": 28,
+      "count": 25,
       "pois": [
         {
           "id": "node/12367334292",
@@ -496,12 +523,6 @@
           "fee": "yes"
         },
         {
-          "id": "node/3955253194",
-          "name": "Blink",
-          "lat": 29.715543,
-          "lon": -95.387912
-        },
-        {
           "id": "way/1528989372",
           "name": "Tesla Supercharger",
           "lat": 29.712494,
@@ -516,9 +537,16 @@
           "name": "ChargePoint",
           "lat": 29.689224,
           "lon": -95.395828
+        },
+        {
+          "id": "node/7324363236",
+          "name": "Blink",
+          "lat": 29.784879,
+          "lon": -95.472592,
+          "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-13T05:37:42.981Z"
+      "updatedAt": "2026-08-21T04:01:25.381Z"
     },
     "gas-stations": {
       "count": 656,
@@ -715,7 +743,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-13T05:37:43.689Z"
+      "updatedAt": "2026-08-21T04:01:25.884Z"
     },
     "ice-cream": {
       "count": 49,
@@ -934,7 +962,7 @@
           "lon": -95.485184
         }
       ],
-      "updatedAt": "2026-08-13T05:37:44.210Z"
+      "updatedAt": "2026-08-21T04:01:26.341Z"
     },
     "dog-parks": {
       "count": 38,
@@ -1017,7 +1045,7 @@
           "lon": -95.217277
         }
       ],
-      "updatedAt": "2026-08-13T05:37:44.653Z"
+      "updatedAt": "2026-08-21T04:01:26.701Z"
     },
     "picnic-spots": {
       "count": 590,
@@ -1095,16 +1123,29 @@
           "lon": -95.431146
         }
       ],
-      "updatedAt": "2026-08-13T05:37:45.360Z"
+      "updatedAt": "2026-08-21T04:01:27.283Z"
     },
     "viewpoints": {
-      "count": 4,
+      "count": 9,
       "pois": [
         {
           "id": "way/1393712217",
           "name": "The Mount",
           "lat": 29.721559,
           "lon": -95.387958
+        },
+        {
+          "id": "way/874823764",
+          "name": "Bayou Field Station",
+          "lat": 29.756612,
+          "lon": -95.449231,
+          "fee": "no"
+        },
+        {
+          "id": "node/13477762049",
+          "name": "Bird Blind",
+          "lat": 29.764947,
+          "lon": -95.451547
         },
         {
           "id": "way/1472844107",
@@ -1119,12 +1160,12 @@
           "lon": -95.456491
         }
       ],
-      "updatedAt": "2026-08-13T05:37:45.792Z"
+      "updatedAt": "2026-08-21T04:01:27.721Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-13T05:37:46.264Z"
+      "updatedAt": "2026-08-21T04:01:28.105Z"
     },
     "atms": {
       "count": 202,
@@ -1340,12 +1381,12 @@
           "openingHours": "Mo-Fr 07:00-19:00; Sa 08:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-13T05:37:46.905Z"
+      "updatedAt": "2026-08-21T04:01:28.646Z"
     },
     "post-boxes": {
       "count": 33,
       "pois": [],
-      "updatedAt": "2026-08-13T05:37:47.352Z"
+      "updatedAt": "2026-08-21T04:01:29.083Z"
     },
     "recycling": {
       "count": 57,
@@ -1408,12 +1449,12 @@
           "openingHours": "Mo-Sa 08:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-13T05:37:47.793Z"
+      "updatedAt": "2026-08-21T04:01:29.521Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-13T05:37:48.225Z"
+      "updatedAt": "2026-08-21T04:01:29.879Z"
     },
     "libraries": {
       "count": 64,
@@ -1626,7 +1667,7 @@
           "openingHours": "Mo-We 10:00-18:00; Th 12:00-20:00; Fr 13:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-13T05:37:48.694Z"
+      "updatedAt": "2026-08-21T04:01:30.267Z"
     },
     "outdoor-gyms": {
       "count": 13,
@@ -1648,15 +1689,37 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-13T05:37:49.250Z"
+      "updatedAt": "2026-08-21T04:01:30.661Z"
     },
     "camp-sites": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-13T05:37:49.692Z"
+      "count": 3,
+      "pois": [
+        {
+          "id": "way/1423236845",
+          "name": "South Main RV Park",
+          "lat": 29.67638,
+          "lon": -95.430195,
+          "address": "Main Street 10100"
+        },
+        {
+          "id": "way/1104975857",
+          "name": "Medical Center RV Resort",
+          "lat": 29.659594,
+          "lon": -95.424615,
+          "address": "Holmes Road 815"
+        },
+        {
+          "id": "way/1102687229",
+          "name": "Lakeview RV Resort",
+          "lat": 29.652005,
+          "lon": -95.444242,
+          "address": "South Main Street 11911"
+        }
+      ],
+      "updatedAt": "2026-08-21T04:01:31.052Z"
     },
     "shelters": {
-      "count": 38,
+      "count": 34,
       "pois": [
         {
           "id": "way/1268210761",
@@ -1689,34 +1752,10 @@
           "lon": -95.391919
         },
         {
-          "id": "way/848097914",
-          "name": "Picnic Area 1",
-          "lat": 29.765853,
-          "lon": -95.42995
-        },
-        {
           "id": "way/848097916",
           "name": "Promenade Pavilion",
           "lat": 29.765861,
           "lon": -95.430178
-        },
-        {
-          "id": "way/848097910",
-          "name": "Picnic Area 2",
-          "lat": 29.765895,
-          "lon": -95.430344
-        },
-        {
-          "id": "way/848097909",
-          "name": "Picnic Area 3",
-          "lat": 29.765983,
-          "lon": -95.430518
-        },
-        {
-          "id": "way/848097908",
-          "name": "Picnic Area 4",
-          "lat": 29.76607,
-          "lon": -95.430692
         },
         {
           "id": "way/848097922",
@@ -1731,17 +1770,31 @@
           "lon": -95.431022
         }
       ],
-      "updatedAt": "2026-08-13T05:37:50.418Z"
+      "updatedAt": "2026-08-21T04:01:31.690Z"
     },
     "rest-areas": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-13T05:37:50.938Z"
+      "count": 6,
+      "pois": [
+        {
+          "id": "way/225726411",
+          "name": "Love's Travel Stop",
+          "lat": 29.79609,
+          "lon": -95.369545,
+          "address": "Patton Street 210"
+        },
+        {
+          "id": "way/1323389320",
+          "name": "Pilot Travel Center",
+          "lat": 29.800373,
+          "lon": -95.267285
+        }
+      ],
+      "updatedAt": "2026-08-21T04:01:32.092Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-13T05:37:51.437Z"
+      "updatedAt": "2026-08-21T04:01:32.406Z"
     },
     "post-offices": {
       "count": 0,

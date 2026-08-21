@@ -12,10 +12,18 @@ name: Refresh OpenStreetMap extract
 # it can reach in four hours and stops itself with an hour to spare, which is
 # what keeps the commit step reachable — a job the runner cancels at
 # timeout-minutes skips it, and the whole night's fetching goes in the bin.
+#
+# Weekly, and stale at six days rather than the script's default seven. Seven
+# against a seven day schedule is a race the data loses: a city refreshed four
+# hours into last week's run is still 6.8 days old when this week's run reaches
+# it, counts as fresh, and waits another week. Six days leaves the margin.
 
 on:
   schedule:
-    - cron: "17 3 * * *"
+    # Once a week, Sunday night. These categories move in OpenStreetMap at the
+    # pace of a mapping party, not of a news feed, so a nightly run spent most
+    # of its four hours finding every city still fresh and skipping it
+    - cron: "17 3 * * 0"
   workflow_dispatch:
     inputs:
       cities:
@@ -58,6 +66,7 @@ jobs:
         run: |
           node scripts/fetch-poi-data.mjs \
             --deadline-minutes=240 \
+            --max-age-days=6 \
             ${{ inputs.cities && format('--cities={0}', inputs.cities) || '' }} \
             ${{ inputs.force && '--force' || '' }}
         env:

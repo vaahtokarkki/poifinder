@@ -17,10 +17,18 @@ import type { Route } from "../seo/pageMeta";
  * The prerender renders this same component to static markup, so what a
  * crawler reads in the HTML and what a visitor reads in the sheet are the same
  * words. Keep it free of hooks and browser APIs, it has to run in Node.
+ *
+ * Two variants of the same words, not two sets of them. "page" is the whole
+ * page, which is what the prerender writes. "sheet" is the same content minus
+ * the parts the sheet says around it: the heading, which SheetPage puts in the
+ * disclosure it wraps this in, and the credits, which sit below that
+ * disclosure for every route alike. Nothing is dropped that a crawler reads,
+ * because the rendered DOM is what gets indexed.
  */
 type PoiPageSectionProps = {
   route: Route;
   data: CategoryPageData;
+  variant?: "page" | "sheet";
 };
 
 /** The tags worth showing next to a name, in the order they matter */
@@ -35,7 +43,7 @@ function poiMeta(poi: PoiEntry): string[] {
   return meta;
 }
 
-const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data }) => {
+const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = "page" }) => {
   const { city, categorySeo } = route;
   const listed = data.pois.slice(0, MAX_LISTED_POIS);
   const unnamed = Math.max(0, data.count - data.pois.length);
@@ -44,7 +52,7 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data }) => {
 
   return (
     <>
-      <h1 className="info-sheet-title">{headingFor(route)}</h1>
+      {variant === "page" && <h1 className="info-sheet-title">{headingFor(route)}</h1>}
       <p className="info-sheet-summary">{categorySeo.intro(city.name, formatCount(data.count))}</p>
 
       {listed.length > 0 && (
@@ -111,15 +119,25 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data }) => {
         <a href={CITIES_PATH}>All cities on Wayside</a>
       </p>
 
-      <p className="info-sheet-footer">
-        Points come from{" "}
-        <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
-          OpenStreetMap
-        </a>{" "}
-        contributors, last refreshed{" "}
-        <time dateTime={data.updatedAt}>{data.updatedAt}</time>. Something missing? Add it
-        there and it shows up here on the next refresh.
-      </p>
+      {/* The sheet says where the points come from once, under the disclosure
+          this sits inside, so here it only carries the one thing the credits
+          cannot know: when this city and category was last refreshed */}
+      {variant === "sheet" ? (
+        <p className="info-sheet-footer">
+          Counts and names above are from the extract of{" "}
+          <time dateTime={data.updatedAt}>{data.updatedAt}</time>. The map itself is live.
+        </p>
+      ) : (
+        <p className="info-sheet-footer">
+          Points come from{" "}
+          <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
+            OpenStreetMap
+          </a>{" "}
+          contributors, last refreshed{" "}
+          <time dateTime={data.updatedAt}>{data.updatedAt}</time>. Something missing? Add it
+          there and it shows up here on the next refresh.
+        </p>
+      )}
     </>
   );
 };

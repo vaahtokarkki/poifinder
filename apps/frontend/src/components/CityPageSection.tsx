@@ -11,13 +11,17 @@ import type { CityPageData } from "../seo/pageData";
  * points in this city, plus the neighbours. It gives the category pages a
  * parent to be linked from, and catches the searches that name a city without
  * naming one category.
+ *
+ * See PoiPageSection for what the two variants mean: the same content, with
+ * the heading and the credits left to SheetPage when it is the sheet.
  */
 type CityPageSectionProps = {
   city: City;
   data: CityPageData;
+  variant?: "page" | "sheet";
 };
 
-const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data }) => {
+const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data, variant = "page" }) => {
   const entries = data.entries
     .map((entry) => ({ categorySeo: findCategorySeo(entry.categorySlug), count: entry.count }))
     .filter((entry): entry is { categorySeo: NonNullable<typeof entry.categorySeo>; count: number } =>
@@ -29,7 +33,9 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data }) => {
 
   return (
     <>
-      <h1 className="info-sheet-title">Points of interest in {city.name}</h1>
+      {variant === "page" && (
+        <h1 className="info-sheet-title">Points of interest in {city.name}</h1>
+      )}
       <p className="info-sheet-summary">
         {formatCount(total)} mapped points across {entries.length}{" "}
         {entries.length === 1 ? "category" : "categories"} in {city.name}, {city.country}.
@@ -72,14 +78,21 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data }) => {
         <a href={CITIES_PATH}>All cities on Wayside</a>
       </p>
 
-      <p className="info-sheet-footer">
-        Points come from{" "}
-        <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
-          OpenStreetMap
-        </a>{" "}
-        contributors, last refreshed{" "}
-        <time dateTime={data.updatedAt}>{data.updatedAt}</time>.
-      </p>
+      {variant === "sheet" ? (
+        <p className="info-sheet-footer">
+          Counts above are from the extract of{" "}
+          <time dateTime={data.updatedAt}>{data.updatedAt}</time>. The map itself is live.
+        </p>
+      ) : (
+        <p className="info-sheet-footer">
+          Points come from{" "}
+          <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
+            OpenStreetMap
+          </a>{" "}
+          contributors, last refreshed{" "}
+          <time dateTime={data.updatedAt}>{data.updatedAt}</time>.
+        </p>
+      )}
     </>
   );
 };

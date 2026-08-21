@@ -20,7 +20,7 @@ import { filterMarkersInBbox } from "./geo";
 import { findCity } from "./seo/cities";
 import { findCategorySeo } from "./seo/categories";
 import { readPageData } from "./seo/pageData";
-import PrerenderedPage from "./components/PrerenderedPage";
+import SheetPage from "./components/SheetPage";
 import { Alert, Snackbar } from '@mui/material';
 import CategoryPresets from './components/CategoryPresets.tsx';
 import BottomSheet, { type BottomSheetHandle } from './components/BottomSheet.tsx';
@@ -792,10 +792,12 @@ const App = () => {
         {pageData ? (
           // The whole sheet, guide included. The root used to have the guide
           // appended here instead, which put it below the prerendered block at
-          // runtime and left it out of the static HTML entirely; HomePageSection
-          // renders it now, so what a crawler reads and what a visitor scrolls
-          // through are one component in one order
-          <PrerenderedPage data={pageData} />
+          // runtime and left it out of the static HTML entirely; the page
+          // components render it now, so what a crawler reads and what a
+          // visitor scrolls through are the same words in one component.
+          // SheetPage is where the two orders part: see its comment for why a
+          // visitor who can see the map leads with the guide and not the list
+          <SheetPage data={pageData} />
         ) : (
           <>
             <InfoSheetHeader title={getBrowsePointsTitle()} />

@@ -1,13 +1,48 @@
 import { findCity, nearbyCities } from "./cities";
 import type { City } from "./cities";
-import { CATEGORY_SEO, commonFaq, findCategorySeo } from "./categories";
-import type { CategorySeo, FaqEntry } from "./categories";
+import {
+  CATEGORY_SEO,
+  categoryHeading,
+  categoryPlural,
+  commonFaq,
+  findCategorySeo,
+  localize,
+  vocabFor,
+} from "./categories";
+import type { CategorySeo, FaqEntry, Vocab } from "./categories";
 import type { CategoryPageData } from "./pageData";
 import { formatCount } from "./format";
 import { CITIES_SLUG } from "../utils";
 
 export const SITE_URL = "https://wayside.cc";
 export const SITE_NAME = "Wayside";
+
+/**
+ * The social card, shared by every page.
+ *
+ * One image for the whole site rather than one per route. A card is read at a
+ * glance in a feed, where what it has to answer is "what is this thing", and
+ * the answer is the same on all 1,705 pages: a map, dense with the small
+ * points nothing else plots. A per-route card would be a different crop of the
+ * same screenshot, which is a build step and a megabyte apiece to say the same
+ * sentence.
+ *
+ * JPEG rather than PNG. It is a photographic raster — a map screenshot with
+ * thousands of distinct colours — so the palette PNG is good at does not
+ * exist here: the same crop is 1.25 MB as a PNG and 180 kB at quality 86,
+ * with nothing visible between them at the size a card is ever rendered.
+ *
+ * 1200x630 is the size Twitter's summary_large_image and Facebook both want,
+ * and the source screenshot was 2049x1084 — near enough the same 1.9 ratio
+ * that fitting it cost five pixels of height off the middle.
+ */
+export const OG_IMAGE = {
+  url: `${SITE_URL}/og.jpg`,
+  type: "image/jpeg",
+  width: 1200,
+  height: 630,
+  alt: `A ${SITE_NAME} map of central Berlin with every playground and public toilet marked`,
+} as const;
 
 /**
  * What a route needs before it is worth putting in the index.
@@ -105,7 +140,7 @@ export function citiesDescription(cityCount: number, countryCount: number): stri
 }
 
 /** Structured data of the city index */
-export function buildCitiesJsonLd(cities: City[]): object[] {
+export function buildCitiesJsonLd(cities: City[], updatedAt: string): object[] {
   return [
     {
       "@context": "https://schema.org",
@@ -116,6 +151,9 @@ export function buildCitiesJsonLd(cities: City[]): object[] {
         new Set(cities.map((city) => city.country)).size
       ),
       url: CITIES_URL,
+      // The content of this page is the list, so it is exactly as current as
+      // the newest hub in it
+      dateModified: updatedAt,
       // The list itself, in the order the page renders it. This is the one
       // page whose whole content is a set of links, so saying so in the
       // markup is worth the bytes
@@ -141,23 +179,50 @@ export function buildCitiesJsonLd(cities: City[]): object[] {
   ];
 }
 
+/**
+ * The English a route is written in. Every piece of copy below goes through
+ * this rather than reading `plural` and `heading` off the entry directly, so a
+ * US city gets gas stations and restrooms in its title, its h1, its list
+ * heading, its FAQ and its neighbour links alike — the alternative is a page
+ * headed one way and worded the other.
+ */
+export function vocabForRoute(route: Route): Vocab {
+  return vocabFor(route.city.countryCode);
+}
+
 export function titleFor(route: Route, count: number): string {
   const { city, categorySeo } = route;
-  const noun = capitalizeFirst(categorySeo.plural);
+  const noun = capitalizeFirst(categoryPlural(categorySeo, vocabForRoute(route)));
   return `${noun} in ${city.name} — ${formatCount(count)} on the map | ${SITE_NAME}`;
 }
 
 export function descriptionFor(route: Route, count: number): string {
   const { city, categorySeo } = route;
+  const plural = categoryPlural(categorySeo, vocabForRoute(route));
   return (
-    `${formatCount(count)} ${categorySeo.plural} in ${city.name} on one map, with opening hours, ` +
+    `${formatCount(count)} ${plural} in ${city.name} on one map, with opening hours, ` +
     `fees and accessibility where OpenStreetMap has them. Free to use, no signup, ` +
     `works on your phone.`
   );
 }
 
 export function headingFor(route: Route): string {
-  return `${route.categorySeo.heading} in ${route.city.name}`;
+  return `${categoryHeading(route.categorySeo, vocabForRoute(route))} in ${route.city.name}`;
+}
+
+/** The plural noun of a route, for the places that need only the noun */
+export function pluralFor(route: Route): string {
+  return categoryPlural(route.categorySeo, vocabForRoute(route));
+}
+
+/**
+ * The paragraph above the list. The entry writes it in international English
+ * and it is translated on the way out, which is why the intro is assembled
+ * here rather than called straight from the component
+ */
+export function introFor(route: Route, count: number): string {
+  const { city, categorySeo } = route;
+  return localize(categorySeo.intro(city.name, formatCount(count)), vocabForRoute(route));
 }
 
 /**
@@ -171,7 +236,8 @@ export function cityTitleFor(city: City, categories: CategorySeo[]): string {
   if (categories.length === 0) {
     return `Points of interest in ${city.name} | ${SITE_NAME}`;
   }
-  const named = categories.slice(0, 3).map((entry) => entry.plural);
+  const vocab = vocabFor(city.countryCode);
+  const named = categories.slice(0, 3).map((entry) => categoryPlural(entry, vocab));
   const more = categories.length > named.length ? " and more" : "";
   return `${city.name}: ${named.join(", ")}${more} | ${SITE_NAME}`;
 }
@@ -181,13 +247,15 @@ export function cityDescriptionFor(
   categories: CategorySeo[],
   totalPoints: number
 ): string {
+  const vocab = vocabFor(city.countryCode);
   if (categories.length === 0) {
-    return (
+    return localize(
       `The map of ${city.name}: public toilets, drinking water, playgrounds and more, ` +
-      `from OpenStreetMap. Not enough is mapped here yet for a page of its own.`
+        `from OpenStreetMap. Not enough is mapped here yet for a page of its own.`,
+      vocab
     );
   }
-  const named = categories.slice(0, 4).map((entry) => entry.plural);
+  const named = categories.slice(0, 4).map((entry) => categoryPlural(entry, vocab));
   const rest = categories.length - named.length;
   return (
     `${formatCount(totalPoints)} mapped points in ${city.name}: ${named.join(", ")}` +
@@ -199,10 +267,12 @@ export function cityDescriptionFor(
 
 /** The full question set of a category page: the specific ones, then the shared ones */
 export function faqFor(route: Route, count: number): FaqEntry[] {
-  return [
+  const vocab = vocabForRoute(route);
+  const entries = [
     ...route.categorySeo.faq(route.city.name, formatCount(count)),
-    ...commonFaq(route.city.name, route.categorySeo.plural),
+    ...commonFaq(route.city.name, categoryPlural(route.categorySeo, vocab)),
   ];
+  return entries.map(({ q, a }) => ({ q: localize(q, vocab), a: localize(a, vocab) }));
 }
 
 export type LinkGroup = {
@@ -221,12 +291,16 @@ export type LinkGroup = {
  */
 export function internalLinksFor(route: Route, data: CategoryPageData): LinkGroup[] {
   const { city, categorySeo } = route;
+  const vocab = vocabForRoute(route);
 
   const otherCategories = data.siblingCategories.flatMap((slug) => {
     const other = findCategorySeo(slug);
     if (!other || other.slug === categorySeo.slug) return [];
     return [
-      { href: categoryPath(city.slug, other.slug), label: `${other.heading} in ${city.name}` },
+      {
+        href: categoryPath(city.slug, other.slug),
+        label: `${categoryHeading(other, vocab)} in ${city.name}`,
+      },
     ];
   });
 
@@ -235,8 +309,12 @@ export function internalLinksFor(route: Route, data: CategoryPageData): LinkGrou
     if (!other) return [];
     return [
       {
+        // The label describes the page it points at, so it is written in that
+        // city's English: a Dallas page links to "Petrol stations in London"
+        // and to "Gas stations in Vancouver", and both anchors match the title
+        // of the page on the other end
         href: categoryPath(other.slug, categorySeo.slug),
-        label: `${categorySeo.heading} in ${other.name}`,
+        label: `${categoryHeading(categorySeo, vocabFor(other.countryCode))} in ${other.name}`,
       },
     ];
   });
@@ -247,7 +325,7 @@ export function internalLinksFor(route: Route, data: CategoryPageData): LinkGrou
   }
   if (sameCategoryElsewhere.length > 0) {
     groups.push({
-      heading: `${capitalizeFirst(categorySeo.plural)} nearby`,
+      heading: `${capitalizeFirst(categoryPlural(categorySeo, vocab))} nearby`,
       links: sameCategoryElsewhere,
     });
   }
@@ -305,9 +383,37 @@ export function buildJsonLd(route: Route, data: CategoryPageData): object[] {
   const url = categoryUrl(city.slug, categorySeo.slug);
   const heading = headingFor(route);
 
+  /**
+   * The page itself, which is the only node here that can carry a date.
+   *
+   * `dateModified` is a property of CreativeWork, and the ItemList below is an
+   * Intangible — putting the date there validates against nothing and says
+   * nothing. So the page gets a node of its own, the list keeps an `@id` for
+   * it to point at, and the extract date lands on the thing it is actually
+   * true of: this page was rebuilt when OpenStreetMap was last read.
+   *
+   * The same date is already in <lastmod> and in the visible footer. This is
+   * the third place it appears and the least load bearing of them — Google
+   * documents dateModified for Article types, not for a directory page — but
+   * it is free, it is honest, and it closes the gap where a crawler reading
+   * only the structured data had no idea how current any of this was.
+   */
+  const page = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": url,
+    url,
+    name: heading,
+    description: descriptionFor(route, data.count),
+    dateModified: data.updatedAt,
+    isPartOf: { "@type": "WebSite", name: SITE_NAME, url: HOME_URL },
+    mainEntity: { "@id": `${url}#list` },
+  };
+
   const itemList = {
     "@context": "https://schema.org",
     "@type": "ItemList",
+    "@id": `${url}#list`,
     name: heading,
     description: descriptionFor(route, data.count),
     url,
@@ -351,7 +457,12 @@ export function buildJsonLd(route: Route, data: CategoryPageData): object[] {
       { "@type": "ListItem", position: 1, name: SITE_NAME, item: HOME_URL },
       { "@type": "ListItem", position: 2, name: "Cities", item: CITIES_URL },
       { "@type": "ListItem", position: 3, name: city.name, item: cityUrl(city.slug) },
-      { "@type": "ListItem", position: 4, name: categorySeo.heading, item: url },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: categoryHeading(categorySeo, vocabForRoute(route)),
+        item: url,
+      },
     ],
   };
 
@@ -365,14 +476,16 @@ export function buildJsonLd(route: Route, data: CategoryPageData): object[] {
     })),
   };
 
-  return [itemList, breadcrumbs, faq];
+  return [page, itemList, breadcrumbs, faq];
 }
 
 /** Structured data of a city hub page */
 export function buildCityJsonLd(
   city: City,
   categories: CategorySeo[],
-  totalPoints: number
+  totalPoints: number,
+  /** ISO date of the newest extract behind any category on the hub */
+  updatedAt: string
 ): object[] {
   return [
     {
@@ -381,6 +494,9 @@ export function buildCityJsonLd(
       name: `Points of interest in ${city.name}`,
       description: cityDescriptionFor(city, categories, totalPoints),
       url: cityUrl(city.slug),
+      // A CollectionPage is a CreativeWork, so unlike the category page's
+      // ItemList this one can carry the date itself
+      dateModified: updatedAt,
       about: {
         "@type": "City",
         name: city.name,
@@ -397,7 +513,7 @@ export function buildCityJsonLd(
       },
       hasPart: categories.map((entry) => ({
         "@type": "WebPage",
-        name: `${entry.heading} in ${city.name}`,
+        name: `${categoryHeading(entry, vocabFor(city.countryCode))} in ${city.name}`,
         url: categoryUrl(city.slug, entry.slug),
       })),
     },

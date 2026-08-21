@@ -1,7 +1,7 @@
 import React from "react";
 import { findCity } from "../seo/cities";
 import { findCategorySeo } from "../seo/categories";
-import { headingFor } from "../seo/pageMeta";
+import { headingFor, pluralFor } from "../seo/pageMeta";
 import type { PageData } from "../seo/pageData";
 import { InfoSheetCredits, InfoSheetGuide, InfoSheetSummary } from "./AppInfoPanel";
 import CityPageSection from "./CityPageSection";
@@ -57,7 +57,7 @@ const SheetPage: React.FC<{ data: PageData }> = ({ data }) => {
     const route = { city, categorySeo };
     disclosure = {
       heading: headingFor(route),
-      label: `List of ${categorySeo.plural} in ${city.name}`,
+      label: `List of ${pluralFor(route)} in ${city.name}`,
       body: <PoiPageSection route={route} data={data} variant="sheet" />,
     };
   }

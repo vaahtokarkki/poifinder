@@ -7,6 +7,8 @@ import {
   faqFor,
   headingFor,
   internalLinksFor,
+  introFor,
+  pluralFor,
 } from "../seo/pageMeta";
 import { formatCount } from "../seo/format";
 import type { Route } from "../seo/pageMeta";
@@ -44,7 +46,8 @@ function poiMeta(poi: PoiEntry): string[] {
 }
 
 const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = "page" }) => {
-  const { city, categorySeo } = route;
+  const { city } = route;
+  const plural = pluralFor(route);
   const listed = data.pois.slice(0, MAX_LISTED_POIS);
   const unnamed = Math.max(0, data.count - data.pois.length);
   const faq = faqFor(route, data.count);
@@ -53,12 +56,12 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
   return (
     <>
       {variant === "page" && <h1 className="info-sheet-title">{headingFor(route)}</h1>}
-      <p className="info-sheet-summary">{categorySeo.intro(city.name, formatCount(data.count))}</p>
+      <p className="info-sheet-summary">{introFor(route, data.count)}</p>
 
       {listed.length > 0 && (
         <section className="info-sheet-section">
           <h2 className="info-sheet-heading">
-            Named {categorySeo.plural} in {city.name}
+            Named {plural} in {city.name}
           </h2>
           <ol className="poi-list">
             {listed.map((poi) => {

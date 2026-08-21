@@ -167,15 +167,18 @@ async function main() {
         `<meta property="og:title" content="${escapeAttr(title)}">`,
         `<meta property="og:description" content="${escapeAttr(description)}">`,
         `<meta property="og:url" content="${escapeAttr(canonical)}">`,
-        `<meta property="og:image" content="${meta.SITE_URL}/icon.png">`,
-        `<meta property="og:image:width" content="512">`,
-        `<meta property="og:image:height" content="512">`,
-        // The only image we have is the square app icon, so claim the small
-        // card. A 1200x630 card image would be worth making
-        `<meta name="twitter:card" content="summary">`,
+        `<meta property="og:image" content="${meta.OG_IMAGE.url}">`,
+        `<meta property="og:image:type" content="${meta.OG_IMAGE.type}">`,
+        `<meta property="og:image:width" content="${meta.OG_IMAGE.width}">`,
+        `<meta property="og:image:height" content="${meta.OG_IMAGE.height}">`,
+        `<meta property="og:image:alt" content="${escapeAttr(meta.OG_IMAGE.alt)}">`,
+        // The card is 1200x630, so claim the wide one. Twitter falls back to
+        // the small card on its own if the image ever fails to fetch
+        `<meta name="twitter:card" content="summary_large_image">`,
         `<meta name="twitter:title" content="${escapeAttr(title)}">`,
         `<meta name="twitter:description" content="${escapeAttr(description)}">`,
-        `<meta name="twitter:image" content="${meta.SITE_URL}/icon.png">`,
+        `<meta name="twitter:image" content="${meta.OG_IMAGE.url}">`,
+        `<meta name="twitter:image:alt" content="${escapeAttr(meta.OG_IMAGE.alt)}">`,
         ...jsonLd.map(
           (entry) => `<script type="application/ld+json">${escapeJson(entry)}</script>`
         ),
@@ -262,7 +265,7 @@ async function main() {
         title: meta.cityTitleFor(city, categories),
         description: meta.cityDescriptionFor(city, categories, totalPoints),
         canonical: meta.cityUrl(city.slug),
-        jsonLd: meta.buildCityJsonLd(city, categories, totalPoints),
+        jsonLd: meta.buildCityJsonLd(city, categories, totalPoints, updatedAt),
         pageData: {
           kind: "city",
           citySlug: city.slug,
@@ -281,10 +284,17 @@ async function main() {
     // Only the cities with something to land on: this page is the one path
     // into the hubs, so a link from here is a promise the page is worth
     // reading, and a hub left out of it has nothing pointing at it at all
-    const indexedCities = [...citiesWithPages.values()]
-      .filter(({ city }) => publishedCities.has(city.slug))
-      .map(({ city }) => city);
+    const indexedHubs = [...citiesWithPages.values()].filter(({ city }) =>
+      publishedCities.has(city.slug)
+    );
+    const indexedCities = indexedHubs.map(({ city }) => city);
     const countryCount = new Set(indexedCities.map((city) => city.country)).size;
+    // The index is as current as the newest hub it lists, which is the same
+    // date the sitemap gives it below
+    const citiesUpdatedAt = indexedHubs
+      .map(({ updatedAt }) => updatedAt)
+      .sort()
+      .at(-1);
 
     if (indexedCities.length > 0) {
       await writePage({
@@ -292,7 +302,7 @@ async function main() {
         title: meta.citiesTitle(indexedCities.length),
         description: meta.citiesDescription(indexedCities.length, countryCount),
         canonical: meta.CITIES_URL,
-        jsonLd: meta.buildCitiesJsonLd(indexedCities),
+        jsonLd: meta.buildCitiesJsonLd(indexedCities, citiesUpdatedAt),
         pageData: {
           kind: "cities",
           citySlugs: indexedCities.map((city) => city.slug),

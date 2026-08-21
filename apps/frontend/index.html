@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wayside</title>
+    <!--
+      The basemap. Leaflet has no subdomains prop set on the TileLayer, so it
+      round robins the default a/b/c, and a first viewport is a dozen or more
+      tiles: all three hosts are hit within the first frames of the map, and
+      all three are a fresh DNS, TCP and TLS handshake the browser only starts
+      once the bundle has run and Leaflet has worked out which tiles it wants.
+
+      Overpass is deliberately not here. It is fetched almost as early on a
+      city page, but the host is whatever VITE_OVERPASS_API_URL was at build
+      time and falls back to a list of four public mirrors tried in order, so
+      there is no single origin to warm. A preconnect to the wrong one is a
+      handshake spent on nothing.
+    -->
+    <link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossorigin>
+    <link rel="preconnect" href="https://b.basemaps.cartocdn.com" crossorigin>
+    <link rel="preconnect" href="https://c.basemaps.cartocdn.com" crossorigin>
     <!-- Favicon and icons -->
     <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">

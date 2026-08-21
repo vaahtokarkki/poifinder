@@ -602,6 +602,118 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
   },
 ];
 
+/**
+ * Which English a page is written in.
+ *
+ * The copy in this file was written in international English throughout, and
+ * for most of the list that is simply the neutral choice. For a handful of
+ * categories it is the wrong word: the largest single block of cities here is
+ * American, and "Petrol stations in Dallas" is not a British spelling of an
+ * American page, it is a page about something Dallas does not have. Search
+ * bears this out — "gas station" outdraws "petrol station" on this site by
+ * more than twenty to one, and every one of those impressions lands on a page
+ * that never says the word.
+ *
+ * Two variants rather than one per country, split along the Americas. Canada
+ * is on the American side because "petrol station in Toronto" and "car park in
+ * Vancouver" are both wrong there, even though a Canadian would say washroom
+ * before restroom. Mexico and South America are there for the same reason
+ * twice over: American English is the English taught across Latin America, and
+ * the English speaker reading a page about Mexico City is usually North
+ * American. Everywhere else says petrol and toilet, and so does the English
+ * that non-anglophone European and Asian cities are read in.
+ *
+ * The genuinely arguable cases are in Asia and none of them are here: Japan,
+ * Korea, Taiwan and Thailand teach American English while Hong Kong, Singapore
+ * and Malaysia inherited British. That is a real split and a small one — the
+ * English search demand for those cities is a fraction of the American — so it
+ * is left alone deliberately rather than guessed at.
+ */
+export type Vocab = "us" | "intl";
+
+const US_VOCAB_COUNTRIES: ReadonlySet<string> = new Set(["US", "CA", "MX", "BR", "AR", "CL"]);
+
+/** The English a city's pages are written in, from its ISO country code */
+export function vocabFor(countryCode: string): Vocab {
+  return US_VOCAB_COUNTRIES.has(countryCode.toUpperCase()) ? "us" : "intl";
+}
+
+/**
+ * International to American, as a closed dictionary rather than per-entry
+ * overrides.
+ *
+ * Every one of these is a word the copy above actually uses — the list was
+ * built by grepping the file, not by importing a general en-GB/en-US table —
+ * which is what keeps a blind string replacement honest. Applied only to copy:
+ * slugs, schema.org types and the CATEGORIES enum never pass through here, so
+ * `PublicToilet` stays `PublicToilet` and /helsinki/toilets/ keeps its URL.
+ *
+ * Order is longest match first where two rules could overlap. No replacement
+ * contains a word a later rule matches, so a single pass is enough.
+ */
+const US_TERMS: readonly (readonly [RegExp, string])[] = [
+  [/\boff the lead\b/gi, "off leash"],
+  [/\bcash machines\b/gi, "ATMs"],
+  [/\bcash machine\b/gi, "ATM"],
+  [/\bpetrol stations\b/gi, "gas stations"],
+  [/\bpetrol station\b/gi, "gas station"],
+  [/\bcar parks\b/gi, "parking lots"],
+  [/\bcar park\b/gi, "parking lot"],
+  [/\bpost boxes\b/gi, "mailboxes"],
+  [/\bpost box\b/gi, "mailbox"],
+  [/\bletter boxes\b/gi, "mailboxes"],
+  [/\bletter box\b/gi, "mailbox"],
+  [/\bcamp sites\b/gi, "campgrounds"],
+  [/\bcamp site\b/gi, "campground"],
+  [/\bcaravans\b/gi, "RVs"],
+  [/\bcaravan\b/gi, "RV"],
+  [/\btoilets\b/gi, "restrooms"],
+  [/\btoilet\b/gi, "restroom"],
+  [/\bcentres\b/gi, "centers"],
+  [/\bcentre\b/gi, "center"],
+  [/\bkerbside\b/gi, "curbside"],
+  [/\bkerb\b/gi, "curb"],
+  [/\bneighbourhoods\b/gi, "neighborhoods"],
+  [/\bneighbourhood\b/gi, "neighborhood"],
+  [/\bmulti storey\b/gi, "multi story"],
+  [/\btyres\b/gi, "tires"],
+  [/\btyre\b/gi, "tire"],
+];
+
+/**
+ * Carry the source's capitalisation onto the replacement, so a heading keeps
+ * its initial capital: "Petrol stations" becomes "Gas stations" and not
+ * "gas stations" sitting where an h1 should be. Only the first letter is
+ * considered, which is all the copy here ever varies.
+ */
+function matchCase(source: string, replacement: string): string {
+  const first = source.charAt(0);
+  if (first && first === first.toUpperCase() && first !== first.toLowerCase()) {
+    return replacement.charAt(0).toUpperCase() + replacement.slice(1);
+  }
+  return replacement;
+}
+
+/** Any piece of category copy, in the English the city reads it in */
+export function localize(text: string, vocab: Vocab): string {
+  if (vocab !== "us") return text;
+  return US_TERMS.reduce(
+    (out, [pattern, replacement]) =>
+      out.replace(pattern, (match) => matchCase(match, replacement)),
+    text
+  );
+}
+
+/** The plural noun as it reads mid sentence, in the city's English */
+export function categoryPlural(entry: CategorySeo, vocab: Vocab): string {
+  return localize(entry.plural, vocab);
+}
+
+/** The sentence case heading noun, in the city's English */
+export function categoryHeading(entry: CategorySeo, vocab: Vocab): string {
+  return localize(entry.heading, vocab);
+}
+
 export const CATEGORY_SEO: CategorySeo[] = CATEGORY_SEO_LIST;
 
 /** Every category page slug, in the order the pages should be linked */
@@ -628,10 +740,10 @@ export function findCategorySeo(slug: string): CategorySeo | undefined {
  * They carry the OpenStreetMap provenance, which is the honest answer to "how
  * do you know this" and also the reason the coverage is what it is.
  */
-export function commonFaq(city: string, categoryPlural: string): FaqEntry[] {
+export function commonFaq(city: string, plural: string): FaqEntry[] {
   return [
     {
-      q: `Where does this ${categoryPlural} data come from?`,
+      q: `Where does this ${plural} data come from?`,
       a: `From OpenStreetMap, a map built by volunteer surveyors and maintained continuously. It is the best available source for small fixtures like this one, because they are the things commercial map providers do not bother collecting.`,
     },
     {
@@ -639,7 +751,7 @@ export function commonFaq(city: string, categoryPlural: string): FaqEntry[] {
       a: `Yes, and it is the fastest way to get it corrected. Edit the point on openstreetmap.org and the change flows through to this page on the next refresh. There is no separate database here to correct.`,
     },
     {
-      q: `Is the list of ${categoryPlural} in ${city} complete?`,
+      q: `Is the list of ${plural} in ${city} complete?`,
       a: `It is as complete as the local survey effort. Densely mapped cities are close to exhaustive; elsewhere expect gaps. The map is always the fuller view, since the list on this page only names the points that have a name.`,
     },
   ];

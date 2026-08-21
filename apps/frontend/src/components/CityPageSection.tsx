@@ -1,7 +1,7 @@
 import React from "react";
 import { findCity } from "../seo/cities";
 import type { City } from "../seo/cities";
-import { findCategorySeo } from "../seo/categories";
+import { categoryHeading, findCategorySeo, vocabFor } from "../seo/categories";
 import { formatCount } from "../seo/format";
 import { CITIES_PATH, categoryPath, cityPath } from "../seo/pageMeta";
 import type { CityPageData } from "../seo/pageData";
@@ -28,6 +28,7 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data, variant =
       Boolean(entry.categorySeo)
     );
   const total = entries.reduce((sum, entry) => sum + entry.count, 0);
+  const vocab = vocabFor(city.countryCode);
   // Only the neighbours that have a hub page of their own, worked out at build time
   const neighbours = data.nearbyCities.map(findCity).filter((entry) => entry !== undefined);
 
@@ -49,7 +50,7 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data, variant =
           {entries.map((entry) => (
             <li key={entry.categorySeo.slug}>
               <a href={categoryPath(city.slug, entry.categorySeo.slug)}>
-                {entry.categorySeo.heading} in {city.name}
+                {categoryHeading(entry.categorySeo, vocab)} in {city.name}
               </a>
               <span className="poi-meta">{formatCount(entry.count)} mapped</span>
             </li>

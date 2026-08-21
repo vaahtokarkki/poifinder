@@ -29,6 +29,8 @@ import {
   isTimetableKey,
   labelFor,
   rankForKey,
+  wikidataLabel,
+  wikidataUrl,
   wikipediaLabel,
   wikipediaUrl,
 } from "./poiPopup";
@@ -323,11 +325,15 @@ const isDisplayableTag = (key: string, value: string) => {
   if (key.startsWith("building:"))
     return key !== "building:parts" && key !== "building:min_level";
   /**
-   * The exception among the wiki tags, which are otherwise cross references
-   * between databases. This one is an article about the thing on the map, and
-   * for a memorial or a viewpoint it is the only tag with anything to say
+   * The exceptions among the wiki tags, which are otherwise cross references
+   * between databases with nothing behind them for a reader. `wikipedia` is an
+   * article about the thing on the map, and for a memorial or a viewpoint it is
+   * the only tag with anything to say; `wikidata` is an id rather than prose,
+   * but shown as a link to the item it makes the same offer in fewer words.
+   * Both only when the value is one a link can be built from
    */
   if (key === "wikipedia") return wikipediaUrl(value) !== undefined;
+  if (key === "wikidata") return wikidataUrl(value) !== undefined;
   if (["ref", "addr", "building", "wiki", "roof"].some(prefix => key.startsWith(prefix))) return false;
   if (key.startsWith("name") && key !== "name") return false;
   return true;
@@ -506,6 +512,23 @@ const TranslatableValue: React.FC<{value: string; isProse: boolean}> = ({
 const tagWikiUrl = (key: string) =>
   `https://wiki.openstreetmap.org/wiki/Key:${encodeURIComponent(key)}`;
 
+/**
+ * The tags whose value names a page elsewhere without being a URL: a Wikipedia
+ * article, a Wikidata item. The value is an identifier in another database, so
+ * the row leads to the page it names rather than printing the tag.
+ */
+const tagLink = (key: string, value: string) => {
+  if (key === "wikipedia") {
+    const href = wikipediaUrl(value);
+    return href && { href, label: wikipediaLabel(value) };
+  }
+  if (key === "wikidata") {
+    const href = wikidataUrl(value);
+    return href && { href, label: wikidataLabel(value) };
+  }
+  return undefined;
+};
+
 /** One line of the popup: a label, a value, and how the value should be read */
 type PopupRow = {
   /** React key, and the tag the label links to on the wiki */
@@ -549,13 +572,14 @@ const buildPopupRows = (tags: Record<string, string> = {}): PopupRow[] => {
     const value = String(rawValue);
     if (!isDisplayableTag(key, value)) continue;
     const timetable = isTimetableKey(key);
+    const link = tagLink(key, value);
     rows.push({
       key,
       label: labelFor(key),
       value: timetable ? formatOpeningHours(value) : value,
       written: timetable,
-      href: key === "wikipedia" ? wikipediaUrl(value) : undefined,
-      linkLabel: key === "wikipedia" ? wikipediaLabel(value) : undefined,
+      href: link?.href,
+      linkLabel: link?.label,
       rank: rankForKey(key),
     });
   }

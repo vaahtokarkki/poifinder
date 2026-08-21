@@ -134,8 +134,22 @@ const App = () => {
   const requestedBboxRef = useRef<[number, number, number, number] | null>(null);
   // A pending auto load of the view the map was left in
   const autoFetchTimerRef = useRef<number | null>(null);
-  // True while a query is running, so a pan does not race it with a second one
-  const fetchInFlightRef = useRef(false);
+  /**
+   * The query in the air, if there is one, and what it asked for.
+   *
+   * A pan must not race a running query with a second one, which is what this
+   * was first for. It also carries the query's key, because two effects can
+   * ask for the very same points in the same tick: on a city page the URL sets
+   * searchPosition, whose effect centers the map and loads it, while the
+   * initial load effect fires beside it for the same view. Both queries went
+   * out, and the access log showed almost every session opening with the same
+   * request twice — the crawlers included, which is the half nobody chose.
+   *
+   * A call that matches the one already running is handed that one's promise
+   * instead of a second request. Only while it is running: the same query
+   * later is a deliberate refresh and has to reach the server.
+   */
+  const fetchInFlightRef = useRef<{ key: string; promise: Promise<void> } | null>(null);
 
   const setMapView = useCallback(
     (center: [number, number], zoom?: number) => {
@@ -162,9 +176,9 @@ const App = () => {
    * Load the points of the current view. The categories can be given, so that
    * a selection made in the same event handler does not have to be in state yet
    */
-  const fetchMarkers = async (categoriesOverride?: CATEGORIES[]) => {
+  const fetchMarkers = (categoriesOverride?: CATEGORIES[]): Promise<void> => {
     const bbox = getBbox();
-    if (!map || !bbox) return;
+    if (!map || !bbox) return Promise.resolve();
 
     const categories = categoriesOverride ?? category;
 
@@ -173,19 +187,15 @@ const App = () => {
       setMarkers([]);
       setFilteredMarkers([]);
       requestedBboxRef.current = null;
-      return;
+      return Promise.resolve();
     }
 
     // Too far out to query, the hint asks for a closer look instead
-    if (map.getZoom() < MIN_POI_ZOOM) return;
+    if (map.getZoom() < MIN_POI_ZOOM) return Promise.resolve();
 
     // Query a little wider than the screen, so the points are already there
     // when the user nudges the map
     const fetchBbox = padBbox(bbox);
-
-    setLoading(true);
-    fetchInFlightRef.current = true;
-    requestedBboxRef.current = fetchBbox;
 
     let polygon: Feature<Polygon | MultiPolygon> | undefined = undefined;
     if (
@@ -196,29 +206,55 @@ const App = () => {
       polygon = buffer(feature, 500, { units: 'meters' });
     }
 
-    try {
-      const data = await fetchOverpassMarkers(
-        null, // Don't use GPS-based around query, only bbox
-        1000,
-        categories,
-        fetchBbox,
-        polygon,
-        setLoadingStatus
-      );
-      setMarkers(data);
-      setFilteredMarkers(filterMarkersInBbox(data, bbox));
-      savePois({ markers: data, bbox: fetchBbox, categories });
-      setErrorMessage(null); // Clear error on success
-    } catch (e) {
-      const errorMsg = e instanceof Error ? e.message : "Failed to fetch markers from Overpass API. Please try again.";
-      console.error("Error fetching markers:", e);
-      setErrorMessage(errorMsg);
-      // A failed query leaves nothing loaded, so the next pan may retry
-      requestedBboxRef.current = null;
-    }
-    fetchInFlightRef.current = false;
-    setLoading(false);
-    setLoadingStatus(null);
+    // Everything that decides what the server is asked, as one string. The
+    // categories are sorted because the order they were picked in is not part
+    // of the question; the route buffer is not spelled out because a route is
+    // only ever queried once per route, so which one it is cannot differ while
+    // a query for it is running
+    const key = [
+      [...categories].sort().join(","),
+      fetchBbox.join(","),
+      polygon ? "route" : "view",
+    ].join("|");
+
+    const inFlight = fetchInFlightRef.current;
+    if (inFlight?.key === key) return inFlight.promise;
+
+    const promise = (async () => {
+      setLoading(true);
+      requestedBboxRef.current = fetchBbox;
+
+      try {
+        const data = await fetchOverpassMarkers(
+          null, // Don't use GPS-based around query, only bbox
+          1000,
+          categories,
+          fetchBbox,
+          polygon,
+          setLoadingStatus
+        );
+        setMarkers(data);
+        setFilteredMarkers(filterMarkersInBbox(data, bbox));
+        savePois({ markers: data, bbox: fetchBbox, categories });
+        setErrorMessage(null); // Clear error on success
+      } catch (e) {
+        const errorMsg = e instanceof Error ? e.message : "Failed to fetch markers from Overpass API. Please try again.";
+        console.error("Error fetching markers:", e);
+        setErrorMessage(errorMsg);
+        // A failed query leaves nothing loaded, so the next pan may retry
+        requestedBboxRef.current = null;
+      } finally {
+        // Only when it is still this query that is registered. Anything with
+        // the same key was handed this promise rather than replacing it, so
+        // matching on the key is matching on ourselves
+        if (fetchInFlightRef.current?.key === key) fetchInFlightRef.current = null;
+        setLoading(false);
+        setLoadingStatus(null);
+      }
+    })();
+
+    fetchInFlightRef.current = { key, promise };
+    return promise;
   };
 
   /**

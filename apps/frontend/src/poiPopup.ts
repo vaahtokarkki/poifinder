@@ -277,6 +277,7 @@ const TAG_RANKS: Record<string, number> = {
   website: 65,
   url: 65,
   wikipedia: 66,
+  wikidata: 67,
 };
 
 /** Prefix rules, for the families of tags too large to list one by one */
@@ -327,6 +328,7 @@ const KEY_LABELS: Record<string, string> = {
   "socket:schuko": "Schuko sockets",
   backrest: "Backrest",
   wikipedia: "Wikipedia",
+  wikidata: "Wikidata",
 };
 
 export const labelFor = (key: string): string => {
@@ -366,3 +368,31 @@ export const wikipediaLabel = (value: string): string | undefined => {
   const article = value.match(WIKIPEDIA_VALUE)?.[2];
   return article?.replace(/_/g, " ").trim() || undefined;
 };
+
+/** An item id, which is a Q and a number and nothing else */
+const WIKIDATA_VALUE = /^Q\d+$/i;
+
+const wikidataId = (value: string): string | undefined => {
+  const id = value.trim().toUpperCase();
+  return WIKIDATA_VALUE.test(id) ? id : undefined;
+};
+
+/**
+ * `wikidata=Q1234` names an item in a database rather than anything written
+ * for a reader, and printed as it stands it says nothing at all. The page it
+ * names is another matter: for a statue, a church or a bridge it holds the
+ * dates, the photographs and the links the map does not carry, so the id is
+ * shown as a way of reaching it rather than as a value.
+ */
+export const wikidataUrl = (value: string): string | undefined => {
+  const id = wikidataId(value);
+  return id && `https://www.wikidata.org/wiki/${id}`;
+};
+
+/**
+ * What the link is called: the id itself. As with the Wikipedia row the label
+ * beside it already says where it goes, so "wikidata.org/wiki/Q1234" would
+ * spend the column repeating it — and unlike an article title, the id is the
+ * one thing a reader can carry over to another database.
+ */
+export const wikidataLabel = (value: string): string | undefined => wikidataId(value);

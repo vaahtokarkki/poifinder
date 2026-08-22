@@ -178,10 +178,10 @@ jobs:
             test -s /tmp/w/bad.osm.bz2 || {
               echo "the extract should still have been built from the regions that answered"; exit 1; }
             badnodes=$(osmium fileinfo -e -g data.count.nodes /tmp/w/bad.osm.bz2)
-            test "$badnodes" = "4" || { echo "expected alpha's 4 nodes, got $badnodes"; exit 1; }
+            test "$badnodes" = "4" || { echo "expected the 4 nodes of alpha, got $badnodes"; exit 1; }
 
             # And the other half of the same contract: a region that simply
-            # could not be fetched is tonight's problem, not the list's. The
+            # could not be fetched is a problem for tonight, not for the list. The
             # run leaves it out, says so, and succeeds, because the next run
             # fetches it again for having no part. Before this, one reset
             # connection at region 85 of 87 threw away the whole rebuild
@@ -192,7 +192,7 @@ jobs:
               /tmp/w/flaky.osm.bz2 2>/dev/null || {
                 echo "a region that could not be fetched should not fail the run"; exit 1; }
             flakynodes=$(osmium fileinfo -e -g data.count.nodes /tmp/w/flaky.osm.bz2)
-            test "$flakynodes" = "4" || { echo "expected alpha's 4 nodes, got $flakynodes"; exit 1; }
+            test "$flakynodes" = "4" || { echo "expected the 4 nodes of alpha, got $flakynodes"; exit 1; }
 
             # The wait hook stands between the entrypoint and the server, so
             # the ways it must NOT block are worth pinning down: it holds only

@@ -42,6 +42,16 @@
 # not filtered again, so a run that dies picks up where it stopped rather than
 # starting the download over.
 #
+# A region that cannot be downloaded no longer takes the run with it. It is
+# retried, resuming where the transfer stopped, and if it still will not come
+# the run goes on to the next region and says at the end which ones it left
+# behind. Where there is a part from a previous run the map keeps it, a country
+# out of date rather than a country missing; where there is none the region is
+# left out of this build and fetched again by the next run, because a missing
+# part is always fetched whatever --refresh says. Eighty-six regions imported
+# tonight beats none, which is what one reset connection at region 85 used to
+# cost.
+#
 # The regions must not overlap, or their shared objects are imported twice.
 # See the header of europe-regions.txt or world-regions.txt.
 #
@@ -70,10 +80,10 @@ REFRESH=${WAYSIDE_REFRESH:-all}
 # parts is the point rather than a problem
 REUSE_HOURS=${WAYSIDE_REGION_REUSE_HOURS:-24}
 
-# Seconds to wait between regions, and how long to wait before trying again
-# when what came back was not an extract. Fifty files in a row off a free
-# download server is worth being unhurried about; a few seconds each is nothing
-# against an import measured in hours
+# Seconds to wait between regions, and how long to wait before trying a region
+# again when its download failed or what came back was not an extract. Fifty
+# files in a row off a free download server is worth being unhurried about; a
+# few seconds each is nothing against an import measured in hours
 REGION_PAUSE=${WAYSIDE_REGION_PAUSE:-5}
 RETRY_BACKOFF=${WAYSIDE_RETRY_BACKOFF:-60}
 DOWNLOAD_TRIES=${WAYSIDE_DOWNLOAD_TRIES:-3}
@@ -144,6 +154,79 @@ looks_like_osm() {
 	3c*) head -c 4096 "$1" | grep -q '<osm' && return 0 ;; # XML, but whose
 	esac
 	return 1
+}
+
+# One region's extract onto the disk, or a non-zero return when this run could
+# not get it. Everything transient is retried here rather than being fatal.
+#
+# curl's own --retry covers the timeouts and the 5xx range and very little
+# else. The connection reset that kills a 400 MB download two thirds of the way
+# through is CURLE_RECV_ERROR, which it will not retry at all without
+# --retry-all-errors: without that flag the caller saw one curl error, on one
+# region out of eighty-seven, and abandoned the whole night's rebuild.
+#
+# Between attempts the partial file is kept and the transfer resumed, which on
+# a region this size is the difference between losing a minute and losing
+# twenty. Only while that is getting somewhere, though: an attempt that adds no
+# bytes is as likely to be a server that will not serve ranges as a second bad
+# connection, and the way out of that one is to start the file again.
+download_region() {
+	local label=$1 name=$2 url=$3 raw=$4
+	local attempt=0 backoff before after
+	local resume=()
+
+	while true; do
+		attempt=$((attempt + 1))
+		before=$(stat -c %s "$raw" 2>/dev/null || echo 0)
+
+		if [[ ${#resume[@]} -gt 0 ]]; then
+			log "$label $name: downloading, attempt $attempt of $DOWNLOAD_TRIES, resuming at $(numfmt --to=iec "$before")"
+		elif [[ $attempt -eq 1 ]]; then
+			log "$label $name: downloading"
+		else
+			log "$label $name: downloading, attempt $attempt of $DOWNLOAD_TRIES"
+		fi
+
+		# --no-progress-meter rather than -s: fifty progress bars is not what
+		# the container log is for, but a curl error still is
+		if curl -fL --no-progress-meter \
+			--retry 2 --retry-delay 15 --retry-all-errors --retry-connrefused \
+			"${resume[@]}" -o "$raw" "$url"; then
+
+			# A URL Geofabrik does not recognise is answered with its web page
+			# and a 200 rather than a 404, so curl being happy is not the end
+			# of the question. Better to say so here than to have osmium die on
+			# "Unknown top-level element: html" a filter pass later
+			looks_like_osm "$raw" && return 0
+
+			log "$label $name: what came back is not an OSM extract. It began: $(head -c 120 "$raw" | tr -d '\0' | tr '\n' ' ')"
+			rm -f "$raw"
+		else
+			log "$label $name: the download failed"
+		fi
+
+		if [[ $attempt -ge $DOWNLOAD_TRIES ]]; then
+			rm -f "$raw"
+			return 1
+		fi
+
+		# Resume next time only where this attempt actually added something.
+		# No new bytes means resuming would ask the same question again and get
+		# the same answer, so the file goes and the next attempt starts clean
+		after=$(stat -c %s "$raw" 2>/dev/null || echo 0)
+		resume=()
+		if [[ $after -gt $before ]]; then
+			resume=(--continue-at -)
+		else
+			rm -f "$raw"
+		fi
+
+		# Could be a bad URL, could be the server having a moment. One is worth
+		# waiting out and the other is not, and they look alike from here
+		backoff=$((RETRY_BACKOFF * attempt))
+		log "$label $name: retrying in ${backoff}s"
+		sleep "$backoff"
+	done
 }
 
 # Comments and blank lines out, so the list can explain itself. Trimming is per
@@ -320,6 +403,14 @@ log "${#ENTRIES[@]} regions from $REGION_LIST"
 
 PARTS=()
 NAMES=()
+
+# What this run could not download: the ones falling back on a part from an
+# earlier run, and the ones with no part to fall back on. Both are reported at
+# the end, because a build quietly short of a country is the failure worth
+# being loud about now that a failed download is no longer fatal
+STALE=()
+MISSING=()
+
 NEWEST=""
 INDEX=0
 
@@ -338,7 +429,6 @@ for ENTRY in "${ENTRIES[@]}"; do
 		exit 1
 	fi
 	NAMES+=("$NAME")
-	PARTS+=("$PART")
 
 	# Fetch when there is nothing to reuse, or when this run is refreshing this
 	# region. Under --refresh=all the age of the part decides instead, so that a
@@ -356,45 +446,7 @@ for ENTRY in "${ENTRIES[@]}"; do
 
 	if [[ $FETCH == false ]]; then
 		log "[$INDEX/${#ENTRIES[@]}] $NAME: keeping $(numfmt --to=iec "$(stat -c %s "$PART")") from $(date -r "$PART" '+%F')"
-	else
-		ATTEMPT=0
-		while true; do
-			ATTEMPT=$((ATTEMPT + 1))
-			if [[ $ATTEMPT -eq 1 ]]; then
-				log "[$INDEX/${#ENTRIES[@]}] $NAME: downloading"
-			else
-				log "[$INDEX/${#ENTRIES[@]}] $NAME: downloading, attempt $ATTEMPT of $DOWNLOAD_TRIES"
-			fi
-
-			# A region list that has gone stale 404s, and a missing country is
-			# not something to discover as a hole in the map weeks later.
-			# --retry already covers 429 and the 5xx range, so a failure here
-			# is the URL itself
-			# --no-progress-meter rather than -s: fifty progress bars is not
-			# what the container log is for, but a curl error still is
-			if ! curl -fL --no-progress-meter --retry 3 --retry-delay 30 -o "$RAW" "$URL"; then
-				echo "build-region-extract: could not download $URL" >&2
-				echo "build-region-extract: if the region was renamed or withdrawn, fix $REGION_LIST" >&2
-				exit 1
-			fi
-
-			looks_like_osm "$RAW" && break
-
-			if [[ $ATTEMPT -ge $DOWNLOAD_TRIES ]]; then
-				echo "build-region-extract: $URL answered with something that is not an OSM extract" >&2
-				echo "build-region-extract: check the URL in $REGION_LIST. It began:" >&2
-				head -c 200 "$RAW" | tr -d '\0' >&2
-				echo >&2
-				exit 1
-			fi
-
-			# Could be a bad URL, could be the server having a moment. One is
-			# worth waiting out and the other is not, and they look alike here
-			BACKOFF=$((RETRY_BACKOFF * ATTEMPT))
-			log "[$INDEX/${#ENTRIES[@]}] $NAME: not an OSM extract, retrying in ${BACKOFF}s"
-			sleep "$BACKOFF"
-		done
-
+	elif download_region "[$INDEX/${#ENTRIES[@]}]" "$NAME" "$URL" "$RAW"; then
 		log "[$INDEX/${#ENTRIES[@]}] $NAME: filtering"
 		filter-osm-extract "$RAW" "$PART"
 		rm -f "$RAW"
@@ -405,7 +457,23 @@ for ENTRY in "${ENTRIES[@]}"; do
 		if [[ $INDEX -lt ${#ENTRIES[@]} ]]; then
 			sleep "$REGION_PAUSE"
 		fi
+	elif [[ -s $PART ]]; then
+		# Last run's copy of the region, so the map has the country a few days
+		# out of date rather than not at all. Its mtime is deliberately left
+		# alone: that keeps it near the front of the oldest queue, so the next
+		# --refresh=oldest run comes back to it on its own
+		STALE+=("$NAME")
+		log "[$INDEX/${#ENTRIES[@]}] $NAME: could not be downloaded, keeping $(numfmt --to=iec "$(stat -c %s "$PART")") from $(date -r "$PART" '+%F')"
+	else
+		# Nothing to fall back on, so this build has a hole where the region
+		# is. The next run fetches it whatever --refresh says, because a part
+		# that does not exist is always fetched
+		MISSING+=("$NAME")
+		log "[$INDEX/${#ENTRIES[@]}] $NAME: could not be downloaded and has no part to fall back on, leaving it out of this build"
+		continue
 	fi
+
+	PARTS+=("$PART")
 
 	# When the region was last current, from the pbf header the filter carried
 	# through, which costs a read of the first few kilobytes. Reading it from
@@ -417,6 +485,23 @@ for ENTRY in "${ENTRIES[@]}"; do
 		if [[ -z ${OLDEST:-} || $REGION_STAMP < $OLDEST ]]; then OLDEST=$REGION_STAMP; fi
 	fi
 done
+
+if [[ ${#STALE[@]} -gt 0 ]]; then
+	log "${#STALE[@]} region(s) could not be downloaded and kept the part from an earlier run: ${STALE[*]}"
+fi
+if [[ ${#MISSING[@]} -gt 0 ]]; then
+	log "${#MISSING[@]} region(s) are not in this build at all: ${MISSING[*]}"
+	log "the next run fetches them whatever --refresh says. If one was renamed or withdrawn, fix $REGION_LIST"
+fi
+
+# Every region failed, which is a network or a region list rather than a bad
+# night. Replacing the extract with nothing would import an empty map over a
+# working one, so the old target is left where it is and the caller stops
+if [[ ${#PARTS[@]} -eq 0 ]]; then
+	echo "build-region-extract: not one of the ${#ENTRIES[@]} regions could be downloaded" >&2
+	echo "build-region-extract: leaving $TARGET alone rather than building an empty map" >&2
+	exit 1
+fi
 
 log "merging ${#PARTS[@]} regions into $TARGET"
 

@@ -179,6 +179,27 @@ fetched again, so the next attempt picks up where it stopped rather than
 starting 35 GB over. Under `--refresh=all` parts older than a day are refetched,
 so a rebuild cannot quietly ship a country from the week before.
 
+A region that will not download does not stop the run. It is retried
+`WAYSIDE_DOWNLOAD_TRIES` times, resuming the transfer where it broke off, and
+if it still will not come the build goes on to the next region:
+
+- **There is a part from an earlier run.** It is used as it is, and its
+  timestamp is left alone, so the country is a few days out of date rather than
+  absent and stays near the front of the `oldest` queue for the next run.
+- **There is no part.** The region is left out of this build and reported at
+  the end. The next run fetches it whatever `--refresh` says, because a part
+  that does not exist is always fetched.
+
+Either way the run says which regions it left behind before it merges, and the
+database it reports is the oldest part it actually used. Only a run where every
+region failed is fatal, and then the existing extract is left where it is
+rather than replaced with an empty map.
+
+This matters more than it sounds. The nightly build is eighty-seven downloads
+off a free server, so the chance that all of them survive is not the thing to
+design around: one reset connection at region 85 used to throw away the
+eighty-four already filtered and leave the database untouched for another day.
+
 ### Refreshing one country at a time
 
 The filtered per region files are kept in `/db/regions` between runs, which is

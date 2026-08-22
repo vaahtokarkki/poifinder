@@ -10,7 +10,23 @@ export const PAGE_DATA_ELEMENT_ID = "__wayside_page__";
 
 export type PoiEntry = {
   id: string;
-  name: string;
+  /**
+   * The name OpenStreetMap carries for the point itself. Absent on the points
+   * that have none, which for most of these categories is the great majority
+   * of them — those rows are identified by `context` instead
+   */
+  name?: string;
+  /**
+   * The name of the place the point stands inside: the building around a
+   * toilet, the park around a picnic table. Worked out at fetch time by
+   * testing the point against the outlines of the named places near it, never
+   * written onto the point in OpenStreetMap and never presented as its name.
+   *
+   * A row carries a name, a context, or both. One with neither is not stored:
+   * it is a row that reads "Public toilet" and says nothing. See poiTitle in
+   * pageMeta.ts for how the two are put together
+   */
+  context?: string;
   lat: number;
   lon: number;
   /** Street address, when OpenStreetMap has the housenumber and street */
@@ -29,7 +45,12 @@ export type CategoryPageData = {
   categorySlug: string;
   /** Every matching point in the city radius, named or not */
   count: number;
-  /** The named subset, which is what a list can usefully show */
+  /**
+   * The subset a list can usefully show: the points that carry a name, plus
+   * the ones a named building or park can place. One row per distinct
+   * identity — see the dedup in fetch-poi-data.mjs, which is what stops a park
+   * with nine picnic tables in it from filling the page nine times over
+   */
   pois: PoiEntry[];
   /**
    * Which neighbouring pages exist. Internal links are only worth anything if

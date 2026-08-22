@@ -11,7 +11,7 @@
  * is no network access here, so a build is deterministic and cannot be broken
  * by Overpass being down.
  */
-import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { createServer } from "vite";
@@ -123,7 +123,7 @@ async function main() {
           categorySeo,
           count: entry.count,
           pois,
-          indexable: meta.isIndexable(entry.count, pois.length),
+          indexable: meta.isIndexable(categorySeo.slug, entry.count, pois.length),
           // This category's own refresh date, so a page whose query failed
           // last time does not inherit a freshness it does not have
           updatedAt: (entry.updatedAt ?? cityData.generatedAt ?? new Date().toISOString()).slice(
@@ -426,6 +426,19 @@ async function main() {
       );
     }
 
+    // A category that stops being indexable — every route in it thin, or the
+    // whole category paused — leaves its child sitemap behind from the last
+    // build. `vite build` empties dist and never sees one, but `npm run
+    // prerender` on its own is meant to be re-runnable, and a stale file full
+    // of noindex URLs is the exact contradiction the split exists to avoid
+    const wanted = new Set(children.map(({ name }) => name));
+    for (const file of await readdir(DIST)) {
+      if (/^sitemap-.*\.xml$/.test(file) && !wanted.has(file)) {
+        await rm(path.join(DIST, file));
+        console.log(`Removed ${file}, nothing in it is indexable any more.`);
+      }
+    }
+
     // The index keeps the address robots.txt already advertises and Search
     // Console is already submitted against, so the split costs no resubmission
     await writeFile(
@@ -453,10 +466,15 @@ async function main() {
         `${indexedCities.length > 0 ? "1 index, " : ""}1 root), ` +
         `${urls} URLs across ${children.length} sitemaps behind sitemap.xml.`
     );
+    const pausedRoutes = routes.filter((route) =>
+      meta.PAUSED_CATEGORIES.has(route.categorySeo.slug)
+    ).length;
     console.log(
       `Indexable: ${indexableRoutes.length} category, ${indexableCities} city. ` +
-        `${routes.length - indexableRoutes.length} category pages are noindex ` +
-        `(under ${meta.MIN_POIS_FOR_PAGE} points or ${meta.MIN_NAMED_POIS_FOR_PAGE} named).`
+        `${routes.length - indexableRoutes.length - pausedRoutes} category pages are noindex ` +
+        `(under ${meta.MIN_POIS_FOR_PAGE} points or ${meta.MIN_NAMED_POIS_FOR_PAGE} listable), ` +
+        `${pausedRoutes} more in the ${meta.PAUSED_CATEGORIES.size} paused categories ` +
+        `(${[...meta.PAUSED_CATEGORIES].join(", ")}).`
     );
 
     const noData = CITIES.length * CATEGORY_SEO.length - routes.length;

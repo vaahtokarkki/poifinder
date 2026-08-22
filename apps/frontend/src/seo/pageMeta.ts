@@ -4,13 +4,14 @@ import {
   CATEGORY_SEO,
   categoryHeading,
   categoryPlural,
+  categorySingular,
   commonFaq,
   findCategorySeo,
   localize,
   vocabFor,
 } from "./categories";
 import type { CategorySeo, FaqEntry, Vocab } from "./categories";
-import type { CategoryPageData } from "./pageData";
+import type { CategoryPageData, PoiEntry } from "./pageData";
 import { formatCount } from "./format";
 import { CITIES_SLUG } from "../utils";
 
@@ -59,17 +60,91 @@ export const OG_IMAGE = {
  * Helsinki post boxes is the case that prompted this: 224 mapped points, none
  * of them named, published on the strength of the count alone.
  *
+ * "Named" is a shorthand the second threshold has outgrown. What it counts is
+ * rows the list can tell apart, which since the enclosing place lookup means
+ * points with a name of their own plus points a named building or park can
+ * place — "Public toilet in Tennispalatsi" is as much this page's own content
+ * as a name in OpenStreetMap would have been, and rather more use. The measure
+ * is unchanged: how much of the page is not a template. See PoiEntry in
+ * pageData.ts, and `enclosedBy` in categories.ts.
+ *
+ * Post boxes still fail it, and should: 12 of Helsinki's 224 stand inside
+ * anything at all.
+ *
  * A route that clears neither is still written as a real page — see the
  * prerender — it is simply marked noindex and kept out of the sitemap and the
  * internal links.
  */
 export const MIN_POIS_FOR_PAGE = 8;
 
-/** Named points a route needs before the list is substantive enough to index */
+/** Distinguishable rows a route needs before the list is substantive enough to index */
 export const MIN_NAMED_POIS_FOR_PAGE = 5;
 
-/** Whether a route has enough behind it to be worth indexing */
-export function isIndexable(count: number, namedCount: number): boolean {
+/**
+ * Categories written as real pages but deliberately kept out of the index.
+ *
+ * Not a quality judgement about the data — these pages are as accurate as any
+ * other. It is a judgement about who answers the query. Search Console, over
+ * the first week the prerendered pages were live (14–20 August 2026):
+ *
+ *   parking      148 pages    103 impressions   0 clicks
+ *   libraries    147 pages    137 impressions   0 clicks
+ *   playgrounds  141 pages     29 impressions   0 clicks
+ *   ice-cream    139 pages    178 impressions   0 clicks
+ *   viewpoints   108 pages     49 impressions   0 clicks
+ *
+ * 683 pages, 40% of everything indexable, 496 impressions and no clicks at all
+ * between them. Every one of these is a category Google Maps and the chains
+ * themselves already answer well, and a directory page is not going to take
+ * that query off them. Meanwhile 280 URLs sat in "Crawled — currently not
+ * indexed", which is the crawler saying it has read more of this site than it
+ * wants to keep.
+ *
+ * So the point is not to punish the pages, it is to spend the crawl somewhere
+ * it converts: drinking water at 2.7% CTR, recycling at 1.4%, shelters at
+ * 5.9%, against gas stations at 0.01% on 9,556 impressions. The categories
+ * that earn clicks are the ones nothing else bothers to map.
+ *
+ * This is an experiment with a date on it. Paused categories keep their URLs
+ * and their content — a visitor who lands on one gets the whole page, and the
+ * app still renders the sheet — they are simply noindex, absent from every
+ * sitemap, and unlinked from the hubs and the neighbour blocks, which falls
+ * out of routing them through isIndexable below. Emptying this set puts all
+ * 683 back, and the only cost of having been wrong is the time they spend
+ * being recrawled.
+ *
+ * Started 2026-08-22. Read the numbers again in October: what to look for is
+ * whether the categories left in the index get crawled and indexed faster than
+ * they were, not whether total impressions went up — they will fall, because
+ * the paused categories were carrying impressions that never became visits.
+ *
+ * gas-stations, dog-parks and atms are the obvious next candidates: 12,269
+ * impressions and 3 clicks between them. They are left in for now because they
+ * demonstrably rank, and losing that is a bigger bet than losing five
+ * categories nothing ever clicked.
+ */
+export const PAUSED_CATEGORIES: ReadonlySet<string> = new Set([
+  "parking",
+  "libraries",
+  "playgrounds",
+  "ice-cream",
+  "viewpoints",
+]);
+
+/**
+ * Whether a route has enough behind it to be worth indexing.
+ *
+ * `namedCount` is the number of rows the list can show, which since the
+ * enclosing place lookup means named points plus points a building or a park
+ * can place — one row per distinct identity either way, so it still measures
+ * what it always did: how much of this page is not a template.
+ */
+export function isIndexable(
+  categorySlug: string,
+  count: number,
+  namedCount: number
+): boolean {
+  if (PAUSED_CATEGORIES.has(categorySlug)) return false;
   return count >= MIN_POIS_FOR_PAGE && namedCount >= MIN_NAMED_POIS_FOR_PAGE;
 }
 
@@ -213,6 +288,33 @@ export function headingFor(route: Route): string {
 /** The plural noun of a route, for the places that need only the noun */
 export function pluralFor(route: Route): string {
   return categoryPlural(route.categorySeo, vocabForRoute(route));
+}
+
+/**
+ * How one row in the list is titled.
+ *
+ * A point with a name is called by it, which is the only honest option: the
+ * building around the Oodi library is not what anybody calls the library. A
+ * point without one is called by where it stands — "Public toilet in
+ * Tennispalatsi" — which is what a person would say out loud and, not
+ * incidentally, a string somebody might type.
+ *
+ * The two are kept in separate fields all the way to here on purpose. Writing
+ * the building's name into the point's `name` would put a name into the data
+ * that no mapper wrote, and would leave every consumer of the payload unable
+ * to tell the two apart. See PoiEntry
+ */
+export function poiTitle(route: Route, poi: PoiEntry): string {
+  if (poi.name) return poi.name;
+  const singular = categorySingular(route.categorySeo, vocabForRoute(route));
+  // The list only ever holds rows with one or the other, so the last branch is
+  // for a hand edited payload rather than anything the fetch can produce
+  return poi.context ? `${capitalizeFirst(singular)} in ${poi.context}` : capitalizeFirst(singular);
+}
+
+/** Whether any row on this page is titled by its surroundings rather than named */
+export function hasPlacedPois(pois: PoiEntry[]): boolean {
+  return pois.some((poi) => !poi.name && poi.context);
 }
 
 /**
@@ -426,7 +528,12 @@ export function buildJsonLd(route: Route, data: CategoryPageData): object[] {
       position: index + 1,
       item: {
         "@type": categorySeo.schemaType,
-        name: poi.name,
+        name: poiTitle(route, poi),
+        // Where the row's title came from its surroundings, say so in the one
+        // property schema.org has for exactly this. It keeps `name` matching
+        // the visible row while the markup still admits that the proper noun
+        // in it belongs to the building rather than to the toilet
+        ...(poi.context ? { containedInPlace: { "@type": "Place", name: poi.context } } : {}),
         address: postalAddress(city, poi),
         geo: {
           "@type": "GeoCoordinates",

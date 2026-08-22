@@ -5,10 +5,12 @@ import {
   MAX_LISTED_POIS,
   cityPath,
   faqFor,
+  hasPlacedPois,
   headingFor,
   internalLinksFor,
   introFor,
   pluralFor,
+  poiTitle,
 } from "../seo/pageMeta";
 import { formatCount } from "../seo/format";
 import type { Route } from "../seo/pageMeta";
@@ -49,7 +51,10 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
   const { city } = route;
   const plural = pluralFor(route);
   const listed = data.pois.slice(0, MAX_LISTED_POIS);
-  const unnamed = Math.max(0, data.count - data.pois.length);
+  const unlisted = Math.max(0, data.count - data.pois.length);
+  // Rows titled by the building or park they stand in rather than by a name of
+  // their own. They change what the list can honestly be called
+  const placed = hasPlacedPois(listed);
   const faq = faqFor(route, data.count);
   const linkGroups = internalLinksFor(route, data);
 
@@ -61,14 +66,14 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
       {listed.length > 0 && (
         <section className="info-sheet-section">
           <h2 className="info-sheet-heading">
-            Named {plural} in {city.name}
+            {placed ? "Individual" : "Named"} {plural} in {city.name}
           </h2>
           <ol className="poi-list">
             {listed.map((poi) => {
               const meta = poiMeta(poi);
               return (
                 <li key={poi.id}>
-                  <span className="poi-name">{poi.name}</span>
+                  <span className="poi-name">{poiTitle(route, poi)}</span>
                   {meta.length > 0 && <span className="poi-meta">{meta.join(" · ")}</span>}
                 </li>
               );
@@ -76,11 +81,12 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
           </ol>
           <p className="info-sheet-note">
             {data.pois.length > listed.length
-              ? `Showing ${listed.length} of the ${data.pois.length} named points. `
+              ? `Showing ${listed.length} of the ${data.pois.length} the data can tell apart. `
               : ""}
             The map has all {formatCount(data.count)}
-            {unnamed > 0
-              ? `, including the ${formatCount(unnamed)} that carry no name in OpenStreetMap.`
+            {unlisted > 0
+              ? `, including the ${formatCount(unlisted)} that carry neither a name nor a ` +
+                `building or park to place them in.`
               : "."}
           </p>
         </section>

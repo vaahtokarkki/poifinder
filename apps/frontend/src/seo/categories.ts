@@ -7,6 +7,18 @@ import { CATEGORIES } from "../constants";
  */
 export type FaqEntry = { q: string; a: string };
 
+/**
+ * What can enclose a point and lend it a name.
+ *
+ * "building" is a building outline, which is what a toilet in a shopping
+ * centre or a station stands in. "area" is an open air place drawn as a
+ * polygon — a park, a garden, a recreation ground — which is what a picnic
+ * table or a drinking fountain stands in. They are separate because they are
+ * looked up at different distances: a building is small enough that its
+ * boundary is metres from anything inside it, and a park is not.
+ */
+export type EnclosureKind = "building" | "area";
+
 export type CategorySeo = {
   category: CATEGORIES;
   /** URL segment, plural and hyphenated */
@@ -15,6 +27,37 @@ export type CategorySeo = {
   aliases?: string[];
   /** Plural noun as it reads mid sentence: "public toilets in Helsinki" */
   plural: string;
+  /**
+   * The same noun in the singular, for a row named after the place it stands
+   * in rather than by OpenStreetMap: "Public toilet in Tennispalatsi".
+   *
+   * Only the categories that carry `enclosedBy` need one, which is why it is
+   * optional rather than a field every entry has to fill in with a word
+   * nothing reads. See poiTitle in pageMeta.ts
+   */
+  singular?: string;
+  /**
+   * Which kinds of enclosing place can name this category's unnamed points.
+   *
+   * Most of the small fixtures this site maps carry no name at all — 246 of
+   * the 279 toilets inside Helsinki's radius, all 224 post boxes — and a list
+   * of twenty five rows reading "Public toilet" is the thin content the
+   * indexing gate below exists to keep out. What a person needs is not a name
+   * OpenStreetMap does not have but the place they would use to say where the
+   * thing is, and that place is a separate object: the building around it, or
+   * the park it stands in.
+   *
+   * Measured on Helsinki before this was built: 85 of 246 unnamed toilets are
+   * inside a named building, 114 of 516 picnic tables inside a named park, 18
+   * of 57 drinking water points likewise. Only 12 of 224 post boxes are inside
+   * anything, which is why street furniture is not in this list and no amount
+   * of lookup will make a page of post boxes worth indexing.
+   *
+   * The list is deliberately short and matches the categories that earn clicks
+   * rather than the ones that earn impressions — see PAUSED_CATEGORIES in
+   * pageMeta.ts for the same reasoning applied from the other end.
+   */
+  enclosedBy?: readonly EnclosureKind[];
   /** Sentence case heading noun */
   heading: string;
   /** schema.org type of a single point, Place when nothing fits better */
@@ -33,6 +76,8 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     category: CATEGORIES.Toilets,
     slug: "toilets",
     plural: "public toilets",
+    singular: "public toilet",
+    enclosedBy: ["building", "area"],
     heading: "Public toilets",
     schemaType: "PublicToilet",
     intro: (city, count) =>
@@ -60,6 +105,8 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     category: CATEGORIES.DrinkingWater,
     slug: "drinking-water",
     plural: "drinking water points",
+    singular: "drinking water point",
+    enclosedBy: ["area"],
     heading: "Drinking water",
     schemaType: "Place",
     intro: (city, count) =>
@@ -214,6 +261,8 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     category: CATEGORIES.Picnic,
     slug: "picnic-spots",
     plural: "picnic spots",
+    singular: "picnic spot",
+    enclosedBy: ["area"],
     heading: "Picnic spots",
     schemaType: "Place",
     intro: (city, count) =>
@@ -313,6 +362,8 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     category: CATEGORIES.Recycling,
     slug: "recycling",
     plural: "recycling points",
+    singular: "recycling point",
+    enclosedBy: ["building", "area"],
     heading: "Recycling",
     schemaType: "RecyclingCenter",
     intro: (city, count) =>
@@ -378,6 +429,8 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     category: CATEGORIES.OutdoorGym,
     slug: "outdoor-gyms",
     plural: "outdoor gyms",
+    singular: "outdoor gym",
+    enclosedBy: ["area"],
     heading: "Outdoor gyms",
     schemaType: "ExerciseGym",
     intro: (city, count) =>
@@ -420,6 +473,8 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     category: CATEGORIES.Shelter,
     slug: "shelters",
     plural: "shelters and huts",
+    singular: "shelter",
+    enclosedBy: ["area"],
     heading: "Shelters and huts",
     schemaType: "Place",
     intro: (city, count) =>
@@ -712,6 +767,19 @@ export function categoryPlural(entry: CategorySeo, vocab: Vocab): string {
 /** The sentence case heading noun, in the city's English */
 export function categoryHeading(entry: CategorySeo, vocab: Vocab): string {
   return localize(entry.heading, vocab);
+}
+
+/**
+ * The singular noun, in the city's English, for the categories that have one.
+ *
+ * Falls back to the plural rather than guessing at one: stripping a trailing
+ * "s" turns benches into benche, and a category without a singular here is a
+ * category that never asks for one. US_TERMS carries both numbers of every
+ * word it replaces, so "public toilet" localises as cleanly as "public
+ * toilets" does.
+ */
+export function categorySingular(entry: CategorySeo, vocab: Vocab): string {
+  return localize(entry.singular ?? entry.plural, vocab);
 }
 
 export const CATEGORY_SEO: CategorySeo[] = CATEGORY_SEO_LIST;

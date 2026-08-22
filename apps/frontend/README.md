@@ -123,6 +123,10 @@ What the thresholds decide is whether that page is fit to be indexed:
 | `MIN_POIS_FOR_PAGE` (8) | How much the map has to show |
 | `MIN_NAMED_POIS_FOR_PAGE` (5) | How much of the page is not a template |
 
+Since the enclosing place lookup below, the second one counts rows the list can
+tell apart — named points plus points a building or a park can place — rather
+than named points alone. It measures the same thing either way.
+
 The second one matters more than it looks. The intro, all seven FAQ answers and
 the link groups are generated from the city name and a number; the list of
 named points is the only part that is genuinely this page's. A route with 224
@@ -136,6 +140,71 @@ A route below either threshold is written with `noindex, follow`, kept out of
 `sitemap.xml`, and not linked to from any other page. So internal links still
 only ever point at pages we are asking to have indexed, and nothing 404s that
 did not deserve to.
+
+### Paused categories
+
+`PAUSED_CATEGORIES` in [`src/seo/pageMeta.ts`](src/seo/pageMeta.ts) is a third
+gate, and the only one that is not about the data. It names categories whose
+pages are written and served in full but never indexed.
+
+The first week of Search Console after the prerendered pages went live, 14–20
+August 2026:
+
+| Category | Pages | Impressions | Clicks |
+| --- | --- | --- | --- |
+| parking | 148 | 103 | 0 |
+| libraries | 147 | 137 | 0 |
+| playgrounds | 141 | 29 | 0 |
+| ice-cream | 139 | 178 | 0 |
+| viewpoints | 108 | 49 | 0 |
+
+683 pages, 40% of everything indexable, no clicks between them — while 280 URLs
+sat in *Crawled — currently not indexed*, which is the crawler saying it has
+read more of this site than it cares to keep. Every one of those five is a
+category Google Maps already answers well. The ones that do earn clicks are the
+opposite kind: drinking water at 2.7% CTR, recycling at 1.4%, shelters at 5.9%,
+against gas stations at 0.01% on 9,556 impressions.
+
+So the pause is about where the crawl goes, not about the pages being bad.
+Emptying the set puts all 683 back, and being wrong costs only the time they
+spend being recrawled. Started 2026-08-22; worth reading the numbers again in
+October, looking at whether the categories still in the index get crawled
+faster — not at total impressions, which will fall by design.
+
+### The place a point stands in
+
+Most of what this site maps carries no name: 246 of the 279 toilets inside
+Helsinki's radius, all 224 of its post boxes. What a person actually needs is
+not a name OpenStreetMap does not have, but the place they would use to say
+where the thing is — and that place is a separate object, the building around
+it or the park it stands in.
+
+Categories that carry `enclosedBy` in [`src/seo/categories.ts`](src/seo/categories.ts)
+therefore ask a second query per city: what named buildings or parks are near
+these unnamed points. `scripts/fetch-poi-data.mjs` tests each point against
+those outlines, and the smallest place containing it names the row — a shop
+unit rather than the shopping centre it is in. The row then reads *Public
+toilet in Tennispalatsi* rather than the twenty-fifth *Public toilet*.
+
+Measured on Helsinki: 85 of 246 unnamed toilets are inside a named building,
+114 of 516 picnic tables and 18 of 57 drinking water points inside a named
+park. Only 12 of 224 post boxes are inside anything at all, which is why street
+furniture is not on the list — and why no amount of lookup makes a page of post
+boxes worth indexing.
+
+The building's name is never written into the point's. `PoiEntry` keeps `name`
+and `context` apart all the way to the page, `poiTitle` puts them together, and
+the structured data says `containedInPlace` rather than claiming the toilet is
+called Tennispalatsi. Rows are deduplicated on whichever of the two identifies
+them, so a park with nine picnic tables in it names one row and the map has the
+other eight.
+
+One caveat when refreshing against your own Overpass. The self hosted database
+is built from a tag filter that keeps points of interest and the buildings
+around them, so `enclosedBy: ["building"]` works there and `["area"]` comes back
+empty — parks are not in the extract. Until the import keeps named areas too,
+refresh the outdoor categories without `OVERPASS_API_URL` set. See
+[`apps/overpass`](../overpass).
 
 A route with no data at all still 404s, because there is no truthful count to
 put on it. That is what `npm run seo:data` is for.

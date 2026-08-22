@@ -21,6 +21,15 @@
  * Set OVERPASS_API_URL to a self hosted instance (see apps/overpass) and none
  * of that applies: the queries go there alone, at speed, and a whole refresh
  * is minutes rather than days.
+ *
+ * One caveat if you do. Categories with `enclosedBy` ask a second query for
+ * the named place around each unnamed point, and the self hosted database is
+ * built from a tag filter that keeps points of interest and the buildings
+ * around them — see apps/overpass/osmium-filter.txt and bin/join-buildings.
+ * Buildings are therefore there and parks are not, so `enclosedBy: ["area"]`
+ * comes back empty against our own server and full against the public mirrors.
+ * Until the import keeps named areas too, run the refresh for the outdoor
+ * categories without OVERPASS_API_URL set.
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -32,6 +41,50 @@ const DATA_DIR = path.join(ROOT, "data", "poi");
 
 /** Points stored per city and category. The page lists at most 25 */
 const MAX_STORED_POIS = 30;
+/**
+ * How many unnamed points are offered to the enclosing place lookup.
+ *
+ * The nearest ones to the city centre, because that is the order the list is
+ * built in and a point that will never be reached is not worth a containment
+ * test. Around a third of them come back placed, so eighty candidates is
+ * comfortably more than the thirty rows a city can store — and it is what
+ * bounds the id list in the query below to something an Overpass GET can hold.
+ */
+const CONTEXT_CANDIDATES = 80;
+/**
+ * How far from a point to look for the place that contains it, in metres.
+ *
+ * Two numbers because Overpass measures `around` from a way's own line
+ * segments rather than from the area it encloses. A building is small enough
+ * that anything inside it is metres from a wall. A park is not: a fountain in
+ * the middle of Helsinki's central park is several hundred metres from the
+ * nearest edge of it, and at 30 m it would come back standing in nothing.
+ *
+ * Both are upper bounds on the search, not on the answer — what is actually
+ * inside is decided by the containment test here, so a wider radius costs
+ * payload rather than accuracy
+ */
+const BUILDING_RADIUS = 30;
+const AREA_RADIUS = 600;
+/**
+ * The open air places worth being told you are standing in.
+ *
+ * Kept to the ones a person would name to a friend — a park, a garden, the
+ * grounds of something — rather than every polygon a point can fall inside.
+ * `landuse=residential` covers half a city and would place a picnic table in
+ * "Töölö", which is a district rather than a place you can walk to
+ */
+const AREA_VALUES = [
+  "park",
+  "garden",
+  "recreation_ground",
+  "village_green",
+  "common",
+  "nature_reserve",
+  "dog_park",
+  "cemetery",
+  "allotments",
+];
 /** Overpass query timeout, in seconds */
 const QUERY_TIMEOUT = 180;
 /**
@@ -116,9 +169,17 @@ async function runQuery(query, endpoints) {
   throw lastError;
 }
 
-/** Turn Overpass elements into the compact shape a page needs */
-function toPois(elements, city) {
-  const seenNames = new Set();
+/**
+ * Turn Overpass elements into candidate rows, nearest the city centre first.
+ *
+ * Every point, named or not. The unnamed ones used to be dropped here, which
+ * is what made a page of toilets a list of the 33 that happen to carry a name
+ * and nothing about the other 246; they are kept now so the enclosing place
+ * lookup below has something to place. Whether a row survives to be stored is
+ * decided in selectPois, once it is known which of them a building or a park
+ * can name.
+ */
+function toCandidates(elements, city) {
   return elements
     .map((element) => {
       const lat = element.lat ?? element.center?.lat;
@@ -126,7 +187,6 @@ function toPois(elements, city) {
       if (typeof lat !== "number" || typeof lon !== "number") return null;
       const tags = element.tags ?? {};
       const name = typeof tags.name === "string" ? tags.name.trim() : "";
-      if (!name) return null;
 
       const street = tags["addr:street"];
       const houseNumber = tags["addr:housenumber"];
@@ -134,28 +194,232 @@ function toPois(elements, city) {
 
       return {
         id: `${element.type}/${element.id}`,
-        name,
+        ...(name ? { name } : {}),
         lat: Number(lat.toFixed(6)),
         lon: Number(lon.toFixed(6)),
         ...(address ? { address } : {}),
         ...(tags.opening_hours ? { openingHours: tags.opening_hours } : {}),
         ...(tags.wheelchair ? { wheelchair: tags.wheelchair } : {}),
         ...(tags.fee ? { fee: tags.fee } : {}),
+        // Only a node can stand inside something. A playground drawn as a way
+        // is already an outline of its own, and asking which building contains
+        // it is asking the wrong question
+        _node: element.type === "node" ? element.id : null,
         _distance: distanceMeters(city.lat, city.lon, lat, lon),
       };
     })
     .filter(Boolean)
     // Central points first: they are what a search for the city is asking about
-    .sort((a, b) => a._distance - b._distance)
-    // A list of twenty five identical "Public toilet" rows helps nobody
-    .filter((poi) => {
-      const key = poi.name.toLowerCase();
-      if (seenNames.has(key)) return false;
-      seenNames.add(key);
-      return true;
-    })
-    .slice(0, MAX_STORED_POIS)
-    .map(({ _distance, ...poi }) => poi);
+    .sort((a, b) => a._distance - b._distance);
+}
+
+/**
+ * The rows worth storing, one per distinct identity.
+ *
+ * A row earns its place by being tellable from the others: a name of its own,
+ * or the name of the place it stands in. Twenty five rows reading "Public
+ * toilet" help nobody, and neither do nine reading "Picnic spot in Helsingin
+ * keskuspuisto" — so the park names one row and the map has the rest. What is
+ * left is also exactly what MIN_NAMED_POIS_FOR_PAGE is counting when it
+ * decides whether the page is substantive enough to index.
+ *
+ * Identity is the proper noun, whichever field it came from. A place names one
+ * row whether the point carries its name or merely stands in it.
+ */
+function selectPois(candidates) {
+  const seen = new Set();
+  const pois = [];
+  for (const candidate of candidates) {
+    // One namespace for both, so a toilet mapped as "Stockmann" and a toilet
+    // standing inside the Stockmann building are one row rather than two ways
+    // of saying the same shop. Whichever is nearer the centre wins, which is
+    // the order the candidates already arrive in
+    const identity = candidate.name ?? candidate.context;
+    const key = identity ? identity.toLowerCase() : null;
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    const { _distance, _node, ...poi } = candidate;
+    pois.push(poi);
+    if (pois.length >= MAX_STORED_POIS) break;
+  }
+  return pois;
+}
+
+/* ------------------------------------------------------------------------ *
+ * The place a point stands in
+ *
+ * A toilet in a shopping centre is a node with `amenity=toilets` on it and
+ * nothing else. Everything that would let somebody find it — that it is in
+ * Tennispalatsi — is on the building around it, which is a separate object.
+ * The same is true outdoors, where the object is a park rather than a
+ * building.
+ *
+ * So the point is tested against the outlines of the named places near it, and
+ * the smallest one that contains it names the row. Nothing is written back to
+ * OpenStreetMap and nothing is written onto the point: the name stays the
+ * building's, in a field of its own, and the page says "in" rather than
+ * pretending the toilet is called Tennispalatsi. See PoiEntry in
+ * src/seo/pageData.ts.
+ *
+ * The same rule, the same smallest-wins tie break and the same ray casting
+ * live in two other places: apps/overpass/bin/join-buildings, which decides
+ * which buildings the self hosted database keeps, and fetchEnclosingBuilding
+ * in src/api/overpass.ts, which asks the question live when a popup opens.
+ * Three copies is two too many, but they run in three languages against three
+ * shapes of input, and the rule they share is twenty lines
+ * ------------------------------------------------------------------------ */
+
+/** The query that asks what the given nodes are standing inside */
+function buildContainerQuery(nodeIds, kinds) {
+  const clauses = [];
+  if (kinds.includes("building")) {
+    clauses.push(`  wr[building][name](around.points:${BUILDING_RADIUS});`);
+  }
+  if (kinds.includes("area")) {
+    clauses.push(
+      `  wr[name][~"^(leisure|landuse)$"~"^(${AREA_VALUES.join("|")})$"]` +
+        `(around.points:${AREA_RADIUS});`
+    );
+  }
+  // By id rather than by repeating the category filter: the points are already
+  // in hand, and naming them is both smaller to send and immune to the two
+  // queries disagreeing about what the category matched
+  return (
+    `[out:json][timeout:${QUERY_TIMEOUT}];\n` +
+    `node(id:${nodeIds.join(",")})->.points;\n` +
+    `(\n${clauses.join("\n")}\n);\nout geom;`
+  );
+}
+
+const isClosed = (ring) =>
+  ring.length > 3 &&
+  ring[0][0] === ring[ring.length - 1][0] &&
+  ring[0][1] === ring[ring.length - 1][1];
+
+/**
+ * Join a relation's ways end to end into the rings they make.
+ *
+ * A multipolygon hands over the ways its contributors happened to split the
+ * outline into, in no order and in either direction. Take one, keep appending
+ * whatever still touches an end, stop when it closes or nothing fits.
+ */
+function stitchWays(ways) {
+  const remaining = ways.filter((way) => way.length > 1);
+  const rings = [];
+  while (remaining.length > 0) {
+    let chain = remaining.pop();
+    let joined = true;
+    while (joined && !isClosed(chain)) {
+      joined = false;
+      for (let i = 0; i < remaining.length; i++) {
+        const way = remaining[i];
+        const [head, tail] = [chain[0], chain[chain.length - 1]];
+        const same = (a, b) => a[0] === b[0] && a[1] === b[1];
+        // The shared node belongs to both ways, so one copy of it is dropped
+        if (same(tail, way[0])) chain = chain.concat(way.slice(1));
+        else if (same(tail, way[way.length - 1]))
+          chain = chain.concat([...way].reverse().slice(1));
+        else if (same(head, way[way.length - 1])) chain = way.slice(0, -1).concat(chain);
+        else if (same(head, way[0])) chain = [...way].reverse().slice(0, -1).concat(chain);
+        else continue;
+        remaining.splice(i, 1);
+        joined = true;
+        break;
+      }
+    }
+    if (isClosed(chain)) rings.push(chain);
+  }
+  return rings;
+}
+
+/** The closed outer rings of one way or relation, as [lon, lat] pairs */
+function ringsOf(element) {
+  if (element.type === "way" && element.geometry) {
+    const ring = element.geometry.filter((p) => p).map((p) => [p.lon, p.lat]);
+    return isClosed(ring) ? [ring] : [];
+  }
+  if (element.type === "relation" && element.members) {
+    // Outer rings only. A hole is a courtyard, and a point in one is standing
+    // outside the building — but it is also standing in whatever contains the
+    // building, which is the answer we would have given anyway
+    return stitchWays(
+      element.members
+        .filter(
+          (member) =>
+            member.type === "way" &&
+            member.geometry &&
+            (member.role || "outer") === "outer"
+        )
+        .map((member) => member.geometry.filter((p) => p).map((p) => [p.lon, p.lat]))
+    );
+  }
+  return [];
+}
+
+/** Whether a point is inside a ring, by the usual ray crossing count */
+function ringContains(ring, lon, lat) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [lonI, latI] = ring[i];
+    const [lonJ, latJ] = ring[j];
+    if (latI > lat !== latJ > lat && lon < ((lonJ - lonI) * (lat - latI)) / (latJ - latI) + lonI) {
+      inside = !inside;
+    }
+  }
+  return inside;
+}
+
+/**
+ * The shoelace area of a ring, in square degrees.
+ *
+ * Not an area anybody would quote, and it does not have to be: it only ever
+ * compares two places that contain the same point, where the smaller is the
+ * more specific answer — the shop unit rather than the shopping centre, the
+ * building rather than the park it stands in. No conversion would change which
+ * of them is smaller.
+ */
+function ringArea(ring) {
+  let doubled = 0;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    doubled += ring[j][0] * ring[i][1] - ring[i][0] * ring[j][1];
+  }
+  return Math.abs(doubled) / 2;
+}
+
+/**
+ * Write onto each point the name of the smallest named place containing it.
+ *
+ * Mutates the candidates, which is what the caller wants: they are already
+ * sorted, and the alternative is threading a second list through selectPois to
+ * say the same thing.
+ */
+function placeCandidates(candidates, elements) {
+  const places = [];
+  for (const element of elements) {
+    const name = typeof element.tags?.name === "string" ? element.tags.name.trim() : "";
+    // `building=no` is a mapper saying "the thing you would take for a
+    // building here is not one". The import applies the same rule — see
+    // NOT_A_BUILDING in apps/overpass/bin/join-buildings
+    if (!name || element.tags?.building === "no") continue;
+    const rings = ringsOf(element);
+    if (rings.length === 0) continue;
+    places.push({ name, rings, area: rings.reduce((total, ring) => total + ringArea(ring), 0) });
+  }
+
+  let placed = 0;
+  for (const candidate of candidates) {
+    let best = null;
+    for (const place of places) {
+      if (best && place.area >= best.area) continue;
+      if (!place.rings.some((ring) => ringContains(ring, candidate.lon, candidate.lat))) continue;
+      best = place;
+    }
+    if (best) {
+      candidate.context = best.name;
+      placed++;
+    }
+  }
+  return placed;
 }
 
 /**
@@ -310,14 +574,47 @@ async function main() {
         try {
           const data = await runQuery(buildQuery(filters, city.lat, city.lon, radius), endpoints);
           const elements = data.elements ?? [];
+          const candidates = toCandidates(elements, city);
+
+          // The second query, for the categories whose points mostly carry no
+          // name of their own. It is skipped when there is nothing to place —
+          // a city whose toilets are all named needs no buildings — so the
+          // cost is one extra query on the pages it actually changes
+          let placed = 0;
+          const unplaced = categorySeo.enclosedBy?.length
+            ? candidates.filter((c) => !c.name && c._node).slice(0, CONTEXT_CANDIDATES)
+            : [];
+          if (unplaced.length > 0) {
+            try {
+              const containers = await runQuery(
+                buildContainerQuery(
+                  unplaced.map((c) => c._node),
+                  categorySeo.enclosedBy
+                ),
+                endpoints
+              );
+              placed = placeCandidates(unplaced, containers.elements ?? []);
+            } catch (error) {
+              // A page of named points only is the behaviour this category had
+              // before the lookup existed, so a failure here costs rows rather
+              // than the category
+              console.warn(`    ${categorySeo.slug}: no enclosing places (${error.message})`);
+            }
+            await sleep(DELAY_MS);
+          }
+
+          const pois = selectPois(candidates);
           result[categorySeo.slug] = {
             count: elements.length,
-            pois: toPois(elements, city),
+            pois,
             // Per category, not per city: when one query fails and the rest
             // succeed, only the ones that succeeded may claim to be current
             updatedAt: new Date().toISOString(),
           };
-          console.log(`    ${categorySeo.slug}: ${elements.length}`);
+          console.log(
+            `    ${categorySeo.slug}: ${elements.length}` +
+              ` (${pois.length} listed${placed > 0 ? `, ${placed} placed by surroundings` : ""})`
+          );
         } catch (error) {
           // Leave the previous numbers in place rather than publishing a zero
           console.error(`    ${categorySeo.slug}: FAILED, keeping previous (${error.message})`);

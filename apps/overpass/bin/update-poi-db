@@ -6,8 +6,9 @@
 #
 #   --url=URL        extract to import, default $OVERPASS_PLANET_URL
 #   --regions=FILE   build the extract from a region list instead of one URL
-#   --refresh=WHICH  which regions to download again: all, random, oldest, or
-#                    names. Default all
+#   --refresh=WHICH  which regions to download again: all, or a comma separated
+#                    list of names, "random" and "oldest", the last two taking
+#                    an optional ":N" for several. Default all
 #   --skip-download  reuse the extract left by a previous run
 #   --keep-extract   do not delete the extract afterwards
 #
@@ -16,7 +17,8 @@
 # says which of them our filtered import kept, so applying one would slowly
 # refill the database with the objects we deliberately left out. Playgrounds
 # and post boxes do not move often, so a periodic reimport is both simpler and
-# honest about what it does. Run it weekly from cron.
+# honest about what it does. Run it from cron: weekly for the whole list, or
+# nightly with --refresh naming the few regions worth keeping current.
 #
 # The new database is built alongside the live one and only swapped in at the
 # end, so queries are answered throughout the import and the API is down for
@@ -50,9 +52,11 @@ PLANET_URL=${OVERPASS_PLANET_URL:-}
 REGION_LIST=${WAYSIDE_REGION_LIST:-}
 
 # Which regions to download again, passed straight through to
-# build-region-extract: all, random, oldest, or names. Anything short of "all"
-# rebuilds the database from parts already on disk, refreshing only what is
-# named, which is a much smaller download and exactly the same import
+# build-region-extract: all, or a comma separated list of names, "random" and
+# "oldest:N". Anything short of "all" rebuilds the database from parts already
+# on disk, refreshing only what is named, which is a much smaller download and
+# exactly the same import — so naming several in one run is far cheaper than
+# several runs
 REFRESH=${WAYSIDE_REFRESH:-all}
 
 # Which container to restart once the new database is in place, for the layout
@@ -83,8 +87,10 @@ for arg in "$@"; do
 
 			  --url=URL        extract to import, default $OVERPASS_PLANET_URL
 			  --regions=FILE   build the extract from a region list instead of one URL
-			  --refresh=WHICH  which regions to download again: all, random,
-			                   oldest, or a comma separated list of names.
+			  --refresh=WHICH  which regions to download again: all, or a
+			                   comma separated list of names, "random" and
+			                   "oldest"; the last two take a count, as in
+			                   oldest:2, for several rather than one.
 			                   Anything but "all" reuses the parts on disk for
 			                   every other region. Default all
 			  --skip-download  reuse the extract left by a previous run

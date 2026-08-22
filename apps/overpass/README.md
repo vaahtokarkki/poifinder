@@ -188,18 +188,26 @@ what lets a refresh be one country rather than a continent:
 update-poi-db --refresh=finland   # this one, everything else as it stands
 update-poi-db --refresh=random    # one of the 87, picked by dice
 update-poi-db --refresh=oldest    # the one refreshed longest ago
+update-poi-db --refresh=oldest:2  # the two refreshed longest ago
 update-poi-db --refresh=a,b,c     # these, by name
 update-poi-db                     # all of them, the full rebuild
 ```
 
-The list may mix names with `oldest` and `random`, which is what the nightly
-schedule uses:
+The list may mix names with `oldest` and `random`, and either of those may take
+a count, which is what the nightly schedule uses:
 
 ```bash
-update-poi-db --refresh=finland,oldest   # Finland, plus whatever waited longest
+# the four worth keeping current, plus the two that have waited longest
+update-poi-db --refresh=finland,norway,sweden,germany,oldest:2
 ```
 
-One run rather than two matters here, and the reason is in the next paragraph.
+One run rather than six matters here, and the reason is in the next paragraph.
+
+`oldest` and `random` choose *around* the names rather than over them, whatever
+order they were written in. On a night when Germany happens to be the least
+recently refreshed part, the run above still refreshes six regions rather than
+five: `oldest:2` skips what is already spoken for and takes the next two down
+the list. `random:N` draws without replacement for the same reason.
 
 A region with no part yet is always fetched, whatever `--refresh` says, so a
 country cannot quietly go missing from the map.
@@ -211,11 +219,13 @@ country downloaded and the whole world imported, seven times a week — more
 total CPU than one weekly rebuild, spread thinner. That is the trade, and it is
 worth making on purpose rather than by accident.
 
-`oldest` is worth preferring over `random` if the aim is coverage: with 87
-regions and a nightly run it guarantees every region is refreshed within 87
-days, where random leaves some waiting much longer than that. On the world list
-that bound is worth checking against how often you actually run it — every
-other night makes it closer to six months.
+`oldest` is worth preferring over `random` if the aim is coverage: it bounds
+how long a region can wait, where random leaves some waiting much longer than
+the average suggests. The bound is the number of regions divided by how many a
+run takes, times the interval — 83 rotating regions at `oldest:2` a night is
+about six weeks, where one region every other night was closer to six months.
+Raising the count is the dial for that, and what it costs is download time, not
+import time.
 
 Because regions now age independently, the database reports the **oldest** of
 them as its `timestamp_osm_base` rather than the newest. Reporting the newest
@@ -411,38 +421,32 @@ there. The jobs are defined next to the thing they act on and travel with this
 file, which is the point — a server rebuilt from this compose file is a server
 that is already scheduled.
 
-There are two:
+There is one:
 
 | When | Job | What it refreshes |
 | --- | --- | --- |
-| Even nights, 02:30 | `refresh-finland` | Finland |
-| Odd nights, 02:30 | `refresh-rotating` | Finland, and the least recently refreshed of the other 86 |
+| Every night, 02:30 | `refresh-nightly` | Finland, Norway, Sweden, Germany, and the two least recently refreshed of the other 83 |
 
-So Finland every night, and everywhere else on a rotation of roughly six
-months. Finland is the map most likely to be looked at; the rest moves slowly
-enough that a season either way does not show.
+So the four countries most likely to be looked at are never more than a day
+behind, and everywhere else comes round on a rotation of about six weeks. The
+rest of the map moves slowly enough that a few weeks either way does not show.
 
-Both are five field expressions, minutes first. ofelia also accepts six fields
-with seconds in front, so if you edit either one, count the fields first — the
-same string read in the other dialect shifts every unit by one place.
+It is a five field expression, minutes first. ofelia also accepts six fields
+with seconds in front, so if you edit it, count the fields first — the same
+string read in the other dialect shifts every unit by one place.
 
-The odd/even split is what keeps them apart: `2-30/2` and `1-31/2` between them
-cover every day of the month exactly once, so one job fires each night and never
-two. The obvious alternative — a Finland job every night and an oldest job every
-other night — reads better and does not work. A full rebuild takes hours, so the
-oldest run would still be going when the Finland run fired, `update-poi-db`'s
-lock would skip the second, and Finland would end up refreshed every *other*
-night, which is the opposite of the intent.
+One job naming six regions rather than six jobs, because what none of this
+makes cheaper is the import. Overpass cannot update part of a database, so a
+run rebuilds and reimports all 87 parts whichever ones it downloaded; only the
+download shrinks. Six names in one invocation is therefore five extra downloads
+and no extra import, where six runs would be six imports — and could not be six
+anyway: a rebuild takes hours, so `update-poi-db`'s lock would skip whichever
+fired while another was still going. That lock is why the schedule is one job
+and not a nightly job beside a weekly one.
 
-Naming both regions in one invocation is also cheaper than two runs, because
-what none of this makes cheaper is the import. Overpass cannot update part of a
-database, so a run rebuilds and reimports all 87 parts whichever ones it
-downloaded; only the download shrinks. `--refresh=finland,oldest` is therefore
-one extra download and no extra import, where two separate runs would be two
-imports.
-
-Both still rebuild and reimport the whole of Europe — see "Refreshing one
-country at a time" above for what that costs.
+It still rebuilds and reimports the whole world every night — see "Refreshing
+one country at a time" above for what that costs, and lower the count in
+`oldest:2` if the box cannot keep up.
 
 Ofelia and watchtower used to be kept days apart, Sunday and Wednesday, so that
 an image update could never land inside the reimport window. They are not any

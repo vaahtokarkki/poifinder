@@ -1,9 +1,9 @@
 import React from "react";
-import { Marker, Popup } from "react-leaflet";
+import { Marker, Popup, useMap } from "react-leaflet";
 import ParkIcon from '@mui/icons-material/Park';
 import { renderToString } from "react-dom/server";
 import { divIcon } from "leaflet";
-import type { PointExpression } from "leaflet";
+import type { PointExpression, Popup as LeafletPopup, PopupEvent } from "leaflet";
 import {
   CATEGORY_CONFIG,
   CATEGORIES,
@@ -840,6 +840,44 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
 
   const shapeMarker = markers.find(marker => shapeKey(marker) === openShape) ?? null;
 
+  const map = useMap();
+  /** The popup currently on the map, while it is still allowed to pan it */
+  const openPopupRef = React.useRef<LeafletPopup | null>(null);
+
+  /*
+   * Auto panning is for the moment a popup opens: the box has to be brought
+   * clear of the controls and the screen edges, and it cannot be done before
+   * the content is in it and measured, so it happens a beat after the click.
+   *
+   * After that it has to stop. Leaflet re-runs the pan on every popup.update(),
+   * and react-leaflet calls update() whenever the popup's children change --
+   * which is every render of this list, including the one that follows the
+   * points being reloaded for the view just panned to. The map jumped back to
+   * the open popup on each of them, so the map could not be read around a point
+   * without closing what was said about it first.
+   *
+   * The first deliberate move is the signal: once the reader has taken the map
+   * somewhere themselves, the popup gives up the right to move it. The flag
+   * lives on the popup instance, so it comes back the next time it is opened.
+   */
+  React.useEffect(() => {
+    const releaseMap = () => {
+      const popup = openPopupRef.current;
+      if (!popup) return;
+      popup.options.autoPan = false;
+      openPopupRef.current = null;
+    };
+
+    // Only user gestures: the auto pan itself moves the map with panBy, which
+    // fires neither of these
+    map.on("dragstart", releaseMap);
+    map.on("zoomstart", releaseMap);
+    return () => {
+      map.off("dragstart", releaseMap);
+      map.off("zoomstart", releaseMap);
+    };
+  }, [map]);
+
   return (
     <>
       <MarkerClusterGroup
@@ -877,11 +915,21 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
           const eventHandlers = !hasDetails
             ? { click: () => onNotice?.(`${title} — no extra details`) }
             : {
-                popupopen: () => setOpenShape(key),
+                popupopen: (event: PopupEvent) => {
+                  setOpenShape(key);
+                  openPopupRef.current = event.popup;
+                },
                 // Only if it is still ours: opening another popup closes this
                 // one, and the close arrives after the open it was caused by
-                popupclose: () =>
-                  setOpenShape(current => (current === key ? null : current)),
+                popupclose: (event: PopupEvent) => {
+                  setOpenShape(current => (current === key ? null : current));
+                  // Whatever this popup was allowed to do is settled; the next
+                  // opening starts over, centered like the first one was
+                  event.popup.options.autoPan = true;
+                  if (openPopupRef.current === event.popup) {
+                    openPopupRef.current = null;
+                  }
+                },
               };
 
           return <Marker

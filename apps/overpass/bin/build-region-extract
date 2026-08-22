@@ -6,16 +6,18 @@
 #
 #   --list=FILE       region list to read, default $WAYSIDE_REGION_LIST
 #   --refresh=WHICH   which regions to fetch again: all, or a comma separated
-#                     list of names in which "oldest" and "random" may stand in
-#                     for one. Default all
+#                     list of names in which "oldest" and "random" stand in for
+#                     one, and "oldest:N" and "random:N" for N of them.
+#                     Default all
 #   --parts-dir=DIR   where the per region files are kept between runs
 #   --fresh           re-download everything, ignoring a half finished run
 #   --keep-parts      no-op, kept for callers that still pass it
 #
 # The per region files are kept between runs, which is what makes a partial
 # refresh possible: --refresh=finland fetches Finland and reuses the other
-# forty eight as they are. Anything missing is always fetched, whatever
-# --refresh says, so a region can never quietly go absent from the map.
+# forty eight as they are. Several may be named at once, which costs one
+# download each and no extra import. Anything missing is always fetched,
+# whatever --refresh says, so a region can never quietly go absent from the map.
 #
 # What that does not avoid is the rest of the work. Overpass cannot update part
 # of a database, so every run still merges all the parts, compresses them and
@@ -56,8 +58,9 @@ FRESH=false
 PARTS_DIR=${WAYSIDE_PARTS_DIR:-}
 
 # Which regions to fetch again. "all" is the whole continent in one go and what
-# a weekly rebuild wants; a name, or "random", or "oldest", refreshes that one
-# and leaves the rest of the parts alone
+# a weekly rebuild wants; a comma separated list of names, "random" or "oldest"
+# (optionally ":N" for several) refreshes those and leaves the rest of the
+# parts alone
 REFRESH=${WAYSIDE_REFRESH:-all}
 
 # How old a part may be and still be reused, under --refresh=all only. Long
@@ -94,12 +97,14 @@ for arg in "$@"; do
 			  --refresh=WHICH which regions to fetch again, default all:
 			                    all       every region, the whole list
 			                    random    one picked at random
+			                    random:N  N of them, picked at random
 			                    oldest    the one refreshed longest ago
+			                    oldest:N  the N refreshed longest ago
 			                    a,b,c     these regions by name
-			                  The list may mix them: finland,oldest refreshes
-			                  Finland and whatever has waited longest, in one
-			                  import rather than two. Regions with no part yet
-			                  are always fetched.
+			                  The list may mix them: finland,sweden,oldest:2
+			                  refreshes both countries and the two that have
+			                  waited longest, in one import rather than four.
+			                  Regions with no part yet are always fetched.
 			  --parts-dir=DIR where per region files are kept between runs
 			  --fresh         re-download everything, ignoring a half finished run
 		USAGE
@@ -179,69 +184,129 @@ for e in "${ENTRIES[@]}"; do ALL_NAMES+=("$(region_name "$e")"); done
 
 mkdir -p "$WORK"
 
-# The part refreshed longest ago, so the rotation is even and the worst case
-# staleness is the number of regions times the interval, rather than whatever
-# the dice say. Prints "name<tab>mtime", or nothing when no part exists yet
-oldest_region() {
-	local name part mtime best_name="" best_time=""
+# The parts by age, least recently refreshed first, so the rotation is even and
+# the worst case staleness is the number of regions divided by how many a run
+# takes, rather than whatever the dice say. One "name<tab>mtime" line each, and
+# nothing at all when no part exists yet.
+#
+# Sorted rather than a single minimum because a run may ask for several: the
+# nightly schedule takes the two oldest beside the countries it always
+# refreshes, and two runs a night would be two full imports for it
+oldest_regions() {
+	local name part
 	for name in "${ALL_NAMES[@]}"; do
 		part="${WORK}/${name}.osm.pbf"
 		[[ -s $part ]] || continue
-		mtime=$(stat -c %Y "$part")
-		if [[ -z $best_time || $mtime -lt $best_time ]]; then
-			best_time=$mtime
-			best_name=$name
-		fi
+		printf '%s\t%s\n' "$(stat -c %Y "$part")" "$name"
+	done | sort -n | while IFS=$'\t' read -r mtime name; do
+		printf '%s\t%s\n' "$name" "$mtime"
 	done
-	[[ -n $best_name ]] && printf '%s\t%s' "$best_name" "$best_time"
-	return 0
 }
 
 # Work out which regions this run fetches again. Missing parts are added later,
 # per region, so this set is only about the ones already on disk.
 #
-# "all" is every region. Anything else is a comma separated list, in which
-# "oldest" and "random" may stand in for a name. That is what lets one run
-# refresh Finland *and* whatever has waited longest, and it matters more than it
-# looks: Overpass cannot update part of a database, so every run reimports all
-# 87 parts whichever ones it downloaded. Two runs in a day is two full imports
-# for no more data than one run asking for both regions.
+# "all" is every region. Anything else is a comma separated list of names, in
+# which "oldest" and "random" stand in for one region each and "oldest:N" and
+# "random:N" for N of them. That is what lets one run refresh the four countries
+# worth keeping current *and* the two that have waited longest, and it matters
+# more than it looks: Overpass cannot update part of a database, so every run
+# reimports all 87 parts whichever ones it downloaded. Six runs in a night is
+# six full imports for no more data than one run asking for six regions.
 REFRESH_SET=()
 if [[ $REFRESH == all ]]; then
 	REFRESH_SET=("${ALL_NAMES[@]}")
 else
 	IFS=',' read -r -a REFRESH_TOKENS <<<"$REFRESH"
+
+	# Named regions first, picked ones second, whatever order they were written
+	# in. A name is a decision already made, so "oldest" and "random" choose
+	# around it rather than over it: on a night when Finland happens to be the
+	# oldest part, finland,oldest:2 would otherwise ask for Finland twice and
+	# refresh two regions where three were meant
 	for token in "${REFRESH_TOKENS[@]}"; do
-		case "$token" in
-		random)
+		case "${token%%:*}" in
+		random | oldest) continue ;;
+		esac
+		if [[ " ${ALL_NAMES[*]} " != *" $token "* ]]; then
+			echo "build-region-extract: no region called $token in $REGION_LIST" >&2
+			echo "build-region-extract: known regions: ${ALL_NAMES[*]}" >&2
+			exit 1
+		fi
+		if [[ " ${REFRESH_SET[*]:-} " != *" $token "* ]]; then
+			REFRESH_SET+=("$token")
+		fi
+	done
+
+	# Then the ones this run chooses for itself. "oldest" and "random" take an
+	# optional count — oldest:2 is the two that have waited longest — because
+	# Overpass reimports every part whichever ones were downloaded, so asking
+	# for two regions in one run costs one extra download and no extra import,
+	# where two runs would be two imports
+	for token in "${REFRESH_TOKENS[@]}"; do
+		KIND=${token%%:*}
+		case "$KIND" in
+		random | oldest) ;;
+		*) continue ;;
+		esac
+
+		COUNT=1
+		if [[ $token == *:* ]]; then COUNT=${token#*:}; fi
+		if [[ ! $COUNT =~ ^[1-9][0-9]*$ ]]; then
+			echo "build-region-extract: $token needs a count of one or more, as in ${KIND}:2" >&2
+			exit 1
+		fi
+
+		if [[ $KIND == random ]]; then
 			# Over 87 regions this is roughly an even rotation, but only
 			# roughly: random leaves some regions waiting a good deal longer.
-			# "oldest" is the same idea with a bound on the wait
-			PICK="${ALL_NAMES[RANDOM % ${#ALL_NAMES[@]}]}"
-			log "picked $PICK at random out of ${#ALL_NAMES[@]}"
-			REFRESH_SET+=("$PICK")
-			;;
-		oldest)
-			FOUND=$(oldest_region)
-			if [[ -n $FOUND ]]; then
-				PICK=${FOUND%%$'\t'*}
-				WHEN=${FOUND##*$'\t'}
-				log "$PICK is the least recently refreshed, last done $(date -d "@$WHEN" '+%F %T')"
+			# "oldest" is the same idea with a bound on the wait.
+			#
+			# Drawn without replacement, out of what is not already spoken for,
+			# so random:3 is three different regions rather than three throws
+			# that may land twice on the same one
+			CANDIDATES=()
+			for NAME in "${ALL_NAMES[@]}"; do
+				if [[ " ${REFRESH_SET[*]:-} " != *" $NAME "* ]]; then
+					CANDIDATES+=("$NAME")
+				fi
+			done
+			while [[ $COUNT -gt 0 && ${#CANDIDATES[@]} -gt 0 ]]; do
+				IDX=$((RANDOM % ${#CANDIDATES[@]}))
+				PICK=${CANDIDATES[IDX]}
+				CANDIDATES=("${CANDIDATES[@]:0:IDX}" "${CANDIDATES[@]:IDX+1}")
+				log "picked $PICK at random out of ${#ALL_NAMES[@]}"
 				REFRESH_SET+=("$PICK")
-			else
-				# Nothing on disk yet, so everything is about to be fetched anyway
-				log "no parts yet, so this is a first build rather than a refresh"
-			fi
-			;;
-		*)
-			if [[ " ${ALL_NAMES[*]} " != *" $token "* ]]; then
-				echo "build-region-extract: no region called $token in $REGION_LIST" >&2
-				echo "build-region-extract: known regions: ${ALL_NAMES[*]}" >&2
-				exit 1
-			fi
-			REFRESH_SET+=("$token")
-			;;
-		esac
+				COUNT=$((COUNT - 1))
+			done
+			continue
+		fi
+
+		mapfile -t CANDIDATES < <(oldest_regions)
+		if [[ ${#CANDIDATES[@]} -eq 0 ]]; then
+			# Nothing on disk yet, so everything is about to be fetched anyway
+			log "no parts yet, so this is a first build rather than a refresh"
+			continue
+		fi
+		PICKED=0
+		for CANDIDATE in "${CANDIDATES[@]}"; do
+			if [[ $PICKED -ge $COUNT ]]; then break; fi
+			PICK=${CANDIDATE%%$'\t'*}
+			WHEN=${CANDIDATE##*$'\t'}
+			# Already named, or already picked by an earlier token. It is being
+			# refreshed tonight either way, so move on to the next oldest
+			# rather than spending one of the count on it
+			if [[ " ${REFRESH_SET[*]:-} " == *" $PICK "* ]]; then continue; fi
+			log "$PICK is among the least recently refreshed, last done $(date -d "@$WHEN" '+%F %T')"
+			REFRESH_SET+=("$PICK")
+			PICKED=$((PICKED + 1))
+		done
+		if [[ $PICKED -lt $COUNT ]]; then
+			# Fewer parts on disk than the count asked for, which on a list of
+			# 87 means a first build still filling in. The missing ones are
+			# fetched anyway, so this is worth saying and not worth failing on
+			log "wanted $COUNT oldest, found $PICKED not already being refreshed"
+		fi
 	done
 fi
 

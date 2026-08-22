@@ -8,7 +8,7 @@
 #
 # That last one builds the database. It is also the first thing to run on a new
 # machine, because nothing else here ever will: see "First start" below. Once
-# there is a database, ofelia runs the same command every Sunday on its own, so
+# there is a database, ofelia runs the same command every night on its own, so
 # nothing goes in the host's crontab and a machine that has this file has the
 # whole schedule with it.
 #
@@ -42,7 +42,7 @@
 # Note that adding the world did not move that number: the largest region
 # outside Europe is Japan at 2.3 GB. What it does move is the total download,
 # from about 35 GB to about 54 GB, and the time a full rebuild takes. Add swap
-# if the box does not have the memory — this is a weekly batch job, so slower
+# if the box does not have the memory — this is a nightly batch job, so slower
 # is fine and killed is not. The reasoning, and the measurements behind it, are
 # under "Covering a continent" in README.md.
 #
@@ -142,7 +142,7 @@ services:
 
   # The data build, in a container of its own so that none of it is in the
   # serving container's startup path. It does nothing at all until update-poi-db
-  # is run in it, by ofelia on Sunday or by hand.
+  # is run in it, by ofelia overnight or by hand.
   importer:
     image: ghcr.io/vaahtokarkki/poifinder/overpass:latest
     container_name: wayside-importer
@@ -178,41 +178,34 @@ services:
       # one is running
       com.centurylinklabs.watchtower.enable: "true"
 
-      # The reimports, read by ofelia from this container rather than written
-      # in the host's crontab. Five cron fields, minutes first. ofelia also
-      # takes six with seconds in front, so count them before editing: the same
+      # The reimport, read by ofelia from this container rather than written in
+      # the host's crontab. Five cron fields, minutes first. ofelia also takes
+      # six with seconds in front, so count them before editing: the same
       # string read in the other dialect shifts every unit by one place.
       #
-      # What runs: Finland every night, and on odd numbered days the least
-      # recently refreshed of the other 86 as well. Finland is the map most
-      # likely to be looked at; everywhere else comes round on a rotation of
-      # roughly six months.
+      # What runs, every night at 02:30: Finland, Norway, Sweden and Germany,
+      # which are the maps most likely to be looked at, plus the two least
+      # recently refreshed of the other 83. That gives the four a day old map
+      # and everywhere else a rotation of about six weeks, against the six
+      # months a single oldest every other night came to.
       #
-      # Two jobs on days that cannot overlap rather than two jobs that race.
-      # 1-31/2 is the odd days and 2-30/2 the even ones, so exactly one fires
-      # each night, both at 02:30. A Finland job every night beside an oldest
-      # job every other night reads more simply and does not work: a full
-      # rebuild is measured in hours, so the oldest run would still be going
-      # when the Finland run fired, update-poi-db's lock would skip the second,
-      # and Finland would end up refreshed every *other* day — the one thing
-      # this schedule exists to prevent.
+      # One job rather than several, and one invocation rather than several,
+      # because what none of this makes cheaper is the import. Overpass cannot
+      # update part of a database, so a run rebuilds and reimports all 87 parts
+      # whichever ones it downloaded; only the download shrinks, from a
+      # continent to six countries. Six regions in one invocation therefore
+      # cost five extra downloads and no extra import, where six runs would be
+      # six imports — and could not even be six, since a rebuild is measured in
+      # hours and update-poi-db's lock would skip whichever fired second.
       #
-      # Asking for both regions in one invocation is also the cheaper half of
-      # the trade, because what this does not make cheaper is the import.
-      # Overpass cannot update part of a database, so a run rebuilds and
-      # reimports all 87 parts whichever ones it downloaded; only the download
-      # shrinks, from a continent to one country. Naming two regions therefore
-      # costs one extra download and no extra import, where two separate runs
-      # would cost two imports
+      # oldest picks around the four named ones rather than over them, so a
+      # night where Germany happens to be the oldest part still refreshes six
+      # regions rather than five. See bin/build-region-extract
       ofelia.enabled: "true"
 
-      ofelia.job-exec.refresh-finland.schedule: "30 2 2-30/2 * *"
-      ofelia.job-exec.refresh-finland.command: "update-poi-db --refresh=finland"
-      ofelia.job-exec.refresh-finland.no-overlap: "true"
-
-      ofelia.job-exec.refresh-rotating.schedule: "30 2 1-31/2 * *"
-      ofelia.job-exec.refresh-rotating.command: "update-poi-db --refresh=finland,oldest"
-      ofelia.job-exec.refresh-rotating.no-overlap: "true"
+      ofelia.job-exec.refresh-nightly.schedule: "30 2 * * *"
+      ofelia.job-exec.refresh-nightly.command: "update-poi-db --refresh=finland,norway,sweden,germany,oldest:2"
+      ofelia.job-exec.refresh-nightly.no-overlap: "true"
 
     environment:
       # Which regions the database covers, and how it is assembled. Everywhere
@@ -268,7 +261,7 @@ services:
 
     # One core, so that a download and filter measured in hours cannot take the
     # API down with it. osmium and bzip2 both scale with cores and this makes
-    # them markedly slower, which is the trade: the import is a weekly batch
+    # them markedly slower, which is the trade: the import is a nightly batch
     # job and the API is what people are waiting on
     cpus: 1.0
 

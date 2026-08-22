@@ -191,14 +191,35 @@ if it still will not come the build goes on to the next region:
   that does not exist is always fetched.
 
 Either way the run says which regions it left behind before it merges, and the
-database it reports is the oldest part it actually used. Only a run where every
-region failed is fatal, and then the existing extract is left where it is
-rather than replaced with an empty map.
+database it reports is dated by the oldest part it actually used.
 
 This matters more than it sounds. The nightly build is eighty-seven downloads
 off a free server, so the chance that all of them survive is not the thing to
 design around: one reset connection at region 85 used to throw away the
 eighty-four already filtered and leave the database untouched for another day.
+
+### When it is the list that is wrong
+
+A bad night fixes itself; a bad URL does not. A region that answers `404`, or
+answers `200` with Geofabrik's web page because it was renamed or withdrawn,
+will be missing from the map tonight and every night until somebody edits the
+list. So that one is not allowed to pass quietly:
+
+| | build the extract | exit status |
+|---|---|---|
+| download failed, will retry itself | yes, without that region | `0` |
+| URL did not answer with an extract | yes, without that region | `2` |
+| every region failed | no, the old extract is left alone | `1` |
+
+`update-poi-db` knows about `2`: it imports what was built, swaps the database
+in, and *then* exits `2`. Both halves matter. Holding the import back would let
+one renamed country freeze the whole database until a human noticed, which is
+the failure this section exists to describe; exiting `0` would mean nobody ever
+notices at all.
+
+Note that Geofabrik does not 404 an unknown region — it answers `200` with its
+download page — so in practice it is the content check that catches this, not
+the status code.
 
 ### Refreshing one country at a time
 

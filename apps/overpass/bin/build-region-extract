@@ -52,6 +52,24 @@
 # tonight beats none, which is what one reset connection at region 85 used to
 # cost.
 #
+# Two kinds of failure, and they are not the same thing:
+#
+#   The night was bad. A reset connection, a timeout, a mirror out of breath.
+#   It fixes itself: the next run fetches the region because its part is
+#   missing or oldest. Reported, and the run still succeeds.
+#
+#   The region list is wrong. A URL that answers 404, or answers 200 with
+#   Geofabrik's web page because the region was renamed or withdrawn. Nothing
+#   about that improves overnight, and a country silently absent from the map
+#   every night until somebody notices is the thing the old exit-on-failure was
+#   really protecting against. The extract is still built out of the regions
+#   that did answer, and then this exits EXIT_REGION_LIST so that the run goes
+#   red and somebody comes and fixes the list.
+#
+# So the database keeps being rebuilt either way, and the exit status still
+# says when a human is needed. update-poi-db knows about the second code and
+# imports what was built before failing on it.
+#
 # The regions must not overlap, or their shared objects are imported twice.
 # See the header of europe-regions.txt or world-regions.txt.
 #
@@ -87,6 +105,12 @@ REUSE_HOURS=${WAYSIDE_REGION_REUSE_HOURS:-24}
 REGION_PAUSE=${WAYSIDE_REGION_PAUSE:-5}
 RETRY_BACKOFF=${WAYSIDE_RETRY_BACKOFF:-60}
 DOWNLOAD_TRIES=${WAYSIDE_DOWNLOAD_TRIES:-3}
+
+# What this exits with when the extract was built but a URL in the region list
+# is wrong. Its own code rather than 1, because the two ask for different
+# things from the caller: 1 is "there is no extract", and this is "there is an
+# extract, import it, and then go and look at the list". See download_region
+EXIT_REGION_LIST=2
 
 for arg in "$@"; do
 	case "$arg" in
@@ -156,24 +180,28 @@ looks_like_osm() {
 	return 1
 }
 
-# One region's extract onto the disk, or a non-zero return when this run could
-# not get it. Everything transient is retried here rather than being fatal.
+# One region's extract onto the disk. Returns 0 with the file in place, 1 when
+# tonight did not work out, and EXIT_REGION_LIST when the URL is wrong rather
+# than unlucky — see the two kinds of failure at the top of this file.
 #
-# curl's own --retry covers the timeouts and the 5xx range and very little
-# else. The connection reset that kills a 400 MB download two thirds of the way
-# through is CURLE_RECV_ERROR, which it will not retry at all without
-# --retry-all-errors: without that flag the caller saw one curl error, on one
-# region out of eighty-seven, and abandoned the whole night's rebuild.
+# Everything is retried here rather than being fatal, and between attempts the
+# partial file is kept and the transfer resumed. On a region this size that is
+# the difference between losing a minute and losing twenty: curl's own --retry
+# starts the body again from zero, where --continue-at picks up the bytes
+# already on the disk. Resuming only while it is getting somewhere, though — an
+# attempt that adds nothing is as likely to be a server that will not serve
+# ranges as a second bad connection, and the way out of that one is to start
+# the file over.
 #
-# Between attempts the partial file is kept and the transfer resumed, which on
-# a region this size is the difference between losing a minute and losing
-# twenty. Only while that is getting somewhere, though: an attempt that adds no
-# bytes is as likely to be a server that will not serve ranges as a second bad
-# connection, and the way out of that one is to start the file again.
+# curl's --retry is still worth having in front of that for the cheap cases it
+# does cover, which is the timeouts, 429 and the 5xx range. What it deliberately
+# does not get is --retry-all-errors: that would have it retry a 404 twice
+# before we can see it is a 404, and eighty-seven of those is a long way to
+# walk to reach a conclusion the first response already gave us.
 download_region() {
 	local label=$1 name=$2 url=$3 raw=$4
-	local attempt=0 backoff before after
-	local resume=()
+	local attempt=0 backoff before after status code
+	local resume=() bad_content=false
 
 	while true; do
 		attempt=$((attempt + 1))
@@ -188,25 +216,43 @@ download_region() {
 		fi
 
 		# --no-progress-meter rather than -s: fifty progress bars is not what
-		# the container log is for, but a curl error still is
-		if curl -fL --no-progress-meter \
-			--retry 2 --retry-delay 15 --retry-all-errors --retry-connrefused \
-			"${resume[@]}" -o "$raw" "$url"; then
+		# the container log is for, but a curl error still is. The status code
+		# comes back on stdout because it is what tells a region that has moved
+		# from a mirror having a bad minute
+		status=0
+		code=$(curl -fL --no-progress-meter --retry 2 --retry-delay 15 --retry-connrefused \
+			--write-out '%{http_code}' "${resume[@]}" -o "$raw" "$url") || status=$?
 
+		if [[ $status -eq 0 ]]; then
 			# A URL Geofabrik does not recognise is answered with its web page
 			# and a 200 rather than a 404, so curl being happy is not the end
 			# of the question. Better to say so here than to have osmium die on
-			# "Unknown top-level element: html" a filter pass later
+			# "Unknown top-level element: html" a filter pass later.
+			#
+			# Still retried: a mirror serving an error page for a minute looks
+			# exactly like this. It is only on the last attempt that it becomes
+			# a statement about the region list
 			looks_like_osm "$raw" && return 0
-
+			bad_content=true
 			log "$label $name: what came back is not an OSM extract. It began: $(head -c 120 "$raw" | tr -d '\0' | tr '\n' ' ')"
 			rm -f "$raw"
+		elif [[ $code == 4* ]]; then
+			# The server was reached and said no. Waiting does not turn a 404
+			# into a country, so this one does not get the retries
+			log "$label $name: the server answered $code, so the URL in the region list is wrong"
+			rm -f "$raw"
+			return "$EXIT_REGION_LIST"
 		else
+			bad_content=false
 			log "$label $name: the download failed"
 		fi
 
 		if [[ $attempt -ge $DOWNLOAD_TRIES ]]; then
 			rm -f "$raw"
+			if [[ $bad_content == true ]]; then
+				log "$label $name: $DOWNLOAD_TRIES answers and none of them an extract, so the URL in the region list is wrong"
+				return "$EXIT_REGION_LIST"
+			fi
 			return 1
 		fi
 
@@ -221,8 +267,6 @@ download_region() {
 			rm -f "$raw"
 		fi
 
-		# Could be a bad URL, could be the server having a moment. One is worth
-		# waiting out and the other is not, and they look alike from here
 		backoff=$((RETRY_BACKOFF * attempt))
 		log "$label $name: retrying in ${backoff}s"
 		sleep "$backoff"
@@ -407,9 +451,13 @@ NAMES=()
 # What this run could not download: the ones falling back on a part from an
 # earlier run, and the ones with no part to fall back on. Both are reported at
 # the end, because a build quietly short of a country is the failure worth
-# being loud about now that a failed download is no longer fatal
+# being loud about now that a failed download is no longer fatal.
+#
+# BAD_URLS is the subset whose URL is the problem rather than the night, and it
+# is the one that decides the exit status
 STALE=()
 MISSING=()
+BAD_URLS=()
 
 NEWEST=""
 INDEX=0
@@ -446,31 +494,42 @@ for ENTRY in "${ENTRIES[@]}"; do
 
 	if [[ $FETCH == false ]]; then
 		log "[$INDEX/${#ENTRIES[@]}] $NAME: keeping $(numfmt --to=iec "$(stat -c %s "$PART")") from $(date -r "$PART" '+%F')"
-	elif download_region "[$INDEX/${#ENTRIES[@]}]" "$NAME" "$URL" "$RAW"; then
-		log "[$INDEX/${#ENTRIES[@]}] $NAME: filtering"
-		filter-osm-extract "$RAW" "$PART"
-		rm -f "$RAW"
-
-		# Fifty downloads back to back is the kind of traffic that gets a
-		# client throttled in the first place, and a few seconds each is
-		# nothing against an import measured in hours
-		if [[ $INDEX -lt ${#ENTRIES[@]} ]]; then
-			sleep "$REGION_PAUSE"
-		fi
-	elif [[ -s $PART ]]; then
-		# Last run's copy of the region, so the map has the country a few days
-		# out of date rather than not at all. Its mtime is deliberately left
-		# alone: that keeps it near the front of the oldest queue, so the next
-		# --refresh=oldest run comes back to it on its own
-		STALE+=("$NAME")
-		log "[$INDEX/${#ENTRIES[@]}] $NAME: could not be downloaded, keeping $(numfmt --to=iec "$(stat -c %s "$PART")") from $(date -r "$PART" '+%F')"
 	else
-		# Nothing to fall back on, so this build has a hole where the region
-		# is. The next run fetches it whatever --refresh says, because a part
-		# that does not exist is always fetched
-		MISSING+=("$NAME")
-		log "[$INDEX/${#ENTRIES[@]}] $NAME: could not be downloaded and has no part to fall back on, leaving it out of this build"
-		continue
+		# Captured rather than tested in place, because there are three
+		# outcomes and an if/elif chain would have lost the difference between
+		# the two that are not success
+		STATUS=0
+		download_region "[$INDEX/${#ENTRIES[@]}]" "$NAME" "$URL" "$RAW" || STATUS=$?
+		if [[ $STATUS -eq $EXIT_REGION_LIST ]]; then
+			BAD_URLS+=("$NAME")
+		fi
+
+		if [[ $STATUS -eq 0 ]]; then
+			log "[$INDEX/${#ENTRIES[@]}] $NAME: filtering"
+			filter-osm-extract "$RAW" "$PART"
+			rm -f "$RAW"
+
+			# Fifty downloads back to back is the kind of traffic that gets a
+			# client throttled in the first place, and a few seconds each is
+			# nothing against an import measured in hours
+			if [[ $INDEX -lt ${#ENTRIES[@]} ]]; then
+				sleep "$REGION_PAUSE"
+			fi
+		elif [[ -s $PART ]]; then
+			# Last run's copy of the region, so the map has the country a few
+			# days out of date rather than not at all. Its mtime is
+			# deliberately left alone: that keeps it near the front of the
+			# oldest queue, so the next --refresh=oldest run comes back to it
+			STALE+=("$NAME")
+			log "[$INDEX/${#ENTRIES[@]}] $NAME: could not be downloaded, keeping $(numfmt --to=iec "$(stat -c %s "$PART")") from $(date -r "$PART" '+%F')"
+		else
+			# Nothing to fall back on, so this build has a hole where the
+			# region is. The next run fetches it whatever --refresh says,
+			# because a part that does not exist is always fetched
+			MISSING+=("$NAME")
+			log "[$INDEX/${#ENTRIES[@]}] $NAME: could not be downloaded and has no part to fall back on, leaving it out of this build"
+			continue
+		fi
 	fi
 
 	PARTS+=("$PART")
@@ -491,7 +550,7 @@ if [[ ${#STALE[@]} -gt 0 ]]; then
 fi
 if [[ ${#MISSING[@]} -gt 0 ]]; then
 	log "${#MISSING[@]} region(s) are not in this build at all: ${MISSING[*]}"
-	log "the next run fetches them whatever --refresh says. If one was renamed or withdrawn, fix $REGION_LIST"
+	log "the next run fetches them whatever --refresh says, because a part that does not exist is always fetched"
 fi
 
 # Every region failed, which is a network or a region list rather than a bad
@@ -534,3 +593,14 @@ if [[ -n ${OLDEST:-} ]]; then
 	log "regions span $OLDEST (oldest, and what the database reports) to ${NEWEST} (newest)"
 fi
 log "parts kept in $WORK, $(du -sh "$WORK" 2>/dev/null | cut -f1) across ${#PARTS[@]} regions"
+
+# Last, so that the extract is finished and on the disk before this says so:
+# the caller is meant to import what was built and then fail, because the
+# regions that did answer are worth having and the one that did not is worth
+# somebody's attention. Nothing about a renamed region improves overnight
+if [[ ${#BAD_URLS[@]} -gt 0 ]]; then
+	echo "build-region-extract: ${#BAD_URLS[@]} region(s) did not answer with an extract: ${BAD_URLS[*]}" >&2
+	echo "build-region-extract: $TARGET was built from the ${#PARTS[@]} regions that did" >&2
+	echo "build-region-extract: fix the URL in $REGION_LIST. A renamed or withdrawn region never comes back on its own" >&2
+	exit "$EXIT_REGION_LIST"
+fi

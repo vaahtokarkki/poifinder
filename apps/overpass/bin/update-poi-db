@@ -43,6 +43,14 @@ EXTRACT="${WORK_DIR}/planet.osm.bz2"
 PARTS_DIR=${WAYSIDE_PARTS_DIR:-/db/regions}
 LOCK_FILE=/db/update-poi-db.lock
 
+# What build-region-extract exits with when it built an extract but a URL in
+# the region list is wrong: a country renamed or withdrawn upstream, which no
+# amount of running this again will fix. The extract is worth importing and the
+# list is worth a person's attention, so this run does both — the import, and
+# then a failing exit at the very end. See the top of bin/build-region-extract
+EXIT_REGION_LIST=2
+REGION_LIST_BROKEN=false
+
 PLANET_URL=${OVERPASS_PLANET_URL:-}
 
 # A whole continent in one file is what gets a small server OOM killed, hours
@@ -156,8 +164,20 @@ elif [[ -n $REGION_LIST ]]; then
 	# .timestamp beside the result so the import below does not have to
 	# decompress the whole thing again to date it
 	log "building the extract from $REGION_LIST, refreshing: $REFRESH"
+	BUILD_STATUS=0
 	build-region-extract --list="$REGION_LIST" --refresh="$REFRESH" \
-		--parts-dir="$PARTS_DIR" "$EXTRACT"
+		--parts-dir="$PARTS_DIR" "$EXTRACT" || BUILD_STATUS=$?
+
+	# A broken region list is not a reason to skip the import. The extract is
+	# built out of every region that did answer, and holding it back would mean
+	# one renamed country freezing the whole database until somebody noticed —
+	# which is what used to happen. Remembered instead, and failed on at the end
+	if [[ $BUILD_STATUS -eq $EXIT_REGION_LIST ]]; then
+		REGION_LIST_BROKEN=true
+		log "the region list has a bad URL in it. Importing what was built, and failing at the end"
+	elif [[ $BUILD_STATUS -ne 0 ]]; then
+		exit "$BUILD_STATUS"
+	fi
 else
 	log "downloading $PLANET_URL"
 	curl -fL --retry 3 --retry-delay 30 -o "$EXTRACT" "$PLANET_URL"
@@ -293,4 +313,15 @@ if [[ $SERVER_RELOADED == false ]]; then
 		echo "update-poi-db: the database is in place. A server waiting for one starts"
 		echo "update-poi-db: serving it within the minute, and there is nothing else to do"
 	fi
+fi
+
+# Everything above worked and the database is live. This is the last word
+# because it is about the next run rather than this one: a region list with a
+# dead URL in it builds a map one country short, tonight and every night, and
+# nothing but somebody editing the list changes that
+if [[ $REGION_LIST_BROKEN == true ]]; then
+	echo "update-poi-db: the database was rebuilt and is being served, but a URL in" >&2
+	echo "update-poi-db: $REGION_LIST did not answer with an extract and that region is" >&2
+	echo "update-poi-db: missing from the map. See the build log above and fix the list" >&2
+	exit "$EXIT_REGION_LIST"
 fi

@@ -159,13 +159,40 @@ jobs:
               echo "the merged extract should be dated by its oldest region"; exit 1; }
 
             # The region list is what says which countries exist, so a URL that
-            # answers with a web page has to stop the run rather than be filtered
+            # answers with a web page has to fail the run: nothing about a
+            # renamed or withdrawn region improves overnight, and a country
+            # quietly absent from the map every night is the whole hazard.
+            #
+            # It still has to build the extract first. One bad URL freezing the
+            # database until a human notices is what the old exit-on-failure
+            # actually cost, so the contract is "import what answered, then go
+            # red": exit 2, and a target built out of the regions that did
             printf "file:///tmp/r/alpha.osm.pbf\nfile:///tmp/r/notthere.osm.pbf\n" > /tmp/r/bad.txt
             printf "%s" "<!DOCTYPE html><html><body>404</body></html>" > /tmp/r/notthere.osm.pbf
-            if WAYSIDE_REGION_PAUSE=0 WAYSIDE_RETRY_BACKOFF=0 WAYSIDE_DOWNLOAD_TRIES=1 \
-                 build-region-extract --list=/tmp/r/bad.txt /tmp/w/bad.osm.bz2 2>/dev/null; then
-              echo "a region that returned HTML should have failed the run"; exit 1
-            fi
+            bad=0
+            WAYSIDE_REGION_PAUSE=0 WAYSIDE_RETRY_BACKOFF=0 WAYSIDE_DOWNLOAD_TRIES=1 \
+              build-region-extract --list=/tmp/r/bad.txt --parts-dir=/tmp/badparts \
+              /tmp/w/bad.osm.bz2 2>/dev/null || bad=$?
+            test "$bad" = "2" || {
+              echo "a region that returned HTML should have exited 2, got $bad"; exit 1; }
+            test -s /tmp/w/bad.osm.bz2 || {
+              echo "the extract should still have been built from the regions that answered"; exit 1; }
+            badnodes=$(osmium fileinfo -e -g data.count.nodes /tmp/w/bad.osm.bz2)
+            test "$badnodes" = "4" || { echo "expected alpha's 4 nodes, got $badnodes"; exit 1; }
+
+            # And the other half of the same contract: a region that simply
+            # could not be fetched is tonight's problem, not the list's. The
+            # run leaves it out, says so, and succeeds, because the next run
+            # fetches it again for having no part. Before this, one reset
+            # connection at region 85 of 87 threw away the whole rebuild
+            printf "file:///tmp/r/alpha.osm.pbf\nfile:///tmp/r/gone.osm.pbf\n" > /tmp/r/flaky.txt
+            rm -f /tmp/r/gone.osm.pbf
+            WAYSIDE_REGION_PAUSE=0 WAYSIDE_RETRY_BACKOFF=0 WAYSIDE_DOWNLOAD_TRIES=2 \
+              build-region-extract --list=/tmp/r/flaky.txt --parts-dir=/tmp/flakyparts \
+              /tmp/w/flaky.osm.bz2 2>/dev/null || {
+                echo "a region that could not be fetched should not fail the run"; exit 1; }
+            flakynodes=$(osmium fileinfo -e -g data.count.nodes /tmp/w/flaky.osm.bz2)
+            test "$flakynodes" = "4" || { echo "expected alpha's 4 nodes, got $flakynodes"; exit 1; }
 
             # The wait hook stands between the entrypoint and the server, so
             # the ways it must NOT block are worth pinning down: it holds only

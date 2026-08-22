@@ -15,6 +15,7 @@ import ZoomInHint from "./components/ZoomInHint";
 import { useUserPosition } from "./hooks/index";
 import { CATEGORIES } from "./constants";
 import { fetchSuggestions } from "./api/geocode";
+import { fetchIpLocation } from "./api/ipLocation";
 import { parseCitySlugFromPath, parseCategorySlugFromPath, slugToTitle } from "./utils";
 import { filterMarkersInBbox } from "./geo";
 import { findCity } from "./seo/cities";
@@ -69,6 +70,31 @@ const bboxContains = (
   inner[1] >= outer[1] &&
   inner[2] <= outer[2] &&
   inner[3] <= outer[3];
+
+/**
+ * The zoom an IP location is opened at. The lookup lands on a city rather than
+ * a street, so the view is kept wide enough that the user's own surroundings
+ * are somewhere on the screen, and still inside {@link MIN_POI_ZOOM}
+ */
+const IP_LOCATION_ZOOM = 13;
+
+/**
+ * Whether the visit brings a location of its own: a city or coordinates in the
+ * URL, the view the last visit was left in, or the GPS fix of an earlier
+ * session. With none of these there is nothing to center the map on, and the
+ * IP lookup is a better first guess than a hardcoded point on the map
+ */
+const hasKnownLocation = (): boolean => {
+  const params = new URLSearchParams(window.location.search);
+  const lat = params.get("lat");
+  const lon = params.get("lon");
+  return Boolean(
+    parseCitySlugFromPath() ||
+      (lat && lon && !isNaN(Number(lat)) && !isNaN(Number(lon))) ||
+      loadMapLocation() ||
+      loadGPSLocation()
+  );
+};
 
 const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void }) => {
   useMapEvent("moveend", (e) => {
@@ -130,6 +156,9 @@ const App = () => {
   const programmaticMoveAtRef = useRef(0);
   const initialViewAppliedRef = useRef(false);
   const gpsLockCenteringDoneRef = useRef(false);
+  // The IP lookup of a visit that has no location of its own. It is started
+  // before the map exists, so the first view is centered as early as it can be
+  const ipLocationRef = useRef<Promise<[number, number] | null> | null>(null);
   // Bounding box the markers have been loaded or requested for
   const requestedBboxRef = useRef<[number, number, number, number] | null>(null);
   // A pending auto load of the view the map was left in
@@ -368,6 +397,14 @@ const App = () => {
     };
   }, [map]);
 
+  // A visit with nothing to restore starts its IP lookup right away, before
+  // the map is even mounted: the initial load below waits for the answer, and
+  // every millisecond of it is time the map spends on the wrong side of Europe
+  useEffect(() => {
+    if (hasKnownLocation()) return;
+    ipLocationRef.current = fetchIpLocation();
+  }, []);
+
   // On mount, center the map on the lat/lon query params, or on the last known
   // position (only if no city in path, which is resolved and centered below)
   useEffect(() => {
@@ -398,7 +435,9 @@ const App = () => {
           setMapView([savedLocation.lat, savedLocation.lng], savedLocation.zoom || 15);
         } else {
           // Nothing saved yet: the GPS position of an earlier session is the
-          // best guess to hold the map until this session gets its own fix
+          // best guess to hold the map until this session gets its own fix.
+          // With not even that, the IP lookup started above centers the map
+          // once it answers
           const gpsLocation = loadGPSLocation();
           if (gpsLocation) {
             setMapView([gpsLocation.lat, gpsLocation.lng]);
@@ -644,21 +683,37 @@ const App = () => {
     if (!map || !appInitialized) return;
     setAppInitialized(false); // <-- prevent further runs
 
-    const bbox = getBbox();
-    const cache = loadPois();
+    const initialLoad = async () => {
+      // A visit with no location of its own centers on the IP lookup, and the
+      // load waits for it: querying first would ask for the default view, an
+      // area the user has never asked to see. The lookup gives up quickly, and
+      // a GPS fix or a move by the user in the meantime takes the map instead
+      const ipLocationPending = ipLocationRef.current;
+      if (ipLocationPending) {
+        ipLocationRef.current = null;
+        const ipLocation = await ipLocationPending;
+        if (ipLocation && !userMovedMapRef.current && !gpsLockCenteringDoneRef.current) {
+          setMapView(ipLocation, IP_LOCATION_ZOOM);
+        }
+      }
 
-    // Show cached markers right away, but only the ones of the active
-    // categories, so the map is never empty while a fetch is running
-    if (cache && bbox && poiCacheMatchesCategories(cache, category)) {
-      setMarkers(cache.markers);
-      setFilteredMarkers(filterMarkersInBbox(cache.markers, bbox));
-      requestedBboxRef.current = cache.bbox;
-    }
+      const bbox = getBbox();
+      const cache = loadPois();
 
-    // Only hit the network when the cache is stale or from another area
-    if (!cache || !isPoiCacheUpToDate(cache, category, map.getCenter())) {
-      fetchMarkers();
-    }
+      // Show cached markers right away, but only the ones of the active
+      // categories, so the map is never empty while a fetch is running
+      if (cache && bbox && poiCacheMatchesCategories(cache, category)) {
+        setMarkers(cache.markers);
+        setFilteredMarkers(filterMarkersInBbox(cache.markers, bbox));
+        requestedBboxRef.current = cache.bbox;
+      }
+
+      // Only hit the network when the cache is stale or from another area
+      if (!cache || !isPoiCacheUpToDate(cache, category, map.getCenter())) {
+        fetchMarkers();
+      }
+    };
+    initialLoad();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map, appInitialized]);
 

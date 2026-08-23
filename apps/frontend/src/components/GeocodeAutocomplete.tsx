@@ -5,7 +5,12 @@ import { fetchSuggestions, Suggestion } from "../api/geocode";
 
 type GeocodeAutoCompleteProps = {
   label?: string;
-  onSelect: (value: string, coords?: [number, number]) => void;
+  onSelect: (
+    value: string,
+    coords?: [number, number],
+    /** How big the place is, where the geocoder knows: see Suggestion */
+    extent?: [number, number, number, number]
+  ) => void;
   placeholder?: string;
   styles?: React.CSSProperties;
   onClear?: () => void;
@@ -83,7 +88,7 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
           onSelect(value);
         } else if (value && typeof value === "object" && "label" in value && "coords" in value) {
           setInputValue(value.label);
-          onSelect(value.label, value.coords);
+          onSelect(value.label, value.coords, value.extent);
         }
       }}
       inputValue={inputValue}

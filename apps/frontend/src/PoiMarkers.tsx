@@ -69,7 +69,7 @@ const AUTO_PAN_PADDING_TOP_LEFT = {
 
 /**
  * How close two points have to be, in pixels on the screen, before they are
- * shown as one group.
+ * shown as one group, once the map is close enough to be read as a street.
  *
  * Small on purpose. The usual reason to cluster is to thin out a crowded map,
  * and that is the opposite of what this app is for: a map of toilets that
@@ -78,6 +78,48 @@ const AUTO_PAN_PADDING_TOP_LEFT = {
  * everything a thumb can already tell apart alone.
  */
 const CLUSTER_RADIUS_PX = 14;
+
+/** The zoom from which that tight grouping applies: a street and its doorways */
+const TIGHT_CLUSTER_ZOOM = 17;
+
+/**
+ * How wide a group may get when the map is opened right out.
+ *
+ * A ceiling rather than a target. Past it the groups start swallowing places
+ * that are nowhere near each other, and the map stops being a map of anything.
+ */
+const MAX_CLUSTER_RADIUS_PX = 80;
+
+/** How fast the radius grows for each zoom level out. Measured by looking at it:
+ * 1.7 is the point where a city stops being a wall of icons and the groups
+ * still land where the places are */
+const CLUSTER_RADIUS_GROWTH = 1.7;
+
+/**
+ * How close two points have to be to be shown as one group, at this zoom.
+ *
+ * A single radius cannot serve both ends of the range. Fourteen pixels is
+ * right against a street, where the question is which of two overlapping icons
+ * a thumb will hit — and useless three zoom levels out, where a screen holding
+ * a whole city and four categories at once is a solid field of markers with no
+ * shape to it, and the points that matter are the ones you cannot see for the
+ * rest. That was the map with several categories on: not crowded, unreadable.
+ *
+ * So the radius follows the zoom. Every level out roughly doubles what one
+ * pixel covers on the ground, and the grouping widens with it until the cap:
+ * 14px at street level, 24 at 16, 40 at 15, 69 at 14, the cap from 13 out.
+ * Zooming in walks it back down, which is what makes a group an invitation
+ * rather than a wall — the points are one zoom away, and the count on the disc
+ * says how many are waiting.
+ */
+const clusterRadiusForZoom = (zoom: number): number => {
+  if (zoom >= TIGHT_CLUSTER_ZOOM) return CLUSTER_RADIUS_PX;
+  const stepsOut = TIGHT_CLUSTER_ZOOM - zoom;
+  return Math.min(
+    MAX_CLUSTER_RADIUS_PX,
+    Math.round(CLUSTER_RADIUS_PX * CLUSTER_RADIUS_GROWTH ** stepsOut)
+  );
+};
 
 type DynamicMarkersProps = {
   markers: OverpassMarkerData[]; // <-- Use OverpassMarkerData here
@@ -954,7 +996,20 @@ const RenderMarkerContents: React.FC<{
  * for were and nothing jumps when it fans out.
  */
 const createClusterIcon = (cluster: { getChildCount: () => number }) => {
-  const size = 30;
+  const count = cluster.getChildCount();
+  /**
+   * A wider group holds more, and says so before the number is read. The disc
+   * grows a little rather than in proportion: it is still a marker sitting
+   * among markers, and one that swelled with the count would take over the map
+   * the grouping exists to keep readable.
+   */
+  const size = count >= 1000 ? 38 : count >= 100 ? 34 : 30;
+  /**
+   * And the digits shrink to fit it. Four digits at the one-count size ran
+   * out past the edge of the circle, which is how a group of 1,214 recycling
+   * containers came out reading as "121"
+   */
+  const fontSize = count >= 1000 ? 34 : count >= 100 ? 42 : 52;
   return divIcon({
     /*
      * The count is drawn as SVG text rather than laid out as HTML. Centring a
@@ -967,8 +1022,10 @@ const createClusterIcon = (cluster: { getChildCount: () => number }) => {
      */
     html:
       `<svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true">` +
-      `<text x="50" y="50" text-anchor="middle" dominant-baseline="central">` +
-      `${cluster.getChildCount()}</text></svg>`,
+      // Inline rather than an attribute: .poi-cluster text states the size in
+      // CSS, and a presentation attribute loses to it
+      `<text x="50" y="50" text-anchor="middle" dominant-baseline="central" ` +
+      `style="font-size:${fontSize}px">${count}</text></svg>`,
     className: "poi-cluster",
     iconSize: [size, size],
     iconAnchor: [size / 2, size],
@@ -1040,7 +1097,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   return (
     <>
       <MarkerClusterGroup
-        maxClusterRadius={CLUSTER_RADIUS_PX}
+        maxClusterRadius={clusterRadiusForZoom}
         iconCreateFunction={createClusterIcon}
         // Points that are truly on top of each other cannot be separated by zooming,
         // so a click fans them out around the spot instead

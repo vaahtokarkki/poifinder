@@ -4,7 +4,12 @@ import IconButton from "@mui/material/IconButton";
 import GeocodeAutocomplete from "./GeocodeAutocomplete";
 
 type SearchBarProps = {
-  onSearch: (query: string, coords?: [number, number]) => void;
+  onSearch: (
+    query: string,
+    coords?: [number, number],
+    /** How big the place is, where the geocoder knows: see Suggestion */
+    extent?: [number, number, number, number]
+  ) => void;
   placeholder?: string;
   visible?: boolean;
   searchPosition?: [number, number] | null;
@@ -48,9 +53,9 @@ const SearchBar: React.FC<SearchBarProps> = ({
       }}
     >
       <GeocodeAutocomplete
-        onSelect={(selected, coords) => {
+        onSelect={(selected, coords, extent) => {
           setValue(selected);
-          onSearch(selected, coords);
+          onSearch(selected, coords, extent);
         }}
         placeholder={placeholder}
         autoFocus={autoFocus}

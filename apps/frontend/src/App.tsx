@@ -1,6 +1,6 @@
 import { buffer } from "@turf/turf";
 import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
-import { Map, latLngBounds } from 'leaflet';
+import { Map, latLngBounds, point as pixelPoint } from 'leaflet';
 import { useCallback, useEffect, useRef, useState } from "react";
 import { GeoJSON, MapContainer, TileLayer, useMapEvent } from "react-leaflet";
 import CategorySelect from "./components/CategorySelect";
@@ -79,6 +79,52 @@ const bboxContains = (
 const IP_LOCATION_ZOOM = 13;
 
 /**
+ * The zoom a searched place opens at when the geocoder does not say how big it
+ * is — a house number, a shop, a bus stop. The app's own default view, which is
+ * close enough to read a street and wide enough to hold the next one along.
+ */
+const SEARCH_RESULT_ZOOM = 15;
+
+/**
+ * As close as a search is allowed to take the map.
+ *
+ * A geocoded doorway has an extent a few metres across, and fitting the map to
+ * it lands on a view of one roof. Somebody who searched for a place wants to
+ * see where it is, which is a question about its surroundings.
+ */
+const MAX_SEARCH_RESULT_ZOOM = 17;
+
+/** Room left around a searched place, so it does not sit against the edge */
+const SEARCH_FIT_PADDING_PX = 48;
+
+/**
+ * How close to open the map on a searched place.
+ *
+ * Panning without zooming was the old behaviour and it had a hole in it: a
+ * search made while the map was opened right out moved to the place and left
+ * it out there, below the zoom points are loaded at, so the answer to the
+ * search was an empty map and a hint to come closer.
+ *
+ * Where the geocoder says how big the place is, the view is fitted to that: a
+ * city fills the screen, a street is a street. Both bounds matter — the fit is
+ * clamped so a country cannot take the map out past the zoom that loads
+ * points, and a doorway cannot take it in past a view of one roof.
+ */
+const zoomForSearchResult = (
+  map: Map,
+  extent?: [number, number, number, number]
+): number => {
+  if (!extent) return SEARCH_RESULT_ZOOM;
+  const [south, west, north, east] = extent;
+  const fitted = map.getBoundsZoom(
+    latLngBounds([south, west], [north, east]),
+    false,
+    pixelPoint(SEARCH_FIT_PADDING_PX, SEARCH_FIT_PADDING_PX)
+  );
+  return Math.min(MAX_SEARCH_RESULT_ZOOM, Math.max(MIN_POI_ZOOM, fitted));
+};
+
+/**
  * Whether the visit brings a location of its own: a city or coordinates in the
  * URL, the view the last visit was left in, or the GPS fix of an earlier
  * session. With none of these there is nothing to center the map on, and the
@@ -108,6 +154,12 @@ const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void 
 const App = () => {
   const { position: userPosition } = useUserPosition();
   const [searchPosition, setSearchPosition] = useState<[number, number] | null>(null);
+  /**
+   * The zoom that goes with {@link searchPosition}, when the thing that set it
+   * had an opinion. A search from the box does; a city in the URL does not, and
+   * keeps whatever view the visit arrived with
+   */
+  const [searchZoom, setSearchZoom] = useState<number | null>(null);
   const [category, setCategory] = useState<CATEGORIES[]>([]);
   const [loading, setLoading] = useState(false);
   const [displaySearchItem, setDisplaySearchItem] = useState<string | null>(null); // "search" | "routes" | null
@@ -326,7 +378,7 @@ const App = () => {
     if (map && searchPosition) {
       // A search result is a deliberate choice, keep GPS lock from overriding it
       userMovedMapRef.current = true;
-      setMapView(searchPosition);
+      setMapView(searchPosition, searchZoom ?? undefined);
       // Fetch markers after map centers on search result
       fetchMarkers();
     }
@@ -794,8 +846,14 @@ const App = () => {
         <Loading active={loading} status={loadingStatus} />
         <div className="map-overlay-top" ref={overlayRef}>
           <SearchBar
-            onSearch={(_, coords) => {
+            onSearch={(_, coords, extent) => {
               if (coords && Array.isArray(coords) && coords.length === 2) {
+                // Fitting the extent needs the map to measure itself against.
+                // There is always one under this, the search bar being a child
+                // of the map, but a search must not go missing over that
+                setSearchZoom(
+                  map ? zoomForSearchResult(map, extent) : SEARCH_RESULT_ZOOM
+                );
                 setSearchPosition(coords);
                 setDisplaySearchItem(null);
               }

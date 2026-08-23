@@ -692,6 +692,168 @@ jq -r '.query' access.log | grep -o '\[[a-z_:"]*=[^]]*\]' | sort | uniq -c | sor
 `zcat -f` reads the plain files and the compressed ones alike, which is what
 makes the whole ten days one command.
 
+## Analytics
+
+`docker-compose.prod.yml` also carries a Matomo and its MariaDB. It is here
+rather than in a file of its own because it shares this machine and this
+machine's tunnel, and because both are the same kind of thing: a service that
+answers the app, published from home, with the data staying on the disk you
+can point `df` at.
+
+The point of self hosting it is not thrift. **The site shows no cookie
+banner**, and what makes that defensible is that the audience measurement
+never leaves this box, sets no cookies, and does not keep a full IP address.
+Miss one of those and the site needs a consent dialog in front of the first
+pageview. The frontend's half is in `apps/frontend/src/analytics/`; this
+section is the server's half.
+
+### First start
+
+```bash
+mkdir -p /mnt/hdd1/matomo/db /mnt/hdd1/matomo/www
+docker compose -f docker-compose.prod.yml up -d matomo-db matomo
+```
+
+Publish `127.0.0.1:12346` the same way the API is published. It has to be the
+public internet and not just the tailnet: the tracker is a request made by
+every visitor's browser, so a `tailscale serve` that only answers inside the
+tailnet would measure nobody.
+
+**With Tailscale**, on the same node that already funnels the API:
+
+```bash
+sudo tailscale funnel --bg --https=8443 http://127.0.0.1:12346
+tailscale funnel status        # both mappings, 443 and 8443
+```
+
+8443 and not 443 because Funnel takes exactly three ports — 443, 8443 and
+10000 — and the API already holds 443. The two mappings coexist and both come
+back after a reboot. The analytics URL is therefore
+`https://<node>.<tailnet>.ts.net:8443/`, port and all.
+
+Do not try to share 443 with `--set-path=/analytics` instead. Funnel strips the
+prefix before proxying, so Matomo answers at the root and writes root-absolute
+URLs for its own assets, and every one of them 404s a level up.
+
+**With `cloudflared`** it is a hostname rather than a port —
+`analytics.wayside.cc` — which is the tidier answer if the domain is already on
+Cloudflare, and the one worth preferring here: Funnel relays through
+Tailscale's own servers and is documented as a way to share a service rather
+than to front a public site. The API already puts a query per map view through
+it; analytics adds a beacon per pageview and per event on top.
+
+Whichever is used, that URL goes in three places, the port included where there
+is one:
+
+| Where | What |
+| --- | --- |
+| `trusted_hosts[]` in the config block below | the host, e.g. `wayside.tailnet.ts.net:8443` — add a second line without the port too, Matomo compares the `Host` header both ways depending on the request |
+| `--url=` on the archive job label | the full URL with a trailing slash |
+| `VITE_MATOMO_URL` in the GitHub Actions repository variables | the same full URL — it is baked in at build time, so changing it needs a redeploy |
+
+Recreate the container after editing the compose file.
+
+Open the URL and walk the installer. The database page is already filled in
+from the environment; the passwords in the compose file are placeholders and
+must be changed **before the first start**, since MariaDB only reads them
+while the data directory is empty.
+
+### The three settings that have to be made by hand
+
+Matomo keeps these in its database rather than in a config file, so they
+cannot be shipped in the compose file. Under **Administration → Privacy →
+Anonymize data**, before the first real visitor:
+
+| Setting | Value |
+| --- | --- |
+| Anonymize visitors' IP addresses | Yes, mask at least 2 bytes |
+| Also anonymize the Location derived from the IP | Yes |
+| Delete old raw data | On, 13 months or less |
+
+An install left on its defaults keeps whole IP addresses forever, which is the
+one thing that would put this back inside the rules a banner exists for.
+
+Two more, worth the click: turn off "Send anonymous usage statistics to
+Matomo", and leave the tracker's own opt-out iframe reachable — it is what
+makes the exemption an offer rather than an assumption.
+
+### What is measured, and what cannot be
+
+Cookies are off (`disableCookies` in `src/analytics/index.ts`), so Matomo
+recognises a visitor by a daily-salted hash of address and browser
+configuration. That is enough to tie a visit together and not enough to follow
+anyone from one day to the next, which is the trade being made deliberately:
+
+- **Trustworthy.** Pageviews and which city and category pages get them,
+  referrers and campaigns, device and browser, country, all the custom events
+  below, and the site-search report including searches that returned nothing.
+- **Not trustworthy.** New versus returning visitors, unique visitors over
+  anything longer than a day, and attribution across visits. Do not quote
+  those numbers; Cloudflare's own edge analytics is the better daily-unique
+  figure, and it counts the people who block the tracker outright.
+
+Events, as they read in **Behaviour → Events**:
+
+| Category | Action | Name |
+| --- | --- | --- |
+| Categories | `select` / `deselect` | the category slug, e.g. `drinking-water` |
+| Categories | `clear all` | — |
+| Categories | `query: categories` / `preset` / `place-search` / `pan` / `initial` / `route` / `gps` | the whole selection sorted, e.g. `parking,toilets` |
+| Presets | `apply` / `clear` | the preset id, e.g. `road-trip` |
+| POI | `popup open` | the category the point was drawn as |
+| POI | `tap: no details` | the category of a point with nothing to show |
+| Search | `result chosen` | — |
+| Map | `share: native` / `share: clipboard` | `ok` / `failed` |
+| Map | `directions: open` / `directions: close` | — |
+| Map | `route` | `ok` / `failed` |
+| Map | `my location` | `centered` / `no fix` |
+| Map | `zoom hint: shown` / `zoom hint: tapped` | — |
+| Errors | `overpass failed` | the message every mirror ended on |
+
+The two Categories rows are the pair worth reading together. `select` and
+`deselect` say what people reach for in the picker; `query:` says what they
+actually went looking with, and its trigger separates a deliberate choice from
+the map catching up with a pan. `POI / popup open` is the third: what got
+searched for against what got opened.
+
+Searches go to Matomo's site-search report rather than to an event, because
+that report has a "no results" list in it, and a place the geocoder cannot
+find is the half worth acting on.
+
+### What is deliberately not sent
+
+The `lat` and `lon` query params are stripped from the URL before every
+pageview (`trackedUrl` in `src/analytics/index.ts`). They are on every link
+the share button produces and they are usually where the person actually is.
+Nothing else in the app passes a coordinate to Matomo, and nothing new should:
+a bbox in an events table would undo every other precaution in this section.
+
+### Upgrades
+
+Neither container carries the watchtower label, unlike the Overpass pair. A
+Matomo release is a file change and a database migration, and watchtower doing
+the first without the second leaves an install that refuses to track. Do it
+deliberately:
+
+```bash
+docker compose -f docker-compose.prod.yml pull matomo
+docker compose -f docker-compose.prod.yml up -d matomo
+docker compose -f docker-compose.prod.yml exec -u www-data matomo php console core:update
+```
+
+### If the reports are empty
+
+- **Every visit is one visitor from 127.0.0.1.** The proxy headers in the
+  config block are not reaching Matomo, or the tunnel is not setting them.
+- **"Matomo can't be reached from this hostname".** `trusted_hosts` still says
+  `CHANGE_ME.example.com`.
+- **Nothing at all, and no request in the network tab.** The frontend was
+  built without `VITE_MATOMO_URL`; it is a build-time value, so this needs a
+  redeploy, not a setting change.
+- **Numbers stop moving after a while.** The archive job. `docker compose logs
+  ofelia` says whether it ran; ofelia reads its schedule from container
+  labels, so restart it after changing them.
+
 ## Prebuilt image
 
 [`build-overpass-image.yml`](../../.github/workflows/build-overpass-image.yml)

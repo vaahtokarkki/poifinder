@@ -3,6 +3,7 @@ import { Chip } from "@mui/material";
 import { CATEGORIES, CATEGORY_PRESETS, isPresetActive } from "../constants";
 import { presetLabel } from "../constants";
 import { interpolate, ui } from "../copy";
+import { analytics } from "../analytics";
 
 type CategoryPresetsProps = {
   value: CATEGORIES[];
@@ -33,7 +34,10 @@ const CategoryPresets: React.FC<CategoryPresetsProps> = ({
             icon={React.cloneElement(preset.icon, { fontSize: "small" })}
             clickable
             // Picking the active preset again is the way back to no categories
-            onClick={() => onSelect(active ? [] : preset.categories)}
+            onClick={() => {
+              analytics.presetToggled(preset.id, !active, preset.categories.length);
+              onSelect(active ? [] : preset.categories);
+            }}
             title={interpolate(ui().controls.presetTitle, {
               preset: presetLabel(preset).toLowerCase(),
             })}

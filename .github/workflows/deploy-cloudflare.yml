@@ -39,6 +39,12 @@ jobs:
           # Unset unless the repository defines it, in which case the app
           # queries that instance instead of the public mirrors
           VITE_OVERPASS_API_URL: ${{ vars.VITE_OVERPASS_API_URL }}
+          # Both unset unless the repository defines them, in which case the
+          # build carries the Matomo tracker. Variables rather than secrets:
+          # they are the public URL of the analytics install and a site number,
+          # and both end up readable in the bundle either way
+          VITE_MATOMO_URL: ${{ vars.VITE_MATOMO_URL }}
+          VITE_MATOMO_SITE_ID: ${{ vars.VITE_MATOMO_SITE_ID }}
 
       - name: Deploy
         run: npx wrangler deploy

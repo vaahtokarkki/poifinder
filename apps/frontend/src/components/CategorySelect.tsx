@@ -9,6 +9,7 @@ import React from "react";
 import { CATEGORIES, CATEGORY_CONFIG, CATEGORY_GROUP, groupDisplay } from "../constants";
 import { categoryDisplay } from "../seo/categories";
 import { ui } from "../copy";
+import { analytics } from "../analytics";
 
 // Value of the clear action, kept apart from the numeric category values
 const CLEAR_ALL = "clear-all";
@@ -118,6 +119,7 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
           // The clear action is a menu item of its own, picking it empties
           // the selection instead of adding to it
           if (selected.includes(CLEAR_ALL)) {
+            analytics.categoriesCleared();
             onChange([]);
             return;
           }
@@ -192,6 +194,9 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
                   const newSelected = alreadySelected
                     ? value.filter((v) => v !== cat.value)
                     : [...value, cat.value];
+                  // Counted here and not in the Select's onChange above: one
+                  // click runs both, so tracking in both doubles every tick
+                  analytics.categoryToggled(cat.value, !alreadySelected);
                   onChange(newSelected);
                 }}
               >

@@ -277,6 +277,139 @@ services:
         max-size: "10m"
         max-file: "3"
 
+  # Web analytics, self hosted so that the visit data stays on this machine and
+  # nothing is handed to a third party. That is not a preference: it is half of
+  # what lets the site measure its audience without a consent banner. The other
+  # half is in the frontend (src/analytics) where cookies are switched off and
+  # Do Not Track is honoured, and in the two privacy settings that have to be
+  # made once in the UI. See "Analytics" in README.md before the first visit is
+  # recorded — an install left on its defaults keeps full IP addresses, and the
+  # banner question comes back with it.
+  #
+  # First start, once, after the frontend is deployed with VITE_MATOMO_URL:
+  #
+  #   mkdir -p /mnt/hdd1/matomo/db /mnt/hdd1/matomo/www
+  #   docker compose -f docker-compose.prod.yml up -d matomo-db matomo
+  #
+  # then open the published URL and walk the installer. It writes its own
+  # config.ini.php into the volume; the settings below live in a second file it
+  # never rewrites, so an upgrade or a change made in the UI cannot lose them.
+  matomo:
+    # Pinned to the major version on purpose, and carrying no watchtower label:
+    # a Matomo upgrade is a file change *and* a database migration, and the
+    # migration is run from the UI or the console afterwards. Watchtower
+    # swapping the image on its own would leave the schema behind the code,
+    # which Matomo answers by refusing to track. Upgrade it deliberately:
+    #
+    #   docker compose -f docker-compose.prod.yml pull matomo
+    #   docker compose -f docker-compose.prod.yml up -d matomo
+    #   docker compose -f docker-compose.prod.yml exec -u www-data matomo \
+    #     php console core:update
+    image: matomo:5-apache
+    container_name: wayside-matomo
+    restart: unless-stopped
+
+    depends_on:
+      matomo-db:
+        condition: service_healthy
+
+    ports:
+      # Localhost only, exactly like the Overpass container above: the tunnel
+      # on this host is the one thing that should reach it. It matters more
+      # here than there, because the proxy header settings below are believed
+      # without question, and they only can be while nothing else can connect
+      - "127.0.0.1:12346:80"
+
+    volumes:
+      # Matomo's own files: config.ini.php, the plugins it downloads, the GeoIP
+      # database, the tmp/ it archives reports in. The image seeds this on the
+      # first start and then owns it
+      - /mnt/hdd1/matomo/www:/var/www/html
+
+    configs:
+      # Settings Matomo reads but never writes. common.config.ini.php is merged
+      # over config.ini.php, so nothing here can be undone by the installer, by
+      # an upgrade, or by a click in the admin UI
+      - source: matomo-common-config
+        target: /var/www/html/config/common.config.ini.php
+
+    environment:
+      # The installer picks these up, so its database page is already filled in
+      MATOMO_DATABASE_HOST: matomo-db
+      MATOMO_DATABASE_ADAPTER: mysql
+      MATOMO_DATABASE_TABLES_PREFIX: matomo_
+      MATOMO_DATABASE_USERNAME: matomo
+      MATOMO_DATABASE_PASSWORD: CHANGE_ME_matomo_db_password
+      MATOMO_DATABASE_DBNAME: matomo
+
+    labels:
+      # Report archiving on a schedule rather than on whoever opens the
+      # dashboard first. ofelia is already in this file and already reads its
+      # jobs from labels, so this costs a container nobody had to add.
+      #
+      # Browser archiving is still on, which means the numbers are right even
+      # if this job never runs. Once it is proven, the pair of settings named
+      # in the config below turns it off and leaves the archiving entirely here
+      ofelia.enabled: "true"
+      ofelia.job-exec.matomo-archive.schedule: "15 * * * *"
+      ofelia.job-exec.matomo-archive.command: "php /var/www/html/console core:archive --url=https://CHANGE_ME.example.com/"
+      # The web server user, so the files this writes stay readable by Matomo
+      ofelia.job-exec.matomo-archive.user: "www-data"
+      ofelia.job-exec.matomo-archive.no-overlap: "true"
+
+    networks:
+      - matomo
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # Matomo's database. On its own network with nothing published: the only
+  # thing that ever speaks to it is the container above
+  matomo-db:
+    image: mariadb:11
+    container_name: wayside-matomo-db
+    restart: unless-stopped
+
+    # Matomo sends large inserts while archiving, and the default 16 MB is what
+    # a "MySQL server has gone away" in the archiving log usually means
+    command: --max-allowed-packet=64MB
+
+    volumes:
+      - /mnt/hdd1/matomo/db:/var/lib/mysql
+
+    environment:
+      MARIADB_DATABASE: matomo
+      MARIADB_USER: matomo
+      # Both of these are read only on the very first start, when the data
+      # directory is empty. Changing them later changes nothing; the passwords
+      # live in the database from then on
+      MARIADB_PASSWORD: CHANGE_ME_matomo_db_password
+      MARIADB_ROOT_PASSWORD: CHANGE_ME_mariadb_root_password
+      # Run the schema upgrade on start after a minor image bump, rather than
+      # refusing to come up
+      MARIADB_AUTO_UPGRADE: "1"
+
+    healthcheck:
+      # What matomo's depends_on waits for. Without it the first start races:
+      # the installer reaches a database that is still creating its own tables
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+    networks:
+      - matomo
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
   watchtower:
     image: containrrr/watchtower:latest
     container_name: wayside-watchtower
@@ -344,3 +477,63 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+
+# A network of their own, so that the analytics database is not sitting on the
+# same bridge as the Overpass containers. Everything without a `networks` key
+# stays on the default one and is unaffected
+networks:
+  matomo:
+    name: wayside-matomo
+
+# Written into the container at start rather than bind mounted from a path on
+# the host, so that this file is still the whole deployment: copy it to the
+# box, and the settings come with it. Needs Docker Compose v2.23.1 or newer,
+# which is where `content` landed
+configs:
+  matomo-common-config:
+    content: |
+      ; Matomo settings that are not the installer's to write and not the admin
+      ; UI's to undo. config.ini.php next to this file is where everything else
+      ; lives; this one is merged over it and never rewritten.
+      ;
+      ; What is NOT here, and has to be set once in the UI under Administration
+      ; -> Privacy -> Anonymize data, because Matomo keeps it in the database
+      ; rather than in a config file:
+      ;
+      ;   Anonymize visitors' IP addresses: yes, mask at least 2 bytes
+      ;   Anonymize the Location derived from the IP: yes
+      ;   Delete old raw data: on, 13 months or less
+      ;
+      ; Those three, plus the cookieless tracker in the frontend, are the whole
+      ; of the argument for running this without a consent banner. An install
+      ; left on its defaults stores full IP addresses and the argument is gone.
+      ; See "Analytics" in README.md.
+
+      [General]
+      ; The hostname this is published on. Matomo refuses any request whose
+      ; Host header is not in this list, which is what stops a tracking link
+      ; pointed at someone else's domain from being served by this install
+      trusted_hosts[] = "CHANGE_ME.example.com"
+
+      ; Behind cloudflared or a Tailscale funnel every connection arrives from
+      ; 127.0.0.1, and the visitor's own address is in this header. Without it
+      ; the whole audience is one visitor sitting in the loopback address, and
+      ; every report that says "where" says the wrong thing.
+      ;
+      ; Trusting a header a client could set is only safe because nothing but
+      ; the tunnel can reach the port at all: see the port binding above. Do
+      ; not publish this container directly with these lines in place
+      proxy_client_headers[] = "HTTP_X_FORWARDED_FOR"
+      proxy_host_headers[] = "HTTP_X_FORWARDED_HOST"
+
+      ; TLS is terminated by the tunnel, so the container only ever sees http
+      ; and would otherwise write http:// links and refuse to set secure
+      ; cookies for its own admin session
+      assume_secure_protocol = 1
+      force_ssl = 1
+
+      ; Once the hourly core:archive job above has proven itself, these two
+      ; lines take report archiving off the request path entirely, so that
+      ; opening a wide date range is a read rather than a computation:
+      ;   enable_browser_archiving_triggering = 0
+      ;   browser_archiving_disabled_enforce = 1

@@ -4,6 +4,7 @@ import ParkIcon from '@mui/icons-material/Park';
 import { renderToString } from "react-dom/server";
 import { categoryDisplay } from "./seo/categories";
 import { ui } from "./copy";
+import { analytics } from "./analytics";
 import { divIcon } from "leaflet";
 import type { PointExpression, Popup as LeafletPopup, PopupEvent } from "leaflet";
 import {
@@ -1179,9 +1180,15 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
           // may turn out to be standing in a building, and there is no telling
           // which until its popup asks
           const eventHandlers = !hasDetails
-            ? { click: () => onNotice?.(`${title} — no extra details`) }
+            ? {
+                click: () => {
+                  analytics.poiTappedWithoutDetails(findCategory(marker, categories));
+                  onNotice?.(`${title} — no extra details`);
+                },
+              }
             : {
                 popupopen: (event: PopupEvent) => {
+                  analytics.poiPopupOpened(findCategory(marker, categories));
                   setOpenShape(key);
                   openPopupRef.current = event.popup;
                 },

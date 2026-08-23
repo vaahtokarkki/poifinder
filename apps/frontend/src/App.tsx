@@ -38,6 +38,7 @@ import { saveMapLocation, loadMapLocation } from "./utils/mapLocationStorage";
 import { loadGPSLocation } from "./utils/gpsLocationStorage";
 import { loadPois, savePois, poiCacheMatchesCategories, isPoiCacheUpToDate } from "./utils/poiStorage";
 import { loadCategories, saveCategories, parseCategories, serializeCategories } from "./utils/categoryStorage";
+import { analytics, type QueryTrigger } from "./analytics";
 
 /**
  * Points are only loaded from this zoom in. Further out the view spans a whole
@@ -258,7 +259,10 @@ const App = () => {
    * Load the points of the current view. The categories can be given, so that
    * a selection made in the same event handler does not have to be in state yet
    */
-  const fetchMarkers = (categoriesOverride?: CATEGORIES[]): Promise<void> => {
+  const fetchMarkers = (
+    categoriesOverride?: CATEGORIES[],
+    trigger: QueryTrigger = "pan"
+  ): Promise<void> => {
     const bbox = getBbox();
     if (!map || !bbox) return Promise.resolve();
 
@@ -302,6 +306,10 @@ const App = () => {
     const inFlight = fetchInFlightRef.current;
     if (inFlight?.key === key) return inFlight.promise;
 
+    // After the de-duplication above, so the report counts queries that were
+    // really asked rather than the two effects that can ask for the same one
+    analytics.categoriesQueried(categories, trigger);
+
     const promise = (async () => {
       setLoading(true);
       requestedBboxRef.current = fetchBbox;
@@ -322,6 +330,7 @@ const App = () => {
       } catch (e) {
         const errorMsg = e instanceof Error ? e.message : ui().notices.fetchFailed;
         console.error("Error fetching markers:", e);
+        analytics.overpassFailed(errorMsg);
         setErrorMessage(errorMsg);
         // A failed query leaves nothing loaded, so the next pan may retry
         requestedBboxRef.current = null;
@@ -381,7 +390,7 @@ const App = () => {
       userMovedMapRef.current = true;
       setMapView(searchPosition, searchZoom ?? undefined);
       // Fetch markers after map centers on search result
-      fetchMarkers();
+      fetchMarkers(undefined, "place-search");
     }
   }, [searchPosition, map]);
 
@@ -519,17 +528,23 @@ const App = () => {
 
   const handleShareClick = async () => {
     const shareUrl = buildShareUrl();
+    // Read once, so the failure below is reported against the way it was
+    // actually tried rather than asked a second time
+    const method = typeof navigator.share === "function" ? "native" : "clipboard";
     try {
-      if (navigator.share) {
+      if (method === "native") {
         await navigator.share({ title: document.title, url: shareUrl });
+        analytics.shared(method, true);
         return;
       }
       await navigator.clipboard.writeText(shareUrl);
+      analytics.shared(method, true);
       setShareMessage(ui().notices.linkCopied);
     } catch (e) {
       // Dismissing the share sheet is not an error
       if (e instanceof Error && e.name === "AbortError") return;
       console.error("Error sharing the current view:", e);
+      analytics.shared(method, false);
       setErrorMessage(ui().notices.copyFailed);
     }
   };
@@ -537,14 +552,18 @@ const App = () => {
   // Taking the hint: come in to the closest view that still loads points,
   // keeping the area the user was looking at in the middle
   const handleZoomInClick = () => {
+    analytics.zoomHintTapped();
     const center = map?.getCenter();
     if (!center) return;
     setMapView([center.lat, center.lng], MIN_POI_ZOOM);
   };
 
   const handleMyLocationClick = () => {
-    if (map && typeof userPosition.lat === "number" && typeof userPosition.lng === "number") {
-      setMapView([userPosition.lat, userPosition.lng]);
+    const hasFix =
+      typeof userPosition.lat === "number" && typeof userPosition.lng === "number";
+    analytics.myLocationUsed(hasFix);
+    if (map && hasFix) {
+      setMapView([userPosition.lat as number, userPosition.lng as number]);
     }
   };
 
@@ -577,7 +596,7 @@ const App = () => {
       userPosition.lng >= loaded[1] &&
       userPosition.lng <= loaded[3];
     if (!isCovered && category.length > 0) {
-      fetchMarkers();
+      fetchMarkers(undefined, "gps");
     }
   }, [map, userPosition, setMapView]);
 
@@ -632,8 +651,10 @@ const App = () => {
         userMovedMapRef.current = true;
         map.fitBounds(bounds, { padding: [40, 40] });
       }
+      analytics.routeSearched(true);
       setLoading(false);
     } catch (err) {
+      analytics.routeSearched(false);
       setLoading(false);
       alert(ui().notices.routeFailed + err);
     }
@@ -666,7 +687,7 @@ const App = () => {
       routeGeoJson &&
       markers.length === 0 // Only fetch if markers are empty
     ) {
-      fetchMarkers();
+      fetchMarkers(undefined, "route");
     }
 
   }, [routeGeoJson, displaySearchItem]);
@@ -763,7 +784,7 @@ const App = () => {
 
       // Only hit the network when the cache is stale or from another area
       if (!cache || !isPoiCacheUpToDate(cache, category, map.getCenter())) {
-        fetchMarkers();
+        fetchMarkers(undefined, "initial");
       }
     };
     initialLoad();
@@ -807,10 +828,24 @@ const App = () => {
     };
   }, [map, markers]);
 
+  const zoomHintVisible =
+    zoom !== null && zoom < MIN_POI_ZOOM && displaySearchItem !== "routes";
+
+  // How often people end up too far out for the points to load. On the
+  // transition, so this counts arrivals at that zoom rather than renders
+  // spent there
+  const zoomHintWasVisibleRef = useRef(false);
+  useEffect(() => {
+    if (zoomHintVisible && !zoomHintWasVisibleRef.current) {
+      analytics.zoomHintShown();
+    }
+    zoomHintWasVisibleRef.current = zoomHintVisible;
+  }, [zoomHintVisible]);
+
   // A preset is a one tap selection, so search for its points right away
   const handlePresetSelect = (categories: CATEGORIES[]) => {
     setCategory(categories);
-    fetchMarkers(categories);
+    fetchMarkers(categories, "preset");
   };
 
   /**
@@ -854,6 +889,7 @@ const App = () => {
           <SearchBar
             onSearch={(_, coords, extent) => {
               if (coords && Array.isArray(coords) && coords.length === 2) {
+                analytics.searchResultChosen();
                 // Fitting the extent needs the map to measure itself against.
                 // There is always one under this, the search bar being a child
                 // of the map, but a search must not go missing over that
@@ -886,7 +922,7 @@ const App = () => {
             onChange={setCategory}
             // The search bar takes this slot while it is open
             visible={!displaySearchItem}
-            onCommit={() => fetchMarkers()}
+            onCommit={() => fetchMarkers(undefined, "categories")}
           />
           <CategoryPresets
             value={category}
@@ -894,12 +930,7 @@ const App = () => {
             visible={displaySearchItem !== "routes"}
           />
         </div>
-        <ZoomInHint
-          onClick={handleZoomInClick}
-          visible={
-            zoom !== null && zoom < MIN_POI_ZOOM && displaySearchItem !== "routes"
-          }
-        />
+        <ZoomInHint onClick={handleZoomInClick} visible={zoomHintVisible} />
         <div className="map-controls">
           <div
             className={`map-controls-group${controlsExpanded ? " open" : ""}`}
@@ -911,7 +942,11 @@ const App = () => {
               <InfoIconButton onClick={() => sheetRef.current?.expand()} />
               <ShareIconButton onClick={handleShareClick} />
               <DirectionsIconButton
-                onClick={() => setDisplaySearchItem(displaySearchItem === "routes" ? null : "routes")}
+                onClick={() => {
+                  const opening = displaySearchItem !== "routes";
+                  analytics.directionsPanelToggled(opening);
+                  setDisplaySearchItem(opening ? "routes" : null);
+                }}
                 active={displaySearchItem === "routes"}
               />
               <SearchIconButton

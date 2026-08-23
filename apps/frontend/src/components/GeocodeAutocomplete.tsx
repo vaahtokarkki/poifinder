@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Autocomplete, TextField, CircularProgress } from "@mui/material";
 import { useUserPosition } from "../hooks/index";
 import { fetchSuggestions, Suggestion } from "../api/geocode";
+import { trackSearch } from "../analytics";
 
 type GeocodeAutoCompleteProps = {
   label?: string;
@@ -17,6 +18,26 @@ type GeocodeAutoCompleteProps = {
   autoFocus?: boolean;
   /** Replaces the built in clear button at the end of the field */
   endAction?: React.ReactNode;
+};
+
+/**
+ * Below this a query is somebody still typing, and its emptiness says nothing
+ * about the geocoder
+ */
+const MIN_TRACKED_QUERY_LENGTH = 3;
+
+/**
+ * Report what was looked for and how much came back, as a Matomo site search
+ * rather than an event: that report has a "no results" list in it, and a place
+ * this geocoder cannot find is the half worth reading.
+ *
+ * One per settled query, not per keystroke — the fetch is already debounced,
+ * so this fires where the typing paused.
+ */
+const reportSearch = (query: string, resultCount: number): void => {
+  const trimmed = query.trim();
+  if (trimmed.length < MIN_TRACKED_QUERY_LENGTH) return;
+  trackSearch(trimmed, resultCount);
 };
 
 const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
@@ -53,6 +74,7 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
     try {
       const results = await fetchSuggestions(query, userPosition);
       setOptions(results);
+      reportSearch(query, results.length);
     } catch (error) {
       console.error("Error fetching suggestions:", error);
       setOptions([]);

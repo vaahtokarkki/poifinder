@@ -580,7 +580,19 @@ const buildingRank = (tags: Record<string, string>) =>
   (saysSomething(tags) ? 0 : 1);
 
 /** The building a point stands in: which object it is, and what it says */
-export type EnclosingBuilding = OverpassElementDetails & { ref: OsmRef };
+export type EnclosingBuilding = OverpassElementDetails & {
+  ref: OsmRef;
+  /**
+   * When the building itself was last edited, which is its own date and not the
+   * point's: a toilet node touched last week can stand in a building nobody has
+   * looked at since 2012, and the popup shows both rather than letting the
+   * fresher of the two vouch for the other.
+   *
+   * Written by `out meta`, so absent from a server whose database was imported
+   * without metadata — the same bargain the marker query already makes.
+   */
+  timestamp?: string;
+};
 
 /** Whether a point is inside a shape: in one of its rings and in none of its holes */
 const shapeContains = (shape: OverpassShape, point: [number, number]) =>
@@ -629,7 +641,11 @@ export async function fetchEnclosingBuilding(
   [lat, lng]: [number, number]
 ): Promise<EnclosingBuilding | null> {
   const elements = await runOverpassQuery(
-    `[out:json];wr[building](around:${ENCLOSING_BUILDING.RADIUS},${lat},${lng});out geom;`
+    // `meta` for the building's own last edit date, on the same terms as the
+    // marker query: a self hosted instance imported without metadata answers
+    // `out meta` with nothing at all rather than with the objects minus their
+    // timestamps. See buildBaseOverpassQuery
+    `[out:json];wr[building](around:${ENCLOSING_BUILDING.RADIUS},${lat},${lng});out meta geom;`
   );
 
   let best: { building: EnclosingBuilding; rank: number; area: number } | null = null;
@@ -655,6 +671,7 @@ export async function fetchEnclosingBuilding(
           ref: `${element.type as "way" | "relation"}/${element.id}`,
           shape,
           tags,
+          timestamp: element.timestamp,
         },
       };
     }

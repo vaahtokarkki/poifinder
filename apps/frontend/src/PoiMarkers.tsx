@@ -11,6 +11,7 @@ import {
   matchesFilter,
 } from "./constants";
 import { OverpassMarkerData } from "./api/overpass"; // <-- Import the type
+import type { EnclosingBuilding as EnclosingBuildingData } from "./api/overpass";
 import { TranslationError, translate } from "./api/translate";
 import type { TranslationFailure } from "./api/translate";
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
@@ -21,11 +22,13 @@ import {
   ADDRESS_RANK,
   CONSUMED_KEYS,
   TRANSLATABLE_KEYS,
+  buildingRankForKey,
   capitaliseFirst,
   describeAddress,
   describeEdit,
   describeSurvey,
   formatOpeningHours,
+  isInheritedFromBuilding,
   isTimetableKey,
   labelFor,
   rankForKey,
@@ -340,22 +343,19 @@ const isDisplayableTag = (key: string, value: string) => {
 };
 
 /**
- * Values that answer a yes or no question: whether there is a fee, whether a
- * wheelchair gets in, whether the water is drinkable. They get the shape of a
- * chip so a one word answer is not mistaken for a truncated value.
+ * The two values that answer a yes or no question: whether there is a fee,
+ * whether a wheelchair gets in, whether the water is drinkable. They get the
+ * shape of a chip, which is what carries the answer at a glance — and the
+ * colour, in the one case a chip is not grey.
+ *
+ * Only these two. `limited`, `customers`, `permissive` and the rest of the
+ * access vocabulary used to be chipped alongside them, and it made the popup
+ * read as though every one of them were a verdict of the same kind. They are
+ * not: "yes" and "no" close a question, while "limited" opens one, and dressing
+ * the two alike put a qualification in the shape of an answer. Set as plain
+ * text they read as what they are, a value worth reading rather than a badge.
  */
-const SHORT_ANSWERS = new Set([
-  "yes",
-  "no",
-  "free",
-  "designated",
-  "public",
-  "private",
-  "limited",
-  "permissive",
-  "customers",
-  "destination",
-]);
+const YES_NO_ANSWERS = new Set(["yes", "no"]);
 
 /**
  * Words that are cheap to spot and very hard to write by accident in another
@@ -402,7 +402,9 @@ function shouldOfferTranslation(key: string, value: string): boolean {
   if (!TRANSLATABLE_KEYS.test(key)) return false;
   // A URL, a phone number, a bare reference: nothing a translator can help with
   if (isUrl(value) || !/\p{L}\p{L}/u.test(value)) return false;
-  if (SHORT_ANSWERS.has(value.toLowerCase())) return false;
+  // One lowercase word is a value picked from a list — `yes`, `limited`,
+  // `room` — whatever key it arrived under. Nothing a translator can improve
+  if (/^[a-z_]+$/.test(value.trim())) return false;
 
   // `description:en` says what it is in, which beats anything guessed from the
   // text itself. A suffix is only a language when it is two letters long:
@@ -513,6 +515,45 @@ const tagWikiUrl = (key: string) =>
   `https://wiki.openstreetmap.org/wiki/Key:${encodeURIComponent(key)}`;
 
 /**
+ * A value picked from a list rather than typed: `apartments`, `unisex`,
+ * `fine_gravel`. One lowercase word in the tagging alphabet, and short enough
+ * to be a code rather than a sentence.
+ */
+const ENUMERATED_VALUE = /^[a-z][a-z0-9_]{0,29}$/;
+
+/**
+ * The keys whose value is a name, a number, an identifier or a piece of prose,
+ * whatever shape it happens to arrive in. `operator=city` is a lowercase word
+ * and names an organisation; `capacity=4` is a count. Neither has a page.
+ */
+const FREE_TEXT_KEYS =
+  /^(name|operator|brand|network|ref|phone|email|website|url|wikipedia|wikidata|capacity|level|charge|height|width|ele|start_date|inscription|description|note|fixme)$|^(addr|contact|name|ref|survey|operator|brand):/;
+
+/**
+ * The wiki page for a tag as a whole — `building=apartments` — where what that
+ * particular value means is written down, which is the question the key's own
+ * page usually cannot answer in one line.
+ *
+ * Offered only where a page plausibly exists. The wiki documents values, not
+ * strings: there is a page for `building=apartments` and none for
+ * `name=Kamppi`, and a link to a page that is not there is worse than no link,
+ * because it is only discovered after the tap. Hence the two tests — the value
+ * has to look like one picked from a list, and the key has to be one whose
+ * values come from a list at all.
+ */
+const tagValueWikiUrl = (key: string, value: string): string | undefined => {
+  if (!ENUMERATED_VALUE.test(value) || FREE_TEXT_KEYS.test(key)) return undefined;
+  /**
+   * A yes or a no is not a kind of thing and has nothing of its own to
+   * explain: whatever there is to say about `lit=yes` is said on the page for
+   * `lit`, which the label beside it already leads to. Half of these pages do
+   * not exist either, and a link is worth having only when it lands somewhere
+   */
+  if (YES_NO_ANSWERS.has(value)) return undefined;
+  return `https://wiki.openstreetmap.org/wiki/Tag:${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+};
+
+/**
  * The tags whose value names a page elsewhere without being a URL: a Wikipedia
  * article, a Wikidata item. The value is an identifier in another database, so
  * the row leads to the page it names rather than printing the tag.
@@ -528,6 +569,33 @@ const tagLink = (key: string, value: string) => {
   }
   return undefined;
 };
+
+/**
+ * A tag value, linked to what it means where there is somewhere to link to.
+ *
+ * Set as text rather than as a link: the same quiet treatment the label above
+ * it gets, because the reader came for the value and not for a page about it,
+ * and a popup where every second row is blue reads as a list of links rather
+ * than as an account of a place. The dotted underline on hover is the offer.
+ */
+const ValueText: React.FC<{ value: string; tag: string; wikiUrl?: string }> = ({
+  value,
+  tag,
+  wikiUrl,
+}) =>
+  wikiUrl ? (
+    <a
+      className="poi-popup-tag-link"
+      href={wikiUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={`${tag}=${value} on the OpenStreetMap wiki`}
+    >
+      {formatValue(value)}
+    </a>
+  ) : (
+    <>{formatValue(value)}</>
+  );
 
 /** One line of the popup: a label, a value, and how the value should be read */
 type PopupRow = {
@@ -617,7 +685,7 @@ const PopupRows: React.FC<{ rows: PopupRow[]; keyPrefix: string }> = ({
 }) => (
   <dl className="poi-popup-rows">
     {rows.map(({ key, label, value: valueStr, written, href: rowHref, linkLabel }) => {
-      const isShortAnswer = !written && SHORT_ANSWERS.has(valueStr.toLowerCase());
+      const isYesNo = !written && YES_NO_ANSWERS.has(valueStr.toLowerCase());
       const href =
         rowHref ?? (valueStr.startsWith("http") ? valueStr : `https://${valueStr}`);
       /**
@@ -631,6 +699,13 @@ const PopupRows: React.FC<{ rows: PopupRow[]; keyPrefix: string }> = ({
       const isProse = !written && (valueStr.includes("\n") || valueStr.length > 40);
       const isStacked = isProse || valueStr.includes("\n");
       const canTranslate = !written && shouldOfferTranslation(key, valueStr);
+      /**
+       * The value's own page on the wiki, where there is one. Not for a
+       * written row: the address and the timetables are assembled here out of
+       * several tags, and no page describes the sentence this file wrote
+       */
+      const valueWikiUrl =
+        written || rowHref ? undefined : tagValueWikiUrl(key, valueStr);
 
       return (
         <div
@@ -660,14 +735,14 @@ const PopupRows: React.FC<{ rows: PopupRow[]; keyPrefix: string }> = ({
               >
                 {linkLabel ?? formatLinkLabel(href)}
               </a>
-            ) : isShortAnswer ? (
+            ) : isYesNo ? (
               <span
                 className="poi-popup-chip"
                 /**
                  * The one chip that is not grey. It carries the same pink
                  * the marker does, so a point somebody picked out of the
                  * map by its colour says the same thing when it opens.
-                 * Every other short answer keeps the neutral pill.
+                 * Every other yes or no keeps the neutral pill.
                  */
                 style={
                   key === "changing_table" && valueStr.toLowerCase() === "yes"
@@ -683,7 +758,7 @@ const PopupRows: React.FC<{ rows: PopupRow[]; keyPrefix: string }> = ({
               // somebody wrote, or for a line this file wrote itself
               valueStr
             ) : (
-              formatValue(valueStr)
+              <ValueText value={valueStr} tag={key} wikiUrl={valueWikiUrl} />
             )}
           </dd>
         </div>
@@ -712,41 +787,74 @@ const PopupRows: React.FC<{ rows: PopupRow[]; keyPrefix: string }> = ({
  * same question at the same moment and gets the same answer without a second
  * request; see the lookups in hooks/useOsmElement.
  *
- * It is its own section rather than more rows, and it is the last thing before
- * the footnotes, because everything in it is true of the building and not of
- * the point. A toilet that is free inside a shopping centre that charges for
- * parking must not end up with one "Fee" row and no way to tell which is which.
+ * What comes back is split in two, because a building's tags are two different
+ * kinds of fact. Most of them are true of the building and not of the point,
+ * and those stay in their own section at the bottom: a toilet that is free
+ * inside a shopping centre that charges for parking must not end up with one
+ * "Fee" row and no way to tell which is which. A handful describe the facility
+ * itself and are only on the building because that is where somebody typed
+ * them, and those move up beside the point's own rows under a heading that says
+ * where they came from — see isInheritedFromBuilding.
  */
-const EnclosingBuilding: React.FC<{
-  marker: OverpassMarkerData;
+const splitBuildingRows = (
+  building: EnclosingBuildingData,
+  marker: OverpassMarkerData,
   /** What the point has already said, so the building does not say it again */
-  shown: PopupRow[];
-}> = ({ marker, shown }) => {
-  const building = useEnclosingBuilding(
-    isDrawn(marker) || !marker.position ? null : marker.position
-  );
-  if (!building) return null;
+  shown: PopupRow[]
+): { inherited: PopupRow[]; own: PopupRow[] } => {
+  const inherited: PopupRow[] = [];
+  const own: PopupRow[] = [];
 
-  const name = building.tags.name?.trim();
-  const rows = buildPopupRows(building.tags).filter(
-    row =>
-      // The name is the heading of this section, and a row repeating it would
-      // be the only thing in the popup said twice in two lines
-      row.key !== "name" &&
-      !shown.some(already => already.key === row.key && already.value === row.value)
+  for (const row of buildPopupRows(building.tags)) {
+    // The name is the heading of this section, and a row repeating it would be
+    // the only thing in the popup said twice in two lines
+    if (row.key === "name") continue;
+    /**
+     * The point's own tagging wins outright, whatever it says. A building
+     * marked `wheelchair=yes` around a toilet marked `wheelchair=limited` is
+     * not a contradiction to resolve: the toilet is the thing being asked
+     * about, and it has answered
+     */
+    if (isInheritedFromBuilding(row.key) && marker.tags?.[row.key] === undefined) {
+      inherited.push(row);
+      continue;
+    }
+    if (shown.some(already => already.key === row.key && already.value === row.value)) {
+      continue;
+    }
+    own.push(row);
+  }
+
+  // Sorted after the split rather than before it: what leads the building's own
+  // list is decided among the rows that stayed, and `localeCompare` on the
+  // labels is what a reader scans by, the tag keys being what they are
+  own.sort(
+    (a, b) =>
+      buildingRankForKey(a.key) - buildingRankForKey(b.key) ||
+      a.label.localeCompare(b.label)
   );
 
-  return (
-    <div className="poi-popup-building">
-      <p className="poi-popup-building-label">
-        {name ? `In ${name}` : "In this building"}
-      </p>
-      {rows.length > 0 && (
-        <PopupRows rows={rows} keyPrefix={`${marker.id}-building`} />
-      )}
-    </div>
-  );
+  return { inherited, own };
 };
+
+/**
+ * The tags the building carries on the point's behalf, lifted up beside the
+ * point's own rows and labelled as borrowed.
+ *
+ * See isInheritedFromBuilding for which tags these are and why they move. The
+ * heading is not decoration: without it a changing table mapped on a shopping
+ * centre would appear to be tagged on the toilet, which is a claim about the
+ * data nobody made.
+ */
+const InheritedFromBuilding: React.FC<{
+  marker: OverpassMarkerData;
+  rows: PopupRow[];
+}> = ({ marker, rows }) => (
+  <div className="poi-popup-inherited">
+    <p className="poi-popup-inherited-label">From this building</p>
+    <PopupRows rows={rows} keyPrefix={`${marker.id}-from-building`} />
+  </div>
+);
 
 const RenderMarkerContents: React.FC<{
   marker: OverpassMarkerData;
@@ -756,6 +864,37 @@ const RenderMarkerContents: React.FC<{
   const rows = buildPopupRows(marker.tags);
   const survey = describeSurvey(marker.tags);
   const edited = describeEdit(marker.timestamp);
+
+  /**
+   * Asked for here rather than inside the section that shows it, because the
+   * answer is now read in two places: the borrowed rows above the point's own
+   * footnotes, and the building's account of itself below them. One query
+   * either way — see the doc on splitBuildingRows
+   */
+  const building = useEnclosingBuilding(
+    isDrawn(marker) || !marker.position ? null : marker.position
+  );
+  const { inherited, own: buildingRows } = building
+    ? splitBuildingRows(building, marker, rows)
+    : { inherited: [], own: [] };
+  const buildingName = building?.tags.name?.trim();
+  /**
+   * The building's own dates, said in its own words. Both objects carry these
+   * and they are routinely years apart: a toilet surveyed in June inside a
+   * building last touched in 2012 is two facts, and a bare "Last checked"
+   * under each would leave the reader to work out which was which from the
+   * indentation
+   */
+  const buildingSurvey = describeSurvey(
+    building?.tags,
+    undefined,
+    "Building last checked"
+  );
+  const buildingEdited = describeEdit(
+    building?.timestamp,
+    undefined,
+    "Building last edited"
+  );
 
   return (
     <div className="poi-popup-body">
@@ -775,16 +914,36 @@ const RenderMarkerContents: React.FC<{
 
       {rows.length > 0 && <PopupRows rows={rows} keyPrefix={String(marker.id)} />}
 
-      <EnclosingBuilding marker={marker} shown={rows} />
+      {inherited.length > 0 && (
+        <InheritedFromBuilding marker={marker} rows={inherited} />
+      )}
 
       {/* Below the rows and set quieter than them, because these are facts
           about the data rather than about the place. Two lines rather than one
           joined by a separator: when a place has both, they say different
           things — somebody stood there in June, somebody edited the record in
           August — and running them together invites reading the second as
-          confirmation of the first */}
+          confirmation of the first.
+
+          Above the building's section rather than at the very bottom, so that
+          each object's dates follow that object's rows. Set out the other way
+          round the popup ended on four date lines in a row, two about a
+          shopping centre and two about a toilet, in the order nobody reads */}
       {survey && <p className="poi-popup-survey">{survey}</p>}
       {edited && <p className="poi-popup-edited">{edited}</p>}
+
+      {building && (
+        <div className="poi-popup-building">
+          <p className="poi-popup-building-label">
+            {buildingName ? `In ${buildingName}` : "In this building"}
+          </p>
+          {buildingRows.length > 0 && (
+            <PopupRows rows={buildingRows} keyPrefix={`${marker.id}-building`} />
+          )}
+          {buildingSurvey && <p className="poi-popup-survey">{buildingSurvey}</p>}
+          {buildingEdited && <p className="poi-popup-edited">{buildingEdited}</p>}
+        </div>
+      )}
     </div>
   );
 };

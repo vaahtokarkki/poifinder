@@ -165,7 +165,13 @@ const relativeAge = (months: number): string => {
  */
 export const describeSurvey = (
   tags: Record<string, string> | undefined,
-  now = new Date()
+  now = new Date(),
+  /**
+   * How the line starts. A popup that joins a building to a point shows two of
+   * these, one for each object, and "Last checked 2019" twice over says nothing
+   * about which of the two nobody has looked at since
+   */
+  lead = "Last checked"
 ): string | null => {
   const raw = CHECK_DATE_KEYS.map(key => tags?.[key]).find(Boolean)?.trim();
   if (!raw) return null;
@@ -174,7 +180,7 @@ export const describeSurvey = (
   // Anything else is shown as written rather than dropped: a mapper wrote it,
   // and it is still evidence somebody was there
   const match = raw.match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/);
-  if (!match) return `Last checked: ${raw}`;
+  if (!match) return `${lead}: ${raw}`;
 
   const [, year, month, day] = match;
   const date = new Date(Number(year), month ? Number(month) - 1 : 0, day ? Number(day) : 1);
@@ -186,7 +192,7 @@ export const describeSurvey = (
   const months = monthsSince(date, now);
   // A date in the future is a typo, and doing arithmetic on it would produce a
   // confident absurdity like "checked in 12 months"
-  return months < 0 ? `Last checked ${when}` : `Last checked ${when} · ${relativeAge(months)}`;
+  return months < 0 ? `${lead} ${when}` : `${lead} ${when} · ${relativeAge(months)}`;
 };
 
 /**
@@ -210,7 +216,9 @@ export const describeSurvey = (
  */
 export const describeEdit = (
   timestamp: string | undefined,
-  now = new Date()
+  now = new Date(),
+  /** As in {@link describeSurvey}: which object this date belongs to */
+  lead = "Last edited"
 ): string | null => {
   if (!timestamp) return null;
   const date = new Date(timestamp);
@@ -225,7 +233,7 @@ export const describeEdit = (
   });
 
   const months = monthsSince(date, now);
-  return months < 0 ? `Last edited ${when}` : `Last edited ${when} · ${relativeAge(months)}`;
+  return months < 0 ? `${lead} ${when}` : `${lead} ${when} · ${relativeAge(months)}`;
 };
 
 /* ---------- What order the rows go in, and what they are called ---------- */
@@ -310,6 +318,64 @@ export const rankForKey = (key: string): number => {
   const prefix = TAG_RANK_PREFIXES.find(([start]) => key.startsWith(start));
   return prefix ? prefix[1] : DEFAULT_TAG_RANK;
 };
+
+/* ---------- What the building says on the point's behalf ---------- */
+
+/**
+ * The tags that describe the facility rather than the object carrying them.
+ *
+ * A toilet inside a shopping centre is very often mapped as a bare
+ * `amenity=toilets` node while everything a visitor actually wants to know —
+ * that there is a changing table, that a wheelchair gets in, when the doors are
+ * open — sits on the building around it. Those tags are not facts about a
+ * polygon: `changing_table=yes` on a building means there is a changing table
+ * in the toilet inside it, which is the point on the map. Listed only in the
+ * building's own section they read as being about the building, and the reader
+ * who came looking for a changing table scrolls past the answer.
+ *
+ * So these, and only these, are lifted up beside the point's own rows under a
+ * heading that says where they came from. The heading is the whole safety of
+ * it: nothing is presented as the point's own tagging.
+ *
+ * What is deliberately not here is anything whose meaning changes with the
+ * object it is on. `fee` is the one to keep out: a shopping centre that charges
+ * for parking and a toilet that is free are both true, and a fee lifted onto
+ * the point would answer the reader's question with the wrong building's
+ * answer. `name`, `operator` and the addressing are the same kind of thing and
+ * stay below, where the section already says they belong to the building.
+ */
+const INHERITED_BUILDING_KEYS = new Set([
+  "changing_table",
+  "drinking_water",
+  "shower",
+  "tactile_paving",
+  "ramp:wheelchair",
+  "wheelchair",
+  "opening_hours",
+]);
+
+/** The families of the same, too large to list one by one */
+const INHERITED_BUILDING_PREFIXES = ["wheelchair:", "toilets:", "opening_hours:"];
+
+/** Whether a tag on the enclosing building is really about the point inside it */
+export const isInheritedFromBuilding = (key: string): boolean =>
+  INHERITED_BUILDING_KEYS.has(key) ||
+  INHERITED_BUILDING_PREFIXES.some(prefix => key.startsWith(prefix));
+
+/**
+ * What order the building's own rows go in, which is not the order the point's
+ * go in.
+ *
+ * The point's rows are ranked by the question they answer, because a reader is
+ * standing in front of the thing asking those questions. Nobody asks questions
+ * of a building in that order: it is context, read by somebody working out
+ * which building this is, and what identifies it is what kind of building it is
+ * and what it is used for. Those two lead, and the rest is alphabetical —
+ * arbitrary, and openly so, which is easier to scan than an order that looks
+ * meaningful and is not.
+ */
+export const buildingRankForKey = (key: string): number =>
+  key === "building" ? 0 : key === "building:use" ? 1 : 2;
 
 /**
  * Labels for the keys whose tag name is not what a reader would call the thing.

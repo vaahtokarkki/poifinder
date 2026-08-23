@@ -758,12 +758,20 @@ body {
  */
 /* Selected through the dt it sits in, to outrank Leaflet's own `.leaflet-container a`,
    which paints every link in a popup its blue */
+/*
+ * The label and the value both lead to the wiki — the key's page and the
+ * tag's — and neither is set as a link. The row is an account of a place, and
+ * a popup where every second line is blue reads as a list of things to tap
+ * instead. Hover says the offer is there; see tagValueWikiUrl.
+ */
+.poi-popup-row dd .poi-popup-tag-link,
 .poi-popup-row dt .poi-popup-tag-link {
   color: inherit;
   font: inherit;
   text-decoration: none;
 }
 
+.poi-popup-row dd .poi-popup-tag-link:hover,
 .poi-popup-row dt .poi-popup-tag-link:hover {
   text-decoration: underline;
   text-decoration-style: dotted;
@@ -821,6 +829,33 @@ body {
   color: #5f6368;
   cursor: default;
   text-decoration: none;
+}
+
+/*
+ * What the building says on the point's behalf: a changing table mapped on a
+ * shopping centre, the opening hours of the station a locker is in.
+ *
+ * Sits with the point's own rows rather than in the building's section below,
+ * because it answers questions about the point — but it is set apart, and
+ * headed, because the point never said it. Quieter than the building heading
+ * below and without a rule line above it: this belongs to the block it follows,
+ * where the building's section starts a new one.
+ */
+.poi-popup-inherited {
+  margin-top: 0.7em;
+}
+
+.poi-popup .leaflet-popup-content .poi-popup-inherited-label {
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #80868b;
+}
+
+.poi-popup-inherited .poi-popup-rows {
+  margin-top: 0.3em;
 }
 
 /*
@@ -893,6 +928,15 @@ body {
   margin: 0.15em 0 0 0;
   font-size: 0.7rem;
   color: #9aa0a6;
+}
+
+/*
+ * The building's own dates, inside the building's own section. Nearer the rows
+ * above them than the point's footnotes are to theirs, so the whole block reads
+ * as one thing said about one object rather than as the popup trailing off.
+ */
+.poi-popup .leaflet-popup-content .poi-popup-building .poi-popup-survey {
+  margin-top: 0.5em;
 }
 
 /* Machine translation notices and the reason one could not be had. Both are

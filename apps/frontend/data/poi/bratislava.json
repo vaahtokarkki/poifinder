@@ -1,9 +1,9 @@
 {
   "city": "bratislava",
-  "generatedAt": "2026-08-18T03:58:07.586Z",
+  "generatedAt": "2026-08-23T04:06:10.778Z",
   "categories": {
     "toilets": {
-      "count": 215,
+      "count": 219,
       "pois": [
         {
           "id": "way/77991925",
@@ -11,6 +11,36 @@
           "lat": 48.151426,
           "lon": 17.11882,
           "openingHours": "Mo-Su 06:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11073908240",
+          "lat": 48.142613,
+          "lon": 17.098358,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "IPP Park Hrad"
+        },
+        {
+          "id": "node/10152999073",
+          "lat": 48.147423,
+          "lon": 17.126816,
+          "context": "Nivy"
+        },
+        {
+          "id": "node/6327340569",
+          "lat": 48.133391,
+          "lon": 17.106236,
+          "fee": "no",
+          "context": "Aupark"
+        },
+        {
+          "id": "way/5215164",
+          "name": "Polus",
+          "lat": 48.168621,
+          "lon": 17.139781,
+          "address": "Vajnorská 10645/100",
+          "openingHours": "Mo-Su 09:00-21:00",
           "wheelchair": "yes"
         },
         {
@@ -31,6 +61,14 @@
           "openingHours": "Mo-Su 09:00-21:00"
         },
         {
+          "id": "way/61594481",
+          "name": "OD Saratov",
+          "lat": 48.192614,
+          "lon": 17.034125,
+          "address": "Saratovská 3356/13",
+          "openingHours": "Mo-Sa 07:00-21:00; Su 08:00-20:00"
+        },
+        {
           "id": "way/263717998",
           "name": "Obchodné centrum Dubrawa",
           "lat": 48.197692,
@@ -40,7 +78,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:57.917Z"
+      "updatedAt": "2026-08-23T04:05:51.105Z"
     },
     "drinking-water": {
       "count": 111,
@@ -52,16 +90,28 @@
           "lon": 17.108733
         },
         {
+          "id": "node/7209541023",
+          "lat": 48.149367,
+          "lon": 17.124213,
+          "context": "Psí park Poľná"
+        },
+        {
+          "id": "node/11945782653",
+          "lat": 48.12433,
+          "lon": 17.10463,
+          "context": "Psí park Petržalka"
+        },
+        {
           "id": "node/14039936334",
           "name": "Pitná voda",
           "lat": 48.098343,
           "lon": 17.104104
         }
       ],
-      "updatedAt": "2026-08-14T05:05:58.591Z"
+      "updatedAt": "2026-08-23T04:05:52.691Z"
     },
     "playgrounds": {
-      "count": 631,
+      "count": 632,
       "pois": [
         {
           "id": "way/580787200",
@@ -255,10 +305,10 @@
           "openingHours": "May-Oct 08:00-21:00; Mar-Apr,Nov 08:00-19:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:59.454Z"
+      "updatedAt": "2026-08-23T04:05:53.521Z"
     },
     "parking": {
-      "count": 4847,
+      "count": 4851,
       "pois": [
         {
           "id": "node/15244242",
@@ -489,7 +539,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:00.662Z"
+      "updatedAt": "2026-08-23T04:05:54.798Z"
     },
     "charging-stations": {
       "count": 138,
@@ -723,7 +773,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:01.164Z"
+      "updatedAt": "2026-08-23T04:05:55.277Z"
     },
     "gas-stations": {
       "count": 82,
@@ -876,7 +926,7 @@
           "lon": 17.20483
         }
       ],
-      "updatedAt": "2026-08-14T05:06:01.713Z"
+      "updatedAt": "2026-08-23T04:05:55.722Z"
     },
     "ice-cream": {
       "count": 93,
@@ -1085,7 +1135,7 @@
           "openingHours": "Mo-Sa 10:00-20:00; Su 12:00-20:00; May-Aug Mo-Sa 10:00-21:00; May-Aug Su 09:00-21:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:02.235Z"
+      "updatedAt": "2026-08-23T04:05:56.176Z"
     },
     "dog-parks": {
       "count": 43,
@@ -1206,10 +1256,10 @@
           "address": "Vrakunská"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:02.667Z"
+      "updatedAt": "2026-08-23T04:05:56.610Z"
     },
     "picnic-spots": {
-      "count": 317,
+      "count": 318,
       "pois": [
         {
           "id": "node/2029735812",
@@ -1256,18 +1306,17 @@
           "lon": 17.067947
         }
       ],
-      "updatedAt": "2026-08-14T05:06:03.331Z"
+      "updatedAt": "2026-08-23T04:05:57.948Z"
     },
     "viewpoints": {
-      "count": 40,
+      "count": 54,
       "pois": [
         {
-          "id": "node/2378288128",
+          "id": "way/378574918",
           "name": "UFO",
-          "lat": 48.136864,
-          "lon": 17.104582,
-          "openingHours": "Mo-Su 10:00-23:00",
-          "fee": "yes"
+          "lat": 48.136866,
+          "lon": 17.104585,
+          "openingHours": "Mo-Su 10:00-23:00"
         },
         {
           "id": "way/444903824",
@@ -1308,7 +1357,7 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:03.812Z"
+      "updatedAt": "2026-08-23T04:05:58.586Z"
     },
     "beaches": {
       "count": 29,
@@ -1356,10 +1405,10 @@
           "lon": 17.195211
         }
       ],
-      "updatedAt": "2026-08-14T05:06:04.335Z"
+      "updatedAt": "2026-08-23T04:05:59.113Z"
     },
     "atms": {
-      "count": 417,
+      "count": 416,
       "pois": [
         {
           "id": "node/464547610",
@@ -1504,10 +1553,10 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:05.005Z"
+      "updatedAt": "2026-08-23T04:05:59.865Z"
     },
     "post-boxes": {
-      "count": 197,
+      "count": 198,
       "pois": [
         {
           "id": "node/4975670360",
@@ -1516,7 +1565,7 @@
           "lon": 17.109058
         }
       ],
-      "updatedAt": "2026-08-14T05:06:05.516Z"
+      "updatedAt": "2026-08-23T04:06:00.408Z"
     },
     "recycling": {
       "count": 594,
@@ -1625,7 +1674,7 @@
           "address": "Hodonínska 15"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:06.171Z"
+      "updatedAt": "2026-08-23T04:06:02.702Z"
     },
     "luggage-storage": {
       "count": 5,
@@ -1638,7 +1687,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:06.555Z"
+      "updatedAt": "2026-08-23T04:06:03.172Z"
     },
     "libraries": {
       "count": 132,
@@ -1862,7 +1911,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:07.170Z"
+      "updatedAt": "2026-08-23T04:06:03.803Z"
     },
     "outdoor-gyms": {
       "count": 251,
@@ -1985,7 +2034,7 @@
           "lon": 17.197935
         }
       ],
-      "updatedAt": "2026-08-14T05:06:07.660Z"
+      "updatedAt": "2026-08-23T04:06:05.174Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2007,10 +2056,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:08.119Z"
+      "updatedAt": "2026-08-23T04:06:05.694Z"
     },
     "shelters": {
-      "count": 115,
+      "count": 90,
       "pois": [
         {
           "id": "node/1705188276",
@@ -2121,39 +2170,275 @@
           "name": "T.O. Perero",
           "lat": 48.216844,
           "lon": 17.09491
-        },
-        {
-          "id": "node/7816788654",
-          "name": "Hacienda 1973",
-          "lat": 48.175673,
-          "lon": 17.012012,
-          "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:08.937Z"
+      "updatedAt": "2026-08-23T04:06:07.108Z"
     },
     "rest-areas": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:06:09.358Z"
+      "count": 5,
+      "pois": [
+        {
+          "id": "way/305094795",
+          "name": "Lamač",
+          "lat": 48.180654,
+          "lon": 17.054424,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/809932029",
+          "name": "Jarovce",
+          "lat": 48.087011,
+          "lon": 17.100109
+        },
+        {
+          "id": "way/306182965",
+          "name": "Zlaté piesky",
+          "lat": 48.17741,
+          "lon": 17.191405
+        }
+      ],
+      "updatedAt": "2026-08-23T04:06:07.573Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:06:09.756Z"
+      "updatedAt": "2026-08-23T04:06:07.898Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:03.404Z"
+      "count": 37,
+      "pois": [
+        {
+          "id": "node/463165525",
+          "name": "Bratislava 1",
+          "lat": 48.145455,
+          "lon": 17.109011,
+          "address": "Námestie SNP 35",
+          "openingHours": "Mo-Fr 07:00-19:00; Sa 08:00-12:00"
+        },
+        {
+          "id": "node/1957107785",
+          "name": "Poštové priečinky, P.O.Boxy",
+          "lat": 48.145126,
+          "lon": 17.108327,
+          "openingHours": "Mo-Fr 07:00-19:00"
+        },
+        {
+          "id": "node/259774930",
+          "name": "Bratislava 15",
+          "lat": 48.152691,
+          "lon": 17.113419,
+          "address": "Námestie slobody 6",
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00"
+        },
+        {
+          "id": "node/12161042062",
+          "name": "Nova Post",
+          "lat": 48.144584,
+          "lon": 17.115372,
+          "address": "Dunajská 14",
+          "openingHours": "Mo-Fr 08:00-20:00, Sa-Su 09:00-18:00"
+        },
+        {
+          "id": "node/569923776",
+          "name": "Bratislava 14",
+          "lat": 48.158812,
+          "lon": 17.105765,
+          "address": "Námestie Franza Liszta 1",
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/7206988813",
+          "name": "Bratislava 18",
+          "lat": 48.140297,
+          "lon": 17.120618,
+          "openingHours": "Mo-Su 09:00-20:00"
+        },
+        {
+          "id": "node/4440390350",
+          "name": "Bratislava 53",
+          "lat": 48.133712,
+          "lon": 17.10564,
+          "openingHours": "Mo-Fr 10:00-20:00; Sa-Su 09:00-20:00"
+        },
+        {
+          "id": "node/8912023148",
+          "name": "Bratislava 24",
+          "lat": 48.146976,
+          "lon": 17.130152,
+          "openingHours": "Mo-Fr 08:00-20:00; Sa-Su 09:00-20:00"
+        },
+        {
+          "id": "node/3949956759",
+          "name": "Bratislava 218",
+          "lat": 48.156782,
+          "lon": 17.130125,
+          "openingHours": "Mo-Su 09:00-20:00"
+        },
+        {
+          "id": "node/259258827",
+          "name": "Bratislava 37",
+          "lat": 48.165108,
+          "lon": 17.095071,
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00"
+        },
+        {
+          "id": "node/270667961",
+          "name": "Bratislava 55",
+          "lat": 48.126384,
+          "lon": 17.123071,
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/7969706112",
+          "name": "Bratislava 5",
+          "lat": 48.12409,
+          "lon": 17.111418,
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00"
+        },
+        {
+          "id": "node/535274250",
+          "name": "Bratislava 31",
+          "lat": 48.168039,
+          "lon": 17.139914,
+          "openingHours": "Mo-Su 08:00-20:00"
+        },
+        {
+          "id": "node/2270027368",
+          "name": "Bratislava 4",
+          "lat": 48.153453,
+          "lon": 17.060609,
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00"
+        },
+        {
+          "id": "node/1665797498",
+          "name": "Bratislava 52",
+          "lat": 48.116314,
+          "lon": 17.102446,
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/1293406738",
+          "name": "Bratislava 27",
+          "lat": 48.151673,
+          "lon": 17.157261,
+          "openingHours": "Mo-Fr 08:00-18:00"
+        },
+        {
+          "id": "node/4063696766",
+          "name": "Bratislava 38",
+          "lat": 48.166541,
+          "lon": 17.151297,
+          "address": "Tomášikova 46",
+          "openingHours": "Mo-Tu,Th 08:00-15:00; We 08:00-17:00; Fr 08:00-14:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1926143742",
+          "name": "Bratislava 3",
+          "lat": 48.170565,
+          "lon": 17.147462,
+          "openingHours": "Mo-Fr 08:00-18:00"
+        },
+        {
+          "id": "node/5987018939",
+          "name": "Bratislava 12",
+          "lat": 48.170794,
+          "lon": 17.147722,
+          "openingHours": "Mo-Fr 07:00-19:00; PH off"
+        },
+        {
+          "id": "node/206128237",
+          "name": "Bratislava 33",
+          "lat": 48.182443,
+          "lon": 17.129057,
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00"
+        },
+        {
+          "id": "node/1792140244",
+          "name": "Bratislava 44",
+          "lat": 48.152724,
+          "lon": 17.049938,
+          "address": "Ľudovíta Fullu 3",
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00"
+        },
+        {
+          "id": "node/2518583456",
+          "name": "Bratislava 29",
+          "lat": 48.159798,
+          "lon": 17.164651,
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00"
+        },
+        {
+          "id": "node/9054676190",
+          "name": "Oblastný uzol Bratislava-Petržalka",
+          "lat": 48.110366,
+          "lon": 17.090045,
+          "openingHours": "Mo-Fr 09:00-21:00"
+        },
+        {
+          "id": "node/9054676191",
+          "name": "Oddelenie dodávania balíkov Bratislava-Petržalka",
+          "lat": 48.110327,
+          "lon": 17.090018,
+          "openingHours": "Mo-Fr 08:00-18:00"
+        },
+        {
+          "id": "node/1902901348",
+          "name": "Bratislava 215",
+          "lat": 48.147022,
+          "lon": 17.171157,
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00"
+        },
+        {
+          "id": "node/852740095",
+          "name": "Bratislava 57",
+          "lat": 48.097123,
+          "lon": 17.111511,
+          "address": "Jasovská 3A",
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00"
+        },
+        {
+          "id": "node/2321231082",
+          "name": "Bratislava 216",
+          "lat": 48.165519,
+          "lon": 17.182377,
+          "openingHours": "Mo-Su 08:00-13:30,14:00-20:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/915609964",
+          "name": "Bratislava 411",
+          "lat": 48.18005,
+          "lon": 17.043857,
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00"
+        },
+        {
+          "id": "node/1635915773",
+          "name": "Expresné služby",
+          "lat": 48.193807,
+          "lon": 17.157801,
+          "address": "Bojnická 8012/14"
+        },
+        {
+          "id": "node/410708413",
+          "name": "Bratislava 34",
+          "lat": 48.201713,
+          "lon": 17.143914,
+          "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:06:08.394Z"
     },
     "showers": {
-      "count": 0,
+      "count": 30,
       "pois": [],
-      "updatedAt": "2026-08-17T04:03:03.993Z"
+      "updatedAt": "2026-08-23T04:06:08.814Z"
     },
     "fireplaces": {
-      "count": 44,
+      "count": 185,
       "pois": [
         {
           "id": "node/1705188276",
@@ -2193,7 +2478,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-17T04:03:05.051Z"
+      "updatedAt": "2026-08-23T04:06:09.659Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2201,16 +2486,94 @@
       "updatedAt": "2026-08-17T04:03:05.800Z"
     },
     "benches": {
-      "count": 5,
+      "count": 6009,
       "pois": [
+        {
+          "id": "node/7683263923",
+          "name": "Lavička Václava Havla",
+          "lat": 48.139845,
+          "lon": 17.110845
+        },
+        {
+          "id": "node/13014923625",
+          "name": "Narcis",
+          "lat": 48.145083,
+          "lon": 17.091958
+        },
+        {
+          "id": "node/13014923624",
+          "name": "Orgován",
+          "lat": 48.144192,
+          "lon": 17.09217
+        },
+        {
+          "id": "node/13060018787",
+          "name": "Pohybom k zdraviu",
+          "lat": 48.156774,
+          "lon": 17.094673
+        },
+        {
+          "id": "node/13060018791",
+          "name": "Sóltz pihenö",
+          "lat": 48.15697,
+          "lon": 17.094573
+        },
+        {
+          "id": "node/13607859908",
+          "name": "Ďuro Černý",
+          "lat": 48.158626,
+          "lon": 17.118034
+        },
+        {
+          "id": "node/10216325337",
+          "name": "Lavička Mekyho Žbirku",
+          "lat": 48.158646,
+          "lon": 17.118269
+        },
+        {
+          "id": "node/13002059245",
+          "name": "Pivónia",
+          "lat": 48.14608,
+          "lon": 17.089645
+        },
+        {
+          "id": "node/8383118085",
+          "name": "Sedmokráska",
+          "lat": 48.146189,
+          "lon": 17.087025
+        },
+        {
+          "id": "node/12801794761",
+          "name": "Lavička zblíženia",
+          "lat": 48.150666,
+          "lon": 17.14038
+        },
+        {
+          "id": "node/13132992996",
+          "name": "Lavička Maši Haľamovej",
+          "lat": 48.167752,
+          "lon": 17.125877
+        },
         {
           "id": "node/6218094232",
           "name": "Bratislava Blick",
           "lat": 48.105522,
           "lon": 17.042312
+        },
+        {
+          "id": "node/11881062892",
+          "name": "Biely bicykel a lavička",
+          "lat": 48.139832,
+          "lon": 17.199877
+        },
+        {
+          "id": "node/8946620968",
+          "name": "Pekná vyhliadka",
+          "lat": 48.209604,
+          "lon": 17.137214
         }
       ],
-      "updatedAt": "2026-08-17T04:03:07.055Z"
+      "updatedAt": "2026-08-23T04:06:10.673Z"
     },
     "compressed-air": {
       "count": 0,

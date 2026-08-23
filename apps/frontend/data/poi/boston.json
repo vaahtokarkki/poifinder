@@ -1,15 +1,23 @@
 {
   "city": "boston",
-  "generatedAt": "2026-08-18T03:58:34.308Z",
+  "generatedAt": "2026-08-23T04:34:38.984Z",
   "categories": {
     "toilets": {
-      "count": 179,
+      "count": 182,
       "pois": [
         {
           "id": "node/11120884204",
           "name": "Government Center Toilets",
           "lat": 42.359772,
           "lon": -71.059217
+        },
+        {
+          "id": "node/3937039209",
+          "lat": 42.355412,
+          "lon": -71.063873,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Visitor Information Center at Boston Common"
         },
         {
           "id": "way/848266637",
@@ -22,6 +30,15 @@
           "fee": "yes"
         },
         {
+          "id": "relation/20313627",
+          "name": "Back Bay Station",
+          "lat": 42.34742,
+          "lon": -71.075307,
+          "address": "Dartmouth Street 145",
+          "openingHours": "Mo-Su 05:00-11:59",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/11213163310",
           "name": "Kittie Knox Community Cycle Center Restroom",
           "lat": 42.372078,
@@ -29,6 +46,13 @@
           "openingHours": "Mo-Su 07:00-19:00",
           "wheelchair": "yes",
           "fee": "no"
+        },
+        {
+          "id": "node/3372043693",
+          "name": "Garment District",
+          "lat": 42.365916,
+          "lon": -71.092927,
+          "address": "Broadway 200"
         },
         {
           "id": "node/4360543295",
@@ -53,9 +77,17 @@
           "lon": -71.151004,
           "address": "Mount Auburn Street 810",
           "openingHours": "Mo-Th,Su 07:00-17:00; Fr-Sa 07:00-18:00"
+        },
+        {
+          "id": "relation/20313704",
+          "name": "Forest Hills",
+          "lat": 42.300965,
+          "lon": -71.113868,
+          "address": "Morton Street 11",
+          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:59.931Z"
+      "updatedAt": "2026-08-23T04:34:19.231Z"
     },
     "drinking-water": {
       "count": 333,
@@ -74,7 +106,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:00.727Z"
+      "updatedAt": "2026-08-23T04:34:21.767Z"
     },
     "playgrounds": {
       "count": 528,
@@ -271,10 +303,10 @@
           "lon": -71.070378
         }
       ],
-      "updatedAt": "2026-08-14T05:21:01.619Z"
+      "updatedAt": "2026-08-23T04:34:22.686Z"
     },
     "parking": {
-      "count": 2268,
+      "count": 2271,
       "pois": [
         {
           "id": "node/4776840747",
@@ -504,10 +536,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:02.764Z"
+      "updatedAt": "2026-08-23T04:34:23.975Z"
     },
     "charging-stations": {
-      "count": 53,
+      "count": 54,
       "pois": [
         {
           "id": "node/13158317604",
@@ -595,7 +627,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:03.267Z"
+      "updatedAt": "2026-08-23T04:34:24.448Z"
     },
     "gas-stations": {
       "count": 100,
@@ -808,7 +840,7 @@
           "address": "Boston Avenue 590"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:03.788Z"
+      "updatedAt": "2026-08-23T04:34:24.963Z"
     },
     "ice-cream": {
       "count": 65,
@@ -1028,7 +1060,7 @@
           "address": "Beacon Street 1010"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:04.312Z"
+      "updatedAt": "2026-08-23T04:34:25.488Z"
     },
     "dog-parks": {
       "count": 54,
@@ -1206,7 +1238,7 @@
           "address": "Newton Street and Goddard Avenue"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:04.786Z"
+      "updatedAt": "2026-08-23T04:34:25.949Z"
     },
     "picnic-spots": {
       "count": 762,
@@ -1230,10 +1262,10 @@
           "lon": -71.088486
         }
       ],
-      "updatedAt": "2026-08-14T05:21:05.487Z"
+      "updatedAt": "2026-08-23T04:34:27.840Z"
     },
     "viewpoints": {
-      "count": 54,
+      "count": 59,
       "pois": [
         {
           "id": "node/5922346085",
@@ -1282,6 +1314,12 @@
           "lon": -71.110568
         },
         {
+          "id": "node/4708209077",
+          "name": "Cohituate Standpipe",
+          "lat": 42.325278,
+          "lon": -71.094627
+        },
+        {
           "id": "way/208370363",
           "name": "George Washington Tower",
           "lat": 42.369657,
@@ -1301,7 +1339,7 @@
           "lon": -71.147128
         }
       ],
-      "updatedAt": "2026-08-14T05:21:05.926Z"
+      "updatedAt": "2026-08-23T04:34:28.407Z"
     },
     "beaches": {
       "count": 61,
@@ -1391,10 +1429,10 @@
           "lon": -70.980095
         }
       ],
-      "updatedAt": "2026-08-14T05:21:06.457Z"
+      "updatedAt": "2026-08-23T04:34:28.994Z"
     },
     "atms": {
-      "count": 267,
+      "count": 266,
       "pois": [
         {
           "id": "node/6977540285",
@@ -1615,7 +1653,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:07.156Z"
+      "updatedAt": "2026-08-23T04:34:29.697Z"
     },
     "post-boxes": {
       "count": 388,
@@ -1653,7 +1691,7 @@
           "lon": -71.067008
         }
       ],
-      "updatedAt": "2026-08-14T05:21:07.699Z"
+      "updatedAt": "2026-08-23T04:34:30.253Z"
     },
     "recycling": {
       "count": 408,
@@ -1706,15 +1744,15 @@
           "lon": -71.094918
         }
       ],
-      "updatedAt": "2026-08-14T05:21:08.239Z"
+      "updatedAt": "2026-08-23T04:34:31.810Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:08.701Z"
+      "updatedAt": "2026-08-23T04:34:32.266Z"
     },
     "libraries": {
-      "count": 251,
+      "count": 253,
       "pois": [
         {
           "id": "node/257536475",
@@ -1922,7 +1960,7 @@
           "lon": -71.049933
         }
       ],
-      "updatedAt": "2026-08-14T05:21:09.360Z"
+      "updatedAt": "2026-08-23T04:34:32.959Z"
     },
     "outdoor-gyms": {
       "count": 29,
@@ -1949,17 +1987,17 @@
           "lon": -71.075811
         }
       ],
-      "updatedAt": "2026-08-14T05:21:09.778Z"
+      "updatedAt": "2026-08-23T04:34:33.927Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:10.201Z"
+      "updatedAt": "2026-08-23T04:34:34.446Z"
     },
     "shelters": {
       "count": 15,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:11.026Z"
+      "updatedAt": "2026-08-23T04:34:35.267Z"
     },
     "rest-areas": {
       "count": 1,
@@ -1971,27 +2009,252 @@
           "lon": -71.073249
         }
       ],
-      "updatedAt": "2026-08-14T05:21:11.419Z"
+      "updatedAt": "2026-08-23T04:34:35.781Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:11.814Z"
+      "updatedAt": "2026-08-23T04:34:36.139Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:46.182Z"
+      "count": 73,
+      "pois": [
+        {
+          "id": "node/7607201351",
+          "name": "Unites States Post Office John Fitzgerald Kennedy Station",
+          "lat": 42.362116,
+          "lon": -71.062012,
+          "address": "New Chardon Street 25",
+          "openingHours": "Mo-Fr 07:30-17:30"
+        },
+        {
+          "id": "node/7609470997",
+          "name": "31 Milk Street Lobby Post Office",
+          "lat": 42.356651,
+          "lon": -71.057962,
+          "address": "Milk Street 31",
+          "openingHours": "Mo-Fr 07:30-18:00"
+        },
+        {
+          "id": "node/11895707660",
+          "name": "United States Post Office",
+          "lat": 42.362818,
+          "lon": -71.055297,
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:00-14:00"
+        },
+        {
+          "id": "node/358278198",
+          "name": "Massachusetts State House Post Office",
+          "lat": 42.359009,
+          "lon": -71.064139
+        },
+        {
+          "id": "node/7978950681",
+          "name": "Global Pack Ship",
+          "lat": 42.354389,
+          "lon": -71.063524,
+          "address": "Tremont Street 151",
+          "openingHours": "Mo-Fr 09:30-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/7620908560",
+          "name": "Lafayette Post Office",
+          "lat": 42.353245,
+          "lon": -71.06111,
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 09:30-13:00"
+        },
+        {
+          "id": "node/2708227333",
+          "name": "The UPS Store",
+          "lat": 42.360209,
+          "lon": -71.070635,
+          "address": "Charles Street 139",
+          "openingHours": "Mo-Fr 09:00-19:00; Su 11:00-16:00; Sa 10:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/7738279640",
+          "name": "US Post Office Charles Street Station",
+          "lat": 42.35965,
+          "lon": -71.07092,
+          "address": "Charles Street 136",
+          "openingHours": "Mo-Fr 08:00-17:30; Sa 08:00-12:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3099204452",
+          "name": "Fort Point Post Office",
+          "lat": 42.350804,
+          "lon": -71.053673,
+          "address": "Dorchester Avenue 25",
+          "openingHours": "Mo-Su 06:00-23:59"
+        },
+        {
+          "id": "node/12473031265",
+          "name": "Kendall Square Post Office",
+          "lat": 42.368292,
+          "lon": -71.077647,
+          "address": "First Street 91",
+          "openingHours": "Mo-Fr 07:30-17:00 open \"Lobby\" || Mo-Fr 08:00-17:00"
+        },
+        {
+          "id": "node/7620646719",
+          "name": "East Boston Postal Station",
+          "lat": 42.371174,
+          "lon": -71.039305,
+          "address": "Meridian Street 50",
+          "openingHours": "Mo-Fr 08:00-17:00; Sa 08:00-13:00"
+        },
+        {
+          "id": "node/944734480",
+          "name": "East Cambridge Post Office",
+          "lat": 42.371272,
+          "lon": -71.080851,
+          "address": "Cambridge Street 303",
+          "openingHours": "Mo-Fr 08:00-17:00; Sa 09:00-13:00"
+        },
+        {
+          "id": "node/7794978322",
+          "name": "US Post Office",
+          "lat": 42.342287,
+          "lon": -71.073016,
+          "address": "West Dedham Street 59",
+          "openingHours": "Mo-Fr 08:30-17:00; Sa 08:00-13:30"
+        },
+        {
+          "id": "node/7863253905",
+          "name": "DHL",
+          "lat": 42.348661,
+          "lon": -71.088179,
+          "address": "Massachusetts Avenue 90",
+          "openingHours": "Mo-Fr 10:00-19:00,Sa 10:00-16:00"
+        },
+        {
+          "id": "node/13919954301",
+          "name": "South Boston Post Office",
+          "lat": 42.336684,
+          "lon": -71.042245,
+          "address": "East Third Street 444"
+        },
+        {
+          "id": "node/6445776454",
+          "name": "Northeastern University ResMail",
+          "lat": 42.337661,
+          "lon": -71.085266
+        },
+        {
+          "id": "node/358278022",
+          "name": "Inman Square Post Office",
+          "lat": 42.373679,
+          "lon": -71.099556,
+          "address": "Cambridge Street 1311",
+          "openingHours": "Mo-Fr 09:30-17:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3067087245",
+          "name": "Union Square Post Office",
+          "lat": 42.38074,
+          "lon": -71.097177,
+          "address": "Bow Street 18"
+        },
+        {
+          "id": "way/29890194",
+          "name": "Cambridge Post Office",
+          "lat": 42.366349,
+          "lon": -71.106047,
+          "address": "Massachusetts Avenue 770",
+          "openingHours": "Mo-Fr 07:30-19:00; Sa 07:30-14:00; PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/358277485",
+          "name": "Chelsea Post Office",
+          "lat": 42.391562,
+          "lon": -71.03661
+        },
+        {
+          "id": "way/29868654",
+          "name": "Roxbury Post Office",
+          "lat": 42.330263,
+          "lon": -71.086127,
+          "address": "Roxbury Street 55"
+        },
+        {
+          "id": "node/9112197263",
+          "name": "Kenmore Post Office",
+          "lat": 42.34778,
+          "lon": -71.105847,
+          "address": "Park Drive 512"
+        },
+        {
+          "id": "node/7689268430",
+          "name": "Winter Hill Post Office",
+          "lat": 42.392491,
+          "lon": -71.093545,
+          "openingHours": "Mo-Fr 08:00-17:00; Sa 08:00-13:00"
+        },
+        {
+          "id": "node/12171149553",
+          "name": "Mather House Mail Center",
+          "lat": 42.368247,
+          "lon": -71.11582,
+          "address": "Cowperthwaite Street 10"
+        },
+        {
+          "id": "node/12171129825",
+          "name": "Dunster House Mail Center",
+          "lat": 42.368737,
+          "lon": -71.115925,
+          "address": "Memorial Drive 945"
+        },
+        {
+          "id": "node/12171082851",
+          "name": "Leverett House Mail Center",
+          "lat": 42.369342,
+          "lon": -71.116825,
+          "address": "DeWolfe Street 28"
+        },
+        {
+          "id": "node/12171095787",
+          "name": "Adams House Mail Center",
+          "lat": 42.371717,
+          "lon": -71.116696,
+          "address": "Plympton Street 26"
+        },
+        {
+          "id": "node/13919949802",
+          "name": "Uphams Corner Post Office",
+          "lat": 42.316134,
+          "lon": -71.065846
+        },
+        {
+          "id": "node/12171151215",
+          "name": "Quincy House Mail Center",
+          "lat": 42.370614,
+          "lon": -71.117381,
+          "address": "Plympton Street 58"
+        },
+        {
+          "id": "node/12171117187",
+          "name": "Lowell House Mail Center",
+          "lat": 42.37118,
+          "lon": -71.118294,
+          "address": "Holyoke Place 10"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:34:36.605Z"
     },
     "showers": {
-      "count": 0,
+      "count": 10,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:46.582Z"
+      "updatedAt": "2026-08-23T04:34:36.958Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 11,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:47.171Z"
+      "updatedAt": "2026-08-23T04:34:37.808Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1999,9 +2262,53 @@
       "updatedAt": "2026-08-17T04:05:47.565Z"
     },
     "benches": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:47.975Z"
+      "count": 5594,
+      "pois": [
+        {
+          "id": "node/7693303124",
+          "name": "Good Will Hunting Bench",
+          "lat": 42.354399,
+          "lon": -71.070691,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/7689983009",
+          "name": "Civil War Veterans' Bench",
+          "lat": 42.353579,
+          "lon": -71.071805
+        },
+        {
+          "id": "node/7689983010",
+          "name": "Charles Pagelson Howard Bench",
+          "lat": 42.353611,
+          "lon": -71.071985
+        },
+        {
+          "id": "node/7712234581",
+          "name": "Henry C. Merwin Bench",
+          "lat": 42.353142,
+          "lon": -71.07342
+        },
+        {
+          "id": "node/10968151581",
+          "name": "Ruth Mason Richman Bench",
+          "lat": 42.345931,
+          "lon": -71.121582
+        },
+        {
+          "id": "node/10968151570",
+          "name": "George Dargo Bench",
+          "lat": 42.345865,
+          "lon": -71.121596
+        },
+        {
+          "id": "node/4051236150",
+          "name": "Jamaica Pond Bench",
+          "lat": 42.316821,
+          "lon": -71.117211
+        }
+      ],
+      "updatedAt": "2026-08-23T04:34:38.877Z"
     },
     "compressed-air": {
       "count": 0,

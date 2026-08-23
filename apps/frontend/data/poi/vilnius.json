@@ -1,6 +1,6 @@
 {
   "city": "vilnius",
-  "generatedAt": "2026-08-18T03:58:05.701Z",
+  "generatedAt": "2026-08-23T04:04:08.884Z",
   "categories": {
     "toilets": {
       "count": 108,
@@ -12,13 +12,12 @@
           "lon": 25.278292
         },
         {
-          "id": "way/24569871",
-          "name": "G9",
-          "lat": 54.687356,
-          "lon": 25.28164,
-          "address": "Gedimino pr. 9",
-          "openingHours": "Mo-Sa 10:00-20:00; Su 11:00-18:00",
-          "wheelchair": "yes"
+          "id": "node/1403336867",
+          "lat": 54.687539,
+          "lon": 25.281546,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "G9"
         },
         {
           "id": "way/24569934",
@@ -36,6 +35,15 @@
           "lon": 25.277034,
           "address": "Konstitucijos pr. 7A",
           "openingHours": "Mo-Fr 07:00-21:00; Sa,Su 08:00-21:00"
+        },
+        {
+          "id": "node/11066727305",
+          "lat": 54.690795,
+          "lon": 25.263565,
+          "openingHours": "Mo-Fr 08:00-21:00; Sa-Su 10:00-18:00",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Lietuvos nacionalinė M. Mažvydo biblioteka"
         },
         {
           "id": "way/1262177673",
@@ -99,6 +107,12 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/8843016921",
+          "lat": 54.712019,
+          "lon": 25.300974,
+          "context": "Hyper Rimi"
+        },
+        {
           "id": "way/52077421",
           "name": "Outlet Park",
           "lat": 54.714488,
@@ -116,11 +130,12 @@
           "openingHours": "Mo-Su 08:00-22:00"
         },
         {
-          "id": "way/371850727",
-          "name": "Nordika",
-          "lat": 54.652186,
-          "lon": 25.27731,
-          "address": "Vikingų g. 3"
+          "id": "node/13700903375",
+          "lat": 54.65392,
+          "lon": 25.277286,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Nordika"
         },
         {
           "id": "way/77103757",
@@ -149,12 +164,12 @@
           "openingHours": "Mo-Su 10:00-21:00"
         },
         {
-          "id": "way/60634048",
-          "name": "PC „Mandarinas“",
-          "lat": 54.731907,
-          "lon": 25.245391,
-          "address": "Ateities g. 91",
-          "openingHours": "Mo-Su 08:00-23:00"
+          "id": "node/13347861510",
+          "lat": 54.731655,
+          "lon": 25.245059,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "PC „Mandarinas“"
         },
         {
           "id": "way/38169160",
@@ -165,10 +180,10 @@
           "openingHours": "Mo-Su 10:00-20:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:51.344Z"
+      "updatedAt": "2026-08-23T04:03:49.174Z"
     },
     "drinking-water": {
-      "count": 179,
+      "count": 181,
       "pois": [
         {
           "id": "node/14080184101",
@@ -177,10 +192,10 @@
           "lon": 25.269304
         }
       ],
-      "updatedAt": "2026-08-14T05:04:51.986Z"
+      "updatedAt": "2026-08-23T04:03:51.413Z"
     },
     "playgrounds": {
-      "count": 998,
+      "count": 996,
       "pois": [
         {
           "id": "way/608109641",
@@ -230,7 +245,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:52.764Z"
+      "updatedAt": "2026-08-23T04:03:52.355Z"
     },
     "parking": {
       "count": 1971,
@@ -462,7 +477,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:53.673Z"
+      "updatedAt": "2026-08-23T04:03:53.408Z"
     },
     "charging-stations": {
       "count": 155,
@@ -574,7 +589,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:54.125Z"
+      "updatedAt": "2026-08-23T04:03:53.818Z"
     },
     "gas-stations": {
       "count": 91,
@@ -833,7 +848,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:54.605Z"
+      "updatedAt": "2026-08-23T04:03:54.289Z"
     },
     "ice-cream": {
       "count": 3,
@@ -863,12 +878,12 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:55.065Z"
+      "updatedAt": "2026-08-23T04:03:54.794Z"
     },
     "dog-parks": {
       "count": 25,
       "pois": [],
-      "updatedAt": "2026-08-14T05:04:55.497Z"
+      "updatedAt": "2026-08-23T04:03:55.189Z"
     },
     "picnic-spots": {
       "count": 96,
@@ -886,10 +901,10 @@
           "lon": 25.371417
         }
       ],
-      "updatedAt": "2026-08-14T05:04:56.089Z"
+      "updatedAt": "2026-08-23T04:03:56.396Z"
     },
     "viewpoints": {
-      "count": 50,
+      "count": 53,
       "pois": [
         {
           "id": "node/1277407583",
@@ -1090,7 +1105,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:56.557Z"
+      "updatedAt": "2026-08-23T04:03:56.972Z"
     },
     "beaches": {
       "count": 13,
@@ -1144,7 +1159,7 @@
           "lon": 25.159811
         }
       ],
-      "updatedAt": "2026-08-14T05:04:57.033Z"
+      "updatedAt": "2026-08-23T04:03:57.491Z"
     },
     "atms": {
       "count": 171,
@@ -1154,6 +1169,7 @@
           "name": "Luminor",
           "lat": 54.687092,
           "lon": 25.279149,
+          "address": "Gedimino pr. 18",
           "openingHours": "24/7"
         },
         {
@@ -1265,12 +1281,12 @@
           "openingHours": "07:30-23:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:57.671Z"
+      "updatedAt": "2026-08-23T04:03:58.063Z"
     },
     "post-boxes": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-08-14T05:04:58.103Z"
+      "updatedAt": "2026-08-23T04:03:58.516Z"
     },
     "recycling": {
       "count": 1168,
@@ -1327,12 +1343,12 @@
           "address": "Pumpėnų g. 10"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:58.800Z"
+      "updatedAt": "2026-08-23T04:04:01.434Z"
     },
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:04:59.250Z"
+      "updatedAt": "2026-08-23T04:04:01.875Z"
     },
     "libraries": {
       "count": 56,
@@ -1566,15 +1582,15 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:59.726Z"
+      "updatedAt": "2026-08-23T04:04:02.382Z"
     },
     "outdoor-gyms": {
       "count": 117,
       "pois": [],
-      "updatedAt": "2026-08-14T05:05:00.200Z"
+      "updatedAt": "2026-08-23T04:04:03.841Z"
     },
     "camp-sites": {
-      "count": 2,
+      "count": 3,
       "pois": [
         {
           "id": "node/4352261122",
@@ -1594,37 +1610,100 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:00.626Z"
+      "updatedAt": "2026-08-23T04:04:04.312Z"
     },
     "shelters": {
-      "count": 4,
+      "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-14T05:05:01.358Z"
+      "updatedAt": "2026-08-23T04:04:05.129Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:05:01.792Z"
+      "updatedAt": "2026-08-23T04:04:05.526Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:05:02.195Z"
+      "updatedAt": "2026-08-23T04:04:06.021Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:02:51.294Z"
+      "count": 25,
+      "pois": [
+        {
+          "id": "way/89594194",
+          "name": "Lietuvos paštas",
+          "lat": 54.68553,
+          "lon": 25.282484,
+          "address": "Totorių g. 8",
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 9:00-14:00"
+        },
+        {
+          "id": "node/13959518301",
+          "name": "DHL Service Point",
+          "lat": 54.69404,
+          "lon": 25.285529,
+          "address": "Šeimyniškių g. 5",
+          "openingHours": "Mo-Fr 09:00-13:30, 14:30-18:00"
+        },
+        {
+          "id": "node/1378504033",
+          "name": "Nova Post",
+          "lat": 54.695487,
+          "lon": 25.274803,
+          "address": "Konstitucijos pr. 20",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa-Su 09:00-18:00"
+        },
+        {
+          "id": "node/4479375878",
+          "name": "Vilniaus 11-ojo pašto pirmasis poskyris (PC „Ozas“)",
+          "lat": 54.713731,
+          "lon": 25.272364,
+          "address": "Ozo g. 18",
+          "openingHours": "Mo-Su 10:00-21:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/712770561",
+          "name": "Vilniaus 40-asis paštas",
+          "lat": 54.714848,
+          "lon": 25.316321,
+          "address": "Antakalnio g. 75",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-14:00"
+        },
+        {
+          "id": "node/6025001930",
+          "name": "EshopWeDrop",
+          "lat": 54.651559,
+          "lon": 25.2261,
+          "address": "Savanorių pr. 176"
+        },
+        {
+          "id": "node/685955592",
+          "name": "Vilniaus 53-asis paštas",
+          "lat": 54.642529,
+          "lon": 25.204919,
+          "address": "Valkininkų g. 5"
+        },
+        {
+          "id": "way/184075797",
+          "name": "Nemėžio paštas",
+          "lat": 54.637651,
+          "lon": 25.356488,
+          "address": "V. Sirokomlės g. 4"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:04:06.708Z"
     },
     "showers": {
-      "count": 0,
+      "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-17T04:02:51.690Z"
+      "updatedAt": "2026-08-23T04:04:07.194Z"
     },
     "fireplaces": {
-      "count": 2,
+      "count": 23,
       "pois": [],
-      "updatedAt": "2026-08-17T04:02:52.215Z"
+      "updatedAt": "2026-08-23T04:04:08.017Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1632,9 +1711,59 @@
       "updatedAt": "2026-08-17T04:02:52.598Z"
     },
     "benches": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:02:52.995Z"
+      "count": 2148,
+      "pois": [
+        {
+          "id": "node/5104668634",
+          "name": "Mykolo Kleopo Oginskio grojantis suoliukas",
+          "lat": 54.681227,
+          "lon": 25.287385
+        },
+        {
+          "id": "node/8445771355",
+          "name": "Žalioji poilsio salelė",
+          "lat": 54.701269,
+          "lon": 25.287842
+        },
+        {
+          "id": "node/11584042950",
+          "name": "Suoliukas - Šokis",
+          "lat": 54.724493,
+          "lon": 25.317819,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/11584042951",
+          "name": "Suoliukas - Raudonas",
+          "lat": 54.724969,
+          "lon": 25.317782
+        },
+        {
+          "id": "node/11584027555",
+          "name": "Suoliukas - Voras",
+          "lat": 54.725115,
+          "lon": 25.317965
+        },
+        {
+          "id": "node/11584063874",
+          "name": "Suoliukas - Tarp",
+          "lat": 54.725403,
+          "lon": 25.317945
+        },
+        {
+          "id": "node/11584055196",
+          "name": "Suoliukas - Ežys",
+          "lat": 54.72603,
+          "lon": 25.318186
+        },
+        {
+          "id": "node/11584024938",
+          "name": "Suoliukas - Dviese",
+          "lat": 54.726193,
+          "lon": 25.318245
+        }
+      ],
+      "updatedAt": "2026-08-23T04:04:08.782Z"
     },
     "compressed-air": {
       "count": 0,

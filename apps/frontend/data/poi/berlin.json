@@ -1,9 +1,9 @@
 {
   "city": "berlin",
-  "generatedAt": "2026-08-18T03:58:09.777Z",
+  "generatedAt": "2026-08-23T04:08:52.462Z",
   "categories": {
     "toilets": {
-      "count": 961,
+      "count": 973,
       "pois": [
         {
           "id": "node/60240150",
@@ -12,6 +12,14 @@
           "lon": 13.406323,
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "node/5792474339",
+          "lat": 52.519226,
+          "lon": 13.411033,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Rathauspassagen"
         },
         {
           "id": "node/13348171565",
@@ -37,6 +45,23 @@
           "address": "Grunerstraße 20",
           "openingHours": "Mo-Sa 10:00-21:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/12671051933",
+          "lat": 52.520561,
+          "lon": 13.39101,
+          "wheelchair": "limited",
+          "fee": "no",
+          "context": "Jacob-und-Wilhelm-Grimm-Zentrum"
+        },
+        {
+          "id": "node/3338459657",
+          "lat": 52.51839,
+          "lon": 13.389086,
+          "address": "Friedrichstraße 90",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Dussmann das KulturKaufhaus"
         },
         {
           "id": "relation/380240",
@@ -83,6 +108,14 @@
           "fee": "yes"
         },
         {
+          "id": "node/12365213768",
+          "lat": 52.519048,
+          "lon": 13.375946,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Reichstagsgebäude"
+        },
+        {
           "id": "way/973566414",
           "name": "City Toilette",
           "lat": 52.502622,
@@ -91,6 +124,14 @@
           "openingHours": "24/7",
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "node/4440688190",
+          "lat": 52.50658,
+          "lon": 13.383755,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Dokumentationszentrum"
         },
         {
           "id": "way/296083226",
@@ -146,6 +187,15 @@
           "fee": "yes"
         },
         {
+          "id": "way/22989670",
+          "name": "The Playce",
+          "lat": 52.507411,
+          "lon": 13.374115,
+          "address": "Alte Potsdamer Straße 7",
+          "openingHours": "Mo-Su,PH 07:00-23:00",
+          "wheelchair": "yes"
+        },
+        {
           "id": "way/65425822",
           "name": "Südblock",
           "lat": 52.498548,
@@ -153,6 +203,14 @@
           "address": "Admiralstraße 1-2",
           "openingHours": "Mo-Sa 17:00-23:00; Su 15:00-23:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/5732104364",
+          "lat": 52.496796,
+          "lon": 13.392962,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Amerika-Gedenkbibliothek"
         },
         {
           "id": "relation/28134",
@@ -207,70 +265,12 @@
           "address": "Badstraße 4",
           "openingHours": "Mo-Sa 08:00-21:00",
           "wheelchair": "yes"
-        },
-        {
-          "id": "way/179019726",
-          "name": "Marheineke Markthalle",
-          "lat": 52.489291,
-          "lon": 13.394685,
-          "address": "Marheinekeplatz 15",
-          "openingHours": "Mo-Fr 08:00-20:00; Sa 08:00-18:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/353202022",
-          "name": "Historische Toilette (Café Achteck)",
-          "lat": 52.488515,
-          "lon": 13.390971,
-          "openingHours": "24/7",
-          "wheelchair": "no",
-          "fee": "no"
-        },
-        {
-          "id": "node/3490706053",
-          "name": "Kundentoilette Sachsen Küchen",
-          "lat": 52.529163,
-          "lon": 13.460994,
-          "fee": "no"
-        },
-        {
-          "id": "way/432763459",
-          "name": "Club der Visionaere",
-          "lat": 52.496796,
-          "lon": 13.45048,
-          "address": "Am Flutgraben 1",
-          "wheelchair": "limited"
-        },
-        {
-          "id": "node/11059038031",
-          "name": "Parktoilette",
-          "lat": 52.533689,
-          "lon": 13.461952,
-          "openingHours": "24/7",
-          "wheelchair": "yes",
-          "fee": "no"
-        },
-        {
-          "id": "way/184484792",
-          "name": "Berliner  Toilette",
-          "lat": 52.48457,
-          "lon": 13.385515,
-          "openingHours": "24/7",
-          "wheelchair": "yes",
-          "fee": "yes"
-        },
-        {
-          "id": "way/24264277",
-          "name": "Plaza Frankfurter Allee",
-          "lat": 52.515113,
-          "lon": 13.468629,
-          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:10.156Z"
+      "updatedAt": "2026-08-23T04:08:20.787Z"
     },
     "drinking-water": {
-      "count": 273,
+      "count": 330,
       "pois": [
         {
           "id": "node/8722868012",
@@ -281,6 +281,12 @@
           "fee": "no"
         },
         {
+          "id": "node/6174872210",
+          "name": "Trinkbrunnen",
+          "lat": 52.511685,
+          "lon": 13.433979
+        },
+        {
           "id": "node/7567444509",
           "name": "Wasserspender",
           "lat": 52.517223,
@@ -289,17 +295,18 @@
           "fee": "no"
         },
         {
-          "id": "node/6024757217",
-          "name": "Trinkbrunnen",
-          "lat": 52.528375,
-          "lon": 13.347319,
-          "wheelchair": "yes"
-        },
-        {
           "id": "way/417323996",
           "name": "Fachschaftsrat VI",
           "lat": 52.543264,
           "lon": 13.350556
+        },
+        {
+          "id": "node/12870129480",
+          "name": "Refill-Station",
+          "lat": 52.485914,
+          "lon": 13.362216,
+          "address": "Kolonnenstraße 53",
+          "openingHours": "Mo-Fr 09:00-17:00"
         },
         {
           "id": "node/449162395",
@@ -321,12 +328,96 @@
           "name": "Trinkwasserbrunnen am Friedhof",
           "lat": 52.460548,
           "lon": 13.493327
+        },
+        {
+          "id": "node/11165225437",
+          "name": "20",
+          "lat": 52.557277,
+          "lon": 13.25158
+        },
+        {
+          "id": "node/11165225438",
+          "name": "19",
+          "lat": 52.557877,
+          "lon": 13.251917
+        },
+        {
+          "id": "node/11165225439",
+          "name": "18",
+          "lat": 52.558387,
+          "lon": 13.252213
+        },
+        {
+          "id": "node/11165225440",
+          "name": "17",
+          "lat": 52.558892,
+          "lon": 13.252504
+        },
+        {
+          "id": "node/11165225441",
+          "name": "16",
+          "lat": 52.55941,
+          "lon": 13.252745
+        },
+        {
+          "id": "node/11165225442",
+          "name": "15",
+          "lat": 52.560319,
+          "lon": 13.253308
+        },
+        {
+          "id": "node/11165225444",
+          "name": "13",
+          "lat": 52.561221,
+          "lon": 13.253888
+        },
+        {
+          "id": "node/11165225443",
+          "name": "14",
+          "lat": 52.56077,
+          "lon": 13.253558
+        },
+        {
+          "id": "node/11165225446",
+          "name": "12",
+          "lat": 52.561754,
+          "lon": 13.254158
+        },
+        {
+          "id": "node/11165225448",
+          "name": "7",
+          "lat": 52.554548,
+          "lon": 13.249167
+        },
+        {
+          "id": "node/11165225449",
+          "name": "8",
+          "lat": 52.55488,
+          "lon": 13.248499
+        },
+        {
+          "id": "node/11165225450",
+          "name": "9",
+          "lat": 52.555267,
+          "lon": 13.247721
+        },
+        {
+          "id": "node/11165225451",
+          "name": "10",
+          "lat": 52.555579,
+          "lon": 13.247114
+        },
+        {
+          "id": "node/11165225452",
+          "name": "11",
+          "lat": 52.555988,
+          "lon": 13.24631
         }
       ],
-      "updatedAt": "2026-08-14T05:07:11.345Z"
+      "updatedAt": "2026-08-23T04:08:23.159Z"
     },
     "playgrounds": {
-      "count": 3366,
+      "count": 3367,
       "pois": [
         {
           "id": "way/1054177698",
@@ -535,7 +626,7 @@
           "lon": 13.398063
         }
       ],
-      "updatedAt": "2026-08-14T05:07:12.632Z"
+      "updatedAt": "2026-08-23T04:08:24.764Z"
     },
     "parking": {
       "count": 29095,
@@ -765,10 +856,10 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:15.710Z"
+      "updatedAt": "2026-08-23T04:08:27.947Z"
     },
     "charging-stations": {
-      "count": 1381,
+      "count": 1382,
       "pois": [
         {
           "id": "node/1272843208",
@@ -990,7 +1081,7 @@
           "lon": 13.363789
         }
       ],
-      "updatedAt": "2026-08-14T05:07:16.565Z"
+      "updatedAt": "2026-08-23T04:08:28.800Z"
     },
     "gas-stations": {
       "count": 212,
@@ -1240,10 +1331,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:17.281Z"
+      "updatedAt": "2026-08-23T04:08:29.752Z"
     },
     "ice-cream": {
-      "count": 346,
+      "count": 348,
       "pois": [
         {
           "id": "node/5726198088",
@@ -1498,7 +1589,7 @@
           "openingHours": "Mar-Oct: Mo-Su 14:00-20:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:18.036Z"
+      "updatedAt": "2026-08-23T04:08:30.663Z"
     },
     "dog-parks": {
       "count": 52,
@@ -1703,10 +1794,10 @@
           "lon": 13.240928
         }
       ],
-      "updatedAt": "2026-08-14T05:07:18.567Z"
+      "updatedAt": "2026-08-23T04:08:31.286Z"
     },
     "picnic-spots": {
-      "count": 586,
+      "count": 588,
       "pois": [
         {
           "id": "node/4868547737",
@@ -1751,10 +1842,10 @@
           "lon": 13.428314
         }
       ],
-      "updatedAt": "2026-08-14T05:07:19.424Z"
+      "updatedAt": "2026-08-23T04:08:33.824Z"
     },
     "viewpoints": {
-      "count": 128,
+      "count": 152,
       "pois": [
         {
           "id": "node/10651702805",
@@ -1839,7 +1930,8 @@
           "id": "way/1416928765",
           "name": "THF Tower Dachterrasse",
           "lat": 52.477176,
-          "lon": 13.38743
+          "lon": 13.38743,
+          "wheelchair": "yes"
         },
         {
           "id": "node/8176291361",
@@ -1895,6 +1987,12 @@
           "lat": 52.610136,
           "lon": 13.370489,
           "wheelchair": "limited"
+        },
+        {
+          "id": "way/1353882795",
+          "name": "Vogelbeobachtungs-Turm",
+          "lat": 52.42689,
+          "lon": 13.426513
         },
         {
           "id": "node/353075536",
@@ -1957,7 +2055,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:19.971Z"
+      "updatedAt": "2026-08-23T04:08:34.748Z"
     },
     "beaches": {
       "count": 34,
@@ -2033,7 +2131,7 @@
           "lon": 13.256154
         }
       ],
-      "updatedAt": "2026-08-14T05:07:20.622Z"
+      "updatedAt": "2026-08-23T04:08:35.580Z"
     },
     "atms": {
       "count": 1205,
@@ -2275,11 +2373,17 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:21.551Z"
+      "updatedAt": "2026-08-23T04:08:36.592Z"
     },
     "post-boxes": {
       "count": 1763,
       "pois": [
+        {
+          "id": "node/308593857",
+          "name": "Anton-Wilhelm-Amo-Str. 50, 10117 Berlin",
+          "lat": 52.512207,
+          "lon": 13.390132
+        },
         {
           "id": "node/308817072",
           "name": "Briefkasten",
@@ -2314,10 +2418,10 @@
           "openingHours": "Mo-Fr 15:45-15:45; Sa 12:30-12:30"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:22.499Z"
+      "updatedAt": "2026-08-23T04:08:37.565Z"
     },
     "recycling": {
-      "count": 2151,
+      "count": 2148,
       "pois": [
         {
           "id": "way/28198135",
@@ -2531,10 +2635,10 @@
           "lon": 13.429557
         }
       ],
-      "updatedAt": "2026-08-14T05:07:23.514Z"
+      "updatedAt": "2026-08-23T04:08:40.395Z"
     },
     "luggage-storage": {
-      "count": 22,
+      "count": 23,
       "pois": [
         {
           "id": "node/84644762",
@@ -2549,12 +2653,19 @@
           "name": "DB Gepäck Center",
           "lat": 52.525127,
           "lon": 13.370252
+        },
+        {
+          "id": "node/11888309450",
+          "name": "Berlin City Locker",
+          "lat": 52.512289,
+          "lon": 13.452093,
+          "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:23.979Z"
+      "updatedAt": "2026-08-23T04:08:40.961Z"
     },
     "libraries": {
-      "count": 223,
+      "count": 224,
       "pois": [
         {
           "id": "way/569067822",
@@ -2806,7 +2917,7 @@
           "lon": 13.376662
         }
       ],
-      "updatedAt": "2026-08-14T05:07:24.779Z"
+      "updatedAt": "2026-08-23T04:08:41.851Z"
     },
     "outdoor-gyms": {
       "count": 378,
@@ -3004,11 +3115,19 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:25.682Z"
+      "updatedAt": "2026-08-23T04:08:43.666Z"
     },
     "camp-sites": {
-      "count": 1,
+      "count": 3,
       "pois": [
+        {
+          "id": "way/62425718",
+          "name": "Wohnmobil Oase",
+          "lat": 52.549595,
+          "lon": 13.383116,
+          "address": "Hochstraße 4",
+          "fee": "yes"
+        },
         {
           "id": "way/69855640",
           "name": "City Camping",
@@ -3016,12 +3135,20 @@
           "lon": 13.258642,
           "address": "Gartenfelder Straße 1",
           "wheelchair": "yes"
+        },
+        {
+          "id": "way/24684267",
+          "name": "Reisemobil Zentrum Berlin",
+          "lat": 52.595063,
+          "lon": 13.28894,
+          "address": "Waidmannsluster Damm 12-14",
+          "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:26.173Z"
+      "updatedAt": "2026-08-23T04:08:44.379Z"
     },
     "shelters": {
-      "count": 76,
+      "count": 71,
       "pois": [
         {
           "id": "node/8071355380",
@@ -3067,7 +3194,7 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:27.196Z"
+      "updatedAt": "2026-08-23T04:08:46.402Z"
     },
     "rest-areas": {
       "count": 1,
@@ -3080,45 +3207,289 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:27.718Z"
+      "updatedAt": "2026-08-23T04:08:47.126Z"
     },
     "dump-stations": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-14T05:07:28.193Z"
+      "updatedAt": "2026-08-23T04:08:47.623Z"
     },
     "post-offices": {
-      "count": 2,
+      "count": 161,
       "pois": [
         {
-          "id": "node/1370144820",
+          "id": "node/89274887",
           "name": "Deutsche Post",
-          "lat": 52.515231,
-          "lon": 13.468602,
-          "address": "Frankfurter Allee 73-77",
-          "openingHours": "Mo-Fr 09:00-18:30, Sa 09:30-13:00",
+          "lat": 52.519698,
+          "lon": 13.411554,
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 09:00-15:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/1552575486",
+          "name": "StoExpress Germany GmbH",
+          "lat": 52.512812,
+          "lon": 13.417626,
+          "address": "Brückenstraße 5-6a",
+          "openingHours": "Mo-Sa 10:00-18:00; PH off"
+        },
+        {
+          "id": "node/12492673807",
+          "name": "DHL",
+          "lat": 52.523356,
+          "lon": 13.426867,
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:00-13:00"
+        },
+        {
+          "id": "node/13808413801",
+          "name": "Nova Post 1",
+          "lat": 52.50797,
+          "lon": 13.39191,
+          "address": "Charlottenstraße 79-80",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 09:00-18:00",
           "wheelchair": "yes"
         },
         {
-          "id": "node/278361796",
-          "name": "Postbank",
-          "lat": 52.513372,
-          "lon": 13.522668,
-          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-12:00",
+          "id": "node/13705966288",
+          "name": "Postfiliale 560",
+          "lat": 52.528329,
+          "lon": 13.424663,
+          "address": "Am Friedrichshain 35",
+          "openingHours": "Mo-Sa 08:00-20:00; Su off"
+        },
+        {
+          "id": "node/1251071263",
+          "name": "tabaCCenter",
+          "lat": 52.506645,
+          "lon": 13.416089,
+          "openingHours": "PH off; Mo-Fr 07:00-19:00; Sa 07:00-17:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/9006816146",
+          "name": "Deutsche Post Filiale 501",
+          "lat": 52.529263,
+          "lon": 13.384441,
+          "address": "Chausseestraße 121",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-13:00"
+        },
+        {
+          "id": "node/10015764560",
+          "name": "The Winsy Späti",
+          "lat": 52.533246,
+          "lon": 13.424969,
+          "address": "Winsstraße 14",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/14080719380",
+          "name": "DHL PaketShop",
+          "lat": 52.540701,
+          "lon": 13.416114
+        },
+        {
+          "id": "node/14080703830",
+          "name": "GLS PaketShop",
+          "lat": 52.540707,
+          "lon": 13.416095
+        },
+        {
+          "id": "node/2834832470",
+          "name": "Lotto Post Tabak",
+          "lat": 52.532285,
+          "lon": 13.435256,
+          "address": "Bötzowstraße 36",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-13:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/5922090419",
+          "name": "Lotto Post",
+          "lat": 52.500116,
+          "lon": 13.423937,
+          "openingHours": "Mo-Fr 09:00-19:00, Sa 09:00-17:00"
+        },
+        {
+          "id": "node/7025879082",
+          "name": "Postfiliale 554",
+          "lat": 52.535671,
+          "lon": 13.433443,
+          "address": "Danziger Straße 122",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 09:00-20:00"
+        },
+        {
+          "id": "node/13705942827",
+          "name": "Hermes",
+          "lat": 52.5352,
+          "lon": 13.434421
+        },
+        {
+          "id": "node/9329137097",
+          "name": "DHL Paketshop 444",
+          "lat": 52.498522,
+          "lon": 13.387927,
+          "address": "Hallesches Ufer 24",
+          "openingHours": "Mo-Sa 10:00-22:00"
+        },
+        {
+          "id": "node/674019820",
+          "name": "Kiosk",
+          "lat": 52.543062,
+          "lon": 13.392686,
+          "openingHours": "Mo-Fr 05:00-20:00; Sa 06:00-20:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/12309529501",
+          "name": "DHL Postfiliale 543",
+          "lat": 52.547483,
+          "lon": 13.41261,
+          "openingHours": "Mo-Sa 10:00-20:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/4520478593",
+          "name": "Postfiliale",
+          "lat": 52.520811,
+          "lon": 13.451935,
+          "address": "Petersburger Straße 61",
+          "openingHours": "Mo-Fr 10:00-18:00; Sa 10:00-13:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/2485492744",
+          "name": "DHL BVG Kiosk",
+          "lat": 52.492694,
+          "lon": 13.421989,
+          "address": "Kottbusser Damm",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/14021767797",
+          "name": "DHL Paketshop 503",
+          "lat": 52.549398,
+          "lon": 13.415998
+        },
+        {
+          "id": "node/6463564996",
+          "name": "Späti",
+          "lat": 52.49426,
+          "lon": 13.434079,
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 09:00-17:00; Su 09:00-15:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/9324986266",
+          "name": "Pen & Paper",
+          "lat": 52.503714,
+          "lon": 13.450597,
+          "address": "Rotherstraße 20",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 10:00-15:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13208412072",
+          "name": "Postshop Prenzlauer Berg",
+          "lat": 52.543589,
+          "lon": 13.443072,
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-13:00"
+        },
+        {
+          "id": "node/10661022115",
+          "name": "Hermes PaketShop",
+          "lat": 52.488669,
+          "lon": 13.424458
+        },
+        {
+          "id": "node/2429502439",
+          "name": "Spätkauf Post",
+          "lat": 52.510112,
+          "lon": 13.458361,
+          "address": "Gabriel-Max-Straße 4",
+          "openingHours": "Mo-Sa 10:00-17:00; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/644659553",
+          "name": "Zeitungsladen Parlak",
+          "lat": 52.550453,
+          "lon": 13.37885,
+          "address": "Pankstraße 42",
+          "openingHours": "Mo-Fr 05:00-20:00; Sa 06:00-20:00; Su 07:00-20:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/13473681838",
+          "name": "DPD PickupShop",
+          "lat": 52.512213,
+          "lon": 13.460038
+        },
+        {
+          "id": "node/2075875010",
+          "name": "kkiosk",
+          "lat": 52.523967,
+          "lon": 13.462149,
+          "address": "Hermann-Blankenstein-Straße 38",
+          "openingHours": "Mo-Th 09:00-20:00; Fr,Sa 08:00-20:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/2046262883",
+          "name": "PIN Mail AG",
+          "lat": 52.50217,
+          "lon": 13.352911,
+          "address": "Karl-Heinrich-Ulrichs-Straße 11",
+          "openingHours": "Mo 08:00-12:00,13:00-16:00; Tu-Fr 08:00-12:00,13:00-18:00; Sa 08:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1617243582",
+          "name": "Post-Shop",
+          "lat": 52.525071,
+          "lon": 13.466216,
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-13:00",
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-17T04:03:18.293Z"
+      "updatedAt": "2026-08-23T04:08:48.335Z"
     },
     "showers": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:18.763Z"
+      "count": 114,
+      "pois": [
+        {
+          "id": "node/3410213926",
+          "name": "rail&fresh",
+          "lat": 52.52482,
+          "lon": 13.36904,
+          "openingHours": "24/7",
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:08:48.833Z"
     },
     "fireplaces": {
-      "count": 5,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:19.503Z"
+      "count": 36,
+      "pois": [
+        {
+          "id": "node/12847412335",
+          "name": "Grillen im Volkspark",
+          "lat": 52.529498,
+          "lon": 13.442439
+        },
+        {
+          "id": "node/4866735523",
+          "name": "Schneckenhaus",
+          "lat": 52.524765,
+          "lon": 13.361274
+        },
+        {
+          "id": "node/474656363",
+          "name": "Beach Zone Lichtenberg",
+          "lat": 52.530603,
+          "lon": 13.476851
+        }
+      ],
+      "updatedAt": "2026-08-23T04:08:49.887Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3126,8 +3497,14 @@
       "updatedAt": "2026-08-17T04:03:19.933Z"
     },
     "benches": {
-      "count": 27,
+      "count": 26643,
       "pois": [
+        {
+          "id": "node/12914839800",
+          "name": "Parkbank",
+          "lat": 52.488804,
+          "lon": 13.382473
+        },
         {
           "id": "way/220802670",
           "name": "Spielplatz Adolfpark",
@@ -3140,9 +3517,93 @@
           "lat": 52.549877,
           "lon": 13.363313,
           "wheelchair": "yes"
+        },
+        {
+          "id": "way/571479303",
+          "name": "Treffpunkt Religion und Gesellschaft",
+          "lat": 52.478257,
+          "lon": 13.406989
+        },
+        {
+          "id": "node/12690298903",
+          "name": "Liegestuhl",
+          "lat": 52.473093,
+          "lon": 13.418608
+        },
+        {
+          "id": "node/13243337842",
+          "name": "Sitzbank",
+          "lat": 52.471099,
+          "lon": 13.415841
+        },
+        {
+          "id": "node/13108803586",
+          "name": "Quasseltreff",
+          "lat": 52.569423,
+          "lon": 13.375654
+        },
+        {
+          "id": "node/9216098612",
+          "name": "Jugendbank",
+          "lat": 52.524398,
+          "lon": 13.318199
+        },
+        {
+          "id": "node/8709493520",
+          "name": "Blumen",
+          "lat": 52.508422,
+          "lon": 13.309619
+        },
+        {
+          "id": "node/8709493523",
+          "name": "Kräuter",
+          "lat": 52.508347,
+          "lon": 13.309613
+        },
+        {
+          "id": "node/8709493521",
+          "name": "Getreide/Gemüse",
+          "lat": 52.508419,
+          "lon": 13.309543
+        },
+        {
+          "id": "node/8709493522",
+          "name": "Gemüse/Kräuter",
+          "lat": 52.508356,
+          "lon": 13.309541
+        },
+        {
+          "id": "node/6388783622",
+          "name": "Rote Bank",
+          "lat": 52.467289,
+          "lon": 13.347036
+        },
+        {
+          "id": "node/12948864365",
+          "name": "Botanischer Garten",
+          "lat": 52.508766,
+          "lon": 13.290252
+        },
+        {
+          "id": "node/12142968790",
+          "name": "Lochow",
+          "lat": 52.482199,
+          "lon": 13.303753
+        },
+        {
+          "id": "node/11517019352",
+          "name": "Unser Sandmännchen",
+          "lat": 52.508397,
+          "lon": 13.275429
+        },
+        {
+          "id": "node/13860792425",
+          "name": "Sitzbank, selbstgebaut",
+          "lat": 52.466658,
+          "lon": 13.533424
         }
       ],
-      "updatedAt": "2026-08-17T04:03:20.449Z"
+      "updatedAt": "2026-08-23T04:08:52.357Z"
     },
     "compressed-air": {
       "count": 20,

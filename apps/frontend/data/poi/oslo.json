@@ -1,17 +1,18 @@
 {
   "city": "oslo",
-  "generatedAt": "2026-08-18T03:58:03.305Z",
+  "generatedAt": "2026-08-23T04:01:46.816Z",
   "categories": {
     "toilets": {
-      "count": 151,
+      "count": 152,
       "pois": [
         {
-          "id": "way/266134984",
-          "name": "Byporten Shopping",
-          "lat": 59.911697,
-          "lon": 10.752267,
-          "openingHours": "Mo-Fr 10:00-21:00; Sa 10:00-20:00",
-          "wheelchair": "yes"
+          "id": "node/5039388445",
+          "lat": 59.911891,
+          "lon": 10.751882,
+          "openingHours": "Mo-Fr 08:00-21:00; Sa 10:00-20:00",
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Byporten Shopping"
         },
         {
           "id": "way/669529743",
@@ -22,11 +23,11 @@
           "wheelchair": "limited"
         },
         {
-          "id": "way/112509674",
-          "name": "Steen & Strøm",
-          "lat": 59.911814,
-          "lon": 10.742862,
-          "openingHours": "Mo-Fr 10:00-19:00; Sa 10:00-18:00; Su off"
+          "id": "node/11925578459",
+          "lat": 59.911888,
+          "lon": 10.742854,
+          "fee": "no",
+          "context": "Steen & Strøm"
         },
         {
           "id": "way/1409988067",
@@ -101,10 +102,10 @@
           "lon": 10.723815
         }
       ],
-      "updatedAt": "2026-08-14T05:03:29.008Z"
+      "updatedAt": "2026-08-23T04:01:28.548Z"
     },
     "drinking-water": {
-      "count": 104,
+      "count": 105,
       "pois": [
         {
           "id": "way/810225566",
@@ -119,10 +120,10 @@
           "lon": 10.817734
         }
       ],
-      "updatedAt": "2026-08-14T05:03:29.655Z"
+      "updatedAt": "2026-08-23T04:01:30.708Z"
     },
     "playgrounds": {
-      "count": 1073,
+      "count": 1072,
       "pois": [
         {
           "id": "node/3111593843",
@@ -311,10 +312,10 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:03:30.525Z"
+      "updatedAt": "2026-08-23T04:01:31.849Z"
     },
     "parking": {
-      "count": 2030,
+      "count": 2026,
       "pois": [
         {
           "id": "node/2785930448",
@@ -528,7 +529,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:03:31.478Z"
+      "updatedAt": "2026-08-23T04:01:33.403Z"
     },
     "charging-stations": {
       "count": 253,
@@ -743,7 +744,7 @@
           "lon": 10.774147
         }
       ],
-      "updatedAt": "2026-08-14T05:03:32.045Z"
+      "updatedAt": "2026-08-23T04:01:34.058Z"
     },
     "gas-stations": {
       "count": 67,
@@ -950,10 +951,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:03:32.545Z"
+      "updatedAt": "2026-08-23T04:01:34.794Z"
     },
     "ice-cream": {
-      "count": 17,
+      "count": 16,
       "pois": [
         {
           "id": "node/11105540805",
@@ -969,13 +970,6 @@
           "lat": 59.91236,
           "lon": 10.744858,
           "openingHours": "Mo-Su 11:00-23:00"
-        },
-        {
-          "id": "node/5865535845",
-          "name": "Ben & Jerry's",
-          "lat": 59.914424,
-          "lon": 10.737119,
-          "openingHours": "Mo-Fr 10:00-20:00; Sa 10:00-18:00"
         },
         {
           "id": "node/12964094237",
@@ -1061,10 +1055,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:03:33.005Z"
+      "updatedAt": "2026-08-23T04:01:35.636Z"
     },
     "dog-parks": {
-      "count": 10,
+      "count": 11,
       "pois": [
         {
           "id": "way/573535963",
@@ -1086,6 +1080,13 @@
           "lon": 10.692668
         },
         {
+          "id": "way/1548808991",
+          "name": "Soltoppen hundepark",
+          "lat": 59.899313,
+          "lon": 10.843093,
+          "openingHours": "7-22"
+        },
+        {
           "id": "way/115133425",
           "name": "Isdammen Årvoll - friområde for hund",
           "lat": 59.956183,
@@ -1099,10 +1100,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:03:33.429Z"
+      "updatedAt": "2026-08-23T04:01:36.248Z"
     },
     "picnic-spots": {
-      "count": 1510,
+      "count": 1511,
       "pois": [
         {
           "id": "way/819704339",
@@ -1133,18 +1134,12 @@
           "name": "Gave fra Slaedals Lions",
           "lat": 59.947831,
           "lon": 10.702719
-        },
-        {
-          "id": "node/4189580166",
-          "name": "Grillområde",
-          "lat": 59.89054,
-          "lon": 10.633818
         }
       ],
-      "updatedAt": "2026-08-14T05:03:34.152Z"
+      "updatedAt": "2026-08-23T04:01:37.777Z"
     },
     "viewpoints": {
-      "count": 82,
+      "count": 89,
       "pois": [
         {
           "id": "node/12851598952",
@@ -1157,6 +1152,14 @@
           "name": "Munchpunktet",
           "lat": 59.901068,
           "lon": 10.767904
+        },
+        {
+          "id": "way/1039892466",
+          "name": "Tjuvtitten",
+          "lat": 59.90701,
+          "lon": 10.720618,
+          "wheelchair": "no",
+          "fee": "yes"
         },
         {
           "id": "node/714983378",
@@ -1192,13 +1195,27 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/5574644310",
+          "name": "Linderudkollen",
+          "lat": 59.97072,
+          "lon": 10.818386,
+          "fee": "no"
+        },
+        {
           "id": "node/13181349020",
           "name": "Brydeskogen Utsiktpunkt",
           "lat": 59.910031,
           "lon": 10.619933
+        },
+        {
+          "id": "node/5574644274",
+          "name": "Holmenkollen",
+          "lat": 59.964912,
+          "lon": 10.664646,
+          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:03:34.575Z"
+      "updatedAt": "2026-08-23T04:01:38.525Z"
     },
     "beaches": {
       "count": 134,
@@ -1288,12 +1305,6 @@
           "lon": 10.659656
         },
         {
-          "id": "way/220624997",
-          "name": "Rolfstangen badestrand",
-          "lat": 59.890566,
-          "lon": 10.634211
-        },
-        {
           "id": "way/1246174774",
           "name": "Pelvikodden Badeplass",
           "lat": 59.888203,
@@ -1324,10 +1335,10 @@
           "lon": 10.687284
         }
       ],
-      "updatedAt": "2026-08-14T05:03:35.100Z"
+      "updatedAt": "2026-08-23T04:01:39.030Z"
     },
     "atms": {
-      "count": 49,
+      "count": 48,
       "pois": [
         {
           "id": "node/9895863742",
@@ -1440,15 +1451,15 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:03:35.637Z"
+      "updatedAt": "2026-08-23T04:01:39.567Z"
     },
     "post-boxes": {
       "count": 341,
       "pois": [],
-      "updatedAt": "2026-08-14T05:03:36.158Z"
+      "updatedAt": "2026-08-23T04:01:40.228Z"
     },
     "recycling": {
-      "count": 843,
+      "count": 845,
       "pois": [
         {
           "id": "node/4733060049",
@@ -1556,12 +1567,12 @@
           "lon": 10.626114
         }
       ],
-      "updatedAt": "2026-08-14T05:03:36.767Z"
+      "updatedAt": "2026-08-23T04:01:41.487Z"
     },
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:03:37.151Z"
+      "updatedAt": "2026-08-23T04:01:41.954Z"
     },
     "libraries": {
       "count": 55,
@@ -1586,7 +1597,7 @@
           "name": "Deichman Grünerløkka",
           "lat": 59.920861,
           "lon": 10.760244,
-          "openingHours": "Mo, Sa 10:00-16:00; Tu-Th 10:00-19:00; Fr 11:00-16:00",
+          "openingHours": "Mo,Sa 10:00-16:00; Tu-Th 10:00-19:00; Fr 11:00-16:00",
           "wheelchair": "yes"
         },
         {
@@ -1773,7 +1784,7 @@
           "lon": 10.873949
         }
       ],
-      "updatedAt": "2026-08-14T05:03:37.623Z"
+      "updatedAt": "2026-08-23T04:01:42.402Z"
     },
     "outdoor-gyms": {
       "count": 120,
@@ -1798,10 +1809,10 @@
           "lon": 10.876552
         }
       ],
-      "updatedAt": "2026-08-14T05:03:38.088Z"
+      "updatedAt": "2026-08-23T04:01:43.760Z"
     },
     "camp-sites": {
-      "count": 7,
+      "count": 8,
       "pois": [
         {
           "id": "way/28473177",
@@ -1809,6 +1820,13 @@
           "lat": 59.898241,
           "lon": 10.77142,
           "wheelchair": "yes"
+        },
+        {
+          "id": "way/49139387",
+          "name": "Sjølyst bobilparkering",
+          "lat": 59.919292,
+          "lon": 10.678455,
+          "fee": "yes"
         },
         {
           "id": "way/1547711866",
@@ -1839,28 +1857,16 @@
           "lon": 10.807903
         }
       ],
-      "updatedAt": "2026-08-14T05:03:38.517Z"
+      "updatedAt": "2026-08-23T04:01:44.294Z"
     },
     "shelters": {
-      "count": 27,
+      "count": 23,
       "pois": [
         {
           "id": "way/106431696",
           "name": "Tiern",
           "lat": 59.897964,
           "lon": 10.7296
-        },
-        {
-          "id": "node/1760519984",
-          "name": "Haraldvangen",
-          "lat": 59.955488,
-          "lon": 10.839344
-        },
-        {
-          "id": "node/1602633933",
-          "name": "Ole Høilands hule",
-          "lat": 59.966836,
-          "lon": 10.824851
         },
         {
           "id": "node/11331371412",
@@ -1882,17 +1888,17 @@
           "lon": 10.819944
         }
       ],
-      "updatedAt": "2026-08-14T05:03:39.356Z"
+      "updatedAt": "2026-08-23T04:01:45.678Z"
     },
     "rest-areas": {
-      "count": 3,
+      "count": 5,
       "pois": [],
-      "updatedAt": "2026-08-14T05:03:39.775Z"
+      "updatedAt": "2026-08-23T04:01:46.267Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:03:40.170Z"
+      "updatedAt": "2026-08-23T04:01:46.716Z"
     },
     "post-offices": {
       "count": 0,

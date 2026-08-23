@@ -1,10 +1,26 @@
 {
   "city": "manchester",
-  "generatedAt": "2026-08-18T03:58:17.990Z",
+  "generatedAt": "2026-08-23T04:17:55.906Z",
   "categories": {
     "toilets": {
-      "count": 58,
+      "count": 59,
       "pois": [
+        {
+          "id": "node/3678736177",
+          "lat": 53.478477,
+          "lon": -2.241423,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Manchester Art Gallery"
+        },
+        {
+          "id": "node/9893210364",
+          "lat": 53.478011,
+          "lon": -2.244569,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Manchester Central Library"
+        },
         {
           "id": "way/79713962",
           "name": "The Whitworth",
@@ -21,6 +37,15 @@
           "lat": 53.443352,
           "lon": -2.219093,
           "address": "Landcross Road 2A"
+        },
+        {
+          "id": "node/14092140967",
+          "name": "Tesco Customer Toilets",
+          "lat": 53.461616,
+          "lon": -2.173591,
+          "openingHours": "Mo-Sa 06:00-00:00; Su 11:00-17:00",
+          "wheelchair": "designated",
+          "fee": "no"
         },
         {
           "id": "way/619141945",
@@ -46,10 +71,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:05.585Z"
+      "updatedAt": "2026-08-23T04:17:34.915Z"
     },
     "drinking-water": {
-      "count": 10,
+      "count": 11,
       "pois": [
         {
           "id": "node/9374616924",
@@ -64,7 +89,7 @@
           "lon": -2.257996
         }
       ],
-      "updatedAt": "2026-08-14T05:12:06.241Z"
+      "updatedAt": "2026-08-23T04:17:36.398Z"
     },
     "playgrounds": {
       "count": 288,
@@ -216,10 +241,10 @@
           "lon": -2.305544
         }
       ],
-      "updatedAt": "2026-08-14T05:12:06.973Z"
+      "updatedAt": "2026-08-23T04:17:37.747Z"
     },
     "parking": {
-      "count": 2792,
+      "count": 2791,
       "pois": [
         {
           "id": "way/188584682",
@@ -440,7 +465,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:08.025Z"
+      "updatedAt": "2026-08-23T04:17:39.254Z"
     },
     "charging-stations": {
       "count": 66,
@@ -654,7 +679,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:08.448Z"
+      "updatedAt": "2026-08-23T04:17:39.857Z"
     },
     "gas-stations": {
       "count": 89,
@@ -820,7 +845,7 @@
           "lon": -2.199187
         }
       ],
-      "updatedAt": "2026-08-14T05:12:08.973Z"
+      "updatedAt": "2026-08-23T04:17:40.692Z"
     },
     "ice-cream": {
       "count": 15,
@@ -934,21 +959,27 @@
           "address": "The Orient 107"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:09.498Z"
+      "updatedAt": "2026-08-23T04:17:41.496Z"
     },
     "dog-parks": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:09.932Z"
+      "updatedAt": "2026-08-23T04:17:41.946Z"
     },
     "picnic-spots": {
-      "count": 220,
+      "count": 221,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:10.474Z"
+      "updatedAt": "2026-08-23T04:17:43.276Z"
     },
     "viewpoints": {
-      "count": 7,
+      "count": 9,
       "pois": [
+        {
+          "id": "way/133191822",
+          "name": "Salford Quays Operations Tower",
+          "lat": 53.470565,
+          "lon": -2.288951
+        },
         {
           "id": "node/4792248226",
           "name": "Heaton Park Colonnade",
@@ -968,7 +999,7 @@
           "lon": -2.257449
         }
       ],
-      "updatedAt": "2026-08-14T05:12:10.946Z"
+      "updatedAt": "2026-08-23T04:17:43.848Z"
     },
     "beaches": {
       "count": 8,
@@ -982,7 +1013,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:11.411Z"
+      "updatedAt": "2026-08-23T04:17:44.380Z"
     },
     "atms": {
       "count": 152,
@@ -1139,12 +1170,12 @@
           "openingHours": "Mo-Fr 09:00-18:30; Sa 09:00-14:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:11.941Z"
+      "updatedAt": "2026-08-23T04:17:44.969Z"
     },
     "post-boxes": {
       "count": 378,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:12.550Z"
+      "updatedAt": "2026-08-23T04:17:45.664Z"
     },
     "recycling": {
       "count": 94,
@@ -1220,7 +1251,7 @@
           "lon": -2.291829
         }
       ],
-      "updatedAt": "2026-08-14T05:12:13.021Z"
+      "updatedAt": "2026-08-23T04:17:47.286Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -1233,7 +1264,7 @@
           "address": "Shudehill 91"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:13.448Z"
+      "updatedAt": "2026-08-23T04:17:47.889Z"
     },
     "libraries": {
       "count": 56,
@@ -1468,17 +1499,17 @@
           "lon": -2.312519
         }
       ],
-      "updatedAt": "2026-08-14T05:12:13.939Z"
+      "updatedAt": "2026-08-23T04:17:48.668Z"
     },
     "outdoor-gyms": {
       "count": 23,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:14.406Z"
+      "updatedAt": "2026-08-23T04:17:49.933Z"
     },
     "camp-sites": {
-      "count": 0,
+      "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:14.832Z"
+      "updatedAt": "2026-08-23T04:17:50.449Z"
     },
     "shelters": {
       "count": 3,
@@ -1490,12 +1521,12 @@
           "lon": -2.353924
         }
       ],
-      "updatedAt": "2026-08-14T05:12:15.654Z"
+      "updatedAt": "2026-08-23T04:17:51.271Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:16.085Z"
+      "updatedAt": "2026-08-23T04:17:51.947Z"
     },
     "dump-stations": {
       "count": 1,
@@ -1507,31 +1538,242 @@
           "lon": -2.258254
         }
       ],
-      "updatedAt": "2026-08-14T05:12:16.519Z"
+      "updatedAt": "2026-08-23T04:17:52.444Z"
     },
     "post-offices": {
-      "count": 1,
+      "count": 71,
       "pois": [
         {
-          "id": "way/231803520",
-          "name": "Heaton Moor Post Office",
-          "lat": 53.42333,
-          "lon": -2.18341,
-          "address": "Heaton Moor Road",
-          "openingHours": "Mo-Fr 09:00-18:30; Sa 09:00-14:00"
+          "id": "node/9606529727",
+          "name": "Mosley Street Post Office",
+          "lat": 53.480628,
+          "lon": -2.239681,
+          "address": "Mosley Street 23"
+        },
+        {
+          "id": "node/9609050801",
+          "name": "Deansgate Post Office & Souvenirs",
+          "lat": 53.480964,
+          "lon": -2.247741,
+          "address": "Deansgate 109",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/10946188743",
+          "name": "Mount Street Post Office",
+          "lat": 53.478088,
+          "lon": -2.245689,
+          "address": "Mount Street",
+          "openingHours": "Mo-Fr 07:00-19:00; Sa 09:00-19:00; Su 10:00-16:00"
+        },
+        {
+          "id": "node/5816682575",
+          "name": "Mail Boxes Etc.",
+          "lat": 53.481686,
+          "lon": -2.235352,
+          "address": "Lever Street 19",
+          "openingHours": "Mo-Fr 09:00-17:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11207220034",
+          "name": "Manchester Souvenirs & News",
+          "lat": 53.485453,
+          "lon": -2.237244,
+          "address": "Shudehill 62"
+        },
+        {
+          "id": "node/9131640705",
+          "name": "Great Ancoats Street Post Office",
+          "lat": 53.483731,
+          "lon": -2.230304,
+          "address": "Great Ancoats Street 57",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 09:00-20:00; Su 09:00-17:00"
+        },
+        {
+          "id": "node/9833951590",
+          "name": "Oxford Road Post Office",
+          "lat": 53.472834,
+          "lon": -2.239743,
+          "address": "Oxford Road 10B",
+          "openingHours": "Mo-Th 08:00-21:30; Fr 08:00-18:00; Sa 09:30-18:00; Su 08:00-19:00"
+        },
+        {
+          "id": "node/6419002113",
+          "name": "City Address",
+          "lat": 53.481139,
+          "lon": -2.225988,
+          "address": "Great Ancoats Street 132-134"
+        },
+        {
+          "id": "node/5825103974",
+          "name": "Hulme Post Office",
+          "lat": 53.467484,
+          "lon": -2.249096
+        },
+        {
+          "id": "way/766106286",
+          "name": "Ashton New Road Post Office",
+          "lat": 53.483292,
+          "lon": -2.213618,
+          "address": "Beswick Street 79"
+        },
+        {
+          "id": "node/9930103835",
+          "name": "Parcel24",
+          "lat": 53.498309,
+          "lon": -2.247325,
+          "address": "Waterloo Road 118A"
+        },
+        {
+          "id": "node/307495792",
+          "name": "Stockport Road Post Office",
+          "lat": 53.467209,
+          "lon": -2.21846,
+          "address": "Stockport Road 117",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-16:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1108010737",
+          "name": "Wilmslow Park Post Office",
+          "lat": 53.459108,
+          "lon": -2.226884,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/14082026917",
+          "name": "Pack & Send",
+          "lat": 53.474164,
+          "lon": -2.281723,
+          "openingHours": "Mo-Fr 08:30-17:30; Sa,Su off"
+        },
+        {
+          "id": "node/9656666449",
+          "name": "Mail Boxes Etc",
+          "lat": 53.457119,
+          "lon": -2.226454,
+          "address": "Wilmslow Road 8"
+        },
+        {
+          "id": "node/369463490",
+          "name": "Hightown Post Office",
+          "lat": 53.506452,
+          "lon": -2.242927,
+          "address": "Waterloo Road 365",
+          "openingHours": "Mo-Fr 08:45-17:30; Sa 09:00-12:45"
+        },
+        {
+          "id": "node/1321055956",
+          "name": "Ayres Road Post Office",
+          "lat": 53.458884,
+          "lon": -2.266609,
+          "address": "Ayres Road 112"
+        },
+        {
+          "id": "node/1666715010",
+          "name": "Post Office and Fazz News",
+          "lat": 53.47945,
+          "lon": -2.286976,
+          "address": "Eccles New Road 99-101"
+        },
+        {
+          "id": "node/3660605500",
+          "name": "Princess Road Post Office",
+          "lat": 53.45374,
+          "lon": -2.244717,
+          "address": "Princess Road 131",
+          "openingHours": "Mo-Fr 09:30-17:00; Sa 09:30-13:30"
+        },
+        {
+          "id": "way/272633137",
+          "name": "Salford Post Office",
+          "lat": 53.48987,
+          "lon": -2.287121,
+          "address": "Rossall Way 112",
+          "openingHours": "Mo,We-Fr 09:00-17:30; Tu 09:30-17:30; Sa 09:00-16:00; Su off"
+        },
+        {
+          "id": "node/4636417510",
+          "name": "The Post Office",
+          "lat": 53.465753,
+          "lon": -2.282995,
+          "address": "Exchange Quay 6",
+          "openingHours": "Mo-Fr 09:00-15:15"
+        },
+        {
+          "id": "node/4310498037",
+          "name": "The Lowry Mall Post Office",
+          "lat": 53.470966,
+          "lon": -2.293186,
+          "address": "The Lowry Designer Outlet F24A"
+        },
+        {
+          "id": "node/2299500690",
+          "name": "Hart Road Post Office",
+          "lat": 53.447708,
+          "lon": -2.237899
+        },
+        {
+          "id": "node/1780438849",
+          "name": "Crumpsall Green Post Office",
+          "lat": 53.515581,
+          "lon": -2.23662
+        },
+        {
+          "id": "node/366037198",
+          "name": "Barnes Green Post Office",
+          "lat": 53.512851,
+          "lon": -2.213144
+        },
+        {
+          "id": "node/378189863",
+          "name": "Meldon Road Post Office",
+          "lat": 53.449842,
+          "lon": -2.207725
+        },
+        {
+          "id": "node/1780444488",
+          "name": "Middleton Road Post Office",
+          "lat": 53.519147,
+          "lon": -2.249131,
+          "address": "Middleton Road"
+        },
+        {
+          "id": "node/303805399",
+          "name": "Newton Heath Post Office",
+          "lat": 53.502185,
+          "lon": -2.188615,
+          "address": "Oldham Road 961",
+          "openingHours": "Mo,Tu 08:30-17:30; We-Fr 08:45-17:30; Sa 08:45-12:30"
+        },
+        {
+          "id": "node/811378758",
+          "name": "Tootal Drive Post Office",
+          "lat": 53.484834,
+          "lon": -2.308254,
+          "address": "Tootal Road 2",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/2934097350",
+          "name": "Briscoe Lane Post Office",
+          "lat": 53.498311,
+          "lon": -2.181865,
+          "address": "Briscoe Lane"
         }
       ],
-      "updatedAt": "2026-08-17T04:04:08.564Z"
+      "updatedAt": "2026-08-23T04:17:53.128Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:08.960Z"
+      "updatedAt": "2026-08-23T04:17:53.656Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:09.464Z"
+      "updatedAt": "2026-08-23T04:17:54.616Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1539,9 +1781,22 @@
       "updatedAt": "2026-08-17T04:04:09.873Z"
     },
     "benches": {
-      "count": 2,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:10.300Z"
+      "count": 1235,
+      "pois": [
+        {
+          "id": "node/2696672524",
+          "name": "Pagoda",
+          "lat": 53.478512,
+          "lon": -2.240001
+        },
+        {
+          "id": "node/5310653588",
+          "name": "Didsbury: Monster Bench",
+          "lat": 53.409294,
+          "lon": -2.22943
+        }
+      ],
+      "updatedAt": "2026-08-23T04:17:55.805Z"
     },
     "compressed-air": {
       "count": 0,

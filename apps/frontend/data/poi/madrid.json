@@ -1,9 +1,9 @@
 {
   "city": "madrid",
-  "generatedAt": "2026-08-18T03:58:26.987Z",
+  "generatedAt": "2026-08-23T04:27:30.338Z",
   "categories": {
     "toilets": {
-      "count": 233,
+      "count": 236,
       "pois": [
         {
           "id": "way/470067965",
@@ -14,12 +14,20 @@
           "openingHours": "Mo-Sa 10:00-22:00; Su 11:00-21:00"
         },
         {
-          "id": "way/119181159",
-          "name": "Centro Comercial Príncipe Pío",
-          "lat": 40.42215,
-          "lon": -3.720621,
-          "address": "Paseo de la Florida 2",
+          "id": "way/17760822",
+          "name": "FNAC Callao",
+          "lat": 40.419242,
+          "lon": -3.7053,
+          "openingHours": "Mo-Sa 10:00-21:30; PH,Su 12:00-21:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/12345663197",
+          "lat": 40.421599,
+          "lon": -3.719677,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Centro Comercial Príncipe Pío"
         },
         {
           "id": "node/9042109617",
@@ -91,10 +99,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:00.139Z"
+      "updatedAt": "2026-08-23T04:27:09.420Z"
     },
     "drinking-water": {
-      "count": 1596,
+      "count": 1598,
       "pois": [
         {
           "id": "node/1556708373",
@@ -284,10 +292,10 @@
           "lon": -3.772903
         }
       ],
-      "updatedAt": "2026-08-14T05:17:00.990Z"
+      "updatedAt": "2026-08-23T04:27:11.267Z"
     },
     "playgrounds": {
-      "count": 1514,
+      "count": 1513,
       "pois": [
         {
           "id": "node/11703991950",
@@ -472,10 +480,10 @@
           "lon": -3.636726
         }
       ],
-      "updatedAt": "2026-08-14T05:17:01.820Z"
+      "updatedAt": "2026-08-23T04:27:12.240Z"
     },
     "parking": {
-      "count": 3080,
+      "count": 3095,
       "pois": [
         {
           "id": "node/13240433276",
@@ -693,7 +701,7 @@
           "lon": -3.71437
         }
       ],
-      "updatedAt": "2026-08-14T05:17:02.813Z"
+      "updatedAt": "2026-08-23T04:27:13.611Z"
     },
     "charging-stations": {
       "count": 81,
@@ -779,7 +787,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:03.243Z"
+      "updatedAt": "2026-08-23T04:27:14.061Z"
     },
     "gas-stations": {
       "count": 169,
@@ -1002,10 +1010,10 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:03.841Z"
+      "updatedAt": "2026-08-23T04:27:14.699Z"
     },
     "ice-cream": {
-      "count": 140,
+      "count": 141,
       "pois": [
         {
           "id": "node/1782593803",
@@ -1034,6 +1042,13 @@
           "lon": -3.703294,
           "address": "Plaza de la Puerta del Sol 12",
           "openingHours": "Mo-Th 11:00-00:30; Fr,Sa 10:30-01:00; Su 11:00-00:30"
+        },
+        {
+          "id": "node/14097013009",
+          "name": "Masa y dora",
+          "lat": 40.416294,
+          "lon": -3.704323,
+          "wheelchair": "yes"
         },
         {
           "id": "node/9881426917",
@@ -1205,19 +1220,12 @@
           "lon": -3.700046,
           "address": "Calle de Hortaleza 25",
           "openingHours": "Mo-Su 11:00-22:00"
-        },
-        {
-          "id": "node/5424538407",
-          "name": "Puerta Real",
-          "lat": 40.41543,
-          "lon": -3.711414,
-          "address": "Calle Mayor 78"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:04.439Z"
+      "updatedAt": "2026-08-23T04:27:15.291Z"
     },
     "dog-parks": {
-      "count": 117,
+      "count": 118,
       "pois": [
         {
           "id": "way/919310889",
@@ -1256,7 +1264,7 @@
           "lon": -3.610593
         }
       ],
-      "updatedAt": "2026-08-14T05:17:04.809Z"
+      "updatedAt": "2026-08-23T04:27:15.787Z"
     },
     "picnic-spots": {
       "count": 686,
@@ -1280,10 +1288,10 @@
           "lon": -3.708391
         }
       ],
-      "updatedAt": "2026-08-14T05:17:05.529Z"
+      "updatedAt": "2026-08-23T04:27:17.209Z"
     },
     "viewpoints": {
-      "count": 79,
+      "count": 86,
       "pois": [
         {
           "id": "node/6481335785",
@@ -1360,6 +1368,12 @@
           "lon": -3.700966
         },
         {
+          "id": "way/764386651",
+          "name": "Observatorio de Aves del Parque del Oeste",
+          "lat": 40.434219,
+          "lon": -3.72942
+        },
+        {
           "id": "node/1175067767",
           "name": "Mirador Glorieta Perdida",
           "lat": 40.419739,
@@ -1388,6 +1402,12 @@
           "name": "Mirador del Estanque del Repartidor",
           "lat": 40.434174,
           "lon": -3.7456
+        },
+        {
+          "id": "node/7123487016",
+          "name": "Centro de observación de aves",
+          "lat": 40.427231,
+          "lon": -3.749744
         },
         {
           "id": "node/11079060545",
@@ -1439,15 +1459,15 @@
           "lon": -3.773947
         }
       ],
-      "updatedAt": "2026-08-14T05:17:05.953Z"
+      "updatedAt": "2026-08-23T04:27:17.759Z"
     },
     "beaches": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-08-14T05:17:06.438Z"
+      "updatedAt": "2026-08-23T04:27:18.232Z"
     },
     "atms": {
-      "count": 927,
+      "count": 926,
       "pois": [
         {
           "id": "node/178821240",
@@ -1660,10 +1680,10 @@
           "lon": -3.68736
         }
       ],
-      "updatedAt": "2026-08-14T05:17:07.201Z"
+      "updatedAt": "2026-08-23T04:27:19.372Z"
     },
     "post-boxes": {
-      "count": 387,
+      "count": 388,
       "pois": [
         {
           "id": "node/12640825074",
@@ -1678,10 +1698,10 @@
           "lon": -3.705255
         }
       ],
-      "updatedAt": "2026-08-14T05:17:07.781Z"
+      "updatedAt": "2026-08-23T04:27:20.082Z"
     },
     "recycling": {
-      "count": 1273,
+      "count": 1276,
       "pois": [
         {
           "id": "node/9422209946",
@@ -1881,7 +1901,7 @@
           "lon": -3.72849
         }
       ],
-      "updatedAt": "2026-08-14T05:17:08.514Z"
+      "updatedAt": "2026-08-23T04:27:22.048Z"
     },
     "luggage-storage": {
       "count": 20,
@@ -1942,7 +1962,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:08.951Z"
+      "updatedAt": "2026-08-23T04:27:22.508Z"
     },
     "libraries": {
       "count": 101,
@@ -2022,6 +2042,7 @@
           "lat": 40.407464,
           "lon": -3.694731,
           "address": "Ronda de Atocha 2",
+          "openingHours": "Mo,We-Sa 10:00-20:45; Su 10:00-15:00; Tu 16:00-20:45",
           "wheelchair": "yes"
         },
         {
@@ -2160,10 +2181,10 @@
           "lon": -3.671551
         }
       ],
-      "updatedAt": "2026-08-14T05:17:09.479Z"
+      "updatedAt": "2026-08-23T04:27:23.132Z"
     },
     "outdoor-gyms": {
-      "count": 277,
+      "count": 279,
       "pois": [
         {
           "id": "node/11939352481",
@@ -2197,42 +2218,243 @@
           "lon": -3.739529
         }
       ],
-      "updatedAt": "2026-08-14T05:17:09.888Z"
+      "updatedAt": "2026-08-23T04:27:25.112Z"
     },
     "camp-sites": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:17:10.331Z"
+      "count": 1,
+      "pois": [
+        {
+          "id": "relation/14063400",
+          "name": "Area de Autocaravanas Las Cigüeñas",
+          "lat": 40.370522,
+          "lon": -3.641493,
+          "address": "Calle de Guadalcanal",
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:27:25.641Z"
     },
     "shelters": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-14T05:17:11.069Z"
+      "updatedAt": "2026-08-23T04:27:26.307Z"
     },
     "rest-areas": {
-      "count": 9,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:17:11.498Z"
+      "count": 15,
+      "pois": [
+        {
+          "id": "node/12811284412",
+          "name": "Suministros Industriales",
+          "lat": 40.397733,
+          "lon": -3.770169
+        },
+        {
+          "id": "node/12811349860",
+          "name": "EXD",
+          "lat": 40.397195,
+          "lon": -3.772053
+        },
+        {
+          "id": "node/12811371322",
+          "name": "Sistemas Ambiente",
+          "lat": 40.397298,
+          "lon": -3.772359
+        },
+        {
+          "id": "node/12811444357",
+          "name": "Asesoria",
+          "lat": 40.399013,
+          "lon": -3.775765
+        }
+      ],
+      "updatedAt": "2026-08-23T04:27:26.779Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:17:11.902Z"
+      "updatedAt": "2026-08-23T04:27:27.170Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:02.703Z"
+      "count": 91,
+      "pois": [
+        {
+          "id": "node/3283849674",
+          "name": "Oficina de Correos",
+          "lat": 40.412913,
+          "lon": -3.702371
+        },
+        {
+          "id": "node/2782198969",
+          "name": "Mail Boxes Etc",
+          "lat": 40.423428,
+          "lon": -3.705576,
+          "address": "Calle de Pizarro 20"
+        },
+        {
+          "id": "node/8125287388",
+          "name": "Motojet",
+          "lat": 40.426798,
+          "lon": -3.709047,
+          "address": "Calle de la Palma 75"
+        },
+        {
+          "id": "node/6506396273",
+          "name": "DHL Express",
+          "lat": 40.423477,
+          "lon": -3.683025,
+          "address": "Calle de Núñez de Balboa 19",
+          "openingHours": "Mo-Fr 09:00-20:00"
+        },
+        {
+          "id": "node/3096525831",
+          "name": "Ontime",
+          "lat": 40.438867,
+          "lon": -3.706384,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/4369429442",
+          "name": "Correos oficina 46",
+          "lat": 40.439917,
+          "lon": -3.712633,
+          "address": "Calle de Guzmán el Bueno 86",
+          "openingHours": "Mo-Fr 08:30-20:30; Sa 09:30-13:00"
+        },
+        {
+          "id": "node/9410952267",
+          "name": "GLS",
+          "lat": 40.403566,
+          "lon": -3.673519,
+          "address": "Calle de Valderribas 51",
+          "openingHours": "Mo-Fr 09:00-14:00, 16:00-19:30"
+        },
+        {
+          "id": "node/10978349508",
+          "name": "Seur",
+          "lat": 40.398182,
+          "lon": -3.672518,
+          "address": "Calle de Játiva 43"
+        },
+        {
+          "id": "node/12729605044",
+          "name": "FTL International Express",
+          "lat": 40.3857,
+          "lon": -3.705658
+        },
+        {
+          "id": "node/12729605056",
+          "name": "STO Express",
+          "lat": 40.38553,
+          "lon": -3.70578
+        },
+        {
+          "id": "node/12644308428",
+          "name": "陆航国际物流 Luhang Express",
+          "lat": 40.385324,
+          "lon": -3.706539
+        },
+        {
+          "id": "node/10733697037",
+          "name": "Envíos El Sureño Madrid",
+          "lat": 40.38958,
+          "lon": -3.728956
+        },
+        {
+          "id": "node/10053462054",
+          "name": "Correos",
+          "lat": 40.398103,
+          "lon": -3.667351
+        },
+        {
+          "id": "node/3393550089",
+          "name": "Correos. Sucursal 25",
+          "lat": 40.456039,
+          "lon": -3.702974,
+          "address": "Calle de Mariano Fernández 1",
+          "openingHours": "Mo-Fr 08:30-20:30; Sa 09:30-13:00; Aug: Mo-Fr 08:30-14:30; Aug: Sa 09:30-13:00; Su,PH off; Dec 24,25,Jan 01,06 off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1947497827",
+          "name": "Oficina de Correos Sucursal 93",
+          "lat": 40.387482,
+          "lon": -3.739973
+        },
+        {
+          "id": "node/3611166008",
+          "name": "Mail Boxes Etc.",
+          "lat": 40.451915,
+          "lon": -3.677077
+        },
+        {
+          "id": "node/10126850412",
+          "name": "Oficina N.º 26",
+          "lat": 40.45726,
+          "lon": -3.708427
+        },
+        {
+          "id": "node/2920093192",
+          "name": "Geomil",
+          "lat": 40.46027,
+          "lon": -3.701744,
+          "address": "Calle de Tablada 25"
+        },
+        {
+          "id": "node/12977730563",
+          "name": "MRW",
+          "lat": 40.385141,
+          "lon": -3.745711
+        },
+        {
+          "id": "node/12309282503",
+          "name": "Envíos Masivo",
+          "lat": 40.471064,
+          "lon": -3.700009,
+          "address": "Calle de Álvarez 19",
+          "openingHours": "Mo-Fr 10:30-18:00; Sa 11:30-13:00"
+        },
+        {
+          "id": "node/12731512409",
+          "name": "Nova Post",
+          "lat": 40.47158,
+          "lon": -3.691964,
+          "address": "Calle del Cañaveral 95",
+          "openingHours": "Mo-Fr 09:30-19:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/8046950419",
+          "name": "Unidad de Reparto 43",
+          "lat": 40.46335,
+          "lon": -3.649885,
+          "address": "Calle Méntrida 7"
+        },
+        {
+          "id": "node/1812323465",
+          "name": "Centro de Tratamiento Automatizado",
+          "lat": 40.376858,
+          "lon": -3.635423,
+          "address": "Camino de las Hormigueras 169",
+          "openingHours": "Mo-Fr 08:00-15:00; Sa 09:30-13:00; Su,PH off; Dec 24,25,Jan 01,06 off"
+        },
+        {
+          "id": "node/6313090598",
+          "name": "Centro de distribución Correos",
+          "lat": 40.451624,
+          "lon": -3.784981
+        }
+      ],
+      "updatedAt": "2026-08-23T04:27:27.739Z"
     },
     "showers": {
-      "count": 0,
+      "count": 35,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:03.113Z"
+      "updatedAt": "2026-08-23T04:27:28.176Z"
     },
     "fireplaces": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:03.644Z"
+      "updatedAt": "2026-08-23T04:27:28.991Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2240,9 +2462,41 @@
       "updatedAt": "2026-08-17T04:05:04.025Z"
     },
     "benches": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:04.383Z"
+      "count": 8077,
+      "pois": [
+        {
+          "id": "node/7563785866",
+          "name": "Consejería de Economía, Empleo y Competitividad",
+          "lat": 40.399623,
+          "lon": -3.689514,
+          "address": "Calle de Ramírez de Prado 5b"
+        },
+        {
+          "id": "node/13094690184",
+          "name": "Banco",
+          "lat": 40.43321,
+          "lon": -3.727203
+        },
+        {
+          "id": "node/11703547927",
+          "name": "Comedero",
+          "lat": 40.386476,
+          "lon": -3.690467
+        },
+        {
+          "id": "node/13878639889",
+          "name": "Bancos",
+          "lat": 40.455041,
+          "lon": -3.719858
+        },
+        {
+          "id": "node/5488417282",
+          "name": "banco de diablos verdes",
+          "lat": 40.345783,
+          "lon": -3.702442
+        }
+      ],
+      "updatedAt": "2026-08-23T04:27:30.237Z"
     },
     "compressed-air": {
       "count": 0,

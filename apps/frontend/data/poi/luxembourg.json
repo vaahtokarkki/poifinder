@@ -1,6 +1,6 @@
 {
   "city": "luxembourg",
-  "generatedAt": "2026-08-18T03:58:17.190Z",
+  "generatedAt": "2026-08-23T04:17:00.762Z",
   "categories": {
     "toilets": {
       "count": 82,
@@ -14,6 +14,20 @@
           "openingHours": "Fr-We 10:00-18:00; Th 10:00-20:00",
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "node/6312652559",
+          "lat": 49.599762,
+          "lon": 6.10716,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Bouillon"
+        },
+        {
+          "id": "node/6840278691",
+          "lat": 49.61727,
+          "lon": 6.095285,
+          "context": "Total Strassen"
         },
         {
           "id": "way/645974313",
@@ -31,9 +45,16 @@
           "address": "Rue de Beggen 233-241",
           "openingHours": "Mo-Sa 08:00-20:00; Su 08:00-13:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/5574189979",
+          "lat": 49.667156,
+          "lon": 6.136277,
+          "fee": "no",
+          "context": "Walfer Shopping Center"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:37.938Z"
+      "updatedAt": "2026-08-23T04:16:42.788Z"
     },
     "drinking-water": {
       "count": 65,
@@ -64,7 +85,7 @@
           "lon": 6.025955
         }
       ],
-      "updatedAt": "2026-08-14T05:11:38.598Z"
+      "updatedAt": "2026-08-23T04:16:44.274Z"
     },
     "playgrounds": {
       "count": 324,
@@ -258,10 +279,10 @@
           "lon": 6.17751
         }
       ],
-      "updatedAt": "2026-08-14T05:11:39.369Z"
+      "updatedAt": "2026-08-23T04:16:45.067Z"
     },
     "parking": {
-      "count": 2199,
+      "count": 2198,
       "pois": [
         {
           "id": "way/977671404",
@@ -480,7 +501,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:40.309Z"
+      "updatedAt": "2026-08-23T04:16:46.088Z"
     },
     "charging-stations": {
       "count": 134,
@@ -694,7 +715,7 @@
           "lon": 6.134196
         }
       ],
-      "updatedAt": "2026-08-14T05:11:40.724Z"
+      "updatedAt": "2026-08-23T04:16:46.564Z"
     },
     "gas-stations": {
       "count": 43,
@@ -818,7 +839,7 @@
           "lon": 6.118872
         }
       ],
-      "updatedAt": "2026-08-14T05:11:41.199Z"
+      "updatedAt": "2026-08-23T04:16:47.084Z"
     },
     "ice-cream": {
       "count": 12,
@@ -894,7 +915,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:41.673Z"
+      "updatedAt": "2026-08-23T04:16:47.532Z"
     },
     "dog-parks": {
       "count": 12,
@@ -908,15 +929,15 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:42.101Z"
+      "updatedAt": "2026-08-23T04:16:47.959Z"
     },
     "picnic-spots": {
       "count": 302,
       "pois": [],
-      "updatedAt": "2026-08-14T05:11:42.690Z"
+      "updatedAt": "2026-08-23T04:16:50.291Z"
     },
     "viewpoints": {
-      "count": 77,
+      "count": 78,
       "pois": [
         {
           "id": "node/621867608",
@@ -1013,12 +1034,12 @@
           "lon": 6.234584
         }
       ],
-      "updatedAt": "2026-08-14T05:11:43.157Z"
+      "updatedAt": "2026-08-23T04:16:50.866Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:11:43.631Z"
+      "updatedAt": "2026-08-23T04:16:51.333Z"
     },
     "atms": {
       "count": 111,
@@ -1123,7 +1144,7 @@
           "lon": 6.048315
         }
       ],
-      "updatedAt": "2026-08-14T05:11:44.156Z"
+      "updatedAt": "2026-08-23T04:16:51.852Z"
     },
     "post-boxes": {
       "count": 186,
@@ -1148,7 +1169,7 @@
           "lon": 6.063664
         }
       ],
-      "updatedAt": "2026-08-14T05:11:44.628Z"
+      "updatedAt": "2026-08-23T04:16:52.377Z"
     },
     "recycling": {
       "count": 87,
@@ -1180,15 +1201,15 @@
           "lon": 6.13229
         }
       ],
-      "updatedAt": "2026-08-14T05:11:45.155Z"
+      "updatedAt": "2026-08-23T04:16:53.731Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:11:45.579Z"
+      "updatedAt": "2026-08-23T04:16:54.146Z"
     },
     "libraries": {
-      "count": 27,
+      "count": 28,
       "pois": [
         {
           "id": "way/48995149",
@@ -1204,6 +1225,13 @@
           "name": "Bicherschaf",
           "lat": 49.612778,
           "lon": 6.130634
+        },
+        {
+          "id": "node/14087896601",
+          "name": "Bibliothèque nationale",
+          "lat": 49.609561,
+          "lon": 6.130837,
+          "address": "Rue Notre-Dame 9"
         },
         {
           "id": "node/13404227561",
@@ -1232,15 +1260,6 @@
           "lon": 6.11497,
           "address": "Rue Eugène Ruppert 10",
           "openingHours": "Mo-Fr 07:30-12:00,13:30-17:00"
-        },
-        {
-          "id": "way/470049068",
-          "name": "Bibliothèque Nationale",
-          "lat": 49.629782,
-          "lon": 6.165233,
-          "address": "Avenue John F. Kennedy 37D",
-          "openingHours": "Mo-Fr 10:00-20:00; Sa 10:00-18:00; Su,PH off",
-          "wheelchair": "yes"
         },
         {
           "id": "node/6879886210",
@@ -1287,7 +1306,7 @@
           "lon": 6.227419
         }
       ],
-      "updatedAt": "2026-08-14T05:11:46.043Z"
+      "updatedAt": "2026-08-23T04:16:54.622Z"
     },
     "outdoor-gyms": {
       "count": 75,
@@ -1529,7 +1548,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:46.536Z"
+      "updatedAt": "2026-08-23T04:16:55.617Z"
     },
     "camp-sites": {
       "count": 2,
@@ -1547,37 +1566,145 @@
           "lon": 6.158991
         }
       ],
-      "updatedAt": "2026-08-14T05:11:46.962Z"
+      "updatedAt": "2026-08-23T04:16:56.078Z"
     },
     "shelters": {
       "count": 11,
       "pois": [],
-      "updatedAt": "2026-08-14T05:11:47.678Z"
+      "updatedAt": "2026-08-23T04:16:57.167Z"
     },
     "rest-areas": {
-      "count": 5,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:11:48.117Z"
+      "count": 7,
+      "pois": [
+        {
+          "id": "way/200245823",
+          "name": "Aire de Berchem-Est",
+          "lat": 49.542235,
+          "lon": 6.119026
+        },
+        {
+          "id": "way/200245824",
+          "name": "Aire de Berchem-Ouest",
+          "lat": 49.54206,
+          "lon": 6.117235
+        }
+      ],
+      "updatedAt": "2026-08-23T04:16:57.611Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:11:48.519Z"
+      "updatedAt": "2026-08-23T04:16:58.019Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:03.925Z"
+      "count": 14,
+      "pois": [
+        {
+          "id": "node/10741152347",
+          "name": "Espace POST Luxembourg-Centre",
+          "lat": 49.611071,
+          "lon": 6.1266,
+          "address": "Rue Aldringen 12A",
+          "openingHours": "Mo-Fr 07:00-18:00; Sa 09:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/443864814",
+          "name": "Schumann",
+          "lat": 49.618103,
+          "lon": 6.141642
+        },
+        {
+          "id": "node/791269315",
+          "name": "Limpertsberg",
+          "lat": 49.619451,
+          "lon": 6.120597,
+          "openingHours": "Mo-Fr 08:00-12:00, 13:30-17:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/949957682",
+          "name": "Espace POST Luxembourg-Gare",
+          "lat": 49.599134,
+          "lon": 6.131995,
+          "address": "Place de la Gare 38",
+          "openingHours": "Mo-Fr 07:00-19:00; Sa 09:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/487103722",
+          "name": "Eich",
+          "lat": 49.626812,
+          "lon": 6.125067,
+          "address": "Rue de Mühlenbach 131A",
+          "openingHours": "Mo-Fr 08:00-12:00,13:30-17:00"
+        },
+        {
+          "id": "node/4366127989",
+          "name": "POST Kirchberg",
+          "lat": 49.631393,
+          "lon": 6.169218,
+          "address": "Avenue John F. Kennedy 41B",
+          "openingHours": "Mo-Sa 09:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/193848400",
+          "name": "Post Shop Télécom Cloche d'Or",
+          "lat": 49.579974,
+          "lon": 6.114993,
+          "openingHours": "Mo-Sa 09:00-18:00"
+        },
+        {
+          "id": "node/1154546837",
+          "name": "Post Walferdange",
+          "lat": 49.657911,
+          "lon": 6.128413,
+          "openingHours": "Mo 08:00-12:00, 13:30-17:15",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/2070940935",
+          "name": "Post",
+          "lat": 49.622674,
+          "lon": 6.053377,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3642132009",
+          "name": "Post Luxembourg",
+          "lat": 49.616535,
+          "lon": 6.218876,
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/269496848",
+          "name": "Bureau des Postes Bridel",
+          "lat": 49.656638,
+          "lon": 6.078784
+        }
+      ],
+      "updatedAt": "2026-08-23T04:16:58.494Z"
     },
     "showers": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:04.263Z"
+      "count": 2,
+      "pois": [
+        {
+          "id": "node/13295349663",
+          "name": "Badanstalt Showers and Baths",
+          "lat": 49.613543,
+          "lon": 6.12865,
+          "address": "Rue des Bains 12",
+          "openingHours": "Tu-Sa 08:00-18:00, Su 08:00-11:00; PH off; Sep 29- Oct 19 off \"annual maintenance\"",
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:16:58.897Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 8,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:04.775Z"
+      "updatedAt": "2026-08-23T04:16:59.819Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1585,9 +1712,22 @@
       "updatedAt": "2026-08-17T04:04:05.164Z"
     },
     "benches": {
-      "count": 5,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:05.592Z"
+      "count": 2586,
+      "pois": [
+        {
+          "id": "node/8779283121",
+          "name": "wooden table and chairs",
+          "lat": 49.584809,
+          "lon": 6.155451
+        },
+        {
+          "id": "node/7810337545",
+          "name": "KO-1139",
+          "lat": 49.564389,
+          "lon": 6.096105
+        }
+      ],
+      "updatedAt": "2026-08-23T04:17:00.660Z"
     },
     "compressed-air": {
       "count": 0,

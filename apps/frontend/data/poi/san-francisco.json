@@ -1,6 +1,6 @@
 {
   "city": "san-francisco",
-  "generatedAt": "2026-08-18T03:58:33.567Z",
+  "generatedAt": "2026-08-23T04:33:56.511Z",
   "categories": {
     "toilets": {
       "count": 257,
@@ -11,6 +11,14 @@
           "lat": 37.778768,
           "lon": -122.417019,
           "openingHours": "Mo-Su 07:00-19:00"
+        },
+        {
+          "id": "node/13111181568",
+          "lat": 37.779349,
+          "lon": -122.415905,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "San Francisco Public Library - Main Library"
         },
         {
           "id": "way/1478730200",
@@ -39,6 +47,13 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/12405811909",
+          "lat": 37.783999,
+          "lon": -122.437652,
+          "fee": "no",
+          "context": "Western Addition Branch Library"
+        },
+        {
           "id": "node/12880199025",
           "name": "Dolores Park Pissoir",
           "lat": 37.758254,
@@ -53,6 +68,15 @@
           "openingHours": "08:00-17:30",
           "wheelchair": "yes",
           "fee": "no"
+        },
+        {
+          "id": "node/12908603132",
+          "lat": 37.770176,
+          "lon": -122.451077,
+          "openingHours": "Th, Sa 10:00-17:45; Mo 11:00-17:45; Tu 10:00-19:45; We 12:00-19:45; Fr 13:00-17:45; Su 13:00-16:45",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Park Branch Library"
         },
         {
           "id": "way/1193782921",
@@ -108,11 +132,19 @@
           "lon": -122.359182
         }
       ],
-      "updatedAt": "2026-08-14T05:20:36.840Z"
+      "updatedAt": "2026-08-23T04:33:39.141Z"
     },
     "drinking-water": {
       "count": 257,
       "pois": [
+        {
+          "id": "node/708463429",
+          "lat": 37.770726,
+          "lon": -122.399166,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Mission Bay Dog Park"
+        },
         {
           "id": "node/1581816285",
           "name": "Globaltap",
@@ -121,7 +153,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:37.433Z"
+      "updatedAt": "2026-08-23T04:33:40.808Z"
     },
     "playgrounds": {
       "count": 171,
@@ -314,7 +346,7 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:38.092Z"
+      "updatedAt": "2026-08-23T04:33:41.659Z"
     },
     "parking": {
       "count": 1069,
@@ -542,10 +574,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:39.001Z"
+      "updatedAt": "2026-08-23T04:33:42.632Z"
     },
     "charging-stations": {
-      "count": 47,
+      "count": 38,
       "pois": [
         {
           "id": "node/11198865786",
@@ -614,7 +646,7 @@
           "lon": -122.453181
         }
       ],
-      "updatedAt": "2026-08-14T05:20:39.420Z"
+      "updatedAt": "2026-08-23T04:33:43.107Z"
     },
     "gas-stations": {
       "count": 80,
@@ -633,9 +665,17 @@
         },
         {
           "id": "way/256495486",
-          "name": "Shell",
+          "name": "Poppy",
           "lat": 37.781899,
-          "lon": -122.422682
+          "lon": -122.422682,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/219783391",
+          "name": "Shell",
+          "lat": 37.773407,
+          "lon": -122.408454,
+          "openingHours": "24/7"
         },
         {
           "id": "way/224920136",
@@ -794,7 +834,7 @@
           "lon": -122.472037
         }
       ],
-      "updatedAt": "2026-08-14T05:20:39.881Z"
+      "updatedAt": "2026-08-23T04:33:43.629Z"
     },
     "ice-cream": {
       "count": 57,
@@ -1037,7 +1077,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:40.369Z"
+      "updatedAt": "2026-08-23T04:33:44.107Z"
     },
     "dog-parks": {
       "count": 36,
@@ -1158,11 +1198,17 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:40.804Z"
+      "updatedAt": "2026-08-23T04:33:44.526Z"
     },
     "picnic-spots": {
       "count": 684,
       "pois": [
+        {
+          "id": "node/5184349775",
+          "lat": 37.770844,
+          "lon": -122.399317,
+          "context": "Mission Bay Dog Park"
+        },
         {
           "id": "way/1074371031",
           "name": "Greg & Bev James Picnic Area",
@@ -1194,10 +1240,10 @@
           "lon": -122.505056
         }
       ],
-      "updatedAt": "2026-08-14T05:20:41.452Z"
+      "updatedAt": "2026-08-23T04:33:45.781Z"
     },
     "viewpoints": {
-      "count": 126,
+      "count": 128,
       "pois": [
         {
           "id": "node/9322450624",
@@ -1392,7 +1438,7 @@
           "lon": -122.477806
         }
       ],
-      "updatedAt": "2026-08-14T05:20:41.871Z"
+      "updatedAt": "2026-08-23T04:33:46.450Z"
     },
     "beaches": {
       "count": 21,
@@ -1446,7 +1492,7 @@
           "lon": -122.506433
         }
       ],
-      "updatedAt": "2026-08-14T05:20:42.359Z"
+      "updatedAt": "2026-08-23T04:33:46.994Z"
     },
     "atms": {
       "count": 313,
@@ -1672,7 +1718,7 @@
           "address": "Taylor Street 1199"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:43.007Z"
+      "updatedAt": "2026-08-23T04:33:47.627Z"
     },
     "post-boxes": {
       "count": 610,
@@ -1696,7 +1742,7 @@
           "lon": -122.451343
         }
       ],
-      "updatedAt": "2026-08-14T05:20:43.580Z"
+      "updatedAt": "2026-08-23T04:33:48.227Z"
     },
     "recycling": {
       "count": 73,
@@ -1736,15 +1782,15 @@
           "lon": -122.399613
         }
       ],
-      "updatedAt": "2026-08-14T05:20:44.048Z"
+      "updatedAt": "2026-08-23T04:33:49.557Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:20:44.473Z"
+      "updatedAt": "2026-08-23T04:33:49.987Z"
     },
     "libraries": {
-      "count": 131,
+      "count": 130,
       "pois": [
         {
           "id": "way/24446086",
@@ -1763,10 +1809,10 @@
           "openingHours": "24/7"
         },
         {
-          "id": "node/14038495202",
+          "id": "node/14088907401",
           "name": "Prelinger Library",
-          "lat": 37.775183,
-          "lon": -122.409488,
+          "lat": 37.775239,
+          "lon": -122.409503,
           "address": "8th Street 301"
         },
         {
@@ -1976,7 +2022,7 @@
           "openingHours": "Mo-Th 07:45-22:00; Fr 07:45-20:00; Sa 10:00-18:00; Su 12:00-22:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:45.077Z"
+      "updatedAt": "2026-08-23T04:33:50.563Z"
     },
     "outdoor-gyms": {
       "count": 44,
@@ -2103,49 +2149,306 @@
           "lon": -122.50754
         }
       ],
-      "updatedAt": "2026-08-14T05:20:45.517Z"
+      "updatedAt": "2026-08-23T04:33:51.429Z"
     },
     "camp-sites": {
-      "count": 1,
+      "count": 3,
       "pois": [
         {
           "id": "way/417405356",
           "name": "Rob Hill Campground",
           "lat": 37.796507,
           "lon": -122.476038
+        },
+        {
+          "id": "node/4216588290",
+          "name": "Candlestick RV Park",
+          "lat": 37.715979,
+          "lon": -122.383282,
+          "address": "Gilman Avenue 650"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:45.947Z"
+      "updatedAt": "2026-08-23T04:33:51.898Z"
     },
     "shelters": {
       "count": 13,
       "pois": [],
-      "updatedAt": "2026-08-14T05:20:46.678Z"
+      "updatedAt": "2026-08-23T04:33:52.949Z"
     },
     "rest-areas": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:20:47.081Z"
+      "count": 1,
+      "pois": [
+        {
+          "id": "node/4017234896",
+          "name": "Lucky Spot",
+          "lat": 37.763643,
+          "lon": -122.478941,
+          "address": "Irving Street 1944",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 12:00-16:00"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:33:53.366Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:20:47.479Z"
+      "updatedAt": "2026-08-23T04:33:53.758Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:41.815Z"
+      "count": 86,
+      "pois": [
+        {
+          "id": "node/1748985895",
+          "name": "The UPS Store",
+          "lat": 37.776218,
+          "lon": -122.419742,
+          "address": "Van Ness Avenue 77",
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 10:00-17:00; Su 12:00-17:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/6427415718",
+          "name": "USPS Fox Plaza",
+          "lat": 37.77751,
+          "lon": -122.417006,
+          "address": "Market Street 1390",
+          "openingHours": "Mo-Fr 09:00-17:00; PH off",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/2383254145",
+          "name": "Federal Building San Francisco",
+          "lat": 37.78144,
+          "lon": -122.418005
+        },
+        {
+          "id": "node/2383254142",
+          "name": "Contract Station",
+          "lat": 37.780886,
+          "lon": -122.411729
+        },
+        {
+          "id": "way/256461082",
+          "name": "Bryant Street Station",
+          "lat": 37.766631,
+          "lon": -122.411097,
+          "address": "Bryant Street 1600"
+        },
+        {
+          "id": "node/4318979089",
+          "name": "USPS General Delivery",
+          "lat": 37.784791,
+          "lon": -122.412532,
+          "address": "Ellis Street 391"
+        },
+        {
+          "id": "node/5140235358",
+          "name": "Mail Access",
+          "lat": 37.764816,
+          "lon": -122.432055,
+          "address": "Market Street 2261"
+        },
+        {
+          "id": "node/4839249801",
+          "name": "Postal Chase",
+          "lat": 37.774538,
+          "lon": -122.437556,
+          "address": "Divisadero Street 530",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 10:00-17:00; Su closed"
+        },
+        {
+          "id": "node/358855386",
+          "name": "Steiner Street Station",
+          "lat": 37.783935,
+          "lon": -122.433583,
+          "address": "Geary Boulevard 1849",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-16:00; PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3573812493",
+          "name": "Townsend Carrier Annex",
+          "lat": 37.772698,
+          "lon": -122.400968,
+          "openingHours": "Mo-Fr 09:30-17:00; Sa 09:30-13:00"
+        },
+        {
+          "id": "node/358855380",
+          "name": "Pine Street Station",
+          "lat": 37.789902,
+          "lon": -122.419261,
+          "address": "Pine Street 1400",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:00-15:00; PH off"
+        },
+        {
+          "id": "way/160892688",
+          "name": "Brannan Street Station",
+          "lat": 37.779147,
+          "lon": -122.396031,
+          "address": "Brannan Street 460"
+        },
+        {
+          "id": "node/2321299183",
+          "name": "PO Plus",
+          "lat": 37.759603,
+          "lon": -122.435117,
+          "address": "Castro Street 584",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 10:00-15:00"
+        },
+        {
+          "id": "node/392204997",
+          "name": "Sutter Street Post Office",
+          "lat": 37.790031,
+          "lon": -122.403114,
+          "address": "Sutter Street 150",
+          "openingHours": "Mo-Fr 08:00-17:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/358855339",
+          "name": "18th Street Station",
+          "lat": 37.760873,
+          "lon": -122.437413,
+          "address": "18th Street 4304",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-15:00; Su,PH off",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/4359144092",
+          "name": "Haight Ashbury Express Photo & Mail",
+          "lat": 37.770361,
+          "lon": -122.44501,
+          "address": "Haight Street 1388",
+          "openingHours": "Mo-Fr 10:00-17:00; Sa 10:00-14:00; Su off",
+          "wheelchair": "no"
+        },
+        {
+          "id": "way/261133923",
+          "name": "Mission Station San Francisco Post Office",
+          "lat": 37.754096,
+          "lon": -122.416802,
+          "address": "South Van Ness Avenue 1198",
+          "openingHours": "Mo-Fr 08:00-17:00; Sa 08:00-15:00; Su,PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/358855332",
+          "name": "Chinatown Station",
+          "lat": 37.793895,
+          "lon": -122.408032,
+          "address": "Stockton Street 867",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-16:30; PH off"
+        },
+        {
+          "id": "node/2923715576",
+          "name": "FedEx Office",
+          "lat": 37.784657,
+          "lon": -122.395264,
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 10:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/5538811243",
+          "name": "Post & Parcel",
+          "lat": 37.762449,
+          "lon": -122.397182,
+          "address": "18th Street 1459"
+        },
+        {
+          "id": "node/2383254154",
+          "name": "Sacramento Street Contract Station",
+          "lat": 37.793612,
+          "lon": -122.405058
+        },
+        {
+          "id": "node/2383254141",
+          "name": "Contract Station #11",
+          "lat": 37.777362,
+          "lon": -122.448443
+        },
+        {
+          "id": "way/196108167",
+          "name": "Clayton Street Post Office",
+          "lat": 37.770049,
+          "lon": -122.448355,
+          "address": "Clayton Street 554",
+          "openingHours": "Mo-Fr 09:00-17:30;Sa 09:00-16:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13763954277",
+          "name": "La Guatemalteca Express",
+          "lat": 37.752688,
+          "lon": -122.409487,
+          "address": "24th Street 2863"
+        },
+        {
+          "id": "node/61690511",
+          "name": "United States Post Office - Gateway Station",
+          "lat": 37.794941,
+          "lon": -122.399438,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1223019595",
+          "name": "FedEx 24h office",
+          "lat": 37.79399,
+          "lon": -122.397912,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/3790822861",
+          "name": "The Postal Chase",
+          "lat": 37.765465,
+          "lon": -122.449731,
+          "address": "Cole Street 912",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 10:00-17:00; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/358855368",
+          "name": "Noe Valley Station",
+          "lat": 37.751211,
+          "lon": -122.433617,
+          "address": "24th Street 4083",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11572314224",
+          "name": "A+ MailBoxes & More",
+          "lat": 37.748531,
+          "lon": -122.417953,
+          "address": "Mission Street 3041",
+          "openingHours": "Mo-Fr 09:30-18:30; Sa 10:00-17:00"
+        },
+        {
+          "id": "node/358855346",
+          "name": "Gateway Station San Francisco Post Office",
+          "lat": 37.794167,
+          "lon": -122.395833
+        }
+      ],
+      "updatedAt": "2026-08-23T04:33:54.307Z"
     },
     "showers": {
-      "count": 0,
+      "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:42.223Z"
+      "updatedAt": "2026-08-23T04:33:54.631Z"
     },
     "fireplaces": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:42.743Z"
+      "count": 34,
+      "pois": [
+        {
+          "id": "node/647656796",
+          "name": "Memphis Minnie's BBQ Joint",
+          "lat": 37.772064,
+          "lon": -122.431664,
+          "address": "Haight Street 576",
+          "openingHours": "Mo off; Tu-Sa 11:00-22:00; Su 11:00-21:00",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:33:55.454Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2153,16 +2456,34 @@
       "updatedAt": "2026-08-17T04:05:43.123Z"
     },
     "benches": {
-      "count": 3,
+      "count": 3317,
       "pois": [
+        {
+          "id": "node/9432629254",
+          "name": "Auspicious Clouds | Heavy Fog",
+          "lat": 37.79726,
+          "lon": -122.410496
+        },
+        {
+          "id": "node/9491486979",
+          "name": "Juana Briones, Pioneer Settler of Yerba Buena",
+          "lat": 37.801129,
+          "lon": -122.40954
+        },
         {
           "id": "node/11055875368",
           "name": "Lands End Trail Eagles Point, 916 El Camino Del Mar, San Francisco, CA 94121, USA",
           "lat": 37.786696,
           "lon": -122.49483
+        },
+        {
+          "id": "node/8527520436",
+          "name": "Nautical Swing",
+          "lat": 37.727492,
+          "lon": -122.36678
         }
       ],
-      "updatedAt": "2026-08-17T04:05:43.563Z"
+      "updatedAt": "2026-08-23T04:33:56.410Z"
     },
     "compressed-air": {
       "count": 0,

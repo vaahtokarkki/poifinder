@@ -1,9 +1,9 @@
 {
   "city": "sofia",
-  "generatedAt": "2026-08-18T03:58:08.927Z",
+  "generatedAt": "2026-08-23T04:07:56.607Z",
   "categories": {
     "toilets": {
-      "count": 165,
+      "count": 168,
       "pois": [
         {
           "id": "way/107401809",
@@ -29,13 +29,12 @@
           "wheelchair": "limited"
         },
         {
-          "id": "way/96425745",
-          "name": "Парк Център София",
-          "lat": 42.678708,
-          "lon": 23.320429,
-          "address": "бул. Арсеналски 2",
-          "openingHours": "06:30-23:00",
-          "wheelchair": "yes"
+          "id": "node/13576306476",
+          "lat": 42.678845,
+          "lon": 23.320388,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Парк Център София"
         },
         {
           "id": "way/71571355",
@@ -46,22 +45,37 @@
           "openingHours": "Mo-Su 10:00-22:00"
         },
         {
-          "id": "way/166213530",
-          "name": "Фантастико",
-          "lat": 42.671851,
-          "lon": 23.299912,
-          "address": "Нишава 138",
-          "openingHours": "Mo-Su 07:30-22:00",
-          "wheelchair": "yes"
+          "id": "node/12398751566",
+          "lat": 42.682003,
+          "lon": 23.287501,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Ермон"
         },
         {
-          "id": "way/111605510",
-          "name": "SkyCity",
-          "lat": 42.679724,
-          "lon": 23.367778,
-          "address": "Коста Лулчев 52",
+          "id": "way/294844744",
+          "name": "Новите халби",
+          "lat": 42.675823,
+          "lon": 23.29437,
+          "address": "Нишава бл. 20",
           "openingHours": "Mo-Su 10:00-22:00",
-          "wheelchair": "yes"
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/10665526728",
+          "lat": 42.672016,
+          "lon": 23.299753,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Фантастико"
+        },
+        {
+          "id": "node/12653967822",
+          "lat": 42.679509,
+          "lon": 23.367435,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "SkyCity"
         },
         {
           "id": "way/1025184332",
@@ -72,13 +86,20 @@
           "openingHours": "Mo-Su 10:00-21:00"
         },
         {
-          "id": "way/589854027",
-          "name": "Lidl",
-          "lat": 42.669927,
-          "lon": 23.278957,
-          "address": "Ладога 3",
-          "openingHours": "Mo-Sa 07:30-22:00; Su 08:30-22:00",
+          "id": "way/175928333",
+          "name": "Paradise Center",
+          "lat": 42.657937,
+          "lon": 23.31461,
+          "address": "бул. Черни връх 100",
+          "openingHours": "10:00-22:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/13795712888",
+          "lat": 42.670117,
+          "lon": 23.279038,
+          "wheelchair": "yes",
+          "context": "Lidl"
         },
         {
           "id": "way/178660975",
@@ -90,6 +111,14 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/66479455",
+          "name": "South Mall",
+          "lat": 42.645259,
+          "lon": 23.342398,
+          "address": "Акад. Борис Стефанов 35",
+          "openingHours": "Mo-Su,PH 07:00-22:00"
+        },
+        {
           "id": "way/191124979",
           "name": "The Mall",
           "lat": 42.660608,
@@ -98,7 +127,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:45.689Z"
+      "updatedAt": "2026-08-23T04:07:33.105Z"
     },
     "drinking-water": {
       "count": 148,
@@ -170,10 +199,10 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:46.312Z"
+      "updatedAt": "2026-08-23T04:07:35.230Z"
     },
     "playgrounds": {
-      "count": 1283,
+      "count": 1284,
       "pois": [
         {
           "id": "way/1328854604",
@@ -266,8 +295,8 @@
         {
           "id": "way/1214140758",
           "name": "Азбукари",
-          "lat": 42.664733,
-          "lon": 23.305894
+          "lat": 42.664727,
+          "lon": 23.305908
         },
         {
           "id": "node/8002166670",
@@ -306,10 +335,10 @@
           "lon": 23.262373
         }
       ],
-      "updatedAt": "2026-08-14T05:06:47.253Z"
+      "updatedAt": "2026-08-23T04:07:36.804Z"
     },
     "parking": {
-      "count": 4059,
+      "count": 4057,
       "pois": [
         {
           "id": "node/8750163259",
@@ -510,10 +539,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:48.245Z"
+      "updatedAt": "2026-08-23T04:07:39.680Z"
     },
     "charging-stations": {
-      "count": 178,
+      "count": 179,
       "pois": [
         {
           "id": "node/13677511901",
@@ -753,7 +782,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:48.779Z"
+      "updatedAt": "2026-08-23T04:07:40.646Z"
     },
     "gas-stations": {
       "count": 181,
@@ -967,7 +996,7 @@
           "openingHours": "07:00-19:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:49.260Z"
+      "updatedAt": "2026-08-23T04:07:41.651Z"
     },
     "ice-cream": {
       "count": 36,
@@ -1153,7 +1182,7 @@
           "wheelchair": "no"
         },
         {
-          "id": "node/13994522253",
+          "id": "node/6512699192",
           "name": "Sweet Co.Mix",
           "lat": 42.674638,
           "lon": 23.290963,
@@ -1197,7 +1226,7 @@
           "openingHours": "Mo-Su 10:00-21:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:49.759Z"
+      "updatedAt": "2026-08-23T04:07:42.333Z"
     },
     "dog-parks": {
       "count": 33,
@@ -1222,15 +1251,15 @@
           "address": "Корал"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:50.194Z"
+      "updatedAt": "2026-08-23T04:07:42.883Z"
     },
     "picnic-spots": {
-      "count": 129,
+      "count": 131,
       "pois": [],
-      "updatedAt": "2026-08-14T05:06:50.773Z"
+      "updatedAt": "2026-08-23T04:07:44.279Z"
     },
     "viewpoints": {
-      "count": 8,
+      "count": 9,
       "pois": [
         {
           "id": "node/10801236499",
@@ -1252,15 +1281,15 @@
           "lon": 23.253589
         }
       ],
-      "updatedAt": "2026-08-14T05:06:51.238Z"
+      "updatedAt": "2026-08-23T04:07:44.885Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:06:51.713Z"
+      "updatedAt": "2026-08-23T04:07:45.343Z"
     },
     "atms": {
-      "count": 600,
+      "count": 602,
       "pois": [
         {
           "id": "node/13760714659",
@@ -1470,7 +1499,7 @@
           "wheelchair": "designated"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:52.470Z"
+      "updatedAt": "2026-08-23T04:07:46.189Z"
     },
     "post-boxes": {
       "count": 57,
@@ -1489,10 +1518,10 @@
           "lon": 23.27737
         }
       ],
-      "updatedAt": "2026-08-14T05:06:52.896Z"
+      "updatedAt": "2026-08-23T04:07:46.764Z"
     },
     "recycling": {
-      "count": 1623,
+      "count": 1635,
       "pois": [
         {
           "id": "node/11986114908",
@@ -1507,7 +1536,7 @@
           "lon": 23.326549
         }
       ],
-      "updatedAt": "2026-08-14T05:06:53.675Z"
+      "updatedAt": "2026-08-23T04:07:48.338Z"
     },
     "luggage-storage": {
       "count": 10,
@@ -1528,7 +1557,7 @@
           "address": "бул. Евлоги и Христо Георгиеви"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:54.147Z"
+      "updatedAt": "2026-08-23T04:07:48.844Z"
     },
     "libraries": {
       "count": 23,
@@ -1645,47 +1674,290 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:54.626Z"
+      "updatedAt": "2026-08-23T04:07:49.297Z"
     },
     "outdoor-gyms": {
       "count": 194,
       "pois": [],
-      "updatedAt": "2026-08-14T05:06:55.088Z"
+      "updatedAt": "2026-08-23T04:07:50.475Z"
     },
     "camp-sites": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:06:55.517Z"
+      "count": 2,
+      "pois": [
+        {
+          "id": "node/7620207452",
+          "name": "Aire de services payante",
+          "lat": 42.743175,
+          "lon": 23.285741,
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:07:50.909Z"
     },
     "shelters": {
-      "count": 13,
+      "count": 14,
       "pois": [],
-      "updatedAt": "2026-08-14T05:06:56.252Z"
+      "updatedAt": "2026-08-23T04:07:52.313Z"
     },
     "rest-areas": {
-      "count": 0,
+      "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-14T05:06:56.658Z"
+      "updatedAt": "2026-08-23T04:07:52.791Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:06:57.062Z"
+      "updatedAt": "2026-08-23T04:07:53.183Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:13.831Z"
+      "count": 273,
+      "pois": [
+        {
+          "id": "node/254473371",
+          "name": "ПТТС 1594",
+          "lat": 42.697798,
+          "lon": 23.324514,
+          "openingHours": "\"Временно преустановена дейност\""
+        },
+        {
+          "id": "node/12146569994",
+          "name": "Еконт",
+          "lat": 42.699317,
+          "lon": 23.318554,
+          "openingHours": "Mo-Fr 09:00-18:30; Sa 09:00-15:00"
+        },
+        {
+          "id": "node/10934183147",
+          "name": "Speedy",
+          "lat": 42.700759,
+          "lon": 23.324369,
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-14:00"
+        },
+        {
+          "id": "node/12542091807",
+          "name": "Express One.bg",
+          "lat": 42.702024,
+          "lon": 23.323498
+        },
+        {
+          "id": "node/6054199185",
+          "name": "Три уши",
+          "lat": 42.695876,
+          "lon": 23.316331,
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-14:00"
+        },
+        {
+          "id": "node/11746614770",
+          "name": "Централна поща",
+          "lat": 42.693195,
+          "lon": 23.324731,
+          "address": "Ген. Йосиф В. Гурко 6",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 08:30-19:00; Su 08:30-13:00"
+        },
+        {
+          "id": "node/11746614771",
+          "name": "Колетна служба",
+          "lat": 42.693272,
+          "lon": 23.32542,
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 08:30-19:00; Su 08:30-13:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/11746614769",
+          "name": "Абонаментни пощенски кутии",
+          "lat": 42.692846,
+          "lon": 23.325038,
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-13:00"
+        },
+        {
+          "id": "node/12269095139",
+          "name": "DHL",
+          "lat": 42.695144,
+          "lon": 23.32843,
+          "openingHours": "Mo-Fr 09:30-18:00"
+        },
+        {
+          "id": "node/254473369",
+          "name": "ПТТС 1202",
+          "lat": 42.704507,
+          "lon": 23.324402,
+          "address": "бул. Сливница 172",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-13:00"
+        },
+        {
+          "id": "node/254473429",
+          "name": "ПТТС София 3-1303",
+          "lat": 42.702673,
+          "lon": 23.311143,
+          "address": "Опълченска 46-48",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-13:00"
+        },
+        {
+          "id": "node/6462906671",
+          "name": "Parcel Shop Юлек",
+          "lat": 42.688242,
+          "lon": 23.325355,
+          "address": "бул. Патриарх Евтимий 19А",
+          "openingHours": "Mo-Fr 10:00-19:00"
+        },
+        {
+          "id": "node/13112262256",
+          "name": "Козлодуй",
+          "lat": 42.707159,
+          "lon": 23.326103,
+          "openingHours": "Mo-Fr 09:00-18:30; Sa 09:00-14:00"
+        },
+        {
+          "id": "node/6473932006",
+          "name": "Pigeon Express",
+          "lat": 42.686883,
+          "lon": 23.321629,
+          "openingHours": "Mo-Fr 09:00-18:00"
+        },
+        {
+          "id": "node/5610105189",
+          "name": "Рамус медикал",
+          "lat": 42.703874,
+          "lon": 23.334176,
+          "address": "Ангиста 2-4",
+          "openingHours": "10:00-13:00,13:30-18:00"
+        },
+        {
+          "id": "node/254473418",
+          "name": "ПТТС София 63-1463",
+          "lat": 42.687337,
+          "lon": 23.316956,
+          "address": "Цар Асен 72",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-13:00"
+        },
+        {
+          "id": "node/254473359",
+          "name": "ПТТС София 42-1142",
+          "lat": 42.687209,
+          "lon": 23.329827,
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-14:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/254473424",
+          "name": "ПТТС София 33-1233",
+          "lat": 42.709846,
+          "lon": 23.314182,
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-13:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/13230509213",
+          "name": "Express One",
+          "lat": 42.700241,
+          "lon": 23.301581,
+          "openingHours": "Mo-Fr 10:00-18:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/1699496601",
+          "name": "ПТТС София 31-1431",
+          "lat": 42.68511,
+          "lon": 23.307318,
+          "address": "Св. Георги Софийски 1",
+          "openingHours": "Mo-Fr 08:00-12:00,13:00-17:00"
+        },
+        {
+          "id": "node/254473447",
+          "name": "ПТТС София 4-1504",
+          "lat": 42.694299,
+          "lon": 23.344004,
+          "address": "Оборище 24",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-13:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/254473348",
+          "name": "ПТТС София 21-1421",
+          "lat": 42.680259,
+          "lon": 23.321967,
+          "address": "бул. Черни връх 15",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-14:00"
+        },
+        {
+          "id": "node/254473351",
+          "name": "ПТТС София 64-1164",
+          "lat": 42.681479,
+          "lon": 23.332185,
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-14:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/254473377",
+          "name": "ПТТС София 79-1379",
+          "lat": 42.693969,
+          "lon": 23.29793,
+          "openingHours": "Mo-Fr 08:00-17:00"
+        },
+        {
+          "id": "node/2200576000",
+          "name": "ПС 1309",
+          "lat": 42.70927,
+          "lon": 23.300537
+        },
+        {
+          "id": "node/10963302911",
+          "name": "Mail boxes etc.",
+          "lat": 42.678752,
+          "lon": 23.310939,
+          "openingHours": "Mo-Fr 09:00-18:00"
+        },
+        {
+          "id": "node/254473439",
+          "name": "ПТТС София 10-1510",
+          "lat": 42.704903,
+          "lon": 23.348568,
+          "address": "Скайлер 27",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-13:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/254473365",
+          "name": "ПТТС София 8-1408",
+          "lat": 42.676988,
+          "lon": 23.305687,
+          "address": "Краище бл.37",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/10180724025",
+          "name": "Лео Експрес",
+          "lat": 42.720937,
+          "lon": 23.329572
+        },
+        {
+          "id": "node/254473448",
+          "name": "ПТТС София 25-1225",
+          "lat": 42.717841,
+          "lon": 23.342522,
+          "address": "Свързочник 2",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-13:00"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:07:53.787Z"
     },
     "showers": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:14.229Z"
-    },
-    "fireplaces": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-17T04:03:14.765Z"
+      "updatedAt": "2026-08-23T04:07:54.281Z"
+    },
+    "fireplaces": {
+      "count": 5,
+      "pois": [
+        {
+          "id": "node/10136188625",
+          "name": "Сръбска скара",
+          "lat": 42.735475,
+          "lon": 23.293636
+        }
+      ],
+      "updatedAt": "2026-08-23T04:07:55.087Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1693,9 +1965,22 @@
       "updatedAt": "2026-08-17T04:03:15.136Z"
     },
     "benches": {
-      "count": 8,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:15.546Z"
+      "count": 5491,
+      "pois": [
+        {
+          "id": "node/13610732313",
+          "name": "Магдалина Станчева",
+          "lat": 42.699016,
+          "lon": 23.320231
+        },
+        {
+          "id": "node/3527080400",
+          "name": "Петко и Пенчо Славейкови",
+          "lat": 42.692389,
+          "lon": 23.323834
+        }
+      ],
+      "updatedAt": "2026-08-23T04:07:56.501Z"
     },
     "compressed-air": {
       "count": 0,

@@ -1,9 +1,9 @@
 {
   "city": "marseille",
-  "generatedAt": "2026-08-18T03:58:24.048Z",
+  "generatedAt": "2026-08-23T04:24:22.361Z",
   "categories": {
     "toilets": {
-      "count": 111,
+      "count": 112,
       "pois": [
         {
           "id": "node/10796579971",
@@ -12,6 +12,13 @@
           "lon": 5.359269,
           "wheelchair": "limited",
           "fee": "no"
+        },
+        {
+          "id": "node/12052660196",
+          "lat": 43.30601,
+          "lon": 5.364488,
+          "fee": "no",
+          "context": "Centre commercial Les Terrasses du Port"
         },
         {
           "id": "node/11254550505",
@@ -26,7 +33,7 @@
           "lon": 5.39615
         }
       ],
-      "updatedAt": "2026-08-14T05:15:24.713Z"
+      "updatedAt": "2026-08-23T04:24:01.243Z"
     },
     "drinking-water": {
       "count": 175,
@@ -58,7 +65,7 @@
           "lon": 5.392063
         }
       ],
-      "updatedAt": "2026-08-14T05:15:25.374Z"
+      "updatedAt": "2026-08-23T04:24:04.007Z"
     },
     "playgrounds": {
       "count": 286,
@@ -125,7 +132,7 @@
           "lon": 5.331241
         }
       ],
-      "updatedAt": "2026-08-14T05:15:26.028Z"
+      "updatedAt": "2026-08-23T04:24:04.719Z"
     },
     "parking": {
       "count": 1401,
@@ -344,7 +351,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:26.981Z"
+      "updatedAt": "2026-08-23T04:24:05.861Z"
     },
     "charging-stations": {
       "count": 144,
@@ -445,7 +452,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:27.476Z"
+      "updatedAt": "2026-08-23T04:24:06.596Z"
     },
     "gas-stations": {
       "count": 60,
@@ -671,10 +678,10 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:27.982Z"
+      "updatedAt": "2026-08-23T04:24:07.107Z"
     },
     "ice-cream": {
-      "count": 36,
+      "count": 38,
       "pois": [
         {
           "id": "node/4201911658",
@@ -729,6 +736,13 @@
           "openingHours": "We-Fr 13:00-19:00; Sa-Su 12:00-19:00"
         },
         {
+          "id": "node/14099106302",
+          "name": "Glacier du Panier",
+          "lat": 43.298483,
+          "lon": 5.365993,
+          "address": "Rue de l'Évêché 27"
+        },
+        {
           "id": "node/7897319162",
           "name": "Le Métropole",
           "lat": 43.296009,
@@ -743,7 +757,7 @@
         },
         {
           "id": "node/13123127782",
-          "name": "Glacier des trois",
+          "name": "Glacier des trois J'",
           "lat": 43.299545,
           "lon": 5.366652,
           "address": "Place des Treize Cantons 2"
@@ -793,6 +807,12 @@
           "lat": 43.298511,
           "lon": 5.3639,
           "address": "Place Albert Londres"
+        },
+        {
+          "id": "node/14099644801",
+          "name": "baltis",
+          "lat": 43.296101,
+          "lon": 5.376371
         },
         {
           "id": "node/11947401569",
@@ -866,37 +886,29 @@
           "name": "Les Glaciers Marseillais",
           "lat": 43.255331,
           "lon": 5.375999
-        },
-        {
-          "id": "node/5519908488",
-          "name": "Beluga",
-          "lat": 43.243421,
-          "lon": 5.370546,
-          "openingHours": "Fr-Su 12:00-02:00; Mo-Th 12:00-01:30"
-        },
-        {
-          "id": "node/5519908484",
-          "name": "Gelati Amore",
-          "lat": 43.243392,
-          "lon": 5.370505,
-          "openingHours": "Mo-Su 11:00-04:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:28.449Z"
+      "updatedAt": "2026-08-23T04:24:07.659Z"
     },
     "dog-parks": {
       "count": 20,
       "pois": [],
-      "updatedAt": "2026-08-14T05:15:28.886Z"
+      "updatedAt": "2026-08-23T04:24:08.169Z"
     },
     "picnic-spots": {
       "count": 223,
       "pois": [],
-      "updatedAt": "2026-08-14T05:15:29.462Z"
+      "updatedAt": "2026-08-23T04:24:10.168Z"
     },
     "viewpoints": {
-      "count": 114,
+      "count": 116,
       "pois": [
+        {
+          "id": "node/6694913887",
+          "name": "Terrasse de la Tour du Roi René",
+          "lat": 43.294748,
+          "lon": 5.362863
+        },
         {
           "id": "node/6694913785",
           "name": "Jardin Pierre Puget",
@@ -936,13 +948,19 @@
           "openingHours": "Mo-Su 09:00-18:00"
         },
         {
+          "id": "way/268069040",
+          "name": "Sémaphore de Pomègues",
+          "lat": 43.267024,
+          "lon": 5.294798
+        },
+        {
           "id": "node/8640564723",
           "name": "Lettres Marseille",
           "lat": 43.35794,
           "lon": 5.353959
         }
       ],
-      "updatedAt": "2026-08-14T05:15:29.938Z"
+      "updatedAt": "2026-08-23T04:24:10.846Z"
     },
     "beaches": {
       "count": 59,
@@ -1092,10 +1110,10 @@
           "lon": 5.359924
         }
       ],
-      "updatedAt": "2026-08-14T05:15:30.411Z"
+      "updatedAt": "2026-08-23T04:24:11.458Z"
     },
     "atms": {
-      "count": 241,
+      "count": 242,
       "pois": [
         {
           "id": "node/1799282160",
@@ -1314,7 +1332,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:31.066Z"
+      "updatedAt": "2026-08-23T04:24:12.410Z"
     },
     "post-boxes": {
       "count": 278,
@@ -1333,10 +1351,10 @@
           "lon": 5.431402
         }
       ],
-      "updatedAt": "2026-08-14T05:15:31.559Z"
+      "updatedAt": "2026-08-23T04:24:13.042Z"
     },
     "recycling": {
-      "count": 959,
+      "count": 960,
       "pois": [
         {
           "id": "way/396144809",
@@ -1415,7 +1433,7 @@
           "lon": 5.444287
         }
       ],
-      "updatedAt": "2026-08-14T05:15:32.236Z"
+      "updatedAt": "2026-08-23T04:24:14.831Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -1427,7 +1445,7 @@
           "lon": 5.379758
         }
       ],
-      "updatedAt": "2026-08-14T05:15:32.626Z"
+      "updatedAt": "2026-08-23T04:24:15.341Z"
     },
     "libraries": {
       "count": 59,
@@ -1642,12 +1660,12 @@
           "openingHours": "Tu-We 16:00-18:00; Sa 09:30-11:30"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:33.109Z"
+      "updatedAt": "2026-08-23T04:24:15.937Z"
     },
     "outdoor-gyms": {
       "count": 59,
       "pois": [],
-      "updatedAt": "2026-08-14T05:15:33.577Z"
+      "updatedAt": "2026-08-23T04:24:16.959Z"
     },
     "camp-sites": {
       "count": 1,
@@ -1659,32 +1677,80 @@
           "lon": 5.427778
         }
       ],
-      "updatedAt": "2026-08-14T05:15:33.998Z"
+      "updatedAt": "2026-08-23T04:24:17.421Z"
     },
     "shelters": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-14T05:15:34.731Z"
+      "updatedAt": "2026-08-23T04:24:18.166Z"
     },
     "rest-areas": {
-      "count": 1,
+      "count": 9,
       "pois": [
+        {
+          "id": "node/12140080799",
+          "name": "Reprocopie",
+          "lat": 43.296515,
+          "lon": 5.377147
+        },
+        {
+          "id": "node/12140166455",
+          "name": "Mondial Telecom",
+          "lat": 43.29722,
+          "lon": 5.377941
+        },
         {
           "id": "node/12691750485",
           "name": "Les 4 Chemins",
           "lat": 43.295868,
           "lon": 5.381427
+        },
+        {
+          "id": "node/12117274469",
+          "name": "Service Carte Grise",
+          "lat": 43.297505,
+          "lon": 5.384704
+        },
+        {
+          "id": "way/877926236",
+          "name": "Aire de la Pomme",
+          "lat": 43.292009,
+          "lon": 5.453886
+        },
+        {
+          "id": "node/12150066921",
+          "name": "Radio Holland",
+          "lat": 43.356264,
+          "lon": 5.334814
+        },
+        {
+          "id": "node/12150076320",
+          "name": "Manpower",
+          "lat": 43.35676,
+          "lon": 5.336233
+        },
+        {
+          "id": "node/12149999330",
+          "name": "Kurtz Ersa",
+          "lat": 43.356786,
+          "lon": 5.336306
+        },
+        {
+          "id": "node/12150070252",
+          "name": "Aksis",
+          "lat": 43.356659,
+          "lon": 5.335805
         }
       ],
-      "updatedAt": "2026-08-14T05:15:35.166Z"
+      "updatedAt": "2026-08-23T04:24:18.726Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:15:35.566Z"
+      "updatedAt": "2026-08-23T04:24:19.219Z"
     },
     "post-offices": {
-      "count": 51,
+      "count": 84,
       "pois": [
         {
           "id": "node/1799282160",
@@ -1693,6 +1759,14 @@
           "lon": 5.368936,
           "openingHours": "closed",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/8855323259",
+          "name": "Relais Poste",
+          "lat": 43.297233,
+          "lon": 5.368192,
+          "openingHours": "Mo 13:30-16:45; Tu-Fr 09:00-12:30,13:30-16:45; Sa 09:00-12:30; PH off; 2024 May 20 off",
+          "wheelchair": "no"
         },
         {
           "id": "node/1799288489",
@@ -1709,6 +1783,14 @@
           "lon": 5.374363,
           "openingHours": "Mo-Tu,Th-Fr 09:00-12:00,14:00-17:00; We,Sa 09:00-12:00; PH off; 2024 Jul 19,2024 Jul 26 09:00-12:00; 2024 May 20,2024 Jul 20,2024 Jul 27 off",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/8867698036",
+          "name": "Poste Annexe",
+          "lat": 43.301893,
+          "lon": 5.365954,
+          "openingHours": "Mo-Fr 13:30-16:45; Sa 09:00-12:30; PH off",
+          "wheelchair": "no"
         },
         {
           "id": "node/1799287136",
@@ -1744,6 +1826,14 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/8867698034",
+          "name": "La Poste Relais MARSEILLE ST CHARLES CARREFOUR CITY",
+          "lat": 43.302989,
+          "lon": 5.379048,
+          "openingHours": "Mo-Sa 07:00-12:00,14:00-20:00; PH off; 2024 May 20 off",
+          "wheelchair": "no"
+        },
+        {
           "id": "node/1799328085",
           "name": "Marseille Camille Pelletan",
           "lat": 43.305892,
@@ -1767,6 +1857,14 @@
           "lon": 5.385657,
           "openingHours": "Mo-Tu,Th-Fr 09:00-12:00,14:00-17:00; We 09:00-12:00; Sa 09:00-12:30; PH off; 2024 May 20 off",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/7880474444",
+          "name": "Carrefour Express Lodi",
+          "lat": 43.290174,
+          "lon": 5.386465,
+          "openingHours": "Mo-Sa 08:00-21:00; Sa 09:00-13:00",
+          "wheelchair": "no"
         },
         {
           "id": "node/1786324600",
@@ -1795,6 +1893,21 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/8867698030",
+          "name": "Urby Marseille",
+          "lat": 43.312728,
+          "lon": 5.363637,
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/5375217841",
+          "name": "La Poste Carré Entreprises",
+          "lat": 43.284036,
+          "lon": 5.38678,
+          "openingHours": "Mo-Sa 08:00-21:00; Su 09:00-13:00; PH off; 2024 May 19 09:00-13:00; 2024 May 20 off",
+          "wheelchair": "no"
+        },
+        {
           "id": "node/1799334616",
           "name": "Marseille Saint-Mauront",
           "lat": 43.314215,
@@ -1802,14 +1915,6 @@
           "address": "Boulevard National 360",
           "openingHours": "Tu-Sa 09:00-12:00; PH off",
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/8855323264",
-          "name": "Relais Poste",
-          "lat": 43.302366,
-          "lon": 5.394775,
-          "openingHours": "Mo-Fr 07:00-21:00; Sa 08:00-20:00; Su 09:00-13:00; PH off",
-          "wheelchair": "no"
         },
         {
           "id": "node/1799304631",
@@ -1839,6 +1944,13 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/11874305269",
+          "name": "Agence de Marseille Centre (Chronopost)",
+          "lat": 43.317028,
+          "lon": 5.367398,
+          "openingHours": "Mo-Fr 09:00-12:00, 14:00-18:00; Sa 09:00-12:00"
+        },
+        {
           "id": "node/529350888",
           "name": "Marseille Cinq Avenues",
           "lat": 43.302573,
@@ -1846,6 +1958,14 @@
           "address": "Avenue du Marechal Foch 1",
           "openingHours": "Mo-Fr 09:00-12:30,14:00-17:30; Sa 09:00-12:30; PH off",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/8855323262",
+          "name": "MARSEILLE CHARTREUX DUPARC",
+          "lat": 43.304084,
+          "lon": 5.398491,
+          "openingHours": "Mo-Sa 07:00-21:00; Su 09:00-20:00; PH off; 2024 May 19 09:00-20:00; 2024 May 20 off",
+          "wheelchair": "no"
         },
         {
           "id": "node/1577446551",
@@ -1881,79 +2001,19 @@
           "address": "Avenue de la Capelette 69",
           "openingHours": "Mo-Fr 09:00-12:00,14:00-17:00; Sa 09:00-12:00; Su off",
           "wheelchair": "limited"
-        },
-        {
-          "id": "node/1547811944",
-          "name": "La Poste Chutes Lavie",
-          "lat": 43.315187,
-          "lon": 5.398241,
-          "openingHours": "Mo-Fr 09:00-12:00,14:00-17:00; Sa 09:00-12:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/2102204645",
-          "name": "Marseille Saint-Giniez",
-          "lat": 43.2709,
-          "lon": 5.38945,
-          "address": "Avenue du Prado 327",
-          "openingHours": "Mo-Fr 09:00-12:30,14:00-17:30; Sa 09:00-12:00; PH off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/1997048903",
-          "name": "Marseille Saint-Barthélémy",
-          "lat": 43.32244,
-          "lon": 5.389643,
-          "openingHours": "Mo-Fr 09:00-12:30,14:00-17:30; Sa 09:00-12:30; PH off; 2024 May 20 off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/2080122383",
-          "name": "Marseille Saint-Barnabé",
-          "lat": 43.304935,
-          "lon": 5.418075,
-          "address": "Rue des Electriciens 30",
-          "openingHours": "Mo-Fr 09:00-12:30,14:00-17:30; Sa 09:00-12:00; PH off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/1787329425",
-          "name": "Marseille Saint-Just",
-          "lat": 43.320351,
-          "lon": 5.409083,
-          "address": "Boulevard Alphonse Moutte 5",
-          "openingHours": "Mo-Fr 09:00-12:30,14:00-17:30; Sa 09:00-12:00; PH off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/2401585503",
-          "name": "Marseille Sainte-Marguerite",
-          "lat": 43.268819,
-          "lon": 5.404746,
-          "openingHours": "Mo-Fr 09:00-12:00,14:00-17:30; Sa 09:00-12:00; PH off; 2024 May 20 off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/2139844841",
-          "name": "Marseille Pont De Vivaux",
-          "lat": 43.279445,
-          "lon": 5.417912,
-          "address": "Impasse Bonnaud 3",
-          "openingHours": "Mo-Fr 09:00-12:30,14:00-18:00; Sa 09:00-12:00; PH off",
-          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-17T04:04:45.205Z"
+      "updatedAt": "2026-08-23T04:24:19.789Z"
     },
     "showers": {
-      "count": 0,
+      "count": 20,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:45.603Z"
+      "updatedAt": "2026-08-23T04:24:20.277Z"
     },
     "fireplaces": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:46.120Z"
+      "updatedAt": "2026-08-23T04:24:21.282Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1961,9 +2021,16 @@
       "updatedAt": "2026-08-17T04:04:46.435Z"
     },
     "benches": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:46.844Z"
+      "count": 2088,
+      "pois": [
+        {
+          "id": "way/396144087",
+          "name": "Bancs en pierre",
+          "lat": 43.299996,
+          "lon": 5.368097
+        }
+      ],
+      "updatedAt": "2026-08-23T04:24:22.260Z"
     },
     "compressed-air": {
       "count": 0,

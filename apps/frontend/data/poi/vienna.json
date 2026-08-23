@@ -1,6 +1,6 @@
 {
   "city": "vienna",
-  "generatedAt": "2026-08-18T03:58:12.580Z",
+  "generatedAt": "2026-08-23T04:11:43.567Z",
   "categories": {
     "toilets": {
       "count": 638,
@@ -25,7 +25,7 @@
           "name": "Wien Mitte - The Mall",
           "lat": 48.206874,
           "lon": 16.385231,
-          "openingHours": "Mo-We 09:00-23:00; Th-Sa 09:00-24:00; Su 09:00-22:00",
+          "openingHours": "Mo-Fr 06:30-19:00",
           "wheelchair": "yes"
         },
         {
@@ -70,12 +70,12 @@
           "fee": "no"
         },
         {
-          "id": "way/140810862",
-          "name": "Gerngross",
-          "lat": 48.20002,
-          "lon": 16.353255,
-          "openingHours": "Mo-We 09:30-19:00; Th,Fr 09:30-20:00; Sa 09:30-18:00",
-          "wheelchair": "yes"
+          "id": "node/9051367605",
+          "lat": 48.200089,
+          "lon": 16.353413,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Gerngross"
         },
         {
           "id": "way/159310468",
@@ -131,15 +131,6 @@
           "lon": 16.385983,
           "wheelchair": "no",
           "fee": "no"
-        },
-        {
-          "id": "way/422924820",
-          "name": "Der Mann",
-          "lat": 48.180212,
-          "lon": 16.383524,
-          "address": "Helmut-Zilk-Park, Parkpavillon 1",
-          "openingHours": "Mo-Fr 07:00-18:00; Sa-Su 08:00-18:00",
-          "wheelchair": "yes"
         },
         {
           "id": "node/7739973072",
@@ -244,12 +235,19 @@
           "address": "Wagramer Straße 81/2/3",
           "openingHours": "Mo-Fr 09:00-20:00; Sa 09:00-18:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/1787092237",
+          "name": "Insel WC 11",
+          "lat": 48.267747,
+          "lon": 16.375548,
+          "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:49.906Z"
+      "updatedAt": "2026-08-23T04:11:19.788Z"
     },
     "drinking-water": {
-      "count": 1423,
+      "count": 1437,
       "pois": [
         {
           "id": "node/13096883701",
@@ -331,7 +329,7 @@
           "lon": 16.272198
         }
       ],
-      "updatedAt": "2026-08-14T05:08:50.779Z"
+      "updatedAt": "2026-08-23T04:11:22.538Z"
     },
     "playgrounds": {
       "count": 1280,
@@ -525,10 +523,10 @@
           "lon": 16.31756
         }
       ],
-      "updatedAt": "2026-08-14T05:08:51.702Z"
+      "updatedAt": "2026-08-23T04:11:23.705Z"
     },
     "parking": {
-      "count": 1988,
+      "count": 1986,
       "pois": [
         {
           "id": "node/11543539902",
@@ -774,7 +772,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:52.812Z"
+      "updatedAt": "2026-08-23T04:11:25.055Z"
     },
     "charging-stations": {
       "count": 623,
@@ -839,7 +837,7 @@
           "lon": 16.463384
         }
       ],
-      "updatedAt": "2026-08-14T05:08:53.435Z"
+      "updatedAt": "2026-08-23T04:11:25.762Z"
     },
     "gas-stations": {
       "count": 148,
@@ -1085,10 +1083,10 @@
           "lon": 16.299707
         }
       ],
-      "updatedAt": "2026-08-14T05:08:54.023Z"
+      "updatedAt": "2026-08-23T04:11:26.584Z"
     },
     "ice-cream": {
-      "count": 186,
+      "count": 187,
       "pois": [
         {
           "id": "node/3482140759",
@@ -1158,6 +1156,14 @@
           "lon": 16.370904,
           "address": "Tuchlauben 15",
           "wheelchair": "limited"
+        },
+        {
+          "id": "node/14096961802",
+          "name": "Gelato Carlo",
+          "lat": 48.206078,
+          "lon": 16.369212,
+          "address": "Spiegelgasse 23",
+          "openingHours": "Mo-Su 12:00-22:00"
         },
         {
           "id": "node/1362442780",
@@ -1312,18 +1318,9 @@
           "lon": 16.353016,
           "address": "Josefstädter Straße 11",
           "openingHours": "May-Sep 12:00-22:00"
-        },
-        {
-          "id": "node/3692163152",
-          "name": "Gelateria La Romana",
-          "lat": 48.201817,
-          "lon": 16.35473,
-          "address": "Stiftgasse 15-17",
-          "openingHours": "Mo-Fr 12:00-22:00; Sa,Su 12:00-22:00",
-          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:54.763Z"
+      "updatedAt": "2026-08-23T04:11:27.191Z"
     },
     "dog-parks": {
       "count": 162,
@@ -1353,7 +1350,8 @@
           "id": "way/977500951",
           "name": "Hundezone Kaisermühlen",
           "lat": 48.224313,
-          "lon": 16.421373
+          "lon": 16.421373,
+          "wheelchair": "yes"
         },
         {
           "id": "way/27084978",
@@ -1410,10 +1408,10 @@
           "address": "Jedletzbergerstraße 2"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:55.199Z"
+      "updatedAt": "2026-08-23T04:11:27.700Z"
     },
     "picnic-spots": {
-      "count": 2205,
+      "count": 2221,
       "pois": [
         {
           "id": "node/5242974426",
@@ -1425,8 +1423,8 @@
         {
           "id": "node/838766499",
           "name": "Grillplatz 11",
-          "lat": 48.214796,
-          "lon": 16.430361,
+          "lat": 48.214781,
+          "lon": 16.430354,
           "fee": "yes"
         },
         {
@@ -1493,10 +1491,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:56.047Z"
+      "updatedAt": "2026-08-23T04:11:29.351Z"
     },
     "viewpoints": {
-      "count": 60,
+      "count": 62,
       "pois": [
         {
           "id": "node/3127815333",
@@ -1553,6 +1551,16 @@
           "fee": "yes"
         },
         {
+          "id": "way/46965660",
+          "name": "Donauturm",
+          "lat": 48.240249,
+          "lon": 16.410056,
+          "address": "Donauturmstraße 4",
+          "openingHours": "Mo-Su 10:00-24:00",
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
           "id": "node/13521280837",
           "name": "Nashorn-Blick",
           "lat": 48.18167,
@@ -1592,7 +1600,7 @@
           "lon": 16.322536
         }
       ],
-      "updatedAt": "2026-08-14T05:08:56.553Z"
+      "updatedAt": "2026-08-23T04:11:30.091Z"
     },
     "beaches": {
       "count": 32,
@@ -1650,10 +1658,10 @@
           "lon": 16.351305
         }
       ],
-      "updatedAt": "2026-08-14T05:08:57.077Z"
+      "updatedAt": "2026-08-23T04:11:30.687Z"
     },
     "atms": {
-      "count": 747,
+      "count": 745,
       "pois": [
         {
           "id": "node/413658398",
@@ -1887,15 +1895,15 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:57.887Z"
+      "updatedAt": "2026-08-23T04:11:31.518Z"
     },
     "post-boxes": {
       "count": 687,
       "pois": [],
-      "updatedAt": "2026-08-14T05:08:58.508Z"
+      "updatedAt": "2026-08-23T04:11:32.200Z"
     },
     "recycling": {
-      "count": 2684,
+      "count": 2691,
       "pois": [
         {
           "id": "node/7102337424",
@@ -2077,7 +2085,7 @@
           "address": "Alberner Hafenzufahrtsstraße 8"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:59.405Z"
+      "updatedAt": "2026-08-23T04:11:34.099Z"
     },
     "luggage-storage": {
       "count": 6,
@@ -2089,7 +2097,7 @@
           "lon": 16.372585
         }
       ],
-      "updatedAt": "2026-08-14T05:08:59.909Z"
+      "updatedAt": "2026-08-23T04:11:34.581Z"
     },
     "libraries": {
       "count": 232,
@@ -2326,7 +2334,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:09:00.570Z"
+      "updatedAt": "2026-08-23T04:11:35.223Z"
     },
     "outdoor-gyms": {
       "count": 153,
@@ -2424,7 +2432,7 @@
           "lon": 16.393507
         }
       ],
-      "updatedAt": "2026-08-14T05:09:01.049Z"
+      "updatedAt": "2026-08-23T04:11:36.688Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2440,119 +2448,326 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:09:01.523Z"
+      "updatedAt": "2026-08-23T04:11:37.238Z"
     },
     "shelters": {
-      "count": 36,
+      "count": 21,
       "pois": [
         {
           "id": "way/176592604",
           "name": "Salettl",
           "lat": 48.235863,
           "lon": 16.337022
-        },
-        {
-          "id": "node/5242974426",
-          "name": "Grillplatz 4",
-          "lat": 48.21848,
-          "lon": 16.428656,
-          "fee": "yes"
-        },
-        {
-          "id": "node/838766499",
-          "name": "Grillplatz 11",
-          "lat": 48.214796,
-          "lon": 16.430361,
-          "fee": "yes"
-        },
-        {
-          "id": "node/838766489",
-          "name": "Grillplatz 10",
-          "lat": 48.214117,
-          "lon": 16.431448,
-          "fee": "yes"
-        },
-        {
-          "id": "node/825094186",
-          "name": "Grillplatz 9",
-          "lat": 48.21329,
-          "lon": 16.432409,
-          "fee": "yes"
-        },
-        {
-          "id": "node/3563312832",
-          "name": "Grillplatz 8",
-          "lat": 48.212183,
-          "lon": 16.433063,
-          "fee": "yes"
-        },
-        {
-          "id": "node/405571395",
-          "name": "Grillplatz 12",
-          "lat": 48.251182,
-          "lon": 16.384193,
-          "fee": "yes"
-        },
-        {
-          "id": "node/1341705696",
-          "name": "Grillplatz 3",
-          "lat": 48.253416,
-          "lon": 16.383354,
-          "fee": "yes"
-        },
-        {
-          "id": "node/1341705692",
-          "name": "Grillplatz 2",
-          "lat": 48.254585,
-          "lon": 16.382755,
-          "fee": "yes"
-        },
-        {
-          "id": "node/5991355193",
-          "name": "Grillplatz 7",
-          "lat": 48.191678,
-          "lon": 16.46215,
-          "fee": "yes"
-        },
-        {
-          "id": "node/2238129301",
-          "name": "Grillplatz 6",
-          "lat": 48.190181,
-          "lon": 16.465264,
-          "fee": "yes"
-        },
-        {
-          "id": "node/9682741460",
-          "name": "Grillplatz 1",
-          "lat": 48.279247,
-          "lon": 16.365472,
-          "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:09:02.340Z"
+      "updatedAt": "2026-08-23T04:11:38.566Z"
     },
     "rest-areas": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:09:02.767Z"
+      "count": 1,
+      "pois": [
+        {
+          "id": "way/478125158",
+          "name": "Raststation Simmering",
+          "lat": 48.181688,
+          "lon": 16.444244
+        }
+      ],
+      "updatedAt": "2026-08-23T04:11:39.086Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:09:03.180Z"
+      "updatedAt": "2026-08-23T04:11:39.519Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:34.746Z"
+      "count": 113,
+      "pois": [
+        {
+          "id": "node/8418283853",
+          "name": "Mail Boxes Etc. Zedlitzgasse",
+          "lat": 48.207367,
+          "lon": 16.37799,
+          "address": "Zedlitzgasse 5",
+          "openingHours": "Mo-Fr 10:00-17:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/76510695",
+          "name": "Post Filiale 1010",
+          "lat": 48.210314,
+          "lon": 16.378462,
+          "address": "Fleischmarkt 19",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 10:00-18:00; Su off; PH off",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/340515305",
+          "name": "Post Filiale 1015",
+          "lat": 48.203804,
+          "lon": 16.372242,
+          "address": "Krugerstraße 13",
+          "openingHours": "Mo-We 08:00-18:00; Th-Su,PH off",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/8429156948",
+          "name": "Mail Boxes Etc. - Versand, Verpackung, Grafik & Druck",
+          "lat": 48.203251,
+          "lon": 16.371403,
+          "address": "Walfischgasse 6",
+          "openingHours": "Mo-Fr 10:00-17:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/7608074803",
+          "name": "Post Filiale 1016",
+          "lat": 48.212601,
+          "lon": 16.368643,
+          "address": "Wipplingerstraße 21",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa,Su,PH off"
+        },
+        {
+          "id": "node/5939641498",
+          "name": "DHL",
+          "lat": 48.202069,
+          "lon": 16.36792,
+          "address": "Elisabethstraße 6"
+        },
+        {
+          "id": "node/6042809208",
+          "name": "Post Filiale 1025",
+          "lat": 48.215897,
+          "lon": 16.37504,
+          "address": "Obere Donaustraße 73",
+          "openingHours": "Mo-Fr 08:00-12:00, 13:00-18:00; Sa,Su,PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/5691734215",
+          "name": "Mail Boxes Etc.",
+          "lat": 48.215741,
+          "lon": 16.370165,
+          "address": "Gonzagagasse 16",
+          "openingHours": "Mo-Fr 09:00 - 18:00"
+        },
+        {
+          "id": "node/7608074790",
+          "name": "Post Filiale 1037",
+          "lat": 48.198745,
+          "lon": 16.378257,
+          "address": "Traungasse 12",
+          "openingHours": "Mo-Fr 08:00-12:00,14:00-18:00; Sa,Su,PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1501629141",
+          "name": "Post Filiale 1043",
+          "lat": 48.198898,
+          "lon": 16.365449,
+          "address": "Faulmanngasse 6-8",
+          "openingHours": "Mo-Fr 08:00-12:00, 14:00-18:00; Sa,Su,PH off"
+        },
+        {
+          "id": "node/341915304",
+          "name": "Post Filiale 1020",
+          "lat": 48.217192,
+          "lon": 16.386801,
+          "address": "Weintraubengasse 22",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 09:00-12:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/76469936",
+          "name": "Post Filiale 1030",
+          "lat": 48.208443,
+          "lon": 16.392684,
+          "address": "Hetzgasse 35",
+          "openingHours": "Mo-Fr 08:00-12:00,13:00-18:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/249711657",
+          "name": "Post Filiale 1040",
+          "lat": 48.195122,
+          "lon": 16.371638,
+          "address": "Taubstummengasse 7-9",
+          "openingHours": "Mo-Fr 08:00-12:00,13:00-18:00; Sa,Su,PH off",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/13782105418",
+          "name": "Post SB-Filiale",
+          "lat": 48.202658,
+          "lon": 16.355376,
+          "openingHours": "Mo-Su 00:00-24:00"
+        },
+        {
+          "id": "node/259165445",
+          "name": "Post Filiale 1092",
+          "lat": 48.220076,
+          "lon": 16.361761,
+          "address": "Porzellangasse 18",
+          "openingHours": "Mo-Fr 08:00-12:00, 13:00-17:00; Sa, Su, PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/506270750",
+          "name": "Crn-tech",
+          "lat": 48.195426,
+          "lon": 16.386182,
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-12:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/322574257",
+          "name": "Post Filiale 1082",
+          "lat": 48.210649,
+          "lon": 16.351173,
+          "address": "Maria-Treu-Gasse 4",
+          "openingHours": "Mo-Fr 08:00-12:00, 14:00-18:00; Sa,Su,PH off"
+        },
+        {
+          "id": "node/1439067068",
+          "name": "pack&weg!",
+          "lat": 48.194514,
+          "lon": 16.361267,
+          "address": "Kettenbrückengasse 5",
+          "openingHours": "Mo-Fr 10:00-17:30"
+        },
+        {
+          "id": "node/1467319620",
+          "name": "Post Filiale 1070",
+          "lat": 48.19949,
+          "lon": 16.351082,
+          "address": "Zollergasse 2",
+          "openingHours": "Mo-Fr 08:00-12:00, 13:30-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/302737190",
+          "name": "Post Filiale 1042",
+          "lat": 48.189599,
+          "lon": 16.365171,
+          "address": "Wiedner Hauptstraße 76",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 09:00-12:00; Su,PH off",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/7608180578",
+          "name": "Post Filiale 1095",
+          "lat": 48.215154,
+          "lon": 16.344343,
+          "address": "Alser Straße 59",
+          "openingHours": "Mo-Fr 08:00-12:00,13:00-17:00; Sa,Su,PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/279838321",
+          "name": "Post Filiale 1072",
+          "lat": 48.198459,
+          "lon": 16.345412,
+          "address": "Zieglergasse 10",
+          "openingHours": "Mo-Fr 08:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/60648694",
+          "name": "Post Filiale 1080",
+          "lat": 48.210982,
+          "lon": 16.342067,
+          "address": "Bennogasse 1",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa,Su,PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/286168358",
+          "name": "Post Filiale 1052",
+          "lat": 48.190637,
+          "lon": 16.355276,
+          "address": "Schönbrunner Straße 69",
+          "openingHours": "24/7",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/207594545",
+          "name": "Post Filiale 1060",
+          "lat": 48.193494,
+          "lon": 16.350308,
+          "address": "Gumpendorfer Straße 83-85",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa,Su,PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/8548763309",
+          "name": "Post Filiale 1103",
+          "lat": 48.186653,
+          "lon": 16.378169,
+          "address": "Gertrude-Fröhlich-Sandner-Straße 1",
+          "openingHours": "Mo-Fr 08:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/6976475409",
+          "name": "Post Filiale 1028",
+          "lat": 48.225924,
+          "lon": 16.392928,
+          "address": "Bruno-Marek-Allee 15",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 09:00-12:00; Su,PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/7608074794",
+          "name": "Post Filiale 1035",
+          "lat": 48.196899,
+          "lon": 16.402184,
+          "address": "Gestettengasse 2a",
+          "openingHours": "Mo-Fr 08:00-12:00,14:00-18:00; Sa,Su,PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/5893326993",
+          "name": "Post Filiale 1203",
+          "lat": 48.23033,
+          "lon": 16.371885,
+          "address": "Wallensteinstraße 33",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 09:00-12:00; Sa,Su,PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/116792511",
+          "name": "Post Filiale 1090",
+          "lat": 48.228497,
+          "lon": 16.360098,
+          "address": "Althanstraße 10",
+          "openingHours": "Mo-Fr 08:00-18:00; Su 00:00-24:00",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:11:40.217Z"
     },
     "showers": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:35.184Z"
+      "count": 60,
+      "pois": [
+        {
+          "id": "node/4121534725",
+          "name": "Volksbad Friedrich-Kaiser-Gasse - Brausebad",
+          "lat": 48.211042,
+          "lon": 16.329284,
+          "address": "Friedrich-Kaiser-Gasse 11",
+          "openingHours": "We,Th 12:00-19:00; Fr 09:00-19:00; Sa 08:00-18:00",
+          "fee": "yes"
+        },
+        {
+          "id": "node/3611380551",
+          "name": "Sprühdusche",
+          "lat": 48.231446,
+          "lon": 16.43003
+        }
+      ],
+      "updatedAt": "2026-08-23T04:11:40.672Z"
     },
     "fireplaces": {
-      "count": 17,
+      "count": 24,
       "pois": [
         {
           "id": "node/5242974426",
@@ -2564,8 +2779,8 @@
         {
           "id": "node/838766499",
           "name": "Grillplatz 11",
-          "lat": 48.214796,
-          "lon": 16.430361,
+          "lat": 48.214781,
+          "lon": 16.430354,
           "fee": "yes"
         },
         {
@@ -2632,7 +2847,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-17T04:03:35.763Z"
+      "updatedAt": "2026-08-23T04:11:41.615Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2640,9 +2855,70 @@
       "updatedAt": "2026-08-17T04:03:36.165Z"
     },
     "benches": {
-      "count": 13,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:36.605Z"
+      "count": 17787,
+      "pois": [
+        {
+          "id": "node/5335094482",
+          "name": "Liegebank",
+          "lat": 48.22987,
+          "lon": 16.363571
+        },
+        {
+          "id": "node/8716713631",
+          "name": "Beschattete Sitzelemente",
+          "lat": 48.224923,
+          "lon": 16.414181
+        },
+        {
+          "id": "node/13773147067",
+          "name": "Radfahrbank",
+          "lat": 48.230489,
+          "lon": 16.41189
+        },
+        {
+          "id": "node/13536815572",
+          "name": "Boku-Logo Sitzgelegenheit",
+          "lat": 48.236862,
+          "lon": 16.336649
+        },
+        {
+          "id": "node/11697072755",
+          "name": "001",
+          "lat": 48.185597,
+          "lon": 16.309861
+        },
+        {
+          "id": "node/11697072756",
+          "name": "002",
+          "lat": 48.185633,
+          "lon": 16.309722
+        },
+        {
+          "id": "node/2827946671",
+          "name": "Geroldsbank",
+          "lat": 48.244634,
+          "lon": 16.291356
+        },
+        {
+          "id": "node/13183449596",
+          "name": "Sitzbank",
+          "lat": 48.150352,
+          "lon": 16.32079
+        },
+        {
+          "id": "way/141176682",
+          "name": "Wald- und Holzarena",
+          "lat": 48.262075,
+          "lon": 16.310409
+        },
+        {
+          "id": "node/9197887984",
+          "name": "Leopold-Pröll-Ruhe",
+          "lat": 48.275925,
+          "lon": 16.354273
+        }
+      ],
+      "updatedAt": "2026-08-23T04:11:43.465Z"
     },
     "compressed-air": {
       "count": 0,

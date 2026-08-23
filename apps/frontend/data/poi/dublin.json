@@ -1,18 +1,23 @@
 {
   "city": "dublin",
-  "generatedAt": "2026-08-18T03:58:22.568Z",
+  "generatedAt": "2026-08-23T04:22:20.352Z",
   "categories": {
     "toilets": {
-      "count": 135,
+      "count": 136,
       "pois": [
         {
-          "id": "way/233672445",
-          "name": "Arnotts",
-          "lat": 53.348712,
-          "lon": -6.263071,
-          "address": "Henry Street 12",
-          "openingHours": "Mo-We 09:30-19:00; Th 09:30-21:00; Fr 09:30-20:00; Sa 09:00-19:00; Su 11:00-19:00",
-          "wheelchair": "yes"
+          "id": "node/3651398817",
+          "lat": 53.348853,
+          "lon": -6.262831,
+          "context": "Arnotts"
+        },
+        {
+          "id": "node/5647759491",
+          "lat": 53.349929,
+          "lon": -6.264064,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "ILAC Centre"
         },
         {
           "id": "way/273989888",
@@ -33,6 +38,15 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/233487793",
+          "name": "In-spire Galerie",
+          "lat": 53.349788,
+          "lon": -6.253492,
+          "address": "Gardiner Street Lower 56",
+          "wheelchair": "no",
+          "fee": "no"
+        },
+        {
           "id": "way/683240615",
           "name": "The Black Sheep",
           "lat": 53.349761,
@@ -47,6 +61,14 @@
           "lon": -6.265967,
           "address": "Dame Street 71",
           "openingHours": "Mo-Th,Su 12:00-24:00; Fr-Sa 12:00-02:00"
+        },
+        {
+          "id": "node/3198918310",
+          "lat": 53.343671,
+          "lon": -6.255883,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Eavan Boland Library"
         },
         {
           "id": "node/1534008732",
@@ -64,6 +86,14 @@
           "lon": -6.252096,
           "address": "Pearse Street 37B",
           "openingHours": "Mo-Th 12:30-24:00,Fr-Sa 12:30-01:00"
+        },
+        {
+          "id": "node/6762071686",
+          "lat": 53.348749,
+          "lon": -6.247614,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "CHQ"
         },
         {
           "id": "way/14398576",
@@ -97,6 +127,14 @@
           "lat": 53.367109,
           "lon": -6.255951,
           "address": "Drumcondra Road Lower 132-134"
+        },
+        {
+          "id": "node/14032077302",
+          "lat": 53.369872,
+          "lon": -6.25897,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Drumcondra Public Library"
         },
         {
           "id": "way/106056173",
@@ -164,10 +202,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:33.592Z"
+      "updatedAt": "2026-08-23T04:21:54.377Z"
     },
     "drinking-water": {
-      "count": 42,
+      "count": 43,
       "pois": [
         {
           "id": "node/804635460",
@@ -176,7 +214,7 @@
           "lon": -6.233492
         }
       ],
-      "updatedAt": "2026-08-14T05:14:34.236Z"
+      "updatedAt": "2026-08-23T04:21:56.227Z"
     },
     "playgrounds": {
       "count": 222,
@@ -197,7 +235,8 @@
           "id": "relation/17589323",
           "name": "Playground at St. Stephen's Green",
           "lat": 53.337711,
-          "lon": -6.258406
+          "lon": -6.258406,
+          "wheelchair": "limited"
         },
         {
           "id": "way/1270226711",
@@ -313,10 +352,10 @@
           "address": "Lakelands Road 9"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:34.970Z"
+      "updatedAt": "2026-08-23T04:21:57.168Z"
     },
     "parking": {
-      "count": 2975,
+      "count": 2972,
       "pois": [
         {
           "id": "way/343889421",
@@ -536,7 +575,7 @@
           "address": "Earlsfort Terrace"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:36.065Z"
+      "updatedAt": "2026-08-23T04:21:59.765Z"
     },
     "charging-stations": {
       "count": 111,
@@ -691,7 +730,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:36.562Z"
+      "updatedAt": "2026-08-23T04:22:00.468Z"
     },
     "gas-stations": {
       "count": 97,
@@ -928,7 +967,7 @@
           "openingHours": "Mo-Su 06:00-22:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:37.089Z"
+      "updatedAt": "2026-08-23T04:22:01.196Z"
     },
     "ice-cream": {
       "count": 32,
@@ -1085,7 +1124,7 @@
           "openingHours": "Summer Weekends only"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:37.606Z"
+      "updatedAt": "2026-08-23T04:22:01.907Z"
     },
     "dog-parks": {
       "count": 6,
@@ -1103,7 +1142,7 @@
           "lon": -6.306604
         }
       ],
-      "updatedAt": "2026-08-14T05:14:38.033Z"
+      "updatedAt": "2026-08-23T04:22:02.492Z"
     },
     "picnic-spots": {
       "count": 238,
@@ -1115,7 +1154,7 @@
           "lon": -6.314185
         }
       ],
-      "updatedAt": "2026-08-14T05:14:38.617Z"
+      "updatedAt": "2026-08-23T04:22:04.137Z"
     },
     "viewpoints": {
       "count": 14,
@@ -1133,7 +1172,7 @@
           "lon": -6.253369
         }
       ],
-      "updatedAt": "2026-08-14T05:14:39.088Z"
+      "updatedAt": "2026-08-23T04:22:04.851Z"
     },
     "beaches": {
       "count": 9,
@@ -1163,7 +1202,7 @@
           "lon": -6.139379
         }
       ],
-      "updatedAt": "2026-08-14T05:14:39.566Z"
+      "updatedAt": "2026-08-23T04:22:05.544Z"
     },
     "atms": {
       "count": 234,
@@ -1271,19 +1310,10 @@
         },
         {
           "id": "node/1099868776",
-          "name": "Daybreak",
+          "name": "Centra",
           "lat": 53.341426,
           "lon": -6.272528,
           "address": "Patrick Street",
-          "openingHours": "Mo-Sa 07:00-23:00, Su 09:00-23:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/1473450267",
-          "name": "Centra",
-          "lat": 53.342689,
-          "lon": -6.2787,
-          "address": "Thomas Street 50",
           "wheelchair": "yes"
         },
         {
@@ -1374,7 +1404,7 @@
           "address": "Rock Hill"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:40.234Z"
+      "updatedAt": "2026-08-23T04:22:06.628Z"
     },
     "post-boxes": {
       "count": 578,
@@ -1561,7 +1591,7 @@
           "lon": -6.286999
         }
       ],
-      "updatedAt": "2026-08-14T05:14:40.826Z"
+      "updatedAt": "2026-08-23T04:22:07.973Z"
     },
     "recycling": {
       "count": 142,
@@ -1604,7 +1634,7 @@
           "lat": 53.355259,
           "lon": -6.277483,
           "address": "Grangegorman Lower",
-          "openingHours": "Mon-Thurs 09:00 - 16:00; Fri 09:00 - 13:00; Sat 10:00 - 13:00; Sun closed",
+          "openingHours": "Mo-Th 09:00-16:00; Fr 09:00-13:00; Sa 10:00-13:00; Su closed",
           "fee": "€2 per bag"
         },
         {
@@ -1775,15 +1805,15 @@
           "lon": -6.256215
         }
       ],
-      "updatedAt": "2026-08-14T05:14:41.316Z"
+      "updatedAt": "2026-08-23T04:22:09.822Z"
     },
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:14:41.738Z"
+      "updatedAt": "2026-08-23T04:22:10.461Z"
     },
     "libraries": {
-      "count": 60,
+      "count": 61,
       "pois": [
         {
           "id": "node/4156966389",
@@ -2010,41 +2040,26 @@
           "address": "Rathmines Road Lower"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:42.227Z"
+      "updatedAt": "2026-08-23T04:22:11.131Z"
     },
     "outdoor-gyms": {
       "count": 86,
       "pois": [],
-      "updatedAt": "2026-08-14T05:14:42.679Z"
+      "updatedAt": "2026-08-23T04:22:12.763Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:14:43.114Z"
+      "updatedAt": "2026-08-23T04:22:13.426Z"
     },
     "shelters": {
-      "count": 38,
+      "count": 36,
       "pois": [
-        {
-          "id": "node/632666705",
-          "name": "Delaney’s",
-          "lat": 53.349806,
-          "lon": -6.278499,
-          "address": "North King Street 83",
-          "wheelchair": "yes"
-        },
         {
           "id": "way/1535803907",
           "name": "soft area shelter",
           "lat": 53.330831,
           "lon": -6.318135
-        },
-        {
-          "id": "relation/20011885",
-          "name": "The Four Provinces",
-          "lat": 53.314648,
-          "lon": -6.300117,
-          "address": "Ravensdale Park 25"
         },
         {
           "id": "way/233277604",
@@ -2054,27 +2069,261 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:43.941Z"
+      "updatedAt": "2026-08-23T04:22:14.966Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:14:44.366Z"
+      "updatedAt": "2026-08-23T04:22:15.746Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:14:44.771Z"
+      "updatedAt": "2026-08-23T04:22:16.356Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:36.024Z"
+      "count": 82,
+      "pois": [
+        {
+          "id": "node/13894872988",
+          "name": "General Post Office",
+          "lat": 53.349345,
+          "lon": -6.260505,
+          "address": "O'Connell Street Lower",
+          "openingHours": "Mo-Sa 08:30-18:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/4406442483",
+          "name": "Mail Boxes Etc.",
+          "lat": 53.351213,
+          "lon": -6.253093,
+          "address": "James Joyce Street 2",
+          "openingHours": "Mo-Fr 09:00-17:30, Sa 10:00-13:00"
+        },
+        {
+          "id": "way/260314470",
+          "name": "Saint Andrew Street Post Office",
+          "lat": 53.343802,
+          "lon": -6.261463,
+          "address": "Saint Andrew Street 19-24",
+          "openingHours": "Mo,We-Fr 09:00-18:00; Tu 09:30-18:00; Sa 09:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/928004763",
+          "name": "North King Street Post Office",
+          "lat": 53.351047,
+          "lon": -6.270294,
+          "address": "North King Street 1,3",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1349656238",
+          "name": "Dorset Street Post Office",
+          "lat": 53.356676,
+          "lon": -6.26439,
+          "address": "Dorset Street Upper 58"
+        },
+        {
+          "id": "way/976106756",
+          "name": "Summerhill Post Office",
+          "lat": 53.357358,
+          "lon": -6.248616,
+          "address": "Summerhill Parade 11"
+        },
+        {
+          "id": "node/2039878237",
+          "name": "Usher's Quay Post Office",
+          "lat": 53.34531,
+          "lon": -6.276463,
+          "address": "Usher's Quay 5",
+          "openingHours": "Mo-Fr 08:30-17:30",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/1497890058",
+          "name": "BizPOST etc.",
+          "lat": 53.349233,
+          "lon": -6.241641,
+          "address": "Mayor Street Lower",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/351500514",
+          "name": "Erne Street Upper Post Office",
+          "lat": 53.343011,
+          "lon": -6.244818,
+          "address": "Erne Street Upper 24",
+          "openingHours": "Mo-Fr 09:00-17:30, Sa 09:00-13:00"
+        },
+        {
+          "id": "node/3677042037",
+          "name": "North Strand Post Office",
+          "lat": 53.356856,
+          "lon": -6.24364,
+          "address": "North Strand Road"
+        },
+        {
+          "id": "way/336700028",
+          "name": "Merrion Row Post Office",
+          "lat": 53.338151,
+          "lon": -6.254083,
+          "address": "Merrion Row 16",
+          "openingHours": "Mo-Su 09:00-17:30"
+        },
+        {
+          "id": "node/1517611764",
+          "name": "Drumcondra Post Office",
+          "lat": 53.363194,
+          "lon": -6.258425,
+          "address": "Drumcondra Road Lower 32",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/1162855956",
+          "name": "Phibsborough Post Office",
+          "lat": 53.360619,
+          "lon": -6.274334,
+          "address": "North Circular Road 338"
+        },
+        {
+          "id": "node/3042312985",
+          "name": "Earlsfort Terrace Post Office",
+          "lat": 53.335736,
+          "lon": -6.257291,
+          "address": "Earlsfort Terrace"
+        },
+        {
+          "id": "node/11183805073",
+          "name": "Cyclone Couriers",
+          "lat": 53.335694,
+          "lon": -6.266339,
+          "address": "Pleasants Lane"
+        },
+        {
+          "id": "way/967683930",
+          "name": "Church Road Post Office",
+          "lat": 53.355153,
+          "lon": -6.235073,
+          "address": "Church Road 147"
+        },
+        {
+          "id": "node/655211810",
+          "name": "Prussia Street Post Office",
+          "lat": 53.355923,
+          "lon": -6.287071,
+          "address": "Prussia Street 8"
+        },
+        {
+          "id": "node/312568591",
+          "name": "Ringsend Post Office",
+          "lat": 53.340122,
+          "lon": -6.235895,
+          "address": "Barrow Street",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-13:00; PH,Su closed",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/696879582",
+          "name": "Drumcondra Road Lower Post Office",
+          "lat": 53.36751,
+          "lon": -6.255241,
+          "address": "Drumcondra Road Lower 153",
+          "openingHours": "Mo-Th 09:00-14:00, 14:30-17:30; Fr 09:00-17:30; Sa 09:00-13:00"
+        },
+        {
+          "id": "node/973780787",
+          "name": "Baggot Street Upper Post Office",
+          "lat": 53.333559,
+          "lon": -6.244912,
+          "address": "Baggot Street Upper",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1403883530",
+          "name": "Leonard's Corner Post Office",
+          "lat": 53.33214,
+          "lon": -6.274991,
+          "address": "Clanbrassil Street Upper 68"
+        },
+        {
+          "id": "node/1426100400",
+          "name": "Cork Street Post Office",
+          "lat": 53.337239,
+          "lon": -6.286816,
+          "address": "Cork Street",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13019592110",
+          "name": "Ballsbridge Post Office",
+          "lat": 53.337069,
+          "lon": -6.233793,
+          "address": "Bath Avenue",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/428266318",
+          "name": "Parkgate Street Post Office",
+          "lat": 53.348215,
+          "lon": -6.294597,
+          "address": "Parkgate Street",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3124957084",
+          "name": "James Street Post Office",
+          "lat": 53.342492,
+          "lon": -6.294172
+        },
+        {
+          "id": "way/314051080",
+          "name": "Marino Post Office",
+          "lat": 53.364221,
+          "lon": -6.232946,
+          "address": "Marino Mart 3",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "way/966043229",
+          "name": "Cabra Post Office",
+          "lat": 53.364805,
+          "lon": -6.286828,
+          "address": "Fassaugh Road 40"
+        },
+        {
+          "id": "node/4218636550",
+          "name": "Dolphin’s Barn Post Office",
+          "lat": 53.334106,
+          "lon": -6.290953,
+          "address": "Dolphin’s Barn Street",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/4971622779",
+          "name": "Ranelagh Post Office",
+          "lat": 53.325391,
+          "lon": -6.25535,
+          "address": "Fields Terrace"
+        },
+        {
+          "id": "node/3005930484",
+          "name": "Harold's Cross Post Office",
+          "lat": 53.326916,
+          "lon": -6.27746,
+          "address": "Harold's Cross Road 67"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:22:17.023Z"
     },
     "showers": {
-      "count": 0,
+      "count": 5,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:36.424Z"
+      "updatedAt": "2026-08-23T04:22:17.666Z"
     },
     "fireplaces": {
       "count": 2,
@@ -2095,7 +2344,7 @@
           "address": "Ravensdale Park 25"
         }
       ],
-      "updatedAt": "2026-08-17T04:04:37.003Z"
+      "updatedAt": "2026-08-23T04:22:18.566Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2103,9 +2352,34 @@
       "updatedAt": "2026-08-17T04:04:37.407Z"
     },
     "benches": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:37.803Z"
+      "count": 1840,
+      "pois": [
+        {
+          "id": "node/12358550662",
+          "name": "Haslam Bench",
+          "lat": 53.337944,
+          "lon": -6.258748
+        },
+        {
+          "id": "node/6033211625",
+          "name": "Donnycarney Community Bench",
+          "lat": 53.374677,
+          "lon": -6.219961
+        },
+        {
+          "id": "node/13995293312",
+          "name": "buddy bench",
+          "lat": 53.330709,
+          "lon": -6.318485
+        },
+        {
+          "id": "node/13607439430",
+          "name": "Outdoor Classroom",
+          "lat": 53.29681,
+          "lon": -6.283874
+        }
+      ],
+      "updatedAt": "2026-08-23T04:22:20.251Z"
     },
     "compressed-air": {
       "count": 0,

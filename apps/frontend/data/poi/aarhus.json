@@ -1,10 +1,17 @@
 {
   "city": "aarhus",
-  "generatedAt": "2026-08-18T03:58:04.368Z",
+  "generatedAt": "2026-08-23T04:02:37.557Z",
   "categories": {
     "toilets": {
-      "count": 141,
+      "count": 142,
       "pois": [
+        {
+          "id": "node/10915707968",
+          "lat": 56.170458,
+          "lon": 10.199361,
+          "fee": "no",
+          "context": "Det Kgl. Bibliotek"
+        },
         {
           "id": "way/107363057",
           "name": "Salling",
@@ -26,12 +33,20 @@
           "lon": 10.19137
         },
         {
-          "id": "way/231434903",
-          "name": "Bruuns Galleri",
-          "lat": 56.149101,
-          "lon": 10.204913,
-          "openingHours": "Mo-Th 10:00-20:00; Fr 07:00-22:00; Sa-Su 10:00-20:00",
+          "id": "way/903155610",
+          "name": "Storcenter Nord",
+          "lat": 56.170461,
+          "lon": 10.188473,
+          "openingHours": "Mo-Fr 07:00-22:00; Sa,Su 07:00-21:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/10218259509",
+          "lat": 56.14944,
+          "lon": 10.204529,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Bruuns Galleri"
         },
         {
           "id": "way/142490518",
@@ -40,12 +55,12 @@
           "lon": 10.16137
         }
       ],
-      "updatedAt": "2026-08-14T05:04:04.425Z"
+      "updatedAt": "2026-08-23T04:02:22.629Z"
     },
     "drinking-water": {
-      "count": 68,
+      "count": 69,
       "pois": [],
-      "updatedAt": "2026-08-14T05:04:05.068Z"
+      "updatedAt": "2026-08-23T04:02:23.866Z"
     },
     "playgrounds": {
       "count": 548,
@@ -200,7 +215,7 @@
           "lon": 10.105283
         }
       ],
-      "updatedAt": "2026-08-14T05:04:05.933Z"
+      "updatedAt": "2026-08-23T04:02:24.794Z"
     },
     "parking": {
       "count": 2582,
@@ -417,7 +432,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:06.903Z"
+      "updatedAt": "2026-08-23T04:02:25.808Z"
     },
     "charging-stations": {
       "count": 132,
@@ -580,7 +595,7 @@
           "lon": 10.237587
         }
       ],
-      "updatedAt": "2026-08-14T05:04:07.395Z"
+      "updatedAt": "2026-08-23T04:02:26.259Z"
     },
     "gas-stations": {
       "count": 61,
@@ -695,7 +710,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:07.864Z"
+      "updatedAt": "2026-08-23T04:02:26.790Z"
     },
     "ice-cream": {
       "count": 24,
@@ -812,7 +827,7 @@
           "openingHours": "Mo-Su 10:00-21:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:08.343Z"
+      "updatedAt": "2026-08-23T04:02:27.252Z"
     },
     "dog-parks": {
       "count": 20,
@@ -876,11 +891,17 @@
           "lon": 10.090317
         }
       ],
-      "updatedAt": "2026-08-14T05:04:08.759Z"
+      "updatedAt": "2026-08-23T04:02:27.687Z"
     },
     "picnic-spots": {
       "count": 720,
       "pois": [
+        {
+          "id": "node/11302953054",
+          "lat": 56.162952,
+          "lon": 10.196321,
+          "context": "Vestervang Hundeskov"
+        },
         {
           "id": "node/10219308589",
           "name": "Anlægget",
@@ -918,10 +939,10 @@
           "lon": 10.104937
         }
       ],
-      "updatedAt": "2026-08-14T05:04:09.483Z"
+      "updatedAt": "2026-08-23T04:02:29.094Z"
     },
     "viewpoints": {
-      "count": 25,
+      "count": 38,
       "pois": [
         {
           "id": "node/13083770278",
@@ -938,16 +959,35 @@
           "fee": "no"
         },
         {
+          "id": "way/1482234063",
+          "name": "Kultårnet",
+          "lat": 56.149013,
+          "lon": 10.21063
+        },
+        {
           "id": "node/371218955",
           "name": "Bilbjerg",
           "lat": 56.182706,
           "lon": 10.178268
         },
         {
+          "id": "way/938744077",
+          "name": "Sky Tower",
+          "lat": 56.136183,
+          "lon": 10.196953,
+          "wheelchair": "no"
+        },
+        {
           "id": "node/5290181179",
           "name": "Gyvelhøj",
           "lat": 56.10814,
           "lon": 10.229224
+        },
+        {
+          "id": "node/1398582996",
+          "name": "Båken",
+          "lat": 56.207963,
+          "lon": 10.290732
         },
         {
           "id": "node/565434640",
@@ -969,7 +1009,7 @@
           "lon": 10.096127
         }
       ],
-      "updatedAt": "2026-08-14T05:04:09.924Z"
+      "updatedAt": "2026-08-23T04:02:29.669Z"
     },
     "beaches": {
       "count": 19,
@@ -1006,10 +1046,10 @@
           "lon": 10.291819
         }
       ],
-      "updatedAt": "2026-08-14T05:04:10.393Z"
+      "updatedAt": "2026-08-23T04:02:30.141Z"
     },
     "atms": {
-      "count": 37,
+      "count": 38,
       "pois": [
         {
           "id": "node/1389253181",
@@ -1057,12 +1097,12 @@
           "lon": 10.250873
         }
       ],
-      "updatedAt": "2026-08-14T05:04:10.915Z"
+      "updatedAt": "2026-08-23T04:02:30.663Z"
     },
     "post-boxes": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:04:11.385Z"
+      "updatedAt": "2026-08-23T04:02:31.187Z"
     },
     "recycling": {
       "count": 595,
@@ -1112,12 +1152,12 @@
           "openingHours": "Mo-Fr 07:00-18:00; Sa,Su,PH 10:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:12.038Z"
+      "updatedAt": "2026-08-23T04:02:33.028Z"
     },
     "luggage-storage": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-08-14T05:04:12.429Z"
+      "updatedAt": "2026-08-23T04:02:33.447Z"
     },
     "libraries": {
       "count": 19,
@@ -1210,16 +1250,37 @@
           "lon": 10.282475
         }
       ],
-      "updatedAt": "2026-08-14T05:04:12.898Z"
+      "updatedAt": "2026-08-23T04:02:33.931Z"
     },
     "outdoor-gyms": {
       "count": 67,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:04:13.373Z"
+      "pois": [
+        {
+          "id": "node/11964661703",
+          "lat": 56.172273,
+          "lon": 10.221443,
+          "context": "Riis Skov"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:02:34.872Z"
     },
     "camp-sites": {
-      "count": 5,
+      "count": 8,
       "pois": [
+        {
+          "id": "way/1217556160",
+          "name": "Autocamper Aarhus Ø",
+          "lat": 56.163446,
+          "lon": 10.220852,
+          "fee": "no"
+        },
+        {
+          "id": "way/1229700155",
+          "name": "Marselisborg Havn",
+          "lat": 56.139648,
+          "lon": 10.220256,
+          "fee": "yes"
+        },
         {
           "id": "relation/17696338",
           "name": "Blommehaven",
@@ -1236,6 +1297,13 @@
           "lon": 10.096758
         },
         {
+          "id": "node/11070299623",
+          "name": "Egå Marina",
+          "lat": 56.210958,
+          "lon": 10.288064,
+          "fee": "yes"
+        },
+        {
           "id": "way/107555428",
           "name": "First Camp Aarhus - Jylland",
           "lat": 56.227346,
@@ -1243,17 +1311,11 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:13.813Z"
+      "updatedAt": "2026-08-23T04:02:35.335Z"
     },
     "shelters": {
-      "count": 83,
+      "count": 81,
       "pois": [
-        {
-          "id": "node/8827329569",
-          "name": "Tumlepladsen",
-          "lat": 56.176929,
-          "lon": 10.223629
-        },
         {
           "id": "node/12829866828",
           "name": "Bådhuset",
@@ -1292,17 +1354,17 @@
           "lon": 10.104967
         }
       ],
-      "updatedAt": "2026-08-14T05:04:14.545Z"
+      "updatedAt": "2026-08-23T04:02:36.604Z"
     },
     "rest-areas": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-14T05:04:14.975Z"
+      "updatedAt": "2026-08-23T04:02:37.064Z"
     },
     "dump-stations": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-14T05:04:15.367Z"
+      "updatedAt": "2026-08-23T04:02:37.455Z"
     },
     "post-offices": {
       "count": 0,

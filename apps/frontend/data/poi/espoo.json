@@ -1,6 +1,6 @@
 {
   "city": "espoo",
-  "generatedAt": "2026-08-18T03:58:01.228Z",
+  "generatedAt": "2026-08-23T03:59:44.490Z",
   "categories": {
     "toilets": {
       "count": 64,
@@ -13,6 +13,12 @@
           "address": "Kynäkatu 6",
           "openingHours": "Mo-Sa 08:00-22:00; Su 10:00-22:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/12021280962",
+          "lat": 60.163175,
+          "lon": 24.707015,
+          "context": "Kauppakeskus Merituuli"
         },
         {
           "id": "way/226900559",
@@ -31,24 +37,22 @@
           "openingHours": "Mo-Fr 07:00-21:00; Sa 09:00-18:00; Su 12:00-18:00"
         },
         {
-          "id": "way/972283013",
-          "name": "Lippulaiva",
-          "lat": 60.149693,
-          "lon": 24.654993,
-          "address": "Espoonlahdenkatu 8",
-          "openingHours": "Mo-Su 06:00-24:00"
+          "id": "node/9624203630",
+          "lat": 60.149873,
+          "lon": 24.65508,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Lippulaiva"
         },
         {
-          "id": "way/8034765",
-          "name": "Iso Omena",
-          "lat": 60.161284,
-          "lon": 24.738296,
-          "address": "Piispansilta 11",
-          "openingHours": "Mo-Fr 10:00-21:00; Sa 10:00-19:00; Su 12:00-18:00",
-          "wheelchair": "yes"
+          "id": "node/13647186534",
+          "lat": 60.161798,
+          "lon": 24.738744,
+          "wheelchair": "yes",
+          "context": "Iso Omena"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:21.482Z"
+      "updatedAt": "2026-08-23T03:59:23.758Z"
     },
     "drinking-water": {
       "count": 22,
@@ -205,10 +209,10 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:22.129Z"
+      "updatedAt": "2026-08-23T03:59:25.587Z"
     },
     "playgrounds": {
-      "count": 420,
+      "count": 421,
       "pois": [
         {
           "id": "relation/19705631",
@@ -393,10 +397,10 @@
           "lon": 24.700412
         }
       ],
-      "updatedAt": "2026-08-14T05:02:23.002Z"
+      "updatedAt": "2026-08-23T03:59:27.310Z"
     },
     "parking": {
-      "count": 1671,
+      "count": 1674,
       "pois": [
         {
           "id": "way/24366789",
@@ -597,7 +601,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:23.939Z"
+      "updatedAt": "2026-08-23T03:59:29.057Z"
     },
     "charging-stations": {
       "count": 56,
@@ -800,7 +804,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:24.359Z"
+      "updatedAt": "2026-08-23T03:59:29.640Z"
     },
     "gas-stations": {
       "count": 47,
@@ -883,9 +887,10 @@
         },
         {
           "id": "node/54664547",
-          "name": "Shell Express Kauklahti",
+          "name": "St1 Espoo Kauklahti",
           "lat": 60.187826,
           "lon": 24.587866,
+          "address": "Räävelintie 1",
           "openingHours": "24/7"
         },
         {
@@ -1032,7 +1037,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:24.880Z"
+      "updatedAt": "2026-08-23T03:59:30.228Z"
     },
     "ice-cream": {
       "count": 2,
@@ -1046,7 +1051,7 @@
           "openingHours": "Mo-Fr 12:00-18:00; Sa 11:00-17:00; Su 12:00-16:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:25.397Z"
+      "updatedAt": "2026-08-23T03:59:30.872Z"
     },
     "dog-parks": {
       "count": 27,
@@ -1222,11 +1227,17 @@
           "lon": 24.799356
         }
       ],
-      "updatedAt": "2026-08-14T05:02:25.834Z"
+      "updatedAt": "2026-08-23T03:59:31.317Z"
     },
     "picnic-spots": {
       "count": 269,
       "pois": [
+        {
+          "id": "node/13773428533",
+          "lat": 60.195119,
+          "lon": 24.669416,
+          "context": "Saarnilaakson koira-aitaus"
+        },
         {
           "id": "way/81307752",
           "name": "Sorlammen keittokatos",
@@ -1252,10 +1263,10 @@
           "lon": 24.621381
         }
       ],
-      "updatedAt": "2026-08-14T05:02:26.493Z"
+      "updatedAt": "2026-08-23T03:59:32.864Z"
     },
     "viewpoints": {
-      "count": 24,
+      "count": 26,
       "pois": [
         {
           "id": "node/8418774352",
@@ -1294,6 +1305,12 @@
           "lon": 24.571062
         },
         {
+          "id": "node/1167723755",
+          "name": "Espoonlahden lintutorni",
+          "lat": 60.176243,
+          "lon": 24.570825
+        },
+        {
           "id": "node/454121666",
           "name": "Suomenojan lintutorni",
           "lat": 60.152892,
@@ -1306,7 +1323,7 @@
           "lon": 24.691186
         }
       ],
-      "updatedAt": "2026-08-14T05:02:26.959Z"
+      "updatedAt": "2026-08-23T03:59:33.714Z"
     },
     "beaches": {
       "count": 30,
@@ -1401,7 +1418,7 @@
           "lon": 24.651038
         }
       ],
-      "updatedAt": "2026-08-14T05:02:27.534Z"
+      "updatedAt": "2026-08-23T03:59:34.567Z"
     },
     "atms": {
       "count": 28,
@@ -1440,12 +1457,12 @@
           "address": "Mankkaantie"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:28.121Z"
+      "updatedAt": "2026-08-23T03:59:35.418Z"
     },
     "post-boxes": {
       "count": 65,
       "pois": [],
-      "updatedAt": "2026-08-14T05:02:28.639Z"
+      "updatedAt": "2026-08-23T03:59:36.107Z"
     },
     "recycling": {
       "count": 222,
@@ -1480,12 +1497,12 @@
           "openingHours": "Mo-Fr 07:00-21:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:29.214Z"
+      "updatedAt": "2026-08-23T03:59:38.037Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:02:29.598Z"
+      "updatedAt": "2026-08-23T03:59:38.570Z"
     },
     "libraries": {
       "count": 11,
@@ -1576,7 +1593,7 @@
           "address": "Veininkatu 24"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:30.081Z"
+      "updatedAt": "2026-08-23T03:59:39.239Z"
     },
     "outdoor-gyms": {
       "count": 106,
@@ -1632,6 +1649,12 @@
           "lon": 24.722724
         },
         {
+          "id": "way/1336273806",
+          "name": "Hansavalkaman pallokentän ulkokuntoiluvälineet",
+          "lat": 60.19173,
+          "lon": 24.586178
+        },
+        {
           "id": "way/1435832406",
           "name": "Gällträskin ulkokuntoilupiste",
           "lat": 60.221212,
@@ -1674,30 +1697,30 @@
           "lon": 24.742058
         }
       ],
-      "updatedAt": "2026-08-14T05:02:30.596Z"
+      "updatedAt": "2026-08-23T03:59:41.127Z"
     },
     "camp-sites": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:02:31.028Z"
+      "count": 2,
+      "pois": [
+        {
+          "id": "way/819343951",
+          "name": "SF-C Espoo matkailuajoneuvojen säilytysalue",
+          "lat": 60.245223,
+          "lon": 24.539522,
+          "address": "Ämmäsmäentie 3",
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-23T03:59:41.800Z"
     },
     "shelters": {
-      "count": 18,
+      "count": 15,
       "pois": [
         {
           "id": "node/8620695758",
           "name": "Kasavuoren puolikotalaavu",
           "lat": 60.21541,
           "lon": 24.698093
-        },
-        {
-          "id": "node/13859515979",
-          "name": "Tilaussauna Siera Nevada",
-          "lat": 60.185663,
-          "lon": 24.611104,
-          "address": "Mänkimiehentie 14",
-          "openingHours": "\"by appointment\"",
-          "fee": "yes"
         },
         {
           "id": "way/1418241231",
@@ -1710,31 +1733,19 @@
           "name": "Sorlammen keittokatos",
           "lat": 60.257282,
           "lon": 24.620847
-        },
-        {
-          "id": "node/889110991",
-          "name": "Pirttimäki",
-          "lat": 60.269928,
-          "lon": 24.648222
-        },
-        {
-          "id": "way/86199159",
-          "name": "Hynkänlammen keittokatos",
-          "lat": 60.269601,
-          "lon": 24.615956
         }
       ],
-      "updatedAt": "2026-08-14T05:02:31.847Z"
+      "updatedAt": "2026-08-23T03:59:43.341Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:02:32.283Z"
+      "updatedAt": "2026-08-23T03:59:43.939Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:02:32.681Z"
+      "updatedAt": "2026-08-23T03:59:44.389Z"
     },
     "post-offices": {
       "count": 0,

@@ -1,9 +1,9 @@
 {
   "city": "birmingham",
-  "generatedAt": "2026-08-18T03:58:18.345Z",
+  "generatedAt": "2026-08-23T04:18:14.900Z",
   "categories": {
     "toilets": {
-      "count": 81,
+      "count": 82,
       "pois": [
         {
           "id": "way/1534426467",
@@ -14,6 +14,12 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/4038486140",
+          "lat": 52.483599,
+          "lon": -1.899247,
+          "context": "Livery St Car Park"
+        },
+        {
           "id": "way/89816897",
           "name": "The Old Contemptibles",
           "lat": 52.482993,
@@ -22,10 +28,11 @@
           "wheelchair": "limited"
         },
         {
-          "id": "way/142149393",
-          "name": "Bull Ring",
-          "lat": 52.477288,
-          "lon": -1.895235
+          "id": "node/2535904402",
+          "lat": 52.477393,
+          "lon": -1.894386,
+          "fee": "no",
+          "context": "Bull Ring"
         },
         {
           "id": "node/1506459429",
@@ -60,6 +67,15 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/14092113718",
+          "name": "Tesco Customer Toilets",
+          "lat": 52.549309,
+          "lon": -1.857947,
+          "openingHours": "Mo-Sa 06:00-00:00; Su 10:00-16:00",
+          "wheelchair": "designated",
+          "fee": "no"
+        },
+        {
           "id": "way/1317590938",
           "name": "New Square Public Toilets",
           "lat": 52.519678,
@@ -67,18 +83,18 @@
           "wheelchair": "yes"
         },
         {
-          "id": "way/1318442890",
-          "name": "New West Bromwich Indoor Market",
-          "lat": 52.517924,
-          "lon": -1.993269,
-          "address": "Duchess Parade 104-108",
-          "wheelchair": "yes"
+          "id": "node/13203928407",
+          "lat": 52.517794,
+          "lon": -1.993235,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "New West Bromwich Indoor Market"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:17.173Z"
+      "updatedAt": "2026-08-23T04:17:58.088Z"
     },
     "drinking-water": {
-      "count": 7,
+      "count": 8,
       "pois": [
         {
           "id": "node/2524217452",
@@ -100,7 +116,7 @@
           "lon": -1.872138
         }
       ],
-      "updatedAt": "2026-08-14T05:12:17.823Z"
+      "updatedAt": "2026-08-23T04:17:59.426Z"
     },
     "playgrounds": {
       "count": 270,
@@ -166,10 +182,10 @@
           "lon": -1.850757
         },
         {
-          "id": "node/12943274441",
+          "id": "way/1550126487",
           "name": "Perry Park Playground",
-          "lat": 52.527915,
-          "lon": -1.90542
+          "lat": 52.52795,
+          "lon": -1.905338
         },
         {
           "id": "way/899313261",
@@ -287,10 +303,10 @@
           "lon": -1.982007
         }
       ],
-      "updatedAt": "2026-08-14T05:12:18.554Z"
+      "updatedAt": "2026-08-23T04:18:00.147Z"
     },
     "parking": {
-      "count": 1661,
+      "count": 1665,
       "pois": [
         {
           "id": "way/364640152",
@@ -498,7 +514,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:19.591Z"
+      "updatedAt": "2026-08-23T04:18:01.229Z"
     },
     "charging-stations": {
       "count": 88,
@@ -657,7 +673,7 @@
           "lon": -1.855365
         }
       ],
-      "updatedAt": "2026-08-14T05:12:20.047Z"
+      "updatedAt": "2026-08-23T04:18:01.717Z"
     },
     "gas-stations": {
       "count": 112,
@@ -855,10 +871,10 @@
           "lon": -1.883717
         }
       ],
-      "updatedAt": "2026-08-14T05:12:20.626Z"
+      "updatedAt": "2026-08-23T04:18:02.316Z"
     },
     "ice-cream": {
-      "count": 20,
+      "count": 21,
       "pois": [
         {
           "id": "node/13098923349",
@@ -890,6 +906,12 @@
           "name": "Whisk",
           "lat": 52.486687,
           "lon": -1.902071
+        },
+        {
+          "id": "way/1296716399",
+          "name": "Snowflake",
+          "lat": 52.477788,
+          "lon": -1.893759
         },
         {
           "id": "node/4991188900",
@@ -990,21 +1012,27 @@
           "lon": -1.991914
         }
       ],
-      "updatedAt": "2026-08-14T05:12:21.176Z"
+      "updatedAt": "2026-08-23T04:18:02.761Z"
     },
     "dog-parks": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:21.599Z"
+      "updatedAt": "2026-08-23T04:18:03.206Z"
     },
     "picnic-spots": {
       "count": 91,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:22.193Z"
+      "updatedAt": "2026-08-23T04:18:04.459Z"
     },
     "viewpoints": {
-      "count": 14,
+      "count": 16,
       "pois": [
+        {
+          "id": "way/87172412",
+          "name": "Perrott's Folly",
+          "lat": 52.474407,
+          "lon": -1.93123
+        },
         {
           "id": "node/10077774149",
           "name": "Erdington Reservoir",
@@ -1016,6 +1044,12 @@
           "name": "River Tame Flood Gates",
           "lat": 52.534111,
           "lon": -1.944053
+        },
+        {
+          "id": "way/93786836",
+          "name": "Lakeside Hide",
+          "lat": 52.531107,
+          "lon": -1.95207
         },
         {
           "id": "node/10771144248",
@@ -1036,15 +1070,15 @@
           "lon": -2.005519
         }
       ],
-      "updatedAt": "2026-08-14T05:12:22.653Z"
+      "updatedAt": "2026-08-23T04:18:05.046Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:23.131Z"
+      "updatedAt": "2026-08-23T04:18:05.567Z"
     },
     "atms": {
-      "count": 208,
+      "count": 207,
       "pois": [
         {
           "id": "node/955999940",
@@ -1081,15 +1115,7 @@
           "lat": 52.478396,
           "lon": -1.894764,
           "address": "High Street 21",
-          "openingHours": "Mo,Tu,Th, Fr 09:30-17:00; We 10:00-17:00; Sa 09:00-15:30; Su off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/7264908410",
-          "name": "RBS",
-          "lat": 52.478604,
-          "lon": -1.896056,
-          "openingHours": "24/7",
+          "openingHours": "Mo,Tu,Th,Fr 09:00-16:30; We 10:00-16:30; Sa 09:00-15:30; Su off",
           "wheelchair": "yes"
         },
         {
@@ -1112,6 +1138,12 @@
           "name": "Halifax",
           "lat": 52.477458,
           "lon": -1.895074
+        },
+        {
+          "id": "node/1135747813",
+          "name": "RBS",
+          "lat": 52.489093,
+          "lon": -1.907966
         },
         {
           "id": "node/428506388",
@@ -1195,12 +1227,12 @@
           "lon": -1.991519
         }
       ],
-      "updatedAt": "2026-08-14T05:12:23.784Z"
+      "updatedAt": "2026-08-23T04:18:06.254Z"
     },
     "post-boxes": {
       "count": 940,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:24.490Z"
+      "updatedAt": "2026-08-23T04:18:06.953Z"
     },
     "recycling": {
       "count": 156,
@@ -1216,8 +1248,8 @@
         {
           "id": "way/91500496",
           "name": "Premier Waste UK PLC",
-          "lat": 52.52446,
-          "lon": -1.902319
+          "lat": 52.524477,
+          "lon": -1.902308
         },
         {
           "id": "node/12801282977",
@@ -1294,12 +1326,12 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:24.990Z"
+      "updatedAt": "2026-08-23T04:18:08.407Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:25.412Z"
+      "updatedAt": "2026-08-23T04:18:08.829Z"
     },
     "libraries": {
       "count": 36,
@@ -1512,7 +1544,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:25.885Z"
+      "updatedAt": "2026-08-23T04:18:09.348Z"
     },
     "outdoor-gyms": {
       "count": 28,
@@ -1524,22 +1556,22 @@
           "lon": -1.941297
         }
       ],
-      "updatedAt": "2026-08-14T05:12:26.355Z"
+      "updatedAt": "2026-08-23T04:18:10.247Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:26.793Z"
+      "updatedAt": "2026-08-23T04:18:10.691Z"
     },
     "shelters": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:27.521Z"
+      "updatedAt": "2026-08-23T04:18:11.358Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:27.952Z"
+      "updatedAt": "2026-08-23T04:18:11.878Z"
     },
     "dump-stations": {
       "count": 1,
@@ -1551,40 +1583,254 @@
           "lon": -1.907977
         }
       ],
-      "updatedAt": "2026-08-14T05:12:28.359Z"
+      "updatedAt": "2026-08-23T04:18:12.319Z"
     },
     "post-offices": {
-      "count": 2,
+      "count": 93,
       "pois": [
         {
-          "id": "way/115333927",
-          "name": "Ten Acre Street Post Office",
-          "lat": 52.435997,
-          "lon": -1.917084,
-          "address": "Dogpool Lane 3",
-          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-12:30"
+          "id": "node/13406504020",
+          "name": "Birmingham Post Office",
+          "lat": 52.479529,
+          "lon": -1.895839,
+          "address": "Union Street 31-33",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-17:30; Su 11:00-17:00"
         },
         {
-          "id": "node/60852053",
-          "name": "Kingstanding Post Office",
-          "lat": 52.553811,
-          "lon": -1.884875,
-          "address": "Kettlehouse Road 7",
-          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-16:00",
-          "wheelchair": "yes"
+          "id": "node/964924621",
+          "name": "Vauxhall Post Office",
+          "lat": 52.486814,
+          "lon": -1.876232,
+          "address": "Revesby Walk 37-39",
+          "openingHours": "Mo,Tu 08:30-17:30; We-Sa 09:00-17:30"
+        },
+        {
+          "id": "node/11282766293",
+          "name": "Mail Boxes Etc.",
+          "lat": 52.479281,
+          "lon": -1.902111,
+          "address": "Pinfold Street 51",
+          "openingHours": "Mo-Fr 09:00-16:00"
+        },
+        {
+          "id": "node/3954428985",
+          "name": "Bloomsbury Post Office",
+          "lat": 52.492789,
+          "lon": -1.877345,
+          "openingHours": "Mo-Fr 08:30-18:00; Sa 09:00-18:00"
+        },
+        {
+          "id": "node/3574870569",
+          "name": "Newtown Post Office",
+          "lat": 52.497486,
+          "lon": -1.896688,
+          "address": "Alma Street"
+        },
+        {
+          "id": "node/352979388",
+          "name": "Jewellery Quarter Post Office",
+          "lat": 52.487615,
+          "lon": -1.912178,
+          "address": "Vyse Street 119",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-15:00"
+        },
+        {
+          "id": "node/8917826718",
+          "name": "Bristol Street Post Office",
+          "lat": 52.47125,
+          "lon": -1.899501,
+          "address": "Bristol Street"
+        },
+        {
+          "id": "node/281518101",
+          "name": "Lozells Post Office",
+          "lat": 52.502971,
+          "lon": -1.90649,
+          "address": "Lozells Road 107",
+          "openingHours": "Mo-Su 08:00-20:30"
+        },
+        {
+          "id": "node/259069654",
+          "name": "Saltley Post Office",
+          "lat": 52.491565,
+          "lon": -1.858852,
+          "address": "Alum Rock Road 8",
+          "openingHours": "Mo-Fr 08:30-18:30; Sa 08:30-18:00; Su 11:00-17:30"
+        },
+        {
+          "id": "node/269957920",
+          "name": "Gooch Street Post Office",
+          "lat": 52.465876,
+          "lon": -1.892019,
+          "address": "Gooch Street 290",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 09:00-13:00"
+        },
+        {
+          "id": "node/258078804",
+          "name": "Nechells Park Road Post Office",
+          "lat": 52.500114,
+          "lon": -1.865577,
+          "address": "Nechells Park Road 102",
+          "openingHours": "Mo-Fr 06:30-19:00; Sa 07:00-19:00; Su 07:30-16:00"
+        },
+        {
+          "id": "node/319778648",
+          "name": "Edgbaston Post Office",
+          "lat": 52.47266,
+          "lon": -1.916769,
+          "address": "Islington Row Middleway"
+        },
+        {
+          "id": "way/79655951",
+          "name": "Small Heath Post Office",
+          "lat": 52.471715,
+          "lon": -1.864407,
+          "address": "Coventry Road 361",
+          "openingHours": "Mo-Sa 09:00-17:30"
+        },
+        {
+          "id": "node/973599631",
+          "name": "Birchfield Road Post Office",
+          "lat": 52.507784,
+          "lon": -1.902726,
+          "address": "Birchfield Road 203-205",
+          "openingHours": "Mo-We 08:30-17:30; Th,Fr 09:00-17:30; Sa 09:00-13:00"
+        },
+        {
+          "id": "node/292616872",
+          "name": "Villa Road Post Office",
+          "lat": 52.501922,
+          "lon": -1.919504
+        },
+        {
+          "id": "node/3563271802",
+          "name": "Alum Rock Road Post Office",
+          "lat": 52.488608,
+          "lon": -1.850398,
+          "address": "College Road 6",
+          "openingHours": "Mo,Tu 08:45-17:30; We-Sa 09:00-17:30"
+        },
+        {
+          "id": "way/83080950",
+          "name": "Witton Post Office",
+          "lat": 52.511999,
+          "lon": -1.884656,
+          "address": "Manor Road 30-34",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-15:30"
+        },
+        {
+          "id": "way/338486931",
+          "name": "Summerfield Post Office",
+          "lat": 52.486507,
+          "lon": -1.9355,
+          "address": "Dudley Road 156",
+          "openingHours": "Mo-Th 08:30-17:30; Fr,Sa 09:00-17:30"
+        },
+        {
+          "id": "node/5559486787",
+          "name": "Sir Harrys Road Post Office",
+          "lat": 52.457703,
+          "lon": -1.905695,
+          "address": "Hollies Croft 15",
+          "openingHours": "Mo-Sa 09:00-17:30"
+        },
+        {
+          "id": "node/5566126638",
+          "name": "Perry Barr Post Office",
+          "lat": 52.51518,
+          "lon": -1.90307,
+          "address": "Wellington Road 268",
+          "openingHours": "Mo-Sa 09:00-17:30"
+        },
+        {
+          "id": "way/108151352",
+          "name": "The Avenues Post Office",
+          "lat": 52.478587,
+          "lon": -1.842387,
+          "address": "Bordesley Green 490",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-14:30"
+        },
+        {
+          "id": "node/305729958",
+          "name": "Soho Road Post Office",
+          "lat": 52.503171,
+          "lon": -1.934703,
+          "address": "Soho Road 235",
+          "openingHours": "Mo-Sa 08:30-17:30; Su 11:00-14:00"
+        },
+        {
+          "id": "way/188084445",
+          "name": "Sparkhill Post Office",
+          "lat": 52.454666,
+          "lon": -1.86665,
+          "address": "Stratford Road 468"
+        },
+        {
+          "id": "way/198369444",
+          "name": "Church Road Post Office",
+          "lat": 52.451825,
+          "lon": -1.879171,
+          "address": "Church Road 2A",
+          "openingHours": "Mo 08:30-17:30; Tu-Fr 09:00-17:30; Sa 09:00-13:00; Su off"
+        },
+        {
+          "id": "node/5642049338",
+          "name": "Sladefield Road Post Office",
+          "lat": 52.48741,
+          "lon": -1.83226,
+          "address": "Alum Rock Road 696",
+          "openingHours": "Mo-We 08:30-17:30; Th,Fr 09:00-17:30; Sa 09:00-13:00"
+        },
+        {
+          "id": "node/64798187",
+          "name": "Slade Road Post Office",
+          "lat": 52.517455,
+          "lon": -1.856453,
+          "address": "Slade Road 276",
+          "openingHours": "Mo-Sa 08:30-17:30"
+        },
+        {
+          "id": "node/266580114",
+          "name": "College Road Post Office",
+          "lat": 52.513994,
+          "lon": -1.934541
+        },
+        {
+          "id": "way/166270211",
+          "name": "Rookery Road Post Office",
+          "lat": 52.510283,
+          "lon": -1.940363,
+          "address": "Rookery Road 171",
+          "openingHours": "Mo-Sa 09:00-17:30"
+        },
+        {
+          "id": "node/858031409",
+          "name": "Heybarnes Post Office",
+          "lat": 52.471153,
+          "lon": -1.829919,
+          "address": "Hob Moor Road 292",
+          "openingHours": "Mo 08:30-17:30; Tu-Fr 09:00-17:30; Sa 09:00-15:00"
+        },
+        {
+          "id": "node/257074405",
+          "name": "Moseley Post Office",
+          "lat": 52.44581,
+          "lon": -1.889031,
+          "address": "Alcester Road 149",
+          "openingHours": "Mo-Sa 08:30-18:00"
         }
       ],
-      "updatedAt": "2026-08-17T04:04:10.768Z"
+      "updatedAt": "2026-08-23T04:18:12.881Z"
     },
     "showers": {
-      "count": 0,
+      "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:11.103Z"
+      "updatedAt": "2026-08-23T04:18:13.258Z"
     },
     "fireplaces": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:11.675Z"
+      "updatedAt": "2026-08-23T04:18:14.008Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1592,9 +1838,46 @@
       "updatedAt": "2026-08-17T04:04:12.082Z"
     },
     "benches": {
-      "count": 9,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:12.478Z"
+      "count": 1245,
+      "pois": [
+        {
+          "id": "node/9097748906",
+          "name": "Black Sabbath",
+          "lat": 52.477849,
+          "lon": -1.910945
+        },
+        {
+          "id": "node/13584701624",
+          "name": "The Aston Expressway Observation Benches",
+          "lat": 52.502539,
+          "lon": -1.883682
+        },
+        {
+          "id": "node/2450867325",
+          "name": "Park Bench",
+          "lat": 52.472229,
+          "lon": -1.919162
+        },
+        {
+          "id": "node/12526770034",
+          "name": "Carved Feather Tree Trunk Seat",
+          "lat": 52.510112,
+          "lon": -1.919726
+        },
+        {
+          "id": "node/12526770051",
+          "name": "The Commonwealth - Here and Now",
+          "lat": 52.510482,
+          "lon": -1.92805
+        },
+        {
+          "id": "node/12542839468",
+          "name": "Story Telling Bench",
+          "lat": 52.441241,
+          "lon": -1.946547
+        }
+      ],
+      "updatedAt": "2026-08-23T04:18:14.798Z"
     },
     "compressed-air": {
       "count": 0,

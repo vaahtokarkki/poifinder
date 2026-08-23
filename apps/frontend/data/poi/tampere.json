@@ -1,9 +1,9 @@
 {
   "city": "tampere",
-  "generatedAt": "2026-08-18T03:58:01.582Z",
+  "generatedAt": "2026-08-23T04:00:07.285Z",
   "categories": {
     "toilets": {
-      "count": 92,
+      "count": 94,
       "pois": [
         {
           "id": "relation/20693010",
@@ -15,6 +15,24 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/158325024",
+          "name": "Koskikeskus",
+          "lat": 61.495842,
+          "lon": 23.767268,
+          "address": "Hatanpään valtatie 1",
+          "openingHours": "Mo-Fr 07:00-21:00; Sa 09:00-20:00; Su 10:00-20:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/89322096",
+          "name": "Vohvelikahvila",
+          "lat": 61.500591,
+          "lon": 23.767044,
+          "address": "Ojakatu 2",
+          "openingHours": "Mo-Fr 10:00-20:00; Sa 10:00-19:00; Su 11:00-19:00",
+          "wheelchair": "no"
+        },
+        {
           "id": "way/89453870",
           "name": "Stockmann",
           "lat": 61.499018,
@@ -22,6 +40,14 @@
           "address": "Hämeenkatu 4",
           "openingHours": "Mo-Fr 09:00-20:00; Sa 09:00-19:00; Su 11:00-18:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/4284269599",
+          "lat": 61.498007,
+          "lon": 23.750477,
+          "wheelchair": "limited",
+          "fee": "no",
+          "context": "Tampereen pääkirjasto Metso"
         },
         {
           "id": "way/442180822",
@@ -59,13 +85,12 @@
           "fee": "no"
         },
         {
-          "id": "way/233925113",
-          "name": "Prisma",
-          "lat": 61.491143,
-          "lon": 23.821465,
-          "address": "Sammonkatu 75",
-          "openingHours": "24/7",
-          "wheelchair": "yes"
+          "id": "node/1215070014",
+          "lat": 61.492092,
+          "lon": 23.821231,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Prisma"
         },
         {
           "id": "way/89690109",
@@ -77,13 +102,11 @@
           "wheelchair": "yes"
         },
         {
-          "id": "way/28841493",
-          "name": "Turtolan Kauppakeskus",
-          "lat": 61.475621,
-          "lon": 23.839999,
-          "address": "Martinpojankatu 4",
-          "openingHours": "PH,Mo-Su 00:00-24:00",
-          "wheelchair": "yes"
+          "id": "node/9809829956",
+          "lat": 61.475942,
+          "lon": 23.839629,
+          "fee": "no",
+          "context": "Turtolan Kauppakeskus"
         },
         {
           "id": "way/40403101",
@@ -93,17 +116,25 @@
           "address": "Pietilänkatu 2",
           "openingHours": "Mo-Fr 08:00-21:00; Sa 08:00-18:00; Su 12:00-18:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/4778823743",
+          "lat": 61.451241,
+          "lon": 23.851839,
+          "wheelchair": "limited",
+          "fee": "yes",
+          "context": "P-halli Kauppakeskus DUO"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:33.338Z"
+      "updatedAt": "2026-08-23T03:59:46.788Z"
     },
     "drinking-water": {
       "count": 8,
       "pois": [],
-      "updatedAt": "2026-08-14T05:02:33.987Z"
+      "updatedAt": "2026-08-23T03:59:48.358Z"
     },
     "playgrounds": {
-      "count": 607,
+      "count": 609,
       "pois": [
         {
           "id": "way/38104959",
@@ -217,6 +248,12 @@
           "lon": 23.801124
         },
         {
+          "id": "way/1549761715",
+          "name": "Korpinpuiston luontoleikkipaikka",
+          "lat": 61.491852,
+          "lon": 23.803379
+        },
+        {
           "id": "way/136018409",
           "name": "Vesisäiliönmäki",
           "lat": 61.502506,
@@ -244,7 +281,10 @@
           "id": "way/1304887013",
           "name": "Viikinsaaren leikkikenttä",
           "lat": 61.484729,
-          "lon": 23.695699
+          "lon": 23.695699,
+          "address": "Viikinsaari",
+          "openingHours": "24/7",
+          "wheelchair": "limited"
         },
         {
           "id": "way/132833173",
@@ -277,12 +317,6 @@
           "lon": 23.84912
         },
         {
-          "id": "way/346967666",
-          "name": "Linnanpuisto",
-          "lat": 61.493516,
-          "lon": 23.85385
-        },
-        {
           "id": "way/87700417",
           "name": "Koivikonpuisto",
           "lat": 61.466544,
@@ -296,10 +330,10 @@
           "lon": 23.822846
         }
       ],
-      "updatedAt": "2026-08-14T05:02:34.851Z"
+      "updatedAt": "2026-08-23T03:59:49.620Z"
     },
     "parking": {
-      "count": 1851,
+      "count": 1878,
       "pois": [
         {
           "id": "node/854149718",
@@ -487,8 +521,8 @@
         {
           "id": "node/3867426756",
           "name": "Ratinankaaren pysäköinti",
-          "lat": 61.49147,
-          "lon": 23.769878
+          "lat": 61.491481,
+          "lon": 23.769701
         },
         {
           "id": "node/252751332",
@@ -545,7 +579,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:35.785Z"
+      "updatedAt": "2026-08-23T03:59:51.126Z"
     },
     "charging-stations": {
       "count": 56,
@@ -637,11 +671,20 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:36.205Z"
+      "updatedAt": "2026-08-23T03:59:51.742Z"
     },
     "gas-stations": {
-      "count": 43,
+      "count": 44,
       "pois": [
+        {
+          "id": "way/1546335088",
+          "name": "Marine Tampere Ratinanniemi",
+          "lat": 61.492622,
+          "lon": 23.759148,
+          "address": "Ratinan rantapolku",
+          "openingHours": "24/7",
+          "wheelchair": "limited"
+        },
         {
           "id": "node/257535067",
           "name": "Neste",
@@ -854,17 +897,9 @@
           "lon": 23.849417,
           "address": "Tieteenkatu 24",
           "openingHours": "24/7"
-        },
-        {
-          "id": "node/9838278714",
-          "name": "Neste Express Tampere Tesoma",
-          "lat": 61.505109,
-          "lon": 23.619315,
-          "address": "Tesomajärvenkatu 1",
-          "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:36.727Z"
+      "updatedAt": "2026-08-23T03:59:52.353Z"
     },
     "ice-cream": {
       "count": 6,
@@ -914,7 +949,7 @@
           "lon": 23.682187
         }
       ],
-      "updatedAt": "2026-08-14T05:02:37.251Z"
+      "updatedAt": "2026-08-23T03:59:52.934Z"
     },
     "dog-parks": {
       "count": 16,
@@ -1006,23 +1041,47 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:37.674Z"
+      "updatedAt": "2026-08-23T03:59:53.419Z"
     },
     "picnic-spots": {
-      "count": 89,
+      "count": 90,
       "pois": [
         {
           "id": "way/503589207",
           "name": "Oleskelupaikka",
           "lat": 61.501475,
           "lon": 23.742948
+        },
+        {
+          "id": "way/1549827885",
+          "name": "Rosendahlinrannan pikniknurmi",
+          "lat": 61.491613,
+          "lon": 23.734869,
+          "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:38.264Z"
+      "updatedAt": "2026-08-23T03:59:54.966Z"
     },
     "viewpoints": {
-      "count": 49,
+      "count": 54,
       "pois": [
+        {
+          "id": "way/680725378",
+          "name": "Näsinneula",
+          "lat": 61.50496,
+          "lon": 23.743289,
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "way/1218752643",
+          "name": "Pyynikin näkötorni",
+          "lat": 61.496378,
+          "lon": 23.731964,
+          "openingHours": "Mo-Su 09:00-20:00",
+          "wheelchair": "limited",
+          "fee": "yes"
+        },
         {
           "id": "node/562719942",
           "name": "Nimikallio",
@@ -1034,6 +1093,12 @@
           "name": "Haulinkallio",
           "lat": 61.494767,
           "lon": 23.722609
+        },
+        {
+          "id": "way/158064526",
+          "name": "Lintutorni",
+          "lat": 61.481053,
+          "lon": 23.823425
         },
         {
           "id": "node/2818112663",
@@ -1058,9 +1123,15 @@
           "name": "Jättikataja",
           "lat": 61.498326,
           "lon": 23.622703
+        },
+        {
+          "id": "way/287178797",
+          "name": "Ilmarinjärven lintutorni",
+          "lat": 61.544995,
+          "lon": 23.650155
         }
       ],
-      "updatedAt": "2026-08-14T05:02:38.734Z"
+      "updatedAt": "2026-08-23T03:59:55.718Z"
     },
     "beaches": {
       "count": 54,
@@ -1146,6 +1217,13 @@
           "name": "Leirintäalueen uimaranta",
           "lat": 61.473176,
           "lon": 23.738504
+        },
+        {
+          "id": "way/1485058264",
+          "name": "Viikinsaaren uimaranta",
+          "lat": 61.484769,
+          "lon": 23.694589,
+          "address": "Viikinsaari"
         },
         {
           "id": "way/187042195",
@@ -1250,19 +1328,12 @@
           "lat": 61.472062,
           "lon": 23.892695,
           "address": "Järvikatu 14"
-        },
-        {
-          "id": "way/98618889",
-          "name": "Tesomajärvi-Ristimäki",
-          "lat": 61.507477,
-          "lon": 23.614486,
-          "address": "Tesoman rantapolku 10"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:39.257Z"
+      "updatedAt": "2026-08-23T03:59:56.513Z"
     },
     "atms": {
-      "count": 38,
+      "count": 40,
       "pois": [
         {
           "id": "node/846469952",
@@ -1295,10 +1366,28 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/1546335088",
+          "name": "Marine Tampere Ratinanniemi",
+          "lat": 61.492622,
+          "lon": 23.759148,
+          "address": "Ratinan rantapolku",
+          "openingHours": "24/7",
+          "wheelchair": "limited"
+        },
+        {
           "id": "node/4267577772",
           "name": "Bittimaatti Two-Way",
           "lat": 61.497555,
           "lon": 23.777177
+        },
+        {
+          "id": "way/87826064",
+          "name": "Scandic Rosendahl",
+          "lat": 61.493412,
+          "lon": 23.730859,
+          "address": "Pyynikintie 13",
+          "openingHours": "24/7",
+          "wheelchair": "limited"
         },
         {
           "id": "node/2555996078",
@@ -1315,7 +1404,7 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:39.787Z"
+      "updatedAt": "2026-08-23T03:59:57.367Z"
     },
     "post-boxes": {
       "count": 111,
@@ -1333,11 +1422,17 @@
           "lon": 23.800222
         }
       ],
-      "updatedAt": "2026-08-14T05:02:40.257Z"
+      "updatedAt": "2026-08-23T03:59:58.129Z"
     },
     "recycling": {
-      "count": 2107,
+      "count": 2108,
       "pois": [
+        {
+          "id": "node/11910171442",
+          "lat": 61.49628,
+          "lon": 23.767001,
+          "context": "Koskikeskus"
+        },
         {
           "id": "way/1078270515",
           "name": "Nekalan jäteasema",
@@ -1372,12 +1467,12 @@
           "lon": 23.853286
         }
       ],
-      "updatedAt": "2026-08-14T05:02:41.031Z"
+      "updatedAt": "2026-08-23T04:00:00.146Z"
     },
     "luggage-storage": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-14T05:02:41.456Z"
+      "updatedAt": "2026-08-23T04:00:00.778Z"
     },
     "libraries": {
       "count": 21,
@@ -1551,7 +1646,7 @@
           "openingHours": "Mo-Th 14:00-21:00; Fr 14:00-18:00; Sa-Su 10:00-15:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:02:41.929Z"
+      "updatedAt": "2026-08-23T04:00:01.453Z"
     },
     "outdoor-gyms": {
       "count": 56,
@@ -1590,8 +1685,8 @@
         {
           "id": "way/1304586746",
           "name": "Pereensaaren kuntoilualue",
-          "lat": 61.480272,
-          "lon": 23.703227,
+          "lat": 61.480273,
+          "lon": 23.703237,
           "openingHours": "24/7"
         },
         {
@@ -1656,10 +1751,10 @@
           "lon": 23.855153
         }
       ],
-      "updatedAt": "2026-08-14T05:02:42.401Z"
+      "updatedAt": "2026-08-23T04:00:02.899Z"
     },
     "camp-sites": {
-      "count": 3,
+      "count": 4,
       "pois": [
         {
           "id": "way/96706277",
@@ -1676,16 +1771,23 @@
           "fee": "yes"
         },
         {
+          "id": "node/6581307145",
+          "name": "Tampere Camping Härmälä",
+          "lat": 61.471984,
+          "lon": 23.73879,
+          "address": "Leirintäkatu 8"
+        },
+        {
           "id": "node/8691525766",
           "name": "Torpan kurssikeskus",
           "lat": 61.541229,
           "lon": 23.700386
         }
       ],
-      "updatedAt": "2026-08-14T05:02:42.834Z"
+      "updatedAt": "2026-08-23T04:00:03.793Z"
     },
     "shelters": {
-      "count": 9,
+      "count": 4,
       "pois": [
         {
           "id": "way/287423579",
@@ -1700,17 +1802,25 @@
           "lon": 23.6652
         }
       ],
-      "updatedAt": "2026-08-14T05:02:43.658Z"
+      "updatedAt": "2026-08-23T04:00:05.787Z"
     },
     "rest-areas": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:02:44.088Z"
+      "count": 2,
+      "pois": [
+        {
+          "id": "way/58898539",
+          "name": "ABC Lahdesjärvi",
+          "lat": 61.459382,
+          "lon": 23.788304,
+          "openingHours": "24/7"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:00:06.634Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:02:44.483Z"
+      "updatedAt": "2026-08-23T04:00:07.184Z"
     },
     "post-offices": {
       "count": 0,

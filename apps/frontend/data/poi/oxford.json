@@ -1,6 +1,6 @@
 {
   "city": "oxford",
-  "generatedAt": "2026-08-18T03:58:20.830Z",
+  "generatedAt": "2026-08-23T04:20:37.312Z",
   "categories": {
     "toilets": {
       "count": 75,
@@ -25,6 +25,13 @@
           "name": "Radcliffe Camera Male",
           "lat": 51.7536,
           "lon": -1.253979
+        },
+        {
+          "id": "node/6721041759",
+          "lat": 51.754865,
+          "lon": -1.255338,
+          "fee": "no",
+          "context": "Weston Library"
         },
         {
           "id": "node/5600625029",
@@ -69,16 +76,22 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:13:37.507Z"
+      "updatedAt": "2026-08-23T04:20:19.513Z"
     },
     "drinking-water": {
       "count": 12,
       "pois": [],
-      "updatedAt": "2026-08-14T05:13:38.151Z"
+      "updatedAt": "2026-08-23T04:20:20.767Z"
     },
     "playgrounds": {
       "count": 180,
       "pois": [
+        {
+          "id": "way/126104157",
+          "name": "Emily's Playground",
+          "lat": 51.747058,
+          "lon": -1.261469
+        },
         {
           "id": "way/121980403",
           "name": "South Oxford Adventure Playground",
@@ -254,7 +267,7 @@
           "lon": -1.308253
         }
       ],
-      "updatedAt": "2026-08-14T05:13:38.807Z"
+      "updatedAt": "2026-08-23T04:20:21.592Z"
     },
     "parking": {
       "count": 656,
@@ -334,7 +347,8 @@
           "name": "Union Street Car Park",
           "lat": 51.748098,
           "lon": -1.235467,
-          "address": "Union Street"
+          "address": "Union Street",
+          "fee": "yes"
         },
         {
           "id": "way/282120685",
@@ -441,17 +455,17 @@
           "fee": "yes"
         },
         {
-          "id": "way/25727275",
-          "name": "Car Park 5",
-          "lat": 51.751071,
-          "lon": -1.213862,
-          "fee": "yes"
-        },
-        {
           "id": "way/1222764179",
           "name": "Car Park 3A",
           "lat": 51.747595,
           "lon": -1.214303
+        },
+        {
+          "id": "way/25727275",
+          "name": "Car Park 5",
+          "lat": 51.751071,
+          "lon": -1.213626,
+          "fee": "yes"
         },
         {
           "id": "way/332471690",
@@ -461,7 +475,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:13:39.673Z"
+      "updatedAt": "2026-08-23T04:20:22.521Z"
     },
     "charging-stations": {
       "count": 39,
@@ -497,7 +511,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:13:40.059Z"
+      "updatedAt": "2026-08-23T04:20:22.977Z"
     },
     "gas-stations": {
       "count": 13,
@@ -551,7 +565,7 @@
           "lon": -1.173757
         }
       ],
-      "updatedAt": "2026-08-14T05:13:40.538Z"
+      "updatedAt": "2026-08-23T04:20:23.486Z"
     },
     "ice-cream": {
       "count": 10,
@@ -634,12 +648,12 @@
           "lon": -1.216949
         }
       ],
-      "updatedAt": "2026-08-14T05:13:41.012Z"
+      "updatedAt": "2026-08-23T04:20:23.939Z"
     },
     "dog-parks": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:13:41.409Z"
+      "updatedAt": "2026-08-23T04:20:24.366Z"
     },
     "picnic-spots": {
       "count": 111,
@@ -651,10 +665,10 @@
           "lon": -1.295747
         }
       ],
-      "updatedAt": "2026-08-14T05:13:42.004Z"
+      "updatedAt": "2026-08-23T04:20:27.327Z"
     },
     "viewpoints": {
-      "count": 13,
+      "count": 28,
       "pois": [
         {
           "id": "node/524160913",
@@ -699,12 +713,12 @@
           "lon": -1.289148
         }
       ],
-      "updatedAt": "2026-08-14T05:13:42.418Z"
+      "updatedAt": "2026-08-23T04:20:27.847Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:13:42.897Z"
+      "updatedAt": "2026-08-23T04:20:28.301Z"
     },
     "atms": {
       "count": 68,
@@ -805,7 +819,7 @@
           "lon": -1.283173
         }
       ],
-      "updatedAt": "2026-08-14T05:13:43.420Z"
+      "updatedAt": "2026-08-23T04:20:28.755Z"
     },
     "post-boxes": {
       "count": 324,
@@ -823,7 +837,7 @@
           "lon": -1.294129
         }
       ],
-      "updatedAt": "2026-08-14T05:13:44.028Z"
+      "updatedAt": "2026-08-23T04:20:29.392Z"
     },
     "recycling": {
       "count": 71,
@@ -849,12 +863,12 @@
           "lon": -1.200262
         }
       ],
-      "updatedAt": "2026-08-14T05:13:44.607Z"
+      "updatedAt": "2026-08-23T04:20:30.734Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:13:45.004Z"
+      "updatedAt": "2026-08-23T04:20:31.138Z"
     },
     "libraries": {
       "count": 91,
@@ -1062,15 +1076,15 @@
           "lon": -1.263525
         }
       ],
-      "updatedAt": "2026-08-14T05:13:45.607Z"
+      "updatedAt": "2026-08-23T04:20:31.656Z"
     },
     "outdoor-gyms": {
       "count": 60,
       "pois": [],
-      "updatedAt": "2026-08-14T05:13:46.031Z"
+      "updatedAt": "2026-08-23T04:20:32.636Z"
     },
     "camp-sites": {
-      "count": 6,
+      "count": 10,
       "pois": [
         {
           "id": "way/367580919",
@@ -1093,6 +1107,12 @@
           "address": "Eynsham Road"
         },
         {
+          "id": "way/114520517",
+          "name": "Folly Farm",
+          "lat": 51.793637,
+          "lon": -1.195287
+        },
+        {
           "id": "node/9041623819",
           "name": "Green Acres Farm Camp Site",
           "lat": 51.743411,
@@ -1106,39 +1126,212 @@
           "lat": 51.772307,
           "lon": -1.359371,
           "address": "Swinford Manor Farm"
+        },
+        {
+          "id": "relation/15411570",
+          "name": "Bablock Hythe Caravan Park",
+          "lat": 51.739024,
+          "lon": -1.371841
         }
       ],
-      "updatedAt": "2026-08-14T05:13:46.477Z"
+      "updatedAt": "2026-08-23T04:20:33.158Z"
     },
     "shelters": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-08-14T05:13:47.196Z"
+      "updatedAt": "2026-08-23T04:20:33.896Z"
     },
     "rest-areas": {
-      "count": 18,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:13:47.628Z"
+      "count": 19,
+      "pois": [
+        {
+          "id": "way/61396086",
+          "name": "Peartree Services",
+          "lat": 51.794735,
+          "lon": -1.283173
+        }
+      ],
+      "updatedAt": "2026-08-23T04:20:34.359Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:13:48.034Z"
+      "updatedAt": "2026-08-23T04:20:34.754Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:25.395Z"
+      "count": 21,
+      "pois": [
+        {
+          "id": "node/14705575",
+          "name": "Oxford Post Office",
+          "lat": 51.75101,
+          "lon": -1.257363,
+          "address": "St Aldate's 102-104",
+          "openingHours": "Mo-Sa 09:00-17:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/113720922",
+          "name": "St Giles Post Office",
+          "lat": 51.759303,
+          "lon": -1.261251,
+          "address": "Woodstock Road 17",
+          "openingHours": "Mo-Fr 06:00-20:30; Sa,Su 07:00-20:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11949733654",
+          "name": "St Clements Street Post Office",
+          "lat": 51.750997,
+          "lon": -1.238867,
+          "address": "St Clements Street 74-75",
+          "openingHours": "Mo-Fr 09:00-18:30; Sa 10:00-16:00"
+        },
+        {
+          "id": "node/370144533",
+          "name": "Donnington Post Office",
+          "lat": 51.738971,
+          "lon": -1.234847,
+          "address": "Iffley Road 297",
+          "openingHours": "Mo-Sa 08:00-20:00; Su 10:00-16:00"
+        },
+        {
+          "id": "node/11930687284",
+          "name": "Marston Road Post Office",
+          "lat": 51.766044,
+          "lon": -1.234409,
+          "address": "Old Marston Road 9",
+          "openingHours": "Mo 07:30-21:30; Tu 08:00-21:30; We 08:00-21:30; Th 08:00-21:30; Fr 08:00-21:30; Sa 07:30-20:00; Su 10:00-16:00"
+        },
+        {
+          "id": "node/274404482",
+          "name": "Botley Post Office",
+          "lat": 51.751456,
+          "lon": -1.296959,
+          "openingHours": "Mo-Sa 08:00-20:00"
+        },
+        {
+          "id": "node/2223228826",
+          "name": "Mail Boxes Etc",
+          "lat": 51.7778,
+          "lon": -1.264711
+        },
+        {
+          "id": "way/132619793",
+          "name": "Mail Boxes Etc.",
+          "lat": 51.759446,
+          "lon": -1.21283,
+          "address": "London Road 94",
+          "openingHours": "Mo-Fr 09:30-17:30; Sa 10:00-16:00; Su off"
+        },
+        {
+          "id": "node/17068342",
+          "name": "Kennington Post Office",
+          "lat": 51.719324,
+          "lon": -1.245297,
+          "address": "Kennington Road 156",
+          "openingHours": "Mo,Tu,Th,Fr 08:30-12:30,14:00-17:30; We 08:30-12:30,14:00-16:00; Sa 09:00-13:00"
+        },
+        {
+          "id": "node/771823467",
+          "name": "Woodfarm Post Office",
+          "lat": 51.749211,
+          "lon": -1.200708,
+          "address": "Atkyns Road 11",
+          "openingHours": "Mo-Sa 06:00-13:00,14:00-18:00; Su 06:00-12:00"
+        },
+        {
+          "id": "node/94993962",
+          "name": "Littlemore Post Office",
+          "lat": 51.723974,
+          "lon": -1.220582,
+          "address": "Cowley Road 40",
+          "openingHours": "Mo-Sa 08:30-18:00; Su 09:00-17:30"
+        },
+        {
+          "id": "node/21509246",
+          "name": "Oxford Convenience Store",
+          "lat": 51.789967,
+          "lon": -1.26474,
+          "address": "Kendall Crescent 3"
+        },
+        {
+          "id": "node/13123465889",
+          "name": "Risinghurst Post Office",
+          "lat": 51.759873,
+          "lon": -1.189454,
+          "openingHours": "Mo,Tu,Th,Fr 09:00-13:00,14:00-17:30; We 09:00-13:00; Sa 09:00-12:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11139780158",
+          "name": "Balfour Road Post Office",
+          "lat": 51.724578,
+          "lon": -1.199191,
+          "openingHours": "Mo-Sa 06:00-18:30; Su 07:00-13:00"
+        },
+        {
+          "id": "node/1985920554",
+          "name": "Cumnor Post Office",
+          "lat": 51.734361,
+          "lon": -1.333687,
+          "openingHours": "Mo-Sa 09:00-18:00"
+        },
+        {
+          "id": "node/278588133",
+          "name": "Horspath Stores",
+          "lat": 51.738836,
+          "lon": -1.173652,
+          "address": "Church Road 2"
+        },
+        {
+          "id": "node/269255240",
+          "name": "Wootton Post Office",
+          "lat": 51.706498,
+          "lon": -1.315452,
+          "address": "Besselsleigh Road 1-3"
+        },
+        {
+          "id": "node/12899130175",
+          "name": "The Broadway Post Office",
+          "lat": 51.809684,
+          "lon": -1.279473,
+          "address": "Broadway 16",
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 09:00-17:00; Su 09:00-12:00"
+        },
+        {
+          "id": "node/11878347325",
+          "name": "Radley Mobile Service Post Office",
+          "lat": 51.687942,
+          "lon": -1.241411,
+          "address": "Church Road",
+          "openingHours": "Tu 10:00-11:00"
+        },
+        {
+          "id": "node/1161898364",
+          "name": "Yarnton Post Office",
+          "lat": 51.809637,
+          "lon": -1.306544
+        },
+        {
+          "id": "node/1802272058",
+          "name": "Northcourt Post Office",
+          "lat": 51.681984,
+          "lon": -1.276713,
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-13:00; PH off"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:20:35.154Z"
     },
     "showers": {
-      "count": 0,
+      "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:25.792Z"
+      "updatedAt": "2026-08-23T04:20:35.554Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:26.313Z"
+      "updatedAt": "2026-08-23T04:20:36.473Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1146,9 +1339,34 @@
       "updatedAt": "2026-08-17T04:04:26.703Z"
     },
     "benches": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:27.093Z"
+      "count": 1135,
+      "pois": [
+        {
+          "id": "node/413626566",
+          "name": "Lyra & Will's bench",
+          "lat": 51.749918,
+          "lon": -1.248265
+        },
+        {
+          "id": "node/1936303067",
+          "name": "J.R.R. Tolkien Bench",
+          "lat": 51.762214,
+          "lon": -1.249783
+        },
+        {
+          "id": "node/3186536864",
+          "name": "Havel's Place",
+          "lat": 51.763974,
+          "lon": -1.251855
+        },
+        {
+          "id": "node/9198022730",
+          "name": "My Lady's Seat",
+          "lat": 51.766703,
+          "lon": -1.330092
+        }
+      ],
+      "updatedAt": "2026-08-23T04:20:37.211Z"
     },
     "compressed-air": {
       "count": 0,

@@ -1,10 +1,16 @@
 {
   "city": "naples",
-  "generatedAt": "2026-08-18T03:58:31.327Z",
+  "generatedAt": "2026-08-23T04:31:39.976Z",
   "categories": {
     "toilets": {
-      "count": 60,
+      "count": 61,
       "pois": [
+        {
+          "id": "node/9392812451",
+          "lat": 40.852792,
+          "lon": 14.259827,
+          "context": "Cattedrale di Santa Maria Assunta"
+        },
         {
           "id": "node/11033991651",
           "name": "Se ti scappa",
@@ -12,6 +18,21 @@
           "lon": 14.255045,
           "openingHours": "24/7",
           "fee": "yes"
+        },
+        {
+          "id": "way/414264143",
+          "name": "Quartiere Intelligente",
+          "lat": 40.846838,
+          "lon": 14.243005,
+          "address": "Scala Montesanto 3",
+          "openingHours": "Mo-Fr 09:00-19:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/13970751762",
+          "lat": 40.83266,
+          "lon": 14.235625,
+          "context": "Stazione zoologica Anton Dohrn"
         },
         {
           "id": "way/137107678",
@@ -27,10 +48,10 @@
           "lon": 14.222564
         }
       ],
-      "updatedAt": "2026-08-14T05:19:23.643Z"
+      "updatedAt": "2026-08-23T04:31:20.092Z"
     },
     "drinking-water": {
-      "count": 170,
+      "count": 168,
       "pois": [
         {
           "id": "node/14048831601",
@@ -39,7 +60,7 @@
           "lon": 14.284062
         }
       ],
-      "updatedAt": "2026-08-14T05:19:24.293Z"
+      "updatedAt": "2026-08-23T04:31:21.331Z"
     },
     "playgrounds": {
       "count": 75,
@@ -64,7 +85,7 @@
           "lon": 14.202256
         }
       ],
-      "updatedAt": "2026-08-14T05:19:24.944Z"
+      "updatedAt": "2026-08-23T04:31:22.066Z"
     },
     "parking": {
       "count": 739,
@@ -283,7 +304,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:19:25.810Z"
+      "updatedAt": "2026-08-23T04:31:22.924Z"
     },
     "charging-stations": {
       "count": 25,
@@ -303,7 +324,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:19:26.234Z"
+      "updatedAt": "2026-08-23T04:31:23.485Z"
     },
     "gas-stations": {
       "count": 270,
@@ -494,7 +515,7 @@
           "lon": 14.261464
         }
       ],
-      "updatedAt": "2026-08-14T05:19:26.851Z"
+      "updatedAt": "2026-08-23T04:31:24.382Z"
     },
     "ice-cream": {
       "count": 46,
@@ -703,20 +724,20 @@
           "openingHours": "Mo-Su 09:30-01:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:19:27.287Z"
+      "updatedAt": "2026-08-23T04:31:24.976Z"
     },
     "dog-parks": {
       "count": 6,
       "pois": [],
-      "updatedAt": "2026-08-14T05:19:27.710Z"
+      "updatedAt": "2026-08-23T04:31:25.526Z"
     },
     "picnic-spots": {
       "count": 20,
       "pois": [],
-      "updatedAt": "2026-08-14T05:19:28.233Z"
+      "updatedAt": "2026-08-23T04:31:27.049Z"
     },
     "viewpoints": {
-      "count": 53,
+      "count": 54,
       "pois": [
         {
           "id": "node/4974403259",
@@ -761,7 +782,7 @@
           "lon": 14.207248
         }
       ],
-      "updatedAt": "2026-08-14T05:19:28.654Z"
+      "updatedAt": "2026-08-23T04:31:27.775Z"
     },
     "beaches": {
       "count": 18,
@@ -795,7 +816,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:19:29.146Z"
+      "updatedAt": "2026-08-23T04:31:28.342Z"
     },
     "atms": {
       "count": 111,
@@ -966,12 +987,12 @@
           "address": "Via Giulio Cesare 4-6-8"
         }
       ],
-      "updatedAt": "2026-08-14T05:19:29.608Z"
+      "updatedAt": "2026-08-23T04:31:28.880Z"
     },
     "post-boxes": {
       "count": 37,
       "pois": [],
-      "updatedAt": "2026-08-14T05:19:30.086Z"
+      "updatedAt": "2026-08-23T04:31:29.647Z"
     },
     "recycling": {
       "count": 81,
@@ -1016,7 +1037,7 @@
           "address": "Viale della Resistenza"
         }
       ],
-      "updatedAt": "2026-08-14T05:19:30.607Z"
+      "updatedAt": "2026-08-23T04:31:31.121Z"
     },
     "luggage-storage": {
       "count": 4,
@@ -1053,7 +1074,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:19:31.029Z"
+      "updatedAt": "2026-08-23T04:31:31.773Z"
     },
     "libraries": {
       "count": 25,
@@ -1188,17 +1209,32 @@
           "openingHours": "Mo-Fr 08:30-18:30"
         }
       ],
-      "updatedAt": "2026-08-14T05:19:31.509Z"
+      "updatedAt": "2026-08-23T04:31:32.418Z"
     },
     "outdoor-gyms": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-14T05:19:31.982Z"
+      "updatedAt": "2026-08-23T04:31:33.689Z"
     },
     "camp-sites": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:19:32.413Z"
+      "count": 2,
+      "pois": [
+        {
+          "id": "node/11166566353",
+          "name": "Parcheggio IPM",
+          "lat": 40.869667,
+          "lon": 14.24625,
+          "address": "Viale Colli Aminei 27"
+        },
+        {
+          "id": "way/1314327045",
+          "name": "Area attrezzata sosta camper \"Parco dei Camaldoli\"",
+          "lat": 40.868022,
+          "lon": 14.205573,
+          "address": "Strada Comunale Guantai ad Orsolone 4"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:31:34.375Z"
     },
     "shelters": {
       "count": 16,
@@ -1210,32 +1246,163 @@
           "lon": 14.253213
         }
       ],
-      "updatedAt": "2026-08-14T05:19:33.138Z"
+      "updatedAt": "2026-08-23T04:31:35.371Z"
     },
     "rest-areas": {
-      "count": 5,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:19:33.574Z"
+      "count": 13,
+      "pois": [
+        {
+          "id": "node/1508631044",
+          "name": "Area di Servizio San Pietro",
+          "lat": 40.885296,
+          "lon": 14.300557
+        },
+        {
+          "id": "way/188869271",
+          "name": "Area di Servizio Cittadella",
+          "lat": 40.886248,
+          "lon": 14.316869
+        },
+        {
+          "id": "node/1788424364",
+          "name": "Area di Servizio Masseria est",
+          "lat": 40.889843,
+          "lon": 14.3177
+        }
+      ],
+      "updatedAt": "2026-08-23T04:31:36.035Z"
     },
     "dump-stations": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-14T05:19:33.976Z"
+      "updatedAt": "2026-08-23T04:31:36.621Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:28.403Z"
+      "count": 56,
+      "pois": [
+        {
+          "id": "node/9722232434",
+          "name": "Poste Italiane",
+          "lat": 40.853403,
+          "lon": 14.263846
+        },
+        {
+          "id": "node/10266986635",
+          "name": "DHL",
+          "lat": 40.85481,
+          "lon": 14.275771
+        },
+        {
+          "id": "node/13789450959",
+          "name": "Poste Italiane Napoli - Via Polveriera",
+          "lat": 40.861705,
+          "lon": 14.27073
+        },
+        {
+          "id": "node/5310589868",
+          "name": "MC Poste & Shipment",
+          "lat": 40.841939,
+          "lon": 14.251101,
+          "address": "Via Guantai Nuovi 38",
+          "openingHours": "Mo-Fr 08:30-18:30"
+        },
+        {
+          "id": "way/416223691",
+          "name": "Posta",
+          "lat": 40.856029,
+          "lon": 14.241679
+        },
+        {
+          "id": "node/3450477558",
+          "name": "Poste Italiane - Napoli 35",
+          "lat": 40.831949,
+          "lon": 14.243254
+        },
+        {
+          "id": "node/6424022830",
+          "name": "Ufficio postale Via Fontana",
+          "lat": 40.858829,
+          "lon": 14.224065
+        },
+        {
+          "id": "node/4121739211",
+          "name": "Ufficio Postale",
+          "lat": 40.849014,
+          "lon": 14.219869
+        },
+        {
+          "id": "relation/10152726",
+          "name": "Ufficio postale Barra/S.Giovanni",
+          "lat": 40.831519,
+          "lon": 14.322718,
+          "openingHours": "Mo-Fr 08:00-18:30"
+        },
+        {
+          "id": "node/1805961141",
+          "name": "Casoria 1",
+          "lat": 40.900032,
+          "lon": 14.284245
+        },
+        {
+          "id": "node/620815584",
+          "name": "Poste Italiane Ufficio Postale di Casoria - Posta Centrale",
+          "lat": 40.903296,
+          "lon": 14.289055
+        },
+        {
+          "id": "node/13248157363",
+          "name": "Poste Italiane - Napoli Fuorigrotta",
+          "lat": 40.824957,
+          "lon": 14.202242
+        },
+        {
+          "id": "way/872050572",
+          "name": "Ufficio Postale Napoli 81",
+          "lat": 40.903812,
+          "lon": 14.235263
+        },
+        {
+          "id": "node/2292733729",
+          "name": "Ufficio Postale Napoli Secondigliano",
+          "lat": 40.906633,
+          "lon": 14.244332
+        },
+        {
+          "id": "way/259062049",
+          "name": "Poste Italiane - Centro Settoriale Napoli Soccavo",
+          "lat": 40.848067,
+          "lon": 14.190882
+        },
+        {
+          "id": "node/9341651731",
+          "name": "La nuova Posta",
+          "lat": 40.855423,
+          "lon": 14.345854
+        },
+        {
+          "id": "node/7434108725",
+          "name": "Ufficio Postale Melito 2",
+          "lat": 40.913419,
+          "lon": 14.232953
+        },
+        {
+          "id": "node/1492888921",
+          "name": "Ufficio Postale Melito 1",
+          "lat": 40.915369,
+          "lon": 14.236157
+        }
+      ],
+      "updatedAt": "2026-08-23T04:31:37.280Z"
     },
     "showers": {
-      "count": 0,
+      "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:28.800Z"
+      "updatedAt": "2026-08-23T04:31:37.910Z"
     },
     "fireplaces": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:29.344Z"
+      "updatedAt": "2026-08-23T04:31:38.835Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1243,9 +1410,9 @@
       "updatedAt": "2026-08-17T04:05:29.715Z"
     },
     "benches": {
-      "count": 0,
+      "count": 628,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:30.115Z"
+      "updatedAt": "2026-08-23T04:31:39.875Z"
     },
     "compressed-air": {
       "count": 0,

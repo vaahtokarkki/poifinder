@@ -1,18 +1,25 @@
 {
   "city": "cologne",
-  "generatedAt": "2026-08-18T03:58:11.028Z",
+  "generatedAt": "2026-08-23T04:10:05.279Z",
   "categories": {
     "toilets": {
       "count": 157,
       "pois": [
         {
-          "id": "way/7035069",
-          "name": "Galeria",
-          "lat": 50.938305,
-          "lon": 6.948643,
-          "address": "Breite Straße 103-135",
-          "openingHours": "Mo-Sa 10:00-20:00; Su,PH off",
-          "wheelchair": "yes"
+          "id": "node/2457885013",
+          "lat": 50.93548,
+          "lon": 6.955883,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Galeria"
+        },
+        {
+          "id": "node/1802274068",
+          "lat": 50.939017,
+          "lon": 6.949539,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Quincy"
         },
         {
           "id": "way/23571714",
@@ -29,6 +36,14 @@
           "openingHours": "24/7",
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "node/10844213280",
+          "lat": 50.944236,
+          "lon": 6.988447,
+          "openingHours": "24/7",
+          "fee": "no",
+          "context": "Parkhaus Zoobrücke P22a"
         },
         {
           "id": "way/7831409",
@@ -64,10 +79,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:56.370Z"
+      "updatedAt": "2026-08-23T04:09:41.267Z"
     },
     "drinking-water": {
-      "count": 26,
+      "count": 27,
       "pois": [
         {
           "id": "node/1384806503",
@@ -76,7 +91,7 @@
           "lon": 6.959042
         }
       ],
-      "updatedAt": "2026-08-14T05:07:57.155Z"
+      "updatedAt": "2026-08-23T04:09:42.957Z"
     },
     "playgrounds": {
       "count": 980,
@@ -271,10 +286,10 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:58.099Z"
+      "updatedAt": "2026-08-23T04:09:44.126Z"
     },
     "parking": {
-      "count": 12596,
+      "count": 12607,
       "pois": [
         {
           "id": "way/334212718",
@@ -507,10 +522,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:59.818Z"
+      "updatedAt": "2026-08-23T04:09:46.234Z"
     },
     "charging-stations": {
-      "count": 402,
+      "count": 408,
       "pois": [
         {
           "id": "node/12546051178",
@@ -520,7 +535,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:00.377Z"
+      "updatedAt": "2026-08-23T04:09:46.865Z"
     },
     "gas-stations": {
       "count": 95,
@@ -762,10 +777,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:01.033Z"
+      "updatedAt": "2026-08-23T04:09:47.591Z"
     },
     "ice-cream": {
-      "count": 97,
+      "count": 98,
       "pois": [
         {
           "id": "node/633181834",
@@ -997,7 +1012,7 @@
           "openingHours": "Mo-Su 12:00-21:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:01.712Z"
+      "updatedAt": "2026-08-23T04:09:48.234Z"
     },
     "dog-parks": {
       "count": 38,
@@ -1125,10 +1140,10 @@
           "lon": 6.86591
         }
       ],
-      "updatedAt": "2026-08-14T05:08:02.208Z"
+      "updatedAt": "2026-08-23T04:09:48.693Z"
     },
     "picnic-spots": {
-      "count": 166,
+      "count": 171,
       "pois": [
         {
           "id": "way/1275043188",
@@ -1137,10 +1152,10 @@
           "lon": 6.947718
         }
       ],
-      "updatedAt": "2026-08-14T05:08:02.874Z"
+      "updatedAt": "2026-08-23T04:09:50.220Z"
     },
     "viewpoints": {
-      "count": 43,
+      "count": 44,
       "pois": [
         {
           "id": "node/3095621729",
@@ -1212,7 +1227,7 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:03.389Z"
+      "updatedAt": "2026-08-23T04:09:51.384Z"
     },
     "beaches": {
       "count": 26,
@@ -1226,7 +1241,7 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:03.971Z"
+      "updatedAt": "2026-08-23T04:09:52.308Z"
     },
     "atms": {
       "count": 282,
@@ -1456,31 +1471,30 @@
           "address": "Bergisch Gladbacher Straße 587"
         },
         {
+          "id": "node/2665197233",
+          "name": "Sparkasse SB-Service",
+          "lat": 50.934834,
+          "lon": 7.061571,
+          "address": "An St. Adelheid 14"
+        },
+        {
           "id": "node/2197633072",
           "name": "Raiffeisenbank",
           "lat": 50.932386,
           "lon": 6.85435,
           "address": "Am Weidenpesch 6",
           "openingHours": "Mo-We 08:30-13:00,14:00-16:00; Th 08:30-13:00,14:00-19:00; Fr 08:30-14:00"
-        },
-        {
-          "id": "node/280951899",
-          "name": "Kreissparkasse Köln - Filiale Hürth",
-          "lat": 50.881101,
-          "lon": 6.89167,
-          "address": "Luxemburger Straße 297",
-          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:04.677Z"
+      "updatedAt": "2026-08-23T04:09:53.477Z"
     },
     "post-boxes": {
-      "count": 437,
+      "count": 439,
       "pois": [],
-      "updatedAt": "2026-08-14T05:08:05.286Z"
+      "updatedAt": "2026-08-23T04:09:54.402Z"
     },
     "recycling": {
-      "count": 797,
+      "count": 799,
       "pois": [
         {
           "id": "node/10196968093",
@@ -1539,15 +1553,15 @@
           "address": "Wikingerstraße 100"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:05.963Z"
+      "updatedAt": "2026-08-23T04:09:56.643Z"
     },
     "luggage-storage": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-08-14T05:08:06.396Z"
+      "updatedAt": "2026-08-23T04:09:57.114Z"
     },
     "libraries": {
-      "count": 126,
+      "count": 125,
       "pois": [
         {
           "id": "node/778429505",
@@ -1777,7 +1791,7 @@
           "openingHours": "Mo-Th 10:00-18:00; Fr 10:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:07.108Z"
+      "updatedAt": "2026-08-23T04:09:57.802Z"
     },
     "outdoor-gyms": {
       "count": 69,
@@ -1815,11 +1829,20 @@
           "lon": 6.860106
         }
       ],
-      "updatedAt": "2026-08-14T05:08:07.595Z"
+      "updatedAt": "2026-08-23T04:09:59.049Z"
     },
     "camp-sites": {
-      "count": 3,
+      "count": 4,
       "pois": [
+        {
+          "id": "way/49073978",
+          "name": "Reisemobilhafen Köln",
+          "lat": 50.962542,
+          "lon": 6.986133,
+          "address": "An der Schanz",
+          "wheelchair": "limited",
+          "fee": "yes"
+        },
         {
           "id": "way/23453245",
           "name": "Camping Stadt Köln",
@@ -1845,37 +1868,293 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:08.063Z"
+      "updatedAt": "2026-08-23T04:09:59.578Z"
     },
     "shelters": {
-      "count": 31,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:08:08.986Z"
+      "count": 30,
+      "pois": [
+        {
+          "id": "node/894153364",
+          "lat": 50.928692,
+          "lon": 6.88482,
+          "context": "Hundefreilauffläche Stadtwald Lindenthal"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:10:01.127Z"
     },
     "rest-areas": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:08:09.462Z"
+      "count": 2,
+      "pois": [
+        {
+          "id": "way/53644421",
+          "name": "SVG Autohof Köln-Eifeltor",
+          "lat": 50.888403,
+          "lon": 6.92533,
+          "address": "Am Eifeltor 1",
+          "openingHours": "24/7"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:10:01.711Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:08:09.864Z"
+      "updatedAt": "2026-08-23T04:10:02.186Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:25.535Z"
+      "count": 54,
+      "pois": [
+        {
+          "id": "node/787101166",
+          "name": "Deutsche Post",
+          "lat": 50.933653,
+          "lon": 6.95644,
+          "address": "Hohe Pforte 4-6",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-13:15; Su,PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3356707060",
+          "name": "Nova Post",
+          "lat": 50.937706,
+          "lon": 6.949936,
+          "address": "Am Alten Posthof 4"
+        },
+        {
+          "id": "node/1579250002",
+          "name": "Postagentur OM",
+          "lat": 50.936971,
+          "lon": 6.97274,
+          "address": "Deutzer Freiheit 63",
+          "openingHours": "Mo-Fr 09:00-13:00,14:00-18:00; Sa 09:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3298334945",
+          "name": "Kölner Visa Zentrum",
+          "lat": 50.933605,
+          "lon": 6.947726,
+          "address": "Bayardsgasse 3",
+          "openingHours": "Mo-Fr 09:00-16:30; Sa 10:00-13:00"
+        },
+        {
+          "id": "node/11293965047",
+          "name": "DHL im Kiosk",
+          "lat": 50.924239,
+          "lon": 6.958802
+        },
+        {
+          "id": "node/1327646790",
+          "name": "DHL",
+          "lat": 50.951983,
+          "lon": 6.95924
+        },
+        {
+          "id": "node/265755473",
+          "name": "Filiale Köln Neustadt-Süd",
+          "lat": 50.935003,
+          "lon": 6.93645,
+          "address": "Händelstraße 37",
+          "openingHours": "Mo-Fr 08:30-18:00; Sa 08:30-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/444556433",
+          "name": "Postamt Roonstraße",
+          "lat": 50.931398,
+          "lon": 6.937595,
+          "address": "Roonstraße 40-42",
+          "openingHours": "Mo-Sa 09:00-13:00; Mo-Fr 14:00-18:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/5908405998",
+          "name": "Kiosk Lindenecke",
+          "lat": 50.933278,
+          "lon": 6.934706,
+          "openingHours": "Mo-Th 07:00-00:30, Fr 07:00-03:00, Sa 09:00-03:00, Su 09:00-00:30",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/5948719517",
+          "name": "Hermes",
+          "lat": 50.929179,
+          "lon": 6.937108
+        },
+        {
+          "id": "node/1305920098",
+          "name": "UNI MARKT KIOSK",
+          "lat": 50.921663,
+          "lon": 6.933268,
+          "openingHours": "Mo-Su 10:00-13:45, 14:15-22:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13059873943",
+          "name": "Postfiliale 414",
+          "lat": 50.961706,
+          "lon": 6.958591,
+          "address": "Niehler Straße 56",
+          "openingHours": "Mo-Fr 09:00-13:00,14:00-18:00; Sa 10:00-13:00"
+        },
+        {
+          "id": "node/3241457202",
+          "name": "Postamt Nippes",
+          "lat": 50.962919,
+          "lon": 6.952918,
+          "address": "Wilhelmstraße 58",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-13:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "way/255968130",
+          "name": "Kiosk Schneider",
+          "lat": 50.916821,
+          "lon": 6.990552,
+          "address": "Siegburger Straße 357",
+          "openingHours": "Mo-Fr 08:00-13:00, 14:30-18:00; Sa 08:00-13:00; PH off"
+        },
+        {
+          "id": "way/257511999",
+          "name": "Postamt Lindenthal",
+          "lat": 50.930285,
+          "lon": 6.916906,
+          "address": "Geibelstraße 29",
+          "openingHours": "Mo 09:00-18:00; Tu-Fr 09:00-13:00,14:00-18:00; Sa 09:00-13:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/9084077387",
+          "name": "My Kiosk - Postfiliale 646",
+          "lat": 50.910878,
+          "lon": 6.942721
+        },
+        {
+          "id": "node/11757723911",
+          "name": "Brieftaube",
+          "lat": 50.90917,
+          "lon": 6.969948,
+          "address": "Goltsteinstraße 87"
+        },
+        {
+          "id": "node/6483883714",
+          "name": "Deutsche Post AG Partner-Filiale 42",
+          "lat": 50.917002,
+          "lon": 6.924027,
+          "address": "Berrenrather Straße 315",
+          "openingHours": "Mo-Fr 09:00-13:00,14:30-18:30; Sa 09:00-13:00"
+        },
+        {
+          "id": "node/13086805701",
+          "name": "Filiale 504",
+          "lat": 50.951311,
+          "lon": 7.005534,
+          "address": "Heidelberger Straße 31",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:00-13:00"
+        },
+        {
+          "id": "node/1709829300",
+          "name": "Lotto-Presse-Tabak/Deutsche Post Weißenberg",
+          "lat": 50.96882,
+          "lon": 6.938776,
+          "address": "Schiefersburger Weg 17",
+          "openingHours": "Mo-Sa 08:00-13:00, Mo,Tu,Th,Fr 14:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/7710959054",
+          "name": "Foto Cipolla, Postfiliale 588",
+          "lat": 50.955256,
+          "lon": 6.907875,
+          "address": "Venloer Straße 500"
+        },
+        {
+          "id": "node/6407293141",
+          "name": "Mail Boxes Etc.",
+          "lat": 50.946821,
+          "lon": 6.891299,
+          "openingHours": "Mo-Fr 09:00-19:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3448772654",
+          "name": "Bayram Kiosk",
+          "lat": 50.967826,
+          "lon": 6.90727,
+          "address": "Margaretastraße 5"
+        },
+        {
+          "id": "node/583434182",
+          "name": "Tabakbörse",
+          "lat": 50.970559,
+          "lon": 7.009051,
+          "address": "Berliner Straße 36"
+        },
+        {
+          "id": "node/4329708632",
+          "name": "Paketstation",
+          "lat": 50.972257,
+          "lon": 7.011215
+        },
+        {
+          "id": "node/3985263361",
+          "name": "Postfiliale",
+          "lat": 50.893926,
+          "lon": 6.994159,
+          "address": "Hauptstraße 57",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/6806058189",
+          "name": "Hermes PaketShop",
+          "lat": 50.943382,
+          "lon": 6.88283,
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/8188182883",
+          "name": "DPD Paketshop",
+          "lat": 50.95549,
+          "lon": 6.881417,
+          "address": "Vogelsanger Markt 1"
+        },
+        {
+          "id": "node/3427360893",
+          "name": "Lotto Bell",
+          "lat": 50.985947,
+          "lon": 6.997546,
+          "address": "Moses-Heß-Straße 8-10",
+          "openingHours": "Mo-Fr 08:00-13:00, 15:00-18:30; Sa 08:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/8836367007",
+          "name": "Kiosk Chug",
+          "lat": 50.876692,
+          "lon": 6.959454,
+          "address": "Rodenkirchener Straße 127",
+          "openingHours": "Mo-Fr 08:00-13:00,14:00-18:00; Sa 08:00-13:00"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:10:02.702Z"
     },
     "showers": {
-      "count": 0,
+      "count": 10,
       "pois": [],
-      "updatedAt": "2026-08-17T04:03:25.953Z"
+      "updatedAt": "2026-08-23T04:10:03.058Z"
     },
     "fireplaces": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:26.610Z"
+      "count": 7,
+      "pois": [
+        {
+          "id": "way/364929558",
+          "name": "Grillstation",
+          "lat": 50.959346,
+          "lon": 6.974029,
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:10:04.078Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1883,9 +2162,9 @@
       "updatedAt": "2026-08-17T04:03:27.031Z"
     },
     "benches": {
-      "count": 3,
+      "count": 5855,
       "pois": [],
-      "updatedAt": "2026-08-17T04:03:27.443Z"
+      "updatedAt": "2026-08-23T04:10:05.171Z"
     },
     "compressed-air": {
       "count": 8,

@@ -1,9 +1,9 @@
 {
   "city": "london",
-  "generatedAt": "2026-08-18T03:58:17.631Z",
+  "generatedAt": "2026-08-23T04:17:32.788Z",
   "categories": {
     "toilets": {
-      "count": 785,
+      "count": 805,
       "pois": [
         {
           "id": "node/339925126",
@@ -69,6 +69,14 @@
           "fee": "no"
         },
         {
+          "id": "node/12310155959",
+          "lat": 51.513518,
+          "lon": -0.14026,
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "The Clachan"
+        },
+        {
           "id": "way/65489530",
           "name": "Marks & Spencer",
           "lat": 51.515149,
@@ -90,6 +98,13 @@
           "lon": -0.143771,
           "address": "Bruton Street 5",
           "wheelchair": "limited"
+        },
+        {
+          "id": "way/4245075",
+          "name": "London Waterloo Station",
+          "lat": 51.501952,
+          "lon": -0.113325,
+          "wheelchair": "yes"
         },
         {
           "id": "way/97209483",
@@ -147,12 +162,19 @@
           "wheelchair": "yes"
         },
         {
-          "id": "way/39814415",
-          "name": "Selfridges",
-          "lat": 51.514691,
-          "lon": -0.152808,
-          "address": "Oxford Street",
-          "openingHours": "Mo-Fr 10:00-22:00, Sa 10:00-21:00, Su 11:30-18:00",
+          "id": "node/10036256615",
+          "lat": 51.514303,
+          "lon": -0.15252,
+          "fee": "no",
+          "context": "Selfridges"
+        },
+        {
+          "id": "way/134060144",
+          "name": "The Brown Collection",
+          "lat": 51.517369,
+          "lon": -0.150462,
+          "address": "Bentinck Mews 1",
+          "openingHours": "We-Sa 10:30-18:00",
           "wheelchair": "yes"
         },
         {
@@ -184,6 +206,12 @@
           "address": "Marchmont Street 85"
         },
         {
+          "id": "node/3269424658",
+          "lat": 51.513473,
+          "lon": -0.095254,
+          "context": "One New Change"
+        },
+        {
           "id": "node/1090774423",
           "name": "Vauxhall bus station",
           "lat": 51.486026,
@@ -206,43 +234,12 @@
           "address": "York Way 24",
           "openingHours": "Mo-We 11:00-23:00; Th-Sa 11:00-24:00; Su 12:00-23:00",
           "wheelchair": "no"
-        },
-        {
-          "id": "way/352696767",
-          "name": "Rosa's Thai Cafe",
-          "lat": 51.53148,
-          "lon": -0.121164,
-          "address": "Caledonian Road 15-17",
-          "openingHours": "Mo-Th 12:00-22:30; Fr-Sa 12:00-23:00; Su 12:00-22:00",
-          "wheelchair": "limited"
-        },
-        {
-          "id": "way/839406963",
-          "name": "Regents Park Open Air Theatre",
-          "lat": 51.528035,
-          "lon": -0.155317,
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/1170409079",
-          "name": "children's toilet",
-          "lat": 51.48354,
-          "lon": -0.107936,
-          "fee": "no"
-        },
-        {
-          "id": "way/452856397",
-          "name": "Belushi's",
-          "lat": 51.536037,
-          "lon": -0.13958,
-          "address": "Camden High Street 48-50",
-          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:49.684Z"
+      "updatedAt": "2026-08-23T04:17:04.617Z"
     },
     "drinking-water": {
-      "count": 476,
+      "count": 477,
       "pois": [
         {
           "id": "node/11879201485",
@@ -432,10 +429,10 @@
           "lon": -0.182031
         }
       ],
-      "updatedAt": "2026-08-14T05:11:50.688Z"
+      "updatedAt": "2026-08-23T04:17:08.062Z"
     },
     "playgrounds": {
-      "count": 2172,
+      "count": 2182,
       "pois": [
         {
           "id": "relation/7929522",
@@ -612,17 +609,17 @@
         {
           "id": "way/25840834",
           "name": "Gloucester Gate Playground",
-          "lat": 51.534899,
-          "lon": -0.148945
+          "lat": 51.534907,
+          "lon": -0.148928
         },
         {
           "id": "way/95983711",
           "name": "Hanover Gate Playground",
-          "lat": 51.52927,
-          "lon": -0.162317
+          "lat": 51.529273,
+          "lon": -0.162295
         }
       ],
-      "updatedAt": "2026-08-14T05:11:51.692Z"
+      "updatedAt": "2026-08-23T04:17:09.308Z"
     },
     "parking": {
       "count": 5087,
@@ -833,7 +830,7 @@
           "lon": -0.140931
         }
       ],
-      "updatedAt": "2026-08-14T05:11:53.158Z"
+      "updatedAt": "2026-08-23T04:17:11.075Z"
     },
     "charging-stations": {
       "count": 869,
@@ -1047,7 +1044,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:53.894Z"
+      "updatedAt": "2026-08-23T04:17:11.771Z"
     },
     "gas-stations": {
       "count": 194,
@@ -1259,10 +1256,10 @@
           "lon": -0.030001
         }
       ],
-      "updatedAt": "2026-08-14T05:11:54.533Z"
+      "updatedAt": "2026-08-23T04:17:12.523Z"
     },
     "ice-cream": {
-      "count": 170,
+      "count": 171,
       "pois": [
         {
           "id": "way/71408543",
@@ -1483,7 +1480,7 @@
           "address": "Park Street 4"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:55.353Z"
+      "updatedAt": "2026-08-23T04:17:13.329Z"
     },
     "dog-parks": {
       "count": 66,
@@ -1604,7 +1601,7 @@
           "lon": -0.277449
         }
       ],
-      "updatedAt": "2026-08-14T05:11:55.819Z"
+      "updatedAt": "2026-08-23T04:17:13.834Z"
     },
     "picnic-spots": {
       "count": 1167,
@@ -1640,10 +1637,10 @@
           "lon": 0.012668
         }
       ],
-      "updatedAt": "2026-08-14T05:11:56.625Z"
+      "updatedAt": "2026-08-23T04:17:16.087Z"
     },
     "viewpoints": {
-      "count": 81,
+      "count": 106,
       "pois": [
         {
           "id": "node/4880465176",
@@ -1691,6 +1688,12 @@
           "fee": "no"
         },
         {
+          "id": "node/7702315432",
+          "name": "Bird watching area",
+          "lat": 51.530376,
+          "lon": -0.15579
+        },
+        {
           "id": "node/6284793459",
           "name": "The Garden at 120",
           "lat": 51.512142,
@@ -1736,6 +1739,42 @@
           "lon": -0.164946
         },
         {
+          "id": "way/163549314",
+          "name": "Wader Scrape Hide",
+          "lat": 51.478098,
+          "lon": -0.227385
+        },
+        {
+          "id": "way/34857748",
+          "name": "Peacock Tower",
+          "lat": 51.478619,
+          "lon": -0.229218
+        },
+        {
+          "id": "way/1126543944",
+          "name": "WWF Hide",
+          "lat": 51.477354,
+          "lon": -0.230203
+        },
+        {
+          "id": "way/163548309",
+          "name": "Wildside Hide",
+          "lat": 51.480494,
+          "lon": -0.23265
+        },
+        {
+          "id": "way/1126543942",
+          "name": "Dulverton Hide",
+          "lat": 51.477027,
+          "lon": -0.232213
+        },
+        {
+          "id": "way/163548308",
+          "name": "Headley Hide",
+          "lat": 51.478894,
+          "lon": -0.234431
+        },
+        {
           "id": "node/1708679342",
           "name": "View of O2 Arena",
           "lat": 51.501243,
@@ -1747,6 +1786,13 @@
           "lat": 51.53558,
           "lon": -0.014065,
           "wheelchair": "yes"
+        },
+        {
+          "id": "way/149637725",
+          "name": "ArcelorMittal Orbit",
+          "lat": 51.538285,
+          "lon": -0.013005,
+          "fee": "yes"
         },
         {
           "id": "node/7317754347",
@@ -1786,7 +1832,7 @@
           "lon": -0.244091
         }
       ],
-      "updatedAt": "2026-08-14T05:11:57.184Z"
+      "updatedAt": "2026-08-23T04:17:16.897Z"
     },
     "beaches": {
       "count": 80,
@@ -1865,10 +1911,10 @@
           "lon": -0.294668
         }
       ],
-      "updatedAt": "2026-08-14T05:11:57.783Z"
+      "updatedAt": "2026-08-23T04:17:17.539Z"
     },
     "atms": {
-      "count": 1354,
+      "count": 1352,
       "pois": [
         {
           "id": "node/1557467257",
@@ -2098,7 +2144,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:58.663Z"
+      "updatedAt": "2026-08-23T04:17:18.537Z"
     },
     "post-boxes": {
       "count": 4061,
@@ -2169,15 +2215,9 @@
           "name": "Tesco - Colney Hatch",
           "lat": 51.606996,
           "lon": -0.154216
-        },
-        {
-          "id": "node/3111850331",
-          "name": "Kew Bridge Station",
-          "lat": 51.489295,
-          "lon": -0.287316
         }
       ],
-      "updatedAt": "2026-08-14T05:11:59.882Z"
+      "updatedAt": "2026-08-23T04:17:19.750Z"
     },
     "recycling": {
       "count": 1031,
@@ -2376,7 +2416,7 @@
           "lon": -0.055453
         }
       ],
-      "updatedAt": "2026-08-14T05:12:00.614Z"
+      "updatedAt": "2026-08-23T04:17:22.168Z"
     },
     "luggage-storage": {
       "count": 11,
@@ -2417,7 +2457,7 @@
           "lon": -0.141236
         }
       ],
-      "updatedAt": "2026-08-14T05:12:01.116Z"
+      "updatedAt": "2026-08-23T04:17:22.686Z"
     },
     "libraries": {
       "count": 292,
@@ -2636,10 +2676,10 @@
           "address": "Upper Woburn Place 14"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:01.832Z"
+      "updatedAt": "2026-08-23T04:17:23.472Z"
     },
     "outdoor-gyms": {
-      "count": 353,
+      "count": 354,
       "pois": [
         {
           "id": "way/323167848",
@@ -2804,7 +2844,7 @@
           "lon": -0.059722
         }
       ],
-      "updatedAt": "2026-08-14T05:12:02.527Z"
+      "updatedAt": "2026-08-23T04:17:25.512Z"
     },
     "camp-sites": {
       "count": 9,
@@ -2871,7 +2911,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:03.028Z"
+      "updatedAt": "2026-08-23T04:17:26.167Z"
     },
     "shelters": {
       "count": 23,
@@ -2901,12 +2941,19 @@
           "lon": 0.010158
         }
       ],
-      "updatedAt": "2026-08-14T05:12:03.938Z"
+      "updatedAt": "2026-08-23T04:17:27.561Z"
     },
     "rest-areas": {
-      "count": 2,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:12:04.423Z"
+      "count": 4,
+      "pois": [
+        {
+          "id": "way/1412793050",
+          "name": "Service Yard 7",
+          "lat": 51.593673,
+          "lon": -0.109301
+        }
+      ],
+      "updatedAt": "2026-08-23T04:17:28.132Z"
     },
     "dump-stations": {
       "count": 7,
@@ -2949,11 +2996,200 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:04.851Z"
+      "updatedAt": "2026-08-23T04:17:28.601Z"
     },
     "post-offices": {
-      "count": 7,
+      "count": 335,
       "pois": [
+        {
+          "id": "way/99952351",
+          "name": "Mail Boxes Etc.",
+          "lat": 51.510224,
+          "lon": -0.123807,
+          "address": "Bedford Street 43"
+        },
+        {
+          "id": "node/3600145790",
+          "name": "Lower Regent Street Post Office",
+          "lat": 51.50836,
+          "lon": -0.133876,
+          "address": "Lower Regent Street 11",
+          "openingHours": "Mo-Fr 08:00-18:30; Sa 09:30-17:30; Su 12:00-16:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/7273801494",
+          "name": "Strand Post Office",
+          "lat": 51.510436,
+          "lon": -0.121829,
+          "address": "Strand 393",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:30-17:30; Su 11:00-17:00"
+        },
+        {
+          "id": "node/447877778",
+          "name": "New Oxford Street Post Office",
+          "lat": 51.516647,
+          "lon": -0.127977,
+          "address": "New Oxford Street 71-75",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 09:00-18:00"
+        },
+        {
+          "id": "node/371400302",
+          "name": "High Holborn Post Office",
+          "lat": 51.51644,
+          "lon": -0.123914,
+          "address": "High Holborn 181",
+          "openingHours": "Mo-Fr 09:00-18:00"
+        },
+        {
+          "id": "way/372771197",
+          "name": "Aldwych Post Office",
+          "lat": 51.513427,
+          "lon": -0.115299,
+          "address": "Aldwych 95",
+          "openingHours": "Mo-Fr 09:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/9442897997",
+          "name": "Cornwall Road Post Office",
+          "lat": 51.506677,
+          "lon": -0.11178,
+          "address": "Cornwall Road 62",
+          "openingHours": "Mo-Th 09:45-17:45; Fr,Sa 09:45-21:00; Su 10:00-12:45"
+        },
+        {
+          "id": "node/11288690670",
+          "name": "Mail Boxes Etc. Holborn",
+          "lat": 51.518495,
+          "lon": -0.124572,
+          "address": "Bury Place 19",
+          "openingHours": "Mo-Fr 09:00-18:00;Sa 10:00-15:00"
+        },
+        {
+          "id": "node/410623388",
+          "name": "Westminster Bridge Road Post Office",
+          "lat": 51.499375,
+          "lon": -0.113737,
+          "address": "Westminster Bridge Road 125-131",
+          "openingHours": "Mo-Fr 10:00-17:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/7273801493",
+          "name": "Southampton Row Post Office",
+          "lat": 51.519874,
+          "lon": -0.121949,
+          "address": "Southampton Row 86",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:30-17:00"
+        },
+        {
+          "id": "way/40836845",
+          "name": "Great Portland Street Post Office",
+          "lat": 51.517527,
+          "lon": -0.141315,
+          "address": "Great Portland Street 54-56",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "way/211519237",
+          "name": "Mayfair Post Office",
+          "lat": 51.511643,
+          "lon": -0.148292,
+          "address": "Grosvenor Street",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/6635268946",
+          "name": "Grays Inn Post Office",
+          "lat": 51.519038,
+          "lon": -0.11143,
+          "address": "Gray's Inn Road 24-28",
+          "openingHours": "Mo-Fr 08:30-18:00; Sa 10:00-16:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/506310014",
+          "name": "Vauxhall Bridge Road Post Office",
+          "lat": 51.492431,
+          "lon": -0.137796,
+          "address": "Vauxhall Bridge Road",
+          "openingHours": "Mo 09:00-17:30; Tu 09:30-17:30; We-Fr 09:00-17:30; Sa 09:00-12:30"
+        },
+        {
+          "id": "node/7782720148",
+          "name": "Marchmont Street Post Office",
+          "lat": 51.524618,
+          "lon": -0.125212,
+          "address": "Marchmont Street 33-37",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 09:00-19:00; Su 10:00-19:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/765256582",
+          "name": "Marylebone Post Office",
+          "lat": 51.517468,
+          "lon": -0.151262,
+          "address": "Thayer Street 24-27",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/341231564",
+          "name": "Eccleston Street Post Office",
+          "lat": 51.494481,
+          "lon": -0.147555,
+          "address": "Eccleston Street",
+          "openingHours": "Mo,We-Fr 09:00-17:30; Tu 09:30-17:30; Sa 09:00-12:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/572711396",
+          "name": "Farringdon Road Post Office",
+          "lat": 51.520138,
+          "lon": -0.106089,
+          "address": "Farringdon Road 39-41",
+          "openingHours": "Mo-Fr 09:00-18:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/282618048",
+          "name": "Southwark Post Office",
+          "lat": 51.500572,
+          "lon": -0.099192,
+          "address": "Southwark Bridge Road",
+          "openingHours": "Mo-Sa 09:00-17:30"
+        },
+        {
+          "id": "node/3455504293",
+          "name": "Vauxhall Street Post Office",
+          "lat": 51.489196,
+          "lon": -0.117363,
+          "address": "Vauxhall Street 36-38",
+          "openingHours": "Mo-Sa 08:00-20:00; Su 09:00-14:00"
+        },
+        {
+          "id": "way/116815552",
+          "name": "Euston Food and Wine",
+          "lat": 51.525995,
+          "lon": -0.138196,
+          "address": "Hampstead Road 42"
+        },
+        {
+          "id": "node/452433537",
+          "name": "Mount Pleasant Post Office",
+          "lat": 51.52493,
+          "lon": -0.110872,
+          "address": "Rosebery Avenue",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-12:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/9063803961",
+          "name": "Sussex Street Post Office",
+          "lat": 51.488836,
+          "lon": -0.144043,
+          "address": "Sussex Street 18"
+        },
         {
           "id": "node/418985774",
           "name": "Lupus Street Post Office",
@@ -2963,63 +3199,59 @@
           "wheelchair": "yes"
         },
         {
-          "id": "way/288278167",
-          "name": "Houndsditch Post Office",
-          "lat": 51.515481,
-          "lon": -0.077238,
-          "address": "White Kennett Street 11",
-          "openingHours": "Mo-Fr 09:00-18:00",
+          "id": "node/3357569141",
+          "name": "Mailboxes Etc",
+          "lat": 51.529173,
+          "lon": -0.132552
+        },
+        {
+          "id": "node/295469795",
+          "name": "Knightsbridge Post Office",
+          "lat": 51.500938,
+          "lon": -0.162901,
+          "address": "Raphael Street 6"
+        },
+        {
+          "id": "way/58603825",
+          "name": "Baker Street Post Office",
+          "lat": 51.521194,
+          "lon": -0.157497,
+          "address": "Baker Street 111"
+        },
+        {
+          "id": "node/5765820045",
+          "name": "Robert Street Post Office",
+          "lat": 51.528343,
+          "lon": -0.143494,
+          "address": "Compton Close",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 09:00-13:00"
+        },
+        {
+          "id": "node/6594761661",
+          "name": "Mail Boxes Etc",
+          "lat": 51.531026,
+          "lon": -0.12025
+        },
+        {
+          "id": "way/90404402",
+          "name": "London Bridge Post Office",
+          "lat": 51.505223,
+          "lon": -0.088764,
+          "address": "Borough High Street",
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/263018282",
-          "name": "Stoke Newington Post Office",
-          "lat": 51.561116,
-          "lon": -0.073626,
-          "address": "Stoke Newington High Street 150",
-          "openingHours": "Mo-Sa 09:00-17:30; Su 12:00-16:00"
-        },
-        {
-          "id": "node/5139756812",
-          "name": "Tulse Hill Post Office",
-          "lat": 51.441022,
-          "lon": -0.107179,
-          "address": "Tulse Hill 192"
-        },
-        {
-          "id": "node/647071204",
-          "name": "Uxbridge Road Post Office",
-          "lat": 51.506551,
-          "lon": -0.237921,
-          "address": "Uxbridge Road 420"
-        },
-        {
-          "id": "node/12007863430",
-          "name": "Hornsey Post Office",
-          "lat": 51.587218,
-          "lon": -0.120554,
-          "address": "High Street 24",
-          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-15:00; Su off"
-        },
-        {
-          "id": "node/5888668602",
-          "name": "Green Lane Post Office",
-          "lat": 51.409117,
-          "lon": -0.106198,
-          "address": "Green Lane 40"
         }
       ],
-      "updatedAt": "2026-08-17T04:04:06.184Z"
+      "updatedAt": "2026-08-23T04:17:29.340Z"
     },
     "showers": {
-      "count": 0,
+      "count": 14,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:06.605Z"
+      "updatedAt": "2026-08-23T04:17:29.832Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:07.253Z"
+      "updatedAt": "2026-08-23T04:17:30.872Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3027,9 +3259,161 @@
       "updatedAt": "2026-08-17T04:04:07.663Z"
     },
     "benches": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:08.103Z"
+      "count": 14911,
+      "pois": [
+        {
+          "id": "node/538090930",
+          "name": "Boat bench",
+          "lat": 51.492254,
+          "lon": -0.121585
+        },
+        {
+          "id": "node/6711747464",
+          "name": "Connected Journeys",
+          "lat": 51.513486,
+          "lon": -0.088314
+        },
+        {
+          "id": "node/10130184219",
+          "name": "The Olympic Ring benches",
+          "lat": 51.534341,
+          "lon": -0.127447
+        },
+        {
+          "id": "node/5767987400",
+          "name": "Double Bench",
+          "lat": 51.512309,
+          "lon": -0.0815
+        },
+        {
+          "id": "node/5768339780",
+          "name": "City Benchmark",
+          "lat": 51.514225,
+          "lon": -0.078439,
+          "address": "Creechurch Place"
+        },
+        {
+          "id": "node/6550488771",
+          "name": "Indian golden Jubilee bench",
+          "lat": 51.508443,
+          "lon": -0.188061
+        },
+        {
+          "id": "node/3394437473",
+          "name": "Alison Frances de Vere",
+          "lat": 51.502218,
+          "lon": -0.204293
+        },
+        {
+          "id": "node/3394437474",
+          "name": "John Barton",
+          "lat": 51.50223,
+          "lon": -0.204348
+        },
+        {
+          "id": "node/3394437475",
+          "name": "Stanislawa Engel",
+          "lat": 51.502197,
+          "lon": -0.204383
+        },
+        {
+          "id": "node/8432909165",
+          "name": "Tom's bench",
+          "lat": 51.456144,
+          "lon": -0.150535
+        },
+        {
+          "id": "node/11596203199",
+          "name": "Rik Mayall Memorial Bench",
+          "lat": 51.492094,
+          "lon": -0.224845
+        },
+        {
+          "id": "node/10963213873",
+          "name": "Errol's Bench",
+          "lat": 51.570048,
+          "lon": -0.101215
+        },
+        {
+          "id": "node/4683342970",
+          "name": "Gradient Fade - Adham Faramawy",
+          "lat": 51.522561,
+          "lon": -0.025472
+        },
+        {
+          "id": "node/13967501086",
+          "name": "Chair",
+          "lat": 51.577554,
+          "lon": -0.105946
+        },
+        {
+          "id": "node/9721275568",
+          "name": "Fairy Glen",
+          "lat": 51.518589,
+          "lon": -0.002918
+        },
+        {
+          "id": "node/13207187464",
+          "name": "Please Take a Seat",
+          "lat": 51.539313,
+          "lon": -0.011857
+        },
+        {
+          "id": "node/12602045345",
+          "name": "Jimmy C Coletsis (1960-2021)",
+          "lat": 51.586924,
+          "lon": -0.115481
+        },
+        {
+          "id": "way/377904682",
+          "name": "Classroom",
+          "lat": 51.511528,
+          "lon": 0.003292
+        },
+        {
+          "id": "node/4607621593",
+          "name": "Langham",
+          "lat": 51.593626,
+          "lon": -0.106736
+        },
+        {
+          "id": "node/4607846806",
+          "name": "Westbury",
+          "lat": 51.593681,
+          "lon": -0.106662
+        },
+        {
+          "id": "node/6568064187",
+          "name": "Lanfranc Memorial Bench",
+          "lat": 51.41765,
+          "lon": -0.099949
+        },
+        {
+          "id": "node/5173046537",
+          "name": "Patricia Karet Memorial Bench",
+          "lat": 51.593233,
+          "lon": -0.201204
+        },
+        {
+          "id": "node/11378539769",
+          "name": "The Turning Tide",
+          "lat": 51.499585,
+          "lon": 0.035091
+        },
+        {
+          "id": "node/13375101070",
+          "name": "The Flow Bench",
+          "lat": 51.506541,
+          "lon": 0.040658
+        },
+        {
+          "id": "node/10611984472",
+          "name": "The Verdun Bench",
+          "lat": 51.478726,
+          "lon": -0.291088
+        }
+      ],
+      "updatedAt": "2026-08-23T04:17:32.687Z"
     },
     "compressed-air": {
       "count": 0,

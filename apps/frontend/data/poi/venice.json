@@ -1,10 +1,18 @@
 {
   "city": "venice",
-  "generatedAt": "2026-08-18T03:58:30.978Z",
+  "generatedAt": "2026-08-23T04:31:18.722Z",
   "categories": {
     "toilets": {
       "count": 88,
       "pois": [
+        {
+          "id": "node/4991893447",
+          "lat": 45.441293,
+          "lon": 12.305851,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Tronchetto Parking"
+        },
         {
           "id": "way/206333242",
           "name": "Biblioteca Nazionale Marciana",
@@ -21,6 +29,14 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/10180960705",
+          "lat": 45.429895,
+          "lon": 12.358722,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Padiglione Centrale"
+        },
+        {
           "id": "way/132766062",
           "name": "Lidl",
           "lat": 45.484957,
@@ -29,10 +45,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:19:12.925Z"
+      "updatedAt": "2026-08-23T04:31:02.676Z"
     },
     "drinking-water": {
-      "count": 179,
+      "count": 182,
       "pois": [
         {
           "id": "node/9952303217",
@@ -74,12 +90,12 @@
           "lon": 12.388822
         }
       ],
-      "updatedAt": "2026-08-14T05:19:13.528Z"
+      "updatedAt": "2026-08-23T04:31:04.161Z"
     },
     "playgrounds": {
       "count": 23,
       "pois": [],
-      "updatedAt": "2026-08-14T05:19:14.168Z"
+      "updatedAt": "2026-08-23T04:31:04.884Z"
     },
     "parking": {
       "count": 94,
@@ -220,7 +236,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:19:14.903Z"
+      "updatedAt": "2026-08-23T04:31:05.639Z"
     },
     "charging-stations": {
       "count": 10,
@@ -240,7 +256,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:19:15.336Z"
+      "updatedAt": "2026-08-23T04:31:06.110Z"
     },
     "gas-stations": {
       "count": 16,
@@ -287,7 +303,7 @@
           "lon": 12.273441
         }
       ],
-      "updatedAt": "2026-08-14T05:19:15.803Z"
+      "updatedAt": "2026-08-23T04:31:06.639Z"
     },
     "ice-cream": {
       "count": 69,
@@ -496,17 +512,17 @@
           "lon": 12.336665
         }
       ],
-      "updatedAt": "2026-08-14T05:19:16.280Z"
+      "updatedAt": "2026-08-23T04:31:07.289Z"
     },
     "dog-parks": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-08-14T05:19:16.710Z"
+      "updatedAt": "2026-08-23T04:31:07.784Z"
     },
     "picnic-spots": {
       "count": 22,
       "pois": [],
-      "updatedAt": "2026-08-14T05:19:17.223Z"
+      "updatedAt": "2026-08-23T04:31:09.284Z"
     },
     "viewpoints": {
       "count": 18,
@@ -540,7 +556,7 @@
           "lon": 12.373774
         }
       ],
-      "updatedAt": "2026-08-14T05:19:17.698Z"
+      "updatedAt": "2026-08-23T04:31:10.117Z"
     },
     "beaches": {
       "count": 4,
@@ -559,7 +575,7 @@
           "lon": 12.380655
         }
       ],
-      "updatedAt": "2026-08-14T05:19:18.178Z"
+      "updatedAt": "2026-08-23T04:31:10.591Z"
     },
     "atms": {
       "count": 97,
@@ -713,10 +729,10 @@
           "lon": 12.370616
         }
       ],
-      "updatedAt": "2026-08-14T05:19:18.641Z"
+      "updatedAt": "2026-08-23T04:31:11.102Z"
     },
     "post-boxes": {
-      "count": 44,
+      "count": 43,
       "pois": [
         {
           "id": "node/11309955447",
@@ -725,12 +741,12 @@
           "lon": 12.318108
         }
       ],
-      "updatedAt": "2026-08-14T05:19:19.113Z"
+      "updatedAt": "2026-08-23T04:31:11.559Z"
     },
     "recycling": {
       "count": 16,
       "pois": [],
-      "updatedAt": "2026-08-14T05:19:19.639Z"
+      "updatedAt": "2026-08-23T04:31:12.548Z"
     },
     "luggage-storage": {
       "count": 7,
@@ -749,7 +765,7 @@
           "lon": 12.319152
         }
       ],
-      "updatedAt": "2026-08-14T05:19:20.070Z"
+      "updatedAt": "2026-08-23T04:31:12.972Z"
     },
     "libraries": {
       "count": 24,
@@ -882,16 +898,33 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:19:20.541Z"
+      "updatedAt": "2026-08-23T04:31:13.439Z"
     },
     "outdoor-gyms": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-08-14T05:19:21.019Z"
+      "updatedAt": "2026-08-23T04:31:14.334Z"
     },
     "camp-sites": {
-      "count": 4,
+      "count": 6,
       "pois": [
+        {
+          "id": "way/715160832",
+          "name": "Area Sosta Camper - Venezia",
+          "lat": 45.443556,
+          "lon": 12.306372,
+          "address": "Isola Nova del Tronchetto",
+          "fee": "yes"
+        },
+        {
+          "id": "way/477169271",
+          "name": "Caravan Park San Giuliano",
+          "lat": 45.467889,
+          "lon": 12.279064,
+          "address": "Via San Giuliano 1",
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
         {
           "id": "way/28491597",
           "name": "Camping Fusina",
@@ -927,26 +960,75 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:19:21.451Z"
+      "updatedAt": "2026-08-23T04:31:14.808Z"
     },
     "shelters": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:19:22.186Z"
+      "updatedAt": "2026-08-23T04:31:15.526Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:19:22.585Z"
+      "updatedAt": "2026-08-23T04:31:15.997Z"
     },
     "dump-stations": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-08-14T05:19:22.994Z"
+      "updatedAt": "2026-08-23T04:31:16.407Z"
     },
     "post-offices": {
-      "count": 1,
+      "count": 13,
       "pois": [
+        {
+          "id": "node/1681386245",
+          "name": "Posteitaliane",
+          "lat": 45.442289,
+          "lon": 12.324261,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13920936778",
+          "name": "Venezia 10",
+          "lat": 45.430796,
+          "lon": 12.321199,
+          "openingHours": "Mo-Fr 08:20-13:35; Sa 08:20-12:35"
+        },
+        {
+          "id": "node/4809692078",
+          "name": "Poste (san polo)",
+          "lat": 45.437117,
+          "lon": 12.330104,
+          "openingHours": "Tu, Th 08:20-13:35; Sa 08:20-12:35",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3494969447",
+          "name": "Venezia 5",
+          "lat": 45.44215,
+          "lon": 12.334461,
+          "address": "Calle Priuli 3732"
+        },
+        {
+          "id": "node/5842201952",
+          "name": "Venezia - Fondamenta Santa Eufemia",
+          "lat": 45.426276,
+          "lon": 12.326755
+        },
+        {
+          "id": "node/1864853220",
+          "name": "Venezia 4 - San Marco;Poste italiane",
+          "lat": 45.433567,
+          "lon": 12.336949,
+          "openingHours": "Tu,Th 08:20-13:35; Sa 08:20-12:35; Mo,We,Fr,Su closed; PH closed",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/4446340622",
+          "name": "Brusato Transporti",
+          "lat": 45.438738,
+          "lon": 12.342515
+        },
         {
           "id": "node/5937826385",
           "name": "Poste Italiane",
@@ -955,19 +1037,28 @@
           "address": "Via Giuseppe Garibaldi",
           "openingHours": "Mo-Fr 08:20-13:35; Sa 08:20-12:35; Su, PH off",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/8553813864",
+          "name": "Poste Italiane Sant'Elena",
+          "lat": 45.4276,
+          "lon": 12.360196,
+          "address": "Viale Quattro Novembre 23",
+          "openingHours": "Mo-Fr 08:20-13:45; Sa 08:20-12:45; Su closed; PH closed",
+          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-17T04:05:26.263Z"
+      "updatedAt": "2026-08-23T04:31:16.831Z"
     },
     "showers": {
-      "count": 0,
+      "count": 12,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:26.663Z"
+      "updatedAt": "2026-08-23T04:31:17.186Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:27.194Z"
+      "updatedAt": "2026-08-23T04:31:17.916Z"
     },
     "air-pumps": {
       "count": 0,
@@ -975,9 +1066,9 @@
       "updatedAt": "2026-08-17T04:05:27.566Z"
     },
     "benches": {
-      "count": 0,
+      "count": 909,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:27.972Z"
+      "updatedAt": "2026-08-23T04:31:18.621Z"
     },
     "compressed-air": {
       "count": 0,

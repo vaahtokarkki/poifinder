@@ -1,9 +1,9 @@
 {
   "city": "copenhagen",
-  "generatedAt": "2026-08-18T03:58:04.018Z",
+  "generatedAt": "2026-08-23T04:02:20.708Z",
   "categories": {
     "toilets": {
-      "count": 326,
+      "count": 331,
       "pois": [
         {
           "id": "node/5314135021",
@@ -12,6 +12,14 @@
           "lon": 12.569158,
           "wheelchair": "no",
           "fee": "no"
+        },
+        {
+          "id": "node/4062048182",
+          "lat": 55.673398,
+          "lon": 12.582208,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Den Sorte Diamant"
         },
         {
           "id": "node/767408825",
@@ -63,6 +71,13 @@
           "fee": "no"
         },
         {
+          "id": "way/176714011",
+          "name": "Brasserie Post",
+          "lat": 55.699694,
+          "lon": 12.574985,
+          "wheelchair": "yes"
+        },
+        {
           "id": "way/116604434",
           "name": "Amager Centret",
           "lat": 55.663077,
@@ -93,6 +108,13 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/324094728",
+          "name": "Kronen Vanløse",
+          "lat": 55.687614,
+          "lon": 12.492363,
+          "openingHours": "Mo-Fr 07:00-21:00; Sa 07:00-18:00; Su 07:00-17:00"
+        },
+        {
           "id": "relation/20346870",
           "name": "Field's",
           "lat": 55.630305,
@@ -100,6 +122,14 @@
           "openingHours": "Mo-Su 10:00-20:00",
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "way/25605309",
+          "name": "Hvidovre C",
+          "lat": 55.663561,
+          "lon": 12.475724,
+          "openingHours": "Mo-Su 06:00-22:00; PH off",
+          "wheelchair": "yes"
         },
         {
           "id": "node/281497332",
@@ -118,12 +148,19 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:03:52.151Z"
+      "updatedAt": "2026-08-23T04:02:04.603Z"
     },
     "drinking-water": {
-      "count": 126,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:03:52.755Z"
+      "count": 125,
+      "pois": [
+        {
+          "id": "node/1778048303",
+          "lat": 55.66986,
+          "lon": 12.525272,
+          "context": "Søndermarken Hundeskov"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:02:06.389Z"
     },
     "playgrounds": {
       "count": 804,
@@ -221,12 +258,6 @@
           "lon": 12.554596
         },
         {
-          "id": "node/2497032341",
-          "name": "Børnehusets legeplads",
-          "lat": 55.680139,
-          "lon": 12.602916
-        },
-        {
           "id": "way/41494938",
           "name": "Tårnlegepladsen",
           "lat": 55.697254,
@@ -313,12 +344,18 @@
           "lat": 55.705825,
           "lon": 12.572629,
           "wheelchair": "limited"
+        },
+        {
+          "id": "way/122540783",
+          "name": "Bredegrund",
+          "lat": 55.658794,
+          "lon": 12.613375
         }
       ],
-      "updatedAt": "2026-08-14T05:03:53.623Z"
+      "updatedAt": "2026-08-23T04:02:07.228Z"
     },
     "parking": {
-      "count": 4166,
+      "count": 4172,
       "pois": [
         {
           "id": "way/187179841",
@@ -545,10 +582,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:03:54.748Z"
+      "updatedAt": "2026-08-23T04:02:08.400Z"
     },
     "charging-stations": {
-      "count": 368,
+      "count": 366,
       "pois": [
         {
           "id": "way/1492283158",
@@ -754,7 +791,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:03:55.243Z"
+      "updatedAt": "2026-08-23T04:02:09.011Z"
     },
     "gas-stations": {
       "count": 102,
@@ -919,10 +956,10 @@
           "lon": 12.523281
         }
       ],
-      "updatedAt": "2026-08-14T05:03:55.779Z"
+      "updatedAt": "2026-08-23T04:02:09.493Z"
     },
     "ice-cream": {
-      "count": 107,
+      "count": 108,
       "pois": [
         {
           "id": "node/8658464203",
@@ -1111,7 +1148,7 @@
           "lon": 12.590184
         }
       ],
-      "updatedAt": "2026-08-14T05:03:56.355Z"
+      "updatedAt": "2026-08-23T04:02:10.143Z"
     },
     "dog-parks": {
       "count": 61,
@@ -1318,10 +1355,10 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:03:56.730Z"
+      "updatedAt": "2026-08-23T04:02:10.552Z"
     },
     "picnic-spots": {
-      "count": 1070,
+      "count": 1097,
       "pois": [
         {
           "id": "way/1189309226",
@@ -1354,11 +1391,20 @@
           "lon": 12.576776
         }
       ],
-      "updatedAt": "2026-08-14T05:03:57.461Z"
+      "updatedAt": "2026-08-23T04:02:12.032Z"
     },
     "viewpoints": {
-      "count": 37,
+      "count": 45,
       "pois": [
+        {
+          "id": "way/1011492033",
+          "name": "Rundetårn",
+          "lat": 55.681362,
+          "lon": 12.575794,
+          "openingHours": "May 01-Sep 30; Mo-Su 10:00-20:00; Oct 01-Apr 30; Mo,Th-Su 10:00-18:00; Tu,We 10:00-21:00",
+          "wheelchair": "limited",
+          "fee": "yes"
+        },
         {
           "id": "node/6772144886",
           "name": "Christiansborg Slotstårn",
@@ -1447,7 +1493,7 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:03:57.882Z"
+      "updatedAt": "2026-08-23T04:02:12.675Z"
     },
     "beaches": {
       "count": 35,
@@ -1563,7 +1609,7 @@
           "lon": 12.50198
         }
       ],
-      "updatedAt": "2026-08-14T05:03:58.405Z"
+      "updatedAt": "2026-08-23T04:02:13.255Z"
     },
     "atms": {
       "count": 127,
@@ -1697,15 +1743,15 @@
           "lon": 12.648011
         }
       ],
-      "updatedAt": "2026-08-14T05:03:58.924Z"
+      "updatedAt": "2026-08-23T04:02:13.778Z"
     },
     "post-boxes": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:03:59.398Z"
+      "updatedAt": "2026-08-23T04:02:14.362Z"
     },
     "recycling": {
-      "count": 784,
+      "count": 789,
       "pois": [
         {
           "id": "node/11163644798",
@@ -1902,7 +1948,7 @@
           "openingHours": "Mo-Fr 10:00-18:00; Sa-Su 10:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:00.134Z"
+      "updatedAt": "2026-08-23T04:02:15.873Z"
     },
     "luggage-storage": {
       "count": 5,
@@ -1929,10 +1975,10 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:00.602Z"
+      "updatedAt": "2026-08-23T04:02:16.378Z"
     },
     "libraries": {
-      "count": 69,
+      "count": 70,
       "pois": [
         {
           "id": "node/917945388",
@@ -2146,10 +2192,10 @@
           "openingHours": "08:00-20:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:01.118Z"
+      "updatedAt": "2026-08-23T04:02:16.896Z"
     },
     "outdoor-gyms": {
-      "count": 93,
+      "count": 101,
       "pois": [
         {
           "id": "way/919268509",
@@ -2176,11 +2222,10 @@
           "lon": 12.523308
         },
         {
-          "id": "way/172366493",
-          "name": "Motionsplads",
-          "lat": 55.704371,
-          "lon": 12.571517,
-          "openingHours": "24/7"
+          "id": "node/12669384688",
+          "lat": 55.70431,
+          "lon": 12.571422,
+          "context": "Motionsplads"
         },
         {
           "id": "way/254131676",
@@ -2197,11 +2242,49 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:01.592Z"
+      "updatedAt": "2026-08-23T04:02:18.022Z"
     },
     "camp-sites": {
-      "count": 3,
+      "count": 8,
       "pois": [
+        {
+          "id": "node/13090504243",
+          "name": "Urban Camp Copenhagen",
+          "lat": 55.65814,
+          "lon": 12.550683,
+          "fee": "yes"
+        },
+        {
+          "id": "way/1079605467",
+          "name": "Citycamp cph",
+          "lat": 55.67049,
+          "lon": 12.624084,
+          "openingHours": "Jun-Aug",
+          "fee": "yes"
+        },
+        {
+          "id": "way/441779156",
+          "name": "Svanemøllehavnen",
+          "lat": 55.718237,
+          "lon": 12.589621,
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "way/1135177583",
+          "name": "Kastrup Lystbådehavn",
+          "lat": 55.64187,
+          "lon": 12.6494,
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "node/1642845776",
+          "name": "Charlottenlund fort",
+          "lat": 55.745469,
+          "lon": 12.586465,
+          "fee": "yes"
+        },
         {
           "id": "node/1642845768",
           "name": "Charlottenlund Fort Camping",
@@ -2210,10 +2293,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:02.029Z"
+      "updatedAt": "2026-08-23T04:02:18.529Z"
     },
     "shelters": {
-      "count": 45,
+      "count": 33,
       "pois": [
         {
           "id": "way/1196417897",
@@ -2251,12 +2334,6 @@
           "name": "Hytten ved Store Høj",
           "lat": 55.617662,
           "lon": 12.563717
-        },
-        {
-          "id": "way/52598891",
-          "name": "Ildstedet",
-          "lat": 55.616924,
-          "lon": 12.576776
         },
         {
           "id": "way/236829740",
@@ -2313,17 +2390,17 @@
           "lon": 12.667374
         }
       ],
-      "updatedAt": "2026-08-14T05:04:02.845Z"
+      "updatedAt": "2026-08-23T04:02:19.649Z"
     },
     "rest-areas": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-14T05:04:03.290Z"
+      "updatedAt": "2026-08-23T04:02:20.117Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:04:03.693Z"
+      "updatedAt": "2026-08-23T04:02:20.606Z"
     },
     "post-offices": {
       "count": 0,

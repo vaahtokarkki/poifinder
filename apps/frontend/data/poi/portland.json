@@ -1,9 +1,9 @@
 {
   "city": "portland",
-  "generatedAt": "2026-08-18T03:58:35.009Z",
+  "generatedAt": "2026-08-23T04:35:15.759Z",
   "categories": {
     "toilets": {
-      "count": 170,
+      "count": 173,
       "pois": [
         {
           "id": "node/2711891091",
@@ -28,6 +28,12 @@
           "lon": -122.68392
         },
         {
+          "id": "node/6453859200",
+          "lat": 45.519084,
+          "lon": -122.683504,
+          "context": "Central Library"
+        },
+        {
           "id": "way/778387404",
           "name": "Gender Neutral Restrooms",
           "lat": 45.511643,
@@ -41,6 +47,14 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/321768746",
+          "name": "Shake Shack",
+          "lat": 45.52267,
+          "lon": -122.681513,
+          "address": "West Burnside Street 1016",
+          "openingHours": "Mo-Th,Su 10:30-22:00; Fr-Sa 10:30-23:30"
+        },
+        {
           "id": "way/368336151",
           "name": "Blue Star Donuts",
           "lat": 45.518055,
@@ -48,6 +62,13 @@
           "address": "Southwest Jefferson Street 1701",
           "openingHours": "Mo-Su 07:00-17:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/2503342003",
+          "lat": 45.524726,
+          "lon": -122.670725,
+          "openingHours": "Mo-Th 07:00-24:00; Fr-Sa 07:00-03:00; Su 09:00-22:00; Jan Su off, Feb Su off",
+          "context": "SmartPark"
         },
         {
           "id": "node/3843957538",
@@ -68,6 +89,15 @@
           "lon": -122.696194,
           "address": "Northwest Raleigh Street 2170",
           "openingHours": "07:00-22:00"
+        },
+        {
+          "id": "way/365635341",
+          "name": "Pixiu Mala Hongtang",
+          "lat": 45.535321,
+          "lon": -122.699605,
+          "address": "Northwest Thurman Street 2330",
+          "openingHours": "Mo-Fr 11:00-15:00,16:00-21:00; Sa-Su 12:00-21:00",
+          "wheelchair": "limited"
         },
         {
           "id": "way/309492263",
@@ -101,6 +131,15 @@
           "address": "Southeast Division Street 3402"
         },
         {
+          "id": "way/267098489",
+          "name": "Face Plant",
+          "lat": 45.555629,
+          "lon": -122.698696,
+          "address": "North Going Street 3110",
+          "openingHours": "Mo-Su 11:00-22:00",
+          "wheelchair": "yes"
+        },
+        {
           "id": "way/459788545",
           "name": "Wong's Garden",
           "lat": 45.479346,
@@ -117,10 +156,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:24.403Z"
+      "updatedAt": "2026-08-23T04:34:59.267Z"
     },
     "drinking-water": {
-      "count": 203,
+      "count": 204,
       "pois": [
         {
           "id": "node/5930541985",
@@ -159,7 +198,7 @@
           "lon": -122.713749
         }
       ],
-      "updatedAt": "2026-08-14T05:21:25.069Z"
+      "updatedAt": "2026-08-23T04:35:00.889Z"
     },
     "playgrounds": {
       "count": 227,
@@ -262,10 +301,10 @@
           "lon": -122.588092
         }
       ],
-      "updatedAt": "2026-08-14T05:21:25.809Z"
+      "updatedAt": "2026-08-23T04:35:01.708Z"
     },
     "parking": {
-      "count": 1574,
+      "count": 1573,
       "pois": [
         {
           "id": "way/331780186",
@@ -491,7 +530,7 @@
           "lon": -122.6885
         }
       ],
-      "updatedAt": "2026-08-14T05:21:26.784Z"
+      "updatedAt": "2026-08-23T04:35:02.846Z"
     },
     "charging-stations": {
       "count": 36,
@@ -549,7 +588,7 @@
           "lon": -122.70321
         }
       ],
-      "updatedAt": "2026-08-14T05:21:27.266Z"
+      "updatedAt": "2026-08-23T04:35:03.285Z"
     },
     "gas-stations": {
       "count": 73,
@@ -640,7 +679,7 @@
           "lon": -122.604319
         }
       ],
-      "updatedAt": "2026-08-14T05:21:27.807Z"
+      "updatedAt": "2026-08-23T04:35:03.747Z"
     },
     "ice-cream": {
       "count": 35,
@@ -880,7 +919,7 @@
           "openingHours": "Mo-Su 11:00-22:00; Fr,Sa 11:00-23:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:28.275Z"
+      "updatedAt": "2026-08-23T04:35:04.257Z"
     },
     "dog-parks": {
       "count": 28,
@@ -986,7 +1025,7 @@
           "lon": -122.600366
         }
       ],
-      "updatedAt": "2026-08-14T05:21:28.704Z"
+      "updatedAt": "2026-08-23T04:35:04.700Z"
     },
     "picnic-spots": {
       "count": 354,
@@ -1035,11 +1074,17 @@
           "address": "North Rosa Parks Way 700"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:29.363Z"
+      "updatedAt": "2026-08-23T04:35:06.018Z"
     },
     "viewpoints": {
-      "count": 21,
+      "count": 22,
       "pois": [
+        {
+          "id": "node/14090539752",
+          "name": "Olmsted View",
+          "lat": 45.518615,
+          "lon": -122.703667
+        },
         {
           "id": "node/3124911316",
           "name": "Elk Point Viewpoint",
@@ -1053,7 +1098,7 @@
           "lon": -122.729492
         }
       ],
-      "updatedAt": "2026-08-14T05:21:29.853Z"
+      "updatedAt": "2026-08-23T04:35:06.540Z"
     },
     "beaches": {
       "count": 17,
@@ -1071,7 +1116,7 @@
           "lon": -122.699517
         }
       ],
-      "updatedAt": "2026-08-14T05:21:30.327Z"
+      "updatedAt": "2026-08-23T04:35:07.086Z"
     },
     "atms": {
       "count": 177,
@@ -1275,10 +1320,10 @@
           "openingHours": "Mo-Th 09:00-17:00; Fr 09:00-18:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:30.969Z"
+      "updatedAt": "2026-08-23T04:35:07.774Z"
     },
     "post-boxes": {
-      "count": 254,
+      "count": 252,
       "pois": [
         {
           "id": "node/6854513578",
@@ -1287,10 +1332,10 @@
           "lon": -122.621698
         }
       ],
-      "updatedAt": "2026-08-14T05:21:31.529Z"
+      "updatedAt": "2026-08-23T04:35:08.388Z"
     },
     "recycling": {
-      "count": 70,
+      "count": 71,
       "pois": [
         {
           "id": "node/7134533212",
@@ -1321,6 +1366,12 @@
           "openingHours": "08:00-16:00"
         },
         {
+          "id": "way/1160037796",
+          "name": "BottleDrop Express",
+          "lat": 45.469806,
+          "lon": -122.691687
+        },
+        {
           "id": "way/298681151",
           "name": "Goodwill Donation Center",
           "lat": 45.469523,
@@ -1329,12 +1380,12 @@
           "openingHours": "09:00-20:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:32.011Z"
+      "updatedAt": "2026-08-23T04:35:09.632Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:32.454Z"
+      "updatedAt": "2026-08-23T04:35:10.067Z"
     },
     "libraries": {
       "count": 143,
@@ -1556,7 +1607,7 @@
           "openingHours": "off"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:32.928Z"
+      "updatedAt": "2026-08-23T04:35:10.580Z"
     },
     "outdoor-gyms": {
       "count": 6,
@@ -1582,12 +1633,12 @@
           "lon": -122.594468
         }
       ],
-      "updatedAt": "2026-08-14T05:21:33.385Z"
+      "updatedAt": "2026-08-23T04:35:11.394Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:33.819Z"
+      "updatedAt": "2026-08-23T04:35:11.866Z"
     },
     "shelters": {
       "count": 17,
@@ -1605,32 +1656,188 @@
           "lon": -122.716772
         }
       ],
-      "updatedAt": "2026-08-14T05:21:34.556Z"
+      "updatedAt": "2026-08-23T04:35:12.527Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:34.956Z"
+      "updatedAt": "2026-08-23T04:35:12.958Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:35.358Z"
+      "updatedAt": "2026-08-23T04:35:13.359Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:50.662Z"
+      "count": 35,
+      "pois": [
+        {
+          "id": "node/6595803898",
+          "name": "Waterfront Station Post Office",
+          "lat": 45.514742,
+          "lon": -122.675527,
+          "address": "Southwest Madison Street 101",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 10:00-15:00"
+        },
+        {
+          "id": "node/6517115565",
+          "name": "The UPS Store",
+          "lat": 45.517292,
+          "lon": -122.675857,
+          "address": "Southwest 3rd Avenue 818",
+          "openingHours": "Mo-Fr 08:00-18:30; Sa 11:00-17:00"
+        },
+        {
+          "id": "node/6487420444",
+          "name": "Central Post Office",
+          "lat": 45.521959,
+          "lon": -122.675643,
+          "address": "Southwest 5th Avenue 204",
+          "openingHours": "Mo-Fr 08:30-17:00"
+        },
+        {
+          "id": "node/8788279300",
+          "name": "Portland Main Post Office",
+          "lat": 45.527657,
+          "lon": -122.679271,
+          "address": "Northwest Hoyt Street 745"
+        },
+        {
+          "id": "way/34198756",
+          "name": "East Portland Post Office",
+          "lat": 45.515501,
+          "lon": -122.658276,
+          "address": "Southeast 7th Avenue 1020",
+          "openingHours": "Mo-Fr 08:30-17:00"
+        },
+        {
+          "id": "node/6330455537",
+          "name": "FedEx Office",
+          "lat": 45.529929,
+          "lon": -122.683112,
+          "address": "Northwest Lovejoy Street 1136",
+          "openingHours": "Mo-Fr 07:00-20:00; Sa 08:00-17:00"
+        },
+        {
+          "id": "node/13375284542",
+          "name": "River District",
+          "lat": 45.537322,
+          "lon": -122.693158,
+          "address": "Northwest Vaughn Street 2017"
+        },
+        {
+          "id": "node/2511023849",
+          "name": "Brooklyn Post Office",
+          "lat": 45.499833,
+          "lon": -122.65094,
+          "address": "Southeast Powell Boulevard 1410",
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
+          "id": "way/39274485",
+          "name": "Holladay Park Station Post Office",
+          "lat": 45.53603,
+          "lon": -122.657261,
+          "address": "Northeast Schuyler Street 815"
+        },
+        {
+          "id": "node/4840895926",
+          "name": "PostalAnnex",
+          "lat": 45.535197,
+          "lon": -122.648735,
+          "address": "Northeast Broadway 1631",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 09:00-17:00; Su 12:00-17:00"
+        },
+        {
+          "id": "node/9079447050",
+          "name": "NW Postal & Shipping",
+          "lat": 45.544237,
+          "lon": -122.704336,
+          "address": "Northwest Yeon Avenue 3055",
+          "openingHours": "Mo-Fr 08:00-17:00; Sa 10:00-16:00"
+        },
+        {
+          "id": "node/8874483479",
+          "name": "FedEx Ship Center",
+          "lat": 45.555311,
+          "lon": -122.697493,
+          "address": "North Port Center Way 4344",
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 09:00-17:00"
+        },
+        {
+          "id": "way/132501018",
+          "name": "Sellwood Post Office",
+          "lat": 45.474052,
+          "lon": -122.650331,
+          "address": "Southeast 16th Avenue 6723",
+          "openingHours": "Mo-Fr 09:00-18:00"
+        },
+        {
+          "id": "node/3982729958",
+          "name": "The Postal Station",
+          "lat": 45.537209,
+          "lon": -122.619724,
+          "address": "Northeast 42nd Avenue 2000",
+          "openingHours": "Mo-Fr 09:30-17:00; Sa 09:30-14:00"
+        },
+        {
+          "id": "way/361103488",
+          "name": "Piedmont Post Office",
+          "lat": 45.5625,
+          "lon": -122.659172,
+          "address": "Northeast Killingsworth Street 630"
+        },
+        {
+          "id": "way/210896838",
+          "name": "Creston Post Office",
+          "lat": 45.496601,
+          "lon": -122.611389,
+          "address": "Southeast Foster Road 5010",
+          "openingHours": "Mo-Fr 08:30-17:00"
+        },
+        {
+          "id": "way/160435003",
+          "name": "Rose City Park Post Office",
+          "lat": 45.539629,
+          "lon": -122.612296,
+          "address": "Northeast 50th Avenue 2425",
+          "openingHours": "Mo-Sa 06:00-18:00"
+        },
+        {
+          "id": "way/296125134",
+          "name": "Multnomah Post Office",
+          "lat": 45.468037,
+          "lon": -122.718931,
+          "address": "Southwest 40th Avenue 7805"
+        },
+        {
+          "id": "way/331408360",
+          "name": "West Slope Post Office",
+          "lat": 45.49682,
+          "lon": -122.767106,
+          "address": "Southwest 87th Avenue 3225",
+          "openingHours": "Mo-Fr 08:30-17:00"
+        },
+        {
+          "id": "way/367188015",
+          "name": "Kenton Post Office",
+          "lat": 45.582162,
+          "lon": -122.688539,
+          "address": "North Kilpatrick Street 2130",
+          "openingHours": "Mo-Fr 06:00-18:00 open \"lobby\" || Sa 06:00-17:00 open \"lobby\" || Mo-Fr 08:30-17:00 open \"window\""
+        }
+      ],
+      "updatedAt": "2026-08-23T04:35:13.828Z"
     },
     "showers": {
-      "count": 0,
+      "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:51.058Z"
+      "updatedAt": "2026-08-23T04:35:14.218Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:51.655Z"
+      "updatedAt": "2026-08-23T04:35:14.890Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1638,9 +1845,17 @@
       "updatedAt": "2026-08-17T04:05:52.030Z"
     },
     "benches": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:52.444Z"
+      "count": 1281,
+      "pois": [
+        {
+          "id": "node/4927359404",
+          "name": "Himalayan Gifts",
+          "lat": 45.537076,
+          "lon": -122.619615,
+          "address": "Northeast 42nd Avenue 2000"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:35:15.658Z"
     },
     "compressed-air": {
       "count": 0,

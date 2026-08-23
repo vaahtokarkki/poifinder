@@ -1,10 +1,16 @@
 {
   "city": "ljubljana",
-  "generatedAt": "2026-08-18T03:58:07.927Z",
+  "generatedAt": "2026-08-23T04:06:29.417Z",
   "categories": {
     "toilets": {
       "count": 53,
       "pois": [
+        {
+          "id": "node/3315607851",
+          "lat": 46.07821,
+          "lon": 14.512677,
+          "context": "Petrol"
+        },
         {
           "id": "way/912080437",
           "name": "IKEA",
@@ -24,6 +30,12 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/10790923592",
+          "lat": 46.069203,
+          "lon": 14.542599,
+          "context": "Petrol - Ljubljana - Šmartinska 150"
+        },
+        {
           "id": "way/23057646",
           "name": "Nakupovalni center Citypark",
           "lat": 46.067679,
@@ -31,12 +43,24 @@
           "address": "Moskovska ulica 4",
           "openingHours": "Mo-Fr 09:00-21:00; Sa 08:00-21:00; Su, PH off",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/1765051065",
+          "lat": 46.020089,
+          "lon": 14.54265,
+          "context": "Petrol - Ljubljana - Rudnik Vzhod"
+        },
+        {
+          "id": "node/1765053681",
+          "lat": 46.01983,
+          "lon": 14.542131,
+          "context": "Petrol - Ljubljana - Rudnik Zahod"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:10.415Z"
+      "updatedAt": "2026-08-23T04:06:12.124Z"
     },
     "drinking-water": {
-      "count": 111,
+      "count": 115,
       "pois": [
         {
           "id": "node/8692892261",
@@ -268,7 +292,7 @@
           "lon": 14.494158
         }
       ],
-      "updatedAt": "2026-08-14T05:06:11.063Z"
+      "updatedAt": "2026-08-23T04:06:13.899Z"
     },
     "playgrounds": {
       "count": 272,
@@ -359,10 +383,10 @@
           "lon": 14.595195
         }
       ],
-      "updatedAt": "2026-08-14T05:06:11.802Z"
+      "updatedAt": "2026-08-23T04:06:14.715Z"
     },
     "parking": {
-      "count": 2639,
+      "count": 2647,
       "pois": [
         {
           "id": "way/186547118",
@@ -590,7 +614,7 @@
           "lon": 14.513812
         }
       ],
-      "updatedAt": "2026-08-14T05:06:12.799Z"
+      "updatedAt": "2026-08-23T04:06:15.746Z"
     },
     "charging-stations": {
       "count": 79,
@@ -660,7 +684,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:13.295Z"
+      "updatedAt": "2026-08-23T04:06:16.267Z"
     },
     "gas-stations": {
       "count": 48,
@@ -879,10 +903,11 @@
         },
         {
           "id": "way/90112183",
-          "name": "MOL Rudnik",
+          "name": "MOL",
           "lat": 46.017268,
           "lon": 14.530334,
           "address": "Premrlova ulica 10",
+          "openingHours": "Mo-Fr 06:00-22:00; Sa 07:00-22:00; Su 08:00-16:00",
           "wheelchair": "yes"
         },
         {
@@ -902,10 +927,10 @@
           "openingHours": "Mo-Fr 05:30-21:00; Sa 06:30-21:00; Su 07:30-21:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:13.828Z"
+      "updatedAt": "2026-08-23T04:06:16.712Z"
     },
     "ice-cream": {
-      "count": 19,
+      "count": 20,
       "pois": [
         {
           "id": "node/2956245819",
@@ -1012,13 +1037,20 @@
           "openingHours": "07:00-15:00"
         },
         {
+          "id": "node/14095098055",
+          "name": "Teta Frida",
+          "lat": 46.038846,
+          "lon": 14.476448,
+          "openingHours": "Mo-Sa 08:00-21:00"
+        },
+        {
           "id": "node/13015441668",
           "name": "DiMatteo",
           "lat": 46.06579,
           "lon": 14.549485
         }
       ],
-      "updatedAt": "2026-08-14T05:06:14.292Z"
+      "updatedAt": "2026-08-23T04:06:17.232Z"
     },
     "dog-parks": {
       "count": 8,
@@ -1037,7 +1069,7 @@
           "lon": 14.458693
         }
       ],
-      "updatedAt": "2026-08-14T05:06:14.717Z"
+      "updatedAt": "2026-08-23T04:06:17.621Z"
     },
     "picnic-spots": {
       "count": 221,
@@ -1081,12 +1113,26 @@
           "address": "Gabrje 96a"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:15.303Z"
+      "updatedAt": "2026-08-23T04:06:18.879Z"
     },
     "viewpoints": {
-      "count": 14,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:06:15.771Z"
+      "count": 19,
+      "pois": [
+        {
+          "id": "way/174383028",
+          "name": "Grajski stolp",
+          "lat": 46.048548,
+          "lon": 14.507921,
+          "fee": "yes"
+        },
+        {
+          "id": "node/7428831846",
+          "name": "temelji stražnega stolpa",
+          "lat": 46.090339,
+          "lon": 14.43647
+        }
+      ],
+      "updatedAt": "2026-08-23T04:06:19.451Z"
     },
     "beaches": {
       "count": 10,
@@ -1106,10 +1152,10 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:16.249Z"
+      "updatedAt": "2026-08-23T04:06:19.898Z"
     },
     "atms": {
-      "count": 155,
+      "count": 154,
       "pois": [
         {
           "id": "node/11387715513",
@@ -1254,12 +1300,6 @@
           "lon": 14.513994
         },
         {
-          "id": "node/5068913912",
-          "name": "SKB",
-          "lat": 46.038847,
-          "lon": 14.47645
-        },
-        {
           "id": "node/4874488781",
           "name": "Intesa Sanpaolo",
           "lat": 46.050293,
@@ -1307,12 +1347,12 @@
           "lon": 14.460544
         }
       ],
-      "updatedAt": "2026-08-14T05:06:16.831Z"
+      "updatedAt": "2026-08-23T04:06:20.489Z"
     },
     "post-boxes": {
       "count": 79,
       "pois": [],
-      "updatedAt": "2026-08-14T05:06:17.337Z"
+      "updatedAt": "2026-08-23T04:06:20.944Z"
     },
     "recycling": {
       "count": 344,
@@ -1331,12 +1371,12 @@
           "address": "Šlandrova ulica 4"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:17.919Z"
+      "updatedAt": "2026-08-23T04:06:22.139Z"
     },
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:06:18.378Z"
+      "updatedAt": "2026-08-23T04:06:22.564Z"
     },
     "libraries": {
       "count": 31,
@@ -1568,7 +1608,7 @@
           "openingHours": "Mo-Tu,Th 13:30-19:00; We,Fr 10:00-15:00; PH off"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:18.849Z"
+      "updatedAt": "2026-08-23T04:06:22.967Z"
     },
     "outdoor-gyms": {
       "count": 115,
@@ -1599,11 +1639,35 @@
           "lon": 14.457964
         }
       ],
-      "updatedAt": "2026-08-14T05:06:19.326Z"
+      "updatedAt": "2026-08-23T04:06:24.034Z"
     },
     "camp-sites": {
-      "count": 1,
+      "count": 6,
       "pois": [
+        {
+          "id": "way/776431131",
+          "name": "Livada",
+          "lat": 46.034847,
+          "lon": 14.508845,
+          "fee": "yes"
+        },
+        {
+          "id": "way/996954489",
+          "name": "PZA Camper Stop P+R Dolgi Most",
+          "lat": 46.03733,
+          "lon": 14.46513,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
+          "id": "way/1090231087",
+          "name": "Camper Stop Ljubljana",
+          "lat": 46.021067,
+          "lon": 14.52324,
+          "address": "Peruzzijeva ulica 105",
+          "fee": "yes"
+        },
         {
           "id": "relation/16849553",
           "name": "Ljubljana Resort Hotel & Camp",
@@ -1611,26 +1675,41 @@
           "lon": 14.518713,
           "address": "Dunajska cesta 270",
           "wheelchair": "yes"
+        },
+        {
+          "id": "relation/17077942",
+          "name": "P+R Stanežiče",
+          "lat": 46.10724,
+          "lon": 14.446978,
+          "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:19.753Z"
+      "updatedAt": "2026-08-23T04:06:24.495Z"
     },
     "shelters": {
-      "count": 6,
+      "count": 5,
       "pois": [
         {
-          "id": "way/828767025",
-          "name": "Piknik pri kozolcu",
-          "lat": 46.068715,
-          "lon": 14.455691
+          "id": "way/679263306",
+          "name": "Koča Klobuk",
+          "lat": 46.063699,
+          "lon": 14.434733,
+          "openingHours": "We-Fr 10:00-22:00; Sa-Su,PH 08:22"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:20.495Z"
+      "updatedAt": "2026-08-23T04:06:25.571Z"
     },
     "rest-areas": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:06:20.916Z"
+      "count": 4,
+      "pois": [
+        {
+          "id": "way/891585003",
+          "name": "Počivališče Barje",
+          "lat": 46.029317,
+          "lon": 14.480284
+        }
+      ],
+      "updatedAt": "2026-08-23T04:06:26.035Z"
     },
     "dump-stations": {
       "count": 3,
@@ -1643,20 +1722,267 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:06:21.311Z"
+      "updatedAt": "2026-08-23T04:06:26.438Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:07.498Z"
+      "count": 33,
+      "pois": [
+        {
+          "id": "node/56618925",
+          "name": "Pošta Ljubljana - Pražakova",
+          "lat": 46.056917,
+          "lon": 14.506565,
+          "address": "Pražakova ulica 3",
+          "openingHours": "Mo-Fr 08:00-19:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/443419948",
+          "name": "Pošta Ljubljana - Dunajska 19",
+          "lat": 46.060911,
+          "lon": 14.507071,
+          "address": "Dunajska cesta 19",
+          "openingHours": "Mo-Fr 08:00-19:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/56614599",
+          "name": "Pošta Ljubljana - Resljeva",
+          "lat": 46.054363,
+          "lon": 14.511043,
+          "address": "Resljeva cesta 14",
+          "openingHours": "Mo-Tu, Th-Fr 08:00-11:30, 12:00-15:00; We 12:00-14:30, 15:00-18:00"
+        },
+        {
+          "id": "way/773826107",
+          "name": "Glavna pošta",
+          "lat": 46.051955,
+          "lon": 14.503713,
+          "address": "Slovenska cesta 32",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:00-12:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/2080085781",
+          "name": "Pošta Ljubljana - Linhartova",
+          "lat": 46.064825,
+          "lon": 14.50987,
+          "address": "Linhartova cesta 9",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:00-12:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1977769371",
+          "name": "Pošta Ljubljana - Poljanski nasip",
+          "lat": 46.050728,
+          "lon": 14.515089,
+          "address": "Poljanski nasip 30",
+          "openingHours": "Mo,Tu,Th,Fr 08:00-11:00, Mo,Tu,Th,Fr 12:00-15:00, We 12:00-14:00, We 15:00-18:00"
+        },
+        {
+          "id": "node/1313952330",
+          "name": "Pošta Ljubljana - Štihova",
+          "lat": 46.063308,
+          "lon": 14.514784,
+          "address": "Štihova ulica 24",
+          "openingHours": "Mo,Tu,Th,Fr 08:00-11:00,12:00-15:00; We 12:00-14:00,15:00-18:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/2080085777",
+          "name": "Pošta 1132 Ljubljana - Celovška 73",
+          "lat": 46.064062,
+          "lon": 14.494117,
+          "address": "Celovška cesta 73",
+          "openingHours": "Mo,Tu,Th,Fr 09:00-17:00, We 09:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/2080085788",
+          "name": "Pošta Ljubljana - UKC",
+          "lat": 46.053739,
+          "lon": 14.521346,
+          "address": "Zaloška cesta 7",
+          "openingHours": "Mo-Fr 08:00-15:00; Th 08:00-11:00,14:00-17:00; Sa 08:00-12:00"
+        },
+        {
+          "id": "node/10686073295",
+          "name": "Pogodbeno prevzemno mesto Pošte Slovenije",
+          "lat": 46.063442,
+          "lon": 14.524635,
+          "address": "Savska cesta 3a",
+          "openingHours": "Mo-Fr 09:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/23061251",
+          "name": "Pošta Ljubljana - Celovška",
+          "lat": 46.069911,
+          "lon": 14.48856,
+          "address": "Celovška cesta 121",
+          "openingHours": "Mo-Fr 08:00-19:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/2080085785",
+          "name": "Pošta Ljubljana - Riharjeva",
+          "lat": 46.039177,
+          "lon": 14.499398,
+          "address": "Riharjeva ulica 38",
+          "openingHours": "Mo-Fr 08:00-11:30,14:30-18:00; Sa 08:00-11:00"
+        },
+        {
+          "id": "node/1756049163",
+          "name": "Pošta Ljubljana - Zaloška",
+          "lat": 46.056337,
+          "lon": 14.534682,
+          "address": "Zaloška cesta 57",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:00-12:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/2080085787",
+          "name": "Pošta Ljubljana - Tržaška",
+          "lat": 46.043609,
+          "lon": 14.481129,
+          "address": "Tržaška cesta 68a",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:00-12:00"
+        },
+        {
+          "id": "node/674143645",
+          "name": "Pošta Bežigrad",
+          "lat": 46.080236,
+          "lon": 14.51239,
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:00-12:00"
+        },
+        {
+          "id": "node/1241759477",
+          "name": "Pošta Ljubljana - Center Murgle",
+          "lat": 46.035973,
+          "lon": 14.489014,
+          "address": "Cesta v Mestni log 55",
+          "openingHours": "Mo-Fr 08:00-11:30,14:30-18:00; Sa 08:00-11:00"
+        },
+        {
+          "id": "node/1249619996",
+          "name": "Pošta Ljubljana - Dolenjska",
+          "lat": 46.03566,
+          "lon": 14.524804,
+          "address": "Dolenjska cesta 43",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:00-12:00"
+        },
+        {
+          "id": "node/2080085778",
+          "name": "Pošta Ljubljana - Dunajska 158",
+          "lat": 46.082268,
+          "lon": 14.51423,
+          "address": "Dunajska cesta 158",
+          "openingHours": "Mo-Fr 08:00-10:30,14:30-17:00; Sa 08:00-11:00"
+        },
+        {
+          "id": "node/2080085779",
+          "name": "Pošta Ljubljana - Koseze",
+          "lat": 46.071521,
+          "lon": 14.473223,
+          "address": "Ulica bratov Učakar 52",
+          "openingHours": "Mo,We,Fr 09:00-12:00,13:00-16:00; Tu,Th 09:00-12:00,15:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/2080085775",
+          "name": "Pošta Ljubljana - BTC",
+          "lat": 46.066263,
+          "lon": 14.544323,
+          "address": "Šmartinska cesta 152",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:00-12:00"
+        },
+        {
+          "id": "node/50143671",
+          "name": "Pošta 1119 Ljubljana - Litijska",
+          "lat": 46.047362,
+          "lon": 14.545746,
+          "address": "Litijska cesta 38",
+          "openingHours": "Mo-Fr 08:00-18:00"
+        },
+        {
+          "id": "way/922926704",
+          "name": "Poštno logistični center",
+          "lat": 46.033362,
+          "lon": 14.478954,
+          "address": "Cesta v Mestni log 81",
+          "openingHours": "Mo-Fr 08:00-24:00; Sa 08:00-18:00; Su 09:00-12:00"
+        },
+        {
+          "id": "node/1314390122",
+          "name": "Pošta Ljubljana - Dunajska 198a",
+          "lat": 46.08759,
+          "lon": 14.514479,
+          "address": "Dunajska cesta 198a",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:00-12:00"
+        },
+        {
+          "id": "way/160222925",
+          "name": "Pošta Ljubljana - Vodnikova",
+          "lat": 46.078606,
+          "lon": 14.472459,
+          "address": "Vodnikova cesta 235",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:00-12:00"
+        },
+        {
+          "id": "node/2080085776",
+          "name": "Pošta Ljubljana - Brdnikova",
+          "lat": 46.048326,
+          "lon": 14.460969,
+          "address": "Brdnikova ulica 14",
+          "openingHours": "Mo-Fr 08:00-11:30,14:30-18:00; Sa 08:00-11:00"
+        },
+        {
+          "id": "node/2080085783",
+          "name": "Pošta Ljubljana - Nove Fužine",
+          "lat": 46.054834,
+          "lon": 14.559079,
+          "address": "Nove Fužine 33",
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:00-12:00"
+        },
+        {
+          "id": "node/2080085789",
+          "name": "Pošta Ljubljana - Šentvid",
+          "lat": 46.090438,
+          "lon": 14.472488,
+          "address": "Prušnikova ulica 2",
+          "openingHours": "Mo,We,Fr 09:00-12:00,13:00-16:00; Tu,Th 09:00-12:00,15:00-18:00"
+        },
+        {
+          "id": "way/320789029",
+          "name": "Pošta Črnuče",
+          "lat": 46.102442,
+          "lon": 14.529619,
+          "address": "Dunajska cesta 361",
+          "openingHours": "Mo-Fr 08:00-18:00"
+        },
+        {
+          "id": "node/968593991",
+          "name": "Pošta Polje",
+          "lat": 46.056041,
+          "lon": 14.58423,
+          "address": "Zadobrovška cesta 14"
+        },
+        {
+          "id": "node/892715951",
+          "name": "Pošta Dobrova",
+          "lat": 46.053094,
+          "lon": 14.418639
+        }
+      ],
+      "updatedAt": "2026-08-23T04:06:26.912Z"
     },
     "showers": {
-      "count": 0,
+      "count": 3,
       "pois": [],
-      "updatedAt": "2026-08-17T04:03:07.833Z"
+      "updatedAt": "2026-08-23T04:06:27.348Z"
     },
     "fireplaces": {
-      "count": 2,
+      "count": 4,
       "pois": [
         {
           "id": "way/828767025",
@@ -1665,7 +1991,7 @@
           "lon": 14.455691
         }
       ],
-      "updatedAt": "2026-08-17T04:03:08.377Z"
+      "updatedAt": "2026-08-23T04:06:28.167Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1673,9 +1999,28 @@
       "updatedAt": "2026-08-17T04:03:08.727Z"
     },
     "benches": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:09.143Z"
+      "count": 2934,
+      "pois": [
+        {
+          "id": "node/9306958352",
+          "name": "Václav Havel bench",
+          "lat": 46.060794,
+          "lon": 14.512457
+        },
+        {
+          "id": "node/5069403948",
+          "name": "Edvard Kocbek",
+          "lat": 46.051348,
+          "lon": 14.495316
+        },
+        {
+          "id": "way/1147202271",
+          "name": "Zgodovina vesolja in zemlje na klopci",
+          "lat": 46.042551,
+          "lon": 14.534303
+        }
+      ],
+      "updatedAt": "2026-08-23T04:06:29.316Z"
     },
     "compressed-air": {
       "count": 0,

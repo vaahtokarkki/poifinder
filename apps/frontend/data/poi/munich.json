@@ -1,9 +1,9 @@
 {
   "city": "munich",
-  "generatedAt": "2026-08-18T03:58:10.174Z",
+  "generatedAt": "2026-08-23T04:09:15.425Z",
   "categories": {
     "toilets": {
-      "count": 403,
+      "count": 404,
       "pois": [
         {
           "id": "relation/3866522",
@@ -86,6 +86,15 @@
           "fee": "yes"
         },
         {
+          "id": "node/11964299975",
+          "lat": 48.146843,
+          "lon": 11.563564,
+          "openingHours": "Tu,We,Fr-Su,PH 10:00-18:00; Th 10:00-20:00; Mo off",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Lenbachhaus"
+        },
+        {
           "id": "node/10868942728",
           "name": "Toilette im Sure Hotel",
           "lat": 48.142033,
@@ -127,9 +136,19 @@
           "name": "Toilette für alle München Tierpark",
           "lat": 48.101646,
           "lon": 11.552854,
-          "openingHours": "Apr 01-Sep 31 Mo-Th 06:00-02:00, Fr-Su,PH 06:00-02:00",
+          "openingHours": "Apr 01-Sep 30 Mo-Th 06:00-02:00, Fr-Su,PH 06:00-02:00",
           "wheelchair": "yes",
           "fee": "no"
+        },
+        {
+          "id": "way/298266716",
+          "name": "BMW Museum",
+          "lat": 48.176746,
+          "lon": 11.559079,
+          "address": "Am Olympiapark 2",
+          "openingHours": "Tu-Su 10:00-18:00",
+          "wheelchair": "yes",
+          "fee": "yes"
         },
         {
           "id": "way/107087344",
@@ -235,10 +254,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:29.152Z"
+      "updatedAt": "2026-08-23T04:08:54.334Z"
     },
     "drinking-water": {
-      "count": 164,
+      "count": 163,
       "pois": [
         {
           "id": "node/599314016",
@@ -314,12 +333,6 @@
           "lat": 48.134972,
           "lon": 11.575476,
           "wheelchair": "yes"
-        },
-        {
-          "id": "way/77649074",
-          "name": "Sankt-Anna-Brunnen",
-          "lat": 48.14001,
-          "lon": 11.586949
         },
         {
           "id": "node/291364409",
@@ -432,12 +445,18 @@
           "name": "Seehundbrunnen",
           "lat": 48.165606,
           "lon": 11.579047
+        },
+        {
+          "id": "node/10921760400",
+          "name": "Kennedy-Brünnlein",
+          "lat": 48.1139,
+          "lon": 11.615032
         }
       ],
-      "updatedAt": "2026-08-14T05:07:29.969Z"
+      "updatedAt": "2026-08-23T04:08:56.159Z"
     },
     "playgrounds": {
-      "count": 1763,
+      "count": 1765,
       "pois": [
         {
           "id": "way/350826655",
@@ -639,10 +658,10 @@
           "lon": 11.556049
         }
       ],
-      "updatedAt": "2026-08-14T05:07:30.883Z"
+      "updatedAt": "2026-08-23T04:08:57.286Z"
     },
     "parking": {
-      "count": 3752,
+      "count": 3753,
       "pois": [
         {
           "id": "node/254075456",
@@ -881,7 +900,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:32.062Z"
+      "updatedAt": "2026-08-23T04:08:58.708Z"
     },
     "charging-stations": {
       "count": 675,
@@ -1069,7 +1088,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:32.721Z"
+      "updatedAt": "2026-08-23T04:08:59.298Z"
     },
     "gas-stations": {
       "count": 111,
@@ -1268,7 +1287,7 @@
           "openingHours": "Mo-Fr 08:30-19:00; Sa 08:30-18:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:33.318Z"
+      "updatedAt": "2026-08-23T04:08:59.937Z"
     },
     "ice-cream": {
       "count": 108,
@@ -1518,7 +1537,7 @@
           "openingHours": "11:00-23:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:33.939Z"
+      "updatedAt": "2026-08-23T04:09:00.590Z"
     },
     "dog-parks": {
       "count": 4,
@@ -1544,15 +1563,15 @@
           "lon": 11.656473
         }
       ],
-      "updatedAt": "2026-08-14T05:07:34.384Z"
+      "updatedAt": "2026-08-23T04:09:00.989Z"
     },
     "picnic-spots": {
-      "count": 424,
+      "count": 425,
       "pois": [],
-      "updatedAt": "2026-08-14T05:07:35.087Z"
+      "updatedAt": "2026-08-23T04:09:02.319Z"
     },
     "viewpoints": {
-      "count": 42,
+      "count": 43,
       "pois": [
         {
           "id": "node/12867058771",
@@ -1630,12 +1649,12 @@
           "lon": 11.494276
         }
       ],
-      "updatedAt": "2026-08-14T05:07:35.530Z"
+      "updatedAt": "2026-08-23T04:09:02.966Z"
     },
     "beaches": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-14T05:07:36.038Z"
+      "updatedAt": "2026-08-23T04:09:03.479Z"
     },
     "atms": {
       "count": 462,
@@ -1876,7 +1895,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:36.822Z"
+      "updatedAt": "2026-08-23T04:09:04.151Z"
     },
     "post-boxes": {
       "count": 631,
@@ -1894,10 +1913,10 @@
           "lon": 11.641527
         }
       ],
-      "updatedAt": "2026-08-14T05:07:37.542Z"
+      "updatedAt": "2026-08-23T04:09:04.868Z"
     },
     "recycling": {
-      "count": 922,
+      "count": 923,
       "pois": [
         {
           "id": "node/12102913194",
@@ -2005,7 +2024,7 @@
           "openingHours": "Mo,We,Fr 15:00-19:00; Tu 08:00-12:00; Sa 09:00-13:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:38.319Z"
+      "updatedAt": "2026-08-23T04:09:06.594Z"
     },
     "luggage-storage": {
       "count": 11,
@@ -2017,7 +2036,7 @@
           "lon": 11.549689
         }
       ],
-      "updatedAt": "2026-08-14T05:07:38.817Z"
+      "updatedAt": "2026-08-23T04:09:07.052Z"
     },
     "libraries": {
       "count": 154,
@@ -2260,10 +2279,10 @@
           "openingHours": "Mo-Fr 08:00-23:45; Sa 08:00-19:45; Su 10:00-17:45; PH off"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:39.472Z"
+      "updatedAt": "2026-08-23T04:09:07.668Z"
     },
     "outdoor-gyms": {
-      "count": 157,
+      "count": 158,
       "pois": [
         {
           "id": "way/239588992",
@@ -2448,7 +2467,7 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:39.962Z"
+      "updatedAt": "2026-08-23T04:09:08.827Z"
     },
     "camp-sites": {
       "count": 2,
@@ -2471,7 +2490,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:07:40.431Z"
+      "updatedAt": "2026-08-23T04:09:09.339Z"
     },
     "shelters": {
       "count": 43,
@@ -2489,12 +2508,12 @@
           "lon": 11.549347
         }
       ],
-      "updatedAt": "2026-08-14T05:07:41.247Z"
+      "updatedAt": "2026-08-23T04:09:10.929Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:07:41.678Z"
+      "updatedAt": "2026-08-23T04:09:11.439Z"
     },
     "dump-stations": {
       "count": 2,
@@ -2506,30 +2525,275 @@
           "lon": 11.492316
         }
       ],
-      "updatedAt": "2026-08-14T05:07:42.101Z"
+      "updatedAt": "2026-08-23T04:09:11.799Z"
     },
     "post-offices": {
-      "count": 1,
+      "count": 98,
       "pois": [
         {
-          "id": "node/290422479",
+          "id": "node/1110098819",
+          "name": "Postfiliale 555",
+          "lat": 48.138189,
+          "lon": 11.578696,
+          "address": "Sparkassenstraße 17",
+          "openingHours": "Mo-Fr 10:00-18:00; Sa 09:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/10115786527",
+          "name": "DHL Paketshop",
+          "lat": 48.130061,
+          "lon": 11.57798,
+          "openingHours": "Mo-Fr 07:30-18:30; Sa 08:30-16:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/11240675354",
+          "name": "Deutsche Post",
+          "lat": 48.132421,
+          "lon": 11.573936,
+          "address": "Müllerstraße 3",
+          "openingHours": "Mo-Sa 08:00-20:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3279333943",
+          "name": "Post-Cafe",
+          "lat": 48.139465,
+          "lon": 11.59065,
+          "address": "Robert-Koch-Straße 7",
+          "openingHours": "Mo-Fr 08:30-18:00, Sa 09:00-12:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/10277750581",
+          "name": "Deutsche Post und DHL",
+          "lat": 48.131334,
+          "lon": 11.567868,
+          "address": "Müllerstraße 47",
+          "openingHours": "Mo-Fr 10:00-18:00; Sa 10:00-14:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/9412255381",
+          "name": "Orient Markt",
+          "lat": 48.127251,
+          "lon": 11.592828,
+          "address": "Rablstraße 37",
+          "openingHours": "Mo-Fr 09:00-20:00; Sa 10:00-20:00; Su,PH off"
+        },
+        {
+          "id": "node/7611641238",
           "name": "DHL",
-          "lat": 48.148282,
-          "lon": 11.52398,
-          "openingHours": "Mo-Fr 11:00-18:45; Sa 09:30-13:00"
+          "lat": 48.127228,
+          "lon": 11.592864,
+          "address": "Rablstraße 37",
+          "openingHours": "Mo-Sa 10:00-20:00"
+        },
+        {
+          "id": "node/115722773",
+          "name": "Postbank",
+          "lat": 48.139721,
+          "lon": 11.561421,
+          "address": "Bahnhofplatz 1",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/9754493211",
+          "name": "Postfiliale 455",
+          "lat": 48.129366,
+          "lon": 11.602257,
+          "address": "Wörthstraße 45",
+          "openingHours": "Mo-Sa 07:00-18:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/12675782754",
+          "name": "Postfiliale 465",
+          "lat": 48.135944,
+          "lon": 11.558421,
+          "address": "Goethestraße 30",
+          "openingHours": "Mo-Fr 10:00 - 18:00, Sa 10:00 - 14:00"
+        },
+        {
+          "id": "node/2468756577",
+          "name": "Fa. Albrecht / DHL / Deutsche Post",
+          "lat": 48.151291,
+          "lon": 11.564498,
+          "address": "Theresienstraße 124",
+          "openingHours": "Mo-Fr 09:30-13:30,14:30-18:30; Sa 10:00-15:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/567203659",
+          "name": "DHL Postfiliale",
+          "lat": 48.151373,
+          "lon": 11.564556,
+          "address": "Theresienstraße 124",
+          "openingHours": "Mo-Fr 08:30-13:30,14:30-18:30; Sa 10:00-15:00"
+        },
+        {
+          "id": "node/11453922369",
+          "name": "Postfiliale 445",
+          "lat": 48.124592,
+          "lon": 11.55643,
+          "openingHours": "Mo-Fr 10:00-13:00,14:00-18:00; Sa 10:00-16:00"
+        },
+        {
+          "id": "node/6555380917",
+          "name": "DHL Paketshop 493",
+          "lat": 48.112963,
+          "lon": 11.586132,
+          "address": "Deisenhofener Straße 48",
+          "openingHours": "Mo-Fr 07:00-18:00; Sa 07:00-14:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/13084849677",
+          "name": "Hermes",
+          "lat": 48.111849,
+          "lon": 11.576608,
+          "openingHours": "Mo-Th 08:00-19:00; Fr 08:00-22:00; Sa 09:00-22:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/481397279",
+          "name": "Post-Point",
+          "lat": 48.111128,
+          "lon": 11.59176,
+          "openingHours": "Mo 08:00-12:30; Tu-Th 08:00-12:30,14:00-18:00; Fr 08:00-18:00; Sa 08:00-13:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/416821865",
+          "name": "Postfiliale 540",
+          "lat": 48.156507,
+          "lon": 11.561832,
+          "address": "Schleißheimer Straße 71",
+          "openingHours": "Mo-Fr 08:30-20:00; Sa 08:30-19:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/13084693471",
+          "name": "Postfiliale 426",
+          "lat": 48.160093,
+          "lon": 11.575498,
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-17:00"
+        },
+        {
+          "id": "node/4228706871",
+          "name": "Nova Post",
+          "lat": 48.122125,
+          "lon": 11.548275,
+          "address": "Implerstraße 14",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 09:00-18:00; Su,PH off"
+        },
+        {
+          "id": "node/1841150311",
+          "name": "Deutsche Post Shop München (Postfiliale 447)",
+          "lat": 48.119563,
+          "lon": 11.545498,
+          "address": "Oberländerstraße 24a",
+          "openingHours": "Mo-Fr 10:00-18:00; Sa 09:00-13:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/7539117274",
+          "name": "Großannahmestelle",
+          "lat": 48.132705,
+          "lon": 11.625574,
+          "openingHours": "Mo-Th 14:30-18:00; Fr 12:30-18:00"
+        },
+        {
+          "id": "node/324583533",
+          "name": "Postagentur",
+          "lat": 48.151602,
+          "lon": 11.618467,
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-17:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1781744734",
+          "name": "Zustellstützpunkt 88",
+          "lat": 48.140912,
+          "lon": 11.627952
+        },
+        {
+          "id": "node/1449039484",
+          "name": "Trafik",
+          "lat": 48.104608,
+          "lon": 11.597277,
+          "address": "Schwanseestraße 67",
+          "openingHours": "Mo-Fr 09:00-12:30,14:00-18:00; Sa 09:00-13:00; Su,PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13089154123",
+          "name": "Postfiliale 425",
+          "lat": 48.167323,
+          "lon": 11.574245,
+          "address": "Karl-Theodor-Straße 84",
+          "openingHours": "Mo-Fr 09:00-13:00, 14:00-18:00; Sa 09:00-13:00; Su off"
+        },
+        {
+          "id": "node/1931040567",
+          "name": "Post - Geschäftspost",
+          "lat": 48.164544,
+          "lon": 11.560853,
+          "openingHours": "Mo-Th 14:00-18:00, Fr 13:00-17:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/6044709464",
+          "name": "Hermes Paketshop",
+          "lat": 48.157204,
+          "lon": 11.544182,
+          "openingHours": "Mo-Sa 08:00-20:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11016883498",
+          "name": "Postfiliale 515",
+          "lat": 48.159048,
+          "lon": 11.546131,
+          "openingHours": "Mo-Fr 09:30-18:00; Sa 09:30-15:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/12739661897",
+          "name": "Postfiliale 589 DHL",
+          "lat": 48.121701,
+          "lon": 11.534783,
+          "address": "Nestroystraße 2",
+          "openingHours": "Sa 07:00-13:00; Mo-Fr 07:00-19:00"
+        },
+        {
+          "id": "node/10780535916",
+          "name": "Lotto Goebels",
+          "lat": 48.148826,
+          "lon": 11.534861,
+          "address": "Hirschbergstraße 7",
+          "openingHours": "Mo-Sa 06:00-18:00"
         }
       ],
-      "updatedAt": "2026-08-17T04:03:20.923Z"
+      "updatedAt": "2026-08-23T04:09:12.379Z"
     },
     "showers": {
-      "count": 0,
+      "count": 11,
       "pois": [],
-      "updatedAt": "2026-08-17T04:03:21.324Z"
+      "updatedAt": "2026-08-23T04:09:12.753Z"
     },
     "fireplaces": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:21.910Z"
+      "count": 11,
+      "pois": [
+        {
+          "id": "node/8277659816",
+          "name": "Am Blaumilchkanal",
+          "lat": 48.106974,
+          "lon": 11.558198
+        }
+      ],
+      "updatedAt": "2026-08-23T04:09:13.668Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2537,9 +2801,65 @@
       "updatedAt": "2026-08-17T04:03:22.316Z"
     },
     "benches": {
-      "count": 6,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:22.742Z"
+      "count": 14104,
+      "pois": [
+        {
+          "id": "node/1372934698",
+          "name": "Susannes Bank",
+          "lat": 48.142528,
+          "lon": 11.580481
+        },
+        {
+          "id": "node/699687244",
+          "name": "Karl von Effner",
+          "lat": 48.142508,
+          "lon": 11.572486,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13970196229",
+          "name": "Sitzbank",
+          "lat": 48.133689,
+          "lon": 11.565986
+        },
+        {
+          "id": "node/292679767",
+          "name": "Steinerne Bank",
+          "lat": 48.150417,
+          "lon": 11.592641
+        },
+        {
+          "id": "node/7537066111",
+          "name": "Seppi",
+          "lat": 48.153972,
+          "lon": 11.594182
+        },
+        {
+          "id": "node/7537070611",
+          "name": "Pakos",
+          "lat": 48.154018,
+          "lon": 11.594203
+        },
+        {
+          "id": "node/9556429090",
+          "name": "Kultbank Schwabing",
+          "lat": 48.156486,
+          "lon": 11.570973
+        },
+        {
+          "id": "node/10835642305",
+          "name": "Westend-Bankerl",
+          "lat": 48.137831,
+          "lon": 11.531065
+        },
+        {
+          "id": "node/7903470662",
+          "name": "die 5 Liegestühle",
+          "lat": 48.188043,
+          "lon": 11.541475
+        }
+      ],
+      "updatedAt": "2026-08-23T04:09:15.324Z"
     },
     "compressed-air": {
       "count": 16,

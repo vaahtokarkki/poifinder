@@ -1,6 +1,6 @@
 {
   "city": "chicago",
-  "generatedAt": "2026-08-18T03:58:33.173Z",
+  "generatedAt": "2026-08-23T04:33:37.035Z",
   "categories": {
     "toilets": {
       "count": 116,
@@ -180,10 +180,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:24.279Z"
+      "updatedAt": "2026-08-23T04:33:20.198Z"
     },
     "drinking-water": {
-      "count": 177,
+      "count": 178,
       "pois": [
         {
           "id": "node/13446791501",
@@ -197,6 +197,12 @@
           "name": "Vienna Drinking Fountain (Hans Muhr)",
           "lat": 41.897491,
           "lon": -87.623676
+        },
+        {
+          "id": "node/12583053691",
+          "lat": 41.854523,
+          "lon": -87.620068,
+          "context": "Prarie District Dog Park"
         },
         {
           "id": "node/10873118812",
@@ -218,7 +224,7 @@
           "lon": -87.655831
         }
       ],
-      "updatedAt": "2026-08-14T05:20:25.019Z"
+      "updatedAt": "2026-08-23T04:33:21.872Z"
     },
     "playgrounds": {
       "count": 649,
@@ -406,10 +412,10 @@
           "lon": -87.699905
         }
       ],
-      "updatedAt": "2026-08-14T05:20:25.881Z"
+      "updatedAt": "2026-08-23T04:33:22.799Z"
     },
     "parking": {
-      "count": 4033,
+      "count": 4032,
       "pois": [
         {
           "id": "way/73748001",
@@ -639,10 +645,10 @@
           "address": "East Randolph Street 20-32"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:27.009Z"
+      "updatedAt": "2026-08-23T04:33:24.117Z"
     },
     "charging-stations": {
-      "count": 43,
+      "count": 41,
       "pois": [
         {
           "id": "node/10284734629",
@@ -688,19 +694,13 @@
           "fee": "yes"
         },
         {
-          "id": "node/10238222991",
-          "name": "Tesla Destination Charger",
-          "lat": 41.927785,
-          "lon": -87.68583
-        },
-        {
           "id": "node/11102242505",
           "name": "Volta Charging Station",
           "lat": 41.946845,
           "lon": -87.646799
         }
       ],
-      "updatedAt": "2026-08-14T05:20:27.419Z"
+      "updatedAt": "2026-08-23T04:33:24.567Z"
     },
     "gas-stations": {
       "count": 257,
@@ -917,7 +917,7 @@
           "address": "North Broadway 4900"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:28.017Z"
+      "updatedAt": "2026-08-23T04:33:25.239Z"
     },
     "ice-cream": {
       "count": 110,
@@ -1140,10 +1140,10 @@
           "lon": -87.652689
         }
       ],
-      "updatedAt": "2026-08-14T05:20:28.614Z"
+      "updatedAt": "2026-08-23T04:33:25.759Z"
     },
     "dog-parks": {
-      "count": 54,
+      "count": 55,
       "pois": [
         {
           "id": "way/747160822",
@@ -1231,6 +1231,13 @@
           "lon": -87.683645
         },
         {
+          "id": "node/14099472902",
+          "name": "Chi Town Dog House",
+          "lat": 41.939116,
+          "lon": -87.684443,
+          "address": "West Belmont Avenue 2233"
+        },
+        {
           "id": "way/349237662",
           "name": "Challenger Park",
           "lat": 41.958404,
@@ -1282,7 +1289,7 @@
           "lon": -87.652217
         }
       ],
-      "updatedAt": "2026-08-14T05:20:29.040Z"
+      "updatedAt": "2026-08-23T04:33:26.164Z"
     },
     "picnic-spots": {
       "count": 248,
@@ -1432,11 +1439,29 @@
           "lon": -87.576016
         }
       ],
-      "updatedAt": "2026-08-14T05:20:29.622Z"
+      "updatedAt": "2026-08-23T04:33:27.141Z"
     },
     "viewpoints": {
-      "count": 50,
+      "count": 86,
       "pois": [
+        {
+          "id": "way/59405615",
+          "name": "CTA Tower 12",
+          "lat": 41.876982,
+          "lon": -87.626006
+        },
+        {
+          "id": "way/1176300336",
+          "name": "CTA Tower 18",
+          "lat": 41.885793,
+          "lon": -87.634043
+        },
+        {
+          "id": "way/1326368622",
+          "name": "17th Tower",
+          "lat": 41.85891,
+          "lon": -87.626593
+        },
         {
           "id": "node/2250380156",
           "name": "360 Chicago",
@@ -1464,6 +1489,20 @@
           "lon": -87.62754
         },
         {
+          "id": "way/405530415",
+          "name": "Root Street Tower",
+          "lat": 41.819349,
+          "lon": -87.628882,
+          "address": "West Root Street 42-46"
+        },
+        {
+          "id": "way/210331375",
+          "name": "Clark Junction Tower",
+          "lat": 41.941892,
+          "lon": -87.653303,
+          "address": "West School Street 924"
+        },
+        {
           "id": "node/3599147225",
           "name": "Central Observatory",
           "lat": 41.913752,
@@ -1476,13 +1515,43 @@
           "lon": -87.71343
         },
         {
+          "id": "way/211226031",
+          "name": "IC Hyde Park Tower",
+          "lat": 41.804204,
+          "lon": -87.588344
+        },
+        {
           "id": "node/13046958064",
           "name": "Montrose Moonrise Observation Point",
           "lat": 41.959505,
           "lon": -87.639126
+        },
+        {
+          "id": "node/5356098610",
+          "name": "Purple Martins Nesting Area",
+          "lat": 41.962129,
+          "lon": -87.641983
+        },
+        {
+          "id": "way/210906706",
+          "name": "CTA 61st Tower",
+          "lat": 41.7818,
+          "lon": -87.618081
+        },
+        {
+          "id": "way/163954693",
+          "name": "Kimball Yard Tower",
+          "lat": 41.96634,
+          "lon": -87.712102
+        },
+        {
+          "id": "way/1328459075",
+          "name": "Kimball Tower",
+          "lat": 41.966148,
+          "lon": -87.713144
         }
       ],
-      "updatedAt": "2026-08-14T05:20:30.084Z"
+      "updatedAt": "2026-08-23T04:33:27.728Z"
     },
     "beaches": {
       "count": 16,
@@ -1575,10 +1644,10 @@
           "lon": -87.652052
         }
       ],
-      "updatedAt": "2026-08-14T05:20:30.613Z"
+      "updatedAt": "2026-08-23T04:33:28.291Z"
     },
     "atms": {
-      "count": 401,
+      "count": 403,
       "pois": [
         {
           "id": "node/1619646627",
@@ -1795,12 +1864,12 @@
           "address": "South Archer Avenue 2869"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:31.290Z"
+      "updatedAt": "2026-08-23T04:33:29.008Z"
     },
     "post-boxes": {
-      "count": 1035,
+      "count": 1105,
       "pois": [],
-      "updatedAt": "2026-08-14T05:20:31.940Z"
+      "updatedAt": "2026-08-23T04:33:29.632Z"
     },
     "recycling": {
       "count": 45,
@@ -1876,12 +1945,12 @@
           "address": "South Racine Avenue 3802"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:32.419Z"
+      "updatedAt": "2026-08-23T04:33:30.835Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:20:32.848Z"
+      "updatedAt": "2026-08-23T04:33:31.258Z"
     },
     "libraries": {
       "count": 129,
@@ -2130,7 +2199,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:33.505Z"
+      "updatedAt": "2026-08-23T04:33:31.819Z"
     },
     "outdoor-gyms": {
       "count": 8,
@@ -2142,42 +2211,301 @@
           "lon": -87.64906
         }
       ],
-      "updatedAt": "2026-08-14T05:20:33.932Z"
+      "updatedAt": "2026-08-23T04:33:32.313Z"
     },
     "camp-sites": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:20:34.369Z"
+      "count": 1,
+      "pois": [
+        {
+          "id": "way/24869363",
+          "name": "McCormick Place Parking Lot B Overflow",
+          "lat": 41.844427,
+          "lon": -87.612553,
+          "address": "South Moe Drive 3050",
+          "fee": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:33:32.848Z"
     },
     "shelters": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-14T05:20:35.189Z"
+      "updatedAt": "2026-08-23T04:33:33.568Z"
     },
     "rest-areas": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:20:35.613Z"
+      "count": 5,
+      "pois": [
+        {
+          "id": "way/263997647",
+          "name": "Road Ranger",
+          "lat": 41.831032,
+          "lon": -87.694425,
+          "address": "South California Avenue 3401"
+        },
+        {
+          "id": "way/1046381366",
+          "name": "Thorntons",
+          "lat": 41.830669,
+          "lon": -87.696774
+        }
+      ],
+      "updatedAt": "2026-08-23T04:33:34.084Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:20:36.053Z"
+      "updatedAt": "2026-08-23T04:33:34.436Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:39.562Z"
+      "count": 77,
+      "pois": [
+        {
+          "id": "way/73743541",
+          "name": "Chicago Loop Post Office",
+          "lat": 41.879064,
+          "lon": -87.630273,
+          "address": "South Clark Street 211",
+          "openingHours": "Mo-Fr 07:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/4448346510",
+          "name": "The UPS Store",
+          "lat": 41.880128,
+          "lon": -87.626363,
+          "address": "East Monroe Street 17",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 09:00-15:00; Su 10:00-15:00"
+        },
+        {
+          "id": "node/13015665790",
+          "name": "FedEx Office",
+          "lat": 41.879962,
+          "lon": -87.625901
+        },
+        {
+          "id": "node/9747053266",
+          "name": "DHL",
+          "lat": 41.884619,
+          "lon": -87.630435,
+          "address": "North Clark Street 161"
+        },
+        {
+          "id": "node/8987199685",
+          "name": "Cardiss Collins Post Office",
+          "lat": 41.874081,
+          "lon": -87.63878,
+          "address": "West Harrison Street 433"
+        },
+        {
+          "id": "way/205124173",
+          "name": "Fort Dearborn Post Office",
+          "lat": 41.892042,
+          "lon": -87.630464,
+          "address": "North Dearborn Street 540"
+        },
+        {
+          "id": "node/3572665097",
+          "name": "Streeterville Post Office",
+          "lat": 41.892473,
+          "lon": -87.617949,
+          "address": "East Ohio Street 355"
+        },
+        {
+          "id": "node/9876797519",
+          "name": "John Hancock Post Office",
+          "lat": 41.898825,
+          "lon": -87.622636,
+          "address": "North Michigan Avenue 875"
+        },
+        {
+          "id": "way/210540178",
+          "name": "22nd Street Post Office",
+          "lat": 41.854621,
+          "lon": -87.626724,
+          "address": "South State Street 2035"
+        },
+        {
+          "id": "node/13144492841",
+          "name": "Shipping & Beyond",
+          "lat": 41.869441,
+          "lon": -87.663368,
+          "address": "West Taylor Street 1440"
+        },
+        {
+          "id": "way/47093778",
+          "name": "FedEx Ship Center",
+          "lat": 41.902149,
+          "lon": -87.649074,
+          "address": "North Hooker Street 1111"
+        },
+        {
+          "id": "node/4403793031",
+          "name": "Chinatown Post Office",
+          "lat": 41.849751,
+          "lon": -87.631788,
+          "address": "South Wentworth Avenue 2345"
+        },
+        {
+          "id": "way/209786640",
+          "name": "Cesar E. Chavez Post Office",
+          "lat": 41.85629,
+          "lon": -87.665695,
+          "address": "South Ashland Avenue 1859"
+        },
+        {
+          "id": "node/1585460177",
+          "name": "Wicker Park Post Office",
+          "lat": 41.905001,
+          "lon": -87.667756,
+          "address": "North Ashland Avenue 1240",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/209383337",
+          "name": "Nancy B. Jefferson Post Office",
+          "lat": 41.879994,
+          "lon": -87.687255,
+          "address": "South Western Avenue 116"
+        },
+        {
+          "id": "node/287160478",
+          "name": "Lincoln Park Postal Store",
+          "lat": 41.925666,
+          "lon": -87.653429,
+          "address": "North Sheffield Avenue 2405",
+          "openingHours": "Mo-Fr 09:00-18:30; Sa 09:00-15:00"
+        },
+        {
+          "id": "way/210165298",
+          "name": "Stockyards Post Office",
+          "lat": 41.819912,
+          "lon": -87.645447,
+          "address": "South Halsted Street 4101"
+        },
+        {
+          "id": "node/495665229",
+          "name": "Graceland Post Office",
+          "lat": 41.936572,
+          "lon": -87.670456,
+          "address": "North Ashland Avenue 3024"
+        },
+        {
+          "id": "way/209407011",
+          "name": "Roberto Clemente Post Office",
+          "lat": 41.924124,
+          "lon": -87.696903,
+          "address": "North California Avenue 2339"
+        },
+        {
+          "id": "way/210914958",
+          "name": "Henry W. McGee Post Office",
+          "lat": 41.811048,
+          "lon": -87.60618,
+          "address": "South Cottage Grove Avenue 4601"
+        },
+        {
+          "id": "way/162314600",
+          "name": "Mary Alice Henry Post Office",
+          "lat": 41.881063,
+          "lon": -87.73147,
+          "address": "West Madison Street 4222",
+          "openingHours": "Mo-Fr 08:30-20:00; Sa 08:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/163769819",
+          "name": "Otis Grant Collins Post Office",
+          "lat": 41.84981,
+          "lon": -87.725152,
+          "address": "South Pulaski Road 2302"
+        },
+        {
+          "id": "node/4039165002",
+          "name": "USPS Finance Station \"K\"",
+          "lat": 41.909738,
+          "lon": -87.725446,
+          "address": "West North Avenue 3933"
+        },
+        {
+          "id": "way/209919816",
+          "name": "Lakeview Post Office",
+          "lat": 41.954028,
+          "lon": -87.663869,
+          "address": "West Irving Park Road 1343",
+          "openingHours": "Mo-Fr 08:30-18:30; Sa 08:30-15:00"
+        },
+        {
+          "id": "node/507905942",
+          "name": "Lake Park Post Office",
+          "lat": 41.795669,
+          "lon": -87.588659,
+          "address": "East 55th Street 1510",
+          "openingHours": "Mo-Fr 08:30-18:00; Sa 08:30-15:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1627008067",
+          "name": "Finance Station T Post Office",
+          "lat": 41.961327,
+          "lon": -87.679387,
+          "address": "West Montrose Avenue 2011",
+          "openingHours": "Mo-Fr 09:00-18:30"
+        },
+        {
+          "id": "way/163905312",
+          "name": "Daniel J. Doffyn Post Office",
+          "lat": 41.949907,
+          "lon": -87.708275,
+          "address": "North Kedzie Avenue 3750"
+        },
+        {
+          "id": "node/9215446451",
+          "name": "Elsdon Post Office",
+          "lat": 41.80373,
+          "lon": -87.704687,
+          "address": "South Kedzie Avenue 4922"
+        },
+        {
+          "id": "way/162518064",
+          "name": "Milton R. Brunson Post Office",
+          "lat": 41.876028,
+          "lon": -87.755306,
+          "address": "South Laramie Avenue 324"
+        },
+        {
+          "id": "way/162526437",
+          "name": "Robert LeFlore Jr Post Office",
+          "lat": 41.902069,
+          "lon": -87.751297,
+          "address": "West Division Street 5001"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:33:34.892Z"
     },
     "showers": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:39.971Z"
+      "count": 12,
+      "pois": [
+        {
+          "id": "way/210222886",
+          "name": "Bath House",
+          "lat": 41.854091,
+          "lon": -87.654353,
+          "address": "South May Street 2039"
+        },
+        {
+          "id": "way/209853157",
+          "name": "Locker Building",
+          "lat": 41.905409,
+          "lon": -87.663283,
+          "address": "North Noble Street 1300"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:33:35.359Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 7,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:40.545Z"
+      "updatedAt": "2026-08-23T04:33:36.201Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2185,9 +2513,22 @@
       "updatedAt": "2026-08-17T04:05:40.946Z"
     },
     "benches": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:41.386Z"
+      "count": 1648,
+      "pois": [
+        {
+          "id": "node/4410755216",
+          "name": "C-Bench",
+          "lat": 41.788982,
+          "lon": -87.600582
+        },
+        {
+          "id": "node/2541105047",
+          "name": "Cheney-Goode Memorial",
+          "lat": 41.787079,
+          "lon": -87.588273
+        }
+      ],
+      "updatedAt": "2026-08-23T04:33:36.933Z"
     },
     "compressed-air": {
       "count": 0,

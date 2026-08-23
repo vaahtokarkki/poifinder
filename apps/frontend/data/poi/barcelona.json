@@ -1,10 +1,29 @@
 {
   "city": "barcelona",
-  "generatedAt": "2026-08-18T03:58:27.338Z",
+  "generatedAt": "2026-08-23T04:27:51.288Z",
   "categories": {
     "toilets": {
       "count": 344,
       "pois": [
+        {
+          "id": "node/9602469917",
+          "lat": 41.395254,
+          "lon": 2.172165,
+          "context": "Biblioteca Sofia Barat"
+        },
+        {
+          "id": "node/9865550532",
+          "lat": 41.380891,
+          "lon": 2.16128,
+          "wheelchair": "limited",
+          "context": "Parking Urgel - Grupo COEN"
+        },
+        {
+          "id": "node/10167454265",
+          "lat": 41.377436,
+          "lon": 2.162821,
+          "context": "Biblioteca Sant Antoni - Joan Oliver"
+        },
         {
           "id": "relation/9342908",
           "name": "Palau Macaya",
@@ -19,6 +38,14 @@
           "lon": 2.185465,
           "wheelchair": "yes",
           "fee": "no"
+        },
+        {
+          "id": "node/11377908450",
+          "lat": 41.401506,
+          "lon": 2.158281,
+          "wheelchair": "limited",
+          "fee": "no",
+          "context": "Biblioteca Vila de Gràcia"
         },
         {
           "id": "node/6511796283",
@@ -51,10 +78,10 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:12.768Z"
+      "updatedAt": "2026-08-23T04:27:32.278Z"
     },
     "drinking-water": {
-      "count": 2129,
+      "count": 2126,
       "pois": [
         {
           "id": "node/430607924",
@@ -74,13 +101,6 @@
           "name": "Font de Santa Anna",
           "lat": 41.384527,
           "lon": 2.174202
-        },
-        {
-          "id": "node/10196563363",
-          "name": "Font del Bacallà",
-          "lat": 41.385678,
-          "lon": 2.178937,
-          "fee": "no"
         },
         {
           "id": "node/3096906059",
@@ -226,10 +246,10 @@
           "lon": 2.076431
         }
       ],
-      "updatedAt": "2026-08-14T05:17:13.670Z"
+      "updatedAt": "2026-08-23T04:27:34.112Z"
     },
     "playgrounds": {
-      "count": 1187,
+      "count": 1188,
       "pois": [
         {
           "id": "way/37480082",
@@ -356,10 +376,10 @@
           "lon": 2.227468
         }
       ],
-      "updatedAt": "2026-08-14T05:17:14.456Z"
+      "updatedAt": "2026-08-23T04:27:35.139Z"
     },
     "parking": {
-      "count": 1113,
+      "count": 1111,
       "pois": [
         {
           "id": "node/3218698760",
@@ -473,6 +493,13 @@
           "fee": "yes"
         },
         {
+          "id": "node/14089522403",
+          "name": "Parclick - Parking Las Ramblas Boqueria",
+          "lat": 41.382058,
+          "lon": 2.172717,
+          "fee": "yes"
+        },
+        {
           "id": "node/2511218703",
           "name": "Saba Bamsa Catedral",
           "lat": 41.385012,
@@ -573,17 +600,9 @@
           "lon": 2.166725,
           "openingHours": "24/7",
           "fee": "yes"
-        },
-        {
-          "id": "node/4222897297",
-          "name": "Saba Pau Claris",
-          "lat": 41.395593,
-          "lon": 2.163495,
-          "wheelchair": "yes",
-          "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:15.356Z"
+      "updatedAt": "2026-08-23T04:27:36.287Z"
     },
     "charging-stations": {
       "count": 187,
@@ -796,7 +815,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:15.850Z"
+      "updatedAt": "2026-08-23T04:27:36.829Z"
     },
     "gas-stations": {
       "count": 140,
@@ -1021,7 +1040,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:16.454Z"
+      "updatedAt": "2026-08-23T04:27:37.513Z"
     },
     "ice-cream": {
       "count": 157,
@@ -1234,7 +1253,7 @@
           "address": "Carrer de Jaume I 1B"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:16.927Z"
+      "updatedAt": "2026-08-23T04:27:38.081Z"
     },
     "dog-parks": {
       "count": 141,
@@ -1271,10 +1290,10 @@
           "address": "Carrer de Joan Sales 2X"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:17.307Z"
+      "updatedAt": "2026-08-23T04:27:38.522Z"
     },
     "picnic-spots": {
-      "count": 295,
+      "count": 306,
       "pois": [
         {
           "id": "node/2175842485",
@@ -1314,10 +1333,10 @@
           "lon": 2.084707
         }
       ],
-      "updatedAt": "2026-08-14T05:17:17.904Z"
+      "updatedAt": "2026-08-23T04:27:39.632Z"
     },
     "viewpoints": {
-      "count": 134,
+      "count": 137,
       "pois": [
         {
           "id": "node/5126584569",
@@ -1385,6 +1404,12 @@
           "lat": 41.40352,
           "lon": 2.189519,
           "fee": "yes"
+        },
+        {
+          "id": "way/231671744",
+          "name": "Capitanía del port",
+          "lat": 41.385512,
+          "lon": 2.200833
         },
         {
           "id": "node/9864584405",
@@ -1496,15 +1521,9 @@
           "name": "Mirador dels Xiprers",
           "lat": 41.389719,
           "lon": 2.100123
-        },
-        {
-          "id": "way/1289686074",
-          "name": "Mirador de la Rabassada",
-          "lat": 41.43145,
-          "lon": 2.13119
         }
       ],
-      "updatedAt": "2026-08-14T05:17:18.363Z"
+      "updatedAt": "2026-08-23T04:27:40.273Z"
     },
     "beaches": {
       "count": 17,
@@ -1589,10 +1608,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:18.828Z"
+      "updatedAt": "2026-08-23T04:27:40.807Z"
     },
     "atms": {
-      "count": 483,
+      "count": 485,
       "pois": [
         {
           "id": "node/704048811",
@@ -1802,10 +1821,10 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:19.502Z"
+      "updatedAt": "2026-08-23T04:27:41.792Z"
     },
     "post-boxes": {
-      "count": 383,
+      "count": 384,
       "pois": [
         {
           "id": "node/13016532454",
@@ -1820,10 +1839,10 @@
           "lon": 2.172979
         }
       ],
-      "updatedAt": "2026-08-14T05:17:20.076Z"
+      "updatedAt": "2026-08-23T04:27:42.596Z"
     },
     "recycling": {
-      "count": 4570,
+      "count": 4569,
       "pois": [
         {
           "id": "node/6742628757",
@@ -2014,7 +2033,7 @@
           "openingHours": "Th 08:30-14:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:21.071Z"
+      "updatedAt": "2026-08-23T04:27:44.291Z"
     },
     "luggage-storage": {
       "count": 19,
@@ -2065,7 +2084,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:21.509Z"
+      "updatedAt": "2026-08-23T04:27:44.701Z"
     },
     "libraries": {
       "count": 106,
@@ -2284,10 +2303,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:17:22.049Z"
+      "updatedAt": "2026-08-23T04:27:45.197Z"
     },
     "outdoor-gyms": {
-      "count": 134,
+      "count": 135,
       "pois": [
         {
           "id": "node/11118439405",
@@ -2302,12 +2321,20 @@
           "lon": 2.110088
         }
       ],
-      "updatedAt": "2026-08-14T05:17:22.540Z"
+      "updatedAt": "2026-08-23T04:27:46.299Z"
     },
     "camp-sites": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:17:22.968Z"
+      "count": 1,
+      "pois": [
+        {
+          "id": "node/13390851501",
+          "name": "Wheels Rest",
+          "lat": 41.437314,
+          "lon": 2.155229,
+          "address": "Passeig de Valldaura 15"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:27:46.761Z"
     },
     "shelters": {
       "count": 3,
@@ -2319,7 +2346,7 @@
           "lon": 2.140748
         }
       ],
-      "updatedAt": "2026-08-14T05:17:23.703Z"
+      "updatedAt": "2026-08-23T04:27:47.798Z"
     },
     "rest-areas": {
       "count": 3,
@@ -2331,27 +2358,132 @@
           "lon": 2.117635
         }
       ],
-      "updatedAt": "2026-08-14T05:17:24.139Z"
+      "updatedAt": "2026-08-23T04:27:48.259Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:17:24.547Z"
+      "updatedAt": "2026-08-23T04:27:48.686Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:04.863Z"
+      "count": 63,
+      "pois": [
+        {
+          "id": "node/1948962336",
+          "name": "Oficina de Correos",
+          "lat": 41.386908,
+          "lon": 2.166808,
+          "address": "Ronda de la Universitat 23",
+          "openingHours": "Mo-Fr 08:30-14:30; Sa 09:30-13:00"
+        },
+        {
+          "id": "node/11360015880",
+          "name": "DHL",
+          "lat": 41.389785,
+          "lon": 2.166433,
+          "openingHours": "Mo-Fr 09:00-19:30"
+        },
+        {
+          "id": "node/11360010135",
+          "name": "DHL Express",
+          "lat": 41.386431,
+          "lon": 2.164763
+        },
+        {
+          "id": "node/5244954977",
+          "name": "Abacus",
+          "lat": 41.390379,
+          "lon": 2.174146,
+          "openingHours": "Mo-Fr 08:30-20:30"
+        },
+        {
+          "id": "node/11412901769",
+          "name": "MRW",
+          "lat": 41.395562,
+          "lon": 2.172177,
+          "address": "Carrer de Bailèn 71",
+          "openingHours": "Mo-Fr 08:00-14:00, 16:00-20:00"
+        },
+        {
+          "id": "node/12204830150",
+          "name": "Tamarindo Express",
+          "lat": 41.39631,
+          "lon": 2.171165,
+          "address": "Carrer de Bailèn 85",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1948965608",
+          "name": "Correos",
+          "lat": 41.385837,
+          "lon": 2.154938,
+          "address": "Avinguda de Roma 119"
+        },
+        {
+          "id": "node/11522917046",
+          "name": "Mail Boxes ETC",
+          "lat": 41.397085,
+          "lon": 2.163403,
+          "address": "Carrer de Roger de Llúria 129"
+        },
+        {
+          "id": "node/11308435591",
+          "name": "GLS",
+          "lat": 41.400378,
+          "lon": 2.164636,
+          "address": "Carrer de Còrsega 404-406"
+        },
+        {
+          "id": "node/7760747526",
+          "name": "Mail Boxes Etc.",
+          "lat": 41.375277,
+          "lon": 2.127307,
+          "address": "Carrer de Sugranyes 4"
+        },
+        {
+          "id": "node/9399116417",
+          "name": "Suc. 13",
+          "lat": 41.43811,
+          "lon": 2.190879,
+          "address": "Passeig de Torras i Bages 29",
+          "openingHours": "Mo-Fr 08:30-20:30"
+        },
+        {
+          "id": "node/1621857134",
+          "name": "Oficina de Correus",
+          "lat": 41.433442,
+          "lon": 2.215129,
+          "address": "Carrer de les Monges 7"
+        },
+        {
+          "id": "node/617248482",
+          "name": "Correus i telègrafs. Sucursal 1",
+          "lat": 41.437919,
+          "lon": 2.222163,
+          "address": "Carretera Antiga de València 75-77",
+          "openingHours": "Mo-Fr 08:30-20:30; Sa 09:30-13:00; PH closed",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/375955129",
+          "name": "Santa Coloma",
+          "lat": 41.452624,
+          "lon": 2.204922,
+          "address": "Avinguda de Francesc Macià 34-36",
+          "openingHours": "Mo-Fr 08:30-20:30"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:27:49.088Z"
     },
     "showers": {
-      "count": 0,
+      "count": 64,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:05.255Z"
+      "updatedAt": "2026-08-23T04:27:49.519Z"
     },
     "fireplaces": {
-      "count": 1,
+      "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:05.844Z"
+      "updatedAt": "2026-08-23T04:27:50.238Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2359,9 +2491,22 @@
       "updatedAt": "2026-08-17T04:05:06.220Z"
     },
     "benches": {
-      "count": 2,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:06.648Z"
+      "count": 5555,
+      "pois": [
+        {
+          "id": "node/10202552091",
+          "name": "Banco para sentarse",
+          "lat": 41.411185,
+          "lon": 2.182043
+        },
+        {
+          "id": "way/1105836965",
+          "name": "Banc del Park Güell",
+          "lat": 41.413953,
+          "lon": 2.152531
+        }
+      ],
+      "updatedAt": "2026-08-23T04:27:51.188Z"
     },
     "compressed-air": {
       "count": 0,

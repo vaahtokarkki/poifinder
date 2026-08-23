@@ -1,9 +1,9 @@
 {
   "city": "denver",
-  "generatedAt": "2026-08-18T03:58:35.760Z",
+  "generatedAt": "2026-08-23T04:35:53.601Z",
   "categories": {
     "toilets": {
-      "count": 538,
+      "count": 540,
       "pois": [
         {
           "id": "way/35205743",
@@ -22,6 +22,14 @@
           "lon": -104.990555,
           "address": "Bannock Street 1201",
           "openingHours": "Tu-Sa 11:00-17:00; Su 12:00-17:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/332420982",
+          "name": "The Spot Bouldering Gym",
+          "lat": 39.736001,
+          "lon": -104.99329,
+          "address": "Delaware Street 1235",
           "wheelchair": "yes"
         },
         {
@@ -185,20 +193,14 @@
           "name": "Restroom R1001A",
           "lat": 39.744061,
           "lon": -105.001101
-        },
-        {
-          "id": "way/1072134849",
-          "name": "Restroom R4001B",
-          "lat": 39.74398,
-          "lon": -105.001176
         }
       ],
-      "updatedAt": "2026-08-14T05:21:47.511Z"
+      "updatedAt": "2026-08-23T04:35:36.311Z"
     },
     "drinking-water": {
       "count": 17,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:48.119Z"
+      "updatedAt": "2026-08-23T04:35:37.707Z"
     },
     "playgrounds": {
       "count": 475,
@@ -288,10 +290,10 @@
           "lon": -105.005358
         }
       ],
-      "updatedAt": "2026-08-14T05:21:48.990Z"
+      "updatedAt": "2026-08-23T04:35:38.603Z"
     },
     "parking": {
-      "count": 3956,
+      "count": 3965,
       "pois": [
         {
           "id": "way/100225057",
@@ -501,10 +503,10 @@
           "address": "Emerson Street 901"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:50.077Z"
+      "updatedAt": "2026-08-23T04:35:39.821Z"
     },
     "charging-stations": {
-      "count": 20,
+      "count": 17,
       "pois": [
         {
           "id": "node/4404165620",
@@ -515,27 +517,12 @@
           "openingHours": "24/7"
         },
         {
-          "id": "node/9991842627",
-          "name": "EVgo",
-          "lat": 39.755958,
-          "lon": -105.010166,
-          "openingHours": "24/7",
-          "fee": "yes"
-        },
-        {
           "id": "node/12583192501",
           "name": "Electrify America",
           "lat": 39.716456,
           "lon": -104.95029,
           "address": "East 1st Avenue 3000",
           "openingHours": "24/7",
-          "fee": "yes"
-        },
-        {
-          "id": "node/3683209504",
-          "name": "SemaCharge",
-          "lat": 39.710654,
-          "lon": -105.024433,
           "fee": "yes"
         },
         {
@@ -562,6 +549,13 @@
           "fee": "yes"
         },
         {
+          "id": "node/3683214743",
+          "name": "SemaCharge",
+          "lat": 39.689167,
+          "lon": -105.025892,
+          "fee": "yes"
+        },
+        {
           "id": "node/13439725081",
           "name": "Tesla Destination Charger",
           "lat": 39.70987,
@@ -572,7 +566,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:50.516Z"
+      "updatedAt": "2026-08-23T04:35:40.336Z"
     },
     "gas-stations": {
       "count": 143,
@@ -779,7 +773,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:51.099Z"
+      "updatedAt": "2026-08-23T04:35:40.982Z"
     },
     "ice-cream": {
       "count": 60,
@@ -998,7 +992,7 @@
           "address": "North Oneida Street 2211"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:51.563Z"
+      "updatedAt": "2026-08-23T04:35:41.447Z"
     },
     "dog-parks": {
       "count": 21,
@@ -1074,7 +1068,7 @@
           "lon": -104.897471
         }
       ],
-      "updatedAt": "2026-08-14T05:21:51.998Z"
+      "updatedAt": "2026-08-23T04:35:41.906Z"
     },
     "picnic-spots": {
       "count": 357,
@@ -1134,11 +1128,17 @@
           "lon": -105.001981
         }
       ],
-      "updatedAt": "2026-08-14T05:21:52.591Z"
+      "updatedAt": "2026-08-23T04:35:43.017Z"
     },
     "viewpoints": {
-      "count": 6,
+      "count": 8,
       "pois": [
+        {
+          "id": "way/98224896",
+          "name": "Elitch Gardens Observation Tower",
+          "lat": 39.750878,
+          "lon": -105.010848
+        },
         {
           "id": "node/1490342284",
           "name": "Signature Overlook of Denver",
@@ -1158,12 +1158,12 @@
           "lon": -105.005597
         }
       ],
-      "updatedAt": "2026-08-14T05:21:53.061Z"
+      "updatedAt": "2026-08-23T04:35:43.587Z"
     },
     "beaches": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:53.531Z"
+      "updatedAt": "2026-08-23T04:35:44.111Z"
     },
     "atms": {
       "count": 154,
@@ -1388,7 +1388,7 @@
           "lon": -105.054583
         }
       ],
-      "updatedAt": "2026-08-14T05:21:54.185Z"
+      "updatedAt": "2026-08-23T04:35:44.792Z"
     },
     "post-boxes": {
       "count": 62,
@@ -1407,7 +1407,7 @@
           "lon": -104.968637
         }
       ],
-      "updatedAt": "2026-08-14T05:21:54.618Z"
+      "updatedAt": "2026-08-23T04:35:45.367Z"
     },
     "recycling": {
       "count": 19,
@@ -1463,15 +1463,15 @@
           "address": "Franklin Street 555"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:55.128Z"
+      "updatedAt": "2026-08-23T04:35:46.486Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:55.566Z"
+      "updatedAt": "2026-08-23T04:35:46.947Z"
     },
     "libraries": {
-      "count": 69,
+      "count": 70,
       "pois": [
         {
           "id": "way/315707015",
@@ -1610,6 +1610,14 @@
           "address": "West 1st Avenue 3570"
         },
         {
+          "id": "node/14101556601",
+          "name": "Lena Archuleta Branch Library",
+          "lat": 39.709735,
+          "lon": -105.030325,
+          "address": "West Nevada Place 3300",
+          "openingHours": "Mo-Tu 10:00-20:00, We-Th 10:00-18:00, Fr-Sa 10:00-17:00"
+        },
+        {
           "id": "node/366395675",
           "name": "Eugene Field Branch Denver Public Library",
           "lat": 39.701687,
@@ -1680,47 +1688,23 @@
           "name": "Tri-Borough/Library (TB)",
           "lat": 39.743617,
           "lon": -105.068247
-        },
-        {
-          "id": "way/193424890",
-          "name": "Hadley Branch Library",
-          "lat": 39.682625,
-          "lon": -105.025888,
-          "address": "South Grove Street 1890"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:56.042Z"
+      "updatedAt": "2026-08-23T04:35:47.467Z"
     },
     "outdoor-gyms": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:56.505Z"
+      "updatedAt": "2026-08-23T04:35:48.338Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:56.938Z"
+      "updatedAt": "2026-08-23T04:35:48.771Z"
     },
     "shelters": {
-      "count": 40,
+      "count": 38,
       "pois": [
-        {
-          "id": "node/1001230363",
-          "name": "WaterCourse Foods",
-          "lat": 39.74345,
-          "lon": -104.976536,
-          "address": "East 17th Avenue 837",
-          "openingHours": "Th-Sa 07:00-23:00; Mo-We, Su 07:00-22:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/665204913",
-          "name": "Little India",
-          "lat": 39.725428,
-          "lon": -104.982887,
-          "address": "East 6th Avenue 330",
-          "openingHours": "24/7"
-        },
         {
           "id": "way/98224884",
           "name": "Mount Evans Picnic Pavilions",
@@ -1746,30 +1730,209 @@
           "lon": -105.012749
         }
       ],
-      "updatedAt": "2026-08-14T05:21:57.768Z"
+      "updatedAt": "2026-08-23T04:35:49.897Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:58.198Z"
+      "updatedAt": "2026-08-23T04:35:50.427Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:58.611Z"
+      "updatedAt": "2026-08-23T04:35:50.846Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:55.042Z"
+      "count": 25,
+      "pois": [
+        {
+          "id": "node/358949398",
+          "name": "Mile High Station Denver Post Office",
+          "lat": 39.738308,
+          "lon": -104.993551,
+          "address": "West 14th Avenue 450"
+        },
+        {
+          "id": "node/1393657187",
+          "name": "The UPS Store",
+          "lat": 39.748676,
+          "lon": -104.997772,
+          "address": "Larimer Street 1512"
+        },
+        {
+          "id": "way/148748800",
+          "name": "United States Post Office Capitol Hill Annex",
+          "lat": 39.741043,
+          "lon": -104.973844,
+          "address": "Downing Street 1551"
+        },
+        {
+          "id": "node/1040591335",
+          "name": "FedEx Office",
+          "lat": 39.749798,
+          "lon": -104.999937,
+          "address": "Blake Street 1509"
+        },
+        {
+          "id": "node/358949391",
+          "name": "Capitol Hill United States Postal Service",
+          "lat": 39.740975,
+          "lon": -104.972519,
+          "address": "Marion Street 1541",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/970720603",
+          "name": "South Denver Post Office",
+          "lat": 39.712693,
+          "lon": -104.987899,
+          "address": "South Broadway 225",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:30-12:30"
+        },
+        {
+          "id": "node/10239638112",
+          "name": "United States Postal Service Post Office",
+          "lat": 39.720102,
+          "lon": -104.957228,
+          "address": "Columbine Street 201",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:30-12:30; Su off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/358949412",
+          "name": "Sunnyside Station Denver Post Office",
+          "lat": 39.779817,
+          "lon": -105.007494,
+          "address": "West 46th Avenue 1766",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/208802467",
+          "name": "Alcott Post Office",
+          "lat": 39.767885,
+          "lon": -105.04366,
+          "address": "Tennyson Street 3700"
+        },
+        {
+          "id": "node/4739205402",
+          "name": "Rocket Pack & Ship",
+          "lat": 39.770264,
+          "lon": -105.044215,
+          "address": "Tennyson Street 3845"
+        },
+        {
+          "id": "way/301177385",
+          "name": "Edgewater Post Office",
+          "lat": 39.747236,
+          "lon": -105.05741,
+          "address": "Depew Street 1990"
+        },
+        {
+          "id": "node/358949405",
+          "name": "Park Hill Station Denver Post Office",
+          "lat": 39.764455,
+          "lon": -104.924337
+        },
+        {
+          "id": "node/358949420",
+          "name": "Westwood Post Office",
+          "lat": 39.690688,
+          "lon": -105.04307,
+          "address": "West Florida Avenue 4259"
+        },
+        {
+          "id": "way/88148045",
+          "name": "United States Post Office - University Park",
+          "lat": 39.679347,
+          "lon": -104.943468,
+          "address": "East Buchtel Boulevard 3800"
+        },
+        {
+          "id": "node/12134099701",
+          "name": "Pak Mail",
+          "lat": 39.672154,
+          "lon": -104.959698,
+          "openingHours": "Mo-Fr 10:00-18:00; Sa 10:00-16:00"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:35:51.369Z"
     },
     "showers": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:55.445Z"
+      "count": 25,
+      "pois": [
+        {
+          "id": "way/1370919908",
+          "name": "Shower A1717T",
+          "lat": 39.728326,
+          "lon": -104.990996
+        },
+        {
+          "id": "way/1370973149",
+          "name": "Shower A1213S",
+          "lat": 39.728097,
+          "lon": -104.991314
+        },
+        {
+          "id": "way/1370973163",
+          "name": "Shower A1212",
+          "lat": 39.728093,
+          "lon": -104.991287
+        },
+        {
+          "id": "way/1370973148",
+          "name": "Shower A1215S",
+          "lat": 39.728085,
+          "lon": -104.991314
+        },
+        {
+          "id": "way/1370973150",
+          "name": "Shower A1219S",
+          "lat": 39.728076,
+          "lon": -104.991284
+        },
+        {
+          "id": "way/1370973147",
+          "name": "Shower A1217S",
+          "lat": 39.728071,
+          "lon": -104.99131
+        },
+        {
+          "id": "way/1273216563",
+          "name": "Men's Shower 1100B",
+          "lat": 39.746365,
+          "lon": -105.002296
+        },
+        {
+          "id": "way/1273216564",
+          "name": "Women's Shower 1200A",
+          "lat": 39.746379,
+          "lon": -105.002307
+        },
+        {
+          "id": "way/1246996098",
+          "name": "Shower",
+          "lat": 39.74574,
+          "lon": -105.003594
+        },
+        {
+          "id": "way/1281422811",
+          "name": "Shower 1317",
+          "lat": 39.678959,
+          "lon": -104.963182,
+          "fee": "no"
+        },
+        {
+          "id": "way/1281422813",
+          "name": "Shower 3317",
+          "lat": 39.678959,
+          "lon": -104.963182,
+          "fee": "no"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:35:51.857Z"
     },
     "fireplaces": {
-      "count": 2,
+      "count": 9,
       "pois": [
         {
           "id": "node/1001230363",
@@ -1789,7 +1952,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-17T04:05:56.044Z"
+      "updatedAt": "2026-08-23T04:35:52.794Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1797,9 +1960,9 @@
       "updatedAt": "2026-08-17T04:05:56.435Z"
     },
     "benches": {
-      "count": 16,
+      "count": 814,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:56.862Z"
+      "updatedAt": "2026-08-23T04:35:53.500Z"
     },
     "compressed-air": {
       "count": 0,

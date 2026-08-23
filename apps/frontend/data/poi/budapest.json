@@ -1,18 +1,17 @@
 {
   "city": "budapest",
-  "generatedAt": "2026-08-18T03:58:07.228Z",
+  "generatedAt": "2026-08-23T04:05:49.435Z",
   "categories": {
     "toilets": {
-      "count": 527,
+      "count": 529,
       "pois": [
         {
-          "id": "way/197546072",
-          "name": "MOM Park",
-          "lat": 47.490729,
-          "lon": 19.023025,
-          "address": "Alkotás utca 53",
-          "openingHours": "Mo-Sa 07:00-24:00; Su 08:00-24:00",
-          "wheelchair": "yes"
+          "id": "node/13199902786",
+          "lat": 47.491081,
+          "lon": 19.023384,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "MOM Park"
         },
         {
           "id": "way/50847315",
@@ -47,6 +46,23 @@
           "name": "Mosdó",
           "lat": 47.480829,
           "lon": 19.054236
+        },
+        {
+          "id": "way/83180446",
+          "name": "Corvin Plaza",
+          "lat": 47.485963,
+          "lon": 19.073286,
+          "address": "Futó utca 37-45",
+          "openingHours": "Mo-Th 09:00-21:00; Fr-Sa 09:00-22:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/251444999",
+          "name": "GlassHouse",
+          "lat": 47.528527,
+          "lon": 19.037203,
+          "address": "Bécsi út 38-44",
+          "openingHours": "Mo-Fr 07:00-22:30; Sa,Su 08:00-22:30"
         },
         {
           "id": "way/861206450",
@@ -150,10 +166,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:45.123Z"
+      "updatedAt": "2026-08-23T04:05:28.147Z"
     },
     "drinking-water": {
-      "count": 848,
+      "count": 853,
       "pois": [
         {
           "id": "node/1805112779",
@@ -214,11 +230,18 @@
           "lon": 19.063858
         },
         {
+          "id": "node/5870418198",
+          "name": "Mária-kút",
+          "lat": 47.507079,
+          "lon": 18.987844
+        },
+        {
           "id": "node/2394561180",
-          "name": "Béke kút",
+          "name": "Béke ivókút",
           "lat": 47.539577,
           "lon": 19.061645,
-          "openingHours": "06:00-20:00"
+          "openingHours": "06:00-20:00",
+          "fee": "no"
         },
         {
           "id": "node/3226645298",
@@ -228,7 +251,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:45.844Z"
+      "updatedAt": "2026-08-23T04:05:30.116Z"
     },
     "playgrounds": {
       "count": 552,
@@ -448,10 +471,10 @@
           "lon": 19.06349
         }
       ],
-      "updatedAt": "2026-08-14T05:05:46.696Z"
+      "updatedAt": "2026-08-23T04:05:31.833Z"
     },
     "parking": {
-      "count": 2333,
+      "count": 2339,
       "pois": [
         {
           "id": "node/7010149903",
@@ -702,7 +725,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:47.760Z"
+      "updatedAt": "2026-08-23T04:05:33.150Z"
     },
     "charging-stations": {
       "count": 349,
@@ -926,7 +949,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:48.368Z"
+      "updatedAt": "2026-08-23T04:05:33.710Z"
     },
     "gas-stations": {
       "count": 112,
@@ -1032,7 +1055,7 @@
           "lon": 18.949138
         }
       ],
-      "updatedAt": "2026-08-14T05:05:48.911Z"
+      "updatedAt": "2026-08-23T04:05:34.313Z"
     },
     "ice-cream": {
       "count": 99,
@@ -1194,7 +1217,8 @@
           "name": "Ice Cafe",
           "lat": 47.489052,
           "lon": 19.056267,
-          "address": "Váci utca 69"
+          "address": "Váci utca 69",
+          "openingHours": "Mo-Su 12:00-22:00"
         },
         {
           "id": "node/13070802400",
@@ -1280,7 +1304,7 @@
           "openingHours": "Mo-Su 11:00-19:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:49.514Z"
+      "updatedAt": "2026-08-23T04:05:34.878Z"
     },
     "dog-parks": {
       "count": 174,
@@ -1428,7 +1452,7 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:49.927Z"
+      "updatedAt": "2026-08-23T04:05:35.298Z"
     },
     "picnic-spots": {
       "count": 547,
@@ -1470,10 +1494,10 @@
           "lon": 18.954331
         }
       ],
-      "updatedAt": "2026-08-14T05:05:50.652Z"
+      "updatedAt": "2026-08-23T04:05:36.820Z"
     },
     "viewpoints": {
-      "count": 171,
+      "count": 181,
       "pois": [
         {
           "id": "node/735462396",
@@ -1669,7 +1693,7 @@
           "lon": 19.020762
         }
       ],
-      "updatedAt": "2026-08-14T05:05:51.076Z"
+      "updatedAt": "2026-08-23T04:05:37.461Z"
     },
     "beaches": {
       "count": 5,
@@ -1705,10 +1729,10 @@
           "lon": 19.060346
         }
       ],
-      "updatedAt": "2026-08-14T05:05:51.558Z"
+      "updatedAt": "2026-08-23T04:05:37.910Z"
     },
     "atms": {
-      "count": 749,
+      "count": 750,
       "pois": [
         {
           "id": "node/4303197556",
@@ -1931,12 +1955,12 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:52.333Z"
+      "updatedAt": "2026-08-23T04:05:38.610Z"
     },
     "post-boxes": {
       "count": 228,
       "pois": [],
-      "updatedAt": "2026-08-14T05:05:52.799Z"
+      "updatedAt": "2026-08-23T04:05:39.190Z"
     },
     "recycling": {
       "count": 366,
@@ -2088,7 +2112,7 @@
           "openingHours": "Mo-Fr 07:00-16:00; Sa 07:00-12:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:53.511Z"
+      "updatedAt": "2026-08-23T04:05:41.011Z"
     },
     "luggage-storage": {
       "count": 21,
@@ -2147,7 +2171,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:53.900Z"
+      "updatedAt": "2026-08-23T04:05:41.479Z"
     },
     "libraries": {
       "count": 95,
@@ -2378,10 +2402,10 @@
           "openingHours": "Mo,We-Th 11:00-19:00; Tu,Fr 10:00-16:00; Sa 10:00-14:00; 2026 Jun 22-2026 Aug 30 Sa off; 2026 Jul 06-2026 Aug 02 off; 2026 Aug 20-21 off; PH off"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:54.503Z"
+      "updatedAt": "2026-08-23T04:05:41.987Z"
     },
     "outdoor-gyms": {
-      "count": 150,
+      "count": 151,
       "pois": [
         {
           "id": "way/1340610771",
@@ -2476,7 +2500,7 @@
           "openingHours": "Mo-Fr 08:30-20:30"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:54.987Z"
+      "updatedAt": "2026-08-23T04:05:43.317Z"
     },
     "camp-sites": {
       "count": 4,
@@ -2512,11 +2536,17 @@
           "address": "Népsziget út 24"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:55.458Z"
+      "updatedAt": "2026-08-23T04:05:43.818Z"
     },
     "shelters": {
-      "count": 37,
+      "count": 26,
       "pois": [
+        {
+          "id": "node/13272968838",
+          "lat": 47.474374,
+          "lon": 19.079345,
+          "context": "Mester utcai kutyafuttató"
+        },
         {
           "id": "way/1297398804",
           "name": "\"Reptér | Csomagellenőrző\"",
@@ -2524,49 +2554,168 @@
           "lon": 19.089928
         },
         {
-          "id": "way/263992112",
-          "name": "Piknikezőhely",
-          "lat": 47.539702,
-          "lon": 18.988682
-        },
-        {
-          "id": "node/2696596496",
-          "name": "Piknikezőhely (removed)",
-          "lat": 47.542416,
-          "lon": 18.98594
-        },
-        {
-          "id": "node/3318728779",
-          "name": "Erzsébet-térdeplő",
-          "lat": 47.510912,
-          "lon": 18.956575
+          "id": "node/5870787444",
+          "name": "Rotter Lajos turistaház",
+          "lat": 47.557367,
+          "lon": 18.997447,
+          "address": "Hármashatárhegyi út 3"
         }
       ],
-      "updatedAt": "2026-08-14T05:05:56.278Z"
+      "updatedAt": "2026-08-23T04:05:45.106Z"
     },
     "rest-areas": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:05:56.710Z"
+      "count": 3,
+      "pois": [
+        {
+          "id": "way/658007774",
+          "name": "Budaörsi pihenőhely",
+          "lat": 47.45283,
+          "lon": 18.957456
+        }
+      ],
+      "updatedAt": "2026-08-23T04:05:45.638Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:05:57.113Z"
+      "updatedAt": "2026-08-23T04:05:46.078Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:00.573Z"
+      "count": 70,
+      "pois": [
+        {
+          "id": "node/12520178156",
+          "name": "Posta24",
+          "lat": 47.502414,
+          "lon": 19.051956
+        },
+        {
+          "id": "node/12520178155",
+          "name": "DHL",
+          "lat": 47.502448,
+          "lon": 19.052366
+        },
+        {
+          "id": "node/11694835388",
+          "name": "Vendobox",
+          "lat": 47.507849,
+          "lon": 19.037581,
+          "address": "Csalogány utca 3/c",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/10118786527",
+          "name": "LUGGAGE S. Deposito",
+          "lat": 47.50115,
+          "lon": 19.055933,
+          "address": "Révay köz 6"
+        },
+        {
+          "id": "node/3370212187",
+          "name": "Posta",
+          "lat": 47.490998,
+          "lon": 19.023833,
+          "address": "Alkotás utca 53",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 08:00-14:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/9580929575",
+          "name": "Budai Központi Kézbesítő Posta",
+          "lat": 47.505015,
+          "lon": 19.019108,
+          "address": "Városmajor utca 35-37",
+          "openingHours": "Mo,Th 08:00-19:00; Tu,We,Fr 08:00-18:00; Sa 08:00-14:00; PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1673623214",
+          "name": "Okmányiroda posta",
+          "lat": 47.476665,
+          "lon": 19.036953,
+          "address": "Bocskai út 39-41",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3624772645",
+          "name": "Központi Kormányablak posta",
+          "lat": 47.529411,
+          "lon": 19.063087
+        },
+        {
+          "id": "node/7511701905",
+          "name": "Pesti Levélcentrum",
+          "lat": 47.501285,
+          "lon": 19.092456,
+          "address": "Dózsa György út 6"
+        },
+        {
+          "id": "node/8568928416",
+          "name": "Mail Boxes etc.",
+          "lat": 47.529454,
+          "lon": 19.066373,
+          "openingHours": "Mo-Fr 09:00-18:00"
+        },
+        {
+          "id": "node/7514478506",
+          "name": "Magyar Posta Központi Ügyfélszolgálati Iroda",
+          "lat": 47.535099,
+          "lon": 19.060991,
+          "address": "Dunavirág utca 2-6"
+        },
+        {
+          "id": "node/6251713715",
+          "name": "Kormányablak posta",
+          "lat": 47.518924,
+          "lon": 19.11012,
+          "address": "Pétervárad utca 11-17",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13265465969",
+          "name": "Magyar Posta",
+          "lat": 47.555348,
+          "lon": 19.07949,
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 09:00-16:00"
+        },
+        {
+          "id": "way/1457022168",
+          "name": "Budapest - Kispest 4. számú posta",
+          "lat": 47.46316,
+          "lon": 19.12849,
+          "address": "Üllői út 201",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 09:00-13:00",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:05:46.602Z"
     },
     "showers": {
-      "count": 0,
+      "count": 24,
       "pois": [],
-      "updatedAt": "2026-08-17T04:03:00.933Z"
+      "updatedAt": "2026-08-23T04:05:47.056Z"
     },
     "fireplaces": {
-      "count": 13,
+      "count": 92,
       "pois": [
+        {
+          "id": "node/4365935916",
+          "name": "III. tűzrakó",
+          "lat": 47.494912,
+          "lon": 18.963831
+        },
+        {
+          "id": "node/4365935918",
+          "name": "II. tűzrakó",
+          "lat": 47.495213,
+          "lon": 18.963662
+        },
+        {
+          "id": "node/4365930314",
+          "name": "I. tűzrakó",
+          "lat": 47.49533,
+          "lon": 18.96343
+        },
         {
           "id": "way/263992112",
           "name": "Piknikezőhely",
@@ -2586,7 +2735,7 @@
           "lon": 18.956575
         }
       ],
-      "updatedAt": "2026-08-17T04:03:01.487Z"
+      "updatedAt": "2026-08-23T04:05:47.907Z"
     },
     "air-pumps": {
       "count": 2,
@@ -2594,9 +2743,102 @@
       "updatedAt": "2026-08-17T04:03:02.025Z"
     },
     "benches": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:03:02.843Z"
+      "count": 9831,
+      "pois": [
+        {
+          "id": "node/5842060856",
+          "name": "Lounge",
+          "lat": 47.496243,
+          "lon": 19.039744
+        },
+        {
+          "id": "node/9670301171",
+          "name": "Okospad",
+          "lat": 47.491905,
+          "lon": 19.041485,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/12802952323",
+          "name": "Kányádi Sándor padja",
+          "lat": 47.504171,
+          "lon": 19.054683
+        },
+        {
+          "id": "node/12806483377",
+          "name": "Hullámpad",
+          "lat": 47.492774,
+          "lon": 19.062415
+        },
+        {
+          "id": "node/8745790954",
+          "name": "André Kertész emlékpad",
+          "lat": 47.490521,
+          "lon": 19.062268
+        },
+        {
+          "id": "node/12199474280",
+          "name": "Chopin-Liszt okospad",
+          "lat": 47.508945,
+          "lon": 19.084086
+        },
+        {
+          "id": "node/4675754684",
+          "name": "Nagy György",
+          "lat": 47.515754,
+          "lon": 19.081088
+        },
+        {
+          "id": "node/6565260385",
+          "name": "Gobbi Hilda (1913–1988)",
+          "lat": 47.471738,
+          "lon": 19.070521
+        },
+        {
+          "id": "node/11173737466",
+          "name": "Nárcisz pad",
+          "lat": 47.545561,
+          "lon": 19.031318
+        },
+        {
+          "id": "node/11085575469",
+          "name": "Kőszék",
+          "lat": 47.53513,
+          "lon": 18.99143
+        },
+        {
+          "id": "node/8918217999",
+          "name": "első pad",
+          "lat": 47.551683,
+          "lon": 19.049864
+        },
+        {
+          "id": "node/10959524907",
+          "name": "CSAPCSE-PAD",
+          "lat": 47.54691,
+          "lon": 18.983255
+        },
+        {
+          "id": "node/13266677898",
+          "name": "György Ádám 1987-2015",
+          "lat": 47.555849,
+          "lon": 19.002569
+        },
+        {
+          "id": "node/13266677899",
+          "name": "Oroszi Zsolt 1974-2020",
+          "lat": 47.555868,
+          "lon": 19.002576
+        },
+        {
+          "id": "node/12248225463",
+          "name": "Benett pad",
+          "lat": 47.469449,
+          "lon": 18.951899
+        }
+      ],
+      "updatedAt": "2026-08-23T04:05:49.328Z"
     },
     "compressed-air": {
       "count": 2,

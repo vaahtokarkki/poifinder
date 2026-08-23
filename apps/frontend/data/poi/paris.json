@@ -1,10 +1,32 @@
 {
   "city": "paris",
-  "generatedAt": "2026-08-18T03:58:23.310Z",
+  "generatedAt": "2026-08-23T04:23:30.851Z",
   "categories": {
     "toilets": {
-      "count": 1142,
+      "count": 1144,
       "pois": [
+        {
+          "id": "node/7160893729",
+          "lat": 48.857508,
+          "lon": 2.353282,
+          "wheelchair": "designated",
+          "fee": "no",
+          "context": "Le BHV Marais"
+        },
+        {
+          "id": "node/7251079310",
+          "lat": 48.853679,
+          "lon": 2.359015,
+          "fee": "no",
+          "context": "Hôtel de Sens"
+        },
+        {
+          "id": "node/9364462840",
+          "lat": 48.862578,
+          "lon": 2.342665,
+          "wheelchair": "designated",
+          "context": "Bourse de Commerce"
+        },
         {
           "id": "node/12598624547",
           "name": "G-040",
@@ -181,6 +203,15 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/62643138",
+          "name": "Centre commercial de la Vache Noire",
+          "lat": 48.811352,
+          "lon": 2.328849,
+          "address": "Place de la Vache Noire",
+          "openingHours": "Mo-Sa 10:00-20:00",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/260232744",
           "name": "Lourmel",
           "lat": 48.839091,
@@ -204,10 +235,10 @@
           "lon": 2.337801
         }
       ],
-      "updatedAt": "2026-08-14T05:14:56.477Z"
+      "updatedAt": "2026-08-23T04:22:48.189Z"
     },
     "drinking-water": {
-      "count": 1448,
+      "count": 1450,
       "pois": [
         {
           "id": "node/3765622295",
@@ -360,10 +391,10 @@
           "lon": 2.304452
         }
       ],
-      "updatedAt": "2026-08-14T05:14:57.454Z"
+      "updatedAt": "2026-08-23T04:22:51.387Z"
     },
     "playgrounds": {
-      "count": 1347,
+      "count": 1348,
       "pois": [
         {
           "id": "way/630886117",
@@ -556,10 +587,10 @@
           "lon": 2.364996
         }
       ],
-      "updatedAt": "2026-08-14T05:14:58.421Z"
+      "updatedAt": "2026-08-23T04:22:53.322Z"
     },
     "parking": {
-      "count": 3844,
+      "count": 3849,
       "pois": [
         {
           "id": "relation/7510228",
@@ -778,10 +809,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:59.663Z"
+      "updatedAt": "2026-08-23T04:22:56.670Z"
     },
     "charging-stations": {
-      "count": 525,
+      "count": 524,
       "pois": [
         {
           "id": "node/2003145869",
@@ -792,10 +823,10 @@
           "fee": "yes"
         },
         {
-          "id": "node/3790468909",
+          "id": "way/991557479",
           "name": "Paris/Saint-Martin/204",
-          "lat": 48.863423,
-          "lon": 2.352636,
+          "lat": 48.863507,
+          "lon": 2.352672,
           "openingHours": "24/7",
           "wheelchair": "no",
           "fee": "yes"
@@ -1021,10 +1052,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:00.251Z"
+      "updatedAt": "2026-08-23T04:22:58.067Z"
     },
     "gas-stations": {
-      "count": 136,
+      "count": 135,
       "pois": [
         {
           "id": "node/307372951",
@@ -1230,16 +1261,18 @@
           "wheelchair": "yes"
         },
         {
-          "id": "way/79147677",
-          "name": "Station Service Carrefour Quais d'Ivry",
-          "lat": 48.819599,
-          "lon": 2.396795
+          "id": "node/267652178",
+          "name": "Esso Paris Paul Doumer",
+          "lat": 48.860973,
+          "lon": 2.28283,
+          "openingHours": "24/7",
+          "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:00.868Z"
+      "updatedAt": "2026-08-23T04:22:59.160Z"
     },
     "ice-cream": {
-      "count": 142,
+      "count": 143,
       "pois": [
         {
           "id": "node/9898312901",
@@ -1469,7 +1502,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:01.552Z"
+      "updatedAt": "2026-08-23T04:23:00.316Z"
     },
     "dog-parks": {
       "count": 77,
@@ -1555,11 +1588,17 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:02.103Z"
+      "updatedAt": "2026-08-23T04:23:01.127Z"
     },
     "picnic-spots": {
-      "count": 533,
+      "count": 539,
       "pois": [
+        {
+          "id": "node/9050391817",
+          "lat": 48.861384,
+          "lon": 2.387429,
+          "context": "TEP Ménilmontant"
+        },
         {
           "id": "node/8733838010",
           "name": "Espace de détente Georges Verry",
@@ -1567,10 +1606,10 @@
           "lon": 2.456466
         }
       ],
-      "updatedAt": "2026-08-14T05:15:02.883Z"
+      "updatedAt": "2026-08-23T04:23:03.821Z"
     },
     "viewpoints": {
-      "count": 61,
+      "count": 64,
       "pois": [
         {
           "id": "node/5163691221",
@@ -1717,6 +1756,12 @@
           "wheelchair": "no"
         },
         {
+          "id": "way/576038515",
+          "name": "Tour de la Tour",
+          "lat": 48.861719,
+          "lon": 2.2788
+        },
+        {
           "id": "way/439501438",
           "name": "Temple Grec",
           "lat": 48.830021,
@@ -1741,6 +1786,12 @@
           "lon": 2.258943
         },
         {
+          "id": "way/83059161",
+          "name": "Le Pigeonnier de Gambetta",
+          "lat": 48.878259,
+          "lon": 2.264272
+        },
+        {
           "id": "node/1156167346",
           "name": "Butte aux Canons",
           "lat": 48.827679,
@@ -1759,7 +1810,7 @@
           "lon": 2.454002
         }
       ],
-      "updatedAt": "2026-08-14T05:15:03.367Z"
+      "updatedAt": "2026-08-23T04:23:04.940Z"
     },
     "beaches": {
       "count": 3,
@@ -1771,10 +1822,10 @@
           "lon": 2.378951
         }
       ],
-      "updatedAt": "2026-08-14T05:15:03.879Z"
+      "updatedAt": "2026-08-23T04:23:05.677Z"
     },
     "atms": {
-      "count": 1625,
+      "count": 1628,
       "pois": [
         {
           "id": "node/658959185",
@@ -2003,10 +2054,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:05.010Z"
+      "updatedAt": "2026-08-23T04:23:10.229Z"
     },
     "post-boxes": {
-      "count": 1846,
+      "count": 1845,
       "pois": [
         {
           "id": "node/1785271538",
@@ -2046,11 +2097,17 @@
           "lon": 2.328611
         }
       ],
-      "updatedAt": "2026-08-14T05:15:05.852Z"
+      "updatedAt": "2026-08-23T04:23:12.472Z"
     },
     "recycling": {
-      "count": 3486,
+      "count": 3504,
       "pois": [
+        {
+          "id": "node/14097915712",
+          "name": "Recyclage bac jaune",
+          "lat": 48.848271,
+          "lon": 2.349674
+        },
         {
           "id": "node/10905832764",
           "name": "Compost Amelot",
@@ -2259,16 +2316,9 @@
           "lon": 2.31962,
           "address": "Boulevard Bessières 81",
           "openingHours": "We-Fr 12:30-19:00; Sa 10:00-19:00"
-        },
-        {
-          "id": "node/7140752986",
-          "name": "Borne Relai dépose vêtements",
-          "lat": 48.872911,
-          "lon": 2.417559,
-          "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:06.855Z"
+      "updatedAt": "2026-08-23T04:23:15.843Z"
     },
     "luggage-storage": {
       "count": 29,
@@ -2377,10 +2427,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:07.359Z"
+      "updatedAt": "2026-08-23T04:23:16.987Z"
     },
     "libraries": {
-      "count": 571,
+      "count": 573,
       "pois": [
         {
           "id": "node/2997913294",
@@ -2611,10 +2661,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:08.086Z"
+      "updatedAt": "2026-08-23T04:23:18.451Z"
     },
     "outdoor-gyms": {
-      "count": 449,
+      "count": 455,
       "pois": [
         {
           "id": "node/6089787088",
@@ -2807,12 +2857,12 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:15:08.694Z"
+      "updatedAt": "2026-08-23T04:23:20.387Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:15:09.178Z"
+      "updatedAt": "2026-08-23T04:23:21.219Z"
     },
     "shelters": {
       "count": 31,
@@ -2830,21 +2880,44 @@
           "lon": 2.248901
         }
       ],
-      "updatedAt": "2026-08-14T05:15:10.009Z"
+      "updatedAt": "2026-08-23T04:23:23.452Z"
     },
     "rest-areas": {
-      "count": 2,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:15:10.428Z"
+      "count": 5,
+      "pois": [
+        {
+          "id": "way/26334246",
+          "name": "BP",
+          "lat": 48.880535,
+          "lon": 2.452392,
+          "openingHours": "24/7"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:23:24.278Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:15:10.838Z"
+      "updatedAt": "2026-08-23T04:23:25.119Z"
     },
     "post-offices": {
-      "count": 208,
+      "count": 310,
       "pois": [
+        {
+          "id": "node/12941426499",
+          "name": "La Poste",
+          "lat": 48.857652,
+          "lon": 2.355796
+        },
+        {
+          "id": "node/11822465940",
+          "name": "Paris Rivoli",
+          "lat": 48.855895,
+          "lon": 2.357706,
+          "address": "Rue de Rivoli 15",
+          "openingHours": "Mo-Fr 10:00-19:00; Sa 09:00-12:30",
+          "wheelchair": "yes"
+        },
         {
           "id": "node/677770389",
           "name": "Paris Châtelet",
@@ -2852,6 +2925,22 @@
           "lon": 2.346711,
           "openingHours": "Mo-Fr 09:00-19:00; Sa 09:00-12:30; PH off; 2024 May 20 off",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/8438927716",
+          "name": "Relais Poste",
+          "lat": 48.850673,
+          "lon": 2.348225,
+          "openingHours": "Mo-Sa 08:00-21:15; Su 08:00-18:15; PH off; 2024 May 19 08:00-18:15; 2024 May 20 off",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/8438933717",
+          "name": "PARIS LPR FRANPRIX DOMAT",
+          "lat": 48.850741,
+          "lon": 2.347562,
+          "openingHours": "Mo-Sa 09:00-20:00; PH off; 2024 May 20 off",
+          "wheelchair": "no"
         },
         {
           "id": "node/6202267835",
@@ -2871,6 +2960,14 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/11587752795",
+          "name": "FTL Express",
+          "lat": 48.865101,
+          "lon": 2.35503,
+          "address": "Rue de Turbigo 46",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/6929778684",
           "name": "Paris Jussieu",
           "lat": 48.847682,
@@ -2885,6 +2982,15 @@
           "lat": 48.853145,
           "lon": 2.366539,
           "openingHours": "Mo-Fr 09:00-19:00; Sa 09:00-12:30; PH off; 2024 May 20 off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/1061630685",
+          "name": "Paris Louvre",
+          "lat": 48.864808,
+          "lon": 2.343243,
+          "address": "Rue du Louvre 50",
+          "openingHours": "Mo-Sa 08:00-23:59; Su 10:00-23:59; PH off",
           "wheelchair": "yes"
         },
         {
@@ -2954,6 +3060,13 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/1755256374",
+          "name": "Paris Beaux-Arts - Espace Pro.",
+          "lat": 48.856131,
+          "lon": 2.331346,
+          "openingHours": "Mo-Fr 10:30-18:00, Sa 09:00-12:30"
+        },
+        {
           "id": "node/7193088667",
           "name": "Paris Richard Lenoir",
           "lat": 48.862624,
@@ -2989,6 +3102,13 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/10278256368",
+          "name": "Mail Boxes Etc.",
+          "lat": 48.850192,
+          "lon": 2.330278,
+          "openingHours": "Mo-Fr 10:00-13:00,14:00-18:00"
+        },
+        {
           "id": "node/4899506463",
           "name": "Paris Canal Saint-Martin",
           "lat": 48.869805,
@@ -3002,6 +3122,15 @@
           "lat": 48.872269,
           "lon": 2.346812,
           "wheelchair": "no"
+        },
+        {
+          "id": "node/784437927",
+          "name": "Rue de Lille Caisse des Depôts",
+          "lat": 48.859077,
+          "lon": 2.327998,
+          "address": "Rue de Lille 56",
+          "openingHours": "closed",
+          "wheelchair": "yes"
         },
         {
           "id": "node/1958796818",
@@ -3019,93 +3148,122 @@
           "address": "Avenue Ledru-Rollin 80",
           "openingHours": "Mo-Fr 10:00-18:00; Sa 09:00-12:30; PH off",
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/1748261738",
-          "name": "Paris Raspail",
-          "lat": 48.855567,
-          "lon": 2.325921,
-          "openingHours": "Mo-Fr 09:00-19:00, Sa 10:00-13:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/6550214578",
-          "name": "Paris Parmentier",
-          "lat": 48.859362,
-          "lon": 2.37903,
-          "address": "Avenue Parmentier 7",
-          "openingHours": "Mo-Fr 10:00-19:00; Sa 10:00-13:00; PH off; 2024 May 20 off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/251774784",
-          "name": "Paris Gare-de-Lyon",
-          "lat": 48.846099,
-          "lon": 2.374245,
-          "openingHours": "Mo-Fr 10:00-19:00; Sa 09:00-13:00; PH off; 2024 May 20 off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/63648931",
-          "name": "Paris Goncourt",
-          "lat": 48.869123,
-          "lon": 2.372208,
-          "address": "Rue des Goncourt 5",
-          "openingHours": "Mo-Fr 09:00-19:00; Sa 09:00-13:00; PH off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/1593566393",
-          "name": "Paris Haussmann",
-          "lat": 48.872205,
-          "lon": 2.337183,
-          "openingHours": "closed",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/13141162301",
-          "name": "Paris Magenta",
-          "lat": 48.875858,
-          "lon": 2.355485,
-          "openingHours": "Mo-Fr 09:00-19:00; Sa 09:00-12:30; Su off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/1750121041",
-          "name": "Paris Capucines",
-          "lat": 48.868866,
-          "lon": 2.329349,
-          "openingHours": "Mo-Fr 10:00-19:00; Sa 10:00-13:00; PH off; 2024 May 20 off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/282489742",
-          "name": "Paris Drouot",
-          "lat": 48.874224,
-          "lon": 2.339657,
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/6964684059",
-          "name": "Paris Saint-Maur",
-          "lat": 48.865962,
-          "lon": 2.37816,
-          "address": "Rue Oberkampf 113",
-          "openingHours": "Mo-Fr 10:00-12:00,14:00-18:00; Sa 10:00-13:00; PH off; 2024 May 20 off",
-          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-17T04:04:40.580Z"
+      "updatedAt": "2026-08-23T04:23:26.782Z"
     },
     "showers": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:40.975Z"
+      "count": 21,
+      "pois": [
+        {
+          "id": "node/1383045408",
+          "name": "Bains-Douches Saint-Merri",
+          "lat": 48.858936,
+          "lon": 2.352506,
+          "openingHours": "Mo-We,Fr-Sa 07:30-13:00; Su 08:00-12:30",
+          "fee": "no"
+        },
+        {
+          "id": "node/3720030177",
+          "name": "Bains-douches Lacépède",
+          "lat": 48.8444,
+          "lon": 2.350053
+        },
+        {
+          "id": "way/63643579",
+          "name": "Bains-douches Oberkampf",
+          "lat": 48.864402,
+          "lon": 2.372164
+        },
+        {
+          "id": "node/1353062599",
+          "name": "Bains-douches Audubon",
+          "lat": 48.846125,
+          "lon": 2.369404,
+          "address": "Rue Audubon 11",
+          "openingHours": "Mo-Fr 12:00-18:00; Sa-Su,PH off",
+          "fee": "no"
+        },
+        {
+          "id": "way/78018947",
+          "name": "Bains-douches Charenton",
+          "lat": 48.843307,
+          "lon": 2.38471,
+          "openingHours": "Th 12:00-18:30; Fr 08:00-18:30; Sa 07:00-18:30; Su 08:00-11:30"
+        },
+        {
+          "id": "node/2831881223",
+          "name": "Bains-douches Meaux",
+          "lat": 48.879086,
+          "lon": 2.371609
+        },
+        {
+          "id": "node/2509481208",
+          "name": "Bains-douches de la Bidassoa",
+          "lat": 48.866661,
+          "lon": 2.392741
+        },
+        {
+          "id": "node/4091174398",
+          "name": "Bain-douche Rome",
+          "lat": 48.878049,
+          "lon": 2.322424,
+          "openingHours": "We-Su 08:00-12:00"
+        },
+        {
+          "id": "node/3172023067",
+          "name": "Bains-douches Pyrénées",
+          "lat": 48.872025,
+          "lon": 2.392413,
+          "address": "Rue des Pyrénées",
+          "openingHours": "Mo,We-Sa 08:00-17:30; Su 08:00-11:30; Tu off"
+        },
+        {
+          "id": "way/70145442",
+          "name": "Bains-douches des Haies",
+          "lat": 48.8532,
+          "lon": 2.400812
+        },
+        {
+          "id": "node/11482725935",
+          "name": "Bains-douches Blomet",
+          "lat": 48.843072,
+          "lon": 2.307836,
+          "fee": "no"
+        },
+        {
+          "id": "way/63235006",
+          "name": "Bains-douches Petitot",
+          "lat": 48.876392,
+          "lon": 2.392442
+        },
+        {
+          "id": "node/8045196504",
+          "name": "Bain-douche Rouvet",
+          "lat": 48.892811,
+          "lon": 2.385266,
+          "fee": "no"
+        },
+        {
+          "id": "node/1909195122",
+          "name": "Bain-douche Ney",
+          "lat": 48.898075,
+          "lon": 2.33966,
+          "openingHours": "Mo-Sa 07:30-13:00, Su 08:00-12:30"
+        },
+        {
+          "id": "way/374193024",
+          "name": "Douches collectives",
+          "lat": 48.902305,
+          "lon": 2.400621
+        }
+      ],
+      "updatedAt": "2026-08-23T04:23:27.471Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 5,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:41.555Z"
+      "updatedAt": "2026-08-23T04:23:28.390Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3113,9 +3271,34 @@
       "updatedAt": "2026-08-17T04:04:41.963Z"
     },
     "benches": {
-      "count": 6,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:42.388Z"
+      "count": 20992,
+      "pois": [
+        {
+          "id": "node/9995007001",
+          "name": "La Péniche",
+          "lat": 48.854129,
+          "lon": 2.328578
+        },
+        {
+          "id": "node/11437094051",
+          "name": "Banc de Vaclav Havel",
+          "lat": 48.855605,
+          "lon": 2.295333
+        },
+        {
+          "id": "node/11361476840",
+          "name": "Bois",
+          "lat": 48.842233,
+          "lon": 2.284187
+        },
+        {
+          "id": "node/12600821887",
+          "name": "Banc",
+          "lat": 48.868252,
+          "lon": 2.446687
+        }
+      ],
+      "updatedAt": "2026-08-23T04:23:30.751Z"
     },
     "compressed-air": {
       "count": 0,

@@ -1,6 +1,6 @@
 {
   "city": "ghent",
-  "generatedAt": "2026-08-18T03:58:16.868Z",
+  "generatedAt": "2026-08-23T04:16:41.308Z",
   "categories": {
     "toilets": {
       "count": 148,
@@ -39,12 +39,29 @@
           "openingHours": "Mo-Su 08:00-20:00"
         },
         {
+          "id": "node/11042190134",
+          "lat": 51.049001,
+          "lon": 3.728718,
+          "openingHours": "Mo-We 10:00-19:00; Th 10:00-20:00; Fr-Sa 10:00-19:00",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "De Krook"
+        },
+        {
           "id": "node/11968593604",
           "name": "Administratief centrum",
           "lat": 51.046878,
           "lon": 3.730796,
           "wheelchair": "yes",
           "fee": "no"
+        },
+        {
+          "id": "node/10649566942",
+          "lat": 51.072207,
+          "lon": 3.714383,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Parking Het Getouw"
         },
         {
           "id": "way/874409254",
@@ -88,12 +105,12 @@
           "lon": 3.702009
         }
       ],
-      "updatedAt": "2026-08-14T05:11:26.243Z"
+      "updatedAt": "2026-08-23T04:16:21.086Z"
     },
     "drinking-water": {
       "count": 34,
       "pois": [],
-      "updatedAt": "2026-08-14T05:11:26.914Z"
+      "updatedAt": "2026-08-23T04:16:22.717Z"
     },
     "playgrounds": {
       "count": 253,
@@ -192,8 +209,8 @@
         {
           "id": "way/1450325286",
           "name": "Wilgentunnel",
-          "lat": 51.017532,
-          "lon": 3.726951
+          "lat": 51.017529,
+          "lon": 3.726953
         },
         {
           "id": "node/13077582844",
@@ -285,10 +302,10 @@
           "lon": 3.749994
         }
       ],
-      "updatedAt": "2026-08-14T05:11:27.691Z"
+      "updatedAt": "2026-08-23T04:16:23.476Z"
     },
     "parking": {
-      "count": 1836,
+      "count": 1831,
       "pois": [
         {
           "id": "node/310469809",
@@ -505,10 +522,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:28.617Z"
+      "updatedAt": "2026-08-23T04:16:24.496Z"
     },
     "charging-stations": {
-      "count": 564,
+      "count": 569,
       "pois": [
         {
           "id": "node/8845957893",
@@ -627,7 +644,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:29.126Z"
+      "updatedAt": "2026-08-23T04:16:25.122Z"
     },
     "gas-stations": {
       "count": 70,
@@ -823,7 +840,7 @@
           "address": "Hulleken 83"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:29.612Z"
+      "updatedAt": "2026-08-23T04:16:25.581Z"
     },
     "ice-cream": {
       "count": 20,
@@ -972,15 +989,15 @@
           "address": "Boskeetstraat 19"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:30.085Z"
+      "updatedAt": "2026-08-23T04:16:26.130Z"
     },
     "dog-parks": {
       "count": 33,
       "pois": [],
-      "updatedAt": "2026-08-14T05:11:30.515Z"
+      "updatedAt": "2026-08-23T04:16:26.609Z"
     },
     "picnic-spots": {
-      "count": 476,
+      "count": 477,
       "pois": [
         {
           "id": "node/2225073609",
@@ -995,11 +1012,25 @@
           "lon": 3.73346
         }
       ],
-      "updatedAt": "2026-08-14T05:11:31.232Z"
+      "updatedAt": "2026-08-23T04:16:29.001Z"
     },
     "viewpoints": {
-      "count": 14,
+      "count": 28,
       "pois": [
+        {
+          "id": "way/461398127",
+          "name": "Vogelkijkhut",
+          "lat": 51.058026,
+          "lon": 3.6713,
+          "wheelchair": "no"
+        },
+        {
+          "id": "way/1427577513",
+          "name": "Vogelkijkhut Assels",
+          "lat": 51.034116,
+          "lon": 3.673302,
+          "wheelchair": "no"
+        },
         {
           "id": "node/4287480145",
           "name": "Vogelkijkhut Damvalleimeer",
@@ -1007,7 +1038,7 @@
           "lon": 3.809911
         }
       ],
-      "updatedAt": "2026-08-14T05:11:31.666Z"
+      "updatedAt": "2026-08-23T04:16:29.653Z"
     },
     "beaches": {
       "count": 13,
@@ -1025,7 +1056,7 @@
           "lon": 3.683895
         }
       ],
-      "updatedAt": "2026-08-14T05:11:32.132Z"
+      "updatedAt": "2026-08-23T04:16:30.198Z"
     },
     "atms": {
       "count": 72,
@@ -1140,22 +1171,15 @@
           "address": "Heerweg-Zuid 63"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:32.668Z"
+      "updatedAt": "2026-08-23T04:16:30.761Z"
     },
     "post-boxes": {
-      "count": 157,
-      "pois": [
-        {
-          "id": "node/12332577607",
-          "name": "Troostbus",
-          "lat": 51.066829,
-          "lon": 3.728859
-        }
-      ],
-      "updatedAt": "2026-08-14T05:11:33.130Z"
+      "count": 144,
+      "pois": [],
+      "updatedAt": "2026-08-23T04:16:31.383Z"
     },
     "recycling": {
-      "count": 226,
+      "count": 227,
       "pois": [
         {
           "id": "way/238668698",
@@ -1219,12 +1243,12 @@
           "address": "Bilksken 1"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:33.788Z"
+      "updatedAt": "2026-08-23T04:16:32.981Z"
     },
     "luggage-storage": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-14T05:11:34.163Z"
+      "updatedAt": "2026-08-23T04:16:33.617Z"
     },
     "libraries": {
       "count": 129,
@@ -1307,7 +1331,7 @@
         },
         {
           "id": "node/4682173378",
-          "name": "Brugse Poort",
+          "name": "Wijkbib Brugse Poort",
           "lat": 51.062597,
           "lon": 3.697176,
           "openingHours": "We 14:00-18:00; Th 15:30-18:00; Sa 10:00-12:30; PH closed"
@@ -1433,7 +1457,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:34.778Z"
+      "updatedAt": "2026-08-23T04:16:34.286Z"
     },
     "outdoor-gyms": {
       "count": 35,
@@ -1452,7 +1476,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:35.208Z"
+      "updatedAt": "2026-08-23T04:16:35.387Z"
     },
     "camp-sites": {
       "count": 3,
@@ -1472,7 +1496,7 @@
           "address": "Sneppenbrugstraat 3"
         }
       ],
-      "updatedAt": "2026-08-14T05:11:35.637Z"
+      "updatedAt": "2026-08-23T04:16:35.828Z"
     },
     "shelters": {
       "count": 8,
@@ -1490,20 +1514,47 @@
           "lon": 3.66649
         }
       ],
-      "updatedAt": "2026-08-14T05:11:36.372Z"
+      "updatedAt": "2026-08-23T04:16:37.334Z"
     },
     "rest-areas": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:11:36.798Z"
+      "count": 5,
+      "pois": [
+        {
+          "id": "way/851905492",
+          "name": "Rustplaats Gentbrugge-Zuid",
+          "lat": 51.041744,
+          "lon": 3.783471
+        },
+        {
+          "id": "way/851905493",
+          "name": "Rustplaats Gentbrugge-Noord",
+          "lat": 51.042515,
+          "lon": 3.784018
+        },
+        {
+          "id": "way/700103113",
+          "name": "Dienstenzone Drongen-Noord",
+          "lat": 51.035223,
+          "lon": 3.637833,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/434733974",
+          "name": "Dienstenzone Drongen-Zuid",
+          "lat": 51.033329,
+          "lon": 3.6387,
+          "openingHours": "24/7"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:16:37.945Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:11:37.195Z"
+      "updatedAt": "2026-08-23T04:16:38.690Z"
     },
     "post-offices": {
-      "count": 3,
+      "count": 13,
       "pois": [
         {
           "id": "way/501058868",
@@ -1514,25 +1565,69 @@
           "openingHours": "Mo 13:30-18:00; Tu-Fr 09:30-18:00; Sa 09:30-15:00; PH off; Jul 12:00-14:00 off"
         },
         {
+          "id": "node/1968652631",
+          "name": "bpost Gent Stationswijk",
+          "lat": 51.039056,
+          "lon": 3.715939,
+          "address": "Kortrijksesteenweg 200",
+          "openingHours": "Mo-Fr 09:30-12:30, 13:30-18:00; Sa 09:30-13:00"
+        },
+        {
+          "id": "node/11127212301",
+          "name": "E.K. Service Point",
+          "lat": 51.037403,
+          "lon": 3.741056,
+          "address": "Ledebergplein 42",
+          "openingHours": "Mo-Sa 12:00-19:00"
+        },
+        {
           "id": "node/8003809134",
           "name": "St-Amandsberg Hogeweg",
           "lat": 51.071149,
           "lon": 3.747784,
           "address": "Hogeweg 108",
           "openingHours": "Mo,We,Fr 09:00-12:30,13:30-17:00; Tu,Th 09:00-12:30,13:30-18:00; Sa 09:00-12:30; Su off"
+        },
+        {
+          "id": "way/253158116",
+          "name": "bpost Mariakerke",
+          "lat": 51.075276,
+          "lon": 3.678375
+        },
+        {
+          "id": "node/4339940106",
+          "name": "bpost",
+          "lat": 51.05085,
+          "lon": 3.66292,
+          "address": "Vierhekkensstraat 9",
+          "openingHours": "Mo, We, Fr 09:30-12:30, 13:45-17:00; Tu, Th 09:30-12:30, 13:45-18:00; Sa 09:30-13:00"
+        },
+        {
+          "id": "way/626903921",
+          "name": "Postsorteercentrum Gent X",
+          "lat": 51.098628,
+          "lon": 3.704611,
+          "address": "Industrieweg 30"
+        },
+        {
+          "id": "node/1834489169",
+          "name": "Postkantoor",
+          "lat": 50.99258,
+          "lon": 3.74661,
+          "address": "Hundelgemsesteenweg 379"
         }
       ],
-      "updatedAt": "2026-08-17T04:04:01.804Z"
+      "updatedAt": "2026-08-23T04:16:39.307Z"
     },
     "showers": {
-      "count": 0,
+      "count": 10,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:02.195Z"
+      "updatedAt": "2026-08-23T04:16:39.689Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:02.713Z"
+      "updatedAt": "2026-08-23T04:16:40.421Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1540,9 +1635,22 @@
       "updatedAt": "2026-08-17T04:04:03.103Z"
     },
     "benches": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:03.502Z"
+      "count": 2385,
+      "pois": [
+        {
+          "id": "node/9579027933",
+          "name": "Onument",
+          "lat": 51.073836,
+          "lon": 3.635892
+        },
+        {
+          "id": "node/6798485075",
+          "name": "Ibe's bankje",
+          "lat": 51.013385,
+          "lon": 3.657119
+        }
+      ],
+      "updatedAt": "2026-08-23T04:16:41.207Z"
     },
     "compressed-air": {
       "count": 0,

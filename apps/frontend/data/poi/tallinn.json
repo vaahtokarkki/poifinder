@@ -1,17 +1,18 @@
 {
   "city": "tallinn",
-  "generatedAt": "2026-08-18T03:58:05.070Z",
+  "generatedAt": "2026-08-23T04:03:24.170Z",
   "categories": {
     "toilets": {
-      "count": 194,
+      "count": 198,
       "pois": [
         {
-          "id": "way/28396546",
-          "name": "Viru keskus",
-          "lat": 59.436205,
-          "lon": 24.755886,
+          "id": "node/10128167093",
+          "lat": 59.436076,
+          "lon": 24.755243,
           "address": "Viru väljak 6",
-          "openingHours": "Mo-Sa 10:00-21:00; Su 10:00-19:00"
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Viru keskus"
         },
         {
           "id": "way/26885872",
@@ -22,45 +23,44 @@
           "openingHours": "Mo-Sa 10:00-21:00; Su 10:00-19:00"
         },
         {
-          "id": "way/71551770",
-          "name": "Solaris",
-          "lat": 59.433238,
-          "lon": 24.751519,
-          "address": "Rävala pst 12",
-          "openingHours": "Mo-Su 09:00-23:00",
-          "wheelchair": "yes"
+          "id": "node/10180595608",
+          "lat": 59.43353,
+          "lon": 24.750793,
+          "address": "Estonia pst 9",
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Solaris"
         },
         {
-          "id": "way/8064113",
-          "name": "Nautica",
-          "lat": 59.441305,
-          "lon": 24.762463,
-          "address": "Ahtri 9",
-          "openingHours": "09:00-20:00",
-          "wheelchair": "yes"
+          "id": "node/11196010721",
+          "lat": 59.441278,
+          "lon": 24.76123,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Nautica"
         },
         {
-          "id": "way/26866303",
-          "name": "Kristiine keskus",
-          "lat": 59.42662,
-          "lon": 24.724138,
+          "id": "node/12643053845",
+          "lat": 59.440442,
+          "lon": 24.776702,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Circle K"
+        },
+        {
+          "id": "node/9598033239",
+          "lat": 59.426353,
+          "lon": 24.7821,
+          "context": "Sikupilli keskus"
+        },
+        {
+          "id": "node/5485453924",
+          "lat": 59.426299,
+          "lon": 24.724919,
           "address": "Endla 45",
-          "openingHours": "Mo-Su 08:00-23:00"
-        },
-        {
-          "id": "way/26897556",
-          "name": "Sikupilli keskus",
-          "lat": 59.426419,
-          "lon": 24.784046,
-          "address": "Tartu mnt 87"
-        },
-        {
-          "id": "way/720629731",
-          "name": "Circle K",
-          "lat": 59.427999,
-          "lon": 24.719251,
-          "address": "Endla 52",
-          "openingHours": "Mo-Th,Su 06:00-23:00; Fr-Sa 00:00-24:00"
+          "openingHours": "Mo-Su 09:00-23:00",
+          "context": "Kristiine keskus"
         },
         {
           "id": "way/650596561",
@@ -134,6 +134,15 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/982866718",
+          "name": "Terminal",
+          "lat": 59.437278,
+          "lon": 24.870465,
+          "address": "Osmussaare 15",
+          "openingHours": "24/7",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/10113838460",
           "name": "Terminal Oil Mustakivi",
           "lat": 59.437248,
@@ -152,10 +161,10 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:27.238Z"
+      "updatedAt": "2026-08-23T04:02:59.541Z"
     },
     "drinking-water": {
-      "count": 82,
+      "count": 83,
       "pois": [
         {
           "id": "node/11371419469",
@@ -164,10 +173,10 @@
           "lon": 24.660911
         }
       ],
-      "updatedAt": "2026-08-14T05:04:27.862Z"
+      "updatedAt": "2026-08-23T04:03:02.755Z"
     },
     "playgrounds": {
-      "count": 789,
+      "count": 792,
       "pois": [
         {
           "id": "way/810778729",
@@ -294,10 +303,10 @@
           "lon": 24.682532
         }
       ],
-      "updatedAt": "2026-08-14T05:04:28.716Z"
+      "updatedAt": "2026-08-23T04:03:03.896Z"
     },
     "parking": {
-      "count": 3935,
+      "count": 3937,
       "pois": [
         {
           "id": "way/26873906",
@@ -471,10 +480,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:29.902Z"
+      "updatedAt": "2026-08-23T04:03:07.236Z"
     },
     "charging-stations": {
-      "count": 137,
+      "count": 140,
       "pois": [
         {
           "id": "node/7846484113",
@@ -528,7 +537,7 @@
           "lon": 24.642075
         }
       ],
-      "updatedAt": "2026-08-14T05:04:30.361Z"
+      "updatedAt": "2026-08-23T04:03:07.778Z"
     },
     "gas-stations": {
       "count": 96,
@@ -787,7 +796,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:30.946Z"
+      "updatedAt": "2026-08-23T04:03:08.368Z"
     },
     "ice-cream": {
       "count": 14,
@@ -870,7 +879,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:31.410Z"
+      "updatedAt": "2026-08-23T04:03:08.887Z"
     },
     "dog-parks": {
       "count": 40,
@@ -889,15 +898,15 @@
           "lon": 24.798395
         }
       ],
-      "updatedAt": "2026-08-14T05:04:31.847Z"
+      "updatedAt": "2026-08-23T04:03:09.361Z"
     },
     "picnic-spots": {
       "count": 175,
       "pois": [],
-      "updatedAt": "2026-08-14T05:04:32.428Z"
+      "updatedAt": "2026-08-23T04:03:11.187Z"
     },
     "viewpoints": {
-      "count": 35,
+      "count": 36,
       "pois": [
         {
           "id": "node/4940508320",
@@ -936,7 +945,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:32.890Z"
+      "updatedAt": "2026-08-23T04:03:11.765Z"
     },
     "beaches": {
       "count": 18,
@@ -994,7 +1003,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:33.423Z"
+      "updatedAt": "2026-08-23T04:03:12.341Z"
     },
     "atms": {
       "count": 174,
@@ -1097,7 +1106,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:33.990Z"
+      "updatedAt": "2026-08-23T04:03:12.955Z"
     },
     "post-boxes": {
       "count": 68,
@@ -1109,16 +1118,22 @@
           "lon": 24.704234
         }
       ],
-      "updatedAt": "2026-08-14T05:04:34.408Z"
+      "updatedAt": "2026-08-23T04:03:13.466Z"
     },
     "recycling": {
-      "count": 662,
+      "count": 663,
       "pois": [
         {
           "id": "node/9594395717",
           "name": "Taraautomaat Prisma",
           "lat": 59.437261,
           "lon": 24.751312
+        },
+        {
+          "id": "node/7260625286",
+          "lat": 59.433625,
+          "lon": 24.750778,
+          "context": "Solaris"
         },
         {
           "id": "node/11860219080",
@@ -1222,7 +1237,7 @@
           "openingHours": "Sa-Su 09:00-18:00; Mo 12:00-20:00; We 12:00-20:00; Fr 12:00-20:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:35.067Z"
+      "updatedAt": "2026-08-23T04:03:15.962Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -1235,7 +1250,7 @@
           "address": "Uus-Sadama 24"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:35.495Z"
+      "updatedAt": "2026-08-23T04:03:16.431Z"
     },
     "libraries": {
       "count": 43,
@@ -1455,11 +1470,11 @@
           "lat": 59.374463,
           "lon": 24.712965,
           "address": "Pihlaka 12",
-          "openingHours": "Tu-We,Fr 11:00-13:00,14:00-18:00; Th 12:00-14:00,15:00-19:00; Sa 10:00-17:00; Jul 02-08,Jul 18-Aug 01,Aug 07-27 off",
+          "openingHours": "Tu-We,Fr 11:00-18:00; Th 12:00-19:00; Sa 10:00-17:00",
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:35.963Z"
+      "updatedAt": "2026-08-23T04:03:16.945Z"
     },
     "outdoor-gyms": {
       "count": 177,
@@ -1478,50 +1493,145 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:36.492Z"
+      "updatedAt": "2026-08-23T04:03:18.262Z"
     },
     "camp-sites": {
-      "count": 1,
+      "count": 3,
       "pois": [
         {
-          "id": "node/13042178501",
+          "id": "node/13042178001",
           "name": "Pirita Harbour Caravan Camping",
-          "lat": 59.467597,
-          "lon": 24.82432,
+          "lat": 59.467476,
+          "lon": 24.824467,
           "openingHours": "24/7"
+        },
+        {
+          "id": "node/2418164320",
+          "name": "Pirita sadama kämping",
+          "lat": 59.467615,
+          "lon": 24.824538,
+          "address": "Regati pst. 1"
         }
       ],
-      "updatedAt": "2026-08-14T05:04:36.927Z"
+      "updatedAt": "2026-08-23T04:03:18.781Z"
     },
     "shelters": {
-      "count": 24,
+      "count": 23,
       "pois": [],
-      "updatedAt": "2026-08-14T05:04:37.739Z"
+      "updatedAt": "2026-08-23T04:03:19.948Z"
     },
     "rest-areas": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:04:38.183Z"
+      "count": 5,
+      "pois": [
+        {
+          "id": "relation/17206423",
+          "name": "Olerex",
+          "lat": 59.419907,
+          "lon": 24.646163
+        }
+      ],
+      "updatedAt": "2026-08-23T04:03:20.457Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:04:38.575Z"
+      "updatedAt": "2026-08-23T04:03:20.861Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:02:46.883Z"
+      "count": 13,
+      "pois": [
+        {
+          "id": "node/10875199503",
+          "name": "Omniva",
+          "lat": 59.434782,
+          "lon": 24.75691,
+          "address": "Rävala pst 6",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11854670292",
+          "name": "Nova Post 1",
+          "lat": 59.434284,
+          "lon": 24.75235,
+          "address": "Teatri väljak 1",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa,Su 09:00-18:00"
+        },
+        {
+          "id": "node/60698487",
+          "name": "Toompea postkontor",
+          "lat": 59.436054,
+          "lon": 24.739015,
+          "address": "Lossi plats 4",
+          "openingHours": "Mo-Fr 10:00-17:00"
+        },
+        {
+          "id": "node/941442854",
+          "name": "Toompuiestee postipunkt",
+          "lat": 59.437398,
+          "lon": 24.732509,
+          "address": "Toompuiestee 33a",
+          "openingHours": "Mo-Fr 12:00-19:00; Sa 11:00-15:00"
+        },
+        {
+          "id": "node/8430004355",
+          "name": "Kristiine postkontor",
+          "lat": 59.426884,
+          "lon": 24.722466,
+          "address": "Endla 45",
+          "openingHours": "Mo-Fr 10:00-19:00; Sa 10:00-15:00"
+        },
+        {
+          "id": "node/2041265420",
+          "name": "Pallasti postkontor",
+          "lat": 59.430157,
+          "lon": 24.792486
+        },
+        {
+          "id": "node/4492242895",
+          "name": "Arsenali postkontor",
+          "lat": 59.451932,
+          "lon": 24.717665,
+          "address": "Erika 14",
+          "openingHours": "Mo-Fr 10:00-19:00; Sa 10:00-15:00"
+        },
+        {
+          "id": "node/9757760863",
+          "name": "Järve postkontor",
+          "lat": 59.393484,
+          "lon": 24.719674,
+          "address": "Pärnu mnt 238",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/5149177323",
+          "name": "Nurmenuku Postkontor",
+          "lat": 59.414379,
+          "lon": 24.654846,
+          "address": "Õismäe tee 1b",
+          "openingHours": "Mo-Fr 10:00-19:00; Sa 10:00-15:00; Jan 1,Dec 24-26,Dec 31 off; Dec 23,Dec 30 10:00-15:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/598270875",
+          "name": "Lasnamäe Centrum postkontor",
+          "lat": 59.44058,
+          "lon": 24.862754,
+          "address": "Mustakivi tee 13",
+          "openingHours": "Mo-Fr 10:00-20:00; Sa 10:00-16:00",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:03:21.331Z"
     },
     "showers": {
-      "count": 0,
+      "count": 8,
       "pois": [],
-      "updatedAt": "2026-08-17T04:02:47.286Z"
+      "updatedAt": "2026-08-23T04:03:21.767Z"
     },
     "fireplaces": {
-      "count": 1,
+      "count": 27,
       "pois": [],
-      "updatedAt": "2026-08-17T04:02:47.866Z"
+      "updatedAt": "2026-08-23T04:03:22.579Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1529,9 +1639,16 @@
       "updatedAt": "2026-08-17T04:02:48.276Z"
     },
     "benches": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:02:48.684Z"
+      "count": 7490,
+      "pois": [
+        {
+          "id": "node/8358840202",
+          "name": "Chopini pink",
+          "lat": 59.434204,
+          "lon": 24.745741
+        }
+      ],
+      "updatedAt": "2026-08-23T04:03:24.066Z"
     },
     "compressed-air": {
       "count": 0,

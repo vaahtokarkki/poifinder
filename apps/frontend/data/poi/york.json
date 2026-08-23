@@ -1,10 +1,17 @@
 {
   "city": "york",
-  "generatedAt": "2026-08-18T03:58:21.488Z",
+  "generatedAt": "2026-08-23T04:21:12.361Z",
   "categories": {
     "toilets": {
-      "count": 68,
+      "count": 70,
       "pois": [
+        {
+          "id": "node/13999438787",
+          "lat": 53.961342,
+          "lon": -1.086281,
+          "wheelchair": "yes",
+          "context": "York Library"
+        },
         {
           "id": "node/259422052",
           "name": "Silver Street Toilets",
@@ -15,13 +22,29 @@
           "fee": "yes"
         },
         {
-          "id": "way/59090939",
-          "name": "Marks & Spencer",
-          "lat": 53.958863,
-          "lon": -1.080323,
-          "address": "Pavement 9",
-          "openingHours": "Mo-Sa 08:00-19:00; Su 11:00-17:00",
+          "id": "way/1546587985",
+          "name": "Pret A Manger",
+          "lat": 53.957946,
+          "lon": -1.092723,
+          "address": "Station Road",
+          "openingHours": "Mo-Fr 05:30-21:00; Sa 17:30-21:30; Su 07:00-21:30",
           "wheelchair": "yes"
+        },
+        {
+          "id": "way/1546597011",
+          "name": "Costa",
+          "lat": 53.958047,
+          "lon": -1.092968,
+          "address": "Station Road",
+          "openingHours": "Mo-Th 05:30-19:00; Sa 06:00-18:00; Su 07:00-17:30",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/11243670880",
+          "lat": 53.958839,
+          "lon": -1.080336,
+          "wheelchair": "yes",
+          "context": "Marks & Spencer"
         },
         {
           "id": "node/1533616161",
@@ -59,12 +82,12 @@
           "openingHours": "Mo-Fr 06:00-24:00; Sa 06:00-22:00; Su 10:00-16:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:13:59.819Z"
+      "updatedAt": "2026-08-23T04:20:56.767Z"
     },
     "drinking-water": {
       "count": 6,
       "pois": [],
-      "updatedAt": "2026-08-14T05:14:00.418Z"
+      "updatedAt": "2026-08-23T04:20:57.870Z"
     },
     "playgrounds": {
       "count": 147,
@@ -214,7 +237,7 @@
           "lon": -0.975591
         }
       ],
-      "updatedAt": "2026-08-14T05:14:01.087Z"
+      "updatedAt": "2026-08-23T04:20:58.599Z"
     },
     "parking": {
       "count": 637,
@@ -444,7 +467,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:01.938Z"
+      "updatedAt": "2026-08-23T04:20:59.548Z"
     },
     "charging-stations": {
       "count": 43,
@@ -512,7 +535,7 @@
           "lon": -1.047418
         }
       ],
-      "updatedAt": "2026-08-14T05:14:02.378Z"
+      "updatedAt": "2026-08-23T04:20:59.987Z"
     },
     "gas-stations": {
       "count": 15,
@@ -610,7 +633,7 @@
           "lon": -0.97301
         }
       ],
-      "updatedAt": "2026-08-14T05:14:02.831Z"
+      "updatedAt": "2026-08-23T04:21:00.451Z"
     },
     "ice-cream": {
       "count": 9,
@@ -680,7 +703,7 @@
           "openingHours": "Th-Mo 11:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:03.303Z"
+      "updatedAt": "2026-08-23T04:21:00.926Z"
     },
     "dog-parks": {
       "count": 7,
@@ -705,17 +728,24 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:03.741Z"
+      "updatedAt": "2026-08-23T04:21:01.351Z"
     },
     "picnic-spots": {
       "count": 165,
       "pois": [],
-      "updatedAt": "2026-08-14T05:14:04.296Z"
+      "updatedAt": "2026-08-23T04:21:02.378Z"
     },
     "viewpoints": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:14:04.698Z"
+      "count": 5,
+      "pois": [
+        {
+          "id": "way/160163943",
+          "name": "Tree Hide",
+          "lat": 54.023311,
+          "lon": -1.122681
+        }
+      ],
+      "updatedAt": "2026-08-23T04:21:02.901Z"
     },
     "beaches": {
       "count": 2,
@@ -727,7 +757,7 @@
           "lon": -1.084291
         }
       ],
-      "updatedAt": "2026-08-14T05:14:05.179Z"
+      "updatedAt": "2026-08-23T04:21:03.376Z"
     },
     "atms": {
       "count": 88,
@@ -861,7 +891,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:05.646Z"
+      "updatedAt": "2026-08-23T04:21:03.900Z"
     },
     "post-boxes": {
       "count": 257,
@@ -873,7 +903,7 @@
           "lon": -1.091894
         }
       ],
-      "updatedAt": "2026-08-14T05:14:06.247Z"
+      "updatedAt": "2026-08-23T04:21:04.591Z"
     },
     "recycling": {
       "count": 31,
@@ -885,9 +915,15 @@
           "lon": -1.066205,
           "address": "Hazel Court",
           "openingHours": "Su 08:30-16:00; Oct-Mar: Mo-Sa 08:30-17:00; Apr-Sep: Mo-Sa 08:30-19:00; Dec 25-26 off; Jan 01 off"
+        },
+        {
+          "id": "node/7689619106",
+          "lat": 53.991398,
+          "lon": -1.104462,
+          "context": "Tesco Extra"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:06.741Z"
+      "updatedAt": "2026-08-23T04:21:05.921Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -901,7 +937,7 @@
           "openingHours": "Mo-Su 09:00-19:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:07.128Z"
+      "updatedAt": "2026-08-23T04:21:06.347Z"
     },
     "libraries": {
       "count": 30,
@@ -1067,7 +1103,7 @@
           "address": "Church Street"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:07.607Z"
+      "updatedAt": "2026-08-23T04:21:06.889Z"
     },
     "outdoor-gyms": {
       "count": 14,
@@ -1079,11 +1115,73 @@
           "lon": -1.071882
         }
       ],
-      "updatedAt": "2026-08-14T05:14:08.079Z"
+      "updatedAt": "2026-08-23T04:21:07.774Z"
     },
     "camp-sites": {
-      "count": 6,
+      "count": 31,
       "pois": [
+        {
+          "id": "way/126304659",
+          "name": "Rowntree Park Caravan Club",
+          "lat": 53.950572,
+          "lon": -1.080573,
+          "address": "Terry Avenue"
+        },
+        {
+          "id": "way/197376364",
+          "name": "Manor Farm",
+          "lat": 53.935684,
+          "lon": -1.08655,
+          "address": "Bishopthorpe Road"
+        },
+        {
+          "id": "way/164241880",
+          "name": "Bleak House Farm Campsite",
+          "lat": 53.938175,
+          "lon": -1.057457
+        },
+        {
+          "id": "way/256707817",
+          "name": "Chowdene",
+          "lat": 53.97983,
+          "lon": -1.051852,
+          "address": "Malton Road"
+        },
+        {
+          "id": "way/185027606",
+          "name": "Rawcliffe Manor Caravan Park",
+          "lat": 53.989237,
+          "lon": -1.111911,
+          "address": "Village Street"
+        },
+        {
+          "id": "way/185027605",
+          "name": "Acomb Grange Caravan Site",
+          "lat": 53.949689,
+          "lon": -1.143747,
+          "address": "Broad Lane"
+        },
+        {
+          "id": "way/185026593",
+          "name": "Cherry Tree Cottage Caravan site",
+          "lat": 53.979743,
+          "lon": -1.140513,
+          "address": "Millfield Lane"
+        },
+        {
+          "id": "way/248288743",
+          "name": "York Caravan Park",
+          "lat": 53.981606,
+          "lon": -1.03261,
+          "address": "Stockton Lane"
+        },
+        {
+          "id": "way/586736500",
+          "name": "Nurseries Caravan Park",
+          "lat": 53.935771,
+          "lon": -1.147374,
+          "address": "Askham Lane"
+        },
         {
           "id": "way/256254749",
           "name": "Willow House Caravan Park",
@@ -1099,10 +1197,72 @@
           "address": "Moor Lane"
         },
         {
+          "id": "node/7423861688",
+          "name": "Moor Lane Farm",
+          "lat": 53.974988,
+          "lon": -1.013939,
+          "address": "Moor Lane"
+        },
+        {
+          "id": "node/3636134962",
+          "name": "Grantchester Caravan and Camping",
+          "lat": 53.998155,
+          "lon": -1.137268
+        },
+        {
+          "id": "way/250277148",
+          "name": "Beechwood Grange",
+          "lat": 53.995765,
+          "lon": -1.028086,
+          "address": "Malton Road"
+        },
+        {
+          "id": "way/250165737",
+          "name": "Wagtail Park",
+          "lat": 53.998026,
+          "lon": -1.031111,
+          "address": "North Lane"
+        },
+        {
+          "id": "way/826180227",
+          "name": "Millbridge Farm Camping and Caravan Park",
+          "lat": 53.905922,
+          "lon": -1.08605,
+          "address": "Howden Lane"
+        },
+        {
           "id": "way/192505334",
           "name": "Moor End Farm, Caravan & Camping Site",
           "lat": 53.90452,
           "lon": -1.105237
+        },
+        {
+          "id": "way/176226812",
+          "name": "Chestnut Farm Holiday Park",
+          "lat": 53.903371,
+          "lon": -1.10303
+        },
+        {
+          "id": "node/7795528974",
+          "name": "Earswick Caravan Park",
+          "lat": 54.014223,
+          "lon": -1.0536,
+          "fee": "yes"
+        },
+        {
+          "id": "way/176226814",
+          "name": "Poplar Farm Caravan SIte",
+          "lat": 53.902821,
+          "lon": -1.103687,
+          "address": "Acaster Lane"
+        },
+        {
+          "id": "node/5586397089",
+          "name": "The Lodge",
+          "lat": 54.01443,
+          "lon": -1.049114,
+          "address": "Strensall Road 302",
+          "fee": "no"
         },
         {
           "id": "way/119639777",
@@ -1112,43 +1272,278 @@
           "address": "Wheldrake Lane"
         },
         {
+          "id": "way/177595725",
+          "name": "Naburn Lock Caravan Park",
+          "lat": 53.895043,
+          "lon": -1.094348
+        },
+        {
           "id": "way/1419028276",
           "name": "Belle Vista Glamping & Camping",
           "lat": 53.981355,
           "lon": -0.977955
+        },
+        {
+          "id": "way/810709851",
+          "name": "York Touring Caravan and Camping Site",
+          "lat": 54.016578,
+          "lon": -1.016651,
+          "address": "Towthorpe Moor Lane",
+          "fee": "yes"
+        },
+        {
+          "id": "way/256217358",
+          "name": "Ashfield Touring Caravan Park",
+          "lat": 53.955578,
+          "lon": -0.967436
+        },
+        {
+          "id": "way/186258827",
+          "name": "Swallow Hall Caravan Park",
+          "lat": 53.908586,
+          "lon": -1.001883,
+          "address": "Wheldrake Lane"
         }
       ],
-      "updatedAt": "2026-08-14T05:14:08.507Z"
+      "updatedAt": "2026-08-23T04:21:08.286Z"
     },
     "shelters": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:14:09.233Z"
+      "updatedAt": "2026-08-23T04:21:09.027Z"
     },
     "rest-areas": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:14:09.675Z"
+      "count": 2,
+      "pois": [
+        {
+          "id": "way/1548188709",
+          "name": "Postroom Delivery Area",
+          "lat": 53.948159,
+          "lon": -1.028879
+        }
+      ],
+      "updatedAt": "2026-08-23T04:21:09.487Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:14:10.074Z"
+      "updatedAt": "2026-08-23T04:21:09.813Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:29.553Z"
+      "count": 27,
+      "pois": [
+        {
+          "id": "node/732735202",
+          "name": "York Post Office",
+          "lat": 53.958294,
+          "lon": -1.083821,
+          "address": "Coney Street 39-41",
+          "openingHours": "Mo-Sa 09:00-17:30; Su 11:00-15:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/6312485724",
+          "name": "Mail Boxes etc.",
+          "lat": 53.957155,
+          "lon": -1.085865,
+          "address": "Micklegate 13"
+        },
+        {
+          "id": "node/2570203708",
+          "name": "Micklegate Post Office",
+          "lat": 53.956556,
+          "lon": -1.089761,
+          "address": "Micklegate 95",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-14:30"
+        },
+        {
+          "id": "node/434943195",
+          "name": "Market Place Post Office",
+          "lat": 53.959743,
+          "lon": -1.079786,
+          "address": "Colliergate 4",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-14:30"
+        },
+        {
+          "id": "way/299944491",
+          "name": "Heworth Post Office",
+          "lat": 53.965634,
+          "lon": -1.064102,
+          "address": "East Parade 73",
+          "openingHours": "Mo-Fr 08:30-17:30; Sa 08:30-13:30"
+        },
+        {
+          "id": "node/3508095489",
+          "name": "Huntington Road Post Office",
+          "lat": 53.976223,
+          "lon": -1.072367,
+          "address": "Turner Close",
+          "openingHours": "Mo-Su 08:00-21:00"
+        },
+        {
+          "id": "way/251543050",
+          "name": "Taylor's of Acomb",
+          "lat": 53.955891,
+          "lon": -1.122243,
+          "address": "York Road 39A"
+        },
+        {
+          "id": "node/11277758810",
+          "name": "Dringhouses Post Office",
+          "lat": 53.94143,
+          "lon": -1.105886,
+          "openingHours": "Mo-Sa 06:00-20:00; Su 06:00-12:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/193676984",
+          "name": "Broadway Post Office",
+          "lat": 53.940947,
+          "lon": -1.070131,
+          "address": "Broadway 44",
+          "openingHours": "Mo-Sa 06:00-19:00; Su 06:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/3256863489",
+          "name": "Tang Hall Lane Post Office",
+          "lat": 53.958979,
+          "lon": -1.049664,
+          "address": "Tang Hall Lane 143-145",
+          "openingHours": "Mo-Su 07:00-23:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/262644543",
+          "name": "Eastholme Drive Post Office",
+          "lat": 53.979522,
+          "lon": -1.107007,
+          "address": "Eastholme Drive 20",
+          "openingHours": "Mo-Sa 07:00-21:00; Su 08:00-21:00"
+        },
+        {
+          "id": "node/9878813589",
+          "name": "Bad Bargain Lane Post Office",
+          "lat": 53.965788,
+          "lon": -1.045727,
+          "address": "Bad Bargain Lane 125"
+        },
+        {
+          "id": "node/1450272036",
+          "name": "Beckfield Lane Post Office",
+          "lat": 53.962897,
+          "lon": -1.134349,
+          "address": "Beckfield Lane 137",
+          "openingHours": "Mo-Su 08:00-21:00"
+        },
+        {
+          "id": "node/3508097398",
+          "name": "Brockfield Post Office",
+          "lat": 53.984842,
+          "lon": -1.063383,
+          "address": "Brockfield Park Drive 52-54",
+          "openingHours": "Mo-Su 07:30-21:00"
+        },
+        {
+          "id": "node/262974345",
+          "name": "Heslington Post Office",
+          "lat": 53.944863,
+          "lon": -1.044786,
+          "address": "Main Street 13",
+          "openingHours": "Mo-Fr 08:45-17:30; Sa 08:45-13:00"
+        },
+        {
+          "id": "node/4646287736",
+          "name": "New Earswick Post Office",
+          "lat": 53.989193,
+          "lon": -1.073373,
+          "address": "Hawthorne Terrace",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-13:30"
+        },
+        {
+          "id": "node/1880001723",
+          "name": "Woodthorpe Post Office",
+          "lat": 53.936406,
+          "lon": -1.123315,
+          "address": "Moorcroft Road 51",
+          "openingHours": "Mo-Su 07:00-22:00"
+        },
+        {
+          "id": "node/643441923",
+          "name": "Bishopthorpe Post Office",
+          "lat": 53.92177,
+          "lon": -1.100178,
+          "address": "Sim Balk Lane 26",
+          "openingHours": "Mo-Sa 06:00-18:00; Su 06:00-12:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/848397489",
+          "name": "Huntington Post Office",
+          "lat": 53.997032,
+          "lon": -1.057602,
+          "address": "North Moor Road 43A",
+          "openingHours": "Mo-Fr 06:00-17:30; Sa 06:00-17:00; Su 07:00-11:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1253118889",
+          "name": "Skelton Post Office",
+          "lat": 53.99881,
+          "lon": -1.130649,
+          "address": "Fairfields Drive 52",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-12:30"
+        },
+        {
+          "id": "node/656845323",
+          "name": "Post Office & Store",
+          "lat": 53.915505,
+          "lon": -1.141576,
+          "address": "Main Street",
+          "openingHours": "Mo-Fr 08:45-17:30; Sa 08:45-13:00"
+        },
+        {
+          "id": "way/827051294",
+          "name": "Naburn Post Office",
+          "lat": 53.903152,
+          "lon": -1.09004,
+          "address": "Front Street"
+        },
+        {
+          "id": "node/13898615002",
+          "name": "Haxby Post Office",
+          "lat": 54.018933,
+          "lon": -1.080624,
+          "address": "Wyre Court 5"
+        },
+        {
+          "id": "node/1933047389",
+          "name": "Dunnington Post Office",
+          "lat": 53.963923,
+          "lon": -0.981821,
+          "address": "York Street 29",
+          "openingHours": "Mo-Sa 07:30-21:00; Su 08:00-20:00"
+        },
+        {
+          "id": "node/3506108617",
+          "name": "Rufforth Post Office",
+          "lat": 53.955712,
+          "lon": -1.195462,
+          "address": "Wetherby Road",
+          "openingHours": "Mo,Th 09:30-12:30"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:21:10.207Z"
     },
     "showers": {
-      "count": 0,
+      "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:29.963Z"
+      "updatedAt": "2026-08-23T04:21:10.606Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 17,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:30.486Z"
+      "updatedAt": "2026-08-23T04:21:11.429Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1156,9 +1551,34 @@
       "updatedAt": "2026-08-17T04:04:30.866Z"
     },
     "benches": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:31.283Z"
+      "count": 1276,
+      "pois": [
+        {
+          "id": "way/146669675",
+          "name": "Stone Festival Bench",
+          "lat": 53.962733,
+          "lon": -1.082834
+        },
+        {
+          "id": "node/1515497252",
+          "name": "Bishopthorpe Pinfold",
+          "lat": 53.921099,
+          "lon": -1.100673
+        },
+        {
+          "id": "node/10981740395",
+          "name": "Portrait Benches: Dame Judi Dench and Dave Jackson",
+          "lat": 53.916219,
+          "lon": -1.09904
+        },
+        {
+          "id": "node/6642025419",
+          "name": "Len's Seat",
+          "lat": 53.991166,
+          "lon": -1.17674
+        }
+      ],
+      "updatedAt": "2026-08-23T04:21:12.250Z"
     },
     "compressed-air": {
       "count": 0,

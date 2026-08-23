@@ -1,10 +1,19 @@
 {
   "city": "bristol",
-  "generatedAt": "2026-08-18T03:58:19.488Z",
+  "generatedAt": "2026-08-23T04:19:16.233Z",
   "categories": {
     "toilets": {
-      "count": 107,
+      "count": 108,
       "pois": [
+        {
+          "id": "node/853973829",
+          "lat": 51.454435,
+          "lon": -2.593267,
+          "openingHours": "Mo-Sa 09:30-17:00; Su 10:00-16:00",
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "Corn Exchange"
+        },
         {
           "id": "way/124114864",
           "name": "Sparks Bristol",
@@ -59,6 +68,15 @@
           "lon": -2.578531,
           "address": "Oxford Street 32",
           "openingHours": "We,Th 11:00-21:00; Fr,Sa 11:00-22:00; Su 12:00-17:00; Mo,Tu off"
+        },
+        {
+          "id": "way/376285986",
+          "name": "Bank",
+          "lat": 51.441526,
+          "lon": -2.577617,
+          "address": "Wells Road 107",
+          "openingHours": "Mo-Su 09:00-23:00",
+          "wheelchair": "limited"
         },
         {
           "id": "way/133880995",
@@ -125,22 +143,23 @@
           "wheelchair": "limited"
         },
         {
-          "id": "way/890992760",
-          "name": "Cribbs Mall",
-          "lat": 51.525006,
-          "lon": -2.595879,
-          "openingHours": "Mo-Fr 09:30-20:00; Sa 09:00-20:00; Su 11:00-17:00"
+          "id": "node/8427257435",
+          "lat": 51.524029,
+          "lon": -2.593927,
+          "wheelchair": "limited",
+          "fee": "no",
+          "context": "Cribbs Mall"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:52.335Z"
+      "updatedAt": "2026-08-23T04:18:57.347Z"
     },
     "drinking-water": {
       "count": 22,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:52.998Z"
+      "updatedAt": "2026-08-23T04:18:59.136Z"
     },
     "playgrounds": {
-      "count": 282,
+      "count": 281,
       "pois": [
         {
           "id": "way/971357063",
@@ -241,7 +260,7 @@
           "id": "way/647015307",
           "name": "Maskelyne Avenue Play Area",
           "lat": 51.491599,
-          "lon": -2.593566
+          "lon": -2.593573
         },
         {
           "id": "way/405906581",
@@ -330,10 +349,10 @@
           "lon": -2.512356
         }
       ],
-      "updatedAt": "2026-08-14T05:12:53.700Z"
+      "updatedAt": "2026-08-23T04:19:00.000Z"
     },
     "parking": {
-      "count": 1453,
+      "count": 1456,
       "pois": [
         {
           "id": "node/331617693",
@@ -365,6 +384,7 @@
           "name": "Broadmead Car Park",
           "lat": 51.456722,
           "lon": -2.585095,
+          "openingHours": "Mo-Su 00:00+",
           "wheelchair": "yes",
           "fee": "yes"
         },
@@ -557,7 +577,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:54.699Z"
+      "updatedAt": "2026-08-23T04:19:00.935Z"
     },
     "charging-stations": {
       "count": 67,
@@ -600,7 +620,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:55.127Z"
+      "updatedAt": "2026-08-23T04:19:01.487Z"
     },
     "gas-stations": {
       "count": 45,
@@ -743,7 +763,7 @@
           "lon": -2.690774
         }
       ],
-      "updatedAt": "2026-08-14T05:12:55.599Z"
+      "updatedAt": "2026-08-23T04:19:02.091Z"
     },
     "ice-cream": {
       "count": 11,
@@ -809,20 +829,20 @@
           "address": "Sandown Road 2"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:56.076Z"
+      "updatedAt": "2026-08-23T04:19:02.617Z"
     },
     "dog-parks": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:56.504Z"
+      "updatedAt": "2026-08-23T04:19:03.042Z"
     },
     "picnic-spots": {
       "count": 216,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:57.086Z"
+      "updatedAt": "2026-08-23T04:19:04.397Z"
     },
     "viewpoints": {
-      "count": 58,
+      "count": 59,
       "pois": [
         {
           "id": "node/2268918987",
@@ -836,6 +856,15 @@
           "name": "Bristol Heritage Walk 22",
           "lat": 51.455565,
           "lon": -2.599491
+        },
+        {
+          "id": "way/98503059",
+          "name": "The Clifton Observatory",
+          "lat": 51.45663,
+          "lon": -2.626477,
+          "address": "Litfield Place",
+          "openingHours": "Nov-Mar: Mo-Su 10:00-16:00; Apr-Oct: Mo-Su 10:00-17:00",
+          "fee": "yes"
         },
         {
           "id": "node/9669823817",
@@ -874,12 +903,12 @@
           "lon": -2.637365
         }
       ],
-      "updatedAt": "2026-08-14T05:12:57.567Z"
+      "updatedAt": "2026-08-23T04:19:04.967Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:58.019Z"
+      "updatedAt": "2026-08-23T04:19:05.368Z"
     },
     "atms": {
       "count": 217,
@@ -998,12 +1027,12 @@
           "address": "Badminton Road 20"
         }
       ],
-      "updatedAt": "2026-08-14T05:12:58.623Z"
+      "updatedAt": "2026-08-23T04:19:05.990Z"
     },
     "post-boxes": {
       "count": 682,
       "pois": [],
-      "updatedAt": "2026-08-14T05:12:59.250Z"
+      "updatedAt": "2026-08-23T04:19:06.699Z"
     },
     "recycling": {
       "count": 97,
@@ -1042,12 +1071,12 @@
           "lon": -2.480097
         }
       ],
-      "updatedAt": "2026-08-14T05:12:59.722Z"
+      "updatedAt": "2026-08-23T04:19:08.909Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:13:00.160Z"
+      "updatedAt": "2026-08-23T04:19:09.454Z"
     },
     "libraries": {
       "count": 51,
@@ -1273,15 +1302,15 @@
           "lon": -2.649833
         }
       ],
-      "updatedAt": "2026-08-14T05:13:00.624Z"
+      "updatedAt": "2026-08-23T04:19:10.042Z"
     },
     "outdoor-gyms": {
-      "count": 20,
+      "count": 21,
       "pois": [],
-      "updatedAt": "2026-08-14T05:13:01.106Z"
+      "updatedAt": "2026-08-23T04:19:11.032Z"
     },
     "camp-sites": {
-      "count": 3,
+      "count": 4,
       "pois": [
         {
           "id": "way/675210190",
@@ -1297,45 +1326,248 @@
           "lon": -2.625614
         }
       ],
-      "updatedAt": "2026-08-14T05:13:01.542Z"
+      "updatedAt": "2026-08-23T04:19:11.506Z"
     },
     "shelters": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-08-14T05:13:02.271Z"
+      "updatedAt": "2026-08-23T04:19:12.699Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:13:02.693Z"
+      "updatedAt": "2026-08-23T04:19:13.166Z"
     },
     "dump-stations": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-14T05:13:03.102Z"
+      "updatedAt": "2026-08-23T04:19:13.601Z"
     },
     "post-offices": {
-      "count": 1,
+      "count": 57,
       "pois": [
         {
-          "id": "way/554363029",
-          "name": "Staple Hill Post Office",
-          "lat": 51.481394,
-          "lon": -2.508249,
-          "address": "High Street 119"
+          "id": "way/108832790",
+          "name": "Stokes Croft Post Office",
+          "lat": 51.463648,
+          "lon": -2.590045,
+          "address": "Stokes Croft 109",
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 09:00-17:30"
+        },
+        {
+          "id": "node/3597441153",
+          "name": "Stapleton Road Post Office",
+          "lat": 51.460664,
+          "lon": -2.5744,
+          "address": "Stapleton Road",
+          "openingHours": "Mo-Su 09:00-23:00"
+        },
+        {
+          "id": "node/10780415259",
+          "name": "St Georges Road Post Office",
+          "lat": 51.451206,
+          "lon": -2.605434,
+          "address": "Saint Georges Road 87"
+        },
+        {
+          "id": "node/12919140480",
+          "name": "Bedminster Parade Post Office",
+          "lat": 51.44304,
+          "lon": -2.595136,
+          "address": "Imperial Arcade 7"
+        },
+        {
+          "id": "node/1390183280",
+          "name": "Totterdown Post Office",
+          "lat": 51.4421,
+          "lon": -2.578473,
+          "openingHours": "Mo-Fr 09:00-13:15,14:15-17:30; Sa 09:00-13:00"
+        },
+        {
+          "id": "way/291257213",
+          "name": "Lawrence Hill Post Office",
+          "lat": 51.457796,
+          "lon": -2.565524,
+          "address": "Lawrence Hill 192"
+        },
+        {
+          "id": "way/288984347",
+          "name": "Bedminster Post Office",
+          "lat": 51.440731,
+          "lon": -2.600301,
+          "address": "East Street"
+        },
+        {
+          "id": "node/4567793843",
+          "name": "Cotham Hill Post Office",
+          "lat": 51.464342,
+          "lon": -2.609124
+        },
+        {
+          "id": "way/275133731",
+          "name": "Mina Road Post Office",
+          "lat": 51.469427,
+          "lon": -2.575318,
+          "address": "Mina Road"
+        },
+        {
+          "id": "node/3746579036",
+          "name": "Bedminster Victoria Park Post Office",
+          "lat": 51.43782,
+          "lon": -2.583152,
+          "address": "Saint John's Lane 173",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-12:30"
+        },
+        {
+          "id": "way/264385438",
+          "name": "Gloucester Road Post Office",
+          "lat": 51.472934,
+          "lon": -2.591368,
+          "address": "Gloucester Road 46",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-13:30"
+        },
+        {
+          "id": "node/2757541574",
+          "name": "Clifton Village Post Office",
+          "lat": 51.45425,
+          "lon": -2.618176,
+          "address": "Regent Street 22",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-12:30"
+        },
+        {
+          "id": "node/3400970792",
+          "name": "Easton Post Office",
+          "lat": 51.469663,
+          "lon": -2.564757,
+          "address": "Stapleton Road 425",
+          "openingHours": "Mo,Tu,Th,Fr 08:00-22:30; We 09:00-22:30; Sa 08:30-22:00; Su 09:00-20:00"
+        },
+        {
+          "id": "node/4070569455",
+          "name": "Whiteladies Post Office",
+          "lat": 51.468822,
+          "lon": -2.613386
+        },
+        {
+          "id": "node/3781475282",
+          "name": "Knowle Post Office",
+          "lat": 51.434844,
+          "lon": -2.567274,
+          "openingHours": "Mo-Fr 08:30-17:30; Sa 08:30-13:00"
+        },
+        {
+          "id": "way/405875168",
+          "name": "Sandy Park Road Post Office",
+          "lat": 51.440741,
+          "lon": -2.554707,
+          "address": "Sandy Park Road 22-24"
+        },
+        {
+          "id": "node/3797561226",
+          "name": "Knowle Park Post Office",
+          "lat": 51.431035,
+          "lon": -2.569816
+        },
+        {
+          "id": "way/264235158",
+          "name": "Horfield Post Office",
+          "lat": 51.480693,
+          "lon": -2.588239
+        },
+        {
+          "id": "node/4044686345",
+          "name": "Melvin Square Post Office",
+          "lat": 51.428274,
+          "lon": -2.585563,
+          "address": "Melvin Square 10"
+        },
+        {
+          "id": "way/405940921",
+          "name": "Birchwood Road Post Office",
+          "lat": 51.448557,
+          "lon": -2.54238,
+          "address": "Birchwood Road"
+        },
+        {
+          "id": "node/1043483772",
+          "name": "Upper Eastville Post Office",
+          "lat": 51.473699,
+          "lon": -2.549309,
+          "openingHours": "Mo-Sa 06:30-22:00; Su 07:00-22:00"
+        },
+        {
+          "id": "node/4049300865",
+          "name": "Inns Court Green Post Office",
+          "lat": 51.420262,
+          "lon": -2.595512
+        },
+        {
+          "id": "way/267314763",
+          "name": "Henleaze Post Office",
+          "lat": 51.486585,
+          "lon": -2.609435,
+          "address": "Henleaze Road 152",
+          "openingHours": "Mo-Fr 08:30-18:00; Sa 08:30-16:00"
+        },
+        {
+          "id": "node/7572157768",
+          "name": "Loxton Road Post Office",
+          "lat": 51.417491,
+          "lon": -2.570752
+        },
+        {
+          "id": "node/4897951366",
+          "name": "Kingsway Post Office",
+          "lat": 51.454915,
+          "lon": -2.525724
+        },
+        {
+          "id": "node/4710793148",
+          "name": "Druid Hill Post Office",
+          "lat": 51.481174,
+          "lon": -2.634731,
+          "address": "Druid Hill 5",
+          "openingHours": "Mo-Fr 07:30-19:30; Sa 08:30-17:30"
+        },
+        {
+          "id": "node/815655557",
+          "name": "Lockleaze Post Office",
+          "lat": 51.491164,
+          "lon": -2.563513,
+          "address": "Gainsborough Square 12-14",
+          "openingHours": "Mo-Fr 06:00-23:00; Sa 07:00-23:00; Su 07:00-22:00"
+        },
+        {
+          "id": "way/995895851",
+          "name": "Bishopsworth Post Office",
+          "lat": 51.416743,
+          "lon": -2.617241
+        },
+        {
+          "id": "way/401508457",
+          "name": "Mayfield Park Post Office",
+          "lat": 51.472616,
+          "lon": -2.525129
+        },
+        {
+          "id": "node/8215182351",
+          "name": "Westbury-on-Trym Post Office",
+          "lat": 51.493218,
+          "lon": -2.620627,
+          "openingHours": "Mo-Sa 08:00-19:00; Su 08:30-13:30"
         }
       ],
-      "updatedAt": "2026-08-17T04:04:17.077Z"
+      "updatedAt": "2026-08-23T04:19:14.087Z"
     },
     "showers": {
-      "count": 0,
+      "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:17.484Z"
+      "updatedAt": "2026-08-23T04:19:14.503Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 8,
       "pois": [],
-      "updatedAt": "2026-08-17T04:04:17.995Z"
+      "updatedAt": "2026-08-23T04:19:15.322Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1343,9 +1575,28 @@
       "updatedAt": "2026-08-17T04:04:18.373Z"
     },
     "benches": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:04:18.700Z"
+      "count": 2332,
+      "pois": [
+        {
+          "id": "node/12771013701",
+          "name": "Mrs Molly Taylor",
+          "lat": 51.463115,
+          "lon": -2.557201
+        },
+        {
+          "id": "node/2850232444",
+          "name": "Crocodile Bench",
+          "lat": 51.456468,
+          "lon": -2.641576
+        },
+        {
+          "id": "node/9396576488",
+          "name": "Bomber's Seat",
+          "lat": 51.466066,
+          "lon": -2.699332
+        }
+      ],
+      "updatedAt": "2026-08-23T04:19:16.132Z"
     },
     "compressed-air": {
       "count": 0,

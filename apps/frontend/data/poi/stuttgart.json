@@ -1,9 +1,9 @@
 {
   "city": "stuttgart",
-  "generatedAt": "2026-08-18T03:58:11.790Z",
+  "generatedAt": "2026-08-23T04:10:51.484Z",
   "categories": {
     "toilets": {
-      "count": 194,
+      "count": 195,
       "pois": [
         {
           "id": "node/3759963857",
@@ -27,6 +27,22 @@
           "name": "Toilette",
           "lat": 48.774554,
           "lon": 9.176861
+        },
+        {
+          "id": "node/10702778310",
+          "lat": 48.779697,
+          "lon": 9.172847,
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "Hofdienergarage"
+        },
+        {
+          "id": "node/11405529096",
+          "lat": 48.784414,
+          "lon": 9.183857,
+          "wheelchair": "no",
+          "fee": "yes",
+          "context": "InfoTurmStuttgart"
         },
         {
           "id": "node/444622044",
@@ -63,6 +79,13 @@
           "openingHours": "24/7",
           "wheelchair": "no",
           "fee": "no"
+        },
+        {
+          "id": "node/13240457438",
+          "lat": 48.803849,
+          "lon": 9.206263,
+          "wheelchair": "limited",
+          "context": "Wilhelma Parkhaus"
         },
         {
           "id": "node/3595937323",
@@ -150,6 +173,15 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/30607946",
+          "name": "Kaufland",
+          "lat": 48.81305,
+          "lon": 9.266381,
+          "address": "Stuttgarter Straße 70",
+          "openingHours": "Mo-We 07:00-22:00; Th-Fr 07:00-24:00; Sa 07:00-23:30",
+          "wheelchair": "limited"
+        },
+        {
           "id": "node/5481103732",
           "name": "Kunden-WC",
           "lat": 48.814294,
@@ -158,10 +190,10 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:23.666Z"
+      "updatedAt": "2026-08-23T04:10:29.985Z"
     },
     "drinking-water": {
-      "count": 187,
+      "count": 191,
       "pois": [
         {
           "id": "node/10219432473",
@@ -354,10 +386,10 @@
           "lon": 9.205672
         }
       ],
-      "updatedAt": "2026-08-14T05:08:24.409Z"
+      "updatedAt": "2026-08-23T04:10:32.228Z"
     },
     "playgrounds": {
-      "count": 762,
+      "count": 766,
       "pois": [
         {
           "id": "way/380726718",
@@ -556,7 +588,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:25.231Z"
+      "updatedAt": "2026-08-23T04:10:33.171Z"
     },
     "parking": {
       "count": 2207,
@@ -814,7 +846,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:26.331Z"
+      "updatedAt": "2026-08-23T04:10:34.347Z"
     },
     "charging-stations": {
       "count": 504,
@@ -1015,7 +1047,7 @@
           "lon": 9.269141
         }
       ],
-      "updatedAt": "2026-08-14T05:08:26.927Z"
+      "updatedAt": "2026-08-23T04:10:34.999Z"
     },
     "gas-stations": {
       "count": 84,
@@ -1241,7 +1273,7 @@
           "address": "Motorstraße 18"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:27.538Z"
+      "updatedAt": "2026-08-23T04:10:35.588Z"
     },
     "ice-cream": {
       "count": 54,
@@ -1485,7 +1517,7 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:28.029Z"
+      "updatedAt": "2026-08-23T04:10:36.131Z"
     },
     "dog-parks": {
       "count": 8,
@@ -1510,7 +1542,7 @@
           "lon": 9.168771
         }
       ],
-      "updatedAt": "2026-08-14T05:08:28.446Z"
+      "updatedAt": "2026-08-23T04:10:36.593Z"
     },
     "picnic-spots": {
       "count": 218,
@@ -1570,10 +1602,10 @@
           "lon": 9.290765
         }
       ],
-      "updatedAt": "2026-08-14T05:08:29.023Z"
+      "updatedAt": "2026-08-23T04:10:38.309Z"
     },
     "viewpoints": {
-      "count": 148,
+      "count": 154,
       "pois": [
         {
           "id": "way/230756803",
@@ -1594,6 +1626,25 @@
           "name": "Heinrich-Heine-Höhe",
           "lat": 48.771626,
           "lon": 9.191222
+        },
+        {
+          "id": "way/27153443",
+          "name": "Bahnhofsturm",
+          "lat": 48.783375,
+          "lon": 9.182783,
+          "openingHours": "closed",
+          "wheelchair": "limited",
+          "fee": "no"
+        },
+        {
+          "id": "way/1012900648",
+          "name": "InfoTurmStuttgart",
+          "lat": 48.78441,
+          "lon": 9.183789,
+          "address": "Am Schlossgarten 15/1",
+          "openingHours": "10:00-18:00",
+          "wheelchair": "yes",
+          "fee": "no"
         },
         {
           "id": "node/3190450488",
@@ -1759,25 +1810,9 @@
           "lat": 48.80189,
           "lon": 9.206273,
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/283095914",
-          "name": "Killesberg",
-          "lat": 48.805285,
-          "lon": 9.171537,
-          "wheelchair": "limited"
-        },
-        {
-          "id": "way/306362151",
-          "name": "Killesbergturm",
-          "lat": 48.805263,
-          "lon": 9.171239,
-          "openingHours": "08:00-dusk",
-          "wheelchair": "no",
-          "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:29.494Z"
+      "updatedAt": "2026-08-23T04:10:39.252Z"
     },
     "beaches": {
       "count": 4,
@@ -1789,7 +1824,7 @@
           "lon": 9.190011
         }
       ],
-      "updatedAt": "2026-08-14T05:08:30.019Z"
+      "updatedAt": "2026-08-23T04:10:40.004Z"
     },
     "atms": {
       "count": 190,
@@ -2031,7 +2066,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:30.669Z"
+      "updatedAt": "2026-08-23T04:10:40.616Z"
     },
     "post-boxes": {
       "count": 397,
@@ -2086,7 +2121,7 @@
           "lon": 9.158456
         }
       ],
-      "updatedAt": "2026-08-14T05:08:31.288Z"
+      "updatedAt": "2026-08-23T04:10:41.286Z"
     },
     "recycling": {
       "count": 593,
@@ -2163,12 +2198,12 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:31.960Z"
+      "updatedAt": "2026-08-23T04:10:43.392Z"
     },
     "luggage-storage": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-08-14T05:08:32.383Z"
+      "updatedAt": "2026-08-23T04:10:43.837Z"
     },
     "libraries": {
       "count": 79,
@@ -2400,7 +2435,7 @@
           "lon": 9.147356
         }
       ],
-      "updatedAt": "2026-08-14T05:08:32.917Z"
+      "updatedAt": "2026-08-23T04:10:44.337Z"
     },
     "outdoor-gyms": {
       "count": 111,
@@ -2524,10 +2559,10 @@
           "lon": 9.236135
         }
       ],
-      "updatedAt": "2026-08-14T05:08:33.432Z"
+      "updatedAt": "2026-08-23T04:10:45.456Z"
     },
     "camp-sites": {
-      "count": 2,
+      "count": 4,
       "pois": [
         {
           "id": "way/1069563952",
@@ -2538,6 +2573,23 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/1368876534",
+          "name": "Apcoa Camping SI Centrum - Stuttgart",
+          "lat": 48.724691,
+          "lon": 9.164081,
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "way/372829213",
+          "name": "Wohnmobilstellplatz Fellbach",
+          "lat": 48.807638,
+          "lon": 9.268042,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
+        {
           "id": "way/22960667",
           "name": "FKK-Familiensportbund FSB Stuttgart-Fasanenhof e.V.",
           "lat": 48.70898,
@@ -2546,17 +2598,11 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:08:33.866Z"
+      "updatedAt": "2026-08-23T04:10:45.979Z"
     },
     "shelters": {
-      "count": 65,
+      "count": 58,
       "pois": [
-        {
-          "id": "node/576569092",
-          "name": "Grillplatz Bopserhütte",
-          "lat": 48.759147,
-          "lon": 9.184415
-        },
         {
           "id": "node/4354513110",
           "name": "Dürrbachhütte",
@@ -2672,33 +2718,65 @@
           "lon": 9.287332
         },
         {
-          "id": "node/329589569",
-          "name": "Kappelberg",
-          "lat": 48.795792,
-          "lon": 9.283703
-        },
-        {
           "id": "way/25121361",
           "name": "Großer Stern",
           "lat": 48.777193,
           "lon": 9.076684
         }
       ],
-      "updatedAt": "2026-08-14T05:08:34.691Z"
+      "updatedAt": "2026-08-23T04:10:47.570Z"
     },
     "rest-areas": {
-      "count": 0,
+      "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-14T05:08:35.114Z"
+      "updatedAt": "2026-08-23T04:10:48.086Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:08:35.525Z"
+      "updatedAt": "2026-08-23T04:10:48.478Z"
     },
     "post-offices": {
-      "count": 1,
+      "count": 65,
       "pois": [
+        {
+          "id": "node/76957762",
+          "name": "Deutsche Post",
+          "lat": 48.779598,
+          "lon": 9.17804,
+          "address": "Bolzstraße 3",
+          "openingHours": "Mo-Fr 10:00-14:00, 15:30-19:30; Sa 10:00-14:00"
+        },
+        {
+          "id": "node/13675736301",
+          "name": "B&D Kiosk & Späti",
+          "lat": 48.770229,
+          "lon": 9.174682,
+          "address": "Hauptstätter Straße 68",
+          "openingHours": "Mo-Th 08:30-20:00; Fr 08:30-00:00; Sa 13:00-00:00"
+        },
+        {
+          "id": "node/4483748093",
+          "name": "Postagentur in Tabakgeschäft",
+          "lat": 48.770861,
+          "lon": 9.173389,
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/14050428201",
+          "name": "Deutsche Post Filiale 419",
+          "lat": 48.768601,
+          "lon": 9.176205,
+          "address": "Weißenburgstraße 8"
+        },
+        {
+          "id": "node/9705060662",
+          "name": "Postfiliale 503",
+          "lat": 48.766252,
+          "lon": 9.169615,
+          "address": "Tübinger Straße 91",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 10:00-15:00"
+        },
         {
           "id": "way/28057247",
           "name": "Postbank Finanzcenter",
@@ -2707,17 +2785,210 @@
           "address": "Senefelderstraße 49",
           "openingHours": "Mo-Fr 09:00-13:00,14:00-18:00; Sa 09:00-12:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/4418144984",
+          "name": "Textilreinigung am Schwabtunnel",
+          "lat": 48.768402,
+          "lon": 9.15977,
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:00-14:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/8367216960",
+          "name": "Postfiliale 549",
+          "lat": 48.782752,
+          "lon": 9.158681,
+          "address": "Kornbergstraße 44",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/281885724",
+          "name": "Postbank Filiale 505",
+          "lat": 48.784132,
+          "lon": 9.208198,
+          "openingHours": "Mo-Fr 09:00-13:00,14:00-18:00; Sa 09:00-12:00; Su,PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/4587692984",
+          "name": "DHL Postfiliale 560",
+          "lat": 48.797164,
+          "lon": 9.189822,
+          "address": "Nordbahnhofstraße 75",
+          "openingHours": "Mo-Fr 08:00-22:00; We 10:00-22:00"
+        },
+        {
+          "id": "node/837353987",
+          "name": "Hermes PaketShop",
+          "lat": 48.758591,
+          "lon": 9.159218,
+          "openingHours": "Mo-Fr 08:00-16:30",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/8637883736",
+          "name": "DHL Paketshop 443",
+          "lat": 48.774213,
+          "lon": 9.145271,
+          "address": "Rückertstraße 7",
+          "openingHours": "Mo-Sa 07:00-22:00"
+        },
+        {
+          "id": "node/286036796",
+          "name": "Postagentur Degerloch",
+          "lat": 48.749488,
+          "lon": 9.170537,
+          "address": "Jahnstraße 6",
+          "openingHours": "Mo-Fr 09:00-13:00,14:00-18:00, Sa 09:00-12:00; PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/299216438",
+          "name": "Postfiliale Stuttgart 50",
+          "lat": 48.802018,
+          "lon": 9.218369,
+          "address": "Bahnhofstraße 27-29",
+          "openingHours": "Mo-Fr 08:30-18:00; Sa 08:30-13:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/1265947763",
+          "name": "Deutsche Post Filiale 574",
+          "lat": 48.775062,
+          "lon": 9.237688
+        },
+        {
+          "id": "node/1766827837",
+          "name": "Sillenbucher Post",
+          "lat": 48.745119,
+          "lon": 9.213102,
+          "openingHours": "Mo-Tu,Th-Fr 09:00-13:00,14:30-18:00; We 09:00-13:00; Sa 10:00-13:30"
+        },
+        {
+          "id": "node/266369681",
+          "name": "Post",
+          "lat": 48.778597,
+          "lon": 9.127265,
+          "openingHours": "Mo,We-Fr 09:00-13:00,14:30-18:00;Tu,Sa 09:00-13:00;PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/6476133315",
+          "name": "Postfiliale 511",
+          "lat": 48.758566,
+          "lon": 9.238536,
+          "address": "Rohrackerstraße 172",
+          "openingHours": "Mo-Tu 10:00-13:00; We-Th 14:30-17:30; Fr 10:00-13:00; Sa 09:00-13:00"
+        },
+        {
+          "id": "node/3870309151",
+          "name": "Filiale Deutsche Post AG",
+          "lat": 48.812964,
+          "lon": 9.207747,
+          "openingHours": "Sa 09:30-12:30; We 09:00-12:30; Mo,Tu,Th,Fr 09:00-12:30,14:30-18:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "way/25886660",
+          "name": "Telekomgebäude",
+          "lat": 48.779584,
+          "lon": 9.251637,
+          "address": "Augsburger Straße 380",
+          "openingHours": "Mo-Sa 09:00-12:30, Mo-Fr 14:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/10555152522",
+          "name": "DHL Postfiliale",
+          "lat": 48.780425,
+          "lon": 9.251591,
+          "address": "Augsburger Straße 361"
+        },
+        {
+          "id": "node/1157638872",
+          "name": "Toto-Lotto Schreibwaren Frühwald",
+          "lat": 48.80825,
+          "lon": 9.233711,
+          "address": "Martha-Schmidtmann-Straße 7",
+          "openingHours": "Mo-Th 07:00-12:30,14:00-18:00; Tu 07:00-12:30; Fr 07:00-18:00; Sa 07:30-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13013598173",
+          "name": "Kaltentaler Papeterie",
+          "lat": 48.739716,
+          "lon": 9.130313,
+          "address": "Böblinger Straße 471",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:00-13:00; Su,PH off"
+        },
+        {
+          "id": "node/3145506233",
+          "name": "Akcay Kiosk",
+          "lat": 48.730569,
+          "lon": 9.147949,
+          "address": "Holdermannstraße 50",
+          "openingHours": "Mo-Fr 06:00-20:00; Sa 06:00-18:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/3882750277",
+          "name": "Schreibwaren Feulner",
+          "lat": 48.820785,
+          "lon": 9.221278,
+          "address": "Elbestraße 23",
+          "openingHours": "Mo 06:30-12:30; Tu-Fr 06:30-13:00,15:00-17:30",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/9062428717",
+          "name": "Postfiliale im Markt",
+          "lat": 48.823185,
+          "lon": 9.217376,
+          "address": "Freibergstraße",
+          "openingHours": "Mo, We, Fr 08:00-18:00; Tu, Th 08:00-13:00; Sa 09:00-13:00"
+        },
+        {
+          "id": "node/5902168787",
+          "name": "Hermes Paketshop 668785",
+          "lat": 48.72905,
+          "lon": 9.144772,
+          "address": "Leinenweberstraße 47",
+          "openingHours": "Mo-Th,Sa 10:00-20:00; Fr 10:00-13:00,15:00-20:00"
+        },
+        {
+          "id": "node/7209091357",
+          "name": "DPD Paketshop",
+          "lat": 48.729035,
+          "lon": 9.144778,
+          "address": "Leinenweberstraße 47",
+          "openingHours": "Mo-Th 10:00-20:00; Fr,Sa 10:00-13:30,14:30-20:00"
+        },
+        {
+          "id": "node/5572779362",
+          "name": "Planet Internet Cafe& Kiosk",
+          "lat": 48.830444,
+          "lon": 9.175274,
+          "openingHours": "Mo-Sa 09:00-14:00,15:00-18:00; Su,PH off"
+        },
+        {
+          "id": "node/6115450093",
+          "name": "Dampfwaren McSteam",
+          "lat": 48.726525,
+          "lon": 9.145449,
+          "openingHours": "Mo-Fr 09:30-13:00,14:00-18:30; Su,PH off"
         }
       ],
-      "updatedAt": "2026-08-17T04:03:30.113Z"
+      "updatedAt": "2026-08-23T04:10:48.932Z"
     },
     "showers": {
-      "count": 0,
+      "count": 7,
       "pois": [],
-      "updatedAt": "2026-08-17T04:03:30.513Z"
+      "updatedAt": "2026-08-23T04:10:49.359Z"
     },
     "fireplaces": {
-      "count": 14,
+      "count": 53,
       "pois": [
         {
           "id": "node/576569092",
@@ -2730,6 +3001,24 @@
           "name": "Bettelweg-Grillhütte",
           "lat": 48.762953,
           "lon": 9.110685
+        },
+        {
+          "id": "node/1373128251",
+          "name": "Grillstelle Dischinger Burg",
+          "lat": 48.798032,
+          "lon": 9.116039
+        },
+        {
+          "id": "node/4320825788",
+          "name": "Greutterwaldhütte",
+          "lat": 48.823134,
+          "lon": 9.140102
+        },
+        {
+          "id": "node/4743380428",
+          "name": "Sonnenuhrhütte",
+          "lat": 48.77731,
+          "lon": 9.096674
         },
         {
           "id": "node/266658205",
@@ -2756,7 +3045,7 @@
           "lon": 9.283703
         }
       ],
-      "updatedAt": "2026-08-17T04:03:31.095Z"
+      "updatedAt": "2026-08-23T04:10:50.207Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2764,17 +3053,63 @@
       "updatedAt": "2026-08-17T04:03:31.484Z"
     },
     "benches": {
-      "count": 15,
+      "count": 6076,
       "pois": [
+        {
+          "id": "node/8399006932",
+          "name": "Bank-Geheimnis",
+          "lat": 48.777298,
+          "lon": 9.172602
+        },
+        {
+          "id": "node/9498075765",
+          "name": "Solarbank",
+          "lat": 48.773528,
+          "lon": 9.194458,
+          "address": "Albrecht-Goes-Platz",
+          "openingHours": "Mo-Su 07:00-22:00"
+        },
+        {
+          "id": "node/9430753722",
+          "name": "Solarbank der Stadtwerke Stuttgart",
+          "lat": 48.74664,
+          "lon": 9.170617,
+          "address": "Epplestraße",
+          "openingHours": "Mo-Su 07:00-22:00"
+        },
         {
           "id": "node/419340170",
           "name": "Blick über das Tal der Rosen",
           "lat": 48.805408,
           "lon": 9.170509,
           "wheelchair": "no"
+        },
+        {
+          "id": "node/12980197950",
+          "name": "Böpplebänkle",
+          "lat": 48.744494,
+          "lon": 9.183329
+        },
+        {
+          "id": "node/3659131731",
+          "name": "'s Bänkle am Wiesle",
+          "lat": 48.745017,
+          "lon": 9.1956
+        },
+        {
+          "id": "node/665154216",
+          "name": "Schwätzbänkle",
+          "lat": 48.721546,
+          "lon": 9.154912
+        },
+        {
+          "id": "node/1379318983",
+          "name": "Für's Omi",
+          "lat": 48.799742,
+          "lon": 9.095334
         }
       ],
-      "updatedAt": "2026-08-17T04:03:31.903Z"
+      "updatedAt": "2026-08-23T04:10:51.383Z"
     },
     "compressed-air": {
       "count": 10,

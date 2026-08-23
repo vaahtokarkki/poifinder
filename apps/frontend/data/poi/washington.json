@@ -1,18 +1,16 @@
 {
   "city": "washington",
-  "generatedAt": "2026-08-18T03:58:34.660Z",
+  "generatedAt": "2026-08-23T04:34:57.206Z",
   "categories": {
     "toilets": {
       "count": 137,
       "pois": [
         {
-          "id": "way/66418802",
-          "name": "Washington Monument Lodge",
-          "lat": 38.889474,
-          "lon": -77.033387,
-          "address": "15th Street Northwest 2",
-          "openingHours": "09:00-18:00",
-          "wheelchair": "yes"
+          "id": "node/5563024467",
+          "lat": 38.889535,
+          "lon": -77.033402,
+          "wheelchair": "yes",
+          "context": "Washington Monument Lodge"
         },
         {
           "id": "node/10906317773",
@@ -21,13 +19,11 @@
           "lon": -77.061039
         },
         {
-          "id": "way/574897355",
-          "name": "Pavilion Café",
-          "lat": 38.891296,
-          "lon": -77.023518,
-          "address": "Constitution Avenue Northwest 401",
-          "openingHours": "Su-Th 10:00-17:00; Fr-Sa 10:00-18:00",
-          "wheelchair": "yes"
+          "id": "node/11040517078",
+          "lat": 38.891384,
+          "lon": -77.023572,
+          "fee": "no",
+          "context": "Pavilion Café"
         },
         {
           "id": "way/257776960",
@@ -38,16 +34,23 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/495497709",
+          "lat": 38.930498,
+          "lon": -77.054434,
+          "wheelchair": "yes",
+          "context": "National Zoo Visitor Center and Offices"
+        },
+        {
           "id": "node/13143061268",
           "name": "Family Restroom",
           "lat": 38.868981,
           "lon": -77.013478
         }
       ],
-      "updatedAt": "2026-08-14T05:21:12.478Z"
+      "updatedAt": "2026-08-23T04:34:40.639Z"
     },
     "drinking-water": {
-      "count": 182,
+      "count": 181,
       "pois": [
         {
           "id": "node/13831998501",
@@ -74,7 +77,7 @@
           "lon": -77.053704
         }
       ],
-      "updatedAt": "2026-08-14T05:21:13.136Z"
+      "updatedAt": "2026-08-23T04:34:42.222Z"
     },
     "playgrounds": {
       "count": 268,
@@ -262,7 +265,7 @@
           "lon": -77.071673
         }
       ],
-      "updatedAt": "2026-08-14T05:21:13.990Z"
+      "updatedAt": "2026-08-23T04:34:43.017Z"
     },
     "parking": {
       "count": 3245,
@@ -476,10 +479,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:15.145Z"
+      "updatedAt": "2026-08-23T04:34:44.159Z"
     },
     "charging-stations": {
-      "count": 37,
+      "count": 30,
       "pois": [
         {
           "id": "node/10820793326",
@@ -514,16 +517,9 @@
           "lat": 38.946786,
           "lon": -77.065746,
           "fee": "yes"
-        },
-        {
-          "id": "node/13343022022",
-          "name": "Blink",
-          "lat": 38.84909,
-          "lon": -77.013925,
-          "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:15.642Z"
+      "updatedAt": "2026-08-23T04:34:44.637Z"
     },
     "gas-stations": {
       "count": 93,
@@ -705,7 +701,7 @@
           "lon": -76.968576
         }
       ],
-      "updatedAt": "2026-08-14T05:21:16.158Z"
+      "updatedAt": "2026-08-23T04:34:45.158Z"
     },
     "ice-cream": {
       "count": 49,
@@ -927,7 +923,7 @@
           "lon": -77.008376
         }
       ],
-      "updatedAt": "2026-08-14T05:21:16.634Z"
+      "updatedAt": "2026-08-23T04:34:45.551Z"
     },
     "dog-parks": {
       "count": 34,
@@ -1050,10 +1046,10 @@
           "lon": -77.080967
         }
       ],
-      "updatedAt": "2026-08-14T05:21:17.060Z"
+      "updatedAt": "2026-08-23T04:34:46.029Z"
     },
     "picnic-spots": {
-      "count": 272,
+      "count": 273,
       "pois": [
         {
           "id": "way/1275454018",
@@ -1214,10 +1210,10 @@
           "openingHours": "sunrise-sunset"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:17.650Z"
+      "updatedAt": "2026-08-23T04:34:47.365Z"
     },
     "viewpoints": {
-      "count": 19,
+      "count": 20,
       "pois": [
         {
           "id": "node/5191784803",
@@ -1247,7 +1243,7 @@
           "lon": -77.001645
         }
       ],
-      "updatedAt": "2026-08-14T05:21:18.122Z"
+      "updatedAt": "2026-08-23T04:34:47.936Z"
     },
     "beaches": {
       "count": 1,
@@ -1259,10 +1255,10 @@
           "lon": -77.096923
         }
       ],
-      "updatedAt": "2026-08-14T05:21:18.588Z"
+      "updatedAt": "2026-08-23T04:34:48.398Z"
     },
     "atms": {
-      "count": 191,
+      "count": 190,
       "pois": [
         {
           "id": "node/1934653317",
@@ -1490,7 +1486,7 @@
           "lon": -77.011317
         }
       ],
-      "updatedAt": "2026-08-14T05:21:19.249Z"
+      "updatedAt": "2026-08-23T04:34:49.035Z"
     },
     "post-boxes": {
       "count": 209,
@@ -1502,7 +1498,7 @@
           "lon": -77.045411
         }
       ],
-      "updatedAt": "2026-08-14T05:21:19.738Z"
+      "updatedAt": "2026-08-23T04:34:49.572Z"
     },
     "recycling": {
       "count": 64,
@@ -1526,15 +1522,15 @@
           "lon": -77.001961
         }
       ],
-      "updatedAt": "2026-08-14T05:21:20.291Z"
+      "updatedAt": "2026-08-23T04:34:50.799Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:20.735Z"
+      "updatedAt": "2026-08-23T04:34:51.204Z"
     },
     "libraries": {
-      "count": 99,
+      "count": 98,
       "pois": [
         {
           "id": "node/4867674826",
@@ -1594,7 +1590,8 @@
           "id": "node/367142114",
           "name": "Paul Himmelfarb Health Sciences Library",
           "lat": 38.9003,
-          "lon": -77.0506
+          "lon": -77.0506,
+          "address": "Eye Street Northwest 2300"
         },
         {
           "id": "way/48041501",
@@ -1616,7 +1613,8 @@
           "name": "Northwest One Neighborhood Library",
           "lat": 38.903992,
           "lon": -77.013862,
-          "address": "L Street, Northwest 155"
+          "address": "L Street, Northwest 155",
+          "openingHours": "Mo-We,Fr-Sa 10:00-18:00; Th 12:00-20:00; Su 13:00-17:00"
         },
         {
           "id": "way/226023235",
@@ -1626,28 +1624,24 @@
           "address": "W Street Northwest 501"
         },
         {
-          "id": "way/226022492",
-          "name": "Founders Library - MSRC",
-          "lat": 38.922308,
-          "lon": -77.019681
-        },
-        {
           "id": "node/11455863277",
           "name": "Moorland Spingarn Research Center",
           "lat": 38.922315,
           "lon": -77.019519
         },
         {
-          "id": "node/367142119",
-          "name": "Business Library",
-          "lat": 38.924167,
-          "lon": -77.022222
+          "id": "way/226022474",
+          "name": "Founders Library",
+          "lat": 38.922271,
+          "lon": -77.019345,
+          "address": "Howard PI Northwest 500"
         },
         {
-          "id": "way/226022474",
-          "name": "Founders Library - UGL",
-          "lat": 38.922271,
-          "lon": -77.018947
+          "id": "node/367142119",
+          "name": "Howard University School of Business Library",
+          "lat": 38.924221,
+          "lon": -77.022166,
+          "address": "6th Street Northwest 2600"
         },
         {
           "id": "way/66692166",
@@ -1669,7 +1663,8 @@
           "name": "Georgetown Library",
           "lat": 38.913398,
           "lon": -77.06602,
-          "address": "R Street Northwest 3260"
+          "address": "R Street Northwest 3260",
+          "openingHours": "Mo-We 09:00-20:00; Th 12:00-20:00; Fr-Sa 10:00-18:00; Su 13:00-17:00"
         },
         {
           "id": "node/804059691",
@@ -1682,7 +1677,8 @@
           "id": "way/67521482",
           "name": "Lauinger Library",
           "lat": 38.90646,
-          "lon": -77.072137
+          "lon": -77.072137,
+          "openingHours": "Mo-Th,Su 08:00-24:00; Fr-Sa 08:00-22:00"
         },
         {
           "id": "node/367142107",
@@ -1695,7 +1691,8 @@
           "id": "node/1218540872",
           "name": "Blommer Science Library",
           "lat": 38.90957,
-          "lon": -77.073489
+          "lon": -77.073489,
+          "openingHours": "Mo-Th,Su 12:00-17:00; Fr-Sa off"
         },
         {
           "id": "relation/1029374",
@@ -1719,7 +1716,9 @@
           "id": "node/367142117",
           "name": "Sister Helen Sheehan Library",
           "lat": 38.926667,
-          "lon": -77.005278
+          "lon": -77.005278,
+          "address": "Michigan Avenue Northeast 125",
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 09:00-17:00; Su off"
         },
         {
           "id": "way/67521421",
@@ -1750,9 +1749,17 @@
           "lon": -77.002798,
           "address": "2nd Street Southeast 120",
           "wheelchair": "yes"
+        },
+        {
+          "id": "way/48037323",
+          "name": "Southwest Neighborhood Library",
+          "lat": 38.878677,
+          "lon": -77.0158,
+          "address": "Wesley Place Southwest 900",
+          "openingHours": "Su 13:00-17:00; Mo-Th 09:30-21:00; Fr,Sa 09:30-17:30"
         }
       ],
-      "updatedAt": "2026-08-14T05:21:21.320Z"
+      "updatedAt": "2026-08-23T04:34:51.718Z"
     },
     "outdoor-gyms": {
       "count": 17,
@@ -1764,15 +1771,15 @@
           "lon": -77.051699
         }
       ],
-      "updatedAt": "2026-08-14T05:21:21.759Z"
+      "updatedAt": "2026-08-23T04:34:52.477Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:22.228Z"
+      "updatedAt": "2026-08-23T04:34:52.946Z"
     },
     "shelters": {
-      "count": 25,
+      "count": 23,
       "pois": [
         {
           "id": "way/295889115",
@@ -1781,32 +1788,247 @@
           "lon": -77.013714
         }
       ],
-      "updatedAt": "2026-08-14T05:21:22.918Z"
+      "updatedAt": "2026-08-23T04:34:53.755Z"
     },
     "rest-areas": {
-      "count": 0,
+      "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:23.351Z"
+      "updatedAt": "2026-08-23T04:34:54.161Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:21:23.753Z"
+      "updatedAt": "2026-08-23T04:34:54.522Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:48.402Z"
+      "count": 67,
+      "pois": [
+        {
+          "id": "node/4890261059",
+          "name": "The UPS Store",
+          "lat": 38.903493,
+          "lon": -77.034817,
+          "address": "15th Street Northwest 1030",
+          "openingHours": "Mo-Fr 08:30-19:00; Sa 09:30-15:30"
+        },
+        {
+          "id": "node/358961601",
+          "name": "Washington Square Post Office",
+          "lat": 38.903464,
+          "lon": -77.04032,
+          "address": "Connecticut Avenue Northwest 1050",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa,Su off"
+        },
+        {
+          "id": "node/4042212096",
+          "name": "Farragut Post Office",
+          "lat": 38.905465,
+          "lon": -77.042463,
+          "address": "M Street Northwest 1800",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa-Su off",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/734448922",
+          "name": "United States Post Office",
+          "lat": 38.903402,
+          "lon": -77.032272,
+          "address": "14th Street Northwest 1400",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa-Su off"
+        },
+        {
+          "id": "node/6640621585",
+          "name": "FedEx Ship Center",
+          "lat": 38.902755,
+          "lon": -77.042523,
+          "address": "K Street Northwest 1825"
+        },
+        {
+          "id": "node/358959911",
+          "name": "Twentieth Street Post Office",
+          "lat": 38.906351,
+          "lon": -77.045168,
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
+          "id": "node/358959941",
+          "name": "Central Post Office",
+          "lat": 38.900945,
+          "lon": -77.031643
+        },
+        {
+          "id": "node/358961593",
+          "name": "Ward Place Post Office",
+          "lat": 38.9064,
+          "lon": -77.0476
+        },
+        {
+          "id": "node/801351327",
+          "name": "McPherson Station Post Office",
+          "lat": 38.898931,
+          "lon": -77.040743,
+          "address": "Pennsylvania Avenue Northwest 1750",
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
+          "id": "node/4042212097",
+          "name": "14th Street Post Office",
+          "lat": 38.917594,
+          "lon": -77.032233,
+          "address": "14th Street Northwest 2000",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-13:00; Su off"
+        },
+        {
+          "id": "node/806295637",
+          "name": "FedEx Office",
+          "lat": 38.905101,
+          "lon": -77.05216,
+          "address": "M Street Northwest 2400",
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 10:00-18:00; Su off"
+        },
+        {
+          "id": "node/358959933",
+          "name": "Kalorama Post Office",
+          "lat": 38.919812,
+          "lon": -77.041906,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/358961537",
+          "name": "Benjamin Franklin Post Office",
+          "lat": 38.8948,
+          "lon": -77.0289
+        },
+        {
+          "id": "node/358961603",
+          "name": "Watergate Post Office",
+          "lat": 38.899,
+          "lon": -77.0543
+        },
+        {
+          "id": "node/358961545",
+          "name": "State Department Post Office",
+          "lat": 38.893891,
+          "lon": -77.049314,
+          "address": "C Street Northwest 2201",
+          "openingHours": "Mo-Fr 09:00-14:00,14:30-16:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/358961565",
+          "name": "LeDroit Park Post Office",
+          "lat": 38.914277,
+          "lon": -77.017555,
+          "address": "Florida Avenue Northwest 416",
+          "openingHours": "Mo 09:00-12:00; Tu-Fr 09:00-13:00,14:00-17:00; Sa-Su off"
+        },
+        {
+          "id": "way/66693076",
+          "name": "Georgetown Post Office",
+          "lat": 38.905801,
+          "lon": -77.060883,
+          "address": "31st Street Northwest 1221"
+        },
+        {
+          "id": "node/358959989",
+          "name": "Howard University Post Office",
+          "lat": 38.922334,
+          "lon": -77.019699
+        },
+        {
+          "id": "node/358961554",
+          "name": "Francis Perkins Station Post Office",
+          "lat": 38.8933,
+          "lon": -77.0144
+        },
+        {
+          "id": "node/358961575",
+          "name": "National Capitol Post Office",
+          "lat": 38.8979,
+          "lon": -77.008574,
+          "address": "Massachusetts Avenue Northeast 2",
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 09:00-17:00; Su off"
+        },
+        {
+          "id": "node/358961587",
+          "name": "Union Station Post Office",
+          "lat": 38.897715,
+          "lon": -77.007089,
+          "address": "Massachusetts Avenue Northeast 50",
+          "openingHours": "Mo-Fr 07:30-17:00; Sa 07:30-15:30; Su off"
+        },
+        {
+          "id": "node/358959991",
+          "name": "L'Enfant Plaza Post Office",
+          "lat": 38.883837,
+          "lon": -77.024653
+        },
+        {
+          "id": "node/358961549",
+          "name": "Ford Station Post Office",
+          "lat": 38.8844,
+          "lon": -77.0141,
+          "address": "2nd Street Southwest 441"
+        },
+        {
+          "id": "node/358961567",
+          "name": "Longworth Station Post Office",
+          "lat": 38.8872,
+          "lon": -77.0086
+        },
+        {
+          "id": "node/358961540",
+          "name": "Cannon Station Post Office",
+          "lat": 38.8873,
+          "lon": -77.007
+        },
+        {
+          "id": "way/91789177",
+          "name": "Cleveland Park Post Office",
+          "lat": 38.93509,
+          "lon": -77.058683,
+          "address": "Connecticut Avenue Northwest 3430"
+        },
+        {
+          "id": "node/775912194",
+          "name": "Gold Spot Pack and Ship",
+          "lat": 38.900403,
+          "lon": -76.995528,
+          "address": "H Street Northeast 712"
+        },
+        {
+          "id": "node/358960427",
+          "name": "Joseph Curseen Junior and Thomas Morris Junior Processing and Distribution Center",
+          "lat": 38.916732,
+          "lon": -76.995041
+        },
+        {
+          "id": "way/97718360",
+          "name": "Washington DC Main Office",
+          "lat": 38.917593,
+          "lon": -76.995274,
+          "address": "Brentwood Road Northeast 900"
+        },
+        {
+          "id": "node/358960001",
+          "name": "Southeast Post Office",
+          "lat": 38.885562,
+          "lon": -76.997581,
+          "address": "Pennsylvania Avenue Southeast 600",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-14:00"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:34:54.986Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:48.807Z"
+      "updatedAt": "2026-08-23T04:34:55.347Z"
     },
     "fireplaces": {
-      "count": 2,
+      "count": 22,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:49.391Z"
+      "updatedAt": "2026-08-23T04:34:56.164Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1814,9 +2036,52 @@
       "updatedAt": "2026-08-17T04:05:49.790Z"
     },
     "benches": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:50.203Z"
+      "count": 2155,
+      "pois": [
+        {
+          "id": "node/5355165911",
+          "name": "Baruch Bench of Inspiration",
+          "lat": 38.899638,
+          "lon": -77.036719
+        },
+        {
+          "id": "node/9559118793",
+          "name": "Poets' Bench",
+          "lat": 38.892486,
+          "lon": -77.040362
+        },
+        {
+          "id": "node/4364172555",
+          "name": "Jan Karski",
+          "lat": 38.908797,
+          "lon": -77.071838
+        },
+        {
+          "id": "way/1418760131",
+          "name": "Jules Jusserand Memorial",
+          "lat": 38.937982,
+          "lon": -77.051179
+        },
+        {
+          "id": "node/4408711116",
+          "name": "Fraternity Benches",
+          "lat": 38.944907,
+          "lon": -77.066048
+        },
+        {
+          "id": "node/9525437753",
+          "name": "Neli Rita Mennella",
+          "lat": 38.936669,
+          "lon": -76.985172
+        },
+        {
+          "id": "node/10218366050",
+          "name": "Little Free Library",
+          "lat": 38.927889,
+          "lon": -77.106538
+        }
+      ],
+      "updatedAt": "2026-08-23T04:34:57.105Z"
     },
     "compressed-air": {
       "count": 0,

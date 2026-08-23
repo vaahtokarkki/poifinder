@@ -1,10 +1,17 @@
 {
   "city": "seattle",
-  "generatedAt": "2026-08-18T03:58:33.928Z",
+  "generatedAt": "2026-08-23T04:34:16.360Z",
   "categories": {
     "toilets": {
-      "count": 152,
+      "count": 153,
       "pois": [
+        {
+          "id": "node/7684336148",
+          "lat": 47.606437,
+          "lon": -122.332873,
+          "wheelchair": "yes",
+          "context": "The Seattle Public Library - Central Library"
+        },
         {
           "id": "way/36869314",
           "name": "Westlake Center",
@@ -30,12 +37,33 @@
           "openingHours": "Fr,Sa 04:00-01:00, We,Th,Su 16:00-21:00"
         },
         {
+          "id": "node/7684377349",
+          "lat": 47.623028,
+          "lon": -122.322405,
+          "wheelchair": "yes",
+          "context": "The Seattle Public Library - Capitol Hill Branch"
+        },
+        {
           "id": "way/228855832",
           "name": "Kanom Sai Cafe",
           "lat": 47.611689,
           "lon": -122.303061,
           "address": "23rd Avenue 1101",
           "wheelchair": "limited"
+        },
+        {
+          "id": "node/7684377350",
+          "lat": 47.577863,
+          "lon": -122.311385,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "The Seattle Public Library - Beacon Hill Branch"
+        },
+        {
+          "id": "node/7684338427",
+          "lat": 47.665233,
+          "lon": -122.318047,
+          "context": "The Seattle Public Library - University Branch"
         },
         {
           "id": "node/3717460157",
@@ -60,14 +88,30 @@
           "lat": 47.671494,
           "lon": -122.305607,
           "fee": "no"
+        },
+        {
+          "id": "way/111737058",
+          "name": "Metropolitan Market",
+          "lat": 47.585279,
+          "lon": -122.235814,
+          "address": "77th Avenue Southeast 2755",
+          "openingHours": "Mo-Su 06:00-23:00",
+          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:48.132Z"
+      "updatedAt": "2026-08-23T04:33:58.310Z"
     },
     "drinking-water": {
       "count": 130,
-      "pois": [],
-      "updatedAt": "2026-08-14T05:20:48.791Z"
+      "pois": [
+        {
+          "id": "node/5117581930",
+          "lat": 47.614398,
+          "lon": -122.344616,
+          "context": "Regrade Park"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:33:59.969Z"
     },
     "playgrounds": {
       "count": 226,
@@ -185,10 +229,10 @@
           "lon": -122.296085
         }
       ],
-      "updatedAt": "2026-08-14T05:20:49.443Z"
+      "updatedAt": "2026-08-23T04:34:00.701Z"
     },
     "parking": {
-      "count": 2324,
+      "count": 2325,
       "pois": [
         {
           "id": "way/232080295",
@@ -409,10 +453,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:50.450Z"
+      "updatedAt": "2026-08-23T04:34:01.899Z"
     },
     "charging-stations": {
-      "count": 61,
+      "count": 59,
       "pois": [
         {
           "id": "node/12944743531",
@@ -475,9 +519,16 @@
           "name": "Charge Seattle",
           "lat": 47.57121,
           "lon": -122.328583
+        },
+        {
+          "id": "node/14098386837",
+          "name": "E18 Solar Site",
+          "lat": 47.656358,
+          "lon": -122.300194,
+          "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:50.941Z"
+      "updatedAt": "2026-08-23T04:34:02.380Z"
     },
     "gas-stations": {
       "count": 82,
@@ -603,7 +654,7 @@
           "lon": -122.376144
         }
       ],
-      "updatedAt": "2026-08-14T05:20:51.457Z"
+      "updatedAt": "2026-08-23T04:34:02.905Z"
     },
     "ice-cream": {
       "count": 54,
@@ -838,7 +889,7 @@
           "openingHours": "Mo,We,Th 15:00-21:00; Su 12:00-21:00; Fr 15:00-22:00; Sa 12:00-22:00; Tu off"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:51.926Z"
+      "updatedAt": "2026-08-23T04:34:03.386Z"
     },
     "dog-parks": {
       "count": 20,
@@ -959,10 +1010,10 @@
           "lon": -122.226237
         }
       ],
-      "updatedAt": "2026-08-14T05:20:52.359Z"
+      "updatedAt": "2026-08-23T04:34:03.816Z"
     },
     "picnic-spots": {
-      "count": 439,
+      "count": 440,
       "pois": [
         {
           "id": "way/419803280",
@@ -1041,11 +1092,21 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:53.065Z"
+      "updatedAt": "2026-08-23T04:34:05.613Z"
     },
     "viewpoints": {
-      "count": 80,
+      "count": 84,
       "pois": [
+        {
+          "id": "way/12903132",
+          "name": "Space Needle",
+          "lat": 47.620506,
+          "lon": -122.349304,
+          "address": "Broad Street 400",
+          "openingHours": "Mo-Th 09:00-22:00; Fr-Su 08:00-00:00",
+          "wheelchair": "yes",
+          "fee": "yes"
+        },
         {
           "id": "node/5813034353",
           "name": "Pier 70 Viewpoint",
@@ -1140,6 +1201,12 @@
           "lon": -122.356773
         },
         {
+          "id": "node/9846682748",
+          "name": "Heron Haven",
+          "lat": 47.552402,
+          "lon": -122.264633
+        },
+        {
           "id": "node/656767418",
           "name": "Viewing Platform",
           "lat": 47.594316,
@@ -1147,7 +1214,7 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:53.507Z"
+      "updatedAt": "2026-08-23T04:34:06.189Z"
     },
     "beaches": {
       "count": 74,
@@ -1310,7 +1377,7 @@
           "lon": -122.417687
         }
       ],
-      "updatedAt": "2026-08-14T05:20:53.981Z"
+      "updatedAt": "2026-08-23T04:34:06.703Z"
     },
     "atms": {
       "count": 184,
@@ -1518,7 +1585,7 @@
           "openingHours": "Mo-Su 08:00-23:00"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:54.639Z"
+      "updatedAt": "2026-08-23T04:34:07.314Z"
     },
     "post-boxes": {
       "count": 225,
@@ -1554,11 +1621,17 @@
           "lon": -122.280258
         }
       ],
-      "updatedAt": "2026-08-14T05:20:55.118Z"
+      "updatedAt": "2026-08-23T04:34:07.973Z"
     },
     "recycling": {
-      "count": 421,
+      "count": 420,
       "pois": [
+        {
+          "id": "node/1950289013",
+          "lat": 47.609605,
+          "lon": -122.328743,
+          "context": "9th Avenue Garage"
+        },
         {
           "id": "way/226306316",
           "name": "Emerald Recycling Co.",
@@ -1623,15 +1696,15 @@
           "address": "South Myrtle Street 600"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:55.812Z"
+      "updatedAt": "2026-08-23T04:34:09.328Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:20:56.197Z"
+      "updatedAt": "2026-08-23T04:34:09.738Z"
     },
     "libraries": {
-      "count": 324,
+      "count": 325,
       "pois": [
         {
           "id": "way/37056442",
@@ -1857,17 +1930,17 @@
           "address": "George Washington Lane Northeast 4060"
         }
       ],
-      "updatedAt": "2026-08-14T05:20:56.798Z"
+      "updatedAt": "2026-08-23T04:34:10.379Z"
     },
     "outdoor-gyms": {
       "count": 19,
       "pois": [],
-      "updatedAt": "2026-08-14T05:20:57.239Z"
+      "updatedAt": "2026-08-23T04:34:11.334Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:20:57.666Z"
+      "updatedAt": "2026-08-23T04:34:11.801Z"
     },
     "shelters": {
       "count": 18,
@@ -1885,32 +1958,256 @@
           "lon": -122.240922
         }
       ],
-      "updatedAt": "2026-08-14T05:20:58.401Z"
+      "updatedAt": "2026-08-23T04:34:12.546Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:20:58.798Z"
+      "updatedAt": "2026-08-23T04:34:12.940Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-14T05:20:59.193Z"
+      "updatedAt": "2026-08-23T04:34:13.386Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:43.982Z"
+      "count": 43,
+      "pois": [
+        {
+          "id": "node/4458635048",
+          "name": "United States Post Office",
+          "lat": 47.605893,
+          "lon": -122.333827
+        },
+        {
+          "id": "node/4639109925",
+          "name": "The UPS Store",
+          "lat": 47.605509,
+          "lon": -122.330586
+        },
+        {
+          "id": "node/5979983486",
+          "name": "Madison St Post Office",
+          "lat": 47.604685,
+          "lon": -122.335894,
+          "openingHours": "Mo-Fr 07:00-17:00"
+        },
+        {
+          "id": "node/2404244853",
+          "name": "Midtown Post Office",
+          "lat": 47.60872,
+          "lon": -122.336487,
+          "address": "Union Street 301",
+          "openingHours": "Mo-Fr 08:30-17:30"
+        },
+        {
+          "id": "node/4484374414",
+          "name": "Wanderers' Mail Service",
+          "lat": 47.61016,
+          "lon": -122.342599,
+          "address": "Pike Place 1916",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/1730800435",
+          "name": "Post Office, International Station",
+          "lat": 47.599032,
+          "lon": -122.32525,
+          "address": "Maynard Avenue South 409",
+          "openingHours": "Mo-Fr 08:45-12:45,13:45-17:00"
+        },
+        {
+          "id": "node/2327723433",
+          "name": "The Mailbox & Gifts",
+          "lat": 47.61342,
+          "lon": -122.342137,
+          "address": "Lenora Street 300"
+        },
+        {
+          "id": "node/2327652056",
+          "name": "US Post Office Station #111",
+          "lat": 47.617777,
+          "lon": -122.345667,
+          "address": "5th Avenue 2512",
+          "openingHours": "Mo,We,Fr 10:30-16:30; Tu,Th,Sa-Su off"
+        },
+        {
+          "id": "node/2327596766",
+          "name": "Belltown Home Office",
+          "lat": 47.616201,
+          "lon": -122.348942,
+          "address": "2nd Avenue 2606"
+        },
+        {
+          "id": "node/3006168308",
+          "name": "Broadway Post Office",
+          "lat": 47.620473,
+          "lon": -122.320631,
+          "address": "Broadway East 212",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 08:30-15:00; Su,PH off"
+        },
+        {
+          "id": "way/206623629",
+          "name": "Postal Plus",
+          "lat": 47.618634,
+          "lon": -122.316382,
+          "address": "East Denny Way 1211",
+          "openingHours": "Mo-Fr 09:30-17:30; Sa,Su off"
+        },
+        {
+          "id": "node/4856210822",
+          "name": "East Union Post Office",
+          "lat": 47.612784,
+          "lon": -122.303108,
+          "address": "East Union Street 2207",
+          "openingHours": "Mo-Fr 09:00-17:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/231761547",
+          "name": "Queen Anne Post Office",
+          "lat": 47.622909,
+          "lon": -122.355791,
+          "address": "1st Avenue North 415"
+        },
+        {
+          "id": "way/98568679",
+          "name": "Terminal Finance Station Seattle Post Office",
+          "lat": 47.581565,
+          "lon": -122.328383,
+          "address": "4th Avenue South 2420",
+          "openingHours": "Mo-Fr 08:30-17:30"
+        },
+        {
+          "id": "node/2332530298",
+          "name": "Interbay Carrier Annex",
+          "lat": 47.637133,
+          "lon": -122.375697,
+          "address": "15th Avenue West 2010"
+        },
+        {
+          "id": "node/9276473126",
+          "name": "Park Postal",
+          "lat": 47.634828,
+          "lon": -122.278901
+        },
+        {
+          "id": "node/2328623303",
+          "name": "Alki Mail and Dispatch",
+          "lat": 47.580875,
+          "lon": -122.392074,
+          "address": "Southwest Admiral Way 4701"
+        },
+        {
+          "id": "node/356551345",
+          "name": "Georgetown Post Office",
+          "lat": 47.552,
+          "lon": -122.3263
+        },
+        {
+          "id": "way/223362694",
+          "name": "University Post Office",
+          "lat": 47.65955,
+          "lon": -122.312841,
+          "address": "University Way Northeast 4244",
+          "openingHours": "Mo-Fr 08:30-17:30; Sa 08:30-15:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/356551415",
+          "name": "West Seattle Post Office",
+          "lat": 47.564222,
+          "lon": -122.386397,
+          "openingHours": "Mo-Fr 08:30-17:00, Sa 08:30-15:00"
+        },
+        {
+          "id": "node/356551358",
+          "name": "Magnolia Post Office",
+          "lat": 47.63942,
+          "lon": -122.398961,
+          "address": "West McGraw Street 3211",
+          "openingHours": "Mo-Fr 09:00-13:00, 14:00-17:00; Sa 09:00-13:00, 14:00-15:00"
+        },
+        {
+          "id": "node/459169513",
+          "name": "Magnolia Mailbox",
+          "lat": 47.639974,
+          "lon": -122.398974,
+          "address": "West Wheeler Street 3213"
+        },
+        {
+          "id": "way/224037413",
+          "name": "Wallingford Post Office",
+          "lat": 47.66247,
+          "lon": -122.341017,
+          "address": "North 47th Street 1329",
+          "openingHours": "Mo-Fr 08:30-18:00; Sa 08:30-15:00"
+        },
+        {
+          "id": "node/2429600179",
+          "name": "Columbia City Post & Parcel",
+          "lat": 47.558568,
+          "lon": -122.285964,
+          "address": "South Edmunds Street 3703",
+          "openingHours": "Mo-Fr 09:30-17:30; Sa 09:30-14:30"
+        },
+        {
+          "id": "node/6315227486",
+          "name": "ShipShip",
+          "lat": 47.56007,
+          "lon": -122.384609,
+          "address": "41st Avenue Southwest 4742"
+        },
+        {
+          "id": "node/4458653289",
+          "name": "FedEx Office",
+          "lat": 47.547751,
+          "lon": -122.322351,
+          "address": "Corson Avenue South 5963"
+        },
+        {
+          "id": "way/217499297",
+          "name": "Ballard Carrier Annex",
+          "lat": 47.661719,
+          "lon": -122.369733,
+          "address": "9th Avenue Northwest 4501"
+        },
+        {
+          "id": "way/1050033196",
+          "name": "Medina Post Office",
+          "lat": 47.617933,
+          "lon": -122.238482,
+          "address": "Evergreen Point Road 816"
+        },
+        {
+          "id": "node/356551362",
+          "name": "Mercer Island Post Office",
+          "lat": 47.582432,
+          "lon": -122.233091,
+          "address": "78th Avenue SE 3040",
+          "openingHours": "Mo-Fr 08:30-17:00; Sa 10:00-14:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/157020681",
+          "name": "Ballard Post Office",
+          "lat": 47.670394,
+          "lon": -122.378406,
+          "address": "17th Avenue Northwest 5706",
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:30-15:00"
+        }
+      ],
+      "updatedAt": "2026-08-23T04:34:14.007Z"
     },
     "showers": {
-      "count": 0,
+      "count": 3,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:44.380Z"
+      "updatedAt": "2026-08-23T04:34:14.459Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 64,
       "pois": [],
-      "updatedAt": "2026-08-17T04:05:44.902Z"
+      "updatedAt": "2026-08-23T04:34:15.399Z"
     },
     "air-pumps": {
       "count": 1,
@@ -1918,9 +2215,28 @@
       "updatedAt": "2026-08-17T04:05:45.324Z"
     },
     "benches": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:05:45.709Z"
+      "count": 2359,
+      "pois": [
+        {
+          "id": "node/1950322167",
+          "name": "Anthony Q. Harris Memorial Bench",
+          "lat": 47.586053,
+          "lon": -122.285953
+        },
+        {
+          "id": "node/2775507474",
+          "name": "Alpha Delta Pi bench",
+          "lat": 47.652631,
+          "lon": -122.308007
+        },
+        {
+          "id": "node/10160503793",
+          "name": "Memorial Benches",
+          "lat": 47.582721,
+          "lon": -122.23343
+        }
+      ],
+      "updatedAt": "2026-08-23T04:34:16.257Z"
     },
     "compressed-air": {
       "count": 1,

@@ -8,6 +8,7 @@ import {
   SELF_HOSTED_OVERPASS_URL,
 } from "../constants";
 import { fetchWithRetry } from "../utils/retryFetch";
+import { describeAddress } from "../poiPopup";
 
 export type OverpassMarkerData = {
   id: number | string;
@@ -474,7 +475,109 @@ const ENCLOSING_BUILDING = {
    * — so that our server and the public mirrors answer alike
    */
   NOT_A_BUILDING: new Set(["no"]),
+  /**
+   * Values of `building` for a structure that is a roof and no walls. Standing
+   * under one is not the same as standing in a building, so where a walled
+   * building contains the point as well, that one is the answer. On its own a
+   * roof is still worth naming: a fuel canopy is what a pump stands under, and
+   * 2950 of the 14226 buildings our Finland import keeps are roofs like it
+   */
+  ROOF_ONLY: new Set(["roof", "canopy", "carport", "shelter", "tent"]),
+  /**
+   * Tags that give the popup something to put in front of a person. Anything
+   * here, or an address, and the building can say where somebody is; without
+   * them the section is the words "In this building" and nothing else.
+   *
+   * Not the full list of tags the popup would render — that is
+   * isDisplayableTag over in PoiMarkers, which is about a point and lives with
+   * the component that draws it. These are the ones that answer "which place
+   * is this", which is the only question the enclosing building is asked
+   */
+  SAYS_SOMETHING: [
+    "name",
+    "operator",
+    "brand",
+    "opening_hours",
+    "website",
+    "phone",
+    "wheelchair",
+  ],
 } as const;
+
+/**
+ * The number a tag carries, from the first of these keys that has one.
+ *
+ * OpenStreetMap's numbers are typed by people: `min_height=3.7` but also
+ * `3,7` off a European keyboard, and `level=2;3;4` for a lift that stops at
+ * three of them. parseFloat takes the front of any of those and returns NaN
+ * for `min_height=roof`, which is a real thing somebody has written.
+ */
+const tagNumber = (tags: Record<string, string>, ...keys: string[]) => {
+  for (const key of keys) {
+    const value = parseFloat(String(tags[key] ?? "").replace(",", "."));
+    if (!Number.isNaN(value)) return value;
+  }
+  return null;
+};
+
+/**
+ * Whether an outline hangs above the ground instead of sitting on it.
+ *
+ * This is how Simple 3D Buildings says a piece of a building starts partway
+ * up, and it is the one thing that reliably separates a roof from the thing
+ * under it: the glass pyramid over Koskikeskus's atrium is `min_height=12`,
+ * the flats over Länsituuli's shops are `building:min_level=4`. Both are
+ * drawn small and inside something large, so smallest-wins on its own hands a
+ * post box on the mall floor a nameless roof twelve metres over its head.
+ *
+ * A demotion rather than a rejection, because a floating outline is often the
+ * only one there is and then it is the right answer: a fuel canopy at
+ * min_height 3.7, the restaurant 63 m up Puijon torni. Measured on Finland, 31
+ * of the 8345 points that join to a building join to one that floats, and 11
+ * of those have a grounded building around them to fall back to.
+ */
+const floatsAboveGround = (tags: Record<string, string>) =>
+  (tagNumber(tags, "building:min_level", "min_level") ?? 0) > 0 ||
+  (tagNumber(tags, "min_height", "building:min_height") ?? 0) > 0;
+
+/**
+ * Whether a building has anything to tell somebody who is standing in it.
+ *
+ * Smallest-wins reads specificity off the geometry, and for the outlines a 3D
+ * mapper draws the two point opposite ways: a shopping centre gets split into
+ * unnamed pieces, and the piece is always smaller than the centre. Kauppakeskus
+ * Willa, Pasilan rautatieasema, Länsikeskus and Helsinki-Vantaa's terminal all
+ * lose their points to a nameless sub-outline that renders as "In this
+ * building" with no rows under it — a section that cost a query and says
+ * nothing, when the name was in the same answer all along.
+ *
+ * Below the ground and roof tiers rather than above them, because being in the
+ * right place beats being able to name it, and above area because a name is
+ * what the section is for.
+ *
+ * Four more points that this should reach it does not, and the reason is
+ * upstream of the ranking: Sokos Tampere and FinnPark P-Hämeenpuisto are
+ * `type=building` relations, whose members are an `outline` and its `part`s
+ * rather than the `outer` and `inner` shapeFromElements reads. They come back
+ * from Overpass with no shape at all, so they are never candidates here.
+ */
+const saysSomething = (tags: Record<string, string>) =>
+  ENCLOSING_BUILDING.SAYS_SOMETHING.some(key => tags[key]?.trim()) ||
+  describeAddress(tags) !== null;
+
+/**
+ * How good an answer a building is before its size is considered. Lower wins,
+ * and size settles everything this leaves level.
+ *
+ * The weights make one number out of three tests read in order, so that no
+ * count of weaker failings adds up to a stronger one: a floating outline is
+ * behind every grounded one whatever else it has, and a nameless building is
+ * only ever behind a named one that is otherwise its equal.
+ */
+const buildingRank = (tags: Record<string, string>) =>
+  (floatsAboveGround(tags) ? 4 : 0) +
+  (ENCLOSING_BUILDING.ROOF_ONLY.has(tags.building) ? 2 : 0) +
+  (saysSomething(tags) ? 0 : 1);
 
 /** The building a point stands in: which object it is, and what it says */
 export type EnclosingBuilding = OverpassElementDetails & { ref: OsmRef };
@@ -505,11 +608,22 @@ const shapeArea = (shape: OverpassShape) =>
 /**
  * The building a point is standing in, or null if it is standing outside.
  *
- * The smallest one wins where several contain the point, which is a shop unit
- * inside a shopping centre or a hall inside a terminal: both are true, and the
- * smaller is the one somebody would use to say where they are. Our own import
- * chooses the same way when it decides which buildings to keep, so the answer
- * does not depend on which server answered.
+ * Where several contain the point: the one that reaches the ground wins, then
+ * the one with walls, then the one with a name, and size settles what is left.
+ *
+ * Size was the whole rule once, on the grounds that the smaller of two true
+ * answers is the more specific — a shop unit inside a shopping centre, a hall
+ * inside a terminal. It is a fair proxy and it is almost never asked: 8297 of
+ * the 8345 points Finland joins have exactly one candidate. On the 48 that
+ * have more it was wrong 28 times, because the small outline in a big building
+ * is usually not a shop unit but a roof over the atrium or a nameless piece of
+ * the same building drawn for 3D. The tiers above it are those two failures,
+ * and area is kept underneath them as what settles genuine equals — and as
+ * something that settles them the same way every time, rather than leaving the
+ * answer to the order Overpass happened to return.
+ *
+ * Our own import ranks candidates the same way when it decides which buildings
+ * to keep, so the answer does not depend on which server answered.
  */
 export async function fetchEnclosingBuilding(
   [lat, lng]: [number, number]
@@ -518,9 +632,10 @@ export async function fetchEnclosingBuilding(
     `[out:json];wr[building](around:${ENCLOSING_BUILDING.RADIUS},${lat},${lng});out geom;`
   );
 
-  let best: { building: EnclosingBuilding; area: number } | null = null;
+  let best: { building: EnclosingBuilding; rank: number; area: number } | null = null;
   for (const element of elements) {
-    const building = element.tags?.building;
+    const tags = element.tags ?? {};
+    const building = tags.building;
     if (!building || ENCLOSING_BUILDING.NOT_A_BUILDING.has(building)) continue;
 
     // One element at a time, because these are candidates rather than parts of
@@ -530,14 +645,16 @@ export async function fetchEnclosingBuilding(
     const shape = shapeFromElements([element]);
     if (!shape || !shapeContains(shape, [lat, lng])) continue;
 
+    const rank = buildingRank(tags);
     const area = shapeArea(shape);
-    if (best === null || area < best.area) {
+    if (best === null || rank < best.rank || (rank === best.rank && area < best.area)) {
       best = {
+        rank,
         area,
         building: {
           ref: `${element.type as "way" | "relation"}/${element.id}`,
           shape,
-          tags: element.tags ?? {},
+          tags,
         },
       };
     }

@@ -58,6 +58,31 @@ import time
 # the same list: see ENCLOSING_BUILDING in apps/frontend/src/api/overpass.ts
 NOT_A_BUILDING = {"no"}
 
+# Values of `building` for a structure that is a roof and no walls. Standing
+# under one is not standing in a building, so where a walled building holds the
+# point as well, that one is the answer. See ROOF_ONLY in the app
+ROOF_ONLY = {"roof", "canopy", "carport", "shelter", "tent"}
+
+# Tags that give the app's popup something to put in front of a person, and so
+# make one building a better answer than another that is otherwise its equal.
+# Anything here, or an address, and the building can say where somebody is;
+# without them the popup reads "In this building" and stops. See SAYS_SOMETHING
+# in the app, which reads the address the same way describe_address does here
+SAYS_SOMETHING = ("name", "operator", "brand", "opening_hours", "website",
+                  "phone", "wheelchair")
+ADDRESS_TAGS = ("addr:street", "addr:place", "addr:housenumber")
+
+# The tags the ranking reads off a building, on top of `building` itself.
+# `min_height` and `building:min_level` are Simple 3D Buildings saying that a
+# piece of a building starts partway up, and they are what tells a roof from
+# the thing under it; the rest are what tells a named building from a nameless
+# piece of one. export_features writes every tag it is given for every building
+# in the region, so this is a wider stream over the pipe than `building` alone
+# was — a name and an address on a few million buildings. None of it is stored
+# and the reader still branches on nothing outside this list
+RANKING_TAGS = (["building", "building:min_level", "min_level", "min_height",
+                 "building:min_height"] + list(SAYS_SOMETHING) + list(ADDRESS_TAGS))
+
 # How big one cell of the lookup grid is, in degrees. Roughly 200 m north to
 # south, and less east to west the further from the equator, which is the right
 # order of magnitude: nearly every building fits in one or two cells, so a
@@ -120,8 +145,9 @@ def export_features(source, geometry_type, tags):
     a line at a time, none of it is ever anywhere.
 
     `include_tags` is the other half of the same economy. The default export
-    writes every tag an object carries — a building's address, its height, its
-    roof, its source — and this only ever branches on one of them.
+    writes every tag an object carries — a building's address, its name, its
+    roof, its source — and this only ever branches on the handful in
+    RANKING_TAGS.
 
     RFC 8142 puts a record separator, 0x1e, in front of every record, so a
     reader can resynchronise in a stream that has been cut. osmium writes them
@@ -235,6 +261,76 @@ def ring_area(ring):
     return abs(total) / 2
 
 
+def tag_number(properties, *keys):
+    """
+    The number a tag carries, from the first of these keys that has one.
+
+    OpenStreetMap's numbers are typed by people: `min_height=3.7`, but also
+    `3,7` off a European keyboard and `min_height=roof`, which somebody has
+    written and which is not a number at all.
+    """
+    for key in keys:
+        try:
+            return float(str(properties.get(key, "")).replace(",", ".").split(";")[0])
+        except ValueError:
+            pass
+    return None
+
+
+def floats_above_ground(properties):
+    """
+    Whether an outline hangs above the ground instead of sitting on it.
+
+    This is the one thing that reliably separates a roof from the thing under
+    it. The glass pyramid over Koskikeskus's atrium is `min_height=12` and the
+    flats over Länsituuli's shops are `building:min_level=4`; both are drawn
+    small and inside something large, so smallest-wins on its own gives a post
+    box on the mall floor a nameless roof twelve metres over its head.
+    """
+    return ((tag_number(properties, "building:min_level", "min_level") or 0) > 0
+            or (tag_number(properties, "min_height", "building:min_height") or 0) > 0)
+
+
+def says_something(properties):
+    """
+    Whether a building has anything to tell somebody who is standing in it.
+
+    Smallest-wins reads specificity off the geometry, and for the outlines a 3D
+    mapper draws the two point opposite ways: a shopping centre is split into
+    unnamed pieces, and the piece is always smaller than the centre. Kauppakeskus
+    Willa, Pasilan rautatieasema and Länsikeskus all lose their points to a
+    nameless sub-outline that the popup can only render as "In this building",
+    when the name was in the same answer all along.
+
+    A `type=building` relation is not reached by this and does not need to be:
+    osmium makes areas out of multipolygons, so Sokos Tampere never arrives
+    here as a polygon in the first place — and it never arrives in the app
+    either, for its own reasons. The two still agree, which is the point.
+    """
+    return (any(str(properties.get(tag, "")).strip() for tag in SAYS_SOMETHING)
+            or any(properties.get(tag) for tag in ADDRESS_TAGS))
+
+
+def rank(properties):
+    """
+    How good an answer a building is before its size is considered. Lower wins,
+    and size settles everything this leaves level.
+
+    Three tests read in order, weighted into one number so that no count of
+    weaker failings adds up to a stronger one: a floating outline is behind
+    every grounded one whatever else it has, and a nameless building is only
+    ever behind a named one that is otherwise its equal.
+
+    All demotions rather than rejections, because the demoted outline is often
+    the only one there is and then it is the right answer: a fuel canopy at
+    min_height 3.7, the restaurant 63 m up Puijon torni, and the 4319 points of
+    the 8345 Finland joins whose building has no name to give them.
+    """
+    return ((4 if floats_above_ground(properties) else 0)
+            + (2 if properties.get("building") in ROOF_ONLY else 0)
+            + (0 if says_something(properties) else 1))
+
+
 def join(points, buildings):
     """
     Which building each point stands in, and therefore which buildings to keep.
@@ -245,9 +341,15 @@ def join(points, buildings):
     bounding box holds no candidate point — which is nearly all of them — costs
     one pass over its coordinates and a handful of dict lookups.
 
-    Where buildings overlap, the smallest wins. That is a hall inside a
-    terminal, a shop unit inside a shopping centre: both contain the toilet,
-    and the one a person needs to be told about is the one they would name.
+    Where buildings overlap, the one that reaches the ground wins, then the one
+    with walls, then the smallest. Size decides most of it and decides it well:
+    a hall inside a terminal, a shop unit inside a shopping centre both contain
+    the toilet, and the one a person needs to be told about is the one they
+    would name. What size alone gets wrong is the storey drawn over the storey
+    below — see floats_above_ground. Measured on Finland the ranking moves 12
+    of 8345 joined points, every one of them off an unnamed roof or tower and
+    onto the named building it stands over.
+
     The app picks the same way when it looks at what came back, so the two
     agree — and against a mirror holding every building, where the choice is
     the app's alone, it still gets the shop unit rather than the centre.
@@ -255,14 +357,15 @@ def join(points, buildings):
     grid, point_count = load_points(points)
     log(f"{point_count} points to place")
 
-    # The point's node id to the building it stands in, and that building's
-    # area, kept so a later, smaller building can take the point over
+    # The point's node id to the building it stands in, with that building's
+    # rank and area, kept so a later and better one can take the point over
     best = {}
     buildings_read = 0
 
     for feature in buildings:
         buildings_read += 1
-        if feature.get("properties", {}).get("building") in NOT_A_BUILDING:
+        properties = feature.get("properties", {})
+        if properties.get("building") in NOT_A_BUILDING:
             continue
 
         geometry = feature["geometry"]
@@ -291,13 +394,13 @@ def join(points, buildings):
             continue
 
         ref = object_ref(feature["id"])
-        area = sum(ring_area(polygon[0]) for polygon in polygons)
+        order = (rank(properties), sum(ring_area(polygon[0]) for polygon in polygons))
         for lon, lat, node_id in candidates:
             if not any(polygon_contains(polygon, lon, lat) for polygon in polygons):
                 continue
             current = best.get(node_id)
-            if current is None or area < current[1]:
-                best[node_id] = (ref, area)
+            if current is None or order < current[1]:
+                best[node_id] = (ref, order)
 
     joined = {node_id: ref for node_id, (ref, _) in best.items()}
     log(
@@ -380,7 +483,7 @@ def main():
         log("assembling their outlines")
         joined = join(
             export_features(matched, "point", []),
-            export_features(buildings, "polygon", ["building"]),
+            export_features(buildings, "polygon", RANKING_TAGS),
         )
 
         if not joined:

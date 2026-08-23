@@ -6,7 +6,9 @@ import Select from "@mui/material/Select";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
 import TuneIcon from "@mui/icons-material/Tune";
 import React from "react";
-import { CATEGORIES, CATEGORY_CONFIG, CATEGORY_GROUP, CATEGORY_GROUP_DISPLAY } from "../constants";
+import { CATEGORIES, CATEGORY_CONFIG, CATEGORY_GROUP, groupDisplay } from "../constants";
+import { categoryDisplay } from "../seo/categories";
+import { ui } from "../copy";
 
 // Value of the clear action, kept apart from the numeric category values
 const CLEAR_ALL = "clear-all";
@@ -22,9 +24,14 @@ type CategorySelectProps = {
   visible: boolean;
 };
 
-// Build categories array from CATEGORY_CONFIG, including group
+// Build categories array from CATEGORY_CONFIG, including group.
+//
+// Read at module scope, which fixes the language at import. That is correct
+// while English is the only deck and there is nothing that can change it at
+// runtime; the day a language selector lands, this and groupedCategories below
+// are what have to move inside the component and take the locale as a dep
 const categories = Object.entries(CATEGORY_CONFIG).map(([key, config]) => ({
-  label: config.display,
+  label: categoryDisplay(Number(key) as CATEGORIES),
   value: Number(key) as CATEGORIES,
   group: config.group,
 }));
@@ -73,12 +80,12 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
         multiple
         displayEmpty
         value={value}
-        title="Select the categories to show on the map"
+        title={ui().controls.selectCategories}
         startAdornment={
           <TuneIcon
             fontSize="small"
             role="button"
-            aria-label="Select the categories to show on the map"
+            aria-label={ui().controls.selectCategories}
             sx={{ color: "#5f6368", ml: 0.5, mr: 0.75, cursor: "pointer" }}
             // The icon is not a focus target, the menu takes the focus itself
             onMouseDown={(e: React.MouseEvent) => e.preventDefault()}
@@ -126,7 +133,7 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
           if (selected.length === 0) {
             return (
               <Box component="span" sx={{ color: "#5f6368", fontSize: ".9rem", pr: 1 }}>
-                Choose categories
+                {ui().controls.chooseCategories}
               </Box>
             );
           }
@@ -164,7 +171,7 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
           }}
         >
           <ClearAllIcon fontSize="small" style={{ margin: ".4em .7em .4em .5em" }} />
-          <ListItemText primary="Clear all selections" />
+          <ListItemText primary={ui().controls.clearAll} />
         </MenuItem>
         {Object.values(CATEGORY_GROUP)
           .filter((g) => typeof g === "number")
@@ -173,7 +180,7 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
               key={`subheader-${group}`}
               style={{ lineHeight: "2em", padding: ".2em 1em" }}
             >
-              {CATEGORY_GROUP_DISPLAY[group as CATEGORY_GROUP]}
+              {groupDisplay(group as CATEGORY_GROUP)}
             </ListSubheader>,
             ...groupedCategories[group as CATEGORY_GROUP].map((cat) => (
               <MenuItem

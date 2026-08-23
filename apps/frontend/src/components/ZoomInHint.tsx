@@ -1,4 +1,5 @@
 import React from "react";
+import { ui } from "../copy";
 import { Chip } from "@mui/material";
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 
@@ -22,7 +23,7 @@ const ZoomInHint: React.FC<ZoomInHintProps> = ({ onClick, visible = true }) => {
     <div className="map-hint">
       <Chip
         icon={<ZoomInIcon />}
-        label="Zoom in to load new points"
+        label={ui().controls.zoomInHint}
         onClick={onClick}
         sx={{
           background: "#fff",

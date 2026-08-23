@@ -2,6 +2,8 @@ import React from "react";
 import { Marker, Popup, useMap } from "react-leaflet";
 import ParkIcon from '@mui/icons-material/Park';
 import { renderToString } from "react-dom/server";
+import { categoryDisplay } from "./seo/categories";
+import { ui } from "./copy";
 import { divIcon } from "leaflet";
 import type { PointExpression, Popup as LeafletPopup, PopupEvent } from "leaflet";
 import {
@@ -753,9 +755,10 @@ const describeMarker = (marker: OverpassMarkerData, selected: readonly CATEGORIE
     config,
     /** An unnamed drinking fountain is still a drinking fountain, and "No name"
      * told the reader nothing they could not already see on the map */
-    title: name || config?.display || "Unnamed place",
+    title:
+      name || (category !== null ? categoryDisplay(category) : "") || ui().poi.unnamedPlace,
     /** Only when it is not just the title again */
-    subtitle: name && config ? config.display : null,
+    subtitle: name && category !== null ? categoryDisplay(category) : null,
   };
 };
 

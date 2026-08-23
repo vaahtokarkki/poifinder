@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Card, CardContent, Typography } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import GeocodeAutoComplete from "./GeocodeAutocomplete";
+import { ui } from "../copy";
 
 type RoutesBarProps = {
   onSearch: (start: [number, number] | null, end: [number, number]) => void;
@@ -66,7 +67,7 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
       </Typography>
       <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", zIndex: 1000, maxWidth: 350}} >
         <GeocodeAutoComplete
-          placeholder="Your location"
+          placeholder={ui().controls.routeStart}
           onSelect={(label, coords) => {
             setStartLocationValue(label);
             setStartCoords(coords);
@@ -78,7 +79,7 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
           styles={{border: "1px solid #0000001a"}}
         />
         <GeocodeAutoComplete
-          placeholder="Destination location"
+          placeholder={ui().controls.routeEnd}
           onSelect={(label, coords) => {
             setEndLocationValue(label);
             setEndCoords(coords);

@@ -1,6 +1,8 @@
 import React from "react";
 import { Chip } from "@mui/material";
 import { CATEGORIES, CATEGORY_PRESETS, isPresetActive } from "../constants";
+import { presetLabel } from "../constants";
+import { interpolate, ui } from "../copy";
 
 type CategoryPresetsProps = {
   value: CATEGORIES[];
@@ -26,13 +28,15 @@ const CategoryPresets: React.FC<CategoryPresetsProps> = ({
         const active = isPresetActive(preset, value);
         return (
           <Chip
-            key={preset.label}
-            label={preset.label}
+            key={preset.id}
+            label={presetLabel(preset)}
             icon={React.cloneElement(preset.icon, { fontSize: "small" })}
             clickable
             // Picking the active preset again is the way back to no categories
             onClick={() => onSelect(active ? [] : preset.categories)}
-            title={`Show ${preset.label.toLowerCase()} points on the map`}
+            title={interpolate(ui().controls.presetTitle, {
+              preset: presetLabel(preset).toLowerCase(),
+            })}
             // The chips stay neutral, the colours of the presets belong to the
             // info sheet, the map is busy enough
             sx={{

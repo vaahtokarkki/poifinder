@@ -13,6 +13,7 @@ import {
   poiTitle,
 } from "../seo/pageMeta";
 import { formatCount } from "../seo/format";
+import { interpolate, ui } from "../copy";
 import type { Route } from "../seo/pageMeta";
 
 /**
@@ -40,10 +41,10 @@ function poiMeta(poi: PoiEntry): string[] {
   const meta: string[] = [];
   if (poi.address) meta.push(poi.address);
   if (poi.openingHours) meta.push(poi.openingHours);
-  if (poi.wheelchair === "yes") meta.push("Step free");
-  if (poi.wheelchair === "limited") meta.push("Partly step free");
-  if (poi.fee === "no") meta.push("Free");
-  if (poi.fee === "yes") meta.push("Fee");
+  if (poi.wheelchair === "yes") meta.push(ui().poi.stepFree);
+  if (poi.wheelchair === "limited") meta.push(ui().poi.partlyStepFree);
+  if (poi.fee === "no") meta.push(ui().poi.free);
+  if (poi.fee === "yes") meta.push(ui().poi.fee);
   return meta;
 }
 
@@ -66,7 +67,7 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
       {listed.length > 0 && (
         <section className="info-sheet-section">
           <h2 className="info-sheet-heading">
-            {placed ? "Individual" : "Named"} {plural} in {city.name}
+            {placed ? ui().page.individualHeading : ui().page.namedHeading} {plural} in {city.name}
           </h2>
           <ol className="poi-list">
             {listed.map((poi) => {
@@ -81,19 +82,21 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
           </ol>
           <p className="info-sheet-note">
             {data.pois.length > listed.length
-              ? `Showing ${listed.length} of the ${data.pois.length} the data can tell apart. `
+              ? interpolate(ui().page.showingSome, {
+                  listed: listed.length,
+                  total: data.pois.length,
+                }) + " "
               : ""}
-            The map has all {formatCount(data.count)}
+            {interpolate(ui().page.mapHasAll, { count: formatCount(data.count) })}
             {unlisted > 0
-              ? `, including the ${formatCount(unlisted)} that carry neither a name nor a ` +
-                `building or park to place them in.`
+              ? interpolate(ui().page.includingUnplaced, { unlisted: formatCount(unlisted) })
               : "."}
           </p>
         </section>
       )}
 
       <section className="info-sheet-section">
-        <h2 className="info-sheet-heading">Questions</h2>
+        <h2 className="info-sheet-heading">{ui().page.questionsHeading}</h2>
         <dl className="poi-faq">
           {faq.map((entry) => (
             <React.Fragment key={entry.q}>
@@ -123,9 +126,9 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
           that every one of its category pages links to is also a stronger hub
           than one only the index points at */}
       <p className="info-sheet-summary">
-        <a href={cityPath(city.slug)}>All points of interest in {city.name}</a>
+        <a href={cityPath(city.slug)}>{interpolate(ui().page.allPointsIn, { city: city.name })}</a>
         {" · "}
-        <a href={CITIES_PATH}>All cities on Wayside</a>
+        <a href={CITIES_PATH}>{ui().page.allCities}</a>
       </p>
 
       {/* The sheet says where the points come from once, under the disclosure
@@ -133,18 +136,19 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
           cannot know: when this city and category was last refreshed */}
       {variant === "sheet" ? (
         <p className="info-sheet-footer">
-          Counts and names above are from the extract of{" "}
-          <time dateTime={data.updatedAt}>{data.updatedAt}</time>. The map itself is live.
+          {ui().page.sheetFreshnessBefore}{" "}
+          <time dateTime={data.updatedAt}>{data.updatedAt}</time>
+          {ui().page.sheetFreshnessAfter}
         </p>
       ) : (
         <p className="info-sheet-footer">
-          Points come from{" "}
+          {ui().page.pageFreshnessBefore}{" "}
           <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
-            OpenStreetMap
+            {ui().page.pageFreshnessLink}
           </a>{" "}
-          contributors, last refreshed{" "}
-          <time dateTime={data.updatedAt}>{data.updatedAt}</time>. Something missing? Add it
-          there and it shows up here on the next refresh.
+          {ui().page.pageFreshnessMiddle}{" "}
+          <time dateTime={data.updatedAt}>{data.updatedAt}</time>
+          {ui().page.pageFreshnessAfter}
         </p>
       )}
     </>

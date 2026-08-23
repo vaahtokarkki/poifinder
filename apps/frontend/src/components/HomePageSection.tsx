@@ -1,6 +1,7 @@
 import React from "react";
 import { CITIES_PATH } from "../seo/pageMeta";
 import { formatCount } from "../seo/format";
+import { DEFAULT_LOCALE, resolve, ui } from "../copy";
 import type { HomePageData } from "../seo/pageData";
 import { InfoSheetCredits, InfoSheetGuide, InfoSheetSummary } from "./AppInfoPanel";
 
@@ -24,7 +25,7 @@ import { InfoSheetCredits, InfoSheetGuide, InfoSheetSummary } from "./AppInfoPan
  */
 const HomePageSection: React.FC<{ data: HomePageData }> = ({ data }) => (
   <>
-    <h1 className="info-sheet-title">Find the small things, anywhere</h1>
+    <h1 className="info-sheet-title">{ui().page.homeTitle}</h1>
     {/* The same sentence every other route shows in the sheet. Someone who
         lands on the map root and someone who follows a shared link should be
         told the same thing about what this is */}
@@ -40,8 +41,9 @@ const HomePageSection: React.FC<{ data: HomePageData }> = ({ data }) => (
     {data.cityCount > 0 && (
       <p className="info-sheet-footer">
         <a href={CITIES_PATH}>
-          Browse {formatCount(data.cityCount)}{" "}
-          {data.cityCount === 1 ? "city" : "cities"} with a page of their own
+          {ui().page.browseCitiesBefore} {formatCount(data.cityCount)}{" "}
+          {resolve(ui().page.cityUnit, DEFAULT_LOCALE, {}, data.cityCount)}{" "}
+          {ui().page.browseCitiesAfter}
         </a>
       </p>
     )}

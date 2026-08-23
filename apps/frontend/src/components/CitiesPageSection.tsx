@@ -2,6 +2,7 @@ import React from "react";
 import { findCity } from "../seo/cities";
 import { cityPath } from "../seo/pageMeta";
 import { formatCount } from "../seo/format";
+import { DEFAULT_LOCALE, resolve, ui } from "../copy";
 import type { CitiesPageData } from "../seo/pageData";
 
 /**
@@ -28,13 +29,13 @@ const CitiesPageSection: React.FC<{ data: CitiesPageData }> = ({ data }) => {
 
   return (
     <>
-      <h1 className="info-sheet-title">Cities on Wayside</h1>
+      <h1 className="info-sheet-title">{ui().page.citiesTitle}</h1>
       <p className="info-sheet-summary">
-        {formatCount(cities.length)} {cities.length === 1 ? "city" : "cities"} in{" "}
+        {formatCount(cities.length)}{" "}
+        {resolve(ui().page.cityUnit, DEFAULT_LOCALE, {}, cities.length)} in{" "}
         {formatCount(countries.length)}{" "}
-        {countries.length === 1 ? "country" : "countries"} have a page of their own,
-        listing what is mapped there: public toilets, drinking water, playgrounds and 17
-        more categories. Everywhere else still works on the map, it just has no page yet.
+        {resolve(ui().page.countryUnit, DEFAULT_LOCALE, {}, countries.length)}{" "}
+        {ui().page.citiesSummaryAfter}
       </p>
 
       {countries.map(([country, group]) => (

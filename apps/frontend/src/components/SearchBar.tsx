@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 import GeocodeAutocomplete from "./GeocodeAutocomplete";
+import { ui } from "../copy";
 
 type SearchBarProps = {
   onSearch: (
@@ -71,8 +72,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
             <IconButton
               size="small"
               onClick={onClose}
-              title="Close search"
-              aria-label="Close search"
+              title={ui().controls.closeSearch}
+              aria-label={ui().controls.closeSearch}
             >
               <CloseIcon fontSize="small" />
             </IconButton>

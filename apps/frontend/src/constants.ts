@@ -30,6 +30,8 @@ import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
 import TireRepairIcon from '@mui/icons-material/TireRepair';
 import ChairAltIcon from '@mui/icons-material/ChairAlt';
 import * as React from "react";
+import { DEFAULT_LOCALE, ui } from "./copy";
+import type { Locale } from "./copy";
 
 export enum CATEGORIES {
   Playgrounds,
@@ -77,7 +79,6 @@ export type CategoryIcon = React.ReactElement<{
 // Category config type
 export type CategoryConfig = {
   filters: string[];
-  display: string;
   icon: CategoryIcon;
   color: string;
   group: CATEGORY_GROUP; 
@@ -87,14 +88,12 @@ export type CategoryConfig = {
 export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
   [CATEGORIES.Playgrounds]: {
     filters: ["[leisure=playground][access!=private]"],
-    display: "Playgrounds",
     icon: React.createElement(ParkIcon),
     color: "#388e3c",
     group: CATEGORY_GROUP.Essentials,
   },
   [CATEGORIES.PostBoxes]: {
     filters: ["[amenity=post_box]"],
-    display: "Post boxes",
     icon: React.createElement(LocalPostOfficeIcon),
     color: "#d32f2f",
     group: CATEGORY_GROUP.Essentials,
@@ -111,35 +110,30 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
       "[amenity=toilets]",
       '[building~"^(retail|supermarket|mall|commercial|museum|public|university|train_station)$"][toilets=yes]',
     ],
-    display: "Toilets",
     icon: React.createElement(ToiletIcon),
     color: "#1976d2",
     group: CATEGORY_GROUP.Essentials,
   },
   [CATEGORIES.GasStation]: {
     filters: ["[amenity=fuel]"],
-    display: "Gas stations",
     icon: React.createElement(LocalGasStationIcon),
     color: "#fbc02d",
     group: CATEGORY_GROUP.Car,
   },
   [CATEGORIES.ChargingStation]: {
     filters: ["[amenity=charging_station]"],
-    display: "Charging stations",
     icon: React.createElement(EvStationIcon),
     color: "#388e3c",
     group: CATEGORY_GROUP.Car,
   },
   [CATEGORIES.Parking]: {
     filters: ["[amenity=parking][access!=private]"],
-    display: "Parking",
     icon: React.createElement(LocalParkingIcon),
     color: "#1976d2",
     group: CATEGORY_GROUP.Car,
   },
   [CATEGORIES.Icecream]: {
     filters: ["[amenity=ice_cream]", "[shop=ice_cream]", "[cuisine=ice_cream]"],
-    display: "Ice cream",
     icon: React.createElement(IcecreamIcon),
     color: "#ffb300",
     group: CATEGORY_GROUP.Food,
@@ -154,7 +148,6 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
       "[tourism=wilderness_hut]",
       "[tourism=alpine_hut]",
     ],
-    display: "Shelter",
     icon: React.createElement(DeckIcon),
     color: "#1B5E20",
     group: CATEGORY_GROUP.Nature,
@@ -163,21 +156,18 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     // Caravan sites alongside the tent ones: the van life preset sends people
     // here, and a motorhome cannot use half of what camp_site alone returns
     filters: ["[tourism=camp_site]", "[tourism=caravan_site]"],
-    display: "Camp site",
     icon: React.createElement(BedtimeIcon),
     color: "#212121",
     group: CATEGORY_GROUP.Nature,
   },
   [CATEGORIES.Beach]: {
     filters: ["[natural=beach]", "[leisure=swimming_area]"],
-    display: "Beach & swimming",
     icon: React.createElement(BeachAccessIcon),
     color: "#FFD600",
     group: CATEGORY_GROUP.Nature,
   },
   [CATEGORIES.DogPark]: {
     filters: ["[leisure=dog_park]"],
-    display: "Dog park",
     icon: React.createElement(PetsIcon),
     color: "#3E2723",
     group: CATEGORY_GROUP.Nature,
@@ -186,14 +176,12 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     // rest_area is the layby, services is the full motorway stop with fuel and
     // a building. Both are what someone driving means by "somewhere to stop"
     filters: ["[highway=rest_area]", "[highway=services]"],
-    display: "Rest area",
     icon: React.createElement(NaturePeopleIcon),
     color: "#0D47A1",
     group: CATEGORY_GROUP.Car,
   },
   [CATEGORIES.Recycling]: {
     filters: ["[amenity=recycling]"],
-    display: "Recycling",
     icon: React.createElement(RecyclingIcon),
     color: "green",
     group: CATEGORY_GROUP.Essentials,
@@ -201,7 +189,6 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
   [CATEGORIES.Atm]: {
     // Standalone machines, plus banks and shops that have one
     filters: ["[amenity=atm]", "[atm=yes]"],
-    display: "ATM",
     icon: React.createElement(LocalAtmIcon),
     color: "#2E7D32",
     group: CATEGORY_GROUP.Essentials,
@@ -209,14 +196,12 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
   [CATEGORIES.Picnic]: {
     // A single table, or a whole picnic area
     filters: ["[leisure=picnic_table]", "[tourism=picnic_site]"],
-    display: "Picnic spots",
     icon: React.createElement(TableRestaurantIcon),
     color: "#795548",
     group: CATEGORY_GROUP.Nature,
   },
   [CATEGORIES.LuggageStorage]: {
     filters: ["[amenity=luggage_locker]", "[amenity=left_luggage]"],
-    display: "Luggage storage",
     icon: React.createElement(LuggageIcon),
     color: "#455A64",
     group: CATEGORY_GROUP.Essentials,
@@ -229,7 +214,6 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
       '[man_made=tower]["tower:type"=observation]',
       "[leisure=bird_hide]",
     ],
-    display: "Viewpoints",
     icon: React.createElement(LandscapeIcon),
     color: "#7B1FA2",
     group: CATEGORY_GROUP.Nature,
@@ -246,14 +230,12 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
       "[fountain=drinking]",
       "[man_made=water_well][drinking_water=yes]",
     ],
-    display: "Drinking water",
     icon: React.createElement(WaterDropIcon),
     color: "#0288D1",
     group: CATEGORY_GROUP.Essentials,
   },
   [CATEGORIES.SanitaryDumpStation]: {
     filters: ["[amenity=sanitary_dump_station]"],
-    display: "Dump station",
     icon: React.createElement(RvHookupIcon),
     color: "#5D4037",
     group: CATEGORY_GROUP.Car,
@@ -261,7 +243,6 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
   [CATEGORIES.OutdoorGym]: {
     // Outdoor gyms are tagged both as fitness stations and as fitness pitches
     filters: ["[leisure=fitness_station]", "[leisure=pitch][sport=fitness]"],
-    display: "Outdoor gym",
     icon: React.createElement(FitnessCenterIcon),
     color: "#E64A19",
     group: CATEGORY_GROUP.Nature,
@@ -269,7 +250,6 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
   [CATEGORIES.Library]: {
     // Public libraries, plus the street bookcases and book exchange boxes
     filters: ["[amenity=library]", "[amenity=public_bookcase]"],
-    display: "Libraries",
     icon: React.createElement(LocalLibraryIcon),
     color: "#6D4C41",
     group: CATEGORY_GROUP.Essentials,
@@ -278,14 +258,12 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     // The counter you post a parcel over, kept apart from the post boxes: one
     // has opening hours and the other is a slot in a wall
     filters: ["[amenity=post_office]"],
-    display: "Post offices",
     icon: React.createElement(MarkunreadMailboxIcon),
     color: "#AD1457",
     group: CATEGORY_GROUP.Essentials,
   },
   [CATEGORIES.Shower]: {
     filters: ["[amenity=shower]"],
-    display: "Showers",
     icon: React.createElement(ShowerIcon),
     color: "#00897B",
     group: CATEGORY_GROUP.Essentials,
@@ -302,14 +280,12 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
       "[amenity=bbq][access!=private]",
       "[fireplace=yes][access!=private]",
     ],
-    display: "Fireplaces & BBQ",
     icon: React.createElement(OutdoorGrillIcon),
     color: "#FF6F00",
     group: CATEGORY_GROUP.Nature,
   },
   [CATEGORIES.CompressedAir]: {
     filters: ["[amenity=compressed_air]"],
-    display: "Compressed air",
     icon: React.createElement(TireRepairIcon),
     color: "#607D8B",
     group: CATEGORY_GROUP.Car,
@@ -319,7 +295,6 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     // it: where you can sit down is exactly the kind of thing no commercial
     // map records and someone with a bad knee plans a walk around
     filters: ["[amenity=bench]"],
-    display: "Benches",
     icon: React.createElement(ChairAltIcon),
     color: "#9E9D24",
     group: CATEGORY_GROUP.Essentials,
@@ -327,7 +302,8 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
 };
 
 export type CategoryPreset = {
-  label: string;
+  /** Stable key into the copy deck; the name it shows lives there */
+  id: string;
   icon: CategoryIcon;
   /** Tints the icon, so the presets are told apart at a glance */
   color: string;
@@ -340,13 +316,13 @@ export type CategoryPreset = {
  */
 export const CATEGORY_PRESETS: CategoryPreset[] = [
   {
-    label: "Family",
+    id: "family",
     icon: React.createElement(FamilyRestroomIcon),
     color: "#2E7D32",
     categories: [CATEGORIES.Playgrounds, CATEGORIES.Toilets],
   },
   {
-    label: "Road trip",
+    id: "road-trip",
     icon: React.createElement(DirectionsCarIcon),
     color: "#1565C0",
     categories: [
@@ -357,7 +333,7 @@ export const CATEGORY_PRESETS: CategoryPreset[] = [
     ],
   },
   {
-    label: "Camping",
+    id: "camping",
     icon: React.createElement(CabinIcon),
     color: "#EF6C00",
     categories: [
@@ -368,7 +344,7 @@ export const CATEGORY_PRESETS: CategoryPreset[] = [
     ],
   },
   {
-    label: "Van life",
+    id: "van-life",
     icon: React.createElement(RvHookupIcon),
     color: "#6A1B9A",
     categories: [
@@ -380,7 +356,7 @@ export const CATEGORY_PRESETS: CategoryPreset[] = [
     ],
   },
   {
-    label: "Outdoors",
+    id: "outdoors",
     icon: React.createElement(HikingIcon),
     color: "#00838F",
     categories: [
@@ -391,7 +367,7 @@ export const CATEGORY_PRESETS: CategoryPreset[] = [
     ],
   },
   {
-    label: "Dog walk",
+    id: "dog-walk",
     icon: React.createElement(PetsIcon),
     color: "#8D6E63",
     categories: [
@@ -401,7 +377,7 @@ export const CATEGORY_PRESETS: CategoryPreset[] = [
     ],
   },
   {
-    label: "Errands",
+    id: "errands",
     icon: React.createElement(StorefrontIcon),
     color: "#C62828",
     categories: [
@@ -514,12 +490,32 @@ export const filterMatchesPrimaryTag = (filter: string): boolean =>
     ({ key, isNegated }) => !isNegated && PRIMARY_TAG_KEYS.has(key)
   );
 
-export const CATEGORY_GROUP_DISPLAY: Record<CATEGORY_GROUP, string> = {
-  [CATEGORY_GROUP.Essentials]: "Essentials",
-  [CATEGORY_GROUP.Car]: "Car",
-  [CATEGORY_GROUP.Food]: "Food",
-  [CATEGORY_GROUP.Nature]: "Nature",
+/**
+ * The deck key of each group. Identity, not copy: the words these stand for
+ * live in copy/en.ts under `ui.groups`.
+ */
+export const CATEGORY_GROUP_ID: Record<CATEGORY_GROUP, string> = {
+  [CATEGORY_GROUP.Essentials]: "essentials",
+  [CATEGORY_GROUP.Car]: "car",
+  [CATEGORY_GROUP.Food]: "food",
+  [CATEGORY_GROUP.Nature]: "nature",
 };
+
+/** The name of a category group, as the picker heads it */
+export function groupDisplay(
+  group: CATEGORY_GROUP,
+  locale: Locale = DEFAULT_LOCALE
+): string {
+  return ui(locale).groups[CATEGORY_GROUP_ID[group]] ?? "";
+}
+
+/** The name of a preset, as its chip reads */
+export function presetLabel(
+  preset: CategoryPreset,
+  locale: Locale = DEFAULT_LOCALE
+): string {
+  return ui(locale).presets[preset.id] ?? preset.id;
+}
 
 /**
  * A self hosted Overpass instance, when the build was given one

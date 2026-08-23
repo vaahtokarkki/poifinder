@@ -1,5 +1,7 @@
 import React from "react";
-import { CATEGORY_CONFIG, CATEGORY_PRESETS } from "../constants";
+import { CATEGORY_PRESETS, presetLabel } from "../constants";
+import { categoryDisplay } from "../seo/categories";
+import { ui } from "../copy";
 
 /**
  * What the app is for, in one sentence.
@@ -9,11 +11,7 @@ import { CATEGORY_CONFIG, CATEGORY_PRESETS } from "../constants";
  * never drift into describing the same app differently.
  */
 export const InfoSheetSummary: React.FC = () => (
-  <p className="info-sheet-summary">
-    Wayside maps the small things that are hard to find when you are out:
-    toilets, playgrounds, drinking water, parking etc. Pick a
-    preset or your own categories, and search any area of the map.
-  </p>
+  <p className="info-sheet-summary">{ui().sheet.summary}</p>
 );
 
 /**
@@ -27,27 +25,6 @@ export const InfoSheetHeader: React.FC<{ title: string }> = ({ title }) => (
   </>
 );
 
-const STEPS = [
-  {
-    title: "Pick what you need",
-    text: "Use a ready made preset such as Family or Road trip, or choose the categories yourself.",
-  },
-  {
-    title: "Move the map",
-    text: "Pan or zoom anywhere and the points of the new view load on their own, as soon as the map settles.",
-  },
-  {
-    title: "Open a point",
-    text: "Tap a marker for its details, opening hours when known, and directions.",
-  },
-];
-
-const TIPS = [
-  "Search for a city or an address with the search button.",
-  "Follow a route: set a start and a destination to see the points along the way.",
-  "Share the current view, categories included, with the share button.",
-];
-
 /**
  * The guide: what the app does and how to work it.
  *
@@ -58,9 +35,9 @@ const TIPS = [
 export const InfoSheetGuide: React.FC = () => (
   <>
     <section className="info-sheet-section">
-      <h2 className="info-sheet-heading">How it works</h2>
+      <h2 className="info-sheet-heading">{ui().sheet.howItWorksHeading}</h2>
       <ol className="info-sheet-steps">
-        {STEPS.map((step, index) => (
+        {ui().sheet.steps.map((step, index) => (
           <li key={step.title}>
             <span className="info-sheet-step-number">{index + 1}</span>
             <span>
@@ -72,10 +49,10 @@ export const InfoSheetGuide: React.FC = () => (
     </section>
 
     <section className="info-sheet-section">
-      <h2 className="info-sheet-heading">Presets</h2>
+      <h2 className="info-sheet-heading">{ui().sheet.presetsHeading}</h2>
       <ul className="info-sheet-presets">
         {CATEGORY_PRESETS.map((preset) => (
-          <li key={preset.label}>
+          <li key={preset.id}>
             <span
               className="info-sheet-preset-icon"
               // The same colour the chip of the preset carries
@@ -84,25 +61,23 @@ export const InfoSheetGuide: React.FC = () => (
               {React.cloneElement(preset.icon, { fontSize: "small" })}
             </span>
             <span>
-              <strong>{preset.label}</strong>
+              <strong>{presetLabel(preset)}</strong>
               <span className="info-sheet-preset-categories">
                 {preset.categories
-                  .map((category) => CATEGORY_CONFIG[category].display)
+                  .map((category) => categoryDisplay(category))
                   .join(" · ")}
               </span>
             </span>
           </li>
         ))}
       </ul>
-      <p className="info-sheet-note">
-        Not what you are after? The picker has every category on its own.
-      </p>
+      <p className="info-sheet-note">{ui().sheet.presetsNote}</p>
     </section>
 
     <section className="info-sheet-section">
-      <h2 className="info-sheet-heading">Good to know</h2>
+      <h2 className="info-sheet-heading">{ui().sheet.goodToKnowHeading}</h2>
       <ul className="info-sheet-tips">
-        {TIPS.map((tip) => (
+        {ui().sheet.tips.map((tip) => (
           <li key={tip}>{tip}</li>
         ))}
       </ul>
@@ -115,19 +90,19 @@ export const InfoSheetGuide: React.FC = () => (
 export const InfoSheetCredits: React.FC = () => (
   <>
     <p className="info-sheet-footer">
-      Points come from{" "}
+      {ui().sheet.creditsSourceBefore}{" "}
       <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
-        OpenStreetMap
+        {ui().sheet.creditsSourceLink}
       </a>{" "}
-      contributors. Something missing? Add it there and it shows up here.
+      {ui().sheet.creditsSourceAfter}
     </p>
 
     <p className="info-sheet-footer">
-      Wayside is open source:{" "}
+      {ui().sheet.creditsCodeBefore}{" "}
       <a href="https://github.com/vaahtokarkki/poifinder" target="_blank" rel="noreferrer">
-        the code is on GitHub
+        {ui().sheet.creditsCodeLink}
       </a>
-      .
+      {ui().sheet.creditsCodeAfter}
     </p>
   </>
 );

@@ -3,6 +3,7 @@ import { findCity } from "../seo/cities";
 import type { City } from "../seo/cities";
 import { categoryHeading, findCategorySeo, vocabFor } from "../seo/categories";
 import { formatCount } from "../seo/format";
+import { DEFAULT_LOCALE, interpolate, resolve, ui } from "../copy";
 import { CITIES_PATH, categoryPath, cityPath } from "../seo/pageMeta";
 import type { CityPageData } from "../seo/pageData";
 
@@ -35,24 +36,27 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data, variant =
   return (
     <>
       {variant === "page" && (
-        <h1 className="info-sheet-title">Points of interest in {city.name}</h1>
+        <h1 className="info-sheet-title">{interpolate(ui().page.cityTitle, { city: city.name })}</h1>
       )}
       <p className="info-sheet-summary">
         {formatCount(total)} mapped points across {entries.length}{" "}
-        {entries.length === 1 ? "category" : "categories"} in {city.name}, {city.country}.
-        These are the small fixtures that are hard to look up anywhere else. Pick one to
-        see it on the map.
+        {resolve(ui().page.categoryUnit, DEFAULT_LOCALE, {}, entries.length)} in {city.name},{" "}
+        {city.country}. {ui().page.citySummaryAfter}
       </p>
 
       <section className="info-sheet-section">
-        <h2 className="info-sheet-heading">Categories in {city.name}</h2>
+        <h2 className="info-sheet-heading">
+          {interpolate(ui().page.cityCategoriesHeading, { city: city.name })}
+        </h2>
         <ul className="poi-links">
           {entries.map((entry) => (
             <li key={entry.categorySeo.slug}>
               <a href={categoryPath(city.slug, entry.categorySeo.slug)}>
                 {categoryHeading(entry.categorySeo, vocab)} in {city.name}
               </a>
-              <span className="poi-meta">{formatCount(entry.count)} mapped</span>
+              <span className="poi-meta">
+                {formatCount(entry.count)} {ui().page.mapped}
+              </span>
             </li>
           ))}
         </ul>

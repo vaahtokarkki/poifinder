@@ -2,7 +2,10 @@ import { findCity, nearbyCities } from "./cities";
 import type { City } from "./cities";
 import {
   CATEGORY_SEO,
+  categoryFaq,
   categoryHeading,
+  categoryIntro,
+  categoryNoun,
   categoryPlural,
   categorySingular,
   commonFaq,
@@ -273,9 +276,11 @@ export function titleFor(route: Route, count: number): string {
 
 export function descriptionFor(route: Route, count: number): string {
   const { city, categorySeo } = route;
-  const plural = categoryPlural(categorySeo, vocabForRoute(route));
+  // The noun has to agree with the count: 163 routes hold a single point, and
+  // "1 public showers in Adelaide" was what every one of their descriptions said
+  const noun = categoryNoun(categorySeo, count, vocabForRoute(route));
   return (
-    `${formatCount(count)} ${plural} in ${city.name} on one map, with opening hours, ` +
+    `${formatCount(count)} ${noun} in ${city.name} on one map, with opening hours, ` +
     `fees and accessibility where OpenStreetMap has them. Free to use, no signup, ` +
     `works on your phone.`
   );
@@ -318,13 +323,13 @@ export function hasPlacedPois(pois: PoiEntry[]): boolean {
 }
 
 /**
- * The paragraph above the list. The entry writes it in international English
+ * The paragraph above the list. The deck writes it in international English
  * and it is translated on the way out, which is why the intro is assembled
  * here rather than called straight from the component
  */
 export function introFor(route: Route, count: number): string {
   const { city, categorySeo } = route;
-  return localize(categorySeo.intro(city.name, formatCount(count)), vocabForRoute(route));
+  return categoryIntro(categorySeo, city.name, count, vocabForRoute(route));
 }
 
 /**
@@ -370,11 +375,15 @@ export function cityDescriptionFor(
 /** The full question set of a category page: the specific ones, then the shared ones */
 export function faqFor(route: Route, count: number): FaqEntry[] {
   const vocab = vocabForRoute(route);
-  const entries = [
-    ...route.categorySeo.faq(route.city.name, formatCount(count)),
-    ...commonFaq(route.city.name, categoryPlural(route.categorySeo, vocab)),
+  // categoryFaq localises its own output, because it is the half that has to
+  // pick a plural form first. The shared questions still go through here
+  return [
+    ...categoryFaq(route.categorySeo, route.city.name, count, vocab),
+    ...commonFaq(route.city.name, categoryPlural(route.categorySeo, vocab)).map(({ q, a }) => ({
+      q: localize(q, vocab),
+      a: localize(a, vocab),
+    })),
   ];
-  return entries.map(({ q, a }) => ({ q: localize(q, vocab), a: localize(a, vocab) }));
 }
 
 export type LinkGroup = {

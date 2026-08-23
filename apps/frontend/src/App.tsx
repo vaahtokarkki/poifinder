@@ -19,7 +19,8 @@ import { fetchIpLocation } from "./api/ipLocation";
 import { parseCitySlugFromPath, parseCategorySlugFromPath, slugToTitle } from "./utils";
 import { filterMarkersInBbox } from "./geo";
 import { findCity } from "./seo/cities";
-import { findCategorySeo } from "./seo/categories";
+import { categoryHeading, findCategorySeo } from "./seo/categories";
+import { ui } from "./copy";
 import { readPageData } from "./seo/pageData";
 import SheetPage from "./components/SheetPage";
 import { Alert, Snackbar } from '@mui/material';
@@ -319,7 +320,7 @@ const App = () => {
         savePois({ markers: data, bbox: fetchBbox, categories });
         setErrorMessage(null); // Clear error on success
       } catch (e) {
-        const errorMsg = e instanceof Error ? e.message : "Failed to fetch markers from Overpass API. Please try again.";
+        const errorMsg = e instanceof Error ? e.message : ui().notices.fetchFailed;
         console.error("Error fetching markers:", e);
         setErrorMessage(errorMsg);
         // A failed query leaves nothing loaded, so the next pan may retry
@@ -524,12 +525,12 @@ const App = () => {
         return;
       }
       await navigator.clipboard.writeText(shareUrl);
-      setShareMessage("Link copied to clipboard");
+      setShareMessage(ui().notices.linkCopied);
     } catch (e) {
       // Dismissing the share sheet is not an error
       if (e instanceof Error && e.name === "AbortError") return;
       console.error("Error sharing the current view:", e);
-      setErrorMessage("Could not copy the link to the clipboard.");
+      setErrorMessage(ui().notices.copyFailed);
     }
   };
 
@@ -602,7 +603,7 @@ const App = () => {
       const endCoords: [number, number] = end;
 
       if (!startCoords || !endCoords) {
-        alert("Could not get start or end location coordinates.");
+        alert(ui().notices.shareRouteMissing);
         setLoading(false);
         return;
       }
@@ -634,7 +635,7 @@ const App = () => {
       setLoading(false);
     } catch (err) {
       setLoading(false);
-      alert("Failed to fetch route: " + err);
+      alert(ui().notices.routeFailed + err);
     }
   };
 
@@ -820,9 +821,14 @@ const App = () => {
     const citySlug = parseCitySlugFromPath();
     const categorySeo = findCategorySeo(parseCategorySlugFromPath());
     if (citySlug) {
-      return `${categorySeo?.heading ?? "Points of interest"} in ${slugToTitle(citySlug)}`;
+      // "intl" because this is the path where the city is unknown, so there is
+      // no country to pick a vocabulary from. It is what the raw heading was
+      const heading = categorySeo
+        ? categoryHeading(categorySeo, "intl")
+        : ui().notices.fallbackTitle;
+      return `${heading} in ${slugToTitle(citySlug)}`;
     }
-    return "Find the useful places around you";
+    return ui().notices.fallbackSubtitle;
   }
 
   // The static markup the prerender left behind is only there to carry the

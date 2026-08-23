@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useImperativeHandle, useRef, useState } from "react";
+import { ui } from "../copy";
 
 export type SheetSnap = "hidden" | "peek" | "full";
 
@@ -273,7 +274,7 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, children }) 
   return (
     <section
       className="bottom-sheet"
-      aria-label="About this app"
+      aria-label={ui().controls.about}
       aria-hidden={snap === "hidden"}
       style={{
         height: fullHeight,

@@ -132,7 +132,24 @@ type DynamicMarkersProps = {
 // Reusable icon rendering function
 const RenderMarkerIcon = (
   iconElement: React.ReactElement,
-  color: string = "black"
+  color: string = "black",
+  /**
+   * `access=customers`: somewhere you get into by buying something first. It
+   * is still worth having on the map — a café toilet is a toilet — but it is
+   * not the same offer as the point next to it, and a reader scanning for
+   * somewhere to go should be able to tell the two apart without opening
+   * either.
+   *
+   * So the colour is drained rather than removed. Most of the category's own
+   * hue survives at 0.6, which is what the reader is scanning by — a grey icon
+   * has to be looked at twice to find out what it is, and that costs more than
+   * the condition is worth saying. One filter over the whole marker, ring
+   * included, so it dims as one thing rather than as an icon wearing a
+   * different border: a quiet mark that reads as a condition rather than as a
+   * warning, because the point is worth walking to when you were buying a
+   * coffee anyway.
+   */
+  customersOnly: boolean = false
 ) => {
   const size = 25;
   return divIcon({
@@ -145,8 +162,9 @@ const RenderMarkerIcon = (
         display:flex;
         align-items:center;
         justify-content:center;
-        border: 3px solid #fff6;
+        border: 2px solid #fff6;
         color: ${color};
+        ${customersOnly ? "filter:saturate(0.4);" : ""}
       ">
         ${renderToString(React.cloneElement(iconElement))}
       </span>
@@ -245,6 +263,14 @@ const CHANGING_TABLE_COLOR = "#E91E63";
 const hasChangingTable = (category: CATEGORIES | null, marker: OverpassMarkerData) =>
   category === CATEGORIES.Toilets && marker.tags?.changing_table === "yes";
 
+/**
+ * Whether getting in means being a customer first. Any category: a toilet, a
+ * car park and a drinking fountain behind a till are the same proposition to
+ * somebody deciding whether to walk there.
+ */
+const isCustomersOnly = (marker: OverpassMarkerData) =>
+  marker.tags?.access === "customers";
+
 /** The default of {@link RenderMarkerIcon}, for a point of no known category */
 const UNCATEGORISED_COLOR = "black";
 
@@ -269,6 +295,7 @@ const getMarkerIcon = (marker: OverpassMarkerData, selected: readonly CATEGORIES
     ? PAID_ICONS[category]
     : undefined;
   const changingTable = hasChangingTable(category, marker);
+  const customersOnly = isCustomersOnly(marker);
 
   /**
    * Keyed as a string so the variants share the cache with everything else.
@@ -277,17 +304,20 @@ const getMarkerIcon = (marker: OverpassMarkerData, selected: readonly CATEGORIES
    */
   const key =
     category === null
-      ? "uncategorised"
-      : `${category}:${paidIcon ? "paid" : "free"}:${changingTable ? "baby" : "plain"}`;
+      ? `uncategorised:${customersOnly ? "customers" : "open"}`
+      : `${category}:${paidIcon ? "paid" : "free"}:${changingTable ? "baby" : "plain"}:${
+          customersOnly ? "customers" : "open"
+        }`;
 
   let icon = iconCache.get(key);
   if (!icon) {
     icon =
       category === null
-        ? RenderMarkerIcon(<ParkIcon />)
+        ? RenderMarkerIcon(<ParkIcon />, UNCATEGORISED_COLOR, customersOnly)
         : RenderMarkerIcon(
             paidIcon ?? CATEGORY_CONFIG[category].icon,
-            getMarkerColor(marker, selected)
+            getMarkerColor(marker, selected),
+            customersOnly
           );
     iconCache.set(key, icon);
   }
@@ -390,14 +420,29 @@ const isDisplayableTag = (key: string, value: string) => {
  * shape of a chip, which is what carries the answer at a glance — and the
  * colour, in the one case a chip is not grey.
  *
- * Only these two. `limited`, `customers`, `permissive` and the rest of the
- * access vocabulary used to be chipped alongside them, and it made the popup
- * read as though every one of them were a verdict of the same kind. They are
- * not: "yes" and "no" close a question, while "limited" opens one, and dressing
- * the two alike put a qualification in the shape of an answer. Set as plain
- * text they read as what they are, a value worth reading rather than a badge.
+ * Only these two. `limited`, `permissive` and the rest of the access
+ * vocabulary used to be chipped alongside them, and it made the popup read as
+ * though every one of them were a verdict of the same kind. They are not:
+ * "yes" and "no" close a question, while "limited" opens one, and dressing the
+ * two alike put a qualification in the shape of an answer. Set as plain text
+ * they read as what they are, a value worth reading rather than a badge.
  */
 const YES_NO_ANSWERS = new Set(["yes", "no"]);
+
+/**
+ * `access=customers` is the exception among the qualifications, and it gets
+ * the chip.
+ *
+ * It closes the question the same way a yes or a no does — you are getting in
+ * if you buy something, and you are not if you do not — and it is the one
+ * access value the map draws differently, its colour drained out of it. A
+ * reader who picked that marker out of the map has already been told there is
+ * a condition; the popup is where they find out what it is, and it should be
+ * the line their eye lands on rather than one more grey row among twelve.
+ * Hence the weight on it as well as the shape.
+ */
+const isCustomersChip = (key: string, value: string) =>
+  key === "access" && value.toLowerCase() === "customers";
 
 /**
  * Words that are cheap to spot and very hard to write by accident in another
@@ -727,7 +772,9 @@ const PopupRows: React.FC<{ rows: PopupRow[]; keyPrefix: string }> = ({
 }) => (
   <dl className="poi-popup-rows">
     {rows.map(({ key, label, value: valueStr, written, href: rowHref, linkLabel }) => {
-      const isYesNo = !written && YES_NO_ANSWERS.has(valueStr.toLowerCase());
+      const isCustomers = !written && isCustomersChip(key, valueStr);
+      const isYesNo =
+        (!written && YES_NO_ANSWERS.has(valueStr.toLowerCase())) || isCustomers;
       const href =
         rowHref ?? (valueStr.startsWith("http") ? valueStr : `https://${valueStr}`);
       /**
@@ -779,7 +826,7 @@ const PopupRows: React.FC<{ rows: PopupRow[]; keyPrefix: string }> = ({
               </a>
             ) : isYesNo ? (
               <span
-                className="poi-popup-chip"
+                className={`poi-popup-chip${isCustomers ? " poi-popup-chip-strong" : ""}`}
                 /**
                  * The one chip that is not grey. It carries the same pink
                  * the marker does, so a point somebody picked out of the

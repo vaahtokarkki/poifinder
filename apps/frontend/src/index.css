@@ -750,6 +750,12 @@ body {
   color: #3c4043;
 }
 
+/* `access=customers`: the one qualification set as an answer, and the line the
+   reader who picked a drained marker off the map opened the popup for */
+.poi-popup-chip-strong {
+  font-weight: 700;
+}
+
 /*
  * The row label doubles as a link to what the tag means. It is left looking
  * exactly like the label it is: the reader came for the place, not for the

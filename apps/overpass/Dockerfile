@@ -28,6 +28,11 @@ COPY osmium-filter.txt /opt/wayside/osmium-filter.txt
 # region a city in the app sits in. Pick one with WAYSIDE_REGION_LIST
 COPY europe-regions.txt world-regions.txt /opt/wayside/
 
+# The shape check that runs in front of the interpreter. njs is already in the
+# image — ngx_http_js_module.so ships with nginx.org's build — so this is the
+# script and nothing else. initdb.d/13-query-guard.sh is what loads them
+COPY njs/query-guard.js /etc/nginx/njs/query-guard.js
+
 COPY bin/filter-osm-extract bin/join-buildings bin/build-region-extract bin/update-poi-db \
     bin/rotate-access-log /usr/local/bin/
 COPY initdb.d/ /docker-entrypoint-initdb.d/

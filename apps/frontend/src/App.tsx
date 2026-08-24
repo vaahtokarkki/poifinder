@@ -50,16 +50,55 @@ const MIN_POI_ZOOM = 10;
 const AUTO_FETCH_DELAY_MS = 700;
 
 /**
- * The query covers a little more than the screen on every side, so that a short
- * pan stays inside the loaded area instead of costing another Overpass query
+ * The query covers more than the screen on every side, so that a short pan
+ * stays inside the loaded area instead of costing another Overpass query.
+ * A share of the view rather than a distance, so it means the same thing at
+ * every scale: 0.25 loads a quarter of a screen past each edge.
+ *
+ * How much more depends on how close the map is, because the two ends of the
+ * zoom range are asking for different things. Far out, the screen already spans
+ * a region and the padding is what makes the query slow, so it stays where it
+ * has always been. Close in, the same share is a couple of streets and cheap to
+ * ask for, while the moves that leave it are not all pans the reader made:
+ * opening a popup pans the map to fit it, which on a phone can be most of the
+ * screen's height, and that must not cost a second query for the points that
+ * are on the map already.
  */
-const FETCH_BBOX_PADDING = 0.25;
+const FETCH_BBOX_PADDING = {
+  /** Wide views, where the padding is what a query costs */
+  far: 0.25,
+  /**
+   * Close views. Enough that a popup's own pan lands well inside the loaded
+   * area: Leaflet pans by up to the popup's height plus the room it keeps
+   * around it, so anything short of a screenful has to be covered
+   */
+  near: 1,
+  /** At or below this zoom, {@link FETCH_BBOX_PADDING.far} */
+  farZoom: 13,
+  /** At or above this zoom, {@link FETCH_BBOX_PADDING.near} */
+  nearZoom: 16,
+} as const;
 
-/** Grow a [south, west, north, east] box by {@link FETCH_BBOX_PADDING} */
-const padBbox = ([south, west, north, east]: [number, number, number, number]):
-  [number, number, number, number] => {
-  const latPad = (north - south) * FETCH_BBOX_PADDING;
-  const lngPad = (east - west) * FETCH_BBOX_PADDING;
+/**
+ * How far past the screen the query reaches at this zoom, as a share of the
+ * view. Ramped rather than switched at a threshold, so that a zoom step in the
+ * middle of the range does not throw away a loaded area by changing what
+ * counts as covered.
+ */
+const bboxPaddingForZoom = (zoom: number): number => {
+  const { far, near, farZoom, nearZoom } = FETCH_BBOX_PADDING;
+  const progress = (zoom - farZoom) / (nearZoom - farZoom);
+  return far + (near - far) * Math.min(Math.max(progress, 0), 1);
+};
+
+/** Grow a [south, west, north, east] box by {@link bboxPaddingForZoom} */
+const padBbox = (
+  [south, west, north, east]: [number, number, number, number],
+  zoom: number
+): [number, number, number, number] => {
+  const padding = bboxPaddingForZoom(zoom);
+  const latPad = (north - south) * padding;
+  const lngPad = (east - west) * padding;
   return [south - latPad, west - lngPad, north + latPad, east + lngPad];
 };
 
@@ -162,6 +201,12 @@ const App = () => {
    * keeps whatever view the visit arrived with
    */
   const [searchZoom, setSearchZoom] = useState<number | null>(null);
+  /**
+   * What last set {@link searchPosition}, so the query it causes can be
+   * reported as what it was. Both paths run the same effect below, and calling
+   * both a search made a city page load look like somebody typing.
+   */
+  const searchOriginRef = useRef<"city-page" | "place-search">("city-page");
   const [category, setCategory] = useState<CATEGORIES[]>([]);
   const [loading, setLoading] = useState(false);
   const [displaySearchItem, setDisplaySearchItem] = useState<string | null>(null); // "search" | "routes" | null
@@ -279,9 +324,10 @@ const App = () => {
     // Too far out to query, the hint asks for a closer look instead
     if (map.getZoom() < MIN_POI_ZOOM) return Promise.resolve();
 
-    // Query a little wider than the screen, so the points are already there
-    // when the user nudges the map
-    const fetchBbox = padBbox(bbox);
+    // Query wider than the screen, so the points are already there when the
+    // view moves a little — whether the reader nudged the map or a popup panned
+    // it to fit itself on the screen
+    const fetchBbox = padBbox(bbox, map.getZoom());
 
     let polygon: Feature<Polygon | MultiPolygon> | undefined = undefined;
     if (
@@ -390,7 +436,7 @@ const App = () => {
       userMovedMapRef.current = true;
       setMapView(searchPosition, searchZoom ?? undefined);
       // Fetch markers after map centers on search result
-      fetchMarkers(undefined, "place-search");
+      fetchMarkers(undefined, searchOriginRef.current);
     }
   }, [searchPosition, map]);
 
@@ -703,10 +749,12 @@ const App = () => {
         // on the first frame instead of waiting for a geocoder
         const city = findCity(citySlug);
         if (city) {
+          searchOriginRef.current = "city-page";
           setSearchPosition([city.lat, city.lon]);
         } else {
           const results = await fetchSuggestions(citySlug.replace(/-/g, " "));
           if (results && results.length > 0) {
+            searchOriginRef.current = "city-page";
             setSearchPosition(results[0].coords);
           }
         }
@@ -896,6 +944,7 @@ const App = () => {
                 setSearchZoom(
                   map ? zoomForSearchResult(map, extent) : SEARCH_RESULT_ZOOM
                 );
+                searchOriginRef.current = "place-search";
                 setSearchPosition(coords);
                 setDisplaySearchItem(null);
               }

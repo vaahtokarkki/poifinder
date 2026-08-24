@@ -355,7 +355,11 @@ refuses to publish a stale filter, with
 | `bin/update-poi-db` | Rebuild and swap, with the API up throughout |
 | `bin/rotate-access-log` | The timer for the log rotation, because the image has no cron |
 | `initdb.d/05-db-permissions.sh` | Lets the FastCGI worker reach the dispatcher's socket |
+| `njs/query-guard.js` | The shape check that runs in front of the interpreter |
 | `initdb.d/10-cors.sh` | Replaces the interpreter's fixed `Access-Control-Allow-Origin` with a configurable one |
+| `initdb.d/11-robots-txt.sh` | Answers robots.txt with "nothing here", instead of a 404 that reads as permission |
+| `initdb.d/12-request-limits.sh` | Rate and body-size limits, and closes the door that let them be walked around |
+| `initdb.d/13-query-guard.sh` | Loads njs and puts the query guard in front of `/api/interpreter` |
 | `initdb.d/15-access-log.sh` | Moves the access log to the volume as JSON, with the real client address, and rotates it |
 | `initdb.d/20-supervisorctl.sh` | Gives supervisorctl a socket, so the swap can stop the dispatcher properly |
 | `initdb.d/30-wait-for-database.sh` | Holds a serving container back until there is a database, instead of letting it crash into FATAL |
@@ -606,6 +610,118 @@ protection at the edge, again with no inbound ports.
 Whichever is used, `VITE_OVERPASS_API_URL` in the frontend build is the public
 https URL with `/api/interpreter` on the end, and `OVERPASS_CORS_ORIGIN` should
 name the site's origin unless the instance is meant for anyone.
+
+## Keeping it to our own queries
+
+The interpreter is public and unauthenticated, and it cannot usefully be made
+otherwise. The app is a web page with no login, so any key it carries is a key
+every visitor can read out of the bundle, and a key minted by an endpoint that
+anybody may call is a key anybody may mint. There is no waterproof answer here.
+
+What there is, is a different question. The risk is not somebody taking the
+data — this database is a filtered scrap of what the public mirrors hand out
+for free, so nobody who wants Overpass would come here for it. The risk is one
+query costing the machine an hour. And what a query costs can be checked
+without knowing who is asking.
+
+Five days of logs, 5029 requests, had exactly one query in them that this app
+did not send:
+
+```
+[out:json][timeout:60];node(60.10,24.70,60.35,25.20);out meta;
+```
+
+Every node in greater Helsinki, no tag filter: 4 MB and 2.8 s, run by hand with
+`curl`. It is not the size that marks it out, it is the shape. The app always
+names *what* it wants before it says *where* — `nwr[amenity=toilets](bbox)` —
+and this names only where.
+
+So there are three things in front of the dispatcher now, and none of them is a
+password.
+
+### The bounds
+
+`OVERPASS_TIME` is the one that was missing, and it is the only one that stops
+work rather than stopping waiting. It is the dispatcher's `--time`, the ceiling
+on how long one query may run; unset, as it was, there is no ceiling at all.
+`OVERPASS_MAX_TIMEOUT` only makes nginx give up listening, which frees the
+client and leaves Overpass computing.
+
+| | Was | Now | Worst real case |
+| --- | --- | --- | --- |
+| `OVERPASS_TIME` — seconds one query may run | unset | 60 | 4.0 s |
+| `OVERPASS_MAX_TIMEOUT` — how long nginx waits | 180s | 90s | — |
+| `OVERPASS_SPACE` — RAM one query may use | 2 GB | 256 MB | 848 KB answered |
+| `OVERPASS_MAX_SIZE` — largest query body | 1 MB | 256 KB | 177 KB |
+| `WAYSIDE_RATE_LIMIT` — requests/second/address | none | 10, burst 20 | 3 |
+
+Every "now" column sits far above what this app does and far below what an
+unbounded query can cost. None of them shapes normal traffic, which needs no
+shaping; they are there so that nothing runs away.
+
+`OVERPASS_TIME` has to stay at or above the `[timeout:]` the build scripts ask
+for — `QUERY_TIMEOUT` in `apps/frontend/scripts/fetch-poi-data.mjs`, kept at
+the same number — because a query asking for more time than the server allows
+is refused rather than clamped. Raise both together.
+
+The rate limit answers **429** rather than nginx's default 503, because the app
+knows what a 429 is: `fetchWithRetry` treats it as retryable and backs off,
+where a 503 it would read as the server being down and fail over to the public
+mirrors.
+
+### The query guard
+
+[`njs/query-guard.js`](njs/query-guard.js) runs in front of `/api/interpreter`
+and refuses what the app would never send:
+
+- a spatial filter — a bounding box, `around:`, `poly:` — with no tag filter in
+  front of it
+- recursion (`>`, `>>`) as a statement of its own
+- `is_in`, `area[...]`, `foreach`, `make`, `convert`
+- any output format other than `json`
+- a body over 256 KB, or one nginx had to spill to a temporary file, since a
+  query that cannot be read is not one to forward unread
+
+An id lookup is still an id lookup: `node(1)` and `way(id:5)` are not bounding
+boxes and pass, which is also what keeps the health check working.
+
+The rules were checked against all 4985 logged queries that carried a body.
+One was refused, and it is the one above. `WAYSIDE_QUERY_GUARD=log` runs it
+without refusing anything, writing what it would have refused to the error log
+— worth a few days before enforcing, on the chance the app grows a shape the
+rules do not know.
+
+If it is ever wrong, a refusal is a 403, which the app treats as a failed
+server and falls back to the public mirrors over. The cost of a mistake here is
+a slower answer, not a broken map.
+
+### The front door
+
+`/cgi-bin/` is now `internal`. It is the location that actually reaches the
+dispatcher, and the image leaves it open to the world, so everything above
+could be walked around by asking for `/cgi-bin/interpreter` instead of
+`/api/interpreter` — the guard, the rate limit, all of it. `/api/` was always
+the front door and the rewrite that gets from one to the other is internal, so
+nothing outside loses anything.
+
+The rate limit sits on the `/api/` locations rather than on the server for a
+related reason: an internal redirect runs nginx's preaccess phase again, so a
+limit declared once at the top counted every request twice and the effective
+rate was half the configured one.
+
+### robots.txt
+
+There is no `robots.txt` on this host, so every crawler that looked for one got
+a 404 — 21 of them over five days, from Applebot, Googlebot, AhrefsBot and
+`facebookexternalhit`. A 404 means "no restrictions", so they went on to render
+the app and call the interpreter: Applebot alone accounted for 265 queries in
+that window, more than every real visitor put together on a quiet day.
+
+Now it answers `Disallow: /`, to everybody. Nothing here is a crawlable page,
+and it costs no indexing: the text a crawler reads on a city page — the counts,
+the category links, the neighbours — is built into the prerendered HTML from
+`src/seo/pageData.ts` and rendered from that same build-time data, with no
+request to this server anywhere in it. The map markers were never indexable.
 
 ## Access logs
 

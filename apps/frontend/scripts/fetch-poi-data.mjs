@@ -85,8 +85,22 @@ const AREA_VALUES = [
   "cemetery",
   "allotments",
 ];
-/** Overpass query timeout, in seconds */
-const QUERY_TIMEOUT = 180;
+/**
+ * Overpass query timeout, in seconds.
+ *
+ * Has to stay at or below OVERPASS_TIME on our own instance, which is the
+ * dispatcher's --time and the ceiling on how long any one query may run: a
+ * query asking for more time than the server allows is refused rather than
+ * clamped. The two are set to the same number in
+ * apps/overpass/docker-compose.prod.yml; raise them together.
+ *
+ * 60 rather than the 180 this used to be because nothing here comes close.
+ * Across five days of access logs the slowest query of any kind answered in
+ * 4.0 s and the 99th percentile in 1.4 s, so this is fifteen times the worst
+ * case, and the public mirrors — which is what this run mostly talks to — are
+ * bound by their own limits long before it.
+ */
+const QUERY_TIMEOUT = 60;
 /**
  * Give the server its full timeout plus room to send the body back, then give
  * up. Without this a mirror that accepts the connection and goes quiet stalls

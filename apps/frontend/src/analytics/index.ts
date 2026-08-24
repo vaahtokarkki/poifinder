@@ -138,8 +138,14 @@ export function trackSearch(query: string, resultCount: number): void {
 /** What triggered a query to Overpass */
 export type QueryTrigger =
   | "initial"
+  // The city a prerendered page is about, centred on load. Kept apart from
+  // "place-search" because it is the page opening, not a person looking for
+  // anything: every crawler that renders the page reports it too, and a report
+  // that calls that a search is measuring our own URLs rather than intent
+  | "city-page"
   | "categories"
   | "preset"
+  /** A result taken from the search box, which only a person can do */
   | "place-search"
   | "pan"
   | "route"

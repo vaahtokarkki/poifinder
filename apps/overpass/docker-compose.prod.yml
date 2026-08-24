@@ -109,10 +109,61 @@ services:
       OVERPASS_ALLOW_DUPLICATE_QUERIES: "yes"
 
       # Bounds for one query, not budgets for the server: the app's queries
-      # need far less, these are here so a bad one dies on its own
-      OVERPASS_MAX_TIMEOUT: 180s
-      OVERPASS_SPACE: "2147483648"
+      # need far less, these are here so a bad one dies on its own.
+      #
+      # Measured over five days of real traffic: the slowest query answered in
+      # 4.0 s, the 99th percentile in 1.4 s, and the largest answer was 848 KB.
+      # Everything below sits far above that and far below what an unbounded
+      # query can cost, which is the whole idea — see "Keeping it to our own
+      # queries" in README.md.
+      #
+      # OVERPASS_TIME is the one that was missing. It is the dispatcher's
+      # --time, the ceiling on how long one query may run, and with it unset
+      # there was no ceiling at all: OVERPASS_MAX_TIMEOUT only makes nginx stop
+      # waiting, it does not make Overpass stop working.
+      #
+      # It has to stay at or above the [timeout:] the build scripts ask for —
+      # QUERY_TIMEOUT in apps/frontend/scripts/fetch-poi-data.mjs, which is
+      # kept at the same number. Raise both together, or a data refresh starts
+      # being refused for asking for more time than the server allows
+      OVERPASS_TIME: "60"
+
+      # nginx waits a little longer than that, so a query that hits the ceiling
+      # comes back as Overpass's own error rather than as a gateway timeout
+      OVERPASS_MAX_TIMEOUT: 90s
+
+      # Memory one query may use. 256 MB against a 848 KB largest answer
+      OVERPASS_SPACE: "268435456"
+
+      # Longest query body nginx accepts. The largest real one is a route
+      # search whose polygon is 177 KB; the median is 556 bytes
+      OVERPASS_MAX_SIZE: 256k
+
+      # Concurrent queries from one address. Note this is *concurrency*, not a
+      # rate: WAYSIDE_RATE_LIMIT below is what stops one client asking as fast
+      # as it can, one query after another
       OVERPASS_RATE_LIMIT: "30"
+
+      # Requests per second per address, and how many may arrive at once. Our
+      # own prerender peaks at 3 a second during a deploy and real visitors at
+      # 2, so this is invisible to both. See initdb.d/12-request-limits.sh
+      WAYSIDE_RATE_LIMIT: "10"
+      WAYSIDE_RATE_BURST: "20"
+
+      # Refuse queries this app would never send — a spatial filter with no tag
+      # filter in front of it, recursion, area lookups, output formats other
+      # than json. The rules are in njs/query-guard.js and were checked against
+      # every query in five days of logs: one refusal, and it was the one
+      # abusive query in them.
+      #
+      # "log" instead to leave it watching for a while: it writes what it would
+      # have refused to the error log and answers the query anyway. "off" to
+      # take it out altogether.
+      #
+      # A refusal is a 403, which the app treats as a failed server and falls
+      # back to the public mirrors over — so the cost of this being wrong about
+      # some future query is a slower answer, not a broken map
+      WAYSIDE_QUERY_GUARD: enforce
 
     # No cpus limit here on purpose. This is the interactive half and it should
     # have the machine; the importer below is the one that gets held back

@@ -126,7 +126,8 @@ async function runOverpassQuery(
 
   const tryFetchFromURL = async (
     url: string,
-    maxRetries: number
+    maxRetries: number,
+    timeoutMs: number
   ): Promise<OverpassElement[]> => {
     const res = await fetchWithRetry(
       url,
@@ -137,6 +138,7 @@ async function runOverpassQuery(
       },
       {
         maxRetries,
+        timeoutMs,
         initialDelayMs: OVERPASS_API_CONFIG.RETRY.initialDelayMs,
         backoffMultiplier: OVERPASS_API_CONFIG.RETRY.backoffMultiplier,
         jitterPercent: OVERPASS_API_CONFIG.RETRY.jitterPercent,
@@ -183,7 +185,11 @@ async function runOverpassQuery(
   if (SELF_HOSTED_OVERPASS_URL) {
     console.debug(`[Overpass] Using self hosted instance: ${SELF_HOSTED_OVERPASS_URL}`);
     try {
-      return await tryFetchFromURL(SELF_HOSTED_OVERPASS_URL, 0);
+      return await tryFetchFromURL(
+        SELF_HOSTED_OVERPASS_URL,
+        0,
+        OVERPASS_API_CONFIG.TIMEOUT.patientMs
+      );
     } catch (error) {
       const errorMsg = error instanceof Error ? error.message : String(error);
       console.warn(
@@ -202,7 +208,9 @@ async function runOverpassQuery(
       status(`Loading from server ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}...`);
       console.debug(`[Overpass] Pass 1: Trying URL ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}: ${url}`);
 
-      const result = await tryFetchFromURL(url, 0); // maxRetries: 0 for pass 1
+      // No retries and a short timeout: this pass is looking for a host that
+      // answers, not waiting for one that is thinking
+      const result = await tryFetchFromURL(url, 0, OVERPASS_API_CONFIG.TIMEOUT.quickMs);
       console.debug(`[Overpass] Pass 1: Successfully fetched from URL ${urlIndex + 1}`);
       return result;
     } catch (error) {
@@ -223,7 +231,13 @@ async function runOverpassQuery(
       status(`Retrying server ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length} with backoff...`);
       console.debug(`[Overpass] Pass 2: Retrying URL ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}: ${url}`);
 
-      const result = await tryFetchFromURL(url, OVERPASS_API_CONFIG.RETRY.maxRetries); // maxRetries: 3 for pass 2
+      // Every mirror has already failed once, so the visitor is waiting either
+      // way. Wait properly rather than time out on a query that is running
+      const result = await tryFetchFromURL(
+        url,
+        OVERPASS_API_CONFIG.RETRY.maxRetries,
+        OVERPASS_API_CONFIG.TIMEOUT.patientMs
+      );
       console.debug(`[Overpass] Pass 2: Successfully fetched from URL ${urlIndex + 1} after retries`);
       return result;
     } catch (error) {

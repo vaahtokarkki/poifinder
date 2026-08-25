@@ -544,4 +544,33 @@ export const OVERPASS_API_CONFIG = {
     backoffMultiplier: 2,
     jitterPercent: 10,
   },
+  /**
+   * How long to wait for a response, per phase.
+   *
+   * One number was too short in the place that mattered and would be far too
+   * long everywhere else. The shared default of 10s is fine for deciding
+   * whether a mirror is answering at all, and wrong for a dense query: a busy
+   * Overpass queues the request and answers in twenty to forty seconds, so
+   * giving up at ten abandons work the server is already doing and then asks
+   * it again, which is how a slow mirror is turned into an overloaded one.
+   *
+   * `quick` is the fast failover pass, where the question is only "is this
+   * host up". `patient` is for the self hosted instance and for the second
+   * pass, both of which are the cases where waiting is the right answer:
+   * nobody else is competing for our own instance, and by pass 2 every mirror
+   * has already failed once and the visitor is committed to waiting anyway.
+   *
+   * Worst case wall time, all four mirrors down twice over: 45 + 4x15 + 4x(4
+   * x45 + 35 backoff) ~= 16 min, against ~6 today. That upper bound is only
+   * reached when Overpass is globally unavailable, and the failure is already
+   * reported to the visitor at each step by the status callback. Cutting
+   * maxRetries to 1 in pass 2 would bring it back under 6 min if that
+   * trade ever looks wrong.
+   */
+  TIMEOUT: {
+    /** Pass 1, which only has to find a host that answers */
+    quickMs: 15000,
+    /** Our own instance, and pass 2 where the visitor is already waiting */
+    patientMs: 45000,
+  },
 } as const;

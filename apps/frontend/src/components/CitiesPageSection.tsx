@@ -1,8 +1,10 @@
 import React from "react";
 import { findCity } from "../seo/cities";
-import { cityPath } from "../seo/pageMeta";
+import { cityPath,
+  cityName,
+} from "../seo/pageMeta";
 import { formatCount } from "../seo/format";
-import { getLocale, resolve, ui } from "../copy";
+import { DEFAULT_LOCALE, getLocale, resolve, ui } from "../copy";
 import type { CitiesPageData } from "../seo/pageData";
 
 /**
@@ -44,7 +46,7 @@ const CitiesPageSection: React.FC<{ data: CitiesPageData }> = ({ data }) => {
           <ul className="poi-links poi-links-inline">
             {group.map((city) => (
               <li key={city.slug}>
-                <a href={cityPath(city.slug)}>{city.name}</a>
+                <a href={cityPath(city.slug, DEFAULT_LOCALE)}>{cityName(city, DEFAULT_LOCALE)}</a>
               </li>
             ))}
           </ul>

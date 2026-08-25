@@ -1,10 +1,14 @@
 /**
  * The Finnish deck: app chrome only.
  *
- * No `categories`, so every page keeps its English copy and falls back key by
- * key. That is deliberate and is the shape most locales will arrive in — the
- * chrome is ~500 words and helps in all 148 cities, the page copy is ~3,800
- * and only earns its keep where the search demand is in that language.
+ * The chrome. The category nouns are in fi.categories.ts and the prose in
+ * fi.prose.ts, split because they were written at different times and are
+ * reviewed as different jobs.
+ *
+ * Finnish has a URL tree now — /fi/helsinki/toilets and the other three
+ * Finnish cities — which is why the prose had to exist: an indexed page that
+ * declares lang="fi" and then reads English is a page whose markup contradicts
+ * itself, and hreflang would be asserting it as the Finnish alternate.
  *
  * Finnish is here as much to stress the machinery as to serve Finnish readers.
  * It is the language in this project that breaks a naive `{city}` placeholder:
@@ -16,6 +20,8 @@
  * problem to solve first, and it will need case forms on the city rather than
  * a second copy of the sentence.
  */
+import { fiCategories } from "./fi.categories";
+import { fiCommonFaq } from "./fi.prose";
 import type { LocaleDeck } from "./types";
 
 const ui: NonNullable<LocaleDeck["ui"]> = {
@@ -99,41 +105,64 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     creditsCodeAfter: ".",
   },
 
-  // Left in English on purpose: these render on the prerendered pages, whose
-  // copy has no Finnish deck behind it. Translating the frame around English
-  // paragraphs would make one page read in two languages
+  /**
+   * Finnish, now that City carries case forms.
+   *
+   * This section was English while `{city}` could only produce "Helsinki", and
+   * Finnish does not say "in Helsinki" — it says "Helsingissä", putting the
+   * relation on the noun rather than in a preposition. Templates that mean
+   * "in this city" therefore ask for `{cityIn}` and the deck gets the
+   * inflected form; templates that name a city on its own still ask for
+   * `{city}`. See CityName in seo/cities.ts.
+   *
+   * The categories deck is still English, so a category page reads Finnish
+   * around English paragraphs until that is written.
+   */
   page: {
-    homeTitle: "Find the small things, anywhere",
-    browseCitiesBefore: "Browse",
-    browseCitiesAfter: "with a page of their own",
-    citiesTitle: "Cities on Wayside",
-    cityUnit: { one: "city", other: "cities" },
-    countryUnit: { one: "country", other: "countries" },
+    homeTitle: "Löydä pienet asiat, missä tahansa",
+    browseCitiesBefore: "Selaa",
+    browseCitiesAfter: "joilla on oma sivunsa",
+    citiesTitle: "Kaupungit Waysidessa",
+    cityUnit: { one: "kaupunki", other: "kaupunkia" },
+    countryUnit: { one: "maassa", other: "maassa" },
     citiesSummaryAfter:
-      "have a page of their own, listing what is mapped there: public toilets, drinking water, playgrounds and 17 more categories. Everywhere else still works on the map, it just has no page yet.",
-    cityTitle: "Points of interest in {city}",
-    cityCategoriesHeading: "Categories in {city}",
-    categoryUnit: { one: "category", other: "categories" },
+      "on oma sivunsa, jolla näkyy mitä alueelta on kartoitettu: yleiset käymälät, juomavesipisteet, leikkipuistot ja 17 muuta kategoriaa. Muualla kartta toimii aivan samoin, sivua siitä ei vain vielä ole.",
+    cityTitle: "Kohteet {cityIn}",
+    cityCategoriesHeading: "Kategoriat {cityIn}",
+    categoryUnit: { one: "kategoria", other: "kategoriaa" },
     citySummaryAfter:
-      "These are the small fixtures that are hard to look up anywhere else. Pick one to see it on the map.",
-    mapped: "mapped",
-    namedHeading: "Named",
-    individualHeading: "Individual",
-    showingSome: "Showing {listed} of the {total} the data can tell apart.",
-    mapHasAll: "The map has all {count}",
+      "Nämä ovat niitä pieniä asioita, joita on vaikea etsiä mistään muualta. Valitse yksi nähdäksesi sen kartalla.",
+    mapped: "kartoitettu",
+    namedHeading: "Nimetyt",
+    individualHeading: "Yksittäiset",
+    showingSome: "Näytetään {listed} / {total} erotettavissa olevasta.",
+    mapHasAll: "Kartalla ovat kaikki {count}",
     includingUnplaced:
-      ", including the {unlisted} that carry neither a name nor a building or park to place them in.",
-    questionsHeading: "Questions",
-    allPointsIn: "All points of interest in {city}",
-    allCities: "All cities on Wayside",
-    nearbyCities: "Nearby cities",
-    sheetFreshnessBefore: "Counts and names above are from the extract of",
-    sheetFreshnessAfter: ". The map itself is live.",
-    pageFreshnessBefore: "Points come from",
-    pageFreshnessLink: "OpenStreetMap",
-    pageFreshnessMiddle: "contributors, last refreshed",
+      ", mukaan lukien ne {unlisted}, joilla ei ole nimeä eikä rakennusta tai puistoa, joka sijoittaisi ne.",
+    questionsHeading: "Kysymykset",
+    allPointsIn: "Kaikki kohteet {cityIn}",
+    allCities: "Kaikki kaupungit Waysidessa",
+    nearbyCities: "Lähikaupungit",
+    categoryTitle: "{noun} {cityIn} — {count} kartalla | {site}",
+    categoryDescription:
+      "{noun} {cityIn}: {count} kartalla, aukioloaikoineen, maksuineen ja esteettömyystietoineen sikäli kuin OpenStreetMap ne tuntee. Maksuton, ilman kirjautumista, toimii puhelimella.",
+    categoryHeading: "{noun} {cityIn}",
+    moreInCity: "Lisää {cityIn}",
+    nearbyHeading: "{noun} lähistöllä",
+    cityDisclosure: "Kategoriat ja lähikaupungit {cityIn}",
+    categoryDisclosure: "{noun} {cityIn} listana",
+    listHeading: "{qualifier} {noun} {cityIn}",
+    citySummary: "{cityIn} on kartoitettu {count} kohdetta {categories} kategoriassa.",
+    cityFallbackTitle: "Kohteet {cityIn} | {site}",
+    cityDescription: "{count} kartoitettua kohdetta {cityIn}: {named}{more}, yhdellä kartalla OpenStreetMapin pohjalta. Ne pienet asiat, joita on vaikea etsiä mistään muualta.",
+    cityDescriptionMore: " ja {rest} muuta kategoriaa",
+    sheetFreshnessBefore: "Yllä olevat määrät ja nimet ovat poiminnasta",
+    sheetFreshnessAfter: ". Kartta itsessään on live.",
+    pageFreshnessBefore: "Pisteet ovat",
+    pageFreshnessLink: "OpenStreetMapin",
+    pageFreshnessMiddle: "tekijöiltä, päivitetty viimeksi",
     pageFreshnessAfter:
-      ". Something missing? Add it there and it shows up here on the next refresh.",
+      ". Puuttuuko jokin? Lisää se sinne, niin se näkyy täällä seuraavan päivityksen jälkeen.",
   },
 
   poi: {
@@ -142,6 +171,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     free: "Maksuton",
     fee: "Maksullinen",
     unnamedPlace: "Nimetön paikka",
+    inPlace: "{noun}, {place}",
     noExtraDetails: "{name} — ei lisätietoja",
     address: "Osoite",
     fromBuilding: "Tästä rakennuksesta",
@@ -157,9 +187,9 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       years: { one: "vuosi sitten", other: "{count} vuotta sitten" },
     },
     keyLabels: {
-      changing_table: "HoitopÃ¶ytÃ¤",
+      changing_table: "Hoitopöytä",
       "toilets:disposal": "Vessatyyppi",
-      "ramp:wheelchair": "PyÃ¶rÃ¤tuoliramppi",
+      "ramp:wheelchair": "Pyörätuoliramppi",
       building_levels: "Kerroksia",
       "building:levels": "Kerroksia",
       collection_times: "Tyhjennys",
@@ -167,11 +197,27 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       "socket:type2_combo": "CCS-liittimet",
       "socket:chademo": "CHAdeMO-liittimet",
       "socket:schuko": "Schuko-pistorasiat",
-      backrest: "SelkÃ¤noja",
+      backrest: "Selkänoja",
       wikipedia: "Wikipedia",
       wikidata: "Wikidata",
     },
-    inThisBuilding: "TÃ¤ssÃ¤ rakennuksessa",
+    values: {
+      yes: "Kyllä",
+      no: "Ei",
+      limited: "Rajoitettu",
+      designated: "Varattu tähän",
+      customers: "Vain asiakkaille",
+      permissive: "Avoin yleisölle",
+      private: "Yksityinen",
+      unknown: "Ei tiedossa",
+      public: "Julkinen",
+      only: "Vain",
+      seasonal: "Kausiluonteinen",
+      permanent: "Ympärivuotinen",
+      free: "Maksuton",
+      none: "Ei mitään",
+    },
+    inThisBuilding: "Tässä rakennuksessa",
     inBuilding: "Rakennuksessa {building}",
     buildingLastChecked: "Rakennus tarkistettu viimeksi",
     buildingLastEdited: "Rakennusta muokattu viimeksi",
@@ -182,7 +228,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     pending: "Käännetään…",
     showOriginal: "Näytä alkuperäinen",
     showTranslation: "Näytä käännös",
-    sameLanguage: "Jo englanniksi",
+    sameLanguage: "Jo suomeksi",
     quota: "Päivän käännösraja täynnä",
     failed: "Käännös ei onnistunut",
   },
@@ -226,6 +272,6 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
   },
 };
 
-export const fi: LocaleDeck = { ui };
+export const fi: LocaleDeck = { categories: fiCategories, commonFaq: fiCommonFaq, ui };
 
 export default fi;

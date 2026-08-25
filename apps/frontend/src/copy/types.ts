@@ -135,6 +135,29 @@ export type UiCopy = {
     allPointsIn: string;
     allCities: string;
     nearbyCities: string;
+    /**
+     * The <title>, <meta description> and <h1> of a category page.
+     *
+     * Templates rather than assembled in pageMeta.ts, because the parts a
+     * sentence is glued together from are not the same in every language and
+     * the glue is words. `{noun}` arrives already agreeing with the count.
+     */
+    categoryTitle: string;
+    categoryDescription: string;
+    categoryHeading: string;
+    /** Headings of the internal link blocks at the foot of a category page */
+    moreInCity: string;
+    nearbyHeading: string;
+    /** The sheet's disclosure summary, which is the control a reader taps */
+    cityDisclosure: string;
+    categoryDisclosure: string;
+    /** "Named public toilets in Helsinki" — the list section's own heading */
+    listHeading: string;
+    /** The hub summary sentence, and the hub title when it has nothing to list */
+    citySummary: string;
+    cityFallbackTitle: string;
+    cityDescription: string;
+    cityDescriptionMore: string;
     sheetFreshnessBefore: string;
     sheetFreshnessAfter: string;
     pageFreshnessBefore: string;
@@ -149,6 +172,8 @@ export type UiCopy = {
     free: string;
     fee: string;
     unnamedPlace: string;
+    /** A row named by the building or park it stands in, not by itself */
+    inPlace: string;
     /** The line shown instead of a popup, when a point carries nothing to say */
     noExtraDetails: string;
     address: string;
@@ -192,6 +217,19 @@ export type UiCopy = {
      * with its punctuation cleaned up. See labelFor in poiPopup.ts.
      */
     keyLabels: Record<string, string>;
+    /**
+     * The closed set of OpenStreetMap tag values, translated.
+     *
+     * Values matter more than keys and there are far fewer of them: `yes`,
+     * `no` and `limited` answer most of what a popup is asked, and the same
+     * dozen words serve every key. Anything absent falls through to the value
+     * as written, cleaned of its underscores — which is the right answer for
+     * the open half of the vocabulary (operators, brands, materials) and the
+     * only possible one.
+     *
+     * Keys are the raw OSM value, lower case, as it arrives in the tag.
+     */
+    values: Record<string, string>;
     inThisBuilding: string;
     /** Reads "In {building}" when the building has a name of its own */
     inBuilding: string;
@@ -275,7 +313,14 @@ export type CopyDeck = {
  * translated pages and the other six read English.
  */
 export type LocaleDeck = {
-  categories?: Record<string, CategoryCopy>;
+  /**
+   * `Partial<CategoryCopy>` on purpose: a locale may translate a category's
+   * nouns without its prose. The nouns are 78 short strings and they are what
+   * shows in every title, heading and link — "Yleiset käymälät Helsingissä" —
+   * while the intro and the FAQ are 3,700 words behind a disclosure. Falling
+   * back field by field lets the visible half be translated first.
+   */
+  categories?: Record<string, Partial<CategoryCopy>>;
   commonFaq?: FaqMessage[];
   ui?: UiCopy;
 };

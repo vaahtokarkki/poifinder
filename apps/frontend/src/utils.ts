@@ -1,3 +1,6 @@
+import { DEFAULT_LOCALE, LOCALES, isLocale } from "./copy";
+import type { Locale } from "./copy";
+
 /**
  * Split the current URL path into segments,
  * e.g. "/new-york/dog-parks" -> ["new-york", "dog-parks"].
@@ -26,7 +29,39 @@ function toSlug(raw: string | undefined): string {
  * The paths themselves are built in seo/pageMeta.ts from these same strings.
  */
 export const CITIES_SLUG = "cities";
-const RESERVED_SLUGS = new Set<string>([CITIES_SLUG]);
+
+/**
+ * Every locale code, reserved so none can be read as a city.
+ *
+ * English included, even though English lives at the root and `/en/...` is
+ * never written: left unreserved it would be read as a place name and sent to
+ * the geocoder, which is the same failure `/cities` had. An unwritten path
+ * should 404, not pan the map to whatever Photon thinks "en" is.
+ */
+const LOCALE_SLUGS: ReadonlySet<string> = new Set(LOCALES.map((entry) => entry.code));
+
+const RESERVED_SLUGS = new Set<string>([CITIES_SLUG, ...LOCALE_SLUGS]);
+
+/**
+ * Split a path into the locale it is in and the segments after it.
+ *
+ * `/de/berlin/toilets` is Berlin's toilets in German, not a city called "de".
+ * English has no prefix — it lives at the root, because it is the tree every
+ * city has and prefixing it would move 1,216 indexed URLs for nothing.
+ */
+function localeAwarePath(pathname?: string): { locale: Locale; rest: string[] } {
+  const segments = pathSegments(pathname);
+  const [first] = segments;
+  if (first && isLocale(first)) {
+    return { locale: first, rest: segments.slice(1) };
+  }
+  return { locale: DEFAULT_LOCALE, rest: segments };
+}
+
+/** The locale a URL is asking for, English when it carries no prefix */
+export function parseLocaleFromPath(pathname?: string): Locale {
+  return localeAwarePath(pathname).locale;
+}
 
 /**
  * The city slug of a URL path, e.g. "new-york", or "" when there is none.
@@ -35,14 +70,14 @@ const RESERVED_SLUGS = new Set<string>([CITIES_SLUG]);
  * broke every multi word city in the sitemap.
  */
 export function parseCitySlugFromPath(pathname?: string): string {
-  const [city] = pathSegments(pathname);
+  const [city] = localeAwarePath(pathname).rest;
   const slug = toSlug(city);
   return RESERVED_SLUGS.has(slug) ? "" : slug;
 }
 
 /** The category slug of a URL path, e.g. "dog-parks", or "" when there is none */
 export function parseCategorySlugFromPath(pathname?: string): string {
-  const [, category] = pathSegments(pathname);
+  const [, category] = localeAwarePath(pathname).rest;
   return toSlug(category);
 }
 

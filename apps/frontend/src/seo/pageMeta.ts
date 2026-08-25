@@ -13,9 +13,11 @@ import {
   localize,
   vocabFor,
 } from "./categories";
-import type { CategorySeo, FaqEntry, Vocab } from "./categories";
+import type { CityNames, CategorySeo, FaqEntry, Vocab } from "./categories";
 import type { CategoryPageData, PoiEntry } from "./pageData";
 import { formatCount } from "./format";
+import { DEFAULT_LOCALE, getLocale, interpolate, ui } from "../copy";
+import type { Locale } from "../copy";
 import { CITIES_SLUG } from "../utils";
 
 export const SITE_URL = "https://wayside.cc";
@@ -170,20 +172,118 @@ export type Route = {
  * The app is indifferent — `pathSegments` in utils.ts trims slashes off both
  * ends before reading the city and category out of the path.
  */
-export function categoryPath(citySlug: string, categorySlug: string): string {
-  return `/${citySlug}/${categorySlug}/`;
+/**
+ * The prefix a locale's tree lives under. English has none: it is the tree
+ * every city has, and moving 1,216 indexed URLs under /en/ would cost the
+ * whole index to gain a symmetry nobody searches for.
+ */
+export function localePrefix(locale: Locale = getLocale()): string {
+  return locale === DEFAULT_LOCALE ? "" : `/${locale}`;
 }
 
-export function cityPath(citySlug: string): string {
-  return `/${citySlug}/`;
+export function categoryPath(
+  citySlug: string,
+  categorySlug: string,
+  locale: Locale = getLocale()
+): string {
+  return `${localePrefix(locale)}/${citySlug}/${categorySlug}/`;
 }
 
-export function categoryUrl(citySlug: string, categorySlug: string): string {
-  return `${SITE_URL}${categoryPath(citySlug, categorySlug)}`;
+export function cityPath(citySlug: string, locale: Locale = getLocale()): string {
+  return `${localePrefix(locale)}/${citySlug}/`;
 }
 
-export function cityUrl(citySlug: string): string {
-  return `${SITE_URL}${cityPath(citySlug)}`;
+export function categoryUrl(
+  citySlug: string,
+  categorySlug: string,
+  locale: Locale = getLocale()
+): string {
+  return `${SITE_URL}${categoryPath(citySlug, categorySlug, locale)}`;
+}
+
+export function cityUrl(citySlug: string, locale: Locale = getLocale()): string {
+  return `${SITE_URL}${cityPath(citySlug, locale)}`;
+}
+
+/**
+ * The city's name in the locale being written, falling back to the English
+ * form. "Öffentliche Toiletten in München", never "in Munich".
+ */
+export function cityName(city: City, locale: Locale = getLocale()): string {
+  const entry = city.names?.[locale];
+  if (!entry) return city.name;
+  return typeof entry === "string" ? entry : entry.name;
+}
+
+/**
+ * The city in the form that means "in this city".
+ *
+ * Falls back to the plain name, which is right for every locale that does not
+ * inflect place names: their templates spell the relation with a preposition
+ * and never ask for this. A Finnish template asks for `{cityIn}` and gets
+ * "Helsingissä"; an English one asks for `{city}` and gets "Helsinki".
+ */
+export function cityIn(city: City, locale: Locale = getLocale()): string {
+  const entry = city.names?.[locale];
+  if (!entry) return city.name;
+  return typeof entry === "string" ? entry : entry.inCity;
+}
+
+/** Both forms of a city's name, for handing to a template */
+export function cityNames(city: City, locale: Locale = getLocale()): CityNames {
+  return { city: cityName(city, locale), cityIn: cityIn(city, locale) };
+}
+
+/**
+ * The locales a city has a page in, English first.
+ *
+ * This is the hreflang cluster and it is deliberately tiny: a city's own
+ * language and English, so two or three URLs rather than one per locale the
+ * site supports. Alternates are the same content in another language, which
+ * is why they never point across cities — /madrid/ and /mexico-city/ are both
+ * Spanish-market pages and are not alternates of each other.
+ */
+export function localesForCity(city: City): Locale[] {
+  return [DEFAULT_LOCALE, ...(city.langs ?? [])];
+}
+
+/**
+ * The locale a link to another city should use.
+ *
+ * A page in German links to Berlin in German and to Aarhus in English,
+ * because Aarhus has no German tree and `/de/aarhus/toilets/` is a file that
+ * was never written. Cross-city links are the one place the current locale is
+ * the wrong default: what decides the URL is what the city on the other end
+ * actually has.
+ */
+export function linkLocaleFor(target: City, preferred: Locale = getLocale()): Locale {
+  return localesForCity(target).includes(preferred) ? preferred : DEFAULT_LOCALE;
+}
+
+/** hreflang entries for one route, including the self reference and x-default */
+export function alternatesForCategory(
+  city: City,
+  categorySlug: string
+): { hreflang: string; href: string }[] {
+  const locales = localesForCity(city);
+  if (locales.length < 2) return [];
+  return [
+    ...locales.map((locale) => ({
+      hreflang: locale,
+      href: categoryUrl(city.slug, categorySlug, locale),
+    })),
+    { hreflang: "x-default", href: categoryUrl(city.slug, categorySlug, DEFAULT_LOCALE) },
+  ];
+}
+
+/** The same, for a city hub */
+export function alternatesForCity(city: City): { hreflang: string; href: string }[] {
+  const locales = localesForCity(city);
+  if (locales.length < 2) return [];
+  return [
+    ...locales.map((locale) => ({ hreflang: locale, href: cityUrl(city.slug, locale) })),
+    { hreflang: "x-default", href: cityUrl(city.slug, DEFAULT_LOCALE) },
+  ];
 }
 
 /** The root, which is the one page whose slash is the whole path */
@@ -241,7 +341,7 @@ export function buildCitiesJsonLd(cities: City[], updatedAt: string): object[] {
         itemListElement: cities.map((city, index) => ({
           "@type": "ListItem",
           position: index + 1,
-          name: city.name,
+          name: cityName(city),
           item: cityUrl(city.slug),
         })),
       },
@@ -271,7 +371,12 @@ export function vocabForRoute(route: Route): Vocab {
 export function titleFor(route: Route, count: number): string {
   const { city, categorySeo } = route;
   const noun = capitalizeFirst(categoryPlural(categorySeo, vocabForRoute(route)));
-  return `${noun} in ${city.name} — ${formatCount(count)} on the map | ${SITE_NAME}`;
+  return interpolate(ui().page.categoryTitle, {
+    noun,
+    ...cityNames(city),
+    count: formatCount(count),
+    site: SITE_NAME,
+  });
 }
 
 export function descriptionFor(route: Route, count: number): string {
@@ -279,15 +384,23 @@ export function descriptionFor(route: Route, count: number): string {
   // The noun has to agree with the count: 163 routes hold a single point, and
   // "1 public showers in Adelaide" was what every one of their descriptions said
   const noun = categoryNoun(categorySeo, count, vocabForRoute(route));
-  return (
-    `${formatCount(count)} ${noun} in ${city.name} on one map, with opening hours, ` +
-    `fees and accessibility where OpenStreetMap has them. Free to use, no signup, ` +
-    `works on your phone.`
+  // Sentence case on the finished string: English opens with the count and is
+  // already fine, Finnish opens with the noun and the deck stores nouns in the
+  // lower case form a sentence uses mid way through
+  return capitalizeFirst(
+    interpolate(ui().page.categoryDescription, {
+      noun,
+      ...cityNames(city),
+      count: formatCount(count),
+    })
   );
 }
 
 export function headingFor(route: Route): string {
-  return `${categoryHeading(route.categorySeo, vocabForRoute(route))} in ${route.city.name}`;
+  return interpolate(ui().page.categoryHeading, {
+    noun: categoryHeading(route.categorySeo, vocabForRoute(route)),
+    ...cityNames(route.city),
+  });
 }
 
 /** The plural noun of a route, for the places that need only the noun */
@@ -314,7 +427,9 @@ export function poiTitle(route: Route, poi: PoiEntry): string {
   const singular = categorySingular(route.categorySeo, vocabForRoute(route));
   // The list only ever holds rows with one or the other, so the last branch is
   // for a hand edited payload rather than anything the fetch can produce
-  return poi.context ? `${capitalizeFirst(singular)} in ${poi.context}` : capitalizeFirst(singular);
+  return poi.context
+    ? capitalizeFirst(interpolate(ui().poi.inPlace, { noun: singular, place: poi.context }))
+    : capitalizeFirst(singular);
 }
 
 /** Whether any row on this page is titled by its surroundings rather than named */
@@ -329,7 +444,7 @@ export function hasPlacedPois(pois: PoiEntry[]): boolean {
  */
 export function introFor(route: Route, count: number): string {
   const { city, categorySeo } = route;
-  return categoryIntro(categorySeo, city.name, count, vocabForRoute(route));
+  return categoryIntro(categorySeo, cityNames(city), count, vocabForRoute(route));
 }
 
 /**
@@ -341,12 +456,12 @@ export function cityTitleFor(city: City, categories: CategorySeo[]): string {
   // the URL resolves for anyone who lands on it. It still needs a title that
   // reads like one
   if (categories.length === 0) {
-    return `Points of interest in ${city.name} | ${SITE_NAME}`;
+    return interpolate(ui().page.cityFallbackTitle, { ...cityNames(city), site: SITE_NAME });
   }
   const vocab = vocabFor(city.countryCode);
   const named = categories.slice(0, 3).map((entry) => categoryPlural(entry, vocab));
   const more = categories.length > named.length ? " and more" : "";
-  return `${city.name}: ${named.join(", ")}${more} | ${SITE_NAME}`;
+  return `${cityName(city)}: ${named.join(", ")}${more} | ${SITE_NAME}`;
 }
 
 export function cityDescriptionFor(
@@ -357,7 +472,7 @@ export function cityDescriptionFor(
   const vocab = vocabFor(city.countryCode);
   if (categories.length === 0) {
     return localize(
-      `The map of ${city.name}: public toilets, drinking water, playgrounds and more, ` +
+      `The map of ${cityName(city)}: public toilets, drinking water, playgrounds and more, ` +
         `from OpenStreetMap. Not enough is mapped here yet for a page of its own.`,
       vocab
     );
@@ -365,9 +480,12 @@ export function cityDescriptionFor(
   const named = categories.slice(0, 4).map((entry) => categoryPlural(entry, vocab));
   const rest = categories.length - named.length;
   return (
-    `${formatCount(totalPoints)} mapped points in ${city.name}: ${named.join(", ")}` +
-    `${rest > 0 ? ` and ${rest} more categories` : ""}, on one map built from ` +
-    `OpenStreetMap. The small things that are hard to look up anywhere else.`
+    interpolate(ui().page.cityDescription, {
+      ...cityNames(city),
+      count: formatCount(totalPoints),
+      named: named.join(", "),
+      more: rest > 0 ? interpolate(ui().page.cityDescriptionMore, { rest }) : "",
+    })
   );
 }
 
@@ -378,8 +496,8 @@ export function faqFor(route: Route, count: number): FaqEntry[] {
   // categoryFaq localises its own output, because it is the half that has to
   // pick a plural form first. The shared questions still go through here
   return [
-    ...categoryFaq(route.categorySeo, route.city.name, count, vocab),
-    ...commonFaq(route.city.name, categoryPlural(route.categorySeo, vocab)).map(({ q, a }) => ({
+    ...categoryFaq(route.categorySeo, cityNames(route.city), count, vocab),
+    ...commonFaq(cityNames(route.city), categoryPlural(route.categorySeo, vocab)).map(({ q, a }) => ({
       q: localize(q, vocab),
       a: localize(a, vocab),
     })),
@@ -410,7 +528,10 @@ export function internalLinksFor(route: Route, data: CategoryPageData): LinkGrou
     return [
       {
         href: categoryPath(city.slug, other.slug),
-        label: `${categoryHeading(other, vocab)} in ${city.name}`,
+        label: interpolate(ui().page.categoryHeading, {
+          noun: categoryHeading(other, vocab),
+          ...cityNames(city),
+        }),
       },
     ];
   });
@@ -424,19 +545,27 @@ export function internalLinksFor(route: Route, data: CategoryPageData): LinkGrou
         // city's English: a Dallas page links to "Petrol stations in London"
         // and to "Gas stations in Vancouver", and both anchors match the title
         // of the page on the other end
-        href: categoryPath(other.slug, categorySeo.slug),
-        label: `${categoryHeading(categorySeo, vocabFor(other.countryCode))} in ${other.name}`,
+        href: categoryPath(other.slug, categorySeo.slug, linkLocaleFor(other)),
+        label: interpolate(ui().page.categoryHeading, {
+          noun: categoryHeading(categorySeo, vocabFor(other.countryCode)),
+          ...cityNames(other, linkLocaleFor(other)),
+        }),
       },
     ];
   });
 
   const groups: LinkGroup[] = [];
   if (otherCategories.length > 0) {
-    groups.push({ heading: `More in ${city.name}`, links: otherCategories });
+    groups.push({
+      heading: interpolate(ui().page.moreInCity, cityNames(city)),
+      links: otherCategories,
+    });
   }
   if (sameCategoryElsewhere.length > 0) {
     groups.push({
-      heading: `${capitalizeFirst(categoryPlural(categorySeo, vocab))} nearby`,
+      heading: interpolate(ui().page.nearbyHeading, {
+        noun: capitalizeFirst(categoryPlural(categorySeo, vocab)),
+      }),
       links: sameCategoryElsewhere,
     });
   }
@@ -479,7 +608,7 @@ function postalAddress(city: City, poi: { address?: string }) {
   return {
     "@type": "PostalAddress",
     ...(poi.address ? { streetAddress: poi.address } : {}),
-    addressLocality: city.name,
+    addressLocality: cityName(city),
     addressCountry: city.countryCode,
   };
 }
@@ -572,7 +701,7 @@ export function buildJsonLd(route: Route, data: CategoryPageData): object[] {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: SITE_NAME, item: HOME_URL },
       { "@type": "ListItem", position: 2, name: "Cities", item: CITIES_URL },
-      { "@type": "ListItem", position: 3, name: city.name, item: cityUrl(city.slug) },
+      { "@type": "ListItem", position: 3, name: cityName(city), item: cityUrl(city.slug) },
       {
         "@type": "ListItem",
         position: 4,
@@ -607,7 +736,7 @@ export function buildCityJsonLd(
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: `Points of interest in ${city.name}`,
+      name: interpolate(ui().page.cityTitle, cityNames(city)),
       description: cityDescriptionFor(city, categories, totalPoints),
       url: cityUrl(city.slug),
       // A CollectionPage is a CreativeWork, so unlike the category page's
@@ -615,10 +744,10 @@ export function buildCityJsonLd(
       dateModified: updatedAt,
       about: {
         "@type": "City",
-        name: city.name,
+        name: cityName(city),
         address: {
           "@type": "PostalAddress",
-          addressLocality: city.name,
+          addressLocality: cityName(city),
           addressCountry: city.countryCode,
         },
         geo: {
@@ -629,7 +758,10 @@ export function buildCityJsonLd(
       },
       hasPart: categories.map((entry) => ({
         "@type": "WebPage",
-        name: `${categoryHeading(entry, vocabFor(city.countryCode))} in ${city.name}`,
+        name: interpolate(ui().page.categoryHeading, {
+          noun: categoryHeading(entry, vocabFor(city.countryCode)),
+          ...cityNames(city),
+        }),
         url: categoryUrl(city.slug, entry.slug),
       })),
     },
@@ -639,7 +771,7 @@ export function buildCityJsonLd(
       itemListElement: [
         { "@type": "ListItem", position: 1, name: SITE_NAME, item: HOME_URL },
         { "@type": "ListItem", position: 2, name: "Cities", item: CITIES_URL },
-        { "@type": "ListItem", position: 3, name: city.name, item: cityUrl(city.slug) },
+        { "@type": "ListItem", position: 3, name: cityName(city), item: cityUrl(city.slug) },
       ],
     },
   ];

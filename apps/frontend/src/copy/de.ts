@@ -1,21 +1,35 @@
 /**
  * The German deck: app chrome only.
  *
- * Same shape and same reasoning as the Finnish one — no `categories`, so the
- * pages keep their English copy and fall back key by key. German is the first
- * locale that is expected to grow a `categories` deck, because it is the one
- * with the search demand behind it: twelve cities in the list are German
- * speaking and OpenStreetMap coverage there is the densest anywhere.
+ * The chrome half. The page copy is in de.categories.ts, which German has and
+ * Finnish does not: German is the locale with the search demand behind it —
+ * twelve cities in the list are German speaking and OpenStreetMap coverage
+ * there is the densest anywhere — so it is the first to be worth 3,800 words.
+ *
+ * Having `categories` does not by itself put German pages on the site. That
+ * needs URL trees, localized city names and per-locale slugs, none of which
+ * exist yet; until they do this deck serves the in-place swap and nothing is
+ * indexed in German.
  *
  * The compound nouns here are the layout stress test. "Kategorien auswählen"
  * and "Karten­werkzeuge ausblenden" are roughly half again the width of their
  * English originals, which is what a control row has to survive before five
  * more languages are added to it.
  *
- * Written to be reviewed by a native speaker before this ships. The register
- * is deliberately the informal "du" throughout, which is what a consumer map
- * app uses in German and what the English copy's tone corresponds to.
+ * RULE FOR THIS DECK, learned twice the hard way: `{noun}` and `{plural}` hold
+ * the bare nominative — "öffentliche Toiletten" — so they may only be placed
+ * where German takes that form. A slot behind a determiner or a preposition
+ * inflects the adjective and the stored form is then wrong: "Liste der
+ * öffentliche Toiletten" wants genitive -en, "zu öffentliche Toiletten" wants
+ * dative. Both were written here and both had to be reworded. Put the noun in
+ * a bare slot instead of adding case forms to the deck.
+ *
+ * NOT YET REVIEWED BY A NATIVE SPEAKER, and it should not ship without one.
+ * The register is deliberately the informal "du" throughout, which is what a
+ * consumer map app uses in German and what the English copy's tone
+ * corresponds to. See the list of open questions in the handover notes.
  */
+import { deCategories, deCommonFaq } from "./de.categories";
 import type { LocaleDeck } from "./types";
 
 const ui: NonNullable<LocaleDeck["ui"]> = {
@@ -99,41 +113,59 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     creditsCodeAfter: ".",
   },
 
-  // English on purpose, as in the Finnish deck: these render on the
-  // prerendered pages, whose paragraphs have no German behind them yet. This
-  // section is what a `categories` deck would arrive alongside
+  /**
+   * German throughout, because German pages exist now. This section was left
+   * in English while the /de/ tree did not: translating the frame around
+   * English paragraphs would have made one page read in two languages. With
+   * de.categories.ts written, the paragraphs are German and the frame has to
+   * match — a German intro under an English "Questions" heading is the same
+   * fault the other way round.
+   */
   page: {
-    homeTitle: "Find the small things, anywhere",
-    browseCitiesBefore: "Browse",
-    browseCitiesAfter: "with a page of their own",
-    citiesTitle: "Cities on Wayside",
-    cityUnit: { one: "city", other: "cities" },
-    countryUnit: { one: "country", other: "countries" },
+    homeTitle: "Finde die kleinen Dinge, überall",
+    browseCitiesBefore: "Durchsuche",
+    browseCitiesAfter: "mit einer eigenen Seite",
+    citiesTitle: "Städte auf Wayside",
+    cityUnit: { one: "Stadt", other: "Städte" },
+    countryUnit: { one: "Land", other: "Ländern" },
     citiesSummaryAfter:
-      "have a page of their own, listing what is mapped there: public toilets, drinking water, playgrounds and 17 more categories. Everywhere else still works on the map, it just has no page yet.",
-    cityTitle: "Points of interest in {city}",
-    cityCategoriesHeading: "Categories in {city}",
-    categoryUnit: { one: "category", other: "categories" },
+      "haben eine eigene Seite, auf der steht, was dort verzeichnet ist: öffentliche Toiletten, Trinkwasser, Spielplätze und 17 weitere Kategorien. Überall sonst funktioniert die Karte genauso, es gibt nur noch keine Seite dazu.",
+    cityTitle: "Interessante Orte in {city}",
+    cityCategoriesHeading: "Kategorien in {city}",
+    categoryUnit: { one: "Kategorie", other: "Kategorien" },
     citySummaryAfter:
-      "These are the small fixtures that are hard to look up anywhere else. Pick one to see it on the map.",
-    mapped: "mapped",
-    namedHeading: "Named",
-    individualHeading: "Individual",
-    showingSome: "Showing {listed} of the {total} the data can tell apart.",
-    mapHasAll: "The map has all {count}",
+      "Das sind die kleinen Einrichtungen, die anderswo kaum nachzuschlagen sind. Wähle eine aus, um sie auf der Karte zu sehen.",
+    mapped: "verzeichnet",
+    namedHeading: "Benannte",
+    individualHeading: "Einzelne",
+    showingSome: "{listed} von {total} unterscheidbaren werden gezeigt.",
+    mapHasAll: "Auf der Karte stehen alle {count}",
     includingUnplaced:
-      ", including the {unlisted} that carry neither a name nor a building or park to place them in.",
-    questionsHeading: "Questions",
-    allPointsIn: "All points of interest in {city}",
-    allCities: "All cities on Wayside",
-    nearbyCities: "Nearby cities",
-    sheetFreshnessBefore: "Counts and names above are from the extract of",
-    sheetFreshnessAfter: ". The map itself is live.",
-    pageFreshnessBefore: "Points come from",
+      ", darunter die {unlisted}, die weder einen Namen tragen noch in einem Gebäude oder Park liegen, der sie einordnet.",
+    questionsHeading: "Fragen",
+    allPointsIn: "Alle interessanten Orte in {city}",
+    allCities: "Alle Städte auf Wayside",
+    nearbyCities: "Städte in der Nähe",
+    categoryTitle: "{noun} in {city} — {count} auf der Karte | {site}",
+    categoryDescription:
+      "{count} {noun} in {city} auf einer Karte, mit Öffnungszeiten, Gebühren und Barrierefreiheit, soweit OpenStreetMap sie kennt. Kostenlos, ohne Anmeldung, funktioniert auf dem Handy.",
+    categoryHeading: "{noun} in {city}",
+    moreInCity: "Mehr in {city}",
+    nearbyHeading: "{noun} in der Nähe",
+    cityDisclosure: "Kategorien und Städte in der Nähe von {city}",
+    categoryDisclosure: "{noun} in {city} als Liste",
+    listHeading: "{qualifier} {noun} in {city}",
+    citySummary: "{count} verzeichnete Punkte in {categories} {unit} in {city}, {country}.",
+    cityFallbackTitle: "Interessante Orte in {city} | {site}",
+    cityDescription: "{count} verzeichnete Punkte in {city}: {named}{more}, auf einer Karte aus OpenStreetMap. Die kleinen Dinge, die anderswo kaum nachzuschlagen sind.",
+    cityDescriptionMore: " und {rest} weitere Kategorien",
+    sheetFreshnessBefore: "Anzahl und Namen oben stammen aus dem Auszug vom",
+    sheetFreshnessAfter: ". Die Karte selbst ist live.",
+    pageFreshnessBefore: "Die Punkte stammen von den Mitwirkenden von",
     pageFreshnessLink: "OpenStreetMap",
-    pageFreshnessMiddle: "contributors, last refreshed",
+    pageFreshnessMiddle: ", zuletzt aktualisiert am",
     pageFreshnessAfter:
-      ". Something missing? Add it there and it shows up here on the next refresh.",
+      ". Fehlt etwas? Trage es dort ein, dann erscheint es beim nächsten Abgleich auch hier.",
   },
 
   poi: {
@@ -142,6 +174,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     free: "Kostenlos",
     fee: "Gebührenpflichtig",
     unnamedPlace: "Unbenannter Ort",
+    inPlace: "{noun} in {place}",
     noExtraDetails: "{name} — keine weiteren Angaben",
     address: "Adresse",
     fromBuilding: "Aus diesem Gebäude",
@@ -171,6 +204,22 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       wikipedia: "Wikipedia",
       wikidata: "Wikidata",
     },
+    values: {
+      yes: "Ja",
+      no: "Nein",
+      limited: "Eingeschränkt",
+      designated: "Ausgewiesen",
+      customers: "Nur für Kunden",
+      permissive: "Öffentlich zugänglich",
+      private: "Privat",
+      unknown: "Unbekannt",
+      public: "Öffentlich",
+      only: "Nur",
+      seasonal: "Saisonal",
+      permanent: "Ganzjährig",
+      free: "Kostenlos",
+      none: "Keine",
+    },
     inThisBuilding: "In diesem Gebäude",
     inBuilding: "In {building}",
     buildingLastChecked: "Gebäude zuletzt geprüft",
@@ -182,7 +231,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     pending: "Übersetzen…",
     showOriginal: "Original anzeigen",
     showTranslation: "Übersetzung anzeigen",
-    sameLanguage: "Bereits auf Englisch",
+    sameLanguage: "Bereits auf Deutsch",
     quota: "Tageslimit für Übersetzungen erreicht",
     failed: "Übersetzung nicht verfügbar",
   },
@@ -227,6 +276,6 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
   },
 };
 
-export const de: LocaleDeck = { ui };
+export const de: LocaleDeck = { categories: deCategories, commonFaq: deCommonFaq, ui };
 
 export default de;

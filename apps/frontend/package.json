@@ -9,6 +9,7 @@
     "build": "tsc -b --noCheck && vite build && node scripts/prerender.mjs",
     "prerender": "node scripts/prerender.mjs",
     "seo:data": "node scripts/fetch-poi-data.mjs",
+    "copy:check": "node scripts/check-copy.mjs",
     "overpass:filters": "node scripts/generate-osmium-filter.mjs",
     "lint": "gts lint",
     "preview": "vite preview",

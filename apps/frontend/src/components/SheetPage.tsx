@@ -1,7 +1,8 @@
 import React from "react";
 import { findCity } from "../seo/cities";
+import { interpolate, ui } from "../copy";
 import { findCategorySeo } from "../seo/categories";
-import { headingFor, pluralFor } from "../seo/pageMeta";
+import { capitalizeFirst, cityNames, headingFor, pluralFor } from "../seo/pageMeta";
 import type { PageData } from "../seo/pageData";
 import { InfoSheetCredits, InfoSheetGuide, InfoSheetSummary } from "./AppInfoPanel";
 import CityPageSection from "./CityPageSection";
@@ -47,8 +48,8 @@ const SheetPage: React.FC<{ data: PageData }> = ({ data }) => {
 
   if (data.kind === "city") {
     disclosure = {
-      heading: `Points of interest in ${city.name}`,
-      label: `Categories and nearby cities in ${city.name}`,
+      heading: interpolate(ui().page.cityTitle, cityNames(city)),
+      label: interpolate(ui().page.cityDisclosure, cityNames(city)),
       body: <CityPageSection city={city} data={data} variant="sheet" />,
     };
   } else {
@@ -57,7 +58,17 @@ const SheetPage: React.FC<{ data: PageData }> = ({ data }) => {
     const route = { city, categorySeo };
     disclosure = {
       heading: headingFor(route),
-      label: `List of ${pluralFor(route)} in ${city.name}`,
+      // Sentence case applied to the finished label, not to the noun: English
+      // reads "List of public toilets in Helsinki" and leads with its own
+      // word, German reads "Öffentliche Toiletten in Berlin als Liste" and
+      // leads with the noun, which the deck stores lower case for mid sentence
+      // use. Capitalising the result is right in both.
+      label: capitalizeFirst(
+        interpolate(ui().page.categoryDisclosure, {
+          noun: pluralFor(route),
+          ...cityNames(city),
+        })
+      ),
       body: <PoiPageSection route={route} data={data} variant="sheet" />,
     };
   }

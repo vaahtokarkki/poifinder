@@ -31,16 +31,20 @@ export function deckFor(locale: Locale = getLocale()): LocaleDeck {
 /**
  * The copy of one category, by the slug that identifies it.
  *
- * Falls back key by key rather than deck by deck: a locale that has translated
- * twenty of the twenty six categories should serve twenty translated pages,
- * not none. A `ui` only deck — which is how both non English locales ship
- * today — therefore leaves every page reading English, with no special case.
+ * Falls back field by field, not category by category and not deck by deck.
+ * A locale that has translated twenty of twenty six categories serves twenty
+ * translated pages; a locale that has translated only the nouns of all of them
+ * gets Finnish headings over English paragraphs, which is the state a deck
+ * passes through on its way to being finished.
  */
 export function categoryCopy(
   slug: string,
   locale: Locale = getLocale()
 ): CategoryCopy | undefined {
-  return deckFor(locale).categories?.[slug] ?? en.categories[slug];
+  const english = en.categories[slug];
+  if (!english) return undefined;
+  const translated = deckFor(locale).categories?.[slug];
+  return translated ? { ...english, ...translated } : english;
 }
 
 /**

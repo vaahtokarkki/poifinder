@@ -65,8 +65,10 @@ async function main() {
   try {
     const { CITIES } = await server.ssrLoadModule("/src/seo/cities.ts");
     const { CATEGORY_SEO } = await server.ssrLoadModule("/src/seo/categories.ts");
+    const { LOCALES } = await server.ssrLoadModule("/src/copy/locales.ts");
     const meta = await server.ssrLoadModule("/src/seo/pageMeta.ts");
     const { PAGE_DATA_ELEMENT_ID } = await server.ssrLoadModule("/src/seo/pageData.ts");
+    const { setLocale } = await server.ssrLoadModule("/src/copy/locale.ts");
     const PrerenderedPage = (
       await server.ssrLoadModule("/src/components/PrerenderedPage.tsx")
     ).default;
@@ -153,11 +155,21 @@ async function main() {
       jsonLd,
       pageData,
       noindex = false,
+      locale = "en",
+      alternates = [],
     }) {
       const head = [
         `<title>${escapeAttr(title)}</title>`,
         `<meta name="description" content="${escapeAttr(description)}">`,
         `<link rel="canonical" href="${escapeAttr(canonical)}">`,
+        // hreflang is a claim about which URLs are the same page in another
+        // language, so it is reciprocal and it names itself. Clusters stay at
+        // two or three because a city is paired only with its own language:
+        // /madrid/ and /mexico-city/ are both Spanish and are not alternates
+        ...alternates.map(
+          ({ hreflang, href }) =>
+            `<link rel="alternate" hreflang="${escapeAttr(hreflang)}" href="${escapeAttr(href)}">`
+        ),
         // Written, reachable, and deliberately not in the index. "follow" so
         // the links out of it still carry, which is the only reason a crawler
         // that lands here should bother reading it
@@ -184,8 +196,14 @@ async function main() {
         ),
       ].join("\n    ");
 
+      // index.html declares lang="en" because that is what it is; a page
+      // written in another language has to say so, or the document contradicts
+      // its own hreflang and a screen reader reads German with an English voice
+      const localised =
+        locale === "en" ? shell : shell.replace(/<html lang="[^"]*"/, `<html lang="${locale}"`);
+
       // The shell always carries the placeholder title from index.html
-      let html = shell.replace(
+      let html = localised.replace(
         /<title>[\s\S]*?<\/title>/,
         `${HEAD_OPEN}\n    ${head}\n    ${HEAD_CLOSE}`
       );
@@ -215,25 +233,40 @@ async function main() {
     for (const route of routes) {
       const routeArg = { city: route.city, categorySeo: route.categorySeo };
       const neighbours = meta.neighbourLinksFor(route.city, route.categorySeo.slug, hasPage);
-      const pageData = {
-        kind: "category",
-        citySlug: route.city.slug,
-        categorySlug: route.categorySeo.slug,
-        count: route.count,
-        pois: route.pois,
-        ...neighbours,
-        updatedAt: route.updatedAt,
-      };
+      const alternates = meta.alternatesForCategory(route.city, route.categorySeo.slug);
 
-      await writePage({
-        urlPath: `${route.city.slug}/${route.categorySeo.slug}`,
-        title: meta.titleFor(routeArg, route.count),
-        description: meta.descriptionFor(routeArg, route.count),
-        canonical: meta.categoryUrl(route.city.slug, route.categorySeo.slug),
-        jsonLd: meta.buildJsonLd(routeArg, pageData),
-        pageData,
-        noindex: !route.indexable,
-      });
+      // One page per locale the city has. The components read the copy deck
+      // through the module store, so the language is set around the render
+      // rather than threaded through every component as a prop — which is also
+      // what keeps them free of hooks and able to run in Node
+      for (const locale of meta.localesForCity(route.city)) {
+        setLocale(locale);
+        const pageData = {
+          kind: "category",
+          citySlug: route.city.slug,
+          categorySlug: route.categorySeo.slug,
+          count: route.count,
+          pois: route.pois,
+          ...neighbours,
+          updatedAt: route.updatedAt,
+          ...(locale === "en" ? {} : { locale }),
+        };
+
+        await writePage({
+          urlPath: `${meta.localePrefix(locale).slice(1)}${locale === "en" ? "" : "/"}${
+            route.city.slug
+          }/${route.categorySeo.slug}`,
+          title: meta.titleFor(routeArg, route.count),
+          description: meta.descriptionFor(routeArg, route.count),
+          canonical: meta.categoryUrl(route.city.slug, route.categorySeo.slug, locale),
+          jsonLd: meta.buildJsonLd(routeArg, pageData),
+          pageData,
+          noindex: !route.indexable,
+          locale,
+          alternates,
+        });
+      }
+      setLocale("en");
     }
 
     // ---- City hub pages ----
@@ -260,24 +293,30 @@ async function main() {
     for (const { city, entries, updatedAt } of citiesWithPages.values()) {
       const categories = entries.map((entry) => entry.categorySeo);
       const totalPoints = entries.reduce((sum, entry) => sum + entry.count, 0);
-      await writePage({
-        urlPath: city.slug,
-        title: meta.cityTitleFor(city, categories),
-        description: meta.cityDescriptionFor(city, categories, totalPoints),
-        canonical: meta.cityUrl(city.slug),
-        jsonLd: meta.buildCityJsonLd(city, categories, totalPoints, updatedAt),
-        pageData: {
-          kind: "city",
-          citySlug: city.slug,
-          entries: entries.map((entry) => ({
-            categorySlug: entry.categorySeo.slug,
-            count: entry.count,
-          })),
-          nearbyCities: meta.neighbourCitiesFor(city, (slug) => publishedCities.has(slug)),
-          updatedAt,
-        },
-        noindex: entries.length === 0,
-      });
+      const alternates = meta.alternatesForCity(city);
+      for (const locale of meta.localesForCity(city)) {
+        setLocale(locale);
+        await writePage({
+          urlPath: `${locale === "en" ? "" : `${locale}/`}${city.slug}`,
+          title: meta.cityTitleFor(city, categories),
+          description: meta.cityDescriptionFor(city, categories, totalPoints),
+          canonical: meta.cityUrl(city.slug, locale),
+          jsonLd: meta.buildCityJsonLd(city, categories, totalPoints, updatedAt),
+          pageData: {
+            kind: "city",
+            citySlug: city.slug,
+            entries: entries.map((entry) => ({
+              categorySlug: entry.categorySeo.slug,
+              count: entry.count,
+            })),
+            nearbyCities: meta.neighbourCitiesFor(city, (slug) => publishedCities.has(slug)),
+            updatedAt,
+            ...(locale === "en" ? {} : { locale }),
+          },
+          noindex: entries.length === 0,
+        });
+      }
+      setLocale("en");
     }
 
     // ---- City index ----
@@ -426,6 +465,37 @@ async function main() {
       );
     }
 
+    // A child sitemap per non-English tree, rather than folding them into the
+    // category ones. Search Console reports coverage per sitemap, and "did the
+    // German pages get indexed" is a question that has to be answerable on its
+    // own — otherwise a locale that never lands is invisible inside a blended
+    // number
+    for (const { code } of LOCALES) {
+      if (code === "en") continue;
+      const localeRoutes = indexableRoutes.filter((route) =>
+        (route.city.langs ?? []).includes(code)
+      );
+      const localeHubs = [...citiesWithPages.values()].filter(
+        ({ city, entries }) => entries.length > 0 && (city.langs ?? []).includes(code)
+      );
+      await addChild(
+        `sitemap-${code}.xml`,
+        [
+          ...localeHubs.map(({ city, updatedAt }) =>
+            urlEntry(meta.cityUrl(city.slug, code), updatedAt, city.tier)
+          ),
+          ...localeRoutes.map((route) =>
+            urlEntry(
+              meta.categoryUrl(route.city.slug, route.categorySeo.slug, code),
+              route.updatedAt,
+              route.city.tier
+            )
+          ),
+        ],
+        localeRoutes.map((route) => route.updatedAt)
+      );
+    }
+
     // A category that stops being indexable — every route in it thin, or the
     // whole category paused — leaves its child sitemap behind from the last
     // build. `vite build` empties dist and never sees one, but `npm run
@@ -460,12 +530,33 @@ async function main() {
     const indexableCities = [...citiesWithPages.values()].filter(
       ({ entries }) => entries.length > 0
     ).length;
+    // Counted from what was written rather than from the route list, which
+    // stopped being the same number the moment a city could have two trees
+    const localeCounts = LOCALES.map(({ code }) => {
+      const prefix = `${code}/`;
+      const n =
+        code === "en"
+          ? written.filter((p) => !LOCALES.some((l) => l.code !== "en" && p.startsWith(`${l.code}/`)))
+              .length
+          : written.filter((p) => p.startsWith(prefix)).length;
+      return { code, n };
+    }).filter(({ n }) => n > 0);
+
     console.log(
       `Prerendered ${written.length} pages ` +
         `(${routes.length} category, ${citiesWithPages.size} city, ` +
         `${indexedCities.length > 0 ? "1 index, " : ""}1 root), ` +
         `${urls} URLs across ${children.length} sitemaps behind sitemap.xml.`
     );
+    if (localeCounts.length > 1) {
+      console.log(
+        `Trees: ${localeCounts.map(({ code, n }) => `${code} ${n}`).join(", ")}` +
+          ` — ${LOCALES.filter(({ code }) => code !== "en")
+            .map(({ code }) => `${CITIES.filter((c) => (c.langs ?? []).includes(code)).length} cities in ${code}`)
+            .filter((line) => !line.startsWith("0 "))
+            .join(", ")}.`
+      );
+    }
     const pausedRoutes = routes.filter((route) =>
       meta.PAUSED_CATEGORIES.has(route.categorySeo.slug)
     ).length;

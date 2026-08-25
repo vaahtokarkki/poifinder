@@ -17,12 +17,19 @@ import { useUserPosition } from "./hooks/index";
 import { CATEGORIES } from "./constants";
 import { fetchSuggestions } from "./api/geocode";
 import { fetchIpLocation } from "./api/ipLocation";
-import { parseCitySlugFromPath, parseCategorySlugFromPath, slugToTitle } from "./utils";
+import {
+  parseCategorySlugFromPath,
+  parseCitySlugFromPath,
+  parseLocaleFromPath,
+  slugToTitle,
+} from "./utils";
 import { filterMarkersInBbox } from "./geo";
 import { findCity } from "./seo/cities";
-import { categoryHeading, findCategorySeo } from "./seo/categories";
-import { ui } from "./copy";
+import { categoryHeading, findCategorySeo, vocabFor } from "./seo/categories";
+import { DEFAULT_LOCALE, interpolate, ui } from "./copy";
+import type { Locale } from "./copy";
 import { useLocale } from "./hooks/useLocale";
+import { categoryPath, cityNames, cityPath, linkLocaleFor } from "./seo/pageMeta";
 import { readPageData } from "./seo/pageData";
 import SheetPage from "./components/SheetPage";
 import { Alert, Snackbar } from '@mui/material';
@@ -905,18 +912,63 @@ const App = () => {
    * The heading of a route we did not prerender: a shared link, or a city that
    * is not in the registry yet. Prerendered pages bring their own h1
    */
+  /**
+   * Switching language: go to that language's page when one exists, swap the
+   * words in place when it does not.
+   *
+   * The city decides. Berlin has a German tree, so German Berlin is a URL and
+   * a visitor should end up at it — shareable, canonical, and the one Google
+   * knows about. Oslo does not, so German Oslo is this page with German words
+   * on it and the same URL, which is the honest thing to serve rather than a
+   * /de/ path that was never written.
+   *
+   * The in-place swap only ever sits on top of English: from /de/berlin/ into
+   * a language Berlin has no tree for, the fallback is the English page, never
+   * another locale's, because that URL declares a language in its own markup.
+   */
+  function chooseLocale(next: Locale) {
+    const citySlug = parseCitySlugFromPath();
+    const city = citySlug ? findCity(citySlug) : undefined;
+    const target = city ? linkLocaleFor(city, next) : DEFAULT_LOCALE;
+    const currentPrefix = parseLocaleFromPath();
+
+    setAppLocale(next);
+
+    // Only move if the tree the URL should be in has actually changed
+    if (city && target !== currentPrefix) {
+      const categorySlug = parseCategorySlugFromPath();
+      window.location.assign(
+        categorySlug
+          ? categoryPath(city.slug, categorySlug, target)
+          : cityPath(city.slug, target)
+      );
+    }
+  }
+
   function getBrowsePointsTitle() {
     const citySlug = parseCitySlugFromPath();
+    if (!citySlug) return ui().notices.fallbackSubtitle;
+
+    // The same deck templates the prerendered pages use, rather than gluing a
+    // heading to a city with an English "in". This is the path a route takes
+    // when it has no prerendered payload — every route under `npm run dev`,
+    // and in production a link to something the build did not write — and it
+    // was the one place still assembling a title in English by hand.
+    const city = findCity(citySlug);
+    const names = city
+      ? cityNames(city)
+      : // Not in the registry, so there is no localized name and no inflected
+        // form to have. The slug is all there is and it reads the same in
+        // every language
+        { city: slugToTitle(citySlug), cityIn: slugToTitle(citySlug) };
+
     const categorySeo = findCategorySeo(parseCategorySlugFromPath());
-    if (citySlug) {
-      // "intl" because this is the path where the city is unknown, so there is
-      // no country to pick a vocabulary from. It is what the raw heading was
-      const heading = categorySeo
-        ? categoryHeading(categorySeo, "intl")
-        : ui().notices.fallbackTitle;
-      return `${heading} in ${slugToTitle(citySlug)}`;
-    }
-    return ui().notices.fallbackSubtitle;
+    if (!categorySeo) return interpolate(ui().page.cityTitle, names);
+
+    return interpolate(ui().page.categoryHeading, {
+      noun: categoryHeading(categorySeo, city ? vocabFor(city.countryCode) : "intl"),
+      ...names,
+    });
   }
 
   // The static markup the prerender left behind is only there to carry the
@@ -981,7 +1033,7 @@ const App = () => {
             />
             <LanguageSelect
               value={locale}
-              onChange={setAppLocale}
+              onChange={chooseLocale}
               // The same condition the category select uses: the search and
               // route panels both take this row for themselves
               visible={!displaySearchItem}

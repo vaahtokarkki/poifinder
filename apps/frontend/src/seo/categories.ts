@@ -307,6 +307,19 @@ export function localize(text: string, vocab: Vocab): string {
 }
 
 /**
+ * US_TERMS, but only ever over English.
+ *
+ * `localize` gates on the vocabulary alone, which was complete while English
+ * was the only deck. It is not any more: a German reader looking at Miami has
+ * vocab "us" and a German string, and running an en-GB to en-US table over
+ * German is at best a no-op and at worst a word replaced for the wrong reason.
+ * The transform is a fact about English spelling, so it is gated on English.
+ */
+function localizeFor(text: string, vocab: Vocab, locale: Locale): string {
+  return locale === "en" ? localize(text, vocab) : text;
+}
+
+/**
  * The copy of a category, in a locale, or English where that locale has not
  * translated it yet.
  *
@@ -326,7 +339,7 @@ export function categoryPlural(
   vocab: Vocab,
   locale: Locale = getLocale()
 ): string {
-  return localize(copyOf(entry, locale).plural, vocab);
+  return localizeFor(copyOf(entry, locale).plural, vocab, locale);
 }
 
 /** The sentence case heading noun, in the city's English */
@@ -335,7 +348,7 @@ export function categoryHeading(
   vocab: Vocab,
   locale: Locale = getLocale()
 ): string {
-  return localize(copyOf(entry, locale).heading, vocab);
+  return localizeFor(copyOf(entry, locale).heading, vocab, locale);
 }
 
 /**
@@ -351,7 +364,7 @@ export function categorySingular(
   vocab: Vocab,
   locale: Locale = getLocale()
 ): string {
-  return localize(copyOf(entry, locale).singular, vocab);
+  return localizeFor(copyOf(entry, locale).singular, vocab, locale);
 }
 
 /** The noun for a count: singular at one, plural at everything else */
@@ -367,29 +380,42 @@ export function categoryNoun(
 }
 
 /** The paragraph above the list, with the count and city filled in */
+/**
+ * The city as a template can ask for it: named on its own, or in the form that
+ * means "in this city". English and German only ever want the first; Finnish
+ * wants the second nearly everywhere. Both are always supplied, and the
+ * template picks — which is what keeps the deck in charge of its own grammar.
+ */
+export type CityNames = { city: string; cityIn: string };
+
 export function categoryIntro(
   entry: CategorySeo,
-  city: string,
+  names: CityNames,
   count: number,
   vocab: Vocab,
   locale: Locale = getLocale()
 ): string {
-  const text = resolve(copyOf(entry, locale).intro, locale, { city, count: formatCount(count) }, count);
-  return localize(text, vocab);
+  const text = resolve(
+    copyOf(entry, locale).intro,
+    locale,
+    { ...names, count: formatCount(count) },
+    count
+  );
+  return localizeFor(text, vocab, locale);
 }
 
 /** The category's own questions, with the count and city filled in */
 export function categoryFaq(
   entry: CategorySeo,
-  city: string,
+  names: CityNames,
   count: number,
   vocab: Vocab,
   locale: Locale = getLocale()
 ): FaqEntry[] {
-  const params = { city, count: formatCount(count) };
+  const params = { ...names, count: formatCount(count) };
   return copyOf(entry, locale).faq.map(({ q, a }) => ({
-    q: localize(resolve(q, locale, params, count), vocab),
-    a: localize(resolve(a, locale, params, count), vocab),
+    q: localizeFor(resolve(q, locale, params, count), vocab, locale),
+    a: localizeFor(resolve(a, locale, params, count), vocab, locale),
   }));
 }
 
@@ -440,11 +466,11 @@ export function findCategorySeo(slug: string): CategorySeo | undefined {
  * do you know this" and also the reason the coverage is what it is.
  */
 export function commonFaq(
-  city: string,
+  names: CityNames,
   plural: string,
   locale: Locale = getLocale()
 ): FaqEntry[] {
-  const params = { city, plural };
+  const params = { ...names, plural };
   return commonFaqFor(locale).map(({ q, a }) => ({
     q: resolve(q, locale, params),
     a: resolve(a, locale, params),

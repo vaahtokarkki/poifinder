@@ -11,6 +11,7 @@ import {
   introFor,
   pluralFor,
   poiTitle,
+  cityNames,
 } from "../seo/pageMeta";
 import { formatCount } from "../seo/format";
 import { interpolate, ui } from "../copy";
@@ -67,7 +68,11 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
       {listed.length > 0 && (
         <section className="info-sheet-section">
           <h2 className="info-sheet-heading">
-            {placed ? ui().page.individualHeading : ui().page.namedHeading} {plural} in {city.name}
+            {interpolate(ui().page.listHeading, {
+              qualifier: placed ? ui().page.individualHeading : ui().page.namedHeading,
+              noun: plural,
+              ...cityNames(city),
+            })}
           </h2>
           <ol className="poi-list">
             {listed.map((poi) => {
@@ -126,7 +131,7 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
           that every one of its category pages links to is also a stronger hub
           than one only the index points at */}
       <p className="info-sheet-summary">
-        <a href={cityPath(city.slug)}>{interpolate(ui().page.allPointsIn, { city: city.name })}</a>
+        <a href={cityPath(city.slug)}>{interpolate(ui().page.allPointsIn, cityNames(city))}</a>
         {" · "}
         <a href={CITIES_PATH}>{ui().page.allCities}</a>
       </p>

@@ -1,3 +1,4 @@
+import { getLocale } from "../copy";
 /**
  * Translating the prose an OpenStreetMap contributor wrote.
  *
@@ -67,20 +68,25 @@ type MyMemoryResponse = {
 };
 
 /**
- * Everything is translated into English, whoever is reading.
+ * Everything is translated into the language the reader has selected.
  *
- * The browser's own language would be the more accommodating answer, and it is
- * not the one taken: every label, heading and category name in this app is in
- * English, and a popup that answers in German inside an English interface reads
- * as a page that cannot decide what language it is in. One language throughout
- * is worth more than a translation into the reader's own.
+ * This used to be pinned to English, on the grounds that "a popup that answers
+ * in German inside an English interface reads as a page that cannot decide
+ * what language it is in". That reasoning was right and it now points the
+ * other way: the interface itself is German when the reader asks for German,
+ * so English in the popup is the half that does not match. One language
+ * throughout is still the rule — the language it settles on has just stopped
+ * being fixed.
+ *
+ * Read per call rather than captured at import, because the reader can change
+ * it between one popup and the next.
  */
-const TARGET_LANGUAGE = "en";
+const targetLanguage = (): string => getLocale();
 
 type TranslationCache = Record<string, string>;
 
-/** The target stays in the key so an old cache cannot be read as English */
-const cacheKey = (text: string) => `${TARGET_LANGUAGE}|${text}`;
+/** The target stays in the key so a cache written for one language is never read as another */
+const cacheKey = (text: string) => `${targetLanguage()}|${text}`;
 
 function readCache(): TranslationCache {
   try {
@@ -177,7 +183,7 @@ function isServiceWarning(text: string): boolean {
 async function translateChunk(text: string): Promise<string> {
   const url =
     `${ENDPOINT}?q=${encodeURIComponent(text)}` +
-    `&langpair=${encodeURIComponent(`Autodetect|${TARGET_LANGUAGE}`)}`;
+    `&langpair=${encodeURIComponent(`Autodetect|${targetLanguage()}`)}`;
 
   let response: Response;
   try {
@@ -205,7 +211,7 @@ async function translateChunk(text: string): Promise<string> {
   }
 
   if (translated.trim().toUpperCase() === ALREADY_IN_TARGET) {
-    throw new TranslationError("same-language", "Already in English");
+    throw new TranslationError("same-language", "Text is already in the target language");
   }
 
   if (isServiceWarning(translated)) {

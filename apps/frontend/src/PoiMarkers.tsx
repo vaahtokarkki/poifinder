@@ -342,8 +342,26 @@ const getMarkerIcon = (marker: OverpassMarkerData, selected: readonly CATEGORIES
  * surrounding whitespace goes with it, because contributors write the separator
  * as ";", "; " and " ; " interchangeably and all three mean one thing.
  */
-const formatValue = (value: string) =>
-  capitaliseFirst(value.replace(/\s*;\s*/g, ", ").replace(/_/g, " "));
+/**
+ * A tag value as words.
+ *
+ * Looked up in the deck first, which covers the closed half of the vocabulary
+ * — `yes`, `no`, `limited` and the dozen others that answer most of what a
+ * popup is asked. Anything else is the open half (operators, materials,
+ * socket counts) and is shown as written with its punctuation cleaned up,
+ * which is the only thing that can be done with a value nobody enumerated.
+ *
+ * A semicolon list is translated item by item, because `access=customers;permit`
+ * is two values rather than a phrase.
+ */
+const formatValue = (value: string): string => {
+  const table = ui().poi.values;
+  const parts = value.split(/\s*;\s*/).map((part) => {
+    const known = table[part.trim().toLowerCase()];
+    return known ?? capitaliseFirst(part.replace(/_/g, " "));
+  });
+  return parts.join(", ");
+};
 
 const isUrl = (val: string) => /^https?:\/\/|^www\./i.test(val);
 

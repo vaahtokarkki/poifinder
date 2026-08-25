@@ -4,7 +4,9 @@ import type { City } from "../seo/cities";
 import { categoryHeading, findCategorySeo, vocabFor } from "../seo/categories";
 import { formatCount } from "../seo/format";
 import { getLocale, interpolate, resolve, ui } from "../copy";
-import { CITIES_PATH, categoryPath, cityPath } from "../seo/pageMeta";
+import { CITIES_PATH, categoryPath, cityPath,
+  cityName,
+  linkLocaleFor, cityNames } from "../seo/pageMeta";
 import type { CityPageData } from "../seo/pageData";
 
 /**
@@ -36,23 +38,31 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data, variant =
   return (
     <>
       {variant === "page" && (
-        <h1 className="info-sheet-title">{interpolate(ui().page.cityTitle, { city: city.name })}</h1>
+        <h1 className="info-sheet-title">{interpolate(ui().page.cityTitle, cityNames(city))}</h1>
       )}
       <p className="info-sheet-summary">
-        {formatCount(total)} mapped points across {entries.length}{" "}
-        {resolve(ui().page.categoryUnit, getLocale(), {}, entries.length)} in {city.name},{" "}
-        {city.country}. {ui().page.citySummaryAfter}
+        {interpolate(ui().page.citySummary, {
+          count: formatCount(total),
+          categories: entries.length,
+          unit: resolve(ui().page.categoryUnit, getLocale(), {}, entries.length),
+          ...cityNames(city),
+          country: city.country,
+        })}{" "}
+        {ui().page.citySummaryAfter}
       </p>
 
       <section className="info-sheet-section">
         <h2 className="info-sheet-heading">
-          {interpolate(ui().page.cityCategoriesHeading, { city: city.name })}
+          {interpolate(ui().page.cityCategoriesHeading, cityNames(city))}
         </h2>
         <ul className="poi-links">
           {entries.map((entry) => (
             <li key={entry.categorySeo.slug}>
               <a href={categoryPath(city.slug, entry.categorySeo.slug)}>
-                {categoryHeading(entry.categorySeo, vocab)} in {city.name}
+                {interpolate(ui().page.categoryHeading, {
+                  noun: categoryHeading(entry.categorySeo, vocab),
+                  ...cityNames(city),
+                })}
               </a>
               <span className="poi-meta">
                 {formatCount(entry.count)} {ui().page.mapped}
@@ -68,7 +78,9 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data, variant =
           <ul className="poi-links">
             {neighbours.map((neighbour) => (
               <li key={neighbour.slug}>
-                <a href={cityPath(neighbour.slug)}>{neighbour.name}</a>
+                <a href={cityPath(neighbour.slug, linkLocaleFor(neighbour))}>
+                  {cityName(neighbour, linkLocaleFor(neighbour))}
+                </a>
                 <span className="poi-meta">{neighbour.country}</span>
               </li>
             ))}

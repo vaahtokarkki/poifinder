@@ -2,7 +2,7 @@ import React from "react";
 import { findCity } from "../seo/cities";
 import { cityPath } from "../seo/pageMeta";
 import { formatCount } from "../seo/format";
-import { DEFAULT_LOCALE, resolve, ui } from "../copy";
+import { getLocale, resolve, ui } from "../copy";
 import type { CitiesPageData } from "../seo/pageData";
 
 /**
@@ -32,9 +32,9 @@ const CitiesPageSection: React.FC<{ data: CitiesPageData }> = ({ data }) => {
       <h1 className="info-sheet-title">{ui().page.citiesTitle}</h1>
       <p className="info-sheet-summary">
         {formatCount(cities.length)}{" "}
-        {resolve(ui().page.cityUnit, DEFAULT_LOCALE, {}, cities.length)} in{" "}
+        {resolve(ui().page.cityUnit, getLocale(), {}, cities.length)} in{" "}
         {formatCount(countries.length)}{" "}
-        {resolve(ui().page.countryUnit, DEFAULT_LOCALE, {}, countries.length)}{" "}
+        {resolve(ui().page.countryUnit, getLocale(), {}, countries.length)}{" "}
         {ui().page.citiesSummaryAfter}
       </p>
 

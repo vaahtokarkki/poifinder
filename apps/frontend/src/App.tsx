@@ -4,6 +4,7 @@ import { Map, latLngBounds, point as pixelPoint } from 'leaflet';
 import { useCallback, useEffect, useRef, useState } from "react";
 import { GeoJSON, MapContainer, TileLayer, useMapEvent } from "react-leaflet";
 import CategorySelect from "./components/CategorySelect";
+import LanguageSelect from "./components/LanguageSelect";
 import PoiMarkers from "./PoiMarkers";
 import RoutesBar from "./components/RoutesBar";
 import SearchBar from "./components/SearchBar";
@@ -21,6 +22,7 @@ import { filterMarkersInBbox } from "./geo";
 import { findCity } from "./seo/cities";
 import { categoryHeading, findCategorySeo } from "./seo/categories";
 import { ui } from "./copy";
+import { useLocale } from "./hooks/useLocale";
 import { readPageData } from "./seo/pageData";
 import SheetPage from "./components/SheetPage";
 import { Alert, Snackbar } from '@mui/material';
@@ -193,6 +195,9 @@ const MapPanHandler = ({ onMove }: { onMove: (center: [number, number]) => void 
 };
 
 const App = () => {
+  // Subscribing here is what makes every ui() call in the tree below re-read
+  // the deck when the language changes
+  const [locale, setAppLocale] = useLocale();
   const { position: userPosition } = useUserPosition();
   const [searchPosition, setSearchPosition] = useState<[number, number] | null>(null);
   /**
@@ -966,13 +971,22 @@ const App = () => {
               />
             </div>
           )}
-          <CategorySelect
-            value={category}
-            onChange={setCategory}
-            // The search bar takes this slot while it is open
-            visible={!displaySearchItem}
-            onCommit={() => fetchMarkers(undefined, "categories")}
-          />
+          <div className="category-row">
+            <CategorySelect
+              value={category}
+              onChange={setCategory}
+              // The search bar takes this slot while it is open
+              visible={!displaySearchItem}
+              onCommit={() => fetchMarkers(undefined, "categories")}
+            />
+            <LanguageSelect
+              value={locale}
+              onChange={setAppLocale}
+              // The same condition the category select uses: the search and
+              // route panels both take this row for themselves
+              visible={!displaySearchItem}
+            />
+          </div>
           <CategoryPresets
             value={category}
             onSelect={handlePresetSelect}

@@ -1,5 +1,6 @@
 import { CATEGORIES } from "../constants";
-import { DEFAULT_LOCALE, categoryCopy, deckFor, resolve } from "../copy";
+import { categoryCopy, commonFaqFor, getLocale, resolve, ui } from "../copy";
+import { en } from "../copy/en";
 import type { CategoryCopy, Locale } from "../copy";
 import { formatCount } from "./format";
 
@@ -323,7 +324,7 @@ function copyOf(entry: CategorySeo, locale: Locale): CategoryCopy {
 export function categoryPlural(
   entry: CategorySeo,
   vocab: Vocab,
-  locale: Locale = DEFAULT_LOCALE
+  locale: Locale = getLocale()
 ): string {
   return localize(copyOf(entry, locale).plural, vocab);
 }
@@ -332,7 +333,7 @@ export function categoryPlural(
 export function categoryHeading(
   entry: CategorySeo,
   vocab: Vocab,
-  locale: Locale = DEFAULT_LOCALE
+  locale: Locale = getLocale()
 ): string {
   return localize(copyOf(entry, locale).heading, vocab);
 }
@@ -348,7 +349,7 @@ export function categoryHeading(
 export function categorySingular(
   entry: CategorySeo,
   vocab: Vocab,
-  locale: Locale = DEFAULT_LOCALE
+  locale: Locale = getLocale()
 ): string {
   return localize(copyOf(entry, locale).singular, vocab);
 }
@@ -358,7 +359,7 @@ export function categoryNoun(
   entry: CategorySeo,
   count: number,
   vocab: Vocab,
-  locale: Locale = DEFAULT_LOCALE
+  locale: Locale = getLocale()
 ): string {
   return count === 1
     ? categorySingular(entry, vocab, locale)
@@ -371,7 +372,7 @@ export function categoryIntro(
   city: string,
   count: number,
   vocab: Vocab,
-  locale: Locale = DEFAULT_LOCALE
+  locale: Locale = getLocale()
 ): string {
   const text = resolve(copyOf(entry, locale).intro, locale, { city, count: formatCount(count) }, count);
   return localize(text, vocab);
@@ -383,7 +384,7 @@ export function categoryFaq(
   city: string,
   count: number,
   vocab: Vocab,
-  locale: Locale = DEFAULT_LOCALE
+  locale: Locale = getLocale()
 ): FaqEntry[] {
   const params = { city, count: formatCount(count) };
   return copyOf(entry, locale).faq.map(({ q, a }) => ({
@@ -393,19 +394,23 @@ export function categoryFaq(
 }
 
 /**
- * The name the map's own controls use for a category, which is shorter than
- * the page heading and sometimes a different word: "Toilets" in the picker
- * where the page says "Public toilets".
+ * The name the map's own controls use for a category.
+ *
+ * Comes from the `ui` deck rather than the category's own copy, because it is
+ * chrome: it shows in the picker, on the preset chips and in a marker popup,
+ * never in a prerendered paragraph. That is what lets a locale translate the
+ * app without translating 3,800 words of page copy first.
  *
  * Takes the enum rather than a CategorySeo because every caller is map side
  * and holds the enum, not the SEO entry.
  */
 export function categoryDisplay(
   category: CATEGORIES,
-  locale: Locale = DEFAULT_LOCALE
+  locale: Locale = getLocale()
 ): string {
   const entry = CATEGORY_SEO_BY_CATEGORY[category];
-  return entry ? copyOf(entry, locale).display : "";
+  if (!entry) return "";
+  return ui(locale).categoryNames[entry.slug] ?? en.ui.categoryNames[entry.slug] ?? "";
 }
 
 export const CATEGORY_SEO: CategorySeo[] = CATEGORY_SEO_LIST;
@@ -437,10 +442,10 @@ export function findCategorySeo(slug: string): CategorySeo | undefined {
 export function commonFaq(
   city: string,
   plural: string,
-  locale: Locale = DEFAULT_LOCALE
+  locale: Locale = getLocale()
 ): FaqEntry[] {
   const params = { city, plural };
-  return deckFor(locale).commonFaq.map(({ q, a }) => ({
+  return commonFaqFor(locale).map(({ q, a }) => ({
     q: resolve(q, locale, params),
     a: resolve(a, locale, params),
   }));

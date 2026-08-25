@@ -3,6 +3,7 @@ import { Autocomplete, TextField, CircularProgress } from "@mui/material";
 import { useUserPosition } from "../hooks/index";
 import { fetchSuggestions, Suggestion } from "../api/geocode";
 import { trackSearch } from "../analytics";
+import { ui } from "../copy";
 
 type GeocodeAutoCompleteProps = {
   label?: string;
@@ -42,7 +43,7 @@ const reportSearch = (query: string, resultCount: number): void => {
 
 const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
   onSelect,
-  placeholder = "Type a location",
+  placeholder,
   styles,
   onClear,
   autoFocus = false,
@@ -119,7 +120,7 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
           inputRef={inputRef}
           style={{ zIndex:1000, background: "#fff", borderRadius: "2em", padding: "0" }}
           {...params}
-          placeholder={placeholder}
+          placeholder={placeholder ?? ui().controls.typeLocation}
           sx={{
             "& fieldset": { border: 'none' },
           }}

@@ -21,7 +21,6 @@ const categories: CopyDeck["categories"] = {
     plural: "public toilets",
     singular: "public toilet",
     heading: "Public toilets",
-    display: "Toilets",
     intro: {
       one: "One public toilet is mapped in and around {city}. Where the data says so, you also get its opening hours, whether there is a fee, and whether it is step free.",
       other: "{count} public toilets are mapped in and around {city}. The list below covers the ones that carry a name in OpenStreetMap; the map shows every one, including the unnamed street toilets and the ones inside parks, stations and shopping centres. Where the data says so, you also get opening hours, whether there is a fee, and whether the toilet is step free.",
@@ -52,7 +51,6 @@ const categories: CopyDeck["categories"] = {
     plural: "drinking water points",
     singular: "drinking water point",
     heading: "Drinking water",
-    display: "Drinking water",
     intro: {
       one: "One place to refill a bottle is mapped in {city}. Points that are tagged as non potable are filtered out, so what you see is water you can actually drink.",
       other: "{count} places to refill a bottle are mapped in {city}: public drinking fountains, tap points, wells, and fountains where the water is confirmed potable. Points that are tagged as non potable are filtered out, so what you see is water you can actually drink.",
@@ -79,7 +77,6 @@ const categories: CopyDeck["categories"] = {
     plural: "playgrounds",
     singular: "playground",
     heading: "Playgrounds",
-    display: "Playgrounds",
     intro: {
       one: "One playground is mapped in and around {city}. The map shows it whether or not OpenStreetMap has a name for it.",
       other: "{count} playgrounds are mapped in and around {city}. The list names the ones OpenStreetMap has a name for, usually the larger park playgrounds; the map adds every unnamed neighbourhood one on top of that.",
@@ -106,7 +103,6 @@ const categories: CopyDeck["categories"] = {
     plural: "car parks",
     singular: "car park",
     heading: "Parking",
-    display: "Parking",
     intro: {
       one: "One car park is mapped in {city}, with private and residents only parking filtered out.",
       other: "{count} car parks and parking areas are mapped in {city}, with private and residents only parking filtered out. That covers street parking areas, surface lots and multi storey garages.",
@@ -133,7 +129,6 @@ const categories: CopyDeck["categories"] = {
     plural: "EV charging stations",
     singular: "EV charging station",
     heading: "EV charging stations",
-    display: "Charging stations",
     intro: {
       one: "One electric vehicle charging station is mapped in {city}. OpenStreetMap covers operators that the big proprietary apps often leave out, particularly small municipal and hotel chargers.",
       other: "{count} electric vehicle charging stations are mapped in {city}, from single kerbside points to motorway rapid chargers. OpenStreetMap covers operators that the big proprietary apps often leave out, particularly small municipal and hotel chargers.",
@@ -160,7 +155,6 @@ const categories: CopyDeck["categories"] = {
     plural: "petrol stations",
     singular: "petrol station",
     heading: "Petrol stations",
-    display: "Gas stations",
     intro: {
       one: "One fuel station is mapped in and around {city}. OpenStreetMap records the unbranded and automated ones that often go missing from brand specific finders.",
       other: "{count} fuel stations are mapped in and around {city}, including the unbranded and automated ones that often go missing from brand specific finders.",
@@ -187,7 +181,6 @@ const categories: CopyDeck["categories"] = {
     plural: "ice cream shops",
     singular: "ice cream shop",
     heading: "Ice cream",
-    display: "Ice cream",
     intro: {
       one: "One ice cream shop, gelateria or kiosk is mapped in {city}, covering dedicated shops as well as cafés whose main trade is ice cream.",
       other: "{count} ice cream shops, gelaterias and kiosks are mapped in {city}, covering both dedicated shops and cafés whose main trade is ice cream.",
@@ -210,7 +203,6 @@ const categories: CopyDeck["categories"] = {
     plural: "dog parks",
     singular: "dog park",
     heading: "Dog parks",
-    display: "Dog park",
     intro: {
       one: "One fenced dog park or off leash area is mapped in {city}. These are the enclosures where a dog can run without a lead, as distinct from parks that merely allow dogs.",
       other: "{count} fenced dog parks and off leash areas are mapped in {city}. These are the enclosures where a dog can run without a lead, as distinct from parks that merely allow dogs.",
@@ -233,7 +225,6 @@ const categories: CopyDeck["categories"] = {
     plural: "picnic spots",
     singular: "picnic spot",
     heading: "Picnic spots",
-    display: "Picnic spots",
     intro: {
       one: "One picnic spot is mapped around {city}, which may be a single table by a path or a laid out picnic site with several tables and a fireplace.",
       other: "{count} picnic spots are mapped around {city}, from a single table by a path to a laid out picnic site with several tables and a fireplace.",
@@ -256,7 +247,6 @@ const categories: CopyDeck["categories"] = {
     plural: "viewpoints",
     singular: "viewpoint",
     heading: "Viewpoints",
-    display: "Viewpoints",
     intro: {
       one: "One viewpoint is mapped around {city}: a marked spot where the view is the point, whether an observation tower, a terrace, a bird hide or an unmarked ridge somebody surveyed.",
       other: "{count} viewpoints are mapped around {city}: the marked spots where the view is the point, from observation towers and terraces to bird hides and unmarked ridges that locals have surveyed.",
@@ -279,7 +269,6 @@ const categories: CopyDeck["categories"] = {
     plural: "beaches and swimming spots",
     singular: "beach or swimming spot",
     heading: "Beaches and swimming",
-    display: "Beach & swimming",
     intro: {
       one: "One beach or designated swimming area is mapped around {city}, covering lake and river swimming spots as well as coastline.",
       other: "{count} beaches and designated swimming areas are mapped around {city}, covering lake and river swimming spots as well as coastline.",
@@ -306,7 +295,6 @@ const categories: CopyDeck["categories"] = {
     plural: "ATMs",
     singular: "ATM",
     heading: "ATMs",
-    display: "ATM",
     intro: {
       one: "One cash machine is mapped in {city}, whether standalone or inside a bank or a shop.",
       other: "{count} cash machines are mapped in {city}, both standalone ATMs and the ones inside banks and shops.",
@@ -329,7 +317,6 @@ const categories: CopyDeck["categories"] = {
     plural: "post boxes",
     singular: "post box",
     heading: "Post boxes",
-    display: "Post boxes",
     intro: {
       one: "One post box is mapped in {city}. Street letter boxes are exactly the kind of small fixture that general purpose map apps skip and OpenStreetMap surveys thoroughly.",
       other: "{count} post boxes are mapped in {city}. Street letter boxes are exactly the kind of small fixture that general purpose map apps skip and OpenStreetMap surveys thoroughly.",
@@ -352,7 +339,6 @@ const categories: CopyDeck["categories"] = {
     plural: "recycling points",
     singular: "recycling point",
     heading: "Recycling",
-    display: "Recycling",
     intro: {
       one: "One recycling point is mapped in {city}, which may be a single glass bank on a street corner or a full recycling centre.",
       other: "{count} recycling points are mapped in {city}, from a single glass bank on a street corner to a full recycling centre.",
@@ -375,7 +361,6 @@ const categories: CopyDeck["categories"] = {
     plural: "luggage storage points",
     singular: "luggage storage point",
     heading: "Luggage storage",
-    display: "Luggage storage",
     intro: {
       one: "One luggage locker or left luggage office is mapped in {city}, most likely at a station, airport or transport hub. Useful on the day you check out but your train is not until evening.",
       other: "{count} luggage lockers and left luggage offices are mapped in {city}, mostly at stations, airports and transport hubs. Useful on the day you check out but your train is not until evening.",
@@ -398,7 +383,6 @@ const categories: CopyDeck["categories"] = {
     plural: "libraries",
     singular: "library",
     heading: "Libraries",
-    display: "Libraries",
     intro: {
       one: "One library is mapped in {city}, which may be the main city library, a branch, a mobile library stop or a street bookcase where books are swapped for free. Where the data says so, you also get opening hours and whether the building is step free.",
       other: "{count} libraries are mapped in {city}, from the main city library to branch libraries, mobile library stops and the street bookcases where books are swapped for free. Where the data says so, you also get opening hours and whether the building is step free.",
@@ -429,7 +413,6 @@ const categories: CopyDeck["categories"] = {
     plural: "outdoor gyms",
     singular: "outdoor gym",
     heading: "Outdoor gyms",
-    display: "Outdoor gym",
     intro: {
       one: "One outdoor gym or fitness station is mapped around {city}: free open air equipment in a park or along a running route, which may be a calisthenics frame or a trim trail.",
       other: "{count} outdoor gyms and fitness stations are mapped around {city}: the free open air equipment in parks and along running routes, including calisthenics frames and trim trails.",
@@ -452,7 +435,6 @@ const categories: CopyDeck["categories"] = {
     plural: "camp sites",
     singular: "camp site",
     heading: "Camp sites",
-    display: "Camp site",
     intro: {
       one: "One camp or caravan site is mapped around {city}, which may be a commercial campground, a motorhome stop, or a basic tent pitch that only a local survey would record.",
       other: "{count} camp and caravan sites are mapped around {city}, from commercial campgrounds and motorhome stops to the basic tent pitches that only a local survey would record.",
@@ -479,7 +461,6 @@ const categories: CopyDeck["categories"] = {
     plural: "shelters and huts",
     singular: "shelter",
     heading: "Shelters and huts",
-    display: "Shelter",
     intro: {
       one: "One shelter, lean to, wilderness hut or alpine hut is mapped around {city}. These are the trailside structures you plan a hike around, and they are close to impossible to find on a commercial map.",
       other: "{count} shelters, lean tos, wilderness huts and alpine huts are mapped around {city}. These are the trailside structures you plan a hike around, and they are close to impossible to find on a commercial map.",
@@ -510,7 +491,6 @@ const categories: CopyDeck["categories"] = {
     plural: "rest areas",
     singular: "rest area",
     heading: "Rest areas",
-    display: "Rest area",
     intro: {
       one: "One rest area is mapped around {city}: a layby, a stopping place along a main road, or a full service area with fuel and a building, which is where you actually want toilets and a break on a long drive.",
       other: "{count} rest areas and motorway services are mapped around {city}: the laybys and stopping places along main roads, and the full service areas with fuel and a building, which is where you actually want toilets and a break on a long drive.",
@@ -537,7 +517,6 @@ const categories: CopyDeck["categories"] = {
     plural: "sanitary dump stations",
     singular: "sanitary dump station",
     heading: "Dump stations",
-    display: "Dump station",
     intro: {
       one: "One sanitary dump station is mapped around {city}, where a campervan or motorhome can empty waste tanks. A category almost no mainstream map covers, and a hard requirement if you are living in a van.",
       other: "{count} sanitary dump stations are mapped around {city}, where a campervan or motorhome can empty waste tanks. A category almost no mainstream map covers, and a hard requirement if you are living in a van.",
@@ -560,7 +539,6 @@ const categories: CopyDeck["categories"] = {
     plural: "post offices",
     singular: "post office",
     heading: "Post offices",
-    display: "Post offices",
     intro: {
       one: "One post office is mapped in {city}, which may be a counter inside a supermarket or kiosk that carries the postal service without looking like a post office from the street. Where the data says so, you also get opening hours and whether the entrance is step free.",
       other: "{count} post offices are mapped in {city}, including the counters inside supermarkets and kiosks that carry the postal service without looking like a post office from the street. Where the data says so, you also get opening hours and whether the entrance is step free.",
@@ -587,7 +565,6 @@ const categories: CopyDeck["categories"] = {
     plural: "public showers",
     singular: "public shower",
     heading: "Showers",
-    display: "Showers",
     intro: {
       one: "One public shower is mapped in and around {city}: at a beach or lido, a campsite or marina, or in a sports facility that lets anyone in. A category almost no mainstream map bothers with, and the one you want after a long drive or a swim.",
       other: "{count} public showers are mapped in and around {city}: the ones at beaches and lidos, at campsites and marinas, and in the sports facilities that let anyone in. A category almost no mainstream map bothers with, and the one you want after a long drive or a swim.",
@@ -614,7 +591,6 @@ const categories: CopyDeck["categories"] = {
     plural: "fireplaces and barbecue spots",
     singular: "fireplace or barbecue spot",
     heading: "Fireplaces and BBQ spots",
-    display: "Fireplaces & BBQ",
     intro: {
       one: "One public fireplace or barbecue spot is mapped around {city}: a fire ring at a hiking shelter, a built grill in a park, or a maintained cooking spot along a trail. These are exactly the fixtures a local survey records and a commercial map never does.",
       other: "{count} public fireplaces and barbecue spots are mapped around {city}: the fire rings at hiking shelters, the built grills in parks, and the maintained cooking spots along trails. These are exactly the fixtures a local survey records and a commercial map never does.",
@@ -641,7 +617,6 @@ const categories: CopyDeck["categories"] = {
     plural: "compressed air points",
     singular: "compressed air point",
     heading: "Compressed air",
-    display: "Compressed air",
     intro: {
       one: "One place to inflate a tyre is mapped in {city}: a compressed air point at a fuel station or car park, or a public pump a cyclist can use. Usually free, usually unsigned, and near impossible to search for anywhere else.",
       other: "{count} places to inflate a tyre are mapped in {city}: the compressed air points at fuel stations and car parks, and the public pumps cyclists can use. Usually free, usually unsigned, and near impossible to search for anywhere else.",
@@ -668,7 +643,6 @@ const categories: CopyDeck["categories"] = {
     plural: "benches",
     singular: "bench",
     heading: "Benches",
-    display: "Benches",
     intro: {
       one: "One public bench is mapped in {city}. If you are walking with a bad knee, a small child or a heavy bag, knowing where the next place to sit down is changes the route you take.",
       other: "{count} public benches are mapped in {city}. It is the largest category here and the most quietly useful one: if you are walking with a bad knee, a small child or a heavy bag, knowing where the next place to sit down is changes the route you take.",
@@ -709,6 +683,35 @@ const commonFaq: CopyDeck["commonFaq"] = [
 ];
 
 const ui: CopyDeck["ui"] = {
+  categoryNames: {
+    toilets: "Toilets",
+    "drinking-water": "Drinking water",
+    playgrounds: "Playgrounds",
+    parking: "Parking",
+    "charging-stations": "Charging stations",
+    "gas-stations": "Gas stations",
+    "ice-cream": "Ice cream",
+    "dog-parks": "Dog park",
+    "picnic-spots": "Picnic spots",
+    viewpoints: "Viewpoints",
+    beaches: "Beach & swimming",
+    atms: "ATM",
+    "post-boxes": "Post boxes",
+    recycling: "Recycling",
+    "luggage-storage": "Luggage storage",
+    libraries: "Libraries",
+    "outdoor-gyms": "Outdoor gym",
+    "camp-sites": "Camp site",
+    shelters: "Shelter",
+    "rest-areas": "Rest area",
+    "dump-stations": "Dump station",
+    "post-offices": "Post offices",
+    showers: "Showers",
+    fireplaces: "Fireplaces & BBQ",
+    "compressed-air": "Compressed air",
+    benches: "Benches",
+  },
+
   groups: {
     essentials: "Essentials",
     car: "Car",
@@ -784,6 +787,7 @@ const ui: CopyDeck["ui"] = {
     questionsHeading: "Questions",
     allPointsIn: "All points of interest in {city}",
     allCities: "All cities on Wayside",
+    nearbyCities: "Nearby cities",
     sheetFreshnessBefore: "Counts and names above are from the extract of",
     sheetFreshnessAfter: ". The map itself is live.",
     pageFreshnessBefore: "Points come from",
@@ -798,6 +802,49 @@ const ui: CopyDeck["ui"] = {
     free: "Free",
     fee: "Fee",
     unnamedPlace: "Unnamed place",
+    noExtraDetails: "{name} — no extra details",
+    address: "Address",
+    fromBuilding: "From this building",
+    lastChecked: "Last checked",
+    lastEdited: "Last edited",
+    hours: {
+      Mo: "Mon", Tu: "Tue", We: "Wed", Th: "Thu", Fr: "Fri", Sa: "Sat", Su: "Sun",
+      PH: "public holidays", SH: "school holidays", closed: "closed",
+    },
+    age: {
+      withinMonth: "within the last month",
+      months: { one: "a month ago", other: "{count} months ago" },
+      years: { one: "a year ago", other: "{count} years ago" },
+    },
+    keyLabels: {
+      changing_table: "Baby changing",
+      "toilets:disposal": "Toilet type",
+      "ramp:wheelchair": "Wheelchair ramp",
+      building_levels: "Floors",
+      "building:levels": "Floors",
+      collection_times: "Emptied",
+      "socket:type2": "Type 2 sockets",
+      "socket:type2_combo": "CCS sockets",
+      "socket:chademo": "CHAdeMO sockets",
+      "socket:schuko": "Schuko sockets",
+      backrest: "Backrest",
+      wikipedia: "Wikipedia",
+      wikidata: "Wikidata",
+    },
+    inThisBuilding: "In this building",
+    inBuilding: "In {building}",
+    buildingLastChecked: "Building last checked",
+    buildingLastEdited: "Building last edited",
+  },
+
+  translate: {
+    action: "Translate",
+    pending: "Translating…",
+    showOriginal: "Show original",
+    showTranslation: "Show translation",
+    sameLanguage: "Already in English",
+    quota: "Translation limit reached for today",
+    failed: "Translation unavailable",
   },
 
   controls: {
@@ -810,6 +857,22 @@ const ui: CopyDeck["ui"] = {
     chooseCategories: "Choose categories",
     clearAll: "Clear all selections",
     presetTitle: "Show {preset} points on the map",
+    showMapTools: "Show map tools",
+    hideMapTools: "Hide map tools",
+    myLocation: "Center map to your location",
+    share: "Share this view",
+    toggleSearch: "Show/hide search bar",
+    directions: "Directions",
+    language: "Language",
+    searchPlaceholder: "Search for location",
+    routeHeading: "Search points along route",
+    routeSubmit: "Search route",
+    routeReset: "Reset route",
+    routeActive: "Displaying points along route from {start} to {end}",
+    routeYourLocation: "your location",
+    typeLocation: "Type a location",
+    dragDownToClose: "Drag down to close",
+    dragUpForMore: "Drag up for more",
   },
 
   notices: {

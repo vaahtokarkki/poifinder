@@ -72,7 +72,7 @@ body {
   padding: 0.75em 1em 0 1em;
   /* Never wider than the screen, whatever the widest row inside is */
   width: 100%;
-  max-width: min(620px, 100vw);
+  max-width: min(520px, 100vw);
   box-sizing: border-box;
   /* Let taps between the controls reach the map */
   pointer-events: none;
@@ -84,7 +84,70 @@ body {
 
 .category-select {
   width: 100%;
-  max-width: 320px;
+}
+
+/* The picker takes the rest of the row, so the only space between it and the
+   language button is the row's own gap. Capped widths were leaving 37px of
+   nothing on a large phone and 227px at the overlay's full width.
+   `min-width: 0` because a flex item will not shrink below its content
+   otherwise, and the selected chips are content */
+.category-row .category-select {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* The category picker and the language button share the top row, with the
+   language pinned right. Both step aside for the search and route panels,
+   which take this row for themselves */
+.category-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+}
+
+/* Both children render null together, and an empty flex row is still a child
+   of the overlay column: without this it keeps its --overlay-gap and the
+   search bar sits one gap lower than the control it replaced */
+.category-row:empty {
+  display: none;
+}
+
+.language-select {
+  margin-left: auto;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  /* Deliberately shorter than the 40px category select beside it: this is the
+     control you touch once and then forget, so it reads as secondary to the
+     picker rather than its equal. .category-row centres the two */
+  height: 32px;
+  padding: 0 0.55em 0 0.5em;
+  border: none;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  color: #5f6368;
+  cursor: pointer;
+  /* A button does not inherit the page font on its own */
+  font: inherit;
+}
+
+.language-select-code {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.language-select:hover {
+  background: #f5f5f5;
+}
+
+.language-select:focus-visible {
+  outline: 2px solid #4caf50;
+  outline-offset: 2px;
 }
 
 /* The search bar takes the place of the category select while it is open */
@@ -129,11 +192,6 @@ body {
   padding: 1.25em 0.5em 1em 0.5em;
 }
 
-@media (min-width: 900px) {
-  .category-select {
-    max-width: 380px;
-  }
-}
 
 /* ---------- Floating map controls ---------- */
 

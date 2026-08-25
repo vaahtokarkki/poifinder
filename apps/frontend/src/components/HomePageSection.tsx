@@ -1,7 +1,7 @@
 import React from "react";
 import { CITIES_PATH } from "../seo/pageMeta";
 import { formatCount } from "../seo/format";
-import { DEFAULT_LOCALE, resolve, ui } from "../copy";
+import { getLocale, resolve, ui } from "../copy";
 import type { HomePageData } from "../seo/pageData";
 import { InfoSheetCredits, InfoSheetGuide, InfoSheetSummary } from "./AppInfoPanel";
 
@@ -42,7 +42,7 @@ const HomePageSection: React.FC<{ data: HomePageData }> = ({ data }) => (
       <p className="info-sheet-footer">
         <a href={CITIES_PATH}>
           {ui().page.browseCitiesBefore} {formatCount(data.cityCount)}{" "}
-          {resolve(ui().page.cityUnit, DEFAULT_LOCALE, {}, data.cityCount)}{" "}
+          {resolve(ui().page.cityUnit, getLocale(), {}, data.cityCount)}{" "}
           {ui().page.browseCitiesAfter}
         </a>
       </p>

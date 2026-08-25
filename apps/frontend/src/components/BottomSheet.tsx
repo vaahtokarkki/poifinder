@@ -293,7 +293,7 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, children }) 
         role="button"
         tabIndex={0}
         aria-expanded={snap === "full"}
-        title={snap === "full" ? "Drag down to close" : "Drag up for more"}
+        title={snap === "full" ? ui().controls.dragDownToClose : ui().controls.dragUpForMore}
         onKeyDown={(e) => {
           if (e.key === "ArrowUp") applySnap("full");
           if (e.key === "ArrowDown") applySnap(snap === "full" ? "peek" : "hidden");

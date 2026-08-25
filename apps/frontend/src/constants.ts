@@ -30,7 +30,7 @@ import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
 import TireRepairIcon from '@mui/icons-material/TireRepair';
 import ChairAltIcon from '@mui/icons-material/ChairAlt';
 import * as React from "react";
-import { DEFAULT_LOCALE, ui } from "./copy";
+import { getLocale, ui } from "./copy";
 import type { Locale } from "./copy";
 
 export enum CATEGORIES {
@@ -504,7 +504,7 @@ export const CATEGORY_GROUP_ID: Record<CATEGORY_GROUP, string> = {
 /** The name of a category group, as the picker heads it */
 export function groupDisplay(
   group: CATEGORY_GROUP,
-  locale: Locale = DEFAULT_LOCALE
+  locale: Locale = getLocale()
 ): string {
   return ui(locale).groups[CATEGORY_GROUP_ID[group]] ?? "";
 }
@@ -512,7 +512,7 @@ export function groupDisplay(
 /** The name of a preset, as its chip reads */
 export function presetLabel(
   preset: CategoryPreset,
-  locale: Locale = DEFAULT_LOCALE
+  locale: Locale = getLocale()
 ): string {
   return ui(locale).presets[preset.id] ?? preset.id;
 }

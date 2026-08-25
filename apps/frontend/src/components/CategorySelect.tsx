@@ -9,6 +9,8 @@ import React from "react";
 import { CATEGORIES, CATEGORY_CONFIG, CATEGORY_GROUP, groupDisplay } from "../constants";
 import { categoryDisplay } from "../seo/categories";
 import { ui } from "../copy";
+import type { Locale } from "../copy";
+import { useActiveLocale } from "../hooks/useLocale";
 import { analytics } from "../analytics";
 
 // Value of the clear action, kept apart from the numeric category values
@@ -25,30 +27,36 @@ type CategorySelectProps = {
   visible: boolean;
 };
 
-// Build categories array from CATEGORY_CONFIG, including group.
-//
-// Read at module scope, which fixes the language at import. That is correct
-// while English is the only deck and there is nothing that can change it at
-// runtime; the day a language selector lands, this and groupedCategories below
-// are what have to move inside the component and take the locale as a dep
-const categories = Object.entries(CATEGORY_CONFIG).map(([key, config]) => ({
-  label: categoryDisplay(Number(key) as CATEGORIES),
-  value: Number(key) as CATEGORIES,
-  group: config.group,
-}));
+/**
+ * The categories, named in the active language and grouped for the menu.
+ *
+ * Computed per locale rather than once at import, which is what lets the
+ * language selector reach the picker. CATEGORY_CONFIG is ordered by category
+ * id — the order they were added in, which means nothing to somebody looking
+ * for one — so each group is sorted by name, and the collation is the
+ * language's own.
+ */
+function buildCategories(locale: Locale) {
+  const categories = Object.entries(CATEGORY_CONFIG).map(([key, config]) => ({
+    label: categoryDisplay(Number(key) as CATEGORIES, locale),
+    value: Number(key) as CATEGORIES,
+    group: config.group,
+  }));
 
-// Group categories by group, alphabetically within each. CATEGORY_CONFIG is
-// ordered by category id, which is the order they were added in and means
-// nothing to someone looking for one. filter returns a new array, so sorting
-// it here leaves the categories list above alone
-const groupedCategories: Record<CATEGORY_GROUP, typeof categories> = Object.values(CATEGORY_GROUP)
-  .filter((g) => typeof g === "number")
-  .reduce((acc, group) => {
-    acc[group as CATEGORY_GROUP] = categories
-      .filter((cat) => cat.group === group)
-      .sort((a, b) => a.label.localeCompare(b.label));
-    return acc;
-  }, {} as Record<CATEGORY_GROUP, typeof categories>);
+  const grouped = Object.values(CATEGORY_GROUP)
+    .filter((g) => typeof g === "number")
+    .reduce(
+      (acc, group) => {
+        acc[group as CATEGORY_GROUP] = categories
+          .filter((cat) => cat.group === group)
+          .sort((a, b) => a.label.localeCompare(b.label, locale));
+        return acc;
+      },
+      {} as Record<CATEGORY_GROUP, typeof categories>
+    );
+
+  return { categories, grouped };
+}
 
 const CategorySelect: React.FC<CategorySelectProps> = ({
   value,
@@ -56,6 +64,11 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
   onCommit,
   visible,
 }) => {
+  const locale = useActiveLocale();
+  const { categories, grouped: groupedCategories } = React.useMemo(
+    () => buildCategories(locale),
+    [locale]
+  );
   // The selection as it was when the menu was opened, to tell whether closing
   // it is worth a new query
   const valueOnOpenRef = React.useRef<CATEGORIES[]>(value);

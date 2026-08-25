@@ -3,7 +3,7 @@ import { findCity } from "../seo/cities";
 import type { City } from "../seo/cities";
 import { categoryHeading, findCategorySeo, vocabFor } from "../seo/categories";
 import { formatCount } from "../seo/format";
-import { DEFAULT_LOCALE, interpolate, resolve, ui } from "../copy";
+import { getLocale, interpolate, resolve, ui } from "../copy";
 import { CITIES_PATH, categoryPath, cityPath } from "../seo/pageMeta";
 import type { CityPageData } from "../seo/pageData";
 
@@ -40,7 +40,7 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data, variant =
       )}
       <p className="info-sheet-summary">
         {formatCount(total)} mapped points across {entries.length}{" "}
-        {resolve(ui().page.categoryUnit, DEFAULT_LOCALE, {}, entries.length)} in {city.name},{" "}
+        {resolve(ui().page.categoryUnit, getLocale(), {}, entries.length)} in {city.name},{" "}
         {city.country}. {ui().page.citySummaryAfter}
       </p>
 
@@ -64,7 +64,7 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data, variant =
 
       {neighbours.length > 0 && (
         <section className="info-sheet-section">
-          <h2 className="info-sheet-heading">Nearby cities</h2>
+          <h2 className="info-sheet-heading">{ui().page.nearbyCities}</h2>
           <ul className="poi-links">
             {neighbours.map((neighbour) => (
               <li key={neighbour.slug}>
@@ -80,7 +80,7 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data, variant =
           this one, so without this a crawler that lands on a hub can walk the
           region it is in and never find the other continents */}
       <p className="info-sheet-summary">
-        <a href={CITIES_PATH}>All cities on Wayside</a>
+        <a href={CITIES_PATH}>{ui().page.allCities}</a>
       </p>
 
       {variant === "sheet" ? (

@@ -20,10 +20,14 @@ type SearchBarProps = {
 
 const SearchBar: React.FC<SearchBarProps> = ({
   onSearch,
-  placeholder = "Search for location",
+  placeholder,
   visible = true,
   onClose,
 }) => {
+  // Defaulted here rather than in the parameter list: a default there is
+  // evaluated once per render but written in the module's language at the time
+  // the file is read, and this one has to follow the selector
+  const placeholderText = placeholder ?? ui().controls.searchPlaceholder;
   const [value, setValue] = useState("");
   const [autoFocus, setAutoFocus] = useState(false);
 
@@ -58,7 +62,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           setValue(selected);
           onSearch(selected, coords, extent);
         }}
-        placeholder={placeholder}
+        placeholder={placeholderText}
         autoFocus={autoFocus}
         // Match the pill look of the other controls on top of the map
         styles={{

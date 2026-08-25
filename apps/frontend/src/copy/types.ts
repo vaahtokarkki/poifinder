@@ -16,7 +16,7 @@
  */
 
 /** The locales with a deck of their own. English is the fallback for all of them */
-export type Locale = "en";
+export type Locale = "en" | "de" | "fi";
 
 export const DEFAULT_LOCALE: Locale = "en";
 
@@ -60,13 +60,6 @@ export type CategoryCopy = {
   singular: string;
   /** Sentence case heading noun */
   heading: string;
-  /**
-   * The name the map's own controls use, which is not always the heading: the
-   * picker says "Toilets" where a page heading says "Public toilets", and
-   * "Beach & swimming" where the page says "Beaches and swimming". Short
-   * enough for a chip, in other words
-   */
-  display: string;
   /** The paragraph above the list */
   intro: PluralMessage;
   /** Questions people actually search for, answered specifically */
@@ -85,6 +78,20 @@ export type CategoryCopy = {
  * component keeps the `<a>` and asks for the words around it.
  */
 export type UiCopy = {
+  /**
+   * What the map's controls call each category, keyed by category slug.
+   *
+   * In `ui` rather than in `categories` because these are chrome: they appear
+   * in the picker, on the preset chips and in the marker popups, and never in
+   * a prerendered paragraph. A locale that translates the app but not the
+   * pages still needs them, and having them on the far side of that line left
+   * a German picker reading "Playgrounds" next to "Familie".
+   *
+   * Not the same string as the page heading, either: the picker says "Toilets"
+   * where a page says "Public toilets", and "Beach & swimming" where the page
+   * says "Beaches and swimming". Short enough for a chip.
+   */
+  categoryNames: Record<string, string>;
   /** Names of the category groups in the picker, keyed by group id */
   groups: Record<string, string>;
   /** Names of the presets, keyed by preset id */
@@ -127,6 +134,7 @@ export type UiCopy = {
     questionsHeading: string;
     allPointsIn: string;
     allCities: string;
+    nearbyCities: string;
     sheetFreshnessBefore: string;
     sheetFreshnessAfter: string;
     pageFreshnessBefore: string;
@@ -141,6 +149,64 @@ export type UiCopy = {
     free: string;
     fee: string;
     unnamedPlace: string;
+    /** The line shown instead of a popup, when a point carries nothing to say */
+    noExtraDetails: string;
+    address: string;
+    fromBuilding: string;
+    lastChecked: string;
+    lastEdited: string;
+    /**
+     * Opening hours syntax rendered as words. Keys are the OpenStreetMap
+     * codes, which are the same in every language; the values are not.
+     */
+    hours: {
+      Mo: string;
+      Tu: string;
+      We: string;
+      Th: string;
+      Fr: string;
+      Sa: string;
+      Su: string;
+      PH: string;
+      SH: string;
+      /** What `off` is written as */
+      closed: string;
+    };
+    /**
+     * How long ago a surveyor last confirmed the point. Plural forms, because
+     * "2 months ago" and "1 month ago" do not share a sentence in most
+     * languages and share even less in the ones with case systems.
+     */
+    age: {
+      withinMonth: string;
+      months: PluralMessage;
+      years: PluralMessage;
+    };
+    /**
+     * Labels for the OpenStreetMap keys whose tag name is not what a reader
+     * would call the thing.
+     *
+     * Deliberately not every key. OSM has tens of thousands in use and no deck
+     * can hold them; what this holds is the short list the popup already had
+     * an opinion about, and anything absent falls through to the key itself
+     * with its punctuation cleaned up. See labelFor in poiPopup.ts.
+     */
+    keyLabels: Record<string, string>;
+    inThisBuilding: string;
+    /** Reads "In {building}" when the building has a name of its own */
+    inBuilding: string;
+    buildingLastChecked: string;
+    buildingLastEdited: string;
+  };
+  /** The translate action on a prose tag value, and what it says when it fails */
+  translate: {
+    action: string;
+    pending: string;
+    showOriginal: string;
+    showTranslation: string;
+    sameLanguage: string;
+    quota: string;
+    failed: string;
   };
   /** The map's controls, and what a screen reader is told about them */
   controls: {
@@ -153,6 +219,26 @@ export type UiCopy = {
     chooseCategories: string;
     clearAll: string;
     presetTitle: string;
+    showMapTools: string;
+    hideMapTools: string;
+    myLocation: string;
+    share: string;
+    toggleSearch: string;
+    directions: string;
+    /** The language selector itself, which has to be reachable in any language */
+    language: string;
+    searchPlaceholder: string;
+    /** The route panel, which is its own small screen inside the map */
+    routeHeading: string;
+    routeSubmit: string;
+    routeReset: string;
+    /** Reads "Displaying points along route from {start} to {end}" */
+    routeActive: string;
+    /** Stands in for the start when the route begins where the visitor is */
+    routeYourLocation: string;
+    typeLocation: string;
+    dragDownToClose: string;
+    dragUpForMore: string;
   };
   /** What the app says when something has happened */
   notices: {
@@ -172,4 +258,24 @@ export type CopyDeck = {
   /** Questions that hold for every category, appended after the specific ones */
   commonFaq: FaqMessage[];
   ui: UiCopy;
+};
+
+/**
+ * A deck that is not English.
+ *
+ * Every section is optional, because the two halves of this site are
+ * translated for different reasons and on different schedules. The app chrome
+ * is ~500 words and pays off in every city at once; a `categories` deck is
+ * ~3,800 words and only pays off in the cities that speak the language. A
+ * locale is expected to arrive as `ui` alone and grow the page copy later, so
+ * that has to be a deck that typechecks rather than a special case.
+ *
+ * `ui` is all or nothing — see the note on `ui()` in index.ts. `categories`
+ * falls back key by key, so twenty translated categories serve twenty
+ * translated pages and the other six read English.
+ */
+export type LocaleDeck = {
+  categories?: Record<string, CategoryCopy>;
+  commonFaq?: FaqMessage[];
+  ui?: UiCopy;
 };

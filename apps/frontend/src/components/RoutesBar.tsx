@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Card, CardContent, Typography } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import GeocodeAutoComplete from "./GeocodeAutocomplete";
-import { ui } from "../copy";
+import { interpolate, ui } from "../copy";
 
 type RoutesBarProps = {
   onSearch: (start: [number, number] | null, end: [number, number]) => void;
@@ -38,7 +38,10 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
     return (
       <div>
         <Typography variant="h2" style={{fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em"}}>
-            Displaying points along route from {startLocationValue || "your location"} to {endLocationValue || "-"}
+            {interpolate(ui().controls.routeActive, {
+              start: startLocationValue || ui().controls.routeYourLocation,
+              end: endLocationValue || "-",
+            })}
         </Typography>
         <Button
           size="small"
@@ -54,7 +57,7 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
             if (deleteRoute) deleteRoute();
           }}
         >
-          Reset route
+          {ui().controls.routeReset}
         </Button>
       </div>
     );
@@ -63,7 +66,7 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
   return (
     <>
       <Typography variant="h2" style={{fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em"}}>
-          Search points along route
+          {ui().controls.routeHeading}
       </Typography>
       <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", zIndex: 1000, maxWidth: 350}} >
         <GeocodeAutoComplete
@@ -97,7 +100,7 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
           sx={{marginTop: ".5em"}}
           disabled={!endCoords}
         >
-          Search route
+          {ui().controls.routeSubmit}
         </Button>
       </form>
     </>

@@ -3,7 +3,7 @@ import { Marker, Popup, useMap } from "react-leaflet";
 import ParkIcon from '@mui/icons-material/Park';
 import { renderToString } from "react-dom/server";
 import { categoryDisplay } from "./seo/categories";
-import { ui } from "./copy";
+import { interpolate, ui } from "./copy";
 import { analytics } from "./analytics";
 import { divIcon } from "leaflet";
 import type { PointExpression, Popup as LeafletPopup, PopupEvent } from "leaflet";
@@ -508,10 +508,9 @@ function shouldOfferTranslation(key: string, value: string): boolean {
 }
 
 /** What to say when the service declined, in the reader's terms rather than its own */
-const FAILURE_MESSAGES: Record<TranslationFailure, string> = {
-  "same-language": "Already in English",
-  quota: "Translation limit reached for today",
-  failed: "Translation unavailable",
+const failureMessage = (failure: TranslationFailure): string => {
+  const t = ui().translate;
+  return failure === "same-language" ? t.sameLanguage : failure === "quota" ? t.quota : t.failed;
 };
 
 /**
@@ -565,12 +564,12 @@ const TranslatableValue: React.FC<{value: string; isProse: boolean}> = ({
   const retryable = failure === null || failure === "failed";
 
   const label = pending
-    ? "Translating…"
+    ? ui().translate.pending
     : translation
       ? showing
-        ? "Show original"
-        : "Show translation"
-      : "Translate";
+        ? ui().translate.showOriginal
+        : ui().translate.showTranslation
+      : ui().translate.action;
 
   return (
     <>
@@ -579,7 +578,7 @@ const TranslatableValue: React.FC<{value: string; isProse: boolean}> = ({
           right margin, where every other value in the popup ends */}
       <span className="poi-popup-translate-line">
         {failure && (
-          <span className="poi-popup-translate-note">{FAILURE_MESSAGES[failure]}</span>
+          <span className="poi-popup-translate-note">{failureMessage(failure)}</span>
         )}
         {retryable && (
           <button
@@ -720,7 +719,7 @@ const buildPopupRows = (tags: Record<string, string> = {}): PopupRow[] => {
   if (address)
     rows.push({
       key: "addr",
-      label: "Address",
+      label: ui().poi.address,
       value: address,
       written: true,
       rank: ADDRESS_RANK,
@@ -944,7 +943,7 @@ const InheritedFromBuilding: React.FC<{
   rows: PopupRow[];
 }> = ({ marker, rows }) => (
   <div className="poi-popup-inherited">
-    <p className="poi-popup-inherited-label">From this building</p>
+    <p className="poi-popup-inherited-label">{ui().poi.fromBuilding}</p>
     <PopupRows rows={rows} keyPrefix={`${marker.id}-from-building`} />
   </div>
 );
@@ -981,12 +980,12 @@ const RenderMarkerContents: React.FC<{
   const buildingSurvey = describeSurvey(
     building?.tags,
     undefined,
-    "Building last checked"
+    ui().poi.buildingLastChecked
   );
   const buildingEdited = describeEdit(
     building?.timestamp,
     undefined,
-    "Building last edited"
+    ui().poi.buildingLastEdited
   );
 
   return (
@@ -1028,7 +1027,9 @@ const RenderMarkerContents: React.FC<{
       {building && (
         <div className="poi-popup-building">
           <p className="poi-popup-building-label">
-            {buildingName ? `In ${buildingName}` : "In this building"}
+            {buildingName
+              ? interpolate(ui().poi.inBuilding, { building: buildingName })
+              : ui().poi.inThisBuilding}
           </p>
           {buildingRows.length > 0 && (
             <PopupRows rows={buildingRows} keyPrefix={`${marker.id}-building`} />
@@ -1183,7 +1184,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
             ? {
                 click: () => {
                   analytics.poiTappedWithoutDetails(findCategory(marker, categories));
-                  onNotice?.(`${title} — no extra details`);
+                  onNotice?.(interpolate(ui().poi.noExtraDetails, { name: title }));
                 },
               }
             : {

@@ -1,3 +1,4 @@
+import { getLocale, resolve, ui } from "./copy";
 /**
  * What a popup says about a point, and in what order.
  *
@@ -40,17 +41,7 @@ const TRANSLATABLE_KEYS =
  * here because a reader knows what "closed" means and nobody outside
  * OpenStreetMap has met `off`.
  */
-const OPENING_HOURS_WORDS: Record<string, string> = {
-  Mo: "Mon",
-  Tu: "Tue",
-  We: "Wed",
-  Th: "Thu",
-  Fr: "Fri",
-  Sa: "Sat",
-  Su: "Sun",
-  PH: "public holidays",
-  SH: "school holidays",
-};
+const openingHoursWords = (): Record<string, string> => ui().poi.hours;
 
 /**
  * One rule of an opening hours value, rewritten for a reader.
@@ -74,8 +65,9 @@ function formatOpeningHoursRule(rule: string): string {
   text = text.replace(/"([^"]*)"/g, "$1");
   // Midnight to midnight is how the syntax spells a full day
   text = text.replace(/\b00:00\s*-\s*24:00\b/g, "24h");
-  text = text.replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su|PH|SH)\b/g, word => OPENING_HOURS_WORDS[word]);
-  text = text.replace(/\boff\b/gi, "closed");
+  const words = openingHoursWords();
+  text = text.replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su|PH|SH)\b/g, word => words[word]);
+  text = text.replace(/\boff\b/gi, words.closed);
   // A hyphen spans days, dates and times alike, and a dash is what a span
   // looks like in print. The comma is a list and only needs its spacing fixed
   text = text.replace(/\s*-\s*/g, "–").replace(/\s*,\s*/g, ", ");
@@ -146,11 +138,11 @@ const monthsSince = (date: Date, now: Date): number =>
  * month" either; "within the last month" is true of both readings.
  */
 const relativeAge = (months: number): string => {
-  if (months < 1) return "within the last month";
-  if (months === 1) return "a month ago";
-  if (months < 12) return `${months} months ago`;
+  const age = ui().poi.age;
+  if (months < 1) return age.withinMonth;
+  if (months < 12) return resolve(age.months, getLocale(), { count: months }, months);
   const years = Math.floor(months / 12);
-  return years === 1 ? "a year ago" : `${years} years ago`;
+  return resolve(age.years, getLocale(), { count: years }, years);
 };
 
 /**
@@ -171,7 +163,7 @@ export const describeSurvey = (
    * these, one for each object, and "Last checked 2019" twice over says nothing
    * about which of the two nobody has looked at since
    */
-  lead = "Last checked"
+  lead = ui().poi.lastChecked
 ): string | null => {
   const raw = CHECK_DATE_KEYS.map(key => tags?.[key]).find(Boolean)?.trim();
   if (!raw) return null;
@@ -184,7 +176,7 @@ export const describeSurvey = (
 
   const [, year, month, day] = match;
   const date = new Date(Number(year), month ? Number(month) - 1 : 0, day ? Number(day) : 1);
-  const when = date.toLocaleDateString("en-GB", {
+  const when = date.toLocaleDateString(getLocale(), {
     year: "numeric",
     ...(month ? { month: "long" } : {}),
   });
@@ -218,7 +210,7 @@ export const describeEdit = (
   timestamp: string | undefined,
   now = new Date(),
   /** As in {@link describeSurvey}: which object this date belongs to */
-  lead = "Last edited"
+  lead = ui().poi.lastEdited
 ): string | null => {
   if (!timestamp) return null;
   const date = new Date(timestamp);
@@ -226,7 +218,7 @@ export const describeEdit = (
 
   // Day precision, unlike a survey date: this one is exact, and an edit made
   // yesterday is worth telling apart from one made at the start of the month
-  const when = date.toLocaleDateString("en-GB", {
+  const when = date.toLocaleDateString(getLocale(), {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -379,26 +371,15 @@ export const buildingRankForKey = (key: string): number =>
 
 /**
  * Labels for the keys whose tag name is not what a reader would call the thing.
- * Everything else is formatted from the key itself, which is usually right.
+ *
+ * The table lives in the copy deck now, because these are words. Everything
+ * absent from it is formatted from the key itself, which is usually right and
+ * is the only thing that can be right: OpenStreetMap has tens of thousands of
+ * keys in use, so an exhaustive table is not a thing that exists in any
+ * language. See the note on `keyLabels` in copy/types.ts.
  */
-const KEY_LABELS: Record<string, string> = {
-  changing_table: "Baby changing",
-  "toilets:disposal": "Toilet type",
-  "ramp:wheelchair": "Wheelchair ramp",
-  building_levels: "Floors",
-  "building:levels": "Floors",
-  collection_times: "Emptied",
-  "socket:type2": "Type 2 sockets",
-  "socket:type2_combo": "CCS sockets",
-  "socket:chademo": "CHAdeMO sockets",
-  "socket:schuko": "Schuko sockets",
-  backrest: "Backrest",
-  wikipedia: "Wikipedia",
-  wikidata: "Wikidata",
-};
-
 export const labelFor = (key: string): string => {
-  const label = KEY_LABELS[key];
+  const label = ui().poi.keyLabels[key];
   if (label) return label;
   // `contact:phone` is a phone number. The namespace is how the tag is filed,
   // not something to read out

@@ -788,6 +788,7 @@ const ui: CopyDeck["ui"] = {
     allPointsIn: "All points of interest in {city}",
     allCities: "All cities on Wayside",
     nearbyCities: "Nearby cities",
+    viewInThisLanguage: "This page in English",
     categoryTitle: "{noun} in {city} — {count} on the map | {site}",
     categoryDescription:
       "{count} {noun} in {city} on one map, with opening hours, fees and accessibility where OpenStreetMap has them. Free to use, no signup, works on your phone.",

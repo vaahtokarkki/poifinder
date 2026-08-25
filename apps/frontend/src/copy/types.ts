@@ -136,6 +136,13 @@ export type UiCopy = {
     allCities: string;
     nearbyCities: string;
     /**
+     * "This page in German", written in German — each deck supplies the line
+     * for its own language, the way the selector shows endonyms. A reader
+     * looking for their language has to be able to read the offer, and they
+     * cannot necessarily read the page it sits on.
+     */
+    viewInThisLanguage: string;
+    /**
      * The <title>, <meta description> and <h1> of a category page.
      *
      * Templates rather than assembled in pageMeta.ts, because the parts a

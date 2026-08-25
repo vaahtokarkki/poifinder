@@ -14,6 +14,7 @@ import {
   cityNames,
 } from "../seo/pageMeta";
 import { formatCount } from "../seo/format";
+import LocaleLinks from "./LocaleLinks";
 import { interpolate, ui } from "../copy";
 import type { Route } from "../seo/pageMeta";
 
@@ -135,6 +136,8 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
         {" · "}
         <a href={CITIES_PATH}>{ui().page.allCities}</a>
       </p>
+
+      <LocaleLinks city={city} categorySlug={route.categorySeo.slug} />
 
       {/* The sheet says where the points come from once, under the disclosure
           this sits inside, so here it only carries the one thing the credits

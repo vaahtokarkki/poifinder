@@ -105,9 +105,9 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       "Folge einer Route: Setze Start und Ziel, um die Punkte entlang des Wegs zu sehen.",
       "Teile den aktuellen Ausschnitt samt Kategorien mit der Teilen-Schaltfläche.",
     ],
-    creditsSourceBefore: "Die Punkte stammen von den Mitwirkenden von",
+    creditsSourceBefore: "Die Punkte stammen von",
     creditsSourceLink: "OpenStreetMap",
-    creditsSourceAfter: ". Fehlt etwas? Trage es dort ein, dann erscheint es auch hier.",
+    creditsSourceAfter: "und Mitwirkenden. Fehlt etwas? Trage es dort ein, dann erscheint es auch hier.",
     creditsCodeBefore: "Wayside ist quelloffen:",
     creditsCodeLink: "der Code liegt auf GitHub",
     creditsCodeAfter: ".",
@@ -146,6 +146,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     allPointsIn: "Alle interessanten Orte in {city}",
     allCities: "Alle Städte auf Wayside",
     nearbyCities: "Städte in der Nähe",
+    viewInThisLanguage: "Diese Seite auf Deutsch",
     categoryTitle: "{noun} in {city} — {count} auf der Karte | {site}",
     categoryDescription:
       "{count} {noun} in {city} auf einer Karte, mit Öffnungszeiten, Gebühren und Barrierefreiheit, soweit OpenStreetMap sie kennt. Kostenlos, ohne Anmeldung, funktioniert auf dem Handy.",
@@ -163,7 +164,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     sheetFreshnessAfter: ". Die Karte selbst ist live.",
     pageFreshnessBefore: "Die Punkte stammen von den Mitwirkenden von",
     pageFreshnessLink: "OpenStreetMap",
-    pageFreshnessMiddle: ", zuletzt aktualisiert am",
+    pageFreshnessMiddle: "und wurden zuletzt aktualisiert am",
     pageFreshnessAfter:
       ". Fehlt etwas? Trage es dort ein, dann erscheint es beim nächsten Abgleich auch hier.",
   },

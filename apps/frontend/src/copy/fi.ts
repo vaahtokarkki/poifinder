@@ -143,6 +143,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     allPointsIn: "Kaikki kohteet {cityIn}",
     allCities: "Kaikki kaupungit Waysidessa",
     nearbyCities: "Lähikaupungit",
+    viewInThisLanguage: "Tämä sivu suomeksi",
     categoryTitle: "{noun} {cityIn} — {count} kartalla | {site}",
     categoryDescription:
       "{noun} {cityIn}: {count} kartalla, aukioloaikoineen, maksuineen ja esteettömyystietoineen sikäli kuin OpenStreetMap ne tuntee. Maksuton, ilman kirjautumista, toimii puhelimella.",

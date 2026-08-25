@@ -3,6 +3,7 @@ import { findCity } from "../seo/cities";
 import type { City } from "../seo/cities";
 import { categoryHeading, findCategorySeo, vocabFor } from "../seo/categories";
 import { formatCount } from "../seo/format";
+import LocaleLinks from "./LocaleLinks";
 import { getLocale, interpolate, resolve, ui } from "../copy";
 import { CITIES_PATH, categoryPath, cityPath,
   cityName,
@@ -95,18 +96,21 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data, variant =
         <a href={CITIES_PATH}>{ui().page.allCities}</a>
       </p>
 
+      <LocaleLinks city={city} />
+
       {variant === "sheet" ? (
         <p className="info-sheet-footer">
-          Counts above are from the extract of{" "}
-          <time dateTime={data.updatedAt}>{data.updatedAt}</time>. The map itself is live.
+          {ui().page.sheetFreshnessBefore}{" "}
+          <time dateTime={data.updatedAt}>{data.updatedAt}</time>
+          {ui().page.sheetFreshnessAfter}
         </p>
       ) : (
         <p className="info-sheet-footer">
-          Points come from{" "}
+          {ui().page.pageFreshnessBefore}{" "}
           <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
-            OpenStreetMap
+            {ui().page.pageFreshnessLink}
           </a>{" "}
-          contributors, last refreshed{" "}
+          {ui().page.pageFreshnessMiddle}{" "}
           <time dateTime={data.updatedAt}>{data.updatedAt}</time>.
         </p>
       )}

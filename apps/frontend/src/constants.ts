@@ -530,6 +530,27 @@ export function presetLabel(
 export const SELF_HOSTED_OVERPASS_URL: string | undefined =
   import.meta.env.VITE_OVERPASS_API_URL?.trim() || undefined;
 
+/**
+ * The prologue every runtime query is built with.
+ *
+ * The `[timeout:]` and `[maxsize:]` are not belt and braces, they are what
+ * lets the query run at all on our own instance. A dispatcher started with
+ * `--time` / `--space` treats those as the budget shared by every query
+ * running at once, and a query reserves what it declares out of that pool
+ * before it may start. Declare nothing and Overpass fills in its own defaults
+ * — 180 s and 512 MB — which is more than the pool holds, so the dispatcher
+ * never grants a slot and every query, however cheap, comes back as a 504
+ * carrying `Dispatcher_Client::request_read_and_idx::timeout`. That took the
+ * API down for a day on 2026-08-24.
+ *
+ * These have to stay in step with OVERPASS_TIME and OVERPASS_SPACE in
+ * apps/overpass/docker-compose.prod.yml, which are sized to hold several of
+ * these at once, and with QUERY_TIMEOUT in scripts/fetch-poi-data.mjs. The
+ * public mirrors run budgets far larger than anything here, so this changes
+ * nothing for them.
+ */
+export const OVERPASS_QUERY_PROLOGUE = "[out:json][timeout:60][maxsize:268435456]";
+
 // Public Overpass mirrors, used when no self hosted instance is configured
 export const OVERPASS_API_CONFIG = {
   URLS: [

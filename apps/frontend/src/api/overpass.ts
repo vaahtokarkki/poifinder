@@ -5,6 +5,7 @@ import {
   CATEGORIES,
   CATEGORY_CONFIG,
   OVERPASS_API_CONFIG,
+  OVERPASS_QUERY_PROLOGUE,
   SELF_HOSTED_OVERPASS_URL,
 } from "../constants";
 import { fetchWithRetry } from "../utils/retryFetch";
@@ -48,7 +49,7 @@ const buildBaseOverpassQuery = (
    * on working.
    */
   return `
-    [out:json];
+    ${OVERPASS_QUERY_PROLOGUE};
     (
       ${filterBlocks}
     );
@@ -445,7 +446,7 @@ export async function fetchOverpassElement(
 ): Promise<OverpassElementDetails> {
   const statement = type === "way" ? "way" : "rel";
   const elements = await runOverpassQuery(
-    `[out:json];${statement}(id:${id});out geom;`
+    `${OVERPASS_QUERY_PROLOGUE};${statement}(id:${id});out geom;`
   );
   const self = elements.find(
     element => element.type === type && String(element.id) === String(id)
@@ -659,7 +660,7 @@ export async function fetchEnclosingBuilding(
     // marker query: a self hosted instance imported without metadata answers
     // `out meta` with nothing at all rather than with the objects minus their
     // timestamps. See buildBaseOverpassQuery
-    `[out:json];wr[building](around:${ENCLOSING_BUILDING.RADIUS},${lat},${lng});out meta geom;`
+    `${OVERPASS_QUERY_PROLOGUE};wr[building](around:${ENCLOSING_BUILDING.RADIUS},${lat},${lng});out meta geom;`
   );
 
   let best: { building: EnclosingBuilding; rank: number; area: number } | null = null;

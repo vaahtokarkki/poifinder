@@ -108,41 +108,56 @@ services:
       OVERPASS_USE_AREAS: "false"
       OVERPASS_ALLOW_DUPLICATE_QUERIES: "yes"
 
-      # Bounds for one query, not budgets for the server: the app's queries
-      # need far less, these are here so a bad one dies on its own.
+      # Bounds on the *server*, not on one query — which is the thing that
+      # broke production on 2026-08-24 and is why the numbers below are what
+      # they are.
       #
-      # Measured over five days of real traffic: the slowest query answered in
-      # 4.0 s, the 99th percentile in 1.4 s, and the largest answer was 848 KB.
-      # Everything below sits far above that and far below what an unbounded
-      # query can cost, which is the whole idea — see "Keeping it to our own
-      # queries" in README.md.
+      # OVERPASS_TIME and OVERPASS_SPACE are the dispatcher's --time and
+      # --space, and both are the budget shared by everything running at once.
+      # A query reserves its declared [timeout:] and [maxsize:] out of that
+      # pool before it is allowed to start. A query that declares more than the
+      # whole pool holds can therefore never be granted a slot: it waits, the
+      # interpreter gives up, and the client gets
       #
-      # OVERPASS_TIME is the one that was missing. It is the dispatcher's
-      # --time, the ceiling on how long one query may run, and with it unset
-      # there was no ceiling at all: OVERPASS_MAX_TIMEOUT only makes nginx stop
-      # waiting, it does not make Overpass stop working.
+      #   runtime error: ... Dispatcher_Client::request_read_and_idx::timeout
       #
-      # It has to stay at or above the [timeout:] the build scripts ask for —
-      # QUERY_TIMEOUT in apps/frontend/scripts/fetch-poi-data.mjs, which is
-      # kept at the same number. Raise both together, or a data refresh starts
-      # being refused for asking for more time than the server allows
-      OVERPASS_TIME: "60"
+      # as a 504, after about 15 seconds, whatever the query actually costs.
+      #
+      # That is exactly what --time=60 did. The app's runtime queries in
+      # apps/frontend/src/api/overpass.ts carried no [timeout:] at all, so each
+      # one asked for Overpass's default of 180 s against a 60 s pool and none
+      # of them could ever run — including `way(id:...);out geom;`. --space at
+      # 256 MB was the same mistake independently: the default [maxsize:] is
+      # 512 MB. The check that was done before shipping this looked at
+      # QUERY_TIMEOUT in apps/frontend/scripts/fetch-poi-data.mjs, which does
+      # send [timeout:60]; the app itself was the half that was missed.
+      #
+      # So the rule is: pool >= (concurrent queries) x (what one query
+      # declares). The app now declares [timeout:60][maxsize:268435456] at
+      # every call site, and these leave room for eight of those at once.
+      #
+      # Before touching either number, check that every query really does
+      # declare its own [timeout:] and [maxsize:], and verify with one request
+      # afterwards — a wrong value here does not degrade the API, it stops it
+      # dead, and it stays dead across restarts and reimports
+      OVERPASS_TIME: "480"
 
-      # nginx waits a little longer than that, so a query that hits the ceiling
-      # comes back as Overpass's own error rather than as a gateway timeout
+      # nginx waits a little longer than one query's own [timeout:], so a query
+      # that hits its ceiling comes back as Overpass's own error rather than as
+      # a gateway timeout
       OVERPASS_MAX_TIMEOUT: 90s
 
-      # Memory one query may use. 256 MB against a 848 KB largest answer
-      OVERPASS_SPACE: "268435456"
-
-      # Longest query body nginx accepts. The largest real one is a route
-      # search whose polygon is 177 KB; the median is 556 bytes
-      OVERPASS_MAX_SIZE: 256k
+      # 8 x the 256 MB one query declares. Against a 848 KB largest real answer
+      OVERPASS_SPACE: "2147483648"
 
       # Concurrent queries from one address. Note this is *concurrency*, not a
       # rate: WAYSIDE_RATE_LIMIT below is what stops one client asking as fast
       # as it can, one query after another
       OVERPASS_RATE_LIMIT: "30"
+
+      # Longest query body nginx accepts. The largest real one is a route
+      # search whose polygon is 177 KB; the median is 556 bytes
+      OVERPASS_MAX_SIZE: 256k
 
       # Requests per second per address, and how many may arrive at once. Our
       # own prerender peaks at 3 a second during a deploy and real visitors at

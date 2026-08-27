@@ -17,6 +17,13 @@ interface ImportMetaEnv {
   readonly VITE_MATOMO_URL?: string;
   /** The site id Matomo gave this site, "1" on a fresh install */
   readonly VITE_MATOMO_SITE_ID?: string;
+  /**
+   * CARTO basemaps key, for the Voyager vector tiles the map is drawn from.
+   * CARTO requires one on every request to basemaps.cartocdn.com; unset, the
+   * map still draws for now, but that is a promise CARTO has said it will stop
+   * keeping. Free up to their fair use limit: https://carto.com/basemaps/apikey/
+   */
+  readonly VITE_CARTO_API_KEY?: string;
 }
 
 interface ImportMeta {

@@ -2,7 +2,8 @@ import { buffer } from "@turf/turf";
 import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
 import { Map, latLngBounds, point as pixelPoint } from 'leaflet';
 import { useCallback, useEffect, useRef, useState } from "react";
-import { GeoJSON, MapContainer, TileLayer, useMapEvent } from "react-leaflet";
+import { GeoJSON, MapContainer, useMapEvent } from "react-leaflet";
+import BasemapLayer from "./components/BasemapLayer";
 import CategorySelect from "./components/CategorySelect";
 import LanguageSelect from "./components/LanguageSelect";
 import PoiMarkers from "./PoiMarkers";
@@ -983,6 +984,13 @@ const App = () => {
       <MapContainer
         center={[60, 25]}
         zoom={15}
+        // The zoom range used to come from the raster TileLayer, which carried
+        // Leaflet's default ceiling of 18. A vector layer declares nothing of
+        // the sort, so without these the map would zoom without end into a
+        // basemap that stops having anything more to say. The floor is 1
+        // rather than 0 because the GL map and Leaflet drift apart at 0
+        minZoom={1}
+        maxZoom={18}
         scrollWheelZoom={true}
         className="map-root"
         zoomControl={false}
@@ -1076,10 +1084,7 @@ const App = () => {
           <MyLocationIconButton
             onClick={handleMyLocationClick} />
         </div>
-        <TileLayer
-          attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
-        />
+        <BasemapLayer />
         <UserPositionMarker position={userPosition} />
         <PoiMarkers markers={filteredMarkers} categories={category} onNotice={showNotice} />
         {routeGeoJson && displaySearchItem === "routes" && (

@@ -45,6 +45,14 @@ jobs:
           # and both end up readable in the bundle either way
           VITE_MATOMO_URL: ${{ vars.VITE_MATOMO_URL }}
           VITE_MATOMO_SITE_ID: ${{ vars.VITE_MATOMO_SITE_ID }}
+          # The CARTO basemaps key the map is drawn with. A secret rather than
+          # a variable, not because it can be kept out of the bundle — Vite
+          # inlines it and every tile URL in the browser carries it — but
+          # because it has a monthly quota behind it, and a secret at least
+          # stays out of the build log and out of a fork's PR builds. The
+          # protection that actually holds is the domain restriction on the key
+          # itself, set in the CARTO dashboard
+          VITE_CARTO_API_KEY: ${{ secrets.VITE_CARTO_API_KEY }}
 
       - name: Deploy
         run: npx wrangler deploy

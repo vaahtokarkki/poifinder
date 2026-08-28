@@ -145,14 +145,13 @@ const RenderMarkerIcon = (
    * somewhere to go should be able to tell the two apart without opening
    * either.
    *
-   * So the colour is drained rather than removed. Most of the category's own
-   * hue survives at 0.6, which is what the reader is scanning by — a grey icon
-   * has to be looked at twice to find out what it is, and that costs more than
-   * the condition is worth saying. One filter over the whole marker, ring
-   * included, so it dims as one thing rather than as an icon wearing a
-   * different border: a quiet mark that reads as a condition rather than as a
-   * warning, because the point is worth walking to when you were buying a
-   * coffee anyway.
+   * So the category's colour is dropped for a light grey rather than dimmed.
+   * The map is read by colour, and anything that keeps some of the hue is
+   * saying "this one, a bit less" — which is a comparison the eye has to stop
+   * and make at every marker. A grey one is out of that conversation at a
+   * glance and still legible by its shape, which is what the reader falls back
+   * on: these are the points to walk to when you were buying a coffee anyway,
+   * and the condition is the first thing worth knowing about them.
    */
   customersOnly: boolean = false
 ) => {
@@ -168,8 +167,7 @@ const RenderMarkerIcon = (
         align-items:center;
         justify-content:center;
         border: 2px solid #fff6;
-        color: ${color};
-        ${customersOnly ? "filter:saturate(0.4);" : ""}
+        color: ${customersOnly ? CUSTOMERS_ONLY_COLOR : color};
       ">
         ${renderToString(React.cloneElement(iconElement))}
       </span>
@@ -275,6 +273,15 @@ const hasChangingTable = (category: CATEGORIES | null, marker: OverpassMarkerDat
  */
 const isCustomersOnly = (marker: OverpassMarkerData) =>
   marker.tags?.access === "customers";
+
+/**
+ * What a customers-only point is drawn in instead of its category's colour.
+ *
+ * Light enough to drop out of the scan and dark enough to keep the icon's shape
+ * readable against the white disc it sits on — the shape is all that is left to
+ * say what the point is once the hue has gone. See RenderMarkerIcon.
+ */
+const CUSTOMERS_ONLY_COLOR = "#737474";
 
 /** The default of {@link RenderMarkerIcon}, for a point of no known category */
 const UNCATEGORISED_COLOR = "black";

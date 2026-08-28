@@ -133,6 +133,7 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
           // the selection instead of adding to it
           if (selected.includes(CLEAR_ALL)) {
             analytics.categoriesCleared();
+            analytics.categoriesChanged([]);
             onChange([]);
             return;
           }
@@ -210,6 +211,7 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
                   // Counted here and not in the Select's onChange above: one
                   // click runs both, so tracking in both doubles every tick
                   analytics.categoryToggled(cat.value, !alreadySelected);
+                  analytics.categoriesChanged(newSelected);
                   onChange(newSelected);
                 }}
               >

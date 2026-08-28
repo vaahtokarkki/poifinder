@@ -984,13 +984,27 @@ const InheritedFromBuilding: React.FC<{
  * links both reading "Edit in OpenStreetMap" would leave the reader to work out
  * from the indentation which one edits the shopping centre.
  */
-const EditInOsm: React.FC<{ href: string; label: string }> = ({ href, label }) => (
+const EditInOsm: React.FC<{
+  href: string;
+  label: string;
+  /** Which of the two objects a popup can offer this for */
+  object: "point" | "building";
+  /** The point's category, for both links: see analytics.osmEditOpened */
+  category: CATEGORIES | null;
+}> = ({ href, label, object, category }) => (
   <p className="poi-popup-edit">
     <a
       className="poi-popup-edit-link"
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      /*
+       * Counted rather than left to Matomo's outlink tracking, which sees only
+       * a URL: the report should say that somebody set out to fix a drinking
+       * fountain, not that openstreetmap.org was clicked for the fourth time
+       * this week from a page that links there in five other places
+       */
+      onClick={() => analytics.osmEditOpened(object, category)}
     >
       {label}
     </a>
@@ -1002,6 +1016,7 @@ const RenderMarkerContents: React.FC<{
   categories: readonly CATEGORIES[];
 }> = ({ marker, categories }) => {
   const { config, title, subtitle } = describeMarker(marker, categories);
+  const category = findCategory(marker, categories);
   const rows = buildPopupRows(marker.tags);
   const survey = describeSurvey(marker.tags);
   const edited = describeEdit(marker.timestamp);
@@ -1084,7 +1099,14 @@ const RenderMarkerContents: React.FC<{
           foot of the point's own block, and again at the foot of the
           building's, because each is a separate object with its own record to
           correct */}
-      {editUrl && <EditInOsm href={editUrl} label={ui().poi.editInOsm} />}
+      {editUrl && (
+        <EditInOsm
+          href={editUrl}
+          label={ui().poi.editInOsm}
+          object="point"
+          category={category}
+        />
+      )}
 
       {building && (
         <div className="poi-popup-building">
@@ -1099,7 +1121,12 @@ const RenderMarkerContents: React.FC<{
           {buildingSurvey && <p className="poi-popup-survey">{buildingSurvey}</p>}
           {buildingEdited && <p className="poi-popup-edited">{buildingEdited}</p>}
           {buildingEditUrl && (
-            <EditInOsm href={buildingEditUrl} label={ui().poi.editBuildingInOsm} />
+            <EditInOsm
+              href={buildingEditUrl}
+              label={ui().poi.editBuildingInOsm}
+              object="building"
+              category={category}
+            />
           )}
         </div>
       )}

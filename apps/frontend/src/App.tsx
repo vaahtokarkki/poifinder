@@ -1,4 +1,4 @@
-import { buffer } from "@turf/turf";
+import { bbox as bboxOf, buffer } from "@turf/turf";
 import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
 import { Map, latLngBounds, point as pixelPoint } from 'leaflet';
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -49,6 +49,7 @@ import { loadGPSLocation } from "./utils/gpsLocationStorage";
 import { loadPois, savePois, poiCacheMatchesCategories, isPoiCacheUpToDate } from "./utils/poiStorage";
 import { loadCategories, saveCategories, parseCategories, serializeCategories } from "./utils/categoryStorage";
 import { analytics, type QueryTrigger } from "./analytics";
+import { countryAt } from "./analytics/countries";
 
 /**
  * Points are only loaded from this zoom in. Further out the view spans a whole
@@ -368,6 +369,23 @@ const App = () => {
     // After the de-duplication above, so the report counts queries that were
     // really asked rather than the two effects that can ask for the same one
     analytics.categoriesQueried(categories, trigger);
+
+    /*
+     * And where that query was pointed. The middle of the area actually asked
+     * about — the route's buffer when there is one, the padded view otherwise —
+     * rather than the middle of the screen, so a route across a border is
+     * counted where it was searched.
+     *
+     * Skipped silently when the outlines are not loaded yet, which is every
+     * query in the first seconds of a visit. Waiting for them would mean
+     * holding up the map for a line in a report, and countryAt is written so
+     * that this stays a plain call with no promise in it
+     */
+    const [west, south, east, north] = polygon
+      ? (bboxOf(polygon) as [number, number, number, number])
+      : [fetchBbox[1], fetchBbox[0], fetchBbox[3], fetchBbox[2]];
+    const country = countryAt((south + north) / 2, (west + east) / 2);
+    if (country) analytics.overpassCountry(country, trigger);
 
     const promise = (async () => {
       setLoading(true);
@@ -905,6 +923,9 @@ const App = () => {
 
   // A preset is a one tap selection, so search for its points right away
   const handlePresetSelect = (categories: CATEGORIES[]) => {
+    // The preset's own event says which chip was tapped; this says what that
+    // left switched on, in the same words the picker's changes are counted in
+    analytics.categoriesChanged(categories);
     setCategory(categories);
     fetchMarkers(categories, "preset");
   };

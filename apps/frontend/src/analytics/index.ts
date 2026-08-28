@@ -166,6 +166,25 @@ export const analytics = {
   },
 
   /**
+   * What is switched on after a change, as one label: the whole selection
+   * rather than the category that moved.
+   *
+   * The toggle events above say what people reach for one at a time, and they
+   * cannot be added back up — a report of eight separate ticks does not say
+   * whether anybody looks for toilets and drinking water together. This is the
+   * combination, counted once per change, so the answer is a row in a report
+   * instead of a reconstruction.
+   *
+   * Only for changes a person made: the picker, the clear action and the
+   * presets. Restoring a selection from the URL or from last visit's storage is
+   * the app remembering rather than somebody choosing, and counting it would
+   * put every shared link into the report as a preference.
+   */
+  categoriesChanged(categories: readonly CATEGORIES[]): void {
+    trackEvent("Categories", "changed", categorySetName(categories), categories.length);
+  },
+
+  /**
    * The selection a query actually went out with, which is the honest answer to
    * "what do people use this for". The picker events above say what was tried;
    * this says what was searched, and the trigger says whether it was a
@@ -190,6 +209,20 @@ export const analytics = {
     // The popup's links only exist now. Matomo marks the ones it has already
     // bound, so this binds the new ones and leaves the rest alone
     push(["enableLinkTracking"]);
+  },
+
+  /**
+   * The link out to iD from a popup's footnotes, which is the one thing a
+   * reader can do here that changes OpenStreetMap itself.
+   *
+   * The target says which object was being fixed, because the two are different
+   * intentions: the point is the thing they came for, the building around it is
+   * something they noticed on the way. The category is the point's either way —
+   * for the building link too, since what is worth knowing is which kind of
+   * search leads people to correct the map, not that a building is a building.
+   */
+  osmEditOpened(target: "point" | "building", category: CATEGORIES | null): void {
+    trackEvent("POI", `edit in osm: ${target}`, categoryName(category));
   },
 
   /** A point with nothing to say: the tap gets a line at the bottom, not a popup */
@@ -230,6 +263,24 @@ export const analytics = {
 
   zoomHintTapped(): void {
     trackEvent("Map", "zoom hint: tapped");
+  },
+
+  /**
+   * Where the map was pointed when a query went out, as the country the middle
+   * of the requested area falls in.
+   *
+   * A country and nothing finer, which is the same bargain trackedUrl makes:
+   * the report should be able to say this app is used in Finland and Estonia
+   * without the database holding anywhere anybody stood. It is also a different
+   * fact from Matomo's own geolocation, which reports where the visitor is —
+   * somebody in Helsinki looking at Lisbon is one visit and two countries, and
+   * this is the one that says what they were looking for.
+   *
+   * Fired only when the outlines have loaded; see countries.ts, which never
+   * makes a query wait for them.
+   */
+  overpassCountry(country: string, trigger: QueryTrigger): void {
+    trackEvent("Geography", `query: ${trigger}`, country);
   },
 
   /** Every mirror exhausted. The message, not the query: no bbox goes to Matomo */

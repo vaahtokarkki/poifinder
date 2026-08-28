@@ -34,6 +34,8 @@ import {
   isInheritedFromBuilding,
   isTimetableKey,
   labelFor,
+  osmEditUrl,
+  osmEditUrlForRef,
   rankForKey,
   wikidataLabel,
   wikidataUrl,
@@ -966,6 +968,28 @@ const InheritedFromBuilding: React.FC<{
   </div>
 );
 
+/**
+ * The offer to fix what the dates above it have just cast doubt on: the object
+ * open in OpenStreetMap's editor, selected and ready to correct.
+ *
+ * Takes its wording rather than assuming it, for the same reason the date lines
+ * do. A popup showing a point inside a building carries two of these, and two
+ * links both reading "Edit in OpenStreetMap" would leave the reader to work out
+ * from the indentation which one edits the shopping centre.
+ */
+const EditInOsm: React.FC<{ href: string; label: string }> = ({ href, label }) => (
+  <p className="poi-popup-edit">
+    <a
+      className="poi-popup-edit-link"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {label}
+    </a>
+  </p>
+);
+
 const RenderMarkerContents: React.FC<{
   marker: OverpassMarkerData;
   categories: readonly CATEGORIES[];
@@ -974,6 +998,7 @@ const RenderMarkerContents: React.FC<{
   const rows = buildPopupRows(marker.tags);
   const survey = describeSurvey(marker.tags);
   const edited = describeEdit(marker.timestamp);
+  const editUrl = osmEditUrl(marker);
 
   /**
    * Asked for here rather than inside the section that shows it, because the
@@ -1005,6 +1030,12 @@ const RenderMarkerContents: React.FC<{
     undefined,
     ui().poi.buildingLastEdited
   );
+  /**
+   * The building has no centre of its own here — the lookup answers with its
+   * outline and tags, not a point — so the editor opens on the marker, which
+   * stands inside it by definition. iD selects the building either way
+   */
+  const buildingEditUrl = osmEditUrlForRef(building?.ref, marker.position);
 
   return (
     <div className="poi-popup-body">
@@ -1042,6 +1073,12 @@ const RenderMarkerContents: React.FC<{
       {survey && <p className="poi-popup-survey">{survey}</p>}
       {edited && <p className="poi-popup-edited">{edited}</p>}
 
+      {/* What to do about those two dates, offered where they are read: at the
+          foot of the point's own block, and again at the foot of the
+          building's, because each is a separate object with its own record to
+          correct */}
+      {editUrl && <EditInOsm href={editUrl} label={ui().poi.editInOsm} />}
+
       {building && (
         <div className="poi-popup-building">
           <p className="poi-popup-building-label">
@@ -1054,6 +1091,9 @@ const RenderMarkerContents: React.FC<{
           )}
           {buildingSurvey && <p className="poi-popup-survey">{buildingSurvey}</p>}
           {buildingEdited && <p className="poi-popup-edited">{buildingEdited}</p>}
+          {buildingEditUrl && (
+            <EditInOsm href={buildingEditUrl} label={ui().poi.editBuildingInOsm} />
+          )}
         </div>
       )}
     </div>

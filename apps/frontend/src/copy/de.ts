@@ -181,6 +181,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     fromBuilding: "Aus diesem Gebäude",
     lastChecked: "Zuletzt geprüft",
     lastEdited: "Zuletzt bearbeitet",
+    editInOsm: "Diesen Punkt in OpenStreetMap bearbeiten",
     hours: {
       Mo: "Mo", Tu: "Di", We: "Mi", Th: "Do", Fr: "Fr", Sa: "Sa", Su: "So",
       PH: "an Feiertagen", SH: "in den Schulferien", closed: "geschlossen",
@@ -225,6 +226,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     inBuilding: "In {building}",
     buildingLastChecked: "Gebäude zuletzt geprüft",
     buildingLastEdited: "Gebäude zuletzt bearbeitet",
+    editBuildingInOsm: "Gebäude in OpenStreetMap bearbeiten",
   },
 
   translate: {

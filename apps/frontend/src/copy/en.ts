@@ -822,6 +822,7 @@ const ui: CopyDeck["ui"] = {
     fromBuilding: "From this building",
     lastChecked: "Last checked",
     lastEdited: "Last edited",
+    editInOsm: "Edit this point in OpenStreetMap",
     hours: {
       Mo: "Mon", Tu: "Tue", We: "Wed", Th: "Thu", Fr: "Fri", Sa: "Sat", Su: "Sun",
       PH: "public holidays", SH: "school holidays", closed: "closed",
@@ -866,6 +867,7 @@ const ui: CopyDeck["ui"] = {
     inBuilding: "In {building}",
     buildingLastChecked: "Building last checked",
     buildingLastEdited: "Building last edited",
+    editBuildingInOsm: "Edit the building in OpenStreetMap",
   },
 
   translate: {

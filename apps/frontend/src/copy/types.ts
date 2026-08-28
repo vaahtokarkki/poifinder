@@ -188,6 +188,13 @@ export type UiCopy = {
     lastChecked: string;
     lastEdited: string;
     /**
+     * The link under those two dates, to the point open in OpenStreetMap's
+     * editor. Names both the object and where it is being opened: a popup can
+     * carry this and {@link editBuildingInOsm} at once, and a reader who has
+     * never heard of OSM should learn from the words where they are being sent
+     */
+    editInOsm: string;
+    /**
      * Opening hours syntax rendered as words. Keys are the OpenStreetMap
      * codes, which are the same in every language; the values are not.
      */
@@ -242,6 +249,8 @@ export type UiCopy = {
     inBuilding: string;
     buildingLastChecked: string;
     buildingLastEdited: string;
+    /** As {@link editInOsm}, for the building rather than the point */
+    editBuildingInOsm: string;
   };
   /** The translate action on a prose tag value, and what it says when it fails */
   translate: {

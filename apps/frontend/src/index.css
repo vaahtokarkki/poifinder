@@ -995,12 +995,55 @@ body {
 }
 
 /*
+ * The offer to fix the point, under the dates that prompted it. Set at their
+ * size and in their grey, and told apart from them by weight alone: it is the
+ * last line of the same footnote, not a new claim about the place.
+ *
+ * A little further from the line above than that line was from its own, because
+ * this is a different kind of thing — the dates report, this one asks — and the
+ * gap is what keeps a tap on it deliberate.
+ */
+.poi-popup .leaflet-popup-content .poi-popup-edit {
+  margin: 0.5em 0 0 0;
+  font-size: 0.7rem;
+}
+
+/*
+ * Scoped through `.leaflet-popup-content` for the colour, and it has to be:
+ * Leaflet paints every link inside the map `#0078A8` from `.leaflet-container
+ * a`, which outranks a single class. A bare `.poi-popup-edit-link { color }`
+ * never reaches the screen, and the link stays Leaflet's blue — which is easy
+ * to miss when the colour being asked for is also a blue, and impossible to
+ * miss when it is grey.
+ */
+.poi-popup .leaflet-popup-content .poi-popup-edit-link {
+  /* The same grey as the last edited line above it, rather than the blue of a
+     value's link: it belongs to the aside about the data, not to the account of
+     the place, and a blue line at the foot of the popup pulled the eye past
+     everything the reader opened it for. The weight is the whole difference
+     between this and the date it follows, which is all it needs to be */
+  color: #9aa0a6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.poi-popup .leaflet-popup-content .poi-popup-edit-link:hover {
+  text-decoration: underline;
+}
+
+/*
  * The building's own dates, inside the building's own section. Nearer the rows
  * above them than the point's footnotes are to theirs, so the whole block reads
  * as one thing said about one object rather than as the popup trailing off.
  */
 .poi-popup .leaflet-popup-content .poi-popup-building .poi-popup-survey {
   margin-top: 0.5em;
+}
+
+/* And the building's own edit link, set to that block's tighter spacing rather
+   than to the point's */
+.poi-popup .leaflet-popup-content .poi-popup-building .poi-popup-edit {
+  margin-top: 0.4em;
 }
 
 /* Machine translation notices and the reason one could not be had. Both are

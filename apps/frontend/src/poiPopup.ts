@@ -228,6 +228,73 @@ export const describeEdit = (
   return months < 0 ? `${lead} ${when}` : `${lead} ${when} · ${relativeAge(months)}`;
 };
 
+/* ---------- Fixing it, at the source ---------- */
+
+/**
+ * One object open in iD, OpenStreetMap's own browser editor, with it already
+ * selected.
+ *
+ * Offered under the dates because it is the answer to them. Those lines exist
+ * to say how much a reader should trust what they are reading, and a reader who
+ * has just walked to a fountain that was taken out in 2019 is the best informed
+ * person this database will hear from all year. The offer is worth making at
+ * exactly the moment the popup admits it might be wrong.
+ *
+ * The id goes in the query string, which is what tells the editor which object
+ * to select; the position goes in the hash, which is where the map opens. With
+ * the id alone iD restores wherever that reader last edited and then travels,
+ * which is a slower way to arrive and downloads a square of map nobody asked
+ * about on the way.
+ */
+const editUrl = (
+  type: string,
+  id: string,
+  /**
+   * Where to open the map. The building's link is handed the point's own
+   * position rather than a centre of its own: it is inside the building by
+   * definition, which is all this has to be
+   */
+  position?: [number, number]
+): string | null => {
+  /*
+   * Overpass answers with these three and nothing else. Anything else is a
+   * marker restored from storage before the cache carried a type, and a link
+   * that assumed `node` would open the editor on whatever unrelated object
+   * happens to hold that number — every id space in OSM is separate, and
+   * node 123 and way 123 both exist.
+   */
+  if (type !== "node" && type !== "way" && type !== "relation") return null;
+  if (!id) return null;
+
+  const select = `${type}=${encodeURIComponent(id)}`;
+  const base = `https://www.openstreetmap.org/edit?editor=id&${select}`;
+  if (!position) return base;
+
+  const [lat, lon] = position;
+  // Close enough to edit at without being so close the surroundings are gone,
+  // which is the zoom iD itself settles on when it selects something
+  return `${base}#map=19/${lat.toFixed(5)}/${lon.toFixed(5)}`;
+};
+
+/** The point itself, which is a node as often as it is a way or a relation */
+export const osmEditUrl = (marker: {
+  id: number | string;
+  type?: string;
+  position?: [number, number];
+}): string | null => editUrl(marker.type ?? "", String(marker.id), marker.position);
+
+/**
+ * The building the point stands in, named the way the building lookup names
+ * it: `way/123`, one string carrying both halves of what identifies an object.
+ */
+export const osmEditUrlForRef = (
+  ref: string | undefined,
+  position?: [number, number]
+): string | null => {
+  const [type, id] = ref?.split("/") ?? [];
+  return editUrl(type ?? "", id ?? "", position);
+};
+
 /* ---------- What order the rows go in, and what they are called ---------- */
 
 /**

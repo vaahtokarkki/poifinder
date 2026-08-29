@@ -8,6 +8,8 @@ import {
   OVERPASS_QUERY_PROLOGUE,
   PRIMARY_TAG_KEYS,
   SELF_HOSTED_OVERPASS_URL,
+  filterMatchesPrimaryTag,
+  matchesFilter,
 } from "../constants";
 import { fetchWithRetry } from "../utils/retryFetch";
 import { describeAddress } from "../poiPopup";
@@ -828,6 +830,98 @@ const dropDuplicateOutlines = (
   );
 };
 
+/* ---------- The building that only says it has one ---------- */
+
+/**
+ * What put a marker on the map for one category: being the thing asked for, or
+ * only saying it has one.
+ *
+ * The split is the one {@link filterMatchesPrimaryTag} already draws, and it
+ * is drawn on the filter rather than on the object: `[amenity=toilets]` names
+ * the place itself, while the Toilets category's second filter —
+ * `[building~"…"][toilets=yes]` — names a shopping centre with a toilet
+ * somewhere inside it. Several categories carry a filter of that second kind:
+ * `[atm=yes]` on a bank, `[cuisine=ice_cream]` on a café, `[fireplace=yes]` on
+ * a shelter. All of them say the same thing, which is where to go looking.
+ */
+const matchKind = (
+  tags: Record<string, string> | undefined,
+  category: CATEGORIES
+): "itself" | "stands-in" | null => {
+  let standsIn = false;
+  for (const filter of CATEGORY_CONFIG[category].filters) {
+    if (!matchesFilter(tags, filter)) continue;
+    // Any filter naming the place itself settles it, whatever else matched
+    if (filterMatchesPrimaryTag(filter)) return "itself";
+    standsIn = true;
+  }
+  return standsIn ? "stands-in" : null;
+};
+
+/**
+ * Drop an outline that is only standing in for points already on the map
+ * inside it.
+ *
+ * Kampin keskus is `building=retail` with `toilets=yes`, and three toilets are
+ * mapped inside it as nodes of their own. All four come back from a search for
+ * toilets, and the fourth is a marker over the whole shopping centre saying
+ * "there is a toilet in here" next to three that say where. That is worse than
+ * redundant: it is the least specific answer on the map drawn at the size of
+ * the building, and tapping it opens a popup about a shopping centre.
+ *
+ * The stand-in earns its place when nothing inside it is mapped, which is the
+ * usual case and why the filter exists — a centre that says it has a toilet is
+ * the only lead there is. So this is a question about what else came back
+ * rather than about the building, and it is asked per category: a mall with a
+ * toilet point inside it is still the only lead to its cash machine.
+ *
+ * Only outlines, never nodes. A node standing in for something — a bank node
+ * tagged `atm=yes` — has no extent for anything to be inside of, and a search
+ * that finds a real cash machine ten metres away has not established that it
+ * is the same one.
+ */
+const dropStandInAreas = (
+  markers: OverpassMarkerData[],
+  categories: CATEGORIES[]
+): OverpassMarkerData[] => {
+  const standIns: { marker: OverpassMarkerData; forCategories: CATEGORIES[] }[] = [];
+
+  for (const marker of markers) {
+    if (!marker.bounds) continue;
+    const forCategories: CATEGORIES[] = [];
+    let isSomethingItself = false;
+    for (const category of categories) {
+      const kind = matchKind(marker.tags, category);
+      // Something that is one of the things asked for stays, whatever else it
+      // also merely has: a library with a toilet in it is still a library
+      if (kind === "itself") {
+        isSomethingItself = true;
+        break;
+      }
+      if (kind === "stands-in") forCategories.push(category);
+    }
+    if (!isSomethingItself && forCategories.length > 0) {
+      standIns.push({ marker, forCategories });
+    }
+  }
+
+  if (standIns.length === 0) return markers;
+
+  const dropped = new Set<OverpassMarkerData>();
+  for (const { marker, forCategories } of standIns) {
+    const [south, west, north, east] = marker.bounds as [number, number, number, number];
+    const answered = markers.some(other => {
+      if (other === marker || !other.position) return false;
+      const [lat, lng] = other.position;
+      if (lat < south || lat > north || lng < west || lng > east) return false;
+      return forCategories.some(category => matchKind(other.tags, category) === "itself");
+    });
+    if (answered) dropped.add(marker);
+  }
+
+  return dropped.size === 0 ? markers : markers.filter(marker => !dropped.has(marker));
+};
+
 export async function fetchOverpassMarkers(
   center: [number, number] | null,
   radius: number,
@@ -892,5 +986,5 @@ export async function fetchOverpassMarkers(
     })
     .filter(Boolean) as OverpassMarkerData[];
 
-  return dropDuplicateOutlines(markers);
+  return dropStandInAreas(dropDuplicateOutlines(markers), categories);
 }

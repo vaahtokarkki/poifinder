@@ -8,7 +8,16 @@
       "url": "https://tiles.basemaps.cartocdn.com/vector/carto.streets/v1/tiles.json"
     }
   },
-  "sprite": "https://tiles.basemaps.cartocdn.com/gl/voyager-gl-style/sprite",
+  "sprite": [
+    {
+      "id": "default",
+      "url": "https://tiles.basemaps.cartocdn.com/gl/voyager-gl-style/sprite"
+    },
+    {
+      "id": "poi",
+      "url": "/map/sprite"
+    }
+  ],
   "glyphs": "https://tiles.basemaps.cartocdn.com/fonts/{fontstack}/{range}.pbf",
   "layers": [
     {
@@ -18,8 +27,71 @@
         "visibility": "visible"
       },
       "paint": {
-        "background-color": "#fbf8f3",
+        "background-color": "#f3eee4",
         "background-opacity": 1
+      }
+    },
+    {
+      "id": "landcover_farmland",
+      "type": "fill",
+      "source": "carto",
+      "source-layer": "landcover",
+      "minzoom": 8,
+      "filter": [
+        "==",
+        "class",
+        "farmland"
+      ],
+      "paint": {
+        "fill-color": "#f0f2dc",
+        "fill-opacity": {
+          "stops": [
+            [
+              8,
+              0.4
+            ],
+            [
+              12,
+              0.8
+            ],
+            [
+              14,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "landcover_sand",
+      "type": "fill",
+      "source": "carto",
+      "source-layer": "landcover",
+      "minzoom": 10,
+      "filter": [
+        "==",
+        "class",
+        "sand"
+      ],
+      "paint": {
+        "fill-color": "#f5ecd2",
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "landcover_wetland",
+      "type": "fill",
+      "source": "carto",
+      "source-layer": "landcover",
+      "minzoom": 10,
+      "filter": [
+        "==",
+        "class",
+        "wetland"
+      ],
+      "paint": {
+        "fill-color": "#dfeadb",
+        "fill-opacity": 0.8
       }
     },
     {
@@ -71,6 +143,41 @@
           ]
         },
         "fill-opacity": 1
+      }
+    },
+    {
+      "id": "landcover_wood",
+      "type": "fill",
+      "source": "carto",
+      "source-layer": "landcover",
+      "minzoom": 8,
+      "filter": [
+        "==",
+        "class",
+        "wood"
+      ],
+      "paint": {
+        "fill-color": "#d2e5c0",
+        "fill-opacity": {
+          "stops": [
+            [
+              8,
+              0.3
+            ],
+            [
+              11,
+              0.5
+            ],
+            [
+              13,
+              0.7
+            ],
+            [
+              15,
+              0.9
+            ]
+          ]
+        }
       }
     },
     {
@@ -195,31 +302,31 @@
           "stops": [
             [
               5,
-              "rgba(243, 234, 220, 0.5)"
+              "rgba(232, 224, 211, 0.5)"
             ],
             [
               8,
-              "rgba(243, 234, 220, 0.45)"
+              "rgba(232, 224, 211, 0.45)"
             ],
             [
               9,
-              "rgba(243, 234, 220, 0.4)"
+              "rgba(232, 224, 211, 0.4)"
             ],
             [
               11,
-              "rgba(243, 234, 220, 0.35)"
+              "rgba(232, 224, 211, 0.35)"
             ],
             [
               13,
-              "rgba(243, 234, 220, 0.3)"
+              "rgba(232, 224, 211, 0.3)"
             ],
             [
               15,
-              "rgba(243, 234, 220, 0.25)"
+              "rgba(232, 224, 211, 0.25)"
             ],
             [
               16,
-              "rgba(243, 234, 220, 0.15)"
+              "rgba(232, 224, 211, 0.15)"
             ]
           ]
         },
@@ -248,35 +355,160 @@
           "==",
           "class",
           "cemetery"
-        ],
-        [
-          "==",
-          "class",
-          "stadium"
         ]
       ],
       "paint": {
-        "fill-color": {
+        "fill-color": "#d8e4d1",
+        "fill-outline-color": "#c2d2ba"
+      },
+      "minzoom": 10
+    },
+    {
+      "id": "landuse_urban",
+      "type": "fill",
+      "source": "carto",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": [
+        "in",
+        "class",
+        "commercial",
+        "retail",
+        "industrial",
+        "railway",
+        "farmyard"
+      ],
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "class"
+          ],
+          "retail",
+          "#f8e7e3",
+          "commercial",
+          "#f5ebe8",
+          "industrial",
+          "#ece3ec",
+          "railway",
+          "#eae3e0",
+          "farmyard",
+          "#f4ead9",
+          "#f2ece6"
+        ],
+        "fill-opacity": {
           "stops": [
             [
-              8,
-              "rgba(197, 225, 178, 0.2)"
-            ],
-            [
-              9,
-              "rgba(197, 225, 178, 0.25)"
-            ],
-            [
               11,
-              "rgba(197, 225, 178, 0.35)"
+              0
+            ],
+            [
+              12,
+              0.5
             ],
             [
               13,
-              "rgba(197, 225, 178, 0.4)"
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "landuse_education",
+      "type": "fill",
+      "source": "carto",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": [
+        "in",
+        "class",
+        "school",
+        "university",
+        "college",
+        "kindergarten",
+        "library",
+        "hospital"
+      ],
+      "paint": {
+        "fill-color": "#fcfade",
+        "fill-outline-color": "#ece2ab",
+        "fill-opacity": {
+          "stops": [
+            [
+              11,
+              0
             ],
             [
-              15,
-              "#e0ecd3"
+              12,
+              0.5
+            ],
+            [
+              13,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "landuse_sports",
+      "type": "fill",
+      "source": "carto",
+      "source-layer": "landuse",
+      "minzoom": 11,
+      "filter": [
+        "in",
+        "class",
+        "playground",
+        "track",
+        "stadium"
+      ],
+      "paint": {
+        "fill-color": "#dff5e3",
+        "fill-outline-color": "#b3ddbf",
+        "fill-opacity": {
+          "stops": [
+            [
+              11,
+              0
+            ],
+            [
+              12,
+              0.5
+            ],
+            [
+              13,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "landuse_pitch",
+      "type": "fill",
+      "source": "carto",
+      "source-layer": "landuse",
+      "minzoom": 12,
+      "filter": [
+        "==",
+        "class",
+        "pitch"
+      ],
+      "paint": {
+        "fill-color": "#aee0cb",
+        "fill-outline-color": "#87c4a9",
+        "fill-opacity": {
+          "stops": [
+            [
+              12,
+              0.6
+            ],
+            [
+              13,
+              1
             ]
           ]
         }
@@ -1145,12 +1377,11 @@
       }
     },
     {
-      "id": "tunnel_path",
+      "id": "path_halo_tunnel",
       "type": "line",
       "source": "carto",
       "source-layer": "transportation",
-      "minzoom": 15,
-      "maxzoom": 24,
+      "minzoom": 13,
       "filter": [
         "all",
         [
@@ -1162,6 +1393,12 @@
           "==",
           "brunnel",
           "tunnel"
+        ],
+        [
+          "!in",
+          "subclass",
+          "pedestrian",
+          "platform"
         ]
       ],
       "layout": {
@@ -1169,38 +1406,379 @@
         "line-join": "round"
       },
       "paint": {
+        "line-color": "rgba(255,255,255,0.7)",
+        "line-width": {
+          "stops": [
+            [
+              14,
+              1.4
+            ],
+            [
+              16,
+              2.4
+            ],
+            [
+              18,
+              3.8
+            ],
+            [
+              20,
+              6
+            ]
+          ]
+        },
+        "line-opacity": [
+          "step",
+          [
+            "zoom"
+          ],
+          0,
+          14,
+          [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "subclass"
+              ],
+              "cycleway"
+            ],
+            0.1575,
+            0
+          ],
+          15,
+          0.2475
+        ]
+      }
+    },
+    {
+      "id": "path_pedestrian_tunnel",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "path"
+        ],
+        [
+          "==",
+          "brunnel",
+          "tunnel"
+        ],
+        [
+          "in",
+          "subclass",
+          "pedestrian",
+          "platform"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#f2ece2",
+        "line-width": {
+          "stops": [
+            [
+              14,
+              1.5
+            ],
+            [
+              16,
+              4
+            ],
+            [
+              18,
+              9
+            ],
+            [
+              20,
+              16
+            ]
+          ]
+        },
+        "line-opacity": 0.45
+      }
+    },
+    {
+      "id": "path_foot_tunnel",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "path"
+        ],
+        [
+          "==",
+          "brunnel",
+          "tunnel"
+        ],
+        [
+          "!in",
+          "subclass",
+          "cycleway",
+          "pedestrian",
+          "platform",
+          "steps"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#3f7f52",
         "line-width": {
           "stops": [
             [
               15,
-              0.5
+              0.4
             ],
             [
               16,
-              1
+              0.7
             ],
             [
               18,
-              3
+              1.2
+            ],
+            [
+              20,
+              2
             ]
           ]
         },
-        "line-opacity": 1,
-        "line-color": "#d7d7d7",
-        "line-dasharray": {
+        "line-opacity": {
           "stops": [
             [
               15,
-              [
-                2,
-                2
-              ]
+              0.225
+            ],
+            [
+              16,
+              0.27
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "path_steps_tunnel",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "path"
+        ],
+        [
+          "==",
+          "brunnel",
+          "tunnel"
+        ],
+        [
+          "==",
+          "subclass",
+          "steps"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#3f7f52",
+        "line-width": {
+          "stops": [
+            [
+              15,
+              0.9
+            ],
+            [
+              16,
+              1.6
             ],
             [
               18,
+              2.8
+            ],
+            [
+              20,
+              4.2
+            ]
+          ]
+        },
+        "line-dasharray": {
+          "stops": [
+            [
+              14,
+              [
+                0.6,
+                0.5
+              ]
+            ],
+            [
+              17,
+              [
+                0.4,
+                0.4
+              ]
+            ]
+          ]
+        },
+        "line-opacity": 0.27
+      }
+    },
+    {
+      "id": "path_cycleway_tunnel",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "path"
+        ],
+        [
+          "==",
+          "brunnel",
+          "tunnel"
+        ],
+        [
+          "==",
+          "subclass",
+          "cycleway"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#37955d",
+        "line-width": {
+          "stops": [
+            [
+              13,
+              0.4
+            ],
+            [
+              14,
+              0.6
+            ],
+            [
+              16,
+              1.1
+            ],
+            [
+              18,
+              2.1
+            ],
+            [
+              20,
+              3.4
+            ]
+          ]
+        },
+        "line-opacity": {
+          "stops": [
+            [
+              13,
+              0.225
+            ],
+            [
+              15,
+              0.2925
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "path_track_tunnel",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "track"
+        ],
+        [
+          "==",
+          "brunnel",
+          "tunnel"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#a08b62",
+        "line-width": {
+          "stops": [
+            [
+              13,
+              0.7
+            ],
+            [
+              16,
+              1.4
+            ],
+            [
+              18,
+              2.6
+            ]
+          ]
+        },
+        "line-opacity": {
+          "stops": [
+            [
+              13,
+              0.27
+            ],
+            [
+              15,
+              0.45
+            ]
+          ]
+        },
+        "line-dasharray": {
+          "stops": [
+            [
+              13,
               [
                 3,
-                3
+                1.5
+              ]
+            ],
+            [
+              17,
+              [
+                4,
+                2
               ]
             ]
           ]
@@ -1571,127 +2149,11 @@
       }
     },
     {
-      "id": "tunnel_rail",
-      "type": "line",
-      "source": "carto",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        [
-          "==",
-          "class",
-          "rail"
-        ],
-        [
-          "==",
-          "brunnel",
-          "tunnel"
-        ]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "line-join": "round"
-      },
-      "paint": {
-        "line-color": "#dddddd",
-        "line-width": {
-          "base": 1.3,
-          "stops": [
-            [
-              13,
-              0.5
-            ],
-            [
-              14,
-              1
-            ],
-            [
-              15,
-              1
-            ],
-            [
-              16,
-              3
-            ],
-            [
-              21,
-              7
-            ]
-          ]
-        },
-        "line-opacity": 0.5
-      }
-    },
-    {
-      "id": "tunnel_rail_dash",
-      "type": "line",
-      "source": "carto",
-      "source-layer": "transportation",
-      "minzoom": 15,
-      "filter": [
-        "all",
-        [
-          "==",
-          "class",
-          "rail"
-        ],
-        [
-          "==",
-          "brunnel",
-          "tunnel"
-        ]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "line-join": "round"
-      },
-      "paint": {
-        "line-color": "#ffffff",
-        "line-width": {
-          "base": 1.3,
-          "stops": [
-            [
-              15,
-              0.5
-            ],
-            [
-              16,
-              1
-            ],
-            [
-              20,
-              5
-            ]
-          ]
-        },
-        "line-dasharray": {
-          "stops": [
-            [
-              15,
-              [
-                5,
-                5
-              ]
-            ],
-            [
-              16,
-              [
-                6,
-                6
-              ]
-            ]
-          ]
-        },
-        "line-opacity": 0.5
-      }
-    },
-    {
       "id": "road_service_case",
       "type": "line",
       "source": "carto",
       "source-layer": "transportation",
-      "minzoom": 15,
+      "minzoom": 14,
       "maxzoom": 24,
       "filter": [
         "all",
@@ -1713,25 +2175,29 @@
         "line-width": {
           "stops": [
             [
+              14,
+              1.5
+            ],
+            [
               15,
-              1
+              2.5
             ],
             [
               16,
-              3
+              4
             ],
             [
               17,
-              6
+              7
             ],
             [
               18,
-              8
+              9
             ]
           ]
         },
         "line-opacity": 1,
-        "line-color": "#fdebce"
+        "line-color": "#e2d8c8"
       }
     },
     {
@@ -1795,15 +2261,11 @@
           "stops": [
             [
               13,
-              "#ffffff"
-            ],
-            [
-              15.7,
-              "#ffffff"
+              "#e2d8c8"
             ],
             [
               16,
-              "#fdebce"
+              "#d8ccb8"
             ]
           ]
         }
@@ -2079,11 +2541,11 @@
           "stops": [
             [
               11,
-              "#fffef9"
+              "#f0e3c4"
             ],
             [
               12.99,
-              "#fffef9"
+              "#f0e3c4"
             ],
             [
               13,
@@ -2395,18 +2857,346 @@
       }
     },
     {
-      "id": "road_path",
+      "id": "path_halo",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "path"
+        ],
+        [
+          "!has",
+          "brunnel"
+        ],
+        [
+          "!in",
+          "subclass",
+          "pedestrian",
+          "platform"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "rgba(255,255,255,0.7)",
+        "line-width": {
+          "stops": [
+            [
+              14,
+              1.4
+            ],
+            [
+              16,
+              2.4
+            ],
+            [
+              18,
+              3.8
+            ],
+            [
+              20,
+              6
+            ]
+          ]
+        },
+        "line-opacity": [
+          "step",
+          [
+            "zoom"
+          ],
+          0,
+          14,
+          [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "subclass"
+              ],
+              "cycleway"
+            ],
+            0.35,
+            0
+          ],
+          15,
+          0.55
+        ]
+      }
+    },
+    {
+      "id": "path_pedestrian",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "path"
+        ],
+        [
+          "!has",
+          "brunnel"
+        ],
+        [
+          "in",
+          "subclass",
+          "pedestrian",
+          "platform"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#f2ece2",
+        "line-width": {
+          "stops": [
+            [
+              14,
+              1.5
+            ],
+            [
+              16,
+              4
+            ],
+            [
+              18,
+              9
+            ],
+            [
+              20,
+              16
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "path_foot",
       "type": "line",
       "source": "carto",
       "source-layer": "transportation",
       "minzoom": 15,
-      "maxzoom": 24,
       "filter": [
         "all",
         [
-          "in",
+          "==",
           "class",
-          "path",
+          "path"
+        ],
+        [
+          "!has",
+          "brunnel"
+        ],
+        [
+          "!in",
+          "subclass",
+          "cycleway",
+          "pedestrian",
+          "platform",
+          "steps"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#3f7f52",
+        "line-width": {
+          "stops": [
+            [
+              15,
+              0.4
+            ],
+            [
+              16,
+              0.7
+            ],
+            [
+              18,
+              1.2
+            ],
+            [
+              20,
+              2
+            ]
+          ]
+        },
+        "line-opacity": {
+          "stops": [
+            [
+              15,
+              0.5
+            ],
+            [
+              16,
+              0.6
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "path_steps",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "path"
+        ],
+        [
+          "!has",
+          "brunnel"
+        ],
+        [
+          "==",
+          "subclass",
+          "steps"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#3f7f52",
+        "line-width": {
+          "stops": [
+            [
+              15,
+              0.9
+            ],
+            [
+              16,
+              1.6
+            ],
+            [
+              18,
+              2.8
+            ],
+            [
+              20,
+              4.2
+            ]
+          ]
+        },
+        "line-dasharray": {
+          "stops": [
+            [
+              14,
+              [
+                0.6,
+                0.5
+              ]
+            ],
+            [
+              17,
+              [
+                0.4,
+                0.4
+              ]
+            ]
+          ]
+        },
+        "line-opacity": 0.6
+      }
+    },
+    {
+      "id": "path_cycleway",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "path"
+        ],
+        [
+          "!has",
+          "brunnel"
+        ],
+        [
+          "==",
+          "subclass",
+          "cycleway"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#37955d",
+        "line-width": {
+          "stops": [
+            [
+              13,
+              0.4
+            ],
+            [
+              14,
+              0.6
+            ],
+            [
+              16,
+              1.1
+            ],
+            [
+              18,
+              2.1
+            ],
+            [
+              20,
+              3.4
+            ]
+          ]
+        },
+        "line-opacity": {
+          "stops": [
+            [
+              13,
+              0.5
+            ],
+            [
+              15,
+              0.65
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "path_track",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
           "track"
         ],
         [
@@ -2415,42 +3205,53 @@
         ]
       ],
       "layout": {
-        "line-cap": "round",
+        "line-cap": "butt",
         "line-join": "round"
       },
       "paint": {
+        "line-color": "#a08b62",
         "line-width": {
           "stops": [
             [
-              15,
-              0.5
+              13,
+              0.7
             ],
             [
               16,
-              1
+              1.4
             ],
             [
               18,
-              3
+              2.6
             ]
           ]
         },
-        "line-opacity": 1,
-        "line-color": "#d7d7d7",
+        "line-opacity": {
+          "stops": [
+            [
+              13,
+              0.6
+            ],
+            [
+              15,
+              1
+            ]
+          ]
+        },
         "line-dasharray": {
           "stops": [
             [
-              15,
+              13,
               [
-                2,
-                2
+                3,
+                1.5
               ]
             ],
             [
-              18,
+              17,
               [
-                3,
-                3
+                4,
+                2
               ]
             ]
           ]
@@ -2985,7 +3786,7 @@
       }
     },
     {
-      "id": "rail",
+      "id": "transit",
       "type": "line",
       "source": "carto",
       "source-layer": "transportation",
@@ -2995,20 +3796,36 @@
         [
           "==",
           "class",
-          "rail"
+          "transit"
         ],
         [
-          "!=",
-          "brunnel",
-          "tunnel"
+          "any",
+          [
+            "==",
+            "subclass",
+            "tram"
+          ],
+          [
+            "all",
+            [
+              "==",
+              "subclass",
+              "subway"
+            ],
+            [
+              "!=",
+              "brunnel",
+              "tunnel"
+            ]
+          ]
         ]
       ],
       "layout": {
-        "visibility": "visible",
-        "line-join": "round"
+        "line-join": "round",
+        "line-cap": "round"
       },
       "paint": {
-        "line-color": "#dddddd",
+        "line-color": "#7c8288",
         "line-width": {
           "base": 1.3,
           "stops": [
@@ -3018,81 +3835,19 @@
             ],
             [
               14,
-              1
-            ],
-            [
-              15,
-              1
+              0.8
             ],
             [
               16,
-              3
+              1.6
+            ],
+            [
+              18,
+              2.6
             ],
             [
               21,
-              7
-            ]
-          ]
-        }
-      }
-    },
-    {
-      "id": "rail_dash",
-      "type": "line",
-      "source": "carto",
-      "source-layer": "transportation",
-      "minzoom": 15,
-      "filter": [
-        "all",
-        [
-          "==",
-          "class",
-          "rail"
-        ],
-        [
-          "!=",
-          "brunnel",
-          "tunnel"
-        ]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "line-join": "round"
-      },
-      "paint": {
-        "line-color": "#ffffff",
-        "line-width": {
-          "base": 1.3,
-          "stops": [
-            [
-              15,
-              0.5
-            ],
-            [
-              16,
-              1
-            ],
-            [
-              20,
-              5
-            ]
-          ]
-        },
-        "line-dasharray": {
-          "stops": [
-            [
-              15,
-              [
-                5,
-                5
-              ]
-            ],
-            [
-              16,
-              [
-                6,
-                6
-              ]
+              4
             ]
           ]
         }
@@ -3610,12 +4365,11 @@
       }
     },
     {
-      "id": "bridge_path",
+      "id": "path_halo_bridge",
       "type": "line",
       "source": "carto",
       "source-layer": "transportation",
-      "minzoom": 15,
-      "maxzoom": 24,
+      "minzoom": 13,
       "filter": [
         "all",
         [
@@ -3627,6 +4381,12 @@
           "==",
           "brunnel",
           "bridge"
+        ],
+        [
+          "!in",
+          "subclass",
+          "pedestrian",
+          "platform"
         ]
       ],
       "layout": {
@@ -3634,7 +4394,159 @@
         "line-join": "round"
       },
       "paint": {
+        "line-color": "rgba(255,255,255,0.7)",
         "line-width": {
+          "stops": [
+            [
+              14,
+              1.4
+            ],
+            [
+              16,
+              2.4
+            ],
+            [
+              18,
+              3.8
+            ],
+            [
+              20,
+              6
+            ]
+          ]
+        },
+        "line-opacity": [
+          "step",
+          [
+            "zoom"
+          ],
+          0,
+          14,
+          [
+            "case",
+            [
+              "==",
+              [
+                "get",
+                "subclass"
+              ],
+              "cycleway"
+            ],
+            0.35,
+            0
+          ],
+          15,
+          0.55
+        ]
+      }
+    },
+    {
+      "id": "path_pedestrian_bridge",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "path"
+        ],
+        [
+          "==",
+          "brunnel",
+          "bridge"
+        ],
+        [
+          "in",
+          "subclass",
+          "pedestrian",
+          "platform"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#f2ece2",
+        "line-width": {
+          "stops": [
+            [
+              14,
+              1.5
+            ],
+            [
+              16,
+              4
+            ],
+            [
+              18,
+              9
+            ],
+            [
+              20,
+              16
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "path_foot_bridge",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "path"
+        ],
+        [
+          "==",
+          "brunnel",
+          "bridge"
+        ],
+        [
+          "!in",
+          "subclass",
+          "cycleway",
+          "pedestrian",
+          "platform",
+          "steps"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#3f7f52",
+        "line-width": {
+          "stops": [
+            [
+              15,
+              0.4
+            ],
+            [
+              16,
+              0.7
+            ],
+            [
+              18,
+              1.2
+            ],
+            [
+              20,
+              2
+            ]
+          ]
+        },
+        "line-opacity": {
           "stops": [
             [
               15,
@@ -3642,30 +4554,218 @@
             ],
             [
               16,
-              1
-            ],
-            [
-              18,
-              3
+              0.6
             ]
           ]
-        },
-        "line-opacity": 1,
-        "line-color": "#d7d7d7",
-        "line-dasharray": {
+        }
+      }
+    },
+    {
+      "id": "path_steps_bridge",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "path"
+        ],
+        [
+          "==",
+          "brunnel",
+          "bridge"
+        ],
+        [
+          "==",
+          "subclass",
+          "steps"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#3f7f52",
+        "line-width": {
           "stops": [
             [
               15,
-              [
-                2,
-                2
-              ]
+              0.9
+            ],
+            [
+              16,
+              1.6
             ],
             [
               18,
+              2.8
+            ],
+            [
+              20,
+              4.2
+            ]
+          ]
+        },
+        "line-dasharray": {
+          "stops": [
+            [
+              14,
+              [
+                0.6,
+                0.5
+              ]
+            ],
+            [
+              17,
+              [
+                0.4,
+                0.4
+              ]
+            ]
+          ]
+        },
+        "line-opacity": 0.6
+      }
+    },
+    {
+      "id": "path_cycleway_bridge",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "path"
+        ],
+        [
+          "==",
+          "brunnel",
+          "bridge"
+        ],
+        [
+          "==",
+          "subclass",
+          "cycleway"
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#37955d",
+        "line-width": {
+          "stops": [
+            [
+              13,
+              0.4
+            ],
+            [
+              14,
+              0.6
+            ],
+            [
+              16,
+              1.1
+            ],
+            [
+              18,
+              2.1
+            ],
+            [
+              20,
+              3.4
+            ]
+          ]
+        },
+        "line-opacity": {
+          "stops": [
+            [
+              13,
+              0.5
+            ],
+            [
+              15,
+              0.65
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "path_track_bridge",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "track"
+        ],
+        [
+          "==",
+          "brunnel",
+          "bridge"
+        ]
+      ],
+      "layout": {
+        "line-cap": "butt",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#a08b62",
+        "line-width": {
+          "stops": [
+            [
+              13,
+              0.7
+            ],
+            [
+              16,
+              1.4
+            ],
+            [
+              18,
+              2.6
+            ]
+          ]
+        },
+        "line-opacity": {
+          "stops": [
+            [
+              13,
+              0.6
+            ],
+            [
+              15,
+              1
+            ]
+          ]
+        },
+        "line-dasharray": {
+          "stops": [
+            [
+              13,
               [
                 3,
-                3
+                1.5
+              ]
+            ],
+            [
+              17,
+              [
+                4,
+                2
               ]
             ]
           ]
@@ -5607,7 +6707,7 @@
       "type": "symbol",
       "source": "carto",
       "source-layer": "transportation_name",
-      "minzoom": 16,
+      "minzoom": 15,
       "filter": [
         "all",
         [
@@ -5626,17 +6726,39 @@
           "HanWangHeiLight Regular",
           "NanumBarunGothic Regular"
         ],
-        "text-size": 9,
+        "text-size": {
+          "stops": [
+            [
+              15,
+              8.5
+            ],
+            [
+              17,
+              9
+            ]
+          ]
+        },
         "text-field": "{name}",
         "symbol-avoid-edges": false,
-        "symbol-spacing": 200,
+        "symbol-spacing": {
+          "stops": [
+            [
+              15,
+              150
+            ],
+            [
+              17,
+              200
+            ]
+          ]
+        },
         "text-pitch-alignment": "auto",
         "text-rotation-alignment": "auto",
         "text-justify": "center"
       },
       "paint": {
         "text-color": "#87919e",
-        "text-halo-color": "#fbf8f3",
+        "text-halo-color": "#f3eee4",
         "text-halo-width": 1
       }
     },
@@ -5645,7 +6767,7 @@
       "type": "symbol",
       "source": "carto",
       "source-layer": "transportation_name",
-      "minzoom": 15,
+      "minzoom": 13,
       "filter": [
         "all",
         [
@@ -5667,6 +6789,10 @@
         "text-size": {
           "stops": [
             [
+              13,
+              8.5
+            ],
+            [
               15,
               9
             ],
@@ -5682,14 +6808,33 @@
         },
         "text-field": "{name}",
         "symbol-avoid-edges": false,
-        "symbol-spacing": 200,
+        "symbol-spacing": {
+          "stops": [
+            [
+              11,
+              120
+            ],
+            [
+              13,
+              130
+            ],
+            [
+              14,
+              150
+            ],
+            [
+              16,
+              220
+            ]
+          ]
+        },
         "text-pitch-alignment": "auto",
         "text-rotation-alignment": "auto",
         "text-justify": "center"
       },
       "paint": {
         "text-color": "#87919e",
-        "text-halo-color": "#fbf8f3",
+        "text-halo-color": "#f3eee4",
         "text-halo-width": 1
       }
     },
@@ -5698,7 +6843,7 @@
       "type": "symbol",
       "source": "carto",
       "source-layer": "transportation_name",
-      "minzoom": 14,
+      "minzoom": 12,
       "filter": [
         "all",
         [
@@ -5719,11 +6864,11 @@
         "text-size": {
           "stops": [
             [
-              14,
-              10
+              12,
+              9
             ],
             [
-              15,
+              14,
               10
             ],
             [
@@ -5741,12 +6886,20 @@
         "symbol-spacing": {
           "stops": [
             [
-              6,
-              200
+              11,
+              120
+            ],
+            [
+              13,
+              130
+            ],
+            [
+              14,
+              150
             ],
             [
               16,
-              250
+              220
             ]
           ]
         },
@@ -5777,7 +6930,7 @@
       "type": "symbol",
       "source": "carto",
       "source-layer": "transportation_name",
-      "minzoom": 13,
+      "minzoom": 11,
       "filter": [
         "all",
         [
@@ -5799,11 +6952,11 @@
         "text-size": {
           "stops": [
             [
-              14,
-              10
+              11,
+              9
             ],
             [
-              15,
+              14,
               10
             ],
             [
@@ -5821,12 +6974,20 @@
         "symbol-spacing": {
           "stops": [
             [
-              6,
-              200
+              11,
+              120
+            ],
+            [
+              13,
+              130
+            ],
+            [
+              14,
+              150
             ],
             [
               16,
-              250
+              220
             ]
           ]
         },
@@ -5850,6 +7011,370 @@
         "text-color": "#798493",
         "text-halo-color": "#fff0c4",
         "text-halo-width": 1
+      }
+    },
+    {
+      "id": "poi_icon_civic",
+      "type": "symbol",
+      "source": "carto",
+      "source-layer": "poi",
+      "minzoom": 15,
+      "filter": [
+        "in",
+        "class",
+        "toilets",
+        "drinking_water",
+        "playground",
+        "park",
+        "garden",
+        "dog_park",
+        "picnic_site",
+        "shelter",
+        "hospital",
+        "doctors",
+        "dentist",
+        "veterinary",
+        "pharmacy",
+        "school",
+        "college",
+        "library",
+        "post",
+        "place_of_worship",
+        "museum",
+        "art_gallery",
+        "castle",
+        "monument",
+        "attraction",
+        "zoo",
+        "information",
+        "bicycle_rental",
+        "bicycle",
+        "railway",
+        "ferry_terminal",
+        "harbor",
+        "bus",
+        "fuel"
+      ],
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "class"
+          ],
+          "toilets",
+          "poi:toilets",
+          "drinking_water",
+          "poi:drinking_water",
+          "playground",
+          "poi:playground",
+          "park",
+          "poi:park",
+          "garden",
+          "poi:park",
+          "dog_park",
+          "poi:park",
+          "picnic_site",
+          "poi:picnic",
+          "shelter",
+          "poi:picnic",
+          "hospital",
+          "poi:hospital",
+          "doctors",
+          "poi:hospital",
+          "dentist",
+          "poi:hospital",
+          "veterinary",
+          "poi:hospital",
+          "pharmacy",
+          "poi:pharmacy",
+          "school",
+          "poi:school",
+          "college",
+          "poi:school",
+          "library",
+          "poi:library",
+          "post",
+          "poi:post",
+          "place_of_worship",
+          "poi:worship",
+          "museum",
+          "poi:museum",
+          "art_gallery",
+          "poi:museum",
+          "castle",
+          "poi:museum",
+          "monument",
+          "poi:museum",
+          "attraction",
+          "poi:museum",
+          "zoo",
+          "poi:museum",
+          "information",
+          "poi:information",
+          "bicycle_rental",
+          "poi:bicycle",
+          "bicycle",
+          "poi:bicycle",
+          "railway",
+          "poi:rail",
+          "ferry_terminal",
+          "poi:rail",
+          "harbor",
+          "poi:rail",
+          "bus",
+          "poi:bus",
+          "fuel",
+          "poi:fuel",
+          "poi:information"
+        ],
+        "icon-size": {
+          "stops": [
+            [
+              15,
+              0.7
+            ],
+            [
+              17,
+              0.85
+            ],
+            [
+              19,
+              1
+            ]
+          ]
+        },
+        "icon-padding": 2,
+        "icon-allow-overlap": false,
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          15,
+          [
+            "case",
+            [
+              "in",
+              [
+                "get",
+                "class"
+              ],
+              [
+                "literal",
+                [
+                  "school",
+                  "college",
+                  "hospital",
+                  "library",
+                  "museum",
+                  "art_gallery",
+                  "castle",
+                  "place_of_worship"
+                ]
+              ]
+            ],
+            [
+              "coalesce",
+              [
+                "get",
+                "name"
+              ],
+              ""
+            ],
+            ""
+          ]
+        ],
+        "text-font": [
+          "Montserrat Regular",
+          "Open Sans Regular",
+          "Noto Sans Regular",
+          "HanWangHeiLight Regular",
+          "NanumBarunGothic Regular"
+        ],
+        "text-size": {
+          "stops": [
+            [
+              15,
+              8.5
+            ],
+            [
+              16,
+              9
+            ],
+            [
+              18,
+              10.5
+            ]
+          ]
+        },
+        "text-anchor": "top",
+        "text-offset": [
+          0,
+          0.75
+        ],
+        "text-max-width": 8,
+        "text-padding": 2,
+        "text-optional": true
+      },
+      "paint": {
+        "icon-opacity": {
+          "stops": [
+            [
+              15,
+              0
+            ],
+            [
+              15.6,
+              1
+            ]
+          ]
+        },
+        "text-color": "#6b6257",
+        "text-halo-color": "rgba(255,255,255,0.9)",
+        "text-halo-width": 1.2
+      }
+    },
+    {
+      "id": "poi_icon_commerce",
+      "type": "symbol",
+      "source": "carto",
+      "source-layer": "poi",
+      "minzoom": 16,
+      "filter": [
+        "in",
+        "class",
+        "cafe",
+        "restaurant",
+        "fast_food",
+        "bar",
+        "beer",
+        "ice_cream",
+        "bakery",
+        "grocery",
+        "butcher",
+        "alcohol_shop",
+        "lodging"
+      ],
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "class"
+          ],
+          "cafe",
+          "poi:cafe",
+          "restaurant",
+          "poi:restaurant",
+          "fast_food",
+          "poi:fast_food",
+          "bar",
+          "poi:bar",
+          "beer",
+          "poi:bar",
+          "ice_cream",
+          "poi:ice_cream",
+          "bakery",
+          "poi:bakery",
+          "grocery",
+          "poi:grocery",
+          "butcher",
+          "poi:grocery",
+          "alcohol_shop",
+          "poi:grocery",
+          "lodging",
+          "poi:lodging",
+          "poi:information"
+        ],
+        "icon-size": {
+          "stops": [
+            [
+              16,
+              0.7
+            ],
+            [
+              17,
+              0.85
+            ],
+            [
+              19,
+              1
+            ]
+          ]
+        },
+        "icon-padding": 2,
+        "icon-allow-overlap": false
+      },
+      "paint": {
+        "icon-opacity": {
+          "stops": [
+            [
+              16,
+              0
+            ],
+            [
+              16.6,
+              1
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "poi_icon_shop",
+      "type": "symbol",
+      "source": "carto",
+      "source-layer": "poi",
+      "minzoom": 17,
+      "filter": [
+        "in",
+        "class",
+        "shop",
+        "clothing_store"
+      ],
+      "layout": {
+        "icon-image": [
+          "match",
+          [
+            "get",
+            "class"
+          ],
+          "shop",
+          "poi:shop",
+          "clothing_store",
+          "poi:shop",
+          "poi:shop"
+        ],
+        "icon-size": {
+          "stops": [
+            [
+              17,
+              0.8
+            ],
+            [
+              19,
+              1
+            ]
+          ]
+        },
+        "icon-padding": 2,
+        "icon-allow-overlap": false
+      },
+      "paint": {
+        "icon-opacity": {
+          "stops": [
+            [
+              17,
+              0
+            ],
+            [
+              17.4,
+              1
+            ]
+          ]
+        }
       }
     },
     {

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useMap } from "react-leaflet";
 import { maplibreGL } from "@maplibre/maplibre-gl-leaflet";
-import type { RequestParameters } from "maplibre-gl";
+import type { RequestParameters, StyleSpecification } from "maplibre-gl";
 
 /**
  * The CARTO Voyager basemap, drawn from vector tiles.
@@ -18,12 +18,13 @@ import type { RequestParameters } from "maplibre-gl";
  * everything above it — the markers, the clusters, the route line — is
  * untouched Leaflet and behaves exactly as it did.
  *
- * The style document is a copy of CARTO's, vendored into public/map so the
- * cartography is ours to edit — public/map/README.md has how it was taken and
- * how to pull a fresh upstream copy under it. Only that document is local: the
- * source, the sprite sheet and the glyph server inside it are still absolute
- * cartocdn.com URLs, so the tiles, icons and fonts come from CARTO exactly as
- * before, and so does the attribution the adapter reads off the source.
+ * The style document is a copy of CARTO's, vendored into public/map and edited
+ * since — public/map/README.md has how it was taken, what was changed and how
+ * to pull a fresh upstream copy under it. The document and the POI sprite sheet
+ * beside it are the local parts; the tile source, CARTO's own sprite and the
+ * glyph server are still absolute cartocdn.com URLs, so tiles, city dots and
+ * fonts come from CARTO exactly as before, and so does the attribution the
+ * adapter reads off the source.
  */
 /**
  * Absolute, not relative: every real path is prerendered at its own depth
@@ -55,22 +56,69 @@ function withKey(url: string): string {
 
 const transformRequest = (url: string): RequestParameters => ({ url: withKey(url) });
 
+/**
+ * The style is fetched here rather than handed to MapLibre as a URL, for one
+ * reason: the POI icons.
+ *
+ * Those come from a second sprite sheet of our own, built by
+ * `scripts/build-basemap-sprite.mjs` and served out of public/map alongside the
+ * style. MapLibre will not take that sheet's URL relative — normalizeSpriteURL
+ * puts it through `new URL(url)` with no base and throws "must be absolute" —
+ * and it does not resolve it against the style document it just fetched, nor
+ * does the Map constructor pass `transformStyle` through to the first load.
+ * Its own error message says to modify the style instead, so that is what this
+ * does. The URL cannot simply be absolute in the file: the origin is
+ * localhost:5173 in dev and wayside.cc in prod.
+ *
+ * CARTO's sheet is the entry named `default`, which is the id MapLibre gives a
+ * plain string sprite, so its images keep their bare names and the `circle-11`
+ * the city-dot layers draw is unaffected.
+ */
+async function loadStyle(signal: AbortSignal): Promise<StyleSpecification> {
+  const response = await fetch(withKey(STYLE_URL), { signal });
+  if (!response.ok) {
+    throw new Error(`basemap style: ${response.status} ${response.statusText}`);
+  }
+  const style: StyleSpecification = await response.json();
+  if (Array.isArray(style.sprite)) {
+    style.sprite = style.sprite.map(sheet =>
+      sheet.url.startsWith("/")
+        ? { ...sheet, url: new URL(sheet.url, window.location.origin).toString() }
+        : sheet,
+    );
+  }
+  return style;
+}
+
 const BasemapLayer = () => {
   const map = useMap();
 
   useEffect(() => {
-    // Everything else is left at the adapter's defaults, which are the ones
-    // this needs: the GL map is non-interactive so Leaflet keeps the pointer
-    // events, it renders into tilePane so it sits under every marker, and its
-    // own attribution control is off so the credits the style carries — CARTO
-    // and OpenStreetMap — land in Leaflet's control instead, once the style
-    // has loaded and the adapter can read them off the source
-    const layer = maplibreGL({ style: withKey(STYLE_URL), transformRequest });
+    const abort = new AbortController();
+    let layer: ReturnType<typeof maplibreGL> | undefined;
 
-    layer.addTo(map);
+    loadStyle(abort.signal)
+      .then(style => {
+        if (abort.signal.aborted) return;
+        // Everything else is left at the adapter's defaults, which are the ones
+        // this needs: the GL map is non-interactive so Leaflet keeps the pointer
+        // events, it renders into tilePane so it sits under every marker, and
+        // its own attribution control is off so the credits the style carries —
+        // CARTO and OpenStreetMap — land in Leaflet's control instead, once the
+        // style has loaded and the adapter can read them off the source
+        layer = maplibreGL({ style, transformRequest });
+        layer.addTo(map);
+      })
+      .catch((error: unknown) => {
+        if (abort.signal.aborted) return;
+        // Nothing to fall back to — the map draws its markers over an empty
+        // pane — so say why in the console rather than failing silently
+        console.error("basemap style failed to load", error);
+      });
 
     return () => {
-      map.removeLayer(layer);
+      abort.abort();
+      if (layer) map.removeLayer(layer);
     };
   }, [map]);
 

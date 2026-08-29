@@ -49,6 +49,14 @@ const angleBetween = (a: number, b: number) => {
   return diff > 180 ? 360 - diff : diff;
 };
 
+/**
+ * Set once the dedicated absolute event has fired. Chrome delivers both events
+ * and only the absolute one is measured from north; taking whichever arrived
+ * last had the cone alternating between two reference frames, which looks
+ * exactly like a compass that cannot make its mind up.
+ */
+let absoluteEventSeen = false;
+
 const onOrientation = (event: CompassEvent) => {
   let heading: number | null = null;
 
@@ -81,8 +89,18 @@ const startListening = () => {
   // one; Safari fires only the plain one, with webkitCompassHeading on it.
   // Listening to both and letting onOrientation reject what it cannot use is
   // simpler than feature detection that both browsers lie about
-  window.addEventListener("deviceorientationabsolute", onOrientation as EventListener);
-  window.addEventListener("deviceorientation", onOrientation as EventListener);
+  window.addEventListener("deviceorientationabsolute", ((event: CompassEvent) => {
+    absoluteEventSeen = true;
+    onOrientation(event);
+  }) as EventListener);
+
+  window.addEventListener("deviceorientation", ((event: CompassEvent) => {
+    // Safari's only orientation event, and the one carrying the iOS compass
+    // heading. On a browser that has an absolute event of its own this one is
+    // the relative reading, and is not a compass
+    if (absoluteEventSeen) return;
+    onOrientation(event);
+  }) as EventListener);
 };
 
 /**

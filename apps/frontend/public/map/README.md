@@ -1,7 +1,8 @@
 # The basemap style
 
 `voyager.json` is the style document the map is drawn from. It started as a
-verbatim copy of CARTO's Voyager style, taken on 2026-08-29:
+verbatim copy of CARTO's Voyager style, taken on 2026-08-29, and has been
+edited since — *What we changed* below is the list:
 
 ```
 curl -sS https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json \
@@ -15,19 +16,199 @@ so it ships with a normal `npm run deploy` and needs nothing else.
 
 ## What is and isn't local
 
-Only the document. The three URLs inside it are still absolute and still point
-at CARTO:
+The document and the POI sprite sheet beside it. Everything the style points at
+for data is still absolute and still CARTO's:
 
-| Field           | Serves                                    |
-| --------------- | ----------------------------------------- |
-| `sources.carto` | the TileJSON, and through it the tiles     |
-| `sprite`        | the icon sheet the symbol layers draw from |
-| `glyphs`        | the font PBFs the labels are set in        |
+| Field                 | Serves                                             |
+| --------------------- | -------------------------------------------------- |
+| `sources.carto`       | the TileJSON, and through it the tiles             |
+| `sprite[0]` (default) | CARTO's own sheet — one image, the city-dot circle |
+| `glyphs`              | the font PBFs the labels are set in                |
 
-They all resolve under `cartocdn.com`, so `transformRequest` in BasemapLayer
-still appends `VITE_CARTO_API_KEY` to every one of them. Leave them absolute
-unless you are also self-hosting tiles — a style with a local `sources` block
-and no tiles behind it draws an empty canvas.
+Those resolve under `cartocdn.com`, so `transformRequest` in BasemapLayer still
+appends `VITE_CARTO_API_KEY` to every one of them. Leave them absolute unless
+you are also self-hosting tiles — a style with a local `sources` block and no
+tiles behind it draws an empty canvas.
+
+`sprite[1]` is ours, `/map/sprite`, built from the app's own icon set; *POI
+icons* under *What we changed* has how it is built and why the component has to
+rewrite that one URL before MapLibre sees it.
+
+## What we changed
+
+Voyager draws a deliberately quiet map: outside parks and water it paints the
+ground one colour and leaves paths as a grey dash from z15. This app is for
+finding a playground or a toilet on foot, so the style now carries the parts of
+the OpenStreetMap default carto that answer *where is it and how do I walk
+there*. Everything else is still upstream Voyager.
+
+**Areas** — new `fill` layers off the `landuse` and `landcover` source layers,
+sitting between the stock `landuse` and the roads:
+
+| Layer                | `class` it covers                                            | Fill      |
+| -------------------- | ------------------------------------------------------------ | --------- |
+| `landuse_education`  | school, university, college, kindergarten, library, hospital | `#fcfade` |
+| `landuse_sports`     | playground, track, stadium                                   | `#dff5e3` |
+| `landuse_pitch`      | pitch                                                        | `#aae0cb` |
+| `landuse_urban`      | commercial, retail, industrial, railway, farmyard            | a `match` |
+| `landcover_wood`     | wood, over the stock green                                   | `#d2e5c0` |
+| `landcover_farmland` | farmland                                                     | `#f0f2dc` |
+| `landcover_sand`     | sand                                                         | `#f5ecd2` |
+| `landcover_wetland`  | wetland                                                      | `#dfeadb` |
+
+The stock `landuse` layer kept `cemetery` and got its own green (`#d8e4d1`);
+`stadium` moved out of it into `landuse_sports`.
+
+**Paths** — the three stock grey-dash layers (`road_path`, `bridge_path`,
+`tunnel_path`) are gone, each replaced in its own z-order slot by a family of
+six that splits `class=path` by its `subclass`, plus one for `class=track`:
+
+- `path_cycleway` — solid `#37955d`, from z13, and deliberately the heavier of
+  the two: about twice the width of a footway at every zoom, because a bike
+  route is a route and a footway is a detail
+- `path_foot` — solid `#3f7f52`, from z15; catches anything on `class=path`
+  that is not a cycleway, a plaza or a platform, subclass-less ways included.
+  It waits two zooms longer than the cycleway on purpose: at z13-14 a city's
+  footways are a grey wash under everything else and say nothing a street does
+  not, while a bike route that far out is still worth following
+- `path_steps` — the footway green, kept dashed: the ladder is what makes a
+  flight of steps read as steps rather than as a very short path
+- `path_pedestrian` — plazas and platforms are paved surface, not trail, so
+  they stay a light `#f2ece2` line
+- `path_track` — `class=track`, an earth `#a08b62`, kept dashed for unpaved
+- `path_halo` — a white line under all of the above, so the greens stay legible
+  where they cross a park — 55% white, not solid, or over a park it reads as
+  its own line. Its opacity is a `step` on zoom around a `case` on subclass
+  rather than a plain ramp, because it backs lines that start at different
+  zooms: nothing below z14, cycleways only through z14-15, everything from z15.
+  A flat ramp would draw a white line under a footway that is not being drawn
+  yet
+
+Both are green within a shade or two of each other, so the width is what
+separates them rather than the colour. The cycleway is the lighter of the two,
+which sounds backwards for the more important line and is not: it is twice the
+width, so at equal tone it outweighed everything around it.
+
+Weight is the thing to watch here, and it took three passes to get down. The
+first drew a cycleway at ~3px at z17 — wider than the casing on a residential
+street, which made the boldest line on a map of streets a bike path. It is now
+1.6px at z17 against the footway's 0.95px, at 65% and 60% opacity, which lands
+them at about `#79b48c` and `#87ab8c` over the ground. If they ever need to
+come back up, the width ramps are the lever; the colours are already light.
+
+The `_bridge` and `_tunnel` copies are the same six with the brunnel filter
+swapped; the tunnel ones run at 45% opacity like every other tunnel layer.
+
+The greens are Google-Maps-ish rather than OSM's brown-red, which is the one
+place this deliberately departs from the default carto: on Voyager's warm
+background a dark green reads as *walkable* far faster than OSM's dotted red.
+
+**Trams, and no trains** — heavy rail is not drawn at all: `rail`, `rail_dash`
+and their two tunnel copies are deleted, so a freight corridor no longer cuts a
+dark line across a map somebody is reading to find a toilet.
+
+One layer is left, `transit`, drawing solid `#7c8288`, thin and unhatched —
+hatching a tram line at that width turns it into dots. Its filter is the whole
+policy:
+
+- **trams, wherever they run.** Tunnel, bridge or street, it is the same line
+  to somebody following it, so there is no `brunnel` test on this half.
+- **metros, only where they are visible.** A subway in a tunnel is under the
+  map rather than on it, so `brunnel=tunnel` is excluded; a metro on a viaduct
+  or at grade still draws.
+- **nothing else.** `light_rail` is its own subclass in the tiles and is left
+  out with the heavy rail. If a city's network reads as full of holes, that
+  subclass is the first thing to add back.
+
+Across tiles for six cities that draws 8 tram and 5 metro segments and skips
+31 heavy rail, 38 subway tunnels and 14 light rail.
+
+**Ground and roads** — Voyager's `#fbf8f3` ground under `#ffffff` roads is a
+one-percent difference, so the street network read as absence rather than as
+line work. The ground dropped to `#f3eee4`, roughly osm-carto's, and the two
+road classes that had no casing worth the name got one: `road_minor_case` is
+`#e2d8c8` fading to `#d8ccb8`, `road_service_case` `#e2d8c8` from z14. The
+white fills are untouched — the contrast is all underneath them. The
+residential tint moved with the ground so it still reads as slightly greyer
+than open land rather than lighter.
+
+**Road names** — the stock layers started late and repeated sparsely, so a
+motorway could cross the screen unnamed and z13-15 was close to silent: nothing
+on a residential street is named until `roadname_minor`, and that used to wait
+for z16.
+
+| Layer            | Stock | Now |
+| ---------------- | ----- | --- |
+| `roadname_major` | z13   | z11 |
+| `roadname_pri`   | z14   | z12 |
+| `roadname_sec`   | z15   | z13 |
+| `roadname_minor` | z16   | z15 |
+
+Each gained a text-size stop at the bottom of its new range, and the three
+classified layers share a `symbol-spacing` that tightens from 220 at z16 to 120
+at z11, so a long road gets its name several times across the screen instead of
+once. Bringing `roadname_minor` down to z15 is what fills the gap — 400 named
+ways in three sample tiles that drew nothing there before. The halo under the
+two grey ones was still the old ground colour and is now `#f3eee4`.
+
+**POI icons** — the tiles carry a `poi` layer with a `class` on every feature,
+so toilets and playgrounds were arriving all along; what was missing was
+pictures, because CARTO's sprite sheet holds exactly one image (`circle-11`,
+which the city-dot layers draw). `scripts/build-basemap-sprite.mjs` builds a
+second sheet into `public/map/sprite{,@2x}.{png,json}` out of the same
+`@mui/icons-material` paths the app's own markers are drawn from, so a toilet
+on the basemap and a toilet on a marker are the same drawing. Where Material
+has nothing that reads right the symbol is vendored into
+`scripts/basemap-symbols/` instead — the playground is OSM's own see-saw, which
+nothing in Material comes close to. Run
+`npm run basemap:sprite` after editing its `ICONS` map; the output is
+committed, and nothing else regenerates it.
+
+The style names two sprite sources, so icon names are prefixed — `poi:toilets`.
+CARTO's entry is deliberately named `default`, the id MapLibre gives a plain
+string sprite, which keeps `circle-11` working unprefixed. Three layers draw
+them, staged by how dense the class is:
+
+| Layer               | From | Draws                                                        |
+| ------------------- | ---- | ------------------------------------------------------------ |
+| `poi_icon_civic`    | z15  | toilets, water, play, parks, transport, health, civic        |
+| `poi_icon_commerce` | z16  | food, drink, groceries, lodging                              |
+| `poi_icon_shop`     | z17  | the generic shop — ~3000 per Berlin tile, so it waits        |
+
+They sit after the road names and before `housenumber`, which is the collision
+order that matters: a street name beats an icon, an icon beats a house number.
+
+`poi_icon_civic` also carries the names, for the classes worth naming — school,
+college, hospital, library, museum, gallery, castle, place of worship. Its
+`text-field` is a `step` on zoom wrapped round a `case` on class, so one
+expression is both gates: nothing is named below z15 — where the icons
+themselves start — and above it only those classes, and only where the feature
+has a name. The rest of the layer stays
+icons. `text-optional` is on, so a label that will not fit is dropped and its
+icon stays rather than the pair going together.
+
+The name has to come off the POI point, not the area under it: the tiles give
+the `landuse` layer a `class` and nothing else, so the school polygon that
+`landuse_education` paints yellow has no name in it to draw.
+
+MapLibre will not take a relative sprite URL and does not resolve one against
+the style document it just fetched, so `BasemapLayer.tsx` fetches the style
+itself and rewrites `/map/sprite` to an absolute URL before handing MapLibre
+the object. That is the reason the component no longer passes a style URL.
+
+Parking and sports pitches have no icon on purpose: parking is one of the app's
+own categories and drew a second pin under the first, and the ball court was
+noise on top of the `landuse_pitch` fill that already says the same thing.
+
+Material icons are Apache-2.0, the same as their use in the app bundle, and the
+vendored OSM symbols are CC0, so baking either into a PNG changes nothing about
+what has to ship with it.
+
+To check a change against real data without rendering it, the tiles decode in
+Node — `@mapbox/vector-tile` plus `pbf` are already in the tree, and
+`featureFilter` from `@maplibre/maplibre-gl-style-spec` will tell you how many
+features in a tile a layer's filter actually matches. `validateStyleMin` from
+the same package catches a malformed paint property before the browser does.
 
 ## Editing it in Maputnik
 
@@ -51,6 +232,10 @@ the current version, and CARTO serves the tiles, sprite and glyphs with
 Maputnik has no lock on the file — it edited a copy in the browser. If you also
 hand-edit the JSON between an open and an export, the export wins and your
 hand-edit is gone.
+
+One thing to watch on the way back in: the two-entry array `sprite`. If the
+export flattened it to a bare string, every POI icon is gone — `git diff` will
+show it plainly, and the fix is to paste the array back by hand.
 
 To run Maputnik locally instead (same-origin, no download step for loading):
 `git clone https://github.com/maplibre/maputnik && cd maputnik && npm install &&

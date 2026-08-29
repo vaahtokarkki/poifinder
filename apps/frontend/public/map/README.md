@@ -274,6 +274,51 @@ node -e "const s=require('./apps/frontend/public/map/voyager.json'); \
 MapLibre will log a console error naming the offending layer if a paint or
 layout property is malformed, so open the browser console after `npm run dev`.
 
+## Legibility pass
+
+A later pass on top of "What we changed" above, aimed at the map read on a
+phone in daylight.
+
+**Buildings fade in across z13-z15, and the residential ground got tone.**
+`building` and `building-top` carried no `minzoom`, so they drew wherever the
+source has them; at z14 that tiles the screen in `#e4dcd0` and buries the road
+network. They now start at z13 and reach full at z15 — but note the shape of
+the ramp, not just the `minzoom`. An opacity ramp of `[[14, 0], [15, 1]]` means
+buildings are *exactly zero at z14*, so a `minzoom` of 14 draws nothing at 14;
+the ramp is `[[13, 0], [14, 0.6], [15, 1]]` so that z14 gets real weight.
+
+The other half of that zoom looking empty was the ground. `landuse_residential`
+composited to `#f0eadf` against a `#f3eee4` background — three steps out of 255,
+so built-up land was indistinguishable from no data. Its tint is now a deeper
+`rgb(226, 216, 200)` from z13, landing around `#ebe4d7`, and still steps back at
+z16 where the buildings take over as the texture.
+
+**Minor and service roads are white ribbons from z13/z14.** `road_minor_fill`
+and `road_service_fill` were `minzoom: 15`, so from z13 to z15 a minor road was
+its casing and nothing else — and that casing was `#e2d8c8` against a `#fbf8f3`
+background, barely a shade apart. The fills now start at z13 and z14. The
+casings also darkened, to `#d9ccb6`/`#cbbca2`, and that is the half that
+actually matters: white on cream is nearly invisible without an edge to hold
+it, so bringing the white down without darkening the casing would have changed
+very little.
+
+**Rail: `light_rail` added, and a `rail` layer that did not exist.** Two
+separate gaps. The `transit` filter listed `tram` and `subway` but not
+`light_rail`, which is what the tiles call an S-Bahn — so a line drawn as tram
+or subway stopped dead wherever it handed over to one, on the surface, looking
+like a data error. Separately nothing in the style matched `class == "rail"`
+at all, so mainline track was never drawn. In one z14 tile over Friedrichshain
+that is 13 features drawing nothing: 7 mainline, 6 S-Bahn.
+
+Both now draw in a light cool grey `#c9ced3`, replacing the old `#7c8288`,
+which read as a hard dark line rather than the background texture rail should
+be. Tunnels stay filtered out of both — an underground line drawn on the
+surface is worse than no line.
+
+To re-check that against live data, decode a tile and run the layer filters
+over it rather than trusting the map by eye; `class`/`subclass`/`brunnel` are
+what the filters turn on, and they are not guessable from the rendered image.
+
 ## Pulling a fresh upstream copy
 
 CARTO changes Voyager occasionally. To rebase your edits onto a newer version,

@@ -123,10 +123,48 @@ export const MIN_NAMED_POIS_FOR_PAGE = 5;
  * they were, not whether total impressions went up — they will fall, because
  * the paused categories were carrying impressions that never became visits.
  *
- * gas-stations, dog-parks and atms are the obvious next candidates: 12,269
- * impressions and 3 clicks between them. They are left in for now because they
- * demonstrably rank, and losing that is a bigger bet than losing five
- * categories nothing ever clicked.
+ * The second wave below landed a week into that, before the first had been
+ * read, so October cannot separate them. That is a deliberate trade: both
+ * waves push the same direction, the crawl budget they free is worth more
+ * spent now than the clean attribution is worth in six weeks, and either is
+ * undone by deleting a line. What October can still answer is the question
+ * that matters — whether the categories left behind index faster.
+ *
+ * Second wave, 2026-08-29, on nine days of data from the 923 pages that were
+ * indexed on the 18th: 49,003 impressions, 64 clicks, 0.13% CTR.
+ *
+ * gas-stations was the bet named above, and the fuller numbers settle it. 92
+ * pages, 30,152 impressions — 61% of everything the site was shown for — and
+ * six clicks, at an average position of 7.8. That is not a page that failed to
+ * rank, it is a page that ranked and was never the answer: "gas station near
+ * me" alone is 22,509 impressions at position 7.4 for three clicks, because
+ * position 7 on a near-me query is below the map pack, below the ads and below
+ * the fold. No amount of position fixes it. The same shape, weaker, is why
+ * dog-parks and atms stay on the watch list rather than in this set — 0.09%
+ * and 0.18%, but 4 and 5 clicks are not nothing on 42 and 52 pages.
+ *
+ * The other three are the opposite failure. charging-stations averages
+ * position 65 over 78 pages, luggage-storage 62 over 12 — "luggage storage
+ * barcelona" is position 81 — and picnic-spots draws 41 impressions a page for
+ * zero clicks across 28 of them. They do not rank at all, and the queries they
+ * are aimed at belong to booking sites and charger networks.
+ *
+ * What is left is the categories nothing else maps, and they are the ones that
+ * convert: drinking water 2.08% CTR, recycling 1.22%, post boxes 1.04%,
+ * toilets 0.43%, shelters 7.14% on a small base. Measured per page, which is
+ * the only way to compare a category of 92 against one of 9, drinking water
+ * earns six times what gas stations do while ranking ten positions worse.
+ *
+ * The dividing line is not how well a category is mapped, it is whether the
+ * thing has a Google Maps profile. A petrol station, a dog park, an ATM and an
+ * ice cream shop are destinations Google already answers with a map pack. A
+ * drinking fountain, a recycling container, a bus shelter and a post box are
+ * street furniture nobody has bothered to list, which is exactly where a page
+ * built from OpenStreetMap is the best answer on the results page.
+ *
+ * This wave removes 318 of the 1,216 indexable routes, gas-stations 148 of
+ * them. Expect total impressions to fall by roughly two thirds and clicks by
+ * under a tenth.
  */
 export const PAUSED_CATEGORIES: ReadonlySet<string> = new Set([
   "parking",
@@ -134,6 +172,11 @@ export const PAUSED_CATEGORIES: ReadonlySet<string> = new Set([
   "playgrounds",
   "ice-cream",
   "viewpoints",
+  // Second wave, 2026-08-29 — see above
+  "gas-stations",
+  "charging-stations",
+  "luggage-storage",
+  "picnic-spots",
 ]);
 
 /**
@@ -427,14 +470,20 @@ export function poiTitle(route: Route, poi: PoiEntry): string {
   const singular = categorySingular(route.categorySeo, vocabForRoute(route));
   // The list only ever holds rows with one or the other, so the last branch is
   // for a hand edited payload rather than anything the fetch can produce
-  return poi.context
-    ? capitalizeFirst(interpolate(ui().poi.inPlace, { noun: singular, place: poi.context }))
-    : capitalizeFirst(singular);
+  if (poi.context) {
+    return capitalizeFirst(interpolate(ui().poi.inPlace, { noun: singular, place: poi.context }));
+  }
+  // "on" rather than "in", because a street runs past a post box rather than
+  // containing it, and the weaker preposition is the honest one
+  if (poi.street) {
+    return capitalizeFirst(interpolate(ui().poi.onStreet, { noun: singular, street: poi.street }));
+  }
+  return capitalizeFirst(singular);
 }
 
 /** Whether any row on this page is titled by its surroundings rather than named */
 export function hasPlacedPois(pois: PoiEntry[]): boolean {
-  return pois.some((poi) => !poi.name && poi.context);
+  return pois.some((poi) => !poi.name && (poi.context || poi.street));
 }
 
 /**
@@ -604,10 +653,14 @@ export function neighbourCitiesFor(
 }
 
 /** schema.org address of a point, which is only ever as good as the OSM tags */
-function postalAddress(city: City, poi: { address?: string }) {
+function postalAddress(city: City, poi: { address?: string; street?: string }) {
+  // The address tag when OpenStreetMap has one, and the street the point was
+  // placed on when it does not. Both are a streetAddress; the second is simply
+  // missing its housenumber, which is what the property allows
+  const streetAddress = poi.address ?? poi.street;
   return {
     "@type": "PostalAddress",
-    ...(poi.address ? { streetAddress: poi.address } : {}),
+    ...(streetAddress ? { streetAddress } : {}),
     addressLocality: cityName(city),
     addressCountry: city.countryCode,
   };

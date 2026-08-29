@@ -60,6 +60,35 @@ export type CategorySeo = {
    * pageMeta.ts for the same reasoning applied from the other end.
    */
   enclosedBy?: readonly EnclosureKind[];
+  /**
+   * Whether the street a point stands on may name it.
+   *
+   * The other half of the problem `enclosedBy` solves, for the points it
+   * cannot help. A post box stands at a kerb: it is inside no building and no
+   * park, so containment has nothing to offer it and the comment above says as
+   * much — 12 of Helsinki's 224 post boxes are inside anything at all. But
+   * nobody looking for one thinks of it as being inside something. They think
+   * of it as being on Mannerheimintie, and that is a named object too, lying
+   * beside the point rather than around it.
+   *
+   * So the same rule with a different geometry: the nearest named highway
+   * within STREET_RADIUS names the row, and the page says "on" rather than
+   * "in". It is a weaker claim than containment and deliberately so — a street
+   * name places a thing to within a block, which is what a person walking to
+   * it needs and rather more than the twenty five identical rows it replaces.
+   *
+   * Dedupe does the rest of the work. Identity in selectPois is the proper
+   * noun whichever field it came from, so one street names one row however
+   * many post boxes stand along it, and a city earns its five listable rows
+   * only by having post boxes on five different streets. That is a much
+   * easier bar than five named parks and a much harder one than five points.
+   *
+   * Set on street furniture only. A toilet is in a building and a picnic table
+   * is in a park; naming either by the road outside would be a worse answer
+   * than the one containment already gives, which is why this is consulted
+   * only after `enclosedBy` has had its turn.
+   */
+  placedByStreet?: boolean;
   /** schema.org type of a single point, Place when nothing fits better */
   schemaType: string;
 };
@@ -132,12 +161,14 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
   {
     category: CATEGORIES.PostBoxes,
     slug: "post-boxes",
+    placedByStreet: true,
     schemaType: "Place",
   },
   {
     category: CATEGORIES.Recycling,
     slug: "recycling",
     enclosedBy: ["building", "area"],
+    placedByStreet: true,
     schemaType: "RecyclingCenter",
   },
   {
@@ -165,6 +196,7 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     category: CATEGORIES.Shelter,
     slug: "shelters",
     enclosedBy: ["area"],
+    placedByStreet: true,
     schemaType: "Place",
   },
   {

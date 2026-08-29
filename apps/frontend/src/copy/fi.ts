@@ -173,6 +173,9 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     fee: "Maksullinen",
     unnamedPlace: "Nimetön paikka",
     inPlace: "{noun}, {place}",
+    // The same comma form as inPlace. Finnish would need the street name in the
+    // adessive to say "on", and a comma places the point without inflecting it
+    onStreet: "{noun}, {street}",
     noExtraDetails: "{name} — ei lisätietoja",
     address: "Osoite",
     fromBuilding: "Tästä rakennuksesta",

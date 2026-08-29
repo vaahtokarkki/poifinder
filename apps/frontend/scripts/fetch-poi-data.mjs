@@ -30,6 +30,13 @@
  * comes back empty against our own server and full against the public mirrors.
  * Until the import keeps named areas too, run the refresh for the outdoor
  * categories without OVERPASS_API_URL set.
+ *
+ * `placedByStreet` is in the same position and for the same reason. The filter
+ * keeps two highway tags, both of them rest areas we map as points of interest
+ * in their own right, so named roads are not in the database at all and the
+ * street lookup comes back empty against it. Post boxes, shelters and
+ * recycling therefore want the public mirrors too, until the import keeps
+ * named highways.
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -66,6 +73,19 @@ const CONTEXT_CANDIDATES = 80;
  */
 const BUILDING_RADIUS = 30;
 const AREA_RADIUS = 600;
+/**
+ * How far from a point to look for the street it stands on, in metres.
+ *
+ * Unlike the two above this one bounds the answer as well as the search: there
+ * is no containment test to fall back on, so whatever named way is nearest
+ * within this distance is the one that names the row.
+ *
+ * 30 m is a kerb plus a wide carriageway. Wider starts naming points by the
+ * parallel street behind them, which is worse than saying nothing; narrower
+ * loses the post box on the far side of a boulevard, which is a real one. On a
+ * corner the nearest way wins, and either answer is true.
+ */
+const STREET_RADIUS = 30;
 /**
  * The open air places worth being told you are standing in.
  *
@@ -248,7 +268,7 @@ function selectPois(candidates) {
     // standing inside the Stockmann building are one row rather than two ways
     // of saying the same shop. Whichever is nearer the centre wins, which is
     // the order the candidates already arrive in
-    const identity = candidate.name ?? candidate.context;
+    const identity = candidate.name ?? candidate.context ?? candidate.street;
     const key = identity ? identity.toLowerCase() : null;
     if (!key || seen.has(key)) continue;
     seen.add(key);
@@ -436,6 +456,105 @@ function placeCandidates(candidates, elements) {
   return placed;
 }
 
+/* ------------------------------------------------------------------------ *
+ * The street a point stands on
+ *
+ * What is left after the containment test has had its turn. A post box is
+ * inside nothing, so `placeCandidates` above can say nothing about it, and a
+ * page of them is twenty five rows reading "Post box" — which is the thin
+ * content MIN_NAMED_POIS_FOR_PAGE exists to keep out of the index, and it
+ * kept post boxes out of 113 of the 148 cities that have plenty of them.
+ *
+ * A street is the object that places street furniture, and it is beside the
+ * point rather than around it, so the geometry is distance to a line rather
+ * than a ray cast through a ring. Otherwise the rule is the one used
+ * everywhere else here: the nearest named way wins, the name stays the
+ * street's in a field of its own, and the page says "on".
+ * ------------------------------------------------------------------------ */
+
+/** The query that asks which named streets run past the given nodes */
+function buildStreetQuery(nodeIds) {
+  return (
+    `[out:json][timeout:${QUERY_TIMEOUT}];\n` +
+    `node(id:${nodeIds.join(",")})->.points;\n` +
+    // Motorways carry no post boxes and no bus shelters, and their slip roads
+    // are the one class of named way that can run within 30 m of a point that
+    // belongs to the ordinary street beside it
+    `way[highway][name][highway!~"^(motorway|trunk|motorway_link|trunk_link)$"]` +
+    `(around.points:${STREET_RADIUS});\n` +
+    `out geom;`
+  );
+}
+
+/**
+ * Metres from a point to a line segment.
+ *
+ * Equirectangular, with longitude scaled by the cosine of the latitude. Over
+ * the tens of metres this is ever asked about the error is far below the
+ * precision of the answer, and the alternative — a great circle distance to a
+ * segment — is a great deal of arithmetic to pick the same street.
+ */
+function segmentDistanceMeters(lat, lon, aLat, aLon, bLat, bLon) {
+  const perDegLat = 111320;
+  const perDegLon = 111320 * Math.cos((lat * Math.PI) / 180);
+  const px = (lon - aLon) * perDegLon;
+  const py = (lat - aLat) * perDegLat;
+  const vx = (bLon - aLon) * perDegLon;
+  const vy = (bLat - aLat) * perDegLat;
+  const lengthSquared = vx * vx + vy * vy;
+  // A degenerate segment is a point, and the projection below would divide by
+  // zero rather than fall back to it
+  const t =
+    lengthSquared === 0
+      ? 0
+      : Math.max(0, Math.min(1, (px * vx + py * vy) / lengthSquared));
+  return Math.hypot(px - t * vx, py - t * vy);
+}
+
+/**
+ * Write onto each still unplaced point the name of the nearest named street.
+ *
+ * Mutates the candidates, as placeCandidates does and for the same reason. A
+ * point the containment test already named is left alone: a bus shelter inside
+ * a park is better described by the park than by the road outside it, which is
+ * why this runs second rather than instead.
+ */
+function streetCandidates(candidates, elements) {
+  const streets = [];
+  for (const element of elements) {
+    const name = typeof element.tags?.name === "string" ? element.tags.name.trim() : "";
+    if (!name || !element.geometry) continue;
+    const points = element.geometry.filter((point) => point);
+    if (points.length < 2) continue;
+    streets.push({ name, points });
+  }
+
+  let placed = 0;
+  for (const candidate of candidates) {
+    if (candidate.context) continue;
+    let best = null;
+    for (const street of streets) {
+      for (let i = 1; i < street.points.length; i++) {
+        const distance = segmentDistanceMeters(
+          candidate.lat,
+          candidate.lon,
+          street.points[i - 1].lat,
+          street.points[i - 1].lon,
+          street.points[i].lat,
+          street.points[i].lon
+        );
+        if (distance > STREET_RADIUS) continue;
+        if (!best || distance < best.distance) best = { name: street.name, distance };
+      }
+    }
+    if (best) {
+      candidate.street = best.name;
+      placed++;
+    }
+  }
+  return placed;
+}
+
 /**
  * How stale a city is, in days: the age of its *least* recently refreshed
  * category, and Infinity when any is missing altogether.
@@ -613,6 +732,30 @@ async function main() {
               // before the lookup existed, so a failure here costs rows rather
               // than the category
               console.warn(`    ${categorySeo.slug}: no enclosing places (${error.message})`);
+            }
+            await sleep(DELAY_MS);
+          }
+
+          // And the third query, for the street furniture the containment test
+          // cannot help. Same shape as the one above: skipped when there is
+          // nothing left to place, and a failure costs rows rather than the
+          // category. Only the points still unnamed after the enclosing place
+          // lookup are offered, so a shelter already placed in a park is not
+          // paid for twice
+          const unstreeted = categorySeo.placedByStreet
+            ? candidates
+                .filter((c) => !c.name && !c.context && c._node)
+                .slice(0, CONTEXT_CANDIDATES)
+            : [];
+          if (unstreeted.length > 0) {
+            try {
+              const streets = await runQuery(
+                buildStreetQuery(unstreeted.map((c) => c._node)),
+                endpoints
+              );
+              placed += streetCandidates(unstreeted, streets.elements ?? []);
+            } catch (error) {
+              console.warn(`    ${categorySeo.slug}: no streets (${error.message})`);
             }
             await sleep(DELAY_MS);
           }

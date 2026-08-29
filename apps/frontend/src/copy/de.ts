@@ -176,6 +176,8 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     fee: "Gebührenpflichtig",
     unnamedPlace: "Unbenannter Ort",
     inPlace: "{noun} in {place}",
+    // "an" rather than "in": the thing stands beside the street, not within it
+    onStreet: "{noun} an der {street}",
     noExtraDetails: "{name} — keine weiteren Angaben",
     address: "Adresse",
     fromBuilding: "Aus diesem Gebäude",

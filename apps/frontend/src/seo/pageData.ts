@@ -22,11 +22,21 @@ export type PoiEntry = {
    * testing the point against the outlines of the named places near it, never
    * written onto the point in OpenStreetMap and never presented as its name.
    *
-   * A row carries a name, a context, or both. One with neither is not stored:
-   * it is a row that reads "Public toilet" and says nothing. See poiTitle in
-   * pageMeta.ts for how the two are put together
+   * A row carries a name, a context, a street or some combination. One with
+   * none of them is not stored: it is a row that reads "Public toilet" and
+   * says nothing. See poiTitle in pageMeta.ts for how they are put together
    */
   context?: string;
+  /**
+   * The name of the street the point stands on, for the street furniture no
+   * building or park contains: the road a post box or a bus shelter is beside.
+   * Worked out at fetch time as the nearest named highway within 30 m.
+   *
+   * Only ever set where `context` is not — containment is the better answer
+   * where there is one — so the two never compete for the same row. See
+   * `placedByStreet` in categories.ts
+   */
+  street?: string;
   lat: number;
   lon: number;
   /** Street address, when OpenStreetMap has the housenumber and street */

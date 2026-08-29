@@ -817,6 +817,7 @@ const ui: CopyDeck["ui"] = {
     fee: "Fee",
     unnamedPlace: "Unnamed place",
     inPlace: "{noun} in {place}",
+    onStreet: "{noun} on {street}",
     noExtraDetails: "{name} — no extra details",
     address: "Address",
     fromBuilding: "From this building",

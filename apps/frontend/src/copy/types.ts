@@ -181,6 +181,8 @@ export type UiCopy = {
     unnamedPlace: string;
     /** A row named by the building or park it stands in, not by itself */
     inPlace: string;
+    /** A point named by the street it stands on rather than the place around it */
+    onStreet: string;
     /** The line shown instead of a popup, when a point carries nothing to say */
     noExtraDetails: string;
     address: string;

@@ -301,6 +301,10 @@ export type UiCopy = {
     loadingServer: string;
     /** What that counter means, for the title and for a screen reader */
     loadingFallback: string;
+    /** The same pill, while the device has yet to report a position */
+    gpsWaiting: string;
+    /** What the wait is for, for the title and for a screen reader */
+    gpsWaitingHint: string;
   };
   /** What the app says when something has happened */
   notices: {

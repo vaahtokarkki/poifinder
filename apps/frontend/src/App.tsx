@@ -14,8 +14,10 @@ import { fetchRouteGeoJSON } from "./api/ors.ts";
 import { fetchOverpassMarkers, OverpassMarkerData } from "./api/overpass.ts";
 import type { OverpassProgress } from "./api/overpass.ts";
 import Loading from "./components/Loading";
+import LocatingChip from "./components/LocatingChip";
 import ZoomInHint from "./components/ZoomInHint";
 import { useUserPosition } from "./hooks/index";
+import { requestDeviceHeadingPermission } from "./hooks/useDeviceHeading";
 import { CATEGORIES } from "./constants";
 import { fetchSuggestions } from "./api/geocode";
 import { fetchIpLocation } from "./api/ipLocation";
@@ -645,6 +647,11 @@ const App = () => {
     const hasFix =
       typeof userPosition.lat === "number" && typeof userPosition.lng === "number";
     analytics.myLocationUsed(hasFix);
+    // iOS hands out compass readings only when they are asked for from inside
+    // a tap, and this is the one tap that is unambiguously about where the
+    // visitor is. Fire and forget: the centring below must not wait on a
+    // permission sheet, and the compass is an extra either way
+    void requestDeviceHeadingPermission();
     if (map && hasFix) {
       setMapView([userPosition.lat as number, userPosition.lng as number]);
     }
@@ -1088,6 +1095,9 @@ const App = () => {
               the least of what is on this overlay, and the map stays usable
               throughout one */}
           <Loading active={loading} progress={loadingProgress} />
+          {/* Under it again: a search is about the map, a missing fix is only
+              about the dot on it */}
+          <LocatingChip />
         </div>
         <ZoomInHint onClick={handleZoomInClick} visible={zoomHintVisible} />
         <div className="map-controls">

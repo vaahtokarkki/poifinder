@@ -910,6 +910,8 @@ const ui: CopyDeck["ui"] = {
     loading: "Loading…",
     loadingServer: "{server}/{total}",
     loadingFallback: "Our own server is not answering, so this is going through the public ones",
+    gpsWaiting: "Waiting for GPS…",
+    gpsWaitingHint: "Looking for a satellite fix. The blue dot turns blue once your device knows where it is",
   },
 
   notices: {

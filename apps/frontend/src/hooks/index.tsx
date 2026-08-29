@@ -9,7 +9,22 @@ export type LatLng = {
   isFromCache?: boolean;
   /** True once the device has reported a position during this session */
   hasGpsLock: boolean;
+  /** Radius in metres the device claims the fix is good to, when it says */
+  accuracy?: number;
+  /**
+   * Degrees clockwise from north, as reported by the positioning hardware.
+   * Only ever there while the device is moving, and null on most desktops,
+   * which is why the compass reads the magnetometer first (useDeviceHeading).
+   */
+  heading?: number | null;
 };
+
+/**
+ * How the device is answering, so the map can say "waiting for GPS" without
+ * having to guess the difference between a fix that is slow and one that is
+ * never coming.
+ */
+export type GpsStatus = "unsupported" | "waiting" | "locked" | "denied";
 
 /**
  * Start from the last known position in localStorage so the map can be centered
@@ -40,6 +55,16 @@ const publish = (position: LatLng) => {
   listeners.forEach((listener) => listener(position));
 };
 
+let currentStatus: GpsStatus =
+  typeof navigator !== "undefined" && "geolocation" in navigator ? "waiting" : "unsupported";
+const statusListeners = new Set<(status: GpsStatus) => void>();
+
+const publishStatus = (status: GpsStatus) => {
+  if (status === currentStatus) return;
+  currentStatus = status;
+  statusListeners.forEach((listener) => listener(status));
+};
+
 const onGeolocation = ({ coords, timestamp }: GeolocationPosition) => {
   publish({
     lat: coords.latitude,
@@ -47,7 +72,10 @@ const onGeolocation = ({ coords, timestamp }: GeolocationPosition) => {
     initialized: true,
     isFromCache: Date.now() - timestamp > 5000, // Assume cached if older than 5s
     hasGpsLock: true,
+    accuracy: Number.isFinite(coords.accuracy) ? coords.accuracy : undefined,
+    heading: Number.isFinite(coords.heading) ? coords.heading : null,
   });
+  publishStatus("locked");
   saveGPSLocation({
     lat: coords.latitude,
     lng: coords.longitude,
@@ -61,6 +89,7 @@ const onGeolocation = ({ coords, timestamp }: GeolocationPosition) => {
  */
 const startWatching = () => {
   if (watching || !("geolocation" in navigator)) {
+    publishStatus("unsupported");
     return;
   }
   watching = true;
@@ -71,6 +100,7 @@ const startWatching = () => {
     onGeolocation,
     (error) => {
       if (error) console.debug("Geolocation error (cached):", error.message);
+      if (error?.code === error?.PERMISSION_DENIED) publishStatus("denied");
     },
     {
       // Ask for GPS rather than the network provider. Wi-Fi based positioning
@@ -88,6 +118,9 @@ const startWatching = () => {
     onGeolocation,
     (error) => {
       if (error) console.debug("Geolocation watch error:", error.message);
+      // A timeout is the watch still trying, and says nothing conclusive. Only
+      // a refusal is the end of the road, and only that takes the chip down
+      if (error?.code === error?.PERMISSION_DENIED) publishStatus("denied");
     },
     {
       enableHighAccuracy: true, // GPS only, see the note above
@@ -112,4 +145,24 @@ export const useUserPosition = (): { position: LatLng } => {
   }, []);
 
   return { position };
+};
+
+/**
+ * Whether the device has answered yet, for the chip that says so. Shares the
+ * one geolocation subscription with useUserPosition; either hook starts it.
+ */
+export const useGpsStatus = (): GpsStatus => {
+  const [status, setStatus] = useState<GpsStatus>(currentStatus);
+
+  useEffect(() => {
+    statusListeners.add(setStatus);
+    startWatching();
+    setStatus(currentStatus);
+
+    return () => {
+      statusListeners.delete(setStatus);
+    };
+  }, []);
+
+  return status;
 };

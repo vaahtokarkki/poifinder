@@ -268,6 +268,8 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     loading: "Ladataan…",
     loadingServer: "{server}/{total}",
     loadingFallback: "Oma palvelimemme ei vastaa, joten haku kiertää julkisten kautta",
+    gpsWaiting: "Odotetaan GPS-paikannusta…",
+    gpsWaitingHint: "Haetaan satelliittipaikannusta. Piste muuttuu siniseksi, kun laite tietää sijaintinsa",
   },
 
   notices: {

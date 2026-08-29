@@ -181,10 +181,12 @@ body {
  * reads as one more thing in that column rather than as an alarm.
  *
  * `align-self` because the overlay is a stretched column: without it the pill
- * spans the screen and the shadow draws a bar across the map.
+ * spans the screen and the shadow draws a bar across the map. Centred in that
+ * column rather than pinned left, so the pill sits over the middle of the map
+ * where a reader glancing up from the points will already be looking.
  */
 .map-loading {
-  align-self: flex-start;
+  align-self: center;
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
@@ -199,6 +201,15 @@ body {
      .map-overlay-top turns pointer events back on for each of its children,
      which is why this has to say so again */
   pointer-events: none;
+}
+
+/*
+ * The same pill, saying the device has not answered yet rather than the
+ * server. It is a fact about the blue dot, not about the search, so it is
+ * quieter still: no counter, and it takes itself down the moment a fix lands.
+ */
+.map-locating {
+  color: #80868b;
 }
 
 /*
@@ -1183,4 +1194,49 @@ body {
   font-size: 52px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
+}
+
+
+/* ---------- The visitor's own position ---------- */
+
+/*
+ * The blue dot, its compass cone, and nothing else.
+ *
+ * Both live in one 72px box centred on the coordinate, which is mostly empty
+ * space for the cone to reach into, so the whole thing has to let taps
+ * through — otherwise the dot would sit under an invisible 72px pad that
+ * swallows every point near the visitor.
+ */
+.user-position-icon {
+  pointer-events: none;
+}
+
+.user-position-beam {
+  display: block;
+  /* Turned from the centre of the box, which is where the dot is */
+  transform-origin: 50% 50%;
+  /* The compass is noisy and the readings arrive in steps; a short ease makes
+     a turn read as a turn rather than as a flicker */
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  /* Hidden until a heading exists. useDeviceHeading may never find one */
+  opacity: 0;
+}
+
+.user-position-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  box-sizing: content-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .user-position-beam {
+    transition: none;
+  }
 }

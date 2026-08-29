@@ -29,7 +29,36 @@ still appends `VITE_CARTO_API_KEY` to every one of them. Leave them absolute
 unless you are also self-hosting tiles — a style with a local `sources` block
 and no tiles behind it draws an empty canvas.
 
-## Editing it
+## Editing it in Maputnik
+
+Maputnik is the visual editor for MapLibre styles — layer list, color pickers,
+live preview. Use the hosted build at <https://maplibre.org/maputnik/>; it is
+the current version, and CARTO serves the tiles, sprite and glyphs with
+`Access-Control-Allow-Origin: *`, so the preview renders the real map.
+
+1. **Open** > *Open local file* > `apps/frontend/public/map/voyager.json`.
+   Do not load it by URL from the dev server — an https page reaching
+   http://localhost is a fight you do not need.
+2. Edit. The layer list is the same array as in the file, in the same order.
+3. **Export** > *Download*, which lands in `~/Downloads`.
+4. `npm run basemap:import` — takes the newest exported style from
+   `~/Downloads` and writes it back here, re-indented and with Maputnik's
+   `maputnik:*` metadata stripped so the diff is cartography only. It prints
+   which layers were added or removed. Pass a path to import a specific file.
+5. `git diff apps/frontend/public/map/voyager.json` to see what you did, then
+   `npm run dev` to see it in the app.
+
+Maputnik has no lock on the file — it edited a copy in the browser. If you also
+hand-edit the JSON between an open and an export, the export wins and your
+hand-edit is gone.
+
+To run Maputnik locally instead (same-origin, no download step for loading):
+`git clone https://github.com/maplibre/maputnik && cd maputnik && npm install &&
+npm start`. The old `maputnik --watch --file` binary that wrote straight to disk
+was last released in 2020 and the Docker Hub image is from the same era; neither
+is worth using now.
+
+## Editing it by hand
 
 The layers are painted in array order, first to last, so a layer's position in
 `layers` is its z-order. Names are stable and descriptive: `background`,

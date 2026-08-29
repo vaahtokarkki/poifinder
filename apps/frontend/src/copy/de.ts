@@ -270,6 +270,8 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     loading: "Wird geladen…",
     loadingServer: "{server}/{total}",
     loadingFallback: "Unser eigener Server antwortet nicht, daher läuft die Suche über die öffentlichen",
+    gpsWaiting: "Warte auf GPS…",
+    gpsWaitingHint: "Die Satellitenortung läuft noch. Der Punkt wird blau, sobald dein Gerät seinen Standort kennt",
   },
 
   notices: {

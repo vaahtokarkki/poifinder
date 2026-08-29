@@ -11,6 +11,7 @@
     "seo:data": "node scripts/fetch-poi-data.mjs",
     "copy:check": "node scripts/check-copy.mjs",
     "overpass:filters": "node scripts/generate-osmium-filter.mjs",
+    "basemap:import": "node scripts/import-basemap-style.mjs",
     "lint": "gts lint",
     "preview": "vite preview",
     "clean": "gts clean",

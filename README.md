@@ -60,3 +60,22 @@ Run from the repo root; each delegates to the workspace that owns it.
 | `npm run overpass:filters` | Regenerates `apps/overpass/osmium-filter.txt` from `CATEGORY_CONFIG` |
 | `npm run overpass:up` | Builds and starts the Overpass container |
 | `npm run overpass:update` | Reimports its database from a fresh extract |
+
+## Licence
+
+Two licences, because this repository holds two different things.
+
+| What | Licence |
+| --- | --- |
+| The source code | [MIT](LICENSE) |
+| [`apps/frontend/data/poi`](apps/frontend/data/poi), the OpenStreetMap extract | [ODbL 1.0](apps/frontend/data/poi/LICENSE) |
+
+The split is the one the ODbL itself draws. Code that queries OpenStreetMap is
+just code, and MIT is the whole of it. The JSON in `data/poi` is a derivative
+database — element ids, names, coordinates and tags, selected and rearranged —
+so it stays under the licence it came with, and anything you build from it that
+is also a database has to.
+
+The pages the build renders out of it are a produced work rather than a
+database, which is why they carry an attribution rather than a licence:
+map data © OpenStreetMap contributors, https://www.openstreetmap.org/copyright.

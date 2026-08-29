@@ -15,6 +15,7 @@
     "compile": "npm run compile -w @wayside/frontend",
     "deploy": "npm run deploy -w @wayside/frontend",
     "overpass:filters": "npm run overpass:filters -w @wayside/frontend",
+    "basemap:import": "npm run basemap:import -w @wayside/frontend",
     "overpass:up": "docker compose -f apps/overpass/docker-compose.yml up -d --build",
     "overpass:logs": "docker compose -f apps/overpass/docker-compose.yml logs -f",
     "overpass:update": "docker compose -f apps/overpass/docker-compose.yml exec overpass update-poi-db"

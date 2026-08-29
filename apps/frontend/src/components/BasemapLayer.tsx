@@ -17,8 +17,19 @@ import type { RequestParameters } from "maplibre-gl";
  * MapLibre draws it into a canvas the adapter parks in Leaflet's tilePane, so
  * everything above it — the markers, the clusters, the route line — is
  * untouched Leaflet and behaves exactly as it did.
+ *
+ * The style document is a copy of CARTO's, vendored into public/map so the
+ * cartography is ours to edit — public/map/README.md has how it was taken and
+ * how to pull a fresh upstream copy under it. Only that document is local: the
+ * source, the sprite sheet and the glyph server inside it are still absolute
+ * cartocdn.com URLs, so the tiles, icons and fonts come from CARTO exactly as
+ * before, and so does the attribution the adapter reads off the source.
  */
-const STYLE_URL = "https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json";
+/**
+ * Absolute, not relative: every real path is prerendered at its own depth
+ * (/helsinki/toilets), and a relative style URL would resolve against that.
+ */
+const STYLE_URL = "/map/voyager.json";
 
 /**
  * Set it and every CARTO request carries the key. Leave it unset and the map

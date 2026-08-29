@@ -230,6 +230,21 @@ export const analytics = {
     trackEvent("POI", "tap: no details", categoryName(category));
   },
 
+  /**
+   * The language picker. The name is the language chosen, and the value is
+   * nothing: what the report is for is which of the three decks people
+   * actually reach for, against the language their browser already asked for,
+   * which Matomo records on its own.
+   *
+   * Only a deliberate choice. The locale restored from last visit's storage,
+   * and the one a prerendered page arrives already set to, are the app
+   * remembering rather than somebody choosing, and counting them would put
+   * every visit to a Finnish city page in the report as a preference.
+   */
+  languageChosen(locale: string): void {
+    trackEvent("Language", "select", locale);
+  },
+
   /** A geocoder result taken. Separate from trackSearch, which is the query */
   searchResultChosen(): void {
     trackEvent("Search", "result chosen");

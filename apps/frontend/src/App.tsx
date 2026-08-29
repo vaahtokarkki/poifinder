@@ -12,6 +12,7 @@ import SearchBar from "./components/SearchBar";
 import UserPositionMarker from "./components/UserPositionMarker";
 import { fetchRouteGeoJSON } from "./api/ors.ts";
 import { fetchOverpassMarkers, OverpassMarkerData } from "./api/overpass.ts";
+import type { OverpassProgress } from "./api/overpass.ts";
 import Loading from "./components/Loading";
 import ZoomInHint from "./components/ZoomInHint";
 import { useUserPosition } from "./hooks/index";
@@ -236,7 +237,11 @@ const App = () => {
   /** Passing remarks rather than outcomes: no icon, no dismiss button */
   const [notices, setNotices] = useState<MapNotice[]>([]);
   const nextNoticeId = useRef(0);
-  const [loadingStatus, setLoadingStatus] = useState<string | null>(null);
+  /**
+   * Which mirror a running search has got to, when it has had to go looking.
+   * Null the rest of the time, which is nearly always: see OverpassProgress
+   */
+  const [loadingProgress, setLoadingProgress] = useState<OverpassProgress | null>(null);
   // The build time payload of a prerendered page, absent on a shared link or
   // an area search. Read once: a page load is the only thing that changes it
   const [pageData] = useState(readPageData);
@@ -389,6 +394,7 @@ const App = () => {
 
     const promise = (async () => {
       setLoading(true);
+      setLoadingProgress(null);
       requestedBboxRef.current = fetchBbox;
 
       try {
@@ -398,7 +404,7 @@ const App = () => {
           categories,
           fetchBbox,
           polygon,
-          setLoadingStatus
+          setLoadingProgress
         );
         setMarkers(data);
         setFilteredMarkers(filterMarkersInBbox(data, bbox));
@@ -417,7 +423,7 @@ const App = () => {
         // matching on the key is matching on ourselves
         if (fetchInFlightRef.current?.key === key) fetchInFlightRef.current = null;
         setLoading(false);
-        setLoadingStatus(null);
+        setLoadingProgress(null);
       }
     })();
 
@@ -949,6 +955,12 @@ const App = () => {
    * another locale's, because that URL declares a language in its own markup.
    */
   function chooseLocale(next: Locale) {
+    // First, because picking the language of a city page navigates below, and
+    // a tracker call made after `location.assign` races the unload. Only a
+    // real change: reopening the menu on the language already set is not a
+    // choice, and counted it would make the current language look popular
+    if (next !== locale) analytics.languageChosen(next);
+
     const citySlug = parseCitySlugFromPath();
     const city = citySlug ? findCity(citySlug) : undefined;
     const target = city ? linkLocaleFor(city, next) : DEFAULT_LOCALE;
@@ -1018,7 +1030,6 @@ const App = () => {
         ref={setMap}
       >
         <MapPanHandler onMove={handleMapPan} />
-        <Loading active={loading} status={loadingStatus} />
         <div className="map-overlay-top" ref={overlayRef}>
           <SearchBar
             onSearch={(_, coords, extent) => {
@@ -1073,6 +1084,10 @@ const App = () => {
             onSelect={handlePresetSelect}
             visible={displaySearchItem !== "routes"}
           />
+          {/* Last in the column, under the preset chips: a search running is
+              the least of what is on this overlay, and the map stays usable
+              throughout one */}
+          <Loading active={loading} progress={loadingProgress} />
         </div>
         <ZoomInHint onClick={handleZoomInClick} visible={zoomHintVisible} />
         <div className="map-controls">

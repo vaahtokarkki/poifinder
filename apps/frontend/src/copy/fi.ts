@@ -262,6 +262,9 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     typeLocation: "Kirjoita sijainti",
     dragDownToClose: "Vedä alas sulkeaksesi",
     dragUpForMore: "Vedä ylös nähdäksesi lisää",
+    loading: "Ladataan…",
+    loadingServer: "{server}/{total}",
+    loadingFallback: "Oma palvelimemme ei vastaa, joten haku kiertää julkisten kautta",
   },
 
   notices: {

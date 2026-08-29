@@ -293,6 +293,12 @@ export type UiCopy = {
     typeLocation: string;
     dragDownToClose: string;
     dragUpForMore: string;
+    /** The indicator under the preset chips while a search is running */
+    loading: string;
+    /** The mirror being tried, as "2/4". Shown only once one has failed */
+    loadingServer: string;
+    /** What that counter means, for the title and for a screen reader */
+    loadingFallback: string;
   };
   /** What the app says when something has happened */
   notices: {

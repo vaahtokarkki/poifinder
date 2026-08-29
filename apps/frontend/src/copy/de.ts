@@ -265,6 +265,9 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     typeLocation: "Ort eingeben",
     dragDownToClose: "Zum Schließen nach unten ziehen",
     dragUpForMore: "Für mehr nach oben ziehen",
+    loading: "Wird geladen…",
+    loadingServer: "{server}/{total}",
+    loadingFallback: "Unser eigener Server antwortet nicht, daher läuft die Suche über die öffentlichen",
   },
 
   notices: {

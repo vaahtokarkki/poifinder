@@ -33,14 +33,12 @@ import {
   formatOpeningHours,
   isInheritedFromBuilding,
   isTimetableKey,
+  isWikiTag,
   labelFor,
   osmEditUrl,
   osmEditUrlForRef,
   rankForKey,
-  wikidataLabel,
-  wikidataUrl,
-  wikipediaLabel,
-  wikipediaUrl,
+  wikiTagLink,
 } from "./poiPopup";
 
 /** Breathing room between an open popup and the edges of the map. */
@@ -435,10 +433,15 @@ const isDisplayableTag = (key: string, value: string) => {
    * article about the thing on the map, and for a memorial or a viewpoint it is
    * the only tag with anything to say; `wikidata` is an id rather than prose,
    * but shown as a link to the item it makes the same offer in fewer words.
-   * Both only when the value is one a link can be built from
+   * The namespaced forms — `brand:wikidata`, `operator:wikipedia` — say the
+   * same thing about one of the point's own facts, and are the common case in
+   * the data rather than the exception; see isWikiTag.
+   *
+   * Only ever when the value is one a link can be built from. A wiki tag that
+   * cannot be linked is a bare `Q126728228` in the middle of the popup, which
+   * is the one shape this row must never take
    */
-  if (key === "wikipedia") return wikipediaUrl(value) !== undefined;
-  if (key === "wikidata") return wikidataUrl(value) !== undefined;
+  if (isWikiTag(key)) return wikiTagLink(key, value) !== undefined;
   if (["ref", "addr", "building", "wiki", "roof"].some(prefix => key.startsWith(prefix))) return false;
   if (key.startsWith("name") && key !== "name") return false;
   return true;
@@ -670,23 +673,6 @@ const tagValueWikiUrl = (key: string, value: string): string | undefined => {
 };
 
 /**
- * The tags whose value names a page elsewhere without being a URL: a Wikipedia
- * article, a Wikidata item. The value is an identifier in another database, so
- * the row leads to the page it names rather than printing the tag.
- */
-const tagLink = (key: string, value: string) => {
-  if (key === "wikipedia") {
-    const href = wikipediaUrl(value);
-    return href && { href, label: wikipediaLabel(value) };
-  }
-  if (key === "wikidata") {
-    const href = wikidataUrl(value);
-    return href && { href, label: wikidataLabel(value) };
-  }
-  return undefined;
-};
-
-/**
  * A tag value, linked to what it means where there is somewhere to link to.
  *
  * Set as text rather than as a link: the same quiet treatment the label above
@@ -756,7 +742,13 @@ const buildPopupRows = (tags: Record<string, string> = {}): PopupRow[] => {
     const value = String(rawValue);
     if (!isDisplayableTag(key, value)) continue;
     const timetable = isTimetableKey(key);
-    const link = tagLink(key, value);
+    /**
+     * The tags whose value names a page elsewhere without being a URL: a
+     * Wikipedia article, a Wikidata item. The value is an identifier in
+     * another database, so the row leads to the page it names rather than
+     * printing the tag
+     */
+    const link = wikiTagLink(key, value);
     rows.push({
       key,
       label: labelFor(key),

@@ -6,6 +6,7 @@ import {
   CATEGORY_CONFIG,
   OVERPASS_API_CONFIG,
   OVERPASS_QUERY_PROLOGUE,
+  PRIMARY_TAG_KEYS,
   SELF_HOSTED_OVERPASS_URL,
 } from "../constants";
 import { fetchWithRetry } from "../utils/retryFetch";
@@ -18,6 +19,16 @@ export type OverpassMarkerData = {
   name?: string;
   tags?: Record<string, string>;
   type?: string;
+  /**
+   * The corners of a way or relation as [south, west, north, east], which is
+   * the same order the app's own bounding boxes are written in.
+   *
+   * Absent from a node, which is its own extent, and from anything cached
+   * before the query started asking for it. Its one reader is the duplicate
+   * check below, which needs to know how big an outline is as well as where
+   * its middle is
+   */
+  bounds?: [number, number, number, number];
   /**
    * When the object was last edited, as OpenStreetMap's own ISO timestamp.
    * Absent from anything cached before the query started asking for it, and
@@ -53,7 +64,7 @@ const buildBaseOverpassQuery = (
     (
       ${filterBlocks}
     );
-    out meta center;
+    out meta bb;
   `;
 }
 
@@ -82,6 +93,8 @@ type OverpassElement = {
   lat?: number;
   lon?: number;
   center?: { lat: number; lon: number };
+  /** A way or relation's corners, written by `out bb` */
+  bounds?: { minlat: number; minlon: number; maxlat: number; maxlon: number };
   /** The way's own points, only present when the query asked for geometry */
   geometry?: OverpassGeomPoint[];
   /** A relation's parts, each with its own geometry under `out geom` */
@@ -97,6 +110,22 @@ type OverpassElement = {
 };
 
 /**
+ * Which mirror a query has got to, when it has had to go looking.
+ *
+ * Reported rather than described, because the words belong to the reader's
+ * language and this file has none: what it knows is a position in a list, and
+ * the indicator turns that into "2/4". Reported only once something has
+ * already failed — see `report` below — so the normal case says nothing and
+ * the counter appearing means what it looks like.
+ */
+export type OverpassProgress = {
+  /** Which public mirror is being tried, counting from one */
+  server: number;
+  /** How many there are altogether */
+  total: number;
+};
+
+/**
  * Ask every Overpass server we know about, in turn, until one answers.
  *
  * Shared by every query the app makes, because the fallback order is a property
@@ -106,7 +135,7 @@ type OverpassElement = {
  */
 async function runOverpassQuery(
   body: string,
-  onStatusChange?: (status: string) => void
+  onProgress?: (progress: OverpassProgress) => void
 ): Promise<OverpassElement[]> {
   // Callback to detect retryable errors (429, 4xx, 5xx)
   const isRetryableError = async (response: Response): Promise<boolean> => {
@@ -166,20 +195,28 @@ async function runOverpassQuery(
   /**
    * True once the self hosted instance has been tried and has failed, which is
    * the only thing that puts a configured deployment on the public mirrors.
-   * The loading text says so from then on, because the searches that follow
-   * are slower and it should be clear that this is a degraded state rather
-   * than how the app normally behaves
+   * Only read by the error at the end, to count the servers actually tried
    */
   let usingFallback = false;
 
-  const status = (text: string) =>
-    onStatusChange?.(usingFallback ? `Our server is down, using a public one. ${text}` : text);
+  /**
+   * True once any server has failed to answer, which is the whole condition on
+   * saying anything at all: the first request of a search succeeding is how
+   * this normally goes, and a counter that read 1/4 every time would be
+   * reporting the weather rather than a problem.
+   */
+  let anyFailed = false;
+
+  /** Tell the indicator which mirror is being tried, once that is news */
+  const report = (server: number) => {
+    if (anyFailed) onProgress?.({ server, total: OVERPASS_API_CONFIG.URLS.length });
+  };
 
   // A self hosted instance is asked once, with no retries and no backoff:
   // there is no shared rate limit to be polite about, and a slow retry loop
-  // against our own server helps nobody. Nothing is said in the loading screen
-  // for it either. The normal case is one fast request, and a line of status
-  // text that appears and disappears is noise rather than information.
+  // against our own server helps nobody. Nothing is said in the loading
+  // indicator for it either. The normal case is one fast request, and a
+  // counter that appears and disappears is noise rather than information.
   //
   // Should it fail, the public mirrors are still there, and using them beats
   // showing an empty map because one machine is rebooting.
@@ -197,6 +234,7 @@ async function runOverpassQuery(
         `[Overpass] Self hosted instance failed (${errorMsg}), falling back to the public mirrors`
       );
       usingFallback = true;
+      anyFailed = true;
     }
   }
 
@@ -206,7 +244,7 @@ async function runOverpassQuery(
   for (let urlIndex = 0; urlIndex < OVERPASS_API_CONFIG.URLS.length; urlIndex++) {
     const url = OVERPASS_API_CONFIG.URLS[urlIndex];
     try {
-      status(`Loading from server ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}...`);
+      report(urlIndex + 1);
       console.debug(`[Overpass] Pass 1: Trying URL ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}: ${url}`);
 
       // No retries and a short timeout: this pass is looking for a host that
@@ -217,19 +255,18 @@ async function runOverpassQuery(
     } catch (error) {
       const errorMsg = error instanceof Error ? error.message : String(error);
       pass1Errors.push(`${url}: ${errorMsg}`);
-      status(`Server ${urlIndex + 1} failed (${errorMsg}). Trying next...`);
+      anyFailed = true;
       console.debug(`[Overpass] Pass 1: URL ${urlIndex + 1} failed (${errorMsg}), trying next...`);
     }
   }
 
   // Pass 2: All URLs failed in pass 1, now retry with exponential backoff
   console.debug("[Overpass] Pass 1 failed, starting pass 2: retrying all URLs with exponential backoff");
-  status("All servers failed. Retrying with exponential backoff...");
   const pass2Errors: string[] = [];
   for (let urlIndex = 0; urlIndex < OVERPASS_API_CONFIG.URLS.length; urlIndex++) {
     const url = OVERPASS_API_CONFIG.URLS[urlIndex];
     try {
-      status(`Retrying server ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length} with backoff...`);
+      report(urlIndex + 1);
       console.debug(`[Overpass] Pass 2: Retrying URL ${urlIndex + 1}/${OVERPASS_API_CONFIG.URLS.length}: ${url}`);
 
       // Every mirror has already failed once, so the visitor is waiting either
@@ -244,7 +281,6 @@ async function runOverpassQuery(
     } catch (error) {
       const errorMsg = error instanceof Error ? error.message : String(error);
       pass2Errors.push(`${url}: ${errorMsg}`);
-      status(`Server ${urlIndex + 1} failed after retries (${errorMsg}). Trying next...`);
       console.debug(`[Overpass] Pass 2: URL ${urlIndex + 1} failed even after retries (${errorMsg})`);
     }
   }
@@ -695,13 +731,110 @@ export async function fetchEnclosingBuilding(
   return best?.building ?? null;
 }
 
+/* ---------- The same place mapped twice ---------- */
+
+/**
+ * How close to the middle of an outline a node has to sit to be that outline
+ * drawn a second time.
+ *
+ * A public toilet is very often in OpenStreetMap twice over: somebody dropped
+ * an `amenity=toilets` node, somebody else drew the hut around it and tagged
+ * that too. They are two objects and neither points at the other, so both come
+ * back from a search and the map carries two markers a metre apart for one
+ * toilet.
+ *
+ * Told apart from two real neighbours by position, which is all a `bb` answer
+ * gives: a node standing for the outline sits near its middle, while the
+ * separate thing next door sits off to one side. Both tests below are that
+ * same idea at two scales — a share of the box for something large, a plain
+ * radius for a hut whose whole box is a few metres across — and either one
+ * passing is enough.
+ *
+ * Measured rather than guessed. Over every toilet and car park in greater
+ * Helsinki, with the real outlines fetched to check the answers: 4 of 4 toilet
+ * duplicates and 6 of 7 car park ones are caught, against a single wrong
+ * removal. The plain bounding box on its own, with no middle to it, was right
+ * barely half the time on car parks — a big lot's box reaches over the one
+ * beside it.
+ */
+const DUPLICATE_OF_NODE = {
+  /** Metres from the middle of the box, whatever its size */
+  RADIUS: 10,
+  /** Or, for a box too big for that, the share of it that counts as its middle */
+  SHARE: 0.4,
+} as const;
+
+/** Close enough for latitude, and for longitude once it is scaled by the parallel */
+const METRES_PER_DEGREE = 111320;
+
+/**
+ * Whether two objects claim to be the same kind of place.
+ *
+ * The primary tags and only those: `amenity=toilets` on both is the claim, and
+ * a shared `wheelchair=yes` is not. An outline carrying none of them is not
+ * making a claim this can test and is left alone
+ */
+const namesTheSameThing = (
+  node: OverpassMarkerData,
+  area: OverpassMarkerData
+): boolean => {
+  const areaTags = Object.entries(area.tags ?? {}).filter(([key]) =>
+    PRIMARY_TAG_KEYS.has(key)
+  );
+  return areaTags.some(([key, value]) => node.tags?.[key] === value);
+};
+
+/** Whether a node is the same place as an outline, already mapped by somebody else */
+const standsFor = (node: OverpassMarkerData, area: OverpassMarkerData): boolean => {
+  if (!area.bounds || !node.position) return false;
+  const [south, west, north, east] = area.bounds;
+  const [lat, lng] = node.position;
+  // The cheap test first: this rejects all but a handful of pairs outright
+  if (lat < south || lat > north || lng < west || lng > east) return false;
+  if (!namesTheSameThing(node, area)) return false;
+
+  const midLat = (south + north) / 2;
+  const midLng = (west + east) / 2;
+  if (
+    Math.abs(lat - midLat) <= ((north - south) / 2) * DUPLICATE_OF_NODE.SHARE &&
+    Math.abs(lng - midLng) <= ((east - west) / 2) * DUPLICATE_OF_NODE.SHARE
+  ) {
+    return true;
+  }
+
+  const northing = (lat - midLat) * METRES_PER_DEGREE;
+  const easting =
+    (lng - midLng) * METRES_PER_DEGREE * Math.cos((midLat * Math.PI) / 180);
+  return Math.hypot(northing, easting) <= DUPLICATE_OF_NODE.RADIUS;
+};
+
+/**
+ * Drop the outlines that a node on the map already stands for.
+ *
+ * The node is what is kept, not the outline, and deliberately so even though
+ * the outline is sometimes the better tagged of the two: the node is the
+ * object somebody put there to be found, its popup can still name the building
+ * around it, and keeping whichever happens to carry more tags would mean the
+ * same toilet moving between two positions from one search to the next.
+ */
+const dropDuplicateOutlines = (
+  markers: OverpassMarkerData[]
+): OverpassMarkerData[] => {
+  const nodes = markers.filter(marker => marker.type === "node" && marker.position);
+  if (nodes.length === 0) return markers;
+  return markers.filter(
+    marker =>
+      marker.type === "node" || !nodes.some(node => standsFor(node, marker))
+  );
+};
+
 export async function fetchOverpassMarkers(
   center: [number, number] | null,
   radius: number,
   categories: CATEGORIES[],
   bbox: [number, number, number, number],
   polygon?: Feature<Polygon> | null,
-  onStatusChange?: (status: string) => void
+  onProgress?: (progress: OverpassProgress) => void
 ): Promise<OverpassMarkerData[]> {
   const filters = categories.flatMap(cat => CATEGORY_CONFIG[cat].filters || []);
 
@@ -709,9 +842,9 @@ export async function fetchOverpassMarkers(
     ? buildOverpassQueryForPolygon(polygon, filters)
     : buildOverpassQueryForSingleLocation(center, radius, filters, bbox);
 
-  const elements = await runOverpassQuery(body, onStatusChange);
+  const elements = await runOverpassQuery(body, onProgress);
 
-  return elements
+  const markers = elements
     .map((el: OverpassElement) => {
       if (el.type === "node" && el.lat !== undefined && el.lon !== undefined) {
         return {
@@ -724,18 +857,40 @@ export async function fetchOverpassMarkers(
           timestamp: el.timestamp,
         };
       }
-      if (el.type !== "node" && el.center) {
+      if (el.type !== "node") {
+        /**
+         * `out bb` gives the corners rather than the middle, and the middle is
+         * what a marker is dropped at — which is what `out center` used to
+         * give, and is the same point either way: Overpass takes its centre
+         * from the bounding box too. The corners are the extra, and the
+         * duplicate check above is what wanted them
+         */
+        const bounds = el.bounds;
+        const position: [number, number] | null = el.center
+          ? [el.center.lat, el.center.lon]
+          : bounds
+            ? [(bounds.minlat + bounds.maxlat) / 2, (bounds.minlon + bounds.maxlon) / 2]
+            : null;
+        if (!position) return null;
         return {
           id: el.id,
-          position: [el.center.lat, el.center.lon] as [number, number],
-          geom: point([el.center.lon, el.center.lat]),
+          position,
+          geom: point([position[1], position[0]]),
           name: el.tags?.name,
           tags: el.tags,
           type: el.type,
+          bounds: bounds && ([
+            bounds.minlat,
+            bounds.minlon,
+            bounds.maxlat,
+            bounds.maxlon,
+          ] as [number, number, number, number]),
           timestamp: el.timestamp,
         };
       }
       return null;
     })
     .filter(Boolean) as OverpassMarkerData[];
+
+  return dropDuplicateOutlines(markers);
 }

@@ -170,6 +170,48 @@ body {
   display: none;
 }
 
+/*
+ * That a search is running, said under the preset chips and nowhere near the
+ * middle of the screen.
+ *
+ * This replaced a full screen scrim with a 64px spinner in it. The map is
+ * readable and pannable while points load — the ones from the last search are
+ * still on it — so there was nothing for the scrim to protect, and plenty for
+ * it to get in the way of. Sized and shadowed like the chips above it so it
+ * reads as one more thing in that column rather than as an alarm.
+ *
+ * `align-self` because the overlay is a stretched column: without it the pill
+ * spans the screen and the shadow draws a bar across the map.
+ */
+.map-loading {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.4em 0.85em;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  color: #5f6368;
+  font-size: 0.78rem;
+  line-height: 1;
+  /* Nothing here is touchable, so let the taps through to the map under it.
+     .map-overlay-top turns pointer events back on for each of its children,
+     which is why this has to say so again */
+  pointer-events: none;
+}
+
+/*
+ * How many mirrors have been tried, as "2/4". Only there when our own server
+ * has not answered, so its being there at all is the message; the number is
+ * set quieter than the word beside it because it is the footnote to it, and
+ * tabular so the pill does not twitch as it counts up.
+ */
+.map-loading-server {
+  color: #9aa0a6;
+  font-variant-numeric: tabular-nums;
+}
+
 .map-hint {
   position: relative;
   z-index: 1000;
@@ -909,12 +951,17 @@ body {
   margin-top: 0.7em;
 }
 
+/*
+ * Sentence case, not capitals. This is a short sentence about where the rows
+ * under it came from — "From this building" — and small text set in capitals
+ * is read letter by letter rather than as a word, which is a poor bargain for
+ * a line whose whole job is to be understood at a glance. Quieter than the
+ * building heading below it by weight and colour instead.
+ */
 .poi-popup .leaflet-popup-content .poi-popup-inherited-label {
   margin: 0;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
   color: #80868b;
 }
 

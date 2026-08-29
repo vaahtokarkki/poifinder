@@ -906,6 +906,9 @@ const ui: CopyDeck["ui"] = {
     typeLocation: "Type a location",
     dragDownToClose: "Drag down to close",
     dragUpForMore: "Drag up for more",
+    loading: "Loading…",
+    loadingServer: "{server}/{total}",
+    loadingFallback: "Our own server is not answering, so this is going through the public ones",
   },
 
   notices: {

@@ -374,6 +374,10 @@ export const rankForKey = (key: string): number => {
   if (TRANSLATABLE_KEYS.test(key)) return PROSE_TAG_RANK;
   const exact = TAG_RANKS[key];
   if (exact !== undefined) return exact;
+  // `brand:wikidata` is a cross reference like `wikidata` is, and belongs down
+  // with the other links rather than in the middle of what the place offers
+  const wikiKind = key.match(WIKI_TAG)?.[1];
+  if (wikiKind) return TAG_RANKS[wikiKind];
   const prefix = TAG_RANK_PREFIXES.find(([start]) => key.startsWith(start));
   return prefix ? prefix[1] : DEFAULT_TAG_RANK;
 };
@@ -448,6 +452,16 @@ export const buildingRankForKey = (key: string): number =>
 export const labelFor = (key: string): string => {
   const label = ui().poi.keyLabels[key];
   if (label) return label;
+  /**
+   * `brand:wikidata` is the brand's entry in Wikidata, and read straight
+   * through formatKey it comes out as "Brand wikidata" — two nouns with no
+   * relation between them. Composed out of the two labels instead, so the row
+   * says which of the point's facts the item is about and stays translated on
+   * both halves
+   */
+  const wikiNamespace = key.match(/^(.+):(wikipedia|wikidata)$/);
+  if (wikiNamespace)
+    return `${labelFor(wikiNamespace[1])} (${labelFor(wikiNamespace[2])})`;
   // `contact:phone` is a phone number. The namespace is how the tag is filed,
   // not something to read out
   if (key.startsWith("contact:")) return formatKey(key.slice("contact:".length));
@@ -510,3 +524,39 @@ export const wikidataUrl = (value: string): string | undefined => {
  * one thing a reader can carry over to another database.
  */
 export const wikidataLabel = (value: string): string | undefined => wikidataId(value);
+
+/**
+ * The keys whose value names a page in Wikipedia or an item in Wikidata.
+ *
+ * Not just the bare `wikipedia` and `wikidata`. The namespaced forms are the
+ * common case in the data rather than the exception — across the points of one
+ * Finnish city `brand:wikidata` and `operator:wikidata` together outnumber
+ * plain `wikidata` seven to one — and every one of them holds exactly the same
+ * kind of value. Left unrecognised they rendered as what they look like
+ * without a link: a bare `Q126728228` sitting in the popup saying nothing to
+ * anybody.
+ *
+ * Matched on the last segment so `subject:wikipedia` and
+ * `name:etymology:wikidata` are covered as well, rather than by a list that
+ * would need adding to the next time a mapper reaches for a namespace nobody
+ * here thought of.
+ */
+const WIKI_TAG = /(?:^|:)(wikipedia|wikidata)$/;
+
+/** Whether a key's value is a Wikipedia article or a Wikidata item */
+export const isWikiTag = (key: string): boolean => WIKI_TAG.test(key);
+
+/**
+ * The link a wiki tag stands for, or nothing when its value is not one a link
+ * can be built from — `wikidata=yes` and `wikipedia=see website` are both real
+ * things somebody has typed, and neither leads anywhere.
+ */
+export const wikiTagLink = (
+  key: string,
+  value: string
+): { href: string; label: string } | undefined => {
+  const kind = key.match(WIKI_TAG)?.[1];
+  const href = kind === "wikipedia" ? wikipediaUrl(value) : kind === "wikidata" ? wikidataUrl(value) : undefined;
+  const label = kind === "wikipedia" ? wikipediaLabel(value) : kind === "wikidata" ? wikidataLabel(value) : undefined;
+  return href && label ? { href, label } : undefined;
+};

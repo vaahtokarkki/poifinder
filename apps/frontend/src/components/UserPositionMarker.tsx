@@ -84,13 +84,32 @@ const UserPositionMarker: React.FC<UserPositionMarkerProps> = ({ position }) => 
   const headingRef = useRef(heading);
   headingRef.current = heading;
 
+  /**
+   * The angle actually written to the element, which is deliberately not kept
+   * inside 0–360.
+   *
+   * A transition on `rotate` interpolates the number it is given, and knows
+   * nothing about the circle it stands for: handed 359deg and then 1deg it
+   * winds 358 degrees backwards, so a compass crossing north spun most of the
+   * way round the wrong way for every step across it. Counting on past 360
+   * instead — 359, then 361 — leaves the cone in the same place on screen and
+   * makes the short way round the only way the transition can read it.
+   */
+  const rotationRef = useRef(heading ?? 0);
+
   const applyHeading = (marker: LeafletMarker | null) => {
     const beam = marker?.getElement()?.querySelector<SVGElement>(".user-position-beam");
     if (!beam) return;
 
     const current = headingRef.current;
     beam.style.opacity = current === null ? "0" : "1";
-    if (current !== null) beam.style.transform = `rotate(${current}deg)`;
+    if (current === null) return;
+
+    // The signed short way from where the cone is pointing to where it should
+    // be, in −180..180
+    const delta = ((current - rotationRef.current) % 360 + 540) % 360 - 180;
+    rotationRef.current += delta;
+    beam.style.transform = `rotate(${rotationRef.current}deg)`;
   };
 
   // Both halves are needed: the effect for a heading that changes under a

@@ -311,9 +311,14 @@ ramps against the buildings, not independently of them:
 
 | Zoom | Built ground | vs the `#f3eee4` cream | Buildings |
 | ---- | ------------ | ---------------------- | --------- |
-| z13  | `#ede4d4`    | -6,-10,-16 (light tan) | none      |
-| z14  | `#f4f0e6`    | about equal            | 60%       |
+| z13  | `#eae7e0`    | -9,-7,-4 (cool grey)   | none      |
+| z14  | `#f5f2ea`    | about equal            | 60%       |
 | z15+ | `#f8f5ef`    | +5,+7,+11 (whiter)     | full      |
+
+All three ground stops sit in the same cool grey family — red-to-blue spreads
+of 10, 11 and 11. Only the amount changes with zoom, never the temperature: a
+warmer z13 was tried and read as tan next to the zoom above it, because the eye
+compares the two across a pinch rather than judging either alone.
 
 At z15 the built ground is *lighter* than the surrounding cream: built-up reads
 as white, undeveloped as cream, and every bit of contrast comes from the
@@ -326,18 +331,27 @@ those carry a 40-odd point spread between their red and blue channels, and
 spread is what reads as brown once it covers half the screen. Move lightness,
 leave the spread alone.
 
-| Role                   | Value     | Step vs z15 ground |
-| ---------------------- | --------- | ------------------ |
-| `building-top` (face)  | `#eee7d9` | -10                |
-| `building` (shadow)    | `#e0d6c4` | -24                |
-| `building-top` outline | `#dcd0b9` | -28                |
+The building colours are zoom ramps, not flat values. z16 wanted the warm tan;
+z14 wanted the same shapes in grey, because at that zoom the buildings are the
+only large warm surface on screen and they tip the whole view brown. So each
+ramps from a grey-leaning value at z14 to the warm one at z16:
+
+| Role                   | z14       | z16       |
+| ---------------------- | --------- | --------- |
+| `building-top` (face)  | `#eae7de` | `#eee7d9` |
+| `building` (shadow)    | `#dcd7cc` | `#e0d6c4` |
+| `building-top` outline | `#d8d4c9` | `#dcd0b9` |
+
+That drops the face's red-to-blue spread from 21 to 11 at z14 and leaves z16
+exactly as it was. If you retune the close zoom, change the z16 stop and leave
+the z14 stop alone, or the far zoom browns again.
 
 `building-top` is the face you actually see — its `fill-translate` is `[0,0]`
 until z16 — so it is the layer carrying the colour. `building` sits under it
 and is darker, so it reads as a shadow edge once the offset opens up.
 
 **Small roads change treatment at z15.** From z13 to z14 they are thin grey
-lines (`#b9bdc0` fading to `#cdd0ce`), drawn by the casing alone —
+lines (`#c0c4c6` fading to `#d3d5d3`), drawn by the casing alone —
 `road_minor_fill` and `road_service_fill` do not start until z15. A white
 ribbon with a casing needs width to read as one, and at z13 there is none: it
 just washes out into the ground. From z15 the casing warms to `#d3ccc0` and

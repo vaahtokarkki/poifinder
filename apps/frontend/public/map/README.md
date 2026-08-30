@@ -289,18 +289,59 @@ the ramp is `[[13, 0], [14, 0.6], [15, 1]]` so that z14 gets real weight.
 
 The other half of that zoom looking empty was the ground. `landuse_residential`
 composited to `#f0eadf` against a `#f3eee4` background — three steps out of 255,
-so built-up land was indistinguishable from no data. Its tint is now a deeper
-`rgb(226, 216, 200)` from z13, landing around `#ebe4d7`, and still steps back at
-z16 where the buildings take over as the texture.
+so built-up land was indistinguishable from no data. Its tint is now
+`rgb(232, 226, 216)` at 50% from z13, landing around `#eee8de`, and still steps
+back at z16 where the buildings take over as the texture.
 
 **Minor and service roads are white ribbons from z13/z14.** `road_minor_fill`
 and `road_service_fill` were `minzoom: 15`, so from z13 to z15 a minor road was
 its casing and nothing else — and that casing was `#e2d8c8` against a `#fbf8f3`
 background, barely a shade apart. The fills now start at z13 and z14. The
-casings also darkened, to `#d9ccb6`/`#cbbca2`, and that is the half that
+casings also darkened, to `#ddd5c7`/`#d2c9b8`, and that is the half that
 actually matters: white on cream is nearly invisible without an edge to hold
 it, so bringing the white down without darkening the casing would have changed
 very little.
+
+**The ground carries the warmth only while the buildings cannot.** This is the
+one relationship to understand before touching any of these colours. Buildings
+are invisible at z13, 60% at z14, full from z15. So built-up land needs its own
+light tan at z13 or it reads as empty, and needs the ground to step back to
+near white by z15 or the two stack and the map goes brown. The residential fill
+ramps against the buildings, not independently of them:
+
+| Zoom | Built ground | vs the `#f3eee4` cream | Buildings |
+| ---- | ------------ | ---------------------- | --------- |
+| z13  | `#ede4d4`    | -6,-10,-16 (light tan) | none      |
+| z14  | `#f4f0e6`    | about equal            | 60%       |
+| z15+ | `#f8f5ef`    | +5,+7,+11 (whiter)     | full      |
+
+At z15 the built ground is *lighter* than the surrounding cream: built-up reads
+as white, undeveloped as cream, and every bit of contrast comes from the
+buildings on top. That inversion is what lets the buildings be warm without the
+map browning over.
+
+An earlier pass tinted the ground instead — `rgb(226,216,200)` with `#cbbca2`
+casings — and the map went brown. The cause was saturation, not lightness:
+those carry a 40-odd point spread between their red and blue channels, and
+spread is what reads as brown once it covers half the screen. Move lightness,
+leave the spread alone.
+
+| Role                   | Value     | Step vs z15 ground |
+| ---------------------- | --------- | ------------------ |
+| `building-top` (face)  | `#eee7d9` | -10                |
+| `building` (shadow)    | `#e0d6c4` | -24                |
+| `building-top` outline | `#dcd0b9` | -28                |
+
+`building-top` is the face you actually see — its `fill-translate` is `[0,0]`
+until z16 — so it is the layer carrying the colour. `building` sits under it
+and is darker, so it reads as a shadow edge once the offset opens up.
+
+**Small roads change treatment at z15.** From z13 to z14 they are thin grey
+lines (`#b9bdc0` fading to `#cdd0ce`), drawn by the casing alone —
+`road_minor_fill` and `road_service_fill` do not start until z15. A white
+ribbon with a casing needs width to read as one, and at z13 there is none: it
+just washes out into the ground. From z15 the casing warms to `#d3ccc0` and
+hands over to the white-fill treatment, which by then has room to work.
 
 **Rail: `light_rail` added, and a `rail` layer that did not exist.** Two
 separate gaps. The `transit` filter listed `tram` and `subway` but not

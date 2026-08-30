@@ -314,19 +314,23 @@
             ],
             [
               11,
-              "rgba(232, 224, 211, 0.35)"
+              "rgba(238, 230, 216, 0.6)"
             ],
             [
               13,
-              "rgba(226, 216, 200, 0.45)"
+              "rgba(236, 226, 208, 0.8)"
+            ],
+            [
+              14,
+              "rgba(245, 241, 232, 0.6)"
             ],
             [
               15,
-              "rgba(226, 216, 200, 0.5)"
+              "rgba(252, 250, 246, 0.6)"
             ],
             [
               16,
-              "rgba(226, 216, 200, 0.3)"
+              "rgba(252, 250, 246, 0.5)"
             ]
           ]
         },
@@ -2197,7 +2201,22 @@
           ]
         },
         "line-opacity": 1,
-        "line-color": "#d9ccb6"
+        "line-color": {
+          "stops": [
+            [
+              14,
+              "#ced1d1"
+            ],
+            [
+              15,
+              "#d5cec2"
+            ],
+            [
+              16,
+              "#ddd5c7"
+            ]
+          ]
+        }
       }
     },
     {
@@ -2236,11 +2255,11 @@
             ],
             [
               13,
-              1.6
+              1.1
             ],
             [
               14,
-              2.6
+              1.8
             ],
             [
               15,
@@ -2265,11 +2284,19 @@
           "stops": [
             [
               13,
-              "#d9ccb6"
+              "#b9bdc0"
+            ],
+            [
+              14,
+              "#cdd0ce"
+            ],
+            [
+              15,
+              "#d3ccc0"
             ],
             [
               16,
-              "#cbbca2"
+              "#d2c9b8"
             ]
           ]
         }
@@ -3267,7 +3294,7 @@
       "type": "line",
       "source": "carto",
       "source-layer": "transportation",
-      "minzoom": 14,
+      "minzoom": 15,
       "maxzoom": 24,
       "filter": [
         "all",
@@ -3288,10 +3315,6 @@
       "paint": {
         "line-width": {
           "stops": [
-            [
-              14,
-              1
-            ],
             [
               15,
               2
@@ -3319,7 +3342,7 @@
       "type": "line",
       "source": "carto",
       "source-layer": "transportation",
-      "minzoom": 13,
+      "minzoom": 15,
       "maxzoom": 24,
       "filter": [
         "all",
@@ -3340,14 +3363,6 @@
       "paint": {
         "line-width": {
           "stops": [
-            [
-              13,
-              0.8
-            ],
-            [
-              14,
-              1.6
-            ],
             [
               15,
               2.6
@@ -5209,11 +5224,11 @@
           "stops": [
             [
               15.5,
-              "#e4dcd0"
+              "#e0d6c4"
             ],
             [
               16,
-              "#e4dcd0"
+              "#e0d6c4"
             ]
           ]
         },
@@ -5265,8 +5280,8 @@
             ]
           ]
         },
-        "fill-outline-color": "#e9d8be",
-        "fill-color": "#f3eadc",
+        "fill-outline-color": "#dcd0b9",
+        "fill-color": "#eee7d9",
         "fill-opacity": {
           "base": 1,
           "stops": [

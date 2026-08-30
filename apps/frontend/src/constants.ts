@@ -289,20 +289,22 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
   },
   [CATEGORIES.BicycleRepair]: {
     /**
-     * Public bike repair stands, and the pumps that are explicitly for bikes.
+     * Public bike repair stands, and every public compressed air point.
      *
-     * `amenity=compressed_air` on its own is overwhelmingly the tyre inflator
-     * on a petrol station forecourt: of the compressed air within 15 km of
-     * Berlin 29 of 29 is that, London 19 of 19, Helsinki 7 of 10. Those belong
-     * to a car category this site no longer publishes, so the bare tag is gone
-     * and only the ones a mapper marked `bicycle=yes` come through.
+     * The repair stand is the category and the reason it does well: unnamed,
+     * mapped by cyclists, and answered by nothing else, since a search for bike
+     * repair returns shops rather than the free stand two streets away.
      *
-     * The repair stand is the category. It is the shape of thing that does
-     * well here — unnamed, mapped by cyclists, and answered by nothing else,
-     * since a search for bike repair returns shops rather than the free stand
-     * two streets away.
+     * Compressed air comes in whole rather than filtered to `bicycle=yes`.
+     * That tag is almost never set — 0 of the 29 air points within 15 km of
+     * Berlin carry it, 0 of 19 in London, 3 of 10 in Helsinki — so requiring it
+     * threw away nearly every air point to gain a precision nobody had mapped.
+     * A forecourt compressor is a worse answer than a proper stand and still a
+     * real one: it wants an adapter for a Presta valve and its gauge reads
+     * badly at road bike pressures, but it inflates a tyre, and somebody
+     * walking a flat is better told about it than not. The FAQ says so.
      */
-    filters: ["[amenity=bicycle_repair_station]", "[amenity=compressed_air][bicycle=yes]"],
+    filters: ["[amenity=bicycle_repair_station]", "[amenity=compressed_air]"],
     icon: React.createElement(HandymanIcon),
     color: "#00897B",
     group: CATEGORY_GROUP.Essentials,

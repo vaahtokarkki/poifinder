@@ -46,6 +46,21 @@ FILTER_FILE=${WAYSIDE_FILTER_FILE:-/opt/wayside/osmium-filter.txt}
 # that will not fit
 JOIN_BUILDINGS=${WAYSIDE_JOIN_BUILDINGS:-true}
 
+# Whether to keep the named streets. On for everyone, for the same reason the
+# buildings are: most of what this site maps carries no name of its own, and the
+# street it stands on is what places it. See `placedByStreet` in
+# apps/frontend/src/seo/categories.ts, which is the consumer.
+#
+# Unlike the buildings this needs no geometry pass. A street is kept because it
+# is a named road, not because a point stands on it, so two tag filters do the
+# whole job — and there is nothing to be gained by being cleverer: the points
+# this database holds are dense enough that nearly every urban street is within
+# thirty metres of one, so selecting by proximity would drop rural roads and
+# little else, for a spatial join's worth of new code.
+#
+# On Bremen it takes the extract from 0.6 MB to 2.6 MB, against a 21 MB source.
+JOIN_STREETS=${WAYSIDE_JOIN_STREETS:-true}
+
 if [[ $# -ge 2 ]]; then
 	SOURCE=$1
 	TARGET=$2
@@ -125,6 +140,66 @@ if [[ $JOIN_BUILDINGS == true ]]; then
 		--output="$TARGET" \
 		"${OUTPUT_FORMAT[@]}"
 	rm -f "$FILTERED"
+	trap - EXIT
+fi
+
+# The named streets, in two passes because osmium tags-filter ORs its
+# expressions and what is wanted here is an AND. The first keeps every highway
+# with the nodes it is drawn from; the second keeps, out of those, the ones
+# carrying a name — and because its input is already only highways, a named way
+# in it is a named road. Doing it the other way round would pull every named
+# object in the extract through the first pass.
+#
+# The merge is last so that it runs over whatever the buildings step produced,
+# and it carries the header across itself: osmium merge writes its own
+# otherwise, and the timestamp in it is what the container reports to every
+# client as the age of its data.
+if [[ $JOIN_STREETS == true ]]; then
+	# The merged file is written under the target's own basename, in a
+	# directory beside it. osmium takes the format from the name, and this way
+	# the name is the target's — so both call shapes get the format they
+	# already asked for without the format having to be worked out again
+	# dirname, not ${TARGET%/*}: a bare filename has no slash to strip, and
+	# that expansion returns the filename itself, which is not a directory
+	STREET_WORK=$(mktemp -d "$(dirname "$TARGET")/filter-osm-extract.XXXXXX")
+	ROADS="$STREET_WORK/roads.osm.pbf"
+	NAMED="$STREET_WORK/named.osm.pbf"
+	MERGED="$STREET_WORK/${TARGET##*/}"
+	trap 'rm -rf "$STREET_WORK"' EXIT
+
+	echo "filter-osm-extract: pulling the named streets out of the extract"
+	osmium tags-filter \
+		--overwrite \
+		--input-format="$FORMAT" \
+		--output="$ROADS" \
+		"$SOURCE" \
+		w/highway
+	osmium tags-filter \
+		--overwrite \
+		--output="$NAMED" \
+		"$ROADS" \
+		w/name
+	rm -f "$ROADS"
+
+	# osmium merge writes its own header, and the timestamp in it is what the
+	# container reports to every client as the age of its data. Carry the
+	# target's across rather than letting the merge date the database today
+	HEADER=()
+	for OPTION in osmosis_replication_timestamp osmosis_replication_sequence_number osmosis_replication_base_url; do
+		VALUE=$(osmium fileinfo -e -g "header.option.$OPTION" "$TARGET" 2>/dev/null || true)
+		if [[ -n $VALUE ]]; then
+			HEADER+=(--output-header "$OPTION=$VALUE")
+		fi
+	done
+
+	osmium merge \
+		--overwrite \
+		--output="$MERGED" \
+		"${HEADER[@]}" \
+		"$TARGET" \
+		"$NAMED"
+	mv -f "$MERGED" "$TARGET"
+	rm -rf "$STREET_WORK"
 	trap - EXIT
 fi
 

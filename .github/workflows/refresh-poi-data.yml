@@ -29,6 +29,9 @@ on:
       cities:
         description: "Comma separated city slugs, empty for the stale ones"
         required: false
+      categories:
+        description: "Comma separated category slugs, empty for all of them"
+        required: false
       force:
         description: "Refresh even if the data is still fresh"
         type: boolean
@@ -68,6 +71,7 @@ jobs:
             --deadline-minutes=240 \
             --max-age-days=6 \
             ${{ inputs.cities && format('--cities={0}', inputs.cities) || '' }} \
+            ${{ inputs.categories && format('--categories={0}', inputs.categories) || '' }} \
             ${{ inputs.force && '--force' || '' }}
         env:
           # A self hosted instance, when the repository has one. Reachable from
@@ -81,6 +85,12 @@ jobs:
           # URL is how this job spent eight nights on the public mirrors while
           # a self hosted instance sat there answering the app in under a second
           OVERPASS_API_URL: ${{ vars.OVERPASS_API_URL || vars.VITE_OVERPASS_API_URL }}
+
+      # A run limited to some categories writes only those, and every other
+      # category keeps the updatedAt it already had — the freshness is per
+      # category, not per city, so a narrow run cannot make a stale category
+      # look current. See the updatedAt written per category in the fetch
+      # script. Nothing to guard here, only something not to assume away.
 
       # always(), so that a run which overruns anyway still keeps what it
       # fetched. fetch-poi-data.mjs stops itself on its own deadline and this

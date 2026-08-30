@@ -53,6 +53,35 @@ grows about a sixth — 602 KB to 714 KB. Set `WAYSIDE_JOIN_BUILDINGS=false` to
 leave it out; the app then finds no building on this server and says nothing
 about one, exactly as it did before any of this existed.
 
+### And the streets those points stand on
+
+The other half of the same problem, for the points no building contains. A post
+box stands at a kerb; so does a bus shelter, a recycling container and a bike
+repair stand. Containment has nothing to offer them — 12 of Helsinki's 224 post
+boxes are inside anything at all — but they are all *on* a named road, and that
+road is an object the tag filter drops as surely as it drops the buildings.
+
+So the filter keeps every named highway. `WAYSIDE_JOIN_STREETS=false` turns it
+off, and `bin/filter-osm-extract` does it in two passes, because
+`osmium tags-filter` ORs its expressions and what is wanted here is an AND:
+the first pass keeps every highway with the nodes it is drawn from, the second
+keeps the named ones out of *those*, so a named way in the result is a named
+road. The other way round would pull every named object in the extract through
+the first pass.
+
+Unlike the buildings there is no geometry step and no selection. A street is
+kept for being a named road, not for having a point on it — the points this
+database holds are dense enough that nearly every urban street is within thirty
+metres of one, so selecting by proximity would drop rural roads and little
+else, in exchange for a spatial join's worth of code that can be wrong.
+
+On Bremen that is 21,094 named ways and 96,830 nodes, taking the extract from
+603 KB to 2.6 MB against a 21 MB source. It is the largest single thing in the
+filtered extract and worth it: it is what lets a page list "post box on
+Mannerheimintie" twenty-five times over instead of "post box" twenty-five
+times, which is the difference between a page worth indexing and one that is
+not. See `placedByStreet` in `apps/frontend/src/seo/categories.ts`.
+
 ## Running it
 
 ```bash

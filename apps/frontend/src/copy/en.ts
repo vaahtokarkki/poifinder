@@ -635,7 +635,7 @@ const categories: CopyDeck["categories"] = {
       },
       {
         q: "Is there a pump?",
-        a: "Usually, and it is the part people come for. Where OpenStreetMap records the pump separately it shows in the point details. Public air points that a mapper marked as usable for bicycles are included on this page too.",
+        a: "On a repair stand, usually, and it is the part people come for. This page also includes the public compressed air points, which are mostly fuel station forecourts: those inflate a tyre but want an adapter for a Presta valve, and their gauges read poorly at road bike pressures. A proper stand is the better answer where there is one.",
       },
       {
         q: "Are they free?",

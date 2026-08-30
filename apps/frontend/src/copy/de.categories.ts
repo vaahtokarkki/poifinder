@@ -712,7 +712,7 @@ export const deCategories: Record<string, CategoryCopy> = {
       },
       {
         q: "Gibt es eine Luftpumpe?",
-        a: "Meistens, und für viele ist sie der eigentliche Grund hinzugehen. Wo OpenStreetMap die Pumpe getrennt erfasst, steht sie am Punkt. Öffentliche Druckluftstellen, die als für Fahrräder geeignet markiert sind, sind auf dieser Seite ebenfalls enthalten.",
+        a: "An einer Reparaturstation meistens, und für viele ist sie der eigentliche Grund hinzugehen. Diese Seite zeigt außerdem die öffentlichen Druckluftstellen, überwiegend an Tankstellen: die pumpen zwar auf, brauchen für ein Sclaverandventil aber meist einen Adapter, und ihre Anzeige ist im Rennraddruckbereich ungenau. Wo es eine richtige Station gibt, ist sie die bessere Wahl.",
       },
       {
         q: "Kostet die Nutzung etwas?",

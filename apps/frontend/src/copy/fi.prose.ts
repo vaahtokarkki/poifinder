@@ -614,7 +614,7 @@ export const fiProse: Record<string, Prose> = {
       },
       {
         q: "Onko siinä pumppu?",
-        a: "Yleensä on, ja monelle se on koko syy tulla paikalle. Jos OpenStreetMap on merkinnyt pumpun erikseen, se näkyy pisteen tiedoissa. Mukana ovat myös ne yleiset paineilmapisteet jotka kartoittaja on merkinnyt pyörille sopiviksi.",
+        a: "Huoltopisteessä yleensä on, ja monelle se on koko syy tulla paikalle. Tällä sivulla ovat mukana myös yleiset paineilmapisteet, jotka ovat enimmäkseen huoltoasemien pihoilla: ne täyttävät renkaan, mutta ohutventtiiliin tarvitaan yleensä sovitin eikä mittari ole tarkka maantiepyörän paineilla. Varsinainen huoltopiste on parempi vaihtoehto siellä missä sellainen on.",
       },
       {
         q: "Ovatko ne maksuttomia?",

@@ -158,6 +158,43 @@ jobs:
             test "$(cat /tmp/w/planet.osm.bz2.timestamp)" = "2026-01-02T00:00:00Z" || {
               echo "the merged extract should be dated by its oldest region"; exit 1; }
 
+            # The named-street pass is two osmium invocations whose argument
+            # order is easy to get wrong — tags-filter wants the input file
+            # before its expressions, and putting the expression first fails
+            # with "Open failed for w/highway", which the pipe to the next step
+            # swallowed the first time. So drive the real script and count what
+            # comes out. alpha has one named road and one unnamed one; only the
+            # named one may survive, and the post box must still be there
+            printf "%s" "<?xml version=\"1.0\"?><osm version=\"0.6\">" > /tmp/r/streets.osm
+            printf "<node id=\"7001\" version=\"1\" timestamp=\"$T\" lat=\"60.10\" lon=\"24.10\"/>" >> /tmp/r/streets.osm
+            printf "<node id=\"7002\" version=\"1\" timestamp=\"$T\" lat=\"60.11\" lon=\"24.11\"/>" >> /tmp/r/streets.osm
+            printf "<node id=\"7003\" version=\"1\" timestamp=\"$T\" lat=\"60.12\" lon=\"24.12\"/>" >> /tmp/r/streets.osm
+            printf "<node id=\"7010\" version=\"1\" timestamp=\"$T\" lat=\"60.10\" lon=\"24.10\"><tag k=\"amenity\" v=\"post_box\"/></node>" >> /tmp/r/streets.osm
+            printf "<way id=\"7101\" version=\"1\" timestamp=\"$T\"><nd ref=\"7001\"/><nd ref=\"7002\"/><tag k=\"highway\" v=\"residential\"/><tag k=\"name\" v=\"Mannerheimintie\"/></way>" >> /tmp/r/streets.osm
+            printf "<way id=\"7102\" version=\"1\" timestamp=\"$T\"><nd ref=\"7002\"/><nd ref=\"7003\"/><tag k=\"highway\" v=\"service\"/></way>" >> /tmp/r/streets.osm
+            printf "%s" "</osm>" >> /tmp/r/streets.osm
+            osmium cat -O -o /tmp/r/streets.osm.pbf /tmp/r/streets.osm
+
+            WAYSIDE_JOIN_BUILDINGS=false filter-osm-extract /tmp/r/streets.osm.pbf /tmp/w/streets-out.osm.pbf
+            osmium tags-filter /tmp/w/streets-out.osm.pbf w/highway --omit-referenced \
+              -o /tmp/w/streets-kept.osm.pbf --overwrite
+            kept=$(osmium fileinfo -e -g data.count.ways /tmp/w/streets-kept.osm.pbf)
+            test "$kept" = "1" || {
+              echo "expected the 1 named road to be kept, got $kept"; exit 1; }
+            osmium tags-filter /tmp/w/streets-out.osm.pbf n/amenity=post_box --omit-referenced \
+              -o /tmp/w/streets-poi.osm.pbf --overwrite
+            boxes=$(osmium fileinfo -e -g data.count.nodes /tmp/w/streets-poi.osm.pbf)
+            test "$boxes" = "1" || { echo "the post box should have survived, got $boxes"; exit 1; }
+
+            # And the switch actually switches it off
+            WAYSIDE_JOIN_BUILDINGS=false WAYSIDE_JOIN_STREETS=false \
+              filter-osm-extract /tmp/r/streets.osm.pbf /tmp/w/streets-off.osm.pbf
+            osmium tags-filter /tmp/w/streets-off.osm.pbf w/highway --omit-referenced \
+              -o /tmp/w/streets-off-kept.osm.pbf --overwrite
+            off=$(osmium fileinfo -e -g data.count.ways /tmp/w/streets-off-kept.osm.pbf)
+            test "$off" = "0" || {
+              echo "WAYSIDE_JOIN_STREETS=false should have kept no roads, got $off"; exit 1; }
+
             # The region list is what says which countries exist, so a URL that
             # answers with a web page has to fail the run: nothing about a
             # renamed or withdrawn region improves overnight, and a country

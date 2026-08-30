@@ -31,12 +31,11 @@
  * Until the import keeps named areas too, run the refresh for the outdoor
  * categories without OVERPASS_API_URL set.
  *
- * `placedByStreet` is in the same position and for the same reason. The filter
- * keeps two highway tags, both of them rest areas we map as points of interest
- * in their own right, so named roads are not in the database at all and the
- * street lookup comes back empty against it. Post boxes, shelters and
- * recycling therefore want the public mirrors too, until the import keeps
- * named highways.
+ * `placedByStreet` used to be in the same position and is not any more. The
+ * import now keeps every named highway — see WAYSIDE_JOIN_STREETS in
+ * apps/overpass/bin/filter-osm-extract — so the street lookup answers from the
+ * self hosted instance as well as from the mirrors. It is the enclosing *area*
+ * that is still missing, and only that.
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";

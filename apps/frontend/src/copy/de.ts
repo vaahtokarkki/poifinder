@@ -58,7 +58,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     "post-offices": "Postfilialen",
     showers: "Duschen",
     fireplaces: "Feuerstellen & Grill",
-    "compressed-air": "Druckluft",
+    "bicycle-repair": "Fahrradreparatur",
     benches: "Bänke",
   },
 

@@ -225,8 +225,18 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     schemaType: "Place",
   },
   {
-    category: CATEGORIES.CompressedAir,
-    slug: "compressed-air",
+    category: CATEGORIES.BicycleRepair,
+    slug: "bicycle-repair",
+    // The slug this category had while it was petrol station air. Nothing ever
+    // indexed under it — it cleared the gate in no city — but the URLs were
+    // prerendered and are cheap to keep resolving
+    aliases: ["compressed-air"],
+    // Repair stands cluster in parks, on campuses and outside stations, and
+    // otherwise stand at a kerb like any other piece of street furniture, so
+    // both lookups earn their query here. Almost none carry a name: 0 of 79 in
+    // London, 0 of 41 in Stockholm, 2 of 36 in Helsinki
+    enclosedBy: ["area"],
+    placedByStreet: true,
     schemaType: "Place",
   },
   {

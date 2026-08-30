@@ -593,24 +593,36 @@ export const fiProse: Record<string, Prose> = {
     ],
   },
 
-  "compressed-air": {
+  "bicycle-repair": {
     intro: {
-      one: "{cityIn} on kartoitettu yksi paikka jossa voi täyttää renkaan: paineilmapiste huoltoasemalla tai pysäköintialueella, tai yleinen pumppu jota pyöräilijä voi käyttää. Yleensä maksuton, yleensä ilman kylttiä ja muualta lähes mahdoton etsiä.",
+      one: "{cityIn} on kartoitettu yksi yleinen pyöränhuoltopiste: teline jossa on työkalut ja yleensä pumppu, maksuton ja kadun varrella. Muualta pyörän korjausta hakemalla löytyy liikkeitä — tämä on se kiinteä teline kahden korttelin päässä jota mikään muu ei listaa.",
       other:
-        "{cityIn} on kartoitettu {count} paikkaa joissa voi täyttää renkaan: paineilmapisteitä huoltoasemilla ja pysäköintialueilla sekä yleisiä pumppuja joita pyöräilijät voivat käyttää. Yleensä maksuttomia, yleensä ilman kylttiä ja muualta lähes mahdottomia etsiä.",
+        "{cityIn} on kartoitettu {count} yleistä pyöränhuoltopistettä: telineitä joissa on työkalut ja yleensä pumppu, maksuttomia ja kadun varrella. Muualta pyörän korjausta hakemalla löytyy liikkeitä — nämä ovat ne kiinteät telineet joita mikään muu ei listaa.",
     },
     faq: [
       {
-        q: "Missä voin täyttää renkaat {cityIn}?",
+        q: "Missä voin korjata pyörän {cityIn}?",
         a: {
-          one: "Kartta näyttää yhden kartoitetun paineilmapisteen. Useimmat ovat huoltoasemilla, pihan reunalla jossa kyltti on kadulta helppo ohittaa.",
+          one: "Kartta näyttää yhden kartoitetun huoltopisteen. Ne ovat useimmiten asemien edustoilla, kampuksilla, puistojen sisäänkäynneillä ja viitoitettujen pyöräreittien varrella.",
           other:
-            "Kartta näyttää {count} kartoitettua paineilmapistettä. Useimmat ovat huoltoasemilla, pihan reunalla jossa kyltti on kadulta helppo ohittaa.",
+            "Kartta näyttää {count} kartoitettua huoltopistettä. Ne ovat useimmiten asemien edustoilla, kampuksilla, puistojen sisäänkäynneillä ja viitoitettujen pyöräreittien varrella.",
         },
       },
       {
-        q: "Voinko täyttää myös pyörän renkaat?",
-        a: "Auton paineilma sopii autoventtiiliin, pyörään tarvitaan usein sovitin. Yleiset pyöräpumput ovat mukana tässä samassa kategoriassa ja ovat siihen parempi vaihtoehto.",
+        q: "Mitä työkaluja huoltopisteessä on?",
+        a: "Yleensä kuusiokoloavaimet, ruuvitaltat ja rengasraudat vaijereissa, sekä teline johon pyörän voi ripustaa niin että molemmat renkaat irtoavat maasta. Useimmissa on pumppu. Valikoima vaihtelee toimittajittain eikä OpenStreetMap aina kerro sitä.",
+      },
+      {
+        q: "Onko siinä pumppu?",
+        a: "Yleensä on, ja monelle se on koko syy tulla paikalle. Jos OpenStreetMap on merkinnyt pumpun erikseen, se näkyy pisteen tiedoissa. Mukana ovat myös ne yleiset paineilmapisteet jotka kartoittaja on merkinnyt pyörille sopiviksi.",
+      },
+      {
+        q: "Ovatko ne maksuttomia?",
+        a: "Käytännössä aina. Ne ovat kaupunkien, korkeakoulujen, liikennelaitosten ja pyöräilyjärjestöjen pystyttämiä eivätkä liiketoimintaa — juuri siksi niitä on vaikea löytää kaupallisilta kartoilta ja helppo täältä.",
+      },
+      {
+        q: "Toimiiko se varmasti?",
+        a: "Ei taatusti. Työkalut katoavat ja pumput hajoavat, ja OpenStreetMap kertoo että piste on olemassa, ei sen kuntoa juuri tällä hetkellä. Pidä sitä todennäköisenä mutta älä varmana, ja pidä rengasrikon varalta omat välineet mukana.",
       },
     ],
   },

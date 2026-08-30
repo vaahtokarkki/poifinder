@@ -688,31 +688,39 @@ export const deCategories: Record<string, CategoryCopy> = {
     ],
   },
 
-  "compressed-air": {
-    plural: "Druckluftstationen",
-    singular: "Druckluftstation",
-    heading: "Druckluft",
+  "bicycle-repair": {
+    plural: "Fahrrad-Reparaturstationen",
+    singular: "Fahrrad-Reparaturstation",
+    heading: "Fahrrad-Reparaturstationen",
     intro: {
-      one: "In {city} ist eine Stelle zum Aufpumpen eines Reifens verzeichnet: eine Druckluftstation an einer Tankstelle oder einem Parkplatz, oder eine öffentliche Pumpe für Fahrräder. Meist kostenlos, meist unbeschildert und anderswo kaum zu suchen.",
+      one: "In {city} ist eine öffentliche Fahrrad-Reparaturstation verzeichnet: ein Ständer mit Werkzeug und meist einer Luftpumpe, frei nutzbar und direkt an der Straße. Wer anderswo nach Fahrradreparatur sucht, findet Werkstätten — das hier ist die feste Station zwei Straßen weiter, die sonst nirgends steht.",
       other:
-        "In {city} sind {count} Stellen zum Aufpumpen eines Reifens verzeichnet: die Druckluftstationen an Tankstellen und Parkplätzen und die öffentlichen Pumpen, die Radfahrende nutzen können. Meist kostenlos, meist unbeschildert und anderswo kaum zu suchen.",
+        "In {city} sind {count} öffentliche Fahrrad-Reparaturstationen verzeichnet: Ständer mit Werkzeug und meist einer Luftpumpe, frei nutzbar und direkt an der Straße. Wer anderswo nach Fahrradreparatur sucht, findet Werkstätten — das hier sind die festen Stationen, die sonst nirgends stehen.",
     },
     faq: [
       {
-        q: "Wo kann ich in {city} Reifen aufpumpen?",
+        q: "Wo kann ich in {city} mein Fahrrad reparieren?",
         a: {
-          one: "Die Karte zeigt eine verzeichnete Druckluftstation. Die meisten stehen an Tankstellen, am Rand des Geländes, wo das Schild von der Straße aus leicht zu übersehen ist.",
+          one: "Die Karte zeigt die eine verzeichnete Reparaturstation. Sie stehen meist vor Bahnhöfen, auf Universitätsgeländen, an Parkeingängen und entlang ausgeschilderter Radrouten.",
           other:
-            "Die Karte zeigt {count} verzeichnete Druckluftstationen. Die meisten stehen an Tankstellen, am Rand des Geländes, wo das Schild von der Straße aus leicht zu übersehen ist.",
+            "Die Karte zeigt {count} verzeichnete Reparaturstationen. Sie stehen meist vor Bahnhöfen, auf Universitätsgeländen, an Parkeingängen und entlang ausgeschilderter Radrouten.",
         },
       },
       {
-        q: "Kostet Druckluft etwas?",
-        a: "An vielen Tankstellen ist sie kostenlos, an manchen wird eine Münze fällig. Wo OpenStreetMap eine Gebühr erfasst hat, steht sie am Punkt.",
+        q: "Welches Werkzeug gibt es an einer Reparaturstation?",
+        a: "Meist Inbusschlüssel, Schraubendreher und Reifenheber an Stahlseilen, dazu ein Bügel, an dem das Rad hängt, damit beide Laufräder frei sind. Die meisten haben eine Luftpumpe. Was genau vorhanden ist, unterscheidet sich je nach Betreiber und ist in OpenStreetMap nicht immer erfasst.",
       },
       {
-        q: "Kann ich damit auch Fahrradreifen aufpumpen?",
-        a: "Autodruckluft passt auf Autoventile, für Fahrräder brauchst du oft einen Adapter. Öffentliche Fahrradpumpen sind hier ebenfalls enthalten und dafür die bessere Wahl.",
+        q: "Gibt es eine Luftpumpe?",
+        a: "Meistens, und für viele ist sie der eigentliche Grund hinzugehen. Wo OpenStreetMap die Pumpe getrennt erfasst, steht sie am Punkt. Öffentliche Druckluftstellen, die als für Fahrräder geeignet markiert sind, sind auf dieser Seite ebenfalls enthalten.",
+      },
+      {
+        q: "Kostet die Nutzung etwas?",
+        a: "So gut wie nie. Aufgestellt werden sie von Kommunen, Hochschulen, Verkehrsbetrieben und Radverbänden, nicht als Geschäft — genau deshalb sind sie auf kommerziellen Karten schwer und hier leicht zu finden.",
+      },
+      {
+        q: "Funktioniert sie auch?",
+        a: "Nicht garantiert. Werkzeug verschwindet und Pumpen gehen kaputt, und OpenStreetMap verzeichnet, dass eine Station existiert, nicht ihren Zustand an einem bestimmten Tag. Nimm sie als wahrscheinlich, nicht als sicher, und hab für einen Platten dabei, was du brauchst.",
       },
     ],
   },

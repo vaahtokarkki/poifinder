@@ -70,7 +70,11 @@ const nouns: Record<string, Partial<CategoryCopy>> = {
     singular: "nuotiopaikka tai grilli",
     heading: "Nuotiopaikat ja grillit",
   },
-  "compressed-air": { plural: "paineilmapisteet", singular: "paineilmapiste", heading: "Paineilma" },
+  "bicycle-repair": {
+    plural: "pyöränhuoltopisteet",
+    singular: "pyöränhuoltopiste",
+    heading: "Pyöränhuoltopisteet",
+  },
   benches: { plural: "penkit", singular: "penkki", heading: "Penkit" },
 };
 

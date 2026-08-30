@@ -613,29 +613,37 @@ const categories: CopyDeck["categories"] = {
       },
     ],
   },
-  "compressed-air": {
-    plural: "compressed air points",
-    singular: "compressed air point",
-    heading: "Compressed air",
+  "bicycle-repair": {
+    plural: "bike repair stations",
+    singular: "bike repair station",
+    heading: "Bike repair stations",
     intro: {
-      one: "One place to inflate a tyre is mapped in {city}: a compressed air point at a fuel station or car park, or a public pump a cyclist can use. Usually free, usually unsigned, and near impossible to search for anywhere else.",
-      other: "{count} places to inflate a tyre are mapped in {city}: the compressed air points at fuel stations and car parks, and the public pumps cyclists can use. Usually free, usually unsigned, and near impossible to search for anywhere else.",
+      one: "One public bike repair station is mapped in {city}: a stand with tools and usually a pump, free to use and open to the street. Search for bike repair anywhere else and you get shops — this is the fixed stand two streets away that nothing else lists.",
+      other: "{count} public bike repair stations are mapped in {city}: stands with tools and usually a pump, free to use and open to the street. Search for bike repair anywhere else and you get shops — these are the fixed stands nothing else lists.",
     },
     faq: [
       {
-        q: "Where can I pump up a tyre in {city}?",
+        q: "Where can I fix a bike in {city}?",
         a: {
-          one: "The map shows one mapped air point. Most are at fuel stations, tucked at the edge of the forecourt where the sign is easy to miss from the road.",
-          other: "The map shows {count} mapped air points. Most are at fuel stations, tucked at the edge of the forecourt where the sign is easy to miss from the road.",
+          one: "The map shows the one mapped repair stand. They tend to stand outside stations, on campuses, at park entrances and along signposted cycle routes.",
+          other: "The map shows {count} mapped repair stands. They tend to stand outside stations, on campuses, at park entrances and along signposted cycle routes.",
         },
       },
       {
-        q: "Do they work for bicycles?",
-        a: "Many forecourt units have a Presta or Schrader adapter and plenty of cyclists use them, but the pressure gauges are made for cars and read poorly at road bike pressures. Dedicated bicycle pumps are tagged separately in OpenStreetMap and are not all included here.",
+        q: "What tools does a repair station have?",
+        a: "Usually a set of hex keys, screwdrivers and tyre levers on retractable cables, plus a stand to hang the bike from so both wheels come off the ground. Most have a pump. The exact set varies by installer and OpenStreetMap does not always record it.",
+      },
+      {
+        q: "Is there a pump?",
+        a: "Usually, and it is the part people come for. Where OpenStreetMap records the pump separately it shows in the point details. Public air points that a mapper marked as usable for bicycles are included on this page too.",
       },
       {
         q: "Are they free?",
-        a: "Often, though some are coin operated or need a purchase at the till. Where OpenStreetMap records a fee it shows in the point details.",
+        a: "Almost always. They are put in by councils, universities, transport operators and cycling campaigns rather than run as a business, which is why they are hard to find on a commercial map and easy to find on this one.",
+      },
+      {
+        q: "Will it be working?",
+        a: "Not guaranteed. Tools go missing and pumps break, and OpenStreetMap records that a stand exists rather than its condition on any given day. Treat a stand as likely rather than certain, and carry what you would need for a puncture.",
       },
     ],
   },
@@ -708,7 +716,7 @@ const ui: CopyDeck["ui"] = {
     "post-offices": "Post offices",
     showers: "Showers",
     fireplaces: "Fireplaces & BBQ",
-    "compressed-air": "Compressed air",
+    "bicycle-repair": "Bike repair",
     benches: "Benches",
   },
 

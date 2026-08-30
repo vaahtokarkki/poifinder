@@ -4,12 +4,13 @@
 # Objects carrying any of these tags are kept when the raw OSM extract is
 # imported. Everything else is dropped before Overpass ever sees it.
 #
-# 49 tags, covering 26 categories.
+# 50 tags, covering 26 categories.
 nwr/amenity=atm  # Atm
 nwr/amenity=bbq  # Fireplace
 nwr/amenity=bench  # Bench
+nwr/amenity=bicycle_repair_station  # BicycleRepair
 nwr/amenity=charging_station  # ChargingStation
-nwr/amenity=compressed_air  # CompressedAir
+nwr/amenity=compressed_air  # BicycleRepair
 nwr/amenity=drinking_water  # DrinkingWater
 nwr/amenity=fountain  # DrinkingWater
 nwr/amenity=fuel  # GasStation

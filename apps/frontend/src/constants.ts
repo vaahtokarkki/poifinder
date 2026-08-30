@@ -27,7 +27,7 @@ import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import MarkunreadMailboxIcon from '@mui/icons-material/MarkunreadMailbox';
 import ShowerIcon from '@mui/icons-material/Shower';
 import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
-import TireRepairIcon from '@mui/icons-material/TireRepair';
+import HandymanIcon from '@mui/icons-material/Handyman';
 import ChairAltIcon from '@mui/icons-material/ChairAlt';
 import * as React from "react";
 import { getLocale, ui } from "./copy";
@@ -60,7 +60,10 @@ export enum CATEGORIES {
   PostOffice,
   Shower,
   Fireplace,
-  CompressedAir,
+  // Was CompressedAir, which drew petrol station tyre inflators and never had
+  // a listable row in any city. The slot is reused rather than appended to,
+  // because appending would leave a dead number that share links still decode
+  BicycleRepair,
   Bench,
 }
 
@@ -284,11 +287,25 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     color: "#FF6F00",
     group: CATEGORY_GROUP.Nature,
   },
-  [CATEGORIES.CompressedAir]: {
-    filters: ["[amenity=compressed_air]"],
-    icon: React.createElement(TireRepairIcon),
-    color: "#607D8B",
-    group: CATEGORY_GROUP.Car,
+  [CATEGORIES.BicycleRepair]: {
+    /**
+     * Public bike repair stands, and the pumps that are explicitly for bikes.
+     *
+     * `amenity=compressed_air` on its own is overwhelmingly the tyre inflator
+     * on a petrol station forecourt: of the compressed air within 15 km of
+     * Berlin 29 of 29 is that, London 19 of 19, Helsinki 7 of 10. Those belong
+     * to a car category this site no longer publishes, so the bare tag is gone
+     * and only the ones a mapper marked `bicycle=yes` come through.
+     *
+     * The repair stand is the category. It is the shape of thing that does
+     * well here — unnamed, mapped by cyclists, and answered by nothing else,
+     * since a search for bike repair returns shops rather than the free stand
+     * two streets away.
+     */
+    filters: ["[amenity=bicycle_repair_station]", "[amenity=compressed_air][bicycle=yes]"],
+    icon: React.createElement(HandymanIcon),
+    color: "#00897B",
+    group: CATEGORY_GROUP.Essentials,
   },
   [CATEGORIES.Bench]: {
     // By far the largest category here, and the reason the extract grew. Worth

@@ -1,6 +1,8 @@
 import React from "react";
 import { Polygon, Polyline } from "react-leaflet";
+import BuildingEntrances from "./BuildingEntrances";
 import { useEnclosingBuilding, useOsmElement } from "../hooks/useOsmElement";
+import { takesEntrances } from "../api/overpass";
 import type { OsmRef } from "../api/overpass";
 import type { OverpassMarkerData } from "../api/overpass";
 
@@ -60,6 +62,22 @@ const PoiShape: React.FC<{
   );
   const shape = (enclosing ? building?.shape : own?.shape) ?? null;
 
+  /*
+   * The outline's own ref and tags, whichever of the two questions produced
+   * it — the building around a node, or the way the point is drawn as. Both
+   * are buildings often enough to be worth asking: a library or a station is
+   * mapped as its own outline and has its doors mapped with it.
+   *
+   * takesEntrances is what keeps that cheap. A car park, a playground and a
+   * block of flats all get null here and ask nothing, which is most of what
+   * ever reaches this line.
+   */
+  const outline = enclosing
+    ? building && { ref: building.ref, tags: building.tags }
+    : own && { ref: `${marker.type}/${marker.id}` as OsmRef, tags: own.tags };
+  const entranceRef =
+    outline && takesEntrances(outline.tags) ? outline.ref : null;
+
   if (!shape) return null;
 
   const pathOptions = {
@@ -90,6 +108,7 @@ const PoiShape: React.FC<{
           interactive={false}
         />
       ))}
+      <BuildingEntrances building={entranceRef} shape={shape} />
     </>
   );
 };

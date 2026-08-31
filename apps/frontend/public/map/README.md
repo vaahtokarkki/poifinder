@@ -350,6 +350,26 @@ the z14 stop alone, or the far zoom browns again.
 until z16 — so it is the layer carrying the colour. `building` sits under it
 and is darker, so it reads as a shadow edge once the offset opens up.
 
+**Trams are drawn dark; everything else on rails is not.** `tram` is its own
+layer at `#808080`, split out of `transit`, which now covers only
+`subway` / `light_rail` / `monorail`. The distinction is what the line is for:
+the S-Bahn, U-Bahn and mainline are background texture and stay pale
+`#c9ced3`, while a tram is street-level transit someone using this app might
+actually board, so it is drawn to be read. `tram_tunnel` draws underground trams dashed, so a line under the street
+cannot be read as one running on it. Its `line-dasharray` is in line-width
+units, so the dashes hold their proportions as the line thickens with zoom and
+need no stops of their own. Note that Berlin has no underground tram in the
+data — four sampled tiles across the city return zero `brunnel=tunnel` trams —
+so this layer is correct but invisible here; it is for cities that have them.
+
+Also worth knowing: the tiles carry no `class=transit` at all below z14, so
+none of the tram, transit or rail layers draw at z13 no matter what their
+`minzoom` says.
+
+The four filters partition the
+rail-ish features with no overlap — check that if you touch any of them, or a
+line will either double-draw or vanish.
+
 **Small roads change treatment at z15.** From z13 to z14 they are thin grey
 lines (`#c0c4c6` fading to `#d3d5d3`), drawn by the casing alone —
 `road_minor_fill` and `road_service_fill` do not start until z15. A white

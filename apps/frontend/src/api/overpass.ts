@@ -648,7 +648,7 @@ export type EnclosingBuilding = OverpassElementDetails & {
 };
 
 /** Whether a point is inside a shape: in one of its rings and in none of its holes */
-const shapeContains = (shape: OverpassShape, point: [number, number]) =>
+export const shapeContains = (shape: OverpassShape, point: [number, number]) =>
   shape.polygons.some(
     ([outer, ...holes]) =>
       ringContains(outer, point) && !holes.some(hole => ringContains(hole, point))
@@ -731,6 +731,128 @@ export async function fetchEnclosingBuilding(
   }
 
   return best?.building ?? null;
+}
+
+/* ---------- The doors into a building ---------- */
+
+/**
+ * Which doors are worth drawing, and on which buildings.
+ *
+ * The question this answers is one question — where do I get into this
+ * shopping centre — and everything here is that question narrowing. A mall has
+ * eleven doors in OpenStreetMap and two of them are the ones a person walks
+ * to; the other nine are a loading bay, a fire exit and the stairs up to the
+ * flats above. Drawing all eleven is the same as drawing none.
+ *
+ * Measured on the Finland extract, over the 4025 entrance nodes that sit on a
+ * building our import kept.
+ */
+const ENTRANCE = {
+  /**
+   * Values of `entrance` for a door somebody arriving can use. `yes` (1980)
+   * and `main` (1028) are most of them; `shop` and `secondary` are the side
+   * doors of exactly the retail buildings this is for.
+   *
+   * Everything left out is left out because walking to it wastes the walk:
+   * `staircase` (265) is the stairwell door of a block of flats, `service`
+   * (234) and `delivery` are the back of the building, `emergency` (55) opens
+   * outwards only, and `garage`, `parking` and `basement` are for cars.
+   */
+  USABLE: new Set(["main", "yes", "secondary", "shop", "entrance"]),
+  /**
+   * Values of `access` that say the door is not for the reader. 396 of the
+   * 1037 entrances carrying `access` are `private`, which is the tag doing
+   * real work here. `customers` and `permissive` stay: this app already treats
+   * customers-only as a real answer rather than a closed one
+   */
+  CLOSED: new Set(["private", "no", "employees", "delivery", "permit"]),
+  /**
+   * Values of `building` for somewhere people live. A block of flats has its
+   * doors mapped as diligently as a mall does — 76 of the 1560 buildings with
+   * entrances are `apartments`, and 70 of those 76 have no name — and none of
+   * them is a door the reader is looking for. The stairwell filter above
+   * catches many of the same nodes; this catches the rest, and saves the query
+   */
+  RESIDENTIAL: new Set([
+    "apartments", "residential", "house", "detached", "semidetached_house",
+    "terrace", "terraced_house", "dormitory", "bungalow", "cabin", "hut",
+    "houseboat", "static_caravan", "farm", "ger", "trullo",
+  ]),
+} as const;
+
+/** One door into a building, and where it is */
+export type BuildingEntrance = {
+  id: number | string;
+  position: [number, number];
+  /** `entrance=main`: the door the building itself says is the way in */
+  main: boolean;
+  tags: Record<string, string>;
+};
+
+/**
+ * Whether this outline is a building whose doors are worth asking about.
+ *
+ * Asked before the query rather than after it, so that a car park, a
+ * playground and a block of flats cost nothing: three quarters of the points
+ * that get this far are one of those, and the answer for all of them is a
+ * query that comes back empty.
+ */
+export const takesEntrances = (tags: Record<string, string>): boolean => {
+  const building = tags.building;
+  return (
+    !!building &&
+    !ENCLOSING_BUILDING.NOT_A_BUILDING.has(building) &&
+    !ENTRANCE.RESIDENTIAL.has(building)
+  );
+};
+
+/**
+ * The doors into the building named, as far as OpenStreetMap knows them.
+ *
+ * Asked by id rather than by position, which is what makes it worth asking
+ * separately from the building itself: two toilets in the same shopping centre
+ * are two different positions and one building, so the second one is answered
+ * out of the cache. The building lookup cannot do that — it is keyed by where
+ * the point is, because that is the only thing it knows before it has an
+ * answer.
+ *
+ * Entrances are nodes of the building's own way, which is how they are mapped
+ * and also why they survive our import: the buildings are put back into the
+ * extract with the nodes they are drawn from. A door mapped as a loose node
+ * inside the building — an underground concourse, mostly — is in the public
+ * mirrors and not in ours, and is missing here rather than wrong.
+ */
+export async function fetchBuildingEntrances(
+  ref: OsmRef
+): Promise<BuildingEntrance[]> {
+  const [type, id] = ref.split("/");
+  // A relation's doors belong to its member ways, so it takes the extra step
+  // down. Written as two statements rather than as `>`, which the self hosted
+  // instance's query guard refuses: recursing down to every member node of
+  // anything is how a cheap query is turned into an expensive one
+  const statement =
+    type === "relation"
+      ? `rel(id:${id});way(r);node(w)[entrance];`
+      : `way(id:${id});node(w)[entrance];`;
+  const elements = await runOverpassQuery(
+    `${OVERPASS_QUERY_PROLOGUE};${statement}out;`
+  );
+
+  const entrances: BuildingEntrance[] = [];
+  for (const element of elements) {
+    if (element.type !== "node" || element.lat === undefined || element.lon === undefined)
+      continue;
+    const tags = element.tags ?? {};
+    if (!ENTRANCE.USABLE.has(tags.entrance)) continue;
+    if (ENTRANCE.CLOSED.has(tags.access)) continue;
+    entrances.push({
+      id: element.id,
+      position: [element.lat, element.lon],
+      main: tags.entrance === "main",
+      tags,
+    });
+  }
+  return entrances;
 }
 
 /* ---------- The same place mapped twice ---------- */

@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
-import { fetchEnclosingBuilding, fetchOverpassElement } from "../api/overpass";
+import {
+  fetchBuildingEntrances,
+  fetchEnclosingBuilding,
+  fetchOverpassElement,
+} from "../api/overpass";
 import type {
+  BuildingEntrance,
   EnclosingBuilding,
   OsmRef,
   OverpassElementDetails,
@@ -144,3 +149,20 @@ export const useEnclosingBuilding = (
   position: [number, number] | null
 ): EnclosingBuilding | null =>
   useLookup(buildings, position ? buildingKey(position) : null, fetchBuilding);
+
+/* ---------- The doors into a building ---------- */
+
+const entrances = lookup<BuildingEntrance[]>();
+
+const fetchEntrances = (ref: string) => fetchBuildingEntrances(ref as OsmRef);
+
+/**
+ * The doors into the building named, and an empty list until they arrive.
+ *
+ * Keyed by the building rather than by the point standing in it, which is the
+ * whole reason this is a lookup of its own: a shopping centre with four
+ * toilets in it is asked about once. Hand it null for anything that is not a
+ * building worth asking about — see takesEntrances — and it asks nothing.
+ */
+export const useBuildingEntrances = (ref: OsmRef | null): BuildingEntrance[] =>
+  useLookup(entrances, ref, fetchEntrances) ?? [];

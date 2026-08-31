@@ -3884,7 +3884,6 @@
         [
           "in",
           "subclass",
-          "tram",
           "subway",
           "light_rail",
           "monorail"
@@ -3901,6 +3900,124 @@
       },
       "paint": {
         "line-color": "#c9ced3",
+        "line-width": {
+          "base": 1.3,
+          "stops": [
+            [
+              13,
+              0.5
+            ],
+            [
+              14,
+              0.8
+            ],
+            [
+              16,
+              1.5
+            ],
+            [
+              18,
+              2.4
+            ],
+            [
+              21,
+              3.6
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "tram_tunnel",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "transit"
+        ],
+        [
+          "==",
+          "subclass",
+          "tram"
+        ],
+        [
+          "==",
+          "brunnel",
+          "tunnel"
+        ]
+      ],
+      "layout": {
+        "line-join": "round",
+        "line-cap": "butt"
+      },
+      "paint": {
+        "line-color": "#808080",
+        "line-width": {
+          "base": 1.3,
+          "stops": [
+            [
+              13,
+              0.5
+            ],
+            [
+              14,
+              0.8
+            ],
+            [
+              16,
+              1.5
+            ],
+            [
+              18,
+              2.4
+            ],
+            [
+              21,
+              3.6
+            ]
+          ]
+        },
+        "line-dasharray": [
+          3,
+          2
+        ]
+      }
+    },
+    {
+      "id": "tram",
+      "type": "line",
+      "source": "carto",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "transit"
+        ],
+        [
+          "==",
+          "subclass",
+          "tram"
+        ],
+        [
+          "!=",
+          "brunnel",
+          "tunnel"
+        ]
+      ],
+      "layout": {
+        "line-join": "round",
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#808080",
         "line-width": {
           "base": 1.3,
           "stops": [

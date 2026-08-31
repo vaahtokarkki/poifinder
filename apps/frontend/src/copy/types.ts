@@ -197,6 +197,38 @@ export type UiCopy = {
      */
     editInOsm: string;
     /**
+     * Modelled traffic noise, shown only when the tiles that carry it are
+     * configured and loaded. See src/map/noiseTiles.ts and apps/noise.
+     *
+     * `modelled` is not a footnote to be trimmed. The three levels come from
+     * road classes and distance, not from a microphone, and the words have to
+     * carry that or the reader takes a guess for a measurement.
+     */
+    noise: {
+      label: string;
+      quiet: string;
+      moderate: string;
+      noisy: string;
+      modelled: string;
+      /** The link under the caption, which opens the explanation */
+      about: string;
+      /**
+       * The explanation itself. It exists because three coloured words on a
+       * map look like a measurement, and this one is not: `aboutLimit` is the
+       * part that has to survive any edit, since it is the sentence that stops
+       * a reader trusting a green polygon in a city centre.
+       */
+      aboutTitle: string;
+      aboutIntro: string;
+      aboutBandsHeading: string;
+      aboutQuiet: string;
+      aboutModerate: string;
+      aboutNoisy: string;
+      aboutLimit: string;
+      aboutSource: string;
+      aboutClose: string;
+    };
+    /**
      * Opening hours syntax rendered as words. Keys are the OpenStreetMap
      * codes, which are the same in every language; the values are not.
      */
@@ -276,6 +308,12 @@ export type UiCopy = {
     clearAll: string;
     presetTitle: string;
     showMapTools: string;
+    /**
+     * The noise layer toggle. Only rendered when VITE_NOISE_TILES_URL is set,
+     * so a build without tiles never shows a control for a layer it has not
+     * got — but the string is not optional, because the deck is not
+     */
+    noiseLayer: string;
     hideMapTools: string;
     myLocation: string;
     share: string;

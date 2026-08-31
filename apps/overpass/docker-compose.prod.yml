@@ -544,6 +544,171 @@ services:
         max-size: "10m"
         max-file: "3"
 
+  # ---------------------------------------------------------------------------
+  # Noise tiles: the builder, and the Caddy that publishes both it and Overpass
+  # ---------------------------------------------------------------------------
+
+  # Modelled traffic noise, built from OpenStreetMap by apps/noise. Same shape
+  # as the importer above and for the same reason: it downloads gigabytes and
+  # must never do that because a container restarted. It sleeps until ofelia or
+  # a person runs the build in it.
+  #
+  # First build, once — and it is optional. With no tiles built, Caddy answers
+  # 404 under /tiles, the frontend gets no features back, and every popup looks
+  # exactly as it did before this service existed:
+  #
+  #   docker compose -f docker-compose.prod.yml run --rm \
+  #     noise-builder build-noise-tiles
+  #
+  # That builds every city in cities.json. It also takes city names, and
+  # bounding boxes for anywhere that is not a city on the list:
+  #
+  #   ... build-noise-tiles helsinki oslo
+  #   ... build-noise-tiles --bbox=west,south,east,north
+  #   ... build-noise-tiles --bbox=name:west,south,east,north
+  #
+  # Each run writes a whole tileset from what it was given, so the scheduled
+  # job below is the one that should stay argument-free
+  noise-builder:
+    image: ghcr.io/vaahtokarkki/poifinder/noise:latest
+    container_name: wayside-noise-builder
+    restart: unless-stopped
+
+    # Sleep and wait to be told, exactly as the importer does
+    entrypoint: ["sleep", "infinity"]
+
+    volumes:
+      # The tiles Caddy serves. `current` inside this is a symlink the builder
+      # swaps at the end of a run, so a rebuild is one atomic rename and a
+      # build that dies leaves the tiles being served untouched
+      - /mnt/hdd1/noise/tiles:/tiles
+      # The downloaded extracts, and the expensive thing to lose: roughly 20 GB
+      # for the European cities. A rebuild with a warm cache skips the download
+      # entirely and takes minutes rather than hours
+      - /mnt/hdd1/noise/cache:/cache
+
+    labels:
+      com.centurylinklabs.watchtower.enable: "true"
+
+      # No ofelia schedule, on purpose. The Overpass database above is rebuilt
+      # nightly because the points move — a toilet is added, an opening time is
+      # corrected — but these bands come from road geometry and road classes,
+      # which move at the speed of roadworks. A monthly job would spend 4 GB of
+      # downloads to produce the same polygons.
+      #
+      # So this is run by hand, when something has changed or when the area
+      # being covered should change:
+      #
+      #   docker compose -f docker-compose.prod.yml run --rm noise-builder \
+      #     build-noise-tiles berlin
+      #
+      # and the argument is the whole configuration. A run writes a complete
+      # tileset from what it was given, so whatever is on that command line is
+      # what the site will have until the next run. Names from cities.json, or
+      # `--bbox=name:west,south,east,north` for anywhere else, or both
+
+    environment:
+      # Which extracts to build from, whitespace separated. A city is built
+      # when its centre falls inside an extract's header bounding box, so this
+      # list is what decides which of the 36 tier 1 cities get tiles. Below is
+      # apps/noise/europe.txt, which covers the 21 European ones.
+      #
+      # The other 15 are in Australia, Canada, Japan, New Zealand and the
+      # United States. Add their extracts here to build them — and take the US
+      # region by region rather than as us-latest.osm.pbf, which is 11 GB
+      # Which extracts are available to build from, whitespace separated. An
+      # area is built when its centre falls inside an extract's header bounding
+      # box, so this is the ceiling on what the job above can produce — and
+      # downloading a country the job never uses is pure cost.
+      #
+      # Germany alone, ~4.2 GB, which is what Berlin needs. Munich, Hamburg,
+      # Cologne, Frankfurt and Stuttgart are in the same file, so adding any of
+      # them to the ofelia command costs no extra download.
+      #
+      # For the rest of Europe, apps/noise/europe.txt is the full list — 17
+      # countries, ~20 GB, covering all 21 European tier 1 cities. Paste it
+      # here as one whitespace-separated block if the site ever wants them
+      NOISE_EXTRACTS: https://download.geofabrik.de/europe/germany-latest.osm.pbf
+
+      # Has to match MIN_ZOOM and MAX_ZOOM in src/map/noiseTiles.ts. The client
+      # asks for tiles inside this range and overzooms above it; set higher
+      # there than here and every pan requests tiles that do not exist
+      NOISE_MIN_ZOOM: "10"
+      NOISE_MAX_ZOOM: "12"
+
+    # A share of the machine, like the importer. This one competes with the
+    # importer rather than with the API, and both should lose to it
+    cpus: 1.0
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # The one thing published to the internet. It terminates TLS and answers on
+  # two paths:
+  #
+  #   /api/interpreter          proxied to the Overpass container
+  #   /tiles/{z}/{x}/{y}.pbf    read off the noise volume
+  #
+  # One hostname rather than two, which is one certificate, one DNS record and
+  # one origin for the browser. The frontend then wants:
+  #
+  #   VITE_OVERPASS_API_URL=https://CHANGE_ME.example.com/api/interpreter
+  #   VITE_NOISE_TILES_URL=https://CHANGE_ME.example.com/tiles
+  #
+  # Note what this replaces. The Overpass container above still publishes
+  # 127.0.0.1:12345 for a tunnel; with Caddy in front, that binding is either
+  # redundant or the tunnel should point at Caddy instead. Both are fine. What
+  # is not fine is publishing Overpass to the network beside this, which would
+  # put an unauthenticated API on the internet with none of what is below in
+  # front of it.
+  caddy:
+    image: caddy:2-alpine
+    container_name: wayside-caddy
+    restart: unless-stopped
+
+    depends_on:
+      - overpass
+
+    ports:
+      # For ACME, and for the redirect to https. Bind both to 127.0.0.1 instead
+      # if a tunnel terminates TLS in front of this, and change the site
+      # address in the Caddyfile below to `:80` so Caddy stops trying to get a
+      # certificate for a name it cannot be reached on
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+
+    volumes:
+      # Read only: Caddy serves these, the builder writes them
+      - /mnt/hdd1/noise/tiles:/srv/tiles:ro
+      # Certificates and ACME state. Losing this means new certificates on the
+      # next start, and Let's Encrypt rate limits are per week
+      - caddy-data:/data
+      - caddy-config:/config
+
+    configs:
+      - source: caddyfile
+        target: /etc/caddy/Caddyfile
+
+    labels:
+      com.centurylinklabs.watchtower.enable: "true"
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+
+# Caddy's certificates and its own state. Named volumes rather than the host
+# paths everything else here uses, because nothing in them is ever read by a
+# person and losing them costs a certificate reissue rather than data
+volumes:
+  caddy-data:
+  caddy-config:
 # A network of their own, so that the analytics database is not sitting on the
 # same bridge as the Overpass containers. Everything without a `networks` key
 # stays on the default one and is unaffected
@@ -556,6 +721,119 @@ networks:
 # box, and the settings come with it. Needs Docker Compose v2.23.1 or newer,
 # which is where `content` landed
 configs:
+  # The whole of Caddy's configuration, written into the container at start
+  # rather than bind mounted, so this file stays the entire deployment
+  caddyfile:
+    content: |
+      {
+        # Where Let's Encrypt sends expiry warnings. Set it, or find out about
+        # a failed renewal from a visitor
+        email CHANGE_ME@example.com
+      }
+
+      # The hostname the app calls. Caddy gets and renews the certificate for
+      # it on its own, which is the reason for this container.
+      #
+      # Behind a tunnel that already terminates TLS, change this line to `:80`
+      # and bind the ports to 127.0.0.1 in the service above — Caddy would
+      # otherwise spend its life failing an ACME challenge on a name that does
+      # not resolve to this machine.
+      CHANGE_ME.example.com {
+        # Overpass. handle rather than handle_path: the interpreter really is
+        # at /api/interpreter on the upstream, so the prefix stays on
+        handle /api/* {
+          # No CORS header here on purpose. The Overpass container sets its own
+          # from OVERPASS_CORS_ORIGIN, and a second Access-Control-Allow-Origin
+          # on the same response is not "more permissive" — a browser rejects
+          # the pair outright, and the map falls back to the public mirrors
+          # with nothing in the log to say why
+          reverse_proxy overpass:80 {
+            # These queries are slow by design: OVERPASS_TIME above allows 480
+            # seconds of server time, and the default proxy timeout would cut a
+            # long one off at the socket while the server was still working
+            transport http {
+              response_header_timeout 120s
+              read_timeout 120s
+            }
+          }
+        }
+
+        # The noise tiles, straight off the disk. `current` is the symlink the
+        # builder swaps, so a rebuild is visible without restarting anything
+        handle_path /tiles/* {
+          root * /srv/tiles/current
+
+          # `defer` matters, and so does every line in here.
+          #
+          # Without defer these are applied before file_server runs, and
+          # file_server then overwrites Content-Type with the octet-stream it
+          # sniffed — Caddy has no mime type for .pbf — and MapLibre will not
+          # parse a tile that arrives as octet-stream.
+          #
+          # Content-Encoding is declared rather than produced. tippecanoe
+          # writes the tiles gzipped and they are served as they lie, which is
+          # both smaller on disk and free at request time. Caddy's own `encode`
+          # was tried here and measured at no compression at all on this
+          # content — 49,758 bytes out of 49,733 in, against 38,744 for
+          # gzip -9 — because it emits stored blocks on a streamed file
+          header {
+            defer
+            Content-Type "application/x-protobuf"
+            Content-Encoding "gzip"
+
+            # The app is served from wayside.cc and this is another origin, so
+            # the tiles need this to be readable at all. Unlike the Overpass
+            # block above, nothing upstream sets it — these are files
+            Access-Control-Allow-Origin "*"
+
+            # A day, and it used to be a month. The month was justified by a
+            # monthly rebuild; with builds run by hand there is no cadence to
+            # match, and the tile URLs carry no hash — so a long cache does not
+            # save a reader anything they would not have had anyway, and it
+            # does stop a rebuild reaching them for as long as it lasts.
+            #
+            # A day is the compromise while the model and the covered area are
+            # still moving. Once both settle, raising this is free: nothing
+            # about these tiles is time-sensitive
+            Cache-Control "public, max-age=86400"
+
+            -Server
+          }
+
+          file_server
+        }
+
+        # Nothing else is served from this name. A bare 404 rather than a
+        # redirect to the site: this host is an API endpoint, and anything
+        # asking it for a page is not a reader who took a wrong turn
+        handle {
+          respond 404
+        }
+
+        # A tile with nothing in it is not an error. MapLibre treats 404 as an
+        # empty tile but logs it first; 204 says the same thing without filling
+        # a visitor's console with our infrastructure. `close` matters too — a
+        # 204 must carry no body, or the Content-Encoding set above would be
+        # describing a gzip stream that is not there.
+        #
+        # At the site level rather than inside the /tiles block, because
+        # handle_errors is not an ordered handler and Caddy refuses it nested
+        # in a handle_path. It needs no path matcher even so: the `respond 404`
+        # above produces a *response* rather than an error, so the only thing
+        # that ever reaches here with a 404 is file_server missing a tile
+        handle_errors {
+          @missing expression {err.status_code} == 404
+          respond @missing 204 {
+            close
+          }
+        }
+
+        log {
+          output stdout
+          format console
+        }
+      }
+
   matomo-common-config:
     content: |
       ; Matomo settings that are not the installer's to write and not the admin

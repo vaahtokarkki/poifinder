@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useMap } from "react-leaflet";
 import { maplibreGL } from "@maplibre/maplibre-gl-leaflet";
 import type { RequestParameters, StyleSpecification } from "maplibre-gl";
+import { installNoiseWhenBasemapReady, setGlMap } from "../map/noiseTiles";
 
 /**
  * The CARTO Voyager basemap, drawn from vector tiles.
@@ -96,6 +97,7 @@ const BasemapLayer = () => {
   useEffect(() => {
     const abort = new AbortController();
     let layer: ReturnType<typeof maplibreGL> | undefined;
+    let detachNoise: (() => void) | undefined;
 
     loadStyle(abort.signal)
       .then(style => {
@@ -108,6 +110,23 @@ const BasemapLayer = () => {
         // style has loaded and the adapter can read them off the source
         layer = maplibreGL({ style, transformRequest });
         layer.addTo(map);
+
+        const glMap = layer.getMaplibreMap();
+        /**
+         * Published for the noise layer's sake: the popup asks which band a
+         * point falls in, and the only thing that can answer is the GL map
+         * that has the tile. Nothing else reads it, and a build with no noise
+         * tiles configured simply never asks
+         */
+        setGlMap(glMap);
+        /**
+         * And the noise layer itself, added only once this basemap has
+         * finished drawing. It used to be part of the style document handed to
+         * MapLibre, which meant its tiles were requested alongside CARTO's and
+         * competed with them for the connection. The basemap is what the
+         * reader is waiting for; noise is an overlay most of them never open
+         */
+        detachNoise = installNoiseWhenBasemapReady(glMap);
       })
       .catch((error: unknown) => {
         if (abort.signal.aborted) return;
@@ -118,6 +137,8 @@ const BasemapLayer = () => {
 
     return () => {
       abort.abort();
+      detachNoise?.();
+      setGlMap(null);
       if (layer) map.removeLayer(layer);
     };
   }, [map]);

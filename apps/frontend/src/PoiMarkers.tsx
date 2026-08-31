@@ -19,6 +19,7 @@ import { TranslationError, translate } from "./api/translate";
 import type { TranslationFailure } from "./api/translate";
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
 import PoiShape from "./components/PoiShape";
+import NoiseSection from "./components/NoiseSection";
 import { useEnclosingBuilding } from "./hooks/useOsmElement";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
 import {
@@ -1122,6 +1123,14 @@ const RenderMarkerContents: React.FC<{
           )}
         </div>
       )}
+
+      {/* Last, under everything including the building's own section. Both of
+          the blocks above describe an object somebody surveyed — the point,
+          and the building around it — and this describes neither: it is the
+          surroundings, worked out rather than recorded. It also renders for
+          only a handful of categories, so for most popups this line is the
+          whole of it and nothing changes */}
+      <NoiseSection position={marker.position ?? null} category={category} />
     </div>
   );
 };

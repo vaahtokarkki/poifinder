@@ -1,0 +1,354 @@
+#!/usr/bin/env bash
+#
+# Build the noise tiles, from OSM extracts to a directory of .pbf tiles.
+#
+#   build-noise-tiles                         every city in cities.json
+#   build-noise-tiles helsinki oslo           just these cities
+#   build-noise-tiles --bbox=W,S,E,N          any rectangle
+#   build-noise-tiles --bbox=kallio:W,S,E,N   the same, named
+#   build-noise-tiles helsinki --bbox=W,S,E,N cities and rectangles together
+#   build-noise-tiles --keep-work             leave the intermediate files behind
+#
+# A bounding box is west,south,east,north in degrees, the same order osmium and
+# Overpass write one in. Named with a `slug:` prefix if you want the tiles to
+# say where they came from; otherwise they are area-1, area-2 and so on.
+#
+# The whole job, in two passes:
+#
+#   1. for each extract in NOISE_EXTRACTS, download it once, then cut out every
+#      area it overlaps and keep only the ways that make noise
+#   2. model each area's bands, and hand the lot to tippecanoe
+#
+# The pass split is what lets one area draw roads from several extracts, which
+# matters more than it sounds: Geneva and Basel are ringed by roads in France
+# and Germany, and a single-extract build would model them as if that traffic
+# did not exist. An area is modelled once, from everything that reached it.
+#
+# Output goes to $NOISE_TILE_DIR/current as z/x/y.pbf, gzipped, which is what
+# the Caddy in front of it serves with `Content-Encoding: gzip`.
+#
+# `current` is a symlink and that is the whole deployment story: a build writes
+# a new directory beside it and moves the link when it is finished, so a build
+# that dies leaves the tiles being served untouched, and the swap is one atomic
+# rename rather than a directory of files appearing one at a time under a
+# reader. The volume's own root can never be renamed — it is a mount point —
+# which is why the link is a level down rather than at the top.
+#
+# Nothing here is incremental. A run rebuilds every area it is given, because
+# the tiles are one tileset and tippecanoe writes it whole; what is cached is
+# the download, which is the part measured in gigabytes. Building one city
+# therefore produces a tileset with only that city in it — which is the fast
+# way to look at a change to the model, and not a way to add an area to a
+# tileset that already exists.
+
+set -euo pipefail
+
+CITIES_FILE="${NOISE_CITIES_FILE:-/opt/wayside/cities.json}"
+TILE_DIR="${NOISE_TILE_DIR:-/tiles}"
+CACHE_DIR="${NOISE_CACHE_DIR:-/cache}"
+WORK_DIR="${NOISE_WORK_DIR:-/tmp/noise-work}"
+MIN_ZOOM="${NOISE_MIN_ZOOM:-10}"
+MAX_ZOOM="${NOISE_MAX_ZOOM:-12}"
+
+# Whitespace-separated PBF URLs. The default is deliberately one small country:
+# a first run that quietly downloads 50 GB is not a good first run
+EXTRACTS="${NOISE_EXTRACTS:-https://download.geofabrik.de/europe/finland-latest.osm.pbf}"
+
+# The tags worth reading. Everything else is dropped before any geometry is
+# built, which is most of the extract
+TAG_FILTER=(
+  w/highway=motorway,motorway_link,trunk,trunk_link,primary,primary_link
+  w/highway=secondary,secondary_link,tertiary,tertiary_link
+  w/highway=unclassified,residential,living_street,service,pedestrian
+  w/railway=rail,light_rail,subway,tram
+)
+
+# Wider than the area, because a road outside it still reaches in. Has to be at
+# least MAX_RADIUS in noise-bands, or a band would stop at the edge of the cut
+# rather than at the edge of what makes it
+PAD_METRES=1300
+
+# Past this an area is large enough that it is worth saying so before spending
+# an hour on it. A warning rather than a refusal: "any given bbox" is the point
+BIG_AREA_KM2=5000
+
+KEEP_WORK=false
+WANTED=()
+BOXES=()
+for argument in "$@"; do
+  case "$argument" in
+    --keep-work) KEEP_WORK=true ;;
+    --bbox=*) BOXES+=("${argument#--bbox=}") ;;
+    --*) echo "unknown option: $argument" >&2; exit 2 ;;
+    *) WANTED+=("$argument") ;;
+  esac
+done
+
+log() { printf '%s %s\n' "$(date -u +%H:%M:%S)" "$*" >&2; }
+
+mkdir -p "$TILE_DIR" "$CACHE_DIR" "$WORK_DIR"
+if [ "$KEEP_WORK" = false ]; then
+  trap 'rm -rf "$WORK_DIR"' EXIT
+fi
+
+# ------------------------------------------------------------- the area list
+
+# One line per area, tab separated:
+#
+#   slug  kind  a b c d  west south east north
+#
+# `kind` is circle or bbox; a..d are its own parameters (lat/lon/radius, or the
+# box); the last four are the padded box to cut out of an extract, which is the
+# only thing the extract loop below has to understand. Working all of that out
+# once in Python keeps the shell loops to string handling
+AREA_TSV="$WORK_DIR/areas.tsv"
+python3 - "$CITIES_FILE" "$AREA_TSV" "$PAD_METRES" "$BIG_AREA_KM2" \
+  "${WANTED[*]-}" "${BOXES[*]-}" <<'PY'
+import json, math, sys
+
+cities_file, out_path, pad, big_km2 = sys.argv[1], sys.argv[2], float(sys.argv[3]), float(sys.argv[4])
+wanted = sys.argv[5].split() if len(sys.argv) > 5 and sys.argv[5].strip() else []
+boxes = sys.argv[6].split() if len(sys.argv) > 6 and sys.argv[6].strip() else []
+
+
+def padded(west, south, east, north):
+    """The box widened by `pad` metres on every side."""
+    lat = (south + north) / 2
+    dlat = pad / 110540.0
+    dlon = pad / (111320.0 * math.cos(math.radians(lat)))
+    return west - dlon, south - dlat, east + dlon, north + dlat
+
+
+def area_km2(west, south, east, north):
+    lat = (south + north) / 2
+    width = (east - west) * 111.320 * math.cos(math.radians(lat))
+    height = (north - south) * 110.540
+    return width * height
+
+
+rows = []
+
+# Cities, unless only boxes were asked for
+if boxes and not wanted:
+    cities = []
+else:
+    cities = json.load(open(cities_file))["cities"]
+    if wanted:
+        by_slug = {city["slug"]: city for city in cities}
+        missing = [slug for slug in wanted if slug not in by_slug]
+        if missing:
+            sys.exit(f"no such city in {cities_file}: {', '.join(missing)}")
+        cities = [by_slug[slug] for slug in wanted]
+
+for city in cities:
+    lat, lon, radius = city["lat"], city["lon"], float(city["radius"])
+    dlat = radius / 110540.0
+    dlon = radius / (111320.0 * math.cos(math.radians(lat)))
+    box = padded(lon - dlon, lat - dlat, lon + dlon, lat + dlat)
+    # The unused fourth parameter is a 0 and not an empty string, and that is
+    # not cosmetic: tab is IFS whitespace, so bash collapses a run of tabs into
+    # one delimiter and an empty field here would shift every column after it
+    rows.append((city["slug"], "circle", lat, lon, radius, 0, *box))
+
+for index, raw in enumerate(boxes, start=1):
+    # `name:W,S,E,N` or bare `W,S,E,N`
+    slug, _, coordinates = raw.rpartition(":")
+    slug = slug or f"area-{index}"
+    try:
+        west, south, east, north = (float(part) for part in coordinates.split(","))
+    except ValueError:
+        sys.exit(f"--bbox wants west,south,east,north in degrees: got {raw!r}")
+    if west >= east or south >= north:
+        sys.exit(f"--bbox is not west,south,east,north: {raw!r}")
+    if not (-180 <= west < east <= 180 and -90 <= south < north <= 90):
+        sys.exit(f"--bbox is outside the world: {raw!r}")
+    size = area_km2(west, south, east, north)
+    if size > big_km2:
+        print(
+            f"  note: {slug} covers {size:,.0f} km2, which is a long build and "
+            f"a lot of tiles. Every road in it is buffered",
+            file=sys.stderr,
+        )
+    rows.append((slug, "bbox", west, south, east, north, *padded(west, south, east, north)))
+
+seen = set()
+for row in rows:
+    if row[0] in seen:
+        sys.exit(f"two areas are both called {row[0]!r} — name one with --bbox=slug:W,S,E,N")
+    seen.add(row[0])
+
+with open(out_path, "w") as handle:
+    for row in rows:
+        handle.write("\t".join(str(field) for field in row) + "\n")
+PY
+
+TOTAL_AREAS=$(wc -l < "$AREA_TSV")
+log "$TOTAL_AREAS areas, zoom $MIN_ZOOM-$MAX_ZOOM"
+
+# --------------------------------------------- pass 1: roads, per extract
+
+LINES_DIR="$WORK_DIR/lines"
+mkdir -p "$LINES_DIR"
+
+for extract_url in $EXTRACTS; do
+  extract_file="$CACHE_DIR/$(basename "$extract_url")"
+
+  if [ -f "$extract_file" ]; then
+    log "cached  $(basename "$extract_file")"
+  else
+    log "fetch   $extract_url"
+    # To a temporary name first, so an interrupted download is never mistaken
+    # for a cached one on the next run
+    curl -fSL --retry 3 --retry-delay 5 -o "$extract_file.part" "$extract_url"
+    mv "$extract_file.part" "$extract_file"
+  fi
+
+  # The header bounding box, which Geofabrik sets and which costs nothing to
+  # read. `-e` would compute the real one by reading every node in the file
+  bbox_line=$(osmium fileinfo -g header.boxes "$extract_file" | head -1 | tr -d '()' | tr ',' ' ')
+  read -r xwest xsouth xeast xnorth <<< "$bbox_line" || true
+  if [ -z "${xnorth:-}" ]; then
+    log "  no header bbox — trying every area against this extract"
+    xwest=-180; xsouth=-90; xeast=180; xnorth=90
+  else
+    log "  covers  $xwest,$xsouth $xeast,$xnorth"
+  fi
+
+  while IFS=$'\t' read -r slug kind a b c d west south east north; do
+    [ -n "$slug" ] || continue
+
+    # Overlap, not containment. An area is cut from every extract it touches
+    # and the pieces are concatenated, which is how a city on a border gets the
+    # roads on both sides of it
+    overlaps=$(python3 -c "
+print('yes' if $west < $xeast and $east > $xwest and $south < $xnorth and $north > $xsouth else 'no')
+")
+    [ "$overlaps" = yes ] || continue
+
+    log "  cut     $slug"
+    osmium extract --bbox="$west,$south,$east,$north" --strategy=smart --overwrite \
+      -o "$WORK_DIR/cut.osm.pbf" "$extract_file"
+
+    osmium tags-filter --overwrite -o "$WORK_DIR/cut.filtered.osm.pbf" \
+      "$WORK_DIR/cut.osm.pbf" "${TAG_FILTER[@]}"
+
+    # Line geometry only: the model buffers ways and has no use for anything
+    # drawn as a point or an area
+    osmium export --overwrite -f geojsonseq \
+      --geometry-types=linestring \
+      -o "$WORK_DIR/cut.geojsonseq" \
+      "$WORK_DIR/cut.filtered.osm.pbf"
+
+    # Appended, so a second extract adds to what the first found. Duplicate
+    # ways across an overlap are harmless: the model unions its buffers, and
+    # the union of a shape with itself is the shape
+    cat "$WORK_DIR/cut.geojsonseq" >> "$LINES_DIR/$slug.geojsonseq"
+    rm -f "$WORK_DIR/cut.osm.pbf" "$WORK_DIR/cut.filtered.osm.pbf" "$WORK_DIR/cut.geojsonseq"
+  done < "$AREA_TSV"
+done
+
+# ----------------------------------------------- pass 2: bands, per area
+
+GEOJSON_DIR="$WORK_DIR/bands"
+mkdir -p "$GEOJSON_DIR"
+
+while IFS=$'\t' read -r slug kind a b c d west south east north; do
+  [ -n "$slug" ] || continue
+  [ -s "$LINES_DIR/$slug.geojsonseq" ] || continue
+
+  if [ "$kind" = bbox ]; then
+    noise-bands \
+      --lines="$LINES_DIR/$slug.geojsonseq" \
+      --bbox="$a,$b,$c,$d" \
+      --slug="$slug" \
+      --output="$GEOJSON_DIR/$slug.geojson"
+  else
+    noise-bands \
+      --lines="$LINES_DIR/$slug.geojsonseq" \
+      --lat="$a" --lon="$b" --radius="$c" \
+      --slug="$slug" \
+      --output="$GEOJSON_DIR/$slug.geojson"
+  fi
+done < "$AREA_TSV"
+
+BUILT=$(find "$GEOJSON_DIR" -name '*.geojson' | wc -l)
+if [ "$BUILT" -eq 0 ]; then
+  log "no area fell inside any extract in NOISE_EXTRACTS — nothing to build"
+  exit 1
+fi
+if [ "$BUILT" -lt "$TOTAL_AREAS" ]; then
+  log "$((TOTAL_AREAS - BUILT)) of $TOTAL_AREAS areas are not covered by these extracts"
+fi
+
+# ------------------------------------------------------------------ the tiles
+
+log "tippecanoe: $BUILT areas"
+
+STAMP=$(date -u +%Y%m%d-%H%M%S)
+STAGING="$TILE_DIR/build-$STAMP"
+rm -rf "$STAGING"
+
+# Tiles are written gzipped, which is tippecanoe's default and is why there is
+# no --no-tile-compression here. The alternative — storing them plain and
+# letting Caddy compress on the way out — was tried and measured: Caddy's
+# streaming gzip turned a 49,733 byte tile into 49,758 bytes, which is stored
+# blocks and no compression at all, where gzip -9 gives 38,744. So the
+# compression happens once, here, and Caddy serves the bytes with
+# `Content-Encoding: gzip` set statically. Less disk, no CPU per request, and
+# the ratio you would expect.
+#
+# The two limits below are off. This is a handful of large polygons per tile
+# rather than a point cloud, so there is nothing tippecanoe could usefully drop
+# — and a band dropped for tile size is a park that reads as quiet because its
+# "noisy" polygon did not survive
+tippecanoe \
+  --output-to-directory="$STAGING" \
+  --layer=noise \
+  --minimum-zoom="$MIN_ZOOM" \
+  --maximum-zoom="$MAX_ZOOM" \
+  --no-tile-size-limit \
+  --no-feature-limit \
+  --drop-rate=0 \
+  --simplification=2 \
+  --quiet \
+  --force \
+  "$GEOJSON_DIR"/*.geojson
+
+python3 - "$STAGING" "$MIN_ZOOM" "$MAX_ZOOM" "$AREA_TSV" <<'PY'
+import json, os, sys, time
+staging, min_zoom, max_zoom, area_tsv = sys.argv[1:5]
+areas = []
+for line in open(area_tsv):
+    if not line.strip():
+        continue
+    fields = line.rstrip("\n").split("\t")
+    areas.append({"name": fields[0], "kind": fields[1]})
+# Beside tippecanoe's own metadata.json rather than replacing it. This one is
+# for a person reading the directory, and for saying which model built it: the
+# band edges are parameters, so a tileset has to be able to say which ones
+with open(os.path.join(staging, "wayside.json"), "w") as handle:
+    json.dump(
+        {
+            "built": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            "minzoom": int(min_zoom),
+            "maxzoom": int(max_zoom),
+            "bands": {"1": "quiet, under 55 dB", "2": "55-65 dB", "3": "over 65 dB"},
+            "model": "wayside-osm-buffer-1",
+            "areas": sorted(areas, key=lambda area: area["name"]),
+        },
+        handle,
+        indent=2,
+    )
+PY
+
+# `ln -sfn` on an existing symlink to a directory would put the new link
+# *inside* it. -T says the target is the link itself, which is what makes this
+# a replace rather than a nest, and what makes it atomic
+ln -sfnT "$(basename "$STAGING")" "$TILE_DIR/current.new"
+mv -T "$TILE_DIR/current.new" "$TILE_DIR/current"
+
+# Everything but the build the link now points at
+find "$TILE_DIR" -maxdepth 1 -name 'build-*' -not -name "$(basename "$STAGING")" \
+  -exec rm -rf {} +
+
+log "done: $(find "$STAGING" -name '*.pbf' | wc -l) tiles in $TILE_DIR/current"

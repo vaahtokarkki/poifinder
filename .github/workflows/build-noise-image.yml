@@ -1,0 +1,136 @@
+name: Build and publish the noise tile image
+
+# Publishes apps/noise to the GitHub container registry.
+#
+# The image is osmium, shapely and tippecanoe plus two scripts, and no data: a
+# container downloads the extracts it is pointed at when the build is run in
+# it. Which cities it produces is an argument to build-noise-tiles, not
+# anything baked in here, so the same image serves Berlin or all of Europe.
+#
+# Pull it instead of building locally:
+#   docker pull ghcr.io/<owner>/poifinder/noise:latest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/noise/**"
+      - ".github/workflows/build-noise-image.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: build-noise-image
+  cancel-in-progress: true
+
+env:
+  # Package names must be lowercase, which every owner/repo here already is
+  IMAGE: ghcr.io/${{ github.repository }}/noise
+
+jobs:
+  # cities.json is generated from CITIES in src/seo/cities.ts, and a stale one
+  # is invisible the same way a stale osmium filter is: the image builds, the
+  # build runs, and a city is quietly missing from the tiles
+  check-cities:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Addressed to the workspace: npm drops the arguments on the way through
+      # a root script that only forwards to another npm run
+      - run: npm run -w @wayside/frontend noise:cities -- --check
+
+  build:
+    needs: check-cities
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      # A small server is as likely to be arm64 as not, and every tool in this
+      # image is published for both
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE }}
+          tags: |
+            type=raw,value=latest
+            type=sha,format=long
+
+      # Built for the runner's own architecture first, so the model is
+      # exercised before anything is pushed
+      - name: Build for testing
+        uses: docker/build-push-action@v6
+        with:
+          context: apps/noise
+          load: true
+          tags: wayside-noise:test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # Runs the model over a made-up motorway rather than a real extract: no
+      # Geofabrik, no network, and it still exercises the whole of noise-bands
+      # — the projection, the emission ladder, the buffering and the band
+      # arithmetic. What it is really guarding is the shapely version, which
+      # has already broken this once: Debian ships 1.8, where `make_valid` is
+      # in a different module and `buffer` names its second argument
+      # differently from 2.x
+      - name: Smoke test
+        run: |
+          docker run --rm wayside-noise:test sh -euc '
+            command -v osmium tippecanoe >/dev/null || { echo "tools missing"; exit 1; }
+
+            # One motorway, running north through the middle of the box
+            printf "%s\n" \
+              "{\"type\":\"Feature\",\"properties\":{\"highway\":\"motorway\",\"maxspeed\":\"120\",\"lanes\":\"4\"},\"geometry\":{\"type\":\"LineString\",\"coordinates\":[[13.40,52.50],[13.40,52.52]]}}" \
+              > /tmp/lines.geojsonseq
+
+            noise-bands --lines=/tmp/lines.geojsonseq \
+              --bbox=13.38,52.49,13.42,52.53 \
+              --slug=smoke --output=/tmp/bands.geojson
+
+            python3 -c "
+          import json
+          bands = json.load(open(\"/tmp/bands.geojson\"))[\"features\"]
+          got = sorted(f[\"properties\"][\"band\"] for f in bands)
+          assert got == [1, 2, 3], f\"expected all three bands, got {got}\"
+          for feature in bands:
+              assert feature[\"geometry\"][\"coordinates\"], \"empty band geometry\"
+              assert feature[\"properties\"][\"area\"] == \"smoke\"
+          print(\"bands ok:\", got)
+          "
+
+            # And that the tiler will take what the model wrote
+            tippecanoe --output-to-directory=/tmp/tiles --layer=noise \
+              --minimum-zoom=10 --maximum-zoom=12 \
+              --no-tile-size-limit --no-feature-limit --drop-rate=0 \
+              --quiet --force /tmp/bands.geojson
+            test "$(find /tmp/tiles -name "*.pbf" | wc -l)" -gt 0 || {
+              echo "tippecanoe wrote no tiles"; exit 1; }
+            echo "tiles ok"
+          '
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: apps/noise
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

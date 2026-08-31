@@ -1,0 +1,63 @@
+# Tiles for a development machine: plain HTTP, no TLS, wide open CORS.
+#
+# The production one is in apps/overpass/docker-compose.prod.yml, where the
+# same job is done by a Caddy that also fronts Overpass and terminates TLS.
+# This one exists so that `npm run dev` has somewhere to fetch tiles from
+# without any of that.
+
+{
+	# No TLS, no ACME, no admin API reachable from anywhere
+	auto_https off
+	admin off
+}
+
+:8080 {
+	# The symlink the builder swaps, not the build directory: that is what
+	# makes a rebuild visible without restarting this
+	root * /srv/tiles/current
+
+	# `defer` matters, and so does every line here.
+	#
+	# Without defer these are applied before file_server runs and file_server
+	# then overwrites Content-Type with the octet-stream it sniffed, because
+	# Caddy has no mime type for .pbf — and MapLibre will not parse a tile that
+	# arrives as octet-stream.
+	#
+	# Content-Encoding is set rather than produced: tippecanoe writes the tiles
+	# gzipped and they are served as they lie. Caddy's own `encode` was tried
+	# here and measured at no compression at all on this content (49,758 bytes
+	# out of 49,733 in, against 38,744 for gzip -9), besides costing CPU on
+	# every request for a file that never changes
+	header {
+		defer
+		Content-Type "application/x-protobuf"
+		Content-Encoding "gzip"
+
+		# Vite serves the app from localhost:5173 and this from localhost:8080,
+		# which are different origins. In production both are behind one name
+		# and this header does nothing
+		Access-Control-Allow-Origin "*"
+
+		# Short in dev on purpose: a rebuild should show up on a reload rather
+		# than in an hour
+		Cache-Control "public, max-age=60"
+
+		-Server
+	}
+
+	# A tile with nothing in it is not an error, and MapLibre treats 404 as an
+	# empty tile — but logs it first. 204 says the same thing without filling a
+	# console with our infrastructure.
+	#
+	# Ahead of the header block above in effect, since a 204 carries no body:
+	# the Content-Encoding there would otherwise describe a gzip stream that is
+	# not present
+	handle_errors {
+		@missing expression {err.status_code} == 404
+		respond @missing 204 {
+			close
+		}
+	}
+
+	file_server
+}

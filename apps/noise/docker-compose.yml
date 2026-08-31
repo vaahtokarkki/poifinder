@@ -1,0 +1,101 @@
+# Noise tiles, for a development machine.
+#
+#   docker compose build                                   build the image
+#   docker compose run --rm builder build-noise-tiles      build the tiles
+#   docker compose up -d tiles                             serve them
+#
+# Then, in apps/frontend/.env:
+#
+#   VITE_NOISE_TILES_URL=http://localhost:8080
+#
+# and `npm run dev`. Leave that variable empty and the app has no noise layer
+# at all: no source, no request, no row in the popup. That is the point of it
+# being a variable rather than a flag — a checkout with no tiles built is a
+# working checkout.
+#
+# The first build downloads an extract. The default is Finland (~700 MB), which
+# covers Helsinki; edit NOISE_EXTRACTS in .env for anywhere else. Downloads are
+# cached in a volume, so a second run of the same region starts at the cut.
+#
+# To build one city rather than all of them, or any area at all:
+#
+#   docker compose run --rm builder build-noise-tiles helsinki
+#   docker compose run --rm builder build-noise-tiles --bbox=24.90,60.15,25.05,60.22
+#   docker compose run --rm builder build-noise-tiles --bbox=kallio:24.93,60.17,25.00,60.20
+#
+# A box is west,south,east,north in degrees, and cities and boxes can be mixed
+# in one run. Note that each run writes a tileset containing only what it was
+# asked for — the tiles are one tileset and tippecanoe writes it whole. It is
+# the fast way to look at a change to the model, not a way to add an area to an
+# existing build.
+
+services:
+  # The batch job. It does nothing on `up`: `run --rm builder ...` is how it is
+  # meant to be used, and `up -d builder` gets a container that sleeps
+  builder:
+    build:
+      context: .
+    image: wayside/noise:latest
+    container_name: wayside-noise-builder
+
+    volumes:
+      # The tiles, shared with the server below. A named volume rather than a
+      # host path so that nothing in the repo has to be gitignored
+      - noise-tiles:/tiles
+      # The downloaded extracts, which is the expensive thing to lose
+      - noise-cache:/cache
+
+    environment:
+      # Whitespace or newline separated PBF URLs. Any extract works; Geofabrik
+      # publishes one per country and per region. A city is built when its
+      # centre falls inside an extract's header bounding box, so listing more
+      # regions builds more cities and listing none builds nothing.
+      #
+      #   Finland     ~700 MB   Helsinki
+      #   Norway      ~1.4 GB   Oslo
+      #   Sweden      ~1.1 GB   Stockholm
+      #   Denmark     ~400 MB   Copenhagen
+      #   Germany     ~4.2 GB   Berlin, Munich, Hamburg, Cologne, Frankfurt
+      #
+      # See europe.txt for a list that covers every tier 1 European city
+      NOISE_EXTRACTS: ${NOISE_EXTRACTS:-https://download.geofabrik.de/europe/finland-latest.osm.pbf}
+
+      # The zoom range the tiles are written for. The client overzooms above
+      # the maximum, which for three smooth band polygons costs nothing: a z12
+      # tile carries about 1.5 m of resolution, far finer than a band edge that
+      # was modelled rather than measured. Raising this multiplies the tile
+      # count by four per level for no visible gain
+      NOISE_MIN_ZOOM: ${NOISE_MIN_ZOOM:-10}
+      NOISE_MAX_ZOOM: ${NOISE_MAX_ZOOM:-12}
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # Caddy over the same volume, so the frontend has an origin to fetch from.
+  # In production this job belongs to the Caddy in
+  # apps/overpass/docker-compose.prod.yml, which fronts Overpass as well and
+  # has TLS; this one is the development stand-in for it
+  tiles:
+    image: caddy:2-alpine
+    container_name: wayside-noise-tiles
+    restart: unless-stopped
+
+    ports:
+      - "${NOISE_TILES_PORT:-8080}:8080"
+
+    volumes:
+      - noise-tiles:/srv/tiles:ro
+      - ./Caddyfile.dev:/etc/caddy/Caddyfile:ro
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  noise-tiles:
+  noise-cache:

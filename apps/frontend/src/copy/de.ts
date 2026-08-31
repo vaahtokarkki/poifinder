@@ -184,6 +184,28 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     lastChecked: "Zuletzt geprüft",
     lastEdited: "Zuletzt bearbeitet",
     editInOsm: "Diesen Punkt in OpenStreetMap bearbeiten",
+    noise: {
+      label: "Verkehrslärm",
+      quiet: "Ruhig",
+      moderate: "Mäßig",
+      noisy: "Laut",
+      modelled: "Aus OpenStreetMap-Straßendaten modelliert, nicht gemessen",
+      about: "Wie das funktioniert",
+      aboutTitle: "Modellierter Verkehrslärm",
+      aboutIntro:
+        "Dies ist eine Schätzung, keine Messung. Sie wird aus den Straßen und Bahnstrecken rund um einen Punkt in OpenStreetMap berechnet: um welche Art von Straße es sich handelt, wie schnell der Verkehr dort fährt, wie viele Fahrstreifen sie hat und wie weit sie entfernt ist. Straßen in Tunneln bleiben unberücksichtigt.",
+      aboutBandsHeading: "Die drei Stufen",
+      aboutQuiet:
+        "Ruhig — unter 55 dB. Eine Wohnstraße: ein Gespräch ist mühelos.",
+      aboutModerate:
+        "Mäßig — 55 bis 65 dB. Eine belebte Straße in der Nähe: der Verkehr ist deutlich hörbar.",
+      aboutNoisy:
+        "Laut — über 65 dB. Direkt an einer Hauptstraße: man muss lauter sprechen.",
+      aboutLimit:
+        "In OpenStreetMap ist nicht erfasst, wie viel Verkehr eine Straße tatsächlich trägt. Deshalb werden nur drei grobe Stufen angezeigt und keine Zahl. Die Schätzung betrachtet jede Straße außerdem für sich allein, sodass sie dort, wo mehrere stark befahrene Straßen zusammentreffen, eher zu niedrig ausfällt: Ein als ruhig angezeigter Ort kann lauter sein, als er wirkt.",
+      aboutSource: "Straßen und Bahnstrecken von den OpenStreetMap-Mitwirkenden.",
+      aboutClose: "Schließen",
+    },
     hours: {
       Mo: "Mo", Tu: "Di", We: "Mi", Th: "Do", Fr: "Fr", Sa: "Sa", Su: "So",
       PH: "an Feiertagen", SH: "in den Schulferien", closed: "geschlossen",
@@ -252,6 +274,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     clearAll: "Auswahl zurücksetzen",
     presetTitle: "Punkte auf der Karte zeigen: {preset}",
     showMapTools: "Kartenwerkzeuge einblenden",
+    noiseLayer: "Modellierten Verkehrslärm ein-/ausblenden",
     hideMapTools: "Kartenwerkzeuge ausblenden",
     myLocation: "Karte auf deinen Standort zentrieren",
     share: "Diesen Ausschnitt teilen",

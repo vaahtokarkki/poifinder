@@ -53,6 +53,13 @@ jobs:
           # protection that actually holds is the domain restriction on the key
           # itself, set in the CARTO dashboard
           VITE_CARTO_API_KEY: ${{ secrets.VITE_CARTO_API_KEY }}
+          # Where the modelled noise tiles are served from — the /tiles path on
+          # the same host as the Overpass API, if Caddy is fronting both. Unset
+          # unless the repository defines it, and unset means the feature does
+          # not exist in the build: no source, no tile request, no control, no
+          # row in any popup. A deploy that forgets this is a deploy with no
+          # noise layer rather than a broken one
+          VITE_NOISE_TILES_URL: ${{ vars.VITE_NOISE_TILES_URL }}
 
       - name: Deploy
         run: npx wrangler deploy

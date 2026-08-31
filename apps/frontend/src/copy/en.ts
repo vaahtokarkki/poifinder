@@ -832,6 +832,28 @@ const ui: CopyDeck["ui"] = {
     lastChecked: "Last checked",
     lastEdited: "Last edited",
     editInOsm: "Edit this point in OpenStreetMap",
+    noise: {
+      label: "Traffic noise",
+      quiet: "Quiet",
+      moderate: "Moderate",
+      noisy: "Noisy",
+      modelled: "Modelled from OpenStreetMap roads, not measured",
+      about: "How this works",
+      aboutTitle: "Modelled traffic noise",
+      aboutIntro:
+        "This is an estimate rather than a measurement. It is worked out from the roads and railways around a point in OpenStreetMap: what kind of road each one is, how fast traffic moves on it, how many lanes it has, and how far away it is. Roads in tunnels are left out.",
+      aboutBandsHeading: "The three levels",
+      aboutQuiet:
+        "Quiet — below 55 dB. A residential side street: easy to hold a conversation.",
+      aboutModerate:
+        "Moderate — 55 to 65 dB. A busy street nearby: you notice the traffic.",
+      aboutNoisy:
+        "Noisy — above 65 dB. Beside a main road: you raise your voice to be heard.",
+      aboutLimit:
+        "Nothing in OpenStreetMap records how much traffic a road actually carries, which is why only three broad levels are shown rather than a number. The estimate also treats each road on its own, so where several busy roads meet it reads low rather than high: somewhere shown as quiet may be louder than it looks.",
+      aboutSource: "Roads and railways from OpenStreetMap contributors.",
+      aboutClose: "Close",
+    },
     hours: {
       Mo: "Mon", Tu: "Tue", We: "Wed", Th: "Thu", Fr: "Fri", Sa: "Sat", Su: "Sun",
       PH: "public holidays", SH: "school holidays", closed: "closed",
@@ -900,6 +922,7 @@ const ui: CopyDeck["ui"] = {
     clearAll: "Clear all selections",
     presetTitle: "Show {preset} points on the map",
     showMapTools: "Show map tools",
+    noiseLayer: "Show/hide modelled traffic noise",
     hideMapTools: "Hide map tools",
     myLocation: "Center map to your location",
     share: "Share this view",

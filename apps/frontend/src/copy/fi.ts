@@ -182,6 +182,28 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     lastChecked: "Tarkistettu viimeksi",
     lastEdited: "Muokattu viimeksi",
     editInOsm: "Muokkaa pistettä OpenStreetMapissa",
+    noise: {
+      label: "Liikennemelu",
+      quiet: "Hiljainen",
+      moderate: "Kohtalainen",
+      noisy: "Meluisa",
+      modelled: "Mallinnettu OpenStreetMapin tiestöstä, ei mitattu",
+      about: "Miten tämä toimii",
+      aboutTitle: "Mallinnettu liikennemelu",
+      aboutIntro:
+        "Tämä on arvio, ei mittaus. Se lasketaan pisteen ympärillä olevista teistä ja rautateistä OpenStreetMapissa: millainen tie on, kuinka kovaa siellä ajetaan, montako kaistaa siinä on ja kuinka kaukana se on. Tunneleissa kulkevat tiet jätetään pois.",
+      aboutBandsHeading: "Kolme tasoa",
+      aboutQuiet:
+        "Hiljainen — alle 55 dB. Asuinkatu: keskustelu sujuu vaivatta.",
+      aboutModerate:
+        "Kohtalainen — 55–65 dB. Vilkas katu lähellä: liikenne kuuluu selvästi.",
+      aboutNoisy:
+        "Meluisa — yli 65 dB. Pääkadun varrella: ääntä pitää korottaa.",
+      aboutLimit:
+        "OpenStreetMapissa ei ole tietoa siitä, kuinka paljon liikennettä tiellä todella kulkee. Siksi näytetään vain kolme karkeaa tasoa eikä lukua. Arvio käsittelee lisäksi jokaisen tien erikseen, joten siellä missä useampi vilkas tie kohtaa, se jää ennemmin alakanttiin: hiljaiseksi merkitty paikka voi olla meluisampi kuin miltä näyttää.",
+      aboutSource: "Tiet ja rautatiet OpenStreetMapin tekijöiltä.",
+      aboutClose: "Sulje",
+    },
     hours: {
       Mo: "ma", Tu: "ti", We: "ke", Th: "to", Fr: "pe", Sa: "la", Su: "su",
       PH: "pyhäpäivinä", SH: "koulujen lomilla", closed: "suljettu",
@@ -250,6 +272,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     clearAll: "Tyhjennä valinnat",
     presetTitle: "Näytä kartalla: {preset}",
     showMapTools: "Näytä karttatyökalut",
+    noiseLayer: "Näytä/piilota mallinnettu liikennemelu",
     hideMapTools: "Piilota karttatyökalut",
     myLocation: "Keskitä kartta sijaintiisi",
     share: "Jaa tämä näkymä",

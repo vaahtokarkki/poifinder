@@ -1,0 +1,37 @@
+# Geofabrik extracts covering every tier 1 European city in cities.json.
+#
+# Used as:
+#
+#   NOISE_EXTRACTS="$(grep -v '^#' europe.txt | tr '\n' ' ')"
+#
+# One extract per country rather than europe-latest.osm.pbf, for the same
+# reason apps/overpass assembles a region at a time: the continent file is a
+# single download of 30 GB and more, and osmium reading it costs the whole of
+# it on the disk, where these are the same places one country at a time with
+# nothing ever held but the largest of them.
+#
+# Sizes are approximate and grow. The total here is roughly 20 GB downloaded,
+# cached after the first run, and it covers 21 of the 36 tier 1 cities.
+#
+# The other 15 are outside Europe — Australia, Canada, Japan, New Zealand and
+# the United States — and want their own list. The US in particular is worth
+# taking state by state (us-northeast, us-west, ...) rather than as
+# us-latest.osm.pbf, which is 11 GB on its own.
+
+https://download.geofabrik.de/europe/austria-latest.osm.pbf
+https://download.geofabrik.de/europe/belgium-latest.osm.pbf
+https://download.geofabrik.de/europe/czech-republic-latest.osm.pbf
+https://download.geofabrik.de/europe/denmark-latest.osm.pbf
+https://download.geofabrik.de/europe/finland-latest.osm.pbf
+https://download.geofabrik.de/europe/france-latest.osm.pbf
+https://download.geofabrik.de/europe/germany-latest.osm.pbf
+https://download.geofabrik.de/europe/great-britain-latest.osm.pbf
+https://download.geofabrik.de/europe/hungary-latest.osm.pbf
+https://download.geofabrik.de/europe/ireland-and-northern-ireland-latest.osm.pbf
+https://download.geofabrik.de/europe/italy-latest.osm.pbf
+https://download.geofabrik.de/europe/netherlands-latest.osm.pbf
+https://download.geofabrik.de/europe/norway-latest.osm.pbf
+https://download.geofabrik.de/europe/portugal-latest.osm.pbf
+https://download.geofabrik.de/europe/spain-latest.osm.pbf
+https://download.geofabrik.de/europe/sweden-latest.osm.pbf
+https://download.geofabrik.de/europe/switzerland-latest.osm.pbf

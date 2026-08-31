@@ -47,6 +47,13 @@ import DirectionsIconButton from './components/DirectionsIconButton.tsx';
 import ShareIconButton from './components/ShareIconButton.tsx';
 import MoreControlsIconButton from './components/MoreControlsIconButton.tsx';
 import InfoIconButton from './components/InfoIconButton.tsx';
+import NoiseLayerIconButton from './components/NoiseLayerIconButton.tsx';
+import {
+  noiseTilesConfigured,
+  onGlMapChange,
+  getGlMap,
+  setNoiseVisible,
+} from "./map/noiseTiles";
 import { saveMapLocation, loadMapLocation } from "./utils/mapLocationStorage";
 import { loadGPSLocation } from "./utils/gpsLocationStorage";
 import { loadPois, savePois, poiCacheMatchesCategories, isPoiCacheUpToDate } from "./utils/poiStorage";
@@ -249,6 +256,36 @@ const App = () => {
   const [pageData] = useState(readPageData);
   // The map tools start folded behind a single button, the column stays short
   const [controlsExpanded, setControlsExpanded] = useState(false);
+  /**
+   * Whether the modelled noise bands are drawn. Off by default: it is an
+   * overlay about the surroundings rather than about what was searched for,
+   * and a map that greets everyone with a wash of colour they did not ask for
+   * is a map people learn to distrust.
+   *
+   * This is only what is *painted*. The layer is in the style from the first
+   * frame whatever this says, which is what lets a popup read the band while
+   * the wash is off — see setNoiseVisible in map/noiseTiles.ts
+   */
+  const [noiseVisible, setNoiseVisible_] = useState(false);
+
+  /**
+   * Paint the bands, or stop painting them.
+   *
+   * Also re-applied whenever the GL map is replaced, because the style is
+   * rebuilt from scratch then and comes back at the default of hidden — a
+   * reader who had the layer on would otherwise silently lose it on a basemap
+   * reload. Subscribing costs nothing in a build with no tiles configured:
+   * BasemapLayer publishes the map either way and this returns immediately
+   */
+  useEffect(() => {
+    if (!noiseTilesConfigured) return;
+    // setNoiseVisible takes null happily: the wish is remembered and applied
+    // when the layer is installed, which now happens after the basemap has
+    // drawn rather than with it
+    const apply = () => setNoiseVisible(getGlMap(), noiseVisible);
+    apply();
+    return onGlMapChange(apply);
+  }, [noiseVisible]);
   const sheetRef = useRef<BottomSheetHandle>(null);
 
   /**
@@ -1121,6 +1158,12 @@ const App = () => {
               <SearchIconButton
                 active={displaySearchItem === "search"}
                 onClick={() => setDisplaySearchItem(displaySearchItem === "search" ? null : "search")} />
+              {/* Renders nothing when no tile server is configured, so a
+                  build without noise tiles has no control for it */}
+              <NoiseLayerIconButton
+                active={noiseVisible}
+                onClick={() => setNoiseVisible_(!noiseVisible)}
+              />
             </div>
           </div>
           <MoreControlsIconButton

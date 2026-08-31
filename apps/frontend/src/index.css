@@ -1240,3 +1240,156 @@ body {
     transition: none;
   }
 }
+
+/*
+ * The modelled noise level: the last section of a popup, and the only one in
+ * it that nobody surveyed.
+ *
+ * Separated by the same rule the building section uses, and for the same
+ * reason — what follows is true of something other than the point. Set larger
+ * than the rows above rather than smaller, which is the opposite of where this
+ * started: as a quiet footnote it read as a caveat about the data, when it is
+ * in fact one of the few things on the popup somebody chooses a bench by.
+ */
+.poi-popup-noise {
+  margin-top: 0.85em;
+  padding-top: 0.7em;
+  border-top: 1px solid #dadce0;
+}
+
+/* Names the section, matching the building label above it exactly, so the two
+   read as the same kind of thing */
+.poi-popup .leaflet-popup-content .poi-popup-noise-label {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #3c4043;
+}
+
+/*
+ * The answer. Still the largest thing in the section and still larger than the
+ * rows above it, but only just: at a full 1rem it was competing with the
+ * popup's own title, and one word set bigger than the name of the place it
+ * describes reads as the more important of the two.
+ */
+.poi-popup .leaflet-popup-content .poi-popup-noise-value {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  margin: 0.3em 0 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #202124;
+}
+
+/*
+ * The dot carries the colour and the word carries the meaning, never the
+ * colour alone: the three bands have to survive being read by somebody who
+ * cannot tell the amber from the red.
+ */
+.poi-popup-noise-dot {
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  /* Fixed against the flex row, which would otherwise squeeze it to an oval
+     when the label wraps in a language with longer words than English */
+  flex: 0 0 auto;
+}
+
+/*
+ * "Modelled, not measured", and the way to the longer version. Set at the
+ * weight of the survey footnotes, because that is what it is: a note about
+ * where the line above came from.
+ */
+.poi-popup .leaflet-popup-content .poi-popup-noise-caption {
+  margin: 0.3em 0 0 0;
+  font-size: 0.7rem;
+  line-height: 1.45;
+  color: #80868b;
+}
+
+/*
+ * A button that looks like a link, because it is one in every way except that
+ * it goes nowhere: it opens a dialog. Written as a <button> rather than an
+ * <a href="#"> so that a keyboard and a screen reader are told the truth about
+ * what it does.
+ *
+ * On a line of its own under the caption. Run on to the end of that sentence
+ * it landed wherever the wrapping happened to leave it, which for a control is
+ * the wrong place — a thing you can press should be somewhere the eye can find
+ * without reading the paragraph above it first.
+ */
+.poi-popup-noise-about {
+  display: block;
+  margin-top: 0.35em;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: inherit;
+  font-size: 0.72rem;
+  color: #1967d2;
+  text-decoration: underline;
+  text-align: left;
+  cursor: pointer;
+}
+
+.poi-popup-noise-about:hover,
+.poi-popup-noise-about:focus-visible {
+  color: #174ea6;
+}
+
+/* ---------- The explanation dialog ---------- */
+
+/*
+ * Outside the popup entirely — MUI portals it to the body — so none of the
+ * rules above reach it and it sets its own type.
+ */
+.noise-explanation p {
+  margin: 0 0 0.9em 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: #3c4043;
+}
+
+.noise-explanation-heading {
+  font-weight: 600;
+  color: #202124 !important;
+  margin-bottom: 0.5em !important;
+}
+
+.noise-explanation-bands {
+  margin: 0 0 1em 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*
+ * The same dot as the popup, so the three levels are recognisably the ones on
+ * the map. Aligned to the first line rather than centred, because these
+ * descriptions wrap and a dot floating beside the middle of a paragraph reads
+ * as a bullet gone wrong.
+ */
+.noise-explanation-bands li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55em;
+  margin-bottom: 0.45em;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #3c4043;
+}
+
+.noise-explanation-bands .poi-popup-noise-dot {
+  /* Nudged down onto the first line's centre rather than its top */
+  margin-top: 0.4em;
+}
+
+.noise-explanation-source {
+  font-size: 0.75rem !important;
+  color: #80868b !important;
+}
+
+.noise-explanation-actions {
+  display: flex;
+  justify-content: flex-end;
+}

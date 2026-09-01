@@ -30,36 +30,61 @@
 # the way to improve them is to fit them against END contours for a city that
 # publishes both, not to reason about them harder.
 #
-# THE ONE THING THIS GETS STRUCTURALLY WRONG
+# WHAT IT DOES AND DOES NOT DO
 #
-# Sound adds. Two sources of equal level are 3 dB louder than one, and a real
-# model works on a grid of receivers, summing 10*log10(sum(10^(Li/10))) over
-# every source that reaches each of them.
+# Receivers on a grid, not buffers around ways. Each cell gets the distance to
+# the nearest source in each emission-level bucket, converts that to a level,
+# subtracts a screening term where a building stands between the cell and that
+# source, and sums the results as energy: 10*log10(sum(10^(Li/10))). The bands
+# are the 55 and 65 dB contours of that grid.
 #
-# This does not do that. It buffers each way at the distance where that way
-# alone crosses a threshold and unions the buffers, which is a much cheaper
-# shape of computation — no grid, no per-receiver loop, no raster stack — and
-# it is wrong wherever several sources reach the same place. Measured against
-# proper summation with these same constants:
+# It used to buffer each way at the distance where that way alone crossed a
+# threshold and union the buffers, which could not add two sources together and
+# had no way to represent a building. Both of those are now in, and the header
+# used to say the resulting error was one-directional — that this understated
+# noise in dense areas and never overstated it.
 #
-#   two primary roads 140 m apart, a point midway: 66.4 dB summed, so band 3.
-#   Neither road's own 65 dB radius is 57 m, so this calls it band 2.
+# THAT WAS WRONG, and measurement is how we know. Against Berlin's own END
+# facade levels (Fassadenpegel, Lden, 2017), 5,275 sampled points:
 #
-#   ten residential streets around a point 40 m away: 64.0 dB summed, band 2.
-#   One street's 55 dB radius is 32 m, so this calls it band 1 — quiet.
+#   the buffer model overstated  53.9% of the time
+#   the buffer model understated  5.9% of the time
+#   exact agreement              40.2%
 #
-# So the error is one-directional: this UNDER-states noise in dense areas,
-# never over-states it. A place it calls loud really is loud; a place it calls
-# quiet may not be. That is the wrong way round for a feature about finding
-# somewhere quiet, and it is the first thing to fix if the layer proves useful
-# — see "Accuracy" in README.md for what fixing it would take.
+# The reasoning behind the old claim was sound — sound does add, and unioned
+# buffers do not add it — but it accounted for only one of two errors. The
+# other, having no buildings at all, was much the larger, and it pushes the
+# other way: a courtyard behind a Mietskaserne block is 20 dB quieter than the
+# street it is 25 m from, and a model that cannot see the block calls the whole
+# block loud. In Berlin the shielding error dominated the summation error by
+# roughly nine to one.
+#
+# The lesson worth keeping is not about noise. Two known errors in opposite
+# directions do not cancel to "roughly right", and their relative size is not
+# something to reason out. It took one afternoon against a published map to
+# find that the documented direction was backwards.
+#
+# WHAT IS STILL MISSING
+#
+# Traffic volume, which OpenStreetMap does not carry and which is the reason
+# three coarse bands are the most that can honestly be claimed. Diffraction
+# over a roof, as against straight-line blocking: a screened cell here takes a
+# flat penalty rather than one computed from the path difference, so a low shed
+# shields as well as a six-storey block. Terrain. Facade reflection.
+#
+# Every constant below is a parameter, not a physical law. The way to improve
+# them is to fit them against published contours with bin/validate-bands, not
+# to reason about them harder.
 
 import argparse
 import json
 import math
 import sys
 
-from shapely.geometry import Point, Polygon, mapping, shape
+import numpy as np
+from scipy import ndimage
+
+from shapely.geometry import Point, Polygon, box, mapping, shape
 from shapely.ops import transform, unary_union
 
 # From shapely.validation rather than the top level package: Debian bookworm
@@ -145,17 +170,38 @@ THRESHOLD_MODERATE = 55.0
 # real time. At the ladder above, only a motorway reaches it
 MAX_RADIUS = 1200.0
 
-# Two ways whose radii differ by less than this share a buffer. Buffering one
-# merged geometry per bucket rather than one per way is the difference between
-# a city taking seconds and taking minutes, and 5 m is far inside what three
-# bands can express
-RADIUS_BUCKET = 5.0
+# Sources are grouped by emission level before anything is computed, so that
+# one distance transform answers for every way of the same loudness. 1 dB is
+# far inside what three bands can express and keeps the number of passes to
+# about twenty for a city.
+LEVEL_BUCKET = 1.0
 
-# Vertices are the cost here, twice over: in the buffer and in the tile. A 5 m
-# simplification on the input and 8-sided arcs on the buffer are both invisible
-# at the zooms these tiles are drawn at
+# The grid the receivers sit on, in metres. At z12 — the maximum these tiles
+# are written for — one screen pixel is about 23 m at Berlin's latitude, so a
+# 20 m cell is already finer than anything that reaches the screen. Halving it
+# quadruples both the memory and the time for detail nobody can see
+RESOLUTION = 20.0
+
+# How much a building between a receiver and its source takes off, in dB.
+#
+# A single screen is worth 10-15 dB in the real methods, depending on the path
+# difference over the top of it — which is geometry this does not have, since
+# it knows where buildings are and not how tall. A flat figure in the middle of
+# that range is the honest version of what can be computed from a footprint.
+#
+# This is the single most influential parameter added here and the first one to
+# fit: it is what turns a courtyard from "the street outside" into "quiet"
+SCREEN_ATTENUATION = 12.0
+
+# How many points along the line from a receiver to its source are tested for a
+# building. The line is at most MAX_RADIUS long and buildings are tens of
+# metres across, so the samples have to be closer together than a building is
+# wide or a ray walks through a wall
+SCREEN_SAMPLES = 48
+
+# Vertices are the cost here, twice over: in the polygonisation and in the
+# tile. Both are invisible at the zooms these tiles are drawn at
 LINE_SIMPLIFY = 5.0
-BUFFER_QUAD_SEGMENTS = 2
 OUTPUT_SIMPLIFY = 8.0
 
 
@@ -307,14 +353,16 @@ class LocalMetres:
 # -------------------------------------------------------------------- reading
 
 
-def read_sources(path, projection, clip):
+def read_lines(path, projection, clip, want_level):
     """
-    Every way that makes noise, in metres, bucketed by how far it carries.
+    Every line in a geojsonseq, projected to metres and clipped to what matters.
 
-    Returns {threshold: {bucket_radius: [geometry, ...]}} — the bucketing is
-    what lets the buffer run once per distance rather than once per way.
+    One reader for both inputs. With `want_level` it returns (geometry, level)
+    for the ways that make noise and skips the rest; without it, it returns the
+    geometry of everything, which is what the building outlines want — a wall
+    is a wall whatever it is tagged.
     """
-    buckets = {THRESHOLD_NOISY: {}, THRESHOLD_MODERATE: {}}
+    out = []
     read = kept = 0
 
     with open(path, "r", encoding="utf-8") as handle:
@@ -331,75 +379,299 @@ def read_sources(path, projection, clip):
                 continue
 
             geometry = feature.get("geometry") or {}
-            if geometry.get("type") != "LineString":
+            coordinates = coordinate_rings(geometry)
+            if not coordinates:
                 continue
 
-            level = level_for(feature.get("properties") or {})
-            if level is None:
-                continue
-
-            try:
-                projected = shape(
-                    {
-                        "type": "LineString",
-                        "coordinates": projection.forward(geometry["coordinates"]),
-                    }
-                )
-            except Exception:
-                continue
-            if projected.is_empty or projected.length == 0:
-                continue
-
-            # Anything whose whole influence falls outside the area being
-            # built is dropped here, before it costs a buffer
-            if projected.distance(clip) > MAX_RADIUS:
-                continue
-
-            projected = projected.simplify(LINE_SIMPLIFY, preserve_topology=False)
-            kept += 1
-
-            for threshold in buckets:
-                radius = radius_for(level, threshold)
-                if radius <= 0:
+            level = None
+            if want_level:
+                level = level_for(feature.get("properties") or {})
+                if level is None:
                     continue
-                bucket = round(radius / RADIUS_BUCKET) * RADIUS_BUCKET
-                if bucket <= 0:
+
+            for ring in coordinates:
+                try:
+                    projected = shape(
+                        {"type": "LineString", "coordinates": projection.forward(ring)}
+                    )
+                except Exception:
                     continue
-                buckets[threshold].setdefault(bucket, []).append(projected)
+                if projected.is_empty or projected.length == 0:
+                    continue
+                # Anything whose whole influence falls outside the area being
+                # built is dropped here, before it costs a raster cell
+                if projected.distance(clip) > MAX_RADIUS:
+                    continue
+                projected = projected.simplify(LINE_SIMPLIFY, preserve_topology=False)
+                if projected.is_empty:
+                    continue
+                kept += 1
+                out.append((projected, level))
 
-    return buckets, read, kept
+    return out, read, kept
 
 
-def union_buffers(bucket):
-    """One buffer per distance, unioned. Empty geometry when there is nothing."""
-    pieces = []
-    for radius, geometries in bucket.items():
-        merged = unary_union(geometries)
-        # Positional, not keyword: shapely 1.8 calls this argument
-        # `resolution` and 2.x calls it `quad_segs`, and only the position is
-        # the same in both
-        pieces.append(merged.buffer(radius, BUFFER_QUAD_SEGMENTS))
-    if not pieces:
+def coordinate_rings(geometry):
+    """
+    The line strings in a geometry, whatever shape it arrived as.
+
+    Roads are LineStrings. Buildings are Polygons and MultiPolygons, and what
+    is wanted from those is their outlines: a ray is blocked by a wall, and a
+    wall rasterised at cell resolution is at least one cell thick, so there is
+    no need to fill the inside of anything.
+    """
+    kind = geometry.get("type")
+    coordinates = geometry.get("coordinates")
+    if not coordinates:
+        return []
+    if kind == "LineString":
+        return [coordinates]
+    if kind == "MultiLineString":
+        return list(coordinates)
+    if kind == "Polygon":
+        return list(coordinates)
+    if kind == "MultiPolygon":
+        return [ring for polygon in coordinates for ring in polygon]
+    return []
+
+
+# --------------------------------------------------------------------- raster
+
+
+class Grid:
+    """
+    The frame the receivers sit on.
+
+    Padded by MAX_RADIUS beyond the area being built, because a motorway
+    outside the clip is still heard inside it and the distance transform can
+    only measure to a source that is on the grid.
+    """
+
+    def __init__(self, clip, resolution):
+        west, south, east, north = clip.bounds
+        self.resolution = resolution
+        self.west = west - MAX_RADIUS
+        self.south = south - MAX_RADIUS
+        self.columns = int(math.ceil((east + MAX_RADIUS - self.west) / resolution)) + 1
+        self.rows = int(math.ceil((north + MAX_RADIUS - self.south) / resolution)) + 1
+
+    @property
+    def shape(self):
+        return (self.rows, self.columns)
+
+    def burn(self, geometries):
+        """
+        Line geometries onto a boolean mask, by walking each segment.
+
+        Sampling rather than a line drawing algorithm: every segment is cut
+        into steps of half a cell, which cannot skip a cell diagonally, and the
+        whole thing is one numpy scatter rather than a Python loop per pixel.
+        The arrays are built segment-wise for the same reason — a city is a
+        million segments and a per-segment Python loop is minutes.
+        """
+        mask = np.zeros(self.shape, dtype=bool)
+        starts, ends = [], []
+        for geometry in geometries:
+            for line in getattr(geometry, "geoms", [geometry]):
+                points = np.asarray(line.coords, dtype=np.float64)
+                if len(points) < 2:
+                    continue
+                starts.append(points[:-1])
+                ends.append(points[1:])
+        if not starts:
+            return mask
+
+        start = np.concatenate(starts)
+        end = np.concatenate(ends)
+        step = self.resolution / 2.0
+        lengths = np.hypot(*(end - start).T)
+        counts = np.maximum(np.ceil(lengths / step).astype(np.int64), 1) + 1
+
+        # One flat parameter array covering every sample of every segment:
+        # repeat each segment's index `count` times, then subtract the running
+        # start of each run to get 0..count-1 within it
+        index = np.repeat(np.arange(len(counts)), counts)
+        offsets = np.concatenate(([0], np.cumsum(counts)[:-1]))
+        within = np.arange(len(index)) - offsets[index]
+        t = (within / np.maximum(counts[index] - 1, 1))[:, None]
+
+        points = start[index] + t * (end[index] - start[index])
+        self._scatter(mask, points[:, 0], points[:, 1])
+        return mask
+
+    def _scatter(self, mask, x, y):
+        columns = np.rint((x - self.west) / self.resolution).astype(np.int64)
+        rows = np.rint((y - self.south) / self.resolution).astype(np.int64)
+        inside = (
+            (columns >= 0) & (columns < self.columns) & (rows >= 0) & (rows < self.rows)
+        )
+        mask[rows[inside], columns[inside]] = True
+
+    def clip_mask(self, clip):
+        """Which cells are inside the area being built, so nothing else is drawn."""
+        rows = self.south + np.arange(self.rows) * self.resolution
+        columns = self.west + np.arange(self.columns) * self.resolution
+        # prepared geometry would be faster per point and this is one pass over
+        # a bounding box test that rejects almost everything first
+        west, south, east, north = clip.bounds
+        inside = np.zeros(self.shape, dtype=bool)
+        candidate_rows = np.where((rows >= south) & (rows <= north))[0]
+        candidate_columns = np.where((columns >= west) & (columns <= east))[0]
+        if len(candidate_rows) == 0 or len(candidate_columns) == 0:
+            return inside
+        from shapely.prepared import prep
+
+        ready = prep(clip)
+        for row in candidate_rows:
+            y = rows[row]
+            for column in candidate_columns:
+                if ready.contains(Point(columns[column], y)):
+                    inside[row, column] = True
+        return inside
+
+
+def decay(distance):
+    """
+    How much a level drops over a distance, as an array.
+
+    The same two-slope curve radius_for inverts: 3 dB per doubling in the near
+    field, because a road is a line source rather than a point one, and a
+    steeper fall past GROUND_EFFECT_ONSET where ground effect and air
+    absorption take over.
+    """
+    clamped = np.maximum(distance, REFERENCE_DISTANCE)
+    drop = NEAR_FIELD_COEFFICIENT * np.log10(clamped / REFERENCE_DISTANCE)
+    beyond = clamped > GROUND_EFFECT_ONSET
+    drop[beyond] += GROUND_EFFECT_COEFFICIENT * np.log10(
+        clamped[beyond] / GROUND_EFFECT_ONSET
+    )
+    return drop
+
+
+def screened(grid, buildings, indices):
+    """
+    Which receivers have a building between them and the source they hear.
+
+    `indices` is what distance_transform_edt hands back with return_indices:
+    for every cell, the row and column of the nearest source cell. So the line
+    to walk is known per cell without searching for it, and walking it is
+    SCREEN_SAMPLES array lookups rather than a ray cast per cell.
+
+    Straight-line blocking, not diffraction. A cell is either screened or it is
+    not, and a screened one takes the flat SCREEN_ATTENUATION. What that misses
+    is that a low building shields less than a tall one, which needs heights
+    this does not read.
+    """
+    if buildings is None or not buildings.any():
+        return np.zeros(grid.shape, dtype=bool)
+
+    rows, columns = np.indices(grid.shape)
+    source_rows, source_columns = indices
+    blocked = np.zeros(grid.shape, dtype=bool)
+
+    # The endpoints themselves are skipped: the source cell is a road, and the
+    # receiver's own cell being a building is not something between the two
+    for step in range(1, SCREEN_SAMPLES):
+        t = step / SCREEN_SAMPLES
+        sample_rows = np.rint(rows + t * (source_rows - rows)).astype(np.int64)
+        sample_columns = np.rint(columns + t * (source_columns - columns)).astype(
+            np.int64
+        )
+        blocked |= buildings[sample_rows, sample_columns]
+    return blocked
+
+
+def levels_on_grid(grid, sources, buildings):
+    """
+    The summed level at every receiver, in dB.
+
+    One distance transform per emission-level bucket, which is the whole reason
+    the sources were bucketed: every way of the same loudness answers the same
+    question, and twenty passes over a city-sized array is seconds.
+
+    Within a bucket only the nearest source is heard — two residential streets
+    of equal loudness either side of a receiver count once, not twice — so this
+    is not the full summation a real model does. It is the sum across
+    loudnesses, which is where most of the missing energy was: a flat and a
+    motorway are now added rather than the louder one winning outright.
+    """
+    energy = np.zeros(grid.shape, dtype=np.float64)
+    buckets = {}
+    for geometry, level in sources:
+        buckets.setdefault(round(level / LEVEL_BUCKET) * LEVEL_BUCKET, []).append(
+            geometry
+        )
+
+    for level, geometries in sorted(buckets.items(), reverse=True):
+        mask = grid.burn(geometries)
+        if not mask.any():
+            continue
+        distance, indices = ndimage.distance_transform_edt(
+            ~mask, sampling=grid.resolution, return_indices=True
+        )
+        value = level - decay(distance)
+        if buildings is not None:
+            value = value - SCREEN_ATTENUATION * screened(grid, buildings, indices)
+        # Anything this far under the quiet threshold cannot lift a sum over it
+        value[value < THRESHOLD_MODERATE - 25.0] = -np.inf
+        energy += np.power(10.0, value / 10.0)
+
+    with np.errstate(divide="ignore"):
+        return 10.0 * np.log10(energy, out=np.full(grid.shape, -np.inf), where=energy > 0)
+
+
+def polygons_from_mask(grid, mask):
+    """
+    A boolean grid as one geometry, by unioning the runs of each row.
+
+    Not marching squares: at 20 m a cell is under a pixel at the maximum zoom
+    these tiles carry, so the staircase is invisible and a run-length union is
+    a dozen lines instead of a contour tracer with hole nesting to get right.
+    Rows collapse to a few thousand rectangles for a city, which shapely unions
+    in well under a second.
+    """
+    if not mask.any():
         return Polygon()
-    return unary_union(pieces)
+
+    boxes = []
+    half = grid.resolution / 2.0
+    padded = np.zeros((mask.shape[0], mask.shape[1] + 2), dtype=bool)
+    padded[:, 1:-1] = mask
+    changes = np.diff(padded.astype(np.int8), axis=1)
+    for row in np.unique(np.nonzero(changes)[0]):
+        starts = np.nonzero(changes[row] == 1)[0]
+        ends = np.nonzero(changes[row] == -1)[0]
+        y = grid.south + row * grid.resolution
+        for first, last in zip(starts, ends):
+            boxes.append(
+                box(
+                    grid.west + first * grid.resolution - half,
+                    y - half,
+                    grid.west + (last - 1) * grid.resolution + half,
+                    y + half,
+                )
+            )
+    if not boxes:
+        return Polygon()
+    return unary_union(boxes)
 
 
-# --------------------------------------------------------------------- output
-
-
-def band_features(clip, noisy, moderate):
+def band_features(grid, levels, inside):
     """
     The three bands, as disjoint polygons covering the whole clip region.
 
-    Quiet is a polygon rather than the absence of one, on purpose. A reader
-    outside every built area has to be told nothing at all, and a reader in a
-    quiet park has to be told "quiet" — those are different answers. With quiet
-    drawn, the popup tells them apart by whether it found a feature.
+    Built from the level grid rather than from each other, so they cannot
+    overlap and cannot leave a gap: every cell inside the clip is in exactly
+    one of the three.
     """
-    noisy_band = make_valid(noisy.intersection(clip))
-    moderate_band = make_valid(moderate.difference(noisy).intersection(clip))
-    quiet_band = make_valid(clip.difference(moderate))
-    return [(3, noisy_band), (2, moderate_band), (1, quiet_band)]
+    noisy = inside & (levels >= THRESHOLD_NOISY)
+    moderate = inside & (levels >= THRESHOLD_MODERATE) & ~noisy
+    quiet = inside & ~noisy & ~moderate
+    return [
+        (3, polygons_from_mask(grid, noisy)),
+        (2, polygons_from_mask(grid, moderate)),
+        (1, polygons_from_mask(grid, quiet)),
+    ]
 
 
 def main():
@@ -407,6 +679,10 @@ def main():
     parser.add_argument("--lines", required=True)
     parser.add_argument("--slug", required=True)
     parser.add_argument("--output", required=True)
+    # Optional, and the model is honest without it: no buildings means no
+    # screening term, which is the model as it was before they were read
+    parser.add_argument("--buildings")
+    parser.add_argument("--resolution", type=float, default=RESOLUTION)
     # A circle around a city...
     parser.add_argument("--lat", type=float)
     parser.add_argument("--lon", type=float)
@@ -433,12 +709,25 @@ def main():
     else:
         parser.error("give either --bbox, or all of --lat, --lon and --radius")
 
-    buckets, read, kept = read_sources(arguments.lines, projection, clip)
-    noisy = union_buffers(buckets[THRESHOLD_NOISY])
-    moderate = union_buffers(buckets[THRESHOLD_MODERATE])
+    sources, read, kept = read_lines(arguments.lines, projection, clip, True)
+    grid = Grid(clip, arguments.resolution)
+
+    walls = None
+    if arguments.buildings:
+        outlines, _, wall_count = read_lines(
+            arguments.buildings, projection, clip, False
+        )
+        walls = grid.burn(geometry for geometry, _ in outlines)
+        print(
+            f"  {arguments.slug}: {wall_count} building outlines",
+            file=sys.stderr,
+        )
+
+    levels = levels_on_grid(grid, sources, walls)
+    inside = grid.clip_mask(clip)
 
     features = []
-    for band, geometry in band_features(clip, noisy, moderate):
+    for band, geometry in band_features(grid, levels, inside):
         if geometry.is_empty:
             continue
         geometry = geometry.simplify(OUTPUT_SIMPLIFY, preserve_topology=True)
@@ -458,7 +747,9 @@ def main():
         json.dump({"type": "FeatureCollection", "features": features}, handle)
 
     print(
-        f"  {arguments.slug}: {read} ways read, {kept} sources, {len(features)} bands",
+        f"  {arguments.slug}: {read} ways read, {kept} sources, "
+        f"{grid.rows}x{grid.columns} cells at {arguments.resolution:g} m, "
+        f"{len(features)} bands",
         file=sys.stderr,
     )
 

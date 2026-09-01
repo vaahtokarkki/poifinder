@@ -63,6 +63,15 @@ TAG_FILTER=(
   w/railway=rail,light_rail,subway,tram
 )
 
+# Buildings are read for one purpose: to know when something stands between a
+# receiver and the road it hears. Measured against Berlin's own END facade
+# levels, not having them was the model's largest error by some way — see the
+# header of bin/noise-bands. Only the outline is used, never the tags
+BUILDING_FILTER=(
+  w/building
+  r/building
+)
+
 # Wider than the area, because a road outside it still reaches in. Has to be at
 # least MAX_RADIUS in noise-bands, or a band would stop at the edge of the cut
 # rather than at the edge of what makes it
@@ -232,6 +241,9 @@ print('yes' if $west < $xeast and $east > $xwest and $south < $xnorth and $north
     osmium tags-filter --overwrite -o "$WORK_DIR/cut.filtered.osm.pbf" \
       "$WORK_DIR/cut.osm.pbf" "${TAG_FILTER[@]}"
 
+    osmium tags-filter --overwrite -o "$WORK_DIR/cut.buildings.osm.pbf" \
+      "$WORK_DIR/cut.osm.pbf" "${BUILDING_FILTER[@]}"
+
     # Line geometry only: the model buffers ways and has no use for anything
     # drawn as a point or an area
     osmium export --overwrite -f geojsonseq \
@@ -242,8 +254,17 @@ print('yes' if $west < $xeast and $east > $xwest and $south < $xnorth and $north
     # Appended, so a second extract adds to what the first found. Duplicate
     # ways across an overlap are harmless: the model unions its buffers, and
     # the union of a shape with itself is the shape
+    # Outlines, not fills: noise-bands only asks whether a wall is in the way,
+    # and a polygon exported as its ring is the cheaper half of the answer
+    osmium export --overwrite -f geojsonseq \
+      --geometry-types=polygon \
+      -o "$WORK_DIR/cut.buildings.geojsonseq" \
+      "$WORK_DIR/cut.buildings.osm.pbf"
+
     cat "$WORK_DIR/cut.geojsonseq" >> "$LINES_DIR/$slug.geojsonseq"
-    rm -f "$WORK_DIR/cut.osm.pbf" "$WORK_DIR/cut.filtered.osm.pbf" "$WORK_DIR/cut.geojsonseq"
+    cat "$WORK_DIR/cut.buildings.geojsonseq" >> "$LINES_DIR/$slug.buildings.geojsonseq"
+    rm -f "$WORK_DIR/cut.osm.pbf" "$WORK_DIR/cut.filtered.osm.pbf" "$WORK_DIR/cut.geojsonseq" \
+      "$WORK_DIR/cut.buildings.osm.pbf" "$WORK_DIR/cut.buildings.geojsonseq"
   done < "$AREA_TSV"
 done
 
@@ -256,15 +277,25 @@ while IFS=$'\t' read -r slug kind a b c d west south east north; do
   [ -n "$slug" ] || continue
   [ -s "$LINES_DIR/$slug.geojsonseq" ] || continue
 
+  # Passed only when there is something in it. An area whose extract carried
+  # no buildings gets the model without a screening term rather than an error,
+  # which is what it had before buildings were read at all
+  BUILDINGS=()
+  if [ -s "$LINES_DIR/$slug.buildings.geojsonseq" ]; then
+    BUILDINGS=(--buildings="$LINES_DIR/$slug.buildings.geojsonseq")
+  fi
+
   if [ "$kind" = bbox ]; then
     noise-bands \
       --lines="$LINES_DIR/$slug.geojsonseq" \
+      "${BUILDINGS[@]}" \
       --bbox="$a,$b,$c,$d" \
       --slug="$slug" \
       --output="$GEOJSON_DIR/$slug.geojson"
   else
     noise-bands \
       --lines="$LINES_DIR/$slug.geojsonseq" \
+      "${BUILDINGS[@]}" \
       --lat="$a" --lon="$b" --radius="$c" \
       --slug="$slug" \
       --output="$GEOJSON_DIR/$slug.geojson"

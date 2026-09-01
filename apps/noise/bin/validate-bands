@@ -1,0 +1,207 @@
+#!/usr/bin/env python3
+#
+# Score the modelled bands against a published noise map.
+#
+#   validate-bands --bands=berlin.geojson --lat=52.52 --lon=13.405 --radius=12000
+#
+# The bands this writes are parameters, not physics — see the header of
+# bin/noise-bands — and the only way to know whether a parameter is right is to
+# put it next to a map somebody measured. This is that comparison, kept in the
+# image so it can be run against a build rather than reconstructed each time.
+#
+# It reads the GeoJSON noise-bands writes, not the vector tiles, so it scores
+# the model rather than the tile pipeline and can run before anything is
+# deployed.
+#
+# THE REFERENCE
+#
+# Berlin publishes its END strategic noise map as facade levels: a point on
+# every noise-affected residential building wall carrying `ld_ges`, the Lden of
+# all assessed sources. Four million of them, over WFS, free. Other END cities
+# publish the same kind of thing at different URLs — --wfs, --layer and --field
+# are there so this is not only a Berlin script.
+#
+# WHAT THE ANSWER MEANS, AND WHAT IT DOES NOT
+#
+# Facades are not where the points this app maps are. A facade sample includes
+# courtyard walls, which are the most shielded places in a city and where a
+# model without buildings looks worst; a bench is in the open. So a
+# disagreement rate here is an upper bound on the error that reaches a reader,
+# not the error itself.
+#
+# The number to watch is not accuracy. It is the bottom line: how often the map
+# says quiet where the city says noisy. Everything else is a tie-break.
+
+import argparse
+import json
+import math
+import sys
+import urllib.parse
+import urllib.request
+
+from shapely.geometry import Point, shape
+from shapely.prepared import prep
+
+BERLIN_WFS = "https://gdi.berlin.de/services/wfs/ua_stratlaerm_2017"
+BERLIN_LAYER = "ua_stratlaerm_2017:ba_fp_gesamt2017_lden"
+BERLIN_FIELD = "ld_ges"
+
+THRESHOLD_NOISY = 65.0
+THRESHOLD_MODERATE = 55.0
+
+METRES_PER_DEGREE_LATITUDE = 110540.0
+METRES_PER_DEGREE_LONGITUDE = 111320.0
+
+
+def band_of(level):
+    return 3 if level >= THRESHOLD_NOISY else 2 if level >= THRESHOLD_MODERATE else 1
+
+
+def fetch(url):
+    with urllib.request.urlopen(url, timeout=120) as response:
+        return json.load(response)
+
+
+def sample_boxes(lat, lon, radius, across):
+    """
+    Small windows spread over the area, rather than one big request.
+
+    A WFS answers with the first N features it finds, which for a four million
+    row layer means one corner of one district. Asking for a few hundred from
+    each of a couple of dozen windows is what makes the sample the city rather
+    than a street.
+    """
+    x_scale = METRES_PER_DEGREE_LONGITUDE * math.cos(math.radians(lat))
+    boxes = []
+    for i in range(across):
+        for j in range(across):
+            offset = (across - 1) / 2.0
+            dy = ((i - offset) / offset) * radius * 0.8 if offset else 0.0
+            dx = ((j - offset) / offset) * radius * 0.8 if offset else 0.0
+            if math.hypot(dx, dy) > radius * 0.9:
+                continue
+            centre_lat = lat + dy / METRES_PER_DEGREE_LATITUDE
+            centre_lon = lon + dx / x_scale
+            half = 0.0025
+            boxes.append(
+                (
+                    centre_lon - half,
+                    centre_lat - half,
+                    centre_lon + half,
+                    centre_lat + half,
+                )
+            )
+    return boxes
+
+
+def reference_points(arguments):
+    """Every published level inside the area, as (lon, lat, dB)."""
+    points = []
+    boxes = sample_boxes(arguments.lat, arguments.lon, arguments.radius, arguments.across)
+    for west, south, east, north in boxes:
+        query = {
+            "service": "WFS",
+            "version": "2.0.0",
+            "request": "GetFeature",
+            "typeNames": arguments.layer,
+            "count": str(arguments.per_box),
+            "outputFormat": "application/json",
+            "srsName": "EPSG:4326",
+            "CQL_FILTER": f"BBOX(geom,{west},{south},{east},{north},'EPSG:4326')",
+        }
+        url = f"{arguments.wfs}?{urllib.parse.urlencode(query)}"
+        try:
+            answer = fetch(url)
+        except Exception as error:
+            print(f"  a window failed: {error}", file=sys.stderr)
+            continue
+        for feature in answer.get("features", []):
+            coordinates = (feature.get("geometry") or {}).get("coordinates")
+            level = (feature.get("properties") or {}).get(arguments.field)
+            if not coordinates or not isinstance(level, (int, float)):
+                continue
+            points.append((coordinates[0], coordinates[1], float(level)))
+        sys.stderr.write(".")
+        sys.stderr.flush()
+    sys.stderr.write("\n")
+    return points
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--bands", required=True, help="the GeoJSON noise-bands wrote")
+    parser.add_argument("--lat", type=float, required=True)
+    parser.add_argument("--lon", type=float, required=True)
+    parser.add_argument("--radius", type=float, required=True)
+    parser.add_argument("--wfs", default=BERLIN_WFS)
+    parser.add_argument("--layer", default=BERLIN_LAYER)
+    parser.add_argument("--field", default=BERLIN_FIELD)
+    parser.add_argument("--across", type=int, default=6, help="windows per side")
+    parser.add_argument("--per-box", type=int, default=220)
+    arguments = parser.parse_args()
+
+    with open(arguments.bands, encoding="utf-8") as handle:
+        collection = json.load(handle)
+    geometries, bands = [], []
+    for feature in collection.get("features", []):
+        geometries.append(shape(feature["geometry"]))
+        bands.append(int(feature["properties"]["band"]))
+    if not geometries:
+        sys.exit(f"{arguments.bands} holds no bands")
+    # Three features, one per band, so there is nothing an index would help
+    # with. Prepared geometries are the win here: the same few polygons are
+    # tested against thousands of points, which is exactly what prep is for
+    ready = [prep(geometry) for geometry in geometries]
+
+    print(f"fetching the published levels around {arguments.lat},{arguments.lon}")
+    points = reference_points(arguments)
+    print(f"{len(points)} published levels")
+
+    matrix = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    scored = unscored = 0
+    for lon, lat, level in points:
+        point = Point(lon, lat)
+        modelled = None
+        for position, prepared in enumerate(ready):
+            if prepared.contains(point):
+                modelled = bands[position]
+                break
+        if modelled is None:
+            unscored += 1
+            continue
+        matrix[modelled - 1][band_of(level) - 1] += 1
+        scored += 1
+
+    if not scored:
+        sys.exit("no published level fell inside a band — is --bands the right area?")
+
+    labels = ["<55 quiet", "55-65 mod", ">=65 noisy"]
+    print(f"\n{scored} scored, {unscored} outside the modelled area\n")
+    print("rows = this model, cols = published\n")
+    print("model \\ published " + "".join(s.rjust(11) for s in labels) + "      total")
+    for m in range(3):
+        row = matrix[m]
+        print(
+            f"band {m + 1} {labels[m]}".ljust(18)
+            + "".join(str(v).rjust(11) for v in row)
+            + str(sum(row)).rjust(11)
+        )
+    totals = [sum(matrix[m][c] for m in range(3)) for c in range(3)]
+    print("total".ljust(18) + "".join(str(v).rjust(11) for v in totals) + str(scored).rjust(11))
+
+    agree = sum(matrix[i][i] for i in range(3))
+    under = matrix[0][1] + matrix[0][2] + matrix[1][2]
+    over = matrix[1][0] + matrix[2][0] + matrix[2][1]
+    quiet_total = sum(matrix[0])
+    print(f"\nexact agreement    {100 * agree / scored:5.1f}%")
+    print(f"model UNDER-states {100 * under / scored:5.1f}%")
+    print(f"model OVER-states  {100 * over / scored:5.1f}%")
+    false_quiet = 100 * matrix[0][2] / quiet_total if quiet_total else 0.0
+    print(
+        f"\nP(published >=65 | model says quiet)  {false_quiet:.1f}%"
+        "   <- the one that matters"
+    )
+
+
+if __name__ == "__main__":
+    main()

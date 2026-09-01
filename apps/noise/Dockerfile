@@ -1,8 +1,14 @@
 # The noise tile builder.
 #
-# Three tools and no framework: osmium cuts the extract and writes GeoJSON,
-# shapely does the buffering, tippecanoe writes the tiles. Everything else is
-# the shell script that runs them in order.
+# Four tools and no framework: osmium cuts the extract and writes GeoJSON,
+# numpy and scipy carry the receiver grid, shapely turns it back into polygons
+# and tippecanoe writes the tiles. Everything else is the shell script that
+# runs them in order.
+#
+# numpy and scipy arrived with the grid model — see the header of
+# bin/noise-bands. scipy is there for one function, distance_transform_edt,
+# which is what makes "how far is the nearest source of this loudness" a
+# millisecond per bucket instead of a spatial index and a loop.
 #
 # Deliberately not NoiseModelling. That is the real thing — CNOSSOS-EU, the
 # EU's own method — and it wants a JVM, a terrain model and GeoClimate to
@@ -36,6 +42,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       curl \
       osmium-tool \
       python3 \
+      python3-numpy \
+      python3-scipy \
       python3-shapely \
     && rm -rf /var/lib/apt/lists/*
 
@@ -43,7 +51,8 @@ COPY --from=tippecanoe /usr/local/bin/tippecanoe /usr/local/bin/tippecanoe
 COPY --from=tippecanoe /usr/local/bin/tile-join /usr/local/bin/tile-join
 
 COPY bin/ /usr/local/bin/
-RUN chmod +x /usr/local/bin/build-noise-tiles /usr/local/bin/noise-bands
+RUN chmod +x /usr/local/bin/build-noise-tiles /usr/local/bin/noise-bands \
+      /usr/local/bin/validate-bands
 
 # Generated from src/seo/cities.ts by `npm run noise:cities`. Baked in rather
 # than mounted, so that an image is a complete answer to "which cities does

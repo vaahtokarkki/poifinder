@@ -100,7 +100,11 @@ log() { printf '%s %s\n' "$(date -u +%H:%M:%S)" "$*" >&2; }
 
 mkdir -p "$TILE_DIR" "$CACHE_DIR" "$WORK_DIR"
 if [ "$KEEP_WORK" = false ]; then
-  trap 'rm -rf "$WORK_DIR"' EXIT
+  # The contents, not the directory. WORK_DIR is a mount point in production
+  # — see NOISE_WORK_DIR in docker-compose.prod.yml — and removing a mount
+  # point fails with "Device or resource busy", which turned the tidy-up at
+  # the end of a good run into a non-zero exit
+  trap 'rm -rf "${WORK_DIR:?}/"* "${WORK_DIR:?}/".[!.]* 2>/dev/null || true' EXIT
 fi
 
 # ------------------------------------------------------------- the area list

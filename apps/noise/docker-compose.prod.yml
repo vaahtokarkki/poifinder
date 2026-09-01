@@ -1,17 +1,29 @@
 # The noise tile pipeline, on the server.
 #
-#   docker compose -f docker-compose.prod.yml pull
-#   docker compose -f docker-compose.prod.yml run --rm builder build-noise-tiles berlin
+# An explicit project name, and it matters. This file lives beside the compose
+# that runs Overpass, Caddy, Matomo and the rest; without a name of its own,
+# both take the project name from the directory, and every `docker compose -f
+# noise-compose.yml` command reports the other stack's containers as orphans.
+# One `--remove-orphans` typed at the wrong prompt would delete the site.
+name: wayside-noise
+
+# Run it as:
+#
+#   docker compose -f noise-compose.yml pull
+#   docker compose -f noise-compose.yml run --rm builder \
+#     build-noise-tiles --areas=/opt/wayside/areas.txt
+#
+# or with area names on the command line instead, for one city.
 #
 # One service and no daemon. This file is the pipeline; the edge that serves
 # what it produces lives in apps/overpass/docker-compose.prod.yml, which
 # terminates the same hostname for Overpass and for /tiles. The two share
 # /mnt/hdd1/noise/tiles and neither needs the other to be running.
 #
-# There is no schedule here on purpose. The bands come from road geometry and
-# building footprints, which move at the speed of roadworks, and a run is four
-# gigabytes of downloads to produce the same polygons. It is run by hand when
-# the model changes or the covered area should.
+# There is no schedule here on purpose. The bands come from road geometry,
+# which moves at the speed of roadworks, and a cold run is 31 GB of downloads
+# to produce the same polygons. It is run by hand when the model changes or
+# the deploy list does.
 
 services:
   builder:

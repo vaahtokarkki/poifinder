@@ -267,6 +267,15 @@ export const analytics = {
     trackEvent("Map", `share: ${method}`, ok ? "ok" : "failed");
   },
 
+  /**
+   * The layers panel, opened or closed. The pair says how often anybody goes
+   * looking for a layer at all, which is the question that comes before
+   * whether they keep the one they find — see noiseLayerToggled.
+   */
+  layersPanelToggled(open: boolean): void {
+    trackEvent("Map", open ? "layers: open" : "layers: close");
+  },
+
   directionsPanelToggled(open: boolean): void {
     trackEvent("Map", open ? "directions: open" : "directions: close");
   },
@@ -281,7 +290,7 @@ export const analytics = {
   },
 
   /**
-   * The noise wash, switched on or off from the map controls.
+   * The noise wash, switched on or off from the layers panel.
    *
    * Both directions, because the pair is the question: switching it on is
    * interest, and switching it back off shortly after is the answer to whether
@@ -289,8 +298,9 @@ export const analytics = {
    * at. The tiles cost a build to produce and a volume to hold, and this is
    * the only thing that says whether that is worth repeating.
    *
-   * Only the button. The layer's own visibility is applied on every style
-   * load, and counting that would report our re-renders as decisions.
+   * Only the tile in the panel. The layer's own visibility is applied on
+   * every style load, and counting that would report our re-renders as
+   * decisions.
    */
   noiseLayerToggled(shown: boolean): void {
     trackEvent("Map", shown ? "noise layer: show" : "noise layer: hide");

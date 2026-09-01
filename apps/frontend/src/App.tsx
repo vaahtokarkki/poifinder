@@ -47,7 +47,8 @@ import DirectionsIconButton from './components/DirectionsIconButton.tsx';
 import ShareIconButton from './components/ShareIconButton.tsx';
 import MoreControlsIconButton from './components/MoreControlsIconButton.tsx';
 import InfoIconButton from './components/InfoIconButton.tsx';
-import NoiseLayerIconButton from './components/NoiseLayerIconButton.tsx';
+import LayersIconButton from './components/LayersIconButton.tsx';
+import LayersPanel from './components/LayersPanel.tsx';
 import {
   noiseTilesConfigured,
   onGlMapChange,
@@ -267,6 +268,8 @@ const App = () => {
    * the wash is off — see setNoiseVisible in map/noiseTiles.ts
    */
   const [noiseVisible, setNoiseVisible_] = useState(false);
+  /** Whether the layers panel is open. Its own state: it is a panel, not a layer */
+  const [layersOpen, setLayersOpen] = useState(false);
 
   /**
    * Paint the bands, or stop painting them.
@@ -1158,15 +1161,6 @@ const App = () => {
               <SearchIconButton
                 active={displaySearchItem === "search"}
                 onClick={() => setDisplaySearchItem(displaySearchItem === "search" ? null : "search")} />
-              {/* Renders nothing when no tile server is configured, so a
-                  build without noise tiles has no control for it */}
-              <NoiseLayerIconButton
-                active={noiseVisible}
-                onClick={() => {
-                  analytics.noiseLayerToggled(!noiseVisible);
-                  setNoiseVisible_(!noiseVisible);
-                }}
-              />
             </div>
           </div>
           <MoreControlsIconButton
@@ -1176,6 +1170,32 @@ const App = () => {
           <MyLocationIconButton
             onClick={handleMyLocationClick} />
         </div>
+        {/* The panel's own corner, opposite the tool column. Both it and its
+            button exist only where there is an overlay to switch: with no tile
+            server configured the panel would open on the one basemap there is
+            and nothing to do with it */}
+        {noiseTilesConfigured && (
+          <div className="map-layers">
+            {layersOpen && (
+              <LayersPanel
+                onClose={() => setLayersOpen(false)}
+                noiseVisible={noiseVisible}
+                onNoiseChange={(visible) => {
+                  analytics.noiseLayerToggled(visible);
+                  setNoiseVisible_(visible);
+                }}
+              />
+            )}
+            <LayersIconButton
+              open={layersOpen}
+              onClick={() => {
+                const opening = !layersOpen;
+                analytics.layersPanelToggled(opening);
+                setLayersOpen(opening);
+              }}
+            />
+          </div>
+        )}
         <BasemapLayer />
         <UserPositionMarker position={userPosition} />
         <PoiMarkers markers={filteredMarkers} categories={category} onNotice={showNotice} />

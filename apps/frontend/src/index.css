@@ -304,6 +304,167 @@ body {
   margin: -8px;
 }
 
+/* ---------- Layers panel ---------- */
+
+/*
+ * The layers button and its panel, in the corner opposite the tool column.
+ * Lifted by the sheet exactly as the controls on the right are, so the button
+ * stays reachable with the sheet peeking; the panel grows upwards out of it,
+ * which is why this is a column that ends at the button rather than each part
+ * being placed against the corner on its own.
+ */
+.map-layers {
+  /* Fixed for the same reason .map-controls is: the map container reaches
+     under the mobile browser toolbars */
+  position: fixed;
+  left: 24px;
+  bottom: calc(24px + var(--sheet-offset, 0px));
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  transition: bottom 0.28s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+/* A tap anywhere off the panel closes it. No dimming: the panel is about the
+   map behind it, and darkening that to decide how it should look is perverse */
+.layers-scrim {
+  position: fixed;
+  inset: 0;
+}
+
+.layers-panel {
+  position: relative;
+  width: min(320px, calc(100vw - 48px));
+  max-height: min(60vh, 420px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #fff;
+  color: #202124;
+  border-radius: 1em;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
+  padding: 0.9em 1em 1.1em 1em;
+  animation: layers-panel-in 160ms ease-out;
+}
+
+@keyframes layers-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.layers-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+
+.layers-panel-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.layers-panel-close {
+  border: none;
+  background: none;
+  color: #5f6368;
+  cursor: pointer;
+  display: flex;
+  padding: 4px;
+  margin: -4px -4px -4px 0;
+  border-radius: 50%;
+}
+
+.layers-section {
+  margin-top: 1.1em;
+}
+
+/* The section headings carry the same weight as the sheet's, one step quieter
+   than the panel's own title */
+.layers-section-heading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #5f6368;
+  margin: 0 0 0.6em 0;
+}
+
+/* A row that wraps: two of these fit a phone, and a third layer should land
+   under the first rather than off the side of the panel */
+.layers-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+}
+
+.layers-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4em;
+  width: 76px;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: #5f6368;
+  text-align: center;
+}
+
+button.layers-tile {
+  cursor: pointer;
+}
+
+/* The ring and the blue label are the whole of "this one is on" — the swatch
+   itself must not change, or a layer would look different in the panel from
+   the way it looks on the map */
+.layers-tile.selected {
+  color: #1976d2;
+}
+
+.layers-tile-swatch {
+  width: 68px;
+  height: 68px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  /* The ring is drawn outside the swatch so switching a layer on does not
+     resize the picture of it */
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: outline-color 0.15s ease;
+}
+
+.layers-tile.selected .layers-tile-swatch {
+  outline-color: #1976d2;
+}
+
+.layers-tile-label {
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+@media (min-width: 900px) {
+  /*
+   * The sheet takes the lower left corner on a wide screen, so the layers
+   * control stands just clear of it: 16px of margin, the sheet's own 460px,
+   * and 16px again. Its bottom stops moving for the same reason the map
+   * controls' does — nothing is above the sheet to be lifted off any more.
+   */
+  .map-layers {
+    left: 492px;
+    bottom: 24px;
+  }
+}
+
 /* The Leaflet attribution rides above the sheet as well */
 .leaflet-bottom.leaflet-right {
   transform: translateY(calc(-1 * var(--sheet-offset, 0px)));

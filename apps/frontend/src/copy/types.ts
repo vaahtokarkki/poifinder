@@ -308,13 +308,29 @@ export type UiCopy = {
     clearAll: string;
     presetTitle: string;
     showMapTools: string;
-    /**
-     * The noise layer toggle. Only rendered when VITE_NOISE_TILES_URL is set,
-     * so a build without tiles never shows a control for a layer it has not
-     * got — but the string is not optional, because the deck is not
-     */
-    noiseLayer: string;
     hideMapTools: string;
+    /**
+     * The layers panel, and the button in the map's lower left corner that
+     * opens it: which basemap is drawn, and what is drawn over it.
+     *
+     * The panel is only rendered when VITE_NOISE_TILES_URL is set — with no
+     * overlay to switch there is nothing in it to choose — but the strings are
+     * not optional, because the deck is not.
+     */
+    layers: {
+      /** The button, which is all a screen reader has to go on before it opens */
+      open: string;
+      title: string;
+      close: string;
+      /** The upper section: which map is drawn underneath everything */
+      mapType: string;
+      /** The one basemap there is, named rather than left blank */
+      basemapDefault: string;
+      /** The lower section: overlays, which are drawn over that map */
+      mapDetails: string;
+      /** The modelled traffic noise wash. Off until it is asked for */
+      trafficNoise: string;
+    };
     myLocation: string;
     share: string;
     toggleSearch: string;

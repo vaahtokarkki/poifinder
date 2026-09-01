@@ -51,6 +51,10 @@ RUN chmod +x /usr/local/bin/build-noise-tiles /usr/local/bin/noise-bands \
 # this build" without a file next to it
 COPY cities.json /opt/wayside/cities.json
 
+# The deploy list. Baked in for the same reason cities.json is: an image is a
+# complete answer to "what does this build" without a file next to it
+COPY areas.txt /opt/wayside/areas.txt
+
 ENV NOISE_CITIES_FILE=/opt/wayside/cities.json \
     NOISE_TILE_DIR=/tiles \
     NOISE_CACHE_DIR=/cache \

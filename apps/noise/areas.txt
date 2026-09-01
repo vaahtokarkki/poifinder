@@ -1,0 +1,173 @@
+# Which areas get noise tiles, and the extracts they need.
+#
+#   docker compose -f docker-compose.prod.yml run --rm builder \\
+#     build-noise-tiles --areas=/opt/wayside/areas.txt
+#
+# This file is the control. An area not listed here is not built, whatever is
+# in cities.json — that file says which areas *exist*, this one says which are
+# worth the download and the disk.
+#
+# HOW THE LIST WAS CHOSEN
+#
+# Two filters, and neither is the SEO tiering in cities.ts, because that ranks
+# what earns search impressions and this is a map feature.
+#
+# First, countries. Every country with any real usage in Matomo over the last
+# 90 days — a reader who opened a city page there. That is 25 countries, and it
+# is a thin signal on a young site: 93 visits in all. It is still a better
+# ordering than a guess, and Berlin, which this model was built and validated
+# against, drew one of those 93.
+#
+# Second, size within those countries: at least 4,000 points in the nine
+# categories the noise row renders for (see NOISE_WORTH_KNOWING in
+# NoiseSection.tsx), or any usage at all. Counted from data/poi.
+#
+# THE COST IS THE EXTRACT, NOT THE CITY
+#
+# Germany is one 4.5 GB download and seven cities. Czechia is one 0.9 GB
+# download and one. Both are worth having; only one of them is cheap. The list
+# is grouped by extract for that reason, and the totals below are what a full
+# run downloads.
+
+
+# Australia
+sydney  # 1 visits
+melbourne
+
+# Belgium
+brussels
+antwerp
+ghent  # 3 visits
+
+# Canada
+montreal
+toronto
+ottawa
+vancouver  # 2 visits
+
+# Chile
+santiago  # 1 visits
+
+# Czechia
+prague  # 10 visits
+
+# Denmark
+aarhus  # 2 visits
+
+# Finland
+helsinki  # 1 visits
+espoo  # 5 visits
+
+# France
+paris
+lyon
+nantes
+lille
+toulouse
+bordeaux
+strasbourg  # 1 visits
+
+# Germany
+berlin  # 1 visits
+munich  # 2 visits
+hamburg  # 1 visits
+stuttgart  # 1 visits
+cologne
+frankfurt
+dusseldorf
+
+# Hungary
+budapest  # 6 visits
+
+# Italy
+milan
+rome  # 1 visits
+turin  # 1 visits
+bologna  # 1 visits
+venice  # 1 visits
+
+# Latvia
+riga  # 4 visits
+
+# Malaysia
+kuala-lumpur  # 1 visits
+
+# New Zealand
+wellington  # 2 visits
+
+# Norway
+oslo  # 4 visits
+
+# Poland
+warsaw  # 13 visits
+krakow  # 4 visits
+
+# Singapore
+singapore  # 3 visits
+
+# Slovakia
+bratislava  # 1 visits
+
+# Slovenia
+ljubljana  # 2 visits
+
+# Spain
+madrid  # 2 visits
+barcelona
+valencia
+
+# Sweden
+gothenburg  # 1 visits
+
+# Switzerland
+zurich  # 2 visits
+geneva
+basel
+bern  # 4 visits
+
+# Thailand
+bangkok  # 1 visits
+
+# United Kingdom
+london
+edinburgh  # 4 visits
+glasgow  # 3 visits
+
+# United States
+new-york
+boston
+phoenix
+san-francisco
+miami  # 1 visits
+
+# --- extracts these need, for NOISE_EXTRACTS ---
+#   australia-oceania/australia                sydney, melbourne
+#   europe/belgium                             brussels, antwerp, ghent
+#   north-america/canada/quebec                montreal
+#   north-america/canada/ontario               toronto, ottawa
+#   north-america/canada/british-columbia      vancouver
+#   south-america/chile                        santiago
+#   europe/czech-republic                      prague
+#   europe/denmark                             aarhus
+#   europe/finland                             helsinki, espoo
+#   europe/france                              paris, lyon, nantes, lille, toulouse, bordeaux, strasbourg
+#   europe/germany                             berlin, munich, hamburg, stuttgart, cologne, frankfurt, dusseldorf
+#   europe/hungary                             budapest
+#   europe/italy                               milan, rome, turin, bologna, venice
+#   europe/latvia                              riga
+#   asia/malaysia-singapore-brunei             kuala-lumpur, singapore
+#   australia-oceania/new-zealand              wellington
+#   europe/norway                              oslo
+#   europe/poland                              warsaw, krakow
+#   europe/slovakia                            bratislava
+#   europe/slovenia                            ljubljana
+#   europe/spain                               madrid, barcelona, valencia
+#   europe/sweden                              gothenburg
+#   europe/switzerland                         zurich, geneva, basel, bern
+#   asia/thailand                              bangkok
+#   europe/great-britain                       london, edinburgh, glasgow
+#   north-america/us/new-york                  new-york
+#   north-america/us/massachusetts             boston
+#   north-america/us/arizona                   phoenix
+#   north-america/us/california                san-francisco
+#   north-america/us/florida                   miami

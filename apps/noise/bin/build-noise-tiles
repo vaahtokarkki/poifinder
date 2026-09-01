@@ -78,6 +78,18 @@ BOXES=()
 for argument in "$@"; do
   case "$argument" in
     --keep-work) KEEP_WORK=true ;;
+    # The deploy list, one area per line, # for comments. What is in it is
+    # what gets built; see areas.txt for how that list was chosen
+    --areas=*)
+      AREAS_FILE="${argument#--areas=}"
+      if [ ! -s "$AREAS_FILE" ]; then
+        echo "no such areas file: $AREAS_FILE" >&2; exit 2
+      fi
+      while read -r line; do
+        line="${line%%#*}"; line="$(echo "$line" | tr -d "[:space:]")"
+        [ -n "$line" ] && WANTED+=("$line")
+      done < "$AREAS_FILE"
+      ;;
     --bbox=*) BOXES+=("${argument#--bbox=}") ;;
     --*) echo "unknown option: $argument" >&2; exit 2 ;;
     *) WANTED+=("$argument") ;;
@@ -226,7 +238,13 @@ print('yes' if $west < $xeast and $east > $xwest and $south < $xnorth and $north
     [ "$overlaps" = yes ] || continue
 
     log "  cut     $slug"
-    osmium extract --bbox="$west,$south,$east,$north" --strategy=smart --overwrite \
+    # complete_ways, not smart. Everything read downstream is ways and the
+    # nodes they are drawn from — the tag filter below keeps `w/` expressions
+    # only — and smart's extra pass to keep relations whole is time and memory
+    # spent on objects nothing here asks for. On Germany that is the difference
+    # between a ten minute cut and a job that runs overnight once the deploy
+    # list is sixty areas rather than one
+    osmium extract --bbox="$west,$south,$east,$north" --strategy=complete_ways --overwrite \
       -o "$WORK_DIR/cut.osm.pbf" "$extract_file"
 
     osmium tags-filter --overwrite -o "$WORK_DIR/cut.filtered.osm.pbf" \

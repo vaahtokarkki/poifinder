@@ -24,7 +24,7 @@ import type { NoiseBand } from "../map/noiseTiles";
  * which on a popup that is already several rows long is just noise of another
  * kind.
  */
-const NOISE_WORTH_KNOWING: ReadonlySet<CATEGORIES> = new Set([
+export const NOISE_WORTH_KNOWING: ReadonlySet<CATEGORIES> = new Set([
   CATEGORIES.Bench,
   CATEGORIES.Picnic,
   CATEGORIES.Playgrounds,

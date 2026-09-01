@@ -19,7 +19,8 @@ import { TranslationError, translate } from "./api/translate";
 import type { TranslationFailure } from "./api/translate";
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
 import PoiShape from "./components/PoiShape";
-import NoiseSection from "./components/NoiseSection";
+import NoiseSection, { NOISE_WORTH_KNOWING } from "./components/NoiseSection";
+import { noiseTilesConfigured } from "./map/noiseTiles";
 import { useEnclosingBuilding } from "./hooks/useOsmElement";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
 import {
@@ -1279,8 +1280,28 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
           // point carrying nothing but `amenity=toilets` still gets the line
           // rather than a popup, even standing in a shopping centre. On Bremen
           // that is 18 of the 843 points inside a building
+          //
+          // Except where a noise band is the detail. A bench carries
+          // `amenity=bench` and usually nothing else, so it fell to the line at
+          // the bottom every time — and a bench is precisely a point whose
+          // noise level decides whether it is worth walking to. Where the tiles
+          // exist and the category is one the band is worth knowing for, the
+          // band is the extra detail, so the point earns its popup.
+          //
+          // Gated on the tiles being configured at all, so a checkout with no
+          // noise layer keeps the line rather than opening a popup holding only
+          // the name. It cannot also be gated on this point's band: that is a
+          // query against the rendered tiles, and running one per marker per
+          // render is the cost this whole branch exists to avoid
+          const markerCategory = findCategory(marker, categories);
+          const noiseIsTheDetail =
+            noiseTilesConfigured &&
+            markerCategory !== null &&
+            NOISE_WORTH_KNOWING.has(markerCategory);
           const hasDetails =
-            buildPopupRows(marker.tags).length > 0 || describeSurvey(marker.tags) !== null;
+            noiseIsTheDetail ||
+            buildPopupRows(marker.tags).length > 0 ||
+            describeSurvey(marker.tags) !== null;
           const { title } = describeMarker(marker, categories);
 
           const key = shapeKey(marker);

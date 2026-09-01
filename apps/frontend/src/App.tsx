@@ -1162,7 +1162,10 @@ const App = () => {
                   build without noise tiles has no control for it */}
               <NoiseLayerIconButton
                 active={noiseVisible}
-                onClick={() => setNoiseVisible_(!noiseVisible)}
+                onClick={() => {
+                  analytics.noiseLayerToggled(!noiseVisible);
+                  setNoiseVisible_(!noiseVisible);
+                }}
               />
             </div>
           </div>
@@ -1187,7 +1190,12 @@ const App = () => {
           />
         )}
       </MapContainer>
-      <BottomSheet ref={sheetRef}>
+      {/* The page label is for the one event the sheet reports, the reader
+          reaching the bottom of the text — so that "read to the end" on the map
+          root can be told from the same gesture on a city page. "map" is the
+          route that was not prerendered at all: a shared link with coordinates,
+          or an unknown city, which is the fallback content below */}
+      <BottomSheet ref={sheetRef} page={pageData?.kind ?? "map"}>
         {pageData ? (
           // The whole sheet, guide included. The root used to have the guide
           // appended here instead, which put it below the prerendered block at

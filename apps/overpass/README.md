@@ -947,12 +947,15 @@ Events, as they read in **Behaviour → Events**:
 | Presets | `apply` / `clear` | the preset id, e.g. `road-trip` |
 | POI | `popup open` | the category the point was drawn as |
 | POI | `tap: no details` | the category of a point with nothing to show |
+| POI | `noise: about` | the category of the point whose noise band was being explained |
 | Search | `result chosen` | — |
 | Map | `share: native` / `share: clipboard` | `ok` / `failed` |
 | Map | `directions: open` / `directions: close` | — |
 | Map | `route` | `ok` / `failed` |
 | Map | `my location` | `centered` / `no fix` |
 | Map | `zoom hint: shown` / `zoom hint: tapped` | — |
+| Map | `noise layer: show` / `noise layer: hide` | — |
+| Sheet | `read to end` | the page the sheet was showing, e.g. `home`, `city`, `category` |
 | Errors | `overpass failed` | the message every mirror ended on |
 
 The two Categories rows are the pair worth reading together. `select` and
@@ -960,6 +963,12 @@ The two Categories rows are the pair worth reading together. `select` and
 actually went looking with, and its trigger separates a deliberate choice from
 the map catching up with a pan. `POI / popup open` is the third: what got
 searched for against what got opened.
+
+`Sheet / read to end` is the one event about the text rather than the map:
+somebody pulled the bottom sheet open and scrolled to its last line. Once per
+visit, so it counts readers and not flicks, and the name says which page's
+sheet — `home` is the map root, where that text is the whole of what this site
+says about itself.
 
 Searches go to Matomo's site-search report rather than to an event, because
 that report has a "no results" list in it, and a place the geocoder cannot

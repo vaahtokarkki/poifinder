@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogTitle, Button } from "@mui/material";
 import { ui } from "../copy";
 import { CATEGORIES } from "../constants";
 import { useNoiseBand } from "../hooks/useNoiseBand";
+import { analytics } from "../analytics";
 import { BAND_COLOUR } from "../map/noiseTiles";
 import type { NoiseBand } from "../map/noiseTiles";
 
@@ -87,7 +88,10 @@ const NoiseSection: React.FC<{
       <button
         type="button"
         className="poi-popup-noise-about"
-        onClick={() => setExplaining(true)}
+        onClick={() => {
+          analytics.noiseExplanationOpened(category);
+          setExplaining(true);
+        }}
       >
         {words.about}
       </button>

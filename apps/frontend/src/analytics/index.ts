@@ -231,6 +231,19 @@ export const analytics = {
   },
 
   /**
+   * "What does this mean?" under the noise band in a popup.
+   *
+   * The band itself is drawn for nine categories and read by whoever glances
+   * at it; this is somebody stopping to ask what a made up number is worth,
+   * which is the only signal there is that the caveat in that dialog is being
+   * read at all. The name is the point's category, so it sits beside the popup
+   * events above and says which kind of place makes people want the caveat.
+   */
+  noiseExplanationOpened(category: CATEGORIES | null): void {
+    trackEvent("POI", "noise: about", categoryName(category));
+  },
+
+  /**
    * The language picker. The name is the language chosen, and the value is
    * nothing: what the report is for is which of the three decks people
    * actually reach for, against the language their browser already asked for,
@@ -268,6 +281,22 @@ export const analytics = {
   },
 
   /**
+   * The noise wash, switched on or off from the map controls.
+   *
+   * Both directions, because the pair is the question: switching it on is
+   * interest, and switching it back off shortly after is the answer to whether
+   * a whole continent tinted amber is something anybody wants to keep looking
+   * at. The tiles cost a build to produce and a volume to hold, and this is
+   * the only thing that says whether that is worth repeating.
+   *
+   * Only the button. The layer's own visibility is applied on every style
+   * load, and counting that would report our re-renders as decisions.
+   */
+  noiseLayerToggled(shown: boolean): void {
+    trackEvent("Map", shown ? "noise layer: show" : "noise layer: hide");
+  },
+
+  /**
    * The view went below the zoom points load at. Fires on the transition, not
    * on every render, so it counts how often people end up too far out rather
    * than how long they stay there
@@ -296,6 +325,24 @@ export const analytics = {
    */
   overpassCountry(country: string, trigger: QueryTrigger): void {
     trackEvent("Geography", `query: ${trigger}`, country);
+  },
+
+  /**
+   * The bottom sheet scrolled to its last line.
+   *
+   * The sheet is where everything this site has to say about itself lives —
+   * what Wayside is, how to work it, the credits — and a pageview says only
+   * that it was on the screen. This says somebody pulled it open and read to
+   * the bottom, which on the map root is the closest thing there is to a
+   * measure of whether that text is worth its length.
+   *
+   * Once per visit, guarded at the call site: the interesting fact is that a
+   * reader got there, not how many times a flick bounced off the end. The name
+   * is the page the sheet was showing, so the root can be told from a city
+   * page where the same gesture ends in a list of toilets.
+   */
+  sheetReadToEnd(page: string): void {
+    trackEvent("Sheet", "read to end", page);
   },
 
   /** Every mirror exhausted. The message, not the query: no bbox goes to Matomo */

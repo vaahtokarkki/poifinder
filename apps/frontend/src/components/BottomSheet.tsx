@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useImperativeHandle, useRef, useState } from "react";
 import { ui } from "../copy";
+import { analytics } from "../analytics";
 
 export type SheetSnap = "hidden" | "peek" | "full";
 
@@ -20,6 +21,16 @@ const OVERSCROLL_TAKEOVER = 6;
 /** The collapsed height the prerendered block already drew, when it parses */
 const DEFAULT_PEEK_HEIGHT = 172;
 
+/**
+ * How near the end counts as the end.
+ *
+ * Not zero: a sheet whose last element carries a margin, a phone that scrolls
+ * in fractional pixels and a browser rounding scrollHeight all stop a few
+ * pixels short of the arithmetic, and somebody who is looking at the last line
+ * has read to the end whatever the remainder says.
+ */
+const READ_TO_END_SLACK = 24;
+
 export type BottomSheetHandle = {
   /** Open the sheet all the way, even after it has been dismissed */
   expand: () => void;
@@ -30,6 +41,12 @@ type BottomSheetProps = {
   peekHeight?: number;
   /** Lets the map controls bring the sheet back up */
   ref?: React.Ref<BottomSheetHandle>;
+  /**
+   * Which page's content is in the sheet, for the one event this reports: see
+   * onContentScroll. A label for a report and nothing else — the sheet draws
+   * whatever it is given either way
+   */
+  page?: string;
   children: React.ReactNode;
 };
 
@@ -54,7 +71,7 @@ const peekHeightFromStyles = () => {
  * hidden. Dragging it all the way down dismisses it for the rest of the visit,
  * as in the Google Maps app.
  */
-const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, children }) => {
+const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, page, children }) => {
   const [measuredPeek] = useState(peekHeightFromStyles);
   const collapsedHeight = peekHeight ?? measuredPeek;
   const [fullHeight, setFullHeight] = useState(fullHeightForWindow);
@@ -75,6 +92,34 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, children }) 
   // Where the drag started, so the movement can be turned into a height
   const dragStartRef = useRef<{ y: number; visible: number } | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
+
+  /** Whether this visit has already been counted as having read to the end */
+  const readToEndRef = useRef(false);
+
+  /**
+   * Report the one moment in a scroll worth knowing about: the reader reached
+   * the bottom of the text.
+   *
+   * Once per visit, which is why the guard is a ref rather than state — the
+   * fact is that somebody got there, and a flick that bounces off the end
+   * three times is one reader, not three. Nothing else about the scrolling is
+   * reported: how far down people got would be a stream of events for a
+   * gesture, and this sheet is short enough that the end is the only position
+   * that means anything.
+   *
+   * Only the fully open sheet scrolls at all — in the other states the content
+   * is a drag surface with its overflow hidden — so this cannot fire while the
+   * sheet is peeking, and closing it scrolls the content back to the top,
+   * which is the far end from here.
+   */
+  const onContentScroll = (event: React.UIEvent<HTMLDivElement>) => {
+    if (readToEndRef.current) return;
+    const content = event.currentTarget;
+    const remaining = content.scrollHeight - content.scrollTop - content.clientHeight;
+    if (remaining > READ_TO_END_SLACK) return;
+    readToEndRef.current = true;
+    analytics.sheetReadToEnd(page ?? "map");
+  };
 
   // Closing the sheet takes it back to the heading, not to wherever it was read
   useEffect(() => {
@@ -313,6 +358,7 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, children }) 
           touchAction: contentScrolls ? "pan-y" : "none",
           userSelect: contentScrolls ? "text" : "none",
         }}
+        onScroll={onContentScroll}
         {...contentDragHandlers}
       >
         {children}

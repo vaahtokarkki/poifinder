@@ -46,14 +46,37 @@
 # is fine and killed is not. The reasoning, and the measurements behind it, are
 # under "Covering a continent" in README.md.
 #
+# Updating, once this is running:
+#
+#   docker compose -f docker-compose.prod.yml pull
+#   docker compose -f docker-compose.prod.yml down
+#   docker compose -f docker-compose.prod.yml up -d
+#
+# Nothing outside this file has to change with it. Caddy binds 127.0.0.1:12345,
+# which is where the Tailscale funnel already points, so the funnel config, the
+# public hostname and the API URL the frontend was built with all stay as they
+# are — /tiles simply appears beside /api on the same name.
+#
+# What is on those host ports, and what reaches them:
+#
+#   127.0.0.1:12345  caddy      <- funnel https://<host>/        (public)
+#   127.0.0.1:12346  matomo     <- funnel https://<host>:8443/   (public)
+#   127.0.0.1:12344  overpass   debugging on the box only
+#
 # First start, once:
 #
-#   mkdir -p /mnt/hdd1/wayside
+#   mkdir -p /mnt/hdd1/wayside /mnt/hdd1/noise/tiles /mnt/hdd1/noise/cache
 #   docker compose -f docker-compose.prod.yml up -d
 #   docker compose -f docker-compose.prod.yml exec importer update-poi-db
 #
 # The API answers nothing until that finishes, which for Europe is hours. It
 # is resumable: a run that dies picks up at the country it stopped on.
+#
+# The noise tiles are optional and separate. Without them /tiles answers 204,
+# and the frontend shows no noise anywhere rather than anything broken:
+#
+#   docker compose -f docker-compose.prod.yml run --rm noise-builder \
+#     build-noise-tiles berlin
 
 services:
   overpass:
@@ -62,10 +85,16 @@ services:
     restart: unless-stopped
 
     ports:
-      # Localhost only: the funnel runs on this same host and is the one thing
-      # that should reach the API. An unauthenticated Overpass on the LAN is
+      # Debugging only, and deliberately NOT 12345 any more. The funnel points
+      # at 12345 and Caddy answers there now, so that the public path is always
+      # the one with the rate limiting, the tiles and the query guard in front
+      # of it. This binding is here so `curl 127.0.0.1:12344/api/interpreter`
+      # on the box still reaches Overpass directly when something looks wrong
+      # with the layer above it.
+      #
+      # Localhost only either way: an unauthenticated Overpass on the LAN is
       # not something to hand out by accident
-      - "127.0.0.1:12345:80"
+      - "127.0.0.1:12344:80"
 
     volumes:
       # A path on the host rather than a named volume, so the database is
@@ -574,8 +603,20 @@ services:
     container_name: wayside-noise-builder
     restart: unless-stopped
 
-    # Sleep and wait to be told, exactly as the importer does
-    entrypoint: ["sleep", "infinity"]
+    # No entrypoint override here, unlike the importer above, and the
+    # difference matters. That image has a real entrypoint which would import
+    # on start, so it has to be replaced; this one already ships
+    # `ENTRYPOINT []` with `CMD ["sleep", "infinity"]`, so it sleeps on its own.
+    #
+    # Overriding the entrypoint here as well broke the thing this service
+    # exists for. `docker compose run` replaces the *command* and keeps the
+    # entrypoint, so with `entrypoint: ["sleep", "infinity"]` set,
+    #
+    #   docker compose run --rm noise-builder build-noise-tiles berlin
+    #
+    # ran `sleep infinity build-noise-tiles berlin` and died with
+    # "sleep: invalid time interval". Leaving the entrypoint empty is what lets
+    # the arguments be the command they look like.
 
     volumes:
       # The tiles Caddy serves. `current` inside this is a symlink the builder
@@ -646,24 +687,31 @@ services:
         max-size: "10m"
         max-file: "3"
 
-  # The one thing published to the internet. It terminates TLS and answers on
+  # What the Tailscale funnel points at. Plain HTTP on localhost, answering on
   # two paths:
   #
   #   /api/interpreter          proxied to the Overpass container
   #   /tiles/{z}/{x}/{y}.pbf    read off the noise volume
   #
-  # One hostname rather than two, which is one certificate, one DNS record and
-  # one origin for the browser. The frontend then wants:
+  # No TLS here, and no certificates: the funnel terminates TLS on the public
+  # name and forwards cleartext to this port. Caddy doing ACME as well would be
+  # a second certificate for a name that does not resolve to this machine, and
+  # it would spend its life failing the challenge.
   #
-  #   VITE_OVERPASS_API_URL=https://CHANGE_ME.example.com/api/interpreter
-  #   VITE_NOISE_TILES_URL=https://CHANGE_ME.example.com/tiles
+  # It binds the port the funnel is already pointed at, so nothing outside this
+  # file has to change: not the funnel, not the hostname, not the API URL the
+  # frontend is built with. Only one new variable, for the path that did not
+  # exist before:
   #
-  # Note what this replaces. The Overpass container above still publishes
-  # 127.0.0.1:12345 for a tunnel; with Caddy in front, that binding is either
-  # redundant or the tunnel should point at Caddy instead. Both are fine. What
-  # is not fine is publishing Overpass to the network beside this, which would
-  # put an unauthenticated API on the internet with none of what is below in
-  # front of it.
+  #   VITE_OVERPASS_API_URL=https://<funnel-host>/api/interpreter   (unchanged)
+  #   VITE_NOISE_TILES_URL=https://<funnel-host>/tiles              (new)
+  #
+  # The client's own address still reaches Overpass. Caddy appends its hop to
+  # X-Forwarded-For, and the nginx inside the Overpass image sets
+  # `real_ip_recursive on` while trusting loopback and the Docker bridge
+  # ranges, so it walks past both proxies to the real client. See
+  # initdb.d/15-access-log.sh — that is what the access log and the per-address
+  # rate limit both read.
   caddy:
     image: caddy:2-alpine
     container_name: wayside-caddy
@@ -673,21 +721,25 @@ services:
       - overpass
 
     ports:
-      # For ACME, and for the redirect to https. Bind both to 127.0.0.1 instead
-      # if a tunnel terminates TLS in front of this, and change the site
-      # address in the Caddyfile below to `:80` so Caddy stops trying to get a
-      # certificate for a name it cannot be reached on
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
+      # 12345, which is where the Tailscale funnel already points:
+      #
+      #   https://rekola.tailf460ba.ts.net  ->  127.0.0.1:12345
+      #
+      # Taking that port over rather than asking the funnel to move is what
+      # makes this a `pull && down && up` deployment: the funnel config, the
+      # public hostname and VITE_OVERPASS_API_URL all stay exactly as they are,
+      # and /tiles appears beside /api on the same name. Overpass moved to
+      # 12344 above to make room.
+      #
+      # Localhost only: publishing this would put an unauthenticated Overpass
+      # on the internet with nothing in front of it
+      - "127.0.0.1:12345:80"
 
     volumes:
-      # Read only: Caddy serves these, the builder writes them
+      # Read only: Caddy serves these, the builder writes them. The only volume
+      # this container needs — with TLS handled by the funnel there are no
+      # certificates to keep, so nothing here is worth surviving a restart
       - /mnt/hdd1/noise/tiles:/srv/tiles:ro
-      # Certificates and ACME state. Losing this means new certificates on the
-      # next start, and Let's Encrypt rate limits are per week
-      - caddy-data:/data
-      - caddy-config:/config
 
     configs:
       - source: caddyfile
@@ -703,12 +755,6 @@ services:
         max-file: "3"
 
 
-# Caddy's certificates and its own state. Named volumes rather than the host
-# paths everything else here uses, because nothing in them is ever read by a
-# person and losing them costs a certificate reissue rather than data
-volumes:
-  caddy-data:
-  caddy-config:
 # A network of their own, so that the analytics database is not sitting on the
 # same bridge as the Overpass containers. Everything without a `networks` key
 # stays on the default one and is unaffected
@@ -726,114 +772,120 @@ configs:
   caddyfile:
     content: |
       {
-        # Where Let's Encrypt sends expiry warnings. Set it, or find out about
-        # a failed renewal from a visitor
-        email CHANGE_ME@example.com
+      	# No ACME, no certificates, no redirect to https. The Tailscale funnel
+      	# terminates TLS on the public name and forwards cleartext here, so
+      	# everything Caddy would otherwise do about HTTPS is either duplicated
+      	# work or a challenge it cannot pass — the name does not resolve to
+      	# this machine.
+      	#
+      	# auto_https off rather than relying on the bare `:80` below to imply
+      	# it: the site address and the TLS behaviour are two settings, and one
+      	# of them being changed later should not quietly switch ACME back on
+      	auto_https off
+
+      	# Nothing needs the admin API, and it listens on 2019 by default
+      	admin off
       }
 
-      # The hostname the app calls. Caddy gets and renews the certificate for
-      # it on its own, which is the reason for this container.
-      #
-      # Behind a tunnel that already terminates TLS, change this line to `:80`
-      # and bind the ports to 127.0.0.1 in the service above — Caddy would
-      # otherwise spend its life failing an ACME challenge on a name that does
-      # not resolve to this machine.
-      CHANGE_ME.example.com {
-        # Overpass. handle rather than handle_path: the interpreter really is
-        # at /api/interpreter on the upstream, so the prefix stays on
-        handle /api/* {
-          # No CORS header here on purpose. The Overpass container sets its own
-          # from OVERPASS_CORS_ORIGIN, and a second Access-Control-Allow-Origin
-          # on the same response is not "more permissive" — a browser rejects
-          # the pair outright, and the map falls back to the public mirrors
-          # with nothing in the log to say why
-          reverse_proxy overpass:80 {
-            # These queries are slow by design: OVERPASS_TIME above allows 480
-            # seconds of server time, and the default proxy timeout would cut a
-            # long one off at the socket while the server was still working
-            transport http {
-              response_header_timeout 120s
-              read_timeout 120s
-            }
-          }
-        }
+      # Any host, on the container's port 80. No hostname to match, because the
+      # funnel is the only thing that can reach this and it is the funnel that
+      # knows the public name — writing it here as well would be a second place
+      # to update the day it changes
+      :80 {
+      	# Overpass. handle rather than handle_path: the interpreter really is
+      	# at /api/interpreter on the upstream, so the prefix stays on
+      	handle /api/* {
+      		# No CORS header here on purpose. The Overpass container sets its own
+      		# from OVERPASS_CORS_ORIGIN, and a second Access-Control-Allow-Origin
+      		# on the same response is not "more permissive" — a browser rejects
+      		# the pair outright, and the map falls back to the public mirrors
+      		# with nothing in the log to say why
+      		reverse_proxy overpass:80 {
+      			# These queries are slow by design: OVERPASS_TIME above allows 480
+      			# seconds of server time, and the default proxy timeout would cut a
+      			# long one off at the socket while the server was still working
+      			transport http {
+      				response_header_timeout 120s
+      				read_timeout 120s
+      			}
+      		}
+      	}
 
-        # The noise tiles, straight off the disk. `current` is the symlink the
-        # builder swaps, so a rebuild is visible without restarting anything
-        handle_path /tiles/* {
-          root * /srv/tiles/current
+      	# The noise tiles, straight off the disk. `current` is the symlink the
+      	# builder swaps, so a rebuild is visible without restarting anything
+      	handle_path /tiles/* {
+      		root * /srv/tiles/current
 
-          # `defer` matters, and so does every line in here.
-          #
-          # Without defer these are applied before file_server runs, and
-          # file_server then overwrites Content-Type with the octet-stream it
-          # sniffed — Caddy has no mime type for .pbf — and MapLibre will not
-          # parse a tile that arrives as octet-stream.
-          #
-          # Content-Encoding is declared rather than produced. tippecanoe
-          # writes the tiles gzipped and they are served as they lie, which is
-          # both smaller on disk and free at request time. Caddy's own `encode`
-          # was tried here and measured at no compression at all on this
-          # content — 49,758 bytes out of 49,733 in, against 38,744 for
-          # gzip -9 — because it emits stored blocks on a streamed file
-          header {
-            defer
-            Content-Type "application/x-protobuf"
-            Content-Encoding "gzip"
+      		# `defer` matters, and so does every line in here.
+      		#
+      		# Without defer these are applied before file_server runs, and
+      		# file_server then overwrites Content-Type with the octet-stream it
+      		# sniffed — Caddy has no mime type for .pbf — and MapLibre will not
+      		# parse a tile that arrives as octet-stream.
+      		#
+      		# Content-Encoding is declared rather than produced. tippecanoe
+      		# writes the tiles gzipped and they are served as they lie, which is
+      		# both smaller on disk and free at request time. Caddy's own `encode`
+      		# was tried here and measured at no compression at all on this
+      		# content — 49,758 bytes out of 49,733 in, against 38,744 for
+      		# gzip -9 — because it emits stored blocks on a streamed file
+      		header {
+      			defer
+      			Content-Type "application/x-protobuf"
+      			Content-Encoding "gzip"
 
-            # The app is served from wayside.cc and this is another origin, so
-            # the tiles need this to be readable at all. Unlike the Overpass
-            # block above, nothing upstream sets it — these are files
-            Access-Control-Allow-Origin "*"
+      			# The app is served from wayside.cc and this is another origin, so
+      			# the tiles need this to be readable at all. Unlike the Overpass
+      			# block above, nothing upstream sets it — these are files
+      			Access-Control-Allow-Origin "*"
 
-            # A day, and it used to be a month. The month was justified by a
-            # monthly rebuild; with builds run by hand there is no cadence to
-            # match, and the tile URLs carry no hash — so a long cache does not
-            # save a reader anything they would not have had anyway, and it
-            # does stop a rebuild reaching them for as long as it lasts.
-            #
-            # A day is the compromise while the model and the covered area are
-            # still moving. Once both settle, raising this is free: nothing
-            # about these tiles is time-sensitive
-            Cache-Control "public, max-age=86400"
+      			# A day, and it used to be a month. The month was justified by a
+      			# monthly rebuild; with builds run by hand there is no cadence to
+      			# match, and the tile URLs carry no hash — so a long cache does not
+      			# save a reader anything they would not have had anyway, and it
+      			# does stop a rebuild reaching them for as long as it lasts.
+      			#
+      			# A day is the compromise while the model and the covered area are
+      			# still moving. Once both settle, raising this is free: nothing
+      			# about these tiles is time-sensitive
+      			Cache-Control "public, max-age=86400"
 
-            -Server
-          }
+      			-Server
+      		}
 
-          file_server
-        }
+      		file_server
+      	}
 
-        # Nothing else is served from this name. A bare 404 rather than a
-        # redirect to the site: this host is an API endpoint, and anything
-        # asking it for a page is not a reader who took a wrong turn
-        handle {
-          respond 404
-        }
+      	# Nothing else is served from this name. A bare 404 rather than a
+      	# redirect to the site: this host is an API endpoint, and anything
+      	# asking it for a page is not a reader who took a wrong turn
+      	handle {
+      		respond 404
+      	}
 
-        # A tile with nothing in it is not an error. MapLibre treats 404 as an
-        # empty tile but logs it first; 204 says the same thing without filling
-        # a visitor's console with our infrastructure. `close` matters too — a
-        # 204 must carry no body, or the Content-Encoding set above would be
-        # describing a gzip stream that is not there.
-        #
-        # At the site level rather than inside the /tiles block, because
-        # handle_errors is not an ordered handler and Caddy refuses it nested
-        # in a handle_path. It needs no path matcher even so: the `respond 404`
-        # above produces a *response* rather than an error, so the only thing
-        # that ever reaches here with a 404 is file_server missing a tile
-        handle_errors {
-          @missing expression {err.status_code} == 404
-          respond @missing 204 {
-            close
-          }
-        }
+      	# A tile with nothing in it is not an error. MapLibre treats 404 as an
+      	# empty tile but logs it first; 204 says the same thing without filling
+      	# a visitor's console with our infrastructure. `close` matters too — a
+      	# 204 must carry no body, or the Content-Encoding set above would be
+      	# describing a gzip stream that is not there.
+      	#
+      	# At the site level rather than inside the /tiles block, because
+      	# handle_errors is not an ordered handler and Caddy refuses it nested
+      	# in a handle_path. It needs no path matcher even so: the `respond 404`
+      	# above produces a *response* rather than an error, so the only thing
+      	# that ever reaches here with a 404 is file_server missing a tile
+      	handle_errors {
+      		@missing expression {err.status_code} == 404
+      		respond @missing 204 {
+      			close
+      		}
+      	}
 
-        log {
-          output stdout
-          format console
-        }
+      	log {
+      		output stdout
+      		format console
+      	}
       }
-
   matomo-common-config:
     content: |
       ; Matomo settings that are not the installer's to write and not the admin

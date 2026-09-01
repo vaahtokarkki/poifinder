@@ -272,6 +272,19 @@ const App = () => {
   const [layersOpen, setLayersOpen] = useState(false);
 
   /**
+   * Open or close the layers panel, and say so.
+   *
+   * The one door in and out, because the panel has four ways of being shut and
+   * only one of being opened: reporting from each of them separately is how a
+   * report ends up with more opens than closes and no way to tell which of the
+   * two numbers is the wrong one.
+   */
+  const toggleLayers = (open: boolean) => {
+    analytics.layersPanelToggled(open);
+    setLayersOpen(open);
+  };
+
+  /**
    * Paint the bands, or stop painting them.
    *
    * Also re-applied whenever the GL map is replaced, because the style is
@@ -1178,7 +1191,11 @@ const App = () => {
           <div className="map-layers">
             {layersOpen && (
               <LayersPanel
-                onClose={() => setLayersOpen(false)}
+                // Every way out of the panel — the close button, the scrim,
+                // Escape — reports through here, so an open and its close are
+                // one pair in the report rather than a count that only balances
+                // for people who happen to close it the way they opened it
+                onClose={() => toggleLayers(false)}
                 noiseVisible={noiseVisible}
                 onNoiseChange={(visible) => {
                   analytics.noiseLayerToggled(visible);
@@ -1188,11 +1205,7 @@ const App = () => {
             )}
             <LayersIconButton
               open={layersOpen}
-              onClick={() => {
-                const opening = !layersOpen;
-                analytics.layersPanelToggled(opening);
-                setLayersOpen(opening);
-              }}
+              onClick={() => toggleLayers(!layersOpen)}
             />
           </div>
         )}

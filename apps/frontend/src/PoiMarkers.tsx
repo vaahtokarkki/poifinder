@@ -14,7 +14,7 @@ import {
   matchesFilter,
 } from "./constants";
 import { OverpassMarkerData } from "./api/overpass"; // <-- Import the type
-import type { EnclosingBuilding as EnclosingBuildingData } from "./api/overpass";
+import type { EnclosingBuilding as EnclosingBuildingData, OsmRef } from "./api/overpass";
 import { TranslationError, translate } from "./api/translate";
 import type { TranslationFailure } from "./api/translate";
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
@@ -1130,7 +1130,13 @@ const RenderMarkerContents: React.FC<{
           surroundings, worked out rather than recorded. It also renders for
           only a handful of categories, so for most popups this line is the
           whole of it and nothing changes */}
-      <NoiseSection position={marker.position ?? null} category={category} />
+      <NoiseSection
+        position={marker.position ?? null}
+        category={category}
+        // Only for a drawn point. A node has no outline to take a centroid of,
+        // and passing its ref would ask Overpass for one
+        shapeRef={isDrawn(marker) ? shapeRefOf(marker) : null}
+      />
     </div>
   );
 };
@@ -1187,6 +1193,14 @@ const isDrawn = (marker: OverpassMarkerData) =>
 
 /** Tells a way apart from a relation of the same number, which do coexist */
 const shapeKey = (marker: OverpassMarkerData) => `${marker.type}/${marker.id}`;
+
+/**
+ * The same string as an OsmRef, for the lookups that take one. Only ever
+ * called behind isDrawn, which is what makes the narrowing true rather than
+ * asserted — a node has no outline and must not be asked for one
+ */
+const shapeRefOf = (marker: OverpassMarkerData) =>
+  `${marker.type as "way" | "relation"}/${marker.id}` as OsmRef;
 
 const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   markers,

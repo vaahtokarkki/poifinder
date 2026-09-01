@@ -3,6 +3,9 @@ import { Dialog, DialogContent, DialogTitle, Button } from "@mui/material";
 import { ui } from "../copy";
 import { CATEGORIES } from "../constants";
 import { useNoiseBand } from "../hooks/useNoiseBand";
+import { useOsmElement } from "../hooks/useOsmElement";
+import { shapeSamplePoint } from "../geo";
+import type { OsmRef } from "../api/overpass";
 import { analytics } from "../analytics";
 import { BAND_COLOUR } from "../map/noiseTiles";
 import type { NoiseBand } from "../map/noiseTiles";
@@ -55,11 +58,30 @@ const NOISE_WORTH_KNOWING: ReadonlySet<CATEGORIES> = new Set([
 const NoiseSection: React.FC<{
   position: [number, number] | null;
   category: CATEGORIES | null;
-}> = ({ position, category }) => {
+  /** The way or relation this point was drawn as, when it was drawn as one */
+  shapeRef?: OsmRef | null;
+}> = ({ position, category, shapeRef = null }) => {
   const relevant = category !== null && NOISE_WORTH_KNOWING.has(category);
+
+  /**
+   * For a shape, the band under its centroid rather than under its marker.
+   *
+   * The marker is the middle of the bounding box, which for a crescent bay or
+   * an L-shaped park is not inside the park — so the band read there can be
+   * the band of the road the shape bends around. See shapeSamplePoint.
+   *
+   * This costs no request. The popup already asks for the outline of a drawn
+   * point in order to draw it, and useOsmElement dedupes by ref, so the two
+   * callers share the one answer. Until it arrives the marker position is
+   * used, which is what this did before and is right for most shapes anyway;
+   * the row then settles onto the centroid's band a moment later.
+   */
+  const element = useOsmElement(relevant ? shapeRef : null);
+  const sampleAt = shapeSamplePoint(element?.shape ?? null) ?? position;
+
   // Hooks cannot be skipped, so the lookup is told not to bother instead. A
   // popup for a post box therefore costs no query and no listener
-  const band = useNoiseBand(relevant ? position : null);
+  const band = useNoiseBand(relevant ? sampleAt : null);
   const [explaining, setExplaining] = React.useState(false);
 
   if (!relevant || band === null) return null;

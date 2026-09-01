@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { ui } from "../copy";
 import { BAND_COLOUR } from "../map/noiseTiles";
+import { useNoiseCoverage } from "../hooks/useNoiseCoverage";
 
 type LayersPanelProps = {
   onClose: () => void;
@@ -179,6 +180,13 @@ const LayersPanel: React.FC<LayersPanelProps> = ({
   onNoiseChange,
 }) => {
   const copy = ui().controls.layers;
+  /**
+   * Whether the tiles reach where the map is looking. "unknown" while the
+   * layer is loading or the view is zoomed out past the tiles, and nothing is
+   * said then: a notice that appears and then takes itself back is worse than
+   * a reader switching a layer on and finding it empty.
+   */
+  const coverage = useNoiseCoverage();
 
   // Escape closes it, as it closes every other overlay on this map
   useEffect(() => {
@@ -224,6 +232,11 @@ const LayersPanel: React.FC<LayersPanelProps> = ({
             <MiniMap noise />
           </LayerTile>
         </div>
+        {/* Under the row rather than inside the tile: it is a sentence about
+            where the map is, and a 76px tile is not wide enough to hold one */}
+        {coverage === "uncovered" && (
+          <p className="layers-note">{copy.noCoverage}</p>
+        )}
       </div>
     </>
   );

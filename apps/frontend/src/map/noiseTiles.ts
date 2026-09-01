@@ -266,6 +266,55 @@ export function onGlMapChange(listener: () => void): () => void {
 }
 
 /**
+ * Whether the modelled tiles cover where the map is looking.
+ *
+ * Three states rather than a boolean, because "no polygon under the middle of
+ * the screen" has two very different causes and only one of them is worth
+ * telling anybody about. The builder writes quiet as a polygon of its own, so
+ * a covered city answers with a feature wherever you point at it; an answer of
+ * nothing means either that this place is outside every city that was built,
+ * or that there was nothing to ask yet — the layer is not installed, the view
+ * is below the zoom the source has tiles for, or those tiles are still on
+ * their way. Only the first is `uncovered`.
+ *
+ * The middle of the canvas rather than a coordinate, because the question the
+ * panel asks is about the view, not about a point somebody clicked.
+ */
+export type NoiseCoverage = "covered" | "uncovered" | "unknown";
+
+export function noiseCoverageAtCenter(): NoiseCoverage {
+  const map = currentMap;
+  if (!map || !TILES_URL) return "unknown";
+  if (!map.getLayer(NOISE_LAYER_ID)) return "unknown";
+
+  // Under the source's minimum zoom MapLibre asks for no tiles at all, so an
+  // empty query at z8 says nothing about what is in the tiles at z10
+  if (map.getZoom() < MIN_ZOOM) return "unknown";
+
+  let loaded;
+  try {
+    loaded = map.isSourceLoaded(NOISE_SOURCE_ID);
+  } catch {
+    // Between style loads, same as below
+    return "unknown";
+  }
+  // A tile still in flight would answer "nothing here" and then change its
+  // mind, which is the one thing a notice about coverage must not do
+  if (!loaded) return "unknown";
+
+  const canvas = map.getCanvas();
+  const centre: [number, number] = [canvas.clientWidth / 2, canvas.clientHeight / 2];
+
+  try {
+    return map.queryRenderedFeatures(centre, { layers: [NOISE_LAYER_ID] }).length > 0
+      ? "covered"
+      : "uncovered";
+  } catch {
+    return "unknown";
+  }
+}
+
+/**
  * The band under a position, or null when there is no answer yet.
  *
  * Null covers three different things on purpose, because the popup treats them

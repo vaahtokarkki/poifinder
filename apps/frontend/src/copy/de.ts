@@ -283,6 +283,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       basemapDefault: "Standard",
       mapDetails: "Kartendetails",
       trafficNoise: "Verkehrslärm",
+      noCoverage: "Keine Abdeckung in diesem Gebiet",
     },
     myLocation: "Karte auf deinen Standort zentrieren",
     share: "Diesen Ausschnitt teilen",

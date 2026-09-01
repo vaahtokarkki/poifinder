@@ -330,6 +330,11 @@ export type UiCopy = {
       mapDetails: string;
       /** The modelled traffic noise wash. Off until it is asked for */
       trafficNoise: string;
+      /**
+       * Said under that tile when the tiles cover no part of where the map is
+       * looking. Only when we know it — a layer still loading says nothing
+       */
+      noCoverage: string;
     };
     myLocation: string;
     share: string;

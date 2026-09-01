@@ -931,6 +931,7 @@ const ui: CopyDeck["ui"] = {
       basemapDefault: "Default",
       mapDetails: "Map details",
       trafficNoise: "Traffic noise",
+      noCoverage: "No coverage in this area",
     },
     myLocation: "Center map to your location",
     share: "Share this view",

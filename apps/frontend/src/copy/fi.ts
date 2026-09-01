@@ -281,6 +281,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       basemapDefault: "Oletus",
       mapDetails: "Kartan tiedot",
       trafficNoise: "Liikennemelu",
+      noCoverage: "Ei kattavuutta tällä alueella",
     },
     myLocation: "Keskitä kartta sijaintiisi",
     share: "Jaa tämä näkymä",

@@ -309,9 +309,13 @@ body {
 /*
  * The layers button and its panel, in the corner opposite the tool column.
  * Lifted by the sheet exactly as the controls on the right are, so the button
- * stays reachable with the sheet peeking; the panel grows upwards out of it,
- * which is why this is a column that ends at the button rather than each part
- * being placed against the corner on its own.
+ * stays reachable with the sheet peeking; on a wide screen the panel grows
+ * upwards out of the button, which is why this is a column that ends at it.
+ *
+ * Above the bottom sheet rather than under it: on a phone the panel is a sheet
+ * of its own across the foot of the screen, and the scrim over the sheet is
+ * what makes a tap on the page behind put the panel away rather than scroll
+ * something under it.
  */
 .map-layers {
   /* Fixed for the same reason .map-controls is: the map container reaches
@@ -319,7 +323,7 @@ body {
   position: fixed;
   left: 24px;
   bottom: calc(24px + var(--sheet-offset, 0px));
-  z-index: 1200;
+  z-index: 2300;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -327,25 +331,56 @@ body {
   transition: bottom 0.28s cubic-bezier(0.2, 0.8, 0.3, 1);
 }
 
-/* A tap anywhere off the panel closes it. No dimming: the panel is about the
-   map behind it, and darkening that to decide how it should look is perverse */
+/* A tap anywhere off the panel closes it. Barely tinted: the panel is about
+   the map behind it, and darkening that to decide how it should look is
+   perverse — it is there to say the panel has the next tap, not to hide */
 .layers-scrim {
   position: fixed;
   inset: 0;
+  background: rgba(32, 33, 36, 0.12);
+  animation: layers-scrim-in 160ms ease-out;
 }
 
+/*
+ * On a phone the panel is the full width of the screen, sitting on the bottom
+ * edge with only its top corners rounded: a card floating over one corner is a
+ * desktop shape, and at this width it would leave a strip of map down each
+ * side too narrow to be anything but an accident. The button it opened stays
+ * where it is, under the panel.
+ */
 .layers-panel {
-  position: relative;
-  width: min(320px, calc(100vw - 48px));
-  max-height: min(60vh, 420px);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 72vh;
   overflow-y: auto;
   overscroll-behavior: contain;
   background: #fff;
   color: #202124;
-  border-radius: 1em;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
-  padding: 0.9em 1em 1.1em 1em;
-  animation: layers-panel-in 160ms ease-out;
+  border-radius: 1em 1em 0 0;
+  box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.22);
+  /* The last line clears the home indicator on a phone that has one */
+  padding: 1.1em 1.25em calc(1.35em + env(safe-area-inset-bottom, 0px)) 1.25em;
+  animation: layers-panel-up 200ms cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+@keyframes layers-scrim-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes layers-panel-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
 }
 
 @keyframes layers-panel-in {
@@ -364,53 +399,65 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 0.5em;
+  margin-bottom: 0.9em;
 }
 
+/*
+ * "Map type", not "Map layers": the first section's heading is the panel's
+ * heading. The panel's own name is on the button and in the dialog's label,
+ * where it is needed, and not repeated over a single row of tiles.
+ */
 .layers-panel-title {
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
   margin: 0;
 }
 
 .layers-panel-close {
   border: none;
   background: none;
-  color: #5f6368;
+  color: #3c4043;
   cursor: pointer;
   display: flex;
-  padding: 4px;
-  margin: -4px -4px -4px 0;
+  padding: 6px;
+  margin: -6px -6px -6px 0;
   border-radius: 50%;
 }
 
-.layers-section {
-  margin-top: 1.1em;
+.layers-panel-close:hover {
+  background: #f1f3f4;
 }
 
-/* The section headings carry the same weight as the sheet's, one step quieter
-   than the panel's own title */
+/* Between the basemap and the overlays over it. The sections are two different
+   kinds of decision and the rule is what says so */
+.layers-divider {
+  height: 1px;
+  background: #e8eaed;
+  margin: 1.1em 0;
+}
+
+/* Set exactly as the panel's own heading: they are the same rank, and the one
+   at the top is only first because the map is drawn bottom up */
 .layers-section-heading {
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: #5f6368;
-  margin: 0 0 0.6em 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #202124;
+  margin: 0 0 0.9em 0;
 }
 
-/* A row that wraps: two of these fit a phone, and a third layer should land
-   under the first rather than off the side of the panel */
+/* A row that wraps: a third layer should land under the first rather than off
+   the side of the panel */
 .layers-tiles {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75em;
+  gap: 1.1em;
 }
 
 .layers-tile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4em;
+  gap: 0.5em;
   width: 76px;
   border: none;
   background: none;
@@ -424,7 +471,7 @@ button.layers-tile {
   cursor: pointer;
 }
 
-/* The ring and the blue label are the whole of "this one is on" — the swatch
+/* The ring and the blue label are the whole of "this one is on" — the picture
    itself must not change, or a layer would look different in the panel from
    the way it looks on the map */
 .layers-tile.selected {
@@ -432,12 +479,12 @@ button.layers-tile {
 }
 
 .layers-tile-swatch {
-  width: 68px;
-  height: 68px;
+  width: 72px;
+  height: 72px;
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
-  /* The ring is drawn outside the swatch so switching a layer on does not
-     resize the picture of it */
+  /* The ring is drawn outside the picture so switching a layer on does not
+     resize it */
   outline: 2px solid transparent;
   outline-offset: 2px;
   transition: outline-color 0.15s ease;
@@ -462,6 +509,21 @@ button.layers-tile {
   .map-layers {
     left: 492px;
     bottom: 24px;
+  }
+
+  /* And there is room for the panel to be a card over the map again, standing
+     on the button that opened it */
+  .layers-panel {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 320px;
+    max-height: min(60vh, 460px);
+    border-radius: 1em;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.22);
+    padding: 1.1em 1.25em 1.35em 1.25em;
+    animation: layers-panel-in 160ms ease-out;
   }
 }
 

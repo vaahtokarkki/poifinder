@@ -64,9 +64,8 @@ still needs an extract that covers it: `NOISE_EXTRACTS` decides what is
 available, and an area no extract overlaps is skipped with a line saying so.
 
 Large boxes work and are not stopped — a note is printed above 5,000 km² and
-the build goes ahead. What it costs is memory and time rather than correctness:
-the grid is one cell per 20 m across the whole box, so its cost grows with the
-area and not with how much is in it, and the tile count grows with area too.
+the build goes ahead. What it costs is time rather than correctness: every road
+inside is buffered, and the tile count grows with area.
 
 ## Production
 
@@ -101,72 +100,50 @@ site has until the next run.
 
 ## How the model works
 
-It doesn't. That is the point of it.
+Four steps, and the whole of it is in `bin/noise-bands`.
 
-**[NoiseModelling][nm] is the model** — CNOSSOS-EU, the EU's own method under
-Directive 2015/996, from Université Gustave Eiffel. Emission by road class,
-propagation, diffraction over and around buildings, specular reflection off
-façades, ground effect: all of it is theirs, and it is the same method the
-published maps this is validated against are themselves made with. Nothing in
-this repository computes an acoustic quantity.
+**A level per way.** Each road gets a sound level in dB at 10 m, from its
+`highway` class — motorway 78 down to service 55 — adjusted by `maxspeed` and
+`lanes`, both clamped hard because they are present on a minority of ways and a
+missing one must not swing the answer. Railways are on the same scale, split by
+`usage=main`. A way in a tunnel is not a source at all, which is the single
+largest correction available from OSM tagging and is free.
 
-What is here is the order things run in:
+**A distance for each band edge.** The level falls by 10·log₁₀(d/10) — 3 dB per
+doubling, because a road is a *line* source and not a point one. Beyond 50 m a
+ground-effect term steepens it. Inverting that for 65 dB and 55 dB gives two
+radii per way:
 
-**Cut.** `osmium extract` takes each area out of every extract whose bounding
-box it overlaps, and the pieces are merged into one `.osm.pbf` per area. There
-is no tag filtering — `Import_OSM` selects what its model needs, and a filter
-of ours in front of it would only be a second opinion.
+| Class | 65 dB | 55 dB |
+| --- | --- | --- |
+| motorway | 108 m | 388 m |
+| trunk | 84 m | 300 m |
+| primary | 57 m | 204 m |
+| secondary | 32 m | 139 m |
+| tertiary | 16 m | 95 m |
+| residential | — | 32 m |
 
-An area is cut from *every* overlapping extract deliberately: Geneva and Basel
-are ringed by roads in France and Germany, and cutting from one extract only
-would model them as if that traffic did not exist. The box is padded by 1300 m,
-which has to stay above `NOISE_MAX_SRC_DIST` or a band would stop at the edge of
-the cut rather than at the edge of what makes it.
-
-**Model.** `bin/ScriptRunner` runs [`groovy/wayside-bands.groovy`](groovy/wayside-bands.groovy),
-which is the whole of our involvement: `Import_OSM` → `Regular_Grid` →
-`Road_Emission_from_Traffic` → `Noise_level_from_source` → `Create_Isosurface`
-→ `Export_Table`. The isosurface breaks are `55.0,65.0,200.0`, so the three
-bands come out of the tool rather than being thresholded afterwards, and the
-export renames `ISOLVL` to the one-based `band` the app reads.
-
-Receivers sit on a 25 m grid at 4 m above ground — the height END maps are
-computed at, and therefore the height the reference in `bin/validate-bands` is
-measured at. `NOISE_DELTA` is the knob, and a CNOSSOS run costs roughly its
-square: one screen pixel at z12 is about 23 m, so finer buys detail nobody can
-see at a price that is very visible.
-
-The projection is UTM, picked from each area's own centre. NoiseModelling wants
-a metric SRID and chooses none for us.
-
-**Tile.** tippecanoe writes z10–z12, gzipped. The client overzooms above 12,
-which for three smooth polygons costs nothing. `current` is a symlink swapped
-at the end of a run, so a rebuild is one atomic rename and a build that dies
-leaves the served tiles untouched.
+**Buffer and union.** Ways are bucketed by radius so the buffer runs once per
+distance rather than once per way, in a local metric frame centred on the area.
+The unions become band 3, band 2 is what is left of the 55 dB union, and band 1
+is the rest of the area.
 
 Quiet is a polygon rather than the absence of one, deliberately. A reader
 outside every built area has to be told nothing, and a reader in a quiet park
 has to be told "quiet"; with quiet drawn, the popup tells them apart by whether
 it found a feature at all.
 
-### What this replaced, and why
+An area is cut from *every* extract whose bounding box it overlaps, and the
+pieces are concatenated before the model runs. That is not tidiness: Geneva and
+Basel are ringed by roads in France and Germany, and cutting from one extract
+only would model them as if that traffic did not exist. Ways duplicated across
+an extract overlap are harmless, since the model unions its buffers.
 
-A hand written model lived in `bin/noise-bands` until it was measured. It
-buffered each road at the distance where that road alone crossed a threshold
-and unioned the buffers; later it grew a receiver grid, energy summation and a
-building screening term. Against Berlin's END façade levels the grown version
-scored **41.3% balanced accuracy against the 57.2%** of the cruder thing it had
-replaced, and found **8% of genuinely noisy places against 87%**.
-
-The reason was not a bad constant, and no value of one would have fixed it.
-Buildings both shield and reflect — a courtyard is quieter than free field, a
-street canyon is louder — and a model that can only ever subtract cannot do
-both. Every increase in the screening term bought courtyards and lost noisy
-streets, monotonically, across a six-point sweep.
-
-That is the whole argument for using someone else's model. Not that ours was
-badly written, but that the physics has two signs in it and a shortcut that
-only has one will always be trading one error for the other.
+**Tile.** tippecanoe writes z10–z12, gzipped. The client overzooms above 12,
+which for three smooth polygons costs nothing — a z12 tile carries about 1.5 m
+of resolution, far finer than a band edge that was modelled rather than
+measured. Roughly 350 files for the 36 tier 1 cities; going to z15 would be
+18,000 for no visible gain.
 
 ## Accuracy, and what would improve it
 
@@ -182,87 +159,105 @@ OpenStreetMap says how many cars use a road. Three coarse bands are the most
 that can honestly be claimed from that input, which is why there are three and
 why the popup says "modelled" out loud rather than hiding it in a tooltip.
 
+### Sound adds, and this does not add it
+
+The structural error, and the one worth knowing before trusting a band. A real
+model puts receivers on a grid and sums the energy reaching each one:
+`10·log₁₀(Σ 10^(Lᵢ/10))`. Two equal sources are 3 dB louder than one.
+
+This buffers each way independently and unions the results, so a place reached
+by several roads is scored as if only the nearest mattered. With the same
+constants:
+
+| Situation | Summed properly | This says |
+| --- | --- | --- |
+| Two primary roads 140 m apart, point midway | 66.4 dB — band 3 | band 2 |
+| Ten residential streets, point 40 m from each | 64.0 dB — band 2 | band 1, quiet |
+
+This section used to end by calling that error one-directional — that it
+understates in dense areas and never overstates, which would be the wrong way
+round for a feature about finding somewhere quiet. **That was wrong, and it is
+worth reading why, because it is the reason this model is still here.**
+
 ### What the measurement found
 
-Berlin publishes its END strategic noise map as facade levels — a point on
+Berlin publishes its END strategic noise map as façade levels — a point on
 every noise-affected residential wall carrying the Lden of all assessed
-sources, four million of them, over WFS. `bin/validate-bands` scores the model
-against it. The first run, on the buffer model this used to be, over 5,275
-sampled points:
+sources, four million of them, over WFS. `bin/validate-bands` scores a build
+against it. Everything below is 5,279 sampled points, same points each time.
 
-| | |
-| --- | --- |
-| exact agreement | 40.2% |
-| model **over**-stated | 53.9% |
-| model **under**-stated | 5.9% |
-| published >=65 dB where the model said quiet | **0.0%** |
+| model | balanced accuracy | finds noisy | says quiet wrongly |
+| --- | --- | --- | --- |
+| **this one** | **57.2%** | **87%** | **0.0%** |
+| grid + energy summation + building screening, 12 dB | 41.3% | 8% | 1.6% |
+| the same at 9 dB | 40.6% | 25% | 0.4% |
+| the same at 7 dB | 47.9% | 43% | 0.0% |
+| the same at 5 dB | 50.0% | 63% | 0.0% |
 
-This section used to say the opposite. It argued that unioned buffers cannot
-add two sources together, that the error was therefore one-directional, and
-that "somewhere it calls quiet may not be". The reasoning was right and the
-conclusion was backwards, because it accounted for one error and there were
-two. The other was having no buildings at all, and in Berlin it was the larger
-by roughly nine to one: a courtyard behind a Mietskaserne block is 20 dB
-quieter than the street it is 25 m from, and a model that cannot see the block
-called the whole block loud.
+A grid model with proper energy summation and building shielding was built,
+shipped, and measured **worse than this one on every metric that carries a
+promise**. Six configurations were swept and none came close.
 
-Two known errors in opposite directions do not cancel to "roughly right", and
-which one dominates is not something to reason out from first principles. One
-afternoon against a published map settled it.
+Watch the metric. Plain agreement makes the 12 dB grid look 18 points *better*
+than this — 58.6% against 40.2% — and that is an artefact: 59.5% of façade
+points are genuinely quiet, so a model that says "quiet" everywhere scores
+59.5%, and the grid was scoring no better than a constant. Balanced accuracy is
+what the base rate cannot flatter.
 
-### What changed as a result
+**Why adding buildings made it worse.** Buildings both shield and reflect. A
+courtyard is quieter than free field; a street canyon is louder. A screening
+term can only subtract, so every increase bought courtyards and lost noisy
+streets, monotonically. Two errors of opposite sign are not fixed by one knob.
 
-**Receivers on a grid.** Each cell takes the distance to the nearest source in
-each emission-level bucket, converts it to a level, and the levels are summed
-as energy rather than the loudest winning. A flat and a motorway now add.
+**Why CNOSSOS was not adopted instead.** It was tried — NoiseModelling, in a
+branch, driven headlessly from its own Docker image, with the full chain
+working end to end. It is the right answer and it is too expensive here:
+measured on a 13 km² box in Bremen at 25 m receivers, one of sixteen cells took
+four and a half minutes, which puts Berlin's 452 km² at around 40 hours on this
+hardware. Coarsening until it fits gives up the resolution that made it worth
+having. See the git history for the pipeline, which worked.
 
-**Buildings.** A cell whose straight line to the source it hears crosses a
-building takes `SCREEN_ATTENUATION` off — a flat 12 dB, which is the middle of
-what a single screen is worth in the real methods. It is straight-line
-blocking, not diffraction: a low shed shields as well as a six-storey block,
-because footprints are all OpenStreetMap gives and heights would be a guess.
+So this model stays — not because it is good, but because it is the best thing
+measured, and now there is a way to measure.
 
-**Not the band edges.** 55 and 65 dB Lden are the [END][end] reporting
-threshold and the step above it, and they stayed. The measurement was taken at
-facades, which include courtyard walls — the most shielded places in a city and
-the ones a model without buildings gets most wrong. The points this app maps
-are benches and playgrounds, in the open, where the same error is much smaller.
-So the over-statement is an upper bound on the error a reader sees, not the
-error itself, and moving a threshold on it would have over-corrected for the
-places that actually matter. Fix the mechanism, then re-measure.
-
-### Re-running it
+### Re-running the measurement
 
 ```bash
-docker compose run --rm builder validate-bands \
+docker compose -f docker-compose.prod.yml run --rm builder \
+  build-noise-tiles berlin --keep-work
+docker compose -f docker-compose.prod.yml run --rm --entrypoint validate-bands builder \
   --bands=/work/bands/berlin.geojson --lat=52.52 --lon=13.405 --radius=12000
 ```
 
-`--wfs`, `--layer` and `--field` point it at another city's END service. Watch
-the bottom line rather than the accuracy: how often the map says quiet where
-the city says noisy is the only cell with a promise attached to it.
+`--wfs`, `--layer` and `--field` point it at another city's END service. Read
+the last line rather than the accuracy: how often the map says quiet where the
+city says noisy is the only number with a promise attached to it.
 
-### What is still missing
+### The band edges
 
-1. **Traffic counts where they are published.** Britain's DfT figures cover
+The band edges are 55 and 65 dB Lden, which are the [END][end] reporting
+threshold and the step above it, so "quiet" means what it means on a strategic
+noise map rather than what it means relative to the rest of the city. The
+constants that place them there are parameters, not physics. In rough order of
+what would improve them:
+
+1. **Fit against published contours.** EU agglomerations over 100,000 people
+   publish Lden maps under END, on a five-year cycle, as vector contours. Fit
+   `BASE_LEVEL` and the two decay coefficients against a handful of cities that
+   publish them, then report the confusion matrix across the three bands for
+   cities held out. That turns the ladder from a guess into a measurement and
+   costs no new input data.
+2. **Building shielding.** After distance, buildings are the largest term in a
+   city, and OSM has the footprints. Counting footprints on the sight line is a
+   crude Maekawa stand-in and would be the first thing to make a courtyard read
+   differently from the street it opens off.
+3. **Traffic counts where they are published.** Britain's DfT figures cover
    every major road; several German and Nordic cities publish DTV layers. This
    replaces the guess at the centre of both this model and CNOSSOS.
-2. **Diffraction rather than blocking.** The screening term is flat because
-   this reads footprints and not heights. `building:levels` is well tagged in
-   German cities and would turn one constant into a path-difference
-   calculation.
-3. **Summation within a level bucket.** Two residential streets either side of
-   a receiver still count once, not twice, because a bucket contributes through
-   its nearest source only. Across buckets the energy does add, which is where
-   most of the missing sum was.
-4. **Fit the constants.** `BASE_LEVEL`, the two decay coefficients and
-   `SCREEN_ATTENUATION` are all parameters. With `validate-bands` there is now
-   a loss function to fit them against — an asymmetric one, penalising a false
-   quiet several times a false loud.
-5. **NoiseModelling itself**, once the above shows the cheap model is the thing
-   holding the answer back. It is GPL, which reaches the software and not the
-   data it produces, so running it as a batch step changes nothing about the
-   licensing below.
+4. **NoiseModelling itself**, once any of the above shows the cheap model is the
+   thing holding the answer back. It is GPL, which reaches the software and not
+   the data it produces, so running it as a batch step changes nothing about
+   the licensing below.
 
 ## Licence
 

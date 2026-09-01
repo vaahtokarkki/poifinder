@@ -35,9 +35,9 @@ services:
       # The downloaded extracts, and the expensive thing to lose: roughly 5 GB
       # for Germany alone. A rebuild with a warm cache starts at the cut
       - /mnt/hdd1/noise/cache:/cache
-      # The intermediates: the per-area OSM cut and NoiseModelling's H2
-      # database. A volume rather than the container's own filesystem, because
-      # --keep-work used to keep them somewhere `--rm` deleted a moment later
+      # The intermediates. A volume rather than the container's own
+      # filesystem, because --keep-work used to keep them somewhere
+      # `docker run --rm` deleted a moment later
       - /mnt/hdd1/noise/work:/work
 
     environment:
@@ -56,33 +56,17 @@ services:
       NOISE_MIN_ZOOM: "10"
       NOISE_MAX_ZOOM: "12"
 
-      # How far apart the receivers sit, and how far a source may reach one.
-      #
-      # These are the two numbers that decide whether a city finishes. CNOSSOS
-      # is a real model and it costs real time: measured on a 13 km2 box in
-      # Bremen at 25 m receivers and 500 m reach, one of its sixteen cells took
-      # four and a half minutes — about 40 hours for Berlin's 452 km2.
-      #
-      # 50 m quarters the receivers and 250 m roughly quarters the sources each
-      # one pairs with, which brings Berlin to a few hours. What 50 m costs is
-      # detail: Create_Isosurface interpolates over a triangulation, so the
-      # bands stay smooth, they just stop resolving anything smaller than a
-      # large courtyard. What 250 m costs is the far field of a motorway.
-      #
-      # Both are worth revisiting on a machine that is not a laptop
-      NOISE_DELTA: "50"
-      NOISE_MAX_SRC_DIST: "250"
+      # The intermediates, onto the volume above. The image defaults this to
+      # /tmp inside the container, which is on the container's own writable
+      # layer — so --keep-work kept them somewhere `docker run --rm` deleted a
+      # moment later, and a build could not be inspected after it finished
+      NOISE_WORK_DIR: /work
 
-      # The JVM's ceiling. This box has 7.6 GB and Overpass is in most of it,
-      # so the model gets a bounded share rather than the machine
-      JAVA_OPTS: "-Xmx3g"
 
-    # CNOSSOS parallelises across receivers and this is the one job on the box
-    # that can use every core, so it gets most of them. Measured: the
-    # propagation is far and away the longest step, and throttling it to a
-    # single core is how a city becomes an overnight job instead of an hour.
-    # Left short of the full machine so the API stays answerable
-    cpus: 3.0
+
+    # A share of the machine. This competes with the Overpass importer rather
+    # than with the API, and both should lose to it
+    cpus: 1.5
 
     logging:
       driver: json-file

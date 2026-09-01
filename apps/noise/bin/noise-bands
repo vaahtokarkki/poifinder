@@ -1,0 +1,467 @@
+#!/usr/bin/env python3
+#
+# Turn a city's roads and railways into three noise bands.
+#
+#   noise-bands --lines=AREA.geojsonseq --slug=helsinki --output=helsinki.geojson \
+#               --lat=60.17 --lon=24.94 --radius=8000
+#   noise-bands --lines=AREA.geojsonseq --slug=kallio --output=kallio.geojson \
+#               --bbox=24.93,60.17,25.00,60.20
+#
+# Reads line-delimited GeoJSON as `osmium export -f geojsonseq` writes it, and
+# writes one FeatureCollection of band polygons covering the area asked for —
+# a circle around a city, or any rectangle.
+#
+# WHAT THIS IS, AND WHAT IT IS NOT
+#
+# It is not a noise model. CNOSSOS-EU is the noise model, the EU's own method
+# under Directive 2015/996, and NoiseModelling implements it from this same
+# OpenStreetMap input — see the README. What that needs and this does not have
+# is traffic volume, a terrain model, and building-by-building diffraction.
+#
+# What this is: a distance decay around each road, with the decay distance set
+# by what the road looks like in OpenStreetMap. It gets the shape of the answer
+# right — motorways reach much further than side streets, and a park's edge is
+# louder than its middle — and it cannot get the level right, because nothing
+# here knows how many cars use the road. Three coarse bands are the most that
+# can honestly be claimed from that, which is why there are three.
+#
+# The numbers below are therefore parameters, not physics. They were chosen to
+# put the band edges roughly where published strategic noise maps put theirs;
+# the way to improve them is to fit them against END contours for a city that
+# publishes both, not to reason about them harder.
+#
+# THE ONE THING THIS GETS STRUCTURALLY WRONG
+#
+# Sound adds. Two sources of equal level are 3 dB louder than one, and a real
+# model works on a grid of receivers, summing 10*log10(sum(10^(Li/10))) over
+# every source that reaches each of them.
+#
+# This does not do that. It buffers each way at the distance where that way
+# alone crosses a threshold and unions the buffers, which is a much cheaper
+# shape of computation — no grid, no per-receiver loop, no raster stack — and
+# it is wrong wherever several sources reach the same place. Measured against
+# proper summation with these same constants:
+#
+#   two primary roads 140 m apart, a point midway: 66.4 dB summed, so band 3.
+#   Neither road's own 65 dB radius is 57 m, so this calls it band 2.
+#
+#   ten residential streets around a point 40 m away: 64.0 dB summed, band 2.
+#   One street's 55 dB radius is 32 m, so this calls it band 1 — quiet.
+#
+# So the error is one-directional: this UNDER-states noise in dense areas,
+# never over-states it. A place it calls loud really is loud; a place it calls
+# quiet may not be. That is the wrong way round for a feature about finding
+# somewhere quiet, and it is the first thing to fix if the layer proves useful
+# — see "Accuracy" in README.md for what fixing it would take.
+
+import argparse
+import json
+import math
+import sys
+
+from shapely.geometry import Point, Polygon, mapping, shape
+from shapely.ops import transform, unary_union
+
+# From shapely.validation rather than the top level package: Debian bookworm
+# ships shapely 1.8, where the top level re-export does not exist yet. This
+# path is the one that works in both 1.8 and 2.x
+from shapely.validation import make_valid
+
+# ---------------------------------------------------------------- the sources
+
+# Sound level in dB at 10 m from the source, by what the way is.
+#
+# The ladder matters more than any single value: what the output says is which
+# roads reach further than which, and that ordering is the part OpenStreetMap
+# actually knows. Absolute placement is what the thresholds below calibrate.
+BASE_LEVEL = {
+    "motorway": 78.0,
+    "motorway_link": 74.0,
+    "trunk": 76.0,
+    "trunk_link": 72.0,
+    "primary": 73.0,
+    "primary_link": 70.0,
+    "secondary": 70.0,
+    "secondary_link": 67.0,
+    "tertiary": 67.0,
+    "tertiary_link": 65.0,
+    "unclassified": 62.0,
+    "residential": 60.0,
+    "living_street": 55.0,
+    "service": 55.0,
+    "pedestrian": 50.0,
+}
+
+# Rail is a separate source with a different signature, folded onto the same
+# scale because the output has one axis. `usage=main` is the line with real
+# traffic on it; a siding tagged railway=rail is not, hence the split
+RAIL_LEVEL = {
+    "rail_main": 74.0,
+    "rail_other": 64.0,
+    "light_rail": 69.0,
+    "subway": 62.0,
+    "tram": 68.0,
+}
+
+# Speed's contribution, relative to 50 km/h. Rolling noise rises with the log
+# of speed; the coefficient is low and the clamp is tight because maxspeed is
+# present on a minority of ways and a missing one must not swing the answer
+SPEED_COEFFICIENT = 10.0
+SPEED_REFERENCE = 50.0
+SPEED_CLAMP = (-4.0, 6.0)
+
+# Lanes stand in for traffic volume, which is the number nobody has. Two lanes
+# is the reference; the clamp keeps a mis-tagged twelve-lane junction from
+# painting a district
+LANES_COEFFICIENT = 10.0
+LANES_REFERENCE = 2.0
+LANES_CLAMP = (0.0, 5.0)
+
+# A road on a bridge radiates over what would otherwise shield it
+BRIDGE_BONUS = 2.0
+
+# ------------------------------------------------------------ the propagation
+
+# A road is a line source, so the near field falls 3 dB per doubling of
+# distance rather than the 6 dB of a point source. Getting this wrong is the
+# classic error: under the point-source law a motorway 400 m away disappears.
+NEAR_FIELD_COEFFICIENT = 10.0
+REFERENCE_DISTANCE = 10.0
+
+# Beyond about 50 m, ground effect and air absorption take over and the decay
+# steepens. Without this term the model is geometric spreading alone and puts
+# the 55 dB contour of a motorway two kilometres out, which is several times
+# where any published map puts it
+GROUND_EFFECT_COEFFICIENT = 8.0
+GROUND_EFFECT_ONSET = 50.0
+
+# The band edges, in dB. These are the END reporting threshold and the step
+# above it, so "quiet" here means what it means on a strategic noise map rather
+# than what it means relative to the rest of this city
+THRESHOLD_NOISY = 65.0
+THRESHOLD_MODERATE = 55.0
+
+# Past this there is nothing left to draw and every extra metre of buffer costs
+# real time. At the ladder above, only a motorway reaches it
+MAX_RADIUS = 1200.0
+
+# Two ways whose radii differ by less than this share a buffer. Buffering one
+# merged geometry per bucket rather than one per way is the difference between
+# a city taking seconds and taking minutes, and 5 m is far inside what three
+# bands can express
+RADIUS_BUCKET = 5.0
+
+# Vertices are the cost here, twice over: in the buffer and in the tile. A 5 m
+# simplification on the input and 8-sided arcs on the buffer are both invisible
+# at the zooms these tiles are drawn at
+LINE_SIMPLIFY = 5.0
+BUFFER_QUAD_SEGMENTS = 2
+OUTPUT_SIMPLIFY = 8.0
+
+
+def level_for(properties):
+    """The emission level of one way, or None if it is not a source."""
+    highway = properties.get("highway")
+    railway = properties.get("railway")
+
+    if highway in BASE_LEVEL:
+        level = BASE_LEVEL[highway]
+    elif railway:
+        if railway == "rail":
+            level = RAIL_LEVEL[
+                "rail_main" if properties.get("usage") == "main" else "rail_other"
+            ]
+        elif railway in RAIL_LEVEL:
+            level = RAIL_LEVEL[railway]
+        else:
+            return None
+    else:
+        return None
+
+    # A road in a tunnel is not a source at all. This is the single largest
+    # correction available from OSM tagging alone, and it is free
+    if properties.get("tunnel") not in (None, "no"):
+        return None
+
+    if highway:
+        level += speed_correction(properties.get("maxspeed"))
+        level += lanes_correction(properties.get("lanes"))
+
+    if properties.get("bridge") not in (None, "no"):
+        level += BRIDGE_BONUS
+
+    return level
+
+
+def speed_correction(raw):
+    """
+    maxspeed is free text in practice: "30", "30 mph", "DE:urban", "walk".
+    Only a leading number is usable, and anything else stays at the reference
+    rather than being guessed at.
+    """
+    if not raw:
+        return 0.0
+    text = str(raw).strip()
+    digits = ""
+    for character in text:
+        if character.isdigit():
+            digits += character
+        else:
+            break
+    if not digits:
+        return 0.0
+    speed = float(digits)
+    if "mph" in text:
+        speed *= 1.609
+    if speed <= 0:
+        return 0.0
+    correction = SPEED_COEFFICIENT * math.log10(speed / SPEED_REFERENCE)
+    return max(SPEED_CLAMP[0], min(SPEED_CLAMP[1], correction))
+
+
+def lanes_correction(raw):
+    try:
+        lanes = float(str(raw).split(";")[0])
+    except (TypeError, ValueError):
+        return 0.0
+    if lanes <= 0:
+        return 0.0
+    correction = LANES_COEFFICIENT * math.log10(lanes / LANES_REFERENCE)
+    return max(LANES_CLAMP[0], min(LANES_CLAMP[1], correction))
+
+
+def radius_for(level, threshold):
+    """
+    How far from a source of this level the given threshold is crossed.
+
+    Inverts the two-slope decay by bisection rather than algebraically: the two
+    terms have different onsets, so there is no closed form worth the reading,
+    and forty iterations on a monotone function is nothing.
+    """
+    if level <= threshold:
+        return 0.0
+
+    def level_at(distance):
+        value = level - NEAR_FIELD_COEFFICIENT * math.log10(
+            distance / REFERENCE_DISTANCE
+        )
+        if distance > GROUND_EFFECT_ONSET:
+            value -= GROUND_EFFECT_COEFFICIENT * math.log10(
+                distance / GROUND_EFFECT_ONSET
+            )
+        return value
+
+    low, high = REFERENCE_DISTANCE, MAX_RADIUS
+    if level_at(high) >= threshold:
+        return MAX_RADIUS
+    for _ in range(40):
+        middle = (low + high) / 2
+        if level_at(middle) >= threshold:
+            low = middle
+        else:
+            high = middle
+    return low
+
+
+# ------------------------------------------------------------- the projection
+
+
+class LocalMetres:
+    """
+    Longitude and latitude to metres and back, around one city.
+
+    Buffering in degrees is wrong by a factor of two at these latitudes — a
+    degree of longitude is cos(latitude) of a degree of latitude — and pulling
+    in a projection library for a 15 km circle is more dependency than the
+    problem deserves. An equirectangular frame centred on the city is accurate
+    to well under a metre over that distance, which is far inside a band edge.
+    """
+
+    METRES_PER_DEGREE_LATITUDE = 110540.0
+    METRES_PER_DEGREE_LONGITUDE = 111320.0
+
+    def __init__(self, lat, lon):
+        self.lat = lat
+        self.lon = lon
+        self.x_scale = self.METRES_PER_DEGREE_LONGITUDE * math.cos(math.radians(lat))
+
+    def forward(self, coordinates):
+        return [
+            (
+                (x - self.lon) * self.x_scale,
+                (y - self.lat) * self.METRES_PER_DEGREE_LATITUDE,
+            )
+            for x, y in coordinates
+        ]
+
+    def inverse_geometry(self, geometry):
+        def back(x, y, z=None):
+            return (
+                self.lon + x / self.x_scale,
+                self.lat + y / self.METRES_PER_DEGREE_LATITUDE,
+            )
+
+        return transform(back, geometry)
+
+
+# -------------------------------------------------------------------- reading
+
+
+def read_sources(path, projection, clip):
+    """
+    Every way that makes noise, in metres, bucketed by how far it carries.
+
+    Returns {threshold: {bucket_radius: [geometry, ...]}} — the bucketing is
+    what lets the buffer run once per distance rather than once per way.
+    """
+    buckets = {THRESHOLD_NOISY: {}, THRESHOLD_MODERATE: {}}
+    read = kept = 0
+
+    with open(path, "r", encoding="utf-8") as handle:
+        for line in handle:
+            # osmium writes a record separator (0x1e) before each object in
+            # geojsonseq, which json.loads will not accept
+            line = line.strip().lstrip("\x1e").strip()
+            if not line:
+                continue
+            read += 1
+            try:
+                feature = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+
+            geometry = feature.get("geometry") or {}
+            if geometry.get("type") != "LineString":
+                continue
+
+            level = level_for(feature.get("properties") or {})
+            if level is None:
+                continue
+
+            try:
+                projected = shape(
+                    {
+                        "type": "LineString",
+                        "coordinates": projection.forward(geometry["coordinates"]),
+                    }
+                )
+            except Exception:
+                continue
+            if projected.is_empty or projected.length == 0:
+                continue
+
+            # Anything whose whole influence falls outside the area being
+            # built is dropped here, before it costs a buffer
+            if projected.distance(clip) > MAX_RADIUS:
+                continue
+
+            projected = projected.simplify(LINE_SIMPLIFY, preserve_topology=False)
+            kept += 1
+
+            for threshold in buckets:
+                radius = radius_for(level, threshold)
+                if radius <= 0:
+                    continue
+                bucket = round(radius / RADIUS_BUCKET) * RADIUS_BUCKET
+                if bucket <= 0:
+                    continue
+                buckets[threshold].setdefault(bucket, []).append(projected)
+
+    return buckets, read, kept
+
+
+def union_buffers(bucket):
+    """One buffer per distance, unioned. Empty geometry when there is nothing."""
+    pieces = []
+    for radius, geometries in bucket.items():
+        merged = unary_union(geometries)
+        # Positional, not keyword: shapely 1.8 calls this argument
+        # `resolution` and 2.x calls it `quad_segs`, and only the position is
+        # the same in both
+        pieces.append(merged.buffer(radius, BUFFER_QUAD_SEGMENTS))
+    if not pieces:
+        return Polygon()
+    return unary_union(pieces)
+
+
+# --------------------------------------------------------------------- output
+
+
+def band_features(clip, noisy, moderate):
+    """
+    The three bands, as disjoint polygons covering the whole clip region.
+
+    Quiet is a polygon rather than the absence of one, on purpose. A reader
+    outside every built area has to be told nothing at all, and a reader in a
+    quiet park has to be told "quiet" — those are different answers. With quiet
+    drawn, the popup tells them apart by whether it found a feature.
+    """
+    noisy_band = make_valid(noisy.intersection(clip))
+    moderate_band = make_valid(moderate.difference(noisy).intersection(clip))
+    quiet_band = make_valid(clip.difference(moderate))
+    return [(3, noisy_band), (2, moderate_band), (1, quiet_band)]
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--lines", required=True)
+    parser.add_argument("--slug", required=True)
+    parser.add_argument("--output", required=True)
+    # A circle around a city...
+    parser.add_argument("--lat", type=float)
+    parser.add_argument("--lon", type=float)
+    parser.add_argument("--radius", type=float)
+    # ...or any rectangle, as west,south,east,north in degrees
+    parser.add_argument("--bbox")
+    arguments = parser.parse_args()
+
+    if arguments.bbox:
+        west, south, east, north = (float(part) for part in arguments.bbox.split(","))
+        if west >= east or south >= north:
+            parser.error(f"--bbox must be west,south,east,north: got {arguments.bbox}")
+        # Centred on the box, so the equirectangular frame's error is smallest
+        # where the box actually is. A box wide enough for that to matter is a
+        # box too wide for this model to be interesting anyway
+        projection = LocalMetres((south + north) / 2, (west + east) / 2)
+        corners = projection.forward(
+            [(west, south), (east, south), (east, north), (west, north)]
+        )
+        clip = Polygon(corners)
+    elif arguments.lat is not None and arguments.lon is not None and arguments.radius:
+        projection = LocalMetres(arguments.lat, arguments.lon)
+        clip = Point(0, 0).buffer(arguments.radius, 16)
+    else:
+        parser.error("give either --bbox, or all of --lat, --lon and --radius")
+
+    buckets, read, kept = read_sources(arguments.lines, projection, clip)
+    noisy = union_buffers(buckets[THRESHOLD_NOISY])
+    moderate = union_buffers(buckets[THRESHOLD_MODERATE])
+
+    features = []
+    for band, geometry in band_features(clip, noisy, moderate):
+        if geometry.is_empty:
+            continue
+        geometry = geometry.simplify(OUTPUT_SIMPLIFY, preserve_topology=True)
+        if geometry.is_empty:
+            continue
+        features.append(
+            {
+                "type": "Feature",
+                # `area`, not `city`: these are city circles and arbitrary
+                # bounding boxes alike, and only `band` is ever read by the app
+                "properties": {"band": band, "area": arguments.slug},
+                "geometry": mapping(projection.inverse_geometry(geometry)),
+            }
+        )
+
+    with open(arguments.output, "w", encoding="utf-8") as handle:
+        json.dump({"type": "FeatureCollection", "features": features}, handle)
+
+    print(
+        f"  {arguments.slug}: {read} ways read, {kept} sources, {len(features)} bands",
+        file=sys.stderr,
+    )
+
+
+if __name__ == "__main__":
+    main()

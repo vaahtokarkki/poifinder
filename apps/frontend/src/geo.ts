@@ -68,6 +68,85 @@ export function filterMarkersInBbox(
  * turf cannot make a polygon of, so that the caller keeps the marker position
  * rather than losing the row.
  */
+/**
+ * How many points across a shape are worth reading a modelled value at.
+ *
+ * The grid below is laid over the bounding box and thinned to what falls
+ * inside, so a compact park keeps most of its candidates and a crescent bay
+ * keeps a third of them. Twenty five candidates is the size where a playground
+ * the size of a tennis court still gets several readings and a forest park
+ * does not cost fifty hit tests to describe in one word.
+ */
+const SAMPLE_GRID = 5;
+
+/**
+ * Where to read a modelled value across a shape, rather than at one point in
+ * it.
+ *
+ * The centroid answers "what is it like in the middle", and for a park with a
+ * road down one side that is the wrong question: the middle can be the only
+ * quiet corner of somewhere nobody would sit, or the one loud strip of
+ * somewhere pleasant. What the reader is deciding is what the place as a whole
+ * is like, and that is a question about area.
+ *
+ * So: a grid over the bounding box, keeping the points that fall inside the
+ * shape. Evenly spaced, which is what makes counting them the same as
+ * weighting by area — every point stands for an equal patch of the place. The
+ * centroid comes first in the list so that a caller that can only use one
+ * point still gets the best one, and so that a shape too thin to catch any
+ * grid point at all still gets an answer.
+ *
+ * Longitude spacing is not corrected for latitude. The grid only has to be
+ * even *within one shape*, and no park is wide enough for the convergence of
+ * the meridians to skew which half of it is loud.
+ */
+export function shapeSamplePoints(shape: OverpassShape | null): [number, number][] {
+  const centre = shapeSamplePoint(shape);
+  if (!shape || !centre) return centre ? [centre] : [];
+
+  const coordinates = shape.polygons.map((rings) =>
+    rings.map((ring) => ring.map(([lat, lng]) => [lng, lat] as [number, number]))
+  );
+
+  let feature;
+  try {
+    feature = multiPolygon(coordinates);
+  } catch {
+    return [centre];
+  }
+
+  let south = Infinity;
+  let west = Infinity;
+  let north = -Infinity;
+  let east = -Infinity;
+  for (const rings of shape.polygons) {
+    for (const [lat, lng] of rings[0]) {
+      if (lat < south) south = lat;
+      if (lat > north) north = lat;
+      if (lng < west) west = lng;
+      if (lng > east) east = lng;
+    }
+  }
+  if (!Number.isFinite(south) || !Number.isFinite(west)) return [centre];
+
+  const points: [number, number][] = [centre];
+  // Cell centres rather than the box edges: a grid that starts at the corner
+  // spends its first row and column on the boundary, where half the samples
+  // fall outside the shape and the rest describe its edge
+  for (let row = 0; row < SAMPLE_GRID; row++) {
+    const lat = south + ((row + 0.5) * (north - south)) / SAMPLE_GRID;
+    for (let column = 0; column < SAMPLE_GRID; column++) {
+      const lng = west + ((column + 0.5) * (east - west)) / SAMPLE_GRID;
+      try {
+        if (booleanPointInPolygon([lng, lat], feature)) points.push([lat, lng]);
+      } catch {
+        // A degenerate ring turf will not test against. The centroid stands
+      }
+    }
+  }
+  return points;
+}
+
 export function shapeSamplePoint(shape: OverpassShape | null): [number, number] | null {
   if (!shape || shape.polygons.length === 0) return null;
 

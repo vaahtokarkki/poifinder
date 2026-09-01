@@ -127,14 +127,25 @@ type LayerTileProps = {
   label: string;
   selected: boolean;
   children: React.ReactNode;
+  /** A word about why this layer may not show anything, under its name */
+  note?: string;
   onClick?: () => void;
 };
 
-const LayerTile: React.FC<LayerTileProps> = ({ label, selected, children, onClick }) => {
+const LayerTile: React.FC<LayerTileProps> = ({
+  label,
+  selected,
+  children,
+  note,
+  onClick,
+}) => {
   const content = (
     <>
       {children}
       <span className="layers-tile-label">{label}</span>
+      {/* Inside the tile rather than under the row: it is about this layer, so
+          it is bounded by this layer's column and wraps inside it */}
+      {note ? <span className="layers-tile-note">{note}</span> : null}
     </>
   );
 
@@ -227,16 +238,12 @@ const LayersPanel: React.FC<LayersPanelProps> = ({
           <LayerTile
             label={copy.trafficNoise}
             selected={noiseVisible}
+            note={coverage === "uncovered" ? copy.noCoverage : undefined}
             onClick={() => onNoiseChange(!noiseVisible)}
           >
             <MiniMap noise />
           </LayerTile>
         </div>
-        {/* Under the row rather than inside the tile: it is a sentence about
-            where the map is, and a 76px tile is not wide enough to hold one */}
-        {coverage === "uncovered" && (
-          <p className="layers-note">{copy.noCoverage}</p>
-        )}
       </div>
     </>
   );

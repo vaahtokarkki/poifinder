@@ -4,7 +4,7 @@ import { ui } from "../copy";
 import { CATEGORIES } from "../constants";
 import { useNoiseBand } from "../hooks/useNoiseBand";
 import { useOsmElement } from "../hooks/useOsmElement";
-import { shapeSamplePoint } from "../geo";
+import { shapeSamplePoints } from "../geo";
 import type { OsmRef } from "../api/overpass";
 import { analytics } from "../analytics";
 import { BAND_COLOUR } from "../map/noiseTiles";
@@ -64,20 +64,27 @@ const NoiseSection: React.FC<{
   const relevant = category !== null && NOISE_WORTH_KNOWING.has(category);
 
   /**
-   * For a shape, the band under its centroid rather than under its marker.
+   * For a shape, the band across the whole of it rather than under its marker.
    *
    * The marker is the middle of the bounding box, which for a crescent bay or
-   * an L-shaped park is not inside the park — so the band read there can be
-   * the band of the road the shape bends around. See shapeSamplePoint.
+   * an L-shaped park is not inside the park at all — so the band read there
+   * can be the band of the road the shape bends around. Fixing that by reading
+   * the centroid instead only moves the problem: a playground with a main road
+   * down one side is mostly loud with one quiet corner, and a single reading in
+   * the middle picks whichever of those two the middle happens to be.
+   *
+   * So a grid of points across the shape, and the band that covers most of
+   * them. See shapeSamplePoints and noiseBandOverArea.
    *
    * This costs no request. The popup already asks for the outline of a drawn
    * point in order to draw it, and useOsmElement dedupes by ref, so the two
    * callers share the one answer. Until it arrives the marker position is
-   * used, which is what this did before and is right for most shapes anyway;
-   * the row then settles onto the centroid's band a moment later.
+   * used, which is what this did before; the row then settles onto the band of
+   * the area a moment later.
    */
   const element = useOsmElement(relevant ? shapeRef : null);
-  const sampleAt = shapeSamplePoint(element?.shape ?? null) ?? position;
+  const samples = shapeSamplePoints(element?.shape ?? null);
+  const sampleAt = samples.length > 0 ? samples : position ? [position] : null;
 
   // Hooks cannot be skipped, so the lookup is told not to bother instead. A
   // popup for a post box therefore costs no query and no listener

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   noiseBandAt,
+  noiseBandOverArea,
   noiseTilesConfigured,
   onGlMapChange,
   getGlMap,
@@ -8,7 +9,10 @@ import {
 import type { NoiseBand } from "../map/noiseTiles";
 
 /**
- * The modelled noise band under a point, once the tiles that carry it arrive.
+ * The modelled noise band for a place, once the tiles that carry it arrive.
+ *
+ * One sample point is read as a point. Several are read as an area — see
+ * noiseBandOverArea — which is what a park, a beach or a playground is.
  *
  * Nothing here blocks anything. The popup renders without it, and the row this
  * feeds appears later if it appears at all — a tile server that is down, slow,
@@ -22,11 +26,17 @@ import type { NoiseBand } from "../map/noiseTiles";
  * covers both. Once there is an answer the listeners come off, because the
  * answer for a fixed position cannot change.
  */
-export function useNoiseBand(position: [number, number] | null): NoiseBand | null {
+export function useNoiseBand(points: [number, number][] | null): NoiseBand | null {
   const [band, setBand] = useState<NoiseBand | null>(null);
+  /**
+   * The points as one string, because the array is rebuilt on every render of
+   * the popup and depending on its identity would restart the query on each of
+   * them. What the answer depends on is where the samples are.
+   */
+  const key = points ? points.map(([lat, lng]) => `${lat},${lng}`).join(";") : "";
 
   useEffect(() => {
-    if (!noiseTilesConfigured || !position) {
+    if (!noiseTilesConfigured || !points || points.length === 0) {
       setBand(null);
       return;
     }
@@ -36,7 +46,10 @@ export function useNoiseBand(position: [number, number] | null): NoiseBand | nul
 
     const attempt = () => {
       if (cancelled) return true;
-      const found = noiseBandAt(position);
+      // One point is a point; several are an area, and an area is answered by
+      // what covers most of it rather than by whichever sample came first
+      const found =
+        points.length === 1 ? noiseBandAt(points[0]) : noiseBandOverArea(points);
       if (found === null) return false;
       setBand(found);
       return true;
@@ -76,10 +89,9 @@ export function useNoiseBand(position: [number, number] | null): NoiseBand | nul
       cancelled = true;
       for (const off of detach) off();
     };
-    // Position is a fresh array on every render of the parent, so depend on
-    // its contents rather than its identity
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [position?.[0], position?.[1]]);
+    // The samples are a fresh array on every render of the parent, so depend
+    // on where they are rather than on the array's identity
+  }, [key]);
 
   return band;
 }

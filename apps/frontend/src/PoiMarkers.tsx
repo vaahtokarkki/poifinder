@@ -5,7 +5,7 @@ import { renderToString } from "react-dom/server";
 import { categoryDisplay } from "./seo/categories";
 import { interpolate, ui } from "./copy";
 import { analytics } from "./analytics";
-import { divIcon } from "leaflet";
+import { divIcon, latLngBounds } from "leaflet";
 import type { PointExpression, Popup as LeafletPopup, PopupEvent } from "leaflet";
 import {
   CATEGORY_CONFIG,
@@ -13,15 +13,20 @@ import {
   filterMatchesPrimaryTag,
   matchesFilter,
 } from "./constants";
-import { OverpassMarkerData } from "./api/overpass"; // <-- Import the type
-import type { EnclosingBuilding as EnclosingBuildingData, OsmRef } from "./api/overpass";
+import { shapeContains } from "./api/overpass";
+import type {
+  EnclosingBuilding as EnclosingBuildingData,
+  OsmRef,
+  OverpassMarkerData,
+} from "./api/overpass";
 import { TranslationError, translate } from "./api/translate";
 import type { TranslationFailure } from "./api/translate";
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
+import { shapeSamplePoint } from "./geo";
 import PoiShape from "./components/PoiShape";
 import NoiseSection, { NOISE_WORTH_KNOWING } from "./components/NoiseSection";
 import { noiseTilesConfigured } from "./map/noiseTiles";
-import { useEnclosingBuilding } from "./hooks/useOsmElement";
+import { useEnclosingBuilding, useOsmElement } from "./hooks/useOsmElement";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
 import {
   ADDRESS_RANK,
@@ -71,6 +76,36 @@ const AUTO_PAN_PADDING_TOP_LEFT = {
   // what makes the getters above worth having. Its types only name the two
   // shapes that get written literally, a Point or a tuple
 } as unknown as PointExpression;
+
+/**
+ * The room to leave around an outline when the map is moved to fit it.
+ *
+ * The same problem the popup padding above solves, and read the same way at
+ * the moment of the move: the top of the map is under the controls, and on a
+ * phone the foot of it is under the bottom sheet. Fitting a park to the bare
+ * container would tuck a third of it behind furniture and call it visible.
+ */
+/**
+ * How long a move of ours goes on being ours. Longer than Leaflet's own zoom
+ * and pan animations, short enough that a reader who grabs the map right after
+ * a fit is still the one holding it.
+ */
+const OWN_MOVE_GRACE_MS = 900;
+
+const shapeFitPadding = () => {
+  const overlay = document.querySelector(".map-overlay-top");
+  const overlayHeight = Math.round(overlay?.getBoundingClientRect().height ?? 0);
+  const sheet = Number.parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue("--sheet-offset")
+  );
+  return {
+    paddingTopLeft: [POPUP_EDGE_GAP_PX, overlayHeight + POPUP_EDGE_GAP_PX] as [number, number],
+    paddingBottomRight: [
+      POPUP_EDGE_GAP_PX,
+      (Number.isFinite(sheet) ? sheet : 0) + POPUP_EDGE_GAP_PX,
+    ] as [number, number],
+  };
+};
 
 /**
  * How close two points have to be, in pixels on the screen, before they are
@@ -1219,6 +1254,90 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   const map = useMap();
   /** The popup currently on the map, while it is still allowed to pan it */
   const openPopupRef = React.useRef<LeafletPopup | null>(null);
+  /**
+   * Until when a move of the map is this component's own doing.
+   *
+   * The release below listens for the reader taking the map somewhere, and a
+   * fitBounds of ours fires the same events a drag does. A deadline rather
+   * than a flag cleared on moveend, because a fit that turns out to need no
+   * movement fires no moveend to clear it, and a flag stuck on would quietly
+   * hand the popup the right to pan the map for the rest of the session.
+   */
+  const ownMoveUntilRef = React.useRef(0);
+
+  /**
+   * The outline of the open point, if it has one, so that its marker can be
+   * put inside it.
+   *
+   * The same ref PoiShape asks for, which costs nothing: useOsmElement shares
+   * one answer and one in-flight request per ref, so the two callers here are
+   * one request between them.
+   */
+  const openElement = useOsmElement(
+    shapeMarker && isDrawn(shapeMarker) ? shapeRefOf(shapeMarker) : null
+  );
+
+  /**
+   * Where a drawn point's marker really belongs, for the ones whose given
+   * position is not inside their own outline.
+   *
+   * Overpass answers `out center`, which is the middle of the bounding box —
+   * and the middle of the box around a crescent bay, a horseshoe park or a
+   * ring of allotments is not in the place at all, it is on whatever the shape
+   * bends around. So once the outline is known the marker moves to a point
+   * that is guaranteed to be on the surface, the equivalent of PostGIS's
+   * ST_PointOnSurface. See shapeSamplePoint.
+   *
+   * Only when the given position is genuinely outside. For the great majority
+   * of shapes the box centre is inside the shape and is the more natural place
+   * for a pin than a computed one, and a marker that hops the moment its popup
+   * opens is worse than a marker a few metres off centre.
+   *
+   * Kept per point rather than only for the open one, so a pin that has been
+   * corrected stays corrected when the popup closes.
+   */
+  const [insidePositions, setInsidePositions] = React.useState<
+    Record<string, [number, number]>
+  >({});
+
+  React.useEffect(() => {
+    const shape = openElement?.shape;
+    if (!shapeMarker || !shape || !shapeMarker.position) return;
+    const key = shapeKey(shapeMarker);
+    if (shapeContains(shape, shapeMarker.position)) return;
+    const inside = shapeSamplePoint(shape);
+    if (!inside) return;
+    setInsidePositions(current =>
+      current[key] ? current : { ...current, [key]: inside }
+    );
+  }, [openElement, shapeMarker]);
+
+  /**
+   * Bring the whole of a drawn point into view when its popup opens, and only
+   * then.
+   *
+   * A popup about a park is an account of the park, and the reader cannot see
+   * what is being described if two thirds of it are off the screen. The bounds
+   * come with the marker — no fetch and no wait — so this happens as the popup
+   * opens rather than a second later when the outline arrives.
+   *
+   * Nothing moves if the outline is already on the screen. Somebody who tapped
+   * a bench they can see does not want the map to lurch, and a shape that fits
+   * is a shape they are already looking at.
+   */
+  const fitShapeIntoView = React.useCallback(
+    (marker: OverpassMarkerData) => {
+      const corners = marker.bounds;
+      if (!corners) return;
+      const [south, west, north, east] = corners;
+      const bounds = latLngBounds([south, west], [north, east]);
+      if (map.getBounds().contains(bounds)) return;
+
+      ownMoveUntilRef.current = Date.now() + OWN_MOVE_GRACE_MS;
+      map.fitBounds(bounds, shapeFitPadding());
+    },
+    [map]
+  );
 
   /*
    * Auto panning is for the moment a popup opens: the box has to be brought
@@ -1245,12 +1364,17 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
     };
 
     // Only user gestures: the auto pan itself moves the map with panBy, which
-    // fires neither of these
-    map.on("dragstart", releaseMap);
-    map.on("zoomstart", releaseMap);
+    // fires neither of these, and a fit of ours says so on the way in
+    const releaseUnlessOurs = () => {
+      if (Date.now() < ownMoveUntilRef.current) return;
+      releaseMap();
+    };
+
+    map.on("dragstart", releaseUnlessOurs);
+    map.on("zoomstart", releaseUnlessOurs);
     return () => {
-      map.off("dragstart", releaseMap);
-      map.off("zoomstart", releaseMap);
+      map.off("dragstart", releaseUnlessOurs);
+      map.off("zoomstart", releaseUnlessOurs);
     };
   }, [map]);
 
@@ -1320,6 +1444,8 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                   analytics.poiPopupOpened(findCategory(marker, categories));
                   setOpenShape(key);
                   openPopupRef.current = event.popup;
+                  // Only moves the map if the outline does not already fit
+                  fitShapeIntoView(marker);
                 },
                 // Only if it is still ours: opening another popup closes this
                 // one, and the close arrives after the open it was caused by
@@ -1336,7 +1462,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
 
           return <Marker
             key={String(marker.id)}
-            position={marker.position}
+            position={insidePositions[key] ?? marker.position}
             icon={getMarkerIcon(marker, categories)}
             eventHandlers={eventHandlers}
           >

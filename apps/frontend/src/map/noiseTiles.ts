@@ -364,3 +364,56 @@ export function noiseBandAt(position: [number, number]): NoiseBand | null {
   }
   return null;
 }
+
+/**
+ * The band that describes a whole shape, rather than the band at one point in
+ * it.
+ *
+ * A park is not one reading. A playground with a main road down one side is
+ * mostly loud with a quiet corner, and which of those two things the popup
+ * says depends entirely on where it looks — the centroid can land on the one
+ * quiet patch and sell the place as somewhere to sit. So every sample the
+ * caller supplies is read, and the band that covers most of them wins.
+ *
+ * Counting samples is weighting by area, because shapeSamplePoints spaces them
+ * evenly: each one stands for an equal patch of the place. A tie goes to the
+ * louder band, which is the only safe way to round this — half a park being
+ * noisy is not a park to describe as quiet.
+ *
+ * Samples that fall outside the canvas are skipped rather than counted as
+ * quiet: they are off the screen, not out of the model. A shape too large to
+ * fit in the view is therefore described by the part of it in the view, which
+ * is also the part the reader is looking at.
+ *
+ * Null until the source has finished loading, unlike the single point version.
+ * A partly loaded set of tiles gives a majority that changes as the rest
+ * arrive, and a row that says "quiet" and then "noisy" is worse than a row
+ * that appears a moment later.
+ */
+export function noiseBandOverArea(points: [number, number][]): NoiseBand | null {
+  const map = currentMap;
+  if (!map || !TILES_URL || points.length === 0) return null;
+  if (!map.getLayer(NOISE_LAYER_ID)) return null;
+
+  try {
+    if (!map.isSourceLoaded(NOISE_SOURCE_ID)) return null;
+  } catch {
+    return null;
+  }
+
+  const counts: Record<NoiseBand, number> = { 1: 0, 2: 0, 3: 0 };
+  let read = 0;
+
+  for (const point of points) {
+    const band = noiseBandAt(point);
+    if (band === null) continue;
+    counts[band] += 1;
+    read += 1;
+  }
+
+  if (read === 0) return null;
+
+  // Descending, so an equal count settles on the louder band
+  const bands: NoiseBand[] = [3, 2, 1];
+  return bands.reduce((best, band) => (counts[band] > counts[best] ? band : best), 3);
+}

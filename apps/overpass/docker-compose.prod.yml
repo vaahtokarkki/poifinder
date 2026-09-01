@@ -598,94 +598,15 @@ services:
   #
   # Each run writes a whole tileset from what it was given, so the scheduled
   # job below is the one that should stay argument-free
-  noise-builder:
-    image: ghcr.io/vaahtokarkki/poifinder/noise:latest
-    container_name: wayside-noise-builder
-    restart: unless-stopped
-
-    # No entrypoint override here, unlike the importer above, and the
-    # difference matters. That image has a real entrypoint which would import
-    # on start, so it has to be replaced; this one already ships
-    # `ENTRYPOINT []` with `CMD ["sleep", "infinity"]`, so it sleeps on its own.
-    #
-    # Overriding the entrypoint here as well broke the thing this service
-    # exists for. `docker compose run` replaces the *command* and keeps the
-    # entrypoint, so with `entrypoint: ["sleep", "infinity"]` set,
-    #
-    #   docker compose run --rm noise-builder build-noise-tiles berlin
-    #
-    # ran `sleep infinity build-noise-tiles berlin` and died with
-    # "sleep: invalid time interval". Leaving the entrypoint empty is what lets
-    # the arguments be the command they look like.
-
-    volumes:
-      # The tiles Caddy serves. `current` inside this is a symlink the builder
-      # swaps at the end of a run, so a rebuild is one atomic rename and a
-      # build that dies leaves the tiles being served untouched
-      - /mnt/hdd1/noise/tiles:/tiles
-      # The downloaded extracts, and the expensive thing to lose: roughly 20 GB
-      # for the European cities. A rebuild with a warm cache skips the download
-      # entirely and takes minutes rather than hours
-      - /mnt/hdd1/noise/cache:/cache
-
-    labels:
-      com.centurylinklabs.watchtower.enable: "true"
-
-      # No ofelia schedule, on purpose. The Overpass database above is rebuilt
-      # nightly because the points move — a toilet is added, an opening time is
-      # corrected — but these bands come from road geometry and road classes,
-      # which move at the speed of roadworks. A monthly job would spend 4 GB of
-      # downloads to produce the same polygons.
-      #
-      # So this is run by hand, when something has changed or when the area
-      # being covered should change:
-      #
-      #   docker compose -f docker-compose.prod.yml run --rm noise-builder \
-      #     build-noise-tiles berlin
-      #
-      # and the argument is the whole configuration. A run writes a complete
-      # tileset from what it was given, so whatever is on that command line is
-      # what the site will have until the next run. Names from cities.json, or
-      # `--bbox=name:west,south,east,north` for anywhere else, or both
-
-    environment:
-      # Which extracts to build from, whitespace separated. A city is built
-      # when its centre falls inside an extract's header bounding box, so this
-      # list is what decides which of the 36 tier 1 cities get tiles. Below is
-      # apps/noise/europe.txt, which covers the 21 European ones.
-      #
-      # The other 15 are in Australia, Canada, Japan, New Zealand and the
-      # United States. Add their extracts here to build them — and take the US
-      # region by region rather than as us-latest.osm.pbf, which is 11 GB
-      # Which extracts are available to build from, whitespace separated. An
-      # area is built when its centre falls inside an extract's header bounding
-      # box, so this is the ceiling on what the job above can produce — and
-      # downloading a country the job never uses is pure cost.
-      #
-      # Germany alone, ~4.2 GB, which is what Berlin needs. Munich, Hamburg,
-      # Cologne, Frankfurt and Stuttgart are in the same file, so adding any of
-      # them to the ofelia command costs no extra download.
-      #
-      # For the rest of Europe, apps/noise/europe.txt is the full list — 17
-      # countries, ~20 GB, covering all 21 European tier 1 cities. Paste it
-      # here as one whitespace-separated block if the site ever wants them
-      NOISE_EXTRACTS: https://download.geofabrik.de/europe/germany-latest.osm.pbf
-
-      # Has to match MIN_ZOOM and MAX_ZOOM in src/map/noiseTiles.ts. The client
-      # asks for tiles inside this range and overzooms above it; set higher
-      # there than here and every pan requests tiles that do not exist
-      NOISE_MIN_ZOOM: "10"
-      NOISE_MAX_ZOOM: "12"
-
-    # A share of the machine, like the importer. This one competes with the
-    # importer rather than with the API, and both should lose to it
-    cpus: 1.0
-
-    logging:
-      driver: json-file
-      options:
-        max-size: "10m"
-        max-file: "3"
+  # The noise tile builder used to be here. It moved to
+  # apps/noise/docker-compose.prod.yml, which is the pipeline that produces the
+  # tiles; what is left in this file is the edge that serves them, because that
+  # is this host's job and because the Caddy below terminates one hostname for
+  # both Overpass and the tiles. Splitting the serving too would mean a second
+  # Caddy contending for the same funnel.
+  #
+  # The two files share /mnt/hdd1/noise/tiles: the builder writes it, Caddy
+  # reads it, and neither needs the other to be running.
 
   # What the Tailscale funnel points at. Plain HTTP on localhost, answering on
   # two paths:
@@ -839,16 +760,22 @@ configs:
       			# block above, nothing upstream sets it — these are files
       			Access-Control-Allow-Origin "*"
 
-      			# A day, and it used to be a month. The month was justified by a
-      			# monthly rebuild; with builds run by hand there is no cadence to
-      			# match, and the tile URLs carry no hash — so a long cache does not
-      			# save a reader anything they would not have had anyway, and it
-      			# does stop a rebuild reaching them for as long as it lasts.
+      			# Ten minutes fresh, then a day of serving the old tile while a
+      			# new one is fetched behind it.
       			#
-      			# A day is the compromise while the model and the covered area are
-      			# still moving. Once both settle, raising this is free: nothing
-      			# about these tiles is time-sensitive
-      			Cache-Control "public, max-age=86400"
+      			# The tile URLs carry no hash — /tiles/12/2200/1343.pbf is the same
+      			# path whatever built it — so a cache entry is the only thing
+      			# standing between a rebuild and a reader, and at the day this
+      			# used to be a reader who had opened the map that morning saw the
+      			# old model until the evening.
+      			#
+      			# stale-while-revalidate is what makes ten minutes affordable: the
+      			# reader still gets an instant tile from cache, the browser
+      			# refetches it in the background, and the next pan has the new
+      			# one. A map asks for dozens of tiles a screen, so revalidating
+      			# each of them in the foreground — max-age=0, or no-cache — would
+      			# put a round trip in front of every one of them
+      			Cache-Control "public, max-age=600, stale-while-revalidate=86400"
 
       			-Server
       		}

@@ -1,0 +1,91 @@
+# The noise tile pipeline, on the server.
+#
+#   docker compose -f docker-compose.prod.yml pull
+#   docker compose -f docker-compose.prod.yml run --rm builder build-noise-tiles berlin
+#
+# One service and no daemon. This file is the pipeline; the edge that serves
+# what it produces lives in apps/overpass/docker-compose.prod.yml, which
+# terminates the same hostname for Overpass and for /tiles. The two share
+# /mnt/hdd1/noise/tiles and neither needs the other to be running.
+#
+# There is no schedule here on purpose. The bands come from road geometry and
+# building footprints, which move at the speed of roadworks, and a run is four
+# gigabytes of downloads to produce the same polygons. It is run by hand when
+# the model changes or the covered area should.
+
+services:
+  builder:
+    image: ghcr.io/vaahtokarkki/poifinder/noise:latest
+    container_name: wayside-noise-builder
+
+    # Deliberately absent: restart, and the watchtower label.
+    #
+    # A batch job that cannot resume must not be restarted and must not be
+    # replaced mid-run. Watchtower polls every ten minutes, a `compose run`
+    # container inherits its service's labels, and a build that dies at minute
+    # nine of a fifteen minute cut starts again from nothing. That is what took
+    # three attempts to notice. Nothing here carries the label, so nothing here
+    # is watchtower's business; `docker compose pull` is how it updates.
+
+    volumes:
+      # Written here, read by the Caddy in apps/overpass. `current` inside is a
+      # symlink the builder swaps at the end of a run, so a rebuild is one
+      # atomic rename and a build that dies leaves the served tiles untouched
+      - /mnt/hdd1/noise/tiles:/tiles
+      # The downloaded extracts, and the expensive thing to lose: roughly 5 GB
+      # for Germany alone. A rebuild with a warm cache starts at the cut
+      - /mnt/hdd1/noise/cache:/cache
+      # The intermediates: the per-area OSM cut and NoiseModelling's H2
+      # database. A volume rather than the container's own filesystem, because
+      # --keep-work used to keep them somewhere `--rm` deleted a moment later
+      - /mnt/hdd1/noise/work:/work
+
+    environment:
+      # Which extracts are available to build from, whitespace separated. An
+      # area is built when its centre falls inside an extract's header bounding
+      # box, so this is the ceiling on what a run can produce — and downloading
+      # a country nothing asks for is pure cost.
+      #
+      # Germany alone, ~4.6 GB, which is what Berlin needs. Munich, Hamburg,
+      # Cologne, Frankfurt and Stuttgart are in the same file. For the rest of
+      # Europe, apps/noise/europe.txt is the full list
+      NOISE_EXTRACTS: https://download.geofabrik.de/europe/germany-latest.osm.pbf
+
+      # Has to match MIN_ZOOM and MAX_ZOOM in src/map/noiseTiles.ts. The client
+      # asks for tiles inside this range and overzooms above it
+      NOISE_MIN_ZOOM: "10"
+      NOISE_MAX_ZOOM: "12"
+
+      # How far apart the receivers sit, and how far a source may reach one.
+      #
+      # These are the two numbers that decide whether a city finishes. CNOSSOS
+      # is a real model and it costs real time: measured on a 13 km2 box in
+      # Bremen at 25 m receivers and 500 m reach, one of its sixteen cells took
+      # four and a half minutes — about 40 hours for Berlin's 452 km2.
+      #
+      # 50 m quarters the receivers and 250 m roughly quarters the sources each
+      # one pairs with, which brings Berlin to a few hours. What 50 m costs is
+      # detail: Create_Isosurface interpolates over a triangulation, so the
+      # bands stay smooth, they just stop resolving anything smaller than a
+      # large courtyard. What 250 m costs is the far field of a motorway.
+      #
+      # Both are worth revisiting on a machine that is not a laptop
+      NOISE_DELTA: "50"
+      NOISE_MAX_SRC_DIST: "250"
+
+      # The JVM's ceiling. This box has 7.6 GB and Overpass is in most of it,
+      # so the model gets a bounded share rather than the machine
+      JAVA_OPTS: "-Xmx3g"
+
+    # CNOSSOS parallelises across receivers and this is the one job on the box
+    # that can use every core, so it gets most of them. Measured: the
+    # propagation is far and away the longest step, and throttling it to a
+    # single core is how a city becomes an overnight job instead of an hour.
+    # Left short of the full machine so the API stays answerable
+    cpus: 3.0
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

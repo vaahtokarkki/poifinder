@@ -56,25 +56,20 @@ EXTRACTS="${NOISE_EXTRACTS:-https://download.geofabrik.de/europe/finland-latest.
 
 # The tags worth reading. Everything else is dropped before any geometry is
 # built, which is most of the extract
-TAG_FILTER=(
-  w/highway=motorway,motorway_link,trunk,trunk_link,primary,primary_link
-  w/highway=secondary,secondary_link,tertiary,tertiary_link
-  w/highway=unclassified,residential,living_street,service,pedestrian
-  w/railway=rail,light_rail,subway,tram
-)
-
-# Buildings are read for one purpose: to know when something stands between a
-# receiver and the road it hears. Measured against Berlin's own END facade
-# levels, not having them was the model's largest error by some way — see the
-# header of bin/noise-bands. Only the outline is used, never the tags
-BUILDING_FILTER=(
-  w/building
-  r/building
-)
+# How far apart the receivers sit, in metres, and how far a source is allowed
+# to reach one. Both go to NoiseModelling.
+#
+# 25 m because one screen pixel at z12 — the maximum these tiles carry — is
+# about 23 m at these latitudes, so a finer grid is detail nobody can see and
+# a CNOSSOS run costs roughly the square of it. 750 m because past that a
+# source contributes less than the band edges can express, and the propagation
+# is the expensive part
+NOISE_DELTA=${NOISE_DELTA:-25}
+NOISE_MAX_SRC_DIST=${NOISE_MAX_SRC_DIST:-750}
 
 # Wider than the area, because a road outside it still reaches in. Has to be at
-# least MAX_RADIUS in noise-bands, or a band would stop at the edge of the cut
-# rather than at the edge of what makes it
+# least NOISE_MAX_SRC_DIST, or a band would stop at the edge of the cut rather
+# than at the edge of what makes it
 PAD_METRES=1300
 
 # Past this an area is large enough that it is worth saying so before spending
@@ -194,28 +189,27 @@ PY
 TOTAL_AREAS=$(wc -l < "$AREA_TSV")
 log "$TOTAL_AREAS areas, zoom $MIN_ZOOM-$MAX_ZOOM"
 
-# --------------------------------------------- pass 1: roads, per extract
+# ------------------------------------------- pass 1: cut the areas out
 
-LINES_DIR="$WORK_DIR/lines"
-mkdir -p "$LINES_DIR"
+# One OSM file per area, which is all NoiseModelling asks for. There is no tag
+# filtering here any more: Import_OSM picks out the buildings, the road network
+# and the ground cover itself, and a filter of ours in front of it would only
+# be a second opinion about what its model needs.
+CUT_DIR="$WORK_DIR/cut"
+mkdir -p "$CUT_DIR"
 
 for extract_url in $EXTRACTS; do
   extract_file="$CACHE_DIR/$(basename "$extract_url")"
 
   if [ -f "$extract_file" ]; then
-    log "cached  $(basename "$extract_file")"
+    log "cached  $(basename "$extract_url")"
   else
     log "fetch   $extract_url"
-    # To a temporary name first, so an interrupted download is never mistaken
-    # for a cached one on the next run
-    curl -fSL --retry 3 --retry-delay 5 -o "$extract_file.part" "$extract_url"
-    mv "$extract_file.part" "$extract_file"
+    curl -fL --retry 3 --retry-delay 20 -o "$extract_file.part" "$extract_url"
+    mv -f "$extract_file.part" "$extract_file"
   fi
 
-  # The header bounding box, which Geofabrik sets and which costs nothing to
-  # read. `-e` would compute the real one by reading every node in the file
-  bbox_line=$(osmium fileinfo -g header.boxes "$extract_file" | head -1 | tr -d '()' | tr ',' ' ')
-  read -r xwest xsouth xeast xnorth <<< "$bbox_line" || true
+  read -r xwest xsouth xeast xnorth <<<"$(osmium fileinfo -e -g header.boxes "$extract_file" 2>/dev/null | tr ',()' '   ' | awk '{print $1, $2, $3, $4}')"
   if [ -z "${xnorth:-}" ]; then
     log "  no header bbox — trying every area against this extract"
     xwest=-180; xsouth=-90; xeast=180; xnorth=90
@@ -227,7 +221,7 @@ for extract_url in $EXTRACTS; do
     [ -n "$slug" ] || continue
 
     # Overlap, not containment. An area is cut from every extract it touches
-    # and the pieces are concatenated, which is how a city on a border gets the
+    # and the pieces are merged, which is how a city on a border gets the
     # roads on both sides of it
     overlaps=$(python3 -c "
 print('yes' if $west < $xeast and $east > $xwest and $south < $xnorth and $north > $xsouth else 'no')
@@ -235,71 +229,80 @@ print('yes' if $west < $xeast and $east > $xwest and $south < $xnorth and $north
     [ "$overlaps" = yes ] || continue
 
     log "  cut     $slug"
-    osmium extract --bbox="$west,$south,$east,$north" --strategy=smart --overwrite \
-      -o "$WORK_DIR/cut.osm.pbf" "$extract_file"
-
-    osmium tags-filter --overwrite -o "$WORK_DIR/cut.filtered.osm.pbf" \
-      "$WORK_DIR/cut.osm.pbf" "${TAG_FILTER[@]}"
-
-    osmium tags-filter --overwrite -o "$WORK_DIR/cut.buildings.osm.pbf" \
-      "$WORK_DIR/cut.osm.pbf" "${BUILDING_FILTER[@]}"
-
-    # Line geometry only: the model buffers ways and has no use for anything
-    # drawn as a point or an area
-    osmium export --overwrite -f geojsonseq \
-      --geometry-types=linestring \
-      -o "$WORK_DIR/cut.geojsonseq" \
-      "$WORK_DIR/cut.filtered.osm.pbf"
-
-    # Appended, so a second extract adds to what the first found. Duplicate
-    # ways across an overlap are harmless: the model unions its buffers, and
-    # the union of a shape with itself is the shape
-    # Outlines, not fills: noise-bands only asks whether a wall is in the way,
-    # and a polygon exported as its ring is the cheaper half of the answer
-    osmium export --overwrite -f geojsonseq \
-      --geometry-types=polygon \
-      -o "$WORK_DIR/cut.buildings.geojsonseq" \
-      "$WORK_DIR/cut.buildings.osm.pbf"
-
-    cat "$WORK_DIR/cut.geojsonseq" >> "$LINES_DIR/$slug.geojsonseq"
-    cat "$WORK_DIR/cut.buildings.geojsonseq" >> "$LINES_DIR/$slug.buildings.geojsonseq"
-    rm -f "$WORK_DIR/cut.osm.pbf" "$WORK_DIR/cut.filtered.osm.pbf" "$WORK_DIR/cut.geojsonseq" \
-      "$WORK_DIR/cut.buildings.osm.pbf" "$WORK_DIR/cut.buildings.geojsonseq"
+    # complete_ways rather than smart: what is read downstream is ways and
+    # their nodes, and smart's extra pass over a country-sized file to keep
+    # relations whole is time and memory spent on objects nothing asks for
+    osmium extract --bbox="$west,$south,$east,$north" --strategy=complete_ways \
+      --overwrite -o "$CUT_DIR/$slug.part-$(basename "$extract_url" .osm.pbf).osm.pbf" \
+      "$extract_file"
   done < "$AREA_TSV"
 done
+
+# The pieces of each area, merged into the one file the model reads. An object
+# in two extracts is written once, which is osmium merge's own behaviour
+while IFS=$'\t' read -r slug kind a b c d west south east north; do
+  [ -n "$slug" ] || continue
+  set -- "$CUT_DIR/$slug".part-*.osm.pbf
+  [ -e "$1" ] || continue
+  if [ "$#" -eq 1 ]; then
+    mv -f "$1" "$CUT_DIR/$slug.osm.pbf"
+  else
+    osmium merge --overwrite -o "$CUT_DIR/$slug.osm.pbf" "$@"
+    rm -f "$@"
+  fi
+done < "$AREA_TSV"
 
 # ----------------------------------------------- pass 2: bands, per area
 
 GEOJSON_DIR="$WORK_DIR/bands"
 mkdir -p "$GEOJSON_DIR"
 
+# NoiseModelling wants a metric projection and picks nothing for us. UTM is
+# the one that works anywhere without a table of national grids: the zone from
+# the longitude, the hemisphere from the latitude, and EPSG numbers them
+# 326xx north and 327xx south
+utm_srid() {
+  python3 - "$1" "$2" <<'PYEOF'
+import sys
+lon, lat = float(sys.argv[1]), float(sys.argv[2])
+zone = int((lon + 180) // 6) + 1
+print((32600 if lat >= 0 else 32700) + zone)
+PYEOF
+}
+
 while IFS=$'\t' read -r slug kind a b c d west south east north; do
   [ -n "$slug" ] || continue
-  [ -s "$LINES_DIR/$slug.geojsonseq" ] || continue
+  [ -s "$CUT_DIR/$slug.osm.pbf" ] || continue
 
-  # Passed only when there is something in it. An area whose extract carried
-  # no buildings gets the model without a screening term rather than an error,
-  # which is what it had before buildings were read at all
-  BUILDINGS=()
-  if [ -s "$LINES_DIR/$slug.buildings.geojsonseq" ]; then
-    BUILDINGS=(--buildings="$LINES_DIR/$slug.buildings.geojsonseq")
-  fi
-
+  # The padded box, as the polygon Regular_Grid fences its receivers into.
+  # Padded rather than exact because a road outside the area still reaches in,
+  # and the extract was cut to the padding for the same reason
+  FENCE="POLYGON(($west $south,$east $south,$east $north,$west $north,$west $south))"
   if [ "$kind" = bbox ]; then
-    noise-bands \
-      --lines="$LINES_DIR/$slug.geojsonseq" \
-      "${BUILDINGS[@]}" \
-      --bbox="$a,$b,$c,$d" \
-      --slug="$slug" \
-      --output="$GEOJSON_DIR/$slug.geojson"
+    CENTRE_LON=$(python3 -c "print(($a+$c)/2)"); CENTRE_LAT=$(python3 -c "print(($b+$d)/2)")
   else
-    noise-bands \
-      --lines="$LINES_DIR/$slug.geojsonseq" \
-      "${BUILDINGS[@]}" \
-      --lat="$a" --lon="$b" --radius="$c" \
-      --slug="$slug" \
-      --output="$GEOJSON_DIR/$slug.geojson"
+    CENTRE_LAT="$a"; CENTRE_LON="$b"
   fi
+  SRID=$(utm_srid "$CENTRE_LON" "$CENTRE_LAT")
+
+  log "  model   $slug (EPSG:$SRID, $NOISE_DELTA m receivers)"
+
+  # A working directory per area, because ScriptRunner puts an H2 database in
+  # it and two areas sharing one would inherit each other's tables
+  NM_WORK="$WORK_DIR/nm/$slug"
+  rm -rf "$NM_WORK"; mkdir -p "$NM_WORK"
+
+  WAYSIDE_OSM="$CUT_DIR/$slug.osm.pbf" \
+  WAYSIDE_OUTPUT="$GEOJSON_DIR/$slug.geojson" \
+  WAYSIDE_SRID="$SRID" \
+  WAYSIDE_FENCE="$FENCE" \
+  WAYSIDE_DELTA="$NOISE_DELTA" \
+  WAYSIDE_MAX_SRC_DIST="$NOISE_MAX_SRC_DIST" \
+    /srv/noisemodelling/bin/ScriptRunner -w "$NM_WORK" -s "$NOISE_GROOVY"
+
+  # The database is the bulk of what a run leaves behind and nothing reads it
+  # afterwards. Kept only when the work directory was asked to be kept
+  if [ "$KEEP_WORK" = false ]; then rm -rf "$NM_WORK"; fi
 done < "$AREA_TSV"
 
 BUILT=$(find "$GEOJSON_DIR" -name '*.geojson' | wc -l)
@@ -364,7 +367,8 @@ with open(os.path.join(staging, "wayside.json"), "w") as handle:
             "minzoom": int(min_zoom),
             "maxzoom": int(max_zoom),
             "bands": {"1": "quiet, under 55 dB", "2": "55-65 dB", "3": "over 65 dB"},
-            "model": "wayside-osm-buffer-1",
+            "receiver_spacing_m": float(os.environ.get("NOISE_DELTA", "25")),
+            "model": "noisemodelling-cnossos-1",
             "areas": sorted(areas, key=lambda area: area["name"]),
         },
         handle,

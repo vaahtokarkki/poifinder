@@ -101,53 +101,72 @@ site has until the next run.
 
 ## How the model works
 
-Four steps, and the whole of it is in `bin/noise-bands`.
+It doesn't. That is the point of it.
 
-**A level per way.** Each road gets a sound level in dB at 10 m, from its
-`highway` class — motorway 78 down to service 55 — adjusted by `maxspeed` and
-`lanes`, both clamped hard because they are present on a minority of ways and a
-missing one must not swing the answer. Railways are on the same scale, split by
-`usage=main`. A way in a tunnel is not a source at all, which is the single
-largest correction available from OSM tagging and is free.
+**[NoiseModelling][nm] is the model** — CNOSSOS-EU, the EU's own method under
+Directive 2015/996, from Université Gustave Eiffel. Emission by road class,
+propagation, diffraction over and around buildings, specular reflection off
+façades, ground effect: all of it is theirs, and it is the same method the
+published maps this is validated against are themselves made with. Nothing in
+this repository computes an acoustic quantity.
 
-**A distance for each band edge.** The level falls by 10·log₁₀(d/10) — 3 dB per
-doubling, because a road is a *line* source and not a point one. Beyond 50 m a
-ground-effect term steepens it. Inverting that for 65 dB and 55 dB gives two
-radii per way:
+What is here is the order things run in:
 
-| Class | 65 dB | 55 dB |
-| --- | --- | --- |
-| motorway | 108 m | 388 m |
-| trunk | 84 m | 300 m |
-| primary | 57 m | 204 m |
-| secondary | 32 m | 139 m |
-| tertiary | 16 m | 95 m |
-| residential | — | 32 m |
+**Cut.** `osmium extract` takes each area out of every extract whose bounding
+box it overlaps, and the pieces are merged into one `.osm.pbf` per area. There
+is no tag filtering — `Import_OSM` selects what its model needs, and a filter
+of ours in front of it would only be a second opinion.
 
-**Grid and sum.** Receivers sit on a 20 m grid in a local metric frame centred
-on the area — one screen pixel at z12 is about 23 m, so a finer cell would be
-detail nobody can see. Ways are bucketed by emission level so that one distance
-transform answers for every way of the same loudness, each bucket's level is
-worked out from the distance to its nearest source, a building on the sight
-line takes 12 dB off, and the buckets are summed as energy. The 65 and 55 dB
-contours of that grid are bands 3 and 2; band 1 is the rest of the area.
+An area is cut from *every* overlapping extract deliberately: Geneva and Basel
+are ringed by roads in France and Germany, and cutting from one extract only
+would model them as if that traffic did not exist. The box is padded by 1300 m,
+which has to stay above `NOISE_MAX_SRC_DIST` or a band would stop at the edge of
+the cut rather than at the edge of what makes it.
+
+**Model.** `bin/ScriptRunner` runs [`groovy/wayside-bands.groovy`](groovy/wayside-bands.groovy),
+which is the whole of our involvement: `Import_OSM` → `Regular_Grid` →
+`Road_Emission_from_Traffic` → `Noise_level_from_source` → `Create_Isosurface`
+→ `Export_Table`. The isosurface breaks are `55.0,65.0,200.0`, so the three
+bands come out of the tool rather than being thresholded afterwards, and the
+export renames `ISOLVL` to the one-based `band` the app reads.
+
+Receivers sit on a 25 m grid at 4 m above ground — the height END maps are
+computed at, and therefore the height the reference in `bin/validate-bands` is
+measured at. `NOISE_DELTA` is the knob, and a CNOSSOS run costs roughly its
+square: one screen pixel at z12 is about 23 m, so finer buys detail nobody can
+see at a price that is very visible.
+
+The projection is UTM, picked from each area's own centre. NoiseModelling wants
+a metric SRID and chooses none for us.
+
+**Tile.** tippecanoe writes z10–z12, gzipped. The client overzooms above 12,
+which for three smooth polygons costs nothing. `current` is a symlink swapped
+at the end of a run, so a rebuild is one atomic rename and a build that dies
+leaves the served tiles untouched.
 
 Quiet is a polygon rather than the absence of one, deliberately. A reader
 outside every built area has to be told nothing, and a reader in a quiet park
 has to be told "quiet"; with quiet drawn, the popup tells them apart by whether
 it found a feature at all.
 
-An area is cut from *every* extract whose bounding box it overlaps, and the
-pieces are concatenated before the model runs. That is not tidiness: Geneva and
-Basel are ringed by roads in France and Germany, and cutting from one extract
-only would model them as if that traffic did not exist. Ways duplicated across
-an extract overlap are harmless: they rasterise to the same cells.
+### What this replaced, and why
 
-**Tile.** tippecanoe writes z10–z12, gzipped. The client overzooms above 12,
-which for three smooth polygons costs nothing — a z12 tile carries about 1.5 m
-of resolution, far finer than a band edge that was modelled rather than
-measured. Roughly 350 files for the 36 tier 1 cities; going to z15 would be
-18,000 for no visible gain.
+A hand written model lived in `bin/noise-bands` until it was measured. It
+buffered each road at the distance where that road alone crossed a threshold
+and unioned the buffers; later it grew a receiver grid, energy summation and a
+building screening term. Against Berlin's END façade levels the grown version
+scored **41.3% balanced accuracy against the 57.2%** of the cruder thing it had
+replaced, and found **8% of genuinely noisy places against 87%**.
+
+The reason was not a bad constant, and no value of one would have fixed it.
+Buildings both shield and reflect — a courtyard is quieter than free field, a
+street canyon is louder — and a model that can only ever subtract cannot do
+both. Every increase in the screening term bought courtyards and lost noisy
+streets, monotonically, across a six-point sweep.
+
+That is the whole argument for using someone else's model. Not that ours was
+badly written, but that the physics has two signs in it and a shortcut that
+only has one will always be trading one error for the other.
 
 ## Accuracy, and what would improve it
 

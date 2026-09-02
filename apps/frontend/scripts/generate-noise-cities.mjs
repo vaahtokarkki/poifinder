@@ -10,9 +10,18 @@
  *   node scripts/generate-noise-cities.mjs            write the file
  *   node scripts/generate-noise-cities.mjs --check    fail if it is stale
  *
- * Only tier 1 by default. The tiles are a modelled overlay rather than data,
- * and 36 cities is where the ratio of "worth rendering" to "tiles to build"
- * stops being obvious — see NOISE_TIERS in apps/noise/.env.example to widen it.
+ * Every tier by default, which it did not used to be. This file is the
+ * catalogue of areas that *can* be built, and something else decides which
+ * ones are: apps/noise/areas.txt, chosen from real usage and from how many
+ * noise-relevant points a city has rather than from the SEO tiering here.
+ *
+ * Narrowing this to tier 1 was what made the two disagree — the deploy list
+ * named Hamburg and Stuttgart and the builder answered "no such city in
+ * cities.json", because the tiering that ranks search impressions is not the
+ * one that ranks a map overlay. A catalogue costs 148 rows of JSON; the tiles
+ * are what cost anything, and areas.txt is where that is decided.
+ *
+ * NOISE_TIERS still narrows it, for a checkout that wants a smaller catalogue.
  */
 import { readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -27,7 +36,7 @@ const OUTPUT = path.resolve(ROOT, "..", "noise", "cities.json");
  * the compose file can set it in one place and both this and the builder agree
  */
 const TIERS = new Set(
-  (process.env.NOISE_TIERS ?? "1")
+  (process.env.NOISE_TIERS ?? "1,2,3")
     .split(",")
     .map(tier => Number(tier.trim()))
     .filter(tier => tier >= 1 && tier <= 3)

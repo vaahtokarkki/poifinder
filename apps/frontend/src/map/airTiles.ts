@@ -56,23 +56,26 @@ export const airTilesConfigured = Boolean(TILES_URL);
 const MIN_ZOOM = 2;
 const MAX_ZOOM = 8;
 
-/**
- * Above this the wash is not drawn, and this is a judgement rather than a
- * limitation.
+/*
+ * There is no maximum draw zoom, and there was one.
  *
- * A reader at z15 is looking at one street. A regional interpolation painted
- * over it reads as a statement about that street, which it is not and cannot
- * be — the nearest monitor is tens of kilometres away and the value came from
- * several of them. The honest place for air quality at that zoom is the popup,
- * which quotes a monitor and says how far away it is.
+ * The argument for capping it was that a reader at z15 is looking at one
+ * street, and a regional interpolation painted over it reads as a statement
+ * about that street — which it is not, and cannot be, when the nearest monitor
+ * is tens of kilometres away.
  *
- * Safe to do here in a way it would not be for noise: nothing queries this
- * layer. See the header — the popup reads stations.json, so hiding the fill
- * costs no information. Doing the same thing to the noise layer would silently
- * break its popup, which is why setNoiseVisible uses opacity instead.
+ * That argument is still true and it lost anyway, because of what it does to
+ * somebody using this. A layer that switches itself off as you zoom in reads
+ * as broken rather than as careful: you turned it on, the map moved, the
+ * colour went, and nothing said why. Wanting to see the air where you actually
+ * are is the whole reason to open the layer.
+ *
+ * So the wash is drawn at every zoom and the honesty is carried where it
+ * belongs — in the popup, which quotes a real monitor and says how many
+ * kilometres away it was measured. A flat tint over one street is not a claim
+ * about that street; the popup beside it is what says how much the colour is
+ * worth.
  */
-const MAX_DRAW_ZOOM = 14;
-
 export const AIR_SOURCE_ID = "wayside-air";
 export const AIR_LAYER_ID = "wayside-air-fill";
 
@@ -123,17 +126,27 @@ export const BAND_COLOUR: Record<AirBand, string> = {
  * one opacity the layer is a flat wash the eye has to decode, which is the
  * failure that makes people switch a layer off and leave it off.
  *
- * Lower throughout than the noise bands, because this one covers whole
- * countries rather than the strips either side of a road. A 0.34 wash over
- * everything would take the basemap with it.
+ * Heavier than the noise bands rather than lighter, which is the opposite of
+ * where this started and is the right way round.
+ *
+ * The first version reasoned from the layer's extent: it covers whole
+ * countries rather than the strips either side of a road, so it was drawn
+ * faintly to keep from swamping the basemap. What that missed is the base
+ * rate. On a clear day almost all of a country is band 1, so a faint band 1 is
+ * the only thing most readers ever see — and a layer you switch on to no
+ * visible change reads as broken, not as clean air.
+ *
+ * So band 1 is drawn at a weight you can actually see. The basemap survives it
+ * because the fill sits under the first symbol layer, which keeps every place
+ * name and road shield on top of the wash rather than under it.
  */
 const BAND_OPACITY: Record<AirBand, number> = {
-  1: 0.1,
-  2: 0.16,
-  3: 0.22,
-  4: 0.28,
-  5: 0.32,
-  6: 0.36,
+  1: 0.2,
+  2: 0.26,
+  3: 0.32,
+  4: 0.38,
+  5: 0.44,
+  6: 0.5,
 };
 
 const BANDS: AirBand[] = [1, 2, 3, 4, 5, 6];
@@ -201,11 +214,14 @@ function installAirLayer(map: MaplibreMap): void {
       type: "fill",
       source: AIR_SOURCE_ID,
       "source-layer": "air",
-      maxzoom: MAX_DRAW_ZOOM,
       paint: {
         "fill-color": bandColour as unknown as string,
         "fill-opacity": 0,
-        "fill-antialias": false,
+        // Antialiased, unlike the noise layer. That one is drawn faintly enough
+        // that a hard edge never shows; these bands are drawn to be seen, and
+        // an aliased boundary between two of them is a visible staircase — the
+        // more so because the client overzooms these tiles from z8
+        "fill-antialias": true,
       },
     },
     firstSymbol?.id
@@ -422,9 +438,10 @@ export function nearestReading(position: [number, number]): AirReading | null {
  * builder was willing to draw.
  *
  * Read from the stations rather than from the tiles, which makes it honest at
- * any zoom. Asking the rendered layer would answer "no coverage" whenever the
- * reader was zoomed past MAX_DRAW_ZOOM, where the wash is deliberately not
- * drawn and the coverage is unchanged.
+ * any zoom and independent of what is on the screen. Asking the rendered layer
+ * would answer "no coverage" for a reader who simply has the layer switched
+ * off, or whose tiles have not arrived yet — neither of which says anything
+ * about whether a monitor is nearby.
  */
 export type AirCoverage = "covered" | "uncovered" | "unknown";
 

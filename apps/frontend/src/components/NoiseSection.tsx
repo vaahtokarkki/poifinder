@@ -102,7 +102,11 @@ const NoiseSection: React.FC<{
 
   return (
     <div className="poi-popup-noise">
-      <p className="poi-popup-noise-label">{words.label}</p>
+      {/* One line: "Traffic noise: Moderate". The name of the measure and its
+          answer are one statement, and splitting them over two lines made a
+          three line section out of a two word fact — which in a popup that
+          also carries a building, opening hours and a survey date is three
+          lines the reader has to step over to reach the next real row. */}
       <p className="poi-popup-noise-value">
         {/* The dot carries the colour and the word carries the meaning, never
             the colour alone — three bands have to survive being read by
@@ -111,6 +115,7 @@ const NoiseSection: React.FC<{
           className="poi-popup-noise-dot"
           style={{ background: BAND_COLOUR[band] }}
         />
+        <span className="poi-popup-noise-label">{words.label}:</span>
         {level[band]}
       </p>
       <p className="poi-popup-noise-caption">{words.modelled}</p>

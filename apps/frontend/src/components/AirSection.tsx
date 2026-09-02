@@ -84,7 +84,7 @@ const AirSection: React.FC<{
 
   return (
     <div className="poi-popup-air">
-      <p className="poi-popup-air-label">{words.label}</p>
+      {/* One line, as the noise row above it: "Air quality: Good" */}
       <p className="poi-popup-air-value">
         {/* The dot carries the colour and the word carries the meaning, never
             the colour alone — six bands have to survive being read by
@@ -93,6 +93,7 @@ const AirSection: React.FC<{
           className="poi-popup-air-dot"
           style={{ background: BAND_COLOUR[reading.band] }}
         />
+        <span className="poi-popup-air-label">{words.label}:</span>
         {level[reading.band]}
         {/* The number beside the word rather than instead of it. The word is
             what a reader acts on; the number is what lets somebody who knows

@@ -1510,13 +1510,17 @@ button.layers-tile {
   border-top: 1px solid #dadce0;
 }
 
-/* Names the section, matching the building label above it exactly, so the two
-   read as the same kind of thing */
+/*
+ * The name of the measure, inline before its answer: "Traffic noise: Moderate".
+ *
+ * Lighter and cooler than the answer beside it, which is the whole reason the
+ * two are not simply the same span. The reader acts on the answer; the label
+ * only says what the answer is about, and set at the same weight the row reads
+ * as two competing words rather than as one statement.
+ */
 .poi-popup .leaflet-popup-content .poi-popup-noise-label {
-  margin: 0;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #3c4043;
+  font-weight: 500;
+  color: #5f6368;
 }
 
 /*
@@ -1528,8 +1532,13 @@ button.layers-tile {
 .poi-popup .leaflet-popup-content .poi-popup-noise-value {
   display: flex;
   align-items: center;
-  gap: 0.45em;
-  margin: 0.3em 0 0 0;
+  /* Wraps, because this row is now a whole sentence rather than one word, and
+     the longest of them — "Air quality: Extremely poor" beside a reading — does
+     not fit the width of a popup on a phone. Without this the number is pushed
+     out of the box rather than onto a second line */
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin: 0;
   font-size: 0.9rem;
   font-weight: 600;
   color: #202124;
@@ -1647,6 +1656,26 @@ button.layers-tile {
   justify-content: flex-end;
 }
 
+/*
+ * No rule between the noise row and the air row.
+ *
+ * They are one block about the surroundings, and a line between "Traffic
+ * noise: Moderate" and "Air quality: Good" made them read as two unrelated
+ * sections rather than as two readings of the same place. The rule above the
+ * pair stays: that is the one that matters, because it separates what somebody
+ * surveyed from what was modelled and measured elsewhere.
+ *
+ * An adjacent sibling selector rather than a blanket rule, because either
+ * section can be absent. A tent site gets air and no noise, a bench gets noise
+ * and no air, and whichever comes first has to keep the rule that separates it
+ * from the surveyed rows above.
+ */
+.poi-popup-noise + .poi-popup-air {
+  margin-top: 0.55em;
+  padding-top: 0;
+  border-top: none;
+}
+
 /* ---------- The air quality section, and its explanation ---------- */
 
 /*
@@ -1662,13 +1691,17 @@ button.layers-tile {
   border-top: 1px solid #dadce0;
 }
 
-/* Names the section, matching the building label above it exactly, so the two
-   read as the same kind of thing */
+/*
+ * The name of the measure, inline before its answer: "Traffic noise: Moderate".
+ *
+ * Lighter and cooler than the answer beside it, which is the whole reason the
+ * two are not simply the same span. The reader acts on the answer; the label
+ * only says what the answer is about, and set at the same weight the row reads
+ * as two competing words rather than as one statement.
+ */
 .poi-popup .leaflet-popup-content .poi-popup-air-label {
-  margin: 0;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #3c4043;
+  font-weight: 500;
+  color: #5f6368;
 }
 
 /*
@@ -1680,8 +1713,13 @@ button.layers-tile {
 .poi-popup .leaflet-popup-content .poi-popup-air-value {
   display: flex;
   align-items: center;
-  gap: 0.45em;
-  margin: 0.3em 0 0 0;
+  /* Wraps, because this row is now a whole sentence rather than one word, and
+     the longest of them — "Air quality: Extremely poor" beside a reading — does
+     not fit the width of a popup on a phone. Without this the number is pushed
+     out of the box rather than onto a second line */
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin: 0;
   font-size: 0.9rem;
   font-weight: 600;
   color: #202124;

@@ -274,7 +274,17 @@ services:
       com.centurylinklabs.watchtower.enable: "true"
 
       # The reimport, read by ofelia from this container rather than written in
-      # the host's crontab. Five cron fields, minutes first. ofelia also takes
+      # the host's crontab.
+      #
+      # SIX fields, seconds first, and this used to say five. ofelia is
+      # robfig/cron with the seconds field enabled, so "30 2 * * *" does not
+      # mean half past two: it parses as second 30, minute 2, every hour, and
+      # the job fired twenty-four times a day. Every extra firing was skipped
+      # by no-overlap below because the first was still running, which is the
+      # only reason a full database rebuild every hour did not happen — the
+      # bug was harmless by accident, not by design.
+      #
+      # ofelia also takes
       # six with seconds in front, so count them before editing: the same
       # string read in the other dialect shifts every unit by one place.
       #
@@ -298,7 +308,7 @@ services:
       # regions rather than five. See bin/build-region-extract
       ofelia.enabled: "true"
 
-      ofelia.job-exec.refresh-nightly.schedule: "30 2 * * *"
+      ofelia.job-exec.refresh-nightly.schedule: "0 30 2 * * *"
       ofelia.job-exec.refresh-nightly.command: "update-poi-db --refresh=finland,norway,sweden,germany,oldest:2"
       ofelia.job-exec.refresh-nightly.no-overlap: "true"
 
@@ -446,7 +456,12 @@ services:
       # if this job never runs. Once it is proven, the pair of settings named
       # in the config below turns it off and leaves the archiving entirely here
       ofelia.enabled: "true"
-      ofelia.job-exec.matomo-archive.schedule: "15 * * * *"
+      # Six fields, seconds first — see the reimport job above for what five
+      # of them did. This one was never registered at all: ofelia reads these
+      # labels when it starts, and a container created after it has to wait
+      # for an ofelia restart to be seen. `docker compose up -d ofelia` after
+      # changing anything here is part of the change, not an afterthought
+      ofelia.job-exec.matomo-archive.schedule: "0 15 * * * *"
       ofelia.job-exec.matomo-archive.command: "php /var/www/html/console core:archive --url=https://CHANGE_ME.example.com/"
       # The web server user, so the files this writes stay readable by Matomo
       ofelia.job-exec.matomo-archive.user: "www-data"

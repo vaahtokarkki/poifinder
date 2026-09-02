@@ -61,9 +61,9 @@ export const fiProse: Record<string, Prose> = {
       {
         q: "Mistä voin täyttää vesipullon {cityIn}?",
         a: {
-          one: "Kartta näyttää sen yhden kartoitetun juomavesipisteen {cityIn}. Napauta merkkiä nähdäksesi reitin.",
+          one: "Kartta näyttää sen yhden kartoitetun vesipisteen {cityIn}. Napauta merkkiä nähdäksesi reitin.",
           other:
-            "Kartta näyttää kaikki {count} kartoitettua juomavesipistettä {cityIn}, useimmat niistä puistoissa, aukioilla ja kävelyreittien varrella. Napauta merkkiä nähdäksesi reitin.",
+            "Kartta näyttää kaikki {count} kartoitettua vesipistettä {cityIn}, useimmat niistä puistoissa, aukioilla ja kävelyreittien varrella. Napauta merkkiä nähdäksesi reitin.",
         },
       },
       {
@@ -71,7 +71,7 @@ export const fiProse: Record<string, Prose> = {
         a: "Jokainen tässä näkyvä piste on OpenStreetMapissa merkitty juomavedeksi, ja nimenomaan juomakelvottomiksi merkityt lähteet on jätetty pois. Vesipisteet voivat silti olla kausiluonteisia, joten kylmissä maissa moni on talvella suljettu.",
       },
       {
-        q: "Ovatko juomavesipisteet {cityIn} käytössä ympäri vuoden?",
+        q: "Ovatko vesipisteet {cityIn} käytössä ympäri vuoden?",
         a: "Pakkasalueilla ulkona olevat vesipisteet tyhjennetään ja suljetaan yleensä syksystä kevääseen, ettei putkia rikkoisi. Kartta ei seuraa kausisulkuja, joten talvella tuloksia kannattaa pitää suuntaa antavina.",
       },
     ],

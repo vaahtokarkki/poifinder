@@ -773,11 +773,22 @@ const ui: CopyDeck["ui"] = {
 
   page: {
     homeTitle: "Find the small things, anywhere",
+    homeMetaTitle: "Wayside — public toilets, drinking water and playgrounds on one map",
+    homeMetaDescription:
+      "Find the small points of interest that are hard to look up elsewhere: public " +
+      "toilets, drinking water, playgrounds, post boxes and 16 more categories, " +
+      "anywhere in the world. Free, no signup, built on OpenStreetMap.",
+    citiesMetaTitle: "Cities on {site} — {count} city maps",
+    citiesMetaDescription:
+      "Every city with a map of its own on {site}: {count} {cityUnit} in {countries} " +
+      "{countryUnit}, each with public toilets, drinking water, playgrounds and 17 more " +
+      "categories from OpenStreetMap. Free, and no signup.",
     browseCitiesBefore: "Browse",
     browseCitiesAfter: "with a page of their own",
     citiesTitle: "Cities on Wayside",
     cityUnit: { one: "city", other: "cities" },
     countryUnit: { one: "country", other: "countries" },
+    citiesSummaryIn: "in",
     citiesSummaryAfter:
       "have a page of their own, listing what is mapped there: public toilets, drinking water, playgrounds and 17 more categories. Everywhere else still works on the map, it just has no page yet.",
     cityTitle: "Points of interest in {city}",

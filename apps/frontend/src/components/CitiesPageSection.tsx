@@ -2,9 +2,10 @@ import React from "react";
 import { findCity } from "../seo/cities";
 import { cityPath,
   cityName,
+  linkLocaleFor,
 } from "../seo/pageMeta";
 import { formatCount } from "../seo/format";
-import { DEFAULT_LOCALE, getLocale, resolve, ui } from "../copy";
+import { getLocale, resolve, ui } from "../copy";
 import type { CitiesPageData } from "../seo/pageData";
 
 /**
@@ -34,7 +35,8 @@ const CitiesPageSection: React.FC<{ data: CitiesPageData }> = ({ data }) => {
       <h1 className="info-sheet-title">{ui().page.citiesTitle}</h1>
       <p className="info-sheet-summary">
         {formatCount(cities.length)}{" "}
-        {resolve(ui().page.cityUnit, getLocale(), {}, cities.length)} in{" "}
+        {resolve(ui().page.cityUnit, getLocale(), {}, cities.length)}{" "}
+        {ui().page.citiesSummaryIn}{" "}
         {formatCount(countries.length)}{" "}
         {resolve(ui().page.countryUnit, getLocale(), {}, countries.length)}{" "}
         {ui().page.citiesSummaryAfter}
@@ -45,8 +47,13 @@ const CitiesPageSection: React.FC<{ data: CitiesPageData }> = ({ data }) => {
           <h2 className="info-sheet-subheading">{country}</h2>
           <ul className="poi-links poi-links-inline">
             {group.map((city) => (
+              // A city with no tree in this language is linked in English:
+              // /fi/aarhus/ is a file that was never written. Same rule the
+              // neighbour blocks use, and the reason linkLocaleFor exists
               <li key={city.slug}>
-                <a href={cityPath(city.slug, DEFAULT_LOCALE)}>{cityName(city, DEFAULT_LOCALE)}</a>
+                <a href={cityPath(city.slug, linkLocaleFor(city))}>
+                  {cityName(city, linkLocaleFor(city))}
+                </a>
               </li>
             ))}
           </ul>

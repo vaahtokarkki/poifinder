@@ -5,7 +5,7 @@ import { categoryHeading, findCategorySeo, vocabFor } from "../seo/categories";
 import { formatCount } from "../seo/format";
 import LocaleLinks from "./LocaleLinks";
 import { getLocale, interpolate, resolve, ui } from "../copy";
-import { CITIES_PATH, categoryPath, cityPath,
+import { citiesPath, categoryPath, cityPath,
   cityName,
   linkLocaleFor, cityNames } from "../seo/pageMeta";
 import type { CityPageData } from "../seo/pageData";
@@ -93,7 +93,7 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data, variant =
           this one, so without this a crawler that lands on a hub can walk the
           region it is in and never find the other continents */}
       <p className="info-sheet-summary">
-        <a href={CITIES_PATH}>{ui().page.allCities}</a>
+        <a href={citiesPath()}>{ui().page.allCities}</a>
       </p>
 
       <LocaleLinks city={city} />

@@ -335,38 +335,58 @@ async function main() {
       .sort()
       .at(-1);
 
+    // Both of these are written once per locale, not once. They are the only
+    // two pages on the site that belong to no city, so nothing bounds them the
+    // way `langs` bounds a city tree — every language the app ships has the
+    // same index and the same root, and until this loop existed it had
+    // neither: /fi/ and /de/ answered 404 while every Finnish and German page
+    // hung off its English twin and nothing else.
+    //
+    // A loop rather than two more hardcoded writes, so the next language gets
+    // a front door without anybody editing this file again.
     if (indexedCities.length > 0) {
-      await writePage({
-        urlPath: "cities",
-        title: meta.citiesTitle(indexedCities.length),
-        description: meta.citiesDescription(indexedCities.length, countryCount),
-        canonical: meta.CITIES_URL,
-        jsonLd: meta.buildCitiesJsonLd(indexedCities, citiesUpdatedAt),
-        pageData: {
-          kind: "cities",
-          citySlugs: indexedCities.map((city) => city.slug),
-        },
-      });
+      for (const { code } of LOCALES) {
+        setLocale(code);
+        await writePage({
+          urlPath: `${code === "en" ? "" : `${code}/`}cities`,
+          title: meta.citiesTitle(indexedCities.length),
+          description: meta.citiesDescription(indexedCities.length, countryCount),
+          canonical: meta.citiesUrl(code),
+          jsonLd: meta.buildCitiesJsonLd(indexedCities, citiesUpdatedAt),
+          locale: code,
+          alternates: meta.alternatesForCities(),
+          pageData: {
+            kind: "cities",
+            citySlugs: indexedCities.map((city) => city.slug),
+            ...(code === "en" ? {} : { locale: code }),
+          },
+        });
+      }
+      setLocale("en");
     }
 
     // ---- Map root ----
     // It links to the index above rather than being it. That link is the whole
     // of the root's job in the link graph and the only reason the hub pages are
     // reachable from the one URL anything external points at
-    await writePage({
-      urlPath: "",
-      title: "Wayside — public toilets, drinking water and playgrounds on one map",
-      description:
-        "Find the small points of interest that are hard to look up elsewhere: public " +
-        "toilets, drinking water, playgrounds, post boxes and 16 more categories, " +
-        "anywhere in the world. Free, no signup, built on OpenStreetMap.",
-      canonical: meta.HOME_URL,
-      jsonLd: meta.buildHomeJsonLd(),
-      pageData: {
-        kind: "home",
-        cityCount: indexedCities.length,
-      },
-    });
+    for (const { code } of LOCALES) {
+      setLocale(code);
+      await writePage({
+        urlPath: code === "en" ? "" : code,
+        title: meta.homeTitle(),
+        description: meta.homeDescription(),
+        canonical: meta.homeUrl(code),
+        jsonLd: meta.buildHomeJsonLd(),
+        locale: code,
+        alternates: meta.alternatesForHome(),
+        pageData: {
+          kind: "home",
+          cityCount: indexedCities.length,
+          ...(code === "en" ? {} : { locale: code }),
+        },
+      });
+    }
+    setLocale("en");
 
     // ---- 404 ----
     // Cloudflare serves this with a real 404 status, so unknown paths stop
@@ -481,6 +501,14 @@ async function main() {
       await addChild(
         `sitemap-${code}.xml`,
         [
+          // The tree's own front door and index lead its sitemap. They are the
+          // two URLs everything else in this file is reachable from, so if
+          // Search Console reports this sitemap as uncrawled these are the
+          // lines to look at first
+          urlEntry(meta.homeUrl(code), null, null),
+          ...(indexedCities.length > 0
+            ? [urlEntry(meta.citiesUrl(code), hubsLastmod, 1)]
+            : []),
           ...localeHubs.map(({ city, updatedAt }) =>
             urlEntry(meta.cityUrl(city.slug, code), updatedAt, city.tier)
           ),
@@ -545,7 +573,8 @@ async function main() {
     console.log(
       `Prerendered ${written.length} pages ` +
         `(${routes.length} category, ${citiesWithPages.size} city, ` +
-        `${indexedCities.length > 0 ? "1 index, " : ""}1 root), ` +
+        `${indexedCities.length > 0 ? `${LOCALES.length} index, ` : ""}` +
+        `${LOCALES.length} root), ` +
         `${urls} URLs across ${children.length} sitemaps behind sitemap.xml.`
     );
     if (localeCounts.length > 1) {

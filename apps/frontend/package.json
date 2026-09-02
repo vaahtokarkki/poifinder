@@ -10,6 +10,7 @@
     "prerender": "node scripts/prerender.mjs",
     "seo:data": "node scripts/fetch-poi-data.mjs",
     "copy:check": "node scripts/check-copy.mjs",
+    "copy:nouns": "node scripts/check-nouns.mjs",
     "overpass:filters": "node scripts/generate-osmium-filter.mjs",
     "noise:cities": "node scripts/generate-noise-cities.mjs",
     "basemap:import": "node scripts/import-basemap-style.mjs",

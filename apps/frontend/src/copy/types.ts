@@ -115,11 +115,35 @@ export type UiCopy = {
   /** The page sections, which the prerender writes as well as the sheet */
   page: {
     homeTitle: string;
+    /**
+     * The <title> and <meta description> of the map root and the city index.
+     *
+     * Separate from `homeTitle` and `citiesTitle` above, which are the h1s. A
+     * heading is read by somebody already on the page and can be short; a
+     * title is read on a results page next to nine competitors and has to say
+     * what the site is. They were the same string once and the root ranked for
+     * nothing, because "Find the small things, anywhere" names no category.
+     *
+     * Here rather than assembled in pageMeta.ts because these two pages are
+     * the ones every locale tree hangs off: a language whose front door is
+     * titled in English has an English front door.
+     */
+    homeMetaTitle: string;
+    homeMetaDescription: string;
+    citiesMetaTitle: string;
+    citiesMetaDescription: string;
     browseCitiesBefore: string;
     browseCitiesAfter: string;
     citiesTitle: string;
     cityUnit: PluralMessage;
     countryUnit: PluralMessage;
+    /**
+     * The word between the two counts on the city index: "148 cities *in* 48
+     * countries". A separate key because not every language spells the
+     * relation with a word — Finnish puts it on the noun ("48 maassa") and
+     * supplies an empty string here.
+     */
+    citiesSummaryIn: string;
     citiesSummaryAfter: string;
     cityTitle: string;
     cityCategoriesHeading: string;

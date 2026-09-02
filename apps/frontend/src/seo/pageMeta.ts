@@ -16,7 +16,7 @@ import {
 import type { CityNames, CategorySeo, FaqEntry, Vocab } from "./categories";
 import type { CategoryPageData, PoiEntry } from "./pageData";
 import { formatCount } from "./format";
-import { DEFAULT_LOCALE, getLocale, interpolate, ui } from "../copy";
+import { DEFAULT_LOCALE, LOCALES, getLocale, interpolate, selectPlural, ui } from "../copy";
 import type { Locale } from "../copy";
 import { CITIES_SLUG } from "../utils";
 
@@ -333,6 +333,23 @@ export function alternatesForCity(city: City): { hreflang: string; href: string 
 export const HOME_URL = `${SITE_URL}/`;
 
 /**
+ * The map root of one locale.
+ *
+ * English is the site root and every other language is a directory under it,
+ * the same split `localePrefix` draws everywhere else. These exist because
+ * /fi/ and /de/ used to be 404: the prerender wrote the root once, in English,
+ * and a Finnish page's only inbound link was its own English twin. A tree
+ * whose front door is missing is a tree a crawler reaches one leaf at a time.
+ */
+export function homePath(locale: Locale = getLocale()): string {
+  return `${localePrefix(locale)}/`;
+}
+
+export function homeUrl(locale: Locale = getLocale()): string {
+  return `${SITE_URL}${homePath(locale)}`;
+}
+
+/**
  * The city index.
  *
  * It is a page rather than a section of the root because the root is the map,
@@ -348,16 +365,66 @@ export const HOME_URL = `${SITE_URL}/`;
 export const CITIES_PATH = `/${CITIES_SLUG}/`;
 export const CITIES_URL = `${SITE_URL}${CITIES_PATH}`;
 
+/** The city index of one locale. English keeps the unprefixed path it has */
+export function citiesPath(locale: Locale = getLocale()): string {
+  return `${localePrefix(locale)}${CITIES_PATH}`;
+}
+
+export function citiesUrl(locale: Locale = getLocale()): string {
+  return `${SITE_URL}${citiesPath(locale)}`;
+}
+
+/** The <title> of the map root, in the language the page is written in */
+export function homeTitle(): string {
+  return ui().page.homeMetaTitle;
+}
+
+export function homeDescription(): string {
+  return ui().page.homeMetaDescription;
+}
+
 export function citiesTitle(cityCount: number): string {
-  return `Cities on ${SITE_NAME} — ${formatCount(cityCount)} city maps`;
+  return interpolate(ui().page.citiesMetaTitle, {
+    count: formatCount(cityCount),
+    site: SITE_NAME,
+  });
 }
 
 export function citiesDescription(cityCount: number, countryCount: number): string {
-  return (
-    `Every city with a map of its own on ${SITE_NAME}: ${formatCount(cityCount)} cities in ` +
-    `${formatCount(countryCount)} countries, each with public toilets, drinking water, ` +
-    `playgrounds and 17 more categories from OpenStreetMap. Free, and no signup.`
-  );
+  const deck = ui().page;
+  return interpolate(deck.citiesMetaDescription, {
+    count: formatCount(cityCount),
+    countries: formatCount(countryCount),
+    // The units are separate from the numbers so a language can inflect them.
+    // Finnish counts "148 kaupunkia" in the partitive and English "148 cities"
+    // in the plural, and neither is derivable from the other
+    cityUnit: selectPlural(deck.cityUnit, cityCount, getLocale()),
+    countryUnit: selectPlural(deck.countryUnit, countryCount, getLocale()),
+    site: SITE_NAME,
+  });
+}
+
+/**
+ * hreflang for the two pages that belong to no city.
+ *
+ * Every other cluster on the site is bounded by what a city has — a German
+ * page exists for Berlin and not for Aarhus. The root and the city index are
+ * the exception: they are the same page in every language the app ships, so
+ * their cluster is the full locale list and it is the same on both.
+ */
+function siteWideAlternates(url: (locale: Locale) => string) {
+  return [
+    ...LOCALES.map(({ code }) => ({ hreflang: code, href: url(code) })),
+    { hreflang: "x-default", href: url(DEFAULT_LOCALE) },
+  ];
+}
+
+export function alternatesForHome(): { hreflang: string; href: string }[] {
+  return siteWideAlternates(homeUrl);
+}
+
+export function alternatesForCities(): { hreflang: string; href: string }[] {
+  return siteWideAlternates(citiesUrl);
 }
 
 /** Structured data of the city index */
@@ -366,12 +433,12 @@ export function buildCitiesJsonLd(cities: City[], updatedAt: string): object[] {
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: `Cities on ${SITE_NAME}`,
+      name: ui().page.citiesTitle,
       description: citiesDescription(
         cities.length,
         new Set(cities.map((city) => city.country)).size
       ),
-      url: CITIES_URL,
+      url: citiesUrl(),
       // The content of this page is the list, so it is exactly as current as
       // the newest hub in it
       dateModified: updatedAt,
@@ -393,8 +460,8 @@ export function buildCitiesJsonLd(cities: City[], updatedAt: string): object[] {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: SITE_NAME, item: HOME_URL },
-        { "@type": "ListItem", position: 2, name: "Cities", item: CITIES_URL },
+        { "@type": "ListItem", position: 1, name: SITE_NAME, item: homeUrl() },
+        { "@type": "ListItem", position: 2, name: ui().page.citiesTitle, item: citiesUrl() },
       ],
     },
   ];
@@ -699,7 +766,7 @@ export function buildJsonLd(route: Route, data: CategoryPageData): object[] {
     name: heading,
     description: descriptionFor(route, data.count),
     dateModified: data.updatedAt,
-    isPartOf: { "@type": "WebSite", name: SITE_NAME, url: HOME_URL },
+    isPartOf: { "@type": "WebSite", name: SITE_NAME, url: homeUrl() },
     mainEntity: { "@id": `${url}#list` },
   };
 
@@ -752,8 +819,8 @@ export function buildJsonLd(route: Route, data: CategoryPageData): object[] {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: SITE_NAME, item: HOME_URL },
-      { "@type": "ListItem", position: 2, name: "Cities", item: CITIES_URL },
+      { "@type": "ListItem", position: 1, name: SITE_NAME, item: homeUrl() },
+      { "@type": "ListItem", position: 2, name: ui().page.citiesTitle, item: citiesUrl() },
       { "@type": "ListItem", position: 3, name: cityName(city), item: cityUrl(city.slug) },
       {
         "@type": "ListItem",
@@ -822,8 +889,8 @@ export function buildCityJsonLd(
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: SITE_NAME, item: HOME_URL },
-        { "@type": "ListItem", position: 2, name: "Cities", item: CITIES_URL },
+        { "@type": "ListItem", position: 1, name: SITE_NAME, item: homeUrl() },
+        { "@type": "ListItem", position: 2, name: ui().page.citiesTitle, item: citiesUrl() },
         { "@type": "ListItem", position: 3, name: cityName(city), item: cityUrl(city.slug) },
       ],
     },
@@ -837,16 +904,14 @@ export function buildHomeJsonLd(): object[] {
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: SITE_NAME,
-      url: HOME_URL,
-      description:
-        "A map of the small points of interest that are hard to find elsewhere: " +
-        "public toilets, drinking water, playgrounds, shelters and more, from OpenStreetMap.",
+      url: homeUrl(),
+      description: homeDescription(),
     },
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       name: SITE_NAME,
-      url: HOME_URL,
+      url: homeUrl(),
       applicationCategory: "TravelApplication",
       operatingSystem: "Any",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

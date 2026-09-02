@@ -73,7 +73,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
 
   sheet: {
     summary:
-      "Wayside kartoittaa ne pienet asiat, joita on vaikea löytää liikkeellä ollessa: vessat, leikkipuistot, juomavesipisteet, pysäköinti ja muut. Valitse valmis kokoelma tai omat kategoriasi, ja hae mistä tahansa kartan kohdasta.",
+      "Wayside kartoittaa ne pienet asiat, joita on vaikea löytää liikkeellä ollessa: vessat, leikkipuistot, vesipisteet, pysäköinti ja muut. Valitse valmis kokoelma tai omat kategoriasi, ja hae mistä tahansa kartan kohdasta.",
     howItWorksHeading: "Näin se toimii",
     steps: [
       {
@@ -120,13 +120,24 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
    */
   page: {
     homeTitle: "Löydä pienet asiat, missä tahansa",
+    homeMetaTitle: "Wayside — vessat, vesipisteet ja leikkipuistot kartalla",
+    homeMetaDescription:
+      "Löydä ne pienet kohteet, joita on vaikea etsiä muualta: yleiset vessat, " +
+      "vesipisteet, leikkipuistot, postilaatikot ja 16 muuta kategoriaa, missä päin " +
+      "maailmaa tahansa. Ilmainen, ei rekisteröitymistä, pohjana OpenStreetMap.",
+    citiesMetaTitle: "Kaupungit {site}ssa — {count} kaupunkikarttaa",
+    citiesMetaDescription:
+      "Jokainen kaupunki, jolla on oma karttansa {site}ssa: {count} {cityUnit} {countries} " +
+      "{countryUnit}, kussakin yleiset vessat, vesipisteet, leikkipuistot ja 17 muuta " +
+      "kategoriaa OpenStreetMapista. Ilmainen, ei rekisteröitymistä.",
     browseCitiesBefore: "Selaa",
     browseCitiesAfter: "joilla on oma sivunsa",
     citiesTitle: "Kaupungit Waysidessa",
     cityUnit: { one: "kaupunki", other: "kaupunkia" },
     countryUnit: { one: "maassa", other: "maassa" },
+    citiesSummaryIn: "",
     citiesSummaryAfter:
-      "on oma sivunsa, jolla näkyy mitä alueelta on kartoitettu: yleiset käymälät, juomavesipisteet, leikkipuistot ja 17 muuta kategoriaa. Muualla kartta toimii aivan samoin, sivua siitä ei vain vielä ole.",
+      "on oma sivunsa, jolla näkyy mitä alueelta on kartoitettu: yleiset käymälät, vesipisteet, leikkipuistot ja 17 muuta kategoriaa. Muualla kartta toimii aivan samoin, sivua siitä ei vain vielä ole.",
     cityTitle: "Kohteet {cityIn}",
     cityCategoriesHeading: "Kategoriat {cityIn}",
     categoryUnit: { one: "kategoria", other: "kategoriaa" },

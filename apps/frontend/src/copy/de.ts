@@ -123,11 +123,23 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
    */
   page: {
     homeTitle: "Finde die kleinen Dinge, überall",
+    homeMetaTitle:
+      "Wayside — öffentliche Toiletten, Trinkwasser und Spielplätze auf einer Karte",
+    homeMetaDescription:
+      "Die kleinen Dinge finden, die sich sonst kaum nachschlagen lassen: öffentliche " +
+      "Toiletten, Trinkwasser, Spielplätze, Briefkästen und 16 weitere Kategorien, " +
+      "weltweit. Kostenlos, ohne Anmeldung, auf Basis von OpenStreetMap.",
+    citiesMetaTitle: "Städte auf {site} — {count} Stadtkarten",
+    citiesMetaDescription:
+      "Jede Stadt mit einer eigenen Karte auf {site}: {count} {cityUnit} in {countries} " +
+      "{countryUnit}, jeweils mit öffentlichen Toiletten, Trinkwasser, Spielplätzen und 17 " +
+      "weiteren Kategorien aus OpenStreetMap. Kostenlos und ohne Anmeldung.",
     browseCitiesBefore: "Durchsuche",
     browseCitiesAfter: "mit einer eigenen Seite",
     citiesTitle: "Städte auf Wayside",
     cityUnit: { one: "Stadt", other: "Städte" },
     countryUnit: { one: "Land", other: "Ländern" },
+    citiesSummaryIn: "in",
     citiesSummaryAfter:
       "haben eine eigene Seite, auf der steht, was dort verzeichnet ist: öffentliche Toiletten, Trinkwasser, Spielplätze und 17 weitere Kategorien. Überall sonst funktioniert die Karte genauso, es gibt nur noch keine Seite dazu.",
     cityTitle: "Interessante Orte in {city}",

@@ -1,5 +1,5 @@
 import React from "react";
-import { CITIES_PATH } from "../seo/pageMeta";
+import { citiesPath } from "../seo/pageMeta";
 import { formatCount } from "../seo/format";
 import { getLocale, resolve, ui } from "../copy";
 import type { HomePageData } from "../seo/pageData";
@@ -40,7 +40,7 @@ const HomePageSection: React.FC<{ data: HomePageData }> = ({ data }) => (
         that says what is on the other end */}
     {data.cityCount > 0 && (
       <p className="info-sheet-footer">
-        <a href={CITIES_PATH}>
+        <a href={citiesPath()}>
           {ui().page.browseCitiesBefore} {formatCount(data.cityCount)}{" "}
           {resolve(ui().page.cityUnit, getLocale(), {}, data.cityCount)}{" "}
           {ui().page.browseCitiesAfter}

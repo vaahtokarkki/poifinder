@@ -20,8 +20,8 @@ import type { CategoryCopy } from "./types";
 const nouns: Record<string, Partial<CategoryCopy>> = {
   toilets: { plural: "vessat", singular: "vessa", heading: "Vessat" },
   "drinking-water": {
-    plural: "juomavesipisteet",
-    singular: "juomavesipiste",
+    plural: "vesipisteet",
+    singular: "vesipiste",
     heading: "Juomavesi",
   },
   playgrounds: { plural: "leikkipuistot", singular: "leikkipuisto", heading: "Leikkipuistot" },

@@ -1,7 +1,7 @@
 import React from "react";
 import type { CategoryPageData, PoiEntry } from "../seo/pageData";
 import {
-  CITIES_PATH,
+  citiesPath,
   MAX_LISTED_POIS,
   cityPath,
   faqFor,
@@ -134,7 +134,7 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
       <p className="info-sheet-summary">
         <a href={cityPath(city.slug)}>{interpolate(ui().page.allPointsIn, cityNames(city))}</a>
         {" · "}
-        <a href={CITIES_PATH}>{ui().page.allCities}</a>
+        <a href={citiesPath()}>{ui().page.allCities}</a>
       </p>
 
       <LocaleLinks city={city} categorySlug={route.categorySeo.slug} />

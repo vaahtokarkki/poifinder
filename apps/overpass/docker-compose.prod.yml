@@ -308,7 +308,22 @@ services:
       # regions rather than five. See bin/build-region-extract
       ofelia.enabled: "true"
 
-      ofelia.job-exec.refresh-nightly.schedule: "0 30 2 * * *"
+      # Sunday 02:30, not nightly. Six fields, seconds first, and the last one
+      # is the weekday.
+      #
+      # Nightly was set when the filtered extract was a few hundred megabytes.
+      # It is not any more: the filter now keeps every named highway, because
+      # that is what lets a post box be listed as "on Mannerheimintie" rather
+      # than as the twenty-fifth row reading "post box". The parts went from
+      # 603 KB to 2.6 MB on Bremen and the whole rebuild from a couple of hours
+      # to six or more, which is too much of a small machine's night to spend
+      # every night on data that moves at the speed of roadworks.
+      #
+      # The cost is staleness, accepted deliberately. This refreshes four named
+      # regions plus the two oldest per run, so at weekly the other eighty-odd
+      # come round about every three months. Raising `oldest:2` is the lever if
+      # that turns out to be too slow; the run length scales with it
+      ofelia.job-exec.refresh-nightly.schedule: "0 30 2 * * 0"
       ofelia.job-exec.refresh-nightly.command: "update-poi-db --refresh=finland,norway,sweden,germany,oldest:2"
       ofelia.job-exec.refresh-nightly.no-overlap: "true"
 

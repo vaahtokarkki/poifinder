@@ -55,6 +55,12 @@ jobs:
         working-directory: apps/frontend
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history, because the commit step below rebases. The default
+          # shallow clone has no merge base to rebase onto, and `git pull
+          # --rebase` in one fails in ways that read like a corrupt repository
+          # rather than like a missing flag. 25 MB, so the depth costs nothing
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
@@ -109,4 +115,64 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/poi
           git commit -m "chore: refresh OpenStreetMap extract"
-          git push
+
+          # Rebase before giving up, and this is the whole point of the step.
+          #
+          # This job checks out main and then spends up to four hours querying
+          # Overpass. Anything merged in that window — a frontend change, an
+          # image build, another commit of any kind — leaves this runner's base
+          # behind the remote, and a plain `git push` is then rejected as
+          # non-fast-forward. Five hours of fetching are discarded because
+          # somebody pushed a typo fix at hour two.
+          #
+          # Rebasing is safe here in a way it usually is not. This job only ever
+          # writes data/poi, nothing else writes data/poi, and each run rewrites
+          # those files wholesale from Overpass rather than editing them — so
+          # the commit does not depend on what it was built on. A conflict means
+          # something genuinely unexpected touched the extract, and the right
+          # answer then is to stop and let a person look rather than to resolve
+          # it blind.
+          #
+          # The loop is because the race can repeat: the remote can move again
+          # between the rebase and the push.
+          for attempt in 1 2 3; do
+            if push_error=$(git push origin "HEAD:$GITHUB_REF_NAME" 2>&1); then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            echo "$push_error"
+
+            # Only a stale base is worth retrying. A protected branch or a
+            # token without write access fails identically on all three
+            # attempts, and burying that under a retry loop is how it gets
+            # misread as flakiness.
+            #
+            # Lowercased before matching, because the two messages this is
+            # looking for disagree about case: GitHub sends "GH006: Protected
+            # branch update failed" with a capital P and "Permission to ...
+            # denied" with a capital P too, while the generic git text is
+            # lowercase. A case-sensitive match here silently retried a
+            # protected branch three times and reported it as a race
+            lower_error=$(printf '%s' "$push_error" | tr '[:upper:]' '[:lower:]')
+            case "$lower_error" in
+              *"protected branch"*|*"permission"*|*"403"*|*"pull request"*)
+                echo "Not a race — the push was refused outright. Check branch"
+                echo "protection on $GITHUB_REF_NAME and the workflow's"
+                echo "contents: write permission."
+                exit 1
+                ;;
+            esac
+
+            echo "Rebasing onto the current $GITHUB_REF_NAME (attempt $attempt)."
+            if ! git pull --rebase origin "$GITHUB_REF_NAME"; then
+              git rebase --abort || true
+              echo "The rebase conflicted, which means something other than"
+              echo "this job changed data/poi. Refusing to guess: rerun the"
+              echo "workflow once main is settled."
+              exit 1
+            fi
+          done
+
+          echo "Still rejected after 3 attempts — main is moving faster than"
+          echo "this job can land on it."
+          exit 1

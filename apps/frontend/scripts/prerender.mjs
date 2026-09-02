@@ -239,7 +239,10 @@ async function main() {
       // through the module store, so the language is set around the render
       // rather than threaded through every component as a prop — which is also
       // what keeps them free of hooks and able to run in Node
-      for (const locale of meta.localesForCity(route.city)) {
+      // The route's locales, not the city's: a French traveller page exists
+      // for Berlin toilets and not for Berlin benches, and hreflang above is
+      // built from the same call so the two cannot drift apart
+      for (const locale of meta.localesForRoute(route.city, route.categorySeo.slug)) {
         setLocale(locale);
         const pageData = {
           kind: "category",
@@ -493,10 +496,10 @@ async function main() {
     for (const { code } of LOCALES) {
       if (code === "en") continue;
       const localeRoutes = indexableRoutes.filter((route) =>
-        (route.city.langs ?? []).includes(code)
+        meta.localesForRoute(route.city, route.categorySeo.slug).includes(code)
       );
       const localeHubs = [...citiesWithPages.values()].filter(
-        ({ city, entries }) => entries.length > 0 && (city.langs ?? []).includes(code)
+        ({ city, entries }) => entries.length > 0 && meta.localesForCity(city).includes(code)
       );
       await addChild(
         `sitemap-${code}.xml`,

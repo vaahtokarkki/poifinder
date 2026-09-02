@@ -7,7 +7,7 @@ import LocaleLinks from "./LocaleLinks";
 import { getLocale, interpolate, resolve, ui } from "../copy";
 import { citiesPath, categoryPath, cityPath,
   cityName,
-  linkLocaleFor, cityNames } from "../seo/pageMeta";
+  linkLocaleFor, linkLocaleForRoute, cityNames } from "../seo/pageMeta";
 import type { CityPageData } from "../seo/pageData";
 
 /**
@@ -59,7 +59,13 @@ const CityPageSection: React.FC<CityPageSectionProps> = ({ city, data, variant =
         <ul className="poi-links">
           {entries.map((entry) => (
             <li key={entry.categorySeo.slug}>
-              <a href={categoryPath(city.slug, entry.categorySeo.slug)}>
+              <a
+                href={categoryPath(
+                  city.slug,
+                  entry.categorySeo.slug,
+                  linkLocaleForRoute(city, entry.categorySeo.slug)
+                )}
+              >
                 {interpolate(ui().page.categoryHeading, {
                   noun: categoryHeading(entry.categorySeo, vocab),
                   ...cityNames(city),

@@ -287,7 +287,93 @@ export function cityNames(city: City, locale: Locale = getLocale()): CityNames {
  * Spanish-market pages and are not alternates of each other.
  */
 export function localesForCity(city: City): Locale[] {
-  return [DEFAULT_LOCALE, ...(city.langs ?? [])];
+  return unique([DEFAULT_LOCALE, ...(city.langs ?? []), ...travellerLocalesForCity(city)]);
+}
+
+const unique = <T,>(values: T[]): T[] => [...new Set(values)];
+
+/**
+ * Where the tier-1 traveller cities are.
+ *
+ * A country list rather than a `continent` field on City, because this is the
+ * only thing that asks the question and a field would have to be filled in for
+ * all 148 cities to answer it once. Codes rather than names so a rename of the
+ * display string cannot silently empty the set.
+ */
+const TRAVELLER_COUNTRIES: ReadonlySet<string> = new Set([
+  "AT", "BE", "BG", "CH", "CZ", "DE", "DK", "EE", "ES", "FI", "FR", "GB", "GR",
+  "HR", "HU", "IE", "IS", "IT", "LT", "LU", "LV", "NL", "NO", "PL", "PT", "RO",
+  "SE", "SI", "SK",
+]);
+
+/**
+ * The categories each language searches for in cities that are not its own.
+ *
+ * `langs` above says "this city speaks this language" and builds the tree a
+ * local uses. This is the other half, and it is the one the query log actually
+ * shows: ask Google for public toilets in French, Spanish or Italian and the
+ * first city it offers is Berlin in all three. "fontanelle acqua potabile"
+ * completes to Berlino, Monaco, Vienna and Parigi before it reaches an Italian
+ * city. The traveller searches in their own language about somewhere else.
+ *
+ * Per locale rather than one shared list, because a category that converts in
+ * one language has no demand at all in another. Shelters is the case that
+ * proves it: Finnish `laavut` are wilderness lean-tos people plan trips
+ * around, and it is the second-best converting category on the site — while
+ * French `abribus` completes to advertising mockups, Spanish `marquesina` and
+ * Italian `pensilina` to DIY carports. Same OpenStreetMap tag, no traveller
+ * demand outside one language.
+ *
+ * Finnish has no entry on purpose. Its demand is domestic and goes *below*
+ * city size — "vessat suomenlinna" — which the home tree serves and a
+ * traveller tree would not.
+ *
+ * Every category here cleared `npm run copy:nouns` in that locale: a noun that
+ * completes into place names, rather than into prices and product photographs.
+ * Add to this list from that script's output, not from a translation.
+ */
+const TRAVELLER_CATEGORIES: Partial<Record<Locale, readonly string[]>> = {
+  de: ["toilets", "drinking-water", "recycling"],
+  fr: ["toilets", "drinking-water", "recycling"],
+  it: ["toilets", "drinking-water", "recycling"],
+  es: ["toilets", "drinking-water", "recycling"],
+};
+
+/**
+ * Whether a city is one the traveller tree covers at all.
+ *
+ * Tier 1 and European, which is 21 of the 148. The bound is the point: it is a
+ * rule rather than a per-city field so that the ceiling stays visible in one
+ * place — 21 cities times at most four categories is 84 URLs per language,
+ * whatever the catalogue grows to. A hand-maintained list drifts, and the
+ * first time somebody adds Reykjavík to the Polish tree the crawl budget goes
+ * to pages nobody asked for.
+ */
+export function isTravellerCity(city: City): boolean {
+  return city.tier === 1 && TRAVELLER_COUNTRIES.has(city.countryCode);
+}
+
+/** The locales whose traveller tree covers this city at all */
+function travellerLocalesForCity(city: City): Locale[] {
+  if (!isTravellerCity(city)) return [];
+  return Object.entries(TRAVELLER_CATEGORIES)
+    .filter(([, categories]) => categories.length > 0)
+    .map(([locale]) => locale as Locale);
+}
+
+/**
+ * The locales one route exists in: the city's own trees, plus every language
+ * whose traveller tree covers this city and wants this category.
+ *
+ * This is what hreflang and the prerender both read, so they cannot disagree
+ * about which files exist. `localesForCity` above is the same question for a
+ * hub, which has no category to narrow it.
+ */
+export function localesForRoute(city: City, categorySlug: string): Locale[] {
+  const traveller = travellerLocalesForCity(city).filter((locale) =>
+    TRAVELLER_CATEGORIES[locale]?.includes(categorySlug)
+  );
+  return unique([DEFAULT_LOCALE, ...(city.langs ?? []), ...traveller]);
 }
 
 /**
@@ -303,12 +389,28 @@ export function linkLocaleFor(target: City, preferred: Locale = getLocale()): Lo
   return localesForCity(target).includes(preferred) ? preferred : DEFAULT_LOCALE;
 }
 
+/**
+ * The same for a link to a category page, which is narrower.
+ *
+ * A German hub for Berlin links to German toilets and to *English* benches,
+ * because the traveller tree carries three categories and not seventeen. The
+ * hub is the page that gets this wrong if it uses the current locale: every
+ * category link would point into a tree that only has three of them.
+ */
+export function linkLocaleForRoute(
+  target: City,
+  categorySlug: string,
+  preferred: Locale = getLocale()
+): Locale {
+  return localesForRoute(target, categorySlug).includes(preferred) ? preferred : DEFAULT_LOCALE;
+}
+
 /** hreflang entries for one route, including the self reference and x-default */
 export function alternatesForCategory(
   city: City,
   categorySlug: string
 ): { hreflang: string; href: string }[] {
-  const locales = localesForCity(city);
+  const locales = localesForRoute(city, categorySlug);
   if (locales.length < 2) return [];
   return [
     ...locales.map((locale) => ({
@@ -641,12 +743,18 @@ export function internalLinksFor(route: Route, data: CategoryPageData): LinkGrou
   const otherCategories = data.siblingCategories.flatMap((slug) => {
     const other = findCategorySeo(slug);
     if (!other || other.slug === categorySeo.slug) return [];
+    // The sibling's own locale, not this page's. A German page for Copenhagen
+    // exists because Copenhagen is in the traveller tree, which carries three
+    // categories — so /de/copenhagen/shelters/ is a file that was never
+    // written, and linking to it from the German drinking water page was
+    // exactly the dangling link this call now avoids
+    const locale = linkLocaleForRoute(city, other.slug);
     return [
       {
-        href: categoryPath(city.slug, other.slug),
-        label: interpolate(ui().page.categoryHeading, {
+        href: categoryPath(city.slug, other.slug, locale),
+        label: interpolate(ui(locale).page.categoryHeading, {
           noun: categoryHeading(other, vocab),
-          ...cityNames(city),
+          ...cityNames(city, locale),
         }),
       },
     ];
@@ -661,10 +769,13 @@ export function internalLinksFor(route: Route, data: CategoryPageData): LinkGrou
         // city's English: a Dallas page links to "Petrol stations in London"
         // and to "Gas stations in Vancouver", and both anchors match the title
         // of the page on the other end
-        href: categoryPath(other.slug, categorySeo.slug, linkLocaleFor(other)),
-        label: interpolate(ui().page.categoryHeading, {
+        // Same rule across cities: Düsseldorf has a German outdoor gyms page
+        // and Amsterdam does not, because Amsterdam is only in the traveller
+        // tree. What decides the URL is what the route on the other end has
+        href: categoryPath(other.slug, categorySeo.slug, linkLocaleForRoute(other, categorySeo.slug)),
+        label: interpolate(ui(linkLocaleForRoute(other, categorySeo.slug)).page.categoryHeading, {
           noun: categoryHeading(categorySeo, vocabFor(other.countryCode)),
-          ...cityNames(other, linkLocaleFor(other)),
+          ...cityNames(other, linkLocaleForRoute(other, categorySeo.slug)),
         }),
       },
     ];

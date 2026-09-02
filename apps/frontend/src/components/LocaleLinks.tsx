@@ -2,7 +2,7 @@ import React from "react";
 import { getLocale, ui } from "../copy";
 import type { Locale } from "../copy";
 import type { City } from "../seo/cities";
-import { categoryPath, cityPath, localesForCity } from "../seo/pageMeta";
+import { categoryPath, cityPath, localesForCity, localesForRoute } from "../seo/pageMeta";
 
 /**
  * Links to this same page in the other languages it exists in.
@@ -31,7 +31,10 @@ type LocaleLinksProps = {
 
 const LocaleLinks: React.FC<LocaleLinksProps> = ({ city, categorySlug }) => {
   const current = getLocale();
-  const others = localesForCity(city).filter((locale) => locale !== current);
+  // A category page offers the locales that category has, which is narrower
+  // than the city's: Berlin has a French toilets page and no French benches
+  const available = categorySlug ? localesForRoute(city, categorySlug) : localesForCity(city);
+  const others = available.filter((locale) => locale !== current);
   if (others.length === 0) return null;
 
   const hrefFor = (locale: Locale) =>

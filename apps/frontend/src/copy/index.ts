@@ -14,6 +14,9 @@
 import { en } from "./en";
 import { de } from "./de";
 import { fi } from "./fi";
+import { fr } from "./fr";
+import { it } from "./it";
+import { es } from "./es";
 import { getLocale } from "./locale";
 import type { CategoryCopy, Locale, LocaleDeck, UiCopy } from "./types";
 
@@ -21,7 +24,7 @@ import type { CategoryCopy, Locale, LocaleDeck, UiCopy } from "./types";
  * English is the complete deck and is typed as such; everything else is
  * partial. That asymmetry is the fallback: there is always somewhere to land.
  */
-const DECKS: Record<Locale, LocaleDeck> = { en, de, fi };
+const DECKS: Record<Locale, LocaleDeck> = { en, de, fi, fr, it, es };
 
 /** The deck for a locale, or English when that locale has none */
 export function deckFor(locale: Locale = getLocale()): LocaleDeck {

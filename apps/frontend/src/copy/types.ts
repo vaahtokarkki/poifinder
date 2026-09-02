@@ -16,7 +16,7 @@
  */
 
 /** The locales with a deck of their own. English is the fallback for all of them */
-export type Locale = "en" | "de" | "fi";
+export type Locale = "en" | "de" | "fi" | "fr" | "it" | "es";
 
 export const DEFAULT_LOCALE: Locale = "en";
 

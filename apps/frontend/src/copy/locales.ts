@@ -44,6 +44,9 @@ export const LOCALES: readonly LocaleInfo[] = [
   { code: "en", endonym: "English", short: "EN" },
   { code: "fi", endonym: "Suomi", short: "FI" },
   { code: "de", endonym: "Deutsch", short: "DE" },
+  { code: "fr", endonym: "Français", short: "FR" },
+  { code: "it", endonym: "Italiano", short: "IT" },
+  { code: "es", endonym: "Español", short: "ES" },
 ];
 
 export const isLocale = (value: string): value is Locale =>

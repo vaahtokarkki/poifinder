@@ -244,6 +244,19 @@ export const analytics = {
   },
 
   /**
+   * "How this works" under the air quality reading in a popup.
+   *
+   * The same signal its noise counterpart carries, about a row with a sharper
+   * version of the same problem. The noise band admits in its caption that it
+   * is modelled; this row shows a real measured number, which is exactly why
+   * somebody might not think to ask how far away it was measured. This counts
+   * the readers who ask anyway.
+   */
+  airExplanationOpened(category: CATEGORIES | null): void {
+    trackEvent("POI", "air: about", categoryName(category));
+  },
+
+  /**
    * The language picker. The name is the language chosen, and the value is
    * nothing: what the report is for is which of the three decks people
    * actually reach for, against the language their browser already asked for,
@@ -304,6 +317,19 @@ export const analytics = {
    */
   noiseLayerToggled(shown: boolean): void {
     trackEvent("Map", shown ? "noise layer: show" : "noise layer: hide");
+  },
+
+  /**
+   * The air quality wash, switched on or off from the layers panel.
+   *
+   * Worth more than its noise equivalent, because this layer is rebuilt every
+   * hour rather than whenever somebody remembers to. The pair of events is
+   * what says whether an hourly job and the volume behind it are buying
+   * anything, or whether a country tinted one flat colour on most days is
+   * something people switch on once and never again.
+   */
+  airLayerToggled(shown: boolean): void {
+    trackEvent("Map", shown ? "air layer: show" : "air layer: hide");
   },
 
   /**

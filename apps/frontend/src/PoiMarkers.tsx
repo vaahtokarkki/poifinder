@@ -25,6 +25,7 @@ import MarkerClusterGroup from "./components/MarkerClusterGroup";
 import { shapeSamplePoint } from "./geo";
 import PoiShape from "./components/PoiShape";
 import NoiseSection, { NOISE_WORTH_KNOWING } from "./components/NoiseSection";
+import AirSection from "./components/AirSection";
 import { noiseTilesConfigured } from "./map/noiseTiles";
 import { useEnclosingBuilding, useOsmElement } from "./hooks/useOsmElement";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
@@ -1173,6 +1174,15 @@ const RenderMarkerContents: React.FC<{
         // and passing its ref would ask Overpass for one
         shapeRef={isDrawn(marker) ? shapeRefOf(marker) : null}
       />
+
+      {/* And under that. Both sections describe the surroundings rather than
+          the point, so they belong together at the foot; noise first because
+          it is the older row and moving it would move a line readers have
+          learned where to find. No shapeRef: unlike a noise band, which can
+          differ across a park, the nearest monitoring station is tens of
+          kilometres away and is the same station for every corner of any
+          shape this app draws */}
+      <AirSection position={marker.position ?? null} category={category} />
     </div>
   );
 };

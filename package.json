@@ -15,6 +15,7 @@
     "compile": "npm run compile -w @wayside/frontend",
     "deploy": "npm run deploy -w @wayside/frontend",
     "overpass:filters": "npm run overpass:filters -w @wayside/frontend",
+    "air:build": "docker compose -f apps/air/docker-compose.yml run --rm builder build-air-tiles",
     "noise:cities": "npm run noise:cities -w @wayside/frontend",
     "basemap:import": "npm run basemap:import -w @wayside/frontend",
     "basemap:sprite": "npm run basemap:sprite -w @wayside/frontend",

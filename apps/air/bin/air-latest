@@ -1,0 +1,293 @@
+#!/usr/bin/env python3
+#
+# Pull every current PM2.5 reading OpenAQ has, and write the ones worth using.
+#
+#   air-latest --output=stations.json
+#   air-latest --output=stations.json --max-age=6 --parameter=2
+#
+# One endpoint, /v3/parameters/{id}/latest, which is the whole reason this
+# feature costs nothing. That single paginated call returns the most recent
+# value from every sensor on the planet measuring the parameter — a few
+# thousand rows, so five or six requests for a complete world snapshot. The
+# free tier allows 60 requests a minute and 2,000 an hour; an hourly run of
+# this uses about 0.3% of the hourly budget.
+#
+# That number is why there is no tile cache anywhere in this app. Fetching
+# per-viewport and caching per-tile would be more machinery, more latency and
+# *more* requests than pulling the entire globe once an hour, because
+# neighbouring viewports overlap and the globe does not.
+#
+# WHY PM2.5 AND NOTHING ELSE
+#
+# Because it is the only pollutant here whose value at a station says anything
+# about a place 50 km away. PM2.5 is dominated by regional transport and by
+# secondary aerosol formed in the air mass itself, so it varies over tens to
+# hundreds of kilometres and two stations 80 km apart really are measuring
+# substantially the same thing. Interpolating it is defensible.
+#
+# NO2 is the opposite and is the trap. It is made by the traffic in front of
+# you and destroyed within hours, so it halves within 200 m of a kerb. An
+# interpolated NO2 surface between stations 80 km apart is not a coarse
+# estimate of anything — it is a smooth picture of a field that has no smooth
+# component at that scale. It would look exactly as convincing as this one.
+#
+# There is a second, duller reason. OpenAQ reports NO2 and O3 in µg/m³ from
+# European feeds and in ppm from American ones, so a global layer would have to
+# convert with a temperature and pressure it does not have. PM2.5 is µg/m³
+# everywhere.
+#
+# WHAT GETS THROWN AWAY, AND WHY THE AGE FILTER IS NOT OPTIONAL
+#
+# "Latest" in this API means the last value in a sensor's series, not a value
+# from recently — OpenAQ's own docs are explicit that providers report out of
+# order and that polling latest guarantees nothing about coverage. A sensor
+# that stopped reporting in 2019 still has a latest value, and it will happily
+# sit in the middle of a country pulling an interpolation toward whatever the
+# air was like the day it died.
+#
+# So every row is dropped unless its timestamp is inside --max-age hours. This
+# is the single most important line in the file: without it the map is not
+# stale in a way anyone would notice, it is wrong in a way that looks fine.
+import argparse
+import json
+import os
+import sys
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+from datetime import datetime, timezone
+
+API_ROOT = "https://api.openaq.org/v3"
+
+# PM2.5. See the note above about why this is not a configurable list of six
+PARAMETER_PM25 = 2
+
+# The most rows the API will return in one response
+PAGE_SIZE = 1000
+
+# Requests per minute allowed on the free tier is 60, so one a second is
+# already inside it. This is slower than it needs to be on purpose: a handful
+# of pages an hour is not worth being clever about, and a fetch that never
+# approaches a rate limit never has to handle one
+PAGE_DELAY_SECONDS = 1.1
+
+# A stop, not a safety margin. Six pages is the expected shape of this; sixty
+# means the pagination is not terminating and the right answer is to fail
+# rather than to keep asking
+MAX_PAGES = 60
+
+# Physically implausible readings, which sensor networks do produce: negative
+# values from a drifting zero, and five-figure spikes from a sensor being
+# cleaned. The upper bound is above the worst wildfire and dust-storm hours
+# ever recorded, so it removes instrument faults and not bad air
+VALUE_FLOOR = 0.0
+VALUE_CEILING = 2000.0
+
+
+def request_page(page, parameter, api_key, timeout):
+    """One page of latest values, as parsed JSON.
+
+    Retries on the two failures worth retrying — a rate limit and a 5xx — and
+    gives up immediately on anything else, because a 401 will still be a 401
+    in thirty seconds and the run should say so rather than sit there.
+    """
+    query = urllib.parse.urlencode({"limit": PAGE_SIZE, "page": page})
+    url = f"{API_ROOT}/parameters/{parameter}/latest?{query}"
+
+    for attempt in range(5):
+        request = urllib.request.Request(url, headers={"X-API-Key": api_key})
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError as error:
+            if error.code == 429 or error.code >= 500:
+                # The header if they sent one, otherwise back off
+                wait = float(error.headers.get("Retry-After") or 2 ** attempt)
+                print(f"  {error.code}, retrying in {wait:.0f}s", file=sys.stderr)
+                time.sleep(wait)
+                continue
+            if error.code in (401, 403):
+                raise SystemExit(
+                    f"OpenAQ rejected the key ({error.code}). OPENAQ_API_KEY is "
+                    "wrong, missing, or not yet activated — register at "
+                    "https://explore.openaq.org/register"
+                )
+            raise SystemExit(f"OpenAQ returned {error.code} for page {page}")
+        except (urllib.error.URLError, TimeoutError) as error:
+            wait = 2 ** attempt
+            print(f"  {error}, retrying in {wait}s", file=sys.stderr)
+            time.sleep(wait)
+
+    raise SystemExit(f"gave up on page {page} after 5 attempts")
+
+
+def parse_time(raw):
+    """The UTC timestamp of a reading, or None if it is not one.
+
+    The API nests this as {"datetime": {"utc": "...", "local": "..."}} and the
+    UTC one is the only one worth reading: comparing local times across the
+    globe to decide what is stale would need every station's offset applied
+    first, which is work to arrive back where this starts.
+    """
+    if isinstance(raw, dict):
+        raw = raw.get("utc") or raw.get("local")
+    if not isinstance(raw, str):
+        return None
+    try:
+        # Python's parser wants +00:00 rather than the Z the API writes
+        return datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+def usable(row, oldest):
+    """One row as (lon, lat, value, when), or None if it cannot be used.
+
+    Every rejection here is silent and counted rather than logged. A global
+    pull drops a few hundred rows on an ordinary day — sensors offline,
+    coordinates missing — and a line each would bury the one line that matters.
+    """
+    coordinates = row.get("coordinates") or {}
+    lat = coordinates.get("latitude")
+    lon = coordinates.get("longitude")
+    value = row.get("value")
+
+    if lat is None or lon is None or value is None:
+        return None
+    try:
+        lat, lon, value = float(lat), float(lon), float(value)
+    except (TypeError, ValueError):
+        return None
+
+    # Null Island, which is what a station with no position is written as
+    if lat == 0.0 and lon == 0.0:
+        return None
+    if not (-90.0 <= lat <= 90.0 and -180.0 <= lon <= 180.0):
+        return None
+    if not (VALUE_FLOOR <= value <= VALUE_CEILING):
+        return None
+
+    when = parse_time(row.get("datetime"))
+    if when is None:
+        return None
+    if when.tzinfo is None:
+        when = when.replace(tzinfo=timezone.utc)
+    # The line this whole file exists for. See the header
+    if when < oldest:
+        return None
+
+    return lon, lat, value, when
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", required=True)
+    parser.add_argument(
+        "--max-age",
+        type=float,
+        default=float(os.environ.get("AIR_MAX_AGE_HOURS", "6")),
+        help="drop readings older than this many hours (default 6)",
+    )
+    parser.add_argument("--parameter", type=int, default=PARAMETER_PM25)
+    parser.add_argument("--timeout", type=float, default=60.0)
+    arguments = parser.parse_args()
+
+    api_key = os.environ.get("OPENAQ_API_KEY", "").strip()
+    if not api_key:
+        raise SystemExit(
+            "OPENAQ_API_KEY is not set. It is free and takes a minute: "
+            "https://explore.openaq.org/register"
+        )
+
+    now = datetime.now(timezone.utc)
+    oldest = now.timestamp() - arguments.max_age * 3600
+    oldest = datetime.fromtimestamp(oldest, timezone.utc)
+
+    # Keyed by location, because a location can carry several PM2.5 sensors —
+    # a reference monitor and a low-cost unit on the same mast — and two
+    # readings a few metres apart are one station for every purpose here. The
+    # newest wins; a tie goes to the first seen, which is arbitrary and fine
+    stations = {}
+    seen = 0
+    page = 1
+
+    while page <= MAX_PAGES:
+        payload = request_page(page, arguments.parameter, api_key, arguments.timeout)
+        rows = payload.get("results") or []
+        if not rows:
+            break
+
+        for row in rows:
+            seen += 1
+            parsed = usable(row, oldest)
+            if parsed is None:
+                continue
+            lon, lat, value, when = parsed
+            key = row.get("locationsId") or row.get("sensorsId") or (lon, lat)
+            existing = stations.get(key)
+            if existing is None or when > existing[3]:
+                stations[key] = (lon, lat, value, when)
+
+        found = (payload.get("meta") or {}).get("found")
+        print(
+            f"  page {page}: {len(rows)} rows, {len(stations)} stations kept",
+            file=sys.stderr,
+        )
+
+        # `found` is sometimes an exact count and sometimes the string ">1000",
+        # so a short page is the termination condition and found is not read
+        if len(rows) < PAGE_SIZE:
+            break
+        page += 1
+        time.sleep(PAGE_DELAY_SECONDS)
+    else:
+        raise SystemExit(f"pagination did not end within {MAX_PAGES} pages")
+
+    if not stations:
+        raise SystemExit(
+            f"no PM2.5 readings inside {arguments.max_age}h out of {seen} rows — "
+            "refusing to write an empty snapshot over a good one"
+        )
+
+    # Positions to four decimals, which is about 11 m and far finer than
+    # anything downstream resolves; values to one, which is the precision the
+    # instruments report. Rounding here is most of why this file is small
+    # enough for the browser to fetch: full float repr roughly doubles it
+    rows = sorted(
+        (
+            round(lon, 4),
+            round(lat, 4),
+            round(value, 1),
+            int((now - when).total_seconds() // 60),
+        )
+        for lon, lat, value, when in stations.values()
+    )
+
+    snapshot = {
+        "parameter": "pm25",
+        "unit": "µg/m³",
+        "fetched": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "maxAgeHours": arguments.max_age,
+        "count": len(rows),
+        # Arrays rather than objects, and the reason is the download. As
+        # {"lon":..,"lat":..} this file is about twice the size for the same
+        # numbers, and the browser fetches it to answer one line in a popup.
+        # The order is the one GeoJSON uses: longitude first
+        "columns": ["lon", "lat", "value", "ageMinutes"],
+        "stations": [list(row) for row in rows],
+    }
+
+    with open(arguments.output, "w") as handle:
+        json.dump(snapshot, handle, separators=(",", ":"))
+
+    kept = len(rows)
+    print(
+        f"{kept} stations from {seen} rows, "
+        f"{seen - kept} dropped as stale, faulty or unplaceable",
+        file=sys.stderr,
+    )
+
+
+if __name__ == "__main__":
+    main()

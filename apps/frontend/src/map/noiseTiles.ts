@@ -22,6 +22,7 @@
  * map nothing and shows the reader nothing.
  */
 import type { FilterSpecification, Map as MaplibreMap } from "maplibre-gl";
+import { getGlMap } from "./glMap";
 
 /**
  * Where the tiles are, without a trailing slash: the origin of the Caddy in
@@ -239,32 +240,6 @@ export function setNoiseVisible(map: MaplibreMap | null, visible: boolean): void
   if (map) applyVisibility(map);
 }
 
-/* ---------- The one MapLibre map, so the popup can reach it ---------- */
-
-/**
- * The GL map lives inside BasemapLayer's effect and the popup is rendered
- * somewhere else entirely, so one of them has to publish it. A module holding
- * a single instance is the smallest thing that works here: there is exactly
- * one map on the page, and a context would thread a provider through every
- * component between them to say so.
- */
-let currentMap: MaplibreMap | null = null;
-const listeners = new Set<() => void>();
-
-export function setGlMap(map: MaplibreMap | null): void {
-  currentMap = map;
-  for (const listener of listeners) listener();
-}
-
-export function getGlMap(): MaplibreMap | null {
-  return currentMap;
-}
-
-export function onGlMapChange(listener: () => void): () => void {
-  listeners.add(listener);
-  return () => listeners.delete(listener);
-}
-
 /**
  * Whether the modelled tiles cover where the map is looking.
  *
@@ -283,7 +258,7 @@ export function onGlMapChange(listener: () => void): () => void {
 export type NoiseCoverage = "covered" | "uncovered" | "unknown";
 
 export function noiseCoverageAtCenter(): NoiseCoverage {
-  const map = currentMap;
+  const map = getGlMap();
   if (!map || !TILES_URL) return "unknown";
   if (!map.getLayer(NOISE_LAYER_ID)) return "unknown";
 
@@ -329,7 +304,7 @@ export function noiseCoverageAtCenter(): NoiseCoverage {
  * here rather than both being an empty query.
  */
 export function noiseBandAt(position: [number, number]): NoiseBand | null {
-  const map = currentMap;
+  const map = getGlMap();
   if (!map || !TILES_URL) return null;
   if (!map.getLayer(NOISE_LAYER_ID)) return null;
 
@@ -391,7 +366,7 @@ export function noiseBandAt(position: [number, number]): NoiseBand | null {
  * that appears a moment later.
  */
 export function noiseBandOverArea(points: [number, number][]): NoiseBand | null {
-  const map = currentMap;
+  const map = getGlMap();
   if (!map || !TILES_URL || points.length === 0) return null;
   if (!map.getLayer(NOISE_LAYER_ID)) return null;
 

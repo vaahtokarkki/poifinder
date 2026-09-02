@@ -3,9 +3,8 @@ import {
   noiseBandAt,
   noiseBandOverArea,
   noiseTilesConfigured,
-  onGlMapChange,
-  getGlMap,
 } from "../map/noiseTiles";
+import { getGlMap, onGlMapChange } from "../map/glMap";
 import type { NoiseBand } from "../map/noiseTiles";
 
 /**

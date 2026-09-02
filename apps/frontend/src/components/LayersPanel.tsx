@@ -1,13 +1,17 @@
 import React, { useEffect } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import { ui } from "../copy";
-import { BAND_COLOUR } from "../map/noiseTiles";
+import { BAND_COLOUR, noiseTilesConfigured } from "../map/noiseTiles";
+import { BAND_COLOUR as AIR_BAND_COLOUR, airTilesConfigured } from "../map/airTiles";
 import { useNoiseCoverage } from "../hooks/useNoiseCoverage";
+import { useAirCoverage } from "../hooks/useAirCoverage";
 
 type LayersPanelProps = {
   onClose: () => void;
   noiseVisible: boolean;
   onNoiseChange: (visible: boolean) => void;
+  airVisible: boolean;
+  onAirChange: (visible: boolean) => void;
 };
 
 /**
@@ -62,7 +66,10 @@ const BUILDINGS: [number, number, number, number][] = [
  * noisy on them — and over the roads rather than under, because that is where
  * the fill sits in the style (under the first symbol layer, see noiseTiles).
  */
-const MiniMap: React.FC<{ noise?: boolean }> = ({ noise = false }) => (
+const MiniMap: React.FC<{ noise?: boolean; air?: boolean }> = ({
+  noise = false,
+  air = false,
+}) => (
   <svg
     className="layers-tile-swatch"
     viewBox="0 0 72 72"
@@ -95,6 +102,33 @@ const MiniMap: React.FC<{ noise?: boolean }> = ({ noise = false }) => (
       <path d={PRIMARY} stroke="#fefdd7" strokeWidth="4.6" />
       <path d={MOTORWAY} stroke="#ffe9a5" strokeWidth="7" />
     </g>
+    {air && (
+      /*
+       * Bands across the whole tile rather than along the roads, which is the
+       * one thing this picture has to get across: air quality is a regional
+       * field and noise is a property of a street. Drawn as three soft bands
+       * sweeping the tile, they say "this is about everywhere at once" before
+       * anybody reads the label under it — and a reader who has both overlays
+       * switched off can tell the two tiles apart at a glance.
+       *
+       * Denser than the map draws it, for the reason the noise tile is: at
+       * 72px the real opacities are a tile that looks like the plain one
+       * beside it.
+       */
+      <g>
+        <rect width="72" height="72" fill={AIR_BAND_COLOUR[1]} opacity="0.3" />
+        <path
+          d="M-4 40 C 14 30, 30 44, 44 36 C 56 29, 68 34, 76 30 L 76 76 L -4 76 Z"
+          fill={AIR_BAND_COLOUR[2]}
+          opacity="0.4"
+        />
+        <path
+          d="M-4 62 C 12 54, 28 64, 44 58 C 58 53, 68 58, 76 55 L 76 76 L -4 76 Z"
+          fill={AIR_BAND_COLOUR[3]}
+          opacity="0.45"
+        />
+      </g>
+    )}
     {noise && (
       /*
        * Denser than the map draws it. On the map the bands are a wash you look
@@ -189,6 +223,8 @@ const LayersPanel: React.FC<LayersPanelProps> = ({
   onClose,
   noiseVisible,
   onNoiseChange,
+  airVisible,
+  onAirChange,
 }) => {
   const copy = ui().controls.layers;
   /**
@@ -198,6 +234,14 @@ const LayersPanel: React.FC<LayersPanelProps> = ({
    * a reader switching a layer on and finding it empty.
    */
   const coverage = useNoiseCoverage();
+  /**
+   * The same question for the other overlay, and it is a different question
+   * under the same words. Noise coverage is "did the builder model this city";
+   * air coverage is "is there a monitoring station within 75 km", which is a
+   * far larger area and far more often no. Both answer "unknown" while they
+   * are still loading, and neither says anything then
+   */
+  const airCoverage = useAirCoverage();
 
   // Escape closes it, as it closes every other overlay on this map
   useEffect(() => {
@@ -235,6 +279,11 @@ const LayersPanel: React.FC<LayersPanelProps> = ({
 
         <h3 className="layers-section-heading">{copy.mapDetails}</h3>
         <div className="layers-tiles">
+          {/* Each overlay appears only where its tiles are configured. The
+              panel itself is rendered when either is, so a build with one tile
+              server and not the other gets a panel with one overlay in it
+              rather than a tile that switches nothing */}
+          {noiseTilesConfigured && (
           <LayerTile
             label={copy.trafficNoise}
             selected={noiseVisible}
@@ -243,6 +292,17 @@ const LayersPanel: React.FC<LayersPanelProps> = ({
           >
             <MiniMap noise />
           </LayerTile>
+          )}
+          {airTilesConfigured && (
+          <LayerTile
+            label={copy.airQuality}
+            selected={airVisible}
+            note={airCoverage === "uncovered" ? copy.noCoverage : undefined}
+            onClick={() => onAirChange(!airVisible)}
+          >
+            <MiniMap air />
+          </LayerTile>
+          )}
         </div>
       </div>
     </>

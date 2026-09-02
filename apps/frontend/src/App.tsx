@@ -51,10 +51,10 @@ import LayersIconButton from './components/LayersIconButton.tsx';
 import LayersPanel from './components/LayersPanel.tsx';
 import {
   noiseTilesConfigured,
-  onGlMapChange,
-  getGlMap,
   setNoiseVisible,
 } from "./map/noiseTiles";
+import { airTilesConfigured, setAirVisible } from "./map/airTiles";
+import { onGlMapChange, getGlMap } from "./map/glMap";
 import { saveMapLocation, loadMapLocation } from "./utils/mapLocationStorage";
 import { loadGPSLocation } from "./utils/gpsLocationStorage";
 import { loadPois, savePois, poiCacheMatchesCategories, isPoiCacheUpToDate } from "./utils/poiStorage";
@@ -268,6 +268,13 @@ const App = () => {
    * the wash is off — see setNoiseVisible in map/noiseTiles.ts
    */
   const [noiseVisible, setNoiseVisible_] = useState(false);
+  /**
+   * Whether the air quality wash is drawn. Off by default for the same reason
+   * the noise bands are, and a little more so: this one covers whole countries
+   * rather than the strips either side of a road, so a reader who did not ask
+   * for it would find the entire map tinted.
+   */
+  const [airVisible, setAirVisible_] = useState(false);
   /** Whether the layers panel is open. Its own state: it is a panel, not a layer */
   const [layersOpen, setLayersOpen] = useState(false);
 
@@ -302,6 +309,20 @@ const App = () => {
     apply();
     return onGlMapChange(apply);
   }, [noiseVisible]);
+
+  /**
+   * The same for the air wash, and deliberately a separate effect rather than
+   * one that applies both. They are two layers whose only relationship is that
+   * a reader can switch each of them on: sharing an effect would re-apply one
+   * every time the other changed, and would mean a build with one tile server
+   * configured subscribing on behalf of the layer it does not have.
+   */
+  useEffect(() => {
+    if (!airTilesConfigured) return;
+    const apply = () => setAirVisible(getGlMap(), airVisible);
+    apply();
+    return onGlMapChange(apply);
+  }, [airVisible]);
   const sheetRef = useRef<BottomSheetHandle>(null);
 
   /**
@@ -1193,7 +1214,7 @@ const App = () => {
             button exist only where there is an overlay to switch: with no tile
             server configured the panel would open on the one basemap there is
             and nothing to do with it */}
-        {noiseTilesConfigured && (
+        {(noiseTilesConfigured || airTilesConfigured) && (
           <div className="map-layers">
             {layersOpen && (
               <LayersPanel
@@ -1206,6 +1227,11 @@ const App = () => {
                 onNoiseChange={(visible) => {
                   analytics.noiseLayerToggled(visible);
                   setNoiseVisible_(visible);
+                }}
+                airVisible={airVisible}
+                onAirChange={(visible) => {
+                  analytics.airLayerToggled(visible);
+                  setAirVisible_(visible);
                 }}
               />
             )}

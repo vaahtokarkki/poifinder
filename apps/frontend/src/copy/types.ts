@@ -269,6 +269,49 @@ export type UiCopy = {
       aboutClose: string;
     };
     /**
+     * The nearest air quality measurement, shown only when the tiles that
+     * carry the station snapshot are configured and a monitor is within 75 km.
+     * See src/map/airTiles.ts and apps/air.
+     *
+     * `measuredAt` is not a footnote to be trimmed, and carries {distance} in
+     * kilometres. Unlike the noise band above, this row shows a real measured
+     * number — which is exactly why it has to say where it was measured. A
+     * reading from 3 km away and one from 60 km away are different kinds of
+     * fact, and the distance is the only thing that tells them apart.
+     */
+    air: {
+      label: string;
+      good: string;
+      fair: string;
+      moderate: string;
+      poor: string;
+      veryPoor: string;
+      extremelyPoor: string;
+      /** µg/m³, which is the same in every language this ships in */
+      unit: string;
+      /** Carries {distance}, in kilometres */
+      measuredAt: string;
+      /** The link under the caption, which opens the explanation */
+      about: string;
+      /**
+       * The explanation. `aboutLimit` is the part that has to survive any
+       * edit: it is the sentence that stops a reader taking a measurement from
+       * the next city as a statement about the street they are standing on.
+       */
+      aboutTitle: string;
+      aboutIntro: string;
+      aboutBandsHeading: string;
+      aboutGood: string;
+      aboutFair: string;
+      aboutModerate: string;
+      aboutPoor: string;
+      aboutVeryPoor: string;
+      aboutExtremelyPoor: string;
+      aboutLimit: string;
+      aboutSource: string;
+      aboutClose: string;
+    };
+    /**
      * Opening hours syntax rendered as words. Keys are the OpenStreetMap
      * codes, which are the same in every language; the values are not.
      */
@@ -370,6 +413,12 @@ export type UiCopy = {
       mapDetails: string;
       /** The modelled traffic noise wash. Off until it is asked for */
       trafficNoise: string;
+      /**
+       * The interpolated air quality wash. Off until it is asked for, and
+       * carries the same noCoverage note below when the view is nowhere near
+       * a monitoring station
+       */
+      airQuality: string;
       /**
        * Said under that tile when the tiles cover no part of where the map is
        * looking. Only when we know it — a layer still loading says nothing

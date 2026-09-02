@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
-import {
-  getGlMap,
-  noiseCoverageAtCenter,
-  noiseTilesConfigured,
-  onGlMapChange,
-} from "../map/noiseTiles";
+import { noiseCoverageAtCenter, noiseTilesConfigured } from "../map/noiseTiles";
+import { getGlMap, onGlMapChange } from "../map/glMap";
 import type { NoiseCoverage } from "../map/noiseTiles";
 
 /**

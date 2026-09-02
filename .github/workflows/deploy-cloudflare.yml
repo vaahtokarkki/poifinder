@@ -60,6 +60,17 @@ jobs:
           # row in any popup. A deploy that forgets this is a deploy with no
           # noise layer rather than a broken one
           VITE_NOISE_TILES_URL: ${{ vars.VITE_NOISE_TILES_URL }}
+          # Where the air quality tiles are served from — the /air path on the
+          # same host as the Overpass API and the noise tiles. Unset unless the
+          # repository defines it, and unset means the feature does not exist
+          # in the build: no source, no tile request, no station snapshot
+          # fetched, no tile in the layers panel, no row in any popup.
+          #
+          # Worth saying plainly, because it has already caught one deploy: a
+          # push that adds the layer but not this variable ships a build with
+          # no layer in it, and the tiles carry on being rebuilt hourly for
+          # nobody
+          VITE_AIR_TILES_URL: ${{ vars.VITE_AIR_TILES_URL }}
 
       - name: Deploy
         run: npx wrangler deploy

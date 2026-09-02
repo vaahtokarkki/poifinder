@@ -1,0 +1,97 @@
+# Air quality tiles, for a development machine.
+#
+#   cp .env.example .env      and put an OpenAQ key in it
+#   docker compose build                                 build the image
+#   docker compose run --rm builder build-air-tiles      build the tiles
+#   docker compose up -d tiles                           serve them
+#
+# Then, in apps/frontend/.env:
+#
+#   VITE_AIR_TILES_URL=http://localhost:8081
+#
+# and `npm run dev`. Leave that variable empty and the app has no air quality
+# layer at all: no source, no request, no tile in the layers panel, no row in
+# any popup. That is the point of it being a variable rather than a flag — a
+# checkout with no tiles built is a working checkout, exactly as it is for
+# apps/noise.
+#
+# The first build is the same as every other build. There is no extract to
+# download and no cache volume, because the entire input is one paginated call
+# to OpenAQ returning a few thousand numbers — a build takes about a minute,
+# most of which is tippecanoe.
+#
+# To look at a change to the model without spending a fetch on it:
+#
+#   docker compose run --rm builder build-air-tiles --keep-work
+#   docker compose run --rm builder build-air-tiles --stations=/work/stations.json
+#
+# The field is deterministic given the stations, so the second run rebuilds the
+# same map from the same snapshot and any difference in it is the change.
+
+services:
+  # The batch job. It does nothing on `up`: `run --rm builder ...` is how it is
+  # meant to be used, and `up -d builder` gets a container that sleeps
+  builder:
+    build:
+      context: .
+    image: wayside/air:latest
+    container_name: wayside-air-builder
+
+    volumes:
+      # The tiles and stations.json, shared with the server below. A named
+      # volume rather than a host path so that nothing in the repo has to be
+      # gitignored
+      - air-tiles:/tiles
+      # The intermediates. A volume rather than a tmpfs so that --keep-work
+      # survives the container it ran in, which is the whole use for it
+      - air-work:/work
+
+    environment:
+      # The only thing without a default. Free, and the build fails with a link
+      # to the registration page rather than a stack trace if it is missing
+      OPENAQ_API_KEY: ${OPENAQ_API_KEY:?set OPENAQ_API_KEY in .env — https://explore.openaq.org/register}
+
+      # See .env.example, which is where these are explained. The two radii are
+      # the model; AIR_MASK_KM in particular is what stops the map colouring in
+      # places nobody measures
+      # Empty is the world. See .env.example — this clips what is published
+      # and never what is computed
+      AIR_BBOX: ${AIR_BBOX:-}
+      AIR_MIN_ZOOM: ${AIR_MIN_ZOOM:-2}
+      AIR_MAX_ZOOM: ${AIR_MAX_ZOOM:-8}
+      AIR_GRID_DEGREES: ${AIR_GRID_DEGREES:-0.1}
+      AIR_INFLUENCE_KM: ${AIR_INFLUENCE_KM:-150}
+      AIR_MASK_KM: ${AIR_MASK_KM:-75}
+      AIR_MAX_AGE_HOURS: ${AIR_MAX_AGE_HOURS:-6}
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # Caddy over the same volume, so the frontend has an origin to fetch from.
+  # In production this job belongs to the Caddy in
+  # apps/overpass/docker-compose.prod.yml, which fronts Overpass and the noise
+  # tiles as well and has TLS; this one is the development stand-in for it
+  tiles:
+    image: caddy:2-alpine
+    container_name: wayside-air-tiles
+    restart: unless-stopped
+
+    ports:
+      - "${AIR_TILES_PORT:-8081}:8081"
+
+    volumes:
+      - air-tiles:/srv/air:ro
+      - ./Caddyfile.dev:/etc/caddy/Caddyfile:ro
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  air-tiles:
+  air-work:

@@ -1,0 +1,252 @@
+#!/usr/bin/env bash
+#
+# Build the air quality tiles, from OpenAQ to a directory of .pbf tiles.
+#
+#   build-air-tiles                    fetch, interpolate, tile
+#   build-air-tiles --bbox=W,S,E,N     publish only this box
+#   build-air-tiles --stations=FILE    reuse a snapshot instead of fetching
+#   build-air-tiles --keep-work        leave the intermediate files behind
+#
+# Three steps and no arguments in the ordinary case, which is the difference
+# between this and the noise builder next door. That one takes a list of areas
+# because it models cities one at a time out of 20 GB of extracts; this one
+# always does the same thing, because the input is one global snapshot of a few
+# thousand numbers and there is no smaller useful unit of it.
+#
+#   1. air-latest    every current PM2.5 reading OpenAQ has
+#   2. air-field     inverse distance weighting, contoured, masked to coverage
+#   3. tippecanoe    the same z/x/y.pbf shape apps/noise writes
+#
+# A --bbox restricts what is published, never what is computed. The fetch is
+# global either way — it is one call, and there is no cheaper way to ask — and
+# stations outside the box still shape the field inside it, because air crosses
+# borders and a build that dropped foreign monitors would draw a false gradient
+# along every one of them. What the box does is clip the tiles and trim the
+# station list the client downloads, which is how a layer covering one country
+# costs a fraction of a global one to serve.
+#
+# Output goes to $AIR_TILE_DIR/current, holding the tiles and stations.json —
+# the snapshot the field was built from, which the client fetches to put a
+# measured number in a popup rather than an interpolated one.
+#
+# `current` is a symlink and that is the whole deployment story, exactly as it
+# is for the noise tiles: a build writes a new directory beside it and moves
+# the link only when it has finished, so an hourly job that fails at the fetch
+# leaves the last good tiles being served, and the swap is one atomic rename
+# rather than files appearing under a reader one at a time.
+#
+# That failure mode is the reason this runs hourly without supervision. OpenAQ
+# is a free service aggregating several hundred government feeds; it has
+# outages, and so do they. A failed run here is a map that is an hour stale,
+# which is inside what the caption already promises, rather than a map that is
+# empty.
+
+set -euo pipefail
+
+TILE_DIR="${AIR_TILE_DIR:-/tiles}"
+WORK_DIR="${AIR_WORK_DIR:-/tmp/air-work}"
+MIN_ZOOM="${AIR_MIN_ZOOM:-2}"
+MAX_ZOOM="${AIR_MAX_ZOOM:-8}"
+
+# The three numbers the model is. See air-field for what each one does and why
+# the mask is the one that matters
+GRID_DEGREES="${AIR_GRID_DEGREES:-0.1}"
+INFLUENCE_KM="${AIR_INFLUENCE_KM:-150}"
+MASK_KM="${AIR_MASK_KM:-75}"
+
+# Readings older than this are dropped. Not a tuning knob — see the header of
+# air-latest for why a build without it is wrong rather than stale
+MAX_AGE_HOURS="${AIR_MAX_AGE_HOURS:-6}"
+
+# Empty is the whole world. Set to west,south,east,north in degrees — the order
+# osmium, Overpass and the noise builder all write a box in
+BBOX="${AIR_BBOX:-}"
+
+KEEP_WORK=false
+STATIONS_IN=""
+for argument in "$@"; do
+  case "$argument" in
+    --keep-work) KEEP_WORK=true ;;
+    # A snapshot from an earlier run. The whole point is looking at a change to
+    # the model without spending a fetch on it — the field is deterministic
+    # given the stations, so the same file gives the same tiles
+    --stations=*) STATIONS_IN="${argument#--stations=}" ;;
+    --bbox=*) BBOX="${argument#--bbox=}" ;;
+    --*) echo "unknown option: $argument" >&2; exit 2 ;;
+    *) echo "unexpected argument: $argument" >&2; exit 2 ;;
+  esac
+done
+
+log() { printf '%s %s\n' "$(date -u +%H:%M:%S)" "$*" >&2; }
+
+mkdir -p "$TILE_DIR" "$WORK_DIR"
+if [ "$KEEP_WORK" = false ]; then
+  # The contents, not the directory: WORK_DIR can be a mount point, and
+  # removing one fails with "Device or resource busy" — the same trap the
+  # noise builder documents
+  trap 'rm -rf "${WORK_DIR:?}/"* "${WORK_DIR:?}/".[!.]* 2>/dev/null || true' EXIT
+fi
+
+STATIONS="$WORK_DIR/stations.json"
+BANDS="$WORK_DIR/bands.geojson"
+
+# ------------------------------------------------------------------ the fetch
+
+if [ -n "$STATIONS_IN" ]; then
+  [ -s "$STATIONS_IN" ] || { echo "no such snapshot: $STATIONS_IN" >&2; exit 2; }
+  log "stations: reusing $STATIONS_IN"
+  cp "$STATIONS_IN" "$STATIONS"
+else
+  log "fetch: OpenAQ PM2.5, at most ${MAX_AGE_HOURS}h old"
+  air-latest --output="$STATIONS" --max-age="$MAX_AGE_HOURS"
+fi
+
+# ------------------------------------------------------------------ the field
+
+log "field: ${GRID_DEGREES}° grid, ${INFLUENCE_KM} km influence, ${MASK_KM} km mask${BBOX:+, clipped to $BBOX}"
+air-field \
+  --stations="$STATIONS" \
+  --output="$BANDS" \
+  --grid="$GRID_DEGREES" \
+  --influence-km="$INFLUENCE_KM" \
+  --mask-km="$MASK_KM" \
+  ${BBOX:+--bbox="$BBOX"}
+
+# ------------------------------------------------------------------ the tiles
+
+log "tippecanoe: z$MIN_ZOOM-z$MAX_ZOOM"
+
+STAMP=$(date -u +%Y%m%d-%H%M%S)
+STAGING="$TILE_DIR/build-$STAMP"
+rm -rf "$STAGING"
+
+# Gzipped, which is tippecanoe's default and why there is no
+# --no-tile-compression: Caddy serves the bytes as they lie with
+# `Content-Encoding: gzip` set statically, so the compression happens once here
+# rather than per request. apps/noise measured that trade and this follows it.
+#
+# The size and feature limits are off for the same reason they are off there.
+# This is six large multipolygons, one per band; there is nothing tippecanoe
+# could usefully drop, and a band dropped to fit a tile budget is a city that
+# reads as clean air because its polygon did not survive.
+#
+# --detail 13 rather than the default 12. The client overzooms from z8 to
+# wherever the reader is, which is a much longer stretch than the noise layer
+# asks for, and the extra bit of coordinate precision is what keeps a band edge
+# from arriving as a visible staircase when one crosses the screen.
+tippecanoe \
+  --output-to-directory="$STAGING" \
+  --layer=air \
+  --minimum-zoom="$MIN_ZOOM" \
+  --maximum-zoom="$MAX_ZOOM" \
+  --full-detail=13 \
+  --no-tile-size-limit \
+  --no-feature-limit \
+  --drop-rate=0 \
+  --simplification=2 \
+  --quiet \
+  --force \
+  "$BANDS"
+
+# Beside the tiles, gzipped like them so Caddy can serve the whole directory
+# with one Content-Encoding. This is what the popup reads: the client works out
+# the nearest station itself rather than asking the tiles what band a point is
+# in, so that a popup can say "18 µg/m³, 12 km away" — a measurement and its
+# distance — instead of the interpolated colour underneath it
+PUBLISHED="$WORK_DIR/stations.published.json"
+python3 - "$STATIONS" "$PUBLISHED" "$MASK_KM" "${BBOX:-}" <<'TRIM'
+import json, math, sys
+
+source, destination = sys.argv[1], sys.argv[2]
+mask_km, bbox = float(sys.argv[3]), sys.argv[4]
+
+with open(source) as handle:
+    snapshot = json.load(handle)
+
+rows = snapshot["stations"]
+
+if bbox:
+    west, south, east, north = (float(part) for part in bbox.split(","))
+    # Padded by the mask radius, because the nearest station to somewhere just
+    # inside the box is often just outside it. A popup in Aachen that skipped
+    # the Belgian monitor 15 km away to reach a German one 60 km away would be
+    # quoting a worse number for a tidier reason
+    pad_lat = mask_km / 110.574
+    worst = min(max(abs(south), abs(north)), 85.0)
+    pad_lon = mask_km / (111.320 * max(math.cos(math.radians(worst)), 0.15))
+    rows = [
+        row for row in rows
+        if west - pad_lon <= row[0] <= east + pad_lon
+        and south - pad_lat <= row[1] <= north + pad_lat
+    ]
+    snapshot["bbox"] = [west, south, east, north]
+
+snapshot["stations"] = rows
+snapshot["count"] = len(rows)
+
+with open(destination, "w") as handle:
+    json.dump(snapshot, handle, separators=(",", ":"))
+
+print(f"  stations published: {len(rows)}", file=sys.stderr)
+TRIM
+
+gzip -9 -c "$PUBLISHED" > "$STAGING/stations.json"
+
+python3 - "$STAGING" "$PUBLISHED" "$MIN_ZOOM" "$MAX_ZOOM" \
+  "$GRID_DEGREES" "$INFLUENCE_KM" "$MASK_KM" "$MAX_AGE_HOURS" <<'PY'
+import gzip, json, os, sys, time
+
+staging, stations_path = sys.argv[1], sys.argv[2]
+min_zoom, max_zoom = int(sys.argv[3]), int(sys.argv[4])
+grid, influence, mask, max_age = (float(value) for value in sys.argv[5:9])
+
+with open(stations_path) as handle:
+    snapshot = json.load(handle)
+
+# Beside tippecanoe's own metadata.json rather than replacing it. This one is
+# for a person reading the directory: the band edges and the two radii are all
+# parameters, so a build has to be able to say which ones produced it
+with open(os.path.join(staging, "wayside.json"), "w") as handle:
+    json.dump(
+        {
+            "built": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            "minzoom": min_zoom,
+            "maxzoom": max_zoom,
+            "parameter": snapshot.get("parameter"),
+            "unit": snapshot.get("unit"),
+            "stations": snapshot.get("count"),
+            "observed": snapshot.get("fetched"),
+            "model": {
+                "kind": "idw-shepard",
+                "gridDegrees": grid,
+                "influenceKm": influence,
+                "maskKm": mask,
+                "maxAgeHours": max_age,
+            },
+            "bands": {
+                "1": "good, under 10 µg/m³",
+                "2": "fair, 10-20",
+                "3": "moderate, 20-25",
+                "4": "poor, 25-50",
+                "5": "very poor, 50-75",
+                "6": "extremely poor, over 75",
+            },
+            "scale": "EAQI PM2.5 breakpoints (European Environment Agency)",
+        },
+        handle,
+        indent=2,
+    )
+PY
+
+# `ln -sfn` on an existing symlink to a directory would put the new link inside
+# it. -T says the target is the link itself, which is what makes this a replace
+# rather than a nest, and what makes it atomic
+ln -sfnT "$(basename "$STAGING")" "$TILE_DIR/current.new"
+mv -T "$TILE_DIR/current.new" "$TILE_DIR/current"
+
+# Everything but the build the link now points at. An hourly job would
+# otherwise fill the volume in a week
+find "$TILE_DIR" -maxdepth 1 -name 'build-*' -not -name "$(basename "$STAGING")" \
+  -exec rm -rf {} +
+
+log "done: $(find "$STAGING" -name '*.pbf' | wc -l) tiles in $TILE_DIR/current"

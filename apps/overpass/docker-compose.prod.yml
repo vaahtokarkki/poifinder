@@ -55,7 +55,7 @@
 # Nothing outside this file has to change with it. Caddy binds 127.0.0.1:12345,
 # which is where the Tailscale funnel already points, so the funnel config, the
 # public hostname and the API URL the frontend was built with all stay as they
-# are — /tiles simply appears beside /api on the same name.
+# are — /tiles and /air simply appear beside /api on the same name.
 #
 # What is on those host ports, and what reaches them:
 #
@@ -65,7 +65,8 @@
 #
 # First start, once:
 #
-#   mkdir -p /mnt/hdd1/wayside /mnt/hdd1/noise/tiles /mnt/hdd1/noise/cache
+#   mkdir -p /mnt/hdd1/wayside /mnt/hdd1/noise/tiles /mnt/hdd1/noise/cache \
+#            /mnt/hdd1/air/tiles /mnt/hdd1/air/work
 #   docker compose -f docker-compose.prod.yml up -d
 #   docker compose -f docker-compose.prod.yml exec importer update-poi-db
 #
@@ -77,6 +78,14 @@
 #
 #   docker compose -f docker-compose.prod.yml run --rm noise-builder \
 #     build-noise-tiles berlin
+#
+# The air quality tiles are optional in the same way and live in
+# apps/air/docker-compose.prod.yml, which is the pipeline; what is here is the
+# edge that serves them. Unlike noise, that one carries an hourly schedule,
+# because it publishes the air an hour ago rather than the shape of a road:
+#
+#   docker compose -f air-compose.yml up -d builder
+#   docker compose -f air-compose.yml exec builder build-air-tiles
 
 services:
   overpass:
@@ -691,6 +700,10 @@ services:
       # this container needs — with TLS handled by the funnel there are no
       # certificates to keep, so nothing here is worth surviving a restart
       - /mnt/hdd1/noise/tiles:/srv/tiles:ro
+      # And the air quality tiles, written by apps/air/docker-compose.prod.yml
+      # every hour. Same arrangement, second path: the builder writes, this
+      # reads, and neither container needs the other to be running
+      - /mnt/hdd1/air/tiles:/srv/air:ro
 
     configs:
       - source: caddyfile
@@ -808,6 +821,61 @@ configs:
       			Cache-Control "public, max-age=600, stale-while-revalidate=86400"
 
       			-Server
+      		}
+
+      		file_server
+      	}
+
+      	# The air quality tiles, and the station snapshot beside them. Same
+      	# arrangement as /tiles above — files off the disk, under the symlink
+      	# the builder swaps — with one difference that matters.
+      	#
+      	# Two kinds of file share this root. The tiles are protobuf and
+      	# stations.json is JSON, and getting either Content-Type wrong is a
+      	# silent failure: MapLibre will not parse a tile that arrives as
+      	# octet-stream, and fetch() will not parse JSON that arrives as
+      	# protobuf.
+      	#
+      	# Note the block form on the two matched headers. `header @pbf defer
+      	# Content-Type "..."` is valid Caddyfile and does something else
+      	# entirely — it parses `defer` as the field name and sets a header
+      	# called "defer" — so the tiles go out with whatever file_server
+      	# sniffed, which for .pbf is nothing at all. That cost an afternoon
+      	# once; it is written the long way here so it cannot happen again.
+      	handle_path /air/* {
+      		root * /srv/air/current
+
+      		header {
+      			defer
+
+      			# Declared rather than produced, as above: both the tiles and
+      			# stations.json are written gzipped by the builder and served
+      			# as they lie
+      			Content-Encoding "gzip"
+
+      			# The app is served from wayside.cc and this is another origin
+      			Access-Control-Allow-Origin "*"
+
+      			# Shorter than the noise tiles', because this is rebuilt every
+      			# hour rather than by hand: five minutes fresh, then an hour of
+      			# serving the old tile while a new one is fetched behind it. A
+      			# reader who leaves the map open sees the new hour on their
+      			# next pan rather than the next morning
+      			Cache-Control "public, max-age=300, stale-while-revalidate=3600"
+
+      			-Server
+      		}
+
+      		@pbf path *.pbf
+      		header @pbf {
+      			defer
+      			Content-Type "application/x-protobuf"
+      		}
+
+      		@json path *.json
+      		header @json {
+      			defer
+      			Content-Type "application/json; charset=utf-8"
       		}
 
       		file_server

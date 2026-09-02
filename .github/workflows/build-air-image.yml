@@ -1,0 +1,134 @@
+name: Build and publish the air quality tile image
+
+# Publishes apps/air to the GitHub container registry.
+#
+# The image is numpy, shapely, contourpy and tippecanoe plus three scripts, and
+# no data: a container fetches the current readings from OpenAQ when the build
+# is run in it. Which area it publishes is an argument to build-air-tiles or
+# AIR_BBOX in the environment, not anything baked in here, so the same image
+# serves Germany or the whole world.
+#
+# Pull it instead of building locally:
+#   docker pull ghcr.io/<owner>/poifinder/air:latest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/air/**"
+      - ".github/workflows/build-air-image.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: build-air-image
+  cancel-in-progress: true
+
+env:
+  # Package names must be lowercase, which every owner/repo here already is
+  IMAGE: ghcr.io/${{ github.repository }}/air
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      # A small server is as likely to be arm64 as not, and every tool in this
+      # image is published for both
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE }}
+          tags: |
+            type=raw,value=latest
+            type=sha,format=long
+
+      # Built for the runner's own architecture first, so the model is
+      # exercised before anything is pushed
+      - name: Build for testing
+        uses: docker/build-push-action@v6
+        with:
+          context: apps/air
+          load: true
+          tags: wayside-air:test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # Runs the field over four made-up stations rather than a live fetch: no
+      # OpenAQ, no API key, and it still exercises the whole of air-field — the
+      # grid, the Shepard weighting, the contouring and the coverage mask.
+      #
+      # What it is really guarding is the contourpy version. The fill type this
+      # depends on returns each outer polygon with its own holes attached, and
+      # a release that changed that ordering would not fail here or anywhere
+      # else — it would quietly draw the clean patches of air as the dirty ones
+      # and the map would look entirely plausible.
+      #
+      # The disjointness check is the other half. Bands are built as nested
+      # regions and subtracted precisely so that no point is ever in two of
+      # them, and that is the property a popup and a legend both rest on
+      - name: Smoke test
+        run: |
+          docker run --rm wayside-air:test sh -euc '
+            command -v tippecanoe tippecanoe-decode >/dev/null || { echo "tools missing"; exit 1; }
+
+            # Four stations around Berlin, one of them dirty enough to put a
+            # couple of bands on the map
+            cat > /tmp/stations.json <<'"'"'JSON'"'"'
+            {"parameter":"pm25","unit":"ug/m3","count":4,
+             "columns":["lon","lat","value","ageMinutes"],
+             "stations":[[13.2,52.4,4.0,30],[13.6,52.4,42.0,30],
+                         [13.2,52.6,8.0,30],[13.6,52.6,23.0,30]]}
+            JSON
+
+            air-field --stations=/tmp/stations.json --output=/tmp/bands.geojson \
+              --grid=0.05 --influence-km=120 --mask-km=60
+
+            python - <<'"'"'PY'"'"'
+            import json
+            from shapely.geometry import shape
+
+            bands = json.load(open("/tmp/bands.geojson"))["features"]
+            assert bands, "no band survived the coverage mask"
+
+            shapes = {}
+            for feature in bands:
+                geometry = shape(feature["geometry"])
+                assert geometry.is_valid, f"band {feature[\"properties\"][\"band\"]} is invalid"
+                shapes[feature["properties"]["band"]] = geometry
+
+            assert len(shapes) >= 2, f"expected several bands, got {sorted(shapes)}"
+
+            # No point may fall in two bands. See the note above the step
+            keys = sorted(shapes)
+            for i in range(len(keys)):
+                for j in range(i + 1, len(keys)):
+                    overlap = shapes[keys[i]].intersection(shapes[keys[j]]).area
+                    assert overlap < 1e-9, f"bands {keys[i]} and {keys[j]} overlap by {overlap}"
+
+            print(f"ok: bands {keys}, disjoint")
+            PY
+          '
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: apps/air
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

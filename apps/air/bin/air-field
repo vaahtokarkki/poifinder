@@ -1,0 +1,462 @@
+#!/usr/bin/env python3
+#
+# Turn a few thousand PM2.5 readings into a field of six band polygons.
+#
+#   air-field --stations=stations.json --output=bands.geojson
+#   air-field --stations=stations.json --output=bands.geojson --grid=0.05
+#
+# Inverse distance weighting onto a regular grid, contoured at the European Air
+# Quality Index breakpoints, then clipped to the area the stations can actually
+# speak for. Three steps and the third is the one that keeps it honest.
+#
+# WHY THE BREAKPOINTS ARE NOT OURS
+#
+# The six edges below are the EAQI's, the index the EEA publishes and every
+# European air quality display already uses. They are to this layer what 55 and
+# 65 dB Lden are to the noise one: published thresholds with a meaning outside
+# this repository, so "poor" here means what "poor" means on a national air
+# quality site rather than what it means relative to the rest of this map.
+#
+# Choosing our own edges — three bands, say, to match the noise layer and to
+# look suitably humble about an interpolation — would have been worse. It would
+# make the map incomparable with every other air quality display a reader has
+# seen, in exchange for an honesty that belongs in the mask and the caption
+# rather than in the legend.
+#
+# WHY THE MASK IS THE IMPORTANT PART
+#
+# Interpolation always produces a value. Ask this grid for a point in the
+# middle of the Sahara and inverse distance weighting will return a number,
+# smooth and plausible and derived from a monitor 900 km away in Algiers, and
+# the renderer will fill it in with a confident colour. Nothing about the
+# output would look different from a cell 2 km from a reference station.
+#
+# So a cell is drawn only if a station is within --mask-km of it, and the rest
+# of the world is a hole. The hole is the honest part of this file: it is the
+# difference between "the air here is fair" and "nobody is measuring here", and
+# an interpolation with no mask cannot tell a reader which one they are looking
+# at.
+#
+# Influence and mask are two different radii on purpose. Stations out to
+# --influence-km shape a cell's value, so a cell near the edge of coverage is
+# still an average of several monitors rather than a copy of the nearest one,
+# but nothing is drawn past --mask-km however good the arithmetic was.
+import argparse
+import json
+import math
+import sys
+
+import numpy as np
+from contourpy import FillType, contour_generator
+from shapely.geometry import MultiPolygon, Polygon, mapping
+from shapely.ops import unary_union
+
+# The EAQI's PM2.5 breakpoints in µg/m³, as (band, lower, upper). Band 1 is
+# good and band 6 is extremely poor; the top band has no upper edge, and the
+# number standing in for one is above any reading the fetcher lets through
+BANDS = [
+    (1, 0.0, 10.0),
+    (2, 10.0, 20.0),
+    (3, 20.0, 25.0),
+    (4, 25.0, 50.0),
+    (5, 50.0, 75.0),
+    (6, 75.0, None),
+]
+
+# Stands in for the top band's missing upper edge when a region is asked for.
+# Above anything air-latest lets through, which caps readings at 2000 µg/m³
+TOP_OF_SCALE = 1.0e6
+
+# Degrees of latitude per kilometre, and the equatorial figure for longitude.
+# Everything here is equirectangular: over the few hundred kilometres these
+# radii cover, the error against a great circle is under a tenth of a percent,
+# and a grid indexed in degrees wants the inverse of these anyway
+KM_PER_DEGREE_LAT = 110.574
+KM_PER_DEGREE_LON = 111.320
+
+# Stations closer to a cell centre than this are treated as being this far
+# away. Without it the weight at a station's own cell is a division by zero;
+# with it, the surface flattens over the last half kilometre, which is finer
+# than the grid and therefore invisible
+MIN_DISTANCE_KM = 0.5
+
+# How sharply influence falls with distance. Two is the usual choice and the
+# one to leave alone: at one the field is too flat to show a city at all, and
+# at three each station's own cell dominates its neighbourhood and the map
+# turns into discs
+IDW_POWER = 2.0
+
+# Latitudes outside this are not modelled. Longitude convergence makes the
+# equirectangular distance above meaningless near the poles, and OpenAQ has
+# nothing there to model: the northernmost stations are in Svalbard and
+# northern Alaska, comfortably inside
+LATITUDE_LIMIT = 82.0
+
+# How many points a station's coverage circle is drawn with. These get unioned
+# by the thousand, so the count is a direct cost; 32 puts the worst chord error
+# under half a percent of the radius, which is metres at these sizes
+CIRCLE_SEGMENTS = 32
+
+
+def read_stations(path):
+    """The snapshot air-latest wrote, as an (n, 3) array of lon, lat, value."""
+    with open(path) as handle:
+        snapshot = json.load(handle)
+
+    rows = snapshot.get("stations") or []
+    if not rows:
+        raise SystemExit(f"{path} holds no stations")
+
+    array = np.array([row[:3] for row in rows], dtype=np.float64)
+
+    # The pole guard, applied here rather than in the loop so that the grid
+    # bounds below are computed from the stations that will actually be used
+    keep = np.abs(array[:, 1]) <= LATITUDE_LIMIT
+    dropped = int((~keep).sum())
+    if dropped:
+        print(f"  {dropped} stations outside ±{LATITUDE_LIMIT}° ignored", file=sys.stderr)
+
+    return array[keep]
+
+
+def grid_axes(stations, spacing, influence_km):
+    """The longitudes and latitudes the field is sampled at.
+
+    Bounded by the stations rather than by the globe. Most of the planet has no
+    monitor within any useful distance of it and would be masked away at the
+    end regardless, so sampling it costs memory to produce nothing — and the
+    array is the largest thing this program holds.
+
+    Padded by the influence radius, not the mask radius, so that the contour
+    running through the outermost drawn cells is computed from a full
+    neighbourhood on both sides rather than from a field that stops.
+    """
+    pad_lat = influence_km / KM_PER_DEGREE_LAT
+    west, east = stations[:, 0].min(), stations[:, 0].max()
+    south, north = stations[:, 1].min(), stations[:, 1].max()
+
+    # Longitude padding at the highest latitude in the set, which is where a
+    # kilometre is worth the most degrees, so the pad is sufficient everywhere
+    worst = min(max(abs(south), abs(north)), LATITUDE_LIMIT)
+    pad_lon = influence_km / (KM_PER_DEGREE_LON * max(math.cos(math.radians(worst)), 0.15))
+
+    west = max(-180.0, west - pad_lon)
+    east = min(180.0, east + pad_lon)
+    south = max(-LATITUDE_LIMIT, south - pad_lat)
+    north = min(LATITUDE_LIMIT, north + pad_lat)
+
+    # Snapped to a global lattice, so that the grid does not shift between
+    # hourly runs as stations come and go. An unsnapped grid would make every
+    # contour wobble by up to one cell from one build to the next, which reads
+    # as the air moving when it is only the sampling moving
+    west = math.floor(west / spacing) * spacing
+    south = math.floor(south / spacing) * spacing
+    nx = int(math.ceil((east - west) / spacing)) + 1
+    ny = int(math.ceil((north - south) / spacing)) + 1
+
+    return (
+        west + np.arange(nx) * spacing,
+        south + np.arange(ny) * spacing,
+    )
+
+
+def interpolate(stations, lons, lats, influence_km):
+    """The IDW surface, as a masked array over the grid.
+
+    Accumulated one station at a time into a running numerator and denominator
+    rather than one cell at a time over a search tree. Each station touches
+    only the window of cells its influence radius reaches, so the whole thing
+    is a few thousand small numpy slice updates: no spatial index, no
+    per-cell Python, and it finishes in seconds on a global set.
+
+    The weight is Shepard's modified form, ((R-d)/(R·d))², rather than plain
+    1/d². Plain 1/d² does not reach zero at the search radius, so a station
+    leaving a cell's neighbourhood takes a finite weight with it and the field
+    steps. Over a continent of overlapping radii those steps are visible as
+    circles of exactly --influence-km, drawn on the map in the one pattern that
+    most looks like a real atmospheric feature and is not.
+    """
+    numerator = np.zeros((lats.size, lons.size), dtype=np.float64)
+    denominator = np.zeros_like(numerator)
+
+    spacing_lon = lons[1] - lons[0]
+    spacing_lat = lats[1] - lats[0]
+
+    for lon, lat, value in stations:
+        # The window this station can reach, in cell indices. Longitude at this
+        # station's own latitude, which is what makes the window a square in
+        # kilometres rather than in degrees
+        scale = max(math.cos(math.radians(lat)), 0.05)
+        span_lat = influence_km / KM_PER_DEGREE_LAT
+        span_lon = influence_km / (KM_PER_DEGREE_LON * scale)
+
+        x0 = int(np.searchsorted(lons, lon - span_lon, side="left"))
+        x1 = int(np.searchsorted(lons, lon + span_lon, side="right"))
+        y0 = int(np.searchsorted(lats, lat - span_lat, side="left"))
+        y1 = int(np.searchsorted(lats, lat + span_lat, side="right"))
+        if x0 >= x1 or y0 >= y1:
+            continue
+
+        dx = (lons[x0:x1] - lon) * KM_PER_DEGREE_LON * scale
+        dy = (lats[y0:y1] - lat) * KM_PER_DEGREE_LAT
+        distance = np.sqrt(dy[:, None] ** 2 + dx[None, :] ** 2)
+        np.maximum(distance, MIN_DISTANCE_KM, out=distance)
+
+        inside = distance < influence_km
+        if not inside.any():
+            continue
+
+        weight = np.zeros_like(distance)
+        near = distance[inside]
+        weight[inside] = ((influence_km - near) / (influence_km * near)) ** IDW_POWER
+
+        numerator[y0:y1, x0:x1] += weight * value
+        denominator[y0:y1, x0:x1] += weight
+
+    covered = denominator > 0.0
+    if not covered.any():
+        raise SystemExit("no grid cell is within the influence radius of any station")
+
+    field = np.full(numerator.shape, np.nan)
+    np.divide(numerator, denominator, out=field, where=covered)
+
+    # Masked rather than filled with a sentinel: contourpy treats masked cells
+    # as absent and simply does not draw there, which is exactly the behaviour
+    # wanted at the edge of coverage. A sentinel would be contoured as a value
+    return np.ma.masked_array(field, mask=~covered)
+
+
+def coverage_mask(stations, mask_km):
+    """The union of every station's coverage circle.
+
+    A real circle rather than the set of grid cells within the radius, and that
+    is the whole reason this function exists. The grid is 11 km across at the
+    default spacing, so a mask taken from it has an 11 km staircase along its
+    edge — and that edge is the most-looked-at line on the map, because it is
+    where the colour stops. Drawn as geometry it is a smooth arc at any zoom.
+
+    Circles in metres are ellipses in degrees, more so the further north they
+    are, so each one is built at its own station's latitude.
+    """
+    angles = np.linspace(0.0, 2.0 * math.pi, CIRCLE_SEGMENTS, endpoint=False)
+    cosines, sines = np.cos(angles), np.sin(angles)
+
+    circles = []
+    for lon, lat, _ in stations:
+        scale = max(math.cos(math.radians(lat)), 0.05)
+        radius_lat = mask_km / KM_PER_DEGREE_LAT
+        radius_lon = mask_km / (KM_PER_DEGREE_LON * scale)
+        circles.append(
+            Polygon(
+                np.column_stack(
+                    (lon + radius_lon * cosines, lat + radius_lat * sines)
+                )
+            )
+        )
+
+    # One GEOS overlay over the whole set rather than a running union: in a
+    # dense region several hundred circles collapse into one polygon, and doing
+    # that pairwise is quadratic for the same answer
+    return unary_union(circles)
+
+
+def band_polygons(generator, lower, upper):
+    """Every polygon where the field lies between two breakpoints.
+
+    contourpy's OuterOffset fill type is what makes this short. It returns one
+    entry per outer boundary with that boundary's holes attached, so a band
+    that surrounds a cleaner patch of air arrives already knowing the patch is
+    a hole. The alternative — a flat list of rings to be sorted into shells and
+    holes by winding order or by containment — is the classic way to get a
+    contour plot subtly wrong.
+    """
+    filled = generator.filled(lower, upper)
+    if not filled or filled[0] is None:
+        return []
+
+    points_per_outer, offsets_per_outer = filled
+    polygons = []
+
+    for points, offsets in zip(points_per_outer, offsets_per_outer):
+        if points is None or offsets is None or len(offsets) < 2:
+            continue
+        rings = [
+            points[offsets[index] : offsets[index + 1]]
+            for index in range(len(offsets) - 1)
+        ]
+        # A ring needs four positions to close a triangle. Shorter ones are
+        # degenerate slivers where the field grazes a breakpoint
+        rings = [ring for ring in rings if len(ring) >= 4]
+        if not rings:
+            continue
+
+        polygon = Polygon(rings[0], rings[1:])
+        if not polygon.is_valid:
+            # Contours self-touch where a saddle meets a breakpoint exactly.
+            # buffer(0) is GEOS's idiom for repairing that, and it either
+            # returns something valid or something empty
+            polygon = polygon.buffer(0)
+        if polygon.is_empty:
+            continue
+        polygons.append(polygon)
+
+    return polygons
+
+
+def parse_bbox(raw):
+    """A west,south,east,north box as a polygon, or None for the whole world.
+
+    The interpolation itself is never restricted to this. Stations outside the
+    box still shape the field inside it, which is the same call apps/noise
+    makes when it cuts a city from every extract that overlaps it rather than
+    from one: air over Aachen is made largely of air that was over Belgium an
+    hour ago, and a build that dropped Belgian monitors would put a false
+    gradient along the border — an edge in the data drawn as an edge in the
+    air.
+
+    So this clips the output and nothing else. What is inside the box was
+    computed as if the box were not there.
+    """
+    if not raw:
+        return None
+    try:
+        west, south, east, north = (float(part) for part in raw.split(","))
+    except ValueError:
+        raise SystemExit(f"--bbox wants west,south,east,north in degrees: {raw!r}")
+    if west >= east or south >= north:
+        raise SystemExit(f"--bbox is empty or inside out: {raw!r}")
+    return Polygon(
+        [(west, south), (east, south), (east, north), (west, north)]
+    )
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--stations", required=True)
+    parser.add_argument("--output", required=True)
+    parser.add_argument(
+        "--grid",
+        type=float,
+        default=0.1,
+        help="grid spacing in degrees (default 0.1, about 11 km)",
+    )
+    parser.add_argument(
+        "--influence-km",
+        type=float,
+        default=150.0,
+        help="how far a station's reading shapes the field (default 150)",
+    )
+    parser.add_argument(
+        "--bbox",
+        default=None,
+        help="clip the output to west,south,east,north in degrees",
+    )
+    parser.add_argument(
+        "--mask-km",
+        type=float,
+        default=75.0,
+        help="how far from a station anything is drawn at all (default 75)",
+    )
+    arguments = parser.parse_args()
+
+    if arguments.mask_km > arguments.influence_km:
+        raise SystemExit(
+            "--mask-km above --influence-km would draw cells no station reaches"
+        )
+
+    clip = parse_bbox(arguments.bbox)
+
+    stations = read_stations(arguments.stations)
+    print(f"  {len(stations)} stations", file=sys.stderr)
+
+    lons, lats = grid_axes(stations, arguments.grid, arguments.influence_km)
+    print(f"  grid {lons.size} x {lats.size} at {arguments.grid}°", file=sys.stderr)
+
+    field = interpolate(stations, lons, lats, arguments.influence_km)
+    print(f"  {int((~field.mask).sum())} cells with a value", file=sys.stderr)
+
+    mask = coverage_mask(stations, arguments.mask_km)
+    if clip is not None:
+        # Intersected into the mask rather than applied to each band at the
+        # end, so that every band is clipped by one geometry and their shared
+        # edges stay shared. Clipping six polygons separately against the same
+        # box is how the slivers the nesting below removes get put back
+        mask = mask.intersection(clip)
+        if mask.is_empty:
+            raise SystemExit("no station coverage inside --bbox")
+    print(f"  coverage mask built at {arguments.mask_km} km", file=sys.stderr)
+
+    generator = contour_generator(
+        x=lons, y=lats, z=field, fill_type=FillType.OuterOffset
+    )
+
+    # A quarter of a cell. The contour's own vertices sit on cell edges, so
+    # anything below half a cell removes only the staircase that the grid put
+    # there and none of the shape the field has
+    tolerance = arguments.grid / 4.0
+
+    # Cumulative regions rather than one contour per band, and the difference
+    # matters more than it looks. Asking the generator for band 2 and band 3
+    # separately gives two polygons that were computed from the same contour
+    # line and then simplified apart from each other, so their shared edge ends
+    # up in two slightly different places: a chain of slivers where they
+    # overlap and gaps where they do not. A point in one of those slivers
+    # belongs to two bands at once, which is a popup that has to guess.
+    #
+    # So each breakpoint gets the whole region above it, the regions are forced
+    # to nest, and a band is the difference of two neighbours. Whatever the
+    # simplifier does to an edge, both sides of it get the same edge, because
+    # it is literally the same geometry subtracted from one and kept by the
+    # other.
+    regions = []
+    for _, lower, _ in BANDS:
+        polygons = band_polygons(generator, lower, TOP_OF_SCALE)
+        if not polygons:
+            regions.append(Polygon())
+            continue
+        # Clipped to the coverage mask, which is the line from the header: past
+        # here the interpolation still has an opinion and this map does not
+        shape = unary_union(polygons).intersection(mask)
+        regions.append(shape.simplify(tolerance, preserve_topology=True))
+
+    # Nesting, restored from the top down. Simplification is not monotonic — it
+    # can push a vertex of the inner region outside the outer one — and the
+    # subtraction below is only exact while each region contains the next
+    for index in range(len(regions) - 2, -1, -1):
+        if not regions[index + 1].is_empty:
+            regions[index] = unary_union([regions[index], regions[index + 1]])
+
+    features = []
+    for index, (band, _, _) in enumerate(BANDS):
+        outer = regions[index]
+        if outer.is_empty:
+            continue
+        inner = regions[index + 1] if index + 1 < len(regions) else Polygon()
+        shape = outer if inner.is_empty else outer.difference(inner)
+        if shape.is_empty:
+            continue
+
+        # One feature per band rather than per polygon. The client asks which
+        # band covers a point and never which piece of it, and six features
+        # instead of a few thousand is a smaller tile and a faster query
+        if isinstance(shape, Polygon):
+            shape = MultiPolygon([shape])
+
+        features.append(
+            {
+                "type": "Feature",
+                "properties": {"band": band},
+                "geometry": mapping(shape),
+            }
+        )
+        print(f"  band {band}: {len(shape.geoms)} polygons", file=sys.stderr)
+
+    if not features:
+        raise SystemExit("no band survived the coverage mask")
+
+    with open(arguments.output, "w") as handle:
+        json.dump({"type": "FeatureCollection", "features": features}, handle)
+
+
+if __name__ == "__main__":
+    main()

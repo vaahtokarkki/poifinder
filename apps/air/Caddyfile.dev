@@ -1,0 +1,85 @@
+# Air quality tiles for a development machine: plain HTTP, no TLS, wide open
+# CORS.
+#
+# The production one is in apps/overpass/docker-compose.prod.yml, where the
+# same job is done by a Caddy that also fronts Overpass and the noise tiles and
+# terminates TLS. This one exists so that `npm run dev` has somewhere to fetch
+# from without any of that.
+
+{
+	# No TLS, no ACME, no admin API reachable from anywhere
+	auto_https off
+	admin off
+}
+
+:8081 {
+	# The symlink the builder swaps, not the build directory: that is what
+	# makes a rebuild visible without restarting this
+	root * /srv/air/current
+
+	# Two kinds of file under one root, which is the only way this differs from
+	# the noise Caddyfile next door. The tiles are protobuf and stations.json
+	# is JSON, and getting the type wrong on either is a silent failure —
+	# MapLibre will not parse a tile that arrives as octet-stream, and fetch()
+	# will not parse JSON that arrives as protobuf.
+	#
+	# `defer` on all of them, for the reason the noise one documents at length:
+	# without it these are applied before file_server runs and file_server then
+	# overwrites Content-Type with the octet-stream it sniffed, because Caddy
+	# has no mime type for .pbf.
+	#
+	# Content-Encoding is set rather than produced. Both the tiles and
+	# stations.json are written gzipped by the builder and served as they lie,
+	# so the compression happened once at build time instead of on every
+	# request for a file that does not change until the next hour
+	header {
+		defer
+		Content-Encoding "gzip"
+
+		# Vite serves the app from localhost:5173 and this from localhost:8081,
+		# which are different origins. In production both are behind one name
+		# and this header does nothing
+		Access-Control-Allow-Origin "*"
+
+		# Short in dev on purpose: a rebuild should show up on a reload rather
+		# than in an hour
+		Cache-Control "public, max-age=60"
+
+		-Server
+	}
+
+	# Block form, not the one-liner. `header @tiles defer Content-Type "..."`
+	# parses `defer` as the field name and sets a header called "defer" — it
+	# fails silently, and what reaches the browser is whatever file_server
+	# sniffed. For .json that is a plausible-looking application/json, which is
+	# why this was caught on the tiles: Caddy has no mime type for .pbf, so
+	# they arrived with no Content-Type at all and MapLibre will not parse them
+	@tiles path *.pbf
+	header @tiles {
+		defer
+		Content-Type "application/x-protobuf"
+	}
+
+	@json path *.json
+	header @json {
+		defer
+		Content-Type "application/json; charset=utf-8"
+	}
+
+	# A tile with nothing in it is not an error, and MapLibre treats 404 as an
+	# empty tile — but logs it first. 204 says the same thing without filling a
+	# console with our infrastructure. Most of this layer's tiles are empty:
+	# the mask stops at 75 km from a station, so every ocean tile is a miss.
+	#
+	# Ahead of the header block above in effect, since a 204 carries no body:
+	# the Content-Encoding there would otherwise describe a gzip stream that is
+	# not present
+	handle_errors {
+		@missing expression {err.status_code} == 404
+		respond @missing 204 {
+			close
+		}
+	}
+
+	file_server
+}

@@ -11,6 +11,7 @@ shelters and more, from OpenStreetMap.
 | [`apps/frontend`](apps/frontend) | The app: React, Leaflet, and the prerender that turns every route into a real HTML file. Deployed to Cloudflare |
 | [`apps/overpass`](apps/overpass) | A self hosted Overpass API, holding only the categories the app queries. Docker, one container |
 | [`apps/noise`](apps/noise) | Modelled traffic noise as vector tiles, built from OpenStreetMap. Optional: the app shows nothing without it |
+| [`apps/air`](apps/air) | Current air quality as vector tiles, interpolated from OpenAQ stations. Optional, and rebuilt hourly |
 
 The two halves are independent. The app runs against the public Overpass
 mirrors out of the box and only talks to `apps/overpass` when
@@ -60,6 +61,7 @@ Run from the repo root; each delegates to the workspace that owns it.
 | `npm run deploy` | Builds and pushes to Cloudflare |
 | `npm run overpass:filters` | Regenerates `apps/overpass/osmium-filter.txt` from `CATEGORY_CONFIG` |
 | `npm run noise:cities` | Regenerates `apps/noise/cities.json` from `CITIES` |
+| `npm run air:build` | Fetches OpenAQ and rebuilds `apps/air`'s tiles |
 | `npm run overpass:up` | Builds and starts the Overpass container |
 | `npm run overpass:update` | Reimports its database from a fresh extract |
 

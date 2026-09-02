@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { useMap } from "react-leaflet";
 import { maplibreGL } from "@maplibre/maplibre-gl-leaflet";
 import type { RequestParameters, StyleSpecification } from "maplibre-gl";
-import { installNoiseWhenBasemapReady, setGlMap } from "../map/noiseTiles";
+import { installNoiseWhenBasemapReady } from "../map/noiseTiles";
+import { installAirWhenBasemapReady } from "../map/airTiles";
+import { setGlMap } from "../map/glMap";
 
 /**
  * The CARTO Voyager basemap, drawn from vector tiles.
@@ -98,6 +100,7 @@ const BasemapLayer = () => {
     const abort = new AbortController();
     let layer: ReturnType<typeof maplibreGL> | undefined;
     let detachNoise: (() => void) | undefined;
+    let detachAir: (() => void) | undefined;
 
     loadStyle(abort.signal)
       .then(style => {
@@ -113,10 +116,10 @@ const BasemapLayer = () => {
 
         const glMap = layer.getMaplibreMap();
         /**
-         * Published for the noise layer's sake: the popup asks which band a
-         * point falls in, and the only thing that can answer is the GL map
-         * that has the tile. Nothing else reads it, and a build with no noise
-         * tiles configured simply never asks
+         * Published for the overlays' sake: the noise popup asks which band a
+         * point falls in and only the GL map holding the tile can answer, and
+         * the layers panel asks where the view is centred. A build with
+         * neither overlay configured simply never asks
          */
         setGlMap(glMap);
         /**
@@ -127,6 +130,14 @@ const BasemapLayer = () => {
          * reader is waiting for; noise is an overlay most of them never open
          */
         detachNoise = installNoiseWhenBasemapReady(glMap);
+        /**
+         * And the air quality wash, on the same terms and for the same reason.
+         * Two independent installs rather than one that adds both: each is a
+         * no-op in a build where its own tile URL is unset, so a checkout with
+         * one tile server configured and not the other gets exactly the layer
+         * it has
+         */
+        detachAir = installAirWhenBasemapReady(glMap);
       })
       .catch((error: unknown) => {
         if (abort.signal.aborted) return;
@@ -138,6 +149,7 @@ const BasemapLayer = () => {
     return () => {
       abort.abort();
       detachNoise?.();
+      detachAir?.();
       setGlMap(null);
       if (layer) map.removeLayer(layer);
     };

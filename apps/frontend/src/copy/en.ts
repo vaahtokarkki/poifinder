@@ -882,7 +882,9 @@ const ui: CopyDeck["ui"] = {
       veryPoor: "Very poor",
       extremelyPoor: "Extremely poor",
       unit: "µg/m³",
-      measuredAt: "Fine particles, measured {distance} km away",
+      measuredAt: "Fine particles, measured {distance} km away, {age}",
+      ageMinutes: { one: "1 min ago", other: "{count} min ago" },
+      ageHours: { one: "1 h ago", other: "{count} h ago" },
       about: "How this works",
       aboutTitle: "Air quality nearby",
       aboutIntro:

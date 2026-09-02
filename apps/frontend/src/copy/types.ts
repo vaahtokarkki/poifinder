@@ -289,8 +289,16 @@ export type UiCopy = {
       extremelyPoor: string;
       /** µg/m³, which is the same in every language this ships in */
       unit: string;
-      /** Carries {distance}, in kilometres */
+      /** Carries {distance} in kilometres and {age}, already worded */
       measuredAt: string;
+      /**
+       * How long ago the reading was taken, worded and dropped into {age}
+       * above. Two messages rather than one because the span this covers runs
+       * from minutes to most of a day: readings are dropped past six hours old
+       * and the snapshot carrying them can itself be an hour stale.
+       */
+      ageMinutes: PluralMessage;
+      ageHours: PluralMessage;
       /** The link under the caption, which opens the explanation */
       about: string;
       /**

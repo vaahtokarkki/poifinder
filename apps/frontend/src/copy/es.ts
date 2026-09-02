@@ -218,7 +218,9 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       veryPoor: "Muy mala",
       extremelyPoor: "Extremadamente mala",
       unit: "µg/m³",
-      measuredAt: "Partículas finas, medidas a {distance} km",
+      measuredAt: "Partículas finas, medidas a {distance} km, {age}",
+      ageMinutes: { one: "hace 1 min", other: "hace {count} min" },
+      ageHours: { one: "hace 1 h", other: "hace {count} h" },
       about: "Cómo funciona",
       aboutTitle: "Calidad del aire cerca",
       aboutIntro:

@@ -1,6 +1,6 @@
 import React from "react";
 import { Dialog, DialogContent, DialogTitle, Button } from "@mui/material";
-import { ui } from "../copy";
+import { getLocale, interpolate, resolve, ui } from "../copy";
 import { CATEGORIES } from "../constants";
 import { useAirReading } from "../hooks/useAirQuality";
 import { analytics } from "../analytics";
@@ -82,6 +82,26 @@ const AirSection: React.FC<{
    */
   const distance = Math.max(1, Math.round(reading.distanceKm));
 
+  /**
+   * How long ago it was measured, in the coarsest unit that still says
+   * something.
+   *
+   * Minutes below an hour and a half, hours above it. The break is at 90
+   * rather than 60 so that nothing is ever shown as "1 h ago" when it could
+   * honestly be "75 min ago" — rounding to the hour that early throws away
+   * most of what the reader wanted from this row.
+   *
+   * Never zero, for the same reason the distance is never zero: "0 min ago"
+   * claims a reading taken as you looked at it.
+   */
+  const locale = getLocale();
+  const minutes = Math.max(1, reading.ageMinutes);
+  const hours = Math.round(minutes / 60);
+  const age =
+    minutes < 90
+      ? resolve(words.ageMinutes, locale, { count: minutes }, minutes)
+      : resolve(words.ageHours, locale, { count: hours }, hours);
+
   return (
     <div className="poi-popup-air">
       {/* One line, as the noise row above it: "Air quality: Good" */}
@@ -103,7 +123,7 @@ const AirSection: React.FC<{
         </span>
       </p>
       <p className="poi-popup-air-caption">
-        {words.measuredAt.replace("{distance}", String(distance))}
+        {interpolate(words.measuredAt, { distance, age })}
       </p>
       <button
         type="button"

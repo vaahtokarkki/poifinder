@@ -332,6 +332,18 @@ const KM_PER_DEGREE_LAT = 110.574;
 const KM_PER_DEGREE_LON = 111.32;
 
 let snapshot: AirStation[] | null = null;
+/**
+ * When the builder took the snapshot, as epoch milliseconds.
+ *
+ * Kept because every station's `ageMinutes` is measured from this instant and
+ * not from now, and the gap between the two is not small. The file is rebuilt
+ * hourly and served with `max-age=300, stale-while-revalidate=3600`, so a
+ * reader can perfectly well be holding a snapshot that was built an hour ago —
+ * and a popup that reported the stored age would say "20 minutes ago" about a
+ * reading taken eighty minutes ago. Off by an hour, in the direction that
+ * flatters us, on the one row that exists to say how current the number is.
+ */
+let snapshotFetchedAt: number | null = null;
 let pending: Promise<AirStation[] | null> | null = null;
 let failed = false;
 
@@ -358,6 +370,12 @@ export function loadStations(): Promise<AirStation[] | null> {
     .then((payload: unknown) => {
       const rows = (payload as { stations?: unknown })?.stations;
       if (!Array.isArray(rows)) throw new Error("no stations");
+      // Absent or unparseable leaves this null, and the age below then falls
+      // back to the stored one rather than to a wrong one
+      const fetched = Date.parse(
+        String((payload as { fetched?: unknown })?.fetched ?? "")
+      );
+      snapshotFetchedAt = Number.isFinite(fetched) ? fetched : null;
       // The snapshot stores rows as arrays rather than objects, which roughly
       // halves the download. `columns` in the file says what the order is;
       // this is that order
@@ -388,6 +406,11 @@ export type AirReading = {
   station: AirStation;
   band: AirBand;
   distanceKm: number;
+  /**
+   * How long ago the reading was taken, counted to now rather than to when the
+   * snapshot was built. See snapshotFetchedAt for why those are different.
+   */
+  ageMinutes: number;
 };
 
 /**
@@ -424,7 +447,20 @@ export function nearestReading(position: [number, number]): AirReading | null {
   const distanceKm = Math.sqrt(bestKm);
   if (distanceKm > NEAREST_LIMIT_KM) return null;
 
-  return { station: best, band: bandForValue(best.value), distanceKm };
+  // How long this snapshot has been sitting in a cache, added to the age it
+  // was carrying when it was written. Clamped at zero because a client clock
+  // behind the server's would otherwise make a reading younger than it is
+  const drift =
+    snapshotFetchedAt === null
+      ? 0
+      : Math.max(0, (Date.now() - snapshotFetchedAt) / 60000);
+
+  return {
+    station: best,
+    band: bandForValue(best.value),
+    distanceKm,
+    ageMinutes: Math.round(best.ageMinutes + drift),
+  };
 }
 
 /**

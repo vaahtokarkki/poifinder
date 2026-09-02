@@ -231,7 +231,9 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       veryPoor: "Erittäin huono",
       extremelyPoor: "Erittäin huono ja terveydelle vaarallinen",
       unit: "µg/m³",
-      measuredAt: "Pienhiukkaset, mitattu {distance} km päässä",
+      measuredAt: "Pienhiukkaset, mitattu {distance} km päässä, {age}",
+      ageMinutes: { one: "1 min sitten", other: "{count} min sitten" },
+      ageHours: { one: "1 h sitten", other: "{count} h sitten" },
       about: "Miten tämä toimii",
       aboutTitle: "Ilmanlaatu lähistöllä",
       aboutIntro:

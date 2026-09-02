@@ -69,6 +69,15 @@ export type CategoryPageData = {
    */
   siblingCategories: string[];
   nearbyCities: string[];
+  /**
+   * Whether this category has a country hub in this locale, so the page can
+   * link up to it.
+   *
+   * A flag rather than the page working it out, for the same reason
+   * `siblingCategories` is a list: only the build knows which hubs cleared the
+   * three-city threshold, and a link that guesses is a link that 404s.
+   */
+  hasCountryHub?: boolean;
   /** ISO date of the OpenStreetMap extract this page was built from */
   updatedAt: string;
 };
@@ -98,7 +107,34 @@ export type CitiesPageData = {
   citySlugs: string[];
 };
 
-export type PageData = CategoryPageData | CityPageData | HomePageData | CitiesPageData;
+/**
+ * A country hub: one category across every city in one country that has a page
+ * for it.
+ *
+ * The answer to a query with no town in it — "vessat kartalla", "drinkwater\u00ADkaart
+ * nederland". It carries the cities rather than the points: the points are on
+ * the city pages this one links to, and a country's worth of them is not a
+ * list anybody reads.
+ */
+export type CountryPageData = {
+  kind: "country";
+  countryCode: string;
+  /** The English name, which is also what the slug is derived from */
+  country: string;
+  categorySlug: string;
+  /** Cities with a page for this category, most points first */
+  entries: { citySlug: string; count: number }[];
+  /** Points across all of them, which is the number the title claims */
+  total: number;
+  updatedAt: string;
+};
+
+export type PageData =
+  | CategoryPageData
+  | CityPageData
+  | HomePageData
+  | CitiesPageData
+  | CountryPageData;
 
 /**
  * The payload of the page currently loaded, or null on a route that was not

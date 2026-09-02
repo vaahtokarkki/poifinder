@@ -1,7 +1,10 @@
 import React from "react";
 import type { CategoryPageData, PoiEntry } from "../seo/pageData";
 import {
+  capitalizeFirst,
   citiesPath,
+  countryNames,
+  countryPath,
   MAX_LISTED_POIS,
   cityPath,
   faqFor,
@@ -134,6 +137,22 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
       <p className="info-sheet-summary">
         <a href={cityPath(city.slug)}>{interpolate(ui().page.allPointsIn, cityNames(city))}</a>
         {" · "}
+        {/* The country hub, where one exists. This is the only inbound link
+            those pages get besides the sitemap, and it is what makes them
+            reachable by a crawler walking the tree rather than reading XML */}
+        {data.hasCountryHub && (
+          <>
+            <a href={countryPath(city.country, route.categorySeo.slug)}>
+              {interpolate(ui().page.allInCountry, {
+                // A link label opens a sentence, and the deck stores nouns in
+                // the lower case form they take mid sentence
+                noun: capitalizeFirst(pluralFor(route)),
+                ...countryNames(city.countryCode, city.country),
+              })}
+            </a>
+            {" · "}
+          </>
+        )}
         <a href={citiesPath()}>{ui().page.allCities}</a>
       </p>
 

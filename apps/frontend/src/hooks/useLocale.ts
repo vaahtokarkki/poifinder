@@ -16,7 +16,7 @@ import type { Locale } from "../copy";
 import { loadLocale, saveLocale } from "../utils/localeStorage";
 import { parseCategorySlugFromPath, parseCitySlugFromPath, parseLocaleFromPath } from "../utils";
 import { findCity } from "../seo/cities";
-import { categoryPath, cityPath, linkLocaleFor } from "../seo/pageMeta";
+import { categoryPath, cityPath, linkLocaleFor, linkLocaleForRoute } from "../seo/pageMeta";
 
 /**
  * The language the app is reading. Read only, and safe to call from anywhere:
@@ -59,9 +59,17 @@ export function useLocale(): [Locale, (locale: Locale) => void] {
       // preference as picking German from the menu.
       const citySlug = parseCitySlugFromPath();
       const city = citySlug ? findCity(citySlug) : undefined;
-      if (city && linkLocaleFor(city, fromPath) !== fromPath) {
+      const categorySlug = parseCategorySlugFromPath();
+      // The route's locales, not the city's. Berlin has a French toilets page
+      // and no French benches page, so /fr/berlin/benches/ has to redirect
+      // even though Berlin does carry a French tree
+      const available = city
+        ? categorySlug
+          ? linkLocaleForRoute(city, categorySlug, fromPath)
+          : linkLocaleFor(city, fromPath)
+        : fromPath;
+      if (city && available !== fromPath) {
         saveLocale(fromPath);
-        const categorySlug = parseCategorySlugFromPath();
         // replace, not assign: the URL we are leaving was never a page, so it
         // has no business in the visitor's back button
         window.location.replace(

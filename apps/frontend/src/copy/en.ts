@@ -812,6 +812,14 @@ const ui: CopyDeck["ui"] = {
     categoryDescription:
       "{count} {noun} in {city} on one map, with opening hours, fees and accessibility where OpenStreetMap has them. Free to use, no signup, works on your phone.",
     categoryHeading: "{noun} in {city}",
+    countryTitle:
+      "{noun} in {countryIn} on a map — {count} across {cities} {cityUnit} | {site}",
+    countryDescription:
+      "{count} {noun} in {countryIn}, mapped across {cities} {cityUnit} and shown on one map. Built from OpenStreetMap. Free, no signup, works on your phone.",
+    countryHeading: "{noun} in {countryIn}",
+    countrySummary: "{count} mapped points across {cities} {cityUnit} in {countryIn}.",
+    countryCitiesHeading: "Cities in {countryIn}",
+    allInCountry: "{noun} in {countryIn}",
     moreInCity: "More in {city}",
     nearbyHeading: "{noun} nearby",
     cityDisclosure: "Categories and nearby cities in {city}",

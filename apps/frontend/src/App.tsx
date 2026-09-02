@@ -33,7 +33,7 @@ import { categoryHeading, findCategorySeo, vocabFor } from "./seo/categories";
 import { DEFAULT_LOCALE, interpolate, ui } from "./copy";
 import type { Locale } from "./copy";
 import { useLocale } from "./hooks/useLocale";
-import { categoryPath, cityNames, cityPath, linkLocaleFor } from "./seo/pageMeta";
+import { categoryPath, cityNames, cityPath, linkLocaleFor, linkLocaleForRoute } from "./seo/pageMeta";
 import { readPageData } from "./seo/pageData";
 import SheetPage from "./components/SheetPage";
 import { Alert, Snackbar } from '@mui/material';
@@ -1023,14 +1023,20 @@ const App = () => {
 
     const citySlug = parseCitySlugFromPath();
     const city = citySlug ? findCity(citySlug) : undefined;
-    const target = city ? linkLocaleFor(city, next) : DEFAULT_LOCALE;
+    const categorySlug = parseCategorySlugFromPath();
+    // Same rule as arriving: what decides the tree is what this route has, and
+    // a category page's locales are narrower than its city's
+    const target = city
+      ? categorySlug
+        ? linkLocaleForRoute(city, categorySlug, next)
+        : linkLocaleFor(city, next)
+      : DEFAULT_LOCALE;
     const currentPrefix = parseLocaleFromPath();
 
     setAppLocale(next);
 
     // Only move if the tree the URL should be in has actually changed
     if (city && target !== currentPrefix) {
-      const categorySlug = parseCategorySlugFromPath();
       window.location.assign(
         categorySlug
           ? categoryPath(city.slug, categorySlug, target)

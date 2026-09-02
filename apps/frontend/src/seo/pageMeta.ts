@@ -14,11 +14,12 @@ import {
   vocabFor,
 } from "./categories";
 import type { CityNames, CategorySeo, FaqEntry, Vocab } from "./categories";
-import type { CategoryPageData, PoiEntry } from "./pageData";
+import type { CategoryPageData, CountryPageData, PoiEntry } from "./pageData";
 import { formatCount } from "./format";
 import { DEFAULT_LOCALE, LOCALES, getLocale, interpolate, selectPlural, ui } from "../copy";
 import type { Locale } from "../copy";
-import { CITIES_SLUG } from "../utils";
+import { CITIES_SLUG, COUNTRIES_SLUG } from "../utils";
+import { countryIn, countryName, countrySlug } from "./countries";
 
 export const SITE_URL = "https://wayside.cc";
 export const SITE_NAME = "Wayside";
@@ -527,6 +528,159 @@ export function alternatesForHome(): { hreflang: string; href: string }[] {
 
 export function alternatesForCities(): { hreflang: string; href: string }[] {
   return siteWideAlternates(citiesUrl);
+}
+
+/**
+ * How many cities a country needs before its hub is worth writing.
+ *
+ * The page's whole content is the list, so a hub with two cities on it is two
+ * links and a sentence — a thin page by the same measure `isIndexable` applies
+ * to a category page, and one that would compete with the city pages it exists
+ * to send people to.
+ *
+ * Three also happens to be what keeps the non-English hubs honest. Under it,
+ * every locale would get a hub for every tier-1 country its traveller tree
+ * touches, on two cities apiece; at three, a locale gets hubs for its own
+ * countries and nothing else, which is where the countrywide demand actually
+ * is: "vessat kartalla" is a Finn asking about Finland.
+ */
+export const MIN_CITIES_FOR_COUNTRY_HUB = 3;
+
+export function countryPath(
+  country: string,
+  categorySlug: string,
+  locale: Locale = getLocale()
+): string {
+  return `${localePrefix(locale)}/${COUNTRIES_SLUG}/${countrySlug(country)}/${categorySlug}/`;
+}
+
+export function countryUrl(
+  country: string,
+  categorySlug: string,
+  locale: Locale = getLocale()
+): string {
+  return `${SITE_URL}${countryPath(country, categorySlug, locale)}`;
+}
+
+/** Both forms of a country's name, for handing to a template */
+export function countryNames(
+  countryCode: string,
+  english: string,
+  locale: Locale = getLocale()
+): { country: string; countryIn: string } {
+  return {
+    country: countryName(countryCode, english, locale),
+    countryIn: countryIn(countryCode, english, locale),
+  };
+}
+
+function countryVocab(data: CountryPageData): Vocab {
+  return vocabFor(data.countryCode);
+}
+
+export function countryTitleFor(data: CountryPageData): string {
+  const categorySeo = findCategorySeo(data.categorySlug);
+  if (!categorySeo) return SITE_NAME;
+  return interpolate(ui().page.countryTitle, {
+    noun: capitalizeFirst(categoryPlural(categorySeo, countryVocab(data))),
+    ...countryNames(data.countryCode, data.country),
+    count: formatCount(data.total),
+    cities: formatCount(data.entries.length),
+    cityUnit: selectPlural(ui().page.cityUnit, data.entries.length, getLocale()),
+    site: SITE_NAME,
+  });
+}
+
+export function countryDescriptionFor(data: CountryPageData): string {
+  const categorySeo = findCategorySeo(data.categorySlug);
+  if (!categorySeo) return "";
+  return capitalizeFirst(
+    interpolate(ui().page.countryDescription, {
+      noun: categoryNoun(categorySeo, data.total, countryVocab(data)),
+      ...countryNames(data.countryCode, data.country),
+      count: formatCount(data.total),
+      cities: formatCount(data.entries.length),
+      cityUnit: selectPlural(ui().page.cityUnit, data.entries.length, getLocale()),
+    })
+  );
+}
+
+export function countryHeadingFor(data: CountryPageData): string {
+  const categorySeo = findCategorySeo(data.categorySlug);
+  if (!categorySeo) return "";
+  return interpolate(ui().page.countryHeading, {
+    noun: categoryHeading(categorySeo, countryVocab(data)),
+    ...countryNames(data.countryCode, data.country),
+  });
+}
+
+/**
+ * hreflang for a country hub.
+ *
+ * The cluster is whatever locales cleared the three-city threshold for this
+ * country and category, worked out in the prerender and passed in — the same
+ * discipline as `localesForRoute`, for the same reason: the tag has to name
+ * files that exist.
+ */
+export function alternatesForCountry(
+  country: string,
+  categorySlug: string,
+  locales: Locale[]
+): { hreflang: string; href: string }[] {
+  if (locales.length < 2) return [];
+  return [
+    ...locales.map((locale) => ({
+      hreflang: locale,
+      href: countryUrl(country, categorySlug, locale),
+    })),
+    { hreflang: "x-default", href: countryUrl(country, categorySlug, DEFAULT_LOCALE) },
+  ];
+}
+
+/** Structured data of a country hub: the list of city pages it points at */
+export function buildCountryJsonLd(data: CountryPageData): object[] {
+  const categorySeo = findCategorySeo(data.categorySlug);
+  if (!categorySeo) return [];
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: countryHeadingFor(data),
+      description: countryDescriptionFor(data),
+      url: countryUrl(data.country, data.categorySlug),
+      dateModified: data.updatedAt,
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: data.entries.length,
+        itemListElement: data.entries.flatMap((entry, index) => {
+          const city = findCity(entry.citySlug);
+          if (!city) return [];
+          const locale = linkLocaleForRoute(city, data.categorySlug);
+          return [
+            {
+              "@type": "ListItem",
+              position: index + 1,
+              name: cityName(city, locale),
+              item: categoryUrl(city.slug, data.categorySlug, locale),
+            },
+          ];
+        }),
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: SITE_NAME, item: homeUrl() },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: countryHeadingFor(data),
+          item: countryUrl(data.country, data.categorySlug),
+        },
+      ],
+    },
+  ];
 }
 
 /** Structured data of the city index */

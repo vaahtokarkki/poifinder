@@ -159,6 +159,13 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     categoryDescription:
       "{noun} {cityIn}: {count} kartalla, aukioloaikoineen, maksuineen ja esteettömyystietoineen sikäli kuin OpenStreetMap ne tuntee. Maksuton, ilman kirjautumista, toimii puhelimella.",
     categoryHeading: "{noun} {cityIn}",
+    countryTitle: "{noun} {countryIn} kartalla — {count} kohdetta {cities} kaupungissa | {site}",
+    countryDescription:
+      "{noun} {countryIn}: {count} kohdetta {cities} kaupungissa, kaikki yhdellä kartalla OpenStreetMapin pohjalta. Maksuton, ilman kirjautumista, toimii puhelimella.",
+    countryHeading: "{noun} {countryIn}",
+    countrySummary: "{countryIn} on kartoitettu {count} kohdetta {cities} kaupungissa.",
+    countryCitiesHeading: "Kaupungit {countryIn}",
+    allInCountry: "{noun} {countryIn}",
     moreInCity: "Lisää {cityIn}",
     nearbyHeading: "{noun} lähistöllä",
     cityDisclosure: "Kategoriat ja lähikaupungit {cityIn}",

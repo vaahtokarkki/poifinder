@@ -69,6 +69,7 @@ async function main() {
     const meta = await server.ssrLoadModule("/src/seo/pageMeta.ts");
     const { PAGE_DATA_ELEMENT_ID } = await server.ssrLoadModule("/src/seo/pageData.ts");
     const { setLocale } = await server.ssrLoadModule("/src/copy/locale.ts");
+    const { countrySlug } = await server.ssrLoadModule("/src/seo/countries.ts");
     const PrerenderedPage = (
       await server.ssrLoadModule("/src/components/PrerenderedPage.tsx")
     ).default;
@@ -145,6 +146,47 @@ async function main() {
       publishedRoutes.has(`${citySlug}/${categorySlug}`);
 
     const written = [];
+
+    // ---- Country hubs ----
+    // Worked out before anything is written, because a category page needs to
+    // know whether its hub exists before it can link to it.
+    //
+    // The rule is data, not configuration: a hub is written where a locale has
+    // at least MIN_CITIES_FOR_COUNTRY_HUB cities with a real page for that
+    // category in that country. That bounds it without a list to maintain —
+    // English gets hubs wherever the catalogue is deep, and each other locale
+    // gets them for its own countries only, because the traveller tree is
+    // tier-1 cities and no country has three of those.
+    const countryHubs = new Map();
+    for (const route of indexableRoutes) {
+      for (const locale of meta.localesForRoute(route.city, route.categorySeo.slug)) {
+        const key = `${locale}|${route.city.countryCode}|${route.categorySeo.slug}`;
+        let hub = countryHubs.get(key);
+        if (!hub) {
+          hub = {
+            locale,
+            countryCode: route.city.countryCode,
+            country: route.city.country,
+            categorySeo: route.categorySeo,
+            entries: [],
+            total: 0,
+            updatedAt: route.updatedAt,
+          };
+          countryHubs.set(key, hub);
+        }
+        hub.entries.push({ citySlug: route.city.slug, count: route.count });
+        hub.total += route.count;
+        if (route.updatedAt > hub.updatedAt) hub.updatedAt = route.updatedAt;
+      }
+    }
+    for (const [key, hub] of countryHubs) {
+      if (hub.entries.length < meta.MIN_CITIES_FOR_COUNTRY_HUB) countryHubs.delete(key);
+      // The list is the page, so lead with the cities that have the most to
+      // show rather than with whatever order the catalogue happens to be in
+      else hub.entries.sort((a, b) => b.count - a.count);
+    }
+    const hasCountryHub = (locale, countryCode, categorySlug) =>
+      countryHubs.has(`${locale}|${countryCode}|${categorySlug}`);
 
     /** Assemble a page from the shell: head tags in, content after #root */
     async function writePage({
@@ -251,6 +293,9 @@ async function main() {
           count: route.count,
           pois: route.pois,
           ...neighbours,
+          ...(hasCountryHub(locale, route.city.countryCode, route.categorySeo.slug)
+            ? { hasCountryHub: true }
+            : {}),
           updatedAt: route.updatedAt,
           ...(locale === "en" ? {} : { locale }),
         };
@@ -321,6 +366,42 @@ async function main() {
       }
       setLocale("en");
     }
+
+    // ---- Country hub pages ----
+    // One per locale, country and category that cleared the threshold above.
+    // The hreflang cluster is whichever locales cleared it for the same
+    // country and category, which is why it is worked out from the map rather
+    // than from the locale list: /fr/countries/germany/toilets/ does not exist
+    // and must not be claimed as the French alternate of the German one.
+    for (const hub of countryHubs.values()) {
+      const localesHere = LOCALES.map(({ code }) => code).filter((code) =>
+        countryHubs.has(`${code}|${hub.countryCode}|${hub.categorySeo.slug}`)
+      );
+      setLocale(hub.locale);
+      const pageData = {
+        kind: "country",
+        countryCode: hub.countryCode,
+        country: hub.country,
+        categorySlug: hub.categorySeo.slug,
+        entries: hub.entries,
+        total: hub.total,
+        updatedAt: hub.updatedAt,
+        ...(hub.locale === "en" ? {} : { locale: hub.locale }),
+      };
+      await writePage({
+        urlPath: `${hub.locale === "en" ? "" : `${hub.locale}/`}countries/${countrySlug(
+          hub.country
+        )}/${hub.categorySeo.slug}`,
+        title: meta.countryTitleFor(pageData),
+        description: meta.countryDescriptionFor(pageData),
+        canonical: meta.countryUrl(hub.country, hub.categorySeo.slug, hub.locale),
+        jsonLd: meta.buildCountryJsonLd(pageData),
+        locale: hub.locale,
+        alternates: meta.alternatesForCountry(hub.country, hub.categorySeo.slug, localesHere),
+        pageData,
+      });
+    }
+    setLocale("en");
 
     // ---- City index ----
     // Only the cities with something to land on: this page is the one path
@@ -467,6 +548,14 @@ async function main() {
         urlEntry(meta.HOME_URL, null, null),
         ...(indexedCities.length > 0 ? [urlEntry(meta.CITIES_URL, hubsLastmod, 1)] : []),
         ...hubs.map(({ city, updatedAt }) => urlEntry(meta.cityUrl(city.slug), updatedAt, city.tier)),
+        // The English country hubs sit here rather than in the category
+        // sitemaps: they are the shape of the site, the same job this file
+        // already does for the root, the index and the city hubs
+        ...[...countryHubs.values()]
+          .filter((hub) => hub.locale === "en")
+          .map((hub) =>
+            urlEntry(meta.countryUrl(hub.country, hub.categorySeo.slug), hub.updatedAt, 1)
+          ),
       ],
       hubs.map(({ updatedAt }) => updatedAt)
     );
@@ -515,6 +604,11 @@ async function main() {
           ...localeHubs.map(({ city, updatedAt }) =>
             urlEntry(meta.cityUrl(city.slug, code), updatedAt, city.tier)
           ),
+          ...[...countryHubs.values()]
+            .filter((hub) => hub.locale === code)
+            .map((hub) =>
+              urlEntry(meta.countryUrl(hub.country, hub.categorySeo.slug, code), hub.updatedAt, 1)
+            ),
           ...localeRoutes.map((route) =>
             urlEntry(
               meta.categoryUrl(route.city.slug, route.categorySeo.slug, code),
@@ -577,7 +671,7 @@ async function main() {
       `Prerendered ${written.length} pages ` +
         `(${routes.length} category, ${citiesWithPages.size} city, ` +
         `${indexedCities.length > 0 ? `${LOCALES.length} index, ` : ""}` +
-        `${LOCALES.length} root), ` +
+        `${LOCALES.length} root, ${countryHubs.size} country), ` +
         `${urls} URLs across ${children.length} sitemaps behind sitemap.xml.`
     );
     if (localeCounts.length > 1) {

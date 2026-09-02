@@ -3,6 +3,7 @@ import { findCity } from "../seo/cities";
 import { findCategorySeo } from "../seo/categories";
 import type { PageData } from "../seo/pageData";
 import CitiesPageSection from "./CitiesPageSection";
+import CountryPageSection from "./CountryPageSection";
 import CityPageSection from "./CityPageSection";
 import HomePageSection from "./HomePageSection";
 import PoiPageSection from "./PoiPageSection";
@@ -21,6 +22,11 @@ const PrerenderedPage: React.FC<{ data: PageData }> = ({ data }) => {
 
   if (data.kind === "cities") {
     return <CitiesPageSection data={data} />;
+  }
+
+  // Before the city lookup below: a country hub belongs to no city
+  if (data.kind === "country") {
+    return <CountryPageSection data={data} />;
   }
 
   const city = findCity(data.citySlug);

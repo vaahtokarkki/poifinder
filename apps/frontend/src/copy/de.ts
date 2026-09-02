@@ -163,6 +163,14 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     categoryDescription:
       "{count} {noun} in {city} auf einer Karte, mit Öffnungszeiten, Gebühren und Barrierefreiheit, soweit OpenStreetMap sie kennt. Kostenlos, ohne Anmeldung, funktioniert auf dem Handy.",
     categoryHeading: "{noun} in {city}",
+    countryTitle:
+      "{noun} in {countryIn} auf der Karte — {count} Punkte in {cities} Städten | {site}",
+    countryDescription:
+      "{count} {noun} in {countryIn}, verzeichnet in {cities} Städten und auf einer Karte. Aus OpenStreetMap. Kostenlos, ohne Anmeldung, funktioniert auf dem Handy.",
+    countryHeading: "{noun} in {countryIn}",
+    countrySummary: "{count} verzeichnete Punkte in {cities} Städten in {countryIn}.",
+    countryCitiesHeading: "Städte in {countryIn}",
+    allInCountry: "{noun} in {countryIn}",
     moreInCity: "Mehr in {city}",
     nearbyHeading: "{noun} in der Nähe",
     cityDisclosure: "Kategorien und Städte in der Nähe von {city}",

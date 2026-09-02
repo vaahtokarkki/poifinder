@@ -149,6 +149,14 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     categoryDescription:
       "{count} {noun} à {city} sur une seule carte, avec horaires, tarifs et accessibilité quand OpenStreetMap les connaît. Gratuit, sans inscription, fonctionne sur téléphone.",
     categoryHeading: "{noun} à {city}",
+    countryTitle:
+      "{noun} {countryIn} sur une carte — {count} dans {cities} {cityUnit} | {site}",
+    countryDescription:
+      "{count} {noun} {countryIn}, cartographiés dans {cities} {cityUnit} et réunis sur une seule carte. À partir d'OpenStreetMap. Gratuit, sans inscription, fonctionne sur téléphone.",
+    countryHeading: "{noun} {countryIn}",
+    countrySummary: "{count} points cartographiés dans {cities} {cityUnit} {countryIn}.",
+    countryCitiesHeading: "Villes {countryIn}",
+    allInCountry: "{noun} {countryIn}",
     moreInCity: "Plus à {city}",
     nearbyHeading: "{noun} à proximité",
     cityDisclosure: "Catégories et villes proches de {city}",

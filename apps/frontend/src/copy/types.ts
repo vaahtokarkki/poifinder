@@ -176,6 +176,22 @@ export type UiCopy = {
     categoryTitle: string;
     categoryDescription: string;
     categoryHeading: string;
+    /**
+     * The country hub: one category across a whole country.
+     *
+     * `{countryIn}` means "in this country" and each deck decides how much of
+     * the relation it holds. English and German write "in {countryIn}" and get
+     * a bare name; French gets the whole phrase — "en France", "au Luxembourg"
+     * — because the preposition changes with the country and a deck cannot
+     * know which. See CountryName in seo/countries.ts.
+     */
+    countryTitle: string;
+    countryDescription: string;
+    countryHeading: string;
+    countrySummary: string;
+    countryCitiesHeading: string;
+    /** The link up to the hub from a city page in the same category */
+    allInCountry: string;
     /** Headings of the internal link blocks at the foot of a category page */
     moreInCity: string;
     nearbyHeading: string;

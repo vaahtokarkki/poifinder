@@ -31,6 +31,16 @@ function toSlug(raw: string | undefined): string {
 export const CITIES_SLUG = "cities";
 
 /**
+ * The prefix of the country hubs, e.g. /countries/finland/toilets.
+ *
+ * A prefix rather than /finland/toilets, because a country and a city can be
+ * called the same thing and two of them already are: Luxembourg and Singapore
+ * are both a city in this list and a country. Without the segment, one of the
+ * two would silently win and the other would 404.
+ */
+export const COUNTRIES_SLUG = "countries";
+
+/**
  * Every locale code, reserved so none can be read as a city.
  *
  * English included, even though English lives at the root and `/en/...` is
@@ -40,7 +50,7 @@ export const CITIES_SLUG = "cities";
  */
 const LOCALE_SLUGS: ReadonlySet<string> = new Set(LOCALES.map((entry) => entry.code));
 
-const RESERVED_SLUGS = new Set<string>([CITIES_SLUG, ...LOCALE_SLUGS]);
+const RESERVED_SLUGS = new Set<string>([CITIES_SLUG, COUNTRIES_SLUG, ...LOCALE_SLUGS]);
 
 /**
  * Split a path into the locale it is in and the segments after it.

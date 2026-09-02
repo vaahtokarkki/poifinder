@@ -16,6 +16,13 @@ on:
     paths:
       - "apps/noise/**"
       - ".github/workflows/build-noise-image.yml"
+      # The generator, not just its output. cities.json is committed and baked
+      # into the image, so a change to the script that writes it changes what
+      # the image can build — and a change to the script alone used to trigger
+      # nothing. That is how an image shipped with a 36 area catalogue while
+      # the repository held 148, and the builder answered "no such city in
+      # cities.json" for five of the seven German cities in areas.txt
+      - "apps/frontend/scripts/generate-noise-cities.mjs"
   workflow_dispatch:
 
 concurrency:

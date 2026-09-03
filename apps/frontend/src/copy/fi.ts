@@ -248,7 +248,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       aboutLimit:
         "Pienhiukkaset kulkeutuvat satojen kilometrien päähän, ja juuri siksi naapurikaupungin lukema kannattaa ylipäätään näyttää. Se ei kerro mitään paikallisesta: vilkkaasta tiestä, puun poltosta tai tyynestä illasta laaksossa. Mitä kauempana asema on, sitä enemmän tätä jää puuttumaan — eikä mikään siitä tee ilmasta puhtaampaa kuin luku kertoo.",
       aboutSource:
-        "Mittaukset OpenAQ:sta ja sen kokoamista mittausverkoista. Tasot noudattavat Euroopan ilmanlaatuindeksiä.",
+        "Kartta piirretään OpenAQ:n välittämistä viranomaismittauksista ja Sensor.Communityn kansalaisverkoston antureista; yllä oleva lukema on aina viranomaisaseman mittaus. Tasot noudattavat Euroopan ilmanlaatuindeksiä.",
       aboutClose: "Sulje",
     },
     hours: {

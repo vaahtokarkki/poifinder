@@ -899,7 +899,7 @@ const ui: CopyDeck["ui"] = {
       aboutLimit:
         "Fine particles drift for hundreds of kilometres, which is why a reading from the next city is worth showing at all. What it cannot capture is anything local: a busy road, a wood fire, a still evening in a valley. The further away the station, the more of that is missing — and none of it makes the air here cleaner than the number says.",
       aboutSource:
-        "Measurements from OpenAQ and the monitoring networks it aggregates. Levels follow the European Air Quality Index.",
+        "The map is drawn from reference monitors via OpenAQ and from the Sensor.Community citizen network; the reading above is always from a reference monitor. Levels follow the European Air Quality Index.",
       aboutClose: "Close",
     },
     hours: {

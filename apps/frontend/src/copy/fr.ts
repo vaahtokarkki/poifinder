@@ -236,7 +236,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       aboutLimit:
         "Les particules fines se déplacent sur des centaines de kilomètres, et c'est précisément pour cela qu'un relevé de la ville voisine vaut la peine d'être montré. Ce qu'il ne capte pas, c'est tout ce qui est local : une route passante, un feu de bois, un soir sans vent dans une vallée. Plus la station est loin, plus il en manque — et rien de tout cela ne rend l'air d'ici plus propre que ce que dit le chiffre.",
       aboutSource:
-        "Mesures d'OpenAQ et des réseaux de surveillance qu'il agrège. Les niveaux suivent l'indice européen de qualité de l'air.",
+        "La carte est établie à partir de stations de référence via OpenAQ et du réseau citoyen Sensor.Community ; la valeur ci-dessus provient toujours d'une station de référence. Les niveaux suivent l'indice européen de qualité de l'air.",
       aboutClose: "Fermer",
     },
     hours: {

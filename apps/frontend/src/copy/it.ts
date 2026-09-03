@@ -231,7 +231,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       aboutLimit:
         "Il particolato fine viaggia per centinaia di chilometri, ed è proprio per questo che vale la pena mostrare il dato della città vicina. Quello che non coglie è tutto ciò che è locale: una strada trafficata, una stufa a legna, una sera senza vento in una valle. Più la stazione è lontana, più ne manca — e nulla di questo rende l'aria di qui più pulita di quanto dica il numero.",
       aboutSource:
-        "Misurazioni da OpenAQ e dalle reti di monitoraggio che aggrega. I livelli seguono l'Indice Europeo di Qualità dell'Aria.",
+        "La mappa è costruita da stazioni di riferimento tramite OpenAQ e dalla rete cittadina Sensor.Community; il dato qui sopra proviene sempre da una stazione di riferimento. I livelli seguono l'Indice Europeo di Qualità dell'Aria.",
       aboutClose: "Chiudi",
     },
     hours: {

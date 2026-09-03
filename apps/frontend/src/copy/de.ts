@@ -252,7 +252,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       aboutLimit:
         "Feinstaub zieht über Hunderte von Kilometern, und genau deshalb lohnt es sich überhaupt, den Wert aus der Nachbarstadt zu zeigen. Was er nicht erfasst, ist alles Örtliche: eine viel befahrene Straße, ein Holzfeuer, ein windstiller Abend im Tal. Je weiter die Station entfernt ist, desto mehr davon fehlt — und nichts davon macht die Luft hier sauberer, als die Zahl sagt.",
       aboutSource:
-        "Messwerte von OpenAQ und den darin zusammengeführten Messnetzen. Die Stufen folgen dem Europäischen Luftqualitätsindex.",
+        "Die Karte entsteht aus behördlichen Messstationen über OpenAQ und aus dem Bürgernetz Sensor.Community; der Wert oben stammt immer von einer behördlichen Messstation. Die Stufen folgen dem Europäischen Luftqualitätsindex.",
       aboutClose: "Schließen",
     },
     hours: {

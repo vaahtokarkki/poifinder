@@ -175,11 +175,12 @@ const RenderMarkerIcon = (
   iconElement: React.ReactElement,
   color: string = "black",
   /**
-   * `access=customers`: somewhere you get into by buying something first. It
-   * is still worth having on the map — a café toilet is a toilet — but it is
-   * not the same offer as the point next to it, and a reader scanning for
-   * somewhere to go should be able to tell the two apart without opening
-   * either.
+   * Whether to drop the category's colour: a point that is customers-only or
+   * marked disused. Both are still worth having on the map — a café toilet is
+   * a toilet, and a surveyor's "disused" is a claim rather than a demolition —
+   * but neither is the same offer as the point next to it, and a reader
+   * scanning for somewhere to go should be able to tell them apart without
+   * opening either.
    *
    * So the category's colour is dropped for a light grey rather than dimmed.
    * The map is read by colour, and anything that keeps some of the hue is
@@ -189,7 +190,7 @@ const RenderMarkerIcon = (
    * on: these are the points to walk to when you were buying a coffee anyway,
    * and the condition is the first thing worth knowing about them.
    */
-  customersOnly: boolean = false
+  muted: boolean = false
 ) => {
   const size = 25;
   return divIcon({
@@ -203,7 +204,7 @@ const RenderMarkerIcon = (
         align-items:center;
         justify-content:center;
         border: 2px solid #fff6;
-        color: ${customersOnly ? CUSTOMERS_ONLY_COLOR : color};
+        color: ${muted ? MUTED_COLOR : color};
       ">
         ${renderToString(React.cloneElement(iconElement))}
       </span>
@@ -311,13 +312,37 @@ const isCustomersOnly = (marker: OverpassMarkerData) =>
   marker.tags?.access === "customers";
 
 /**
- * What a customers-only point is drawn in instead of its category's colour.
+ * Whether a surveyor has marked the thing as no longer in use.
+ *
+ * `disused=yes` on an otherwise ordinary point, which is the only form of this
+ * that can reach the map: the commoner OpenStreetMap idiom is the `disused:`
+ * key prefix — `disused:amenity=toilets` — and an object tagged that way no
+ * longer carries `amenity=toilets` at all, so Overpass never returns it and
+ * there is nothing here to grey.
+ */
+const isDisused = (marker: OverpassMarkerData) => marker.tags?.disused === "yes";
+
+/**
+ * Whether the point is drawn in grey rather than its category's colour.
+ *
+ * Two conditions, one appearance, and deliberately so. "You have to buy
+ * something" and "this may not be there any more" are different facts, but
+ * they are the same *decision*: do not count on this one. A reader scanning a
+ * street for a toilet needs that in one glance, and giving the two conditions
+ * separate colours would make them compare shades instead of reading a map.
+ * The popup is where the difference is spelled out.
+ */
+const isMuted = (marker: OverpassMarkerData) =>
+  isCustomersOnly(marker) || isDisused(marker);
+
+/**
+ * What a muted point is drawn in instead of its category's colour.
  *
  * Light enough to drop out of the scan and dark enough to keep the icon's shape
  * readable against the white disc it sits on — the shape is all that is left to
  * say what the point is once the hue has gone. See RenderMarkerIcon.
  */
-const CUSTOMERS_ONLY_COLOR = "#737474";
+const MUTED_COLOR = "#737474";
 
 /** The default of {@link RenderMarkerIcon}, for a point of no known category */
 const UNCATEGORISED_COLOR = "black";
@@ -343,7 +368,7 @@ const getMarkerIcon = (marker: OverpassMarkerData, selected: readonly CATEGORIES
     ? PAID_ICONS[category]
     : undefined;
   const changingTable = hasChangingTable(category, marker);
-  const customersOnly = isCustomersOnly(marker);
+  const muted = isMuted(marker);
 
   /**
    * Keyed as a string so the variants share the cache with everything else.
@@ -352,20 +377,20 @@ const getMarkerIcon = (marker: OverpassMarkerData, selected: readonly CATEGORIES
    */
   const key =
     category === null
-      ? `uncategorised:${customersOnly ? "customers" : "open"}`
+      ? `uncategorised:${muted ? "muted" : "open"}`
       : `${category}:${paidIcon ? "paid" : "free"}:${changingTable ? "baby" : "plain"}:${
-          customersOnly ? "customers" : "open"
+          muted ? "muted" : "open"
         }`;
 
   let icon = iconCache.get(key);
   if (!icon) {
     icon =
       category === null
-        ? RenderMarkerIcon(<ParkIcon />, UNCATEGORISED_COLOR, customersOnly)
+        ? RenderMarkerIcon(<ParkIcon />, UNCATEGORISED_COLOR, muted)
         : RenderMarkerIcon(
             paidIcon ?? CATEGORY_CONFIG[category].icon,
             getMarkerColor(marker, selected),
-            customersOnly
+            muted
           );
     iconCache.set(key, icon);
   }

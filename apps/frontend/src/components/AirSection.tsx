@@ -8,30 +8,6 @@ import { AIR_SOURCE_LINKS, BAND_COLOUR } from "../map/airTiles";
 import type { AirBand } from "../map/airTiles";
 
 /**
- * The categories an air quality reading is worth knowing for.
- *
- * The rule is the one the noise section uses — whether a reader is going to
- * *stay* there — narrowed by a second one: whether they will be breathing
- * hard while they do. Air quality decides whether an outdoor gym is somewhere
- * to train this afternoon and whether a playground is somewhere to leave a
- * child for two hours, because exertion is what turns a number in µg/m³ into a
- * dose. It decides much less about a bench.
- *
- * It decides nothing at all about a toilet, a post box or an ATM. Nobody has
- * ever chosen a different post box over particulates, and a fact with no
- * decision attached to it is a row that makes every other row harder to find.
- */
-export const AIR_WORTH_KNOWING: ReadonlySet<CATEGORIES> = new Set([
-  CATEGORIES.Playgrounds,
-  CATEGORIES.OutdoorGym,
-  CATEGORIES.DogPark,
-  CATEGORIES.Beach,
-  CATEGORIES.Picnic,
-  CATEGORIES.Viewpoint,
-  CATEGORIES.TentSite,
-]);
-
-/**
  * The nearest air quality measurement, at the foot of a popup.
  *
  * A measurement, and this is the one thing about this section worth
@@ -51,19 +27,23 @@ export const AIR_WORTH_KNOWING: ReadonlySet<CATEGORIES> = new Set([
  * snapshot not fetched yet, or no monitor within 75 km all produce the same
  * nothing, because for a reader they mean the same thing: this popup has no
  * air quality to tell you about.
+ *
+ * Shown for every category, unlike the noise row above it, and the asymmetry
+ * is deliberate rather than an oversight. Noise is a property of the spot: it
+ * decides whether a bench is somewhere to sit and says nothing about a post
+ * box, so it is drawn only where it changes a decision. Air is a property of
+ * the hour and of the city, the same everywhere in this popup's neighbourhood,
+ * and the question it answers — "is it a good day to be outside at all" — is
+ * one somebody may be asking whatever they happened to tap.
  */
 const AirSection: React.FC<{
   position: [number, number] | null;
   category: CATEGORIES | null;
 }> = ({ position, category }) => {
-  const relevant = category !== null && AIR_WORTH_KNOWING.has(category);
-
-  // Hooks cannot be skipped, so the lookup is told not to bother instead. A
-  // popup for a post box therefore costs no fetch and no scan
-  const reading = useAirReading(relevant ? position : null);
+  const reading = useAirReading(position);
   const [explaining, setExplaining] = React.useState(false);
 
-  if (!relevant || reading === null) return null;
+  if (reading === null) return null;
 
   const words = ui().poi.air;
   const level: Record<AirBand, string> = {

@@ -1,10 +1,37 @@
 {
   "city": "honolulu",
-  "generatedAt": "2026-08-23T04:37:04.962Z",
+  "generatedAt": "2026-09-03T17:33:26.902Z",
   "categories": {
     "toilets": {
-      "count": 179,
+      "count": 180,
       "pois": [
+        {
+          "id": "node/9576718221",
+          "lat": 21.314166,
+          "lon": -157.858502,
+          "wheelchair": "limited",
+          "context": "Hosoi Chapel"
+        },
+        {
+          "id": "node/5326874323",
+          "lat": 21.301562,
+          "lon": -157.862276,
+          "context": "Waterfront Plaza"
+        },
+        {
+          "id": "node/13987340585",
+          "lat": 21.32026,
+          "lon": -157.861208,
+          "wheelchair": "yes",
+          "context": "Liliha Square"
+        },
+        {
+          "id": "node/9849034957",
+          "lat": 21.299568,
+          "lon": -157.850939,
+          "wheelchair": "yes",
+          "context": "Neil S. Blaisdell Exhibition Hall"
+        },
         {
           "id": "way/256450377",
           "name": "Liliha Bakery",
@@ -14,18 +41,57 @@
           "openingHours": "06:00-22:00"
         },
         {
+          "id": "node/7844002216",
+          "lat": 21.322303,
+          "lon": -157.849145,
+          "wheelchair": "yes",
+          "context": "Craigside"
+        },
+        {
           "id": "node/4020446794",
           "name": "Restroom",
           "lat": 21.320562,
           "lon": -157.870206
+        },
+        {
+          "id": "node/9419539266",
+          "lat": 21.314937,
+          "lon": -157.841682,
+          "context": "National Memorial Cemetery of the Pacific"
+        },
+        {
+          "id": "node/4020418632",
+          "lat": 21.322242,
+          "lon": -157.869499,
+          "context": "Kokea Training Center"
+        },
+        {
+          "id": "node/9382863478",
+          "lat": 21.292527,
+          "lon": -157.851532,
+          "wheelchair": "yes",
+          "context": "Ward Center"
+        },
+        {
+          "id": "node/9377842378",
+          "lat": 21.296817,
+          "lon": -157.842253,
+          "context": "808 Center"
+        },
+        {
+          "id": "node/13419401415",
+          "lat": 21.27834,
+          "lon": -157.826355,
+          "wheelchair": "yes",
+          "context": "International Marketplace"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:51.333Z"
+      "updatedAt": "2026-09-03T17:33:08.489Z"
     },
     "drinking-water": {
-      "count": 47,
+      "count": 51,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:51.833Z"
+      "updatedAt": "2026-09-03T17:33:09.727Z"
     },
     "playgrounds": {
       "count": 81,
@@ -37,10 +103,10 @@
           "lon": -157.838192
         }
       ],
-      "updatedAt": "2026-08-21T04:02:52.413Z"
+      "updatedAt": "2026-09-03T17:33:10.541Z"
     },
     "parking": {
-      "count": 984,
+      "count": 991,
       "pois": [
         {
           "id": "relation/11361694",
@@ -233,10 +299,10 @@
           "lon": -157.921114
         }
       ],
-      "updatedAt": "2026-08-21T04:02:53.146Z"
+      "updatedAt": "2026-09-03T17:33:11.686Z"
     },
     "charging-stations": {
-      "count": 2,
+      "count": 6,
       "pois": [
         {
           "id": "node/3664132886",
@@ -256,7 +322,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:53.495Z"
+      "updatedAt": "2026-09-03T17:33:12.140Z"
     },
     "gas-stations": {
       "count": 51,
@@ -347,10 +413,10 @@
           "address": "10th Avenue 1451"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:53.892Z"
+      "updatedAt": "2026-09-03T17:33:12.585Z"
     },
     "ice-cream": {
-      "count": 37,
+      "count": 41,
       "pois": [
         {
           "id": "node/8668128621",
@@ -499,6 +565,12 @@
           "openingHours": "Mo-Su 07:00-22:00"
         },
         {
+          "id": "node/14132779204",
+          "name": "Lahaina Shave Ice",
+          "lat": 21.278018,
+          "lon": -157.833524
+        },
+        {
           "id": "node/13411619415",
           "name": "Il Gelato",
           "lat": 21.279162,
@@ -513,10 +585,26 @@
           "openingHours": "Mo-Su 08:00-22:00"
         },
         {
+          "id": "node/14132698391",
+          "name": "Haleiwa Town Shave Ice",
+          "lat": 21.279605,
+          "lon": -157.828479,
+          "address": "Kalākaua Avenue 2250"
+        },
+        {
           "id": "node/11898079838",
           "name": "Island Vintage Shave Ice",
           "lat": 21.27872,
           "lon": -157.828727
+        },
+        {
+          "id": "node/4515779689",
+          "name": "Premium Matcha Cafe Maiko",
+          "lat": 21.279489,
+          "lon": -157.825776,
+          "address": "Kūhiō Avenue 2310",
+          "openingHours": "Mo-Su 11:30-21:00",
+          "wheelchair": "yes"
         },
         {
           "id": "node/12015943435",
@@ -533,40 +621,19 @@
           "openingHours": "11:00-21:00"
         },
         {
+          "id": "node/14133640266",
+          "name": "Hammerhead Ice Cream Co.",
+          "lat": 21.275929,
+          "lon": -157.823
+        },
+        {
           "id": "node/10189306219",
           "name": "Double Fat Ice Cream",
           "lat": 21.274644,
           "lon": -157.823679
-        },
-        {
-          "id": "node/11115665215",
-          "name": "Ululani’s Hawaiian Shave Ice",
-          "lat": 21.284287,
-          "lon": -157.813444
-        },
-        {
-          "id": "node/3663369475",
-          "name": "Waiola Shave Ice - Kapahulu",
-          "lat": 21.282937,
-          "lon": -157.813579,
-          "openingHours": "Mo-Su 11:00-18:00"
-        },
-        {
-          "id": "node/4338096896",
-          "name": "Shimazu Shave Ice",
-          "lat": 21.276032,
-          "lon": -157.814476
-        },
-        {
-          "id": "node/13043711279",
-          "name": "Gecko Girlz",
-          "lat": 21.268821,
-          "lon": -157.813686,
-          "address": "Monsarrat Avenue 3045",
-          "openingHours": "10:00-20:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:54.229Z"
+      "updatedAt": "2026-09-03T17:33:12.969Z"
     },
     "dog-parks": {
       "count": 6,
@@ -591,7 +658,7 @@
           "lon": -157.798828
         }
       ],
-      "updatedAt": "2026-08-21T04:02:54.560Z"
+      "updatedAt": "2026-09-03T17:33:13.328Z"
     },
     "picnic-spots": {
       "count": 162,
@@ -603,10 +670,10 @@
           "lon": -157.820399
         }
       ],
-      "updatedAt": "2026-08-21T04:02:55.001Z"
+      "updatedAt": "2026-09-03T17:33:14.366Z"
     },
     "viewpoints": {
-      "count": 21,
+      "count": 23,
       "pois": [
         {
           "id": "node/6403273289",
@@ -641,8 +708,8 @@
         {
           "id": "node/2158584787",
           "name": "Manoa Falls",
-          "lat": 21.34206,
-          "lon": -157.799181
+          "lat": 21.342232,
+          "lon": -157.799343
         },
         {
           "id": "way/1095297486",
@@ -664,7 +731,7 @@
           "lon": -157.799865
         }
       ],
-      "updatedAt": "2026-08-21T04:02:55.386Z"
+      "updatedAt": "2026-09-03T17:33:14.888Z"
     },
     "beaches": {
       "count": 25,
@@ -720,7 +787,7 @@
           "openingHours": "05:00-22:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:55.752Z"
+      "updatedAt": "2026-09-03T17:33:15.272Z"
     },
     "atms": {
       "count": 90,
@@ -862,19 +929,163 @@
           "address": "Waialae Avenue 3450"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:56.143Z"
+      "updatedAt": "2026-09-03T17:33:15.716Z"
     },
     "post-boxes": {
       "count": 47,
       "pois": [
         {
+          "id": "node/8407996697",
+          "lat": 21.309534,
+          "lon": -157.858032,
+          "street": "South Beretania Street"
+        },
+        {
           "id": "node/4811034782",
           "name": "United States Post Office",
           "lat": 21.312016,
           "lon": -157.860652
+        },
+        {
+          "id": "node/6377287045",
+          "lat": 21.306651,
+          "lon": -157.860391,
+          "street": "Merchant Street"
+        },
+        {
+          "id": "node/9288999795",
+          "lat": 21.314066,
+          "lon": -157.858002,
+          "street": "Nuuanu Avenue"
+        },
+        {
+          "id": "node/2343946734",
+          "lat": 21.306615,
+          "lon": -157.860883,
+          "street": "Richards Street"
+        },
+        {
+          "id": "node/2343946738",
+          "lat": 21.312917,
+          "lon": -157.862261,
+          "street": "North Pauahi Street"
+        },
+        {
+          "id": "node/7698902039",
+          "lat": 21.307578,
+          "lon": -157.862768,
+          "street": "Queen Street"
+        },
+        {
+          "id": "node/2925410901",
+          "lat": 21.307233,
+          "lon": -157.863409,
+          "street": "Bishop Street"
+        },
+        {
+          "id": "node/10853459891",
+          "lat": 21.305126,
+          "lon": -157.861346,
+          "street": "Mililani Street Mall"
+        },
+        {
+          "id": "node/9840080001",
+          "lat": 21.303157,
+          "lon": -157.855418,
+          "street": "Kapiolani Boulevard"
+        },
+        {
+          "id": "node/2412727513",
+          "lat": 21.296172,
+          "lon": -157.856344,
+          "street": "Ward Avenue Bike Path"
+        },
+        {
+          "id": "node/2928722902",
+          "lat": 21.304045,
+          "lon": -157.844254,
+          "street": "Penascola Bike Path"
+        },
+        {
+          "id": "node/9849029189",
+          "lat": 21.304015,
+          "lon": -157.843802,
+          "street": "Lunalilo Street"
+        },
+        {
+          "id": "node/11280589438",
+          "lat": 21.293833,
+          "lon": -157.842382,
+          "street": "Makaloa Street"
+        },
+        {
+          "id": "node/7771350466",
+          "lat": 21.322608,
+          "lon": -157.878038,
+          "street": "Waiakamilo Road"
+        },
+        {
+          "id": "node/9901177535",
+          "lat": 21.294895,
+          "lon": -157.829921,
+          "street": "South King Street"
+        },
+        {
+          "id": "node/4496304591",
+          "lat": 21.285978,
+          "lon": -157.838201,
+          "street": "Kaioo Drive"
+        },
+        {
+          "id": "node/12865130502",
+          "lat": 21.286221,
+          "lon": -157.835164,
+          "street": "Ena Road"
+        },
+        {
+          "id": "node/4496304890",
+          "lat": 21.283019,
+          "lon": -157.830233,
+          "street": "Kūhiō Avenue"
+        },
+        {
+          "id": "node/9871137022",
+          "lat": 21.29106,
+          "lon": -157.822485,
+          "street": "University Avenue"
+        },
+        {
+          "id": "node/11285758873",
+          "lat": 21.280148,
+          "lon": -157.829637,
+          "street": "Lewers Street"
+        },
+        {
+          "id": "node/4495064991",
+          "lat": 21.276799,
+          "lon": -157.825221,
+          "street": "Koa Avenue"
+        },
+        {
+          "id": "node/6292549366",
+          "lat": 21.272337,
+          "lon": -157.823013,
+          "street": "Paoakalani Avenue"
+        },
+        {
+          "id": "node/9577000762",
+          "lat": 21.277711,
+          "lon": -157.81394,
+          "street": "Kapahulu Avenue"
+        },
+        {
+          "id": "node/9861439549",
+          "lat": 21.269559,
+          "lon": -157.811581,
+          "street": "Monsarrat Avenue"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:56.532Z"
+      "updatedAt": "2026-09-03T17:33:17.037Z"
     },
     "recycling": {
       "count": 7,
@@ -884,17 +1095,29 @@
           "name": "T&N Recycling Center",
           "lat": 21.299993,
           "lon": -157.838606
+        },
+        {
+          "id": "node/9818933401",
+          "lat": 21.332115,
+          "lon": -157.924539,
+          "street": "B5"
+        },
+        {
+          "id": "node/13366079199",
+          "lat": 21.262355,
+          "lon": -157.80881,
+          "street": "Diamond Head Summit Trail"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:56.971Z"
+      "updatedAt": "2026-09-03T17:33:18.428Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:57.292Z"
+      "updatedAt": "2026-09-03T17:33:18.863Z"
     },
     "libraries": {
-      "count": 20,
+      "count": 21,
       "pois": [
         {
           "id": "relation/11351641",
@@ -1005,10 +1228,10 @@
           "lon": -157.800176
         }
       ],
-      "updatedAt": "2026-08-21T04:02:57.641Z"
+      "updatedAt": "2026-09-03T17:33:19.405Z"
     },
     "outdoor-gyms": {
-      "count": 10,
+      "count": 19,
       "pois": [
         {
           "id": "way/266756173",
@@ -1023,7 +1246,7 @@
           "lon": -157.800328
         }
       ],
-      "updatedAt": "2026-08-21T04:02:57.990Z"
+      "updatedAt": "2026-09-03T17:33:20.446Z"
     },
     "camp-sites": {
       "count": 1,
@@ -1035,7 +1258,7 @@
           "lon": -157.894044
         }
       ],
-      "updatedAt": "2026-08-21T04:02:58.351Z"
+      "updatedAt": "2026-09-03T17:33:21.228Z"
     },
     "shelters": {
       "count": 6,
@@ -1047,17 +1270,17 @@
           "lon": -157.844594
         }
       ],
-      "updatedAt": "2026-08-21T04:02:58.921Z"
+      "updatedAt": "2026-09-03T17:33:22.687Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:59.252Z"
+      "updatedAt": "2026-09-03T17:33:23.029Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:59.563Z"
+      "updatedAt": "2026-09-03T17:33:23.347Z"
     },
     "post-offices": {
       "count": 20,
@@ -1136,17 +1359,17 @@
           "openingHours": "Mo-Fr 08:00-19:00; Sa 09:00-15:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:37:03.246Z"
+      "updatedAt": "2026-09-03T17:33:23.745Z"
     },
     "showers": {
       "count": 19,
       "pois": [],
-      "updatedAt": "2026-08-23T04:37:03.634Z"
+      "updatedAt": "2026-09-03T17:33:24.090Z"
     },
     "fireplaces": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:37:04.358Z"
+      "updatedAt": "2026-09-03T17:33:25.140Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1154,14 +1377,27 @@
       "updatedAt": "2026-08-17T04:06:26.526Z"
     },
     "benches": {
-      "count": 162,
+      "count": 163,
       "pois": [],
-      "updatedAt": "2026-08-23T04:37:04.861Z"
+      "updatedAt": "2026-09-03T17:33:26.801Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:40.466Z"
+    },
+    "bicycle-repair": {
+      "count": 3,
+      "pois": [
+        {
+          "id": "node/10837407214",
+          "lat": 21.307516,
+          "lon": -157.862822,
+          "openingHours": "24/7",
+          "street": "Queen Street"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:33:26.225Z"
     }
   }
 }

@@ -1,10 +1,36 @@
 {
   "city": "miami",
-  "generatedAt": "2026-08-23T04:36:25.788Z",
+  "generatedAt": "2026-09-03T17:28:42.075Z",
   "categories": {
     "toilets": {
       "count": 40,
       "pois": [
+        {
+          "id": "node/9445146122",
+          "lat": 25.767211,
+          "lon": -80.19236,
+          "fee": "no",
+          "context": "Brickell City Centre"
+        },
+        {
+          "id": "node/9442785010",
+          "lat": 25.776965,
+          "lon": -80.185273,
+          "fee": "no",
+          "context": "Bayside Marketplace"
+        },
+        {
+          "id": "node/1327328964",
+          "lat": 25.785965,
+          "lon": -80.175026,
+          "context": "Jungle Theatre"
+        },
+        {
+          "id": "node/6433338487",
+          "lat": 25.793374,
+          "lon": -80.144926,
+          "context": "Miami Beach Marine Patrol"
+        },
         {
           "id": "node/2143184854",
           "lat": 25.76562,
@@ -35,7 +61,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:36:11.219Z"
+      "updatedAt": "2026-09-03T17:28:23.267Z"
     },
     "drinking-water": {
       "count": 32,
@@ -66,7 +92,7 @@
           "context": "Lummus Park"
         }
       ],
-      "updatedAt": "2026-08-23T04:36:12.475Z"
+      "updatedAt": "2026-09-03T17:28:24.987Z"
     },
     "playgrounds": {
       "count": 63,
@@ -79,7 +105,7 @@
           "openingHours": "Mo-Su 09:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:36:13.127Z"
+      "updatedAt": "2026-09-03T17:28:25.942Z"
     },
     "parking": {
       "count": 588,
@@ -287,7 +313,7 @@
           "address": "Northwest 4th Street 1502"
         }
       ],
-      "updatedAt": "2026-08-23T04:36:14.041Z"
+      "updatedAt": "2026-09-03T17:28:27.150Z"
     },
     "charging-stations": {
       "count": 14,
@@ -316,7 +342,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:36:14.495Z"
+      "updatedAt": "2026-09-03T17:28:27.650Z"
     },
     "gas-stations": {
       "count": 79,
@@ -387,7 +413,9 @@
           "id": "way/1354482733",
           "name": "On the Run",
           "lat": 25.794597,
-          "lon": -80.222927
+          "lon": -80.222927,
+          "address": "Northwest 20th Street 1650",
+          "openingHours": "24/7"
         },
         {
           "id": "node/13712797803",
@@ -431,7 +459,7 @@
           "lon": -80.187156
         }
       ],
-      "updatedAt": "2026-08-23T04:36:14.939Z"
+      "updatedAt": "2026-09-03T17:28:28.162Z"
     },
     "ice-cream": {
       "count": 36,
@@ -609,7 +637,7 @@
           "lon": -80.127288
         }
       ],
-      "updatedAt": "2026-08-23T04:36:15.427Z"
+      "updatedAt": "2026-09-03T17:28:28.648Z"
     },
     "dog-parks": {
       "count": 13,
@@ -646,12 +674,12 @@
           "lon": -80.227364
         }
       ],
-      "updatedAt": "2026-08-23T04:36:15.838Z"
+      "updatedAt": "2026-09-03T17:28:29.047Z"
     },
     "picnic-spots": {
       "count": 57,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:16.866Z"
+      "updatedAt": "2026-09-03T17:28:30.234Z"
     },
     "viewpoints": {
       "count": 2,
@@ -664,7 +692,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:36:17.436Z"
+      "updatedAt": "2026-09-03T17:28:30.783Z"
     },
     "beaches": {
       "count": 23,
@@ -719,10 +747,10 @@
           "lon": -80.155906
         }
       ],
-      "updatedAt": "2026-08-23T04:36:17.907Z"
+      "updatedAt": "2026-09-03T17:28:31.227Z"
     },
     "atms": {
-      "count": 54,
+      "count": 56,
       "pois": [
         {
           "id": "node/7524645291",
@@ -855,22 +883,140 @@
           "lon": -80.138656
         },
         {
+          "id": "node/14104470129",
+          "name": "Valley Bank",
+          "lat": 25.753186,
+          "lon": -80.258546,
+          "address": "Ponce de Leon Boulevard 2121",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa, Su off"
+        },
+        {
           "id": "way/914512681",
           "name": "Regions",
           "lat": 25.771455,
           "lon": -80.263195
         }
       ],
-      "updatedAt": "2026-08-23T04:36:18.377Z"
+      "updatedAt": "2026-09-03T17:28:31.729Z"
     },
     "post-boxes": {
       "count": 14,
-      "pois": [],
-      "updatedAt": "2026-08-23T04:36:18.897Z"
+      "pois": [
+        {
+          "id": "node/4365481089",
+          "lat": 25.774424,
+          "lon": -80.19047,
+          "address": "East Flagler Street 199",
+          "street": "East Flagler Street"
+        },
+        {
+          "id": "node/8615448477",
+          "lat": 25.789744,
+          "lon": -80.186595,
+          "street": "Northeast 15th Street"
+        },
+        {
+          "id": "node/6594606200",
+          "lat": 25.790277,
+          "lon": -80.17427,
+          "street": "Venetian Way"
+        },
+        {
+          "id": "node/7571860706",
+          "lat": 25.774649,
+          "lon": -80.136268,
+          "street": "5th Street"
+        },
+        {
+          "id": "node/5674089066",
+          "lat": 25.790571,
+          "lon": -80.138704,
+          "street": "Lincoln Road"
+        },
+        {
+          "id": "node/5674089067",
+          "lat": 25.790688,
+          "lon": -80.137606,
+          "street": "Jefferson Avenue"
+        },
+        {
+          "id": "node/4083188787",
+          "lat": 25.762812,
+          "lon": -80.259001,
+          "street": "Calabria Avenue"
+        },
+        {
+          "id": "node/4087369547",
+          "lat": 25.760681,
+          "lon": -80.259163,
+          "street": "Ponce de Leon Boulevard"
+        },
+        {
+          "id": "node/5674089069",
+          "lat": 25.790893,
+          "lon": -80.131976,
+          "street": "Washington Avenue"
+        },
+        {
+          "id": "node/4087369548",
+          "lat": 25.764666,
+          "lon": -80.260921,
+          "street": "Southwest 39th Court"
+        },
+        {
+          "id": "node/4087369546",
+          "lat": 25.753424,
+          "lon": -80.262696,
+          "street": "Minorca Avenue"
+        },
+        {
+          "id": "node/3297937670",
+          "lat": 25.734716,
+          "lon": -80.260126,
+          "street": "Southwest 40th Street"
+        },
+        {
+          "id": "node/1545545215",
+          "lat": 25.795107,
+          "lon": -80.259032,
+          "street": "Northwest 21st Street"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:28:32.861Z"
     },
     "recycling": {
       "count": 34,
       "pois": [
+        {
+          "id": "node/9533135617",
+          "lat": 25.765466,
+          "lon": -80.195436,
+          "street": "M-Path"
+        },
+        {
+          "id": "node/9533135619",
+          "lat": 25.76649,
+          "lon": -80.195399,
+          "street": "Southwest 1st Avenue"
+        },
+        {
+          "id": "node/12146875370",
+          "lat": 25.785203,
+          "lon": -80.13843,
+          "street": "Michigan Avenue"
+        },
+        {
+          "id": "node/7134733376",
+          "lat": 25.790599,
+          "lon": -80.140046,
+          "street": "Lincoln Road"
+        },
+        {
+          "id": "node/7147484425",
+          "lat": 25.790327,
+          "lon": -80.135416,
+          "street": "Euclid Avenue"
+        },
         {
           "id": "node/6085697063",
           "name": "USA Scrap Metal & Recycling",
@@ -880,12 +1026,12 @@
           "openingHours": "Mo-Fr 07:30-17:00; Sa 07:00-15:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:36:19.960Z"
+      "updatedAt": "2026-09-03T17:28:34.430Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:20.366Z"
+      "updatedAt": "2026-09-03T17:28:34.840Z"
     },
     "libraries": {
       "count": 28,
@@ -1026,7 +1172,8 @@
           "name": "Virrick Park Branch Library",
           "lat": 25.730742,
           "lon": -80.25052,
-          "address": "Plaza Street 3255"
+          "address": "Plaza Street 3255",
+          "openingHours": "Mo-Th 09:30-20:00; Fr,Sa 09:30-18:00"
         },
         {
           "id": "node/367823340",
@@ -1083,17 +1230,17 @@
           "address": "Northwest 62nd Street 531"
         }
       ],
-      "updatedAt": "2026-08-23T04:36:20.765Z"
+      "updatedAt": "2026-09-03T17:28:35.270Z"
     },
     "outdoor-gyms": {
       "count": 23,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:21.502Z"
+      "updatedAt": "2026-09-03T17:28:36.100Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:21.986Z"
+      "updatedAt": "2026-09-03T17:28:36.604Z"
     },
     "shelters": {
       "count": 4,
@@ -1111,17 +1258,17 @@
           "lon": -80.154151
         }
       ],
-      "updatedAt": "2026-08-23T04:36:22.706Z"
+      "updatedAt": "2026-09-03T17:28:37.262Z"
     },
     "rest-areas": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:23.139Z"
+      "updatedAt": "2026-09-03T17:28:37.680Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:23.540Z"
+      "updatedAt": "2026-09-03T17:28:38.027Z"
     },
     "post-offices": {
       "count": 18,
@@ -1245,17 +1392,17 @@
           "openingHours": "Mo-Fr 08:30-18:00; Su 08:30-14:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:36:24.011Z"
+      "updatedAt": "2026-09-03T17:28:38.425Z"
     },
     "showers": {
       "count": 13,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:24.437Z"
+      "updatedAt": "2026-09-03T17:28:38.770Z"
     },
     "fireplaces": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:25.095Z"
+      "updatedAt": "2026-09-03T17:28:39.928Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1272,12 +1419,78 @@
           "lon": -80.19035
         }
       ],
-      "updatedAt": "2026-08-23T04:36:25.687Z"
+      "updatedAt": "2026-09-03T17:28:41.974Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:36.359Z"
+    },
+    "bicycle-repair": {
+      "count": 11,
+      "pois": [
+        {
+          "id": "node/9533135658",
+          "lat": 25.766796,
+          "lon": -80.195442,
+          "street": "Southwest 1st Avenue"
+        },
+        {
+          "id": "node/3376087145",
+          "lat": 25.799953,
+          "lon": -80.199258,
+          "openingHours": "24/7",
+          "street": "Northwest 24th Street"
+        },
+        {
+          "id": "node/9284216861",
+          "lat": 25.764518,
+          "lon": -80.131257,
+          "openingHours": "24/7",
+          "context": "South Pointe Park"
+        },
+        {
+          "id": "node/13074840671",
+          "lat": 25.775125,
+          "lon": -80.131277,
+          "context": "Lummus Park"
+        },
+        {
+          "id": "node/7574116699",
+          "lat": 25.78203,
+          "lon": -80.13276,
+          "openingHours": "24/7",
+          "street": "11th Street"
+        },
+        {
+          "id": "node/3383939108",
+          "lat": 25.724963,
+          "lon": -80.244967,
+          "openingHours": "24/7",
+          "street": "Commodore Trail"
+        },
+        {
+          "id": "node/4402821402",
+          "lat": 25.750991,
+          "lon": -80.260643,
+          "openingHours": "24/7",
+          "street": "Salzedo Street"
+        },
+        {
+          "id": "node/6455513188",
+          "lat": 25.75043,
+          "lon": -80.26088,
+          "openingHours": "24/7",
+          "street": "Aragon Avenue"
+        },
+        {
+          "id": "node/12070498865",
+          "lat": 25.797422,
+          "lon": -80.128244,
+          "context": "Collins Park"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:28:41.246Z"
     }
   }
 }

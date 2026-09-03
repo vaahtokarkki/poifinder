@@ -1,10 +1,49 @@
 {
   "city": "turin",
-  "generatedAt": "2026-08-23T04:32:07.806Z",
+  "generatedAt": "2026-09-03T17:22:30.307Z",
   "categories": {
     "toilets": {
-      "count": 171,
+      "count": 172,
       "pois": [
+        {
+          "id": "node/6851396191",
+          "lat": 45.073312,
+          "lon": 7.686108,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Palazzo Reale"
+        },
+        {
+          "id": "node/11074832687",
+          "lat": 45.076009,
+          "lon": 7.683624,
+          "openingHours": "Mo-Fr 07:00-15:00; Sa 07:00-19:30",
+          "fee": "no",
+          "context": "Mercato V Alimentare"
+        },
+        {
+          "id": "node/14080246150",
+          "lat": 45.076513,
+          "lon": 7.68268,
+          "openingHours": "Mo-Fr 07:00-15:00; Sa 07:00-19:30",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Mercato Ittico"
+        },
+        {
+          "id": "node/9037842398",
+          "lat": 45.077272,
+          "lon": 7.68289,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "PalaFuksas"
+        },
+        {
+          "id": "node/13148168384",
+          "lat": 45.062456,
+          "lon": 7.67819,
+          "context": "Torino Porta Nuova"
+        },
         {
           "id": "node/3343587816",
           "name": "Bagno pubblico Vanchiglia",
@@ -12,6 +51,21 @@
           "lon": 7.701654,
           "address": "Corso Regina Margherita 33",
           "wheelchair": "no"
+        },
+        {
+          "id": "node/5117627168",
+          "lat": 45.073029,
+          "lon": 7.666785,
+          "wheelchair": "designated",
+          "fee": "no",
+          "context": "Torino Porta Susa"
+        },
+        {
+          "id": "node/12235027054",
+          "lat": 45.053494,
+          "lon": 7.685077,
+          "fee": "no",
+          "context": "Biblioteca Centrale di Architettura Roberto Gabetti"
         },
         {
           "id": "way/395267637",
@@ -55,6 +109,28 @@
           "fee": "no"
         },
         {
+          "id": "node/12905341666",
+          "lat": 45.042141,
+          "lon": 7.658076,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Decathlon"
+        },
+        {
+          "id": "node/12905359652",
+          "lat": 45.041469,
+          "lon": 7.657365,
+          "fee": "no",
+          "context": "Lidl"
+        },
+        {
+          "id": "node/13431415622",
+          "lat": 45.033985,
+          "lon": 7.666659,
+          "fee": "no",
+          "context": "Ex Fiat Lingotto"
+        },
+        {
           "id": "node/6649819789",
           "lat": 45.036087,
           "lon": 7.65767,
@@ -86,10 +162,10 @@
           "openingHours": "Mo-Sa 08:30-21:00; Su 09:00-21:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:31:41.905Z"
+      "updatedAt": "2026-09-03T17:22:05.914Z"
     },
     "drinking-water": {
-      "count": 822,
+      "count": 823,
       "pois": [
         {
           "id": "node/422774692",
@@ -182,7 +258,7 @@
           "lon": 7.614098
         }
       ],
-      "updatedAt": "2026-08-23T04:31:44.462Z"
+      "updatedAt": "2026-09-03T17:22:08.166Z"
     },
     "playgrounds": {
       "count": 313,
@@ -372,10 +448,10 @@
           "lon": 7.641327
         }
       ],
-      "updatedAt": "2026-08-23T04:31:45.498Z"
+      "updatedAt": "2026-09-03T17:22:09.052Z"
     },
     "parking": {
-      "count": 1557,
+      "count": 1558,
       "pois": [
         {
           "id": "way/22953965",
@@ -587,10 +663,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:31:47.193Z"
+      "updatedAt": "2026-09-03T17:22:10.195Z"
     },
     "charging-stations": {
-      "count": 176,
+      "count": 178,
       "pois": [
         {
           "id": "node/10024930204",
@@ -705,6 +781,12 @@
           "lon": 7.640491
         },
         {
+          "id": "node/14107498797",
+          "name": "Ewiva",
+          "lat": 45.016975,
+          "lon": 7.670076
+        },
+        {
           "id": "node/12506650593",
           "name": "Settimo Torinese Supercharger",
           "lat": 45.127244,
@@ -713,10 +795,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:31:47.901Z"
+      "updatedAt": "2026-09-03T17:22:10.785Z"
     },
     "gas-stations": {
-      "count": 243,
+      "count": 242,
       "pois": [
         {
           "id": "node/5255625928",
@@ -925,7 +1007,7 @@
           "address": "Corso Giovanni Agnelli 4"
         }
       ],
-      "updatedAt": "2026-08-23T04:31:48.811Z"
+      "updatedAt": "2026-09-03T17:22:11.403Z"
     },
     "ice-cream": {
       "count": 136,
@@ -1011,7 +1093,7 @@
           "lat": 45.070815,
           "lon": 7.681657,
           "address": "Via San Tommaso 12e",
-          "openingHours": "Mo-Th 12:00-21:00, Fr 12:00-23:00, Sa 11:00-24:00, Su 11:00-21:00"
+          "openingHours": "Mo-Th 12:00-21:00; Fr 12:00-23:00; Sa 11:00-24:00; Su 11:00-21:00"
         },
         {
           "id": "node/5117626900",
@@ -1046,7 +1128,8 @@
           "id": "node/13176516424",
           "name": "Crem Glasse",
           "lat": 45.067234,
-          "lon": 7.691353
+          "lon": 7.691353,
+          "openingHours": "Mo-Su 11:00-24:00"
         },
         {
           "id": "node/4444034456",
@@ -1089,7 +1172,8 @@
           "id": "node/5360696321",
           "name": "Marchetti",
           "lat": 45.074179,
-          "lon": 7.694871
+          "lon": 7.694871,
+          "wheelchair": "limited"
         },
         {
           "id": "node/9812572138",
@@ -1125,7 +1209,8 @@
           "id": "node/11188139672",
           "name": "Gelateria Universal",
           "lat": 45.075394,
-          "lon": 7.695176
+          "lon": 7.695176,
+          "wheelchair": "no"
         },
         {
           "id": "node/11231208927",
@@ -1150,7 +1235,7 @@
           "openingHours": "Mo-Fr 16:00-22:30; Sa 08:30-20:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:31:49.855Z"
+      "updatedAt": "2026-09-03T17:22:12.146Z"
     },
     "dog-parks": {
       "count": 72,
@@ -1191,7 +1276,7 @@
           "address": "Via Juglaris"
         }
       ],
-      "updatedAt": "2026-08-23T04:31:50.661Z"
+      "updatedAt": "2026-09-03T17:22:12.721Z"
     },
     "picnic-spots": {
       "count": 226,
@@ -1219,7 +1304,7 @@
           "address": "Via dei Colli"
         }
       ],
-      "updatedAt": "2026-08-23T04:31:52.069Z"
+      "updatedAt": "2026-09-03T17:22:14.068Z"
     },
     "viewpoints": {
       "count": 30,
@@ -1250,7 +1335,7 @@
           "lon": 7.784119
         }
       ],
-      "updatedAt": "2026-08-23T04:31:52.867Z"
+      "updatedAt": "2026-09-03T17:22:14.723Z"
     },
     "beaches": {
       "count": 1,
@@ -1262,7 +1347,7 @@
           "lon": 7.734508
         }
       ],
-      "updatedAt": "2026-08-23T04:31:53.543Z"
+      "updatedAt": "2026-09-03T17:22:15.230Z"
     },
     "atms": {
       "count": 170,
@@ -1423,7 +1508,7 @@
           "lat": 45.086833,
           "lon": 7.667321,
           "address": "Via Aquila 40a",
-          "openingHours": "Mo-Fr 08:20-13:35, Sa 08:20-12:35; Su, PH off"
+          "openingHours": "Mo-Fr 08:20-13:35; Sa 08:20-12:35; Su,PH off"
         },
         {
           "id": "node/8322417303",
@@ -1463,23 +1548,331 @@
           "lon": 7.649146
         }
       ],
-      "updatedAt": "2026-08-23T04:31:54.656Z"
+      "updatedAt": "2026-09-03T17:22:15.983Z"
     },
     "post-boxes": {
-      "count": 77,
+      "count": 75,
       "pois": [
         {
-          "id": "node/1150897255",
-          "name": "Poste Italiane",
-          "lat": 45.021428,
-          "lon": 7.623338
+          "id": "node/9893231281",
+          "lat": 45.070027,
+          "lon": 7.685677,
+          "street": "Via Accademia delle Scienze"
+        },
+        {
+          "id": "node/2019632248",
+          "lat": 45.067164,
+          "lon": 7.686559,
+          "street": "Via Maria Vittoria"
+        },
+        {
+          "id": "node/2019632247",
+          "lat": 45.0663,
+          "lon": 7.684561,
+          "street": "Via Carlo Alberto"
+        },
+        {
+          "id": "node/7807689277",
+          "lat": 45.067296,
+          "lon": 7.691743,
+          "street": "Via Montebello"
+        },
+        {
+          "id": "node/5113659509",
+          "lat": 45.068939,
+          "lon": 7.680408,
+          "street": "Via dell'Arsenale"
+        },
+        {
+          "id": "node/6851475256",
+          "lat": 45.072802,
+          "lon": 7.69276,
+          "wheelchair": "limited",
+          "street": "Via Santa Giulia"
+        },
+        {
+          "id": "node/2068598505",
+          "lat": 45.071262,
+          "lon": 7.679931,
+          "street": "Via San Francesco d'Assisi"
+        },
+        {
+          "id": "node/10823919605",
+          "lat": 45.07506,
+          "lon": 7.689939,
+          "street": "Corso Regio Parco"
+        },
+        {
+          "id": "node/12211537153",
+          "lat": 45.069322,
+          "lon": 7.695362,
+          "street": "Corso San Maurizio"
+        },
+        {
+          "id": "node/2068688157",
+          "lat": 45.064787,
+          "lon": 7.68112,
+          "street": "Via Piero Gobetti"
+        },
+        {
+          "id": "node/11253262203",
+          "lat": 45.066285,
+          "lon": 7.695068,
+          "street": "Via Giulia di Barolo"
+        },
+        {
+          "id": "node/4065934011",
+          "lat": 45.073757,
+          "lon": 7.677766,
+          "wheelchair": "yes",
+          "street": "Via Giuseppe Garibaldi"
+        },
+        {
+          "id": "node/2284034374",
+          "lat": 45.067422,
+          "lon": 7.676857,
+          "street": "Via dell'Arcivescovado"
+        },
+        {
+          "id": "node/2248086974",
+          "lat": 45.070979,
+          "lon": 7.67603,
+          "street": "Via San Dalmazzo"
+        },
+        {
+          "id": "node/1775800476",
+          "lat": 45.063554,
+          "lon": 7.680409,
+          "street": "Piazza Giuseppe Luigi Lagrange"
+        },
+        {
+          "id": "node/7776462385",
+          "lat": 45.064906,
+          "lon": 7.696328,
+          "street": "Via Eusebio Bava"
+        },
+        {
+          "id": "node/10827575706",
+          "lat": 45.078126,
+          "lon": 7.692591,
+          "street": "Corso Palermo"
+        },
+        {
+          "id": "node/5581356710",
+          "lat": 45.061211,
+          "lon": 7.688612,
+          "street": "Via Giuseppe Mazzini"
+        },
+        {
+          "id": "node/4078662319",
+          "lat": 45.075974,
+          "lon": 7.697661,
+          "street": "Via Mantova"
+        },
+        {
+          "id": "node/2516151133",
+          "lat": 45.064287,
+          "lon": 7.67527,
+          "street": "Via Giuseppe Parini"
+        },
+        {
+          "id": "node/3226405725",
+          "lat": 45.063355,
+          "lon": 7.67634,
+          "street": "Via San Secondo"
+        },
+        {
+          "id": "node/11151952653",
+          "lat": 45.074416,
+          "lon": 7.673682,
+          "street": "Via Giovanni Bertrandi"
+        },
+        {
+          "id": "node/2068706585",
+          "lat": 45.060236,
+          "lon": 7.683248,
+          "street": "Via Principe Tommaso"
+        },
+        {
+          "id": "node/2018187044",
+          "lat": 45.0605,
+          "lon": 7.67896,
+          "street": "Via Nizza"
+        },
+        {
+          "id": "node/13283308363",
+          "lat": 45.058917,
+          "lon": 7.694593,
+          "street": "Corso Moncalieri"
+        },
+        {
+          "id": "node/2019632238",
+          "lat": 45.061614,
+          "lon": 7.6737,
+          "street": "Corso Stati Uniti"
+        },
+        {
+          "id": "node/6269782228",
+          "lat": 45.080628,
+          "lon": 7.676033,
+          "street": "Via Maria Ausiliatrice"
+        },
+        {
+          "id": "node/2018737383",
+          "lat": 45.057346,
+          "lon": 7.68276,
+          "street": "Via Madama Cristina"
+        },
+        {
+          "id": "node/10880892117",
+          "lat": 45.072076,
+          "lon": 7.667625,
+          "street": "Via Sebastiano Grandis"
+        },
+        {
+          "id": "node/2097363629",
+          "lat": 45.083602,
+          "lon": 7.679577,
+          "street": "Via Francesco Cigna"
         }
       ],
-      "updatedAt": "2026-08-23T04:31:55.345Z"
+      "updatedAt": "2026-09-03T17:22:18.536Z"
     },
     "recycling": {
-      "count": 176,
+      "count": 184,
       "pois": [
+        {
+          "id": "node/5995047685",
+          "lat": 45.073549,
+          "lon": 7.683742,
+          "street": "Via Porta Palatina"
+        },
+        {
+          "id": "node/13096887777",
+          "lat": 45.071259,
+          "lon": 7.692918,
+          "street": "Corso San Maurizio"
+        },
+        {
+          "id": "node/5995046485",
+          "lat": 45.074086,
+          "lon": 7.682611,
+          "street": "Via Conte Verde"
+        },
+        {
+          "id": "node/12218819385",
+          "lat": 45.072223,
+          "lon": 7.694506,
+          "street": "Via Santa Giulia"
+        },
+        {
+          "id": "node/12218819384",
+          "lat": 45.07196,
+          "lon": 7.694814,
+          "street": "Largo Montebello"
+        },
+        {
+          "id": "node/12218819386",
+          "lat": 45.071299,
+          "lon": 7.695984,
+          "street": "Via Conte Luigi Tarino"
+        },
+        {
+          "id": "node/13011793139",
+          "lat": 45.071157,
+          "lon": 7.697346,
+          "street": "Via Sant'Ottavio"
+        },
+        {
+          "id": "node/13272118831",
+          "lat": 45.062347,
+          "lon": 7.694814,
+          "street": "Via Murazzi del Po Giuseppe Farassino (Gipo)"
+        },
+        {
+          "id": "node/12915219378",
+          "lat": 45.068442,
+          "lon": 7.700991,
+          "street": "Via Eusebio Bava"
+        },
+        {
+          "id": "node/12915229625",
+          "lat": 45.069961,
+          "lon": 7.701265,
+          "street": "Via Vanchiglia"
+        },
+        {
+          "id": "node/12915170802",
+          "lat": 45.069149,
+          "lon": 7.701448,
+          "street": "Via Cesare Balbo"
+        },
+        {
+          "id": "node/13987443315",
+          "lat": 45.062757,
+          "lon": 7.676198,
+          "street": "Via Magenta"
+        },
+        {
+          "id": "node/11756408365",
+          "lat": 45.070446,
+          "lon": 7.702256,
+          "street": "Corso Regina Margherita"
+        },
+        {
+          "id": "node/12974245375",
+          "lat": 45.077984,
+          "lon": 7.675627,
+          "street": "Corso Valdocco"
+        },
+        {
+          "id": "node/13713017859",
+          "lat": 45.063692,
+          "lon": 7.673746,
+          "street": "Corso Re Umberto"
+        },
+        {
+          "id": "node/13204946936",
+          "lat": 45.066272,
+          "lon": 7.671402,
+          "street": "Corso Galileo Ferraris"
+        },
+        {
+          "id": "node/12208848356",
+          "lat": 45.081492,
+          "lon": 7.692402,
+          "street": "Corso Brescia"
+        },
+        {
+          "id": "node/1466778775",
+          "lat": 45.058341,
+          "lon": 7.685954,
+          "street": "Via Bernardino Galliari"
+        },
+        {
+          "id": "node/13990805479",
+          "lat": 45.059565,
+          "lon": 7.679183,
+          "street": "Via Saluzzo"
+        },
+        {
+          "id": "node/5628622480",
+          "lat": 45.061191,
+          "lon": 7.698073,
+          "street": "Via Vittorio Amedeo Gioanetti"
+        },
+        {
+          "id": "node/13990812803",
+          "lat": 45.059555,
+          "lon": 7.678209,
+          "street": "Via Nizza"
+        },
+        {
+          "id": "node/1466778774",
+          "lat": 45.057825,
+          "lon": 7.686419,
+          "street": "Corso Massimo D'Azeglio"
+        },
         {
           "id": "way/321793381",
           "name": "Ecocentro Circoscrizione 7",
@@ -1487,61 +1880,54 @@
           "lon": 7.699464
         },
         {
-          "id": "way/960204572",
-          "name": "Centro di raccolta Via Ravina",
-          "lat": 45.077634,
-          "lon": 7.712383,
-          "address": "Via Amedeo Ravina 19a",
-          "openingHours": "Mo-Sa 07:15-18:30; Su 07:30-13:00",
-          "fee": "no"
+          "id": "node/12960999655",
+          "lat": 45.081236,
+          "lon": 7.676368,
+          "context": "Basilica di Maria Ausiliatrice"
         },
         {
-          "id": "node/12522629340",
-          "name": "Raccolta abiti usati",
-          "lat": 45.052623,
-          "lon": 7.666992
+          "id": "node/9038261108",
+          "lat": 45.056629,
+          "lon": 7.688658,
+          "street": "Viale Virgilio"
         },
         {
-          "id": "way/286292515",
-          "name": "Ecocentro Circoscrizione 6",
-          "lat": 45.093267,
-          "lon": 7.716596
+          "id": "node/10833483805",
+          "lat": 45.082301,
+          "lon": 7.698583,
+          "street": "Corso Novara"
         },
         {
-          "id": "way/321795718",
-          "name": "Ecocentro Circoscrizione 9",
-          "lat": 45.03533,
-          "lon": 7.660214,
-          "address": "Via Zino Giacomo Zini 139",
-          "openingHours": "Mo-Sa 07:15-18:30; Su 07:30-13:00"
+          "id": "node/13990787737",
+          "lat": 45.057042,
+          "lon": 7.67772,
+          "street": "Corso Guglielmo Marconi"
         },
         {
-          "id": "way/83386645",
-          "name": "Ecocentro",
-          "lat": 45.055502,
-          "lon": 7.631315,
-          "openingHours": "Mo-Sa 07:00-19:00"
+          "id": "node/10833478905",
+          "lat": 45.083937,
+          "lon": 7.69866,
+          "street": "Via Ternengo"
         },
         {
-          "id": "way/321797518",
-          "name": "Ecocentro Circoscrizione 8",
-          "lat": 45.024001,
-          "lon": 7.675802
+          "id": "node/2017696209",
+          "lat": 45.054134,
+          "lon": 7.681775,
+          "street": "Via Federico Campana"
         },
         {
-          "id": "node/13611533933",
-          "name": "Ecocentro Venaria Reale",
-          "lat": 45.116074,
-          "lon": 7.649364,
-          "address": "Corso Lombardia 49"
+          "id": "node/14127178638",
+          "lat": 45.054279,
+          "lon": 7.68037,
+          "street": "Via Madama Cristina"
         }
       ],
-      "updatedAt": "2026-08-23T04:31:57.191Z"
+      "updatedAt": "2026-09-03T17:22:20.729Z"
     },
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:31:57.891Z"
+      "updatedAt": "2026-09-03T17:22:21.248Z"
     },
     "libraries": {
       "count": 51,
@@ -1688,7 +2074,7 @@
           "lat": 45.043636,
           "lon": 7.671768,
           "address": "Via Nizza 151",
-          "openingHours": "Tu 09:00-12:00, Th 14:00-17:00"
+          "openingHours": "Tu 09:00-12:00; Th 14:00-17:00"
         },
         {
           "id": "node/4604602037",
@@ -1774,7 +2160,7 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-23T04:31:58.680Z"
+      "updatedAt": "2026-09-03T17:22:21.748Z"
     },
     "outdoor-gyms": {
       "count": 56,
@@ -1822,7 +2208,7 @@
           "lon": 7.703904
         }
       ],
-      "updatedAt": "2026-08-23T04:32:00.114Z"
+      "updatedAt": "2026-09-03T17:22:22.930Z"
     },
     "camp-sites": {
       "count": 2,
@@ -1845,12 +2231,19 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:32:00.987Z"
+      "updatedAt": "2026-09-03T17:22:23.503Z"
     },
     "shelters": {
       "count": 14,
-      "pois": [],
-      "updatedAt": "2026-08-23T04:32:02.529Z"
+      "pois": [
+        {
+          "id": "node/12716290813",
+          "lat": 45.074527,
+          "lon": 7.601192,
+          "street": "Via Edmondo De Amicis"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:22:24.983Z"
     },
     "rest-areas": {
       "count": 6,
@@ -1870,12 +2263,12 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:32:03.228Z"
+      "updatedAt": "2026-09-03T17:22:25.543Z"
     },
     "dump-stations": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-08-23T04:32:03.816Z"
+      "updatedAt": "2026-09-03T17:22:25.945Z"
     },
     "post-offices": {
       "count": 77,
@@ -2037,7 +2430,7 @@
           "lat": 45.103661,
           "lon": 7.630931,
           "address": "Piazza Eugenio Montale 10",
-          "openingHours": "Mo-Fr 08:20-13:35, Sa 08:20-12:35"
+          "openingHours": "Mo-Fr 08:20-13:35; Sa 08:20-12:35"
         },
         {
           "id": "node/10750128663",
@@ -2070,17 +2463,17 @@
           "openingHours": "Mo-Fr 08:20-13:45; Sa 08:20-12:45"
         }
       ],
-      "updatedAt": "2026-08-23T04:32:04.557Z"
+      "updatedAt": "2026-09-03T17:22:26.379Z"
     },
     "showers": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-23T04:32:05.127Z"
+      "updatedAt": "2026-09-03T17:22:26.781Z"
     },
     "fireplaces": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-08-23T04:32:06.107Z"
+      "updatedAt": "2026-09-03T17:22:27.928Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2088,7 +2481,7 @@
       "updatedAt": "2026-08-17T04:05:31.843Z"
     },
     "benches": {
-      "count": 2504,
+      "count": 2509,
       "pois": [
         {
           "id": "node/9381862717",
@@ -2103,12 +2496,46 @@
           "lon": 7.703646
         }
       ],
-      "updatedAt": "2026-08-23T04:32:07.705Z"
+      "updatedAt": "2026-09-03T17:22:30.206Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:31.582Z"
+    },
+    "bicycle-repair": {
+      "count": 6,
+      "pois": [
+        {
+          "id": "node/3415761563",
+          "name": "Pai Bikery",
+          "lat": 45.075175,
+          "lon": 7.697043,
+          "address": "Via Modena",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/12209243069",
+          "lat": 45.074223,
+          "lon": 7.700474,
+          "openingHours": "24/7",
+          "street": "Viale Ottavio Mario Mai"
+        },
+        {
+          "id": "node/13167806701",
+          "lat": 45.088116,
+          "lon": 7.693205,
+          "street": "Corso Palermo"
+        },
+        {
+          "id": "node/4851155166",
+          "lat": 45.043684,
+          "lon": 7.640963,
+          "fee": "no",
+          "street": "Corso Orbassano"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:22:29.353Z"
     }
   }
 }

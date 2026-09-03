@@ -1,10 +1,45 @@
 {
   "city": "vancouver",
-  "generatedAt": "2026-08-23T04:37:11.014Z",
+  "generatedAt": "2026-09-03T17:34:24.148Z",
   "categories": {
     "toilets": {
       "count": 256,
       "pois": [
+        {
+          "id": "node/9654710915",
+          "lat": 49.283201,
+          "lon": -123.117626,
+          "wheelchair": "yes",
+          "context": "CF Pacific Centre"
+        },
+        {
+          "id": "node/4357843050",
+          "lat": 49.279697,
+          "lon": -123.12346,
+          "openingHours": "24/7",
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "980 Howe"
+        },
+        {
+          "id": "node/11965408721",
+          "lat": 49.284295,
+          "lon": -123.111964,
+          "context": "Simon Fraser University Harbour Centre"
+        },
+        {
+          "id": "node/8490385258",
+          "lat": 49.289514,
+          "lon": -123.115201,
+          "fee": "no",
+          "context": "Vancouver Convention Centre West"
+        },
+        {
+          "id": "node/9025468496",
+          "lat": 49.286979,
+          "lon": -123.108941,
+          "context": "Seabus Terminal"
+        },
         {
           "id": "way/37111511",
           "name": "International Village",
@@ -14,12 +49,105 @@
           "openingHours": "10:00-22:00"
         },
         {
+          "id": "node/3488251117",
+          "lat": 49.272411,
+          "lon": -123.125319,
+          "openingHours": "10:00-dusk",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "False Creek Pump Station"
+        },
+        {
+          "id": "node/13371333669",
+          "lat": 49.271489,
+          "lon": -123.134772,
+          "context": "The Chain & Forge"
+        },
+        {
+          "id": "node/2331331123",
+          "lat": 49.275202,
+          "lon": -123.139808,
+          "openingHours": "Mo-Su 08:00-16:00",
+          "context": "Burrard Bridge Civic Marina"
+        },
+        {
           "id": "node/5606180821",
           "name": "Net Loft Handicap Toilet",
           "lat": 49.271697,
           "lon": -123.135613,
           "wheelchair": "yes",
           "fee": "no"
+        },
+        {
+          "id": "node/8927913590",
+          "lat": 49.271763,
+          "lon": -123.135818,
+          "context": "Net Loft"
+        },
+        {
+          "id": "node/8241208317",
+          "lat": 49.271708,
+          "lon": -123.105126,
+          "openingHours": "Mo-Th 06:30-22:00; Fr 06:30-20:30; Sa,Su 09:00-17:00",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Creekside Community Recreation Centre"
+        },
+        {
+          "id": "node/3488231644",
+          "lat": 49.270325,
+          "lon": -123.135876,
+          "context": "Kids Market"
+        },
+        {
+          "id": "node/3488231642",
+          "lat": 49.269315,
+          "lon": -123.134159,
+          "openingHours": "Mo-Fr 09:00-21:30; Sa-Su 09:00-16:00",
+          "wheelchair": "limited",
+          "context": "False Creek Community Centre"
+        },
+        {
+          "id": "node/1796612587",
+          "lat": 49.273768,
+          "lon": -123.098095,
+          "context": "Pacific Central Station"
+        },
+        {
+          "id": "node/3488241720",
+          "lat": 49.299616,
+          "lon": -123.126046,
+          "wheelchair": "yes",
+          "context": "Brockton Fieldhouse"
+        },
+        {
+          "id": "node/5660055037",
+          "lat": 49.282629,
+          "lon": -123.093855,
+          "openingHours": "Oct 1-Mar 31 Tu-Sa 09:00-17:00; Apr 1-Sep 30 Tu-Sa 09:00-20:00",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Oppenheimer Park Field House"
+        },
+        {
+          "id": "node/11163596963",
+          "lat": 49.293082,
+          "lon": -123.146563,
+          "openingHours": "dawn-dusk",
+          "context": "Stanley Park Pitch & Putt"
+        },
+        {
+          "id": "node/1509346116",
+          "lat": 49.278952,
+          "lon": -123.089312,
+          "openingHours": "dawn-dusk",
+          "context": "MacLean Park Fieldhouse"
+        },
+        {
+          "id": "node/10964761544",
+          "lat": 49.262178,
+          "lon": -123.097191,
+          "context": "Kingsgate Mall"
         },
         {
           "id": "way/23716683",
@@ -86,33 +214,12 @@
           "name": "Kirkstone Park Washrooms",
           "lat": 49.329709,
           "lon": -123.043818
-        },
-        {
-          "id": "way/332994050",
-          "name": "Inter River Park South Fieldhouse",
-          "lat": 49.318799,
-          "lon": -123.027973
-        },
-        {
-          "id": "way/120383022",
-          "name": "The Home Depot",
-          "lat": 49.263148,
-          "lon": -123.016974,
-          "address": "Henning Drive 3950",
-          "openingHours": "Mo-Fr 06:00-21:00; Sa 07:00-20:00; Su 08:00-20:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/332994082",
-          "name": "Princess Park Washrooms",
-          "lat": 49.340599,
-          "lon": -123.057183
         }
       ],
-      "updatedAt": "2026-08-21T04:03:16.617Z"
+      "updatedAt": "2026-09-03T17:33:59.377Z"
     },
     "drinking-water": {
-      "count": 258,
+      "count": 260,
       "pois": [
         {
           "id": "node/14084472501",
@@ -121,10 +228,10 @@
           "lon": -123.104457
         }
       ],
-      "updatedAt": "2026-08-21T04:03:17.252Z"
+      "updatedAt": "2026-09-03T17:34:01.536Z"
     },
     "playgrounds": {
-      "count": 543,
+      "count": 544,
       "pois": [
         {
           "id": "node/13910253277",
@@ -209,10 +316,10 @@
           "lon": -123.088819
         }
       ],
-      "updatedAt": "2026-08-21T04:03:18.006Z"
+      "updatedAt": "2026-09-03T17:34:02.554Z"
     },
     "parking": {
-      "count": 2087,
+      "count": 2089,
       "pois": [
         {
           "id": "way/1055850799",
@@ -433,7 +540,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:18.927Z"
+      "updatedAt": "2026-09-03T17:34:03.791Z"
     },
     "charging-stations": {
       "count": 37,
@@ -500,7 +607,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:19.310Z"
+      "updatedAt": "2026-09-03T17:34:04.348Z"
     },
     "gas-stations": {
       "count": 75,
@@ -576,7 +683,7 @@
           "lon": -123.023221
         }
       ],
-      "updatedAt": "2026-08-21T04:03:19.769Z"
+      "updatedAt": "2026-09-03T17:34:04.850Z"
     },
     "ice-cream": {
       "count": 53,
@@ -823,7 +930,7 @@
           "openingHours": "Mo-Su 12:00-21:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:20.156Z"
+      "updatedAt": "2026-09-03T17:34:05.414Z"
     },
     "dog-parks": {
       "count": 35,
@@ -897,7 +1004,7 @@
           "lon": -123.220549
         }
       ],
-      "updatedAt": "2026-08-21T04:03:20.513Z"
+      "updatedAt": "2026-09-03T17:34:05.867Z"
     },
     "picnic-spots": {
       "count": 571,
@@ -909,7 +1016,7 @@
           "lon": -123.198943
         }
       ],
-      "updatedAt": "2026-08-21T04:03:21.092Z"
+      "updatedAt": "2026-09-03T17:34:07.361Z"
     },
     "viewpoints": {
       "count": 50,
@@ -961,7 +1068,7 @@
           "lon": -123.117029
         }
       ],
-      "updatedAt": "2026-08-21T04:03:21.531Z"
+      "updatedAt": "2026-09-03T17:34:08.003Z"
     },
     "beaches": {
       "count": 88,
@@ -1045,7 +1152,7 @@
           "lon": -123.190619
         }
       ],
-      "updatedAt": "2026-08-21T04:03:21.919Z"
+      "updatedAt": "2026-09-03T17:34:08.512Z"
     },
     "atms": {
       "count": 184,
@@ -1056,7 +1163,7 @@
           "lat": 49.28285,
           "lon": -123.119115,
           "address": "West Georgia Street 700",
-          "openingHours": "Mo-We 08:00-18:00; Th,Fr 08:00-20:00; Sa 08:00-16:00",
+          "openingHours": "Mo-We 09:00-18:00; Th,Fr 09:00-20:00; Sa 09:00-16:00",
           "wheelchair": "yes"
         },
         {
@@ -1281,11 +1388,189 @@
           "address": "West 58th Avenue 608"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:22.444Z"
+      "updatedAt": "2026-09-03T17:34:09.255Z"
     },
     "post-boxes": {
       "count": 496,
       "pois": [
+        {
+          "id": "node/3673755669",
+          "lat": 49.28364,
+          "lon": -123.122035,
+          "street": "Burrard Street"
+        },
+        {
+          "id": "node/3736898529",
+          "lat": 49.282097,
+          "lon": -123.122758,
+          "street": "Hornby Street"
+        },
+        {
+          "id": "node/3712939514",
+          "lat": 49.285236,
+          "lon": -123.120309,
+          "street": "Melville Street"
+        },
+        {
+          "id": "node/3683211756",
+          "lat": 49.280419,
+          "lon": -123.118509,
+          "street": "Robson Street"
+        },
+        {
+          "id": "node/3670635402",
+          "lat": 49.284442,
+          "lon": -123.117312,
+          "wheelchair": "yes",
+          "street": "Howe Street"
+        },
+        {
+          "id": "node/3704088394",
+          "lat": 49.27975,
+          "lon": -123.12017,
+          "street": "Smithe Street"
+        },
+        {
+          "id": "node/3672167596",
+          "lat": 49.285502,
+          "lon": -123.12297,
+          "street": "Thurlow Street"
+        },
+        {
+          "id": "node/3674263630",
+          "lat": 49.27952,
+          "lon": -123.118908,
+          "street": "Richards Street"
+        },
+        {
+          "id": "node/3684540426",
+          "lat": 49.283253,
+          "lon": -123.115202,
+          "wheelchair": "yes",
+          "street": "Seymour Street"
+        },
+        {
+          "id": "node/7298120740",
+          "lat": 49.285186,
+          "lon": -123.115458,
+          "street": "West Pender Street"
+        },
+        {
+          "id": "node/2879023346",
+          "lat": 49.278377,
+          "lon": -123.118704,
+          "street": "Homer Street"
+        },
+        {
+          "id": "node/5221195424",
+          "lat": 49.286191,
+          "lon": -123.125287,
+          "street": "Alberni Street"
+        },
+        {
+          "id": "node/3789850769",
+          "lat": 49.286385,
+          "lon": -123.115723,
+          "street": "West Hastings Street"
+        },
+        {
+          "id": "node/3689973689",
+          "lat": 49.280946,
+          "lon": -123.127925,
+          "street": "Comox Street"
+        },
+        {
+          "id": "node/3675754885",
+          "lat": 49.278872,
+          "lon": -123.125795,
+          "wheelchair": "yes",
+          "street": "Helmcken Street"
+        },
+        {
+          "id": "node/3672698734",
+          "lat": 49.287021,
+          "lon": -123.124927,
+          "street": "Bute Street"
+        },
+        {
+          "id": "node/5862439385",
+          "lat": 49.278172,
+          "lon": -123.124824,
+          "street": "Granville Street"
+        },
+        {
+          "id": "node/5179200021",
+          "lat": 49.287462,
+          "lon": -123.116741,
+          "street": "Hornby Separated Bicycle Lane"
+        },
+        {
+          "id": "node/3672695642",
+          "lat": 49.285421,
+          "lon": -123.128071,
+          "street": "Haro Street"
+        },
+        {
+          "id": "node/3681613589",
+          "lat": 49.277172,
+          "lon": -123.118081,
+          "street": "Mainland Street"
+        },
+        {
+          "id": "node/3682829934",
+          "lat": 49.277767,
+          "lon": -123.115486,
+          "street": "Cambie Street"
+        },
+        {
+          "id": "node/5399706823",
+          "lat": 49.286474,
+          "lon": -123.112997,
+          "street": "West Cordova Street"
+        },
+        {
+          "id": "node/3672690785",
+          "lat": 49.284,
+          "lon": -123.130225,
+          "street": "Nelson Street"
+        },
+        {
+          "id": "node/3681008013",
+          "lat": 49.280429,
+          "lon": -123.11129,
+          "street": "Dunsmuir Street"
+        },
+        {
+          "id": "node/9906401488",
+          "lat": 49.288114,
+          "lon": -123.126538,
+          "street": "Jervis Street"
+        },
+        {
+          "id": "node/3702373663",
+          "lat": 49.277489,
+          "lon": -123.126959,
+          "street": "Davie Street"
+        },
+        {
+          "id": "node/3732337747",
+          "lat": 49.28763,
+          "lon": -123.113151,
+          "street": "West Waterfront Road"
+        },
+        {
+          "id": "node/3746847014",
+          "lat": 49.280597,
+          "lon": -123.109298,
+          "street": "Beatty Street"
+        },
+        {
+          "id": "node/9123123604",
+          "lat": 49.277413,
+          "lon": -123.130003,
+          "wheelchair": "yes",
+          "street": "Drake Street"
+        },
         {
           "id": "node/7434558069",
           "name": "Canada Post",
@@ -1293,11 +1578,29 @@
           "lon": -123.153282
         }
       ],
-      "updatedAt": "2026-08-21T04:03:22.973Z"
+      "updatedAt": "2026-09-03T17:34:11.220Z"
     },
     "recycling": {
       "count": 54,
       "pois": [
+        {
+          "id": "node/13975235928",
+          "lat": 49.284969,
+          "lon": -123.114512,
+          "street": "Granville Street"
+        },
+        {
+          "id": "node/13993928407",
+          "lat": 49.286544,
+          "lon": -123.115621,
+          "street": "West Hastings Street"
+        },
+        {
+          "id": "node/12066577437",
+          "lat": 49.277574,
+          "lon": -123.12708,
+          "street": "Davie Street"
+        },
         {
           "id": "node/9065844152",
           "name": "Return-It Express Yaletown",
@@ -1308,11 +1611,35 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/12077240574",
+          "lat": 49.278644,
+          "lon": -123.137811,
+          "street": "Seaside - English Bay"
+        },
+        {
+          "id": "node/9030183857",
+          "lat": 49.269376,
+          "lon": -123.138066,
+          "street": "Granville Connector"
+        },
+        {
+          "id": "node/13728498799",
+          "lat": 49.264051,
+          "lon": -123.115222,
+          "street": "West 8th Avenue"
+        },
+        {
           "id": "node/7473571690",
           "name": "Return-It",
           "lat": 49.265021,
           "lon": -123.104546,
           "openingHours": "Mo-Sa 09:00-18:00; Su 09:00-17:00; PH 10:00-16:00"
+        },
+        {
+          "id": "node/12316444301",
+          "lat": 49.303063,
+          "lon": -123.130899,
+          "street": "Stanley Park Drive"
         },
         {
           "id": "node/13158630000",
@@ -1321,6 +1648,12 @@
           "lon": -123.094292,
           "address": "Industrial Avenue 449",
           "openingHours": "Mo-Su 07:30-18:00"
+        },
+        {
+          "id": "node/5828088026",
+          "lat": 49.257051,
+          "lon": -123.109587,
+          "street": "Columbia Street"
         },
         {
           "id": "way/1039989305",
@@ -1339,12 +1672,36 @@
           "openingHours": "Mo-Su,PH 08:00-18:00"
         },
         {
+          "id": "node/13978536667",
+          "lat": 49.258373,
+          "lon": -123.101065,
+          "street": "Main and 14th Plaza"
+        },
+        {
           "id": "way/136695815",
           "name": "Regional Recycling Vancouver Bottle Depot",
           "lat": 49.270699,
           "lon": -123.082639,
           "address": "Evans Avenue 960",
           "openingHours": "09:00-18:00 open, 07:30-18:00 open \"Bottle Depot\"; PH 11:00-16:00; Jan 1 off; Dec 25 off; Dec 26 off"
+        },
+        {
+          "id": "node/13978536657",
+          "lat": 49.255057,
+          "lon": -123.115283,
+          "street": "Cambie-18th Plaza"
+        },
+        {
+          "id": "node/8486706964",
+          "lat": 49.254159,
+          "lon": -123.115336,
+          "street": "Cambie Street"
+        },
+        {
+          "id": "node/9930407582",
+          "lat": 49.26605,
+          "lon": -123.157437,
+          "street": "Vine Street"
         },
         {
           "id": "node/5235526456",
@@ -1355,10 +1712,46 @@
           "fee": "yes"
         },
         {
+          "id": "node/11738026009",
+          "lat": 49.268569,
+          "lon": -123.066018,
+          "street": "East 2nd Avenue"
+        },
+        {
           "id": "way/525506459",
           "name": "Joe's Recycling",
           "lat": 49.24585,
           "lon": -123.100696
+        },
+        {
+          "id": "node/13335011644",
+          "lat": 49.327143,
+          "lon": -123.138675,
+          "street": "Marine Drive"
+        },
+        {
+          "id": "node/13709983802",
+          "lat": 49.276553,
+          "lon": -123.046708,
+          "street": "Venables Street"
+        },
+        {
+          "id": "node/13014175058",
+          "lat": 49.320177,
+          "lon": -123.072242,
+          "street": "Lonsdale Avenue"
+        },
+        {
+          "id": "node/9525452929",
+          "lat": 49.32872,
+          "lon": -123.157173,
+          "street": "Clyde Avenue"
+        },
+        {
+          "id": "node/5984372473",
+          "lat": 49.24907,
+          "lon": -123.056871,
+          "street": "Nanaimo Street"
         },
         {
           "id": "node/13443906646",
@@ -1368,38 +1761,34 @@
           "address": "Grandview Highway 2890"
         },
         {
+          "id": "node/5599576379",
+          "lat": 49.257743,
+          "lon": -123.044084,
+          "street": "Renfrew Street"
+        },
+        {
+          "id": "node/5692008978",
+          "lat": 49.25092,
+          "lon": -123.049479,
+          "street": "Slocan Street"
+        },
+        {
           "id": "node/7196556956",
           "name": "North Vancouver Bottle & Return-It Depot",
           "lat": 49.308471,
           "lon": -123.039936,
           "address": "Brooksbank Avenue 310"
-        },
-        {
-          "id": "node/5005564642",
-          "name": "Vancouver Central Return-It Depot",
-          "lat": 49.239162,
-          "lon": -123.05146,
-          "address": "Kingsway 2639",
-          "openingHours": "Mo-Fr,Su 09:00-17:00; Sa 09:00-18:00; PH off"
-        },
-        {
-          "id": "node/8358761864",
-          "name": "Brentwood Return-It Bottle Depot",
-          "lat": 49.27063,
-          "lon": -123.017868,
-          "address": "Graveley Street 3931",
-          "openingHours": "Mo-Sa 09:00-17:00; Su 10:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:23.405Z"
+      "updatedAt": "2026-09-03T17:34:13.437Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:03:23.752Z"
+      "updatedAt": "2026-09-03T17:34:13.947Z"
     },
     "libraries": {
-      "count": 285,
+      "count": 286,
       "pois": [
         {
           "id": "way/37111640",
@@ -1612,7 +2001,7 @@
           "lon": -123.081428
         }
       ],
-      "updatedAt": "2026-08-21T04:03:24.240Z"
+      "updatedAt": "2026-09-03T17:34:14.649Z"
     },
     "outdoor-gyms": {
       "count": 33,
@@ -1624,7 +2013,7 @@
           "lon": -123.148679
         }
       ],
-      "updatedAt": "2026-08-21T04:03:24.621Z"
+      "updatedAt": "2026-09-03T17:34:15.865Z"
     },
     "camp-sites": {
       "count": 3,
@@ -1648,7 +2037,7 @@
           "lon": -123.112127
         }
       ],
-      "updatedAt": "2026-08-21T04:03:25.015Z"
+      "updatedAt": "2026-09-03T17:34:16.387Z"
     },
     "shelters": {
       "count": 16,
@@ -1666,20 +2055,20 @@
           "lon": -123.132875
         }
       ],
-      "updatedAt": "2026-08-21T04:03:25.583Z"
+      "updatedAt": "2026-09-03T17:34:17.897Z"
     },
     "rest-areas": {
       "count": 23,
       "pois": [],
-      "updatedAt": "2026-08-21T04:03:25.975Z"
+      "updatedAt": "2026-09-03T17:34:18.590Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:03:26.293Z"
+      "updatedAt": "2026-09-03T17:34:19.007Z"
     },
     "post-offices": {
-      "count": 70,
+      "count": 71,
       "pois": [
         {
           "id": "node/7229566463",
@@ -1795,6 +2184,14 @@
           "openingHours": "Mo-Fr 09:00-21:00; Sa 11:00-17:00; Su 12:00-17:00"
         },
         {
+          "id": "node/11660187117",
+          "name": "Skymart",
+          "lat": 49.263539,
+          "lon": -123.146167,
+          "address": "West Broadway 1816",
+          "openingHours": "Mo-Fr 09:30-19:00; Sa-Su 10:30-17:00"
+        },
+        {
           "id": "node/2207863316",
           "name": "Granville Park",
           "lat": 49.259952,
@@ -1826,7 +2223,8 @@
           "name": "Connaught",
           "lat": 49.263719,
           "lon": -123.156336,
-          "address": "West Broadway 2230"
+          "address": "West Broadway 2230",
+          "openingHours": "Mo-Sa 09:00-21:00; Su 12:00-18:00"
         },
         {
           "id": "node/7226638311",
@@ -1901,25 +2299,19 @@
           "lon": -123.139935,
           "address": "Main Street 802",
           "openingHours": "Mo-Fr 09:00-21:00; Su 12:00-17:00; Sa 10:00-17:00"
-        },
-        {
-          "id": "node/7226643307",
-          "name": "Point Grey",
-          "lat": 49.263829,
-          "lon": -123.185672
         }
       ],
-      "updatedAt": "2026-08-23T04:37:08.550Z"
+      "updatedAt": "2026-09-03T17:34:19.446Z"
     },
     "showers": {
-      "count": 15,
+      "count": 16,
       "pois": [],
-      "updatedAt": "2026-08-23T04:37:08.988Z"
+      "updatedAt": "2026-09-03T17:34:19.835Z"
     },
     "fireplaces": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-08-23T04:37:09.798Z"
+      "updatedAt": "2026-09-03T17:34:21.086Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1927,7 +2319,7 @@
       "updatedAt": "2026-08-17T04:06:31.003Z"
     },
     "benches": {
-      "count": 4095,
+      "count": 4105,
       "pois": [
         {
           "id": "node/6346226598",
@@ -2086,12 +2478,162 @@
           "lon": -123.213233
         }
       ],
-      "updatedAt": "2026-08-23T04:37:10.913Z"
+      "updatedAt": "2026-09-03T17:34:24.047Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:41.207Z"
+    },
+    "bicycle-repair": {
+      "count": 26,
+      "pois": [
+        {
+          "id": "node/8917029417",
+          "lat": 49.265016,
+          "lon": -123.11437,
+          "street": "West 7th Avenue"
+        },
+        {
+          "id": "node/4703314309",
+          "lat": 49.27748,
+          "lon": -123.087572,
+          "fee": "no",
+          "street": "Union Street"
+        },
+        {
+          "id": "node/8580605300",
+          "lat": 49.258769,
+          "lon": -123.121644,
+          "openingHours": "24/7",
+          "street": "West 14th Avenue"
+        },
+        {
+          "id": "node/8250012611",
+          "lat": 49.262088,
+          "lon": -123.099693,
+          "openingHours": "24/7",
+          "street": "10th Avenue Bikeway"
+        },
+        {
+          "id": "node/5334282119",
+          "lat": 49.255878,
+          "lon": -123.112469,
+          "street": "West 17th Avenue"
+        },
+        {
+          "id": "node/10202889030",
+          "lat": 49.281103,
+          "lon": -123.078377,
+          "fee": "yes",
+          "street": "East Hastings Street"
+        },
+        {
+          "id": "node/4703314215",
+          "lat": 49.27753,
+          "lon": -123.074562,
+          "fee": "no",
+          "street": "Adanac Street"
+        },
+        {
+          "id": "node/12596605541",
+          "lat": 49.248783,
+          "lon": -123.127269,
+          "fee": "yes",
+          "street": "Oak Street"
+        },
+        {
+          "id": "node/13976595266",
+          "lat": 49.313636,
+          "lon": -123.09409,
+          "openingHours": "24/7",
+          "street": "Spirit Trail"
+        },
+        {
+          "id": "node/11041499206",
+          "lat": 49.237326,
+          "lon": -123.121695,
+          "openingHours": "24/7",
+          "street": "West 37th Avenue"
+        },
+        {
+          "id": "node/7757190344",
+          "lat": 49.327441,
+          "lon": -123.139413,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Park Royal North"
+        },
+        {
+          "id": "node/12179564010",
+          "lat": 49.320924,
+          "lon": -123.073234,
+          "openingHours": "24/7",
+          "street": "Civic Plaza"
+        },
+        {
+          "id": "node/7721158246",
+          "lat": 49.320067,
+          "lon": -123.071384,
+          "openingHours": "24/7",
+          "street": "East 13th Street"
+        },
+        {
+          "id": "node/9244622095",
+          "lat": 49.242825,
+          "lon": -123.062478,
+          "openingHours": "24/7",
+          "street": "Gladstone Street"
+        },
+        {
+          "id": "node/8934453117",
+          "lat": 49.337938,
+          "lon": -123.102166,
+          "fee": "yes",
+          "street": "Edgemont Boulevard"
+        },
+        {
+          "id": "node/11977329577",
+          "lat": 49.307579,
+          "lon": -123.040256,
+          "street": "Brooksbank Avenue"
+        },
+        {
+          "id": "node/9294011020",
+          "lat": 49.269004,
+          "lon": -123.033401,
+          "street": "Rupert Street"
+        },
+        {
+          "id": "node/10744504839",
+          "lat": 49.311003,
+          "lon": -123.034546,
+          "fee": "no",
+          "street": "Hunter Street"
+        },
+        {
+          "id": "node/4815793990",
+          "lat": 49.305636,
+          "lon": -123.030224,
+          "openingHours": "24/7",
+          "street": "Oxford Street"
+        },
+        {
+          "id": "node/8735126718",
+          "lat": 49.257011,
+          "lon": -123.023131,
+          "fee": "no",
+          "street": "Boundary Road"
+        },
+        {
+          "id": "node/10074303074",
+          "lat": 49.305649,
+          "lon": -123.018337,
+          "fee": "no",
+          "street": "Dollarton Highway"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:34:22.952Z"
     }
   }
 }

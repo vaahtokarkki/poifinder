@@ -1,9 +1,9 @@
 {
   "city": "berlin",
-  "generatedAt": "2026-08-23T04:08:52.462Z",
+  "generatedAt": "2026-09-03T16:53:44.928Z",
   "categories": {
     "toilets": {
-      "count": 973,
+      "count": 978,
       "pois": [
         {
           "id": "node/60240150",
@@ -12,6 +12,22 @@
           "lon": 13.406323,
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "node/11105619821",
+          "lat": 52.52113,
+          "lon": 13.401062,
+          "wheelchair": "yes",
+          "context": "Theologische Fakultät der Humboldt-Universität"
+        },
+        {
+          "id": "node/1653339120",
+          "lat": 52.522335,
+          "lon": 13.407219,
+          "openingHours": "Mo-Sa 07:00-22:00; Su,PH off",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Markthalle Alexanderplatz"
         },
         {
           "id": "node/5792474339",
@@ -38,6 +54,13 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/11639056701",
+          "lat": 52.515183,
+          "lon": 13.409132,
+          "wheelchair": "designated",
+          "context": "Direktorenhaus Berlin"
+        },
+        {
           "id": "way/258898047",
           "name": "Alexa",
           "lat": 52.519055,
@@ -45,6 +68,14 @@
           "address": "Grunerstraße 20",
           "openingHours": "Mo-Sa 10:00-21:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/13205274706",
+          "lat": 52.51649,
+          "lon": 13.392915,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Alte Bibliothek"
         },
         {
           "id": "node/12671051933",
@@ -59,9 +90,26 @@
           "lat": 52.51839,
           "lon": 13.389086,
           "address": "Friedrichstraße 90",
+          "openingHours": "Mo-Fr 09:00-24:00; Sa 09:00-23:30",
           "wheelchair": "yes",
           "fee": "no",
           "context": "Dussmann das KulturKaufhaus"
+        },
+        {
+          "id": "node/8198930762",
+          "lat": 52.516109,
+          "lon": 13.389329,
+          "fee": "no",
+          "context": "Rosmarin-Karree"
+        },
+        {
+          "id": "node/4286130005",
+          "lat": 52.512821,
+          "lon": 13.392836,
+          "openingHours": "May-Sep: 10:00-19:00; Oct-Apr 10:00-18:00",
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "Deutscher Dom"
         },
         {
           "id": "relation/380240",
@@ -81,14 +129,6 @@
           "wheelchair": "yes"
         },
         {
-          "id": "node/13703513278",
-          "name": "Urinal",
-          "lat": 52.532949,
-          "lon": 13.40109,
-          "wheelchair": "no",
-          "fee": "no"
-        },
-        {
           "id": "node/6459171117",
           "name": "Berliner Toilette",
           "lat": 52.527211,
@@ -96,6 +136,15 @@
           "openingHours": "24/7",
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "node/12307074279",
+          "lat": 52.526505,
+          "lon": 13.381194,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Zentrale Notaufnahme"
         },
         {
           "id": "way/33743630",
@@ -108,12 +157,30 @@
           "fee": "yes"
         },
         {
+          "id": "node/6690131845",
+          "lat": 52.517259,
+          "lon": 13.37803,
+          "wheelchair": "no",
+          "fee": "yes",
+          "context": "Palais am Pariser Platz"
+        },
+        {
           "id": "node/12365213768",
           "lat": 52.519048,
           "lon": 13.375946,
           "wheelchair": "yes",
           "fee": "no",
           "context": "Reichstagsgebäude"
+        },
+        {
+          "id": "node/4439021889",
+          "lat": 52.535315,
+          "lon": 13.389598,
+          "address": "Bernauer Straße 111",
+          "openingHours": "Tu-Su 10:00-18:00",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Gedenkstätte Berliner Mauer (Dokumentationszentrum)"
         },
         {
           "id": "way/973566414",
@@ -132,6 +199,28 @@
           "wheelchair": "yes",
           "fee": "no",
           "context": "Dokumentationszentrum"
+        },
+        {
+          "id": "node/6938936201",
+          "lat": 52.538293,
+          "lon": 13.413093,
+          "wheelchair": "no",
+          "fee": "yes",
+          "context": "Restauration Kulturbrauerei"
+        },
+        {
+          "id": "node/5774438887",
+          "lat": 52.504443,
+          "lon": 13.423522,
+          "wheelchair": "no",
+          "context": "Bethanien"
+        },
+        {
+          "id": "node/4756851873",
+          "lat": 52.50321,
+          "lon": 13.422305,
+          "fee": "no",
+          "context": "Familienzentrum Waldemarstraße"
         },
         {
           "id": "way/296083226",
@@ -161,116 +250,18 @@
           "fee": "yes"
         },
         {
-          "id": "way/403077776",
-          "name": "rail&fresh",
-          "lat": 52.524831,
-          "lon": 13.36901,
-          "address": "Europaplatz 1",
-          "openingHours": "24/7",
-          "wheelchair": "yes",
-          "fee": "yes"
-        },
-        {
-          "id": "node/13645161767",
-          "name": "Toiletten",
-          "lat": 52.52116,
-          "lon": 13.441843
-        },
-        {
-          "id": "node/976553355",
-          "name": "WC Center Berlin-Hauptbahnhof",
-          "lat": 52.525082,
-          "lon": 13.369056,
-          "address": "Europaplatz 1",
-          "openingHours": "24/7",
-          "wheelchair": "yes",
-          "fee": "yes"
-        },
-        {
-          "id": "way/22989670",
-          "name": "The Playce",
-          "lat": 52.507411,
-          "lon": 13.374115,
-          "address": "Alte Potsdamer Straße 7",
-          "openingHours": "Mo-Su,PH 07:00-23:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/65425822",
-          "name": "Südblock",
-          "lat": 52.498548,
-          "lon": 13.416831,
-          "address": "Admiralstraße 1-2",
-          "openingHours": "Mo-Sa 17:00-23:00; Su 15:00-23:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/5732104364",
-          "lat": 52.496796,
-          "lon": 13.392962,
+          "id": "node/10008684366",
+          "lat": 52.52351,
+          "lon": 13.369047,
           "wheelchair": "yes",
           "fee": "no",
-          "context": "Amerika-Gedenkbibliothek"
-        },
-        {
-          "id": "relation/28134",
-          "name": "Kunstgewerbemuseum",
-          "lat": 52.509701,
-          "lon": 13.367387,
-          "openingHours": "Mo-Tu off; We-Fr 10:00-17:00; Sa-Su 11:00-18:00",
-          "wheelchair": "yes",
-          "fee": "yes"
-        },
-        {
-          "id": "way/36908960",
-          "name": "LPG BioMarkt",
-          "lat": 52.495887,
-          "lon": 13.388594,
-          "address": "Mehringdamm 20-30",
-          "openingHours": "Mo-Sa 08:00-20:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/1530016350",
-          "name": "Aldi",
-          "lat": 52.54262,
-          "lon": 13.378479,
-          "address": "Gerichtstraße 2-3",
-          "openingHours": "Mo-Sa 07:00-21:00; PH off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/615700425",
-          "name": "East Side Mall",
-          "lat": 52.506159,
-          "lon": 13.446639,
-          "address": "Tamara-Danz-Straße 11",
-          "openingHours": "Mo-Sa 10:00-21:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/566145932",
-          "name": "Schönhauser Allee Arcaden",
-          "lat": 52.549482,
-          "lon": 13.415427,
-          "address": "Schönhauser Allee 80",
-          "openingHours": "Mo-Sa 10:00-20:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/20980117",
-          "name": "Gesundbrunnen-Center",
-          "lat": 52.549773,
-          "lon": 13.38953,
-          "address": "Badstraße 4",
-          "openingHours": "Mo-Sa 08:00-21:00",
-          "wheelchair": "yes"
+          "context": "Cube Berlin"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:20.787Z"
+      "updatedAt": "2026-09-03T16:52:54.858Z"
     },
     "drinking-water": {
-      "count": 330,
+      "count": 341,
       "pois": [
         {
           "id": "node/8722868012",
@@ -414,10 +405,10 @@
           "lon": 13.24631
         }
       ],
-      "updatedAt": "2026-08-23T04:08:23.159Z"
+      "updatedAt": "2026-09-03T16:52:57.869Z"
     },
     "playgrounds": {
-      "count": 3367,
+      "count": 3373,
       "pois": [
         {
           "id": "way/1054177698",
@@ -626,10 +617,10 @@
           "lon": 13.398063
         }
       ],
-      "updatedAt": "2026-08-23T04:08:24.764Z"
+      "updatedAt": "2026-09-03T16:52:59.843Z"
     },
     "parking": {
-      "count": 29095,
+      "count": 29107,
       "pois": [
         {
           "id": "way/37434692",
@@ -772,13 +763,6 @@
           "lon": 13.388051
         },
         {
-          "id": "way/93399657",
-          "name": "Jelbi-Station S+U Schönhauser Allee",
-          "lat": 52.549212,
-          "lon": 13.417088,
-          "fee": "yes"
-        },
-        {
           "id": "way/1040211329",
           "name": "Heninger SystemService",
           "lat": 52.54271,
@@ -854,12 +838,19 @@
           "lat": 52.48368,
           "lon": 13.37767,
           "fee": "no"
+        },
+        {
+          "id": "way/26709558",
+          "name": "Bauhaus",
+          "lat": 52.503615,
+          "lon": 13.343862,
+          "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:27.947Z"
+      "updatedAt": "2026-09-03T16:53:04.272Z"
     },
     "charging-stations": {
-      "count": 1382,
+      "count": 1403,
       "pois": [
         {
           "id": "node/1272843208",
@@ -1081,7 +1072,7 @@
           "lon": 13.363789
         }
       ],
-      "updatedAt": "2026-08-23T04:08:28.800Z"
+      "updatedAt": "2026-09-03T16:53:05.337Z"
     },
     "gas-stations": {
       "count": 212,
@@ -1298,7 +1289,7 @@
         },
         {
           "id": "node/667211388",
-          "name": "Total Access",
+          "name": "Access",
           "lat": 52.514862,
           "lon": 13.262456,
           "address": "Reichsstraße 86",
@@ -1331,10 +1322,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:29.752Z"
+      "updatedAt": "2026-09-03T16:53:06.573Z"
     },
     "ice-cream": {
-      "count": 348,
+      "count": 352,
       "pois": [
         {
           "id": "node/5726198088",
@@ -1367,7 +1358,8 @@
           "id": "node/12568310205",
           "name": "Softinis",
           "lat": 52.51996,
-          "lon": 13.411243
+          "lon": 13.411243,
+          "openingHours": "Mo-Su 09:00-23:00"
         },
         {
           "id": "node/2796753231",
@@ -1394,6 +1386,14 @@
           "address": "Rosenthaler Straße 40-41",
           "openingHours": "Mo-Su 12:00-19:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/3895256385",
+          "name": "yoli",
+          "lat": 52.524311,
+          "lon": 13.408182,
+          "address": "Münzstraße 11b",
+          "openingHours": "Mo-Su 11:00-22:00"
         },
         {
           "id": "node/3920547058",
@@ -1453,6 +1453,14 @@
           "lat": 52.515333,
           "lon": 13.389303,
           "openingHours": "Mo-Su 10:00-20:00"
+        },
+        {
+          "id": "node/3937513963",
+          "name": "Choc-Spot",
+          "lat": 52.530431,
+          "lon": 13.400873,
+          "address": "Brunnenstraße 4",
+          "wheelchair": "no"
         },
         {
           "id": "node/3937513962",
@@ -1570,26 +1578,9 @@
           "lon": 13.411456,
           "address": "Choriner Straße 40",
           "openingHours": "Mo-Su 13:00-18:00"
-        },
-        {
-          "id": "node/721522044",
-          "name": "Manufacture Delicate",
-          "lat": 52.535385,
-          "lon": 13.419929,
-          "address": "Rykestraße 7",
-          "openingHours": "Tu-Sa 07:00-18:00; Su 08:00-18:00",
-          "wheelchair": "no"
-        },
-        {
-          "id": "node/11809832579",
-          "name": "vanille & marille Eismanufaktur",
-          "lat": 52.534031,
-          "lon": 13.426118,
-          "address": "Marienburger Straße 14",
-          "openingHours": "Mar-Oct: Mo-Su 14:00-20:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:30.663Z"
+      "updatedAt": "2026-09-03T16:53:07.671Z"
     },
     "dog-parks": {
       "count": 52,
@@ -1794,10 +1785,10 @@
           "lon": 13.240928
         }
       ],
-      "updatedAt": "2026-08-23T04:08:31.286Z"
+      "updatedAt": "2026-09-03T16:53:08.569Z"
     },
     "picnic-spots": {
-      "count": 588,
+      "count": 601,
       "pois": [
         {
           "id": "node/4868547737",
@@ -1842,10 +1833,10 @@
           "lon": 13.428314
         }
       ],
-      "updatedAt": "2026-08-23T04:08:33.824Z"
+      "updatedAt": "2026-09-03T16:53:10.848Z"
     },
     "viewpoints": {
-      "count": 152,
+      "count": 153,
       "pois": [
         {
           "id": "node/10651702805",
@@ -1888,6 +1879,12 @@
           "lat": 52.505331,
           "lon": 13.436011,
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/14116119861",
+          "name": "Sunset Point",
+          "lat": 52.504851,
+          "lon": 13.439192
         },
         {
           "id": "node/4558493785",
@@ -2055,7 +2052,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:34.748Z"
+      "updatedAt": "2026-09-03T16:53:12.069Z"
     },
     "beaches": {
       "count": 34,
@@ -2131,10 +2128,10 @@
           "lon": 13.256154
         }
       ],
-      "updatedAt": "2026-08-23T04:08:35.580Z"
+      "updatedAt": "2026-09-03T16:53:12.905Z"
     },
     "atms": {
-      "count": 1205,
+      "count": 1201,
       "pois": [
         {
           "id": "node/1819929366",
@@ -2242,14 +2239,6 @@
           "lon": 13.389367,
           "address": "Friedrichstraße 79",
           "openingHours": "Mo-Fr 09:00-13:00, Mo 14:00-16:00, Tu,Th 14:30-18:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/10078317259",
-          "name": "ATM IC Cash",
-          "lat": 52.511486,
-          "lon": 13.416839,
-          "openingHours": "24/7",
           "wheelchair": "yes"
         },
         {
@@ -2371,271 +2360,407 @@
           "lon": 13.44716,
           "openingHours": "Mo-Fr 07:00-24:00; Sa 07:00-23:30",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/2013009700",
+          "name": "Edeka Brehm City",
+          "lat": 52.494512,
+          "lon": 13.420825,
+          "openingHours": "Mo-Sa 08:00-20:00",
+          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:36.592Z"
+      "updatedAt": "2026-09-03T16:53:14.201Z"
     },
     "post-boxes": {
       "count": 1763,
       "pois": [
         {
-          "id": "node/308593857",
-          "name": "Anton-Wilhelm-Amo-Str. 50, 10117 Berlin",
-          "lat": 52.512207,
-          "lon": 13.390132
+          "id": "node/618984847",
+          "lat": 52.521789,
+          "lon": 13.407873,
+          "wheelchair": "yes",
+          "street": "Karl-Liebknecht-Straße"
         },
         {
-          "id": "node/308817072",
-          "name": "Briefkasten",
-          "lat": 52.55081,
-          "lon": 13.409873,
-          "address": "Schivelbeiner Straße 39"
+          "id": "node/13326130510",
+          "lat": 52.522035,
+          "lon": 13.402493,
+          "street": "Garnisonkirchplatz"
         },
         {
-          "id": "node/7834692986",
-          "name": "PIN",
-          "lat": 52.526489,
-          "lon": 13.345454,
-          "wheelchair": "yes"
+          "id": "node/320663743",
+          "lat": 52.518507,
+          "lon": 13.401092,
+          "street": "Schloßplatz"
         },
         {
-          "id": "node/2784118962",
-          "name": "Pin AG",
-          "lat": 52.471611,
-          "lon": 13.365655
+          "id": "node/78252182",
+          "lat": 52.522028,
+          "lon": 13.400628,
+          "street": "Burgstraße"
         },
         {
-          "id": "node/316534138",
-          "name": "Kurfürstendamm 142, 10709 Berlin",
-          "lat": 52.498084,
-          "lon": 13.297621
+          "id": "node/4197433136",
+          "lat": 52.516598,
+          "lon": 13.406414,
+          "street": "Propststraße"
         },
         {
-          "id": "node/12536150619",
-          "name": "Briefkasten Deutsche Post",
-          "lat": 52.455799,
-          "lon": 13.315311,
-          "openingHours": "Mo-Fr 15:45-15:45; Sa 12:30-12:30"
+          "id": "node/506357652",
+          "lat": 52.523341,
+          "lon": 13.403232,
+          "street": "An der Spandauer Brücke"
+        },
+        {
+          "id": "node/712664283",
+          "lat": 52.524698,
+          "lon": 13.408079,
+          "wheelchair": "yes",
+          "street": "Max-Beer-Straße"
+        },
+        {
+          "id": "node/343561391",
+          "lat": 52.518866,
+          "lon": 13.413141,
+          "street": "Littenstraße"
+        },
+        {
+          "id": "node/506357650",
+          "lat": 52.525443,
+          "lon": 13.403645,
+          "wheelchair": "yes",
+          "street": "Rosenthaler Straße"
+        },
+        {
+          "id": "node/2440890868",
+          "lat": 52.521029,
+          "lon": 13.415035,
+          "wheelchair": "yes",
+          "street": "Alexanderstraße"
+        },
+        {
+          "id": "node/89275193",
+          "lat": 52.513216,
+          "lon": 13.406821,
+          "wheelchair": "yes",
+          "street": "Fischerinsel"
+        },
+        {
+          "id": "node/260919529",
+          "lat": 52.525971,
+          "lon": 13.398533,
+          "street": "Große Hamburger Straße"
+        },
+        {
+          "id": "node/506357647",
+          "lat": 52.527258,
+          "lon": 13.408123,
+          "wheelchair": "yes",
+          "street": "Alte Schönhauser Straße"
+        },
+        {
+          "id": "node/448814547",
+          "lat": 52.513046,
+          "lon": 13.412151,
+          "street": "Wallstraße"
+        },
+        {
+          "id": "node/271884091",
+          "lat": 52.513141,
+          "lon": 13.397122,
+          "wheelchair": "yes",
+          "street": "Hausvogteiplatz"
+        },
+        {
+          "id": "node/506357624",
+          "lat": 52.527882,
+          "lon": 13.410785,
+          "wheelchair": "yes",
+          "street": "Linienstraße"
+        },
+        {
+          "id": "node/2756495827",
+          "lat": 52.524464,
+          "lon": 13.392698,
+          "wheelchair": "yes",
+          "street": "Tucholskystraße"
+        },
+        {
+          "id": "node/1421791181",
+          "lat": 52.517341,
+          "lon": 13.418966,
+          "street": "Schillingstraße"
+        },
+        {
+          "id": "node/1714261695",
+          "lat": 52.529041,
+          "lon": 13.405451,
+          "street": "Gormannstraße"
+        },
+        {
+          "id": "node/1237776847",
+          "lat": 52.513298,
+          "lon": 13.393985,
+          "street": "Taubenstraße"
+        },
+        {
+          "id": "node/565357156",
+          "lat": 52.52593,
+          "lon": 13.417317,
+          "street": "Mollstraße"
+        },
+        {
+          "id": "node/273439038",
+          "lat": 52.511184,
+          "lon": 13.398207,
+          "street": "Leipziger Straße"
+        },
+        {
+          "id": "node/961626608",
+          "lat": 52.526301,
+          "lon": 13.392757,
+          "street": "Auguststraße"
+        },
+        {
+          "id": "node/697316267",
+          "lat": 52.529932,
+          "lon": 13.403234,
+          "street": "Torstraße"
+        },
+        {
+          "id": "node/369600823",
+          "lat": 52.519913,
+          "lon": 13.388474,
+          "street": "Friedrichstraße"
+        },
+        {
+          "id": "node/3378605031",
+          "lat": 52.513512,
+          "lon": 13.417765,
+          "street": "Brückenstraße"
+        },
+        {
+          "id": "node/2131611353",
+          "lat": 52.511226,
+          "lon": 13.414569,
+          "street": "Köpenicker Straße"
+        },
+        {
+          "id": "node/8987986417",
+          "lat": 52.520359,
+          "lon": 13.422479,
+          "street": "Karl-Marx-Allee"
+        },
+        {
+          "id": "node/8710421861",
+          "lat": 52.528279,
+          "lon": 13.416559,
+          "street": "Prenzlauer Allee"
+        },
+        {
+          "id": "node/332272201",
+          "lat": 52.521911,
+          "lon": 13.386759,
+          "street": "Schiffbauerdamm"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:37.565Z"
+      "updatedAt": "2026-09-03T16:53:16.852Z"
     },
     "recycling": {
-      "count": 2148,
+      "count": 2150,
       "pois": [
         {
-          "id": "way/28198135",
-          "name": "Recyclinghof Behmstraße",
-          "lat": 52.550442,
-          "lon": 13.40199,
-          "address": "Behmstraße 74",
-          "openingHours": "Mo-Fr 09:00-19:00; Sa 07:00-14:30; PH off",
-          "wheelchair": "yes"
+          "id": "node/440661271",
+          "lat": 52.521523,
+          "lon": 13.40346,
+          "street": "Anna-Louisa-Karsch-Straße"
         },
         {
-          "id": "way/125208195",
-          "name": "Wasdrack Altmetalle",
-          "lat": 52.535511,
-          "lon": 13.348888,
-          "openingHours": "Mo-Th 07:30-16:30; Fr 07:30-16:00; Sa 09:00-12:00"
+          "id": "node/440661272",
+          "lat": 52.522068,
+          "lon": 13.4051,
+          "street": "Rochstraße"
         },
         {
-          "id": "way/1298791073",
-          "name": "Zentraler Abfallplatz",
-          "lat": 52.513791,
-          "lon": 13.324488,
-          "address": "Straße des 17. Juni 144",
-          "openingHours": "Mo-Fr 10:00-13:00"
+          "id": "node/963600605",
+          "lat": 52.523764,
+          "lon": 13.397298,
+          "street": "Oranienburger Straße"
         },
         {
-          "id": "node/3727940016",
-          "name": "Recon-t",
-          "lat": 52.506799,
-          "lon": 13.484453,
-          "address": "Buchberger Straße 30",
-          "openingHours": "Mo-Fr 10:00-16:00; Sa 10:00-13:00",
-          "wheelchair": "limited"
+          "id": "node/11645047367",
+          "lat": 52.513666,
+          "lon": 13.405974,
+          "wheelchair": "yes",
+          "street": "Fischerinsel"
         },
         {
-          "id": "node/12474162598",
-          "name": "Altkleider",
-          "lat": 52.570918,
-          "lon": 13.37477
+          "id": "node/961626645",
+          "lat": 52.527223,
+          "lon": 13.403448,
+          "wheelchair": "yes",
+          "street": "Kleine Rosenthaler Straße"
         },
         {
-          "id": "node/10079244117",
-          "name": "Recyclinghof Fischerstraße",
-          "lat": 52.498155,
-          "lon": 13.491867,
-          "openingHours": "Mo-We,Fr 07:00-17:00; Th 09:30-19:30; Sa 07:00-15:30",
-          "wheelchair": "yes"
+          "id": "node/1608905864",
+          "lat": 52.526959,
+          "lon": 13.40885,
+          "street": "Max-Beer-Straße"
         },
         {
-          "id": "node/442877823",
-          "name": "Recyclinghof Ilsenburger Straße",
-          "lat": 52.527016,
-          "lon": 13.310619,
-          "address": "Ilsenburger Straße 18-20",
-          "openingHours": "Mo-We 07:00-17:00; Th 09:30-19:30; Fr 07:00-17:00; Sa 07:00-15:30"
+          "id": "node/12844661466",
+          "lat": 52.525937,
+          "lon": 13.412576,
+          "openingHours": "Mo-Sa 07:00-13:00,15:00-20:00; PH off",
+          "street": "Kleine Alexanderstraße"
         },
         {
-          "id": "node/13971875308",
-          "name": "Kiro Schrotthandel",
-          "lat": 52.572535,
-          "lon": 13.445977,
-          "address": "Blankenburger Str. 18-20"
+          "id": "node/10985054717",
+          "lat": 52.512388,
+          "lon": 13.403749,
+          "street": "Gertraudenstraße"
         },
         {
-          "id": "way/26660877",
-          "name": "BSR Recyclinghof Asgardstraße",
-          "lat": 52.581361,
-          "lon": 13.435917,
-          "address": "Asgardstraße 3"
+          "id": "node/7285639747",
+          "lat": 52.525107,
+          "lon": 13.416495,
+          "wheelchair": "yes",
+          "street": "Wadzeckstraße"
         },
         {
-          "id": "way/10734959",
-          "name": "Recyclinghof Berliner Straße",
-          "lat": 52.486303,
-          "lon": 13.31514,
-          "address": "Berliner Straße 110",
-          "openingHours": "Mo-Fr 09:00-19:00; Sa 07:00-14:30",
-          "wheelchair": "yes"
+          "id": "node/12835703544",
+          "lat": 52.525931,
+          "lon": 13.41683,
+          "street": "Keibelstraße"
         },
         {
-          "id": "node/11717220369",
-          "name": "Platane19",
-          "lat": 52.507856,
-          "lon": 13.299803,
-          "address": "Pestalozzistraße 60",
-          "openingHours": "Mo-Fr 10:00-16:00"
+          "id": "node/11879295761",
+          "lat": 52.510842,
+          "lon": 13.409982,
+          "street": "Neue Roßstraße"
         },
         {
-          "id": "node/11125608906",
-          "name": "Batteriesammelstelle",
-          "lat": 52.457465,
-          "lon": 13.437244
+          "id": "node/1389419259",
+          "lat": 52.529658,
+          "lon": 13.405288,
+          "wheelchair": "yes",
+          "street": "Torstraße"
         },
         {
-          "id": "way/53545422",
-          "name": "BRB Baustoff Recycling",
-          "lat": 52.484209,
-          "lon": 13.498126
+          "id": "node/10188970807",
+          "lat": 52.51771,
+          "lon": 13.420578,
+          "street": "Singerstraße"
         },
         {
-          "id": "way/1051824179",
-          "name": "EBU Dienstleistungs- GmbH",
-          "lat": 52.470814,
-          "lon": 13.480622
+          "id": "node/12076081384",
+          "lat": 52.518795,
+          "lon": 13.421119,
+          "street": "Magazinstraße"
         },
         {
-          "id": "way/28760600",
-          "name": "BSR Recyclinghof Lengeder Straße",
-          "lat": 52.581554,
-          "lon": 13.347254,
-          "address": "Lengeder Straße 6-18",
-          "openingHours": "Mo-We,Fr 07:00-17:00, Th 09:30-19:30, Sa 07:00-15:30"
+          "id": "node/8722198358",
+          "lat": 52.529321,
+          "lon": 13.412877,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "street": "Straßburger Straße"
         },
         {
-          "id": "way/579730522",
-          "name": "Recyclinghof Plus Gradestraße",
-          "lat": 52.450432,
-          "lon": 13.428275,
-          "address": "Gradestraße 73",
-          "openingHours": "Mo-Sa 07:00-19:00"
+          "id": "node/3734445710",
+          "lat": 52.530559,
+          "lon": 13.405923,
+          "openingHours": "24/7",
+          "street": "Choriner Straße"
         },
         {
-          "id": "node/3955524160",
-          "name": "Beller Schrotthandel",
-          "lat": 52.451921,
-          "lon": 13.460311
+          "id": "node/4885576861",
+          "lat": 52.510016,
+          "lon": 13.410905,
+          "street": "Annenstraße"
         },
         {
-          "id": "node/6771161922",
-          "name": "Recycling",
-          "lat": 52.457198,
-          "lon": 13.332509
+          "id": "node/10184481175",
+          "lat": 52.530968,
+          "lon": 13.409004,
+          "street": "Christinenstraße"
         },
         {
-          "id": "node/13874759166",
-          "name": "Kaya Entsorgungshelden",
-          "lat": 52.45952,
-          "lon": 13.326151
+          "id": "node/7736352539",
+          "lat": 52.520664,
+          "lon": 13.423613,
+          "street": "Berolinastraße"
         },
         {
-          "id": "node/11207575950",
-          "name": "Glascontainer",
-          "lat": 52.588357,
-          "lon": 13.340488,
-          "address": "Am Nordgraben"
+          "id": "node/7354781207",
+          "lat": 52.526954,
+          "lon": 13.419763,
+          "street": "Mendelssohnstraße"
         },
         {
-          "id": "way/442118216",
-          "name": "BTB-Recycling-Hof",
-          "lat": 52.546578,
-          "lon": 13.528457
+          "id": "node/6379608512",
+          "lat": 52.508181,
+          "lon": 13.405263,
+          "street": "Stallschreiberstraße"
         },
         {
-          "id": "node/11817009263",
-          "name": "Textil & Schuhe Sammelbox",
-          "lat": 52.454577,
-          "lon": 13.324315
+          "id": "node/972319896",
+          "lat": 52.509996,
+          "lon": 13.415831,
+          "street": "Heinrich-Heine-Straße"
         },
         {
-          "id": "node/11993495184",
-          "name": "Wurmkiste",
-          "lat": 52.603372,
-          "lon": 13.398796
+          "id": "node/697737311",
+          "lat": 52.53194,
+          "lon": 13.408066,
+          "street": "Templiner Straße"
         },
         {
-          "id": "node/2525335317",
-          "name": "Fritz Pennecke Söhne Abfallentsorgung u. Recycling GmbH & Co. KG",
-          "lat": 52.433732,
-          "lon": 13.371113,
-          "address": "Greinerstraße 27"
+          "id": "node/790509210",
+          "lat": 52.525824,
+          "lon": 13.42301,
+          "street": "Barnimstraße"
         },
         {
-          "id": "way/543319990",
-          "name": "Paletten König / Papier Fritze",
-          "lat": 52.509004,
-          "lon": 13.55038
+          "id": "node/12081159147",
+          "lat": 52.532541,
+          "lon": 13.405322,
+          "openingHours": "24/7",
+          "street": "Fehrbelliner Straße"
         },
         {
-          "id": "node/3309835874",
-          "name": "Wertstoff Ankauf Lankwitz",
-          "lat": 52.433193,
-          "lon": 13.364965,
-          "address": "Haynauer Straße 65"
+          "id": "node/10188922578",
+          "lat": 52.51603,
+          "lon": 13.425163,
+          "street": "Lichtenberger Straße"
         },
         {
-          "id": "way/385542019",
-          "name": "Marcus Knospe Wertstoffhandel",
-          "lat": 52.508668,
-          "lon": 13.553459,
-          "address": "Grabensprung 1",
-          "openingHours": "Mo-Sa 10:00-18:00"
+          "id": "node/10286920724",
+          "lat": 52.509497,
+          "lon": 13.392233,
+          "street": "Krausenstraße"
         },
         {
-          "id": "way/966672349",
-          "name": "Recyclinghof Ostpreußendamm",
-          "lat": 52.441511,
-          "lon": 13.327157,
-          "address": "Ostpreußendamm 1",
-          "openingHours": "Mo-We,Fr 07:00-17:00; Th 09:30-19:30; Sa 07:00-15:30"
+          "id": "node/2181178658",
+          "lat": 52.50721,
+          "lon": 13.398607,
+          "street": "Lindenstraße/Oranienstraße"
         },
         {
-          "id": "node/13020637760",
-          "name": "Anti-Kompost",
-          "lat": 52.427696,
-          "lon": 13.429438
+          "id": "node/7319276658",
+          "lat": 52.532467,
+          "lon": 13.413619,
+          "street": "Metzer Straße"
         },
         {
-          "id": "node/12528767054",
-          "name": "ruhender Anti-Kompost",
-          "lat": 52.427676,
-          "lon": 13.429557
+          "id": "node/7502699974",
+          "lat": 52.506613,
+          "lon": 13.400278,
+          "street": "Oranienstraße"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:40.395Z"
+      "updatedAt": "2026-09-03T16:53:20.463Z"
     },
     "luggage-storage": {
       "count": 23,
@@ -2662,10 +2787,10 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:40.961Z"
+      "updatedAt": "2026-09-03T16:53:21.243Z"
     },
     "libraries": {
-      "count": 224,
+      "count": 226,
       "pois": [
         {
           "id": "way/569067822",
@@ -2917,7 +3042,7 @@
           "lon": 13.376662
         }
       ],
-      "updatedAt": "2026-08-23T04:08:41.851Z"
+      "updatedAt": "2026-09-03T16:53:22.732Z"
     },
     "outdoor-gyms": {
       "count": 378,
@@ -3115,7 +3240,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:43.666Z"
+      "updatedAt": "2026-09-03T16:53:24.802Z"
     },
     "camp-sites": {
       "count": 3,
@@ -3145,11 +3270,23 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:44.379Z"
+      "updatedAt": "2026-09-03T16:53:25.601Z"
     },
     "shelters": {
       "count": 71,
       "pois": [
+        {
+          "id": "node/4726833643",
+          "lat": 52.548706,
+          "lon": 13.399985,
+          "street": "Schwedter Straße"
+        },
+        {
+          "id": "node/12874960392",
+          "lat": 52.525952,
+          "lon": 13.347494,
+          "street": "Turmstraße"
+        },
         {
           "id": "node/8071355380",
           "name": "Raucherbereich",
@@ -3169,16 +3306,40 @@
           "lon": 13.344993
         },
         {
+          "id": "node/582188083",
+          "lat": 52.497396,
+          "lon": 13.472735,
+          "street": "Flaschenkai"
+        },
+        {
+          "id": "node/12731427741",
+          "lat": 52.527366,
+          "lon": 13.482962,
+          "street": "Herzbergstraße"
+        },
+        {
           "id": "node/1759668812",
           "name": "Schrainer House",
           "lat": 52.518114,
           "lon": 13.515705
         },
         {
+          "id": "node/12866615376",
+          "lat": 52.463688,
+          "lon": 13.298201,
+          "street": "Podbielskiallee"
+        },
+        {
           "id": "way/1013340212",
           "name": "Linden-Pavillion",
           "lat": 52.46846,
           "lon": 13.52209
+        },
+        {
+          "id": "node/3488735211",
+          "lat": 52.452552,
+          "lon": 13.507111,
+          "street": "Breiter Weg"
         },
         {
           "id": "way/1353882794",
@@ -3194,7 +3355,7 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:46.402Z"
+      "updatedAt": "2026-09-03T16:53:28.766Z"
     },
     "rest-areas": {
       "count": 1,
@@ -3207,12 +3368,12 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:47.126Z"
+      "updatedAt": "2026-09-03T16:53:29.573Z"
     },
     "dump-stations": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-23T04:08:47.623Z"
+      "updatedAt": "2026-09-03T16:53:30.150Z"
     },
     "post-offices": {
       "count": 161,
@@ -3451,7 +3612,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:48.335Z"
+      "updatedAt": "2026-09-03T16:53:30.821Z"
     },
     "showers": {
       "count": 114,
@@ -3465,7 +3626,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:08:48.833Z"
+      "updatedAt": "2026-09-03T16:53:31.483Z"
     },
     "fireplaces": {
       "count": 36,
@@ -3489,7 +3650,7 @@
           "lon": 13.476851
         }
       ],
-      "updatedAt": "2026-08-23T04:08:49.887Z"
+      "updatedAt": "2026-09-03T16:53:32.824Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3497,7 +3658,7 @@
       "updatedAt": "2026-08-17T04:03:19.933Z"
     },
     "benches": {
-      "count": 26643,
+      "count": 26766,
       "pois": [
         {
           "id": "node/12914839800",
@@ -3603,12 +3764,238 @@
           "lon": 13.533424
         }
       ],
-      "updatedAt": "2026-08-23T04:08:52.357Z"
+      "updatedAt": "2026-09-03T16:53:44.821Z"
     },
     "compressed-air": {
       "count": 20,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:09.676Z"
+    },
+    "bicycle-repair": {
+      "count": 89,
+      "pois": [
+        {
+          "id": "node/12087960037",
+          "lat": 52.517336,
+          "lon": 13.399421,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Schloßplatz"
+        },
+        {
+          "id": "node/13946404728",
+          "lat": 52.516469,
+          "lon": 13.41081,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Jüdenstraße"
+        },
+        {
+          "id": "node/11876271404",
+          "lat": 52.52241,
+          "lon": 13.416264,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Alexanderstraße"
+        },
+        {
+          "id": "node/11914372397",
+          "lat": 52.512813,
+          "lon": 13.41178,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Wallstraße"
+        },
+        {
+          "id": "node/11963198530",
+          "lat": 52.528295,
+          "lon": 13.409347,
+          "openingHours": "24/7",
+          "wheelchair": "no",
+          "fee": "no",
+          "street": "Linienstraße"
+        },
+        {
+          "id": "node/12853718329",
+          "lat": 52.51247,
+          "lon": 13.383707,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Wilhelmstraße"
+        },
+        {
+          "id": "node/8868659383",
+          "lat": 52.512588,
+          "lon": 13.432574,
+          "street": "Lange Straße"
+        },
+        {
+          "id": "node/7417586266",
+          "lat": 52.529519,
+          "lon": 13.379032,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Invalidenstraße"
+        },
+        {
+          "id": "node/12205005928",
+          "lat": 52.540446,
+          "lon": 13.404604,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Schwedter Straße"
+        },
+        {
+          "id": "node/13833516013",
+          "lat": 52.527474,
+          "lon": 13.371751,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Am Hamburger Bahnhof"
+        },
+        {
+          "id": "node/11379901075",
+          "lat": 52.540837,
+          "lon": 13.422334,
+          "street": "Senefelderstraße"
+        },
+        {
+          "id": "node/12176752437",
+          "lat": 52.499143,
+          "lon": 13.42406,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Radbahn"
+        },
+        {
+          "id": "node/14059254395",
+          "lat": 52.52113,
+          "lon": 13.446573,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Richard-Sorge-Straße"
+        },
+        {
+          "id": "node/11329857359",
+          "lat": 52.498391,
+          "lon": 13.379359,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Historische Ladestraße"
+        },
+        {
+          "id": "node/12103901310",
+          "name": "Bike tools stand",
+          "lat": 52.527033,
+          "lon": 13.362455
+        },
+        {
+          "id": "node/1307139596",
+          "name": "Regenbogenfabrik Fahrrad-Selbsthilfe-Werkstatt",
+          "lat": 52.495977,
+          "lon": 13.426058,
+          "address": "Lausitzer Straße 21a",
+          "openingHours": "Tu-Fr 13:00-19:00; Sa 11:00-16:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/6793655352",
+          "lat": 52.504088,
+          "lon": 13.444076,
+          "fee": "no",
+          "street": "Tamara-Danz-Straße"
+        },
+        {
+          "id": "node/11055295735",
+          "lat": 52.493578,
+          "lon": 13.385779,
+          "street": "Yorckstraße"
+        },
+        {
+          "id": "node/13083916068",
+          "lat": 52.489504,
+          "lon": 13.391508,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Bergmannstraße"
+        },
+        {
+          "id": "node/9933174441",
+          "lat": 52.51472,
+          "lon": 13.457573,
+          "openingHours": "24/7",
+          "fee": "yes",
+          "street": "Frankfurter Allee"
+        },
+        {
+          "id": "node/11904862957",
+          "lat": 52.514295,
+          "lon": 13.351558,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Großer Stern"
+        },
+        {
+          "id": "node/8883436067",
+          "lat": 52.527136,
+          "lon": 13.351672,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Wilsnacker Straße"
+        },
+        {
+          "id": "node/4897592954",
+          "lat": 52.492864,
+          "lon": 13.371188,
+          "openingHours": "24/7",
+          "street": "Yorckbrücke 5"
+        },
+        {
+          "id": "node/13267357267",
+          "lat": 52.553973,
+          "lon": 13.392164,
+          "street": "Jülicher Straße"
+        },
+        {
+          "id": "node/13536879576",
+          "lat": 52.510764,
+          "lon": 13.462435,
+          "street": "Grünberger Straße"
+        },
+        {
+          "id": "node/12015524111",
+          "lat": 52.497052,
+          "lon": 13.455694,
+          "street": "Fanny-Zobel-Straße"
+        },
+        {
+          "id": "node/12156121101",
+          "lat": 52.488809,
+          "lon": 13.362644,
+          "street": "Crellestraße"
+        },
+        {
+          "id": "node/5696776138",
+          "lat": 52.50252,
+          "lon": 13.344313,
+          "fee": "no",
+          "street": "Bayreuther Straße"
+        },
+        {
+          "id": "node/11879404586",
+          "lat": 52.532693,
+          "lon": 13.339262,
+          "street": "Bremer Straße"
+        },
+        {
+          "id": "node/5793902273",
+          "lat": 52.496121,
+          "lon": 13.346488,
+          "street": "Martin-Luther-Straße"
+        }
+      ],
+      "updatedAt": "2026-09-03T16:53:36.994Z"
     }
   }
 }

@@ -1,9 +1,9 @@
 {
   "city": "krakow",
-  "generatedAt": "2026-08-23T04:05:01.620Z",
+  "generatedAt": "2026-09-03T16:49:09.867Z",
   "categories": {
     "toilets": {
-      "count": 223,
+      "count": 228,
       "pois": [
         {
           "id": "node/9905012419",
@@ -13,6 +13,83 @@
           "context": "Galeria Krakowska"
         },
         {
+          "id": "node/280316850",
+          "lat": 50.067822,
+          "lon": 19.941328,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Stary Kleparz"
+        },
+        {
+          "id": "node/2269400774",
+          "lat": 50.06753,
+          "lon": 19.949763,
+          "fee": "yes",
+          "context": "Małopolski Dworzec Autobusowy w Krakowie"
+        },
+        {
+          "id": "node/3533569749",
+          "lat": 50.062187,
+          "lon": 19.937518,
+          "openingHours": "08:00-24:00",
+          "wheelchair": "limited",
+          "fee": "yes",
+          "context": "Sukiennice"
+        },
+        {
+          "id": "node/274115139",
+          "lat": 50.059678,
+          "lon": 19.941798,
+          "openingHours": "Mo-Su 08:00-21:00",
+          "fee": "yes",
+          "context": "Trafika"
+        },
+        {
+          "id": "node/11736237669",
+          "lat": 50.068551,
+          "lon": 19.956819,
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "Pawilon F"
+        },
+        {
+          "id": "node/5076055934",
+          "lat": 50.05388,
+          "lon": 19.936074,
+          "fee": "included",
+          "context": "Zamek Królewski na Wawelu"
+        },
+        {
+          "id": "node/13046172254",
+          "lat": 50.053164,
+          "lon": 19.934695,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Centrum Wystawowo-Konferencyjne Zamku Królewskiego"
+        },
+        {
+          "id": "node/2307670514",
+          "lat": 50.071972,
+          "lon": 19.967954,
+          "context": "MDK Dom Harcerza"
+        },
+        {
+          "id": "node/6893061086",
+          "lat": 50.047997,
+          "lon": 19.931653,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Centrum Kongresowe ICE Kraków"
+        },
+        {
+          "id": "node/10784907765",
+          "lat": 50.045037,
+          "lon": 19.935569,
+          "wheelchair": "no",
+          "fee": "yes",
+          "context": "Hotel Forum"
+        },
+        {
           "id": "way/356619128",
           "name": "Orlen",
           "lat": 50.068974,
@@ -20,6 +97,23 @@
           "address": "Mogilska 122",
           "openingHours": "24/7",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/6008441588",
+          "lat": 50.042126,
+          "lon": 19.962732,
+          "openingHours": "06:00-22:00",
+          "fee": "yes",
+          "context": "Podgórze SKA"
+        },
+        {
+          "id": "node/5784299448",
+          "lat": 50.088632,
+          "lon": 19.931189,
+          "openingHours": "Mo-Su 06:00-22:00",
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Krowodrza Górka P+R"
         },
         {
           "id": "way/451608345",
@@ -38,6 +132,13 @@
           "address": "Józefa Mackiewicza 17"
         },
         {
+          "id": "node/11019857188",
+          "lat": 50.076406,
+          "lon": 19.992217,
+          "wheelchair": "designated",
+          "context": "Magazyn Historii, Metamuzem, Silnikownia"
+        },
+        {
           "id": "way/25486689",
           "name": "Centrum Handlowe Krokus",
           "lat": 50.087457,
@@ -47,12 +148,63 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/9262060287",
+          "lat": 50.048108,
+          "lon": 19.900652,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "ATUT"
+        },
+        {
+          "id": "node/11019864409",
+          "lat": 50.077165,
+          "lon": 19.992784,
+          "context": "Hangar Główny"
+        },
+        {
+          "id": "node/5160396333",
+          "lat": 50.033256,
+          "lon": 19.92495,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Pasaż Kapelanka"
+        },
+        {
+          "id": "node/3537839648",
+          "lat": 50.086959,
+          "lon": 19.985027,
+          "fee": "no",
+          "context": "Easy Auchan"
+        },
+        {
+          "id": "node/4442410063",
+          "lat": 50.054285,
+          "lon": 19.894226,
+          "fee": "yes",
+          "context": "Bastion V"
+        },
+        {
+          "id": "node/12249175539",
+          "lat": 50.054231,
+          "lon": 19.893514,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Kurtyna V-I"
+        },
+        {
           "id": "way/164250193",
           "name": "M1 Kraków",
           "lat": 50.063814,
           "lon": 19.999589,
           "address": "Aleja Pokoju 67",
           "openingHours": "Mo-Sa 09:00-21:00; Su 10:00-20:00"
+        },
+        {
+          "id": "node/12000614640",
+          "lat": 50.085251,
+          "lon": 19.990373,
+          "wheelchair": "yes",
+          "context": "Małopolskie Centrum Nauki Cogiteon"
         },
         {
           "id": "way/991931103",
@@ -89,87 +241,12 @@
           "address": "Zakopiańska 62",
           "openingHours": "Mo-Sa 09:00-21:00",
           "wheelchair": "yes"
-        },
-        {
-          "id": "way/128241895",
-          "name": "Solvay Park",
-          "lat": 50.014176,
-          "lon": 19.92753,
-          "address": "Zakopiańska 105",
-          "openingHours": "Mo-Sa 08:00-23:00; Su 09:00-22:00"
-        },
-        {
-          "id": "way/717466666",
-          "name": "Dzielnicowe Centrum Sportu i Rekreacji Na Kozłówce",
-          "lat": 50.015958,
-          "lon": 19.979707,
-          "address": "Facimiech 32",
-          "openingHours": "Mo-Fr 06:30-22:30; Sa-Su 07:00-22:30"
-        },
-        {
-          "id": "way/106742915",
-          "name": "Europejskie Centrum Handlowe",
-          "lat": 50.017569,
-          "lon": 19.893232,
-          "address": "Profesora Michała Bobrzyńskiego 37",
-          "openingHours": "Mo-Sa 07:30-21:30; Su 10:00-19:00"
-        },
-        {
-          "id": "node/1755563315",
-          "name": "Toaleta damska",
-          "lat": 50.074488,
-          "lon": 20.037683,
-          "openingHours": "Mo-Fr 09:00-17:00",
-          "wheelchair": "no",
-          "fee": "yes"
-        },
-        {
-          "id": "node/1755563316",
-          "name": "Toaleta męska",
-          "lat": 50.074379,
-          "lon": 20.038504,
-          "openingHours": "Mo-Fr 08:00-16:00",
-          "wheelchair": "no",
-          "fee": "yes"
-        },
-        {
-          "id": "way/1367181510",
-          "name": "Kebab King Bar",
-          "lat": 50.010742,
-          "lon": 20.008719,
-          "address": "Erazma Jerzmanowskiego 44D"
-        },
-        {
-          "id": "way/161678894",
-          "name": "Muzeum i Centrum Ruchu Harcerskiego",
-          "lat": 49.997906,
-          "lon": 19.916924,
-          "address": "Forteczna 28",
-          "openingHours": "We-Su 10:00-18:00",
-          "fee": "no"
-        },
-        {
-          "id": "way/323543628",
-          "name": "BP Bibice",
-          "lat": 50.133462,
-          "lon": 19.966675,
-          "address": "Na Czekaj 13",
-          "openingHours": "24/7",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/494342713",
-          "name": "Swoszowice Centrum",
-          "lat": 49.993969,
-          "lon": 19.945172,
-          "address": "Myślenicka 133",
-          "openingHours": "Mo-Fr 09:00-19:00; Sa 09:00-16:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:39.709Z"
+      "updatedAt": "2026-09-03T16:48:38.980Z"
     },
     "drinking-water": {
-      "count": 89,
+      "count": 93,
       "pois": [
         {
           "id": "node/3024383567",
@@ -211,10 +288,10 @@
           "address": "Źródlana"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:41.593Z"
+      "updatedAt": "2026-09-03T16:48:42.620Z"
     },
     "playgrounds": {
-      "count": 893,
+      "count": 897,
       "pois": [
         {
           "id": "way/591823696",
@@ -399,10 +476,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:42.543Z"
+      "updatedAt": "2026-09-03T16:48:43.771Z"
     },
     "parking": {
-      "count": 8211,
+      "count": 8110,
       "pois": [
         {
           "id": "way/303843180",
@@ -421,8 +498,8 @@
         {
           "id": "way/1134984020",
           "name": "Kiss & Ride",
-          "lat": 50.066906,
-          "lon": 19.945144,
+          "lat": 50.06695,
+          "lon": 19.945147,
           "fee": "no"
         },
         {
@@ -474,7 +551,6 @@
           "name": "Parking Wesoła",
           "lat": 50.059746,
           "lon": 19.953217,
-          "openingHours": "codziennie w godzinach 7:30-19:30",
           "fee": "yes"
         },
         {
@@ -552,13 +628,6 @@
           "fee": "no"
         },
         {
-          "id": "way/425168537",
-          "name": "Lux Aparthotel",
-          "lat": 50.07007,
-          "lon": 19.919479,
-          "fee": "no"
-        },
-        {
           "id": "node/3177728039",
           "name": "ICE Kraków",
           "lat": 50.047859,
@@ -620,12 +689,19 @@
           "lat": 50.089085,
           "lon": 19.933199,
           "fee": "yes"
+        },
+        {
+          "id": "way/234783990",
+          "name": "Parking szpitalny",
+          "lat": 50.09079,
+          "lon": 19.93856,
+          "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:44.030Z"
+      "updatedAt": "2026-09-03T16:48:45.789Z"
     },
     "charging-stations": {
-      "count": 144,
+      "count": 155,
       "pois": [
         {
           "id": "way/1451075369",
@@ -703,7 +779,7 @@
           "lon": 20.010057
         }
       ],
-      "updatedAt": "2026-08-23T04:04:44.592Z"
+      "updatedAt": "2026-09-03T16:48:46.386Z"
     },
     "gas-stations": {
       "count": 100,
@@ -929,10 +1005,10 @@
           "lon": 19.964981
         }
       ],
-      "updatedAt": "2026-08-23T04:04:45.166Z"
+      "updatedAt": "2026-09-03T16:48:46.970Z"
     },
     "ice-cream": {
-      "count": 125,
+      "count": 124,
       "pois": [
         {
           "id": "way/766326197",
@@ -1139,7 +1215,7 @@
           "openingHours": "closed"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:45.755Z"
+      "updatedAt": "2026-09-03T16:48:47.789Z"
     },
     "dog-parks": {
       "count": 39,
@@ -1166,10 +1242,10 @@
           "address": "Balicka 102"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:46.285Z"
+      "updatedAt": "2026-09-03T16:48:48.248Z"
     },
     "picnic-spots": {
-      "count": 290,
+      "count": 299,
       "pois": [
         {
           "id": "node/8866898212",
@@ -1191,7 +1267,7 @@
           "address": "Zygmunta Starego"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:47.696Z"
+      "updatedAt": "2026-09-03T16:48:49.848Z"
     },
     "viewpoints": {
       "count": 55,
@@ -1237,11 +1313,18 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:48.347Z"
+      "updatedAt": "2026-09-03T16:48:50.662Z"
     },
     "beaches": {
-      "count": 11,
+      "count": 12,
       "pois": [
+        {
+          "id": "way/1552450577",
+          "name": "Plaża Zwierzyniecka",
+          "lat": 50.046206,
+          "lon": 19.903823,
+          "openingHours": "Mo-Su 10:00-20:00"
+        },
         {
           "id": "way/426435314",
           "name": "Plaża Bagry",
@@ -1256,7 +1339,7 @@
           "lon": 19.998361
         }
       ],
-      "updatedAt": "2026-08-23T04:04:48.923Z"
+      "updatedAt": "2026-09-03T16:48:51.162Z"
     },
     "atms": {
       "count": 571,
@@ -1469,23 +1552,199 @@
           "address": "Krowoderskich Zuchów 12"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:49.643Z"
+      "updatedAt": "2026-09-03T16:48:51.933Z"
     },
     "post-boxes": {
       "count": 102,
       "pois": [
         {
-          "id": "node/13703257901",
-          "name": "Poczta Polska",
-          "lat": 50.117439,
-          "lon": 19.921414,
-          "address": "Krakowskie Przedmieście 79"
+          "id": "node/10046050079",
+          "lat": 50.064987,
+          "lon": 19.939252,
+          "wheelchair": "yes",
+          "street": "Pijarska"
+        },
+        {
+          "id": "node/11160519867",
+          "lat": 50.064937,
+          "lon": 19.95133,
+          "wheelchair": "limited",
+          "street": "Lubicz 02"
+        },
+        {
+          "id": "node/6507081090",
+          "lat": 50.060626,
+          "lon": 19.944375,
+          "street": "Mikołaja Zyblikiewicza"
+        },
+        {
+          "id": "node/2987507276",
+          "lat": 50.062176,
+          "lon": 19.950108,
+          "street": "Mikołaja Kopernika"
+        },
+        {
+          "id": "node/1963377120",
+          "lat": 50.067698,
+          "lon": 19.949818,
+          "wheelchair": "yes",
+          "street": "Bosacka"
+        },
+        {
+          "id": "node/4982713476",
+          "lat": 50.061338,
+          "lon": 19.940085,
+          "street": "Mały Rynek"
+        },
+        {
+          "id": "node/12596610127",
+          "lat": 50.062066,
+          "lon": 19.938662,
+          "street": "Rynek Główny"
+        },
+        {
+          "id": "node/2098694983",
+          "lat": 50.05937,
+          "lon": 19.942805,
+          "street": "Wielopole"
+        },
+        {
+          "id": "node/2346193356",
+          "lat": 50.06426,
+          "lon": 19.935448,
+          "street": "Plac Szczepański"
+        },
+        {
+          "id": "node/5111372139",
+          "lat": 50.062194,
+          "lon": 19.936184,
+          "street": "Szewska"
+        },
+        {
+          "id": "node/6006060895",
+          "lat": 50.068626,
+          "lon": 19.952785,
+          "street": "Rakowicka"
+        },
+        {
+          "id": "node/5059128005",
+          "lat": 50.071405,
+          "lon": 19.943999,
+          "street": "Warszawska"
+        },
+        {
+          "id": "node/4982713472",
+          "lat": 50.065403,
+          "lon": 19.933463,
+          "street": "Garbarska"
+        },
+        {
+          "id": "node/4983032334",
+          "lat": 50.059282,
+          "lon": 19.937038,
+          "street": "Plac Wszystkich Świętych"
+        },
+        {
+          "id": "node/6328406834",
+          "lat": 50.066324,
+          "lon": 19.956627,
+          "street": "Topolowa"
+        },
+        {
+          "id": "node/1932782649",
+          "lat": 50.062557,
+          "lon": 19.931879,
+          "street": "Studencka"
+        },
+        {
+          "id": "node/12847716276",
+          "lat": 50.072397,
+          "lon": 19.937607,
+          "street": "Helclów"
+        },
+        {
+          "id": "node/2278214316",
+          "lat": 50.066667,
+          "lon": 19.929151,
+          "street": "Karmelicka"
+        },
+        {
+          "id": "node/11291161855",
+          "lat": 50.0639,
+          "lon": 19.961792,
+          "street": "Przy Rondzie"
+        },
+        {
+          "id": "node/1937276231",
+          "lat": 50.061162,
+          "lon": 19.927428,
+          "street": "Garncarska"
+        },
+        {
+          "id": "node/13334491331",
+          "lat": 50.060351,
+          "lon": 19.962332,
+          "street": "Kazimierza Kordylewskiego"
+        },
+        {
+          "id": "node/2854509967",
+          "lat": 50.070537,
+          "lon": 19.962951,
+          "street": "Józefa Brodowicza"
+        },
+        {
+          "id": "node/2121835370",
+          "lat": 50.049233,
+          "lon": 19.944162,
+          "street": "Plac Wolnica"
+        },
+        {
+          "id": "node/7636939506",
+          "lat": 50.062222,
+          "lon": 19.920231,
+          "street": "Romana Ingardena"
+        },
+        {
+          "id": "node/11638722528",
+          "lat": 50.047531,
+          "lon": 19.9451,
+          "street": "Trynitarska"
+        },
+        {
+          "id": "node/5111372142",
+          "lat": 50.072153,
+          "lon": 19.919156,
+          "street": "Królewska"
+        },
+        {
+          "id": "node/7550269258",
+          "lat": 50.080928,
+          "lon": 19.962339,
+          "street": "Brogi"
+        },
+        {
+          "id": "node/1480528125",
+          "lat": 50.044602,
+          "lon": 19.950872,
+          "street": "Węgierska"
+        },
+        {
+          "id": "node/1914358936",
+          "lat": 50.07173,
+          "lon": 19.913364,
+          "street": "Kronikarza Galla"
+        },
+        {
+          "id": "node/5752259866",
+          "lat": 50.074481,
+          "lon": 19.914692,
+          "street": "Kazimierza Wielkiego"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:50.127Z"
+      "updatedAt": "2026-09-03T16:48:53.810Z"
     },
     "recycling": {
-      "count": 926,
+      "count": 937,
       "pois": [
         {
           "id": "node/10122759367",
@@ -1494,168 +1753,181 @@
           "context": "Galeria Krakowska"
         },
         {
+          "id": "node/12389095448",
+          "lat": 50.067393,
+          "lon": 19.951175,
+          "street": "Topolowa"
+        },
+        {
+          "id": "node/1937276266",
+          "lat": 50.071021,
+          "lon": 19.941399,
+          "street": "Szlak"
+        },
+        {
+          "id": "node/1937276274",
+          "lat": 50.07282,
+          "lon": 19.942537,
+          "street": "Warszawska"
+        },
+        {
+          "id": "node/1937276197",
+          "lat": 50.05577,
+          "lon": 19.950894,
+          "street": "Księdza Franciszka Blachnickiego"
+        },
+        {
+          "id": "node/1937276260",
+          "lat": 50.070257,
+          "lon": 19.932118,
+          "street": "Łobzowska"
+        },
+        {
+          "id": "node/1937276222",
+          "lat": 50.06044,
+          "lon": 19.959259,
+          "street": "Hetmana Stanisława Żółkiewskiego"
+        },
+        {
+          "id": "node/6905587097",
+          "lat": 50.067989,
+          "lon": 19.930043,
+          "street": "Kremerowska"
+        },
+        {
+          "id": "node/13671808201",
+          "lat": 50.074162,
+          "lon": 19.936436,
+          "street": "Prądnicka"
+        },
+        {
+          "id": "node/8198722934",
+          "lat": 50.055169,
+          "lon": 19.953676,
+          "street": "Aleja Ignacego Daszyńskiego"
+        },
+        {
+          "id": "node/12375853239",
+          "lat": 50.054769,
+          "lon": 19.936687,
+          "context": "Zamek Królewski na Wawelu"
+        },
+        {
+          "id": "node/5269502073",
+          "lat": 50.055091,
+          "lon": 19.95498,
+          "street": "Masarska"
+        },
+        {
+          "id": "node/1937276245",
+          "lat": 50.065573,
+          "lon": 19.963066,
+          "street": "Mosiężnicza"
+        },
+        {
+          "id": "node/12375856619",
+          "lat": 50.053978,
+          "lon": 19.936921,
+          "street": "Dziedziniec Arkadowy"
+        },
+        {
+          "id": "node/13046163118",
+          "lat": 50.054222,
+          "lon": 19.935008,
+          "street": "Zamek Wawel"
+        },
+        {
           "id": "node/11205796614",
           "name": "Eko-Pudełko",
           "lat": 50.063945,
           "lon": 19.925027
         },
         {
-          "id": "node/2913925630",
-          "name": "Eco-punkt",
-          "lat": 50.033186,
-          "lon": 19.923203
+          "id": "node/1937276221",
+          "lat": 50.060418,
+          "lon": 19.964601,
+          "street": "Profesora Władysława Szafera"
         },
         {
-          "id": "node/13957955571",
-          "name": "Odpady niebezpieczne",
-          "lat": 50.071551,
-          "lon": 20.00553
+          "id": "node/1918319408",
+          "lat": 50.063789,
+          "lon": 19.924247,
+          "street": "Czysta"
         },
         {
-          "id": "way/1531387071",
-          "name": "Szkło okienne",
-          "lat": 50.071513,
-          "lon": 20.005817
+          "id": "node/3870442541",
+          "lat": 50.056557,
+          "lon": 19.928499,
+          "street": "Kazimierza Morawskiego"
         },
         {
-          "id": "way/1531387072",
-          "name": "Folia",
-          "lat": 50.071513,
-          "lon": 20.006055
+          "id": "node/11932373707",
+          "lat": 50.076744,
+          "lon": 19.930793,
+          "street": "Władysława Łokietka"
         },
         {
-          "id": "way/1531387074",
-          "name": "Papier",
-          "lat": 50.071242,
-          "lon": 20.006168
+          "id": "node/1241666890",
+          "lat": 50.050607,
+          "lon": 19.953519,
+          "street": "Podgórska"
         },
         {
-          "id": "way/1531387073",
-          "name": "Karton",
-          "lat": 50.071509,
-          "lon": 20.00612
+          "id": "node/6558472755",
+          "lat": 50.063255,
+          "lon": 19.921252,
+          "street": "Oleandry"
         },
         {
-          "id": "way/1531387075",
-          "name": "Styropian",
-          "lat": 50.071509,
-          "lon": 20.006234
+          "id": "node/6358955366",
+          "lat": 50.072179,
+          "lon": 19.923997,
+          "street": "Edmunda Biernackiego"
         },
         {
-          "id": "relation/2125866",
-          "name": "Punkt Selektywnej Zbiórki Odpadów \"Lamusownia\"",
-          "lat": 50.071388,
-          "lon": 20.006276,
-          "address": "Nowohucka",
-          "openingHours": "Mo-Fr 10:00-18:00; Sa 07:30-15:30,16:00-18:00"
+          "id": "node/1937276255",
+          "lat": 50.069569,
+          "lon": 19.967951,
+          "street": "Filipa Eisenberga"
         },
         {
-          "id": "way/1531387076",
-          "name": "Meble",
-          "lat": 50.071506,
-          "lon": 20.006291
+          "id": "node/5644429421",
+          "lat": 50.076039,
+          "lon": 19.92831,
+          "street": "Wrocławska"
         },
         {
-          "id": "way/1531387078",
-          "name": "Plastik",
-          "lat": 50.071503,
-          "lon": 20.006391
+          "id": "node/6429057335",
+          "lat": 50.072193,
+          "lon": 19.92276,
+          "street": "Kazimierza Wielkiego"
         },
         {
-          "id": "way/1531387080",
-          "name": "Drewno",
-          "lat": 50.071498,
-          "lon": 20.006481
+          "id": "node/4823543880",
+          "lat": 50.070646,
+          "lon": 19.968415,
+          "street": "Farmaceutów"
         },
         {
-          "id": "way/1531387081",
-          "name": "Odpady samochodowe",
-          "lat": 50.071495,
-          "lon": 20.006525
+          "id": "node/1937276235",
+          "lat": 50.061903,
+          "lon": 19.920148,
+          "street": "Romana Ingardena"
         },
         {
-          "id": "way/1531387082",
-          "name": "Metale",
-          "lat": 50.071494,
-          "lon": 20.00657
+          "id": "node/5794173369",
+          "lat": 50.055141,
+          "lon": 19.9654,
+          "street": "Profesora Marka Stachowskiego"
         },
         {
-          "id": "way/1391339938",
-          "name": "Lodówki",
-          "lat": 50.071206,
-          "lon": 20.006772
-        },
-        {
-          "id": "way/1391339939",
-          "name": "Telewizory i monitory",
-          "lat": 50.071202,
-          "lon": 20.006813
-        },
-        {
-          "id": "way/1531387083",
-          "name": "Tekstylia",
-          "lat": 50.071488,
-          "lon": 20.006769
-        },
-        {
-          "id": "way/1391339942",
-          "name": "Pralki zmywarki bojlery",
-          "lat": 50.071201,
-          "lon": 20.006855
-        },
-        {
-          "id": "way/1391339941",
-          "name": "Elektroodpady",
-          "lat": 50.071197,
-          "lon": 20.006895
-        },
-        {
-          "id": "way/1531387084",
-          "name": "Gruz",
-          "lat": 50.071484,
-          "lon": 20.006831
-        },
-        {
-          "id": "way/1391339940",
-          "name": "Komputery, odkurzacze, małe RTV, małe AGD",
-          "lat": 50.071195,
-          "lon": 20.006934
-        },
-        {
-          "id": "way/1531387086",
-          "name": "Drewno impregnowane",
-          "lat": 50.071477,
-          "lon": 20.006948
-        },
-        {
-          "id": "way/1391339953",
-          "name": "Krakowska Meblarnia",
-          "lat": 50.071398,
-          "lon": 20.007015
-        },
-        {
-          "id": "node/12846833456",
-          "name": "Ubrania",
-          "lat": 50.016365,
-          "lon": 19.950758
-        },
-        {
-          "id": "way/294805882",
-          "name": "Punkt Selektywnego Zbierania Odpadów Komunalnych (PSZOK)",
-          "lat": 50.11335,
-          "lon": 19.985318,
-          "openingHours": "Sa 10:00-18:00"
-        },
-        {
-          "id": "node/2219307202",
-          "name": "Pakbud",
-          "lat": 50.021301,
-          "lon": 20.00784,
-          "address": "Bieżanowska 126b",
-          "openingHours": "Mo-Fr 08:00-13:00,13:30-17:00; Sa 08:00-13:00,13:30-14:00"
+          "id": "node/10202112999",
+          "lat": 50.075875,
+          "lon": 19.926568,
+          "street": "Wójtowska"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:52.581Z"
+      "updatedAt": "2026-09-03T16:48:56.574Z"
     },
     "luggage-storage": {
       "count": 8,
@@ -1669,10 +1941,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:53.046Z"
+      "updatedAt": "2026-09-03T16:48:57.008Z"
     },
     "libraries": {
-      "count": 112,
+      "count": 115,
       "pois": [
         {
           "id": "node/3752616225",
@@ -1907,10 +2179,10 @@
           "openingHours": "Mo 12:00-19:00; Tu 09:00-15:30; We 12:00-19:00; Th 11:00-15:30; Fr 12:00-19:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:53.659Z"
+      "updatedAt": "2026-09-03T16:48:57.681Z"
     },
     "outdoor-gyms": {
-      "count": 244,
+      "count": 246,
       "pois": [
         {
           "id": "way/1231130029",
@@ -1949,7 +2221,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:54.929Z"
+      "updatedAt": "2026-09-03T16:48:59.203Z"
     },
     "camp-sites": {
       "count": 5,
@@ -1963,9 +2235,10 @@
         {
           "id": "node/4311556893",
           "name": "Adam",
-          "lat": 50.046686,
-          "lon": 19.903025,
-          "address": "Księcia Józefa 24"
+          "lat": 50.046654,
+          "lon": 19.902886,
+          "address": "Księcia Józefa 24",
+          "fee": "yes"
         },
         {
           "id": "way/383344488",
@@ -1989,12 +2262,151 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:55.447Z"
+      "updatedAt": "2026-09-03T16:48:59.764Z"
     },
     "shelters": {
       "count": 140,
-      "pois": [],
-      "updatedAt": "2026-08-23T04:04:57.069Z"
+      "pois": [
+        {
+          "id": "node/11666197634",
+          "lat": 50.046102,
+          "lon": 19.94386,
+          "street": "Rybaki"
+        },
+        {
+          "id": "node/12268920372",
+          "lat": 50.055038,
+          "lon": 19.890555,
+          "street": "Aleja Jerzego Waszyngtona"
+        },
+        {
+          "id": "node/11211872047",
+          "lat": 50.012792,
+          "lon": 19.964591,
+          "street": "Kordiana"
+        },
+        {
+          "id": "node/11133749856",
+          "lat": 50.012897,
+          "lon": 19.968583,
+          "street": "Łużycka"
+        },
+        {
+          "id": "node/11182967379",
+          "lat": 50.01132,
+          "lon": 19.967025,
+          "street": "Tuchowska"
+        },
+        {
+          "id": "node/11099803165",
+          "lat": 50.013315,
+          "lon": 19.97965,
+          "street": "Sporna"
+        },
+        {
+          "id": "node/11098895621",
+          "lat": 50.013434,
+          "lon": 19.980324,
+          "street": "Zacisze Drwinki"
+        },
+        {
+          "id": "node/11178401358",
+          "lat": 50.010024,
+          "lon": 19.96958,
+          "street": "Zimna"
+        },
+        {
+          "id": "node/11180570522",
+          "lat": 50.009489,
+          "lon": 19.967377,
+          "street": "Kanarkowa"
+        },
+        {
+          "id": "node/11104158136",
+          "lat": 50.012279,
+          "lon": 19.980985,
+          "street": "Sadka"
+        },
+        {
+          "id": "node/11091002012",
+          "lat": 50.013274,
+          "lon": 19.986033,
+          "street": "Ciasna"
+        },
+        {
+          "id": "node/11178299159",
+          "lat": 50.009177,
+          "lon": 19.970833,
+          "street": "Kijanki"
+        },
+        {
+          "id": "node/11105085918",
+          "lat": 50.010635,
+          "lon": 19.979417,
+          "street": "Podedworze"
+        },
+        {
+          "id": "node/11177357909",
+          "lat": 50.008361,
+          "lon": 19.969274,
+          "street": "Ukośna"
+        },
+        {
+          "id": "node/11179540753",
+          "lat": 50.008127,
+          "lon": 19.968492,
+          "street": "Gwarna"
+        },
+        {
+          "id": "node/11176244050",
+          "lat": 50.008387,
+          "lon": 19.971335,
+          "street": "Urwana"
+        },
+        {
+          "id": "node/11061436022",
+          "lat": 50.009774,
+          "lon": 19.982988,
+          "street": "Kalinowa"
+        },
+        {
+          "id": "node/11024870411",
+          "lat": 50.01091,
+          "lon": 19.988982,
+          "street": "Jana Leopolda Tyranowskiego"
+        },
+        {
+          "id": "node/11271418527",
+          "lat": 50.003507,
+          "lon": 19.95689,
+          "street": "Cechowa"
+        },
+        {
+          "id": "node/2600515385",
+          "lat": 50.054862,
+          "lon": 19.849931,
+          "street": "Aleja Wędrowników"
+        },
+        {
+          "id": "node/11029775523",
+          "lat": 50.008673,
+          "lon": 19.987048,
+          "street": "Czajna"
+        },
+        {
+          "id": "node/11237792565",
+          "lat": 50.002941,
+          "lon": 19.958249,
+          "street": "Wyżynna"
+        },
+        {
+          "id": "node/1771983063",
+          "lat": 50.050542,
+          "lon": 19.848773,
+          "street": "Aleja Żubrowa"
+        }
+      ],
+      "updatedAt": "2026-09-03T16:49:02.089Z"
     },
     "rest-areas": {
       "count": 5,
@@ -2006,12 +2418,12 @@
           "lon": 19.931777
         }
       ],
-      "updatedAt": "2026-08-23T04:04:57.647Z"
+      "updatedAt": "2026-09-03T16:49:02.654Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:04:58.076Z"
+      "updatedAt": "2026-09-03T16:49:03.048Z"
     },
     "post-offices": {
       "count": 122,
@@ -2257,12 +2669,12 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:58.680Z"
+      "updatedAt": "2026-09-03T16:49:03.709Z"
     },
     "showers": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:04:59.116Z"
+      "updatedAt": "2026-09-03T16:49:04.105Z"
     },
     "fireplaces": {
       "count": 19,
@@ -2274,7 +2686,7 @@
           "lon": 19.973767
         }
       ],
-      "updatedAt": "2026-08-23T04:05:00.130Z"
+      "updatedAt": "2026-09-03T16:49:05.448Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2282,7 +2694,7 @@
       "updatedAt": "2026-08-17T04:02:57.371Z"
     },
     "benches": {
-      "count": 12183,
+      "count": 12338,
       "pois": [
         {
           "id": "node/3086420215",
@@ -2297,12 +2709,212 @@
           "lon": 19.933108
         }
       ],
-      "updatedAt": "2026-08-23T04:05:01.515Z"
+      "updatedAt": "2026-09-03T16:49:09.757Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:06.386Z"
+    },
+    "bicycle-repair": {
+      "count": 174,
+      "pois": [
+        {
+          "id": "node/13087044178",
+          "lat": 50.061232,
+          "lon": 19.947647,
+          "fee": "no",
+          "street": "Mikołaja Kopernika"
+        },
+        {
+          "id": "node/3495849888",
+          "lat": 50.068764,
+          "lon": 19.949984,
+          "street": "Wita Stwosza"
+        },
+        {
+          "id": "node/5711669095",
+          "lat": 50.069926,
+          "lon": 19.946422,
+          "street": "Świętego Rafała Kalinowskiego"
+        },
+        {
+          "id": "node/11997725615",
+          "lat": 50.066305,
+          "lon": 19.96139,
+          "street": "Mogilska"
+        },
+        {
+          "id": "node/6773083694",
+          "lat": 50.069437,
+          "lon": 19.925762,
+          "street": "Plac Inwalidów"
+        },
+        {
+          "id": "node/6773083693",
+          "lat": 50.05918,
+          "lon": 19.923753,
+          "street": "Aleja Marszałka Ferdinanda Focha"
+        },
+        {
+          "id": "node/6773083692",
+          "lat": 50.053217,
+          "lon": 19.928771,
+          "street": "Marii Konopnickiej"
+        },
+        {
+          "id": "node/6773083691",
+          "lat": 50.048712,
+          "lon": 19.931103,
+          "street": "Rondo Grunwaldzkie 01"
+        },
+        {
+          "id": "node/8808902038",
+          "lat": 50.050154,
+          "lon": 19.963548,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "street": "Gustawa Herlinga-Grudzińskiego"
+        },
+        {
+          "id": "node/12856163117",
+          "lat": 50.045885,
+          "lon": 19.94798,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Bulwar Podolski"
+        },
+        {
+          "id": "node/3211358466",
+          "lat": 50.04683,
+          "lon": 19.955224,
+          "openingHours": "24/7",
+          "street": "Na Zjeździe"
+        },
+        {
+          "id": "node/6773083689",
+          "lat": 50.048816,
+          "lon": 19.925989,
+          "street": "Michała Bałuckiego"
+        },
+        {
+          "id": "node/9679701695",
+          "lat": 50.068179,
+          "lon": 19.913438,
+          "street": "Nawojki"
+        },
+        {
+          "id": "node/9887528052",
+          "lat": 50.07974,
+          "lon": 19.921133,
+          "street": "Racławicka"
+        },
+        {
+          "id": "node/10864616580",
+          "lat": 50.046953,
+          "lon": 19.924945,
+          "street": "Dębowa"
+        },
+        {
+          "id": "node/12068705116",
+          "lat": 50.083142,
+          "lon": 19.963881,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Brogi"
+        },
+        {
+          "id": "node/6773083690",
+          "lat": 50.046766,
+          "lon": 19.924769,
+          "street": "Monte Cassino"
+        },
+        {
+          "id": "node/6773083688",
+          "lat": 50.043562,
+          "lon": 19.934649,
+          "street": "Barska"
+        },
+        {
+          "id": "node/12374728211",
+          "name": "Razem w ruchu",
+          "lat": 50.071411,
+          "lon": 19.912097,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/13820471893",
+          "lat": 50.054721,
+          "lon": 19.976187,
+          "openingHours": "24/7",
+          "street": "Ofiar Dąbia"
+        },
+        {
+          "id": "node/12068694143",
+          "lat": 50.082734,
+          "lon": 19.967586,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Stanisława ze Skalbmierza"
+        },
+        {
+          "id": "node/9570332086",
+          "lat": 50.067882,
+          "lon": 19.907188,
+          "street": "Witolda Budryka"
+        },
+        {
+          "id": "node/4527765166",
+          "lat": 50.089184,
+          "lon": 19.946733,
+          "street": "Imbramowska"
+        },
+        {
+          "id": "node/5603191863",
+          "lat": 50.075149,
+          "lon": 19.910334,
+          "street": "Młynówka Królewska"
+        },
+        {
+          "id": "node/6124740751",
+          "lat": 50.089353,
+          "lon": 19.949028,
+          "fee": "no",
+          "street": "Grażyny"
+        },
+        {
+          "id": "node/6778247042",
+          "lat": 50.041983,
+          "lon": 19.961854,
+          "openingHours": "Mo-Fr 10:00-18:00; Sa 10:00-14:00",
+          "street": "Powstańców Wielkopolskich"
+        },
+        {
+          "id": "node/6773083687",
+          "lat": 50.043992,
+          "lon": 19.92266,
+          "street": "Kapelanka"
+        },
+        {
+          "id": "node/6773083695",
+          "lat": 50.081686,
+          "lon": 19.915989,
+          "street": "Wrocławska"
+        },
+        {
+          "id": "node/12604028554",
+          "lat": 50.088659,
+          "lon": 19.932163,
+          "street": "Dominika Ździebły-Danowskiego"
+        },
+        {
+          "id": "node/6773083697",
+          "lat": 50.090131,
+          "lon": 19.94387,
+          "street": "Józefa Mackiewicza"
+        }
+      ],
+      "updatedAt": "2026-09-03T16:49:08.033Z"
     }
   }
 }

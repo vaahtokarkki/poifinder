@@ -1,10 +1,24 @@
 {
   "city": "santiago",
-  "generatedAt": "2026-08-23T04:39:12.558Z",
+  "generatedAt": "2026-09-03T17:49:34.075Z",
   "categories": {
     "toilets": {
       "count": 185,
       "pois": [
+        {
+          "id": "node/10822930632",
+          "lat": -33.454955,
+          "lon": -70.679772,
+          "wheelchair": "limited",
+          "context": "Terminal San Borja"
+        },
+        {
+          "id": "node/4195426702",
+          "lat": -33.455713,
+          "lon": -70.652656,
+          "openingHours": "Mo-Su 08:00-23:55",
+          "context": "CESFAM Nº1 Ramón Corbalán Melgarejo"
+        },
         {
           "id": "node/1278650840",
           "name": "Baños",
@@ -12,10 +26,39 @@
           "lon": -70.653943
         },
         {
+          "id": "node/7267299373",
+          "lat": -33.453972,
+          "lon": -70.687665,
+          "fee": "yes",
+          "context": "Terminal Sur de Buses Santiago"
+        },
+        {
           "id": "way/1155948348",
           "name": "Camarines",
           "lat": -33.449509,
           "lon": -70.690247
+        },
+        {
+          "id": "node/13076391302",
+          "lat": -33.440049,
+          "lon": -70.641515,
+          "address": "Avenida Libertador Bernardo O'Higgins 333",
+          "openingHours": "Mo-Su 10:00-20:00",
+          "context": "Boulevard Alameda 333"
+        },
+        {
+          "id": "node/12790500283",
+          "lat": -33.441012,
+          "lon": -70.64059,
+          "fee": "no",
+          "context": "Casa Central Universidad Católica"
+        },
+        {
+          "id": "node/2141228342",
+          "lat": -33.439113,
+          "lon": -70.639799,
+          "wheelchair": "yes",
+          "context": "Centro Cultural Gabriela Mistral GAM"
         },
         {
           "id": "node/1773385107",
@@ -26,11 +69,30 @@
           "fee": "400"
         },
         {
+          "id": "node/13358176314",
+          "lat": -33.45003,
+          "lon": -70.630835,
+          "context": "Pronto"
+        },
+        {
+          "id": "node/5357381974",
+          "lat": -33.430527,
+          "lon": -70.634363,
+          "wheelchair": "yes",
+          "context": "Estación Zoológico"
+        },
+        {
           "id": "way/1498379323",
           "name": "Baños Zoo",
           "lat": -33.430397,
           "lon": -70.633662,
           "wheelchair": "designated"
+        },
+        {
+          "id": "node/13722450546",
+          "lat": -33.426918,
+          "lon": -70.630986,
+          "context": "Estación Chile Nativo"
         },
         {
           "id": "node/942754820",
@@ -50,6 +112,50 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/13722450645",
+          "lat": -33.422556,
+          "lon": -70.630903,
+          "wheelchair": "yes",
+          "context": "Estación Plaza México"
+        },
+        {
+          "id": "node/5635677569",
+          "lat": -33.41962,
+          "lon": -70.618577,
+          "context": "Auditorio FADEU"
+        },
+        {
+          "id": "node/5635677570",
+          "lat": -33.420047,
+          "lon": -70.618141,
+          "context": "Casona Lo Contador"
+        },
+        {
+          "id": "node/2305959387",
+          "lat": -33.419328,
+          "lon": -70.618533,
+          "context": "Talleres Arquitectura"
+        },
+        {
+          "id": "node/2305959377",
+          "lat": -33.418872,
+          "lon": -70.61806,
+          "context": "Escuela de Diseño UC"
+        },
+        {
+          "id": "node/2305959370",
+          "lat": -33.419215,
+          "lon": -70.617767,
+          "context": "Ex Edificio de Artes"
+        },
+        {
+          "id": "node/11182041196",
+          "lat": -33.410357,
+          "lon": -70.714883,
+          "wheelchair": "yes",
+          "context": "Acceso N°7"
+        },
+        {
           "id": "way/311439794",
           "name": "baños públicos",
           "lat": -33.496738,
@@ -57,28 +163,53 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/11182041185",
+          "lat": -33.410917,
+          "lon": -70.718788,
+          "wheelchair": "yes",
+          "context": "Acceso N°8 Santa Adriana"
+        },
+        {
+          "id": "node/12984274522",
+          "lat": -33.41478,
+          "lon": -70.615124,
+          "wheelchair": "yes",
+          "context": "Estación de Embarque Teleférico"
+        },
+        {
+          "id": "node/12674219823",
+          "lat": -33.413372,
+          "lon": -70.724384,
+          "wheelchair": "yes",
+          "context": "Acceso N°11 Padre Las Casas"
+        },
+        {
+          "id": "node/1982401126",
+          "lat": -33.489952,
+          "lon": -70.619594,
+          "context": "Edificio B"
+        },
+        {
+          "id": "node/3855002081",
+          "lat": -33.490518,
+          "lon": -70.61851,
+          "context": "Edificio F"
+        },
+        {
+          "id": "node/1982401123",
+          "lat": -33.4906,
+          "lon": -70.618529,
+          "context": "Edificio A"
+        },
+        {
           "id": "node/7254437550",
           "name": "Camarines Mujeres",
           "lat": -33.409342,
           "lon": -70.613792,
           "wheelchair": "no"
-        },
-        {
-          "id": "node/8450343563",
-          "name": "Camarines Hombres",
-          "lat": -33.409214,
-          "lon": -70.613329,
-          "wheelchair": "no"
-        },
-        {
-          "id": "way/1322432884",
-          "name": "Baños Cinerario Parque del Recuerdo",
-          "lat": -33.381982,
-          "lon": -70.639554,
-          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:02.476Z"
+      "updatedAt": "2026-09-03T17:49:10.818Z"
     },
     "drinking-water": {
       "count": 55,
@@ -90,7 +221,7 @@
           "lon": -70.637476
         }
       ],
-      "updatedAt": "2026-08-21T04:09:02.975Z"
+      "updatedAt": "2026-09-03T17:49:12.720Z"
     },
     "playgrounds": {
       "count": 373,
@@ -241,7 +372,7 @@
           "lon": -70.587929
         }
       ],
-      "updatedAt": "2026-08-21T04:09:03.604Z"
+      "updatedAt": "2026-09-03T17:49:13.689Z"
     },
     "parking": {
       "count": 819,
@@ -441,7 +572,7 @@
           "lon": -70.645829
         }
       ],
-      "updatedAt": "2026-08-21T04:09:04.402Z"
+      "updatedAt": "2026-09-03T17:49:15.092Z"
     },
     "charging-stations": {
       "count": 31,
@@ -472,7 +603,7 @@
           "lon": -70.599133
         }
       ],
-      "updatedAt": "2026-08-21T04:09:04.803Z"
+      "updatedAt": "2026-09-03T17:49:15.567Z"
     },
     "gas-stations": {
       "count": 180,
@@ -615,7 +746,7 @@
           "lon": -70.625871
         }
       ],
-      "updatedAt": "2026-08-21T04:09:05.256Z"
+      "updatedAt": "2026-09-03T17:49:16.128Z"
     },
     "ice-cream": {
       "count": 54,
@@ -828,7 +959,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:05.616Z"
+      "updatedAt": "2026-09-03T17:49:16.888Z"
     },
     "dog-parks": {
       "count": 18,
@@ -869,7 +1000,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:05.952Z"
+      "updatedAt": "2026-09-03T17:49:17.332Z"
     },
     "picnic-spots": {
       "count": 51,
@@ -899,7 +1030,7 @@
           "lon": -70.621206
         }
       ],
-      "updatedAt": "2026-08-21T04:09:06.412Z"
+      "updatedAt": "2026-09-03T17:49:18.741Z"
     },
     "viewpoints": {
       "count": 69,
@@ -1092,12 +1223,12 @@
           "lon": -70.712364
         }
       ],
-      "updatedAt": "2026-08-21T04:09:06.797Z"
+      "updatedAt": "2026-09-03T17:49:19.458Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:09:07.160Z"
+      "updatedAt": "2026-09-03T17:49:19.967Z"
     },
     "atms": {
       "count": 259,
@@ -1303,11 +1434,17 @@
           "lon": -70.607393
         }
       ],
-      "updatedAt": "2026-08-21T04:09:07.626Z"
+      "updatedAt": "2026-09-03T17:49:20.882Z"
     },
     "post-boxes": {
       "count": 3,
       "pois": [
+        {
+          "id": "node/11992918664",
+          "lat": -33.436927,
+          "lon": -70.651202,
+          "street": "Puente"
+        },
         {
           "id": "node/4103696890",
           "name": "DHL - Western Union",
@@ -1322,11 +1459,31 @@
           "address": "Avenida El Bosque Norte 160"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:08.016Z"
+      "updatedAt": "2026-09-03T17:49:21.927Z"
     },
     "recycling": {
       "count": 118,
       "pois": [
+        {
+          "id": "node/13721642287",
+          "lat": -33.452037,
+          "lon": -70.667544,
+          "openingHours": "24/7",
+          "street": "Paseo República"
+        },
+        {
+          "id": "node/13721567954",
+          "lat": -33.452824,
+          "lon": -70.670497,
+          "openingHours": "24/7",
+          "street": "Pasaje Andrade"
+        },
+        {
+          "id": "node/13482646351",
+          "lat": -33.453404,
+          "lon": -70.67236,
+          "street": "Grajales"
+        },
         {
           "id": "node/5523236716",
           "name": "Punto Limpio UNAB",
@@ -1340,10 +1497,30 @@
           "lon": -70.66211
         },
         {
+          "id": "node/13724446476",
+          "lat": -33.452244,
+          "lon": -70.660555,
+          "openingHours": "24/7",
+          "street": "Paseo Ejército"
+        },
+        {
+          "id": "node/13724466927",
+          "lat": -33.452864,
+          "lon": -70.657629,
+          "openingHours": "24/7",
+          "street": "Avenida Santa Isabel"
+        },
+        {
           "id": "node/766951581",
           "name": "Punto Limpio Beauchef",
           "lat": -33.457995,
           "lon": -70.661682
+        },
+        {
+          "id": "node/6245509259",
+          "lat": -33.44791,
+          "lon": -70.684008,
+          "street": "Avenida Central"
         },
         {
           "id": "node/927292092",
@@ -1352,10 +1529,51 @@
           "lon": -70.658893
         },
         {
+          "id": "node/13724491513",
+          "lat": -33.451514,
+          "lon": -70.652852,
+          "openingHours": "24/7",
+          "street": "Mencía de los Nidos"
+        },
+        {
+          "id": "node/13724491512",
+          "lat": -33.452333,
+          "lon": -70.652934,
+          "openingHours": "24/7",
+          "street": "Nataniel Cox"
+        },
+        {
+          "id": "node/12384861127",
+          "lat": -33.462562,
+          "lon": -70.663938,
+          "openingHours": "24/7",
+          "street": "Avenida Beaucheff"
+        },
+        {
+          "id": "node/13761063924",
+          "lat": -33.453311,
+          "lon": -70.686437,
+          "address": "Avenida Libertador Bernardo O'Higgins 3750",
+          "context": "Mall Parque Estación"
+        },
+        {
           "id": "node/6201401085",
           "name": "Local de compra de aluminio y otros metales",
           "lat": -33.463817,
           "lon": -70.673499
+        },
+        {
+          "id": "node/13724501189",
+          "lat": -33.451336,
+          "lon": -70.650583,
+          "openingHours": "24/7",
+          "street": "San Diego"
+        },
+        {
+          "id": "node/12384861123",
+          "lat": -33.46401,
+          "lon": -70.662522,
+          "street": "Parque O'Higgins"
         },
         {
           "id": "way/544370772",
@@ -1364,6 +1582,12 @@
           "lon": -70.668573,
           "address": "Avenida Presidente Balmaceda",
           "openingHours": "Mo-Su 09:00-17:30"
+        },
+        {
+          "id": "node/6079749486",
+          "lat": -33.443756,
+          "lon": -70.694939,
+          "street": "Cruchaga Montt"
         },
         {
           "id": "node/6067180555",
@@ -1389,6 +1613,43 @@
           "address": "Loreto"
         },
         {
+          "id": "node/6446790110",
+          "lat": -33.445995,
+          "lon": -70.635103,
+          "street": "Marín"
+        },
+        {
+          "id": "node/13783165801",
+          "lat": -33.467719,
+          "lon": -70.642431,
+          "openingHours": "24/7",
+          "street": "Avenida Santa Rosa"
+        },
+        {
+          "id": "node/1909926842",
+          "lat": -33.432069,
+          "lon": -70.634801,
+          "street": "Antonia López de Bello"
+        },
+        {
+          "id": "node/12109244665",
+          "lat": -33.43026,
+          "lon": -70.636063,
+          "street": "Avenida Alberto Mackenna"
+        },
+        {
+          "id": "node/12549271020",
+          "lat": -33.466945,
+          "lon": -70.634117,
+          "street": "Sargento Aldea"
+        },
+        {
+          "id": "node/14002898267",
+          "lat": -33.423566,
+          "lon": -70.639957,
+          "street": "Avenida Perú"
+        },
+        {
           "id": "node/4981116088",
           "name": "Punto de Reciclaje",
           "lat": -33.485528,
@@ -1400,72 +1661,14 @@
           "name": "Parque Balmaceda",
           "lat": -33.43451,
           "lon": -70.628617
-        },
-        {
-          "id": "node/4442510605",
-          "name": "Soco Metal",
-          "lat": -33.404536,
-          "lon": -70.683162,
-          "address": "Bravo de Saravia 2986"
-        },
-        {
-          "id": "node/10696045383",
-          "name": "Compostaje Winkelhue",
-          "lat": -33.413977,
-          "lon": -70.630249
-        },
-        {
-          "id": "way/764490043",
-          "name": "Punto Limpio de Cerrillos",
-          "lat": -33.483028,
-          "lon": -70.724106,
-          "address": "Avenida Lo Errázuriz 2701"
-        },
-        {
-          "id": "node/11180295778",
-          "name": "área de compostaje",
-          "lat": -33.410914,
-          "lon": -70.720363
-        },
-        {
-          "id": "way/764468589",
-          "name": "Centro Laboral Oreste Plath",
-          "lat": -33.483378,
-          "lon": -70.724195,
-          "address": "Avenida Lo Errázuriz 2701",
-          "wheelchair": "limited"
-        },
-        {
-          "id": "node/12289149977",
-          "name": "bioresiduos",
-          "lat": -33.500496,
-          "lon": -70.705583
-        },
-        {
-          "id": "way/1380891282",
-          "name": "zona de compostaje",
-          "lat": -33.40344,
-          "lon": -70.619011
-        },
-        {
-          "id": "node/2681439634",
-          "name": "Vidrio",
-          "lat": -33.427439,
-          "lon": -70.594281
-        },
-        {
-          "id": "node/10828132572",
-          "name": "Punto Limpio Triciclos",
-          "lat": -33.49793,
-          "lon": -70.608185
         }
       ],
-      "updatedAt": "2026-08-21T04:09:08.463Z"
+      "updatedAt": "2026-09-03T17:49:24.630Z"
     },
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-21T04:09:08.775Z"
+      "updatedAt": "2026-09-03T17:49:25.121Z"
     },
     "libraries": {
       "count": 83,
@@ -1683,7 +1886,7 @@
           "address": "José Miguel de la Barra 480"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:09.143Z"
+      "updatedAt": "2026-09-03T17:49:25.609Z"
     },
     "outdoor-gyms": {
       "count": 73,
@@ -1745,12 +1948,12 @@
           "lon": -70.60816
         }
       ],
-      "updatedAt": "2026-08-21T04:09:09.493Z"
+      "updatedAt": "2026-09-03T17:49:27.039Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:09:09.850Z"
+      "updatedAt": "2026-09-03T17:49:27.527Z"
     },
     "shelters": {
       "count": 5,
@@ -1763,7 +1966,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:10.431Z"
+      "updatedAt": "2026-09-03T17:49:28.465Z"
     },
     "rest-areas": {
       "count": 5,
@@ -1783,12 +1986,12 @@
           "openingHours": "Mo-Fr 08:30-18:00, Sa 08:30-14:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:10.777Z"
+      "updatedAt": "2026-09-03T17:49:28.967Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:09:11.100Z"
+      "updatedAt": "2026-09-03T17:49:29.409Z"
     },
     "post-offices": {
       "count": 86,
@@ -1919,7 +2122,7 @@
           "lon": -70.74312
         }
       ],
-      "updatedAt": "2026-08-23T04:39:09.255Z"
+      "updatedAt": "2026-09-03T17:49:29.898Z"
     },
     "showers": {
       "count": 4,
@@ -1931,12 +2134,12 @@
           "lon": -70.618719
         }
       ],
-      "updatedAt": "2026-08-23T04:39:09.849Z"
+      "updatedAt": "2026-09-03T17:49:30.290Z"
     },
     "fireplaces": {
       "count": 11,
       "pois": [],
-      "updatedAt": "2026-08-23T04:39:10.776Z"
+      "updatedAt": "2026-09-03T17:49:31.526Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1953,12 +2156,113 @@
           "lon": -70.609984
         }
       ],
-      "updatedAt": "2026-08-23T04:39:12.457Z"
+      "updatedAt": "2026-09-03T17:49:33.975Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:52.866Z"
+    },
+    "bicycle-repair": {
+      "count": 17,
+      "pois": [
+        {
+          "id": "node/8175645461",
+          "name": "Knock Knock",
+          "lat": -33.444138,
+          "lon": -70.664402,
+          "address": "Santa Mónica 2035",
+          "openingHours": "Mo-Su 12:00-21:00"
+        },
+        {
+          "id": "node/4042321252",
+          "lat": -33.447003,
+          "lon": -70.679532,
+          "street": "Pasaje 52"
+        },
+        {
+          "id": "node/4048567176",
+          "name": "Taller de bicicletas \"Don Luis\"",
+          "lat": -33.436534,
+          "lon": -70.680453
+        },
+        {
+          "id": "node/4048567111",
+          "name": "Taller de bicicletas",
+          "lat": -33.435437,
+          "lon": -70.690986
+        },
+        {
+          "id": "node/10158426908",
+          "lat": -33.426956,
+          "lon": -70.640316,
+          "fee": "no",
+          "street": "Avenida Perú"
+        },
+        {
+          "id": "node/4457085429",
+          "name": "Taller de Bicicletas Araya",
+          "lat": -33.465806,
+          "lon": -70.635776
+        },
+        {
+          "id": "node/13483682751",
+          "lat": -33.430225,
+          "lon": -70.636115,
+          "fee": "no",
+          "street": "Avenida Alberto Mackenna"
+        },
+        {
+          "id": "node/1702100377",
+          "lat": -33.441001,
+          "lon": -70.624857,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Avenida Francisco Bilbao"
+        },
+        {
+          "id": "node/10577052365",
+          "lat": -33.406529,
+          "lon": -70.660941,
+          "fee": "no",
+          "street": "Avenida Independencia"
+        },
+        {
+          "id": "node/9075135314",
+          "name": "CicloRecreoVía",
+          "lat": -33.41527,
+          "lon": -70.617614,
+          "fee": "no"
+        },
+        {
+          "id": "node/12181239636",
+          "name": "Simicleta",
+          "lat": -33.415192,
+          "lon": -70.61733,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/13728459082",
+          "lat": -33.405534,
+          "lon": -70.619511,
+          "fee": "no",
+          "street": "Las Faldas"
+        },
+        {
+          "id": "node/11802434965",
+          "lat": -33.497251,
+          "lon": -70.610598,
+          "street": "Circunvalación Norte"
+        },
+        {
+          "id": "node/10945600622",
+          "name": "Taller Colaborativo de Bicicletas \"El Container\"",
+          "lat": -33.497962,
+          "lon": -70.608362
+        }
+      ],
+      "updatedAt": "2026-09-03T17:49:33.126Z"
     }
   }
 }

@@ -1,10 +1,43 @@
 {
   "city": "new-orleans",
-  "generatedAt": "2026-08-23T04:36:53.658Z",
+  "generatedAt": "2026-09-03T17:31:41.821Z",
   "categories": {
     "toilets": {
       "count": 25,
       "pois": [
+        {
+          "id": "node/6563505686",
+          "lat": 29.946309,
+          "lon": -90.078367,
+          "openingHours": "Mo-Su 05:30-22:00",
+          "context": "New Orleans Union Passenger Terminal"
+        },
+        {
+          "id": "node/4726860890",
+          "lat": 29.959879,
+          "lon": -90.0708,
+          "context": "Basin Street Station"
+        },
+        {
+          "id": "node/5286386882",
+          "lat": 29.94584,
+          "lon": -90.062459,
+          "context": "The Outlet Collection at Riverwalk"
+        },
+        {
+          "id": "node/4717536213",
+          "lat": 29.956812,
+          "lon": -90.062426,
+          "context": "City Sightseeing New Orleans Hop-On Hop-Off"
+        },
+        {
+          "id": "node/382306201",
+          "lat": 29.958709,
+          "lon": -90.060702,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Shops of The Colonnade"
+        },
         {
           "id": "way/1345337720",
           "name": "Dat Dog",
@@ -22,24 +55,39 @@
           "wheelchair": "yes"
         },
         {
-          "id": "node/13731657528",
-          "name": "Royal Roastery",
-          "lat": 29.890273,
-          "lon": -90.031612,
-          "address": "Terry Parkway 1180",
-          "openingHours": "Mo-Su 07:00-24:00",
+          "id": "node/5024623644",
+          "lat": 29.969585,
+          "lon": -90.052162,
+          "wheelchair": "yes",
+          "context": "St Roch Market"
+        },
+        {
+          "id": "node/10608951151",
+          "lat": 29.987763,
+          "lon": -90.092404,
+          "wheelchair": "designated",
+          "fee": "no",
+          "context": "Sydney & Walda Besthoff Sculpture Garden Pavilion"
+        },
+        {
+          "id": "way/1066799130",
+          "name": "Papi's",
+          "lat": 29.892941,
+          "lon": -90.030348,
+          "address": "Terry Parkway 857",
+          "openingHours": "Mo-Su 05:00-24:00",
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:04.391Z"
+      "updatedAt": "2026-09-03T17:31:24.227Z"
     },
     "drinking-water": {
       "count": 22,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:04.891Z"
+      "updatedAt": "2026-09-03T17:31:25.564Z"
     },
     "playgrounds": {
-      "count": 73,
+      "count": 75,
       "pois": [
         {
           "id": "node/4737383421",
@@ -135,10 +183,10 @@
           "address": "Metarie Road 1201"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:05.453Z"
+      "updatedAt": "2026-09-03T17:31:26.301Z"
     },
     "parking": {
-      "count": 548,
+      "count": 551,
       "pois": [
         {
           "id": "way/328669354",
@@ -268,7 +316,7 @@
           "lon": -90.093824
         }
       ],
-      "updatedAt": "2026-08-21T04:02:06.120Z"
+      "updatedAt": "2026-09-03T17:31:27.331Z"
     },
     "charging-stations": {
       "count": 6,
@@ -289,7 +337,7 @@
           "lon": -90.085007
         }
       ],
-      "updatedAt": "2026-08-21T04:02:06.472Z"
+      "updatedAt": "2026-09-03T17:31:27.721Z"
     },
     "gas-stations": {
       "count": 60,
@@ -414,7 +462,7 @@
           "lon": -90.075081
         }
       ],
-      "updatedAt": "2026-08-21T04:02:06.861Z"
+      "updatedAt": "2026-09-03T17:31:28.388Z"
     },
     "ice-cream": {
       "count": 13,
@@ -508,7 +556,7 @@
           "address": "Veterans Memorial Boulevard 400"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:07.211Z"
+      "updatedAt": "2026-09-03T17:31:29.068Z"
     },
     "dog-parks": {
       "count": 3,
@@ -534,22 +582,22 @@
           "lon": -90.136499
         }
       ],
-      "updatedAt": "2026-08-21T04:02:07.535Z"
+      "updatedAt": "2026-09-03T17:31:29.673Z"
     },
     "picnic-spots": {
       "count": 6,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:07.975Z"
+      "updatedAt": "2026-09-03T17:31:30.668Z"
     },
     "viewpoints": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:08.371Z"
+      "updatedAt": "2026-09-03T17:31:31.240Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:08.713Z"
+      "updatedAt": "2026-09-03T17:31:31.642Z"
     },
     "atms": {
       "count": 51,
@@ -691,12 +739,37 @@
           "address": "South Carrollton Avenue 700"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:09.137Z"
+      "updatedAt": "2026-09-03T17:31:32.081Z"
     },
     "post-boxes": {
       "count": 4,
-      "pois": [],
-      "updatedAt": "2026-08-21T04:02:09.513Z"
+      "pois": [
+        {
+          "id": "node/10605256950",
+          "lat": 29.948769,
+          "lon": -90.068141,
+          "street": "Magazine Street"
+        },
+        {
+          "id": "node/10604997633",
+          "lat": 29.94745,
+          "lon": -90.069997,
+          "street": "Camp Street"
+        },
+        {
+          "id": "node/10221941708",
+          "lat": 29.964655,
+          "lon": -90.056258,
+          "street": "Royal Street"
+        },
+        {
+          "id": "node/2396528799",
+          "lat": 29.963707,
+          "lon": -90.112505,
+          "street": "South Carrollton Avenue"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:31:32.943Z"
     },
     "recycling": {
       "count": 6,
@@ -722,6 +795,12 @@
           "address": "Marais St 2831"
         },
         {
+          "id": "node/308769274",
+          "lat": 29.941998,
+          "lon": -90.117065,
+          "street": "Ben Weiner Drive"
+        },
+        {
           "id": "node/7158338386",
           "name": "Goodwill Store",
           "lat": 29.902734,
@@ -734,12 +813,12 @@
           "lon": -90.035024
         }
       ],
-      "updatedAt": "2026-08-21T04:02:09.964Z"
+      "updatedAt": "2026-09-03T17:31:34.192Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:10.285Z"
+      "updatedAt": "2026-09-03T17:31:34.530Z"
     },
     "libraries": {
       "count": 34,
@@ -886,17 +965,17 @@
           "lon": -90.107439
         }
       ],
-      "updatedAt": "2026-08-21T04:02:10.637Z"
+      "updatedAt": "2026-09-03T17:31:34.981Z"
     },
     "outdoor-gyms": {
-      "count": 4,
+      "count": 5,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:10.980Z"
+      "updatedAt": "2026-09-03T17:31:35.763Z"
     },
     "camp-sites": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:11.343Z"
+      "updatedAt": "2026-09-03T17:31:36.137Z"
     },
     "shelters": {
       "count": 6,
@@ -908,17 +987,17 @@
           "lon": -90.097422
         }
       ],
-      "updatedAt": "2026-08-21T04:02:11.915Z"
+      "updatedAt": "2026-09-03T17:31:36.887Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:12.263Z"
+      "updatedAt": "2026-09-03T17:31:37.547Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:12.583Z"
+      "updatedAt": "2026-09-03T17:31:37.871Z"
     },
     "post-offices": {
       "count": 15,
@@ -994,17 +1073,17 @@
           "lon": -90.100628
         }
       ],
-      "updatedAt": "2026-08-23T04:36:51.847Z"
+      "updatedAt": "2026-09-03T17:31:38.268Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:52.238Z"
+      "updatedAt": "2026-09-03T17:31:38.688Z"
     },
     "fireplaces": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:52.983Z"
+      "updatedAt": "2026-09-03T17:31:39.833Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1012,14 +1091,94 @@
       "updatedAt": "2026-08-17T04:06:15.905Z"
     },
     "benches": {
-      "count": 217,
+      "count": 222,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:53.557Z"
+      "updatedAt": "2026-09-03T17:31:41.720Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:38.807Z"
+    },
+    "bicycle-repair": {
+      "count": 15,
+      "pois": [
+        {
+          "id": "node/6236482902",
+          "lat": 29.954287,
+          "lon": -90.07541,
+          "openingHours": "24/7",
+          "street": "Loyola Avenue"
+        },
+        {
+          "id": "node/10888583819",
+          "lat": 29.964759,
+          "lon": -90.077269,
+          "street": "Lafitte Greenway"
+        },
+        {
+          "id": "node/10647865159",
+          "lat": 29.964566,
+          "lon": -90.065043,
+          "street": "Governor Nicholls Street"
+        },
+        {
+          "id": "node/6225650362",
+          "lat": 29.937468,
+          "lon": -90.082229,
+          "openingHours": "24/7",
+          "street": "Oretha C Haley Boulevard"
+        },
+        {
+          "id": "node/10613078172",
+          "lat": 29.968802,
+          "lon": -90.051993,
+          "street": "Saint Claude Avenue"
+        },
+        {
+          "id": "node/6236476408",
+          "lat": 29.956641,
+          "lon": -90.105724,
+          "openingHours": "24/7",
+          "street": "Earhart Boulevard"
+        },
+        {
+          "id": "node/5054376118",
+          "lat": 29.937957,
+          "lon": -90.121234,
+          "openingHours": "24/7",
+          "street": "Rain Garden"
+        },
+        {
+          "id": "node/6236494162",
+          "lat": 29.997507,
+          "lon": -90.061298,
+          "openingHours": "24/7",
+          "street": "Gentilly Boulevard"
+        },
+        {
+          "id": "node/6225620698",
+          "lat": 29.921123,
+          "lon": -90.117267,
+          "openingHours": "24/7",
+          "street": "Magazine Street"
+        },
+        {
+          "id": "node/6022746313",
+          "lat": 29.917133,
+          "lon": -90.116238,
+          "openingHours": "24/7",
+          "street": "Jefferson Avenue"
+        },
+        {
+          "id": "node/5888842098",
+          "lat": 30.002776,
+          "lon": -90.094377,
+          "openingHours": "24/7",
+          "street": "Harrison Avenue"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:31:41.237Z"
     }
   }
 }

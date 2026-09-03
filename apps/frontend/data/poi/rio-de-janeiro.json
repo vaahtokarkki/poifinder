@@ -1,10 +1,29 @@
 {
   "city": "rio-de-janeiro",
-  "generatedAt": "2026-08-23T04:39:19.593Z",
+  "generatedAt": "2026-09-03T17:50:40.231Z",
   "categories": {
     "toilets": {
       "count": 134,
       "pois": [
+        {
+          "id": "node/481590170",
+          "lat": -22.905177,
+          "lon": -43.174886,
+          "context": "Terminal Garagem Menezes Côrtes"
+        },
+        {
+          "id": "node/1419983845",
+          "lat": -22.906942,
+          "lon": -43.177734,
+          "fee": "yes",
+          "context": "Edifício Avenida Central"
+        },
+        {
+          "id": "node/4802525521",
+          "lat": -22.907427,
+          "lon": -43.179072,
+          "context": "Igreja e Convento de Santo Antônio"
+        },
         {
           "id": "node/4938731428",
           "name": "UFA - Unidade Fornecedora de Alívio",
@@ -13,11 +32,62 @@
           "fee": "no"
         },
         {
+          "id": "node/9675484283",
+          "lat": -22.912049,
+          "lon": -43.166678,
+          "context": "Desembarque"
+        },
+        {
+          "id": "node/9675342602",
+          "lat": -22.912697,
+          "lon": -43.166421,
+          "context": "Embarque"
+        },
+        {
+          "id": "node/3911748981",
+          "lat": -22.897009,
+          "lon": -43.166534,
+          "context": "Castelo da Ilha Fiscal"
+        },
+        {
+          "id": "node/13429199601",
+          "lat": -22.89506,
+          "lon": -43.179733,
+          "address": "Praça Mauá 1",
+          "context": "Museu do Amanhã"
+        },
+        {
+          "id": "node/571200606",
+          "lat": -22.899244,
+          "lon": -43.208171,
+          "fee": "yes",
+          "context": "Terminal Rodoviário Novo Rio"
+        },
+        {
+          "id": "node/1821973438",
+          "lat": -22.893227,
+          "lon": -43.124365,
+          "wheelchair": "yes",
+          "context": "Estação Arariboia"
+        },
+        {
+          "id": "node/5947148090",
+          "lat": -22.905728,
+          "lon": -43.226232,
+          "context": "Paço de São Cristóvão"
+        },
+        {
           "id": "node/365744467",
           "name": "Posto 1",
           "lat": -22.963566,
           "lon": -43.168836,
           "fee": "yes"
+        },
+        {
+          "id": "node/14039204713",
+          "lat": -22.922071,
+          "lon": -43.234836,
+          "context": "Shopping Tijuca"
         },
         {
           "id": "node/1108187958",
@@ -32,6 +102,12 @@
           "name": "Posto 3",
           "lat": -22.970125,
           "lon": -43.181862
+        },
+        {
+          "id": "node/4511424256",
+          "lat": -22.959917,
+          "lon": -43.212031,
+          "context": "Palacete de Parque Lage"
         },
         {
           "id": "node/1108275966",
@@ -87,12 +163,12 @@
           "lon": -43.225935
         }
       ],
-      "updatedAt": "2026-08-21T04:09:22.835Z"
+      "updatedAt": "2026-09-03T17:50:16.424Z"
     },
     "drinking-water": {
       "count": 19,
       "pois": [],
-      "updatedAt": "2026-08-21T04:09:23.401Z"
+      "updatedAt": "2026-09-03T17:50:18.802Z"
     },
     "playgrounds": {
       "count": 176,
@@ -208,7 +284,7 @@
           "openingHours": "Mo-Sa 08:00-20:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:23.978Z"
+      "updatedAt": "2026-09-03T17:50:19.821Z"
     },
     "parking": {
       "count": 1001,
@@ -427,12 +503,12 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:24.757Z"
+      "updatedAt": "2026-09-03T17:50:21.018Z"
     },
     "charging-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-21T04:09:25.143Z"
+      "updatedAt": "2026-09-03T17:50:21.412Z"
     },
     "gas-stations": {
       "count": 260,
@@ -630,10 +706,10 @@
           "lon": -43.114336
         }
       ],
-      "updatedAt": "2026-08-21T04:09:25.615Z"
+      "updatedAt": "2026-09-03T17:50:22.081Z"
     },
     "ice-cream": {
-      "count": 85,
+      "count": 86,
       "pois": [
         {
           "id": "node/509354357",
@@ -792,6 +868,15 @@
           "lon": -43.167086
         },
         {
+          "id": "node/14121331124",
+          "name": "Nono Roberto",
+          "lat": -22.89654,
+          "lon": -43.126376,
+          "address": "Avenida Visconde do Rio Branco 631",
+          "openingHours": "Terça a  sexta 10:00 ás 19:00, sábaado 13:00 às 20:00 horas , Domingo 13:00 ás 17:00 hs  Domingo de 1",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/12089727252",
           "name": "Sorvete Itália",
           "lat": -22.951093,
@@ -816,16 +901,9 @@
           "lat": -22.901313,
           "lon": -43.122132,
           "address": "Rua Tiradentes 217"
-        },
-        {
-          "id": "node/13146060639",
-          "name": "La Doceira",
-          "lat": -22.901208,
-          "lon": -43.122042,
-          "address": "Rua São Sebastião 142"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:26.013Z"
+      "updatedAt": "2026-09-03T17:50:22.643Z"
     },
     "dog-parks": {
       "count": 10,
@@ -850,7 +928,7 @@
           "lon": -43.199775
         }
       ],
-      "updatedAt": "2026-08-21T04:09:26.325Z"
+      "updatedAt": "2026-09-03T17:50:23.040Z"
     },
     "picnic-spots": {
       "count": 80,
@@ -862,10 +940,10 @@
           "lon": -43.211906
         }
       ],
-      "updatedAt": "2026-08-21T04:09:26.775Z"
+      "updatedAt": "2026-09-03T17:50:24.366Z"
     },
     "viewpoints": {
-      "count": 103,
+      "count": 104,
       "pois": [
         {
           "id": "node/4503176108",
@@ -1053,7 +1131,7 @@
           "address": "Estrada do Redentor"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:27.203Z"
+      "updatedAt": "2026-09-03T17:50:25.022Z"
     },
     "beaches": {
       "count": 75,
@@ -1228,7 +1306,7 @@
         },
         {
           "id": "way/29339767",
-          "name": "Praia de Charitas",
+          "name": "CLUBE DE CANOA POLINÉSIA SOUL VA'A",
           "lat": -22.929221,
           "lon": -43.100502
         },
@@ -1239,7 +1317,7 @@
           "lon": -43.095212
         }
       ],
-      "updatedAt": "2026-08-21T04:09:27.596Z"
+      "updatedAt": "2026-09-03T17:50:25.588Z"
     },
     "atms": {
       "count": 257,
@@ -1437,16 +1515,88 @@
           "lon": -43.290065
         }
       ],
-      "updatedAt": "2026-08-21T04:09:28.085Z"
+      "updatedAt": "2026-09-03T17:50:26.325Z"
     },
     "post-boxes": {
       "count": 38,
       "pois": [
         {
+          "id": "node/480474338",
+          "lat": -22.908798,
+          "lon": -43.172804,
+          "street": "Avenida Presidente Antônio Carlos"
+        },
+        {
+          "id": "node/1237888696",
+          "lat": -22.907442,
+          "lon": -43.175842,
+          "street": "Rua México"
+        },
+        {
+          "id": "node/614469236",
+          "lat": -22.905032,
+          "lon": -43.177536,
+          "street": "Rua Rodrigo Silva"
+        },
+        {
+          "id": "node/814190723",
+          "lat": -22.911429,
+          "lon": -43.173592,
+          "street": "Avenida Presidente Wilson"
+        },
+        {
+          "id": "node/964808288",
+          "lat": -22.912214,
+          "lon": -43.174814,
+          "street": "Avenida Rio Branco"
+        },
+        {
+          "id": "node/677594856",
+          "lat": -22.91243,
+          "lon": -43.176832,
+          "street": "Rua do Passeio"
+        },
+        {
+          "id": "node/527082959",
+          "lat": -22.92378,
+          "lon": -43.177278,
+          "street": "Rua do Catete"
+        },
+        {
+          "id": "node/704970849",
+          "lat": -22.92592,
+          "lon": -43.177855,
+          "street": "Rua Silveira Martins"
+        },
+        {
           "id": "node/819310029",
           "name": "ACF Azevedo Lima",
           "lat": -22.924462,
           "lon": -43.20404
+        },
+        {
+          "id": "node/4613040463",
+          "lat": -22.940679,
+          "lon": -43.177434,
+          "street": "Rua Senador Vergueiro"
+        },
+        {
+          "id": "node/9600971676",
+          "lat": -22.940559,
+          "lon": -43.19151,
+          "street": "Rua General Glicério"
+        },
+        {
+          "id": "node/1186720921",
+          "lat": -22.9453,
+          "lon": -43.182486,
+          "street": "Praia de Botafogo"
+        },
+        {
+          "id": "node/2260203362",
+          "lat": -22.903743,
+          "lon": -43.216101,
+          "street": "Avenida Pedro II"
         },
         {
           "id": "node/819284920",
@@ -1455,17 +1605,120 @@
           "lon": -43.211775
         },
         {
+          "id": "node/3524202949",
+          "lat": -22.947848,
+          "lon": -43.185821,
+          "street": "Rua Bambina"
+        },
+        {
+          "id": "node/771805493",
+          "lat": -22.949386,
+          "lon": -43.184152,
+          "street": "Rua Nelson Mandela"
+        },
+        {
+          "id": "node/416979558",
+          "lat": -22.951138,
+          "lon": -43.17563,
+          "street": "Rua General Severiano"
+        },
+        {
+          "id": "node/2039081760",
+          "lat": -22.953063,
+          "lon": -43.188699,
+          "street": "Rua Voluntários da Pátria"
+        },
+        {
+          "id": "node/2429268241",
+          "lat": -22.893639,
+          "lon": -43.120638,
+          "street": "Avenida Ernani do Amaral Peixoto"
+        },
+        {
+          "id": "node/2038958585",
+          "lat": -22.953695,
+          "lon": -43.191655,
+          "street": "Rua da Matriz"
+        },
+        {
+          "id": "node/2203304038",
+          "lat": -22.96236,
+          "lon": -43.175076,
+          "street": "Ciclovia Mané Garrincha"
+        },
+        {
+          "id": "node/2203247643",
+          "lat": -22.962621,
+          "lon": -43.176651,
+          "street": "Rua Barata Ribeiro"
+        },
+        {
           "id": "node/816125521",
           "name": "ACF Clovis Bevilaqua",
           "lat": -22.924657,
           "lon": -43.235074
+        },
+        {
+          "id": "node/885781995",
+          "lat": -22.967102,
+          "lon": -43.186356,
+          "street": "Rua Siqueira Campos"
+        },
+        {
+          "id": "node/2102169433",
+          "lat": -22.960429,
+          "lon": -43.205861,
+          "street": "Rua Jardim Botânico"
+        },
+        {
+          "id": "node/4306392988",
+          "lat": -22.967516,
+          "lon": -43.184478,
+          "street": "Rua Hilário de Gouveia"
+        },
+        {
+          "id": "node/814334138",
+          "lat": -22.962009,
+          "lon": -43.20765,
+          "street": "Rua Maria Angélica"
+        },
+        {
+          "id": "node/562181363",
+          "lat": -22.976426,
+          "lon": -43.192236,
+          "street": "Rua Xavier da Silveira"
+        },
+        {
+          "id": "node/2261617200",
+          "lat": -22.884082,
+          "lon": -43.24878,
+          "street": "Rua Leopoldo Bulhões"
+        },
+        {
+          "id": "node/2318491507",
+          "lat": -22.985888,
+          "lon": -43.198038,
+          "street": "Rua Prudente de Morais"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:28.472Z"
+      "updatedAt": "2026-09-03T17:50:27.772Z"
     },
     "recycling": {
       "count": 10,
       "pois": [
+        {
+          "id": "node/12025227139",
+          "lat": -22.923965,
+          "lon": -43.178096,
+          "openingHours": "24/7",
+          "street": "Rua Pedro Américo"
+        },
+        {
+          "id": "node/1454519242",
+          "lat": -22.897152,
+          "lon": -43.126279,
+          "street": "Outeiro São João Batista"
+        },
         {
           "id": "node/1400565542",
           "name": "ponto de coleta: óleo de cozinha",
@@ -1473,18 +1726,42 @@
           "lon": -43.125452
         },
         {
+          "id": "node/7201716008",
+          "lat": -22.953383,
+          "lon": -43.183847,
+          "street": "Rua General Polidoro"
+        },
+        {
           "id": "node/816173263",
           "name": "Comlurb",
           "lat": -22.920395,
           "lon": -43.233478
+        },
+        {
+          "id": "node/12453508850",
+          "lat": -22.908145,
+          "lon": -43.238295,
+          "street": "Rua São Francisco Xavier"
+        },
+        {
+          "id": "node/12453514131",
+          "lat": -22.888853,
+          "lon": -43.255761,
+          "street": "Rua Viúva Cláudio"
+        },
+        {
+          "id": "node/12448626550",
+          "lat": -22.871364,
+          "lon": -43.282467,
+          "street": "Estrada Adhemar Bebiano"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:28.905Z"
+      "updatedAt": "2026-09-03T17:50:29.371Z"
     },
     "luggage-storage": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-21T04:09:29.240Z"
+      "updatedAt": "2026-09-03T17:50:29.827Z"
     },
     "libraries": {
       "count": 45,
@@ -1686,7 +1963,7 @@
           "openingHours": "Mo-Fr 09:00-21:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:29.576Z"
+      "updatedAt": "2026-09-03T17:50:30.341Z"
     },
     "outdoor-gyms": {
       "count": 117,
@@ -1738,7 +2015,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:29.933Z"
+      "updatedAt": "2026-09-03T17:50:31.748Z"
     },
     "camp-sites": {
       "count": 2,
@@ -1750,7 +2027,7 @@
           "lon": -43.2212
         }
       ],
-      "updatedAt": "2026-08-21T04:09:30.291Z"
+      "updatedAt": "2026-09-03T17:50:32.254Z"
     },
     "shelters": {
       "count": 13,
@@ -1760,9 +2037,21 @@
           "name": "EXPERIMENTOTECA",
           "lat": -22.876989,
           "lon": -43.245635
+        },
+        {
+          "id": "node/12453557375",
+          "lat": -22.883688,
+          "lon": -43.253586,
+          "street": "Avenida dos Democráticos"
+        },
+        {
+          "id": "node/12453557373",
+          "lat": -22.883617,
+          "lon": -43.25363,
+          "street": "Avenida Dom Hélder Câmara"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:30.860Z"
+      "updatedAt": "2026-09-03T17:50:33.853Z"
     },
     "rest-areas": {
       "count": 14,
@@ -1834,15 +2123,15 @@
           "lon": -43.06684
         }
       ],
-      "updatedAt": "2026-08-21T04:09:31.220Z"
+      "updatedAt": "2026-09-03T17:50:34.700Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:09:31.525Z"
+      "updatedAt": "2026-09-03T17:50:35.627Z"
     },
     "post-offices": {
-      "count": 66,
+      "count": 67,
       "pois": [
         {
           "id": "node/509430474",
@@ -1952,12 +2241,12 @@
           "lon": -43.239128
         }
       ],
-      "updatedAt": "2026-08-23T04:39:16.624Z"
+      "updatedAt": "2026-09-03T17:50:36.228Z"
     },
     "showers": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-23T04:39:17.308Z"
+      "updatedAt": "2026-09-03T17:50:36.673Z"
     },
     "fireplaces": {
       "count": 3,
@@ -1975,7 +2264,7 @@
           "lon": -43.209768
         }
       ],
-      "updatedAt": "2026-08-23T04:39:18.428Z"
+      "updatedAt": "2026-09-03T17:50:37.829Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1993,12 +2282,38 @@
           "address": "Calçadão de Copacabana"
         }
       ],
-      "updatedAt": "2026-08-23T04:39:19.491Z"
+      "updatedAt": "2026-09-03T17:50:40.130Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:53.539Z"
+    },
+    "bicycle-repair": {
+      "count": 7,
+      "pois": [
+        {
+          "id": "node/11543495616",
+          "lat": -22.90147,
+          "lon": -43.112373,
+          "openingHours": "SEGUNDA A SEXTA FEIRA DE 9 AS 18 HORAS, SABADO ATE AS 13 HORAS",
+          "street": "Rua Gavião Peixoto"
+        },
+        {
+          "id": "node/14121277141",
+          "lat": -22.900687,
+          "lon": -43.1114,
+          "openingHours": "de segunda à sexta feira, 9:00 às 18:00 hs , Sábados 9:00 às 13:00 hs",
+          "street": "Rua Mem de Sá"
+        },
+        {
+          "id": "node/6831826940",
+          "lat": -22.898716,
+          "lon": -43.105414,
+          "street": "Rua Doutor Paulo César"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:50:39.158Z"
     }
   }
 }

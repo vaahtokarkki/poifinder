@@ -1,10 +1,32 @@
 {
   "city": "bratislava",
-  "generatedAt": "2026-08-23T04:06:10.778Z",
+  "generatedAt": "2026-09-03T16:50:42.260Z",
   "categories": {
     "toilets": {
       "count": 219,
       "pois": [
+        {
+          "id": "node/3043580035",
+          "lat": 48.144642,
+          "lon": 17.109042,
+          "openingHours": "09:00-21:00",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Magistrát Hlavného mesta SR Bratislavy"
+        },
+        {
+          "id": "node/11295505765",
+          "lat": 48.141679,
+          "lon": 17.105013,
+          "fee": "yes",
+          "context": "Martineum"
+        },
+        {
+          "id": "node/10844853591",
+          "lat": 48.141492,
+          "lon": 17.105788,
+          "context": "Čákiho palác"
+        },
         {
           "id": "way/77991925",
           "name": "Orlen",
@@ -12,6 +34,19 @@
           "lon": 17.11882,
           "openingHours": "Mo-Su 06:00-18:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/3477356630",
+          "lat": 48.156976,
+          "lon": 17.105566,
+          "context": "Múzeum dopravy – Hala B"
+        },
+        {
+          "id": "node/3478478557",
+          "lat": 48.140319,
+          "lon": 17.111068,
+          "wheelchair": "no",
+          "context": "Miestny úrad Bratislava - Staré Mesto"
         },
         {
           "id": "node/11073908240",
@@ -22,10 +57,51 @@
           "context": "IPP Park Hrad"
         },
         {
+          "id": "node/11068773705",
+          "lat": 48.140217,
+          "lon": 17.112979,
+          "context": "Slovenské národné múzeum"
+        },
+        {
+          "id": "node/8959796780",
+          "lat": 48.158862,
+          "lon": 17.10597,
+          "openingHours": "Mo-Su 04:00-24:00",
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Bratislava hlavná stanica"
+        },
+        {
           "id": "node/10152999073",
           "lat": 48.147423,
           "lon": 17.126816,
           "context": "Nivy"
+        },
+        {
+          "id": "node/7253621381",
+          "lat": 48.136027,
+          "lon": 17.113949,
+          "context": "Aréna"
+        },
+        {
+          "id": "node/13761397831",
+          "lat": 48.135325,
+          "lon": 17.106147,
+          "wheelchair": "designated",
+          "context": "Zares"
+        },
+        {
+          "id": "node/12600362868",
+          "lat": 48.142688,
+          "lon": 17.125821,
+          "context": "City Hub Landererova"
+        },
+        {
+          "id": "node/13755513841",
+          "lat": 48.157355,
+          "lon": 17.126121,
+          "fee": "no",
+          "context": "Tržnica"
         },
         {
           "id": "node/6327340569",
@@ -33,6 +109,75 @@
           "lon": 17.106236,
           "fee": "no",
           "context": "Aupark"
+        },
+        {
+          "id": "node/6503847614",
+          "lat": 48.131152,
+          "lon": 17.109324,
+          "fee": "no",
+          "context": "Viva"
+        },
+        {
+          "id": "node/3748530671",
+          "lat": 48.151919,
+          "lon": 17.073589,
+          "context": "Blok A"
+        },
+        {
+          "id": "node/3748530674",
+          "lat": 48.15242,
+          "lon": 17.073596,
+          "context": "Blok B"
+        },
+        {
+          "id": "node/3748530677",
+          "lat": 48.152925,
+          "lon": 17.073586,
+          "context": "Blok C"
+        },
+        {
+          "id": "node/3748530678",
+          "lat": 48.15344,
+          "lon": 17.073613,
+          "fee": "no",
+          "context": "Blok D"
+        },
+        {
+          "id": "node/3748530679",
+          "lat": 48.153943,
+          "lon": 17.073631,
+          "context": "Blok E"
+        },
+        {
+          "id": "node/3739692580",
+          "lat": 48.150058,
+          "lon": 17.071573,
+          "fee": "no",
+          "context": "Pavilón CH1"
+        },
+        {
+          "id": "node/5133884813",
+          "lat": 48.147411,
+          "lon": 17.069999,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Študentský domov Družba"
+        },
+        {
+          "id": "node/3477539952",
+          "lat": 48.159988,
+          "lon": 17.073786,
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "Pavilón primátov"
+        },
+        {
+          "id": "node/3473328428",
+          "lat": 48.149028,
+          "lon": 17.06961,
+          "wheelchair": "limited",
+          "fee": "no",
+          "context": "Pavilón G"
         },
         {
           "id": "way/5215164",
@@ -78,10 +223,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:05:51.105Z"
+      "updatedAt": "2026-09-03T16:50:15.439Z"
     },
     "drinking-water": {
-      "count": 111,
+      "count": 115,
       "pois": [
         {
           "id": "node/13012190936",
@@ -108,10 +253,10 @@
           "lon": 17.104104
         }
       ],
-      "updatedAt": "2026-08-23T04:05:52.691Z"
+      "updatedAt": "2026-09-03T16:50:17.328Z"
     },
     "playgrounds": {
-      "count": 632,
+      "count": 633,
       "pois": [
         {
           "id": "way/580787200",
@@ -186,8 +331,8 @@
         {
           "id": "way/480534374",
           "name": "Detské ihrisko Račianske mýto",
-          "lat": 48.159129,
-          "lon": 17.118473,
+          "lat": 48.159187,
+          "lon": 17.118435,
           "openingHours": "Mo-Su 08:00-19:00"
         },
         {
@@ -305,10 +450,10 @@
           "openingHours": "May-Oct 08:00-21:00; Mar-Apr,Nov 08:00-19:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:05:53.521Z"
+      "updatedAt": "2026-09-03T16:50:18.405Z"
     },
     "parking": {
-      "count": 4851,
+      "count": 4857,
       "pois": [
         {
           "id": "node/15244242",
@@ -539,7 +684,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:05:54.798Z"
+      "updatedAt": "2026-09-03T16:50:20.446Z"
     },
     "charging-stations": {
       "count": 138,
@@ -773,7 +918,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:05:55.277Z"
+      "updatedAt": "2026-09-03T16:50:21.386Z"
     },
     "gas-stations": {
       "count": 82,
@@ -926,10 +1071,10 @@
           "lon": 17.20483
         }
       ],
-      "updatedAt": "2026-08-23T04:05:55.722Z"
+      "updatedAt": "2026-09-03T16:50:21.923Z"
     },
     "ice-cream": {
-      "count": 93,
+      "count": 92,
       "pois": [
         {
           "id": "node/3407366370",
@@ -1135,7 +1280,7 @@
           "openingHours": "Mo-Sa 10:00-20:00; Su 12:00-20:00; May-Aug Mo-Sa 10:00-21:00; May-Aug Su 09:00-21:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:05:56.176Z"
+      "updatedAt": "2026-09-03T16:50:22.503Z"
     },
     "dog-parks": {
       "count": 43,
@@ -1256,10 +1401,10 @@
           "address": "Vrakunská"
         }
       ],
-      "updatedAt": "2026-08-23T04:05:56.610Z"
+      "updatedAt": "2026-09-03T16:50:22.884Z"
     },
     "picnic-spots": {
-      "count": 318,
+      "count": 321,
       "pois": [
         {
           "id": "node/2029735812",
@@ -1306,7 +1451,7 @@
           "lon": 17.067947
         }
       ],
-      "updatedAt": "2026-08-23T04:05:57.948Z"
+      "updatedAt": "2026-09-03T16:50:24.504Z"
     },
     "viewpoints": {
       "count": 54,
@@ -1357,7 +1502,7 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-23T04:05:58.586Z"
+      "updatedAt": "2026-09-03T16:50:25.131Z"
     },
     "beaches": {
       "count": 29,
@@ -1405,7 +1550,7 @@
           "lon": 17.195211
         }
       ],
-      "updatedAt": "2026-08-23T04:05:59.113Z"
+      "updatedAt": "2026-09-03T16:50:25.708Z"
     },
     "atms": {
       "count": 416,
@@ -1553,128 +1698,379 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:05:59.865Z"
+      "updatedAt": "2026-09-03T16:50:26.364Z"
     },
     "post-boxes": {
       "count": 198,
       "pois": [
         {
+          "id": "node/1705188105",
+          "lat": 48.14795,
+          "lon": 17.108111,
+          "street": "Hodžovo námestie"
+        },
+        {
+          "id": "node/1705188113",
+          "lat": 48.149175,
+          "lon": 17.109791,
+          "street": "Námestie 1. mája"
+        },
+        {
           "id": "node/4975670360",
           "name": "Schránka č. 1",
           "lat": 48.147187,
           "lon": 17.109058
+        },
+        {
+          "id": "node/5418489025",
+          "lat": 48.150634,
+          "lon": 17.106678,
+          "street": "Štefánikova"
+        },
+        {
+          "id": "node/8584378855",
+          "lat": 48.145537,
+          "lon": 17.10881,
+          "street": "Námestie SNP"
+        },
+        {
+          "id": "node/463166868",
+          "lat": 48.148826,
+          "lon": 17.112758,
+          "street": "Vysoká"
+        },
+        {
+          "id": "node/289349014",
+          "lat": 48.14609,
+          "lon": 17.103982,
+          "street": "Pilárikova"
+        },
+        {
+          "id": "node/289349028",
+          "lat": 48.145776,
+          "lon": 17.104373,
+          "street": "Župné Námestie"
+        },
+        {
+          "id": "node/464570603",
+          "lat": 48.147282,
+          "lon": 17.102047,
+          "street": "Panenská"
+        },
+        {
+          "id": "node/2049619745",
+          "lat": 48.144062,
+          "lon": 17.105827,
+          "street": "Klariská"
+        },
+        {
+          "id": "node/464578133",
+          "lat": 48.146373,
+          "lon": 17.101329,
+          "street": "Podjavorinskej"
+        },
+        {
+          "id": "node/4712451919",
+          "lat": 48.145065,
+          "lon": 17.113357,
+          "street": "Špitálska"
+        },
+        {
+          "id": "node/1276905687",
+          "lat": 48.143177,
+          "lon": 17.109726,
+          "street": "Laurinská"
+        },
+        {
+          "id": "node/464473768",
+          "lat": 48.152662,
+          "lon": 17.113468,
+          "street": "Námestie slobody"
+        },
+        {
+          "id": "node/3846402762",
+          "lat": 48.142933,
+          "lon": 17.111144,
+          "street": "Komenského námestie"
+        },
+        {
+          "id": "node/1000748079",
+          "lat": 48.148611,
+          "lon": 17.098437,
+          "street": "Šulekova"
+        },
+        {
+          "id": "node/7943464656",
+          "lat": 48.150731,
+          "lon": 17.117358,
+          "street": "Mickiewiczova"
+        },
+        {
+          "id": "node/432593395",
+          "lat": 48.144174,
+          "lon": 17.115607,
+          "street": "Grösslingová"
+        },
+        {
+          "id": "node/463166961",
+          "lat": 48.152535,
+          "lon": 17.119139,
+          "street": "Blumentálska"
+        },
+        {
+          "id": "node/2271795170",
+          "lat": 48.140128,
+          "lon": 17.104298,
+          "street": "Most SNP"
+        },
+        {
+          "id": "node/6190633964",
+          "lat": 48.142206,
+          "lon": 17.098533,
+          "street": "Námestie Alexandra Dubčeka"
+        },
+        {
+          "id": "node/384966990",
+          "lat": 48.143372,
+          "lon": 17.119033,
+          "street": "Jakubovo námestie"
+        },
+        {
+          "id": "node/4449811257",
+          "lat": 48.139958,
+          "lon": 17.112745,
+          "street": "Fajnorovo nábrežie"
+        },
+        {
+          "id": "node/277344482",
+          "lat": 48.149967,
+          "lon": 17.09059,
+          "street": "Mudroňova"
+        },
+        {
+          "id": "node/12813039465",
+          "lat": 48.140769,
+          "lon": 17.120682,
+          "street": "Pribinova"
+        },
+        {
+          "id": "node/276481503",
+          "lat": 48.158209,
+          "lon": 17.121018,
+          "street": "Račianska"
+        },
+        {
+          "id": "node/2660330457",
+          "lat": 48.160244,
+          "lon": 17.12072,
+          "street": "Jozefa Cígera Hronského"
+        },
+        {
+          "id": "node/432594985",
+          "lat": 48.151368,
+          "lon": 17.129512,
+          "street": "Svätoplukova"
+        },
+        {
+          "id": "node/432595770",
+          "lat": 48.15478,
+          "lon": 17.127944,
+          "street": "Jelačičova"
+        },
+        {
+          "id": "node/1686297528",
+          "lat": 48.156912,
+          "lon": 17.126826,
+          "street": "Krížna"
         }
       ],
-      "updatedAt": "2026-08-23T04:06:00.408Z"
+      "updatedAt": "2026-09-03T16:50:28.241Z"
     },
     "recycling": {
       "count": 594,
       "pois": [
         {
-          "id": "way/27281327",
-          "name": "Zberný dvor BUČINA EKO Depo Bratislava",
-          "lat": 48.132188,
-          "lon": 17.123866,
-          "address": "Pri Seči 1",
-          "openingHours": "Mo-Fr 07:00-16:30"
+          "id": "node/13724120041",
+          "lat": 48.151029,
+          "lon": 17.109086,
+          "street": "Banskobystrická"
         },
         {
-          "id": "way/788691281",
-          "name": "Palkov",
-          "lat": 48.144058,
-          "lon": 17.144761,
-          "openingHours": "Mo-Fr 07:30-19:30"
+          "id": "node/14057428338",
+          "lat": 48.151781,
+          "lon": 17.11235,
+          "street": "Námestie slobody"
         },
         {
-          "id": "node/2801761190",
-          "name": "Tasta",
-          "lat": 48.118852,
-          "lon": 17.096366,
-          "openingHours": "Mo-Fr 08:00-17:00; Sa 08:00-12:00"
+          "id": "node/7631454461",
+          "lat": 48.148772,
+          "lon": 17.115239,
+          "street": "Dobrovského"
         },
         {
-          "id": "node/3175830389",
-          "name": "Výkup paliet",
-          "lat": 48.118415,
-          "lon": 17.086308
+          "id": "node/12988616131",
+          "lat": 48.145731,
+          "lon": 17.113939,
+          "street": "Špitálska"
         },
         {
-          "id": "way/592455251",
-          "name": "ZP EKO QELET",
-          "lat": 48.115728,
-          "lon": 17.093811
+          "id": "node/8853107317",
+          "lat": 48.143932,
+          "lon": 17.110902,
+          "street": "Nedbalova"
         },
         {
-          "id": "node/10815365278",
-          "name": "Komunitné kompostovisko Romanova",
-          "lat": 48.114092,
-          "lon": 17.110274
+          "id": "node/8510475576",
+          "lat": 48.154314,
+          "lon": 17.103244,
+          "street": "Vlčkova"
         },
         {
-          "id": "way/234943797",
-          "name": "Zberný dvor Petržalka",
-          "lat": 48.114246,
-          "lon": 17.098368,
-          "address": "Ondreja Štefanka 6",
-          "openingHours": "Mo-Sa 08:00-18:00"
+          "id": "node/13758837760",
+          "lat": 48.154665,
+          "lon": 17.113152,
+          "street": "Lehockého"
         },
         {
-          "id": "node/4355348445",
-          "name": "P+K",
-          "lat": 48.175087,
-          "lon": 17.142677,
-          "openingHours": "Mo-Fr 07:00-16:00"
+          "id": "node/13758837768",
+          "lat": 48.154887,
+          "lon": 17.113562,
+          "street": "Belopotockého"
         },
         {
-          "id": "node/9460378063",
-          "name": "Kovošrot P+K",
-          "lat": 48.173085,
-          "lon": 17.155708,
-          "openingHours": "Mo-Fr 07:00-16:00"
+          "id": "node/13663657011",
+          "lat": 48.149138,
+          "lon": 17.120096,
+          "street": "29. augusta"
         },
         {
-          "id": "node/4020483492",
-          "name": "VDS Group",
-          "lat": 48.180214,
-          "lon": 17.057973,
-          "openingHours": "Mo-Fr 08:00-16:00"
+          "id": "node/13663657012",
+          "lat": 48.149188,
+          "lon": 17.120169,
+          "street": "Poľná"
         },
         {
-          "id": "node/2708699876",
-          "name": "Cvik",
-          "lat": 48.172191,
-          "lon": 17.175105,
-          "openingHours": "Mo-Fr 08:00-16:00; Sa 08:00-14:00"
+          "id": "node/10090582515",
+          "lat": 48.156427,
+          "lon": 17.11214,
+          "street": "Šancová"
         },
         {
-          "id": "node/2621566225",
-          "name": "Majkov",
-          "lat": 48.143801,
-          "lon": 17.184553,
-          "openingHours": "Mo-Su 08:00-20:00"
+          "id": "node/12729721184",
+          "lat": 48.140727,
+          "lon": 17.100285,
+          "street": "Oeserov rad"
         },
         {
-          "id": "node/2708699886",
-          "name": "WIP autovrakovisko",
-          "lat": 48.17327,
-          "lon": 17.177582
+          "id": "node/3174609417",
+          "lat": 48.153016,
+          "lon": 17.119994,
+          "street": "Blumentálska"
         },
         {
-          "id": "node/2869160561",
-          "name": "Zberný dvor OLO, a.s.",
-          "lat": 48.171237,
-          "lon": 17.179535,
-          "openingHours": "Mo-Sa 08:00-18:00"
+          "id": "node/12729851909",
+          "lat": 48.140661,
+          "lon": 17.099357,
+          "street": "Floriánska"
         },
         {
-          "id": "way/504064318",
-          "name": "MIKA-ŠROT",
-          "lat": 48.205413,
-          "lon": 17.041125,
-          "address": "Hodonínska 15"
+          "id": "node/259265576",
+          "lat": 48.159555,
+          "lon": 17.107744,
+          "street": "Matúškova"
+        },
+        {
+          "id": "node/13308770601",
+          "lat": 48.141277,
+          "lon": 17.094554,
+          "street": "Žižkova"
+        },
+        {
+          "id": "node/7341803707",
+          "lat": 48.152653,
+          "lon": 17.091619,
+          "street": "Búdková"
+        },
+        {
+          "id": "node/8380763983",
+          "lat": 48.144194,
+          "lon": 17.123624,
+          "street": "Čulenova"
+        },
+        {
+          "id": "node/7570195732",
+          "lat": 48.144908,
+          "lon": 17.124548,
+          "street": "Továrenská"
+        },
+        {
+          "id": "node/11639028638",
+          "lat": 48.148686,
+          "lon": 17.126097,
+          "street": "Budovateľská"
+        },
+        {
+          "id": "node/9537240633",
+          "lat": 48.152802,
+          "lon": 17.12528,
+          "street": "Poľská"
+        },
+        {
+          "id": "node/11152335577",
+          "lat": 48.146412,
+          "lon": 17.126401,
+          "street": "Mlynské nivy"
+        },
+        {
+          "id": "node/12538784871",
+          "lat": 48.153362,
+          "lon": 17.090045,
+          "street": "Drotárska cesta"
+        },
+        {
+          "id": "node/11575029962",
+          "lat": 48.147617,
+          "lon": 17.126918,
+          "street": "Páričkova"
+        },
+        {
+          "id": "node/12304866792",
+          "lat": 48.156545,
+          "lon": 17.123629,
+          "street": "Belehradská"
+        },
+        {
+          "id": "node/9066402733",
+          "lat": 48.148569,
+          "lon": 17.127852,
+          "street": "Súťažná"
+        },
+        {
+          "id": "node/6284914317",
+          "lat": 48.148288,
+          "lon": 17.128849,
+          "street": "Revúcka"
+        },
+        {
+          "id": "node/11098138347",
+          "lat": 48.152392,
+          "lon": 17.128246,
+          "street": "Bazová"
+        },
+        {
+          "id": "node/8618892240",
+          "lat": 48.150304,
+          "lon": 17.12898,
+          "street": "Pavlovova"
+        },
+        {
+          "id": "node/455587208",
+          "lat": 48.152412,
+          "lon": 17.086359,
+          "street": "Bartókova"
         }
       ],
-      "updatedAt": "2026-08-23T04:06:02.702Z"
+      "updatedAt": "2026-09-03T16:50:31.005Z"
     },
     "luggage-storage": {
       "count": 5,
@@ -1687,7 +2083,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:06:03.172Z"
+      "updatedAt": "2026-09-03T16:50:31.688Z"
     },
     "libraries": {
       "count": 132,
@@ -1911,10 +2307,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:06:03.803Z"
+      "updatedAt": "2026-09-03T16:50:32.362Z"
     },
     "outdoor-gyms": {
-      "count": 251,
+      "count": 252,
       "pois": [
         {
           "id": "node/9973385648",
@@ -2034,7 +2430,7 @@
           "lon": 17.197935
         }
       ],
-      "updatedAt": "2026-08-23T04:06:05.174Z"
+      "updatedAt": "2026-09-03T16:50:33.802Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2056,16 +2452,34 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:06:05.694Z"
+      "updatedAt": "2026-09-03T16:50:34.308Z"
     },
     "shelters": {
       "count": 90,
       "pois": [
         {
+          "id": "node/8530218022",
+          "lat": 48.146067,
+          "lon": 17.130842,
+          "street": "Mlynské nivy"
+        },
+        {
+          "id": "node/8931062041",
+          "lat": 48.150269,
+          "lon": 17.071958,
+          "street": "Ilkovičova"
+        },
+        {
           "id": "node/1705188276",
           "name": "Kolibská besiedka",
           "lat": 48.176617,
           "lon": 17.099525
+        },
+        {
+          "id": "node/8905647107",
+          "lat": 48.119262,
+          "lon": 17.099596,
+          "street": "Panónska cesta"
         },
         {
           "id": "node/335685514",
@@ -2086,16 +2500,34 @@
           "lon": 17.099231
         },
         {
+          "id": "node/12546129470",
+          "lat": 48.180362,
+          "lon": 17.13526,
+          "street": "Odborárska"
+        },
+        {
           "id": "node/335687569",
           "name": "Podhorská besiedka",
           "lat": 48.176572,
           "lon": 17.071742
         },
         {
+          "id": "node/3865869659",
+          "lat": 48.178387,
+          "lon": 17.074624,
+          "street": "Kysucká"
+        },
+        {
           "id": "node/335692272",
           "name": "Lyžiarska besiedka",
           "lat": 48.186816,
           "lon": 17.093827
+        },
+        {
+          "id": "node/335684913",
+          "lat": 48.180893,
+          "lon": 17.072669,
+          "street": "Cesta mládeže"
         },
         {
           "id": "node/335692553",
@@ -2126,6 +2558,12 @@
           "name": "Kováčova besiedka",
           "lat": 48.193814,
           "lon": 17.085864
+        },
+        {
+          "id": "node/1411939363",
+          "lat": 48.103449,
+          "lon": 17.084037,
+          "street": "Kopčianska"
         },
         {
           "id": "node/335692563",
@@ -2166,13 +2604,25 @@
           "lon": 17.088415
         },
         {
+          "id": "node/13812110982",
+          "lat": 48.212075,
+          "lon": 17.120387,
+          "street": "Pekná cesta"
+        },
+        {
+          "id": "node/13952878258",
+          "lat": 48.090522,
+          "lon": 17.06625,
+          "street": "Hauptplatz"
+        },
+        {
           "id": "way/1516678864",
           "name": "T.O. Perero",
           "lat": 48.216844,
           "lon": 17.09491
         }
       ],
-      "updatedAt": "2026-08-23T04:06:07.108Z"
+      "updatedAt": "2026-09-03T16:50:36.364Z"
     },
     "rest-areas": {
       "count": 5,
@@ -2197,12 +2647,12 @@
           "lon": 17.191405
         }
       ],
-      "updatedAt": "2026-08-23T04:06:07.573Z"
+      "updatedAt": "2026-09-03T16:50:36.868Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:06:07.898Z"
+      "updatedAt": "2026-09-03T16:50:37.225Z"
     },
     "post-offices": {
       "count": 37,
@@ -2430,12 +2880,12 @@
           "openingHours": "Mo-Tu,Th-Fr 08:00-18:00; We 08:00-19:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:06:08.394Z"
+      "updatedAt": "2026-09-03T16:50:37.610Z"
     },
     "showers": {
       "count": 30,
       "pois": [],
-      "updatedAt": "2026-08-23T04:06:08.814Z"
+      "updatedAt": "2026-09-03T16:50:37.974Z"
     },
     "fireplaces": {
       "count": 185,
@@ -2478,7 +2928,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-23T04:06:09.659Z"
+      "updatedAt": "2026-09-03T16:50:39.004Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2486,7 +2936,7 @@
       "updatedAt": "2026-08-17T04:03:05.800Z"
     },
     "benches": {
-      "count": 6009,
+      "count": 6074,
       "pois": [
         {
           "id": "node/7683263923",
@@ -2573,12 +3023,137 @@
           "lon": 17.137214
         }
       ],
-      "updatedAt": "2026-08-23T04:06:10.673Z"
+      "updatedAt": "2026-09-03T16:50:42.158Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:07.484Z"
+    },
+    "bicycle-repair": {
+      "count": 39,
+      "pois": [
+        {
+          "id": "node/1704726120",
+          "name": "Cyklokuchyňa Bratislava",
+          "lat": 48.135668,
+          "lon": 17.115932,
+          "openingHours": "We,Sa 18:00-24:00"
+        },
+        {
+          "id": "node/11076719597",
+          "lat": 48.159861,
+          "lon": 17.094198,
+          "street": "Lesná"
+        },
+        {
+          "id": "node/13017584877",
+          "lat": 48.141466,
+          "lon": 17.088331,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Dvořákovo nábrežie"
+        },
+        {
+          "id": "node/10731352435",
+          "lat": 48.133628,
+          "lon": 17.108509,
+          "street": "Protinapoleónsky val"
+        },
+        {
+          "id": "node/9066402725",
+          "lat": 48.151274,
+          "lon": 17.130358,
+          "street": "Kulíškova"
+        },
+        {
+          "id": "node/4194065197",
+          "name": "Cyklodielňa BANM",
+          "lat": 48.162987,
+          "lon": 17.119357
+        },
+        {
+          "id": "node/6970233845",
+          "lat": 48.163031,
+          "lon": 17.124863,
+          "street": "Račianska"
+        },
+        {
+          "id": "node/2906927404",
+          "lat": 48.145576,
+          "lon": 17.135517,
+          "fee": "no",
+          "street": "Prievozská"
+        },
+        {
+          "id": "node/8547106753",
+          "lat": 48.142436,
+          "lon": 17.134842,
+          "street": "Prístavná"
+        },
+        {
+          "id": "node/11375344730",
+          "lat": 48.154012,
+          "lon": 17.147077,
+          "street": "Bajkalská"
+        },
+        {
+          "id": "node/4435800469",
+          "lat": 48.147933,
+          "lon": 17.066111,
+          "street": "Karloveské rameno"
+        },
+        {
+          "id": "node/9779544577",
+          "lat": 48.158096,
+          "lon": 17.149121,
+          "street": "Sabinovská"
+        },
+        {
+          "id": "node/13022370194",
+          "lat": 48.170679,
+          "lon": 17.072162,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Dúbravská cesta"
+        },
+        {
+          "id": "node/14066948472",
+          "lat": 48.106657,
+          "lon": 17.110658,
+          "openingHours": "24/7",
+          "street": "Tematínska"
+        },
+        {
+          "id": "node/10151331368",
+          "lat": 48.185421,
+          "lon": 17.077317,
+          "street": "Cesta mládeže"
+        },
+        {
+          "id": "node/8530218081",
+          "lat": 48.171086,
+          "lon": 17.169009,
+          "street": "Vrútocká"
+        },
+        {
+          "id": "node/9350872862",
+          "lat": 48.200613,
+          "lon": 17.127075,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Pekná cesta"
+        },
+        {
+          "id": "node/9901656278",
+          "lat": 48.18197,
+          "lon": 17.036524,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Talichova"
+        }
+      ],
+      "updatedAt": "2026-09-03T16:50:40.683Z"
     }
   }
 }

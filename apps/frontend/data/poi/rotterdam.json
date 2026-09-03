@@ -1,10 +1,18 @@
 {
   "city": "rotterdam",
-  "generatedAt": "2026-08-23T04:14:18.616Z",
+  "generatedAt": "2026-09-03T17:01:26.939Z",
   "categories": {
     "toilets": {
       "count": 70,
       "pois": [
+        {
+          "id": "node/5811007188",
+          "lat": 51.924574,
+          "lon": 4.470248,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Rotterdam Centraal"
+        },
         {
           "id": "node/6789422754",
           "name": "Got2Go",
@@ -12,6 +20,55 @@
           "lon": 4.480147,
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "node/3116686577",
+          "lat": 51.920034,
+          "lon": 4.487104,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Markthal Rotterdam"
+        },
+        {
+          "id": "node/9620896056",
+          "lat": 51.91661,
+          "lon": 4.473697,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Eendrachtsplein"
+        },
+        {
+          "id": "node/2030102702",
+          "lat": 51.912236,
+          "lon": 4.465736,
+          "fee": "yes",
+          "context": "Dijkzigt"
+        },
+        {
+          "id": "node/3487972843",
+          "lat": 51.928034,
+          "lon": 4.454446,
+          "context": "Toko Tjitjak"
+        },
+        {
+          "id": "node/2940381947",
+          "lat": 51.926183,
+          "lon": 4.451962,
+          "fee": "no",
+          "context": "Rivièrahal"
+        },
+        {
+          "id": "node/7639991593",
+          "lat": 51.920087,
+          "lon": 4.522886,
+          "context": "Het Theehuis"
+        },
+        {
+          "id": "node/3065768979",
+          "lat": 51.955903,
+          "lon": 4.481237,
+          "context": "Het huis in de heuvel"
         },
         {
           "id": "node/3115678270",
@@ -40,9 +97,15 @@
           "lon": 4.461168,
           "address": "Rijksweg A15 2",
           "fee": "yes"
+        },
+        {
+          "id": "node/8917101825",
+          "lat": 51.91485,
+          "lon": 4.588309,
+          "context": "Crimpenhof"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:55.187Z"
+      "updatedAt": "2026-09-03T17:00:59.706Z"
     },
     "drinking-water": {
       "count": 85,
@@ -69,7 +132,7 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:56.828Z"
+      "updatedAt": "2026-09-03T17:01:01.903Z"
     },
     "playgrounds": {
       "count": 939,
@@ -263,10 +326,10 @@
           "lon": 4.42875
         }
       ],
-      "updatedAt": "2026-08-23T04:13:57.783Z"
+      "updatedAt": "2026-09-03T17:01:03.165Z"
     },
     "parking": {
-      "count": 6635,
+      "count": 6676,
       "pois": [
         {
           "id": "way/1037501759",
@@ -490,7 +553,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:59.043Z"
+      "updatedAt": "2026-09-03T17:01:04.885Z"
     },
     "charging-stations": {
       "count": 1936,
@@ -608,7 +671,7 @@
           "lon": 4.588492
         }
       ],
-      "updatedAt": "2026-08-23T04:13:59.785Z"
+      "updatedAt": "2026-09-03T17:01:05.670Z"
     },
     "gas-stations": {
       "count": 98,
@@ -849,7 +912,7 @@
           "openingHours": "Mo-Fr 06:00-23:00; Sa-Su 08:00-23:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:14:00.347Z"
+      "updatedAt": "2026-09-03T17:01:06.314Z"
     },
     "ice-cream": {
       "count": 46,
@@ -1073,10 +1136,10 @@
           "address": "Van Beethovensingel 64"
         }
       ],
-      "updatedAt": "2026-08-23T04:14:00.876Z"
+      "updatedAt": "2026-09-03T17:01:06.982Z"
     },
     "dog-parks": {
-      "count": 58,
+      "count": 61,
       "pois": [
         {
           "id": "way/1387605848",
@@ -1097,7 +1160,7 @@
           "lon": 4.400213
         }
       ],
-      "updatedAt": "2026-08-23T04:14:01.333Z"
+      "updatedAt": "2026-09-03T17:01:07.473Z"
     },
     "picnic-spots": {
       "count": 338,
@@ -1110,7 +1173,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-23T04:14:02.589Z"
+      "updatedAt": "2026-09-03T17:01:08.907Z"
     },
     "viewpoints": {
       "count": 35,
@@ -1190,7 +1253,7 @@
           "lon": 4.410835
         }
       ],
-      "updatedAt": "2026-08-23T04:14:03.166Z"
+      "updatedAt": "2026-09-03T17:01:09.628Z"
     },
     "beaches": {
       "count": 18,
@@ -1214,7 +1277,7 @@
           "lon": 4.409303
         }
       ],
-      "updatedAt": "2026-08-23T04:14:03.699Z"
+      "updatedAt": "2026-09-03T17:01:10.290Z"
     },
     "atms": {
       "count": 234,
@@ -1242,11 +1305,41 @@
           "openingHours": "Mo-Sa 07:00-20:00; Su 11:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:14:04.568Z"
+      "updatedAt": "2026-09-03T17:01:11.019Z"
     },
     "post-boxes": {
-      "count": 277,
+      "count": 276,
       "pois": [
+        {
+          "id": "node/3543826803",
+          "lat": 51.925233,
+          "lon": 4.47783,
+          "street": "Schiekade"
+        },
+        {
+          "id": "node/4826002384",
+          "lat": 51.92445,
+          "lon": 4.479811,
+          "street": "Haagseveer"
+        },
+        {
+          "id": "node/27299036",
+          "lat": 51.923078,
+          "lon": 4.473589,
+          "street": "Weena-zuid"
+        },
+        {
+          "id": "node/4991638921",
+          "lat": 51.92818,
+          "lon": 4.474516,
+          "street": "Teilingerstraat"
+        },
+        {
+          "id": "node/4859483654",
+          "lat": 51.923872,
+          "lon": 4.485942,
+          "street": "Meent"
+        },
         {
           "id": "node/663288814",
           "name": "Brievenbus",
@@ -1254,23 +1347,180 @@
           "lon": 4.475556
         },
         {
-          "id": "node/4659598286",
-          "name": "Post NLBrievenbus",
-          "lat": 51.919211,
-          "lon": 4.447983
+          "id": "node/1067474210",
+          "lat": 51.923136,
+          "lon": 4.468877,
+          "street": "Weena"
         },
         {
-          "id": "node/848889532",
-          "name": "Franselaan",
-          "lat": 51.917543,
-          "lon": 4.418581
+          "id": "node/4616691631",
+          "lat": 51.920835,
+          "lon": 4.485499,
+          "street": "Hoogstraat"
+        },
+        {
+          "id": "node/4991634521",
+          "lat": 51.929457,
+          "lon": 4.471481,
+          "street": "Ungerplein"
+        },
+        {
+          "id": "node/29370486",
+          "lat": 51.917398,
+          "lon": 4.477179,
+          "street": "Karel Doormanstraat"
+        },
+        {
+          "id": "node/2502444211",
+          "lat": 51.920231,
+          "lon": 4.468441,
+          "street": "Sint-Mariastraat"
+        },
+        {
+          "id": "node/1975026110",
+          "lat": 51.917493,
+          "lon": 4.475048,
+          "street": "Oude Binnenweg"
+        },
+        {
+          "id": "node/419006365",
+          "lat": 51.917239,
+          "lon": 4.479297,
+          "street": "Westblaak"
+        },
+        {
+          "id": "node/4684340636",
+          "lat": 51.932047,
+          "lon": 4.48168,
+          "street": "Noordmolenstraat"
+        },
+        {
+          "id": "node/4130884323",
+          "lat": 51.929818,
+          "lon": 4.468077,
+          "street": "Walenburgerweg"
+        },
+        {
+          "id": "node/4538111597",
+          "lat": 51.91667,
+          "lon": 4.470864,
+          "street": "Nieuwe Binnenweg"
+        },
+        {
+          "id": "node/4540143234",
+          "lat": 51.915383,
+          "lon": 4.478783,
+          "wheelchair": "yes",
+          "street": "William Boothlaan"
+        },
+        {
+          "id": "node/1949130555",
+          "lat": 51.933877,
+          "lon": 4.476593,
+          "street": "Zwart Janstraat"
+        },
+        {
+          "id": "node/4741877728",
+          "lat": 51.921563,
+          "lon": 4.492922,
+          "street": "Groenendaal"
+        },
+        {
+          "id": "node/4784100935",
+          "lat": 51.926972,
+          "lon": 4.461797,
+          "street": "Bentinckplein"
+        },
+        {
+          "id": "node/3090283766",
+          "lat": 51.918846,
+          "lon": 4.491897,
+          "street": "Geldersekade"
+        },
+        {
+          "id": "node/4540153855",
+          "lat": 51.915487,
+          "lon": 4.486426,
+          "street": "Glashaven"
+        },
+        {
+          "id": "node/4980490720",
+          "lat": 51.922146,
+          "lon": 4.460947,
+          "street": "Beukelsdijk"
+        },
+        {
+          "id": "node/4790096510",
+          "lat": 51.931501,
+          "lon": 4.463465,
+          "street": "Stadhoudersweg"
+        },
+        {
+          "id": "node/4538111596",
+          "lat": 51.912557,
+          "lon": 4.476179,
+          "street": "Westersingel"
+        },
+        {
+          "id": "node/4684340637",
+          "lat": 51.935534,
+          "lon": 4.470763,
+          "street": "Bergselaan"
+        },
+        {
+          "id": "node/1976608195",
+          "lat": 51.923347,
+          "lon": 4.497857,
+          "street": "Oostzeedijk"
+        },
+        {
+          "id": "node/1448467686",
+          "lat": 51.918192,
+          "lon": 4.459419,
+          "street": "Middellandplein"
+        },
+        {
+          "id": "node/5260397244",
+          "lat": 51.929899,
+          "lon": 4.458467,
+          "street": "Statenweg"
+        },
+        {
+          "id": "node/4856312601",
+          "lat": 51.920829,
+          "lon": 4.498212,
+          "street": "Oostmolenwerf"
         }
       ],
-      "updatedAt": "2026-08-23T04:14:05.159Z"
+      "updatedAt": "2026-09-03T17:01:13.992Z"
     },
     "recycling": {
-      "count": 2005,
+      "count": 2009,
       "pois": [
+        {
+          "id": "node/13895642316",
+          "lat": 51.926282,
+          "lon": 4.476,
+          "street": "Molenwaterweg"
+        },
+        {
+          "id": "node/13738325837",
+          "lat": 51.921589,
+          "lon": 4.47598,
+          "street": "Van Ghentstraat"
+        },
+        {
+          "id": "node/6856214690",
+          "lat": 51.922006,
+          "lon": 4.474449,
+          "street": "Kruiskadehof"
+        },
+        {
+          "id": "node/13713952952",
+          "lat": 51.928253,
+          "lon": 4.482032,
+          "street": "Heer Bokelweg"
+        },
         {
           "id": "node/2610255998",
           "name": "Statiegeld Retourshop",
@@ -1288,68 +1538,156 @@
           "openingHours": "Mo 09:00-17:00; Tu-Sa 08:00-17:00; Su 09:00-17:00"
         },
         {
-          "id": "way/1381808691",
-          "name": "Roteb Milieupark Hillegersberg-Schiebroek",
-          "lat": 51.957696,
-          "lon": 4.456176
+          "id": "node/13017859042",
+          "lat": 51.92686,
+          "lon": 4.485464,
+          "street": "Admiraal de Ruyterweg"
         },
         {
-          "id": "way/1054491752",
-          "name": "Milieupark Prins Alexander",
-          "lat": 51.948822,
-          "lon": 4.538246,
-          "address": "Hoofdweg 131",
-          "openingHours": "Mo-Sa 09:00-17:00; PH off"
+          "id": "node/12722605444",
+          "lat": 51.921335,
+          "lon": 4.469934,
+          "street": "Diergaardesingel"
         },
         {
-          "id": "way/1125285385",
-          "name": "Milieustraat Schiedam",
-          "lat": 51.929964,
-          "lon": 4.39854,
-          "address": "Fokkerstraat 550",
-          "openingHours": "Mo-Sa 08:00-16:00"
+          "id": "node/13738325840",
+          "lat": 51.93031,
+          "lon": 4.477808,
+          "street": "Teilingerstraat"
         },
         {
-          "id": "way/61052763",
-          "name": "Milieupark Charlois",
-          "lat": 51.868399,
-          "lon": 4.455129
+          "id": "node/12749396733",
+          "lat": 51.920558,
+          "lon": 4.485338,
+          "street": "Dominee Jan Scharpstraat"
         },
         {
-          "id": "way/1368433038",
-          "name": "PreZero",
-          "lat": 51.902663,
-          "lon": 4.389638,
-          "address": "Nieuwe Waterwegstraat 23"
+          "id": "node/12749396735",
+          "lat": 51.92054,
+          "lon": 4.485344,
+          "street": "Zijl"
         },
         {
-          "id": "way/671226539",
-          "name": "Milieupark IJsselmonde",
-          "lat": 51.872493,
-          "lon": 4.540935
+          "id": "node/12947354802",
+          "lat": 51.926243,
+          "lon": 4.468195,
+          "street": "Spoorsingel"
         },
         {
-          "id": "node/2765458398",
-          "name": "N.V. BAR-Afvalbeheer",
-          "lat": 51.859943,
-          "lon": 4.435517,
-          "address": "Nijverheidsweg 3",
-          "openingHours": "Mo-Fr 08:00-17:00"
+          "id": "node/12946975787",
+          "lat": 51.91873,
+          "lon": 4.482408,
+          "street": "Pim Fortuynplaats"
         },
         {
-          "id": "way/1083015110",
-          "name": "Afvalaanbiedstation Albrandswaard",
-          "lat": 51.859825,
-          "lon": 4.434773,
-          "openingHours": "Mo-Sa 08:30-15:30; PH off"
+          "id": "node/14101321069",
+          "lat": 51.929373,
+          "lon": 4.485369,
+          "street": "Rechter Rottekade"
+        },
+        {
+          "id": "node/13764009806",
+          "lat": 51.918707,
+          "lon": 4.48397,
+          "street": "Blaak"
+        },
+        {
+          "id": "node/4905458034",
+          "lat": 51.921739,
+          "lon": 4.488132,
+          "street": "Botersloot"
+        },
+        {
+          "id": "node/4780060732",
+          "lat": 51.919135,
+          "lon": 4.469438,
+          "street": "Gouvernedwarsstraat"
+        },
+        {
+          "id": "node/13282950009",
+          "lat": 51.921922,
+          "lon": 4.489305,
+          "street": "Pannekoekstraat"
+        },
+        {
+          "id": "node/8562077298",
+          "lat": 51.924794,
+          "lon": 4.489986,
+          "street": "Herman Robbersstraat"
+        },
+        {
+          "id": "node/12748722073",
+          "lat": 51.932184,
+          "lon": 4.479138,
+          "street": "Burgemeester Roosstraat"
+        },
+        {
+          "id": "node/4708014576",
+          "lat": 51.916769,
+          "lon": 4.480678,
+          "street": "Brandersplaats"
+        },
+        {
+          "id": "node/12522472661",
+          "lat": 51.922289,
+          "lon": 4.465367,
+          "street": "Coolsestraat"
+        },
+        {
+          "id": "node/4770367335",
+          "lat": 51.916518,
+          "lon": 4.479859,
+          "street": "Schiedamse Vest"
+        },
+        {
+          "id": "node/10911746337",
+          "lat": 51.929997,
+          "lon": 4.468372,
+          "street": "Walenburgerweg"
+        },
+        {
+          "id": "node/12478189125",
+          "lat": 51.91814,
+          "lon": 4.469491,
+          "street": "Gouvernestraat"
+        },
+        {
+          "id": "node/6786813281",
+          "lat": 51.916183,
+          "lon": 4.477815,
+          "street": "Kromme Elleboog"
+        },
+        {
+          "id": "node/6789409964",
+          "lat": 51.916264,
+          "lon": 4.474353,
+          "street": "Westblaak"
+        },
+        {
+          "id": "node/663593146",
+          "lat": 51.927357,
+          "lon": 4.464736,
+          "street": "Baljuwstraat"
+        },
+        {
+          "id": "node/4770367329",
+          "lat": 51.915789,
+          "lon": 4.478527,
+          "street": "William Boothlaan"
+        },
+        {
+          "id": "node/12522477938",
+          "lat": 51.922371,
+          "lon": 4.463979,
+          "street": "Zijdewindestraat"
         }
       ],
-      "updatedAt": "2026-08-23T04:14:07.218Z"
+      "updatedAt": "2026-09-03T17:01:16.494Z"
     },
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:14:07.928Z"
+      "updatedAt": "2026-09-03T17:01:16.932Z"
     },
     "libraries": {
       "count": 118,
@@ -1555,7 +1893,7 @@
           "lon": 4.479849
         }
       ],
-      "updatedAt": "2026-08-23T04:14:09.004Z"
+      "updatedAt": "2026-09-03T17:01:17.607Z"
     },
     "outdoor-gyms": {
       "count": 39,
@@ -1574,7 +1912,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-23T04:14:10.414Z"
+      "updatedAt": "2026-09-03T17:01:18.800Z"
     },
     "camp-sites": {
       "count": 6,
@@ -1619,12 +1957,19 @@
           "lon": 4.536765
         }
       ],
-      "updatedAt": "2026-08-23T04:14:11.081Z"
+      "updatedAt": "2026-09-03T17:01:19.446Z"
     },
     "shelters": {
       "count": 1,
-      "pois": [],
-      "updatedAt": "2026-08-23T04:14:12.750Z"
+      "pois": [
+        {
+          "id": "node/9003435717",
+          "lat": 51.943918,
+          "lon": 4.573205,
+          "street": "Capelseweg"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:01:21.160Z"
     },
     "rest-areas": {
       "count": 34,
@@ -1642,12 +1987,12 @@
           "lon": 4.462262
         }
       ],
-      "updatedAt": "2026-08-23T04:14:13.467Z"
+      "updatedAt": "2026-09-03T17:01:21.804Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:14:14.063Z"
+      "updatedAt": "2026-09-03T17:01:22.201Z"
     },
     "post-offices": {
       "count": 7,
@@ -1698,17 +2043,17 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:14:14.538Z"
+      "updatedAt": "2026-09-03T17:01:22.640Z"
     },
     "showers": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-23T04:14:14.979Z"
+      "updatedAt": "2026-09-03T17:01:23.028Z"
     },
     "fireplaces": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-23T04:14:16.085Z"
+      "updatedAt": "2026-09-03T17:01:24.148Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1716,7 +2061,7 @@
       "updatedAt": "2026-08-17T04:03:51.891Z"
     },
     "benches": {
-      "count": 3510,
+      "count": 3517,
       "pois": [
         {
           "id": "node/6201852283",
@@ -1737,12 +2082,61 @@
           "lon": 4.38582
         }
       ],
-      "updatedAt": "2026-08-23T04:14:18.515Z"
+      "updatedAt": "2026-09-03T17:01:26.838Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:15.039Z"
+    },
+    "bicycle-repair": {
+      "count": 9,
+      "pois": [
+        {
+          "id": "node/4826002418",
+          "name": "Bike Service",
+          "lat": 51.923876,
+          "lon": 4.479361
+        },
+        {
+          "id": "node/4822756826",
+          "lat": 51.919389,
+          "lon": 4.50461,
+          "street": "Maasboulevard"
+        },
+        {
+          "id": "node/13954504122",
+          "lat": 51.942222,
+          "lon": 4.479824,
+          "street": "Ceintuurbaan"
+        },
+        {
+          "id": "node/4790671687",
+          "lat": 51.897371,
+          "lon": 4.469024,
+          "street": "Maastunnel"
+        },
+        {
+          "id": "node/9528141202",
+          "lat": 51.955614,
+          "lon": 4.515513,
+          "fee": "yes",
+          "street": "Molenlaan"
+        },
+        {
+          "id": "node/4866336712",
+          "lat": 51.880813,
+          "lon": 4.500324,
+          "street": "Vaanweg"
+        },
+        {
+          "id": "node/12998630205",
+          "lat": 51.963203,
+          "lon": 4.55377,
+          "street": "Spittelerplaats"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:01:25.720Z"
     }
   }
 }

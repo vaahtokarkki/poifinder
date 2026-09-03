@@ -1,10 +1,19 @@
 {
   "city": "luxembourg",
-  "generatedAt": "2026-08-23T04:17:00.762Z",
+  "generatedAt": "2026-09-03T17:04:20.658Z",
   "categories": {
     "toilets": {
       "count": 82,
       "pois": [
+        {
+          "id": "node/11985168963",
+          "lat": 49.611224,
+          "lon": 6.130178,
+          "openingHours": "07:00-22:30",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Cercle municipal"
+        },
         {
           "id": "way/48994767",
           "name": "Musée national d'histore et d'art Luxembourg",
@@ -14,6 +23,21 @@
           "openingHours": "Fr-We 10:00-18:00; Th 10:00-20:00",
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "node/14022329989",
+          "lat": 49.610504,
+          "lon": 6.136198,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Jardin du Cloître"
+        },
+        {
+          "id": "node/9892156818",
+          "lat": 49.611002,
+          "lon": 6.137582,
+          "fee": "no",
+          "context": "Salle Robert Krieps"
         },
         {
           "id": "node/6312652559",
@@ -30,12 +54,24 @@
           "context": "Total Strassen"
         },
         {
+          "id": "node/6693568565",
+          "lat": 49.618513,
+          "lon": 6.09576,
+          "context": "Boomerang Shopping"
+        },
+        {
           "id": "way/645974313",
           "name": "Cloche d’Or Shopping Center",
           "lat": 49.582789,
           "lon": 6.125177,
           "openingHours": "Mo-Th,Sa 08:00-20:00; Fr 08:00-21:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/4337492490",
+          "lat": 49.63355,
+          "lon": 6.168775,
+          "context": "Kirchberg Shopping Center"
         },
         {
           "id": "way/26452567",
@@ -47,14 +83,68 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/9937733767",
+          "lat": 49.63573,
+          "lon": 6.175148,
+          "wheelchair": "limited",
+          "context": "Pôle d'Échange Serra"
+        },
+        {
+          "id": "node/1409008443",
+          "lat": 49.617924,
+          "lon": 6.070303,
+          "openingHours": "07:00-19:00",
+          "context": "École fondamentale Ben Heyart"
+        },
+        {
+          "id": "node/1491324166",
+          "lat": 49.601621,
+          "lon": 6.065582,
+          "wheelchair": "yes",
+          "context": "Centre Commercial City Concorde"
+        },
+        {
+          "id": "node/5077905461",
+          "lat": 49.622949,
+          "lon": 6.052608,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Centre Commercial Belle-Étoile"
+        },
+        {
+          "id": "node/13929198670",
+          "lat": 49.610186,
+          "lon": 6.050058,
+          "context": "Administration Communale de Bertrange"
+        },
+        {
           "id": "node/5574189979",
           "lat": 49.667156,
           "lon": 6.136277,
           "fee": "no",
           "context": "Walfer Shopping Center"
+        },
+        {
+          "id": "node/9423585361",
+          "lat": 49.59728,
+          "lon": 6.215874,
+          "context": "Kuehne + Nagel, Warehouse I"
+        },
+        {
+          "id": "node/9339552803",
+          "lat": 49.656544,
+          "lon": 6.079174,
+          "wheelchair": "no",
+          "context": "Christ Sauveur"
+        },
+        {
+          "id": "node/12229896035",
+          "lat": 49.6326,
+          "lon": 6.213556,
+          "context": "Terminal B"
         }
       ],
-      "updatedAt": "2026-08-23T04:16:42.788Z"
+      "updatedAt": "2026-09-03T17:03:55.186Z"
     },
     "drinking-water": {
       "count": 65,
@@ -85,7 +175,7 @@
           "lon": 6.025955
         }
       ],
-      "updatedAt": "2026-08-23T04:16:44.274Z"
+      "updatedAt": "2026-09-03T17:03:58.168Z"
     },
     "playgrounds": {
       "count": 324,
@@ -279,7 +369,7 @@
           "lon": 6.17751
         }
       ],
-      "updatedAt": "2026-08-23T04:16:45.067Z"
+      "updatedAt": "2026-09-03T17:03:59.248Z"
     },
     "parking": {
       "count": 2198,
@@ -501,7 +591,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:16:46.088Z"
+      "updatedAt": "2026-09-03T17:04:00.360Z"
     },
     "charging-stations": {
       "count": 134,
@@ -715,7 +805,7 @@
           "lon": 6.134196
         }
       ],
-      "updatedAt": "2026-08-23T04:16:46.564Z"
+      "updatedAt": "2026-09-03T17:04:00.822Z"
     },
     "gas-stations": {
       "count": 43,
@@ -750,12 +840,6 @@
           "name": "Esso",
           "lat": 49.599578,
           "lon": 6.118861
-        },
-        {
-          "id": "node/729617914",
-          "name": "Goedert",
-          "lat": 49.597704,
-          "lon": 6.117343
         },
         {
           "id": "way/642662325",
@@ -839,10 +923,10 @@
           "lon": 6.118872
         }
       ],
-      "updatedAt": "2026-08-23T04:16:47.084Z"
+      "updatedAt": "2026-09-03T17:04:01.343Z"
     },
     "ice-cream": {
-      "count": 12,
+      "count": 11,
       "pois": [
         {
           "id": "node/12077098095",
@@ -859,12 +943,6 @@
           "lon": 6.129978,
           "address": "Place d'Armes 1",
           "wheelchair": "yes"
-        },
-        {
-          "id": "way/217673993",
-          "name": "Le Pavillon",
-          "lat": 49.610862,
-          "lon": 6.123721
         },
         {
           "id": "node/6605270800",
@@ -915,7 +993,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:16:47.532Z"
+      "updatedAt": "2026-09-03T17:04:01.778Z"
     },
     "dog-parks": {
       "count": 12,
@@ -929,12 +1007,12 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:16:47.959Z"
+      "updatedAt": "2026-09-03T17:04:02.173Z"
     },
     "picnic-spots": {
       "count": 302,
       "pois": [],
-      "updatedAt": "2026-08-23T04:16:50.291Z"
+      "updatedAt": "2026-09-03T17:04:04.565Z"
     },
     "viewpoints": {
       "count": 78,
@@ -1034,12 +1112,12 @@
           "lon": 6.234584
         }
       ],
-      "updatedAt": "2026-08-23T04:16:50.866Z"
+      "updatedAt": "2026-09-03T17:04:05.201Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:16:51.333Z"
+      "updatedAt": "2026-09-03T17:04:05.645Z"
     },
     "atms": {
       "count": 111,
@@ -1144,7 +1222,7 @@
           "lon": 6.048315
         }
       ],
-      "updatedAt": "2026-08-23T04:16:51.852Z"
+      "updatedAt": "2026-09-03T17:04:06.288Z"
     },
     "post-boxes": {
       "count": 186,
@@ -1156,24 +1234,275 @@
           "lon": 6.13153
         },
         {
-          "id": "node/5745583326",
-          "name": "Post Packup",
-          "lat": 49.601301,
-          "lon": 6.063237,
-          "openingHours": "Mo-Su 00:00-23:59"
+          "id": "node/960584509",
+          "lat": 49.612763,
+          "lon": 6.131237,
+          "street": "Place du Théâtre"
         },
         {
-          "id": "node/965438954",
-          "name": "Gemeng",
-          "lat": 49.567908,
-          "lon": 6.063664
+          "id": "node/967840243",
+          "lat": 49.613172,
+          "lon": 6.129741,
+          "street": "Rue des Capucins"
+        },
+        {
+          "id": "node/1788525492",
+          "lat": 49.609467,
+          "lon": 6.132646,
+          "street": "Rue de la Congrégation"
+        },
+        {
+          "id": "node/924018974",
+          "lat": 49.61206,
+          "lon": 6.128178,
+          "street": "Grand-Rue"
+        },
+        {
+          "id": "node/924018971",
+          "lat": 49.613338,
+          "lon": 6.127882,
+          "street": "Rue des Bains"
+        },
+        {
+          "id": "node/920571929",
+          "lat": 49.608088,
+          "lon": 6.133414,
+          "street": "Plateau du Saint-Esprit"
+        },
+        {
+          "id": "node/11923389740",
+          "lat": 49.61503,
+          "lon": 6.133907,
+          "street": "Rue Vauban"
+        },
+        {
+          "id": "node/5001364128",
+          "lat": 49.612337,
+          "lon": 6.125968,
+          "street": "Boulevard Royal"
+        },
+        {
+          "id": "node/920571938",
+          "lat": 49.608435,
+          "lon": 6.135457,
+          "street": "Op der Bréck"
+        },
+        {
+          "id": "node/12097578484",
+          "lat": 49.615705,
+          "lon": 6.131149,
+          "street": "Rue Laurent Menager"
+        },
+        {
+          "id": "node/922428901",
+          "lat": 49.612504,
+          "lon": 6.123989,
+          "street": "Avenue Émile Reuter"
+        },
+        {
+          "id": "node/922428916",
+          "lat": 49.606689,
+          "lon": 6.128662,
+          "street": "Rue Goethe"
+        },
+        {
+          "id": "node/9909674529",
+          "lat": 49.607845,
+          "lon": 6.142083,
+          "street": "Boulevard General George S. Patton"
+        },
+        {
+          "id": "node/967840269",
+          "lat": 49.613508,
+          "lon": 6.143739,
+          "street": "Montée de Clausen"
+        },
+        {
+          "id": "node/534874985",
+          "lat": 49.607368,
+          "lon": 6.121505,
+          "street": "Avenue Marie-Thérèse"
+        },
+        {
+          "id": "node/939529111",
+          "lat": 49.60962,
+          "lon": 6.119718,
+          "street": "Avenue Monterey"
+        },
+        {
+          "id": "node/9339552801",
+          "lat": 49.613586,
+          "lon": 6.119253,
+          "street": "Rue de Rollingergrund"
+        },
+        {
+          "id": "node/1802822059",
+          "lat": 49.611598,
+          "lon": 6.118195,
+          "street": "Rue Nicolas Welter"
+        },
+        {
+          "id": "node/408773517",
+          "lat": 49.605467,
+          "lon": 6.142238,
+          "street": "Rue Émile Mayrisch"
+        },
+        {
+          "id": "node/2349824662",
+          "lat": 49.619934,
+          "lon": 6.126099,
+          "street": "Rue des Glacis"
+        },
+        {
+          "id": "node/1401567270",
+          "lat": 49.601829,
+          "lon": 6.129942,
+          "street": "Rue Glesener"
+        },
+        {
+          "id": "node/447001390",
+          "lat": 49.619866,
+          "lon": 6.123012,
+          "street": "Avenue Victor Hugo"
+        },
+        {
+          "id": "node/534868650",
+          "lat": 49.606775,
+          "lon": 6.118223,
+          "street": "Avenue Guillaume"
+        },
+        {
+          "id": "node/528191433",
+          "lat": 49.610121,
+          "lon": 6.115595,
+          "street": "Rue des Dahlias"
+        },
+        {
+          "id": "node/791269313",
+          "lat": 49.619448,
+          "lon": 6.120621,
+          "street": "Avenue Pasteur"
+        },
+        {
+          "id": "node/528191885",
+          "lat": 49.608707,
+          "lon": 6.115782,
+          "street": "Avenue du dix septembre"
+        },
+        {
+          "id": "node/447001378",
+          "lat": 49.621964,
+          "lon": 6.12694,
+          "street": "Rue des Cerisiers"
+        },
+        {
+          "id": "node/4324784661",
+          "lat": 49.601163,
+          "lon": 6.137807,
+          "street": "Rue Pierre Hentges"
+        },
+        {
+          "id": "node/4750972247",
+          "lat": 49.600568,
+          "lon": 6.128576,
+          "street": "Rue de Strasbourg"
         }
       ],
-      "updatedAt": "2026-08-23T04:16:52.377Z"
+      "updatedAt": "2026-09-03T17:04:08.246Z"
     },
     "recycling": {
       "count": 87,
       "pois": [
+        {
+          "id": "node/960584490",
+          "lat": 49.612778,
+          "lon": 6.13149,
+          "street": "Rue du Nord"
+        },
+        {
+          "id": "node/1412443585",
+          "lat": 49.615574,
+          "lon": 6.133041,
+          "street": "Rue Vauban"
+        },
+        {
+          "id": "node/445266227",
+          "lat": 49.613264,
+          "lon": 6.13827,
+          "street": "Rue du Fort Olisy"
+        },
+        {
+          "id": "node/1812353694",
+          "lat": 49.608083,
+          "lon": 6.138536,
+          "street": "Bisserweg"
+        },
+        {
+          "id": "node/446293774",
+          "lat": 49.615748,
+          "lon": 6.122342,
+          "street": "Avenue de la Faïencerie"
+        },
+        {
+          "id": "node/11917811554",
+          "lat": 49.607906,
+          "lon": 6.142164,
+          "street": "Boulevard General George S. Patton"
+        },
+        {
+          "id": "node/2262719385",
+          "lat": 49.60699,
+          "lon": 6.12116,
+          "street": "Avenue Marie-Thérèse"
+        },
+        {
+          "id": "node/540212530",
+          "lat": 49.620791,
+          "lon": 6.132414,
+          "street": "Sichebréck"
+        },
+        {
+          "id": "node/9971371693",
+          "lat": 49.601239,
+          "lon": 6.13755,
+          "street": "Rue des Gaulois"
+        },
+        {
+          "id": "node/9182481491",
+          "lat": 49.60112,
+          "lon": 6.137297,
+          "street": "Rue Pierre Hentges"
+        },
+        {
+          "id": "node/5005456614",
+          "lat": 49.600769,
+          "lon": 6.128156,
+          "street": "Place de Strasbourg"
+        },
+        {
+          "id": "node/496350266",
+          "lat": 49.618206,
+          "lon": 6.117369,
+          "street": "Rue Melchior Bourg-Gemen"
+        },
+        {
+          "id": "node/933980272",
+          "lat": 49.616749,
+          "lon": 6.1154,
+          "street": "Rue de Rollingergrund"
+        },
+        {
+          "id": "node/3131037954",
+          "lat": 49.609,
+          "lon": 6.151022,
+          "street": "Val de Hamm"
+        },
+        {
+          "id": "node/2371138345",
+          "lat": 49.623888,
+          "lon": 6.137433,
+          "street": "Rue Jean-Pierre Sauvage"
+        },
         {
           "id": "way/23283704",
           "name": "Recycling Center",
@@ -1182,31 +1511,96 @@
           "openingHours": "Mo-Fr 07:00-19:30; Sa 09:00-16:00"
         },
         {
-          "id": "way/160615388",
-          "name": "OEKO-CENTER HESPER",
-          "lat": 49.582926,
-          "lon": 6.180512
+          "id": "node/2026249629",
+          "lat": 49.600139,
+          "lon": 6.143907,
+          "street": "Rue Auguste Charles"
         },
         {
-          "id": "way/120084683",
-          "name": "Parc de Recyclage",
-          "lat": 49.664492,
-          "lon": 6.136014,
-          "openingHours": "Mo 08:00-12:00, 13:00-17:00, Sa 08:00-12:00"
+          "id": "node/929208417",
+          "lat": 49.614788,
+          "lon": 6.110794,
+          "street": "Rue du Stade"
         },
         {
-          "id": "way/782848350",
-          "name": "Centre de Recyclage Steinsel",
-          "lat": 49.678726,
-          "lon": 6.13229
+          "id": "node/2670277253",
+          "lat": 49.613915,
+          "lon": 6.153961,
+          "street": "Rue de Trèves"
+        },
+        {
+          "id": "node/964971826",
+          "lat": 49.604365,
+          "lon": 6.112461,
+          "street": "Rue de Bragance"
+        },
+        {
+          "id": "node/1788525459",
+          "lat": 49.599092,
+          "lon": 6.119795,
+          "street": "Rue de Hollerich"
+        },
+        {
+          "id": "node/2423572541",
+          "lat": 49.596961,
+          "lon": 6.135611,
+          "street": "Rue des Ardennes"
+        },
+        {
+          "id": "node/1835509835",
+          "lat": 49.626596,
+          "lon": 6.137562,
+          "street": "Rue de Laroche"
+        },
+        {
+          "id": "node/930005761",
+          "lat": 49.608609,
+          "lon": 6.107964,
+          "street": "Place de Liège"
+        },
+        {
+          "id": "node/937185704",
+          "lat": 49.598517,
+          "lon": 6.118112,
+          "street": "Route d'Esch"
+        },
+        {
+          "id": "node/564804497",
+          "lat": 49.628352,
+          "lon": 6.135825,
+          "street": "Rue de Kirchberg"
+        },
+        {
+          "id": "node/956429337",
+          "lat": 49.60629,
+          "lon": 6.106584,
+          "street": "Avenue du 10 septembre"
+        },
+        {
+          "id": "node/1718530056",
+          "lat": 49.627909,
+          "lon": 6.122083,
+          "street": "Rue de Mühlenbach"
+        },
+        {
+          "id": "node/3818836414",
+          "lat": 49.611133,
+          "lon": 6.104096,
+          "street": "Boulevard Grande-Duchesse Joséphine-Charlotte"
+        },
+        {
+          "id": "node/1716406287",
+          "lat": 49.615902,
+          "lon": 6.158959,
+          "street": "Boulevard Jules Salentiny"
         }
       ],
-      "updatedAt": "2026-08-23T04:16:53.731Z"
+      "updatedAt": "2026-09-03T17:04:10.578Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:16:54.146Z"
+      "updatedAt": "2026-09-03T17:04:10.971Z"
     },
     "libraries": {
       "count": 28,
@@ -1306,7 +1700,7 @@
           "lon": 6.227419
         }
       ],
-      "updatedAt": "2026-08-23T04:16:54.622Z"
+      "updatedAt": "2026-09-03T17:04:11.421Z"
     },
     "outdoor-gyms": {
       "count": 75,
@@ -1548,7 +1942,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:16:55.617Z"
+      "updatedAt": "2026-09-03T17:04:12.407Z"
     },
     "camp-sites": {
       "count": 2,
@@ -1566,12 +1960,12 @@
           "lon": 6.158991
         }
       ],
-      "updatedAt": "2026-08-23T04:16:56.078Z"
+      "updatedAt": "2026-09-03T17:04:12.920Z"
     },
     "shelters": {
       "count": 11,
       "pois": [],
-      "updatedAt": "2026-08-23T04:16:57.167Z"
+      "updatedAt": "2026-09-03T17:04:14.475Z"
     },
     "rest-areas": {
       "count": 7,
@@ -1589,12 +1983,12 @@
           "lon": 6.117235
         }
       ],
-      "updatedAt": "2026-08-23T04:16:57.611Z"
+      "updatedAt": "2026-09-03T17:04:14.985Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:16:58.019Z"
+      "updatedAt": "2026-09-03T17:04:15.427Z"
     },
     "post-offices": {
       "count": 14,
@@ -1684,7 +2078,7 @@
           "lon": 6.078784
         }
       ],
-      "updatedAt": "2026-08-23T04:16:58.494Z"
+      "updatedAt": "2026-09-03T17:04:15.901Z"
     },
     "showers": {
       "count": 2,
@@ -1699,12 +2093,12 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:16:58.897Z"
+      "updatedAt": "2026-09-03T17:04:16.245Z"
     },
     "fireplaces": {
       "count": 8,
       "pois": [],
-      "updatedAt": "2026-08-23T04:16:59.819Z"
+      "updatedAt": "2026-09-03T17:04:17.294Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1712,7 +2106,7 @@
       "updatedAt": "2026-08-17T04:04:05.164Z"
     },
     "benches": {
-      "count": 2586,
+      "count": 2588,
       "pois": [
         {
           "id": "node/8779283121",
@@ -1727,12 +2121,109 @@
           "lon": 6.096105
         }
       ],
-      "updatedAt": "2026-08-23T04:17:00.660Z"
+      "updatedAt": "2026-09-03T17:04:20.557Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:17.089Z"
+    },
+    "bicycle-repair": {
+      "count": 20,
+      "pois": [
+        {
+          "id": "node/2837956000",
+          "lat": 49.610902,
+          "lon": 6.131706,
+          "wheelchair": "limited",
+          "fee": "no",
+          "street": "Place Guillaume II"
+        },
+        {
+          "id": "node/1320916894",
+          "lat": 49.616573,
+          "lon": 6.126111,
+          "fee": "no",
+          "street": "Rond-Point Robert Schuman"
+        },
+        {
+          "id": "node/4940081714",
+          "lat": 49.604886,
+          "lon": 6.133395,
+          "fee": "no",
+          "street": "Pont Viaduc"
+        },
+        {
+          "id": "node/626359907",
+          "lat": 49.608706,
+          "lon": 6.15092,
+          "openingHours": "Mo-Su 07:00-23:00",
+          "street": "Rue de Pulvermühl"
+        },
+        {
+          "id": "node/3197587156",
+          "name": "mPump",
+          "lat": 49.598277,
+          "lon": 6.132943,
+          "fee": "no"
+        },
+        {
+          "id": "node/11665166736",
+          "lat": 49.604489,
+          "lon": 6.111799,
+          "fee": "no",
+          "street": "Rue de Bragance"
+        },
+        {
+          "id": "node/11507033345",
+          "lat": 49.605758,
+          "lon": 6.100065,
+          "fee": "no",
+          "street": "Route de Longwy"
+        },
+        {
+          "id": "node/5725495525",
+          "lat": 49.610688,
+          "lon": 6.071917,
+          "fee": "no",
+          "street": "Rue de l'Industrie"
+        },
+        {
+          "id": "node/6497368700",
+          "lat": 49.573219,
+          "lon": 6.157151,
+          "fee": "no",
+          "street": "Route de Thionville"
+        },
+        {
+          "id": "node/6996160833",
+          "name": "Station vélo Hesperange, réparation - lavage",
+          "lat": 49.572637,
+          "lon": 6.157029,
+          "fee": "no"
+        },
+        {
+          "id": "node/13142706139",
+          "lat": 49.659526,
+          "lon": 6.130158,
+          "street": "Piste cyclable de l'Alzette"
+        },
+        {
+          "id": "node/8863882219",
+          "name": "Station vélo Mamer, réparation - lavage",
+          "lat": 49.623589,
+          "lon": 6.024649,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/8349336554",
+          "lat": 49.649792,
+          "lon": 6.225746,
+          "street": "Chareli"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:04:19.446Z"
     }
   }
 }

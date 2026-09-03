@@ -1,16 +1,62 @@
 {
   "city": "dallas",
-  "generatedAt": "2026-08-23T04:36:45.834Z",
+  "generatedAt": "2026-09-03T17:30:24.903Z",
   "categories": {
     "toilets": {
       "count": 96,
       "pois": [
+        {
+          "id": "node/12513604611",
+          "lat": 32.779188,
+          "lon": -96.799745,
+          "wheelchair": "yes",
+          "context": "Two AT&T Plaza"
+        },
+        {
+          "id": "node/11247540651",
+          "lat": 32.777365,
+          "lon": -96.790052,
+          "wheelchair": "yes",
+          "context": "The Market Building"
+        },
+        {
+          "id": "node/13323523325",
+          "lat": 32.782463,
+          "lon": -96.795352,
+          "context": "Pacific Place"
+        },
+        {
+          "id": "node/13370724895",
+          "lat": 32.784326,
+          "lon": -96.800353,
+          "wheelchair": "yes",
+          "context": "Ross Tower"
+        },
+        {
+          "id": "node/12369868435",
+          "lat": 32.77599,
+          "lon": -96.807511,
+          "wheelchair": "yes",
+          "context": "EBJ Union Station"
+        },
+        {
+          "id": "node/14101327891",
+          "lat": 32.775812,
+          "lon": -96.80945,
+          "context": "Hyatt Regency Dallas"
+        },
         {
           "id": "way/1044038159",
           "name": "Town Hearth",
           "lat": 32.792321,
           "lon": -96.822125,
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/13995820330",
+          "lat": 32.776688,
+          "lon": -96.760848,
+          "context": "Band Shell"
         },
         {
           "id": "way/465272723",
@@ -104,17 +150,63 @@
           "address": "West Mockingbird Lane 3130",
           "openingHours": "Mo-Th 07:00-21:00; Fr,Sa 07:00-22:00; Su 08:00-21:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/6996858643",
+          "lat": 32.84405,
+          "lon": -96.850486,
+          "context": "Baggage Claim"
+        },
+        {
+          "id": "node/6996858629",
+          "lat": 32.845301,
+          "lon": -96.849742,
+          "context": "Terminal Gates 1-20"
+        },
+        {
+          "id": "node/10664249368",
+          "lat": 32.779223,
+          "lon": -96.905347,
+          "context": "Bernal/Singleton Transfer Location"
+        },
+        {
+          "id": "node/11461151568",
+          "lat": 32.867686,
+          "lon": -96.772029,
+          "context": "NorthPark Center"
+        },
+        {
+          "id": "node/9634551530",
+          "lat": 32.840804,
+          "lon": -96.715339,
+          "wheelchair": "yes",
+          "context": "White Rock Bath House Cultural Center"
+        },
+        {
+          "id": "node/13124251222",
+          "lat": 32.703772,
+          "lon": -96.705326,
+          "openingHours": "Tu-Fr 09:00-16:00; Sa 08:00-16:00; Su 09:00-16:00",
+          "context": "Visitor Center"
         }
       ],
-      "updatedAt": "2026-08-21T04:01:32.981Z"
+      "updatedAt": "2026-09-03T17:30:01.151Z"
     },
     "drinking-water": {
       "count": 216,
-      "pois": [],
-      "updatedAt": "2026-08-21T04:01:33.638Z"
+      "pois": [
+        {
+          "id": "node/13684057077",
+          "lat": 32.782046,
+          "lon": -96.786891,
+          "fee": "no",
+          "context": "Barry Annino Bark Park"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:30:03.047Z"
     },
     "playgrounds": {
-      "count": 261,
+      "count": 262,
       "pois": [
         {
           "id": "way/528522703",
@@ -133,19 +225,12 @@
           "name": "St. Francis Park Playground",
           "lat": 32.810416,
           "lon": -96.708907
-        },
-        {
-          "id": "node/13887660699",
-          "name": "Cheeky Monkey",
-          "lat": 32.834874,
-          "lon": -96.70238,
-          "address": "North Buckner Boulevard 1152"
         }
       ],
-      "updatedAt": "2026-08-21T04:01:34.298Z"
+      "updatedAt": "2026-09-03T17:30:03.967Z"
     },
     "parking": {
-      "count": 1818,
+      "count": 1821,
       "pois": [
         {
           "id": "way/27129978",
@@ -350,10 +435,10 @@
           "lon": -96.777154
         }
       ],
-      "updatedAt": "2026-08-21T04:01:35.096Z"
+      "updatedAt": "2026-09-03T17:30:05.554Z"
     },
     "charging-stations": {
-      "count": 13,
+      "count": 17,
       "pois": [
         {
           "id": "node/11595635514",
@@ -385,7 +470,7 @@
           "lon": -96.847388
         }
       ],
-      "updatedAt": "2026-08-21T04:01:35.511Z"
+      "updatedAt": "2026-09-03T17:30:06.093Z"
     },
     "gas-stations": {
       "count": 218,
@@ -594,7 +679,7 @@
           "lon": -96.681949
         }
       ],
-      "updatedAt": "2026-08-21T04:01:36.041Z"
+      "updatedAt": "2026-09-03T17:30:06.748Z"
     },
     "ice-cream": {
       "count": 30,
@@ -797,7 +882,7 @@
           "address": "North Ira Avenue 210"
         }
       ],
-      "updatedAt": "2026-08-21T04:01:36.416Z"
+      "updatedAt": "2026-09-03T17:30:07.328Z"
     },
     "dog-parks": {
       "count": 22,
@@ -866,7 +951,7 @@
           "lon": -96.725396
         }
       ],
-      "updatedAt": "2026-08-21T04:01:36.771Z"
+      "updatedAt": "2026-09-03T17:30:07.761Z"
     },
     "picnic-spots": {
       "count": 396,
@@ -884,7 +969,7 @@
           "lon": -96.865336
         }
       ],
-      "updatedAt": "2026-08-21T04:01:37.335Z"
+      "updatedAt": "2026-09-03T17:30:09.182Z"
     },
     "viewpoints": {
       "count": 20,
@@ -932,12 +1017,12 @@
           "lon": -96.724859
         }
       ],
-      "updatedAt": "2026-08-21T04:01:37.786Z"
+      "updatedAt": "2026-09-03T17:30:10.000Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:01:38.184Z"
+      "updatedAt": "2026-09-03T17:30:10.506Z"
     },
     "atms": {
       "count": 50,
@@ -1047,11 +1132,47 @@
           "address": "North Buckner Boulevard 1134"
         }
       ],
-      "updatedAt": "2026-08-21T04:01:38.634Z"
+      "updatedAt": "2026-09-03T17:30:11.158Z"
     },
     "post-boxes": {
       "count": 34,
       "pois": [
+        {
+          "id": "node/4602938570",
+          "lat": 32.770212,
+          "lon": -96.794614,
+          "street": "Wall Street"
+        },
+        {
+          "id": "node/5844877905",
+          "lat": 32.777448,
+          "lon": -96.807277,
+          "street": "Jackson Street"
+        },
+        {
+          "id": "node/13112374967",
+          "lat": 32.779862,
+          "lon": -96.807347,
+          "street": "North Record Street"
+        },
+        {
+          "id": "node/13067723156",
+          "lat": 32.7813,
+          "lon": -96.806939,
+          "street": "Ross Avenue"
+        },
+        {
+          "id": "node/11609372900",
+          "lat": 32.785176,
+          "lon": -96.807356,
+          "street": "Broom Street"
+        },
+        {
+          "id": "node/13259854563",
+          "lat": 32.7748,
+          "lon": -96.78074,
+          "street": "Hickory Street"
+        },
         {
           "id": "node/2643329677",
           "name": "Dallas Post Office – Juanita Craft Station",
@@ -1075,6 +1196,24 @@
           "name": "Dallas Post Office – Lakewood Station",
           "lat": 32.812385,
           "lon": -96.756654
+        },
+        {
+          "id": "node/13099912926",
+          "lat": 32.821958,
+          "lon": -96.831995,
+          "street": "Denton Drive"
+        },
+        {
+          "id": "node/13166820180",
+          "lat": 32.722846,
+          "lon": -96.814318,
+          "street": "South Marsalis Avenue"
+        },
+        {
+          "id": "node/13101218650",
+          "lat": 32.832304,
+          "lon": -96.813068,
+          "street": "Lomo Alto Drive"
         },
         {
           "id": "node/600228540",
@@ -1101,6 +1240,18 @@
           "lon": -96.768694
         },
         {
+          "id": "node/13049373023",
+          "lat": 32.851739,
+          "lon": -96.76939,
+          "street": "Greenville Avenue"
+        },
+        {
+          "id": "node/10288922092",
+          "lat": 32.856966,
+          "lon": -96.808757,
+          "street": "Southwestern Boulevard"
+        },
+        {
           "id": "node/13485043701",
           "name": "USPS",
           "lat": 32.760423,
@@ -1120,11 +1271,35 @@
           "lon": -96.699888
         }
       ],
-      "updatedAt": "2026-08-21T04:01:39.081Z"
+      "updatedAt": "2026-09-03T17:30:12.402Z"
     },
     "recycling": {
       "count": 72,
       "pois": [
+        {
+          "id": "node/10220254999",
+          "lat": 32.784189,
+          "lon": -96.79254,
+          "street": "North Pearl Street"
+        },
+        {
+          "id": "node/10220254994",
+          "lat": 32.784437,
+          "lon": -96.791786,
+          "street": "North Central Expressway"
+        },
+        {
+          "id": "node/5107434713",
+          "lat": 32.807759,
+          "lon": -96.800989,
+          "street": "Travis Street"
+        },
+        {
+          "id": "node/11912644434",
+          "lat": 32.808232,
+          "lon": -96.74544,
+          "street": "Santa Fe Trail"
+        },
         {
           "id": "way/465038777",
           "name": "Recycle Revolution",
@@ -1132,6 +1307,30 @@
           "lon": -96.851083,
           "address": "Forest Park Road 6835",
           "openingHours": "Mo-Fr 07:00-15:00; Sa-Su off"
+        },
+        {
+          "id": "node/11965369847",
+          "lat": 32.818653,
+          "lon": -96.733114,
+          "street": "White Rock Road"
+        },
+        {
+          "id": "node/12020990742",
+          "lat": 32.815023,
+          "lon": -96.728329,
+          "street": "SoPac Trail"
+        },
+        {
+          "id": "node/12020990752",
+          "lat": 32.814129,
+          "lon": -96.727162,
+          "street": "White Rock Lake Trail"
+        },
+        {
+          "id": "node/13260568902",
+          "lat": 32.849566,
+          "lon": -96.768071,
+          "context": "Central Market - H-E-B"
         },
         {
           "id": "node/6296245608",
@@ -1144,14 +1343,80 @@
           "name": "FMI Recycling",
           "lat": 32.718327,
           "lon": -96.869092
+        },
+        {
+          "id": "node/13949723698",
+          "lat": 32.830849,
+          "lon": -96.714962,
+          "street": "Winfrey Point Way"
+        },
+        {
+          "id": "node/13754378881",
+          "lat": 32.804374,
+          "lon": -96.697396,
+          "street": "Hunnicut Road"
+        },
+        {
+          "id": "node/13949723480",
+          "lat": 32.835382,
+          "lon": -96.714525,
+          "street": "East Lawther Drive"
+        },
+        {
+          "id": "node/13949723567",
+          "lat": 32.833184,
+          "lon": -96.711492,
+          "street": "Sunset Inn Circle"
+        },
+        {
+          "id": "node/13684003786",
+          "lat": 32.855104,
+          "lon": -96.730703,
+          "street": "White Rock Creek Trail"
+        },
+        {
+          "id": "node/13949723338",
+          "lat": 32.846448,
+          "lon": -96.716431,
+          "street": "Thicket Circle"
+        },
+        {
+          "id": "node/13884701536",
+          "lat": 32.83939,
+          "lon": -96.706463,
+          "street": "North Buckner Boulevard"
+        },
+        {
+          "id": "node/13884582771",
+          "lat": 32.841815,
+          "lon": -96.706963,
+          "street": "East Lake Highlands Drive"
+        },
+        {
+          "id": "node/5509790503",
+          "lat": 32.872107,
+          "lon": -96.760739,
+          "street": "Ridgecrest Road"
+        },
+        {
+          "id": "node/13833389979",
+          "lat": 32.858764,
+          "lon": -96.724773,
+          "street": "Flagpole Hill Trail"
+        },
+        {
+          "id": "node/13773405383",
+          "lat": 32.810659,
+          "lon": -96.676913,
+          "street": "Freeport Drive"
         }
       ],
-      "updatedAt": "2026-08-21T04:01:39.516Z"
+      "updatedAt": "2026-09-03T17:30:14.382Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:01:39.865Z"
+      "updatedAt": "2026-09-03T17:30:14.807Z"
     },
     "libraries": {
       "count": 18,
@@ -1272,7 +1537,7 @@
           "openingHours": "Tu,Th 09:00-20:00, We,Fr 09:00-17:00, Sa-Su 09:00-16:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:01:40.253Z"
+      "updatedAt": "2026-09-03T17:30:15.501Z"
     },
     "outdoor-gyms": {
       "count": 11,
@@ -1292,16 +1557,46 @@
           "wheelchair": "designated"
         }
       ],
-      "updatedAt": "2026-08-21T04:01:40.651Z"
+      "updatedAt": "2026-09-03T17:30:16.463Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:01:41.035Z"
+      "updatedAt": "2026-09-03T17:30:17.025Z"
     },
     "shelters": {
       "count": 35,
       "pois": [
+        {
+          "id": "node/11983403861",
+          "lat": 32.798697,
+          "lon": -96.828221,
+          "street": "Trinity Strand Trail"
+        },
+        {
+          "id": "node/4600153130",
+          "lat": 32.763987,
+          "lon": -96.749198,
+          "street": "Carpenter Avenue"
+        },
+        {
+          "id": "node/9817743116",
+          "lat": 32.740319,
+          "lon": -96.826299,
+          "street": "South Madison Avenue"
+        },
+        {
+          "id": "node/13377590859",
+          "lat": 32.841081,
+          "lon": -96.831679,
+          "street": "Thedford Avenue"
+        },
+        {
+          "id": "node/12915699111",
+          "lat": 32.736328,
+          "lon": -96.711489,
+          "street": "Guard Drive"
+        },
         {
           "id": "node/7932862429",
           "name": "Flag Pole Hill Pavillion",
@@ -1309,7 +1604,7 @@
           "lon": -96.724393
         }
       ],
-      "updatedAt": "2026-08-21T04:01:41.699Z"
+      "updatedAt": "2026-09-03T17:30:19.042Z"
     },
     "rest-areas": {
       "count": 3,
@@ -1328,12 +1623,12 @@
           "address": "John W Carpenter Freeway 9235"
         }
       ],
-      "updatedAt": "2026-08-21T04:01:42.083Z"
+      "updatedAt": "2026-09-03T17:30:19.609Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:01:42.403Z"
+      "updatedAt": "2026-09-03T17:30:19.992Z"
     },
     "post-offices": {
       "count": 29,
@@ -1540,17 +1835,17 @@
           "openingHours": "Mo-Fr 08:30-17:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:36:43.807Z"
+      "updatedAt": "2026-09-03T17:30:20.501Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:44.226Z"
+      "updatedAt": "2026-09-03T17:30:20.887Z"
     },
     "fireplaces": {
       "count": 39,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:44.977Z"
+      "updatedAt": "2026-09-03T17:30:22.120Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1567,12 +1862,172 @@
           "lon": -96.786473
         }
       ],
-      "updatedAt": "2026-08-23T04:36:45.732Z"
+      "updatedAt": "2026-09-03T17:30:24.802Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:37.787Z"
+    },
+    "bicycle-repair": {
+      "count": 26,
+      "pois": [
+        {
+          "id": "node/3376087187",
+          "lat": 32.780562,
+          "lon": -96.799049,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Main Street"
+        },
+        {
+          "id": "node/10937042398",
+          "lat": 32.789082,
+          "lon": -96.788359,
+          "fee": "yes",
+          "street": "Texas Street"
+        },
+        {
+          "id": "node/6370743228",
+          "lat": 32.792443,
+          "lon": -96.805232,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Cedar Springs Road"
+        },
+        {
+          "id": "node/12072611052",
+          "lat": 32.763788,
+          "lon": -96.780666,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Al Lipscomb Way"
+        },
+        {
+          "id": "node/3813979743",
+          "lat": 32.796014,
+          "lon": -96.801635,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Routh Street"
+        },
+        {
+          "id": "node/12191970809",
+          "lat": 32.755811,
+          "lon": -96.806187,
+          "openingHours": "24/7",
+          "street": "Reverend CBT Smith Street"
+        },
+        {
+          "id": "node/3376087186",
+          "lat": 32.764137,
+          "lon": -96.819193,
+          "openingHours": "24/7",
+          "street": "East Greenbriar Lane"
+        },
+        {
+          "id": "node/11580036059",
+          "lat": 32.795373,
+          "lon": -96.813367,
+          "street": "Victory Overlook"
+        },
+        {
+          "id": "node/5489161027",
+          "lat": 32.779188,
+          "lon": -96.825684,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Felix Lozada Sr. Gateway"
+        },
+        {
+          "id": "node/13305759774",
+          "lat": 32.787004,
+          "lon": -96.759584,
+          "street": "Bank Street"
+        },
+        {
+          "id": "node/13305759776",
+          "lat": 32.774214,
+          "lon": -96.74825,
+          "street": "Jamaica Street"
+        },
+        {
+          "id": "node/3376087189",
+          "lat": 32.808236,
+          "lon": -96.745458,
+          "openingHours": "24/7",
+          "street": "Santa Fe Trail"
+        },
+        {
+          "id": "node/13305749178",
+          "lat": 32.735032,
+          "lon": -96.753736,
+          "street": "Vesper Street"
+        },
+        {
+          "id": "node/11580437839",
+          "lat": 32.831527,
+          "lon": -96.782461,
+          "fee": "no",
+          "street": "Katy Trail"
+        },
+        {
+          "id": "node/11421755448",
+          "lat": 32.833382,
+          "lon": -96.779597,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "University Crossing Trail"
+        },
+        {
+          "id": "node/12670646039",
+          "lat": 32.744165,
+          "lon": -96.862358,
+          "fee": "no",
+          "street": "Sunset Avenue"
+        },
+        {
+          "id": "node/13051073507",
+          "lat": 32.843322,
+          "lon": -96.786298,
+          "street": "Dyer Street"
+        },
+        {
+          "id": "node/5298424267",
+          "lat": 32.814127,
+          "lon": -96.727052,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "White Rock Lake Trail"
+        },
+        {
+          "id": "node/13305749179",
+          "lat": 32.716852,
+          "lon": -96.750973,
+          "street": "Carbondale Street"
+        },
+        {
+          "id": "node/5298426779",
+          "lat": 32.826533,
+          "lon": -96.730776,
+          "openingHours": "24/7",
+          "street": "West Lawther Drive"
+        },
+        {
+          "id": "node/13076878643",
+          "lat": 32.849647,
+          "lon": -96.730435,
+          "street": "White Rock Creek Trail"
+        },
+        {
+          "id": "node/11988953806",
+          "lat": 32.675775,
+          "lon": -96.792793,
+          "fee": "no",
+          "street": "Runyon Creek Trail"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:30:23.968Z"
     }
   }
 }

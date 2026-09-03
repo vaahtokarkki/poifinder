@@ -1,10 +1,35 @@
 {
   "city": "minneapolis",
-  "generatedAt": "2026-08-23T04:36:51.499Z",
+  "generatedAt": "2026-09-03T17:31:22.755Z",
   "categories": {
     "toilets": {
-      "count": 204,
+      "count": 208,
       "pois": [
+        {
+          "id": "node/13993589139",
+          "lat": 44.975708,
+          "lon": -93.265384,
+          "wheelchair": "yes",
+          "context": "Minneapolis Public Service Building"
+        },
+        {
+          "id": "node/12895845731",
+          "lat": 44.981181,
+          "lon": -93.260305,
+          "context": "Water Works Pavilion"
+        },
+        {
+          "id": "node/5955582354",
+          "lat": 44.978061,
+          "lon": -93.273729,
+          "context": "City Center"
+        },
+        {
+          "id": "node/5955586654",
+          "lat": 44.974158,
+          "lon": -93.275843,
+          "context": "Target Plaza"
+        },
         {
           "id": "way/617723345",
           "name": "Lounge Toilets (Male)",
@@ -126,12 +151,43 @@
           "fee": "no"
         },
         {
+          "id": "node/7316095855",
+          "lat": 44.968826,
+          "lon": -93.282761,
+          "context": "Loring Community Arts Center"
+        },
+        {
+          "id": "node/11051903003",
+          "lat": 45.000459,
+          "lon": -93.253288,
+          "wheelchair": "yes",
+          "context": "Logan Park Recreation Center"
+        },
+        {
+          "id": "node/12190127221",
+          "lat": 44.998964,
+          "lon": -93.246415,
+          "context": "The Broadway"
+        },
+        {
           "id": "way/114496644",
           "name": "Cub Foods",
           "lat": 44.998209,
           "lon": -93.288668,
           "address": "West Broadway Avenue 701",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/13670371911",
+          "lat": 44.95516,
+          "lon": -93.284565,
+          "context": "Whittier Elementary School"
+        },
+        {
+          "id": "node/13374916837",
+          "lat": 44.949087,
+          "lon": -93.260659,
+          "context": "Midtown Exchange"
         },
         {
           "id": "way/46145189",
@@ -143,60 +199,43 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/11242615246",
+          "lat": 44.959818,
+          "lon": -93.230806,
+          "wheelchair": "yes",
+          "context": "Matthews Recreation Center"
+        },
+        {
+          "id": "node/11240319838",
+          "lat": 44.962534,
+          "lon": -93.307197,
+          "context": "Kenwood Park Community Center"
+        },
+        {
+          "id": "node/14105900284",
+          "lat": 44.946021,
+          "lon": -93.29032,
+          "wheelchair": "yes",
+          "context": "Bryant Square Park"
+        },
+        {
           "id": "node/11075003620",
           "name": "Target",
           "lat": 45.004795,
           "lon": -93.229945,
           "address": "New Brighton Boulevard 1650",
           "openingHours": "Mo,Tu,Sa 07:00-24:00; We-Fr,Su 07:00-24:00"
-        },
-        {
-          "id": "way/1205389424",
-          "name": "Flux Arts Building",
-          "lat": 45.013458,
-          "lon": -93.252775
-        },
-        {
-          "id": "way/92189527",
-          "name": "Pizza Lucé",
-          "lat": 44.944508,
-          "lon": -93.288742,
-          "address": "Lyndale Avenue South 3200",
-          "openingHours": "Mo-Fr 11:00-01:00; Sa-Su 10:00-01:00"
-        },
-        {
-          "id": "way/62154807",
-          "name": "Roosevelt Library",
-          "lat": 44.9296,
-          "lon": -93.232509,
-          "address": "28th Avenue South 4026",
-          "openingHours": "Sa 09:00-17:00, Tu,Th 12:00-20:00"
-        },
-        {
-          "id": "way/64058750",
-          "name": "Northern Coffeeworks",
-          "lat": 44.926532,
-          "lon": -93.232511,
-          "address": "28th Avenue South 4208",
-          "openingHours": "07:00-16:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/68169477",
-          "name": "Creative Activities Building and Annex",
-          "lat": 44.981574,
-          "lon": -93.167578
         }
       ],
-      "updatedAt": "2026-08-21T04:01:53.875Z"
+      "updatedAt": "2026-09-03T17:30:57.454Z"
     },
     "drinking-water": {
       "count": 169,
       "pois": [],
-      "updatedAt": "2026-08-21T04:01:54.535Z"
+      "updatedAt": "2026-09-03T17:30:59.051Z"
     },
     "playgrounds": {
-      "count": 404,
+      "count": 405,
       "pois": [
         {
           "id": "way/1247368436",
@@ -241,10 +280,10 @@
           "lon": -93.236018
         }
       ],
-      "updatedAt": "2026-08-21T04:01:55.284Z"
+      "updatedAt": "2026-09-03T17:31:00.253Z"
     },
     "parking": {
-      "count": 4451,
+      "count": 4457,
       "pois": [
         {
           "id": "way/126015101",
@@ -449,7 +488,7 @@
           "lon": -93.26151
         }
       ],
-      "updatedAt": "2026-08-21T04:01:56.252Z"
+      "updatedAt": "2026-09-03T17:31:01.719Z"
     },
     "charging-stations": {
       "count": 33,
@@ -477,7 +516,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:01:56.680Z"
+      "updatedAt": "2026-09-03T17:31:02.208Z"
     },
     "gas-stations": {
       "count": 89,
@@ -680,10 +719,10 @@
           "address": "Lilac Drive North 1875"
         }
       ],
-      "updatedAt": "2026-08-21T04:01:57.130Z"
+      "updatedAt": "2026-09-03T17:31:02.708Z"
     },
     "ice-cream": {
-      "count": 27,
+      "count": 28,
       "pois": [
         {
           "id": "node/1087602330",
@@ -795,6 +834,13 @@
           "lon": -93.255968
         },
         {
+          "id": "way/1550637488",
+          "name": "Minnehaha Scoop",
+          "lat": 44.941521,
+          "lon": -93.229667,
+          "address": "Minnehaha Avenue 3352"
+        },
+        {
           "id": "node/6656004627",
           "name": "Ben & Jerry's",
           "lat": 44.946977,
@@ -848,7 +894,7 @@
           "address": "39th Avenue Northeast 27400"
         }
       ],
-      "updatedAt": "2026-08-21T04:01:57.556Z"
+      "updatedAt": "2026-09-03T17:31:03.369Z"
     },
     "dog-parks": {
       "count": 30,
@@ -961,12 +1007,12 @@
           "address": "North Russell Avenue 4701"
         }
       ],
-      "updatedAt": "2026-08-21T04:01:57.916Z"
+      "updatedAt": "2026-09-03T17:31:03.876Z"
     },
     "picnic-spots": {
-      "count": 486,
+      "count": 485,
       "pois": [],
-      "updatedAt": "2026-08-21T04:01:58.512Z"
+      "updatedAt": "2026-09-03T17:31:05.138Z"
     },
     "viewpoints": {
       "count": 41,
@@ -1008,7 +1054,7 @@
           "lon": -93.203676
         }
       ],
-      "updatedAt": "2026-08-21T04:01:58.941Z"
+      "updatedAt": "2026-09-03T17:31:05.868Z"
     },
     "beaches": {
       "count": 19,
@@ -1036,8 +1082,8 @@
         {
           "id": "way/309983010",
           "name": "Cedar Lake Point Beach",
-          "lat": 44.9604,
-          "lon": -93.322707
+          "lat": 44.960408,
+          "lon": -93.32268
         },
         {
           "id": "way/45428052",
@@ -1103,7 +1149,7 @@
           "lon": -93.235265
         }
       ],
-      "updatedAt": "2026-08-21T04:01:59.392Z"
+      "updatedAt": "2026-09-03T17:31:06.466Z"
     },
     "atms": {
       "count": 70,
@@ -1235,29 +1281,294 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:01:59.831Z"
+      "updatedAt": "2026-09-03T17:31:07.122Z"
     },
     "post-boxes": {
-      "count": 143,
+      "count": 145,
       "pois": [
         {
-          "id": "node/8701819606",
-          "name": "USPS",
-          "lat": 44.970066,
-          "lon": -93.242862
+          "id": "node/13733436681",
+          "lat": 44.977697,
+          "lon": -93.26519,
+          "street": "Minneapolis Skyway"
         },
         {
-          "id": "node/3197982551",
-          "name": "Post Office Box",
-          "lat": 44.915992,
-          "lon": -93.278198
+          "id": "node/319642096",
+          "lat": 44.978103,
+          "lon": -93.269251,
+          "street": "Marquette Avenue"
+        },
+        {
+          "id": "node/13712988632",
+          "lat": 44.980863,
+          "lon": -93.265412,
+          "street": "2nd Avenue South"
+        },
+        {
+          "id": "node/1565428359",
+          "lat": 44.97448,
+          "lon": -93.263033,
+          "street": "Portland Avenue"
+        },
+        {
+          "id": "node/3235605217",
+          "lat": 44.974384,
+          "lon": -93.266831,
+          "street": "4th Avenue South"
+        },
+        {
+          "id": "node/3562596294",
+          "lat": 44.973436,
+          "lon": -93.267397,
+          "street": "South 8th Street"
+        },
+        {
+          "id": "node/3451495665",
+          "lat": 44.973124,
+          "lon": -93.266054,
+          "street": "5th Avenue South"
+        },
+        {
+          "id": "node/6778519872",
+          "lat": 44.97856,
+          "lon": -93.257184,
+          "street": "South 2nd Street"
+        },
+        {
+          "id": "node/12645553574",
+          "lat": 44.97477,
+          "lon": -93.273299,
+          "street": "South 9th Street"
+        },
+        {
+          "id": "node/13850637467",
+          "lat": 44.979436,
+          "lon": -93.274497,
+          "street": "North 6th Street"
+        },
+        {
+          "id": "node/13965983649",
+          "lat": 44.975986,
+          "lon": -93.25487,
+          "street": "Washington Avenue South"
+        },
+        {
+          "id": "node/3593816041",
+          "lat": 44.984406,
+          "lon": -93.270106,
+          "street": "North 2nd Street"
+        },
+        {
+          "id": "node/13829527181",
+          "lat": 44.973895,
+          "lon": -93.274579,
+          "street": "South 10th Street"
+        },
+        {
+          "id": "node/13713067307",
+          "lat": 44.984517,
+          "lon": -93.273767,
+          "street": "Traffic Street North"
+        },
+        {
+          "id": "node/14110335274",
+          "lat": 44.974727,
+          "lon": -93.252026,
+          "street": "12th Avenue South"
+        },
+        {
+          "id": "node/13829766089",
+          "lat": 44.971794,
+          "lon": -93.275894,
+          "street": "South 12th Street"
+        },
+        {
+          "id": "node/14017737715",
+          "lat": 44.985269,
+          "lon": -93.25447,
+          "street": "Southeast 2nd Street"
+        },
+        {
+          "id": "node/599341915",
+          "lat": 44.985134,
+          "lon": -93.275877,
+          "street": "North 3rd Street"
+        },
+        {
+          "id": "node/12005141923",
+          "lat": 44.970986,
+          "lon": -93.276835,
+          "street": "Alice Rainville Place"
+        },
+        {
+          "id": "node/619016637",
+          "lat": 44.983973,
+          "lon": -93.277545,
+          "street": "5th Avenue North"
+        },
+        {
+          "id": "node/13608208233",
+          "lat": 44.987633,
+          "lon": -93.258139,
+          "street": "Northeast 2nd Street"
+        },
+        {
+          "id": "node/13587951308",
+          "lat": 44.975678,
+          "lon": -93.280768,
+          "street": "12th Street North"
+        },
+        {
+          "id": "node/313633624",
+          "lat": 44.986713,
+          "lon": -93.275805,
+          "street": "North Washington Avenue"
+        },
+        {
+          "id": "node/10925244674",
+          "lat": 44.973362,
+          "lon": -93.281074,
+          "street": "13th Street South"
+        },
+        {
+          "id": "node/5863720443",
+          "lat": 44.970004,
+          "lon": -93.278396,
+          "street": "West Grant Street"
+        },
+        {
+          "id": "node/6773414143",
+          "lat": 44.988615,
+          "lon": -93.254929,
+          "street": "4th Street Northeast"
+        },
+        {
+          "id": "node/1314717647",
+          "lat": 44.9703,
+          "lon": -93.247654,
+          "street": "South 4th Street"
+        },
+        {
+          "id": "node/3671183005",
+          "lat": 44.971184,
+          "lon": -93.245394,
+          "street": "19th Avenue South"
+        },
+        {
+          "id": "node/1674565865",
+          "lat": 44.988699,
+          "lon": -93.249577,
+          "street": "Southeast 3rd Avenue"
+        },
+        {
+          "id": "node/12299716615",
+          "lat": 44.966691,
+          "lon": -93.282226,
+          "street": "Oak Grove Street"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:00.268Z"
+      "updatedAt": "2026-09-03T17:31:08.985Z"
     },
     "recycling": {
-      "count": 381,
+      "count": 396,
       "pois": [
+        {
+          "id": "node/11196287491",
+          "lat": 44.975639,
+          "lon": -93.262444,
+          "street": "Portland Avenue"
+        },
+        {
+          "id": "node/11196287496",
+          "lat": 44.975091,
+          "lon": -93.261056,
+          "street": "Park Avenue"
+        },
+        {
+          "id": "node/11971383975",
+          "lat": 44.979129,
+          "lon": -93.27045,
+          "street": "Nicollet Mall"
+        },
+        {
+          "id": "node/12777807317",
+          "lat": 44.981209,
+          "lon": -93.260182,
+          "street": "General Mills Plaza"
+        },
+        {
+          "id": "node/13942852352",
+          "lat": 44.981379,
+          "lon": -93.269875,
+          "street": "Hennepin Avenue Bikeway"
+        },
+        {
+          "id": "node/12777807312",
+          "lat": 44.981836,
+          "lon": -93.260861,
+          "street": "James I Rice Parkway Trail"
+        },
+        {
+          "id": "node/11145703214",
+          "lat": 44.982661,
+          "lon": -93.268092,
+          "street": "Hennepin Avenue"
+        },
+        {
+          "id": "node/12036685561",
+          "lat": 44.976023,
+          "lon": -93.273423,
+          "street": "Minneapolis Skyway"
+        },
+        {
+          "id": "node/13850625553",
+          "lat": 44.979029,
+          "lon": -93.274188,
+          "street": "North 6th Street"
+        },
+        {
+          "id": "node/13658633279",
+          "lat": 44.978147,
+          "lon": -93.274989,
+          "street": "North 7th Street"
+        },
+        {
+          "id": "node/12385255145",
+          "lat": 44.973222,
+          "lon": -93.273322,
+          "street": "Marquette Avenue"
+        },
+        {
+          "id": "node/13829508406",
+          "lat": 44.974569,
+          "lon": -93.275944,
+          "street": "South 10th Street"
+        },
+        {
+          "id": "node/12777807330",
+          "lat": 44.977812,
+          "lon": -93.251413,
+          "street": "West River Parkway Trail"
+        },
+        {
+          "id": "node/13712967317",
+          "lat": 44.968142,
+          "lon": -93.265336,
+          "street": "East 15th Street"
+        },
+        {
+          "id": "node/13741085456",
+          "lat": 44.971669,
+          "lon": -93.27687,
+          "street": "Loring Greenway"
+        },
+        {
+          "id": "node/14106190730",
+          "lat": 44.969646,
+          "lon": -93.277955,
+          "openingHours": "24/7",
+          "street": "Nicollet Avenue"
+        },
         {
           "id": "node/14069567212",
           "name": "Electronics Recycling of MN",
@@ -1350,15 +1661,15 @@
           "openingHours": "Mo-Fr 07:00-15:30"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:00.792Z"
+      "updatedAt": "2026-09-03T17:31:11.950Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:01.130Z"
+      "updatedAt": "2026-09-03T17:31:12.407Z"
     },
     "libraries": {
-      "count": 468,
+      "count": 480,
       "pois": [
         {
           "id": "relation/21107574",
@@ -1366,7 +1677,7 @@
           "lat": 44.980582,
           "lon": -93.270085,
           "address": "Hennepin Avenue 300",
-          "openingHours": "Mo-Th 09:00-20:00; Fr,Sa 09:00-17:00; Su 12:00-17:00"
+          "openingHours": "Su 12:00-17:00; Mo-Th 09:00-20:00; Fr-Sa 09:00-17:00"
         },
         {
           "id": "way/146806763",
@@ -1376,11 +1687,11 @@
         },
         {
           "id": "way/62260790",
-          "name": "Franklin Branch",
+          "name": "Franklin Library",
           "lat": 44.963017,
           "lon": -93.255881,
           "address": "East Franklin Avenue 1314",
-          "openingHours": "Mo,Fr,Sa 09:00-17:00; Tu-Th 12:00-20:00; Su 12:00-17:00"
+          "openingHours": "Su 12:00-17:00; Mo 09:00-17:00; Tu-Th 12:00-20:00; Fr-Sa 09:00-17:00"
         },
         {
           "id": "node/6433139151",
@@ -1420,7 +1731,7 @@
           "lat": 44.980929,
           "lon": -93.237743,
           "address": "Southeast 4th Street 1222",
-          "openingHours": "Mo,We,Fr,Sa 09:00-17:00; Tu,Th 12:00-20:00",
+          "openingHours": "Mo 09:00-17:00; Tu 12:00-20:00; We 09:00-17:00; Th 12:00-20:00; Fr-Sa 09:00-17:00",
           "wheelchair": "yes"
         },
         {
@@ -1451,13 +1762,15 @@
           "lat": 44.999153,
           "lon": -93.270004,
           "address": "Northeast Broadway Street 55",
-          "openingHours": "Mo, Th 12:00-20:00; Tu, We, Fr, Sa 09:00-17:00"
+          "openingHours": "Mo 12:00-20:00; Tu-We 09:00-17:00; Th 12:00-20:00; Fr-Sa 09:00-17:00"
         },
         {
           "id": "way/322509635",
           "name": "Sumner Library",
           "lat": 44.984809,
-          "lon": -93.294615
+          "lon": -93.294615,
+          "address": "Van White Memorial Boulevard 611",
+          "openingHours": "Su 12:00-17:00; Mo 12:00-20:00; Tu-We 09:00-17:00; Th 12:00-20:00; Fr 09:00-17:00"
         },
         {
           "id": "node/11263100975",
@@ -1500,7 +1813,7 @@
           "lat": 45.010176,
           "lon": -93.247963,
           "address": "Central Avenue Northeast 2200",
-          "openingHours": "Mo,Tu,Fr,Sa 09:00-17:00; We,Th 12:00-20:00"
+          "openingHours": "Mo-Tu 09:00-17:00; We-Th 12:00-20:00; Fr-Sa 09:00-17:00"
         },
         {
           "id": "node/5368227093",
@@ -1516,7 +1829,7 @@
           "lat": 44.949592,
           "lon": -93.298664,
           "address": "Hennepin Avenue South 2880",
-          "openingHours": "Mo, We 12:00-20:00; Tu, Th-Sa 09:00-17:00"
+          "openingHours": "Mo 12:00-20:00; Tu 09:00-17:00; We 12:00-20:00; Th-Sa 09:00-17:00"
         },
         {
           "id": "way/49962422",
@@ -1524,7 +1837,7 @@
           "lat": 44.948047,
           "lon": -93.231937,
           "address": "East Lake Street 2727",
-          "openingHours": "Mo-We 12:00-20:00; Th-Sa 09:00-17:00; Su 12:00-17:00"
+          "openingHours": "Su 12:00-17:00; Mo-We 12:00-20:00; Th-Sa 09:00-17:00"
         },
         {
           "id": "way/46819672",
@@ -1532,13 +1845,15 @@
           "lat": 44.937428,
           "lon": -93.270567,
           "address": "East 36th Street 347",
+          "openingHours": "Su 12:00-17:00; Mo-We 12:00-20:00; Th-Sa 09:00-17:00",
           "wheelchair": "yes"
         },
         {
           "id": "way/114498263",
           "name": "North Regional Library",
           "lat": 45.012747,
-          "lon": -93.296232
+          "lon": -93.296232,
+          "openingHours": "Su 12:00-17:00; Mo-Tu 12:00-20:00; We 09:00-17:00; Th 12:00-20:00; Fr-Sa 09:00-17:00"
         },
         {
           "id": "node/12766971725",
@@ -1560,7 +1875,7 @@
         },
         {
           "id": "node/3197452546",
-          "name": "Saint Anthony Library",
+          "name": "St. Anthony Library",
           "lat": 45.016008,
           "lon": -93.219,
           "address": "Pentagon Drive 2941",
@@ -1580,24 +1895,30 @@
           "lat": 44.9296,
           "lon": -93.232509,
           "address": "28th Avenue South 4026",
-          "openingHours": "Sa 09:00-17:00, Tu,Th 12:00-20:00"
+          "openingHours": "Mo-Tu 09:00-17:00; We-Th 12:00-20:00; Fr-Sa 09:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:01.681Z"
+      "updatedAt": "2026-09-03T17:31:12.999Z"
     },
     "outdoor-gyms": {
       "count": 6,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:02.053Z"
+      "updatedAt": "2026-09-03T17:31:13.907Z"
     },
     "camp-sites": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:02.438Z"
+      "updatedAt": "2026-09-03T17:31:14.485Z"
     },
     "shelters": {
       "count": 59,
       "pois": [
+        {
+          "id": "node/7517485437",
+          "lat": 45.031695,
+          "lon": -93.267203,
+          "street": "Northeast 35th Avenue"
+        },
         {
           "id": "way/224273180",
           "name": "Visitors Shelter",
@@ -1605,27 +1926,57 @@
           "lon": -93.297138
         },
         {
+          "id": "node/7266547231",
+          "lat": 45.039748,
+          "lon": -93.25474,
+          "street": "Jefferson Street Northeast"
+        },
+        {
+          "id": "node/7530392314",
+          "lat": 45.014865,
+          "lon": -93.337038,
+          "street": "Stockman Park"
+        },
+        {
+          "id": "node/7529594597",
+          "lat": 45.018892,
+          "lon": -93.337141,
+          "street": "35th Avenue North"
+        },
+        {
+          "id": "node/7316095844",
+          "lat": 45.022771,
+          "lon": -93.335993,
+          "street": "Lee Avenue North"
+        },
+        {
           "id": "relation/20750347",
           "name": "Giggles' Campfire Grille",
           "lat": 44.985621,
           "lon": -93.168716,
           "address": "Cooper Street 1520"
+        },
+        {
+          "id": "node/7412883874",
+          "lat": 44.949606,
+          "lon": -93.173094,
+          "street": "North Herschel Street"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:03.095Z"
+      "updatedAt": "2026-09-03T17:31:16.347Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:03.493Z"
+      "updatedAt": "2026-09-03T17:31:16.854Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:03.811Z"
+      "updatedAt": "2026-09-03T17:31:17.202Z"
     },
     "post-offices": {
-      "count": 22,
+      "count": 23,
       "pois": [
         {
           "id": "node/5955582351",
@@ -1669,6 +2020,12 @@
           "address": "Bloomington Avenue 3045"
         },
         {
+          "id": "node/14107531688",
+          "name": "Pack'n Post",
+          "lat": 44.948247,
+          "lon": -93.283299
+        },
+        {
           "id": "way/29115428",
           "name": "United States Post Office University Station",
           "lat": 44.972125,
@@ -1704,12 +2061,12 @@
           "lon": -93.334368
         }
       ],
-      "updatedAt": "2026-08-23T04:36:49.187Z"
+      "updatedAt": "2026-09-03T17:31:17.787Z"
     },
     "showers": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:49.561Z"
+      "updatedAt": "2026-09-03T17:31:18.182Z"
     },
     "fireplaces": {
       "count": 62,
@@ -1727,7 +2084,7 @@
           "lon": -93.346879
         }
       ],
-      "updatedAt": "2026-08-23T04:36:50.603Z"
+      "updatedAt": "2026-09-03T17:31:19.429Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1735,14 +2092,220 @@
       "updatedAt": "2026-08-17T04:06:13.854Z"
     },
     "benches": {
-      "count": 1950,
+      "count": 1970,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:51.397Z"
+      "updatedAt": "2026-09-03T17:31:22.654Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:38.473Z"
+    },
+    "bicycle-repair": {
+      "count": 75,
+      "pois": [
+        {
+          "id": "node/13733471290",
+          "lat": 44.974943,
+          "lon": -93.265698,
+          "street": "Minneapolis Skyway"
+        },
+        {
+          "id": "node/13713067316",
+          "lat": 44.983516,
+          "lon": -93.276096,
+          "street": "The Grand Staircase"
+        },
+        {
+          "id": "node/11254281255",
+          "lat": 44.974035,
+          "lon": -93.250789,
+          "fee": "no",
+          "street": "Washington Avenue South"
+        },
+        {
+          "id": "node/11979528379",
+          "name": "fixit",
+          "lat": 44.989333,
+          "lon": -93.25713,
+          "fee": "no"
+        },
+        {
+          "id": "node/11595024042",
+          "lat": 44.966615,
+          "lon": -93.278025,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Nicollet Avenue"
+        },
+        {
+          "id": "node/11254281247",
+          "lat": 44.969286,
+          "lon": -93.247373,
+          "fee": "no",
+          "street": "Cedar Avenue South"
+        },
+        {
+          "id": "node/3376088396",
+          "lat": 44.971332,
+          "lon": -93.243051,
+          "openingHours": "24/7",
+          "street": "The Gopher Way"
+        },
+        {
+          "id": "node/8565721699",
+          "lat": 44.965724,
+          "lon": -93.241182,
+          "openingHours": "24/7",
+          "street": "22nd Avenue South"
+        },
+        {
+          "id": "node/3673472872",
+          "lat": 44.980042,
+          "lon": -93.234147,
+          "openingHours": "24/7",
+          "street": "Southeast 15th Avenue"
+        },
+        {
+          "id": "node/4734995280",
+          "lat": 45.000523,
+          "lon": -93.273095,
+          "fee": "no",
+          "street": "Mississippi East Bank Trail"
+        },
+        {
+          "id": "node/3684136850",
+          "lat": 44.983242,
+          "lon": -93.232646,
+          "openingHours": "24/7",
+          "street": "Southeast 7th Street"
+        },
+        {
+          "id": "node/11240318908",
+          "lat": 44.97855,
+          "lon": -93.299595,
+          "street": "Irving Avenue North"
+        },
+        {
+          "id": "node/14049269230",
+          "lat": 44.971323,
+          "lon": -93.229958,
+          "street": "Southeast Harvard Street"
+        },
+        {
+          "id": "node/13055089119",
+          "lat": 45.002895,
+          "lon": -93.275927,
+          "street": "West River Parkway Trail"
+        },
+        {
+          "id": "node/11374270587",
+          "lat": 44.955228,
+          "lon": -93.28824,
+          "street": "Lyndale Avenue South"
+        },
+        {
+          "id": "node/12988211374",
+          "lat": 44.96309,
+          "lon": -93.230913,
+          "street": "Riverside Avenue"
+        },
+        {
+          "id": "node/6715886044",
+          "lat": 44.948481,
+          "lon": -93.260611,
+          "openingHours": "24/7",
+          "street": "East Lake Street"
+        },
+        {
+          "id": "node/14097789185",
+          "lat": 44.956099,
+          "lon": -93.29459,
+          "street": "Emerson Avenue South"
+        },
+        {
+          "id": "node/3974426862",
+          "lat": 44.95364,
+          "lon": -93.234506,
+          "openingHours": "24/7",
+          "street": "Midtown Greenway"
+        },
+        {
+          "id": "node/11230247033",
+          "lat": 44.971945,
+          "lon": -93.218739,
+          "fee": "no",
+          "street": "Southeast 27th Avenue"
+        },
+        {
+          "id": "node/3192165398",
+          "lat": 44.950299,
+          "lon": -93.292087,
+          "openingHours": "24/7",
+          "street": "Midtown Corridor"
+        },
+        {
+          "id": "node/3608221271",
+          "lat": 44.957327,
+          "lon": -93.223551,
+          "street": "East 25th Street"
+        },
+        {
+          "id": "node/11307533046",
+          "lat": 44.971179,
+          "lon": -93.213731,
+          "fee": "no",
+          "street": "Southeast 30th Avenue"
+        },
+        {
+          "id": "node/12869695791",
+          "lat": 44.94485,
+          "lon": -93.29067,
+          "street": "Bryant Avenue Bikeway"
+        },
+        {
+          "id": "node/9376252537",
+          "lat": 44.95213,
+          "lon": -93.225531,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "East 28th Street"
+        },
+        {
+          "id": "node/13841853527",
+          "lat": 44.941524,
+          "lon": -93.283304,
+          "street": "West 34th Street"
+        },
+        {
+          "id": "node/11349418940",
+          "lat": 45.014664,
+          "lon": -93.247168,
+          "street": "Northeast Central Avenue"
+        },
+        {
+          "id": "node/11232979049",
+          "lat": 45.010701,
+          "lon": -93.233599,
+          "fee": "no",
+          "street": "Northeast Garfield Street"
+        },
+        {
+          "id": "node/7390772387",
+          "lat": 44.953706,
+          "lon": -93.220051,
+          "fee": "no",
+          "street": "East 27th Street"
+        },
+        {
+          "id": "node/11230247024",
+          "lat": 44.968677,
+          "lon": -93.209922,
+          "fee": "no",
+          "street": "University Avenue Southeast"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:31:21.820Z"
     }
   }
 }

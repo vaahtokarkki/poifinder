@@ -1,15 +1,15 @@
 {
   "city": "vilnius",
-  "generatedAt": "2026-08-23T04:04:08.884Z",
+  "generatedAt": "2026-09-03T16:47:57.389Z",
   "categories": {
     "toilets": {
-      "count": 108,
+      "count": 109,
       "pois": [
         {
           "id": "node/13985887417",
-          "name": "Toilet",
           "lat": 54.686566,
-          "lon": 25.278292
+          "lon": 25.278292,
+          "context": "Jogailos Rezidencija"
         },
         {
           "id": "node/1403336867",
@@ -29,12 +29,29 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/24571305",
+          "name": "Baltasis Tiltas Food Hall",
+          "lat": 54.693292,
+          "lon": 25.273412,
+          "address": "Upės g. 6",
+          "openingHours": "Tu-Sa 11:00-23:00; Su,Mo 11:00-22:00",
+          "wheelchair": "limited"
+        },
+        {
           "id": "way/25489015",
           "name": "PC „Europa“",
           "lat": 54.696382,
           "lon": 25.277034,
           "address": "Konstitucijos pr. 7A",
           "openingHours": "Mo-Fr 07:00-21:00; Sa,Su 08:00-21:00"
+        },
+        {
+          "id": "node/5599641822",
+          "lat": 54.678193,
+          "lon": 25.273161,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Maxima XXX"
         },
         {
           "id": "node/11066727305",
@@ -46,12 +63,81 @@
           "context": "Lietuvos nacionalinė M. Mažvydo biblioteka"
         },
         {
+          "id": "node/12121838925",
+          "lat": 54.678045,
+          "lon": 25.286756,
+          "context": "Vilniaus Rotušė"
+        },
+        {
+          "id": "node/4242531567",
+          "lat": 54.697394,
+          "lon": 25.266783,
+          "address": "Konstitucijos pr. 26",
+          "fee": "no",
+          "context": "Forum Palace"
+        },
+        {
+          "id": "node/5600204623",
+          "lat": 54.675146,
+          "lon": 25.290836,
+          "openingHours": "Mo-Su 09:00-18:00",
+          "fee": "yes",
+          "context": "Moterų vienuolynas"
+        },
+        {
+          "id": "node/6314468430",
+          "lat": 54.673077,
+          "lon": 25.274149,
+          "fee": "yes",
+          "context": "Iki"
+        },
+        {
+          "id": "node/13063847201",
+          "lat": 54.702058,
+          "lon": 25.289184,
+          "address": "Tuskulėnų g. 66",
+          "openingHours": "Mo-Su 08:00-22:00",
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Maxima XX"
+        },
+        {
+          "id": "node/12452919512",
+          "lat": 54.671462,
+          "lon": 25.285311,
+          "context": "McDonald's Stotis"
+        },
+        {
+          "id": "node/864433056",
+          "lat": 54.670851,
+          "lon": 25.281735,
+          "wheelchair": "no",
+          "fee": "yes",
+          "context": "Vilniaus autobusų stotis"
+        },
+        {
           "id": "way/1262177673",
           "name": "Jammi",
           "lat": 54.703497,
           "lon": 25.285503,
           "address": "Žalgirio g. 66",
           "openingHours": "24/7"
+        },
+        {
+          "id": "node/1102958550",
+          "lat": 54.675625,
+          "lon": 25.258058,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Rimi Mylia"
+        },
+        {
+          "id": "node/979517597",
+          "lat": 54.670303,
+          "lon": 25.284411,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Vilniaus geležinkelio stotis"
         },
         {
           "id": "way/55904666",
@@ -81,6 +167,12 @@
           "fee": "yes"
         },
         {
+          "id": "node/4506527810",
+          "lat": 54.710444,
+          "lon": 25.287413,
+          "context": "Baldų rojus"
+        },
+        {
           "id": "node/9891117676",
           "name": "ToiToi",
           "lat": 54.698593,
@@ -96,6 +188,20 @@
           "address": "Ozo g. 25",
           "openingHours": "Mo-Su 08:00-23:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/8842986844",
+          "lat": 54.709624,
+          "lon": 25.300415,
+          "fee": "no",
+          "context": "PC „Banginis“"
+        },
+        {
+          "id": "node/4463100183",
+          "lat": 54.711745,
+          "lon": 25.292909,
+          "fee": "no",
+          "context": "Aibė"
         },
         {
           "id": "way/32674905",
@@ -122,68 +228,26 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/4483437385",
+          "lat": 54.708163,
+          "lon": 25.236948,
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "Sportima"
+        },
+        {
           "id": "way/1382942590",
           "name": "PC Pikas",
           "lat": 54.714758,
           "lon": 25.248939,
           "address": "Ukmergės g. 221",
           "openingHours": "Mo-Su 08:00-22:00"
-        },
-        {
-          "id": "node/13700903375",
-          "lat": 54.65392,
-          "lon": 25.277286,
-          "wheelchair": "yes",
-          "fee": "no",
-          "context": "Nordika"
-        },
-        {
-          "id": "way/77103757",
-          "name": "Mada",
-          "lat": 54.708578,
-          "lon": 25.228284,
-          "address": "Laisvės pr. 43D",
-          "openingHours": "Mo-Sa 10:00-21:00; Su 10:00-18:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/60494716",
-          "name": "Maxima XX",
-          "lat": 54.709528,
-          "lon": 25.222187,
-          "address": "Viršuliškių g. 30",
-          "openingHours": "Mo-Su 08:00-22:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/943478631",
-          "name": "Vilnius Outlet",
-          "lat": 54.703523,
-          "lon": 25.206335,
-          "address": "V. Pociūno g. 8",
-          "openingHours": "Mo-Su 10:00-21:00"
-        },
-        {
-          "id": "node/13347861510",
-          "lat": 54.731655,
-          "lon": 25.245059,
-          "wheelchair": "yes",
-          "fee": "no",
-          "context": "PC „Mandarinas“"
-        },
-        {
-          "id": "way/38169160",
-          "name": "PC BIG",
-          "lat": 54.740424,
-          "lon": 25.228548,
-          "address": "Ukmergės g. 369",
-          "openingHours": "Mo-Su 10:00-20:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:03:49.174Z"
+      "updatedAt": "2026-09-03T16:47:34.616Z"
     },
     "drinking-water": {
-      "count": 181,
+      "count": 182,
       "pois": [
         {
           "id": "node/14080184101",
@@ -192,7 +256,7 @@
           "lon": 25.269304
         }
       ],
-      "updatedAt": "2026-08-23T04:03:51.413Z"
+      "updatedAt": "2026-09-03T16:47:37.325Z"
     },
     "playgrounds": {
       "count": 996,
@@ -245,10 +309,10 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:03:52.355Z"
+      "updatedAt": "2026-09-03T16:47:38.250Z"
     },
     "parking": {
-      "count": 1971,
+      "count": 1970,
       "pois": [
         {
           "id": "way/290285966",
@@ -477,7 +541,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:03:53.408Z"
+      "updatedAt": "2026-09-03T16:47:39.557Z"
     },
     "charging-stations": {
       "count": 155,
@@ -589,7 +653,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:03:53.818Z"
+      "updatedAt": "2026-09-03T16:47:40.034Z"
     },
     "gas-stations": {
       "count": 91,
@@ -848,7 +912,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:03:54.289Z"
+      "updatedAt": "2026-09-03T16:47:40.713Z"
     },
     "ice-cream": {
       "count": 3,
@@ -878,15 +942,15 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:03:54.794Z"
+      "updatedAt": "2026-09-03T16:47:41.288Z"
     },
     "dog-parks": {
       "count": 25,
       "pois": [],
-      "updatedAt": "2026-08-23T04:03:55.189Z"
+      "updatedAt": "2026-09-03T16:47:41.673Z"
     },
     "picnic-spots": {
-      "count": 96,
+      "count": 99,
       "pois": [
         {
           "id": "node/5661047121",
@@ -901,7 +965,7 @@
           "lon": 25.371417
         }
       ],
-      "updatedAt": "2026-08-23T04:03:56.396Z"
+      "updatedAt": "2026-09-03T16:47:43.195Z"
     },
     "viewpoints": {
       "count": 53,
@@ -1105,7 +1169,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:03:56.972Z"
+      "updatedAt": "2026-09-03T16:47:44.029Z"
     },
     "beaches": {
       "count": 13,
@@ -1159,10 +1223,10 @@
           "lon": 25.159811
         }
       ],
-      "updatedAt": "2026-08-23T04:03:57.491Z"
+      "updatedAt": "2026-09-03T16:47:44.471Z"
     },
     "atms": {
-      "count": 171,
+      "count": 172,
       "pois": [
         {
           "id": "node/2755868255",
@@ -1278,19 +1342,199 @@
           "name": "Luminor Bank",
           "lat": 54.739937,
           "lon": 25.228983,
+          "address": "Ukmergės g. 369",
           "openingHours": "07:30-23:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:03:58.063Z"
+      "updatedAt": "2026-09-03T16:47:45.043Z"
     },
     "post-boxes": {
       "count": 5,
-      "pois": [],
-      "updatedAt": "2026-08-23T04:03:58.516Z"
+      "pois": [
+        {
+          "id": "node/12187842503",
+          "lat": 54.679141,
+          "lon": 25.284584,
+          "street": "Vokiečių g."
+        },
+        {
+          "id": "node/775308005",
+          "lat": 54.668541,
+          "lon": 25.290841,
+          "street": "Tyzenhauzų g."
+        },
+        {
+          "id": "node/10316729155",
+          "lat": 54.686333,
+          "lon": 25.323688,
+          "street": "Stepono Batoro g."
+        }
+      ],
+      "updatedAt": "2026-09-03T16:47:45.967Z"
     },
     "recycling": {
-      "count": 1168,
+      "count": 1172,
       "pois": [
+        {
+          "id": "node/12402593308",
+          "lat": 54.68725,
+          "lon": 25.281057,
+          "openingHours": "24/7",
+          "street": "V. Kudirkos a."
+        },
+        {
+          "id": "node/12911332446",
+          "lat": 54.689116,
+          "lon": 25.282151,
+          "street": "Tilto g."
+        },
+        {
+          "id": "node/10561452552",
+          "lat": 54.686169,
+          "lon": 25.27594,
+          "street": "K. Griniaus g."
+        },
+        {
+          "id": "node/10115642618",
+          "lat": 54.688565,
+          "lon": 25.276061,
+          "street": "Beatričės g."
+        },
+        {
+          "id": "node/10562235342",
+          "lat": 54.690425,
+          "lon": 25.277946,
+          "street": "A. Vienuolio g."
+        },
+        {
+          "id": "node/4300116611",
+          "lat": 54.683165,
+          "lon": 25.280214,
+          "street": "Liejyklos g."
+        },
+        {
+          "id": "node/12369280202",
+          "lat": 54.686803,
+          "lon": 25.271542,
+          "openingHours": "24/7",
+          "street": "Tauro g."
+        },
+        {
+          "id": "node/14103724824",
+          "lat": 54.68283,
+          "lon": 25.275922,
+          "street": "K. Kalinausko g."
+        },
+        {
+          "id": "node/10969020607",
+          "lat": 54.692615,
+          "lon": 25.285106,
+          "openingHours": "24/7",
+          "street": "A. Juozapavičiaus g."
+        },
+        {
+          "id": "node/13103800498",
+          "lat": 54.680798,
+          "lon": 25.277301,
+          "street": "Pylimo g."
+        },
+        {
+          "id": "node/11117178634",
+          "lat": 54.690709,
+          "lon": 25.268945,
+          "street": "J. Savickio g."
+        },
+        {
+          "id": "node/10578426220",
+          "lat": 54.684312,
+          "lon": 25.265682,
+          "street": "M. Valančiaus g."
+        },
+        {
+          "id": "node/3276552865",
+          "lat": 54.695996,
+          "lon": 25.279682,
+          "street": "Lvivo g."
+        },
+        {
+          "id": "node/11157680873",
+          "lat": 54.686699,
+          "lon": 25.263865,
+          "street": "Pakalnės g."
+        },
+        {
+          "id": "node/12139676901",
+          "lat": 54.681758,
+          "lon": 25.292614,
+          "street": "Maironio g."
+        },
+        {
+          "id": "node/4103475140",
+          "lat": 54.678835,
+          "lon": 25.270726,
+          "street": "Algirdo g."
+        },
+        {
+          "id": "node/5026942372",
+          "lat": 54.696769,
+          "lon": 25.28389,
+          "street": "Krokuvos g."
+        },
+        {
+          "id": "node/10583584105",
+          "lat": 54.677147,
+          "lon": 25.280183,
+          "street": "Vingrių g."
+        },
+        {
+          "id": "node/10596845095",
+          "lat": 54.691981,
+          "lon": 25.295025,
+          "street": "Olimpiečių g."
+        },
+        {
+          "id": "node/13631080740",
+          "lat": 54.681313,
+          "lon": 25.294272,
+          "street": "Malūnų g."
+        },
+        {
+          "id": "node/13970318689",
+          "lat": 54.678055,
+          "lon": 25.271555,
+          "openingHours": "24/7",
+          "street": "T. Ševčenkos g."
+        },
+        {
+          "id": "node/14031028598",
+          "lat": 54.6823,
+          "lon": 25.295507,
+          "street": "Šv. Brunono Bonifaco g."
+        },
+        {
+          "id": "node/12216277201",
+          "lat": 54.693421,
+          "lon": 25.294409,
+          "street": "Sporto g."
+        },
+        {
+          "id": "node/3945113717",
+          "lat": 54.677144,
+          "lon": 25.274271,
+          "street": "Mindaugo g."
+        },
+        {
+          "id": "node/12752246393",
+          "lat": 54.695022,
+          "lon": 25.292898,
+          "street": "Šeimyniškių g."
+        },
+        {
+          "id": "node/5501851651",
+          "lat": 54.697172,
+          "lon": 25.287527,
+          "street": "Rinktinės g."
+        },
         {
           "id": "node/4232428858",
           "name": "Iki taromatas",
@@ -1300,58 +1544,34 @@
           "openingHours": "Mo-Su 07:00-22:00"
         },
         {
-          "id": "node/4044685444",
-          "name": "Taromatas",
-          "lat": 54.697544,
-          "lon": 25.298207,
-          "openingHours": "Mo-Su 08:00-23:00",
-          "wheelchair": "no"
+          "id": "node/12361047824",
+          "lat": 54.68807,
+          "lon": 25.259662,
+          "street": "A. Goštauto g."
         },
         {
-          "id": "node/5314842568",
-          "name": "Maxima taromatas",
-          "lat": 54.702042,
-          "lon": 25.289548
+          "id": "node/4133617963",
+          "lat": 54.691758,
+          "lon": 25.298298,
+          "street": "Sluškų g."
         },
         {
-          "id": "way/210655358",
-          "name": "Rimi taromatas",
-          "lat": 54.712793,
-          "lon": 25.30369,
-          "openingHours": "Mo-Su 08:00-23:00",
-          "wheelchair": "limited"
-        },
-        {
-          "id": "way/425118110",
-          "name": "Taros supirktuvė",
-          "lat": 54.709011,
-          "lon": 25.221643,
-          "openingHours": "Mo-Su 08:00-22:00"
-        },
-        {
-          "id": "node/5940731035",
-          "name": "Taros supirkimo punktas",
-          "lat": 54.726293,
-          "lon": 25.298488,
-          "openingHours": "Mo-Su 08:00-22:00"
-        },
-        {
-          "id": "way/424734109",
-          "name": "Vilniaus m. didelių gabaritų atliekų surinkimo aikštelė",
-          "lat": 54.72629,
-          "lon": 25.21135,
-          "address": "Pumpėnų g. 10"
+          "id": "node/12212535950",
+          "lat": 54.675796,
+          "lon": 25.285011,
+          "openingHours": "24/7",
+          "street": "Visų Šventųjų g."
         }
       ],
-      "updatedAt": "2026-08-23T04:04:01.434Z"
+      "updatedAt": "2026-09-03T16:47:48.492Z"
     },
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:04:01.875Z"
+      "updatedAt": "2026-09-03T16:47:48.914Z"
     },
     "libraries": {
-      "count": 56,
+      "count": 59,
       "pois": [
         {
           "id": "node/1961888763",
@@ -1472,10 +1692,11 @@
         },
         {
           "id": "way/38882622",
-          "name": "Lietuvos aklųjų biblioteka",
+          "name": "BĮ Lietuvos audiosensorinė biblioteka",
           "lat": 54.669828,
           "lon": 25.256688,
-          "address": "Skroblų g. 10"
+          "address": "Skroblų g. 10",
+          "openingHours": "Mo-Th 10:00-18:00; Fr 10:00-17:00"
         },
         {
           "id": "way/56160134",
@@ -1543,6 +1764,7 @@
           "name": "Vilniaus m. savivaldybės centrinė biblioteka, Justiniškių filialas",
           "lat": 54.718089,
           "lon": 25.221191,
+          "address": "Justiniškių g. 62A",
           "openingHours": "Mo-Fr 10:00-19:00, Sa 10:00-17:00",
           "wheelchair": "no"
         },
@@ -1582,12 +1804,12 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:02.382Z"
+      "updatedAt": "2026-09-03T16:47:49.509Z"
     },
     "outdoor-gyms": {
-      "count": 117,
+      "count": 118,
       "pois": [],
-      "updatedAt": "2026-08-23T04:04:03.841Z"
+      "updatedAt": "2026-09-03T16:47:50.886Z"
     },
     "camp-sites": {
       "count": 3,
@@ -1610,22 +1832,22 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:04.312Z"
+      "updatedAt": "2026-09-03T16:47:51.401Z"
     },
     "shelters": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-23T04:04:05.129Z"
+      "updatedAt": "2026-09-03T16:47:52.225Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:04:05.526Z"
+      "updatedAt": "2026-09-03T16:47:52.746Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:04:06.021Z"
+      "updatedAt": "2026-09-03T16:47:53.085Z"
     },
     "post-offices": {
       "count": 25,
@@ -1693,17 +1915,17 @@
           "address": "V. Sirokomlės g. 4"
         }
       ],
-      "updatedAt": "2026-08-23T04:04:06.708Z"
+      "updatedAt": "2026-09-03T16:47:53.488Z"
     },
     "showers": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:04:07.194Z"
+      "updatedAt": "2026-09-03T16:47:53.921Z"
     },
     "fireplaces": {
       "count": 23,
       "pois": [],
-      "updatedAt": "2026-08-23T04:04:08.017Z"
+      "updatedAt": "2026-09-03T16:47:54.953Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1711,7 +1933,7 @@
       "updatedAt": "2026-08-17T04:02:52.598Z"
     },
     "benches": {
-      "count": 2148,
+      "count": 2174,
       "pois": [
         {
           "id": "node/5104668634",
@@ -1763,12 +1985,53 @@
           "lon": 25.318245
         }
       ],
-      "updatedAt": "2026-08-23T04:04:08.782Z"
+      "updatedAt": "2026-09-03T16:47:57.288Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:05.599Z"
+    },
+    "bicycle-repair": {
+      "count": 18,
+      "pois": [
+        {
+          "id": "node/13754625693",
+          "name": "Veloboksas",
+          "lat": 54.67635,
+          "lon": 25.274558,
+          "openingHours": "Mo-Fr 10:00-19:00; Sa 11:00-15:00"
+        },
+        {
+          "id": "node/13029347911",
+          "lat": 54.699548,
+          "lon": 25.219723,
+          "street": "Pilaitės pr."
+        },
+        {
+          "id": "node/9043656428",
+          "lat": 54.707593,
+          "lon": 25.226055,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Laisvės pr."
+        },
+        {
+          "id": "node/13424439926",
+          "lat": 54.739915,
+          "lon": 25.276122,
+          "fee": "no",
+          "street": "Jeruzalės g."
+        },
+        {
+          "id": "node/13598046601",
+          "lat": 54.665086,
+          "lon": 25.18689,
+          "address": "Pažagiškių g. 31",
+          "street": "Pažagiškių g."
+        }
+      ],
+      "updatedAt": "2026-09-03T16:47:56.404Z"
     }
   }
 }

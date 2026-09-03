@@ -1,16 +1,44 @@
 {
   "city": "amsterdam",
-  "generatedAt": "2026-08-23T04:13:53.396Z",
+  "generatedAt": "2026-09-03T17:00:57.342Z",
   "categories": {
     "toilets": {
-      "count": 162,
+      "count": 163,
       "pois": [
+        {
+          "id": "node/9874469445",
+          "lat": 52.367058,
+          "lon": 4.907247,
+          "wheelchair": "yes",
+          "context": "Oranjerie"
+        },
+        {
+          "id": "node/10824517341",
+          "lat": 52.366006,
+          "lon": 4.913557,
+          "context": "oude hoofdgebouw Artis"
+        },
+        {
+          "id": "node/10300929537",
+          "lat": 52.366385,
+          "lon": 4.915851,
+          "fee": "no",
+          "context": "Kleine Zoogdierenhuis"
+        },
         {
           "id": "node/14014908101",
           "lat": 52.367325,
           "lon": 4.891661,
           "address": "Singel 457",
           "context": "Kalverpassage"
+        },
+        {
+          "id": "node/6759162076",
+          "lat": 52.364762,
+          "lon": 4.8924,
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "De Bazel"
         },
         {
           "id": "node/1819065977",
@@ -20,11 +48,32 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/12970714121",
+          "lat": 52.365438,
+          "lon": 4.918285,
+          "context": "De Volharding"
+        },
+        {
+          "id": "node/9680130397",
+          "lat": 52.366546,
+          "lon": 4.919175,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "De Waterkant"
+        },
+        {
           "id": "node/4720714476",
           "name": "Toiletten HEMA",
           "lat": 52.375132,
           "lon": 4.894211,
           "fee": "yes"
+        },
+        {
+          "id": "node/10300899369",
+          "lat": 52.365316,
+          "lon": 4.920452,
+          "fee": "no",
+          "context": "Vlinderkas"
         },
         {
           "id": "way/57861220",
@@ -33,6 +82,29 @@
           "lon": 4.890238,
           "openingHours": "Mo 11:00-19:00; Tu-Sa 10:00-19:00; Th 10:00-21:00; Su 12:00-19:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/3381333509",
+          "lat": 52.377957,
+          "lon": 4.901688,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Centraal Station"
+        },
+        {
+          "id": "node/8932559979",
+          "lat": 52.36088,
+          "lon": 4.918912,
+          "wheelchair": "yes",
+          "context": "Generator"
+        },
+        {
+          "id": "node/3706817260",
+          "lat": 52.360031,
+          "lon": 4.884902,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Rijksmuseumgebouw"
         },
         {
           "id": "node/5831919166",
@@ -49,6 +121,30 @@
           "lon": 4.88191,
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "node/10300953652",
+          "lat": 52.358852,
+          "lon": 4.872699,
+          "wheelchair": "no",
+          "context": "Blauwe Theehuis"
+        },
+        {
+          "id": "node/5836531585",
+          "lat": 52.36718,
+          "lon": 4.867851,
+          "openingHours": "Mo-Su 11:00-23:30",
+          "wheelchair": "designated",
+          "fee": "no",
+          "context": "De Hallen"
+        },
+        {
+          "id": "node/6305581943",
+          "lat": 52.346719,
+          "lon": 4.918093,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Amsterdam Amstel"
         },
         {
           "id": "node/14066301840",
@@ -72,7 +168,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:32.218Z"
+      "updatedAt": "2026-09-03T17:00:28.037Z"
     },
     "drinking-water": {
       "count": 552,
@@ -129,10 +225,10 @@
           "lon": 4.960199
         }
       ],
-      "updatedAt": "2026-08-23T04:13:33.958Z"
+      "updatedAt": "2026-09-03T17:00:30.273Z"
     },
     "playgrounds": {
-      "count": 1349,
+      "count": 1355,
       "pois": [
         {
           "id": "way/27149334",
@@ -326,10 +422,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:35.020Z"
+      "updatedAt": "2026-09-03T17:00:31.682Z"
     },
     "parking": {
-      "count": 4905,
+      "count": 4920,
       "pois": [
         {
           "id": "node/2741066368",
@@ -558,7 +654,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:36.431Z"
+      "updatedAt": "2026-09-03T17:00:33.563Z"
     },
     "charging-stations": {
       "count": 1154,
@@ -655,7 +751,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:37.067Z"
+      "updatedAt": "2026-09-03T17:00:34.368Z"
     },
     "gas-stations": {
       "count": 64,
@@ -903,7 +999,7 @@
           "openingHours": "Mo-Fr 05:00-21:00; Sa 07:00-21:00; Su 08:00-21:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:37.680Z"
+      "updatedAt": "2026-09-03T17:00:35.029Z"
     },
     "ice-cream": {
       "count": 70,
@@ -921,7 +1017,8 @@
           "lat": 52.366843,
           "lon": 4.911936,
           "address": "Plantage Kerklaan 35-H",
-          "openingHours": "Mo-Su 12:00 - 22:00"
+          "openingHours": "Mo-Su 12:00 - 22:00",
+          "wheelchair": "no"
         },
         {
           "id": "node/251168504",
@@ -1021,7 +1118,7 @@
           "lat": 52.352629,
           "lon": 4.894689,
           "address": "Van Ostadestraat 147-H",
-          "openingHours": "Mo-Fr 08:00-23:00; Sa-Su 10:00-23:00",
+          "openingHours": "Mo-Su 10:00-23:00",
           "wheelchair": "yes"
         },
         {
@@ -1140,7 +1237,7 @@
           "lon": 4.853913
         }
       ],
-      "updatedAt": "2026-08-23T04:13:38.252Z"
+      "updatedAt": "2026-09-03T17:00:35.858Z"
     },
     "dog-parks": {
       "count": 85,
@@ -1180,10 +1277,10 @@
           "lon": 4.9267
         }
       ],
-      "updatedAt": "2026-08-23T04:13:38.732Z"
+      "updatedAt": "2026-09-03T17:00:36.424Z"
     },
     "picnic-spots": {
-      "count": 1111,
+      "count": 1113,
       "pois": [
         {
           "id": "node/12699364849",
@@ -1204,7 +1301,7 @@
           "lon": 4.83135
         }
       ],
-      "updatedAt": "2026-08-23T04:13:40.494Z"
+      "updatedAt": "2026-09-03T17:00:37.998Z"
     },
     "viewpoints": {
       "count": 41,
@@ -1308,7 +1405,7 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:41.147Z"
+      "updatedAt": "2026-09-03T17:00:38.821Z"
     },
     "beaches": {
       "count": 32,
@@ -1383,7 +1480,7 @@
           "lon": 4.893706
         }
       ],
-      "updatedAt": "2026-08-23T04:13:41.659Z"
+      "updatedAt": "2026-09-03T17:00:39.541Z"
     },
     "atms": {
       "count": 329,
@@ -1409,23 +1506,237 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:42.362Z"
+      "updatedAt": "2026-09-03T17:00:40.280Z"
     },
     "post-boxes": {
       "count": 311,
       "pois": [
         {
-          "id": "node/5058077183",
-          "name": "Brievenbus",
-          "lat": 52.3538,
-          "lon": 4.930924
+          "id": "node/7835815656",
+          "lat": 52.368946,
+          "lon": 4.90248,
+          "street": "Jodenbreestraat"
+        },
+        {
+          "id": "node/264575281",
+          "lat": 52.364429,
+          "lon": 4.902823,
+          "street": "Nieuwe Keizersgracht"
+        },
+        {
+          "id": "node/8044655478",
+          "lat": 52.371055,
+          "lon": 4.904758,
+          "street": "Oudeschans"
+        },
+        {
+          "id": "node/855276836",
+          "lat": 52.363483,
+          "lon": 4.90152,
+          "street": "Kerkstraat"
+        },
+        {
+          "id": "node/11067462653",
+          "lat": 52.364959,
+          "lon": 4.897602,
+          "street": "Herengracht"
+        },
+        {
+          "id": "node/251823633",
+          "lat": 52.36991,
+          "lon": 4.897201,
+          "street": "Rusland"
+        },
+        {
+          "id": "node/442122360",
+          "lat": 52.372071,
+          "lon": 4.900232,
+          "street": "Nieuwmarkt"
+        },
+        {
+          "id": "node/13322539815",
+          "lat": 52.364471,
+          "lon": 4.910691,
+          "street": "Roetersstraat"
+        },
+        {
+          "id": "node/252143854",
+          "lat": 52.371096,
+          "lon": 4.911938,
+          "address": "Prins Hendrikkade 197",
+          "street": "Prins Hendrikkade"
+        },
+        {
+          "id": "node/441600174",
+          "lat": 52.36184,
+          "lon": 4.90725,
+          "street": "Weesperplein"
+        },
+        {
+          "id": "node/4807198167",
+          "lat": 52.367059,
+          "lon": 4.892741,
+          "street": "Muntplein"
+        },
+        {
+          "id": "node/3413430593",
+          "lat": 52.360889,
+          "lon": 4.899282,
+          "street": "Frederiksplein"
+        },
+        {
+          "id": "node/7160280376",
+          "lat": 52.362488,
+          "lon": 4.913328,
+          "street": "Pancrasstraat"
+        },
+        {
+          "id": "node/178902467",
+          "lat": 52.364033,
+          "lon": 4.892638,
+          "street": "Keizersgracht"
+        },
+        {
+          "id": "node/6750131985",
+          "lat": 52.373951,
+          "lon": 4.895298,
+          "street": "Papenbrugsteeg"
+        },
+        {
+          "id": "node/565691097",
+          "lat": 52.368284,
+          "lon": 4.918173,
+          "street": "Hoogte Kadijk"
+        },
+        {
+          "id": "node/1310974774",
+          "lat": 52.368981,
+          "lon": 4.889423,
+          "street": "Nieuwezijds Voorburgwal"
+        },
+        {
+          "id": "node/8112029468",
+          "lat": 52.369488,
+          "lon": 4.919849,
+          "street": "Wittenburgergracht"
+        },
+        {
+          "id": "node/12098889101",
+          "lat": 52.372946,
+          "lon": 4.919163,
+          "address": "Kattenburgerstraat",
+          "street": "Kattenburgerstraat"
+        },
+        {
+          "id": "node/13062567419",
+          "lat": 52.359027,
+          "lon": 4.916395,
+          "street": "Beukenweg"
+        },
+        {
+          "id": "node/12909594667",
+          "lat": 52.356278,
+          "lon": 4.91035,
+          "street": "Eerste Oosterparkstraat"
+        },
+        {
+          "id": "node/33057063",
+          "lat": 52.366845,
+          "lon": 4.925016,
+          "street": "Sarphatistraat"
+        },
+        {
+          "id": "node/308511602",
+          "lat": 52.380178,
+          "lon": 4.899985,
+          "street": "De Ruijterkade"
+        },
+        {
+          "id": "node/2505905142",
+          "lat": 52.356011,
+          "lon": 4.893425,
+          "street": "Gerard Douplein"
+        },
+        {
+          "id": "node/1314892841",
+          "lat": 52.37017,
+          "lon": 4.882331,
+          "street": "Elandsgracht"
+        },
+        {
+          "id": "node/30189561",
+          "lat": 52.354268,
+          "lon": 4.898955,
+          "street": "Sarphatipark"
+        },
+        {
+          "id": "node/12750721889",
+          "lat": 52.355106,
+          "lon": 4.914522,
+          "street": "Vrolikstraat"
+        },
+        {
+          "id": "node/12105869301",
+          "lat": 52.375031,
+          "lon": 4.883678,
+          "street": "Prinsengracht"
+        },
+        {
+          "id": "node/11076021948",
+          "lat": 52.358384,
+          "lon": 4.923283,
+          "street": "Derde Oosterparkstraat"
+        },
+        {
+          "id": "node/117074976",
+          "lat": 52.359603,
+          "lon": 4.88342,
+          "street": "Hobbemastraat"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:42.994Z"
+      "updatedAt": "2026-09-03T17:00:42.677Z"
     },
     "recycling": {
-      "count": 3073,
+      "count": 3079,
       "pois": [
+        {
+          "id": "node/8112115951",
+          "lat": 52.368552,
+          "lon": 4.903573,
+          "fee": "no",
+          "street": "Jodenbreestraat"
+        },
+        {
+          "id": "node/10782404182",
+          "lat": 52.366398,
+          "lon": 4.901607,
+          "street": "Amstel"
+        },
+        {
+          "id": "node/7594700010",
+          "lat": 52.370487,
+          "lon": 4.90491,
+          "street": "Nieuwe Uilenburgerstraat"
+        },
+        {
+          "id": "node/8112112422",
+          "lat": 52.370464,
+          "lon": 4.909977,
+          "fee": "no",
+          "street": "Rapenburg"
+        },
+        {
+          "id": "node/3373237652",
+          "lat": 52.364022,
+          "lon": 4.898601,
+          "street": "Keizersgracht"
+        },
+        {
+          "id": "node/3130900962",
+          "lat": 52.362449,
+          "lon": 4.906789,
+          "street": "Nieuwe Achtergracht"
+        },
         {
           "id": "node/12850635648",
           "name": "Statiegeld Retourshop",
@@ -1434,133 +1745,149 @@
           "address": "Vijzelstraat 51"
         },
         {
-          "id": "node/332644232",
-          "name": "Statiegeld Inleverpunt",
-          "lat": 52.35325,
-          "lon": 4.89331,
-          "address": "Ceintuurbaan 139-H"
+          "id": "node/1310911743",
+          "lat": 52.361915,
+          "lon": 4.896419,
+          "street": "Amstelveld"
         },
         {
-          "id": "node/73066821",
-          "name": "Joe's Garage",
-          "lat": 52.355589,
-          "lon": 4.925002
+          "id": "node/1704337929",
+          "lat": 52.362281,
+          "lon": 4.912468,
+          "street": "Sarphatistraat"
         },
         {
-          "id": "node/10301948110",
-          "name": "Restafval, oudpapier",
-          "lat": 52.362896,
-          "lon": 4.932383
+          "id": "node/76459283",
+          "lat": 52.362889,
+          "lon": 4.892262,
+          "street": "Kerkstraat"
         },
         {
-          "id": "node/2348245293",
-          "name": "Droppie",
-          "lat": 52.363445,
-          "lon": 4.932747,
-          "address": "Javastraat 24"
+          "id": "node/5359680370",
+          "lat": 52.359863,
+          "lon": 4.911839,
+          "street": "Andreas Bonnstraat"
         },
         {
-          "id": "node/5694298941",
-          "name": "Recycling containers",
-          "lat": 52.358809,
-          "lon": 4.93082
+          "id": "node/13718787340",
+          "lat": 52.367412,
+          "lon": 4.889204,
+          "street": "Heiligewegsluis"
         },
         {
-          "id": "way/942520202",
-          "name": "Inzamel Eiland",
-          "lat": 52.367135,
-          "lon": 4.866874
+          "id": "node/13458126684",
+          "lat": 52.35818,
+          "lon": 4.901794,
+          "street": "Stadhouderskade"
         },
         {
-          "id": "node/11862331751",
-          "name": "Wormen Hotel",
-          "lat": 52.340699,
-          "lon": 4.906272
+          "id": "node/13458126680",
+          "lat": 52.358111,
+          "lon": 4.901796,
+          "street": "Hemonystraat"
         },
         {
-          "id": "way/458310109",
-          "name": "Afvalpunt Rozenburglaan",
-          "lat": 52.338747,
-          "lon": 4.937347,
-          "openingHours": "Mo-Sa 08:00-17:00; PH closed"
+          "id": "node/4807241141",
+          "lat": 52.371344,
+          "lon": 4.889276,
+          "street": "Spuistraat"
         },
         {
-          "id": "way/1197645088",
-          "name": "Afvalpunt Marie Baronlaan",
-          "lat": 52.369747,
-          "lon": 4.971808,
-          "address": "Marie Baronlaan 13",
-          "openingHours": "Mo-Sa 08:00-17:00"
+          "id": "node/84471207",
+          "lat": 52.357873,
+          "lon": 4.90637,
+          "street": "Weesperzijde"
         },
         {
-          "id": "node/1491316017",
-          "name": "Milieudepot, gemeente Ouder-Amstel",
-          "lat": 52.32678,
-          "lon": 4.940635
+          "id": "node/8112029467",
+          "lat": 52.369452,
+          "lon": 4.919953,
+          "fee": "no",
+          "street": "Wittenburgergracht"
         },
         {
-          "id": "node/3309835092",
-          "name": "papier",
-          "lat": 52.354422,
-          "lon": 4.829546
+          "id": "node/565691096",
+          "lat": 52.370159,
+          "lon": 4.919812,
+          "street": "Marie Altelaarplein"
         },
         {
-          "id": "node/1575309341",
-          "name": "Afvalpunt Henk Sneevlietweg",
-          "lat": 52.343293,
-          "lon": 4.833456,
-          "address": "Henk Sneevlietweg 22",
-          "openingHours": "Mo-Sa 08:00-16:55; Su 10:00-15:55"
+          "id": "node/8130168033",
+          "lat": 52.371419,
+          "lon": 4.91979,
+          "fee": "no",
+          "street": "Wittenburgerkade"
         },
         {
-          "id": "node/8879798121",
-          "name": "Afvalpunt Toetsenbordweg",
-          "lat": 52.413607,
-          "lon": 4.869685,
-          "address": "Toetsenbordweg 42",
-          "openingHours": "Mo-Sa 09:00-17:00"
+          "id": "node/12676332418",
+          "lat": 52.357937,
+          "lon": 4.910169,
+          "street": "Wibautstraat"
         },
         {
-          "id": "node/7641119579",
-          "name": "Textile recycling",
-          "lat": 52.379675,
-          "lon": 4.821048
+          "id": "node/408141236",
+          "lat": 52.368722,
+          "lon": 4.886969,
+          "street": "Herengracht"
         },
         {
-          "id": "way/43088047",
-          "name": "Afvalpunt Seineweg",
-          "lat": 52.385908,
-          "lon": 4.820774
+          "id": "node/12676332409",
+          "lat": 52.35748,
+          "lon": 4.90968,
+          "street": "Ruyschstraat"
         },
         {
-          "id": "way/746128618",
-          "name": "Gemeentewerf Landsmeer",
-          "lat": 52.423274,
-          "lon": 4.906724,
-          "openingHours": "Mo 13:00-16:00; We 13:00-16:00; Fr 13:00-16:00; Sa 09:00-12:00"
+          "id": "node/11889600941",
+          "lat": 52.377352,
+          "lon": 4.895404,
+          "street": "Nieuwezijds Voorburgwal"
         },
         {
-          "id": "node/14078231429",
-          "name": "Kledingbak",
-          "lat": 52.312325,
-          "lon": 4.953253
+          "id": "node/7251708416",
+          "lat": 52.368878,
+          "lon": 4.922184,
+          "fee": "no",
+          "street": "Oostenburgervoorstraat"
         },
         {
-          "id": "node/13096936090",
-          "name": "Wormenhotel",
-          "lat": 52.319571,
-          "lon": 4.978369,
-          "openingHours": "24/7"
+          "id": "node/13108820633",
+          "lat": 52.378714,
+          "lon": 4.900491,
+          "wheelchair": "yes",
+          "street": "Centraal Station"
         },
         {
-          "id": "way/1356980317",
-          "name": "Perscontainer",
-          "lat": 52.429693,
-          "lon": 4.856982,
-          "openingHours": "Mo-Fr 07:00-16:00; PH Off"
+          "id": "node/13468719775",
+          "lat": 52.356282,
+          "lon": 4.903172,
+          "street": "Tweede Jan van der Heijdenstraat"
+        },
+        {
+          "id": "node/13453294057",
+          "lat": 52.357009,
+          "lon": 4.89722,
+          "street": "Gerard Doustraat"
+        },
+        {
+          "id": "node/13105648778",
+          "lat": 52.359276,
+          "lon": 4.890089,
+          "street": "Eerste Weteringplantsoen"
+        },
+        {
+          "id": "node/8158491135",
+          "lat": 52.366653,
+          "lon": 4.923649,
+          "street": "Hoogte Kadijk"
+        },
+        {
+          "id": "node/12909601428",
+          "lat": 52.356591,
+          "lon": 4.911833,
+          "street": "Eerste Oosterparkstraat"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:44.879Z"
+      "updatedAt": "2026-09-03T17:00:45.324Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -1575,7 +1902,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:45.339Z"
+      "updatedAt": "2026-09-03T17:00:45.840Z"
     },
     "libraries": {
       "count": 209,
@@ -1790,10 +2117,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:45.968Z"
+      "updatedAt": "2026-09-03T17:00:46.500Z"
     },
     "outdoor-gyms": {
-      "count": 129,
+      "count": 130,
       "pois": [
         {
           "id": "node/4586173932",
@@ -1827,7 +2154,7 @@
           "lon": 4.861487
         }
       ],
-      "updatedAt": "2026-08-23T04:13:47.402Z"
+      "updatedAt": "2026-09-03T17:00:48.030Z"
     },
     "camp-sites": {
       "count": 7,
@@ -1876,11 +2203,23 @@
           "lon": 5.016262
         }
       ],
-      "updatedAt": "2026-08-23T04:13:47.914Z"
+      "updatedAt": "2026-09-03T17:00:48.669Z"
     },
     "shelters": {
       "count": 56,
       "pois": [
+        {
+          "id": "node/12088604067",
+          "lat": 52.387067,
+          "lon": 4.878149,
+          "street": "Brettenpad"
+        },
+        {
+          "id": "node/13231712738",
+          "lat": 52.391404,
+          "lon": 4.872292,
+          "street": "Zaanhof"
+        },
         {
           "id": "way/1298641122",
           "name": "DVVA",
@@ -1894,13 +2233,37 @@
           "lon": 4.932619
         },
         {
+          "id": "node/8271944000",
+          "lat": 52.37954,
+          "lon": 4.958041,
+          "street": "Zuider IJdijk"
+        },
+        {
           "id": "way/670204947",
           "name": "Rokershok",
           "lat": 52.346803,
           "lon": 4.837122
+        },
+        {
+          "id": "node/9506307636",
+          "lat": 52.337592,
+          "lon": 4.974293,
+          "street": "Kriekenoord"
+        },
+        {
+          "id": "node/12840224911",
+          "lat": 52.309444,
+          "lon": 4.942004,
+          "street": "Hoogoorddreef"
+        },
+        {
+          "id": "node/12902489827",
+          "lat": 52.304021,
+          "lon": 4.952849,
+          "street": "Haarlerbergweg"
         }
       ],
-      "updatedAt": "2026-08-23T04:13:49.339Z"
+      "updatedAt": "2026-09-03T17:00:50.782Z"
     },
     "rest-areas": {
       "count": 14,
@@ -1918,12 +2281,12 @@
           "lon": 4.964111
         }
       ],
-      "updatedAt": "2026-08-23T04:13:49.854Z"
+      "updatedAt": "2026-09-03T17:00:51.421Z"
     },
     "dump-stations": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-08-23T04:13:50.284Z"
+      "updatedAt": "2026-09-03T17:00:51.807Z"
     },
     "post-offices": {
       "count": 26,
@@ -2101,12 +2464,12 @@
           "lon": 4.94775
         }
       ],
-      "updatedAt": "2026-08-23T04:13:50.755Z"
+      "updatedAt": "2026-09-03T17:00:52.248Z"
     },
     "showers": {
       "count": 20,
       "pois": [],
-      "updatedAt": "2026-08-23T04:13:51.199Z"
+      "updatedAt": "2026-09-03T17:00:52.646Z"
     },
     "fireplaces": {
       "count": 29,
@@ -2130,7 +2493,7 @@
           "lon": 4.860672
         }
       ],
-      "updatedAt": "2026-08-23T04:13:52.209Z"
+      "updatedAt": "2026-09-03T17:00:53.767Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2138,7 +2501,7 @@
       "updatedAt": "2026-08-17T04:03:49.602Z"
     },
     "benches": {
-      "count": 6942,
+      "count": 6990,
       "pois": [
         {
           "id": "node/5674541699",
@@ -2258,12 +2621,137 @@
           "lon": 4.908026
         }
       ],
-      "updatedAt": "2026-08-23T04:13:53.293Z"
+      "updatedAt": "2026-09-03T17:00:57.241Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:14.688Z"
+    },
+    "bicycle-repair": {
+      "count": 18,
+      "pois": [
+        {
+          "id": "node/13121604101",
+          "lat": 52.376011,
+          "lon": 4.910287,
+          "openingHours": "Mo-Th 09:00-15:30",
+          "street": "Oosterdokskade"
+        },
+        {
+          "id": "node/6903369319",
+          "name": "Fietsenwerkplaats Smerig",
+          "lat": 52.353433,
+          "lon": 4.899181,
+          "address": "Van Ostadestraat 233E",
+          "openingHours": "Mo-Fr 11:15-17:00"
+        },
+        {
+          "id": "node/3525004081",
+          "name": "Fietsreparatie Amsterdam",
+          "lat": 52.383117,
+          "lon": 4.902985,
+          "address": "Buiksloterweg 5c",
+          "fee": "no"
+        },
+        {
+          "id": "node/4844301540",
+          "name": "Het Zwarte Fietsen Plan",
+          "lat": 52.357035,
+          "lon": 4.92773,
+          "address": "Land van Cocagneplein 1E",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/2808943824",
+          "name": "Engels",
+          "lat": 52.378982,
+          "lon": 4.872579,
+          "address": "Van Hallstraat 294",
+          "openingHours": "Mo-Fr 08:00-17:00; Sa 09:00-17:00"
+        },
+        {
+          "id": "node/12059385481",
+          "lat": 52.347625,
+          "lon": 4.92631,
+          "fee": "yes",
+          "street": "Gooiseweg"
+        },
+        {
+          "id": "node/11551783626",
+          "lat": 52.340239,
+          "lon": 4.897148,
+          "street": "Baroniestraat"
+        },
+        {
+          "id": "node/7960010726",
+          "lat": 52.393549,
+          "lon": 4.864852,
+          "fee": "yes",
+          "street": "Nieuwe Hemweg"
+        },
+        {
+          "id": "node/11913474614",
+          "lat": 52.335779,
+          "lon": 4.868373,
+          "street": "Parnassusweg"
+        },
+        {
+          "id": "node/4773608056",
+          "lat": 52.341751,
+          "lon": 4.972532,
+          "street": "Rode Kruislaan"
+        },
+        {
+          "id": "node/12895444423",
+          "lat": 52.332107,
+          "lon": 4.972426,
+          "fee": "no",
+          "street": "Visseringweg"
+        },
+        {
+          "id": "node/7554376057",
+          "lat": 52.326971,
+          "lon": 4.970824,
+          "street": "Provincialeweg"
+        },
+        {
+          "id": "node/12887507706",
+          "lat": 52.333057,
+          "lon": 4.982622,
+          "fee": "yes",
+          "street": "Stammerkamp"
+        },
+        {
+          "id": "node/10694029350",
+          "lat": 52.359187,
+          "lon": 4.802339,
+          "fee": "no",
+          "street": "M. Hanenbergstraat"
+        },
+        {
+          "id": "node/12769819204",
+          "lat": 52.31582,
+          "lon": 4.963728,
+          "street": "Flierbos"
+        },
+        {
+          "id": "node/12866494391",
+          "lat": 52.302908,
+          "lon": 4.947763,
+          "fee": "yes",
+          "street": "Hullenbergweg"
+        },
+        {
+          "id": "node/2331564060",
+          "lat": 52.341891,
+          "lon": 4.794052,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Langsom"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:00:55.622Z"
     }
   }
 }

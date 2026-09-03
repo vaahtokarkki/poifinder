@@ -1,6 +1,6 @@
 {
   "city": "milan",
-  "generatedAt": "2026-08-23T04:30:43.828Z",
+  "generatedAt": "2026-09-03T17:20:54.549Z",
   "categories": {
     "toilets": {
       "count": 351,
@@ -20,11 +20,33 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/13531719131",
+          "lat": 45.471817,
+          "lon": 9.188282,
+          "context": "Palazzo di Brera"
+        },
+        {
+          "id": "node/1898336435",
+          "lat": 45.470298,
+          "lon": 9.178885,
+          "openingHours": "09:00-17:15",
+          "fee": "no",
+          "context": "Castello Sforzesco"
+        },
+        {
           "id": "way/55740638",
           "name": "Biblioteca Università Bocconi",
           "lat": 45.448584,
           "lon": 9.188639,
           "openingHours": "08:30-24:00"
+        },
+        {
+          "id": "node/11879033569",
+          "lat": 45.486532,
+          "lon": 9.191164,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Casa della Memoria"
         },
         {
           "id": "way/37131390",
@@ -34,12 +56,76 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/2042409082",
+          "lat": 45.485674,
+          "lon": 9.179904,
+          "openingHours": "Tu-Su 08:00-18:00",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Cimitero Monumentale"
+        },
+        {
+          "id": "node/3263986618",
+          "lat": 45.486364,
+          "lon": 9.203826,
+          "openingHours": "Mo-Su 06:00-21:00",
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Milano Centrale"
+        },
+        {
           "id": "way/33448178",
           "name": "Esselunga",
           "lat": 45.460768,
           "lon": 9.155802,
           "address": "Via Giorgio Washington 53",
           "openingHours": "Mo-Sa 07:30-21:00; Su 08:00-20:00; PH off"
+        },
+        {
+          "id": "node/10771368418",
+          "lat": 45.475176,
+          "lon": 9.229172,
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "22070"
+        },
+        {
+          "id": "node/12149734931",
+          "lat": 45.47856,
+          "lon": 9.227563,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Edificio 2 – Bruno Finzi"
+        },
+        {
+          "id": "node/2289297513",
+          "lat": 45.479476,
+          "lon": 9.22686,
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "Edificio 11 – Architettura"
+        },
+        {
+          "id": "node/2498673942",
+          "lat": 45.478502,
+          "lon": 9.228005,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Edificio 2A"
+        },
+        {
+          "id": "node/4612338077",
+          "lat": 45.477975,
+          "lon": 9.228756,
+          "fee": "no",
+          "context": "Edificio 6 – Giulio Natta"
+        },
+        {
+          "id": "node/4612299023",
+          "lat": 45.477464,
+          "lon": 9.229348,
+          "fee": "no",
+          "context": "Edificio 9 – Giuseppe Bruni"
         },
         {
           "id": "node/9386630988",
@@ -96,22 +182,16 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-23T04:30:23.728Z"
+      "updatedAt": "2026-09-03T17:20:25.903Z"
     },
     "drinking-water": {
-      "count": 843,
+      "count": 845,
       "pois": [
         {
           "id": "node/12749955367",
           "name": "Casa dell’Acqua",
           "lat": 45.460305,
           "lon": 9.197183
-        },
-        {
-          "id": "node/14055768901",
-          "name": "Fontanella",
-          "lat": 45.454278,
-          "lon": 9.197369
         },
         {
           "id": "way/561567039",
@@ -166,10 +246,10 @@
           "lon": 9.194539
         }
       ],
-      "updatedAt": "2026-08-23T04:30:25.372Z"
+      "updatedAt": "2026-09-03T17:20:28.227Z"
     },
     "playgrounds": {
-      "count": 663,
+      "count": 664,
       "pois": [
         {
           "id": "node/9041677870",
@@ -200,6 +280,12 @@
           "name": "Giochi Blu",
           "lat": 45.480001,
           "lon": 9.251338
+        },
+        {
+          "id": "way/1535669906",
+          "name": "Giardino Pubblico (via della Rondine)",
+          "lat": 45.453006,
+          "lon": 9.122201
         },
         {
           "id": "node/11717331712",
@@ -252,10 +338,10 @@
           "lon": 9.287307
         }
       ],
-      "updatedAt": "2026-08-23T04:30:26.402Z"
+      "updatedAt": "2026-09-03T17:20:29.460Z"
     },
     "parking": {
-      "count": 2985,
+      "count": 2986,
       "pois": [
         {
           "id": "node/9888148679",
@@ -471,10 +557,10 @@
           "lon": 9.168351
         }
       ],
-      "updatedAt": "2026-08-23T04:30:27.842Z"
+      "updatedAt": "2026-09-03T17:20:31.072Z"
     },
     "charging-stations": {
-      "count": 251,
+      "count": 252,
       "pois": [
         {
           "id": "node/11283958200",
@@ -614,10 +700,10 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:30:28.382Z"
+      "updatedAt": "2026-09-03T17:20:31.870Z"
     },
     "gas-stations": {
-      "count": 269,
+      "count": 268,
       "pois": [
         {
           "id": "node/227531791",
@@ -821,10 +907,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:30:29.078Z"
+      "updatedAt": "2026-09-03T17:20:32.537Z"
     },
     "ice-cream": {
-      "count": 238,
+      "count": 239,
       "pois": [
         {
           "id": "node/13001316581",
@@ -1054,7 +1140,7 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-23T04:30:29.861Z"
+      "updatedAt": "2026-09-03T17:20:33.527Z"
     },
     "dog-parks": {
       "count": 289,
@@ -1128,10 +1214,10 @@
           "lon": 9.289989
         }
       ],
-      "updatedAt": "2026-08-23T04:30:30.344Z"
+      "updatedAt": "2026-09-03T17:20:34.028Z"
     },
     "picnic-spots": {
-      "count": 292,
+      "count": 297,
       "pois": [
         {
           "id": "node/10008459997",
@@ -1144,9 +1230,39 @@
           "name": "Area picnic in Via Fratelli Zoia-Novara",
           "lat": 45.476832,
           "lon": 9.107871
+        },
+        {
+          "id": "way/1551828209",
+          "name": "portico 1",
+          "lat": 45.484862,
+          "lon": 9.092846
+        },
+        {
+          "id": "way/1551828205",
+          "name": "portico 2",
+          "lat": 45.485015,
+          "lon": 9.092702
+        },
+        {
+          "id": "way/1551828206",
+          "name": "portico 3",
+          "lat": 45.485189,
+          "lon": 9.092638
+        },
+        {
+          "id": "way/1551828203",
+          "name": "Area delle feste - Boscoincittà",
+          "lat": 45.485286,
+          "lon": 9.092335
+        },
+        {
+          "id": "way/1551828208",
+          "name": "portico 4",
+          "lat": 45.485522,
+          "lon": 9.092335
         }
       ],
-      "updatedAt": "2026-08-23T04:30:31.708Z"
+      "updatedAt": "2026-09-03T17:20:35.547Z"
     },
     "viewpoints": {
       "count": 12,
@@ -1185,15 +1301,15 @@
           "lon": 9.195685
         }
       ],
-      "updatedAt": "2026-08-23T04:30:32.341Z"
+      "updatedAt": "2026-09-03T17:20:36.360Z"
     },
     "beaches": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:30:32.776Z"
+      "updatedAt": "2026-09-03T17:20:37.009Z"
     },
     "atms": {
-      "count": 429,
+      "count": 431,
       "pois": [
         {
           "id": "node/4170003889",
@@ -1395,79 +1511,384 @@
           "openingHours": "Mo-Fr 08:20-19:05, Sa 08:20-12:35; Su off"
         }
       ],
-      "updatedAt": "2026-08-23T04:30:33.432Z"
+      "updatedAt": "2026-09-03T17:20:37.833Z"
     },
     "post-boxes": {
-      "count": 296,
+      "count": 294,
       "pois": [
         {
-          "id": "node/383294840",
-          "name": "Milano 56",
-          "lat": 45.473724,
-          "lon": 9.159971
+          "id": "node/4170009289",
+          "lat": 45.462126,
+          "lon": 9.191417,
+          "street": "Via Rastrelli"
         },
         {
-          "id": "node/1639394998",
-          "name": "Cassetta postale Milano 338",
-          "lat": 45.526602,
-          "lon": 9.162037
+          "id": "node/2318059253",
+          "lat": 45.464924,
+          "lon": 9.186472,
+          "street": "Via Orefici"
         },
         {
-          "id": "node/1639395038",
-          "name": "Cassetta postale Milano 955",
-          "lat": 45.528101,
-          "lon": 9.16081
+          "id": "node/5033959065",
+          "lat": 45.464722,
+          "lon": 9.185309,
+          "street": "Via Cordusio"
+        },
+        {
+          "id": "node/4570534700",
+          "lat": 45.461158,
+          "lon": 9.186515,
+          "street": "Piazza Sant'Alessandro"
+        },
+        {
+          "id": "node/2463375052",
+          "lat": 45.467797,
+          "lon": 9.187445,
+          "street": "Piazzetta Maurilio Bossi"
+        },
+        {
+          "id": "node/2318059251",
+          "lat": 45.464492,
+          "lon": 9.195792,
+          "street": "Largo Corsia dei Servi"
+        },
+        {
+          "id": "node/4059810774",
+          "lat": 45.468962,
+          "lon": 9.18587,
+          "street": "Via dell'Orso"
+        },
+        {
+          "id": "node/9666279519",
+          "lat": 45.460591,
+          "lon": 9.183858,
+          "street": "Via Santa Maria Valle"
+        },
+        {
+          "id": "node/5691535596",
+          "lat": 45.466952,
+          "lon": 9.197435,
+          "street": "Piazza San Babila"
+        },
+        {
+          "id": "node/442983868",
+          "lat": 45.470464,
+          "lon": 9.192131,
+          "street": "Via dei Giardini"
+        },
+        {
+          "id": "node/5729802368",
+          "lat": 45.461412,
+          "lon": 9.181428,
+          "street": "Via San Sisto"
+        },
+        {
+          "id": "node/2131495799",
+          "lat": 45.457712,
+          "lon": 9.187726,
+          "street": "Piazza Sant'Eufemia"
+        },
+        {
+          "id": "node/2917660502",
+          "lat": 45.463801,
+          "lon": 9.199511,
+          "street": "Via Uberto Visconti di Modrone"
+        },
+        {
+          "id": "node/3991757315",
+          "lat": 45.457432,
+          "lon": 9.192423,
+          "street": "Via Santa Sofia"
+        },
+        {
+          "id": "node/9023574513",
+          "lat": 45.468103,
+          "lon": 9.181634,
+          "wheelchair": "no",
+          "street": "Foro Buonaparte"
+        },
+        {
+          "id": "node/5535679591",
+          "lat": 45.462159,
+          "lon": 9.200106,
+          "street": "Corso di Porta Vittoria"
+        },
+        {
+          "id": "node/5119505253",
+          "lat": 45.459018,
+          "lon": 9.181264,
+          "street": "Via Urbano Terzo"
+        },
+        {
+          "id": "node/4838709982",
+          "lat": 45.465723,
+          "lon": 9.178008,
+          "street": "Corso Magenta"
+        },
+        {
+          "id": "node/3450509034",
+          "lat": 45.45638,
+          "lon": 9.184925,
+          "street": "Via Molino delle Armi"
+        },
+        {
+          "id": "node/2324825970",
+          "lat": 45.46708,
+          "lon": 9.202302,
+          "street": "Via Conservatorio"
+        },
+        {
+          "id": "node/2547434257",
+          "lat": 45.472685,
+          "lon": 9.195259,
+          "street": "Piazza Cavour"
+        },
+        {
+          "id": "node/2838445710",
+          "lat": 45.47323,
+          "lon": 9.184462,
+          "street": "Via San Simpliciano"
+        },
+        {
+          "id": "node/5033958997",
+          "lat": 45.466719,
+          "lon": 9.176314,
+          "street": "Via Giosuè Carducci"
+        },
+        {
+          "id": "node/1766729946",
+          "lat": 45.45441,
+          "lon": 9.18699,
+          "street": "Corso Italia"
+        },
+        {
+          "id": "node/6011956494",
+          "lat": 45.46428,
+          "lon": 9.175472,
+          "street": "Via Terraggio"
+        },
+        {
+          "id": "node/9023597721",
+          "lat": 45.46844,
+          "lon": 9.176767,
+          "address": "Piazzale Luigi Cadorna 8n10",
+          "street": "Piazzale Luigi Cadorna"
+        },
+        {
+          "id": "node/9079238292",
+          "lat": 45.458151,
+          "lon": 9.177639,
+          "street": "Via Conca del Naviglio"
+        },
+        {
+          "id": "node/5613206369",
+          "lat": 45.475034,
+          "lon": 9.186854,
+          "street": "Largo Claudio Treves"
+        },
+        {
+          "id": "node/4654764522",
+          "lat": 45.455024,
+          "lon": 9.200522,
+          "street": "Via Orti"
+        },
+        {
+          "id": "node/4250036646",
+          "lat": 45.471991,
+          "lon": 9.202806,
+          "street": "Corso Venezia"
         }
       ],
-      "updatedAt": "2026-08-23T04:30:33.966Z"
+      "updatedAt": "2026-09-03T17:20:39.924Z"
     },
     "recycling": {
-      "count": 266,
+      "count": 265,
       "pois": [
         {
-          "id": "node/12285353095",
-          "name": "RiGenera",
-          "lat": 45.477201,
-          "lon": 9.243026,
-          "address": "Via Leonardo Bistolfi 49"
+          "id": "node/12898557122",
+          "lat": 45.471469,
+          "lon": 9.178346,
+          "street": "Piazza del Cannone"
         },
         {
-          "id": "way/26012865",
-          "name": "Ricicleria Corelli",
-          "lat": 45.471366,
-          "lon": 9.253722,
-          "openingHours": "Mo-Sa 08:00-19:00; Su 08:00-15:00"
+          "id": "node/2917651145",
+          "lat": 45.463393,
+          "lon": 9.206886,
+          "street": "Via Giuseppe Zanardelli"
         },
         {
-          "id": "way/105917828",
-          "name": "Ricicleria Pedroni",
-          "lat": 45.511827,
-          "lon": 9.166979,
-          "address": "Via Lisiade Pedroni 40/1",
-          "openingHours": "Mo-Sa 08:00-20:00; Su 08:00-19:00"
+          "id": "node/282180359",
+          "lat": 45.458535,
+          "lon": 9.205064,
+          "street": "Viale Regina Margherita"
         },
         {
-          "id": "way/1528994784",
-          "name": "Piattaforma ecologica comunale Corsico",
-          "lat": 45.450599,
-          "lon": 9.109867
+          "id": "node/12898623940",
+          "lat": 45.473434,
+          "lon": 9.178522,
+          "street": "Viale Malta"
         },
         {
-          "id": "way/657325612",
-          "name": "Centro di Raccolta",
-          "lat": 45.526168,
-          "lon": 9.146259,
-          "openingHours": "Mo 13:00-17:00; Tu 09:00-12:00, 13:00-17:00; We 13:00-17:00; Th 09:00-12:00, 13:00-17:00; Fr 13:00-17:00; Sa 10:00-13:00, 14:00-17:00; Su 09:00-13:00"
+          "id": "node/3844500662",
+          "lat": 45.470534,
+          "lon": 9.205517,
+          "street": "Viale Luigi Majno"
         },
         {
-          "id": "way/1432594216",
-          "name": "Centro di riciclaggio di Olgettina",
-          "lat": 45.507125,
-          "lon": 9.268098,
-          "openingHours": "Mo-Sa 08:00-19:00; Su 08:00-15:00"
+          "id": "node/4528886801",
+          "lat": 45.470678,
+          "lon": 9.210317,
+          "street": "Piazza Fratelli Bandiera"
+        },
+        {
+          "id": "node/13781905601",
+          "lat": 45.475282,
+          "lon": 9.206066,
+          "street": "Via Lazzaro Spallanzani"
+        },
+        {
+          "id": "node/13846940601",
+          "lat": 45.451,
+          "lon": 9.203744,
+          "street": "Corso Lodi"
+        },
+        {
+          "id": "node/13689230201",
+          "lat": 45.451757,
+          "lon": 9.206676,
+          "street": "Via Lodovico Muratori"
+        },
+        {
+          "id": "node/2783011105",
+          "lat": 45.466789,
+          "lon": 9.16523,
+          "street": "Piazzale Francesco Baracca"
+        },
+        {
+          "id": "node/3699746571",
+          "lat": 45.474491,
+          "lon": 9.210938,
+          "street": "Piazza Otto Novembre"
+        },
+        {
+          "id": "node/13772760107",
+          "lat": 45.460783,
+          "lon": 9.164124,
+          "openingHours": "24/7",
+          "street": "Piazzale Aquileia"
+        },
+        {
+          "id": "node/4863585574",
+          "lat": 45.447201,
+          "lon": 9.202699,
+          "street": "Via Crema"
+        },
+        {
+          "id": "node/13731128901",
+          "lat": 45.452664,
+          "lon": 9.211894,
+          "street": "Via Friuli"
+        },
+        {
+          "id": "node/13887517201",
+          "lat": 45.453426,
+          "lon": 9.212705,
+          "street": "Viale Cirene"
+        },
+        {
+          "id": "node/3911250736",
+          "lat": 45.472794,
+          "lon": 9.21461,
+          "street": "Piazza Maria Adelaide di Savoia"
+        },
+        {
+          "id": "node/12002531916",
+          "lat": 45.466767,
+          "lon": 9.217521,
+          "street": "Viale Piceno"
+        },
+        {
+          "id": "node/3609475263",
+          "lat": 45.469331,
+          "lon": 9.216942,
+          "street": "Via Carlo Goldoni"
+        },
+        {
+          "id": "node/8892302186",
+          "lat": 45.45936,
+          "lon": 9.162871,
+          "street": "Via del Caravaggio"
+        },
+        {
+          "id": "node/5872952285",
+          "lat": 45.467776,
+          "lon": 9.16149,
+          "street": "Via Giovanni Rasori"
+        },
+        {
+          "id": "node/12138597074",
+          "lat": 45.449019,
+          "lon": 9.17063,
+          "street": "Via Filippo Argelati"
+        },
+        {
+          "id": "node/6879782229",
+          "lat": 45.459934,
+          "lon": 9.161244,
+          "street": "Via Giuseppe Dezza"
+        },
+        {
+          "id": "node/4527053982",
+          "lat": 45.47598,
+          "lon": 9.214845,
+          "wheelchair": "yes",
+          "street": "Via Bartolomeo Eustachi"
+        },
+        {
+          "id": "node/2920519843",
+          "lat": 45.443384,
+          "lon": 9.184873,
+          "street": "Piazza Caduti del Lavoro"
+        },
+        {
+          "id": "node/281590186",
+          "lat": 45.468188,
+          "lon": 9.16039,
+          "street": "Via Mario Pagano"
+        },
+        {
+          "id": "node/9701650262",
+          "lat": 45.477133,
+          "lon": 9.166119,
+          "openingHours": "24/7",
+          "street": "Via Andrea Massena"
+        },
+        {
+          "id": "node/13731116801",
+          "lat": 45.450543,
+          "lon": 9.213088,
+          "street": "Via Tertulliano"
+        },
+        {
+          "id": "node/6903588757",
+          "lat": 45.456573,
+          "lon": 9.16158,
+          "street": "Piazza Giovanni Antonio Bazzi"
+        },
+        {
+          "id": "node/3147154554",
+          "lat": 45.486003,
+          "lon": 9.188522,
+          "street": "Via Pietro Borsieri"
+        },
+        {
+          "id": "node/11264607003",
+          "lat": 45.470624,
+          "lon": 9.219984,
+          "street": "Piazza Ermete Novelli"
         }
       ],
-      "updatedAt": "2026-08-23T04:30:35.937Z"
+      "updatedAt": "2026-09-03T17:20:42.874Z"
     },
     "luggage-storage": {
       "count": 4,
@@ -1487,7 +1908,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:30:36.454Z"
+      "updatedAt": "2026-09-03T17:20:43.441Z"
     },
     "libraries": {
       "count": 77,
@@ -1703,7 +2124,7 @@
         },
         {
           "id": "node/7191117562",
-          "name": "Biblioteca di Scienze agrarie e alimentari",
+          "name": "Biblioteca di Scienze Agrarie e Alimentari",
           "lat": 45.475421,
           "lon": 9.227359,
           "address": "Via Giovanni Celoria 2",
@@ -1728,7 +2149,7 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-23T04:30:36.966Z"
+      "updatedAt": "2026-09-03T17:20:44.066Z"
     },
     "outdoor-gyms": {
       "count": 72,
@@ -1770,7 +2191,7 @@
           "lon": 9.18983
         }
       ],
-      "updatedAt": "2026-08-23T04:30:38.102Z"
+      "updatedAt": "2026-09-03T17:20:45.428Z"
     },
     "camp-sites": {
       "count": 3,
@@ -1798,12 +2219,49 @@
           "address": "Via Pescara 37"
         }
       ],
-      "updatedAt": "2026-08-23T04:30:38.696Z"
+      "updatedAt": "2026-09-03T17:20:46.097Z"
     },
     "shelters": {
-      "count": 45,
-      "pois": [],
-      "updatedAt": "2026-08-23T04:30:39.939Z"
+      "count": 49,
+      "pois": [
+        {
+          "id": "node/2619654246",
+          "lat": 45.501144,
+          "lon": 9.245114,
+          "street": "Via don Giovanni Calabria"
+        },
+        {
+          "id": "way/1551828209",
+          "name": "portico 1",
+          "lat": 45.484862,
+          "lon": 9.092846
+        },
+        {
+          "id": "way/1551828205",
+          "name": "portico 2",
+          "lat": 45.485015,
+          "lon": 9.092702
+        },
+        {
+          "id": "way/1551828206",
+          "name": "portico 3",
+          "lat": 45.485189,
+          "lon": 9.092638
+        },
+        {
+          "id": "way/1551828208",
+          "name": "portico 4",
+          "lat": 45.485522,
+          "lon": 9.092335
+        },
+        {
+          "id": "node/9325221264",
+          "lat": 45.424589,
+          "lon": 9.275674,
+          "street": "Viale del Gelso"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:20:47.971Z"
     },
     "rest-areas": {
       "count": 12,
@@ -1840,12 +2298,12 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:30:40.454Z"
+      "updatedAt": "2026-09-03T17:20:48.621Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:30:40.811Z"
+      "updatedAt": "2026-09-03T17:20:49.008Z"
     },
     "post-offices": {
       "count": 121,
@@ -2092,17 +2550,17 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:30:41.441Z"
+      "updatedAt": "2026-09-03T17:20:49.783Z"
     },
     "showers": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-08-23T04:30:41.866Z"
+      "updatedAt": "2026-09-03T17:20:50.265Z"
     },
     "fireplaces": {
-      "count": 1,
+      "count": 5,
       "pois": [],
-      "updatedAt": "2026-08-23T04:30:42.672Z"
+      "updatedAt": "2026-09-03T17:20:51.397Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2110,7 +2568,7 @@
       "updatedAt": "2026-08-17T04:05:23.292Z"
     },
     "benches": {
-      "count": 7460,
+      "count": 7478,
       "pois": [
         {
           "id": "node/4170014591",
@@ -2119,12 +2577,66 @@
           "lon": 9.19532
         }
       ],
-      "updatedAt": "2026-08-23T04:30:43.725Z"
+      "updatedAt": "2026-09-03T17:20:54.445Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:30.171Z"
+    },
+    "bicycle-repair": {
+      "count": 15,
+      "pois": [
+        {
+          "id": "node/8868217615",
+          "lat": 45.497071,
+          "lon": 9.183729,
+          "street": "Via Valtellina"
+        },
+        {
+          "id": "node/12344759585",
+          "lat": 45.49466,
+          "lon": 9.226339,
+          "street": "Via Angelo Mosso"
+        },
+        {
+          "id": "node/12250244786",
+          "name": "Fucine Vulcano",
+          "lat": 45.433385,
+          "lon": 9.228391
+        },
+        {
+          "id": "node/8580971553",
+          "lat": 45.441814,
+          "lon": 9.24138,
+          "street": "Via Eugenio Colorni"
+        },
+        {
+          "id": "node/10603538691",
+          "name": "La Spicciola",
+          "lat": 45.511409,
+          "lon": 9.226619
+        },
+        {
+          "id": "node/9248045243",
+          "lat": 45.51102,
+          "lon": 9.233699,
+          "street": "Via Adolfo de Bosis"
+        },
+        {
+          "id": "node/13746552763",
+          "lat": 45.428629,
+          "lon": 9.257601,
+          "street": "Via Caviaga"
+        },
+        {
+          "id": "node/4861924689",
+          "lat": 45.44157,
+          "lon": 9.097359,
+          "street": "Via Milano"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:20:53.166Z"
     }
   }
 }

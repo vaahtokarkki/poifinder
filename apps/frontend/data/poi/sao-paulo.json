@@ -1,16 +1,35 @@
 {
   "city": "sao-paulo",
-  "generatedAt": "2026-08-23T04:39:15.993Z",
+  "generatedAt": "2026-09-03T17:50:14.530Z",
   "categories": {
     "toilets": {
       "count": 208,
       "pois": [
+        {
+          "id": "node/13389339601",
+          "lat": -23.551709,
+          "lon": -46.630037,
+          "context": "sesc"
+        },
         {
           "id": "way/305092794",
           "name": "Galeria do Rock",
           "lat": -23.543711,
           "lon": -46.638726,
           "address": "Avenida São João 439"
+        },
+        {
+          "id": "node/3358533376",
+          "lat": -23.542089,
+          "lon": -46.629415,
+          "wheelchair": "yes",
+          "context": "Mercado Municipal de São Paulo"
+        },
+        {
+          "id": "node/7072274396",
+          "lat": -23.539728,
+          "lon": -46.645273,
+          "context": "Departamento de Polícia de Proteção à Cidadania"
         },
         {
           "id": "way/484257447",
@@ -21,10 +40,50 @@
           "openingHours": "Mo-Fr 02:00-16:00; Sa 02:00-14:00"
         },
         {
+          "id": "node/4470496351",
+          "lat": -23.544261,
+          "lon": -46.616465,
+          "context": "Brás"
+        },
+        {
+          "id": "node/3369440662",
+          "lat": -23.546985,
+          "lon": -46.652686,
+          "context": "Prédio 19"
+        },
+        {
+          "id": "node/11625065875",
+          "lat": -23.533479,
+          "lon": -46.640702,
+          "context": "Júlio Prestes"
+        },
+        {
+          "id": "node/13484859202",
+          "lat": -23.563367,
+          "lon": -46.652878,
+          "context": "Shopping Cidade São Paulo"
+        },
+        {
           "id": "way/438639739",
           "name": "Shopping Fashion Bras",
           "lat": -23.534384,
           "lon": -46.613329
+        },
+        {
+          "id": "node/5215269138",
+          "lat": -23.52536,
+          "lon": -46.630468,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Terminal Metrô Armênia"
+        },
+        {
+          "id": "node/5759576840",
+          "lat": -23.524846,
+          "lon": -46.62512,
+          "wheelchair": "limited",
+          "fee": "no",
+          "context": "Museu dos Transportes Públicos Gaetano Ferolla"
         },
         {
           "id": "node/4208167592",
@@ -39,12 +98,42 @@
           "lon": -46.664946
         },
         {
+          "id": "node/4479243222",
+          "lat": -23.516729,
+          "lon": -46.623364,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Terminal Rodoviário Tietê"
+        },
+        {
+          "id": "node/4479243272",
+          "lat": -23.525733,
+          "lon": -46.668179,
+          "wheelchair": "yes",
+          "context": "Terminal Intermodal da Barra Funda"
+        },
+        {
+          "id": "node/2539591457",
+          "lat": -23.585443,
+          "lon": -46.658422,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Marquise"
+        },
+        {
           "id": "way/1058113235",
           "name": "Tok & Stok",
           "lat": -23.525965,
           "lon": -46.673397,
           "address": "Avenida Francisco Matarazzo 1090",
           "openingHours": "Mo-Sa 10:00-22:00; Su 12:00-20:00"
+        },
+        {
+          "id": "node/13372526901",
+          "lat": -23.513517,
+          "lon": -46.606533,
+          "address": "Avenida Joaquina Ramalho 340",
+          "context": "Atacadao"
         },
         {
           "id": "way/432816770",
@@ -63,11 +152,32 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/6589697192",
+          "lat": -23.506654,
+          "lon": -46.60057,
+          "wheelchair": "yes",
+          "context": "Sonda Supermercados"
+        },
+        {
+          "id": "node/13342502701",
+          "lat": -23.500471,
+          "lon": -46.613469,
+          "address": "Avenida General Ataliba Leonel 1555",
+          "context": "Roldão"
+        },
+        {
           "id": "way/714653362",
           "name": "Marabras",
           "lat": -23.516704,
           "lon": -46.587959,
           "address": "Avenida Guilherme Cotching 1464"
+        },
+        {
+          "id": "node/4684121668",
+          "lat": -23.567934,
+          "lon": -46.697912,
+          "wheelchair": "yes",
+          "context": "Sesc Pinheiros"
         },
         {
           "id": "way/172413602",
@@ -77,6 +187,13 @@
           "address": "Avenida Presidente Juscelino Kubitschek 2401",
           "openingHours": "Mo-Sa 10:00-22:00; Su 11:00-22:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/13484861801",
+          "lat": -23.595395,
+          "lon": -46.687265,
+          "address": "Rua Olimpíadas 360",
+          "context": "Shopping Vila Olímpia"
         },
         {
           "id": "relation/8549664",
@@ -101,49 +218,9 @@
           "lat": -23.47962,
           "lon": -46.602413,
           "address": "Avenida Doutor Antônio Maria Laet 566"
-        },
-        {
-          "id": "way/1177118290",
-          "name": "O Segredo da Felicidade",
-          "lat": -23.616127,
-          "lon": -46.568808,
-          "address": "Rua Santa Rosa 340",
-          "openingHours": "Mo off; Tu-Fr 09:00-19:00; Sa 09:00-17:00; Su 09:00-13:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/152635636",
-          "name": "Tietê Plaza Shopping",
-          "lat": -23.506396,
-          "lon": -46.718375,
-          "address": "Avenida Raimundo Pereira de Magalhães 1465",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/167086608",
-          "name": "Park Shopping São Caetano",
-          "lat": -23.625906,
-          "lon": -46.579896,
-          "address": "Alameda Terracota",
-          "openingHours": "Mo-Sa 10:00-22:00; PH,Su 14:00-20:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/46975192",
-          "name": "Internacional Shopping",
-          "lat": -23.488356,
-          "lon": -46.549649,
-          "address": "Rodovia Presidente Dutra km 225",
-          "openingHours": "Mo-Sa 10:00-22:00; Su,PH 14:00-20:00"
-        },
-        {
-          "id": "node/3523583126",
-          "name": "Sanitários",
-          "lat": -23.652184,
-          "lon": -46.617548
         }
       ],
-      "updatedAt": "2026-08-21T04:09:11.736Z"
+      "updatedAt": "2026-09-03T17:49:37.629Z"
     },
     "drinking-water": {
       "count": 105,
@@ -154,6 +231,13 @@
           "lat": -23.58455,
           "lon": -46.600088,
           "address": "Rua Manifesto 1255"
+        },
+        {
+          "id": "node/12508477190",
+          "lat": -23.519757,
+          "lon": -46.682407,
+          "fee": "no",
+          "context": "Parque Jardim das Perdizes"
         },
         {
           "id": "node/3544767447",
@@ -169,10 +253,10 @@
           "address": "Rua da Paz"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:12.413Z"
+      "updatedAt": "2026-09-03T17:49:41.967Z"
     },
     "playgrounds": {
-      "count": 166,
+      "count": 168,
       "pois": [
         {
           "id": "node/5371153683",
@@ -254,7 +338,7 @@
           "lon": -46.741397
         }
       ],
-      "updatedAt": "2026-08-21T04:09:13.054Z"
+      "updatedAt": "2026-09-03T17:49:44.208Z"
     },
     "parking": {
       "count": 3058,
@@ -499,7 +583,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:14.176Z"
+      "updatedAt": "2026-09-03T17:49:47.891Z"
     },
     "charging-stations": {
       "count": 12,
@@ -546,10 +630,10 @@
           "address": "Avenida Marechal Mário Guedes 292"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:14.563Z"
+      "updatedAt": "2026-09-03T17:49:48.912Z"
     },
     "gas-stations": {
-      "count": 993,
+      "count": 991,
       "pois": [
         {
           "id": "node/2396502007",
@@ -733,14 +817,6 @@
           "lon": -46.606463
         },
         {
-          "id": "way/368850914",
-          "name": "RodOil",
-          "lat": -23.524573,
-          "lon": -46.630013,
-          "address": "Avenida do Estado;Avenida Tiradentes 1285",
-          "openingHours": "24/7"
-        },
-        {
           "id": "way/368850915",
           "name": "Conveniencia",
           "lat": -23.525231,
@@ -753,9 +829,16 @@
           "lat": -23.525706,
           "lon": -46.64415,
           "address": "Rua Solon 829"
+        },
+        {
+          "id": "way/489068475",
+          "name": "Auto Posto Vila Monumento",
+          "lat": -23.56776,
+          "lon": -46.611002,
+          "address": "Avenida Dom Pedro I 297"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:15.348Z"
+      "updatedAt": "2026-09-03T17:49:50.818Z"
     },
     "ice-cream": {
       "count": 158,
@@ -969,7 +1052,7 @@
           "openingHours": "Su-Th 09:00-00:00; Fr-Sa 09:00-01:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:15.850Z"
+      "updatedAt": "2026-09-03T17:49:51.885Z"
     },
     "dog-parks": {
       "count": 22,
@@ -1008,7 +1091,7 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:16.211Z"
+      "updatedAt": "2026-09-03T17:49:52.452Z"
     },
     "picnic-spots": {
       "count": 49,
@@ -1026,7 +1109,7 @@
           "lon": -46.61821
         }
       ],
-      "updatedAt": "2026-08-21T04:09:16.711Z"
+      "updatedAt": "2026-09-03T17:49:54.887Z"
     },
     "viewpoints": {
       "count": 20,
@@ -1093,12 +1176,12 @@
           "lon": -46.667989
         }
       ],
-      "updatedAt": "2026-08-21T04:09:17.152Z"
+      "updatedAt": "2026-09-03T17:49:56.327Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:09:17.551Z"
+      "updatedAt": "2026-09-03T17:49:56.988Z"
     },
     "atms": {
       "count": 428,
@@ -1279,12 +1362,32 @@
           "lon": -46.71972
         }
       ],
-      "updatedAt": "2026-08-21T04:09:18.140Z"
+      "updatedAt": "2026-09-03T17:49:58.111Z"
     },
     "post-boxes": {
       "count": 3,
-      "pois": [],
-      "updatedAt": "2026-08-21T04:09:18.604Z"
+      "pois": [
+        {
+          "id": "node/5916119630",
+          "lat": -23.562476,
+          "lon": -46.686853,
+          "address": "Rua Fradique Coutinho 492 A",
+          "street": "Rua Fradique Coutinho"
+        },
+        {
+          "id": "node/4379509966",
+          "lat": -23.56535,
+          "lon": -46.690244,
+          "street": "Avenida Pedroso de Morais"
+        },
+        {
+          "id": "node/1447552211",
+          "lat": -23.549674,
+          "lon": -46.534085,
+          "street": "Rua Luís Pinto"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:49:59.306Z"
     },
     "recycling": {
       "count": 90,
@@ -1309,6 +1412,12 @@
           "lon": -46.622332
         },
         {
+          "id": "node/13416830387",
+          "lat": -23.568976,
+          "lon": -46.639607,
+          "street": "Praça Santo Agostinho"
+        },
+        {
           "id": "node/9465998285",
           "name": "Minhocário Edifício Cristália",
           "lat": -23.56421,
@@ -1323,11 +1432,24 @@
           "lon": -46.610643
         },
         {
+          "id": "node/13414357152",
+          "lat": -23.572482,
+          "lon": -46.628877,
+          "street": "Rua Muniz de Souza"
+        },
+        {
           "id": "way/1080392662",
           "name": "Ecoponto Ipiranga",
           "lat": -23.564878,
           "lon": -46.611227,
           "address": "Avenida Dom Pedro I 21"
+        },
+        {
+          "id": "node/4715087655",
+          "lat": -23.524735,
+          "lon": -46.638149,
+          "address": "Rua Mamoré 355",
+          "street": "Rua Mamoré"
         },
         {
           "id": "way/983685836",
@@ -1341,6 +1463,12 @@
           "lat": -23.547628,
           "lon": -46.602722,
           "openingHours": "Mo-Sa 06:00-22:00; Su 06:00-18:00"
+        },
+        {
+          "id": "node/747563652",
+          "lat": -23.568941,
+          "lon": -46.608497,
+          "street": "Avenida Teresa Cristina"
         },
         {
           "id": "way/1088011744",
@@ -1369,16 +1497,72 @@
           "lon": -46.600541
         },
         {
+          "id": "node/12479388520",
+          "lat": -23.507863,
+          "lon": -46.649125,
+          "street": "Avenida Brás Leme"
+        },
+        {
+          "id": "node/4454975719",
+          "lat": -23.513531,
+          "lon": -46.60283,
+          "address": "Avenida Guilherme 1100",
+          "street": "Avenida Guilherme"
+        },
+        {
           "id": "way/1394454990",
           "name": "Ecoponto Santa Cruz",
           "lat": -23.599712,
           "lon": -46.62327
         },
         {
+          "id": "node/12985809096",
+          "lat": -23.552884,
+          "lon": -46.688206,
+          "street": "Rua Jericó"
+        },
+        {
+          "id": "node/3793351573",
+          "lat": -23.516372,
+          "lon": -46.591104,
+          "address": "Rua Itaúna 651",
+          "street": "Rua Itaúna"
+        },
+        {
+          "id": "node/2428249809",
+          "lat": -23.525508,
+          "lon": -46.683255,
+          "street": "Rua Clélia"
+        },
+        {
+          "id": "node/840737673",
+          "lat": -23.603567,
+          "lon": -46.641836,
+          "street": "Rua Antônio Etzel"
+        },
+        {
+          "id": "node/13422267046",
+          "lat": -23.53896,
+          "lon": -46.575612,
+          "street": "Rua Tuiuti"
+        },
+        {
+          "id": "node/12025750526",
+          "lat": -23.582808,
+          "lon": -46.686387,
+          "street": "Rua Doutor Mário Ferraz"
+        },
+        {
           "id": "node/11810735354",
           "name": "Recicle Bem - Sucatas em Geral",
           "lat": -23.610241,
           "lon": -46.630251
+        },
+        {
+          "id": "node/5854170814",
+          "lat": -23.610686,
+          "lon": -46.63777,
+          "street": "Avenida Jabaquara"
         },
         {
           "id": "way/1043494326",
@@ -1389,114 +1573,24 @@
           "openingHours": "Mo-Fr 08:00-18:00"
         },
         {
-          "id": "node/11853672621",
-          "name": "Ecoponto Vila das Mercês",
-          "lat": -23.62382,
-          "lon": -46.605521
+          "id": "node/4999831287",
+          "lat": -23.552616,
+          "lon": -46.708486,
+          "street": "Avenida Dona Elisa de Moraes Mendes"
         },
         {
-          "id": "way/1425645711",
-          "name": "Ferro Velho",
-          "lat": -23.483882,
-          "lon": -46.584265,
-          "address": "Avenida Gustavo Adolfo"
-        },
-        {
-          "id": "node/5577253288",
-          "name": "Ecoponto Imigrantes",
-          "lat": -23.632092,
-          "lon": -46.630589
-        },
-        {
-          "id": "way/1016211169",
-          "name": "ECOPONTO - Ponte Grande",
-          "lat": -23.50846,
-          "lon": -46.555713,
-          "address": "Alameda Josefina Leme Zamataro 233",
-          "openingHours": "Mo-Fr 08:15-12:00,13:00-16:00; Sa 08:15-12:00,13:00-15:30; Su,PH off"
-        },
-        {
-          "id": "node/12878792801",
-          "name": "Coleta de material reciclável: vidro",
-          "lat": -23.481495,
-          "lon": -46.682904
-        },
-        {
-          "id": "way/940186038",
-          "name": "Eco Ponto Jardim Centenário",
-          "lat": -23.472047,
-          "lon": -46.669959,
-          "address": "Rua Felix Alves Pereira 113"
-        },
-        {
-          "id": "way/718956960",
-          "name": "Beira Rio",
-          "lat": -23.477927,
-          "lon": -46.583419,
-          "address": "Avenida Jardim Japão 1512"
-        },
-        {
-          "id": "node/4369798176",
-          "name": "Coleta Seletiva Pão de Açúcar",
-          "lat": -23.612006,
-          "lon": -46.701477
-        },
-        {
-          "id": "way/976397871",
-          "name": "Eco Ponto Terminal de Cargas",
-          "lat": -23.486342,
-          "lon": -46.565732,
-          "openingHours": "Mo-Su 09:00-18:00"
-        },
-        {
-          "id": "node/14062844301",
-          "name": "Ecoponto Vila Rica",
-          "lat": -23.469776,
-          "lon": -46.674852,
-          "address": "Rua Jorge Mamede da Silva 200"
-        },
-        {
-          "id": "node/12447028421",
-          "name": "Ecoponto Pedro Bueno",
-          "lat": -23.638433,
-          "lon": -46.661028
-        },
-        {
-          "id": "node/5140256182",
-          "name": "Ecoponto Vicente Rao",
-          "lat": -23.62846,
-          "lon": -46.685636,
-          "address": "Avenida Professor Vicente Rao 308",
-          "openingHours": "Mo-Sa 06:00-22:00; Su 06:00-18:00",
-          "fee": "no"
-        },
-        {
-          "id": "way/1316169617",
-          "name": "Descartes de lixos",
-          "lat": -23.547191,
-          "lon": -46.741415
-        },
-        {
-          "id": "node/7176218733",
-          "name": "Ecoponto Penha I",
-          "lat": -23.531331,
-          "lon": -46.525455
-        },
-        {
-          "id": "way/456237736",
-          "name": "EcoPonto São Lucas",
-          "lat": -23.599182,
-          "lon": -46.534612,
-          "address": "Rua Florêncio Sanches 307",
-          "openingHours": "Mo-Sa 06:00-22:00;Su 06:00-18:00"
+          "id": "node/4988622080",
+          "lat": -23.534614,
+          "lon": -46.712128,
+          "street": "Rua Pepiguarí"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:19.119Z"
+      "updatedAt": "2026-09-03T17:50:02.110Z"
     },
     "luggage-storage": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-08-21T04:09:19.455Z"
+      "updatedAt": "2026-09-03T17:50:02.788Z"
     },
     "libraries": {
       "count": 77,
@@ -1720,7 +1814,7 @@
           "address": "Praça Joaquim José da Nova"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:19.956Z"
+      "updatedAt": "2026-09-03T17:50:03.565Z"
     },
     "outdoor-gyms": {
       "count": 99,
@@ -1738,17 +1832,24 @@
           "lon": -46.72035
         }
       ],
-      "updatedAt": "2026-08-21T04:09:20.432Z"
+      "updatedAt": "2026-09-03T17:50:05.308Z"
     },
     "camp-sites": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-21T04:09:20.818Z"
+      "updatedAt": "2026-09-03T17:50:05.947Z"
     },
     "shelters": {
       "count": 3,
-      "pois": [],
-      "updatedAt": "2026-08-21T04:09:21.392Z"
+      "pois": [
+        {
+          "id": "node/6424083806",
+          "lat": -23.652944,
+          "lon": -46.596102,
+          "street": "Avenida Octávio Corletto"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:50:07.743Z"
     },
     "rest-areas": {
       "count": 520,
@@ -1849,12 +1950,12 @@
           "address": "Rua Soldado Antônio P. Fernandes 115"
         }
       ],
-      "updatedAt": "2026-08-21T04:09:21.943Z"
+      "updatedAt": "2026-09-03T17:50:08.709Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:09:22.320Z"
+      "updatedAt": "2026-09-03T17:50:09.167Z"
     },
     "post-offices": {
       "count": 94,
@@ -2014,7 +2115,7 @@
           "openingHours": "Mo-Fr 09:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:39:13.167Z"
+      "updatedAt": "2026-09-03T17:50:09.829Z"
     },
     "showers": {
       "count": 4,
@@ -2028,7 +2129,7 @@
           "openingHours": "Mo-Fr 07:30-18:00; Sa 07:30-14:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:39:13.776Z"
+      "updatedAt": "2026-09-03T17:50:10.265Z"
     },
     "fireplaces": {
       "count": 4,
@@ -2046,7 +2147,7 @@
           "lon": -46.726442
         }
       ],
-      "updatedAt": "2026-08-23T04:39:14.699Z"
+      "updatedAt": "2026-09-03T17:50:11.808Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2056,12 +2157,86 @@
     "benches": {
       "count": 419,
       "pois": [],
-      "updatedAt": "2026-08-23T04:39:15.891Z"
+      "updatedAt": "2026-09-03T17:50:14.429Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:53.227Z"
+    },
+    "bicycle-repair": {
+      "count": 12,
+      "pois": [
+        {
+          "id": "node/7022765098",
+          "lat": -23.539499,
+          "lon": -46.644646,
+          "address": "Rua Barão de Campinas 84",
+          "street": "Rua Barão de Campinas"
+        },
+        {
+          "id": "node/4848124319",
+          "lat": -23.540237,
+          "lon": -46.648956,
+          "address": "Rua Barão de Joatinga 36",
+          "fee": "yes",
+          "street": "Rua Barão de Joatinga"
+        },
+        {
+          "id": "node/6767987623",
+          "lat": -23.552213,
+          "lon": -46.676075,
+          "address": "Rua Arruda Alvim 412",
+          "fee": "yes",
+          "street": "Rua Arruda Alvim"
+        },
+        {
+          "id": "node/8286116067",
+          "name": "Ciclo Caravelle BikeShop",
+          "lat": -23.571194,
+          "lon": -46.707081,
+          "address": "Rua Pirajussara 431"
+        },
+        {
+          "id": "node/8221906017",
+          "name": "The Village Bike",
+          "lat": -23.570693,
+          "lon": -46.708893,
+          "address": "Rua Camargo 392",
+          "fee": "yes"
+        },
+        {
+          "id": "node/8221899116",
+          "name": "Jonny Bike",
+          "lat": -23.570881,
+          "lon": -46.708966,
+          "address": "Rua Camargo 382"
+        },
+        {
+          "id": "way/1069991063",
+          "name": "Fernandolli Bike & Motos",
+          "lat": -23.477344,
+          "lon": -46.570923,
+          "address": "Rua Dorandia 250",
+          "openingHours": "Mo-Sa 08:00-17:00"
+        },
+        {
+          "id": "way/1069991061",
+          "name": "Adriiano Bike & Motos",
+          "lat": -23.47707,
+          "lon": -46.571031,
+          "address": "Rua Dorandia 249",
+          "openingHours": "Mo-Sa 08:00-17:00"
+        },
+        {
+          "id": "node/10788241913",
+          "name": "Bicicletaria Martins",
+          "lat": -23.631085,
+          "lon": -46.576129,
+          "address": "Rua Engenheiro Armando de Arruda Pereira 947"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:50:13.428Z"
     }
   }
 }

@@ -1,10 +1,26 @@
 {
   "city": "cardiff",
-  "generatedAt": "2026-08-23T04:21:28.852Z",
+  "generatedAt": "2026-09-03T17:10:37.147Z",
   "categories": {
     "toilets": {
-      "count": 46,
+      "count": 47,
       "pois": [
+        {
+          "id": "node/11826693495",
+          "lat": 51.481531,
+          "lon": -3.18097,
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "Black Tower"
+        },
+        {
+          "id": "node/12050088754",
+          "lat": 51.479906,
+          "lon": -3.178905,
+          "openingHours": "Mo-Su 08:00-15:00",
+          "fee": "no",
+          "context": "Cardiff Central Market"
+        },
         {
           "id": "node/12545057166",
           "lat": 51.479594,
@@ -12,6 +28,46 @@
           "wheelchair": "yes",
           "fee": "no",
           "context": "St David's Multistorey Car Park"
+        },
+        {
+          "id": "node/12017368366",
+          "lat": 51.4764,
+          "lon": -3.178246,
+          "openingHours": "Mo-Su 05:00-24:00",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "4 Central Square"
+        },
+        {
+          "id": "node/11749065168",
+          "lat": 51.490656,
+          "lon": -3.18274,
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "John Percival Building"
+        },
+        {
+          "id": "node/10180582152",
+          "lat": 51.481939,
+          "lon": -3.202277,
+          "context": "Corp Market"
+        },
+        {
+          "id": "node/14116281799",
+          "lat": 51.464707,
+          "lon": -3.163676,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Wales Millennium Centre"
+        },
+        {
+          "id": "node/1047815664",
+          "lat": 51.454816,
+          "lon": -3.162592,
+          "openingHours": "09:00-16:00",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Cardiff Sailing Centre"
         },
         {
           "id": "node/12039498985",
@@ -30,23 +86,75 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/13043437038",
+          "lat": 51.446588,
+          "lon": -3.165368,
+          "context": "Cardiff Bay Barrage Control"
+        },
+        {
           "id": "way/27828756",
           "name": "Lidl",
           "lat": 51.529533,
           "lon": -3.137569,
           "address": "Caxton Place",
           "openingHours": "Mo-Sa 08:00-22:00; Su 10:00-16:00"
+        },
+        {
+          "id": "node/8998863779",
+          "lat": 51.486184,
+          "lon": -3.268677,
+          "fee": "no",
+          "context": "Saint Fagans Castle"
+        },
+        {
+          "id": "node/12092063390",
+          "lat": 51.537282,
+          "lon": -3.20983,
+          "context": "Wennalt Waiting Room"
+        },
+        {
+          "id": "node/10804640605",
+          "lat": 51.486817,
+          "lon": -3.273534,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "St Fagans Museum Visitor Centre"
+        },
+        {
+          "id": "node/12804226440",
+          "lat": 51.488006,
+          "lon": -3.278561,
+          "context": "Oakdale Workmen's Institute"
+        },
+        {
+          "id": "node/12804226439",
+          "lat": 51.486872,
+          "lon": -3.278902,
+          "context": "Gweithdy Galleries and Workshop"
+        },
+        {
+          "id": "node/13808282991",
+          "lat": 51.538844,
+          "lon": -3.12961,
+          "context": "Welcome Break Cardiff Gate"
+        },
+        {
+          "id": "node/12033287498",
+          "lat": 51.416125,
+          "lon": -3.182811,
+          "wheelchair": "yes",
+          "context": "Cosmeston Visitor Centre"
         }
       ],
-      "updatedAt": "2026-08-23T04:21:14.188Z"
+      "updatedAt": "2026-09-03T17:10:16.823Z"
     },
     "drinking-water": {
       "count": 23,
       "pois": [],
-      "updatedAt": "2026-08-23T04:21:15.319Z"
+      "updatedAt": "2026-09-03T17:10:18.110Z"
     },
     "playgrounds": {
-      "count": 158,
+      "count": 159,
       "pois": [
         {
           "id": "node/13329084060",
@@ -123,10 +231,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:21:16.047Z"
+      "updatedAt": "2026-09-03T17:10:18.944Z"
     },
     "parking": {
-      "count": 1330,
+      "count": 1343,
       "pois": [
         {
           "id": "way/812617674",
@@ -329,7 +437,7 @@
           "lon": -3.203568
         }
       ],
-      "updatedAt": "2026-08-23T04:21:17.085Z"
+      "updatedAt": "2026-09-03T17:10:20.190Z"
     },
     "charging-stations": {
       "count": 33,
@@ -356,7 +464,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:21:17.532Z"
+      "updatedAt": "2026-09-03T17:10:20.691Z"
     },
     "gas-stations": {
       "count": 34,
@@ -437,7 +545,7 @@
           "lon": -3.130631
         }
       ],
-      "updatedAt": "2026-08-23T04:21:18.006Z"
+      "updatedAt": "2026-09-03T17:10:21.142Z"
     },
     "ice-cream": {
       "count": 13,
@@ -526,17 +634,17 @@
           "lon": -3.172064
         }
       ],
-      "updatedAt": "2026-08-23T04:21:18.516Z"
+      "updatedAt": "2026-09-03T17:10:21.707Z"
     },
     "dog-parks": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:21:18.876Z"
+      "updatedAt": "2026-09-03T17:10:22.087Z"
     },
     "picnic-spots": {
       "count": 104,
       "pois": [],
-      "updatedAt": "2026-08-23T04:21:20.054Z"
+      "updatedAt": "2026-09-03T17:10:23.348Z"
     },
     "viewpoints": {
       "count": 14,
@@ -554,12 +662,12 @@
           "lon": -3.24474
         }
       ],
-      "updatedAt": "2026-08-23T04:21:20.579Z"
+      "updatedAt": "2026-09-03T17:10:23.921Z"
     },
     "beaches": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:21:21.051Z"
+      "updatedAt": "2026-09-03T17:10:24.360Z"
     },
     "atms": {
       "count": 97,
@@ -694,7 +802,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:21:21.567Z"
+      "updatedAt": "2026-09-03T17:10:24.861Z"
     },
     "post-boxes": {
       "count": 329,
@@ -704,6 +812,12 @@
           "name": "St Johns Street",
           "lat": 51.480904,
           "lon": -3.17843
+        },
+        {
+          "id": "node/1050139904",
+          "lat": 51.481905,
+          "lon": -3.177114,
+          "street": "Queen Street"
         },
         {
           "id": "node/3426519742",
@@ -718,6 +832,12 @@
           "lon": -3.182038
         },
         {
+          "id": "node/8327665716",
+          "lat": 51.483396,
+          "lon": -3.177198,
+          "street": "Greyfriars Road"
+        },
+        {
           "id": "node/581059954",
           "name": "Westgate Street",
           "lat": 51.478599,
@@ -730,10 +850,46 @@
           "lon": -3.179181
         },
         {
+          "id": "node/8235793882",
+          "lat": 51.479973,
+          "lon": -3.172781,
+          "street": "Charles Street"
+        },
+        {
+          "id": "node/1233711007",
+          "lat": 51.484365,
+          "lon": -3.173873,
+          "street": "Windsor Place"
+        },
+        {
+          "id": "node/1233711017",
+          "lat": 51.485495,
+          "lon": -3.176167,
+          "street": "Park Place"
+        },
+        {
           "id": "node/3426521600",
           "name": "St Mary Street South",
           "lat": 51.477123,
           "lon": -3.176876
+        },
+        {
+          "id": "node/8327665715",
+          "lat": 51.485515,
+          "lon": -3.174427,
+          "street": "Saint Andrew's Crescent"
+        },
+        {
+          "id": "node/1233710961",
+          "lat": 51.485533,
+          "lon": -3.174439,
+          "street": "St Andrew's Place"
+        },
+        {
+          "id": "node/6879761673",
+          "lat": 51.476028,
+          "lon": -3.179089,
+          "street": "Central Square"
         },
         {
           "id": "node/3426527349",
@@ -742,77 +898,156 @@
           "lon": -3.18887
         },
         {
+          "id": "node/6879783399",
+          "lat": 51.475169,
+          "lon": -3.178767,
+          "street": "East Subway"
+        },
+        {
+          "id": "node/8568404409",
+          "lat": 51.4786,
+          "lon": -3.169485,
+          "street": "Adam Street"
+        },
+        {
           "id": "node/1216567622",
           "name": "Clare Street",
           "lat": 51.477888,
           "lon": -3.188143
         },
         {
-          "id": "node/3426512103",
-          "name": "Plasturton Gardens",
-          "lat": 51.485301,
-          "lon": -3.196287
+          "id": "node/1233711060",
+          "lat": 51.488149,
+          "lon": -3.176279,
+          "street": "Senghennydd Road"
         },
         {
-          "id": "node/8878137786",
-          "name": "Pen-y-Wain Road Postbox",
-          "lat": 51.497676,
-          "lon": -3.169874
+          "id": "node/1179960021",
+          "lat": 51.485772,
+          "lon": -3.170229,
+          "street": "West Grove"
         },
         {
-          "id": "node/8878137785",
-          "name": "Decomissioned Post Box",
-          "lat": 51.500032,
-          "lon": -3.17279
+          "id": "node/9796616244",
+          "lat": 51.48821,
+          "lon": -3.173777,
+          "street": "Salisbury Road"
         },
         {
-          "id": "node/5330136923",
-          "name": "Shirley Road Postbox",
-          "lat": 51.501349,
-          "lon": -3.175773
+          "id": "node/1172818650",
+          "lat": 51.488826,
+          "lon": -3.183957,
+          "street": "Corbett Road"
         },
         {
-          "id": "node/7139216966",
-          "name": "Ty-Draw Road Postbox",
-          "lat": 51.502193,
-          "lon": -3.174121
+          "id": "node/1038815866",
+          "lat": 51.48103,
+          "lon": -3.192289,
+          "street": "Cowbridge Road East"
         },
         {
-          "id": "node/12186652408",
-          "name": "Wild Gardens Road",
-          "lat": 51.51419,
-          "lon": -3.173671
+          "id": "node/1095528747",
+          "lat": 51.473195,
+          "lon": -3.178714,
+          "street": "Trade Street"
         },
         {
-          "id": "node/11264923224",
-          "name": "Tyrwhitt Crescent",
-          "lat": 51.515329,
-          "lon": -3.177083
+          "id": "node/1233710973",
+          "lat": 51.490018,
+          "lon": -3.177917,
+          "street": "Miskin Street"
         },
         {
-          "id": "node/10847033941",
-          "name": "Heath Halt Road",
-          "lat": 51.5158,
-          "lon": -3.181828
+          "id": "node/8177361922",
+          "lat": 51.484352,
+          "lon": -3.19244,
+          "street": "Cathedral Road"
         },
         {
-          "id": "node/9517456827",
-          "name": "Rhyd-y-penau Road Crossroads",
-          "lat": 51.519679,
-          "lon": -3.179521
+          "id": "node/1036629359",
+          "lat": 51.482878,
+          "lon": -3.164709,
+          "street": "Howard Gardens"
         },
         {
-          "id": "node/1226817216",
-          "name": "Murch Postbox",
-          "lat": 51.433362,
-          "lon": -3.20919
+          "id": "node/8177361214",
+          "lat": 51.472947,
+          "lon": -3.183658,
+          "street": "Hafod Street"
+        },
+        {
+          "id": "node/8231316979",
+          "lat": 51.486031,
+          "lon": -3.166128,
+          "street": "City Road"
+        },
+        {
+          "id": "node/5265735892",
+          "lat": 51.473774,
+          "lon": -3.187187,
+          "street": "Cornwall Street"
         }
       ],
-      "updatedAt": "2026-08-23T04:21:22.120Z"
+      "updatedAt": "2026-09-03T17:10:26.524Z"
     },
     "recycling": {
       "count": 35,
       "pois": [
+        {
+          "id": "node/12017430671",
+          "lat": 51.476948,
+          "lon": -3.178562,
+          "street": "Marland Street"
+        },
+        {
+          "id": "node/12037606863",
+          "lat": 51.48727,
+          "lon": -3.179445,
+          "openingHours": "24/7",
+          "street": "Horseshoe Drive"
+        },
+        {
+          "id": "node/12330881724",
+          "lat": 51.475796,
+          "lon": -3.178748,
+          "street": "East Subway"
+        },
+        {
+          "id": "node/12025471106",
+          "lat": 51.475082,
+          "lon": -3.178908,
+          "street": "West Subway"
+        },
+        {
+          "id": "node/12773214259",
+          "lat": 51.488806,
+          "lon": -3.180138,
+          "street": "Park Place"
+        },
+        {
+          "id": "node/11958026452",
+          "lat": 51.491594,
+          "lon": -3.180945,
+          "street": "Cardiff Cycleway 1"
+        },
+        {
+          "id": "node/10676650144",
+          "lat": 51.481812,
+          "lon": -3.205208,
+          "street": "Cowbridge Road East"
+        },
+        {
+          "id": "node/6901174711",
+          "lat": 51.495596,
+          "lon": -3.192553,
+          "street": "Trotman Dickenson Place"
+        },
+        {
+          "id": "node/10676650145",
+          "lat": 51.472578,
+          "lon": -3.206657,
+          "street": "Brian Clark Way"
+        },
         {
           "id": "way/93658729",
           "name": "Bessemer Close Recycling Centre",
@@ -828,23 +1063,49 @@
           "context": "Morrisons"
         },
         {
+          "id": "node/4813429438",
+          "lat": 51.448147,
+          "lon": -3.185643,
+          "street": "Pont Y Werin"
+        },
+        {
+          "id": "node/12026589184",
+          "lat": 51.446051,
+          "lon": -3.185717,
+          "openingHours": "Mo-Sa 07:00-23:00,10:00-16:00",
+          "context": "Tesco"
+        },
+        {
           "id": "way/920605271",
           "name": "Lamby Way Household Waste Recycling Centre",
           "lat": 51.497505,
           "lon": -3.12251,
           "address": "Lamby Way",
           "openingHours": "Mo-Su 08:30-16:30"
+        },
+        {
+          "id": "node/12402670406",
+          "lat": 51.53038,
+          "lon": -3.138276,
+          "openingHours": "Mo-Sa 07:30-21:00; Su 10:00-16:00",
+          "context": "Waitrose"
+        },
+        {
+          "id": "node/12041630602",
+          "lat": 51.488364,
+          "lon": -3.27716,
+          "street": "Rhyd-y-car Terrace"
         }
       ],
-      "updatedAt": "2026-08-23T04:21:23.156Z"
+      "updatedAt": "2026-09-03T17:10:29.944Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:21:23.573Z"
+      "updatedAt": "2026-09-03T17:10:30.302Z"
     },
     "libraries": {
-      "count": 24,
+      "count": 23,
       "pois": [
         {
           "id": "node/7874013371",
@@ -893,13 +1154,6 @@
           "lon": -3.164899,
           "address": "Penylan Road",
           "openingHours": "Mo 09:00-19:00; Tu-Fr 09:00-18:00; Sa 09:00-17:30; Su off"
-        },
-        {
-          "id": "way/92767997",
-          "name": "Splott Library (Old)",
-          "lat": 51.480358,
-          "lon": -3.147579,
-          "address": "Singleton Road"
         },
         {
           "id": "node/531609907",
@@ -1016,7 +1270,7 @@
           "openingHours": "Mo 10:00-13:00,14:00-18:00; Tu 10:00-13:00,14:00-17:30; We 10:00-13:00,14:00-17:30; Th off; Fr 14:00-19:00; Sa 10:00-13:00; Su off"
         }
       ],
-      "updatedAt": "2026-08-23T04:21:23.964Z"
+      "updatedAt": "2026-09-03T17:10:30.749Z"
     },
     "outdoor-gyms": {
       "count": 2,
@@ -1028,7 +1282,7 @@
           "lon": -3.162746
         }
       ],
-      "updatedAt": "2026-08-23T04:21:24.353Z"
+      "updatedAt": "2026-09-03T17:10:31.180Z"
     },
     "camp-sites": {
       "count": 2,
@@ -1040,7 +1294,7 @@
           "lon": -3.196234
         }
       ],
-      "updatedAt": "2026-08-23T04:21:24.756Z"
+      "updatedAt": "2026-09-03T17:10:31.627Z"
     },
     "shelters": {
       "count": 1,
@@ -1052,7 +1306,7 @@
           "lon": -3.262582
         }
       ],
-      "updatedAt": "2026-08-23T04:21:25.408Z"
+      "updatedAt": "2026-09-03T17:10:32.350Z"
     },
     "rest-areas": {
       "count": 15,
@@ -1071,12 +1325,12 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:21:25.886Z"
+      "updatedAt": "2026-09-03T17:10:32.793Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:21:26.287Z"
+      "updatedAt": "2026-09-03T17:10:33.156Z"
     },
     "post-offices": {
       "count": 45,
@@ -1298,17 +1552,17 @@
           "lon": -3.246968
         }
       ],
-      "updatedAt": "2026-08-23T04:21:26.711Z"
+      "updatedAt": "2026-09-03T17:10:33.550Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:21:27.110Z"
+      "updatedAt": "2026-09-03T17:10:33.901Z"
     },
     "fireplaces": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:21:27.942Z"
+      "updatedAt": "2026-09-03T17:10:34.845Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1337,12 +1591,75 @@
           "lon": -3.164257
         }
       ],
-      "updatedAt": "2026-08-23T04:21:28.751Z"
+      "updatedAt": "2026-09-03T17:10:37.046Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:21.719Z"
+    },
+    "bicycle-repair": {
+      "count": 16,
+      "pois": [
+        {
+          "id": "node/11813867302",
+          "lat": 51.476501,
+          "lon": -3.184734,
+          "street": "Tudor Street"
+        },
+        {
+          "id": "node/9139141707",
+          "lat": 51.469914,
+          "lon": -3.195789,
+          "street": "Sloper Road"
+        },
+        {
+          "id": "node/11833734633",
+          "lat": 51.496328,
+          "lon": -3.146452,
+          "street": "Colchester Avenue"
+        },
+        {
+          "id": "node/8524664679",
+          "lat": 51.499508,
+          "lon": -3.142052,
+          "street": "Ipswich Road"
+        },
+        {
+          "id": "node/9157009944",
+          "lat": 51.523714,
+          "lon": -3.138519,
+          "street": "Pentwyn Road"
+        },
+        {
+          "id": "node/12402587540",
+          "lat": 51.535671,
+          "lon": -3.129871,
+          "fee": "yes",
+          "street": "Dering Road"
+        },
+        {
+          "id": "node/13688974090",
+          "lat": 51.525587,
+          "lon": -3.10425,
+          "street": "Willowbrook Drive"
+        },
+        {
+          "id": "node/9143039395",
+          "lat": 51.53911,
+          "lon": -3.13101,
+          "street": "Cardiff Gate Services"
+        },
+        {
+          "id": "node/10811238276",
+          "lat": 51.443177,
+          "lon": -3.263797,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Port Road"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:10:36.281Z"
     }
   }
 }

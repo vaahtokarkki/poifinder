@@ -1,10 +1,16 @@
 {
   "city": "oxford",
-  "generatedAt": "2026-08-23T04:20:37.312Z",
+  "generatedAt": "2026-09-03T17:09:27.322Z",
   "categories": {
     "toilets": {
       "count": 75,
       "pois": [
+        {
+          "id": "node/1553680250",
+          "lat": 51.751501,
+          "lon": -1.257116,
+          "context": "Oxford Town Hall"
+        },
         {
           "id": "way/1322600192",
           "name": "Covered Market",
@@ -13,6 +19,12 @@
           "openingHours": "Mo-Sa 07:00-20:00; Su 07:00-18:00",
           "wheelchair": "yes",
           "fee": "no"
+        },
+        {
+          "id": "node/6720119757",
+          "lat": 51.750736,
+          "lon": -1.261185,
+          "context": "Westgate Centre"
         },
         {
           "id": "way/243977520",
@@ -34,11 +46,26 @@
           "context": "Weston Library"
         },
         {
+          "id": "node/323182897",
+          "lat": 51.753706,
+          "lon": -1.262304,
+          "wheelchair": "no",
+          "context": "Old Fire Station and Corn Exchange"
+        },
+        {
           "id": "node/5600625029",
           "name": "Public Toilet and Waiting Room",
           "lat": 51.753865,
           "lon": -1.262341,
           "fee": "no"
+        },
+        {
+          "id": "node/13687230434",
+          "lat": 51.751874,
+          "lon": -1.263322,
+          "wheelchair": "limited",
+          "fee": "no",
+          "context": "The Tidmarsh"
         },
         {
           "id": "relation/1337584",
@@ -50,6 +77,28 @@
           "fee": "no"
         },
         {
+          "id": "node/14050005578",
+          "lat": 51.752484,
+          "lon": -1.268598,
+          "wheelchair": "designated",
+          "context": "Victoria Buildings"
+        },
+        {
+          "id": "node/1275951043",
+          "lat": 51.751173,
+          "lon": -1.246687,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "The Conservatory"
+        },
+        {
+          "id": "node/13055703699",
+          "lat": 51.753571,
+          "lon": -1.270126,
+          "fee": "no",
+          "context": "Oxford"
+        },
+        {
           "id": "way/111843913",
           "name": "The Royal Oak",
           "lat": 51.760664,
@@ -57,6 +106,33 @@
           "address": "Woodstock Road 42-44",
           "openingHours": "Mo-Sa 12:00-23:30; Su 12:00-22:30",
           "wheelchair": "limited"
+        },
+        {
+          "id": "node/4524643909",
+          "lat": 51.750722,
+          "lon": -1.242172,
+          "context": "Alice House"
+        },
+        {
+          "id": "node/10577252094",
+          "lat": 51.754678,
+          "lon": -1.287722,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Bus Terminal"
+        },
+        {
+          "id": "node/13856263624",
+          "lat": 51.735744,
+          "lon": -1.230843,
+          "wheelchair": "yes",
+          "context": "Community Kitchen and Offices"
+        },
+        {
+          "id": "node/9026696106",
+          "lat": 51.763716,
+          "lon": -1.219209,
+          "context": "John Radcliffe Main Hospital"
         },
         {
           "id": "node/663987575",
@@ -74,14 +150,43 @@
           "address": "London Road",
           "wheelchair": "yes",
           "fee": "no"
+        },
+        {
+          "id": "node/12184647667",
+          "lat": 51.732113,
+          "lon": -1.21808,
+          "wheelchair": "yes",
+          "context": "Templars Square"
+        },
+        {
+          "id": "node/14039801780",
+          "lat": 51.754639,
+          "lon": -1.197043,
+          "context": "Science Oxford Centre"
+        },
+        {
+          "id": "node/266705444",
+          "lat": 51.789617,
+          "lon": -1.262246,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Cutteslowe Pavilion"
+        },
+        {
+          "id": "node/7090405527",
+          "lat": 51.793865,
+          "lon": -1.28305,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Welcome Break Forecourt"
         }
       ],
-      "updatedAt": "2026-08-23T04:20:19.513Z"
+      "updatedAt": "2026-09-03T17:08:58.902Z"
     },
     "drinking-water": {
       "count": 12,
       "pois": [],
-      "updatedAt": "2026-08-23T04:20:20.767Z"
+      "updatedAt": "2026-09-03T17:09:00.318Z"
     },
     "playgrounds": {
       "count": 180,
@@ -267,10 +372,10 @@
           "lon": -1.308253
         }
       ],
-      "updatedAt": "2026-08-23T04:20:21.592Z"
+      "updatedAt": "2026-09-03T17:09:01.127Z"
     },
     "parking": {
-      "count": 656,
+      "count": 657,
       "pois": [
         {
           "id": "way/229149973",
@@ -475,7 +580,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:20:22.521Z"
+      "updatedAt": "2026-09-03T17:09:08.691Z"
     },
     "charging-stations": {
       "count": 39,
@@ -511,7 +616,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:20:22.977Z"
+      "updatedAt": "2026-09-03T17:09:09.128Z"
     },
     "gas-stations": {
       "count": 13,
@@ -565,7 +670,7 @@
           "lon": -1.173757
         }
       ],
-      "updatedAt": "2026-08-23T04:20:23.486Z"
+      "updatedAt": "2026-09-03T17:09:09.648Z"
     },
     "ice-cream": {
       "count": 10,
@@ -648,12 +753,12 @@
           "lon": -1.216949
         }
       ],
-      "updatedAt": "2026-08-23T04:20:23.939Z"
+      "updatedAt": "2026-09-03T17:09:10.261Z"
     },
     "dog-parks": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:20:24.366Z"
+      "updatedAt": "2026-09-03T17:09:10.608Z"
     },
     "picnic-spots": {
       "count": 111,
@@ -665,7 +770,7 @@
           "lon": -1.295747
         }
       ],
-      "updatedAt": "2026-08-23T04:20:27.327Z"
+      "updatedAt": "2026-09-03T17:09:12.068Z"
     },
     "viewpoints": {
       "count": 28,
@@ -713,15 +818,15 @@
           "lon": -1.289148
         }
       ],
-      "updatedAt": "2026-08-23T04:20:27.847Z"
+      "updatedAt": "2026-09-03T17:09:12.563Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:20:28.301Z"
+      "updatedAt": "2026-09-03T17:09:12.962Z"
     },
     "atms": {
-      "count": 68,
+      "count": 69,
       "pois": [
         {
           "id": "node/564970519",
@@ -807,10 +912,10 @@
           "lon": -1.281766
         },
         {
-          "id": "node/14066894660",
+          "id": "node/14114286870",
           "name": "ATM Free Cashpoint",
-          "lat": 51.72452,
-          "lon": -1.199218
+          "lat": 51.724517,
+          "lon": -1.199283
         },
         {
           "id": "way/61396086",
@@ -819,11 +924,17 @@
           "lon": -1.283173
         }
       ],
-      "updatedAt": "2026-08-23T04:20:28.755Z"
+      "updatedAt": "2026-09-03T17:09:13.402Z"
     },
     "post-boxes": {
-      "count": 324,
+      "count": 323,
       "pois": [
+        {
+          "id": "node/323182890",
+          "lat": 51.75201,
+          "lon": -1.258004,
+          "street": "Carfax"
+        },
         {
           "id": "node/515642197",
           "name": "St Aldates Oxford",
@@ -831,23 +942,294 @@
           "lon": -1.257255
         },
         {
-          "id": "node/274382290",
-          "name": "Old Botley, Oxford",
-          "lat": 51.753115,
-          "lon": -1.294129
+          "id": "node/545789506",
+          "lat": 51.752766,
+          "lon": -1.256642,
+          "street": "Avenue 3"
+        },
+        {
+          "id": "node/301741862",
+          "lat": 51.753327,
+          "lon": -1.256162,
+          "street": "Turl Street"
+        },
+        {
+          "id": "node/295953660",
+          "lat": 51.752305,
+          "lon": -1.254703,
+          "street": "King Edward Street"
+        },
+        {
+          "id": "node/266719566",
+          "lat": 51.754207,
+          "lon": -1.257554,
+          "street": "Broad Street"
+        },
+        {
+          "id": "node/474986934",
+          "lat": 51.751148,
+          "lon": -1.254007,
+          "street": "Oriel Square"
+        },
+        {
+          "id": "node/319253316",
+          "lat": 51.749059,
+          "lon": -1.25987,
+          "street": "Littlegate Street"
+        },
+        {
+          "id": "node/244453052",
+          "lat": 51.754706,
+          "lon": -1.254327,
+          "street": "Catte Street"
+        },
+        {
+          "id": "node/258856795",
+          "lat": 51.754902,
+          "lon": -1.261389,
+          "street": "Gloucester Street"
+        },
+        {
+          "id": "node/656473505",
+          "lat": 51.751321,
+          "lon": -1.263852,
+          "street": "Paradise Street"
+        },
+        {
+          "id": "node/306285532",
+          "lat": 51.7478,
+          "lon": -1.256363,
+          "address": "St Aldate's",
+          "street": "St Aldate's"
+        },
+        {
+          "id": "node/306285642",
+          "lat": 51.751512,
+          "lon": -1.250547,
+          "street": "Merton Street"
+        },
+        {
+          "id": "node/5950602502",
+          "lat": 51.748103,
+          "lon": -1.261315,
+          "street": "Preachers Lane"
+        },
+        {
+          "id": "node/266719667",
+          "lat": 51.75285,
+          "lon": -1.250557,
+          "street": "Queen's Lane"
+        },
+        {
+          "id": "node/253880258",
+          "lat": 51.756778,
+          "lon": -1.260115,
+          "street": "Pusey Street"
+        },
+        {
+          "id": "node/380488484",
+          "lat": 51.757621,
+          "lon": -1.256065,
+          "street": "South Parks Road"
+        },
+        {
+          "id": "node/14706047",
+          "lat": 51.757629,
+          "lon": -1.259577,
+          "street": "St Giles'"
+        },
+        {
+          "id": "node/1401063587",
+          "lat": 51.754599,
+          "lon": -1.249042,
+          "street": "Longwall Street"
+        },
+        {
+          "id": "node/322562213",
+          "lat": 51.750618,
+          "lon": -1.267146,
+          "street": "Oxpens Road"
+        },
+        {
+          "id": "node/249151855",
+          "lat": 51.757398,
+          "lon": -1.262374,
+          "street": "Wellington Square"
+        },
+        {
+          "id": "node/379755467",
+          "lat": 51.757314,
+          "lon": -1.252035,
+          "street": "Mansfield Road"
+        },
+        {
+          "id": "node/322562201",
+          "lat": 51.752603,
+          "lon": -1.267992,
+          "street": "Frideswide Square"
+        },
+        {
+          "id": "node/242965129",
+          "lat": 51.759773,
+          "lon": -1.257823,
+          "street": "Parks Road"
+        },
+        {
+          "id": "node/374643782",
+          "lat": 51.744058,
+          "lon": -1.258797,
+          "street": "Marlborough Road"
+        },
+        {
+          "id": "node/380330060",
+          "lat": 51.756792,
+          "lon": -1.24731,
+          "street": "Manor Road"
+        },
+        {
+          "id": "node/2710790627",
+          "lat": 51.752739,
+          "lon": -1.271264,
+          "street": "Cripley Road"
+        },
+        {
+          "id": "node/253880259",
+          "lat": 51.760347,
+          "lon": -1.260301,
+          "street": "Banbury Road"
+        },
+        {
+          "id": "node/514877473",
+          "lat": 51.749753,
+          "lon": -1.244455,
+          "street": "Cowley Place"
+        },
+        {
+          "id": "node/347269925",
+          "lat": 51.759352,
+          "lon": -1.265277,
+          "street": "Walton Street"
         }
       ],
-      "updatedAt": "2026-08-23T04:20:29.392Z"
+      "updatedAt": "2026-09-03T17:09:14.866Z"
     },
     "recycling": {
       "count": 71,
       "pois": [
+        {
+          "id": "node/11151333009",
+          "lat": 51.753251,
+          "lon": -1.258515,
+          "street": "Cornmarket Street"
+        },
+        {
+          "id": "node/11151350260",
+          "lat": 51.754201,
+          "lon": -1.25721,
+          "street": "Broad Street"
+        },
+        {
+          "id": "node/410772414",
+          "lat": 51.748978,
+          "lon": -1.258411,
+          "street": "Cambridge Terrace"
+        },
+        {
+          "id": "node/322562138",
+          "lat": 51.74727,
+          "lon": -1.260798,
+          "street": "Friars Wharf"
+        },
+        {
+          "id": "node/279404677",
+          "lat": 51.74505,
+          "lon": -1.261642,
+          "street": "Whitehouse Road"
+        },
+        {
+          "id": "node/346138969",
+          "lat": 51.759512,
+          "lon": -1.266453,
+          "street": "King Street"
+        },
+        {
+          "id": "node/459821278",
+          "lat": 51.750872,
+          "lon": -1.242175,
+          "context": "Alice House"
+        },
+        {
+          "id": "node/12078228698",
+          "lat": 51.76146,
+          "lon": -1.266307,
+          "street": "Walton Manor Court"
+        },
+        {
+          "id": "node/1936306291",
+          "lat": 51.762773,
+          "lon": -1.261223,
+          "street": "Bevington Road"
+        },
+        {
+          "id": "node/370950547",
+          "lat": 51.759953,
+          "lon": -1.270039,
+          "street": "Juxon Street"
+        },
+        {
+          "id": "node/11889076473",
+          "lat": 51.748329,
+          "lon": -1.239798,
+          "street": "Stockmore Street"
+        },
+        {
+          "id": "node/1098193305",
+          "lat": 51.764204,
+          "lon": -1.265518,
+          "street": "Butler Close"
+        },
         {
           "id": "relation/11923991",
           "name": "Metal Salvage Ltd",
           "lat": 51.742403,
           "lon": -1.243183,
           "address": "Jackdaw Lane"
+        },
+        {
+          "id": "node/13701379193",
+          "lat": 51.750454,
+          "lon": -1.235631,
+          "street": "Fitness Trail"
+        },
+        {
+          "id": "node/12514558621",
+          "lat": 51.762234,
+          "lon": -1.274498,
+          "street": "Walton Well Road"
+        },
+        {
+          "id": "node/677388066",
+          "lat": 51.747901,
+          "lon": -1.234887,
+          "street": "Chapel Street"
+        },
+        {
+          "id": "node/370144470",
+          "lat": 51.737041,
+          "lon": -1.235534,
+          "street": "Townsend Square"
+        },
+        {
+          "id": "node/9170054751",
+          "lat": 51.737564,
+          "lon": -1.234496,
+          "street": "Iffley Road"
+        },
+        {
+          "id": "node/2271089603",
+          "lat": 51.746479,
+          "lon": -1.223714,
+          "street": "Southfield Park"
         },
         {
           "id": "way/133509580",
@@ -857,18 +1239,72 @@
           "openingHours": "Mo-Su 08:00-17:00; Jan 01 off; Dec 25 off"
         },
         {
-          "id": "node/8294135338",
-          "name": "Clothing Bank",
-          "lat": 51.762525,
-          "lon": -1.200262
+          "id": "node/1709283801",
+          "lat": 51.752685,
+          "lon": -1.219718,
+          "street": "Mileway Gardens"
+        },
+        {
+          "id": "node/224279094",
+          "lat": 51.776149,
+          "lon": -1.261729,
+          "street": "Ferry Pool Road"
+        },
+        {
+          "id": "node/1760397561",
+          "lat": 51.738637,
+          "lon": -1.217824,
+          "street": "Marsh Road"
+        },
+        {
+          "id": "node/2867566162",
+          "lat": 51.777781,
+          "lon": -1.23653,
+          "street": "Butts Lane"
+        },
+        {
+          "id": "node/11317406917",
+          "lat": 51.759909,
+          "lon": -1.211597,
+          "street": "London Road"
+        },
+        {
+          "id": "node/2321366347",
+          "lat": 51.724896,
+          "lon": -1.232799,
+          "street": "The Oval"
+        },
+        {
+          "id": "node/263980668",
+          "lat": 51.7312,
+          "lon": -1.21616,
+          "street": "Hockmore Street"
+        },
+        {
+          "id": "node/13243161393",
+          "lat": 51.746867,
+          "lon": -1.203225,
+          "street": "Cinnaminta Road"
+        },
+        {
+          "id": "node/8550411512",
+          "lat": 51.738158,
+          "lon": -1.206968,
+          "street": "Hollow Way"
+        },
+        {
+          "id": "node/411017447",
+          "lat": 51.749427,
+          "lon": -1.201244,
+          "street": "Atkyns Road"
         }
       ],
-      "updatedAt": "2026-08-23T04:20:30.734Z"
+      "updatedAt": "2026-09-03T17:09:16.863Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:20:31.138Z"
+      "updatedAt": "2026-09-03T17:09:17.309Z"
     },
     "libraries": {
       "count": 91,
@@ -1076,12 +1512,12 @@
           "lon": -1.263525
         }
       ],
-      "updatedAt": "2026-08-23T04:20:31.656Z"
+      "updatedAt": "2026-09-03T17:09:17.813Z"
     },
     "outdoor-gyms": {
       "count": 60,
       "pois": [],
-      "updatedAt": "2026-08-23T04:20:32.636Z"
+      "updatedAt": "2026-09-03T17:09:18.863Z"
     },
     "camp-sites": {
       "count": 10,
@@ -1134,12 +1570,12 @@
           "lon": -1.371841
         }
       ],
-      "updatedAt": "2026-08-23T04:20:33.158Z"
+      "updatedAt": "2026-09-03T17:09:19.381Z"
     },
     "shelters": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-08-23T04:20:33.896Z"
+      "updatedAt": "2026-09-03T17:09:20.025Z"
     },
     "rest-areas": {
       "count": 19,
@@ -1151,12 +1587,12 @@
           "lon": -1.283173
         }
       ],
-      "updatedAt": "2026-08-23T04:20:34.359Z"
+      "updatedAt": "2026-09-03T17:09:20.587Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:20:34.754Z"
+      "updatedAt": "2026-09-03T17:09:21.620Z"
     },
     "post-offices": {
       "count": 21,
@@ -1321,17 +1757,17 @@
           "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-13:00; PH off"
         }
       ],
-      "updatedAt": "2026-08-23T04:20:35.154Z"
+      "updatedAt": "2026-09-03T17:09:23.128Z"
     },
     "showers": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:20:35.554Z"
+      "updatedAt": "2026-09-03T17:09:24.003Z"
     },
     "fireplaces": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-23T04:20:36.473Z"
+      "updatedAt": "2026-09-03T17:09:25.308Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1366,12 +1802,24 @@
           "lon": -1.330092
         }
       ],
-      "updatedAt": "2026-08-23T04:20:37.211Z"
+      "updatedAt": "2026-09-03T17:09:27.221Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:20.729Z"
+    },
+    "bicycle-repair": {
+      "count": 5,
+      "pois": [
+        {
+          "id": "node/11128954035",
+          "name": "Deluxe Repair Station",
+          "lat": 51.760406,
+          "lon": -1.265251
+        }
+      ],
+      "updatedAt": "2026-09-03T17:09:26.482Z"
     }
   }
 }

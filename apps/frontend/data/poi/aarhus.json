@@ -1,16 +1,58 @@
 {
   "city": "aarhus",
-  "generatedAt": "2026-08-23T04:02:37.557Z",
+  "generatedAt": "2026-09-03T16:46:09.517Z",
   "categories": {
     "toilets": {
       "count": 142,
       "pois": [
+        {
+          "id": "node/14026474052",
+          "lat": 56.166842,
+          "lon": 10.205093,
+          "context": "Søauditorierne"
+        },
+        {
+          "id": "node/10991531119",
+          "lat": 56.160404,
+          "lon": 10.193675,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Væksthusene"
+        },
+        {
+          "id": "node/11885668277",
+          "lat": 56.158827,
+          "lon": 10.192727,
+          "context": "Madkassen"
+        },
+        {
+          "id": "node/11885668283",
+          "lat": 56.158101,
+          "lon": 10.193166,
+          "context": "Københavnerhjørnet"
+        },
+        {
+          "id": "node/9038674926",
+          "lat": 56.167632,
+          "lon": 10.215025,
+          "openingHours": "08:00-20:00",
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Nordre Kapel"
+        },
         {
           "id": "node/10915707968",
           "lat": 56.170458,
           "lon": 10.199361,
           "fee": "no",
           "context": "Det Kgl. Bibliotek"
+        },
+        {
+          "id": "node/11773510169",
+          "lat": 56.162956,
+          "lon": 10.218436,
+          "fee": "no",
+          "context": "Maskinrummet"
         },
         {
           "id": "way/107363057",
@@ -33,12 +75,55 @@
           "lon": 10.19137
         },
         {
+          "id": "node/10943621286",
+          "lat": 56.154035,
+          "lon": 10.194169,
+          "wheelchair": "yes",
+          "context": "Godsbanen"
+        },
+        {
+          "id": "node/12473585601",
+          "lat": 56.164262,
+          "lon": 10.222968,
+          "context": "Nicolinehus"
+        },
+        {
+          "id": "node/14006102011",
+          "lat": 56.153506,
+          "lon": 10.214057,
+          "fee": "no",
+          "context": "Dokk1"
+        },
+        {
+          "id": "node/11769205789",
+          "lat": 56.152538,
+          "lon": 10.196531,
+          "fee": "no",
+          "context": "Scandinavian Center Aarhus"
+        },
+        {
           "id": "way/903155610",
           "name": "Storcenter Nord",
           "lat": 56.170461,
           "lon": 10.188473,
           "openingHours": "Mo-Fr 07:00-22:00; Sa,Su 07:00-21:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/7940763401",
+          "lat": 56.171917,
+          "lon": 10.188171,
+          "wheelchair": "designated",
+          "fee": "no",
+          "context": "Turing"
+        },
+        {
+          "id": "node/7940746467",
+          "lat": 56.172094,
+          "lon": 10.188251,
+          "wheelchair": "designated",
+          "fee": "no",
+          "context": "Ada"
         },
         {
           "id": "node/10218259509",
@@ -49,18 +134,41 @@
           "context": "Bruuns Galleri"
         },
         {
+          "id": "node/10959881161",
+          "lat": 56.159909,
+          "lon": 10.17855,
+          "openingHours": "08:00-20:00",
+          "wheelchair": "yes",
+          "context": "Store Kapel"
+        },
+        {
+          "id": "node/8000273161",
+          "lat": 56.145515,
+          "lon": 10.207859,
+          "fee": "no",
+          "context": "Skansen"
+        },
+        {
+          "id": "node/13288044069",
+          "lat": 56.189119,
+          "lon": 10.215558,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Veri Center"
+        },
+        {
           "id": "way/142490518",
           "name": "Viby Centret",
           "lat": 56.129976,
           "lon": 10.16137
         }
       ],
-      "updatedAt": "2026-08-23T04:02:22.629Z"
+      "updatedAt": "2026-09-03T16:45:50.551Z"
     },
     "drinking-water": {
       "count": 69,
       "pois": [],
-      "updatedAt": "2026-08-23T04:02:23.866Z"
+      "updatedAt": "2026-09-03T16:45:52.067Z"
     },
     "playgrounds": {
       "count": 548,
@@ -215,10 +323,10 @@
           "lon": 10.105283
         }
       ],
-      "updatedAt": "2026-08-23T04:02:24.794Z"
+      "updatedAt": "2026-09-03T16:45:52.975Z"
     },
     "parking": {
-      "count": 2582,
+      "count": 2583,
       "pois": [
         {
           "id": "way/143718424",
@@ -432,7 +540,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:02:25.808Z"
+      "updatedAt": "2026-09-03T16:45:54.079Z"
     },
     "charging-stations": {
       "count": 132,
@@ -595,7 +703,7 @@
           "lon": 10.237587
         }
       ],
-      "updatedAt": "2026-08-23T04:02:26.259Z"
+      "updatedAt": "2026-09-03T16:45:54.468Z"
     },
     "gas-stations": {
       "count": 61,
@@ -710,7 +818,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:02:26.790Z"
+      "updatedAt": "2026-09-03T16:45:54.908Z"
     },
     "ice-cream": {
       "count": 24,
@@ -827,7 +935,7 @@
           "openingHours": "Mo-Su 10:00-21:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:02:27.252Z"
+      "updatedAt": "2026-09-03T16:45:55.343Z"
     },
     "dog-parks": {
       "count": 20,
@@ -891,7 +999,7 @@
           "lon": 10.090317
         }
       ],
-      "updatedAt": "2026-08-23T04:02:27.687Z"
+      "updatedAt": "2026-09-03T16:45:55.743Z"
     },
     "picnic-spots": {
       "count": 720,
@@ -939,7 +1047,7 @@
           "lon": 10.104937
         }
       ],
-      "updatedAt": "2026-08-23T04:02:29.094Z"
+      "updatedAt": "2026-09-03T16:45:57.066Z"
     },
     "viewpoints": {
       "count": 38,
@@ -1009,7 +1117,7 @@
           "lon": 10.096127
         }
       ],
-      "updatedAt": "2026-08-23T04:02:29.669Z"
+      "updatedAt": "2026-09-03T16:45:57.581Z"
     },
     "beaches": {
       "count": 19,
@@ -1046,7 +1154,7 @@
           "lon": 10.291819
         }
       ],
-      "updatedAt": "2026-08-23T04:02:30.141Z"
+      "updatedAt": "2026-09-03T16:45:58.020Z"
     },
     "atms": {
       "count": 38,
@@ -1097,15 +1205,15 @@
           "lon": 10.250873
         }
       ],
-      "updatedAt": "2026-08-23T04:02:30.663Z"
+      "updatedAt": "2026-09-03T16:45:58.463Z"
     },
     "post-boxes": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:02:31.187Z"
+      "updatedAt": "2026-09-03T16:45:58.903Z"
     },
     "recycling": {
-      "count": 595,
+      "count": 594,
       "pois": [
         {
           "id": "node/12127374780",
@@ -1152,12 +1260,12 @@
           "openingHours": "Mo-Fr 07:00-18:00; Sa,Su,PH 10:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:02:33.028Z"
+      "updatedAt": "2026-09-03T16:46:00.565Z"
     },
     "luggage-storage": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-08-23T04:02:33.447Z"
+      "updatedAt": "2026-09-03T16:46:00.985Z"
     },
     "libraries": {
       "count": 19,
@@ -1250,7 +1358,7 @@
           "lon": 10.282475
         }
       ],
-      "updatedAt": "2026-08-23T04:02:33.931Z"
+      "updatedAt": "2026-09-03T16:46:01.373Z"
     },
     "outdoor-gyms": {
       "count": 67,
@@ -1262,7 +1370,7 @@
           "context": "Riis Skov"
         }
       ],
-      "updatedAt": "2026-08-23T04:02:34.872Z"
+      "updatedAt": "2026-09-03T16:46:02.316Z"
     },
     "camp-sites": {
       "count": 8,
@@ -1311,7 +1419,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:02:35.335Z"
+      "updatedAt": "2026-09-03T16:46:02.834Z"
     },
     "shelters": {
       "count": 81,
@@ -1354,45 +1462,60 @@
           "lon": 10.104967
         }
       ],
-      "updatedAt": "2026-08-23T04:02:36.604Z"
+      "updatedAt": "2026-09-03T16:46:04.601Z"
     },
     "rest-areas": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-23T04:02:37.064Z"
+      "updatedAt": "2026-09-03T16:46:04.980Z"
     },
     "dump-stations": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-23T04:02:37.455Z"
+      "updatedAt": "2026-09-03T16:46:05.308Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:02:42.465Z"
+      "count": 2,
+      "pois": [
+        {
+          "id": "way/1185602012",
+          "name": "Postnord",
+          "lat": 56.170948,
+          "lon": 10.18813,
+          "openingHours": "Mo-Fr 10:00-19:00; Sa,Su 10:00-17:00",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-09-03T16:46:05.708Z"
     },
     "showers": {
-      "count": 0,
+      "count": 15,
       "pois": [],
-      "updatedAt": "2026-08-17T04:02:42.866Z"
+      "updatedAt": "2026-09-03T16:46:06.013Z"
     },
     "fireplaces": {
-      "count": 5,
+      "count": 97,
       "pois": [
+        {
+          "id": "node/2262766821",
+          "name": "Daus",
+          "lat": 56.176526,
+          "lon": 10.223221
+        },
+        {
+          "id": "node/2262766819",
+          "name": "Warming",
+          "lat": 56.176841,
+          "lon": 10.223545
+        },
         {
           "id": "node/8827329569",
           "name": "Tumlepladsen",
           "lat": 56.176929,
           "lon": 10.223629
-        },
-        {
-          "id": "way/427768815",
-          "name": "Vildstedet",
-          "lat": 56.145776,
-          "lon": 10.142327
         }
       ],
-      "updatedAt": "2026-08-17T04:02:43.458Z"
+      "updatedAt": "2026-09-03T16:46:07.344Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1400,14 +1523,32 @@
       "updatedAt": "2026-08-17T04:02:43.836Z"
     },
     "benches": {
-      "count": 3,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:02:44.234Z"
+      "count": 2070,
+      "pois": [
+        {
+          "id": "node/11780992598",
+          "name": "Bænk",
+          "lat": 56.15666,
+          "lon": 10.214153
+        },
+        {
+          "id": "node/13176426158",
+          "name": "Bench",
+          "lat": 56.180257,
+          "lon": 10.158759
+        }
+      ],
+      "updatedAt": "2026-09-03T16:46:09.417Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:04.267Z"
+    },
+    "bicycle-repair": {
+      "count": 13,
+      "pois": [],
+      "updatedAt": "2026-09-03T16:46:08.548Z"
     }
   }
 }

@@ -1,10 +1,18 @@
 {
   "city": "turku",
-  "generatedAt": "2026-08-23T04:00:30.394Z",
+  "generatedAt": "2026-09-03T16:37:59.042Z",
   "categories": {
     "toilets": {
       "count": 55,
       "pois": [
+        {
+          "id": "node/9552185501",
+          "lat": 60.451121,
+          "lon": 22.265416,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Kultatalo"
+        },
         {
           "id": "way/465777801",
           "name": "Sokos Wiklund",
@@ -13,6 +21,23 @@
           "address": "Eerikinkatu 11",
           "openingHours": "Mo-Fr 09:00-21:00; Sa 09:00-20:00; Su 11:00-18:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/5067623133",
+          "lat": 60.450152,
+          "lon": 22.265481,
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 08:00-16:00",
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "Kauppahalli"
+        },
+        {
+          "id": "node/9662656797",
+          "lat": 60.457217,
+          "lon": 22.2682,
+          "wheelchair": "yes",
+          "fee": "yes",
+          "context": "Turun linja-autoasema"
         },
         {
           "id": "node/13112331655",
@@ -31,6 +56,65 @@
           "wheelchair": "limited"
         },
         {
+          "id": "node/6681572602",
+          "lat": 60.442306,
+          "lon": 22.286689,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "K-Citymarket"
+        },
+        {
+          "id": "node/7875491829",
+          "lat": 60.450453,
+          "lon": 22.296826,
+          "wheelchair": "no",
+          "fee": "yes",
+          "context": "Kupittaan rautatieasema"
+        },
+        {
+          "id": "node/11945062714",
+          "lat": 60.473765,
+          "lon": 22.293338,
+          "wheelchair": "yes",
+          "context": "Pitäjänmakasiini"
+        },
+        {
+          "id": "node/11847845469",
+          "lat": 60.478191,
+          "lon": 22.26016,
+          "openingHours": "Mo-Th 06:00-20:00; Fr 11:00-18:00; Sa-Su 09:00-17:00",
+          "wheelchair": "yes",
+          "context": "Impivaaran uimahalli"
+        },
+        {
+          "id": "node/11051449500",
+          "lat": 60.457367,
+          "lon": 22.199467,
+          "context": "Aunelan monitoimitalo"
+        },
+        {
+          "id": "node/9689034779",
+          "lat": 60.461352,
+          "lon": 22.33465,
+          "wheelchair": "designated",
+          "fee": "no",
+          "context": "Verstas"
+        },
+        {
+          "id": "node/9689034780",
+          "lat": 60.462175,
+          "lon": 22.335846,
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "Vähä-Rasi"
+        },
+        {
+          "id": "node/5195555125",
+          "lat": 60.49132,
+          "lon": 22.222837,
+          "context": "Kuninkojan kotikeskus"
+        },
+        {
           "id": "way/817162360",
           "name": "Varissuon liikekeskus",
           "lat": 60.443163,
@@ -38,17 +122,31 @@
           "address": "Littoistentie 81",
           "openingHours": "Mo-Fr 07:00-21:00; Sa 08:00-21:00; Su 10:00-20:00",
           "wheelchair": "limited"
+        },
+        {
+          "id": "node/5728942144",
+          "lat": 60.490427,
+          "lon": 22.201691,
+          "fee": "no",
+          "context": "Kauppakeskus Mylly"
+        },
+        {
+          "id": "node/14082207142",
+          "lat": 60.419961,
+          "lon": 22.379013,
+          "fee": "no",
+          "context": "Krossikeskus"
         }
       ],
-      "updatedAt": "2026-08-23T04:00:09.717Z"
+      "updatedAt": "2026-09-03T16:37:34.179Z"
     },
     "drinking-water": {
       "count": 12,
       "pois": [],
-      "updatedAt": "2026-08-23T04:00:11.830Z"
+      "updatedAt": "2026-09-03T16:37:35.802Z"
     },
     "playgrounds": {
-      "count": 631,
+      "count": 632,
       "pois": [
         {
           "id": "way/25893254",
@@ -232,10 +330,10 @@
           "lon": 22.278276
         }
       ],
-      "updatedAt": "2026-08-23T04:00:12.977Z"
+      "updatedAt": "2026-09-03T16:37:36.700Z"
     },
     "parking": {
-      "count": 3386,
+      "count": 3392,
       "pois": [
         {
           "id": "way/1207799675",
@@ -279,7 +377,7 @@
           "id": "way/516188550",
           "name": "Logomo P7",
           "lat": 60.457657,
-          "lon": 22.261892,
+          "lon": 22.261888,
           "fee": "yes"
         },
         {
@@ -300,7 +398,7 @@
           "id": "way/1125755161",
           "name": "Suikin pysäköintialue",
           "lat": 60.461129,
-          "lon": 22.272053,
+          "lon": 22.272049,
           "fee": "no"
         },
         {
@@ -454,7 +552,7 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-23T04:00:14.760Z"
+      "updatedAt": "2026-09-03T16:37:38.093Z"
     },
     "charging-stations": {
       "count": 56,
@@ -584,7 +682,7 @@
           "lon": 22.351365
         }
       ],
-      "updatedAt": "2026-08-23T04:00:15.323Z"
+      "updatedAt": "2026-09-03T16:37:38.642Z"
     },
     "gas-stations": {
       "count": 61,
@@ -817,7 +915,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:00:16.000Z"
+      "updatedAt": "2026-09-03T16:37:39.224Z"
     },
     "ice-cream": {
       "count": 9,
@@ -859,7 +957,7 @@
           "lon": 22.200508
         }
       ],
-      "updatedAt": "2026-08-23T04:00:16.875Z"
+      "updatedAt": "2026-09-03T16:37:39.802Z"
     },
     "dog-parks": {
       "count": 25,
@@ -1004,12 +1102,12 @@
           "address": "Vaakunatie 10"
         }
       ],
-      "updatedAt": "2026-08-23T04:00:17.449Z"
+      "updatedAt": "2026-09-03T16:37:40.189Z"
     },
     "picnic-spots": {
-      "count": 260,
+      "count": 262,
       "pois": [],
-      "updatedAt": "2026-08-23T04:00:19.296Z"
+      "updatedAt": "2026-09-03T16:37:41.700Z"
     },
     "viewpoints": {
       "count": 37,
@@ -1064,7 +1162,7 @@
           "lon": 22.385333
         }
       ],
-      "updatedAt": "2026-08-23T04:00:20.022Z"
+      "updatedAt": "2026-09-03T16:37:42.348Z"
     },
     "beaches": {
       "count": 15,
@@ -1112,7 +1210,7 @@
           "lon": 22.397773
         }
       ],
-      "updatedAt": "2026-08-23T04:00:20.812Z"
+      "updatedAt": "2026-09-03T16:37:42.848Z"
     },
     "atms": {
       "count": 47,
@@ -1159,16 +1257,281 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:00:21.795Z"
+      "updatedAt": "2026-09-03T16:37:43.348Z"
     },
     "post-boxes": {
       "count": 96,
-      "pois": [],
-      "updatedAt": "2026-08-23T04:00:22.407Z"
+      "pois": [
+        {
+          "id": "node/10632691664",
+          "lat": 60.451795,
+          "lon": 22.26961,
+          "street": "Eerikinkatu"
+        },
+        {
+          "id": "node/10593026433",
+          "lat": 60.451032,
+          "lon": 22.263977,
+          "street": "Hansatori"
+        },
+        {
+          "id": "node/10593026435",
+          "lat": 60.452171,
+          "lon": 22.261727,
+          "street": "Puolalankatu"
+        },
+        {
+          "id": "node/5157145826",
+          "lat": 60.454146,
+          "lon": 22.268098,
+          "street": "Brahenkatu"
+        },
+        {
+          "id": "node/3440400873",
+          "lat": 60.449551,
+          "lon": 22.262827,
+          "address": "Eerikinkatu 19",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 10:00-15:00",
+          "street": "Kristiinankatu"
+        },
+        {
+          "id": "node/243463451",
+          "lat": 60.453452,
+          "lon": 22.272738,
+          "street": "Aninkaistenkatu"
+        },
+        {
+          "id": "node/10593026436",
+          "lat": 60.450441,
+          "lon": 22.259835,
+          "street": "Humalistonkatu"
+        },
+        {
+          "id": "node/30390270",
+          "lat": 60.447829,
+          "lon": 22.270567,
+          "street": "Kaskenkatu"
+        },
+        {
+          "id": "node/241483257",
+          "lat": 60.451081,
+          "lon": 22.257175,
+          "street": "Puutarhakatu"
+        },
+        {
+          "id": "node/295347855",
+          "lat": 60.451198,
+          "lon": 22.276914,
+          "street": "Tuomiokirkontori"
+        },
+        {
+          "id": "node/14067833881",
+          "lat": 60.455865,
+          "lon": 22.259893,
+          "street": "Ratapihankatu"
+        },
+        {
+          "id": "node/13982459079",
+          "lat": 60.457057,
+          "lon": 22.267745,
+          "street": "Läntinen Pitkäkatu"
+        },
+        {
+          "id": "node/10593026437",
+          "lat": 60.448769,
+          "lon": 22.255822,
+          "address": "Yliopistonkatu 39",
+          "street": "Ursininkatu"
+        },
+        {
+          "id": "node/11361141567",
+          "lat": 60.457746,
+          "lon": 22.27304,
+          "street": "Verkatehtaankatu"
+        },
+        {
+          "id": "node/4350057609",
+          "lat": 60.456595,
+          "lon": 22.25609,
+          "address": "Junakatu 9",
+          "street": "Junakatu"
+        },
+        {
+          "id": "node/925275095",
+          "lat": 60.444391,
+          "lon": 22.268868,
+          "street": "Sepänkatu"
+        },
+        {
+          "id": "node/8309396970",
+          "lat": 60.450241,
+          "lon": 22.281733,
+          "address": "Vähä Hämeenkatu 12",
+          "street": "Vähä Hämeenkatu"
+        },
+        {
+          "id": "node/26110403",
+          "lat": 60.445197,
+          "lon": 22.2749,
+          "address": "Kaskenkatu 10",
+          "street": "Sirkkalankatu"
+        },
+        {
+          "id": "node/11234311136",
+          "lat": 60.447366,
+          "lon": 22.251953,
+          "address": "Puistokatu 11",
+          "street": "Ruusukorttelinpolku"
+        },
+        {
+          "id": "node/265608480",
+          "lat": 60.443673,
+          "lon": 22.256393,
+          "street": "Martinkatu"
+        },
+        {
+          "id": "node/8309464726",
+          "lat": 60.44913,
+          "lon": 22.285956,
+          "address": "Kerttulinkatu 13",
+          "street": "Kerttulinkatu"
+        },
+        {
+          "id": "node/661267623",
+          "lat": 60.45313,
+          "lon": 22.286671,
+          "address": "Kiinamyllynkatu 3",
+          "street": "Kiinamyllynkatu"
+        },
+        {
+          "id": "node/451717884",
+          "lat": 60.447099,
+          "lon": 22.245479,
+          "address": "Puutarhakatu 34",
+          "street": "Heikkilänkatu"
+        },
+        {
+          "id": "node/262283000",
+          "lat": 60.439606,
+          "lon": 22.262515,
+          "street": "Betaniankatu"
+        },
+        {
+          "id": "node/631176152",
+          "lat": 60.448727,
+          "lon": 22.293458,
+          "address": "Lemminkäisenkatu 14",
+          "street": "Lemminkäisenkatu"
+        },
+        {
+          "id": "node/262282995",
+          "lat": 60.437648,
+          "lon": 22.267602,
+          "street": "Kunnallissairaalantie"
+        },
+        {
+          "id": "node/11234142281",
+          "lat": 60.448511,
+          "lon": 22.23704,
+          "address": "Kirstintasku 3",
+          "street": "Artturinkatu"
+        },
+        {
+          "id": "node/8742911236",
+          "lat": 60.437117,
+          "lon": 22.258105,
+          "street": "Kupittaankatu"
+        },
+        {
+          "id": "node/12273196735",
+          "lat": 60.442486,
+          "lon": 22.294562,
+          "street": "Blomberginaukio"
+        },
+        {
+          "id": "node/456725090",
+          "lat": 60.437829,
+          "lon": 22.286972,
+          "street": "Takamaantie"
+        }
+      ],
+      "updatedAt": "2026-09-03T16:37:45.094Z"
     },
     "recycling": {
-      "count": 547,
+      "count": 546,
       "pois": [
+        {
+          "id": "node/10263895939",
+          "lat": 60.458094,
+          "lon": 22.27273,
+          "street": "Lonttistentie"
+        },
+        {
+          "id": "node/5834179727",
+          "lat": 60.448848,
+          "lon": 22.251257,
+          "street": "Puutarhakatu"
+        },
+        {
+          "id": "node/11257472068",
+          "lat": 60.450517,
+          "lon": 22.246395,
+          "street": "Puistokatu"
+        },
+        {
+          "id": "node/12189921035",
+          "lat": 60.46074,
+          "lon": 22.277187,
+          "street": "Kahlaajankatu"
+        },
+        {
+          "id": "node/13408483087",
+          "lat": 60.456856,
+          "lon": 22.246197,
+          "street": "Kähärlänkuja"
+        },
+        {
+          "id": "node/10274579915",
+          "lat": 60.462773,
+          "lon": 22.259536,
+          "street": "Tikkutehtaankuja"
+        },
+        {
+          "id": "node/13332283258",
+          "lat": 60.440919,
+          "lon": 22.256973,
+          "street": "Martinkatu"
+        },
+        {
+          "id": "node/6742673201",
+          "lat": 60.463524,
+          "lon": 22.271366,
+          "street": "Virusmäentie"
+        },
+        {
+          "id": "node/10296294987",
+          "lat": 60.46106,
+          "lon": 22.285331,
+          "street": "Kairistenkaari"
+        },
+        {
+          "id": "node/11071812157",
+          "lat": 60.463309,
+          "lon": 22.27963,
+          "street": "Raunistulantie"
+        },
+        {
+          "id": "node/13158623861",
+          "lat": 60.458761,
+          "lon": 22.243824,
+          "street": "Pigmenttitasku"
+        },
+        {
+          "id": "node/13158673910",
+          "lat": 60.457661,
+          "lon": 22.240902,
+          "street": "Samottitasku"
+        },
         {
           "id": "node/12302796967",
           "name": "UFF-vaatekeräys",
@@ -1176,10 +1539,94 @@
           "lon": 22.239614
         },
         {
+          "id": "node/13158673917",
+          "lat": 60.457869,
+          "lon": 22.240191,
+          "street": "Samottikuja"
+        },
+        {
+          "id": "node/10307795310",
+          "lat": 60.466314,
+          "lon": 22.27297,
+          "street": "Kastuntie"
+        },
+        {
+          "id": "node/10219027615",
+          "lat": 60.462252,
+          "lon": 22.288002,
+          "street": "Inspehtorinkatu"
+        },
+        {
+          "id": "node/10305112731",
+          "lat": 60.466661,
+          "lon": 22.274695,
+          "street": "Raunistulan puistotie"
+        },
+        {
+          "id": "node/11068029665",
+          "lat": 60.466131,
+          "lon": 22.280694,
+          "street": "Alfankuja"
+        },
+        {
+          "id": "node/7596505142",
+          "lat": 60.463629,
+          "lon": 22.243872,
+          "street": "Untolankatu"
+        },
+        {
+          "id": "node/13898104549",
+          "lat": 60.442552,
+          "lon": 22.237596,
+          "street": "Hansakatu"
+        },
+        {
+          "id": "node/4434960377",
+          "lat": 60.461422,
+          "lon": 22.296014,
+          "street": "Papinkatu"
+        },
+        {
           "id": "node/4182598774",
           "name": "Rinki-ekopiste",
           "lat": 60.457275,
           "lon": 22.232725
+        },
+        {
+          "id": "node/4594499411",
+          "lat": 60.461722,
+          "lon": 22.298307,
+          "street": "Simolankatu"
+        },
+        {
+          "id": "node/12218554126",
+          "lat": 60.47139,
+          "lon": 22.272303,
+          "street": "Loukkaanpolku"
+        },
+        {
+          "id": "node/12218412061",
+          "lat": 60.471626,
+          "lon": 22.271302,
+          "street": "Loukkaankatu"
+        },
+        {
+          "id": "node/12462762931",
+          "lat": 60.471506,
+          "lon": 22.273682,
+          "street": "Mullintie"
+        },
+        {
+          "id": "node/566341480",
+          "lat": 60.469206,
+          "lon": 22.245605,
+          "street": "Liinahaankatu"
+        },
+        {
+          "id": "node/12218669678",
+          "lat": 60.473202,
+          "lon": 22.272281,
+          "street": "Pulmussuontie"
         },
         {
           "id": "node/290342564",
@@ -1190,52 +1637,18 @@
           "openingHours": "Mo-Fr 08:00-18:00"
         },
         {
-          "id": "node/14081842165",
-          "name": "Rinki ekopiste",
-          "lat": 60.43132,
-          "lon": 22.323163,
-          "address": "Skanssinveräjä 10",
-          "openingHours": "24/7"
-        },
-        {
-          "id": "node/5755667065",
-          "name": "Risut",
-          "lat": 60.484051,
-          "lon": 22.342071
-        },
-        {
-          "id": "way/89823914",
-          "name": "Topinojan jätekeskus",
-          "lat": 60.484546,
-          "lon": 22.341524,
-          "address": "Pitkäsaarenkatu 7",
-          "openingHours": "Mo-Fr 06:30-21:00"
-        },
-        {
-          "id": "node/5755667071",
-          "name": "Huonekalut",
-          "lat": 60.483857,
-          "lon": 22.345081
-        },
-        {
-          "id": "node/5755667072",
-          "name": "Asbesti",
-          "lat": 60.483839,
-          "lon": 22.345144
-        },
-        {
-          "id": "node/5755667069",
-          "name": "Puu",
-          "lat": 60.4842,
-          "lon": 22.345566
+          "id": "node/12205668368",
+          "lat": 60.431655,
+          "lon": 22.289137,
+          "street": "Ruispolku"
         }
       ],
-      "updatedAt": "2026-08-23T04:00:24.387Z"
+      "updatedAt": "2026-09-03T16:37:47.693Z"
     },
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:00:25.076Z"
+      "updatedAt": "2026-09-03T16:37:48.338Z"
     },
     "libraries": {
       "count": 28,
@@ -1415,7 +1828,7 @@
           "address": "Lautakunnankatu 1"
         }
       ],
-      "updatedAt": "2026-08-23T04:00:25.684Z"
+      "updatedAt": "2026-09-03T16:37:49.310Z"
     },
     "outdoor-gyms": {
       "count": 63,
@@ -1485,16 +1898,22 @@
           "lon": 22.163082
         }
       ],
-      "updatedAt": "2026-08-23T04:00:27.041Z"
+      "updatedAt": "2026-09-03T16:37:50.848Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:00:27.723Z"
+      "updatedAt": "2026-09-03T16:37:51.428Z"
     },
     "shelters": {
       "count": 22,
       "pois": [
+        {
+          "id": "node/13159410406",
+          "lat": 60.437061,
+          "lon": 22.244044,
+          "street": "Laivurinkatu"
+        },
         {
           "id": "way/413096267",
           "name": "Hiihtomajan avoin ulkorakennus",
@@ -1508,7 +1927,7 @@
           "lon": 22.199079
         }
       ],
-      "updatedAt": "2026-08-23T04:00:29.216Z"
+      "updatedAt": "2026-09-03T16:37:53.026Z"
     },
     "rest-areas": {
       "count": 13,
@@ -1538,27 +1957,85 @@
           "lon": 22.216838
         }
       ],
-      "updatedAt": "2026-08-23T04:00:29.816Z"
+      "updatedAt": "2026-09-03T16:37:53.589Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:00:30.293Z"
+      "updatedAt": "2026-09-03T16:37:54.052Z"
     },
     "post-offices": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:02:27.138Z"
+      "count": 6,
+      "pois": [
+        {
+          "id": "node/13844478501",
+          "name": "UPS Access Point",
+          "lat": 60.448821,
+          "lon": 22.257,
+          "address": "Yliopistonkatu 34"
+        },
+        {
+          "id": "node/66553913",
+          "name": "Kupittaan posti",
+          "lat": 60.441774,
+          "lon": 22.2853,
+          "openingHours": "Mo-Su 08:00-22:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/9534162456",
+          "name": "Posti Business Point",
+          "lat": 60.456139,
+          "lon": 22.232133,
+          "address": "Uhrilähteenkatu 2",
+          "openingHours": "Mo-Fr 08:00-19:00"
+        },
+        {
+          "id": "node/3755961792",
+          "name": "Posti",
+          "lat": 60.472405,
+          "lon": 22.231588,
+          "address": "Markulantie 150",
+          "openingHours": "Mo-Sa 07:00-22:00, Su 08:00-22:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/12959390580",
+          "name": "Matkahuolto palvelupiste",
+          "lat": 60.494547,
+          "lon": 22.300347,
+          "address": "Jonkankatu 4",
+          "openingHours": "Mo-Fr 09:00-18:00"
+        },
+        {
+          "id": "node/12271723796",
+          "name": "Posti Noutopiste, Frans Logistic Solutions",
+          "lat": 60.488507,
+          "lon": 22.327642,
+          "address": "Silakatu 2",
+          "openingHours": "Mo-Fr 08:00-18:00",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-09-03T16:37:54.648Z"
     },
     "showers": {
-      "count": 0,
-      "pois": [],
-      "updatedAt": "2026-08-17T04:02:27.523Z"
+      "count": 8,
+      "pois": [
+        {
+          "id": "node/14132816801",
+          "name": "Suihku / shower",
+          "lat": 60.415025,
+          "lon": 22.259097,
+          "address": "Rykmentintie 51"
+        }
+      ],
+      "updatedAt": "2026-09-03T16:37:55.180Z"
     },
     "fireplaces": {
-      "count": 0,
+      "count": 24,
       "pois": [],
-      "updatedAt": "2026-08-17T04:02:27.989Z"
+      "updatedAt": "2026-09-03T16:37:56.723Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1566,14 +2043,91 @@
       "updatedAt": "2026-08-17T04:02:28.357Z"
     },
     "benches": {
-      "count": 0,
+      "count": 1355,
       "pois": [],
-      "updatedAt": "2026-08-17T04:02:28.756Z"
+      "updatedAt": "2026-09-03T16:37:58.941Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:01.822Z"
+    },
+    "bicycle-repair": {
+      "count": 12,
+      "pois": [
+        {
+          "id": "node/9881349648",
+          "lat": 60.449687,
+          "lon": 22.271463,
+          "street": "Kauppiaskatu"
+        },
+        {
+          "id": "node/9988992163",
+          "lat": 60.460269,
+          "lon": 22.266172,
+          "street": "Satakunnantie"
+        },
+        {
+          "id": "node/9989156819",
+          "lat": 60.444209,
+          "lon": 22.252862,
+          "street": "Läntinen Rantakatu"
+        },
+        {
+          "id": "node/9989149514",
+          "lat": 60.446479,
+          "lon": 22.284269,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Uudenmaankatu"
+        },
+        {
+          "id": "node/12141615520",
+          "lat": 60.453924,
+          "lon": 22.287613,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rehtorinpellonkatu"
+        },
+        {
+          "id": "node/12766176711",
+          "lat": 60.460945,
+          "lon": 22.286516,
+          "street": "Inspehtorinkatu"
+        },
+        {
+          "id": "node/14029014042",
+          "lat": 60.450471,
+          "lon": 22.294759,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Joukahaisenkatu"
+        },
+        {
+          "id": "node/9989156820",
+          "lat": 60.45534,
+          "lon": 22.298298,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Vanha Hämeentie"
+        },
+        {
+          "id": "node/11124010007",
+          "name": "Pyörän kylmäasema",
+          "lat": 60.466684,
+          "lon": 22.292049
+        },
+        {
+          "id": "way/694438496",
+          "name": "Motonet",
+          "lat": 60.422263,
+          "lon": 22.378267,
+          "address": "Varastomiehenkatu 4",
+          "openingHours": "Mo-Fr 09:00-21:00; Sa 09:00-19:00; Su 10:00-18:00",
+          "wheelchair": "yes"
+        }
+      ],
+      "updatedAt": "2026-09-03T16:37:58.176Z"
     }
   }
 }

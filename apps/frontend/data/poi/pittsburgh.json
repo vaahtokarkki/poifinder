@@ -1,9 +1,9 @@
 {
   "city": "pittsburgh",
-  "generatedAt": "2026-08-23T04:37:00.441Z",
+  "generatedAt": "2026-09-03T17:32:43.543Z",
   "categories": {
     "toilets": {
-      "count": 52,
+      "count": 54,
       "pois": [
         {
           "id": "way/154245869",
@@ -30,6 +30,19 @@
           "address": "Panther Hollow Road 101"
         },
         {
+          "id": "node/13344591901",
+          "lat": 40.443336,
+          "lon": -79.945767,
+          "address": "Forbes Avenue 4804",
+          "context": "Newell-Simon Hall"
+        },
+        {
+          "id": "node/12895228467",
+          "lat": 40.391313,
+          "lon": -80.008308,
+          "context": "Brookline Recreation Center"
+        },
+        {
           "id": "way/109857393",
           "name": "Pittsburgh Glass Center",
           "lat": 40.463973,
@@ -39,6 +52,13 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/9598644801",
+          "lat": 40.397061,
+          "lon": -80.045048,
+          "wheelchair": "yes",
+          "context": "Thomas Lloyd Recreation Center"
+        },
+        {
           "id": "way/125708085",
           "name": "Target",
           "lat": 40.460895,
@@ -46,17 +66,35 @@
           "address": "Penn Avenue 6231",
           "openingHours": "Su-Fr 08:00-22:00; Sa 08:00-21:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/5000119518",
+          "lat": 40.378153,
+          "lon": -79.98951,
+          "context": "Zicknacks Community Thrift"
+        },
+        {
+          "id": "node/2280636205",
+          "lat": 40.481942,
+          "lon": -79.919541,
+          "context": "Worlds of Discovery"
+        },
+        {
+          "id": "node/2280636168",
+          "lat": 40.483634,
+          "lon": -79.921,
+          "context": "The Village"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:31.416Z"
+      "updatedAt": "2026-09-03T17:32:22.122Z"
     },
     "drinking-water": {
       "count": 36,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:32.005Z"
+      "updatedAt": "2026-09-03T17:32:23.809Z"
     },
     "playgrounds": {
-      "count": 224,
+      "count": 225,
       "pois": [
         {
           "id": "way/1020919843",
@@ -162,6 +200,12 @@
           "lon": -80.029211
         },
         {
+          "id": "way/1550857771",
+          "name": "Osceola Playground",
+          "lat": 40.456835,
+          "lon": -79.942307
+        },
+        {
           "id": "way/429780696",
           "name": "Riverview Playground",
           "lat": 40.481324,
@@ -186,6 +230,12 @@
           "lon": -80.056643
         },
         {
+          "id": "way/1551147637",
+          "name": "Pittsburgh Liberty Playground",
+          "lat": 40.453202,
+          "lon": -79.933781
+        },
+        {
           "id": "way/1350422479",
           "name": "Nelson Mandela Peace Park",
           "lat": 40.466014,
@@ -196,6 +246,12 @@
           "name": "Friendship Playpark",
           "lat": 40.462141,
           "lon": -79.936033
+        },
+        {
+          "id": "way/1532334788",
+          "name": "Lytle Land",
+          "lat": 40.406374,
+          "lon": -79.944881
         },
         {
           "id": "node/2993478918",
@@ -220,30 +276,12 @@
           "name": "Fifty-Seventh Street Playground",
           "lat": 40.48599,
           "lon": -79.946772
-        },
-        {
-          "id": "way/444684462",
-          "name": "CDS Playground",
-          "lat": 40.427031,
-          "lon": -79.918001
-        },
-        {
-          "id": "node/1223856276",
-          "name": "Bob O'Connor Community Playground",
-          "lat": 40.432665,
-          "lon": -79.916103
-        },
-        {
-          "id": "way/127289070",
-          "name": "Blue Slide Playground",
-          "lat": 40.42987,
-          "lon": -79.914715
         }
       ],
-      "updatedAt": "2026-08-21T04:02:32.561Z"
+      "updatedAt": "2026-09-03T17:32:24.723Z"
     },
     "parking": {
-      "count": 1324,
+      "count": 1330,
       "pois": [
         {
           "id": "way/319989363",
@@ -449,7 +487,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:33.398Z"
+      "updatedAt": "2026-09-03T17:32:26.028Z"
     },
     "charging-stations": {
       "count": 7,
@@ -479,7 +517,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:33.791Z"
+      "updatedAt": "2026-09-03T17:32:26.560Z"
     },
     "gas-stations": {
       "count": 85,
@@ -621,10 +659,10 @@
           "openingHours": "Mo-Fr 08:00-19:00; Sa 09:00-17:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:34.255Z"
+      "updatedAt": "2026-09-03T17:32:27.148Z"
     },
     "ice-cream": {
-      "count": 34,
+      "count": 35,
       "pois": [
         {
           "id": "node/11159464925",
@@ -659,6 +697,13 @@
           "name": "Klavon's Ice Cream Parlor",
           "lat": 40.457056,
           "lon": -79.975666
+        },
+        {
+          "id": "node/14132338502",
+          "name": "Jeni's Splendid Ice Creams",
+          "lat": 40.427606,
+          "lon": -79.965332,
+          "address": "Cinema Drive 425"
         },
         {
           "id": "node/1962150121",
@@ -819,14 +864,6 @@
           "openingHours": "Mo-Su 12:00-21:00"
         },
         {
-          "id": "node/10056678092",
-          "name": "Jeni's Splendid Ice Creams",
-          "lat": 40.456882,
-          "lon": -79.915834,
-          "address": "Bakery Square Boulevard 173",
-          "openingHours": "Mo-Th 12:00-23:00, Fr,Sa 11:00-24:00, Su 11:00-23:00"
-        },
-        {
           "id": "node/2841084097",
           "name": "Scoops On Beverly",
           "lat": 40.388435,
@@ -849,7 +886,7 @@
           "openingHours": "Mo-Th 14:00-21:00,Fr-Sa 12:00-21:30, Su 12:00-21:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:34.633Z"
+      "updatedAt": "2026-09-03T17:32:27.700Z"
     },
     "dog-parks": {
       "count": 21,
@@ -898,7 +935,7 @@
           "lon": -79.906219
         }
       ],
-      "updatedAt": "2026-08-21T04:02:34.991Z"
+      "updatedAt": "2026-09-03T17:32:28.102Z"
     },
     "picnic-spots": {
       "count": 93,
@@ -910,12 +947,12 @@
           "lon": -79.952542
         }
       ],
-      "updatedAt": "2026-08-21T04:02:35.518Z"
+      "updatedAt": "2026-09-03T17:32:29.431Z"
     },
     "viewpoints": {
       "count": 27,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:36.015Z"
+      "updatedAt": "2026-09-03T17:32:30.085Z"
     },
     "beaches": {
       "count": 44,
@@ -933,7 +970,7 @@
           "lon": -80.086239
         }
       ],
-      "updatedAt": "2026-08-21T04:02:36.400Z"
+      "updatedAt": "2026-09-03T17:32:30.515Z"
     },
     "atms": {
       "count": 87,
@@ -1141,50 +1178,278 @@
           "address": "Lincoln Avenue 415"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:36.846Z"
+      "updatedAt": "2026-09-03T17:32:31.029Z"
     },
     "post-boxes": {
-      "count": 161,
+      "count": 162,
       "pois": [
         {
-          "id": "node/13939601685",
-          "name": "USPS Drop Box",
-          "lat": 40.430768,
-          "lon": -80.052461,
-          "address": "Noblestown Road 2103"
+          "id": "node/12042086652",
+          "lat": 40.441288,
+          "lon": -79.994525,
+          "street": "Bigelow Square"
         },
         {
-          "id": "node/3216860466",
-          "name": "USPS",
-          "lat": 40.437018,
-          "lon": -79.923189
+          "id": "node/3305302864",
+          "lat": 40.441981,
+          "lon": -79.994645,
+          "street": "7th Avenue"
         },
         {
-          "id": "node/767607222",
-          "name": "Chislett and Greenwood",
-          "lat": 40.485483,
-          "lon": -79.925802
+          "id": "node/5086925933",
+          "lat": 40.443997,
+          "lon": -79.994291,
+          "street": "Liberty Avenue"
+        },
+        {
+          "id": "node/14062922066",
+          "lat": 40.443622,
+          "lon": -79.999027,
+          "street": "Penn Avenue"
+        },
+        {
+          "id": "node/2985643098",
+          "lat": 40.441012,
+          "lon": -80.000982,
+          "street": "Fifth Avenue"
+        },
+        {
+          "id": "node/11947757351",
+          "lat": 40.441577,
+          "lon": -79.985016,
+          "street": "Protectory Place"
+        },
+        {
+          "id": "node/9074545747",
+          "lat": 40.447743,
+          "lon": -80.003448,
+          "street": "Range Way"
+        },
+        {
+          "id": "node/8836556456",
+          "lat": 40.44985,
+          "lon": -80.004853,
+          "street": "Federal Street"
+        },
+        {
+          "id": "node/13276082061",
+          "lat": 40.437448,
+          "lon": -79.981377,
+          "street": "Miltenberger Street"
+        },
+        {
+          "id": "node/7820678319",
+          "lat": 40.437514,
+          "lon": -79.979617,
+          "street": "Forbes Avenue"
+        },
+        {
+          "id": "node/2104796815",
+          "lat": 40.428872,
+          "lon": -79.986327,
+          "street": "South 12th Street"
+        },
+        {
+          "id": "node/13972221401",
+          "lat": 40.454978,
+          "lon": -80.002142,
+          "street": "Cedar Avenue"
+        },
+        {
+          "id": "node/14096840813",
+          "lat": 40.427092,
+          "lon": -80.005071,
+          "street": "Bailey Avenue"
+        },
+        {
+          "id": "node/13903150794",
+          "lat": 40.437235,
+          "lon": -80.017094,
+          "address": "Grandview Avenue 1000",
+          "street": "Grandview Avenue"
+        },
+        {
+          "id": "node/3706977372",
+          "lat": 40.450706,
+          "lon": -80.013587,
+          "street": "Brighton Road"
+        },
+        {
+          "id": "node/3781965866",
+          "lat": 40.4502,
+          "lon": -80.015805,
+          "street": "Ridge Avenue"
+        },
+        {
+          "id": "node/3886814074",
+          "lat": 40.451889,
+          "lon": -80.016608,
+          "street": "Western Avenue"
+        },
+        {
+          "id": "node/2353622409",
+          "lat": 40.44788,
+          "lon": -80.020506,
+          "street": "Reedsdale Street"
+        },
+        {
+          "id": "node/2985643034",
+          "lat": 40.426674,
+          "lon": -79.976833,
+          "street": "Jane Street"
+        },
+        {
+          "id": "node/2353568938",
+          "lat": 40.451636,
+          "lon": -80.019041,
+          "street": "Allegheny Avenue"
+        },
+        {
+          "id": "node/14066541902",
+          "lat": 40.455981,
+          "lon": -79.977022,
+          "street": "27th Street"
+        },
+        {
+          "id": "node/7820744997",
+          "lat": 40.428204,
+          "lon": -79.97315,
+          "street": "South 23rd Street"
+        },
+        {
+          "id": "node/4068378820",
+          "lat": 40.456761,
+          "lon": -80.015452,
+          "street": "Jacksonia Street"
+        },
+        {
+          "id": "node/14042258786",
+          "lat": 40.442946,
+          "lon": -79.965013,
+          "street": "Dunseith Street"
+        },
+        {
+          "id": "node/2978789343",
+          "lat": 40.452723,
+          "lon": -79.967929,
+          "street": "Bedford Avenue"
+        },
+        {
+          "id": "node/11947757349",
+          "lat": 40.448944,
+          "lon": -79.965038,
+          "street": "Herron Avenue"
+        },
+        {
+          "id": "node/2353139520",
+          "lat": 40.450067,
+          "lon": -80.027829,
+          "street": "Beaver Avenue"
+        },
+        {
+          "id": "node/1272549925",
+          "lat": 40.427814,
+          "lon": -79.965599,
+          "street": "Cinema Drive"
+        },
+        {
+          "id": "node/7817810436",
+          "lat": 40.438271,
+          "lon": -79.961167,
+          "street": "Halket Street"
+        },
+        {
+          "id": "node/2985643033",
+          "lat": 40.426403,
+          "lon": -79.965807,
+          "street": "East Carson Street"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:37.303Z"
+      "updatedAt": "2026-09-03T17:32:32.643Z"
     },
     "recycling": {
       "count": 22,
       "pois": [
+        {
+          "id": "node/5987229780",
+          "lat": 40.438234,
+          "lon": -80.001912,
+          "street": "Wood Street"
+        },
+        {
+          "id": "node/9289312913",
+          "lat": 40.429427,
+          "lon": -79.977656,
+          "street": "Sidney Street"
+        },
+        {
+          "id": "node/7876898945",
+          "lat": 40.44191,
+          "lon": -79.956581,
+          "street": "South Bouquet Street"
+        },
+        {
+          "id": "node/13516968194",
+          "lat": 40.444676,
+          "lon": -79.945641,
+          "street": "Forbes Avenue Bikelane WestBound"
+        },
+        {
+          "id": "node/11098288690",
+          "lat": 40.443925,
+          "lon": -79.943197,
+          "context": "Purnell Center for the Arts"
+        },
+        {
+          "id": "node/13721751458",
+          "lat": 40.444541,
+          "lon": -79.943206,
+          "street": "Forbes Avenue"
+        },
         {
           "id": "node/6724897094",
           "name": "Goodwill Donation Drop Off",
           "lat": 40.40432,
           "lon": -80.040464,
           "openingHours": "Mo-Sa 09:00-21:00, Su 11:00-19:00"
+        },
+        {
+          "id": "node/11146971280",
+          "lat": 40.456142,
+          "lon": -79.925742,
+          "street": "Greenbriar Way"
+        },
+        {
+          "id": "node/11666799854",
+          "lat": 40.436917,
+          "lon": -79.922979,
+          "street": "Murray Avenue"
+        },
+        {
+          "id": "node/11666808091",
+          "lat": 40.432551,
+          "lon": -79.923214,
+          "street": "O'Connor's Corner"
+        },
+        {
+          "id": "node/7669636194",
+          "lat": 40.397781,
+          "lon": -80.044263,
+          "street": "Dormont Avenue"
+        },
+        {
+          "id": "node/13039956005",
+          "lat": 40.450467,
+          "lon": -79.914528,
+          "street": "Reynolds Street"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:37.731Z"
+      "updatedAt": "2026-09-03T17:32:34.460Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:38.080Z"
+      "updatedAt": "2026-09-03T17:32:34.913Z"
     },
     "libraries": {
       "count": 148,
@@ -1380,17 +1645,17 @@
           "lon": -80.034741
         }
       ],
-      "updatedAt": "2026-08-21T04:02:38.478Z"
+      "updatedAt": "2026-09-03T17:32:35.418Z"
     },
     "outdoor-gyms": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:38.871Z"
+      "updatedAt": "2026-09-03T17:32:36.239Z"
     },
     "camp-sites": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:39.247Z"
+      "updatedAt": "2026-09-03T17:32:36.667Z"
     },
     "shelters": {
       "count": 33,
@@ -1400,6 +1665,12 @@
           "name": "Schenley Plaza Pavillion",
           "lat": 40.442501,
           "lon": -79.9525
+        },
+        {
+          "id": "node/4846860773",
+          "lat": 40.440884,
+          "lon": -79.947776,
+          "street": "Frew Street"
         },
         {
           "id": "way/392512337",
@@ -1456,6 +1727,12 @@
           "lon": -80.022197
         },
         {
+          "id": "node/3472291579",
+          "lat": 40.430165,
+          "lon": -79.914977,
+          "street": "Riverview Trail"
+        },
+        {
           "id": "way/347092613",
           "name": "Ross Township Firemen's Association Pavillion",
           "lat": 40.502913,
@@ -1480,17 +1757,17 @@
           "lon": -80.042051
         }
       ],
-      "updatedAt": "2026-08-21T04:02:39.831Z"
+      "updatedAt": "2026-09-03T17:32:38.268Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:40.215Z"
+      "updatedAt": "2026-09-03T17:32:38.781Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:40.534Z"
+      "updatedAt": "2026-09-03T17:32:39.127Z"
     },
     "post-offices": {
       "count": 27,
@@ -1667,12 +1944,12 @@
           "openingHours": "Mo-Fr 08:00-18:00, Sa 10:00-14:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:36:58.486Z"
+      "updatedAt": "2026-09-03T17:32:39.568Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:58.912Z"
+      "updatedAt": "2026-09-03T17:32:40.048Z"
     },
     "fireplaces": {
       "count": 8,
@@ -1687,7 +1964,7 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-08-23T04:36:59.718Z"
+      "updatedAt": "2026-09-03T17:32:40.992Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1695,7 +1972,7 @@
       "updatedAt": "2026-08-17T04:06:22.220Z"
     },
     "benches": {
-      "count": 633,
+      "count": 672,
       "pois": [
         {
           "id": "way/1472123634",
@@ -1704,12 +1981,156 @@
           "lon": -79.9425
         }
       ],
-      "updatedAt": "2026-08-23T04:37:00.339Z"
+      "updatedAt": "2026-09-03T17:32:43.443Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:39.761Z"
+    },
+    "bicycle-repair": {
+      "count": 28,
+      "pois": [
+        {
+          "id": "node/3754574905",
+          "lat": 40.443658,
+          "lon": -79.999023,
+          "fee": "no",
+          "street": "Penn Avenue"
+        },
+        {
+          "id": "node/3376088148",
+          "lat": 40.439251,
+          "lon": -80.002191,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Third Avenue"
+        },
+        {
+          "id": "node/5771241706",
+          "lat": 40.431447,
+          "lon": -79.992171,
+          "openingHours": "24/7",
+          "street": "South Side Trail"
+        },
+        {
+          "id": "node/4138752089",
+          "lat": 40.431038,
+          "lon": -80.001252,
+          "openingHours": "24/7",
+          "street": "East Carson Street"
+        },
+        {
+          "id": "node/12134252818",
+          "lat": 40.445967,
+          "lon": -80.009596,
+          "street": "North Shore Drive"
+        },
+        {
+          "id": "node/14062895424",
+          "lat": 40.451574,
+          "lon": -79.988251,
+          "street": "Strip District Trail"
+        },
+        {
+          "id": "node/4375836332",
+          "lat": 40.43829,
+          "lon": -79.977052,
+          "openingHours": "24/7",
+          "street": "Fifth Avenue"
+        },
+        {
+          "id": "node/3516596825",
+          "lat": 40.443624,
+          "lon": -79.959037,
+          "openingHours": "24/7",
+          "street": "O'Hara Street"
+        },
+        {
+          "id": "node/4591588698",
+          "lat": 40.467018,
+          "lon": -80.025385,
+          "street": "Ingham Street"
+        },
+        {
+          "id": "node/3376088157",
+          "lat": 40.470914,
+          "lon": -79.960942,
+          "address": "43rd Street 188",
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "43rd Street"
+        },
+        {
+          "id": "node/6977135691",
+          "lat": 40.40909,
+          "lon": -80.031886,
+          "fee": "yes",
+          "street": "Banksville Road"
+        },
+        {
+          "id": "node/4889931898",
+          "lat": 40.396564,
+          "lon": -79.998846,
+          "street": "Ballinger Street"
+        },
+        {
+          "id": "node/6582366074",
+          "lat": 40.413342,
+          "lon": -79.949698,
+          "openingHours": "24/7",
+          "street": "Hazelwood Trail"
+        },
+        {
+          "id": "node/4232984278",
+          "lat": 40.472224,
+          "lon": -80.04078,
+          "fee": "no",
+          "street": "Westhall Street"
+        },
+        {
+          "id": "node/3376088156",
+          "lat": 40.458633,
+          "lon": -79.928583,
+          "openingHours": "24/7",
+          "street": "Centre Avenue"
+        },
+        {
+          "id": "node/7312580536",
+          "lat": 40.434832,
+          "lon": -79.92305,
+          "openingHours": "24/7",
+          "street": "Beacon Street"
+        },
+        {
+          "id": "node/3861320086",
+          "lat": 40.495697,
+          "lon": -80.007666,
+          "street": "Evergreen Road"
+        },
+        {
+          "id": "node/4176607089",
+          "lat": 40.437766,
+          "lon": -79.919375,
+          "openingHours": "24/7",
+          "street": "Shady Avenue"
+        },
+        {
+          "id": "node/8751384566",
+          "lat": 40.456696,
+          "lon": -79.91654,
+          "openingHours": "24/7",
+          "street": "Sally's Path"
+        },
+        {
+          "id": "node/3376088155",
+          "lat": 40.456872,
+          "lon": -79.915734,
+          "openingHours": "24/7",
+          "street": "Bakery Square Boulevard"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:32:42.708Z"
     }
   }
 }

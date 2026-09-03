@@ -1,10 +1,17 @@
 {
   "city": "bordeaux",
-  "generatedAt": "2026-08-23T04:24:43.494Z",
+  "generatedAt": "2026-09-03T17:13:43.909Z",
   "categories": {
     "toilets": {
       "count": 216,
       "pois": [
+        {
+          "id": "node/12132180073",
+          "lat": 44.838958,
+          "lon": -0.583865,
+          "fee": "yes",
+          "context": "Centre Commercial Mériadeck"
+        },
         {
           "id": "node/5928423095",
           "name": "Pause V. I. Pee",
@@ -12,6 +19,34 @@
           "lon": -0.574826,
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "node/6759071506",
+          "lat": 44.842937,
+          "lon": -0.577487,
+          "context": "Marché des Grands Hommes"
+        },
+        {
+          "id": "node/923140384",
+          "lat": 44.838721,
+          "lon": -0.567033,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Maison écocitoyenne"
+        },
+        {
+          "id": "node/9952585460",
+          "lat": 44.84905,
+          "lon": -0.560883,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Darwin"
+        },
+        {
+          "id": "node/5696593797",
+          "lat": 44.839998,
+          "lon": -0.605784,
+          "context": "Club des Trois"
         },
         {
           "id": "node/5949931815",
@@ -45,6 +80,14 @@
           "wheelchair": "yes",
           "fee": "no",
           "context": "Hangar 19"
+        },
+        {
+          "id": "node/13565583629",
+          "lat": 44.863697,
+          "lon": -0.568049,
+          "openingHours": "Mo-Su 09:00-21:00",
+          "wheelchair": "yes",
+          "context": "Centre Commercial E.Leclerc"
         },
         {
           "id": "node/13565476836",
@@ -103,10 +146,10 @@
           "openingHours": "Mo-Sa 09:30-20:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:24:23.910Z"
+      "updatedAt": "2026-09-03T17:13:21.190Z"
     },
     "drinking-water": {
-      "count": 270,
+      "count": 269,
       "pois": [
         {
           "id": "node/476340173",
@@ -131,15 +174,9 @@
           "name": "Point d'eau",
           "lat": 44.811213,
           "lon": -0.54673
-        },
-        {
-          "id": "node/14074617302",
-          "name": "WC",
-          "lat": 44.844694,
-          "lon": -0.63926
         }
       ],
-      "updatedAt": "2026-08-23T04:24:25.541Z"
+      "updatedAt": "2026-09-03T17:13:22.948Z"
     },
     "playgrounds": {
       "count": 383,
@@ -316,10 +353,10 @@
           "lon": -0.603848
         }
       ],
-      "updatedAt": "2026-08-23T04:24:26.431Z"
+      "updatedAt": "2026-09-03T17:13:23.849Z"
     },
     "parking": {
-      "count": 2232,
+      "count": 2231,
       "pois": [
         {
           "id": "node/563985748",
@@ -339,7 +376,8 @@
           "id": "node/13036722606",
           "name": "Bonnac",
           "lat": 44.839775,
-          "lon": -0.583014
+          "lon": -0.583014,
+          "fee": "yes"
         },
         {
           "id": "node/266650018",
@@ -424,7 +462,8 @@
           "id": "node/13036722604",
           "name": "Lhôte",
           "lat": 44.845203,
-          "lon": -0.578791
+          "lon": -0.578791,
+          "fee": "yes"
         },
         {
           "id": "node/6984516269",
@@ -462,6 +501,13 @@
           "lon": -0.574344
         },
         {
+          "id": "way/1332648911",
+          "name": "Bourse - Jaures",
+          "lat": 44.847396,
+          "lon": -0.574565,
+          "fee": "yes"
+        },
+        {
           "id": "way/189537480",
           "name": "Salinieres",
           "lat": 44.835701,
@@ -472,6 +518,13 @@
           "name": "Salinières",
           "lat": 44.835353,
           "lon": -0.564544,
+          "fee": "yes"
+        },
+        {
+          "id": "way/1332648915",
+          "name": "Parking Cars Tourisme, Allees De Bristol, Metpark",
+          "lat": 44.847831,
+          "lon": -0.57208,
           "fee": "yes"
         },
         {
@@ -515,22 +568,9 @@
           "lat": 44.843409,
           "lon": -0.558992,
           "fee": "yes"
-        },
-        {
-          "id": "way/914480358",
-          "name": "Parc-Relais Stalingrad",
-          "lat": 44.838361,
-          "lon": -0.557464,
-          "fee": "yes"
-        },
-        {
-          "id": "node/10678083096",
-          "name": "Rue De Bègles",
-          "lat": 44.824751,
-          "lon": -0.566029
         }
       ],
-      "updatedAt": "2026-08-23T04:24:27.920Z"
+      "updatedAt": "2026-09-03T17:13:25.000Z"
     },
     "charging-stations": {
       "count": 125,
@@ -639,7 +679,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:24:28.639Z"
+      "updatedAt": "2026-09-03T17:13:25.494Z"
     },
     "gas-stations": {
       "count": 73,
@@ -815,7 +855,6 @@
           "name": "Avia Lormont",
           "lat": 44.880716,
           "lon": -0.517033,
-          "address": "Avenue de la Résistance",
           "openingHours": "24/7",
           "wheelchair": "limited"
         },
@@ -834,7 +873,7 @@
           "lon": -0.66763
         }
       ],
-      "updatedAt": "2026-08-23T04:24:29.189Z"
+      "updatedAt": "2026-09-03T17:13:26.124Z"
     },
     "ice-cream": {
       "count": 19,
@@ -970,7 +1009,7 @@
           "address": "Rue des Bahutiers 4"
         }
       ],
-      "updatedAt": "2026-08-23T04:24:29.647Z"
+      "updatedAt": "2026-09-03T17:13:26.826Z"
     },
     "dog-parks": {
       "count": 13,
@@ -989,12 +1028,12 @@
           "lon": -0.650757
         }
       ],
-      "updatedAt": "2026-08-23T04:24:29.999Z"
+      "updatedAt": "2026-09-03T17:13:27.747Z"
     },
     "picnic-spots": {
       "count": 543,
       "pois": [],
-      "updatedAt": "2026-08-23T04:24:31.262Z"
+      "updatedAt": "2026-09-03T17:13:30.268Z"
     },
     "viewpoints": {
       "count": 28,
@@ -1031,7 +1070,7 @@
           "lon": -0.600629
         }
       ],
-      "updatedAt": "2026-08-23T04:24:31.847Z"
+      "updatedAt": "2026-09-03T17:13:30.781Z"
     },
     "beaches": {
       "count": 4,
@@ -1050,7 +1089,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:24:32.314Z"
+      "updatedAt": "2026-09-03T17:13:31.168Z"
     },
     "atms": {
       "count": 336,
@@ -1292,15 +1331,15 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-23T04:24:32.988Z"
+      "updatedAt": "2026-09-03T17:13:31.769Z"
     },
     "post-boxes": {
       "count": 424,
       "pois": [],
-      "updatedAt": "2026-08-23T04:24:33.567Z"
+      "updatedAt": "2026-09-03T17:13:33.168Z"
     },
     "recycling": {
-      "count": 1390,
+      "count": 1397,
       "pois": [
         {
           "id": "node/12770529781",
@@ -1310,158 +1349,181 @@
           "openingHours": "24/7"
         },
         {
+          "id": "node/7746468019",
+          "lat": 44.838803,
+          "lon": -0.58379,
+          "context": "Centre Commercial Mériadeck"
+        },
+        {
+          "id": "node/13104050391",
+          "name": "Résidence Le Ponant",
+          "lat": 44.835491,
+          "lon": -0.583894
+        },
+        {
+          "id": "node/9423415057",
+          "name": "Place Sainte Eulalie",
+          "lat": 44.833571,
+          "lon": -0.577116
+        },
+        {
+          "id": "node/13607153474",
+          "name": "Lycée Sainte Famille Saintonge",
+          "lat": 44.832976,
+          "lon": -0.579735
+        },
+        {
           "id": "node/13121523203",
           "name": "Le Livre Vert",
           "lat": 44.832985,
           "lon": -0.57688
         },
         {
-          "id": "node/10026820773",
-          "name": "Site de compostage partagé de Felhmann",
-          "lat": 44.820088,
-          "lon": -0.58528
+          "id": "node/13511929967",
+          "name": "Foyer Habitat Jeune \"Le Levain\"",
+          "lat": 44.833446,
+          "lon": -0.574355
         },
         {
-          "id": "way/539972643",
-          "name": "Centre de Recyclage Bordeaux Bastide",
-          "lat": 44.833854,
-          "lon": -0.551498,
-          "openingHours": "We-Mo 08:30-12:30, Mo-Su 13:15-18:00; PH off",
-          "wheelchair": "yes"
+          "id": "node/14132232716",
+          "lat": 44.835119,
+          "lon": -0.571988,
+          "context": "Résidence Crous La Boétie"
         },
         {
-          "id": "way/931436021",
-          "name": "Déchetterie Carle Vernet",
-          "lat": 44.820295,
-          "lon": -0.548873
+          "id": "node/6903447771",
+          "name": "Jardin partagé Saint Seurin",
+          "lat": 44.842972,
+          "lon": -0.58536
         },
         {
-          "id": "node/10026812857",
-          "name": "Site de compostage partagé de Peixotto",
-          "lat": 44.809132,
-          "lon": -0.588566
+          "id": "node/12588248886",
+          "name": "Square Jean Bureau",
+          "lat": 44.837902,
+          "lon": -0.568517
         },
         {
-          "id": "way/257031720",
-          "name": "Déchèterie",
-          "lat": 44.868217,
-          "lon": -0.565879
+          "id": "node/12837372347",
+          "name": "Jardin Dorignac",
+          "lat": 44.834386,
+          "lon": -0.568151
         },
         {
-          "id": "node/12876090592",
-          "name": "Composteur partagé",
-          "lat": 44.868915,
-          "lon": -0.589499
+          "id": "node/12078959717",
+          "name": "Quinconces 2",
+          "lat": 44.846857,
+          "lon": -0.574935
         },
         {
-          "id": "node/7105633264",
-          "name": "ATELIER D'éco SOLIDAIRE",
-          "lat": 44.87297,
-          "lon": -0.56218,
-          "address": "4 Rue Francis Garnier",
-          "openingHours": "Mo-Sa 09:00-18:00"
+          "id": "node/12837329046",
+          "name": "Place du Séminaire",
+          "lat": 44.831696,
+          "lon": -0.564687
         },
         {
-          "id": "way/25749169",
-          "name": "Recycl’inn",
-          "lat": 44.825178,
-          "lon": -0.526552,
-          "openingHours": "Mo-Su 09:15-12:25, 14:00-17:30"
+          "id": "node/13607153484",
+          "name": "Résidence Ségur",
+          "lat": 44.826767,
+          "lon": -0.586985
         },
         {
-          "id": "node/8646429723",
-          "name": "Composteur",
-          "lat": 44.804877,
-          "lon": -0.545724
+          "id": "node/13017122871",
+          "name": "Jardin d'Arcadie",
+          "lat": 44.847763,
+          "lon": -0.590171
         },
         {
-          "id": "way/951914809",
-          "name": "Déchetterie Professionnelle Brangeon",
-          "lat": 44.876866,
-          "lon": -0.554915
+          "id": "node/12757624728",
+          "name": "Résidence Saint Genès",
+          "lat": 44.825139,
+          "lon": -0.576947
         },
         {
-          "id": "way/185105912",
-          "name": "Centre de recyclage Bordeaux Nord",
-          "lat": 44.877962,
-          "lon": -0.554916
+          "id": "node/13510666725",
+          "name": "Jardin des Dames de la Foi",
+          "lat": 44.824768,
+          "lon": -0.582669
         },
         {
-          "id": "way/739124225",
-          "name": "Aire de compostage du Port de la Lune",
-          "lat": 44.876765,
-          "lon": -0.541998,
-          "address": "Rue Henri Collet 7"
+          "id": "node/13254315931",
+          "name": "Les Horizons Clairs",
+          "lat": 44.836577,
+          "lon": -0.597874
         },
         {
-          "id": "node/8635414937",
-          "name": "Atelier du Réemploi et de la Qualification de Cenon",
-          "lat": 44.860758,
-          "lon": -0.519823
+          "id": "node/13318893373",
+          "name": "Passage Robert Cami 2",
+          "lat": 44.823961,
+          "lon": -0.576823
         },
         {
-          "id": "node/4717564435",
-          "name": "Etu'Récup - La Ressourcerie du Campus",
-          "lat": 44.79468,
-          "lon": -0.612115,
-          "address": "Avenue de Bardanac 18",
-          "openingHours": "Tu,Th,Fr 12:00-18:00; We,Sa 14:00-18:00"
+          "id": "node/4563550913",
+          "name": "Résidence Les Villas",
+          "lat": 44.823319,
+          "lon": -0.574868
         },
         {
-          "id": "node/8691390790",
-          "name": "Compost du chalet",
-          "lat": 44.876038,
-          "lon": -0.532306,
-          "openingHours": "24/7"
+          "id": "node/12819194609",
+          "name": "École Solférino",
+          "lat": 44.823414,
+          "lon": -0.586479
         },
         {
-          "id": "node/7212028128",
-          "name": "La Composterie de Lormont",
-          "lat": 44.870584,
-          "lon": -0.523413
+          "id": "node/12770701852",
+          "name": "Place PJ Dormoy",
+          "lat": 44.826611,
+          "lon": -0.564349
         },
         {
-          "id": "way/1052526598",
-          "name": "Ecopoint Bègles Terre Sud",
-          "lat": 44.784484,
-          "lon": -0.565024
+          "id": "node/13143152842",
+          "name": "Résidence Empreinte",
+          "lat": 44.838968,
+          "lon": -0.557263
         },
         {
-          "id": "way/190816269",
-          "name": "Centre de recyclage de Bruges",
-          "lat": 44.889165,
-          "lon": -0.620726
+          "id": "node/12309432567",
+          "name": "Résidence L'Avant",
+          "lat": 44.844907,
+          "lon": -0.559329
         },
         {
-          "id": "way/190816249",
-          "name": "Centre de recyclage de Villenave d'Ornon",
-          "lat": 44.783826,
-          "lon": -0.540844,
-          "address": "Chemin de Galgon",
-          "openingHours": "We-Mo 08:30-12:30,13:15-18:00; Tu 13:15-18:00"
+          "id": "node/12573872973",
+          "name": "Jardin Paul Abadie",
+          "lat": 44.841934,
+          "lon": -0.55736
         },
         {
-          "id": "way/321051241",
-          "name": "Centre de recyclage d'Eysines",
-          "lat": 44.876527,
-          "lon": -0.659666,
-          "address": "Avenue Jean Mermoz",
-          "openingHours": "Mo-Su 08:30-12:30,13:15-18:00; Tu 13:15-18:00"
+          "id": "node/13175144269",
+          "name": "Résidence Botanica",
+          "lat": 44.847264,
+          "lon": -0.560746
         },
         {
-          "id": "way/356035347",
-          "name": "Déchetterie de Bassens",
-          "lat": 44.895719,
-          "lon": -0.525405
+          "id": "node/746660174",
+          "name": "Résidence Jourdan",
+          "lat": 44.84952,
+          "lon": -0.596483
         },
         {
-          "id": "way/244031201",
-          "name": "Centre de recyclage de Pessac Gutenberg",
-          "lat": 44.786448,
-          "lon": -0.64764
+          "id": "node/13318921616",
+          "name": "Rue de Saint-Macaire",
+          "lat": 44.823168,
+          "lon": -0.567113
+        },
+        {
+          "id": "node/13643830666",
+          "name": "Jardin Parc et Rivière",
+          "lat": 44.854115,
+          "lon": -0.586651
+        },
+        {
+          "id": "node/8223233753",
+          "name": "Jardin de la Béchade",
+          "lat": 44.826197,
+          "lon": -0.597135
         }
       ],
-      "updatedAt": "2026-08-23T04:24:35.189Z"
+      "updatedAt": "2026-09-03T17:13:35.388Z"
     },
     "luggage-storage": {
       "count": 3,
@@ -1482,7 +1544,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:24:35.660Z"
+      "updatedAt": "2026-09-03T17:13:35.810Z"
     },
     "libraries": {
       "count": 233,
@@ -1703,7 +1765,7 @@
           "openingHours": "Tu,Fr 10:00-12:00,14:00-18:00; We,Sa 10:00-18:00; Th 14:00-18:00"
         }
       ],
-      "updatedAt": "2026-08-23T04:24:36.337Z"
+      "updatedAt": "2026-09-03T17:13:36.287Z"
     },
     "outdoor-gyms": {
       "count": 66,
@@ -1818,7 +1880,7 @@
           "lon": -0.553205
         }
       ],
-      "updatedAt": "2026-08-23T04:24:37.451Z"
+      "updatedAt": "2026-09-03T17:13:37.288Z"
     },
     "camp-sites": {
       "count": 2,
@@ -1838,7 +1900,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:24:37.906Z"
+      "updatedAt": "2026-09-03T17:13:37.661Z"
     },
     "shelters": {
       "count": 24,
@@ -1862,7 +1924,7 @@
           "lon": -0.527098
         }
       ],
-      "updatedAt": "2026-08-23T04:24:38.944Z"
+      "updatedAt": "2026-09-03T17:13:39.014Z"
     },
     "rest-areas": {
       "count": 11,
@@ -1910,12 +1972,12 @@
           "lon": -0.667644
         }
       ],
-      "updatedAt": "2026-08-23T04:24:39.412Z"
+      "updatedAt": "2026-09-03T17:13:39.388Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-23T04:24:39.847Z"
+      "updatedAt": "2026-09-03T17:13:39.888Z"
     },
     "post-offices": {
       "count": 69,
@@ -2168,17 +2230,17 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-08-23T04:24:40.436Z"
+      "updatedAt": "2026-09-03T17:13:40.283Z"
     },
     "showers": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-08-23T04:24:40.916Z"
+      "updatedAt": "2026-09-03T17:13:40.673Z"
     },
     "fireplaces": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-08-23T04:24:42.156Z"
+      "updatedAt": "2026-09-03T17:13:41.523Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2186,7 +2248,7 @@
       "updatedAt": "2026-08-17T04:04:48.665Z"
     },
     "benches": {
-      "count": 3739,
+      "count": 3743,
       "pois": [
         {
           "id": "node/13615004497",
@@ -2201,12 +2263,25 @@
           "lon": -0.599089
         }
       ],
-      "updatedAt": "2026-08-23T04:24:43.392Z"
+      "updatedAt": "2026-09-03T17:13:43.801Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:24.300Z"
+    },
+    "bicycle-repair": {
+      "count": 19,
+      "pois": [
+        {
+          "id": "node/11281171502",
+          "name": "Station de gonflage",
+          "lat": 44.836807,
+          "lon": -0.598679,
+          "fee": "no"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:13:42.789Z"
     }
   }
 }

@@ -1,10 +1,31 @@
 {
   "city": "toronto",
-  "generatedAt": "2026-08-23T04:37:08.080Z",
+  "generatedAt": "2026-09-03T17:33:57.113Z",
   "categories": {
     "toilets": {
-      "count": 384,
+      "count": 385,
       "pois": [
+        {
+          "id": "node/6711381745",
+          "lat": 43.652929,
+          "lon": -79.380701,
+          "context": "CF Toronto Eaton Centre"
+        },
+        {
+          "id": "node/1122181837",
+          "lat": 43.656257,
+          "lon": -79.38363,
+          "wheelchair": "yes",
+          "context": "Atrium"
+        },
+        {
+          "id": "node/5702455523",
+          "lat": 43.657006,
+          "lon": -79.380482,
+          "address": "Dundas Street East 10",
+          "wheelchair": "yes",
+          "context": "The Tenor"
+        },
         {
           "id": "node/3698533563",
           "name": "Males",
@@ -12,6 +33,12 @@
           "lon": -79.38208,
           "wheelchair": "yes",
           "fee": "no"
+        },
+        {
+          "id": "node/6721473577",
+          "lat": 43.647775,
+          "lon": -79.38287,
+          "context": "Roserock Place"
         },
         {
           "id": "node/3698533559",
@@ -22,6 +49,12 @@
           "fee": "no"
         },
         {
+          "id": "node/2808836104",
+          "lat": 43.653946,
+          "lon": -79.390899,
+          "context": "Village by the Grange"
+        },
+        {
           "id": "way/23447514",
           "name": "Student Campus Centre",
           "lat": 43.657752,
@@ -30,123 +63,158 @@
           "openingHours": "Mo-Fr 07:00-21:00; May-Aug Mo-Fr 09:00-16:00"
         },
         {
-          "id": "way/366892267",
-          "name": "Simpson House",
-          "lat": 43.667189,
-          "lon": -79.361591,
-          "openingHours": "09:00-17:00",
-          "fee": "no"
-        },
-        {
-          "id": "way/1375105737",
-          "name": "Blockhouse Bay Washrooms",
-          "lat": 43.624384,
-          "lon": -79.3895,
-          "openingHours": "May-Oct 09:00-22:00; Nov-Apr 09:00-20:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/796660168",
-          "name": "Fieldhouse",
-          "lat": 43.656571,
-          "lon": -79.339872,
-          "openingHours": "May-Oct 09:00-22:00; Nov-Apr off",
-          "fee": "no"
-        },
-        {
-          "id": "way/638632056",
-          "name": "Hanlan's Pavilion Washrooms",
-          "lat": 43.61907,
-          "lon": -79.391064,
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/176885369",
-          "name": "Gibraltar Point Washrooms",
-          "lat": 43.612117,
-          "lon": -79.388892,
-          "openingHours": "May-Oct; Nov-Apr off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/203862365",
-          "name": "Chess House",
-          "lat": 43.652865,
-          "lon": -79.466383,
-          "openingHours": "May-Oct 09:00-22:00",
+          "id": "node/3559602401",
+          "lat": 43.646902,
+          "lon": -79.378562,
           "wheelchair": "yes",
-          "fee": "no"
+          "fee": "no",
+          "context": "Brookfield Place"
         },
         {
-          "id": "way/152223039",
-          "name": "The Home Depot",
-          "lat": 43.671467,
-          "lon": -79.4696,
-          "address": "St. Clair Avenue West 2121"
-        },
-        {
-          "id": "way/979881230",
-          "name": "E.T. Seton Washrooms",
-          "lat": 43.709431,
-          "lon": -79.337395,
-          "openingHours": "May-Oct 09:00-22:00; Nov-Apr off",
+          "id": "node/1191662664",
+          "lat": 43.660906,
+          "lon": -79.383211,
           "wheelchair": "yes",
-          "fee": "no"
+          "context": "College Park"
         },
         {
-          "id": "way/31450926",
-          "name": "Canadian Tire",
-          "lat": 43.688276,
-          "lon": -79.2981,
-          "address": "Danforth Avenue 2681",
-          "openingHours": "Mo-Sa 08:00-21:00; Su 09:00-18:00"
-        },
-        {
-          "id": "node/3369502993",
-          "name": "Locke library public toilet",
-          "lat": 43.724901,
-          "lon": -79.401732,
+          "id": "node/3928028048",
+          "lat": 43.644876,
+          "lon": -79.381316,
           "wheelchair": "yes",
-          "fee": "no"
+          "fee": "no",
+          "context": "Union Station"
         },
         {
-          "id": "node/1829783791",
-          "name": "Wanless park Tennis Association - Summer Only",
-          "lat": 43.728864,
-          "lon": -79.391949,
-          "openingHours": "May-Oct 09:00-22:00; Nov-Apr off",
+          "id": "node/863515899",
+          "lat": 43.659138,
+          "lon": -79.391529,
+          "context": "Intact Centre"
+        },
+        {
+          "id": "node/783499441",
+          "lat": 43.658566,
+          "lon": -79.392727,
+          "context": "Central Exams Facility"
+        },
+        {
+          "id": "node/3308179742",
+          "lat": 43.649046,
+          "lon": -79.371743,
           "wheelchair": "yes",
-          "fee": "no"
+          "fee": "no",
+          "context": "St. Lawrence Market South"
         },
         {
-          "id": "way/226165498",
-          "name": "Dentonia Park Club House",
-          "lat": 43.694117,
-          "lon": -79.2928,
-          "openingHours": "May-Oct 09:00-22:00; Nov-Apr off",
-          "fee": "no"
+          "id": "node/12184562448",
+          "lat": 43.655423,
+          "lon": -79.370344,
+          "fee": "no",
+          "context": "John Innes Community Recreation Centre"
         },
         {
-          "id": "node/12049508778",
-          "name": "Etienne Brule Park Washroom",
-          "lat": 43.652866,
-          "lon": -79.492854,
-          "openingHours": "May-Oct 09:00-22:00; Nov-Apr off",
-          "fee": "no"
+          "id": "node/14086750008",
+          "lat": 43.661347,
+          "lon": -79.374896,
+          "context": "Allan Gardens Conservatory"
         },
         {
-          "id": "way/281846791",
-          "name": "Tim Hortons",
-          "lat": 43.71627,
-          "lon": -79.283289,
-          "address": "Warden Avenue 720",
-          "wheelchair": "yes"
+          "id": "node/3676831125",
+          "lat": 43.647833,
+          "lon": -79.37126,
+          "wheelchair": "yes",
+          "context": "St. Lawrence North Market (Temporary)"
+        },
+        {
+          "id": "node/3703540918",
+          "lat": 43.642894,
+          "lon": -79.383019,
+          "context": "Southcore Financial Centre"
+        },
+        {
+          "id": "node/13035211501",
+          "lat": 43.651376,
+          "lon": -79.39821,
+          "address": "Spadina Avenue 222",
+          "context": "Chinatown Centre"
+        },
+        {
+          "id": "node/938003308",
+          "lat": 43.662145,
+          "lon": -79.393896,
+          "wheelchair": "no",
+          "context": "Gerstein Science Information Centre"
+        },
+        {
+          "id": "node/11055727658",
+          "lat": 43.659351,
+          "lon": -79.397409,
+          "context": "Bahen Centre for Information Technology"
+        },
+        {
+          "id": "node/1001962653",
+          "lat": 43.662852,
+          "lon": -79.39524,
+          "context": "University College"
+        },
+        {
+          "id": "node/12184562451",
+          "lat": 43.649759,
+          "lon": -79.364948,
+          "fee": "no",
+          "context": "St. Lawrence Community Recreation Centre"
+        },
+        {
+          "id": "node/10834170960",
+          "lat": 43.640533,
+          "lon": -79.375344,
+          "context": "Westin Harbour Castle"
+        },
+        {
+          "id": "node/6499041217",
+          "lat": 43.638822,
+          "lon": -79.382882,
+          "context": "Harbourfront Centre Main Building"
+        },
+        {
+          "id": "node/1346328451",
+          "lat": 43.638426,
+          "lon": -79.381994,
+          "context": "The Power Plant"
+        },
+        {
+          "id": "node/2001929180",
+          "lat": 43.638482,
+          "lon": -79.380659,
+          "fee": "no",
+          "context": "Queen's Quay Terminal"
+        },
+        {
+          "id": "node/12184562452",
+          "lat": 43.667701,
+          "lon": -79.374556,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Wellesley Community Centre and St. James' Town Public Library"
+        },
+        {
+          "id": "node/939019752",
+          "lat": 43.665788,
+          "lon": -79.397107,
+          "wheelchair": "no",
+          "context": "George Ignatieff Theatre"
+        },
+        {
+          "id": "node/989785024",
+          "lat": 43.664451,
+          "lon": -79.399342,
+          "context": "Robarts Library"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:00.312Z"
+      "updatedAt": "2026-09-03T17:33:29.390Z"
     },
     "drinking-water": {
-      "count": 422,
+      "count": 425,
       "pois": [
         {
           "id": "node/561063630",
@@ -155,10 +223,10 @@
           "lon": -79.392019
         }
       ],
-      "updatedAt": "2026-08-21T04:03:02.798Z"
+      "updatedAt": "2026-09-03T17:33:31.607Z"
     },
     "playgrounds": {
-      "count": 1017,
+      "count": 1016,
       "pois": [
         {
           "id": "way/438358751",
@@ -196,13 +264,6 @@
           "name": "Cibola Playground",
           "lat": 43.628187,
           "lon": -79.356291
-        },
-        {
-          "id": "way/264856276",
-          "name": "Centre Island Water Play",
-          "lat": 43.620568,
-          "lon": -79.372889,
-          "fee": "no"
         },
         {
           "id": "way/23225418",
@@ -343,12 +404,18 @@
           "name": "Mallow Park Playground",
           "lat": 43.740989,
           "lon": -79.341976
+        },
+        {
+          "id": "way/207615938",
+          "name": "Woodrow Park",
+          "lat": 43.705868,
+          "lon": -79.26298
         }
       ],
-      "updatedAt": "2026-08-21T04:03:06.283Z"
+      "updatedAt": "2026-09-03T17:33:32.744Z"
     },
     "parking": {
-      "count": 3337,
+      "count": 3339,
       "pois": [
         {
           "id": "way/43605454",
@@ -571,7 +638,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:07.470Z"
+      "updatedAt": "2026-09-03T17:33:34.454Z"
     },
     "charging-stations": {
       "count": 43,
@@ -610,7 +677,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:07.935Z"
+      "updatedAt": "2026-09-03T17:33:35.008Z"
     },
     "gas-stations": {
       "count": 125,
@@ -799,10 +866,10 @@
           "openingHours": "Mo-Fr 07:30-17:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:08.386Z"
+      "updatedAt": "2026-09-03T17:33:36.044Z"
     },
     "ice-cream": {
-      "count": 111,
+      "count": 110,
       "pois": [
         {
           "id": "node/388480007",
@@ -953,7 +1020,9 @@
           "id": "node/13026474769",
           "name": "Parliament Ice Cream Shoppe",
           "lat": 43.666706,
-          "lon": -79.369139
+          "lon": -79.369139,
+          "address": "Parliament Street 546",
+          "openingHours": "Su-Th 12:00-23:00; Fr-Sa 12:00-00:00"
         },
         {
           "id": "node/11200776825",
@@ -1008,10 +1077,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:08.821Z"
+      "updatedAt": "2026-09-03T17:33:37.167Z"
     },
     "dog-parks": {
-      "count": 87,
+      "count": 88,
       "pois": [
         {
           "id": "node/12769371164",
@@ -1063,6 +1132,12 @@
           "name": "Cherry Beach Off Leash Dog Park",
           "lat": 43.634991,
           "lon": -79.346424
+        },
+        {
+          "id": "way/1552082434",
+          "name": "Geary Avenue Dog Park",
+          "lat": 43.670403,
+          "lon": -79.433533
         },
         {
           "id": "way/1121918606",
@@ -1120,10 +1195,10 @@
           "lon": -79.250664
         }
       ],
-      "updatedAt": "2026-08-21T04:03:09.235Z"
+      "updatedAt": "2026-09-03T17:33:37.782Z"
     },
     "picnic-spots": {
-      "count": 999,
+      "count": 1000,
       "pois": [
         {
           "id": "node/9593085140",
@@ -1228,7 +1303,7 @@
           "lon": -79.300311
         }
       ],
-      "updatedAt": "2026-08-21T04:03:09.839Z"
+      "updatedAt": "2026-09-03T17:33:39.442Z"
     },
     "viewpoints": {
       "count": 48,
@@ -1270,10 +1345,10 @@
           "lon": -79.293162
         }
       ],
-      "updatedAt": "2026-08-21T04:03:10.411Z"
+      "updatedAt": "2026-09-03T17:33:40.241Z"
     },
     "beaches": {
-      "count": 67,
+      "count": 66,
       "pois": [
         {
           "id": "way/189306980",
@@ -1292,12 +1367,6 @@
           "name": "Bayview Beach",
           "lat": 43.631873,
           "lon": -79.357134
-        },
-        {
-          "id": "way/888543651",
-          "name": "Echo Beach",
-          "lat": 43.629378,
-          "lon": -79.411599
         },
         {
           "id": "relation/1463389",
@@ -1373,10 +1442,10 @@
           "lon": -79.276666
         }
       ],
-      "updatedAt": "2026-08-21T04:03:10.841Z"
+      "updatedAt": "2026-09-03T17:33:40.825Z"
     },
     "atms": {
-      "count": 385,
+      "count": 387,
       "pois": [
         {
           "id": "node/3570691995",
@@ -1594,35 +1663,209 @@
           "lon": -79.373923
         }
       ],
-      "updatedAt": "2026-08-21T04:03:11.456Z"
+      "updatedAt": "2026-09-03T17:33:41.550Z"
     },
     "post-boxes": {
-      "count": 998,
+      "count": 999,
       "pois": [
         {
-          "id": "node/3229250781",
-          "name": "FedEx",
-          "lat": 43.646236,
-          "lon": -79.397659
+          "id": "node/273325274",
+          "lat": 43.653295,
+          "lon": -79.38106,
+          "street": "James Street"
         },
         {
-          "id": "node/8972824349",
-          "name": "Canada Post",
-          "lat": 43.657634,
-          "lon": -79.40416
+          "id": "node/2291020699",
+          "lat": 43.651324,
+          "lon": -79.383799,
+          "street": "PATH"
         },
         {
-          "id": "node/682232907",
-          "name": "Post Office",
-          "lat": 43.671113,
-          "lon": -79.384647
+          "id": "node/401519572",
+          "lat": 43.651878,
+          "lon": -79.381177,
+          "street": "Queen Street West"
+        },
+        {
+          "id": "node/5695478578",
+          "lat": 43.654347,
+          "lon": -79.385496,
+          "street": "Chestnut Street"
+        },
+        {
+          "id": "node/281661585",
+          "lat": 43.650945,
+          "lon": -79.382064,
+          "street": "Richmond Street West"
+        },
+        {
+          "id": "node/13238166662",
+          "lat": 43.653664,
+          "lon": -79.386629,
+          "street": "Centre Avenue"
+        },
+        {
+          "id": "node/281669663",
+          "lat": 43.654713,
+          "lon": -79.380338,
+          "street": "Yonge Street"
+        },
+        {
+          "id": "node/768963186",
+          "lat": 43.652424,
+          "lon": -79.379668,
+          "street": "PATH Main Route"
+        },
+        {
+          "id": "node/11051887461",
+          "lat": 43.653217,
+          "lon": -79.387208,
+          "street": "Armoury Street"
+        },
+        {
+          "id": "node/273325272",
+          "lat": 43.650601,
+          "lon": -79.381147,
+          "street": "Temperance Street"
+        },
+        {
+          "id": "node/1113713374",
+          "lat": 43.655234,
+          "lon": -79.386433,
+          "street": "Dundas Street West"
+        },
+        {
+          "id": "node/1370546033",
+          "lat": 43.65626,
+          "lon": -79.385413,
+          "street": "Elizabeth Street"
+        },
+        {
+          "id": "node/292779593",
+          "lat": 43.654201,
+          "lon": -79.378545,
+          "street": "Victoria Street"
+        },
+        {
+          "id": "node/773490280",
+          "lat": 43.649777,
+          "lon": -79.381863,
+          "street": "Adelaide Street West"
+        },
+        {
+          "id": "node/769503589",
+          "lat": 43.653669,
+          "lon": -79.388144,
+          "street": "University Avenue"
+        },
+        {
+          "id": "node/4549716292",
+          "lat": 43.656771,
+          "lon": -79.38171,
+          "street": "Edward Street"
+        },
+        {
+          "id": "node/13626235277",
+          "lat": 43.6562,
+          "lon": -79.380026,
+          "street": "Dundas Street East"
+        },
+        {
+          "id": "node/538153298",
+          "lat": 43.654961,
+          "lon": -79.377829,
+          "street": "Bond Street"
+        },
+        {
+          "id": "node/416731438",
+          "lat": 43.649774,
+          "lon": -79.387193,
+          "street": "Simcoe Street"
+        },
+        {
+          "id": "node/9813427385",
+          "lat": 43.652864,
+          "lon": -79.376673,
+          "street": "Berti Street"
+        },
+        {
+          "id": "node/575209685",
+          "lat": 43.653305,
+          "lon": -79.389962,
+          "street": "St. Patrick Street"
+        },
+        {
+          "id": "node/281663582",
+          "lat": 43.650651,
+          "lon": -79.377009,
+          "street": "Adelaide Street East"
+        },
+        {
+          "id": "node/273124917",
+          "lat": 43.652089,
+          "lon": -79.390415,
+          "street": "McCaul Street"
+        },
+        {
+          "id": "node/400914227",
+          "lat": 43.653349,
+          "lon": -79.375748,
+          "street": "Church Street"
+        },
+        {
+          "id": "node/6433351351",
+          "lat": 43.650057,
+          "lon": -79.38928,
+          "street": "Duncan Street"
+        },
+        {
+          "id": "node/354971725",
+          "lat": 43.647777,
+          "lon": -79.383798,
+          "street": "King Street West"
+        },
+        {
+          "id": "node/344473881",
+          "lat": 43.658837,
+          "lon": -79.382713,
+          "street": "Gerrard Street West"
+        },
+        {
+          "id": "node/344473399",
+          "lat": 43.659138,
+          "lon": -79.385266,
+          "street": "Hayter Street"
+        },
+        {
+          "id": "node/527000456",
+          "lat": 43.647174,
+          "lon": -79.380121,
+          "street": "Wellington Street West"
+        },
+        {
+          "id": "node/412395619",
+          "lat": 43.656645,
+          "lon": -79.375659,
+          "street": "Mutual Street"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:12.107Z"
+      "updatedAt": "2026-09-03T17:33:43.277Z"
     },
     "recycling": {
       "count": 1024,
       "pois": [
+        {
+          "id": "node/3590027959",
+          "lat": 43.651582,
+          "lon": -79.381548,
+          "street": "PATH Main Route"
+        },
+        {
+          "id": "node/2485299510",
+          "lat": 43.652989,
+          "lon": -79.387446,
+          "street": "University Avenue"
+        },
         {
           "id": "node/2427049648",
           "name": "battery, toner cartridge, mobile phone recycling",
@@ -1630,46 +1873,177 @@
           "lon": -79.385214
         },
         {
-          "id": "node/2785652246",
-          "name": "Butt Stop",
-          "lat": 43.665587,
-          "lon": -79.399306
+          "id": "node/2808890401",
+          "lat": 43.654606,
+          "lon": -79.38892,
+          "street": "Dundas Street West"
         },
         {
-          "id": "node/2846406119",
-          "name": "Astral",
-          "lat": 43.675742,
-          "lon": -79.407714
+          "id": "node/400957325",
+          "lat": 43.657506,
+          "lon": -79.381148,
+          "street": "Gould Street"
         },
         {
-          "id": "node/5973488560",
-          "name": "Electronics Recycling",
-          "lat": 43.685037,
-          "lon": -79.364038
+          "id": "node/400914755",
+          "lat": 43.653123,
+          "lon": -79.376868,
+          "street": "Bond Street"
         },
         {
-          "id": "node/8968505564",
-          "name": "Oasis Clothing Bank",
-          "lat": 43.646253,
-          "lon": -79.517578
+          "id": "node/3590632322",
+          "lat": 43.652842,
+          "lon": -79.391064,
+          "context": "Sharp Centre for Design"
         },
         {
-          "id": "way/646441107",
-          "name": "CADis",
-          "lat": 43.709133,
-          "lon": -79.261485,
-          "address": "Raleigh Avenue 246"
+          "id": "node/3698855233",
+          "lat": 43.649512,
+          "lon": -79.376593,
+          "street": "King Street East"
+        },
+        {
+          "id": "node/6373914603",
+          "lat": 43.648069,
+          "lon": -79.375856,
+          "street": "Wellington Street East"
+        },
+        {
+          "id": "node/13038222892",
+          "lat": 43.653781,
+          "lon": -79.393484,
+          "context": "Art Gallery of Ontario"
+        },
+        {
+          "id": "node/4349298640",
+          "lat": 43.657164,
+          "lon": -79.374352,
+          "street": "Dundas Street East"
+        },
+        {
+          "id": "node/6373914604",
+          "lat": 43.647644,
+          "lon": -79.375709,
+          "street": "Scott Street"
+        },
+        {
+          "id": "node/2887396222",
+          "lat": 43.660976,
+          "lon": -79.385807,
+          "street": "Bay Street"
+        },
+        {
+          "id": "node/2887815798",
+          "lat": 43.660688,
+          "lon": -79.387139,
+          "street": "College Street"
+        },
+        {
+          "id": "node/4607219522",
+          "lat": 43.645983,
+          "lon": -79.388522,
+          "context": "Metro Hall"
+        },
+        {
+          "id": "node/3590628788",
+          "lat": 43.64639,
+          "lon": -79.389555,
+          "street": "John Street"
+        },
+        {
+          "id": "node/2887816016",
+          "lat": 43.644614,
+          "lon": -79.384813,
+          "street": "Lower Simcoe Street"
+        },
+        {
+          "id": "node/3728372670",
+          "lat": 43.649225,
+          "lon": -79.371661,
+          "street": "Front Street East"
+        },
+        {
+          "id": "node/773495373",
+          "lat": 43.658937,
+          "lon": -79.393479,
+          "street": "McCaul Street"
+        },
+        {
+          "id": "node/838289890",
+          "lat": 43.660323,
+          "lon": -79.39282,
+          "context": "Donnelly Centre for Cellular and Biomolecular Research"
+        },
+        {
+          "id": "node/13309955075",
+          "lat": 43.659345,
+          "lon": -79.39408,
+          "street": "King's College Road"
+        },
+        {
+          "id": "node/380039767",
+          "lat": 43.65393,
+          "lon": -79.369385,
+          "street": "Sherbourne Street"
+        },
+        {
+          "id": "node/3810056067",
+          "lat": 43.650228,
+          "lon": -79.396754,
+          "street": "Spadina Avenue"
+        },
+        {
+          "id": "node/3729776636",
+          "lat": 43.648391,
+          "lon": -79.370517,
+          "street": "The Esplanade"
+        },
+        {
+          "id": "node/2823216792",
+          "lat": 43.663329,
+          "lon": -79.38657,
+          "street": "Breadalbane Street"
+        },
+        {
+          "id": "node/3729824557",
+          "lat": 43.648034,
+          "lon": -79.370614,
+          "street": "Lower Jarvis Street"
+        },
+        {
+          "id": "node/13681695326",
+          "lat": 43.659711,
+          "lon": -79.395616,
+          "street": "Galbraith Quad"
+        },
+        {
+          "id": "node/13042947915",
+          "lat": 43.664249,
+          "lon": -79.385767,
+          "street": "Allegro Place"
+        },
+        {
+          "id": "node/2480713371",
+          "lat": 43.661139,
+          "lon": -79.394161,
+          "street": "King's College Circle"
+        },
+        {
+          "id": "node/7580217732",
+          "lat": 43.660423,
+          "lon": -79.395299,
+          "street": "Galbraith Road"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:12.778Z"
+      "updatedAt": "2026-09-03T17:33:45.723Z"
     },
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-08-21T04:03:13.155Z"
+      "updatedAt": "2026-09-03T17:33:46.150Z"
     },
     "libraries": {
-      "count": 260,
+      "count": 266,
       "pois": [
         {
           "id": "node/2478475864",
@@ -1903,10 +2277,10 @@
           "address": "St George Street 120"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:13.686Z"
+      "updatedAt": "2026-09-03T17:33:46.822Z"
     },
     "outdoor-gyms": {
-      "count": 66,
+      "count": 69,
       "pois": [
         {
           "id": "way/377070631",
@@ -1916,12 +2290,12 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-21T04:03:14.127Z"
+      "updatedAt": "2026-09-03T17:33:48.241Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:03:14.563Z"
+      "updatedAt": "2026-09-03T17:33:48.873Z"
     },
     "shelters": {
       "count": 22,
@@ -1957,17 +2331,17 @@
           "lon": -79.46606
         }
       ],
-      "updatedAt": "2026-08-21T04:03:15.220Z"
+      "updatedAt": "2026-09-03T17:33:50.707Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:03:15.611Z"
+      "updatedAt": "2026-09-03T17:33:51.272Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:03:15.966Z"
+      "updatedAt": "2026-09-03T17:33:51.667Z"
     },
     "post-offices": {
       "count": 111,
@@ -2187,7 +2561,7 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-23T04:37:05.491Z"
+      "updatedAt": "2026-09-03T17:33:52.228Z"
     },
     "showers": {
       "count": 4,
@@ -2211,12 +2585,12 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-08-23T04:37:05.885Z"
+      "updatedAt": "2026-09-03T17:33:52.767Z"
     },
     "fireplaces": {
       "count": 59,
       "pois": [],
-      "updatedAt": "2026-08-23T04:37:06.747Z"
+      "updatedAt": "2026-09-03T17:33:53.860Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2224,7 +2598,7 @@
       "updatedAt": "2026-08-17T04:06:28.823Z"
     },
     "benches": {
-      "count": 6064,
+      "count": 6066,
       "pois": [
         {
           "id": "node/2809328001",
@@ -2246,12 +2620,144 @@
           "address": "Pelham Avenue 20"
         }
       ],
-      "updatedAt": "2026-08-23T04:37:07.975Z"
+      "updatedAt": "2026-09-03T17:33:57.012Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:40.867Z"
+    },
+    "bicycle-repair": {
+      "count": 28,
+      "pois": [
+        {
+          "id": "node/12259528533",
+          "lat": 43.665218,
+          "lon": -79.383608,
+          "street": "Wellesley Street East"
+        },
+        {
+          "id": "node/4305346799",
+          "lat": 43.668245,
+          "lon": -79.399965,
+          "street": "St George Street"
+        },
+        {
+          "id": "node/4586348706",
+          "name": "Public Use Bike Pump and Tools",
+          "lat": 43.67378,
+          "lon": -79.388024
+        },
+        {
+          "id": "node/4449930328",
+          "lat": 43.665974,
+          "lon": -79.411337,
+          "street": "Bathurst Street"
+        },
+        {
+          "id": "node/5248068632",
+          "lat": 43.676999,
+          "lon": -79.388735,
+          "street": "Crescent Road"
+        },
+        {
+          "id": "node/14105675683",
+          "lat": 43.653952,
+          "lon": -79.340603,
+          "street": "Lake Shore Boulevard Recreational Trail"
+        },
+        {
+          "id": "node/5936899641",
+          "lat": 43.688183,
+          "lon": -79.393167,
+          "fee": "no",
+          "street": "St. Clair Avenue East"
+        },
+        {
+          "id": "node/11985700835",
+          "lat": 43.659999,
+          "lon": -79.435585,
+          "street": "Dufferin Street"
+        },
+        {
+          "id": "node/4360510925",
+          "lat": 43.686156,
+          "lon": -79.415939,
+          "street": "Heath Street West"
+        },
+        {
+          "id": "node/3831822857",
+          "lat": 43.697975,
+          "lon": -79.396817,
+          "street": "Davisville Bus Terminal"
+        },
+        {
+          "id": "node/13762232599",
+          "lat": 43.655431,
+          "lon": -79.45998,
+          "street": "Keele Street"
+        },
+        {
+          "id": "node/13039839998",
+          "lat": 43.713705,
+          "lon": -79.360861,
+          "street": "Frederick Todd Way"
+        },
+        {
+          "id": "node/14003302192",
+          "lat": 43.679828,
+          "lon": -79.474837,
+          "street": "Weston Road"
+        },
+        {
+          "id": "node/10785706642",
+          "lat": 43.649824,
+          "lon": -79.484413,
+          "street": "Jane Street"
+        },
+        {
+          "id": "node/4430927690",
+          "lat": 43.725345,
+          "lon": -79.402052,
+          "openingHours": "24/7",
+          "street": "Yonge Street"
+        },
+        {
+          "id": "node/7018307401",
+          "lat": 43.715945,
+          "lon": -79.444102,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Lawrence Avenue West"
+        },
+        {
+          "id": "node/9690689535",
+          "lat": 43.650175,
+          "lon": -79.495042,
+          "fee": "no",
+          "street": "Old Mill Trail"
+        },
+        {
+          "id": "node/12661227798",
+          "lat": 43.732545,
+          "lon": -79.446488,
+          "fee": "no",
+          "street": "Tippett Road"
+        },
+        {
+          "id": "node/5905470547",
+          "lat": 43.728538,
+          "lon": -79.30407,
+          "street": "Gatineau Corridor Recreation Trail"
+        },
+        {
+          "id": "node/10774519611",
+          "lat": 43.645197,
+          "lon": -79.523904,
+          "street": "Islington Avenue"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:33:55.715Z"
     }
   }
 }

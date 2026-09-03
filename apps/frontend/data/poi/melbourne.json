@@ -1,18 +1,25 @@
 {
   "city": "melbourne",
-  "generatedAt": "2026-08-23T04:37:27.178Z",
+  "generatedAt": "2026-09-03T17:37:39.318Z",
   "categories": {
     "toilets": {
-      "count": 595,
+      "count": 594,
       "pois": [
         {
-          "id": "way/46218295",
-          "name": "Myer",
-          "lat": -37.813444,
-          "lon": 144.963841,
-          "address": "Bourke Street Mall 314-336",
-          "openingHours": "Mo-We 09:30-19:00; Th,Fr 09:30-21:00; Sa 09:30-19:00; Su 10:00-19:00",
-          "wheelchair": "yes"
+          "id": "node/6138135275",
+          "lat": -37.813698,
+          "lon": 144.963776,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Myer"
+        },
+        {
+          "id": "node/6758200721",
+          "lat": -37.812787,
+          "lon": 144.963294,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Emporium"
         },
         {
           "id": "way/117894663",
@@ -24,13 +31,18 @@
           "wheelchair": "no"
         },
         {
-          "id": "way/46218297",
-          "name": "Emporium",
-          "lat": -37.812414,
-          "lon": 144.963848,
-          "address": "Lonsdale Street 287",
-          "openingHours": "Mo-Su 10:00-19:00",
-          "wheelchair": "yes"
+          "id": "node/6983868724",
+          "lat": -37.815191,
+          "lon": 144.964684,
+          "openingHours": "Mo-Su 10:00-21:00",
+          "context": "Collins Arcade"
+        },
+        {
+          "id": "node/12175749089",
+          "lat": -37.811151,
+          "lon": 144.963441,
+          "fee": "no",
+          "context": "Melbourne Central"
         },
         {
           "id": "node/2278040241",
@@ -39,6 +51,50 @@
           "lon": 144.966902,
           "wheelchair": "yes",
           "fee": "no"
+        },
+        {
+          "id": "node/589516620",
+          "lat": -37.815228,
+          "lon": 144.9669,
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "Melbourne Town Hall"
+        },
+        {
+          "id": "node/12483926914",
+          "lat": -37.812537,
+          "lon": 144.967211,
+          "context": "MidCity Centre"
+        },
+        {
+          "id": "node/5406506306",
+          "lat": -37.809624,
+          "lon": 144.964576,
+          "address": "La Trobe Street",
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "State Library Victoria"
+        },
+        {
+          "id": "node/13273061853",
+          "lat": -37.807548,
+          "lon": 144.963427,
+          "wheelchair": "designated",
+          "fee": "no",
+          "context": "Building 14"
+        },
+        {
+          "id": "node/5485479989",
+          "lat": -37.817776,
+          "lon": 144.969605,
+          "wheelchair": "yes",
+          "context": "Crossbar"
+        },
+        {
+          "id": "node/1928209665",
+          "lat": -37.809452,
+          "lon": 144.969771,
+          "context": "242 Exhibition Street"
         },
         {
           "id": "node/3523510825",
@@ -50,10 +106,37 @@
           "fee": "no"
         },
         {
+          "id": "node/9336146721",
+          "lat": -37.820158,
+          "lon": 144.96649,
+          "fee": "no",
+          "context": "Southgate"
+        },
+        {
+          "id": "node/1426013261",
+          "lat": -37.820463,
+          "lon": 144.965686,
+          "context": "The Langham"
+        },
+        {
+          "id": "node/711360511",
+          "lat": -37.806377,
+          "lon": 144.958987,
+          "context": "Queen Victoria Market Food Hall"
+        },
+        {
           "id": "node/408109046",
           "name": "Toilet 14",
           "lat": -37.815984,
           "lon": 144.9728
+        },
+        {
+          "id": "node/7246270877",
+          "lat": -37.815653,
+          "lon": 144.952355,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Southern Cross Coach Terminal"
         },
         {
           "id": "node/305075011",
@@ -75,12 +158,68 @@
           "fee": "no"
         },
         {
+          "id": "node/13544752937",
+          "lat": -37.820519,
+          "lon": 144.951601,
+          "fee": "no",
+          "context": "2MQ"
+        },
+        {
           "id": "node/472236182",
           "name": "Public Toilets",
           "lat": -37.802064,
           "lon": 144.966432,
           "wheelchair": "yes",
           "fee": "no"
+        },
+        {
+          "id": "node/6856247943",
+          "lat": -37.820983,
+          "lon": 144.950054,
+          "fee": "no",
+          "context": "Tower 2"
+        },
+        {
+          "id": "node/2421601637",
+          "lat": -37.824669,
+          "lon": 144.954928,
+          "wheelchair": "yes",
+          "context": "Melbourne Exhibition Centre"
+        },
+        {
+          "id": "node/5593448988",
+          "lat": -37.82676,
+          "lon": 144.966725,
+          "fee": "no",
+          "context": "Australian Centre for Contemporary Art"
+        },
+        {
+          "id": "node/11959269939",
+          "lat": -37.799399,
+          "lon": 144.961989,
+          "context": "Old Engineering School"
+        },
+        {
+          "id": "node/6760877937",
+          "lat": -37.81845,
+          "lon": 144.945345,
+          "wheelchair": "no",
+          "fee": "no",
+          "context": "NAB"
+        },
+        {
+          "id": "node/2353039151",
+          "lat": -37.797434,
+          "lon": 144.959033,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Biosciences 4"
+        },
+        {
+          "id": "node/10593207065",
+          "lat": -37.822262,
+          "lon": 144.980869,
+          "context": "Kia Arena"
         },
         {
           "id": "relation/18892045",
@@ -90,107 +229,12 @@
           "address": "Royal Parade 48",
           "openingHours": "\"by appointment\"",
           "wheelchair": "limited"
-        },
-        {
-          "id": "way/966904279",
-          "name": "Papirica",
-          "lat": -37.807546,
-          "lon": 144.98303,
-          "address": "Smith Street 22",
-          "openingHours": "We-Su 10:00-15:30; PH closed",
-          "wheelchair": "limited"
-        },
-        {
-          "id": "way/231808245",
-          "name": "Yah Yah's",
-          "lat": -37.805835,
-          "lon": 144.982741,
-          "address": "Smith Street 99-101",
-          "openingHours": "Th-Sa 20:00-05:00"
-        },
-        {
-          "id": "way/976197259",
-          "name": "South of Johnston",
-          "lat": -37.806004,
-          "lon": 144.98469,
-          "address": "Oxford Street 46",
-          "openingHours": "Mo-Su 07:30-17:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/368131639",
-          "name": "Public Urinals",
-          "lat": -37.793015,
-          "lon": 144.974009,
-          "fee": "no"
-        },
-        {
-          "id": "way/154529390",
-          "name": "Beaurepaire Pavilion",
-          "lat": -37.847795,
-          "lon": 144.968238
-        },
-        {
-          "id": "way/382975569",
-          "name": "McDonald's",
-          "lat": -37.788091,
-          "lon": 144.932105,
-          "address": "Racecourse Road 260",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/3661108598",
-          "name": "Westport Reserve Toilets",
-          "lat": -37.839233,
-          "lon": 144.91974,
-          "wheelchair": "yes",
-          "fee": "no"
-        },
-        {
-          "id": "way/376243931",
-          "name": "Seddon Deadly Sins",
-          "lat": -37.804782,
-          "lon": 144.891957,
-          "address": "Victoria Street 148",
-          "openingHours": "Mo-Su 07:00-15:30"
-        },
-        {
-          "id": "node/11245142343",
-          "name": "Strip mall lavatories",
-          "lat": -37.731682,
-          "lon": 144.949876
-        },
-        {
-          "id": "node/11424973569",
-          "name": "Unisex Toilet",
-          "lat": -37.730234,
-          "lon": 144.955779
-        },
-        {
-          "id": "way/34947532",
-          "name": "Demolished",
-          "lat": -37.743946,
-          "lon": 144.89748,
-          "wheelchair": "yes",
-          "fee": "no"
-        },
-        {
-          "id": "node/12998477243",
-          "name": "Disabled facilities",
-          "lat": -37.721807,
-          "lon": 144.966237
-        },
-        {
-          "id": "node/13409880831",
-          "name": "Unisex Toilet and shower",
-          "lat": -37.714052,
-          "lon": 144.970382
         }
       ],
-      "updatedAt": "2026-08-21T04:04:21.428Z"
+      "updatedAt": "2026-09-03T17:37:02.105Z"
     },
     "drinking-water": {
-      "count": 1061,
+      "count": 1064,
       "pois": [
         {
           "id": "node/10858980903",
@@ -277,7 +321,7 @@
           "lon": 145.07664
         }
       ],
-      "updatedAt": "2026-08-21T04:04:22.260Z"
+      "updatedAt": "2026-09-03T17:37:04.795Z"
     },
     "playgrounds": {
       "count": 884,
@@ -347,7 +391,8 @@
           "id": "way/799306937",
           "name": "NaturePlay",
           "lat": -37.795033,
-          "lon": 144.95179
+          "lon": 144.95179,
+          "openingHours": "24/7"
         },
         {
           "id": "node/5231920632",
@@ -465,10 +510,10 @@
           "lon": 144.978285
         }
       ],
-      "updatedAt": "2026-08-21T04:04:23.066Z"
+      "updatedAt": "2026-09-03T17:37:06.310Z"
     },
     "parking": {
-      "count": 5060,
+      "count": 5061,
       "pois": [
         {
           "id": "node/415265443",
@@ -688,7 +733,7 @@
           "openingHours": "Mo-Fr 07:00-23:59"
         }
       ],
-      "updatedAt": "2026-08-21T04:04:24.328Z"
+      "updatedAt": "2026-09-03T17:37:09.854Z"
     },
     "charging-stations": {
       "count": 103,
@@ -726,7 +771,7 @@
           "lon": 145.046552
         }
       ],
-      "updatedAt": "2026-08-21T04:04:24.715Z"
+      "updatedAt": "2026-09-03T17:37:10.889Z"
     },
     "gas-stations": {
       "count": 198,
@@ -940,10 +985,10 @@
           "address": "Epsom Road 1"
         }
       ],
-      "updatedAt": "2026-08-21T04:04:25.222Z"
+      "updatedAt": "2026-09-03T17:37:12.581Z"
     },
     "ice-cream": {
-      "count": 110,
+      "count": 108,
       "pois": [
         {
           "id": "node/9731738515",
@@ -990,13 +1035,6 @@
           "lon": 144.96447
         },
         {
-          "id": "node/11659381169",
-          "name": "Naruto Gelato",
-          "lat": -37.811565,
-          "lon": 144.961265,
-          "address": "Little Lonsdale Street 361"
-        },
-        {
           "id": "node/12175777727",
           "name": "Yoart",
           "lat": -37.810413,
@@ -1009,12 +1047,6 @@
           "lat": -37.81611,
           "lon": 144.966044,
           "address": "Manchester Lane 20"
-        },
-        {
-          "id": "node/2470810709",
-          "name": "Nitro Lab",
-          "lat": -37.812778,
-          "lon": 144.967547
         },
         {
           "id": "node/3844062098",
@@ -1159,9 +1191,23 @@
           "address": "Lygon Street 299",
           "openingHours": "Mo-Su 12:00-23:00",
           "wheelchair": "no"
+        },
+        {
+          "id": "node/3375923630",
+          "name": "Evergreen Ice",
+          "lat": -37.814937,
+          "lon": 144.942191
+        },
+        {
+          "id": "node/12966123401",
+          "name": "L'Arte Della Gelato",
+          "lat": -37.801778,
+          "lon": 144.977813,
+          "address": "Brunswick Street 191",
+          "openingHours": "Su-Th 12:00-22:00; Fr-Sa 12:00-23:00"
         }
       ],
-      "updatedAt": "2026-08-21T04:04:25.738Z"
+      "updatedAt": "2026-09-03T17:37:14.223Z"
     },
     "dog-parks": {
       "count": 19,
@@ -1224,10 +1270,10 @@
           "lon": 144.910787
         }
       ],
-      "updatedAt": "2026-08-21T04:04:26.112Z"
+      "updatedAt": "2026-09-03T17:37:15.095Z"
     },
     "picnic-spots": {
-      "count": 755,
+      "count": 757,
       "pois": [
         {
           "id": "node/10759151287",
@@ -1260,7 +1306,7 @@
           "lon": 144.957555
         }
       ],
-      "updatedAt": "2026-08-21T04:04:26.693Z"
+      "updatedAt": "2026-09-03T17:37:16.643Z"
     },
     "viewpoints": {
       "count": 74,
@@ -1404,7 +1450,7 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-08-21T04:04:27.195Z"
+      "updatedAt": "2026-09-03T17:37:17.371Z"
     },
     "beaches": {
       "count": 30,
@@ -1488,10 +1534,10 @@
           "lon": 144.986852
         }
       ],
-      "updatedAt": "2026-08-21T04:04:27.584Z"
+      "updatedAt": "2026-09-03T17:37:18.121Z"
     },
     "atms": {
-      "count": 330,
+      "count": 331,
       "pois": [
         {
           "id": "node/613313406",
@@ -1713,11 +1759,67 @@
           "lon": 144.969781
         }
       ],
-      "updatedAt": "2026-08-21T04:04:28.119Z"
+      "updatedAt": "2026-09-03T17:37:18.951Z"
     },
     "post-boxes": {
-      "count": 654,
+      "count": 653,
       "pois": [
+        {
+          "id": "node/13841995135",
+          "lat": -37.814775,
+          "lon": 144.963289,
+          "street": "Elizabeth Street"
+        },
+        {
+          "id": "node/242544215",
+          "lat": -37.811718,
+          "lon": 144.964579,
+          "street": "Lonsdale Street"
+        },
+        {
+          "id": "node/13769305672",
+          "lat": -37.814593,
+          "lon": 144.966201,
+          "street": "Swanston Street"
+        },
+        {
+          "id": "node/242540165",
+          "lat": -37.814483,
+          "lon": 144.966289,
+          "street": "Little Collins Street"
+        },
+        {
+          "id": "node/4269463941",
+          "lat": -37.816092,
+          "lon": 144.96473,
+          "wheelchair": "yes",
+          "street": "Collins Street"
+        },
+        {
+          "id": "node/242540167",
+          "lat": -37.816053,
+          "lon": 144.961048,
+          "wheelchair": "yes",
+          "street": "Queen Street"
+        },
+        {
+          "id": "node/242543678",
+          "lat": -37.813262,
+          "lon": 144.966815,
+          "street": "Bourke Street"
+        },
+        {
+          "id": "node/242823079",
+          "lat": -37.809766,
+          "lon": 144.963639,
+          "street": "La Trobe Street"
+        },
+        {
+          "id": "node/11135649048",
+          "lat": -37.813654,
+          "lon": 144.968641,
+          "street": "Russell Street"
+        },
         {
           "id": "node/2289931217",
           "name": "Australia Post",
@@ -1725,133 +1827,329 @@
           "lon": 144.965112
         },
         {
-          "id": "node/4392883420",
-          "name": "Express Post",
-          "lat": -37.82015,
-          "lon": 144.943088
+          "id": "node/2109657694",
+          "lat": -37.817121,
+          "lon": 144.968274,
+          "street": "Flinders Street"
         },
         {
-          "id": "node/3074303034",
-          "name": "Parcel Lockers 24/7",
-          "lat": -37.791539,
-          "lon": 144.99469
+          "id": "node/597557841",
+          "lat": -37.818785,
+          "lon": 144.960703,
+          "street": "Market Street"
         },
         {
-          "id": "node/599726879",
-          "name": "Elwood Post Office",
-          "lat": -37.873236,
-          "lon": 144.989993
+          "id": "node/10170570713",
+          "lat": -37.807868,
+          "lon": 144.961041,
+          "street": "Franklin Street"
         },
         {
-          "id": "node/8819559075",
-          "name": "AusPost Parcel Locker",
-          "lat": -37.744203,
-          "lon": 144.964078
+          "id": "node/471340947",
+          "lat": -37.806734,
+          "lon": 144.96604,
+          "address": "Lygon Street 2",
+          "street": "Lygon Street"
+        },
+        {
+          "id": "node/3700526895",
+          "lat": -37.821394,
+          "lon": 144.965715,
+          "street": "Southgate Avenue"
+        },
+        {
+          "id": "node/11418851930",
+          "lat": -37.804878,
+          "lon": 144.965058,
+          "street": "Queensberry Street"
+        },
+        {
+          "id": "node/458648357",
+          "lat": -37.811786,
+          "lon": 144.975262,
+          "street": "St Andrews Place"
+        },
+        {
+          "id": "node/597557836",
+          "lat": -37.8235,
+          "lon": 144.960873,
+          "street": "Queens Bridge Street"
+        },
+        {
+          "id": "node/3161986661",
+          "lat": -37.823556,
+          "lon": 144.966529,
+          "street": "Southbank Boulevard"
+        },
+        {
+          "id": "node/2562266946",
+          "lat": -37.822068,
+          "lon": 144.954226,
+          "street": "Siddeley Street"
+        },
+        {
+          "id": "node/242823102",
+          "lat": -37.803246,
+          "lon": 144.969248,
+          "street": "Pelham Street"
+        },
+        {
+          "id": "node/940901835",
+          "lat": -37.812502,
+          "lon": 144.977647,
+          "street": "Treasury Place"
+        },
+        {
+          "id": "node/595501096",
+          "lat": -37.824646,
+          "lon": 144.956405,
+          "address": "Clarendon Street 28",
+          "street": "Clarendon Street"
+        },
+        {
+          "id": "node/13887653173",
+          "lat": -37.824672,
+          "lon": 144.97043,
+          "street": "St Kilda Road"
+        },
+        {
+          "id": "node/669127130",
+          "lat": -37.806587,
+          "lon": 144.977233,
+          "street": "Brunswick Street"
+        },
+        {
+          "id": "node/248969188",
+          "lat": -37.808205,
+          "lon": 144.978411,
+          "street": "Victoria Parade"
+        },
+        {
+          "id": "node/12169093735",
+          "lat": -37.800357,
+          "lon": 144.964293,
+          "street": "Grattan Street"
+        },
+        {
+          "id": "node/472236181",
+          "lat": -37.801079,
+          "lon": 144.969253,
+          "address": "Grattan Street 7",
+          "street": "Erskine Lane"
+        },
+        {
+          "id": "node/553899204",
+          "lat": -37.826741,
+          "lon": 144.959358,
+          "street": "City Road"
+        },
+        {
+          "id": "node/282825881",
+          "lat": -37.801762,
+          "lon": 144.952976,
+          "street": "Chetwynd Street"
         }
       ],
-      "updatedAt": "2026-08-21T04:04:28.724Z"
+      "updatedAt": "2026-09-03T17:37:21.086Z"
     },
     "recycling": {
-      "count": 259,
+      "count": 262,
       "pois": [
         {
-          "id": "way/396517924",
-          "name": "Port Phillip Transfer Station",
-          "lat": -37.82809,
-          "lon": 144.943513
+          "id": "node/12146857329",
+          "lat": -37.814548,
+          "lon": 144.961813,
+          "street": "Bourke Street"
         },
         {
-          "id": "node/5123921795",
-          "name": "Inner City Metal Recycler",
-          "lat": -37.809966,
-          "lon": 144.998279
+          "id": "node/9632345207",
+          "lat": -37.813509,
+          "lon": 144.965503,
+          "wheelchair": "yes",
+          "street": "Bourke Street Mall"
         },
         {
-          "id": "node/9288018825",
-          "name": "FOGO (food organics garden organics)",
-          "lat": -37.841432,
-          "lon": 144.943248
+          "id": "node/13130059381",
+          "lat": -37.811839,
+          "lon": 144.964758,
+          "street": "Swanston Street"
         },
         {
-          "id": "way/224860751",
-          "name": "Yarra City Council Depot",
-          "lat": -37.793845,
-          "lon": 145.001359,
-          "address": "Roseneath Street 168"
+          "id": "node/13200371387",
+          "lat": -37.816464,
+          "lon": 144.964059,
+          "street": "Elizabeth Street"
         },
         {
-          "id": "node/5481895335",
-          "name": "Yarra Council Recycling Drop-off Point",
-          "lat": -37.793457,
-          "lon": 145.001736
+          "id": "node/13850996680",
+          "lat": -37.810646,
+          "lon": 144.961647,
+          "street": "Menzies Alley"
         },
         {
-          "id": "way/92810059",
-          "name": "Citywide Waste Management Centre",
-          "lat": -37.802901,
-          "lon": 144.91427,
-          "address": "Dynon Road 391-395",
-          "openingHours": "Mo-Su 09:00-15:00"
+          "id": "node/11104106111",
+          "lat": -37.809014,
+          "lon": 144.963399,
+          "street": "Little La Trobe Street"
         },
         {
-          "id": "node/12996737636",
-          "name": "Victoria's Container Deposit Scheme",
-          "lat": -37.753938,
-          "lon": 144.964267,
-          "address": "Sydney Road 59",
-          "openingHours": "Mo-Fr 09:00-17:00; Sa-Su 10:00-17:00",
-          "wheelchair": "no"
+          "id": "node/13135861988",
+          "lat": -37.810069,
+          "lon": 144.95859,
+          "street": "Queen Street"
         },
         {
-          "id": "way/105133774",
-          "name": "Banyule Waste Recovery Centre",
-          "lat": -37.756214,
-          "lon": 145.043913,
-          "openingHours": "Mo-Fr 07:30-15:30; Sa,Su,PH 07:30-12:00; Jan 01 off; easter -2 days off; Apr 25 off \"ANZAC day\"; Dec 25 off"
+          "id": "node/12639742122",
+          "lat": -37.808689,
+          "lon": 144.964682,
+          "street": "Bowen Street"
         },
         {
-          "id": "node/10224669732",
-          "name": "CDS Vic Depot Caulfield",
-          "lat": -37.886559,
-          "lon": 145.022173,
-          "address": "Hawthorn Road 357",
-          "openingHours": "Mo-Fr 08:00-17:00; Sa-Su 08:00-16:00"
+          "id": "node/13201743710",
+          "lat": -37.816864,
+          "lon": 144.969091,
+          "street": "Flinders Street"
         },
         {
-          "id": "way/917202321",
-          "name": "Sunshine Groupe Waste Management",
-          "lat": -37.813148,
-          "lon": 144.839974,
-          "address": "Bunting Road 125"
+          "id": "node/12332400638",
+          "lat": -37.8194,
+          "lon": 144.964011,
+          "street": "Les Erdi Plaza"
         },
         {
-          "id": "way/488803118",
-          "name": "Sunshine Recycling Plant",
-          "lat": -37.809087,
-          "lon": 144.836043,
-          "address": "Somerville Road 473"
+          "id": "node/12639749236",
+          "lat": -37.807758,
+          "lon": 144.964621,
+          "street": "University Way"
         },
         {
-          "id": "way/488803117",
-          "name": "Recycling Plant Brooklyn",
-          "lat": -37.808904,
-          "lon": 144.833338
+          "id": "node/4957706274",
+          "lat": -37.811702,
+          "lon": 144.955631,
+          "street": "La Trobe Street"
         },
         {
-          "id": "way/1285823505",
-          "name": "Victoria Container Deposit Scheme machine",
-          "lat": -37.710271,
-          "lon": 144.951264,
-          "openingHours": "24/7",
-          "wheelchair": "yes"
+          "id": "node/13714861778",
+          "lat": -37.819791,
+          "lon": 144.967417,
+          "street": "Southbank Promenade"
+        },
+        {
+          "id": "node/13830097889",
+          "lat": -37.818541,
+          "lon": 144.969672,
+          "street": "Birrarung Marr Walk"
+        },
+        {
+          "id": "node/9141341523",
+          "lat": -37.807464,
+          "lon": 144.968485,
+          "street": "Exhibition Street"
+        },
+        {
+          "id": "node/13159240452",
+          "lat": -37.809517,
+          "lon": 144.955009,
+          "street": "Peel Street"
+        },
+        {
+          "id": "node/11133379664",
+          "lat": -37.82141,
+          "lon": 144.960842,
+          "street": "Yarra Promenade"
+        },
+        {
+          "id": "node/13830118362",
+          "lat": -37.820199,
+          "lon": 144.968871,
+          "street": "St Kilda Road"
+        },
+        {
+          "id": "node/2692538947",
+          "lat": -37.810366,
+          "lon": 144.973038,
+          "street": "Nicholson Street"
+        },
+        {
+          "id": "node/13726692230",
+          "lat": -37.818895,
+          "lon": 144.954364,
+          "street": "Collins Street"
+        },
+        {
+          "id": "node/13206122247",
+          "lat": -37.815945,
+          "lon": 144.952453,
+          "context": "Southern Cross Coach Terminal"
+        },
+        {
+          "id": "node/13830145255",
+          "lat": -37.817403,
+          "lon": 144.973423,
+          "street": "Main Yarra Trail Capital City Trail"
+        },
+        {
+          "id": "node/13118644615",
+          "lat": -37.810678,
+          "lon": 144.952064,
+          "street": "Batman Street"
+        },
+        {
+          "id": "node/13830146724",
+          "lat": -37.815025,
+          "lon": 144.974615,
+          "street": "Spring Street"
+        },
+        {
+          "id": "node/13014792140",
+          "lat": -37.804994,
+          "lon": 144.968113,
+          "street": "Queensberry Street"
+        },
+        {
+          "id": "node/2692539293",
+          "lat": -37.809574,
+          "lon": 144.974192,
+          "street": "Albert Street"
+        },
+        {
+          "id": "node/13014813342",
+          "lat": -37.803169,
+          "lon": 144.965329,
+          "street": "Argyle Place South"
+        },
+        {
+          "id": "node/13014744130",
+          "lat": -37.802869,
+          "lon": 144.966307,
+          "street": "Lygon Street"
+        },
+        {
+          "id": "node/13264710406",
+          "lat": -37.803246,
+          "lon": 144.955737,
+          "street": "Courtney Street"
+        },
+        {
+          "id": "node/10753078485",
+          "lat": -37.801982,
+          "lon": 144.959836,
+          "street": "Pelham Street"
         }
       ],
-      "updatedAt": "2026-08-21T04:04:29.210Z"
+      "updatedAt": "2026-09-03T17:37:23.869Z"
     },
     "luggage-storage": {
       "count": 5,
-      "pois": [],
-      "updatedAt": "2026-08-21T04:04:29.600Z"
+      "pois": [
+        {
+          "id": "node/14130973904",
+          "name": "Luggage Storage Melbourne - Be My Guest",
+          "lat": -37.815694,
+          "lon": 144.951936
+        }
+      ],
+      "updatedAt": "2026-09-03T17:37:24.360Z"
     },
     "libraries": {
       "count": 161,
@@ -2094,10 +2392,10 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:04:30.401Z"
+      "updatedAt": "2026-09-03T17:37:25.200Z"
     },
     "outdoor-gyms": {
-      "count": 83,
+      "count": 88,
       "pois": [
         {
           "id": "node/9861427217",
@@ -2137,7 +2435,7 @@
           "lon": 145.043999
         }
       ],
-      "updatedAt": "2026-08-21T04:04:30.856Z"
+      "updatedAt": "2026-09-03T17:37:26.816Z"
     },
     "camp-sites": {
       "count": 4,
@@ -2169,7 +2467,7 @@
           "address": "Altona Road"
         }
       ],
-      "updatedAt": "2026-08-21T04:04:31.242Z"
+      "updatedAt": "2026-09-03T17:37:27.621Z"
     },
     "shelters": {
       "count": 87,
@@ -2181,10 +2479,34 @@
           "lon": 144.97924
         },
         {
+          "id": "node/10307776648",
+          "lat": -37.793623,
+          "lon": 144.940308,
+          "street": "Buncle Street"
+        },
+        {
+          "id": "node/9427659110",
+          "lat": -37.796596,
+          "lon": 144.9205,
+          "street": "Anderson Walk"
+        },
+        {
           "id": "way/436087615",
           "name": "BBQ Shelter",
           "lat": -37.779463,
           "lon": 144.934678
+        },
+        {
+          "id": "node/9794049233",
+          "lat": -37.787231,
+          "lon": 144.917386,
+          "street": "Wetlands Way"
+        },
+        {
+          "id": "node/9075292380",
+          "lat": -37.769531,
+          "lon": 144.983627,
+          "street": "Merri Creek Trail"
         },
         {
           "id": "way/1350785010",
@@ -2210,9 +2532,39 @@
           "name": "shade sails",
           "lat": -37.736461,
           "lon": 144.972936
+        },
+        {
+          "id": "node/10211772030",
+          "lat": -37.81033,
+          "lon": 145.063241,
+          "street": "Anniversary Trail"
+        },
+        {
+          "id": "node/10292348680",
+          "lat": -37.815497,
+          "lon": 144.861329,
+          "street": "Smith Place"
+        },
+        {
+          "id": "node/4019427973",
+          "lat": -37.793729,
+          "lon": 144.839948,
+          "street": "Sunshine Footscray Trail"
+        },
+        {
+          "id": "node/2516997173",
+          "lat": -37.732256,
+          "lon": 144.884404,
+          "street": "Bowes Avenue"
+        },
+        {
+          "id": "node/14065974382",
+          "lat": -37.872851,
+          "lon": 145.069518,
+          "street": "Winton Road"
         }
       ],
-      "updatedAt": "2026-08-21T04:04:31.893Z"
+      "updatedAt": "2026-09-03T17:37:30.554Z"
     },
     "rest-areas": {
       "count": 39,
@@ -2264,7 +2616,7 @@
           "lon": 144.848173
         }
       ],
-      "updatedAt": "2026-08-21T04:04:32.277Z"
+      "updatedAt": "2026-09-03T17:37:31.365Z"
     },
     "dump-stations": {
       "count": 1,
@@ -2278,7 +2630,7 @@
           "openingHours": "Mo-Su 08:00-15:30"
         }
       ],
-      "updatedAt": "2026-08-21T04:04:32.640Z"
+      "updatedAt": "2026-09-03T17:37:31.894Z"
     },
     "post-offices": {
       "count": 154,
@@ -2514,15 +2866,15 @@
           "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:00; Su closed"
         }
       ],
-      "updatedAt": "2026-08-23T04:37:25.059Z"
+      "updatedAt": "2026-09-03T17:37:32.633Z"
     },
     "showers": {
       "count": 14,
       "pois": [],
-      "updatedAt": "2026-08-23T04:37:25.430Z"
+      "updatedAt": "2026-09-03T17:37:33.056Z"
     },
     "fireplaces": {
-      "count": 277,
+      "count": 278,
       "pois": [
         {
           "id": "node/10718562783",
@@ -2549,7 +2901,7 @@
           "lon": 144.954812
         }
       ],
-      "updatedAt": "2026-08-23T04:37:26.088Z"
+      "updatedAt": "2026-09-03T17:37:34.510Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2557,7 +2909,7 @@
       "updatedAt": "2026-08-17T04:06:44.316Z"
     },
     "benches": {
-      "count": 4925,
+      "count": 4951,
       "pois": [
         {
           "id": "node/13774807965",
@@ -2584,12 +2936,222 @@
           "lon": 144.99225
         }
       ],
-      "updatedAt": "2026-08-23T04:37:27.077Z"
+      "updatedAt": "2026-09-03T17:37:39.207Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:43.348Z"
+    },
+    "bicycle-repair": {
+      "count": 90,
+      "pois": [
+        {
+          "id": "node/13542299201",
+          "lat": -37.821011,
+          "lon": 144.961712,
+          "openingHours": "24/7",
+          "street": "Southbank Promenade"
+        },
+        {
+          "id": "node/6188998325",
+          "lat": -37.824349,
+          "lon": 144.969103,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Dhumba-dha (Storytellers) Walk"
+        },
+        {
+          "id": "node/6741658227",
+          "lat": -37.821207,
+          "lon": 144.97598,
+          "openingHours": "24/7",
+          "street": "Main Yarra Trail Capital City Trail"
+        },
+        {
+          "id": "node/10765061037",
+          "lat": -37.798963,
+          "lon": 144.9604,
+          "street": "Professors Walk"
+        },
+        {
+          "id": "node/3381853270",
+          "lat": -37.798519,
+          "lon": 144.962019,
+          "openingHours": "24/7",
+          "street": "Stationary Lane"
+        },
+        {
+          "id": "node/10876860453",
+          "lat": -37.798385,
+          "lon": 144.96341,
+          "street": "Monash Road"
+        },
+        {
+          "id": "node/2418505224",
+          "name": "Bike Repair Station",
+          "lat": -37.797987,
+          "lon": 144.958538
+        },
+        {
+          "id": "node/6590027167",
+          "lat": -37.797199,
+          "lon": 144.95811,
+          "openingHours": "24/7",
+          "street": "Royal Parade"
+        },
+        {
+          "id": "node/9938929432",
+          "lat": -37.824687,
+          "lon": 144.946998,
+          "fee": "no",
+          "street": "River Esplanade"
+        },
+        {
+          "id": "node/12301511606",
+          "lat": -37.796169,
+          "lon": 144.960949,
+          "street": "Tin Alley"
+        },
+        {
+          "id": "node/6642345022",
+          "lat": -37.832337,
+          "lon": 144.957398,
+          "openingHours": "24/7",
+          "street": "Cecil Street"
+        },
+        {
+          "id": "node/9901808757",
+          "lat": -37.805369,
+          "lon": 144.986322,
+          "street": "Wellington Street"
+        },
+        {
+          "id": "node/13067835563",
+          "lat": -37.795824,
+          "lon": 144.977513,
+          "street": "Rose Street"
+        },
+        {
+          "id": "node/13657244484",
+          "lat": -37.793259,
+          "lon": 144.947539,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Flemington Road"
+        },
+        {
+          "id": "node/12030188000",
+          "lat": -37.816245,
+          "lon": 145.001893,
+          "street": "Gleadell Street"
+        },
+        {
+          "id": "node/13606860109",
+          "lat": -37.834018,
+          "lon": 144.993839,
+          "street": "Main Yarra Trail"
+        },
+        {
+          "id": "node/13518342377",
+          "lat": -37.839078,
+          "lon": 144.991968,
+          "openingHours": "24/7",
+          "street": "Toorak Road"
+        },
+        {
+          "id": "node/13893200520",
+          "lat": -37.788585,
+          "lon": 144.931042,
+          "street": "Pridham Street"
+        },
+        {
+          "id": "node/2900798128",
+          "lat": -37.775835,
+          "lon": 144.958674,
+          "openingHours": "24/7",
+          "street": "Upfield Shared Path"
+        },
+        {
+          "id": "node/13456971607",
+          "lat": -37.782768,
+          "lon": 144.991507,
+          "openingHours": "24/7",
+          "street": "Capital City Trail"
+        },
+        {
+          "id": "node/11027281801",
+          "lat": -37.84768,
+          "lon": 144.992581,
+          "fee": "no",
+          "street": "Wattle Street"
+        },
+        {
+          "id": "node/3949579844",
+          "name": "Merri Creek Bike Repair Station",
+          "lat": -37.776911,
+          "lon": 144.989513,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/2900798127",
+          "lat": -37.771254,
+          "lon": 144.959404,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Dawson Street"
+        },
+        {
+          "id": "node/11077963103",
+          "lat": -37.854434,
+          "lon": 144.982485,
+          "street": "St Kilda Road"
+        },
+        {
+          "id": "node/2900798126",
+          "lat": -37.767764,
+          "lon": 144.959071,
+          "fee": "no",
+          "street": "Prentice Street"
+        },
+        {
+          "id": "node/3176128919",
+          "lat": -37.805944,
+          "lon": 144.90566,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Moreland Street"
+        },
+        {
+          "id": "node/5579708540",
+          "lat": -37.774406,
+          "lon": 144.998071,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "High Street"
+        },
+        {
+          "id": "node/13518345001",
+          "lat": -37.856244,
+          "lon": 144.99193,
+          "openingHours": "24/7",
+          "street": "Peel Street"
+        },
+        {
+          "id": "node/6191482453",
+          "lat": -37.773917,
+          "lon": 144.915508,
+          "street": "St Leonards Road"
+        },
+        {
+          "id": "node/9101318090",
+          "lat": -37.759216,
+          "lon": 144.974607,
+          "street": "Holmes Street"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:37:37.752Z"
     }
   }
 }

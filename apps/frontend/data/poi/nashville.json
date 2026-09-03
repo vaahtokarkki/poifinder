@@ -1,16 +1,29 @@
 {
   "city": "nashville",
-  "generatedAt": "2026-08-23T04:36:55.932Z",
+  "generatedAt": "2026-09-03T17:32:00.528Z",
   "categories": {
     "toilets": {
       "count": 17,
-      "pois": [],
-      "updatedAt": "2026-08-21T04:02:13.172Z"
+      "pois": [
+        {
+          "id": "node/10856035676",
+          "lat": 36.161305,
+          "lon": -86.77949,
+          "context": "Office Building"
+        },
+        {
+          "id": "node/12363047655",
+          "lat": 36.107711,
+          "lon": -86.816388,
+          "context": "The Mall at Green Hills"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:31:43.168Z"
     },
     "drinking-water": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:13.725Z"
+      "updatedAt": "2026-09-03T17:31:44.497Z"
     },
     "playgrounds": {
       "count": 83,
@@ -65,10 +78,10 @@
           "lon": -86.724198
         }
       ],
-      "updatedAt": "2026-08-21T04:02:14.315Z"
+      "updatedAt": "2026-09-03T17:31:45.321Z"
     },
     "parking": {
-      "count": 1370,
+      "count": 1369,
       "pois": [
         {
           "id": "way/402072580",
@@ -189,13 +202,6 @@
           "lon": -86.799753
         },
         {
-          "id": "way/1389196181",
-          "name": "Parking Lot 69",
-          "lat": 36.147004,
-          "lon": -86.807008,
-          "fee": "no"
-        },
-        {
           "id": "way/370611106",
           "name": "East Garage",
           "lat": 36.14172,
@@ -257,12 +263,18 @@
           "name": "Bandywood Fashion Square",
           "lat": 36.105165,
           "lon": -86.817008
+        },
+        {
+          "id": "way/552649524",
+          "name": "Faculty Parking Lot",
+          "lat": 36.09821,
+          "lon": -86.767874
         }
       ],
-      "updatedAt": "2026-08-21T04:02:15.054Z"
+      "updatedAt": "2026-09-03T17:31:46.473Z"
     },
     "charging-stations": {
-      "count": 11,
+      "count": 13,
       "pois": [
         {
           "id": "node/12944721949",
@@ -303,7 +315,7 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:15.391Z"
+      "updatedAt": "2026-09-03T17:31:46.907Z"
     },
     "gas-stations": {
       "count": 65,
@@ -422,7 +434,7 @@
           "lon": -86.69804
         }
       ],
-      "updatedAt": "2026-08-21T04:02:15.793Z"
+      "updatedAt": "2026-09-03T17:31:47.348Z"
     },
     "ice-cream": {
       "count": 18,
@@ -535,7 +547,7 @@
           "lon": -86.85131
         }
       ],
-      "updatedAt": "2026-08-21T04:02:16.171Z"
+      "updatedAt": "2026-09-03T17:31:47.868Z"
     },
     "dog-parks": {
       "count": 16,
@@ -572,12 +584,12 @@
           "address": "Ohio Avenue 5700"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:16.494Z"
+      "updatedAt": "2026-09-03T17:31:48.387Z"
     },
     "picnic-spots": {
       "count": 45,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:16.933Z"
+      "updatedAt": "2026-09-03T17:31:49.573Z"
     },
     "viewpoints": {
       "count": 5,
@@ -589,12 +601,12 @@
           "lon": -86.718972
         }
       ],
-      "updatedAt": "2026-08-21T04:02:17.376Z"
+      "updatedAt": "2026-09-03T17:31:50.151Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:17.763Z"
+      "updatedAt": "2026-09-03T17:31:50.535Z"
     },
     "atms": {
       "count": 24,
@@ -672,11 +684,29 @@
           "lon": -86.817348
         }
       ],
-      "updatedAt": "2026-08-21T04:02:18.173Z"
+      "updatedAt": "2026-09-03T17:31:50.990Z"
     },
     "post-boxes": {
       "count": 5,
       "pois": [
+        {
+          "id": "node/2407389194",
+          "lat": 36.146768,
+          "lon": -86.793208,
+          "street": "Music Square South"
+        },
+        {
+          "id": "node/570271278",
+          "lat": 36.149715,
+          "lon": -86.800153,
+          "street": "Terrace Place"
+        },
+        {
+          "id": "node/6982108330",
+          "lat": 36.140858,
+          "lon": -86.793548,
+          "street": "16th Avenue South"
+        },
         {
           "id": "node/12490647301",
           "name": "The UPS Store",
@@ -685,11 +715,35 @@
           "address": "White Bridge Pike 73 #103"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:18.553Z"
+      "updatedAt": "2026-09-03T17:31:52.053Z"
     },
     "recycling": {
       "count": 11,
       "pois": [
+        {
+          "id": "node/12663628095",
+          "lat": 36.161246,
+          "lon": -86.778861,
+          "street": "Rep. John Lewis Way North"
+        },
+        {
+          "id": "node/570271293",
+          "lat": 36.149719,
+          "lon": -86.802083,
+          "street": "West End Avenue"
+        },
+        {
+          "id": "node/7692895682",
+          "lat": 36.141448,
+          "lon": -86.755844,
+          "street": "Factory Street"
+        },
+        {
+          "id": "node/7039340090",
+          "lat": 36.155927,
+          "lon": -86.739281,
+          "street": "Freightliner Drive"
+        },
         {
           "id": "way/753399164",
           "name": "Omohundro Center | Residential Waste & Recycling Facility",
@@ -711,12 +765,12 @@
           "lon": -86.719084
         }
       ],
-      "updatedAt": "2026-08-21T04:02:19.000Z"
+      "updatedAt": "2026-09-03T17:31:53.419Z"
     },
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:19.352Z"
+      "updatedAt": "2026-09-03T17:31:53.865Z"
     },
     "libraries": {
       "count": 21,
@@ -865,17 +919,17 @@
           "address": "Clarksville Pike 4400"
         }
       ],
-      "updatedAt": "2026-08-21T04:02:19.706Z"
+      "updatedAt": "2026-09-03T17:31:54.315Z"
     },
     "outdoor-gyms": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:20.056Z"
+      "updatedAt": "2026-09-03T17:31:54.765Z"
     },
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:20.412Z"
+      "updatedAt": "2026-09-03T17:31:55.207Z"
     },
     "shelters": {
       "count": 5,
@@ -887,7 +941,7 @@
           "lon": -86.805972
         }
       ],
-      "updatedAt": "2026-08-21T04:02:20.975Z"
+      "updatedAt": "2026-09-03T17:31:55.933Z"
     },
     "rest-areas": {
       "count": 12,
@@ -969,12 +1023,12 @@
           "lon": -86.771862
         }
       ],
-      "updatedAt": "2026-08-21T04:02:21.330Z"
+      "updatedAt": "2026-09-03T17:31:56.368Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-21T04:02:21.643Z"
+      "updatedAt": "2026-09-03T17:31:56.754Z"
     },
     "post-offices": {
       "count": 17,
@@ -1060,17 +1114,17 @@
           "lon": -86.731849
         }
       ],
-      "updatedAt": "2026-08-23T04:36:54.041Z"
+      "updatedAt": "2026-09-03T17:31:57.161Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:54.434Z"
+      "updatedAt": "2026-09-03T17:31:57.507Z"
     },
     "fireplaces": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:55.258Z"
+      "updatedAt": "2026-09-03T17:31:58.547Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1080,12 +1134,78 @@
     "benches": {
       "count": 132,
       "pois": [],
-      "updatedAt": "2026-08-23T04:36:55.831Z"
+      "updatedAt": "2026-09-03T17:32:00.428Z"
     },
     "compressed-air": {
       "count": 0,
       "pois": [],
       "updatedAt": "2026-08-18T03:58:39.119Z"
+    },
+    "bicycle-repair": {
+      "count": 12,
+      "pois": [
+        {
+          "id": "node/9970165696",
+          "lat": 36.156836,
+          "lon": -86.786032,
+          "openingHours": "24/7",
+          "street": "11th Avenue South"
+        },
+        {
+          "id": "node/12897997751",
+          "lat": 36.159134,
+          "lon": -86.769251,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rolling Mill Hill Greenway"
+        },
+        {
+          "id": "node/10183398458",
+          "lat": 36.162584,
+          "lon": -86.800393,
+          "openingHours": "24/7",
+          "street": "Pump Track"
+        },
+        {
+          "id": "node/8830295985",
+          "lat": 36.173342,
+          "lon": -86.760391,
+          "openingHours": "24/7",
+          "street": "Woodland Street"
+        },
+        {
+          "id": "node/12898210989",
+          "lat": 36.185613,
+          "lon": -86.818704,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Taxi drop off and pick up"
+        },
+        {
+          "id": "node/6723974553",
+          "lat": 36.166046,
+          "lon": -86.728472,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Shelby Park Greenway"
+        },
+        {
+          "id": "node/3969384301",
+          "lat": 36.131711,
+          "lon": -86.82024,
+          "openingHours": "24/7",
+          "street": "The Grove at Whitworth"
+        },
+        {
+          "id": "node/12461997076",
+          "lat": 36.190254,
+          "lon": -86.7041,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Shadow Lane"
+        }
+      ],
+      "updatedAt": "2026-09-03T17:31:59.848Z"
     }
   }
 }

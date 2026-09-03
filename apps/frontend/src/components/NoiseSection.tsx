@@ -7,7 +7,7 @@ import { useOsmElement } from "../hooks/useOsmElement";
 import { shapeSamplePoints } from "../geo";
 import type { OsmRef } from "../api/overpass";
 import { analytics } from "../analytics";
-import { BAND_COLOUR } from "../map/noiseTiles";
+import { BAND_COLOUR, NOISE_SOURCE_LINKS } from "../map/noiseTiles";
 import type { NoiseBand } from "../map/noiseTiles";
 
 /**
@@ -203,6 +203,18 @@ const NoiseExplanation: React.FC<{ open: boolean; onClose: () => void }> = ({
 
         <p>{words.aboutLimit}</p>
         <p className="noise-explanation-source">{words.aboutSource}</p>
+        {/* As in the air section: the map credits this layer only while the
+            wash is drawn, and the band is read from the tiles either way */}
+        <ul className="noise-explanation-credits">
+          {NOISE_SOURCE_LINKS.map(source => (
+            <li key={source.label}>
+              <a href={source.href} target="_blank" rel="noreferrer noopener">
+                {source.label}
+              </a>
+              <span> — {source.licence}</span>
+            </li>
+          ))}
+        </ul>
 
         <div className="noise-explanation-actions">
           <Button onClick={onClose} size="small">

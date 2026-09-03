@@ -1832,6 +1832,28 @@ button.layers-tile {
   color: #80868b !important;
 }
 
+/*
+ * The source credits at the foot of an explanation dialog.
+ *
+ * A list rather than a sentence, because each line is a source and the licence
+ * it is used under, and those pair up. Set at the size of the caption above it:
+ * this is a notice rather than something to read.
+ */
+.air-explanation-credits,
+.noise-explanation-credits {
+  margin: 0.4em 0 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: #80868b;
+}
+
+.air-explanation-credits li,
+.noise-explanation-credits li {
+  margin: 0;
+}
+
 .air-explanation-actions {
   display: flex;
   justify-content: flex-end;

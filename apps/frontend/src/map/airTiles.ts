@@ -100,6 +100,37 @@ export const AIR_ATTRIBUTION =
   // which OSM data is used and what for
   'city boundaries from OpenStreetMap';
 
+/**
+ * The same credit as a list, for the popup's explanation dialog.
+ *
+ * The map control gets one line of HTML because that is all it has room for.
+ * The dialog has room for the licence each source is used under, and it is the
+ * only place a reader who never switches the layer on is told where the number
+ * in their popup came from — see OverlayAttribution, which only credits a
+ * layer while it is drawn.
+ *
+ * Names and licence identifiers are proper nouns, so none of this is
+ * translated.
+ */
+export const AIR_SOURCE_LINKS: ReadonlyArray<{
+  label: string;
+  href: string;
+  licence: string;
+}> = [
+  { label: "EEA", href: "https://www.eea.europa.eu/", licence: "ODC-BY" },
+  { label: "OpenAQ", href: "https://openaq.org/", licence: "ODC-BY, CC BY 4.0" },
+  {
+    label: "Sensor.Community",
+    href: "https://sensor.community/",
+    licence: "ODbL",
+  },
+  {
+    label: "OpenStreetMap",
+    href: "https://www.openstreetmap.org/copyright",
+    licence: "ODbL",
+  },
+];
+
 export const AIR_SOURCE_ID = "wayside-air";
 export const AIR_LAYER_ID = "wayside-air-fill";
 

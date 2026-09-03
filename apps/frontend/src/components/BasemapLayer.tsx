@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useMap } from "react-leaflet";
 import { maplibreGL } from "@maplibre/maplibre-gl-leaflet";
 import type { RequestParameters, StyleSpecification } from "maplibre-gl";
-import { NOISE_ATTRIBUTION, installNoiseWhenBasemapReady, noiseTilesConfigured } from "../map/noiseTiles";
-import { AIR_ATTRIBUTION, airTilesConfigured, installAirWhenBasemapReady } from "../map/airTiles";
+import { installNoiseWhenBasemapReady } from "../map/noiseTiles";
+import { installAirWhenBasemapReady } from "../map/airTiles";
 import { setGlMap } from "../map/glMap";
 
 /**
@@ -101,7 +101,6 @@ const BasemapLayer = () => {
     let layer: ReturnType<typeof maplibreGL> | undefined;
     let detachNoise: (() => void) | undefined;
     let detachAir: (() => void) | undefined;
-    const credits: string[] = [];
 
     loadStyle(abort.signal)
       .then(style => {
@@ -140,39 +139,6 @@ const BasemapLayer = () => {
          */
         detachAir = installAirWhenBasemapReady(glMap);
 
-        /**
-         * The overlays' credits, put into Leaflet's control by hand.
-         *
-         * Setting `attribution` on a MapLibre source is the documented way to
-         * do this and it does nothing here. The Leaflet adapter walks the
-         * style's sources once, when the style loads, and hands what it finds
-         * to Leaflet's control — but both overlays are added deliberately
-         * *after* that, so their tiles do not compete with the basemap for the
-         * connection. Their attributions were therefore set on sources nobody
-         * ever read, and the map credited CARTO and OpenStreetMap alone.
-         *
-         * That is a licence term rather than a courtesy. The air tiles carry
-         * ODC-BY and CC BY data, both of which require naming the source, and
-         * the noise tiles are an ODbL derivative of OpenStreetMap.
-         *
-         * Added whenever the layer is configured rather than when it is
-         * switched on, because the data is fetched either way: the popup reads
-         * a station snapshot with the wash turned off, and the noise band is
-         * queried from tiles that load at zero opacity.
-         */
-        for (const [configured, credit] of [
-          [noiseTilesConfigured, NOISE_ATTRIBUTION],
-          [airTilesConfigured, AIR_ATTRIBUTION],
-        ] as [boolean, string][]) {
-          if (!configured) continue;
-          try {
-            map.attributionControl?.addAttribution(credit);
-            credits.push(credit);
-          } catch {
-            // A map without an attribution control is a map with nothing to
-            // add to, which is not worth breaking the basemap over
-          }
-        }
       })
       .catch((error: unknown) => {
         if (abort.signal.aborted) return;
@@ -185,15 +151,6 @@ const BasemapLayer = () => {
       abort.abort();
       detachNoise?.();
       detachAir?.();
-      // Removed on the way out, or a style reload leaves the same credit in
-      // the control twice
-      for (const credit of credits) {
-        try {
-          map.attributionControl?.removeAttribution(credit);
-        } catch {
-          /* nothing to remove from */
-        }
-      }
       setGlMap(null);
       if (layer) map.removeLayer(layer);
     };

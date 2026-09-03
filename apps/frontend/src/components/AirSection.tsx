@@ -4,7 +4,7 @@ import { getLocale, interpolate, resolve, ui } from "../copy";
 import { CATEGORIES } from "../constants";
 import { useAirReading } from "../hooks/useAirQuality";
 import { analytics } from "../analytics";
-import { BAND_COLOUR } from "../map/airTiles";
+import { AIR_SOURCE_LINKS, BAND_COLOUR } from "../map/airTiles";
 import type { AirBand } from "../map/airTiles";
 
 /**
@@ -203,6 +203,19 @@ const AirExplanation: React.FC<{ open: boolean; onClose: () => void }> = ({
 
         <p>{words.aboutLimit}</p>
         <p className="air-explanation-source">{words.aboutSource}</p>
+        {/* The credit, and the licence each source is used under. Here as well
+            as on the map because the map only credits a layer while it is
+            drawn, and this row exists for readers who never switch it on */}
+        <ul className="air-explanation-credits">
+          {AIR_SOURCE_LINKS.map(source => (
+            <li key={source.label}>
+              <a href={source.href} target="_blank" rel="noreferrer noopener">
+                {source.label}
+              </a>
+              <span> — {source.licence}</span>
+            </li>
+          ))}
+        </ul>
 
         <div className="air-explanation-actions">
           <Button onClick={onClose} size="small">

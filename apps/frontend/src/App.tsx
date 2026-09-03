@@ -4,6 +4,7 @@ import { Map, latLngBounds, point as pixelPoint } from 'leaflet';
 import { useCallback, useEffect, useRef, useState } from "react";
 import { GeoJSON, MapContainer, useMapEvent } from "react-leaflet";
 import BasemapLayer from "./components/BasemapLayer";
+import OverlayAttribution from "./components/OverlayAttribution";
 import CategorySelect from "./components/CategorySelect";
 import LanguageSelect from "./components/LanguageSelect";
 import PoiMarkers from "./PoiMarkers";
@@ -1242,6 +1243,9 @@ const App = () => {
           </div>
         )}
         <BasemapLayer />
+        {/* Credits for whatever is drawn over it. Inside the map because it
+            needs Leaflet's own attribution control, which useMap reaches */}
+        <OverlayAttribution noiseVisible={noiseVisible} airVisible={airVisible} />
         <UserPositionMarker position={userPosition} />
         <PoiMarkers markers={filteredMarkers} categories={category} onNotice={showNotice} />
         {routeGeoJson && displaySearchItem === "routes" && (

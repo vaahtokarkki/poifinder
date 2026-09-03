@@ -59,6 +59,19 @@ const MAX_ZOOM = 12;
  */
 export const NOISE_ATTRIBUTION = "Noise modelled from OpenStreetMap";
 
+/** The same credit as a list, for the popup's explanation dialog */
+export const NOISE_SOURCE_LINKS: ReadonlyArray<{
+  label: string;
+  href: string;
+  licence: string;
+}> = [
+  {
+    label: "OpenStreetMap",
+    href: "https://www.openstreetmap.org/copyright",
+    licence: "ODbL",
+  },
+];
+
 export const NOISE_SOURCE_ID = "wayside-noise";
 export const NOISE_LAYER_ID = "wayside-noise-fill";
 

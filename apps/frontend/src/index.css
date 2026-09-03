@@ -1051,7 +1051,18 @@ button.layers-tile {
   overflow-wrap: break-word;
 }
 
-.poi-popup-subtitle {
+/*
+ * Scoped through `.leaflet-popup-content`, and it has to be — this was the one
+ * paragraph in the popup that was not, and it cost the header half its height.
+ *
+ * Leaflet sets `.leaflet-popup-content p { margin: 1.3em 0 }`, which at this
+ * size is about 16px above and below. That selector is one class and one type,
+ * so it outranks a bare `.poi-popup-subtitle`, and the 2px asked for here never
+ * reached the screen: the category sat a line and a half under the name it
+ * belongs to, with as much space again beneath it. Every other paragraph in
+ * this popup was already scoped for exactly this reason.
+ */
+.poi-popup .leaflet-popup-content .poi-popup-subtitle {
   margin: 2px 0 0 0;
   font-size: 0.78rem;
   color: #5f6368;
@@ -1147,13 +1158,20 @@ button.layers-tile {
   text-decoration-style: dotted;
 }
 
-.poi-popup-link {
+/*
+ * Scoped for the reason the edit link below is: `.leaflet-container a` paints
+ * every link on the map #0078A8 and outranks a single class, so the colour
+ * asked for here never reached the screen. Exactly the case that rule's own
+ * note calls easy to miss — both are blue, and the difference between
+ * Leaflet's teal and this one only shows when they sit side by side.
+ */
+.poi-popup .leaflet-popup-content .poi-popup-link {
   color: #1976d2;
   font-weight: 500;
   text-decoration: none;
 }
 
-.poi-popup-link:hover {
+.poi-popup .leaflet-popup-content .poi-popup-link:hover {
   text-decoration: underline;
 }
 
@@ -1581,23 +1599,38 @@ button.layers-tile {
  * the wrong place — a thing you can press should be somewhere the eye can find
  * without reading the paragraph above it first.
  */
-.poi-popup-noise-about {
+/*
+ * Styled as the "edit this point in OpenStreetMap" link at the foot of the
+ * popup, because it is the same kind of offer: an aside about where the line
+ * above came from, not part of the account of the place. It was a blue
+ * underlined link, and two of them — noise and air — pulled the eye straight
+ * past the readings they belong to.
+ *
+ * Still a <button>, since it opens a dialog rather than going anywhere, so it
+ * keeps the reset that makes a button look like text. Only the colour, weight
+ * and underline are borrowed. Leaflet's `.leaflet-container a` rule that forces
+ * the edit link to be scoped does not reach a button, but this is scoped the
+ * same way regardless: the two should stay identical, and a later change to one
+ * should not silently miss the other.
+ */
+.poi-popup .leaflet-popup-content .poi-popup-noise-about {
   display: block;
-  margin-top: 0.35em;
+  margin-top: 0.5em;
   padding: 0;
   border: 0;
   background: none;
   font-family: inherit;
-  font-size: 0.72rem;
-  color: #1967d2;
-  text-decoration: underline;
+  font-size: 0.7rem;
+  color: #9aa0a6;
+  font-weight: 600;
+  text-decoration: none;
   text-align: left;
   cursor: pointer;
 }
 
-.poi-popup-noise-about:hover,
-.poi-popup-noise-about:focus-visible {
-  color: #174ea6;
+.poi-popup .leaflet-popup-content .poi-popup-noise-about:hover,
+.poi-popup .leaflet-popup-content .poi-popup-noise-about:focus-visible {
+  text-decoration: underline;
 }
 
 /* ---------- The explanation dialog ---------- */
@@ -1762,23 +1795,38 @@ button.layers-tile {
  * the wrong place — a thing you can press should be somewhere the eye can find
  * without reading the paragraph above it first.
  */
-.poi-popup-air-about {
+/*
+ * Styled as the "edit this point in OpenStreetMap" link at the foot of the
+ * popup, because it is the same kind of offer: an aside about where the line
+ * above came from, not part of the account of the place. It was a blue
+ * underlined link, and two of them — noise and air — pulled the eye straight
+ * past the readings they belong to.
+ *
+ * Still a <button>, since it opens a dialog rather than going anywhere, so it
+ * keeps the reset that makes a button look like text. Only the colour, weight
+ * and underline are borrowed. Leaflet's `.leaflet-container a` rule that forces
+ * the edit link to be scoped does not reach a button, but this is scoped the
+ * same way regardless: the two should stay identical, and a later change to one
+ * should not silently miss the other.
+ */
+.poi-popup .leaflet-popup-content .poi-popup-air-about {
   display: block;
-  margin-top: 0.35em;
+  margin-top: 0.5em;
   padding: 0;
   border: 0;
   background: none;
   font-family: inherit;
-  font-size: 0.72rem;
-  color: #1967d2;
-  text-decoration: underline;
+  font-size: 0.7rem;
+  color: #9aa0a6;
+  font-weight: 600;
+  text-decoration: none;
   text-align: left;
   cursor: pointer;
 }
 
-.poi-popup-air-about:hover,
-.poi-popup-air-about:focus-visible {
-  color: #174ea6;
+.poi-popup .leaflet-popup-content .poi-popup-air-about:hover,
+.poi-popup .leaflet-popup-content .poi-popup-air-about:focus-visible {
+  text-decoration: underline;
 }
 
 /* ---------- The explanation dialog ---------- */

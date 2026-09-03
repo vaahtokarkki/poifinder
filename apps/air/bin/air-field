@@ -333,7 +333,24 @@ def band_polygons(generator, lower, upper):
     return polygons
 
 
-def load_boundary(path, buffer_km, slugs):
+def buffer_outward(geometry, km):
+    """A shapely geometry buffered outward by a distance in kilometres.
+
+    In a local equirectangular frame centred on this geometry's own latitude
+    rather than one shared across everything being published. A degree of
+    longitude is 68 km at Berlin's latitude, 62 km at Reykjavík's and 111 at
+    the equator, so a single shared frame for a set spanning the whole
+    continent would get most of them wrong; a buffer built city by city and
+    then unioned gets each one right where it actually sits.
+    """
+    lat0 = math.radians(geometry.centroid.y)
+    scale = max(math.cos(lat0), 0.05)
+    to_km = lambda x, y: (x * KM_PER_DEGREE_LON * scale, y * KM_PER_DEGREE_LAT)
+    to_degrees = lambda x, y: (x / (KM_PER_DEGREE_LON * scale), y / KM_PER_DEGREE_LAT)
+    return transform(to_degrees, transform(to_km, geometry).buffer(km))
+
+
+def load_boundary(path, buffer_km, point_buffer_km, slugs):
     """The published area: city boundaries, buffered outwards by --buffer-km.
 
     A boundary rather than a circle, because a city is not a disc. Berlin is
@@ -348,11 +365,14 @@ def load_boundary(path, buffer_km, slugs):
     see, and somebody looking at a playground in Potsdam is asking the same
     question as somebody looking at one in Zehlendorf.
 
-    Buffered in kilometres rather than degrees. A degree of longitude is 68 km
-    at Berlin's latitude and 111 at the equator, so a buffer written in degrees
-    would be an ellipse that changes shape as it moves north — 10 km on the
-    sides and 15 on the top. The transform below flattens the local frame to
-    kilometres, buffers there, and puts it back.
+    A feature marked `"boundaryType": "point"` — see fetch-boundaries, which
+    writes one when Nominatim never offered a shape for the place at all — is
+    buffered at --point-buffer-km instead, wider than an outline's buffer
+    rather than the same width. A 10 km margin is calibrated to how far past a
+    line on a map somebody stops thinking of themselves as being in the city;
+    a point has no line to begin with; it is a single estimate of where the
+    centre is, and a bigger circle is what keeps that estimate's error from
+    quietly shrinking the area a monitor there is allowed to speak for.
     """
     with open(path) as handle:
         collection = json.load(handle)
@@ -373,23 +393,18 @@ def load_boundary(path, buffer_km, slugs):
     if not features:
         raise SystemExit(f"{path} holds no boundary to publish")
 
-    area = unary_union([shape(feature["geometry"]) for feature in features])
+    buffered = []
+    names = []
+    for feature in features:
+        is_point = (feature.get("properties") or {}).get("boundaryType") == "point"
+        radius = point_buffer_km if is_point else buffer_km
+        buffered.append(buffer_outward(shape(feature["geometry"]), radius))
+        names.append(
+            (feature.get("properties") or {}).get("name")
+            or (feature.get("properties") or {}).get("slug")
+        )
 
-    # A local equirectangular frame in kilometres, centred on what is being
-    # published. Good to a fraction of a percent over a few hundred kilometres,
-    # which is far finer than a 10 km buffer needs
-    lat0 = math.radians(area.centroid.y)
-    scale = max(math.cos(lat0), 0.05)
-    to_km = lambda x, y: (x * KM_PER_DEGREE_LON * scale, y * KM_PER_DEGREE_LAT)
-    to_degrees = lambda x, y: (x / (KM_PER_DEGREE_LON * scale), y / KM_PER_DEGREE_LAT)
-
-    buffered = transform(to_degrees, transform(to_km, area).buffer(buffer_km))
-    names = [
-        (feature.get("properties") or {}).get("name")
-        or (feature.get("properties") or {}).get("slug")
-        for feature in features
-    ]
-    return buffered, names
+    return unary_union(buffered), names
 
 
 def parse_bbox(raw):
@@ -457,6 +472,12 @@ def main():
         help="how far past the boundary to publish (default 10)",
     )
     parser.add_argument(
+        "--point-buffer-km",
+        type=float,
+        default=20.0,
+        help="how far past a point to publish, for a city with no boundary (default 20)",
+    )
+    parser.add_argument(
         "--mask-km",
         type=float,
         default=75.0,
@@ -472,7 +493,7 @@ def main():
     clip = parse_bbox(arguments.bbox)
     if arguments.boundary:
         boundary, names = load_boundary(
-            arguments.boundary, arguments.buffer_km, arguments.cities
+            arguments.boundary, arguments.buffer_km, arguments.point_buffer_km, arguments.cities
         )
         print(
             f"  publishing {', '.join(names)} + {arguments.buffer_km:g} km",

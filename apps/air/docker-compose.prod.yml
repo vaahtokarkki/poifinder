@@ -63,16 +63,30 @@ services:
       # unlike every other value here it should not be in the repository
       OPENAQ_API_KEY: ${OPENAQ_API_KEY:?set OPENAQ_API_KEY in .env beside this file}
 
-      # What gets published: every boundary in boundaries.geojson, which is
-      # all 103 European cities the app has a page for, each buffered outwards
-      # by AIR_BUFFER_KM. Empty means all of them; name slugs to narrow it.
+      # What gets published: every European capital plus every European city
+      # of a million or more residents, each buffered outwards by
+      # AIR_BUFFER_KM (or AIR_POINT_BUFFER_KM for the handful published from a
+      # point rather than an outline — see fetch-boundaries). Explicit slugs
+      # rather than empty ("every boundary in boundaries.geojson"): that file
+      # also still carries the older, broader set of cities the app has a
+      # page for, cached rather than deleted, and most of those are neither a
+      # capital nor a million-plus city.
       #
       # The boundary clips the output and never the interpolation. Stations
       # well outside a city still shape the field inside it — air crosses a
       # boundary and a build that dropped them would draw a false gradient
       # along it.
-      AIR_CITIES: ""
+      AIR_CITIES: >-
+        amsterdam,andorra-la-vella,ankara,athens,barcelona,belgrade,berlin,bern,
+        birmingham,bratislava,brussels,bucharest,budapest,chisinau,cologne,
+        copenhagen,dublin,hamburg,helsinki,istanbul,kharkiv,krasnodar,kyiv,
+        lisbon,ljubljana,london,luxembourg,madrid,milan,minsk,monaco,moscow,
+        munich,nicosia,nizhny-novgorod,odesa,oslo,paris,podgorica,prague,
+        pristina,reykjavik,riga,rome,rostov-on-don,saint-petersburg,san-marino,
+        sarajevo,skopje,sofia,stockholm,tallinn,tbilisi,tirana,vaduz,valletta,
+        vatican-city,vienna,vilnius,volgograd,voronezh,warsaw,yerevan,zagreb
       AIR_BUFFER_KM: "10"
+      AIR_POINT_BUFFER_KM: "20"
 
       # Has to match MIN_ZOOM and MAX_ZOOM in src/map/airTiles.ts. The client
       # asks for tiles inside this range and overzooms above it

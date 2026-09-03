@@ -58,6 +58,7 @@ services:
       # this clips what is published and never what is computed
       AIR_CITIES: ${AIR_CITIES:-}
       AIR_BUFFER_KM: ${AIR_BUFFER_KM:-10}
+      AIR_POINT_BUFFER_KM: ${AIR_POINT_BUFFER_KM:-20}
       AIR_MIN_ZOOM: ${AIR_MIN_ZOOM:-2}
       AIR_MAX_ZOOM: ${AIR_MAX_ZOOM:-8}
       AIR_GRID_DEGREES: ${AIR_GRID_DEGREES:-0.02}

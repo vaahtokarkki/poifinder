@@ -2,11 +2,12 @@
 #
 # Build the air quality tiles, from OpenAQ to a directory of .pbf tiles.
 #
-#   build-air-tiles                    fetch, interpolate, tile
-#   build-air-tiles --cities=berlin    publish only these cities
-#   build-air-tiles --buffer-km=10     how far past their boundaries to publish
-#   build-air-tiles --stations=FILE    reuse a snapshot instead of fetching
-#   build-air-tiles --keep-work        leave the intermediate files behind
+#   build-air-tiles                        fetch, interpolate, tile
+#   build-air-tiles --cities=berlin        publish only these cities
+#   build-air-tiles --buffer-km=10         how far past a boundary to publish
+#   build-air-tiles --point-buffer-km=20   how far past a boundary-less point
+#   build-air-tiles --stations=FILE        reuse a snapshot instead of fetching
+#   build-air-tiles --keep-work            leave the intermediate files behind
 #
 # Three steps and no arguments in the ordinary case, which is the difference
 # between this and the noise builder next door. That one takes a list of areas
@@ -73,6 +74,10 @@ CITIES="${AIR_CITIES:-}"
 # How far past each city's administrative line to publish
 BUFFER_KM="${AIR_BUFFER_KM:-10}"
 
+# How far past a city's *point* to publish, for the handful with no boundary
+# at all — see load_boundary in air-field for why this is wider than BUFFER_KM
+POINT_BUFFER_KM="${AIR_POINT_BUFFER_KM:-20}"
+
 # The boundaries themselves, baked into the image beside the scripts
 BOUNDARY_FILE="${AIR_BOUNDARY_FILE:-/opt/wayside/boundaries.geojson}"
 
@@ -87,6 +92,7 @@ for argument in "$@"; do
     --stations=*) STATIONS_IN="${argument#--stations=}" ;;
     --cities=*) CITIES="${argument#--cities=}" ;;
     --buffer-km=*) BUFFER_KM="${argument#--buffer-km=}" ;;
+    --point-buffer-km=*) POINT_BUFFER_KM="${argument#--point-buffer-km=}" ;;
     --*) echo "unknown option: $argument" >&2; exit 2 ;;
     *) echo "unexpected argument: $argument" >&2; exit 2 ;;
   esac
@@ -111,10 +117,16 @@ BANDS="$WORK_DIR/bands.geojson"
 # it. Worked out here in one place so the fetch and the field cannot disagree
 # about where the edges are
 read -r PUBLISH_BBOX INGEST_BBOX <<EOF
-$(python3 - "$BOUNDARY_FILE" "${CITIES:-}" "$BUFFER_KM" "$INFLUENCE_KM" <<'BOX'
+$(python3 - "$BOUNDARY_FILE" "${CITIES:-}" "$BUFFER_KM" "$POINT_BUFFER_KM" "$INFLUENCE_KM" <<'BOX'
 import json, math, sys
 
-path, cities, buffer_km, influence_km = sys.argv[1], sys.argv[2], float(sys.argv[3]), float(sys.argv[4])
+path, cities, buffer_km, point_buffer_km, influence_km = (
+    sys.argv[1], sys.argv[2], float(sys.argv[3]), float(sys.argv[4]), float(sys.argv[5])
+)
+# The wider of the two margins, since a handful of features are published from
+# a point at point_buffer_km rather than from an outline at buffer_km, and this
+# box only has to be generous enough to cover whichever one applies
+margin_km = max(buffer_km, point_buffer_km)
 features = json.load(open(path))["features"]
 if cities.strip():
     wanted = {c.strip() for c in cities.split(",") if c.strip()}
@@ -154,8 +166,8 @@ def widen(box, km):
             min(180.0, e + dlon), min(90.0, n + dlat))
 
 fmt = lambda b: ",".join(f"{v:.4f}" for v in b)
-print(fmt(widen((west, south, east, north), buffer_km)),
-      fmt(widen((west, south, east, north), buffer_km + influence_km)))
+print(fmt(widen((west, south, east, north), margin_km)),
+      fmt(widen((west, south, east, north), margin_km + influence_km)))
 BOX
 )
 EOF
@@ -174,7 +186,7 @@ fi
 
 # ------------------------------------------------------------------ the field
 
-log "field: ${GRID_DEGREES}° grid, ${INFLUENCE_KM} km influence, ${MASK_KM} km mask, ${BUFFER_KM} km past ${CITIES:-every boundary}"
+log "field: ${GRID_DEGREES}° grid, ${INFLUENCE_KM} km influence, ${MASK_KM} km mask, ${BUFFER_KM} km (${POINT_BUFFER_KM} km for a point) past ${CITIES:-every boundary}"
 air-field \
   --stations="$STATIONS" \
   --output="$BANDS" \
@@ -183,6 +195,7 @@ air-field \
   --mask-km="$MASK_KM" \
   --boundary="$BOUNDARY_FILE" \
   --buffer-km="$BUFFER_KM" \
+  --point-buffer-km="$POINT_BUFFER_KM" \
   ${CITIES:+--cities="$CITIES"}
 
 # ------------------------------------------------------------------ the tiles
@@ -227,7 +240,7 @@ tippecanoe \
 # in, so that a popup can say "18 µg/m³, 12 km away" — a measurement and its
 # distance — instead of the interpolated colour underneath it
 PUBLISHED="$WORK_DIR/stations.published.json"
-python3 - "$STATIONS" "$PUBLISHED" "$MASK_KM" "$BOUNDARY_FILE" "${CITIES:-}" "$BUFFER_KM" <<'TRIM'
+python3 - "$STATIONS" "$PUBLISHED" "$MASK_KM" "$BOUNDARY_FILE" "${CITIES:-}" "$BUFFER_KM" "$POINT_BUFFER_KM" <<'TRIM'
 import json, math, sys
 
 from shapely.geometry import shape
@@ -235,31 +248,44 @@ from shapely.ops import transform, unary_union
 
 source, destination = sys.argv[1], sys.argv[2]
 mask_km = float(sys.argv[3])
-boundary_path, cities, buffer_km = sys.argv[4], sys.argv[5], float(sys.argv[6])
+boundary_path, cities, buffer_km, point_buffer_km = (
+    sys.argv[4], sys.argv[5], float(sys.argv[6]), float(sys.argv[7])
+)
 
 with open(source) as handle:
     snapshot = json.load(handle)
 rows = snapshot["stations"]
 
-# Trimmed to the published shape rather than to a box around it, and for 103
-# cities scattered from Reykjavik to Athens that is the whole difference. The
-# box is the whole of Europe, so a box trim keeps every station on the
-# continent and the client downloads all of them to answer one popup.
+# Trimmed to the published shape rather than to a box around it, and for a
+# set scattered from Reykjavik to Yerevan that is the whole difference. A box
+# around all of it is the whole of Europe, which would keep every station on
+# the continent and have the client download all of them to answer one popup.
 features = json.load(open(boundary_path))["features"]
 if cities.strip():
     wanted = {slug.strip() for slug in cities.split(",") if slug.strip()}
     features = [f for f in features if f["properties"].get("slug") in wanted]
 
-area = unary_union([shape(f["geometry"]) for f in features])
-
-# Buffered by the published buffer plus the mask radius: a popup just inside
+# Each feature buffered in its own local frame and by its own radius, then
+# unioned — the same approach load_boundary in air-field takes, and for the
+# same two reasons: a shared frame gets the buffer wrong everywhere but its
+# centre, and a feature published from a point rather than an outline (see
+# fetch-boundaries) is published at point_buffer_km, not buffer_km.
+#
+# Buffered by the published radius plus the mask radius: a popup just inside
 # the published edge may legitimately quote a monitor just outside it, and
 # dropping that station would replace a nearby reading with a distant one
-lat0 = math.radians(area.centroid.y)
-scale = max(math.cos(lat0), 0.05)
-to_km = lambda x, y: (x * 111.320 * scale, y * 110.574)
-to_degrees = lambda x, y: (x / (111.320 * scale), y / 110.574)
-keep = transform(to_degrees, transform(to_km, area).buffer(buffer_km + mask_km))
+buffered = []
+for feature in features:
+    is_point = (feature.get("properties") or {}).get("boundaryType") == "point"
+    radius = (point_buffer_km if is_point else buffer_km) + mask_km
+    geometry = shape(feature["geometry"])
+    lat0 = math.radians(geometry.centroid.y)
+    scale = max(math.cos(lat0), 0.05)
+    to_km = lambda x, y, scale=scale: (x * 111.320 * scale, y * 110.574)
+    to_degrees = lambda x, y, scale=scale: (x / (111.320 * scale), y / 110.574)
+    buffered.append(transform(to_degrees, transform(to_km, geometry).buffer(radius)))
+
+keep = unary_union(buffered)
 
 # One prepared geometry rather than a contains() call per station against a
 # multipolygon with a hundred parts

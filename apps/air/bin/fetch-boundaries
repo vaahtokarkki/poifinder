@@ -10,6 +10,12 @@
 # 38 km north to south, and no radius fits both it and Reykjavík; the outline
 # OpenStreetMap already draws is the shape people mean when they say the name.
 #
+# A handful of the smallest states have no such outline in Nominatim's answer
+# at all — nothing but a node, however the query is asked. Those are written
+# as a Point rather than dropped, with "boundaryType": "point" in their
+# properties; see load_boundary in air-field for the wider radius that gets
+# buffered around one of these instead of a real outline.
+#
 # THIS IS A CACHE, AND THAT IS THE POINT
 #
 # Every boundary already in --out is kept and never fetched again. A council
@@ -107,18 +113,50 @@ def administrative_parent(results):
     return None
 
 
+def first_point(results):
+    """A coordinate to fall back to when nothing in the answer has a shape.
+
+    The initial query's own top hit rather than the parent's: a fallback
+    should sit as close as possible to the place actually asked for, and a
+    parent administrative area can be centred a fair distance from the city
+    named inside it.
+    """
+    for result in results:
+        lat, lon = result.get("lat"), result.get("lon")
+        if lat is None or lon is None:
+            continue
+        try:
+            return float(lon), float(lat)
+        except (TypeError, ValueError):
+            continue
+    return None
+
+
 def fetch(name, country_code):
-    """The city's administrative boundary, retrying once through its parent."""
+    """The city's administrative boundary, retrying once through its parent.
+
+    Returns (result, geometry, point): geometry is None and point is a
+    (lon, lat) pair when neither query turned up a shape at all — a handful
+    of the smallest states, where every hit Nominatim offers is a node
+    rather than a relation. The caller falls back to publishing a circle
+    around the point rather than dropping the place; see load_boundary in
+    air-field for why that circle is wider than a real outline's buffer.
+    """
     results = search(name, country_code)
     result, geometry = boundary_in(results)
     if geometry is not None:
-        return result, geometry
+        return result, geometry, None
+
+    point = first_point(results)
 
     parent = administrative_parent(results)
-    if not parent or parent.casefold() == name.casefold():
-        return None, None
-    time.sleep(DELAY_SECONDS)
-    return boundary_in(search(parent, country_code))
+    if parent and parent.casefold() != name.casefold():
+        time.sleep(DELAY_SECONDS)
+        parent_result, parent_geometry = boundary_in(search(parent, country_code))
+        if parent_geometry is not None:
+            return parent_result, parent_geometry, None
+
+    return None, None, point
 
 
 def simplify(geometry):
@@ -211,34 +249,51 @@ def main():
             failed.append(slug)
             continue
         try:
-            result, geometry = fetch(city["name"], city.get("countryCode", ""))
+            result, geometry, point = fetch(city["name"], city.get("countryCode", ""))
         except Exception as error:
             print(f"  {slug}: {error}", file=sys.stderr)
             failed.append(slug)
             continue
-        if geometry is None:
-            print(f"  {slug}: no administrative boundary in the answer", file=sys.stderr)
+
+        if geometry is not None:
+            existing[slug] = {
+                "type": "Feature",
+                "properties": {
+                    "slug": slug,
+                    "name": city["name"],
+                    "osmType": result.get("osm_type"),
+                    "osmId": result.get("osm_id"),
+                    "source": "OpenStreetMap via Nominatim",
+                    "licence": "ODbL 1.0",
+                    "simplifiedDegrees": SIMPLIFY_DEGREES,
+                },
+                "geometry": simplify(geometry),
+            }
+            print(
+                f"  [{index}/{len(todo)}] {slug}: "
+                f"{result.get('osm_type')}/{result.get('osm_id')}",
+                file=sys.stderr,
+            )
+        elif point is not None:
+            # No polygon anywhere in the answer. Published from the point
+            # instead of dropped — see load_boundary in air-field, which
+            # buffers a "point" feature at a wider radius than an outline
+            existing[slug] = {
+                "type": "Feature",
+                "properties": {
+                    "slug": slug,
+                    "name": city["name"],
+                    "source": "OpenStreetMap via Nominatim",
+                    "licence": "ODbL 1.0",
+                    "boundaryType": "point",
+                },
+                "geometry": {"type": "Point", "coordinates": [point[0], point[1]]},
+            }
+            print(f"  [{index}/{len(todo)}] {slug}: point only, no boundary", file=sys.stderr)
+        else:
+            print(f"  {slug}: no administrative boundary or point in the answer", file=sys.stderr)
             failed.append(slug)
             continue
-
-        existing[slug] = {
-            "type": "Feature",
-            "properties": {
-                "slug": slug,
-                "name": city["name"],
-                "osmType": result.get("osm_type"),
-                "osmId": result.get("osm_id"),
-                "source": "OpenStreetMap via Nominatim",
-                "licence": "ODbL 1.0",
-                "simplifiedDegrees": SIMPLIFY_DEGREES,
-            },
-            "geometry": simplify(geometry),
-        }
-        print(
-            f"  [{index}/{len(todo)}] {slug}: "
-            f"{result.get('osm_type')}/{result.get('osm_id')}",
-            file=sys.stderr,
-        )
         time.sleep(DELAY_SECONDS)
 
     # Sorted, so that adding a city is a diff of one block rather than a

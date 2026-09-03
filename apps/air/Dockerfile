@@ -60,9 +60,9 @@ COPY bin/ /usr/local/bin/
 RUN chmod +x /usr/local/bin/build-air-tiles /usr/local/bin/air-latest \
       /usr/local/bin/air-field
 
-# The city boundaries the tiles are clipped to — every European city the app
-# has a page for, fetched once by bin/fetch-boundaries and cached in the file.
-# Baked in rather than mounted,
+# The city boundaries the tiles are clipped to — every European capital plus
+# every European city of a million or more residents, fetched once by
+# bin/fetch-boundaries and cached in the file. Baked in rather than mounted,
 # for the reason apps/noise bakes cities.json: an image should be a complete
 # answer to "what does this build" without a file next to it. They are
 # OpenStreetMap relations via Nominatim, so they are ODbL — which is most of
@@ -72,6 +72,7 @@ COPY boundaries.geojson /opt/wayside/boundaries.geojson
 ENV AIR_BOUNDARY_FILE=/opt/wayside/boundaries.geojson \
     AIR_CITIES= \
     AIR_BUFFER_KM=10 \
+    AIR_POINT_BUFFER_KM=20 \
     AIR_TILE_DIR=/tiles \
     AIR_WORK_DIR=/work \
     AIR_MIN_ZOOM=2 \

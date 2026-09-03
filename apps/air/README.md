@@ -4,8 +4,12 @@ Current fine-particle levels (PM2.5) from reference monitors and the
 Sensor.Community citizen network, interpolated between them and served as
 vector tiles. Six bands, the European Air Quality Index's own.
 
-Published for the 103 European cities the app has a page for, each clipped to
-its own administrative outline plus ten kilometres.
+Published for every European capital and every European city of a million or
+more residents — 64 cities today — each clipped to its own administrative
+outline plus ten kilometres. A handful of the smallest states have no such
+outline in OpenStreetMap at all, only a point; those are clipped to a wider
+twenty kilometre circle around it instead. See "Choosing what to publish"
+below.
 
 The app draws them as an optional overlay and puts the nearest station's
 reading in the popups of places you would linger in. Both are behind
@@ -18,7 +22,8 @@ so a checkout with no tile server is a working checkout.
 | [`bin/build-air-tiles`](bin/build-air-tiles) | The pipeline: fetch, interpolate, tile |
 | [`bin/air-latest`](bin/air-latest) | Current PM2.5 from OpenAQ and Sensor.Community |
 | [`bin/fetch-boundaries`](bin/fetch-boundaries) | Fetches city outlines from Nominatim, once, and caches them |
-| [`boundaries.geojson`](boundaries.geojson) | Those outlines: 103 European cities, committed |
+| [`boundaries.geojson`](boundaries.geojson) | Those outlines, committed and cached |
+| [`extra-cities.json`](extra-cities.json) | Names and country codes for the cities `apps/noise/cities.json` doesn't carry |
 | [`bin/air-field`](bin/air-field) | The model: inverse distance weighting, contoured, masked |
 
 ## Development
@@ -58,23 +63,41 @@ same map and any difference in it is the change.
 
 ```bash
 bin/fetch-boundaries --cities=../noise/cities.json --out=boundaries.geojson \
-  --bbox=-25,34,45,72
+  minsk moscow kyiv istanbul ...
+bin/fetch-boundaries --cities=extra-cities.json --out=boundaries.geojson \
+  minsk moscow kyiv istanbul ...
 ```
 
-Every boundary already in the file is kept and never fetched again, so that
-command is a two second no-op today and a two second one-city fetch when a city
-is added. A council redrawing a limit is not on the schedule an hourly tile
-build runs to, and asking Nominatim 103 times an hour for answers that have not
-changed is how a project gets blocked. `--refresh` names the cities to fetch
-again when one really has moved.
+Two source files rather than one, because the cities this app has a full page
+for (`../noise/cities.json`) and the cities this layer publishes are different
+sets with a large overlap rather than one contained in the other: every
+European capital and every European city of a million or more residents,
+regardless of whether wayside has POI data for it. Most of that set is already
+in the noise builder's list — the capitals of the countries it covers, mostly
+— and [`extra-cities.json`](extra-cities.json) carries only the rest: names and
+country codes for places like Moscow, Kyiv and Ankara that this app otherwise
+knows nothing about. `fetch-boundaries` takes either file as `--cities`, and
+looks up whichever slugs are named on the command line against it.
 
-Six of the hundred and three needed a second lookup. Searching "Copenhagen"
-returns exactly one result — a `place` node with a point and no polygon — and
-asking for more results does not help, because there is only ever one. What
-that answer carries is its administrative parent in the display name, and
-*that* has the boundary: København → Københavns Kommune, Athens → Δήμος
-Αθηναίων, Glasgow → Glasgow City. So a miss is retried once through the parent
-rather than given up on, which is a rule instead of six special cases.
+Every boundary already in the output file is kept and never fetched again, so
+a command above is a few seconds' no-op today and a few seconds' fetch per city
+when one is added. A council redrawing a limit is not on the schedule an hourly
+tile build runs to, and asking Nominatim sixty-odd times an hour for answers
+that have not changed is how a project gets blocked. `--refresh` names the
+cities to fetch again when one really has moved.
+
+A handful of these needed a second lookup, and a smaller handful needed a third
+kind of answer entirely. Searching "Copenhagen" returns exactly one result — a
+`place` node with a point and no polygon — and asking for more results does not
+help, because there is only ever one. What that answer carries is its
+administrative parent in the display name, and *that* has the boundary:
+København → Københavns Kommune, Athens → Δήμος Αθηναίων, Glasgow → Glasgow
+City. So a miss is retried once through the parent rather than given up on,
+which is a rule instead of a special case for each. For the smallest states —
+Monaco, San Marino, Vatican City among them — even the parent has nothing but a
+point, and there the point itself is what gets published; see "Choosing what to
+publish" for the wider buffer that gets built around one of these instead of a
+real outline.
 
 ### Choosing what to publish
 
@@ -93,6 +116,13 @@ The buffer is what makes it useful rather than merely administrative. Nobody
 stops caring about the air one metre past a line they cannot see, and somebody
 looking at a playground in Potsdam is asking the same question as somebody in
 Zehlendorf.
+
+A feature with no outline at all — see above — is buffered by
+`--point-buffer-km` instead, twenty kilometres by default rather than ten. A
+point is a single estimate of where a place's centre is rather than a drawn
+line, and it carries none of the margin a real boundary already has built into
+it; the wider radius is what keeps that estimate's error from quietly shrinking
+the area a monitor there is allowed to speak for.
 
 The boundary clips what is *published*, never what is *read*. Stations out to
 the influence radius still shape the field inside it, because air crosses

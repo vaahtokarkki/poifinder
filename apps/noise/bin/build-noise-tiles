@@ -138,7 +138,7 @@ fi
 # anyone has fetched a shape for it
 AREA_TSV="$WORK_DIR/areas.tsv"
 python3 - "$CITIES_FILE" "$AREA_TSV" "$PAD_METRES" "$BIG_AREA_KM2" \
-  "${WANTED[*]-}" "${BOXES[*]-}" <<'PY'
+  "${WANTED[*]-}" "${BOXES[*]-}" "$BOUNDARIES_FILE" <<'PY'
 import json, math, os, sys
 
 

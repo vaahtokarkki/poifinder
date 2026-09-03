@@ -164,11 +164,19 @@ jobs:
             esac
 
             echo "Rebasing onto the current $GITHUB_REF_NAME (attempt $attempt)."
-            if ! git pull --rebase origin "$GITHUB_REF_NAME"; then
+            # --autostash, and it is not optional. The commit above stages only
+            # data/poi, so anything else the job touched is still sitting in the
+            # working tree — npm ci rewriting package-lock.json is enough — and
+            # `git pull --rebase` refuses outright with "cannot pull with
+            # rebase: You have unstaged changes" rather than conflicting. That
+            # failure is indistinguishable from a real conflict unless you look,
+            # and it reported one that had not happened.
+            if ! git pull --rebase --autostash origin "$GITHUB_REF_NAME"; then
               git rebase --abort || true
-              echo "The rebase conflicted, which means something other than"
-              echo "this job changed data/poi. Refusing to guess: rerun the"
-              echo "workflow once main is settled."
+              echo "Could not rebase onto $GITHUB_REF_NAME. Either data/poi was"
+              echo "changed by something other than this job, or the rebase"
+              echo "could not start. Refusing to guess: read the error above and"
+              echo "rerun the workflow once main is settled."
               exit 1
             fi
           done

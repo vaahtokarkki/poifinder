@@ -92,6 +92,20 @@ IDW_POWER = 2.0
 # northern Alaska, comfortably inside
 LATITUDE_LIMIT = 82.0
 
+# The smallest polygon worth keeping, as a fraction of one grid cell's area.
+#
+# Bands are built by subtracting nested regions, so wherever one band almost
+# fills another the difference is a hairline ring a fraction of a cell wide.
+# Those are artifacts of contouring a grid, not features of the air: the grid
+# cannot resolve anything smaller than a cell, so a shape smaller than a
+# quarter of one is describing its own sampling.
+#
+# Left in, they do visible harm. tippecanoe simplifies a sliver until it
+# degenerates into a LineString, a LineString draws nothing in a fill layer,
+# and the map ends up with hairline seams between bands that look like a
+# rendering fault. A z8 build of Berlin had ten of them before this.
+MIN_PART_CELLS = 0.25
+
 # How many points a station's coverage circle is drawn with. These get unioned
 # by the thousand, so the count is a direct cost; 32 puts the worst chord error
 # under half a percent of the radius, which is metres at these sizes
@@ -258,6 +272,22 @@ def coverage_mask(stations, mask_km):
     # dense region several hundred circles collapse into one polygon, and doing
     # that pairwise is quadratic for the same answer
     return unary_union(circles)
+
+
+def drop_slivers(geometry, minimum_area):
+    """The same shape without the parts too small for the grid to have meant.
+
+    Holes are left alone. A hole that small is a hole the contour actually
+    found, and filling it in would be inventing coverage rather than removing
+    an artifact — the parts this drops are separate islands, not gaps.
+    """
+    if geometry.is_empty:
+        return geometry
+    parts = geometry.geoms if hasattr(geometry, "geoms") else [geometry]
+    kept = [part for part in parts if part.area >= minimum_area]
+    if not kept:
+        return Polygon()
+    return kept[0] if len(kept) == 1 else MultiPolygon(kept)
 
 
 def band_polygons(generator, lower, upper):
@@ -481,6 +511,9 @@ def main():
     # there and none of the shape the field has
     tolerance = arguments.grid / 4.0
 
+    # One grid cell is grid², so this is a quarter of a cell in square degrees
+    minimum_part_area = MIN_PART_CELLS * arguments.grid * arguments.grid
+
     # Cumulative regions rather than one contour per band, and the difference
     # matters more than it looks. Asking the generator for band 2 and band 3
     # separately gives two polygons that were computed from the same contour
@@ -525,6 +558,7 @@ def main():
         # build says it publishes. Re-clipping every band with the same
         # geometry cannot reintroduce the overlaps the nesting removed
         shape = shape.intersection(mask)
+        shape = drop_slivers(shape, minimum_part_area)
         if shape.is_empty:
             continue
 

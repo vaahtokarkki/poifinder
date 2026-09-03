@@ -402,6 +402,92 @@ def band_features(clip, noisy, moderate):
     return [(3, noisy_band), (2, moderate_band), (1, quiet_band)]
 
 
+# How far a detached part may sit from the main one and still be modelled, in
+# kilometres. The same rule and the same reason as in build-noise-tiles: a
+# city's exclave in the North Sea is part of the city and is not part of the
+# map anybody is reading
+MAX_PART_KM = 50.0
+
+
+def boundary_clip(path, slug, buffer_metres, parser):
+    """
+    A city's own outline, in metres, widened by `buffer_metres`.
+
+    A city is not a circle, and the circle this replaced had to be one radius
+    wide enough for the loudest edge of the widest city — which for Berlin was
+    a 12 km disc covering a fifth of it. The boundary is the shape
+    OpenStreetMap already draws; the buffer is the part that has to be a
+    number, because a motorway outside the city line is still heard inside it.
+
+    Returns the clip and the projection it is in, because the projection has to
+    be centred on the shape and the shape is only known here.
+    """
+    with open(path, encoding="utf-8") as handle:
+        collection = json.load(handle)
+    feature = next(
+        (
+            f
+            for f in collection.get("features", [])
+            if (f.get("properties") or {}).get("slug") == slug
+        ),
+        None,
+    )
+    if feature is None:
+        parser.error(f"no boundary for {slug!r} in {path}")
+
+    geometry = feature["geometry"]
+    parts = (
+        geometry["coordinates"]
+        if geometry["type"] == "MultiPolygon"
+        else [geometry["coordinates"]]
+    )
+    parts = [part for part in parts if part and part[0]]
+    if not parts:
+        parser.error(f"the boundary for {slug!r} has no rings")
+
+    def ring_area(ring):
+        total = 0.0
+        for i in range(len(ring) - 1):
+            total += ring[i][0] * ring[i + 1][1] - ring[i + 1][0] * ring[i][1]
+        return abs(total) / 2
+
+    def centre(ring):
+        return (
+            sum(c[0] for c in ring) / len(ring),
+            sum(c[1] for c in ring) / len(ring),
+        )
+
+    parts.sort(key=lambda part: ring_area(part[0]), reverse=True)
+    main_lon, main_lat = centre(parts[0][0])
+    kept = []
+    for part in parts:
+        lon, lat = centre(part[0])
+        east = (lon - main_lon) * 111.320 * math.cos(math.radians(main_lat))
+        north = (lat - main_lat) * 110.540
+        if math.hypot(east, north) <= MAX_PART_KM:
+            kept.append(part)
+
+    projection = LocalMetres(main_lat, main_lon)
+    polygons = []
+    for part in kept:
+        # Ring zero is the outline, the rest are holes in it — a lake or an
+        # enclave the city does not administer. Both are kept: a hole in the
+        # clip is a hole in the bands, which is the truth about that ground
+        outer = projection.forward(part[0])
+        holes = [projection.forward(ring) for ring in part[1:] if len(ring) > 3]
+        try:
+            polygons.append(Polygon(outer, holes))
+        except Exception:
+            continue
+    if not polygons:
+        parser.error(f"the boundary for {slug!r} did not make a polygon")
+
+    shape_metres = make_valid(unary_union(polygons))
+    # One buffer over the union rather than one per part, so two parts closer
+    # together than the buffer merge instead of overlapping
+    return make_valid(shape_metres.buffer(buffer_metres, BUFFER_QUAD_SEGMENTS * 4)), projection
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--lines", required=True)
@@ -413,9 +499,16 @@ def main():
     parser.add_argument("--radius", type=float)
     # ...or any rectangle, as west,south,east,north in degrees
     parser.add_argument("--bbox")
+    # ...or the city's own administrative boundary, buffered
+    parser.add_argument("--boundary", help="boundaries.geojson, keyed by --slug")
+    parser.add_argument("--boundary-buffer", type=float, default=10000.0)
     arguments = parser.parse_args()
 
-    if arguments.bbox:
+    if arguments.boundary:
+        clip, projection = boundary_clip(
+            arguments.boundary, arguments.slug, arguments.boundary_buffer, parser
+        )
+    elif arguments.bbox:
         west, south, east, north = (float(part) for part in arguments.bbox.split(","))
         if west >= east or south >= north:
             parser.error(f"--bbox must be west,south,east,north: got {arguments.bbox}")
@@ -431,7 +524,10 @@ def main():
         projection = LocalMetres(arguments.lat, arguments.lon)
         clip = Point(0, 0).buffer(arguments.radius, 16)
     else:
-        parser.error("give either --bbox, or all of --lat, --lon and --radius")
+        parser.error(
+            "give either --boundary with --slug, or --bbox, "
+            "or all of --lat, --lon and --radius"
+        )
 
     buckets, read, kept = read_sources(arguments.lines, projection, clip)
     noisy = union_buffers(buckets[THRESHOLD_NOISY])

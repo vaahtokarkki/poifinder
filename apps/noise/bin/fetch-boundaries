@@ -1,0 +1,137 @@
+#!/usr/bin/env python3
+#
+# City administrative boundaries, for the areas the tiles are built for.
+#
+#   fetch-boundaries --cities=cities.json --out=boundaries.geojson berlin munich
+#
+# A city is not a circle. Berlin's own boundary reaches 45 km east to west and
+# 38 km north to south, and a 12 km circle on its centre covered about a fifth
+# of it while spending a quarter of its area on Brandenburg. Hamburg reaches
+# down the Elbe, Cologne is long against the Rhine. The radius that fits one is
+# wrong for the next, and no single number fits any of them well.
+#
+# So the clip is the boundary OpenStreetMap already draws, and the only number
+# left is how far past it to model — see NOISE_BOUNDARY_BUFFER in
+# build-noise-tiles, which exists because a motorway outside the city line is
+# still heard inside it.
+#
+# The boundaries come from Nominatim, which serves the geometry of the same
+# relation the map is drawn from, and are committed rather than fetched at
+# build time: a boundary changes when a council redraws it, which is not on
+# the schedule a tile build runs to, and one download per city per run is a
+# request to somebody else's free service for an answer that has not changed.
+#
+# Simplified to SIMPLIFY_DEGREES, which at these latitudes is around a hundred
+# metres. The clip is buffered by ten kilometres afterwards, so detail finer
+# than that cannot survive into the answer anyway, and the raw relations are
+# megabytes apiece.
+
+import argparse
+import json
+import sys
+import time
+import urllib.parse
+import urllib.request
+
+NOMINATIM = "https://nominatim.openstreetmap.org/search"
+
+# A shape this coarse still traces a city; anything finer is lost to the ten
+# kilometre buffer that follows it
+SIMPLIFY_DEGREES = 0.001
+
+# Nominatim asks for one request per second and an identifying agent. Both are
+# in its usage policy rather than enforced, which is the reason to keep them
+USER_AGENT = "wayside.cc noise tile builder (https://wayside.cc)"
+DELAY_SECONDS = 1.2
+
+
+def fetch(name, country_code):
+    query = {
+        "q": name,
+        "countrycodes": country_code.lower(),
+        "format": "jsonv2",
+        "polygon_geojson": "1",
+        "limit": "8",
+    }
+    request = urllib.request.Request(
+        f"{NOMINATIM}?{urllib.parse.urlencode(query)}",
+        headers={"User-Agent": USER_AGENT},
+    )
+    with urllib.request.urlopen(request, timeout=60) as response:
+        results = json.load(response)
+
+    # The first result is whatever Nominatim ranked highest, which for a city
+    # name is sometimes a suburb of it, a street in it, or a hotel named after
+    # it. What is wanted is the administrative area, and it has to be a shape:
+    # a point cannot be a clip
+    for result in results:
+        geometry = result.get("geojson") or {}
+        if geometry.get("type") not in ("Polygon", "MultiPolygon"):
+            continue
+        if result.get("category") != "boundary":
+            continue
+        return result, geometry
+    return None, None
+
+
+def simplify(geometry):
+    """Shapely if it is here, the raw shape if it is not."""
+    try:
+        from shapely.geometry import mapping, shape
+    except ImportError:
+        return geometry
+    simplified = shape(geometry).simplify(SIMPLIFY_DEGREES, preserve_topology=True)
+    return mapping(simplified)
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--cities", required=True, help="cities.json, for names and countries")
+    parser.add_argument("--out", required=True)
+    parser.add_argument("slugs", nargs="+")
+    arguments = parser.parse_args()
+
+    with open(arguments.cities, encoding="utf-8") as handle:
+        payload = json.load(handle)
+    cities = payload if isinstance(payload, list) else payload.get("cities", [])
+    known = {city["slug"]: city for city in cities}
+
+    features = []
+    for slug in arguments.slugs:
+        city = known.get(slug)
+        if city is None:
+            print(f"  {slug}: not in {arguments.cities}", file=sys.stderr)
+            continue
+        try:
+            result, geometry = fetch(city["name"], city.get("countryCode", ""))
+        except Exception as error:
+            print(f"  {slug}: {error}", file=sys.stderr)
+            continue
+        if geometry is None:
+            print(f"  {slug}: no administrative boundary in the answer", file=sys.stderr)
+            continue
+        features.append(
+            {
+                "type": "Feature",
+                "properties": {
+                    "slug": slug,
+                    "name": city["name"],
+                    "osmType": result.get("osm_type"),
+                    "osmId": result.get("osm_id"),
+                    "source": "OpenStreetMap via Nominatim",
+                    "licence": "ODbL 1.0",
+                    "simplifiedDegrees": SIMPLIFY_DEGREES,
+                },
+                "geometry": simplify(geometry),
+            }
+        )
+        print(f"  {slug}: {result.get('osm_type')}/{result.get('osm_id')}", file=sys.stderr)
+        time.sleep(DELAY_SECONDS)
+
+    with open(arguments.out, "w", encoding="utf-8") as handle:
+        json.dump({"type": "FeatureCollection", "features": features}, handle)
+    print(f"wrote {arguments.out}: {len(features)} boundaries", file=sys.stderr)
+
+
+if __name__ == "__main__":
+    main()

@@ -60,11 +60,21 @@ COPY bin/ /usr/local/bin/
 RUN chmod +x /usr/local/bin/build-air-tiles /usr/local/bin/air-latest \
       /usr/local/bin/air-field
 
-ENV AIR_TILE_DIR=/tiles \
+# The city boundaries the tiles are clipped to. Baked in rather than mounted,
+# for the reason apps/noise bakes cities.json: an image should be a complete
+# answer to "what does this build" without a file next to it. They are
+# OpenStreetMap relations via Nominatim, so they are ODbL — which is most of
+# why the tiles this produces are ODbL too, and the README says so
+COPY boundaries.geojson /opt/wayside/boundaries.geojson
+
+ENV AIR_BOUNDARY_FILE=/opt/wayside/boundaries.geojson \
+    AIR_CITIES=berlin \
+    AIR_BUFFER_KM=10 \
+    AIR_TILE_DIR=/tiles \
     AIR_WORK_DIR=/work \
     AIR_MIN_ZOOM=2 \
     AIR_MAX_ZOOM=8 \
-    AIR_GRID_DEGREES=0.1 \
+    AIR_GRID_DEGREES=0.02 \
     AIR_INFLUENCE_KM=150 \
     AIR_MASK_KM=75 \
     AIR_MAX_AGE_HOURS=6

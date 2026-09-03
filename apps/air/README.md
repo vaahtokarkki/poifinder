@@ -13,7 +13,8 @@ so a checkout with no tile server is a working checkout.
 | File | What it is |
 | --- | --- |
 | [`bin/build-air-tiles`](bin/build-air-tiles) | The pipeline: fetch, interpolate, tile |
-| [`bin/air-latest`](bin/air-latest) | Every current PM2.5 reading OpenAQ has |
+| [`bin/air-latest`](bin/air-latest) | Current PM2.5 from OpenAQ and Sensor.Community |
+| [`boundaries.geojson`](boundaries.geojson) | The city outlines the tiles are clipped to |
 | [`bin/air-field`](bin/air-field) | The model: inverse distance weighting, contoured, masked |
 
 ## Development
@@ -49,22 +50,28 @@ docker compose run --rm builder build-air-tiles --stations=/work/stations.json
 The field is deterministic given the stations, so the second run rebuilds the
 same map and any difference in it is the change.
 
-### Building one country
+### Choosing what to publish
 
 ```bash
-docker compose run --rm builder build-air-tiles --bbox=5.87,47.27,15.04,55.15
+docker compose run --rm builder build-air-tiles --cities=berlin --buffer-km=10
 ```
 
-West, south, east, north in degrees — the order osmium, Overpass and the noise
-builder all write a box in. `AIR_BBOX` in `.env` does the same thing for every
-run.
+The published area is a city's administrative boundary, buffered outwards. A
+city is not a circle: Berlin is 45 km across and 38 km top to bottom with a
+ragged edge, and no radius fits it — one large enough to hold Spandau spends a
+quarter of its area on Brandenburg. The outlines live in
+[`boundaries.geojson`](boundaries.geojson), taken from the OpenStreetMap
+relations Nominatim serves.
 
-The box clips what is *published*, never what is *computed*. Stations outside
-it still shape the field inside it, because air crosses borders and a build
-that dropped foreign monitors would draw a false gradient along every one of
-them. It also trims `stations.json` to the box plus the mask radius, so a
-one-country layer costs a fraction of a global one to serve: Germany published
-693 stations out of 8,100 fetched.
+The buffer is what makes it useful rather than merely administrative. Nobody
+stops caring about the air one metre past a line they cannot see, and somebody
+looking at a playground in Potsdam is asking the same question as somebody in
+Zehlendorf.
+
+The boundary clips what is *published*, never what is *read*. Stations out to
+the influence radius still shape the field inside it, because air crosses
+boundaries and a build that dropped the monitors just over the line would draw
+a false gradient along it.
 
 ## Production
 
@@ -87,11 +94,22 @@ caption already promises, rather than an empty one.
 
 Three steps, and the third is the one that keeps it honest.
 
-**Fetch.** `/v3/parameters/2/latest` returns the most recent value from every
-sensor on the planet measuring PM2.5. That is 21 pages of 1,000 and about
-thirty seconds; the free tier allows 2,000 requests an hour, so an hourly build
-uses roughly 0.3% of the budget. There is no tile cache in this app because
-there is nothing to conserve.
+**Fetch.** Two networks, doing two different jobs.
+
+OpenAQ's `/v3/parameters/2/latest` returns the most recent value from every
+sensor on the planet measuring PM2.5 — 21 pages of 1,000, about thirty seconds.
+These are reference monitors, mostly the EEA's: calibrated instruments run to a
+standard, and sparse. Around Berlin, 88 of them.
+
+Sensor.Community is one static 9 MB file, no key and no rate limit, holding the
+citizen network: SDS011 units in people's gardens and balconies. Around Berlin,
+580 of them after the filtering below — roughly six times as many as the
+reference network and, measured across Germany, 1.6 km apart at the median
+against the reference network's 7.5 km.
+
+So the reference network sets the **level** and the citizen network sets the
+**shape**. That split is the whole design, and the calibration step below is
+what holds it together.
 
 Then most of it is thrown away. On the run this paragraph was written from,
 **8,100 stations survived out of 20,812 rows — 61% dropped.** Almost all of
@@ -104,8 +122,33 @@ air of a day long gone. The rest are negative values from drifting zeros — the
 second row of that same response was `-1.0` — and readings with no usable
 position.
 
-**Interpolate.** Inverse distance weighting onto a 0.1° grid, about 11 km,
-which is finer than the field it samples. Stations within 150 km shape a cell's
+**Calibrate.** The cheap sensors are corrected by one factor per build: every
+citizen sensor with a reference monitor within 10 km is paired with it, and the
+whole network is divided by the median of those ratios. Without it the map
+would change colour at the edge of the dense area purely because the sensors
+there are different — and since the dense areas are cities, cities would read
+systematically cleaner or dirtier than the countryside for no reason but the
+hardware.
+
+The direction of that bias is not the one the datasheets warn about, which is
+worth knowing. SDS011 units are famous for over-reading in damp air, where
+particles carry a shell of water and scatter like something larger. But they
+are optical counters with poor sensitivity at the bottom of their range, and on
+a clear September morning with reference monitors at a median of 7 µg/m³ the
+fitted factor was **0.42** — the citizen network reading *under* half of
+reference, not over. The clamp is symmetric about 1 for exactly that reason.
+
+Three filters run on the citizen network and none of them is optional: indoor
+sensors are dropped (they measure a living room), 999.9 is dropped (that is the
+SDS011 saturating, a fault rather than a reading), and anything more than five
+times the worst reference monitor in the same build is dropped after correction
+— 830 µg/m³ is a fault in Berlin in September and an ordinary afternoon in
+Delhi, so the yardstick has to be the calibrated network rather than a constant.
+
+**Interpolate.** Inverse distance weighting onto a 0.02° grid, about 2 km,
+which the citizen network's 1.6 km median spacing is what justifies. Against
+reference monitors alone this would be inventing detail; the earlier builds
+used 0.1° for that reason. Stations within 150 km shape a cell's
 value, weighted by Shepard's modified form, ((R−d)/(R·d))², rather than plain
 1/d². Plain 1/d² does not reach zero at the search radius, so a station leaving
 a cell's neighbourhood takes a finite weight with it and the field steps — and
@@ -227,13 +270,65 @@ In rough order of what would improve it:
 
 ## Licence
 
-The measurements are OpenAQ's aggregation of government and research monitoring
-networks. OpenAQ publishes under CC BY 4.0; the underlying providers have their
-own terms, which is why the attribution names both the aggregator and the
-networks rather than only the convenient one.
+Three sources, three sets of terms, and the tiles carry all of them.
 
-Note that this is a different footing from `apps/noise` and
-[`apps/frontend/data/poi`](../frontend/data/poi), which are ODbL derivatives of
-OpenStreetMap. Nothing here touches OSM at all — the tiles are built from
-station coordinates and readings — so the two-licence split in the root README
-is unaffected by this directory.
+| What | Source | Terms |
+| --- | --- | --- |
+| Reference readings | EEA and others via OpenAQ | ODC-BY, CC BY 4.0 |
+| Citizen readings | Sensor.Community | ODbL 1.0 / DbCL 1.0 |
+| City outlines | OpenStreetMap via Nominatim | ODbL 1.0 |
+
+**OpenAQ has no single licence, and an earlier version of this file said it
+did.** It aggregates providers under twelve different sets of terms, exposed
+per provider through its `/v3/licenses` resource, and its own documentation is
+explicit that complying with them is the caller's job. Around Berlin the split
+is 178 usable locations against 16 under Poland's GIOS terms and 2 stating no
+licence at all.
+
+So the builder does not take what it is given. `air-latest` holds an
+**allowlist of licence ids** — ODC-BY, CC BY 4.0, CC0 1.0, US Public Domain,
+UK OGL — fetches the licence of every location in the build area, and drops
+every station it has no permission to publish. What each build actually used is
+written into `stations.json` and `wayside.json`, so the question can be
+answered from a tileset rather than from a document that might have drifted
+from it.
+
+The allowlist is keyed by id because names get reformatted, and the ids are
+checked against their expected names on every run: if OpenAQ ever renumbers,
+the build stops rather than quietly publishing whatever moved into slot 10.
+
+### Why it stops at Europe
+
+Not geography — licence compatibility. OpenAQ's catalogue includes CC BY-SA
+4.0, whose share-alike is not one-way compatible with the ODbL that
+Sensor.Community and the boundaries carry, and five sets of bespoke national
+terms that would each have to be read before anything derived from them was
+published. Combining those into one tileset is a conflict rather than a
+paperwork problem, so `air-latest` refuses to leave Europe and refuses any
+licence not on the list.
+
+### What that makes the tiles
+
+ODbL, and share-alike. `apps/noise` already takes this position for the same
+reason — *"the tiles are a derivative database of OpenStreetMap, so they are
+ODbL"* — and vector tiles built from an ODbL boundary and ODbL readings fall
+the same way. An earlier version of this file claimed the opposite, that
+nothing here touched OSM and the repository's two-licence split was therefore
+unaffected. Adding the city boundaries and the citizen network made that false.
+
+So `apps/air` sits beside `apps/noise` and
+[`apps/frontend/data/poi`](../frontend/data/poi) on the ODbL side of the split
+described in the root README. The MIT licence still covers every line of code
+in this directory; it is the tiles it writes that are ODbL.
+
+The attribution in the map control names the networks rather than only the
+aggregator, because ODC-BY and CC BY both require attributing the source and
+"OpenAQ" alone attributes the middleman. See the `attribution` on the source in
+`src/map/airTiles.ts`.
+
+### Not legal advice
+
+The compatibility question above — CC BY-SA 4.0 against ODbL in particular — is
+one where reasonable readings differ and the conservative one is the one this
+acts on. If any of this is going to matter commercially, it wants a lawyer
+rather than a README.

@@ -63,16 +63,15 @@ services:
       # unlike every other value here it should not be in the repository
       OPENAQ_API_KEY: ${OPENAQ_API_KEY:?set OPENAQ_API_KEY in .env beside this file}
 
-      # What gets published, west,south,east,north. Germany, the same box the
-      # Geofabrik extract carries and the one apps/noise builds its German
-      # cities from.
+      # What gets published: these cities' administrative outlines, buffered
+      # outwards. Berlin only for now.
       #
-      # The box clips the output and never the interpolation: stations in
-      # Belgium, Poland and Czechia still shape the field inside Germany,
-      # because air crosses borders and a build that dropped them would draw a
-      # false gradient along every one. Empty publishes the whole world, which
-      # costs the same fetch and about three minutes
-      AIR_BBOX: "5.87,47.27,15.04,55.15"
+      # The boundary clips the output and never the interpolation. Stations in
+      # Brandenburg, and as far out as the influence radius reaches, still
+      # shape the field inside the city — air crosses a boundary and a build
+      # that dropped them would draw a false gradient along it.
+      AIR_CITIES: "berlin"
+      AIR_BUFFER_KM: "10"
 
       # Has to match MIN_ZOOM and MAX_ZOOM in src/map/airTiles.ts. The client
       # asks for tiles inside this range and overzooms above it
@@ -82,7 +81,7 @@ services:
       # The model. See apps/air/README.md — AIR_MASK_KM is the one that decides
       # where the map stops claiming to know anything, and raising it is how
       # this layer would start colouring in places nobody measures
-      AIR_GRID_DEGREES: "0.1"
+      AIR_GRID_DEGREES: "0.02"
       AIR_INFLUENCE_KM: "150"
       AIR_MASK_KM: "75"
 

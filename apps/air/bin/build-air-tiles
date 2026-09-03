@@ -3,7 +3,8 @@
 # Build the air quality tiles, from OpenAQ to a directory of .pbf tiles.
 #
 #   build-air-tiles                    fetch, interpolate, tile
-#   build-air-tiles --bbox=W,S,E,N     publish only this box
+#   build-air-tiles --cities=berlin    publish only these cities
+#   build-air-tiles --buffer-km=10     how far past their boundaries to publish
 #   build-air-tiles --stations=FILE    reuse a snapshot instead of fetching
 #   build-air-tiles --keep-work        leave the intermediate files behind
 #
@@ -17,13 +18,20 @@
 #   2. air-field     inverse distance weighting, contoured, masked to coverage
 #   3. tippecanoe    the same z/x/y.pbf shape apps/noise writes
 #
-# A --bbox restricts what is published, never what is computed. The fetch is
-# global either way — it is one call, and there is no cheaper way to ask — and
-# stations outside the box still shape the field inside it, because air crosses
-# borders and a build that dropped foreign monitors would draw a false gradient
-# along every one of them. What the box does is clip the tiles and trim the
-# station list the client downloads, which is how a layer covering one country
-# costs a fraction of a global one to serve.
+# WHAT GETS PUBLISHED, AND WHAT GETS READ
+#
+# Published: the administrative boundaries of the cities in --cities, buffered
+# outwards by --buffer-km. A city is not a circle — see load_boundary in
+# air-field — and ten kilometres past the line is roughly where somebody stops
+# thinking of themselves as being in the city.
+#
+# Read: everything within the influence radius of that, which is a much larger
+# box. Stations outside the published area still shape the field inside it,
+# because air crosses boundaries and a build that dropped the monitors just
+# over the line would draw a false gradient along it.
+#
+# Both are clamped to Europe by air-latest, and that limit is about licensing
+# rather than geography. See its header.
 #
 # Output goes to $AIR_TILE_DIR/current, holding the tiles and stations.json —
 # the snapshot the field was built from, which the client fetches to put a
@@ -58,9 +66,15 @@ MASK_KM="${AIR_MASK_KM:-75}"
 # air-latest for why a build without it is wrong rather than stale
 MAX_AGE_HOURS="${AIR_MAX_AGE_HOURS:-6}"
 
-# Empty is the whole world. Set to west,south,east,north in degrees — the order
-# osmium, Overpass and the noise builder all write a box in
-BBOX="${AIR_BBOX:-}"
+# Which cities to publish, by slug from the boundaries file. Empty is every
+# boundary in it
+CITIES="${AIR_CITIES:-}"
+
+# How far past each city's administrative line to publish
+BUFFER_KM="${AIR_BUFFER_KM:-10}"
+
+# The boundaries themselves, baked into the image beside the scripts
+BOUNDARY_FILE="${AIR_BOUNDARY_FILE:-/opt/wayside/boundaries.geojson}"
 
 KEEP_WORK=false
 STATIONS_IN=""
@@ -71,7 +85,8 @@ for argument in "$@"; do
     # the model without spending a fetch on it — the field is deterministic
     # given the stations, so the same file gives the same tiles
     --stations=*) STATIONS_IN="${argument#--stations=}" ;;
-    --bbox=*) BBOX="${argument#--bbox=}" ;;
+    --cities=*) CITIES="${argument#--cities=}" ;;
+    --buffer-km=*) BUFFER_KM="${argument#--buffer-km=}" ;;
     --*) echo "unknown option: $argument" >&2; exit 2 ;;
     *) echo "unexpected argument: $argument" >&2; exit 2 ;;
   esac
@@ -90,6 +105,62 @@ fi
 STATIONS="$WORK_DIR/stations.json"
 BANDS="$WORK_DIR/bands.geojson"
 
+[ -s "$BOUNDARY_FILE" ] || { echo "no boundaries file: $BOUNDARY_FILE" >&2; exit 2; }
+
+# Two boxes out of the boundaries: what is published, and what is read to build
+# it. Worked out here in one place so the fetch and the field cannot disagree
+# about where the edges are
+read -r PUBLISH_BBOX INGEST_BBOX <<EOF
+$(python3 - "$BOUNDARY_FILE" "${CITIES:-}" "$BUFFER_KM" "$INFLUENCE_KM" <<'BOX'
+import json, math, sys
+
+path, cities, buffer_km, influence_km = sys.argv[1], sys.argv[2], float(sys.argv[3]), float(sys.argv[4])
+features = json.load(open(path))["features"]
+if cities.strip():
+    wanted = {c.strip() for c in cities.split(",") if c.strip()}
+    features = [f for f in features if f["properties"].get("slug") in wanted]
+    missing = wanted - {f["properties"].get("slug") for f in features}
+    if missing:
+        sys.exit(f"no boundary named {', '.join(sorted(missing))} in {path}")
+if not features:
+    sys.exit("no boundary selected")
+
+def bounds(geometry):
+    xs, ys = [], []
+    def walk(node):
+        if isinstance(node, (int, float)):
+            return
+        if len(node) == 2 and all(isinstance(v, (int, float)) for v in node):
+            xs.append(node[0]); ys.append(node[1]); return
+        for child in node:
+            walk(child)
+    walk(geometry["coordinates"])
+    return min(xs), min(ys), max(xs), max(ys)
+
+west = south = east = north = None
+for feature in features:
+    w, s, e, n = bounds(feature["geometry"])
+    west = w if west is None else min(west, w)
+    south = s if south is None else min(south, s)
+    east = e if east is None else max(east, e)
+    north = n if north is None else max(north, n)
+
+def widen(box, km):
+    w, s, e, n = box
+    dlat = km / 110.574
+    worst = min(max(abs(s), abs(n)), 85.0)
+    dlon = km / (111.320 * max(math.cos(math.radians(worst)), 0.15))
+    return (max(-180.0, w - dlon), max(-90.0, s - dlat),
+            min(180.0, e + dlon), min(90.0, n + dlat))
+
+fmt = lambda b: ",".join(f"{v:.4f}" for v in b)
+print(fmt(widen((west, south, east, north), buffer_km)),
+      fmt(widen((west, south, east, north), buffer_km + influence_km)))
+BOX
+)
+EOF
+[ -n "$INGEST_BBOX" ] || { echo "could not work out the build area" >&2; exit 1; }
+
 # ------------------------------------------------------------------ the fetch
 
 if [ -n "$STATIONS_IN" ]; then
@@ -97,20 +168,22 @@ if [ -n "$STATIONS_IN" ]; then
   log "stations: reusing $STATIONS_IN"
   cp "$STATIONS_IN" "$STATIONS"
 else
-  log "fetch: OpenAQ PM2.5, at most ${MAX_AGE_HOURS}h old"
-  air-latest --output="$STATIONS" --max-age="$MAX_AGE_HOURS"
+  log "fetch: PM2.5 within $INGEST_BBOX, at most ${MAX_AGE_HOURS}h old"
+  air-latest --output="$STATIONS" --max-age="$MAX_AGE_HOURS" --bbox="$INGEST_BBOX"
 fi
 
 # ------------------------------------------------------------------ the field
 
-log "field: ${GRID_DEGREES}° grid, ${INFLUENCE_KM} km influence, ${MASK_KM} km mask${BBOX:+, clipped to $BBOX}"
+log "field: ${GRID_DEGREES}° grid, ${INFLUENCE_KM} km influence, ${MASK_KM} km mask, ${BUFFER_KM} km past ${CITIES:-every boundary}"
 air-field \
   --stations="$STATIONS" \
   --output="$BANDS" \
   --grid="$GRID_DEGREES" \
   --influence-km="$INFLUENCE_KM" \
   --mask-km="$MASK_KM" \
-  ${BBOX:+--bbox="$BBOX"}
+  --boundary="$BOUNDARY_FILE" \
+  --buffer-km="$BUFFER_KM" \
+  ${CITIES:+--cities="$CITIES"}
 
 # ------------------------------------------------------------------ the tiles
 
@@ -154,7 +227,7 @@ tippecanoe \
 # in, so that a popup can say "18 µg/m³, 12 km away" — a measurement and its
 # distance — instead of the interpolated colour underneath it
 PUBLISHED="$WORK_DIR/stations.published.json"
-python3 - "$STATIONS" "$PUBLISHED" "$MASK_KM" "${BBOX:-}" <<'TRIM'
+python3 - "$STATIONS" "$PUBLISHED" "$MASK_KM" "$PUBLISH_BBOX" <<'TRIM'
 import json, math, sys
 
 source, destination = sys.argv[1], sys.argv[2]
@@ -183,6 +256,16 @@ if bbox:
 
 snapshot["stations"] = rows
 snapshot["count"] = len(rows)
+
+# Recount per source after the trim, so the published file describes itself
+# rather than the larger set it was cut from
+sources = snapshot.get("sources") or {}
+if "source" in (snapshot.get("columns") or []):
+    index = snapshot["columns"].index("source")
+    if "reference" in sources:
+        sources["reference"]["count"] = sum(1 for r in rows if r[index] == 0)
+    if "citizen" in sources:
+        sources["citizen"]["count"] = sum(1 for r in rows if r[index] == 1)
 
 with open(destination, "w") as handle:
     json.dump(snapshot, handle, separators=(",", ":"))
@@ -216,6 +299,14 @@ with open(os.path.join(staging, "wayside.json"), "w") as handle:
             "unit": snapshot.get("unit"),
             "stations": snapshot.get("count"),
             "observed": snapshot.get("fetched"),
+            # What this tileset is made of and under what terms. Written here
+            # so that the licence question has an answer sitting beside the
+            # tiles rather than only in a README that can drift from them
+            "sources": snapshot.get("sources"),
+            "boundaries": {
+                "source": "OpenStreetMap via Nominatim",
+                "licence": "ODbL 1.0",
+            },
             "model": {
                 "kind": "idw-shepard",
                 "gridDegrees": grid,

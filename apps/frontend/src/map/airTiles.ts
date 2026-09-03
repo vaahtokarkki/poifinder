@@ -195,8 +195,16 @@ function installAirLayer(map: MaplibreMap): void {
     tiles: [`${TILES_URL}/{z}/{x}/{y}.pbf`],
     minzoom: MIN_ZOOM,
     maxzoom: MAX_ZOOM,
+    // Names the networks rather than only the convenient aggregator. Both
+    // licences here require attributing the source, and "OpenAQ" alone
+    // attributes the middleman: the EEA's monitors are most of the reference
+    // data, Sensor.Community is nearly all of the detail, and the city outline
+    // the tiles are clipped to is OpenStreetMap's
     attribution:
-      '<a href="https://openaq.org/">OpenAQ</a> and the monitoring networks it aggregates',
+      'Air quality: <a href="https://www.eea.europa.eu/">EEA</a> and others via ' +
+      '<a href="https://openaq.org/">OpenAQ</a>, ' +
+      '<a href="https://sensor.community/">Sensor.Community</a>, ' +
+      'boundaries © OpenStreetMap contributors',
   });
 
   /**
@@ -316,6 +324,23 @@ export type AirStation = {
   value: number;
   /** How long before the snapshot was taken this was measured */
   ageMinutes: number;
+  /**
+   * Whether this is a reference monitor rather than a citizen sensor.
+   *
+   * The snapshot carries both. Reference monitors are the EEA's and their
+   * peers: calibrated instruments, run to a standard, and about 90 of them in
+   * the region this publishes. Citizen sensors are Sensor.Community's SDS011
+   * units, roughly six times as many and roughly six times closer together,
+   * corrected in the builder by one factor fitted against co-located reference
+   * monitors.
+   *
+   * That correction is good enough to make the two networks agree about the
+   * level of a region, which is what the interpolated field needs. It is not
+   * good enough to make one uncalibrated sensor a measurement, which is what
+   * the popup would be claiming — so only reference monitors are ever quoted.
+   * See nearestReading.
+   */
+  reference: boolean;
 };
 
 /**
@@ -381,11 +406,14 @@ export function loadStations(): Promise<AirStation[] | null> {
       // this is that order
       snapshot = rows
         .filter(row => Array.isArray(row) && row.length >= 4)
-        .map(([lon, lat, value, ageMinutes]) => ({
+        .map(([lon, lat, value, ageMinutes, source]) => ({
           lon: Number(lon),
           lat: Number(lat),
           value: Number(value),
           ageMinutes: Number(ageMinutes),
+          // Absent in a snapshot written before the citizen network was added,
+          // and every station in one of those is a reference monitor
+          reference: source === undefined || Number(source) === 0,
         }))
         .filter(station => Number.isFinite(station.value));
       return snapshot;
@@ -414,7 +442,15 @@ export type AirReading = {
 };
 
 /**
- * The nearest monitor to a position, or null if none is close enough.
+ * The nearest reference monitor to a position, or null if none is close
+ * enough.
+ *
+ * Reference monitors only, and citizen sensors are skipped however much closer
+ * one of them is. The popup says "measured 3 km away", and that sentence is
+ * only true of a calibrated instrument — a corrected SDS011 reading is a good
+ * enough contribution to a regional field and is not a measurement of
+ * anything on its own. The map keeps the detail they give it; the popup keeps
+ * the provenance.
  *
  * A linear scan, which for a few thousand stations is well under a
  * millisecond and is called once per popup. An index would be faster and would
@@ -434,6 +470,7 @@ export function nearestReading(position: [number, number]): AirReading | null {
   let bestKm = Infinity;
 
   for (const station of snapshot) {
+    if (!station.reference) continue;
     const dy = (station.lat - lat) * KM_PER_DEGREE_LAT;
     const dx = (station.lon - lon) * KM_PER_DEGREE_LON * scale;
     const squared = dy * dy + dx * dx;
@@ -482,6 +519,9 @@ export function nearestReading(position: [number, number]): AirReading | null {
 export type AirCoverage = "covered" | "uncovered" | "unknown";
 
 export function airCoverageAtCenter(): AirCoverage {
+  // Deliberately asks nearestReading, so "covered" means "a popup here would
+  // have something to say" rather than "the wash is drawn here". Those differ
+  // now that the wash is built from citizen sensors the popup will not quote
   const map = getGlMap();
   if (!map || !TILES_URL || !snapshot) return "unknown";
 

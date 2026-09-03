@@ -44,12 +44,17 @@ COPY --from=tippecanoe /usr/local/bin/tile-join /usr/local/bin/tile-join
 
 COPY bin/ /usr/local/bin/
 RUN chmod +x /usr/local/bin/build-noise-tiles /usr/local/bin/noise-bands \
-      /usr/local/bin/validate-bands
+      /usr/local/bin/validate-bands /usr/local/bin/fetch-boundaries
 
 # Generated from src/seo/cities.ts by `npm run noise:cities`. Baked in rather
 # than mounted, so that an image is a complete answer to "which cities does
 # this build" without a file next to it
 COPY cities.json /opt/wayside/cities.json
+
+# The city outlines the clip is cut from, fetched by bin/fetch-boundaries and
+# committed rather than downloaded at build time: a boundary changes when a
+# council redraws one, which is not the schedule a tile build runs to
+COPY boundaries.geojson /opt/wayside/boundaries.geojson
 
 # The deploy list. Baked in for the same reason cities.json is: an image is a
 # complete answer to "what does this build" without a file next to it

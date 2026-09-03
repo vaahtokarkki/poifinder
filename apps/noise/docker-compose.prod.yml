@@ -53,48 +53,10 @@ services:
       - /mnt/hdd1/noise/work:/work
 
     environment:
-      # Which extracts are available to build from. An area is built when its
-      # centre falls inside an extract's header bounding box, so this is the
-      # ceiling on what a run can produce, and areas.txt is the floor.
-      #
-      # 30 extracts, about 31 GB, covering the 60 areas in areas.txt. The
-      # United States and Canada are taken state and province at a time:
-      # us-latest.osm.pbf is 11 GB and would more than double this on its own
-      # for five cities.
-      #
-      # A full cold run is a few hours of downloading before any modelling
-      # starts. The cache volume is what makes that a one-off
-      NOISE_EXTRACTS: >-
-        https://download.geofabrik.de/australia-oceania/australia-latest.osm.pbf
-        https://download.geofabrik.de/europe/belgium-latest.osm.pbf
-        https://download.geofabrik.de/north-america/canada/quebec-latest.osm.pbf
-        https://download.geofabrik.de/north-america/canada/ontario-latest.osm.pbf
-        https://download.geofabrik.de/north-america/canada/british-columbia-latest.osm.pbf
-        https://download.geofabrik.de/south-america/chile-latest.osm.pbf
-        https://download.geofabrik.de/europe/czech-republic-latest.osm.pbf
-        https://download.geofabrik.de/europe/denmark-latest.osm.pbf
-        https://download.geofabrik.de/europe/finland-latest.osm.pbf
-        https://download.geofabrik.de/europe/france-latest.osm.pbf
-        https://download.geofabrik.de/europe/germany-latest.osm.pbf
-        https://download.geofabrik.de/europe/hungary-latest.osm.pbf
-        https://download.geofabrik.de/europe/italy-latest.osm.pbf
-        https://download.geofabrik.de/europe/latvia-latest.osm.pbf
-        https://download.geofabrik.de/asia/malaysia-singapore-brunei-latest.osm.pbf
-        https://download.geofabrik.de/australia-oceania/new-zealand-latest.osm.pbf
-        https://download.geofabrik.de/europe/norway-latest.osm.pbf
-        https://download.geofabrik.de/europe/poland-latest.osm.pbf
-        https://download.geofabrik.de/europe/slovakia-latest.osm.pbf
-        https://download.geofabrik.de/europe/slovenia-latest.osm.pbf
-        https://download.geofabrik.de/europe/spain-latest.osm.pbf
-        https://download.geofabrik.de/europe/sweden-latest.osm.pbf
-        https://download.geofabrik.de/europe/switzerland-latest.osm.pbf
-        https://download.geofabrik.de/asia/thailand-latest.osm.pbf
-        https://download.geofabrik.de/europe/great-britain-latest.osm.pbf
-        https://download.geofabrik.de/north-america/us/new-york-latest.osm.pbf
-        https://download.geofabrik.de/north-america/us/massachusetts-latest.osm.pbf
-        https://download.geofabrik.de/north-america/us/arizona-latest.osm.pbf
-        https://download.geofabrik.de/north-america/us/california-latest.osm.pbf
-        https://download.geofabrik.de/north-america/us/florida-latest.osm.pbf
+      # Germany alone, 4.6 GB, which is what the seven cities in areas.txt
+      # need. The full 30 extract list for all 60 areas is in the git history
+      # of this file
+      NOISE_EXTRACTS: https://download.geofabrik.de/europe/germany-latest.osm.pbf
 
       # Has to match MIN_ZOOM and MAX_ZOOM in src/map/noiseTiles.ts. The client
       # asks for tiles inside this range and overzooms above it
@@ -109,9 +71,10 @@ services:
 
 
 
-    # A share of the machine. This competes with the Overpass importer rather
-    # than with the API, and both should lose to it
-    cpus: 1.5
+    # One core. The box has four and runs Overpass, Matomo and a good deal
+    # else; the cut is the long pole here and it is single threaded anyway, so
+    # taking more would slow the API down without finishing sooner
+    cpus: 1.0
 
     logging:
       driver: json-file

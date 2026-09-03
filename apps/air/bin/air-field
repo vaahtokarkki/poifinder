@@ -48,8 +48,8 @@ import sys
 
 import numpy as np
 from contourpy import FillType, contour_generator
-from shapely.geometry import MultiPolygon, Polygon, mapping
-from shapely.ops import unary_union
+from shapely.geometry import MultiPolygon, Polygon, mapping, shape
+from shapely.ops import transform, unary_union
 
 # The EAQI's PM2.5 breakpoints in µg/m³, as (band, lower, upper). Band 1 is
 # good and band 6 is extremely poor; the top band has no upper edge, and the
@@ -303,6 +303,65 @@ def band_polygons(generator, lower, upper):
     return polygons
 
 
+def load_boundary(path, buffer_km, slugs):
+    """The published area: city boundaries, buffered outwards by --buffer-km.
+
+    A boundary rather than a circle, because a city is not a disc. Berlin is
+    45 km across east to west and 38 km north to south with a ragged edge, and
+    a radius large enough to hold all of it also holds a great deal of
+    Brandenburg — while a radius small enough to stop at the edge cuts off
+    Spandau. The administrative outline is the shape people mean when they say
+    the name.
+
+    The buffer is what turns it from an administrative fact into a useful one.
+    Nobody stops caring about the air one metre past a city limit they cannot
+    see, and somebody looking at a playground in Potsdam is asking the same
+    question as somebody looking at one in Zehlendorf.
+
+    Buffered in kilometres rather than degrees. A degree of longitude is 68 km
+    at Berlin's latitude and 111 at the equator, so a buffer written in degrees
+    would be an ellipse that changes shape as it moves north — 10 km on the
+    sides and 15 on the top. The transform below flattens the local frame to
+    kilometres, buffers there, and puts it back.
+    """
+    with open(path) as handle:
+        collection = json.load(handle)
+
+    features = collection.get("features") or []
+    if slugs:
+        wanted = {slug.strip() for slug in slugs.split(",") if slug.strip()}
+        features = [
+            feature
+            for feature in features
+            if (feature.get("properties") or {}).get("slug") in wanted
+        ]
+        missing = wanted - {
+            (feature.get("properties") or {}).get("slug") for feature in features
+        }
+        if missing:
+            raise SystemExit(f"no boundary named {', '.join(sorted(missing))} in {path}")
+    if not features:
+        raise SystemExit(f"{path} holds no boundary to publish")
+
+    area = unary_union([shape(feature["geometry"]) for feature in features])
+
+    # A local equirectangular frame in kilometres, centred on what is being
+    # published. Good to a fraction of a percent over a few hundred kilometres,
+    # which is far finer than a 10 km buffer needs
+    lat0 = math.radians(area.centroid.y)
+    scale = max(math.cos(lat0), 0.05)
+    to_km = lambda x, y: (x * KM_PER_DEGREE_LON * scale, y * KM_PER_DEGREE_LAT)
+    to_degrees = lambda x, y: (x / (KM_PER_DEGREE_LON * scale), y / KM_PER_DEGREE_LAT)
+
+    buffered = transform(to_degrees, transform(to_km, area).buffer(buffer_km))
+    names = [
+        (feature.get("properties") or {}).get("name")
+        or (feature.get("properties") or {}).get("slug")
+        for feature in features
+    ]
+    return buffered, names
+
+
 def parse_bbox(raw):
     """A west,south,east,north box as a polygon, or None for the whole world.
 
@@ -352,6 +411,22 @@ def main():
         help="clip the output to west,south,east,north in degrees",
     )
     parser.add_argument(
+        "--boundary",
+        default=None,
+        help="GeoJSON of city boundaries to clip the output to",
+    )
+    parser.add_argument(
+        "--cities",
+        default=None,
+        help="comma separated slugs from --boundary, empty for all of them",
+    )
+    parser.add_argument(
+        "--buffer-km",
+        type=float,
+        default=10.0,
+        help="how far past the boundary to publish (default 10)",
+    )
+    parser.add_argument(
         "--mask-km",
         type=float,
         default=75.0,
@@ -365,6 +440,17 @@ def main():
         )
 
     clip = parse_bbox(arguments.bbox)
+    if arguments.boundary:
+        boundary, names = load_boundary(
+            arguments.boundary, arguments.buffer_km, arguments.cities
+        )
+        print(
+            f"  publishing {', '.join(names)} + {arguments.buffer_km:g} km",
+            file=sys.stderr,
+        )
+        # Both, when both are given: the box is the coarse guard and the
+        # boundary is the shape
+        clip = boundary if clip is None else clip.intersection(boundary)
 
     stations = read_stations(arguments.stations)
     print(f"  {len(stations)} stations", file=sys.stderr)
@@ -383,7 +469,7 @@ def main():
         # box is how the slivers the nesting below removes get put back
         mask = mask.intersection(clip)
         if mask.is_empty:
-            raise SystemExit("no station coverage inside --bbox")
+            raise SystemExit("no station coverage inside the published area")
     print(f"  coverage mask built at {arguments.mask_km} km", file=sys.stderr)
 
     generator = contour_generator(
@@ -433,6 +519,12 @@ def main():
             continue
         inner = regions[index + 1] if index + 1 < len(regions) else Polygon()
         shape = outer if inner.is_empty else outer.difference(inner)
+        # Clipped once more, because simplify() runs after the mask above and
+        # can push a vertex back out over the line — half a cell, which is
+        # nothing on the map and is still a band drawn outside the area this
+        # build says it publishes. Re-clipping every band with the same
+        # geometry cannot reintroduce the overlaps the nesting removed
+        shape = shape.intersection(mask)
         if shape.is_empty:
             continue
 

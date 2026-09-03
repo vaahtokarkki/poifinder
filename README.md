@@ -11,7 +11,7 @@ shelters and more, from OpenStreetMap.
 | [`apps/frontend`](apps/frontend) | The app: React, Leaflet, and the prerender that turns every route into a real HTML file. Deployed to Cloudflare |
 | [`apps/overpass`](apps/overpass) | A self hosted Overpass API, holding only the categories the app queries. Docker, one container |
 | [`apps/noise`](apps/noise) | Modelled traffic noise as vector tiles, built from OpenStreetMap. Optional: the app shows nothing without it |
-| [`apps/air`](apps/air) | Current air quality as vector tiles, interpolated from OpenAQ stations. Optional, and rebuilt hourly |
+| [`apps/air`](apps/air) | Current air quality as vector tiles, from reference monitors and the Sensor.Community network. Optional, rebuilt hourly, Berlin for now |
 
 The two halves are independent. The app runs against the public Overpass
 mirrors out of the box and only talks to `apps/overpass` when

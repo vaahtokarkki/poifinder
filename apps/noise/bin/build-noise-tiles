@@ -66,7 +66,21 @@ TAG_FILTER=(
 # Wider than the area, because a road outside it still reaches in. Has to be at
 # least MAX_RADIUS in noise-bands, or a band would stop at the edge of the cut
 # rather than at the edge of what makes it
-PAD_METRES=1300
+# The city shapes, and how far past one to keep modelling.
+#
+# Ten kilometres, because a motorway outside the city line is still heard
+# inside it and the ring roads that make most of a city's noise are usually
+# just outside it. The old circle had the same job and did it by being a circle
+# — one radius that had to be wide enough for the loudest edge of the widest
+# city, which is how Berlin came to be modelled as a 12 km disc that covered a
+# fifth of the city and a quarter of Brandenburg
+BOUNDARIES_FILE=${NOISE_BOUNDARIES_FILE:-/opt/wayside/boundaries.geojson}
+BOUNDARY_BUFFER=${NOISE_BOUNDARY_BUFFER:-10000}
+
+# Wider than the area, because a road outside it still reaches in. Has to be at
+# least MAX_RADIUS in noise-bands, and at least BOUNDARY_BUFFER, or a band
+# would stop at the edge of the cut rather than at the edge of what makes it
+PAD_METRES=$((BOUNDARY_BUFFER > 1300 ? BOUNDARY_BUFFER + 1300 : 1300))
 
 # Past this an area is large enough that it is worth saying so before spending
 # an hour on it. A warning rather than a refusal: "any given bbox" is the point
@@ -113,18 +127,87 @@ fi
 #
 #   slug  kind  a b c d  west south east north
 #
-# `kind` is circle or bbox; a..d are its own parameters (lat/lon/radius, or the
-# box); the last four are the padded box to cut out of an extract, which is the
-# only thing the extract loop below has to understand. Working all of that out
-# once in Python keeps the shell loops to string handling
+# `kind` is boundary, circle or bbox; a..d are its own parameters (unused for a
+# boundary, lat/lon/radius for a circle, the box for a bbox); the last four are
+# the padded box to cut out of an extract, which is the only thing the extract
+# loop below has to understand. Working all of that out once in Python keeps
+# the shell loops to string handling.
+#
+# A city takes its boundary when boundaries.geojson has one and falls back to
+# its circle when it does not, so a city added to cities.json works before
+# anyone has fetched a shape for it
 AREA_TSV="$WORK_DIR/areas.tsv"
 python3 - "$CITIES_FILE" "$AREA_TSV" "$PAD_METRES" "$BIG_AREA_KM2" \
   "${WANTED[*]-}" "${BOXES[*]-}" <<'PY'
-import json, math, sys
+import json, math, os, sys
+
+
+def ring_area(ring):
+    total = 0.0
+    for i in range(len(ring) - 1):
+        total += ring[i][0] * ring[i + 1][1] - ring[i + 1][0] * ring[i][1]
+    return abs(total) / 2
+
+
+def centre(ring):
+    return (
+        sum(c[0] for c in ring) / len(ring),
+        sum(c[1] for c in ring) / len(ring),
+    )
+
+
+# How far a detached part may sit from the main one and still be modelled, in
+# kilometres.
+#
+# Hamburg is why. Its city limits include Neuwerk, an island in the North Sea
+# with its tidal flats — 31% of the city's area, and 110 km from the Rathaus.
+# Buffered and cut, it would triple the modelled area and the tile count of the
+# city for a place with no roads on it. An area threshold does not catch that;
+# a distance one does. Berlin's and Munich's own detached fragments are a few
+# kilometres out and stay
+MAX_PART_KM = 50.0
+
+
+def keep_parts(parts):
+    """The main polygon, and anything close enough to be the same city."""
+    parts = sorted(parts, key=lambda p: ring_area(p[0]), reverse=True)
+    main_lon, main_lat = centre(parts[0][0])
+    kept = []
+    for part in parts:
+        lon, lat = centre(part[0])
+        east = (lon - main_lon) * 111.320 * math.cos(math.radians(main_lat))
+        north = (lat - main_lat) * 110.540
+        if math.hypot(east, north) <= MAX_PART_KM:
+            kept.append(part)
+    return kept
+
 
 cities_file, out_path, pad, big_km2 = sys.argv[1], sys.argv[2], float(sys.argv[3]), float(sys.argv[4])
 wanted = sys.argv[5].split() if len(sys.argv) > 5 and sys.argv[5].strip() else []
 boxes = sys.argv[6].split() if len(sys.argv) > 6 and sys.argv[6].strip() else []
+boundaries_file = sys.argv[7] if len(sys.argv) > 7 else ""
+
+# slug -> the bounding box of the parts worth keeping. See noise-bands, which
+# reads the same file and applies the same rule to build the clip itself; this
+# only needs enough of it to know what to cut out of the extract
+boundary_box = {}
+if boundaries_file and os.path.exists(boundaries_file):
+    for feature in json.load(open(boundaries_file)).get("features", []):
+        slug = (feature.get("properties") or {}).get("slug")
+        geometry = feature.get("geometry") or {}
+        parts = (
+            geometry.get("coordinates", [])
+            if geometry.get("type") == "MultiPolygon"
+            else [geometry.get("coordinates", [])]
+        )
+        parts = [p for p in parts if p and p[0]]
+        if not slug or not parts:
+            continue
+        kept = keep_parts(parts)
+        points = [c for part in kept for c in part[0]]
+        lons = [c[0] for c in points]
+        lats = [c[1] for c in points]
+        boundary_box[slug] = (min(lons), min(lats), max(lons), max(lats))
 
 
 def padded(west, south, east, north):
@@ -158,6 +241,14 @@ else:
 
 for city in cities:
     lat, lon, radius = city["lat"], city["lon"], float(city["radius"])
+    if city["slug"] in boundary_box:
+        # The shape the city actually is, widened by the same pad every other
+        # kind gets. noise-bands buffers the boundary itself by
+        # NOISE_BOUNDARY_BUFFER, and pad has to be at least that or the cut
+        # would stop inside the clip
+        west, south, east, north = boundary_box[city["slug"]]
+        rows.append((city["slug"], "boundary", lat, lon, 0, 0, *padded(west, south, east, north)))
+        continue
     dlat = radius / 110540.0
     dlon = radius / (111320.0 * math.cos(math.radians(lat)))
     box = padded(lon - dlon, lat - dlat, lon + dlon, lat + dlat)
@@ -278,7 +369,14 @@ while IFS=$'\t' read -r slug kind a b c d west south east north; do
   [ -n "$slug" ] || continue
   [ -s "$LINES_DIR/$slug.geojsonseq" ] || continue
 
-  if [ "$kind" = bbox ]; then
+  if [ "$kind" = boundary ]; then
+    noise-bands \
+      --lines="$LINES_DIR/$slug.geojsonseq" \
+      --boundary="$BOUNDARIES_FILE" \
+      --boundary-buffer="$BOUNDARY_BUFFER" \
+      --slug="$slug" \
+      --output="$GEOJSON_DIR/$slug.geojson"
+  elif [ "$kind" = bbox ]; then
     noise-bands \
       --lines="$LINES_DIR/$slug.geojsonseq" \
       --bbox="$a,$b,$c,$d" \

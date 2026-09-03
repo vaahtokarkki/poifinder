@@ -1,56 +1,43 @@
 #!/usr/bin/env python3
 #
-# Pull every current PM2.5 reading OpenAQ has, and write the ones worth using.
+# Collect every current PM2.5 reading worth using, from both networks.
 #
-#   air-latest --output=stations.json
-#   air-latest --output=stations.json --max-age=6 --parameter=2
+#   air-latest --output=stations.json --bbox=W,S,E,N
+#   air-latest --output=stations.json --bbox=W,S,E,N --no-sensor-community
 #
-# One endpoint, /v3/parameters/{id}/latest, which is the whole reason this
-# feature costs nothing. That single paginated call returns the most recent
-# value from every sensor on the planet measuring the parameter — a few
-# thousand rows, so five or six requests for a complete world snapshot. The
-# free tier allows 60 requests a minute and 2,000 an hour; an hourly run of
-# this uses about 0.3% of the hourly budget.
+# Two sources, and they do different jobs.
 #
-# That number is why there is no tile cache anywhere in this app. Fetching
-# per-viewport and caching per-tile would be more machinery, more latency and
-# *more* requests than pulling the entire globe once an hour, because
-# neighbouring viewports overlap and the globe does not.
+#   OpenAQ            reference monitors, mostly the EEA's, run to a standard
+#                     and calibrated. Sparse: about 7 km apart at the median in
+#                     Germany, and tens of kilometres in most of Europe.
+#   Sensor.Community  citizen-run SDS011 sensors. Dense — 1.6 km apart at the
+#                     median in Germany — and uncalibrated.
 #
-# WHY PM2.5 AND NOTHING ELSE
+# So the reference network sets the LEVEL and the citizen network sets the
+# SHAPE. That split is the whole design: the cheap sensors are read for where
+# the air changes, not for what it measures, and a single correction factor
+# fitted against co-located reference monitors is what stops them dragging the
+# whole map somewhere it should not be. See calibrate().
 #
-# Because it is the only pollutant here whose value at a station says anything
-# about a place 50 km away. PM2.5 is dominated by regional transport and by
-# secondary aerosol formed in the air mass itself, so it varies over tens to
-# hundreds of kilometres and two stations 80 km apart really are measuring
-# substantially the same thing. Interpolating it is defensible.
+# EUROPE ONLY, AND THE REASON IS LICENSING RATHER THAN GEOGRAPHY
 #
-# NO2 is the opposite and is the trap. It is made by the traffic in front of
-# you and destroyed within hours, so it halves within 200 m of a kerb. An
-# interpolated NO2 surface between stations 80 km apart is not a coarse
-# estimate of anything — it is a smooth picture of a field that has no smooth
-# component at that scale. It would look exactly as convincing as this one.
+# OpenAQ aggregates providers under twelve different licences, and they are not
+# all compatible with each other. At least one is CC BY-SA 4.0, whose share
+# alike is not one-way compatible with the ODbL that Sensor.Community data and
+# the OSM boundaries in this build carry; five more are bespoke national terms
+# that would each have to be read before anything derived from them is
+# published. Mixing those into one tileset is a licence conflict rather than a
+# paperwork problem.
 #
-# There is a second, duller reason. OpenAQ reports NO2 and O3 in µg/m³ from
-# European feeds and in ppm from American ones, so a global layer would have to
-# convert with a temperature and pressure it does not have. PM2.5 is µg/m³
-# everywhere.
-#
-# WHAT GETS THROWN AWAY, AND WHY THE AGE FILTER IS NOT OPTIONAL
-#
-# "Latest" in this API means the last value in a sensor's series, not a value
-# from recently — OpenAQ's own docs are explicit that providers report out of
-# order and that polling latest guarantees nothing about coverage. A sensor
-# that stopped reporting in 2019 still has a latest value, and it will happily
-# sit in the middle of a country pulling an interpolation toward whatever the
-# air was like the day it died.
-#
-# So every row is dropped unless its timestamp is inside --max-age hours. This
-# is the single most important line in the file: without it the map is not
-# stale in a way anyone would notice, it is wrong in a way that looks fine.
+# Rather than reason about that per country, this refuses to leave Europe and
+# refuses to use any licence not on the allowlist below. What the tileset is
+# made of is then a build-time fact, recorded in stations.json and wayside.json
+# instead of assumed.
 import argparse
 import json
+import math
 import os
+import statistics
 import sys
 import time
 import urllib.error
@@ -58,53 +45,106 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
-API_ROOT = "https://api.openaq.org/v3"
+OPENAQ_ROOT = "https://api.openaq.org/v3"
 
-# PM2.5. See the note above about why this is not a configurable list of six
+# Hourly averages rather than the five-minute file. The reference readings this
+# is merged with are hourly, and a five-minute mean from one cheap sensor is
+# mostly noise next to them
+SENSOR_COMMUNITY_URL = "https://data.sensor.community/static/v2/data.1h.json"
+
 PARAMETER_PM25 = 2
-
-# The most rows the API will return in one response
 PAGE_SIZE = 1000
-
-# Requests per minute allowed on the free tier is 60, so one a second is
-# already inside it. This is slower than it needs to be on purpose: a handful
-# of pages an hour is not worth being clever about, and a fetch that never
-# approaches a rate limit never has to handle one
 PAGE_DELAY_SECONDS = 1.1
-
-# A stop, not a safety margin. Six pages is the expected shape of this; sixty
-# means the pagination is not terminating and the right answer is to fail
-# rather than to keep asking
 MAX_PAGES = 60
 
-# Physically implausible readings, which sensor networks do produce: negative
-# values from a drifting zero, and five-figure spikes from a sensor being
-# cleaned. The upper bound is above the worst wildfire and dust-storm hours
-# ever recorded, so it removes instrument faults and not bad air
 VALUE_FLOOR = 0.0
 VALUE_CEILING = 2000.0
 
+# The hard geographic limit. See the header: this is a licence boundary that
+# happens to be drawn on a map
+EUROPE = (-25.0, 34.0, 45.0, 72.0)
 
-def request_page(page, parameter, api_key, timeout):
-    """One page of latest values, as parsed JSON.
+# The OpenAQ licences this is willing to publish, by the id its /v3/licenses
+# resource gives them. Every one is attribution-only: none carries share alike,
+# so none of them conflicts with the ODbL that the boundaries and the
+# Sensor.Community data bring.
+#
+# Deliberately absent, and each for its own reason:
+#   CC BY-SA 4.0     share alike, not one-way compatible with ODbL
+#   bespoke national terms (Poland GIOS, Taiwan, Mexico SINAICA, ACT, Japan)
+#                    each needs reading before anything derived is published
+#   no licence at all a location that states none is not a licence to use it
+ALLOWED_LICENCES = {
+    10: "ODC-BY",
+    33: "US Public Domain",
+    34: 'UK OGL "Open Government License"',
+    38: "CC0 1.0",
+    41: "CC BY 4.0",
+}
 
-    Retries on the two failures worth retrying — a rate limit and a 5xx — and
-    gives up immediately on anything else, because a 401 will still be a 401
-    in thirty seconds and the run should say so rather than sit there.
-    """
-    query = urllib.parse.urlencode({"limit": PAGE_SIZE, "page": page})
-    url = f"{API_ROOT}/parameters/{parameter}/latest?{query}"
+# How far a cheap sensor may be from a reference monitor and still be paired
+# with it when fitting the correction factor
+CALIBRATION_RADIUS_KM = 10.0
 
+# Below this many pairs the fitted factor is noise, and no correction is
+# applied at all — with a line saying so, because an uncorrected build is a
+# different thing from a corrected one and the tileset should say which it is
+CALIBRATION_MIN_PAIRS = 20
+
+# A fitted factor outside this range means something is wrong with the pairing
+# rather than with the sensors, and applying it would be worse than not.
+#
+# Symmetric about 1 on purpose, because the bias runs both ways and which way
+# depends on the day. The textbook SDS011 problem is over-reading in damp air,
+# where particles carry a shell of water and scatter like something larger. But
+# these are optical counters with poor sensitivity at the bottom of their
+# range, so in dry air at low concentrations they under-read instead — a build
+# on a clear morning fitted 0.42, with reference monitors at a median of
+# 7 µg/m³ and the citizen network at 3.8. An asymmetric clamp written for the
+# damp case would have silently truncated the dry one.
+CALIBRATION_CLAMP = (0.33, 3.0)
+
+# SDS011 reports 999.9 when it saturates, and a saturated sensor is a fault
+# rather than a reading. Dropped rather than clamped: scaling it by the
+# calibration factor turns one broken sensor into a two thousand microgram
+# hole in the middle of a city
+CITIZEN_SATURATION = 999.0
+
+# An hourly mean of exactly zero is a sensor that has stopped rather than air
+# that is clean. Eight of 596 read this way on the build that found it
+CITIZEN_FLOOR = 0.1
+
+# How far above the worst reference monitor in the same build a citizen sensor
+# may read before it is treated as broken rather than as informative.
+#
+# An absolute ceiling cannot do this job. 830 µg/m³ is a fault in Berlin in
+# September and an ordinary afternoon in Delhi during stubble burning, and a
+# fixed number is wrong in one of those places. What travels is the comparison:
+# the reference network is measuring the same air mass, so a cheap sensor
+# reading many times the worst calibrated instrument in the region is measuring
+# its own enclosure, a barbecue, or nothing at all.
+#
+# The floor keeps it honest when the reference network is clean and sparse — a
+# genuine local event should survive, and five times a very small number is not
+# much headroom
+CITIZEN_OUTLIER_FACTOR = 5.0
+CITIZEN_OUTLIER_FLOOR = 150.0
+
+KM_PER_DEGREE_LAT = 110.574
+KM_PER_DEGREE_LON = 111.320
+
+
+def http_json(url, headers, timeout, what):
+    """One request, retried only on the failures that retrying can fix."""
     for attempt in range(5):
-        request = urllib.request.Request(url, headers={"X-API-Key": api_key})
+        request = urllib.request.Request(url, headers=headers)
         try:
             with urllib.request.urlopen(request, timeout=timeout) as response:
                 return json.loads(response.read().decode("utf-8"))
         except urllib.error.HTTPError as error:
             if error.code == 429 or error.code >= 500:
-                # The header if they sent one, otherwise back off
                 wait = float(error.headers.get("Retry-After") or 2 ** attempt)
-                print(f"  {error.code}, retrying in {wait:.0f}s", file=sys.stderr)
+                print(f"  {what}: {error.code}, retrying in {wait:.0f}s", file=sys.stderr)
                 time.sleep(wait)
                 continue
             if error.code in (401, 403):
@@ -113,84 +153,328 @@ def request_page(page, parameter, api_key, timeout):
                     "wrong, missing, or not yet activated — register at "
                     "https://explore.openaq.org/register"
                 )
-            raise SystemExit(f"OpenAQ returned {error.code} for page {page}")
+            raise SystemExit(f"{what}: HTTP {error.code}")
         except (urllib.error.URLError, TimeoutError) as error:
             wait = 2 ** attempt
-            print(f"  {error}, retrying in {wait}s", file=sys.stderr)
+            print(f"  {what}: {error}, retrying in {wait}s", file=sys.stderr)
             time.sleep(wait)
-
-    raise SystemExit(f"gave up on page {page} after 5 attempts")
+    raise SystemExit(f"{what}: gave up after 5 attempts")
 
 
 def parse_time(raw):
-    """The UTC timestamp of a reading, or None if it is not one.
-
-    The API nests this as {"datetime": {"utc": "...", "local": "..."}} and the
-    UTC one is the only one worth reading: comparing local times across the
-    globe to decide what is stale would need every station's offset applied
-    first, which is work to arrive back where this starts.
-    """
+    """A timestamp from either API, as an aware UTC datetime, or None."""
     if isinstance(raw, dict):
         raw = raw.get("utc") or raw.get("local")
     if not isinstance(raw, str):
         return None
     try:
-        # Python's parser wants +00:00 rather than the Z the API writes
-        return datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        # OpenAQ writes ...Z; Sensor.Community writes "YYYY-MM-DD HH:MM:SS", UTC
+        # and unmarked, which fromisoformat reads as naive
+        when = datetime.fromisoformat(raw.replace("Z", "+00:00"))
     except ValueError:
         return None
+    return when if when.tzinfo else when.replace(tzinfo=timezone.utc)
 
 
-def usable(row, oldest):
-    """One row as (lon, lat, value, when), or None if it cannot be used.
+def inside(bbox, lon, lat):
+    return bbox[0] <= lon <= bbox[2] and bbox[1] <= lat <= bbox[3]
 
-    Every rejection here is silent and counted rather than logged. A global
-    pull drops a few hundred rows on an ordinary day — sensors offline,
-    coordinates missing — and a line each would bury the one line that matters.
+
+def verify_licence_ids(api_key, timeout):
+    """Check the allowlist still names what it thinks it names.
+
+    The allowlist is keyed by id because a name is a string somebody may
+    reformat, but an id is only meaningful while it still points at the same
+    licence. If OpenAQ ever renumbers, matching on id alone would silently
+    publish whatever moved into slot 10 — so the names are checked too, and a
+    mismatch stops the build rather than quietly changing what it publishes.
     """
-    coordinates = row.get("coordinates") or {}
-    lat = coordinates.get("latitude")
-    lon = coordinates.get("longitude")
-    value = row.get("value")
+    payload = http_json(
+        f"{OPENAQ_ROOT}/licenses?limit=200",
+        {"X-API-Key": api_key},
+        timeout,
+        "licences",
+    )
+    actual = {row["id"]: row.get("name") for row in payload.get("results", [])}
+    for licence_id, expected in ALLOWED_LICENCES.items():
+        if licence_id not in actual:
+            raise SystemExit(
+                f"licence id {licence_id} ({expected}) is gone from OpenAQ. "
+                "The allowlist in air-latest needs rechecking before this can "
+                "publish anything."
+            )
+        if actual[licence_id] != expected:
+            raise SystemExit(
+                f"licence id {licence_id} is now {actual[licence_id]!r}, not "
+                f"{expected!r}. The allowlist in air-latest needs rechecking."
+            )
+    return actual
 
-    if lat is None or lon is None or value is None:
-        return None
-    try:
-        lat, lon, value = float(lat), float(lon), float(value)
-    except (TypeError, ValueError):
-        return None
 
-    # Null Island, which is what a station with no position is written as
-    if lat == 0.0 and lon == 0.0:
-        return None
-    if not (-90.0 <= lat <= 90.0 and -180.0 <= lon <= 180.0):
-        return None
-    if not (VALUE_FLOOR <= value <= VALUE_CEILING):
-        return None
+def fetch_licensed_locations(bbox, api_key, timeout):
+    """Which OpenAQ locations in the box carry a licence we may publish.
 
-    when = parse_time(row.get("datetime"))
-    if when is None:
-        return None
-    if when.tzinfo is None:
-        when = when.replace(tzinfo=timezone.utc)
-    # The line this whole file exists for. See the header
-    if when < oldest:
-        return None
+    Returns {locationId: licence name}. Bounded by the box rather than by
+    Europe, because the box is already the only region anything is published
+    for and a licence lookup over the whole continent is pages of answers about
+    stations no build will ever read.
+    """
+    allowed = {}
+    seen = 0
+    unknown = {}
+    page = 1
 
-    return lon, lat, value, when
+    while page <= MAX_PAGES:
+        query = urllib.parse.urlencode(
+            {"bbox": ",".join(str(v) for v in bbox), "limit": PAGE_SIZE, "page": page}
+        )
+        payload = http_json(
+            f"{OPENAQ_ROOT}/locations?{query}",
+            {"X-API-Key": api_key},
+            timeout,
+            "locations",
+        )
+        rows = payload.get("results") or []
+        if not rows:
+            break
+
+        for row in rows:
+            seen += 1
+            licences = row.get("licenses") or []
+            for licence in licences:
+                licence_id = licence.get("id")
+                if licence_id in ALLOWED_LICENCES:
+                    allowed[row["id"]] = ALLOWED_LICENCES[licence_id]
+                    break
+            else:
+                name = (
+                    (licences[0].get("name") if licences else None) or "(none stated)"
+                )
+                unknown[name] = unknown.get(name, 0) + 1
+
+        if len(rows) < PAGE_SIZE:
+            break
+        page += 1
+        time.sleep(PAGE_DELAY_SECONDS)
+    else:
+        raise SystemExit(f"location pagination did not end within {MAX_PAGES} pages")
+
+    print(f"  {len(allowed)} of {seen} locations carry a licence we may publish",
+          file=sys.stderr)
+    for name, count in sorted(unknown.items(), key=lambda kv: -kv[1]):
+        print(f"    skipped {count:5d}: {name}", file=sys.stderr)
+    return allowed
+
+
+def fetch_openaq(bbox, licensed, oldest, api_key, timeout):
+    """Every current PM2.5 reading from an allowed location inside the box."""
+    stations = {}
+    seen = 0
+    page = 1
+
+    while page <= MAX_PAGES:
+        query = urllib.parse.urlencode({"limit": PAGE_SIZE, "page": page})
+        payload = http_json(
+            f"{OPENAQ_ROOT}/parameters/{PARAMETER_PM25}/latest?{query}",
+            {"X-API-Key": api_key},
+            timeout,
+            "latest",
+        )
+        rows = payload.get("results") or []
+        if not rows:
+            break
+
+        for row in rows:
+            seen += 1
+            coordinates = row.get("coordinates") or {}
+            lat, lon, value = (
+                coordinates.get("latitude"),
+                coordinates.get("longitude"),
+                row.get("value"),
+            )
+            if lat is None or lon is None or value is None:
+                continue
+            try:
+                lat, lon, value = float(lat), float(lon), float(value)
+            except (TypeError, ValueError):
+                continue
+            if lat == 0.0 and lon == 0.0:
+                continue
+            if not inside(bbox, lon, lat):
+                continue
+            location_id = row.get("locationsId")
+            # The licence gate. A location we have no permission to publish is
+            # not a station as far as this build is concerned
+            if location_id not in licensed:
+                continue
+            if not (VALUE_FLOOR <= value <= VALUE_CEILING):
+                continue
+            when = parse_time(row.get("datetime"))
+            if when is None or when < oldest:
+                continue
+
+            existing = stations.get(location_id)
+            if existing is None or when > existing[3]:
+                stations[location_id] = (lon, lat, value, when)
+
+        if len(rows) < PAGE_SIZE:
+            break
+        page += 1
+        time.sleep(PAGE_DELAY_SECONDS)
+    else:
+        raise SystemExit(f"latest pagination did not end within {MAX_PAGES} pages")
+
+    print(f"  OpenAQ: {len(stations)} reference stations from {seen} rows",
+          file=sys.stderr)
+    return list(stations.values())
+
+
+def fetch_sensor_community(bbox, oldest, timeout):
+    """Current PM2.5 from the citizen network, inside the box.
+
+    One static file for the whole planet — about 9 MB, no key, no pagination
+    and no rate limit to respect. Everything interesting here is what gets
+    thrown away: indoor sensors, which measure a living room; sensors with no
+    usable position; and the same implausible values the reference feed is
+    filtered for.
+    """
+    rows = http_json(SENSOR_COMMUNITY_URL, {}, timeout, "sensor.community")
+    if not isinstance(rows, list):
+        raise SystemExit("sensor.community did not return a list")
+
+    stations = {}
+    seen = indoor = 0
+
+    for row in rows:
+        seen += 1
+        location = row.get("location") or {}
+        if str(location.get("indoor")) in ("1", "True", "true"):
+            indoor += 1
+            continue
+        try:
+            lon = float(location["longitude"])
+            lat = float(location["latitude"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        if not inside(bbox, lon, lat):
+            continue
+
+        value = None
+        for reading in row.get("sensordatavalues") or []:
+            if reading.get("value_type") == "P2":
+                try:
+                    value = float(reading.get("value"))
+                except (TypeError, ValueError):
+                    value = None
+                break
+        if value is None or not (CITIZEN_FLOOR <= value < CITIZEN_SATURATION):
+            continue
+
+        when = parse_time(row.get("timestamp"))
+        if when is None or when < oldest:
+            continue
+
+        # Keyed by sensor location: one box can report several sensors
+        key = location.get("id") or (round(lon, 5), round(lat, 5))
+        existing = stations.get(key)
+        if existing is None or when > existing[3]:
+            stations[key] = (lon, lat, value, when)
+
+    print(
+        f"  Sensor.Community: {len(stations)} sensors from {seen} records "
+        f"({indoor} indoor dropped)",
+        file=sys.stderr,
+    )
+    return list(stations.values())
+
+
+def calibrate(reference, citizen):
+    """One multiplicative correction for the citizen network, fitted here.
+
+    SDS011 sensors read high, and not by a constant: they count water. Particle
+    counters size what they see by how it scatters light, and above roughly 70%
+    humidity the particles have grown a shell of water, so the sensor reports a
+    bigger particle than the dry mass a reference monitor would weigh. On a damp
+    morning that is most of the difference between the two networks.
+
+    A proper correction needs the humidity beside each sensor and a growth
+    curve. This does something much cruder and worth being explicit about: it
+    pairs every cheap sensor that has a reference monitor within
+    CALIBRATION_RADIUS_KM, takes the ratio of the two readings, and divides the
+    whole citizen network by the median of those ratios.
+
+    What that buys is the thing that matters here — the two networks agree on
+    level, so a map does not change colour at the edge of the dense area purely
+    because the sensors there are different. What it cannot do is fix one damp
+    valley while the rest of the region is dry, because it is one number for
+    the whole build.
+
+    The median rather than the mean, because a handful of pairs will be a dead
+    sensor reading zero or a bonfire ten metres away, and those move a mean.
+    """
+    if not reference or not citizen:
+        return 1.0, 0
+
+    ratios = []
+    for lon, lat, value, _ in citizen:
+        if value <= 0:
+            continue
+        scale = max(math.cos(math.radians(lat)), 0.05)
+        near = [
+            ref_value
+            for ref_lon, ref_lat, ref_value, _ in reference
+            if ref_value > 0
+            and ((ref_lat - lat) * KM_PER_DEGREE_LAT) ** 2
+            + ((ref_lon - lon) * KM_PER_DEGREE_LON * scale) ** 2
+            <= CALIBRATION_RADIUS_KM ** 2
+        ]
+        if near:
+            ratios.append(value / statistics.fmean(near))
+
+    if len(ratios) < CALIBRATION_MIN_PAIRS:
+        print(
+            f"  calibration: only {len(ratios)} pairs, need "
+            f"{CALIBRATION_MIN_PAIRS} — publishing citizen readings uncorrected",
+            file=sys.stderr,
+        )
+        return 1.0, len(ratios)
+
+    factor = statistics.median(ratios)
+    clamped = min(max(factor, CALIBRATION_CLAMP[0]), CALIBRATION_CLAMP[1])
+    if clamped != factor:
+        print(
+            f"  calibration: fitted {factor:.2f} from {len(ratios)} pairs, "
+            f"outside {CALIBRATION_CLAMP} — clamped to {clamped:.2f}",
+            file=sys.stderr,
+        )
+    else:
+        print(
+            f"  calibration: citizen readings divided by {clamped:.2f} "
+            f"(median of {len(ratios)} co-located pairs)",
+            file=sys.stderr,
+        )
+    return clamped, len(ratios)
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", required=True)
     parser.add_argument(
+        "--bbox",
+        required=True,
+        help="the region to ingest, west,south,east,north — clamped to Europe",
+    )
+    parser.add_argument(
         "--max-age",
         type=float,
         default=float(os.environ.get("AIR_MAX_AGE_HOURS", "6")),
-        help="drop readings older than this many hours (default 6)",
     )
-    parser.add_argument("--parameter", type=int, default=PARAMETER_PM25)
-    parser.add_argument("--timeout", type=float, default=60.0)
+    parser.add_argument("--timeout", type=float, default=120.0)
+    parser.add_argument(
+        "--no-sensor-community",
+        action="store_true",
+        help="reference monitors only",
+    )
     arguments = parser.parse_args()
 
     api_key = os.environ.get("OPENAQ_API_KEY", "").strip()
@@ -200,91 +484,122 @@ def main():
             "https://explore.openaq.org/register"
         )
 
+    try:
+        bbox = tuple(float(part) for part in arguments.bbox.split(","))
+        if len(bbox) != 4:
+            raise ValueError
+    except ValueError:
+        raise SystemExit(f"--bbox wants west,south,east,north: {arguments.bbox!r}")
+
+    # Clamped rather than rejected, so that a boundary near the edge of the
+    # continent still builds — with the part outside Europe simply not ingested
+    clamped = (
+        max(bbox[0], EUROPE[0]),
+        max(bbox[1], EUROPE[1]),
+        min(bbox[2], EUROPE[2]),
+        min(bbox[3], EUROPE[3]),
+    )
+    if clamped[0] >= clamped[2] or clamped[1] >= clamped[3]:
+        raise SystemExit(
+            f"--bbox {arguments.bbox} falls outside Europe {EUROPE}, and this "
+            "build publishes Europe only — see the header of air-latest"
+        )
+    if clamped != bbox:
+        print(f"  bbox clamped to Europe: {clamped}", file=sys.stderr)
+
     now = datetime.now(timezone.utc)
-    oldest = now.timestamp() - arguments.max_age * 3600
-    oldest = datetime.fromtimestamp(oldest, timezone.utc)
+    oldest = datetime.fromtimestamp(
+        now.timestamp() - arguments.max_age * 3600, timezone.utc
+    )
 
-    # Keyed by location, because a location can carry several PM2.5 sensors —
-    # a reference monitor and a low-cost unit on the same mast — and two
-    # readings a few metres apart are one station for every purpose here. The
-    # newest wins; a tie goes to the first seen, which is arbitrary and fine
-    stations = {}
-    seen = 0
-    page = 1
+    verify_licence_ids(api_key, arguments.timeout)
+    licensed = fetch_licensed_locations(clamped, api_key, arguments.timeout)
+    if not licensed:
+        raise SystemExit("no location in this box carries a publishable licence")
 
-    while page <= MAX_PAGES:
-        payload = request_page(page, arguments.parameter, api_key, arguments.timeout)
-        rows = payload.get("results") or []
-        if not rows:
-            break
+    reference = fetch_openaq(clamped, licensed, oldest, api_key, arguments.timeout)
 
-        for row in rows:
-            seen += 1
-            parsed = usable(row, oldest)
-            if parsed is None:
-                continue
-            lon, lat, value, when = parsed
-            key = row.get("locationsId") or row.get("sensorsId") or (lon, lat)
-            existing = stations.get(key)
-            if existing is None or when > existing[3]:
-                stations[key] = (lon, lat, value, when)
+    citizen = []
+    factor, pairs = 1.0, 0
+    if not arguments.no_sensor_community:
+        citizen = fetch_sensor_community(clamped, oldest, arguments.timeout)
+        factor, pairs = calibrate(reference, citizen)
 
-        found = (payload.get("meta") or {}).get("found")
+    rows = []
+    for lon, lat, value, when in reference:
+        rows.append((round(lon, 4), round(lat, 4), round(value, 1),
+                     int((now - when).total_seconds() // 60), 0))
+    # What the calibrated network says is the worst air in the region, which is
+    # the yardstick a cheap sensor has to be plausible against
+    ceiling = VALUE_CEILING
+    if reference:
+        ceiling = max(
+            CITIZEN_OUTLIER_FLOOR,
+            CITIZEN_OUTLIER_FACTOR * max(value for _, _, value, _ in reference),
+        )
+
+    dropped_after = 0
+    for lon, lat, value, when in citizen:
+        corrected = value / factor
+        # Checked after correction, not only before it. A reading that passed
+        # the raw filter can fail this once multiplied by two, and it is the
+        # published number that has to be plausible
+        if corrected > ceiling:
+            dropped_after += 1
+            continue
+        rows.append((round(lon, 4), round(lat, 4), round(corrected, 1),
+                     int((now - when).total_seconds() // 60), 1))
+    if dropped_after:
         print(
-            f"  page {page}: {len(rows)} rows, {len(stations)} stations kept",
+            f"  {dropped_after} citizen readings above {ceiling:.0f} µg/m³ "
+            f"dropped as faults (worst reference monitor: "
+            f"{max(v for _, _, v, _ in reference):.0f})",
             file=sys.stderr,
         )
 
-        # `found` is sometimes an exact count and sometimes the string ">1000",
-        # so a short page is the termination condition and found is not read
-        if len(rows) < PAGE_SIZE:
-            break
-        page += 1
-        time.sleep(PAGE_DELAY_SECONDS)
-    else:
-        raise SystemExit(f"pagination did not end within {MAX_PAGES} pages")
-
-    if not stations:
+    if not rows:
         raise SystemExit(
-            f"no PM2.5 readings inside {arguments.max_age}h out of {seen} rows — "
-            "refusing to write an empty snapshot over a good one"
+            f"no usable reading inside {arguments.max_age}h — refusing to write "
+            "an empty snapshot over a good one"
         )
-
-    # Positions to four decimals, which is about 11 m and far finer than
-    # anything downstream resolves; values to one, which is the precision the
-    # instruments report. Rounding here is most of why this file is small
-    # enough for the browser to fetch: full float repr roughly doubles it
-    rows = sorted(
-        (
-            round(lon, 4),
-            round(lat, 4),
-            round(value, 1),
-            int((now - when).total_seconds() // 60),
-        )
-        for lon, lat, value, when in stations.values()
-    )
 
     snapshot = {
         "parameter": "pm25",
         "unit": "µg/m³",
         "fetched": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "maxAgeHours": arguments.max_age,
+        "bbox": list(clamped),
         "count": len(rows),
-        # Arrays rather than objects, and the reason is the download. As
-        # {"lon":..,"lat":..} this file is about twice the size for the same
-        # numbers, and the browser fetches it to answer one line in a popup.
-        # The order is the one GeoJSON uses: longitude first
-        "columns": ["lon", "lat", "value", "ageMinutes"],
-        "stations": [list(row) for row in rows],
+        # What this is made of, so that a snapshot can answer the licence
+        # question without anybody having to rerun the build to find out
+        "sources": {
+            "reference": {
+                "provider": "OpenAQ",
+                "count": sum(1 for row in rows if row[4] == 0),
+                "licences": sorted(set(licensed.values())),
+            },
+            "citizen": {
+                "provider": "Sensor.Community",
+                "count": sum(1 for row in rows if row[4] == 1),
+                "licence": "ODbL 1.0 / DbCL 1.0",
+                "calibrationFactor": round(factor, 3),
+                "calibrationPairs": pairs,
+            },
+        },
+        # `source` is 0 for a reference monitor and 1 for a citizen sensor. The
+        # client never shows a citizen reading as the nearest station — see
+        # nearestReading in src/map/airTiles.ts
+        "columns": ["lon", "lat", "value", "ageMinutes", "source"],
+        "stations": [list(row) for row in sorted(rows)],
     }
 
     with open(arguments.output, "w") as handle:
         json.dump(snapshot, handle, separators=(",", ":"))
 
-    kept = len(rows)
+    written = snapshot["sources"]
     print(
-        f"{kept} stations from {seen} rows, "
-        f"{seen - kept} dropped as stale, faulty or unplaceable",
+        f"{len(rows)} readings: {written['reference']['count']} reference, "
+        f"{written['citizen']['count']} citizen",
         file=sys.stderr,
     )
 

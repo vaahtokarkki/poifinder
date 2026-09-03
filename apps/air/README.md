@@ -1,8 +1,11 @@
 # Air quality tiles
 
-Current fine-particle levels (PM2.5) from OpenAQ, interpolated between
-monitoring stations and served as vector tiles. Six bands, the European Air
-Quality Index's own.
+Current fine-particle levels (PM2.5) from reference monitors and the
+Sensor.Community citizen network, interpolated between them and served as
+vector tiles. Six bands, the European Air Quality Index's own.
+
+Published for the 103 European cities the app has a page for, each clipped to
+its own administrative outline plus ten kilometres.
 
 The app draws them as an optional overlay and puts the nearest station's
 reading in the popups of places you would linger in. Both are behind
@@ -14,7 +17,8 @@ so a checkout with no tile server is a working checkout.
 | --- | --- |
 | [`bin/build-air-tiles`](bin/build-air-tiles) | The pipeline: fetch, interpolate, tile |
 | [`bin/air-latest`](bin/air-latest) | Current PM2.5 from OpenAQ and Sensor.Community |
-| [`boundaries.geojson`](boundaries.geojson) | The city outlines the tiles are clipped to |
+| [`bin/fetch-boundaries`](bin/fetch-boundaries) | Fetches city outlines from Nominatim, once, and caches them |
+| [`boundaries.geojson`](boundaries.geojson) | Those outlines: 103 European cities, committed |
 | [`bin/air-field`](bin/air-field) | The model: inverse distance weighting, contoured, masked |
 
 ## Development
@@ -49,6 +53,28 @@ docker compose run --rm builder build-air-tiles --stations=/work/stations.json
 
 The field is deterministic given the stations, so the second run rebuilds the
 same map and any difference in it is the change.
+
+### The boundaries, and why they are cached
+
+```bash
+bin/fetch-boundaries --cities=../noise/cities.json --out=boundaries.geojson \
+  --bbox=-25,34,45,72
+```
+
+Every boundary already in the file is kept and never fetched again, so that
+command is a two second no-op today and a two second one-city fetch when a city
+is added. A council redrawing a limit is not on the schedule an hourly tile
+build runs to, and asking Nominatim 103 times an hour for answers that have not
+changed is how a project gets blocked. `--refresh` names the cities to fetch
+again when one really has moved.
+
+Six of the hundred and three needed a second lookup. Searching "Copenhagen"
+returns exactly one result — a `place` node with a point and no polygon — and
+asking for more results does not help, because there is only ever one. What
+that answer carries is its administrative parent in the display name, and
+*that* has the boundary: København → Københavns Kommune, Athens → Δήμος
+Αθηναίων, Glasgow → Glasgow City. So a miss is retried once through the parent
+rather than given up on, which is a rule instead of six special cases.
 
 ### Choosing what to publish
 
@@ -94,7 +120,17 @@ caption already promises, rather than an empty one.
 
 Three steps, and the third is the one that keeps it honest.
 
-**Fetch.** Two networks, doing two different jobs.
+**Fetch.** Two networks, doing two different jobs, and one filter that applies
+to both: a reading of exactly 0.00 µg/m³ is a stopped instrument rather than
+clean air. The cleanest air ever recorded still carries a microgram or two of
+sea salt. That began as a citizen-sensor rule and should not have been — on a
+Europe-wide build, 193 of 2,087 *reference* stations were sending flat zeroes,
+9.2% of them, clustered across Iceland, Ireland and Scotland, every one pulling
+the interpolation toward a cleanliness nothing had measured. Reykjavík was
+drawn from three of them and produced no bands at all, because a field of flat
+zeroes has no contour to cut. It now publishes nothing there, which is the
+honest answer.
+
 
 OpenAQ's `/v3/parameters/2/latest` returns the most recent value from every
 sensor on the planet measuring PM2.5 — 21 pages of 1,000, about thirty seconds.

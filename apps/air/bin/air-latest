@@ -57,7 +57,21 @@ PAGE_SIZE = 1000
 PAGE_DELAY_SECONDS = 1.1
 MAX_PAGES = 60
 
-VALUE_FLOOR = 0.0
+# The lowest reading treated as a measurement rather than as a stopped
+# instrument, and it applies to both networks.
+#
+# An hourly mean of exactly 0.00 µg/m³ is not clean air. The cleanest air ever
+# recorded — mid-ocean, Antarctic, Arctic winter — still carries a microgram or
+# two of sea salt and dust, and a reference instrument reading a flat zero for
+# an hour is reporting that it is not reporting.
+#
+# This started as a citizen-sensor rule, which was an oversight worth naming:
+# on a Europe-wide build, 193 of 2,087 *reference* stations were sending exactly
+# zero — 9.2% of them, clustered across Iceland, Ireland and Scotland — and
+# every one was pulling the interpolation toward a cleanliness nothing had
+# measured. Reykjavík was drawn from three of them and produced no bands at all,
+# because a field of flat zeroes has no contour to cut.
+VALUE_FLOOR = 0.1
 VALUE_CEILING = 2000.0
 
 # The hard geographic limit. See the header: this is a licence boundary that
@@ -110,9 +124,9 @@ CALIBRATION_CLAMP = (0.33, 3.0)
 # hole in the middle of a city
 CITIZEN_SATURATION = 999.0
 
-# An hourly mean of exactly zero is a sensor that has stopped rather than air
-# that is clean. Eight of 596 read this way on the build that found it
-CITIZEN_FLOOR = 0.1
+# The citizen network is held to the same floor as the reference one; see
+# VALUE_FLOOR, which is where the reasoning lives
+CITIZEN_FLOOR = VALUE_FLOOR
 
 # How far above the worst reference monitor in the same build a citizen sensor
 # may read before it is treated as broken rather than as informative.

@@ -227,35 +227,55 @@ tippecanoe \
 # in, so that a popup can say "18 µg/m³, 12 km away" — a measurement and its
 # distance — instead of the interpolated colour underneath it
 PUBLISHED="$WORK_DIR/stations.published.json"
-python3 - "$STATIONS" "$PUBLISHED" "$MASK_KM" "$PUBLISH_BBOX" <<'TRIM'
+python3 - "$STATIONS" "$PUBLISHED" "$MASK_KM" "$BOUNDARY_FILE" "${CITIES:-}" "$BUFFER_KM" <<'TRIM'
 import json, math, sys
 
+from shapely.geometry import shape
+from shapely.ops import transform, unary_union
+
 source, destination = sys.argv[1], sys.argv[2]
-mask_km, bbox = float(sys.argv[3]), sys.argv[4]
+mask_km = float(sys.argv[3])
+boundary_path, cities, buffer_km = sys.argv[4], sys.argv[5], float(sys.argv[6])
 
 with open(source) as handle:
     snapshot = json.load(handle)
-
 rows = snapshot["stations"]
 
-if bbox:
-    west, south, east, north = (float(part) for part in bbox.split(","))
-    # Padded by the mask radius, because the nearest station to somewhere just
-    # inside the box is often just outside it. A popup in Aachen that skipped
-    # the Belgian monitor 15 km away to reach a German one 60 km away would be
-    # quoting a worse number for a tidier reason
-    pad_lat = mask_km / 110.574
-    worst = min(max(abs(south), abs(north)), 85.0)
-    pad_lon = mask_km / (111.320 * max(math.cos(math.radians(worst)), 0.15))
-    rows = [
-        row for row in rows
-        if west - pad_lon <= row[0] <= east + pad_lon
-        and south - pad_lat <= row[1] <= north + pad_lat
-    ]
-    snapshot["bbox"] = [west, south, east, north]
+# Trimmed to the published shape rather than to a box around it, and for 103
+# cities scattered from Reykjavik to Athens that is the whole difference. The
+# box is the whole of Europe, so a box trim keeps every station on the
+# continent and the client downloads all of them to answer one popup.
+features = json.load(open(boundary_path))["features"]
+if cities.strip():
+    wanted = {slug.strip() for slug in cities.split(",") if slug.strip()}
+    features = [f for f in features if f["properties"].get("slug") in wanted]
+
+area = unary_union([shape(f["geometry"]) for f in features])
+
+# Buffered by the published buffer plus the mask radius: a popup just inside
+# the published edge may legitimately quote a monitor just outside it, and
+# dropping that station would replace a nearby reading with a distant one
+lat0 = math.radians(area.centroid.y)
+scale = max(math.cos(lat0), 0.05)
+to_km = lambda x, y: (x * 111.320 * scale, y * 110.574)
+to_degrees = lambda x, y: (x / (111.320 * scale), y / 110.574)
+keep = transform(to_degrees, transform(to_km, area).buffer(buffer_km + mask_km))
+
+# One prepared geometry rather than a contains() call per station against a
+# multipolygon with a hundred parts
+try:
+    from shapely.prepared import prep
+    inside = prep(keep).contains
+except ImportError:
+    inside = keep.contains
+
+from shapely.geometry import Point
+before = len(rows)
+rows = [row for row in rows if inside(Point(row[0], row[1]))]
 
 snapshot["stations"] = rows
 snapshot["count"] = len(rows)
+snapshot["bbox"] = [round(v, 4) for v in keep.bounds]
 
 # Recount per source after the trim, so the published file describes itself
 # rather than the larger set it was cut from
@@ -270,7 +290,7 @@ if "source" in (snapshot.get("columns") or []):
 with open(destination, "w") as handle:
     json.dump(snapshot, handle, separators=(",", ":"))
 
-print(f"  stations published: {len(rows)}", file=sys.stderr)
+print(f"  stations published: {len(rows)} of {before}", file=sys.stderr)
 TRIM
 
 gzip -9 -c "$PUBLISHED" > "$STAGING/stations.json"

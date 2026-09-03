@@ -76,6 +76,30 @@ const MAX_ZOOM = 8;
  * about that street; the popup beside it is what says how much the colour is
  * worth.
  */
+/**
+ * The credit this layer owes, and it is owed rather than offered.
+ *
+ * ODC-BY and CC BY both require attributing the source, so this names the
+ * networks instead of only the convenient aggregator: the EEA's monitors are
+ * most of the reference data, Sensor.Community is nearly all of the detail,
+ * and the city outline the tiles are clipped to is OpenStreetMap's.
+ *
+ * Exported because setting it on the source is not enough to make it appear.
+ * The Leaflet adapter reads attributions off the style once, when the style
+ * loads, and this layer is deliberately added later so its tiles do not
+ * compete with the basemap. BasemapLayer puts it into Leaflet's control by
+ * hand for that reason — see the note there.
+ */
+export const AIR_ATTRIBUTION =
+  'Air quality: <a href="https://www.eea.europa.eu/">EEA</a> and others via ' +
+  '<a href="https://openaq.org/">OpenAQ</a>, ' +
+  '<a href="https://sensor.community/">Sensor.Community</a>, ' +
+  // "from" rather than a second "© OpenStreetMap contributors": the basemap's
+  // own credit already carries that notice, and repeating it verbatim reads as
+  // a duplicate rather than as a separate acknowledgement. What this adds is
+  // which OSM data is used and what for
+  'city boundaries from OpenStreetMap';
+
 export const AIR_SOURCE_ID = "wayside-air";
 export const AIR_LAYER_ID = "wayside-air-fill";
 
@@ -195,16 +219,7 @@ function installAirLayer(map: MaplibreMap): void {
     tiles: [`${TILES_URL}/{z}/{x}/{y}.pbf`],
     minzoom: MIN_ZOOM,
     maxzoom: MAX_ZOOM,
-    // Names the networks rather than only the convenient aggregator. Both
-    // licences here require attributing the source, and "OpenAQ" alone
-    // attributes the middleman: the EEA's monitors are most of the reference
-    // data, Sensor.Community is nearly all of the detail, and the city outline
-    // the tiles are clipped to is OpenStreetMap's
-    attribution:
-      'Air quality: <a href="https://www.eea.europa.eu/">EEA</a> and others via ' +
-      '<a href="https://openaq.org/">OpenAQ</a>, ' +
-      '<a href="https://sensor.community/">Sensor.Community</a>, ' +
-      'boundaries © OpenStreetMap contributors',
+    attribution: AIR_ATTRIBUTION,
   });
 
   /**

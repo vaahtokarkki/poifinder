@@ -48,6 +48,17 @@ export const noiseTilesConfigured = Boolean(TILES_URL);
 const MIN_ZOOM = 10;
 const MAX_ZOOM = 12;
 
+/**
+ * The credit this layer owes. The tiles are an ODbL derivative of
+ * OpenStreetMap, so saying where they came from is a licence term.
+ *
+ * Setting it on the source does not make it appear, which is why this is
+ * exported. The Leaflet adapter collects attributions when the style loads and
+ * this source is added afterwards, so nothing was ever reading it — see the
+ * note in BasemapLayer, which now adds it to Leaflet's control by hand.
+ */
+export const NOISE_ATTRIBUTION = "Noise modelled from OpenStreetMap";
+
 export const NOISE_SOURCE_ID = "wayside-noise";
 export const NOISE_LAYER_ID = "wayside-noise-fill";
 
@@ -127,9 +138,7 @@ function installNoiseLayer(map: MaplibreMap): void {
     tiles: [`${TILES_URL}/{z}/{x}/{y}.pbf`],
     minzoom: MIN_ZOOM,
     maxzoom: MAX_ZOOM,
-    // The tiles are ODbL like the points, and the attribution control reads
-    // this off the source the same way it reads CARTO's off theirs
-    attribution: "Noise modelled from OpenStreetMap",
+    attribution: NOISE_ATTRIBUTION,
   });
 
   /**

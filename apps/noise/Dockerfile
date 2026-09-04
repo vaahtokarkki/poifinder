@@ -56,11 +56,18 @@ COPY cities.json /opt/wayside/cities.json
 # council redraws one, which is not the schedule a tile build runs to
 COPY boundaries.geojson /opt/wayside/boundaries.geojson
 
+# Names and country codes for the areas in areas.txt that cities.json does not
+# carry — this model covers every European capital and million-plus city, and
+# not all of those have a page in the app. Shared with apps/air, which has the
+# same file for the same reason
+COPY extra-cities.json /opt/wayside/extra-cities.json
+
 # The deploy list. Baked in for the same reason cities.json is: an image is a
 # complete answer to "what does this build" without a file next to it
 COPY areas.txt /opt/wayside/areas.txt
 
 ENV NOISE_CITIES_FILE=/opt/wayside/cities.json \
+    NOISE_EXTRA_CITIES_FILE=/opt/wayside/extra-cities.json \
     NOISE_TILE_DIR=/tiles \
     NOISE_CACHE_DIR=/cache \
     NOISE_MIN_ZOOM=10 \

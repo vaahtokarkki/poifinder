@@ -44,6 +44,14 @@
 set -euo pipefail
 
 CITIES_FILE="${NOISE_CITIES_FILE:-/opt/wayside/cities.json}"
+
+# Names and country codes for areas this model covers that the frontend has no
+# page for — European capitals and million-plus cities outside cities.json's
+# own list. That file is generated from src/seo/cities.ts and CI refuses a
+# hand edit to it, so a city that exists for this layer and for apps/air but
+# not as an app page lives here instead. See extra-cities.json
+EXTRA_CITIES_FILE="${NOISE_EXTRA_CITIES_FILE:-/opt/wayside/extra-cities.json}"
+
 TILE_DIR="${NOISE_TILE_DIR:-/tiles}"
 CACHE_DIR="${NOISE_CACHE_DIR:-/cache}"
 WORK_DIR="${NOISE_WORK_DIR:-/tmp/noise-work}"
@@ -138,7 +146,7 @@ fi
 # anyone has fetched a shape for it
 AREA_TSV="$WORK_DIR/areas.tsv"
 python3 - "$CITIES_FILE" "$AREA_TSV" "$PAD_METRES" "$BIG_AREA_KM2" \
-  "${WANTED[*]-}" "${BOXES[*]-}" "$BOUNDARIES_FILE" <<'PY'
+  "${WANTED[*]-}" "${BOXES[*]-}" "$BOUNDARIES_FILE" "$EXTRA_CITIES_FILE" <<'PY'
 import json, math, os, sys
 
 
@@ -186,6 +194,13 @@ cities_file, out_path, pad, big_km2 = sys.argv[1], sys.argv[2], float(sys.argv[3
 wanted = sys.argv[5].split() if len(sys.argv) > 5 and sys.argv[5].strip() else []
 boxes = sys.argv[6].split() if len(sys.argv) > 6 and sys.argv[6].strip() else []
 boundaries_file = sys.argv[7] if len(sys.argv) > 7 else ""
+extra_cities_file = sys.argv[8] if len(sys.argv) > 8 else ""
+
+# The radius an extra city (see EXTRA_CITIES_FILE above) falls back to when it
+# has no boundary of its own yet. Twenty kilometres rather than the smaller,
+# hand-picked radii cities.json carries, matching AIR_POINT_BUFFER_KM in
+# apps/air: the point is what both layers agree a bare centre is worth publishing
+EXTRA_CITY_RADIUS = 20000.0
 
 # slug -> the bounding box of the parts worth keeping. See noise-bands, which
 # reads the same file and applies the same rule to build the clip itself; this
@@ -195,6 +210,12 @@ if boundaries_file and os.path.exists(boundaries_file):
     for feature in json.load(open(boundaries_file)).get("features", []):
         slug = (feature.get("properties") or {}).get("slug")
         geometry = feature.get("geometry") or {}
+        # A feature fetch-boundaries wrote from a bare point (no outline
+        # anywhere in Nominatim's answer — see its "boundaryType": "point")
+        # has coordinates shaped nothing like a ring, and belongs in the
+        # circle fallback below rather than in this box
+        if geometry.get("type") not in ("Polygon", "MultiPolygon"):
+            continue
         parts = (
             geometry.get("coordinates", [])
             if geometry.get("type") == "MultiPolygon"
@@ -232,11 +253,20 @@ if boxes and not wanted:
     cities = []
 else:
     cities = json.load(open(cities_file))["cities"]
+    # Areas this model covers with no page in the app — see EXTRA_CITIES_FILE
+    # above. Merged rather than looked up separately, so a slug in areas.txt
+    # is resolved from either list exactly the way fetch-boundaries already
+    # resolves one against apps/air's --cities and --cities=extra-cities.json
+    if extra_cities_file and os.path.exists(extra_cities_file):
+        by_slug = {city["slug"]: city for city in cities}
+        for extra in json.load(open(extra_cities_file)):
+            if extra["slug"] not in by_slug:
+                cities.append({**extra, "radius": extra.get("radius", EXTRA_CITY_RADIUS)})
     if wanted:
         by_slug = {city["slug"]: city for city in cities}
         missing = [slug for slug in wanted if slug not in by_slug]
         if missing:
-            sys.exit(f"no such city in {cities_file}: {', '.join(missing)}")
+            sys.exit(f"no such city in {cities_file} or {extra_cities_file}: {', '.join(missing)}")
         cities = [by_slug[slug] for slug in wanted]
 
 for city in cities:

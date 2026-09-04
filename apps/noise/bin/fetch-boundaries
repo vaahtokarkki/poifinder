@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 #
-# City administrative boundaries, for the areas the tiles are built for.
+# City administrative boundaries, fetched once and kept.
 #
 #   fetch-boundaries --cities=cities.json --out=boundaries.geojson berlin munich
+#   fetch-boundaries --cities=extra-cities.json --out=boundaries.geojson moscow
+#   fetch-boundaries ... --refresh berlin        re-fetch one that is already there
 #
 # A city is not a circle. Berlin's own boundary reaches 45 km east to west and
 # 38 km north to south, and a 12 km circle on its centre covered about a fifth
@@ -15,17 +17,39 @@
 # build-noise-tiles, which exists because a motorway outside the city line is
 # still heard inside it.
 #
-# The boundaries come from Nominatim, which serves the geometry of the same
-# relation the map is drawn from, and are committed rather than fetched at
-# build time: a boundary changes when a council redraws it, which is not on
-# the schedule a tile build runs to, and one download per city per run is a
-# request to somebody else's free service for an answer that has not changed.
+# A handful of the smallest states have no such outline in Nominatim's answer
+# at all — nothing but a node, however the query is asked. Those are written
+# as a Point rather than dropped, with "boundaryType": "point" in their
+# properties; build-noise-tiles falls back to a city's own `radius` circle for
+# one of these rather than trying to buffer a point as if it were an outline.
 #
-# Simplified to SIMPLIFY_DEGREES, which at these latitudes is around a hundred
-# metres. The clip is buffered by ten kilometres afterwards, so detail finer
-# than that cannot survive into the answer anyway, and the raw relations are
-# megabytes apiece.
-
+# THIS IS A CACHE, AND THAT IS THE POINT
+#
+# Every boundary already in --out is kept and never fetched again. A council
+# redrawing a city limit is not on the schedule a tile build runs to, and
+# asking somebody else's free service for answers that have not changed since
+# last year is the kind of thing that gets a project blocked.
+#
+# So a run fetches only what is missing, which makes adding a city a one line
+# diff and a two second run rather than a two minute one. --refresh is there
+# for the case where a boundary really has moved, and names the cities to
+# refetch rather than doing all of them.
+#
+# The result is committed and baked into the image, for the reason cities.json
+# is: an image should be a complete answer to "what does this build" without a
+# file next to it.
+#
+# Deliberately not run at build time. Nominatim is rate limited by courtesy
+# rather than by key, a build that called it once per city would be abusing
+# that, and a tile build that fails because a geocoder is down is a tile build
+# with a dependency it does not need.
+#
+# This script and apps/air/bin/fetch-boundaries are the same tool twice rather
+# than one shared between them: each app is its own Docker build context, and
+# apps/noise and apps/air ask Nominatim for overlapping but not identical sets
+# of cities. Keeping them lets each stay a complete answer to "what does this
+# image build" on its own; see extra-cities.json for the file that keeps their
+# actual output aligned.
 import argparse
 import json
 import sys
@@ -45,7 +69,7 @@ USER_AGENT = "wayside.cc noise tile builder (https://wayside.cc)"
 DELAY_SECONDS = 1.2
 
 
-def fetch(name, country_code):
+def search(name, country_code):
     query = {
         "q": name,
         "countrycodes": country_code.lower(),
@@ -58,7 +82,11 @@ def fetch(name, country_code):
         headers={"User-Agent": USER_AGENT},
     )
     with urllib.request.urlopen(request, timeout=60) as response:
-        results = json.load(response)
+        return json.load(response)
+
+
+def boundary_in(results):
+    """The first administrative area with a shape, or (None, None)."""
 
     # The first result is whatever Nominatim ranked highest, which for a city
     # name is sometimes a suburb of it, a street in it, or a hotel named after
@@ -74,6 +102,66 @@ def fetch(name, country_code):
     return None, None
 
 
+def administrative_parent(results):
+    """The name of the area a place node sits in, from its display name.
+
+    Some cities return exactly one result: a `place` node with a Point and no
+    polygon at all, and asking for more results does not help because there is
+    only ever one. What that answer carries is the administrative area
+    containing it, as the second component of the display name, and *that* has
+    the boundary: "København, Københavns Kommune, ..." leads to Københavns
+    Kommune, and "Athens, Δήμος Αθηναίων, ..." to the municipality of Athens.
+    So a miss is retried once against the parent rather than given up on.
+    """
+    for result in results:
+        parts = [part.strip() for part in (result.get("display_name") or "").split(",")]
+        if len(parts) > 1 and parts[1]:
+            return parts[1]
+    return None
+
+
+def first_point(results):
+    """A coordinate to fall back to when nothing in the answer has a shape.
+
+    The initial query's own top hit rather than the parent's: a fallback
+    should sit as close as possible to the place actually asked for, and a
+    parent administrative area can be centred a fair distance from the city
+    named inside it.
+    """
+    for result in results:
+        lat, lon = result.get("lat"), result.get("lon")
+        if lat is None or lon is None:
+            continue
+        try:
+            return float(lon), float(lat)
+        except (TypeError, ValueError):
+            continue
+    return None
+
+
+def fetch(name, country_code):
+    """The city's administrative boundary, retrying once through its parent.
+
+    Returns (result, geometry, point): geometry is None and point is a
+    (lon, lat) pair when neither query turned up a shape at all.
+    """
+    results = search(name, country_code)
+    result, geometry = boundary_in(results)
+    if geometry is not None:
+        return result, geometry, None
+
+    point = first_point(results)
+
+    parent = administrative_parent(results)
+    if parent and parent.casefold() != name.casefold():
+        time.sleep(DELAY_SECONDS)
+        parent_result, parent_geometry = boundary_in(search(parent, country_code))
+        if parent_geometry is not None:
+            return parent_result, parent_geometry, None
+
+    return None, None, point
+
+
 def simplify(geometry):
     """Shapely if it is here, the raw shape if it is not."""
     try:
@@ -84,11 +172,25 @@ def simplify(geometry):
     return mapping(simplified)
 
 
+def inside(bbox, lon, lat):
+    return bbox[0] <= lon <= bbox[2] and bbox[1] <= lat <= bbox[3]
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--cities", required=True, help="cities.json, for names and countries")
     parser.add_argument("--out", required=True)
-    parser.add_argument("slugs", nargs="+")
+    parser.add_argument(
+        "--bbox",
+        default=None,
+        help="select every city in west,south,east,north instead of naming them",
+    )
+    parser.add_argument(
+        "--refresh",
+        action="store_true",
+        help="re-fetch the named cities even though they are already cached",
+    )
+    parser.add_argument("slugs", nargs="*")
     arguments = parser.parse_args()
 
     with open(arguments.cities, encoding="utf-8") as handle:
@@ -96,22 +198,68 @@ def main():
     cities = payload if isinstance(payload, list) else payload.get("cities", [])
     known = {city["slug"]: city for city in cities}
 
-    features = []
-    for slug in arguments.slugs:
+    # What is already on disk. This is the cache, and it is only ever added to
+    existing = {}
+    try:
+        with open(arguments.out, encoding="utf-8") as handle:
+            for feature in json.load(handle).get("features", []):
+                slug = (feature.get("properties") or {}).get("slug")
+                if slug:
+                    existing[slug] = feature
+    except FileNotFoundError:
+        pass
+    except (ValueError, KeyError) as error:
+        raise SystemExit(f"{arguments.out} is not a boundaries file: {error}")
+
+    wanted = list(arguments.slugs)
+    if arguments.bbox:
+        try:
+            bbox = tuple(float(part) for part in arguments.bbox.split(","))
+            if len(bbox) != 4:
+                raise ValueError
+        except ValueError:
+            raise SystemExit(f"--bbox wants west,south,east,north: {arguments.bbox!r}")
+        wanted += [
+            city["slug"]
+            for city in cities
+            if city.get("lon") is not None
+            and city.get("lat") is not None
+            and inside(bbox, float(city["lon"]), float(city["lat"]))
+        ]
+    if not wanted:
+        raise SystemExit("name some cities, or give a --bbox to select them")
+
+    # Dedupe while keeping the order asked for, so a log reads like the request
+    seen = set()
+    wanted = [slug for slug in wanted if not (slug in seen or seen.add(slug))]
+
+    todo = [
+        slug
+        for slug in wanted
+        if arguments.refresh or slug not in existing
+    ]
+    cached = len(wanted) - len(todo)
+    print(
+        f"{len(wanted)} cities: {cached} already on disk, {len(todo)} to fetch",
+        file=sys.stderr,
+    )
+
+    failed = []
+    for index, slug in enumerate(todo, 1):
         city = known.get(slug)
         if city is None:
             print(f"  {slug}: not in {arguments.cities}", file=sys.stderr)
+            failed.append(slug)
             continue
         try:
-            result, geometry = fetch(city["name"], city.get("countryCode", ""))
+            result, geometry, point = fetch(city["name"], city.get("countryCode", ""))
         except Exception as error:
             print(f"  {slug}: {error}", file=sys.stderr)
+            failed.append(slug)
             continue
-        if geometry is None:
-            print(f"  {slug}: no administrative boundary in the answer", file=sys.stderr)
-            continue
-        features.append(
-            {
+
+        if geometry is not None:
+            existing[slug] = {
                 "type": "Feature",
                 "properties": {
                     "slug": slug,
@@ -124,13 +272,42 @@ def main():
                 },
                 "geometry": simplify(geometry),
             }
-        )
-        print(f"  {slug}: {result.get('osm_type')}/{result.get('osm_id')}", file=sys.stderr)
+            print(
+                f"  [{index}/{len(todo)}] {slug}: "
+                f"{result.get('osm_type')}/{result.get('osm_id')}",
+                file=sys.stderr,
+            )
+        elif point is not None:
+            existing[slug] = {
+                "type": "Feature",
+                "properties": {
+                    "slug": slug,
+                    "name": city["name"],
+                    "source": "OpenStreetMap via Nominatim",
+                    "licence": "ODbL 1.0",
+                    "boundaryType": "point",
+                },
+                "geometry": {"type": "Point", "coordinates": [point[0], point[1]]},
+            }
+            print(f"  [{index}/{len(todo)}] {slug}: point only, no boundary", file=sys.stderr)
+        else:
+            print(f"  {slug}: no administrative boundary or point in the answer", file=sys.stderr)
+            failed.append(slug)
+            continue
         time.sleep(DELAY_SECONDS)
 
+    # Sorted, so that adding a city is a diff of one block rather than a
+    # reshuffle of the whole file
+    features = [existing[slug] for slug in sorted(existing)]
     with open(arguments.out, "w", encoding="utf-8") as handle:
         json.dump({"type": "FeatureCollection", "features": features}, handle)
+
     print(f"wrote {arguments.out}: {len(features)} boundaries", file=sys.stderr)
+    if failed:
+        print(
+            f"no boundary for {len(failed)}: {', '.join(failed)}",
+            file=sys.stderr,
+        )
 
 
 if __name__ == "__main__":

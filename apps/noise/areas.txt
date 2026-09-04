@@ -7,21 +7,81 @@
 # in cities.json — that file says which areas *exist*, this one says which are
 # worth the download and the disk.
 #
-# GERMANY ONLY, for now. The full list — 60 cities across 25 countries, chosen
-# from Matomo usage and from how many noise-relevant points each city has — is
-# in the git history of this file and is 31 GB of downloads. Germany is 4.6 GB,
-# already cached on the server, and seven cities is enough to see whether the
-# boundary clip is doing what it should before spending the rest.
+# EVERY EUROPEAN CAPITAL AND EVERY EUROPEAN CITY OF A MILLION OR MORE
+# RESIDENTS — the same rule and the same set apps/air publishes its wash for,
+# so a reader who opens both layers over the same place is looking at the same
+# city rather than two different ideas of where one ends. See
+# apps/air/README.md for how the set was chosen and boundaries.geojson for
+# where each outline came from; extra-cities.json carries the names for the
+# cities in this list with no page of their own in the app.
 #
 # Each of these is clipped to its own administrative boundary plus ten
 # kilometres — see boundaries.geojson and NOISE_BOUNDARY_BUFFER — rather than
-# to a circle on its centre.
+# to a circle on its centre. Sixty-four areas across forty-seven countries is
+# NOISE_EXTRACTS in docker-compose.prod.yml, and it is tens of gigabytes: see
+# that file for why the download is cached rather than repeated.
 
-# Germany
+amsterdam
+andorra-la-vella
+ankara
+athens
+barcelona
+belgrade
 berlin
-munich
-hamburg
-stuttgart
+bern
+birmingham
+bratislava
+brussels
+bucharest
+budapest
+chisinau
 cologne
-frankfurt
-dusseldorf
+copenhagen
+dublin
+hamburg
+helsinki
+istanbul
+kharkiv
+krasnodar
+kyiv
+lisbon
+ljubljana
+london
+luxembourg
+madrid
+milan
+minsk
+monaco
+moscow
+munich
+nicosia
+nizhny-novgorod
+odesa
+oslo
+paris
+podgorica
+prague
+pristina
+reykjavik
+riga
+rome
+rostov-on-don
+saint-petersburg
+san-marino
+sarajevo
+skopje
+sofia
+stockholm
+tallinn
+tbilisi
+tirana
+vaduz
+valletta
+vatican-city
+vienna
+vilnius
+volgograd
+voronezh
+warsaw
+yerevan
+zagreb

@@ -1,7 +1,14 @@
 # Noise tiles
 
-Modelled road and rail noise for the cities the app has pages for, as vector
-tiles. Three bands — quiet, moderate, noisy — built from OpenStreetMap alone.
+Modelled road and rail noise, as vector tiles. Three bands — quiet, moderate,
+noisy — built from OpenStreetMap alone.
+
+Published for every European capital and every European city of a million or
+more residents — the same set apps/air publishes its wash for, so the two
+overlays agree on where one city ends and the countryside begins — each
+clipped to its own administrative outline plus ten kilometres. See
+"Choosing what to publish" in apps/air/README.md for how that set was chosen;
+[`areas.txt`](areas.txt) is this app's copy of it.
 
 The app draws them as an optional overlay and reads the band under a point for
 its popup. Both are behind `VITE_NOISE_TILES_URL`: with that unset there is no
@@ -12,8 +19,12 @@ no tile server is a working checkout.
 | --- | --- |
 | [`bin/build-noise-tiles`](bin/build-noise-tiles) | The pipeline: download, cut, model, tile |
 | [`bin/noise-bands`](bin/noise-bands) | The model itself, one area at a time |
+| [`bin/fetch-boundaries`](bin/fetch-boundaries) | Fetches city outlines from Nominatim, once, and caches them |
 | [`cities.json`](cities.json) | Generated from `src/seo/cities.ts` by `npm run noise:cities` |
-| [`europe.txt`](europe.txt) | Extracts covering the European tier 1 cities |
+| [`extra-cities.json`](extra-cities.json) | Names and country codes for areas.txt entries with no page in the app |
+| [`boundaries.geojson`](boundaries.geojson) | Those outlines, committed and cached |
+| [`areas.txt`](areas.txt) | Which areas get built in production |
+| [`europe.txt`](europe.txt) | The extracts those areas need, one line each |
 
 ## Development
 
@@ -40,9 +51,12 @@ produces a complete one.
 
 ## Building an arbitrary area
 
-Anything in `cities.json` is a circle around a city centre, but the builder
-takes bounding boxes too — for somewhere that is not on the list, for a
-neighbourhood rather than a whole city, or for a region that spans several:
+Anything in `cities.json` or `extra-cities.json` takes its administrative
+boundary from `boundaries.geojson` when one has been fetched for it, and a
+circle around its centre otherwise — see `fetch-boundaries` and
+`NOISE_BOUNDARY_BUFFER` in `build-noise-tiles`. The builder takes bounding
+boxes too — for somewhere that is not on either list, for a neighbourhood
+rather than a whole city, or for a region that spans several:
 
 ```bash
 # west,south,east,north in degrees, the order osmium and Overpass use

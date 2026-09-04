@@ -57,6 +57,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
   },
 
   groups: {
+    featured: "En vedette",
     essentials: "L'essentiel",
     car: "Voiture",
     food: "Manger",

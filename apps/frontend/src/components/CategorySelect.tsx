@@ -6,7 +6,13 @@ import Select from "@mui/material/Select";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
 import TuneIcon from "@mui/icons-material/Tune";
 import React from "react";
-import { CATEGORIES, CATEGORY_CONFIG, CATEGORY_GROUP, groupDisplay } from "../constants";
+import {
+  CATEGORIES,
+  CATEGORY_CONFIG,
+  CATEGORY_GROUP,
+  FEATURED_CATEGORIES,
+  groupDisplay,
+} from "../constants";
 import { categoryDisplay } from "../seo/categories";
 import { ui } from "../copy";
 import type { Locale } from "../copy";
@@ -78,8 +84,43 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
 
   if (!visible) return null;
 
+  // FEATURED_CATEGORIES named, in the active language, in the order the
+  // constant lists them. A category missing from CATEGORY_CONFIG would filter
+  // out here rather than crash the picker, though nothing removes one today
+  const featuredCategories = FEATURED_CATEGORIES.map((id) =>
+    categories.find((cat) => cat.value === id)
+  ).filter((cat): cat is (typeof categories)[number] => cat !== undefined);
+
   const selectionChanged = (before: CATEGORIES[], after: CATEGORIES[]) =>
     before.length !== after.length || before.some((cat) => !after.includes(cat));
+
+  const toggleCategory = (category: CATEGORIES) => {
+    const alreadySelected = value.includes(category);
+    const newSelected = alreadySelected
+      ? value.filter((v) => v !== category)
+      : [...value, category];
+    // Counted here and not in the Select's onChange above: one click runs
+    // both, so tracking in both doubles every tick
+    analytics.categoryToggled(category, !alreadySelected);
+    analytics.categoriesChanged(newSelected);
+    onChange(newSelected);
+  };
+
+  // Shared by the featured shortcut row and the regular groups below it, since
+  // a category can appear in both: the featured row is a second way to reach
+  // it, not a different item. `keyPrefix` keeps the two MenuItems' React keys
+  // apart even though they share a `value`
+  const renderCategoryItem = (cat: { value: CATEGORIES; label: string }, keyPrefix: string) => (
+    <MenuItem
+      key={`${keyPrefix}-${cat.value}`}
+      value={cat.value}
+      style={{ padding: "0 1em" }}
+      onClick={() => toggleCategory(cat.value)}
+    >
+      <Checkbox checked={value.indexOf(cat.value) > -1} style={{ padding: ".4em .5em" }} />
+      <ListItemText primary={cat.label} />
+    </MenuItem>
+  );
 
   const handleOpen = () => {
     valueOnOpenRef.current = value;
@@ -189,6 +230,10 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
           <ClearAllIcon fontSize="small" style={{ margin: ".4em .7em .4em .5em" }} />
           <ListItemText primary={ui().controls.clearAll} />
         </MenuItem>
+        <ListSubheader key="subheader-featured" style={{ lineHeight: "2em", padding: ".2em 1em" }}>
+          {ui().groups.featured}
+        </ListSubheader>
+        {featuredCategories.map((cat) => renderCategoryItem(cat, "featured"))}
         {Object.values(CATEGORY_GROUP)
           .filter((g) => typeof g === "number")
           .flatMap((group) => [
@@ -198,27 +243,9 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
             >
               {groupDisplay(group as CATEGORY_GROUP)}
             </ListSubheader>,
-            ...groupedCategories[group as CATEGORY_GROUP].map((cat) => (
-              <MenuItem
-                key={cat.value}
-                value={cat.value}
-                style={{ padding: "0 1em" }}
-                onClick={() => {
-                  const alreadySelected = value.includes(cat.value);
-                  const newSelected = alreadySelected
-                    ? value.filter((v) => v !== cat.value)
-                    : [...value, cat.value];
-                  // Counted here and not in the Select's onChange above: one
-                  // click runs both, so tracking in both doubles every tick
-                  analytics.categoryToggled(cat.value, !alreadySelected);
-                  analytics.categoriesChanged(newSelected);
-                  onChange(newSelected);
-                }}
-              >
-                <Checkbox checked={value.indexOf(cat.value) > -1} style={{ padding: ".4em .5em" }} />
-                <ListItemText primary={cat.label} />
-              </MenuItem>
-            ))
+            ...groupedCategories[group as CATEGORY_GROUP].map((cat) =>
+              renderCategoryItem(cat, `group-${group}`)
+            ),
           ])}
       </Select>
     </FormControl>

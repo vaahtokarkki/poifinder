@@ -320,6 +320,28 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
   },
 };
 
+/**
+ * A shortcut section pinned above the picker's regular groups, so the two most
+ * asked-for categories and the ones people actually turn on are one tap away
+ * rather than a scroll through "Essentials" first.
+ *
+ * Toilets and Playgrounds are fixed — the pair the "Family" preset already
+ * bundles, and the reason this feature exists at all. The rest is what Matomo
+ * says people actually filter by rather than a guess: ranked by how many
+ * distinct visits had the category active while panning the map or opening a
+ * city page (Events, "Categories" > "query: pan" / "query: city-page", 2026-08
+ * to 2026-09-04) — drinking-water (53 visits), recycling (17), benches (16),
+ * ahead of outdoor-gyms (10) and atms (6). A category still belongs to its own
+ * group below as well; this only adds a second, faster way to reach it.
+ */
+export const FEATURED_CATEGORIES: CATEGORIES[] = [
+  CATEGORIES.Toilets,
+  CATEGORIES.Playgrounds,
+  CATEGORIES.DrinkingWater,
+  CATEGORIES.Recycling,
+  CATEGORIES.Bench,
+];
+
 export type CategoryPreset = {
   /** Stable key into the copy deck; the name it shows lives there */
   id: string;

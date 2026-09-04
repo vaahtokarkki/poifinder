@@ -721,6 +721,7 @@ const ui: CopyDeck["ui"] = {
   },
 
   groups: {
+    featured: "Featured",
     essentials: "Essentials",
     car: "Car",
     food: "Food",

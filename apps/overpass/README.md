@@ -755,7 +755,7 @@ request to this server anywhere in it. The map markers were never indexable.
 ## Access logs
 
 Every request is written to `logs/access.log` on the database volume, one JSON
-object per line. On the server that is `/mnt/hdd1/wayside/logs/`.
+object per line. On the server that is `$OVERPASS_DATA_DIR/logs/`.
 
 It is a file rather than the Docker log on purpose. The image points
 `/var/log/nginx/access.log` at stdout, which means the requests land in the
@@ -822,7 +822,7 @@ requests back in the Docker log.
 ### Reading it
 
 ```bash
-cd /mnt/hdd1/wayside/logs
+cd "$OVERPASS_DATA_DIR/logs"
 
 # busiest addresses today
 jq -r .ip access.log | sort | uniq -c | sort -rn | head

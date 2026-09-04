@@ -33,14 +33,21 @@
 set -euo pipefail
 
 DB_DIR=/db/db
-WORK_DIR=/db/update
+
+# Where the download, the filter pass and the region cache live. Defaults to
+# the data volume itself, so the single volume dev setup needs nothing extra.
+# The two container prod layout points this at a second, cheaper disk instead
+# (WAYSIDE_CACHE_DIR=/cache), so the heavy random writes of an import land
+# there rather than on the disk the server reads from
+CACHE_DIR=${WAYSIDE_CACHE_DIR:-/db}
+WORK_DIR="${CACHE_DIR}/update"
 NEW_DB="${WORK_DIR}/db"
 EXTRACT="${WORK_DIR}/planet.osm.bz2"
 
 # The filtered per region files, kept between runs and so deliberately not
 # under WORK_DIR, which is wiped at the end of every one. They are what lets a
 # refresh be one country instead of a continent
-PARTS_DIR=${WAYSIDE_PARTS_DIR:-/db/regions}
+PARTS_DIR=${WAYSIDE_PARTS_DIR:-${CACHE_DIR}/regions}
 LOCK_FILE=/db/update-poi-db.lock
 
 # What build-region-extract exits with when it built an extract but a URL in
@@ -203,6 +210,19 @@ mkdir -p "$NEW_DB"
 	"--version=${VERSION} --compression-method=${OVERPASS_COMPRESSION} --map-compression-method=${OVERPASS_COMPRESSION} --flush-size=${OVERPASS_FLUSH_SIZE}"
 cp -r /app/etc/rules "$NEW_DB"
 chown -R overpass:overpass "$WORK_DIR"
+
+# Cross device whenever the cache lives on a different disk than the data
+# volume, which is the whole point of WAYSIDE_CACHE_DIR. Staged under DB_DIR's
+# own directory first, rather than copied straight over the live path, so the
+# swap below is still the rename it always was and never a partial directory
+# a restart could catch mid copy
+if [[ $(stat -c %d "$WORK_DIR") != $(stat -c %d "$(dirname "$DB_DIR")") ]]; then
+	log "copying the new database onto the data volume"
+	rm -rf "${DB_DIR}.new"
+	cp -a "$NEW_DB" "${DB_DIR}.new"
+	rm -rf "$NEW_DB"
+	NEW_DB="${DB_DIR}.new"
+fi
 
 # The dispatcher holds the live database open and puts its socket inside it,
 # so it has to be down while the directories change places. Supervisor restarts

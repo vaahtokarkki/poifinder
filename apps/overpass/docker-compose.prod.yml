@@ -27,7 +27,20 @@
 # unless-stopped` then began the 35 GB download again from the top, forever.
 #
 # The values worth checking before the first start: WAYSIDE_REGION_LIST (which
-# region), OVERPASS_CORS_ORIGIN (which site), and the database path below.
+# region), OVERPASS_CORS_ORIGIN (which site), and the two paths below.
+#
+# OVERPASS_DATA_DIR and OVERPASS_CACHE_DIR are read from a .env file next to
+# this one (Compose loads it automatically; see .env.prod.example) rather than
+# written in here, because they differ by machine. Everything else about this
+# deployment stays in this one file on purpose.
+#
+# The split exists to keep an import's writes off whatever disk
+# OVERPASS_DATA_DIR is on: OVERPASS_CACHE_DIR holds the download, the filter
+# pass and the region cache, which is most of an import's I/O, and only the
+# finished database is copied onto the data disk. Point OVERPASS_CACHE_DIR at
+# a spinning disk and OVERPASS_DATA_DIR at an SSD and that copy is the only
+# thing the SSD sees. They can also both be the same path, which is what a
+# single disk box should do.
 #
 # This one covers every region the app has a city in, assembled a country at a
 # time so that neither the disk nor the download ever has to hold more than one
@@ -65,7 +78,9 @@
 #
 # First start, once:
 #
-#   mkdir -p /mnt/hdd1/wayside /mnt/hdd1/noise/tiles /mnt/hdd1/noise/cache \
+#   cp .env.prod.example .env   # then fill in OVERPASS_DATA_DIR/OVERPASS_CACHE_DIR
+#   mkdir -p "$OVERPASS_DATA_DIR" "$OVERPASS_CACHE_DIR" \
+#            /mnt/hdd1/noise/tiles /mnt/hdd1/noise/cache \
 #            /mnt/hdd1/air/tiles /mnt/hdd1/air/work
 #   docker compose -f docker-compose.prod.yml up -d
 #   docker compose -f docker-compose.prod.yml exec importer update-poi-db
@@ -107,10 +122,11 @@ services:
 
     volumes:
       # A path on the host rather than a named volume, so the database is
-      # somewhere you can point df at, back up, or move to a bigger disk. It
-      # holds the live database, a second copy of it during the swap, and the
-      # importer's working files, so give it room
-      - /mnt/hdd1/wayside:/db
+      # somewhere you can point df at, back up, or move to a bigger disk. Only
+      # the live database and a second copy of it during the swap live here
+      # now; the importer's working files are on OVERPASS_CACHE_DIR instead,
+      # see the importer service below
+      - ${OVERPASS_DATA_DIR}:/db
 
     labels:
       # Watchtower only touches what carries this, so the rest of the machine
@@ -258,9 +274,15 @@ services:
     entrypoint: ["sleep", "infinity"]
 
     volumes:
-      # The same directory the server reads, which is how the swap is a rename
-      # rather than a copy
-      - /mnt/hdd1/wayside:/db
+      # The same directory the server reads. The finished database is copied
+      # here at the end of an import; see WAYSIDE_CACHE_DIR below for where
+      # the import itself writes
+      - ${OVERPASS_DATA_DIR}:/db
+
+      # Where the download, the filter pass and the region cache live instead
+      # of on OVERPASS_DATA_DIR, so that disk only ever sees one copy landing
+      # rather than the full churn of an import. Cheaper storage belongs here
+      - ${OVERPASS_CACHE_DIR}:/cache
 
       # So update-poi-db can restart the server once the new database is in
       # place. It talks to the Docker API with curl rather than the CLI, which
@@ -363,6 +385,10 @@ services:
       # it the swap still happens, but the server goes on answering from the
       # files it already has open and says so in the log
       WAYSIDE_RESTART_CONTAINER: wayside-overpass
+
+      # Where update-poi-db writes the download, the filter pass and the
+      # region cache. See OVERPASS_CACHE_DIR near the top of this file
+      WAYSIDE_CACHE_DIR: /cache
 
       # The settings the database is built with. They have to match what the
       # server expects to read, which is why they are repeated rather than

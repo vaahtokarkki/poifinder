@@ -67,7 +67,7 @@ import { countryAt } from "./analytics/countries";
  * Points are only loaded from this zoom in. Further out the view spans a whole
  * region, which Overpass answers slowly and the map cannot draw readably
  */
-const MIN_POI_ZOOM = 10;
+const MIN_POI_ZOOM = 14;
 
 /** How long the map has to stand still before the new view is loaded */
 const AUTO_FETCH_DELAY_MS = 700;
@@ -137,10 +137,11 @@ const bboxContains = (
 
 /**
  * The zoom an IP location is opened at. The lookup lands on a city rather than
- * a street, so the view is kept wide enough that the user's own surroundings
- * are somewhere on the screen, and still inside {@link MIN_POI_ZOOM}
+ * a street, so a closer view would claim a precision the fix does not have —
+ * but it cannot open any wider than {@link MIN_POI_ZOOM} either, or the first
+ * thing a visitor sees is an empty map and a hint to zoom in
  */
-const IP_LOCATION_ZOOM = 13;
+const IP_LOCATION_ZOOM = MIN_POI_ZOOM;
 
 /**
  * The zoom a searched place opens at when the geocoder does not say how big it
@@ -223,8 +224,9 @@ const App = () => {
   const [searchPosition, setSearchPosition] = useState<[number, number] | null>(null);
   /**
    * The zoom that goes with {@link searchPosition}, when the thing that set it
-   * had an opinion. A search from the box does; a city in the URL does not, and
-   * keeps whatever view the visit arrived with
+   * had an opinion. A search from the box does; so does a city in the URL,
+   * landing at {@link MIN_POI_ZOOM} so the points load on the first frame
+   * rather than behind a zoom-in hint
    */
   const [searchZoom, setSearchZoom] = useState<number | null>(null);
   /**
@@ -869,11 +871,13 @@ const App = () => {
         const city = findCity(citySlug);
         if (city) {
           searchOriginRef.current = "city-page";
+          setSearchZoom(MIN_POI_ZOOM);
           setSearchPosition([city.lat, city.lon]);
         } else {
           const results = await fetchSuggestions(citySlug.replace(/-/g, " "));
           if (results && results.length > 0) {
             searchOriginRef.current = "city-page";
+            setSearchZoom(MIN_POI_ZOOM);
             setSearchPosition(results[0].coords);
           }
         }

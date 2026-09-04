@@ -45,8 +45,8 @@ export const noiseTilesConfigured = Boolean(TILES_URL);
  * three smooth polygons; a z12 tile holds about 1.5 m of resolution, which is
  * far finer than a band edge that was modelled rather than measured.
  */
-const MIN_ZOOM = 10;
-const MAX_ZOOM = 12;
+const MIN_ZOOM = 2;
+const MAX_ZOOM = 15;
 
 /**
  * The credit this layer owes. The tiles are an ODbL derivative of

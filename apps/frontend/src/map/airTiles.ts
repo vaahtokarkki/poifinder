@@ -54,7 +54,7 @@ export const airTilesConfigured = Boolean(TILES_URL);
  * that stopped changing four zoom levels ago.
  */
 const MIN_ZOOM = 2;
-const MAX_ZOOM = 8;
+const MAX_ZOOM = 15;
 
 /*
  * There is no maximum draw zoom, and there was one.

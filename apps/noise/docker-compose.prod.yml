@@ -57,10 +57,19 @@ services:
       # capital and every European city of a million or more residents, the
       # same set apps/air publishes its wash for. Tens of gigabytes, which is
       # why NOISE_CACHE_DIR below is a persistent volume: a country already
-      # downloaded is a country a rebuild does not fetch again, and a build
-      # that dies partway through the list picks up where it stopped rather
-      # than starting over. Armenia is the one entry not under europe/ —
-      # Geofabrik files it under asia/, and Yerevan is still on the list
+      # downloaded is a country a rebuild does not fetch again. Only the
+      # downloads resume, though: the cut intermediates go with the work
+      # directory the EXIT trap clears, so a build that dies has to redo every
+      # cut it had done.
+      #
+      # Two entries are not under europe/, not one. Armenia is filed under
+      # asia/, and Russia is a continent of its own at the top level —
+      # europe/russia-latest.osm.pbf is a 302 to Geofabrik's home page, which
+      # curl -fL follows to a 200 and saves as a 9 kB "pbf". That cost a run
+      # three hours in: the download reported success and osmium only said
+      # "invalid BlobHeader size" once it reached the file. See the guard in
+      # build-noise-tiles, which now rejects a download that is not a pbf at
+      # the point it arrives.
       NOISE_EXTRACTS: >-
         https://download.geofabrik.de/europe/netherlands-latest.osm.pbf
         https://download.geofabrik.de/europe/andorra-latest.osm.pbf
@@ -80,7 +89,7 @@ services:
         https://download.geofabrik.de/europe/ireland-and-northern-ireland-latest.osm.pbf
         https://download.geofabrik.de/europe/finland-latest.osm.pbf
         https://download.geofabrik.de/europe/ukraine-latest.osm.pbf
-        https://download.geofabrik.de/europe/russia-latest.osm.pbf
+        https://download.geofabrik.de/russia-latest.osm.pbf
         https://download.geofabrik.de/europe/portugal-latest.osm.pbf
         https://download.geofabrik.de/europe/slovenia-latest.osm.pbf
         https://download.geofabrik.de/europe/luxembourg-latest.osm.pbf

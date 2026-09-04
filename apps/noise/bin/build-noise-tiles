@@ -365,6 +365,25 @@ for extract_url in $EXTRACTS; do
     curl -fSL -C - --retry 5 --retry-delay 5 --retry-all-errors \
       --speed-limit 1024 --speed-time 60 \
       -o "$extract_file.part" "$extract_url"
+
+    # A 200 is not proof of a pbf. Geofabrik answers a path that does not
+    # exist with a 302 to its home page, `-L` follows it, `-f` sees the 200
+    # and curl reports success — leaving 9 kB of HTML named like an extract.
+    # osmium then fails with "invalid BlobHeader size", but only when the
+    # pipeline reaches that country, which on the run that found this was
+    # three hours and 42 cut cities later.
+    #
+    # Every pbf opens with a BlobHeader whose type is "OSMHeader", so the
+    # string appears in the first handful of bytes. Cheaper than osmium
+    # fileinfo and it catches the HTML page, a truncated transfer and a
+    # rate-limit notice alike.
+    if ! head -c 64 "$extract_file.part" | grep -qa "OSMHeader"; then
+      log "ERROR   $(basename "$extract_url") is not an OpenStreetMap pbf"
+      log "        $(wc -c < "$extract_file.part") bytes; first line:"
+      log "        $(head -c 200 "$extract_file.part" | tr -d '\0' | head -1)"
+      rm -f "$extract_file.part"
+      exit 1
+    fi
     mv "$extract_file.part" "$extract_file"
   fi
 

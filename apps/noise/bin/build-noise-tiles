@@ -335,8 +335,36 @@ for extract_url in $EXTRACTS; do
   else
     log "fetch   $extract_url"
     # To a temporary name first, so an interrupted download is never mistaken
-    # for a cached one on the next run
-    curl -fSL --retry 3 --retry-delay 5 -o "$extract_file.part" "$extract_url"
+    # for a cached one on the next run.
+    #
+    # A full run pulls fifteen extracts and some fifteen gigabytes over several
+    # hours, so a dropped connection is not an edge case, it is a certainty
+    # given enough runs. Three flags between them make one survivable:
+    #
+    #   --retry-all-errors  `--retry` alone covers timeouts and HTTP 408/429/5xx
+    #                       and nothing else. A connection reset mid-transfer is
+    #                       curl error 56, which is not on that list, so the
+    #                       retries never fired — that is exactly how the
+    #                       64-city run died on serbia-latest at 57 MB of 228,
+    #                       taking thirteen already-cut cities with it because
+    #                       the EXIT trap below clears the work directory.
+    #   -C -                Resume from the .part rather than starting over.
+    #                       Geofabrik serves ranges, so a retry costs only the
+    #                       bytes still missing. Only ever within this one
+    #                       invocation: the leftover .part from an earlier run
+    #                       is deleted first, because Geofabrik rebuilds these
+    #                       nightly and resuming yesterday's prefix onto today's
+    #                       file splices two different extracts into one corrupt
+    #                       pbf. A stale .part is worth less than the bytes it
+    #                       saves.
+    #   --speed-limit/time  Give up on a transfer sitting under 1 kB/s for a
+    #                       minute. The failed run stalled at zero for over a
+    #                       minute before the reset arrived; without this the
+    #                       retry clock does not start until the peer gives up.
+    rm -f "$extract_file.part"
+    curl -fSL -C - --retry 5 --retry-delay 5 --retry-all-errors \
+      --speed-limit 1024 --speed-time 60 \
+      -o "$extract_file.part" "$extract_url"
     mv "$extract_file.part" "$extract_file"
   fi
 

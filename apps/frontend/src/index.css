@@ -309,13 +309,10 @@ body {
 /*
  * The layers button and its panel, in the corner opposite the tool column.
  * Lifted by the sheet exactly as the controls on the right are, so the button
- * stays reachable with the sheet peeking; on a wide screen the panel grows
- * upwards out of the button, which is why this is a column that ends at it.
- *
- * Above the bottom sheet rather than under it: on a phone the panel is a sheet
- * of its own across the foot of the screen, and the scrim over the sheet is
- * what makes a tap on the page behind put the panel away rather than scroll
- * something under it.
+ * stays reachable with the sheet peeking, and — same as those controls — sits
+ * under the sheet rather than floating over it once the sheet grows past that
+ * point; on a wide screen the panel grows upwards out of the button, which is
+ * why this is a column that ends at it.
  */
 .map-layers {
   /* Fixed for the same reason .map-controls is: the map container reaches
@@ -323,12 +320,19 @@ body {
   position: fixed;
   left: 24px;
   bottom: calc(24px + var(--sheet-offset, 0px));
-  z-index: 2300;
+  z-index: 1200;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
   transition: bottom 0.28s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+/* Open, the panel is a modal over the whole page — the scrim over the bottom
+   sheet is what makes a tap on the page behind put the panel away rather than
+   scroll something under it — so it stands above the sheet again while open */
+.map-layers:has(.layers-panel) {
+  z-index: 2300;
 }
 
 /* A tap anywhere off the panel closes it. Barely tinted: the panel is about
@@ -530,14 +534,8 @@ button.layers-tile {
    * and 16px again. Its bottom stops moving for the same reason the map
    * controls' does — nothing is above the sheet to be lifted off any more.
    */
-  /*
-   * Hard against the same left margin as on a phone. It used to stand clear of
-   * the bottom sheet, 460px of card in the same corner, which put the control
-   * for the map in the middle of the screen with nothing under it — the sheet
-   * is dismissable and the panel sits above it in any case
-   */
   .map-layers {
-    left: 24px;
+    left: calc(16px + 460px + 16px);
     bottom: 24px;
   }
 

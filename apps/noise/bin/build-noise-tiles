@@ -511,6 +511,24 @@ if [ -n "$SKIPPED_EXTRACTS" ]; then
   log "  re-run to pick them up: the cache keeps everything that did download"
 fi
 
+# Skipping one country is a dent. Skipping most of them, because the origin is
+# down rather than because one file is, would publish a map with the holes in
+# it — and the swap at the end is what the site serves. Geofabrik answered 502
+# for every path including its own home page on the morning this was written,
+# so a run started then would have "succeeded" on the handful of cached
+# extracts and replaced a good tileset with a gutted one.
+#
+# So the skip above buys tolerance, and this spends it only up to a point:
+# below nine tenths of the areas, leave what is already published alone and
+# fail loudly. The floor is deliberately generous — it is here to catch an
+# outage, not to adjudicate a missing city.
+MIN_COVERAGE=$((TOTAL_AREAS * 9 / 10))
+if [ "$BUILT" -lt "$MIN_COVERAGE" ]; then
+  log "only $BUILT of $TOTAL_AREAS areas built, under the $MIN_COVERAGE floor"
+  log "leaving the published tiles untouched — re-run when the extracts return"
+  exit 1
+fi
+
 # ------------------------------------------------------------------ the tiles
 
 log "tippecanoe: $BUILT areas"

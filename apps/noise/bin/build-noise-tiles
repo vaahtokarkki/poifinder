@@ -327,6 +327,12 @@ log "$TOTAL_AREAS areas, zoom $MIN_ZOOM-$MAX_ZOOM"
 LINES_DIR="$WORK_DIR/lines"
 mkdir -p "$LINES_DIR"
 
+# Extracts this run could not get. An empty list is the normal case; anything
+# in it is reported at the end beside the area coverage, because the two say
+# the same thing from different ends — a country missing here is the reason an
+# area is missing there.
+SKIPPED_EXTRACTS=""
+
 for extract_url in $EXTRACTS; do
   extract_file="$CACHE_DIR/$(basename "$extract_url")"
 
@@ -361,10 +367,29 @@ for extract_url in $EXTRACTS; do
     #                       minute. The failed run stalled at zero for over a
     #                       minute before the reset arrived; without this the
     #                       retry clock does not start until the peer gives up.
+    # A failed download skips its extract rather than ending the run.
+    #
+    # Six attempts at montenegro-latest — three Geofabrik 502s and three stalls
+    # under the speed floor — ended a build that had already cut all 64 areas
+    # and was eighteen extracts from the tiles. `set -e` aborted, the EXIT trap
+    # cleared the work directory, and three hours of cutting went with it, to
+    # lose one city.
+    #
+    # Partial coverage is a state this script already understands: it counts
+    # the areas it built at the end and says how many the extracts did not
+    # reach. A country nobody could download is the same condition arriving
+    # earlier, so it is handled the same way and reported in the same breath.
+    # A run that reaches the tiles with 63 of 64 areas is worth incomparably
+    # more than one that reaches nothing with all of them.
     rm -f "$extract_file.part"
-    curl -fSL -C - --retry 5 --retry-delay 5 --retry-all-errors \
+    if ! curl -fSL -C - --retry 5 --retry-delay 5 --retry-all-errors \
       --speed-limit 1024 --speed-time 60 \
-      -o "$extract_file.part" "$extract_url"
+      -o "$extract_file.part" "$extract_url"; then
+      log "SKIP    $(basename "$extract_url") — download failed after retries"
+      rm -f "$extract_file.part"
+      SKIPPED_EXTRACTS="$SKIPPED_EXTRACTS $(basename "$extract_url")"
+      continue
+    fi
 
     # A 200 is not proof of a pbf. Geofabrik answers a path that does not
     # exist with a 302 to its home page, `-L` follows it, `-f` sees the 200
@@ -377,12 +402,17 @@ for extract_url in $EXTRACTS; do
     # string appears in the first handful of bytes. Cheaper than osmium
     # fileinfo and it catches the HTML page, a truncated transfer and a
     # rate-limit notice alike.
+    #
+    # Skipped rather than fatal, for the same reason a failed download is —
+    # but this one is a wrong URL rather than a bad night, so it will not fix
+    # itself and the end-of-run summary is where you go to find it.
     if ! head -c 64 "$extract_file.part" | grep -qa "OSMHeader"; then
-      log "ERROR   $(basename "$extract_url") is not an OpenStreetMap pbf"
+      log "SKIP    $(basename "$extract_url") is not an OpenStreetMap pbf"
       log "        $(wc -c < "$extract_file.part") bytes; first line:"
       log "        $(head -c 200 "$extract_file.part" | tr -d '\0' | head -1)"
       rm -f "$extract_file.part"
-      exit 1
+      SKIPPED_EXTRACTS="$SKIPPED_EXTRACTS $(basename "$extract_url")"
+      continue
     fi
     mv "$extract_file.part" "$extract_file"
   fi
@@ -475,6 +505,10 @@ if [ "$BUILT" -eq 0 ]; then
 fi
 if [ "$BUILT" -lt "$TOTAL_AREAS" ]; then
   log "$((TOTAL_AREAS - BUILT)) of $TOTAL_AREAS areas are not covered by these extracts"
+fi
+if [ -n "$SKIPPED_EXTRACTS" ]; then
+  log "skipped extracts:$SKIPPED_EXTRACTS"
+  log "  re-run to pick them up: the cache keeps everything that did download"
 fi
 
 # ------------------------------------------------------------------ the tiles

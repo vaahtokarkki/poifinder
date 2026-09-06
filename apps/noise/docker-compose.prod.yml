@@ -55,8 +55,9 @@ services:
     environment:
       # One extract per country areas.txt names a city in — every European
       # capital and every European city of a million or more residents, the
-      # same set apps/air publishes its wash for. Tens of gigabytes, which is
-      # why NOISE_CACHE_DIR below is a persistent volume: a country already
+      # same set apps/air publishes its wash for, plus every country that
+      # holds a prerendered city page. Tens of gigabytes, which is why
+      # NOISE_CACHE_DIR below is a persistent volume: a country already
       # downloaded is a country a rebuild does not fetch again. Only the
       # downloads resume, though: the cut intermediates go with the work
       # directory the EXIT trap clears, so a build that dies has to redo every
@@ -118,6 +119,23 @@ services:
         https://download.geofabrik.de/europe/poland-latest.osm.pbf
         https://download.geofabrik.de/europe/croatia-latest.osm.pbf
         https://download.geofabrik.de/asia/armenia-latest.osm.pbf
+        https://download.geofabrik.de/north-america/canada-latest.osm.pbf
+        https://download.geofabrik.de/north-america/mexico-latest.osm.pbf
+        https://download.geofabrik.de/north-america/us-latest.osm.pbf
+        https://download.geofabrik.de/south-america/argentina-latest.osm.pbf
+        https://download.geofabrik.de/south-america/brazil-latest.osm.pbf
+        https://download.geofabrik.de/south-america/chile-latest.osm.pbf
+        https://download.geofabrik.de/asia/china-latest.osm.pbf
+        https://download.geofabrik.de/asia/japan-latest.osm.pbf
+        https://download.geofabrik.de/asia/south-korea-latest.osm.pbf
+        https://download.geofabrik.de/asia/taiwan-latest.osm.pbf
+        https://download.geofabrik.de/asia/thailand-latest.osm.pbf
+        https://download.geofabrik.de/asia/malaysia-singapore-brunei-latest.osm.pbf
+        https://download.geofabrik.de/asia/israel-and-palestine-latest.osm.pbf
+        https://download.geofabrik.de/asia/gcc-states-latest.osm.pbf
+        https://download.geofabrik.de/australia-oceania/australia-latest.osm.pbf
+        https://download.geofabrik.de/australia-oceania/new-zealand-latest.osm.pbf
+        https://download.geofabrik.de/africa/south-africa-latest.osm.pbf
 
       # Has to match MIN_ZOOM and MAX_ZOOM in src/map/noiseTiles.ts. The client
       # asks for tiles inside this range and overzooms above it

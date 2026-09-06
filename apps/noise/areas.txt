@@ -8,80 +8,208 @@
 # worth the download and the disk.
 #
 # EVERY EUROPEAN CAPITAL AND EVERY EUROPEAN CITY OF A MILLION OR MORE
-# RESIDENTS — the same rule and the same set apps/air publishes its wash for,
-# so a reader who opens both layers over the same place is looking at the same
-# city rather than two different ideas of where one ends. See
-# apps/air/README.md for how the set was chosen and boundaries.geojson for
-# where each outline came from; extra-cities.json carries the names for the
+# RESIDENTS, the same set apps/air publishes its wash for, PLUS every city
+# cities.json carries a prerendered page for — the app should not send a
+# reader to a city page with no noise layer under it. See apps/air/README.md
+# for how the European set was chosen and boundaries.geojson for where each
+# outline came from; extra-cities.json carries the names for the European
 # cities in this list with no page of their own in the app.
 #
 # Each of these is clipped to its own administrative boundary plus ten
-# kilometres — see boundaries.geojson and NOISE_BOUNDARY_BUFFER — rather than
-# to a circle on its centre. Sixty-four areas across forty-seven countries is
-# NOISE_EXTRACTS in docker-compose.prod.yml, and it is tens of gigabytes: see
-# that file for why the download is cached rather than repeated.
+# kilometres — see boundaries.geojson and NOISE_BOUNDARY_BUFFER — where one
+# has been fetched, and to a circle on its centre otherwise. NOISE_EXTRACTS in
+# docker-compose.prod.yml has one Geofabrik extract per country named here,
+# and it is tens of gigabytes: see that file for why the download is cached
+# rather than repeated.
 
+aarhus
+adelaide
 amsterdam
 andorra-la-vella
 ankara
+antwerp
 athens
+atlanta
+auckland
+austin
+bangkok
 barcelona
+basel
+belfast
 belgrade
+bergen
 berlin
 bern
+bilbao
 birmingham
+bologna
+bordeaux
+boston
 bratislava
+brighton
+brisbane
+bristol
 brussels
 bucharest
 budapest
+buenos-aires
+calgary
+cambridge
+canberra
+cape-town
+cardiff
+chicago
 chisinau
+christchurch
 cologne
 copenhagen
+cork
+dallas
+denver
+detroit
+dubai
 dublin
+dusseldorf
+edinburgh
+espoo
+florence
+frankfurt
+fukuoka
+geneva
+ghent
+glasgow
+gothenburg
 hamburg
+hameenlinna
 helsinki
+hobart
+hong-kong
+honolulu
+houston
 istanbul
+joensuu
+jyvaskyla
 kharkiv
+kotka
+kouvola
+krakow
 krasnodar
+kuala-lumpur
+kuopio
 kyiv
+kyoto
+lahti
+lappeenranta
+las-vegas
+leeds
+lille
 lisbon
+liverpool
 ljubljana
 london
+los-angeles
 luxembourg
+lyon
 madrid
+malaga
+malmo
+manchester
+marseille
+melbourne
+mexico-city
+miami
 milan
+minneapolis
 minsk
 monaco
+montpellier
+montreal
 moscow
 munich
+nagoya
+nantes
+naples
+nashville
+new-orleans
+new-york
+nice
 nicosia
 nizhny-novgorod
 odesa
+osaka
 oslo
+ottawa
+oulu
+oxford
 paris
+perth
+philadelphia
+phoenix
+pittsburgh
 podgorica
+pori
+portland
+porto
+porvoo
 prague
 pristina
+rauma
 reykjavik
 riga
+rio-de-janeiro
 rome
 rostov-on-don
+rotterdam
+rovaniemi
 saint-petersburg
+salzburg
+san-diego
+san-francisco
 san-marino
+santiago
+sao-paulo
+sapporo
 sarajevo
+seattle
+seoul
+seville
+singapore
 skopje
 sofia
 stockholm
+strasbourg
+stuttgart
+sydney
+taipei
 tallinn
+tampere
 tbilisi
+tel-aviv
+the-hague
 tirana
+tokyo
+toronto
+toulouse
+turin
+turku
+utrecht
+vaasa
 vaduz
+valencia
 valletta
+vancouver
+vantaa
 vatican-city
+venice
 vienna
 vilnius
 volgograd
 voronezh
 warsaw
+washington
+wellington
 yerevan
+yokohama
+york
 zagreb
+zurich

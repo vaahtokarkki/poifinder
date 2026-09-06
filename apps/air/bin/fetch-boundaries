@@ -143,6 +143,15 @@ def fetch(name, country_code):
     air-field for why that circle is wider than a real outline's buffer.
     """
     results = search(name, country_code)
+    if not results and country_code:
+        # Empty rather than a miss among boundary-less results: the country
+        # filter itself found nothing, which is what happens for a territory
+        # whose ISO code disagrees with the country_code Nominatim indexed it
+        # under. Hong Kong is filed under "cn" there, not "hk". Unrestricted
+        # is safe here specifically because the filtered query came back
+        # empty — it is not weakening a search that already found candidates
+        time.sleep(DELAY_SECONDS)
+        results = search(name, "")
     result, geometry = boundary_in(results)
     if geometry is not None:
         return result, geometry, None

@@ -5,11 +5,12 @@ Sensor.Community citizen network, interpolated between them and served as
 vector tiles. Six bands, the European Air Quality Index's own.
 
 Published for every European capital and every European city of a million or
-more residents — 64 cities today — each clipped to its own administrative
-outline plus ten kilometres. A handful of the smallest states have no such
-outline in OpenStreetMap at all, only a point; those are clipped to a wider
-twenty kilometre circle around it instead. See "Choosing what to publish"
-below.
+more residents, plus every city with a prerendered page — the same set as
+[`apps/noise/areas.txt`](../noise/areas.txt), 191 cities today — each clipped
+to its own administrative outline plus ten kilometres. A handful of the
+smallest states have no such outline in OpenStreetMap at all, only a point;
+those are clipped to a wider twenty kilometre circle around it instead. See
+"Choosing what to publish" below.
 
 The app draws them as an optional overlay and puts the nearest station's
 reading in the popups of places you would linger in. Both are behind

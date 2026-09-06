@@ -63,28 +63,44 @@ services:
       # unlike every other value here it should not be in the repository
       OPENAQ_API_KEY: ${OPENAQ_API_KEY:?set OPENAQ_API_KEY in .env beside this file}
 
-      # What gets published: every European capital plus every European city
-      # of a million or more residents, each buffered outwards by
-      # AIR_BUFFER_KM (or AIR_POINT_BUFFER_KM for the handful published from a
-      # point rather than an outline — see fetch-boundaries). Explicit slugs
-      # rather than empty ("every boundary in boundaries.geojson"): that file
-      # also still carries the older, broader set of cities the app has a
-      # page for, cached rather than deleted, and most of those are neither a
-      # capital nor a million-plus city.
+      # What gets published: the same set as apps/noise/areas.txt — every
+      # European capital and every European city of a million or more
+      # residents, plus every city cities.json carries a prerendered page
+      # for — each buffered outwards by AIR_BUFFER_KM (or AIR_POINT_BUFFER_KM
+      # for the handful published from a point rather than an outline — see
+      # fetch-boundaries). Explicit slugs rather than empty ("every boundary
+      # in boundaries.geojson"), so a boundary fetched ahead of a city being
+      # added here does not publish early.
       #
       # The boundary clips the output and never the interpolation. Stations
       # well outside a city still shape the field inside it — air crosses a
       # boundary and a build that dropped them would draw a false gradient
       # along it.
       AIR_CITIES: >-
-        amsterdam,andorra-la-vella,ankara,athens,barcelona,belgrade,berlin,bern,
-        birmingham,bratislava,brussels,bucharest,budapest,chisinau,cologne,
-        copenhagen,dublin,hamburg,helsinki,istanbul,kharkiv,krasnodar,kyiv,
-        lisbon,ljubljana,london,luxembourg,madrid,milan,minsk,monaco,moscow,
-        munich,nicosia,nizhny-novgorod,odesa,oslo,paris,podgorica,prague,
-        pristina,reykjavik,riga,rome,rostov-on-don,saint-petersburg,san-marino,
-        sarajevo,skopje,sofia,stockholm,tallinn,tbilisi,tirana,vaduz,valletta,
-        vatican-city,vienna,vilnius,volgograd,voronezh,warsaw,yerevan,zagreb
+        aarhus,adelaide,amsterdam,andorra-la-vella,ankara,antwerp,athens,
+        atlanta,auckland,austin,bangkok,barcelona,basel,belfast,belgrade,bergen,
+        berlin,bern,bilbao,birmingham,bologna,bordeaux,boston,bratislava,
+        brighton,brisbane,bristol,brussels,bucharest,budapest,buenos-aires,
+        calgary,cambridge,canberra,cape-town,cardiff,chicago,chisinau,
+        christchurch,cologne,copenhagen,cork,dallas,denver,detroit,dubai,dublin,
+        dusseldorf,edinburgh,espoo,florence,frankfurt,fukuoka,geneva,ghent,
+        glasgow,gothenburg,hamburg,hameenlinna,helsinki,hobart,hong-kong,
+        honolulu,houston,istanbul,joensuu,jyvaskyla,kharkiv,kotka,kouvola,
+        krakow,krasnodar,kuala-lumpur,kuopio,kyiv,kyoto,lahti,lappeenranta,
+        las-vegas,leeds,lille,lisbon,liverpool,ljubljana,london,los-angeles,
+        luxembourg,lyon,madrid,malaga,malmo,manchester,marseille,melbourne,
+        mexico-city,miami,milan,minneapolis,minsk,monaco,montpellier,montreal,
+        moscow,munich,nagoya,nantes,naples,nashville,new-orleans,new-york,nice,
+        nicosia,nizhny-novgorod,odesa,osaka,oslo,ottawa,oulu,oxford,paris,perth,
+        philadelphia,phoenix,pittsburgh,podgorica,pori,portland,porto,porvoo,
+        prague,pristina,rauma,reykjavik,riga,rio-de-janeiro,rome,rostov-on-don,
+        rotterdam,rovaniemi,saint-petersburg,salzburg,san-diego,san-francisco,
+        san-marino,santiago,sao-paulo,sapporo,sarajevo,seattle,seoul,seville,
+        singapore,skopje,sofia,stockholm,strasbourg,stuttgart,sydney,taipei,
+        tallinn,tampere,tbilisi,tel-aviv,the-hague,tirana,tokyo,toronto,
+        toulouse,turin,turku,utrecht,vaasa,vaduz,valencia,valletta,vancouver,
+        vantaa,vatican-city,venice,vienna,vilnius,volgograd,voronezh,warsaw,
+        washington,wellington,yerevan,yokohama,york,zagreb,zurich
       AIR_BUFFER_KM: "10"
       AIR_POINT_BUFFER_KM: "20"
 

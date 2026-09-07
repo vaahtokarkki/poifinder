@@ -95,17 +95,12 @@
       }
     },
     {
-      "id": "landcover",
+      "id": "landcover_grass",
       "type": "fill",
       "source": "carto",
       "source-layer": "landcover",
       "filter": [
         "any",
-        [
-          "==",
-          "class",
-          "wood"
-        ],
         [
           "==",
           "class",
@@ -122,23 +117,23 @@
           "stops": [
             [
               8,
-              "rgba(197, 225, 178, 0.2)"
+              "rgba(217, 237, 178, 0.3)"
             ],
             [
               9,
-              "rgba(197, 225, 178, 0.25)"
+              "rgba(217, 237, 178, 0.35)"
             ],
             [
               11,
-              "rgba(197, 225, 178, 0.35)"
+              "rgba(217, 237, 178, 0.45)"
             ],
             [
               13,
-              "rgba(197, 225, 178, 0.4)"
+              "rgba(217, 237, 178, 0.5)"
             ],
             [
               15,
-              "#e0ecd3"
+              "#dcecc4"
             ]
           ]
         },
@@ -157,7 +152,7 @@
         "wood"
       ],
       "paint": {
-        "fill-color": "#d2e5c0",
+        "fill-color": "#b7dda0",
         "fill-opacity": {
           "stops": [
             [
@@ -178,6 +173,41 @@
             ]
           ]
         }
+      }
+    },
+    {
+      "id": "park_park",
+      "type": "fill",
+      "source": "carto",
+      "source-layer": "park",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        [
+          "!in",
+          "class",
+          "national_park",
+          "nature_reserve"
+        ]
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "#c3e6cf",
+        "fill-opacity": {
+          "stops": [
+            [
+              11,
+              0
+            ],
+            [
+              13,
+              1
+            ]
+          ]
+        },
+        "fill-translate-anchor": "map"
       }
     },
     {
@@ -202,23 +232,23 @@
           "stops": [
             [
               8,
-              "rgba(197, 225, 178, 0.2)"
+              "rgba(205, 213, 158, 0.25)"
             ],
             [
               9,
-              "rgba(197, 225, 178, 0.25)"
+              "rgba(205, 213, 158, 0.3)"
             ],
             [
               11,
-              "rgba(197, 225, 178, 0.35)"
+              "rgba(205, 213, 158, 0.4)"
             ],
             [
               13,
-              "rgba(197, 225, 178, 0.4)"
+              "rgba(205, 213, 158, 0.45)"
             ],
             [
               15,
-              "#e0ecd3"
+              "#d7e0b0"
             ]
           ]
         },
@@ -248,23 +278,23 @@
           "stops": [
             [
               8,
-              "rgba(197, 225, 178, 0.2)"
+              "rgba(205, 213, 158, 0.25)"
             ],
             [
               9,
-              "rgba(197, 225, 178, 0.25)"
+              "rgba(205, 213, 158, 0.3)"
             ],
             [
               11,
-              "rgba(197, 225, 178, 0.35)"
+              "rgba(205, 213, 158, 0.4)"
             ],
             [
               13,
-              "rgba(197, 225, 178, 0.4)"
+              "rgba(205, 213, 158, 0.45)"
             ],
             [
               15,
-              "#e0ecd3"
+              "#d7e0b0"
             ]
           ]
         },
@@ -6411,7 +6441,7 @@
       "type": "symbol",
       "source": "carto",
       "source-layer": "place",
-      "minzoom": 8,
+      "minzoom": 7,
       "maxzoom": 15,
       "filter": [
         "all",
@@ -6498,7 +6528,7 @@
       "type": "symbol",
       "source": "carto",
       "source-layer": "place",
-      "minzoom": 8,
+      "minzoom": 4,
       "maxzoom": 15,
       "filter": [
         "all",
@@ -6540,6 +6570,14 @@
         ],
         "text-size": {
           "stops": [
+            [
+              4,
+              9
+            ],
+            [
+              6,
+              11
+            ],
             [
               8,
               14

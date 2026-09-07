@@ -81,8 +81,9 @@ const MAX_ZOOM = 8;
  *
  * ODC-BY and CC BY both require attributing the source, so this names the
  * networks instead of only the convenient aggregator: the EEA's monitors are
- * most of the reference data, Sensor.Community is nearly all of the detail,
- * and the city outline the tiles are clipped to is OpenStreetMap's.
+ * most of the reference data in Europe, the EPA's most of it in the US,
+ * Sensor.Community is nearly all of the detail, and the city outline the
+ * tiles are clipped to is OpenStreetMap's.
  *
  * Exported because setting it on the source is not enough to make it appear.
  * The Leaflet adapter reads attributions off the style once, when the style
@@ -91,7 +92,8 @@ const MAX_ZOOM = 8;
  * hand for that reason — see the note there.
  */
 export const AIR_ATTRIBUTION =
-  'Air quality: <a href="https://www.eea.europa.eu/">EEA</a> and others via ' +
+  'Air quality: <a href="https://www.eea.europa.eu/">EEA</a>, ' +
+  '<a href="https://www.epa.gov/">EPA</a> and others via ' +
   '<a href="https://openaq.org/">OpenAQ</a>, ' +
   '<a href="https://sensor.community/">Sensor.Community</a>, ' +
   // "from" rather than a second "© OpenStreetMap contributors": the basemap's
@@ -118,7 +120,11 @@ export const AIR_SOURCE_LINKS: ReadonlyArray<{
   licence: string;
 }> = [
   { label: "EEA", href: "https://www.eea.europa.eu/", licence: "ODC-BY" },
-  { label: "OpenAQ", href: "https://openaq.org/", licence: "ODC-BY, CC BY 4.0" },
+  {
+    label: "OpenAQ",
+    href: "https://openaq.org/",
+    licence: "ODC-BY, CC BY 4.0, CC0 1.0, US Public Domain, UK OGL",
+  },
   {
     label: "Sensor.Community",
     href: "https://sensor.community/",

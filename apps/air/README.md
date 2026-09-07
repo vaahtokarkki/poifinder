@@ -341,7 +341,7 @@ Three sources, three sets of terms, and the tiles carry all of them.
 
 | What | Source | Terms |
 | --- | --- | --- |
-| Reference readings | EEA and others via OpenAQ | ODC-BY, CC BY 4.0 |
+| Reference readings | EEA and others via OpenAQ | ODC-BY, CC BY 4.0, CC0 1.0, US Public Domain, UK OGL |
 | Citizen readings | Sensor.Community | ODbL 1.0 / DbCL 1.0 |
 | City outlines | OpenStreetMap via Nominatim | ODbL 1.0 |
 
@@ -364,15 +364,25 @@ The allowlist is keyed by id because names get reformatted, and the ids are
 checked against their expected names on every run: if OpenAQ ever renumbers,
 the build stops rather than quietly publishing whatever moved into slot 10.
 
-### Why it stops at Europe
+### Why the licence gate is per station, not per continent
 
 Not geography — licence compatibility. OpenAQ's catalogue includes CC BY-SA
 4.0, whose share-alike is not one-way compatible with the ODbL that
-Sensor.Community and the boundaries carry, and five sets of bespoke national
+Sensor.Community and the boundaries carry, and a number of bespoke national
 terms that would each have to be read before anything derived from them was
 published. Combining those into one tileset is a conflict rather than a
-paperwork problem, so `air-latest` refuses to leave Europe and refuses any
-licence not on the list.
+paperwork problem, so `air-latest` checks every OpenAQ location's own licence
+id against the allowlist and drops anything not on it — wherever that location
+is. A build used to also refuse to leave Europe, on top of that check, as a
+blanket simplification; it no longer does, because the per-location check
+already excludes a bespoke or incompatible licence exactly the same way
+regardless of where the station sits, and the blanket limit was only ever
+holding back permissively-licensed stations outside Europe, like US EPA
+readings published as US Public Domain.
+
+Sensor.Community needs no such gate: its output carries one licence — the
+Database Contents Licence — everywhere it runs, so there is no per-location
+question to ask of it.
 
 ### What that makes the tiles
 

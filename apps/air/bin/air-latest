@@ -19,20 +19,31 @@
 # fitted against co-located reference monitors is what stops them dragging the
 # whole map somewhere it should not be. See calibrate().
 #
-# EUROPE ONLY, AND THE REASON IS LICENSING RATHER THAN GEOGRAPHY
+# WORLDWIDE, AND THE LICENCE GATE IS PER LOCATION RATHER THAN PER CONTINENT
 #
-# OpenAQ aggregates providers under twelve different licences, and they are not
-# all compatible with each other. At least one is CC BY-SA 4.0, whose share
-# alike is not one-way compatible with the ODbL that Sensor.Community data and
-# the OSM boundaries in this build carry; five more are bespoke national terms
-# that would each have to be read before anything derived from them is
-# published. Mixing those into one tileset is a licence conflict rather than a
-# paperwork problem.
+# OpenAQ aggregates providers under a dozen different licences, and they are
+# not all compatible with each other. At least one is CC BY-SA 4.0, whose
+# share alike is not one-way compatible with the ODbL that Sensor.Community
+# data and the OSM boundaries in this build carry; several more are bespoke
+# national terms that would each have to be read before anything derived from
+# them is published. Mixing those into one tileset is a licence conflict
+# rather than a paperwork problem.
 #
-# Rather than reason about that per country, this refuses to leave Europe and
-# refuses to use any licence not on the allowlist below. What the tileset is
-# made of is then a build-time fact, recorded in stations.json and wayside.json
-# instead of assumed.
+# fetch_licensed_locations answers that per OpenAQ location, by id, against
+# the allowlist below — not by where the location is. A bespoke-licence
+# provider is excluded exactly the same way whether it sits in Poland or
+# Japan, because nothing here ever asks. That is what makes a global bbox
+# safe: widening it only admits more locations already carrying a licence
+# this build was willing to publish, and the ones it was not stay excluded
+# for the same reason they always were.
+#
+# Sensor.Community is unclamped by geography for the same reason from the
+# other direction: its output carries one licence — the Database Contents
+# Licence — everywhere it operates, so there is no per-location question to
+# ask of it in the first place.
+#
+# What the tileset is made of is a build-time fact either way, recorded in
+# stations.json and wayside.json instead of assumed.
 import argparse
 import json
 import math
@@ -74,9 +85,10 @@ MAX_PAGES = 60
 VALUE_FLOOR = 0.1
 VALUE_CEILING = 2000.0
 
-# The hard geographic limit. See the header: this is a licence boundary that
-# happens to be drawn on a map
-EUROPE = (-25.0, 34.0, 45.0, 72.0)
+# The only geographic limit left: valid longitude and latitude, nothing
+# narrower. See the header — the licence allowlist below is what actually
+# gates what gets published, not where it was measured
+WORLD = (-180.0, -90.0, 180.0, 90.0)
 
 # The OpenAQ licences this is willing to publish, by the id its /v3/licenses
 # resource gives them. Every one is attribution-only: none carries share alike,
@@ -229,8 +241,8 @@ def fetch_licensed_locations(bbox, api_key, timeout):
     """Which OpenAQ locations in the box carry a licence we may publish.
 
     Returns {locationId: licence name}. Bounded by the box rather than by
-    Europe, because the box is already the only region anything is published
-    for and a licence lookup over the whole continent is pages of answers about
+    WORLD, because the box is already the only region anything is published
+    for and a licence lookup over the whole planet is pages of answers about
     stations no build will ever read.
     """
     allowed = {}
@@ -476,7 +488,7 @@ def main():
     parser.add_argument(
         "--bbox",
         required=True,
-        help="the region to ingest, west,south,east,north — clamped to Europe",
+        help="the region to ingest, west,south,east,north",
     )
     parser.add_argument(
         "--max-age",
@@ -505,21 +517,20 @@ def main():
     except ValueError:
         raise SystemExit(f"--bbox wants west,south,east,north: {arguments.bbox!r}")
 
-    # Clamped rather than rejected, so that a boundary near the edge of the
-    # continent still builds — with the part outside Europe simply not ingested
+    # Clamped rather than rejected, so a box that leans past a pole or the
+    # antimeridian still builds with the invalid sliver simply not ingested.
+    # WORLD is wide enough that this never trims a real request; what actually
+    # decides what gets published is the licence allowlist below
     clamped = (
-        max(bbox[0], EUROPE[0]),
-        max(bbox[1], EUROPE[1]),
-        min(bbox[2], EUROPE[2]),
-        min(bbox[3], EUROPE[3]),
+        max(bbox[0], WORLD[0]),
+        max(bbox[1], WORLD[1]),
+        min(bbox[2], WORLD[2]),
+        min(bbox[3], WORLD[3]),
     )
     if clamped[0] >= clamped[2] or clamped[1] >= clamped[3]:
-        raise SystemExit(
-            f"--bbox {arguments.bbox} falls outside Europe {EUROPE}, and this "
-            "build publishes Europe only — see the header of air-latest"
-        )
+        raise SystemExit(f"--bbox {arguments.bbox} is not a valid box")
     if clamped != bbox:
-        print(f"  bbox clamped to Europe: {clamped}", file=sys.stderr)
+        print(f"  bbox clamped to {clamped}", file=sys.stderr)
 
     now = datetime.now(timezone.utc)
     oldest = datetime.fromtimestamp(

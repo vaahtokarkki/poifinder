@@ -31,8 +31,8 @@
 # because air crosses boundaries and a build that dropped the monitors just
 # over the line would draw a false gradient along it.
 #
-# Both are clamped to Europe by air-latest, and that limit is about licensing
-# rather than geography. See its header.
+# Both are worldwide: air-latest gates what it publishes by each OpenAQ
+# location's own licence rather than by where it is. See its header.
 #
 # Output goes to $AIR_TILE_DIR/current, holding the tiles and stations.json —
 # the snapshot the field was built from, which the client fetches to put a

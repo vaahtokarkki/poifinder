@@ -27,9 +27,8 @@ import PoiShape from "./components/PoiShape";
 import NoiseSection, { NOISE_WORTH_KNOWING } from "./components/NoiseSection";
 import AirSection from "./components/AirSection";
 import { noiseTilesConfigured } from "./map/noiseTiles";
-import { airTilesConfigured } from "./map/airTiles";
-import { useNoiseCoverage } from "./hooks/useNoiseCoverage";
-import { useAirCoverage } from "./hooks/useAirCoverage";
+import { airCoverageAtCenter, airTilesConfigured } from "./map/airTiles";
+import { noiseCoverageAtCenter } from "./map/noiseTiles";
 import { useEnclosingBuilding, useOsmElement } from "./hooks/useOsmElement";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
 import {
@@ -1419,22 +1418,44 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   /**
    * Whether the two overlays have anything to say about this view.
    *
-   * Asked of the middle of the screen once, rather than of every marker, and
-   * that is a fair trade rather than a shortcut: both layers are built out of
-   * areas far larger than a screenful — a modelled city for noise, a band of
-   * interpolated air hundreds of kilometres across — so a view whose centre is
-   * covered has covered markers, and one whose centre is not has none. Asking
-   * per marker means a rendered query per point per render, which is the cost
-   * this whole branch exists to avoid.
+   * Asked of the middle of the screen once per render, rather than of every
+   * marker, and that is a fair trade rather than a shortcut: both layers are
+   * built out of areas far larger than a screenful — a modelled city for
+   * noise, a band of interpolated air hundreds of kilometres across — so a
+   * view whose centre is covered has covered markers, and one whose centre is
+   * not has none. Asking per marker means a rendered query per point per
+   * render, which is the cost this whole branch exists to avoid.
    *
-   * Both are read from the rendered tiles and cost no request. Both answer
-   * "unknown" while tiles are still arriving, which counts as no coverage
-   * here: a point with nothing else to show falls to the line at the bottom of
-   * the screen for a moment longer rather than opening a popup that turns out
-   * to be empty.
+   * Read here rather than subscribed to, and that is the load-bearing part.
+   * The obvious version of this used the same hooks the layers panel does,
+   * which hold the answer in state and refresh it on every `idle`. In a panel
+   * with two tiles that is nothing. Here it was a disaster: coverage answers
+   * "unknown" while a source is still loading, which is the normal state of
+   * affairs during a pan, so every pan flipped the answer to unknown and back.
+   * Each flip changes `hasDetails` for every point that has nothing else to
+   * show, and React answers that by unbinding a popup from each of a thousand
+   * markers and binding it again a moment later — twice per pan, synchronously.
+   * The map stopped scrolling and the sheet stopped sliding.
+   *
+   * So: a plain call during render, which subscribes to nothing and cannot
+   * schedule a render of its own, and a ref that keeps the last definite
+   * answer. "unknown" is not an answer, it is the absence of one — treating it
+   * as "no coverage" is what made this oscillate — so it leaves the decision
+   * where it was until the tiles say otherwise. The list re-renders when it
+   * would anyway: new points, a popup opening, a shape settling into place.
    */
-  const noiseCoverage = useNoiseCoverage();
-  const airCoverage = useAirCoverage();
+  const airCoverageRef = React.useRef(false);
+  const noiseCoverageRef = React.useRef(false);
+  if (airTilesConfigured) {
+    const answer = airCoverageAtCenter();
+    if (answer !== "unknown") airCoverageRef.current = answer === "covered";
+  }
+  if (noiseTilesConfigured) {
+    const answer = noiseCoverageAtCenter();
+    if (answer !== "unknown") noiseCoverageRef.current = answer === "covered";
+  }
+  const airCovered = airTilesConfigured && airCoverageRef.current;
+  const noiseCovered = noiseTilesConfigured && noiseCoverageRef.current;
 
   return (
     <>
@@ -1480,11 +1501,10 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
           // once per marker — see above.
           const markerCategory = findCategory(marker, categories);
           const noiseIsTheDetail =
-            noiseTilesConfigured &&
-            noiseCoverage === "covered" &&
+            noiseCovered &&
             markerCategory !== null &&
             NOISE_WORTH_KNOWING.has(markerCategory);
-          const airIsTheDetail = airTilesConfigured && airCoverage === "covered";
+          const airIsTheDetail = airCovered;
           const hasDetails =
             noiseIsTheDetail ||
             airIsTheDetail ||

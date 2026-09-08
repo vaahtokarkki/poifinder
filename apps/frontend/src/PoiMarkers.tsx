@@ -121,10 +121,30 @@ const shapeFitPadding = () => {
  * Small on purpose. The usual reason to cluster is to thin out a crowded map,
  * and that is the opposite of what this app is for: a map of toilets that
  * shows bubbles instead of toilets is useless. This only catches the points
- * that genuinely cover each other, an icon being 25px wide, and leaves
- * everything a thumb can already tell apart alone.
+ * that genuinely cover each other, and leaves everything a thumb can already
+ * tell apart alone.
+ *
+ * Which is why it is the width of an icon and not less. It was fourteen, and
+ * an icon is 25px wide (see RenderMarkerIcon), so there was a band between the
+ * two where a pair drew as two overlapping icons and was never grouped — no
+ * disc to tap, no way to fan them apart, and the lower one unreachable under
+ * the upper. Two toilets 12 m apart at zoom 17 landed 16px apart and did
+ * exactly that.
+ *
+ * The band did worse than that at the top of the zoom range, because of how
+ * the plugin decides what a tap on a disc means: it fans the points out only
+ * if they are still one group at the maximum zoom, and otherwise zooms in on
+ * them. A pair 6 to 9 m apart was one group at 17 and two at 18, so tapping it
+ * zoomed the map to 18 and left the pair 16 to 22px apart — the disc gone, the
+ * icons overlapping, the map at its closest and nothing further to try. From
+ * the outside that reads as the disc closing and taking the points with it.
+ *
+ * At the width of an icon both cases come out right, and they are the same
+ * case: a pair that would overlap at maximum zoom is one group there too, so a
+ * tap fans it out, and a pair that would not is zoomed apart into two icons
+ * that no longer touch.
  */
-const CLUSTER_RADIUS_PX = 14;
+const CLUSTER_RADIUS_PX = 28;
 
 /** The zoom from which that tight grouping applies: a street and its doorways */
 const TIGHT_CLUSTER_ZOOM = 17;
@@ -143,6 +163,18 @@ const MAX_CLUSTER_RADIUS_PX = 80;
 const CLUSTER_RADIUS_GROWTH = 1.7;
 
 /**
+ * What the curve below grows from, which is not what it starts at.
+ *
+ * The two were one number until the tight radius had to double, and keeping
+ * them one number would have doubled the whole curve with it — a city three
+ * zoom levels out is not what was broken, and widening its groups to fix a
+ * pair of overlapping icons at street level would trade a bug nobody has for a
+ * map nobody asked for. So the curve is the one that was already there, and
+ * the tight radius is a floor under it.
+ */
+const CLUSTER_GROWTH_BASE_PX = 14;
+
+/**
  * How close two points have to be to be shown as one group, at this zoom.
  *
  * A single radius cannot serve both ends of the range. Fourteen pixels is
@@ -154,17 +186,26 @@ const CLUSTER_RADIUS_GROWTH = 1.7;
  *
  * So the radius follows the zoom. Every level out roughly doubles what one
  * pixel covers on the ground, and the grouping widens with it until the cap:
- * 14px at street level, 24 at 16, 40 at 15, 69 at 14, the cap from 13 out.
- * Zooming in walks it back down, which is what makes a group an invitation
- * rather than a wall — the points are one zoom away, and the count on the disc
- * says how many are waiting.
+ * 28px at street level, 40 at 15, 69 at 14, the cap from 13 out. Zooming in
+ * walks it back down, which is what makes a group an invitation rather than a
+ * wall — the points are one zoom away, and the count on the disc says how many
+ * are waiting.
+ *
+ * Never below the width of an icon, at any zoom. Two icons that overlap have
+ * to be one group wherever the map is, or the lower of them cannot be tapped
+ * at all — see CLUSTER_RADIUS_PX. That floor only bites at 16, where the curve
+ * would otherwise say 24; from 15 out the curve is already wider than an icon
+ * and this changes nothing.
  */
 const clusterRadiusForZoom = (zoom: number): number => {
   if (zoom >= TIGHT_CLUSTER_ZOOM) return CLUSTER_RADIUS_PX;
   const stepsOut = TIGHT_CLUSTER_ZOOM - zoom;
   return Math.min(
     MAX_CLUSTER_RADIUS_PX,
-    Math.round(CLUSTER_RADIUS_PX * CLUSTER_RADIUS_GROWTH ** stepsOut)
+    Math.max(
+      CLUSTER_RADIUS_PX,
+      Math.round(CLUSTER_GROWTH_BASE_PX * CLUSTER_RADIUS_GROWTH ** stepsOut)
+    )
   );
 };
 

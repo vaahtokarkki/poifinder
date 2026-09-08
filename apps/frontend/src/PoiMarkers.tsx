@@ -1364,6 +1364,59 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
       (clusterRef.current as unknown as { _spiderfied?: unknown } | null)
         ?._spiderfied
     );
+
+  /**
+   * Keep a fanned out group open until the reader closes it.
+   *
+   * The plugin collapses a fan on any click on the map, which sounds right and
+   * is the single most annoying thing about a pair of points at one spot. The
+   * reader fans the two apart, opens one, and the popup — which is most of the
+   * screen — pans the map to fit itself: 35 to 70 pixels sideways, because a
+   * popup is centred on its own marker and the marker is off to one side of
+   * the group. The other point is now not where it was a moment ago. The next
+   * tap, aimed where it used to be, lands on the map, and the map's answer is
+   * to throw the fan away. Now both points are back under one disc and the
+   * reader starts again — which is what "impossible to open the second one"
+   * actually is: not one broken tap, but a miss that costs everything.
+   *
+   * So a miss costs nothing here: the popup closes, the fan stays, the two
+   * points are still where they were and the second tap lands. What closes the
+   * fan is tapping the disc it came out of, which is the gesture that opened
+   * it, and the things that always closed it — zooming, opening another group,
+   * the points reloading.
+   *
+   * The disc has to be handled before the plugin sees the click, or its own
+   * handler fans the group out again on the way past. Hence the capture phase
+   * listener rather than the group's `clusterclick`, which fires after.
+   */
+  React.useEffect(() => {
+    const group = clusterRef.current as unknown as {
+      _unspiderfyWrapper?: () => void;
+      _unspiderfy?: () => void;
+      _spiderfied?: unknown;
+    } | null;
+    if (!group) return;
+
+    const dismissOnMapClick = group._unspiderfyWrapper;
+    if (dismissOnMapClick) map.off("click", dismissOnMapClick, group);
+
+    const container = map.getContainer();
+    const collapseOnDiscTap = (event: MouseEvent) => {
+      if (!group._spiderfied) return;
+      const target = event.target as HTMLElement | null;
+      if (!target?.closest?.(".poi-cluster")) return;
+      group._unspiderfy?.();
+      // The plugin's own handler would otherwise fan it straight back out
+      event.stopPropagation();
+      event.preventDefault();
+    };
+    container.addEventListener("click", collapseOnDiscTap, true);
+
+    return () => {
+      if (dismissOnMapClick) map.on("click", dismissOnMapClick, group);
+      container.removeEventListener("click", collapseOnDiscTap, true);
+    };
+  }, [map]);
   /**
    * Until when a move of the map is this component's own doing.
    *

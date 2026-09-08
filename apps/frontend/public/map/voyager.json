@@ -100,15 +100,18 @@
       "source": "carto",
       "source-layer": "landcover",
       "filter": [
-        "any",
+        "all",
         [
           "==",
           "class",
           "grass"
         ],
         [
-          "==",
+          "!in",
           "subclass",
+          "park",
+          "garden",
+          "village_green",
           "recreation_ground"
         ]
       ],
@@ -117,23 +120,19 @@
           "stops": [
             [
               8,
-              "rgba(217, 237, 178, 0.3)"
-            ],
-            [
-              9,
-              "rgba(217, 237, 178, 0.35)"
+              "rgba(223, 235, 205, 0.18)"
             ],
             [
               11,
-              "rgba(217, 237, 178, 0.45)"
+              "rgba(223, 235, 205, 0.26)"
             ],
             [
               13,
-              "rgba(217, 237, 178, 0.5)"
+              "rgba(223, 235, 205, 0.32)"
             ],
             [
               15,
-              "#dcecc4"
+              "rgba(223, 235, 205, 0.38)"
             ]
           ]
         },
@@ -152,35 +151,69 @@
         "wood"
       ],
       "paint": {
-        "fill-color": "#b7dda0",
+        "fill-color": "#cde3ba",
         "fill-opacity": {
           "stops": [
             [
               8,
-              0.3
+              0.25
             ],
             [
               11,
-              0.5
+              0.4
             ],
             [
               13,
-              0.7
+              0.5
             ],
             [
               15,
-              0.9
+              0.55
             ]
           ]
         }
       }
     },
     {
-      "id": "park_park",
+      "id": "landcover_park",
+      "type": "fill",
+      "source": "carto",
+      "source-layer": "landcover",
+      "minzoom": 10,
+      "filter": [
+        "in",
+        "subclass",
+        "park",
+        "garden",
+        "village_green",
+        "recreation_ground"
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "#bfe3c3",
+        "fill-outline-color": "#9ccca4",
+        "fill-opacity": {
+          "stops": [
+            [
+              11,
+              0.5
+            ],
+            [
+              13,
+              0.85
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "park_protected",
       "type": "fill",
       "source": "carto",
       "source-layer": "park",
-      "minzoom": 11,
+      "minzoom": 6,
       "filter": [
         "all",
         [
@@ -194,19 +227,31 @@
         "visibility": "visible"
       },
       "paint": {
-        "fill-color": "#c3e6cf",
-        "fill-opacity": {
+        "fill-color": {
           "stops": [
             [
-              11,
-              0
+              6,
+              "rgba(200, 216, 168, 0.14)"
             ],
             [
-              13,
-              1
+              10,
+              "rgba(200, 216, 168, 0.18)"
+            ],
+            [
+              12,
+              "rgba(200, 216, 168, 0.13)"
+            ],
+            [
+              14,
+              "rgba(200, 216, 168, 0.07)"
+            ],
+            [
+              15,
+              "rgba(200, 216, 168, 0.04)"
             ]
           ]
         },
+        "fill-opacity": 1,
         "fill-translate-anchor": "map"
       }
     },
@@ -231,24 +276,24 @@
         "fill-color": {
           "stops": [
             [
-              8,
-              "rgba(205, 213, 158, 0.25)"
+              6,
+              "rgba(200, 216, 168, 0.14)"
             ],
             [
-              9,
-              "rgba(205, 213, 158, 0.3)"
+              10,
+              "rgba(200, 216, 168, 0.18)"
             ],
             [
-              11,
-              "rgba(205, 213, 158, 0.4)"
+              12,
+              "rgba(200, 216, 168, 0.13)"
             ],
             [
-              13,
-              "rgba(205, 213, 158, 0.45)"
+              14,
+              "rgba(200, 216, 168, 0.07)"
             ],
             [
               15,
-              "#d7e0b0"
+              "rgba(200, 216, 168, 0.04)"
             ]
           ]
         },
@@ -277,40 +322,29 @@
         "fill-color": {
           "stops": [
             [
-              8,
-              "rgba(205, 213, 158, 0.25)"
+              6,
+              "rgba(200, 216, 168, 0.14)"
             ],
             [
-              9,
-              "rgba(205, 213, 158, 0.3)"
+              10,
+              "rgba(200, 216, 168, 0.18)"
             ],
             [
-              11,
-              "rgba(205, 213, 158, 0.4)"
+              12,
+              "rgba(200, 216, 168, 0.13)"
             ],
             [
-              13,
-              "rgba(205, 213, 158, 0.45)"
+              14,
+              "rgba(200, 216, 168, 0.07)"
             ],
             [
               15,
-              "#d7e0b0"
+              "rgba(200, 216, 168, 0.04)"
             ]
           ]
         },
         "fill-antialias": true,
-        "fill-opacity": {
-          "stops": [
-            [
-              6,
-              0.7
-            ],
-            [
-              9,
-              0.9
-            ]
-          ]
-        }
+        "fill-opacity": 1
       }
     },
     {
@@ -500,8 +534,8 @@
         "stadium"
       ],
       "paint": {
-        "fill-color": "#dff5e3",
-        "fill-outline-color": "#b3ddbf",
+        "fill-color": "#daf2e1",
+        "fill-outline-color": "#9fd3b4",
         "fill-opacity": {
           "stops": [
             [

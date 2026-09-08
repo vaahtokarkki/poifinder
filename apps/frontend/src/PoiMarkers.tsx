@@ -6,7 +6,12 @@ import { categoryDisplay } from "./seo/categories";
 import { interpolate, ui } from "./copy";
 import { analytics } from "./analytics";
 import { divIcon, latLngBounds } from "leaflet";
-import type { PointExpression, Popup as LeafletPopup, PopupEvent } from "leaflet";
+import type {
+  MarkerClusterGroup as LeafletClusterGroup,
+  PointExpression,
+  Popup as LeafletPopup,
+  PopupEvent,
+} from "leaflet";
 import {
   CATEGORY_CONFIG,
   CATEGORIES,
@@ -26,9 +31,8 @@ import { shapeSamplePoint } from "./geo";
 import PoiShape from "./components/PoiShape";
 import NoiseSection, { NOISE_WORTH_KNOWING } from "./components/NoiseSection";
 import AirSection from "./components/AirSection";
-import { noiseTilesConfigured } from "./map/noiseTiles";
+import { noiseCoverageAtCenter, noiseTilesConfigured } from "./map/noiseTiles";
 import { airCoverageAtCenter, airTilesConfigured } from "./map/airTiles";
-import { noiseCoverageAtCenter } from "./map/noiseTiles";
 import { useEnclosingBuilding, useOsmElement } from "./hooks/useOsmElement";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
 import {
@@ -1291,6 +1295,34 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   const map = useMap();
   /** The popup currently on the map, while it is still allowed to pan it */
   const openPopupRef = React.useRef<LeafletPopup | null>(null);
+  /** The cluster group, for the one question below that has to be asked of it */
+  const clusterRef = React.useRef<LeafletClusterGroup | null>(null);
+
+  /**
+   * Whether a group is currently fanned out.
+   *
+   * This is the question the two guards below turn on, and it has to be asked
+   * because of what the clustering plugin does when a fan collapses: it closes
+   * the popup of every marker in it. So anything that collapses a fan while
+   * the reader is reading one of its popups takes that popup with it.
+   *
+   * Two things collapse a fan: a change of zoom, and a marker being added to
+   * or removed from the group. This component did both, one point of a second
+   * after opening a popup — which is why a point sharing a spot with another
+   * was so hard to open. You tapped the group, it fanned out, you tapped one
+   * of the two, and the popup opened and vanished.
+   *
+   * Read off the group rather than tracked from its `spiderfied` and
+   * `unspiderfied` events, which is the tidier version of this and is wrong by
+   * two hundred milliseconds: both are fired at the end of the animation, and
+   * a fan is collapsible from the moment it starts. This field is set as the
+   * fan opens and cleared as it closes, which is the moment that matters.
+   */
+  const isSpiderfied = () =>
+    Boolean(
+      (clusterRef.current as unknown as { _spiderfied?: unknown } | null)
+        ?._spiderfied
+    );
   /**
    * Until when a move of the map is this component's own doing.
    *
@@ -1340,6 +1372,12 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   React.useEffect(() => {
     const shape = openElement?.shape;
     if (!shapeMarker || !shape || !shapeMarker.position) return;
+    // Moving a marker means removing it from the group and adding it back,
+    // which collapses a fan and closes the popup that asked for this outline
+    // in the first place. A pin a few metres off centre is worth less than the
+    // popup the reader is reading; the correction lands the next time this
+    // point is opened on its own. See isSpiderfied
+    if (isSpiderfied()) return;
     const key = shapeKey(shapeMarker);
     if (shapeContains(shape, shapeMarker.position)) return;
     const inside = shapeSamplePoint(shape);
@@ -1366,6 +1404,24 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
     (marker: OverpassMarkerData) => {
       const corners = marker.bounds;
       if (!corners) return;
+      /*
+       * Never out of a fanned out group, and this is the whole of the bug that
+       * made two points at one spot so hard to open.
+       *
+       * A shopping centre is larger than the screen at street zoom, so fitting
+       * it changes the zoom — and a change of zoom collapses the fan, and
+       * collapsing a fan closes the popups of everything in it. The popup this
+       * fit was called from opened and shut in the same frame, the outline
+       * went with it, and the reader was left somewhere else on the map with
+       * nothing selected. Which is exactly the case the fan exists for: a
+       * toilet mapped as a node and again as the building around it stand at
+       * the same spot, and the building is the one with an outline to fit.
+       *
+       * So the fan wins. The reader fanned the group out deliberately and is
+       * reading one of the two; a map that keeps that where it is beats a map
+       * that frames an outline it has just thrown away.
+       */
+      if (isSpiderfied()) return;
       const [south, west, north, east] = corners;
       const bounds = latLngBounds([south, west], [north, east]);
       if (map.getBounds().contains(bounds)) return;
@@ -1460,6 +1516,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   return (
     <>
       <MarkerClusterGroup
+        ref={clusterRef}
         maxClusterRadius={clusterRadiusForZoom}
         iconCreateFunction={createClusterIcon}
         // Points that are truly on top of each other cannot be separated by zooming,
@@ -1545,7 +1602,12 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
               };
 
           return <Marker
-            key={String(marker.id)}
+            /* The type as well as the number. Ids are unique per type rather
+               than across them, so a node and a way can carry the same one —
+               and two React children under one key is a marker that never
+               mounts. Every other key in this file is already this string;
+               this one was the exception. See shapeKey */
+            key={key}
             position={insidePositions[key] ?? marker.position}
             icon={getMarkerIcon(marker, categories)}
             eventHandlers={eventHandlers}

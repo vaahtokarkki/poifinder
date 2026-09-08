@@ -27,6 +27,9 @@ import PoiShape from "./components/PoiShape";
 import NoiseSection, { NOISE_WORTH_KNOWING } from "./components/NoiseSection";
 import AirSection from "./components/AirSection";
 import { noiseTilesConfigured } from "./map/noiseTiles";
+import { airTilesConfigured } from "./map/airTiles";
+import { useNoiseCoverage } from "./hooks/useNoiseCoverage";
+import { useAirCoverage } from "./hooks/useAirCoverage";
 import { useEnclosingBuilding, useOsmElement } from "./hooks/useOsmElement";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
 import {
@@ -1413,6 +1416,26 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
     };
   }, [map]);
 
+  /**
+   * Whether the two overlays have anything to say about this view.
+   *
+   * Asked of the middle of the screen once, rather than of every marker, and
+   * that is a fair trade rather than a shortcut: both layers are built out of
+   * areas far larger than a screenful — a modelled city for noise, a band of
+   * interpolated air hundreds of kilometres across — so a view whose centre is
+   * covered has covered markers, and one whose centre is not has none. Asking
+   * per marker means a rendered query per point per render, which is the cost
+   * this whole branch exists to avoid.
+   *
+   * Both are read from the rendered tiles and cost no request. Both answer
+   * "unknown" while tiles are still arriving, which counts as no coverage
+   * here: a point with nothing else to show falls to the line at the bottom of
+   * the screen for a moment longer rather than opening a popup that turns out
+   * to be empty.
+   */
+  const noiseCoverage = useNoiseCoverage();
+  const airCoverage = useAirCoverage();
+
   return (
     <>
       <MarkerClusterGroup
@@ -1440,25 +1463,31 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
           // rather than a popup, even standing in a shopping centre. On Bremen
           // that is 18 of the 843 points inside a building
           //
-          // Except where a noise band is the detail. A bench carries
+          // Except where one of the two overlays is the detail. A bench carries
           // `amenity=bench` and usually nothing else, so it fell to the line at
           // the bottom every time — and a bench is precisely a point whose
-          // noise level decides whether it is worth walking to. Where the tiles
-          // exist and the category is one the band is worth knowing for, the
-          // band is the extra detail, so the point earns its popup.
+          // noise level decides whether it is worth walking to. So is the air:
+          // that row is shown for every category, because "is it a good day to
+          // be outside at all" is a question somebody may be asking whatever
+          // they tapped, and where the wash is drawn every point has at least
+          // that much to say.
           //
-          // Gated on the tiles being configured at all, so a checkout with no
-          // noise layer keeps the line rather than opening a popup holding only
-          // the name. It cannot also be gated on this point's band: that is a
-          // query against the rendered tiles, and running one per marker per
-          // render is the cost this whole branch exists to avoid
+          // Gated on the tiles being configured and on the view actually being
+          // covered, which is the part that used to be missing. A bench in a
+          // city the noise builder never modelled opened a popup promising a
+          // band and showing none; a toilet outside every published air city
+          // would do the same. Coverage is read once for the view rather than
+          // once per marker — see above.
           const markerCategory = findCategory(marker, categories);
           const noiseIsTheDetail =
             noiseTilesConfigured &&
+            noiseCoverage === "covered" &&
             markerCategory !== null &&
             NOISE_WORTH_KNOWING.has(markerCategory);
+          const airIsTheDetail = airTilesConfigured && airCoverage === "covered";
           const hasDetails =
             noiseIsTheDetail ||
+            airIsTheDetail ||
             buildPopupRows(marker.tags).length > 0 ||
             describeSurvey(marker.tags) !== null;
           const { title } = describeMarker(marker, categories);

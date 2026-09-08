@@ -220,13 +220,18 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       veryPoor: "Très mauvaise",
       extremelyPoor: "Extrêmement mauvaise",
       unit: "µg/m³",
-      measuredAt: "Particules fines, mesurées à {distance} km, {age}",
+      nearestStation:
+        "Particules fines. La station de mesure la plus proche, à {distance} km, a relevé {value} µg/m³ {age}.",
+      nearestSensor:
+        "Particules fines. Le capteur le plus proche, à {distance} km, a relevé {value} µg/m³ {age}.",
+      estimated:
+        "Particules fines, estimation pour cette zone à partir des capteurs proches.",
       ageMinutes: { one: "il y a 1 min", other: "il y a {count} min" },
       ageHours: { one: "il y a 1 h", other: "il y a {count} h" },
       about: "Comment ça marche",
       aboutTitle: "Qualité de l'air à proximité",
       aboutIntro:
-        "Il s'agit d'une vraie mesure, mais pas prise ici. C'est le relevé de particules fines (PM2.5) le plus récent de la station de mesure la plus proche, et la ligne ci-dessus indique à quelle distance elle se trouve. Les stations sont rares : la plupart des communes n'en ont aucune, et une grande ville en compte une poignée.",
+        "Le mot ci-dessus est une estimation pour cette zone, pas une mesure prise ici. Elle est calculée à partir des relevés de particules fines (PM2.5) les plus récents de tous les capteurs de la région, interpolés entre eux : c'est l'estimation qui colore la carte, si bien que la fenêtre et la couleur en dessous disent toujours la même chose. La ligne ci-dessus indique la distance du capteur le plus proche : plus il est loin, plus la couleur relève de la supposition.",
       aboutBandsHeading: "Les six niveaux",
       aboutGood: "Bonne — moins de 10 µg/m³.",
       aboutFair: "Moyenne — de 10 à 20 µg/m³.",
@@ -237,7 +242,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       aboutLimit:
         "Les particules fines se déplacent sur des centaines de kilomètres, et c'est précisément pour cela qu'un relevé de la ville voisine vaut la peine d'être montré. Ce qu'il ne capte pas, c'est tout ce qui est local : une route passante, un feu de bois, un soir sans vent dans une vallée. Plus la station est loin, plus il en manque — et rien de tout cela ne rend l'air d'ici plus propre que ce que dit le chiffre.",
       aboutSource:
-        "La carte est établie à partir de stations de référence via OpenAQ et du réseau citoyen Sensor.Community ; la valeur ci-dessus provient toujours d'une station de référence. Les niveaux suivent l'indice européen de qualité de l'air.",
+        "La carte et l'estimation sont établies à partir de stations de référence via OpenAQ et du réseau citoyen Sensor.Community. La ligne ci-dessus indique auquel des deux appartient le capteur le plus proche. Les niveaux suivent l'indice européen de qualité de l'air.",
       aboutClose: "Fermer",
     },
     hours: {

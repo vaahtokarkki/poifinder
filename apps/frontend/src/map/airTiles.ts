@@ -10,17 +10,24 @@
  * browse, the way a weather map is, and it is an interpolation — a colour on
  * it is an estimate for a place nobody is standing.
  *
- * The *popup* does not read that layer. It reads stations.json, the same
- * snapshot the field was built from, and reports the nearest actual monitor:
- * its measured number, how far away it is, and how long ago it was taken. A
- * popup that quoted the interpolated band under a bench would be presenting a
- * guess with the confidence of a measurement, and the distance is exactly the
- * thing that tells a reader how much to trust it. "18 µg/m³, measured 12 km
- * away" is a fact about a monitor. A coloured word is a fact about nothing.
+ * The *popup* reads the band out of those same tiles, and then reads
+ * stations.json — the snapshot the field was built from — to say what the
+ * nearest sensor to the point measured, how far away it is and how long ago.
  *
- * That split has a second, duller benefit: the popup does not depend on the
- * tiles being loaded, on the layer being installed, or on the map being at a
- * zoom the source has tiles for. It is one fetch and some arithmetic.
+ * The band comes from the tiles because the popup and the wash under it have
+ * to agree. They did not. The popup used to quote the nearest *reference*
+ * monitor and call its band the answer, while the wash was interpolated from
+ * every sensor including the citizen network — six times as many and six
+ * times closer together — so a reader standing on an orange city could open a
+ * popup that said "Fair", in the same six words the legend uses for the
+ * colour they were looking at. One of the two was wrong and there was no way
+ * to tell which from the popup. Reading the band off the rendered tile makes
+ * the popup a caption for the map rather than a second opinion about it.
+ *
+ * The station is still there because a band on its own is an estimate with
+ * nothing behind it. The distance is the part that says how much to trust it:
+ * a sensor 2 km away in the same suburb and one 60 km away across a mountain
+ * range are different kinds of support for the same coloured word.
  *
  * Everything is behind one variable. With VITE_AIR_TILES_URL unset there is no
  * source, no layer, no fetch, no tile in the layers panel and no row in any
@@ -234,6 +241,26 @@ export function bandForValue(value: number): AirBand {
 }
 
 /**
+ * A band's range in µg/m³, as the popup prints it beside the word.
+ *
+ * The number the popup used to show was the nearest monitor's reading, and
+ * that is exactly the number that made the popup argue with the map: the wash
+ * is an interpolation over every sensor in the region, one station's value is
+ * not, and the two disagree whenever the nearest reference monitor is not
+ * representative of its surroundings. What the band actually claims is a
+ * range, so the range is what is printed.
+ *
+ * Digits and dashes only, so no locale has a copy of this to keep in step.
+ */
+export function bandRange(band: AirBand): string {
+  const floor = BAND_FLOOR[band];
+  const ceiling = band === 6 ? null : BAND_FLOOR[(band + 1) as AirBand];
+  if (band === 1) return `< ${ceiling}`;
+  if (ceiling === null) return `> ${floor}`;
+  return `${floor}–${ceiling}`;
+}
+
+/**
  * Whether the reader wants the wash drawn.
  *
  * Module state rather than a parameter, because the layer is installed later
@@ -386,11 +413,13 @@ export type AirStation = {
    * corrected in the builder by one factor fitted against co-located reference
    * monitors.
    *
-   * That correction is good enough to make the two networks agree about the
-   * level of a region, which is what the interpolated field needs. It is not
-   * good enough to make one uncalibrated sensor a measurement, which is what
-   * the popup would be claiming — so only reference monitors are ever quoted.
-   * See nearestReading.
+   * Both are quoted now, and the popup says which it is quoting. Skipping the
+   * citizen sensors, which is what this did, meant a caption naming a monitor
+   * 60 km away under a band that was decided by an SDS011 a kilometre from the
+   * marker: the support named was not the support used. What kept that honest
+   * was never the network, it was the wording — and "a citizen sensor 1 km
+   * away read 26" is both truthful about the instrument and about what the
+   * colour on the map came from. See nearestReading and AirSection.
    */
   reference: boolean;
 };
@@ -481,9 +510,17 @@ export function loadStations(): Promise<AirStation[] | null> {
   return pending;
 }
 
-/** What the popup says: a measurement, and how far away it was taken */
+/** What the popup's caption says: a measurement, and how far away it was taken */
 export type AirReading = {
   station: AirStation;
+  /**
+   * The band this one station's reading falls in.
+   *
+   * Not what the popup prints — that is the band the tiles paint, which is the
+   * whole region's rather than this station's. Kept because it is a property
+   * of the reading and costs nothing, and because a caller that wants to know
+   * whether the nearest sensor agrees with the field has no other way to ask.
+   */
   band: AirBand;
   distanceKm: number;
   /**
@@ -494,15 +531,14 @@ export type AirReading = {
 };
 
 /**
- * The nearest reference monitor to a position, or null if none is close
- * enough.
+ * The nearest sensor to a position, or null if none is close enough.
  *
- * Reference monitors only, and citizen sensors are skipped however much closer
- * one of them is. The popup says "measured 3 km away", and that sentence is
- * only true of a calibrated instrument — a corrected SDS011 reading is a good
- * enough contribution to a regional field and is not a measurement of
- * anything on its own. The map keeps the detail they give it; the popup keeps
- * the provenance.
+ * Every sensor, reference and citizen alike, because this is the support for a
+ * band the field worked out from every sensor. Quoting only the calibrated
+ * ones described a different calculation from the one the reader is looking
+ * at, usually from much further away. The instrument is not hidden — the
+ * reading carries `reference` and the popup words the two differently — which
+ * is where that distinction belongs.
  *
  * A linear scan, which for a few thousand stations is well under a
  * millisecond and is called once per popup. An index would be faster and would
@@ -522,7 +558,6 @@ export function nearestReading(position: [number, number]): AirReading | null {
   let bestKm = Infinity;
 
   for (const station of snapshot) {
-    if (!station.reference) continue;
     const dy = (station.lat - lat) * KM_PER_DEGREE_LAT;
     const dx = (station.lon - lon) * KM_PER_DEGREE_LON * scale;
     const squared = dy * dy + dx * dx;
@@ -553,37 +588,127 @@ export function nearestReading(position: [number, number]): AirReading | null {
 }
 
 /**
- * Whether there is a monitor near the middle of the view.
+ * The band the wash paints at a position, or null when there is no answer.
+ *
+ * The same query the noise layer answers with, against a layer kept at zero
+ * opacity rather than `visibility: none` for exactly this reason — see
+ * setAirVisible. So the band is available whether or not the reader has the
+ * wash switched on, and it is by construction the band they would see if they
+ * did.
+ *
+ * Null covers "not configured", "not installed yet", "tile still in flight"
+ * and "outside everything the builder published", because the popup treats all
+ * four the same way: no row. The last of those is the one that matters. The
+ * field is masked at 75 km from a sensor and then clipped to the published
+ * cities buffered by ten kilometres, so there is a wide ring — a whole
+ * country's worth of it — where a sensor is within range and nothing is drawn.
+ * A popup that answered there would be describing a colour that is not on the
+ * map.
+ */
+export function airBandAt(position: [number, number]): AirBand | null {
+  const map = getGlMap();
+  if (!map || !TILES_URL) return null;
+  if (!map.getLayer(AIR_LAYER_ID)) return null;
+
+  let point;
+  try {
+    // Longitude first: this is MapLibre, not Leaflet
+    point = map.project([position[1], position[0]]);
+  } catch {
+    return null;
+  }
+
+  // A point outside the canvas has no rendered feature under it, whatever the
+  // tiles say. Popups only ever open over a marker that is on the screen, so
+  // this is a guard rather than a case
+  const canvas = map.getCanvas();
+  if (
+    point.x < 0 ||
+    point.y < 0 ||
+    point.x > canvas.clientWidth ||
+    point.y > canvas.clientHeight
+  ) {
+    return null;
+  }
+
+  let features;
+  try {
+    features = map.queryRenderedFeatures(point, { layers: [AIR_LAYER_ID] });
+  } catch {
+    // Thrown when the style is between loads, which is a moment rather than a
+    // state: the caller retries on the next idle
+    return null;
+  }
+
+  // The bands are nested regions subtracted from one another, so exactly one
+  // covers a point — but the highest wins if a seam ever puts two under it,
+  // for the reason the noise layer rounds ties upwards
+  let found: AirBand | null = null;
+  for (const feature of features) {
+    const band = Number(feature.properties?.band);
+    if (band >= 1 && band <= 6 && (found === null || band > found)) {
+      found = band as AirBand;
+    }
+  }
+  return found;
+}
+
+/**
+ * Whether the wash is drawn where the map is looking.
  *
  * Three states rather than a boolean, exactly as the noise layer's coverage
  * is, and for the same reason: "nothing here" has two causes and only one is
- * worth telling anybody about. `unknown` means the snapshot has not arrived
- * yet or there is no map to ask about; `uncovered` means it has arrived and
- * the nearest monitor to the middle of the screen is further away than the
- * builder was willing to draw.
+ * worth telling anybody about. `unknown` means there is nothing to ask yet —
+ * no map, no layer, no tiles in — and `uncovered` means the tiles are in and
+ * this place is outside them.
  *
- * Read from the stations rather than from the tiles, which makes it honest at
- * any zoom and independent of what is on the screen. Asking the rendered layer
- * would answer "no coverage" for a reader who simply has the layer switched
- * off, or whose tiles have not arrived yet — neither of which says anything
- * about whether a monitor is nearby.
+ * Read from the rendered tiles, which is a change from reading it from the
+ * station snapshot, and the reason is that the two answers are not the same
+ * answer. A station within 75 km meant "covered", but what is published is the
+ * field clipped to the cities the builder was given, buffered by ten
+ * kilometres — so a reader forty kilometres out of town was told the layer
+ * covered them, switched it on, and got a blank map. The panel's notice is
+ * about whether there is anything to see, so it has to be asked of the thing
+ * that draws.
+ *
+ * This is safe against a reader having the layer switched off, which is the
+ * usual objection to querying a rendered layer: the wash is hidden with
+ * opacity rather than `visibility`, so its tiles load and its features answer
+ * either way.
  */
 export type AirCoverage = "covered" | "uncovered" | "unknown";
 
 export function airCoverageAtCenter(): AirCoverage {
-  // Deliberately asks nearestReading, so "covered" means "a popup here would
-  // have something to say" rather than "the wash is drawn here". Those differ
-  // now that the wash is built from citizen sensors the popup will not quote
   const map = getGlMap();
-  if (!map || !TILES_URL || !snapshot) return "unknown";
+  if (!map || !TILES_URL) return "unknown";
+  if (!map.getLayer(AIR_LAYER_ID)) return "unknown";
 
-  let centre;
+  // Under the source's minimum zoom MapLibre asks for no tiles at all, so an
+  // empty query says nothing about what is in them
+  if (map.getZoom() < MIN_ZOOM) return "unknown";
+
+  let loaded;
   try {
-    centre = map.getCenter();
+    loaded = map.isSourceLoaded(AIR_SOURCE_ID);
   } catch {
     // Between style loads, which is a moment rather than a state
     return "unknown";
   }
+  // A tile still in flight would answer "nothing here" and then change its
+  // mind, which is the one thing a notice about coverage must not do
+  if (!loaded) return "unknown";
 
-  return nearestReading([centre.lat, centre.lng]) ? "covered" : "uncovered";
+  const canvas = map.getCanvas();
+  const centre: [number, number] = [
+    canvas.clientWidth / 2,
+    canvas.clientHeight / 2,
+  ];
+
+  try {
+    return map.queryRenderedFeatures(centre, { layers: [AIR_LAYER_ID] }).length > 0
+      ? "covered"
+      : "uncovered";
+  } catch {
+    return "unknown";
+  }
 }

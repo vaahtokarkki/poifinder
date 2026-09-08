@@ -215,13 +215,18 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       veryPoor: "Molto scadente",
       extremelyPoor: "Pessima",
       unit: "µg/m³",
-      measuredAt: "Particolato fine, misurato a {distance} km, {age}",
+      nearestStation:
+        "Particolato fine. La stazione di misura più vicina, a {distance} km, ha misurato {value} µg/m³ {age}.",
+      nearestSensor:
+        "Particolato fine. Il sensore più vicino, a {distance} km, ha misurato {value} µg/m³ {age}.",
+      estimated:
+        "Particolato fine, stima per questa zona dai sensori vicini.",
       ageMinutes: { one: "1 min fa", other: "{count} min fa" },
       ageHours: { one: "1 h fa", other: "{count} h fa" },
       about: "Come funziona",
       aboutTitle: "Qualità dell'aria nei dintorni",
       aboutIntro:
-        "È una misurazione reale, ma non presa qui. È il dato più recente di particolato fine (PM2.5) della stazione di misura più vicina, e la riga qui sopra dice quanto dista. Le stazioni sono poche: la maggior parte dei comuni non ne ha nessuna, e una grande città ne ha una manciata.",
+        "La parola qui sopra è una stima per questa zona, non una misura presa qui. Si calcola dai dati più recenti di particolato fine (PM2.5) di tutti i sensori della regione, interpolati tra loro: è la stessa stima con cui è colorata la mappa, così la finestra e il colore sotto dicono sempre la stessa cosa. La riga qui sopra dice quanto dista il sensore più vicino: più è lontano, più il colore è un'ipotesi.",
       aboutBandsHeading: "I sei livelli",
       aboutGood: "Buona — sotto 10 µg/m³.",
       aboutFair: "Discreta — da 10 a 20 µg/m³.",
@@ -232,7 +237,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       aboutLimit:
         "Il particolato fine viaggia per centinaia di chilometri, ed è proprio per questo che vale la pena mostrare il dato della città vicina. Quello che non coglie è tutto ciò che è locale: una strada trafficata, una stufa a legna, una sera senza vento in una valle. Più la stazione è lontana, più ne manca — e nulla di questo rende l'aria di qui più pulita di quanto dica il numero.",
       aboutSource:
-        "La mappa è costruita da stazioni di riferimento tramite OpenAQ e dalla rete cittadina Sensor.Community; il dato qui sopra proviene sempre da una stazione di riferimento. I livelli seguono l'Indice Europeo di Qualità dell'Aria.",
+        "La mappa e la stima sono costruite da stazioni di riferimento tramite OpenAQ e dalla rete cittadina Sensor.Community. La riga qui sopra dice a quale delle due appartiene il sensore più vicino. I livelli seguono l'Indice Europeo di Qualità dell'Aria.",
       aboutClose: "Chiudi",
     },
     hours: {

@@ -236,13 +236,18 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       veryPoor: "Sehr schlecht",
       extremelyPoor: "Extrem schlecht",
       unit: "µg/m³",
-      measuredAt: "Feinstaub, gemessen {distance} km entfernt, {age}",
+      nearestStation:
+        "Feinstaub. Die nächste Messstation, {distance} km entfernt, maß {value} µg/m³ {age}.",
+      nearestSensor:
+        "Feinstaub. Der nächste Sensor, {distance} km entfernt, maß {value} µg/m³ {age}.",
+      estimated:
+        "Feinstaub, geschätzt für dieses Gebiet aus Sensoren in der Umgebung.",
       ageMinutes: { one: "vor 1 Min.", other: "vor {count} Min." },
       ageHours: { one: "vor 1 Std.", other: "vor {count} Std." },
       about: "Wie das funktioniert",
       aboutTitle: "Luftqualität in der Nähe",
       aboutIntro:
-        "Das ist eine echte Messung, aber keine von hier. Es ist der jüngste Feinstaubwert (PM2.5) der nächstgelegenen Messstation, und die Zeile darüber sagt, wie weit diese entfernt ist. Messstationen sind dünn gesät: die meisten Orte haben keine, und eine Großstadt hat eine Handvoll.",
+        "Das Wort oben ist eine Schätzung für dieses Gebiet, keine Messung von hier. Sie wird aus den jüngsten Feinstaubwerten (PM2.5) aller Sensoren der Region berechnet und dazwischen interpoliert — dieselbe Schätzung, mit der die Karte eingefärbt ist, sodass Popup und Farbe darunter immer dasselbe sagen. Die Zeile darüber sagt, wie weit der nächste Sensor entfernt ist: je weiter, desto mehr ist die Farbe geraten.",
       aboutBandsHeading: "Die sechs Stufen",
       aboutGood: "Gut — unter 10 µg/m³.",
       aboutFair: "Mäßig — 10 bis 20 µg/m³.",
@@ -253,7 +258,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       aboutLimit:
         "Feinstaub zieht über Hunderte von Kilometern, und genau deshalb lohnt es sich überhaupt, den Wert aus der Nachbarstadt zu zeigen. Was er nicht erfasst, ist alles Örtliche: eine viel befahrene Straße, ein Holzfeuer, ein windstiller Abend im Tal. Je weiter die Station entfernt ist, desto mehr davon fehlt — und nichts davon macht die Luft hier sauberer, als die Zahl sagt.",
       aboutSource:
-        "Die Karte entsteht aus behördlichen Messstationen über OpenAQ und aus dem Bürgernetz Sensor.Community; der Wert oben stammt immer von einer behördlichen Messstation. Die Stufen folgen dem Europäischen Luftqualitätsindex.",
+        "Karte und Schätzung entstehen aus behördlichen Messstationen über OpenAQ und aus dem Bürgernetz Sensor.Community. Die Zeile oben sagt, zu welchem der beiden der nächste Sensor gehört. Die Stufen folgen dem Europäischen Luftqualitätsindex.",
       aboutClose: "Schließen",
     },
     hours: {

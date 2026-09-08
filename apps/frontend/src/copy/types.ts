@@ -269,15 +269,16 @@ export type UiCopy = {
       aboutClose: string;
     };
     /**
-     * The nearest air quality measurement, shown only when the tiles that
-     * carry the station snapshot are configured and a monitor is within 75 km.
-     * See src/map/airTiles.ts and apps/air.
+     * The air quality band the map paints under a point, shown only where the
+     * tiles are configured and actually draw something there. See
+     * src/map/airTiles.ts and apps/air.
      *
-     * `measuredAt` is not a footnote to be trimmed, and carries {distance} in
-     * kilometres. Unlike the noise band above, this row shows a real measured
-     * number — which is exactly why it has to say where it was measured. A
-     * reading from 3 km away and one from 60 km away are different kinds of
-     * fact, and the distance is the only thing that tells them apart.
+     * The caption is not a footnote to be trimmed. The band is interpolated
+     * between sensors, so the only thing that says how much it is worth is the
+     * distance to the nearest one: 2 km away in the same suburb and 60 km away
+     * across a mountain range are different kinds of support for the same
+     * coloured word, and these three strings are where a reader is told which
+     * they have.
      */
     air: {
       label: string;
@@ -289,8 +290,20 @@ export type UiCopy = {
       extremelyPoor: string;
       /** µg/m³, which is the same in every language this ships in */
       unit: string;
-      /** Carries {distance} in kilometres and {age}, already worded */
-      measuredAt: string;
+      /**
+       * The caption, in the three shapes the provenance comes in.
+       *
+       * `nearestStation` is used when the closest sensor is a calibrated
+       * reference monitor and `nearestSensor` when it is one of the citizen
+       * network's; both carry {distance} in kilometres, {value} in µg/m³ and
+       * {age}, already worded. `estimated` is what is left when the snapshot
+       * has not arrived or nothing is within 75 km — the band is still the
+       * band, and the sentence says only what is true without a sensor to
+       * name.
+       */
+      nearestStation: string;
+      nearestSensor: string;
+      estimated: string;
       /**
        * How long ago the reading was taken, worded and dropped into {age}
        * above. Two messages rather than one because the span this covers runs

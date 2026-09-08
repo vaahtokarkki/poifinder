@@ -232,13 +232,17 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       veryPoor: "Erittäin huono",
       extremelyPoor: "Erittäin huono ja terveydelle vaarallinen",
       unit: "µg/m³",
-      measuredAt: "Pienhiukkaset, mitattu {distance} km päässä, {age}",
+      nearestStation:
+        "Pienhiukkaset. Lähin mittausasema {distance} km päässä mittasi {value} µg/m³ {age}.",
+      nearestSensor:
+        "Pienhiukkaset. Lähin anturi {distance} km päässä mittasi {value} µg/m³ {age}.",
+      estimated: "Pienhiukkaset, arvio tälle alueelle lähistön antureista.",
       ageMinutes: { one: "1 min sitten", other: "{count} min sitten" },
       ageHours: { one: "1 h sitten", other: "{count} h sitten" },
       about: "Miten tämä toimii",
       aboutTitle: "Ilmanlaatu lähistöllä",
       aboutIntro:
-        "Tämä on oikea mittaus, mutta sitä ei ole tehty tässä. Se on lähimmän mittausaseman tuorein pienhiukkaslukema (PM2.5), ja yllä oleva rivi kertoo, kuinka kaukana asema on. Mittausasemia on harvassa: useimmissa kunnissa ei ole yhtään, ja suuressakin kaupungissa niitä on kourallinen.",
+        "Yllä oleva sana on arvio tälle alueelle, ei tässä tehty mittaus. Se lasketaan alueen kaikkien pienhiukkasantureiden (PM2.5) tuoreimmista lukemista niiden välille interpoloiden, ja se on sama arvio, jolla kartta on väritetty — niin että ponnahdusikkuna ja sen alla oleva väri kertovat aina saman. Yllä oleva rivi kertoo, kuinka kaukana lähin anturi on: mitä kauempana, sitä enemmän väri on arvaus.",
       aboutBandsHeading: "Kuusi tasoa",
       aboutGood: "Hyvä — alle 10 µg/m³.",
       aboutFair: "Kohtalainen — 10–20 µg/m³.",
@@ -249,7 +253,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       aboutLimit:
         "Pienhiukkaset kulkeutuvat satojen kilometrien päähän, ja juuri siksi naapurikaupungin lukema kannattaa ylipäätään näyttää. Se ei kerro mitään paikallisesta: vilkkaasta tiestä, puun poltosta tai tyynestä illasta laaksossa. Mitä kauempana asema on, sitä enemmän tätä jää puuttumaan — eikä mikään siitä tee ilmasta puhtaampaa kuin luku kertoo.",
       aboutSource:
-        "Kartta piirretään OpenAQ:n välittämistä viranomaismittauksista ja Sensor.Communityn kansalaisverkoston antureista; yllä oleva lukema on aina viranomaisaseman mittaus. Tasot noudattavat Euroopan ilmanlaatuindeksiä.",
+        "Kartta ja arvio perustuvat OpenAQ:n välittämiin viranomaismittauksiin ja Sensor.Communityn kansalaisverkoston antureihin. Yllä oleva rivi kertoo, kummasta lähin anturi on. Tasot noudattavat Euroopan ilmanlaatuindeksiä.",
       aboutClose: "Sulje",
     },
     hours: {

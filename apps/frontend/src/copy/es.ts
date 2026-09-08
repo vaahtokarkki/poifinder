@@ -219,13 +219,18 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       veryPoor: "Muy mala",
       extremelyPoor: "Extremadamente mala",
       unit: "µg/m³",
-      measuredAt: "Partículas finas, medidas a {distance} km, {age}",
+      nearestStation:
+        "Partículas finas. La estación de medición más cercana, a {distance} km, midió {value} µg/m³ {age}.",
+      nearestSensor:
+        "Partículas finas. El sensor más cercano, a {distance} km, midió {value} µg/m³ {age}.",
+      estimated:
+        "Partículas finas, estimación para esta zona a partir de sensores cercanos.",
       ageMinutes: { one: "hace 1 min", other: "hace {count} min" },
       ageHours: { one: "hace 1 h", other: "hace {count} h" },
       about: "Cómo funciona",
       aboutTitle: "Calidad del aire cerca",
       aboutIntro:
-        "Es una medición real, pero no tomada aquí. Es el dato más reciente de partículas finas (PM2.5) de la estación de medición más cercana, y la línea de arriba dice a qué distancia está. Las estaciones son escasas: la mayoría de los municipios no tiene ninguna, y una ciudad grande tiene unas pocas.",
+        "La palabra de arriba es una estimación para esta zona, no una medición tomada aquí. Se calcula con los datos más recientes de partículas finas (PM2.5) de todos los sensores de la región, interpolados entre ellos: es la misma estimación con la que se colorea el mapa, de modo que la ventana y el color de debajo siempre dicen lo mismo. La línea de arriba dice a qué distancia está el sensor más cercano: cuanto más lejos, más tiene el color de suposición.",
       aboutBandsHeading: "Los seis niveles",
       aboutGood: "Buena — por debajo de 10 µg/m³.",
       aboutFair: "Razonable — de 10 a 20 µg/m³.",
@@ -236,7 +241,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       aboutLimit:
         "Las partículas finas viajan cientos de kilómetros, y por eso merece la pena mostrar el dato de la ciudad vecina. Lo que no capta es nada local: una carretera con tráfico, una estufa de leña, una tarde sin viento en un valle. Cuanto más lejos esté la estación, más se pierde de eso — y nada de ello hace que el aire de aquí sea más limpio de lo que dice la cifra.",
       aboutSource:
-        "El mapa se genera con estaciones de referencia a través de OpenAQ y con la red ciudadana Sensor.Community; el dato de arriba procede siempre de una estación de referencia. Los niveles siguen el Índice de Calidad del Aire Europeo.",
+        "El mapa y la estimación se generan con estaciones de referencia a través de OpenAQ y con la red ciudadana Sensor.Community. La línea de arriba dice a cuál de las dos pertenece el sensor más cercano. Los niveles siguen el Índice de Calidad del Aire Europeo.",
       aboutClose: "Cerrar",
     },
     hours: {

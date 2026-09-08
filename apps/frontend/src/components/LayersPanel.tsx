@@ -235,11 +235,13 @@ const LayersPanel: React.FC<LayersPanelProps> = ({
    */
   const coverage = useNoiseCoverage();
   /**
-   * The same question for the other overlay, and it is a different question
-   * under the same words. Noise coverage is "did the builder model this city";
-   * air coverage is "is there a monitoring station within 75 km", which is a
-   * far larger area and far more often no. Both answer "unknown" while they
-   * are still loading, and neither says anything then
+   * The same question for the other overlay, and now genuinely the same
+   * question: both ask the rendered tiles whether anything is drawn under the
+   * middle of the view. Air coverage used to ask the station snapshot instead
+   * — "is there a monitor within 75 km" — which is a far larger area than what
+   * is published, so a reader well outside every published city was told the
+   * layer covered them and then switched it on to a blank map. Both answer
+   * "unknown" while they are still loading, and neither says anything then
    */
   const airCoverage = useAirCoverage();
 

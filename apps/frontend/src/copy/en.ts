@@ -883,13 +883,17 @@ const ui: CopyDeck["ui"] = {
       veryPoor: "Very poor",
       extremelyPoor: "Extremely poor",
       unit: "µg/m³",
-      measuredAt: "Fine particles, measured {distance} km away, {age}",
+      nearestStation:
+        "Fine particles. The nearest monitoring station, {distance} km away, read {value} µg/m³ {age}.",
+      nearestSensor:
+        "Fine particles. The nearest sensor, {distance} km away, read {value} µg/m³ {age}.",
+      estimated: "Fine particles, estimated for this area from nearby sensors.",
       ageMinutes: { one: "1 min ago", other: "{count} min ago" },
       ageHours: { one: "1 h ago", other: "{count} h ago" },
       about: "How this works",
       aboutTitle: "Air quality nearby",
       aboutIntro:
-        "This is a real measurement, but not one taken here. It is the most recent fine particle reading (PM2.5) from the nearest monitoring station, and the line above says how far away that is. Monitors are sparse: most towns have none, and a large city may have a handful.",
+        "The word above is an estimate for this area rather than a reading taken here. It is worked out from the most recent fine particle readings (PM2.5) of every sensor in the region, interpolated between them, and it is the same estimate the map is shaded with — so the popup and the colour under it always agree. The line above says how far the nearest sensor is: the further away it is, the more of a guess the colour is.",
       aboutBandsHeading: "The six levels",
       aboutGood: "Good — below 10 µg/m³.",
       aboutFair: "Fair — 10 to 20 µg/m³.",
@@ -900,7 +904,7 @@ const ui: CopyDeck["ui"] = {
       aboutLimit:
         "Fine particles drift for hundreds of kilometres, which is why a reading from the next city is worth showing at all. What it cannot capture is anything local: a busy road, a wood fire, a still evening in a valley. The further away the station, the more of that is missing — and none of it makes the air here cleaner than the number says.",
       aboutSource:
-        "The map is drawn from reference monitors via OpenAQ and from the Sensor.Community citizen network; the reading above is always from a reference monitor. Levels follow the European Air Quality Index.",
+        "The map and the estimate are drawn from reference monitors via OpenAQ and from the Sensor.Community citizen network. The line above says which of the two the nearest sensor belongs to. Levels follow the European Air Quality Index.",
       aboutClose: "Close",
     },
     hours: {

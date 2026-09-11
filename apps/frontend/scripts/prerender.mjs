@@ -121,12 +121,17 @@ async function main() {
         // claiming zero while the map draws forty is worse than no page
         if (!entry || entry.count < 1) continue;
         const pois = entry.pois ?? [];
+        const indexable = meta.isIndexable(categorySeo.slug, entry.count, pois.length);
         routes.push({
           city,
           categorySeo,
           count: entry.count,
           pois,
-          indexable: meta.isIndexable(categorySeo.slug, entry.count, pois.length),
+          stats: entry.stats,
+          indexable,
+          // The narrower question: of the pages fit to index at all, the ones
+          // Google is asked for. See GOOGLE_CATEGORIES in pageMeta.ts
+          googleIndexable: indexable && meta.isIndexableForGoogle(categorySeo.slug, pois.length),
           // This category's own refresh date, so a page whose query failed
           // last time does not inherit a freshness it does not have
           updatedAt: (entry.updatedAt ?? cityData.generatedAt ?? new Date().toISOString()).slice(
@@ -144,6 +149,11 @@ async function main() {
     const publishedCities = new Set(indexableRoutes.map((route) => route.city.slug));
     const hasPage = (citySlug, categorySlug) =>
       publishedRoutes.has(`${citySlug}/${categorySlug}`);
+
+    // English only: every other tree stays out of Google while it decides what
+    // it thinks of the English one
+    const googleRoutes = routes.filter((route) => route.googleIndexable);
+    const googleCities = new Set(googleRoutes.map((route) => route.city.slug));
 
     const written = [];
 
@@ -197,6 +207,9 @@ async function main() {
       jsonLd,
       pageData,
       noindex = false,
+      // Hidden from Google only. Every other engine still indexes the page,
+      // which is the point: see GOOGLE_CATEGORIES in pageMeta.ts
+      googleNoindex = false,
       locale = "en",
       alternates = [],
     }) {
@@ -216,6 +229,9 @@ async function main() {
         // the links out of it still carry, which is the only reason a crawler
         // that lands here should bother reading it
         ...(noindex ? [`<meta name="robots" content="noindex, follow">`] : []),
+        ...(!noindex && googleNoindex
+          ? [`<meta name="googlebot" content="noindex, follow">`]
+          : []),
         `<meta property="og:type" content="website">`,
         `<meta property="og:site_name" content="${meta.SITE_NAME}">`,
         `<meta property="og:title" content="${escapeAttr(title)}">`,
@@ -296,6 +312,7 @@ async function main() {
           ...(hasCountryHub(locale, route.city.countryCode, route.categorySeo.slug)
             ? { hasCountryHub: true }
             : {}),
+          ...(route.stats ? { stats: route.stats } : {}),
           updatedAt: route.updatedAt,
           ...(locale === "en" ? {} : { locale }),
         };
@@ -310,6 +327,7 @@ async function main() {
           jsonLd: meta.buildJsonLd(routeArg, pageData),
           pageData,
           noindex: !route.indexable,
+          googleNoindex: locale !== "en" || !route.googleIndexable,
           locale,
           alternates,
         });
@@ -362,6 +380,8 @@ async function main() {
             ...(locale === "en" ? {} : { locale }),
           },
           noindex: entries.length === 0,
+          // A hub stays in Google only as the parent of a page Google keeps
+          googleNoindex: locale !== "en" || !googleCities.has(city.slug),
         });
       }
       setLocale("en");
@@ -399,6 +419,7 @@ async function main() {
         locale: hub.locale,
         alternates: meta.alternatesForCountry(hub.country, hub.categorySeo.slug, localesHere),
         pageData,
+        googleNoindex: true,
       });
     }
     setLocale("en");
@@ -439,6 +460,7 @@ async function main() {
           jsonLd: meta.buildCitiesJsonLd(indexedCities, citiesUpdatedAt),
           locale: code,
           alternates: meta.alternatesForCities(),
+          googleNoindex: code !== "en",
           pageData: {
             kind: "cities",
             citySlugs: indexedCities.map((city) => city.slug),
@@ -463,6 +485,7 @@ async function main() {
         jsonLd: meta.buildHomeJsonLd(),
         locale: code,
         alternates: meta.alternatesForHome(),
+        googleNoindex: code !== "en",
         pageData: {
           kind: "home",
           cityCount: indexedCities.length,
@@ -634,10 +657,11 @@ async function main() {
       }
     }
 
-    // The index keeps the address robots.txt already advertises and Search
-    // Console is already submitted against, so the split costs no resubmission
+    // Everything indexable, for the engines that are not Google. It is not in
+    // robots.txt, which every crawler reads — Google included — so it reaches
+    // Bing by being submitted there by hand
     await writeFile(
-      path.join(DIST, "sitemap.xml"),
+      path.join(DIST, "sitemap-full.xml"),
       `<?xml version="1.0" encoding="UTF-8"?>\n` +
         `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
         children
@@ -651,6 +675,50 @@ async function main() {
         `\n</sitemapindex>\n`
     );
     const urls = children.reduce((sum, child) => sum + child.count, 0);
+
+    // ---- The Google sitemap ----
+    // The address robots.txt advertises, and now only the pages Google is
+    // asked to index: the root, the city index, the English hubs that parent a
+    // kept page, and the kept pages. One urlset rather than an index, because
+    // at a few hundred lines there is nothing to split and one file is one
+    // coverage line to read.
+    //
+    // <lastmod> is never earlier than the day the template came off. The kept
+    // pages genuinely changed then, and saying so is what invites a recrawl
+    const revised = (date) =>
+      date && date > meta.GOOGLE_CONTENT_REVISION ? date : meta.GOOGLE_CONTENT_REVISION;
+    const googleHubs = [...citiesWithPages.values()].filter(({ city }) =>
+      googleCities.has(city.slug)
+    );
+    const googleUrls = [
+      urlEntry(meta.HOME_URL, null, null),
+      urlEntry(meta.CITIES_URL, revised(hubsLastmod), 1),
+      ...googleHubs.map(({ city, updatedAt }) =>
+        urlEntry(meta.cityUrl(city.slug, "en"), revised(updatedAt), city.tier)
+      ),
+      ...googleRoutes.map((route) =>
+        urlEntry(
+          meta.categoryUrl(route.city.slug, route.categorySeo.slug, "en"),
+          revised(route.updatedAt),
+          route.city.tier
+        )
+      ),
+    ];
+    await writeFile(
+      path.join(DIST, "sitemap.xml"),
+      `<?xml version="1.0" encoding="UTF-8"?>\n` +
+        `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${googleUrls.join(
+          "\n"
+        )}\n</urlset>\n`
+    );
+    const googleByCategory = [...meta.GOOGLE_CATEGORIES]
+      .map((slug) => `${slug} ${googleRoutes.filter((r) => r.categorySeo.slug === slug).length}`)
+      .join(", ");
+    console.log(
+      `Google: ${googleUrls.length} URLs in sitemap.xml (${googleByCategory}; ` +
+        `${googleHubs.length} hubs). Everything else is googlebot-noindex and listed ` +
+        `in sitemap-full.xml for Bing.`
+    );
 
     const indexableCities = [...citiesWithPages.values()].filter(
       ({ entries }) => entries.length > 0
@@ -672,7 +740,7 @@ async function main() {
         `(${routes.length} category, ${citiesWithPages.size} city, ` +
         `${indexedCities.length > 0 ? `${LOCALES.length} index, ` : ""}` +
         `${LOCALES.length} root, ${countryHubs.size} country), ` +
-        `${urls} URLs across ${children.length} sitemaps behind sitemap.xml.`
+        `${urls} URLs across ${children.length} sitemaps behind sitemap-full.xml.`
     );
     if (localeCounts.length > 1) {
       console.log(

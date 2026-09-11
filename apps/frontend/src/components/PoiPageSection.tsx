@@ -7,11 +7,10 @@ import {
   countryPath,
   MAX_LISTED_POIS,
   cityPath,
-  faqFor,
   hasPlacedPois,
   headingFor,
   internalLinksFor,
-  introFor,
+  summaryFor,
   pluralFor,
   poiTitle,
   cityNames,
@@ -61,13 +60,12 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
   // Rows titled by the building or park they stand in rather than by a name of
   // their own. They change what the list can honestly be called
   const placed = hasPlacedPois(listed);
-  const faq = faqFor(route, data.count);
   const linkGroups = internalLinksFor(route, data);
 
   return (
     <>
       {variant === "page" && <h1 className="info-sheet-title">{headingFor(route)}</h1>}
-      <p className="info-sheet-summary">{introFor(route, data.count)}</p>
+      <p className="info-sheet-summary">{summaryFor(route, data)}</p>
 
       {listed.length > 0 && (
         <section className="info-sheet-section">
@@ -103,18 +101,6 @@ const PoiPageSection: React.FC<PoiPageSectionProps> = ({ route, data, variant = 
           </p>
         </section>
       )}
-
-      <section className="info-sheet-section">
-        <h2 className="info-sheet-heading">{ui().page.questionsHeading}</h2>
-        <dl className="poi-faq">
-          {faq.map((entry) => (
-            <React.Fragment key={entry.q}>
-              <dt>{entry.q}</dt>
-              <dd>{entry.a}</dd>
-            </React.Fragment>
-          ))}
-        </dl>
-      </section>
 
       {linkGroups.map((group) => (
         <section className="info-sheet-section" key={group.heading}>

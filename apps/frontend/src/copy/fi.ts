@@ -160,6 +160,14 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     categoryDescription:
       "{noun} {cityIn}: {count} kartalla, aukioloaikoineen, maksuineen ja esteettömyystietoineen sikäli kuin OpenStreetMap ne tuntee. Maksuton, ilman kirjautumista, toimii puhelimella.",
     categoryHeading: "{noun} {cityIn}",
+    summaryMapped: {
+      one: "{cityIn} on kartalla yksi kohde.",
+      other: "{cityIn} on kartalla {count} kohdetta.",
+    },
+    summaryFeeBoth: "{free} on merkitty maksuttomiksi ja {paid} maksullisiksi.",
+    summaryFeeFree: "{free} on merkitty maksuttomiksi.",
+    summaryStepFree: "{stepFree} on merkitty esteettömiksi.",
+    summaryListed: "Alla on listattu niistä {listed}, muun muassa {examples}.",
     countryTitle: "{noun} {countryIn} kartalla — {count} kohdetta {cities} kaupungissa | {site}",
     countryDescription:
       "{noun} {countryIn}: {count} kohdetta {cities} kaupungissa, kaikki yhdellä kartalla OpenStreetMapin pohjalta. Maksuton, ilman kirjautumista, toimii puhelimella.",

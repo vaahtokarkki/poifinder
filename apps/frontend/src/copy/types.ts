@@ -177,6 +177,20 @@ export type UiCopy = {
     categoryDescription: string;
     categoryHeading: string;
     /**
+     * The paragraph above the list, assembled from the data.
+     *
+     * It replaces a per-category paragraph and six FAQ answers that were the
+     * same on every city's page with the name swapped in — 71% of Prague's
+     * drinking water page was also on Budapest's. Each sentence here carries a
+     * number or a proper noun that only this city has, and a sentence the data
+     * cannot support is left out rather than written with a zero in it.
+     */
+    summaryMapped: PluralMessage;
+    summaryFeeBoth: string;
+    summaryFeeFree: string;
+    summaryStepFree: string;
+    summaryListed: string;
+    /**
      * The country hub: one category across a whole country.
      *
      * `{countryIn}` means "in this country" and each deck decides how much of

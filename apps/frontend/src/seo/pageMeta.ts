@@ -2,21 +2,18 @@ import { findCity, nearbyCities } from "./cities";
 import type { City } from "./cities";
 import {
   CATEGORY_SEO,
-  categoryFaq,
   categoryHeading,
-  categoryIntro,
   categoryNoun,
   categoryPlural,
   categorySingular,
-  commonFaq,
   findCategorySeo,
   localize,
   vocabFor,
 } from "./categories";
-import type { CityNames, CategorySeo, FaqEntry, Vocab } from "./categories";
+import type { CityNames, CategorySeo, Vocab } from "./categories";
 import type { CategoryPageData, CountryPageData, PoiEntry } from "./pageData";
 import { formatCount } from "./format";
-import { DEFAULT_LOCALE, LOCALES, getLocale, interpolate, selectPlural, ui } from "../copy";
+import { DEFAULT_LOCALE, LOCALES, getLocale, interpolate, resolve, selectPlural, ui } from "../copy";
 import type { Locale } from "../copy";
 import { CITIES_SLUG, COUNTRIES_SLUG } from "../utils";
 import { countryIn, countryName, countrySlug } from "./countries";
@@ -199,6 +196,51 @@ export function isIndexable(
 
 /** How many named points the list renders. Enough to be substantive, not a dump */
 export const MAX_LISTED_POIS = 25;
+
+/**
+ * The pages Google is asked to index, which is now a much shorter list than
+ * the pages that exist.
+ *
+ * On 1 September 2026 Google stopped showing the site: impressions went from
+ * about 850 a day to single digits overnight, with no manual action and
+ * nothing broken — the pages still returned 200, prerendered, self-canonical.
+ * A domain a few weeks old had had a thousand city-by-category pages indexed
+ * in three days, during Google's August spam update, and two city pages in
+ * the same category shared up to 71% of their wording. That is the footprint
+ * its scaled-content systems look for, and the answer is to stop showing it a
+ * template.
+ *
+ * So Google gets the categories that earned the clicks — five of them made 60
+ * of the 85 before the drop — and only where the list is full. Everything else
+ * stays a real page for the people and the other engines that use it, behind
+ * `googlebot` noindex rather than `robots` noindex: Applebot reads the site
+ * hundreds of times a day and the iPhone visitors it sends land on exactly
+ * the pages this would otherwise hide from them.
+ */
+export const GOOGLE_CATEGORIES: ReadonlySet<string> = new Set([
+  "drinking-water",
+  "toilets",
+  "recycling",
+  "outdoor-gyms",
+  "atms",
+]);
+
+/** A full list: every kept page shows as many rows as a page can */
+export const MIN_LISTED_FOR_GOOGLE = MAX_LISTED_POIS;
+
+export function isIndexableForGoogle(categorySlug: string, listable: number): boolean {
+  return GOOGLE_CATEGORIES.has(categorySlug) && listable >= MIN_LISTED_FOR_GOOGLE;
+}
+
+/**
+ * The day the kept pages lost the template. Their content changed on that
+ * date whatever the extract says, and a <lastmod> that says so is the one
+ * honest reason for Google to read them again rather than trusting its copy
+ */
+export const GOOGLE_CONTENT_REVISION = "2026-09-11";
+
+/** How many points must carry a tag before the summary says anything about it */
+const SUMMARY_TAG_FLOOR = 5;
 
 export type Route = {
   city: City;
@@ -810,13 +852,59 @@ export function hasPlacedPois(pois: PoiEntry[]): boolean {
 }
 
 /**
- * The paragraph above the list. The deck writes it in international English
- * and it is translated on the way out, which is why the intro is assembled
- * here rather than called straight from the component
+ * The paragraph above the list, built from this city's data.
+ *
+ * What it replaced — a per-category paragraph and six FAQ answers — read the
+ * same on every city's page with the name and one number swapped. Every sentence here
+ * carries something only this city has: its count, what its points are tagged
+ * with, and the proper nouns of the rows below. A tag too sparse to say
+ * anything true about (under SUMMARY_TAG_FLOOR points) is left out rather than
+ * written about the handful who happened to be surveyed.
  */
-export function introFor(route: Route, count: number): string {
+export function summaryFor(route: Route, data: CategoryPageData): string {
   const { city, categorySeo } = route;
-  return categoryIntro(categorySeo, cityNames(city), count, vocabForRoute(route));
+  const deck = ui().page;
+  const names = cityNames(city);
+  const sentences = [
+    resolve(
+      deck.summaryMapped,
+      getLocale(),
+      {
+        ...names,
+        count: formatCount(data.count),
+        noun: categoryNoun(categorySeo, data.count, vocabForRoute(route)),
+      },
+      data.count
+    ),
+  ];
+
+  const stats = data.stats;
+  if (stats && stats.free + stats.paid >= SUMMARY_TAG_FLOOR) {
+    sentences.push(
+      interpolate(stats.paid > 0 ? deck.summaryFeeBoth : deck.summaryFeeFree, {
+        free: formatCount(stats.free),
+        paid: formatCount(stats.paid),
+      })
+    );
+  }
+  if (stats && stats.stepFree >= SUMMARY_TAG_FLOOR) {
+    sentences.push(interpolate(deck.summaryStepFree, { stepFree: formatCount(stats.stepFree) }));
+  }
+
+  const listed = data.pois.slice(0, MAX_LISTED_POIS);
+  const examples = listed
+    .map((poi) => poi.name ?? poi.context ?? poi.street)
+    .filter((noun): noun is string => Boolean(noun))
+    .slice(0, 3);
+  if (examples.length > 0) {
+    sentences.push(
+      interpolate(deck.summaryListed, {
+        listed: formatCount(listed.length),
+        examples: examples.join(", "),
+      })
+    );
+  }
+  return capitalizeFirst(sentences.join(" "));
 }
 
 /**
@@ -861,20 +949,6 @@ export function cityDescriptionFor(
   );
 }
 
-
-/** The full question set of a category page: the specific ones, then the shared ones */
-export function faqFor(route: Route, count: number): FaqEntry[] {
-  const vocab = vocabForRoute(route);
-  // categoryFaq localises its own output, because it is the half that has to
-  // pick a plural form first. The shared questions still go through here
-  return [
-    ...categoryFaq(route.categorySeo, cityNames(route.city), count, vocab),
-    ...commonFaq(cityNames(route.city), categoryPlural(route.categorySeo, vocab)).map(({ q, a }) => ({
-      q: localize(q, vocab),
-      a: localize(a, vocab),
-    })),
-  ];
-}
 
 export type LinkGroup = {
   heading: string;
@@ -1096,17 +1170,10 @@ export function buildJsonLd(route: Route, data: CategoryPageData): object[] {
     ],
   };
 
-  const faq = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqFor(route, data.count).map((entry) => ({
-      "@type": "Question",
-      name: entry.q,
-      acceptedAnswer: { "@type": "Answer", text: entry.a },
-    })),
-  };
-
-  return [page, itemList, breadcrumbs, faq];
+  // No FAQPage. The same six questions on twelve hundred pages, answered in
+  // the same words with the city swapped, was the loudest part of the
+  // template Google stopped ranking — see GOOGLE_CATEGORIES
+  return [page, itemList, breadcrumbs];
 }
 
 /** Structured data of a city hub page */

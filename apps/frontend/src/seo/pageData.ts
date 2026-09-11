@@ -63,6 +63,12 @@ export type CategoryPageData = {
    */
   pois: PoiEntry[];
   /**
+   * Tag counts over every mapped point in the category, not over the listed
+   * rows — see tagStats in fetch-poi-data.mjs. Absent on extracts written
+   * before the field existed, and the summary simply says less for those
+   */
+  stats?: { free: number; paid: number; stepFree: number; partlyStepFree: number };
+  /**
    * Which neighbouring pages exist. Internal links are only worth anything if
    * they resolve, and only the build knows which routes cleared the threshold,
    * so the answer travels with the page rather than being guessed at runtime

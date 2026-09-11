@@ -104,6 +104,12 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     category: CATEGORIES.DrinkingWater,
     slug: "drinking-water",
     enclosedBy: ["area"],
+    // A fountain is street furniture as much as a post box is. The ones in a
+    // park still say "in" — enclosedBy runs first — and the rest stand on a
+    // pavement with nothing else to name them. Before this, 2% of mapped
+    // fountains could make it into a list: Prague had 241 on the map and six
+    // rows, and a page that short is mostly the template around it
+    placedByStreet: true,
     schemaType: "Place",
   },
   {
@@ -242,6 +248,9 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
   {
     category: CATEGORIES.Bench,
     slug: "benches",
+    // Street furniture by definition; the park benches that a park could name
+    // are better named by the street at its edge than not at all
+    placedByStreet: true,
     schemaType: "Place",
   },
 ];

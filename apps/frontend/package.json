@@ -8,6 +8,7 @@
     "dev": "vite --host",
     "build": "tsc -b --noCheck && vite build && node scripts/prerender.mjs",
     "prerender": "node scripts/prerender.mjs",
+    "seo:overlap": "node scripts/check-overlap.mjs",
     "seo:data": "node scripts/fetch-poi-data.mjs",
     "copy:check": "node scripts/check-copy.mjs",
     "copy:nouns": "node scripts/check-nouns.mjs",

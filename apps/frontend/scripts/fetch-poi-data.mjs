@@ -262,13 +262,25 @@ function toCandidates(elements, city) {
 function selectPois(candidates) {
   const seen = new Set();
   const pois = [];
-  for (const candidate of candidates) {
+  // A name a mapper gave, or the place a point stands in, before the street
+  // outside it. Candidates arrive nearest the centre first, and once fountains
+  // could be named by their street the thirty rows filled with "on Slezská"
+  // before a single named one — Prague lost Osvěžítko to a pavement. Streets
+  // still fill every row the names leave, in the same central-first order
+  const ranked = [
+    ...candidates.filter((c) => c.name || c.context),
+    ...candidates.filter((c) => !c.name && !c.context),
+  ];
+  for (const candidate of ranked) {
     // One namespace for both, so a toilet mapped as "Stockmann" and a toilet
     // standing inside the Stockmann building are one row rather than two ways
     // of saying the same shop. Whichever is nearer the centre wins, which is
     // the order the candidates already arrive in
     const identity = candidate.name ?? candidate.context ?? candidate.street;
-    const key = identity ? identity.toLowerCase() : null;
+    // Whitespace folded too: OpenStreetMap spells the same square with an
+    // ordinary space on one way and a non-breaking one on the next, and
+    // "náměstí Jiřího z Poděbrad" came out as two rows
+    const key = identity ? identity.toLowerCase().replace(/\s+/g, " ").trim() : null;
     if (!key || seen.has(key)) continue;
     seen.add(key);
     const { _distance, _node, ...poi } = candidate;
@@ -276,6 +288,31 @@ function selectPois(candidates) {
     if (pois.length >= MAX_STORED_POIS) break;
   }
   return pois;
+}
+
+/**
+ * Tag counts over every mapped point, not over the stored rows.
+ *
+ * The rows are the named and placed few — for drinking water, two in a hundred
+ * before streets — so a share computed from them describes whoever surveyed
+ * the famous fountains rather than the city. These are counted before
+ * selection, over everything the query returned, which is the only population
+ * a sentence like "40 of them are free" can honestly be about.
+ *
+ * Only the two tags a visitor decides on. `fee=no` and `fee=yes` are counted
+ * and anything else (`donation`, a price) is left out of both; `wheelchair` is
+ * split the same way OpenStreetMap splits it.
+ */
+function tagStats(elements) {
+  const stats = { free: 0, paid: 0, stepFree: 0, partlyStepFree: 0 };
+  for (const element of elements) {
+    const tags = element.tags ?? {};
+    if (tags.fee === "no") stats.free++;
+    else if (tags.fee === "yes") stats.paid++;
+    if (tags.wheelchair === "yes") stats.stepFree++;
+    else if (tags.wheelchair === "limited") stats.partlyStepFree++;
+  }
+  return stats;
 }
 
 /* ------------------------------------------------------------------------ *
@@ -763,6 +800,7 @@ async function main() {
           result[categorySeo.slug] = {
             count: elements.length,
             pois,
+            stats: tagStats(elements),
             // Per category, not per city: when one query fails and the rest
             // succeed, only the ones that succeeded may claim to be current
             updatedAt: new Date().toISOString(),

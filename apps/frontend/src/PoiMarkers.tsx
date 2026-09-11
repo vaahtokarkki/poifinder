@@ -7,7 +7,12 @@ import { interpolate, ui } from "./copy";
 import { analytics } from "./analytics";
 import { divIcon, latLngBounds, point } from "leaflet";
 import type {
+  LatLng,
+  LatLngBounds,
+  LatLngExpression,
+  Map as LeafletMap,
   MarkerClusterGroup as LeafletClusterGroup,
+  Point,
   PointExpression,
   Popup as LeafletPopup,
   PopupEvent,
@@ -106,6 +111,8 @@ const OWN_MOVE_GRACE_MS = 900;
 const ZOOM_TO_FEATURE_AT_OR_BELOW = 15;
 /** How close that zoom goes for a point, or an outline small enough */
 const FEATURE_ZOOM = 17;
+/** How long the flight to a point and back takes, in seconds */
+const FEATURE_FLY_S = 0.6;
 
 const shapeFitPadding = () => {
   const overlay = document.querySelector(".map-overlay-top");
@@ -120,6 +127,56 @@ const shapeFitPadding = () => {
       (Number.isFinite(sheet) ? sheet : 0) + POPUP_EDGE_GAP_PX,
     ] as [number, number],
   };
+};
+
+/**
+ * Where to centre the map at `zoom` so that `bounds` is framed the way
+ * fitBounds frames it, and the open popup sits clear of the edges the way its
+ * own auto pan would leave it — both worked out before the move, so there is
+ * one move rather than a zoom and then a correction.
+ */
+const centerFittingPopup = (
+  map: LeafletMap,
+  bounds: LatLngBounds,
+  zoom: number,
+  paddingTL: Point,
+  paddingBR: Point,
+  popup: LeafletPopup
+): LatLng => {
+  // As fitBounds centres the bounds inside its padding
+  const center = map
+    .project(bounds.getSouthWest(), zoom)
+    .add(map.project(bounds.getNorthEast(), zoom))
+    .divideBy(2)
+    .add(paddingBR.subtract(paddingTL).divideBy(2));
+
+  const element = popup.getElement();
+  const anchorLatLng = popup.getLatLng();
+  if (!element || !anchorLatLng) return map.unproject(center, zoom);
+
+  // The popup's box relative to the point it hangs from, in pixels, which is
+  // the same at every zoom
+  const anchor = map.latLngToContainerPoint(anchorLatLng);
+  const box = element.getBoundingClientRect();
+  const container = map.getContainer().getBoundingClientRect();
+  const offset = point(box.left - container.left - anchor.x, box.top - container.top - anchor.y);
+
+  // Leaflet's own auto pan arithmetic, done for the view about to be
+  const size = map.getSize();
+  const at = map
+    .project(anchorLatLng, zoom)
+    .add(offset)
+    .subtract(center.subtract(size.divideBy(2)));
+  const panTL = point(AUTO_PAN_PADDING_TOP_LEFT);
+  const panBR = point(POPUP_EDGE_GAP_PX, POPUP_EDGE_GAP_PX);
+  let dx = 0;
+  let dy = 0;
+  if (at.x + box.width + panBR.x > size.x) dx = at.x + box.width - size.x + panBR.x;
+  if (at.x - dx - panTL.x < 0) dx = at.x - panTL.x;
+  if (at.y + box.height + panBR.y > size.y) dy = at.y + box.height - size.y + panBR.y;
+  if (at.y - dy - panTL.y < 0) dy = at.y - panTL.y;
+
+  return map.unproject(center.add([dx, dy]), zoom);
 };
 
 /**
@@ -1533,6 +1590,24 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   }, [openElement, shapeMarker]);
 
   /**
+   * A flight of ours, to a point or back from one. A flight fires its
+   * zoomstart during the call itself, so marking just the call as ours is
+   * exact: a drag a moment later is the reader's, and stops it.
+   */
+  const flyOwn = React.useCallback(
+    (center: LatLngExpression, zoom: number) => {
+      const until = ownMoveUntilRef.current;
+      ownMoveUntilRef.current = Infinity;
+      try {
+        map.flyTo(center, zoom, { duration: FEATURE_FLY_S });
+      } finally {
+        ownMoveUntilRef.current = until;
+      }
+    },
+    [map]
+  );
+
+  /**
    * Bring the whole of a drawn point into view when its popup opens, and only
    * then.
    *
@@ -1585,26 +1660,56 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
           : null;
       if (map.getZoom() <= ZOOM_TO_FEATURE_AT_OR_BELOW && featureBounds && resting) {
         const padding = shapeFitPadding();
+        const paddingTL = point(padding.paddingTopLeft);
+        const paddingBR = point(padding.paddingBottomRight);
         const target = Math.min(
           FEATURE_ZOOM,
-          map.getBoundsZoom(
-            featureBounds,
-            false,
-            point(padding.paddingTopLeft).add(padding.paddingBottomRight)
-          )
+          map.getBoundsZoom(featureBounds, false, paddingTL.add(paddingBR))
         );
         // Only ever in. An outline too big to show any closer is fitted below
         // like at any other zoom, rather than zooming out into points that
         // were never loaded
         if (target > map.getZoom()) {
           viewBeforeZoomRef.current ??= { ...resting, popup };
-          ownMoveUntilRef.current = Date.now() + OWN_MOVE_GRACE_MS;
-          map.fitBounds(featureBounds, { ...padding, maxZoom: FEATURE_ZOOM });
-          // Leaflet pans a popup clear of the edges before announcing it, at
-          // the zoom it opened at; do it again at the zoom it ended up at
-          map.once("moveend", () => {
-            if (openPopupRef.current === popup) popup.update();
-          });
+          /*
+           * One motion. Left to itself the popup pans the map on its way in:
+           * once as it opens, again when React renders its content — which
+           * lands in the middle of the zoom — and it would need a third pan
+           * after it, because a point near the side of the screen leaves the
+           * popup hanging off the edge at the new zoom. So it may not pan, the
+           * pan it already started is stopped, and the room it needs goes into
+           * where the map flies to instead.
+           */
+          popup.options.autoPan = false;
+          map.stop();
+
+          // React renders the content a frame or two after the popup opens and
+          // Leaflet lays it out in the frame after that; only then is the room
+          // the popup needs known
+          let frames = 0;
+          let rendered = false;
+          const fly = () => {
+            // Closed, replaced, or the reader took the map in the meantime
+            if (!popup.isOpen() || openPopupRef.current !== popup) return;
+            if (!rendered && frames++ < 10) {
+              rendered = Boolean(
+                popup.getElement()?.querySelector(".leaflet-popup-content")
+                  ?.childElementCount
+              );
+              requestAnimationFrame(fly);
+              return;
+            }
+            flyOwn(
+              centerFittingPopup(map, featureBounds, target, paddingTL, paddingBR, popup),
+              target
+            );
+            // Landed with the popup in view. From here on it pans the map as
+            // it always has, for when its content grows
+            map.once("moveend", () => {
+              if (openPopupRef.current === popup) popup.options.autoPan = true;
+            });
+          };
+          requestAnimationFrame(fly);
           return;
         }
       }
@@ -1617,7 +1722,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
       ownMoveUntilRef.current = Date.now() + OWN_MOVE_GRACE_MS;
       map.fitBounds(bounds, shapeFitPadding());
     },
-    [map]
+    [map, flyOwn]
   );
 
   /**
@@ -1635,10 +1740,9 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
         return;
       }
       viewBeforeZoomRef.current = null;
-      ownMoveUntilRef.current = Date.now() + OWN_MOVE_GRACE_MS;
-      map.setView(saved.center, saved.zoom);
+      flyOwn(saved.center, saved.zoom);
     },
-    [map, rememberRestingView]
+    [flyOwn, rememberRestingView]
   );
 
   /*

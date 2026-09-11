@@ -5,7 +5,7 @@ import { renderToString } from "react-dom/server";
 import { categoryDisplay } from "./seo/categories";
 import { interpolate, ui } from "./copy";
 import { analytics } from "./analytics";
-import { divIcon, latLngBounds } from "leaflet";
+import { divIcon, latLngBounds, point } from "leaflet";
 import type {
   MarkerClusterGroup as LeafletClusterGroup,
   PointExpression,
@@ -103,7 +103,7 @@ const OWN_MOVE_GRACE_MS = 900;
  * At this zoom and further out, opening a popup first zooms in on its point,
  * and closing it goes back to the view it was opened from.
  */
-const ZOOM_TO_FEATURE_AT_OR_BELOW = 14;
+const ZOOM_TO_FEATURE_AT_OR_BELOW = 15;
 /** How close that zoom goes for a point, or an outline small enough */
 const FEATURE_ZOOM = 17;
 
@@ -1448,6 +1448,38 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   } | null>(null);
 
   /**
+   * The view the map last came to rest in with no popup open, which is the
+   * one to go back to. Read when a popup opens it would already be off:
+   * Leaflet pans the map to fit a popup before it announces it, so the view
+   * at popupopen is the panned one, and going back there lands somewhere the
+   * reader never was — possibly outside the loaded area, costing a query.
+   */
+  const restingViewRef = React.useRef<{
+    center: [number, number];
+    zoom: number;
+  } | null>(null);
+  /** The popup on the map, whether or not it may still pan it */
+  const shownPopupRef = React.useRef<LeafletPopup | null>(null);
+
+  const rememberRestingView = React.useCallback(() => {
+    const center = map.getCenter();
+    restingViewRef.current = { center: [center.lat, center.lng], zoom: map.getZoom() };
+  }, [map]);
+
+  React.useEffect(() => {
+    rememberRestingView();
+    // The popup's own pan is animated, so its moveend arrives after the
+    // popup is marked open and is left out
+    const onMoveEnd = () => {
+      if (!shownPopupRef.current) rememberRestingView();
+    };
+    map.on("moveend", onMoveEnd);
+    return () => {
+      map.off("moveend", onMoveEnd);
+    };
+  }, [map, rememberRestingView]);
+
+  /**
    * The outline of the open point, if it has one, so that its marker can be
    * put inside it.
    *
@@ -1545,28 +1577,36 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
        * something too small to see, so the map goes to it — the outline if
        * there is one, the point itself otherwise — and remembers where it was.
        */
-      if (map.getZoom() <= ZOOM_TO_FEATURE_AT_OR_BELOW) {
-        const bounds = corners
-          ? latLngBounds([corners[0], corners[1]], [corners[2], corners[3]])
-          : marker.position
-            ? latLngBounds(marker.position, marker.position)
-            : null;
-        if (!bounds) return;
-
-        const center = map.getCenter();
-        viewBeforeZoomRef.current ??= {
-          center: [center.lat, center.lng],
-          zoom: map.getZoom(),
-          popup,
-        };
-        ownMoveUntilRef.current = Date.now() + OWN_MOVE_GRACE_MS;
-        map.fitBounds(bounds, { ...shapeFitPadding(), maxZoom: FEATURE_ZOOM });
-        // Leaflet pans a popup clear of the edges before announcing it, at the
-        // zoom it opened at; do it again at the zoom it ended up at
-        map.once("moveend", () => {
-          if (openPopupRef.current === popup) popup.update();
-        });
-        return;
+      const resting = restingViewRef.current;
+      const featureBounds = corners
+        ? latLngBounds([corners[0], corners[1]], [corners[2], corners[3]])
+        : marker.position
+          ? latLngBounds(marker.position, marker.position)
+          : null;
+      if (map.getZoom() <= ZOOM_TO_FEATURE_AT_OR_BELOW && featureBounds && resting) {
+        const padding = shapeFitPadding();
+        const target = Math.min(
+          FEATURE_ZOOM,
+          map.getBoundsZoom(
+            featureBounds,
+            false,
+            point(padding.paddingTopLeft).add(padding.paddingBottomRight)
+          )
+        );
+        // Only ever in. An outline too big to show any closer is fitted below
+        // like at any other zoom, rather than zooming out into points that
+        // were never loaded
+        if (target > map.getZoom()) {
+          viewBeforeZoomRef.current ??= { ...resting, popup };
+          ownMoveUntilRef.current = Date.now() + OWN_MOVE_GRACE_MS;
+          map.fitBounds(featureBounds, { ...padding, maxZoom: FEATURE_ZOOM });
+          // Leaflet pans a popup clear of the edges before announcing it, at
+          // the zoom it opened at; do it again at the zoom it ended up at
+          map.once("moveend", () => {
+            if (openPopupRef.current === popup) popup.update();
+          });
+          return;
+        }
       }
 
       if (!corners) return;
@@ -1586,13 +1626,19 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    */
   const restoreViewAfter = React.useCallback(
     (popup: LeafletPopup) => {
+      if (shownPopupRef.current === popup) shownPopupRef.current = null;
       const saved = viewBeforeZoomRef.current;
-      if (saved?.popup !== popup) return;
+      if (saved?.popup !== popup) {
+        // Nothing to go back to, so wherever the map is now is where the next
+        // popup should return to — unless another one has already opened
+        if (!shownPopupRef.current) rememberRestingView();
+        return;
+      }
       viewBeforeZoomRef.current = null;
       ownMoveUntilRef.current = Date.now() + OWN_MOVE_GRACE_MS;
       map.setView(saved.center, saved.zoom);
     },
-    [map]
+    [map, rememberRestingView]
   );
 
   /*
@@ -1750,6 +1796,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                   analytics.poiPopupOpened(findCategory(marker, categories));
                   setOpenShape(key);
                   openPopupRef.current = event.popup;
+                  shownPopupRef.current = event.popup;
                   // Zooms in when far out, otherwise only moves the map if the
                   // outline does not already fit
                   fitShapeIntoView(marker, event.popup);

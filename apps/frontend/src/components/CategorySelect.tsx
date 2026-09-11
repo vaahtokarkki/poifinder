@@ -40,7 +40,9 @@ type CategorySelectProps = {
  * language selector reach the picker. CATEGORY_CONFIG is ordered by category
  * id — the order they were added in, which means nothing to somebody looking
  * for one — so each group is sorted by name, and the collation is the
- * language's own.
+ * language's own. The groups themselves too, for the same reason: the enum
+ * order is the order they were written in, and the names sort differently in
+ * every language, so the order is worked out here per locale.
  */
 function buildCategories(locale: Locale) {
   const categories = Object.entries(CATEGORY_CONFIG).map(([key, config]) => ({
@@ -49,8 +51,11 @@ function buildCategories(locale: Locale) {
     group: config.group,
   }));
 
-  const grouped = Object.values(CATEGORY_GROUP)
-    .filter((g) => typeof g === "number")
+  const groups = (
+    Object.values(CATEGORY_GROUP).filter((g) => typeof g === "number") as CATEGORY_GROUP[]
+  ).sort((a, b) => groupDisplay(a, locale).localeCompare(groupDisplay(b, locale), locale));
+
+  const grouped = groups
     .reduce(
       (acc, group) => {
         acc[group as CATEGORY_GROUP] = categories
@@ -61,7 +66,7 @@ function buildCategories(locale: Locale) {
       {} as Record<CATEGORY_GROUP, typeof categories>
     );
 
-  return { categories, grouped };
+  return { categories, groups, grouped };
 }
 
 const CategorySelect: React.FC<CategorySelectProps> = ({
@@ -71,7 +76,7 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
   visible,
 }) => {
   const locale = useActiveLocale();
-  const { categories, grouped: groupedCategories } = React.useMemo(
+  const { categories, groups, grouped: groupedCategories } = React.useMemo(
     () => buildCategories(locale),
     [locale]
   );
@@ -234,19 +239,17 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
           {ui().groups.featured}
         </ListSubheader>
         {featuredCategories.map((cat) => renderCategoryItem(cat, "featured"))}
-        {Object.values(CATEGORY_GROUP)
-          .filter((g) => typeof g === "number")
-          .flatMap((group) => [
-            <ListSubheader
-              key={`subheader-${group}`}
-              style={{ lineHeight: "2em", padding: ".2em 1em" }}
-            >
-              {groupDisplay(group as CATEGORY_GROUP)}
-            </ListSubheader>,
-            ...groupedCategories[group as CATEGORY_GROUP].map((cat) =>
-              renderCategoryItem(cat, `group-${group}`)
-            ),
-          ])}
+        {groups.flatMap((group) => [
+          <ListSubheader
+            key={`subheader-${group}`}
+            style={{ lineHeight: "2em", padding: ".2em 1em" }}
+          >
+            {groupDisplay(group, locale)}
+          </ListSubheader>,
+          ...groupedCategories[group].map((cat) =>
+            renderCategoryItem(cat, `group-${group}`)
+          ),
+        ])}
       </Select>
     </FormControl>
   );

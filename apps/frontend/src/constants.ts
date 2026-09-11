@@ -330,9 +330,9 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
  * says people actually filter by rather than a guess: ranked by how many
  * distinct visits had the category active while panning the map or opening a
  * city page (Events, "Categories" > "query: pan" / "query: city-page", 2026-08
- * to 2026-09-04) — drinking-water (53 visits), recycling (17), benches (16),
- * ahead of outdoor-gyms (10) and atms (6). A category still belongs to its own
- * group below as well; this only adds a second, faster way to reach it.
+ * to 2026-09-04) — drinking-water (53 visits), recycling (17), benches (16)
+ * and outdoor-gyms (10), ahead of atms (6). A category still belongs to its
+ * own group below as well; this only adds a second, faster way to reach it.
  */
 export const FEATURED_CATEGORIES: CATEGORIES[] = [
   CATEGORIES.Toilets,
@@ -340,6 +340,7 @@ export const FEATURED_CATEGORIES: CATEGORIES[] = [
   CATEGORIES.DrinkingWater,
   CATEGORIES.Recycling,
   CATEGORIES.Bench,
+  CATEGORIES.OutdoorGym,
 ];
 
 export type CategoryPreset = {

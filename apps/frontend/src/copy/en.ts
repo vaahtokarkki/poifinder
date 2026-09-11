@@ -817,10 +817,19 @@ const ui: CopyDeck["ui"] = {
       one: "{count} {noun} is mapped in {city}.",
       other: "{count} {noun} are mapped in {city}.",
     },
-    summaryFeeBoth: "{free} are marked free and {paid} charge a fee.",
-    summaryFeeFree: "{free} are marked free.",
-    summaryStepFree: "{stepFree} are marked step-free.",
-    summaryListed: "{listed} are listed below, among them {examples}.",
+    summaryFeeBoth: {
+      one: "{free} is marked free, {paid} as charging a fee.",
+      other: "{free} are marked free, {paid} as charging a fee.",
+    },
+    summaryFeeFree: { one: "{free} is marked free.", other: "{free} are marked free." },
+    summaryStepFree: {
+      one: "{stepFree} is marked step-free.",
+      other: "{stepFree} are marked step-free.",
+    },
+    summaryListed: {
+      one: "{listed} is listed below: {examples}.",
+      other: "{listed} are listed below, among them {examples}.",
+    },
     countryTitle:
       "{noun} in {countryIn} on a map — {count} across {cities} {cityUnit} | {site}",
     countryDescription:

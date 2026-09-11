@@ -6,7 +6,7 @@
   "homepage": "https://wayside.cc",
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc -b --noCheck && vite build && node scripts/prerender.mjs",
+    "build": "tsc -b --noCheck && vite build && node scripts/prerender.mjs && node scripts/check-overlap.mjs --strict",
     "prerender": "node scripts/prerender.mjs",
     "seo:overlap": "node scripts/check-overlap.mjs",
     "seo:data": "node scripts/fetch-poi-data.mjs",

@@ -164,10 +164,15 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       one: "{cityIn} on kartalla yksi kohde.",
       other: "{cityIn} on kartalla {count} kohdetta.",
     },
-    summaryFeeBoth: "{free} on merkitty maksuttomiksi ja {paid} maksullisiksi.",
-    summaryFeeFree: "{free} on merkitty maksuttomiksi.",
-    summaryStepFree: "{stepFree} on merkitty esteettömiksi.",
-    summaryListed: "Alla on listattu niistä {listed}, muun muassa {examples}.",
+    // Label form for the tags: an adjective after a number would need its
+    // case to follow the number ("1 maksuttomaksi", "12 maksuttomiksi")
+    summaryFeeBoth: "Maksuttomia: {free}, maksullisia: {paid}.",
+    summaryFeeFree: "Maksuttomia: {free}.",
+    summaryStepFree: "Esteettömiä: {stepFree}.",
+    summaryListed: {
+      one: "Alla on listattu niistä yksi: {examples}.",
+      other: "Alla on listattu niistä {listed}, muun muassa {examples}.",
+    },
     countryTitle: "{noun} {countryIn} kartalla — {count} kohdetta {cities} kaupungissa | {site}",
     countryDescription:
       "{noun} {countryIn}: {count} kohdetta {cities} kaupungissa, kaikki yhdellä kartalla OpenStreetMapin pohjalta. Maksuton, ilman kirjautumista, toimii puhelimella.",

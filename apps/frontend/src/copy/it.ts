@@ -152,7 +152,10 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     summaryFeeBoth: "Accesso gratuito: {free}; a pagamento: {paid}.",
     summaryFeeFree: "Accesso gratuito: {free}.",
     summaryStepFree: "Accesso senza gradini: {stepFree}.",
-    summaryListed: "L'elenco qui sotto ne presenta {listed}, tra cui {examples}.",
+    summaryListed: {
+      one: "L'elenco qui sotto ne presenta {listed}: {examples}.",
+      other: "L'elenco qui sotto ne presenta {listed}, tra cui {examples}.",
+    },
     countryTitle:
       "{noun} in {countryIn} sulla mappa — {count} in {cities} {cityUnit} | {site}",
     countryDescription:

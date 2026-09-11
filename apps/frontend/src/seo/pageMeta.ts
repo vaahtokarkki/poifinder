@@ -881,14 +881,23 @@ export function summaryFor(route: Route, data: CategoryPageData): string {
   const stats = data.stats;
   if (stats && stats.free + stats.paid >= SUMMARY_TAG_FLOOR) {
     sentences.push(
-      interpolate(stats.paid > 0 ? deck.summaryFeeBoth : deck.summaryFeeFree, {
-        free: formatCount(stats.free),
-        paid: formatCount(stats.paid),
-      })
+      resolve(
+        stats.paid > 0 ? deck.summaryFeeBoth : deck.summaryFeeFree,
+        getLocale(),
+        { free: formatCount(stats.free), paid: formatCount(stats.paid) },
+        stats.free
+      )
     );
   }
   if (stats && stats.stepFree >= SUMMARY_TAG_FLOOR) {
-    sentences.push(interpolate(deck.summaryStepFree, { stepFree: formatCount(stats.stepFree) }));
+    sentences.push(
+      resolve(
+        deck.summaryStepFree,
+        getLocale(),
+        { stepFree: formatCount(stats.stepFree) },
+        stats.stepFree
+      )
+    );
   }
 
   const listed = data.pois.slice(0, MAX_LISTED_POIS);
@@ -898,10 +907,12 @@ export function summaryFor(route: Route, data: CategoryPageData): string {
     .slice(0, 3);
   if (examples.length > 0) {
     sentences.push(
-      interpolate(deck.summaryListed, {
-        listed: formatCount(listed.length),
-        examples: examples.join(", "),
-      })
+      resolve(
+        deck.summaryListed,
+        getLocale(),
+        { listed: formatCount(listed.length), examples: examples.join(", ") },
+        listed.length
+      )
     );
   }
   return capitalizeFirst(sentences.join(" "));

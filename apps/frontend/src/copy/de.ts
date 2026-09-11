@@ -168,10 +168,22 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       one: "{count} {noun} ist in {city} verzeichnet.",
       other: "{count} {noun} sind in {city} verzeichnet.",
     },
-    summaryFeeBoth: "{free} sind als kostenlos markiert, {paid} als kostenpflichtig.",
-    summaryFeeFree: "{free} sind als kostenlos markiert.",
-    summaryStepFree: "{stepFree} sind als barrierefrei markiert.",
-    summaryListed: "{listed} davon stehen in der Liste unten, darunter {examples}.",
+    summaryFeeBoth: {
+      one: "{free} ist als kostenlos markiert, {paid} als kostenpflichtig.",
+      other: "{free} sind als kostenlos markiert, {paid} als kostenpflichtig.",
+    },
+    summaryFeeFree: {
+      one: "{free} ist als kostenlos markiert.",
+      other: "{free} sind als kostenlos markiert.",
+    },
+    summaryStepFree: {
+      one: "{stepFree} ist als barrierefrei markiert.",
+      other: "{stepFree} sind als barrierefrei markiert.",
+    },
+    summaryListed: {
+      one: "{listed} davon steht in der Liste unten: {examples}.",
+      other: "{listed} davon stehen in der Liste unten, darunter {examples}.",
+    },
     countryTitle:
       "{noun} in {countryIn} auf der Karte — {count} Punkte in {cities} Städten | {site}",
     countryDescription:

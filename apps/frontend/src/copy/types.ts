@@ -186,10 +186,13 @@ export type UiCopy = {
      * cannot support is left out rather than written with a zero in it.
      */
     summaryMapped: PluralMessage;
-    summaryFeeBoth: string;
-    summaryFeeFree: string;
-    summaryStepFree: string;
-    summaryListed: string;
+    // Messages, not strings, where the verb has to agree with the number:
+    // "1 is listed below", never "1 are". A deck that phrases the count as a
+    // label ("Maksuttomia: 12") needs no plural forms and gives a string
+    summaryFeeBoth: Message;
+    summaryFeeFree: Message;
+    summaryStepFree: Message;
+    summaryListed: Message;
     /**
      * The country hub: one category across a whole country.
      *

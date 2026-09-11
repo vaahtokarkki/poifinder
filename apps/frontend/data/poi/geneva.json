@@ -1,6 +1,6 @@
 {
   "city": "geneva",
-  "generatedAt": "2026-09-03T16:59:29.478Z",
+  "generatedAt": "2026-09-11T10:29:34.384Z",
   "categories": {
     "toilets": {
       "count": 183,
@@ -120,7 +120,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:05.221Z"
+      "stats": {
+        "free": 97,
+        "paid": 13,
+        "stepFree": 70,
+        "partlyStepFree": 10
+      },
+      "updatedAt": "2026-09-11T10:29:26.569Z"
     },
     "drinking-water": {
       "count": 494,
@@ -287,9 +293,47 @@
           "name": "Don de Charles Borel",
           "lat": 46.269928,
           "lon": 6.122128
+        },
+        {
+          "id": "node/6597445539",
+          "lat": 46.203714,
+          "lon": 6.143772,
+          "address": "Rue de la Cité",
+          "street": "Rue de la Cité"
+        },
+        {
+          "id": "node/1379366890",
+          "lat": 46.204779,
+          "lon": 6.141748,
+          "wheelchair": "yes",
+          "street": "Place de l'Ile"
+        },
+        {
+          "id": "node/973010082",
+          "lat": 46.204649,
+          "lon": 6.145335,
+          "street": "Place Ruth-Fayon (Petite-Fusterie)"
+        },
+        {
+          "id": "node/7838167699",
+          "lat": 46.205917,
+          "lon": 6.142651,
+          "street": "Place de Saint-Gervais"
+        },
+        {
+          "id": "node/897590805",
+          "lat": 46.205489,
+          "lon": 6.145164,
+          "street": "Pont de la Machine"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:07.301Z"
+      "stats": {
+        "free": 66,
+        "paid": 1,
+        "stepFree": 47,
+        "partlyStepFree": 37
+      },
+      "updatedAt": "2026-09-11T10:29:29.162Z"
     },
     "playgrounds": {
       "count": 630,
@@ -1495,7 +1539,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:15.675Z"
+      "stats": {
+        "free": 0,
+        "paid": 6,
+        "stepFree": 39,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:29:29.797Z"
     },
     "post-boxes": {
       "count": 211,
@@ -1687,6 +1737,115 @@
       "count": 765,
       "pois": [
         {
+          "id": "node/11011142605",
+          "name": "Recyclage du verre, des plastiques, des vêtements, etc.",
+          "lat": 46.204885,
+          "lon": 6.163617
+        },
+        {
+          "id": "node/11011142705",
+          "name": "Recyclage",
+          "lat": 46.192548,
+          "lon": 6.156366
+        },
+        {
+          "id": "way/1531756286",
+          "name": "ecopoint",
+          "lat": 46.21177,
+          "lon": 6.123561
+        },
+        {
+          "id": "node/1960409574",
+          "name": "Point de Recyclage Acacias",
+          "lat": 46.185451,
+          "lon": 6.131151,
+          "address": "Avenue de la Praille 47A",
+          "openingHours": "Tu-Fr 15:00-19:00; PH,Sa,Su 10:00-17:00"
+        },
+        {
+          "id": "node/582817933",
+          "name": "Point de recyclage La Tambourine",
+          "lat": 46.175236,
+          "lon": 6.143032,
+          "address": "Rue de La-Tambourine"
+        },
+        {
+          "id": "node/2023840755",
+          "name": "Centre de tri Rue du Bachet",
+          "lat": 46.17614,
+          "lon": 6.124268
+        },
+        {
+          "id": "node/9860634371",
+          "name": "Centre de tri",
+          "lat": 46.189456,
+          "lon": 6.09211
+        },
+        {
+          "id": "node/5838562434",
+          "name": "Ecopoint de Mirani",
+          "lat": 46.206989,
+          "lon": 6.200869,
+          "openingHours": "Mo-Sa 08:00-19:00"
+        },
+        {
+          "id": "way/207988642",
+          "name": "Déchetterie de Gaillard",
+          "lat": 46.178455,
+          "lon": 6.202606,
+          "address": "Rue du Transval 37",
+          "openingHours": "Mo-Sa 08:00-18:00; Su off"
+        },
+        {
+          "id": "way/1462462846",
+          "name": "Écopoint de Belle-Terre (Voirons)",
+          "lat": 46.204601,
+          "lon": 6.214677,
+          "address": "Pl. du Métral 2",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 08:00-19:00"
+        },
+        {
+          "id": "node/13414647755",
+          "name": "Ecopoint de Belle-Terre (Voirons)",
+          "lat": 46.204633,
+          "lon": 6.214722,
+          "address": "Pl. du Métral 2",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 08:00-19:00"
+        },
+        {
+          "id": "way/161431017",
+          "name": "ESREC - Chânats",
+          "lat": 46.255231,
+          "lon": 6.13336
+        },
+        {
+          "id": "node/13929671101",
+          "name": "Eco point",
+          "lat": 46.158503,
+          "lon": 6.090012
+        },
+        {
+          "id": "node/7362660785",
+          "name": "Centre de voirie et horticole",
+          "lat": 46.229824,
+          "lon": 6.06533,
+          "address": "Avenue Jacob-Daniel-Maillard 6"
+        },
+        {
+          "id": "node/12064603168",
+          "name": "Transvoirie",
+          "lat": 46.196629,
+          "lon": 6.049244,
+          "address": "Route du Bois-de-Bay 93"
+        },
+        {
+          "id": "way/609719876",
+          "name": "Point de récupération",
+          "lat": 46.272354,
+          "lon": 6.124585,
+          "openingHours": "PH,Mo-Su 07:00-20:00"
+        },
+        {
           "id": "node/12898575468",
           "lat": 46.204723,
           "lon": 6.14358,
@@ -1777,119 +1936,15 @@
           "lat": 46.207145,
           "lon": 6.135382,
           "street": "Rue de l'Encyclopédie"
-        },
-        {
-          "id": "node/4197498370",
-          "lat": 46.210319,
-          "lon": 6.140145,
-          "openingHours": "Mo-Sa 07:30-22:00; PH,Su 10:00-18:00",
-          "street": "Rue Cité-de-la-Corderie"
-        },
-        {
-          "id": "node/6917882563",
-          "lat": 46.210707,
-          "lon": 6.141987,
-          "openingHours": "24/7",
-          "wheelchair": "yes",
-          "street": "Place du Reculet"
-        },
-        {
-          "id": "node/6917882564",
-          "lat": 46.211088,
-          "lon": 6.142402,
-          "openingHours": "24/7",
-          "wheelchair": "yes",
-          "street": "Passage des Alpes"
-        },
-        {
-          "id": "node/4207760818",
-          "lat": 46.200222,
-          "lon": 6.150831,
-          "address": "Promenade de Saint-Antoine 8",
-          "street": "Passage Isaac-Casaubon"
-        },
-        {
-          "id": "node/10243387007",
-          "lat": 46.202689,
-          "lon": 6.133142,
-          "street": "Rue des Gazomètres"
-        },
-        {
-          "id": "node/4197498369",
-          "lat": 46.212068,
-          "lon": 6.142683,
-          "address": "Rue des Gares 13",
-          "street": "Rue des Gares"
-        },
-        {
-          "id": "node/4199044421",
-          "lat": 46.197036,
-          "lon": 6.139662,
-          "address": "Rue du-Bois-Melly",
-          "street": "Rue Du Bois-Melly"
-        },
-        {
-          "id": "node/4198720577",
-          "lat": 46.205688,
-          "lon": 6.131986,
-          "address": "Rue des Charmilles 2",
-          "street": "Voie couverte de Saint-Jean"
-        },
-        {
-          "id": "node/4199154541",
-          "lat": 46.211921,
-          "lon": 6.146553,
-          "address": "Rue de Neuchâtel 39",
-          "street": "Rue de Neuchâtel"
-        },
-        {
-          "id": "node/12224053040",
-          "lat": 46.209973,
-          "lon": 6.151333,
-          "street": "Quai du Mont-Blanc"
-        },
-        {
-          "id": "node/12288300305",
-          "lat": 46.20433,
-          "lon": 6.154772,
-          "street": "Quai Gustave-Ador"
-        },
-        {
-          "id": "node/4040351395",
-          "lat": 46.210389,
-          "lon": 6.134857,
-          "address": "Rue de la Prairie 25",
-          "street": "Rue Tronchin"
-        },
-        {
-          "id": "node/2587293372",
-          "lat": 46.211932,
-          "lon": 6.138039,
-          "openingHours": "Mo-Sa 07:30-22:00; PH,Su 10:00-18:00",
-          "street": "Rue Louis-Favre"
-        },
-        {
-          "id": "node/2292525057",
-          "lat": 46.202416,
-          "lon": 6.155061,
-          "address": "Boulevard Helvétique 35",
-          "street": "Boulevard Helvétique"
-        },
-        {
-          "id": "node/4197560589",
-          "lat": 46.207244,
-          "lon": 6.131392,
-          "address": "Rue Henri-Frédéric-Amiel 12",
-          "street": "Rue Henri-Frédéric-Amiel"
-        },
-        {
-          "id": "node/9249788991",
-          "lat": 46.198004,
-          "lon": 6.134149,
-          "street": "Boulevard D'Yvoy"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:20.177Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 30,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:31.789Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -2233,7 +2288,13 @@
           "lon": 6.112159
         }
       ],
-      "updatedAt": "2026-09-03T16:59:22.347Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:29:32.881Z"
     },
     "camp-sites": {
       "count": 4,
@@ -2547,7 +2608,7 @@
       "updatedAt": "2026-08-17T04:03:43.063Z"
     },
     "benches": {
-      "count": 4120,
+      "count": 4125,
       "pois": [
         {
           "id": "way/313487068",
@@ -2567,9 +2628,147 @@
           "name": "Banc en bois",
           "lat": 46.152986,
           "lon": 6.07658
+        },
+        {
+          "id": "node/12898537884",
+          "lat": 46.204666,
+          "lon": 6.143382,
+          "street": "Ponts-de-l'Île"
+        },
+        {
+          "id": "node/6799821860",
+          "lat": 46.203964,
+          "lon": 6.142245,
+          "street": "Place de Hollande"
+        },
+        {
+          "id": "node/5928239397",
+          "lat": 46.205193,
+          "lon": 6.144469,
+          "street": "Quai de l'Ile"
+        },
+        {
+          "id": "node/5928239150",
+          "lat": 46.205467,
+          "lon": 6.144137,
+          "street": "Quai des Moulins"
+        },
+        {
+          "id": "node/6228909051",
+          "lat": 46.203602,
+          "lon": 6.145553,
+          "street": "Rue du Marché (Rues-Basses)"
+        },
+        {
+          "id": "node/14008308457",
+          "lat": 46.206254,
+          "lon": 6.145049,
+          "street": "Quai des Bergues"
+        },
+        {
+          "id": "node/12989331998",
+          "lat": 46.204578,
+          "lon": 6.146552,
+          "street": "Place du Rhône"
+        },
+        {
+          "id": "node/12534591901",
+          "lat": 46.202211,
+          "lon": 6.141699,
+          "street": "Théâtre"
+        },
+        {
+          "id": "node/12098157611",
+          "lat": 46.204707,
+          "lon": 6.139501,
+          "street": "Promenade des Lavandières"
+        },
+        {
+          "id": "node/4266265620",
+          "lat": 46.206565,
+          "lon": 6.140957,
+          "street": "Rue Vallin"
+        },
+        {
+          "id": "node/9905231293",
+          "lat": 46.205979,
+          "lon": 6.146916,
+          "street": "Pont des Bergues"
+        },
+        {
+          "id": "node/11582074392",
+          "lat": 46.205469,
+          "lon": 6.138913,
+          "street": "Quai du Seujet"
+        },
+        {
+          "id": "node/10977293765",
+          "lat": 46.206836,
+          "lon": 6.146216,
+          "street": "Place des Bergues"
+        },
+        {
+          "id": "node/9613229239",
+          "lat": 46.206001,
+          "lon": 6.139113,
+          "street": "Promenade Saint-Jean"
+        },
+        {
+          "id": "node/2637974856",
+          "lat": 46.205915,
+          "lon": 6.147907,
+          "street": "Île J.-J.-Rousseau"
+        },
+        {
+          "id": "node/12227588269",
+          "lat": 46.208141,
+          "lon": 6.141937,
+          "street": "Place Lise-Girardin"
+        },
+        {
+          "id": "node/5933390036",
+          "lat": 46.200463,
+          "lon": 6.143676,
+          "street": "Promenade des Bastions"
+        },
+        {
+          "id": "node/12270754294",
+          "lat": 46.208808,
+          "lon": 6.144044,
+          "street": "Square de Chantepoulet"
+        },
+        {
+          "id": "node/12270664772",
+          "lat": 46.2077,
+          "lon": 6.147536,
+          "street": "Square du Mont-Blanc"
+        },
+        {
+          "id": "node/12270786049",
+          "lat": 46.208827,
+          "lon": 6.144009,
+          "street": "Rue du Mont-Blanc"
+        },
+        {
+          "id": "node/13514178425",
+          "lat": 46.202338,
+          "lon": 6.137431,
+          "street": "Cimetière des Rois"
+        },
+        {
+          "id": "node/6223575147",
+          "lat": 46.203174,
+          "lon": 6.149805,
+          "street": "Rue Neuve-du-Molard"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:29.375Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:29:34.282Z"
     },
     "compressed-air": {
       "count": 0,

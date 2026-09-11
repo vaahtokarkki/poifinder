@@ -1,6 +1,6 @@
 {
   "city": "seville",
-  "generatedAt": "2026-09-03T17:18:09.102Z",
+  "generatedAt": "2026-09-11T10:31:23.331Z",
   "categories": {
     "toilets": {
       "count": 71,
@@ -148,7 +148,13 @@
           "lon": -5.91941
         }
       ],
-      "updatedAt": "2026-09-03T17:17:49.375Z"
+      "stats": {
+        "free": 22,
+        "paid": 0,
+        "stepFree": 19,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:31:17.565Z"
     },
     "drinking-water": {
       "count": 269,
@@ -284,9 +290,106 @@
           "name": "Fuente La Mascareta",
           "lat": 37.371795,
           "lon": -6.041656
+        },
+        {
+          "id": "node/5921149937",
+          "lat": 37.390494,
+          "lon": -5.982597,
+          "wheelchair": "yes",
+          "street": "Calle Amador de Los Ríos"
+        },
+        {
+          "id": "node/10174008103",
+          "lat": 37.387876,
+          "lon": -5.982189,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Calle Luis Montoto"
+        },
+        {
+          "id": "node/3068455941",
+          "lat": 37.385459,
+          "lon": -5.986763,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Paseo Catalina de Ribera"
+        },
+        {
+          "id": "node/760250452",
+          "lat": 37.393116,
+          "lon": -5.986985,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Plaza Padre Jerónimo de Córdoba"
+        },
+        {
+          "id": "node/5064034363",
+          "lat": 37.39015,
+          "lon": -5.992328,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Plaza de Jesus de la Pasión"
+        },
+        {
+          "id": "node/10291315980",
+          "lat": 37.382448,
+          "lon": -5.987553,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Plaza Alcaldesa Soledad Becerril"
+        },
+        {
+          "id": "node/5365872022",
+          "lat": 37.392752,
+          "lon": -5.992226,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Plaza de la Encarnación"
+        },
+        {
+          "id": "node/1386259075",
+          "lat": 37.393534,
+          "lon": -5.976605,
+          "street": "Sendero Marimore"
+        },
+        {
+          "id": "node/4966260121",
+          "lat": 37.384648,
+          "lon": -5.992507,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Plaza del Triunfo"
+        },
+        {
+          "id": "node/5343559121",
+          "lat": 37.395227,
+          "lon": -5.990995,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Calle San Juan de la Palma"
+        },
+        {
+          "id": "node/3575801896",
+          "lat": 37.38179,
+          "lon": -5.989254,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Paseo de Catalina de Ribera"
+        },
+        {
+          "id": "node/12484290493",
+          "lat": 37.384555,
+          "lon": -5.993231,
+          "street": "Glorieta Americanista Luis Navarro Garcia"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:51.333Z"
+      "stats": {
+        "free": 57,
+        "paid": 0,
+        "stepFree": 49,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:31:19.224Z"
     },
     "playgrounds": {
       "count": 536,
@@ -1507,7 +1610,13 @@
           "openingHours": "Mo-Su 09:00-22:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:57.696Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 17,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:31:19.847Z"
     },
     "post-boxes": {
       "count": 100,
@@ -1700,6 +1809,94 @@
       "count": 215,
       "pois": [
         {
+          "id": "way/182180707",
+          "name": "Lipasam, parque auxiliar \"San Pablo\"",
+          "lat": 37.394284,
+          "lon": -5.961842
+        },
+        {
+          "id": "node/9015179717",
+          "name": "Ecopunto",
+          "lat": 37.380306,
+          "lon": -6.009586
+        },
+        {
+          "id": "way/191127164",
+          "name": "Lipasam",
+          "lat": 37.372038,
+          "lon": -6.004493,
+          "address": "Calle Virgen de la Oliva"
+        },
+        {
+          "id": "way/976641995",
+          "name": "Punto Limpio Las Palmeras",
+          "lat": 37.362602,
+          "lon": -6.002752,
+          "openingHours": "Mo-Sa 08:15-21:00"
+        },
+        {
+          "id": "way/39671710",
+          "name": "Punto Limpio Los Naranjos",
+          "lat": 37.361413,
+          "lon": -5.958239
+        },
+        {
+          "id": "way/183056647",
+          "name": "Punto limpio Los Olivos",
+          "lat": 37.414448,
+          "lon": -5.952121,
+          "openingHours": "Mo-Sa 08:15-21:00"
+        },
+        {
+          "id": "way/120552919",
+          "name": "Punto limpio Los Pinos",
+          "lat": 37.387876,
+          "lon": -5.930023
+        },
+        {
+          "id": "way/578185334",
+          "name": "Punto Limpio Las Jacarandas",
+          "lat": 37.431291,
+          "lon": -5.967309
+        },
+        {
+          "id": "way/588963122",
+          "name": "Punto limpio de San Juan",
+          "lat": 37.350876,
+          "lon": -6.027354
+        },
+        {
+          "id": "way/172232421",
+          "name": "Punto Limpio",
+          "lat": 37.384891,
+          "lon": -6.04879
+        },
+        {
+          "id": "way/196586935",
+          "name": "Parque Auxiliar de Limpieza Parque Este",
+          "lat": 37.402228,
+          "lon": -5.916248
+        },
+        {
+          "id": "way/92118884",
+          "name": "Punto limpio Montequinto",
+          "lat": 37.34699,
+          "lon": -5.937861
+        },
+        {
+          "id": "node/7476872070",
+          "name": "Punto limpio móvil",
+          "lat": 37.349281,
+          "lon": -6.039417
+        },
+        {
+          "id": "node/7147007466",
+          "name": "Punto de reciclaje",
+          "lat": 37.350849,
+          "lon": -6.041326,
+          "address": "Lepanto"
+        },
+        {
           "id": "node/12188109443",
           "lat": 37.390715,
           "lon": -5.984138,
@@ -1795,93 +1992,15 @@
           "lat": 37.38438,
           "lon": -5.981029,
           "street": "Avenida de Eduardo Dato"
-        },
-        {
-          "id": "node/5477477737",
-          "lat": 37.392682,
-          "lon": -5.990865,
-          "street": "Calle Imagen"
-        },
-        {
-          "id": "node/4420225710",
-          "lat": 37.388156,
-          "lon": -5.993815,
-          "street": "Plaza de San Francisco"
-        },
-        {
-          "id": "node/5477477736",
-          "lat": 37.392763,
-          "lon": -5.993101,
-          "street": "Calle Laraña"
-        },
-        {
-          "id": "node/13286006560",
-          "lat": 37.396662,
-          "lon": -5.982034,
-          "street": "Calle María Auxiliadora"
-        },
-        {
-          "id": "node/2344195212",
-          "lat": 37.383607,
-          "lon": -5.992355,
-          "street": "Calle Dean Miranda"
-        },
-        {
-          "id": "node/2344178670",
-          "lat": 37.383683,
-          "lon": -5.992606,
-          "street": "Plaza de San Gregorio"
-        },
-        {
-          "id": "node/5316608149",
-          "lat": 37.392773,
-          "lon": -5.994059,
-          "street": "Calle Martín Villa"
-        },
-        {
-          "id": "node/5316610420",
-          "lat": 37.392027,
-          "lon": -5.995506,
-          "street": "Calle Velázquez"
-        },
-        {
-          "id": "node/13286006561",
-          "lat": 37.398316,
-          "lon": -5.983565,
-          "street": "Calle San Hermenegildo"
-        },
-        {
-          "id": "node/303618658",
-          "lat": 37.388466,
-          "lon": -5.972887,
-          "street": "Avenida de Kansas City"
-        },
-        {
-          "id": "node/5314954362",
-          "lat": 37.385082,
-          "lon": -5.995406,
-          "street": "Calle Dos de Mayo"
-        },
-        {
-          "id": "node/1935219277",
-          "lat": 37.386287,
-          "lon": -5.996003,
-          "street": "Calle Harinas"
-        },
-        {
-          "id": "node/2914838483",
-          "lat": 37.38212,
-          "lon": -5.993426,
-          "street": "Calle Almirante Lobo"
-        },
-        {
-          "id": "node/303618639",
-          "lat": 37.385529,
-          "lon": -5.972716,
-          "street": "Calle Luis de Morales"
         }
       ],
-      "updatedAt": "2026-09-03T17:18:01.438Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:31:21.246Z"
     },
     "luggage-storage": {
       "count": 11,
@@ -2164,7 +2283,13 @@
           "lon": -6.048462
         }
       ],
-      "updatedAt": "2026-09-03T17:18:03.410Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:22.093Z"
     },
     "camp-sites": {
       "count": 7,
@@ -2315,9 +2440,129 @@
           "name": "Monumento al jubilado",
           "lat": 37.392732,
           "lon": -5.970167
+        },
+        {
+          "id": "node/7571654725",
+          "lat": 37.390721,
+          "lon": -5.983468,
+          "street": "Plaza Carmen Benítez"
+        },
+        {
+          "id": "node/5003001490",
+          "lat": 37.39108,
+          "lon": -5.988359,
+          "street": "Plaza de San Leandro"
+        },
+        {
+          "id": "node/3857024272",
+          "lat": 37.386397,
+          "lon": -5.987605,
+          "street": "Calle Santa María la Blanca"
+        },
+        {
+          "id": "node/3658085397",
+          "lat": 37.392959,
+          "lon": -5.986501,
+          "street": "Plaza Padre Jerónimo de Córdoba"
+        },
+        {
+          "id": "node/3658085404",
+          "lat": 37.393136,
+          "lon": -5.986866,
+          "street": "Calle Escuelas Pías"
+        },
+        {
+          "id": "node/12578541088",
+          "lat": 37.384962,
+          "lon": -5.987215,
+          "street": "Paseo de Catalina de Ribera"
+        },
+        {
+          "id": "node/4945393124",
+          "lat": 37.393158,
+          "lon": -5.987787,
+          "street": "Plaza Ponce de León"
+        },
+        {
+          "id": "node/4294357628",
+          "lat": 37.391613,
+          "lon": -5.989735,
+          "street": "Plaza del Cristo de Burgos"
+        },
+        {
+          "id": "node/4363369239",
+          "lat": 37.390397,
+          "lon": -5.990656,
+          "street": "Plaza de la Alfalfa"
+        },
+        {
+          "id": "node/1721568775",
+          "lat": 37.384197,
+          "lon": -5.987074,
+          "street": "Calle Nicolás Antonio"
+        },
+        {
+          "id": "node/1721573586",
+          "lat": 37.384063,
+          "lon": -5.98714,
+          "street": "Avenida de Menéndez Pelayo"
+        },
+        {
+          "id": "node/3749107379",
+          "lat": 37.390026,
+          "lon": -5.991335,
+          "street": "Calle Ángel María Camacho"
+        },
+        {
+          "id": "node/2319922207",
+          "lat": 37.389874,
+          "lon": -5.991379,
+          "street": "Calle Cuesta del Rosario"
+        },
+        {
+          "id": "node/2319922200",
+          "lat": 37.390172,
+          "lon": -5.992328,
+          "street": "Plaza de Jesus de la Pasión"
+        },
+        {
+          "id": "node/2319922234",
+          "lat": 37.390244,
+          "lon": -5.992335,
+          "street": "Calle Herbolarios"
+        },
+        {
+          "id": "node/2286112646",
+          "lat": 37.384915,
+          "lon": -5.990501,
+          "street": "Plaza de Doña Elvira"
+        },
+        {
+          "id": "node/2912621221",
+          "lat": 37.386293,
+          "lon": -5.991908,
+          "street": "Plaza Virgen de los Reyes"
+        },
+        {
+          "id": "node/2912621210",
+          "lat": 37.386057,
+          "lon": -5.991886,
+          "street": "Barreduela Santa Marta"
+        },
+        {
+          "id": "node/2344195226",
+          "lat": 37.38524,
+          "lon": -5.991895,
+          "street": "Plaza del Triunfo"
         }
       ],
-      "updatedAt": "2026-09-03T17:18:09.000Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:23.230Z"
     },
     "compressed-air": {
       "count": 0,

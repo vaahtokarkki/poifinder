@@ -1,6 +1,6 @@
 {
   "city": "detroit",
-  "generatedAt": "2026-09-03T17:33:06.649Z",
+  "generatedAt": "2026-09-11T10:33:11.554Z",
   "categories": {
     "toilets": {
       "count": 50,
@@ -175,7 +175,13 @@
           "address": "Howard Avenue 3100"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:45.288Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:33:05.416Z"
     },
     "drinking-water": {
       "count": 24,
@@ -191,9 +197,82 @@
           "name": "Law School Drinking Fountain",
           "lat": 42.360414,
           "lon": -83.070952
+        },
+        {
+          "id": "node/12061224639",
+          "lat": 42.330446,
+          "lon": -83.031859,
+          "street": "Detroit Riverwalk"
+        },
+        {
+          "id": "node/13296721171",
+          "lat": 42.321236,
+          "lon": -83.065299,
+          "street": "West Promenade"
+        },
+        {
+          "id": "node/10307800327",
+          "lat": 42.35163,
+          "lon": -83.049284,
+          "street": "Chrysler Drive"
+        },
+        {
+          "id": "node/12064935051",
+          "lat": 42.326445,
+          "lon": -83.073418,
+          "street": "Southwest Greenway"
+        },
+        {
+          "id": "node/12235997300",
+          "lat": 42.329413,
+          "lon": -83.076512,
+          "street": "Dalzelle Street"
+        },
+        {
+          "id": "node/5956134805",
+          "lat": 42.351757,
+          "lon": -83.064006,
+          "street": "Midtown Loop"
+        },
+        {
+          "id": "node/12063177094",
+          "lat": 42.356135,
+          "lon": -83.066914,
+          "street": "West Warren Avenue"
+        },
+        {
+          "id": "node/5069589923",
+          "lat": 42.358117,
+          "lon": -83.06824,
+          "street": "Cass Avenue"
+        },
+        {
+          "id": "node/6184659054",
+          "lat": 42.336976,
+          "lon": -82.985537,
+          "street": "Conservatory Drive"
+        },
+        {
+          "id": "node/6166941994",
+          "lat": 42.354365,
+          "lon": -82.980755,
+          "street": "Parkview Drive"
+        },
+        {
+          "id": "node/12832751706",
+          "lat": 42.34798,
+          "lon": -82.971692,
+          "fee": "no",
+          "street": "Riverbank Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:46.673Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:07.348Z"
     },
     "playgrounds": {
       "count": 281,
@@ -1229,7 +1308,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:53.921Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:07.971Z"
     },
     "post-boxes": {
       "count": 47,
@@ -1421,6 +1506,27 @@
       "count": 66,
       "pois": [
         {
+          "id": "node/9101496601",
+          "name": "Recycle Here!",
+          "lat": 42.361889,
+          "lon": -83.082769,
+          "address": "Lincoln Street 5960",
+          "openingHours": "Mo,We 10:00-18:00; Sa 09:00-15:00"
+        },
+        {
+          "id": "way/1410111166",
+          "name": "Recycling Makes Cents",
+          "lat": 42.321712,
+          "lon": -82.990473
+        },
+        {
+          "id": "way/690033271",
+          "name": "FPR Lafayette Recycling",
+          "lat": 42.317627,
+          "lon": -83.128373,
+          "address": "Dix Street 7700"
+        },
+        {
           "id": "node/13265659160",
           "lat": 42.323728,
           "lon": -83.059214,
@@ -1481,34 +1587,19 @@
           "street": "Wight Street"
         },
         {
-          "id": "node/9101496601",
-          "name": "Recycle Here!",
-          "lat": 42.361889,
-          "lon": -83.082769,
-          "address": "Lincoln Street 5960",
-          "openingHours": "Mo,We 10:00-18:00; Sa 09:00-15:00"
-        },
-        {
-          "id": "way/1410111166",
-          "name": "Recycling Makes Cents",
-          "lat": 42.321712,
-          "lon": -82.990473
-        },
-        {
           "id": "node/3259616618",
           "lat": 42.379602,
           "lon": -83.08667,
           "street": "3rd Street"
-        },
-        {
-          "id": "way/690033271",
-          "name": "FPR Lafayette Recycling",
-          "lat": 42.317627,
-          "lon": -83.128373,
-          "address": "Dix Street 7700"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:57.182Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:09.515Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1745,7 +1836,13 @@
           "lon": -83.028056
         }
       ],
-      "updatedAt": "2026-09-03T17:32:59.118Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:10.406Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2047,9 +2144,69 @@
           "name": "International Peace Memorial",
           "lat": 42.335946,
           "lon": -82.988829
+        },
+        {
+          "id": "node/14054915993",
+          "lat": 42.332647,
+          "lon": -83.051277,
+          "street": "Washington Boulevard"
+        },
+        {
+          "id": "node/12033695727",
+          "lat": 42.336251,
+          "lon": -83.046299,
+          "street": "East Grand River Avenue"
+        },
+        {
+          "id": "node/12033695728",
+          "lat": 42.336278,
+          "lon": -83.046223,
+          "street": "Randolph Street"
+        },
+        {
+          "id": "node/12034032737",
+          "lat": 42.330806,
+          "lon": -83.05262,
+          "street": "Howard Street"
+        },
+        {
+          "id": "node/12034045482",
+          "lat": 42.331487,
+          "lon": -83.053471,
+          "street": "Michigan Avenue"
+        },
+        {
+          "id": "node/8663004563",
+          "lat": 42.327704,
+          "lon": -83.039953,
+          "street": "GM Plaza and Promenade"
+        },
+        {
+          "id": "node/9380262406",
+          "lat": 42.325678,
+          "lon": -83.046474,
+          "street": "Detroit Riverwalk"
+        },
+        {
+          "id": "node/8663004574",
+          "lat": 42.328268,
+          "lon": -83.038586,
+          "street": "Atwater Street"
+        },
+        {
+          "id": "node/5961238854",
+          "lat": 42.327646,
+          "lon": -83.057479,
+          "street": "West Lafayette Boulevard"
         }
       ],
-      "updatedAt": "2026-09-03T17:33:06.543Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:11.453Z"
     },
     "compressed-air": {
       "count": 0,

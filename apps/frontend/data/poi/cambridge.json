@@ -1,6 +1,6 @@
 {
   "city": "cambridge",
-  "generatedAt": "2026-09-03T17:09:50.631Z",
+  "generatedAt": "2026-09-11T10:30:33.439Z",
   "categories": {
     "toilets": {
       "count": 72,
@@ -196,12 +196,57 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:28.907Z"
+      "stats": {
+        "free": 21,
+        "paid": 2,
+        "stepFree": 28,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:30:28.027Z"
     },
     "drinking-water": {
       "count": 20,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:09:30.125Z"
+      "pois": [
+        {
+          "id": "node/12847785901",
+          "lat": 52.204508,
+          "lon": 0.120537,
+          "street": "Lion Yard"
+        },
+        {
+          "id": "node/1120095670",
+          "lat": 52.202003,
+          "lon": 0.1359,
+          "street": "Mill Road Cemetery"
+        },
+        {
+          "id": "node/5907858477",
+          "lat": 52.193939,
+          "lon": 0.137308,
+          "fee": "no",
+          "street": "Station Place"
+        },
+        {
+          "id": "node/13992210195",
+          "lat": 52.215393,
+          "lon": 0.139947,
+          "fee": "no",
+          "street": "St Andrew's Road"
+        },
+        {
+          "id": "node/10710893250",
+          "lat": 52.22391,
+          "lon": 0.157787,
+          "street": "Cambridge Square"
+        }
+      ],
+      "stats": {
+        "free": 12,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:29.466Z"
     },
     "playgrounds": {
       "count": 208,
@@ -986,7 +1031,13 @@
           "lon": 0.113371
         }
       ],
-      "updatedAt": "2026-09-03T17:09:36.128Z"
+      "stats": {
+        "free": 6,
+        "paid": 2,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:29.976Z"
     },
     "post-boxes": {
       "count": 281,
@@ -1208,12 +1259,6 @@
           "lon": 0.122649
         },
         {
-          "id": "node/4892337255",
-          "lat": 52.205184,
-          "lon": 0.116354,
-          "street": "West Court"
-        },
-        {
           "id": "node/4892221593",
           "name": "GeographyDepartment",
           "lat": 52.201853,
@@ -1250,40 +1295,10 @@
           "lon": 0.119773
         },
         {
-          "id": "node/12969033054",
-          "lat": 52.201715,
-          "lon": 0.130147,
-          "street": "Gonville Place"
-        },
-        {
-          "id": "node/12969063676",
-          "lat": 52.201302,
-          "lon": 0.130202,
-          "street": "Queen Anne Terrace"
-        },
-        {
-          "id": "node/1594798947",
-          "lat": 52.204874,
-          "lon": 0.132837,
-          "street": "Adam and Eve Street"
-        },
-        {
-          "id": "node/12969086429",
-          "lat": 52.202125,
-          "lon": 0.13194,
-          "street": "Mill Road"
-        },
-        {
           "id": "node/4891788906",
           "name": "Department of Engineering",
           "lat": 52.198251,
           "lon": 0.120776
-        },
-        {
-          "id": "node/13069536712",
-          "lat": 52.202114,
-          "lon": 0.132233,
-          "street": "East Road"
         },
         {
           "id": "node/4892346221",
@@ -1292,28 +1307,10 @@
           "lon": 0.122727
         },
         {
-          "id": "node/14047490160",
-          "lat": 52.1987,
-          "lon": 0.126714,
-          "street": "Lensfield Road"
-        },
-        {
-          "id": "node/8555418933",
-          "lat": 52.205731,
-          "lon": 0.133792,
-          "street": "Burleigh Place"
-        },
-        {
           "id": "node/4892339334",
           "name": "Department of Chemistry",
           "lat": 52.197682,
           "lon": 0.125658
-        },
-        {
-          "id": "node/11037778819",
-          "lat": 52.213109,
-          "lon": 0.125416,
-          "street": "Victoria Avenue"
         },
         {
           "id": "node/4892341086",
@@ -1322,44 +1319,104 @@
           "lon": 0.109105
         },
         {
-          "id": "node/9760766144",
-          "lat": 52.213566,
-          "lon": 0.122856,
-          "openingHours": "Mo-Su,PH 00:00-00:00",
-          "street": "Chesterton Road"
-        },
-        {
           "id": "node/4892324079",
           "name": "University Library",
           "lat": 52.205064,
           "lon": 0.107989
         },
         {
-          "id": "node/8680510940",
-          "lat": 52.210209,
-          "lon": 0.134126,
-          "street": "Cutter Ferry Bridge"
-        },
-        {
-          "id": "node/12762718601",
-          "lat": 52.205651,
-          "lon": 0.106898,
-          "street": "Burrell's Walk"
-        },
-        {
-          "id": "node/20963319",
-          "lat": 52.195462,
-          "lon": 0.114734,
-          "street": "Driftway"
-        },
-        {
           "id": "node/4892206206",
           "name": "Sainsbury Laboratory",
           "lat": 52.194571,
           "lon": 0.128106
+        },
+        {
+          "id": "node/4891806092",
+          "name": "Centre for Mathematical Sciences",
+          "lat": 52.210117,
+          "lon": 0.102154
+        },
+        {
+          "id": "node/5604765633",
+          "lat": 52.198738,
+          "lon": 0.101697,
+          "context": "Bredon House"
+        },
+        {
+          "id": "node/5604765632",
+          "lat": 52.198727,
+          "lon": 0.100978,
+          "context": "Dining Hall, Gallery & Club Room"
+        },
+        {
+          "id": "node/19851711",
+          "name": "The Salvation Army",
+          "lat": 52.211409,
+          "lon": 0.145342,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/4892304971",
+          "name": "CAPE",
+          "lat": 52.210346,
+          "lon": 0.093349
+        },
+        {
+          "id": "node/4892315914",
+          "name": "Roger Needham Building",
+          "lat": 52.211182,
+          "lon": 0.093434
+        },
+        {
+          "id": "node/4977527057",
+          "name": "Greenwich House",
+          "lat": 52.215019,
+          "lon": 0.095499
+        },
+        {
+          "id": "node/4892307081",
+          "name": "Cavendish Labs",
+          "lat": 52.209175,
+          "lon": 0.091605
+        },
+        {
+          "id": "node/4892300002",
+          "name": "Bullard Labs",
+          "lat": 52.214749,
+          "lon": 0.093648
+        },
+        {
+          "id": "node/4892318513",
+          "name": "Veterinary Hospital",
+          "lat": 52.21103,
+          "lon": 0.088262
+        },
+        {
+          "id": "node/4892314831",
+          "name": "Department of Materials Science",
+          "lat": 52.209493,
+          "lon": 0.084111
+        },
+        {
+          "id": "node/4892296865",
+          "name": "Laundry Farm",
+          "lat": 52.199901,
+          "lon": 0.084029
+        },
+        {
+          "id": "node/4892293915",
+          "name": "West Forvie Building",
+          "lat": 52.172897,
+          "lon": 0.142234
         }
       ],
-      "updatedAt": "2026-09-03T17:09:39.677Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:31.478Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -1573,7 +1630,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:41.890Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:30:32.323Z"
     },
     "camp-sites": {
       "count": 8,
@@ -1912,9 +1975,111 @@
           "name": "Buddy Bench",
           "lat": 52.188436,
           "lon": 0.025151
+        },
+        {
+          "id": "node/12051015323",
+          "lat": 52.205128,
+          "lon": 0.122658,
+          "street": "Christ's Lane"
+        },
+        {
+          "id": "node/11690938578",
+          "lat": 52.205677,
+          "lon": 0.120925,
+          "street": "Sidney Street"
+        },
+        {
+          "id": "node/3556796288",
+          "lat": 52.205045,
+          "lon": 0.119422,
+          "street": "Market Hill"
+        },
+        {
+          "id": "node/12051094287",
+          "lat": 52.20672,
+          "lon": 0.120922,
+          "street": "Sussex Street"
+        },
+        {
+          "id": "node/13450358556",
+          "lat": 52.206121,
+          "lon": 0.12391,
+          "street": "Miltons Walk"
+        },
+        {
+          "id": "node/10916634105",
+          "lat": 52.204247,
+          "lon": 0.119085,
+          "street": "Wheeler Street"
+        },
+        {
+          "id": "node/14011304606",
+          "lat": 52.203533,
+          "lon": 0.119052,
+          "street": "Free School Lane"
+        },
+        {
+          "id": "node/1606779283",
+          "lat": 52.207934,
+          "lon": 0.120128,
+          "street": "Jesus Lane"
+        },
+        {
+          "id": "node/1620675005",
+          "lat": 52.2036,
+          "lon": 0.117887,
+          "street": "Trumpington Street"
+        },
+        {
+          "id": "node/1498639090",
+          "lat": 52.202393,
+          "lon": 0.120472,
+          "street": "Ridley's Walk"
+        },
+        {
+          "id": "node/7575228683",
+          "lat": 52.202048,
+          "lon": 0.120018,
+          "street": "The Avenue"
+        },
+        {
+          "id": "node/1448453065",
+          "lat": 52.201784,
+          "lon": 0.121344,
+          "street": "Tennis Court Road"
+        },
+        {
+          "id": "node/1255077086",
+          "lat": 52.203533,
+          "lon": 0.12695,
+          "street": "Park Terrace"
+        },
+        {
+          "id": "node/9628843562",
+          "lat": 52.208458,
+          "lon": 0.118665,
+          "street": "Round Church Street"
+        },
+        {
+          "id": "node/1255077115",
+          "lat": 52.203971,
+          "lon": 0.127437,
+          "street": "Parkside"
+        },
+        {
+          "id": "node/1698310471",
+          "lat": 52.20306,
+          "lon": 0.116632,
+          "street": "Queens Lane"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:50.531Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:33.337Z"
     },
     "compressed-air": {
       "count": 0,

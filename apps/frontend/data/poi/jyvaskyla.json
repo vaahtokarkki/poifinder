@@ -1,6 +1,6 @@
 {
   "city": "jyvaskyla",
-  "generatedAt": "2026-09-03T16:39:04.092Z",
+  "generatedAt": "2026-09-11T10:26:41.870Z",
   "categories": {
     "toilets": {
       "count": 39,
@@ -127,7 +127,13 @@
           "context": "Keljon Kauppakeskus"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:42.590Z"
+      "stats": {
+        "free": 13,
+        "paid": 4,
+        "stepFree": 9,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:26:35.677Z"
     },
     "drinking-water": {
       "count": 9,
@@ -144,9 +150,34 @@
           "lat": 62.262961,
           "lon": 25.702103,
           "address": "Haukkalantie 19"
+        },
+        {
+          "id": "node/7209463953",
+          "lat": 62.240198,
+          "lon": 25.757898,
+          "fee": "no",
+          "street": "Messuaukio"
+        },
+        {
+          "id": "node/1350125488",
+          "lat": 62.261139,
+          "lon": 25.648678,
+          "street": "Timolantie"
+        },
+        {
+          "id": "node/5728863047",
+          "lat": 62.222712,
+          "lon": 25.879312,
+          "street": "Laurinniementie"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:43.856Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:37.287Z"
     },
     "playgrounds": {
       "count": 226,
@@ -1189,7 +1220,13 @@
           "openingHours": "Mo-Fr 07:00-22:00; Sa 08:00-22:00; Su 10:00-22:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:50.351Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:37.783Z"
     },
     "post-boxes": {
       "count": 50,
@@ -1381,6 +1418,91 @@
       "count": 120,
       "pois": [
         {
+          "id": "node/12862879133",
+          "name": "Kappeli",
+          "lat": 62.237627,
+          "lon": 25.733022
+        },
+        {
+          "id": "node/11226422597",
+          "name": "Rinki-ekopiste K-Supermarket Länsiväylä",
+          "lat": 62.243046,
+          "lon": 25.712166,
+          "address": "Kaivokatu 1",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/9905789962",
+          "name": "Rinki-ekopiste S-market Savela",
+          "lat": 62.243011,
+          "lon": 25.708154,
+          "address": "Vehkakatu 5",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/12065957078",
+          "name": "SER Kierrätyspiste",
+          "lat": 62.26096,
+          "lon": 25.778471,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/623977749",
+          "name": "Keljonkeskus",
+          "lat": 62.216397,
+          "lon": 25.722983,
+          "address": "Kylmälahdentie 6",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/492883747",
+          "name": "Mannilan kierrätyspiste",
+          "lat": 62.269996,
+          "lon": 25.722453,
+          "address": "Mannisentie 7",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/6516019491",
+          "name": "Evakkotien kierrätyspiste",
+          "lat": 62.269614,
+          "lon": 25.719703,
+          "address": "Evakkotie 1",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/9261158184",
+          "name": "40250-5",
+          "lat": 62.276394,
+          "lon": 25.769092,
+          "address": "Kaislikkotie 1",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/719184198",
+          "name": "Mäyrämäentien - Vahverotien risteys",
+          "lat": 62.23286,
+          "lon": 25.662545
+        },
+        {
+          "id": "node/972513028",
+          "name": "Suluntien - Kaakkurin risteys",
+          "lat": 62.268595,
+          "lon": 25.825524
+        },
+        {
+          "id": "node/813769308",
+          "name": "Mustankorkea lajittelupiha",
+          "lat": 62.2159,
+          "lon": 25.670195
+        },
+        {
+          "id": "node/719183999",
+          "name": "Mustalammentien liikenneympyrä",
+          "lat": 62.230005,
+          "lon": 25.64989
+        },
+        {
           "id": "node/8078396631",
           "lat": 62.238047,
           "lon": 25.751753,
@@ -1397,12 +1519,6 @@
           "lat": 62.23566,
           "lon": 25.737873,
           "street": "Vapaudenkatu"
-        },
-        {
-          "id": "node/12862879133",
-          "name": "Kappeli",
-          "lat": 62.237627,
-          "lon": 25.733022
         },
         {
           "id": "node/10006355822",
@@ -1453,26 +1569,10 @@
           "street": "Mattilankatu"
         },
         {
-          "id": "node/11226422597",
-          "name": "Rinki-ekopiste K-Supermarket Länsiväylä",
-          "lat": 62.243046,
-          "lon": 25.712166,
-          "address": "Kaivokatu 1",
-          "openingHours": "24/7"
-        },
-        {
           "id": "node/13534862326",
           "lat": 62.232196,
           "lon": 25.718764,
           "street": "Kannaksenkatu"
-        },
-        {
-          "id": "node/9905789962",
-          "name": "Rinki-ekopiste S-market Savela",
-          "lat": 62.243011,
-          "lon": 25.708154,
-          "address": "Vehkakatu 5",
-          "openingHours": "24/7"
         },
         {
           "id": "node/1244848899",
@@ -1510,67 +1610,15 @@
           "lon": 25.778519,
           "openingHours": "24/7",
           "street": "Alasinkatu"
-        },
-        {
-          "id": "node/2332339778",
-          "lat": 62.243348,
-          "lon": 25.797428,
-          "street": "Vaajakoskentie"
-        },
-        {
-          "id": "node/12065957078",
-          "name": "SER Kierrätyspiste",
-          "lat": 62.26096,
-          "lon": 25.778471,
-          "openingHours": "24/7"
-        },
-        {
-          "id": "node/624512709",
-          "lat": 62.219361,
-          "lon": 25.75422,
-          "street": "Pohjantie"
-        },
-        {
-          "id": "node/2398287958",
-          "lat": 62.222799,
-          "lon": 25.719588,
-          "street": "Valkolantie"
-        },
-        {
-          "id": "node/2309931488",
-          "lat": 62.224018,
-          "lon": 25.712326,
-          "street": "Kumpulantie"
-        },
-        {
-          "id": "node/279025750",
-          "lat": 62.241953,
-          "lon": 25.693096,
-          "address": "Keihäsmiehenkatu 2C",
-          "street": "Vesangantie"
-        },
-        {
-          "id": "node/11755796762",
-          "lat": 62.222002,
-          "lon": 25.714488,
-          "street": "Peltokatu"
-        },
-        {
-          "id": "node/1040896092",
-          "lat": 62.265008,
-          "lon": 25.778688,
-          "street": "Seppäläntie"
-        },
-        {
-          "id": "node/623977749",
-          "name": "Keljonkeskus",
-          "lat": 62.216397,
-          "lon": 25.722983,
-          "address": "Kylmälahdentie 6",
-          "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:55.455Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:39.157Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1737,7 +1785,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:57.528Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:26:40.286Z"
     },
     "camp-sites": {
       "count": 6,
@@ -1903,9 +1957,93 @@
           "name": "Palonkulonmäen taukopenkki",
           "lat": 62.245427,
           "lon": 25.619375
+        },
+        {
+          "id": "node/2058657569",
+          "lat": 62.242384,
+          "lon": 25.748065,
+          "street": "Asemakatu"
+        },
+        {
+          "id": "node/12995389549",
+          "lat": 62.241106,
+          "lon": 25.744685,
+          "street": "Kauppakatu"
+        },
+        {
+          "id": "node/13482572790",
+          "lat": 62.240635,
+          "lon": 25.746741,
+          "street": "Reimarin huoltotunneli"
+        },
+        {
+          "id": "node/13482572789",
+          "lat": 62.240495,
+          "lon": 25.746517,
+          "street": "P-Paraati"
+        },
+        {
+          "id": "node/13011418101",
+          "lat": 62.240933,
+          "lon": 25.741982,
+          "street": "Keskustie"
+        },
+        {
+          "id": "node/431977016",
+          "lat": 62.245314,
+          "lon": 25.743102,
+          "street": "Harjukatu"
+        },
+        {
+          "id": "node/12887179372",
+          "lat": 62.246407,
+          "lon": 25.750587,
+          "street": "Puistokatu"
+        },
+        {
+          "id": "node/725188743",
+          "lat": 62.238465,
+          "lon": 25.741978,
+          "street": "Cygnaeuksenkatu"
+        },
+        {
+          "id": "node/725188738",
+          "lat": 62.238102,
+          "lon": 25.742154,
+          "street": "Vapaudenkatu"
+        },
+        {
+          "id": "node/725188735",
+          "lat": 62.23817,
+          "lon": 25.740812,
+          "street": "Idankuja"
+        },
+        {
+          "id": "node/431525909",
+          "lat": 62.240647,
+          "lon": 25.734585,
+          "street": "Oikokatu"
+        },
+        {
+          "id": "node/8078396626",
+          "lat": 62.236203,
+          "lon": 25.747381,
+          "street": "Kompassinranta"
+        },
+        {
+          "id": "node/2424721399",
+          "lat": 62.240139,
+          "lon": 25.761004,
+          "street": "Schaumanin puistotie"
         }
       ],
-      "updatedAt": "2026-09-03T16:39:03.991Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:41.769Z"
     }
   }
 }

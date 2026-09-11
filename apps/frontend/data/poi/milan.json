@@ -1,6 +1,6 @@
 {
   "city": "milan",
-  "generatedAt": "2026-09-03T17:20:54.549Z",
+  "generatedAt": "2026-09-11T10:31:43.029Z",
   "categories": {
     "toilets": {
       "count": 351,
@@ -182,7 +182,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:25.903Z"
+      "stats": {
+        "free": 122,
+        "paid": 59,
+        "stepFree": 114,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-11T10:31:34.673Z"
     },
     "drinking-water": {
       "count": 845,
@@ -244,9 +250,153 @@
           "name": "Distributore acqua potabile",
           "lat": 45.534334,
           "lon": 9.194539
+        },
+        {
+          "id": "node/339564181",
+          "lat": 45.464616,
+          "lon": 9.19244,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Piazza del Duomo"
+        },
+        {
+          "id": "node/339564277",
+          "lat": 45.463474,
+          "lon": 9.193766,
+          "wheelchair": "limited",
+          "street": "Piazza Fontana"
+        },
+        {
+          "id": "node/1821517204",
+          "lat": 45.464151,
+          "lon": 9.194835,
+          "fee": "no",
+          "street": "Piazza Cesare Beccaria"
+        },
+        {
+          "id": "node/635857221",
+          "lat": 45.459475,
+          "lon": 9.192945,
+          "fee": "no",
+          "street": "Via Festa del Perdono"
+        },
+        {
+          "id": "node/4953163127",
+          "lat": 45.469305,
+          "lon": 9.18504,
+          "street": "Via Giuseppe Sacchi"
+        },
+        {
+          "id": "node/4953163120",
+          "lat": 45.461709,
+          "lon": 9.181724,
+          "street": "Piazza Mentana"
+        },
+        {
+          "id": "node/13078457501",
+          "lat": 45.470932,
+          "lon": 9.189905,
+          "street": "Via privata Fratelli Gabba"
+        },
+        {
+          "id": "node/673971061",
+          "lat": 45.467748,
+          "lon": 9.181726,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Largo Maria Callas"
+        },
+        {
+          "id": "node/4953163469",
+          "lat": 45.457473,
+          "lon": 9.1877,
+          "street": "Piazza Sant'Eufemia"
+        },
+        {
+          "id": "node/12124860501",
+          "lat": 45.459806,
+          "lon": 9.198611,
+          "street": "Via San Barnaba"
+        },
+        {
+          "id": "node/673971153",
+          "lat": 45.4692,
+          "lon": 9.181611,
+          "fee": "no",
+          "street": "Piazza Castello"
+        },
+        {
+          "id": "node/2942147292",
+          "lat": 45.458004,
+          "lon": 9.183007,
+          "street": "Piazza della Vetra"
+        },
+        {
+          "id": "node/10006159302",
+          "lat": 45.472081,
+          "lon": 9.192624,
+          "street": "Via dei Giardini"
+        },
+        {
+          "id": "node/1029627508",
+          "lat": 45.462531,
+          "lon": 9.201534,
+          "street": "Piazza San Pietro in Gessate"
+        },
+        {
+          "id": "node/800182052",
+          "lat": 45.464739,
+          "lon": 9.178099,
+          "fee": "no",
+          "street": "Via Nirone"
+        },
+        {
+          "id": "node/2311341568",
+          "lat": 45.455852,
+          "lon": 9.192517,
+          "street": "Via San Calimero"
+        },
+        {
+          "id": "node/680127423",
+          "lat": 45.471467,
+          "lon": 9.183115,
+          "street": "Foro Buonaparte"
+        },
+        {
+          "id": "node/4953162364",
+          "lat": 45.470831,
+          "lon": 9.198477,
+          "street": "Via Marina"
+        },
+        {
+          "id": "node/4953163109",
+          "lat": 45.455997,
+          "lon": 9.182057,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Via Vetere"
+        },
+        {
+          "id": "node/4953161519",
+          "lat": 45.463575,
+          "lon": 9.175785,
+          "street": "Largo ai Caduti Milanesi per la Patria"
+        },
+        {
+          "id": "node/660690372",
+          "lat": 45.458515,
+          "lon": 9.178184,
+          "street": "Piazza della Resistenza Partigiana"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:28.227Z"
+      "stats": {
+        "free": 113,
+        "paid": 4,
+        "stepFree": 59,
+        "partlyStepFree": 13
+      },
+      "updatedAt": "2026-09-11T10:31:37.086Z"
     },
     "playgrounds": {
       "count": 664,
@@ -1511,7 +1661,13 @@
           "openingHours": "Mo-Fr 08:20-19:05, Sa 08:20-12:35; Su off"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:37.833Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 49,
+        "partlyStepFree": 18
+      },
+      "updatedAt": "2026-09-11T10:31:37.972Z"
     },
     "post-boxes": {
       "count": 294,
@@ -1705,6 +1861,54 @@
       "count": 265,
       "pois": [
         {
+          "id": "node/8704775464",
+          "lat": 45.485458,
+          "lon": 9.204592,
+          "context": "Milano Centrale"
+        },
+        {
+          "id": "node/12285353095",
+          "name": "RiGenera",
+          "lat": 45.477201,
+          "lon": 9.243026,
+          "address": "Via Leonardo Bistolfi 49"
+        },
+        {
+          "id": "way/26012865",
+          "name": "Ricicleria Corelli",
+          "lat": 45.471366,
+          "lon": 9.253722,
+          "openingHours": "Mo-Sa 08:00-19:00; Su 08:00-15:00"
+        },
+        {
+          "id": "way/105917828",
+          "name": "Ricicleria Pedroni",
+          "lat": 45.511827,
+          "lon": 9.166979,
+          "address": "Via Lisiade Pedroni 40/1",
+          "openingHours": "Mo-Sa 08:00-20:00; Su 08:00-19:00"
+        },
+        {
+          "id": "way/1528994784",
+          "name": "Piattaforma ecologica comunale Corsico",
+          "lat": 45.450599,
+          "lon": 9.109867
+        },
+        {
+          "id": "way/657325612",
+          "name": "Centro di Raccolta",
+          "lat": 45.526168,
+          "lon": 9.146259,
+          "openingHours": "Mo 13:00-17:00; Tu 09:00-12:00, 13:00-17:00; We 13:00-17:00; Th 09:00-12:00, 13:00-17:00; Fr 13:00-17:00; Sa 10:00-13:00, 14:00-17:00; Su 09:00-13:00"
+        },
+        {
+          "id": "way/1432594216",
+          "name": "Centro di riciclaggio di Olgettina",
+          "lat": 45.507125,
+          "lon": 9.268098,
+          "openingHours": "Mo-Sa 08:00-19:00; Su 08:00-15:00"
+        },
+        {
           "id": "node/12898557122",
           "lat": 45.471469,
           "lon": 9.178346,
@@ -1843,52 +2047,15 @@
           "lon": 9.214845,
           "wheelchair": "yes",
           "street": "Via Bartolomeo Eustachi"
-        },
-        {
-          "id": "node/2920519843",
-          "lat": 45.443384,
-          "lon": 9.184873,
-          "street": "Piazza Caduti del Lavoro"
-        },
-        {
-          "id": "node/281590186",
-          "lat": 45.468188,
-          "lon": 9.16039,
-          "street": "Via Mario Pagano"
-        },
-        {
-          "id": "node/9701650262",
-          "lat": 45.477133,
-          "lon": 9.166119,
-          "openingHours": "24/7",
-          "street": "Via Andrea Massena"
-        },
-        {
-          "id": "node/13731116801",
-          "lat": 45.450543,
-          "lon": 9.213088,
-          "street": "Via Tertulliano"
-        },
-        {
-          "id": "node/6903588757",
-          "lat": 45.456573,
-          "lon": 9.16158,
-          "street": "Piazza Giovanni Antonio Bazzi"
-        },
-        {
-          "id": "node/3147154554",
-          "lat": 45.486003,
-          "lon": 9.188522,
-          "street": "Via Pietro Borsieri"
-        },
-        {
-          "id": "node/11264607003",
-          "lat": 45.470624,
-          "lon": 9.219984,
-          "street": "Piazza Ermete Novelli"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:42.874Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:40.274Z"
     },
     "luggage-storage": {
       "count": 4,
@@ -2191,7 +2358,13 @@
           "lon": 9.18983
         }
       ],
-      "updatedAt": "2026-09-03T17:20:45.428Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:31:41.528Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2575,9 +2748,111 @@
           "name": "Pencho Slaveykov",
           "lat": 45.462806,
           "lon": 9.19532
+        },
+        {
+          "id": "node/4170016634",
+          "lat": 45.463515,
+          "lon": 9.189959,
+          "street": "Via Guglielmo Marconi"
+        },
+        {
+          "id": "node/2199859154",
+          "lat": 45.464781,
+          "lon": 9.188353,
+          "street": "Galleria dell'Artigianato"
+        },
+        {
+          "id": "node/5499376569",
+          "lat": 45.466208,
+          "lon": 9.190975,
+          "street": "Piazza San Fedele"
+        },
+        {
+          "id": "node/4170017489",
+          "lat": 45.462824,
+          "lon": 9.192349,
+          "street": "Via Palazzo Reale"
+        },
+        {
+          "id": "node/4170016591",
+          "lat": 45.462826,
+          "lon": 9.192442,
+          "street": "Largo Ildefonso Schuster"
+        },
+        {
+          "id": "node/4170018792",
+          "lat": 45.463621,
+          "lon": 9.193738,
+          "street": "Piazza Fontana"
+        },
+        {
+          "id": "node/5033959073",
+          "lat": 45.463569,
+          "lon": 9.186232,
+          "street": "Piazza Pio Undicesimo"
+        },
+        {
+          "id": "node/10046100739",
+          "lat": 45.467101,
+          "lon": 9.189362,
+          "street": "Largo Antonio Ghiringhelli"
+        },
+        {
+          "id": "node/10013111078",
+          "lat": 45.466525,
+          "lon": 9.192803,
+          "street": "Via Ulrico Hoepli"
+        },
+        {
+          "id": "node/9500676813",
+          "lat": 45.465642,
+          "lon": 9.186168,
+          "street": "Piazza Cordusio"
+        },
+        {
+          "id": "node/10013111076",
+          "lat": 45.466544,
+          "lon": 9.192869,
+          "street": "Via San Paolo"
+        },
+        {
+          "id": "node/6763575200",
+          "lat": 45.461249,
+          "lon": 9.188312,
+          "street": "Piazza Giuseppe Missori"
+        },
+        {
+          "id": "node/14004575098",
+          "lat": 45.464199,
+          "lon": 9.194723,
+          "street": "Piazza Cesare Beccaria"
+        },
+        {
+          "id": "node/14010968903",
+          "lat": 45.467029,
+          "lon": 9.193032,
+          "street": "Piazza Filippo Meda"
+        },
+        {
+          "id": "node/13835572202",
+          "lat": 45.46066,
+          "lon": 9.191424,
+          "street": "Via Larga"
+        },
+        {
+          "id": "node/4170014289",
+          "lat": 45.46266,
+          "lon": 9.195308,
+          "street": "Via Brolo"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:54.445Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:42.928Z"
     },
     "compressed-air": {
       "count": 0,

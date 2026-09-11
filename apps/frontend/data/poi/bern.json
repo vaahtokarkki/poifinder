@@ -1,6 +1,6 @@
 {
   "city": "bern",
-  "generatedAt": "2026-09-03T17:00:25.502Z",
+  "generatedAt": "2026-09-11T10:29:47.342Z",
   "categories": {
     "toilets": {
       "count": 176,
@@ -174,7 +174,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:57.467Z"
+      "stats": {
+        "free": 95,
+        "paid": 9,
+        "stepFree": 68,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-11T10:29:39.594Z"
     },
     "drinking-water": {
       "count": 316,
@@ -363,7 +369,13 @@
           "lon": 7.454065
         }
       ],
-      "updatedAt": "2026-09-03T16:59:59.886Z"
+      "stats": {
+        "free": 22,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:29:42.344Z"
     },
     "playgrounds": {
       "count": 397,
@@ -1476,7 +1488,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:09.424Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 37,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:29:42.927Z"
     },
     "post-boxes": {
       "count": 430,
@@ -1671,6 +1689,168 @@
       "count": 247,
       "pois": [
         {
+          "id": "node/11190606622",
+          "lat": 46.947771,
+          "lon": 7.439419,
+          "context": "Berner GenerationenHaus"
+        },
+        {
+          "id": "node/6235889119",
+          "lat": 46.948086,
+          "lon": 7.436841,
+          "context": "Welle7"
+        },
+        {
+          "id": "node/662435446",
+          "name": "Kleidersammlung",
+          "lat": 46.939488,
+          "lon": 7.437458
+        },
+        {
+          "id": "node/11730834128",
+          "name": "ÖkoInfoMobil",
+          "lat": 46.957513,
+          "lon": 7.436909,
+          "openingHours": "Fr 12:10-12:25"
+        },
+        {
+          "id": "node/8372658560",
+          "name": "Texaid",
+          "lat": 46.96353,
+          "lon": 7.453091
+        },
+        {
+          "id": "node/3323162327",
+          "name": "Thommen",
+          "lat": 46.955938,
+          "lon": 7.472622
+        },
+        {
+          "id": "node/1802129564",
+          "name": "Sammelstelle Ländli",
+          "lat": 46.97037,
+          "lon": 7.436477,
+          "openingHours": "Mo-Sa 08:00-20:00; Su,PH closed"
+        },
+        {
+          "id": "way/404415090",
+          "name": "Entsorgungshof Schermenwald",
+          "lat": 46.966418,
+          "lon": 7.472379,
+          "openingHours": "Mo-Fr 08:00-12:00,13:00-18:30; Sa 08:00-15:00"
+        },
+        {
+          "id": "node/3389530549",
+          "name": "Sammelstelle Obereyfeldweg",
+          "lat": 46.971522,
+          "lon": 7.474763,
+          "openingHours": "Mo-Sa 07:00-12:00,13:00-20:00; Su,PH closed",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/1802129565",
+          "name": "Sammelstelle Busendstation",
+          "lat": 46.975367,
+          "lon": 7.427054,
+          "openingHours": "Mo-Sa 08:00-20:00; Su,PH closed"
+        },
+        {
+          "id": "way/757926513",
+          "name": "Sammelstelle Fischrainweg Worblaufen",
+          "lat": 46.97837,
+          "lon": 7.461634,
+          "openingHours": "Mo-Sa 07:00-12:00, 13:00-20:00"
+        },
+        {
+          "id": "node/6515442704",
+          "name": "Entsorgungsstelle Mööslimatt",
+          "lat": 46.975349,
+          "lon": 7.421759,
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:00-17:00; Su,PH closed"
+        },
+        {
+          "id": "way/44745810",
+          "name": "Entsorgungshof Hubelgut",
+          "lat": 46.981623,
+          "lon": 7.455401,
+          "address": "Hubelgutstrasse 6",
+          "openingHours": "Mo-Fr 08:00-12:00,13:00-17:00; Sa 09:00-16:00"
+        },
+        {
+          "id": "node/5811745912",
+          "name": "AREC Abfall-Recycling Bern AG",
+          "lat": 46.982105,
+          "lon": 7.455465,
+          "address": "Hubelgutstrasse 8",
+          "openingHours": "Mo-Fr 07:00-11:45,13:00-17:00; PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/2812387400",
+          "name": "Entsorgungsstelle Thalmatt",
+          "lat": 46.974333,
+          "lon": 7.410852,
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:00-17:00; Su,PH closed"
+        },
+        {
+          "id": "node/3899574146",
+          "name": "Sammelstelle Talweg / Talgut-Zentrum",
+          "lat": 46.974354,
+          "lon": 7.48436,
+          "openingHours": "Mo-Sa 07:00-12:00, 13:00-20:00"
+        },
+        {
+          "id": "node/5939744097",
+          "name": "Entsorgungsstelle Herrenschwanden",
+          "lat": 46.978561,
+          "lon": 7.417764,
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:00-17:00; Su,PH closed"
+        },
+        {
+          "id": "way/259017709",
+          "name": "Entsorgungshof Fellerstrasse",
+          "lat": 46.946566,
+          "lon": 7.390297,
+          "address": "Fellerstrasse 13a",
+          "openingHours": "Mo-Fr 08:00-12:00, 13:00-18:30; Sa 08:00-15:00; Su off"
+        },
+        {
+          "id": "way/1009106238",
+          "name": "Sammelstelle Kappelisacker Ittigen",
+          "lat": 46.982818,
+          "lon": 7.477998,
+          "openingHours": "Mo-Sa 07:00-12:00,13:00-20:00; Su,PH closed",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/1314704309",
+          "name": "Wertstoffsammelstelle Migros Chappelemärit",
+          "lat": 46.966888,
+          "lon": 7.377089,
+          "openingHours": "Mo-We 08:00-19:00; Th-Fr 08:00-20:00; Sa 07:30-17:00; Su,PH off"
+        },
+        {
+          "id": "node/6955759045",
+          "name": "Entsorgungsstelle Oberlindach",
+          "lat": 47.002883,
+          "lon": 7.426693,
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:00-17:00; Su,PH closed"
+        },
+        {
+          "id": "node/5179923742",
+          "name": "Entsorgungsstelle Kirchlindach",
+          "lat": 46.999892,
+          "lon": 7.413943,
+          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:00-17:00; Su,PH closed"
+        },
+        {
+          "id": "node/6543034399",
+          "name": "Labdoo Annahmestelle für Laptops",
+          "lat": 46.983234,
+          "lon": 7.380408,
+          "address": "Scheuermattweg 15"
+        },
+        {
           "id": "node/9356488207",
           "lat": 46.950601,
           "lon": 7.448671,
@@ -1690,12 +1870,6 @@
           "lat": 46.949302,
           "lon": 7.44028,
           "street": "Bollwerk"
-        },
-        {
-          "id": "node/11190606622",
-          "lat": 46.947771,
-          "lon": 7.439419,
-          "context": "Berner GenerationenHaus"
         },
         {
           "id": "node/258897036",
@@ -1721,150 +1895,15 @@
           "lon": 7.437575,
           "wheelchair": "yes",
           "street": "Hirschengraben"
-        },
-        {
-          "id": "node/6306373191",
-          "lat": 46.942269,
-          "lon": 7.452952,
-          "openingHours": "Mo-Fr 08:00-20:00; Sa 08:00-17:00",
-          "street": "Luisenstrasse"
-        },
-        {
-          "id": "node/5726635217",
-          "lat": 46.944343,
-          "lon": 7.438861,
-          "street": "Rainmattstrasse"
-        },
-        {
-          "id": "node/6235889119",
-          "lat": 46.948086,
-          "lon": 7.436841,
-          "context": "Welle7"
-        },
-        {
-          "id": "node/317396242",
-          "lat": 46.95056,
-          "lon": 7.436593,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "wheelchair": "no",
-          "street": "Sidlerstrasse"
-        },
-        {
-          "id": "node/598242964",
-          "lat": 46.95555,
-          "lon": 7.45337,
-          "street": "Gotthelfstrasse"
-        },
-        {
-          "id": "node/5836973290",
-          "lat": 46.956575,
-          "lon": 7.440204,
-          "openingHours": "24/7",
-          "street": "Engehaldenstrasse"
-        },
-        {
-          "id": "node/6541949752",
-          "lat": 46.958023,
-          "lon": 7.452861,
-          "street": "Breitenrainstrasse"
-        },
-        {
-          "id": "node/9334423005",
-          "lat": 46.945504,
-          "lon": 7.462894,
-          "street": "Schosshaldenstrasse"
-        },
-        {
-          "id": "node/662435446",
-          "name": "Kleidersammlung",
-          "lat": 46.939488,
-          "lon": 7.437458
-        },
-        {
-          "id": "node/10972043361",
-          "lat": 46.9553,
-          "lon": 7.434048,
-          "street": "Mittelstrasse"
-        },
-        {
-          "id": "node/8603074820",
-          "lat": 46.953342,
-          "lon": 7.431946,
-          "openingHours": "Mo-Th 07:00-20:00; Fr 07:00-21:00; Sa 07:00-17:00; Su,PH off",
-          "street": "Länggassstrasse"
-        },
-        {
-          "id": "node/11730834128",
-          "name": "ÖkoInfoMobil",
-          "lat": 46.957513,
-          "lon": 7.436909,
-          "openingHours": "Fr 12:10-12:25"
-        },
-        {
-          "id": "node/8787063302",
-          "lat": 46.94386,
-          "lon": 7.463905,
-          "street": "es promeniert"
-        },
-        {
-          "id": "node/3736261806",
-          "lat": 46.940021,
-          "lon": 7.431803,
-          "street": "Seftigenstrasse"
-        },
-        {
-          "id": "node/4254178292",
-          "lat": 46.956443,
-          "lon": 7.432187,
-          "openingHours": "24/7",
-          "street": "Zähringerstrasse"
-        },
-        {
-          "id": "node/12082596018",
-          "lat": 46.95343,
-          "lon": 7.428998,
-          "street": "Freiestrasse"
-        },
-        {
-          "id": "node/9244203436",
-          "lat": 46.953724,
-          "lon": 7.428898,
-          "street": "Muesmattstrasse"
-        },
-        {
-          "id": "node/5896475941",
-          "lat": 46.953836,
-          "lon": 7.428656,
-          "openingHours": "Mo-Fr 08:00-20:00, Sa 08:00-17:00, Su off",
-          "street": "Hohgantweg"
-        },
-        {
-          "id": "node/1809389619",
-          "lat": 46.945961,
-          "lon": 7.426979,
-          "openingHours": "Mo-Sa 07:00-20:00; Su,PH off",
-          "street": "Brunnmattstrasse"
-        },
-        {
-          "id": "node/6385115169",
-          "lat": 46.962222,
-          "lon": 7.45123,
-          "street": "Standstrasse"
-        },
-        {
-          "id": "node/4367527740",
-          "lat": 46.948451,
-          "lon": 7.426213,
-          "street": "Rosenbühlgasse"
-        },
-        {
-          "id": "node/8372658560",
-          "name": "Texaid",
-          "lat": 46.96353,
-          "lon": 7.453091
         }
       ],
-      "updatedAt": "2026-09-03T17:00:15.022Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:29:45.010Z"
     },
     "luggage-storage": {
       "count": 4,
@@ -2184,7 +2223,13 @@
           "lon": 7.41487
         }
       ],
-      "updatedAt": "2026-09-03T17:00:17.513Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:46.077Z"
     },
     "camp-sites": {
       "count": 4,
@@ -2587,9 +2632,99 @@
           "name": "WANDERGRUPPE BOLL",
           "lat": 46.96006,
           "lon": 7.542001
+        },
+        {
+          "id": "node/5721205719",
+          "lat": 46.948227,
+          "lon": 7.447409,
+          "street": "Zytglogge"
+        },
+        {
+          "id": "node/10576111577",
+          "lat": 46.947214,
+          "lon": 7.447822,
+          "street": "Casinoplatz"
+        },
+        {
+          "id": "node/13844687928",
+          "lat": 46.948842,
+          "lon": 7.446911,
+          "street": "Zeughausgasse"
+        },
+        {
+          "id": "node/10155594677",
+          "lat": 46.94918,
+          "lon": 7.448262,
+          "street": "Grabenpromenade"
+        },
+        {
+          "id": "node/10155594678",
+          "lat": 46.949311,
+          "lon": 7.448086,
+          "street": "Kornhausplatz"
+        },
+        {
+          "id": "node/5739863718",
+          "lat": 46.949296,
+          "lon": 7.44823,
+          "street": "Schüttestrasse"
+        },
+        {
+          "id": "node/10845618605",
+          "lat": 46.946373,
+          "lon": 7.447282,
+          "street": "Münzterrasse"
+        },
+        {
+          "id": "node/9758338278",
+          "lat": 46.950206,
+          "lon": 7.447356,
+          "street": "Reckweg"
+        },
+        {
+          "id": "node/12177260231",
+          "lat": 46.946343,
+          "lon": 7.445138,
+          "street": "Bundesterrasse"
+        },
+        {
+          "id": "node/6943770238",
+          "lat": 46.946095,
+          "lon": 7.449498,
+          "street": "Aarstrasse"
+        },
+        {
+          "id": "node/5107755278",
+          "lat": 46.950518,
+          "lon": 7.448456,
+          "street": "Kornhausbrücke"
+        },
+        {
+          "id": "node/9758349012",
+          "lat": 46.949452,
+          "lon": 7.45067,
+          "street": "Langmauerweg"
+        },
+        {
+          "id": "node/6219035543",
+          "lat": 46.949953,
+          "lon": 7.444405,
+          "street": "Hodlerstrasse"
+        },
+        {
+          "id": "node/6903802998",
+          "lat": 46.946985,
+          "lon": 7.45135,
+          "street": "Münsterplattform"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:25.396Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:47.240Z"
     },
     "compressed-air": {
       "count": 0,

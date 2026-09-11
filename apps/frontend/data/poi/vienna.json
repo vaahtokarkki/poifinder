@@ -1,6 +1,6 @@
 {
   "city": "vienna",
-  "generatedAt": "2026-09-03T16:57:54.288Z",
+  "generatedAt": "2026-09-11T10:29:24.823Z",
   "categories": {
     "toilets": {
       "count": 646,
@@ -233,7 +233,13 @@
           "context": "Dark Insider"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:20.916Z"
+      "stats": {
+        "free": 388,
+        "paid": 109,
+        "stepFree": 306,
+        "partlyStepFree": 21
+      },
+      "updatedAt": "2026-09-11T10:29:14.003Z"
     },
     "drinking-water": {
       "count": 1444,
@@ -316,9 +322,142 @@
           "name": "Loiblbrunnen",
           "lat": 48.216157,
           "lon": 16.272198
+        },
+        {
+          "id": "node/8928801314",
+          "lat": 48.208124,
+          "lon": 16.372713,
+          "street": "Stephansplatz"
+        },
+        {
+          "id": "node/9164987082",
+          "lat": 48.208933,
+          "lon": 16.373219,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Schulerstraße"
+        },
+        {
+          "id": "node/11239992714",
+          "lat": 48.20864,
+          "lon": 16.375729,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Wollzeile"
+        },
+        {
+          "id": "node/9165021097",
+          "lat": 48.209705,
+          "lon": 16.373607,
+          "street": "Rotenturmstraße"
+        },
+        {
+          "id": "node/4897684322",
+          "lat": 48.207114,
+          "lon": 16.371881,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Weihburggasse"
+        },
+        {
+          "id": "node/1306550378",
+          "lat": 48.208133,
+          "lon": 16.37075,
+          "wheelchair": "yes",
+          "street": "Graben"
+        },
+        {
+          "id": "node/7131879350",
+          "lat": 48.209439,
+          "lon": 16.370513,
+          "fee": "no",
+          "street": "Freisingergasse"
+        },
+        {
+          "id": "node/1958816662",
+          "lat": 48.21096,
+          "lon": 16.372463,
+          "street": "Hoher Markt"
+        },
+        {
+          "id": "node/5272748948",
+          "lat": 48.209228,
+          "lon": 16.369552,
+          "fee": "no",
+          "street": "Jungferngasse"
+        },
+        {
+          "id": "node/5298389065",
+          "lat": 48.206748,
+          "lon": 16.378183,
+          "street": "Stubenbastei"
+        },
+        {
+          "id": "node/10249249256",
+          "lat": 48.205751,
+          "lon": 16.370496,
+          "street": "Neuer Markt"
+        },
+        {
+          "id": "node/9164941174",
+          "lat": 48.205219,
+          "lon": 16.371071,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Kärntner Straße"
+        },
+        {
+          "id": "node/13015689796",
+          "lat": 48.209614,
+          "lon": 16.37874,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Postgasse"
+        },
+        {
+          "id": "node/1314668227",
+          "lat": 48.211701,
+          "lon": 16.376634,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Franz-Josefs-Kai"
+        },
+        {
+          "id": "node/3526433071",
+          "lat": 48.211291,
+          "lon": 16.378359,
+          "street": "Schwedenplatz"
+        },
+        {
+          "id": "node/14017944054",
+          "lat": 48.208159,
+          "lon": 16.367046,
+          "fee": "no",
+          "street": "Kohlmarkt"
+        },
+        {
+          "id": "node/10570044726",
+          "lat": 48.204986,
+          "lon": 16.369,
+          "street": "Führichgasse"
+        },
+        {
+          "id": "node/12925501504",
+          "lat": 48.210053,
+          "lon": 16.380037,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Dominikanerbastei"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:23.440Z"
+      "stats": {
+        "free": 412,
+        "paid": 0,
+        "stepFree": 226,
+        "partlyStepFree": 15
+      },
+      "updatedAt": "2026-09-11T10:29:17.298Z"
     },
     "playgrounds": {
       "count": 1291,
@@ -1886,7 +2025,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:35.111Z"
+      "stats": {
+        "free": 10,
+        "paid": 3,
+        "stepFree": 230,
+        "partlyStepFree": 21
+      },
+      "updatedAt": "2026-09-11T10:29:18.555Z"
     },
     "post-boxes": {
       "count": 688,
@@ -2078,6 +2223,194 @@
       "count": 2697,
       "pois": [
         {
+          "id": "node/315299985",
+          "lat": 48.217656,
+          "lon": 16.376689,
+          "openingHours": "Mo-Th 16:00-18:00;Fr 14:00-18:00;Sa 08:00-12:00",
+          "wheelchair": "yes",
+          "context": "Marktamt"
+        },
+        {
+          "id": "node/7102337424",
+          "name": "Problemstoffsammelstelle",
+          "lat": 48.217686,
+          "lon": 16.376934,
+          "openingHours": "Mo-Fr 16:00-18:00; Sa 09:00-13:00"
+        },
+        {
+          "id": "node/3132845623",
+          "name": "Die 48er",
+          "lat": 48.197779,
+          "lon": 16.36163,
+          "openingHours": "Mo-Fr 16:00-18:00; Sa 09:00-13:00; PH off"
+        },
+        {
+          "id": "node/13958275501",
+          "name": "Problemstoffsammlung MA48",
+          "lat": 48.21346,
+          "lon": 16.33601
+        },
+        {
+          "id": "way/1130913217",
+          "name": "Müllsammelstelle Anlegestelle 4",
+          "lat": 48.22716,
+          "lon": 16.404505,
+          "address": "Handelskai 265",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/1130913221",
+          "name": "Müllsammelstelle Anlegestelle 5",
+          "lat": 48.22527,
+          "lon": 16.406977,
+          "address": "Handelskai 265",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/1130885247",
+          "name": "Müllsammelstelle Anlegestelle 1",
+          "lat": 48.229281,
+          "lon": 16.401785,
+          "address": "Handelskai 265",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/1130913218",
+          "name": "Müllsammelstelle Anlegestelle 8",
+          "lat": 48.223405,
+          "lon": 16.409454,
+          "address": "Handelskai 265",
+          "openingHours": "24/7",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/1130913219",
+          "name": "Müllsammelstelle Anlegestelle 9",
+          "lat": 48.221793,
+          "lon": 16.411498,
+          "address": "Handelskai 265",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/1130913220",
+          "name": "Müllsammelstelle Anlegestelle 11",
+          "lat": 48.220714,
+          "lon": 16.4131,
+          "address": "Handelskai 265",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/1964995221",
+          "name": "mobile Problemstoffsammelstelle",
+          "lat": 48.176567,
+          "lon": 16.375818
+        },
+        {
+          "id": "way/202030006",
+          "name": "Altmetalle Kranner",
+          "lat": 48.240019,
+          "lon": 16.374475,
+          "address": "Dresdner Straße 26A"
+        },
+        {
+          "id": "way/152334557",
+          "name": "Mistplatz Favoriten",
+          "lat": 48.176789,
+          "lon": 16.389694,
+          "address": "Eva-Zilcher-Gasse 3",
+          "openingHours": "Mo-Sa 07:00-18:00"
+        },
+        {
+          "id": "way/182366815",
+          "name": "Mistplatz Hernals",
+          "lat": 48.225236,
+          "lon": 16.322098,
+          "address": "Richthausenstraße 2-4",
+          "openingHours": "Mo-Sa 07:00-18:00"
+        },
+        {
+          "id": "way/169972458",
+          "name": "Mistplatz Ottakring",
+          "lat": 48.204506,
+          "lon": 16.309651,
+          "openingHours": "Mo-Fr 07:00-18:00; Sa 08:00-18:00"
+        },
+        {
+          "id": "way/132864443",
+          "name": "Mistplatz Heiligenstadt",
+          "lat": 48.255111,
+          "lon": 16.368171,
+          "openingHours": "Mo-Fr 07:00-18:00, Sa 08:00-18:00"
+        },
+        {
+          "id": "way/132859257",
+          "name": "Mistplatz Donaufeld",
+          "lat": 48.250091,
+          "lon": 16.411946,
+          "address": "Fultonstraße 10",
+          "openingHours": "Mo-Sa 07:00-18:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "way/54371751",
+          "name": "Mistplatz Stadlau",
+          "lat": 48.212704,
+          "lon": 16.447902,
+          "address": "Mühlwasserstraße 2",
+          "openingHours": "Mo-Sa 07:00-18:00"
+        },
+        {
+          "id": "node/5248791608",
+          "name": "DRZ",
+          "lat": 48.196114,
+          "lon": 16.292667,
+          "address": "Vogtgasse 29",
+          "openingHours": "Mo-Th 09:00-16:00; Fr 09:00-13:00"
+        },
+        {
+          "id": "node/11343477118",
+          "name": "Lidl Kleidersammlung",
+          "lat": 48.266081,
+          "lon": 16.38748
+        },
+        {
+          "id": "way/441961484",
+          "name": "Iso Metallhandels GmbH",
+          "lat": 48.233283,
+          "lon": 16.456077
+        },
+        {
+          "id": "way/305394302",
+          "name": "Mistplatz Simmering",
+          "lat": 48.177373,
+          "lon": 16.455249,
+          "address": "Johann-Petrak-Gasse 1",
+          "openingHours": "Mo-Sa 07:00-18:00"
+        },
+        {
+          "id": "way/132859861",
+          "name": "Mistplatz Südrandstraße",
+          "lat": 48.142843,
+          "lon": 16.36683,
+          "address": "Südrandstraße 2",
+          "openingHours": "Mo-Sa 07:00-18:00"
+        },
+        {
+          "id": "way/132863336",
+          "name": "Mistplatz Hetzendorf",
+          "lat": 48.160925,
+          "lon": 16.304165,
+          "openingHours": "Mo-Sa 07:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/5915211140",
+          "name": "ebswien Tierservice",
+          "lat": 48.175367,
+          "lon": 16.466096,
+          "address": "Alberner Hafenzufahrtsstraße 8"
+        },
+        {
           "id": "node/4020681782",
           "lat": 48.208942,
           "lon": 16.374387,
@@ -2106,160 +2439,15 @@
           "lat": 48.20805,
           "lon": 16.379308,
           "street": "Bäckerstraße"
-        },
-        {
-          "id": "node/2617117215",
-          "lat": 48.212139,
-          "lon": 16.375269,
-          "street": "Franz-Josefs-Kai"
-        },
-        {
-          "id": "node/582970787",
-          "lat": 48.211129,
-          "lon": 16.368502,
-          "address": "Schulhof 7",
-          "street": "Schulhof"
-        },
-        {
-          "id": "node/293170294",
-          "lat": 48.212817,
-          "lon": 16.374259,
-          "street": "Morzinplatz"
-        },
-        {
-          "id": "node/582906195",
-          "lat": 48.212067,
-          "lon": 16.369973,
-          "street": "Wipplingerstraße"
-        },
-        {
-          "id": "node/13192267039",
-          "lat": 48.212631,
-          "lon": 16.376252,
-          "street": "Freda-Meissner-Blau-Promenade"
-        },
-        {
-          "id": "node/4187164272",
-          "lat": 48.207934,
-          "lon": 16.381016,
-          "street": "Stubenring"
-        },
-        {
-          "id": "node/8063881023",
-          "lat": 48.211841,
-          "lon": 16.37868,
-          "street": "Wolfgang-Schmitz-Promenade"
-        },
-        {
-          "id": "node/10204215860",
-          "lat": 48.2127,
-          "lon": 16.368475,
-          "street": "Tiefer Graben"
-        },
-        {
-          "id": "node/4858599382",
-          "lat": 48.213718,
-          "lon": 16.369971,
-          "street": "Concordiaplatz"
-        },
-        {
-          "id": "node/415250736",
-          "lat": 48.213552,
-          "lon": 16.378293,
-          "street": "Gredlerstraße"
-        },
-        {
-          "id": "node/5253160525",
-          "lat": 48.205553,
-          "lon": 16.382151,
-          "street": "Kleine Ungarbrücke"
-        },
-        {
-          "id": "node/5555098454",
-          "lat": 48.205784,
-          "lon": 16.382328,
-          "street": "Am Stadtpark"
-        },
-        {
-          "id": "node/582907884",
-          "lat": 48.213802,
-          "lon": 16.368917,
-          "street": "Renngasse"
-        },
-        {
-          "id": "node/3358581548",
-          "lat": 48.214852,
-          "lon": 16.375835,
-          "street": "Hollandstraße"
-        },
-        {
-          "id": "node/9704694622",
-          "lat": 48.212847,
-          "lon": 16.381524,
-          "street": "Ferdinandstraße"
-        },
-        {
-          "id": "node/2538461803",
-          "lat": 48.201536,
-          "lon": 16.369347,
-          "street": "Kärntnertorpassage"
-        },
-        {
-          "id": "node/3448718056",
-          "lat": 48.215012,
-          "lon": 16.367526,
-          "street": "Börsegasse"
-        },
-        {
-          "id": "node/4787269027",
-          "lat": 48.204129,
-          "lon": 16.384128,
-          "street": "Linke Bahngasse"
-        },
-        {
-          "id": "node/479272279",
-          "lat": 48.201187,
-          "lon": 16.367549,
-          "street": "Friedrichstraße"
-        },
-        {
-          "id": "node/9742038814",
-          "lat": 48.200737,
-          "lon": 16.378831,
-          "street": "Am Heumarkt"
-        },
-        {
-          "id": "node/3489171257",
-          "lat": 48.202509,
-          "lon": 16.364925,
-          "street": "Elisabethstraße"
-        },
-        {
-          "id": "node/3489171271",
-          "lat": 48.203591,
-          "lon": 16.363257,
-          "street": "Babenbergerstraße"
-        },
-        {
-          "id": "node/7563880601",
-          "lat": 48.199547,
-          "lon": 16.373606,
-          "street": "Maderstraße"
-        },
-        {
-          "id": "node/956080238",
-          "lat": 48.201988,
-          "lon": 16.383071,
-          "street": "Reisnerstraße"
-        },
-        {
-          "id": "node/5709161126",
-          "lat": 48.212873,
-          "lon": 16.362631,
-          "street": "Mölker Bastei"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:40.383Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 32,
+        "partlyStepFree": 7
+      },
+      "updatedAt": "2026-09-11T10:29:21.135Z"
     },
     "luggage-storage": {
       "count": 6,
@@ -2606,7 +2794,13 @@
           "lon": 16.393507
         }
       ],
-      "updatedAt": "2026-09-03T16:57:43.584Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-11T10:29:22.679Z"
     },
     "camp-sites": {
       "count": 1,
@@ -3120,9 +3314,123 @@
           "name": "Leopold-Pröll-Ruhe",
           "lat": 48.275925,
           "lon": 16.354273
+        },
+        {
+          "id": "node/8928805484",
+          "lat": 48.2081,
+          "lon": 16.372807,
+          "street": "Stephansplatz"
+        },
+        {
+          "id": "node/9108202119",
+          "lat": 48.209327,
+          "lon": 16.373219,
+          "street": "Rotenturmstraße"
+        },
+        {
+          "id": "node/12370122198",
+          "lat": 48.209809,
+          "lon": 16.373638,
+          "street": "Ertlgasse"
+        },
+        {
+          "id": "node/12956997564",
+          "lat": 48.207032,
+          "lon": 16.372064,
+          "street": "Weihburggasse"
+        },
+        {
+          "id": "node/13022803409",
+          "lat": 48.209774,
+          "lon": 16.374911,
+          "street": "Lugeck"
+        },
+        {
+          "id": "node/13062094479",
+          "lat": 48.207001,
+          "lon": 16.371569,
+          "street": "Kärntner Straße"
+        },
+        {
+          "id": "node/12821278519",
+          "lat": 48.209282,
+          "lon": 16.370955,
+          "street": "Bauernmarkt"
+        },
+        {
+          "id": "node/12957085353",
+          "lat": 48.208106,
+          "lon": 16.377436,
+          "street": "Wollzeile"
+        },
+        {
+          "id": "node/3666488123",
+          "lat": 48.210723,
+          "lon": 16.37324,
+          "street": "Hoher Markt"
+        },
+        {
+          "id": "node/13022804623",
+          "lat": 48.208618,
+          "lon": 16.377675,
+          "street": "Bäckerstraße"
+        },
+        {
+          "id": "node/12821290006",
+          "lat": 48.209551,
+          "lon": 16.370376,
+          "street": "Petersplatz"
+        },
+        {
+          "id": "node/9952998889",
+          "lat": 48.206181,
+          "lon": 16.376481,
+          "street": "Singerstraße"
+        },
+        {
+          "id": "node/9952998887",
+          "lat": 48.206137,
+          "lon": 16.376504,
+          "street": "Seilerstätte"
+        },
+        {
+          "id": "node/13144053468",
+          "lat": 48.21096,
+          "lon": 16.375175,
+          "street": "Fleischmarkt"
+        },
+        {
+          "id": "node/5272748947",
+          "lat": 48.20914,
+          "lon": 16.369603,
+          "street": "Jungferngasse"
+        },
+        {
+          "id": "node/12884526878",
+          "lat": 48.206733,
+          "lon": 16.378172,
+          "street": "Stubenbastei"
+        },
+        {
+          "id": "node/9812237604",
+          "lat": 48.211281,
+          "lon": 16.375786,
+          "street": "Steyrerhof"
+        },
+        {
+          "id": "node/12821326753",
+          "lat": 48.209434,
+          "lon": 16.368736,
+          "street": "Tuchlauben"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:54.177Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:24.721Z"
     },
     "compressed-air": {
       "count": 0,

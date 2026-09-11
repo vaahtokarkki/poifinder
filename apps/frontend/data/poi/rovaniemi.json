@@ -1,6 +1,6 @@
 {
   "city": "rovaniemi",
-  "generatedAt": "2026-09-03T16:41:22.001Z",
+  "generatedAt": "2026-09-11T10:27:35.790Z",
   "categories": {
     "toilets": {
       "count": 23,
@@ -62,12 +62,24 @@
           "context": "Joulupukkin Lahjatalo"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:04.548Z"
+      "stats": {
+        "free": 8,
+        "paid": 2,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:27:32.002Z"
     },
     "drinking-water": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:41:05.280Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:32.590Z"
     },
     "playgrounds": {
       "count": 39,
@@ -586,7 +598,13 @@
           "lon": 25.714783
         }
       ],
-      "updatedAt": "2026-09-03T16:41:11.420Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:33.045Z"
     },
     "post-boxes": {
       "count": 11,
@@ -652,24 +670,6 @@
           "lon": 25.711792
         },
         {
-          "id": "node/8245115712",
-          "lat": 66.497888,
-          "lon": 25.754736,
-          "street": "Erkkilänkuja"
-        },
-        {
-          "id": "node/706910977",
-          "lat": 66.509785,
-          "lon": 25.767562,
-          "street": "Pieskätie"
-        },
-        {
-          "id": "node/448737557",
-          "lat": 66.493872,
-          "lon": 25.764413,
-          "street": "Porokatu"
-        },
-        {
           "id": "node/1929594412",
           "name": "Kierrätyspiste Saarenkylä",
           "lat": 66.517334,
@@ -688,6 +688,31 @@
           "lat": 66.492364,
           "lon": 25.683483,
           "openingHours": "24/7"
+        },
+        {
+          "id": "node/9456006182",
+          "name": "Mäntyvaaran kaatopaikka",
+          "lat": 66.522584,
+          "lon": 25.607321,
+          "openingHours": "suljettu"
+        },
+        {
+          "id": "node/8245115712",
+          "lat": 66.497888,
+          "lon": 25.754736,
+          "street": "Erkkilänkuja"
+        },
+        {
+          "id": "node/706910977",
+          "lat": 66.509785,
+          "lon": 25.767562,
+          "street": "Pieskätie"
+        },
+        {
+          "id": "node/448737557",
+          "lat": 66.493872,
+          "lon": 25.764413,
+          "street": "Porokatu"
         },
         {
           "id": "node/1438528242",
@@ -720,16 +745,15 @@
           "lon": 25.824618,
           "openingHours": "24/7",
           "street": "Tikanperä"
-        },
-        {
-          "id": "node/9456006182",
-          "name": "Mäntyvaaran kaatopaikka",
-          "lat": 66.522584,
-          "lon": 25.607321,
-          "openingHours": "suljettu"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:13.810Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:34.110Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -773,7 +797,13 @@
     "outdoor-gyms": {
       "count": 9,
       "pois": [],
-      "updatedAt": "2026-09-03T16:41:15.481Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:34.883Z"
     },
     "camp-sites": {
       "count": 6,
@@ -960,8 +990,75 @@
     },
     "benches": {
       "count": 66,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:41:21.901Z"
+      "pois": [
+        {
+          "id": "node/12149153021",
+          "lat": 66.504663,
+          "lon": 25.721893,
+          "street": "Koskikatu"
+        },
+        {
+          "id": "node/6684865885",
+          "lat": 66.502954,
+          "lon": 25.738206,
+          "street": "Pohjanpuistikko"
+        },
+        {
+          "id": "node/6685107085",
+          "lat": 66.502495,
+          "lon": 25.738732,
+          "street": "Koskenranta"
+        },
+        {
+          "id": "node/14018497166",
+          "lat": 66.49745,
+          "lon": 25.722995,
+          "street": "Hallituskatu"
+        },
+        {
+          "id": "node/14018496663",
+          "lat": 66.497043,
+          "lon": 25.722365,
+          "street": "Kansankatu"
+        },
+        {
+          "id": "node/14018507362",
+          "lat": 66.495059,
+          "lon": 25.734283,
+          "street": "Jyrhämänranta"
+        },
+        {
+          "id": "node/12983629195",
+          "lat": 66.501499,
+          "lon": 25.751756,
+          "street": "Ounasvaaran kuntoportaat"
+        },
+        {
+          "id": "node/12040214540",
+          "lat": 66.517307,
+          "lon": 25.734609,
+          "street": "Koivusaaren luontopolku"
+        },
+        {
+          "id": "node/9783833348",
+          "lat": 66.497665,
+          "lon": 25.782388,
+          "street": "Hiihtomajantie"
+        },
+        {
+          "id": "node/6653564180",
+          "lat": 66.50276,
+          "lon": 25.796853,
+          "street": "luontopolku"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:35.689Z"
     }
   }
 }

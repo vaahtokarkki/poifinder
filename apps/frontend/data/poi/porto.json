@@ -1,6 +1,6 @@
 {
   "city": "porto",
-  "generatedAt": "2026-09-03T17:19:52.017Z",
+  "generatedAt": "2026-09-11T10:31:48.081Z",
   "categories": {
     "toilets": {
       "count": 334,
@@ -231,7 +231,13 @@
           "context": "Coreto de Basílio Teles"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:28.767Z"
+      "stats": {
+        "free": 182,
+        "paid": 15,
+        "stepFree": 44,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:31:41.664Z"
     },
     "drinking-water": {
       "count": 191,
@@ -446,7 +452,13 @@
           "address": "Travessa de São Sebastião s/n"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:30.730Z"
+      "stats": {
+        "free": 46,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 7
+      },
+      "updatedAt": "2026-09-11T10:31:43.860Z"
     },
     "playgrounds": {
       "count": 251,
@@ -2021,7 +2033,13 @@
           "lon": -8.583043
         }
       ],
-      "updatedAt": "2026-09-03T17:19:38.334Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 13,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:31:44.388Z"
     },
     "post-boxes": {
       "count": 64,
@@ -2217,28 +2235,10 @@
       "count": 2099,
       "pois": [
         {
-          "id": "node/5494274798",
-          "lat": 41.157574,
-          "lon": -8.627522,
-          "street": "Avenida da Boavista"
-        },
-        {
           "id": "node/13722147636",
           "name": "SPAR Cernache do Bonjardim",
           "lat": 41.159653,
           "lon": -8.628498
-        },
-        {
-          "id": "node/11443699457",
-          "lat": 41.156213,
-          "lon": -8.628006,
-          "street": "Rua de Júlio Dinis"
-        },
-        {
-          "id": "node/14133093414",
-          "lat": 41.15599,
-          "lon": -8.63093,
-          "street": "Rua de Agramonte"
         },
         {
           "id": "node/13722148025",
@@ -2259,34 +2259,10 @@
           "lon": -8.629779
         },
         {
-          "id": "node/9484282306",
-          "lat": 41.157577,
-          "lon": -8.623652,
-          "street": "Rua Doutor Emílio Peres"
-        },
-        {
           "id": "node/13720660665",
           "name": "Mercadona Porto (Domingos Sequeira)",
           "lat": 41.16236,
           "lon": -8.629177
-        },
-        {
-          "id": "node/9864968017",
-          "lat": 41.161157,
-          "lon": -8.624785,
-          "street": "Rua de Oliveira Monteiro"
-        },
-        {
-          "id": "node/9864967718",
-          "lat": 41.161012,
-          "lon": -8.624351,
-          "street": "Rua Doutor Mário de Vasconcelos e Sá"
-        },
-        {
-          "id": "node/9474219162",
-          "lat": 41.160159,
-          "lon": -8.634905,
-          "street": "Rua Fernandes Costa"
         },
         {
           "id": "node/13722059199",
@@ -2295,109 +2271,159 @@
           "lon": -8.63271
         },
         {
-          "id": "node/9454200968",
-          "lat": 41.162358,
-          "lon": -8.632745,
-          "street": "Rua de Cinco de Outubro"
-        },
-        {
-          "id": "node/8635769124",
-          "lat": 41.152777,
-          "lon": -8.630565,
-          "street": "Rua do Arquitecto Marques da Silva"
-        },
-        {
-          "id": "node/8681152654",
-          "lat": 41.152634,
-          "lon": -8.628677,
-          "street": "Rua do Bom Sucesso"
-        },
-        {
-          "id": "node/9028963344",
-          "lat": 41.15874,
-          "lon": -8.636042,
-          "street": "Rua Guerra Junqueiro"
-        },
-        {
-          "id": "node/4026900205",
-          "lat": 41.159839,
-          "lon": -8.635933,
-          "street": "Rua João de Deus"
-        },
-        {
           "id": "node/13720660384",
           "name": "Auchan PROX Porto (Boavista)",
           "lat": 41.15676,
           "lon": -8.62168
         },
         {
-          "id": "node/9495664522",
-          "lat": 41.162406,
-          "lon": -8.634023,
-          "street": "Rua das Artes Gráficas"
+          "id": "node/13720660516",
+          "name": "Auchan PROX Campo Alegre (Porto)",
+          "lat": 41.1529,
+          "lon": -8.6372
         },
         {
-          "id": "node/9474213856",
-          "lat": 41.161544,
-          "lon": -8.635227,
-          "street": "Rua de Augusto Gil"
+          "id": "node/13720660766",
+          "name": "Pingo Doce Graham",
+          "lat": 41.15953,
+          "lon": -8.63955
         },
         {
-          "id": "node/11443699389",
-          "lat": 41.153047,
-          "lon": -8.624314,
-          "street": "Rua do Padre Cruz"
+          "id": "node/13720660827",
+          "name": "Pingo Doce Boavista",
+          "lat": 41.15953,
+          "lon": -8.63955
         },
         {
-          "id": "node/2684618690",
-          "lat": 41.151984,
-          "lon": -8.626961,
-          "street": "Praça da Galiza"
+          "id": "node/13722147335",
+          "name": "Continente Bom Dia Serpa Pinto (Porto)",
+          "lat": 41.163049,
+          "lon": -8.620769
         },
         {
-          "id": "node/11443699385",
-          "lat": 41.153642,
-          "lon": -8.623204,
-          "street": "Rua do Instituto de Cegos de São Manuel"
+          "id": "node/13722147413",
+          "name": "Continente Bom Dia Prelada",
+          "lat": 41.166935,
+          "lon": -8.626417
         },
         {
-          "id": "node/8643627226",
-          "lat": 41.152458,
-          "lon": -8.63342,
-          "street": "Travessa da Boa Viagem"
+          "id": "node/13720660419",
+          "name": "Auchan PROX Praça do Exército Libertador",
+          "lat": 41.16662,
+          "lon": -8.62494
         },
         {
-          "id": "node/12452952825",
-          "lat": 41.159254,
-          "lon": -8.620486,
-          "street": "Rua da Infanta Dona Maria"
+          "id": "node/13720660370",
+          "name": "Auchan PROX Rua Venezuela (Porto)",
+          "lat": 41.15739,
+          "lon": -8.64162
         },
         {
-          "id": "node/11127377109",
-          "lat": 41.151173,
-          "lon": -8.629103,
-          "street": "Rua Dom Pedro V"
+          "id": "node/13720660834",
+          "name": "Pingo Doce Cedofeita",
+          "lat": 41.1529,
+          "lon": -8.6183
         },
         {
-          "id": "node/9563477298",
-          "lat": 41.164726,
-          "lon": -8.627615,
-          "street": "Rua da Constituição"
+          "id": "node/13720660392",
+          "name": "Auchan PROX Porto (Miguel Bombarda)",
+          "lat": 41.14965,
+          "lon": -8.62058
         },
         {
-          "id": "node/12139419791",
-          "lat": 41.163145,
-          "lon": -8.622954,
-          "street": "Rua de Egas Moniz"
+          "id": "node/13722147403",
+          "name": "Continente Bom Dia Massarelos",
+          "lat": 41.148378,
+          "lon": -8.635422
         },
         {
-          "id": "node/9585742563",
-          "lat": 41.161369,
-          "lon": -8.620888,
-          "street": "Rua de Brito Capelo"
+          "id": "node/13722146762",
+          "name": "Pingo Doce Serpa Pinto",
+          "lat": 41.16674,
+          "lon": -8.620259
+        },
+        {
+          "id": "node/13720660813",
+          "name": "Pingo Doce Constituição",
+          "lat": 41.16241,
+          "lon": -8.61557
+        },
+        {
+          "id": "node/13720660706",
+          "name": "Pingo Doce Praça da República",
+          "lat": 41.1537,
+          "lon": -8.6134
+        },
+        {
+          "id": "node/13722059198",
+          "name": "Auchan Porto (Cedofeita)",
+          "lat": 41.14948,
+          "lon": -8.61644
+        },
+        {
+          "id": "node/13722147445",
+          "name": "Continente Bom Dia Via Rápida",
+          "lat": 41.155395,
+          "lon": -8.645813
+        },
+        {
+          "id": "node/13722147311",
+          "name": "Continente Bom Dia Ramalde",
+          "lat": 41.169937,
+          "lon": -8.635193
+        },
+        {
+          "id": "node/13722059190",
+          "name": "Auchan Porto (Camões)",
+          "lat": 41.15312,
+          "lon": -8.61007
+        },
+        {
+          "id": "node/13722146610",
+          "name": "Auchan PROX MA Porto (R. Jorge)",
+          "lat": 41.15038,
+          "lon": -8.61154
+        },
+        {
+          "id": "node/13722147330",
+          "name": "Continente Bom Dia Vale Formoso",
+          "lat": 41.167563,
+          "lon": -8.613013
+        },
+        {
+          "id": "way/132852738",
+          "name": "Ecocentro da Prelada",
+          "lat": 41.173833,
+          "lon": -8.625096,
+          "address": "Rua do Engenheiro Nuno de Meireles",
+          "openingHours": "Mo-Sa 08:30-20:00"
+        },
+        {
+          "id": "node/13722147115",
+          "name": "ALDI Ramalde",
+          "lat": 41.169703,
+          "lon": -8.644356
+        },
+        {
+          "id": "node/13722146665",
+          "name": "Pingo Doce Prelada",
+          "lat": 41.17269,
+          "lon": -8.639046
+        },
+        {
+          "id": "node/13722146643",
+          "name": "Pingo Doce Ramalde (S. João de Brito)",
+          "lat": 41.16669,
+          "lon": -8.648595
         }
       ],
-      "updatedAt": "2026-09-03T17:19:42.642Z"
+      "stats": {
+        "free": 251,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:45.933Z"
     },
     "luggage-storage": {
       "count": 6,
@@ -2605,7 +2631,13 @@
           "lon": -8.64605
         }
       ],
-      "updatedAt": "2026-09-03T17:19:45.048Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:31:46.778Z"
     },
     "camp-sites": {
       "count": 7,
@@ -2915,9 +2947,105 @@
           "name": "Bench.",
           "lat": 41.177332,
           "lon": -8.598278
+        },
+        {
+          "id": "node/9895926420",
+          "lat": 41.157844,
+          "lon": -8.630058,
+          "street": "Praça de Mouzinho de Alburquerque"
+        },
+        {
+          "id": "node/12509508532",
+          "lat": 41.15462,
+          "lon": -8.623794,
+          "street": "Rua do Instituto de Cegos de São Manuel"
+        },
+        {
+          "id": "node/2684621257",
+          "lat": 41.152394,
+          "lon": -8.626585,
+          "street": "Praça da Galiza"
+        },
+        {
+          "id": "node/12610221994",
+          "lat": 41.152975,
+          "lon": -8.624487,
+          "street": "Largo de Alexandre Sá Pinto"
+        },
+        {
+          "id": "node/12610270511",
+          "lat": 41.15302,
+          "lon": -8.624339,
+          "street": "Rua do Padre Cruz"
+        },
+        {
+          "id": "node/12610270507",
+          "lat": 41.152895,
+          "lon": -8.624359,
+          "street": "Rua da Piedade"
+        },
+        {
+          "id": "node/2682935562",
+          "lat": 41.151824,
+          "lon": -8.626661,
+          "street": "Via Particular"
+        },
+        {
+          "id": "node/2682935592",
+          "lat": 41.151424,
+          "lon": -8.626049,
+          "street": "Rua de Júlio Dinis"
+        },
+        {
+          "id": "node/9135299916",
+          "lat": 41.164314,
+          "lon": -8.633938,
+          "street": "Rua da Travagem"
+        },
+        {
+          "id": "node/13647955581",
+          "lat": 41.148618,
+          "lon": -8.628018,
+          "street": "Rua do Abade de Faria"
+        },
+        {
+          "id": "node/2531020485",
+          "lat": 41.148326,
+          "lon": -8.626329,
+          "street": "Avenida das Tílias"
+        },
+        {
+          "id": "node/14133139592",
+          "lat": 41.148452,
+          "lon": -8.625601,
+          "street": "Rua de Dom Manuel II"
+        },
+        {
+          "id": "node/2519231766",
+          "lat": 41.14685,
+          "lon": -8.627815,
+          "street": "Avenida dos Castanheiros da Índia"
+        },
+        {
+          "id": "node/9886065520",
+          "lat": 41.150778,
+          "lon": -8.640799,
+          "street": "Rua do Professor Carlos Alberto Ferreira de Almeida"
+        },
+        {
+          "id": "node/2519021792",
+          "lat": 41.146609,
+          "lon": -8.62485,
+          "street": "Rua de Jorge Viterbo Ferreira"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:51.915Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:47.980Z"
     },
     "compressed-air": {
       "count": 1,

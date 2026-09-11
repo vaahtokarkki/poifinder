@@ -1,6 +1,6 @@
 {
   "city": "hobart",
-  "generatedAt": "2026-09-03T17:39:51.250Z",
+  "generatedAt": "2026-09-11T10:33:36.172Z",
   "categories": {
     "toilets": {
       "count": 117,
@@ -205,7 +205,13 @@
           "context": "Visitor Centre"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:31.594Z"
+      "stats": {
+        "free": 49,
+        "paid": 0,
+        "stepFree": 34,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:33:31.326Z"
     },
     "drinking-water": {
       "count": 36,
@@ -215,9 +221,145 @@
           "name": "water tap",
           "lat": -42.882059,
           "lon": 147.313138
+        },
+        {
+          "id": "node/10278256270",
+          "lat": -42.881878,
+          "lon": 147.328374,
+          "wheelchair": "limited",
+          "fee": "no",
+          "street": "Elizabeth Mall"
+        },
+        {
+          "id": "node/7834179048",
+          "lat": -42.881513,
+          "lon": 147.324931,
+          "street": "Mathers Lane"
+        },
+        {
+          "id": "node/12324848271",
+          "lat": -42.884915,
+          "lon": 147.330023,
+          "street": "Murray Street"
+        },
+        {
+          "id": "node/6454299887",
+          "lat": -42.886269,
+          "lon": 147.3279,
+          "street": "Sandy Bay Road"
+        },
+        {
+          "id": "node/4797975623",
+          "lat": -42.88653,
+          "lon": 147.332116,
+          "street": "Salamanca Place"
+        },
+        {
+          "id": "node/4029249945",
+          "lat": -42.886504,
+          "lon": 147.334117,
+          "street": "Castray Esplanade"
+        },
+        {
+          "id": "node/13418270170",
+          "lat": -42.878008,
+          "lon": 147.31942,
+          "fee": "no",
+          "street": "Elizabeth Street"
+        },
+        {
+          "id": "node/6281956116",
+          "lat": -42.874992,
+          "lon": 147.335095,
+          "street": "Intercity Cycleway"
+        },
+        {
+          "id": "node/13418270171",
+          "lat": -42.872562,
+          "lon": 147.319743,
+          "fee": "no",
+          "street": "Alberry Avenue"
+        },
+        {
+          "id": "node/6938711432",
+          "lat": -42.877135,
+          "lon": 147.312843,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Lochner Street"
+        },
+        {
+          "id": "node/10276721383",
+          "lat": -42.891548,
+          "lon": 147.315571,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Hobart Rivulet Track"
+        },
+        {
+          "id": "node/12718308584",
+          "lat": -42.864852,
+          "lon": 147.354801,
+          "fee": "no",
+          "street": "Clarence Foreshore Trail"
+        },
+        {
+          "id": "node/13418270174",
+          "lat": -42.860265,
+          "lon": 147.300507,
+          "fee": "no",
+          "street": "Carlton Street"
+        },
+        {
+          "id": "node/13418270172",
+          "lat": -42.853366,
+          "lon": 147.319143,
+          "fee": "no",
+          "street": "Queens Walk"
+        },
+        {
+          "id": "node/12681624369",
+          "lat": -42.87148,
+          "lon": 147.369003,
+          "fee": "no",
+          "street": "Kangaroo Bay Drive"
+        },
+        {
+          "id": "node/12681624367",
+          "lat": -42.878633,
+          "lon": 147.371636,
+          "fee": "no",
+          "street": "Belleirve connector"
+        },
+        {
+          "id": "node/13418270173",
+          "lat": -42.845544,
+          "lon": 147.300747,
+          "fee": "no",
+          "street": "Hopkins Street"
+        },
+        {
+          "id": "node/12485768996",
+          "lat": -42.915473,
+          "lon": 147.248652,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Pinnacle Road"
+        },
+        {
+          "id": "node/12628266505",
+          "lat": -42.922078,
+          "lon": 147.252549,
+          "street": "Pipeline Track"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:33.008Z"
+      "stats": {
+        "free": 17,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:33:32.773Z"
     },
     "playgrounds": {
       "count": 131,
@@ -906,7 +1048,13 @@
           "lon": 147.332248
         }
       ],
-      "updatedAt": "2026-09-03T17:39:39.681Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:33.353Z"
     },
     "post-boxes": {
       "count": 69,
@@ -1098,28 +1246,10 @@
       "count": 44,
       "pois": [
         {
-          "id": "node/13898094970",
-          "lat": -42.875945,
-          "lon": 147.333055,
-          "street": "Davies Avenue"
-        },
-        {
-          "id": "node/12324858639",
-          "lat": -42.887408,
-          "lon": 147.337311,
-          "street": "Salamanca Place"
-        },
-        {
           "id": "node/4691682190",
           "name": "Lifeline Charity Donation Bin",
           "lat": -42.895005,
           "lon": 147.327721
-        },
-        {
-          "id": "node/13864228053",
-          "lat": -42.867348,
-          "lon": 147.322799,
-          "street": "Soldiers Memorial Avenue"
         },
         {
           "id": "node/8653867102",
@@ -1260,6 +1390,24 @@
           "lon": 147.289282
         },
         {
+          "id": "node/13898094970",
+          "lat": -42.875945,
+          "lon": 147.333055,
+          "street": "Davies Avenue"
+        },
+        {
+          "id": "node/12324858639",
+          "lat": -42.887408,
+          "lon": 147.337311,
+          "street": "Salamanca Place"
+        },
+        {
+          "id": "node/13864228053",
+          "lat": -42.867348,
+          "lon": 147.322799,
+          "street": "Soldiers Memorial Avenue"
+        },
+        {
           "id": "node/12765411022",
           "lat": -42.853665,
           "lon": 147.31943,
@@ -1278,7 +1426,13 @@
           "street": "Pinnacle Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:42.988Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:34.535Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1339,7 +1493,13 @@
           "lon": 147.335343
         }
       ],
-      "updatedAt": "2026-09-03T17:39:44.775Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:35.214Z"
     },
     "camp-sites": {
       "count": 3,
@@ -1670,8 +1830,123 @@
     },
     "benches": {
       "count": 193,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:39:51.149Z"
+      "pois": [
+        {
+          "id": "node/10278256255",
+          "lat": -42.881583,
+          "lon": 147.327677,
+          "street": "Elizabeth Mall"
+        },
+        {
+          "id": "node/10278231258",
+          "lat": -42.88122,
+          "lon": 147.327316,
+          "street": "Liverpool Street"
+        },
+        {
+          "id": "node/10273552369",
+          "lat": -42.882273,
+          "lon": 147.328589,
+          "street": "Collins Street"
+        },
+        {
+          "id": "node/10679862729",
+          "lat": -42.881526,
+          "lon": 147.324401,
+          "street": "Bathurst Street"
+        },
+        {
+          "id": "node/13307591362",
+          "lat": -42.884579,
+          "lon": 147.32661,
+          "street": "Victoria Street"
+        },
+        {
+          "id": "node/10679862743",
+          "lat": -42.881134,
+          "lon": 147.323634,
+          "street": "Melville Street"
+        },
+        {
+          "id": "node/10671948524",
+          "lat": -42.880663,
+          "lon": 147.332401,
+          "street": "Campbell Street"
+        },
+        {
+          "id": "node/10658237675",
+          "lat": -42.885256,
+          "lon": 147.331662,
+          "street": "Morrison Street"
+        },
+        {
+          "id": "node/13293606482",
+          "lat": -42.877074,
+          "lon": 147.330824,
+          "street": "Rose Garden path"
+        },
+        {
+          "id": "node/6824781886",
+          "lat": -42.888813,
+          "lon": 147.330362,
+          "street": "Sandy Bay Road"
+        },
+        {
+          "id": "node/13898118631",
+          "lat": -42.876314,
+          "lon": 147.332981,
+          "street": "Soldiers Memorial Avenue"
+        },
+        {
+          "id": "node/13898120431",
+          "lat": -42.875974,
+          "lon": 147.333129,
+          "street": "Bridge of Remembrance"
+        },
+        {
+          "id": "node/10276702153",
+          "lat": -42.888657,
+          "lon": 147.320969,
+          "street": "Hobart Rivulet Track"
+        },
+        {
+          "id": "node/2315762511",
+          "lat": -42.888965,
+          "lon": 147.334961,
+          "street": "Arthur Circus"
+        },
+        {
+          "id": "node/2316690709",
+          "lat": -42.891608,
+          "lon": 147.331758,
+          "street": "De Witt Street"
+        },
+        {
+          "id": "node/10276702164",
+          "lat": -42.889752,
+          "lon": 147.318239,
+          "street": "McKellar Street"
+        },
+        {
+          "id": "node/11693082148",
+          "lat": -42.889855,
+          "lon": 147.316492,
+          "street": "McKellar-Liverpool Steps"
+        },
+        {
+          "id": "node/13332906288",
+          "lat": -42.872436,
+          "lon": 147.319502,
+          "street": "Alberry Avenue"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:36.071Z"
     },
     "compressed-air": {
       "count": 0,

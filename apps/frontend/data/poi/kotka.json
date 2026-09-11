@@ -1,6 +1,6 @@
 {
   "city": "kotka",
-  "generatedAt": "2026-09-03T16:42:58.313Z",
+  "generatedAt": "2026-09-11T10:27:44.909Z",
   "categories": {
     "toilets": {
       "count": 15,
@@ -13,12 +13,49 @@
           "context": "Kioski"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:41.062Z"
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:40.390Z"
     },
     "drinking-water": {
       "count": 5,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:42:42.293Z"
+      "pois": [
+        {
+          "id": "node/7813197836",
+          "lat": 60.465235,
+          "lon": 26.941398,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Mariankatu"
+        },
+        {
+          "id": "node/7813199465",
+          "lat": 60.458791,
+          "lon": 26.94717,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Meriniementie"
+        },
+        {
+          "id": "node/7893399848",
+          "lat": 60.477533,
+          "lon": 26.856508,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Pohjinmerentie"
+        }
+      ],
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:41.917Z"
     },
     "playgrounds": {
       "count": 39,
@@ -437,7 +474,13 @@
           "lon": 26.869142
         }
       ],
-      "updatedAt": "2026-09-03T16:42:48.977Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:42.365Z"
     },
     "post-boxes": {
       "count": 6,
@@ -473,18 +516,18 @@
       "count": 7,
       "pois": [
         {
-          "id": "node/9467936113",
-          "lat": 60.467817,
-          "lon": 26.981565,
-          "street": "Pitkänpohjanpolku"
-        },
-        {
           "id": "node/7453158549",
           "name": "Jumalniemen jäteasema",
           "lat": 60.50648,
           "lon": 26.923761,
           "address": "Uittoväylä 10",
           "openingHours": "Mo-Fr 08:00-20:00; Sa 09:00-15:00"
+        },
+        {
+          "id": "node/9467936113",
+          "lat": 60.467817,
+          "lon": 26.981565,
+          "street": "Pitkänpohjanpolku"
         },
         {
           "id": "node/3736034486",
@@ -499,7 +542,13 @@
           "street": "Tapiontie"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:51.190Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:43.506Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -545,7 +594,13 @@
     "outdoor-gyms": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T16:42:52.387Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:43.947Z"
     },
     "camp-sites": {
       "count": 2,
@@ -627,8 +682,105 @@
     },
     "benches": {
       "count": 121,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:42:58.213Z"
+      "pois": [
+        {
+          "id": "node/13140003870",
+          "lat": 60.46517,
+          "lon": 26.946048,
+          "street": "Isopuisto"
+        },
+        {
+          "id": "node/11516675547",
+          "lat": 60.466177,
+          "lon": 26.942511,
+          "street": "Ruotsinsalmenkatu"
+        },
+        {
+          "id": "node/11516675559",
+          "lat": 60.465558,
+          "lon": 26.942948,
+          "street": "Lehmusbulevardi"
+        },
+        {
+          "id": "node/11516675566",
+          "lat": 60.465151,
+          "lon": 26.941915,
+          "street": "Mariankatu"
+        },
+        {
+          "id": "node/3560908307",
+          "lat": 60.468084,
+          "lon": 26.940459,
+          "street": "Satamakatu"
+        },
+        {
+          "id": "node/13140029140",
+          "lat": 60.47143,
+          "lon": 26.945274,
+          "street": "Tornatorintie"
+        },
+        {
+          "id": "node/11516677807",
+          "lat": 60.46152,
+          "lon": 26.939236,
+          "street": "Keskustori"
+        },
+        {
+          "id": "node/13139989964",
+          "lat": 60.459788,
+          "lon": 26.948136,
+          "street": "Tallinnankatu"
+        },
+        {
+          "id": "node/13140034526",
+          "lat": 60.460398,
+          "lon": 26.938475,
+          "street": "Puistotie"
+        },
+        {
+          "id": "node/13140004981",
+          "lat": 60.459163,
+          "lon": 26.947056,
+          "street": "Meriniementie"
+        },
+        {
+          "id": "node/4946928524",
+          "lat": 60.458484,
+          "lon": 26.942201,
+          "street": "Tammikatu"
+        },
+        {
+          "id": "node/11482405533",
+          "lat": 60.457072,
+          "lon": 26.94989,
+          "street": "Katariinanpolku"
+        },
+        {
+          "id": "node/10685083061",
+          "lat": 60.458649,
+          "lon": 26.957768,
+          "street": "Juha Vainion katu"
+        },
+        {
+          "id": "node/8584188966",
+          "lat": 60.469505,
+          "lon": 26.923028,
+          "street": "Valkamakatu"
+        },
+        {
+          "id": "node/9559748839",
+          "lat": 60.477329,
+          "lon": 26.976335,
+          "street": "Hallantie"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:44.807Z"
     }
   }
 }

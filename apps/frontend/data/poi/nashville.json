@@ -1,6 +1,6 @@
 {
   "city": "nashville",
-  "generatedAt": "2026-09-03T17:32:00.528Z",
+  "generatedAt": "2026-09-11T10:33:03.983Z",
   "categories": {
     "toilets": {
       "count": 17,
@@ -18,12 +18,31 @@
           "context": "The Mall at Green Hills"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:43.168Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:59.287Z"
     },
     "drinking-water": {
       "count": 7,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:31:44.497Z"
+      "pois": [
+        {
+          "id": "node/13787359109",
+          "lat": 36.157609,
+          "lon": -86.784744,
+          "street": "Broadway"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:00.645Z"
     },
     "playgrounds": {
       "count": 83,
@@ -684,7 +703,13 @@
           "lon": -86.817348
         }
       ],
-      "updatedAt": "2026-09-03T17:31:50.990Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:01.139Z"
     },
     "post-boxes": {
       "count": 5,
@@ -721,6 +746,26 @@
       "count": 11,
       "pois": [
         {
+          "id": "way/753399164",
+          "name": "Omohundro Center | Residential Waste & Recycling Facility",
+          "lat": 36.155597,
+          "lon": -86.739164,
+          "address": "Omohundro Place 1019"
+        },
+        {
+          "id": "node/13285970122",
+          "name": "East Convenience Center",
+          "lat": 36.206209,
+          "lon": -86.746256,
+          "address": "Doctor Richard G Adams Drive 943"
+        },
+        {
+          "id": "way/753399167",
+          "name": "Living Earth",
+          "lat": 36.143285,
+          "lon": -86.719084
+        },
+        {
           "id": "node/12663628095",
           "lat": 36.161246,
           "lon": -86.778861,
@@ -743,29 +788,15 @@
           "lat": 36.155927,
           "lon": -86.739281,
           "street": "Freightliner Drive"
-        },
-        {
-          "id": "way/753399164",
-          "name": "Omohundro Center | Residential Waste & Recycling Facility",
-          "lat": 36.155597,
-          "lon": -86.739164,
-          "address": "Omohundro Place 1019"
-        },
-        {
-          "id": "node/13285970122",
-          "name": "East Convenience Center",
-          "lat": 36.206209,
-          "lon": -86.746256,
-          "address": "Doctor Richard G Adams Drive 943"
-        },
-        {
-          "id": "way/753399167",
-          "name": "Living Earth",
-          "lat": 36.143285,
-          "lon": -86.719084
         }
       ],
-      "updatedAt": "2026-09-03T17:31:53.419Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:02.370Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -924,7 +955,13 @@
     "outdoor-gyms": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:54.765Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:02.846Z"
     },
     "camp-sites": {
       "count": 0,
@@ -1133,8 +1170,81 @@
     },
     "benches": {
       "count": 132,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:32:00.428Z"
+      "pois": [
+        {
+          "id": "node/6066497031",
+          "lat": 36.162692,
+          "lon": -86.781728,
+          "street": "Church Street"
+        },
+        {
+          "id": "node/6066497032",
+          "lat": 36.162782,
+          "lon": -86.781812,
+          "street": "6th Avenue North"
+        },
+        {
+          "id": "node/6066497028",
+          "lat": 36.162737,
+          "lon": -86.781908,
+          "street": "Capitol Boulevard"
+        },
+        {
+          "id": "node/6106967357",
+          "lat": 36.157192,
+          "lon": -86.783655,
+          "street": "10th Avenue South"
+        },
+        {
+          "id": "node/11327525955",
+          "lat": 36.162365,
+          "lon": -86.77175,
+          "street": "John Seigenthaler Pedestrian Bridge"
+        },
+        {
+          "id": "node/12550035959",
+          "lat": 36.149492,
+          "lon": -86.80028,
+          "street": "Terrace Place"
+        },
+        {
+          "id": "node/6145489833",
+          "lat": 36.145498,
+          "lon": -86.767115,
+          "street": "4th Avenue South"
+        },
+        {
+          "id": "node/5844134063",
+          "lat": 36.142278,
+          "lon": -86.775412,
+          "street": "Chestnut Street"
+        },
+        {
+          "id": "node/7855185341",
+          "lat": 36.142911,
+          "lon": -86.768367,
+          "street": "Houston Street"
+        },
+        {
+          "id": "node/6641632921",
+          "lat": 36.153137,
+          "lon": -86.808109,
+          "street": "23rd Avenue North"
+        },
+        {
+          "id": "node/5706813426",
+          "lat": 36.139825,
+          "lon": -86.788996,
+          "street": "Horton Avenue"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:03.881Z"
     },
     "compressed-air": {
       "count": 0,

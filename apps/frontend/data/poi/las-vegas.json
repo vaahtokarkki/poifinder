@@ -1,6 +1,6 @@
 {
   "city": "las-vegas",
-  "generatedAt": "2026-09-03T17:32:20.326Z",
+  "generatedAt": "2026-09-11T10:32:54.991Z",
   "categories": {
     "toilets": {
       "count": 49,
@@ -80,7 +80,13 @@
           "context": "Bellagio"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:02.241Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:49.744Z"
     },
     "drinking-water": {
       "count": 22,
@@ -91,9 +97,39 @@
           "lat": 36.145553,
           "lon": -115.206372,
           "openingHours": "Mo-Sa 09:30-20:00; Su 11:00-19:00"
+        },
+        {
+          "id": "node/6759810493",
+          "lat": 36.159095,
+          "lon": -115.09783,
+          "street": "Pecos Street"
+        },
+        {
+          "id": "node/9238629712",
+          "lat": 36.151269,
+          "lon": -115.180542,
+          "street": "Bob Baskin Park fitness trail"
+        },
+        {
+          "id": "node/9400493860",
+          "lat": 36.203042,
+          "lon": -115.103753,
+          "street": "Lower Las Vegas Wash Trail"
+        },
+        {
+          "id": "node/9211175018",
+          "lat": 36.132225,
+          "lon": -115.203584,
+          "street": "Cameron Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:04.647Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:51.841Z"
     },
     "playgrounds": {
       "count": 42,
@@ -802,7 +838,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:11.189Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:52.430Z"
     },
     "post-boxes": {
       "count": 4,
@@ -858,7 +900,13 @@
           "lon": -115.144122
         }
       ],
-      "updatedAt": "2026-09-03T17:32:12.728Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:53.078Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -940,7 +988,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:14.520Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:32:53.846Z"
     },
     "camp-sites": {
       "count": 7,
@@ -1155,8 +1209,45 @@
     },
     "benches": {
       "count": 167,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:32:20.226Z"
+      "pois": [
+        {
+          "id": "node/9238637029",
+          "lat": 36.150548,
+          "lon": -115.180138,
+          "street": "Bob Baskin Park fitness trail"
+        },
+        {
+          "id": "node/8365397930",
+          "lat": 36.171223,
+          "lon": -115.188923,
+          "street": "Path to Boomtown"
+        },
+        {
+          "id": "node/12431517503",
+          "lat": 36.169739,
+          "lon": -115.189381,
+          "street": "Courtyard Plaza"
+        },
+        {
+          "id": "node/8362027304",
+          "lat": 36.180707,
+          "lon": -115.187645,
+          "street": "Pioneer Trail"
+        },
+        {
+          "id": "node/9408361890",
+          "lat": 36.194114,
+          "lon": -115.097284,
+          "street": "Lower Las Vegas Wash Trail"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:54.890Z"
     },
     "compressed-air": {
       "count": 0,

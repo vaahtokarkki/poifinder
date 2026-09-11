@@ -1,6 +1,6 @@
 {
   "city": "cape-town",
-  "generatedAt": "2026-09-03T17:48:41.629Z",
+  "generatedAt": "2026-09-11T10:34:35.396Z",
   "categories": {
     "toilets": {
       "count": 51,
@@ -39,7 +39,13 @@
           "context": "Plant Sales"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:23.471Z"
+      "stats": {
+        "free": 15,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:29.305Z"
     },
     "drinking-water": {
       "count": 27,
@@ -67,9 +73,46 @@
           "name": "Tap",
           "lat": -33.991151,
           "lon": 18.414344
+        },
+        {
+          "id": "node/4358975980",
+          "lat": -33.94231,
+          "lon": 18.394763,
+          "street": "Tafelberg Road"
+        },
+        {
+          "id": "node/5022920608",
+          "lat": -33.900884,
+          "lon": 18.400279,
+          "street": "Mouille Point Promenade"
+        },
+        {
+          "id": "node/13411049363",
+          "lat": -33.910803,
+          "lon": 18.389069,
+          "street": "Sea Point Promenade"
+        },
+        {
+          "id": "node/12020020127",
+          "lat": -33.989495,
+          "lon": 18.430602,
+          "fee": "no",
+          "street": "Tree Canopy Walkway"
+        },
+        {
+          "id": "node/10289181304",
+          "lat": -33.989497,
+          "lon": 18.433731,
+          "street": "Camphor Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:25.007Z"
+      "stats": {
+        "free": 8,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:30.774Z"
     },
     "playgrounds": {
       "count": 88,
@@ -853,7 +896,13 @@
           "openingHours": "Mo-Su 00:00-24:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:31.568Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 19,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-11T10:34:31.247Z"
     },
     "post-boxes": {
       "count": 19,
@@ -997,7 +1046,13 @@
           "street": "Molenvliet Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:34.408Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:32.598Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1132,7 +1187,13 @@
     "outdoor-gyms": {
       "count": 12,
       "pois": [],
-      "updatedAt": "2026-09-03T17:48:36.001Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:33.343Z"
     },
     "camp-sites": {
       "count": 1,
@@ -1293,9 +1354,129 @@
           "name": "Patricia Marie Porzig",
           "lat": -33.98896,
           "lon": 18.429594
+        },
+        {
+          "id": "node/2415449013",
+          "lat": -33.925437,
+          "lon": 18.419409,
+          "street": "Government Avenue"
+        },
+        {
+          "id": "node/6488786392",
+          "lat": -33.919655,
+          "lon": 18.428251,
+          "street": "D.F. Malan Street"
+        },
+        {
+          "id": "node/6488786393",
+          "lat": -33.919619,
+          "lon": 18.428283,
+          "street": "Hertzog Boulevard"
+        },
+        {
+          "id": "node/11778588261",
+          "lat": -33.908157,
+          "lon": 18.419957,
+          "street": "West Quay Road"
+        },
+        {
+          "id": "node/11778592078",
+          "lat": -33.907869,
+          "lon": 18.419988,
+          "street": "Bascule Bridge"
+        },
+        {
+          "id": "node/5203833448",
+          "lat": -33.916452,
+          "lon": 18.404496,
+          "street": "Signal Hill Drive"
+        },
+        {
+          "id": "node/7006218920",
+          "lat": -33.905922,
+          "lon": 18.421858,
+          "street": "Swing Bridge"
+        },
+        {
+          "id": "node/9095124400",
+          "lat": -33.931941,
+          "lon": 18.447094,
+          "street": "Golders Green Road"
+        },
+        {
+          "id": "node/9095124396",
+          "lat": -33.931822,
+          "lon": 18.447161,
+          "street": "Melbourne Road"
+        },
+        {
+          "id": "node/9508163768",
+          "lat": -33.935365,
+          "lon": 18.445763,
+          "street": "Chester Road"
+        },
+        {
+          "id": "node/9107468186",
+          "lat": -33.929248,
+          "lon": 18.4497,
+          "street": "Victoria Road"
+        },
+        {
+          "id": "node/9107468188",
+          "lat": -33.929126,
+          "lon": 18.449855,
+          "street": "Townhall Road"
+        },
+        {
+          "id": "node/9111494319",
+          "lat": -33.930445,
+          "lon": 18.45112,
+          "street": "Altona Grove"
+        },
+        {
+          "id": "node/9111494320",
+          "lat": -33.930851,
+          "lon": 18.45124,
+          "street": "Fairview Avenue"
+        },
+        {
+          "id": "node/11772360466",
+          "lat": -33.908218,
+          "lon": 18.398372,
+          "street": "Main Road"
+        },
+        {
+          "id": "node/11773409437",
+          "lat": -33.916467,
+          "lon": 18.39295,
+          "street": "High Level Road"
+        },
+        {
+          "id": "node/11773268866",
+          "lat": -33.912586,
+          "lon": 18.394727,
+          "street": "Cross Street"
+        },
+        {
+          "id": "node/11773337388",
+          "lat": -33.912539,
+          "lon": 18.394457,
+          "street": "Mount Nelson Road"
+        },
+        {
+          "id": "node/11773324059",
+          "lat": -33.910102,
+          "lon": 18.395633,
+          "street": "Hofmeyr Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:41.529Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:35.294Z"
     },
     "compressed-air": {
       "count": 0,

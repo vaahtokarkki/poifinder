@@ -1,6 +1,6 @@
 {
   "city": "frankfurt",
-  "generatedAt": "2026-09-03T16:56:07.423Z",
+  "generatedAt": "2026-09-11T10:29:11.810Z",
   "categories": {
     "toilets": {
       "count": 163,
@@ -236,7 +236,13 @@
           "context": "Sportpädagogik und Sportdidaktik, Zentrum für Hochschulsport, Bibliothek, Verwaltungsgebäude"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:35.443Z"
+      "stats": {
+        "free": 79,
+        "paid": 33,
+        "stepFree": 76,
+        "partlyStepFree": 12
+      },
+      "updatedAt": "2026-09-11T10:29:04.151Z"
     },
     "drinking-water": {
       "count": 37,
@@ -413,9 +419,50 @@
           "openingHours": "24/7",
           "wheelchair": "yes",
           "fee": "no"
+        },
+        {
+          "id": "node/11975338489",
+          "lat": 50.111003,
+          "lon": 8.681842,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Braubachstraße"
+        },
+        {
+          "id": "node/14042007741",
+          "lat": 50.129208,
+          "lon": 8.706453,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Im Prüfling"
+        },
+        {
+          "id": "node/485746399",
+          "lat": 50.154427,
+          "lon": 8.724464,
+          "street": "Berger Weg"
+        },
+        {
+          "id": "node/11966401274",
+          "lat": 50.103907,
+          "lon": 8.764437,
+          "street": "Marktplatz"
+        },
+        {
+          "id": "node/5471761553",
+          "lat": 50.040206,
+          "lon": 8.675489,
+          "street": "Sandschneise"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:37.341Z"
+      "stats": {
+        "free": 25,
+        "paid": 0,
+        "stepFree": 19,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:29:06.409Z"
     },
     "playgrounds": {
       "count": 681,
@@ -1811,14 +1858,6 @@
           "wheelchair": "yes"
         },
         {
-          "id": "node/443931970",
-          "name": "Frankfurter Sparkasse",
-          "lat": 50.12022,
-          "lon": 8.649229,
-          "openingHours": "\"Mo+Do 10-13+14-17.30, Di, Mi, Fr 10-13 + 14-16, SB-Service 5-24\"",
-          "wheelchair": "yes"
-        },
-        {
           "id": "node/4365882813",
           "name": "Deutsche Apotheker- und Ärztebank",
           "lat": 50.10265,
@@ -1879,9 +1918,23 @@
           "lon": 8.680454,
           "openingHours": "Mo 09:00-12:00; Th 14:00-17:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/4779393065",
+          "name": "Volksbank Dreieich SB-Filiale",
+          "lat": 50.053284,
+          "lon": 8.680433,
+          "openingHours": "24/7",
+          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:47.663Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 123,
+        "partlyStepFree": 9
+      },
+      "updatedAt": "2026-09-11T10:29:07.064Z"
     },
     "post-boxes": {
       "count": 472,
@@ -2074,8 +2127,95 @@
       "updatedAt": "2026-09-03T16:55:49.562Z"
     },
     "recycling": {
-      "count": 1036,
+      "count": 1050,
       "pois": [
+        {
+          "id": "way/47503257",
+          "name": "FES Wertstoffhof Süd",
+          "lat": 50.103294,
+          "lon": 8.696501,
+          "address": "Seehofstraße 48",
+          "openingHours": "Mo-Sa 08:00-14:30"
+        },
+        {
+          "id": "node/895800263",
+          "name": "FES Betriebsststätte Frankfurt-Bornheim (Wertstoffhof Ost)",
+          "lat": 50.132368,
+          "lon": 8.706033,
+          "address": "Weidenbornstraße 40",
+          "openingHours": "Mo-Sa 08:00-16:45"
+        },
+        {
+          "id": "way/461767339",
+          "name": "FES Frankfurter Entsorgungs- und Service GmbH",
+          "lat": 50.114486,
+          "lon": 8.727814
+        },
+        {
+          "id": "node/437004457",
+          "name": "FES Stützpunkt",
+          "lat": 50.122075,
+          "lon": 8.731449,
+          "address": "Riederspießstraße 3-5"
+        },
+        {
+          "id": "node/13671861201",
+          "name": "von Gries Recycling GmbH",
+          "lat": 50.136621,
+          "lon": 8.734334,
+          "address": "Flinschstraße 39",
+          "openingHours": "Mo-Th 07:15-16:15; Fr 07:30-14:30"
+        },
+        {
+          "id": "node/6787918010",
+          "name": "FES-Abfallumladeanlage",
+          "lat": 50.118952,
+          "lon": 8.747496,
+          "address": "Uhlfelderstraße 10",
+          "openingHours": "Sa 07:00-13:00"
+        },
+        {
+          "id": "node/5203473780",
+          "name": "Abfallverwertung",
+          "lat": 50.158393,
+          "lon": 8.665962
+        },
+        {
+          "id": "node/10242363251",
+          "name": "Kleider & schue sammlung",
+          "lat": 50.087742,
+          "lon": 8.754026
+        },
+        {
+          "id": "node/11482352319",
+          "name": "Recyclingzentrum Frankfurt",
+          "lat": 50.096116,
+          "lon": 8.593077,
+          "address": "Lärchenstraße 131",
+          "openingHours": "Mo-Th 08:00-17:00; Fr 08:00-14:30"
+        },
+        {
+          "id": "way/56381732",
+          "name": "Wertstoffhof",
+          "lat": 50.051938,
+          "lon": 8.71558,
+          "address": "Offenbacher Straße 174",
+          "openingHours": "Tu,Th 07:30-15:00; Apr-Oct: We 13:00-18:00; Nov-Mar: We 13:00-16:00; Sa 08:00-13:00; Mo,Fr,Su,PH off"
+        },
+        {
+          "id": "way/37190997",
+          "name": "FES Kofferraumservice",
+          "lat": 50.160041,
+          "lon": 8.745725,
+          "openingHours": "Apr-Sep: Mo-Sa 08:00-17:00; Oct-Mar: Mo-Sa 10:00-16:00"
+        },
+        {
+          "id": "node/1150730018",
+          "name": "ESO Wertstoffhof",
+          "lat": 50.102373,
+          "lon": 8.792678,
+          "openingHours": "Mo-Fr 08:30-17:00; Sa 08:30-14:00; Apr-Oct We,Fr 08:30-19:00"
+        },
         {
           "id": "node/567119980",
           "lat": 50.109919,
@@ -2187,82 +2327,15 @@
           "lat": 50.111089,
           "lon": 8.692599,
           "street": "Lange Straße"
-        },
-        {
-          "id": "node/331635338",
-          "lat": 50.113236,
-          "lon": 8.692483,
-          "wheelchair": "yes",
-          "street": "Allerheiligenstraße"
-        },
-        {
-          "id": "node/634220367",
-          "lat": 50.104036,
-          "lon": 8.678455,
-          "street": "Hans-Thoma-Straße"
-        },
-        {
-          "id": "node/1164098071",
-          "lat": 50.103475,
-          "lon": 8.679715,
-          "street": "Gartenstraße"
-        },
-        {
-          "id": "node/6343412465",
-          "lat": 50.110541,
-          "lon": 8.694261,
-          "street": "Ostendstraße"
-        },
-        {
-          "id": "node/3280386573",
-          "lat": 50.117148,
-          "lon": 8.689561,
-          "street": "Seilerstraße"
-        },
-        {
-          "id": "node/13653607021",
-          "lat": 50.118167,
-          "lon": 8.676545,
-          "street": "Bockenheimer Anlage"
-        },
-        {
-          "id": "node/5518309808",
-          "lat": 50.103369,
-          "lon": 8.686801,
-          "street": "Brückenstraße"
-        },
-        {
-          "id": "node/3425169742",
-          "lat": 50.118904,
-          "lon": 8.685144,
-          "street": "Petersstraße"
-        },
-        {
-          "id": "node/1901118678",
-          "lat": 50.119169,
-          "lon": 8.684144,
-          "street": "Unterweg"
-        },
-        {
-          "id": "node/533896518",
-          "lat": 50.104196,
-          "lon": 8.690214,
-          "street": "Paradiesgasse"
-        },
-        {
-          "id": "node/11260992665",
-          "lat": 50.119219,
-          "lon": 8.677975,
-          "street": "Fellnerstraße"
-        },
-        {
-          "id": "node/437334116",
-          "lat": 50.108258,
-          "lon": 8.668461,
-          "street": "Elbestraße"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:55.436Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 25,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:29:09.299Z"
     },
     "luggage-storage": {
       "count": 11,
@@ -2507,7 +2580,7 @@
       "updatedAt": "2026-09-03T16:55:56.510Z"
     },
     "outdoor-gyms": {
-      "count": 42,
+      "count": 43,
       "pois": [
         {
           "id": "node/6543248010",
@@ -2542,7 +2615,13 @@
           "lon": 8.712443
         }
       ],
-      "updatedAt": "2026-09-03T16:55:58.144Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:10.329Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2966,7 +3045,7 @@
       "updatedAt": "2026-08-17T04:03:29.203Z"
     },
     "benches": {
-      "count": 5394,
+      "count": 5431,
       "pois": [
         {
           "id": "node/14031784718",
@@ -2985,9 +3064,159 @@
           "name": "Ecki-Bank",
           "lat": 50.058592,
           "lon": 8.631566
+        },
+        {
+          "id": "node/10911907182",
+          "lat": 50.110933,
+          "lon": 8.682339,
+          "street": "Braubachstraße"
+        },
+        {
+          "id": "node/14057977842",
+          "lat": 50.110455,
+          "lon": 8.68217,
+          "street": "Römerberg"
+        },
+        {
+          "id": "node/11033850922",
+          "lat": 50.110604,
+          "lon": 8.68322,
+          "street": "Markt"
+        },
+        {
+          "id": "node/12877681138",
+          "lat": 50.110067,
+          "lon": 8.682387,
+          "street": "Saalgasse"
+        },
+        {
+          "id": "node/12877681120",
+          "lat": 50.110046,
+          "lon": 8.682224,
+          "street": "Bendergasse"
+        },
+        {
+          "id": "node/6504989053",
+          "lat": 50.111226,
+          "lon": 8.680239,
+          "street": "Barfüßergasse"
+        },
+        {
+          "id": "node/11033852508",
+          "lat": 50.110535,
+          "lon": 8.684889,
+          "street": "Krautmarkt"
+        },
+        {
+          "id": "node/13730470321",
+          "lat": 50.112491,
+          "lon": 8.684132,
+          "street": "Hasengasse"
+        },
+        {
+          "id": "node/13730435388",
+          "lat": 50.112606,
+          "lon": 8.684104,
+          "street": "An der Kleinmarkthalle"
+        },
+        {
+          "id": "node/13644527119",
+          "lat": 50.112602,
+          "lon": 8.679711,
+          "street": "Friedrich-Stoltze-Platz"
+        },
+        {
+          "id": "node/13730436827",
+          "lat": 50.111472,
+          "lon": 8.685966,
+          "street": "Hainer Hof"
+        },
+        {
+          "id": "node/13437502792",
+          "lat": 50.110133,
+          "lon": 8.678011,
+          "street": "Bethmannstraße"
+        },
+        {
+          "id": "node/12444396610",
+          "lat": 50.10755,
+          "lon": 8.683435,
+          "street": "Sachsenhäuser Ufer"
+        },
+        {
+          "id": "node/14070842307",
+          "lat": 50.114544,
+          "lon": 8.684358,
+          "street": "Zeil"
+        },
+        {
+          "id": "node/8951844950",
+          "lat": 50.113152,
+          "lon": 8.67666,
+          "street": "Roßmarkt"
+        },
+        {
+          "id": "node/8951844949",
+          "lat": 50.113157,
+          "lon": 8.676385,
+          "street": "Goetheplatz"
+        },
+        {
+          "id": "node/10584763409",
+          "lat": 50.11516,
+          "lon": 8.680883,
+          "street": "Thurn-und-Taxis-Platz"
+        },
+        {
+          "id": "node/3023422314",
+          "lat": 50.107802,
+          "lon": 8.677309,
+          "street": "Untermainkai"
+        },
+        {
+          "id": "node/11033790615",
+          "lat": 50.108002,
+          "lon": 8.688032,
+          "street": "Alte Brücke"
+        },
+        {
+          "id": "node/4116201308",
+          "lat": 50.114388,
+          "lon": 8.687785,
+          "street": "Konstablerwache"
+        },
+        {
+          "id": "node/13893606402",
+          "lat": 50.111824,
+          "lon": 8.673599,
+          "street": "Neue Schlesingergasse"
+        },
+        {
+          "id": "node/12855836120",
+          "lat": 50.116424,
+          "lon": 8.683497,
+          "street": "Stephanstraße"
+        },
+        {
+          "id": "node/11832296449",
+          "lat": 50.108966,
+          "lon": 8.672935,
+          "street": "Willy-Brandt-Platz"
+        },
+        {
+          "id": "node/2676850418",
+          "lat": 50.104875,
+          "lon": 8.684472,
+          "street": "Walter-Kolb-Straße"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:07.316Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:11.708Z"
     },
     "compressed-air": {
       "count": 10,

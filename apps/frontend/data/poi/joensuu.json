@@ -1,6 +1,6 @@
 {
   "city": "joensuu",
-  "generatedAt": "2026-09-03T16:40:24.213Z",
+  "generatedAt": "2026-09-11T10:27:08.688Z",
   "categories": {
     "toilets": {
       "count": 14,
@@ -45,12 +45,39 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:06.331Z"
+      "stats": {
+        "free": 4,
+        "paid": 2,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:03.059Z"
     },
     "drinking-water": {
       "count": 4,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:40:07.473Z"
+      "pois": [
+        {
+          "id": "node/12121680042",
+          "lat": 62.595362,
+          "lon": 29.760907,
+          "fee": "no",
+          "street": "Rantakatu"
+        },
+        {
+          "id": "node/9907913596",
+          "lat": 62.592405,
+          "lon": 29.740719,
+          "fee": "no",
+          "street": "Länsikatu"
+        }
+      ],
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:04.421Z"
     },
     "playgrounds": {
       "count": 99,
@@ -836,7 +863,13 @@
           "lon": 29.814157
         }
       ],
-      "updatedAt": "2026-09-03T16:40:13.456Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:27:04.953Z"
     },
     "post-boxes": {
       "count": 19,
@@ -944,48 +977,12 @@
           "context": "Metropol"
         },
         {
-          "id": "node/622957059",
-          "lat": 62.604705,
-          "lon": 29.76943,
-          "street": "Rantakatu"
-        },
-        {
           "id": "node/630932332",
           "name": "Uusiotori",
           "lat": 62.596741,
           "lon": 29.771182,
           "address": "Jokikatu 6",
           "openingHours": "Mo-Fr 07:00-18:00; Sa 07:00-15:00"
-        },
-        {
-          "id": "node/6802760711",
-          "lat": 62.608128,
-          "lon": 29.75157,
-          "street": "Ilveksenkatu"
-        },
-        {
-          "id": "node/256122007",
-          "lat": 62.603395,
-          "lon": 29.7432,
-          "street": "Uimarintie"
-        },
-        {
-          "id": "node/257319957",
-          "lat": 62.611714,
-          "lon": 29.754978,
-          "street": "Vanamokatu"
-        },
-        {
-          "id": "node/613088742",
-          "lat": 62.592758,
-          "lon": 29.785123,
-          "street": "Niinivaarantie"
-        },
-        {
-          "id": "node/765970988",
-          "lat": 62.589292,
-          "lon": 29.78757,
-          "street": "Suvikuja"
         },
         {
           "id": "node/5583168109",
@@ -996,29 +993,11 @@
           "openingHours": "Mo-Fr 09:00-16:00"
         },
         {
-          "id": "node/613378482",
-          "lat": 62.5909,
-          "lon": 29.798973,
-          "street": "Uukuniemenkatu"
-        },
-        {
           "id": "node/12078623839",
           "name": "Rinki-ekopiste",
           "lat": 62.580918,
           "lon": 29.770798,
           "address": "Mintunkatu 2"
-        },
-        {
-          "id": "node/613088720",
-          "lat": 62.584441,
-          "lon": 29.794226,
-          "street": "Hukanhaudantie"
-        },
-        {
-          "id": "node/797315573",
-          "lat": 62.597716,
-          "lon": 29.814345,
-          "street": "Nyyrikinkatu"
         },
         {
           "id": "node/613088762",
@@ -1056,6 +1035,60 @@
           "fee": "yes"
         },
         {
+          "id": "node/622957059",
+          "lat": 62.604705,
+          "lon": 29.76943,
+          "street": "Rantakatu"
+        },
+        {
+          "id": "node/6802760711",
+          "lat": 62.608128,
+          "lon": 29.75157,
+          "street": "Ilveksenkatu"
+        },
+        {
+          "id": "node/256122007",
+          "lat": 62.603395,
+          "lon": 29.7432,
+          "street": "Uimarintie"
+        },
+        {
+          "id": "node/257319957",
+          "lat": 62.611714,
+          "lon": 29.754978,
+          "street": "Vanamokatu"
+        },
+        {
+          "id": "node/613088742",
+          "lat": 62.592758,
+          "lon": 29.785123,
+          "street": "Niinivaarantie"
+        },
+        {
+          "id": "node/765970988",
+          "lat": 62.589292,
+          "lon": 29.78757,
+          "street": "Suvikuja"
+        },
+        {
+          "id": "node/613378482",
+          "lat": 62.5909,
+          "lon": 29.798973,
+          "street": "Uukuniemenkatu"
+        },
+        {
+          "id": "node/613088720",
+          "lat": 62.584441,
+          "lon": 29.794226,
+          "street": "Hukanhaudantie"
+        },
+        {
+          "id": "node/797315573",
+          "lat": 62.597716,
+          "lon": 29.814345,
+          "street": "Nyyrikinkatu"
+        },
+        {
           "id": "node/1024781722",
           "lat": 62.629644,
           "lon": 29.703088,
@@ -1075,7 +1108,13 @@
           "street": "Timpurintie"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:16.027Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:06.088Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1158,7 +1197,13 @@
           "lon": 29.750687
         }
       ],
-      "updatedAt": "2026-09-03T16:40:17.634Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:07.100Z"
     },
     "camp-sites": {
       "count": 3,
@@ -1281,9 +1326,69 @@
           "name": "Louhelan kenttä",
           "lat": 62.599118,
           "lon": 29.745315
+        },
+        {
+          "id": "node/6800049085",
+          "lat": 62.600744,
+          "lon": 29.763396,
+          "street": "Torikatu"
+        },
+        {
+          "id": "node/11070687147",
+          "lat": 62.600706,
+          "lon": 29.764134,
+          "street": "Siltakatu"
+        },
+        {
+          "id": "node/6908323655",
+          "lat": 62.600216,
+          "lon": 29.764319,
+          "street": "Rantakatu"
+        },
+        {
+          "id": "node/13240863118",
+          "lat": 62.59991,
+          "lon": 29.763364,
+          "street": "Koskikatu"
+        },
+        {
+          "id": "node/9670061004",
+          "lat": 62.601233,
+          "lon": 29.761266,
+          "street": "Kauppakatu"
+        },
+        {
+          "id": "node/6802759990",
+          "lat": 62.6008,
+          "lon": 29.760608,
+          "street": "Sininen virta"
+        },
+        {
+          "id": "node/6800049186",
+          "lat": 62.599284,
+          "lon": 29.763191,
+          "street": "Taitokortteli"
+        },
+        {
+          "id": "node/6802722994",
+          "lat": 62.6014,
+          "lon": 29.759705,
+          "street": "Kirkkokatu"
+        },
+        {
+          "id": "node/6800029297",
+          "lat": 62.597395,
+          "lon": 29.763588,
+          "street": "Matkustajasatama"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:24.112Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:08.586Z"
     }
   }
 }

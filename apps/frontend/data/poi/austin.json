@@ -1,6 +1,6 @@
 {
   "city": "austin",
-  "generatedAt": "2026-09-03T17:27:33.676Z",
+  "generatedAt": "2026-09-11T10:32:23.202Z",
   "categories": {
     "toilets": {
       "count": 71,
@@ -109,7 +109,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:27:12.442Z"
+      "stats": {
+        "free": 8,
+        "paid": 0,
+        "stepFree": 20,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:32:17.050Z"
     },
     "drinking-water": {
       "count": 158,
@@ -350,7 +356,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:27:14.412Z"
+      "stats": {
+        "free": 123,
+        "paid": 0,
+        "stepFree": 34,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:19.057Z"
     },
     "playgrounds": {
       "count": 142,
@@ -1424,7 +1436,13 @@
           "lon": -97.69659
         }
       ],
-      "updatedAt": "2026-09-03T17:27:21.468Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:19.525Z"
     },
     "post-boxes": {
       "count": 17,
@@ -1508,6 +1526,22 @@
       "count": 71,
       "pois": [
         {
+          "id": "node/11399466705",
+          "name": "iHaul Junk Austin",
+          "lat": 30.283298,
+          "lon": -97.741699,
+          "address": "Guadalupe Street 2021",
+          "openingHours": "Mo-Su 08:00-20:00"
+        },
+        {
+          "id": "way/1179813063",
+          "name": "Recycle & Reuse Drop-off Center",
+          "lat": 30.213433,
+          "lon": -97.737361,
+          "address": "Business Center Drive 2514",
+          "openingHours": "Mo-Sa 09:00-16:30; PH off; Su off"
+        },
+        {
           "id": "node/8997551770",
           "lat": 30.267492,
           "lon": -97.747557,
@@ -1566,14 +1600,6 @@
           "lat": 30.265735,
           "lon": -97.755712,
           "street": "Pfluger Pedestrian Bridge"
-        },
-        {
-          "id": "node/11399466705",
-          "name": "iHaul Junk Austin",
-          "lat": 30.283298,
-          "lon": -97.741699,
-          "address": "Guadalupe Street 2021",
-          "openingHours": "Mo-Su 08:00-20:00"
         },
         {
           "id": "node/13816337218",
@@ -1660,21 +1686,19 @@
           "street": "Ruiz Street"
         },
         {
-          "id": "way/1179813063",
-          "name": "Recycle & Reuse Drop-off Center",
-          "lat": 30.213433,
-          "lon": -97.737361,
-          "address": "Business Center Drive 2514",
-          "openingHours": "Mo-Sa 09:00-16:30; PH off; Su off"
-        },
-        {
           "id": "node/12590481741",
           "lat": 30.244219,
           "lon": -97.81021,
           "street": "Barton Creek Greenbelt Mopac Trail Entrance"
         }
       ],
-      "updatedAt": "2026-09-03T17:27:24.722Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:21.234Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1873,7 +1897,13 @@
           "lon": -97.73042
         }
       ],
-      "updatedAt": "2026-09-03T17:27:26.480Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:21.998Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2069,9 +2099,105 @@
           "name": "Voodoo Pew",
           "lat": 30.26779,
           "lon": -97.75956
+        },
+        {
+          "id": "node/13464842260",
+          "lat": 30.265447,
+          "lon": -97.743654,
+          "street": "Congress Avenue"
+        },
+        {
+          "id": "node/3147436559",
+          "lat": 30.266546,
+          "lon": -97.745915,
+          "street": "Lavaca Street"
+        },
+        {
+          "id": "node/9005058159",
+          "lat": 30.269409,
+          "lon": -97.74467,
+          "street": "West 7th Street"
+        },
+        {
+          "id": "node/3218108770",
+          "lat": 30.270489,
+          "lon": -97.743513,
+          "street": "Colorado Street"
+        },
+        {
+          "id": "node/3173018560",
+          "lat": 30.267627,
+          "lon": -97.746938,
+          "street": "Guadalupe Street"
+        },
+        {
+          "id": "node/3225934842",
+          "lat": 30.268041,
+          "lon": -97.746863,
+          "street": "West 5th Street"
+        },
+        {
+          "id": "node/3218108789",
+          "lat": 30.272686,
+          "lon": -97.741394,
+          "street": "West 11th Street"
+        },
+        {
+          "id": "node/9659512903",
+          "lat": 30.272747,
+          "lon": -97.74579,
+          "street": "San Antonio Street"
+        },
+        {
+          "id": "node/8072634607",
+          "lat": 30.267085,
+          "lon": -97.750077,
+          "street": "West 3rd Street"
+        },
+        {
+          "id": "node/9291369879",
+          "lat": 30.265624,
+          "lon": -97.749883,
+          "street": "Nueces Street"
+        },
+        {
+          "id": "node/4304714406",
+          "lat": 30.264322,
+          "lon": -97.749336,
+          "street": "Ann & Roy Butler Hike and Bike Trail"
+        },
+        {
+          "id": "node/13841808654",
+          "lat": 30.260933,
+          "lon": -97.741216,
+          "street": "Waller Creek Greenbelt Trail"
+        },
+        {
+          "id": "node/9531265660",
+          "lat": 30.271692,
+          "lon": -97.736786,
+          "street": "East 11th Street"
+        },
+        {
+          "id": "node/7917829989",
+          "lat": 30.266316,
+          "lon": -97.751238,
+          "street": "West 2nd Street"
+        },
+        {
+          "id": "node/8014244534",
+          "lat": 30.265815,
+          "lon": -97.751408,
+          "street": "Shoal Creek Trail"
         }
       ],
-      "updatedAt": "2026-09-03T17:27:33.575Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:23.100Z"
     },
     "compressed-air": {
       "count": 0,

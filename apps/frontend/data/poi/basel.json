@@ -1,6 +1,6 @@
 {
   "city": "basel",
-  "generatedAt": "2026-09-03T16:59:55.244Z",
+  "generatedAt": "2026-09-11T10:29:35.530Z",
   "categories": {
     "toilets": {
       "count": 268,
@@ -169,7 +169,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:31.526Z"
+      "stats": {
+        "free": 168,
+        "paid": 7,
+        "stepFree": 115,
+        "partlyStepFree": 9
+      },
+      "updatedAt": "2026-09-11T10:29:28.748Z"
     },
     "drinking-water": {
       "count": 481,
@@ -367,7 +373,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:33.491Z"
+      "stats": {
+        "free": 33,
+        "paid": 1,
+        "stepFree": 41,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:29:30.914Z"
     },
     "playgrounds": {
       "count": 380,
@@ -1694,7 +1706,7 @@
           "name": "Banque Populaire",
           "lat": 47.588694,
           "lon": 7.560937,
-          "openingHours": "Tu-Fr 08:30-12:00,13:30-18:00; Sa 08:45-12:00"
+          "openingHours": "Tu-We 08:30-12:00,13:30-18:00; Th 09:30-12:00,13:30-18:00; Fr 08:30-12:00,13:30-18:00; Sa 08:45-12:00"
         },
         {
           "id": "node/319511834",
@@ -1752,7 +1764,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:41.081Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 45,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:29:31.608Z"
     },
     "post-boxes": {
       "count": 334,
@@ -1945,133 +1963,11 @@
       "count": 256,
       "pois": [
         {
-          "id": "node/8722859370",
-          "lat": 47.561855,
-          "lon": 7.592316,
-          "street": "Teichgässlein"
-        },
-        {
-          "id": "node/296865113",
-          "lat": 47.557684,
-          "lon": 7.584394,
-          "street": "Petersgraben"
-        },
-        {
-          "id": "node/9992365713",
-          "lat": 47.562081,
-          "lon": 7.59573,
-          "street": "Clarastrasse"
-        },
-        {
-          "id": "node/8722859371",
-          "lat": 47.559184,
-          "lon": 7.597609,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "street": "Kirchgasse"
-        },
-        {
-          "id": "node/8722859377",
-          "lat": 47.56396,
-          "lon": 7.595186,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "street": "Klingentalstrasse"
-        },
-        {
-          "id": "node/586300537",
-          "lat": 47.562908,
-          "lon": 7.598058,
-          "street": "Clarahofweg"
-        },
-        {
-          "id": "node/296865112",
-          "lat": 47.565756,
-          "lon": 7.582135,
-          "street": "St. Johanns-Platz"
-        },
-        {
-          "id": "node/2273694976",
-          "lat": 47.559065,
-          "lon": 7.600274,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "street": "Rheinfelderstrasse"
-        },
-        {
-          "id": "node/8722859335",
-          "lat": 47.565511,
-          "lon": 7.58016,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "street": "Spitalstrasse"
-        },
-        {
-          "id": "node/296481803",
-          "lat": 47.551398,
-          "lon": 7.585605,
-          "street": "Rümelinbachweg"
-        },
-        {
-          "id": "node/3830738861",
-          "lat": 47.567044,
-          "lon": 7.594953,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "street": "Feldbergstrasse"
-        },
-        {
-          "id": "node/296865521",
-          "lat": 47.552261,
-          "lon": 7.595995,
-          "street": "Brunngässlein"
-        },
-        {
           "id": "node/9713419247",
           "name": "Labdoo Annahmestelle für Laptops",
           "lat": 47.551159,
           "lon": 7.593843,
           "address": "Aeschengraben 6"
-        },
-        {
-          "id": "node/13406628512",
-          "lat": 47.56106,
-          "lon": 7.574921,
-          "street": "Hegenheimerstrasse"
-        },
-        {
-          "id": "node/797076138",
-          "lat": 47.568815,
-          "lon": 7.596379,
-          "street": "Efringerstrasse"
-        },
-        {
-          "id": "node/1516966765",
-          "lat": 47.570274,
-          "lon": 7.590476,
-          "street": "Klybeckstrasse"
-        },
-        {
-          "id": "node/8722859331",
-          "lat": 47.568018,
-          "lon": 7.598686,
-          "street": "Erlenstrasse"
-        },
-        {
-          "id": "node/8722859380",
-          "lat": 47.565413,
-          "lon": 7.602393,
-          "street": "Mattenstrasse"
-        },
-        {
-          "id": "node/2482940747",
-          "lat": 47.557575,
-          "lon": 7.570238,
-          "openingHours": "Mo-Sa 08:00-20:00",
-          "street": "Oekolampadstrasse"
-        },
-        {
-          "id": "node/12593641844",
-          "lat": 47.546819,
-          "lon": 7.589097,
-          "openingHours": "24/7",
-          "wheelchair": "limited",
-          "street": "RailCity Passerelle"
         },
         {
           "id": "node/293463949",
@@ -2097,50 +1993,192 @@
           "openingHours": "Sa 09:00-10:00"
         },
         {
-          "id": "node/296481806",
-          "lat": 47.54713,
-          "lon": 7.581046,
-          "street": "Erdbeergraben"
-        },
-        {
-          "id": "node/296867719",
-          "lat": 47.548915,
-          "lon": 7.600866,
-          "openingHours": "Mo-Sa 07:00-20:00; PH Su off",
-          "street": "Sevogelstrasse"
-        },
-        {
-          "id": "node/8722859343",
-          "lat": 47.546437,
-          "lon": 7.581038,
-          "street": "Dachsfelderstrasse"
-        },
-        {
-          "id": "node/296865110",
-          "lat": 47.569518,
-          "lon": 7.573468,
-          "street": "Entenweidstrasse"
-        },
-        {
           "id": "node/296872439",
           "name": "Wertstoffsammelstelle 121 Helvetiaplatz",
           "lat": 47.559863,
           "lon": 7.567499
         },
         {
-          "id": "node/296875572",
-          "lat": 47.571772,
-          "lon": 7.577243,
-          "street": "Lichtstrasse"
+          "id": "node/5873880495",
+          "name": "Kernmattstrasse",
+          "lat": 47.543757,
+          "lon": 7.574782,
+          "openingHours": "Mo-Sa 07:00-12:00, 14:00-20:00; PH Su off"
         },
         {
-          "id": "node/3849772158",
-          "lat": 47.568106,
-          "lon": 7.606003,
-          "street": "Schwarzwaldallee"
+          "id": "node/296869453",
+          "name": "Wertstoffsammelstelle 105 Bruderholzweg",
+          "lat": 47.540174,
+          "lon": 7.591655,
+          "openingHours": "Mo-Sa 07:00-20:00"
+        },
+        {
+          "id": "node/296485399",
+          "name": "Neubadrain",
+          "lat": 47.546461,
+          "lon": 7.564813,
+          "address": "Neubadrain",
+          "openingHours": "Mo-Sa 07:00-12:00, 14:00-20:00; PH Su off"
+        },
+        {
+          "id": "node/5873902997",
+          "name": "Dorfplatz",
+          "lat": 47.540742,
+          "lon": 7.575,
+          "openingHours": "Mo-Sa 07:00-12:00, 14:00-20:00; PH Su off"
+        },
+        {
+          "id": "way/1549903356",
+          "name": "Lottner",
+          "lat": 47.577123,
+          "lon": 7.569183,
+          "openingHours": "Mo-Fr 06:30-11:45,12:45-16:45; Sa 08:00-14:45",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11956370071",
+          "lat": 47.539068,
+          "lon": 7.603779,
+          "context": "M-Parc"
+        },
+        {
+          "id": "node/5873889496",
+          "name": "Weihermattstrasse",
+          "lat": 47.53909,
+          "lon": 7.572528,
+          "openingHours": "Mo-Sa 07:00-12:00, 14:00-20:00; PH Su off"
+        },
+        {
+          "id": "node/5873902998",
+          "name": "Bruderholzstrasse",
+          "lat": 47.537518,
+          "lon": 7.576197,
+          "openingHours": "Mo-Sa 07:00-12:00, 14:00-20:00; PH Su off"
+        },
+        {
+          "id": "node/2372598027",
+          "name": "TexAid",
+          "lat": 47.534301,
+          "lon": 7.593129
+        },
+        {
+          "id": "way/1532970328",
+          "name": "SRS Recyclingzentrum Allschwil",
+          "lat": 47.561878,
+          "lon": 7.550635,
+          "address": "Kiesstrasse 24",
+          "openingHours": "Mo-Fr 07:30-11:45,13:00-17:30; Sa 07:00-14:00",
+          "fee": "yes"
+        },
+        {
+          "id": "node/8483248415",
+          "name": "Kleidersammelstelle Texaid",
+          "lat": 47.533535,
+          "lon": 7.587731
+        },
+        {
+          "id": "node/364881457",
+          "name": "Bollwerkstrasse",
+          "lat": 47.542235,
+          "lon": 7.558965,
+          "openingHours": "Mo-Sa 07:00-12:00, 14:00-20:00; PH Su off"
+        },
+        {
+          "id": "node/5873904555",
+          "name": "Parkstrasse",
+          "lat": 47.53506,
+          "lon": 7.573214,
+          "openingHours": "Mo-Sa 07:00-12:00, 14:00-20:00; PH Su off"
+        },
+        {
+          "id": "node/249100336",
+          "name": "Werkhof",
+          "lat": 47.534809,
+          "lon": 7.573361
+        },
+        {
+          "id": "node/5873889495",
+          "name": "Benkenstrasse",
+          "lat": 47.534897,
+          "lon": 7.567171,
+          "openingHours": "Mo-Sa 07:00-12:00, 14:00-20:00; PH Su off"
+        },
+        {
+          "id": "node/5873889494",
+          "name": "Gorenmattstrasse",
+          "lat": 47.532734,
+          "lon": 7.572386,
+          "openingHours": "Mo-Sa 07:00-12:00, 14:00-20:00; PH Su off"
+        },
+        {
+          "id": "node/5183084764",
+          "name": "Recycling Im Kirschgarten",
+          "lat": 47.539001,
+          "lon": 7.558027,
+          "openingHours": "Mo-Sa 07:00-12:00, 14:00-20:00; PH Su off"
+        },
+        {
+          "id": "way/1376901592",
+          "name": "Entsorgungscenter Birsfelden",
+          "lat": 47.550803,
+          "lon": 7.633091,
+          "address": "Hardstrasse 91",
+          "openingHours": "Mo-Th 07:00-12:00,13:00-17:00; Fr 07:00-12:00,13:00-16:30; Sa 09:00-13:30"
+        },
+        {
+          "id": "node/5873892793",
+          "name": "Recycling Lindenstrasse",
+          "lat": 47.530395,
+          "lon": 7.570216,
+          "openingHours": "Mo-Sa 07:00-12:00, 14:00-20:00; PH Su off"
+        },
+        {
+          "id": "node/13995315165",
+          "name": "Übergangsrecyclinghof Weil am Rhein",
+          "lat": 47.596658,
+          "lon": 7.607042,
+          "address": "Weidstraße 9",
+          "openingHours": "Mo,We,Fr 14:00-17:00; Tu,Th 12:00-17:00; Sa 08:00-14:00; Su,PH off"
+        },
+        {
+          "id": "way/743529850",
+          "name": "Déchèterie de la CC3F",
+          "lat": 47.601909,
+          "lon": 7.588543
+        },
+        {
+          "id": "node/4509165982",
+          "name": "Mini-déchèterie de Hésingue",
+          "lat": 47.579415,
+          "lon": 7.531415
+        },
+        {
+          "id": "node/12257939603",
+          "name": "Recyclingpark Werkhof Gemeinde Riehen",
+          "lat": 47.592382,
+          "lon": 7.655836,
+          "address": "Haselrain 65"
+        },
+        {
+          "id": "node/325124007",
+          "name": "Werkhof Gemeinde Riehen",
+          "lat": 47.59241,
+          "lon": 7.656076
+        },
+        {
+          "id": "node/8779227139",
+          "name": "Grünabfall Sammelstelle",
+          "lat": 47.617619,
+          "lon": 7.593945
         }
       ],
-      "updatedAt": "2026-09-03T16:59:45.521Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 2,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:29:33.478Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -2401,7 +2439,13 @@
           "lon": 7.652406
         }
       ],
-      "updatedAt": "2026-09-03T16:59:47.632Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:29:34.346Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2913,9 +2957,117 @@
           "name": "Charlotte & Carl",
           "lat": 47.602447,
           "lon": 7.674257
+        },
+        {
+          "id": "node/13827072440",
+          "lat": 47.560085,
+          "lon": 7.588171,
+          "street": "Schifflände"
+        },
+        {
+          "id": "node/13670115973",
+          "lat": 47.559135,
+          "lon": 7.58918,
+          "street": "Rheinsprung"
+        },
+        {
+          "id": "node/8789768839",
+          "lat": 47.560032,
+          "lon": 7.587897,
+          "street": "Blumenrain"
+        },
+        {
+          "id": "node/9212268204",
+          "lat": 47.560066,
+          "lon": 7.589784,
+          "street": "Mittlere Rheinbrücke"
+        },
+        {
+          "id": "node/3808225055",
+          "lat": 47.559379,
+          "lon": 7.587172,
+          "street": "Fischmarkt"
+        },
+        {
+          "id": "node/7438234099",
+          "lat": 47.55936,
+          "lon": 7.5863,
+          "street": "Kellergässlein"
+        },
+        {
+          "id": "node/12964459838",
+          "lat": 47.557731,
+          "lon": 7.588403,
+          "street": "Freie Strasse"
+        },
+        {
+          "id": "node/2575023433",
+          "lat": 47.561278,
+          "lon": 7.590073,
+          "street": "Unterer Rheinweg"
+        },
+        {
+          "id": "node/2575023432",
+          "lat": 47.559864,
+          "lon": 7.591735,
+          "street": "Oberer Rheinweg"
+        },
+        {
+          "id": "node/13520579802",
+          "lat": 47.561683,
+          "lon": 7.586599,
+          "street": "St. Johanns-Rheinweg"
+        },
+        {
+          "id": "node/11421631296",
+          "lat": 47.559285,
+          "lon": 7.584715,
+          "street": "Peterskirchplatz"
+        },
+        {
+          "id": "node/9634373089",
+          "lat": 47.561779,
+          "lon": 7.586017,
+          "street": "Totentanz"
+        },
+        {
+          "id": "node/6800087752",
+          "lat": 47.561805,
+          "lon": 7.585834,
+          "street": "Universitätsspital"
+        },
+        {
+          "id": "node/5159878630",
+          "lat": 47.559294,
+          "lon": 7.58414,
+          "street": "Petersplatz"
+        },
+        {
+          "id": "node/7256166628",
+          "lat": 47.559119,
+          "lon": 7.584111,
+          "street": "Petersgraben"
+        },
+        {
+          "id": "node/12972081927",
+          "lat": 47.562556,
+          "lon": 7.590431,
+          "street": "Klingentalweglein"
+        },
+        {
+          "id": "node/13119014753",
+          "lat": 47.556941,
+          "lon": 7.591782,
+          "street": "Münsterplatz"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:55.142Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:35.429Z"
     },
     "compressed-air": {
       "count": 2,

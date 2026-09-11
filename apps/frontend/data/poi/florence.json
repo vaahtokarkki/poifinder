@@ -1,6 +1,6 @@
 {
   "city": "florence",
-  "generatedAt": "2026-09-03T17:21:19.119Z",
+  "generatedAt": "2026-09-11T10:31:55.726Z",
   "categories": {
     "toilets": {
       "count": 108,
@@ -187,7 +187,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:56.545Z"
+      "stats": {
+        "free": 33,
+        "paid": 30,
+        "stepFree": 55,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-11T10:31:49.423Z"
     },
     "drinking-water": {
       "count": 294,
@@ -283,9 +289,125 @@
           "lon": 11.180949,
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "node/12068146196",
+          "lat": 43.769506,
+          "lon": 11.256244,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Via dei Gondi"
+        },
+        {
+          "id": "node/3740621564",
+          "lat": 43.76991,
+          "lon": 11.254086,
+          "street": "Piazza del Mercato Nuovo"
+        },
+        {
+          "id": "node/13712051893",
+          "lat": 43.771386,
+          "lon": 11.253448,
+          "street": "Piazza della Repubblica"
+        },
+        {
+          "id": "node/1634066518",
+          "lat": 43.768979,
+          "lon": 11.260664,
+          "wheelchair": "yes",
+          "street": "Piazza di Santa Croce"
+        },
+        {
+          "id": "node/12139556901",
+          "lat": 43.773364,
+          "lon": 11.256055,
+          "street": "Piazza del Duomo"
+        },
+        {
+          "id": "node/1645052531",
+          "lat": 43.765562,
+          "lon": 11.257449,
+          "street": "Lungarno Torrigiani"
+        },
+        {
+          "id": "node/4849846823",
+          "lat": 43.772949,
+          "lon": 11.259954,
+          "street": "Piazza di Santa Maria Nuova"
+        },
+        {
+          "id": "node/6302729799",
+          "lat": 43.765026,
+          "lon": 11.255433,
+          "fee": "no",
+          "street": "Costa San Giorgio"
+        },
+        {
+          "id": "node/1403037921",
+          "lat": 43.76589,
+          "lon": 11.250011,
+          "street": "Piazza dei Pitti"
+        },
+        {
+          "id": "node/10303666581",
+          "lat": 43.774937,
+          "lon": 11.252911,
+          "fee": "no",
+          "street": "Piazza Madonna degli Aldobrandini"
+        },
+        {
+          "id": "node/2364423841",
+          "lat": 43.770522,
+          "lon": 11.264224,
+          "street": "Via Michelangelo Buonarroti"
+        },
+        {
+          "id": "node/5042442328",
+          "lat": 43.766598,
+          "lon": 11.247562,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Piazza di Santo Spirito"
+        },
+        {
+          "id": "node/12971304517",
+          "lat": 43.776387,
+          "lon": 11.253948,
+          "street": "Piazza del Mercato Centrale"
+        },
+        {
+          "id": "node/861474558",
+          "lat": 43.763917,
+          "lon": 11.261534,
+          "street": "Via San Miniato"
+        },
+        {
+          "id": "node/5928858147",
+          "lat": 43.763926,
+          "lon": 11.26263,
+          "street": "Via dei Bastioni"
+        },
+        {
+          "id": "node/12959431159",
+          "lat": 43.770643,
+          "lon": 11.266775,
+          "street": "Piazza Lorenzo Ghiberti"
+        },
+        {
+          "id": "node/6284905785",
+          "lat": 43.777181,
+          "lon": 11.251988,
+          "wheelchair": "yes",
+          "street": "Via Nazionale"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:58.502Z"
+      "stats": {
+        "free": 54,
+        "paid": 3,
+        "stepFree": 28,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:31:51.341Z"
     },
     "playgrounds": {
       "count": 95,
@@ -1351,7 +1473,13 @@
           "lon": 11.293301
         }
       ],
-      "updatedAt": "2026-09-03T17:21:05.671Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 15,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:31:51.896Z"
     },
     "post-boxes": {
       "count": 74,
@@ -1543,6 +1671,18 @@
       "count": 906,
       "pois": [
         {
+          "id": "node/9963469566",
+          "lat": 43.77661,
+          "lon": 11.253447,
+          "context": "Mercato di San Lorenzo"
+        },
+        {
+          "id": "node/12043696817",
+          "lat": 43.77655,
+          "lon": 11.248683,
+          "context": "Stazione di Santa Maria Novella"
+        },
+        {
           "id": "node/9960955600",
           "lat": 43.770904,
           "lon": 11.254554,
@@ -1687,12 +1827,6 @@
           "street": "Piazza San Felice"
         },
         {
-          "id": "node/9963469566",
-          "lat": 43.77661,
-          "lon": 11.253447,
-          "context": "Mercato di San Lorenzo"
-        },
-        {
           "id": "node/12398196110",
           "lat": 43.766328,
           "lon": 11.246852,
@@ -1722,15 +1856,15 @@
           "lat": 43.767209,
           "lon": 11.246135,
           "street": "Via Sant'Agostino"
-        },
-        {
-          "id": "node/6482342656",
-          "lat": 43.764811,
-          "lon": 11.264126,
-          "street": "Lungarno Serristori"
         }
       ],
-      "updatedAt": "2026-09-03T17:21:11.001Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 9,
+        "partlyStepFree": 8
+      },
+      "updatedAt": "2026-09-11T10:31:53.699Z"
     },
     "luggage-storage": {
       "count": 11,
@@ -1993,7 +2127,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:21:13.083Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:31:54.466Z"
     },
     "camp-sites": {
       "count": 8,
@@ -2275,8 +2415,129 @@
     },
     "benches": {
       "count": 1355,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:21:19.010Z"
+      "pois": [
+        {
+          "id": "node/7976727159",
+          "lat": 43.769515,
+          "lon": 11.256287,
+          "street": "Via dei Gondi"
+        },
+        {
+          "id": "node/1280743183",
+          "lat": 43.771182,
+          "lon": 11.253673,
+          "street": "Piazza della Repubblica"
+        },
+        {
+          "id": "node/6391901660",
+          "lat": 43.772171,
+          "lon": 11.256695,
+          "street": "Piazzetta Cardinale Giovanni Benelli"
+        },
+        {
+          "id": "node/6649958186",
+          "lat": 43.772649,
+          "lon": 11.256369,
+          "street": "Piazza del Capitolo"
+        },
+        {
+          "id": "node/6649958188",
+          "lat": 43.772647,
+          "lon": 11.25641,
+          "street": "Piazza del Duomo"
+        },
+        {
+          "id": "node/12713996700",
+          "lat": 43.772854,
+          "lon": 11.255225,
+          "street": "Piazza San Giovanni"
+        },
+        {
+          "id": "node/10005968545",
+          "lat": 43.769047,
+          "lon": 11.260739,
+          "street": "Piazza di Santa Croce"
+        },
+        {
+          "id": "node/9785979870",
+          "lat": 43.765724,
+          "lon": 11.257449,
+          "street": "Lungarno Torrigiani"
+        },
+        {
+          "id": "node/8987882741",
+          "lat": 43.772298,
+          "lon": 11.260212,
+          "street": "Via dell'Oriuolo"
+        },
+        {
+          "id": "node/12081457727",
+          "lat": 43.773863,
+          "lon": 11.255525,
+          "street": "Via dei Martelli"
+        },
+        {
+          "id": "node/6008487444",
+          "lat": 43.767243,
+          "lon": 11.2505,
+          "street": "Via dello Sprone"
+        },
+        {
+          "id": "node/6008487176",
+          "lat": 43.76726,
+          "lon": 11.250431,
+          "street": "Piazza della Passera"
+        },
+        {
+          "id": "node/2990718445",
+          "lat": 43.771544,
+          "lon": 11.262092,
+          "street": "Piazza Gaetano Salvemini"
+        },
+        {
+          "id": "node/13395855045",
+          "lat": 43.765281,
+          "lon": 11.259652,
+          "street": "Piazza Nicola Demidoff"
+        },
+        {
+          "id": "node/13395855048",
+          "lat": 43.765113,
+          "lon": 11.259782,
+          "street": "Via dei Renai"
+        },
+        {
+          "id": "node/6008487173",
+          "lat": 43.764101,
+          "lon": 11.256347,
+          "street": "Costa San Giorgio"
+        },
+        {
+          "id": "node/13858404406",
+          "lat": 43.775091,
+          "lon": 11.254533,
+          "street": "Piazza San Lorenzo"
+        },
+        {
+          "id": "node/12714003736",
+          "lat": 43.7755,
+          "lon": 11.256393,
+          "street": "Via Camillo Cavour"
+        },
+        {
+          "id": "node/7974296544",
+          "lat": 43.773527,
+          "lon": 11.249506,
+          "street": "Piazza di Santa Maria Novella"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:55.625Z"
     },
     "compressed-air": {
       "count": 0,

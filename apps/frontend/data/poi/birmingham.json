@@ -1,6 +1,6 @@
 {
   "city": "birmingham",
-  "generatedAt": "2026-09-03T17:06:21.030Z",
+  "generatedAt": "2026-09-11T10:30:12.725Z",
   "categories": {
     "toilets": {
       "count": 84,
@@ -212,7 +212,13 @@
           "context": "Rowheath Pavilion"
         }
       ],
-      "updatedAt": "2026-09-03T17:05:52.016Z"
+      "stats": {
+        "free": 27,
+        "paid": 3,
+        "stepFree": 26,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:30:04.961Z"
     },
     "drinking-water": {
       "count": 9,
@@ -235,9 +241,57 @@
           "name": "Yardley Wood Water Point",
           "lat": 52.416162,
           "lon": -1.872138
+        },
+        {
+          "id": "node/14002269433",
+          "lat": 52.482097,
+          "lon": -1.899136,
+          "street": "Barwick Street"
+        },
+        {
+          "id": "node/14121882088",
+          "lat": 52.480467,
+          "lon": -1.901261,
+          "street": "Waterloo Passage"
+        },
+        {
+          "id": "node/12219204810",
+          "lat": 52.478103,
+          "lon": -1.898214,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "1a"
+        },
+        {
+          "id": "node/12005940669",
+          "lat": 52.477198,
+          "lon": -1.898464,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "10a 11a"
+        },
+        {
+          "id": "node/12219204809",
+          "lat": 52.477318,
+          "lon": -1.899791,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "12b"
+        },
+        {
+          "id": "node/617765377",
+          "lat": 52.480577,
+          "lon": -1.912912,
+          "street": "Kingston Row"
         }
       ],
-      "updatedAt": "2026-09-03T17:05:53.540Z"
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:07.125Z"
     },
     "playgrounds": {
       "count": 270,
@@ -1348,7 +1402,13 @@
           "lon": -1.991519
         }
       ],
-      "updatedAt": "2026-09-03T17:06:00.930Z"
+      "stats": {
+        "free": 13,
+        "paid": 2,
+        "stepFree": 14,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:30:08.337Z"
     },
     "post-boxes": {
       "count": 940,
@@ -1540,6 +1600,94 @@
       "count": 156,
       "pois": [
         {
+          "id": "way/913495802",
+          "name": "Tyseley Household Recycling Centre",
+          "lat": 52.460871,
+          "lon": -1.843564,
+          "address": "James Road",
+          "openingHours": "Apr-Oct: Mo-Fr 08:00-20:00; Apr-Oct: Sa-Su 08:00-16:30; Nov-Mar: Mo-Fr 08:00-18:00; Nov-Mar: Sa-Su 08:00-16:00"
+        },
+        {
+          "id": "way/91500496",
+          "name": "Premier Waste UK PLC",
+          "lat": 52.524477,
+          "lon": -1.902308
+        },
+        {
+          "id": "node/12801282977",
+          "name": "Clothing Bank",
+          "lat": 52.494937,
+          "lon": -1.972085
+        },
+        {
+          "id": "way/1375613193",
+          "name": "Midlands Urban Recycling",
+          "lat": 52.511385,
+          "lon": -1.979145,
+          "address": "Roebuck Street 9"
+        },
+        {
+          "id": "way/1316636974",
+          "name": "Aluminium & Plastic Centre West Bromwich",
+          "lat": 52.514234,
+          "lon": -1.987856
+        },
+        {
+          "id": "way/1327849287",
+          "name": "Recycled Aggregate Materials",
+          "lat": 52.507039,
+          "lon": -1.993888
+        },
+        {
+          "id": "node/1422573179",
+          "name": "Castle Bromwich Household Recycling Centre",
+          "lat": 52.511423,
+          "lon": -1.785476,
+          "address": "Tameside Drive",
+          "openingHours": "Apr-Oct: Mo-Fr 08:00-20:00; Apr-Oct: Sa-Su 08:00-16:30; Nov-Mar: Mo-Fr 08:00-18:00; Nov-Mar: Sa-Su 08:00-16:00"
+        },
+        {
+          "id": "way/1332082537",
+          "name": "AllMet Recycling Ltd",
+          "lat": 52.515336,
+          "lon": -1.994555
+        },
+        {
+          "id": "way/1330695254",
+          "name": "Envira",
+          "lat": 52.507955,
+          "lon": -1.999748
+        },
+        {
+          "id": "way/1317664184",
+          "name": "Cash 4 Clothes",
+          "lat": 52.521578,
+          "lon": -1.990197
+        },
+        {
+          "id": "way/106565353",
+          "name": "Lifford Lane Household Recycling Centre",
+          "lat": 52.417446,
+          "lon": -1.91825,
+          "address": "Ebury Road",
+          "openingHours": "Apr-Oct: Mo-Fr 07:00-20:00; Apr-Oct: Sa-Su 08:00-18:00; Nov-Mar: Mo-Fr 08:00-18:00; Nov-Mar: Sa-Su 08:00-16:00"
+        },
+        {
+          "id": "way/1416406667",
+          "name": "Metro Alloys & Residues",
+          "lat": 52.491752,
+          "lon": -2.006345,
+          "address": "Crosswells Road"
+        },
+        {
+          "id": "node/12920293377",
+          "name": "Alutrade (Aluminium Recycling) Ltd.",
+          "lat": 52.495988,
+          "lon": -2.006737,
+          "address": "Tat Bank Road",
+          "fee": "yes"
+        },
+        {
           "id": "node/2460831405",
           "lat": 52.484784,
           "lon": -1.898047,
@@ -1640,89 +1788,15 @@
           "lat": 52.487632,
           "lon": -1.951568,
           "street": "Cape Hill"
-        },
-        {
-          "id": "node/11829254121",
-          "lat": 52.455974,
-          "lon": -1.927628,
-          "street": "Vale Walkway"
-        },
-        {
-          "id": "node/292616779",
-          "lat": 52.513618,
-          "lon": -1.933542,
-          "street": "Grove Lane"
-        },
-        {
-          "id": "way/913495802",
-          "name": "Tyseley Household Recycling Centre",
-          "lat": 52.460871,
-          "lon": -1.843564,
-          "address": "James Road",
-          "openingHours": "Apr-Oct: Mo-Fr 08:00-20:00; Apr-Oct: Sa-Su 08:00-16:30; Nov-Mar: Mo-Fr 08:00-18:00; Nov-Mar: Sa-Su 08:00-16:00"
-        },
-        {
-          "id": "node/1483459127",
-          "lat": 52.522705,
-          "lon": -1.871071,
-          "street": "George Road"
-        },
-        {
-          "id": "way/91500496",
-          "name": "Premier Waste UK PLC",
-          "lat": 52.524477,
-          "lon": -1.902308
-        },
-        {
-          "id": "node/12229531266",
-          "lat": 52.454684,
-          "lon": -1.928971,
-          "street": "Elms Road"
-        },
-        {
-          "id": "node/76480462",
-          "lat": 52.478155,
-          "lon": -1.954859,
-          "street": "City Road"
-        },
-        {
-          "id": "node/2459837217",
-          "lat": 52.45273,
-          "lon": -1.853529,
-          "street": "Weston Lane"
-        },
-        {
-          "id": "node/324425663",
-          "lat": 52.44801,
-          "lon": -1.91251,
-          "street": "Sir Johns Road"
-        },
-        {
-          "id": "node/242944213",
-          "lat": 52.526208,
-          "lon": -1.904288,
-          "street": "Church Road"
-        },
-        {
-          "id": "node/12229531257",
-          "lat": 52.451543,
-          "lon": -1.929748,
-          "street": "Ring Road North"
-        },
-        {
-          "id": "node/12921911457",
-          "lat": 52.451293,
-          "lon": -1.932816,
-          "street": "West Gate"
-        },
-        {
-          "id": "node/2272780871",
-          "lat": 52.525401,
-          "lon": -1.858264,
-          "street": "Lambourn Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:08.698Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:10.439Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1952,7 +2026,13 @@
           "lon": -1.941297
         }
       ],
-      "updatedAt": "2026-09-03T17:06:10.600Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:11.425Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2271,9 +2351,99 @@
           "name": "Story Telling Bench",
           "lat": 52.441241,
           "lon": -1.946547
+        },
+        {
+          "id": "node/4891939483",
+          "lat": 52.485912,
+          "lon": -1.889474,
+          "street": "Sheep Street"
+        },
+        {
+          "id": "node/2455919391",
+          "lat": 52.486186,
+          "lon": -1.889002,
+          "street": "Aston Street"
+        },
+        {
+          "id": "node/965973342",
+          "lat": 52.484646,
+          "lon": -1.892412,
+          "street": "Lancaster Place"
+        },
+        {
+          "id": "node/2420753838",
+          "lat": 52.487276,
+          "lon": -1.887585,
+          "street": "Woodcock Street"
+        },
+        {
+          "id": "node/957289416",
+          "lat": 52.484344,
+          "lon": -1.89216,
+          "street": "James Watt Queensway"
+        },
+        {
+          "id": "node/957289409",
+          "lat": 52.484242,
+          "lon": -1.892448,
+          "street": "Corporation Street"
+        },
+        {
+          "id": "node/957289400",
+          "lat": 52.484101,
+          "lon": -1.892133,
+          "street": "Ryder Street"
+        },
+        {
+          "id": "node/991934983",
+          "lat": 52.487631,
+          "lon": -1.894043,
+          "street": "Lancaster Street"
+        },
+        {
+          "id": "node/12493973885",
+          "lat": 52.486204,
+          "lon": -1.885239,
+          "street": "Holt Court"
+        },
+        {
+          "id": "node/4562105531",
+          "lat": 52.48292,
+          "lon": -1.892717,
+          "street": "Dalton Street"
+        },
+        {
+          "id": "node/4560170645",
+          "lat": 52.482732,
+          "lon": -1.892735,
+          "street": "Newton Street"
+        },
+        {
+          "id": "node/674590550",
+          "lat": 52.487754,
+          "lon": -1.896864,
+          "street": "Cliveland Street"
+        },
+        {
+          "id": "node/674028154",
+          "lat": 52.49036,
+          "lon": -1.888666,
+          "street": "Mill Street"
+        },
+        {
+          "id": "node/12493973864",
+          "lat": 52.483014,
+          "lon": -1.896178,
+          "street": "Colmore Square"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:20.928Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:12.624Z"
     },
     "compressed-air": {
       "count": 0,

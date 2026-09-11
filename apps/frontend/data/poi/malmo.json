@@ -1,9 +1,9 @@
 {
   "city": "malmo",
-  "generatedAt": "2026-09-03T16:44:28.253Z",
+  "generatedAt": "2026-09-11T10:27:52.292Z",
   "categories": {
     "toilets": {
-      "count": 88,
+      "count": 82,
       "pois": [
         {
           "id": "node/7104691985",
@@ -103,7 +103,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:06.334Z"
+      "stats": {
+        "free": 58,
+        "paid": 8,
+        "stepFree": 54,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:27:46.250Z"
     },
     "drinking-water": {
       "count": 35,
@@ -120,9 +126,131 @@
           "lat": 55.604153,
           "lon": 12.973652,
           "context": "Ribersborgs hundrastplats"
+        },
+        {
+          "id": "node/9583661602",
+          "lat": 55.605721,
+          "lon": 13.000131,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Stortorget"
+        },
+        {
+          "id": "node/9579349726",
+          "lat": 55.599936,
+          "lon": 12.991833,
+          "street": "Regementsgatan"
+        },
+        {
+          "id": "node/11945243985",
+          "lat": 55.607021,
+          "lon": 12.9889,
+          "street": "Citadellsvägen"
+        },
+        {
+          "id": "node/1855388536",
+          "lat": 55.596865,
+          "lon": 13.012776,
+          "street": "Sankt Knuts torg"
+        },
+        {
+          "id": "node/6709573916",
+          "lat": 55.606289,
+          "lon": 13.022347,
+          "address": "Östra Förstadsgatan 52",
+          "openingHours": "Mo-Su 07:00-23:00",
+          "street": "Östra Förstadsgatan"
+        },
+        {
+          "id": "node/9674528754",
+          "lat": 55.605413,
+          "lon": 13.023257,
+          "street": "Värnhemstorget"
+        },
+        {
+          "id": "node/12828717706",
+          "lat": 55.592879,
+          "lon": 12.994994,
+          "street": "Baltiska vägen"
+        },
+        {
+          "id": "node/14063518401",
+          "lat": 55.61346,
+          "lon": 12.983444,
+          "fee": "no",
+          "street": "Stapelbäddsgatan"
+        },
+        {
+          "id": "node/6447304985",
+          "lat": 55.605406,
+          "lon": 12.978503,
+          "street": "Ribersborgsstigen"
+        },
+        {
+          "id": "node/13452086362",
+          "lat": 55.591565,
+          "lon": 13.01467,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Kristianstadsgatan"
+        },
+        {
+          "id": "node/8598943191",
+          "lat": 55.595916,
+          "lon": 12.977018,
+          "street": "Nordlinds stig"
+        },
+        {
+          "id": "node/11210432570",
+          "lat": 55.613146,
+          "lon": 12.972368,
+          "street": "Sundspromenaden"
+        },
+        {
+          "id": "node/11685917835",
+          "lat": 55.57392,
+          "lon": 12.982378,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Påskliljegången"
+        },
+        {
+          "id": "node/9269734953",
+          "lat": 55.575275,
+          "lon": 12.943674,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Norra Hyllievägen"
+        },
+        {
+          "id": "node/10934142421",
+          "lat": 55.584173,
+          "lon": 12.919909,
+          "address": "Bryggövägen",
+          "street": "Bryggövägen"
+        },
+        {
+          "id": "node/7620075333",
+          "lat": 55.659256,
+          "lon": 13.058348,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Malmövägen"
+        },
+        {
+          "id": "node/9271263779",
+          "lat": 55.573212,
+          "lon": 12.904588,
+          "street": "Sommarvägen"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:07.745Z"
+      "stats": {
+        "free": 12,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:48.136Z"
     },
     "playgrounds": {
       "count": 662,
@@ -1193,7 +1321,13 @@
           "lon": 13.044749
         }
       ],
-      "updatedAt": "2026-09-03T16:44:14.482Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:48.848Z"
     },
     "post-boxes": {
       "count": 60,
@@ -1387,6 +1521,40 @@
       "count": 102,
       "pois": [
         {
+          "id": "way/1329502178",
+          "name": "Norra Hamnens återvinningscentral",
+          "lat": 55.628011,
+          "lon": 13.025417,
+          "address": "Bjurögatan 20 B",
+          "openingHours": "Mo-Th 11:00-18:00; Fr-Su 09:00-15:00"
+        },
+        {
+          "id": "node/2987191900",
+          "name": "Harrysbilskrot AB",
+          "lat": 55.629749,
+          "lon": 13.056915
+        },
+        {
+          "id": "way/1023748789",
+          "name": "Brf Henriksdals parkering",
+          "lat": 55.566116,
+          "lon": 12.988464
+        },
+        {
+          "id": "way/1339076279",
+          "name": "Hyreshusets soprum",
+          "lat": 55.632245,
+          "lon": 13.07182
+        },
+        {
+          "id": "way/282210566",
+          "name": "Bunkeflo återvinningscentral",
+          "lat": 55.558494,
+          "lon": 12.943389,
+          "address": "Gottorpsvägen 52",
+          "openingHours": "Mo-Th 08:00-20:00; Fr-Su 09:00-15:00"
+        },
+        {
           "id": "node/821971017",
           "lat": 55.601856,
           "lon": 13.010008,
@@ -1522,14 +1690,6 @@
           "street": "Arkitektgatan"
         },
         {
-          "id": "way/1329502178",
-          "name": "Norra Hamnens återvinningscentral",
-          "lat": 55.628011,
-          "lon": 13.025417,
-          "address": "Bjurögatan 20 B",
-          "openingHours": "Mo-Th 11:00-18:00; Fr-Su 09:00-15:00"
-        },
-        {
           "id": "node/9887721562",
           "lat": 55.580224,
           "lon": 12.975831,
@@ -1542,37 +1702,19 @@
           "street": "Kronetorpsgatan"
         },
         {
-          "id": "node/2987191900",
-          "name": "Harrysbilskrot AB",
-          "lat": 55.629749,
-          "lon": 13.056915
-        },
-        {
-          "id": "way/1023748789",
-          "name": "Brf Henriksdals parkering",
-          "lat": 55.566116,
-          "lon": 12.988464
-        },
-        {
           "id": "node/7128264178",
           "lat": 55.587097,
           "lon": 12.939934,
           "street": "Högerudsgatan"
-        },
-        {
-          "id": "node/9214274936",
-          "lat": 55.592727,
-          "lon": 12.933089,
-          "street": "Duvbåtsgatan"
-        },
-        {
-          "id": "way/1339076279",
-          "name": "Hyreshusets soprum",
-          "lat": 55.632245,
-          "lon": 13.07182
         }
       ],
-      "updatedAt": "2026-09-03T16:44:18.587Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:50.311Z"
     },
     "luggage-storage": {
       "count": 3,
@@ -1753,7 +1895,13 @@
           "lon": 12.909721
         }
       ],
-      "updatedAt": "2026-09-03T16:44:20.430Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:51.057Z"
     },
     "camp-sites": {
       "count": 4,
@@ -1904,9 +2052,141 @@
           "name": "A",
           "lat": 55.587465,
           "lon": 13.001944
+        },
+        {
+          "id": "node/12164755509",
+          "lat": 55.604671,
+          "lon": 13.002521,
+          "street": "Baltzarsgatan"
+        },
+        {
+          "id": "node/9790538110",
+          "lat": 55.605979,
+          "lon": 13.002859,
+          "street": "Kalendegatan"
+        },
+        {
+          "id": "node/9762329730",
+          "lat": 55.605775,
+          "lon": 13.005855,
+          "street": "Rundelen"
+        },
+        {
+          "id": "node/12164752355",
+          "lat": 55.605252,
+          "lon": 13.001219,
+          "street": "Södergatan"
+        },
+        {
+          "id": "node/9762329738",
+          "lat": 55.605902,
+          "lon": 13.006044,
+          "street": "Kattsundsgatan"
+        },
+        {
+          "id": "node/9762329735",
+          "lat": 55.605882,
+          "lon": 13.006076,
+          "street": "Rundelsgatan"
+        },
+        {
+          "id": "node/12394884868",
+          "lat": 55.603647,
+          "lon": 13.005583,
+          "street": "Stora Nygatan"
+        },
+        {
+          "id": "node/9672240960",
+          "lat": 55.606846,
+          "lon": 13.0029,
+          "street": "Själbodgatan"
+        },
+        {
+          "id": "node/9583661626",
+          "lat": 55.606175,
+          "lon": 13.001117,
+          "street": "Stortorget"
+        },
+        {
+          "id": "node/9672240961",
+          "lat": 55.606865,
+          "lon": 13.002847,
+          "street": "Göran Olsgatan"
+        },
+        {
+          "id": "node/12982440332",
+          "lat": 55.606693,
+          "lon": 13.000634,
+          "street": "Larmgatan"
+        },
+        {
+          "id": "node/12982440284",
+          "lat": 55.602579,
+          "lon": 13.004873,
+          "street": "Studentgatan"
+        },
+        {
+          "id": "node/12854941912",
+          "lat": 55.604628,
+          "lon": 12.999232,
+          "street": "Skomakaregatan"
+        },
+        {
+          "id": "node/12854960563",
+          "lat": 55.604746,
+          "lon": 12.999124,
+          "street": "Larochegatan"
+        },
+        {
+          "id": "node/1399604121",
+          "lat": 55.603201,
+          "lon": 13.007274,
+          "street": "Södra Promenaden"
+        },
+        {
+          "id": "node/12854948125",
+          "lat": 55.604689,
+          "lon": 12.999036,
+          "street": "Hjulhamnsgatan"
+        },
+        {
+          "id": "node/12854941911",
+          "lat": 55.605082,
+          "lon": 12.998985,
+          "street": "Lilla Torg"
+        },
+        {
+          "id": "node/12487427486",
+          "lat": 55.603841,
+          "lon": 13.00821,
+          "street": "Rörsjögatan"
+        },
+        {
+          "id": "node/12591697481",
+          "lat": 55.602493,
+          "lon": 13.001399,
+          "street": "Gustav Adolfs torg"
+        },
+        {
+          "id": "node/12162751085",
+          "lat": 55.602075,
+          "lon": 13.003853,
+          "street": "Kaptensbron"
+        },
+        {
+          "id": "node/12591697479",
+          "lat": 55.602414,
+          "lon": 13.001361,
+          "street": "J"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:28.152Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:52.190Z"
     },
     "compressed-air": {
       "count": 0,

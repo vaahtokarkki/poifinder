@@ -1,6 +1,6 @@
 {
   "city": "bristol",
-  "generatedAt": "2026-09-03T17:07:45.852Z",
+  "generatedAt": "2026-09-11T10:30:20.731Z",
   "categories": {
     "toilets": {
       "count": 108,
@@ -241,12 +241,114 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:19.424Z"
+      "stats": {
+        "free": 59,
+        "paid": 1,
+        "stepFree": 45,
+        "partlyStepFree": 9
+      },
+      "updatedAt": "2026-09-11T10:30:14.073Z"
     },
     "drinking-water": {
       "count": 22,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:07:20.907Z"
+      "pois": [
+        {
+          "id": "node/5228146371",
+          "lat": 51.451137,
+          "lon": -2.595414,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Queen Square"
+        },
+        {
+          "id": "node/11427671860",
+          "lat": 51.456303,
+          "lon": -2.597699,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Christmas Steps"
+        },
+        {
+          "id": "node/7258907634",
+          "lat": 51.44937,
+          "lon": -2.580781,
+          "fee": "no",
+          "street": "Station Approach"
+        },
+        {
+          "id": "node/6831316466",
+          "lat": 51.452156,
+          "lon": -2.600025,
+          "fee": "no",
+          "street": "Trinity Street"
+        },
+        {
+          "id": "node/6316040856",
+          "lat": 51.462345,
+          "lon": -2.590965,
+          "wheelchair": "limited",
+          "fee": "no",
+          "street": "Jamaica Street"
+        },
+        {
+          "id": "node/5320943953",
+          "lat": 51.450024,
+          "lon": -2.599959,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Anchor Square"
+        },
+        {
+          "id": "node/10211809515",
+          "lat": 51.458798,
+          "lon": -2.602904,
+          "fee": "no",
+          "street": "Tyndall Avenue"
+        },
+        {
+          "id": "node/9866141717",
+          "lat": 51.442642,
+          "lon": -2.59312,
+          "street": "Philip Street"
+        },
+        {
+          "id": "node/12911011286",
+          "lat": 51.443326,
+          "lon": -2.601439,
+          "street": "Lydstep Terrace"
+        },
+        {
+          "id": "node/1885230876",
+          "lat": 51.448568,
+          "lon": -2.618566,
+          "street": "Merchants Road"
+        },
+        {
+          "id": "node/9907634642",
+          "lat": 51.446779,
+          "lon": -2.618463,
+          "street": "Avon Crescent"
+        },
+        {
+          "id": "node/11102883854",
+          "lat": 51.483681,
+          "lon": -2.564195,
+          "street": "Sir John's Lane"
+        },
+        {
+          "id": "node/4966978080",
+          "lat": 51.42828,
+          "lon": -2.509943,
+          "street": "Durley Lane"
+        }
+      ],
+      "stats": {
+        "free": 9,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:30:15.831Z"
     },
     "playgrounds": {
       "count": 281,
@@ -1123,7 +1225,13 @@
           "address": "Badminton Road 20"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:27.902Z"
+      "stats": {
+        "free": 11,
+        "paid": 4,
+        "stepFree": 22,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:16.388Z"
     },
     "post-boxes": {
       "count": 681,
@@ -1316,6 +1424,51 @@
       "count": 96,
       "pois": [
         {
+          "id": "way/230315450",
+          "name": "St Philips Household Waste Recycling Centre",
+          "lat": 51.455041,
+          "lon": -2.572462,
+          "address": "Folly Lane",
+          "openingHours": "08:00-16:15"
+        },
+        {
+          "id": "way/967932830",
+          "name": "Sims Metal Management",
+          "lat": 51.46918,
+          "lon": -2.569121,
+          "address": "New Gatton Road"
+        },
+        {
+          "id": "way/402535343",
+          "name": "Bristol Waste",
+          "lat": 51.425267,
+          "lon": -2.603164
+        },
+        {
+          "id": "node/624659629",
+          "lat": 51.485308,
+          "lon": -2.541101,
+          "context": "Sycamore"
+        },
+        {
+          "id": "node/9148221212",
+          "lat": 51.507587,
+          "lon": -2.553317,
+          "context": "Sainsbury's"
+        },
+        {
+          "id": "node/10995854219",
+          "name": "children's air ambulance",
+          "lat": 51.482365,
+          "lon": -2.675725
+        },
+        {
+          "id": "way/38081079",
+          "name": "Sort It!",
+          "lat": 51.471851,
+          "lon": -2.480097
+        },
+        {
           "id": "node/2381386303",
           "lat": 51.447584,
           "lon": -2.585466,
@@ -1332,14 +1485,6 @@
           "lat": 51.447131,
           "lon": -2.589364,
           "street": "Ship Lane"
-        },
-        {
-          "id": "way/230315450",
-          "name": "St Philips Household Waste Recycling Centre",
-          "lat": 51.455041,
-          "lon": -2.572462,
-          "address": "Folly Lane",
-          "openingHours": "08:00-16:15"
         },
         {
           "id": "node/12592701180",
@@ -1396,13 +1541,6 @@
           "street": "Clyde Park"
         },
         {
-          "id": "way/967932830",
-          "name": "Sims Metal Management",
-          "lat": 51.46918,
-          "lon": -2.569121,
-          "address": "New Gatton Road"
-        },
-        {
           "id": "node/12000453349",
           "lat": 51.473284,
           "lon": -2.59033,
@@ -1439,12 +1577,6 @@
           "street": "Somerfield Roundabout"
         },
         {
-          "id": "way/402535343",
-          "name": "Bristol Waste",
-          "lat": 51.425267,
-          "lon": -2.603164
-        },
-        {
           "id": "node/224309831",
           "lat": 51.486758,
           "lon": -2.595819,
@@ -1473,34 +1605,15 @@
           "lat": 51.41855,
           "lon": -2.616509,
           "street": "Saint Peters Rise"
-        },
-        {
-          "id": "node/3735245489",
-          "lat": 51.493902,
-          "lon": -2.602469,
-          "street": "Southmead Road"
-        },
-        {
-          "id": "node/11433318867",
-          "lat": 51.496585,
-          "lon": -2.591731,
-          "wheelchair": "yes",
-          "street": "Central Way"
-        },
-        {
-          "id": "node/624659629",
-          "lat": 51.485308,
-          "lon": -2.541101,
-          "context": "Sycamore"
-        },
-        {
-          "id": "node/11300857159",
-          "lat": 51.493776,
-          "lon": -2.620294,
-          "street": "Westbury Court Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:36.041Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:18.676Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1736,7 +1849,13 @@
     "outdoor-gyms": {
       "count": 21,
       "pois": [],
-      "updatedAt": "2026-09-03T17:07:37.981Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:19.539Z"
     },
     "camp-sites": {
       "count": 4,
@@ -2023,9 +2142,99 @@
           "name": "Bomber's Seat",
           "lat": 51.466066,
           "lon": -2.699332
+        },
+        {
+          "id": "node/6208726273",
+          "lat": 51.453689,
+          "lon": -2.588694,
+          "street": "Old Temple Street"
+        },
+        {
+          "id": "node/12422241171",
+          "lat": 51.453532,
+          "lon": -2.587226,
+          "street": "Temple Back"
+        },
+        {
+          "id": "node/12630457090",
+          "lat": 51.45367,
+          "lon": -2.589204,
+          "street": "Bath Street"
+        },
+        {
+          "id": "node/11829410769",
+          "lat": 51.45546,
+          "lon": -2.589016,
+          "street": "Peter Street"
+        },
+        {
+          "id": "node/12869170318",
+          "lat": 51.455689,
+          "lon": -2.586823,
+          "street": "Castle Street"
+        },
+        {
+          "id": "node/12630465815",
+          "lat": 51.452967,
+          "lon": -2.587941,
+          "street": "Temple Street"
+        },
+        {
+          "id": "node/4709994267",
+          "lat": 51.455314,
+          "lon": -2.590207,
+          "street": "Dolphin Street"
+        },
+        {
+          "id": "node/6937841129",
+          "lat": 51.456679,
+          "lon": -2.58822,
+          "street": "Merchant Street"
+        },
+        {
+          "id": "node/5822644390",
+          "lat": 51.456779,
+          "lon": -2.586159,
+          "street": "Broad Weir"
+        },
+        {
+          "id": "node/2797871782",
+          "lat": 51.451937,
+          "lon": -2.586964,
+          "street": "Church Lane"
+        },
+        {
+          "id": "node/13176594400",
+          "lat": 51.455629,
+          "lon": -2.583911,
+          "street": "Old Market Roundabout"
+        },
+        {
+          "id": "node/2797871781",
+          "lat": 51.451836,
+          "lon": -2.58677,
+          "street": "The Lime Avenue"
+        },
+        {
+          "id": "node/12533920355",
+          "lat": 51.452207,
+          "lon": -2.590361,
+          "street": "Thomas Lane"
+        },
+        {
+          "id": "node/12705991483",
+          "lat": 51.451599,
+          "lon": -2.589139,
+          "street": "Cross Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:45.751Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:20.630Z"
     },
     "compressed-air": {
       "count": 0,

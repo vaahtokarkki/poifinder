@@ -1,6 +1,6 @@
 {
   "city": "lappeenranta",
-  "generatedAt": "2026-09-03T16:40:43.063Z",
+  "generatedAt": "2026-09-11T10:27:16.504Z",
   "categories": {
     "toilets": {
       "count": 19,
@@ -33,12 +33,31 @@
           "context": "K-Citymarket"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:25.603Z"
+      "stats": {
+        "free": 6,
+        "paid": 4,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:27:10.267Z"
     },
     "drinking-water": {
       "count": 2,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:40:26.747Z"
+      "pois": [
+        {
+          "id": "node/4294867460",
+          "lat": 61.050299,
+          "lon": 28.196291,
+          "street": "Kauppakatu"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:12.512Z"
     },
     "playgrounds": {
       "count": 102,
@@ -542,7 +561,13 @@
           "lon": 28.190103
         }
       ],
-      "updatedAt": "2026-09-03T16:40:32.881Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:12.936Z"
     },
     "post-boxes": {
       "count": 37,
@@ -716,17 +741,38 @@
       "count": 17,
       "pois": [
         {
-          "id": "node/2232392965",
-          "lat": 61.050852,
-          "lon": 28.181827,
-          "street": "Kivenkatu"
-        },
-        {
           "id": "way/1131992083",
           "name": "Encore Ympäristöpalvelut, Lappeenranta",
           "lat": 61.03571,
           "lon": 28.192938,
           "address": "Palosuonkatu 12"
+        },
+        {
+          "id": "way/1131992089",
+          "name": "Toikansuon Hyödyksi-asema",
+          "lat": 61.030617,
+          "lon": 28.197342,
+          "address": "Palosuonkatu 20"
+        },
+        {
+          "id": "node/968048912",
+          "name": "Hyötyhalli",
+          "lat": 61.086564,
+          "lon": 28.153022,
+          "address": "Kivisalmenkatu 10",
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-14:00; Su off"
+        },
+        {
+          "id": "node/12354064097",
+          "name": "Kierrätys Laineaho",
+          "lat": 61.056279,
+          "lon": 28.268873
+        },
+        {
+          "id": "node/2232392965",
+          "lat": 61.050852,
+          "lon": 28.181827,
+          "street": "Kivenkatu"
         },
         {
           "id": "node/5774988191",
@@ -753,34 +799,19 @@
           "street": "Nurmelanraitti"
         },
         {
-          "id": "way/1131992089",
-          "name": "Toikansuon Hyödyksi-asema",
-          "lat": 61.030617,
-          "lon": 28.197342,
-          "address": "Palosuonkatu 20"
-        },
-        {
-          "id": "node/968048912",
-          "name": "Hyötyhalli",
-          "lat": 61.086564,
-          "lon": 28.153022,
-          "address": "Kivisalmenkatu 10",
-          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-14:00; Su off"
-        },
-        {
-          "id": "node/12354064097",
-          "name": "Kierrätys Laineaho",
-          "lat": 61.056279,
-          "lon": 28.268873
-        },
-        {
           "id": "node/496047594",
           "lat": 61.072392,
           "lon": 28.28899,
           "street": "Hovinkatu"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:35.403Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:14.749Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -843,7 +874,13 @@
     "outdoor-gyms": {
       "count": 10,
       "pois": [],
-      "updatedAt": "2026-09-03T16:40:36.989Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:15.605Z"
     },
     "camp-sites": {
       "count": 2,
@@ -926,8 +963,63 @@
     },
     "benches": {
       "count": 293,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:40:42.962Z"
+      "pois": [
+        {
+          "id": "node/6820609202",
+          "lat": 61.058524,
+          "lon": 28.18806,
+          "street": "Marianaukio"
+        },
+        {
+          "id": "node/1778248986",
+          "lat": 61.058037,
+          "lon": 28.188754,
+          "street": "Kirkkokatu"
+        },
+        {
+          "id": "node/1778248960",
+          "lat": 61.058007,
+          "lon": 28.190543,
+          "street": "Pormestarinkatu"
+        },
+        {
+          "id": "node/8922955864",
+          "lat": 61.058517,
+          "lon": 28.186181,
+          "street": "Kauppakatu"
+        },
+        {
+          "id": "node/8930706212",
+          "lat": 61.058248,
+          "lon": 28.185441,
+          "street": "Valtakatu"
+        },
+        {
+          "id": "node/8922782673",
+          "lat": 61.057188,
+          "lon": 28.190071,
+          "street": "Villimiehenkatu"
+        },
+        {
+          "id": "node/8928073164",
+          "lat": 61.057001,
+          "lon": 28.190479,
+          "street": "Kansalaistori"
+        },
+        {
+          "id": "node/8912186948",
+          "lat": 61.058303,
+          "lon": 28.19279,
+          "street": "Vapaudenaukio"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:16.403Z"
     }
   }
 }

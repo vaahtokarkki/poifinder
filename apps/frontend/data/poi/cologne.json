@@ -1,9 +1,9 @@
 {
   "city": "cologne",
-  "generatedAt": "2026-09-03T16:55:33.021Z",
+  "generatedAt": "2026-09-11T10:29:15.199Z",
   "categories": {
     "toilets": {
-      "count": 158,
+      "count": 160,
       "pois": [
         {
           "id": "node/260718932",
@@ -21,6 +21,14 @@
           "wheelchair": "yes",
           "fee": "yes",
           "context": "Galeria"
+        },
+        {
+          "id": "node/14144897280",
+          "lat": 50.939957,
+          "lon": 6.95498,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Museum für Angewandte Kunst"
         },
         {
           "id": "node/2457885953",
@@ -199,7 +207,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:54:58.379Z"
+      "stats": {
+        "free": 89,
+        "paid": 26,
+        "stepFree": 80,
+        "partlyStepFree": 14
+      },
+      "updatedAt": "2026-09-11T10:29:06.173Z"
     },
     "drinking-water": {
       "count": 27,
@@ -209,9 +223,151 @@
           "name": "Severins-Brunnen mit Stollwerck-Mädchen",
           "lat": 50.923235,
           "lon": 6.959042
+        },
+        {
+          "id": "node/13057973925",
+          "lat": 50.940005,
+          "lon": 6.959986,
+          "street": "Kurt-Hackenberg-Platz"
+        },
+        {
+          "id": "node/7046569785",
+          "lat": 50.933333,
+          "lon": 6.963547,
+          "street": "Leystapelwerft"
+        },
+        {
+          "id": "node/7872930589",
+          "lat": 50.936801,
+          "lon": 6.948846,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Zeppelinstraße"
+        },
+        {
+          "id": "node/11071546269",
+          "lat": 50.936754,
+          "lon": 6.973226,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Deutzer Freiheit"
+        },
+        {
+          "id": "node/10876314974",
+          "lat": 50.942041,
+          "lon": 6.943534,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Im Klapperhof"
+        },
+        {
+          "id": "node/9689733527",
+          "lat": 50.949636,
+          "lon": 6.956761,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Eigelstein"
+        },
+        {
+          "id": "node/13058292652",
+          "lat": 50.952249,
+          "lon": 6.954781,
+          "street": "Melchiorstraße"
+        },
+        {
+          "id": "node/10043513963",
+          "lat": 50.919626,
+          "lon": 6.959854,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Elsaßstraße"
+        },
+        {
+          "id": "node/7018230858",
+          "lat": 50.950539,
+          "lon": 6.980768,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Thermalbad"
+        },
+        {
+          "id": "node/11198641928",
+          "lat": 50.939412,
+          "lon": 6.995558,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Barcelona-Allee"
+        },
+        {
+          "id": "node/1251047417",
+          "lat": 50.963019,
+          "lon": 6.983163,
+          "openingHours": "24/7",
+          "fee": "yes",
+          "street": "An der Schanz"
+        },
+        {
+          "id": "node/7736353664",
+          "lat": 50.957752,
+          "lon": 7.005863,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Lassallestraße"
+        },
+        {
+          "id": "node/8818007268",
+          "lat": 50.958004,
+          "lon": 6.909851,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Subbelrather Straße"
+        },
+        {
+          "id": "node/12670751991",
+          "lat": 50.899264,
+          "lon": 6.997436,
+          "street": "Weidenweg"
+        },
+        {
+          "id": "node/8044267944",
+          "lat": 50.892625,
+          "lon": 6.99473,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Maternusplatz"
+        },
+        {
+          "id": "node/4426838112",
+          "lat": 50.94001,
+          "lon": 6.879259,
+          "wheelchair": "yes",
+          "street": "Wendelinstraße"
+        },
+        {
+          "id": "node/8883850705",
+          "lat": 50.929914,
+          "lon": 6.876359,
+          "openingHours": "24/7",
+          "wheelchair": "limited",
+          "fee": "no",
+          "street": "Guts-Muths-Weg"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:00.351Z"
+      "stats": {
+        "free": 15,
+        "paid": 1,
+        "stepFree": 14,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:29:08.637Z"
     },
     "playgrounds": {
       "count": 979,
@@ -1364,7 +1520,7 @@
       "updatedAt": "2026-09-03T16:55:11.453Z"
     },
     "atms": {
-      "count": 281,
+      "count": 279,
       "pois": [
         {
           "id": "node/633181862",
@@ -1606,7 +1762,13 @@
           "openingHours": "Mo-We 08:30-13:00,14:00-16:00; Th 08:30-13:00,14:00-19:00; Fr 08:30-14:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:12.230Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 114,
+        "partlyStepFree": 15
+      },
+      "updatedAt": "2026-09-11T10:29:09.373Z"
     },
     "post-boxes": {
       "count": 439,
@@ -1796,8 +1958,57 @@
       "updatedAt": "2026-09-03T16:55:18.743Z"
     },
     "recycling": {
-      "count": 801,
+      "count": 803,
       "pois": [
+        {
+          "id": "node/12138724958",
+          "name": "Alträucher GmbH Containerdienst",
+          "lat": 50.965263,
+          "lon": 6.891837,
+          "address": "Grüner Brunnenweg"
+        },
+        {
+          "id": "way/22177523",
+          "name": "AWB Wertstoff-Center Köln-Ossendorf",
+          "lat": 50.982908,
+          "lon": 6.901691,
+          "address": "Butzweilerstraße 50",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 08:00-16:00"
+        },
+        {
+          "id": "node/616787216",
+          "name": "Entsorgungscenter",
+          "lat": 50.883001,
+          "lon": 6.912571
+        },
+        {
+          "id": "way/157822958",
+          "name": "AWB Wertstoff-Center Gremberghoven",
+          "lat": 50.908831,
+          "lon": 7.048148,
+          "address": "August-Horch-Straße 3",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa 08:00-16:00; PH off"
+        },
+        {
+          "id": "way/216254449",
+          "name": "REMEX Mineralstoff GmbH",
+          "lat": 50.916385,
+          "lon": 7.054971,
+          "address": "Gotlandstraße 15"
+        },
+        {
+          "id": "way/680740444",
+          "name": "Kompost- und Lagerhof Westfriedhof",
+          "lat": 50.972706,
+          "lon": 6.87376
+        },
+        {
+          "id": "node/12143729021",
+          "name": "AVG Recyclinghof Köln-Heumar",
+          "lat": 50.918014,
+          "lon": 7.062872,
+          "address": "Wikingerstraße 100"
+        },
         {
           "id": "node/260717131",
           "lat": 50.936651,
@@ -1929,61 +2140,25 @@
           "street": "Baumstraße"
         },
         {
+          "id": "node/14140272709",
+          "lat": 50.933142,
+          "lon": 6.973312,
+          "street": "Helenenwallstraße"
+        },
+        {
           "id": "node/262394076",
           "lat": 50.939909,
           "lon": 6.946041,
           "street": "St.-Apern-Straße"
-        },
-        {
-          "id": "node/2201773596",
-          "lat": 50.930797,
-          "lon": 6.950047,
-          "street": "Poststraße"
-        },
-        {
-          "id": "node/13698905403",
-          "lat": 50.93032,
-          "lon": 6.950105,
-          "street": "Pantaleonstraße"
-        },
-        {
-          "id": "node/12894742837",
-          "lat": 50.928508,
-          "lon": 6.954485,
-          "street": "Ankerstraße"
-        },
-        {
-          "id": "node/12980561268",
-          "lat": 50.947045,
-          "lon": 6.955248,
-          "street": "Eintrachtstraße"
-        },
-        {
-          "id": "node/450605254",
-          "lat": 50.943071,
-          "lon": 6.946977,
-          "street": "Gereonsdriesch"
-        },
-        {
-          "id": "node/1356824535",
-          "lat": 50.937991,
-          "lon": 6.976665,
-          "street": "Kasemattenstraße"
-        },
-        {
-          "id": "node/11185524666",
-          "lat": 50.934236,
-          "lon": 6.97605,
-          "street": "Arnoldsstraße"
-        },
-        {
-          "id": "node/12791529724",
-          "lat": 50.930951,
-          "lon": 6.973732,
-          "street": "Teutonenstraße"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:21.418Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:29:11.549Z"
     },
     "luggage-storage": {
       "count": 3,
@@ -2259,7 +2434,13 @@
           "lon": 6.860106
         }
       ],
-      "updatedAt": "2026-09-03T16:55:23.747Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:29:12.955Z"
     },
     "camp-sites": {
       "count": 4,
@@ -2610,9 +2791,112 @@
       "updatedAt": "2026-08-17T04:03:27.031Z"
     },
     "benches": {
-      "count": 5887,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:55:32.913Z"
+      "count": 5900,
+      "pois": [
+        {
+          "id": "node/5619231201",
+          "lat": 50.937568,
+          "lon": 6.960237,
+          "street": "Unter Käster"
+        },
+        {
+          "id": "node/12120223575",
+          "lat": 50.937038,
+          "lon": 6.960412,
+          "street": "Heumarkt"
+        },
+        {
+          "id": "node/8116641014",
+          "lat": 50.937954,
+          "lon": 6.960093,
+          "street": "Alter Markt"
+        },
+        {
+          "id": "node/5427062264",
+          "lat": 50.938211,
+          "lon": 6.961289,
+          "street": "Lintgasse"
+        },
+        {
+          "id": "node/12804835272",
+          "lat": 50.9384,
+          "lon": 6.960897,
+          "street": "An Groß St. Martin"
+        },
+        {
+          "id": "node/12281523515",
+          "lat": 50.936157,
+          "lon": 6.959738,
+          "street": "Gürzenichstraße"
+        },
+        {
+          "id": "node/5429007258",
+          "lat": 50.939159,
+          "lon": 6.960801,
+          "street": "Mühlengasse"
+        },
+        {
+          "id": "node/12848308286",
+          "lat": 50.938491,
+          "lon": 6.957996,
+          "street": "Laurenzplatz"
+        },
+        {
+          "id": "node/7658912455",
+          "lat": 50.936698,
+          "lon": 6.957771,
+          "street": "Quatermarkt"
+        },
+        {
+          "id": "node/4686921349",
+          "lat": 50.93585,
+          "lon": 6.95906,
+          "street": "Martinstraße"
+        },
+        {
+          "id": "node/3898140071",
+          "lat": 50.939351,
+          "lon": 6.959821,
+          "street": "Bechergasse"
+        },
+        {
+          "id": "node/5224947711",
+          "lat": 50.939058,
+          "lon": 6.958621,
+          "street": "Kleine Budengasse"
+        },
+        {
+          "id": "node/5873354246",
+          "lat": 50.938736,
+          "lon": 6.962841,
+          "street": "Rheinufertunnel"
+        },
+        {
+          "id": "node/12804809707",
+          "lat": 50.938267,
+          "lon": 6.957089,
+          "street": "Salomonsgasse"
+        },
+        {
+          "id": "node/12237343756",
+          "lat": 50.938546,
+          "lon": 6.956945,
+          "street": "Marspfortengasse"
+        },
+        {
+          "id": "node/790034343",
+          "lat": 50.93495,
+          "lon": 6.958867,
+          "street": "Lichhof"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:15.097Z"
     },
     "compressed-air": {
       "count": 8,

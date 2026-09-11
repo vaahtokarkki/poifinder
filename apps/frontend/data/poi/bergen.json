@@ -1,6 +1,6 @@
 {
   "city": "bergen",
-  "generatedAt": "2026-09-03T16:45:23.808Z",
+  "generatedAt": "2026-09-11T10:28:03.470Z",
   "categories": {
     "toilets": {
       "count": 61,
@@ -185,7 +185,13 @@
           "context": "Oasen senter"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:01.534Z"
+      "stats": {
+        "free": 28,
+        "paid": 21,
+        "stepFree": 34,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:57.278Z"
     },
     "drinking-water": {
       "count": 26,
@@ -203,9 +209,61 @@
           "lon": 5.318257,
           "openingHours": "24/7",
           "fee": "no"
+        },
+        {
+          "id": "node/5810949062",
+          "lat": 60.39434,
+          "lon": 5.32486,
+          "street": "Torget"
+        },
+        {
+          "id": "node/6760727892",
+          "lat": 60.391217,
+          "lon": 5.331553,
+          "fee": "no",
+          "street": "Marken"
+        },
+        {
+          "id": "node/5661937283",
+          "lat": 60.396971,
+          "lon": 5.322789,
+          "fee": "no",
+          "street": "Bryggen"
+        },
+        {
+          "id": "node/7741027848",
+          "lat": 60.392954,
+          "lon": 5.341318,
+          "street": "Skansemyrsveien"
+        },
+        {
+          "id": "node/13057737411",
+          "lat": 60.401028,
+          "lon": 5.317819,
+          "street": "General Mansbachs alléer"
+        },
+        {
+          "id": "node/12118823018",
+          "lat": 60.394534,
+          "lon": 5.34358,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Fløyfjellet"
+        },
+        {
+          "id": "node/9806180890",
+          "lat": 60.33028,
+          "lon": 5.303432,
+          "street": "Øvre Kråkenes"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:03.403Z"
+      "stats": {
+        "free": 6,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:59.222Z"
     },
     "playgrounds": {
       "count": 642,
@@ -1197,7 +1255,13 @@
           "lon": 5.234043
         }
       ],
-      "updatedAt": "2026-09-03T16:45:11.129Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:59.794Z"
     },
     "post-boxes": {
       "count": 146,
@@ -1389,6 +1453,20 @@
       "count": 363,
       "pois": [
         {
+          "id": "node/10162768483",
+          "name": "Mobil gjenvinningsstasjon",
+          "lat": 60.378868,
+          "lon": 5.326654,
+          "openingHours": "Su 11:00-12:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/479799924",
+          "name": "Bosshuset",
+          "lat": 60.363693,
+          "lon": 5.352538
+        },
+        {
           "id": "node/4907217075",
           "lat": 60.390781,
           "lon": 5.321453,
@@ -1555,21 +1633,15 @@
           "lat": 60.391212,
           "lon": 5.329796,
           "street": "Markesmauet"
-        },
-        {
-          "id": "node/4471726023",
-          "lat": 60.387594,
-          "lon": 5.323927,
-          "street": "Harald Hårfagres gate"
-        },
-        {
-          "id": "node/3988384052",
-          "lat": 60.393681,
-          "lon": 5.315975,
-          "street": "Claus Frimanns gate"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:14.559Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:01.291Z"
     },
     "luggage-storage": {
       "count": 4,
@@ -1717,7 +1789,13 @@
           "lon": 5.288737
         }
       ],
-      "updatedAt": "2026-09-03T16:45:16.343Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:28:02.272Z"
     },
     "camp-sites": {
       "count": 4,
@@ -2102,9 +2180,81 @@
           "name": "Montana utsiktspunkt",
           "lat": 60.371235,
           "lon": 5.36371
+        },
+        {
+          "id": "node/3988384021",
+          "lat": 60.390563,
+          "lon": 5.321788,
+          "street": "Vestre Torggaten"
+        },
+        {
+          "id": "node/3966051518",
+          "lat": 60.392154,
+          "lon": 5.323059,
+          "street": "Torgallmenningen"
+        },
+        {
+          "id": "node/3973804634",
+          "lat": 60.391039,
+          "lon": 5.324087,
+          "street": "Nordahl Bruns gate"
+        },
+        {
+          "id": "node/3973804636",
+          "lat": 60.391124,
+          "lon": 5.324174,
+          "street": "Nedre Ole Bulls plass"
+        },
+        {
+          "id": "node/3966354348",
+          "lat": 60.391996,
+          "lon": 5.320495,
+          "street": "Engen"
+        },
+        {
+          "id": "node/3966356978",
+          "lat": 60.392308,
+          "lon": 5.320865,
+          "street": "Øvre Ole Bulls plass"
+        },
+        {
+          "id": "node/4387485449",
+          "lat": 60.392453,
+          "lon": 5.320947,
+          "street": "Ole Bulls plass"
+        },
+        {
+          "id": "node/3973804626",
+          "lat": 60.390926,
+          "lon": 5.324842,
+          "street": "Festplassen J"
+        },
+        {
+          "id": "node/3976398435",
+          "lat": 60.391885,
+          "lon": 5.325015,
+          "street": "Starvhusgaten"
+        },
+        {
+          "id": "node/3976398350",
+          "lat": 60.39148,
+          "lon": 5.325394,
+          "street": "Festplassen K"
+        },
+        {
+          "id": "node/6172828643",
+          "lat": 60.390398,
+          "lon": 5.324942,
+          "street": "Rasmus Meyers allé"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:23.707Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:03.370Z"
     },
     "compressed-air": {
       "count": 0,

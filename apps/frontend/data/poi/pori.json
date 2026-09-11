@@ -1,6 +1,6 @@
 {
   "city": "pori",
-  "generatedAt": "2026-09-03T16:40:05.115Z",
+  "generatedAt": "2026-09-11T10:27:02.094Z",
   "categories": {
     "toilets": {
       "count": 11,
@@ -40,12 +40,24 @@
           "context": "Neste K"
         }
       ],
-      "updatedAt": "2026-09-03T16:39:47.548Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:56.935Z"
     },
     "drinking-water": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:39:48.355Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:57.695Z"
     },
     "playgrounds": {
       "count": 126,
@@ -679,7 +691,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:39:54.428Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:58.426Z"
     },
     "post-boxes": {
       "count": 11,
@@ -745,12 +763,6 @@
       "count": 19,
       "pois": [
         {
-          "id": "node/539503752",
-          "lat": 61.494462,
-          "lon": 21.803639,
-          "street": "Työmiehenkatu"
-        },
-        {
           "id": "way/516407490",
           "name": "Aittaluodon lajitteluasema",
           "lat": 61.487872,
@@ -776,6 +788,12 @@
           "address": "Savipajakatu 8"
         },
         {
+          "id": "node/539503752",
+          "lat": 61.494462,
+          "lon": 21.803639,
+          "street": "Työmiehenkatu"
+        },
+        {
           "id": "node/11764264889",
           "lat": 61.478036,
           "lon": 21.725761,
@@ -788,7 +806,13 @@
           "street": "Ravanintie"
         }
       ],
-      "updatedAt": "2026-09-03T16:39:56.882Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:00.354Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -869,7 +893,13 @@
           "lon": 21.818528
         }
       ],
-      "updatedAt": "2026-09-03T16:39:58.630Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:01.174Z"
     },
     "camp-sites": {
       "count": 2,
@@ -952,8 +982,45 @@
     },
     "benches": {
       "count": 39,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:40:05.014Z"
+      "pois": [
+        {
+          "id": "node/515868640",
+          "lat": 61.485126,
+          "lon": 21.799022,
+          "street": "Itäpuisto"
+        },
+        {
+          "id": "node/3066318501",
+          "lat": 61.485327,
+          "lon": 21.791918,
+          "street": "Eteläpuisto"
+        },
+        {
+          "id": "node/515666631",
+          "lat": 61.484481,
+          "lon": 21.80381,
+          "street": "Säveltäjänkatu"
+        },
+        {
+          "id": "node/515666664",
+          "lat": 61.484247,
+          "lon": 21.805051,
+          "street": "Tähtikatu"
+        },
+        {
+          "id": "node/13750048575",
+          "lat": 61.494717,
+          "lon": 21.790534,
+          "street": "Koivikkopolku"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:01.993Z"
     }
   }
 }

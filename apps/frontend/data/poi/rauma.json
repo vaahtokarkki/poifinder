@@ -1,6 +1,6 @@
 {
   "city": "rauma",
-  "generatedAt": "2026-09-03T16:42:39.780Z",
+  "generatedAt": "2026-09-11T10:27:45.993Z",
   "categories": {
     "toilets": {
       "count": 12,
@@ -33,12 +33,24 @@
           "context": "Rantatalo"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:22.282Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:27:41.308Z"
     },
     "drinking-water": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-09-03T16:42:23.448Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:42.537Z"
     },
     "playgrounds": {
       "count": 41,
@@ -395,7 +407,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:29.306Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:43.052Z"
     },
     "post-boxes": {
       "count": 16,
@@ -533,7 +551,13 @@
           "street": "Välitie"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:32.089Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:44.263Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -591,7 +615,13 @@
           "lon": 21.525162
         }
       ],
-      "updatedAt": "2026-09-03T16:42:34.379Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:44.989Z"
     },
     "camp-sites": {
       "count": 2,
@@ -709,8 +739,75 @@
     },
     "benches": {
       "count": 20,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:42:39.680Z"
+      "pois": [
+        {
+          "id": "node/12570813868",
+          "lat": 61.126312,
+          "lon": 21.509944,
+          "street": "Helsingintori"
+        },
+        {
+          "id": "node/13017686528",
+          "lat": 61.128566,
+          "lon": 21.514269,
+          "street": "Kuninkaankatu"
+        },
+        {
+          "id": "node/1419847564",
+          "lat": 61.128141,
+          "lon": 21.507851,
+          "street": "Kauppakatu"
+        },
+        {
+          "id": "node/1419847569",
+          "lat": 61.128196,
+          "lon": 21.507701,
+          "street": "Savilankatu"
+        },
+        {
+          "id": "node/13017513058",
+          "lat": 61.127199,
+          "lon": 21.515796,
+          "street": "Vanhankirkonkatu"
+        },
+        {
+          "id": "node/1419925042",
+          "lat": 61.129581,
+          "lon": 21.511667,
+          "street": "Kirkkokatu"
+        },
+        {
+          "id": "node/13133100334",
+          "lat": 61.126672,
+          "lon": 21.517674,
+          "street": "Itäkatu"
+        },
+        {
+          "id": "node/13017540728",
+          "lat": 61.126455,
+          "lon": 21.517972,
+          "street": "Kaunisjärvenkatu"
+        },
+        {
+          "id": "node/1915374928",
+          "lat": 61.15732,
+          "lon": 21.500581,
+          "street": "Maastopyöräpolku"
+        },
+        {
+          "id": "node/8618546396",
+          "lat": 61.107335,
+          "lon": 21.621355,
+          "street": "Korskintie"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:45.892Z"
     }
   }
 }

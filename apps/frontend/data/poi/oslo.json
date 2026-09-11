@@ -1,6 +1,6 @@
 {
   "city": "oslo",
-  "generatedAt": "2026-09-03T16:44:58.971Z",
+  "generatedAt": "2026-09-11T10:28:00.746Z",
   "categories": {
     "toilets": {
       "count": 160,
@@ -128,6 +128,7 @@
           "lat": 59.940615,
           "lon": 10.722058,
           "wheelchair": "yes",
+          "fee": "no",
           "context": "Frederikke"
         },
         {
@@ -196,7 +197,13 @@
           "lon": 10.723815
         }
       ],
-      "updatedAt": "2026-09-03T16:44:30.566Z"
+      "stats": {
+        "free": 61,
+        "paid": 27,
+        "stepFree": 58,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-11T10:27:52.995Z"
     },
     "drinking-water": {
       "count": 109,
@@ -212,9 +219,200 @@
           "name": "Lambertseter Klubbhus - Vannkran",
           "lat": 59.871958,
           "lon": 10.817734
+        },
+        {
+          "id": "node/6655566839",
+          "lat": 59.914595,
+          "lon": 10.748597,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Eva Kolstads gate"
+        },
+        {
+          "id": "node/6690837306",
+          "lat": 59.912831,
+          "lon": 10.747293,
+          "street": "Kirkeristen"
+        },
+        {
+          "id": "node/12135883028",
+          "lat": 59.912805,
+          "lon": 10.757975,
+          "wheelchair": "limited",
+          "fee": "no",
+          "street": "Nylandsveien"
+        },
+        {
+          "id": "node/13070394824",
+          "lat": 59.917778,
+          "lon": 10.748671,
+          "street": "Deichmans gate"
+        },
+        {
+          "id": "node/988391184",
+          "lat": 59.91283,
+          "lon": 10.741897,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Karl Johans gate"
+        },
+        {
+          "id": "node/9293462406",
+          "lat": 59.907786,
+          "lon": 10.748456,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Havnepromenaden"
+        },
+        {
+          "id": "node/6717415988",
+          "lat": 59.920113,
+          "lon": 10.748455,
+          "wheelchair": "no",
+          "fee": "no",
+          "street": "Tranga"
+        },
+        {
+          "id": "node/13795723001",
+          "lat": 59.914761,
+          "lon": 10.733162,
+          "street": "Stortingsgata"
+        },
+        {
+          "id": "node/12114425187",
+          "lat": 59.90746,
+          "lon": 10.737343,
+          "street": "Festningsgaten"
+        },
+        {
+          "id": "node/6650871056",
+          "lat": 59.912404,
+          "lon": 10.732182,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Kronprinsesse Märthas plass"
+        },
+        {
+          "id": "node/12023085187",
+          "lat": 59.90908,
+          "lon": 10.777103,
+          "street": "Jarlegata"
+        },
+        {
+          "id": "node/14125593412",
+          "lat": 59.908974,
+          "lon": 10.725233,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Beddingen"
+        },
+        {
+          "id": "node/14125728402",
+          "lat": 59.909446,
+          "lon": 10.720067,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Filipstadveien"
+        },
+        {
+          "id": "node/9125203383",
+          "lat": 59.921081,
+          "lon": 10.719742,
+          "street": "Holtegata"
+        },
+        {
+          "id": "node/13175332501",
+          "lat": 59.928703,
+          "lon": 10.773124,
+          "wheelchair": "limited",
+          "fee": "no",
+          "street": "Krokveien"
+        },
+        {
+          "id": "node/9588852038",
+          "lat": 59.932447,
+          "lon": 10.751803,
+          "street": "Klokkergata"
+        },
+        {
+          "id": "node/8668686611",
+          "lat": 59.903492,
+          "lon": 10.78874,
+          "street": "Turbinveien"
+        },
+        {
+          "id": "node/2418375055",
+          "lat": 59.929736,
+          "lon": 10.713015,
+          "street": "Bogstadveien"
+        },
+        {
+          "id": "node/12049889460",
+          "lat": 59.885196,
+          "lon": 10.787815,
+          "fee": "no",
+          "street": "Sandstuveien"
+        },
+        {
+          "id": "node/4901887616",
+          "lat": 59.90632,
+          "lon": 10.68639,
+          "street": "Langviksveien"
+        },
+        {
+          "id": "node/9896240761",
+          "lat": 59.897791,
+          "lon": 10.686804,
+          "street": "Bygdøylund"
+        },
+        {
+          "id": "node/7942384087",
+          "lat": 59.934021,
+          "lon": 10.820744,
+          "street": "Midtveien"
+        },
+        {
+          "id": "node/5005486945",
+          "lat": 59.94686,
+          "lon": 10.700772,
+          "street": "Risalléen"
+        },
+        {
+          "id": "node/5005486614",
+          "lat": 59.947792,
+          "lon": 10.701669,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Ekelyveien"
+        },
+        {
+          "id": "node/14132458086",
+          "lat": 59.943049,
+          "lon": 10.818429,
+          "street": "Brobekkveien"
+        },
+        {
+          "id": "node/4354201851",
+          "lat": 59.902524,
+          "lon": 10.666476,
+          "street": "Christian Frederiks vei"
+        },
+        {
+          "id": "node/9914926398",
+          "lat": 59.911908,
+          "lon": 10.644167,
+          "openingHours": "Mo 04:30-00:00; Sa 03:30-08:00",
+          "fee": "no",
+          "street": "Drammensveien"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:32.966Z"
+      "stats": {
+        "free": 33,
+        "paid": 0,
+        "stepFree": 18,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:27:55.244Z"
     },
     "playgrounds": {
       "count": 1074,
@@ -1533,7 +1731,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:44.821Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:27:56.567Z"
     },
     "post-boxes": {
       "count": 341,
@@ -1725,6 +1929,111 @@
       "count": 845,
       "pois": [
         {
+          "id": "node/4733060049",
+          "name": "Fredensborg minigjenbruksstasjon",
+          "lat": 59.920851,
+          "lon": 10.750901,
+          "openingHours": "Mo 07:30-14:30; Tu 12:30-19:30; We 07:30-14:30; Th 12:30-19:30; Fr 07:30-14:30"
+        },
+        {
+          "id": "node/5555202749",
+          "name": "Pilestredet Park minigjenbruksstasjon",
+          "lat": 59.92123,
+          "lon": 10.73977
+        },
+        {
+          "id": "node/5555201779",
+          "name": "Sørenga minigjenbruksstasjon",
+          "lat": 59.903378,
+          "lon": 10.756014
+        },
+        {
+          "id": "node/615209007",
+          "name": "Sofienbergparken miljøstasjon",
+          "lat": 59.92307,
+          "lon": 10.766096,
+          "openingHours": "Mo,We,Fr 08:00-15:00; Tu,Th 08:00-20:00"
+        },
+        {
+          "id": "node/5555194749",
+          "name": "Kampen minigjenbruksstasjon",
+          "lat": 59.91548,
+          "lon": 10.782753,
+          "openingHours": "Mo-We,Fr 08:00-15:00; Th 08:00-19:00"
+        },
+        {
+          "id": "node/4733050210",
+          "name": "Bentsehjørnet minigjenbruksstasjon",
+          "lat": 59.93584,
+          "lon": 10.762529,
+          "openingHours": "Mo-Fr 07:30-21:00; Sa 09:30-16:30; Su off"
+        },
+        {
+          "id": "node/6195511326",
+          "name": "Colosseum minigjenbruksstasjon",
+          "lat": 59.92952,
+          "lon": 10.71231
+        },
+        {
+          "id": "node/5555202747",
+          "name": "Løren minigjenbruksstasjon",
+          "lat": 59.933146,
+          "lon": 10.795965,
+          "openingHours": "Mo 16:00-19:00; Tu 10:00-13:00; We 16:00-19:00; Th 10:00-13:00; Fr 16:00-19:00; Sa 10:00-17:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/1312186769",
+          "name": "Ryen gjenbruksstasjon",
+          "lat": 59.895086,
+          "lon": 10.801211,
+          "openingHours": "Mo-Fr 07:30-19:30, Sa 09:00-14:30"
+        },
+        {
+          "id": "node/5555202726",
+          "name": "Bygdøy hageavfallsmottak",
+          "lat": 59.911796,
+          "lon": 10.674607
+        },
+        {
+          "id": "way/52153602",
+          "name": "Haraldrud gjenbruksstasjon",
+          "lat": 59.928337,
+          "lon": 10.825213
+        },
+        {
+          "id": "way/66098218",
+          "name": "Grefsen gjenbruksstasjon",
+          "lat": 59.957715,
+          "lon": 10.770326
+        },
+        {
+          "id": "way/440662188",
+          "name": "Smestad gjenbruksstasjon",
+          "lat": 59.93429,
+          "lon": 10.672693,
+          "openingHours": "Mo-Th 07:30-21:00; Fr,Sa 09:00-16:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11047100392",
+          "name": "Røde Kors",
+          "lat": 59.924714,
+          "lon": 10.638792
+        },
+        {
+          "id": "node/5555201772",
+          "name": "Lineberg ombrukssstasjon",
+          "lat": 59.932626,
+          "lon": 10.88187
+        },
+        {
+          "id": "node/3606961657",
+          "name": "UFF klær og tekstiler",
+          "lat": 59.942708,
+          "lon": 10.626114
+        },
+        {
           "id": "node/6195511354",
           "lat": 59.913869,
           "lon": 10.752245,
@@ -1780,16 +2089,9 @@
         },
         {
           "id": "node/5555194219",
-          "lat": 59.919585,
-          "lon": 10.755697,
-          "street": "Øvre gate"
-        },
-        {
-          "id": "node/4733060049",
-          "name": "Fredensborg minigjenbruksstasjon",
-          "lat": 59.920851,
-          "lon": 10.750901,
-          "openingHours": "Mo 07:30-14:30; Tu 12:30-19:30; We 07:30-14:30; Th 12:30-19:30; Fr 07:30-14:30"
+          "lat": 59.919587,
+          "lon": 10.756156,
+          "street": "Torvbakkgata"
         },
         {
           "id": "node/615208999",
@@ -1814,99 +2116,15 @@
           "lat": 59.915782,
           "lon": 10.76887,
           "street": "Jens Bjelkes gate"
-        },
-        {
-          "id": "node/14089764826",
-          "lat": 59.922461,
-          "lon": 10.750417,
-          "street": "Maridalsveien"
-        },
-        {
-          "id": "node/5555196267",
-          "lat": 59.91922,
-          "lon": 10.76597,
-          "street": "Lakkegata"
-        },
-        {
-          "id": "node/5555195465",
-          "lat": 59.92025,
-          "lon": 10.74002,
-          "street": "Frimanns gate"
-        },
-        {
-          "id": "node/836303980",
-          "lat": 59.922428,
-          "lon": 10.757965,
-          "street": "Sofienberggata"
-        },
-        {
-          "id": "node/5555195439",
-          "lat": 59.92098,
-          "lon": 10.76338,
-          "street": "Rathkes gate"
-        },
-        {
-          "id": "node/8296876789",
-          "lat": 59.914147,
-          "lon": 10.770713,
-          "street": "Sørligata"
-        },
-        {
-          "id": "node/5555189118",
-          "lat": 59.92322,
-          "lon": 10.75413,
-          "street": "Rigmor Luihns vei"
-        },
-        {
-          "id": "node/5555196247",
-          "lat": 59.909124,
-          "lon": 10.76863,
-          "street": "Grønlandsleiret"
-        },
-        {
-          "id": "node/5555202749",
-          "name": "Pilestredet Park minigjenbruksstasjon",
-          "lat": 59.92123,
-          "lon": 10.73977
-        },
-        {
-          "id": "node/5555197288",
-          "lat": 59.92324,
-          "lon": 10.74514,
-          "street": "Akersbakken"
-        },
-        {
-          "id": "node/5555195248",
-          "lat": 59.92164,
-          "lon": 10.73925,
-          "street": "Pilestredet park"
-        },
-        {
-          "id": "node/14061632068",
-          "lat": 59.904016,
-          "lon": 10.757085,
-          "street": "Sørengkaia"
-        },
-        {
-          "id": "node/5555208353",
-          "lat": 59.92033,
-          "lon": 10.76845,
-          "street": "Blytts gate"
-        },
-        {
-          "id": "node/5555194205",
-          "lat": 59.91925,
-          "lon": 10.73433,
-          "street": "Holbergs plass"
-        },
-        {
-          "id": "node/13089011412",
-          "lat": 59.911162,
-          "lon": 10.772284,
-          "street": "Sigurds gate"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:48.621Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:27:58.502Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -2148,7 +2366,13 @@
           "lon": 10.876552
         }
       ],
-      "updatedAt": "2026-09-03T16:44:51.125Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:27:59.466Z"
     },
     "camp-sites": {
       "count": 8,
@@ -2524,7 +2748,7 @@
       "updatedAt": "2026-08-17T04:02:37.135Z"
     },
     "benches": {
-      "count": 4227,
+      "count": 4243,
       "pois": [
         {
           "id": "node/12115037733",
@@ -2555,9 +2779,105 @@
           "name": "Tors benk",
           "lat": 59.861965,
           "lon": 10.836272
+        },
+        {
+          "id": "node/8694891969",
+          "lat": 59.914013,
+          "lon": 10.751904,
+          "street": "Storgata"
+        },
+        {
+          "id": "node/10297490402",
+          "lat": 59.914097,
+          "lon": 10.75247,
+          "street": "Vaterlandstunnelen"
+        },
+        {
+          "id": "node/10944205105",
+          "lat": 59.913159,
+          "lon": 10.75055,
+          "street": "Nygata"
+        },
+        {
+          "id": "node/8010248373",
+          "lat": 59.915445,
+          "lon": 10.751416,
+          "street": "Arbeidersamfunnets plass"
+        },
+        {
+          "id": "node/7634466385",
+          "lat": 59.914894,
+          "lon": 10.749589,
+          "street": "Youngstorget"
+        },
+        {
+          "id": "node/7286572647",
+          "lat": 59.912747,
+          "lon": 10.749498,
+          "street": "Skippergata"
+        },
+        {
+          "id": "node/7634474085",
+          "lat": 59.915224,
+          "lon": 10.748444,
+          "street": "Møllergata"
+        },
+        {
+          "id": "node/7279361141",
+          "lat": 59.912209,
+          "lon": 10.749006,
+          "street": "Biskop Gunnerus’ gate"
+        },
+        {
+          "id": "node/7329851691",
+          "lat": 59.913511,
+          "lon": 10.756943,
+          "street": "Brugata"
+        },
+        {
+          "id": "node/5039388328",
+          "lat": 59.911302,
+          "lon": 10.752265,
+          "street": "Main Station Hallway"
+        },
+        {
+          "id": "node/7279361168",
+          "lat": 59.910997,
+          "lon": 10.749995,
+          "street": "Jernbanetorget"
+        },
+        {
+          "id": "node/7329851704",
+          "lat": 59.913167,
+          "lon": 10.758224,
+          "street": "Nylandsveien"
+        },
+        {
+          "id": "node/7279361172",
+          "lat": 59.910903,
+          "lon": 10.75014,
+          "street": "Strandgata"
+        },
+        {
+          "id": "node/5039385763",
+          "lat": 59.91076,
+          "lon": 10.753231,
+          "street": "Access to tracks 11 and 12"
+        },
+        {
+          "id": "node/12986706310",
+          "lat": 59.912597,
+          "lon": 10.745812,
+          "street": "Stortorvet"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:58.870Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:00.645Z"
     },
     "compressed-air": {
       "count": 0,

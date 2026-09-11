@@ -1,6 +1,6 @@
 {
   "city": "fukuoka",
-  "generatedAt": "2026-09-03T17:44:04.689Z",
+  "generatedAt": "2026-09-11T10:34:15.559Z",
   "categories": {
     "toilets": {
       "count": 220,
@@ -159,7 +159,13 @@
           "lon": 130.329216
         }
       ],
-      "updatedAt": "2026-09-03T17:43:44.903Z"
+      "stats": {
+        "free": 53,
+        "paid": 0,
+        "stepFree": 22,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:34:10.448Z"
     },
     "drinking-water": {
       "count": 27,
@@ -175,9 +181,49 @@
           "name": "手洗い水道",
           "lat": 33.572419,
           "lon": 130.389892
+        },
+        {
+          "id": "node/12561367634",
+          "lat": 33.590463,
+          "lon": 130.40098,
+          "street": "福博であい通り"
+        },
+        {
+          "id": "node/13040257568",
+          "lat": 33.588152,
+          "lon": 130.426769,
+          "fee": "no",
+          "street": "博多駅東２５０７号線"
+        },
+        {
+          "id": "node/5175684722",
+          "lat": 33.589172,
+          "lon": 130.375609,
+          "street": "観月橋"
+        },
+        {
+          "id": "node/9334558958",
+          "lat": 33.566012,
+          "lon": 130.389777,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "筑肥街道"
+        },
+        {
+          "id": "node/13040451302",
+          "lat": 33.578253,
+          "lon": 130.43589,
+          "fee": "no",
+          "street": "東那珂２００８号線"
         }
       ],
-      "updatedAt": "2026-09-03T17:43:46.173Z"
+      "stats": {
+        "free": 9,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:12.008Z"
     },
     "playgrounds": {
       "count": 93,
@@ -1048,7 +1094,13 @@
           "lon": 130.428697
         }
       ],
-      "updatedAt": "2026-09-03T17:43:53.729Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:34:12.530Z"
     },
     "post-boxes": {
       "count": 93,
@@ -1240,13 +1292,6 @@
       "count": 22,
       "pois": [
         {
-          "id": "node/8983626141",
-          "lat": 33.591152,
-          "lon": 130.38174,
-          "openingHours": "24/7",
-          "street": "大手門商店街"
-        },
-        {
           "id": "way/1126664609",
           "name": "城南区資源物回収拠点",
           "lat": 33.549153,
@@ -1265,12 +1310,6 @@
           "name": "2nd STREET",
           "lat": 33.633021,
           "lon": 130.440788
-        },
-        {
-          "id": "node/4791667021",
-          "lat": 33.633078,
-          "lon": 130.440767,
-          "street": "多田羅名島線"
         },
         {
           "id": "node/10301961981",
@@ -1297,9 +1336,28 @@
           "name": "校区紙リサイクルステーション",
           "lat": 33.551628,
           "lon": 130.340962
+        },
+        {
+          "id": "node/8983626141",
+          "lat": 33.591152,
+          "lon": 130.38174,
+          "openingHours": "24/7",
+          "street": "大手門商店街"
+        },
+        {
+          "id": "node/4791667021",
+          "lat": 33.633078,
+          "lon": 130.440767,
+          "street": "多田羅名島線"
         }
       ],
-      "updatedAt": "2026-09-03T17:43:56.627Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:13.706Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -1444,7 +1502,13 @@
           "lon": 130.364023
         }
       ],
-      "updatedAt": "2026-09-03T17:43:58.270Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:14.387Z"
     },
     "camp-sites": {
       "count": 0,
@@ -1696,8 +1760,33 @@
     },
     "benches": {
       "count": 296,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:44:04.589Z"
+      "pois": [
+        {
+          "id": "node/3210237081",
+          "lat": 33.592188,
+          "lon": 130.401747,
+          "street": "明治通り"
+        },
+        {
+          "id": "node/10219090044",
+          "lat": 33.591676,
+          "lon": 130.404031,
+          "street": "東光寺竹下春吉線"
+        },
+        {
+          "id": "node/12403647777",
+          "lat": 33.5917,
+          "lon": 130.38689,
+          "street": "那の津通り"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:15.458Z"
     },
     "compressed-air": {
       "count": 0,

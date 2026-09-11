@@ -1,6 +1,6 @@
 {
   "city": "london",
-  "generatedAt": "2026-09-03T17:05:18.372Z",
+  "generatedAt": "2026-09-11T10:30:20.657Z",
   "categories": {
     "toilets": {
       "count": 815,
@@ -235,7 +235,13 @@
           "context": "Museum Extension"
         }
       ],
-      "updatedAt": "2026-09-03T17:04:24.233Z"
+      "stats": {
+        "free": 335,
+        "paid": 70,
+        "stepFree": 317,
+        "partlyStepFree": 34
+      },
+      "updatedAt": "2026-09-11T10:30:08.454Z"
     },
     "drinking-water": {
       "count": 476,
@@ -429,7 +435,13 @@
           "lon": -0.202301
         }
       ],
-      "updatedAt": "2026-09-03T17:04:27.541Z"
+      "stats": {
+        "free": 165,
+        "paid": 2,
+        "stepFree": 65,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-11T10:30:12.571Z"
     },
     "playgrounds": {
       "count": 2184,
@@ -2144,7 +2156,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:04:45.630Z"
+      "stats": {
+        "free": 220,
+        "paid": 41,
+        "stepFree": 191,
+        "partlyStepFree": 21
+      },
+      "updatedAt": "2026-09-11T10:30:13.837Z"
     },
     "post-boxes": {
       "count": 4060,
@@ -2336,189 +2354,208 @@
       "count": 1042,
       "pois": [
         {
-          "id": "node/4187508661",
-          "lat": 51.507804,
-          "lon": -0.133219,
-          "street": "Waterloo Place"
+          "id": "node/4328124860",
+          "name": "TRAID",
+          "lat": 51.523353,
+          "lon": -0.142321
         },
         {
-          "id": "node/4187508668",
-          "lat": 51.508008,
-          "lon": -0.133385,
-          "street": "Regent Street St James's"
+          "id": "node/1790386546",
+          "name": "Sutherland Street Recycling",
+          "lat": 51.488145,
+          "lon": -0.144551
         },
         {
-          "id": "node/13858685400",
-          "lat": 51.508632,
-          "lon": -0.136197,
-          "street": "Jermyn Street"
+          "id": "way/70561923",
+          "name": "Cringle Dock Transfer Station",
+          "lat": 51.482323,
+          "lon": -0.141544
         },
         {
-          "id": "node/1894547719",
-          "lat": 51.512188,
-          "lon": -0.132697,
-          "openingHours": "week 1-13 Mo-Su 10:00-16:00; week 14-43 10:00-18:00; week 44-52 10:00-16:00",
-          "street": "Wardour Street"
+          "id": "node/862464756",
+          "name": "Denyer Street Depot",
+          "lat": 51.493785,
+          "lon": -0.164827
         },
         {
-          "id": "node/4190435886",
-          "lat": 51.509219,
-          "lon": -0.136573,
-          "street": "Piccadilly"
+          "id": "way/492848751",
+          "name": "Recycling Centre",
+          "lat": 51.477795,
+          "lon": -0.138688
         },
         {
-          "id": "node/12999448934",
-          "lat": 51.503163,
-          "lon": -0.119273,
-          "street": "The Queen's Walk"
+          "id": "node/1717828497",
+          "name": "Recycling Bins",
+          "lat": 51.503348,
+          "lon": -0.079088
         },
         {
-          "id": "node/12998852664",
-          "lat": 51.504223,
-          "lon": -0.117096,
-          "street": "Belvedere Road"
+          "id": "node/12731459569",
+          "name": "Mixed recyclables",
+          "lat": 51.475077,
+          "lon": -0.105216
         },
         {
-          "id": "node/1330687507",
-          "lat": 51.51375,
-          "lon": -0.135144,
-          "street": "Broadwick Street"
+          "id": "node/10004970017",
+          "name": "Islamic Relief",
+          "lat": 51.530212,
+          "lon": -0.083935
         },
         {
-          "id": "node/441948420",
-          "lat": 51.504921,
-          "lon": -0.115476,
-          "street": "Concert Hall Approach"
+          "id": "node/931652869",
+          "name": "recycling bin",
+          "lat": 51.543274,
+          "lon": -0.148799
         },
         {
-          "id": "node/949045903",
-          "lat": 51.516374,
-          "lon": -0.12459,
-          "street": "Museum Street"
+          "id": "way/247553850",
+          "name": "Hornsey Street Reuse and Recycling Centre",
+          "lat": 51.549736,
+          "lon": -0.116465,
+          "address": "Hornsey Street 40"
         },
         {
-          "id": "node/2518075229",
-          "lat": 51.516495,
-          "lon": -0.130495,
-          "street": "Tottenham Court Road"
+          "id": "way/863810434",
+          "name": "Regis Road Recycling Centre",
+          "lat": 51.550797,
+          "lon": -0.144871
         },
         {
-          "id": "node/3637778707",
-          "lat": 51.514796,
-          "lon": -0.137012,
-          "street": "Noel Street"
+          "id": "way/137385499",
+          "name": "Southwark Reuse and Recycling Centre",
+          "lat": 51.482816,
+          "lon": -0.057667,
+          "address": "Devon Street 43",
+          "openingHours": "Mo-Su 08:30-16:30; Jan 01, Dec 25-26 off"
         },
         {
-          "id": "node/264513570",
-          "lat": 51.517312,
-          "lon": -0.122663,
-          "street": "New Oxford Street"
+          "id": "way/358521667",
+          "name": "Tavistock Depot",
+          "lat": 51.518514,
+          "lon": -0.206602,
+          "openingHours": "Mo-We,Fr,Sa 07:00-18:00; Th 07:00-16:00; Su 07:00-15:00"
         },
         {
-          "id": "node/9140867122",
-          "lat": 51.517361,
-          "lon": -0.12254,
-          "street": "Bloomsbury Court"
+          "id": "node/3075670569",
+          "name": "Globe Town Neighbourhood Recycling Centre",
+          "lat": 51.527748,
+          "lon": -0.053047
         },
         {
-          "id": "node/169367547",
-          "lat": 51.497863,
-          "lon": -0.13688,
-          "street": "Spenser Street"
+          "id": "node/12064686340",
+          "name": "Recolight",
+          "lat": 51.546202,
+          "lon": -0.072943
         },
         {
-          "id": "node/294197623",
-          "lat": 51.501396,
-          "lon": -0.110376,
-          "street": "Baylis Road"
+          "id": "node/5164012623",
+          "name": "Shoes and clothes",
+          "lat": 51.492573,
+          "lon": -0.207559
         },
         {
-          "id": "node/313350288",
-          "lat": 51.494796,
-          "lon": -0.127855,
-          "street": "Horseferry Road"
+          "id": "node/9344607817",
+          "name": "cicon cloth recycle",
+          "lat": 51.475182,
+          "lon": -0.057807
         },
         {
-          "id": "node/703369831",
-          "lat": 51.519136,
-          "lon": -0.119607,
-          "street": "Red Lion Square"
+          "id": "node/450970701",
+          "name": "Lewisham Reuse and Recycling Centre",
+          "lat": 51.484607,
+          "lon": -0.046504
         },
         {
-          "id": "node/14080124502",
-          "lat": 51.498861,
-          "lon": -0.14329,
-          "street": "Buckingham Palace Road"
+          "id": "way/52334033",
+          "name": "Southwark Metals",
+          "lat": 51.484721,
+          "lon": -0.04295,
+          "address": "Trundley's Road 158"
         },
         {
-          "id": "node/313914278",
-          "lat": 51.4946,
-          "lon": -0.13217,
-          "street": "Regency Place"
+          "id": "node/13953961638",
+          "name": "Park Recycling - non household waste",
+          "lat": 51.453147,
+          "lon": -0.167201,
+          "openingHours": "24/7"
         },
         {
-          "id": "node/1832688511",
-          "lat": 51.517213,
-          "lon": -0.11295,
-          "street": "Chancery Lane"
+          "id": "way/920878948",
+          "name": "Smugglers Way Household Recycling & Waste Centre",
+          "lat": 51.462496,
+          "lon": -0.191248,
+          "address": "Smugglers Way",
+          "openingHours": "Mo-Fr 09:00-16:00; Sa 08:00-18:00; Su 08:00-17:00; Dec 25,26,Jan 01 off"
         },
         {
-          "id": "node/5254179832",
-          "lat": 51.49387,
-          "lon": -0.128091,
-          "street": "Page Street"
+          "id": "node/848083438",
+          "name": "Elthorne Recycling Centre",
+          "lat": 51.568218,
+          "lon": -0.126408
         },
         {
-          "id": "node/983838954",
-          "lat": 51.496197,
-          "lon": -0.140396,
-          "street": "Ashley Place"
+          "id": "node/800663977",
+          "name": "Waterlow Park",
+          "lat": 51.569363,
+          "lon": -0.142736,
+          "openingHours": "24/7"
         },
         {
-          "id": "node/14080124701",
-          "lat": 51.496698,
-          "lon": -0.141599,
-          "street": "Victoria Street"
+          "id": "node/7921015110",
+          "name": "Oxfam",
+          "lat": 51.546071,
+          "lon": -0.041732
         },
         {
-          "id": "node/10939047176",
-          "lat": 51.495662,
-          "lon": -0.115271,
-          "street": "Lambeth Road"
+          "id": "node/12372296258",
+          "name": "Hornsey Vale Community Centre",
+          "lat": 51.580424,
+          "lon": -0.113542,
+          "address": "Mayfield Road 60",
+          "openingHours": "Mo-Fr 09:00-16:00"
         },
         {
-          "id": "node/1116224953",
-          "lat": 51.521264,
-          "lon": -0.131911,
-          "street": "Chenies Street"
+          "id": "way/170096399",
+          "name": "Tower Hamlets Reuse and Recycling Centre",
+          "lat": 51.504968,
+          "lon": -0.005939,
+          "address": "Yabsley Street",
+          "openingHours": "Mo-Fr 08:00-20:00; Sa,Su 09:00-18:00; PH 09:00-16:30"
         },
         {
-          "id": "node/3033386082",
-          "lat": 51.507904,
-          "lon": -0.150539,
-          "street": "Hill Street"
+          "id": "node/6354587903",
+          "name": "Chase Metal",
+          "lat": 51.439354,
+          "lon": -0.187227,
+          "address": "Garratt Lane 444"
         },
         {
-          "id": "node/13417927962",
-          "lat": 51.511262,
-          "lon": -0.105332,
-          "openingHours": "24/7",
-          "street": "Victoria Embankment"
+          "id": "way/177218547",
+          "name": "Lambeth Reuse and Recycling Centre",
+          "lat": 51.431684,
+          "lon": -0.093958
         },
         {
-          "id": "node/8149477844",
-          "lat": 51.521881,
-          "lon": -0.129503,
-          "street": "Torrington Square"
+          "id": "node/506427034",
+          "name": "Clothes & Shoes",
+          "lat": 51.440226,
+          "lon": -0.196952,
+          "openingHours": "24/7"
         },
         {
-          "id": "node/1832666031",
-          "lat": 51.518088,
-          "lon": -0.111641,
-          "street": "Staple Inn Buildings"
+          "id": "node/479652519",
+          "name": "Sainsburys",
+          "lat": 51.440655,
+          "lon": -0.055453
         }
       ],
-      "updatedAt": "2026-09-03T17:04:51.993Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:30:16.392Z"
     },
     "luggage-storage": {
       "count": 11,
@@ -2940,7 +2977,13 @@
           "lon": -0.059722
         }
       ],
-      "updatedAt": "2026-09-03T17:04:55.945Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:30:18.277Z"
     },
     "camp-sites": {
       "count": 9,
@@ -3507,9 +3550,45 @@
           "name": "The Verdun Bench",
           "lat": 51.478726,
           "lon": -0.291088
+        },
+        {
+          "id": "node/12814322921",
+          "lat": 51.50791,
+          "lon": -0.12874,
+          "street": "Trafalgar Square"
+        },
+        {
+          "id": "node/7099985592",
+          "lat": 51.507244,
+          "lon": -0.126154,
+          "street": "Northumberland Avenue"
+        },
+        {
+          "id": "node/6524277109",
+          "lat": 51.506725,
+          "lon": -0.129596,
+          "street": "The Mall"
+        },
+        {
+          "id": "node/2548797250",
+          "lat": 51.507213,
+          "lon": -0.125447,
+          "street": "Northumberland Street"
+        },
+        {
+          "id": "node/12036179284",
+          "lat": 51.509178,
+          "lon": -0.127119,
+          "street": "St Martin's Place"
         }
       ],
-      "updatedAt": "2026-09-03T17:05:18.271Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:20.555Z"
     },
     "compressed-air": {
       "count": 0,

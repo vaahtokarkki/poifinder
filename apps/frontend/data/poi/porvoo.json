@@ -1,6 +1,6 @@
 {
   "city": "porvoo",
-  "generatedAt": "2026-09-03T16:42:20.881Z",
+  "generatedAt": "2026-09-11T10:27:41.545Z",
   "categories": {
     "toilets": {
       "count": 13,
@@ -13,12 +13,60 @@
           "context": "Lundi"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:02.601Z"
+      "stats": {
+        "free": 2,
+        "paid": 3,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:36.848Z"
     },
     "drinking-water": {
       "count": 7,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:42:03.800Z"
+      "pois": [
+        {
+          "id": "node/11001512734",
+          "lat": 60.392608,
+          "lon": 25.663913,
+          "fee": "no",
+          "street": "Piispankatu"
+        },
+        {
+          "id": "node/14010800968",
+          "lat": 60.380665,
+          "lon": 25.694864,
+          "fee": "no",
+          "street": "Virvikin ulkoilureitti"
+        },
+        {
+          "id": "node/8851231763",
+          "lat": 60.372939,
+          "lon": 25.654313,
+          "fee": "no",
+          "street": "Lapinniementie"
+        },
+        {
+          "id": "node/12362246180",
+          "lat": 60.448429,
+          "lon": 25.617331,
+          "fee": "no",
+          "street": "Kerkkoontie"
+        },
+        {
+          "id": "node/14010800954",
+          "lat": 60.34066,
+          "lon": 25.584997,
+          "fee": "no",
+          "street": "Korpisuontie"
+        }
+      ],
+      "stats": {
+        "free": 7,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:38.287Z"
     },
     "playgrounds": {
       "count": 61,
@@ -434,7 +482,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:10.008Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:38.612Z"
     },
     "post-boxes": {
       "count": 8,
@@ -487,8 +541,30 @@
       "updatedAt": "2026-09-03T16:42:10.932Z"
     },
     "recycling": {
-      "count": 21,
+      "count": 22,
       "pois": [
+        {
+          "id": "node/8268292506",
+          "name": "Rinki ekopiste",
+          "lat": 60.369817,
+          "lon": 25.710192,
+          "address": "Tarkkistentie 155",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/1811417260",
+          "name": "Ekopiste",
+          "lat": 60.397115,
+          "lon": 25.732437,
+          "address": "Veckjärventie 308"
+        },
+        {
+          "id": "node/13967892759",
+          "name": "Domargård avfallscentral",
+          "lat": 60.41773,
+          "lon": 25.714604,
+          "address": "Ritamäentie 20"
+        },
         {
           "id": "node/12294235691",
           "lat": 60.392805,
@@ -538,9 +614,9 @@
           "street": "Leppätie"
         },
         {
-          "id": "node/13744462710",
-          "lat": 60.392565,
-          "lon": 25.641431,
+          "id": "node/14140132201",
+          "lat": 60.392574,
+          "lon": 25.641438,
           "street": "Katajamäentie"
         },
         {
@@ -582,32 +658,10 @@
           "street": "Hiekkaharjuntie"
         },
         {
-          "id": "node/8268292506",
-          "name": "Rinki ekopiste",
-          "lat": 60.369817,
-          "lon": 25.710192,
-          "address": "Tarkkistentie 155",
-          "openingHours": "24/7"
-        },
-        {
-          "id": "node/1811417260",
-          "name": "Ekopiste",
-          "lat": 60.397115,
-          "lon": 25.732437,
-          "address": "Veckjärventie 308"
-        },
-        {
           "id": "node/13502465541",
           "lat": 60.376241,
           "lon": 25.604,
           "street": "Mansikkasuontie"
-        },
-        {
-          "id": "node/13967892759",
-          "name": "Domargård avfallscentral",
-          "lat": 60.41773,
-          "lon": 25.714604,
-          "address": "Ritamäentie 20"
         },
         {
           "id": "node/11581877264",
@@ -616,7 +670,13 @@
           "street": "Harjutie"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:12.683Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:39.893Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -667,7 +727,13 @@
     "outdoor-gyms": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T16:42:14.385Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:40.534Z"
     },
     "camp-sites": {
       "count": 0,
@@ -738,8 +804,123 @@
     },
     "benches": {
       "count": 81,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:42:20.780Z"
+      "pois": [
+        {
+          "id": "node/12294235692",
+          "lat": 60.392814,
+          "lon": 25.663967,
+          "street": "Piispankatu"
+        },
+        {
+          "id": "node/12294235699",
+          "lat": 60.39302,
+          "lon": 25.664856,
+          "street": "Rauhankatu"
+        },
+        {
+          "id": "node/12294242879",
+          "lat": 60.392441,
+          "lon": 25.664663,
+          "street": "Raatihuoneenkatu"
+        },
+        {
+          "id": "node/12142927636",
+          "lat": 60.395202,
+          "lon": 25.661536,
+          "street": "Kirkkokatu"
+        },
+        {
+          "id": "node/13114486787",
+          "lat": 60.393518,
+          "lon": 25.658846,
+          "street": "Mannerheiminkatu"
+        },
+        {
+          "id": "node/9041817088",
+          "lat": 60.393302,
+          "lon": 25.658767,
+          "street": "Jokikatu"
+        },
+        {
+          "id": "node/9041817087",
+          "lat": 60.393266,
+          "lon": 25.6586,
+          "street": "Itäinen rantapromenadi"
+        },
+        {
+          "id": "node/5644646250",
+          "lat": 60.395382,
+          "lon": 25.659753,
+          "street": "Vuorikatu"
+        },
+        {
+          "id": "node/6658458962",
+          "lat": 60.392477,
+          "lon": 25.657613,
+          "street": "Näse-Jutten katu"
+        },
+        {
+          "id": "node/10017534626",
+          "lat": 60.395421,
+          "lon": 25.657802,
+          "street": "Raatihuoneentori"
+        },
+        {
+          "id": "node/10017545516",
+          "lat": 60.39688,
+          "lon": 25.657848,
+          "street": "Kirkontörmä"
+        },
+        {
+          "id": "node/12142927683",
+          "lat": 60.397987,
+          "lon": 25.666447,
+          "street": "Törmäkatu"
+        },
+        {
+          "id": "node/11160408907",
+          "lat": 60.397998,
+          "lon": 25.659361,
+          "street": "Koulukuja"
+        },
+        {
+          "id": "node/14130742202",
+          "lat": 60.396276,
+          "lon": 25.654874,
+          "street": "Sillanmäki"
+        },
+        {
+          "id": "node/12772723644",
+          "lat": 60.390853,
+          "lon": 25.64195,
+          "street": "Läntinen Mannerheiminväylä"
+        },
+        {
+          "id": "node/13140023818",
+          "lat": 60.381908,
+          "lon": 25.684753,
+          "street": "Rantakatu"
+        },
+        {
+          "id": "node/12496837014",
+          "lat": 60.37294,
+          "lon": 25.656214,
+          "street": "Uddaksentie"
+        },
+        {
+          "id": "node/12495748863",
+          "lat": 60.371902,
+          "lon": 25.639471,
+          "street": "Viertotie"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:41.444Z"
     }
   }
 }

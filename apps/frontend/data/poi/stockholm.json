@@ -1,6 +1,6 @@
 {
   "city": "stockholm",
-  "generatedAt": "2026-09-03T16:43:34.219Z",
+  "generatedAt": "2026-09-11T10:27:51.387Z",
   "categories": {
     "toilets": {
       "count": 254,
@@ -250,7 +250,13 @@
           "context": "Fältöversten"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:00.933Z"
+      "stats": {
+        "free": 93,
+        "paid": 62,
+        "stepFree": 95,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-11T10:27:43.329Z"
     },
     "playgrounds": {
       "count": 1099,
@@ -1574,9 +1580,157 @@
           "lat": 59.303455,
           "lon": 17.955758,
           "fee": "no"
+        },
+        {
+          "id": "node/6723634018",
+          "lat": 59.330067,
+          "lon": 18.072599,
+          "fee": "no",
+          "street": "Karl XII:s torg"
+        },
+        {
+          "id": "node/11158946805",
+          "lat": 59.327042,
+          "lon": 18.069236,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Mynttorget"
+        },
+        {
+          "id": "node/11299877672",
+          "lat": 59.331023,
+          "lon": 18.072481,
+          "street": "Birgit Nilssons Allé"
+        },
+        {
+          "id": "node/13061711592",
+          "lat": 59.332839,
+          "lon": 18.075364,
+          "street": "Nybroplan"
+        },
+        {
+          "id": "node/13893767246",
+          "lat": 59.324232,
+          "lon": 18.063499,
+          "street": "Södra Riddarholmshamnen"
+        },
+        {
+          "id": "node/11111565205",
+          "lat": 59.323136,
+          "lon": 18.075441,
+          "street": "Skeppsbron"
+        },
+        {
+          "id": "node/14094670634",
+          "lat": 59.337462,
+          "lon": 18.073647,
+          "fee": "no",
+          "street": "Sturegatan"
+        },
+        {
+          "id": "node/5564581401",
+          "lat": 59.332008,
+          "lon": 18.090789,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Banérgatan"
+        },
+        {
+          "id": "node/13011790937",
+          "lat": 59.340265,
+          "lon": 18.044972,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Vasaparken"
+        },
+        {
+          "id": "node/12120966883",
+          "lat": 59.325294,
+          "lon": 18.101462,
+          "street": "Sollidsbacken"
+        },
+        {
+          "id": "node/12011658805",
+          "lat": 59.326396,
+          "lon": 18.10333,
+          "street": "Marknadsgatan"
+        },
+        {
+          "id": "node/14079873929",
+          "lat": 59.312676,
+          "lon": 18.0832,
+          "street": "Nytorget"
+        },
+        {
+          "id": "node/4826561025",
+          "lat": 59.327315,
+          "lon": 18.026485,
+          "street": "Smedsuddsvägen"
+        },
+        {
+          "id": "node/4320277299",
+          "lat": 59.313487,
+          "lon": 18.036503,
+          "fee": "no",
+          "street": "Hornsviksstigen"
+        },
+        {
+          "id": "node/13144977790",
+          "lat": 59.342609,
+          "lon": 18.109946,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Sandhamnsgatan"
+        },
+        {
+          "id": "node/9802524529",
+          "lat": 59.304411,
+          "lon": 18.073442,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Hammarby Slussväg"
+        },
+        {
+          "id": "node/14101641858",
+          "lat": 59.31614,
+          "lon": 18.02691,
+          "fee": "no",
+          "street": "Bergsunds Strand"
+        },
+        {
+          "id": "node/4920302665",
+          "lat": 59.303446,
+          "lon": 18.029527,
+          "street": "Sjöviksbacken"
+        },
+        {
+          "id": "node/9814455204",
+          "lat": 59.301756,
+          "lon": 18.006246,
+          "street": "Oktobergatan"
+        },
+        {
+          "id": "node/5409824756",
+          "lat": 59.280209,
+          "lon": 18.123729,
+          "address": "Nissastigen 26",
+          "street": "Ätravägen"
+        },
+        {
+          "id": "node/11945682717",
+          "lat": 59.323119,
+          "lon": 18.189176,
+          "fee": "yes",
+          "street": "Nyckelviksvägen"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:04.388Z"
+      "stats": {
+        "free": 15,
+        "paid": 1,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:45.893Z"
     },
     "beaches": {
       "count": 53,
@@ -1739,7 +1893,13 @@
           "lon": 17.966362
         }
       ],
-      "updatedAt": "2026-09-03T16:43:16.368Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:27:46.452Z"
     },
     "post-boxes": {
       "count": 377,
@@ -1931,6 +2091,89 @@
       "count": 401,
       "pois": [
         {
+          "id": "node/11850731375",
+          "name": "Klevgränd 5",
+          "lat": 59.318611,
+          "lon": 18.074951,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/779952828",
+          "name": "Roslagstulls återbruk och återvinning",
+          "lat": 59.350197,
+          "lon": 18.053899,
+          "address": "Cedersdalsgatan 7",
+          "openingHours": "Mo-Th 16:00-21:00; Fr off; Sa-Su 10:00-16:00",
+          "fee": "no"
+        },
+        {
+          "id": "node/9545091703",
+          "name": "Återvinningsstation",
+          "lat": 59.3699,
+          "lon": 18.066018,
+          "openingHours": "Mo-Su,PH 00:00-23:59+"
+        },
+        {
+          "id": "way/157664757",
+          "name": "Östberga återvinningscentral",
+          "lat": 59.285575,
+          "lon": 18.046635,
+          "openingHours": "Mo-Th 10:00-20:00; Fr-Su 09:00-17:00"
+        },
+        {
+          "id": "node/10239704728",
+          "name": "Returpunkt",
+          "lat": 59.359677,
+          "lon": 18.001918,
+          "openingHours": "Mo-Fr 10:00-19:00; Sa 10:00-17:00; Su 11:00-17:00"
+        },
+        {
+          "id": "way/1491132424",
+          "name": "Avfall",
+          "lat": 59.367042,
+          "lon": 18.160308
+        },
+        {
+          "id": "way/1491132423",
+          "name": "Miljöstation",
+          "lat": 59.367069,
+          "lon": 18.160333
+        },
+        {
+          "id": "way/1286611047",
+          "name": "Stockby Returpark",
+          "lat": 59.356446,
+          "lon": 18.17567,
+          "openingHours": "Mo-Th 11:00-19:00; Fr 11:00-16:00; Sa-Su 09:00-16:00"
+        },
+        {
+          "id": "node/7223679455",
+          "name": "Returpunkten",
+          "lat": 59.361384,
+          "lon": 17.964652,
+          "address": "Landsvägen 62",
+          "openingHours": "Mo-Fr 11:00-14:30,15:00-19:00; Sa,Su 11:00-16:00; PH off"
+        },
+        {
+          "id": "way/33474595",
+          "name": "Bromma återvinningscentral",
+          "lat": 59.348717,
+          "lon": 17.949665,
+          "address": "Linta gårdsväg 16"
+        },
+        {
+          "id": "way/715669869",
+          "name": "Återvinningscentralen Trädgård Bandhagen",
+          "lat": 59.258812,
+          "lon": 18.0628
+        },
+        {
+          "id": "way/23519460",
+          "name": "Vantörs återvinningscentral",
+          "lat": 59.257438,
+          "lon": 18.056784
+        },
+        {
           "id": "node/13840977143",
           "lat": 59.330978,
           "lon": 18.072534,
@@ -2010,13 +2253,6 @@
           "street": "Tegnérgatan"
         },
         {
-          "id": "node/11850731375",
-          "name": "Klevgränd 5",
-          "lat": 59.318611,
-          "lon": 18.074951,
-          "openingHours": "24/7"
-        },
-        {
           "id": "node/412800733",
           "lat": 59.340872,
           "lon": 18.066232,
@@ -2045,76 +2281,15 @@
           "lat": 59.319037,
           "lon": 18.056479,
           "street": "Torkel Knutssonsgatan"
-        },
-        {
-          "id": "node/1550839784",
-          "lat": 59.317056,
-          "lon": 18.060708,
-          "street": "Timmermansgatan"
-        },
-        {
-          "id": "node/2441872968",
-          "lat": 59.330071,
-          "lon": 18.094114,
-          "street": "Djurgårdsvägen"
-        },
-        {
-          "id": "node/1550839750",
-          "lat": 59.316235,
-          "lon": 18.070392,
-          "street": "Söderledstunneln"
-        },
-        {
-          "id": "node/1457186362",
-          "lat": 59.340488,
-          "lon": 18.054216,
-          "openingHours": "24/7",
-          "street": "Kungstensgatan"
-        },
-        {
-          "id": "node/1354121056",
-          "lat": 59.316105,
-          "lon": 18.074361,
-          "street": "Kapellgränd"
-        },
-        {
-          "id": "node/12567674162",
-          "lat": 59.3196,
-          "lon": 18.048477,
-          "street": "Skinnarbacken"
-        },
-        {
-          "id": "node/1743438839",
-          "lat": 59.339947,
-          "lon": 18.086868,
-          "street": "Östermalmsgatan"
-        },
-        {
-          "id": "node/1756229480",
-          "lat": 59.343542,
-          "lon": 18.068502,
-          "street": "Uggelviksgatan"
-        },
-        {
-          "id": "node/14110226541",
-          "lat": 59.314939,
-          "lon": 18.071829,
-          "street": "Noe Arksfaret"
-        },
-        {
-          "id": "node/719629898",
-          "lat": 59.315715,
-          "lon": 18.079397,
-          "street": "Södermannagatan"
-        },
-        {
-          "id": "node/8479190023",
-          "lat": 59.320596,
-          "lon": 18.042918,
-          "street": "Söder Mälarstrand"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:21.378Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:48.978Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -2343,7 +2518,7 @@
       "updatedAt": "2026-09-03T16:43:22.407Z"
     },
     "outdoor-gyms": {
-      "count": 170,
+      "count": 171,
       "pois": [
         {
           "id": "way/1032047564",
@@ -2540,7 +2715,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:24.028Z"
+      "stats": {
+        "free": 12,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:27:50.096Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2956,16 +3137,130 @@
       "updatedAt": "2026-08-17T04:02:30.608Z"
     },
     "benches": {
-      "count": 5504,
+      "count": 5505,
       "pois": [
         {
           "id": "node/957918205",
           "name": "jazz seat",
           "lat": 59.346337,
           "lon": 18.060308
+        },
+        {
+          "id": "node/485908011",
+          "lat": 59.329271,
+          "lon": 18.068807,
+          "street": "Gustav Adolfs Torg"
+        },
+        {
+          "id": "node/6310765922",
+          "lat": 59.328244,
+          "lon": 18.069141,
+          "street": "Riksplan"
+        },
+        {
+          "id": "node/8939126217",
+          "lat": 59.32845,
+          "lon": 18.070036,
+          "street": "Norrbro"
+        },
+        {
+          "id": "node/12688021521",
+          "lat": 59.329373,
+          "lon": 18.072326,
+          "street": "Strömgatan"
+        },
+        {
+          "id": "node/13030608501",
+          "lat": 59.328471,
+          "lon": 18.064801,
+          "street": "Rosenbad"
+        },
+        {
+          "id": "node/14078632575",
+          "lat": 59.329923,
+          "lon": 18.072722,
+          "street": "Birgit Nilssons Allé"
+        },
+        {
+          "id": "node/12699345015",
+          "lat": 59.331612,
+          "lon": 18.066212,
+          "street": "Brunkebergstorg"
+        },
+        {
+          "id": "node/13111675987",
+          "lat": 59.32946,
+          "lon": 18.073831,
+          "street": "Södra Blasieholmshamnen"
+        },
+        {
+          "id": "node/12739203987",
+          "lat": 59.330901,
+          "lon": 18.064379,
+          "street": "Drottninggatan"
+        },
+        {
+          "id": "node/5874354646",
+          "lat": 59.331786,
+          "lon": 18.070766,
+          "street": "Jussi Björlings Allé"
+        },
+        {
+          "id": "node/12699331206",
+          "lat": 59.332034,
+          "lon": 18.066522,
+          "street": "Malmskillnadsgatan"
+        },
+        {
+          "id": "node/12649208825",
+          "lat": 59.332424,
+          "lon": 18.066447,
+          "street": "Hamngatan"
+        },
+        {
+          "id": "node/12683854754",
+          "lat": 59.332461,
+          "lon": 18.066527,
+          "street": "Sergelgången"
+        },
+        {
+          "id": "node/12856719215",
+          "lat": 59.328172,
+          "lon": 18.062395,
+          "street": "Klara Mälarstrand"
+        },
+        {
+          "id": "node/7069266952",
+          "lat": 59.332283,
+          "lon": 18.06527,
+          "street": "Sergels Torg"
+        },
+        {
+          "id": "node/12856715613",
+          "lat": 59.32596,
+          "lon": 18.071701,
+          "street": "Slottsbacken"
+        },
+        {
+          "id": "node/12698132201",
+          "lat": 59.332733,
+          "lon": 18.065791,
+          "street": "Klaratunneln"
+        },
+        {
+          "id": "node/12856695373",
+          "lat": 59.325722,
+          "lon": 18.066087,
+          "street": "Riddarhustorget"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:34.111Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:27:51.285Z"
     },
     "compressed-air": {
       "count": 0,

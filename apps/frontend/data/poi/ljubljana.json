@@ -1,6 +1,6 @@
 {
   "city": "ljubljana",
-  "generatedAt": "2026-09-03T16:51:06.377Z",
+  "generatedAt": "2026-09-11T10:28:39.701Z",
   "categories": {
     "toilets": {
       "count": 53,
@@ -87,7 +87,13 @@
           "context": "Petrol - Ljubljana - Rudnik Zahod"
         }
       ],
-      "updatedAt": "2026-09-03T16:50:43.990Z"
+      "stats": {
+        "free": 29,
+        "paid": 3,
+        "stepFree": 22,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:33.150Z"
     },
     "drinking-water": {
       "count": 115,
@@ -322,7 +328,13 @@
           "lon": 14.494158
         }
       ],
-      "updatedAt": "2026-09-03T16:50:45.668Z"
+      "stats": {
+        "free": 71,
+        "paid": 0,
+        "stepFree": 32,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:28:35.270Z"
     },
     "playgrounds": {
       "count": 274,
@@ -1373,7 +1385,13 @@
           "lon": 14.460544
         }
       ],
-      "updatedAt": "2026-09-03T16:50:52.883Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 19,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:35.923Z"
     },
     "post-boxes": {
       "count": 80,
@@ -1565,6 +1583,19 @@
       "count": 344,
       "pois": [
         {
+          "id": "node/4902730969",
+          "name": "Humana",
+          "lat": 46.078248,
+          "lon": 14.518988
+        },
+        {
+          "id": "node/13468806743",
+          "name": "Zeos",
+          "lat": 46.098816,
+          "lon": 14.534421,
+          "address": "Šlandrova ulica 4"
+        },
+        {
           "id": "node/10245466416",
           "lat": 46.056901,
           "lon": 14.505285,
@@ -1645,22 +1676,15 @@
           "lat": 46.052394,
           "lon": 14.508613,
           "street": "Trubarjeva cesta"
-        },
-        {
-          "id": "node/4902730969",
-          "name": "Humana",
-          "lat": 46.078248,
-          "lon": 14.518988
-        },
-        {
-          "id": "node/13468806743",
-          "name": "Zeos",
-          "lat": 46.098816,
-          "lon": 14.534421,
-          "address": "Šlandrova ulica 4"
         }
       ],
-      "updatedAt": "2026-09-03T16:50:56.743Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 43,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:37.498Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -1928,7 +1952,13 @@
           "lon": 14.457964
         }
       ],
-      "updatedAt": "2026-09-03T16:50:58.924Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:38.450Z"
     },
     "camp-sites": {
       "count": 6,
@@ -2307,9 +2337,141 @@
           "name": "Zgodovina vesolja in zemlje na klopci",
           "lat": 46.042551,
           "lon": 14.534303
+        },
+        {
+          "id": "node/4083612491",
+          "lat": 46.05807,
+          "lon": 14.505445,
+          "street": "Tivolska cesta"
+        },
+        {
+          "id": "node/10245466601",
+          "lat": 46.055998,
+          "lon": 14.504608,
+          "street": "Trg Franceta Štiglica"
+        },
+        {
+          "id": "node/9696180288",
+          "lat": 46.055086,
+          "lon": 14.507836,
+          "street": "Miklošičeva cesta"
+        },
+        {
+          "id": "node/8676440906",
+          "lat": 46.054754,
+          "lon": 14.504361,
+          "street": "Gosposvetska cesta"
+        },
+        {
+          "id": "node/8692892240",
+          "lat": 46.054457,
+          "lon": 14.506191,
+          "street": "Cigaletova ulica"
+        },
+        {
+          "id": "node/8676904262",
+          "lat": 46.054271,
+          "lon": 14.50645,
+          "street": "Tavčarjeva ulica"
+        },
+        {
+          "id": "node/8676904261",
+          "lat": 46.054217,
+          "lon": 14.506483,
+          "street": "Dalmatinova ulica"
+        },
+        {
+          "id": "node/12312668269",
+          "lat": 46.055148,
+          "lon": 14.508909,
+          "street": "Kolodvor"
+        },
+        {
+          "id": "node/8676447017",
+          "lat": 46.054344,
+          "lon": 14.504191,
+          "street": "Podhod Ajdovščina"
+        },
+        {
+          "id": "node/9448582628",
+          "lat": 46.054827,
+          "lon": 14.50251,
+          "street": "Park slovenske reformacije"
+        },
+        {
+          "id": "node/12312668274",
+          "lat": 46.055049,
+          "lon": 14.509407,
+          "street": "Čufarjeva ulica"
+        },
+        {
+          "id": "node/8676937554",
+          "lat": 46.053884,
+          "lon": 14.50445,
+          "street": "Slovenska cesta"
+        },
+        {
+          "id": "node/9448582630",
+          "lat": 46.0548,
+          "lon": 14.502332,
+          "street": "Župančičeva ulica"
+        },
+        {
+          "id": "node/10050944168",
+          "lat": 46.060087,
+          "lon": 14.507658,
+          "street": "Vilharjeva cesta"
+        },
+        {
+          "id": "node/12760097394",
+          "lat": 46.057367,
+          "lon": 14.511116,
+          "street": "Trg Osvobodilne fronte"
+        },
+        {
+          "id": "node/9688630353",
+          "lat": 46.055437,
+          "lon": 14.510798,
+          "street": "Resljeva cesta"
+        },
+        {
+          "id": "node/8625989139",
+          "lat": 46.052459,
+          "lon": 14.505282,
+          "street": "Nazorjeva ulica"
+        },
+        {
+          "id": "node/8188763609",
+          "lat": 46.061265,
+          "lon": 14.507169,
+          "street": "Dunajska cesta"
+        },
+        {
+          "id": "node/9686767222",
+          "lat": 46.055524,
+          "lon": 14.512586,
+          "street": "Slomškova ulica"
+        },
+        {
+          "id": "node/8692818360",
+          "lat": 46.052177,
+          "lon": 14.507922,
+          "street": "Trubarjeva cesta"
+        },
+        {
+          "id": "node/10741106256",
+          "lat": 46.051944,
+          "lon": 14.504572,
+          "street": "Čopova ulica"
         }
       ],
-      "updatedAt": "2026-09-03T16:51:06.270Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:39.599Z"
     },
     "compressed-air": {
       "count": 0,

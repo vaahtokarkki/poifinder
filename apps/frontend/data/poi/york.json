@@ -1,6 +1,6 @@
 {
   "city": "york",
-  "generatedAt": "2026-09-03T17:10:15.149Z",
+  "generatedAt": "2026-09-11T10:30:33.633Z",
   "categories": {
     "toilets": {
       "count": 71,
@@ -170,12 +170,33 @@
           "context": "Reception Building"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:52.304Z"
+      "stats": {
+        "free": 31,
+        "paid": 6,
+        "stepFree": 33,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:30:28.418Z"
     },
     "drinking-water": {
       "count": 6,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:09:53.443Z"
+      "pois": [
+        {
+          "id": "node/11942044692",
+          "lat": 53.961404,
+          "lon": -1.080924,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Deangate"
+        }
+      ],
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:29.886Z"
     },
     "playgrounds": {
       "count": 147,
@@ -979,7 +1000,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:59.408Z"
+      "stats": {
+        "free": 52,
+        "paid": 1,
+        "stepFree": 12,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:30:30.366Z"
     },
     "post-boxes": {
       "count": 257,
@@ -1171,6 +1198,20 @@
       "count": 31,
       "pois": [
         {
+          "id": "way/228244569",
+          "name": "Hazel Court Household Waste Recycling Centre",
+          "lat": 53.95859,
+          "lon": -1.066205,
+          "address": "Hazel Court",
+          "openingHours": "Su 08:30-16:00; Oct-Mar: Mo-Sa 08:30-17:00; Apr-Sep: Mo-Sa 08:30-19:00; Dec 25-26 off; Jan 01 off"
+        },
+        {
+          "id": "node/7689619106",
+          "lat": 53.991398,
+          "lon": -1.104462,
+          "context": "Tesco Extra"
+        },
+        {
           "id": "node/3737439336",
           "lat": 53.955392,
           "lon": -1.084571,
@@ -1225,14 +1266,6 @@
           "street": "Walmgate"
         },
         {
-          "id": "way/228244569",
-          "name": "Hazel Court Household Waste Recycling Centre",
-          "lat": 53.95859,
-          "lon": -1.066205,
-          "address": "Hazel Court",
-          "openingHours": "Su 08:30-16:00; Oct-Mar: Mo-Sa 08:30-17:00; Apr-Sep: Mo-Sa 08:30-19:00; Dec 25-26 off; Jan 01 off"
-        },
-        {
           "id": "node/8218033717",
           "lat": 53.971631,
           "lon": -1.077918,
@@ -1261,12 +1294,6 @@
           "lat": 53.959964,
           "lon": -1.037071,
           "street": "Osbaldwick Village"
-        },
-        {
-          "id": "node/7689619106",
-          "lat": 53.991398,
-          "lon": -1.104462,
-          "context": "Tesco Extra"
         },
         {
           "id": "node/1919195103",
@@ -1299,7 +1326,13 @@
           "street": "Ryedale Court"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:07.230Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:31.800Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -1491,7 +1524,13 @@
           "lon": -1.071882
         }
       ],
-      "updatedAt": "2026-09-03T17:10:08.905Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:32.613Z"
     },
     "camp-sites": {
       "count": 31,
@@ -1952,9 +1991,130 @@
           "name": "Len's Seat",
           "lat": 53.991166,
           "lon": -1.17674
+        },
+        {
+          "id": "node/1533603978",
+          "lat": 53.959545,
+          "lon": -1.087036,
+          "street": "Wellington Row"
+        },
+        {
+          "id": "node/2656461571",
+          "lat": 53.95971,
+          "lon": -1.088159,
+          "street": "City Walls"
+        },
+        {
+          "id": "node/11920823971",
+          "lat": 53.960838,
+          "lon": -1.086499,
+          "wheelchair": "yes",
+          "street": "Museum Street"
+        },
+        {
+          "id": "node/1533606540",
+          "lat": 53.959693,
+          "lon": -1.089153,
+          "street": "Station Avenue"
+        },
+        {
+          "id": "node/12020372767",
+          "lat": 53.960724,
+          "lon": -1.088989,
+          "street": "Dame Judi Dench Walk"
+        },
+        {
+          "id": "node/1955977880",
+          "lat": 53.960107,
+          "lon": -1.089475,
+          "street": "West Esplanade"
+        },
+        {
+          "id": "node/1487952023",
+          "lat": 53.961155,
+          "lon": -1.085937,
+          "street": "Library Square"
+        },
+        {
+          "id": "node/1533603977",
+          "lat": 53.958778,
+          "lon": -1.085969,
+          "street": "North Street"
+        },
+        {
+          "id": "node/1533606546",
+          "lat": 53.959706,
+          "lon": -1.089846,
+          "street": "Leeman Road"
+        },
+        {
+          "id": "node/9859575748",
+          "lat": 53.959957,
+          "lon": -1.084547,
+          "street": "St Helen's Square"
+        },
+        {
+          "id": "node/1648662195",
+          "lat": 53.959422,
+          "lon": -1.084601,
+          "street": "Coney Street"
+        },
+        {
+          "id": "node/7041320008",
+          "lat": 53.958721,
+          "lon": -1.089382,
+          "street": "Station Rise"
+        },
+        {
+          "id": "node/5891074454",
+          "lat": 53.960032,
+          "lon": -1.083842,
+          "street": "Davygate"
+        },
+        {
+          "id": "node/1594902119",
+          "lat": 53.95876,
+          "lon": -1.090566,
+          "street": "Station Road"
+        },
+        {
+          "id": "node/12016665543",
+          "lat": 53.957919,
+          "lon": -1.089418,
+          "street": "Tanner Row"
+        },
+        {
+          "id": "node/5885319217",
+          "lat": 53.962188,
+          "lon": -1.085457,
+          "street": "St Leonard's Place"
+        },
+        {
+          "id": "node/5891096617",
+          "lat": 53.961719,
+          "lon": -1.084129,
+          "street": "Duncombe Place"
+        },
+        {
+          "id": "node/11942044680",
+          "lat": 53.961695,
+          "lon": -1.083713,
+          "street": "High Petergate"
+        },
+        {
+          "id": "node/6324371960",
+          "lat": 53.961348,
+          "lon": -1.083167,
+          "street": "Kleiser' s Court"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:15.049Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:33.531Z"
     },
     "compressed-air": {
       "count": 0,

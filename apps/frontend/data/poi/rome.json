@@ -1,6 +1,6 @@
 {
   "city": "rome",
-  "generatedAt": "2026-09-03T17:20:23.419Z",
+  "generatedAt": "2026-09-11T10:31:42.743Z",
   "categories": {
     "toilets": {
       "count": 191,
@@ -198,7 +198,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:54.504Z"
+      "stats": {
+        "free": 52,
+        "paid": 34,
+        "stepFree": 46,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:31:35.011Z"
     },
     "drinking-water": {
       "count": 1607,
@@ -389,7 +395,13 @@
           "lon": 12.516751
         }
       ],
-      "updatedAt": "2026-09-03T17:19:56.931Z"
+      "stats": {
+        "free": 155,
+        "paid": 2,
+        "stepFree": 129,
+        "partlyStepFree": 28
+      },
+      "updatedAt": "2026-09-11T10:31:37.499Z"
     },
     "playgrounds": {
       "count": 279,
@@ -1735,7 +1747,13 @@
           "openingHours": "Mo-Fr 08:20-13:35; Sa 08:20-12:35"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:06.348Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 24,
+        "partlyStepFree": 7
+      },
+      "updatedAt": "2026-09-11T10:31:38.153Z"
     },
     "post-boxes": {
       "count": 155,
@@ -1927,6 +1945,93 @@
       "count": 626,
       "pois": [
         {
+          "id": "node/8632312436",
+          "name": "Vestiti usati",
+          "lat": 41.916922,
+          "lon": 12.465257
+        },
+        {
+          "id": "node/6718501219",
+          "name": "+ricicli +viaggi (Piramide)",
+          "lat": 41.875668,
+          "lon": 12.482131
+        },
+        {
+          "id": "node/2333145088",
+          "name": "Compost di quartiere",
+          "lat": 41.89311,
+          "lon": 12.535146
+        },
+        {
+          "id": "way/349334219",
+          "name": "Centro di raccolta AMA Piramide",
+          "lat": 41.873448,
+          "lon": 12.475834,
+          "address": "Via Giovanni da Empoli 55"
+        },
+        {
+          "id": "node/8499431543",
+          "name": "Raccolta pile esauste",
+          "lat": 41.871725,
+          "lon": 12.48027,
+          "openingHours": "Mo-Su 09:00-20:30"
+        },
+        {
+          "id": "way/1464107588",
+          "name": "Centro di raccolta AMA Campi sportivi",
+          "lat": 41.940281,
+          "lon": 12.49164
+        },
+        {
+          "id": "way/1070362960",
+          "name": "Centro di raccolta AMA",
+          "lat": 41.937804,
+          "lon": 12.472914
+        },
+        {
+          "id": "way/349332752",
+          "name": "Centro di raccolta AMA Villa Gordiani",
+          "lat": 41.889258,
+          "lon": 12.547631,
+          "address": "Via Teano"
+        },
+        {
+          "id": "way/550518312",
+          "name": "Compostiera",
+          "lat": 41.858784,
+          "lon": 12.492985
+        },
+        {
+          "id": "way/232028510",
+          "name": "Isola Ecologica Ponte Mammolo",
+          "lat": 41.920799,
+          "lon": 12.563311,
+          "openingHours": "Mo-Sa 07:00-12:00,14:00-19:00; Su 07:00-13:00"
+        },
+        {
+          "id": "way/107533295",
+          "name": "Centro di Raccolta Battistini",
+          "lat": 41.922665,
+          "lon": 12.420518,
+          "address": "Via Mattia Battistini 537"
+        },
+        {
+          "id": "way/776788498",
+          "name": "Isola ecologica AMA",
+          "lat": 41.958503,
+          "lon": 12.53188,
+          "address": "Via dell'Ateneo Salesiano",
+          "openingHours": "Mo-Sa 08:00-20:00"
+        },
+        {
+          "id": "relation/7910154",
+          "name": "Centro di Raccolta Bufalotta",
+          "lat": 41.962599,
+          "lon": 12.548168,
+          "address": "Via della Bufalotta 592",
+          "openingHours": "Mo-Fr 09:00-12:00,14:00-19:00; Su 09:00-12:00"
+        },
+        {
           "id": "node/10936441440",
           "lat": 41.898271,
           "lon": 12.495814,
@@ -2027,87 +2132,15 @@
           "lat": 41.889869,
           "lon": 12.512599,
           "street": "Via di Santa Croce in Gerusalemme"
-        },
-        {
-          "id": "node/6875738650",
-          "lat": 41.884096,
-          "lon": 12.500599,
-          "street": "Via dell'Amba Aradam"
-        },
-        {
-          "id": "node/8082018009",
-          "lat": 41.883751,
-          "lon": 12.48749,
-          "street": "Via del Circo Massimo"
-        },
-        {
-          "id": "node/7041644185",
-          "lat": 41.885316,
-          "lon": 12.482355,
-          "street": "Via di Santa Sabina"
-        },
-        {
-          "id": "node/7086139449",
-          "lat": 41.910288,
-          "lon": 12.521985,
-          "street": "Via di Sant'Ippolito"
-        },
-        {
-          "id": "node/11381221999",
-          "lat": 41.90711,
-          "lon": 12.468613,
-          "street": "Via Cicerone"
-        },
-        {
-          "id": "node/11381175647",
-          "lat": 41.909777,
-          "lon": 12.469541,
-          "street": "Via dei Gracchi"
-        },
-        {
-          "id": "node/8090512675",
-          "lat": 41.919551,
-          "lon": 12.478825,
-          "street": "Via Antonio Gramsci"
-        },
-        {
-          "id": "node/8090512671",
-          "lat": 41.92072,
-          "lon": 12.480001,
-          "street": "Piazzale Don Giovanni Minzoni"
-        },
-        {
-          "id": "node/7796372457",
-          "lat": 41.882212,
-          "lon": 12.506226,
-          "street": "Via Marruvio"
-        },
-        {
-          "id": "node/12237961608",
-          "lat": 41.882787,
-          "lon": 12.511064,
-          "street": "Via Fregene"
-        },
-        {
-          "id": "node/12875309042",
-          "lat": 41.881352,
-          "lon": 12.484952,
-          "street": "Viale Aventino"
-        },
-        {
-          "id": "node/1759856940",
-          "lat": 41.889887,
-          "lon": 12.523806,
-          "street": "Via L'Aquila"
-        },
-        {
-          "id": "node/13265738031",
-          "lat": 41.905785,
-          "lon": 12.463636,
-          "street": "Via Crescenzio"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:11.866Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:40.280Z"
     },
     "luggage-storage": {
       "count": 14,
@@ -2415,7 +2448,13 @@
           "lon": 12.525258
         }
       ],
-      "updatedAt": "2026-09-03T17:20:14.927Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:41.318Z"
     },
     "camp-sites": {
       "count": 7,
@@ -2791,9 +2830,105 @@
           "name": "Panchina della Paperella",
           "lat": 41.843817,
           "lon": 12.492718
+        },
+        {
+          "id": "node/5651630722",
+          "lat": 41.901701,
+          "lon": 12.494573,
+          "street": "Via Nazionale"
+        },
+        {
+          "id": "node/14015856802",
+          "lat": 41.902572,
+          "lon": 12.498961,
+          "street": "Viale Enrico De Nicola"
+        },
+        {
+          "id": "node/12532495798",
+          "lat": 41.90182,
+          "lon": 12.499426,
+          "street": "Piazza dei Cinquecento"
+        },
+        {
+          "id": "node/12823904901",
+          "lat": 41.905486,
+          "lon": 12.498955,
+          "street": "Via Cernaia"
+        },
+        {
+          "id": "node/6198288714",
+          "lat": 41.899947,
+          "lon": 12.49393,
+          "street": "Viminale"
+        },
+        {
+          "id": "node/11491858203",
+          "lat": 41.89825,
+          "lon": 12.502498,
+          "street": "Piazza Manfredo Fanti"
+        },
+        {
+          "id": "node/6932750975",
+          "lat": 41.895587,
+          "lon": 12.493093,
+          "street": "Piazza degli Zingari"
+        },
+        {
+          "id": "node/1649777442",
+          "lat": 41.899639,
+          "lon": 12.486215,
+          "street": "Salita di Montecavallo"
+        },
+        {
+          "id": "node/10263116450",
+          "lat": 41.894906,
+          "lon": 12.490859,
+          "street": "Piazza della Madonna dei Monti"
+        },
+        {
+          "id": "node/11476296087",
+          "lat": 41.895301,
+          "lon": 12.503187,
+          "street": "Piazza Vittorio Emanuele Secondo"
+        },
+        {
+          "id": "node/2774913569",
+          "lat": 41.893833,
+          "lon": 12.501258,
+          "street": "Largo Leopardi"
+        },
+        {
+          "id": "node/6406733382",
+          "lat": 41.903836,
+          "lon": 12.509496,
+          "street": "Piazza Confienza"
+        },
+        {
+          "id": "node/12803729915",
+          "lat": 41.893001,
+          "lon": 12.497017,
+          "street": "Viale Carlo Saviotti"
+        },
+        {
+          "id": "node/13899258053",
+          "lat": 41.910792,
+          "lon": 12.488701,
+          "street": "Viale del Museo Borghese"
+        },
+        {
+          "id": "node/10131046699",
+          "lat": 41.903777,
+          "lon": 12.509561,
+          "street": "Viale dell'Università"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:23.318Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:42.641Z"
     },
     "compressed-air": {
       "count": 0,

@@ -1,6 +1,6 @@
 {
   "city": "oxford",
-  "generatedAt": "2026-09-03T17:09:27.322Z",
+  "generatedAt": "2026-09-11T10:30:43.146Z",
   "categories": {
     "toilets": {
       "count": 75,
@@ -181,12 +181,65 @@
           "context": "Welcome Break Forecourt"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:58.902Z"
+      "stats": {
+        "free": 38,
+        "paid": 0,
+        "stepFree": 26,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:30:37.586Z"
     },
     "drinking-water": {
       "count": 12,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:09:00.318Z"
+      "pois": [
+        {
+          "id": "node/10102912517",
+          "lat": 51.753651,
+          "lon": -1.26236,
+          "street": "George Street"
+        },
+        {
+          "id": "node/4792102738",
+          "lat": 51.754261,
+          "lon": -1.265972,
+          "street": "Upper Fisher Row"
+        },
+        {
+          "id": "node/10969405420",
+          "lat": 51.735861,
+          "lon": -1.222749,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Rymers Lane"
+        },
+        {
+          "id": "node/9431450262",
+          "lat": 51.760708,
+          "lon": -1.209498,
+          "street": "London Road"
+        },
+        {
+          "id": "node/13086737944",
+          "lat": 51.784923,
+          "lon": -1.285699,
+          "fee": "no",
+          "street": "Godstow Road"
+        },
+        {
+          "id": "node/6721177758",
+          "lat": 51.77999,
+          "lon": -1.299033,
+          "wheelchair": "yes",
+          "street": "Footbridge At The Trout Inn"
+        }
+      ],
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:39.262Z"
     },
     "playgrounds": {
       "count": 180,
@@ -924,7 +977,13 @@
           "lon": -1.283173
         }
       ],
-      "updatedAt": "2026-09-03T17:09:13.402Z"
+      "stats": {
+        "free": 7,
+        "paid": 4,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:39.706Z"
     },
     "post-boxes": {
       "count": 323,
@@ -1117,6 +1176,38 @@
       "count": 71,
       "pois": [
         {
+          "id": "node/459821278",
+          "lat": 51.750872,
+          "lon": -1.242175,
+          "context": "Alice House"
+        },
+        {
+          "id": "relation/11923991",
+          "name": "Metal Salvage Ltd",
+          "lat": 51.742403,
+          "lon": -1.243183,
+          "address": "Jackdaw Lane"
+        },
+        {
+          "id": "way/133509580",
+          "name": "Redbridge Recycling Centre",
+          "lat": 51.730114,
+          "lon": -1.251476,
+          "openingHours": "Mo-Su 08:00-17:00; Jan 01 off; Dec 25 off"
+        },
+        {
+          "id": "node/8294135338",
+          "name": "Clothing Bank",
+          "lat": 51.762525,
+          "lon": -1.200262
+        },
+        {
+          "id": "node/12766603751",
+          "lat": 51.693408,
+          "lon": -1.251852,
+          "context": "F Social"
+        },
+        {
           "id": "node/11151333009",
           "lat": 51.753251,
           "lon": -1.258515,
@@ -1153,12 +1244,6 @@
           "street": "King Street"
         },
         {
-          "id": "node/459821278",
-          "lat": 51.750872,
-          "lon": -1.242175,
-          "context": "Alice House"
-        },
-        {
           "id": "node/12078228698",
           "lat": 51.76146,
           "lon": -1.266307,
@@ -1187,13 +1272,6 @@
           "lat": 51.764204,
           "lon": -1.265518,
           "street": "Butler Close"
-        },
-        {
-          "id": "relation/11923991",
-          "name": "Metal Salvage Ltd",
-          "lat": 51.742403,
-          "lon": -1.243183,
-          "address": "Jackdaw Lane"
         },
         {
           "id": "node/13701379193",
@@ -1230,13 +1308,6 @@
           "lat": 51.746479,
           "lon": -1.223714,
           "street": "Southfield Park"
-        },
-        {
-          "id": "way/133509580",
-          "name": "Redbridge Recycling Centre",
-          "lat": 51.730114,
-          "lon": -1.251476,
-          "openingHours": "Mo-Su 08:00-17:00; Jan 01 off; Dec 25 off"
         },
         {
           "id": "node/1709283801",
@@ -1285,21 +1356,15 @@
           "lat": 51.746867,
           "lon": -1.203225,
           "street": "Cinnaminta Road"
-        },
-        {
-          "id": "node/8550411512",
-          "lat": 51.738158,
-          "lon": -1.206968,
-          "street": "Hollow Way"
-        },
-        {
-          "id": "node/411017447",
-          "lat": 51.749427,
-          "lon": -1.201244,
-          "street": "Atkyns Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:16.863Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:41.205Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1517,7 +1582,13 @@
     "outdoor-gyms": {
       "count": 60,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:18.863Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:42.064Z"
     },
     "camp-sites": {
       "count": 10,
@@ -1800,9 +1871,147 @@
           "name": "My Lady's Seat",
           "lat": 51.766703,
           "lon": -1.330092
+        },
+        {
+          "id": "node/10967580505",
+          "lat": 51.752127,
+          "lon": -1.257867,
+          "street": "Cornmarket Street"
+        },
+        {
+          "id": "node/10903489957",
+          "lat": 51.751873,
+          "lon": -1.257902,
+          "street": "Queen Street"
+        },
+        {
+          "id": "node/4786001513",
+          "lat": 51.751403,
+          "lon": -1.257224,
+          "street": "St Aldate's"
+        },
+        {
+          "id": "node/12077101889",
+          "lat": 51.751146,
+          "lon": -1.258217,
+          "street": "New Inn Yard"
+        },
+        {
+          "id": "node/6325105075",
+          "lat": 51.752325,
+          "lon": -1.255828,
+          "street": "Turl Street"
+        },
+        {
+          "id": "node/9186724570",
+          "lat": 51.751684,
+          "lon": -1.259896,
+          "street": "New Inn Hall Street"
+        },
+        {
+          "id": "node/9186724567",
+          "lat": 51.751641,
+          "lon": -1.259887,
+          "street": "Bonn Square"
+        },
+        {
+          "id": "node/9177719071",
+          "lat": 51.75029,
+          "lon": -1.257129,
+          "street": "Pembroke Square"
+        },
+        {
+          "id": "node/13194138076",
+          "lat": 51.751351,
+          "lon": -1.25424,
+          "street": "Oriel Square"
+        },
+        {
+          "id": "node/12806527260",
+          "lat": 51.75112,
+          "lon": -1.26119,
+          "street": "Castle Street"
+        },
+        {
+          "id": "node/11207391458",
+          "lat": 51.750086,
+          "lon": -1.260297,
+          "street": "Turn Again Lane"
+        },
+        {
+          "id": "node/13090698895",
+          "lat": 51.754461,
+          "lon": -1.256989,
+          "street": "Broad Street"
+        },
+        {
+          "id": "node/11125563059",
+          "lat": 51.750888,
+          "lon": -1.253898,
+          "street": "Front Quad"
+        },
+        {
+          "id": "node/13505424714",
+          "lat": 51.752681,
+          "lon": -1.253413,
+          "street": "Catte Street"
+        },
+        {
+          "id": "node/9569658430",
+          "lat": 51.751824,
+          "lon": -1.252967,
+          "street": "Helen's Court"
+        },
+        {
+          "id": "node/9177809390",
+          "lat": 51.750264,
+          "lon": -1.26219,
+          "street": "Norfolk Street"
+        },
+        {
+          "id": "node/9177809388",
+          "lat": 51.75027,
+          "lon": -1.262277,
+          "street": "Paradise Square"
+        },
+        {
+          "id": "node/12607577044",
+          "lat": 51.751604,
+          "lon": -1.252095,
+          "street": "Merton Street"
+        },
+        {
+          "id": "node/8712159572",
+          "lat": 51.755301,
+          "lon": -1.25984,
+          "street": "Beaumont Street"
+        },
+        {
+          "id": "node/12862268323",
+          "lat": 51.7491,
+          "lon": -1.253992,
+          "street": "Broad Walk"
+        },
+        {
+          "id": "node/12864348103",
+          "lat": 51.748754,
+          "lon": -1.254453,
+          "street": "New Walk"
+        },
+        {
+          "id": "node/12670093347",
+          "lat": 51.75264,
+          "lon": -1.251527,
+          "street": "High Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:27.221Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:43.045Z"
     },
     "compressed-air": {
       "count": 0,

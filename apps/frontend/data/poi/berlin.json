@@ -1,9 +1,9 @@
 {
   "city": "berlin",
-  "generatedAt": "2026-09-03T16:53:44.928Z",
+  "generatedAt": "2026-09-11T10:29:04.189Z",
   "categories": {
     "toilets": {
-      "count": 978,
+      "count": 979,
       "pois": [
         {
           "id": "node/60240150",
@@ -258,10 +258,16 @@
           "context": "Cube Berlin"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:54.858Z"
+      "stats": {
+        "free": 451,
+        "paid": 274,
+        "stepFree": 539,
+        "partlyStepFree": 50
+      },
+      "updatedAt": "2026-09-11T10:28:49.169Z"
     },
     "drinking-water": {
-      "count": 341,
+      "count": 340,
       "pois": [
         {
           "id": "node/8722868012",
@@ -403,9 +409,75 @@
           "name": "11",
           "lat": 52.555988,
           "lon": 13.24631
+        },
+        {
+          "id": "node/6765778685",
+          "lat": 52.516625,
+          "lon": 13.406444,
+          "openingHours": "May-Oct Mo-Su 00:00-24:00",
+          "wheelchair": "no",
+          "fee": "no",
+          "street": "Propststraße"
+        },
+        {
+          "id": "node/11139103183",
+          "lat": 52.514405,
+          "lon": 13.40654,
+          "street": "Mühlendamm"
+        },
+        {
+          "id": "node/11465610356",
+          "lat": 52.515524,
+          "lon": 13.410746,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Neue Jüdenstraße"
+        },
+        {
+          "id": "node/5043072467",
+          "lat": 52.511032,
+          "lon": 13.401764,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Seydelstraße"
+        },
+        {
+          "id": "node/7167413417",
+          "lat": 52.518723,
+          "lon": 13.421347,
+          "street": "Schillingstraße"
+        },
+        {
+          "id": "node/8990450123",
+          "lat": 52.516778,
+          "lon": 13.386032,
+          "wheelchair": "limited",
+          "fee": "no",
+          "street": "Unter den Linden"
+        },
+        {
+          "id": "node/8909637917",
+          "lat": 52.518685,
+          "lon": 13.429386,
+          "wheelchair": "limited",
+          "fee": "no",
+          "street": "Strausberger Platz"
+        },
+        {
+          "id": "node/5814732183",
+          "lat": 52.507967,
+          "lon": 13.390155,
+          "wheelchair": "limited",
+          "street": "Friedrichstraße"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:57.869Z"
+      "stats": {
+        "free": 165,
+        "paid": 0,
+        "stepFree": 79,
+        "partlyStepFree": 50
+      },
+      "updatedAt": "2026-09-11T10:28:54.325Z"
     },
     "playgrounds": {
       "count": 3373,
@@ -2370,7 +2442,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:14.201Z"
+      "stats": {
+        "free": 2,
+        "paid": 7,
+        "stepFree": 400,
+        "partlyStepFree": 93
+      },
+      "updatedAt": "2026-09-11T10:28:55.471Z"
     },
     "post-boxes": {
       "count": 1763,
@@ -2568,199 +2646,227 @@
       "updatedAt": "2026-09-03T16:53:16.852Z"
     },
     "recycling": {
-      "count": 2150,
+      "count": 2151,
       "pois": [
         {
-          "id": "node/440661271",
-          "lat": 52.521523,
-          "lon": 13.40346,
-          "street": "Anna-Louisa-Karsch-Straße"
+          "id": "way/28198135",
+          "name": "Recyclinghof Behmstraße",
+          "lat": 52.550442,
+          "lon": 13.40199,
+          "address": "Behmstraße 74",
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 07:00-14:30; PH off",
+          "wheelchair": "yes"
         },
         {
-          "id": "node/440661272",
-          "lat": 52.522068,
-          "lon": 13.4051,
-          "street": "Rochstraße"
+          "id": "way/125208195",
+          "name": "Wasdrack Altmetalle",
+          "lat": 52.535511,
+          "lon": 13.348888,
+          "openingHours": "Mo-Th 07:30-16:30; Fr 07:30-16:00; Sa 09:00-12:00"
         },
         {
-          "id": "node/963600605",
-          "lat": 52.523764,
-          "lon": 13.397298,
-          "street": "Oranienburger Straße"
+          "id": "way/1298791073",
+          "name": "Zentraler Abfallplatz",
+          "lat": 52.513791,
+          "lon": 13.324488,
+          "address": "Straße des 17. Juni 144",
+          "openingHours": "Mo-Fr 10:00-13:00"
         },
         {
-          "id": "node/11645047367",
-          "lat": 52.513666,
-          "lon": 13.405974,
-          "wheelchair": "yes",
-          "street": "Fischerinsel"
+          "id": "node/3727940016",
+          "name": "Recon-t",
+          "lat": 52.506799,
+          "lon": 13.484453,
+          "address": "Buchberger Straße 30",
+          "openingHours": "Mo-Fr 10:00-16:00; Sa 10:00-13:00",
+          "wheelchair": "limited"
         },
         {
-          "id": "node/961626645",
-          "lat": 52.527223,
-          "lon": 13.403448,
-          "wheelchair": "yes",
-          "street": "Kleine Rosenthaler Straße"
+          "id": "node/12474162598",
+          "name": "Altkleider",
+          "lat": 52.570918,
+          "lon": 13.37477
         },
         {
-          "id": "node/1608905864",
-          "lat": 52.526959,
-          "lon": 13.40885,
-          "street": "Max-Beer-Straße"
+          "id": "node/10079244117",
+          "name": "Recyclinghof Fischerstraße",
+          "lat": 52.498155,
+          "lon": 13.491867,
+          "openingHours": "Mo-We,Fr 07:00-17:00; Th 09:30-19:30; Sa 07:00-15:30",
+          "wheelchair": "yes"
         },
         {
-          "id": "node/12844661466",
-          "lat": 52.525937,
-          "lon": 13.412576,
-          "openingHours": "Mo-Sa 07:00-13:00,15:00-20:00; PH off",
-          "street": "Kleine Alexanderstraße"
+          "id": "node/442877823",
+          "name": "Recyclinghof Ilsenburger Straße",
+          "lat": 52.527016,
+          "lon": 13.310619,
+          "address": "Ilsenburger Straße 18-20",
+          "openingHours": "Mo-We 07:00-17:00; Th 09:30-19:30; Fr 07:00-17:00; Sa 07:00-15:30"
         },
         {
-          "id": "node/10985054717",
-          "lat": 52.512388,
-          "lon": 13.403749,
-          "street": "Gertraudenstraße"
+          "id": "node/13971875308",
+          "name": "Kiro Schrotthandel",
+          "lat": 52.572535,
+          "lon": 13.445977,
+          "address": "Blankenburger Str. 18-20"
         },
         {
-          "id": "node/7285639747",
-          "lat": 52.525107,
-          "lon": 13.416495,
-          "wheelchair": "yes",
-          "street": "Wadzeckstraße"
+          "id": "way/26660877",
+          "name": "BSR Recyclinghof Asgardstraße",
+          "lat": 52.581361,
+          "lon": 13.435917,
+          "address": "Asgardstraße 3"
         },
         {
-          "id": "node/12835703544",
-          "lat": 52.525931,
-          "lon": 13.41683,
-          "street": "Keibelstraße"
+          "id": "way/10734959",
+          "name": "Recyclinghof Berliner Straße",
+          "lat": 52.486303,
+          "lon": 13.31514,
+          "address": "Berliner Straße 110",
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 07:00-14:30",
+          "wheelchair": "yes"
         },
         {
-          "id": "node/11879295761",
-          "lat": 52.510842,
-          "lon": 13.409982,
-          "street": "Neue Roßstraße"
+          "id": "node/11717220369",
+          "name": "Platane19",
+          "lat": 52.507856,
+          "lon": 13.299803,
+          "address": "Pestalozzistraße 60",
+          "openingHours": "Mo-Fr 10:00-16:00"
         },
         {
-          "id": "node/1389419259",
-          "lat": 52.529658,
-          "lon": 13.405288,
-          "wheelchair": "yes",
-          "street": "Torstraße"
+          "id": "node/11125608906",
+          "name": "Batteriesammelstelle",
+          "lat": 52.457465,
+          "lon": 13.437244
         },
         {
-          "id": "node/10188970807",
-          "lat": 52.51771,
-          "lon": 13.420578,
-          "street": "Singerstraße"
+          "id": "way/53545422",
+          "name": "BRB Baustoff Recycling",
+          "lat": 52.484209,
+          "lon": 13.498126
         },
         {
-          "id": "node/12076081384",
-          "lat": 52.518795,
-          "lon": 13.421119,
-          "street": "Magazinstraße"
+          "id": "way/1051824179",
+          "name": "EBU Dienstleistungs- GmbH",
+          "lat": 52.470814,
+          "lon": 13.480622
         },
         {
-          "id": "node/8722198358",
-          "lat": 52.529321,
-          "lon": 13.412877,
-          "openingHours": "24/7",
-          "wheelchair": "yes",
-          "street": "Straßburger Straße"
+          "id": "way/28760600",
+          "name": "BSR Recyclinghof Lengeder Straße",
+          "lat": 52.581554,
+          "lon": 13.347254,
+          "address": "Lengeder Straße 6-18",
+          "openingHours": "Mo-We,Fr 07:00-17:00, Th 09:30-19:30, Sa 07:00-15:30"
         },
         {
-          "id": "node/3734445710",
-          "lat": 52.530559,
-          "lon": 13.405923,
-          "openingHours": "24/7",
-          "street": "Choriner Straße"
+          "id": "way/579730522",
+          "name": "Recyclinghof Plus Gradestraße",
+          "lat": 52.450432,
+          "lon": 13.428275,
+          "address": "Gradestraße 73",
+          "openingHours": "Mo-Sa 07:00-19:00"
         },
         {
-          "id": "node/4885576861",
-          "lat": 52.510016,
-          "lon": 13.410905,
-          "street": "Annenstraße"
+          "id": "node/3955524160",
+          "name": "Beller Schrotthandel",
+          "lat": 52.451921,
+          "lon": 13.460311
         },
         {
-          "id": "node/10184481175",
-          "lat": 52.530968,
-          "lon": 13.409004,
-          "street": "Christinenstraße"
+          "id": "node/6771161922",
+          "name": "Recycling",
+          "lat": 52.457198,
+          "lon": 13.332509
         },
         {
-          "id": "node/7736352539",
-          "lat": 52.520664,
-          "lon": 13.423613,
-          "street": "Berolinastraße"
+          "id": "node/13874759166",
+          "name": "Kaya Entsorgungshelden",
+          "lat": 52.45952,
+          "lon": 13.326151
         },
         {
-          "id": "node/7354781207",
-          "lat": 52.526954,
-          "lon": 13.419763,
-          "street": "Mendelssohnstraße"
+          "id": "node/11207575950",
+          "name": "Glascontainer",
+          "lat": 52.588357,
+          "lon": 13.340488,
+          "address": "Am Nordgraben"
         },
         {
-          "id": "node/6379608512",
-          "lat": 52.508181,
-          "lon": 13.405263,
-          "street": "Stallschreiberstraße"
+          "id": "way/442118216",
+          "name": "BTB-Recycling-Hof",
+          "lat": 52.546578,
+          "lon": 13.528457
         },
         {
-          "id": "node/972319896",
-          "lat": 52.509996,
-          "lon": 13.415831,
-          "street": "Heinrich-Heine-Straße"
+          "id": "node/11817009263",
+          "name": "Textil & Schuhe Sammelbox",
+          "lat": 52.454577,
+          "lon": 13.324315
         },
         {
-          "id": "node/697737311",
-          "lat": 52.53194,
-          "lon": 13.408066,
-          "street": "Templiner Straße"
+          "id": "node/11993495184",
+          "name": "Wurmkiste",
+          "lat": 52.603372,
+          "lon": 13.398796
         },
         {
-          "id": "node/790509210",
-          "lat": 52.525824,
-          "lon": 13.42301,
-          "street": "Barnimstraße"
+          "id": "node/2525335317",
+          "name": "Fritz Pennecke Söhne Abfallentsorgung u. Recycling GmbH & Co. KG",
+          "lat": 52.433732,
+          "lon": 13.371113,
+          "address": "Greinerstraße 27"
         },
         {
-          "id": "node/12081159147",
-          "lat": 52.532541,
-          "lon": 13.405322,
-          "openingHours": "24/7",
-          "street": "Fehrbelliner Straße"
+          "id": "way/543319990",
+          "name": "Paletten König / Papier Fritze",
+          "lat": 52.509004,
+          "lon": 13.55038
         },
         {
-          "id": "node/10188922578",
-          "lat": 52.51603,
-          "lon": 13.425163,
-          "street": "Lichtenberger Straße"
+          "id": "node/3309835874",
+          "name": "Wertstoff Ankauf Lankwitz",
+          "lat": 52.433193,
+          "lon": 13.364965,
+          "address": "Haynauer Straße 65"
         },
         {
-          "id": "node/10286920724",
-          "lat": 52.509497,
-          "lon": 13.392233,
-          "street": "Krausenstraße"
+          "id": "way/385542019",
+          "name": "Marcus Knospe Wertstoffhandel",
+          "lat": 52.508668,
+          "lon": 13.553459,
+          "address": "Grabensprung 1",
+          "openingHours": "Mo-Sa 10:00-18:00"
         },
         {
-          "id": "node/2181178658",
-          "lat": 52.50721,
-          "lon": 13.398607,
-          "street": "Lindenstraße/Oranienstraße"
+          "id": "way/966672349",
+          "name": "Recyclinghof Ostpreußendamm",
+          "lat": 52.441511,
+          "lon": 13.327157,
+          "address": "Ostpreußendamm 1",
+          "openingHours": "Mo-We,Fr 07:00-17:00; Th 09:30-19:30; Sa 07:00-15:30"
         },
         {
-          "id": "node/7319276658",
-          "lat": 52.532467,
-          "lon": 13.413619,
-          "street": "Metzer Straße"
+          "id": "node/13020637760",
+          "name": "Anti-Kompost",
+          "lat": 52.427696,
+          "lon": 13.429438
         },
         {
-          "id": "node/7502699974",
-          "lat": 52.506613,
-          "lon": 13.400278,
-          "street": "Oranienstraße"
+          "id": "node/12528767054",
+          "name": "ruhender Anti-Kompost",
+          "lat": 52.427676,
+          "lon": 13.429557
         }
       ],
-      "updatedAt": "2026-09-03T16:53:20.463Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 88,
+        "partlyStepFree": 12
+      },
+      "updatedAt": "2026-09-11T10:28:58.699Z"
     },
     "luggage-storage": {
       "count": 23,
@@ -3045,7 +3151,7 @@
       "updatedAt": "2026-09-03T16:53:22.732Z"
     },
     "outdoor-gyms": {
-      "count": 378,
+      "count": 379,
       "pois": [
         {
           "id": "way/1420840914",
@@ -3240,7 +3346,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:24.802Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 25,
+        "partlyStepFree": 15
+      },
+      "updatedAt": "2026-09-11T10:29:01.392Z"
     },
     "camp-sites": {
       "count": 3,
@@ -3658,7 +3770,7 @@
       "updatedAt": "2026-08-17T04:03:19.933Z"
     },
     "benches": {
-      "count": 26766,
+      "count": 26806,
       "pois": [
         {
           "id": "node/12914839800",
@@ -3762,9 +3874,57 @@
           "name": "Sitzbank, selbstgebaut",
           "lat": 52.466658,
           "lon": 13.533424
+        },
+        {
+          "id": "node/10196222631",
+          "lat": 52.519902,
+          "lon": 13.405636,
+          "street": "Spandauer Straße"
+        },
+        {
+          "id": "node/10196222646",
+          "lat": 52.520044,
+          "lon": 13.405807,
+          "street": "Spandauer Straße/Marienkirche"
+        },
+        {
+          "id": "node/12036763271",
+          "lat": 52.519511,
+          "lon": 13.404289,
+          "street": "Karl-Liebknecht-Straße"
+        },
+        {
+          "id": "node/13071221301",
+          "lat": 52.52113,
+          "lon": 13.405102,
+          "street": "Rosenstraße"
+        },
+        {
+          "id": "node/6449593431",
+          "lat": 52.520521,
+          "lon": 13.402809,
+          "street": "St. Wolfgang-Straße"
+        },
+        {
+          "id": "node/12036705508",
+          "lat": 52.518666,
+          "lon": 13.403249,
+          "street": "Spreeufer"
+        },
+        {
+          "id": "node/11942481133",
+          "lat": 52.519665,
+          "lon": 13.401883,
+          "street": "Vera-Brittain-Ufer"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:44.821Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:29:04.088Z"
     },
     "compressed-air": {
       "count": 20,

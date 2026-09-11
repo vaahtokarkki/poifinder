@@ -1,6 +1,6 @@
 {
   "city": "calgary",
-  "generatedAt": "2026-09-03T17:35:56.351Z",
+  "generatedAt": "2026-09-11T10:33:27.561Z",
   "categories": {
     "toilets": {
       "count": 120,
@@ -207,7 +207,13 @@
           "context": "Information and Communications Technology (ICT) Building"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:33.124Z"
+      "stats": {
+        "free": 23,
+        "paid": 3,
+        "stepFree": 35,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:33:21.038Z"
     },
     "drinking-water": {
       "count": 33,
@@ -218,9 +224,91 @@
           "lat": 51.063751,
           "lon": -114.156003,
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/13937647077",
+          "lat": 51.05243,
+          "lon": -114.064706,
+          "street": "Riverfront Avenue SW"
+        },
+        {
+          "id": "node/1934083374",
+          "lat": 51.048428,
+          "lon": -114.050269,
+          "street": "Crossroads"
+        },
+        {
+          "id": "node/14115525170",
+          "lat": 51.058082,
+          "lon": -114.091395,
+          "street": "12 Street NW"
+        },
+        {
+          "id": "node/4103921404",
+          "lat": 51.047339,
+          "lon": -114.110276,
+          "street": "Bow River Pathway (South)"
+        },
+        {
+          "id": "node/12950646890",
+          "lat": 51.023102,
+          "lon": -114.104968,
+          "fee": "no",
+          "street": "18 Street SW"
+        },
+        {
+          "id": "node/4103924966",
+          "lat": 51.041295,
+          "lon": -114.01691,
+          "street": "17A Street SE"
+        },
+        {
+          "id": "node/12193369888",
+          "lat": 51.078755,
+          "lon": -114.060177,
+          "street": "1 Street NE"
+        },
+        {
+          "id": "node/13379575073",
+          "lat": 51.023117,
+          "lon": -114.116964,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "34 Avenue SW"
+        },
+        {
+          "id": "node/10794227296",
+          "lat": 51.003086,
+          "lon": -114.102912,
+          "street": "Elbow River Pathway"
+        },
+        {
+          "id": "node/4957860225",
+          "lat": 51.003017,
+          "lon": -114.102704,
+          "street": "56 Avenue SW"
+        },
+        {
+          "id": "node/11258899141",
+          "lat": 51.064991,
+          "lon": -114.153408,
+          "street": "Bow River Pathway (North, pedestrian)"
+        },
+        {
+          "id": "node/10794227245",
+          "lat": 50.993812,
+          "lon": -114.142344,
+          "fee": "no",
+          "street": "Rotary/Mattamy Greenway"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:35.090Z"
+      "stats": {
+        "free": 6,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:33:22.972Z"
     },
     "playgrounds": {
       "count": 482,
@@ -1589,7 +1677,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:42.865Z"
+      "stats": {
+        "free": 0,
+        "paid": 6,
+        "stepFree": 15,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:33:23.500Z"
     },
     "post-boxes": {
       "count": 206,
@@ -1781,6 +1875,140 @@
       "count": 126,
       "pois": [
         {
+          "id": "way/281651668",
+          "name": "Uptown Bottle Depot",
+          "lat": 51.043389,
+          "lon": -114.075359,
+          "address": "10 Avenue SW 629"
+        },
+        {
+          "id": "node/10096622456",
+          "name": "Calgary Community Fridge",
+          "lat": 51.059993,
+          "lon": -114.06228
+        },
+        {
+          "id": "node/2940802295",
+          "name": "Bridgeland Community Recycling Depot",
+          "lat": 51.049119,
+          "lon": -114.037011
+        },
+        {
+          "id": "node/13635745017",
+          "name": "Manchester Bottle Depot Ltd",
+          "lat": 51.019912,
+          "lon": -114.055284,
+          "address": "38A Avenue SE 410"
+        },
+        {
+          "id": "node/13185182930",
+          "name": "Renfrew Community Recycling Depot",
+          "lat": 51.066628,
+          "lon": -114.043729,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/299636565",
+          "name": "Confederation Park Recycling Depot",
+          "lat": 51.076608,
+          "lon": -114.085088
+        },
+        {
+          "id": "way/295599435",
+          "name": "North Hill Bottle Depot",
+          "lat": 51.087607,
+          "lon": -114.053896,
+          "address": "3A Street NE 3915",
+          "openingHours": "Mo-Fr 08:30-17:30; Sa 09:00-17:00; Su 10:00-16:00; PH 10:00-16:00"
+        },
+        {
+          "id": "node/11908243311",
+          "name": "Money Back Bottle Depot",
+          "lat": 51.029838,
+          "lon": -114.142166,
+          "address": "37 Street SW 2835",
+          "openingHours": "Mo-Sa 09:00-17:30; Su 10:00-16:00"
+        },
+        {
+          "id": "way/436567529",
+          "name": "Chinook Bottle Depot",
+          "lat": 50.998037,
+          "lon": -114.06274,
+          "address": "61 Avenue SE 108",
+          "openingHours": "Mo-Sa 09:00-17:30; Su, PH 10:00-16:00"
+        },
+        {
+          "id": "node/12269890225",
+          "lat": 51.078257,
+          "lon": -114.131124,
+          "context": "MacEwan Student Centre"
+        },
+        {
+          "id": "way/510008471",
+          "name": "Household Hazardous Waste Drop-Off",
+          "lat": 51.006522,
+          "lon": -114.12899,
+          "openingHours": "Mo-Su 08:00-18:00"
+        },
+        {
+          "id": "node/7191861452",
+          "name": "Happy Can Bottle Depot",
+          "lat": 51.058708,
+          "lon": -113.985434,
+          "openingHours": "Mo-Sa 09:00-17:30; Su,PH 10:00-16:00"
+        },
+        {
+          "id": "node/1364084000",
+          "name": "Marlborough Mall Depot",
+          "lat": 51.056258,
+          "lon": -113.981233
+        },
+        {
+          "id": "node/1379435650",
+          "name": "Deerfoot Meadows Recycling Depot",
+          "lat": 50.986943,
+          "lon": -114.043446
+        },
+        {
+          "id": "way/1337600625",
+          "name": "Bowness Bottle Depot",
+          "lat": 51.07039,
+          "lon": -114.161999,
+          "address": "16 Avenue NW 4627",
+          "openingHours": "09:00-18:00"
+        },
+        {
+          "id": "node/2273046969",
+          "name": "City of Calgary",
+          "lat": 50.978453,
+          "lon": -114.060187
+        },
+        {
+          "id": "node/4768546879",
+          "name": "Trail Bottle Depot",
+          "lat": 50.977612,
+          "lon": -114.07399
+        },
+        {
+          "id": "node/196662386",
+          "name": "Community Recycling Depot",
+          "lat": 51.087725,
+          "lon": -114.1544
+        },
+        {
+          "id": "way/1116164728",
+          "name": "Huntington Hills Depot",
+          "lat": 51.114968,
+          "lon": -114.070536
+        },
+        {
+          "id": "node/13108145689",
+          "name": "Calgary Bottle Exchange",
+          "lat": 50.972817,
+          "lon": -114.074639,
+          "address": "Horton Road SW 9218"
+        },
+        {
           "id": "node/13293752324",
           "lat": 51.045003,
           "lon": -114.074184,
@@ -1791,13 +2019,6 @@
           "lat": 51.045701,
           "lon": -114.068783,
           "street": "8 Avenue SW"
-        },
-        {
-          "id": "way/281651668",
-          "name": "Uptown Bottle Depot",
-          "lat": 51.043389,
-          "lon": -114.075359,
-          "address": "10 Avenue SW 629"
         },
         {
           "id": "node/12169081303",
@@ -1846,125 +2067,15 @@
           "lat": 51.042382,
           "lon": -114.061025,
           "street": "11 Avenue SE"
-        },
-        {
-          "id": "node/13068027958",
-          "lat": 51.050816,
-          "lon": -114.078276,
-          "street": "3 Avenue SW"
-        },
-        {
-          "id": "node/9813758402",
-          "lat": 51.037762,
-          "lon": -114.075932,
-          "street": "17 Avenue SW"
-        },
-        {
-          "id": "node/11261733936",
-          "lat": 51.051552,
-          "lon": -114.08075,
-          "street": "Bow River Pathway (South)"
-        },
-        {
-          "id": "node/12162687011",
-          "lat": 51.050284,
-          "lon": -114.054667,
-          "street": "RiverWalk Pedestrian Way"
-        },
-        {
-          "id": "node/12162699856",
-          "lat": 51.046274,
-          "lon": -114.052583,
-          "street": "Celebration Square"
-        },
-        {
-          "id": "node/12252266876",
-          "lat": 51.052579,
-          "lon": -114.087169,
-          "street": "Kensington Road NW"
-        },
-        {
-          "id": "node/12249630668",
-          "lat": 51.052702,
-          "lon": -114.087477,
-          "street": "10A Street NW"
-        },
-        {
-          "id": "node/13016218281",
-          "lat": 51.053893,
-          "lon": -114.085804,
-          "street": "10 Street NW"
-        },
-        {
-          "id": "node/12256530216",
-          "lat": 51.055667,
-          "lon": -114.085101,
-          "street": "3 Avenue NW"
-        },
-        {
-          "id": "node/10096622456",
-          "name": "Calgary Community Fridge",
-          "lat": 51.059993,
-          "lon": -114.06228
-        },
-        {
-          "id": "node/12459402229",
-          "lat": 51.03649,
-          "lon": -114.047311,
-          "street": "Salisbury Street SE"
-        },
-        {
-          "id": "node/13098931548",
-          "lat": 51.040756,
-          "lon": -114.042665,
-          "street": "Maggie Street SE"
-        },
-        {
-          "id": "node/12439662946",
-          "lat": 51.043163,
-          "lon": -114.040226,
-          "street": "9 Avenue SE"
-        },
-        {
-          "id": "node/13414773049",
-          "lat": 51.04181,
-          "lon": -114.036899,
-          "street": "11 Street SE"
-        },
-        {
-          "id": "node/2940802295",
-          "name": "Bridgeland Community Recycling Depot",
-          "lat": 51.049119,
-          "lon": -114.037011
-        },
-        {
-          "id": "node/13462801231",
-          "lat": 51.064263,
-          "lon": -114.045257,
-          "street": "13 Avenue NE"
-        },
-        {
-          "id": "node/13139800697",
-          "lat": 51.06476,
-          "lon": -114.098725,
-          "street": "14 Avenue NW"
-        },
-        {
-          "id": "node/13635745017",
-          "name": "Manchester Bottle Depot Ltd",
-          "lat": 51.019912,
-          "lon": -114.055284,
-          "address": "38A Avenue SE 410"
-        },
-        {
-          "id": "node/13185182930",
-          "name": "Renfrew Community Recycling Depot",
-          "lat": 51.066628,
-          "lon": -114.043729,
-          "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:46.933Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:25.449Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2153,7 +2264,13 @@
     "outdoor-gyms": {
       "count": 24,
       "pois": [],
-      "updatedAt": "2026-09-03T17:35:48.847Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:26.389Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2288,8 +2405,57 @@
     },
     "benches": {
       "count": 2798,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:35:56.248Z"
+      "pois": [
+        {
+          "id": "node/9282082732",
+          "lat": 51.045822,
+          "lon": -114.070673,
+          "street": "8 Avenue SW"
+        },
+        {
+          "id": "node/9282082384",
+          "lat": 51.046532,
+          "lon": -114.069805,
+          "street": "7 Avenue SW"
+        },
+        {
+          "id": "node/9282082451",
+          "lat": 51.046925,
+          "lon": -114.070403,
+          "street": "3 Street SW"
+        },
+        {
+          "id": "node/9282082689",
+          "lat": 51.046252,
+          "lon": -114.068279,
+          "street": "2 Street SW"
+        },
+        {
+          "id": "node/9282082406",
+          "lat": 51.041481,
+          "lon": -114.070793,
+          "street": "12 Avenue SW"
+        },
+        {
+          "id": "node/9282082570",
+          "lat": 51.040942,
+          "lon": -114.07066,
+          "street": "13 Avenue SW"
+        },
+        {
+          "id": "node/12239883416",
+          "lat": 51.048761,
+          "lon": -114.070982,
+          "street": "5 Avenue SW"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:27.459Z"
     },
     "compressed-air": {
       "count": 0,

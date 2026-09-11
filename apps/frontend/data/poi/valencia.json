@@ -1,6 +1,6 @@
 {
   "city": "valencia",
-  "generatedAt": "2026-09-03T17:17:47.398Z",
+  "generatedAt": "2026-09-11T10:31:25.924Z",
   "categories": {
     "toilets": {
       "count": 98,
@@ -148,7 +148,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:23.330Z"
+      "stats": {
+        "free": 58,
+        "paid": 8,
+        "stepFree": 32,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:31:18.932Z"
     },
     "drinking-water": {
       "count": 1064,
@@ -254,9 +260,103 @@
           "name": "Font del Gerro",
           "lat": 39.504503,
           "lon": -0.444917
+        },
+        {
+          "id": "node/1728190268",
+          "lat": 39.470122,
+          "lon": -0.376522,
+          "street": "Plaça de l'Ajuntament"
+        },
+        {
+          "id": "node/9397538140",
+          "lat": 39.472616,
+          "lon": -0.376085,
+          "wheelchair": "yes",
+          "street": "Plaça de Mariano Benlliure"
+        },
+        {
+          "id": "node/12501236288",
+          "lat": 39.472402,
+          "lon": -0.378631,
+          "fee": "no",
+          "street": "Carrer dels Mallorquins"
+        },
+        {
+          "id": "node/1770414461",
+          "lat": 39.473099,
+          "lon": -0.377526,
+          "wheelchair": "yes",
+          "street": "Avinguda de Maria Cristina"
+        },
+        {
+          "id": "node/7606377718",
+          "lat": 39.468699,
+          "lon": -0.380393,
+          "street": "Carrer de la Mare de Déu de Gràcia"
+        },
+        {
+          "id": "node/4741624640",
+          "lat": 39.47341,
+          "lon": -0.375843,
+          "wheelchair": "limited",
+          "fee": "no",
+          "street": "Carrer de Sant Vicent Màrtir"
+        },
+        {
+          "id": "node/12068836503",
+          "lat": 39.471606,
+          "lon": -0.380607,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Carrer de l'Actor Rivelles"
+        },
+        {
+          "id": "node/9397516638",
+          "lat": 39.473811,
+          "lon": -0.376864,
+          "street": "Plaça de Lope de Vega"
+        },
+        {
+          "id": "node/12057184270",
+          "lat": 39.474173,
+          "lon": -0.375103,
+          "wheelchair": "yes",
+          "street": "Carrer de la Mar"
+        },
+        {
+          "id": "node/6652835485",
+          "lat": 39.472247,
+          "lon": -0.370725,
+          "wheelchair": "no",
+          "street": "Plaça d'Alfons el Magnànim"
+        },
+        {
+          "id": "node/4741575744",
+          "lat": 39.465817,
+          "lon": -0.379872,
+          "street": "Carrer del Convent de Jerusalem"
+        },
+        {
+          "id": "node/9397538032",
+          "lat": 39.472444,
+          "lon": -0.382054,
+          "street": "Carrer del Bany"
+        },
+        {
+          "id": "node/6925562985",
+          "lat": 39.474571,
+          "lon": -0.379122,
+          "wheelchair": "yes",
+          "street": "Plaça del Mercat"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:25.469Z"
+      "stats": {
+        "free": 95,
+        "paid": 0,
+        "stepFree": 26,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-11T10:31:20.954Z"
     },
     "playgrounds": {
       "count": 965,
@@ -1414,7 +1514,13 @@
           "lon": -0.429597
         }
       ],
-      "updatedAt": "2026-09-03T17:17:33.064Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 13,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:31:21.427Z"
     },
     "post-boxes": {
       "count": 111,
@@ -1609,6 +1715,49 @@
       "count": 2072,
       "pois": [
         {
+          "id": "node/1671643070",
+          "name": "Reciclaje",
+          "lat": 39.468032,
+          "lon": -0.340024
+        },
+        {
+          "id": "way/237820290",
+          "name": "Ecoparc València Sud - Punt Net",
+          "lat": 39.454931,
+          "lon": -0.408995,
+          "openingHours": "Mo-Sa 09:00-21:00; Su,PH 09:00-14:00"
+        },
+        {
+          "id": "way/353558842",
+          "name": "Desguace \"Benimamet\"",
+          "lat": 39.496412,
+          "lon": -0.420412
+        },
+        {
+          "id": "way/778924081",
+          "name": "Ecoparc Almàssera",
+          "lat": 39.511753,
+          "lon": -0.344954
+        },
+        {
+          "id": "way/727707708",
+          "name": "Ecoparc Paiporta-Picanya",
+          "lat": 39.434164,
+          "lon": -0.420416
+        },
+        {
+          "id": "way/820897792",
+          "name": "Ecoparque",
+          "lat": 39.459552,
+          "lon": -0.440534
+        },
+        {
+          "id": "way/887989299",
+          "name": "Ecoparc",
+          "lat": 39.52367,
+          "lon": -0.35021
+        },
+        {
           "id": "node/13398118007",
           "lat": 39.468004,
           "lon": -0.379121,
@@ -1747,52 +1896,15 @@
           "lat": 39.464795,
           "lon": -0.386291,
           "street": "Carrer del Marqués de Zenete"
-        },
-        {
-          "id": "node/12368615602",
-          "lat": 39.479157,
-          "lon": -0.381299,
-          "wheelchair": "limited",
-          "street": "Carrer de l'Hort d'En Cendra"
-        },
-        {
-          "id": "node/13461464405",
-          "lat": 39.459547,
-          "lon": -0.375269,
-          "street": "Carrer de Cuba"
-        },
-        {
-          "id": "node/4271972942",
-          "lat": 39.474798,
-          "lon": -0.36347,
-          "street": "Carrer d'Armando Palacio Valdés"
-        },
-        {
-          "id": "node/12241700200",
-          "lat": 39.461337,
-          "lon": -0.365017,
-          "street": "Carrer de Pere Aleixandre"
-        },
-        {
-          "id": "node/4271952070",
-          "lat": 39.47784,
-          "lon": -0.363733,
-          "street": "Carrer del Professor Doctor Severo Ochoa"
-        },
-        {
-          "id": "node/10293970982",
-          "lat": 39.458172,
-          "lon": -0.383587,
-          "street": "Carrer de Sant Vicent Màrtir"
-        },
-        {
-          "id": "node/13952594422",
-          "lat": 39.458937,
-          "lon": -0.387094,
-          "street": "Carrer de Carcaixent"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:37.824Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:31:23.314Z"
     },
     "luggage-storage": {
       "count": 11,
@@ -2100,7 +2212,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:40.147Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 10
+      },
+      "updatedAt": "2026-09-11T10:31:24.448Z"
     },
     "camp-sites": {
       "count": 2,
@@ -2250,8 +2368,147 @@
     },
     "benches": {
       "count": 3821,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:17:47.297Z"
+      "pois": [
+        {
+          "id": "node/13078775701",
+          "lat": 39.469344,
+          "lon": -0.37573,
+          "street": "Plaça de l'Ajuntament"
+        },
+        {
+          "id": "node/13849355904",
+          "lat": 39.471572,
+          "lon": -0.376007,
+          "street": "Carrer de Moratín"
+        },
+        {
+          "id": "node/13786416621",
+          "lat": 39.467769,
+          "lon": -0.374037,
+          "street": "Carrer de Colón"
+        },
+        {
+          "id": "node/12501236277",
+          "lat": 39.472171,
+          "lon": -0.378611,
+          "street": "Carrer de la Llanterna"
+        },
+        {
+          "id": "node/12501236279",
+          "lat": 39.472338,
+          "lon": -0.378539,
+          "street": "Carrer de l'Hedra"
+        },
+        {
+          "id": "node/12501236275",
+          "lat": 39.472302,
+          "lon": -0.378638,
+          "street": "Carrer dels Mallorquins"
+        },
+        {
+          "id": "node/12501236286",
+          "lat": 39.472442,
+          "lon": -0.378541,
+          "street": "Carrer del Poeta Llombart"
+        },
+        {
+          "id": "node/13849469799",
+          "lat": 39.471654,
+          "lon": -0.380704,
+          "street": "Carrer de Vinatea"
+        },
+        {
+          "id": "node/12242071240",
+          "lat": 39.470133,
+          "lon": -0.37104,
+          "street": "Carrer de Don Juan de Austria"
+        },
+        {
+          "id": "node/12188911509",
+          "lat": 39.473131,
+          "lon": -0.379567,
+          "street": "Plaça de la Ciutat de Bruges"
+        },
+        {
+          "id": "node/9877070842",
+          "lat": 39.471845,
+          "lon": -0.370763,
+          "street": "Plaça d'Alfons el Magnànim"
+        },
+        {
+          "id": "node/12188896976",
+          "lat": 39.474283,
+          "lon": -0.378844,
+          "street": "Plaça del Mercat"
+        },
+        {
+          "id": "node/903874999",
+          "lat": 39.474801,
+          "lon": -0.375527,
+          "street": "Carrer de la Corretgeria"
+        },
+        {
+          "id": "node/9877070847",
+          "lat": 39.472369,
+          "lon": -0.37049,
+          "street": "Carril Bici de la Ronda Interior"
+        },
+        {
+          "id": "node/14099749666",
+          "lat": 39.475032,
+          "lon": -0.376796,
+          "street": "Carrer de Guillem del Rei"
+        },
+        {
+          "id": "node/1492215767",
+          "lat": 39.475108,
+          "lon": -0.375419,
+          "street": "Carrer dels Bordadors"
+        },
+        {
+          "id": "node/7503926760",
+          "lat": 39.465219,
+          "lon": -0.373194,
+          "street": "Gran Via del Marqués del Túria"
+        },
+        {
+          "id": "node/13798342611",
+          "lat": 39.468356,
+          "lon": -0.382884,
+          "street": "Plaça de Vannes"
+        },
+        {
+          "id": "node/12358277830",
+          "lat": 39.474841,
+          "lon": -0.37918,
+          "street": "Carrer de la Taula de Canvis"
+        },
+        {
+          "id": "node/13043306151",
+          "lat": 39.468093,
+          "lon": -0.369284,
+          "street": "Carrer de Ciril Amorós"
+        },
+        {
+          "id": "node/13012356011",
+          "lat": 39.475724,
+          "lon": -0.374053,
+          "street": "Plaça de l'Arquebisbe"
+        },
+        {
+          "id": "node/14099777662",
+          "lat": 39.475385,
+          "lon": -0.372901,
+          "street": "Plaça de Nàpols i Sicília"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:25.822Z"
     },
     "compressed-air": {
       "count": 0,

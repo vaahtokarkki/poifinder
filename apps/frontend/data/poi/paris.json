@@ -1,9 +1,9 @@
 {
   "city": "paris",
-  "generatedAt": "2026-09-03T17:12:27.927Z",
+  "generatedAt": "2026-09-11T10:30:53.039Z",
   "categories": {
     "toilets": {
-      "count": 1152,
+      "count": 1154,
       "pois": [
         {
           "id": "node/12744920515",
@@ -241,10 +241,16 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:56.114Z"
+      "stats": {
+        "free": 904,
+        "paid": 36,
+        "stepFree": 712,
+        "partlyStepFree": 33
+      },
+      "updatedAt": "2026-09-11T10:30:42.682Z"
     },
     "drinking-water": {
-      "count": 1452,
+      "count": 1453,
       "pois": [
         {
           "id": "node/3765622295",
@@ -327,7 +333,8 @@
           "id": "node/13869263301",
           "name": "Eau potable",
           "lat": 48.862967,
-          "lon": 2.309376
+          "lon": 2.309376,
+          "fee": "no"
         },
         {
           "id": "node/698460645",
@@ -389,9 +396,60 @@
           "name": "Cimetière Communal de Bagneux",
           "lat": 48.800847,
           "lon": 2.304452
+        },
+        {
+          "id": "node/2440653707",
+          "lat": 48.856455,
+          "lon": 2.35112,
+          "street": "Place de l'Hôtel de Ville"
+        },
+        {
+          "id": "node/4795398155",
+          "lat": 48.85498,
+          "lon": 2.352816,
+          "street": "Parc Rives de Seine - Georges Pompidou"
+        },
+        {
+          "id": "node/9850561125",
+          "lat": 48.858373,
+          "lon": 2.353359,
+          "wheelchair": "no",
+          "fee": "no",
+          "street": "Rue du Temple"
+        },
+        {
+          "id": "node/10989026237",
+          "lat": 48.857354,
+          "lon": 2.354954,
+          "street": "Rue de la Verrerie"
+        },
+        {
+          "id": "node/10900990604",
+          "lat": 48.856306,
+          "lon": 2.355244,
+          "fee": "no",
+          "street": "Place Baudoyer"
+        },
+        {
+          "id": "node/2421491826",
+          "lat": 48.857733,
+          "lon": 2.349235,
+          "street": "Allée Waslaw Nijinsky"
+        },
+        {
+          "id": "node/12897694639",
+          "lat": 48.855538,
+          "lon": 2.355782,
+          "street": "Rue des Barres"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:58.283Z"
+      "stats": {
+        "free": 239,
+        "paid": 1,
+        "stepFree": 156,
+        "partlyStepFree": 17
+      },
+      "updatedAt": "2026-09-11T10:30:46.331Z"
     },
     "playgrounds": {
       "count": 1347,
@@ -1823,7 +1881,7 @@
       "updatedAt": "2026-09-03T17:12:07.988Z"
     },
     "atms": {
-      "count": 1615,
+      "count": 1611,
       "pois": [
         {
           "id": "node/658959185",
@@ -2048,11 +2106,17 @@
           "name": "Banque Populaire",
           "lat": 48.848037,
           "lon": 2.340995,
-          "openingHours": "Mo-We,Fr 09:00-13:00, Mo-Fr 14:00-17:30, Th 09:00-13:00,14:00-16:30",
+          "openingHours": "Mo-We 09:00-13:00,14:00-17:30; Th 09:00-13:00,14:00-16:30; Fr 09:00-13:00,14:00-17:30",
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:10.423Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 444,
+        "partlyStepFree": 70
+      },
+      "updatedAt": "2026-09-11T10:30:47.257Z"
     },
     "post-boxes": {
       "count": 1844,
@@ -2098,7 +2162,7 @@
       "updatedAt": "2026-09-03T17:12:13.027Z"
     },
     "recycling": {
-      "count": 3523,
+      "count": 3526,
       "pois": [
         {
           "id": "node/14097915712",
@@ -2314,7 +2378,13 @@
           "address": "Place de la Porte de Pantin 5 bis"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:15.947Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 260,
+        "partlyStepFree": 27
+      },
+      "updatedAt": "2026-09-11T10:30:49.511Z"
     },
     "luggage-storage": {
       "count": 29,
@@ -2660,7 +2730,7 @@
       "updatedAt": "2026-09-03T17:12:17.202Z"
     },
     "outdoor-gyms": {
-      "count": 461,
+      "count": 463,
       "pois": [
         {
           "id": "node/6089787088",
@@ -2853,7 +2923,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:18.715Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 29
+      },
+      "updatedAt": "2026-09-11T10:30:50.963Z"
     },
     "camp-sites": {
       "count": 0,
@@ -3267,7 +3343,7 @@
       "updatedAt": "2026-08-17T04:04:41.963Z"
     },
     "benches": {
-      "count": 21126,
+      "count": 21233,
       "pois": [
         {
           "id": "node/9995007001",
@@ -3292,9 +3368,105 @@
           "name": "Banc",
           "lat": 48.868252,
           "lon": 2.446687
+        },
+        {
+          "id": "node/6216944675",
+          "lat": 48.856514,
+          "lon": 2.351065,
+          "street": "Place de l'Hôtel de Ville"
+        },
+        {
+          "id": "node/5042778825",
+          "lat": 48.856027,
+          "lon": 2.353646,
+          "street": "Accès Parking Lobau Rivoli"
+        },
+        {
+          "id": "node/13127442324",
+          "lat": 48.855708,
+          "lon": 2.353419,
+          "street": "Rue de Lobau"
+        },
+        {
+          "id": "node/5042776651",
+          "lat": 48.855938,
+          "lon": 2.353845,
+          "street": "Rue de Brosse"
+        },
+        {
+          "id": "node/11163936316",
+          "lat": 48.855699,
+          "lon": 2.350799,
+          "street": "Pont d'Arcole"
+        },
+        {
+          "id": "node/2821707602",
+          "lat": 48.85747,
+          "lon": 2.350632,
+          "street": "Rue de la Coutellerie"
+        },
+        {
+          "id": "node/9917430878",
+          "lat": 48.858073,
+          "lon": 2.353034,
+          "street": "Rue du Temple"
+        },
+        {
+          "id": "node/11254962479",
+          "lat": 48.856645,
+          "lon": 2.349355,
+          "street": "Quai de Gesvres"
+        },
+        {
+          "id": "node/12718154262",
+          "lat": 48.855042,
+          "lon": 2.350452,
+          "street": "Quai aux Fleurs"
+        },
+        {
+          "id": "node/10920092347",
+          "lat": 48.856404,
+          "lon": 2.355214,
+          "street": "Place Baudoyer"
+        },
+        {
+          "id": "node/6913564185",
+          "lat": 48.856647,
+          "lon": 2.355515,
+          "street": "Rue du Bourg Tibourg"
+        },
+        {
+          "id": "node/11252271874",
+          "lat": 48.854681,
+          "lon": 2.353972,
+          "street": "Quai de l'Hôtel de Ville"
+        },
+        {
+          "id": "node/6353027613",
+          "lat": 48.857923,
+          "lon": 2.349359,
+          "street": "Allée Waslaw Nijinsky"
+        },
+        {
+          "id": "node/6353027656",
+          "lat": 48.858027,
+          "lon": 2.349185,
+          "street": "Rue de Rivoli"
+        },
+        {
+          "id": "node/3115029297",
+          "lat": 48.855351,
+          "lon": 2.355585,
+          "street": "Rue du Grenier sur l'Eau"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:27.825Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:52.937Z"
     },
     "compressed-air": {
       "count": 0,

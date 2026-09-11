@@ -1,6 +1,6 @@
 {
   "city": "perth",
-  "generatedAt": "2026-09-03T17:38:38.871Z",
+  "generatedAt": "2026-09-11T10:33:30.010Z",
   "categories": {
     "toilets": {
       "count": 350,
@@ -264,7 +264,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:13.674Z"
+      "stats": {
+        "free": 169,
+        "paid": 1,
+        "stepFree": 112,
+        "partlyStepFree": 8
+      },
+      "updatedAt": "2026-09-11T10:33:24.260Z"
     },
     "drinking-water": {
       "count": 345,
@@ -332,9 +338,148 @@
           "name": "Water Fountain",
           "lat": -31.958909,
           "lon": 115.942024
+        },
+        {
+          "id": "node/11169377576",
+          "lat": -31.950946,
+          "lon": 115.860311,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Gallery Walk"
+        },
+        {
+          "id": "node/11076806746",
+          "lat": -31.95005,
+          "lon": 115.861464,
+          "street": "James Street Mall"
+        },
+        {
+          "id": "node/2351681252",
+          "lat": -31.951457,
+          "lon": 115.859463,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Wellington Street"
+        },
+        {
+          "id": "node/13434443701",
+          "lat": -31.952655,
+          "lon": 115.859087,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Forrest Place"
+        },
+        {
+          "id": "node/13911565095",
+          "lat": -31.950354,
+          "lon": 115.857265,
+          "street": "Karak Walk"
+        },
+        {
+          "id": "node/3246729310",
+          "lat": -31.953166,
+          "lon": 115.859533,
+          "street": "Murray Street Mall"
+        },
+        {
+          "id": "node/5266913783",
+          "lat": -31.947219,
+          "lon": 115.860338,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Aberdeen Street"
+        },
+        {
+          "id": "node/5211573636",
+          "lat": -31.952427,
+          "lon": 115.857267,
+          "street": "Murray Street"
+        },
+        {
+          "id": "node/5070886169",
+          "lat": -31.947983,
+          "lon": 115.857063,
+          "street": "James Street"
+        },
+        {
+          "id": "node/2463521505",
+          "lat": -31.954407,
+          "lon": 115.859512,
+          "street": "Hay Street Mall"
+        },
+        {
+          "id": "node/2463521491",
+          "lat": -31.953437,
+          "lon": 115.856367,
+          "street": "Hay Street"
+        },
+        {
+          "id": "node/13417907122",
+          "lat": -31.952435,
+          "lon": 115.865536,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Moore Street"
+        },
+        {
+          "id": "node/5070852697",
+          "lat": -31.949146,
+          "lon": 115.854902,
+          "street": "Telethon Avenue"
+        },
+        {
+          "id": "node/5211573637",
+          "lat": -31.954983,
+          "lon": 115.857544,
+          "street": "St Georges Terrace"
+        },
+        {
+          "id": "node/12888336674",
+          "lat": -31.946453,
+          "lon": 115.855235,
+          "street": "Moon Chow Promenade"
+        },
+        {
+          "id": "node/12338812792",
+          "lat": -31.946603,
+          "lon": 115.854757,
+          "street": "Shenton Street"
+        },
+        {
+          "id": "node/13461845451",
+          "lat": -31.95495,
+          "lon": 115.865829,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Victoria Square"
+        },
+        {
+          "id": "node/12237910022",
+          "lat": -31.956907,
+          "lon": 115.859488,
+          "street": "Barrack Street"
+        },
+        {
+          "id": "node/2351681254",
+          "lat": -31.955984,
+          "lon": 115.86628,
+          "street": "Victoria Avenue"
+        },
+        {
+          "id": "node/12803678306",
+          "lat": -31.957525,
+          "lon": 115.857553,
+          "fee": "no",
+          "street": "Geoffrey Bolton Way"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:15.845Z"
+      "stats": {
+        "free": 100,
+        "paid": 1,
+        "stepFree": 55,
+        "partlyStepFree": 11
+      },
+      "updatedAt": "2026-09-11T10:33:26.111Z"
     },
     "playgrounds": {
       "count": 290,
@@ -1600,7 +1745,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:25.182Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 43,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-11T10:33:26.626Z"
     },
     "post-boxes": {
       "count": 156,
@@ -1841,12 +1992,6 @@
           "lon": 115.870712
         },
         {
-          "id": "node/13159100996",
-          "lat": -31.971599,
-          "lon": 115.85356,
-          "street": "Mindeerup Plaza"
-        },
-        {
           "id": "node/13159120553",
           "name": "green waste container",
           "lat": -31.973016,
@@ -1857,6 +2002,25 @@
           "lat": -31.947003,
           "lon": 115.832572,
           "context": "Officeworks"
+        },
+        {
+          "id": "node/11853099625",
+          "name": "City of South Perth Recycling Centre",
+          "lat": -31.996842,
+          "lon": 115.881076,
+          "address": "Thelma Street 199"
+        },
+        {
+          "id": "node/11322989018",
+          "name": "Container for Change",
+          "lat": -31.908075,
+          "lon": 115.813017
+        },
+        {
+          "id": "node/13159100996",
+          "lat": -31.971599,
+          "lon": 115.85356,
+          "street": "Mindeerup Plaza"
         },
         {
           "id": "node/12647145608",
@@ -1902,13 +2066,6 @@
           "street": "Bilya Biddi"
         },
         {
-          "id": "node/11853099625",
-          "name": "City of South Perth Recycling Centre",
-          "lat": -31.996842,
-          "lon": 115.881076,
-          "address": "Thelma Street 199"
-        },
-        {
           "id": "node/13159176982",
           "lat": -31.896272,
           "lon": 115.872648,
@@ -1919,12 +2076,6 @@
           "lat": -32.002129,
           "lon": 115.891556,
           "street": "Beazley Avenue"
-        },
-        {
-          "id": "node/11322989018",
-          "name": "Container for Change",
-          "lat": -31.908075,
-          "lon": 115.813017
         },
         {
           "id": "node/11813797287",
@@ -1945,7 +2096,13 @@
           "street": "Collier Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:28.837Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:28.045Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2201,7 +2358,13 @@
           "context": "Woodville Reserve"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:30.888Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:28.894Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2519,9 +2682,129 @@
           "name": "Ben Brown memorial bench",
           "lat": -31.958008,
           "lon": 115.811883
+        },
+        {
+          "id": "node/11760436102",
+          "lat": -31.950847,
+          "lon": 115.85971,
+          "street": "William Street"
+        },
+        {
+          "id": "node/12894317206",
+          "lat": -31.9506,
+          "lon": 115.85933,
+          "street": "Horsehoe Lane"
+        },
+        {
+          "id": "node/13434500101",
+          "lat": -31.951967,
+          "lon": 115.859687,
+          "street": "Forrest Place"
+        },
+        {
+          "id": "node/12894338544",
+          "lat": -31.95052,
+          "lon": 115.858075,
+          "street": "Karak Walk"
+        },
+        {
+          "id": "node/14070541936",
+          "lat": -31.950724,
+          "lon": 115.85721,
+          "street": "Fremantle Railway PSP"
+        },
+        {
+          "id": "node/4148987759",
+          "lat": -31.952734,
+          "lon": 115.858406,
+          "street": "Murray Street Mall"
+        },
+        {
+          "id": "node/9724024718",
+          "lat": -31.947619,
+          "lon": 115.861757,
+          "street": "Aberdeen Street"
+        },
+        {
+          "id": "node/8712311715",
+          "lat": -31.950809,
+          "lon": 115.856885,
+          "street": "Wellington Street"
+        },
+        {
+          "id": "node/8712311714",
+          "lat": -31.950793,
+          "lon": 115.856846,
+          "street": "Queen Street"
+        },
+        {
+          "id": "node/11155322864",
+          "lat": -31.953688,
+          "lon": 115.860659,
+          "street": "Barrack Street"
+        },
+        {
+          "id": "node/13432310306",
+          "lat": -31.951692,
+          "lon": 115.856813,
+          "street": "Bankwest Place"
+        },
+        {
+          "id": "node/9724024519",
+          "lat": -31.9473,
+          "lon": 115.86201,
+          "street": "Lipfert Street"
+        },
+        {
+          "id": "node/13434421801",
+          "lat": -31.952257,
+          "lon": 115.856587,
+          "street": "Murray Street"
+        },
+        {
+          "id": "node/9765665739",
+          "lat": -31.949501,
+          "lon": 115.855852,
+          "street": "King Street"
+        },
+        {
+          "id": "node/13417903543",
+          "lat": -31.952346,
+          "lon": 115.865374,
+          "street": "Moore Street"
+        },
+        {
+          "id": "node/13574099804",
+          "lat": -31.95192,
+          "lon": 115.865579,
+          "street": "East Perth PSP"
+        },
+        {
+          "id": "node/13450175443",
+          "lat": -31.947655,
+          "lon": 115.864823,
+          "street": "Newcastle Street"
+        },
+        {
+          "id": "node/9765665751",
+          "lat": -31.949218,
+          "lon": 115.855155,
+          "street": "Joondia Lane"
+        },
+        {
+          "id": "node/9765665738",
+          "lat": -31.949268,
+          "lon": 115.855125,
+          "street": "Telethon Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:38.770Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:29.908Z"
     },
     "compressed-air": {
       "count": 0,

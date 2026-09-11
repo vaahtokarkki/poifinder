@@ -1,6 +1,6 @@
 {
   "city": "san-diego",
-  "generatedAt": "2026-09-03T17:29:08.286Z",
+  "generatedAt": "2026-09-11T10:32:32.500Z",
   "categories": {
     "post-boxes": {
       "count": 72,
@@ -195,6 +195,62 @@
       "count": 75,
       "pois": [
         {
+          "id": "node/6554078028",
+          "lat": 32.731617,
+          "lon": -117.149078,
+          "context": "Casa del Prado"
+        },
+        {
+          "id": "node/597165916",
+          "name": "San Diego CRV Center",
+          "lat": 32.714454,
+          "lon": -117.124829,
+          "address": "32nd Street 855",
+          "openingHours": "Mo-Sa 08:30-17:00"
+        },
+        {
+          "id": "way/31810446",
+          "name": "San Diego Fibres",
+          "lat": 32.710436,
+          "lon": -117.108035
+        },
+        {
+          "id": "node/13458109707",
+          "name": "Humble Servants of the Worm",
+          "lat": 32.755667,
+          "lon": -117.10976
+        },
+        {
+          "id": "way/1369863831",
+          "name": "EDCO Recycling Buyback Center",
+          "lat": 32.737232,
+          "lon": -117.054767,
+          "address": "Federal Boulevard 6700",
+          "openingHours": "Su 08:00-16:00"
+        },
+        {
+          "id": "way/1369817634",
+          "name": "SANCO Resource Recovery",
+          "lat": 32.738527,
+          "lon": -117.053556,
+          "address": "Federal Boulevard 6750"
+        },
+        {
+          "id": "node/2131638589",
+          "name": "SDSU Recycling",
+          "lat": 32.772313,
+          "lon": -117.071728,
+          "address": "Campanile Mall 5299",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/2131607153",
+          "name": "Campanile Mall Recycling",
+          "lat": 32.772468,
+          "lon": -117.071715,
+          "openingHours": "24/7"
+        },
+        {
           "id": "node/13717155050",
           "lat": 32.720951,
           "lon": -117.167229,
@@ -249,24 +305,10 @@
           "street": "El Prado"
         },
         {
-          "id": "node/6554078028",
-          "lat": 32.731617,
-          "lon": -117.149078,
-          "context": "Casa del Prado"
-        },
-        {
           "id": "node/13375356890",
           "lat": 32.730675,
           "lon": -117.145943,
           "street": "Park Boulevard"
-        },
-        {
-          "id": "node/597165916",
-          "name": "San Diego CRV Center",
-          "lat": 32.714454,
-          "lon": -117.124829,
-          "address": "32nd Street 855",
-          "openingHours": "Mo-Sa 08:30-17:00"
         },
         {
           "id": "node/13738759925",
@@ -287,22 +329,10 @@
           "street": "Hotel Circle South"
         },
         {
-          "id": "way/31810446",
-          "name": "San Diego Fibres",
-          "lat": 32.710436,
-          "lon": -117.108035
-        },
-        {
           "id": "node/6550417961",
           "lat": 32.741361,
           "lon": -117.20992,
           "street": "Historic Decatur Road"
-        },
-        {
-          "id": "node/13458109707",
-          "name": "Humble Servants of the Worm",
-          "lat": 32.755667,
-          "lon": -117.10976
         },
         {
           "id": "node/13903375431",
@@ -311,40 +341,10 @@
           "street": "Ladera Street"
         },
         {
-          "id": "way/1369863831",
-          "name": "EDCO Recycling Buyback Center",
-          "lat": 32.737232,
-          "lon": -117.054767,
-          "address": "Federal Boulevard 6700",
-          "openingHours": "Su 08:00-16:00"
-        },
-        {
-          "id": "way/1369817634",
-          "name": "SANCO Resource Recovery",
-          "lat": 32.738527,
-          "lon": -117.053556,
-          "address": "Federal Boulevard 6750"
-        },
-        {
           "id": "node/2131607150",
           "lat": 32.772002,
           "lon": -117.071781,
           "street": "Campanile Drive"
-        },
-        {
-          "id": "node/2131638589",
-          "name": "SDSU Recycling",
-          "lat": 32.772313,
-          "lon": -117.071728,
-          "address": "Campanile Mall 5299",
-          "openingHours": "24/7"
-        },
-        {
-          "id": "node/2131607153",
-          "name": "Campanile Mall Recycling",
-          "lat": 32.772468,
-          "lon": -117.071715,
-          "openingHours": "24/7"
         },
         {
           "id": "node/6388099117",
@@ -359,7 +359,13 @@
           "street": "Catoctin Drive"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:57.191Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:30.677Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -596,7 +602,13 @@
           "context": "Morley Field Dog Park"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:59.201Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:31.481Z"
     },
     "camp-sites": {
       "count": 10,
@@ -876,7 +888,13 @@
           "context": "Torrey Pines Property Management"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:44.344Z"
+      "stats": {
+        "free": 53,
+        "paid": 0,
+        "stepFree": 72,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:26.069Z"
     },
     "drinking-water": {
       "count": 129,
@@ -907,9 +925,182 @@
           "name": "Filtered Water Fountain",
           "lat": 32.7773,
           "lon": -117.074061
+        },
+        {
+          "id": "node/12851539968",
+          "lat": 32.712805,
+          "lon": -117.165145,
+          "fee": "no",
+          "street": "West G Street"
+        },
+        {
+          "id": "node/11612563166",
+          "lat": 32.709833,
+          "lon": -117.163971,
+          "fee": "no",
+          "street": "1st Avenue"
+        },
+        {
+          "id": "node/9900927852",
+          "lat": 32.717773,
+          "lon": -117.169905,
+          "street": "West B Street"
+        },
+        {
+          "id": "node/1314521514",
+          "lat": 32.708247,
+          "lon": -117.155866,
+          "street": "K Street"
+        },
+        {
+          "id": "node/12085845229",
+          "lat": 32.708703,
+          "lon": -117.167555,
+          "street": "South Embarcadero"
+        },
+        {
+          "id": "node/1314521771",
+          "lat": 32.706493,
+          "lon": -117.158414,
+          "street": "Tony Gwynn Drive"
+        },
+        {
+          "id": "node/12085845231",
+          "lat": 32.716627,
+          "lon": -117.173231,
+          "street": "The Embarcadero"
+        },
+        {
+          "id": "node/11916879984",
+          "lat": 32.708146,
+          "lon": -117.169757,
+          "street": "Kettner Boulevard"
+        },
+        {
+          "id": "node/10863776716",
+          "lat": 32.708573,
+          "lon": -117.145714,
+          "fee": "yes",
+          "street": "20th Street"
+        },
+        {
+          "id": "node/5831142685",
+          "lat": 32.729599,
+          "lon": -117.151005,
+          "street": "Pan American Road East"
+        },
+        {
+          "id": "node/2968882717",
+          "lat": 32.730807,
+          "lon": -117.15007,
+          "street": "Plaza de Panama"
+        },
+        {
+          "id": "node/9921606040",
+          "lat": 32.73131,
+          "lon": -117.149956,
+          "street": "El Prado"
+        },
+        {
+          "id": "node/2969275911",
+          "lat": 32.732404,
+          "lon": -117.151788,
+          "street": "Old Globe Way"
+        },
+        {
+          "id": "node/12771264968",
+          "lat": 32.735695,
+          "lon": -117.158726,
+          "fee": "no",
+          "street": "Westpark Drive"
+        },
+        {
+          "id": "node/3844507148",
+          "lat": 32.734504,
+          "lon": -117.152086,
+          "street": "Monkey Trail"
+        },
+        {
+          "id": "node/3451442073",
+          "lat": 32.736045,
+          "lon": -117.151248,
+          "street": "Sun Bear Trail"
+        },
+        {
+          "id": "node/13414617381",
+          "lat": 32.690094,
+          "lon": -117.176612,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "7th Street"
+        },
+        {
+          "id": "node/9488397029",
+          "lat": 32.73822,
+          "lon": -117.139457,
+          "fee": "no",
+          "street": "Velodrome Trail"
+        },
+        {
+          "id": "node/10197421910",
+          "lat": 32.739633,
+          "lon": -117.136195,
+          "street": "Jacaranda Place"
+        },
+        {
+          "id": "node/9953504397",
+          "lat": 32.683863,
+          "lon": -117.173289,
+          "street": "Glorietta Boulevard"
+        },
+        {
+          "id": "node/10138216796",
+          "lat": 32.731975,
+          "lon": -117.200547,
+          "street": "Alaska Airlines Ticketing/Check In"
+        },
+        {
+          "id": "node/13738762152",
+          "lat": 32.750114,
+          "lon": -117.177344,
+          "street": "Washington Place"
+        },
+        {
+          "id": "node/9845477172",
+          "lat": 32.732745,
+          "lon": -117.20119,
+          "fee": "no",
+          "street": "24 Jetway"
+        },
+        {
+          "id": "node/11408844978",
+          "lat": 32.68747,
+          "lon": -117.191178,
+          "fee": "no",
+          "street": "Ocean Boulevard"
+        },
+        {
+          "id": "node/10141338618",
+          "lat": 32.733561,
+          "lon": -117.201087,
+          "fee": "no",
+          "street": "32 Jetway"
+        },
+        {
+          "id": "node/9845396514",
+          "lat": 32.731894,
+          "lon": -117.20298,
+          "fee": "no",
+          "street": "Exit to Landside"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:46.251Z"
+      "stats": {
+        "free": 29,
+        "paid": 1,
+        "stepFree": 12,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:28.126Z"
     },
     "playgrounds": {
       "count": 255,
@@ -2103,7 +2294,13 @@
           "openingHours": "Mo-Su 07:00-21:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:53.550Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:28.829Z"
     },
     "post-offices": {
       "count": 43,
@@ -2341,9 +2538,123 @@
           "name": "Safety Escort Phone",
           "lat": 32.773557,
           "lon": -117.071775
+        },
+        {
+          "id": "node/11042812110",
+          "lat": 32.710575,
+          "lon": -117.160899,
+          "street": "4th Avenue"
+        },
+        {
+          "id": "node/10250991872",
+          "lat": 32.708772,
+          "lon": -117.164767,
+          "street": "1st Avenue"
+        },
+        {
+          "id": "node/13694272907",
+          "lat": 32.719825,
+          "lon": -117.169001,
+          "street": "West Ash Street"
+        },
+        {
+          "id": "node/13704677326",
+          "lat": 32.719527,
+          "lon": -117.169267,
+          "street": "Kettner Boulevard"
+        },
+        {
+          "id": "node/10016813115",
+          "lat": 32.722081,
+          "lon": -117.15561,
+          "street": "10th Avenue"
+        },
+        {
+          "id": "node/10016780283",
+          "lat": 32.723131,
+          "lon": -117.156723,
+          "street": "Date Street"
+        },
+        {
+          "id": "node/10239257862",
+          "lat": 32.711224,
+          "lon": -117.169752,
+          "street": "West Harbor Drive"
+        },
+        {
+          "id": "node/13704751212",
+          "lat": 32.715988,
+          "lon": -117.171415,
+          "street": "Pacific Highway"
+        },
+        {
+          "id": "node/13704776994",
+          "lat": 32.715987,
+          "lon": -117.171476,
+          "street": "West Broadway"
+        },
+        {
+          "id": "node/13370920517",
+          "lat": 32.708312,
+          "lon": -117.166968,
+          "street": "South Embarcadero"
+        },
+        {
+          "id": "node/10222059972",
+          "lat": 32.715997,
+          "lon": -117.173352,
+          "street": "The Embarcadero"
+        },
+        {
+          "id": "node/10222085042",
+          "lat": 32.7154,
+          "lon": -117.173352,
+          "street": "Bayshore Bikeway"
+        },
+        {
+          "id": "node/13704736265",
+          "lat": 32.712761,
+          "lon": -117.173124,
+          "street": "North Harbor Drive"
+        },
+        {
+          "id": "node/13704784351",
+          "lat": 32.712719,
+          "lon": -117.173127,
+          "street": "West G Street"
+        },
+        {
+          "id": "node/5121523891",
+          "lat": 32.725403,
+          "lon": -117.150786,
+          "street": "Park Boulevard"
+        },
+        {
+          "id": "node/7152451845",
+          "lat": 32.728068,
+          "lon": -117.151833,
+          "street": "Presidents Way"
+        },
+        {
+          "id": "node/10848062333",
+          "lat": 32.730839,
+          "lon": -117.157737,
+          "street": "Westpark Drive"
+        },
+        {
+          "id": "node/13697073205",
+          "lat": 32.729155,
+          "lon": -117.170709,
+          "street": "India Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:08.184Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:32.398Z"
     },
     "compressed-air": {
       "count": 0,

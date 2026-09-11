@@ -1,6 +1,6 @@
 {
   "city": "manchester",
-  "generatedAt": "2026-09-03T17:05:48.976Z",
+  "generatedAt": "2026-09-11T10:30:12.433Z",
   "categories": {
     "toilets": {
       "count": 59,
@@ -220,7 +220,13 @@
           "context": "Middleton Bus Station"
         }
       ],
-      "updatedAt": "2026-09-03T17:05:20.510Z"
+      "stats": {
+        "free": 27,
+        "paid": 4,
+        "stepFree": 23,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:30:04.682Z"
     },
     "drinking-water": {
       "count": 12,
@@ -236,9 +242,48 @@
           "name": "Castlefield Water Point",
           "lat": 53.474665,
           "lon": -2.257996
+        },
+        {
+          "id": "node/14098890101",
+          "lat": 53.486979,
+          "lon": -2.242257,
+          "street": "Victoria Station Approach"
+        },
+        {
+          "id": "node/14102478701",
+          "lat": 53.476954,
+          "lon": -2.231108,
+          "fee": "no",
+          "street": "Piccadilly Station"
+        },
+        {
+          "id": "node/6432519832",
+          "lat": 53.476477,
+          "lon": -2.229287,
+          "street": "Fairfield Street"
+        },
+        {
+          "id": "node/10792781330",
+          "lat": 53.452674,
+          "lon": -2.247765,
+          "street": "Raised Walk"
+        },
+        {
+          "id": "node/13115352589",
+          "lat": 53.472674,
+          "lon": -2.297596,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Green"
         }
       ],
-      "updatedAt": "2026-09-03T17:05:22.108Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:06.916Z"
     },
     "playgrounds": {
       "count": 286,
@@ -1320,7 +1365,13 @@
           "openingHours": "Mo-Fr 09:00-18:30; Sa 09:00-14:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:05:30.030Z"
+      "stats": {
+        "free": 13,
+        "paid": 6,
+        "stepFree": 19,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:07.546Z"
     },
     "post-boxes": {
       "count": 377,
@@ -1519,6 +1570,101 @@
           "context": "Manchester Oxford Road"
         },
         {
+          "id": "way/1551803340",
+          "name": "EMR Metal Recycling",
+          "lat": 53.479914,
+          "lon": -2.273807,
+          "openingHours": "Mo-Fr 08:00 - 16:30, Sa 08:00 - 12:00"
+        },
+        {
+          "id": "node/3061334233",
+          "name": "AYM to Recycle",
+          "lat": 53.509426,
+          "lon": -2.253151,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/364322303",
+          "name": "Cobden Street Household Waste Recycling Centre",
+          "lat": 53.496998,
+          "lon": -2.289789,
+          "address": "Cobden Street",
+          "openingHours": "Mo-Su 08:00-20:00"
+        },
+        {
+          "id": "node/3034685530",
+          "lat": 53.44077,
+          "lon": -2.218456,
+          "context": "Sainsbury's"
+        },
+        {
+          "id": "way/553782356",
+          "name": "Reliance Street Recycling Centre",
+          "lat": 53.506023,
+          "lon": -2.181273,
+          "address": "Reliance Street"
+        },
+        {
+          "id": "way/166530880",
+          "name": "Mercury Recycling",
+          "lat": 53.461083,
+          "lon": -2.313103,
+          "address": "Commerce Way"
+        },
+        {
+          "id": "node/12616329373",
+          "lat": 53.442406,
+          "lon": -2.191151,
+          "context": "Tesco"
+        },
+        {
+          "id": "node/9502762476",
+          "name": "The Salvation Army",
+          "lat": 53.442194,
+          "lon": -2.190994
+        },
+        {
+          "id": "node/2093675686",
+          "name": "Ash Road Recycling Centre",
+          "lat": 53.484725,
+          "lon": -2.157247,
+          "address": "Ash Road"
+        },
+        {
+          "id": "way/23648793",
+          "name": "Sandfold Lane Recycling Centre",
+          "lat": 53.448287,
+          "lon": -2.176475,
+          "address": "Sandfold Lane"
+        },
+        {
+          "id": "way/624695587",
+          "name": "Lumns Lane Swinton household recycling centre",
+          "lat": 53.517043,
+          "lon": -2.31143,
+          "address": "Lumns Lane"
+        },
+        {
+          "id": "node/9885193979",
+          "lat": 53.508738,
+          "lon": -2.158245,
+          "context": "Tesco Extra"
+        },
+        {
+          "id": "way/288125858",
+          "name": "Chester Road Recycling Centre",
+          "lat": 53.439603,
+          "lon": -2.31439,
+          "address": "Chester Road",
+          "openingHours": "Mo-Su 08:00-18:00"
+        },
+        {
+          "id": "node/967674482",
+          "name": "Fountain Place, Recycling",
+          "lat": 53.54386,
+          "lon": -2.291829
+        },
+        {
           "id": "node/1485998100",
           "lat": 53.47564,
           "lon": -2.233937,
@@ -1597,13 +1743,6 @@
           "street": "Lime Grove"
         },
         {
-          "id": "way/1551803340",
-          "name": "EMR Metal Recycling",
-          "lat": 53.479914,
-          "lon": -2.273807,
-          "openingHours": "Mo-Fr 08:00 - 16:30, Sa 08:00 - 12:00"
-        },
-        {
           "id": "node/1355707493",
           "lat": 53.466767,
           "lon": -2.264864,
@@ -1614,92 +1753,15 @@
           "lat": 53.462363,
           "lon": -2.230417,
           "street": "Dilworth Street"
-        },
-        {
-          "id": "node/307535199",
-          "lat": 53.464413,
-          "lon": -2.220522,
-          "street": "Lauderdale Crescent"
-        },
-        {
-          "id": "node/1322994774",
-          "lat": 53.461888,
-          "lon": -2.262018,
-          "street": "Clifton Street"
-        },
-        {
-          "id": "node/307515172",
-          "lat": 53.464337,
-          "lon": -2.216363,
-          "street": "St Stephen's Close"
-        },
-        {
-          "id": "node/1322976384",
-          "lat": 53.462556,
-          "lon": -2.269833,
-          "street": "Bath Crescent"
-        },
-        {
-          "id": "node/307516143",
-          "lat": 53.462689,
-          "lon": -2.21464,
-          "street": "Ivybridge Close"
-        },
-        {
-          "id": "node/7503123555",
-          "lat": 53.468273,
-          "lon": -2.281304,
-          "openingHours": "24/7",
-          "wheelchair": "yes",
-          "street": "Craven Drive"
-        },
-        {
-          "id": "node/2868822259",
-          "lat": 53.454768,
-          "lon": -2.228121,
-          "street": "Walmer Street"
-        },
-        {
-          "id": "node/2868822230",
-          "lat": 53.453633,
-          "lon": -2.229954,
-          "street": "Parkfield Street"
-        },
-        {
-          "id": "node/3061334233",
-          "name": "AYM to Recycle",
-          "lat": 53.509426,
-          "lon": -2.253151,
-          "openingHours": "24/7"
-        },
-        {
-          "id": "node/7603727869",
-          "lat": 53.490257,
-          "lon": -2.289281,
-          "street": "Seedley Road"
-        },
-        {
-          "id": "node/2868822204",
-          "lat": 53.451769,
-          "lon": -2.228839,
-          "street": "Heald Place"
-        },
-        {
-          "id": "node/309349351",
-          "lat": 53.474607,
-          "lon": -2.189743,
-          "street": "Herne Street"
-        },
-        {
-          "id": "way/364322303",
-          "name": "Cobden Street Household Waste Recycling Centre",
-          "lat": 53.496998,
-          "lon": -2.289789,
-          "address": "Cobden Street",
-          "openingHours": "Mo-Su 08:00-20:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:05:37.183Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:10.196Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -1952,7 +2014,13 @@
     "outdoor-gyms": {
       "count": 23,
       "pois": [],
-      "updatedAt": "2026-09-03T17:05:39.381Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:11.172Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2243,9 +2311,141 @@
           "name": "Didsbury: Monster Bench",
           "lat": 53.409294,
           "lon": -2.22943
+        },
+        {
+          "id": "node/3680642632",
+          "lat": 53.47971,
+          "lon": -2.244577,
+          "street": "Princess Street"
+        },
+        {
+          "id": "node/3678757825",
+          "lat": 53.479462,
+          "lon": -2.245264,
+          "street": "Albert Square"
+        },
+        {
+          "id": "node/4457898619",
+          "lat": 53.48223,
+          "lon": -2.245479,
+          "street": "St. Ann's Square"
+        },
+        {
+          "id": "node/2696674172",
+          "lat": 53.478842,
+          "lon": -2.240346,
+          "street": "George Street"
+        },
+        {
+          "id": "node/3678734657",
+          "lat": 53.478602,
+          "lon": -2.240269,
+          "street": "Nicholas Street"
+        },
+        {
+          "id": "node/14019470309",
+          "lat": 53.478394,
+          "lon": -2.244455,
+          "street": "Library Walk"
+        },
+        {
+          "id": "node/9516572906",
+          "lat": 53.479765,
+          "lon": -2.246881,
+          "street": "Lincoln Square"
+        },
+        {
+          "id": "node/3635453693",
+          "lat": 53.478641,
+          "lon": -2.239587,
+          "street": "Faulkner Street"
+        },
+        {
+          "id": "node/9516572888",
+          "lat": 53.479968,
+          "lon": -2.24813,
+          "street": "Brazennose Street"
+        },
+        {
+          "id": "node/5816401857",
+          "lat": 53.482407,
+          "lon": -2.248104,
+          "street": "College Land"
+        },
+        {
+          "id": "node/5816401864",
+          "lat": 53.482369,
+          "lon": -2.248302,
+          "street": "Parsonage Gardens"
+        },
+        {
+          "id": "node/14104217143",
+          "lat": 53.480186,
+          "lon": -2.248802,
+          "street": "Spinningfields Square"
+        },
+        {
+          "id": "node/5816400549",
+          "lat": 53.482702,
+          "lon": -2.248048,
+          "street": "North Parade"
+        },
+        {
+          "id": "node/12995152074",
+          "lat": 53.47735,
+          "lon": -2.246462,
+          "street": "Museum Street"
+        },
+        {
+          "id": "node/6343468191",
+          "lat": 53.481506,
+          "lon": -2.249911,
+          "street": "Trinity Square"
+        },
+        {
+          "id": "node/4264831585",
+          "lat": 53.48271,
+          "lon": -2.250719,
+          "street": "Trinity Bridge"
+        },
+        {
+          "id": "node/13669490952",
+          "lat": 53.476267,
+          "lon": -2.237935,
+          "street": "Canal Street"
+        },
+        {
+          "id": "node/14014792301",
+          "lat": 53.476752,
+          "lon": -2.236546,
+          "street": "Sackville Street"
+        },
+        {
+          "id": "node/10593087170",
+          "lat": 53.477696,
+          "lon": -2.235049,
+          "street": "Little David Street"
+        },
+        {
+          "id": "node/5632693819",
+          "lat": 53.486088,
+          "lon": -2.24021,
+          "street": "Federation Street"
+        },
+        {
+          "id": "node/4264832490",
+          "lat": 53.482602,
+          "lon": -2.25135,
+          "street": "Riverside Walk"
         }
       ],
-      "updatedAt": "2026-09-03T17:05:48.875Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:12.330Z"
     },
     "compressed-air": {
       "count": 0,

@@ -1,6 +1,6 @@
 {
   "city": "mexico-city",
-  "generatedAt": "2026-09-03T17:36:24.040Z",
+  "generatedAt": "2026-09-11T10:33:21.734Z",
   "categories": {
     "toilets": {
       "count": 213,
@@ -220,7 +220,13 @@
           "openingHours": "Mo-Su 05:00-18:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:58.681Z"
+      "stats": {
+        "free": 27,
+        "paid": 43,
+        "stepFree": 33,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:33:13.863Z"
     },
     "drinking-water": {
       "count": 40,
@@ -260,9 +266,144 @@
           "name": "Pozo Mirador 2",
           "lat": 19.342378,
           "lon": -99.100498
+        },
+        {
+          "id": "node/7243385272",
+          "lat": 19.431969,
+          "lon": -99.133732,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Plaza de la Constitución"
+        },
+        {
+          "id": "node/4663592889",
+          "lat": 19.429227,
+          "lon": -99.127535,
+          "street": "Calle República de Uruguay"
+        },
+        {
+          "id": "node/4319320487",
+          "lat": 19.435209,
+          "lon": -99.145955,
+          "street": "Avenida Juárez"
+        },
+        {
+          "id": "node/6551477197",
+          "lat": 19.442944,
+          "lon": -99.157077,
+          "street": "Calle Amado Nervo"
+        },
+        {
+          "id": "node/6721943232",
+          "lat": 19.448803,
+          "lon": -99.156922,
+          "street": "Calle Salvador Díaz Mirón"
+        },
+        {
+          "id": "node/6274638781",
+          "lat": 19.402591,
+          "lon": -99.136042,
+          "street": "Calle Aniceto de Zamacois"
+        },
+        {
+          "id": "node/13826128180",
+          "lat": 19.439741,
+          "lon": -99.164674,
+          "fee": "yes",
+          "street": "Calle Manuel María Contreras"
+        },
+        {
+          "id": "node/10276876355",
+          "lat": 19.400879,
+          "lon": -99.148034,
+          "street": "Calle Zempoala"
+        },
+        {
+          "id": "node/3779138304",
+          "lat": 19.400665,
+          "lon": -99.149921,
+          "street": "Calle Monte Albán"
+        },
+        {
+          "id": "node/3779168310",
+          "lat": 19.400056,
+          "lon": -99.154701,
+          "street": "Calle Esperanza"
+        },
+        {
+          "id": "node/4262943386",
+          "lat": 19.379318,
+          "lon": -99.162143,
+          "street": "Calle Matías Romero"
+        },
+        {
+          "id": "node/13908604028",
+          "lat": 19.394625,
+          "lon": -99.084066,
+          "fee": "yes",
+          "street": "Calle 16"
+        },
+        {
+          "id": "node/13909066787",
+          "lat": 19.394198,
+          "lon": -99.084117,
+          "fee": "yes",
+          "street": "Calle 18"
+        },
+        {
+          "id": "node/11921467653",
+          "lat": 19.463719,
+          "lon": -99.074831,
+          "street": "Circuito Interior 2.5 Kilometros"
+        },
+        {
+          "id": "node/12560617263",
+          "lat": 19.414427,
+          "lon": -99.199386,
+          "fee": "no",
+          "street": "Paseo de los Compositores"
+        },
+        {
+          "id": "node/13956256686",
+          "lat": 19.399,
+          "lon": -99.192841,
+          "wheelchair": "limited",
+          "fee": "yes",
+          "street": "Calle Canario"
+        },
+        {
+          "id": "node/4145036785",
+          "lat": 19.356235,
+          "lon": -99.169153,
+          "openingHours": "Mo-Su 06:00-18:00",
+          "street": "Calle Circunvalación"
+        },
+        {
+          "id": "node/1874780978",
+          "lat": 19.341355,
+          "lon": -99.163112,
+          "street": "Callejón Huihuititla"
+        },
+        {
+          "id": "node/11074181606",
+          "lat": 19.527838,
+          "lon": -99.145569,
+          "street": "Calle Germán Valdés"
+        },
+        {
+          "id": "node/5286631834",
+          "lat": 19.347117,
+          "lon": -99.18528,
+          "street": "Calle Chimalistac"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:00.673Z"
+      "stats": {
+        "free": 4,
+        "paid": 5,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:33:16.682Z"
     },
     "playgrounds": {
       "count": 405,
@@ -1498,7 +1639,13 @@
           "lon": -99.113322
         }
       ],
-      "updatedAt": "2026-09-03T17:36:09.795Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:33:17.308Z"
     },
     "post-boxes": {
       "count": 9,
@@ -1568,16 +1715,74 @@
       "count": 39,
       "pois": [
         {
-          "id": "node/10309350037",
-          "lat": 19.455183,
-          "lon": -99.12982,
-          "street": "Calzada de los Misterios"
-        },
-        {
           "id": "node/4540677119",
           "name": "Reciclemos Juntos",
           "lat": 19.444818,
           "lon": -99.159046
+        },
+        {
+          "id": "node/4581842350",
+          "name": "Rennueva",
+          "lat": 19.460995,
+          "lon": -99.150028,
+          "address": "Mimosas 63",
+          "openingHours": "Mo-Fr 10:00-16:00"
+        },
+        {
+          "id": "node/13477915101",
+          "name": "Centro de reciclaje",
+          "lat": 19.37683,
+          "lon": -99.143005,
+          "address": "Calle Centenario 28",
+          "openingHours": "Mo-Fr 09:30-17:30; Sa 09:30-14:15"
+        },
+        {
+          "id": "node/2371135009",
+          "name": "Estación de transferencia GAM",
+          "lat": 19.461673,
+          "lon": -99.057597
+        },
+        {
+          "id": "node/1642185580",
+          "name": "Super Capturador SuperDrecksKescht",
+          "lat": 19.368511,
+          "lon": -99.187046
+        },
+        {
+          "id": "node/9989238329",
+          "name": "Es Fácil Reciclar",
+          "lat": 19.342142,
+          "lon": -99.148529
+        },
+        {
+          "id": "node/10257972521",
+          "name": "El polo norte",
+          "lat": 19.524845,
+          "lon": -99.141987
+        },
+        {
+          "id": "node/3586392989",
+          "name": "Reciclaje",
+          "lat": 19.344875,
+          "lon": -99.181589
+        },
+        {
+          "id": "node/10282736512",
+          "name": "Grupo Sánchez",
+          "lat": 19.532254,
+          "lon": -99.14073
+        },
+        {
+          "id": "node/10257972528",
+          "name": "Magia Blanca",
+          "lat": 19.5349,
+          "lon": -99.142082
+        },
+        {
+          "id": "node/10309350037",
+          "lat": 19.455183,
+          "lon": -99.12982,
+          "street": "Calzada de los Misterios"
         },
         {
           "id": "node/11126650455",
@@ -1590,14 +1795,6 @@
           "lat": 19.419371,
           "lon": -99.159938,
           "street": "Calle Orizaba"
-        },
-        {
-          "id": "node/4581842350",
-          "name": "Rennueva",
-          "lat": 19.460995,
-          "lon": -99.150028,
-          "address": "Mimosas 63",
-          "openingHours": "Mo-Fr 10:00-16:00"
         },
         {
           "id": "node/10542337026",
@@ -1638,14 +1835,6 @@
           "street": "Calle Secretaría del Tabajo"
         },
         {
-          "id": "node/13477915101",
-          "name": "Centro de reciclaje",
-          "lat": 19.37683,
-          "lon": -99.143005,
-          "address": "Calle Centenario 28",
-          "openingHours": "Mo-Fr 09:30-17:30; Sa 09:30-14:15"
-        },
-        {
           "id": "node/11493857794",
           "lat": 19.492838,
           "lon": -99.142751,
@@ -1665,34 +1854,10 @@
           "street": "Avenida Lázaro Cárdenas"
         },
         {
-          "id": "node/2371135009",
-          "name": "Estación de transferencia GAM",
-          "lat": 19.461673,
-          "lon": -99.057597
-        },
-        {
-          "id": "node/1642185580",
-          "name": "Super Capturador SuperDrecksKescht",
-          "lat": 19.368511,
-          "lon": -99.187046
-        },
-        {
           "id": "node/10257972518",
           "lat": 19.522082,
           "lon": -99.142532,
           "street": "Boulevard del Temoluco"
-        },
-        {
-          "id": "node/9989238329",
-          "name": "Es Fácil Reciclar",
-          "lat": 19.342142,
-          "lon": -99.148529
-        },
-        {
-          "id": "node/10257972521",
-          "name": "El polo norte",
-          "lat": 19.524845,
-          "lon": -99.141987
         },
         {
           "id": "node/10257972628",
@@ -1713,31 +1878,19 @@
           "street": "Calle Germán Valdés"
         },
         {
-          "id": "node/3586392989",
-          "name": "Reciclaje",
-          "lat": 19.344875,
-          "lon": -99.181589
-        },
-        {
-          "id": "node/10282736512",
-          "name": "Grupo Sánchez",
-          "lat": 19.532254,
-          "lon": -99.14073
-        },
-        {
-          "id": "node/10257972528",
-          "name": "Magia Blanca",
-          "lat": 19.5349,
-          "lon": -99.142082
-        },
-        {
           "id": "node/3836795343",
           "lat": 19.337374,
           "lon": -99.183701,
           "street": "Avenida Copilco"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:13.077Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:19.267Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2025,7 +2178,13 @@
           "lon": -99.060095
         }
       ],
-      "updatedAt": "2026-09-03T17:36:15.581Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:33:20.383Z"
     },
     "camp-sites": {
       "count": 2,
@@ -2365,9 +2524,105 @@
           "name": "banca mifel",
           "lat": 19.428842,
           "lon": -99.22632
+        },
+        {
+          "id": "node/13854200248",
+          "lat": 19.432038,
+          "lon": -99.134771,
+          "street": "Avenida 16 de Septiembre"
+        },
+        {
+          "id": "node/13086077182",
+          "lat": 19.434365,
+          "lon": -99.131937,
+          "street": "Seminario"
+        },
+        {
+          "id": "node/13148267390",
+          "lat": 19.436373,
+          "lon": -99.140908,
+          "street": "Avenida Hidalgo"
+        },
+        {
+          "id": "node/13143889959",
+          "lat": 19.438,
+          "lon": -99.1405,
+          "street": "Plaza Aquiles Serdán"
+        },
+        {
+          "id": "node/13148267378",
+          "lat": 19.436893,
+          "lon": -99.142772,
+          "street": "1er Callejón de San Juan de Dios"
+        },
+        {
+          "id": "node/13127222169",
+          "lat": 19.441084,
+          "lon": -99.140732,
+          "street": "Calle Riva Palacio"
+        },
+        {
+          "id": "node/13127528834",
+          "lat": 19.440966,
+          "lon": -99.141785,
+          "street": "Calle Galeana"
+        },
+        {
+          "id": "node/13124642822",
+          "lat": 19.443234,
+          "lon": -99.139315,
+          "street": "Lázaro Cárdenas"
+        },
+        {
+          "id": "node/13124642824",
+          "lat": 19.443343,
+          "lon": -99.139294,
+          "street": "Calle Órgano"
+        },
+        {
+          "id": "node/13159026892",
+          "lat": 19.437498,
+          "lon": -99.146028,
+          "street": "Avenida Paseo de la Reforma Norte"
+        },
+        {
+          "id": "node/12968688254",
+          "lat": 19.436173,
+          "lon": -99.149768,
+          "street": "Calle Tomás Alva Edison"
+        },
+        {
+          "id": "node/12968688242",
+          "lat": 19.43582,
+          "lon": -99.149935,
+          "street": "Avenida de la República"
+        },
+        {
+          "id": "node/12968688250",
+          "lat": 19.436001,
+          "lon": -99.149895,
+          "street": "Avenida Rosales"
+        },
+        {
+          "id": "node/5348348082",
+          "lat": 19.4209,
+          "lon": -99.1199,
+          "street": "Lorenzo Boturini"
+        },
+        {
+          "id": "node/12979176564",
+          "lat": 19.434843,
+          "lon": -99.151556,
+          "street": "Avenida Paseo de la Reforma"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:23.939Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:21.633Z"
     },
     "compressed-air": {
       "count": 0,

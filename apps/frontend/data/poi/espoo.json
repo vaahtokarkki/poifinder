@@ -1,6 +1,6 @@
 {
   "city": "espoo",
-  "generatedAt": "2026-09-03T16:37:08.168Z",
+  "generatedAt": "2026-09-11T10:26:04.546Z",
   "categories": {
     "toilets": {
       "count": 65,
@@ -132,7 +132,13 @@
           "context": "Urheilupuiston metroasema"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:46.328Z"
+      "stats": {
+        "free": 32,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:25:55.919Z"
     },
     "drinking-water": {
       "count": 22,
@@ -287,9 +293,21 @@
           "lon": 24.741968,
           "address": "Nuottaniementie 15",
           "fee": "no"
+        },
+        {
+          "id": "node/13664100691",
+          "lat": 60.19021,
+          "lon": 24.769949,
+          "street": "Seilikaari"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:47.668Z"
+      "stats": {
+        "free": 19,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:25:58.513Z"
     },
     "playgrounds": {
       "count": 422,
@@ -1538,7 +1556,13 @@
           "address": "Mankkaantie"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:55.008Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:25:58.987Z"
     },
     "post-boxes": {
       "count": 65,
@@ -1727,19 +1751,48 @@
       "updatedAt": "2026-09-03T16:36:56.777Z"
     },
     "recycling": {
-      "count": 231,
+      "count": 235,
       "pois": [
-        {
-          "id": "node/458374103",
-          "lat": 60.204858,
-          "lon": 24.657108,
-          "street": "Espoon asematori"
-        },
         {
           "id": "node/13077679502",
           "lat": 60.206927,
           "lon": 24.656004,
           "context": "Valtuustotalo"
+        },
+        {
+          "id": "node/9922132606",
+          "name": "Gigantti Lommila SER-kierrätyspiste",
+          "lat": 60.219491,
+          "lon": 24.665433
+        },
+        {
+          "id": "node/12782409247",
+          "name": "Aluekeräyspiste",
+          "lat": 60.212013,
+          "lon": 24.779671,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/10769309587",
+          "name": "Rudus Oy Kierrätys betoni- ja tiilijäte Ämmässuo, Espoo",
+          "lat": 60.243949,
+          "lon": 24.546428,
+          "address": "Ämmässuonkuja 3",
+          "openingHours": "Mo-Fr 07:00-15:00"
+        },
+        {
+          "id": "way/1252327541",
+          "name": "HSY Ämmässuon Sortti-asema",
+          "lat": 60.240747,
+          "lon": 24.540541,
+          "address": "Ämmässuontie 8",
+          "openingHours": "Mo-Fr 07:00-21:00"
+        },
+        {
+          "id": "node/458374103",
+          "lat": 60.204858,
+          "lon": 24.657108,
+          "street": "Espoon asematori"
         },
         {
           "id": "node/13629606449",
@@ -1849,12 +1902,6 @@
           "street": "Kulovalkeantie"
         },
         {
-          "id": "node/9922132606",
-          "name": "Gigantti Lommila SER-kierrätyspiste",
-          "lat": 60.219491,
-          "lon": 24.665433
-        },
-        {
           "id": "node/13467340081",
           "lat": 60.190565,
           "lon": 24.657808,
@@ -1897,27 +1944,15 @@
           "lat": 60.181312,
           "lon": 24.669059,
           "street": "Lehtikaskenkuja"
-        },
-        {
-          "id": "node/415416227",
-          "lat": 60.19958,
-          "lon": 24.705071,
-          "street": "Kuurinmäentie"
-        },
-        {
-          "id": "node/13315845823",
-          "lat": 60.214063,
-          "lon": 24.704258,
-          "street": "Urheilutie"
-        },
-        {
-          "id": "node/14112837908",
-          "lat": 60.179956,
-          "lon": 24.665802,
-          "street": "Lehtikaskentie"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:58.973Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:01.162Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2117,7 +2152,13 @@
           "lon": 24.742058
         }
       ],
-      "updatedAt": "2026-09-03T16:37:01.131Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:02.555Z"
     },
     "camp-sites": {
       "count": 2,
@@ -2261,9 +2302,136 @@
       "updatedAt": "2026-08-17T04:02:24.050Z"
     },
     "benches": {
-      "count": 936,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:37:08.067Z"
+      "count": 940,
+      "pois": [
+        {
+          "id": "node/12655735261",
+          "lat": 60.205453,
+          "lon": 24.656671,
+          "street": "Kirkkojärventie"
+        },
+        {
+          "id": "node/13747573170",
+          "lat": 60.205927,
+          "lon": 24.656781,
+          "street": "Espoonkatu"
+        },
+        {
+          "id": "node/13747573171",
+          "lat": 60.206064,
+          "lon": 24.656985,
+          "street": "Vaakunatori"
+        },
+        {
+          "id": "node/12617680968",
+          "lat": 60.205566,
+          "lon": 24.654279,
+          "street": "Kannusillankatu"
+        },
+        {
+          "id": "node/13519107543",
+          "lat": 60.204832,
+          "lon": 24.657424,
+          "street": "Espoon asematori"
+        },
+        {
+          "id": "node/13748219447",
+          "lat": 60.206108,
+          "lon": 24.654264,
+          "street": "Lehteri"
+        },
+        {
+          "id": "node/13748219448",
+          "lat": 60.206149,
+          "lon": 24.654311,
+          "street": "Virastopiha"
+        },
+        {
+          "id": "node/12655498117",
+          "lat": 60.2063,
+          "lon": 24.657843,
+          "street": "Lagstadinpolku"
+        },
+        {
+          "id": "node/12564718511",
+          "lat": 60.206885,
+          "lon": 24.655466,
+          "street": "Valtuustoaukio"
+        },
+        {
+          "id": "node/12722140791",
+          "lat": 60.206931,
+          "lon": 24.656974,
+          "street": "Vaakunapolku"
+        },
+        {
+          "id": "node/12722140797",
+          "lat": 60.206829,
+          "lon": 24.657631,
+          "street": "Kylänraitti"
+        },
+        {
+          "id": "node/10093509064",
+          "lat": 60.204195,
+          "lon": 24.653296,
+          "street": "Kamreerintie"
+        },
+        {
+          "id": "node/10723142519",
+          "lat": 60.203644,
+          "lon": 24.656402,
+          "street": "Siltatori"
+        },
+        {
+          "id": "node/12676253821",
+          "lat": 60.203557,
+          "lon": 24.655918,
+          "street": "Siltakatu"
+        },
+        {
+          "id": "node/14143891453",
+          "lat": 60.207008,
+          "lon": 24.653272,
+          "street": "Keskilaiva"
+        },
+        {
+          "id": "node/12722140740",
+          "lat": 60.207124,
+          "lon": 24.65839,
+          "street": "Kristianstadinaukio"
+        },
+        {
+          "id": "node/13335579553",
+          "lat": 60.203144,
+          "lon": 24.657644,
+          "street": "Kiltaraitti"
+        },
+        {
+          "id": "node/9838568040",
+          "lat": 60.20342,
+          "lon": 24.65913,
+          "street": "Valatori"
+        },
+        {
+          "id": "node/11811116147",
+          "lat": 60.207322,
+          "lon": 24.659794,
+          "street": "Pikkuportti"
+        },
+        {
+          "id": "node/13629732139",
+          "lat": 60.202998,
+          "lon": 24.65916,
+          "street": "Valatorinpolku"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:04.445Z"
     },
     "compressed-air": {
       "count": 4,

@@ -1,6 +1,6 @@
 {
   "city": "oulu",
-  "generatedAt": "2026-09-03T16:38:41.048Z",
+  "generatedAt": "2026-09-11T10:26:34.653Z",
   "categories": {
     "toilets": {
       "count": 37,
@@ -77,7 +77,13 @@
           "context": "Tiedepuutarha"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:21.042Z"
+      "stats": {
+        "free": 15,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-11T10:26:29.649Z"
     },
     "drinking-water": {
       "count": 7,
@@ -114,9 +120,29 @@
           "name": "Pohjavesiposti 1",
           "lat": 64.97598,
           "lon": 25.601538
+        },
+        {
+          "id": "node/1736345503",
+          "lat": 65.017434,
+          "lon": 25.42936,
+          "fee": "yes",
+          "street": "Hietasaarentie"
+        },
+        {
+          "id": "node/1736345506",
+          "lat": 65.026158,
+          "lon": 25.430471,
+          "fee": "yes",
+          "street": "Holstinsalmentie"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:22.332Z"
+      "stats": {
+        "free": 2,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:31.025Z"
     },
     "playgrounds": {
       "count": 229,
@@ -1153,7 +1179,13 @@
           "lon": 25.58628
         }
       ],
-      "updatedAt": "2026-09-03T16:38:29.441Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:31.507Z"
     },
     "post-boxes": {
       "count": 38,
@@ -1333,6 +1365,62 @@
           "lon": 25.465613
         },
         {
+          "id": "node/8422607029",
+          "lat": 64.994924,
+          "lon": 25.462961,
+          "context": "Prisma"
+        },
+        {
+          "id": "node/12854852954",
+          "lat": 65.030427,
+          "lon": 25.469615,
+          "context": "K-Supermarket"
+        },
+        {
+          "id": "node/11073094661",
+          "name": "UFF-vaatekeräys",
+          "lat": 64.969262,
+          "lon": 25.497272,
+          "address": "Jukolankuja 3"
+        },
+        {
+          "id": "node/5705001238",
+          "name": "Vaatteiden lahjoitus",
+          "lat": 65.040076,
+          "lon": 25.554475
+        },
+        {
+          "id": "node/5705001237",
+          "name": "Ekopiste",
+          "lat": 65.040033,
+          "lon": 25.554762
+        },
+        {
+          "id": "way/122113906",
+          "name": "Oivapiste",
+          "lat": 65.056898,
+          "lon": 25.538832
+        },
+        {
+          "id": "way/616185691",
+          "name": "Lajitteluareena Lare",
+          "lat": 65.056558,
+          "lon": 25.540935
+        },
+        {
+          "id": "way/895886713",
+          "name": "Syklo, Ruskon jätteiden lajittelulaitos",
+          "lat": 65.056443,
+          "lon": 25.54234,
+          "address": "Ruskonseläntie 21"
+        },
+        {
+          "id": "node/10958508071",
+          "name": "Painekyllästetty ja käsitelty puu",
+          "lat": 65.05785,
+          "lon": 25.541687
+        },
+        {
           "id": "node/1024716926",
           "lat": 65.008654,
           "lon": 25.461825,
@@ -1381,22 +1469,10 @@
           "street": "Joutsentie"
         },
         {
-          "id": "node/8422607029",
-          "lat": 64.994924,
-          "lon": 25.462961,
-          "context": "Prisma"
-        },
-        {
           "id": "node/317610148",
           "lat": 65.029886,
           "lon": 25.471106,
           "street": "Revonkuja"
-        },
-        {
-          "id": "node/12854852954",
-          "lat": 65.030427,
-          "lon": 25.469615,
-          "context": "K-Supermarket"
         },
         {
           "id": "node/5654557165",
@@ -1441,29 +1517,10 @@
           "street": "Kenttäpostinkuja"
         },
         {
-          "id": "node/11073094661",
-          "name": "UFF-vaatekeräys",
-          "lat": 64.969262,
-          "lon": 25.497272,
-          "address": "Jukolankuja 3"
-        },
-        {
           "id": "node/2419518504",
           "lat": 65.058328,
           "lon": 25.465632,
           "street": "Geokatu"
-        },
-        {
-          "id": "node/5705001238",
-          "name": "Vaatteiden lahjoitus",
-          "lat": 65.040076,
-          "lon": 25.554475
-        },
-        {
-          "id": "node/5705001237",
-          "name": "Ekopiste",
-          "lat": 65.040033,
-          "lon": 25.554762
         },
         {
           "id": "node/434773533",
@@ -1482,34 +1539,15 @@
           "lat": 65.061225,
           "lon": 25.477113,
           "street": "Tapiontie"
-        },
-        {
-          "id": "way/122113906",
-          "name": "Oivapiste",
-          "lat": 65.056898,
-          "lon": 25.538832
-        },
-        {
-          "id": "way/616185691",
-          "name": "Lajitteluareena Lare",
-          "lat": 65.056558,
-          "lon": 25.540935
-        },
-        {
-          "id": "way/895886713",
-          "name": "Syklo, Ruskon jätteiden lajittelulaitos",
-          "lat": 65.056443,
-          "lon": 25.54234,
-          "address": "Ruskonseläntie 21"
-        },
-        {
-          "id": "node/10958508071",
-          "name": "Painekyllästetty ja käsitelty puu",
-          "lat": 65.05785,
-          "lon": 25.541687
         }
       ],
-      "updatedAt": "2026-09-03T16:38:33.019Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:32.915Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1715,7 +1753,13 @@
           "lon": 25.418089
         }
       ],
-      "updatedAt": "2026-09-03T16:38:35.047Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:33.629Z"
     },
     "camp-sites": {
       "count": 2,
@@ -1907,8 +1951,81 @@
     },
     "benches": {
       "count": 377,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:38:40.947Z"
+      "pois": [
+        {
+          "id": "node/11029993401",
+          "lat": 65.013324,
+          "lon": 25.465013,
+          "street": "Kauppurienkatu"
+        },
+        {
+          "id": "node/11029993402",
+          "lat": 65.013348,
+          "lon": 25.465045,
+          "street": "Rantakatu"
+        },
+        {
+          "id": "node/8878256624",
+          "lat": 65.011285,
+          "lon": 25.469394,
+          "street": "Kirkkokatu"
+        },
+        {
+          "id": "node/12139592112",
+          "lat": 65.014242,
+          "lon": 25.465582,
+          "street": "Kaarlenväylä"
+        },
+        {
+          "id": "node/11150553851",
+          "lat": 65.013304,
+          "lon": 25.459925,
+          "street": "Kiikelinranta"
+        },
+        {
+          "id": "node/10963625576",
+          "lat": 65.014693,
+          "lon": 25.465058,
+          "street": "Hallituskatu"
+        },
+        {
+          "id": "node/8121846473",
+          "lat": 65.009786,
+          "lon": 25.468588,
+          "street": "Albertinkatu"
+        },
+        {
+          "id": "node/8204417405",
+          "lat": 65.010024,
+          "lon": 25.459688,
+          "street": "Nummikatu"
+        },
+        {
+          "id": "node/12802095309",
+          "lat": 65.014032,
+          "lon": 25.471202,
+          "street": "Torikatu"
+        },
+        {
+          "id": "node/8204417404",
+          "lat": 65.009947,
+          "lon": 25.459395,
+          "street": "Maunonkatu"
+        },
+        {
+          "id": "node/6688518586",
+          "lat": 65.015643,
+          "lon": 25.468478,
+          "street": "Onkipojanpolku"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:34.552Z"
     }
   }
 }

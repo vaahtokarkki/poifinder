@@ -1,6 +1,6 @@
 {
   "city": "barcelona",
-  "generatedAt": "2026-09-03T17:17:21.395Z",
+  "generatedAt": "2026-09-11T10:31:32.397Z",
   "categories": {
     "toilets": {
       "count": 344,
@@ -206,7 +206,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:50.450Z"
+      "stats": {
+        "free": 94,
+        "paid": 23,
+        "stepFree": 62,
+        "partlyStepFree": 7
+      },
+      "updatedAt": "2026-09-11T10:31:23.599Z"
     },
     "drinking-water": {
       "count": 2126,
@@ -372,9 +378,56 @@
           "name": "la font del ciclista",
           "lat": 41.378554,
           "lon": 2.076431
+        },
+        {
+          "id": "node/5404661529",
+          "lat": 41.387004,
+          "lon": 2.169544,
+          "fee": "no",
+          "street": "Plaça de Catalunya"
+        },
+        {
+          "id": "node/673078118",
+          "lat": 41.388812,
+          "lon": 2.167459,
+          "fee": "no",
+          "street": "Gran Via de les Corts Catalanes"
+        },
+        {
+          "id": "node/3529190631",
+          "lat": 41.386063,
+          "lon": 2.165246,
+          "fee": "no",
+          "street": "Ronda de la Universitat"
+        },
+        {
+          "id": "node/4784228952",
+          "lat": 41.386108,
+          "lon": 2.172261,
+          "fee": "no",
+          "street": "Avinguda del Portal de l'Àngel"
+        },
+        {
+          "id": "node/12812309043",
+          "lat": 41.389311,
+          "lon": 2.165453,
+          "fee": "no",
+          "street": "Carrer de la Diputació"
+        },
+        {
+          "id": "node/4790482084",
+          "lat": 41.389382,
+          "lon": 2.165515,
+          "street": "Rambla de Catalunya"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:53.261Z"
+      "stats": {
+        "free": 1517,
+        "paid": 0,
+        "stepFree": 103,
+        "partlyStepFree": 20
+      },
+      "updatedAt": "2026-09-11T10:31:26.692Z"
     },
     "playgrounds": {
       "count": 1192,
@@ -1953,7 +2006,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:02.797Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 49,
+        "partlyStepFree": 12
+      },
+      "updatedAt": "2026-09-11T10:31:27.435Z"
     },
     "post-boxes": {
       "count": 386,
@@ -2145,90 +2204,6 @@
       "count": 4572,
       "pois": [
         {
-          "id": "node/7041631196",
-          "lat": 41.38731,
-          "lon": 2.168549,
-          "street": "Plaça de Catalunya"
-        },
-        {
-          "id": "node/7041600873",
-          "lat": 41.387329,
-          "lon": 2.168165,
-          "street": "Ronda de la Universitat"
-        },
-        {
-          "id": "node/12365163587",
-          "lat": 41.387929,
-          "lon": 2.167899,
-          "street": "Rambla de Catalunya"
-        },
-        {
-          "id": "node/7041631202",
-          "lat": 41.386381,
-          "lon": 2.168833,
-          "street": "Carrer de Bergara"
-        },
-        {
-          "id": "node/7041600878",
-          "lat": 41.388136,
-          "lon": 2.170233,
-          "street": "Passeig de Gràcia (lateral Besòs)"
-        },
-        {
-          "id": "node/7041600883",
-          "lat": 41.388135,
-          "lon": 2.170263,
-          "street": "Passeig de Gràcia"
-        },
-        {
-          "id": "node/7041600882",
-          "lat": 41.388136,
-          "lon": 2.17029,
-          "street": "Ronda de Sant Pere"
-        },
-        {
-          "id": "node/7041631225",
-          "lat": 41.385574,
-          "lon": 2.168236,
-          "street": "Carrer de Pelai"
-        },
-        {
-          "id": "node/7041674286",
-          "lat": 41.387761,
-          "lon": 2.172102,
-          "street": "Carrer de Fontanella"
-        },
-        {
-          "id": "node/7041600818",
-          "lat": 41.384854,
-          "lon": 2.166496,
-          "street": "Carrer de Valldonzella"
-        },
-        {
-          "id": "node/7041674328",
-          "lat": 41.384266,
-          "lon": 2.168824,
-          "street": "Carrer de les Ramelleres"
-        },
-        {
-          "id": "node/7041600830",
-          "lat": 41.385109,
-          "lon": 2.165482,
-          "street": "Carrer dels Tallers"
-        },
-        {
-          "id": "node/7041600834",
-          "lat": 41.38446,
-          "lon": 2.166396,
-          "street": "Carrer de Montalegre"
-        },
-        {
-          "id": "node/7021773035",
-          "lat": 41.385721,
-          "lon": 2.172766,
-          "street": "Avinguda del Portal de l'Àngel"
-        },
-        {
           "id": "node/6742628757",
           "name": "Punt Verd Mòbil *Plaça dels Àngels-Montalegre",
           "lat": 41.38291,
@@ -2327,9 +2302,103 @@
           "name": "Compostador comunitari",
           "lat": 41.376645,
           "lon": 2.167273
+        },
+        {
+          "id": "node/6742628749",
+          "name": "Punt Verd Mòbil *Passeig del Born- Rec",
+          "lat": 41.384315,
+          "lon": 2.182534
+        },
+        {
+          "id": "node/6742628755",
+          "name": "Punt Verd de Barri - Mercat del Ninot",
+          "lat": 41.388201,
+          "lon": 2.153973
+        },
+        {
+          "id": "node/6742627453",
+          "name": "Punt Verd Mòbil *Drassanes-Portal Santa Madrona",
+          "lat": 41.37656,
+          "lon": 2.175333
+        },
+        {
+          "id": "node/6742628700",
+          "name": "Punt Verd Mòbil *Plaça Duc Medinaceli - Passeig Colom",
+          "lat": 41.378185,
+          "lon": 2.179378
+        },
+        {
+          "id": "node/8636244671",
+          "name": "Chatarrero",
+          "lat": 41.375287,
+          "lon": 2.172587
+        },
+        {
+          "id": "node/668475660",
+          "name": "Punt Verd de Barri - Fort Pienc",
+          "lat": 41.394783,
+          "lon": 2.1823,
+          "openingHours": "Mo-Sa 08:30-14:00,16:00-19:30"
+        },
+        {
+          "id": "node/6742627474",
+          "name": "Punt Verd de Barri - Poble-sec",
+          "lat": 41.374294,
+          "lon": 2.17284
+        },
+        {
+          "id": "node/6742627484",
+          "name": "Punt Verd Mòbil - Passeig Sant Joan-Rosselló",
+          "lat": 41.401122,
+          "lon": 2.167143,
+          "openingHours": "Mo 16:30-19:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/191947880",
+          "name": "Punt verd de Poble Sec",
+          "lat": 41.3739,
+          "lon": 2.172555
+        },
+        {
+          "id": "node/6742627444",
+          "name": "Punt Verd Mòbil *Avinguda Paral·lel-Jaume Fabra",
+          "lat": 41.374714,
+          "lon": 2.160358
+        },
+        {
+          "id": "way/1066245119",
+          "name": "Punt Verd",
+          "lat": 41.386242,
+          "lon": 2.187474
+        },
+        {
+          "id": "node/6742628710",
+          "name": "Punt Verd Mòbil *Consell de Cent-Rocafort",
+          "lat": 41.38049,
+          "lon": 2.151855
+        },
+        {
+          "id": "node/6742628689",
+          "name": "Punt Verd Mòbil *Marina - Almogàvers",
+          "lat": 41.394238,
+          "lon": 2.186553
+        },
+        {
+          "id": "node/6742627441",
+          "name": "Punt Verd Mòbil *Passeig Sant Joan-Indústria",
+          "lat": 41.40277,
+          "lon": 2.164669,
+          "openingHours": "Th 08:30-14:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:08.541Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:31:29.315Z"
     },
     "luggage-storage": {
       "count": 19,
@@ -2617,7 +2686,13 @@
           "lon": 2.110088
         }
       ],
-      "updatedAt": "2026-09-03T17:17:11.730Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:31:30.605Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2806,9 +2881,111 @@
           "name": "Banc del Park Güell",
           "lat": 41.413953,
           "lon": 2.152531
+        },
+        {
+          "id": "node/6970910586",
+          "lat": 41.387059,
+          "lon": 2.168718,
+          "street": "Plaça de Catalunya"
+        },
+        {
+          "id": "node/9775784257",
+          "lat": 41.389367,
+          "lon": 2.165863,
+          "street": "Rambla de Catalunya"
+        },
+        {
+          "id": "node/9770261517",
+          "lat": 41.384126,
+          "lon": 2.168917,
+          "street": "Carrer de les Ramelleres"
+        },
+        {
+          "id": "node/3749417402",
+          "lat": 41.388802,
+          "lon": 2.172928,
+          "street": "Plaça d'Urquinaona"
+        },
+        {
+          "id": "node/8563357141",
+          "lat": 41.38581,
+          "lon": 2.16427,
+          "street": "Plaça de la Universitat"
+        },
+        {
+          "id": "node/12475331291",
+          "lat": 41.388126,
+          "lon": 2.16386,
+          "street": "Carrer de la Diputació"
+        },
+        {
+          "id": "node/9770276317",
+          "lat": 41.385042,
+          "lon": 2.164856,
+          "street": "Carrer dels Tallers"
+        },
+        {
+          "id": "node/13368105581",
+          "lat": 41.388121,
+          "lon": 2.163549,
+          "street": "Jardins del Seminari"
+        },
+        {
+          "id": "node/13624775318",
+          "lat": 41.383432,
+          "lon": 2.168576,
+          "street": "Passatge de la Casa de Misericòrdia de Barcelona"
+        },
+        {
+          "id": "node/12618010238",
+          "lat": 41.39055,
+          "lon": 2.172052,
+          "street": "Carrer de Roger de Llúria"
+        },
+        {
+          "id": "node/12400299468",
+          "lat": 41.390331,
+          "lon": 2.164758,
+          "street": "Carrer del Consell de Cent"
+        },
+        {
+          "id": "node/13826008523",
+          "lat": 41.385996,
+          "lon": 2.163441,
+          "street": "Gran Via de les Corts Catalanes (lateral muntanya)"
+        },
+        {
+          "id": "node/12419933179",
+          "lat": 41.387462,
+          "lon": 2.162921,
+          "street": "Carrer d'Enric Granados"
+        },
+        {
+          "id": "node/9719853317",
+          "lat": 41.386247,
+          "lon": 2.163115,
+          "street": "Pati Montserrat Roig"
+        },
+        {
+          "id": "node/11053239316",
+          "lat": 41.389081,
+          "lon": 2.16309,
+          "street": "Carrer de Balmes"
+        },
+        {
+          "id": "node/13826008524",
+          "lat": 41.385523,
+          "lon": 2.162833,
+          "street": "Gran Via de les Corts Catalanes"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:21.289Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:32.296Z"
     },
     "compressed-air": {
       "count": 0,

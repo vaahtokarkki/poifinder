@@ -1,6 +1,6 @@
 {
   "city": "chicago",
-  "generatedAt": "2026-09-03T17:24:32.386Z",
+  "generatedAt": "2026-09-11T10:32:06.001Z",
   "categories": {
     "toilets": {
       "count": 117,
@@ -208,7 +208,13 @@
           "address": "West Cermak Road 2008"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:08.272Z"
+      "stats": {
+        "free": 13,
+        "paid": 0,
+        "stepFree": 23,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:59.353Z"
     },
     "drinking-water": {
       "count": 179,
@@ -250,9 +256,174 @@
           "name": "WWII Memorial Fountain",
           "lat": 41.775033,
           "lon": -87.655831
+        },
+        {
+          "id": "node/13570855864",
+          "lat": 41.877104,
+          "lon": -87.628148,
+          "street": "West Van Buren Street"
+        },
+        {
+          "id": "node/12099632711",
+          "lat": 41.88277,
+          "lon": -87.623427,
+          "street": "Chase Promenade Central"
+        },
+        {
+          "id": "node/1406199662",
+          "lat": 41.882393,
+          "lon": -87.62247,
+          "street": "Extrusion Plaza"
+        },
+        {
+          "id": "node/1974692910",
+          "lat": 41.870666,
+          "lon": -87.628719,
+          "street": "South Plymouth Court"
+        },
+        {
+          "id": "node/5417378587",
+          "lat": 41.872004,
+          "lon": -87.623925,
+          "street": "South Michigan Avenue"
+        },
+        {
+          "id": "node/2304319295",
+          "lat": 41.878805,
+          "lon": -87.616748,
+          "street": "Lakefront Trail"
+        },
+        {
+          "id": "node/13973336380",
+          "lat": 41.870188,
+          "lon": -87.620813,
+          "street": "South Columbus Drive"
+        },
+        {
+          "id": "node/11940625413",
+          "lat": 41.873351,
+          "lon": -87.64682,
+          "fee": "no",
+          "street": "Halsted Street Bikeway"
+        },
+        {
+          "id": "node/13938614975",
+          "lat": 41.88889,
+          "lon": -87.643189,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Kinzie Street Bikeway"
+        },
+        {
+          "id": "node/11099420770",
+          "lat": 41.880183,
+          "lon": -87.649843,
+          "wheelchair": "yes",
+          "street": "South Peoria Street"
+        },
+        {
+          "id": "node/12136095695",
+          "lat": 41.862635,
+          "lon": -87.629161,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "West 14th Place"
+        },
+        {
+          "id": "node/2295332891",
+          "lat": 41.892989,
+          "lon": -87.613458,
+          "wheelchair": "yes",
+          "street": "Lakefront Trail Connector"
+        },
+        {
+          "id": "node/12818342558",
+          "lat": 41.891519,
+          "lon": -87.610906,
+          "street": "North Streeter Drive"
+        },
+        {
+          "id": "node/7158899154",
+          "lat": 41.866702,
+          "lon": -87.608369,
+          "street": "East Solidarity Drive"
+        },
+        {
+          "id": "node/13828121959",
+          "lat": 41.857905,
+          "lon": -87.632044,
+          "street": "Wentworth Avenue Bikeway"
+        },
+        {
+          "id": "node/11218480471",
+          "lat": 41.860172,
+          "lon": -87.614766,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "18th Street Access Path"
+        },
+        {
+          "id": "node/2019419833",
+          "lat": 41.871521,
+          "lon": -87.658501,
+          "street": "West Cabrini Street"
+        },
+        {
+          "id": "node/2295332901",
+          "lat": 41.902039,
+          "lon": -87.622703,
+          "street": "Oak Street Access Path"
+        },
+        {
+          "id": "node/12010351937",
+          "lat": 41.879127,
+          "lon": -87.663362,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "West Adams Street"
+        },
+        {
+          "id": "node/13610189674",
+          "lat": 41.883489,
+          "lon": -87.666197,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "West Washington Boulevard"
+        },
+        {
+          "id": "node/12877521361",
+          "lat": 41.897847,
+          "lon": -87.662232,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "West Chestnut Street"
+        },
+        {
+          "id": "node/12688823781",
+          "lat": 41.88398,
+          "lon": -87.674626,
+          "street": "West Maypole Avenue"
+        },
+        {
+          "id": "node/13979191863",
+          "lat": 41.844292,
+          "lon": -87.646664,
+          "street": "South Halsted Street"
+        },
+        {
+          "id": "node/13037381878",
+          "lat": 41.894028,
+          "lon": -87.674328,
+          "street": "West Huron Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:10.323Z"
+      "stats": {
+        "free": 29,
+        "paid": 1,
+        "stepFree": 19,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:01.795Z"
     },
     "playgrounds": {
       "count": 651,
@@ -1902,7 +2073,13 @@
           "address": "West Grand Avenue 1959"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:19.231Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 19,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:02.578Z"
     },
     "post-boxes": {
       "count": 1108,
@@ -2094,6 +2271,88 @@
       "count": 46,
       "pois": [
         {
+          "id": "node/12828774728",
+          "lat": 41.876035,
+          "lon": -87.631835,
+          "context": "425 South Financial Place"
+        },
+        {
+          "id": "node/13138417385",
+          "name": "Near South Residential Recycling Drop Off Center",
+          "lat": 41.859417,
+          "lon": -87.630681,
+          "address": "South Clark Street 1758",
+          "fee": "no"
+        },
+        {
+          "id": "node/3992997270",
+          "name": "Recycling Drop-Off Center",
+          "lat": 41.90241,
+          "lon": -87.655286
+        },
+        {
+          "id": "way/47093790",
+          "name": "Household Chemicals & Computer Recycling Facility",
+          "lat": 41.902444,
+          "lon": -87.655515,
+          "address": "North North Branch Street 1140",
+          "openingHours": "Tu 07:00-12:00; Th 14:00-19:00; Sa[1] 08:00-15:00"
+        },
+        {
+          "id": "way/209786453",
+          "name": "Republic Recyling Loop Center",
+          "lat": 41.849375,
+          "lon": -87.662957,
+          "address": "South Laflin Street 2325"
+        },
+        {
+          "id": "way/209786543",
+          "name": "Republic Loop Paper Recyling",
+          "lat": 41.848162,
+          "lon": -87.663044,
+          "address": "South Laflin Street 2411-2427"
+        },
+        {
+          "id": "way/209786235",
+          "name": "SIMS Metal Management",
+          "lat": 41.850172,
+          "lon": -87.668019,
+          "address": "South Paulina Street 2301"
+        },
+        {
+          "id": "way/209786622",
+          "name": "SIMS",
+          "lat": 41.845543,
+          "lon": -87.66869,
+          "address": "South Paulina Street 2542"
+        },
+        {
+          "id": "node/12212653147",
+          "name": "The Salvation Army",
+          "lat": 41.92311,
+          "lon": -87.667917
+        },
+        {
+          "id": "way/1319731476",
+          "name": "Materials Recycling and Recovery Facility - Medill",
+          "lat": 41.923334,
+          "lon": -87.669806,
+          "address": "West Medill Avenue 1633"
+        },
+        {
+          "id": "way/411801291",
+          "name": "Bridgeport Metals",
+          "lat": 41.824582,
+          "lon": -87.656574,
+          "address": "South Racine Avenue 3802"
+        },
+        {
+          "id": "node/12837266914",
+          "lat": 41.886965,
+          "lon": -87.717776,
+          "context": "Garfield Park Conservatory"
+        },
+        {
           "id": "node/13570803364",
           "lat": 41.878031,
           "lon": -87.629203,
@@ -2110,12 +2369,6 @@
           "lat": 41.8806,
           "lon": -87.629481,
           "street": "Dearborn Street Bikeway"
-        },
-        {
-          "id": "node/12828774728",
-          "lat": 41.876035,
-          "lon": -87.631835,
-          "context": "425 South Financial Place"
         },
         {
           "id": "node/6551670045",
@@ -2166,60 +2419,10 @@
           "street": "North Clark Street"
         },
         {
-          "id": "node/13138417385",
-          "name": "Near South Residential Recycling Drop Off Center",
-          "lat": 41.859417,
-          "lon": -87.630681,
-          "address": "South Clark Street 1758",
-          "fee": "no"
-        },
-        {
-          "id": "node/3992997270",
-          "name": "Recycling Drop-Off Center",
-          "lat": 41.90241,
-          "lon": -87.655286
-        },
-        {
-          "id": "way/47093790",
-          "name": "Household Chemicals & Computer Recycling Facility",
-          "lat": 41.902444,
-          "lon": -87.655515,
-          "address": "North North Branch Street 1140",
-          "openingHours": "Tu 07:00-12:00; Th 14:00-19:00; Sa[1] 08:00-15:00"
-        },
-        {
-          "id": "way/209786453",
-          "name": "Republic Recyling Loop Center",
-          "lat": 41.849375,
-          "lon": -87.662957,
-          "address": "South Laflin Street 2325"
-        },
-        {
-          "id": "way/209786543",
-          "name": "Republic Loop Paper Recyling",
-          "lat": 41.848162,
-          "lon": -87.663044,
-          "address": "South Laflin Street 2411-2427"
-        },
-        {
-          "id": "way/209786235",
-          "name": "SIMS Metal Management",
-          "lat": 41.850172,
-          "lon": -87.668019,
-          "address": "South Paulina Street 2301"
-        },
-        {
           "id": "node/6545964778",
           "lat": 41.920418,
           "lon": -87.635542,
           "street": "North Stockton Drive"
-        },
-        {
-          "id": "way/209786622",
-          "name": "SIMS",
-          "lat": 41.845543,
-          "lon": -87.66869,
-          "address": "South Paulina Street 2542"
         },
         {
           "id": "node/13189469451",
@@ -2227,32 +2430,6 @@
           "lon": -87.689455,
           "openingHours": "Mo-Su 00:00-24:00",
           "street": "North Campbell Avenue"
-        },
-        {
-          "id": "node/12212653147",
-          "name": "The Salvation Army",
-          "lat": 41.92311,
-          "lon": -87.667917
-        },
-        {
-          "id": "way/1319731476",
-          "name": "Materials Recycling and Recovery Facility - Medill",
-          "lat": 41.923334,
-          "lon": -87.669806,
-          "address": "West Medill Avenue 1633"
-        },
-        {
-          "id": "way/411801291",
-          "name": "Bridgeport Metals",
-          "lat": 41.824582,
-          "lon": -87.656574,
-          "address": "South Racine Avenue 3802"
-        },
-        {
-          "id": "node/12837266914",
-          "lat": 41.886965,
-          "lon": -87.717776,
-          "context": "Garfield Park Conservatory"
         },
         {
           "id": "node/12250753095",
@@ -2273,7 +2450,13 @@
           "street": "East 57th Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:23.223Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:04.190Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2539,7 +2722,13 @@
           "lon": -87.64906
         }
       ],
-      "updatedAt": "2026-09-03T17:24:25.047Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:04.666Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2854,9 +3043,81 @@
           "name": "Cheney-Goode Memorial",
           "lat": 41.787079,
           "lon": -87.588273
+        },
+        {
+          "id": "node/11776503240",
+          "lat": 41.877128,
+          "lon": -87.630576,
+          "street": "South Clark Street"
+        },
+        {
+          "id": "node/12731294294",
+          "lat": 41.876729,
+          "lon": -87.629966,
+          "street": "West Van Buren Street"
+        },
+        {
+          "id": "node/12731305046",
+          "lat": 41.876666,
+          "lon": -87.630037,
+          "street": "South Federal Street"
+        },
+        {
+          "id": "node/12731346012",
+          "lat": 41.875765,
+          "lon": -87.630154,
+          "street": "West Ida B. Wells Drive"
+        },
+        {
+          "id": "node/10925917324",
+          "lat": 41.880945,
+          "lon": -87.62994,
+          "street": "Pedway"
+        },
+        {
+          "id": "node/12729934605",
+          "lat": 41.877546,
+          "lon": -87.6339,
+          "street": "South Wells Street"
+        },
+        {
+          "id": "node/10945600573",
+          "lat": 41.878405,
+          "lon": -87.635344,
+          "street": "South Franklin Street"
+        },
+        {
+          "id": "node/7147479956",
+          "lat": 41.878737,
+          "lon": -87.623925,
+          "street": "South Michigan Avenue"
+        },
+        {
+          "id": "node/7147479959",
+          "lat": 41.878475,
+          "lon": -87.623758,
+          "street": "East Jackson Drive"
+        },
+        {
+          "id": "node/13988509548",
+          "lat": 41.873539,
+          "lon": -87.629088,
+          "street": "South Dearborn Street"
+        },
+        {
+          "id": "node/13988490556",
+          "lat": 41.873468,
+          "lon": -87.629266,
+          "street": "Dearborn Street Bikeway"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:32.285Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:05.900Z"
     },
     "compressed-air": {
       "count": 0,

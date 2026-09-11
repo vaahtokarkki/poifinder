@@ -1,6 +1,6 @@
 {
   "city": "stuttgart",
-  "generatedAt": "2026-09-03T16:56:42.585Z",
+  "generatedAt": "2026-09-11T10:29:17.084Z",
   "categories": {
     "toilets": {
       "count": 197,
@@ -237,10 +237,16 @@
           "context": "Verwaltungsgebäude"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:09.805Z"
+      "stats": {
+        "free": 108,
+        "paid": 30,
+        "stepFree": 80,
+        "partlyStepFree": 16
+      },
+      "updatedAt": "2026-09-11T10:29:08.915Z"
     },
     "drinking-water": {
-      "count": 192,
+      "count": 193,
       "pois": [
         {
           "id": "node/10219432473",
@@ -433,7 +439,13 @@
           "lon": 9.205672
         }
       ],
-      "updatedAt": "2026-09-03T16:56:11.673Z"
+      "stats": {
+        "free": 39,
+        "paid": 0,
+        "stepFree": 17,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:29:11.296Z"
     },
     "playgrounds": {
       "count": 767,
@@ -2115,7 +2127,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:20.463Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 88,
+        "partlyStepFree": 20
+      },
+      "updatedAt": "2026-09-11T10:29:12.049Z"
     },
     "post-boxes": {
       "count": 395,
@@ -2304,8 +2322,79 @@
       "updatedAt": "2026-09-03T16:56:26.286Z"
     },
     "recycling": {
-      "count": 593,
+      "count": 592,
       "pois": [
+        {
+          "id": "way/374411344",
+          "name": "Kleintierkadaversammelstelle",
+          "lat": 48.805706,
+          "lon": 9.182356,
+          "address": "Wartbergstraße 3"
+        },
+        {
+          "id": "way/422662487",
+          "name": "agra Wertstoffhof Stuttgart",
+          "lat": 48.792274,
+          "lon": 9.239598
+        },
+        {
+          "id": "way/246643394",
+          "name": "Häckselplatz Möhringen",
+          "lat": 48.732835,
+          "lon": 9.167296,
+          "address": "Epplestraße 178",
+          "openingHours": "Mo-Th 07:15-15:45; Fr 07:15-14:45; Sa[1],Sa[3] 07:30-13:00"
+        },
+        {
+          "id": "way/300303351",
+          "name": "Wertstoffhof Münster",
+          "lat": 48.821174,
+          "lon": 9.207969,
+          "address": "Burgholzstraße 31/1",
+          "openingHours": "Mo-We,Fr 08:00-12:00,13:00-16:00; Th 08:00-12:00,13:00-18:00; Sa 08:00-13:00; Su off; PH off"
+        },
+        {
+          "id": "node/2266890380",
+          "name": "Altglascontainer",
+          "lat": 48.761716,
+          "lon": 9.268978
+        },
+        {
+          "id": "way/25876412",
+          "name": "Deponie Einöd",
+          "lat": 48.747785,
+          "lon": 9.26106
+        },
+        {
+          "id": "way/1286774856",
+          "name": "Wertstoffhof Hedelfingen",
+          "lat": 48.748973,
+          "lon": 9.263938,
+          "address": "Einödstraße 50",
+          "openingHours": "Tu,We, Fr 08:00-12:00,13:00-16:00; Th 08:00-12:00, 13:00-18:00; Sa 08:00-13:00; Mo,Su,PH off"
+        },
+        {
+          "id": "node/10142239699",
+          "name": "Kompost",
+          "lat": 48.805159,
+          "lon": 9.101448
+        },
+        {
+          "id": "node/3701729192",
+          "name": "Kompostplatz",
+          "lat": 48.840567,
+          "lon": 9.17711,
+          "openingHours": "Mo-Th 07:15-15:45; Fr 07:15-14:45"
+        },
+        {
+          "id": "way/234975938",
+          "name": "Wertstoffhof Vaihingen",
+          "lat": 48.722097,
+          "lon": 9.110119,
+          "address": "Liebknechtstraße 49/1",
+          "openingHours": "Tu,We,Fr 08:00-12:00,13:00-16:00; Th 08:00-12:00,13:00-18:00, Sa 08:00-13:00",
+          "wheelchair": "yes"
+        },
         {
           "id": "node/12381958316",
           "lat": 48.775931,
@@ -2428,71 +2517,15 @@
           "lat": 48.775801,
           "lon": 9.162915,
           "street": "Leuschnerstraße"
-        },
-        {
-          "id": "node/673635849",
-          "lat": 48.787743,
-          "lon": 9.193254,
-          "street": "Neckarstraße"
-        },
-        {
-          "id": "node/5953980439",
-          "lat": 48.779732,
-          "lon": 9.162693,
-          "street": "Forststraße"
-        },
-        {
-          "id": "node/9773311175",
-          "lat": 48.787579,
-          "lon": 9.195459,
-          "wheelchair": "yes",
-          "street": "Werastraße"
-        },
-        {
-          "id": "node/275157396",
-          "lat": 48.761963,
-          "lon": 9.176818,
-          "street": "Zellerstraße"
-        },
-        {
-          "id": "node/279213494",
-          "lat": 48.764296,
-          "lon": 9.16922,
-          "street": "Hauptstätter Straße"
-        },
-        {
-          "id": "node/280128376",
-          "lat": 48.783563,
-          "lon": 9.201715,
-          "street": "Schwarenbergstraße"
-        },
-        {
-          "id": "node/5818255375",
-          "lat": 48.766,
-          "lon": 9.166386,
-          "street": "Hohenzollernstraße"
-        },
-        {
-          "id": "node/281726089",
-          "lat": 48.789281,
-          "lon": 9.169524,
-          "street": "Schottstraße"
-        },
-        {
-          "id": "node/417674851",
-          "lat": 48.782655,
-          "lon": 9.205111,
-          "openingHours": "Mo-Sa 07:00-19:00; Su,PH off",
-          "street": "Kniebisstraße"
-        },
-        {
-          "id": "node/443132340",
-          "lat": 48.792626,
-          "lon": 9.180802,
-          "street": "Wolframstraße"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:28.497Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 32,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:14.166Z"
     },
     "luggage-storage": {
       "count": 7,
@@ -2853,7 +2886,13 @@
           "lon": 9.236135
         }
       ],
-      "updatedAt": "2026-09-03T16:56:30.608Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:15.418Z"
     },
     "camp-sites": {
       "count": 4,
@@ -3389,7 +3428,7 @@
       "updatedAt": "2026-08-17T04:03:31.484Z"
     },
     "benches": {
-      "count": 6086,
+      "count": 6090,
       "pois": [
         {
           "id": "node/8399006932",
@@ -3443,9 +3482,135 @@
           "name": "Für's Omi",
           "lat": 48.799742,
           "lon": 9.095334
+        },
+        {
+          "id": "node/12147586768",
+          "lat": 48.775904,
+          "lon": 9.182308,
+          "street": "Charlottenplatz"
+        },
+        {
+          "id": "node/10006619117",
+          "lat": 48.774879,
+          "lon": 9.18252,
+          "street": "Esslinger Straße"
+        },
+        {
+          "id": "node/9233059929",
+          "lat": 48.776255,
+          "lon": 9.181231,
+          "street": "Goerdelerstraße"
+        },
+        {
+          "id": "node/9233059933",
+          "lat": 48.776151,
+          "lon": 9.180925,
+          "street": "Dorotheenstraße"
+        },
+        {
+          "id": "node/5530639227",
+          "lat": 48.775776,
+          "lon": 9.184986,
+          "street": "Uhlandstraße"
+        },
+        {
+          "id": "node/3805477877",
+          "lat": 48.776857,
+          "lon": 9.181397,
+          "street": "Richard-von-Weizsäcker-Planie"
+        },
+        {
+          "id": "node/3805499406",
+          "lat": 48.777482,
+          "lon": 9.182888,
+          "street": "Wilhelm-Keil-Weg"
+        },
+        {
+          "id": "node/9233059938",
+          "lat": 48.776507,
+          "lon": 9.180399,
+          "street": "Münzstraße"
+        },
+        {
+          "id": "node/1728660923",
+          "lat": 48.774024,
+          "lon": 9.18377,
+          "street": "Weberstraße"
+        },
+        {
+          "id": "node/3805499411",
+          "lat": 48.777739,
+          "lon": 9.183089,
+          "street": "Peter-Huchel-Weg"
+        },
+        {
+          "id": "node/3672847446",
+          "lat": 48.777134,
+          "lon": 9.180464,
+          "street": "Stauffenbergplatz"
+        },
+        {
+          "id": "node/1728660880",
+          "lat": 48.773757,
+          "lon": 9.183659,
+          "street": "Weberplatz"
+        },
+        {
+          "id": "node/5865996792",
+          "lat": 48.775656,
+          "lon": 9.179387,
+          "street": "Sporerplatz"
+        },
+        {
+          "id": "node/5865996791",
+          "lat": 48.775714,
+          "lon": 9.179331,
+          "street": "Sporerstraße"
+        },
+        {
+          "id": "node/4208678374",
+          "lat": 48.773404,
+          "lon": 9.18134,
+          "street": "Pfarrstraße"
+        },
+        {
+          "id": "node/4102487631",
+          "lat": 48.775119,
+          "lon": 9.178768,
+          "street": "Marktstraße"
+        },
+        {
+          "id": "node/2141764853",
+          "lat": 48.777664,
+          "lon": 9.179676,
+          "street": "Planie-Tunnel"
+        },
+        {
+          "id": "node/11848317057",
+          "lat": 48.7733,
+          "lon": 9.18071,
+          "street": "Leonhardsplatz"
+        },
+        {
+          "id": "node/13481546173",
+          "lat": 48.775388,
+          "lon": 9.178549,
+          "street": "Marktplatz"
+        },
+        {
+          "id": "node/11860737045",
+          "lat": 48.774038,
+          "lon": 9.179215,
+          "street": "Eberhardstraße"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:42.482Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:16.982Z"
     },
     "compressed-air": {
       "count": 10,

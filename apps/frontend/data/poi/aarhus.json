@@ -1,6 +1,6 @@
 {
   "city": "aarhus",
-  "generatedAt": "2026-09-03T16:46:09.517Z",
+  "generatedAt": "2026-09-11T10:28:07.764Z",
   "categories": {
     "toilets": {
       "count": 142,
@@ -163,12 +163,169 @@
           "lon": 10.16137
         }
       ],
-      "updatedAt": "2026-09-03T16:45:50.551Z"
+      "stats": {
+        "free": 73,
+        "paid": 6,
+        "stepFree": 54,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:28:02.090Z"
     },
     "drinking-water": {
       "count": 69,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:45:52.067Z"
+      "pois": [
+        {
+          "id": "node/9725164358",
+          "lat": 56.158613,
+          "lon": 10.205496,
+          "street": "Frue Kirkeplads"
+        },
+        {
+          "id": "node/6286877838",
+          "lat": 56.15851,
+          "lon": 10.205922,
+          "street": "Klostertorvet"
+        },
+        {
+          "id": "node/12547004412",
+          "lat": 56.156793,
+          "lon": 10.210152,
+          "street": "Bispetorvet"
+        },
+        {
+          "id": "node/6286877839",
+          "lat": 56.156582,
+          "lon": 10.209446,
+          "street": "Sankt Clemens Torv"
+        },
+        {
+          "id": "node/6291189146",
+          "lat": 56.155643,
+          "lon": 10.201155,
+          "fee": "no",
+          "street": "Åboulevarden"
+        },
+        {
+          "id": "node/10968896442",
+          "lat": 56.167791,
+          "lon": 10.213991,
+          "street": "Kirkegårdsvej"
+        },
+        {
+          "id": "node/14099188596",
+          "lat": 56.170499,
+          "lon": 10.201306,
+          "street": "Victor Albecks Vej"
+        },
+        {
+          "id": "node/9521867175",
+          "lat": 56.156327,
+          "lon": 10.195454,
+          "street": "Carl Blochs Gade"
+        },
+        {
+          "id": "node/9350174317",
+          "lat": 56.156567,
+          "lon": 10.21324,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Herman Sallings Plads"
+        },
+        {
+          "id": "node/10968892435",
+          "lat": 56.169178,
+          "lon": 10.215039,
+          "street": "Trøjborgvej"
+        },
+        {
+          "id": "node/5688564829",
+          "lat": 56.169855,
+          "lon": 10.220759,
+          "street": "Midterstien"
+        },
+        {
+          "id": "node/6286877840",
+          "lat": 56.150833,
+          "lon": 10.204897,
+          "street": "Ryesgade"
+        },
+        {
+          "id": "node/7834161011",
+          "lat": 56.145448,
+          "lon": 10.206054,
+          "street": "Svendborgvej"
+        },
+        {
+          "id": "node/13140680701",
+          "lat": 56.14479,
+          "lon": 10.198441,
+          "street": "Ingerslevs Boulevard"
+        },
+        {
+          "id": "node/6299474143",
+          "lat": 56.139178,
+          "lon": 10.207451,
+          "wheelchair": "limited",
+          "street": "Strandvejen"
+        },
+        {
+          "id": "node/12758332840",
+          "lat": 56.137179,
+          "lon": 10.195188,
+          "fee": "no",
+          "street": "Skovbrynet"
+        },
+        {
+          "id": "node/10957841055",
+          "lat": 56.12766,
+          "lon": 10.16605,
+          "street": "Kirkevej"
+        },
+        {
+          "id": "node/3451952756",
+          "lat": 56.11142,
+          "lon": 10.226924,
+          "street": "Vandposten"
+        },
+        {
+          "id": "node/563289337",
+          "lat": 56.111449,
+          "lon": 10.227446,
+          "street": "Ørneredevej"
+        },
+        {
+          "id": "node/5647744363",
+          "lat": 56.121372,
+          "lon": 10.126816,
+          "street": "Engelundsvej"
+        },
+        {
+          "id": "node/11003197779",
+          "lat": 56.221234,
+          "lon": 10.169162,
+          "street": "Marie Belows Vej"
+        },
+        {
+          "id": "node/11003197773",
+          "lat": 56.221576,
+          "lon": 10.168271,
+          "street": "Bymandsvej"
+        },
+        {
+          "id": "node/10977110345",
+          "lat": 56.216647,
+          "lon": 10.265455,
+          "street": "Egå Mosevej"
+        }
+      ],
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:28:04.053Z"
     },
     "playgrounds": {
       "count": 548,
@@ -1205,7 +1362,13 @@
           "lon": 10.250873
         }
       ],
-      "updatedAt": "2026-09-03T16:45:58.463Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:28:04.563Z"
     },
     "post-boxes": {
       "count": 0,
@@ -1258,9 +1421,169 @@
           "lat": 56.227985,
           "lon": 10.151293,
           "openingHours": "Mo-Fr 07:00-18:00; Sa,Su,PH 10:00-17:00"
+        },
+        {
+          "id": "node/11982061586",
+          "lat": 56.1628,
+          "lon": 10.202851,
+          "openingHours": "24/7",
+          "street": "Samsøgade"
+        },
+        {
+          "id": "node/13162020927",
+          "lat": 56.163739,
+          "lon": 10.203525,
+          "street": "Sjællandsgade"
+        },
+        {
+          "id": "node/11966112099",
+          "lat": 56.163048,
+          "lon": 10.202108,
+          "openingHours": "24/7",
+          "street": "Ny Munkegade"
+        },
+        {
+          "id": "node/11982061588",
+          "lat": 56.163786,
+          "lon": 10.205979,
+          "openingHours": "24/7",
+          "street": "Høegh-Guldbergs Gade"
+        },
+        {
+          "id": "node/11966112108",
+          "lat": 56.162053,
+          "lon": 10.201209,
+          "openingHours": "24/7",
+          "street": "Hjarnøgade"
+        },
+        {
+          "id": "node/13162041102",
+          "lat": 56.164623,
+          "lon": 10.202512,
+          "street": "Fynsgade"
+        },
+        {
+          "id": "node/11982061590",
+          "lat": 56.161891,
+          "lon": 10.2075,
+          "openingHours": "24/7",
+          "street": "Thunøgade"
+        },
+        {
+          "id": "node/11966112109",
+          "lat": 56.161469,
+          "lon": 10.207182,
+          "openingHours": "24/7",
+          "street": "Norsgade"
+        },
+        {
+          "id": "node/11966112095",
+          "lat": 56.163793,
+          "lon": 10.200043,
+          "openingHours": "24/7",
+          "street": "Falstersgade"
+        },
+        {
+          "id": "node/11966112113",
+          "lat": 56.165031,
+          "lon": 10.201651,
+          "openingHours": "24/7",
+          "street": "Kaserneboulevarden"
+        },
+        {
+          "id": "node/11966112101",
+          "lat": 56.160081,
+          "lon": 10.202152,
+          "openingHours": "24/7",
+          "street": "Lollandsgade"
+        },
+        {
+          "id": "node/11982061591",
+          "lat": 56.16076,
+          "lon": 10.207951,
+          "openingHours": "24/7",
+          "street": "Anholtsgade"
+        },
+        {
+          "id": "node/11966112106",
+          "lat": 56.161272,
+          "lon": 10.199092,
+          "openingHours": "24/7",
+          "street": "Grønnegade"
+        },
+        {
+          "id": "node/11982061589",
+          "lat": 56.161881,
+          "lon": 10.209602,
+          "openingHours": "24/7",
+          "street": "Hjelmensgade"
+        },
+        {
+          "id": "node/10250963869",
+          "lat": 56.16015,
+          "lon": 10.207747,
+          "street": "Guldsmedgade"
+        },
+        {
+          "id": "node/12557057111",
+          "lat": 56.160922,
+          "lon": 10.198294,
+          "openingHours": "24/7",
+          "street": "Sankt Marcus Kirkeplads"
+        },
+        {
+          "id": "node/12752687057",
+          "lat": 56.159399,
+          "lon": 10.206031,
+          "street": "Klosterport"
+        },
+        {
+          "id": "node/10250963867",
+          "lat": 56.160227,
+          "lon": 10.208748,
+          "street": "Borggade"
+        },
+        {
+          "id": "node/10253502039",
+          "lat": 56.160349,
+          "lon": 10.209542,
+          "street": "Paradisgade"
+        },
+        {
+          "id": "node/5664563731",
+          "lat": 56.15953,
+          "lon": 10.199733,
+          "openingHours": "24/7",
+          "street": "Teglværksgade"
+        },
+        {
+          "id": "node/3992036781",
+          "lat": 56.158765,
+          "lon": 10.204101,
+          "openingHours": "24/7",
+          "street": "Klostergade"
+        },
+        {
+          "id": "node/11966112105",
+          "lat": 56.15992,
+          "lon": 10.198524,
+          "openingHours": "24/7",
+          "street": "Sejrøgade"
+        },
+        {
+          "id": "node/12216703610",
+          "lat": 56.158734,
+          "lon": 10.205708,
+          "street": "Frue Kirkeplads"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:00.565Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:05.844Z"
     },
     "luggage-storage": {
       "count": 3,
@@ -1370,7 +1693,13 @@
           "context": "Riis Skov"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:02.316Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:06.625Z"
     },
     "camp-sites": {
       "count": 8,
@@ -1536,9 +1865,147 @@
           "name": "Bench",
           "lat": 56.180257,
           "lon": 10.158759
+        },
+        {
+          "id": "node/13255786870",
+          "lat": 56.163387,
+          "lon": 10.204474,
+          "street": "Sjællandsgade"
+        },
+        {
+          "id": "node/9549663497",
+          "lat": 56.164468,
+          "lon": 10.201973,
+          "street": "Fynsgade"
+        },
+        {
+          "id": "node/12652582447",
+          "lat": 56.164162,
+          "lon": 10.201291,
+          "street": "Ny Munkegade"
+        },
+        {
+          "id": "node/10255578986",
+          "lat": 56.164774,
+          "lon": 10.202763,
+          "street": "Høegh-Guldbergs Gade"
+        },
+        {
+          "id": "node/12556824487",
+          "lat": 56.161446,
+          "lon": 10.199101,
+          "street": "Grønnegade"
+        },
+        {
+          "id": "node/9549664708",
+          "lat": 56.16043,
+          "lon": 10.20777,
+          "street": "Norsgade"
+        },
+        {
+          "id": "node/12052834701",
+          "lat": 56.165086,
+          "lon": 10.20847,
+          "street": "Nørrebrogade"
+        },
+        {
+          "id": "node/12556860205",
+          "lat": 56.163648,
+          "lon": 10.197771,
+          "street": "Langelandsgade"
+        },
+        {
+          "id": "node/8162424989",
+          "lat": 56.160138,
+          "lon": 10.199917,
+          "street": "Grønningen"
+        },
+        {
+          "id": "node/12556823150",
+          "lat": 56.161165,
+          "lon": 10.197802,
+          "street": "Sankt Marcus Kirkeplads"
+        },
+        {
+          "id": "node/12647909573",
+          "lat": 56.165503,
+          "lon": 10.209568,
+          "street": "Nørre Boulevard"
+        },
+        {
+          "id": "node/10142682508",
+          "lat": 56.158722,
+          "lon": 10.205467,
+          "street": "Klostergade"
+        },
+        {
+          "id": "node/12057931587",
+          "lat": 56.163494,
+          "lon": 10.195723,
+          "street": "Vestervang"
+        },
+        {
+          "id": "node/9544736788",
+          "lat": 56.158476,
+          "lon": 10.206119,
+          "street": "Klostertorvet"
+        },
+        {
+          "id": "node/12729313136",
+          "lat": 56.164739,
+          "lon": 10.195841,
+          "street": "Paludan-Müllers Vej"
+        },
+        {
+          "id": "node/9549566480",
+          "lat": 56.157874,
+          "lon": 10.205223,
+          "street": "Frue Kirkeplads"
+        },
+        {
+          "id": "node/10801411956",
+          "lat": 56.157787,
+          "lon": 10.204731,
+          "street": "Vestergade"
+        },
+        {
+          "id": "node/12647917434",
+          "lat": 56.165381,
+          "lon": 10.212089,
+          "street": "Peter Sabroes Gade"
+        },
+        {
+          "id": "node/13997468113",
+          "lat": 56.158065,
+          "lon": 10.19935,
+          "street": "Vesterbro Torv"
+        },
+        {
+          "id": "node/12568243246",
+          "lat": 56.16491,
+          "lon": 10.213128,
+          "street": "Østboulevarden"
+        },
+        {
+          "id": "node/10994812227",
+          "lat": 56.16116,
+          "lon": 10.194398,
+          "street": "Peter Holms Vej"
+        },
+        {
+          "id": "node/13163707636",
+          "lat": 56.158628,
+          "lon": 10.210466,
+          "street": "Graven"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:09.417Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:07.663Z"
     },
     "compressed-air": {
       "count": 0,

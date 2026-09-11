@@ -1,6 +1,6 @@
 {
   "city": "ghent",
-  "generatedAt": "2026-09-03T17:03:52.357Z",
+  "generatedAt": "2026-09-11T10:30:03.038Z",
   "categories": {
     "toilets": {
       "count": 149,
@@ -198,12 +198,167 @@
           "lon": 3.702009
         }
       ],
-      "updatedAt": "2026-09-03T17:03:27.993Z"
+      "stats": {
+        "free": 94,
+        "paid": 4,
+        "stepFree": 27,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:29:57.015Z"
     },
     "drinking-water": {
       "count": 34,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:03:29.685Z"
+      "pois": [
+        {
+          "id": "node/7989720906",
+          "lat": 51.053204,
+          "lon": 3.72637,
+          "street": "Sint-Baafsplein"
+        },
+        {
+          "id": "node/12297204911",
+          "lat": 51.054582,
+          "lon": 3.704073,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Nieuwewandeling"
+        },
+        {
+          "id": "node/7146777192",
+          "lat": 51.049098,
+          "lon": 3.728697,
+          "openingHours": "Mo-We,Fr 10:00-19:00; Th 10:00-21:00; Sa 10:00-18:00",
+          "street": "Miriam Makebaplein"
+        },
+        {
+          "id": "node/7153822603",
+          "lat": 51.046873,
+          "lon": 3.72735,
+          "street": "Sint-Pietersnieuwstraat"
+        },
+        {
+          "id": "node/12874906170",
+          "lat": 51.047723,
+          "lon": 3.730292,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Woodrow Wilsonplein"
+        },
+        {
+          "id": "node/13640785102",
+          "lat": 51.045995,
+          "lon": 3.727737,
+          "street": "Steeg der Menigte"
+        },
+        {
+          "id": "node/1928885991",
+          "lat": 51.047605,
+          "lon": 3.703275,
+          "fee": "no",
+          "street": "Watersportlaan"
+        },
+        {
+          "id": "node/9228697105",
+          "lat": 51.044567,
+          "lon": 3.727922,
+          "fee": "no",
+          "street": "Hoveniersberg"
+        },
+        {
+          "id": "node/9989084550",
+          "lat": 51.048091,
+          "lon": 3.694765,
+          "fee": "no",
+          "street": "Zuiderlaan"
+        },
+        {
+          "id": "node/12297181268",
+          "lat": 51.03958,
+          "lon": 3.725789,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Overpoortstraat"
+        },
+        {
+          "id": "node/12118857326",
+          "lat": 51.048442,
+          "lon": 3.687,
+          "fee": "no",
+          "street": "Duiklaan"
+        },
+        {
+          "id": "node/9163209683",
+          "lat": 51.075648,
+          "lon": 3.728213,
+          "street": "Voorhavenpark"
+        },
+        {
+          "id": "node/9163209717",
+          "lat": 51.076757,
+          "lon": 3.727547,
+          "street": "Voorhavenkaai"
+        },
+        {
+          "id": "node/9796546715",
+          "lat": 51.046917,
+          "lon": 3.680739,
+          "fee": "no",
+          "street": "Campinglaan"
+        },
+        {
+          "id": "node/5745506644",
+          "lat": 51.057628,
+          "lon": 3.756413,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Kriekerijstraat"
+        },
+        {
+          "id": "node/12100893187",
+          "lat": 51.060572,
+          "lon": 3.760446,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Finse Piste"
+        },
+        {
+          "id": "node/13623807029",
+          "lat": 51.071168,
+          "lon": 3.676295,
+          "street": "Zandloperstraat"
+        },
+        {
+          "id": "node/12980781628",
+          "lat": 51.055157,
+          "lon": 3.804089,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Koedreef"
+        },
+        {
+          "id": "node/12103052674",
+          "lat": 51.083291,
+          "lon": 3.620925,
+          "openingHours": "24/7",
+          "wheelchair": "limited",
+          "fee": "no",
+          "street": "Molenpad"
+        },
+        {
+          "id": "node/12965872933",
+          "lat": 50.996459,
+          "lon": 3.649523,
+          "street": "Faunastraat"
+        }
+      ],
+      "stats": {
+        "free": 21,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:29:58.938Z"
     },
     "playgrounds": {
       "count": 255,
@@ -1271,7 +1426,13 @@
           "address": "Heerweg-Zuid 63"
         }
       ],
-      "updatedAt": "2026-09-03T17:03:37.268Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:59.429Z"
     },
     "post-boxes": {
       "count": 143,
@@ -1463,6 +1624,80 @@
       "count": 227,
       "pois": [
         {
+          "id": "way/238668698",
+          "name": "Recyclagepark Gent-Gaardeniersweg",
+          "lat": 51.072541,
+          "lon": 3.716914
+        },
+        {
+          "id": "node/10867692845",
+          "lat": 51.051922,
+          "lon": 3.747613,
+          "context": "Proxy Delhaize"
+        },
+        {
+          "id": "node/11860332805",
+          "lat": 51.073737,
+          "lon": 3.739326,
+          "context": "Decathlon"
+        },
+        {
+          "id": "way/126662196",
+          "name": "Recyclagepark Gentbrugge",
+          "lat": 51.042657,
+          "lon": 3.750822,
+          "openingHours": "Tu-Sa 09:30-17:10; PH off; Dec 24,31 09:30-16:10 open"
+        },
+        {
+          "id": "way/1034189138",
+          "name": "Composteerplek Ledeberg",
+          "lat": 51.033559,
+          "lon": 3.740029,
+          "openingHours": "Tu 17:00-18:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/374977729",
+          "name": "Milieupark UGent",
+          "lat": 51.026988,
+          "lon": 3.718763
+        },
+        {
+          "id": "way/369146065",
+          "name": "IVAGO Drongen-Koninginnelaan",
+          "lat": 51.053835,
+          "lon": 3.66838,
+          "openingHours": "Tu-Sa 09:30-17:15"
+        },
+        {
+          "id": "way/251260092",
+          "name": "Recyclagepark Oostakker",
+          "lat": 51.076913,
+          "lon": 3.759512,
+          "openingHours": "Tu-Sa 09:30-17:30; Dec 24,31 09:30-16:30; Mo,PH off"
+        },
+        {
+          "id": "way/126053852",
+          "name": "Recyclagepark Gent Proeftuinstraat",
+          "lat": 51.020562,
+          "lon": 3.742112,
+          "address": "Proeftuinstraat 43",
+          "openingHours": "Tu-Sa 09:30-17:15"
+        },
+        {
+          "id": "node/651536627",
+          "name": "Ivago Containerpark",
+          "lat": 51.04427,
+          "lon": 3.798474
+        },
+        {
+          "id": "way/691920572",
+          "name": "Recyclagepark Lovendegem",
+          "lat": 51.09395,
+          "lon": 3.640259,
+          "address": "Bilksken 1"
+        },
+        {
           "id": "node/12666475641",
           "lat": 51.061043,
           "lon": 3.722181,
@@ -1577,76 +1812,15 @@
           "lon": 3.742463,
           "openingHours": "Mo-Su 06:00-22:00",
           "street": "Sporewegel"
-        },
-        {
-          "id": "node/13121917394",
-          "lat": 51.064386,
-          "lon": 3.73801,
-          "street": "Koopvaardijlaan"
-        },
-        {
-          "id": "node/12574569153",
-          "lat": 51.048,
-          "lon": 3.742692,
-          "street": "Zalmstraat"
-        },
-        {
-          "id": "node/10861369382",
-          "lat": 51.053804,
-          "lon": 3.745722,
-          "street": "Evarist De Buckstraat"
-        },
-        {
-          "id": "node/12650624966",
-          "lat": 51.036462,
-          "lon": 3.723006,
-          "street": "Karel Lodewijk Ledeganckstraat"
-        },
-        {
-          "id": "way/238668698",
-          "name": "Recyclagepark Gent-Gaardeniersweg",
-          "lat": 51.072541,
-          "lon": 3.716914
-        },
-        {
-          "id": "node/12693545843",
-          "lat": 51.039957,
-          "lon": 3.735667,
-          "street": "Okapistraat"
-        },
-        {
-          "id": "node/14094486101",
-          "lat": 51.049227,
-          "lon": 3.746408,
-          "street": "Charles Van Lerbergheplein"
-        },
-        {
-          "id": "node/10867692845",
-          "lat": 51.051922,
-          "lon": 3.747613,
-          "context": "Proxy Delhaize"
-        },
-        {
-          "id": "node/12752995070",
-          "lat": 51.043243,
-          "lon": 3.744051,
-          "openingHours": "24/7",
-          "street": "Rosa Geingerstraat"
-        },
-        {
-          "id": "node/14022054442",
-          "lat": 51.06144,
-          "lon": 3.749388,
-          "street": "Achterstraat"
-        },
-        {
-          "id": "node/12573942553",
-          "lat": 51.064074,
-          "lon": 3.748234,
-          "street": "Visitatiestraat"
         }
       ],
-      "updatedAt": "2026-09-03T17:03:41.554Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:00.998Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -1880,7 +2054,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:03:43.735Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:01.826Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2097,9 +2277,183 @@
           "name": "Ibe's bankje",
           "lat": 51.013385,
           "lon": 3.657119
+        },
+        {
+          "id": "node/13184395399",
+          "lat": 51.053705,
+          "lon": 3.71879,
+          "street": "Sint-Michielsplein"
+        },
+        {
+          "id": "node/6796878186",
+          "lat": 51.055928,
+          "lon": 3.720233,
+          "street": "Jan Breydelstraat"
+        },
+        {
+          "id": "node/1914075888",
+          "lat": 51.055935,
+          "lon": 3.720544,
+          "street": "Appelbrug"
+        },
+        {
+          "id": "node/13184394773",
+          "lat": 51.056596,
+          "lon": 3.719695,
+          "street": "Burgstraat"
+        },
+        {
+          "id": "node/1914076114",
+          "lat": 51.055786,
+          "lon": 3.721239,
+          "street": "Vleeshuistragel"
+        },
+        {
+          "id": "node/13058832302",
+          "lat": 51.05133,
+          "lon": 3.717739,
+          "street": "Posteernestraat"
+        },
+        {
+          "id": "node/5196332360",
+          "lat": 51.053702,
+          "lon": 3.722042,
+          "street": "Korenmarkt"
+        },
+        {
+          "id": "node/5672943268",
+          "lat": 51.052025,
+          "lon": 3.720546,
+          "street": "Ajuinlei"
+        },
+        {
+          "id": "node/6918685993",
+          "lat": 51.05659,
+          "lon": 3.714085,
+          "street": "Sint-Elisabethplein"
+        },
+        {
+          "id": "node/9651805640",
+          "lat": 51.056978,
+          "lon": 3.720522,
+          "street": "Rekelingestraat"
+        },
+        {
+          "id": "node/9929464558",
+          "lat": 51.05206,
+          "lon": 3.721829,
+          "street": "Veldstraat"
+        },
+        {
+          "id": "node/13184692873",
+          "lat": 51.057816,
+          "lon": 3.718651,
+          "street": "Gewad"
+        },
+        {
+          "id": "node/5564934760",
+          "lat": 51.056955,
+          "lon": 3.713456,
+          "street": "Begijnhofdries"
+        },
+        {
+          "id": "node/6369695172",
+          "lat": 51.056724,
+          "lon": 3.722249,
+          "street": "Kraanlei"
+        },
+        {
+          "id": "node/9319408126",
+          "lat": 51.052514,
+          "lon": 3.711767,
+          "street": "Wispelbergstraat"
+        },
+        {
+          "id": "node/9319408122",
+          "lat": 51.051616,
+          "lon": 3.712624,
+          "street": "Casinoplein"
+        },
+        {
+          "id": "node/9319408129",
+          "lat": 51.050097,
+          "lon": 3.716773,
+          "street": "Annonciadenstraat"
+        },
+        {
+          "id": "node/13703517262",
+          "lat": 51.050308,
+          "lon": 3.715068,
+          "street": "Twaalfkameren"
+        },
+        {
+          "id": "node/12156265305",
+          "lat": 51.050203,
+          "lon": 3.71983,
+          "street": "Recollettenlei"
+        },
+        {
+          "id": "node/7449166226",
+          "lat": 51.054255,
+          "lon": 3.72447,
+          "street": "Poeljemarkt"
+        },
+        {
+          "id": "node/10815352030",
+          "lat": 51.058834,
+          "lon": 3.716384,
+          "street": "Prinsenhofplein"
+        },
+        {
+          "id": "node/13249845702",
+          "lat": 51.057662,
+          "lon": 3.722761,
+          "street": "Corduwaniersstraat"
+        },
+        {
+          "id": "node/10610675891",
+          "lat": 51.053886,
+          "lon": 3.725075,
+          "street": "Botermarkt"
+        },
+        {
+          "id": "node/9653755776",
+          "lat": 51.053646,
+          "lon": 3.725227,
+          "street": "Sint-Baafsplein"
+        },
+        {
+          "id": "node/6789941885",
+          "lat": 51.059267,
+          "lon": 3.718232,
+          "street": "Zilverhof"
+        },
+        {
+          "id": "node/13175364471",
+          "lat": 51.055144,
+          "lon": 3.709302,
+          "street": "Coupure Rechts"
+        },
+        {
+          "id": "node/6801882791",
+          "lat": 51.052336,
+          "lon": 3.725025,
+          "street": "Kalandestraat"
+        },
+        {
+          "id": "node/13175361205",
+          "lat": 51.053815,
+          "lon": 3.709096,
+          "street": "Coupure Links"
         }
       ],
-      "updatedAt": "2026-09-03T17:03:52.256Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:02.936Z"
     },
     "compressed-air": {
       "count": 0,

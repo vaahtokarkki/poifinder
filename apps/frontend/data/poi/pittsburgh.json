@@ -1,6 +1,6 @@
 {
   "city": "pittsburgh",
-  "generatedAt": "2026-09-03T17:32:43.543Z",
+  "generatedAt": "2026-09-11T10:32:55.890Z",
   "categories": {
     "toilets": {
       "count": 54,
@@ -86,12 +86,159 @@
           "context": "The Village"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:22.122Z"
+      "stats": {
+        "free": 7,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:49.387Z"
     },
     "drinking-water": {
       "count": 36,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:32:23.809Z"
+      "pois": [
+        {
+          "id": "node/9921708854",
+          "lat": 40.440677,
+          "lon": -79.993316,
+          "street": "Chatham Street"
+        },
+        {
+          "id": "node/3830245485",
+          "lat": 40.441106,
+          "lon": -80.007175,
+          "street": "Commonwealth Place"
+        },
+        {
+          "id": "node/3830245479",
+          "lat": 40.44049,
+          "lon": -80.010281,
+          "street": "Point State Park - Mon Wharf Connection"
+        },
+        {
+          "id": "node/12377686223",
+          "lat": 40.442098,
+          "lon": -80.012235,
+          "street": "Three Rivers Heritage Trail"
+        },
+        {
+          "id": "node/14101221493",
+          "lat": 40.426375,
+          "lon": -79.99662,
+          "street": "Grandview Trail"
+        },
+        {
+          "id": "node/12465993810",
+          "lat": 40.424629,
+          "lon": -80.013556,
+          "street": "Norton Street"
+        },
+        {
+          "id": "node/13195256053",
+          "lat": 40.442234,
+          "lon": -79.952725,
+          "street": "Schenley Drive"
+        },
+        {
+          "id": "node/2104813437",
+          "lat": 40.407531,
+          "lon": -79.999564,
+          "street": "Conniston Avenue"
+        },
+        {
+          "id": "node/13956388901",
+          "lat": 40.431515,
+          "lon": -79.943844,
+          "street": "Oval Trail"
+        },
+        {
+          "id": "node/11896442521",
+          "lat": 40.421448,
+          "lon": -79.946558,
+          "fee": "no",
+          "street": "Bigelow Street"
+        },
+        {
+          "id": "node/13305091000",
+          "lat": 40.404844,
+          "lon": -80.025833,
+          "street": "Pauline Avenue"
+        },
+        {
+          "id": "node/2634875863",
+          "lat": 40.443121,
+          "lon": -79.926765,
+          "street": "Solway Street"
+        },
+        {
+          "id": "node/3116114889",
+          "lat": 40.432457,
+          "lon": -79.924884,
+          "street": "Hobart Street"
+        },
+        {
+          "id": "node/11666819424",
+          "lat": 40.434841,
+          "lon": -79.923027,
+          "street": "Beacon Street"
+        },
+        {
+          "id": "node/14064369872",
+          "lat": 40.390868,
+          "lon": -80.029392,
+          "street": "Arkansas Avenue"
+        },
+        {
+          "id": "node/12181108829",
+          "lat": 40.437751,
+          "lon": -79.91938,
+          "street": "Shady Avenue"
+        },
+        {
+          "id": "node/9936526971",
+          "lat": 40.396123,
+          "lon": -80.04621,
+          "street": "McFarland Road"
+        },
+        {
+          "id": "node/12238942376",
+          "lat": 40.412493,
+          "lon": -80.064412,
+          "street": "Parkedge Drive"
+        },
+        {
+          "id": "node/11088286582",
+          "lat": 40.430104,
+          "lon": -79.914868,
+          "fee": "no",
+          "street": "Riverview Trail"
+        },
+        {
+          "id": "node/12170013425",
+          "lat": 40.37993,
+          "lon": -80.016166,
+          "street": "Pearce Road"
+        },
+        {
+          "id": "node/1371543308",
+          "lat": 40.455766,
+          "lon": -79.915411,
+          "street": "Bakery Square Boulevard"
+        },
+        {
+          "id": "node/12086349753",
+          "lat": 40.380578,
+          "lon": -80.044297,
+          "street": "Alfred Street"
+        }
+      ],
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:51.769Z"
     },
     "playgrounds": {
       "count": 225,
@@ -1178,7 +1325,13 @@
           "address": "Lincoln Avenue 415"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:31.029Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:52.355Z"
     },
     "post-boxes": {
       "count": 162,
@@ -1371,6 +1524,19 @@
       "count": 22,
       "pois": [
         {
+          "id": "node/11098288690",
+          "lat": 40.443925,
+          "lon": -79.943197,
+          "context": "Purnell Center for the Arts"
+        },
+        {
+          "id": "node/6724897094",
+          "name": "Goodwill Donation Drop Off",
+          "lat": 40.40432,
+          "lon": -80.040464,
+          "openingHours": "Mo-Sa 09:00-21:00, Su 11:00-19:00"
+        },
+        {
           "id": "node/5987229780",
           "lat": 40.438234,
           "lon": -80.001912,
@@ -1395,23 +1561,10 @@
           "street": "Forbes Avenue Bikelane WestBound"
         },
         {
-          "id": "node/11098288690",
-          "lat": 40.443925,
-          "lon": -79.943197,
-          "context": "Purnell Center for the Arts"
-        },
-        {
           "id": "node/13721751458",
           "lat": 40.444541,
           "lon": -79.943206,
           "street": "Forbes Avenue"
-        },
-        {
-          "id": "node/6724897094",
-          "name": "Goodwill Donation Drop Off",
-          "lat": 40.40432,
-          "lon": -80.040464,
-          "openingHours": "Mo-Sa 09:00-21:00, Su 11:00-19:00"
         },
         {
           "id": "node/11146971280",
@@ -1444,7 +1597,13 @@
           "street": "Reynolds Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:34.460Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:53.918Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1650,7 +1809,13 @@
     "outdoor-gyms": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:36.239Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:54.677Z"
     },
     "camp-sites": {
       "count": 1,
@@ -1979,9 +2144,105 @@
           "name": "The Campo",
           "lat": 40.44141,
           "lon": -79.9425
+        },
+        {
+          "id": "node/14103083296",
+          "lat": 40.440401,
+          "lon": -79.995661,
+          "street": "Sixth Avenue"
+        },
+        {
+          "id": "node/12128445938",
+          "lat": 40.440762,
+          "lon": -79.993344,
+          "street": "Chatham Street"
+        },
+        {
+          "id": "node/11146717103",
+          "lat": 40.438086,
+          "lon": -79.997969,
+          "street": "Fourth Avenue"
+        },
+        {
+          "id": "node/13481044185",
+          "lat": 40.439138,
+          "lon": -79.992311,
+          "street": "Fifth Avenue"
+        },
+        {
+          "id": "node/11245028865",
+          "lat": 40.440274,
+          "lon": -79.990404,
+          "street": "Centre Avenue"
+        },
+        {
+          "id": "node/11245028924",
+          "lat": 40.439097,
+          "lon": -79.990633,
+          "street": "Washington Place"
+        },
+        {
+          "id": "node/14103089086",
+          "lat": 40.441651,
+          "lon": -79.990192,
+          "street": "Logan Street"
+        },
+        {
+          "id": "node/12349549571",
+          "lat": 40.443347,
+          "lon": -80.00054,
+          "street": "7th Street"
+        },
+        {
+          "id": "node/12349549570",
+          "lat": 40.443343,
+          "lon": -80.000576,
+          "street": "Penn Avenue"
+        },
+        {
+          "id": "node/14103090258",
+          "lat": 40.441558,
+          "lon": -79.989718,
+          "street": "Wylie Avenue"
+        },
+        {
+          "id": "node/14062911941",
+          "lat": 40.441262,
+          "lon": -80.002156,
+          "street": "Market Street"
+        },
+        {
+          "id": "node/14103079843",
+          "lat": 40.441762,
+          "lon": -79.989003,
+          "street": "Fullerton Street"
+        },
+        {
+          "id": "node/11235101771",
+          "lat": 40.439203,
+          "lon": -79.986738,
+          "street": "Colwell Street"
+        },
+        {
+          "id": "node/11235101772",
+          "lat": 40.439098,
+          "lon": -79.986639,
+          "street": "Our Way"
+        },
+        {
+          "id": "node/14065370632",
+          "lat": 40.447602,
+          "lon": -80.000601,
+          "street": "North Shore Trail"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:43.443Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:55.789Z"
     },
     "compressed-air": {
       "count": 0,

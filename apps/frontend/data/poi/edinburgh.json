@@ -1,6 +1,6 @@
 {
   "city": "edinburgh",
-  "generatedAt": "2026-09-03T17:06:46.892Z",
+  "generatedAt": "2026-09-11T10:30:28.664Z",
   "categories": {
     "toilets": {
       "count": 120,
@@ -227,7 +227,13 @@
           "context": "Holiday Inn Edinburgh"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:24.134Z"
+      "stats": {
+        "free": 75,
+        "paid": 2,
+        "stepFree": 43,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:30:22.118Z"
     },
     "drinking-water": {
       "count": 33,
@@ -268,9 +274,59 @@
           "name": "Dr Andrew Balfour Drinking Fountain",
           "lat": 55.935166,
           "lon": -3.08928
+        },
+        {
+          "id": "node/11196118841",
+          "lat": 55.954473,
+          "lon": -3.188538,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "St James Crescent"
+        },
+        {
+          "id": "node/13072411496",
+          "lat": 55.952115,
+          "lon": -3.188763,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "North Bridge"
+        },
+        {
+          "id": "node/2113113126",
+          "lat": 55.95249,
+          "lon": -3.173649,
+          "street": "Horse Wynd"
+        },
+        {
+          "id": "node/6244354385",
+          "lat": 55.922037,
+          "lon": -3.176607,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Nicholas Kemmer Road"
+        },
+        {
+          "id": "node/11516194756",
+          "lat": 55.934261,
+          "lon": -3.250368,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Water of Leith Walkway"
+        },
+        {
+          "id": "node/7500529286",
+          "lat": 55.909152,
+          "lon": -3.155528,
+          "street": "Mount Alvernia"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:25.617Z"
+      "stats": {
+        "free": 20,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:23.857Z"
     },
     "playgrounds": {
       "count": 268,
@@ -1404,7 +1460,13 @@
           "lon": -3.258475
         }
       ],
-      "updatedAt": "2026-09-03T17:06:33.222Z"
+      "stats": {
+        "free": 34,
+        "paid": 13,
+        "stepFree": 34,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-11T10:30:24.395Z"
     },
     "post-boxes": {
       "count": 556,
@@ -1603,6 +1665,72 @@
           "context": "Edinburgh Waverley"
         },
         {
+          "id": "node/9394594460",
+          "name": "Islamic Relief",
+          "lat": 55.945635,
+          "lon": -3.185567
+        },
+        {
+          "id": "node/634805718",
+          "name": "Portsburgh Court",
+          "lat": 55.945476,
+          "lon": -3.200765
+        },
+        {
+          "id": "node/620537775",
+          "name": "Pollock Halls Glass Recycling",
+          "lat": 55.940462,
+          "lon": -3.169841
+        },
+        {
+          "id": "node/1670572632",
+          "name": "Woodville Terrace Recycling point",
+          "lat": 55.966229,
+          "lon": -3.163876
+        },
+        {
+          "id": "way/1201496337",
+          "name": "John Mcdonald Metal Recycling Ltd",
+          "lat": 55.943284,
+          "lon": -3.22684,
+          "address": "Sauchiebank 5"
+        },
+        {
+          "id": "node/10215251662",
+          "name": "Dalton Metal Recycling",
+          "lat": 55.974313,
+          "lon": -3.160839
+        },
+        {
+          "id": "way/993238591",
+          "name": "Seafield Household Waste Recycling Centre",
+          "lat": 55.967391,
+          "lon": -3.137009,
+          "address": "Seafield Road 76",
+          "openingHours": "Mo-We 09:00-17:00; Th 09:00-18:30; Fr-Su 09:00-17:00"
+        },
+        {
+          "id": "way/61158782",
+          "name": "Craigmillar Household Waste Recycling Centre",
+          "lat": 55.925908,
+          "lon": -3.14675,
+          "address": "Old Dalkeith Road"
+        },
+        {
+          "id": "node/1773814876",
+          "name": "Paper Recycling",
+          "lat": 55.950725,
+          "lon": -3.110187
+        },
+        {
+          "id": "way/33128330",
+          "name": "Sighthill Household Waste Recycling Centre",
+          "lat": 55.926376,
+          "lon": -3.292295,
+          "address": "Bankhead Avenue",
+          "openingHours": "Mo-Fr 08:00-19:30; Sa,Su 08:00-18:00"
+        },
+        {
           "id": "node/13621369727",
           "lat": 55.958416,
           "lon": -3.184021,
@@ -1663,12 +1791,6 @@
           "street": "Windsor Street Lane"
         },
         {
-          "id": "node/9394594460",
-          "name": "Islamic Relief",
-          "lat": 55.945635,
-          "lon": -3.185567
-        },
-        {
           "id": "node/13891693983",
           "lat": 55.94598,
           "lon": -3.18297,
@@ -1721,65 +1843,15 @@
           "lat": 55.944794,
           "lon": -3.196191,
           "street": "Archibald Place"
-        },
-        {
-          "id": "node/11557040741",
-          "lat": 55.943431,
-          "lon": -3.183958,
-          "openingHours": "24/7",
-          "street": "St Patrick Square"
-        },
-        {
-          "id": "node/12076864694",
-          "lat": 55.957643,
-          "lon": -3.171569,
-          "street": "London Road"
-        },
-        {
-          "id": "node/11557040755",
-          "lat": 55.943015,
-          "lon": -3.184923,
-          "openingHours": "24/7",
-          "street": "Buccleuch Place"
-        },
-        {
-          "id": "node/634805718",
-          "name": "Portsburgh Court",
-          "lat": 55.945476,
-          "lon": -3.200765
-        },
-        {
-          "id": "node/588498418",
-          "lat": 55.959531,
-          "lon": -3.172755,
-          "street": "Elgin Terrace"
-        },
-        {
-          "id": "node/1144039236",
-          "lat": 55.963007,
-          "lon": -3.196659,
-          "street": "Warriston Path"
-        },
-        {
-          "id": "node/12081800420",
-          "lat": 55.959754,
-          "lon": -3.172532,
-          "street": "Edina Street"
-        },
-        {
-          "id": "node/12073420640",
-          "lat": 55.958906,
-          "lon": -3.171462,
-          "street": "Rossie Place"
-        },
-        {
-          "id": "node/4357695683",
-          "lat": 55.963116,
-          "lon": -3.179427,
-          "street": "Middlefield"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:37.152Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:26.291Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -2082,7 +2154,13 @@
           "lon": -3.251057
         }
       ],
-      "updatedAt": "2026-09-03T17:06:39.449Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:27.294Z"
     },
     "camp-sites": {
       "count": 4,
@@ -2491,9 +2569,75 @@
           "name": "Rest and Reflect",
           "lat": 55.89171,
           "lon": -3.247086
+        },
+        {
+          "id": "node/13502042288",
+          "lat": 55.952471,
+          "lon": -3.188772,
+          "street": "North Bridge"
+        },
+        {
+          "id": "node/13299601654",
+          "lat": 55.951958,
+          "lon": -3.190993,
+          "street": "North Ramp"
+        },
+        {
+          "id": "node/5331191651",
+          "lat": 55.954118,
+          "lon": -3.192208,
+          "street": "St Andrew Square"
+        },
+        {
+          "id": "node/3316705615",
+          "lat": 55.955545,
+          "lon": -3.185584,
+          "street": "Calton Square"
+        },
+        {
+          "id": "node/13688193444",
+          "lat": 55.951357,
+          "lon": -3.184797,
+          "street": "Jeffrey Street"
+        },
+        {
+          "id": "node/13688193442",
+          "lat": 55.951386,
+          "lon": -3.184628,
+          "street": "Cranston Street"
+        },
+        {
+          "id": "node/2466426286",
+          "lat": 55.952283,
+          "lon": -3.193239,
+          "street": "Princes Street"
+        },
+        {
+          "id": "node/519288689",
+          "lat": 55.955376,
+          "lon": -3.183939,
+          "street": "Hume Walk"
+        },
+        {
+          "id": "node/4681513742",
+          "lat": 55.949864,
+          "lon": -3.187875,
+          "street": "Hunter Square"
+        },
+        {
+          "id": "node/10557131937",
+          "lat": 55.956741,
+          "lon": -3.18706,
+          "street": "Picardy Place"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:46.791Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:28.562Z"
     },
     "compressed-air": {
       "count": 0,

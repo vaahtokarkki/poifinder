@@ -1,6 +1,6 @@
 {
   "city": "madrid",
-  "generatedAt": "2026-09-03T17:16:47.903Z",
+  "generatedAt": "2026-09-11T10:31:16.263Z",
   "categories": {
     "toilets": {
       "count": 236,
@@ -217,7 +217,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:20.485Z"
+      "stats": {
+        "free": 102,
+        "paid": 28,
+        "stepFree": 95,
+        "partlyStepFree": 8
+      },
+      "updatedAt": "2026-09-11T10:31:09.260Z"
     },
     "drinking-water": {
       "count": 1599,
@@ -410,7 +416,13 @@
           "lon": -3.772903
         }
       ],
-      "updatedAt": "2026-09-03T17:16:22.813Z"
+      "stats": {
+        "free": 97,
+        "paid": 0,
+        "stepFree": 75,
+        "partlyStepFree": 12
+      },
+      "updatedAt": "2026-09-11T10:31:11.338Z"
     },
     "playgrounds": {
       "count": 1516,
@@ -1803,7 +1815,13 @@
           "lon": -3.68736
         }
       ],
-      "updatedAt": "2026-09-03T17:16:32.418Z"
+      "stats": {
+        "free": 0,
+        "paid": 13,
+        "stepFree": 73,
+        "partlyStepFree": 23
+      },
+      "updatedAt": "2026-09-11T10:31:12.045Z"
     },
     "post-boxes": {
       "count": 388,
@@ -1997,188 +2015,210 @@
       "count": 1276,
       "pois": [
         {
-          "id": "node/184049323",
-          "lat": 40.418953,
-          "lon": -3.703559,
-          "street": "Calle de la Salud"
+          "id": "node/9422209946",
+          "name": "Punto limpio de proximidad",
+          "lat": 40.426394,
+          "lon": -3.700319,
+          "address": "Calle de Barceló 2"
         },
         {
-          "id": "node/8358907725",
-          "lat": 40.414006,
-          "lon": -3.705542,
-          "street": "Calle de Santo Tomás"
+          "id": "node/4367712593",
+          "name": "Chatarrería",
+          "lat": 40.398628,
+          "lon": -3.717091
         },
         {
-          "id": "node/3666957939",
-          "lat": 40.413593,
-          "lon": -3.704746,
-          "street": "Calle del Conde de Romanones"
+          "id": "way/450358450",
+          "name": "Punto limpio Arganzuela",
+          "lat": 40.394062,
+          "lon": -3.683593
         },
         {
-          "id": "node/11240816058",
-          "lat": 40.41919,
-          "lon": -3.707443,
-          "street": "Calle de las Veneras"
+          "id": "way/23598425",
+          "name": "Punto Limpio Latina",
+          "lat": 40.400534,
+          "lon": -3.735908,
+          "address": "Calle del Concejal Francisco José Jiménez Martín 5",
+          "openingHours": "Mo-Sa 08:00-20:00; Sa 09:00-14:00; PH 09:00-14:00"
         },
         {
-          "id": "node/11292611193",
-          "lat": 40.420914,
-          "lon": -3.702961,
-          "street": "Calle del Barco"
+          "id": "way/963265158",
+          "name": "Zona de compostaje",
+          "lat": 40.43799,
+          "lon": -3.738711
         },
         {
-          "id": "node/11238691351",
-          "lat": 40.421061,
-          "lon": -3.704565,
-          "street": "Calle del Desengaño"
+          "id": "node/10879377928",
+          "name": "Contenedor Envases",
+          "lat": 40.431405,
+          "lon": -3.663059,
+          "openingHours": "24/7"
         },
         {
-          "id": "node/1010993677",
-          "lat": 40.412457,
-          "lon": -3.702425,
-          "street": "Calle de la Magdalena"
+          "id": "node/9655421057",
+          "name": "Ramón del Peral Espinosa",
+          "lat": 40.434417,
+          "lon": -3.664671
         },
         {
-          "id": "node/9077087093",
-          "lat": 40.413482,
-          "lon": -3.707747,
-          "street": "Plaza de Segovia Nueva"
+          "id": "node/8910315441",
+          "name": "Planta de transformación de residuos vegetales de Migas Calientes",
+          "lat": 40.438956,
+          "lon": -3.739277
         },
         {
-          "id": "node/1020459845",
-          "lat": 40.415569,
-          "lon": -3.709488,
-          "street": "Plaza de San Miguel"
+          "id": "node/12649777135",
+          "name": "Punto Limpio Móvil del Ayuntamiento de Madrid",
+          "lat": 40.402549,
+          "lon": -3.661877,
+          "openingHours": "Th 07:00-08:30; PH off"
         },
         {
-          "id": "node/13462584328",
-          "lat": 40.415664,
-          "lon": -3.697819,
-          "street": "Calle de Santa Catalina"
+          "id": "way/872191789",
+          "name": "Punto Limpio de Usera",
+          "lat": 40.378635,
+          "lon": -3.709454,
+          "openingHours": "Mo-Sa 08:00-20:00; Su 09:00-14:00; PH 09:00-14:00"
         },
         {
-          "id": "node/266220425",
-          "lat": 40.420688,
-          "lon": -3.699495,
-          "street": "Calle de las Infantas"
+          "id": "way/296069174",
+          "name": "Punto Limpio Fijo Moratalaz",
+          "lat": 40.414522,
+          "lon": -3.651019,
+          "openingHours": "Mo-Sa 08:00-20:00; Su 09:00-14:00"
         },
         {
-          "id": "node/11697025892",
-          "lat": 40.412492,
-          "lon": -3.699606,
-          "street": "Calle de Atocha"
+          "id": "node/12539335158",
+          "name": "punto limpio",
+          "lat": 40.394119,
+          "lon": -3.657615,
+          "openingHours": "24/7"
         },
         {
-          "id": "node/11234230460",
-          "lat": 40.422004,
-          "lon": -3.701739,
-          "street": "Calle de Valverde"
+          "id": "way/101233406",
+          "name": "Punto Limpio Fijo del Ayuntamiento de Madrid. Distrito de Puente de Vallecas",
+          "lat": 40.394265,
+          "lon": -3.654564,
+          "address": "Calle de José Paulete 43",
+          "openingHours": "Mo-Sa 08:00-20:00; Su 09:00-14:00",
+          "wheelchair": "yes"
         },
         {
-          "id": "node/1007389258",
-          "lat": 40.41231,
-          "lon": -3.70786,
-          "street": "Calle de Toledo"
+          "id": "node/849583477",
+          "name": "Punto Limpio Ciudad Universitaria-Moncloa",
+          "lat": 40.451852,
+          "lon": -3.740092
         },
         {
-          "id": "node/11359779384",
-          "lat": 40.42067,
-          "lon": -3.709245,
-          "street": "Plaza de Santo Domingo"
+          "id": "node/7064531472",
+          "name": "Punto Limpio Móvil",
+          "lat": 40.465926,
+          "lon": -3.719177,
+          "address": "Calle de Antonio Machado 12",
+          "openingHours": "Sa 08:45-10:15",
+          "wheelchair": "no"
         },
         {
-          "id": "node/9066413402",
-          "lat": 40.422532,
-          "lon": -3.703822,
-          "street": "Corredera Baja de San Pablo"
+          "id": "way/272812669",
+          "name": "Punto Limpio del Distrito de Chamartín",
+          "lat": 40.458955,
+          "lon": -3.666559,
+          "address": "Avenida de Alfonso XIII 128"
         },
         {
-          "id": "node/2121950934",
-          "lat": 40.422894,
-          "lon": -3.704144,
-          "street": "Calle del Pez"
+          "id": "node/12811404158",
+          "name": "Reciclajes",
+          "lat": 40.398985,
+          "lon": -3.772175
         },
         {
-          "id": "node/8321011349",
-          "lat": 40.417302,
-          "lon": -3.711879,
-          "street": "Calle de Lepanto"
+          "id": "way/117700981",
+          "name": "Punto Limpio - Ciudad Lineal",
+          "lat": 40.418023,
+          "lon": -3.63138
         },
         {
-          "id": "node/9066413395",
-          "lat": 40.423011,
-          "lon": -3.704318,
-          "street": "Plaza de Carlos Cambronero"
+          "id": "node/1200406597",
+          "name": "Punto Limpio de Carabanchel",
+          "lat": 40.368242,
+          "lon": -3.745691
         },
         {
-          "id": "node/12509088832",
-          "lat": 40.417902,
-          "lon": -3.695654,
-          "street": "Calle del Marqués de Cubas"
+          "id": "way/600087000",
+          "name": "Punto limpio de Villa de Vallecas",
+          "lat": 40.376248,
+          "lon": -3.643501
         },
         {
-          "id": "node/1020402919",
-          "lat": 40.411187,
-          "lon": -3.70864,
-          "street": "Plaza de la Cebada"
+          "id": "node/13135393014",
+          "name": "Punt Verd de Barri",
+          "lat": 40.410438,
+          "lon": -3.784784
         },
         {
-          "id": "node/1178442673",
-          "lat": 40.410272,
-          "lon": -3.706514,
-          "street": "Calle de Embajadores"
+          "id": "way/243606322",
+          "name": "Punto limpio San Blas - Canillejas",
+          "lat": 40.440365,
+          "lon": -3.622983,
+          "address": "Calle de San Romualdo 20"
         },
         {
-          "id": "node/1595584804",
-          "lat": 40.422359,
-          "lon": -3.698402,
-          "street": "Calle de Augusto Figueroa"
+          "id": "way/173379630",
+          "name": "Punto Limpio del distrito de Fuencarral-El Pardo",
+          "lat": 40.482312,
+          "lon": -3.71649,
+          "openingHours": "Mo-Sa 08:00-20:00; Su 09:00-14:00"
         },
         {
-          "id": "node/3190384555",
-          "lat": 40.409819,
-          "lon": -3.704019,
-          "street": "Calle del Mesón de Paredes"
+          "id": "node/5552503038",
+          "name": "Chatarreria",
+          "lat": 40.352691,
+          "lon": -3.72615
         },
         {
-          "id": "node/1010972114",
-          "lat": 40.410046,
-          "lon": -3.700951,
-          "address": "Calle del Ave María 35",
-          "street": "Calle del Ave María"
+          "id": "node/5549936132",
+          "name": "Metales Euroamericana S.L.",
+          "lat": 40.35229,
+          "lon": -3.725537
         },
         {
-          "id": "node/12901663524",
-          "lat": 40.413389,
-          "lon": -3.695587,
-          "street": "Calle de Jesús"
+          "id": "way/300799652",
+          "name": "Cantón de Limpieza",
+          "lat": 40.428891,
+          "lon": -3.615767
         },
         {
-          "id": "node/12901663535",
-          "lat": 40.413755,
-          "lon": -3.695129,
-          "street": "Calle de Lope de Vega"
+          "id": "node/14078391189",
+          "name": "Lodisres",
+          "lat": 40.378015,
+          "lon": -3.629553
         },
         {
-          "id": "node/12698474863",
-          "lat": 40.420786,
-          "lon": -3.695694,
-          "street": "Calle del Barquillo"
+          "id": "node/5516290534",
+          "name": "Grupo Izquierdo Recuperaciones",
+          "lat": 40.3496,
+          "lon": -3.731203
         },
         {
-          "id": "node/1020459725",
-          "lat": 40.411604,
-          "lon": -3.710684,
-          "street": "Calle de la Cava Baja"
+          "id": "node/5514193418",
+          "name": "Hermanos Calvo Almacén de papel",
+          "lat": 40.349189,
+          "lon": -3.733468
         },
         {
-          "id": "node/1007383062",
-          "lat": 40.410495,
-          "lon": -3.709231,
-          "street": "Calle de la Cebada"
+          "id": "node/5511427862",
+          "name": "Recuperaciones De Blas",
+          "lat": 40.347869,
+          "lon": -3.72849
         }
       ],
-      "updatedAt": "2026-09-03T17:16:37.058Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:31:13.627Z"
     },
     "luggage-storage": {
       "count": 21,
@@ -2495,7 +2535,13 @@
           "lon": -3.739529
         }
       ],
-      "updatedAt": "2026-09-03T17:16:40.027Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:31:14.717Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2771,9 +2817,141 @@
           "name": "banco de diablos verdes",
           "lat": 40.345783,
           "lon": -3.702442
+        },
+        {
+          "id": "node/12364856156",
+          "lat": 40.418007,
+          "lon": -3.70621,
+          "street": "Plaza de las Descalzas"
+        },
+        {
+          "id": "node/9077087082",
+          "lat": 40.417486,
+          "lon": -3.7009,
+          "street": "Calle de Alcalá"
+        },
+        {
+          "id": "node/9077087058",
+          "lat": 40.416578,
+          "lon": -3.700604,
+          "street": "Carrera de San Jerónimo"
+        },
+        {
+          "id": "node/9077087069",
+          "lat": 40.416688,
+          "lon": -3.70033,
+          "street": "Plaza de Canalejas"
+        },
+        {
+          "id": "node/5308349734",
+          "lat": 40.418345,
+          "lon": -3.706768,
+          "street": "Plaza de San Martín"
+        },
+        {
+          "id": "node/11953490130",
+          "lat": 40.417266,
+          "lon": -3.700093,
+          "street": "Calle Sevilla"
+        },
+        {
+          "id": "node/9077087066",
+          "lat": 40.417543,
+          "lon": -3.699893,
+          "street": "Calle de Sevilla"
+        },
+        {
+          "id": "node/10073567873",
+          "lat": 40.420271,
+          "lon": -3.702975,
+          "street": "Calle Gonzalo Jiménez de Quesada"
+        },
+        {
+          "id": "node/11240921681",
+          "lat": 40.420195,
+          "lon": -3.70562,
+          "street": "Gran Vía"
+        },
+        {
+          "id": "node/11252459012",
+          "lat": 40.418692,
+          "lon": -3.699577,
+          "street": "Calle de la Virgen de los Peligros"
+        },
+        {
+          "id": "node/11238707484",
+          "lat": 40.421065,
+          "lon": -3.704969,
+          "street": "Plaza de Santa María Soledad Torres Acosta"
+        },
+        {
+          "id": "node/6501212432",
+          "lat": 40.415941,
+          "lon": -3.709452,
+          "street": "Calle de los Milaneses"
+        },
+        {
+          "id": "node/6373247233",
+          "lat": 40.41301,
+          "lon": -3.700517,
+          "street": "Calle de Atocha"
+        },
+        {
+          "id": "node/6433322188",
+          "lat": 40.41229,
+          "lon": -3.704627,
+          "street": "Calle de Jesús y María"
+        },
+        {
+          "id": "node/11224726520",
+          "lat": 40.421346,
+          "lon": -3.704935,
+          "street": "Calle de la Luna"
+        },
+        {
+          "id": "node/13918158771",
+          "lat": 40.41364,
+          "lon": -3.699102,
+          "street": "Calle de las Huertas"
+        },
+        {
+          "id": "node/6499502902",
+          "lat": 40.412709,
+          "lon": -3.707498,
+          "street": "Calle de los Estudios"
+        },
+        {
+          "id": "node/11697025903",
+          "lat": 40.412992,
+          "lon": -3.699282,
+          "street": "Calle del León"
+        },
+        {
+          "id": "node/14068657956",
+          "lat": 40.420944,
+          "lon": -3.699661,
+          "street": "Plaza de Pedro Zerolo"
+        },
+        {
+          "id": "node/9047955441",
+          "lat": 40.415329,
+          "lon": -3.696948,
+          "street": "Calle de San Agustín"
+        },
+        {
+          "id": "node/6503522660",
+          "lat": 40.416648,
+          "lon": -3.711155,
+          "street": "Plaza de Santiago"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:47.802Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:16.161Z"
     },
     "compressed-air": {
       "count": 0,

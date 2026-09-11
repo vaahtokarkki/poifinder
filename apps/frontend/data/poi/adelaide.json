@@ -1,6 +1,6 @@
 {
   "city": "adelaide",
-  "generatedAt": "2026-09-03T17:39:06.239Z",
+  "generatedAt": "2026-09-11T10:33:44.172Z",
   "categories": {
     "toilets": {
       "count": 231,
@@ -215,7 +215,13 @@
           "lon": 138.63341
         }
       ],
-      "updatedAt": "2026-09-03T17:38:41.489Z"
+      "stats": {
+        "free": 76,
+        "paid": 1,
+        "stepFree": 69,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-11T10:33:38.788Z"
     },
     "drinking-water": {
       "count": 370,
@@ -249,9 +255,157 @@
           "name": "Peter Mckay Reserve Playyground",
           "lat": -34.862916,
           "lon": 138.586482
+        },
+        {
+          "id": "node/3760351164",
+          "lat": -34.928428,
+          "lon": 138.600463,
+          "fee": "no",
+          "street": "Victoria Square"
+        },
+        {
+          "id": "node/3760351161",
+          "lat": -34.927263,
+          "lon": 138.600379,
+          "fee": "no",
+          "street": "Flinders Street"
+        },
+        {
+          "id": "node/3760351166",
+          "lat": -34.929932,
+          "lon": 138.600585,
+          "street": "Angas Street"
+        },
+        {
+          "id": "node/3760351162",
+          "lat": -34.927316,
+          "lon": 138.59937,
+          "street": "Franklin Street"
+        },
+        {
+          "id": "node/3760351167",
+          "lat": -34.929982,
+          "lon": 138.599614,
+          "fee": "no",
+          "street": "Gouger Street"
+        },
+        {
+          "id": "node/3760370712",
+          "lat": -34.931382,
+          "lon": 138.600315,
+          "street": "King William Street"
+        },
+        {
+          "id": "node/11670999581",
+          "lat": -34.930024,
+          "lon": 138.597636,
+          "street": "Third Avenue Mall"
+        },
+        {
+          "id": "node/3760372982",
+          "lat": -34.92573,
+          "lon": 138.597718,
+          "street": "Topham Mall"
+        },
+        {
+          "id": "node/3760373502",
+          "lat": -34.924295,
+          "lon": 138.599342,
+          "street": "Currie Street"
+        },
+        {
+          "id": "node/3760379237",
+          "lat": -34.922933,
+          "lon": 138.600084,
+          "street": "Rundle Mall"
+        },
+        {
+          "id": "node/3760370713",
+          "lat": -34.932396,
+          "lon": 138.606084,
+          "street": "Pulteney Street"
+        },
+        {
+          "id": "node/3760379240",
+          "lat": -34.923676,
+          "lon": 138.605025,
+          "fee": "no",
+          "street": "Hindmarsh Square"
+        },
+        {
+          "id": "node/8343766817",
+          "lat": -34.931469,
+          "lon": 138.608494,
+          "street": "Neales Place"
+        },
+        {
+          "id": "node/3760363350",
+          "lat": -34.92132,
+          "lon": 138.601193,
+          "street": "North Terrace"
+        },
+        {
+          "id": "node/2620432017",
+          "lat": -34.935233,
+          "lon": 138.606825,
+          "street": "South Terrace"
+        },
+        {
+          "id": "node/13391863292",
+          "lat": -34.919949,
+          "lon": 138.598722,
+          "street": "Festival Drive"
+        },
+        {
+          "id": "node/1661875555",
+          "lat": -34.920966,
+          "lon": 138.607517,
+          "street": "Frome Road"
+        },
+        {
+          "id": "node/2391804265",
+          "lat": -34.919536,
+          "lon": 138.596132,
+          "street": "Torrens Foot Bridge"
+        },
+        {
+          "id": "node/3760371680",
+          "lat": -34.932022,
+          "lon": 138.612464,
+          "street": "Hutt Street"
+        },
+        {
+          "id": "node/2371399088",
+          "lat": -34.918059,
+          "lon": 138.598899,
+          "street": "King William Road"
+        },
+        {
+          "id": "node/3760368349",
+          "lat": -34.938716,
+          "lon": 138.605827,
+          "street": "City Dirt - B-Line"
+        },
+        {
+          "id": "node/3760368350",
+          "lat": -34.938989,
+          "lon": 138.605921,
+          "street": "City Dirt - Basic"
+        },
+        {
+          "id": "node/3760371156",
+          "lat": -34.917769,
+          "lon": 138.592431,
+          "street": "War Memorial Drive"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:43.278Z"
+      "stats": {
+        "free": 43,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:33:40.454Z"
     },
     "playgrounds": {
       "count": 328,
@@ -1210,7 +1364,13 @@
           "lon": 138.533354
         }
       ],
-      "updatedAt": "2026-09-03T17:38:52.488Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:40.961Z"
     },
     "post-boxes": {
       "count": 159,
@@ -1402,12 +1562,6 @@
       "count": 28,
       "pois": [
         {
-          "id": "node/13233682121",
-          "lat": -34.951057,
-          "lon": 138.607798,
-          "street": "Unley Road"
-        },
-        {
           "id": "node/12168969052",
           "name": "Vinnies Charity Donation Bank",
           "lat": -34.954667,
@@ -1428,12 +1582,6 @@
           "address": "West Thebarton Road 22"
         },
         {
-          "id": "node/11781521825",
-          "lat": -34.955107,
-          "lon": 138.584166,
-          "street": "Chelmsford Avenue"
-        },
-        {
           "id": "node/3362955170",
           "name": "Metro Waste",
           "lat": -34.912844,
@@ -1441,17 +1589,37 @@
           "address": "Murray Street 19-25"
         },
         {
-          "id": "node/11115128899",
-          "lat": -34.961716,
-          "lon": 138.601672,
-          "street": "Addiscombe Place"
-        },
-        {
           "id": "way/76700123",
           "name": "Welland Waste And Recycling Depot",
           "lat": -34.910421,
           "lon": 138.557857,
           "fee": "yes"
+        },
+        {
+          "id": "way/1102266208",
+          "name": "Magill Recycling",
+          "lat": -34.912354,
+          "lon": 138.679916,
+          "openingHours": "Mo-Fr 08:00-16:30; Sa 08:00-13:00; PH,Su 09:00-13:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13233682121",
+          "lat": -34.951057,
+          "lon": 138.607798,
+          "street": "Unley Road"
+        },
+        {
+          "id": "node/11781521825",
+          "lat": -34.955107,
+          "lon": 138.584166,
+          "street": "Chelmsford Avenue"
+        },
+        {
+          "id": "node/11115128899",
+          "lat": -34.961716,
+          "lon": 138.601672,
+          "street": "Addiscombe Place"
         },
         {
           "id": "node/11768394651",
@@ -1470,17 +1638,15 @@
           "lat": -34.93775,
           "lon": 138.537116,
           "street": "Plaza"
-        },
-        {
-          "id": "way/1102266208",
-          "name": "Magill Recycling",
-          "lat": -34.912354,
-          "lon": 138.679916,
-          "openingHours": "Mo-Fr 08:00-16:30; Sa 08:00-13:00; PH,Su 09:00-13:00",
-          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:55.868Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:42.280Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1708,7 +1874,13 @@
           "lon": 138.555512
         }
       ],
-      "updatedAt": "2026-09-03T17:38:58.068Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:43.205Z"
     },
     "camp-sites": {
       "count": 5,
@@ -2080,9 +2252,75 @@
           "name": "Undercover Seat (in Small Shelter)",
           "lat": -34.871632,
           "lon": 138.598639
+        },
+        {
+          "id": "node/2921472025",
+          "lat": -34.928346,
+          "lon": 138.600446,
+          "street": "Victoria Square"
+        },
+        {
+          "id": "node/12316725534",
+          "lat": -34.928791,
+          "lon": 138.601085,
+          "street": "Wakefield Street"
+        },
+        {
+          "id": "node/12318296203",
+          "lat": -34.928336,
+          "lon": 138.601672,
+          "street": "Victoria Place"
+        },
+        {
+          "id": "node/2921471695",
+          "lat": -34.927271,
+          "lon": 138.600439,
+          "street": "Flinders Street"
+        },
+        {
+          "id": "node/2921472055",
+          "lat": -34.929813,
+          "lon": 138.60058,
+          "street": "King William Street"
+        },
+        {
+          "id": "node/2921472030",
+          "lat": -34.928549,
+          "lon": 138.598987,
+          "street": "Grote Street"
+        },
+        {
+          "id": "node/2921472059",
+          "lat": -34.929942,
+          "lon": 138.600682,
+          "street": "Angas Street"
+        },
+        {
+          "id": "node/2921471696",
+          "lat": -34.927295,
+          "lon": 138.599417,
+          "street": "Franklin Street"
+        },
+        {
+          "id": "node/2921471690",
+          "lat": -34.92683,
+          "lon": 138.600809,
+          "street": "Paul Kelly Lane"
+        },
+        {
+          "id": "node/2921472060",
+          "lat": -34.929986,
+          "lon": 138.599524,
+          "street": "Gouger Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:06.138Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:33:44.070Z"
     },
     "compressed-air": {
       "count": 0,

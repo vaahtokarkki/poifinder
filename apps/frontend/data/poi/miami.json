@@ -1,6 +1,6 @@
 {
   "city": "miami",
-  "generatedAt": "2026-09-03T17:28:42.075Z",
+  "generatedAt": "2026-09-11T10:32:30.452Z",
   "categories": {
     "toilets": {
       "count": 40,
@@ -61,7 +61,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:23.267Z"
+      "stats": {
+        "free": 11,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:24.586Z"
     },
     "drinking-water": {
       "count": 32,
@@ -90,9 +96,88 @@
           "lat": 25.775498,
           "lon": -80.131451,
           "context": "Lummus Park"
+        },
+        {
+          "id": "node/9533135656",
+          "lat": 25.76684,
+          "lon": -80.195443,
+          "street": "Southwest 1st Avenue"
+        },
+        {
+          "id": "node/7564366507",
+          "lat": 25.745767,
+          "lon": -80.19325,
+          "street": "Rickenbacker Trail"
+        },
+        {
+          "id": "node/12299713501",
+          "lat": 25.749846,
+          "lon": -80.211373,
+          "street": "M-Path"
+        },
+        {
+          "id": "node/8999125055",
+          "lat": 25.761889,
+          "lon": -80.226323,
+          "street": "Southwest 19th Avenue"
+        },
+        {
+          "id": "node/8999103695",
+          "lat": 25.760128,
+          "lon": -80.228237,
+          "street": "Southwest 21st Avenue"
+        },
+        {
+          "id": "node/13386501601",
+          "lat": 25.735882,
+          "lon": -80.22795,
+          "street": "Siegendorf Bicycle Path"
+        },
+        {
+          "id": "node/5900725469",
+          "lat": 25.733823,
+          "lon": -80.2422,
+          "street": "Shipping Avenue"
+        },
+        {
+          "id": "node/5628700022",
+          "lat": 25.795206,
+          "lon": -80.136449,
+          "street": "Meridian Avenue"
+        },
+        {
+          "id": "node/7152265861",
+          "lat": 25.790568,
+          "lon": -80.13208,
+          "street": "Lincoln Road"
+        },
+        {
+          "id": "node/5633833945",
+          "lat": 25.791231,
+          "lon": -80.132373,
+          "street": "Lincoln Lane North"
+        },
+        {
+          "id": "node/5674085508",
+          "lat": 25.788594,
+          "lon": -80.128344,
+          "street": "South Beach Boardwalk"
+        },
+        {
+          "id": "node/7561087163",
+          "lat": 25.699765,
+          "lon": -80.161765,
+          "fee": "no",
+          "street": "Crandon Boulevard"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:24.987Z"
+      "stats": {
+        "free": 5,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:26.523Z"
     },
     "playgrounds": {
       "count": 63,
@@ -897,7 +982,13 @@
           "lon": -80.263195
         }
       ],
-      "updatedAt": "2026-09-03T17:28:31.729Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:27.070Z"
     },
     "post-boxes": {
       "count": 14,
@@ -988,6 +1079,14 @@
       "count": 34,
       "pois": [
         {
+          "id": "node/6085697063",
+          "name": "USA Scrap Metal & Recycling",
+          "lat": 25.798924,
+          "lon": -80.246875,
+          "address": "Northwest North River Drive 3147",
+          "openingHours": "Mo-Fr 07:30-17:00; Sa 07:00-15:00"
+        },
+        {
           "id": "node/9533135617",
           "lat": 25.765466,
           "lon": -80.195436,
@@ -1016,17 +1115,15 @@
           "lat": 25.790327,
           "lon": -80.135416,
           "street": "Euclid Avenue"
-        },
-        {
-          "id": "node/6085697063",
-          "name": "USA Scrap Metal & Recycling",
-          "lat": 25.798924,
-          "lon": -80.246875,
-          "address": "Northwest North River Drive 3147",
-          "openingHours": "Mo-Fr 07:30-17:00; Sa 07:00-15:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:34.430Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:28.249Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1235,7 +1332,13 @@
     "outdoor-gyms": {
       "count": 23,
       "pois": [],
-      "updatedAt": "2026-09-03T17:28:36.100Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:29.218Z"
     },
     "camp-sites": {
       "count": 0,
@@ -1417,9 +1520,69 @@
           "name": "Bench with sea view",
           "lat": 25.756783,
           "lon": -80.19035
+        },
+        {
+          "id": "node/12684694660",
+          "lat": 25.762831,
+          "lon": -80.195257,
+          "street": "Southwest 1st Avenue"
+        },
+        {
+          "id": "node/12684917970",
+          "lat": 25.762704,
+          "lon": -80.195364,
+          "street": "M-Path"
+        },
+        {
+          "id": "node/7566672592",
+          "lat": 25.758746,
+          "lon": -80.194498,
+          "street": "Southwest 15th Road"
+        },
+        {
+          "id": "node/7566672596",
+          "lat": 25.758641,
+          "lon": -80.194493,
+          "street": "South Miami Avenue"
+        },
+        {
+          "id": "node/7564002002",
+          "lat": 25.755607,
+          "lon": -80.196817,
+          "street": "Brickell Avenue"
+        },
+        {
+          "id": "node/6583009093",
+          "lat": 25.769286,
+          "lon": -80.194647,
+          "street": "Riverwalk"
+        },
+        {
+          "id": "node/7684177903",
+          "lat": 25.773903,
+          "lon": -80.194502,
+          "street": "West Flagler Street"
+        },
+        {
+          "id": "node/9045362910",
+          "lat": 25.775174,
+          "lon": -80.201477,
+          "street": "Northwest North River Drive"
+        },
+        {
+          "id": "node/9045362898",
+          "lat": 25.775238,
+          "lon": -80.201675,
+          "street": "Miami River Greenway"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:41.974Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:30.351Z"
     },
     "compressed-air": {
       "count": 0,

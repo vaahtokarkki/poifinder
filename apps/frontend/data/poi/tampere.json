@@ -1,6 +1,6 @@
 {
   "city": "tampere",
-  "generatedAt": "2026-09-03T16:37:32.236Z",
+  "generatedAt": "2026-09-11T10:26:11.690Z",
   "categories": {
     "toilets": {
       "count": 94,
@@ -234,12 +234,59 @@
           "context": "Tietotalo"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:10.225Z"
+      "stats": {
+        "free": 45,
+        "paid": 5,
+        "stepFree": 32,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:26:05.984Z"
     },
     "drinking-water": {
       "count": 8,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:37:11.520Z"
+      "pois": [
+        {
+          "id": "node/13893983034",
+          "lat": 61.495291,
+          "lon": 23.760795,
+          "fee": "no",
+          "street": "Kirkkokatu"
+        },
+        {
+          "id": "node/13159226764",
+          "lat": 61.489866,
+          "lon": 23.752464,
+          "fee": "no",
+          "street": "Eteläpuiston rantapolku"
+        },
+        {
+          "id": "node/13947973203",
+          "lat": 61.507488,
+          "lon": 23.766677,
+          "fee": "no",
+          "street": "Kekkosenkatu"
+        },
+        {
+          "id": "node/13951001200",
+          "lat": 61.491343,
+          "lon": 23.731416,
+          "fee": "no",
+          "street": "Jalkasaarentie"
+        },
+        {
+          "id": "node/316023306",
+          "lat": 61.518795,
+          "lon": 23.887321,
+          "street": "Metsätie"
+        }
+      ],
+      "stats": {
+        "free": 6,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:07.736Z"
     },
     "playgrounds": {
       "count": 609,
@@ -1512,7 +1559,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:18.562Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-11T10:26:08.228Z"
     },
     "post-boxes": {
       "count": 111,
@@ -1702,8 +1755,47 @@
       "updatedAt": "2026-09-03T16:37:20.546Z"
     },
     "recycling": {
-      "count": 2107,
+      "count": 2110,
       "pois": [
+        {
+          "id": "node/11910171442",
+          "lat": 61.49628,
+          "lon": 23.767001,
+          "context": "Koskikeskus"
+        },
+        {
+          "id": "way/1078270515",
+          "name": "Nekalan jäteasema",
+          "lat": 61.480205,
+          "lon": 23.796857,
+          "address": "Kuoppamäentie 17",
+          "fee": "yes"
+        },
+        {
+          "id": "node/2549977984",
+          "name": "Kierrätyskeskus",
+          "lat": 61.517195,
+          "lon": 23.657814
+        },
+        {
+          "id": "node/9775625128",
+          "name": "Ahvenisjärventie 21",
+          "lat": 61.448001,
+          "lon": 23.835293
+        },
+        {
+          "id": "node/13533243703",
+          "name": "Rinki-ekopiste",
+          "lat": 61.467238,
+          "lon": 23.642983,
+          "address": "Niemenmaantie 2"
+        },
+        {
+          "id": "way/722883904",
+          "name": "TOAS Mikontalo",
+          "lat": 61.446752,
+          "lon": 23.853286
+        },
         {
           "id": "node/9767806204",
           "lat": 61.500133,
@@ -1721,12 +1813,6 @@
           "lat": 61.495104,
           "lon": 23.759047,
           "street": "Satamakatu"
-        },
-        {
-          "id": "node/11910171442",
-          "lat": 61.49628,
-          "lon": 23.767001,
-          "context": "Koskikeskus"
         },
         {
           "id": "node/11330784094",
@@ -1763,42 +1849,15 @@
           "lat": 61.501826,
           "lon": 23.7546,
           "street": "Puuvillatehtaankatu"
-        },
-        {
-          "id": "way/1078270515",
-          "name": "Nekalan jäteasema",
-          "lat": 61.480205,
-          "lon": 23.796857,
-          "address": "Kuoppamäentie 17",
-          "fee": "yes"
-        },
-        {
-          "id": "node/2549977984",
-          "name": "Kierrätyskeskus",
-          "lat": 61.517195,
-          "lon": 23.657814
-        },
-        {
-          "id": "node/9775625128",
-          "name": "Ahvenisjärventie 21",
-          "lat": 61.448001,
-          "lon": 23.835293
-        },
-        {
-          "id": "node/13533243703",
-          "name": "Rinki-ekopiste",
-          "lat": 61.467238,
-          "lon": 23.642983,
-          "address": "Niemenmaantie 2"
-        },
-        {
-          "id": "way/722883904",
-          "name": "TOAS Mikontalo",
-          "lat": 61.446752,
-          "lon": 23.853286
         }
       ],
-      "updatedAt": "2026-09-03T16:37:22.625Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:09.648Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -1980,7 +2039,7 @@
       "updatedAt": "2026-09-03T16:37:23.528Z"
     },
     "outdoor-gyms": {
-      "count": 56,
+      "count": 67,
       "pois": [
         {
           "id": "node/3953855200",
@@ -2082,7 +2141,13 @@
           "lon": 23.855153
         }
       ],
-      "updatedAt": "2026-09-03T16:37:24.708Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:10.533Z"
     },
     "camp-sites": {
       "count": 4,
@@ -2290,16 +2355,58 @@
       "updatedAt": "2026-08-17T04:02:26.258Z"
     },
     "benches": {
-      "count": 1557,
+      "count": 1558,
       "pois": [
         {
           "id": "node/9861797572",
           "name": "Pölyttäjäpenkki",
           "lat": 61.490854,
           "lon": 23.752277
+        },
+        {
+          "id": "node/11158750779",
+          "lat": 61.497821,
+          "lon": 23.764133,
+          "street": "Hämeenkatu"
+        },
+        {
+          "id": "node/9723630612",
+          "lat": 61.497606,
+          "lon": 23.764963,
+          "street": "Hatanpään valtatie"
+        },
+        {
+          "id": "node/9740309514",
+          "lat": 61.499014,
+          "lon": 23.756772,
+          "street": "Kuninkaankatu"
+        },
+        {
+          "id": "node/13997728218",
+          "lat": 61.50004,
+          "lon": 23.759081,
+          "street": "Aleksis Kiven katu"
+        },
+        {
+          "id": "node/1414648315",
+          "lat": 61.495748,
+          "lon": 23.763759,
+          "street": "Kehräsaaren silta"
+        },
+        {
+          "id": "node/14075263735",
+          "lat": 61.499366,
+          "lon": 23.765695,
+          "street": "Kyttälänkatu"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:32.135Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:11.589Z"
     },
     "compressed-air": {
       "count": 2,

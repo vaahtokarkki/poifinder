@@ -1,6 +1,6 @@
 {
   "city": "zurich",
-  "generatedAt": "2026-09-03T16:59:03.038Z",
+  "generatedAt": "2026-09-11T10:29:37.961Z",
   "categories": {
     "toilets": {
       "count": 452,
@@ -271,7 +271,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:29.985Z"
+      "stats": {
+        "free": 222,
+        "paid": 101,
+        "stepFree": 203,
+        "partlyStepFree": 19
+      },
+      "updatedAt": "2026-09-11T10:29:29.556Z"
     },
     "drinking-water": {
       "count": 1321,
@@ -470,7 +476,13 @@
           "lon": 8.534262
         }
       ],
-      "updatedAt": "2026-09-03T16:58:32.505Z"
+      "stats": {
+        "free": 165,
+        "paid": 2,
+        "stepFree": 498,
+        "partlyStepFree": 100
+      },
+      "updatedAt": "2026-09-11T10:29:32.269Z"
     },
     "playgrounds": {
       "count": 1173,
@@ -2154,7 +2166,13 @@
           "openingHours": "Mo-Fr 09:00-12:00,14:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:42.306Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 101,
+        "partlyStepFree": 10
+      },
+      "updatedAt": "2026-09-11T10:29:33.112Z"
     },
     "post-boxes": {
       "count": 631,
@@ -2353,51 +2371,10 @@
           "context": "Globus Provisorium"
         },
         {
-          "id": "node/12832830817",
-          "lat": 47.37692,
-          "lon": 8.543892,
-          "street": "Central"
-        },
-        {
-          "id": "node/12452614371",
-          "lat": 47.378945,
-          "lon": 8.538139,
-          "openingHours": "24/7",
-          "wheelchair": "limited",
-          "street": "Zollbrücke"
-        },
-        {
-          "id": "node/4868938526",
-          "lat": 47.376754,
-          "lon": 8.536814,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "wheelchair": "limited",
-          "street": "Gessnerallee"
-        },
-        {
-          "id": "node/12116752792",
-          "lat": 47.379022,
-          "lon": 8.537255,
-          "street": "Stadttunnel"
-        },
-        {
           "id": "node/11098061978",
           "lat": 47.375533,
           "lon": 8.536192,
           "context": "Migros City"
-        },
-        {
-          "id": "node/13887029638",
-          "lat": 47.378279,
-          "lon": 8.536161,
-          "street": "Europaplatz"
-        },
-        {
-          "id": "node/299752097",
-          "lat": 47.37979,
-          "lon": 8.54669,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "street": "Weinbergfussweg"
         },
         {
           "id": "node/11098019745",
@@ -2405,54 +2382,6 @@
           "lon": 8.537822,
           "openingHours": "Mo-Sa 09:00-20:00",
           "context": "St. Annahof"
-        },
-        {
-          "id": "node/12873397894",
-          "lat": 47.373105,
-          "lon": 8.53736,
-          "wheelchair": "no",
-          "street": "Füsslistrasse"
-        },
-        {
-          "id": "node/7196042300",
-          "lat": 47.380284,
-          "lon": 8.536293,
-          "street": "Konradstrasse"
-        },
-        {
-          "id": "node/4868938069",
-          "lat": 47.382953,
-          "lon": 8.54393,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "street": "Sonneggstrasse"
-        },
-        {
-          "id": "node/3472817631",
-          "lat": 47.378056,
-          "lon": 8.532243,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "wheelchair": "yes",
-          "street": "Lagerstrasse"
-        },
-        {
-          "id": "node/894815083",
-          "lat": 47.371155,
-          "lon": 8.546927,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "street": "Untere Zäune"
-        },
-        {
-          "id": "node/3472817641",
-          "lat": 47.377289,
-          "lon": 8.531462,
-          "street": "Militärstrasse"
-        },
-        {
-          "id": "node/12118413928",
-          "lat": 47.37781,
-          "lon": 8.530179,
-          "openingHours": "24/7",
-          "street": "Kanonengasse"
         },
         {
           "id": "node/5169910275",
@@ -2463,99 +2392,201 @@
           "openingHours": "Mo-Fr 08:30-12:00, Mo-Fr 13:00-16:30"
         },
         {
-          "id": "node/943875481",
-          "lat": 47.383434,
-          "lon": 8.549148,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "street": "Vogelsangstrasse"
+          "id": "node/9906163197",
+          "name": "Coop Recycling-Station",
+          "lat": 47.413226,
+          "lon": 8.540845,
+          "openingHours": "Mo-Sa 07:30-21:00"
         },
         {
-          "id": "node/5082669805",
-          "lat": 47.379041,
-          "lon": 8.529293,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "wheelchair": "yes",
-          "street": "Tellstrasse"
+          "id": "node/13950263208",
+          "name": "Bioabfall",
+          "lat": 47.414283,
+          "lon": 8.558931,
+          "wheelchair": "limited"
         },
         {
-          "id": "node/13875898013",
-          "lat": 47.37361,
-          "lon": 8.529729,
-          "street": "Badenerstrasse"
+          "id": "node/10574542665",
+          "name": "Texaid",
+          "lat": 47.37994,
+          "lon": 8.483284,
+          "openingHours": "24/7"
         },
         {
-          "id": "node/4868938068",
-          "lat": 47.376573,
-          "lon": 8.554822,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "street": "Moussonstrasse"
+          "id": "node/8635855910",
+          "name": "Sammelpunkt Kunstoff-Sammelsack",
+          "lat": 47.414329,
+          "lon": 8.56116,
+          "openingHours": "Th 06:00-13:00"
         },
         {
-          "id": "node/546722547",
-          "lat": 47.382472,
-          "lon": 8.552164,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "street": "Spyriplatz"
+          "id": "node/8937820217",
+          "name": "Hauptsammelstelle Zollikon",
+          "lat": 47.343707,
+          "lon": 8.575192,
+          "address": "Dachslerenstrasse 15",
+          "openingHours": "Tu,Th 13:30-16:30; Sa 09:00-12:00"
         },
         {
-          "id": "node/2341997683",
-          "lat": 47.376206,
-          "lon": 8.528397,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "street": "Müllerstrasse"
+          "id": "node/8418121605",
+          "name": "Recyclingstelle Sika",
+          "lat": 47.397952,
+          "lon": 8.489653
         },
         {
-          "id": "node/105507813",
-          "lat": 47.384978,
-          "lon": 8.54769,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "wheelchair": "yes",
-          "street": "Ottikerstrasse"
+          "id": "node/4868938058",
+          "name": "Sonderabfall-Sammelstelle Hagenholz",
+          "lat": 47.415517,
+          "lon": 8.564582,
+          "address": "Hagenholzstrasse 116",
+          "openingHours": "Mo-Fr 07:00-17:00; PH off"
         },
         {
-          "id": "node/295902440",
-          "lat": 47.374309,
-          "lon": 8.528685,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "wheelchair": "yes",
-          "street": "St. Jakobstrasse"
+          "id": "way/1324450124",
+          "name": "Sammelstelle Bahnhof Zollikon",
+          "lat": 47.33831,
+          "lon": 8.569122,
+          "openingHours": "Mo-Sa 07:00-19:00",
+          "wheelchair": "yes"
         },
         {
-          "id": "node/1601716726",
-          "lat": 47.368885,
-          "lon": 8.534974,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "street": "Gartenstrasse"
+          "id": "node/4868938059",
+          "name": "Recyclinghof Werdhölzli",
+          "lat": 47.397838,
+          "lon": 8.481345,
+          "address": "Bändlistrasse 94",
+          "openingHours": "Mo-Fr 13:00-19:00; Sa 07:30-14:00"
         },
         {
-          "id": "node/10891548839",
-          "lat": 47.376304,
-          "lon": 8.527735,
-          "openingHours": "Mo-Sa 07:00-20:00",
-          "wheelchair": "yes",
-          "street": "Molkenstrasse"
+          "id": "node/7671718246",
+          "name": "Labdoo Annahmestelle für Laptops",
+          "lat": 47.391012,
+          "lon": 8.473501,
+          "address": "Dachslernstrasse 87",
+          "wheelchair": "no"
         },
         {
-          "id": "node/11096420934",
-          "lat": 47.383108,
-          "lon": 8.530945,
-          "openingHours": "24/7",
-          "street": "Josefstrasse"
+          "id": "node/13930373501",
+          "name": "Biogas Zürich",
+          "lat": 47.402034,
+          "lon": 8.4726,
+          "address": "Paul-Pflüger-Strasse 104",
+          "openingHours": "Mo-Fr 07:00-17:00"
         },
         {
-          "id": "node/13860322760",
-          "lat": 47.36723,
-          "lon": 8.54512,
-          "street": "Rämistrasse"
+          "id": "node/84516808",
+          "name": "Sihlhof",
+          "lat": 47.323946,
+          "lon": 8.519818,
+          "openingHours": "Mo-Fr 07:00-12:00,13:00-19:00; Sa 07:00-12:00,13:00-17:00; PH closed",
+          "wheelchair": "yes"
         },
         {
-          "id": "node/9794911618",
-          "lat": 47.367056,
-          "lon": 8.544825,
-          "street": "Utoquai"
+          "id": "way/425913594",
+          "name": "Recyclinghof Looächer",
+          "lat": 47.425377,
+          "lon": 8.496011,
+          "openingHours": "Mo-Fr 07:00-17:00; Sa 07:30-14:00"
+        },
+        {
+          "id": "way/388711269",
+          "name": "Mülliland",
+          "lat": 47.410092,
+          "lon": 8.611835,
+          "address": "Kriesbachstrasse 2",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/3912974308",
+          "name": "Grütstrasse",
+          "lat": 47.318882,
+          "lon": 8.534417,
+          "openingHours": "Mo-Fr 07:00-12:00,13:00-19:00; Sa 07:00-12:00,13:00-17:00; PH closed",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/5317028130",
+          "name": "K. Müller AG - Entsorgung und Transporte",
+          "lat": 47.410891,
+          "lon": 8.612418
+        },
+        {
+          "id": "way/1421493974",
+          "name": "Sammelstelle am Lanzrain",
+          "lat": 47.407302,
+          "lon": 8.467149
+        },
+        {
+          "id": "node/5417435670",
+          "name": "St. Anna-Strasse",
+          "lat": 47.433348,
+          "lon": 8.56756
+        },
+        {
+          "id": "way/405475137",
+          "name": "Entsorgungspark Adliswil",
+          "lat": 47.3176,
+          "lon": 8.52905,
+          "openingHours": "Mo 13:30-17:00; Tu 09:00-12:00,13:30-17:00; We 13:30-19:00; Th 09:00-12:00,13:30-17:00; Fr 13:30-19:00; Sa 08:00-13:30; PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/1421493977",
+          "name": "Sammelstelle am Werkgebäude",
+          "lat": 47.406131,
+          "lon": 8.463698,
+          "address": "Kirchweg 125",
+          "openingHours": "Mo-Sa 07:00-20:00; Su,PH off"
+        },
+        {
+          "id": "way/1199582042",
+          "name": "Entorgungs-Sammelstelle Püntenstrasse",
+          "lat": 47.327837,
+          "lon": 8.489115,
+          "openingHours": "Mo,We,Fr 17:00-18:30; Sa 09:00-12:00; SH Mo,Fr off"
+        },
+        {
+          "id": "way/51334949",
+          "name": "Abfallsammelstelle",
+          "lat": 47.335148,
+          "lon": 8.476562,
+          "address": "Kirchgasse 47",
+          "openingHours": "Tu,We 14:00-18:30; Sa 08:00-12:00"
+        },
+        {
+          "id": "node/7994815494",
+          "name": "Nebensammelstelle Zopfstrasse",
+          "lat": 47.318816,
+          "lon": 8.515416
+        },
+        {
+          "id": "way/38909155",
+          "name": "Hauptsammelstelle im Rohr",
+          "lat": 47.439013,
+          "lon": 8.558174,
+          "address": "Rohrholzstrasse 53",
+          "openingHours": "Mo-Fr 14:00-17:00; Sa 08:00-12:00"
+        },
+        {
+          "id": "node/7994815493",
+          "name": "Nebensammelstelle Sportplatz Tal",
+          "lat": 47.312292,
+          "lon": 8.536601
+        },
+        {
+          "id": "node/1403172310",
+          "name": "Hauptsammelstelle Dübendorf",
+          "lat": 47.395854,
+          "lon": 8.633263
         }
       ],
-      "updatedAt": "2026-09-03T16:58:47.559Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 91,
+        "partlyStepFree": 28
+      },
+      "updatedAt": "2026-09-11T10:29:35.077Z"
     },
     "luggage-storage": {
       "count": 13,
@@ -3006,7 +3037,13 @@
           "address": "Uetlibergweg"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:50.213Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:29:36.225Z"
     },
     "camp-sites": {
       "count": 5,
@@ -3687,9 +3724,111 @@
           "name": "Säntisblick",
           "lat": 47.355603,
           "lon": 8.640983
+        },
+        {
+          "id": "node/8738493821",
+          "lat": 47.377259,
+          "lon": 8.541142,
+          "street": "Bahnhofquai"
+        },
+        {
+          "id": "node/4144499108",
+          "lat": 47.376682,
+          "lon": 8.543189,
+          "street": "Bahnhofbrücke"
+        },
+        {
+          "id": "node/364713477",
+          "lat": 47.376655,
+          "lon": 8.543244,
+          "street": "Central"
+        },
+        {
+          "id": "node/11924682153",
+          "lat": 47.375769,
+          "lon": 8.54216,
+          "street": "Mühlesteg"
+        },
+        {
+          "id": "node/12142261221",
+          "lat": 47.37665,
+          "lon": 8.539655,
+          "street": "Bahnhofstrasse"
+        },
+        {
+          "id": "node/5113288026",
+          "lat": 47.378771,
+          "lon": 8.541216,
+          "street": "Museumstrasse"
+        },
+        {
+          "id": "node/1357158630",
+          "lat": 47.378589,
+          "lon": 8.543095,
+          "street": "Walchetor"
+        },
+        {
+          "id": "node/10738940346",
+          "lat": 47.378751,
+          "lon": 8.543132,
+          "street": "Walcheplatz"
+        },
+        {
+          "id": "node/9979526024",
+          "lat": 47.375715,
+          "lon": 8.538888,
+          "street": "Schweizergasse"
+        },
+        {
+          "id": "node/6420698155",
+          "lat": 47.374622,
+          "lon": 8.541355,
+          "street": "Lindenhofstrasse"
+        },
+        {
+          "id": "node/5696521227",
+          "lat": 47.375645,
+          "lon": 8.538666,
+          "street": "Lintheschergasse"
+        },
+        {
+          "id": "node/5687767017",
+          "lat": 47.375376,
+          "lon": 8.53883,
+          "street": "Usteristrasse"
+        },
+        {
+          "id": "node/7052737198",
+          "lat": 47.374658,
+          "lon": 8.539848,
+          "street": "Werdmühleplatz"
+        },
+        {
+          "id": "node/7052737196",
+          "lat": 47.37431,
+          "lon": 8.541253,
+          "street": "Uraniastrasse"
+        },
+        {
+          "id": "node/8658549469",
+          "lat": 47.373992,
+          "lon": 8.543008,
+          "street": "Limmatquai"
+        },
+        {
+          "id": "node/439185050",
+          "lat": 47.373872,
+          "lon": 8.541291,
+          "street": "Oetenbachgasse"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:02.934Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:37.860Z"
     },
     "compressed-air": {
       "count": 0,

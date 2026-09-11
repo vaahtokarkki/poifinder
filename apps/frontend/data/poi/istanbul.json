@@ -1,6 +1,6 @@
 {
   "city": "istanbul",
-  "generatedAt": "2026-09-03T17:47:35.104Z",
+  "generatedAt": "2026-09-11T10:34:28.091Z",
   "categories": {
     "toilets": {
       "count": 251,
@@ -131,7 +131,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:09.710Z"
+      "stats": {
+        "free": 34,
+        "paid": 89,
+        "stepFree": 68,
+        "partlyStepFree": 8
+      },
+      "updatedAt": "2026-09-11T10:34:19.847Z"
     },
     "drinking-water": {
       "count": 87,
@@ -334,7 +340,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:11.802Z"
+      "stats": {
+        "free": 4,
+        "paid": 9,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:22.057Z"
     },
     "playgrounds": {
       "count": 687,
@@ -1825,7 +1837,13 @@
           "lon": 28.975402
         }
       ],
-      "updatedAt": "2026-09-03T17:47:20.971Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 17,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:34:22.816Z"
     },
     "post-boxes": {
       "count": 13,
@@ -1898,28 +1916,10 @@
       "count": 139,
       "pois": [
         {
-          "id": "node/11143550448",
-          "lat": 41.022116,
-          "lon": 28.975078,
-          "street": "Kemeraltı Caddesi"
-        },
-        {
           "id": "node/2901384329",
           "name": "galata digital - ambalaj atıgı",
           "lat": 41.023004,
           "lon": 28.97631
-        },
-        {
-          "id": "node/11370686335",
-          "lat": 41.024378,
-          "lon": 28.971253,
-          "street": "Arap Cami Çıkmazı Sokağı"
-        },
-        {
-          "id": "node/9610623414",
-          "lat": 41.027211,
-          "lon": 28.97931,
-          "street": "Karabaş Mektebi Sokağı"
         },
         {
           "id": "node/2899917112",
@@ -1928,40 +1928,10 @@
           "lon": 28.970995
         },
         {
-          "id": "node/11370679697",
-          "lat": 41.028752,
-          "lon": 28.983233,
-          "street": "Sanatkarlar Caddesi"
-        },
-        {
           "id": "node/2899917111",
           "name": "Asmalı Mescit Area",
           "lat": 41.02967,
           "lon": 28.97445
-        },
-        {
-          "id": "node/11370621616",
-          "lat": 41.030114,
-          "lon": 28.983987,
-          "street": "Akarsu Yokuşu"
-        },
-        {
-          "id": "node/9621046475",
-          "lat": 41.031399,
-          "lon": 28.982026,
-          "street": "Türkgücü Caddesi"
-        },
-        {
-          "id": "node/11914941604",
-          "lat": 41.031424,
-          "lon": 28.974543,
-          "street": "Meşrutiyet Caddesi"
-        },
-        {
-          "id": "node/11138811159",
-          "lat": 41.031723,
-          "lon": 28.978575,
-          "street": "Hayriye Caddesi"
         },
         {
           "id": "node/2901608748",
@@ -1976,12 +1946,6 @@
           "lat": 41.033905,
           "lon": 28.978095,
           "wheelchair": "no"
-        },
-        {
-          "id": "node/9911204791",
-          "lat": 41.033483,
-          "lon": 28.987396,
-          "street": "Mebusan Yokuşu"
         },
         {
           "id": "node/2901872279",
@@ -2020,6 +1984,78 @@
           "lon": 28.984335
         },
         {
+          "id": "node/9179319188",
+          "name": "Atık Ambalajj Toplama",
+          "lat": 40.987621,
+          "lon": 29.021372
+        },
+        {
+          "id": "node/11363496095",
+          "lat": 41.055386,
+          "lon": 28.981408,
+          "context": "Bomonti Park"
+        },
+        {
+          "id": "node/13974237949",
+          "name": "Ambalaj Atıkları Kumbarası",
+          "lat": 40.98379,
+          "lon": 29.082871
+        },
+        {
+          "id": "node/11143550448",
+          "lat": 41.022116,
+          "lon": 28.975078,
+          "street": "Kemeraltı Caddesi"
+        },
+        {
+          "id": "node/11370686335",
+          "lat": 41.024378,
+          "lon": 28.971253,
+          "street": "Arap Cami Çıkmazı Sokağı"
+        },
+        {
+          "id": "node/9610623414",
+          "lat": 41.027211,
+          "lon": 28.97931,
+          "street": "Karabaş Mektebi Sokağı"
+        },
+        {
+          "id": "node/11370679697",
+          "lat": 41.028752,
+          "lon": 28.983233,
+          "street": "Sanatkarlar Caddesi"
+        },
+        {
+          "id": "node/11370621616",
+          "lat": 41.030114,
+          "lon": 28.983987,
+          "street": "Akarsu Yokuşu"
+        },
+        {
+          "id": "node/9621046475",
+          "lat": 41.031399,
+          "lon": 28.982026,
+          "street": "Türkgücü Caddesi"
+        },
+        {
+          "id": "node/11914941604",
+          "lat": 41.031424,
+          "lon": 28.974543,
+          "street": "Meşrutiyet Caddesi"
+        },
+        {
+          "id": "node/11138811159",
+          "lat": 41.031723,
+          "lon": 28.978575,
+          "street": "Hayriye Caddesi"
+        },
+        {
+          "id": "node/9911204791",
+          "lat": 41.033483,
+          "lon": 28.987396,
+          "street": "Mebusan Yokuşu"
+        },
+        {
           "id": "node/11143541719",
           "lat": 41.041982,
           "lon": 28.983858,
@@ -2030,12 +2066,6 @@
           "lat": 40.995768,
           "lon": 29.024628,
           "street": "Rıhtım Caddesi"
-        },
-        {
-          "id": "node/9179319188",
-          "name": "Atık Ambalajj Toplama",
-          "lat": 40.987621,
-          "lon": 29.021372
         },
         {
           "id": "node/11186595345",
@@ -2066,21 +2096,15 @@
           "lat": 40.986392,
           "lon": 29.025609,
           "street": "Dr. Esat Işık Caddesi"
-        },
-        {
-          "id": "node/9179319191",
-          "lat": 40.981544,
-          "lon": 29.021157,
-          "street": "Ferit Tek Sokağı"
-        },
-        {
-          "id": "node/11026360539",
-          "lat": 40.983943,
-          "lon": 29.02413,
-          "street": "Moda Caddesi"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:24.612Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:24.660Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -2322,7 +2346,13 @@
           "lon": 28.900374
         }
       ],
-      "updatedAt": "2026-09-03T17:47:27.105Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:26.316Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2667,9 +2697,45 @@
           "name": "Stepler",
           "lat": 41.083695,
           "lon": 29.051627
+        },
+        {
+          "id": "node/5325483532",
+          "lat": 41.007405,
+          "lon": 28.978012,
+          "street": "Sultanahmet Meydanı"
+        },
+        {
+          "id": "node/5475982723",
+          "lat": 41.006533,
+          "lon": 28.978088,
+          "street": "Dalbastı Sokağı"
+        },
+        {
+          "id": "node/13764374458",
+          "lat": 41.004766,
+          "lon": 28.981753,
+          "street": "Sarayburnu  - Yedikule Bisiklet/Yaya Yolu"
+        },
+        {
+          "id": "node/11010246095",
+          "lat": 41.004682,
+          "lon": 28.983317,
+          "street": "Kennedy Caddesi"
+        },
+        {
+          "id": "node/1909210997",
+          "lat": 41.008661,
+          "lon": 28.970985,
+          "street": "Yeniçeriler Caddesi"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:35.003Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:27.989Z"
     },
     "compressed-air": {
       "count": 0,

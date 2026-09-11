@@ -1,9 +1,9 @@
 {
   "city": "toulouse",
-  "generatedAt": "2026-09-03T17:14:41.937Z",
+  "generatedAt": "2026-09-11T10:31:12.954Z",
   "categories": {
     "toilets": {
-      "count": 215,
+      "count": 223,
       "pois": [
         {
           "id": "node/2904778854",
@@ -62,6 +62,12 @@
           "context": "Gare routière Pierre Semard"
         },
         {
+          "id": "node/14144246300",
+          "lat": 43.600389,
+          "lon": 1.430774,
+          "context": "efFORMip"
+        },
+        {
           "id": "node/10980482083",
           "lat": 43.594077,
           "lon": 1.449367,
@@ -104,7 +110,7 @@
           "lat": 43.573226,
           "lon": 1.493944,
           "address": "Avenue Marcel Dassault 2",
-          "openingHours": "Mo-Th,Su 09:00-02:00; Fr,Sa 09:00-03:00",
+          "openingHours": "Mo-Th 10:00-02:00; Fr-Sa 10:00-03:00; Su 10:00-02:00",
           "wheelchair": "limited"
         },
         {
@@ -138,7 +144,13 @@
           "openingHours": "Mo-Sa 09:30-20:00 \"boutiques\"; Mo-Sa 08:30-21:00 \"hypermarché\"; Su 09:00-12:30 \"hypermarché\"; PH 10:00-19:00 \"boutiques\"; PH 09:00-20:00 \"hypermarché\""
         }
       ],
-      "updatedAt": "2026-09-03T17:14:11.210Z"
+      "stats": {
+        "free": 143,
+        "paid": 5,
+        "stepFree": 120,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-11T10:31:05.897Z"
     },
     "drinking-water": {
       "count": 354,
@@ -166,9 +178,175 @@
           "name": "Eau potable",
           "lat": 43.538854,
           "lon": 1.456205
+        },
+        {
+          "id": "node/10934190952",
+          "lat": 43.604604,
+          "lon": 1.444461,
+          "fee": "no",
+          "street": "Cour Henri IV"
+        },
+        {
+          "id": "node/2966633345",
+          "lat": 43.604803,
+          "lon": 1.444762,
+          "street": "Rue Lafayette"
+        },
+        {
+          "id": "node/14077370620",
+          "lat": 43.606041,
+          "lon": 1.445654,
+          "street": "Rue d'Alsace-Lorraine"
+        },
+        {
+          "id": "node/14071239171",
+          "lat": 43.604731,
+          "lon": 1.441246,
+          "street": "Rue Antoine Deville"
+        },
+        {
+          "id": "node/2457312937",
+          "lat": 43.604714,
+          "lon": 1.441234,
+          "street": "Rue Jean-Antoine Romiguières"
+        },
+        {
+          "id": "node/7734891210",
+          "lat": 43.606177,
+          "lon": 1.446452,
+          "street": "Place Victor Hugo"
+        },
+        {
+          "id": "node/13357757526",
+          "lat": 43.605069,
+          "lon": 1.447324,
+          "street": "Place du Président Wilson"
+        },
+        {
+          "id": "node/11037528958",
+          "lat": 43.606186,
+          "lon": 1.441108,
+          "street": "Place Yitzhak Rabin"
+        },
+        {
+          "id": "node/2465994247",
+          "lat": 43.603468,
+          "lon": 1.440798,
+          "street": "Rue Joseph Lakanal"
+        },
+        {
+          "id": "node/13167191001",
+          "lat": 43.606568,
+          "lon": 1.447568,
+          "street": "Boulevard de Strasbourg"
+        },
+        {
+          "id": "node/6207562013",
+          "lat": 43.602306,
+          "lon": 1.440941,
+          "street": "Rue Malbec"
+        },
+        {
+          "id": "node/2445153770",
+          "lat": 43.607578,
+          "lon": 1.44123,
+          "street": "Rue des Trois Renards"
+        },
+        {
+          "id": "node/410748731",
+          "lat": 43.601301,
+          "lon": 1.442146,
+          "street": "Rue Clémence Isaure"
+        },
+        {
+          "id": "node/13153062979",
+          "lat": 43.606275,
+          "lon": 1.449424,
+          "street": "Allées Jean Jaurès"
+        },
+        {
+          "id": "node/7058283903",
+          "lat": 43.6088,
+          "lon": 1.442497,
+          "street": "Allée du Père Marie-Antoine"
+        },
+        {
+          "id": "node/2478393442",
+          "lat": 43.600794,
+          "lon": 1.446887,
+          "wheelchair": "yes",
+          "street": "Rue des Arts"
+        },
+        {
+          "id": "node/7237370356",
+          "lat": 43.608506,
+          "lon": 1.441202,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Place Saint-Sernin"
+        },
+        {
+          "id": "node/7393649378",
+          "lat": 43.606803,
+          "lon": 1.438786,
+          "street": "Rue Albert Lautman"
+        },
+        {
+          "id": "node/1792495704",
+          "lat": 43.60162,
+          "lon": 1.439758,
+          "street": "Place de la Daurade"
+        },
+        {
+          "id": "node/9960917433",
+          "lat": 43.606767,
+          "lon": 1.449835,
+          "street": "Place d'Arménie"
+        },
+        {
+          "id": "node/4396159551",
+          "lat": 43.601496,
+          "lon": 1.438938,
+          "street": "Port de la Daurade"
+        },
+        {
+          "id": "node/7785155994",
+          "lat": 43.601148,
+          "lon": 1.439183,
+          "street": "Quai de la Daurade"
+        },
+        {
+          "id": "node/1329721734",
+          "lat": 43.610126,
+          "lon": 1.444478,
+          "street": "Rue Roquelaine"
+        },
+        {
+          "id": "node/7792398471",
+          "lat": 43.60894,
+          "lon": 1.439301,
+          "street": "Rue de la Chaîne"
+        },
+        {
+          "id": "node/2457312919",
+          "lat": 43.603955,
+          "lon": 1.436244,
+          "street": "Rue Valade"
+        },
+        {
+          "id": "node/7779399544",
+          "lat": 43.608804,
+          "lon": 1.450067,
+          "street": "Place de Belfort"
         }
       ],
-      "updatedAt": "2026-09-03T17:14:12.923Z"
+      "stats": {
+        "free": 44,
+        "paid": 0,
+        "stepFree": 26,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:31:08.182Z"
     },
     "playgrounds": {
       "count": 405,
@@ -1445,7 +1623,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:14:25.431Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 83,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:31:08.940Z"
     },
     "post-boxes": {
       "count": 353,
@@ -1453,7 +1637,7 @@
       "updatedAt": "2026-09-03T17:14:26.871Z"
     },
     "recycling": {
-      "count": 1517,
+      "count": 1518,
       "pois": [
         {
           "id": "node/5818162643",
@@ -1652,7 +1836,13 @@
           "lon": 1.382579
         }
       ],
-      "updatedAt": "2026-09-03T17:14:29.472Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:10.713Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -1927,7 +2117,13 @@
           "lon": 1.368757
         }
       ],
-      "updatedAt": "2026-09-03T17:14:31.508Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:11.645Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2301,7 +2497,7 @@
       "updatedAt": "2026-08-17T04:04:53.084Z"
     },
     "benches": {
-      "count": 4348,
+      "count": 4354,
       "pois": [
         {
           "id": "node/13610072466",
@@ -2314,9 +2510,75 @@
           "name": "Banc public",
           "lat": 43.553649,
           "lon": 1.472527
+        },
+        {
+          "id": "node/7332877114",
+          "lat": 43.604668,
+          "lon": 1.443886,
+          "street": "Cour Henri IV"
+        },
+        {
+          "id": "node/7332877113",
+          "lat": 43.604707,
+          "lon": 1.443878,
+          "street": "Rue Lafayette"
+        },
+        {
+          "id": "node/2979069316",
+          "lat": 43.604756,
+          "lon": 1.444759,
+          "street": "Rue Ernest Roschach"
+        },
+        {
+          "id": "node/6161887412",
+          "lat": 43.604854,
+          "lon": 1.443552,
+          "street": "Place du Capitole"
+        },
+        {
+          "id": "node/2966745910",
+          "lat": 43.604553,
+          "lon": 1.444977,
+          "street": "Quai 2"
+        },
+        {
+          "id": "node/2979069317",
+          "lat": 43.604762,
+          "lon": 1.445248,
+          "street": "Capitole"
+        },
+        {
+          "id": "node/2979069275",
+          "lat": 43.604303,
+          "lon": 1.445188,
+          "street": "Quai 1"
+        },
+        {
+          "id": "node/5633294977",
+          "lat": 43.605185,
+          "lon": 1.445652,
+          "street": "Rue d'Alsace-Lorraine"
+        },
+        {
+          "id": "node/11143158229",
+          "lat": 43.60353,
+          "lon": 1.444961,
+          "street": "Rue de la Pomme"
+        },
+        {
+          "id": "node/11012089240",
+          "lat": 43.604812,
+          "lon": 1.442389,
+          "street": "Rue Jean-Antoine Romiguières"
         }
       ],
-      "updatedAt": "2026-09-03T17:14:41.830Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:12.853Z"
     },
     "compressed-air": {
       "count": 0,

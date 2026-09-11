@@ -1,6 +1,6 @@
 {
   "city": "leeds",
-  "generatedAt": "2026-09-03T17:08:12.219Z",
+  "generatedAt": "2026-09-11T10:30:36.279Z",
   "categories": {
     "toilets": {
       "count": 71,
@@ -178,7 +178,13 @@
           "context": "Pudsey Parish Church"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:48.048Z"
+      "stats": {
+        "free": 26,
+        "paid": 1,
+        "stepFree": 21,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:30:30.149Z"
     },
     "drinking-water": {
       "count": 13,
@@ -188,9 +194,60 @@
           "name": "Leeds Water Point",
           "lat": 53.792977,
           "lon": -1.552759
+        },
+        {
+          "id": "node/13464403281",
+          "lat": 53.797991,
+          "lon": -1.543388,
+          "street": "Lands Lane"
+        },
+        {
+          "id": "node/1313886880",
+          "lat": 53.80316,
+          "lon": -1.555681,
+          "street": "Little Woodhouse Street"
+        },
+        {
+          "id": "node/8731319450",
+          "lat": 53.796167,
+          "lon": -1.545865,
+          "fee": "no",
+          "street": "Lower Basinghall Street"
+        },
+        {
+          "id": "node/5584788768",
+          "lat": 53.804985,
+          "lon": -1.554697,
+          "street": "Red Route"
+        },
+        {
+          "id": "node/12085115148",
+          "lat": 53.794465,
+          "lon": -1.548626,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Sandford Street"
+        },
+        {
+          "id": "node/5584774686",
+          "lat": 53.806757,
+          "lon": -1.555848,
+          "street": "University Square"
+        },
+        {
+          "id": "node/9356418909",
+          "lat": 53.806404,
+          "lon": -1.559853,
+          "street": "Lyddon Terrace"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:49.509Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:31.717Z"
     },
     "playgrounds": {
       "count": 186,
@@ -1201,7 +1258,13 @@
           "lon": -1.434765
         }
       ],
-      "updatedAt": "2026-09-03T17:07:56.374Z"
+      "stats": {
+        "free": 23,
+        "paid": 6,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:32.339Z"
     },
     "post-boxes": {
       "count": 665,
@@ -1395,6 +1458,57 @@
       "count": 137,
       "pois": [
         {
+          "id": "node/8733003540",
+          "lat": 53.797209,
+          "lon": -1.534094,
+          "address": "St. Peter's Square",
+          "context": "St. Peter's Square"
+        },
+        {
+          "id": "way/415151782",
+          "name": "Meanwood Road Waste Sorting Site",
+          "lat": 53.819597,
+          "lon": -1.553253
+        },
+        {
+          "id": "way/203426733",
+          "name": "European Metal Recycling",
+          "lat": 53.773587,
+          "lon": -1.511022
+        },
+        {
+          "id": "way/582384287",
+          "name": "Middleton Recycling Centre",
+          "lat": 53.748948,
+          "lon": -1.528524
+        },
+        {
+          "id": "way/669834681",
+          "name": "Seacroft (East Leeds) Recycling Site",
+          "lat": 53.828041,
+          "lon": -1.464731,
+          "address": "Limewood Road",
+          "openingHours": "Mo-Su 08:00-18:00"
+        },
+        {
+          "id": "way/903065812",
+          "name": "Cash 4 Clothes",
+          "lat": 53.805632,
+          "lon": -1.451464
+        },
+        {
+          "id": "way/928979134",
+          "name": "Pudsey Household Waste Recycling Centre",
+          "lat": 53.805121,
+          "lon": -1.654746
+        },
+        {
+          "id": "node/1825650336",
+          "name": "Freedom House",
+          "lat": 53.729664,
+          "lon": -1.560804
+        },
+        {
           "id": "node/13011115248",
           "lat": 53.800854,
           "lon": -1.544008,
@@ -1429,13 +1543,6 @@
           "lat": 53.81028,
           "lon": -1.549671,
           "street": "Devonshire Gardens"
-        },
-        {
-          "id": "node/8733003540",
-          "lat": 53.797209,
-          "lon": -1.534094,
-          "address": "St. Peter's Square",
-          "context": "St. Peter's Square"
         },
         {
           "id": "node/2408692016",
@@ -1523,12 +1630,6 @@
           "street": "Cardigan Lane"
         },
         {
-          "id": "way/415151782",
-          "name": "Meanwood Road Waste Sorting Site",
-          "lat": 53.819597,
-          "lon": -1.553253
-        },
-        {
           "id": "node/3225929769",
           "lat": 53.811314,
           "lon": -1.575816,
@@ -1539,45 +1640,15 @@
           "lat": 53.781827,
           "lon": -1.543752,
           "street": "Moor Crescent Chase"
-        },
-        {
-          "id": "node/249481017",
-          "lat": 53.812158,
-          "lon": -1.5777,
-          "street": "Chapel Lane"
-        },
-        {
-          "id": "node/4162184846",
-          "lat": 53.820965,
-          "lon": -1.553797,
-          "street": "Definitive Footpath LEEDS 94"
-        },
-        {
-          "id": "node/8186280161",
-          "lat": 53.78149,
-          "lon": -1.560703,
-          "street": "Elland Road"
-        },
-        {
-          "id": "node/8838547418",
-          "lat": 53.789282,
-          "lon": -1.51996,
-          "street": "Fewston Avenue"
-        },
-        {
-          "id": "node/522977031",
-          "lat": 53.779409,
-          "lon": -1.554786,
-          "street": "Malvern Rise"
-        },
-        {
-          "id": "node/389996299",
-          "lat": 53.779301,
-          "lon": -1.541564,
-          "street": "Burton Row"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:03.220Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:34.195Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1792,7 +1863,13 @@
     "outdoor-gyms": {
       "count": 31,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:05.242Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:35.067Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2129,9 +2206,147 @@
           "name": "WW1 Memorial Bench",
           "lat": 53.741076,
           "lon": -1.487076
+        },
+        {
+          "id": "node/13891793340",
+          "lat": 53.801078,
+          "lon": -1.548826,
+          "street": "Millennium Square"
+        },
+        {
+          "id": "node/8747378030",
+          "lat": 53.799918,
+          "lon": -1.54894,
+          "street": "Centenary Street"
+        },
+        {
+          "id": "node/8747378021",
+          "lat": 53.79967,
+          "lon": -1.549606,
+          "street": "Victoria Square"
+        },
+        {
+          "id": "node/8747378024",
+          "lat": 53.799543,
+          "lon": -1.550066,
+          "street": "The Headrow"
+        },
+        {
+          "id": "node/9733179097",
+          "lat": 53.799751,
+          "lon": -1.551664,
+          "street": "Westgate"
+        },
+        {
+          "id": "node/11063514731",
+          "lat": 53.799082,
+          "lon": -1.55192,
+          "street": "Park Square North"
+        },
+        {
+          "id": "node/11063514736",
+          "lat": 53.798699,
+          "lon": -1.551263,
+          "street": "Park Square East"
+        },
+        {
+          "id": "node/4621501519",
+          "lat": 53.798347,
+          "lon": -1.549947,
+          "street": "Park Cross Street"
+        },
+        {
+          "id": "node/8762513308",
+          "lat": 53.802982,
+          "lon": -1.546394,
+          "street": "Cookridge Street"
+        },
+        {
+          "id": "node/11063514732",
+          "lat": 53.798669,
+          "lon": -1.552113,
+          "street": "Park Square South"
+        },
+        {
+          "id": "node/9984078199",
+          "lat": 53.803072,
+          "lon": -1.545963,
+          "street": "Clay Pit Lane"
+        },
+        {
+          "id": "node/13831218154",
+          "lat": 53.803638,
+          "lon": -1.547456,
+          "street": "Portland Way"
+        },
+        {
+          "id": "node/13011135568",
+          "lat": 53.801938,
+          "lon": -1.544318,
+          "street": "Wheelchair lift"
+        },
+        {
+          "id": "node/8762153269",
+          "lat": 53.797757,
+          "lon": -1.547367,
+          "street": "Bond Street"
+        },
+        {
+          "id": "node/8923661442",
+          "lat": 53.799616,
+          "lon": -1.543904,
+          "street": "Dortmund Square"
+        },
+        {
+          "id": "node/3887609260",
+          "lat": 53.803348,
+          "lon": -1.545449,
+          "street": "Queen Square"
+        },
+        {
+          "id": "node/13746019369",
+          "lat": 53.797434,
+          "lon": -1.548439,
+          "street": "Bond Court"
+        },
+        {
+          "id": "node/8795922617",
+          "lat": 53.797767,
+          "lon": -1.546433,
+          "street": "Upper Basinghall Street"
+        },
+        {
+          "id": "node/13014613432",
+          "lat": 53.801458,
+          "lon": -1.543146,
+          "street": "Wade Lane"
+        },
+        {
+          "id": "node/8736126094",
+          "lat": 53.798982,
+          "lon": -1.543305,
+          "street": "Lands Lane"
+        },
+        {
+          "id": "node/8762781484",
+          "lat": 53.804374,
+          "lon": -1.552677,
+          "street": "Willow Terrace Road"
+        },
+        {
+          "id": "node/6693574668",
+          "lat": 53.79659,
+          "lon": -1.547693,
+          "street": "City Square"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:12.111Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:36.178Z"
     },
     "compressed-air": {
       "count": 0,

@@ -1,6 +1,6 @@
 {
   "city": "lahti",
-  "generatedAt": "2026-09-03T16:39:46.304Z",
+  "generatedAt": "2026-09-11T10:26:55.686Z",
   "categories": {
     "toilets": {
       "count": 22,
@@ -54,12 +54,39 @@
           "context": "Kauppakeskus Karisma"
         }
       ],
-      "updatedAt": "2026-09-03T16:39:27.582Z"
+      "stats": {
+        "free": 7,
+        "paid": 1,
+        "stepFree": 11,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:26:49.364Z"
     },
     "drinking-water": {
       "count": 3,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:39:28.808Z"
+      "pois": [
+        {
+          "id": "node/602075529",
+          "lat": 60.982573,
+          "lon": 25.659225,
+          "street": "Aleksanterinkatu"
+        },
+        {
+          "id": "node/11059294049",
+          "lat": 61.007106,
+          "lon": 25.677858,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Vanhatie"
+        }
+      ],
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:51.886Z"
     },
     "playgrounds": {
       "count": 142,
@@ -748,7 +775,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:39:35.120Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:52.575Z"
     },
     "post-boxes": {
       "count": 34,
@@ -892,16 +925,28 @@
       "count": 37,
       "pois": [
         {
-          "id": "node/11109490604",
-          "lat": 60.986165,
-          "lon": 25.667007,
-          "street": "Kulmapolku"
-        },
-        {
           "id": "node/11109423591",
           "lat": 60.987338,
           "lon": 25.664087,
           "context": "Kauppakeskus Syke"
+        },
+        {
+          "id": "node/11097229390",
+          "lat": 61.030588,
+          "lon": 25.67481,
+          "context": "Sale"
+        },
+        {
+          "id": "node/10937991544",
+          "name": "Rinki-ekopiste",
+          "lat": 61.030703,
+          "lon": 25.675175
+        },
+        {
+          "id": "node/11109490604",
+          "lat": 60.986165,
+          "lon": 25.667007,
+          "street": "Kulmapolku"
         },
         {
           "id": "node/11109588481",
@@ -989,18 +1034,6 @@
           "street": "Tähtitorninkatu"
         },
         {
-          "id": "node/11097229390",
-          "lat": 61.030588,
-          "lon": 25.67481,
-          "context": "Sale"
-        },
-        {
-          "id": "node/10937991544",
-          "name": "Rinki-ekopiste",
-          "lat": 61.030703,
-          "lon": 25.675175
-        },
-        {
           "id": "node/473409329",
           "lat": 60.999871,
           "lon": 25.758628,
@@ -1025,7 +1058,13 @@
           "street": "Kiventöyryntie"
         }
       ],
-      "updatedAt": "2026-09-03T16:39:38.150Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:53.853Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1120,7 +1159,13 @@
           "lon": 25.66751
         }
       ],
-      "updatedAt": "2026-09-03T16:39:40.350Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:26:54.623Z"
     },
     "camp-sites": {
       "count": 2,
@@ -1295,8 +1340,153 @@
     },
     "benches": {
       "count": 250,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:39:46.203Z"
+      "pois": [
+        {
+          "id": "node/7001248532",
+          "lat": 60.98281,
+          "lon": 25.660507,
+          "street": "Aleksanterinkatu"
+        },
+        {
+          "id": "node/11109588491",
+          "lat": 60.984882,
+          "lon": 25.660938,
+          "street": "Päijänteenkatu"
+        },
+        {
+          "id": "node/6957454563",
+          "lat": 60.983405,
+          "lon": 25.655501,
+          "street": "Marolankatu"
+        },
+        {
+          "id": "node/7001459122",
+          "lat": 60.980123,
+          "lon": 25.657316,
+          "street": "Harjukatu"
+        },
+        {
+          "id": "node/7001463021",
+          "lat": 60.980036,
+          "lon": 25.657281,
+          "street": "Rautatienkatu"
+        },
+        {
+          "id": "node/11059294080",
+          "lat": 60.983722,
+          "lon": 25.66941,
+          "street": "Kirkkokatu"
+        },
+        {
+          "id": "node/11059294062",
+          "lat": 60.985686,
+          "lon": 25.654654,
+          "street": "Rauhankatu"
+        },
+        {
+          "id": "node/811291470",
+          "lat": 60.985084,
+          "lon": 25.651269,
+          "street": "Kartanonkatu"
+        },
+        {
+          "id": "node/6957477251",
+          "lat": 60.983647,
+          "lon": 25.649758,
+          "street": "Paasikivenkatu"
+        },
+        {
+          "id": "node/9828658384",
+          "lat": 60.977204,
+          "lon": 25.657783,
+          "street": "Mannerheiminkatu"
+        },
+        {
+          "id": "node/9828658391",
+          "lat": 60.977041,
+          "lon": 25.658481,
+          "street": "Uudenmaankatu"
+        },
+        {
+          "id": "node/11059294079",
+          "lat": 60.988359,
+          "lon": 25.665181,
+          "street": "Sammonkatu"
+        },
+        {
+          "id": "node/12208896536",
+          "lat": 60.985976,
+          "lon": 25.671954,
+          "street": "Tunnelipolku"
+        },
+        {
+          "id": "node/3247102950",
+          "lat": 60.982381,
+          "lon": 25.674194,
+          "street": "Laaksokatu"
+        },
+        {
+          "id": "node/7001018082",
+          "lat": 60.987344,
+          "lon": 25.670134,
+          "street": "Mattilanmäenpolku"
+        },
+        {
+          "id": "node/11059294041",
+          "lat": 60.983289,
+          "lon": 25.674783,
+          "street": "Kannaksenkatu"
+        },
+        {
+          "id": "node/7001060006",
+          "lat": 60.987995,
+          "lon": 25.670962,
+          "street": "Mustankallionpolku"
+        },
+        {
+          "id": "node/11109499546",
+          "lat": 60.989461,
+          "lon": 25.666913,
+          "street": "Saimaankatu"
+        },
+        {
+          "id": "node/7001075221",
+          "lat": 60.98592,
+          "lon": 25.67479,
+          "street": "Mustankalliontie"
+        },
+        {
+          "id": "node/11059294076",
+          "lat": 60.988006,
+          "lon": 25.647977,
+          "street": "Kariniemenkatu"
+        },
+        {
+          "id": "node/6951479876",
+          "lat": 60.991109,
+          "lon": 25.66164,
+          "street": "Lahdenkatu"
+        },
+        {
+          "id": "node/7001437888",
+          "lat": 60.982096,
+          "lon": 25.642607,
+          "street": "Sireenikuja"
+        },
+        {
+          "id": "node/3611284853",
+          "lat": 60.973655,
+          "lon": 25.657187,
+          "street": "Kaarikatu"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:55.584Z"
     }
   }
 }

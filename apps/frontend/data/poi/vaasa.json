@@ -1,6 +1,6 @@
 {
   "city": "vaasa",
-  "generatedAt": "2026-09-03T16:41:40.705Z",
+  "generatedAt": "2026-09-11T10:27:40.160Z",
   "categories": {
     "toilets": {
       "count": 22,
@@ -69,12 +69,55 @@
           "context": "GW Galleria"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:23.252Z"
+      "stats": {
+        "free": 14,
+        "paid": 2,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:35.071Z"
     },
     "drinking-water": {
       "count": 9,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:41:24.433Z"
+      "pois": [
+        {
+          "id": "node/4900303938",
+          "lat": 63.095553,
+          "lon": 21.616975,
+          "street": "Alatori"
+        },
+        {
+          "id": "node/11175426222",
+          "lat": 63.105054,
+          "lon": 21.585735,
+          "street": "Pikisaarenkatu"
+        },
+        {
+          "id": "node/6546893653",
+          "lat": 63.114201,
+          "lon": 21.591194,
+          "street": "Viikintie"
+        },
+        {
+          "id": "node/11422208900",
+          "lat": 63.081743,
+          "lon": 21.573999,
+          "street": "Kutterikatu"
+        },
+        {
+          "id": "node/6546893652",
+          "lat": 63.121701,
+          "lon": 21.597397,
+          "street": "Huvilatie"
+        }
+      ],
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:36.620Z"
     },
     "playgrounds": {
       "count": 148,
@@ -713,7 +756,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:30.550Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:27:36.989Z"
     },
     "post-boxes": {
       "count": 7,
@@ -749,18 +798,6 @@
       "count": 22,
       "pois": [
         {
-          "id": "node/13719671564",
-          "lat": 63.09057,
-          "lon": 21.618202,
-          "street": "Korsholmanpuistikko"
-        },
-        {
-          "id": "node/13706285389",
-          "lat": 63.095356,
-          "lon": 21.644725,
-          "street": "Vaivaistalonkuja"
-        },
-        {
           "id": "node/1531074420",
           "name": "Ekopiste",
           "lat": 63.093229,
@@ -772,6 +809,18 @@
           "lat": 63.119426,
           "lon": 21.634712,
           "openingHours": "Mo-Fr 10:00-18:00; Sa,Su off"
+        },
+        {
+          "id": "node/13719671564",
+          "lat": 63.09057,
+          "lon": 21.618202,
+          "street": "Korsholmanpuistikko"
+        },
+        {
+          "id": "node/13706285389",
+          "lat": 63.095356,
+          "lon": 21.644725,
+          "street": "Vaivaistalonkuja"
         },
         {
           "id": "node/11164069209",
@@ -816,7 +865,13 @@
           "street": "Pitkäniityntie"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:32.999Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:38.385Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -883,7 +938,13 @@
     "outdoor-gyms": {
       "count": 9,
       "pois": [],
-      "updatedAt": "2026-09-03T16:41:35.249Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:39.184Z"
     },
     "camp-sites": {
       "count": 1,
@@ -1012,8 +1073,99 @@
     },
     "benches": {
       "count": 130,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:41:40.604Z"
+      "pois": [
+        {
+          "id": "node/13206516144",
+          "lat": 63.094511,
+          "lon": 21.612958,
+          "street": "Vaasanpuistikko"
+        },
+        {
+          "id": "node/13206521866",
+          "lat": 63.093737,
+          "lon": 21.611017,
+          "street": "Kirkkopuistikko"
+        },
+        {
+          "id": "node/6845228801",
+          "lat": 63.09992,
+          "lon": 21.610093,
+          "street": "Ratakatu"
+        },
+        {
+          "id": "node/12770345129",
+          "lat": 63.096976,
+          "lon": 21.604257,
+          "street": "Koulukatu"
+        },
+        {
+          "id": "node/12770299896",
+          "lat": 63.096661,
+          "lon": 21.602718,
+          "street": "Rantakatu"
+        },
+        {
+          "id": "node/12635384223",
+          "lat": 63.102216,
+          "lon": 21.602571,
+          "street": "Wolffintie"
+        },
+        {
+          "id": "node/6845193258",
+          "lat": 63.105285,
+          "lon": 21.610778,
+          "street": "Onkilahden Pyöräbaana"
+        },
+        {
+          "id": "node/13849436243",
+          "lat": 63.107192,
+          "lon": 21.611809,
+          "street": "Onkilahden luontopolku"
+        },
+        {
+          "id": "node/12673430198",
+          "lat": 63.10422,
+          "lon": 21.593423,
+          "street": "Wärtsilän polku"
+        },
+        {
+          "id": "node/13830960829",
+          "lat": 63.085858,
+          "lon": 21.645234,
+          "street": "Kurténinkatu"
+        },
+        {
+          "id": "node/6769356602",
+          "lat": 63.108646,
+          "lon": 21.593979,
+          "street": "Palosaarentie"
+        },
+        {
+          "id": "node/6769356599",
+          "lat": 63.108694,
+          "lon": 21.593311,
+          "street": "Kapteeninkatu"
+        },
+        {
+          "id": "node/13849435452",
+          "lat": 63.113901,
+          "lon": 21.618648,
+          "street": "Gerbyntie"
+        },
+        {
+          "id": "node/7525371865",
+          "lat": 63.076222,
+          "lon": 21.64614,
+          "street": "Ketunkatu"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:40.057Z"
     }
   }
 }

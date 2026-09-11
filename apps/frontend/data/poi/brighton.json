@@ -1,6 +1,6 @@
 {
   "city": "brighton",
-  "generatedAt": "2026-09-03T17:08:57.220Z",
+  "generatedAt": "2026-09-11T10:30:27.207Z",
   "categories": {
     "toilets": {
       "count": 65,
@@ -100,12 +100,51 @@
           "context": "John Clifford West"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:37.071Z"
+      "stats": {
+        "free": 37,
+        "paid": 0,
+        "stepFree": 26,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:21.982Z"
     },
     "drinking-water": {
       "count": 10,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:08:38.328Z"
+      "pois": [
+        {
+          "id": "node/10915885306",
+          "lat": 50.823537,
+          "lon": -0.136964,
+          "fee": "no",
+          "street": "Church Street"
+        },
+        {
+          "id": "node/9982293999",
+          "lat": 50.823704,
+          "lon": -0.145304,
+          "fee": "no",
+          "street": "Churchill Square Piazza"
+        },
+        {
+          "id": "node/9807195669",
+          "lat": 50.828556,
+          "lon": -0.141283,
+          "street": "Trafalgar Street"
+        },
+        {
+          "id": "node/10799375605",
+          "lat": 50.826691,
+          "lon": -0.195635,
+          "street": "Promenade"
+        }
+      ],
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:23.588Z"
     },
     "playgrounds": {
       "count": 79,
@@ -883,7 +922,13 @@
           "lon": -0.058175
         }
       ],
-      "updatedAt": "2026-09-03T17:08:45.756Z"
+      "stats": {
+        "free": 4,
+        "paid": 2,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:24.011Z"
     },
     "post-boxes": {
       "count": 390,
@@ -1075,6 +1120,100 @@
       "count": 228,
       "pois": [
         {
+          "id": "node/9291399346",
+          "lat": 50.82851,
+          "lon": -0.12911,
+          "context": "Hanover Community Centre"
+        },
+        {
+          "id": "node/9907671527",
+          "name": "Planet Brighton",
+          "lat": 50.831433,
+          "lon": -0.135858,
+          "address": "Marshalls Row"
+        },
+        {
+          "id": "node/13695868122",
+          "name": "Communal Recycling Container",
+          "lat": 50.827195,
+          "lon": -0.149506
+        },
+        {
+          "id": "node/6406816470",
+          "lat": 50.831578,
+          "lon": -0.136117,
+          "context": "Brogues"
+        },
+        {
+          "id": "node/8919800929",
+          "name": "Pepperpot",
+          "lat": 50.827465,
+          "lon": -0.124693,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/665995955",
+          "name": "The Level",
+          "lat": 50.831574,
+          "lon": -0.130969
+        },
+        {
+          "id": "node/3035395551",
+          "name": "Communal Recycling Bin",
+          "lat": 50.833333,
+          "lon": -0.147462
+        },
+        {
+          "id": "node/12504409876",
+          "name": "Preston Park South",
+          "lat": 50.836866,
+          "lon": -0.142932
+        },
+        {
+          "id": "way/878131182",
+          "name": "Fiveways Recycling Point",
+          "lat": 50.843653,
+          "lon": -0.134796
+        },
+        {
+          "id": "node/20954953",
+          "name": "Preston Park, Preston Drove entrance",
+          "lat": 50.843762,
+          "lon": -0.145745
+        },
+        {
+          "id": "node/12116076205",
+          "name": "Asda Marina",
+          "lat": 50.814208,
+          "lon": -0.10476
+        },
+        {
+          "id": "way/182261268",
+          "name": "Brighton Recycling Centre",
+          "lat": 50.828046,
+          "lon": -0.100241,
+          "address": "Wilson Avenue"
+        },
+        {
+          "id": "way/877940580",
+          "name": "Golf Drive Recycling Point",
+          "lat": 50.849479,
+          "lon": -0.132627
+        },
+        {
+          "id": "way/921818890",
+          "name": "Hove Recycling Centre",
+          "lat": 50.837089,
+          "lon": -0.182532,
+          "openingHours": "Mo-Fr 08:00-16:30; Sa 08:30-13:30; Su 10:30-13:30; PH off"
+        },
+        {
+          "id": "node/8077882100",
+          "name": "TRAID",
+          "lat": 50.86037,
+          "lon": -0.084989
+        },
+        {
           "id": "node/9291376339",
           "lat": 50.82059,
           "lon": -0.13979,
@@ -1135,12 +1274,6 @@
           "street": "Richmond Terrace"
         },
         {
-          "id": "node/9291399346",
-          "lat": 50.82851,
-          "lon": -0.12911,
-          "context": "Hanover Community Centre"
-        },
-        {
           "id": "node/6495098206",
           "lat": 50.829212,
           "lon": -0.14382,
@@ -1160,105 +1293,25 @@
           "street": "Western Road"
         },
         {
-          "id": "node/9907671527",
-          "name": "Planet Brighton",
-          "lat": 50.831433,
-          "lon": -0.135858,
-          "address": "Marshalls Row"
-        },
-        {
-          "id": "node/13695868122",
-          "name": "Communal Recycling Container",
-          "lat": 50.827195,
-          "lon": -0.149506
-        },
-        {
-          "id": "node/6406816470",
-          "lat": 50.831578,
-          "lon": -0.136117,
-          "context": "Brogues"
-        },
-        {
           "id": "node/1313237591",
           "lat": 50.831736,
           "lon": -0.138512,
           "street": "Mayflower Square"
         },
         {
-          "id": "node/8919800929",
-          "name": "Pepperpot",
-          "lat": 50.827465,
-          "lon": -0.124693,
-          "openingHours": "24/7"
-        },
-        {
           "id": "node/8739332677",
           "lat": 50.819145,
           "lon": -0.123161,
           "street": "St Georges Road"
-        },
-        {
-          "id": "node/1313237580",
-          "lat": 50.831895,
-          "lon": -0.139762,
-          "street": "Stroudley Passage"
-        },
-        {
-          "id": "node/9300099512",
-          "lat": 50.831781,
-          "lon": -0.133619,
-          "street": "Union Road"
-        },
-        {
-          "id": "node/665995955",
-          "name": "The Level",
-          "lat": 50.831574,
-          "lon": -0.130969
-        },
-        {
-          "id": "node/9689663905",
-          "lat": 50.817836,
-          "lon": -0.123351,
-          "street": "Bloomsbury Place"
-        },
-        {
-          "id": "node/8687992109",
-          "lat": 50.818958,
-          "lon": -0.122411,
-          "street": "College Place"
-        },
-        {
-          "id": "node/33477973",
-          "lat": 50.83012,
-          "lon": -0.148243,
-          "street": "Vernon Terrace"
-        },
-        {
-          "id": "node/665995901",
-          "lat": 50.831861,
-          "lon": -0.129687,
-          "street": "Elm Grove"
-        },
-        {
-          "id": "node/8980056681",
-          "lat": 50.819904,
-          "lon": -0.120893,
-          "street": "Eastern Road"
-        },
-        {
-          "id": "node/6517953527",
-          "lat": 50.832299,
-          "lon": -0.145206,
-          "street": "York Grove"
-        },
-        {
-          "id": "node/12056106601",
-          "lat": 50.833361,
-          "lon": -0.14045,
-          "street": "New England Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:50.401Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:25.565Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1452,7 +1505,13 @@
     "outdoor-gyms": {
       "count": 6,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:51.647Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:26.024Z"
     },
     "camp-sites": {
       "count": 4,
@@ -1753,8 +1812,99 @@
     },
     "benches": {
       "count": 871,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:08:57.119Z"
+      "pois": [
+        {
+          "id": "node/5483776360",
+          "lat": 50.821055,
+          "lon": -0.137185,
+          "street": "Old Steine"
+        },
+        {
+          "id": "node/9747858516",
+          "lat": 50.824477,
+          "lon": -0.134521,
+          "street": "Kingswood Street"
+        },
+        {
+          "id": "node/6464070234",
+          "lat": 50.821943,
+          "lon": -0.141329,
+          "street": "Prince Albert Street"
+        },
+        {
+          "id": "node/9746973422",
+          "lat": 50.825101,
+          "lon": -0.134235,
+          "street": "Market Square"
+        },
+        {
+          "id": "node/11918460610",
+          "lat": 50.822344,
+          "lon": -0.132013,
+          "street": "Edward Street"
+        },
+        {
+          "id": "node/9701975542",
+          "lat": 50.819739,
+          "lon": -0.140841,
+          "street": "Grand Junction Road"
+        },
+        {
+          "id": "node/1527602014",
+          "lat": 50.818927,
+          "lon": -0.136523,
+          "street": "Lower Esplanade"
+        },
+        {
+          "id": "node/9701975539",
+          "lat": 50.820223,
+          "lon": -0.143512,
+          "street": "King's Road"
+        },
+        {
+          "id": "node/11918704670",
+          "lat": 50.824088,
+          "lon": -0.130303,
+          "street": "Lennox Street"
+        },
+        {
+          "id": "node/2424554707",
+          "lat": 50.81902,
+          "lon": -0.130827,
+          "street": "Marine Parade"
+        },
+        {
+          "id": "node/14017218460",
+          "lat": 50.824961,
+          "lon": -0.144859,
+          "street": "Wykeham Terrace"
+        },
+        {
+          "id": "node/13571386961",
+          "lat": 50.821775,
+          "lon": -0.127529,
+          "street": "Eastern Road"
+        },
+        {
+          "id": "node/9808312261",
+          "lat": 50.82844,
+          "lon": -0.141265,
+          "street": "Junction Road"
+        },
+        {
+          "id": "node/9808312263",
+          "lat": 50.828507,
+          "lon": -0.141234,
+          "street": "Trafalgar Street"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:27.105Z"
     },
     "compressed-air": {
       "count": 0,

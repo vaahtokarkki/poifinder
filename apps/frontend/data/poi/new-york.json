@@ -1,6 +1,6 @@
 {
   "city": "new-york",
-  "generatedAt": "2026-09-03T17:23:31.878Z",
+  "generatedAt": "2026-09-11T10:32:00.086Z",
   "categories": {
     "toilets": {
       "count": 403,
@@ -216,7 +216,13 @@
           "context": "Helen L. and Martin S. Kimmel Pavilion"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:59.352Z"
+      "stats": {
+        "free": 72,
+        "paid": 2,
+        "stepFree": 115,
+        "partlyStepFree": 7
+      },
+      "updatedAt": "2026-09-11T10:31:52.196Z"
     },
     "drinking-water": {
       "count": 948,
@@ -345,9 +351,79 @@
           "name": "Marcus Garvey Park",
           "lat": 40.8046,
           "lon": -73.943
+        },
+        {
+          "id": "node/11350133384",
+          "lat": 40.712821,
+          "lon": -74.005055,
+          "wheelchair": "yes",
+          "street": "City Hall Park Greenway"
+        },
+        {
+          "id": "node/5519996273",
+          "lat": 40.712037,
+          "lon": -74.007022,
+          "wheelchair": "yes",
+          "street": "Beekman Street"
+        },
+        {
+          "id": "node/11411576752",
+          "lat": 40.712613,
+          "lon": -74.008855,
+          "street": "Barclay Street"
+        },
+        {
+          "id": "node/11349101715",
+          "lat": 40.710385,
+          "lon": -74.005926,
+          "street": "William Street"
+        },
+        {
+          "id": "node/11506618762",
+          "lat": 40.715863,
+          "lon": -74.006289,
+          "street": "Trimble Place"
+        },
+        {
+          "id": "node/5058253762",
+          "lat": 40.714862,
+          "lon": -74.00268,
+          "street": "Lafayette Street"
+        },
+        {
+          "id": "node/11392483867",
+          "lat": 40.714822,
+          "lon": -74.001899,
+          "street": "Hamill Place"
+        },
+        {
+          "id": "node/5002123523",
+          "lat": 40.709025,
+          "lon": -74.004934,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Fulton Street"
+        },
+        {
+          "id": "node/11501440442",
+          "lat": 40.711418,
+          "lon": -74.000548,
+          "street": "Pearl Street"
+        },
+        {
+          "id": "node/5058221648",
+          "lat": 40.716032,
+          "lon": -74.001719,
+          "street": "Centre Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:01.909Z"
+      "stats": {
+        "free": 227,
+        "paid": 2,
+        "stepFree": 212,
+        "partlyStepFree": 14
+      },
+      "updatedAt": "2026-09-11T10:31:54.402Z"
     },
     "playgrounds": {
       "count": 894,
@@ -1957,7 +2033,13 @@
           "openingHours": "Mo-Fr 09:00-17:00, Sa 09:00-12:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:11.556Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 223,
+        "partlyStepFree": 20
+      },
+      "updatedAt": "2026-09-11T10:31:55.357Z"
     },
     "post-boxes": {
       "count": 1123,
@@ -2150,6 +2232,103 @@
       "count": 359,
       "pois": [
         {
+          "id": "node/11461123852",
+          "lat": 40.713768,
+          "lon": -74.009,
+          "context": "Chambers Street–World Trade Center–Park Place–Cortlandt Street"
+        },
+        {
+          "id": "node/11374409718",
+          "lat": 40.71051,
+          "lon": -74.007421,
+          "context": "Fulton Street"
+        },
+        {
+          "id": "node/6341782748",
+          "name": "FMJ Mini Center Recycle Corp",
+          "lat": 40.684296,
+          "lon": -73.989477,
+          "address": "Hoyt Street 202",
+          "openingHours": "Mo 08:00-17:00; Tu 08:00-16:00; Th 08:00-17:00; Fr 08:00-15:00; Sa 09:00-17:00; Su 11:00-17:00"
+        },
+        {
+          "id": "node/8091465400",
+          "name": "The Environmental Recycling",
+          "lat": 40.679784,
+          "lon": -73.98538,
+          "address": "Degraw Street 580"
+        },
+        {
+          "id": "way/1234764611",
+          "name": "Community Compost Center",
+          "lat": 40.75588,
+          "lon": -74.006305
+        },
+        {
+          "id": "way/1355181614",
+          "name": "Sure We Can",
+          "lat": 40.70569,
+          "lon": -73.938857,
+          "address": "McKibbin Street 219",
+          "openingHours": "Mo-Fr 07:30-17:00; Sa 07:30-13:00; PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/1296161080",
+          "name": "Planet Aid",
+          "lat": 40.697572,
+          "lon": -73.933035
+        },
+        {
+          "id": "way/967387747",
+          "name": "Hunters Point Recycling",
+          "lat": 40.740931,
+          "lon": -73.939023,
+          "address": "Hunters Point 29-55",
+          "openingHours": "Mo-Fr 06:00-16:30; Sa 06:00-04:30"
+        },
+        {
+          "id": "way/279781171",
+          "name": "Cooper Recycling",
+          "lat": 40.709971,
+          "lon": -73.928828,
+          "address": "Varick Avenue 123"
+        },
+        {
+          "id": "way/249592314",
+          "name": "Sunset Redemption Center",
+          "lat": 40.648884,
+          "lon": -74.013974,
+          "address": "3rd Avenue 4802",
+          "openingHours": "Mo-Sa 08:00-17:00"
+        },
+        {
+          "id": "node/12413850258",
+          "name": "Redemtion Center",
+          "lat": 40.727459,
+          "lon": -73.895312,
+          "address": "69th Street 55-07"
+        },
+        {
+          "id": "way/1235906991",
+          "name": "95th Street Compost Compound",
+          "lat": 40.795716,
+          "lon": -73.977654
+        },
+        {
+          "id": "node/5980540503",
+          "name": "Atlantic Redemption Center",
+          "lat": 40.675668,
+          "lon": -73.903935,
+          "address": "Atlantic Avenue 2420"
+        },
+        {
+          "id": "way/949254804",
+          "name": "JHBG Composting Center",
+          "lat": 40.750129,
+          "lon": -73.896615
+        },
+        {
           "id": "node/11461129552",
           "lat": 40.713089,
           "lon": -74.007402,
@@ -2186,12 +2365,6 @@
           "street": "Park Place"
         },
         {
-          "id": "node/11461123852",
-          "lat": 40.713768,
-          "lon": -74.009,
-          "context": "Chambers Street–World Trade Center–Park Place–Cortlandt Street"
-        },
-        {
           "id": "node/11374743729",
           "lat": 40.711237,
           "lon": -74.008545,
@@ -2208,12 +2381,6 @@
           "lat": 40.714194,
           "lon": -74.003252,
           "street": "Duane Street"
-        },
-        {
-          "id": "node/11374409718",
-          "lat": 40.71051,
-          "lon": -74.007421,
-          "context": "Fulton Street"
         },
         {
           "id": "node/11411576697",
@@ -2256,81 +2423,15 @@
           "lat": 40.709568,
           "lon": -74.008535,
           "street": "John Street"
-        },
-        {
-          "id": "node/11308590229",
-          "lat": 40.715758,
-          "lon": -74.009305,
-          "street": "Hudson Street"
-        },
-        {
-          "id": "node/11374285203",
-          "lat": 40.708855,
-          "lon": -74.005262,
-          "street": "Ryders Alley"
-        },
-        {
-          "id": "node/11372463136",
-          "lat": 40.7098,
-          "lon": -74.009831,
-          "street": "Maiden Lane"
-        },
-        {
-          "id": "node/11372463149",
-          "lat": 40.709167,
-          "lon": -74.008843,
-          "street": "Nassau Street"
-        },
-        {
-          "id": "node/11460898425",
-          "lat": 40.714341,
-          "lon": -74.011657,
-          "street": "Greenwich Street"
-        },
-        {
-          "id": "node/11460898420",
-          "lat": 40.713839,
-          "lon": -74.011882,
-          "street": "Barclay Street"
-        },
-        {
-          "id": "node/11369418368",
-          "lat": 40.707993,
-          "lon": -74.005944,
-          "street": "Cliff Street"
-        },
-        {
-          "id": "node/11372396147",
-          "lat": 40.708707,
-          "lon": -74.009423,
-          "street": "Liberty Street"
-        },
-        {
-          "id": "node/11369922631",
-          "lat": 40.707771,
-          "lon": -74.006857,
-          "street": "Golden Hill Plaza"
-        },
-        {
-          "id": "node/11367912996",
-          "lat": 40.707414,
-          "lon": -74.005312,
-          "street": "Pearl Street"
-        },
-        {
-          "id": "node/11367913058",
-          "lat": 40.707447,
-          "lon": -74.004249,
-          "street": "Water Street"
-        },
-        {
-          "id": "node/5056343599",
-          "lat": 40.708226,
-          "lon": -74.011226,
-          "street": "Pine Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:16.117Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:56.955Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2598,7 +2699,13 @@
           "lon": -73.952803
         }
       ],
-      "updatedAt": "2026-09-03T17:23:18.902Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:31:58.356Z"
     },
     "camp-sites": {
       "count": 0,
@@ -3036,9 +3143,57 @@
           "name": "Andrew Haswell Green Bench",
           "lat": 40.795132,
           "lon": -73.954271
+        },
+        {
+          "id": "node/11350133307",
+          "lat": 40.713044,
+          "lon": -74.005708,
+          "street": "City Hall Park Greenway"
+        },
+        {
+          "id": "node/11177171009",
+          "lat": 40.712386,
+          "lon": -74.005239,
+          "street": "Park Row"
+        },
+        {
+          "id": "node/11177171011",
+          "lat": 40.712415,
+          "lon": -74.005194,
+          "street": "Centre Street"
+        },
+        {
+          "id": "node/9369042330",
+          "lat": 40.713061,
+          "lon": -74.004739,
+          "street": "Chambers Street"
+        },
+        {
+          "id": "node/10297364788",
+          "lat": 40.712374,
+          "lon": -74.004739,
+          "street": "Brooklyn Bridge Promenade"
+        },
+        {
+          "id": "node/9368527018",
+          "lat": 40.711998,
+          "lon": -74.00734,
+          "street": "Beekman Street"
+        },
+        {
+          "id": "node/11349151038",
+          "lat": 40.711332,
+          "lon": -74.005673,
+          "street": "Spruce Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:31.765Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 37,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:59.985Z"
     },
     "compressed-air": {
       "count": 0,

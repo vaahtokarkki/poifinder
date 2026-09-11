@@ -1,9 +1,9 @@
 {
   "city": "nantes",
-  "generatedAt": "2026-09-03T17:15:05.116Z",
+  "generatedAt": "2026-09-11T10:31:09.656Z",
   "categories": {
     "toilets": {
-      "count": 283,
+      "count": 284,
       "pois": [
         {
           "id": "node/5476410373",
@@ -93,6 +93,12 @@
           "context": "Cinéma Katorza"
         },
         {
+          "id": "node/14140494321",
+          "lat": 47.210101,
+          "lon": -1.555926,
+          "context": "Amphitéatre Kernéis"
+        },
+        {
           "id": "node/7235015061",
           "lat": 47.212746,
           "lon": -1.565061,
@@ -166,6 +172,12 @@
           "context": "Auditorium Brigitte Engerer"
         },
         {
+          "id": "node/14140494323",
+          "lat": 47.201126,
+          "lon": -1.554796,
+          "context": "La Chaumière"
+        },
+        {
           "id": "node/5587121477",
           "lat": 47.205999,
           "lon": -1.572987,
@@ -223,26 +235,18 @@
           "wheelchair": "yes",
           "fee": "no",
           "context": "Bâtiment 11"
-        },
-        {
-          "id": "node/13456438092",
-          "lat": 47.237119,
-          "lon": -1.553485,
-          "fee": "no",
-          "context": "Bâtiment 13"
-        },
-        {
-          "id": "node/13473977252",
-          "lat": 47.23756,
-          "lon": -1.555052,
-          "wheelchair": "yes",
-          "context": "Bâtiment 1"
         }
       ],
-      "updatedAt": "2026-09-03T17:14:44.072Z"
+      "stats": {
+        "free": 198,
+        "paid": 3,
+        "stepFree": 155,
+        "partlyStepFree": 9
+      },
+      "updatedAt": "2026-09-11T10:31:02.471Z"
     },
     "drinking-water": {
-      "count": 174,
+      "count": 175,
       "pois": [
         {
           "id": "node/12315825636",
@@ -267,9 +271,182 @@
           "name": "Fontaine à eau",
           "lat": 47.157825,
           "lon": -1.601907
+        },
+        {
+          "id": "node/13605269480",
+          "lat": 47.219947,
+          "lon": -1.558527,
+          "street": "Rue Le Nôtre"
+        },
+        {
+          "id": "node/14019938336",
+          "lat": 47.215305,
+          "lon": -1.550248,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Rue des États"
+        },
+        {
+          "id": "node/10033149917",
+          "lat": 47.214104,
+          "lon": -1.550893,
+          "fee": "no",
+          "street": "Cours Commandant-d'Estienne-d'Orves"
+        },
+        {
+          "id": "node/4050372267",
+          "lat": 47.215074,
+          "lon": -1.548635,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Cours John Kennedy"
+        },
+        {
+          "id": "node/7960796201",
+          "lat": 47.214177,
+          "lon": -1.557807,
+          "street": "Rue La Pérouse"
+        },
+        {
+          "id": "node/12163624584",
+          "lat": 47.213136,
+          "lon": -1.550791,
+          "street": "Place Victoire Durand-Gasselin-Friésé"
+        },
+        {
+          "id": "node/12055594718",
+          "lat": 47.212182,
+          "lon": -1.55316,
+          "street": "Place Alexis Ricordeau"
+        },
+        {
+          "id": "node/8308743131",
+          "lat": 47.220999,
+          "lon": -1.562506,
+          "street": "Place Viarme"
+        },
+        {
+          "id": "node/11091808808",
+          "lat": 47.217094,
+          "lon": -1.563181,
+          "street": "Place Aristide Briand"
+        },
+        {
+          "id": "node/9035536140",
+          "lat": 47.217672,
+          "lon": -1.542381,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Boulevard de Stalingrad"
+        },
+        {
+          "id": "node/3266745227",
+          "lat": 47.221435,
+          "lon": -1.54281,
+          "street": "Rue Frédéric Cailliaud"
+        },
+        {
+          "id": "node/3163955469",
+          "lat": 47.221623,
+          "lon": -1.542834,
+          "street": "Rue Gambetta"
+        },
+        {
+          "id": "node/13038030336",
+          "lat": 47.211432,
+          "lon": -1.559635,
+          "street": "Rue Félix Éboué"
+        },
+        {
+          "id": "node/12509612318",
+          "lat": 47.216338,
+          "lon": -1.542032,
+          "street": "Boulevard de l'Europe"
+        },
+        {
+          "id": "node/13925722237",
+          "lat": 47.21509,
+          "lon": -1.542565,
+          "fee": "no",
+          "street": "Dépose-minute"
+        },
+        {
+          "id": "node/10726061629",
+          "lat": 47.216192,
+          "lon": -1.541606,
+          "fee": "no",
+          "street": "Rue de Lourmel"
+        },
+        {
+          "id": "node/3266745224",
+          "lat": 47.220987,
+          "lon": -1.540247,
+          "street": "Avenue des 3 Frères"
+        },
+        {
+          "id": "node/2796489335",
+          "lat": 47.225613,
+          "lon": -1.562791,
+          "street": "Rue Noire"
+        },
+        {
+          "id": "node/9035536137",
+          "lat": 47.228376,
+          "lon": -1.55332,
+          "street": "Promenade Van Iseghem"
+        },
+        {
+          "id": "node/12971740291",
+          "lat": 47.212182,
+          "lon": -1.565686,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Place Jean V"
+        },
+        {
+          "id": "node/3761500536",
+          "lat": 47.21433,
+          "lon": -1.567755,
+          "street": "Rue de Gigant"
+        },
+        {
+          "id": "node/3266745228",
+          "lat": 47.221646,
+          "lon": -1.538791,
+          "street": "Avenue de la Devinière"
+        },
+        {
+          "id": "node/4112038296",
+          "lat": 47.217957,
+          "lon": -1.569263,
+          "street": "Boulevard Gabriel Guist'Hau"
+        },
+        {
+          "id": "node/11952367282",
+          "lat": 47.21283,
+          "lon": -1.567013,
+          "street": "Rue de la Rosière d'Artois"
+        },
+        {
+          "id": "node/11958590544",
+          "lat": 47.211918,
+          "lon": -1.566319,
+          "street": "Rue Voltaire"
+        },
+        {
+          "id": "node/14017476183",
+          "lat": 47.207932,
+          "lon": -1.558379,
+          "street": "Quai François Mitterrand"
         }
       ],
-      "updatedAt": "2026-09-03T17:14:45.833Z"
+      "stats": {
+        "free": 30,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:04.513Z"
     },
     "playgrounds": {
       "count": 405,
@@ -1141,7 +1318,7 @@
           "name": "Banque Populaire Grand Ouest",
           "lat": 47.218475,
           "lon": -1.551525,
-          "openingHours": "Tu,We,Fr 09:00-12:30,14:00-18:00; Th 09:00-12:30,15:30-18:00; Sa 09:00-12:30"
+          "openingHours": "Tu-We 09:00-12:30,14:00-18:00; Th 09:00-12:30,15:00-18:00; Fr 09:00-12:30,14:00-18:00; Sa 09:00-12:30"
         },
         {
           "id": "node/2393205118",
@@ -1172,7 +1349,7 @@
           "name": "Banque Populaire",
           "lat": 47.215968,
           "lon": -1.556935,
-          "openingHours": "Tu-Fr 09:00-12:30,14:00-18:15; Sa 09:00-12:30",
+          "openingHours": "Mo-We 09:00-12:30,14:00-18:00; Th 09:00-12:30,15:30-18:00; Fr 09:00-12:30,14:00-18:00",
           "wheelchair": "yes"
         },
         {
@@ -1211,7 +1388,7 @@
           "name": "Intermarché Express",
           "lat": 47.224259,
           "lon": -1.551012,
-          "openingHours": "Mo-Fr 09:00-20:15; Sa 09:00-20:00",
+          "openingHours": "Mo-Fr 09:00-20:15; Sa 09:00-20:00; Su 09:30-12:30",
           "wheelchair": "yes"
         },
         {
@@ -1219,7 +1396,7 @@
           "name": "Crédit Maritime",
           "lat": 47.215398,
           "lon": -1.564653,
-          "openingHours": "Tu,We 09:00-12:30,14:00-18:15; Th 09:00-12:30,14:30-18:15; Fr 09:00-18:15; Sa 09:00-12:30",
+          "openingHours": "Tu-We 09:00-12:30,14:00-18:00; Th 09:00-12:30,15:00-18:00; Fr 09:00-12:30,14:00-18:00; Sa 09:00-12:30",
           "wheelchair": "yes"
         },
         {
@@ -1326,7 +1503,7 @@
           "name": "Banque Populaire Atlantique",
           "lat": 47.233671,
           "lon": -1.53586,
-          "openingHours": "Tu-Fr 09:00-12:45,14:00-18:00; Th 09:00-12:45,15:00-18:00; Sa 09:00-12:45",
+          "openingHours": "Tu-We 09:00-12:30,14:00-18:00; Th 09:00-12:30,15:00-18:00; Fr 09:00-12:30,14:00-18:00; Sa 09:00-12:30",
           "wheelchair": "yes"
         },
         {
@@ -1351,7 +1528,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:14:52.638Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 80,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:31:05.392Z"
     },
     "post-boxes": {
       "count": 292,
@@ -1366,7 +1549,7 @@
       "updatedAt": "2026-09-03T17:14:54.181Z"
     },
     "recycling": {
-      "count": 2378,
+      "count": 2382,
       "pois": [
         {
           "id": "node/3600524609",
@@ -1568,7 +1751,13 @@
           "lon": -1.601773
         }
       ],
-      "updatedAt": "2026-09-03T17:14:56.708Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 115,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:31:07.392Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -1799,7 +1988,13 @@
     "outdoor-gyms": {
       "count": 74,
       "pois": [],
-      "updatedAt": "2026-09-03T17:14:58.683Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:08.375Z"
     },
     "camp-sites": {
       "count": 2,
@@ -2106,7 +2301,7 @@
       "updatedAt": "2026-08-17T04:04:55.245Z"
     },
     "benches": {
-      "count": 4366,
+      "count": 4365,
       "pois": [
         {
           "id": "node/6043756640",
@@ -2119,9 +2314,177 @@
           "name": "Lucie Lepionnier",
           "lat": 47.198747,
           "lon": -1.588914
+        },
+        {
+          "id": "node/13147490003",
+          "lat": 47.218298,
+          "lon": -1.5534,
+          "street": "Rue Saint-Vincent"
+        },
+        {
+          "id": "node/13147446848",
+          "lat": 47.218047,
+          "lon": -1.553917,
+          "street": "Rue de la Commune"
+        },
+        {
+          "id": "node/13147437290",
+          "lat": 47.217979,
+          "lon": -1.553632,
+          "street": "Rue Général Leclerc de Hauteclocque"
+        },
+        {
+          "id": "node/3506196603",
+          "lat": 47.218649,
+          "lon": -1.554598,
+          "street": "Rue Garde Dieu"
+        },
+        {
+          "id": "node/4917846134",
+          "lat": 47.217557,
+          "lon": -1.554366,
+          "street": "Place de l'Hôtel de Ville"
+        },
+        {
+          "id": "node/4917846133",
+          "lat": 47.217466,
+          "lon": -1.554276,
+          "street": "Rue Fanny Peccot"
+        },
+        {
+          "id": "node/2904327260",
+          "lat": 47.218305,
+          "lon": -1.555259,
+          "street": "Rue Saint-Léonard"
+        },
+        {
+          "id": "node/4917846459",
+          "lat": 47.217495,
+          "lon": -1.554732,
+          "street": "Rue du Moulin"
+        },
+        {
+          "id": "node/2904327215",
+          "lat": 47.217808,
+          "lon": -1.555346,
+          "street": "Rue de l'Hôtel de Ville"
+        },
+        {
+          "id": "node/4882291977",
+          "lat": 47.219648,
+          "lon": -1.554607,
+          "street": "Place du Port Communeau"
+        },
+        {
+          "id": "node/2866866201",
+          "lat": 47.219985,
+          "lon": -1.552768,
+          "street": "Place Roger Salengro"
+        },
+        {
+          "id": "node/3657605425",
+          "lat": 47.219742,
+          "lon": -1.555381,
+          "street": "Cours des Cinquante Otages"
+        },
+        {
+          "id": "node/12980297488",
+          "lat": 47.217938,
+          "lon": -1.550911,
+          "street": "Place Saint-Pierre"
+        },
+        {
+          "id": "node/14101377607",
+          "lat": 47.218939,
+          "lon": -1.556598,
+          "street": "Allée Duquesne"
+        },
+        {
+          "id": "node/5089606926",
+          "lat": 47.217844,
+          "lon": -1.5501,
+          "street": "Impasse Saint-Laurent"
+        },
+        {
+          "id": "node/5089606932",
+          "lat": 47.217973,
+          "lon": -1.549742,
+          "street": "Cours Saint-Pierre"
+        },
+        {
+          "id": "node/13128293268",
+          "lat": 47.221077,
+          "lon": -1.554339,
+          "street": "Quai de Versailles"
+        },
+        {
+          "id": "node/11313909359",
+          "lat": 47.216588,
+          "lon": -1.550531,
+          "street": "Place Marc Elder"
+        },
+        {
+          "id": "node/1860911581",
+          "lat": 47.216493,
+          "lon": -1.550517,
+          "street": "Rue des États"
+        },
+        {
+          "id": "node/4840785377",
+          "lat": 47.216791,
+          "lon": -1.550125,
+          "street": "Rue Prémion"
+        },
+        {
+          "id": "node/3678237384",
+          "lat": 47.220844,
+          "lon": -1.556246,
+          "street": "Rue Jeanne d'Arc"
+        },
+        {
+          "id": "node/4325328915",
+          "lat": 47.215991,
+          "lon": -1.556378,
+          "street": "Place de l'Écluse"
+        },
+        {
+          "id": "node/2009795061",
+          "lat": 47.21558,
+          "lon": -1.556176,
+          "street": "Allée Penthièvre"
+        },
+        {
+          "id": "node/8530043658",
+          "lat": 47.217096,
+          "lon": -1.558272,
+          "street": "Rue de l'Arche Sèche"
+        },
+        {
+          "id": "node/8530043642",
+          "lat": 47.217321,
+          "lon": -1.558414,
+          "street": "Rue du Pont Sauvetout"
+        },
+        {
+          "id": "node/5246134173",
+          "lat": 47.217813,
+          "lon": -1.558756,
+          "street": "Place de Bretagne"
+        },
+        {
+          "id": "node/13121460829",
+          "lat": 47.221957,
+          "lon": -1.554413,
+          "street": "Rue Chateaubriand"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:05.013Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:09.554Z"
     },
     "compressed-air": {
       "count": 0,

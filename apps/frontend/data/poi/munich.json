@@ -1,9 +1,9 @@
 {
   "city": "munich",
-  "generatedAt": "2026-09-03T16:54:20.605Z",
+  "generatedAt": "2026-09-11T10:29:01.979Z",
   "categories": {
     "toilets": {
-      "count": 404,
+      "count": 406,
       "pois": [
         {
           "id": "node/9428580340",
@@ -138,15 +138,6 @@
           "context": "B"
         },
         {
-          "id": "way/349183901",
-          "name": "rail & fresh",
-          "lat": 48.141141,
-          "lon": 11.55911,
-          "openingHours": "24/7",
-          "wheelchair": "yes",
-          "fee": "yes"
-        },
-        {
           "id": "node/4683540393",
           "lat": 48.148662,
           "lon": 11.568033,
@@ -249,12 +240,24 @@
           "name": "Umkleide Damen",
           "lat": 48.1616,
           "lon": 11.60382
+        },
+        {
+          "id": "node/4872713780",
+          "name": "Umkleide Herren",
+          "lat": 48.161661,
+          "lon": 11.603879
         }
       ],
-      "updatedAt": "2026-09-03T16:53:47.697Z"
+      "stats": {
+        "free": 232,
+        "paid": 53,
+        "stepFree": 172,
+        "partlyStepFree": 23
+      },
+      "updatedAt": "2026-09-11T10:28:50.883Z"
     },
     "drinking-water": {
-      "count": 141,
+      "count": 142,
       "pois": [
         {
           "id": "node/599314016",
@@ -435,9 +438,38 @@
           "lon": 11.542732,
           "wheelchair": "yes",
           "fee": "no"
+        },
+        {
+          "id": "node/4347782530",
+          "lat": 48.136286,
+          "lon": 11.573669,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Rindermarkt"
+        },
+        {
+          "id": "node/8923546405",
+          "lat": 48.134228,
+          "lon": 11.573447,
+          "fee": "no",
+          "street": "Prälat-Zistl-Straße"
+        },
+        {
+          "id": "node/6851817185",
+          "lat": 48.135433,
+          "lon": 11.570796,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Sendlinger Straße"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:50.022Z"
+      "stats": {
+        "free": 40,
+        "paid": 0,
+        "stepFree": 41,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:28:54.845Z"
     },
     "playgrounds": {
       "count": 1769,
@@ -1877,7 +1909,13 @@
           "lon": 11.561244
         }
       ],
-      "updatedAt": "2026-09-03T16:53:59.753Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 183,
+        "partlyStepFree": 29
+      },
+      "updatedAt": "2026-09-11T10:28:55.642Z"
     },
     "post-boxes": {
       "count": 631,
@@ -2073,8 +2111,120 @@
       "updatedAt": "2026-09-03T16:54:01.990Z"
     },
     "recycling": {
-      "count": 924,
+      "count": 925,
       "pois": [
+        {
+          "id": "node/12102913194",
+          "name": "AWM",
+          "lat": 48.143073,
+          "lon": 11.585418,
+          "openingHours": "Mo-Sa 07:00-19:00; Su,PH off"
+        },
+        {
+          "id": "node/4532822623",
+          "lat": 48.151763,
+          "lon": 11.579633,
+          "wheelchair": "yes",
+          "context": "B"
+        },
+        {
+          "id": "way/24505030",
+          "name": "Wertstoffhof Steinhausen",
+          "lat": 48.135321,
+          "lon": 11.619145,
+          "openingHours": "off \"Wegen größerer Sanierungs- und Umbaumaßnahmen bleibt der Wertstoffhof bis zum 3. Quartal 2026 geschlossen\""
+        },
+        {
+          "id": "node/356438196",
+          "name": "Wertstoffinsel",
+          "lat": 48.162978,
+          "lon": 11.571077
+        },
+        {
+          "id": "node/4521389152",
+          "name": "BRK",
+          "lat": 48.127367,
+          "lon": 11.535934
+        },
+        {
+          "id": "way/60734382",
+          "name": "Wertstoffhof Thalkirchen",
+          "lat": 48.108681,
+          "lon": 11.544529,
+          "address": "Thalkirchner Straße 260",
+          "openingHours": "Mo 10:30-19:00; Tu-Fr 08:00-18:00; Sa 07:30-15:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/24980780",
+          "name": "Wertstoffhof Tübinger Straße 13",
+          "lat": 48.132214,
+          "lon": 11.526483,
+          "address": "Tübinger Straße 13",
+          "openingHours": "Mo 10:30-19:00; Tu-Fr 08:00-18:00; Sa 07:30-15:00"
+        },
+        {
+          "id": "node/4689459213",
+          "name": "Altkleidersammlung",
+          "lat": 48.151338,
+          "lon": 11.531042
+        },
+        {
+          "id": "way/32371907",
+          "name": "Preimesser Recycling-Fachbetrieb",
+          "lat": 48.101063,
+          "lon": 11.533355,
+          "address": "Geretsrieder Straße 5",
+          "openingHours": "Mo-Fr 07:00-16:30"
+        },
+        {
+          "id": "way/158601673",
+          "name": "Wertstoffhof Nymphenburg",
+          "lat": 48.153506,
+          "lon": 11.515155,
+          "address": "Arnulfstraße 290",
+          "openingHours": "Mo 10:30-19:00; Tu-Fr 08:00-18:00; Sa 07:30-15:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/10720573971",
+          "name": "Kleidercontainer",
+          "lat": 48.147038,
+          "lon": 11.507664
+        },
+        {
+          "id": "way/106191286",
+          "name": "Wertstoffhof Englschalking",
+          "lat": 48.162696,
+          "lon": 11.648985,
+          "address": "Savitsstraße 79",
+          "openingHours": "Mo 10:30-19:00; Tu-Fr 08:00-18:00; Sa 07:30-15:00"
+        },
+        {
+          "id": "way/42158833",
+          "name": "Wertstoffhof Perlach",
+          "lat": 48.088042,
+          "lon": 11.630489,
+          "address": "Bayerwaldstraße 33",
+          "openingHours": "Mo 10:30-19:00; Tu-Fr 08:00-18:00; Sa 07:30-15:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/225141249",
+          "name": "Wertstoffhof plus Freimann",
+          "lat": 48.191531,
+          "lon": 11.599286,
+          "address": "Lindberghstraße 8a",
+          "openingHours": "Mo 10:30-19:00; Tu-Fr 08:00-18:00; Sa 07:30-15:00"
+        },
+        {
+          "id": "way/148814877",
+          "name": "Wertstoffhof Unterhaching",
+          "lat": 48.072849,
+          "lon": 11.619986,
+          "address": "Biberger Straße 89",
+          "openingHours": "Mo,We,Fr 15:00-19:00; Tu 08:00-12:00; Sa 09:00-13:00"
+        },
         {
           "id": "node/8533318275",
           "lat": 48.137048,
@@ -2112,13 +2262,6 @@
           "lat": 48.128204,
           "lon": 11.588515,
           "street": "Rablstraße"
-        },
-        {
-          "id": "node/12102913194",
-          "name": "AWM",
-          "lat": 48.143073,
-          "lon": 11.585418,
-          "openingHours": "Mo-Sa 07:00-19:00; Su,PH off"
         },
         {
           "id": "node/291364361",
@@ -2173,94 +2316,15 @@
           "lat": 48.14603,
           "lon": 11.573999,
           "street": "Gabelsbergerstraße"
-        },
-        {
-          "id": "node/305506460",
-          "lat": 48.133364,
-          "lon": 11.563787,
-          "wheelchair": "yes",
-          "street": "Nußbaumstraße"
-        },
-        {
-          "id": "node/206355279",
-          "lat": 48.126201,
-          "lon": 11.569258,
-          "street": "Baumstraße"
-        },
-        {
-          "id": "node/264300857",
-          "lat": 48.126114,
-          "lon": 11.594989,
-          "street": "Sankt-Wolfgangs-Platz"
-        },
-        {
-          "id": "node/439234778",
-          "lat": 48.12962,
-          "lon": 11.564963,
-          "street": "Winckelstraße"
-        },
-        {
-          "id": "node/12997528369",
-          "lat": 48.125864,
-          "lon": 11.595279,
-          "street": "Balanstraße"
-        },
-        {
-          "id": "node/1346049305",
-          "lat": 48.122736,
-          "lon": 11.588254,
-          "street": "Senftlstraße"
-        },
-        {
-          "id": "node/206354749",
-          "lat": 48.126562,
-          "lon": 11.566889,
-          "street": "Am Glockenbach"
-        },
-        {
-          "id": "node/676011915",
-          "lat": 48.135921,
-          "lon": 11.602172,
-          "street": "Einsteinstraße"
-        },
-        {
-          "id": "node/1006285795",
-          "lat": 48.127069,
-          "lon": 11.598495,
-          "street": "Lothringer Straße"
-        },
-        {
-          "id": "node/1379559793",
-          "lat": 48.121501,
-          "lon": 11.580063,
-          "street": "Taubenstraße"
-        },
-        {
-          "id": "node/266620017",
-          "lat": 48.123346,
-          "lon": 11.594273,
-          "street": "Auerfeldstraße"
-        },
-        {
-          "id": "node/262128642",
-          "lat": 48.120431,
-          "lon": 11.583392,
-          "street": "Ruhestraße"
-        },
-        {
-          "id": "node/4474559989",
-          "lat": 48.130511,
-          "lon": 11.60331,
-          "street": "Breisacher Straße"
-        },
-        {
-          "id": "node/1224504425",
-          "lat": 48.12055,
-          "lon": 11.575894,
-          "street": "Edlingerstraße"
         }
       ],
-      "updatedAt": "2026-09-03T16:54:05.555Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 34,
+        "partlyStepFree": 16
+      },
+      "updatedAt": "2026-09-11T10:28:58.329Z"
     },
     "luggage-storage": {
       "count": 11,
@@ -2703,7 +2767,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T16:54:10.127Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:28:59.663Z"
     },
     "camp-sites": {
       "count": 2,
@@ -3092,7 +3162,7 @@
       "updatedAt": "2026-08-17T04:03:22.316Z"
     },
     "benches": {
-      "count": 14147,
+      "count": 14157,
       "pois": [
         {
           "id": "node/1372934698",
@@ -3148,9 +3218,141 @@
           "name": "die 5 Liegestühle",
           "lat": 48.188043,
           "lon": 11.541475
+        },
+        {
+          "id": "node/2957360071",
+          "lat": 48.13456,
+          "lon": 11.582651,
+          "street": "Isartorplatz"
+        },
+        {
+          "id": "node/3259586160",
+          "lat": 48.134298,
+          "lon": 11.583014,
+          "street": "Isartor"
+        },
+        {
+          "id": "node/12328255851",
+          "lat": 48.134892,
+          "lon": 11.580229,
+          "street": "Westenriederstraße"
+        },
+        {
+          "id": "node/13136641946",
+          "lat": 48.135682,
+          "lon": 11.58033,
+          "street": "Tal"
+        },
+        {
+          "id": "node/2957359725",
+          "lat": 48.133966,
+          "lon": 11.583244,
+          "street": "Thierschstraße"
+        },
+        {
+          "id": "node/3259586154",
+          "lat": 48.133564,
+          "lon": 11.584125,
+          "street": "Liebherrstraße"
+        },
+        {
+          "id": "node/5921442895",
+          "lat": 48.133849,
+          "lon": 11.579334,
+          "street": "Rumfordstraße"
+        },
+        {
+          "id": "node/13138258620",
+          "lat": 48.133839,
+          "lon": 11.579342,
+          "street": "Klenzestraße"
+        },
+        {
+          "id": "node/11812716703",
+          "lat": 48.137188,
+          "lon": 11.584604,
+          "street": "Thomas-Wimmer-Ring"
+        },
+        {
+          "id": "node/10111373745",
+          "lat": 48.13245,
+          "lon": 11.580318,
+          "street": "Baaderstraße"
+        },
+        {
+          "id": "node/6524255195",
+          "lat": 48.132188,
+          "lon": 11.580187,
+          "street": "Baaderplatz"
+        },
+        {
+          "id": "node/10111373765",
+          "lat": 48.13205,
+          "lon": 11.580328,
+          "street": "Kohlstraße"
+        },
+        {
+          "id": "node/299387333",
+          "lat": 48.138462,
+          "lon": 11.582976,
+          "street": "Kammerspiele"
+        },
+        {
+          "id": "node/12080324963",
+          "lat": 48.133827,
+          "lon": 11.586891,
+          "street": "Steinsdorfstraße"
+        },
+        {
+          "id": "node/6032066861",
+          "lat": 48.132384,
+          "lon": 11.58532,
+          "street": "Unterführung Ludwigsbrücke"
+        },
+        {
+          "id": "node/12072044269",
+          "lat": 48.135879,
+          "lon": 11.576798,
+          "street": "Viktualienmarkt"
+        },
+        {
+          "id": "node/12061498582",
+          "lat": 48.137691,
+          "lon": 11.586047,
+          "street": "Maximilianstraße"
+        },
+        {
+          "id": "node/2485745770",
+          "lat": 48.132709,
+          "lon": 11.586741,
+          "street": "Auf der Insel"
+        },
+        {
+          "id": "node/13009302102",
+          "lat": 48.138237,
+          "lon": 11.578239,
+          "street": "Alter Hof"
+        },
+        {
+          "id": "node/3748981427",
+          "lat": 48.133302,
+          "lon": 11.576496,
+          "street": "Reichenbachplatz"
+        },
+        {
+          "id": "node/3745524099",
+          "lat": 48.132,
+          "lon": 11.586113,
+          "street": "Ludwigsbrücke"
         }
       ],
-      "updatedAt": "2026-09-03T16:54:20.504Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:29:01.877Z"
     },
     "compressed-air": {
       "count": 16,

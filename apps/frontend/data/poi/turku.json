@@ -1,6 +1,6 @@
 {
   "city": "turku",
-  "generatedAt": "2026-09-03T16:37:59.042Z",
+  "generatedAt": "2026-09-11T10:26:19.107Z",
   "categories": {
     "toilets": {
       "count": 55,
@@ -138,12 +138,43 @@
           "context": "Krossikeskus"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:34.179Z"
+      "stats": {
+        "free": 25,
+        "paid": 7,
+        "stepFree": 17,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:26:12.970Z"
     },
     "drinking-water": {
       "count": 12,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:37:35.802Z"
+      "pois": [
+        {
+          "id": "node/6761574365",
+          "lat": 60.448346,
+          "lon": 22.26769,
+          "street": "Läntinen Rantakatu"
+        },
+        {
+          "id": "node/12460883098",
+          "lat": 60.453919,
+          "lon": 22.28761,
+          "street": "Rehtorinpellonkatu"
+        },
+        {
+          "id": "node/12250061243",
+          "lat": 60.463356,
+          "lon": 22.290893,
+          "street": "Kuikkulankatu"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:14.727Z"
     },
     "playgrounds": {
       "count": 632,
@@ -1257,7 +1288,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:43.348Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:15.286Z"
     },
     "post-boxes": {
       "count": 96,
@@ -1458,8 +1495,75 @@
       "updatedAt": "2026-09-03T16:37:45.094Z"
     },
     "recycling": {
-      "count": 546,
+      "count": 549,
       "pois": [
+        {
+          "id": "node/12302796967",
+          "name": "UFF-vaatekeräys",
+          "lat": 60.446633,
+          "lon": 22.239614
+        },
+        {
+          "id": "node/4182598774",
+          "name": "Rinki-ekopiste",
+          "lat": 60.457275,
+          "lon": 22.232725
+        },
+        {
+          "id": "node/290342564",
+          "name": "Ekopaja",
+          "lat": 60.473797,
+          "lon": 22.25765,
+          "address": "Rieskalähteentie 74",
+          "openingHours": "Mo-Fr 08:00-18:00"
+        },
+        {
+          "id": "node/14140015045",
+          "name": "Turun Ekotori",
+          "lat": 60.447389,
+          "lon": 22.320573,
+          "address": "Kalevantie 39"
+        },
+        {
+          "id": "node/14081842165",
+          "name": "Rinki ekopiste",
+          "lat": 60.43132,
+          "lon": 22.323163,
+          "address": "Skanssinveräjä 10",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/5755667065",
+          "name": "Risut",
+          "lat": 60.484051,
+          "lon": 22.342071
+        },
+        {
+          "id": "way/89823914",
+          "name": "Topinojan jätekeskus",
+          "lat": 60.484546,
+          "lon": 22.341524,
+          "address": "Pitkäsaarenkatu 7",
+          "openingHours": "Mo-Fr 06:30-21:00"
+        },
+        {
+          "id": "node/5755667071",
+          "name": "Huonekalut",
+          "lat": 60.483857,
+          "lon": 22.345081
+        },
+        {
+          "id": "node/5755667072",
+          "name": "Asbesti",
+          "lat": 60.483839,
+          "lon": 22.345144
+        },
+        {
+          "id": "node/5755667069",
+          "name": "Puu",
+          "lat": 60.4842,
+          "lon": 22.345566
+        },
         {
           "id": "node/10263895939",
           "lat": 60.458094,
@@ -1533,12 +1637,6 @@
           "street": "Samottitasku"
         },
         {
-          "id": "node/12302796967",
-          "name": "UFF-vaatekeräys",
-          "lat": 60.446633,
-          "lon": 22.239614
-        },
-        {
           "id": "node/13158673917",
           "lat": 60.457869,
           "lon": 22.240191,
@@ -1585,65 +1683,15 @@
           "lat": 60.461422,
           "lon": 22.296014,
           "street": "Papinkatu"
-        },
-        {
-          "id": "node/4182598774",
-          "name": "Rinki-ekopiste",
-          "lat": 60.457275,
-          "lon": 22.232725
-        },
-        {
-          "id": "node/4594499411",
-          "lat": 60.461722,
-          "lon": 22.298307,
-          "street": "Simolankatu"
-        },
-        {
-          "id": "node/12218554126",
-          "lat": 60.47139,
-          "lon": 22.272303,
-          "street": "Loukkaanpolku"
-        },
-        {
-          "id": "node/12218412061",
-          "lat": 60.471626,
-          "lon": 22.271302,
-          "street": "Loukkaankatu"
-        },
-        {
-          "id": "node/12462762931",
-          "lat": 60.471506,
-          "lon": 22.273682,
-          "street": "Mullintie"
-        },
-        {
-          "id": "node/566341480",
-          "lat": 60.469206,
-          "lon": 22.245605,
-          "street": "Liinahaankatu"
-        },
-        {
-          "id": "node/12218669678",
-          "lat": 60.473202,
-          "lon": 22.272281,
-          "street": "Pulmussuontie"
-        },
-        {
-          "id": "node/290342564",
-          "name": "Ekopaja",
-          "lat": 60.473797,
-          "lon": 22.25765,
-          "address": "Rieskalähteentie 74",
-          "openingHours": "Mo-Fr 08:00-18:00"
-        },
-        {
-          "id": "node/12205668368",
-          "lat": 60.431655,
-          "lon": 22.289137,
-          "street": "Ruispolku"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:47.693Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:16.956Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -1898,7 +1946,13 @@
           "lon": 22.163082
         }
       ],
-      "updatedAt": "2026-09-03T16:37:50.848Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:26:17.950Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2043,9 +2097,76 @@
       "updatedAt": "2026-08-17T04:02:28.357Z"
     },
     "benches": {
-      "count": 1355,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:37:58.941Z"
+      "count": 1363,
+      "pois": [
+        {
+          "id": "node/10239368412",
+          "lat": 60.452044,
+          "lon": 22.265867,
+          "street": "Yliopistonkatu"
+        },
+        {
+          "id": "node/11597552370",
+          "lat": 60.45171,
+          "lon": 22.267963,
+          "street": "Kauppiaskatu"
+        },
+        {
+          "id": "node/6384398395",
+          "lat": 60.4535,
+          "lon": 22.26669,
+          "street": "Valopiha"
+        },
+        {
+          "id": "node/12834949814",
+          "lat": 60.452845,
+          "lon": 22.261465,
+          "street": "Puolalankatu"
+        },
+        {
+          "id": "node/5063612040",
+          "lat": 60.451051,
+          "lon": 22.272607,
+          "street": "Läntinen Rantakatu"
+        },
+        {
+          "id": "node/10596548020",
+          "lat": 60.454708,
+          "lon": 22.264528,
+          "street": "Tuureporinkatu"
+        },
+        {
+          "id": "node/11616076108",
+          "lat": 60.453715,
+          "lon": 22.261635,
+          "street": "Taiteenpolku"
+        },
+        {
+          "id": "node/11616076107",
+          "lat": 60.453714,
+          "lon": 22.261581,
+          "street": "Dahlströminpolku"
+        },
+        {
+          "id": "node/6598445346",
+          "lat": 60.454191,
+          "lon": 22.262346,
+          "street": "Museomäenpolku"
+        },
+        {
+          "id": "node/13063894570",
+          "lat": 60.451171,
+          "lon": 22.27321,
+          "street": "Vähätorin apparelli"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:19.007Z"
     },
     "compressed-air": {
       "count": 0,

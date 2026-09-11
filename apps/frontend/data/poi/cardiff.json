@@ -1,6 +1,6 @@
 {
   "city": "cardiff",
-  "generatedAt": "2026-09-03T17:10:37.147Z",
+  "generatedAt": "2026-09-11T10:30:50.353Z",
   "categories": {
     "toilets": {
       "count": 47,
@@ -146,12 +146,92 @@
           "context": "Cosmeston Visitor Centre"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:16.823Z"
+      "stats": {
+        "free": 28,
+        "paid": 0,
+        "stepFree": 14,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:30:45.098Z"
     },
     "drinking-water": {
       "count": 23,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:10:18.110Z"
+      "pois": [
+        {
+          "id": "node/12050088738",
+          "lat": 51.48035,
+          "lon": -3.1784,
+          "openingHours": "Mo-Su 08:00-15:00",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Trinity Street"
+        },
+        {
+          "id": "node/9876835258",
+          "lat": 51.480842,
+          "lon": -3.181108,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Castle Arcade"
+        },
+        {
+          "id": "node/13004729901",
+          "lat": 51.476995,
+          "lon": -3.178489,
+          "street": "Marland Street"
+        },
+        {
+          "id": "node/13004729202",
+          "lat": 51.484327,
+          "lon": -3.187401,
+          "street": "Millennium Bridge"
+        },
+        {
+          "id": "node/9876835259",
+          "lat": 51.478775,
+          "lon": -3.170083,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Adam Street"
+        },
+        {
+          "id": "node/9876835255",
+          "lat": 51.47527,
+          "lon": -3.17877,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "East Subway"
+        },
+        {
+          "id": "node/9876835261",
+          "lat": 51.491857,
+          "lon": -3.185254,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Colum Drive"
+        },
+        {
+          "id": "node/9876925523",
+          "lat": 51.427231,
+          "lon": -3.171622,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Cliff Parade"
+        },
+        {
+          "id": "node/12041630609",
+          "lat": 51.488057,
+          "lon": -3.277331,
+          "street": "Rhyd-y-car Terrace"
+        }
+      ],
+      "stats": {
+        "free": 16,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:47.001Z"
     },
     "playgrounds": {
       "count": 159,
@@ -802,7 +882,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:24.861Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:47.454Z"
     },
     "post-boxes": {
       "count": 329,
@@ -994,6 +1080,42 @@
       "count": 35,
       "pois": [
         {
+          "id": "way/93658729",
+          "name": "Bessemer Close Recycling Centre",
+          "lat": 51.466312,
+          "lon": -3.204825,
+          "address": "Bessemer Close"
+        },
+        {
+          "id": "node/12039498984",
+          "lat": 51.452244,
+          "lon": -3.182268,
+          "openingHours": "Mo-Sa 07:00-22:00; Su 10:00-16:00",
+          "context": "Morrisons"
+        },
+        {
+          "id": "node/12026589184",
+          "lat": 51.446051,
+          "lon": -3.185717,
+          "openingHours": "Mo-Sa 07:00-23:00,10:00-16:00",
+          "context": "Tesco"
+        },
+        {
+          "id": "way/920605271",
+          "name": "Lamby Way Household Waste Recycling Centre",
+          "lat": 51.497505,
+          "lon": -3.12251,
+          "address": "Lamby Way",
+          "openingHours": "Mo-Su 08:30-16:30"
+        },
+        {
+          "id": "node/12402670406",
+          "lat": 51.53038,
+          "lon": -3.138276,
+          "openingHours": "Mo-Sa 07:30-21:00; Su 10:00-16:00",
+          "context": "Waitrose"
+        },
+        {
           "id": "node/12017430671",
           "lat": 51.476948,
           "lon": -3.178562,
@@ -1049,46 +1171,10 @@
           "street": "Brian Clark Way"
         },
         {
-          "id": "way/93658729",
-          "name": "Bessemer Close Recycling Centre",
-          "lat": 51.466312,
-          "lon": -3.204825,
-          "address": "Bessemer Close"
-        },
-        {
-          "id": "node/12039498984",
-          "lat": 51.452244,
-          "lon": -3.182268,
-          "openingHours": "Mo-Sa 07:00-22:00; Su 10:00-16:00",
-          "context": "Morrisons"
-        },
-        {
           "id": "node/4813429438",
           "lat": 51.448147,
           "lon": -3.185643,
           "street": "Pont Y Werin"
-        },
-        {
-          "id": "node/12026589184",
-          "lat": 51.446051,
-          "lon": -3.185717,
-          "openingHours": "Mo-Sa 07:00-23:00,10:00-16:00",
-          "context": "Tesco"
-        },
-        {
-          "id": "way/920605271",
-          "name": "Lamby Way Household Waste Recycling Centre",
-          "lat": 51.497505,
-          "lon": -3.12251,
-          "address": "Lamby Way",
-          "openingHours": "Mo-Su 08:30-16:30"
-        },
-        {
-          "id": "node/12402670406",
-          "lat": 51.53038,
-          "lon": -3.138276,
-          "openingHours": "Mo-Sa 07:30-21:00; Su 10:00-16:00",
-          "context": "Waitrose"
         },
         {
           "id": "node/12041630602",
@@ -1097,7 +1183,13 @@
           "street": "Rhyd-y-car Terrace"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:29.944Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:48.827Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1282,7 +1374,13 @@
           "lon": -3.162746
         }
       ],
-      "updatedAt": "2026-09-03T17:10:31.180Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:49.238Z"
     },
     "camp-sites": {
       "count": 2,
@@ -1589,9 +1687,105 @@
           "name": "The Enormous Crocodile Bench",
           "lat": 51.452294,
           "lon": -3.164257
+        },
+        {
+          "id": "node/11099446728",
+          "lat": 51.481223,
+          "lon": -3.178609,
+          "street": "St. John Street"
+        },
+        {
+          "id": "node/11099464393",
+          "lat": 51.480931,
+          "lon": -3.178359,
+          "street": "Working Street"
+        },
+        {
+          "id": "node/13118953321",
+          "lat": 51.482683,
+          "lon": -3.178079,
+          "street": "The Friary"
+        },
+        {
+          "id": "node/13118936060",
+          "lat": 51.482882,
+          "lon": -3.179095,
+          "street": "Kingsway"
+        },
+        {
+          "id": "node/12700738848",
+          "lat": 51.480419,
+          "lon": -3.177768,
+          "street": "Trinity Street"
+        },
+        {
+          "id": "node/7573592068",
+          "lat": 51.483311,
+          "lon": -3.179308,
+          "street": "North Road"
+        },
+        {
+          "id": "node/12115222172",
+          "lat": 51.479971,
+          "lon": -3.176984,
+          "street": "The Hayes"
+        },
+        {
+          "id": "node/12804562734",
+          "lat": 51.483528,
+          "lon": -3.182034,
+          "street": "North Gate Bridge"
+        },
+        {
+          "id": "node/13015447381",
+          "lat": 51.482362,
+          "lon": -3.173466,
+          "street": "Churchill Way"
+        },
+        {
+          "id": "node/13324183487",
+          "lat": 51.485039,
+          "lon": -3.177122,
+          "street": "Gorsedd Gardens Road"
+        },
+        {
+          "id": "node/11244374412",
+          "lat": 51.477963,
+          "lon": -3.177811,
+          "street": "Saint Mary Street"
+        },
+        {
+          "id": "node/12184832662",
+          "lat": 51.478218,
+          "lon": -3.175437,
+          "street": "Mill Lane"
+        },
+        {
+          "id": "node/12128338230",
+          "lat": 51.485678,
+          "lon": -3.179664,
+          "street": "City Hall Road"
+        },
+        {
+          "id": "node/12184832663",
+          "lat": 51.478159,
+          "lon": -3.175352,
+          "street": "Tredegar Street"
+        },
+        {
+          "id": "node/12128376603",
+          "lat": 51.485753,
+          "lon": -3.180154,
+          "street": "King Edward VII Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:37.046Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:50.252Z"
     },
     "compressed-air": {
       "count": 0,

@@ -1,6 +1,6 @@
 {
   "city": "philadelphia",
-  "generatedAt": "2026-09-03T17:28:21.647Z",
+  "generatedAt": "2026-09-11T10:32:40.450Z",
   "categories": {
     "toilets": {
       "count": 37,
@@ -112,12 +112,118 @@
           "address": "South Broad Street 3500"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:00.369Z"
+      "stats": {
+        "free": 6,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:32:33.504Z"
     },
     "drinking-water": {
       "count": 19,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:28:01.686Z"
+      "pois": [
+        {
+          "id": "node/6681553190",
+          "lat": 39.952279,
+          "lon": -75.164979,
+          "fee": "no",
+          "street": "Underground Concourse"
+        },
+        {
+          "id": "node/13772597104",
+          "lat": 39.952371,
+          "lon": -75.168327,
+          "fee": "no",
+          "street": "South 17th Street"
+        },
+        {
+          "id": "node/6593942434",
+          "lat": 39.947562,
+          "lon": -75.179441,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "South 23rd Street"
+        },
+        {
+          "id": "node/3258644199",
+          "lat": 39.950649,
+          "lon": -75.181318,
+          "street": "Schuylkill River Trail"
+        },
+        {
+          "id": "node/2443572317",
+          "lat": 39.94927,
+          "lon": -75.149446,
+          "street": "Chestnut Street"
+        },
+        {
+          "id": "node/9038480946",
+          "lat": 39.948044,
+          "lon": -75.183179,
+          "fee": "no",
+          "street": "Pine Street"
+        },
+        {
+          "id": "node/13986416899",
+          "lat": 39.955215,
+          "lon": -75.184641,
+          "fee": "no",
+          "street": "Market Street"
+        },
+        {
+          "id": "node/1586414753",
+          "lat": 39.966261,
+          "lon": -75.182696,
+          "street": "North Cliffside Path"
+        },
+        {
+          "id": "node/13639070660",
+          "lat": 39.957133,
+          "lon": -75.189548,
+          "wheelchair": "limited",
+          "street": "Cuthbert Street"
+        },
+        {
+          "id": "node/13542184024",
+          "lat": 39.952542,
+          "lon": -75.139692,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Delaware River Trail"
+        },
+        {
+          "id": "node/7020209913",
+          "lat": 39.948133,
+          "lon": -75.204596,
+          "street": "Running Track"
+        },
+        {
+          "id": "node/4378966694",
+          "lat": 39.986373,
+          "lon": -75.205056,
+          "street": "Martin Luther King Junior Drive Trail"
+        },
+        {
+          "id": "node/12998447097",
+          "lat": 40.003956,
+          "lon": -75.187635,
+          "street": "Ridge Avenue"
+        },
+        {
+          "id": "node/12741684555",
+          "lat": 40.017269,
+          "lon": -75.188398,
+          "street": "Henry Avenue"
+        }
+      ],
+      "stats": {
+        "free": 7,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:32:35.500Z"
     },
     "playgrounds": {
       "count": 460,
@@ -1417,7 +1523,13 @@
           "address": "South 16th Street 1851"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:08.755Z"
+      "stats": {
+        "free": 2,
+        "paid": 8,
+        "stepFree": 3,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:32:36.219Z"
     },
     "post-boxes": {
       "count": 314,
@@ -1610,6 +1722,51 @@
       "count": 57,
       "pois": [
         {
+          "id": "node/6604037088",
+          "lat": 39.952582,
+          "lon": -75.188753,
+          "context": "Krishna P. Singh Center for Nanotechnology"
+        },
+        {
+          "id": "node/13620395745",
+          "lat": 39.953563,
+          "lon": -75.189016,
+          "context": "Handschumacher Dining Center"
+        },
+        {
+          "id": "node/9169920856",
+          "name": "Temple Computer Recycling Center",
+          "lat": 39.980554,
+          "lon": -75.157808
+        },
+        {
+          "id": "node/12785508248",
+          "name": "Liberty Waste & Recycling Inc.",
+          "lat": 39.924214,
+          "lon": -75.215643
+        },
+        {
+          "id": "node/6875686031",
+          "name": "Delaware Valley Recycling",
+          "lat": 39.922389,
+          "lon": -75.21495,
+          "address": "South 61st Street 3107"
+        },
+        {
+          "id": "way/601325284",
+          "name": "Clearfield Recycling",
+          "lat": 39.999128,
+          "lon": -75.140316,
+          "address": "West Clearfield Street 547"
+        },
+        {
+          "id": "way/601865422",
+          "name": "EMR Delco",
+          "lat": 39.996971,
+          "lon": -75.132828,
+          "address": "North 2nd Street 3057"
+        },
+        {
           "id": "node/6681558998",
           "lat": 39.950107,
           "lon": -75.170837,
@@ -1650,18 +1807,6 @@
           "lat": 39.955632,
           "lon": -75.188399,
           "street": "North 32nd Street"
-        },
-        {
-          "id": "node/6604037088",
-          "lat": 39.952582,
-          "lon": -75.188753,
-          "context": "Krishna P. Singh Center for Nanotechnology"
-        },
-        {
-          "id": "node/13620395745",
-          "lat": 39.953563,
-          "lon": -75.189016,
-          "context": "Handschumacher Dining Center"
         },
         {
           "id": "node/13626162760",
@@ -1730,12 +1875,6 @@
           "street": "Annenberg Plaza"
         },
         {
-          "id": "node/9169920856",
-          "name": "Temple Computer Recycling Center",
-          "lat": 39.980554,
-          "lon": -75.157808
-        },
-        {
           "id": "node/13028572094",
           "lat": 39.909075,
           "lon": -75.172769,
@@ -1748,40 +1887,19 @@
           "street": "Belmont Drive"
         },
         {
-          "id": "node/12785508248",
-          "name": "Liberty Waste & Recycling Inc.",
-          "lat": 39.924214,
-          "lon": -75.215643
-        },
-        {
-          "id": "node/6875686031",
-          "name": "Delaware Valley Recycling",
-          "lat": 39.922389,
-          "lon": -75.21495,
-          "address": "South 61st Street 3107"
-        },
-        {
-          "id": "way/601325284",
-          "name": "Clearfield Recycling",
-          "lat": 39.999128,
-          "lon": -75.140316,
-          "address": "West Clearfield Street 547"
-        },
-        {
-          "id": "way/601865422",
-          "name": "EMR Delco",
-          "lat": 39.996971,
-          "lon": -75.132828,
-          "address": "North 2nd Street 3057"
-        },
-        {
           "id": "node/12741684561",
           "lat": 40.018212,
           "lon": -75.188302,
           "street": "West Coulter Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:12.139Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:38.472Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2120,7 +2238,13 @@
           "lon": -75.213273
         }
       ],
-      "updatedAt": "2026-09-03T17:28:14.087Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:39.288Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2374,9 +2498,75 @@
           "name": "Benjamin Franklin (on a bench)",
           "lat": 39.952161,
           "lon": -75.196965
+        },
+        {
+          "id": "node/9688976390",
+          "lat": 39.952367,
+          "lon": -75.164699,
+          "street": "Underground Concourse"
+        },
+        {
+          "id": "node/9443196500",
+          "lat": 39.953516,
+          "lon": -75.171828,
+          "street": "Market Street"
+        },
+        {
+          "id": "node/12770955153",
+          "lat": 39.957812,
+          "lon": -75.171649,
+          "street": "Logan Circle"
+        },
+        {
+          "id": "node/12770847473",
+          "lat": 39.957855,
+          "lon": -75.17161,
+          "street": "Benjamin Franklin Parkway"
+        },
+        {
+          "id": "node/9461646977",
+          "lat": 39.946241,
+          "lon": -75.170124,
+          "street": "Pine Street"
+        },
+        {
+          "id": "node/12770955149",
+          "lat": 39.958365,
+          "lon": -75.171878,
+          "street": "North 20th Street"
+        },
+        {
+          "id": "node/12102902141",
+          "lat": 39.960443,
+          "lon": -75.169298,
+          "street": "Callowhill Street"
+        },
+        {
+          "id": "node/12770847462",
+          "lat": 39.959081,
+          "lon": -75.173107,
+          "street": "Winter Street"
+        },
+        {
+          "id": "node/9443223117",
+          "lat": 39.953554,
+          "lon": -75.17694,
+          "street": "Ludlow Street"
+        },
+        {
+          "id": "node/13302224163",
+          "lat": 39.961362,
+          "lon": -75.168395,
+          "street": "North 18th Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:21.546Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:40.348Z"
     },
     "compressed-air": {
       "count": 0,

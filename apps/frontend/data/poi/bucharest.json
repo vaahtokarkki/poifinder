@@ -1,6 +1,6 @@
 {
   "city": "bucharest",
-  "generatedAt": "2026-09-03T16:51:58.874Z",
+  "generatedAt": "2026-09-11T10:28:44.875Z",
   "categories": {
     "toilets": {
       "count": 177,
@@ -154,7 +154,13 @@
           "openingHours": "Mo-Sa 07:00-22:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:51:35.687Z"
+      "stats": {
+        "free": 102,
+        "paid": 6,
+        "stepFree": 21,
+        "partlyStepFree": 24
+      },
+      "updatedAt": "2026-09-11T10:28:38.028Z"
     },
     "drinking-water": {
       "count": 255,
@@ -249,9 +255,105 @@
           "name": "parc",
           "lat": 44.470501,
           "lon": 26.169387
+        },
+        {
+          "id": "node/6639560485",
+          "lat": 44.429214,
+          "lon": 26.102218,
+          "street": "Strada Halelor"
+        },
+        {
+          "id": "node/6071372146",
+          "lat": 44.423781,
+          "lon": 26.103065,
+          "street": "Calea Șerban Vodă"
+        },
+        {
+          "id": "node/12214573086",
+          "lat": 44.432311,
+          "lon": 26.104068,
+          "street": "Pasajul Latin"
+        },
+        {
+          "id": "node/11182692037",
+          "lat": 44.427466,
+          "lon": 26.093075,
+          "street": "Bulevardul Unirii"
+        },
+        {
+          "id": "node/2291339798",
+          "lat": 44.432759,
+          "lon": 26.097597,
+          "street": "Strada Lipscani"
+        },
+        {
+          "id": "node/14089529022",
+          "lat": 44.430631,
+          "lon": 26.112337,
+          "street": "Strada Matei Basarab"
+        },
+        {
+          "id": "node/2288718198",
+          "lat": 44.418034,
+          "lon": 26.095528,
+          "street": "Piața Libertății"
+        },
+        {
+          "id": "node/2903845399",
+          "lat": 44.436574,
+          "lon": 26.106762,
+          "street": "Strada Dianei"
+        },
+        {
+          "id": "node/12065694929",
+          "lat": 44.435184,
+          "lon": 26.093237,
+          "street": "Aleea Macilor"
+        },
+        {
+          "id": "node/5752236021",
+          "lat": 44.430386,
+          "lon": 26.11724,
+          "street": "Strada Parfumului"
+        },
+        {
+          "id": "node/11924427595",
+          "lat": 44.43555,
+          "lon": 26.113689,
+          "street": "Strada Plantelor"
+        },
+        {
+          "id": "node/13157911981",
+          "lat": 44.434295,
+          "lon": 26.087995,
+          "street": "Intrarea Vasile Păun"
+        },
+        {
+          "id": "node/2315300437",
+          "lat": 44.436851,
+          "lon": 26.090019,
+          "street": "Parterul central"
+        },
+        {
+          "id": "node/11992913169",
+          "lat": 44.43317,
+          "lon": 26.084669,
+          "street": "Splaiul Independenței"
+        },
+        {
+          "id": "node/1759761178",
+          "lat": 44.43815,
+          "lon": 26.116159,
+          "street": "Piața Pache Protopopescu"
         }
       ],
-      "updatedAt": "2026-09-03T16:51:37.538Z"
+      "stats": {
+        "free": 38,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:28:40.277Z"
     },
     "playgrounds": {
       "count": 777,
@@ -1486,7 +1588,13 @@
           "lon": 26.105858
         }
       ],
-      "updatedAt": "2026-09-03T16:51:46.067Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 77,
+        "partlyStepFree": 47
+      },
+      "updatedAt": "2026-09-11T10:28:40.852Z"
     },
     "post-boxes": {
       "count": 12,
@@ -1554,6 +1662,51 @@
           "openingHours": "Mo-Fr 08:30-17:30; Sa 09:00-13:00"
         },
         {
+          "id": "way/410090072",
+          "name": "Punct de colectare a deseurilor",
+          "lat": 44.405563,
+          "lon": 26.104258
+        },
+        {
+          "id": "way/1337757559",
+          "name": "Punct reciclare SGR - Kaufland",
+          "lat": 44.454309,
+          "lon": 26.129578,
+          "address": "Șoseaua Colentina 6"
+        },
+        {
+          "id": "way/398014679",
+          "name": "Ecotic",
+          "lat": 44.451148,
+          "lon": 26.152956
+        },
+        {
+          "id": "node/2377267281",
+          "name": "fier vechi",
+          "lat": 44.465505,
+          "lon": 26.139116,
+          "address": "Strada Maior Vasile Băcilă 1"
+        },
+        {
+          "id": "node/5924885486",
+          "name": "Fier",
+          "lat": 44.379467,
+          "lon": 26.132052
+        },
+        {
+          "id": "node/5957353485",
+          "name": "Punct reciclare înVerde",
+          "lat": 44.363519,
+          "lon": 26.124944
+        },
+        {
+          "id": "node/10969574552",
+          "name": "Aparat de colectare ambalaje reciclabile",
+          "lat": 44.490511,
+          "lon": 26.064896,
+          "address": "Șoseaua Străulești 68"
+        },
+        {
           "id": "node/10750350485",
           "lat": 44.431548,
           "lon": 26.11589,
@@ -1613,12 +1766,6 @@
           "lat": 44.41533,
           "lon": 26.078555,
           "street": "Strada Progresului"
-        },
-        {
-          "id": "way/410090072",
-          "name": "Punct de colectare a deseurilor",
-          "lat": 44.405563,
-          "lon": 26.104258
         },
         {
           "id": "node/7832543693",
@@ -1691,51 +1838,19 @@
           "street": "Strada Fruntaș Constantin Tudor"
         },
         {
-          "id": "way/1337757559",
-          "name": "Punct reciclare SGR - Kaufland",
-          "lat": 44.454309,
-          "lon": 26.129578,
-          "address": "Șoseaua Colentina 6"
-        },
-        {
           "id": "node/9713846863",
           "lat": 44.42922,
           "lon": 26.153065,
           "street": "Strada Gheorghe Tattarescu"
-        },
-        {
-          "id": "node/12029885728",
-          "lat": 44.416347,
-          "lon": 26.049524,
-          "openingHours": "24/7",
-          "street": "Aleea Meseriașilor"
-        },
-        {
-          "id": "node/10080627133",
-          "lat": 44.388854,
-          "lon": 26.116926,
-          "street": "Strada Sergent Nițu Vasile"
-        },
-        {
-          "id": "node/874383014",
-          "lat": 44.418144,
-          "lon": 26.160612,
-          "street": "Strada Rotundă"
-        },
-        {
-          "id": "node/7932022130",
-          "lat": 44.416883,
-          "lon": 26.161189,
-          "street": "Strada Ștrandul Titan"
-        },
-        {
-          "id": "node/1305765237",
-          "lat": 44.426605,
-          "lon": 26.163185,
-          "street": "Bulevardul Nicolae Grigorescu"
         }
       ],
-      "updatedAt": "2026-09-03T16:51:49.609Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:42.562Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -1984,7 +2099,13 @@
     "outdoor-gyms": {
       "count": 25,
       "pois": [],
-      "updatedAt": "2026-09-03T16:51:51.654Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:43.529Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2276,9 +2397,111 @@
           "name": "Banca Vilei Minovici",
           "lat": 44.484175,
           "lon": 26.075632
+        },
+        {
+          "id": "node/13379281355",
+          "lat": 44.426558,
+          "lon": 26.100458,
+          "street": "Bulevardul Regina Maria"
+        },
+        {
+          "id": "node/9411250379",
+          "lat": 44.425621,
+          "lon": 26.100829,
+          "street": "Aleea Dealul Mitropoliei"
+        },
+        {
+          "id": "node/13538500710",
+          "lat": 44.429809,
+          "lon": 26.102606,
+          "street": "Piața Sf. Anton"
+        },
+        {
+          "id": "node/10728222296",
+          "lat": 44.424739,
+          "lon": 26.097904,
+          "street": "Strada Patriarhiei"
+        },
+        {
+          "id": "node/13682385839",
+          "lat": 44.430531,
+          "lon": 26.098794,
+          "street": "Strada Nicolae Tonitza"
+        },
+        {
+          "id": "node/13682383948",
+          "lat": 44.4306,
+          "lon": 26.098552,
+          "street": "Strada Franceză"
+        },
+        {
+          "id": "node/11108005012",
+          "lat": 44.431871,
+          "lon": 26.099437,
+          "street": "Strada Stavropoleos"
+        },
+        {
+          "id": "node/11190283310",
+          "lat": 44.432296,
+          "lon": 26.11083,
+          "street": "Strada Constantin F. Robescu"
+        },
+        {
+          "id": "node/11190283308",
+          "lat": 44.432314,
+          "lon": 26.110994,
+          "street": "Bulevardul Corneliu Coposu"
+        },
+        {
+          "id": "node/13197962971",
+          "lat": 44.435029,
+          "lon": 26.102952,
+          "street": "Bulevardul Ion C. Brătianu"
+        },
+        {
+          "id": "node/13197979406",
+          "lat": 44.435325,
+          "lon": 26.10297,
+          "street": "Pasajul Nicolae Bălcescu"
+        },
+        {
+          "id": "node/14028204035",
+          "lat": 44.435086,
+          "lon": 26.105463,
+          "street": "Strada Dimitrie Bolintineanu"
+        },
+        {
+          "id": "node/14028204039",
+          "lat": 44.435144,
+          "lon": 26.105405,
+          "street": "Strada Scaune"
+        },
+        {
+          "id": "node/8909898630",
+          "lat": 44.43548,
+          "lon": 26.103427,
+          "street": "Bulevardul Carol I"
+        },
+        {
+          "id": "node/13942100722",
+          "lat": 44.436133,
+          "lon": 26.101423,
+          "street": "Strada Biserica Enei"
+        },
+        {
+          "id": "node/13190449215",
+          "lat": 44.436204,
+          "lon": 26.102481,
+          "street": "Bulevardul Nicolae Bălcescu"
         }
       ],
-      "updatedAt": "2026-09-03T16:51:58.773Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:44.773Z"
     },
     "compressed-air": {
       "count": 0,

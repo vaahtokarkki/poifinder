@@ -1,6 +1,6 @@
 {
   "city": "dublin",
-  "generatedAt": "2026-09-03T17:11:30.416Z",
+  "generatedAt": "2026-09-11T10:30:42.442Z",
   "categories": {
     "toilets": {
       "count": 140,
@@ -234,7 +234,13 @@
           "context": "Saint Patrick's Cathedral"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:01.146Z"
+      "stats": {
+        "free": 55,
+        "paid": 2,
+        "stepFree": 64,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-11T10:30:35.244Z"
     },
     "drinking-water": {
       "count": 43,
@@ -244,9 +250,149 @@
           "name": "Arbere Fountain",
           "lat": 53.326571,
           "lon": -6.233492
+        },
+        {
+          "id": "node/12053173255",
+          "lat": 53.34556,
+          "lon": -6.263163,
+          "fee": "no",
+          "street": "Temple Bar Square"
+        },
+        {
+          "id": "node/9929593317",
+          "lat": 53.344787,
+          "lon": -6.257292,
+          "fee": "no",
+          "street": "Parliament Square"
+        },
+        {
+          "id": "node/12104246945",
+          "lat": 53.351188,
+          "lon": -6.249614,
+          "fee": "no",
+          "street": "Harbourmaster Place"
+        },
+        {
+          "id": "node/12118553966",
+          "lat": 53.343462,
+          "lon": -6.257339,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Fellows' Square"
+        },
+        {
+          "id": "node/11359857353",
+          "lat": 53.34366,
+          "lon": -6.255889,
+          "street": "The Broadwalk"
+        },
+        {
+          "id": "node/4960236112",
+          "lat": 53.343256,
+          "lon": -6.250351,
+          "street": "Parade Ground"
+        },
+        {
+          "id": "node/12231306876",
+          "lat": 53.34083,
+          "lon": -6.262585,
+          "street": "Clarendon Market"
+        },
+        {
+          "id": "node/13536889912",
+          "lat": 53.343466,
+          "lon": -6.248268,
+          "fee": "no",
+          "street": "South Cumberland Street"
+        },
+        {
+          "id": "node/13543686122",
+          "lat": 53.343267,
+          "lon": -6.248537,
+          "fee": "no",
+          "street": "Platform 1"
+        },
+        {
+          "id": "node/13185983161",
+          "lat": 53.356877,
+          "lon": -6.245099,
+          "street": "Royal Canal Greenway"
+        },
+        {
+          "id": "node/13594645972",
+          "lat": 53.339418,
+          "lon": -6.236673,
+          "street": "Barrow Street"
+        },
+        {
+          "id": "node/10003156517",
+          "lat": 53.346252,
+          "lon": -6.293018,
+          "fee": "no",
+          "street": "Saint John's Road West"
+        },
+        {
+          "id": "node/11948558021",
+          "lat": 53.308091,
+          "lon": -6.228905,
+          "street": "Wynnsward Drive"
+        },
+        {
+          "id": "node/11948558020",
+          "lat": 53.309272,
+          "lon": -6.223856,
+          "street": "Route1"
+        },
+        {
+          "id": "node/9975153926",
+          "lat": 53.374383,
+          "lon": -6.180537,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Oak Walk"
+        },
+        {
+          "id": "node/14092103232",
+          "lat": 53.365328,
+          "lon": -6.36044,
+          "street": "Courtyard"
+        },
+        {
+          "id": "node/7173100706",
+          "lat": 53.28809,
+          "lon": -6.242623,
+          "wheelchair": "yes",
+          "street": "Town Square"
+        },
+        {
+          "id": "node/12246588805",
+          "lat": 53.302433,
+          "lon": -6.182295,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Rock Road"
+        },
+        {
+          "id": "node/11420659504",
+          "lat": 53.300091,
+          "lon": -6.341784,
+          "wheelchair": "yes",
+          "street": "Mayor's Mile"
+        },
+        {
+          "id": "node/12063265051",
+          "lat": 53.295972,
+          "lon": -6.180967,
+          "street": "Carysfort Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:02.871Z"
+      "stats": {
+        "free": 13,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:37.373Z"
     },
     "playgrounds": {
       "count": 222,
@@ -1442,7 +1588,13 @@
           "address": "Rock Hill"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:13.413Z"
+      "stats": {
+        "free": 5,
+        "paid": 0,
+        "stepFree": 96,
+        "partlyStepFree": 11
+      },
+      "updatedAt": "2026-09-11T10:30:38.048Z"
     },
     "post-boxes": {
       "count": 578,
@@ -1635,30 +1787,6 @@
       "count": 148,
       "pois": [
         {
-          "id": "node/12281087388",
-          "lat": 53.344566,
-          "lon": -6.256001,
-          "street": "New Square"
-        },
-        {
-          "id": "node/13580234815",
-          "lat": 53.347998,
-          "lon": -6.272141,
-          "street": "Mary's Lane"
-        },
-        {
-          "id": "node/9102640780",
-          "lat": 53.354695,
-          "lon": -6.244932,
-          "street": "Aldborough Court"
-        },
-        {
-          "id": "node/9102640771",
-          "lat": 53.354835,
-          "lon": -6.244694,
-          "street": "Shamrock Terrace"
-        },
-        {
           "id": "way/174092686",
           "name": "North Strand Recycling Centre",
           "lat": 53.354774,
@@ -1700,54 +1828,10 @@
           "fee": "€2 per bag"
         },
         {
-          "id": "node/13754365344",
-          "lat": 53.354256,
-          "lon": -6.278511,
-          "street": "Grangegorman Lower"
-        },
-        {
           "id": "node/1794164476",
           "name": "Ossory Car Recycling Co.",
           "lat": 53.354818,
           "lon": -6.240241
-        },
-        {
-          "id": "node/662969569",
-          "lat": 53.362565,
-          "lon": -6.273451,
-          "street": "Phibsboro Shopping Centre"
-        },
-        {
-          "id": "node/583256606",
-          "lat": 53.337866,
-          "lon": -6.276415,
-          "address": "Newmarket",
-          "street": "Newmarket"
-        },
-        {
-          "id": "node/5602544005",
-          "lat": 53.350634,
-          "lon": -6.234368,
-          "wheelchair": "yes",
-          "street": "East Road"
-        },
-        {
-          "id": "node/367408087",
-          "lat": 53.336419,
-          "lon": -6.277963,
-          "street": "Sweeney's Terrace"
-        },
-        {
-          "id": "node/13925713721",
-          "lat": 53.347641,
-          "lon": -6.289895,
-          "street": "Temple Street West"
-        },
-        {
-          "id": "node/5337813233",
-          "lat": 53.358357,
-          "lon": -6.233788,
-          "street": "Alfie Byrne Road"
         },
         {
           "id": "node/1521411062",
@@ -1756,37 +1840,6 @@
           "lon": -6.285829,
           "address": "Marrowbone Lane",
           "openingHours": "24/7"
-        },
-        {
-          "id": "node/1609451745",
-          "lat": 53.332838,
-          "lon": -6.275086,
-          "openingHours": "24/7",
-          "street": "Clanbrassil Street Lower"
-        },
-        {
-          "id": "node/471861767",
-          "lat": 53.347704,
-          "lon": -6.29214,
-          "street": "Parkgate Street"
-        },
-        {
-          "id": "node/3342235981",
-          "lat": 53.369375,
-          "lon": -6.256159,
-          "street": "Millbourne Avenue"
-        },
-        {
-          "id": "node/973852345",
-          "lat": 53.335715,
-          "lon": -6.284062,
-          "street": "St Teresa's Gardens"
-        },
-        {
-          "id": "node/14102700019",
-          "lat": 53.370101,
-          "lon": -6.2595,
-          "street": "Millmount Avenue"
         },
         {
           "id": "node/564399664",
@@ -1804,19 +1857,6 @@
           "openingHours": "Mo-Sa"
         },
         {
-          "id": "node/3780382837",
-          "lat": 53.365359,
-          "lon": -6.289533,
-          "address": "Fassaugh Avenue",
-          "street": "Fassaugh Avenue"
-        },
-        {
-          "id": "node/1565420556",
-          "lat": 53.334584,
-          "lon": -6.225858,
-          "street": "Lansdowne Road"
-        },
-        {
           "id": "node/560602926",
           "name": "Dublin City Council Gulistan Terrace Bring Centre",
           "lat": 53.324195,
@@ -1824,19 +1864,146 @@
           "address": "Gulistan Terrace"
         },
         {
-          "id": "node/1521585675",
-          "lat": 53.363245,
-          "lon": -6.223484,
-          "street": "Clontarf Road"
+          "id": "way/160482865",
+          "name": "Ringsend Recycling Centre",
+          "lat": 53.341742,
+          "lon": -6.214334,
+          "address": "Pigeon House Road",
+          "wheelchair": "limited"
         },
         {
-          "id": "node/565585596",
-          "lat": 53.331675,
-          "lon": -6.29242,
-          "street": "Parnell Road"
+          "id": "way/292812460",
+          "name": "Dublin City Council depot",
+          "lat": 53.325507,
+          "lon": -6.289403,
+          "openingHours": "Mo-Th 09:00-13:00,14:00-16:00; Fr 09:00-13:00"
+        },
+        {
+          "id": "way/152440139",
+          "name": "Windmill Road Bring Centre",
+          "lat": 53.324731,
+          "lon": -6.308818,
+          "address": "Windmill Road 49,51"
+        },
+        {
+          "id": "node/12085868570",
+          "lat": 53.345597,
+          "lon": -6.195302,
+          "context": "Terminal 1"
+        },
+        {
+          "id": "way/1195293199",
+          "name": "Herzog Park Bring Centre",
+          "lat": 53.310147,
+          "lon": -6.274622,
+          "address": "Herzog Park",
+          "openingHours": "Mo-Th 09:00-16:00; Fr 09:00-13:00"
+        },
+        {
+          "id": "node/10794043025",
+          "name": "Churchtown Glenside Pub",
+          "lat": 53.2999,
+          "lon": -6.268214
+        },
+        {
+          "id": "way/953609138",
+          "name": "Coolock Bring Centre",
+          "lat": 53.390711,
+          "lon": -6.202039,
+          "address": "Oscar Traynor Road"
+        },
+        {
+          "id": "node/10794043024",
+          "name": "Churchtown Supervalu",
+          "lat": 53.295894,
+          "lon": -6.260881
+        },
+        {
+          "id": "node/10794043023",
+          "name": "Churchtown Finsbury Park",
+          "lat": 53.293667,
+          "lon": -6.25277
+        },
+        {
+          "id": "way/1276759650",
+          "name": "Ballymun Recycling Centre",
+          "lat": 53.405821,
+          "lon": -6.276542,
+          "address": "Saint Margaret's Road",
+          "openingHours": "Mo-weds 09:00-17:00; Thu-Fri 09:00-18:00; Sat 09:00-16:00"
+        },
+        {
+          "id": "way/805747888",
+          "name": "Dundrum Sweetmount Avenue",
+          "lat": 53.292259,
+          "lon": -6.247074
+        },
+        {
+          "id": "node/1583388211",
+          "name": "Ikea",
+          "lat": 53.407833,
+          "lon": -6.278083
+        },
+        {
+          "id": "node/10794043026",
+          "name": "Nutgrove Nutgrove Shopping Centre",
+          "lat": 53.290177,
+          "lon": -6.265957
+        },
+        {
+          "id": "way/1077685965",
+          "name": "Howth Road Bottle Bank, Raheny Library",
+          "lat": 53.379932,
+          "lon": -6.173582,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/112490607",
+          "name": "Dundrum Old Dundrum Shopping Centre",
+          "lat": 53.290277,
+          "lon": -6.245499
+        },
+        {
+          "id": "node/453143014",
+          "name": "Goatstown Goat Grill Pub",
+          "lat": 53.292045,
+          "lon": -6.229723
+        },
+        {
+          "id": "node/8521097193",
+          "name": "Bring Centre",
+          "lat": 53.34322,
+          "lon": -6.361443
+        },
+        {
+          "id": "node/8276433196",
+          "name": "Harvey Norman",
+          "lat": 53.334504,
+          "lon": -6.359625
+        },
+        {
+          "id": "node/14116070901",
+          "name": "Clonshaugh Avenue Bottle Bank",
+          "lat": 53.403359,
+          "lon": -6.209431,
+          "address": "Clonshaugh Avenue",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "relation/7260682",
+          "name": "SDCC Ballymount Recycling Centre",
+          "lat": 53.310251,
+          "lon": -6.346041,
+          "address": "Ballymount Lane"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:19.696Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:30:40.104Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -2076,7 +2243,13 @@
     "outdoor-gyms": {
       "count": 86,
       "pois": [],
-      "updatedAt": "2026-09-03T17:11:21.902Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:30:41.133Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2426,9 +2599,117 @@
           "name": "Outdoor Classroom",
           "lat": 53.29681,
           "lon": -6.283874
+        },
+        {
+          "id": "node/2852287090",
+          "lat": 53.347683,
+          "lon": -6.25931,
+          "street": "O'Connell Street Lower"
+        },
+        {
+          "id": "node/10004451351",
+          "lat": 53.347667,
+          "lon": -6.258162,
+          "street": "Liffey Boardwalk"
+        },
+        {
+          "id": "node/12853923152",
+          "lat": 53.348788,
+          "lon": -6.264195,
+          "street": "Liffey Street Upper"
+        },
+        {
+          "id": "node/6654055523",
+          "lat": 53.349515,
+          "lon": -6.256017,
+          "street": "Irish Life Centre"
+        },
+        {
+          "id": "node/14067882501",
+          "lat": 53.347775,
+          "lon": -6.257213,
+          "street": "Rosie Hackett Bridge"
+        },
+        {
+          "id": "node/5607238791",
+          "lat": 53.346718,
+          "lon": -6.260291,
+          "street": "Aston Quay"
+        },
+        {
+          "id": "node/14086409869",
+          "lat": 53.352324,
+          "lon": -6.263575,
+          "street": "Parnell Square West"
+        },
+        {
+          "id": "node/5301581767",
+          "lat": 53.353087,
+          "lon": -6.260552,
+          "street": "Parnell Street"
+        },
+        {
+          "id": "node/5298637235",
+          "lat": 53.351331,
+          "lon": -6.26554,
+          "street": "Dominick Street Lower"
+        },
+        {
+          "id": "node/2940675227",
+          "lat": 53.34805,
+          "lon": -6.266612,
+          "street": "Jervis Street"
+        },
+        {
+          "id": "node/3066603729",
+          "lat": 53.348188,
+          "lon": -6.253857,
+          "street": "Custom House Quay"
+        },
+        {
+          "id": "node/8990250553",
+          "lat": 53.353326,
+          "lon": -6.255841,
+          "street": "Gardiner Street Lower"
+        },
+        {
+          "id": "node/8990250557",
+          "lat": 53.353315,
+          "lon": -6.255794,
+          "street": "Sean MacDermott Street Lower"
+        },
+        {
+          "id": "node/10004446522",
+          "lat": 53.35384,
+          "lon": -6.264152,
+          "street": "Parnell Square North"
+        },
+        {
+          "id": "node/8990250555",
+          "lat": 53.352801,
+          "lon": -6.254104,
+          "street": "James Joyce Street"
+        },
+        {
+          "id": "node/12109305547",
+          "lat": 53.344378,
+          "lon": -6.260759,
+          "street": "College Green"
+        },
+        {
+          "id": "node/13050494335",
+          "lat": 53.349944,
+          "lon": -6.269417,
+          "street": "Capel Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:30.315Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:42.340Z"
     },
     "compressed-air": {
       "count": 0,

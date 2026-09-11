@@ -1,6 +1,6 @@
 {
   "city": "montreal",
-  "generatedAt": "2026-09-03T17:35:03.693Z",
+  "generatedAt": "2026-09-11T10:33:12.256Z",
   "categories": {
     "toilets": {
       "count": 187,
@@ -218,7 +218,13 @@
           "context": "Terminus Longueuil"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:26.676Z"
+      "stats": {
+        "free": 40,
+        "paid": 0,
+        "stepFree": 69,
+        "partlyStepFree": 10
+      },
+      "updatedAt": "2026-09-11T10:33:03.456Z"
     },
     "drinking-water": {
       "count": 562,
@@ -255,9 +261,174 @@
           "name": "Drinking Water",
           "lat": 45.506504,
           "lon": -73.533333
+        },
+        {
+          "id": "node/12294903014",
+          "lat": 45.503825,
+          "lon": -73.568299,
+          "fee": "no",
+          "street": "Rue du Square-Phillips"
+        },
+        {
+          "id": "node/10941311526",
+          "lat": 45.498293,
+          "lon": -73.568995,
+          "street": "Rue Peel"
+        },
+        {
+          "id": "node/13958945585",
+          "lat": 45.50371,
+          "lon": -73.560511,
+          "street": "Rue Saint-Antoine Ouest"
+        },
+        {
+          "id": "node/5762455453",
+          "lat": 45.502939,
+          "lon": -73.576137,
+          "street": "Rue McTavish"
+        },
+        {
+          "id": "node/7017824648",
+          "lat": 45.497188,
+          "lon": -73.5592,
+          "street": "Rue William"
+        },
+        {
+          "id": "node/8533005257",
+          "lat": 45.497189,
+          "lon": -73.558669,
+          "street": "Boulevard Robert-Bourassa"
+        },
+        {
+          "id": "node/5048369421",
+          "lat": 45.509037,
+          "lon": -73.564459,
+          "street": "Rue Sainte-Catherine Ouest"
+        },
+        {
+          "id": "node/11990024525",
+          "lat": 45.504656,
+          "lon": -73.557298,
+          "street": "Place d'Armes"
+        },
+        {
+          "id": "node/12048359836",
+          "lat": 45.507831,
+          "lon": -73.56025,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Rue de La Gauchetière Ouest"
+        },
+        {
+          "id": "node/10831288345",
+          "lat": 45.49341,
+          "lon": -73.570223,
+          "street": "Rue de Versailles"
+        },
+        {
+          "id": "node/12899324469",
+          "lat": 45.497456,
+          "lon": -73.556682,
+          "street": "Rue Prince"
+        },
+        {
+          "id": "node/12030248142",
+          "lat": 45.510339,
+          "lon": -73.566496,
+          "street": "Rue Clark"
+        },
+        {
+          "id": "node/11210922816",
+          "lat": 45.509622,
+          "lon": -73.573649,
+          "street": "Avenue du Parc"
+        },
+        {
+          "id": "node/6725055436",
+          "lat": 45.502854,
+          "lon": -73.553137,
+          "street": "Promenade du vieux port"
+        },
+        {
+          "id": "node/6225231858",
+          "lat": 45.504618,
+          "lon": -73.582028,
+          "fee": "no",
+          "street": "Avenue des Pins Ouest"
+        },
+        {
+          "id": "node/12849487918",
+          "lat": 45.508982,
+          "lon": -73.556018,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Rue Saint-Antoine Est"
+        },
+        {
+          "id": "node/5057389323",
+          "lat": 45.498411,
+          "lon": -73.552552,
+          "street": "Rue de la Commune Ouest"
+        },
+        {
+          "id": "node/9901851728",
+          "lat": 45.490668,
+          "lon": -73.567905,
+          "street": "Rue Guy"
+        },
+        {
+          "id": "node/12849485754",
+          "lat": 45.51037,
+          "lon": -73.556543,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Avenue Viger Est"
+        },
+        {
+          "id": "node/6225231859",
+          "lat": 45.505106,
+          "lon": -73.583085,
+          "street": "Chemin le Serpentin"
+        },
+        {
+          "id": "node/5821550754",
+          "lat": 45.508305,
+          "lon": -73.553622,
+          "street": "Place Jacques-Cartier"
+        },
+        {
+          "id": "node/12356742954",
+          "lat": 45.489602,
+          "lon": -73.569389,
+          "street": "Rue Richmond"
+        },
+        {
+          "id": "node/5069180804",
+          "lat": 45.489168,
+          "lon": -73.563854,
+          "street": "Allée des Barges"
+        },
+        {
+          "id": "node/9972201757",
+          "lat": 45.48983,
+          "lon": -73.574207,
+          "street": "Terrasse Coursol"
+        },
+        {
+          "id": "node/11781149631",
+          "lat": 45.511237,
+          "lon": -73.57987,
+          "fee": "no",
+          "street": "Chemin Olmsted"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:29.128Z"
+      "stats": {
+        "free": 150,
+        "paid": 1,
+        "stepFree": 84,
+        "partlyStepFree": 10
+      },
+      "updatedAt": "2026-09-11T10:33:06.612Z"
     },
     "playgrounds": {
       "count": 686,
@@ -1567,7 +1738,13 @@
           "address": "Rue Ontario Est 2553"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:39.274Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 67,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:33:07.404Z"
     },
     "post-boxes": {
       "count": 570,
@@ -1759,6 +1936,104 @@
       "count": 430,
       "pois": [
         {
+          "id": "node/2975994117",
+          "name": "Composteur communautaire",
+          "lat": 45.521113,
+          "lon": -73.552297
+        },
+        {
+          "id": "node/12162066270",
+          "name": "Coop de Recyclage Recyborg",
+          "lat": 45.481082,
+          "lon": -73.55109,
+          "address": "Rue le Ber 1900c",
+          "openingHours": "Tu-Fr 10:00-18:00; Sa 12:00-17:00"
+        },
+        {
+          "id": "node/13663360645",
+          "name": "Consignaction",
+          "lat": 45.534697,
+          "lon": -73.573083
+        },
+        {
+          "id": "node/10896045042",
+          "name": "Station Renaissance - Centre de dons Île-des-Soeurs",
+          "lat": 45.466058,
+          "lon": -73.554089,
+          "address": "Chemin du Golf 750"
+        },
+        {
+          "id": "way/132240276",
+          "name": "Écocentre de La Petite-Patrie",
+          "lat": 45.53437,
+          "lon": -73.591724,
+          "address": "Rue des Carrières 1100",
+          "openingHours": "08:00-18:00"
+        },
+        {
+          "id": "node/2683768242",
+          "name": "Insertech",
+          "lat": 45.541827,
+          "lon": -73.5698,
+          "address": "Rue Molson 4820",
+          "openingHours": "Mo-We 10:00-18:00; Th-Fr 10:00-19:00; Sa 10:00-17:00; Su off; Dec 24 10:00-15:00; Dec 25-26 off; Dec 31 off; Jan 1 off; Jan 2 13:00-19:00"
+        },
+        {
+          "id": "node/12368139443",
+          "name": "Écoquartier Sud-Ouest",
+          "lat": 45.458143,
+          "lon": -73.591616
+        },
+        {
+          "id": "node/11728037228",
+          "name": "Recyclage Recyborg",
+          "lat": 45.545578,
+          "lon": -73.537416,
+          "address": "Rue Sainte-Catherine Est 3811",
+          "openingHours": "Mo-Fr 10:00-18:00; Sa 10:00-17:00"
+        },
+        {
+          "id": "way/4852139",
+          "name": "Ecocentre CDN",
+          "lat": 45.505729,
+          "lon": -73.638359,
+          "address": "Chemin de la Côte Des Neiges 6925"
+        },
+        {
+          "id": "node/5576257192",
+          "name": "Centre de tri des matières recyclables de Montréal",
+          "lat": 45.558419,
+          "lon": -73.618174,
+          "address": "Rue Michel-Jurdant 2275"
+        },
+        {
+          "id": "way/277611866",
+          "name": "Écocentre Saint-Michel",
+          "lat": 45.559429,
+          "lon": -73.616656,
+          "address": "Rue des Regrattiers 2475"
+        },
+        {
+          "id": "node/13228517801",
+          "name": "Consignaction+",
+          "lat": 45.488434,
+          "lon": -73.473152,
+          "address": "Boulevard Taschereau 3407",
+          "openingHours": "Sa-We 08:00-18:00; Th-Fr 08:00-19:00"
+        },
+        {
+          "id": "way/792484713",
+          "name": "Écocentre LaSalle",
+          "lat": 45.447451,
+          "lon": -73.626505
+        },
+        {
+          "id": "way/1525213701",
+          "name": "decheterie parc Federick-Back",
+          "lat": 45.561812,
+          "lon": -73.624669
+        },
+        {
           "id": "node/12879211499",
           "lat": 45.502093,
           "lon": -73.563152,
@@ -1853,93 +2128,15 @@
           "lat": 45.504337,
           "lon": -73.552856,
           "street": "Promenade du vieux port"
-        },
-        {
-          "id": "node/13928623491",
-          "lat": 45.50868,
-          "lon": -73.555837,
-          "street": "Rue Saint-Antoine Est"
-        },
-        {
-          "id": "node/12015017541",
-          "lat": 45.512351,
-          "lon": -73.566545,
-          "street": "Rue Ontario Est"
-        },
-        {
-          "id": "node/12849485799",
-          "lat": 45.510088,
-          "lon": -73.556679,
-          "street": "Avenue Viger Est"
-        },
-        {
-          "id": "node/12849485758",
-          "lat": 45.51031,
-          "lon": -73.55636,
-          "street": "Rue Sanguinet"
-        },
-        {
-          "id": "node/11991201436",
-          "lat": 45.514325,
-          "lon": -73.563955,
-          "street": "Rue Émery"
-        },
-        {
-          "id": "node/14078999294",
-          "lat": 45.508835,
-          "lon": -73.551316,
-          "street": "Rue de la Commune Est"
-        },
-        {
-          "id": "node/11991236718",
-          "lat": 45.514516,
-          "lon": -73.56193,
-          "street": "Boulevard De Maisonneuve Est"
-        },
-        {
-          "id": "node/12228502175",
-          "lat": 45.51515,
-          "lon": -73.568175,
-          "street": "Rue Sherbrooke Est"
-        },
-        {
-          "id": "node/11990194446",
-          "lat": 45.514936,
-          "lon": -73.563378,
-          "street": "Rue Saint-Denis"
-        },
-        {
-          "id": "node/13979309538",
-          "lat": 45.488095,
-          "lon": -73.564488,
-          "street": "Rue des Bassins"
-        },
-        {
-          "id": "node/12878291664",
-          "lat": 45.512059,
-          "lon": -73.554064,
-          "street": "Rue Berri"
-        },
-        {
-          "id": "node/10821750825",
-          "lat": 45.487837,
-          "lon": -73.563104,
-          "street": "Voie piétonne du Canal Lachine"
-        },
-        {
-          "id": "node/4356722599",
-          "lat": 45.51506,
-          "lon": -73.559215,
-          "street": "Rue Sainte-Catherine Est"
-        },
-        {
-          "id": "node/4418124301",
-          "lat": 45.514128,
-          "lon": -73.556009,
-          "street": "Rue Saint-Hubert"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:44.325Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:09.341Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2183,7 +2380,13 @@
           "lon": -73.535271
         }
       ],
-      "updatedAt": "2026-09-03T17:34:47.649Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:10.616Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2436,9 +2639,75 @@
           "name": "Le banc des pensées positives",
           "lat": 45.551715,
           "lon": -73.588976
+        },
+        {
+          "id": "node/13015338953",
+          "lat": 45.501878,
+          "lon": -73.567716,
+          "street": "Boulevard Robert-Bourassa"
+        },
+        {
+          "id": "node/13015338956",
+          "lat": 45.501838,
+          "lon": -73.567748,
+          "street": "Place Monseigneur-Charbonneau"
+        },
+        {
+          "id": "node/12072599770",
+          "lat": 45.503272,
+          "lon": -73.56659,
+          "street": "Boulevard René-Lévesque Ouest"
+        },
+        {
+          "id": "node/12072602997",
+          "lat": 45.503339,
+          "lon": -73.566651,
+          "street": "Place du Frère-André"
+        },
+        {
+          "id": "node/12292889420",
+          "lat": 45.503641,
+          "lon": -73.568409,
+          "street": "Rue Cathcart"
+        },
+        {
+          "id": "node/11294394882",
+          "lat": 45.503614,
+          "lon": -73.56854,
+          "street": "Avenue Union"
+        },
+        {
+          "id": "node/12292909105",
+          "lat": 45.503778,
+          "lon": -73.568367,
+          "street": "Rue du Square-Phillips"
+        },
+        {
+          "id": "node/12292165866",
+          "lat": 45.503504,
+          "lon": -73.569399,
+          "street": "Rue Sainte-Catherine Ouest"
+        },
+        {
+          "id": "node/12088103751",
+          "lat": 45.499579,
+          "lon": -73.570066,
+          "street": "Rue Metcalfe"
+        },
+        {
+          "id": "node/12280128410",
+          "lat": 45.499062,
+          "lon": -73.569525,
+          "street": "Rue de la Cathédrale"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:03.586Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:33:12.155Z"
     },
     "compressed-air": {
       "count": 0,

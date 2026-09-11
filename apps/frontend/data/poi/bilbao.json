@@ -1,6 +1,6 @@
 {
   "city": "bilbao",
-  "generatedAt": "2026-09-03T17:18:54.832Z",
+  "generatedAt": "2026-09-11T10:31:33.431Z",
   "categories": {
     "toilets": {
       "count": 144,
@@ -131,7 +131,13 @@
           "context": "Eroski"
         }
       ],
-      "updatedAt": "2026-09-03T17:18:33.708Z"
+      "stats": {
+        "free": 90,
+        "paid": 1,
+        "stepFree": 92,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:31:27.318Z"
     },
     "drinking-water": {
       "count": 975,
@@ -305,9 +311,27 @@
           "name": "Txorrotxu",
           "lat": 43.209993,
           "lon": -2.870369
+        },
+        {
+          "id": "node/2331086729",
+          "lat": 43.263827,
+          "lon": -2.933079,
+          "street": "Jado plaza"
+        },
+        {
+          "id": "node/2937522589",
+          "lat": 43.261404,
+          "lon": -2.93393,
+          "street": "Plaza de Pedro Eguillor"
         }
       ],
-      "updatedAt": "2026-09-03T17:18:35.455Z"
+      "stats": {
+        "free": 58,
+        "paid": 0,
+        "stepFree": 43,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-11T10:31:29.121Z"
     },
     "playgrounds": {
       "count": 454,
@@ -1424,7 +1448,13 @@
           "openingHours": "Mo-Sa 10:00-22:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:18:42.249Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 31,
+        "partlyStepFree": 7
+      },
+      "updatedAt": "2026-09-11T10:31:29.607Z"
     },
     "post-boxes": {
       "count": 99,
@@ -1617,6 +1647,76 @@
       "count": 435,
       "pois": [
         {
+          "id": "node/13956077107",
+          "lat": 43.259399,
+          "lon": -2.937239,
+          "context": "Azkuna Zentroa"
+        },
+        {
+          "id": "node/1048044143",
+          "name": "Garbigune Larraskitu",
+          "lat": 43.243178,
+          "lon": -2.934946,
+          "address": "Larraskitubidea 64"
+        },
+        {
+          "id": "way/441589790",
+          "name": "Garbigune Bilbao - Artxanda",
+          "lat": 43.271199,
+          "lon": -2.908957
+        },
+        {
+          "id": "way/376531203",
+          "name": "Bilbogarbi Elorrieta",
+          "lat": 43.288292,
+          "lon": -2.968652,
+          "openingHours": "Mo-Fr 14:00-20:30; Sa 14:00-19:30; Su 09:00-13:00"
+        },
+        {
+          "id": "node/4599539692",
+          "name": "Indumental recycling",
+          "lat": 43.298114,
+          "lon": -2.949178
+        },
+        {
+          "id": "way/610554775",
+          "name": "Garbigune Basauri",
+          "lat": 43.230527,
+          "lon": -2.890607
+        },
+        {
+          "id": "way/151511509",
+          "name": "Garbigune Barakaldo",
+          "lat": 43.291735,
+          "lon": -2.98556
+        },
+        {
+          "id": "way/323786630",
+          "name": "Derio Garbigunea",
+          "lat": 43.289491,
+          "lon": -2.87916
+        },
+        {
+          "id": "way/454842925",
+          "name": "Garbigune",
+          "lat": 43.316896,
+          "lon": -2.968272
+        },
+        {
+          "id": "node/2936061810",
+          "name": "Asociación Educativa Reciclanet",
+          "lat": 43.312215,
+          "lon": -2.980048,
+          "address": "Ribera de Axpe 11",
+          "openingHours": "Th, Fr 09:00-15:00; Mo-We 09:00-15:00, 16:30-18:30"
+        },
+        {
+          "id": "way/430383595",
+          "name": "Garbigune Sestao",
+          "lat": 43.305902,
+          "lon": -2.998845
+        },
+        {
           "id": "node/4735968192",
           "lat": 43.262877,
           "lon": -2.93299,
@@ -1690,12 +1790,6 @@
           "street": "Gardoki kardenalaren kalea"
         },
         {
-          "id": "node/13956077107",
-          "lat": 43.259399,
-          "lon": -2.937239,
-          "context": "Azkuna Zentroa"
-        },
-        {
           "id": "node/8702408162",
           "lat": 43.259841,
           "lon": -2.938336,
@@ -1737,71 +1831,15 @@
           "lat": 43.268107,
           "lon": -2.937386,
           "street": "Calle de Ramón Rubial"
-        },
-        {
-          "id": "node/4714969537",
-          "lat": 43.261486,
-          "lon": -2.927419,
-          "street": "Plaza Biribila"
-        },
-        {
-          "id": "node/11205837459",
-          "lat": 43.26826,
-          "lon": -2.931091,
-          "openingHours": "24/7",
-          "wheelchair": "yes",
-          "street": "Ingelesen landako kaia"
-        },
-        {
-          "id": "node/4739821707",
-          "lat": 43.259614,
-          "lon": -2.92645,
-          "street": "Bailen kalea"
-        },
-        {
-          "id": "node/4703598547",
-          "lat": 43.258577,
-          "lon": -2.926514,
-          "street": "Erribera kalea"
-        },
-        {
-          "id": "node/13075678475",
-          "lat": 43.258115,
-          "lon": -2.925903,
-          "street": "Mesedeetako kalea"
-        },
-        {
-          "id": "node/13075682802",
-          "lat": 43.258131,
-          "lon": -2.925758,
-          "street": "Jardines kalea"
-        },
-        {
-          "id": "node/13075744902",
-          "lat": 43.257595,
-          "lon": -2.925402,
-          "street": "Dorre kalea"
-        },
-        {
-          "id": "node/4701258415",
-          "lat": 43.261639,
-          "lon": -2.922946,
-          "street": "Epaltzaren alargunaren kalea"
-        },
-        {
-          "id": "node/4701494366",
-          "lat": 43.259617,
-          "lon": -2.92271,
-          "street": "Banco Bilbao kalea"
-        },
-        {
-          "id": "node/8997904617",
-          "lat": 43.260007,
-          "lon": -2.922434,
-          "street": "San Nikolas plazatxoa"
         }
       ],
-      "updatedAt": "2026-09-03T17:18:46.343Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:31.298Z"
     },
     "luggage-storage": {
       "count": 3,
@@ -2087,7 +2125,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:18:48.462Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:32.221Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2250,9 +2294,69 @@
           "name": "Conoce Barakaldo",
           "lat": 43.297093,
           "lon": -2.986699
+        },
+        {
+          "id": "node/4757866769",
+          "lat": 43.262695,
+          "lon": -2.935721,
+          "street": "Ercilla kalea"
+        },
+        {
+          "id": "node/4736398788",
+          "lat": 43.262579,
+          "lon": -2.933339,
+          "street": "On Diego Lopez Haroko kale nagusia"
+        },
+        {
+          "id": "node/4734200245",
+          "lat": 43.264345,
+          "lon": -2.935824,
+          "street": "Kolon Larreategi kalea"
+        },
+        {
+          "id": "node/4734200244",
+          "lat": 43.26443,
+          "lon": -2.93588,
+          "street": "Iparraguirre kalea"
+        },
+        {
+          "id": "node/9582515317",
+          "lat": 43.263805,
+          "lon": -2.933065,
+          "street": "Jado plaza"
+        },
+        {
+          "id": "node/4736468549",
+          "lat": 43.261528,
+          "lon": -2.93403,
+          "street": "Plaza de Pedro Eguillor"
+        },
+        {
+          "id": "node/4758162796",
+          "lat": 43.262904,
+          "lon": -2.937432,
+          "street": "Atxukarro doktorearen kalea"
+        },
+        {
+          "id": "node/4757941988",
+          "lat": 43.261015,
+          "lon": -2.936786,
+          "street": "Poza lizentziatuaren kalea"
+        },
+        {
+          "id": "node/4749141632",
+          "lat": 43.264749,
+          "lon": -2.937436,
+          "street": "Teófilo Guiard kalea"
         }
       ],
-      "updatedAt": "2026-09-03T17:18:54.731Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:33.329Z"
     },
     "compressed-air": {
       "count": 0,

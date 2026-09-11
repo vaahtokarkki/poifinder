@@ -1,6 +1,6 @@
 {
   "city": "salzburg",
-  "generatedAt": "2026-09-03T16:58:27.498Z",
+  "generatedAt": "2026-09-11T10:29:26.803Z",
   "categories": {
     "toilets": {
       "count": 110,
@@ -245,7 +245,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:56.555Z"
+      "stats": {
+        "free": 60,
+        "paid": 15,
+        "stepFree": 61,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:29:19.311Z"
     },
     "drinking-water": {
       "count": 79,
@@ -341,9 +347,116 @@
           "name": "Brauwelt",
           "lat": 47.793814,
           "lon": 13.021237
+        },
+        {
+          "id": "node/5743335423",
+          "lat": 47.813403,
+          "lon": 13.044685,
+          "street": "Südtiroler Platz"
+        },
+        {
+          "id": "node/12309256773",
+          "lat": 47.802519,
+          "lon": 13.045748,
+          "fee": "no",
+          "street": "Stefan-Zweig-Platz"
+        },
+        {
+          "id": "node/5740657269",
+          "lat": 47.805405,
+          "lon": 13.039614,
+          "street": "Bernhard-Paumgartner-Weg"
+        },
+        {
+          "id": "node/3808721339",
+          "lat": 47.815486,
+          "lon": 13.040718,
+          "street": "Plainschule"
+        },
+        {
+          "id": "node/7765349085",
+          "lat": 47.800182,
+          "lon": 13.043606,
+          "street": "Hagenauerplatz"
+        },
+        {
+          "id": "node/7765498785",
+          "lat": 47.800783,
+          "lon": 13.042322,
+          "street": "Griesgasse"
+        },
+        {
+          "id": "node/13070734829",
+          "lat": 47.797609,
+          "lon": 13.059029,
+          "street": "Hundertwasser Allee"
+        },
+        {
+          "id": "node/9178085075",
+          "lat": 47.796652,
+          "lon": 13.051956,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Kajetanerplatz"
+        },
+        {
+          "id": "node/8860545123",
+          "lat": 47.800985,
+          "lon": 13.039497,
+          "fee": "no",
+          "street": "Anton-Neumayr-Platz"
+        },
+        {
+          "id": "node/12064799694",
+          "lat": 47.807601,
+          "lon": 13.074848,
+          "street": "Kühbergstraße"
+        },
+        {
+          "id": "node/13822223562",
+          "lat": 47.800258,
+          "lon": 13.040124,
+          "street": "Bürgerspitalplatz"
+        },
+        {
+          "id": "node/5834093413",
+          "lat": 47.796339,
+          "lon": 13.045989,
+          "street": "Petersfriedhof"
+        },
+        {
+          "id": "node/7751936186",
+          "lat": 47.795276,
+          "lon": 13.047877,
+          "street": "Festungsweg"
+        },
+        {
+          "id": "node/13793254191",
+          "lat": 47.820701,
+          "lon": 13.0304,
+          "fee": "no",
+          "street": "Rechte Glanzeile"
+        },
+        {
+          "id": "node/4937491462",
+          "lat": 47.79417,
+          "lon": 13.087811,
+          "street": "Gänsbrunnstraße"
+        },
+        {
+          "id": "node/9830723152",
+          "lat": 47.833567,
+          "lon": 13.076856,
+          "street": "Ischlerbahntrasse"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:58.361Z"
+      "stats": {
+        "free": 17,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:29:21.749Z"
     },
     "playgrounds": {
       "count": 205,
@@ -1625,7 +1738,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:12.262Z"
+      "stats": {
+        "free": 1,
+        "paid": 2,
+        "stepFree": 47,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:29:22.333Z"
     },
     "post-boxes": {
       "count": 111,
@@ -1820,6 +1939,95 @@
       "count": 390,
       "pois": [
         {
+          "id": "node/12507215211",
+          "name": "Kleidercontainer",
+          "lat": 47.803094,
+          "lon": 13.024542,
+          "address": "Römerstraße 37-31",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/12905469631",
+          "name": "Caritas Kleidercontainer",
+          "lat": 47.830901,
+          "lon": 13.083748
+        },
+        {
+          "id": "node/8814033396",
+          "name": "Recyclinghof",
+          "lat": 47.804033,
+          "lon": 13.012685,
+          "address": "Siezenheimer Straße 20",
+          "openingHours": "Mo-Fr 07:00-18:00; Sa 07:00-14:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/77746368",
+          "name": "Wirtschaftshof",
+          "lat": 47.804221,
+          "lon": 13.011706,
+          "openingHours": "Mo-Fr 07:00-17:00; Sa 07:00-12:00"
+        },
+        {
+          "id": "way/161495605",
+          "name": "Recyclinghof Hallwang",
+          "lat": 47.848718,
+          "lon": 13.082815,
+          "openingHours": "We 14:00-17:00; Fr 13:00-17:00; Sa 09:00-12:00"
+        },
+        {
+          "id": "way/202381276",
+          "name": "Müllsammelplatz",
+          "lat": 47.802887,
+          "lon": 12.979086
+        },
+        {
+          "id": "way/254076869",
+          "name": "Recyclinghof Elsbethen",
+          "lat": 47.762313,
+          "lon": 13.087996
+        },
+        {
+          "id": "way/435347903",
+          "name": "Recyclinghof Elixhausen Hirschweg",
+          "lat": 47.863307,
+          "lon": 13.05918
+        },
+        {
+          "id": "way/524730035",
+          "name": "Altstoffsammelzentrum Wals-Siezenheim",
+          "lat": 47.796307,
+          "lon": 12.967019,
+          "address": "Unterauweg 3",
+          "openingHours": "Tu-Fr 13:00-18:00; Sa 09:00-15:00"
+        },
+        {
+          "id": "node/1454048962",
+          "name": "Wertstoffhof der Gemeinde Ainring",
+          "lat": 47.818275,
+          "lon": 12.960418,
+          "openingHours": "We 14:00-18:00; Fr 09:00-12:00,14:00-18:00; Sa 09:00-12:00"
+        },
+        {
+          "id": "node/1568024866",
+          "name": "Kaufland Flaschenrückgabe",
+          "lat": 47.8443,
+          "lon": 12.969385
+        },
+        {
+          "id": "way/136316448",
+          "name": "Recyclinghof Koppl",
+          "lat": 47.817364,
+          "lon": 13.157927,
+          "address": "Gewerbepark Habach 10"
+        },
+        {
+          "id": "node/6867763666",
+          "name": "Recyclinghof Grödig",
+          "lat": 47.741802,
+          "lon": 13.030316
+        },
+        {
           "id": "node/631995895",
           "lat": 47.810248,
           "lon": 13.058337,
@@ -1926,88 +2134,15 @@
           "lat": 47.806021,
           "lon": 13.042145,
           "street": "Bernhard-Paumgartner-Weg"
-        },
-        {
-          "id": "node/7608693670",
-          "lat": 47.803505,
-          "lon": 13.066479,
-          "openingHours": "24/7",
-          "street": "Eberhard-Fugger-Straße"
-        },
-        {
-          "id": "node/1671855770",
-          "lat": 47.819984,
-          "lon": 13.056024,
-          "street": "Baron-Schwarz-Park"
-        },
-        {
-          "id": "node/4145021265",
-          "lat": 47.809202,
-          "lon": 13.038596,
-          "street": "Gebirgsjägerplatz"
-        },
-        {
-          "id": "node/3273337083",
-          "lat": 47.815271,
-          "lon": 13.040882,
-          "street": "Pestalozzistraße"
-        },
-        {
-          "id": "node/13639110902",
-          "lat": 47.802451,
-          "lon": 13.068305,
-          "street": "Gaisbergstraße"
-        },
-        {
-          "id": "node/1720404905",
-          "lat": 47.797888,
-          "lon": 13.051766,
-          "street": "Basteigasse"
-        },
-        {
-          "id": "node/13456438089",
-          "lat": 47.798456,
-          "lon": 13.061448,
-          "street": "Hermann-Bahr-Promenade"
-        },
-        {
-          "id": "node/368185125",
-          "lat": 47.80744,
-          "lon": 13.072401,
-          "street": "Frieda-Richard-Straße"
-        },
-        {
-          "id": "node/5434280133",
-          "lat": 47.800878,
-          "lon": 13.042827,
-          "street": "Ferdinand-Hanusch-Platz"
-        },
-        {
-          "id": "node/9983053015",
-          "lat": 47.822105,
-          "lon": 13.056316,
-          "street": "Meierhofweg"
-        },
-        {
-          "id": "node/1685744941",
-          "lat": 47.817905,
-          "lon": 13.04032,
-          "street": "Bayrisch-Platzl-Straße"
-        },
-        {
-          "id": "node/14115409801",
-          "lat": 47.797604,
-          "lon": 13.047045,
-          "street": "Kapitelplatz"
-        },
-        {
-          "id": "node/4142834472",
-          "lat": 47.808727,
-          "lon": 13.035433,
-          "street": "Franz-Josef-Kai"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:16.620Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:24.264Z"
     },
     "luggage-storage": {
       "count": 3,
@@ -2205,7 +2340,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:18.860Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:29:25.430Z"
     },
     "camp-sites": {
       "count": 6,
@@ -2556,9 +2697,87 @@
           "name": "Gluecksplatz",
           "lat": 47.81165,
           "lon": 13.115253
+        },
+        {
+          "id": "node/631995879",
+          "lat": 47.809932,
+          "lon": 13.05696,
+          "street": "Wilhelmsederstraße"
+        },
+        {
+          "id": "node/631995872",
+          "lat": 47.809905,
+          "lon": 13.057039,
+          "street": "Sterneckstraße"
+        },
+        {
+          "id": "node/2411309857",
+          "lat": 47.810233,
+          "lon": 13.050812,
+          "street": "Bayerhamerstraße"
+        },
+        {
+          "id": "node/13655036101",
+          "lat": 47.805167,
+          "lon": 13.058533,
+          "street": "Stefan-Zweig-Weg"
+        },
+        {
+          "id": "node/3869103052",
+          "lat": 47.804246,
+          "lon": 13.05501,
+          "street": "Nordweg"
+        },
+        {
+          "id": "node/12232102801",
+          "lat": 47.808407,
+          "lon": 13.047194,
+          "street": "Lasserstraße"
+        },
+        {
+          "id": "node/10156563840",
+          "lat": 47.80753,
+          "lon": 13.063009,
+          "street": "Doblerweg"
+        },
+        {
+          "id": "node/13159470015",
+          "lat": 47.805141,
+          "lon": 13.049366,
+          "street": "Hofwirt"
+        },
+        {
+          "id": "node/3867583935",
+          "lat": 47.802864,
+          "lon": 13.056312,
+          "street": "Weg zur Oberen Stadtaussicht"
+        },
+        {
+          "id": "node/13200882971",
+          "lat": 47.812756,
+          "lon": 13.045013,
+          "street": "Südtiroler Platz"
+        },
+        {
+          "id": "node/12638263404",
+          "lat": 47.805976,
+          "lon": 13.044775,
+          "street": "Faberstraße"
+        },
+        {
+          "id": "node/13755404301",
+          "lat": 47.801782,
+          "lon": 13.053221,
+          "street": "Südweg"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:27.397Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:26.701Z"
     },
     "compressed-air": {
       "count": 0,

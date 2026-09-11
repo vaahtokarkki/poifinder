@@ -1,6 +1,6 @@
 {
   "city": "kuopio",
-  "generatedAt": "2026-09-03T16:39:26.329Z",
+  "generatedAt": "2026-09-11T10:26:48.319Z",
   "categories": {
     "toilets": {
       "count": 18,
@@ -43,7 +43,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:39:05.544Z"
+      "stats": {
+        "free": 7,
+        "paid": 4,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:26:42.846Z"
     },
     "drinking-water": {
       "count": 2,
@@ -55,7 +61,13 @@
           "lon": 27.594299
         }
       ],
-      "updatedAt": "2026-09-03T16:39:06.652Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:44.007Z"
     },
     "playgrounds": {
       "count": 122,
@@ -792,7 +804,13 @@
           "lon": 27.681008
         }
       ],
-      "updatedAt": "2026-09-03T16:39:12.535Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:44.795Z"
     },
     "post-boxes": {
       "count": 21,
@@ -894,6 +912,30 @@
       "count": 20,
       "pois": [
         {
+          "id": "node/10242334188",
+          "name": "Ecopiste",
+          "lat": 62.886215,
+          "lon": 27.663672
+        },
+        {
+          "id": "node/1892689593",
+          "name": "Kierrätyspiste",
+          "lat": 62.901788,
+          "lon": 27.649458
+        },
+        {
+          "id": "way/52032329",
+          "name": "Rinki-ekopiste Prisma Kuopio",
+          "lat": 62.888337,
+          "lon": 27.635684
+        },
+        {
+          "id": "node/9903547692",
+          "lat": 62.838365,
+          "lon": 27.60875,
+          "context": "ABC Pitkälahti"
+        },
+        {
           "id": "node/12046106461",
           "lat": 62.89333,
           "lon": 27.686258,
@@ -918,28 +960,10 @@
           "street": "Lukkarinkatu"
         },
         {
-          "id": "node/10242334188",
-          "name": "Ecopiste",
-          "lat": 62.886215,
-          "lon": 27.663672
-        },
-        {
           "id": "node/14029641513",
           "lat": 62.900664,
           "lon": 27.703829,
           "street": "Kalevalankatu"
-        },
-        {
-          "id": "node/1892689593",
-          "name": "Kierrätyspiste",
-          "lat": 62.901788,
-          "lon": 27.649458
-        },
-        {
-          "id": "way/52032329",
-          "name": "Rinki-ekopiste Prisma Kuopio",
-          "lat": 62.888337,
-          "lon": 27.635684
         },
         {
           "id": "node/12064611198",
@@ -958,15 +982,15 @@
           "lat": 62.852368,
           "lon": 27.700306,
           "street": "Keilantori"
-        },
-        {
-          "id": "node/9903547692",
-          "lat": 62.838365,
-          "lon": 27.60875,
-          "context": "ABC Pitkälahti"
         }
       ],
-      "updatedAt": "2026-09-03T16:39:15.626Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:46.470Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1053,7 +1077,13 @@
           "lon": 27.627334
         }
       ],
-      "updatedAt": "2026-09-03T16:39:17.881Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:47.165Z"
     },
     "camp-sites": {
       "count": 1,
@@ -1187,9 +1217,118 @@
       "updatedAt": "2026-09-03T16:39:25.662Z"
     },
     "benches": {
-      "count": 170,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:39:26.229Z"
+      "count": 189,
+      "pois": [
+        {
+          "id": "node/11992688417",
+          "lat": 62.891582,
+          "lon": 27.679872,
+          "street": "Puijonkatu"
+        },
+        {
+          "id": "node/7803588048",
+          "lat": 62.893955,
+          "lon": 27.67892,
+          "street": "Maljalahdenkatu"
+        },
+        {
+          "id": "node/11992676295",
+          "lat": 62.891112,
+          "lon": 27.681492,
+          "street": "Käsityökatu"
+        },
+        {
+          "id": "node/11992676296",
+          "lat": 62.891116,
+          "lon": 27.681594,
+          "street": "Lapinlinnankatu"
+        },
+        {
+          "id": "node/12211119989",
+          "lat": 62.891747,
+          "lon": 27.683406,
+          "street": "Kauppakatu"
+        },
+        {
+          "id": "node/12211119990",
+          "lat": 62.891026,
+          "lon": 27.683034,
+          "street": "Vuorikatu"
+        },
+        {
+          "id": "node/12135970697",
+          "lat": 62.895328,
+          "lon": 27.674873,
+          "street": "Ajurinkatu"
+        },
+        {
+          "id": "node/12211119991",
+          "lat": 62.890948,
+          "lon": 27.683665,
+          "street": "Minna Canthin katu"
+        },
+        {
+          "id": "node/12211135202",
+          "lat": 62.891713,
+          "lon": 27.685335,
+          "street": "Kuninkaankatu"
+        },
+        {
+          "id": "node/12207372791",
+          "lat": 62.891555,
+          "lon": 27.687242,
+          "street": "Maaherrankatu"
+        },
+        {
+          "id": "node/14148020276",
+          "lat": 62.897841,
+          "lon": 27.676816,
+          "street": "Ratakäytävä"
+        },
+        {
+          "id": "node/11936387027",
+          "lat": 62.889373,
+          "lon": 27.666879,
+          "street": "Alavanhovintie"
+        },
+        {
+          "id": "node/12713533597",
+          "lat": 62.897809,
+          "lon": 27.679439,
+          "street": "Matkaajanpolku"
+        },
+        {
+          "id": "node/14148026573",
+          "lat": 62.898211,
+          "lon": 27.672456,
+          "street": "Välikäytävä"
+        },
+        {
+          "id": "node/5298176261",
+          "lat": 62.891964,
+          "lon": 27.662951,
+          "street": "Valkeisenkatu"
+        },
+        {
+          "id": "node/12713527347",
+          "lat": 62.898793,
+          "lon": 27.679079,
+          "street": "Puutarhakatu"
+        },
+        {
+          "id": "node/5739404885",
+          "lat": 62.88739,
+          "lon": 27.686417,
+          "street": "Brahenkatu"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:26:48.218Z"
     }
   }
 }

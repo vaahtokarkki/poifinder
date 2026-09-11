@@ -1,6 +1,6 @@
 {
   "city": "belfast",
-  "generatedAt": "2026-09-03T17:10:58.825Z",
+  "generatedAt": "2026-09-11T10:30:40.513Z",
   "categories": {
     "toilets": {
       "count": 53,
@@ -177,7 +177,13 @@
           "context": "Valley Park Sports Pavilion"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:38.889Z"
+      "stats": {
+        "free": 18,
+        "paid": 5,
+        "stepFree": 29,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:34.858Z"
     },
     "drinking-water": {
       "count": 9,
@@ -187,9 +193,21 @@
           "name": "cruise terminal",
           "lat": 54.625398,
           "lon": -5.884081
+        },
+        {
+          "id": "node/13094351294",
+          "lat": 54.599955,
+          "lon": -5.836155,
+          "street": "Prince of Wales Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:40.243Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:36.439Z"
     },
     "playgrounds": {
       "count": 153,
@@ -1185,7 +1203,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:46.902Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 14,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:37.041Z"
     },
     "post-boxes": {
       "count": 194,
@@ -1391,23 +1415,11 @@
       "count": 41,
       "pois": [
         {
-          "id": "node/11806528467",
-          "lat": 54.607114,
-          "lon": -5.92004,
-          "street": "Pilot Place"
-        },
-        {
           "id": "way/1006711067",
           "name": "Agnes Street Civic Amenity Site",
           "lat": 54.604671,
           "lon": -5.947337,
           "address": "Huss Row 2"
-        },
-        {
-          "id": "node/13092446807",
-          "lat": 54.605739,
-          "lon": -5.910965,
-          "street": "Queens Road"
         },
         {
           "id": "way/1033795626",
@@ -1439,12 +1451,6 @@
           "openingHours": "Oct-Mar: Mo-Fr 08:30-17:30; Sa 09:00-17:00; Su 12:00-17:00; Apr-Sep: Mo-Tu 08:30-17:30; We 08:30-20:00; Th-Fr 08:30-17:30; Sa 09:00-17:00; Su 12:00-17:00; PH off"
         },
         {
-          "id": "node/288516408",
-          "lat": 54.57426,
-          "lon": -5.932823,
-          "street": "Stranmillis Road"
-        },
-        {
           "id": "way/344494932",
           "name": "Palmerston Road Recycling Centre",
           "lat": 54.603807,
@@ -1459,6 +1465,51 @@
           "lon": -5.974879,
           "address": "Blackstaff Way 1",
           "openingHours": "Oct-Mar: Mo-Fr 08:30-17:30; Sa 09:00-17:00; Su 12:00-17:00; Apr-Sep: Mo-Tu 08:30-17:30; We 08:30-20:00; Th-Fr 08:30-17:30; Sa 09:00-17:00; Su 12:00-17:00; PH off"
+        },
+        {
+          "id": "node/6896630138",
+          "name": "The Salvation Army",
+          "lat": 54.589131,
+          "lon": -5.845004
+        },
+        {
+          "id": "node/6907098869",
+          "name": "Oxfam",
+          "lat": 54.657452,
+          "lon": -5.923288
+        },
+        {
+          "id": "way/1006739510",
+          "name": "Holywood Civic Amenity Site",
+          "lat": 54.640791,
+          "lon": -5.838585,
+          "address": "Sullivan Close"
+        },
+        {
+          "id": "way/666106996",
+          "name": "O'Neill Road Recycling Centre",
+          "lat": 54.667372,
+          "lon": -5.939762,
+          "address": "O'Neill Road",
+          "openingHours": "Oct-Mar Mo-Sa 09:00-18:00; Apr-Sep Mo-Sa 09:00-20:00"
+        },
+        {
+          "id": "node/11806528467",
+          "lat": 54.607114,
+          "lon": -5.92004,
+          "street": "Pilot Place"
+        },
+        {
+          "id": "node/13092446807",
+          "lat": 54.605739,
+          "lon": -5.910965,
+          "street": "Queens Road"
+        },
+        {
+          "id": "node/288516408",
+          "lat": 54.57426,
+          "lon": -5.932823,
+          "street": "Stranmillis Road"
         },
         {
           "id": "node/12427185607",
@@ -1485,12 +1536,6 @@
           "street": "Antrim Road"
         },
         {
-          "id": "node/6896630138",
-          "name": "The Salvation Army",
-          "lat": 54.589131,
-          "lon": -5.845004
-        },
-        {
           "id": "node/539584994",
           "lat": 54.626615,
           "lon": -5.857864,
@@ -1501,30 +1546,15 @@
           "lat": 54.657442,
           "lon": -5.923292,
           "street": "Church Road"
-        },
-        {
-          "id": "node/6907098869",
-          "name": "Oxfam",
-          "lat": 54.657452,
-          "lon": -5.923288
-        },
-        {
-          "id": "way/1006739510",
-          "name": "Holywood Civic Amenity Site",
-          "lat": 54.640791,
-          "lon": -5.838585,
-          "address": "Sullivan Close"
-        },
-        {
-          "id": "way/666106996",
-          "name": "O'Neill Road Recycling Centre",
-          "lat": 54.667372,
-          "lon": -5.939762,
-          "address": "O'Neill Road",
-          "openingHours": "Oct-Mar Mo-Sa 09:00-18:00; Apr-Sep Mo-Sa 09:00-20:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:50.564Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:38.570Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1698,7 +1728,13 @@
     "outdoor-gyms": {
       "count": 15,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:52.308Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:39.454Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2004,8 +2040,129 @@
     },
     "benches": {
       "count": 434,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:10:58.723Z"
+      "pois": [
+        {
+          "id": "node/13063318128",
+          "lat": 54.597515,
+          "lon": -5.930115,
+          "street": "Donegall Place"
+        },
+        {
+          "id": "node/12985331595",
+          "lat": 54.597137,
+          "lon": -5.929494,
+          "street": "Donegall Square North"
+        },
+        {
+          "id": "node/12985331596",
+          "lat": 54.597148,
+          "lon": -5.929291,
+          "street": "Donegall Square East"
+        },
+        {
+          "id": "node/12988019225",
+          "lat": 54.598897,
+          "lon": -5.927811,
+          "street": "Cornmarket"
+        },
+        {
+          "id": "node/6716235767",
+          "lat": 54.599401,
+          "lon": -5.9298,
+          "street": "Castle Place"
+        },
+        {
+          "id": "node/13094751142",
+          "lat": 54.599001,
+          "lon": -5.926491,
+          "street": "Ann Street"
+        },
+        {
+          "id": "node/13761938924",
+          "lat": 54.592644,
+          "lon": -5.931662,
+          "street": "Dublin Road"
+        },
+        {
+          "id": "node/13364637926",
+          "lat": 54.600957,
+          "lon": -5.923832,
+          "street": "Queen's Square"
+        },
+        {
+          "id": "node/12926138461",
+          "lat": 54.599223,
+          "lon": -5.921288,
+          "street": "Oxford Street"
+        },
+        {
+          "id": "node/11271272632",
+          "lat": 54.593327,
+          "lon": -5.936834,
+          "street": "Linfield Avenue"
+        },
+        {
+          "id": "node/6225936847",
+          "lat": 54.603326,
+          "lon": -5.929824,
+          "street": "Donegall Street"
+        },
+        {
+          "id": "node/6225936850",
+          "lat": 54.603414,
+          "lon": -5.929735,
+          "street": "York Street"
+        },
+        {
+          "id": "node/6482991730",
+          "lat": 54.601267,
+          "lon": -5.921819,
+          "street": "Lagan Weir Footbridge"
+        },
+        {
+          "id": "node/10238030048",
+          "lat": 54.599917,
+          "lon": -5.91949,
+          "street": "Bridge End"
+        },
+        {
+          "id": "node/10238030049",
+          "lat": 54.599958,
+          "lon": -5.919488,
+          "street": "Queen's Quay"
+        },
+        {
+          "id": "node/10238030051",
+          "lat": 54.600113,
+          "lon": -5.919466,
+          "street": "Queen Elizabeth Bridge"
+        },
+        {
+          "id": "node/3713577732",
+          "lat": 54.591893,
+          "lon": -5.918986,
+          "street": "Cromac Springs"
+        },
+        {
+          "id": "node/11773719745",
+          "lat": 54.604593,
+          "lon": -5.92138,
+          "street": "Corporation Square"
+        },
+        {
+          "id": "node/11773719742",
+          "lat": 54.604557,
+          "lon": -5.921255,
+          "street": "Donegall Quay"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:40.411Z"
     },
     "compressed-air": {
       "count": 0,

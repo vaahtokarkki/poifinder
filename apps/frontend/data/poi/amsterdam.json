@@ -1,6 +1,6 @@
 {
   "city": "amsterdam",
-  "generatedAt": "2026-09-03T17:00:57.342Z",
+  "generatedAt": "2026-09-11T10:29:45.243Z",
   "categories": {
     "toilets": {
       "count": 163,
@@ -168,7 +168,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:28.037Z"
+      "stats": {
+        "free": 77,
+        "paid": 23,
+        "stepFree": 30,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:29:36.164Z"
     },
     "drinking-water": {
       "count": 552,
@@ -223,9 +229,156 @@
           "name": "Openbare kraan",
           "lat": 52.34216,
           "lon": 4.960199
+        },
+        {
+          "id": "node/12110150053",
+          "lat": 52.368113,
+          "lon": 4.90286,
+          "street": "Waterlooplein"
+        },
+        {
+          "id": "node/1751597358",
+          "lat": 52.367066,
+          "lon": 4.905696,
+          "street": "Jonas Daniël Meijerplein"
+        },
+        {
+          "id": "node/5580826487",
+          "lat": 52.367282,
+          "lon": 4.900006,
+          "wheelchair": "yes",
+          "street": "Amstel"
+        },
+        {
+          "id": "node/1346637519",
+          "lat": 52.367547,
+          "lon": 4.909021,
+          "wheelchair": "yes",
+          "street": "Plantage Middenlaan"
+        },
+        {
+          "id": "node/6724227896",
+          "lat": 52.367465,
+          "lon": 4.909233,
+          "street": "Plantage Parklaan"
+        },
+        {
+          "id": "node/3634624132",
+          "lat": 52.366065,
+          "lon": 4.897343,
+          "wheelchair": "yes",
+          "street": "Rembrandtplein"
+        },
+        {
+          "id": "node/6724001121",
+          "lat": 52.372086,
+          "lon": 4.904537,
+          "street": "Oudeschans"
+        },
+        {
+          "id": "node/6724001120",
+          "lat": 52.372003,
+          "lon": 4.901425,
+          "street": "Keizersstraat"
+        },
+        {
+          "id": "node/5580826489",
+          "lat": 52.367073,
+          "lon": 4.912578,
+          "street": "Plantage Kerklaan"
+        },
+        {
+          "id": "node/5580826486",
+          "lat": 52.365119,
+          "lon": 4.895945,
+          "wheelchair": "yes",
+          "street": "Thorbeckeplein"
+        },
+        {
+          "id": "node/5580830713",
+          "lat": 52.363584,
+          "lon": 4.910548,
+          "street": "Korte Lepelstraat"
+        },
+        {
+          "id": "node/6179877199",
+          "lat": 52.372984,
+          "lon": 4.900386,
+          "street": "Nieuwmarkt"
+        },
+        {
+          "id": "node/6578828279",
+          "lat": 52.368943,
+          "lon": 4.89467,
+          "street": "Binnengasthuisstraat"
+        },
+        {
+          "id": "node/5580826480",
+          "lat": 52.364895,
+          "lon": 4.912991,
+          "street": "Plantage Muidergracht"
+        },
+        {
+          "id": "node/5580837743",
+          "lat": 52.367324,
+          "lon": 4.893285,
+          "wheelchair": "yes",
+          "street": "Muntplein"
+        },
+        {
+          "id": "node/1751592819",
+          "lat": 52.362216,
+          "lon": 4.897765,
+          "wheelchair": "yes",
+          "street": "Amstelveld"
+        },
+        {
+          "id": "node/5580806177",
+          "lat": 52.360751,
+          "lon": 4.900711,
+          "street": "Frederiksplein"
+        },
+        {
+          "id": "node/5838001297",
+          "lat": 52.371328,
+          "lon": 4.893749,
+          "street": "Nesplein"
+        },
+        {
+          "id": "node/5580837742",
+          "lat": 52.366348,
+          "lon": 4.891582,
+          "wheelchair": "yes",
+          "street": "Geelvinckssteeg"
+        },
+        {
+          "id": "node/6654996285",
+          "lat": 52.37434,
+          "lon": 4.897354,
+          "street": "Oudekerksplein"
+        },
+        {
+          "id": "node/6724227895",
+          "lat": 52.371573,
+          "lon": 4.915706,
+          "wheelchair": "yes",
+          "street": "Kattenburgerstraat"
+        },
+        {
+          "id": "node/5580806175",
+          "lat": 52.360487,
+          "lon": 4.897222,
+          "wheelchair": "yes",
+          "street": "Falckstraat"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:30.273Z"
+      "stats": {
+        "free": 37,
+        "paid": 0,
+        "stepFree": 144,
+        "partlyStepFree": 8
+      },
+      "updatedAt": "2026-09-11T10:29:38.827Z"
     },
     "playgrounds": {
       "count": 1355,
@@ -1506,7 +1659,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:40.280Z"
+      "stats": {
+        "free": 2,
+        "paid": 15,
+        "stepFree": 40,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-11T10:29:39.561Z"
     },
     "post-boxes": {
       "count": 311,
@@ -1700,6 +1859,139 @@
       "count": 3079,
       "pois": [
         {
+          "id": "node/12850635648",
+          "name": "Statiegeld Retourshop",
+          "lat": 52.365709,
+          "lon": 4.893191,
+          "address": "Vijzelstraat 51"
+        },
+        {
+          "id": "node/332644232",
+          "name": "Statiegeld Inleverpunt",
+          "lat": 52.35325,
+          "lon": 4.89331,
+          "address": "Ceintuurbaan 139-H"
+        },
+        {
+          "id": "node/73066821",
+          "name": "Joe's Garage",
+          "lat": 52.355589,
+          "lon": 4.925002
+        },
+        {
+          "id": "node/10301948110",
+          "name": "Restafval, oudpapier",
+          "lat": 52.362896,
+          "lon": 4.932383
+        },
+        {
+          "id": "node/2348245293",
+          "name": "Droppie",
+          "lat": 52.363445,
+          "lon": 4.932747,
+          "address": "Javastraat 24"
+        },
+        {
+          "id": "node/5694298941",
+          "name": "Recycling containers",
+          "lat": 52.358809,
+          "lon": 4.93082
+        },
+        {
+          "id": "way/942520202",
+          "name": "Inzamel Eiland",
+          "lat": 52.367135,
+          "lon": 4.866874
+        },
+        {
+          "id": "node/11862331751",
+          "name": "Wormen Hotel",
+          "lat": 52.340699,
+          "lon": 4.906272
+        },
+        {
+          "id": "way/458310109",
+          "name": "Afvalpunt Rozenburglaan",
+          "lat": 52.338747,
+          "lon": 4.937347,
+          "openingHours": "Mo-Sa 08:00-17:00; PH closed"
+        },
+        {
+          "id": "way/1197645088",
+          "name": "Afvalpunt Marie Baronlaan",
+          "lat": 52.369747,
+          "lon": 4.971808,
+          "address": "Marie Baronlaan 13",
+          "openingHours": "Mo-Sa 08:00-17:00"
+        },
+        {
+          "id": "node/1491316017",
+          "name": "Milieudepot, gemeente Ouder-Amstel",
+          "lat": 52.32678,
+          "lon": 4.940635
+        },
+        {
+          "id": "node/3309835092",
+          "name": "papier",
+          "lat": 52.354422,
+          "lon": 4.829546
+        },
+        {
+          "id": "node/1575309341",
+          "name": "Afvalpunt Henk Sneevlietweg",
+          "lat": 52.343293,
+          "lon": 4.833456,
+          "address": "Henk Sneevlietweg 22",
+          "openingHours": "Mo-Sa 08:00-16:55; Su 10:00-15:55"
+        },
+        {
+          "id": "node/8879798121",
+          "name": "Afvalpunt Toetsenbordweg",
+          "lat": 52.413607,
+          "lon": 4.869685,
+          "address": "Toetsenbordweg 42",
+          "openingHours": "Mo-Sa 09:00-17:00"
+        },
+        {
+          "id": "node/7641119579",
+          "name": "Textile recycling",
+          "lat": 52.379675,
+          "lon": 4.821048
+        },
+        {
+          "id": "way/43088047",
+          "name": "Afvalpunt Seineweg",
+          "lat": 52.385908,
+          "lon": 4.820774
+        },
+        {
+          "id": "way/746128618",
+          "name": "Gemeentewerf Landsmeer",
+          "lat": 52.423274,
+          "lon": 4.906724,
+          "openingHours": "Mo 13:00-16:00; We 13:00-16:00; Fr 13:00-16:00; Sa 09:00-12:00"
+        },
+        {
+          "id": "node/14078231429",
+          "name": "Kledingbak",
+          "lat": 52.312325,
+          "lon": 4.953253
+        },
+        {
+          "id": "node/13096936090",
+          "name": "Wormenhotel",
+          "lat": 52.319571,
+          "lon": 4.978369,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/1356980317",
+          "name": "Perscontainer",
+          "lat": 52.429693,
+          "lon": 4.856982,
+          "openingHours": "Mo-Fr 07:00-16:00; PH Off"
+        },
+        {
           "id": "node/8112115951",
           "lat": 52.368552,
           "lon": 4.903573,
@@ -1738,13 +2030,6 @@
           "street": "Nieuwe Achtergracht"
         },
         {
-          "id": "node/12850635648",
-          "name": "Statiegeld Retourshop",
-          "lat": 52.365709,
-          "lon": 4.893191,
-          "address": "Vijzelstraat 51"
-        },
-        {
           "id": "node/1310911743",
           "lat": 52.361915,
           "lon": 4.896419,
@@ -1767,127 +2052,15 @@
           "lat": 52.359863,
           "lon": 4.911839,
           "street": "Andreas Bonnstraat"
-        },
-        {
-          "id": "node/13718787340",
-          "lat": 52.367412,
-          "lon": 4.889204,
-          "street": "Heiligewegsluis"
-        },
-        {
-          "id": "node/13458126684",
-          "lat": 52.35818,
-          "lon": 4.901794,
-          "street": "Stadhouderskade"
-        },
-        {
-          "id": "node/13458126680",
-          "lat": 52.358111,
-          "lon": 4.901796,
-          "street": "Hemonystraat"
-        },
-        {
-          "id": "node/4807241141",
-          "lat": 52.371344,
-          "lon": 4.889276,
-          "street": "Spuistraat"
-        },
-        {
-          "id": "node/84471207",
-          "lat": 52.357873,
-          "lon": 4.90637,
-          "street": "Weesperzijde"
-        },
-        {
-          "id": "node/8112029467",
-          "lat": 52.369452,
-          "lon": 4.919953,
-          "fee": "no",
-          "street": "Wittenburgergracht"
-        },
-        {
-          "id": "node/565691096",
-          "lat": 52.370159,
-          "lon": 4.919812,
-          "street": "Marie Altelaarplein"
-        },
-        {
-          "id": "node/8130168033",
-          "lat": 52.371419,
-          "lon": 4.91979,
-          "fee": "no",
-          "street": "Wittenburgerkade"
-        },
-        {
-          "id": "node/12676332418",
-          "lat": 52.357937,
-          "lon": 4.910169,
-          "street": "Wibautstraat"
-        },
-        {
-          "id": "node/408141236",
-          "lat": 52.368722,
-          "lon": 4.886969,
-          "street": "Herengracht"
-        },
-        {
-          "id": "node/12676332409",
-          "lat": 52.35748,
-          "lon": 4.90968,
-          "street": "Ruyschstraat"
-        },
-        {
-          "id": "node/11889600941",
-          "lat": 52.377352,
-          "lon": 4.895404,
-          "street": "Nieuwezijds Voorburgwal"
-        },
-        {
-          "id": "node/7251708416",
-          "lat": 52.368878,
-          "lon": 4.922184,
-          "fee": "no",
-          "street": "Oostenburgervoorstraat"
-        },
-        {
-          "id": "node/13108820633",
-          "lat": 52.378714,
-          "lon": 4.900491,
-          "wheelchair": "yes",
-          "street": "Centraal Station"
-        },
-        {
-          "id": "node/13468719775",
-          "lat": 52.356282,
-          "lon": 4.903172,
-          "street": "Tweede Jan van der Heijdenstraat"
-        },
-        {
-          "id": "node/13453294057",
-          "lat": 52.357009,
-          "lon": 4.89722,
-          "street": "Gerard Doustraat"
-        },
-        {
-          "id": "node/13105648778",
-          "lat": 52.359276,
-          "lon": 4.890089,
-          "street": "Eerste Weteringplantsoen"
-        },
-        {
-          "id": "node/8158491135",
-          "lat": 52.366653,
-          "lon": 4.923649,
-          "street": "Hoogte Kadijk"
-        },
-        {
-          "id": "node/12909601428",
-          "lat": 52.356591,
-          "lon": 4.911833,
-          "street": "Eerste Oosterparkstraat"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:45.324Z"
+      "stats": {
+        "free": 56,
+        "paid": 0,
+        "stepFree": 41,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:29:42.267Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -2154,7 +2327,13 @@
           "lon": 4.861487
         }
       ],
-      "updatedAt": "2026-09-03T17:00:48.030Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:29:43.569Z"
     },
     "camp-sites": {
       "count": 7,
@@ -2619,9 +2798,81 @@
           "name": "Hangplek Sportpark Landsmeer",
           "lat": 52.432501,
           "lon": 4.908026
+        },
+        {
+          "id": "node/13527460032",
+          "lat": 52.367075,
+          "lon": 4.905392,
+          "street": "Jonas Daniël Meijerplein"
+        },
+        {
+          "id": "node/13155139541",
+          "lat": 52.368713,
+          "lon": 4.905401,
+          "street": "Markenplein"
+        },
+        {
+          "id": "node/13180252926",
+          "lat": 52.366482,
+          "lon": 4.905647,
+          "street": "Dr. D.M. Sluyspad"
+        },
+        {
+          "id": "node/10198281212",
+          "lat": 52.365744,
+          "lon": 4.904013,
+          "street": "Neerlandiaplein"
+        },
+        {
+          "id": "node/10925001632",
+          "lat": 52.366669,
+          "lon": 4.901253,
+          "street": "Amstel"
+        },
+        {
+          "id": "node/10925001633",
+          "lat": 52.366644,
+          "lon": 4.901267,
+          "street": "Blauwbrug"
+        },
+        {
+          "id": "node/13180252920",
+          "lat": 52.367607,
+          "lon": 4.908023,
+          "street": "Plantage Middenlaan"
+        },
+        {
+          "id": "node/5763677780",
+          "lat": 52.364987,
+          "lon": 4.90536,
+          "street": "Nieuwe Keizersgracht"
+        },
+        {
+          "id": "node/5668985345",
+          "lat": 52.369791,
+          "lon": 4.901334,
+          "street": "Sint Antoniesluis"
+        },
+        {
+          "id": "node/6301158713",
+          "lat": 52.369396,
+          "lon": 4.900493,
+          "street": "Pentagon"
+        },
+        {
+          "id": "node/3918459901",
+          "lat": 52.365885,
+          "lon": 4.908287,
+          "street": "Plantage Parklaan"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:57.241Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:45.141Z"
     },
     "compressed-air": {
       "count": 0,

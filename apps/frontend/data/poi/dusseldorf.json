@@ -1,9 +1,9 @@
 {
   "city": "dusseldorf",
-  "generatedAt": "2026-09-03T16:57:18.324Z",
+  "generatedAt": "2026-09-11T10:29:27.066Z",
   "categories": {
     "toilets": {
-      "count": 235,
+      "count": 237,
       "pois": [
         {
           "id": "node/1572056072",
@@ -120,6 +120,13 @@
           "context": "Halle 3"
         },
         {
+          "id": "node/14144635312",
+          "lat": 51.260229,
+          "lon": 6.746815,
+          "fee": "no",
+          "context": "CCD Ost"
+        },
+        {
           "id": "node/12907892745",
           "lat": 51.258156,
           "lon": 6.739482,
@@ -169,13 +176,6 @@
           "context": "23.31"
         },
         {
-          "id": "node/13476430258",
-          "lat": 51.261533,
-          "lon": 6.737629,
-          "fee": "no",
-          "context": "Eingang Nord B"
-        },
-        {
           "id": "node/3177986373",
           "name": "Shell",
           "lat": 51.193603,
@@ -204,10 +204,16 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:45.041Z"
+      "stats": {
+        "free": 122,
+        "paid": 50,
+        "stepFree": 119,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:29:17.389Z"
     },
     "drinking-water": {
-      "count": 63,
+      "count": 64,
       "pois": [
         {
           "id": "node/10214289319",
@@ -236,9 +242,190 @@
           "name": "Wasch",
           "lat": 51.287466,
           "lon": 6.729963
+        },
+        {
+          "id": "node/11950608214",
+          "lat": 51.226544,
+          "lon": 6.770862,
+          "street": "Burgplatz"
+        },
+        {
+          "id": "node/10963373841",
+          "lat": 51.227041,
+          "lon": 6.784821,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Schadowstraße"
+        },
+        {
+          "id": "node/9737974019",
+          "lat": 51.227596,
+          "lon": 6.787162,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Tonhallenstraße"
+        },
+        {
+          "id": "node/1330836622",
+          "lat": 51.233755,
+          "lon": 6.789689,
+          "street": "Bagelstraße"
+        },
+        {
+          "id": "node/4306072378",
+          "lat": 51.218369,
+          "lon": 6.760711,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Parlamentsufer"
+        },
+        {
+          "id": "node/3734189085",
+          "lat": 51.240026,
+          "lon": 6.769111,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Robert-Lehr-Ufer"
+        },
+        {
+          "id": "node/10996684529",
+          "lat": 51.240821,
+          "lon": 6.779684,
+          "fee": "no",
+          "street": "Kolpingplatz"
+        },
+        {
+          "id": "node/12912133574",
+          "lat": 51.213259,
+          "lon": 6.775576,
+          "street": "Elisabethstraße"
+        },
+        {
+          "id": "node/12912187413",
+          "lat": 51.213599,
+          "lon": 6.785188,
+          "street": "Fürstenplatz"
+        },
+        {
+          "id": "node/4307611584",
+          "lat": 51.24005,
+          "lon": 6.803689,
+          "wheelchair": "yes",
+          "street": "Faunastraße"
+        },
+        {
+          "id": "node/11061302939",
+          "lat": 51.223246,
+          "lon": 6.812799,
+          "fee": "no",
+          "street": "Lichter Weg"
+        },
+        {
+          "id": "node/13226746243",
+          "lat": 51.233781,
+          "lon": 6.82163,
+          "street": "Schlüterstraße"
+        },
+        {
+          "id": "node/4309081611",
+          "lat": 51.207194,
+          "lon": 6.733988,
+          "street": "Am Sandacker"
+        },
+        {
+          "id": "node/14024540744",
+          "lat": 51.232847,
+          "lon": 6.720059,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Hanns-Heuer-Platz"
+        },
+        {
+          "id": "node/12140863568",
+          "lat": 51.246033,
+          "lon": 6.82536,
+          "street": "Bruno-Recht-Weg"
+        },
+        {
+          "id": "node/474421025",
+          "lat": 51.18611,
+          "lon": 6.792902,
+          "street": "Himmelgeister Landstraße"
+        },
+        {
+          "id": "node/1866983265",
+          "lat": 51.259849,
+          "lon": 6.725968,
+          "street": "Lohauser Deich"
+        },
+        {
+          "id": "node/12178412960",
+          "lat": 51.247684,
+          "lon": 6.836753,
+          "wheelchair": "no",
+          "fee": "no",
+          "street": "Trotzhofallee"
+        },
+        {
+          "id": "node/1659230863",
+          "lat": 51.259536,
+          "lon": 6.829331,
+          "street": "Aaper Schneise"
+        },
+        {
+          "id": "node/11047827374",
+          "lat": 51.201281,
+          "lon": 6.837704,
+          "fee": "no",
+          "street": "Gertrudisplatz"
+        },
+        {
+          "id": "node/3548837356",
+          "lat": 51.256289,
+          "lon": 6.836215,
+          "street": "Aaper Höhenweg"
+        },
+        {
+          "id": "node/633405597",
+          "lat": 51.264972,
+          "lon": 6.829277,
+          "fee": "no",
+          "street": "Wilhelm-Suter-Pfad"
+        },
+        {
+          "id": "node/13873456557",
+          "lat": 51.267353,
+          "lon": 6.83114,
+          "fee": "no",
+          "street": "Dachsbergweg"
+        },
+        {
+          "id": "node/10126693612",
+          "lat": 51.19644,
+          "lon": 6.847022,
+          "fee": "no",
+          "street": "Heidelberger Straße"
+        },
+        {
+          "id": "node/12136475115",
+          "lat": 51.236876,
+          "lon": 6.861473,
+          "street": "Neusser Tor"
+        },
+        {
+          "id": "node/12912177110",
+          "lat": 51.225142,
+          "lon": 6.862848,
+          "street": "Heyestraße"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:47.028Z"
+      "stats": {
+        "free": 30,
+        "paid": 0,
+        "stepFree": 19,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:29:20.950Z"
     },
     "playgrounds": {
       "count": 796,
@@ -1764,7 +1951,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:57.762Z"
+      "stats": {
+        "free": 0,
+        "paid": 4,
+        "stepFree": 78,
+        "partlyStepFree": 22
+      },
+      "updatedAt": "2026-09-11T10:29:21.861Z"
     },
     "post-boxes": {
       "count": 425,
@@ -1958,8 +2151,65 @@
       "updatedAt": "2026-09-03T16:56:59.752Z"
     },
     "recycling": {
-      "count": 1209,
+      "count": 1211,
       "pois": [
+        {
+          "id": "way/126404827",
+          "name": "Recyclinghof Flingern",
+          "lat": 51.225756,
+          "lon": 6.821156,
+          "address": "Flinger Broich 15",
+          "openingHours": "Mo-Sa 08:00-17:45; Su off"
+        },
+        {
+          "id": "node/3265886942",
+          "name": "Kompostierungsanlage Düsseldorf-Hamm",
+          "lat": 51.193368,
+          "lon": 6.742126,
+          "address": "Auf dem Draap 40",
+          "openingHours": "Mo-Fr 07:00-16:00; Sa 10:00-14:00"
+        },
+        {
+          "id": "node/10876055997",
+          "name": "Altkleidercontainer",
+          "lat": 51.208259,
+          "lon": 6.831767
+        },
+        {
+          "id": "node/560880122",
+          "name": "EVD Düsseldorf",
+          "lat": 51.218321,
+          "lon": 6.83952,
+          "address": "Posener Straße 191",
+          "openingHours": "Mo-Th 07:00-16:30; Fr 07:00-15:30; Sa,Su,PH off"
+        },
+        {
+          "id": "way/110321331",
+          "name": "Recyclinghof Lohausen",
+          "lat": 51.283798,
+          "lon": 6.74126,
+          "address": "Niederrheinstraße 229",
+          "openingHours": "Mo-Fr 09:00-16:30; Sa 09:00-14:00"
+        },
+        {
+          "id": "node/897742999",
+          "name": "IDR Entsorgungsgesellschaft mbH",
+          "lat": 51.181918,
+          "lon": 6.847888,
+          "address": "Oerschbachstraße 29"
+        },
+        {
+          "id": "node/4794146715",
+          "name": "Schönmackers",
+          "lat": 51.185864,
+          "lon": 6.853824
+        },
+        {
+          "id": "node/9216749835",
+          "name": "Enreba",
+          "lat": 51.161801,
+          "lon": 6.760795
+        },
         {
           "id": "node/2846912454",
           "lat": 51.227055,
@@ -2094,62 +2344,15 @@
           "lon": 6.769724,
           "wheelchair": "yes",
           "street": "Reichsstraße"
-        },
-        {
-          "id": "node/1110710582",
-          "lat": 51.23336,
-          "lon": 6.788853,
-          "street": "Bagelstraße"
-        },
-        {
-          "id": "node/2583630231",
-          "lat": 51.237336,
-          "lon": 6.782947,
-          "street": "Nettelbeckstraße"
-        },
-        {
-          "id": "node/309938097",
-          "lat": 51.217827,
-          "lon": 6.782669,
-          "wheelchair": "yes",
-          "street": "Ernst-Reuter-Platz"
-        },
-        {
-          "id": "node/1551459769",
-          "lat": 51.232997,
-          "lon": 6.757333,
-          "street": "Joachimstraße"
-        },
-        {
-          "id": "node/470358614",
-          "lat": 51.238544,
-          "lon": 6.779624,
-          "street": "Schwerinstraße"
-        },
-        {
-          "id": "node/1544781501",
-          "lat": 51.224908,
-          "lon": 6.791592,
-          "street": "Stephanienstraße"
-        },
-        {
-          "id": "way/126404827",
-          "name": "Recyclinghof Flingern",
-          "lat": 51.225756,
-          "lon": 6.821156,
-          "address": "Flinger Broich 15",
-          "openingHours": "Mo-Sa 08:00-17:45; Su off"
-        },
-        {
-          "id": "node/3265886942",
-          "name": "Kompostierungsanlage Düsseldorf-Hamm",
-          "lat": 51.193368,
-          "lon": 6.742126,
-          "address": "Auf dem Draap 40",
-          "openingHours": "Mo-Fr 07:00-16:00; Sa 10:00-14:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:02.077Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:29:24.103Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -2416,7 +2619,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:04.408Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:25.512Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2776,7 +2985,7 @@
       "updatedAt": "2026-08-17T04:03:33.843Z"
     },
     "benches": {
-      "count": 5066,
+      "count": 5070,
       "pois": [
         {
           "id": "node/11687804769",
@@ -2809,9 +3018,87 @@
           "name": "6. Station",
           "lat": 51.241077,
           "lon": 6.684139
+        },
+        {
+          "id": "node/5315383774",
+          "lat": 51.22844,
+          "lon": 6.774567,
+          "street": "Am Alten Amtsgericht"
+        },
+        {
+          "id": "node/4773472230",
+          "lat": 51.227836,
+          "lon": 6.770707,
+          "street": "Schloßufer"
+        },
+        {
+          "id": "node/4773474036",
+          "lat": 51.226838,
+          "lon": 6.771028,
+          "street": "Burgplatz"
+        },
+        {
+          "id": "node/13708162592",
+          "lat": 51.228708,
+          "lon": 6.776263,
+          "street": "Paul-Klee-Platz"
+        },
+        {
+          "id": "node/5178855996",
+          "lat": 51.225401,
+          "lon": 6.773916,
+          "street": "Kapuzinergasse"
+        },
+        {
+          "id": "node/12522991041",
+          "lat": 51.226503,
+          "lon": 6.776778,
+          "street": "Heinrich-Heine-Allee"
+        },
+        {
+          "id": "node/1577271638",
+          "lat": 51.229596,
+          "lon": 6.77745,
+          "street": "Maximilian-Weyhe-Allee"
+        },
+        {
+          "id": "node/12238498956",
+          "lat": 51.230909,
+          "lon": 6.774482,
+          "street": "Fritz-Roeber-Straße"
+        },
+        {
+          "id": "node/12523036458",
+          "lat": 51.225554,
+          "lon": 6.777447,
+          "street": "Theodor-Körner-Straße"
+        },
+        {
+          "id": "node/12523036446",
+          "lat": 51.225741,
+          "lon": 6.778298,
+          "street": "Königsallee"
+        },
+        {
+          "id": "node/9012102219",
+          "lat": 51.231315,
+          "lon": 6.771236,
+          "street": "Joseph-Beuys-Ufer"
+        },
+        {
+          "id": "node/12238498961",
+          "lat": 51.231653,
+          "lon": 6.773723,
+          "street": "Hofgartenrampe"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:18.216Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:29:26.964Z"
     },
     "compressed-air": {
       "count": 4,

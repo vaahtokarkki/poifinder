@@ -1,6 +1,6 @@
 {
   "city": "new-orleans",
-  "generatedAt": "2026-09-03T17:31:41.821Z",
+  "generatedAt": "2026-09-11T10:32:47.585Z",
   "categories": {
     "toilets": {
       "count": 25,
@@ -79,12 +79,130 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:24.227Z"
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:32:42.953Z"
     },
     "drinking-water": {
       "count": 22,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:31:25.564Z"
+      "pois": [
+        {
+          "id": "node/10597390024",
+          "lat": 29.952288,
+          "lon": -90.062763,
+          "wheelchair": "yes",
+          "street": "Moonwalk"
+        },
+        {
+          "id": "node/4726886293",
+          "lat": 29.959868,
+          "lon": -90.070783,
+          "street": "Crozat Street"
+        },
+        {
+          "id": "node/6983609885",
+          "lat": 29.960895,
+          "lon": -90.068698,
+          "street": "Saint Peter Street"
+        },
+        {
+          "id": "node/11623207394",
+          "lat": 29.936796,
+          "lon": -90.073229,
+          "street": "Camp Street"
+        },
+        {
+          "id": "node/7285736632",
+          "lat": 29.964752,
+          "lon": -90.057276,
+          "address": "Washington Square",
+          "street": "Royal Street"
+        },
+        {
+          "id": "node/10605103797",
+          "lat": 29.930495,
+          "lon": -90.08392,
+          "street": "Prytania Street"
+        },
+        {
+          "id": "node/7285772093",
+          "lat": 29.963016,
+          "lon": -90.042712,
+          "address": "Mickey Markey Playground",
+          "wheelchair": "yes",
+          "street": "Piety Street"
+        },
+        {
+          "id": "node/14007512715",
+          "lat": 29.974473,
+          "lon": -90.092815,
+          "street": "Lafitte Greenway"
+        },
+        {
+          "id": "node/7285772827",
+          "lat": 29.963966,
+          "lon": -90.036883,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Alvar Street"
+        },
+        {
+          "id": "node/6564126389",
+          "lat": 29.985925,
+          "lon": -90.09305,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Collins Diboll Circle"
+        },
+        {
+          "id": "node/13627096901",
+          "lat": 29.985979,
+          "lon": -90.093966,
+          "street": "Dueling Oaks Drive"
+        },
+        {
+          "id": "node/2351681397",
+          "lat": 29.943516,
+          "lon": -90.11704,
+          "street": "Janet Yullman Way"
+        },
+        {
+          "id": "node/7285781695",
+          "lat": 29.987682,
+          "lon": -90.094616,
+          "street": "Lelong Drive"
+        },
+        {
+          "id": "node/7285778526",
+          "lat": 29.986549,
+          "lon": -90.097979,
+          "fee": "no",
+          "street": "Victory Avenue"
+        },
+        {
+          "id": "node/2343782784",
+          "lat": 29.98985,
+          "lon": -90.092238,
+          "street": "Festival Grounds Path"
+        },
+        {
+          "id": "node/2395296017",
+          "lat": 29.989155,
+          "lon": -90.095864,
+          "street": "Franklin D. Roosevelt Mall"
+        }
+      ],
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:44.474Z"
     },
     "playgrounds": {
       "count": 75,
@@ -739,7 +857,13 @@
           "address": "South Carrollton Avenue 700"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:32.081Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:32:44.867Z"
     },
     "post-boxes": {
       "count": 4,
@@ -795,12 +919,6 @@
           "address": "Marais St 2831"
         },
         {
-          "id": "node/308769274",
-          "lat": 29.941998,
-          "lon": -90.117065,
-          "street": "Ben Weiner Drive"
-        },
-        {
           "id": "node/7158338386",
           "name": "Goodwill Store",
           "lat": 29.902734,
@@ -811,9 +929,21 @@
           "name": "Glass Half Full",
           "lat": 30.000067,
           "lon": -90.035024
+        },
+        {
+          "id": "node/308769274",
+          "lat": 29.941998,
+          "lon": -90.117065,
+          "street": "Ben Weiner Drive"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:34.192Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:45.950Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -970,7 +1100,13 @@
     "outdoor-gyms": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:35.763Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:46.652Z"
     },
     "camp-sites": {
       "count": 3,
@@ -1092,8 +1228,69 @@
     },
     "benches": {
       "count": 222,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:31:41.720Z"
+      "pois": [
+        {
+          "id": "node/12755910311",
+          "lat": 29.95167,
+          "lon": -90.062735,
+          "street": "Moonwalk"
+        },
+        {
+          "id": "node/6561445889",
+          "lat": 29.961045,
+          "lon": -90.068867,
+          "street": "Saint Peter Street"
+        },
+        {
+          "id": "node/6561446288",
+          "lat": 29.960974,
+          "lon": -90.068473,
+          "street": "North Rampart Street"
+        },
+        {
+          "id": "node/12759815872",
+          "lat": 29.957946,
+          "lon": -90.061255,
+          "street": "Dumaine Street"
+        },
+        {
+          "id": "node/13759887656",
+          "lat": 29.940768,
+          "lon": -90.06475,
+          "street": "John Churchill Chase Street"
+        },
+        {
+          "id": "node/13759887651",
+          "lat": 29.940453,
+          "lon": -90.064731,
+          "street": "Gaiennie Street"
+        },
+        {
+          "id": "node/13759887660",
+          "lat": 29.940442,
+          "lon": -90.064696,
+          "street": "Convention Center Boulevard"
+        },
+        {
+          "id": "node/4747923146",
+          "lat": 29.959569,
+          "lon": -90.060141,
+          "street": "Decatur Street"
+        },
+        {
+          "id": "node/6561424590",
+          "lat": 29.963916,
+          "lon": -90.067991,
+          "street": "Saint Philip Street"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:47.484Z"
     },
     "compressed-air": {
       "count": 0,

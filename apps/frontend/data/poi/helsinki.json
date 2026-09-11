@@ -1,6 +1,6 @@
 {
   "city": "helsinki",
-  "generatedAt": "2026-09-03T16:36:44.533Z",
+  "generatedAt": "2026-09-11T10:25:54.476Z",
   "categories": {
     "toilets": {
       "count": 298,
@@ -257,7 +257,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:11.460Z"
+      "stats": {
+        "free": 174,
+        "paid": 8,
+        "stepFree": 134,
+        "partlyStepFree": 11
+      },
+      "updatedAt": "2026-09-11T10:25:44.367Z"
     },
     "drinking-water": {
       "count": 71,
@@ -365,9 +371,67 @@
           "lon": 25.079168,
           "address": "Hepokalliontie 25",
           "fee": "no"
+        },
+        {
+          "id": "node/13017266401",
+          "lat": 60.173971,
+          "lon": 24.938033,
+          "address": "Tölöviksgatan 4",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Helle Kannilan aukio"
+        },
+        {
+          "id": "node/2448677261",
+          "lat": 60.179676,
+          "lon": 24.982759,
+          "street": "Mustikkamaanpolku"
+        },
+        {
+          "id": "node/10984875687",
+          "lat": 60.183093,
+          "lon": 24.884985,
+          "street": "Antin aukio"
+        },
+        {
+          "id": "node/3413264669",
+          "lat": 60.146675,
+          "lon": 24.883712,
+          "street": "Itälahdenpolku"
+        },
+        {
+          "id": "node/10739099534",
+          "lat": 60.155213,
+          "lon": 24.855864,
+          "street": "Lounaisväylänpolku"
+        },
+        {
+          "id": "node/5941193183",
+          "lat": 60.139726,
+          "lon": 25.003857,
+          "street": "Vallisaarenpolku"
+        },
+        {
+          "id": "node/8923319975",
+          "lat": 60.136278,
+          "lon": 25.009629,
+          "fee": "no",
+          "street": "Kuninkaansaarenpolku"
+        },
+        {
+          "id": "node/3708442212",
+          "lat": 60.213775,
+          "lon": 24.85334,
+          "street": "Jenseninpolku"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:13.390Z"
+      "stats": {
+        "free": 19,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:25:46.694Z"
     },
     "playgrounds": {
       "count": 716,
@@ -1759,7 +1823,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:24.569Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 32,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:25:48.026Z"
     },
     "post-boxes": {
       "count": 224,
@@ -1957,6 +2027,111 @@
           "lon": 24.931859
         },
         {
+          "id": "node/10604618348",
+          "name": "Fida",
+          "lat": 60.162295,
+          "lon": 24.915436,
+          "address": "Selkämerenkatu"
+        },
+        {
+          "id": "node/790308328",
+          "name": "Ekopiste, Linnanmäki",
+          "lat": 60.18703,
+          "lon": 24.940335
+        },
+        {
+          "id": "node/8631974110",
+          "name": "RÖÖRI-lajitteluhuone",
+          "lat": 60.156005,
+          "lon": 24.916443,
+          "address": "Hyväntoivonkatu 8",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/758721191",
+          "name": "Kierrätyskontti",
+          "lat": 60.157334,
+          "lon": 24.911106
+        },
+        {
+          "id": "node/2260450465",
+          "name": "UFF",
+          "lat": 60.19294,
+          "lon": 24.939394
+        },
+        {
+          "id": "node/9708938620",
+          "lat": 60.174807,
+          "lon": 24.988764,
+          "context": "Karhulinna"
+        },
+        {
+          "id": "node/7652947670",
+          "name": "Palpa",
+          "lat": 60.199511,
+          "lon": 24.925387,
+          "address": "Pasilanraitio 9"
+        },
+        {
+          "id": "way/436163400",
+          "name": "Heikkilän aukion alueellinen keräyspiste",
+          "lat": 60.154003,
+          "lon": 24.880348
+        },
+        {
+          "id": "node/5166996286",
+          "name": "Lahjoitustavaran vastaanotto",
+          "lat": 60.198459,
+          "lon": 24.973667,
+          "address": "Kyläsaarenkatu 8"
+        },
+        {
+          "id": "node/430402611",
+          "lat": 60.202496,
+          "lon": 24.968194,
+          "context": "Kauppakeskus Arabia"
+        },
+        {
+          "id": "node/12327669068",
+          "name": "Fida keräyslaatikko",
+          "lat": 60.189092,
+          "lon": 25.025988,
+          "address": "Amiraali Cronstedtin tori",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/642360405",
+          "name": "SMT 12 roskalava",
+          "lat": 60.191793,
+          "lon": 24.838339
+        },
+        {
+          "id": "node/8550426967",
+          "name": "Rinki",
+          "lat": 60.180514,
+          "lon": 25.051023
+        },
+        {
+          "id": "node/6896446355",
+          "name": "Emmy",
+          "lat": 60.176037,
+          "lon": 24.806324
+        },
+        {
+          "id": "node/6499815446",
+          "name": "Stara, Kierrätyskeskus",
+          "lat": 60.23684,
+          "lon": 24.979003,
+          "address": "Liukumäentie 4"
+        },
+        {
+          "id": "way/747121843",
+          "name": "Rinki-ekopiste",
+          "lat": 60.236129,
+          "lon": 24.890297,
+          "address": "Kantelettarentie 1"
+        },
+        {
           "id": "node/4876439192",
           "lat": 60.165914,
           "lon": 24.931265,
@@ -2017,13 +2192,6 @@
           "street": "Toinen linja"
         },
         {
-          "id": "node/10604618348",
-          "name": "Fida",
-          "lat": 60.162295,
-          "lon": 24.915436,
-          "address": "Selkämerenkatu"
-        },
-        {
           "id": "node/412204397",
           "lat": 60.183697,
           "lon": 24.939381,
@@ -2041,102 +2209,15 @@
           "lat": 60.155149,
           "lon": 24.943049,
           "street": "Merikatu"
-        },
-        {
-          "id": "node/1819825234",
-          "lat": 60.156215,
-          "lon": 24.920925,
-          "street": "Tyynenmerentori"
-        },
-        {
-          "id": "node/446760366",
-          "lat": 60.185164,
-          "lon": 24.949879,
-          "street": "Itäinen Papinkatu"
-        },
-        {
-          "id": "node/7655334194",
-          "lat": 60.158081,
-          "lon": 24.914738,
-          "address": "Livornonkatu 3",
-          "street": "Livornonkatu"
-        },
-        {
-          "id": "node/790308328",
-          "name": "Ekopiste, Linnanmäki",
-          "lat": 60.18703,
-          "lon": 24.940335
-        },
-        {
-          "id": "node/8631974110",
-          "name": "RÖÖRI-lajitteluhuone",
-          "lat": 60.156005,
-          "lon": 24.916443,
-          "address": "Hyväntoivonkatu 8",
-          "openingHours": "24/7"
-        },
-        {
-          "id": "node/1921545993",
-          "lat": 60.167692,
-          "lon": 24.974614,
-          "street": "Merisotilaantori"
-        },
-        {
-          "id": "node/445362994",
-          "lat": 60.186918,
-          "lon": 24.951187,
-          "street": "Helsinginkatu"
-        },
-        {
-          "id": "way/758721191",
-          "name": "Kierrätyskontti",
-          "lat": 60.157334,
-          "lon": 24.911106
-        },
-        {
-          "id": "node/434619397",
-          "lat": 60.190236,
-          "lon": 24.949097,
-          "street": "Sturenkatu"
-        },
-        {
-          "id": "node/668286769",
-          "lat": 60.190826,
-          "lon": 24.945561,
-          "street": "Alppila"
-        },
-        {
-          "id": "node/2260450465",
-          "name": "UFF",
-          "lat": 60.19294,
-          "lon": 24.939394
-        },
-        {
-          "id": "node/351124811",
-          "lat": 60.192961,
-          "lon": 24.939501,
-          "street": "Karjalankatu"
-        },
-        {
-          "id": "node/9711327655",
-          "lat": 60.179463,
-          "lon": 24.982662,
-          "street": "Mustikkamaanpolku"
-        },
-        {
-          "id": "node/9708938620",
-          "lat": 60.174807,
-          "lon": 24.988764,
-          "context": "Karhulinna"
-        },
-        {
-          "id": "node/670356665",
-          "lat": 60.197826,
-          "lon": 24.939278,
-          "street": "Junailijanaukio"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:32.249Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:25:51.364Z"
     },
     "luggage-storage": {
       "count": 5,
@@ -2401,7 +2482,7 @@
       "updatedAt": "2026-09-03T16:36:20.937Z"
     },
     "outdoor-gyms": {
-      "count": 154,
+      "count": 155,
       "pois": [
         {
           "id": "node/13302538606",
@@ -2595,7 +2676,13 @@
           "lon": 24.82787
         }
       ],
-      "updatedAt": "2026-09-03T16:36:35.524Z"
+      "stats": {
+        "free": 5,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:25:53.079Z"
     },
     "libraries": {
       "count": 54,
@@ -2992,16 +3079,112 @@
       "updatedAt": "2026-08-17T04:02:21.764Z"
     },
     "benches": {
-      "count": 4359,
+      "count": 4362,
       "pois": [
         {
           "id": "node/5520073936",
           "name": "Tervetuloa Maunulan luontopolulle!",
           "lat": 60.221083,
           "lon": 24.916517
+        },
+        {
+          "id": "node/12871443307",
+          "lat": 60.169537,
+          "lon": 24.936387,
+          "street": "Narinkkatori"
+        },
+        {
+          "id": "node/7160363418",
+          "lat": 60.168826,
+          "lon": 24.940435,
+          "street": "Ylioppilasaukio"
+        },
+        {
+          "id": "node/7160363421",
+          "lat": 60.168679,
+          "lon": 24.940708,
+          "street": "Mannerheimintie"
+        },
+        {
+          "id": "node/12416740166",
+          "lat": 60.169467,
+          "lon": 24.935098,
+          "street": "Annanaukio"
+        },
+        {
+          "id": "node/6020388793",
+          "lat": 60.171399,
+          "lon": 24.936556,
+          "street": "Mannerheiminaukio"
+        },
+        {
+          "id": "node/13296687354",
+          "lat": 60.16893,
+          "lon": 24.934941,
+          "street": "Simonkatu"
+        },
+        {
+          "id": "node/302562060",
+          "lat": 60.172354,
+          "lon": 24.938738,
+          "street": "Töölönlahdenkatu"
+        },
+        {
+          "id": "node/12874679976",
+          "lat": 60.170805,
+          "lon": 24.944476,
+          "street": "Kaivokatu"
+        },
+        {
+          "id": "node/12874734838",
+          "lat": 60.170879,
+          "lon": 24.944456,
+          "street": "Rautatientori"
+        },
+        {
+          "id": "node/9516405194",
+          "lat": 60.173032,
+          "lon": 24.937272,
+          "street": "Eero Erkon katu"
+        },
+        {
+          "id": "node/9516405195",
+          "lat": 60.173064,
+          "lon": 24.937489,
+          "street": "Helle Kannilan aukio"
+        },
+        {
+          "id": "node/464729824",
+          "lat": 60.166407,
+          "lon": 24.94045,
+          "street": "Yrjönkatu"
+        },
+        {
+          "id": "node/12114430589",
+          "lat": 60.166248,
+          "lon": 24.939065,
+          "street": "Lönnrotinkatu"
+        },
+        {
+          "id": "node/6338725840",
+          "lat": 60.167498,
+          "lon": 24.944686,
+          "street": "Pohjoisesplanadi"
+        },
+        {
+          "id": "node/464729816",
+          "lat": 60.165775,
+          "lon": 24.940647,
+          "street": "Bulevardi"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:44.432Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:25:54.374Z"
     },
     "compressed-air": {
       "count": 5,

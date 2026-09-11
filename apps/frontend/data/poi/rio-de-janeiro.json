@@ -1,6 +1,6 @@
 {
   "city": "rio-de-janeiro",
-  "generatedAt": "2026-09-03T17:50:40.231Z",
+  "generatedAt": "2026-09-11T10:34:39.729Z",
   "categories": {
     "toilets": {
       "count": 134,
@@ -163,12 +163,62 @@
           "lon": -43.225935
         }
       ],
-      "updatedAt": "2026-09-03T17:50:16.424Z"
+      "stats": {
+        "free": 18,
+        "paid": 32,
+        "stepFree": 19,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:34:32.401Z"
     },
     "drinking-water": {
       "count": 19,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:50:18.802Z"
+      "pois": [
+        {
+          "id": "node/479877234",
+          "lat": -22.907076,
+          "lon": -43.17314,
+          "street": "Avenida Almirante Barroso"
+        },
+        {
+          "id": "node/611055130",
+          "lat": -22.910527,
+          "lon": -43.171886,
+          "street": "Avenida Presidente Antônio Carlos"
+        },
+        {
+          "id": "node/4524090860",
+          "lat": -22.951156,
+          "lon": -43.163613,
+          "street": "Via Verde"
+        },
+        {
+          "id": "node/11071632626",
+          "lat": -22.949622,
+          "lon": -43.156455,
+          "street": "CEPI"
+        },
+        {
+          "id": "node/11095241392",
+          "lat": -22.924257,
+          "lon": -43.2682,
+          "wheelchair": "limited",
+          "street": "Trilha de acesso ao Perdido do Andaraí"
+        },
+        {
+          "id": "node/9471632022",
+          "lat": -22.972678,
+          "lon": -43.254464,
+          "street": "Estrada da Vista Chinesa"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:34:34.347Z"
     },
     "playgrounds": {
       "count": 176,
@@ -1515,7 +1565,13 @@
           "lon": -43.290065
         }
       ],
-      "updatedAt": "2026-09-03T17:50:26.325Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:34:35.406Z"
     },
     "post-boxes": {
       "count": 38,
@@ -1707,6 +1763,18 @@
       "count": 10,
       "pois": [
         {
+          "id": "node/1400565542",
+          "name": "ponto de coleta: óleo de cozinha",
+          "lat": -22.896615,
+          "lon": -43.125452
+        },
+        {
+          "id": "node/816173263",
+          "name": "Comlurb",
+          "lat": -22.920395,
+          "lon": -43.233478
+        },
+        {
           "id": "node/12025227139",
           "lat": -22.923965,
           "lon": -43.178096,
@@ -1720,22 +1788,10 @@
           "street": "Outeiro São João Batista"
         },
         {
-          "id": "node/1400565542",
-          "name": "ponto de coleta: óleo de cozinha",
-          "lat": -22.896615,
-          "lon": -43.125452
-        },
-        {
           "id": "node/7201716008",
           "lat": -22.953383,
           "lon": -43.183847,
           "street": "Rua General Polidoro"
-        },
-        {
-          "id": "node/816173263",
-          "name": "Comlurb",
-          "lat": -22.920395,
-          "lon": -43.233478
         },
         {
           "id": "node/12453508850",
@@ -1756,7 +1812,13 @@
           "street": "Estrada Adhemar Bebiano"
         }
       ],
-      "updatedAt": "2026-09-03T17:50:29.371Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:37.243Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -2015,7 +2077,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:50:31.748Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-11T10:34:38.288Z"
     },
     "camp-sites": {
       "count": 2,
@@ -2280,9 +2348,81 @@
           "lat": -22.984373,
           "lon": -43.18917,
           "address": "Calçadão de Copacabana"
+        },
+        {
+          "id": "node/11409437469",
+          "lat": -22.904775,
+          "lon": -43.173482,
+          "street": "Avenida Erasmo Braga"
+        },
+        {
+          "id": "node/13285794860",
+          "lat": -22.905434,
+          "lon": -43.170649,
+          "street": "Avenida Alfred Agache"
+        },
+        {
+          "id": "node/13285947440",
+          "lat": -22.905573,
+          "lon": -43.170126,
+          "street": "Rua Marechal Aguinaldo Caiado de Castro"
+        },
+        {
+          "id": "node/13285795819",
+          "lat": -22.903858,
+          "lon": -43.171659,
+          "street": "Praça Marechal Âncora"
+        },
+        {
+          "id": "node/6179016385",
+          "lat": -22.907417,
+          "lon": -43.169492,
+          "street": "Rua Antenor Fagundes"
+        },
+        {
+          "id": "node/10279776287",
+          "lat": -22.90615,
+          "lon": -43.176559,
+          "street": "Rua São José"
+        },
+        {
+          "id": "node/10756099049",
+          "lat": -22.908462,
+          "lon": -43.176425,
+          "street": "Avenida Rio Branco"
+        },
+        {
+          "id": "node/9270800728",
+          "lat": -22.910278,
+          "lon": -43.176107,
+          "street": "Praça Floriano"
+        },
+        {
+          "id": "node/13286185772",
+          "lat": -22.902196,
+          "lon": -43.173726,
+          "street": "Orla da Guanabara Prefeito Luiz Paulo Conde"
+        },
+        {
+          "id": "node/11502997775",
+          "lat": -22.901982,
+          "lon": -43.174024,
+          "street": "Orla Prefeito Luiz Paulo Conde"
+        },
+        {
+          "id": "node/11502983162",
+          "lat": -22.901646,
+          "lon": -43.174293,
+          "street": "Rua do Ouvidor"
         }
       ],
-      "updatedAt": "2026-09-03T17:50:40.130Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:39.628Z"
     },
     "compressed-air": {
       "count": 0,

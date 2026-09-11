@@ -1,6 +1,6 @@
 {
   "city": "lisbon",
-  "generatedAt": "2026-09-03T17:19:26.500Z",
+  "generatedAt": "2026-09-11T10:31:32.672Z",
   "categories": {
     "toilets": {
       "count": 294,
@@ -231,7 +231,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:18:57.204Z"
+      "stats": {
+        "free": 122,
+        "paid": 58,
+        "stepFree": 66,
+        "partlyStepFree": 13
+      },
+      "updatedAt": "2026-09-11T10:31:25.251Z"
     },
     "drinking-water": {
       "count": 558,
@@ -359,9 +365,87 @@
           "name": "Fonte de Caselas",
           "lat": 38.715674,
           "lon": -9.214674
+        },
+        {
+          "id": "node/11918427702",
+          "lat": 38.722523,
+          "lon": -9.139492,
+          "street": "Campo dos Mártires da Pátria"
+        },
+        {
+          "id": "node/12163520734",
+          "lat": 38.723073,
+          "lon": -9.141803,
+          "street": "Rua Doutor Almeida Amaral"
+        },
+        {
+          "id": "node/10847784262",
+          "lat": 38.723196,
+          "lon": -9.142162,
+          "street": "Alameda de Santo António dos Capuchos"
+        },
+        {
+          "id": "node/1963419729",
+          "lat": 38.719648,
+          "lon": -9.141513,
+          "street": "Calçada do Moinho de Vento"
+        },
+        {
+          "id": "node/4423873154",
+          "lat": 38.720974,
+          "lon": -9.134835,
+          "street": "Largo do Intendente Pina Manique"
+        },
+        {
+          "id": "node/12997330256",
+          "lat": 38.726108,
+          "lon": -9.140887,
+          "street": "Rua Gomes Freire"
+        },
+        {
+          "id": "node/11050003132",
+          "lat": 38.720582,
+          "lon": -9.145205,
+          "street": "Rua Manuel de Jesus Coelho"
+        },
+        {
+          "id": "node/11092430490",
+          "lat": 38.726602,
+          "lon": -9.134995,
+          "street": "Avenida Almirante Reis"
+        },
+        {
+          "id": "node/11050003139",
+          "lat": 38.720838,
+          "lon": -9.146716,
+          "street": "Avenida da Liberdade"
+        },
+        {
+          "id": "node/12184870318",
+          "lat": 38.726161,
+          "lon": -9.13288,
+          "street": "Praça das Novas Nações"
+        },
+        {
+          "id": "node/11817096739",
+          "lat": 38.717759,
+          "lon": -9.14546,
+          "street": "Praça da Alegria"
+        },
+        {
+          "id": "node/11050003135",
+          "lat": 38.715772,
+          "lon": -9.142193,
+          "street": "Praça dos Restauradores"
         }
       ],
-      "updatedAt": "2026-09-03T17:18:59.558Z"
+      "stats": {
+        "free": 52,
+        "paid": 0,
+        "stepFree": 18,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:31:27.626Z"
     },
     "playgrounds": {
       "count": 442,
@@ -2100,7 +2184,13 @@
           "openingHours": "Mo-Fr 09:00-18:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:08.726Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 24,
+        "partlyStepFree": 9
+      },
+      "updatedAt": "2026-09-11T10:31:28.415Z"
     },
     "post-boxes": {
       "count": 193,
@@ -2318,22 +2408,10 @@
           "lon": -9.138448
         },
         {
-          "id": "node/9491022546",
-          "lat": 38.720723,
-          "lon": -9.134816,
-          "street": "Largo do Intendente Pina Manique"
-        },
-        {
           "id": "node/13722147237",
           "name": "Continente Bom Dia Lisboa (Rua da Palma)",
           "lat": 38.719797,
           "lon": -9.13516
-        },
-        {
-          "id": "node/12138783447",
-          "lat": 38.723348,
-          "lon": -9.134138,
-          "street": "Rua Palmira"
         },
         {
           "id": "node/13720660327",
@@ -2346,12 +2424,6 @@
           "name": "Auchan PROX Santo António (Luciano Cordeiro)",
           "lat": 38.72499,
           "lon": -9.14397
-        },
-        {
-          "id": "node/6778424885",
-          "lat": 38.722447,
-          "lon": -9.133317,
-          "street": "Rua Maria"
         },
         {
           "id": "node/13722147095",
@@ -2384,34 +2456,10 @@
           "lon": -9.13236
         },
         {
-          "id": "node/9187912590",
-          "lat": 38.72509,
-          "lon": -9.133017,
-          "street": "Rua de Moçambique"
-        },
-        {
-          "id": "node/6778424786",
-          "lat": 38.718966,
-          "lon": -9.133432,
-          "street": "Escadas do Monte"
-        },
-        {
           "id": "node/13720660499",
           "name": "Auchan PROX Conde Redondo",
           "lat": 38.72485,
           "lon": -9.14597
-        },
-        {
-          "id": "node/12662910182",
-          "lat": 38.724701,
-          "lon": -9.132373,
-          "street": "Rua de Timor"
-        },
-        {
-          "id": "node/4703839350",
-          "lat": 38.726385,
-          "lon": -9.133794,
-          "street": "Rua do Zaire"
         },
         {
           "id": "node/13720660576",
@@ -2420,28 +2468,10 @@
           "lon": -9.13466
         },
         {
-          "id": "node/4300231274",
-          "lat": 38.716972,
-          "lon": -9.135604,
-          "street": "Rua Fernandes da Fonseca"
-        },
-        {
           "id": "node/13720660812",
           "name": "Pingo Doce Conde Redondo",
           "lat": 38.72734,
           "lon": -9.14387
-        },
-        {
-          "id": "node/9187912589",
-          "lat": 38.726276,
-          "lon": -9.132681,
-          "street": "Praça das Novas Nações"
-        },
-        {
-          "id": "node/5331790466",
-          "lat": 38.718001,
-          "lon": -9.145692,
-          "street": "Praça da Alegria"
         },
         {
           "id": "node/13722147374",
@@ -2456,25 +2486,91 @@
           "lon": -9.14668
         },
         {
-          "id": "node/6778424985",
-          "lat": 38.718263,
-          "lon": -9.131479,
-          "street": "Rua Damasceno Monteiro"
-        },
-        {
-          "id": "node/12805909493",
-          "lat": 38.728313,
-          "lon": -9.144818,
-          "street": "Avenida Duque de Loulé"
-        },
-        {
           "id": "node/13722147357",
           "name": "Continente Bom Dia Duque Loulé",
           "lat": 38.726796,
           "lon": -9.147092
+        },
+        {
+          "id": "node/13720660391",
+          "name": "Auchan PROX Penha de França (Penha de França)",
+          "lat": 38.72178,
+          "lon": -9.12954
+        },
+        {
+          "id": "node/13722146757",
+          "name": "Pingo Doce Graça",
+          "lat": 38.71943,
+          "lon": -9.130067
+        },
+        {
+          "id": "node/13722146933",
+          "name": "Pingo Doce Primeiro de Dezembro",
+          "lat": 38.714401,
+          "lon": -9.1405
+        },
+        {
+          "id": "node/13720660416",
+          "name": "Auchan PROX Penha de França",
+          "lat": 38.72483,
+          "lon": -9.12953
+        },
+        {
+          "id": "node/13722147825",
+          "name": "SPAR Lisboa Av. Liberdade",
+          "lat": 38.72372,
+          "lon": -9.14999
+        },
+        {
+          "id": "node/13720660461",
+          "name": "Auchan PROX Lisboa (Pascoal de Melo)",
+          "lat": 38.73141,
+          "lon": -9.1382
+        },
+        {
+          "id": "node/13722147309",
+          "name": "Continente Bom Dia Almirante Barroso",
+          "lat": 38.73133,
+          "lon": -9.141701
+        },
+        {
+          "id": "node/13720660562",
+          "name": "Auchan PROX Arroios (Almirante Barroso)",
+          "lat": 38.73146,
+          "lon": -9.14133
+        },
+        {
+          "id": "node/13720660331",
+          "name": "Auchan PROX Santo António (Alexandre Herculano)",
+          "lat": 38.72123,
+          "lon": -9.15193
+        },
+        {
+          "id": "node/13720660556",
+          "name": "Auchan PROX Avenidas Novas (Fontes Pereira de Melo)",
+          "lat": 38.73007,
+          "lon": -9.14728
+        },
+        {
+          "id": "node/13722147123",
+          "name": "ALDI PRÍNCIPE REAL",
+          "lat": 38.719422,
+          "lon": -9.151691
+        },
+        {
+          "id": "node/13722147944",
+          "name": "Lidl Lisboa - Casal Ribeiro",
+          "lat": 38.732275,
+          "lon": -9.142279
         }
       ],
-      "updatedAt": "2026-09-03T17:19:15.503Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:30.272Z"
     },
     "luggage-storage": {
       "count": 7,
@@ -2936,7 +3032,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:18.060Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:31:31.382Z"
     },
     "camp-sites": {
       "count": 3,
@@ -3197,9 +3299,57 @@
           "name": "Banco de Junot",
           "lat": 38.711462,
           "lon": -9.18979
+        },
+        {
+          "id": "node/14122804624",
+          "lat": 38.722411,
+          "lon": -9.138847,
+          "street": "Largo do Mitelo"
+        },
+        {
+          "id": "node/9695524254",
+          "lat": 38.719254,
+          "lon": -9.141136,
+          "street": "Calçada do Moinho de Vento"
+        },
+        {
+          "id": "node/12989820534",
+          "lat": 38.720998,
+          "lon": -9.134861,
+          "street": "Largo do Intendente Pina Manique"
+        },
+        {
+          "id": "node/12989600603",
+          "lat": 38.720289,
+          "lon": -9.135238,
+          "street": "Rua da Palma"
+        },
+        {
+          "id": "node/2829318450",
+          "lat": 38.726067,
+          "lon": -9.140824,
+          "street": "Rua de Dona Estefânia"
+        },
+        {
+          "id": "node/2829318449",
+          "lat": 38.726058,
+          "lon": -9.140869,
+          "street": "Rua Gomes Freire"
+        },
+        {
+          "id": "node/13040562870",
+          "lat": 38.719561,
+          "lon": -9.144664,
+          "street": "Avenida da Liberdade"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:26.398Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:31:32.569Z"
     },
     "compressed-air": {
       "count": 0,

@@ -1,6 +1,6 @@
 {
   "city": "kouvola",
-  "generatedAt": "2026-09-03T16:41:03.311Z",
+  "generatedAt": "2026-09-11T10:27:34.053Z",
   "categories": {
     "toilets": {
       "count": 73,
@@ -94,12 +94,32 @@
           "lon": 26.614176
         }
       ],
-      "updatedAt": "2026-09-03T16:40:44.627Z"
+      "stats": {
+        "free": 43,
+        "paid": 3,
+        "stepFree": 32,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:29.222Z"
     },
     "drinking-water": {
       "count": 5,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:40:45.941Z"
+      "pois": [
+        {
+          "id": "node/2176875103",
+          "lat": 60.83952,
+          "lon": 26.694997,
+          "fee": "no",
+          "street": "Kouvolan rantapaikka"
+        }
+      ],
+      "stats": {
+        "free": 5,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:30.601Z"
     },
     "playgrounds": {
       "count": 172,
@@ -912,7 +932,13 @@
           "lon": 26.627873
         }
       ],
-      "updatedAt": "2026-09-03T16:40:52.408Z"
+      "stats": {
+        "free": 9,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:31.090Z"
     },
     "post-boxes": {
       "count": 24,
@@ -1184,16 +1210,16 @@
           "lon": 26.617945
         },
         {
-          "id": "node/2036267717",
-          "lat": 60.886906,
-          "lon": 26.834643,
-          "street": "Maarikantie"
-        },
-        {
           "id": "node/2150174825",
           "name": "Hyötyjätepiste, Rekola",
           "lat": 60.910573,
           "lon": 26.598182
+        },
+        {
+          "id": "node/2036267717",
+          "lat": 60.886906,
+          "lon": 26.834643,
+          "street": "Maarikantie"
         },
         {
           "id": "node/1752314421",
@@ -1202,7 +1228,13 @@
           "street": "ABC Koria"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:55.511Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:32.208Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1284,7 +1316,13 @@
           "lon": 26.70764
         }
       ],
-      "updatedAt": "2026-09-03T16:40:57.313Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:33.023Z"
     },
     "camp-sites": {
       "count": 1,
@@ -1413,9 +1451,93 @@
           "name": "16 penkkiä sik-sakissa",
           "lat": 60.869354,
           "lon": 26.698746
+        },
+        {
+          "id": "node/5150305879",
+          "lat": 60.868247,
+          "lon": 26.703966,
+          "street": "Kävelykatu Manski"
+        },
+        {
+          "id": "node/525461855",
+          "lat": 60.867769,
+          "lon": 26.703911,
+          "street": "Kouvolankatu"
+        },
+        {
+          "id": "node/2324251790",
+          "lat": 60.867072,
+          "lon": 26.704655,
+          "street": "Asemakatu"
+        },
+        {
+          "id": "node/5150266253",
+          "lat": 60.869532,
+          "lon": 26.7039,
+          "street": "Välikatu"
+        },
+        {
+          "id": "node/3577021642",
+          "lat": 60.869001,
+          "lon": 26.706595,
+          "street": "Keskikatu"
+        },
+        {
+          "id": "node/530671803",
+          "lat": 60.866548,
+          "lon": 26.7033,
+          "street": "Laituri 3"
+        },
+        {
+          "id": "node/1660475897",
+          "lat": 60.866525,
+          "lon": 26.702904,
+          "street": "Laituri 7"
+        },
+        {
+          "id": "node/1655945652",
+          "lat": 60.869034,
+          "lon": 26.707598,
+          "street": "Koulukatu"
+        },
+        {
+          "id": "node/1662140803",
+          "lat": 60.870077,
+          "lon": 26.701944,
+          "street": "Torikatu"
+        },
+        {
+          "id": "node/1982603564",
+          "lat": 60.869392,
+          "lon": 26.708286,
+          "street": "Oikokatu"
+        },
+        {
+          "id": "node/1660211968",
+          "lat": 60.867767,
+          "lon": 26.698719,
+          "street": "Liikemiehenkatu"
+        },
+        {
+          "id": "node/1662141194",
+          "lat": 60.870676,
+          "lon": 26.702224,
+          "street": "Salpausselänkatu"
+        },
+        {
+          "id": "node/3486084220",
+          "lat": 60.869127,
+          "lon": 26.709973,
+          "street": "Koivukujanraitti"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:03.210Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:33.952Z"
     }
   }
 }

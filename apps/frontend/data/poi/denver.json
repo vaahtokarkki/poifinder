@@ -1,6 +1,6 @@
 {
   "city": "denver",
-  "generatedAt": "2026-09-03T17:27:58.679Z",
+  "generatedAt": "2026-09-11T10:32:24.387Z",
   "categories": {
     "toilets": {
       "count": 540,
@@ -195,12 +195,74 @@
           "lon": -105.001135
         }
       ],
-      "updatedAt": "2026-09-03T17:27:35.970Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 35,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-11T10:32:17.887Z"
     },
     "drinking-water": {
       "count": 17,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:27:37.582Z"
+      "pois": [
+        {
+          "id": "node/4219800992",
+          "lat": 39.742707,
+          "lon": -104.988846,
+          "street": "16th Street"
+        },
+        {
+          "id": "node/7618157432",
+          "lat": 39.75445,
+          "lon": -105.000374,
+          "street": "Union Station Pedestrian Bridge"
+        },
+        {
+          "id": "node/6707992346",
+          "lat": 39.754087,
+          "lon": -105.001321,
+          "street": "Wewatta Street"
+        },
+        {
+          "id": "node/8805073871",
+          "lat": 39.731794,
+          "lon": -104.964348,
+          "street": "8th and  High Street foot path to pavillion"
+        },
+        {
+          "id": "node/7417930304",
+          "lat": 39.753072,
+          "lon": -105.011586,
+          "street": "South Platte River Trail"
+        },
+        {
+          "id": "node/5588655092",
+          "lat": 39.732193,
+          "lon": -104.961175,
+          "street": "Shady Lane"
+        },
+        {
+          "id": "node/11165827082",
+          "lat": 39.763488,
+          "lon": -105.006264,
+          "fee": "no",
+          "street": "North Pecos Street"
+        },
+        {
+          "id": "node/11890361039",
+          "lat": 39.724119,
+          "lon": -104.900506,
+          "street": "East 5th Avenue"
+        }
+      ],
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:19.778Z"
     },
     "playgrounds": {
       "count": 476,
@@ -1388,7 +1450,13 @@
           "lon": -105.054583
         }
       ],
-      "updatedAt": "2026-09-03T17:27:45.500Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:32:20.438Z"
     },
     "post-boxes": {
       "count": 64,
@@ -1581,18 +1649,6 @@
       "count": 19,
       "pois": [
         {
-          "id": "node/13027431683",
-          "lat": 39.742484,
-          "lon": -105.003804,
-          "street": "Elevator #1"
-        },
-        {
-          "id": "node/408502742",
-          "lat": 39.743302,
-          "lon": -105.005386,
-          "street": "Lawrence Street Mall"
-        },
-        {
           "id": "node/3518788252",
           "name": "All Recycling Solutions",
           "lat": 39.740001,
@@ -1607,29 +1663,11 @@
           "address": "Umatilla Street 1100"
         },
         {
-          "id": "node/995634598",
-          "lat": 39.755639,
-          "lon": -105.005138,
-          "street": "Platte River Trail"
-        },
-        {
-          "id": "node/5855464531",
-          "lat": 39.746536,
-          "lon": -104.958084,
-          "street": "City Park Road"
-        },
-        {
           "id": "node/4233808454",
           "name": "Ultimate Specialties",
           "lat": 39.777572,
           "lon": -104.979883,
           "address": "Pearl Street 4458"
-        },
-        {
-          "id": "node/4898727055",
-          "lat": 39.758323,
-          "lon": -104.942584,
-          "street": "East 29th Avenue"
         },
         {
           "id": "node/5115147753",
@@ -1647,12 +1685,6 @@
           "openingHours": "Mo-Fr 07:30-15:30, Sa-Su closed"
         },
         {
-          "id": "node/4896064851",
-          "lat": 39.750692,
-          "lon": -104.917428,
-          "street": "North Kearney Street"
-        },
-        {
           "id": "node/5117180261",
           "name": "Waste Management Recycle America",
           "lat": 39.794917,
@@ -1665,9 +1697,51 @@
           "lat": 39.797567,
           "lon": -104.969132,
           "address": "Franklin Street 555"
+        },
+        {
+          "id": "node/13027431683",
+          "lat": 39.742484,
+          "lon": -105.003804,
+          "street": "Elevator #1"
+        },
+        {
+          "id": "node/408502742",
+          "lat": 39.743302,
+          "lon": -105.005386,
+          "street": "Lawrence Street Mall"
+        },
+        {
+          "id": "node/995634598",
+          "lat": 39.755639,
+          "lon": -105.005138,
+          "street": "Platte River Trail"
+        },
+        {
+          "id": "node/5855464531",
+          "lat": 39.746536,
+          "lon": -104.958084,
+          "street": "City Park Road"
+        },
+        {
+          "id": "node/4898727055",
+          "lat": 39.758323,
+          "lon": -104.942584,
+          "street": "East 29th Avenue"
+        },
+        {
+          "id": "node/4896064851",
+          "lat": 39.750692,
+          "lon": -104.917428,
+          "street": "North Kearney Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:27:48.883Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:21.867Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1901,7 +1975,13 @@
     "outdoor-gyms": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:27:50.841Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:23.023Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2167,8 +2247,123 @@
     },
     "benches": {
       "count": 823,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:27:58.578Z"
+      "pois": [
+        {
+          "id": "node/13104588410",
+          "lat": 39.738743,
+          "lon": -104.988974,
+          "street": "Greek Theater Plaza"
+        },
+        {
+          "id": "node/7463868991",
+          "lat": 39.737185,
+          "lon": -104.987719,
+          "street": "North Broadway"
+        },
+        {
+          "id": "node/5658492523",
+          "lat": 39.740886,
+          "lon": -104.987211,
+          "street": "16th Street Mall"
+        },
+        {
+          "id": "node/6789102347",
+          "lat": 39.739922,
+          "lon": -104.986512,
+          "street": "East Colfax Avenue"
+        },
+        {
+          "id": "node/12133396495",
+          "lat": 39.740866,
+          "lon": -104.995071,
+          "street": "Emily’s Alley"
+        },
+        {
+          "id": "node/14106513142",
+          "lat": 39.738313,
+          "lon": -104.984658,
+          "street": "East 14th Avenue"
+        },
+        {
+          "id": "node/6580182789",
+          "lat": 39.745803,
+          "lon": -104.990748,
+          "street": "17th Street Bus Lane"
+        },
+        {
+          "id": "node/9690530827",
+          "lat": 39.740441,
+          "lon": -105.001756,
+          "street": "10th Street"
+        },
+        {
+          "id": "node/7271069549",
+          "lat": 39.739963,
+          "lon": -105.002305,
+          "street": "West Colfax Avenue"
+        },
+        {
+          "id": "node/12179877892",
+          "lat": 39.74285,
+          "lon": -105.001686,
+          "street": "11th Street"
+        },
+        {
+          "id": "node/12673472928",
+          "lat": 39.743818,
+          "lon": -105.001116,
+          "street": "Elevator 2"
+        },
+        {
+          "id": "node/6676000917",
+          "lat": 39.748691,
+          "lon": -104.994745,
+          "street": "Arapahoe Street"
+        },
+        {
+          "id": "node/12179916540",
+          "lat": 39.745012,
+          "lon": -105.001186,
+          "street": "Lawrence Street Mall"
+        },
+        {
+          "id": "node/5272873696",
+          "lat": 39.747045,
+          "lon": -104.999842,
+          "street": "14th Street"
+        },
+        {
+          "id": "node/5110261590",
+          "lat": 39.747174,
+          "lon": -105.000208,
+          "street": "Larimer Street"
+        },
+        {
+          "id": "node/7303899906",
+          "lat": 39.732855,
+          "lon": -105.002963,
+          "street": "North Mariposa Street"
+        },
+        {
+          "id": "node/12179916593",
+          "lat": 39.742847,
+          "lon": -105.004785,
+          "street": "9th Street"
+        },
+        {
+          "id": "node/12110079273",
+          "lat": 39.74594,
+          "lon": -105.002884,
+          "street": "Elevator 3"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:24.286Z"
     },
     "compressed-air": {
       "count": 0,

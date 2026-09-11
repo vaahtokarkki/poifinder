@@ -1,6 +1,6 @@
 {
   "city": "kuala-lumpur",
-  "generatedAt": "2026-09-03T17:47:07.319Z",
+  "generatedAt": "2026-09-11T10:34:33.604Z",
   "categories": {
     "toilets": {
       "count": 194,
@@ -207,7 +207,13 @@
           "context": "The Vertical Podium"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:43.922Z"
+      "stats": {
+        "free": 15,
+        "paid": 14,
+        "stepFree": 38,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:34:27.890Z"
     },
     "drinking-water": {
       "count": 31,
@@ -237,9 +243,58 @@
           "lat": 3.126349,
           "lon": 101.660764,
           "fee": "yes"
+        },
+        {
+          "id": "node/5444916586",
+          "lat": 3.145798,
+          "lon": 101.696071,
+          "street": "Lebuh Pudu"
+        },
+        {
+          "id": "node/12167543739",
+          "lat": 3.143027,
+          "lon": 101.71684,
+          "street": "Southern Ravine"
+        },
+        {
+          "id": "node/12167562822",
+          "lat": 3.143208,
+          "lon": 101.717337,
+          "street": "Northern Ravine"
+        },
+        {
+          "id": "node/7596650687",
+          "lat": 3.156605,
+          "lon": 101.715019,
+          "street": "Lorong Kuda"
+        },
+        {
+          "id": "node/1456303678",
+          "lat": 3.155775,
+          "lon": 101.716734,
+          "street": "Stargazing Plaza"
+        },
+        {
+          "id": "node/10287871971",
+          "lat": 3.122084,
+          "lon": 101.653893,
+          "street": "Dataran Sains"
+        },
+        {
+          "id": "node/3803267914",
+          "lat": 3.170227,
+          "lon": 101.711421,
+          "fee": "no",
+          "street": "Jalan Bernama"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:45.540Z"
+      "stats": {
+        "free": 9,
+        "paid": 5,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:34:29.635Z"
     },
     "playgrounds": {
       "count": 182,
@@ -1431,7 +1486,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:53.090Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:30.191Z"
     },
     "post-boxes": {
       "count": 49,
@@ -1636,22 +1697,10 @@
           "lon": 101.67322
         },
         {
-          "id": "node/12076280963",
-          "lat": 3.113777,
-          "lon": 101.681829,
-          "street": "Jalan Sungai 2"
-        },
-        {
           "id": "node/10095402706",
           "name": "Pusat Kitar Semula MP Tiong Nam",
           "lat": 3.163795,
           "lon": 101.694081
-        },
-        {
-          "id": "node/9197014262",
-          "lat": 3.129041,
-          "lon": 101.660217,
-          "street": "Lingkaran Wawasan"
         },
         {
           "id": "node/12260385272",
@@ -1666,34 +1715,10 @@
           "lon": 101.704353
         },
         {
-          "id": "node/11350500394",
-          "lat": 3.121924,
-          "lon": 101.657126,
-          "street": "Lingkungan Budi"
-        },
-        {
-          "id": "node/12704408650",
-          "lat": 3.144644,
-          "lon": 101.722033,
-          "street": "Jalan Tun Rahah"
-        },
-        {
           "id": "node/12277770905",
           "lat": 3.121986,
           "lon": 101.654611,
           "context": "J05 - New Chemistry (D)"
-        },
-        {
-          "id": "node/8176726901",
-          "lat": 3.11791,
-          "lon": 101.718826,
-          "street": "Jalan Jelawat"
-        },
-        {
-          "id": "node/4625323086",
-          "lat": 3.096755,
-          "lon": 101.677698,
-          "street": "Jalan Desa"
         },
         {
           "id": "way/1226958508",
@@ -1706,18 +1731,6 @@
           "lat": 3.174338,
           "lon": 101.720332,
           "context": "Perpustakaan Sultanah Zanariah"
-        },
-        {
-          "id": "node/8995130713",
-          "lat": 3.120285,
-          "lon": 101.73709,
-          "street": "Jalan 3/91A"
-        },
-        {
-          "id": "node/1541813511",
-          "lat": 3.08721,
-          "lon": 101.662552,
-          "street": "Jalan 5/58"
         },
         {
           "id": "node/10727741018",
@@ -1743,9 +1756,63 @@
           "name": "Tzu Chi Recycling Center",
           "lat": 3.182981,
           "lon": 101.632292
+        },
+        {
+          "id": "node/12076280963",
+          "lat": 3.113777,
+          "lon": 101.681829,
+          "street": "Jalan Sungai 2"
+        },
+        {
+          "id": "node/9197014262",
+          "lat": 3.129041,
+          "lon": 101.660217,
+          "street": "Lingkaran Wawasan"
+        },
+        {
+          "id": "node/11350500394",
+          "lat": 3.121924,
+          "lon": 101.657126,
+          "street": "Lingkungan Budi"
+        },
+        {
+          "id": "node/12704408650",
+          "lat": 3.144644,
+          "lon": 101.722033,
+          "street": "Jalan Tun Rahah"
+        },
+        {
+          "id": "node/8176726901",
+          "lat": 3.11791,
+          "lon": 101.718826,
+          "street": "Jalan Jelawat"
+        },
+        {
+          "id": "node/4625323086",
+          "lat": 3.096755,
+          "lon": 101.677698,
+          "street": "Jalan Desa"
+        },
+        {
+          "id": "node/8995130713",
+          "lat": 3.120285,
+          "lon": 101.73709,
+          "street": "Jalan 3/91A"
+        },
+        {
+          "id": "node/1541813511",
+          "lat": 3.08721,
+          "lon": 101.662552,
+          "street": "Jalan 5/58"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:56.389Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:31.740Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -2024,7 +2091,13 @@
           "lon": 101.634803
         }
       ],
-      "updatedAt": "2026-09-03T17:46:58.548Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:32.524Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2405,9 +2478,93 @@
           "name": "Do Re Mi",
           "lat": 3.161528,
           "lon": 101.635481
+        },
+        {
+          "id": "node/13329817273",
+          "lat": 3.14394,
+          "lon": 101.691327,
+          "street": "Jalan Cenderasari"
+        },
+        {
+          "id": "node/12330510767",
+          "lat": 3.141483,
+          "lon": 101.69611,
+          "street": "Jalan Tun H.S. Lee"
+        },
+        {
+          "id": "node/12603708477",
+          "lat": 3.149694,
+          "lon": 101.684729,
+          "street": "Persiaran Sultan Salahuddin"
+        },
+        {
+          "id": "node/13433501966",
+          "lat": 3.148085,
+          "lon": 101.693944,
+          "street": "Jalan Raja"
+        },
+        {
+          "id": "node/5316313321",
+          "lat": 3.147227,
+          "lon": 101.695148,
+          "street": "Bangunan Sultan Abdul Samad"
+        },
+        {
+          "id": "node/12600693458",
+          "lat": 3.138929,
+          "lon": 101.699442,
+          "street": "South Entrance, Merdeka 118"
+        },
+        {
+          "id": "node/13433394797",
+          "lat": 3.149578,
+          "lon": 101.694133,
+          "street": "Laluan Kolonial"
+        },
+        {
+          "id": "node/12550797450",
+          "lat": 3.14007,
+          "lon": 101.699994,
+          "street": "Jalan Stadium"
+        },
+        {
+          "id": "node/13483443902",
+          "lat": 3.125275,
+          "lon": 101.683218,
+          "street": "Riverside Promenade"
+        },
+        {
+          "id": "node/11231236800",
+          "lat": 3.153095,
+          "lon": 101.684193,
+          "street": "Green Trail"
+        },
+        {
+          "id": "node/11231236802",
+          "lat": 3.153277,
+          "lon": 101.685123,
+          "street": "Yellow Trail"
+        },
+        {
+          "id": "node/11231256161",
+          "lat": 3.154062,
+          "lon": 101.685503,
+          "street": "White Trail"
+        },
+        {
+          "id": "node/13328119725",
+          "lat": 3.124594,
+          "lon": 101.681893,
+          "street": "Jalan Tun Sambanthan"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:07.218Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:34:33.502Z"
     },
     "compressed-air": {
       "count": 0,

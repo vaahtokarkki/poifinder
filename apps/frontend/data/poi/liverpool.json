@@ -1,6 +1,6 @@
 {
   "city": "liverpool",
-  "generatedAt": "2026-09-03T17:08:35.493Z",
+  "generatedAt": "2026-09-11T10:30:26.771Z",
   "categories": {
     "toilets": {
       "count": 57,
@@ -177,12 +177,31 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:16.246Z"
+      "stats": {
+        "free": 16,
+        "paid": 3,
+        "stepFree": 22,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:21.210Z"
     },
     "drinking-water": {
       "count": 2,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:08:17.483Z"
+      "pois": [
+        {
+          "id": "node/12502918671",
+          "lat": 53.427278,
+          "lon": -2.918812,
+          "street": "Mill Bank"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:22.906Z"
     },
     "playgrounds": {
       "count": 184,
@@ -782,7 +801,13 @@
           "lon": -2.920291
         }
       ],
-      "updatedAt": "2026-09-03T17:08:24.386Z"
+      "stats": {
+        "free": 12,
+        "paid": 6,
+        "stepFree": 13,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:23.407Z"
     },
     "post-boxes": {
       "count": 678,
@@ -980,18 +1005,6 @@
           "lon": -2.997378
         },
         {
-          "id": "node/12121172090",
-          "lat": 53.408644,
-          "lon": -2.94587,
-          "street": "Toft Street"
-        },
-        {
-          "id": "node/1126202815",
-          "lat": 53.391018,
-          "lon": -3.029221,
-          "street": "Exmouth Street"
-        },
-        {
           "id": "way/1093383284",
           "name": "Old Swan Household Waste Recycling Centre",
           "lat": 53.417394,
@@ -1018,12 +1031,6 @@
           "openingHours": "Mo-Su 08:00-20:00"
         },
         {
-          "id": "node/9654148321",
-          "lat": 53.398133,
-          "lon": -2.910722,
-          "street": "Childwall Road"
-        },
-        {
           "id": "way/392874559",
           "name": "Otterspool Household Waste Recycling Centre",
           "lat": 53.367364,
@@ -1037,16 +1044,34 @@
           "lon": -2.907824
         },
         {
-          "id": "node/550688373",
-          "lat": 53.354541,
-          "lon": -3.024037,
-          "street": "Roland Avenue"
-        },
-        {
           "id": "node/5543373225",
           "name": "Bebington Junk",
           "lat": 53.349656,
           "lon": -3.000169
+        },
+        {
+          "id": "node/12121172090",
+          "lat": 53.408644,
+          "lon": -2.94587,
+          "street": "Toft Street"
+        },
+        {
+          "id": "node/1126202815",
+          "lat": 53.391018,
+          "lon": -3.029221,
+          "street": "Exmouth Street"
+        },
+        {
+          "id": "node/9654148321",
+          "lat": 53.398133,
+          "lon": -2.910722,
+          "street": "Childwall Road"
+        },
+        {
+          "id": "node/550688373",
+          "lat": 53.354541,
+          "lon": -3.024037,
+          "street": "Roland Avenue"
         },
         {
           "id": "node/2616439887",
@@ -1061,7 +1086,13 @@
           "street": "Arrowe Park Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:27.488Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:24.731Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1244,7 +1275,13 @@
     "outdoor-gyms": {
       "count": 21,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:29.328Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:30:25.633Z"
     },
     "camp-sites": {
       "count": 0,
@@ -1518,8 +1555,75 @@
     },
     "benches": {
       "count": 916,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:08:35.391Z"
+      "pois": [
+        {
+          "id": "node/10757671554",
+          "lat": 53.406551,
+          "lon": -2.995677,
+          "street": "Saint Nicholas Place"
+        },
+        {
+          "id": "node/13844006278",
+          "lat": 53.405665,
+          "lon": -2.99469,
+          "street": "Water Street"
+        },
+        {
+          "id": "node/11137267481",
+          "lat": 53.405063,
+          "lon": -2.990678,
+          "street": "James Street"
+        },
+        {
+          "id": "node/11137267494",
+          "lat": 53.40513,
+          "lon": -2.989751,
+          "street": "Lord Street"
+        },
+        {
+          "id": "node/13844006291",
+          "lat": 53.405313,
+          "lon": -2.994368,
+          "street": "Brunswick Street"
+        },
+        {
+          "id": "node/13048919542",
+          "lat": 53.404949,
+          "lon": -2.993879,
+          "street": "Queensway"
+        },
+        {
+          "id": "node/11137278477",
+          "lat": 53.404741,
+          "lon": -2.990305,
+          "street": "Red Cross Street"
+        },
+        {
+          "id": "node/10695277062",
+          "lat": 53.406029,
+          "lon": -2.997187,
+          "street": "Canada Boulevard"
+        },
+        {
+          "id": "node/10700452171",
+          "lat": 53.404312,
+          "lon": -2.993467,
+          "street": "George’s Dock Ventilation Tower Plaza"
+        },
+        {
+          "id": "node/11750208942",
+          "lat": 53.40969,
+          "lon": -2.998754,
+          "street": "William Jessop Way"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:26.669Z"
     },
     "compressed-air": {
       "count": 0,

@@ -1,6 +1,6 @@
 {
   "city": "hameenlinna",
-  "generatedAt": "2026-09-03T16:42:01.248Z",
+  "generatedAt": "2026-09-11T10:27:39.450Z",
   "categories": {
     "toilets": {
       "count": 26,
@@ -35,12 +35,24 @@
           "context": "ABC Tiiriö"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:42.222Z"
+      "stats": {
+        "free": 5,
+        "paid": 5,
+        "stepFree": 3,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:27:35.206Z"
     },
     "drinking-water": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:41:43.348Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:36.246Z"
     },
     "playgrounds": {
       "count": 85,
@@ -865,7 +877,13 @@
           "lon": 24.484242
         }
       ],
-      "updatedAt": "2026-09-03T16:41:51.357Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:36.633Z"
     },
     "post-boxes": {
       "count": 24,
@@ -999,28 +1017,44 @@
           "address": "Suosaarentie 4"
         },
         {
-          "id": "node/3447137892",
-          "lat": 60.99597,
-          "lon": 24.430265,
-          "street": "Rinkelinmäenkuja"
-        },
-        {
           "id": "node/6130899846",
           "name": "Rinki-ekopiste",
           "lat": 60.976615,
           "lon": 24.473168
         },
         {
-          "id": "node/6733432893",
-          "lat": 61.006397,
-          "lon": 24.416535,
-          "street": "Katsastusmiehenkuja"
-        },
-        {
           "id": "node/807889345",
           "name": "UFF",
           "lat": 60.984121,
           "lon": 24.415011
+        },
+        {
+          "id": "node/5940242731",
+          "name": "Karanojan jätteidenkäsittelyalue",
+          "lat": 60.942086,
+          "lon": 24.483173,
+          "address": "Karanojantie 145",
+          "openingHours": "Mo-Fr 07:00-19:00"
+        },
+        {
+          "id": "node/11967155124",
+          "name": "Romupiste Oy",
+          "lat": 61.043189,
+          "lon": 24.379795,
+          "address": "Radanvarsitie 99",
+          "openingHours": "Mo-Fr 10:00-18:00"
+        },
+        {
+          "id": "node/3447137892",
+          "lat": 60.99597,
+          "lon": 24.430265,
+          "street": "Rinkelinmäenkuja"
+        },
+        {
+          "id": "node/6733432893",
+          "lat": 61.006397,
+          "lon": 24.416535,
+          "street": "Katsastusmiehenkuja"
         },
         {
           "id": "node/14030791219",
@@ -1040,25 +1074,15 @@
           "lat": 60.975499,
           "lon": 24.377608,
           "street": "Sammonojantie"
-        },
-        {
-          "id": "node/5940242731",
-          "name": "Karanojan jätteidenkäsittelyalue",
-          "lat": 60.942086,
-          "lon": 24.483173,
-          "address": "Karanojantie 145",
-          "openingHours": "Mo-Fr 07:00-19:00"
-        },
-        {
-          "id": "node/11967155124",
-          "name": "Romupiste Oy",
-          "lat": 61.043189,
-          "lon": 24.379795,
-          "address": "Radanvarsitie 99",
-          "openingHours": "Mo-Fr 10:00-18:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:53.873Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:37.842Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1098,7 +1122,13 @@
     "outdoor-gyms": {
       "count": 25,
       "pois": [],
-      "updatedAt": "2026-09-03T16:41:55.593Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:38.551Z"
     },
     "camp-sites": {
       "count": 1,
@@ -1286,8 +1316,111 @@
     },
     "benches": {
       "count": 310,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:42:01.149Z"
+      "pois": [
+        {
+          "id": "node/5109588988",
+          "lat": 60.9956,
+          "lon": 24.462708,
+          "street": "Raatihuoneenkatu"
+        },
+        {
+          "id": "node/6104076805",
+          "lat": 60.996002,
+          "lon": 24.466607,
+          "street": "Linnankatu"
+        },
+        {
+          "id": "node/6104076806",
+          "lat": 60.994954,
+          "lon": 24.466807,
+          "street": "Rantatori"
+        },
+        {
+          "id": "node/5806333215",
+          "lat": 60.996898,
+          "lon": 24.466992,
+          "street": "Kirkkorinne"
+        },
+        {
+          "id": "node/5806371355",
+          "lat": 60.997174,
+          "lon": 24.466563,
+          "street": "Hallituskatu"
+        },
+        {
+          "id": "node/5806760669",
+          "lat": 60.997929,
+          "lon": 24.463237,
+          "street": "Birger Jaarlin katu"
+        },
+        {
+          "id": "node/5806760668",
+          "lat": 60.998014,
+          "lon": 24.463167,
+          "street": "Sibeliuksenkatu"
+        },
+        {
+          "id": "node/6430837731",
+          "lat": 60.995561,
+          "lon": 24.459127,
+          "street": "Saaristenkatu"
+        },
+        {
+          "id": "node/6430825182",
+          "lat": 60.995595,
+          "lon": 24.458566,
+          "street": "Kirjastokatu"
+        },
+        {
+          "id": "node/838271276",
+          "lat": 60.996211,
+          "lon": 24.47072,
+          "street": "Palokunnankatu"
+        },
+        {
+          "id": "node/838271227",
+          "lat": 60.994344,
+          "lon": 24.469978,
+          "street": "Paasikiventie"
+        },
+        {
+          "id": "node/5695354248",
+          "lat": 60.997907,
+          "lon": 24.471051,
+          "street": "Arvi Kariston katu"
+        },
+        {
+          "id": "node/5366392654",
+          "lat": 60.994378,
+          "lon": 24.456694,
+          "street": "Tulliaukio"
+        },
+        {
+          "id": "node/7393336510",
+          "lat": 60.997719,
+          "lon": 24.471892,
+          "street": "Viipurintie"
+        },
+        {
+          "id": "node/5775777610",
+          "lat": 60.992917,
+          "lon": 24.458251,
+          "street": "Paasiaukio"
+        },
+        {
+          "id": "node/7393192383",
+          "lat": 61.000087,
+          "lon": 24.464163,
+          "street": "Koulukatu"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:27:39.349Z"
     }
   }
 }

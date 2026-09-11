@@ -1,6 +1,6 @@
 {
   "city": "cork",
-  "generatedAt": "2026-09-03T17:11:53.670Z",
+  "generatedAt": "2026-09-11T10:30:56.922Z",
   "categories": {
     "toilets": {
       "count": 41,
@@ -109,12 +109,70 @@
           "context": "Cork Airport Terminal"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:31.989Z"
+      "stats": {
+        "free": 12,
+        "paid": 1,
+        "stepFree": 10,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:30:51.630Z"
     },
     "drinking-water": {
       "count": 14,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:11:33.279Z"
+      "pois": [
+        {
+          "id": "node/9006450380",
+          "lat": 51.895446,
+          "lon": -8.474851,
+          "street": "Blackmore Lane"
+        },
+        {
+          "id": "node/11690611091",
+          "lat": 51.892835,
+          "lon": -8.492533,
+          "street": "Path With Ramp"
+        },
+        {
+          "id": "node/13971126434",
+          "lat": 51.901316,
+          "lon": -8.438587,
+          "fee": "no",
+          "street": "The Marina"
+        },
+        {
+          "id": "node/13971126433",
+          "lat": 51.899414,
+          "lon": -8.428088,
+          "fee": "no",
+          "street": "Barringtons Avenue"
+        },
+        {
+          "id": "node/14094154195",
+          "lat": 51.898557,
+          "lon": -8.42296,
+          "fee": "no",
+          "street": "Cork Harbour Greenway"
+        },
+        {
+          "id": "node/9276365328",
+          "lat": 51.873872,
+          "lon": -8.43817,
+          "street": "Church Road"
+        },
+        {
+          "id": "node/13045413919",
+          "lat": 51.92034,
+          "lon": -8.412849,
+          "street": "Old Youghal Road"
+        }
+      ],
+      "stats": {
+        "free": 6,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:53.129Z"
     },
     "playgrounds": {
       "count": 48,
@@ -916,7 +974,13 @@
           "lon": -8.489781
         }
       ],
-      "updatedAt": "2026-09-03T17:11:40.791Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 37,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-11T10:30:53.558Z"
     },
     "post-boxes": {
       "count": 95,
@@ -1110,6 +1174,44 @@
       "count": 33,
       "pois": [
         {
+          "id": "node/2705480264",
+          "name": "General waste collection point: R1 - Windle & Kane Area",
+          "lat": 51.893241,
+          "lon": -8.493622
+        },
+        {
+          "id": "node/538539597",
+          "name": "Rehab Glass Bottle",
+          "lat": 51.895623,
+          "lon": -8.446239
+        },
+        {
+          "id": "way/438481252",
+          "name": "Waste Electrical and Electronic Equipment (WEEE)",
+          "lat": 51.878458,
+          "lon": -8.463371,
+          "fee": "no"
+        },
+        {
+          "id": "node/4837907911",
+          "name": "Charity Clothes Bank",
+          "lat": 51.933177,
+          "lon": -8.560901
+        },
+        {
+          "id": "node/1003185378",
+          "name": "O'Sé' Bar",
+          "lat": 51.854367,
+          "lon": -8.554362
+        },
+        {
+          "id": "way/1470159629",
+          "name": "Bring Site",
+          "lat": 51.886839,
+          "lon": -8.589039,
+          "openingHours": "24/7"
+        },
+        {
           "id": "node/4710373845",
           "lat": 51.895891,
           "lon": -8.468624,
@@ -1120,12 +1222,6 @@
           "lat": 51.901794,
           "lon": -8.461068,
           "street": "Railway Square"
-        },
-        {
-          "id": "node/2705480264",
-          "name": "General waste collection point: R1 - Windle & Kane Area",
-          "lat": 51.893241,
-          "lon": -8.493622
         },
         {
           "id": "node/663296318",
@@ -1142,23 +1238,10 @@
           "street": "North Ring Road"
         },
         {
-          "id": "node/538539597",
-          "name": "Rehab Glass Bottle",
-          "lat": 51.895623,
-          "lon": -8.446239
-        },
-        {
           "id": "node/4318945830",
           "lat": 51.880384,
           "lon": -8.492942,
           "street": "Deanrock Avenue"
-        },
-        {
-          "id": "way/438481252",
-          "name": "Waste Electrical and Electronic Equipment (WEEE)",
-          "lat": 51.878458,
-          "lon": -8.463371,
-          "fee": "no"
         },
         {
           "id": "node/7155065810",
@@ -1195,28 +1278,15 @@
           "lat": 51.929139,
           "lon": -8.555417,
           "street": "Shean Lower"
-        },
-        {
-          "id": "node/4837907911",
-          "name": "Charity Clothes Bank",
-          "lat": 51.933177,
-          "lon": -8.560901
-        },
-        {
-          "id": "node/1003185378",
-          "name": "O'Sé' Bar",
-          "lat": 51.854367,
-          "lon": -8.554362
-        },
-        {
-          "id": "way/1470159629",
-          "name": "Bring Site",
-          "lat": 51.886839,
-          "lon": -8.589039,
-          "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:44.430Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:55.064Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1340,7 +1410,13 @@
           "lon": -8.438897
         }
       ],
-      "updatedAt": "2026-09-03T17:11:46.079Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:55.749Z"
     },
     "camp-sites": {
       "count": 3,
@@ -1669,9 +1745,105 @@
           "name": "Creature with Antennae",
           "lat": 51.92273,
           "lon": -8.578199
+        },
+        {
+          "id": "node/5812620458",
+          "lat": 51.898886,
+          "lon": -8.476296,
+          "street": "Corn Market Street"
+        },
+        {
+          "id": "node/12725799616",
+          "lat": 51.897716,
+          "lon": -8.475082,
+          "street": "Grand Parade Market"
+        },
+        {
+          "id": "node/5812644554",
+          "lat": 51.897444,
+          "lon": -8.475756,
+          "street": "Christ Church Lane"
+        },
+        {
+          "id": "node/12725799620",
+          "lat": 51.89744,
+          "lon": -8.474955,
+          "street": "Grand Parade"
+        },
+        {
+          "id": "node/9730004398",
+          "lat": 51.898838,
+          "lon": -8.477662,
+          "street": "North Main Street"
+        },
+        {
+          "id": "node/5812648456",
+          "lat": 51.897156,
+          "lon": -8.475424,
+          "street": "Tuckey Street"
+        },
+        {
+          "id": "node/12649488697",
+          "lat": 51.898358,
+          "lon": -8.473133,
+          "street": "Marlboro Street"
+        },
+        {
+          "id": "node/5812626157",
+          "lat": 51.896958,
+          "lon": -8.476624,
+          "street": "South Main Street"
+        },
+        {
+          "id": "node/12649461944",
+          "lat": 51.898593,
+          "lon": -8.472064,
+          "street": "Opera Lane"
+        },
+        {
+          "id": "node/12718559869",
+          "lat": 51.896208,
+          "lon": -8.474083,
+          "street": "South Mall"
+        },
+        {
+          "id": "node/13819265047",
+          "lat": 51.899315,
+          "lon": -8.479571,
+          "street": "Saint Peter's Avenue"
+        },
+        {
+          "id": "node/7495096625",
+          "lat": 51.895943,
+          "lon": -8.474571,
+          "street": "Grand Parade / South Mall Board Walk"
+        },
+        {
+          "id": "node/13892303975",
+          "lat": 51.896545,
+          "lon": -8.478663,
+          "street": "Crosses Green Quay"
+        },
+        {
+          "id": "node/9734597033",
+          "lat": 51.895677,
+          "lon": -8.474474,
+          "street": "Sullivan's Quay"
+        },
+        {
+          "id": "node/13064617707",
+          "lat": 51.89796,
+          "lon": -8.470703,
+          "street": "Oliver Plunkett Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:53.568Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:56.820Z"
     },
     "compressed-air": {
       "count": 0,

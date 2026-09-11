@@ -1,6 +1,6 @@
 {
   "city": "atlanta",
-  "generatedAt": "2026-09-03T17:29:30.403Z",
+  "generatedAt": "2026-09-11T10:32:47.294Z",
   "categories": {
     "toilets": {
       "count": 32,
@@ -95,7 +95,13 @@
           "context": "Hardin Visitor Center"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:09.899Z"
+      "stats": {
+        "free": 2,
+        "paid": 1,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:41.842Z"
     },
     "drinking-water": {
       "count": 56,
@@ -112,9 +118,120 @@
           "name": "Water Fountain",
           "lat": 33.818353,
           "lon": -84.376382
+        },
+        {
+          "id": "node/12184996906",
+          "lat": 33.758471,
+          "lon": -84.393396,
+          "street": "Garden Walk"
+        },
+        {
+          "id": "node/566488162",
+          "lat": 33.759631,
+          "lon": -84.39253,
+          "fee": "no",
+          "street": "Andrew Young International Boulevard"
+        },
+        {
+          "id": "node/13095173294",
+          "lat": 33.757164,
+          "lon": -84.364936,
+          "street": "Beltline Access Line"
+        },
+        {
+          "id": "node/5759060670",
+          "lat": 33.766613,
+          "lon": -84.365008,
+          "street": "Splash Pad"
+        },
+        {
+          "id": "node/13686083837",
+          "lat": 33.775246,
+          "lon": -84.396946,
+          "street": "Plum Street"
+        },
+        {
+          "id": "node/12892332852",
+          "lat": 33.771241,
+          "lon": -84.411008,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Griffin Street Northwest"
+        },
+        {
+          "id": "node/12184996909",
+          "lat": 33.776388,
+          "lon": -84.402687,
+          "street": "Ferst Drive Northwest"
+        },
+        {
+          "id": "node/12184996911",
+          "lat": 33.777226,
+          "lon": -84.404737,
+          "street": "6th Street Northwest"
+        },
+        {
+          "id": "node/8975617553",
+          "lat": 33.756536,
+          "lon": -84.426035,
+          "street": "Lionel Hampton PATH Trail"
+        },
+        {
+          "id": "node/2259573012",
+          "lat": 33.782,
+          "lon": -84.375434,
+          "street": "10th Street Northeast"
+        },
+        {
+          "id": "node/4198667215",
+          "lat": 33.786534,
+          "lon": -84.377082,
+          "street": "Active Oval"
+        },
+        {
+          "id": "node/1953484273",
+          "lat": 33.786172,
+          "lon": -84.371371,
+          "street": "Park Drive Northeast"
+        },
+        {
+          "id": "node/6208525886",
+          "lat": 33.786003,
+          "lon": -84.411909,
+          "street": "Howell Mill Road Northwest"
+        },
+        {
+          "id": "node/4198732355",
+          "lat": 33.789275,
+          "lon": -84.37206,
+          "street": "Worcester Drive Northeast"
+        },
+        {
+          "id": "node/13729772106",
+          "lat": 33.771128,
+          "lon": -84.342345,
+          "street": "Stone Mountain Trail"
+        },
+        {
+          "id": "node/4200412431",
+          "lat": 33.795724,
+          "lon": -84.368091,
+          "street": "Monroe Drive Northeast"
+        },
+        {
+          "id": "node/899672394",
+          "lat": 33.760828,
+          "lon": -84.306475,
+          "street": "Feld Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:11.507Z"
+      "stats": {
+        "free": 5,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:43.812Z"
     },
     "playgrounds": {
       "count": 116,
@@ -1115,7 +1232,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:18.720Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 20,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:44.269Z"
     },
     "post-boxes": {
       "count": 16,
@@ -1205,6 +1328,21 @@
       "count": 19,
       "pois": [
         {
+          "id": "way/740745960",
+          "name": "CHaRM (The Center for Hard to Recycle Materials)",
+          "lat": 33.723865,
+          "lon": -84.378235,
+          "address": "Hill Street Southeast 1110",
+          "openingHours": "Tu,Th 09:00-16:00; Sa 08:00-15:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/490648379",
+          "name": "Emory Recycles",
+          "lat": 33.798541,
+          "lon": -84.332029
+        },
+        {
           "id": "node/10073707746",
           "lat": 33.771444,
           "lon": -84.384916,
@@ -1221,15 +1359,6 @@
           "lat": 33.773949,
           "lon": -84.392187,
           "street": "Bobby Dodd Way Northwest"
-        },
-        {
-          "id": "way/740745960",
-          "name": "CHaRM (The Center for Hard to Recycle Materials)",
-          "lat": 33.723865,
-          "lon": -84.378235,
-          "address": "Hill Street Southeast 1110",
-          "openingHours": "Tu,Th 09:00-16:00; Sa 08:00-15:00",
-          "wheelchair": "yes"
         },
         {
           "id": "node/6202375202",
@@ -1268,12 +1397,6 @@
           "street": "La France Street Northeast"
         },
         {
-          "id": "node/490648379",
-          "name": "Emory Recycles",
-          "lat": 33.798541,
-          "lon": -84.332029
-        },
-        {
           "id": "node/12051571455",
           "lat": 33.759244,
           "lon": -84.303323,
@@ -1286,7 +1409,13 @@
           "street": "East Lake Drive"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:21.709Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:45.608Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1509,7 +1638,13 @@
     "outdoor-gyms": {
       "count": 6,
       "pois": [],
-      "updatedAt": "2026-09-03T17:29:23.508Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:32:46.329Z"
     },
     "camp-sites": {
       "count": 0,
@@ -1796,9 +1931,111 @@
           "name": "Constitution Spring",
           "lat": 33.736226,
           "lon": -84.372822
+        },
+        {
+          "id": "node/8026767394",
+          "lat": 33.744591,
+          "lon": -84.384036,
+          "street": "Martin Street Southeast"
+        },
+        {
+          "id": "node/8026767252",
+          "lat": 33.744235,
+          "lon": -84.384156,
+          "street": "Rawson Street Southeast"
+        },
+        {
+          "id": "node/8995319366",
+          "lat": 33.754432,
+          "lon": -84.385404,
+          "street": "Edgewood Avenue Northeast"
+        },
+        {
+          "id": "node/8995319363",
+          "lat": 33.755136,
+          "lon": -84.388266,
+          "street": "Park Place Northeast"
+        },
+        {
+          "id": "node/8995319353",
+          "lat": 33.756018,
+          "lon": -84.388133,
+          "street": "Auburn Avenue Northeast"
+        },
+        {
+          "id": "node/8995319355",
+          "lat": 33.758087,
+          "lon": -84.387525,
+          "street": "Peachtree Street Northeast"
+        },
+        {
+          "id": "node/8995319360",
+          "lat": 33.758037,
+          "lon": -84.390377,
+          "street": "Luckie Street Northwest"
+        },
+        {
+          "id": "node/10093623208",
+          "lat": 33.739717,
+          "lon": -84.385913,
+          "street": "Richmond Street Southeast"
+        },
+        {
+          "id": "node/8995319357",
+          "lat": 33.759535,
+          "lon": -84.38964,
+          "street": "Carnegie Way Northwest"
+        },
+        {
+          "id": "node/566487986",
+          "lat": 33.759152,
+          "lon": -84.3927,
+          "street": "021"
+        },
+        {
+          "id": "node/8995319359",
+          "lat": 33.759393,
+          "lon": -84.391987,
+          "street": "Centennial Olympic Park Drive Northwest"
+        },
+        {
+          "id": "node/566488097",
+          "lat": 33.759513,
+          "lon": -84.392579,
+          "street": "Andrew Young International Boulevard"
+        },
+        {
+          "id": "node/13648690793",
+          "lat": 33.760647,
+          "lon": -84.392389,
+          "street": "Garden Walk"
+        },
+        {
+          "id": "node/14062808430",
+          "lat": 33.736741,
+          "lon": -84.385796,
+          "street": "Georgia Avenue"
+        },
+        {
+          "id": "node/13648674630",
+          "lat": 33.760932,
+          "lon": -84.392302,
+          "street": "PATH Parkway"
+        },
+        {
+          "id": "node/7859318478",
+          "lat": 33.738149,
+          "lon": -84.380124,
+          "street": "Glenn Street Southeast"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:30.302Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:32:47.193Z"
     },
     "compressed-air": {
       "count": 0,

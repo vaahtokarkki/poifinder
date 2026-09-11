@@ -1,6 +1,6 @@
 {
   "city": "reykjavik",
-  "generatedAt": "2026-09-03T16:46:31.552Z",
+  "generatedAt": "2026-09-11T10:28:11.050Z",
   "categories": {
     "toilets": {
       "count": 36,
@@ -109,12 +109,138 @@
           "context": "Mjóddin"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:11.289Z"
+      "stats": {
+        "free": 14,
+        "paid": 4,
+        "stepFree": 15,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-11T10:28:04.737Z"
     },
     "drinking-water": {
       "count": 41,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:46:12.871Z"
+      "pois": [
+        {
+          "id": "node/9907446834",
+          "lat": 64.147376,
+          "lon": -21.937035,
+          "street": "Austurstræti"
+        },
+        {
+          "id": "node/9907447021",
+          "lat": 64.14829,
+          "lon": -21.937989,
+          "street": "Pósthússtræti"
+        },
+        {
+          "id": "node/3781463135",
+          "lat": 64.146428,
+          "lon": -21.933035,
+          "street": "Skólavörðustígur"
+        },
+        {
+          "id": "node/7899467968",
+          "lat": 64.144262,
+          "lon": -21.931327,
+          "fee": "no",
+          "street": "Týsgata"
+        },
+        {
+          "id": "node/6917174386",
+          "lat": 64.142099,
+          "lon": -21.92874,
+          "street": "Hallgrímstorg"
+        },
+        {
+          "id": "node/8489085974",
+          "lat": 64.146019,
+          "lon": -21.915856,
+          "street": "Mánaleið"
+        },
+        {
+          "id": "node/4320266285",
+          "lat": 64.145722,
+          "lon": -21.904249,
+          "street": "Borgartún"
+        },
+        {
+          "id": "node/11081412587",
+          "lat": 64.126172,
+          "lon": -21.950533,
+          "fee": "no",
+          "street": "Sólarleið"
+        },
+        {
+          "id": "node/290144051",
+          "lat": 64.156179,
+          "lon": -21.986685,
+          "street": "Norðurströnd"
+        },
+        {
+          "id": "node/6802522206",
+          "lat": 64.14999,
+          "lon": -21.999176,
+          "street": "Suðurströnd"
+        },
+        {
+          "id": "node/4349423089",
+          "lat": 64.142235,
+          "lon": -21.876152,
+          "street": "Þvottalaugavegur"
+        },
+        {
+          "id": "node/6939487636",
+          "lat": 64.10778,
+          "lon": -21.931513,
+          "street": "Kársnesstígur"
+        },
+        {
+          "id": "node/11343577083",
+          "lat": 64.106657,
+          "lon": -21.910924,
+          "fee": "no",
+          "street": "Kópavogsgerði"
+        },
+        {
+          "id": "node/8932846097",
+          "lat": 64.118026,
+          "lon": -21.852131,
+          "fee": "no",
+          "street": "Traðarland"
+        },
+        {
+          "id": "node/4354587277",
+          "lat": 64.152859,
+          "lon": -21.801937,
+          "street": "Eyjaleið"
+        },
+        {
+          "id": "node/11081438921",
+          "lat": 64.114717,
+          "lon": -21.816555,
+          "fee": "no",
+          "street": "Árleið"
+        },
+        {
+          "id": "node/11081920752",
+          "lat": 64.130944,
+          "lon": -21.791089,
+          "street": "Kelduleið"
+        },
+        {
+          "id": "node/3541599085",
+          "lat": 64.141307,
+          "lon": -21.782812,
+          "street": "Grafarvogskirkjugarður"
+        }
+      ],
+      "stats": {
+        "free": 11,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:06.459Z"
     },
     "playgrounds": {
       "count": 533,
@@ -1017,7 +1143,13 @@
           "openingHours": "Mo-Fr 09:00-15:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:20.264Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:06.965Z"
     },
     "post-boxes": {
       "count": 59,
@@ -1209,6 +1341,36 @@
       "count": 105,
       "pois": [
         {
+          "id": "node/1203107282",
+          "name": "Sorpa",
+          "lat": 64.153447,
+          "lon": -21.953707,
+          "openingHours": "Mo-Su 12:00-18:30"
+        },
+        {
+          "id": "node/3520918180",
+          "name": "Endurvinnslan",
+          "lat": 64.127559,
+          "lon": -21.848075,
+          "address": "Knarrarvogur 4",
+          "openingHours": "Mo-Fr 09:30-18:00,Sa 12:00-16:30"
+        },
+        {
+          "id": "node/3520923308",
+          "name": "Sævarhöfði",
+          "lat": 64.131095,
+          "lon": -21.832339,
+          "openingHours": "Mo-Fr 09:00-18:30; Sa-Su 12:00-18:30"
+        },
+        {
+          "id": "node/11709481374",
+          "name": "Móttöku- og flokkunarstöð",
+          "lat": 64.150946,
+          "lon": -21.816524,
+          "address": "Gufunesvegur 10",
+          "openingHours": "Mo-Fr 07:30-17:00; Sa 08:00-11:00 \"SORPA business card required\"; Su 10:00-12:00 \"SORPA business card required\""
+        },
+        {
           "id": "node/6816867306",
           "lat": 64.147388,
           "lon": -21.936446,
@@ -1226,13 +1388,6 @@
           "lon": -21.932919,
           "openingHours": "24/7",
           "street": "Freyjutorg"
-        },
-        {
-          "id": "node/1203107282",
-          "name": "Sorpa",
-          "lat": 64.153447,
-          "lon": -21.953707,
-          "openingHours": "Mo-Su 12:00-18:30"
         },
         {
           "id": "node/11805282679",
@@ -1379,29 +1534,15 @@
           "lon": -21.859118,
           "openingHours": "24/7",
           "street": "Hjallavegur"
-        },
-        {
-          "id": "node/11805445276",
-          "lat": 64.111369,
-          "lon": -21.911567,
-          "openingHours": "24/7",
-          "street": "Borgarholtsbraut"
-        },
-        {
-          "id": "node/2018383072",
-          "lat": 64.122107,
-          "lon": -21.873608,
-          "openingHours": "24/7",
-          "street": "Gautland"
-        },
-        {
-          "id": "node/7791782490",
-          "lat": 64.126375,
-          "lon": -21.864107,
-          "street": "Sogavegur"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:23.594Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:08.822Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -1535,7 +1676,13 @@
           "lon": -21.785406
         }
       ],
-      "updatedAt": "2026-09-03T16:46:25.283Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:09.749Z"
     },
     "camp-sites": {
       "count": 2,
@@ -1630,9 +1777,105 @@
           "name": "Tómas Guðmundsson",
           "lat": 64.143772,
           "lon": -21.944887
+        },
+        {
+          "id": "node/2018350425",
+          "lat": 64.146457,
+          "lon": -21.942683,
+          "street": "Tjarnargata"
+        },
+        {
+          "id": "node/2018350421",
+          "lat": 64.146397,
+          "lon": -21.941256,
+          "street": "Vonarstræti"
+        },
+        {
+          "id": "node/2018350689",
+          "lat": 64.147324,
+          "lon": -21.94194,
+          "street": "Kirkjustræti"
+        },
+        {
+          "id": "node/2018350747",
+          "lat": 64.147459,
+          "lon": -21.941927,
+          "street": "Aðalstræti"
+        },
+        {
+          "id": "node/2018350585",
+          "lat": 64.147078,
+          "lon": -21.940574,
+          "street": "Thorvaldsensstræti"
+        },
+        {
+          "id": "node/2018350775",
+          "lat": 64.147644,
+          "lon": -21.94428,
+          "street": "Túngata"
+        },
+        {
+          "id": "node/2018350666",
+          "lat": 64.147263,
+          "lon": -21.939753,
+          "street": "Vallarstræti"
+        },
+        {
+          "id": "node/2018350783",
+          "lat": 64.147892,
+          "lon": -21.941182,
+          "street": "Veltusund"
+        },
+        {
+          "id": "node/2018350601",
+          "lat": 64.147112,
+          "lon": -21.939509,
+          "street": "Pósthússtræti"
+        },
+        {
+          "id": "node/11039938918",
+          "lat": 64.145877,
+          "lon": -21.93873,
+          "street": "Bæjarleið"
+        },
+        {
+          "id": "node/2018350802",
+          "lat": 64.148329,
+          "lon": -21.941047,
+          "street": "Hafnarstræti"
+        },
+        {
+          "id": "node/2018350808",
+          "lat": 64.148551,
+          "lon": -21.941632,
+          "street": "Vesturgata"
+        },
+        {
+          "id": "node/11916077006",
+          "lat": 64.145556,
+          "lon": -21.938697,
+          "street": "Lækjargata"
+        },
+        {
+          "id": "node/2018350815",
+          "lat": 64.14871,
+          "lon": -21.943108,
+          "street": "Mjóstræti"
+        },
+        {
+          "id": "node/2018350769",
+          "lat": 64.147595,
+          "lon": -21.938246,
+          "street": "Austurstræti"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:31.452Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:28:10.948Z"
     },
     "compressed-air": {
       "count": 0,

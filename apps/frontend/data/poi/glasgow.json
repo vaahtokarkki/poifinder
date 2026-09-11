@@ -1,6 +1,6 @@
 {
   "city": "glasgow",
-  "generatedAt": "2026-09-03T17:07:16.108Z",
+  "generatedAt": "2026-09-11T10:30:19.952Z",
   "categories": {
     "toilets": {
       "count": 78,
@@ -173,7 +173,13 @@
           "context": "Silverburn Shopping Centre"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:48.592Z"
+      "stats": {
+        "free": 30,
+        "paid": 7,
+        "stepFree": 37,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-11T10:30:13.749Z"
     },
     "drinking-water": {
       "count": 27,
@@ -232,9 +238,63 @@
           "name": "Queen Victoria Jubilee Fountain",
           "lat": 55.821967,
           "lon": -4.213355
+        },
+        {
+          "id": "node/1234034599",
+          "lat": 55.859547,
+          "lon": -4.258304,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Main Concourse"
+        },
+        {
+          "id": "node/11425755173",
+          "lat": 55.863399,
+          "lon": -4.240229,
+          "street": "Stair C"
+        },
+        {
+          "id": "node/10780113008",
+          "lat": 55.871041,
+          "lon": -4.293762,
+          "fee": "no",
+          "street": "New Moy Street"
+        },
+        {
+          "id": "node/12921373686",
+          "lat": 55.872695,
+          "lon": -4.293386,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "University Place"
+        },
+        {
+          "id": "node/11577585816",
+          "lat": 55.872145,
+          "lon": -4.295882,
+          "fee": "no",
+          "street": "Pathology Lane"
+        },
+        {
+          "id": "node/1939880572",
+          "lat": 55.884583,
+          "lon": -4.142804,
+          "street": "Village Drive"
+        },
+        {
+          "id": "node/1939880576",
+          "lat": 55.884607,
+          "lon": -4.140461,
+          "street": "Comedie Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:49.987Z"
+      "stats": {
+        "free": 14,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:15.569Z"
     },
     "playgrounds": {
       "count": 473,
@@ -1141,7 +1201,13 @@
           "lon": -4.201759
         }
       ],
-      "updatedAt": "2026-09-03T17:07:00.064Z"
+      "stats": {
+        "free": 34,
+        "paid": 5,
+        "stepFree": 17,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:16.088Z"
     },
     "post-boxes": {
       "count": 497,
@@ -1335,6 +1401,100 @@
       "count": 241,
       "pois": [
         {
+          "id": "node/6800128969",
+          "lat": 55.856262,
+          "lon": -4.233129,
+          "context": "Morrisons"
+        },
+        {
+          "id": "node/6787622911",
+          "lat": 55.858647,
+          "lon": -4.22548,
+          "wheelchair": "yes",
+          "context": "Lidl"
+        },
+        {
+          "id": "node/13067356995",
+          "name": "Recycling Centre",
+          "lat": 55.864729,
+          "lon": -4.21218,
+          "address": "Roebank Street 102"
+        },
+        {
+          "id": "node/9141480182",
+          "name": "Polmadie Recycling Centre",
+          "lat": 55.83331,
+          "lon": -4.245957,
+          "address": "Polmadie Road 425",
+          "openingHours": "08:00-18:00"
+        },
+        {
+          "id": "way/1287695273",
+          "name": "Dawsholm Recycling Centre",
+          "lat": 55.895747,
+          "lon": -4.312493,
+          "address": "Dalsholm Road 75"
+        },
+        {
+          "id": "node/9149744593",
+          "name": "Eastfield Waste and Recycling Centre",
+          "lat": 55.82636,
+          "lon": -4.191776,
+          "address": "Cambuslang Road"
+        },
+        {
+          "id": "node/2934124114",
+          "name": "Glass Recycling Bin",
+          "lat": 55.891602,
+          "lon": -4.329802
+        },
+        {
+          "id": "way/1524365299",
+          "name": "Mavis Valley Transfer Station",
+          "lat": 55.915922,
+          "lon": -4.24944
+        },
+        {
+          "id": "node/583064474",
+          "name": "Shettleston Tesco",
+          "lat": 55.852827,
+          "lon": -4.161527,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/235978889",
+          "name": "Mavis Valley Household Waste Recycling Centre",
+          "lat": 55.916218,
+          "lon": -4.250668
+        },
+        {
+          "id": "way/474147097",
+          "name": "HunterEnviro",
+          "lat": 55.917282,
+          "lon": -4.260391
+        },
+        {
+          "id": "node/503792521",
+          "name": "Shieldhall Recycling Centre",
+          "lat": 55.863688,
+          "lon": -4.351641,
+          "address": "Bogmoor Road",
+          "openingHours": "Mo-Su 08:00-16:00; Jan 01 off; Dec 25 off"
+        },
+        {
+          "id": "node/6016737576",
+          "name": "Buchley Eco Centre",
+          "lat": 55.924458,
+          "lon": -4.246503
+        },
+        {
+          "id": "way/217575342",
+          "name": "Easter Queenslie Recycling Centre",
+          "lat": 55.86756,
+          "lon": -4.136328,
+          "address": "Easter Queenslie Road 90"
+        },
+        {
           "id": "node/1996081752",
           "lat": 55.864886,
           "lon": -4.251451,
@@ -1429,95 +1589,15 @@
           "lat": 55.858437,
           "lon": -4.241311,
           "street": "Parsonage Row"
-        },
-        {
-          "id": "node/5164043739",
-          "lat": 55.861005,
-          "lon": -4.236264,
-          "street": "Drygate"
-        },
-        {
-          "id": "node/13155095024",
-          "lat": 55.865981,
-          "lon": -4.268658,
-          "street": "Sauchiehall Street"
-        },
-        {
-          "id": "node/1482680160",
-          "lat": 55.864426,
-          "lon": -4.26917,
-          "street": "Elmbank Crescent"
-        },
-        {
-          "id": "node/6990197400",
-          "lat": 55.871955,
-          "lon": -4.263012,
-          "street": "Braid Square"
-        },
-        {
-          "id": "node/1468252808",
-          "lat": 55.856349,
-          "lon": -4.240124,
-          "street": "Spoutmouth"
-        },
-        {
-          "id": "node/9831107681",
-          "lat": 55.854898,
-          "lon": -4.260785,
-          "street": "Clyde Place"
-        },
-        {
-          "id": "node/5264045609",
-          "lat": 55.860102,
-          "lon": -4.234123,
-          "street": "John Knox Street"
-        },
-        {
-          "id": "node/4358907978",
-          "lat": 55.87101,
-          "lon": -4.268037,
-          "street": "St George's Place"
-        },
-        {
-          "id": "node/4085673701",
-          "lat": 55.866928,
-          "lon": -4.27216,
-          "street": "Woodside Crescent"
-        },
-        {
-          "id": "node/4358885371",
-          "lat": 55.871435,
-          "lon": -4.269326,
-          "street": "Great Western Road"
-        },
-        {
-          "id": "node/11164957389",
-          "lat": 55.870684,
-          "lon": -4.271116,
-          "openingHours": "24/7",
-          "street": "West Princes Street"
-        },
-        {
-          "id": "node/7002878736",
-          "lat": 55.863631,
-          "lon": -4.228701,
-          "street": "Firpark Street"
-        },
-        {
-          "id": "node/11164957390",
-          "lat": 55.86919,
-          "lon": -4.273264,
-          "openingHours": "24/7",
-          "street": "Ashley Street"
-        },
-        {
-          "id": "node/6800128969",
-          "lat": 55.856262,
-          "lon": -4.233129,
-          "context": "Morrisons"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:04.342Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:17.777Z"
     },
     "luggage-storage": {
       "count": 3,
@@ -1780,7 +1860,13 @@
           "lon": -4.200509
         }
       ],
-      "updatedAt": "2026-09-03T17:07:06.347Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:18.590Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2078,9 +2164,105 @@
           "name": "Still Game Bench",
           "lat": 55.876164,
           "lon": -4.330184
+        },
+        {
+          "id": "node/13054878245",
+          "lat": 55.864978,
+          "lon": -4.252074,
+          "street": "Killermont Street"
+        },
+        {
+          "id": "node/12731704405",
+          "lat": 55.86364,
+          "lon": -4.252857,
+          "street": "Buchanan Street"
+        },
+        {
+          "id": "node/7018105859",
+          "lat": 55.865154,
+          "lon": -4.252681,
+          "street": "Port Dundas Place"
+        },
+        {
+          "id": "node/13895174948",
+          "lat": 55.864402,
+          "lon": -4.254377,
+          "street": "Sauchiehall Street"
+        },
+        {
+          "id": "node/11964238233",
+          "lat": 55.861453,
+          "lon": -4.251269,
+          "street": "George Square"
+        },
+        {
+          "id": "node/11933225829",
+          "lat": 55.862198,
+          "lon": -4.25598,
+          "street": "West George Street"
+        },
+        {
+          "id": "node/14076872707",
+          "lat": 55.866908,
+          "lon": -4.256596,
+          "street": "McPhater Street"
+        },
+        {
+          "id": "node/6904099244",
+          "lat": 55.862864,
+          "lon": -4.244825,
+          "street": "Cathedral Street"
+        },
+        {
+          "id": "node/13004253801",
+          "lat": 55.862302,
+          "lon": -4.244511,
+          "street": "Rottenrow"
+        },
+        {
+          "id": "node/5008347529",
+          "lat": 55.860003,
+          "lon": -4.247895,
+          "street": "John Street"
+        },
+        {
+          "id": "node/14123696193",
+          "lat": 55.867342,
+          "lon": -4.258415,
+          "street": "Dundasvale Road"
+        },
+        {
+          "id": "node/1776244634",
+          "lat": 55.867926,
+          "lon": -4.245685,
+          "street": "Kyle Street"
+        },
+        {
+          "id": "node/14076858783",
+          "lat": 55.867308,
+          "lon": -4.259422,
+          "street": "Cowcaddens Road"
+        },
+        {
+          "id": "node/8962845849",
+          "lat": 55.867207,
+          "lon": -4.259581,
+          "street": "Buccleuch Street"
+        },
+        {
+          "id": "node/12941484127",
+          "lat": 55.859949,
+          "lon": -4.257701,
+          "street": "Main Concourse"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:16.007Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-11T10:30:19.851Z"
     },
     "compressed-air": {
       "count": 0,

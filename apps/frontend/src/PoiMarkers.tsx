@@ -1472,8 +1472,10 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * So a miss costs nothing here: the popup closes, the fan stays, the two
    * points are still where they were and the second tap lands. What closes the
    * fan is tapping the disc it came out of, which is the gesture that opened
-   * it, and the things that always closed it — zooming, opening another group,
-   * the points reloading.
+   * it; a tap on the empty map that is not also closing a popup, which is how
+   * anyone expects to get out of it — the faded disc is not a button anyone
+   * looks for, and without this a fan could only be left by zooming; and the
+   * things that always closed it, zooming and opening another group.
    *
    * The disc has to be handled before the plugin sees the click, or its own
    * handler fans the group out again on the way past. Hence the capture phase
@@ -1502,6 +1504,20 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
     };
     container.addEventListener("click", collapseOnDiscTap, true);
 
+    // A tap on the map closes the fan, unless the same tap is closing a
+    // popup: that is the miss described above, and it costs only the popup.
+    // Leaflet closes the popup on preclick, and this listener is older than
+    // the popup's, so it still sees the popup the tap is about to close
+    let tapClosesPopup = false;
+    const notePopup = () => {
+      tapClosesPopup = Boolean(shownPopupRef.current);
+    };
+    const collapseOnMapTap = () => {
+      if (!tapClosesPopup && group._spiderfied) group._unspiderfy?.();
+    };
+    map.on("preclick", notePopup);
+    map.on("click", collapseOnMapTap);
+
     // A fan that closes hands the list back: whatever arrived while it was
     // open is drawn now. See shownMarkersRef
     const cluster = clusterRef.current;
@@ -1511,6 +1527,8 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
     return () => {
       if (dismissOnMapClick) map.on("click", dismissOnMapClick, group);
       container.removeEventListener("click", collapseOnDiscTap, true);
+      map.off("preclick", notePopup);
+      map.off("click", collapseOnMapTap);
       cluster?.off("unspiderfied", showLatestPoints);
     };
   }, [map]);

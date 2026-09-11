@@ -8,6 +8,7 @@
 #   build-noise-tiles --bbox=kallio:W,S,E,N   the same, named
 #   build-noise-tiles helsinki --bbox=W,S,E,N cities and rectangles together
 #   build-noise-tiles --keep-work             leave the intermediate files behind
+#   build-noise-tiles helsinki --replace      drop areas the served tiles have
 #
 # A bounding box is west,south,east,north in degrees, the same order osmium and
 # Overpass write one in. Named with a `slug:` prefix if you want the tiles to
@@ -39,7 +40,9 @@
 # the download, which is the part measured in gigabytes. Building one city
 # therefore produces a tileset with only that city in it — which is the fast
 # way to look at a change to the model, and not a way to add an area to a
-# tileset that already exists.
+# tileset that already exists. Because it would take every other area off the
+# map, a run that leaves out an area the served tiles have refuses to start
+# unless it is given --replace. See "nothing served goes missing" below.
 
 set -euo pipefail
 
@@ -95,11 +98,13 @@ PAD_METRES=$((BOUNDARY_BUFFER > 1300 ? BOUNDARY_BUFFER + 1300 : 1300))
 BIG_AREA_KM2=5000
 
 KEEP_WORK=false
+REPLACE=false
 WANTED=()
 BOXES=()
 for argument in "$@"; do
   case "$argument" in
     --keep-work) KEEP_WORK=true ;;
+    --replace) REPLACE=true ;;
     # The deploy list, one area per line, # for comments. What is in it is
     # what gets built; see areas.txt for how that list was chosen
     --areas=*)
@@ -321,6 +326,34 @@ PY
 
 TOTAL_AREAS=$(wc -l < "$AREA_TSV")
 log "$TOTAL_AREAS areas, zoom $MIN_ZOOM-$MAX_ZOOM"
+
+# ---------------------------------------------- nothing served goes missing
+
+# A run replaces the whole published tileset, so a run given fewer areas than
+# are being served takes the rest off the map. That is how the 64 original
+# European cities — Berlin, Helsinki and Paris among them — disappeared on
+# 8 September 2026: a run given only the 127 new cities, meant to add them,
+# swapped out the tileset that held the old ones and deleted it.
+#
+# Checked here, before the first cut, so the mistake costs seconds rather than
+# a day. --replace is for when dropping them is the point: a one city build to
+# look at a change to the model, or an area deliberately retired
+SERVED_MANIFEST="$TILE_DIR/current/wayside.json"
+if [ "$REPLACE" = false ] && [ -s "$SERVED_MANIFEST" ]; then
+  DROPPED=$(python3 - "$SERVED_MANIFEST" "$AREA_TSV" <<'PY'
+import json, sys
+served = {area["name"] for area in json.load(open(sys.argv[1])).get("areas", [])}
+asked = {line.split("\t", 1)[0] for line in open(sys.argv[2]) if line.strip()}
+print(" ".join(sorted(served - asked)))
+PY
+)
+  if [ -n "$DROPPED" ]; then
+    log "this run would take $(wc -w <<< "$DROPPED") served areas off the map: $DROPPED"
+    log "  build them too — --areas=/opt/wayside/areas.txt is the whole list —"
+    log "  or pass --replace if dropping them is the point"
+    exit 2
+  fi
+fi
 
 # --------------------------------------------- pass 1: roads, per extract
 

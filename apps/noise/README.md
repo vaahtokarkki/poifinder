@@ -47,7 +47,9 @@ about 700 MB — and caches it, so a second run starts at the cut.
 Naming one city is the fast way to look at a change to the model. Note that it
 writes a tileset containing only that city: the tiles are one tileset and
 tippecanoe writes it whole, so `build-noise-tiles` with no arguments is what
-produces a complete one.
+produces a complete one. Because of that, a run that leaves out an area the
+tiles already on disk have refuses to start, and lists what it would drop; add
+`--replace` when dropping them is what you want, as it usually is here.
 
 ## Building an arbitrary area
 
@@ -110,7 +112,10 @@ timer would spend gigabytes of downloads to produce the same polygons.
 So rebuild by hand when something has changed, or when the area being covered
 should change. The argument is the whole configuration: a run writes a complete
 tileset from what it was given, so whatever is on that command line is what the
-site has until the next run.
+site has until the next run. Adding a city means adding it to `areas.txt` and
+running the whole list, `--areas=/opt/wayside/areas.txt`; a run given only the
+new ones is refused, because it would take every other city off the site. That
+is not hypothetical — see "nothing served goes missing" in `build-noise-tiles`.
 
 ## How the model works
 

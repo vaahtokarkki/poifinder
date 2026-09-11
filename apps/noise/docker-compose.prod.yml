@@ -13,7 +13,9 @@ name: wayside-noise
 #   docker compose -f noise-compose.yml run --rm builder \
 #     build-noise-tiles --areas=/opt/wayside/areas.txt
 #
-# or with area names on the command line instead, for one city.
+# Always the whole list. Naming areas on the command line instead builds only
+# those, and is refused while the served tiles hold others unless --replace is
+# given, because it would take them off the site: see build-noise-tiles.
 #
 # One service and no daemon. This file is the pipeline; the edge that serves
 # what it produces lives in apps/overpass/docker-compose.prod.yml, which

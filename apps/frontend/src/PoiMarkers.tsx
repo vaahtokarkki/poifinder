@@ -1397,8 +1397,8 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * open. Only ever one: see PoiShape
    */
   const [openShape, setOpenShape] = React.useState<string | null>(null);
-
-  const shapeMarker = markers.find(marker => shapeKey(marker) === openShape) ?? null;
+  /** Bumped when a fan closes, to take the points held back while it was open */
+  const [, setFanClosedAt] = React.useState(0);
 
   const map = useMap();
   /** The popup currently on the map, while it is still allowed to pan it */
@@ -1431,6 +1431,29 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
       (clusterRef.current as unknown as { _spiderfied?: unknown } | null)
         ?._spiderfied
     );
+
+  /**
+   * The points on the map, held still while a group is fanned out.
+   *
+   * Every move of the map hands this component a new list — App cuts the
+   * loaded points to the view on each moveend — and a point entering or
+   * leaving that list is a marker added to or removed from the group, which
+   * collapses a fan and closes every popup in it. The move that does it is
+   * usually the popup's own: open a point in the upper half of the screen and
+   * it pans the map down to fit, the edge of the view crosses a few points,
+   * and the fan and the popup vanish together. On Friedrichstraße, with three
+   * toilets at one spot, that was every tap above the middle of the screen.
+   *
+   * So while a fan is open the list stays the one it opened with, and the
+   * latest is taken when it closes — see the `unspiderfied` listener below.
+   * Nothing the reader is looking at is missing either way: the points on the
+   * screen are in both lists, and the rest arrive as the fan closes.
+   */
+  const shownMarkersRef = React.useRef(markers);
+  if (!isSpiderfied()) shownMarkersRef.current = markers;
+  const shownMarkers = shownMarkersRef.current;
+
+  const shapeMarker = shownMarkers.find(marker => shapeKey(marker) === openShape) ?? null;
 
   /**
    * Keep a fanned out group open until the reader closes it.
@@ -1479,9 +1502,16 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
     };
     container.addEventListener("click", collapseOnDiscTap, true);
 
+    // A fan that closes hands the list back: whatever arrived while it was
+    // open is drawn now. See shownMarkersRef
+    const cluster = clusterRef.current;
+    const showLatestPoints = () => setFanClosedAt(Date.now());
+    cluster?.on("unspiderfied", showLatestPoints);
+
     return () => {
       if (dismissOnMapClick) map.on("click", dismissOnMapClick, group);
       container.removeEventListener("click", collapseOnDiscTap, true);
+      cluster?.off("unspiderfied", showLatestPoints);
     };
   }, [map]);
   /**
@@ -1846,7 +1876,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
         // Adding a thousand markers at once should not freeze the map
         chunkedLoading
       >
-        {markers.map((marker) => {
+        {shownMarkers.map((marker) => {
           // Most points carry nothing but the tag that put them on the map. A popup
           // holding only the name repeats what the marker already said, and covers
           // the map to do it, so those points get a line at the bottom of the screen

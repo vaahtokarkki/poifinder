@@ -1,0 +1,81 @@
+name: Update taginfo project file
+
+# Keeps apps/frontend/public/taginfo.json true to CATEGORY_CONFIG. taginfo
+# fetches it daily from wayside.cc and lists Wayside on the page of every tag
+# in it, so a category added without this file following would be a tag the
+# listing never mentions.
+#
+# Runs only when something the file is generated from changes. The generator
+# keeps data_updated when nothing else moved, so a run with nothing to say
+# commits nothing.
+#
+# A push made with GITHUB_TOKEN does not start other workflows — GitHub's rule,
+# there to stop workflows triggering each other forever. So the commit below
+# would sit on main undeployed. Dispatching the deploy is the one event that
+# token is allowed to start, and that is what the last step does. The deploy
+# the original push started is cancelled by its concurrency group in favour of
+# this one, which carries the new file.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/frontend/src/constants.ts"
+      - "apps/frontend/src/seo/categories.ts"
+      - "apps/frontend/src/copy/en.ts"
+      - "apps/frontend/scripts/generate-taginfo.mjs"
+      - ".github/workflows/update-taginfo.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: update-taginfo
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # The lockfile and the workspaces live at the root
+      - run: npm ci
+        working-directory: .
+
+      - run: node scripts/generate-taginfo.mjs
+
+      - name: Commit and deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- public/taginfo.json; then
+            echo "taginfo.json unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/taginfo.json
+          git commit -m "chore: update taginfo.json"
+
+          # Only this job writes taginfo.json, so rebasing over whatever landed
+          # meanwhile is safe. --autostash because npm ci may have touched the
+          # lockfile
+          for attempt in 1 2 3; do
+            if git push origin "HEAD:$GITHUB_REF_NAME"; then
+              gh workflow run deploy-cloudflare.yml --ref "$GITHUB_REF_NAME"
+              exit 0
+            fi
+            git pull --rebase --autostash origin "$GITHUB_REF_NAME" || exit 1
+          done
+          exit 1

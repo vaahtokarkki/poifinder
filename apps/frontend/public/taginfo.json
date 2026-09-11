@@ -1,0 +1,792 @@
+{
+  "data_format": 1,
+  "data_url": "https://wayside.cc/taginfo.json",
+  "data_updated": "20260911T174815Z",
+  "project": {
+    "name": "Wayside",
+    "description": "Free map of drinking water, toilets, benches and other small amenities for people on foot, with city pages built from OpenStreetMap.",
+    "project_url": "https://wayside.cc/",
+    "doc_url": "https://wiki.openstreetmap.org/wiki/Wayside",
+    "icon_url": "https://wayside.cc/icons/favicon-16x16.png",
+    "contact_name": "Roni Lindholm",
+    "contact_email": "hello@wayside.cc"
+  },
+  "tags": [
+    {
+      "key": "access",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Fireplaces & BBQ, Parking and Playgrounds skip points tagged access=private"
+    },
+    {
+      "key": "amenity",
+      "value": "atm",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as ATM"
+    },
+    {
+      "key": "amenity",
+      "value": "bbq",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Fireplaces & BBQ when also tagged access!=private"
+    },
+    {
+      "key": "amenity",
+      "value": "bench",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Benches"
+    },
+    {
+      "key": "amenity",
+      "value": "bicycle_repair_station",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Bike repair"
+    },
+    {
+      "key": "amenity",
+      "value": "charging_station",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Charging stations"
+    },
+    {
+      "key": "amenity",
+      "value": "compressed_air",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Bike repair"
+    },
+    {
+      "key": "amenity",
+      "value": "drinking_water",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Drinking water when also tagged drinking_water!=no"
+    },
+    {
+      "key": "amenity",
+      "value": "fountain",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Drinking water when also tagged drinking_water=yes"
+    },
+    {
+      "key": "amenity",
+      "value": "fuel",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Gas stations"
+    },
+    {
+      "key": "amenity",
+      "value": "ice_cream",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Ice cream"
+    },
+    {
+      "key": "amenity",
+      "value": "left_luggage",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Luggage storage"
+    },
+    {
+      "key": "amenity",
+      "value": "library",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Libraries"
+    },
+    {
+      "key": "amenity",
+      "value": "luggage_locker",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Luggage storage"
+    },
+    {
+      "key": "amenity",
+      "value": "parking",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Parking when also tagged access!=private"
+    },
+    {
+      "key": "amenity",
+      "value": "post_box",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Post boxes"
+    },
+    {
+      "key": "amenity",
+      "value": "post_office",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Post offices"
+    },
+    {
+      "key": "amenity",
+      "value": "public_bookcase",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Libraries"
+    },
+    {
+      "key": "amenity",
+      "value": "recycling",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Recycling"
+    },
+    {
+      "key": "amenity",
+      "value": "sanitary_dump_station",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Dump station"
+    },
+    {
+      "key": "amenity",
+      "value": "shelter",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Shelter when also tagged shelter_type~picnic_shelter|lean_to|weather_shelter|basic_hut"
+    },
+    {
+      "key": "amenity",
+      "value": "shower",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Showers"
+    },
+    {
+      "key": "amenity",
+      "value": "toilets",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Toilets"
+    },
+    {
+      "key": "amenity",
+      "value": "water_point",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Drinking water"
+    },
+    {
+      "key": "atm",
+      "value": "yes",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as ATM"
+    },
+    {
+      "key": "building",
+      "value": "commercial",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Toilets when also tagged toilets=yes"
+    },
+    {
+      "key": "building",
+      "value": "mall",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Toilets when also tagged toilets=yes"
+    },
+    {
+      "key": "building",
+      "value": "museum",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Toilets when also tagged toilets=yes"
+    },
+    {
+      "key": "building",
+      "value": "public",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Toilets when also tagged toilets=yes"
+    },
+    {
+      "key": "building",
+      "value": "retail",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Toilets when also tagged toilets=yes"
+    },
+    {
+      "key": "building",
+      "value": "supermarket",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Toilets when also tagged toilets=yes"
+    },
+    {
+      "key": "building",
+      "value": "train_station",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Toilets when also tagged toilets=yes"
+    },
+    {
+      "key": "building",
+      "value": "university",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Toilets when also tagged toilets=yes"
+    },
+    {
+      "key": "cuisine",
+      "value": "ice_cream",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Ice cream"
+    },
+    {
+      "key": "drinking_water",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Drinking water skips points tagged drinking_water=no"
+    },
+    {
+      "key": "drinking_water",
+      "value": "yes",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Drinking water when also tagged man_made=water_tap, amenity=fountain or man_made=water_well"
+    },
+    {
+      "key": "fireplace",
+      "value": "yes",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Fireplaces & BBQ when also tagged access!=private"
+    },
+    {
+      "key": "fountain",
+      "value": "drinking",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Drinking water"
+    },
+    {
+      "key": "highway",
+      "value": "rest_area",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Rest area"
+    },
+    {
+      "key": "highway",
+      "value": "services",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Rest area"
+    },
+    {
+      "key": "leisure",
+      "value": "bird_hide",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Viewpoints"
+    },
+    {
+      "key": "leisure",
+      "value": "dog_park",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Dog park"
+    },
+    {
+      "key": "leisure",
+      "value": "firepit",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Fireplaces & BBQ when also tagged access!=private"
+    },
+    {
+      "key": "leisure",
+      "value": "fitness_station",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Outdoor gym"
+    },
+    {
+      "key": "leisure",
+      "value": "picnic_table",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Picnic spots"
+    },
+    {
+      "key": "leisure",
+      "value": "pitch",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Outdoor gym when also tagged sport=fitness"
+    },
+    {
+      "key": "leisure",
+      "value": "playground",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Playgrounds when also tagged access!=private"
+    },
+    {
+      "key": "leisure",
+      "value": "swimming_area",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Beach & swimming"
+    },
+    {
+      "key": "man_made",
+      "value": "drinking_fountain",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Drinking water"
+    },
+    {
+      "key": "man_made",
+      "value": "tower",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Viewpoints when also tagged tower:type=observation"
+    },
+    {
+      "key": "man_made",
+      "value": "water_tap",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Drinking water when also tagged drinking_water=yes"
+    },
+    {
+      "key": "man_made",
+      "value": "water_well",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Drinking water when also tagged drinking_water=yes"
+    },
+    {
+      "key": "natural",
+      "value": "beach",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Beach & swimming"
+    },
+    {
+      "key": "shelter_type",
+      "value": "basic_hut",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Shelter when also tagged amenity=shelter"
+    },
+    {
+      "key": "shelter_type",
+      "value": "lean_to",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Shelter when also tagged amenity=shelter"
+    },
+    {
+      "key": "shelter_type",
+      "value": "picnic_shelter",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Shelter when also tagged amenity=shelter"
+    },
+    {
+      "key": "shelter_type",
+      "value": "weather_shelter",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Shelter when also tagged amenity=shelter"
+    },
+    {
+      "key": "shop",
+      "value": "ice_cream",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Ice cream"
+    },
+    {
+      "key": "sport",
+      "value": "fitness",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Outdoor gym when also tagged leisure=pitch"
+    },
+    {
+      "key": "toilets",
+      "value": "yes",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Toilets when also tagged building~retail|supermarket|mall|commercial|museum|public|university|train_station"
+    },
+    {
+      "key": "tourism",
+      "value": "alpine_hut",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Shelter"
+    },
+    {
+      "key": "tourism",
+      "value": "camp_site",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Camp site"
+    },
+    {
+      "key": "tourism",
+      "value": "caravan_site",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Camp site"
+    },
+    {
+      "key": "tourism",
+      "value": "picnic_site",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Picnic spots"
+    },
+    {
+      "key": "tourism",
+      "value": "viewpoint",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Viewpoints"
+    },
+    {
+      "key": "tourism",
+      "value": "wilderness_hut",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Shelter"
+    },
+    {
+      "key": "tower:type",
+      "value": "observation",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Viewpoints when also tagged man_made=tower"
+    },
+    {
+      "key": "name",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Row and popup title"
+    },
+    {
+      "key": "opening_hours",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown in the popup"
+    },
+    {
+      "key": "wheelchair",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Step-free access, in the popup and city page summaries"
+    },
+    {
+      "key": "fee",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Free or paid, in the popup and city page summaries"
+    },
+    {
+      "key": "changing_table",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown in the popup for toilets"
+    },
+    {
+      "key": "payment",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Accepted payment, shown in the popup"
+    },
+    {
+      "key": "website",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Linked from the popup"
+    },
+    {
+      "key": "check_date",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "When the point was last checked, shown in the popup"
+    },
+    {
+      "key": "wikidata",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Linked from the popup"
+    },
+    {
+      "key": "wikipedia",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Linked from the popup"
+    },
+    {
+      "key": "addr:street",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Names a row after its street when the point has no name"
+    },
+    {
+      "key": "addr:housenumber",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Part of a row's address"
+    }
+  ]
+}

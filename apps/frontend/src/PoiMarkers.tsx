@@ -99,6 +99,14 @@ const AUTO_PAN_PADDING_TOP_LEFT = {
  */
 const OWN_MOVE_GRACE_MS = 900;
 
+/**
+ * At this zoom and further out, opening a popup first zooms in on its point,
+ * and closing it goes back to the view it was opened from.
+ */
+const ZOOM_TO_FEATURE_AT_OR_BELOW = 14;
+/** How close that zoom goes for a point, or an outline small enough */
+const FEATURE_ZOOM = 17;
+
 const shapeFitPadding = () => {
   const overlay = document.querySelector(".map-overlay-top");
   const overlayHeight = Math.round(overlay?.getBoundingClientRect().height ?? 0);
@@ -1429,6 +1437,17 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   const ownMoveUntilRef = React.useRef(0);
 
   /**
+   * Where the map was before a popup zoomed in on its point, and which popup
+   * that now belongs to. Cleared by the reader moving the map, because then
+   * where they are is where they chose to be.
+   */
+  const viewBeforeZoomRef = React.useRef<{
+    center: [number, number];
+    zoom: number;
+    popup: LeafletPopup;
+  } | null>(null);
+
+  /**
    * The outline of the open point, if it has one, so that its marker can be
    * put inside it.
    *
@@ -1495,9 +1514,13 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * is a shape they are already looking at.
    */
   const fitShapeIntoView = React.useCallback(
-    (marker: OverpassMarkerData) => {
+    (marker: OverpassMarkerData, popup: LeafletPopup) => {
+      // Going straight from one popup to another keeps the view the first
+      // one was opened from, so closing the second still goes back there
+      const saved = viewBeforeZoomRef.current;
+      if (saved) saved.popup = popup;
+
       const corners = marker.bounds;
-      if (!corners) return;
       /*
        * Never out of a fanned out group, and this is the whole of the bug that
        * made two points at one spot so hard to open.
@@ -1516,12 +1539,58 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
        * that frames an outline it has just thrown away.
        */
       if (isSpiderfied()) return;
+
+      /*
+       * Zoomed out, a point is a dot among hundreds and its popup is about
+       * something too small to see, so the map goes to it — the outline if
+       * there is one, the point itself otherwise — and remembers where it was.
+       */
+      if (map.getZoom() <= ZOOM_TO_FEATURE_AT_OR_BELOW) {
+        const bounds = corners
+          ? latLngBounds([corners[0], corners[1]], [corners[2], corners[3]])
+          : marker.position
+            ? latLngBounds(marker.position, marker.position)
+            : null;
+        if (!bounds) return;
+
+        const center = map.getCenter();
+        viewBeforeZoomRef.current ??= {
+          center: [center.lat, center.lng],
+          zoom: map.getZoom(),
+          popup,
+        };
+        ownMoveUntilRef.current = Date.now() + OWN_MOVE_GRACE_MS;
+        map.fitBounds(bounds, { ...shapeFitPadding(), maxZoom: FEATURE_ZOOM });
+        // Leaflet pans a popup clear of the edges before announcing it, at the
+        // zoom it opened at; do it again at the zoom it ended up at
+        map.once("moveend", () => {
+          if (openPopupRef.current === popup) popup.update();
+        });
+        return;
+      }
+
+      if (!corners) return;
       const [south, west, north, east] = corners;
       const bounds = latLngBounds([south, west], [north, east]);
       if (map.getBounds().contains(bounds)) return;
 
       ownMoveUntilRef.current = Date.now() + OWN_MOVE_GRACE_MS;
       map.fitBounds(bounds, shapeFitPadding());
+    },
+    [map]
+  );
+
+  /**
+   * Go back to the view a popup zoomed in from, when that popup closes and
+   * the reader has not moved the map themselves in the meantime.
+   */
+  const restoreViewAfter = React.useCallback(
+    (popup: LeafletPopup) => {
+      const saved = viewBeforeZoomRef.current;
+      if (saved?.popup !== popup) return;
+      viewBeforeZoomRef.current = null;
+      ownMoveUntilRef.current = Date.now() + OWN_MOVE_GRACE_MS;
+      map.setView(saved.center, saved.zoom);
     },
     [map]
   );
@@ -1555,6 +1624,8 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
     const releaseUnlessOurs = () => {
       if (Date.now() < ownMoveUntilRef.current) return;
       releaseMap();
+      // The reader has taken the map somewhere, closing is no longer a way back
+      viewBeforeZoomRef.current = null;
     };
 
     map.on("dragstart", releaseUnlessOurs);
@@ -1679,8 +1750,9 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                   analytics.poiPopupOpened(findCategory(marker, categories));
                   setOpenShape(key);
                   openPopupRef.current = event.popup;
-                  // Only moves the map if the outline does not already fit
-                  fitShapeIntoView(marker);
+                  // Zooms in when far out, otherwise only moves the map if the
+                  // outline does not already fit
+                  fitShapeIntoView(marker, event.popup);
                 },
                 // Only if it is still ours: opening another popup closes this
                 // one, and the close arrives after the open it was caused by
@@ -1692,6 +1764,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                   if (openPopupRef.current === event.popup) {
                     openPopupRef.current = null;
                   }
+                  restoreViewAfter(event.popup);
                 },
               };
 

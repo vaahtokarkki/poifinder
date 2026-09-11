@@ -104,6 +104,22 @@ export const InfoSheetCredits: React.FC = () => (
       </a>
       {ui().sheet.creditsCodeAfter}
     </p>
+
+    <p className="info-sheet-footer">
+      build {__BUILD_TIME__}
+      {__BUILD_SHA__ && (
+        <>
+          {" · "}
+          <a
+            href={`https://github.com/vaahtokarkki/poifinder/commit/${__BUILD_SHA__}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {__BUILD_SHA__}
+          </a>
+        </>
+      )}
+    </p>
   </>
 );
 

@@ -29,3 +29,8 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
+
+/** When this build was made, e.g. "11.9.2026 14:55" in Finnish time. See vite.config.ts */
+declare const __BUILD_TIME__: string;
+/** The short hash of the commit it was built from, empty when git could not say */
+declare const __BUILD_SHA__: string;

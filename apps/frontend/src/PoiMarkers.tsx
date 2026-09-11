@@ -111,8 +111,10 @@ const OWN_MOVE_GRACE_MS = 900;
 const ZOOM_TO_FEATURE_AT_OR_BELOW = 15;
 /** How close that zoom goes for a point, or an outline small enough */
 const FEATURE_ZOOM = 17;
-/** How long the flight to a point and back takes, in seconds */
-const FEATURE_FLY_S = 0.6;
+/** How long the flight to a point takes, in seconds */
+const FEATURE_FLY_IN_S = 0.36;
+/** And the flight back when its popup closes */
+const FEATURE_FLY_BACK_S = 0.6;
 
 const shapeFitPadding = () => {
   const overlay = document.querySelector(".map-overlay-top");
@@ -1595,11 +1597,11 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * exact: a drag a moment later is the reader's, and stops it.
    */
   const flyOwn = React.useCallback(
-    (center: LatLngExpression, zoom: number) => {
+    (center: LatLngExpression, zoom: number, duration: number) => {
       const until = ownMoveUntilRef.current;
       ownMoveUntilRef.current = Infinity;
       try {
-        map.flyTo(center, zoom, { duration: FEATURE_FLY_S });
+        map.flyTo(center, zoom, { duration });
       } finally {
         ownMoveUntilRef.current = until;
       }
@@ -1701,7 +1703,8 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
             }
             flyOwn(
               centerFittingPopup(map, featureBounds, target, paddingTL, paddingBR, popup),
-              target
+              target,
+              FEATURE_FLY_IN_S
             );
             // Landed with the popup in view. From here on it pans the map as
             // it always has, for when its content grows
@@ -1740,7 +1743,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
         return;
       }
       viewBeforeZoomRef.current = null;
-      flyOwn(saved.center, saved.zoom);
+      flyOwn(saved.center, saved.zoom, FEATURE_FLY_BACK_S);
     },
     [flyOwn, rememberRestingView]
   );

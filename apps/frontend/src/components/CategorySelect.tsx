@@ -40,9 +40,7 @@ type CategorySelectProps = {
  * language selector reach the picker. CATEGORY_CONFIG is ordered by category
  * id — the order they were added in, which means nothing to somebody looking
  * for one — so each group is sorted by name, and the collation is the
- * language's own. The groups themselves too, for the same reason: the enum
- * order is the order they were written in, and the names sort differently in
- * every language, so the order is worked out here per locale.
+ * language's own.
  */
 function buildCategories(locale: Locale) {
   const categories = Object.entries(CATEGORY_CONFIG).map(([key, config]) => ({
@@ -51,11 +49,8 @@ function buildCategories(locale: Locale) {
     group: config.group,
   }));
 
-  const groups = (
-    Object.values(CATEGORY_GROUP).filter((g) => typeof g === "number") as CATEGORY_GROUP[]
-  ).sort((a, b) => groupDisplay(a, locale).localeCompare(groupDisplay(b, locale), locale));
-
-  const grouped = groups
+  const grouped = Object.values(CATEGORY_GROUP)
+    .filter((g) => typeof g === "number")
     .reduce(
       (acc, group) => {
         acc[group as CATEGORY_GROUP] = categories
@@ -66,7 +61,7 @@ function buildCategories(locale: Locale) {
       {} as Record<CATEGORY_GROUP, typeof categories>
     );
 
-  return { categories, groups, grouped };
+  return { categories, grouped };
 }
 
 const CategorySelect: React.FC<CategorySelectProps> = ({
@@ -76,7 +71,7 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
   visible,
 }) => {
   const locale = useActiveLocale();
-  const { categories, groups, grouped: groupedCategories } = React.useMemo(
+  const { categories, grouped: groupedCategories } = React.useMemo(
     () => buildCategories(locale),
     [locale]
   );
@@ -89,12 +84,15 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
 
   if (!visible) return null;
 
-  // FEATURED_CATEGORIES named, in the active language, in the order the
-  // constant lists them. A category missing from CATEGORY_CONFIG would filter
-  // out here rather than crash the picker, though nothing removes one today
+  // FEATURED_CATEGORIES named in the active language and sorted by name like
+  // every group below it; the constant's own order is its ranking, not the
+  // menu's. A category missing from CATEGORY_CONFIG would filter out here
+  // rather than crash the picker, though nothing removes one today
   const featuredCategories = FEATURED_CATEGORIES.map((id) =>
     categories.find((cat) => cat.value === id)
-  ).filter((cat): cat is (typeof categories)[number] => cat !== undefined);
+  )
+    .filter((cat): cat is (typeof categories)[number] => cat !== undefined)
+    .sort((a, b) => a.label.localeCompare(b.label, locale));
 
   const selectionChanged = (before: CATEGORIES[], after: CATEGORIES[]) =>
     before.length !== after.length || before.some((cat) => !after.includes(cat));
@@ -239,17 +237,19 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
           {ui().groups.featured}
         </ListSubheader>
         {featuredCategories.map((cat) => renderCategoryItem(cat, "featured"))}
-        {groups.flatMap((group) => [
-          <ListSubheader
-            key={`subheader-${group}`}
-            style={{ lineHeight: "2em", padding: ".2em 1em" }}
-          >
-            {groupDisplay(group, locale)}
-          </ListSubheader>,
-          ...groupedCategories[group].map((cat) =>
-            renderCategoryItem(cat, `group-${group}`)
-          ),
-        ])}
+        {Object.values(CATEGORY_GROUP)
+          .filter((g) => typeof g === "number")
+          .flatMap((group) => [
+            <ListSubheader
+              key={`subheader-${group}`}
+              style={{ lineHeight: "2em", padding: ".2em 1em" }}
+            >
+              {groupDisplay(group as CATEGORY_GROUP)}
+            </ListSubheader>,
+            ...groupedCategories[group as CATEGORY_GROUP].map((cat) =>
+              renderCategoryItem(cat, `group-${group}`)
+            ),
+          ])}
       </Select>
     </FormControl>
   );

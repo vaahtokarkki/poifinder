@@ -35,7 +35,8 @@ const PROJECT = {
   project_url: `${SITE}/`,
   doc_url: "https://wiki.openstreetmap.org/wiki/Wayside",
   icon_url: `${SITE}/icons/favicon-16x16.png`,
-  contact_name: "Roni Lindholm",
+  // The project, not a person: the file is public and so is taginfo's page
+  contact_name: "Wayside",
   contact_email: "hello@wayside.cc",
 };
 

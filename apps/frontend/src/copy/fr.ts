@@ -100,10 +100,23 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       "Suis un itinéraire : indique un départ et une arrivée pour voir les points le long du trajet.",
       "Partage le cadrage actuel et ses catégories avec le bouton de partage.",
     ],
-    creditsSourceBefore: "Les points viennent d'",
-    creditsSourceLink: "OpenStreetMap",
-    creditsSourceAfter:
-      "et de ses contributeurs. Il manque quelque chose ? Ajoute-le là-bas et il apparaîtra ici.",
+    aboutHeading: "À propos de Wayside",
+    aboutDataBefore: "Chaque point de cette carte vient du projet",
+    aboutDataLink: "OpenStreetMap",
+    aboutDataAfter:
+      ", la carte libre du monde que des bénévoles construisent et tiennent à jour, un peu comme Wikipédia. Wayside affiche les points tels qu'ils y sont cartographiés, sans rien y ajouter.",
+    aboutFixBefore:
+      "Il manque quelque chose ou une info est fausse ? La correction se fait dans OpenStreetMap, où tout le monde peut",
+    aboutFixLink: "ajouter ou corriger un lieu",
+    aboutFixAfter: ". Elle apparaîtra ici après la prochaine mise à jour.",
+    aboutLayers:
+      "La couche bruit est modélisée à partir des routes et voies ferrées d'OpenStreetMap. La couche qualité de l'air interpole les mesures des stations officielles, via OpenAQ, et celles des capteurs bénévoles de Sensor.Community.",
+    aboutIndependent:
+      "Wayside est un projet open source indépendant, qui n'est ni géré par la Fondation OpenStreetMap ni affilié à celle-ci. Il est gratuit, sans publicité, sans compte et sans cookies de suivi.",
+    aboutContact: "Contact :",
+    creditsSourceBefore: "Données cartographiques ©",
+    creditsSourceLink: "les contributeurs d'OpenStreetMap",
+    creditsSourceAfter: ", disponibles sous licence Open Database License.",
     creditsCodeBefore: "Wayside est open source :",
     creditsCodeLink: "le code est sur GitHub",
     creditsCodeAfter: ".",

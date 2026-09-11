@@ -105,6 +105,22 @@ export type UiCopy = {
     presetsNote: string;
     goodToKnowHeading: string;
     tips: string[];
+    /**
+     * The about section above the small print: where the points come from,
+     * where a correction belongs, and that the project is independent. Each
+     * Before/Link/After triple is one sentence around one link; After starts
+     * with its own punctuation, so the link sits flush against it
+     */
+    aboutHeading: string;
+    aboutDataBefore: string;
+    aboutDataLink: string;
+    aboutDataAfter: string;
+    aboutFixBefore: string;
+    aboutFixLink: string;
+    aboutFixAfter: string;
+    aboutLayers: string;
+    aboutIndependent: string;
+    aboutContact: string;
     creditsSourceBefore: string;
     creditsSourceLink: string;
     creditsSourceAfter: string;

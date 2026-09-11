@@ -86,14 +86,63 @@ export const InfoSheetGuide: React.FC = () => (
   </>
 );
 
-/** The small print at the very bottom of the sheet: where the data and the code come from */
+/** The project's own address, so nothing about the site leads to a person */
+const CONTACT_EMAIL = "hello@wayside.cc";
+
+/**
+ * Where the points come from, where a correction belongs, and who runs this.
+ *
+ * OpenStreetMap gets a paragraph rather than only the credit line below it:
+ * every point is theirs, and the useful thing to tell someone who finds one
+ * missing is that the fix goes there, not here. It is also the page a reader,
+ * a mapper or a search engine looks for to see who stands behind the site, so
+ * it says plainly that the project is independent and how to reach it.
+ *
+ * The noise and air sentence is unconditional. Both layers are in the build
+ * this ships in, and gating it on the tile modules would pull map code into
+ * the prerender for one sentence.
+ */
+export const InfoSheetAbout: React.FC = () => {
+  const sheet = ui().sheet;
+  return (
+    <section className="info-sheet-section info-sheet-about">
+      <h2 className="info-sheet-heading">{sheet.aboutHeading}</h2>
+      <p>
+        {sheet.aboutDataBefore}{" "}
+        <a href="https://www.openstreetmap.org/about" target="_blank" rel="noreferrer">
+          {sheet.aboutDataLink}
+        </a>
+        {sheet.aboutDataAfter}
+      </p>
+      <p>
+        {sheet.aboutFixBefore}{" "}
+        <a href="https://www.openstreetmap.org/fixthemap" target="_blank" rel="noreferrer">
+          {sheet.aboutFixLink}
+        </a>
+        {sheet.aboutFixAfter}
+      </p>
+      <p>{sheet.aboutLayers}</p>
+      <p>{sheet.aboutIndependent}</p>
+      <p>
+        {sheet.aboutContact} <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      </p>
+    </section>
+  );
+};
+
+/**
+ * The bottom of the sheet: the about section, then the small print — the
+ * licence credit OpenStreetMap asks for, the code and the build
+ */
 export const InfoSheetCredits: React.FC = () => (
   <>
+    <InfoSheetAbout />
+
     <p className="info-sheet-footer">
       {ui().sheet.creditsSourceBefore}{" "}
       <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">
         {ui().sheet.creditsSourceLink}
-      </a>{" "}
+      </a>
       {ui().sheet.creditsSourceAfter}
     </p>
 

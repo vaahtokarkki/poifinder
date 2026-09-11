@@ -43,6 +43,8 @@ concurrency:
 
 permissions:
   contents: write
+  # To start the deploy after pushing. See the end of the Commit step
+  actions: write
 
 jobs:
   refresh:
@@ -106,6 +108,8 @@ jobs:
       # and left no data behind
       - name: Commit
         if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           if git diff --quiet -- data/poi; then
             echo "Nothing changed, every city was still fresh."
@@ -138,6 +142,12 @@ jobs:
           for attempt in 1 2 3; do
             if push_error=$(git push origin "HEAD:$GITHUB_REF_NAME" 2>&1); then
               echo "Pushed on attempt $attempt."
+              # A push made with GITHUB_TOKEN starts no other workflow, so the
+              # push alone left every refresh on main and off the site until
+              # somebody happened to push something else: none of the deploys
+              # through 2026-09-11 ran on a refresh commit. Dispatching is the
+              # one event this token may start
+              gh workflow run deploy-cloudflare.yml --ref "$GITHUB_REF_NAME"
               exit 0
             fi
             echo "$push_error"

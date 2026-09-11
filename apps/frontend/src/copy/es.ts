@@ -99,10 +99,22 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       "Sigue una ruta: indica origen y destino para ver los puntos por el camino.",
       "Comparte el encuadre actual y sus categorías con el botón de compartir.",
     ],
-    creditsSourceBefore: "Los puntos vienen de",
-    creditsSourceLink: "OpenStreetMap",
-    creditsSourceAfter:
-      "y de quienes colaboran. ¿Falta algo? Añádelo allí y aparecerá aquí.",
+    aboutHeading: "Acerca de Wayside",
+    aboutDataBefore: "Cada punto de este mapa procede de",
+    aboutDataLink: "OpenStreetMap",
+    aboutDataAfter:
+      ", el mapa libre del mundo que construyen y mantienen al día personas voluntarias, algo así como Wikipedia. Wayside muestra los puntos tal como están mapeados allí, sin añadirles nada propio.",
+    aboutFixBefore: "¿Falta algo o hay un error? La corrección se hace en OpenStreetMap, donde cualquiera puede",
+    aboutFixLink: "añadir o corregir un lugar",
+    aboutFixAfter: ". El cambio aparecerá aquí tras la próxima actualización.",
+    aboutLayers:
+      "La capa de ruido se modela a partir de las carreteras y vías de tren de OpenStreetMap. La capa de calidad del aire interpola las mediciones de estaciones oficiales, a través de OpenAQ, y de los sensores voluntarios de Sensor.Community.",
+    aboutIndependent:
+      "Wayside es un proyecto independiente de código abierto; no lo gestiona la Fundación OpenStreetMap ni está afiliado a ella. Es gratuito, sin anuncios, sin cuentas y sin cookies de seguimiento.",
+    aboutContact: "Contacto:",
+    creditsSourceBefore: "Datos del mapa ©",
+    creditsSourceLink: "colaboradores de OpenStreetMap",
+    creditsSourceAfter: ", disponibles bajo la Open Database License.",
     creditsCodeBefore: "Wayside es de código abierto:",
     creditsCodeLink: "el código está en GitHub",
     creditsCodeAfter: ".",

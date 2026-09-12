@@ -367,6 +367,9 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
   },
 
   notices: {
+    locationDenied:
+      "La posizione è bloccata per questo sito. Attivala nelle impostazioni del browser, poi tocca di nuovo il pulsante.",
+    locationUnavailable: "Non è stato possibile trovare la tua posizione. Riprova all'aperto.",
     fetchFailed: "Il caricamento dei punti da Overpass non è riuscito. Riprova.",
     linkCopied: "Link copiato negli appunti",
     copyFailed: "Non è stato possibile copiare il link negli appunti.",

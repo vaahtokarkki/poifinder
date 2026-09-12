@@ -396,6 +396,10 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
   },
 
   notices: {
+    locationDenied:
+      "Der Standortzugriff ist für diese Seite blockiert. Aktiviere ihn in den Browser-Einstellungen und tippe dann erneut auf die Schaltfläche.",
+    locationUnavailable:
+      "Dein Standort konnte nicht ermittelt werden. Versuche es im Freien noch einmal.",
     fetchFailed:
       "Die Punkte konnten nicht von der Overpass-API geladen werden. Bitte versuche es erneut.",
     linkCopied: "Link in die Zwischenablage kopiert",

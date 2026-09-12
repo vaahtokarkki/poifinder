@@ -17,7 +17,7 @@ import type { OverpassProgress } from "./api/overpass.ts";
 import Loading from "./components/Loading";
 import LocatingChip from "./components/LocatingChip";
 import ZoomInHint from "./components/ZoomInHint";
-import { useUserPosition } from "./hooks/index";
+import { requestUserPosition, useGpsStatus, useUserPosition } from "./hooks/index";
 import { requestDeviceHeadingPermission } from "./hooks/useDeviceHeading";
 import { CATEGORIES } from "./constants";
 import { fetchSuggestions } from "./api/geocode";
@@ -221,6 +221,7 @@ const App = () => {
   // the deck when the language changes
   const [locale, setAppLocale] = useLocale();
   const { position: userPosition } = useUserPosition();
+  const gpsStatus = useGpsStatus();
   const [searchPosition, setSearchPosition] = useState<[number, number] | null>(null);
   /**
    * The zoom that goes with {@link searchPosition}, when the thing that set it
@@ -353,6 +354,8 @@ const App = () => {
   const programmaticMoveAtRef = useRef(0);
   const initialViewAppliedRef = useRef(false);
   const gpsLockCenteringDoneRef = useRef(false);
+  // A locate tap that could not be answered yet, waiting on the first fix
+  const pendingLocateRef = useRef(false);
   // The IP lookup of a visit that has no location of its own. It is started
   // before the map exists, so the first view is centered as early as it can be
   const ipLocationRef = useRef<Promise<[number, number] | null> | null>(null);
@@ -721,18 +724,71 @@ const App = () => {
   };
 
   const handleMyLocationClick = () => {
-    const hasFix =
+    const hasPosition =
       typeof userPosition.lat === "number" && typeof userPosition.lng === "number";
-    analytics.myLocationUsed(hasFix);
-    // iOS hands out compass readings only when they are asked for from inside
-    // a tap, and this is the one tap that is unambiguously about where the
-    // visitor is. Fire and forget: the centring below must not wait on a
-    // permission sheet, and the compass is an extra either way
-    void requestDeviceHeadingPermission();
-    if (map && hasFix) {
+
+    // Go to what we already have, even when it is only where the last visit
+    // ended: a map that moves roughly into place now and sharpens when the fix
+    // lands is worth more than a button that appears to do nothing
+    if (map && hasPosition) {
       setMapView([userPosition.lat as number, userPosition.lng as number]);
     }
+
+    if (gpsStatus === "denied" || gpsStatus === "unsupported") {
+      analytics.myLocationUsed(gpsStatus === "denied" ? "denied" : "unavailable");
+      setErrorMessage(
+        gpsStatus === "denied"
+          ? ui().notices.locationDenied
+          : ui().notices.locationUnavailable
+      );
+      return;
+    }
+
+    if (!userPosition.hasGpsLock) {
+      // Nothing has asked the device anything until this tap, which is the
+      // point: the permission sheet now arrives with a reason in front of it.
+      // The centring happens in the effect below, when the fix lands
+      pendingLocateRef.current = true;
+      analytics.myLocationUsed(hasPosition ? "cached" : "locating");
+      requestUserPosition();
+      return;
+    }
+
+    analytics.myLocationUsed("centered");
+    // iOS hands out compass readings only when they are asked for from inside
+    // a tap. Only on this branch: the visitor is already located, so the one
+    // prompt this can raise is the compass, never two sheets at once
+    void requestDeviceHeadingPermission();
   };
+
+  // The locate button tapped before the device had answered: centre as soon as
+  // it does, and say so if the answer turns out to be no
+  useEffect(() => {
+    if (!pendingLocateRef.current) return;
+
+    if (
+      userPosition.hasGpsLock &&
+      typeof userPosition.lat === "number" &&
+      typeof userPosition.lng === "number"
+    ) {
+      pendingLocateRef.current = false;
+      // This tap is the visitor asking to be moved, so it counts as the one
+      // automatic centring the session gets
+      gpsLockCenteringDoneRef.current = true;
+      setMapView([userPosition.lat, userPosition.lng]);
+      return;
+    }
+
+    if (gpsStatus === "denied" || gpsStatus === "unavailable") {
+      pendingLocateRef.current = false;
+      analytics.myLocationUsed(gpsStatus);
+      setErrorMessage(
+        gpsStatus === "denied"
+          ? ui().notices.locationDenied
+          : ui().notices.locationUnavailable
+      );
+    }
+  }, [userPosition, gpsStatus]);
 
   // Center on the user once GPS locks, unless the map was moved since init or
   // it already shows a restored view of the previous visit

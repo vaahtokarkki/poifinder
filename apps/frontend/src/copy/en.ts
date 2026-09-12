@@ -1040,6 +1040,9 @@ const ui: CopyDeck["ui"] = {
 
   notices: {
     fetchFailed: "Failed to fetch markers from Overpass API. Please try again.",
+    locationDenied:
+      "Location is off for this site. Turn it on in your browser settings, then tap the button again.",
+    locationUnavailable: "Could not find your location. Try again outside, under open sky.",
     linkCopied: "Link copied to clipboard",
     copyFailed: "Could not copy the link to the clipboard.",
     shareRouteMissing: "Could not get start or end location coordinates.",

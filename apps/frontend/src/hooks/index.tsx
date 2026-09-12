@@ -23,8 +23,18 @@ export type LatLng = {
  * How the device is answering, so the map can say "waiting for GPS" without
  * having to guess the difference between a fix that is slow and one that is
  * never coming.
+ *
+ * "idle" is the state this starts in: nothing has been asked of the device
+ * yet, so there is nothing to report and no prompt on screen.
  */
-export type GpsStatus = "unsupported" | "waiting" | "locked" | "denied";
+export type GpsStatus =
+  | "unsupported"
+  | "idle"
+  | "waiting"
+  | "locked"
+  | "denied"
+  /** The device answered, and the answer was that it does not know where it is */
+  | "unavailable";
 
 /**
  * Start from the last known position in localStorage so the map can be centered
@@ -55,8 +65,9 @@ const publish = (position: LatLng) => {
   listeners.forEach((listener) => listener(position));
 };
 
-let currentStatus: GpsStatus =
-  typeof navigator !== "undefined" && "geolocation" in navigator ? "waiting" : "unsupported";
+const supported = typeof navigator !== "undefined" && "geolocation" in navigator;
+
+let currentStatus: GpsStatus = supported ? "idle" : "unsupported";
 const statusListeners = new Set<(status: GpsStatus) => void>();
 
 const publishStatus = (status: GpsStatus) => {
@@ -84,15 +95,18 @@ const onGeolocation = ({ coords, timestamp }: GeolocationPosition) => {
 };
 
 /**
- * Starts watching the device position. Runs at most once per page load; the
- * watch is never torn down because the position is needed for the whole session.
+ * Starts watching the device position, asking for permission if it has not
+ * been given yet. Runs at most once per page load; the watch is never torn
+ * down because the position is needed for the whole session.
  */
 const startWatching = () => {
-  if (watching || !("geolocation" in navigator)) {
+  if (!supported) {
     publishStatus("unsupported");
     return;
   }
+  if (watching) return;
   watching = true;
+  publishStatus("waiting");
 
   // Get a position immediately if available (up to 5 minutes old)
   // This ensures fast initial response, especially on repeat visits
@@ -100,7 +114,13 @@ const startWatching = () => {
     onGeolocation,
     (error) => {
       if (error) console.debug("Geolocation error (cached):", error.message);
-      if (error?.code === error?.PERMISSION_DENIED) publishStatus("denied");
+      if (error?.code === error?.PERMISSION_DENIED) {
+        publishStatus("denied");
+        return;
+      }
+      // The watch below is still trying, so this is only the end of the road
+      // if nothing has answered by now
+      if (currentStatus === "waiting") publishStatus("unavailable");
     },
     {
       // Ask for GPS rather than the network provider. Wi-Fi based positioning
@@ -108,7 +128,11 @@ const startWatching = () => {
       // alarming out of context.
       enableHighAccuracy: true,
       maximumAge: 5 * 60 * 1000, // Accept cached position up to 5 minutes old
-      timeout: 5000, // Don't wait more than 5 seconds for GPS
+      // GPS indoors routinely takes longer than this used to allow. Five
+      // seconds reported a failure while the chip was still spinning and the
+      // watch below was still working, which is how a slow fix came to look
+      // like a broken one
+      timeout: 20000,
     }
   );
 
@@ -118,16 +142,46 @@ const startWatching = () => {
     onGeolocation,
     (error) => {
       if (error) console.debug("Geolocation watch error:", error.message);
-      // A timeout is the watch still trying, and says nothing conclusive. Only
-      // a refusal is the end of the road, and only that takes the chip down
+      // Only a refusal is conclusive. Anything else is the watch still trying,
+      // and taking the chip down on it would be a guess
       if (error?.code === error?.PERMISSION_DENIED) publishStatus("denied");
     },
     {
       enableHighAccuracy: true, // GPS only, see the note above
-      timeout: 10000, // Wait up to 10s for fresh GPS
+      // No timeout: on a watch it does not stop anything, it only delivers an
+      // error every time the deadline passes while the fix is still coming
       maximumAge: 0, // Always get fresh GPS for watchPosition
     }
   );
+};
+
+/**
+ * Ask the device where it is. Called from the my-location button, which is the
+ * one moment the visitor has said they want this.
+ *
+ * Nothing else starts the prompt. A permission sheet on page load, before
+ * anybody asked for anything, is the version people dismiss: over 90 days the
+ * locate button reported "no fix" 76 times across 11 visits — the same handful
+ * of people tapping a button that could not answer, seven times each.
+ */
+export const requestUserPosition = (): void => startWatching();
+
+/**
+ * Start the watch without prompting, for a visitor who has already granted
+ * location to this site. Their fix is what centres the map on arrival, and
+ * asking again would be asking a question already answered.
+ */
+const startIfAlreadyGranted = () => {
+  if (watching || !supported || !navigator.permissions?.query) return;
+  navigator.permissions
+    .query({ name: "geolocation" as PermissionName })
+    .then((result) => {
+      if (result.state === "granted") startWatching();
+      else if (result.state === "denied") publishStatus("denied");
+    })
+    // Safari before 16 has no geolocation entry in the permissions registry
+    // and rejects. Nothing to do: the button still works
+    .catch(() => {});
 };
 
 export const useUserPosition = (): { position: LatLng } => {
@@ -135,7 +189,7 @@ export const useUserPosition = (): { position: LatLng } => {
 
   useEffect(() => {
     listeners.add(setPosition);
-    startWatching();
+    startIfAlreadyGranted();
     // Catch up with a position that arrived before this component subscribed
     setPosition(currentPosition);
 
@@ -156,7 +210,7 @@ export const useGpsStatus = (): GpsStatus => {
 
   useEffect(() => {
     statusListeners.add(setStatus);
-    startWatching();
+    startIfAlreadyGranted();
     setStatus(currentStatus);
 
     return () => {

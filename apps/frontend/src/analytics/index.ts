@@ -297,9 +297,20 @@ export const analytics = {
     trackEvent("Map", "route", ok ? "ok" : "failed");
   },
 
-  /** The locate button. Without a fix it does nothing, and that is worth knowing */
-  myLocationUsed(hasFix: boolean): void {
-    trackEvent("Map", "my location", hasFix ? "centered" : "no fix");
+  /**
+   * The locate button, and what came of the tap.
+   *
+   * The old version reported only "centered" or "no fix", and "no fix" turned
+   * out to be the story: 76 of them across 11 visits in 90 days, against 67
+   * centred across 36. A handful of people tapping a button that answered
+   * nothing, seven times each. These outcomes tell the two failures apart —
+   * a refusal, which is permanent until they change it, from a device that has
+   * not answered yet, which the chip is already waiting on
+   */
+  myLocationUsed(
+    outcome: "centered" | "cached" | "locating" | "denied" | "unavailable"
+  ): void {
+    trackEvent("Map", "my location", outcome);
   },
 
   /**

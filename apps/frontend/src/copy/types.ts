@@ -511,6 +511,13 @@ export type UiCopy = {
   /** What the app says when something has happened */
   notices: {
     fetchFailed: string;
+    /**
+     * The locate button, when the device will not answer. Said out loud
+     * because the silent version — a button that does nothing — had people
+     * tapping it seven times a visit
+     */
+    locationDenied: string;
+    locationUnavailable: string;
     linkCopied: string;
     copyFailed: string;
     shareRouteMissing: string;

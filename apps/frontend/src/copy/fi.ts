@@ -384,6 +384,9 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
   },
 
   notices: {
+    locationDenied:
+      "Sijainnin käyttö on estetty tältä sivustolta. Salli se selaimen asetuksista ja napauta painiketta uudelleen.",
+    locationUnavailable: "Sijaintiasi ei löytynyt. Kokeile uudelleen ulkona, avoimen taivaan alla.",
     fetchFailed: "Pisteiden haku Overpass-rajapinnasta epäonnistui. Yritä uudelleen.",
     linkCopied: "Linkki kopioitu leikepöydälle",
     copyFailed: "Linkin kopiointi leikepöydälle ei onnistunut.",

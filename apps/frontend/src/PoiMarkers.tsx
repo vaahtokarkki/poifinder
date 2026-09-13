@@ -59,6 +59,9 @@ import {
   rankForKey,
   wikiTagLink,
 } from "./poiPopup";
+// The one place outside src/glass/ that asks whether the flag is on. See the
+// pane it builds below, and src/glass/index.ts for how to remove the flag
+import { glassUiRequested } from "./glass";
 
 /** Breathing room between an open popup and the edges of the map. */
 const POPUP_EDGE_GAP_PX = 24;
@@ -1401,6 +1404,38 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   const [, setFanClosedAt] = React.useState(0);
 
   const map = useMap();
+
+  /**
+   * The pane the glass UI opens its popup in, and the reason it needs one.
+   *
+   * Under `?ui` the popup is not a balloon pinned to its marker but a card in
+   * the middle of the screen, which the stylesheet does with `position: fixed`.
+   * That cannot work from Leaflet's own popup pane: panning the map puts a
+   * `transform` on `.leaflet-map-pane`, and an ancestor with a transform
+   * becomes the containing block for every fixed descendant under it. So the
+   * card was being fixed to a pane that slides around with the map, and opened
+   * wherever the map happened to have been dragged to.
+   *
+   * Handing createPane the map's *container* rather than letting it default to
+   * the map pane puts the pane outside that transform, where fixed means fixed
+   * to the screen. Nothing else about the popup changes: same content, same
+   * Leaflet popup, same open and close.
+   *
+   * In a useMemo rather than an effect because the pane has to exist before
+   * the Popup below is rendered into it, and `map` never changes identity.
+   */
+  const modalPane = React.useMemo(() => {
+    if (!glassUiRequested()) return undefined;
+    const name = "glassModal";
+    if (!map.getPane(name)) {
+      // Leaflet names the class after the pane, which would be
+      // `leaflet-glassModal-pane`. The stylesheet is easier to read with a
+      // name of its own on it
+      map.createPane(name, map.getContainer()).classList.add("glass-modal-pane");
+    }
+    return name;
+  }, [map]);
+
   /** The popup currently on the map, while it is still allowed to pan it */
   const openPopupRef = React.useRef<LeafletPopup | null>(null);
   /** The cluster group, for the one question below that has to be asked of it */
@@ -1953,20 +1988,30 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                   openPopupRef.current = event.popup;
                   shownPopupRef.current = event.popup;
                   // Zooms in when far out, otherwise only moves the map if the
-                  // outline does not already fit
-                  fitShapeIntoView(marker, event.popup);
+                  // outline does not already fit.
+                  //
+                  // Skipped for the modal, which is the point of it: all of
+                  // this exists to get a balloon clear of the controls and the
+                  // screen edges, and a card in the middle of the screen is
+                  // already clear of both. The outline is still drawn — the
+                  // map just no longer moves to frame it
+                  if (!modalPane) fitShapeIntoView(marker, event.popup);
                 },
                 // Only if it is still ours: opening another popup closes this
                 // one, and the close arrives after the open it was caused by
                 popupclose: (event: PopupEvent) => {
                   setOpenShape(current => (current === key ? null : current));
                   // Whatever this popup was allowed to do is settled; the next
-                  // opening starts over, centered like the first one was
-                  event.popup.options.autoPan = true;
+                  // opening starts over, centered like the first one was.
+                  // Never for the modal: it was not given the right to pan in
+                  // the first place, and handing it back on close would let the
+                  // next opening move the map
+                  if (!modalPane) event.popup.options.autoPan = true;
                   if (openPopupRef.current === event.popup) {
                     openPopupRef.current = null;
                   }
-                  restoreViewAfter(event.popup);
+                  // Nothing to restore when nothing was moved
+                  if (!modalPane) restoreViewAfter(event.popup);
                 },
               };
 
@@ -1986,6 +2031,10 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                 className="poi-popup"
                 maxWidth={380}
                 minWidth={260}
+                // Both undefined without the flag, which leaves Leaflet on its
+                // own defaults and the popup exactly where it has always been
+                pane={modalPane}
+                autoPan={modalPane ? false : undefined}
                 autoPanPaddingTopLeft={AUTO_PAN_PADDING_TOP_LEFT}
                 autoPanPaddingBottomRight={[POPUP_EDGE_GAP_PX, POPUP_EDGE_GAP_PX]}
               >

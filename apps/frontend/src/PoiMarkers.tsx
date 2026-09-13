@@ -82,8 +82,18 @@ const OWN_MOVE_GRACE_MS = 900;
  * and closing it goes back to the view it was opened from.
  */
 const ZOOM_TO_FEATURE_AT_OR_BELOW = 15;
-/** How close that zoom goes for a point, or an outline small enough */
-const FEATURE_ZOOM = 17;
+/**
+ * How close that zoom goes for a point, or an outline small enough.
+ *
+ * Sixteen rather than seventeen. This is a ceiling, not a target: anything
+ * large enough to need a wider view gets one, and this only governs the small
+ * things — a bench, a post box, a drinking fountain, which have no extent to
+ * frame and would otherwise be taken to the closest zoom the map has. Arriving
+ * at a rooftop view of one bollard is disorienting: the surroundings that tell
+ * you where you are have gone, and the reader has to zoom back out to make
+ * sense of what they tapped.
+ */
+const FEATURE_ZOOM = 16;
 /** How long the flight to a point takes, in seconds */
 const FEATURE_FLY_IN_S = 0.36;
 /** And the flight back when its popup closes */
@@ -92,8 +102,22 @@ const FEATURE_FLY_BACK_S = 0.6;
 const shapeFitPadding = () => {
   const overlay = document.querySelector(".map-overlay-top");
   const overlayHeight = Math.round(overlay?.getBoundingClientRect().height ?? 0);
+  /*
+   * Read off <body>, not <html>, and the difference is the whole of a bug.
+   *
+   * BottomSheet writes --sheet-offset onto <html>. The stylesheet zeroes it on
+   * <body> while a point panel is open, because the sheet is hidden then and
+   * the map must not clear furniture that is not on the screen. Asking <html>
+   * gets the raw value and misses that correction, so this counted a 172px
+   * sheet that nobody could see, on top of the panel — and the fit pushed the
+   * feature up under the overlay by about that much.
+   *
+   * Asking <body> inherits the same value when no panel is open and picks up
+   * the zeroing when one is, which leaves the stylesheet as the single place
+   * that decides whether the sheet counts.
+   */
   const sheet = Number.parseFloat(
-    getComputedStyle(document.documentElement).getPropertyValue("--sheet-offset")
+    getComputedStyle(document.body).getPropertyValue("--sheet-offset")
   );
   /*
    * The point panel, when one is open. Measured off the element rather than

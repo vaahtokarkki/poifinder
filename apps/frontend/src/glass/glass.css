@@ -1278,6 +1278,26 @@
   --sheet-offset: 0px;
 }
 
+/*
+ * The two corner buttons go with it.
+ *
+ * They are the tools for working the map — layers on one side, the fold-out
+ * column on the other — and while a panel is open the map is not what is being
+ * worked: it is a picture of the thing being read about. Perched on top of the
+ * panel they were also the only furniture left competing with it for the lower
+ * half of the screen.
+ *
+ * The offset above still applies to what stays — the passing remarks and the
+ * Leaflet attribution — which is why it is published rather than being folded
+ * into these rules.
+ */
+.glass-ui body:has(.leaflet-popup.poi-popup) .map-controls,
+.glass-ui body:has(.leaflet-popup.poi-popup) .map-layers {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.16s var(--glass-ease), visibility 0.16s;
+}
+
 .glass-ui body:has(.leaflet-popup.poi-popup) .bottom-sheet {
   opacity: 0;
   visibility: hidden;

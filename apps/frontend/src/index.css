@@ -270,6 +270,16 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background: #fff;
+  color: #000;
+}
+
+/* Switched on: the search panel is open, the tools are unfolded, the layers
+   panel is showing. Stated here rather than inline on the element, so that the
+   colours of this button are something a stylesheet can have an opinion about */
+.map-icon-button.active {
+  background: #1976d2;
+  color: #fff;
 }
 
 /* The folded tools. The rows collapse to nothing so the toggle button keeps

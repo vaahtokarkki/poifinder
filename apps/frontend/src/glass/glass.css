@@ -1,0 +1,822 @@
+/*
+ * Liquid glass, behind `?ui`. See ./index.ts for how the flag is applied and
+ * how to remove it.
+ *
+ * Every rule here is prefixed with `.glass-ui`, which is set on the root
+ * element, so this file is inert until the flag asks for it and stripping the
+ * prefix is all it takes to make it the only look. Nothing in here changes
+ * layout: the same boxes sit in the same places, they are made of a different
+ * material. That is deliberate — a flag that also moves things is a flag whose
+ * two sides have to be tested as two apps.
+ *
+ * What it covers, which is what was asked for: the map controls, the search
+ * and routing panels, the point popups, and the sheet. The category picker,
+ * the preset chips and the language button are left alone on purpose and still
+ * look the way they always did.
+ *
+ * WHAT MAKES IT GLASS. Four things, and all four have to be there or it reads
+ * as a plain translucent box:
+ *   1. a blurred, saturated backdrop — the saturate() is what makes the colour
+ *      under it bloom through rather than turn to grey mush;
+ *   2. a light tint over that, so text has something to sit on;
+ *   3. a bright edge along the top and a lit rim, which is what sells the idea
+ *      that the panel has thickness;
+ *   4. a soft wide shadow underneath, so it floats rather than sticks.
+ *
+ * WHAT IT IS NOT. Glass does not stack. Two sheets of it one inside the other
+ * blur the same map twice and the inner one turns to fog, so a control inside
+ * a glass panel is cut *into* it instead — a recessed well, lit from the top
+ * edge. The routes card and the layers panel both do this, and it is why the
+ * search bar out on the map and the identical field inside the routes card are
+ * made of different things.
+ */
+
+.glass-ui {
+  /*
+   * The tints, in the three densities anything here is allowed to be.
+   *
+   * Which one a surface gets is decided by what is written on it, not by how
+   * big it is. Chrome you look past — a button, a pill, a status remark — takes
+   * the thin one. Anything carrying a sentence somebody has to read takes the
+   * thick one, because body text over a map that is being panned underneath is
+   * not a design decision, it is a bug.
+   */
+  --glass-thin: rgba(255, 255, 255, 0.5);
+  --glass-mid: rgba(255, 255, 255, 0.66);
+  --glass-thick: rgba(255, 255, 255, 0.82);
+
+  /* The dark counterpart, for the two things on this map that were already
+     dark and would look broken lightened: the passing remarks and the scrim */
+  --glass-dark: rgba(28, 28, 30, 0.62);
+
+  /*
+   * The backdrop itself. The saturate is doing at least as much work as the
+   * blur: at 180% the green of a park and the blue of water come through the
+   * panel as green and blue, and without it every surface on this map is the
+   * same warm grey whatever it happens to be sitting over.
+   */
+  --glass-blur: blur(20px) saturate(180%);
+  /* For the small round things, where 20px of blur over a 44px disc is just a
+     smear of the two pixels either side of it */
+  --glass-blur-sm: blur(12px) saturate(180%);
+
+  /*
+   * The lit edge. A hairline rather than a border: it is a highlight along the
+   * rim, and at 1px of solid colour it reads as an outline drawn round a box.
+   */
+  --glass-edge: rgba(255, 255, 255, 0.5);
+
+  /*
+   * The sheen across the face, as a background image so any element can carry
+   * it without a pseudo-element of its own — several of the things styled here
+   * are Leaflet's or MUI's and are not mine to hang children off.
+   *
+   * Steep and short: light catching the top left corner and gone by the middle.
+   * Run the length of the surface it stops being a highlight and becomes a
+   * gradient fill, which is the thing this is meant to avoid.
+   */
+  --glass-sheen: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 255, 255, 0.08) 38%,
+    rgba(255, 255, 255, 0) 62%
+  );
+
+  /* Floating, at two heights: chrome sits low, panels and popups sit high */
+  --glass-lift: 0 2px 10px rgba(0, 0, 0, 0.1), 0 8px 28px rgba(0, 0, 0, 0.12);
+  --glass-lift-high: 0 4px 16px rgba(0, 0, 0, 0.12), 0 16px 48px rgba(0, 0, 0, 0.18);
+
+  /* The thickness, seen from inside: a bright top rim and a faint one below */
+  --glass-rim: inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+
+  /*
+   * A control cut into a glass panel rather than laid on top of it. Dark and
+   * shallow, with its shadow falling inwards from the top — the opposite of
+   * everything else here, which is the whole point: it reads as a hollow.
+   */
+  --glass-well: rgba(255, 255, 255, 0.45);
+  --glass-well-rim: inset 0 1px 2px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+
+  /*
+   * The accent. iOS blue rather than the app's Material #1976d2, and not for
+   * the sake of matching Apple: at 70-odd percent over a blurred street map the
+   * darker Material blue goes muddy and stops reading as a colour at all, where
+   * this one stays blue. The solid form is kept for the few places that need
+   * to sit on white.
+   */
+  --glass-accent: 10, 132, 255;
+  --glass-accent-solid: #0a84ff;
+
+  /*
+   * Ink. Near-black rather than black, and one step down for anything
+   * secondary. Both are darker than the greys the opaque UI uses, because a
+   * translucent surface gives text less to stand against than a white one and
+   * the same grey that reads as quiet on white reads as unset on glass.
+   */
+  --glass-ink: #16161a;
+  --glass-ink-dim: #4b4b52;
+  --glass-ink-faint: #74747c;
+  /* Hairlines drawn on glass, which have to be a tint of what is behind rather
+     than a grey, or they turn into visible grey lines when the map is dark */
+  --glass-hairline: rgba(0, 0, 0, 0.09);
+  --glass-hairline-strong: rgba(0, 0, 0, 0.14);
+
+  /* One curve for the small round things and one for panels. Stated once so a
+     popup and the sheet under it are recognisably the same material */
+  --glass-radius: 18px;
+  --glass-radius-lg: 24px;
+
+  --glass-ease: cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+/*
+ * Where there is no backdrop-filter, there is no glass — only a washed out box
+ * with unreadable text on it. The tints go opaque, which costs the effect and
+ * keeps the app.
+ *
+ * Same for a reader who has asked their system for less transparency. That
+ * setting is usually set by somebody who finds this exact material hard to
+ * read, and answering it with a slightly thinner version of the thing they
+ * turned off is not an answer.
+ */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-ui {
+    --glass-thin: #fbfbfd;
+    --glass-mid: #fbfbfd;
+    --glass-thick: #fff;
+    --glass-dark: #1c1c1e;
+    --glass-well: #f0f0f4;
+    --glass-sheen: none;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass-ui {
+    --glass-thin: #fbfbfd;
+    --glass-mid: #fbfbfd;
+    --glass-thick: #fff;
+    --glass-dark: #1c1c1e;
+    --glass-well: #f0f0f4;
+    --glass-sheen: none;
+    --glass-blur: none;
+    --glass-blur-sm: none;
+  }
+}
+
+/* ---------- The floating buttons ---------- */
+
+/*
+ * Round discs of the thin tint. They are the one thing on this map you look
+ * straight past on your way to the map itself, so they get the least material
+ * of anything here.
+ *
+ * The colours used to be written inline by MapIconButton, which no stylesheet
+ * can outrank without !important. They are classes now — see .map-icon-button
+ * and .map-icon-button.active in index.css, which still hold the opaque look.
+ */
+.glass-ui .map-icon-button {
+  background-color: var(--glass-thin);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
+  backdrop-filter: var(--glass-blur-sm);
+  border: 1px solid var(--glass-edge);
+  box-shadow: var(--glass-lift), var(--glass-rim);
+  color: var(--glass-ink);
+  /* The border is drawn outside the 44px the padding and the icon make, so it
+     is taken back off or the column gets 2px wider than the one it replaced */
+  padding: 9px;
+  transition:
+    background-color 0.18s var(--glass-ease),
+    box-shadow 0.18s var(--glass-ease),
+    transform 0.12s var(--glass-ease);
+}
+
+.glass-ui .map-icon-button:hover {
+  background-color: var(--glass-mid);
+}
+
+/*
+ * A press pushes the disc into the map. Small enough to be felt rather than
+ * watched: this fires on every tap, and anything bigger turns a map you are
+ * using into a map that is performing.
+ */
+.glass-ui .map-icon-button:active {
+  transform: scale(0.94);
+}
+
+.glass-ui .map-icon-button:focus-visible {
+  outline: none;
+  box-shadow: var(--glass-lift), var(--glass-rim),
+    0 0 0 4px rgba(var(--glass-accent), 0.35);
+}
+
+/*
+ * Switched on: tinted glass, not a solid blue button. The map still shows
+ * through it, which is what keeps a lit control part of the same set as the
+ * unlit ones beside it — the opaque UI fills it in with #1976d2 and the button
+ * leaves the group to become a badge.
+ */
+.glass-ui .map-icon-button.active {
+  background-color: rgba(var(--glass-accent), 0.72);
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+  box-shadow: var(--glass-lift), var(--glass-rim),
+    0 2px 12px rgba(var(--glass-accent), 0.4);
+}
+
+.glass-ui .map-icon-button.active:hover {
+  background-color: rgba(var(--glass-accent), 0.82);
+}
+
+/* ---------- Search ---------- */
+
+/*
+ * The field is the glass here, so the wrappers around it have to stop being
+ * white boxes first. Both of these carry their background, radius and shadow
+ * as inline styles from GeocodeAutocomplete and SearchBar, which is why this
+ * is the one place in the file that has to shout.
+ */
+.glass-ui .search-bar-row .MuiAutocomplete-root,
+.glass-ui .search-bar-row .MuiTextField-root {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.glass-ui .search-bar-row .MuiInputBase-root {
+  background-color: var(--glass-mid);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-edge);
+  border-radius: 999px;
+  box-shadow: var(--glass-lift), var(--glass-rim);
+  color: var(--glass-ink);
+  transition:
+    background-color 0.2s var(--glass-ease),
+    box-shadow 0.2s var(--glass-ease);
+}
+
+/*
+ * Typing lights the field: it thickens, and the rim picks up the accent. The
+ * thickening is the part that matters — a search box with a list of places
+ * under it is being read, and at that moment it stops being chrome.
+ */
+.glass-ui .search-bar-row .MuiInputBase-root.Mui-focused {
+  background-color: var(--glass-thick);
+  box-shadow: var(--glass-lift-high), var(--glass-rim),
+    0 0 0 4px rgba(var(--glass-accent), 0.3);
+}
+
+.glass-ui .search-bar-row .MuiInputBase-input {
+  color: var(--glass-ink);
+}
+
+/* Dim rather than transparent: MUI's default placeholder is the input colour
+   at 42% opacity, which over a moving map disappears entirely */
+.glass-ui .search-bar-row .MuiInputBase-input::placeholder {
+  color: var(--glass-ink-dim);
+  opacity: 1;
+}
+
+.glass-ui .search-bar-row .MuiIconButton-root,
+.glass-ui .search-bar-row .MuiAutocomplete-endAdornment .MuiSvgIcon-root {
+  color: var(--glass-ink-dim);
+}
+
+.glass-ui .search-bar-row .MuiIconButton-root:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: var(--glass-ink);
+}
+
+/*
+ * The suggestions. MUI portals this to the body, which is the reason the flag
+ * class lives on the root element rather than on a React tree.
+ *
+ * Thick, because it is a list of names somebody is reading and choosing from,
+ * and it opens over whatever the map happens to be showing.
+ */
+.glass-ui .MuiAutocomplete-popper .MuiPaper-root {
+  background-color: var(--glass-thick);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--glass-radius);
+  box-shadow: var(--glass-lift-high), var(--glass-rim);
+  color: var(--glass-ink);
+  /* Clear of the field it belongs to, so the two read as two sheets rather
+     than one box with a seam across it */
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.glass-ui .MuiAutocomplete-popper .MuiAutocomplete-listbox {
+  padding: 6px;
+}
+
+.glass-ui .MuiAutocomplete-popper .MuiAutocomplete-option {
+  border-radius: 12px;
+  color: var(--glass-ink);
+}
+
+/*
+ * The highlight is a tint rather than MUI's grey fill, for the same reason the
+ * lit button is: a solid row on a translucent sheet looks like a hole in it.
+ * Both states are given the same treatment at different strengths — on a phone
+ * the touched row and the keyboard's row are the same row.
+ */
+.glass-ui .MuiAutocomplete-popper .MuiAutocomplete-option:hover,
+.glass-ui .MuiAutocomplete-popper .MuiAutocomplete-option.Mui-focused,
+.glass-ui .MuiAutocomplete-popper .MuiAutocomplete-option[aria-selected="true"] {
+  background-color: rgba(var(--glass-accent), 0.14);
+}
+
+.glass-ui .MuiAutocomplete-popper .MuiAutocomplete-noOptions,
+.glass-ui .MuiAutocomplete-popper .MuiAutocomplete-loading {
+  color: var(--glass-ink-dim);
+}
+
+/* ---------- Routing ---------- */
+
+/*
+ * A form rather than a single control, so it keeps the card it always had —
+ * upgraded from the half-hearted 85% white and 5px blur it was already using
+ * to the full material, and given the large radius so it reads as a panel and
+ * not an oversized pill.
+ */
+.glass-ui .routes-card {
+  background-color: var(--glass-thick);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--glass-radius-lg);
+  box-shadow: var(--glass-lift-high), var(--glass-rim);
+  color: var(--glass-ink);
+}
+
+.glass-ui .routes-card h2 {
+  color: var(--glass-ink);
+}
+
+/*
+ * The two fields inside it, and the one decision in this file worth arguing
+ * about: they are not glass.
+ *
+ * They sit on a sheet that is already blurring the map, so a second blurred
+ * surface inside it has nothing left to blur and comes out as fog. Cut into
+ * the card instead — a shallow well, lit along its top edge, which is how a
+ * control set into a solid thing has always been drawn. The identical field
+ * out on the map in the search bar *is* glass, because out there it is the
+ * only sheet between the reader and the map.
+ */
+.glass-ui .routes-card .MuiAutocomplete-root,
+.glass-ui .routes-card .MuiTextField-root {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.glass-ui .routes-card .MuiInputBase-root {
+  background-color: var(--glass-well);
+  border-radius: 999px;
+  box-shadow: var(--glass-well-rim);
+  color: var(--glass-ink);
+  transition: box-shadow 0.2s var(--glass-ease);
+}
+
+.glass-ui .routes-card .MuiInputBase-root.Mui-focused {
+  box-shadow: var(--glass-well-rim), 0 0 0 3px rgba(var(--glass-accent), 0.3);
+}
+
+.glass-ui .routes-card .MuiInputBase-input {
+  color: var(--glass-ink);
+}
+
+.glass-ui .routes-card .MuiInputBase-input::placeholder {
+  color: var(--glass-ink-dim);
+  opacity: 1;
+}
+
+/*
+ * "Search" and "Clear route". Outlined MUI buttons, restated as the same
+ * tinted glass the lit map buttons are made of, so that the one control in
+ * this card that does something and the controls out on the map that do
+ * something look like the same kind of thing.
+ */
+.glass-ui .routes-card .MuiButton-root {
+  border-radius: 999px;
+  border: 1px solid rgba(var(--glass-accent), 0.28);
+  background-color: rgba(var(--glass-accent), 0.12);
+  color: var(--glass-accent-solid);
+  box-shadow: none;
+  transition: background-color 0.18s var(--glass-ease);
+}
+
+.glass-ui .routes-card .MuiButton-root:hover {
+  background-color: rgba(var(--glass-accent), 0.2);
+  border-color: rgba(var(--glass-accent), 0.4);
+}
+
+/* Nothing to submit yet. Flat and grey rather than a paler blue, so that "not
+   ready" cannot be mistaken for "blue, and I missed it" */
+.glass-ui .routes-card .MuiButton-root.Mui-disabled {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: var(--glass-hairline);
+  color: var(--glass-ink-faint);
+}
+
+/* Deleting the route is the one destructive thing in the panel and keeps its
+   own colour, in the same tinted form */
+.glass-ui .routes-card .MuiButton-colorError {
+  border-color: rgba(255, 69, 58, 0.35);
+  background-color: rgba(255, 69, 58, 0.12);
+  color: #d7261c;
+}
+
+.glass-ui .routes-card .MuiButton-colorError:hover {
+  background-color: rgba(255, 69, 58, 0.2);
+  border-color: rgba(255, 69, 58, 0.5);
+}
+
+/* ---------- The pills: loading, locating, the zoom hint, remarks ---------- */
+
+.glass-ui .map-loading {
+  background-color: var(--glass-thin);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
+  backdrop-filter: var(--glass-blur-sm);
+  border: 1px solid var(--glass-edge);
+  box-shadow: var(--glass-lift), var(--glass-rim);
+  color: var(--glass-ink-dim);
+}
+
+.glass-ui .map-locating {
+  color: var(--glass-ink-faint);
+}
+
+.glass-ui .map-loading-server {
+  color: var(--glass-ink-faint);
+}
+
+/* The hint is the one pill here you are meant to press, so it is the one that
+   gets the accent rather than the ink */
+.glass-ui .map-hint .MuiChip-root {
+  background-color: var(--glass-mid);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
+  backdrop-filter: var(--glass-blur-sm);
+  border: 1px solid var(--glass-edge);
+  box-shadow: var(--glass-lift), var(--glass-rim);
+  border-radius: 999px;
+  color: var(--glass-ink);
+}
+
+.glass-ui .map-hint .MuiChip-root:hover {
+  background-color: var(--glass-thick);
+}
+
+.glass-ui .map-hint .MuiChip-icon {
+  color: var(--glass-accent-solid);
+}
+
+/*
+ * The passing remarks stay dark, because they are the one thing on this map
+ * that has to be read at a glance and then ignored, and a light pill at the
+ * bottom of a light map is neither.
+ *
+ * Dark glass rather than a dark box: same blur, same rim, inverted. The rim
+ * has to be the lighter one here — a dark inset on a dark surface is nothing.
+ */
+.glass-ui .map-notice {
+  background-color: var(--glass-dark);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
+  backdrop-filter: var(--glass-blur-sm);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: var(--glass-lift), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+/* ---------- Point popups ---------- */
+
+/*
+ * Thick, and not up for negotiation: a popup is a name, an address and opening
+ * hours, read while the map behind it is still being panned. The blur alone
+ * does not make text legible over a street map — the tint is what does that,
+ * and the blur is what keeps it from looking like a white box.
+ */
+.glass-ui .poi-popup .leaflet-popup-content-wrapper {
+  background-color: var(--glass-thick);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--glass-radius);
+  box-shadow: var(--glass-lift-high), var(--glass-rim);
+  color: var(--glass-ink);
+}
+
+/*
+ * The tip, which is a rotated square Leaflet draws under the wrapper. It is
+ * given the tint and no blur of its own: at 11px across, blurring it samples
+ * the two pixels either side of the marker and the seam against the wrapper
+ * above becomes the most visible thing in the popup.
+ */
+.glass-ui .poi-popup .leaflet-popup-tip {
+  background-color: var(--glass-thick);
+  box-shadow: none;
+  border: none;
+}
+
+.glass-ui .poi-popup .leaflet-popup-close-button {
+  color: var(--glass-ink-faint);
+}
+
+.glass-ui .poi-popup .leaflet-popup-close-button:hover {
+  color: var(--glass-ink);
+}
+
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-title {
+  color: var(--glass-ink);
+}
+
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-subtitle {
+  color: var(--glass-ink-dim);
+}
+
+/*
+ * The category disc behind the icon. It mixes the category's own colour into
+ * white in the opaque UI; here it mixes into nothing, so the map shows through
+ * the disc as it shows through everything else on this popup.
+ */
+.glass-ui .poi-popup-icon {
+  background: color-mix(in srgb, currentColor 20%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, currentColor 18%, transparent);
+}
+
+/* Every rule inside the popup, restated as a tint of what is behind it. The
+   greys they replace were picked against white and draw as grey lines here */
+.glass-ui .poi-popup-row {
+  border-top-color: var(--glass-hairline);
+}
+
+.glass-ui .poi-popup-row dt {
+  color: var(--glass-ink-dim);
+}
+
+.glass-ui .poi-popup-row dd {
+  color: var(--glass-ink);
+}
+
+.glass-ui .poi-popup-building,
+.glass-ui .poi-popup-noise,
+.glass-ui .poi-popup-air {
+  border-top-color: var(--glass-hairline-strong);
+}
+
+/* The short answers. A well rather than a filled chip, which is the same move
+   the routing fields make: this sits on glass, so it is cut into it */
+.glass-ui .poi-popup-chip {
+  background-color: var(--glass-well);
+  box-shadow: var(--glass-well-rim);
+  color: var(--glass-ink);
+}
+
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-link,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-translate {
+  color: var(--glass-accent-solid);
+}
+
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-building-label,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-noise-value,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-air-value {
+  color: var(--glass-ink);
+}
+
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-noise-label,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-air-label,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-air-number,
+.glass-ui .poi-popup-translate-note {
+  color: var(--glass-ink-dim);
+}
+
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-survey,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-edited,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-inherited-label,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-noise-caption,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-air-caption,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-edit-link,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-noise-about,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-air-about {
+  color: var(--glass-ink-faint);
+}
+
+/* ---------- The layers panel ---------- */
+
+/* The button that opens it is a .map-icon-button and is already done above */
+
+.glass-ui .layers-panel {
+  background-color: var(--glass-thick);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-edge);
+  box-shadow: var(--glass-lift-high), var(--glass-rim);
+  color: var(--glass-ink);
+}
+
+/* On a phone it stands on the bottom edge, so only the top corners are round
+   and the rim below would be a bright line across the middle of nothing */
+.glass-ui .layers-panel {
+  border-radius: var(--glass-radius-lg) var(--glass-radius-lg) 0 0;
+}
+
+@media (min-width: 900px) {
+  .glass-ui .layers-panel {
+    border-radius: var(--glass-radius-lg);
+  }
+}
+
+/* Barely there already, and on glass it can be barely there and still work:
+   the panel in front of it is doing most of the separating */
+.glass-ui .layers-scrim {
+  background: rgba(28, 28, 30, 0.16);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.glass-ui .layers-panel-title,
+.glass-ui .layers-section-heading {
+  color: var(--glass-ink);
+}
+
+.glass-ui .layers-panel-close {
+  color: var(--glass-ink-dim);
+}
+
+.glass-ui .layers-panel-close:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: var(--glass-ink);
+}
+
+.glass-ui .layers-divider {
+  background: var(--glass-hairline);
+}
+
+.glass-ui .layers-tile {
+  color: var(--glass-ink-dim);
+}
+
+.glass-ui .layers-tile.selected {
+  color: var(--glass-accent-solid);
+}
+
+.glass-ui .layers-tile.selected .layers-tile-swatch {
+  outline-color: var(--glass-accent-solid);
+}
+
+.glass-ui .layers-tile-note {
+  background-color: var(--glass-well);
+  box-shadow: var(--glass-well-rim);
+  color: var(--glass-ink-dim);
+}
+
+/* ---------- The sheet ---------- */
+
+/*
+ * The one that had to be thought about rather than converted, and the answer
+ * is that it is glass while it is chrome and stops being glass once it is a
+ * page.
+ *
+ * Peeking, it is a floating strip over the map with a heading and a sentence
+ * on it — that is chrome, and it is the single best surface on this app for
+ * the material: the map slides under it and the whole thing is exactly the
+ * demo everybody makes. Open, it is eight hundred words, a list of points, a
+ * FAQ and a set of links, filling most of the screen. Body text at 0.875rem
+ * over a map that is still being panned underneath is not readable, and it is
+ * not readable in a way that no amount of tint quite fixes — the text stays
+ * legible while the *page* stays busy, and reading it is work.
+ *
+ * So the sheet thickens as it opens. BottomSheet writes its snap state onto
+ * the element for this — a plain data attribute, true in both UIs, which is
+ * the only change the flag asked of a component. At peek it is the mid tint
+ * and the map is plainly visible through it; dragged to full it goes to a
+ * near-solid surface that keeps only a trace of the colour underneath, which
+ * is enough for it to still look like the same object.
+ *
+ * That trace matters more than it sounds. Going to flat white on open would
+ * make the sheet a different thing at each end of the drag; keeping 4% of the
+ * map in it means it is one sheet of glass that got thicker.
+ */
+.glass-ui .bottom-sheet {
+  background-color: var(--glass-mid);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border-top: 1px solid var(--glass-edge);
+  border-radius: var(--glass-radius-lg) var(--glass-radius-lg) 0 0;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1), 0 -16px 48px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  color: var(--glass-ink);
+  /* Follows the sheet's own 0.28s travel, so the material and the movement are
+     one gesture rather than a slide and then a fade */
+  transition: background-color 0.28s var(--glass-ease);
+}
+
+.glass-ui .bottom-sheet[data-snap="full"] {
+  background-color: rgba(255, 255, 255, 0.96);
+}
+
+/* The static block the prerender leaves behind is the peeking sheet until
+   React replaces it, and has to be made of the same thing or the swap flashes */
+.glass-ui #seo-prerender {
+  background-color: var(--glass-mid);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border-top: 1px solid var(--glass-edge);
+  border-radius: var(--glass-radius-lg) var(--glass-radius-lg) 0 0;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1), 0 -16px 48px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  color: var(--glass-ink);
+}
+
+.glass-ui .bottom-sheet-grabber,
+.glass-ui #seo-prerender::before {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+/* On a wide screen the sheet is a card in the corner rather than a shelf on
+   the bottom edge, so it gets its corners and its rim all the way round */
+@media (min-width: 900px) {
+  .glass-ui .bottom-sheet,
+  .glass-ui #seo-prerender {
+    border: 1px solid var(--glass-edge);
+    border-radius: var(--glass-radius-lg) var(--glass-radius-lg) 0 0;
+  }
+}
+
+/* The sheet's own text, which is the app's longest and needs the most contrast */
+.glass-ui .info-sheet-title,
+.glass-ui .info-sheet-heading,
+.glass-ui .poi-name,
+.glass-ui .poi-faq dt {
+  color: var(--glass-ink);
+}
+
+.glass-ui .info-sheet-summary,
+.glass-ui .info-sheet-note,
+.glass-ui .info-sheet-footer,
+.glass-ui .info-sheet-subheading,
+.glass-ui .poi-meta {
+  color: var(--glass-ink-dim);
+}
+
+.glass-ui .info-sheet-steps,
+.glass-ui .info-sheet-presets,
+.glass-ui .info-sheet-tips,
+.glass-ui .info-sheet-about p,
+.glass-ui .poi-list,
+.glass-ui .poi-faq dd {
+  color: var(--glass-ink);
+}
+
+.glass-ui .info-sheet-about a,
+.glass-ui .info-sheet-footer a,
+.glass-ui .poi-links a,
+.glass-ui .info-sheet-disclosure > summary {
+  color: var(--glass-accent-solid);
+}
+
+.glass-ui .info-sheet-step-number {
+  background-color: rgba(var(--glass-accent), 0.16);
+  color: var(--glass-accent-solid);
+}
+
+.glass-ui .info-sheet-disclosure {
+  border-top-color: var(--glass-hairline);
+}
+
+/* ---------- Motion ---------- */
+
+/*
+ * The press and the thickening are both responses to something the reader did,
+ * which is the kind of motion this setting is least likely to mean. It is
+ * turned off anyway: the rule is that nothing moves that was not asked for,
+ * and a sheet that changes material under the finger is still a thing moving.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .glass-ui .map-icon-button,
+  .glass-ui .search-bar-row .MuiInputBase-root,
+  .glass-ui .routes-card .MuiInputBase-root,
+  .glass-ui .bottom-sheet {
+    transition: none;
+  }
+
+  .glass-ui .map-icon-button:active {
+    transform: none;
+  }
+}

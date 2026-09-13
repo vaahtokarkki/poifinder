@@ -7,7 +7,14 @@ type MapIconButtonProps = {
   children: React.ReactNode;
 };
 
-/** Round floating button of the map control column */
+/**
+ * Round floating button of the map control column.
+ *
+ * The lit and unlit colours are classes rather than inline styles. They were
+ * written inline here, which put them beyond the reach of any stylesheet short
+ * of !important — the look is stated in index.css now, where a theme can
+ * restate it.
+ */
 const MapIconButton: React.FC<MapIconButtonProps> = ({
   onClick,
   title,
@@ -16,11 +23,7 @@ const MapIconButton: React.FC<MapIconButtonProps> = ({
 }) => (
   <button
     type="button"
-    className="map-icon-button"
-    style={{
-      background: active ? "#1976d2" : "#fff",
-      color: active ? "#fff" : "#000",
-    }}
+    className={`map-icon-button${active ? " active" : ""}`}
     onClick={onClick}
     title={title}
     aria-label={title}

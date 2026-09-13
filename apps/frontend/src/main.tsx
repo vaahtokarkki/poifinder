@@ -3,6 +3,10 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import "leaflet/dist/leaflet.css";
 import "maplibre-gl/dist/maplibre-gl.css";
+// The liquid glass look, behind ?ui. Everything it owns is in that folder and
+// nothing outside it reads the flag: deleting the folder and this line removes
+// the experiment whole. See src/glass/index.ts
+import './glass'
 import App from './App.tsx'
 import { initAnalytics } from './analytics'
 import { warmCountries } from './analytics/countries'

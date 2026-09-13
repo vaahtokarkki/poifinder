@@ -319,6 +319,11 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, page, childr
   return (
     <section
       className="bottom-sheet"
+      // Which of the three states the sheet has settled in, on the element so
+      // a stylesheet can tell a peeking sheet from an open one. It is a strip
+      // of chrome over the map at one end of that drag and a page of text at
+      // the other, and those do not want the same surface
+      data-snap={snap}
       aria-label={ui().controls.about}
       aria-hidden={snap === "hidden"}
       style={{

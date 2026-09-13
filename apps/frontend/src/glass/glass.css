@@ -803,32 +803,56 @@
 }
 
 /*
- * The category menu opens below the preset chips rather than over them.
+ * The menu hangs off the control that opened it.
  *
- * MUI hangs a Select's menu off the control itself, which put it straight on
- * top of the preset row: half a row of chips showing past its edge, the menu
- * starting mid-way through a thing it has nothing to do with, and two stacked
- * translucent surfaces reading as one muddle. Dropped clear of them the
- * overlay is a single column again — picker, chips, menu — and the chips stay
- * legible, which matters because they are the other way of doing what the menu
- * is for.
+ * This used to be pushed a whole preset row clear of the control — 32px plus
+ * two gaps — because opening across the chips looked cluttered. That fixed the
+ * overlap and broke something worse: a panel floating in the middle of the
+ * overlay with nothing tying it to the thing it belongs to. A dropdown that
+ * does not touch its control is not reading as a dropdown.
  *
- * A margin rather than a different anchor: MUI writes the position inline from
- * its own measurement of the control, so a stylesheet cannot re-anchor it, but
- * a margin moves the box after the fact and the collision handling still has
- * its 70vh ceiling to work with.
+ * So it comes back up against the select, with only enough air to read as a
+ * separate surface rather than a growth of the pill. The clutter is dealt with
+ * where it comes from instead — see the rule below, which takes the chips away
+ * while a menu is open rather than dodging them.
  *
- * The distance is the preset row exactly: the overlay's gap, the 32px chip,
- * and the gap again.
+ * A correction worth recording: the old note here claimed a stylesheet could
+ * not re-anchor this menu. That was wrong. MUI's Select already passes
+ * `anchorOrigin: bottom` and `transformOrigin: top`, so the menu was always
+ * anchored under the control — the margin was not re-anchoring anything, it
+ * was adding distance to a position that was already correct.
  *
- * Both menus, not just the picker's. The language button sits on the same row
- * and its menu hangs off the same edge, so left alone it would be the one
- * thing on this overlay still opening across the chips — and two menus on one
- * row behaving differently is worse than either behaviour on its own. These
- * are the only two MUI menus in the app.
+ * Both menus, since the language button sits on the same row and shares this
+ * class. They are the only two MUI menus in the app.
  */
 .glass-ui .MuiMenu-paper {
-  margin-top: calc(32px + var(--overlay-gap) * 2);
+  margin-top: 6px;
+}
+
+/*
+ * The preset chips step aside while a menu is open.
+ *
+ * They are a shortcut for exactly what the menu does at length, so while it is
+ * open they are answering a question nobody is asking any more — and they were
+ * the clutter: a menu opening across them left half a chip showing past each
+ * edge, which is what made the overlay look like two things fighting rather
+ * than one thing expanding.
+ *
+ * Faded rather than removed, so the row does not collapse and shove the map
+ * controls about while the menu is open; `visibility` keeps it out of the way
+ * of taps as well, which matters because the row sits under the menu's own
+ * shadow.
+ *
+ * `:has()` on the body because both menus are portalled out to it — MUI's
+ * Modal defaults to `disablePortal: false`, so the open menu is a child of
+ * body rather than of anything near the chips. Verified supported in the
+ * target browser; where it is not, this rule simply never matches and the
+ * behaviour is the old one, which is a safe way to fail.
+ */
+.glass-ui body:has(.MuiMenu-paper) .category-presets {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.16s var(--glass-ease), visibility 0.16s;
 }
 
 .glass-ui .MuiMenu-paper .MuiMenuItem-root {
@@ -972,6 +996,10 @@
   margin-top: -8px;
   padding-bottom: 12px;
   margin-bottom: -12px;
+  /* Stated here rather than in a rule of its own, so there is one place that
+     describes this row. It is the going-away and the coming-back of the fade
+     above: quick, so the chips are already there as a menu finishes closing */
+  transition: opacity 0.16s var(--glass-ease), visibility 0.16s;
 }
 
 /*

@@ -1,6 +1,6 @@
 {
   "city": "marseille",
-  "generatedAt": "2026-09-11T10:31:04.250Z",
+  "generatedAt": "2026-09-13T09:02:08.015Z",
   "categories": {
     "toilets": {
       "count": 112,
@@ -399,7 +399,13 @@
           "lon": 5.331241
         }
       ],
-      "updatedAt": "2026-09-03T17:13:01.610Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:01:26.627Z"
     },
     "parking": {
       "count": 1400,
@@ -618,7 +624,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:13:02.614Z"
+      "stats": {
+        "free": 268,
+        "paid": 123,
+        "stepFree": 15,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:01:30.454Z"
     },
     "charging-stations": {
       "count": 144,
@@ -719,7 +731,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:13:03.044Z"
+      "stats": {
+        "free": 13,
+        "paid": 82,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:01:32.267Z"
     },
     "gas-stations": {
       "count": 60,
@@ -856,7 +874,8 @@
           "id": "node/9377060742",
           "name": "Total Access - Relais la Fourragère",
           "lat": 43.304167,
-          "lon": 5.427694
+          "lon": 5.427694,
+          "openingHours": "Mo-Fr 06:30-21:00; Sa-Su 07:00-21:00"
         },
         {
           "id": "node/25214389",
@@ -945,7 +964,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:13:03.483Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:01:34.604Z"
     },
     "ice-cream": {
       "count": 38,
@@ -1086,7 +1111,7 @@
           "name": "Glaces Moustache",
           "lat": 43.294217,
           "lon": 5.376683,
-          "openingHours": "Mo-Su 11:30-22:30; 2026 Aug 15 11:30-24:00",
+          "openingHours": "Mo-Fr 13:00-19:00; Sa 12:00-19:30; Su 12:00-19:00",
           "wheelchair": "yes"
         },
         {
@@ -1155,17 +1180,35 @@
           "lon": 5.375999
         }
       ],
-      "updatedAt": "2026-09-03T17:13:03.869Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:01:36.473Z"
     },
     "dog-parks": {
       "count": 20,
       "pois": [],
-      "updatedAt": "2026-09-03T17:13:04.299Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:01:38.503Z"
     },
     "picnic-spots": {
       "count": 223,
       "pois": [],
-      "updatedAt": "2026-09-03T17:13:05.405Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:01:41.481Z"
     },
     "viewpoints": {
       "count": 116,
@@ -1227,7 +1270,13 @@
           "lon": 5.353959
         }
       ],
-      "updatedAt": "2026-09-03T17:13:05.917Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:01:42.911Z"
     },
     "beaches": {
       "count": 59,
@@ -1377,7 +1426,13 @@
           "lon": 5.359924
         }
       ],
-      "updatedAt": "2026-09-03T17:13:06.308Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:01:44.091Z"
     },
     "atms": {
       "count": 241,
@@ -1622,9 +1677,183 @@
           "name": "Saint-Loup",
           "lat": 43.282757,
           "lon": 5.431402
+        },
+        {
+          "id": "node/2112116487",
+          "lat": 43.296384,
+          "lon": 5.370463,
+          "street": "Quai du Port"
+        },
+        {
+          "id": "node/8855323258",
+          "lat": 43.297258,
+          "lon": 5.368842,
+          "street": "Rue Caisserie"
+        },
+        {
+          "id": "node/4397184928",
+          "lat": 43.297135,
+          "lon": 5.365748,
+          "street": "Rue Henri Tasso"
+        },
+        {
+          "id": "node/1844594452",
+          "lat": 43.299288,
+          "lon": 5.372338,
+          "street": "Rue Colbert"
+        },
+        {
+          "id": "node/11496821605",
+          "lat": 43.293076,
+          "lon": 5.370913,
+          "street": "Quai de Rive-Neuve"
+        },
+        {
+          "id": "node/4945717660",
+          "lat": 43.300173,
+          "lon": 5.367767,
+          "street": "Rue de la Charité"
+        },
+        {
+          "id": "node/4397103438",
+          "lat": 43.299733,
+          "lon": 5.366484,
+          "street": "Rue de l'Évêché"
+        },
+        {
+          "id": "node/9588316635",
+          "lat": 43.293956,
+          "lon": 5.374178,
+          "street": "Cours Jean Ballard"
+        },
+        {
+          "id": "node/1237882592",
+          "lat": 43.294151,
+          "lon": 5.376561,
+          "street": "Rue du Jeune Anacharsis"
+        },
+        {
+          "id": "node/428473525",
+          "lat": 43.299144,
+          "lon": 5.376385,
+          "street": "Cours Belsunce"
+        },
+        {
+          "id": "node/4568328366",
+          "lat": 43.301722,
+          "lon": 5.372288,
+          "street": "Place du Terras"
+        },
+        {
+          "id": "node/7086239951",
+          "lat": 43.290625,
+          "lon": 5.370571,
+          "street": "Boulevard de la Corderie"
+        },
+        {
+          "id": "node/11494722603",
+          "lat": 43.29078,
+          "lon": 5.366814,
+          "street": "Rue Sainte"
+        },
+        {
+          "id": "node/6681659318",
+          "lat": 43.302578,
+          "lon": 5.368367,
+          "street": "Boulevard des Dames"
+        },
+        {
+          "id": "node/817571377",
+          "lat": 43.299649,
+          "lon": 5.378255,
+          "street": "Rue Nationale"
+        },
+        {
+          "id": "node/9344266976",
+          "lat": 43.289606,
+          "lon": 5.366467,
+          "street": "Rue d'Endoume"
+        },
+        {
+          "id": "node/1448474368",
+          "lat": 43.289222,
+          "lon": 5.370915,
+          "street": "Montée de l'Oratoire"
+        },
+        {
+          "id": "node/6560240904",
+          "lat": 43.293481,
+          "lon": 5.37938,
+          "street": "Rue de Rome"
+        },
+        {
+          "id": "node/1262437527",
+          "lat": 43.290549,
+          "lon": 5.37758,
+          "street": "Cours Pierre Puget"
+        },
+        {
+          "id": "node/4272862789",
+          "lat": 43.291652,
+          "lon": 5.379093,
+          "street": "Place Félix Baret"
+        },
+        {
+          "id": "node/6195203274",
+          "lat": 43.28931,
+          "lon": 5.376113,
+          "street": "Rue Édouard Delanglade"
+        },
+        {
+          "id": "node/1910580773",
+          "lat": 43.289888,
+          "lon": 5.378352,
+          "street": "Rue Paradis"
+        },
+        {
+          "id": "node/11381023374",
+          "lat": 43.302841,
+          "lon": 5.379667,
+          "street": "Tunnel Saint-Charles"
+        },
+        {
+          "id": "node/1237882593",
+          "lat": 43.294116,
+          "lon": 5.383075,
+          "street": "Cours Julien"
+        },
+        {
+          "id": "node/6031878888",
+          "lat": 43.286966,
+          "lon": 5.373977,
+          "street": "Boulevard Notre-Dame"
+        },
+        {
+          "id": "node/4393869889",
+          "lat": 43.299526,
+          "lon": 5.384793,
+          "street": "Square Stalingrad"
+        },
+        {
+          "id": "node/990373290",
+          "lat": 43.294885,
+          "lon": 5.385731,
+          "street": "Place Jean Jaurès"
+        },
+        {
+          "id": "node/5214308121",
+          "lat": 43.287502,
+          "lon": 5.380594,
+          "street": "Rue Edmond Rostand"
         }
       ],
-      "updatedAt": "2026-09-03T17:13:08.516Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:01:48.692Z"
     },
     "recycling": {
       "count": 963,
@@ -1832,10 +2061,16 @@
           "lon": 5.379758
         }
       ],
-      "updatedAt": "2026-09-03T17:13:10.807Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:01:50.024Z"
     },
     "libraries": {
-      "count": 59,
+      "count": 60,
       "pois": [
         {
           "id": "node/2131063503",
@@ -2047,7 +2282,13 @@
           "openingHours": "Tu-We 16:00-18:00; Sa 09:30-11:30"
         }
       ],
-      "updatedAt": "2026-09-03T17:13:11.209Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:01:51.094Z"
     },
     "outdoor-gyms": {
       "count": 59,
@@ -2070,12 +2311,24 @@
           "lon": 5.427778
         }
       ],
-      "updatedAt": "2026-09-03T17:13:12.848Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:01:52.884Z"
     },
     "shelters": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:13:14.184Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:01:54.303Z"
     },
     "rest-areas": {
       "count": 9,
@@ -2135,12 +2388,24 @@
           "lon": 5.335805
         }
       ],
-      "updatedAt": "2026-09-03T17:13:15.028Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:01:56.374Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:13:15.622Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:01:58.000Z"
     },
     "post-offices": {
       "count": 84,
@@ -2396,17 +2661,35 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:13:16.086Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 50,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:01:59.584Z"
     },
     "showers": {
       "count": 20,
       "pois": [],
-      "updatedAt": "2026-09-03T17:13:16.508Z"
+      "stats": {
+        "free": 17,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:02:01.340Z"
     },
     "fireplaces": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:13:17.348Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:02:03.860Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2527,9 +2810,68 @@
       "updatedAt": "2026-08-18T03:58:23.947Z"
     },
     "bicycle-repair": {
-      "count": 4,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:13:18.442Z"
+      "count": 9,
+      "pois": [
+        {
+          "id": "node/9838132761",
+          "name": "L'Etape Vélo",
+          "lat": 43.289143,
+          "lon": 5.385642,
+          "address": "Rue Perrin-Solliers 50",
+          "openingHours": "Sa 09:30-12:30; Mo-We, Fr 09:30-13:00, 14:00-19:00; Th 14:30-19:00"
+        },
+        {
+          "id": "node/14021856967",
+          "name": "Cycle Tandem",
+          "lat": 43.261728,
+          "lon": 5.378874
+        },
+        {
+          "id": "node/13200707059",
+          "lat": 43.302219,
+          "lon": 5.381602,
+          "street": "Dépose-minute Narvik"
+        },
+        {
+          "id": "node/13277394680",
+          "lat": 43.302578,
+          "lon": 5.382205,
+          "street": "Square Narvik"
+        },
+        {
+          "id": "node/4719311074",
+          "lat": 43.316226,
+          "lon": 5.383195,
+          "street": "Boulevard de Plombières"
+        },
+        {
+          "id": "node/12785494075",
+          "lat": 43.29633,
+          "lon": 5.406528,
+          "street": "Place de la Gare de la Blancarde"
+        },
+        {
+          "id": "node/5181361358",
+          "lat": 43.304263,
+          "lon": 5.411451,
+          "fee": "no",
+          "street": "Avenue de Saint-Barnabé"
+        },
+        {
+          "id": "node/2119640183",
+          "lat": 43.262691,
+          "lon": 5.393164,
+          "fee": "no",
+          "street": "Avenue de Mazargues"
+        }
+      ],
+      "stats": {
+        "free": 2,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:02:07.913Z"
     }
   }
 }

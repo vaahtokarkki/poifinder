@@ -1,6 +1,6 @@
 {
   "city": "basel",
-  "generatedAt": "2026-09-11T10:29:35.530Z",
+  "generatedAt": "2026-09-13T08:40:13.346Z",
   "categories": {
     "toilets": {
       "count": 268,
@@ -570,10 +570,16 @@
           "lon": 7.541073
         }
       ],
-      "updatedAt": "2026-09-03T16:59:34.423Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T08:39:30.042Z"
     },
     "parking": {
-      "count": 1909,
+      "count": 1908,
       "pois": [
         {
           "id": "way/197189769",
@@ -792,7 +798,13 @@
           "lon": 7.565815
         }
       ],
-      "updatedAt": "2026-09-03T16:59:35.649Z"
+      "stats": {
+        "free": 343,
+        "paid": 127,
+        "stepFree": 43,
+        "partlyStepFree": 13
+      },
+      "updatedAt": "2026-09-13T08:39:33.601Z"
     },
     "charging-stations": {
       "count": 153,
@@ -921,7 +933,13 @@
           "lon": 7.681936
         }
       ],
-      "updatedAt": "2026-09-03T16:59:36.196Z"
+      "stats": {
+        "free": 1,
+        "paid": 85,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:34.873Z"
     },
     "gas-stations": {
       "count": 90,
@@ -1147,7 +1165,13 @@
           "lon": 7.552102
         }
       ],
-      "updatedAt": "2026-09-03T16:59:36.893Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T08:39:36.212Z"
     },
     "ice-cream": {
       "count": 22,
@@ -1307,7 +1331,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:37.470Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:39:37.301Z"
     },
     "dog-parks": {
       "count": 14,
@@ -1338,7 +1368,13 @@
           "lon": 7.636871
         }
       ],
-      "updatedAt": "2026-09-03T16:59:37.863Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:39:38.204Z"
     },
     "picnic-spots": {
       "count": 240,
@@ -1374,7 +1410,13 @@
           "lon": 7.605584
         }
       ],
-      "updatedAt": "2026-09-03T16:59:39.280Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:40.128Z"
     },
     "viewpoints": {
       "count": 49,
@@ -1496,7 +1538,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:39.841Z"
+      "stats": {
+        "free": 3,
+        "paid": 1,
+        "stepFree": 3,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:39:42.004Z"
     },
     "beaches": {
       "count": 10,
@@ -1521,7 +1569,13 @@
           "lon": 7.587654
         }
       ],
-      "updatedAt": "2026-09-03T16:59:40.348Z"
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:43.872Z"
     },
     "atms": {
       "count": 166,
@@ -1776,6 +1830,25 @@
       "count": 334,
       "pois": [
         {
+          "id": "node/5818378188",
+          "name": "Briefkasten von Melchior Berri",
+          "lat": 47.555968,
+          "lon": 7.591573
+        },
+        {
+          "id": "node/3561433325",
+          "name": "Berri Briefkasten",
+          "lat": 47.557896,
+          "lon": 7.581474
+        },
+        {
+          "id": "node/1103117040",
+          "name": "Deutsche Post",
+          "lat": 47.601672,
+          "lon": 7.663048,
+          "wheelchair": "limited"
+        },
+        {
           "id": "node/8553544479",
           "lat": 47.559641,
           "lon": 7.587409,
@@ -1830,12 +1903,6 @@
           "street": "Universität"
         },
         {
-          "id": "node/5818378188",
-          "name": "Briefkasten von Melchior Berri",
-          "lat": 47.555968,
-          "lon": 7.591573
-        },
-        {
           "id": "node/6372546499",
           "lat": 47.555569,
           "lon": 7.58707,
@@ -1876,12 +1943,6 @@
           "lat": 47.554865,
           "lon": 7.589184,
           "street": "Barfüsserplatz"
-        },
-        {
-          "id": "node/3561433325",
-          "name": "Berri Briefkasten",
-          "lat": 47.557896,
-          "lon": 7.581474
         },
         {
           "id": "node/2472474678",
@@ -1949,15 +2010,15 @@
           "lat": 47.553382,
           "lon": 7.592313,
           "street": "Aeschenvorstadt"
-        },
-        {
-          "id": "node/585127740",
-          "lat": 47.566396,
-          "lon": 7.588911,
-          "street": "Leuengasse"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:42.950Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:39:51.220Z"
     },
     "recycling": {
       "count": 256,
@@ -2183,7 +2244,13 @@
     "luggage-storage": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T16:59:46.008Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:52.642Z"
     },
     "libraries": {
       "count": 89,
@@ -2421,7 +2488,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:46.601Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 7
+      },
+      "updatedAt": "2026-09-13T08:39:54.228Z"
     },
     "outdoor-gyms": {
       "count": 111,
@@ -2470,35 +2543,23 @@
           "lon": 7.60237
         }
       ],
-      "updatedAt": "2026-09-03T16:59:48.143Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:55.561Z"
     },
     "shelters": {
       "count": 20,
       "pois": [
-        {
-          "id": "node/2493717870",
-          "lat": 47.548658,
-          "lon": 7.580132,
-          "street": "Pelikanweglein"
-        },
         {
           "id": "node/321633310",
           "name": "Hornfelsenhütte",
           "lat": 47.558921,
           "lon": 7.646621,
           "fee": "no"
-        },
-        {
-          "id": "node/4414974844",
-          "lat": 47.551114,
-          "lon": 7.519294,
-          "street": "Vita Parcours"
-        },
-        {
-          "id": "node/4609391231",
-          "lat": 47.546847,
-          "lon": 7.514122,
-          "street": "Sentier de Découverte de Hegenheim"
         },
         {
           "id": "node/3823236771",
@@ -2531,9 +2592,39 @@
           "name": "Froschlaube",
           "lat": 47.516338,
           "lon": 7.509703
+        },
+        {
+          "id": "node/2493717870",
+          "lat": 47.548658,
+          "lon": 7.580132,
+          "street": "Pelikanweglein"
+        },
+        {
+          "id": "node/4414974844",
+          "lat": 47.551114,
+          "lon": 7.519294,
+          "street": "Vita Parcours"
+        },
+        {
+          "id": "node/4609391231",
+          "lat": 47.546847,
+          "lon": 7.514122,
+          "street": "Sentier de Découverte de Hegenheim"
+        },
+        {
+          "id": "node/3183131061",
+          "lat": 47.620127,
+          "lon": 7.546433,
+          "street": "Rue du Canal"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:49.861Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:40:02.006Z"
     },
     "rest-areas": {
       "count": 4,
@@ -2566,12 +2657,24 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:50.466Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:40:03.604Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:59:50.826Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:40:05.383Z"
     },
     "post-offices": {
       "count": 41,
@@ -2822,12 +2925,24 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:51.268Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 19,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:40:06.627Z"
     },
     "showers": {
       "count": 45,
       "pois": [],
-      "updatedAt": "2026-09-03T16:59:51.621Z"
+      "stats": {
+        "free": 18,
+        "paid": 2,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:40:07.860Z"
     },
     "fireplaces": {
       "count": 136,
@@ -2870,7 +2985,13 @@
           "lon": 7.605584
         }
       ],
-      "updatedAt": "2026-09-03T16:59:52.563Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:40:09.544Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3075,7 +3196,7 @@
       "updatedAt": "2026-08-18T03:58:13.936Z"
     },
     "bicycle-repair": {
-      "count": 26,
+      "count": 27,
       "pois": [
         {
           "id": "node/7819851692",
@@ -3198,6 +3319,13 @@
           "street": "Baslerstrasse"
         },
         {
+          "id": "node/8362725095",
+          "lat": 47.58836,
+          "lon": 7.583358,
+          "fee": "no",
+          "street": "Quai du Maroc"
+        },
+        {
           "id": "node/10969074628",
           "lat": 47.553481,
           "lon": 7.545597,
@@ -3228,9 +3356,21 @@
           "wheelchair": "yes",
           "fee": "no",
           "street": "Freiburger Straße"
+        },
+        {
+          "id": "node/13041714496",
+          "lat": 47.62002,
+          "lon": 7.546289,
+          "street": "Rue du Canal"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:54.169Z"
+      "stats": {
+        "free": 22,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:40:13.245Z"
     }
   }
 }

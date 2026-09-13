@@ -1,6 +1,6 @@
 {
   "city": "tallinn",
-  "generatedAt": "2026-09-11T10:28:10.211Z",
+  "generatedAt": "2026-09-13T08:27:11.066Z",
   "categories": {
     "toilets": {
       "count": 198,
@@ -605,7 +605,13 @@
           "lon": 24.682532
         }
       ],
-      "updatedAt": "2026-09-03T16:46:36.779Z"
+      "stats": {
+        "free": 5,
+        "paid": 2,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:53.232Z"
     },
     "parking": {
       "count": 3940,
@@ -782,10 +788,16 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:38.047Z"
+      "stats": {
+        "free": 664,
+        "paid": 451,
+        "stepFree": 14,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:54.992Z"
     },
     "charging-stations": {
-      "count": 148,
+      "count": 146,
       "pois": [
         {
           "id": "node/7846484113",
@@ -839,7 +851,13 @@
           "lon": 24.642075
         }
       ],
-      "updatedAt": "2026-09-03T16:46:38.549Z"
+      "stats": {
+        "free": 1,
+        "paid": 61,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:55.650Z"
     },
     "gas-stations": {
       "count": 96,
@@ -1098,7 +1116,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:39.190Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 37,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:56.394Z"
     },
     "ice-cream": {
       "count": 14,
@@ -1181,7 +1205,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:39.708Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:26:57.184Z"
     },
     "dog-parks": {
       "count": 40,
@@ -1200,12 +1230,24 @@
           "lon": 24.798395
         }
       ],
-      "updatedAt": "2026-09-03T16:46:40.101Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:26:57.704Z"
     },
     "picnic-spots": {
       "count": 175,
       "pois": [],
-      "updatedAt": "2026-09-03T16:46:41.708Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:58.903Z"
     },
     "viewpoints": {
       "count": 36,
@@ -1247,7 +1289,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:42.444Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:59.632Z"
     },
     "beaches": {
       "count": 18,
@@ -1305,7 +1353,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:42.885Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:00.268Z"
     },
     "atms": {
       "count": 177,
@@ -1417,9 +1471,189 @@
           "name": "Siili box nr.1-128",
           "lat": 59.407383,
           "lon": 24.704234
+        },
+        {
+          "id": "node/294477289",
+          "lat": 59.437401,
+          "lon": 24.755784,
+          "street": "Roseni"
+        },
+        {
+          "id": "node/7804060402",
+          "lat": 59.438198,
+          "lon": 24.754163,
+          "street": "Mere pst"
+        },
+        {
+          "id": "node/4065674653",
+          "lat": 59.436593,
+          "lon": 24.74912,
+          "street": "Viru"
+        },
+        {
+          "id": "node/10176622976",
+          "lat": 59.433851,
+          "lon": 24.751814,
+          "street": "Teatri väljak"
+        },
+        {
+          "id": "node/4477420197",
+          "lat": 59.43553,
+          "lon": 24.760061,
+          "street": "Maneeži"
+        },
+        {
+          "id": "node/10128584672",
+          "lat": 59.43369,
+          "lon": 24.756628,
+          "street": "Rävala pst"
+        },
+        {
+          "id": "node/11739515413",
+          "lat": 59.437064,
+          "lon": 24.745009,
+          "street": "Raekoja plats"
+        },
+        {
+          "id": "node/10176588050",
+          "lat": 59.438577,
+          "lon": 24.762729,
+          "street": "Parda"
+        },
+        {
+          "id": "node/10761791195",
+          "lat": 59.437158,
+          "lon": 24.76435,
+          "street": "Pronksi"
+        },
+        {
+          "id": "node/11857365171",
+          "lat": 59.432562,
+          "lon": 24.762304,
+          "street": "Liivalaia"
+        },
+        {
+          "id": "node/2358651362",
+          "lat": 59.43078,
+          "lon": 24.758822,
+          "street": "Ants Lauteri"
+        },
+        {
+          "id": "node/13193520837",
+          "lat": 59.444049,
+          "lon": 24.75568,
+          "street": "Sadama"
+        },
+        {
+          "id": "node/10060992239",
+          "lat": 59.43119,
+          "lon": 24.739199,
+          "street": "Tõnismägi"
+        },
+        {
+          "id": "node/9795241357",
+          "lat": 59.431157,
+          "lon": 24.768749,
+          "street": "Torupilli ots"
+        },
+        {
+          "id": "node/9855163537",
+          "lat": 59.441389,
+          "lon": 24.730805,
+          "street": "Telliskivi"
+        },
+        {
+          "id": "node/13968704603",
+          "lat": 59.433386,
+          "lon": 24.777948,
+          "street": "Jüri Vilmsi"
+        },
+        {
+          "id": "node/8713145123",
+          "lat": 59.424707,
+          "lon": 24.742969,
+          "street": "Pärnu mnt"
+        },
+        {
+          "id": "node/4590622690",
+          "lat": 59.427381,
+          "lon": 24.773911,
+          "street": "Odra"
+        },
+        {
+          "id": "node/9895829049",
+          "lat": 59.425852,
+          "lon": 24.734938,
+          "street": "Väike-Ameerika"
+        },
+        {
+          "id": "node/6977234286",
+          "lat": 59.440812,
+          "lon": 24.78665,
+          "street": "Narva mnt"
+        },
+        {
+          "id": "node/9718107732",
+          "lat": 59.427331,
+          "lon": 24.721579,
+          "street": "Endla"
+        },
+        {
+          "id": "node/9041090234",
+          "lat": 59.414449,
+          "lon": 24.739853,
+          "street": "Juurdeveo"
+        },
+        {
+          "id": "node/8860382511",
+          "lat": 59.424918,
+          "lon": 24.796189,
+          "street": "Ülemiste tee"
+        },
+        {
+          "id": "node/10563355340",
+          "lat": 59.422851,
+          "lon": 24.794605,
+          "street": "Suur-Sõjamäe"
+        },
+        {
+          "id": "node/12710097627",
+          "lat": 59.417814,
+          "lon": 24.721372,
+          "street": "Nõmme tee"
+        },
+        {
+          "id": "node/13067271791",
+          "lat": 59.426448,
+          "lon": 24.703247,
+          "street": "Mehaanika"
+        },
+        {
+          "id": "node/10924712666",
+          "lat": 59.409475,
+          "lon": 24.73572,
+          "street": "Hallivanamehe"
+        },
+        {
+          "id": "node/10052426395",
+          "lat": 59.40271,
+          "lon": 24.698376,
+          "street": "Sõpruse pst"
+        },
+        {
+          "id": "node/12488655409",
+          "lat": 59.396829,
+          "lon": 24.709811,
+          "street": "Rahumäe tee"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:45.134Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:01.797Z"
     },
     "recycling": {
       "count": 667,
@@ -1650,7 +1884,13 @@
           "address": "Uus-Sadama 24"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:47.707Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:02.368Z"
     },
     "libraries": {
       "count": 43,
@@ -1874,7 +2114,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:48.209Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:27:02.954Z"
     },
     "outdoor-gyms": {
       "count": 177,
@@ -1919,12 +2165,31 @@
           "address": "Regati pst. 1"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:50.073Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:03.553Z"
     },
     "shelters": {
       "count": 23,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:46:51.472Z"
+      "pois": [
+        {
+          "id": "node/12802548626",
+          "lat": 59.40871,
+          "lon": 24.741118,
+          "street": "Türi"
+        }
+      ],
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:05.611Z"
     },
     "rest-areas": {
       "count": 5,
@@ -1936,12 +2201,24 @@
           "lon": 24.646163
         }
       ],
-      "updatedAt": "2026-09-03T16:46:52.086Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:06.188Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:46:52.440Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:06.620Z"
     },
     "post-offices": {
       "count": 13,
@@ -2027,17 +2304,35 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:52.834Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:07.164Z"
     },
     "showers": {
       "count": 8,
       "pois": [],
-      "updatedAt": "2026-09-03T16:46:53.187Z"
+      "stats": {
+        "free": 1,
+        "paid": 5,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:07.656Z"
     },
     "fireplaces": {
       "count": 27,
       "pois": [],
-      "updatedAt": "2026-09-03T16:46:54.335Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:09.045Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2104,9 +2399,222 @@
       "updatedAt": "2026-08-18T03:58:04.969Z"
     },
     "bicycle-repair": {
-      "count": 22,
-      "pois": [],
-      "updatedAt": "2026-09-03T16:46:55.635Z"
+      "count": 89,
+      "pois": [
+        {
+          "id": "node/12785789579",
+          "name": "Rattaparanduspunkt",
+          "lat": 59.422975,
+          "lon": 24.683246,
+          "address": "Mustjõe 40",
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/12345580112",
+          "lat": 59.440261,
+          "lon": 24.738486,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Balti jaama tunnel"
+        },
+        {
+          "id": "node/8821413012",
+          "lat": 59.44279,
+          "lon": 24.740744,
+          "street": "Kotzebue"
+        },
+        {
+          "id": "node/12511960208",
+          "lat": 59.443077,
+          "lon": 24.767558,
+          "street": "Uus-Sadama"
+        },
+        {
+          "id": "node/8817740602",
+          "lat": 59.428091,
+          "lon": 24.774821,
+          "street": "Odra"
+        },
+        {
+          "id": "node/13983631532",
+          "lat": 59.444754,
+          "lon": 24.728619,
+          "street": "Tõllu"
+        },
+        {
+          "id": "node/13970810033",
+          "lat": 59.420346,
+          "lon": 24.748929,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Pille"
+        },
+        {
+          "id": "node/11152969805",
+          "lat": 59.42595,
+          "lon": 24.726182,
+          "street": "Kotkapoja"
+        },
+        {
+          "id": "node/11051614205",
+          "lat": 59.445479,
+          "lon": 24.719835,
+          "street": "Kopli"
+        },
+        {
+          "id": "node/11476509855",
+          "lat": 59.451501,
+          "lon": 24.726809,
+          "street": "Staapli"
+        },
+        {
+          "id": "node/13370390258",
+          "lat": 59.432662,
+          "lon": 24.715074,
+          "fee": "no",
+          "street": "Paldiski mnt"
+        },
+        {
+          "id": "node/11998616666",
+          "lat": 59.445281,
+          "lon": 24.798063,
+          "fee": "no",
+          "street": "Pirita tee"
+        },
+        {
+          "id": "node/12953856698",
+          "lat": 59.445737,
+          "lon": 24.798279,
+          "fee": "no",
+          "street": "Pirita promenaad"
+        },
+        {
+          "id": "node/14024219759",
+          "lat": 59.439578,
+          "lon": 24.705327,
+          "street": "Kolde pst"
+        },
+        {
+          "id": "node/11769239714",
+          "lat": 59.422885,
+          "lon": 24.794907,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Suur-Sõjamäe"
+        },
+        {
+          "id": "node/11148746654",
+          "lat": 59.439464,
+          "lon": 24.805526,
+          "fee": "no",
+          "street": "Valge"
+        },
+        {
+          "id": "node/12161443573",
+          "lat": 59.452767,
+          "lon": 24.71083,
+          "street": "Karjamaa"
+        },
+        {
+          "id": "node/13074115526",
+          "lat": 59.446582,
+          "lon": 24.704115,
+          "fee": "no",
+          "street": "Putukaväil"
+        },
+        {
+          "id": "node/13917723183",
+          "lat": 59.410976,
+          "lon": 24.732745,
+          "fee": "no",
+          "street": "Tondi"
+        },
+        {
+          "id": "node/13195778094",
+          "lat": 59.441584,
+          "lon": 24.696401,
+          "street": "Ehte"
+        },
+        {
+          "id": "node/9149587885",
+          "lat": 59.421059,
+          "lon": 24.802375,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Lõõtsa"
+        },
+        {
+          "id": "node/7978189583",
+          "lat": 59.419709,
+          "lon": 24.805483,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Sepise"
+        },
+        {
+          "id": "node/11188241441",
+          "lat": 59.4416,
+          "lon": 24.81876,
+          "street": "Turba"
+        },
+        {
+          "id": "node/11917499334",
+          "lat": 59.463075,
+          "lon": 24.703609,
+          "street": "Paljassaare põik"
+        },
+        {
+          "id": "node/10171652041",
+          "lat": 59.443053,
+          "lon": 24.829536,
+          "street": "Liikuri"
+        },
+        {
+          "id": "node/11862915027",
+          "lat": 59.404783,
+          "lon": 24.70842,
+          "fee": "no",
+          "street": "Nõmme tee"
+        },
+        {
+          "id": "node/12230818745",
+          "lat": 59.40419,
+          "lon": 24.809844,
+          "fee": "no",
+          "street": "Raudkivi tee"
+        },
+        {
+          "id": "node/10687960942",
+          "lat": 59.402993,
+          "lon": 24.699045,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Sõpruse pst"
+        },
+        {
+          "id": "node/9898188522",
+          "lat": 59.406768,
+          "lon": 24.683482,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Mustamäe tee"
+        },
+        {
+          "id": "node/9641450339",
+          "lat": 59.41006,
+          "lon": 24.675774,
+          "fee": "no",
+          "street": "Karjavälja"
+        }
+      ],
+      "stats": {
+        "free": 58,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:10.964Z"
     }
   }
 }

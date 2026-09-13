@@ -1,6 +1,6 @@
 {
   "city": "bologna",
-  "generatedAt": "2026-09-11T10:31:57.296Z",
+  "generatedAt": "2026-09-13T09:19:59.592Z",
   "categories": {
     "toilets": {
       "count": 97,
@@ -419,7 +419,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:36.584Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 17,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:19:06.846Z"
     },
     "parking": {
       "count": 1945,
@@ -641,7 +647,13 @@
           "lon": 11.364211
         }
       ],
-      "updatedAt": "2026-09-03T17:22:37.754Z"
+      "stats": {
+        "free": 519,
+        "paid": 202,
+        "stepFree": 46,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:19:11.893Z"
     },
     "charging-stations": {
       "count": 119,
@@ -744,7 +756,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:38.248Z"
+      "stats": {
+        "free": 1,
+        "paid": 24,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:13.665Z"
     },
     "gas-stations": {
       "count": 139,
@@ -947,7 +965,13 @@
           "openingHours": "Mo-Su 06:00-21:50"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:38.827Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:15.538Z"
     },
     "ice-cream": {
       "count": 100,
@@ -1169,7 +1193,13 @@
           "lon": 11.328651
         }
       ],
-      "updatedAt": "2026-09-03T17:22:39.468Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:19:17.446Z"
     },
     "dog-parks": {
       "count": 27,
@@ -1187,7 +1217,13 @@
           "lon": 11.25706
         }
       ],
-      "updatedAt": "2026-09-03T17:22:39.875Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:19.071Z"
     },
     "picnic-spots": {
       "count": 108,
@@ -1211,7 +1247,13 @@
           "lon": 11.395791
         }
       ],
-      "updatedAt": "2026-09-03T17:22:41.307Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:22.947Z"
     },
     "viewpoints": {
       "count": 21,
@@ -1248,7 +1290,13 @@
           "lon": 11.379998
         }
       ],
-      "updatedAt": "2026-09-03T17:22:41.888Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:25.204Z"
     },
     "beaches": {
       "count": 2,
@@ -1261,7 +1309,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:42.315Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:26.520Z"
     },
     "atms": {
       "count": 204,
@@ -1486,6 +1540,30 @@
       "count": 46,
       "pois": [
         {
+          "id": "node/4807308428",
+          "name": "Poste Italiane",
+          "lat": 44.49246,
+          "lon": 11.341146
+        },
+        {
+          "id": "node/4708260294",
+          "name": "Mail Boxes Etc",
+          "lat": 44.502795,
+          "lon": 11.340074
+        },
+        {
+          "id": "node/4524690890",
+          "name": "UnipolSai",
+          "lat": 44.495075,
+          "lon": 11.391075
+        },
+        {
+          "id": "node/4693593989",
+          "name": "Fototessere",
+          "lat": 44.483554,
+          "lon": 11.270607
+        },
+        {
           "id": "node/9970891677",
           "lat": 44.495008,
           "lon": 11.341318,
@@ -1496,12 +1574,6 @@
           "lat": 44.493184,
           "lon": 11.344746,
           "street": "Via Clavature"
-        },
-        {
-          "id": "node/4807308428",
-          "name": "Poste Italiane",
-          "lat": 44.49246,
-          "lon": 11.341146
         },
         {
           "id": "node/12327624743",
@@ -1550,12 +1622,6 @@
           "lat": 44.494945,
           "lon": 11.352367,
           "street": "Via Vinazzetti"
-        },
-        {
-          "id": "node/4708260294",
-          "name": "Mail Boxes Etc",
-          "lat": 44.502795,
-          "lon": 11.340074
         },
         {
           "id": "node/13807899325",
@@ -1652,21 +1718,15 @@
           "lat": 44.483577,
           "lon": 11.374162,
           "street": "Via Emilia Levante"
-        },
-        {
-          "id": "node/3992187912",
-          "lat": 44.499991,
-          "lon": 11.296039,
-          "street": "Via Battindarno"
-        },
-        {
-          "id": "node/4524690890",
-          "name": "UnipolSai",
-          "lat": 44.495075,
-          "lon": 11.391075
         }
       ],
-      "updatedAt": "2026-09-03T17:22:44.815Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:36.551Z"
     },
     "recycling": {
       "count": 1152,
@@ -1906,7 +1966,13 @@
           "openingHours": "Mo-Su 07:00-22:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:47.908Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:38.219Z"
     },
     "libraries": {
       "count": 101,
@@ -2145,7 +2211,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:48.602Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 19,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:19:40.689Z"
     },
     "outdoor-gyms": {
       "count": 23,
@@ -2182,12 +2254,24 @@
           "lon": 11.37513
         }
       ],
-      "updatedAt": "2026-09-03T17:22:50.085Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:42.477Z"
     },
     "shelters": {
       "count": 11,
       "pois": [],
-      "updatedAt": "2026-09-03T17:22:51.605Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:47.524Z"
     },
     "rest-areas": {
       "count": 22,
@@ -2237,7 +2321,13 @@
           "lon": 11.279456
         }
       ],
-      "updatedAt": "2026-09-03T17:22:52.028Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:49.047Z"
     },
     "dump-stations": {
       "count": 2,
@@ -2251,7 +2341,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:52.387Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:50.505Z"
     },
     "post-offices": {
       "count": 45,
@@ -2455,17 +2551,35 @@
           "address": "Galleria Novecento Nik 14"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:52.781Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:52.125Z"
     },
     "showers": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:22:53.120Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:53.320Z"
     },
     "fireplaces": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:22:54.267Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:55.130Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2637,19 +2751,19 @@
       "count": 15,
       "pois": [
         {
-          "id": "node/10117506416",
-          "lat": 44.493795,
-          "lon": 11.341372,
-          "openingHours": "24/7",
-          "street": "Via Quattro Novembre"
-        },
-        {
           "id": "node/9794404656",
           "name": "Cassetta Ciclo Riparazione Santa Graziella dell'Apocalisse ACAB",
           "lat": 44.491455,
           "lon": 11.343013,
           "openingHours": "24/7",
           "fee": "no"
+        },
+        {
+          "id": "node/10117506416",
+          "lat": 44.493795,
+          "lon": 11.341372,
+          "openingHours": "24/7",
+          "street": "Via Quattro Novembre"
         },
         {
           "id": "node/10117506413",
@@ -2707,7 +2821,13 @@
           "street": "Via Andrea Costa"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:55.741Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:19:59.491Z"
     }
   }
 }

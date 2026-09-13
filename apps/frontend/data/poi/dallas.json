@@ -1,6 +1,6 @@
 {
   "city": "dallas",
-  "generatedAt": "2026-09-11T10:32:41.699Z",
+  "generatedAt": "2026-09-13T09:32:39.590Z",
   "categories": {
     "toilets": {
       "count": 96,
@@ -449,7 +449,13 @@
           "lon": -96.708907
         }
       ],
-      "updatedAt": "2026-09-03T17:30:03.967Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:00.134Z"
     },
     "parking": {
       "count": 1821,
@@ -657,7 +663,13 @@
           "lon": -96.777154
         }
       ],
-      "updatedAt": "2026-09-03T17:30:05.554Z"
+      "stats": {
+        "free": 175,
+        "paid": 103,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:04.229Z"
     },
     "charging-stations": {
       "count": 17,
@@ -692,7 +704,13 @@
           "lon": -96.847388
         }
       ],
-      "updatedAt": "2026-09-03T17:30:06.093Z"
+      "stats": {
+        "free": 1,
+        "paid": 4,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:05.866Z"
     },
     "gas-stations": {
       "count": 218,
@@ -901,7 +919,13 @@
           "lon": -96.681949
         }
       ],
-      "updatedAt": "2026-09-03T17:30:06.748Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:07.349Z"
     },
     "ice-cream": {
       "count": 30,
@@ -1104,7 +1128,13 @@
           "address": "North Ira Avenue 210"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:07.328Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:08.537Z"
     },
     "dog-parks": {
       "count": 22,
@@ -1173,7 +1203,13 @@
           "lon": -96.725396
         }
       ],
-      "updatedAt": "2026-09-03T17:30:07.761Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:09.905Z"
     },
     "picnic-spots": {
       "count": 396,
@@ -1191,7 +1227,13 @@
           "lon": -96.865336
         }
       ],
-      "updatedAt": "2026-09-03T17:30:09.182Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:13.361Z"
     },
     "viewpoints": {
       "count": 20,
@@ -1239,12 +1281,24 @@
           "lon": -96.724859
         }
       ],
-      "updatedAt": "2026-09-03T17:30:10.000Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:14.984Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:30:10.506Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:16.440Z"
     },
     "atms": {
       "count": 50,
@@ -1366,6 +1420,73 @@
       "count": 34,
       "pois": [
         {
+          "id": "node/2643329677",
+          "name": "Dallas Post Office – Juanita Craft Station",
+          "lat": 32.774655,
+          "lon": -96.768534
+        },
+        {
+          "id": "node/566518213",
+          "name": "Dallas Post Office - Oak Lawn Station",
+          "lat": 32.808066,
+          "lon": -96.810411
+        },
+        {
+          "id": "node/2643197044",
+          "name": "Dallas Post Office - Station A",
+          "lat": 32.742351,
+          "lon": -96.830861
+        },
+        {
+          "id": "node/2643310156",
+          "name": "Dallas Post Office – Lakewood Station",
+          "lat": 32.812385,
+          "lon": -96.756654
+        },
+        {
+          "id": "node/600228540",
+          "name": "Stulz PO",
+          "lat": 32.821509,
+          "lon": -96.839826
+        },
+        {
+          "id": "node/2644639599",
+          "name": "Dr. Caesar A. W. Clark Sr. Post Office",
+          "lat": 32.710887,
+          "lon": -96.799346
+        },
+        {
+          "id": "node/2643145891",
+          "name": "Dallas Post Office - University Station",
+          "lat": 32.841842,
+          "lon": -96.772321
+        },
+        {
+          "id": "node/13495016199",
+          "name": "leasing office",
+          "lat": 32.844816,
+          "lon": -96.768694
+        },
+        {
+          "id": "node/13485043701",
+          "name": "USPS",
+          "lat": 32.760423,
+          "lon": -96.897136,
+          "address": "North Cockrell Hill Road 1421"
+        },
+        {
+          "id": "node/2643291468",
+          "name": "Dallas Post Office - Beverly Hills Station",
+          "lat": 32.721885,
+          "lon": -96.891162
+        },
+        {
+          "id": "node/2644762736",
+          "name": "Dallas Post Office - White Rock Station",
+          "lat": 32.831068,
+          "lon": -96.699888
+        },
+        {
           "id": "node/4602938570",
           "lat": 32.770212,
           "lon": -96.794614,
@@ -1402,30 +1523,6 @@
           "street": "Hickory Street"
         },
         {
-          "id": "node/2643329677",
-          "name": "Dallas Post Office – Juanita Craft Station",
-          "lat": 32.774655,
-          "lon": -96.768534
-        },
-        {
-          "id": "node/566518213",
-          "name": "Dallas Post Office - Oak Lawn Station",
-          "lat": 32.808066,
-          "lon": -96.810411
-        },
-        {
-          "id": "node/2643197044",
-          "name": "Dallas Post Office - Station A",
-          "lat": 32.742351,
-          "lon": -96.830861
-        },
-        {
-          "id": "node/2643310156",
-          "name": "Dallas Post Office – Lakewood Station",
-          "lat": 32.812385,
-          "lon": -96.756654
-        },
-        {
           "id": "node/13099912926",
           "lat": 32.821958,
           "lon": -96.831995,
@@ -1444,30 +1541,6 @@
           "street": "Lomo Alto Drive"
         },
         {
-          "id": "node/600228540",
-          "name": "Stulz PO",
-          "lat": 32.821509,
-          "lon": -96.839826
-        },
-        {
-          "id": "node/2644639599",
-          "name": "Dr. Caesar A. W. Clark Sr. Post Office",
-          "lat": 32.710887,
-          "lon": -96.799346
-        },
-        {
-          "id": "node/2643145891",
-          "name": "Dallas Post Office - University Station",
-          "lat": 32.841842,
-          "lon": -96.772321
-        },
-        {
-          "id": "node/13495016199",
-          "name": "leasing office",
-          "lat": 32.844816,
-          "lon": -96.768694
-        },
-        {
           "id": "node/13049373023",
           "lat": 32.851739,
           "lon": -96.76939,
@@ -1478,28 +1551,15 @@
           "lat": 32.856966,
           "lon": -96.808757,
           "street": "Southwestern Boulevard"
-        },
-        {
-          "id": "node/13485043701",
-          "name": "USPS",
-          "lat": 32.760423,
-          "lon": -96.897136,
-          "address": "North Cockrell Hill Road 1421"
-        },
-        {
-          "id": "node/2643291468",
-          "name": "Dallas Post Office - Beverly Hills Station",
-          "lat": 32.721885,
-          "lon": -96.891162
-        },
-        {
-          "id": "node/2644762736",
-          "name": "Dallas Post Office - White Rock Station",
-          "lat": 32.831068,
-          "lon": -96.699888
         }
       ],
-      "updatedAt": "2026-09-03T17:30:12.402Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:19.732Z"
     },
     "recycling": {
       "count": 72,
@@ -1650,7 +1710,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:30:14.807Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:20.963Z"
     },
     "libraries": {
       "count": 18,
@@ -1771,7 +1837,13 @@
           "openingHours": "Tu,Th 09:00-20:00, We,Fr 09:00-17:00, Sa-Su 09:00-16:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:15.501Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:22.501Z"
     },
     "outdoor-gyms": {
       "count": 11,
@@ -1802,11 +1874,23 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:30:17.025Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:23.464Z"
     },
     "shelters": {
       "count": 35,
       "pois": [
+        {
+          "id": "node/7932862429",
+          "name": "Flag Pole Hill Pavillion",
+          "lat": 32.861767,
+          "lon": -96.724393
+        },
         {
           "id": "node/11983403861",
           "lat": 32.798697,
@@ -1836,15 +1920,15 @@
           "lat": 32.736328,
           "lon": -96.711489,
           "street": "Guard Drive"
-        },
-        {
-          "id": "node/7932862429",
-          "name": "Flag Pole Hill Pavillion",
-          "lat": 32.861767,
-          "lon": -96.724393
         }
       ],
-      "updatedAt": "2026-09-03T17:30:19.042Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:27.062Z"
     },
     "rest-areas": {
       "count": 3,
@@ -1863,12 +1947,24 @@
           "address": "John W Carpenter Freeway 9235"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:19.609Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:28.203Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:30:19.992Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:29.219Z"
     },
     "post-offices": {
       "count": 29,
@@ -2075,17 +2171,35 @@
           "openingHours": "Mo-Fr 08:30-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:20.501Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:30.481Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:30:20.887Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:31.423Z"
     },
     "fireplaces": {
       "count": 39,
       "pois": [],
-      "updatedAt": "2026-09-03T17:30:22.120Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:33.323Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2429,7 +2543,13 @@
           "street": "Runyon Creek Trail"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:23.968Z"
+      "stats": {
+        "free": 12,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:39.488Z"
     }
   }
 }

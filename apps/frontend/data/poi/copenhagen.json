@@ -1,6 +1,6 @@
 {
   "city": "copenhagen",
-  "generatedAt": "2026-09-11T10:28:02.265Z",
+  "generatedAt": "2026-09-13T08:26:17.199Z",
   "categories": {
     "toilets": {
       "count": 333,
@@ -641,10 +641,16 @@
           "lon": 12.613375
         }
       ],
-      "updatedAt": "2026-09-03T16:45:29.778Z"
+      "stats": {
+        "free": 3,
+        "paid": 1,
+        "stepFree": 8,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T08:25:57.693Z"
     },
     "parking": {
-      "count": 4172,
+      "count": 4173,
       "pois": [
         {
           "id": "way/187179841",
@@ -871,7 +877,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:31.332Z"
+      "stats": {
+        "free": 406,
+        "paid": 526,
+        "stepFree": 51,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:25:59.564Z"
     },
     "charging-stations": {
       "count": 367,
@@ -1087,7 +1099,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:31.873Z"
+      "stats": {
+        "free": 1,
+        "paid": 114,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:00.286Z"
     },
     "gas-stations": {
       "count": 101,
@@ -1252,7 +1270,13 @@
           "lon": 12.523281
         }
       ],
-      "updatedAt": "2026-09-03T16:45:32.324Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 23,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:26:01.082Z"
     },
     "ice-cream": {
       "count": 108,
@@ -1444,7 +1468,13 @@
           "lon": 12.590184
         }
       ],
-      "updatedAt": "2026-09-03T16:45:32.923Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:26:01.905Z"
     },
     "dog-parks": {
       "count": 60,
@@ -1534,7 +1564,8 @@
           "id": "way/760168048",
           "name": "Aksel Møller Have Løbegård",
           "lat": 55.68519,
-          "lon": 12.532432
+          "lon": 12.532432,
+          "wheelchair": "limited"
         },
         {
           "id": "way/1021946711",
@@ -1651,7 +1682,13 @@
           "lon": 12.50382
         }
       ],
-      "updatedAt": "2026-09-03T16:45:33.329Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 17,
+        "partlyStepFree": 9
+      },
+      "updatedAt": "2026-09-13T08:26:02.523Z"
     },
     "picnic-spots": {
       "count": 1103,
@@ -1687,7 +1724,13 @@
           "lon": 12.576776
         }
       ],
-      "updatedAt": "2026-09-03T16:45:34.728Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:04.124Z"
     },
     "viewpoints": {
       "count": 45,
@@ -1789,7 +1832,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:35.293Z"
+      "stats": {
+        "free": 2,
+        "paid": 2,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:26:04.966Z"
     },
     "beaches": {
       "count": 35,
@@ -1905,7 +1954,13 @@
           "lon": 12.50198
         }
       ],
-      "updatedAt": "2026-09-03T16:45:35.803Z"
+      "stats": {
+        "free": 8,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:05.725Z"
     },
     "atms": {
       "count": 126,
@@ -2051,7 +2106,13 @@
     "post-boxes": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:45:36.850Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:06.442Z"
     },
     "recycling": {
       "count": 790,
@@ -2296,10 +2357,16 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:39.428Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:07.101Z"
     },
     "libraries": {
-      "count": 70,
+      "count": 71,
       "pois": [
         {
           "id": "node/917945388",
@@ -2513,7 +2580,13 @@
           "openingHours": "08:00-20:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:39.862Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:07.946Z"
     },
     "outdoor-gyms": {
       "count": 101,
@@ -2620,7 +2693,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:41.411Z"
+      "stats": {
+        "free": 2,
+        "paid": 6,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:08.603Z"
     },
     "shelters": {
       "count": 33,
@@ -2717,17 +2796,35 @@
           "lon": 12.667374
         }
       ],
-      "updatedAt": "2026-09-03T16:45:42.960Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:10.764Z"
     },
     "rest-areas": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T16:45:43.428Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:11.423Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:45:44.008Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:11.942Z"
     },
     "post-offices": {
       "count": 11,
@@ -2790,12 +2887,24 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:44.408Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:26:12.475Z"
     },
     "showers": {
       "count": 12,
       "pois": [],
-      "updatedAt": "2026-09-03T16:45:44.768Z"
+      "stats": {
+        "free": 5,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:13.002Z"
     },
     "fireplaces": {
       "count": 95,
@@ -2825,7 +2934,13 @@
           "lon": 12.575258
         }
       ],
-      "updatedAt": "2026-09-03T16:45:45.789Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:14.743Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2928,8 +3043,22 @@
       "updatedAt": "2026-08-18T03:58:03.917Z"
     },
     "bicycle-repair": {
-      "count": 36,
+      "count": 56,
       "pois": [
+        {
+          "id": "node/3706275796",
+          "name": "Jernhesten",
+          "lat": 55.680674,
+          "lon": 12.53892,
+          "fee": "no"
+        },
+        {
+          "id": "node/1225576284",
+          "name": "Christiania Cykler",
+          "lat": 55.673711,
+          "lon": 12.601274,
+          "openingHours": "Mo-Tu 09:00-17:30; We 10:00-17:30; Th-Fr 09:00-17:30; Sa 11:00-15:00"
+        },
         {
           "id": "node/7372736368",
           "name": "Bicycle pump",
@@ -2937,11 +3066,40 @@
           "lon": 12.59521
         },
         {
+          "id": "node/5075960299",
+          "name": "Cykel Center",
+          "lat": 55.662332,
+          "lon": 12.602393,
+          "openingHours": "Mo-Fr 09:00-18:00, Sa 10:00-15:00"
+        },
+        {
+          "id": "node/10893145661",
+          "name": "Cykelpumpe",
+          "lat": 55.651898,
+          "lon": 12.527162
+        },
+        {
           "id": "node/1411225849",
           "name": "Jupiter Cykler",
           "lat": 55.650526,
           "lon": 12.612638,
           "openingHours": "Mo-Th 09:00-17:30; Fr 09:00-18:00; Sa 10:00-14:00"
+        },
+        {
+          "id": "node/5115176540",
+          "name": "C77 Pumpe 2",
+          "lat": 55.65044,
+          "lon": 12.508096,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/5115176541",
+          "name": "C77 Pumpe 3",
+          "lat": 55.642686,
+          "lon": 12.501113,
+          "openingHours": "24/7",
+          "fee": "no"
         },
         {
           "id": "node/9178256144",
@@ -2957,9 +3115,154 @@
           "lon": 12.511101,
           "openingHours": "Mo, We 09:00-18:00; Tu, Th, Fr 10:00-18:00; Sa 09:00-14:00",
           "wheelchair": "limited"
+        },
+        {
+          "id": "node/807652529",
+          "lat": 55.675502,
+          "lon": 12.568724,
+          "fee": "no",
+          "street": "H.C. Andersens Boulevard"
+        },
+        {
+          "id": "node/5316406950",
+          "lat": 55.671566,
+          "lon": 12.567302,
+          "fee": "no",
+          "street": "Tietgensgade"
+        },
+        {
+          "id": "node/6048840266",
+          "lat": 55.682921,
+          "lon": 12.571523,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Nørre Voldgade"
+        },
+        {
+          "id": "node/12470847229",
+          "lat": 55.669928,
+          "lon": 12.556145,
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 10:00-14:00; Su off",
+          "fee": "no",
+          "street": "Istedgade"
+        },
+        {
+          "id": "node/7297197464",
+          "lat": 55.685702,
+          "lon": 12.570132,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Gothersgade"
+        },
+        {
+          "id": "node/13821495143",
+          "lat": 55.663982,
+          "lon": 12.560748,
+          "street": "Dybbølsbro"
+        },
+        {
+          "id": "node/12912970515",
+          "lat": 55.662526,
+          "lon": 12.561383,
+          "street": "Kalvebod Brygge"
+        },
+        {
+          "id": "node/807652528",
+          "lat": 55.66373,
+          "lon": 12.585187,
+          "fee": "no",
+          "street": "Ørestads Boulevard"
+        },
+        {
+          "id": "node/11281279428",
+          "lat": 55.687503,
+          "lon": 12.592517,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Esplanaden"
+        },
+        {
+          "id": "node/4778483391",
+          "lat": 55.698907,
+          "lon": 12.553808,
+          "openingHours": "24/7",
+          "street": "Jagtvej"
+        },
+        {
+          "id": "node/11300850995",
+          "lat": 55.701503,
+          "lon": 12.578047,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "J. E. Ohlsens Gade"
+        },
+        {
+          "id": "node/12791387612",
+          "lat": 55.680629,
+          "lon": 12.522749,
+          "street": "Den Grønne Sti"
+        },
+        {
+          "id": "node/13537127339",
+          "lat": 55.654963,
+          "lon": 12.537634,
+          "street": "Enghavevej"
+        },
+        {
+          "id": "node/6142901249",
+          "lat": 55.705628,
+          "lon": 12.576037,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Østerfælled Torv"
+        },
+        {
+          "id": "node/9521493250",
+          "lat": 55.706506,
+          "lon": 12.585598,
+          "fee": "no",
+          "street": "Århusgade"
+        },
+        {
+          "id": "node/13958853908",
+          "lat": 55.664001,
+          "lon": 12.514969,
+          "street": "Mellemtoftevej"
+        },
+        {
+          "id": "node/7045276640",
+          "lat": 55.710171,
+          "lon": 12.569943,
+          "fee": "no",
+          "street": "Tåsingegade"
+        },
+        {
+          "id": "node/12791300763",
+          "lat": 55.682309,
+          "lon": 12.505181,
+          "street": "Dirch Passers Allé"
+        },
+        {
+          "id": "node/13963362229",
+          "lat": 55.714825,
+          "lon": 12.559568,
+          "street": "Lyngbyvej"
+        },
+        {
+          "id": "node/1410814300",
+          "lat": 55.643994,
+          "lon": 12.615761,
+          "fee": "no",
+          "street": "Greisvej"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:47.367Z"
+      "stats": {
+        "free": 27,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:26:17.097Z"
     }
   }
 }

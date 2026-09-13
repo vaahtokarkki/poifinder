@@ -1,6 +1,6 @@
 {
   "city": "new-york",
-  "generatedAt": "2026-09-11T10:32:00.086Z",
+  "generatedAt": "2026-09-13T09:20:55.009Z",
   "categories": {
     "toilets": {
       "count": 403,
@@ -623,7 +623,13 @@
           "lon": -74.001407
         }
       ],
-      "updatedAt": "2026-09-03T17:23:03.046Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 27,
+        "partlyStepFree": 7
+      },
+      "updatedAt": "2026-09-13T09:20:03.351Z"
     },
     "parking": {
       "count": 1544,
@@ -852,7 +858,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:04.580Z"
+      "stats": {
+        "free": 89,
+        "paid": 235,
+        "stepFree": 27,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:20:06.641Z"
     },
     "charging-stations": {
       "count": 63,
@@ -926,7 +938,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:05.168Z"
+      "stats": {
+        "free": 0,
+        "paid": 12,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:20:08.405Z"
     },
     "gas-stations": {
       "count": 232,
@@ -1140,7 +1158,13 @@
           "address": "Astoria Boulevard South 3002"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:05.921Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:20:10.611Z"
     },
     "ice-cream": {
       "count": 231,
@@ -1360,7 +1384,13 @@
           "lon": -73.994458
         }
       ],
-      "updatedAt": "2026-09-03T17:23:06.740Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 26,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:20:13.727Z"
     },
     "dog-parks": {
       "count": 88,
@@ -1562,7 +1592,13 @@
           "lon": -73.997105
         }
       ],
-      "updatedAt": "2026-09-03T17:23:07.226Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 9,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:20:15.708Z"
     },
     "picnic-spots": {
       "count": 1411,
@@ -1598,7 +1634,13 @@
           "lon": -73.942837
         }
       ],
-      "updatedAt": "2026-09-03T17:23:08.741Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 8
+      },
+      "updatedAt": "2026-09-13T09:20:19.982Z"
     },
     "viewpoints": {
       "count": 91,
@@ -1749,7 +1791,13 @@
           "lon": -73.868331
         }
       ],
-      "updatedAt": "2026-09-03T17:23:09.661Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:20:21.825Z"
     },
     "beaches": {
       "count": 18,
@@ -1792,7 +1840,13 @@
           "lon": -74.062065
         }
       ],
-      "updatedAt": "2026-09-03T17:23:10.228Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:20:23.244Z"
     },
     "atms": {
       "count": 1754,
@@ -2051,6 +2105,44 @@
           "lon": -74.005852
         },
         {
+          "id": "node/2562450557",
+          "name": "Something Special",
+          "lat": 40.727907,
+          "lon": -74.002378,
+          "address": "Mac Dougal Street 51"
+        },
+        {
+          "id": "node/5265708678",
+          "name": "United States Post Office",
+          "lat": 40.74797,
+          "lon": -73.996729
+        },
+        {
+          "id": "node/12288487501",
+          "name": "USPS Collection Box",
+          "lat": 40.707211,
+          "lon": -73.943277,
+          "address": "Graham Avenue"
+        },
+        {
+          "id": "node/5167662221",
+          "name": "FedEx",
+          "lat": 40.740384,
+          "lon": -73.950207
+        },
+        {
+          "id": "node/5569910129",
+          "name": "USPS Post Box",
+          "lat": 40.700257,
+          "lon": -73.906561
+        },
+        {
+          "id": "node/6744748394",
+          "name": "UPS",
+          "lat": 40.740366,
+          "lon": -73.89848
+        },
+        {
           "id": "node/6534305184",
           "lat": 40.714205,
           "lon": -74.006486,
@@ -2188,45 +2280,15 @@
           "lat": 40.718554,
           "lon": -73.99875,
           "street": "Baxter Street"
-        },
-        {
-          "id": "node/11422120098",
-          "lat": 40.710212,
-          "lon": -74.016458,
-          "street": "South End Avenue"
-        },
-        {
-          "id": "node/9939611019",
-          "lat": 40.7176,
-          "lon": -73.996215,
-          "street": "Hester Street"
-        },
-        {
-          "id": "node/5265715521",
-          "lat": 40.72228,
-          "lon": -74.003743,
-          "street": "West Broadway"
-        },
-        {
-          "id": "node/2183010552",
-          "lat": 40.704161,
-          "lon": -74.011661,
-          "street": "Broad Street"
-        },
-        {
-          "id": "node/9925426411",
-          "lat": 40.719058,
-          "lon": -73.996307,
-          "street": "Grand Street"
-        },
-        {
-          "id": "node/2572411296",
-          "lat": 40.717084,
-          "lon": -73.994501,
-          "street": "Chrystie Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:13.765Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:20:31.111Z"
     },
     "recycling": {
       "count": 359,
@@ -2436,7 +2498,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:23:16.603Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:20:32.208Z"
     },
     "libraries": {
       "count": 290,
@@ -2680,7 +2748,13 @@
           "lon": -73.979404
         }
       ],
-      "updatedAt": "2026-09-03T17:23:17.541Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 63,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T09:20:34.794Z"
     },
     "outdoor-gyms": {
       "count": 79,
@@ -2710,17 +2784,17 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:23:19.534Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:20:36.201Z"
     },
     "shelters": {
       "count": 29,
       "pois": [
-        {
-          "id": "node/6382251174",
-          "lat": 40.694502,
-          "lon": -74.000688,
-          "street": "Brooklyn Bridge Park Greenway"
-        },
         {
           "id": "way/1325216221",
           "name": "Recreation Shelter",
@@ -2728,19 +2802,31 @@
           "lon": -74.042387
         },
         {
-          "id": "node/11117435196",
-          "lat": 40.721448,
-          "lon": -73.960896,
-          "street": "Kent Avenue"
-        },
-        {
           "id": "way/385442739",
           "name": "Cop Cot",
           "lat": 40.766919,
           "lon": -73.976469
+        },
+        {
+          "id": "node/6382251174",
+          "lat": 40.694502,
+          "lon": -74.000688,
+          "street": "Brooklyn Bridge Park Greenway"
+        },
+        {
+          "id": "node/11117435196",
+          "lat": 40.721448,
+          "lon": -73.960896,
+          "street": "Kent Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:21.368Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:20:43.127Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2753,12 +2839,24 @@
           "address": "Myrtle Avenue 67-43"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:22.108Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:20:44.392Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:23:22.587Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:20:45.663Z"
     },
     "post-offices": {
       "count": 159,
@@ -2983,12 +3081,24 @@
           "lon": -73.941111
         }
       ],
-      "updatedAt": "2026-09-03T17:23:23.743Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 32,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:20:48.104Z"
     },
     "showers": {
       "count": 9,
       "pois": [],
-      "updatedAt": "2026-09-03T17:23:24.428Z"
+      "stats": {
+        "free": 7,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:20:49.148Z"
     },
     "fireplaces": {
       "count": 66,
@@ -3086,7 +3196,13 @@
           "openingHours": "Tu, We 09:00-16:00; Mo, Th 09:00-22:00; Fr 09:00-22:30; Sa 11:00-22:30; Su 11:00-22:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:27.263Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:20:51.092Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3358,7 +3474,13 @@
           "street": "Pennsylvania Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:29.580Z"
+      "stats": {
+        "free": 9,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:20:54.907Z"
     }
   }
 }

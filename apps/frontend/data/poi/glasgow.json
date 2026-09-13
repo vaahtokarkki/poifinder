@@ -1,6 +1,6 @@
 {
   "city": "glasgow",
-  "generatedAt": "2026-09-11T10:30:19.952Z",
+  "generatedAt": "2026-09-13T08:51:44.209Z",
   "categories": {
     "toilets": {
       "count": 78,
@@ -401,7 +401,13 @@
           "lon": -4.128315
         }
       ],
-      "updatedAt": "2026-09-03T17:06:50.802Z"
+      "stats": {
+        "free": 2,
+        "paid": 1,
+        "stepFree": 7,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:51:01.429Z"
     },
     "parking": {
       "count": 1666,
@@ -613,7 +619,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:52.267Z"
+      "stats": {
+        "free": 196,
+        "paid": 67,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:07.413Z"
     },
     "charging-stations": {
       "count": 56,
@@ -661,7 +673,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:52.936Z"
+      "stats": {
+        "free": 7,
+        "paid": 8,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:09.026Z"
     },
     "gas-stations": {
       "count": 65,
@@ -864,7 +882,13 @@
           "lon": -4.134352
         }
       ],
-      "updatedAt": "2026-09-03T17:06:54.146Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:10.757Z"
     },
     "ice-cream": {
       "count": 15,
@@ -960,7 +984,13 @@
           "lon": -4.166816
         }
       ],
-      "updatedAt": "2026-09-03T17:06:55.180Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:12.356Z"
     },
     "dog-parks": {
       "count": 2,
@@ -975,7 +1005,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:56.262Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:13.604Z"
     },
     "picnic-spots": {
       "count": 175,
@@ -988,7 +1024,13 @@
           "openingHours": "Mo-Su 10:00-16:00; Fr 10:00-15:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:58.318Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:17.499Z"
     },
     "viewpoints": {
       "count": 17,
@@ -1026,7 +1068,13 @@
           "lon": -4.205437
         }
       ],
-      "updatedAt": "2026-09-03T17:06:58.961Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:18.818Z"
     },
     "beaches": {
       "count": 3,
@@ -1038,7 +1086,13 @@
           "lon": -4.264519
         }
       ],
-      "updatedAt": "2026-09-03T17:06:59.470Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:19.903Z"
     },
     "atms": {
       "count": 204,
@@ -1213,6 +1267,114 @@
       "count": 497,
       "pois": [
         {
+          "id": "node/13758820908",
+          "name": "COLSTON ROAD D",
+          "lat": 55.896709,
+          "lon": -4.232762
+        },
+        {
+          "id": "node/432817652",
+          "name": "STUART DRIVE D",
+          "lat": 55.899181,
+          "lon": -4.231237
+        },
+        {
+          "id": "node/1929440628",
+          "name": "EX AUCHINAIRN POST OFFICE",
+          "lat": 55.897801,
+          "lon": -4.216973
+        },
+        {
+          "id": "node/1929440532",
+          "name": "GRAHAM TERRACE D",
+          "lat": 55.897667,
+          "lon": -4.210368
+        },
+        {
+          "id": "node/344686534",
+          "name": "BRACKENBRAE ROAD D",
+          "lat": 55.903468,
+          "lon": -4.230219
+        },
+        {
+          "id": "node/13758539785",
+          "name": "ELDON GARDENS D",
+          "lat": 55.906583,
+          "lon": -4.233929
+        },
+        {
+          "id": "node/13758820907",
+          "name": "WOODHILL ROAD D",
+          "lat": 55.902583,
+          "lon": -4.205424
+        },
+        {
+          "id": "node/4318169005",
+          "name": "LAGGAN ROAD",
+          "lat": 55.905783,
+          "lon": -4.213407
+        },
+        {
+          "id": "node/13758820904",
+          "name": "WESTERCLEDDENS ROAD D",
+          "lat": 55.908141,
+          "lon": -4.219338
+        },
+        {
+          "id": "node/475847137",
+          "name": "KIRKINTILLOCH ROAD D",
+          "lat": 55.909543,
+          "lon": -4.222609
+        },
+        {
+          "id": "node/475847119",
+          "name": "MORAR CRESCENT D",
+          "lat": 55.911133,
+          "lon": -4.225829
+        },
+        {
+          "id": "node/13758820906",
+          "name": "ANGUS AVENUE D",
+          "lat": 55.905015,
+          "lon": -4.199654
+        },
+        {
+          "id": "node/13758820905",
+          "name": "PENTLAND DRIVE D",
+          "lat": 55.909268,
+          "lon": -4.199524
+        },
+        {
+          "id": "node/13758820903",
+          "name": "VILLAFIELD DRIVE",
+          "lat": 55.914662,
+          "lon": -4.217727
+        },
+        {
+          "id": "node/1649757182",
+          "name": "CLOAN CRESCENT D",
+          "lat": 55.915848,
+          "lon": -4.214294
+        },
+        {
+          "id": "node/1897351397",
+          "name": "RICHMOND DRIVE D",
+          "lat": 55.918239,
+          "lon": -4.214407
+        },
+        {
+          "id": "node/503768169",
+          "name": "Hillington PO Box",
+          "lat": 55.861491,
+          "lon": -4.366636
+        },
+        {
+          "id": "node/28525159",
+          "name": "Monteith Post Box",
+          "lat": 55.793053,
+          "lon": -4.269083
+        },
+        {
           "id": "node/1716530025",
           "lat": 55.865235,
           "lon": -4.252082,
@@ -1283,119 +1445,15 @@
           "lat": 55.865736,
           "lon": -4.260073,
           "street": "Cambridge Street"
-        },
-        {
-          "id": "node/255655285",
-          "lat": 55.865002,
-          "lon": -4.24282,
-          "street": "St Mungo Avenue"
-        },
-        {
-          "id": "node/298079933",
-          "lat": 55.860282,
-          "lon": -4.257842,
-          "wheelchair": "yes",
-          "street": "Main Concourse"
-        },
-        {
-          "id": "node/560806976",
-          "lat": 55.867201,
-          "lon": -4.259699,
-          "street": "Buccleuch Street"
-        },
-        {
-          "id": "node/899024936",
-          "lat": 55.858489,
-          "lon": -4.24897,
-          "street": "Glassford Street"
-        },
-        {
-          "id": "node/1609045087",
-          "lat": 55.868965,
-          "lon": -4.258437,
-          "street": "Dundasvale Court"
-        },
-        {
-          "id": "node/1312364650",
-          "lat": 55.865294,
-          "lon": -4.262874,
-          "wheelchair": "yes",
-          "street": "Sauchiehall Street"
-        },
-        {
-          "id": "node/12330888996",
-          "lat": 55.858031,
-          "lon": -4.254617,
-          "street": "Argyle Street"
-        },
-        {
-          "id": "node/6074778597",
-          "lat": 55.861278,
-          "lon": -4.262197,
-          "street": "Bothwell Street"
-        },
-        {
-          "id": "node/1776244647",
-          "lat": 55.868581,
-          "lon": -4.242926,
-          "street": "Baird Street"
-        },
-        {
-          "id": "node/275226026",
-          "lat": 55.857073,
-          "lon": -4.249569,
-          "street": "Stockwell Street"
-        },
-        {
-          "id": "node/2006718657",
-          "lat": 55.871484,
-          "lon": -4.253782,
-          "street": "North Canal Bank Street"
-        },
-        {
-          "id": "node/1601429526",
-          "lat": 55.860463,
-          "lon": -4.240474,
-          "street": "George Street"
-        },
-        {
-          "id": "node/1667862064",
-          "lat": 55.857166,
-          "lon": -4.246079,
-          "street": "Trongate"
-        },
-        {
-          "id": "node/1583927757",
-          "lat": 55.857651,
-          "lon": -4.259675,
-          "street": "Oswald Street"
-        },
-        {
-          "id": "node/275261432",
-          "lat": 55.860737,
-          "lon": -4.238882,
-          "street": "High Street"
-        },
-        {
-          "id": "node/1686261143",
-          "lat": 55.856127,
-          "lon": -4.255922,
-          "street": "Dixon Street"
-        },
-        {
-          "id": "node/12330903200",
-          "lat": 55.871971,
-          "lon": -4.257533,
-          "street": "Speirs Wharf"
-        },
-        {
-          "id": "node/30239300",
-          "lat": 55.867308,
-          "lon": -4.265775,
-          "street": "Garnethill Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:01.865Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:51:23.639Z"
     },
     "recycling": {
       "count": 241,
@@ -1615,7 +1673,13 @@
           "lon": -4.257367
         }
       ],
-      "updatedAt": "2026-09-03T17:07:04.768Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:24.890Z"
     },
     "libraries": {
       "count": 49,
@@ -1842,7 +1906,13 @@
           "address": "Main Street 163"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:05.282Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:51:26.584Z"
     },
     "outdoor-gyms": {
       "count": 28,
@@ -1890,7 +1960,13 @@
           "lon": -4.141299
         }
       ],
-      "updatedAt": "2026-09-03T17:07:06.760Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:27.635Z"
     },
     "shelters": {
       "count": 4,
@@ -1902,17 +1978,35 @@
           "street": "Upper Mall"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:08.508Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:31.784Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:07:09.013Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:33.280Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:07:09.367Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:34.363Z"
     },
     "post-offices": {
       "count": 72,
@@ -2133,17 +2227,35 @@
           "openingHours": "Mo-Fr 08:00-10:00; Sa 08:00-12:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:09.809Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:51:35.620Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:07:10.168Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:36.686Z"
     },
     "fireplaces": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:07:11.126Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:38.514Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2389,7 +2501,13 @@
           "street": "Milngavie Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:13.031Z"
+      "stats": {
+        "free": 8,
+        "paid": 8,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:51:44.108Z"
     }
   }
 }

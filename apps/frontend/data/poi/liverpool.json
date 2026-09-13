@@ -1,6 +1,6 @@
 {
   "city": "liverpool",
-  "generatedAt": "2026-09-11T10:30:26.771Z",
+  "generatedAt": "2026-09-13T08:53:37.806Z",
   "categories": {
     "toilets": {
       "count": 57,
@@ -305,7 +305,13 @@
           "lon": -2.87504
         }
       ],
-      "updatedAt": "2026-09-03T17:08:18.408Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:06.351Z"
     },
     "parking": {
       "count": 1614,
@@ -511,12 +517,24 @@
           "lon": -3.025357
         }
       ],
-      "updatedAt": "2026-09-03T17:08:19.480Z"
+      "stats": {
+        "free": 107,
+        "paid": 68,
+        "stepFree": 6,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:53:09.684Z"
     },
     "charging-stations": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:19.963Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:11.114Z"
     },
     "gas-stations": {
       "count": 59,
@@ -621,7 +639,13 @@
           "address": "Arrowe Park Road 40"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:20.459Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:13.186Z"
     },
     "ice-cream": {
       "count": 2,
@@ -639,17 +663,35 @@
           "lon": -3.030588
         }
       ],
-      "updatedAt": "2026-09-03T17:08:21.043Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:14.440Z"
     },
     "dog-parks": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:21.471Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:15.308Z"
     },
     "picnic-spots": {
       "count": 84,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:22.727Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:17.961Z"
     },
     "viewpoints": {
       "count": 14,
@@ -668,7 +710,13 @@
           "lon": -3.009738
         }
       ],
-      "updatedAt": "2026-09-03T17:08:23.369Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:19.121Z"
     },
     "beaches": {
       "count": 33,
@@ -698,7 +746,13 @@
           "lon": -3.057591
         }
       ],
-      "updatedAt": "2026-09-03T17:08:23.808Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:20.271Z"
     },
     "atms": {
       "count": 145,
@@ -813,6 +867,72 @@
       "count": 678,
       "pois": [
         {
+          "id": "node/1126197370",
+          "name": "Conway Street/Watson Street",
+          "lat": 53.393155,
+          "lon": -3.027096
+        },
+        {
+          "id": "node/119798590",
+          "name": "Parkfield Road",
+          "lat": 53.384522,
+          "lon": -2.951342
+        },
+        {
+          "id": "node/252501072",
+          "name": "St Michael's Church Road",
+          "lat": 53.376666,
+          "lon": -2.950382
+        },
+        {
+          "id": "node/250043633",
+          "name": "Aigburth Road",
+          "lat": 53.377225,
+          "lon": -2.944505
+        },
+        {
+          "id": "node/630121426",
+          "name": "Aigburth Drive",
+          "lat": 53.378743,
+          "lon": -2.941095
+        },
+        {
+          "id": "node/662968802",
+          "name": "Waterford Road",
+          "lat": 53.385343,
+          "lon": -3.059624
+        },
+        {
+          "id": "node/662968803",
+          "name": "Budworth Road",
+          "lat": 53.383583,
+          "lon": -3.064831
+        },
+        {
+          "id": "node/130191145",
+          "name": "Dundonald Road",
+          "lat": 53.369855,
+          "lon": -2.930084
+        },
+        {
+          "id": "node/662968804",
+          "name": "Beryl Road",
+          "lat": 53.386864,
+          "lon": -3.075275
+        },
+        {
+          "id": "node/7717085320",
+          "name": "Prenton Delivery Office (2)",
+          "lat": 53.365224,
+          "lon": -3.065956
+        },
+        {
+          "id": "node/1157069862",
+          "name": "Prenton Delivery Office (1)",
+          "lat": 53.365229,
+          "lon": -3.065984
+        },
+        {
           "id": "node/618725950",
           "lat": 53.40745,
           "lon": -2.991576,
@@ -925,75 +1045,15 @@
           "lat": 53.404959,
           "lon": -2.982608,
           "street": "Church Street"
-        },
-        {
-          "id": "node/27418991",
-          "lat": 53.404516,
-          "lon": -2.981016,
-          "street": "Bold Street"
-        },
-        {
-          "id": "node/348147268",
-          "lat": 53.408519,
-          "lon": -2.978881,
-          "street": "Lime Street"
-        },
-        {
-          "id": "node/671893839",
-          "lat": 53.414668,
-          "lon": -2.999335,
-          "street": "Waterloo Road"
-        },
-        {
-          "id": "node/348135389",
-          "lat": 53.399648,
-          "lon": -2.990378,
-          "street": "Salthouse Quay"
-        },
-        {
-          "id": "node/620990554",
-          "lat": 53.404745,
-          "lon": -2.976872,
-          "street": "Mount Pleasant"
-        },
-        {
-          "id": "node/677244773",
-          "lat": 53.418161,
-          "lon": -2.990525,
-          "street": "Eldonian Way"
-        },
-        {
-          "id": "node/624318849",
-          "lat": 53.409222,
-          "lon": -2.975163,
-          "street": "London Road"
-        },
-        {
-          "id": "node/27394165",
-          "lat": 53.403567,
-          "lon": -2.976943,
-          "street": "Heathfield Street"
-        },
-        {
-          "id": "node/27394257",
-          "lat": 53.401252,
-          "lon": -2.979881,
-          "street": "Duke Street"
-        },
-        {
-          "id": "node/671892520",
-          "lat": 53.414773,
-          "lon": -2.977722,
-          "street": "Richmond Row"
-        },
-        {
-          "id": "node/8033230999",
-          "lat": 53.418593,
-          "lon": -2.986604,
-          "street": "Burlington Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:26.003Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:23.081Z"
     },
     "recycling": {
       "count": 17,
@@ -1097,7 +1157,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:27.947Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:23.825Z"
     },
     "libraries": {
       "count": 28,
@@ -1270,7 +1336,13 @@
           "lon": -3.111737
         }
       ],
-      "updatedAt": "2026-09-03T17:08:28.385Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:24.635Z"
     },
     "outdoor-gyms": {
       "count": 21,
@@ -1286,12 +1358,24 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:29.840Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:25.623Z"
     },
     "shelters": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:30.484Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:26.943Z"
     },
     "rest-areas": {
       "count": 2,
@@ -1305,12 +1389,24 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:30.928Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:28.023Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:31.359Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:29.085Z"
     },
     "post-offices": {
       "count": 63,
@@ -1536,17 +1632,35 @@
           "address": "Smithdown Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:31.809Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:30.074Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:32.233Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:30.913Z"
     },
     "fireplaces": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:33.268Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:33.224Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1640,7 +1754,13 @@
           "street": "Liverpool Loop Line"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:34.628Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:37.704Z"
     }
   }
 }

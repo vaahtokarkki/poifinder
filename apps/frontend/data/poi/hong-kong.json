@@ -1,6 +1,6 @@
 {
   "city": "hong-kong",
-  "generatedAt": "2026-09-11T10:34:24.876Z",
+  "generatedAt": "2026-09-13T09:59:18.345Z",
   "categories": {
     "toilets": {
       "count": 673,
@@ -617,7 +617,13 @@
           "openingHours": "07:00-23:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:45:12.080Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:58:37.528Z"
     },
     "parking": {
       "count": 981,
@@ -820,7 +826,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:45:13.577Z"
+      "stats": {
+        "free": 15,
+        "paid": 244,
+        "stepFree": 6,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:58:42.871Z"
     },
     "charging-stations": {
       "count": 26,
@@ -867,7 +879,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:45:14.109Z"
+      "stats": {
+        "free": 9,
+        "paid": 6,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:58:44.297Z"
     },
     "gas-stations": {
       "count": 101,
@@ -972,7 +990,13 @@
           "address": "崗背街 Kong Pui Street 20"
         }
       ],
-      "updatedAt": "2026-09-03T17:45:14.688Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:58:45.726Z"
     },
     "ice-cream": {
       "count": 15,
@@ -1073,7 +1097,13 @@
           "lon": 114.149701
         }
       ],
-      "updatedAt": "2026-09-03T17:45:15.280Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:58:46.780Z"
     },
     "dog-parks": {
       "count": 24,
@@ -1136,7 +1166,13 @@
           "lon": 114.143597
         }
       ],
-      "updatedAt": "2026-09-03T17:45:15.850Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:58:47.552Z"
     },
     "picnic-spots": {
       "count": 88,
@@ -1322,7 +1358,13 @@
           "lon": 114.160149
         }
       ],
-      "updatedAt": "2026-09-03T17:45:17.200Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:58:49.465Z"
     },
     "viewpoints": {
       "count": 110,
@@ -1512,12 +1554,24 @@
           "lon": 114.211139
         }
       ],
-      "updatedAt": "2026-09-03T17:45:17.923Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:58:50.925Z"
     },
     "beaches": {
       "count": 8,
       "pois": [],
-      "updatedAt": "2026-09-03T17:45:18.427Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:58:52.181Z"
     },
     "atms": {
       "count": 247,
@@ -1731,6 +1785,24 @@
       "count": 391,
       "pois": [
         {
+          "id": "node/4275460857",
+          "name": "177",
+          "lat": 22.295226,
+          "lon": 114.168171
+        },
+        {
+          "id": "node/9032205717",
+          "name": "414",
+          "lat": 22.380999,
+          "lon": 114.201998
+        },
+        {
+          "id": "node/8595804817",
+          "name": "愉翠商場巴士站郵筒",
+          "lat": 22.381786,
+          "lon": 114.205847
+        },
+        {
           "id": "node/4275352400",
           "lat": 22.320193,
           "lon": 114.16917,
@@ -1891,27 +1963,15 @@
           "lat": 22.326409,
           "lon": 114.158841,
           "street": "昌新里 Cheong San Lane"
-        },
-        {
-          "id": "node/4275329459",
-          "lat": 22.331464,
-          "lon": 114.17015,
-          "street": "窩仔街 Woh Chai Street"
-        },
-        {
-          "id": "node/4275418311",
-          "lat": 22.30715,
-          "lon": 114.167187,
-          "street": "渡船街 Ferry Street"
-        },
-        {
-          "id": "node/4275229103",
-          "lat": 22.328953,
-          "lon": 114.160211,
-          "street": "荔枝角道 Lai Chi Kok Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:45:20.941Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:58:55.718Z"
     },
     "recycling": {
       "count": 131,
@@ -2139,7 +2199,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:45:24.353Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:58:57.755Z"
     },
     "libraries": {
       "count": 62,
@@ -2344,7 +2410,13 @@
           "lon": 114.208889
         }
       ],
-      "updatedAt": "2026-09-03T17:45:24.941Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:59:00.639Z"
     },
     "outdoor-gyms": {
       "count": 75,
@@ -2413,11 +2485,41 @@
           "lon": 114.130162
         }
       ],
-      "updatedAt": "2026-09-03T17:45:26.921Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:02.022Z"
     },
     "shelters": {
       "count": 136,
       "pois": [
+        {
+          "id": "node/9952995921",
+          "name": "長坑村避雨亭",
+          "lat": 22.346909,
+          "lon": 114.141927
+        },
+        {
+          "id": "way/658163235",
+          "name": "太古軒",
+          "lat": 22.287093,
+          "lon": 114.220274
+        },
+        {
+          "id": "node/3256550270",
+          "name": "滙友亭",
+          "lat": 22.25621,
+          "lon": 114.160252
+        },
+        {
+          "id": "way/764341248",
+          "name": "城門亭 Shing Mun Pavilion",
+          "lat": 22.377831,
+          "lon": 114.140873
+        },
         {
           "id": "node/8816997536",
           "lat": 22.327885,
@@ -2441,12 +2543,6 @@
           "lat": 22.354191,
           "lon": 114.160472,
           "street": "衛奕信徑第5段 Wilson Trail Section 5"
-        },
-        {
-          "id": "node/9952995921",
-          "name": "長坑村避雨亭",
-          "lat": 22.346909,
-          "lon": 114.141927
         },
         {
           "id": "node/12464229330",
@@ -2491,12 +2587,6 @@
           "street": "Accessible Ramp"
         },
         {
-          "id": "way/658163235",
-          "name": "太古軒",
-          "lat": 22.287093,
-          "lon": 114.220274
-        },
-        {
           "id": "node/10139997155",
           "lat": 22.376792,
           "lon": 114.178313,
@@ -2521,18 +2611,6 @@
           "street": "貝璐道 Peel Rise"
         },
         {
-          "id": "node/3256550270",
-          "name": "滙友亭",
-          "lat": 22.25621,
-          "lon": 114.160252
-        },
-        {
-          "id": "way/764341248",
-          "name": "城門亭 Shing Mun Pavilion",
-          "lat": 22.377831,
-          "lon": 114.140873
-        },
-        {
           "id": "node/6373768667",
           "lat": 22.254462,
           "lon": 114.159505,
@@ -2545,7 +2623,13 @@
           "street": "柏架山道 Mount Parker Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:45:29.820Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:07.792Z"
     },
     "rest-areas": {
       "count": 2,
@@ -2564,12 +2648,24 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:45:30.400Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:08.783Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:45:30.842Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:09.638Z"
     },
     "post-offices": {
       "count": 82,
@@ -2789,7 +2885,13 @@
           "openingHours": "Mo-Fr 09:30-18:00; Sa 09:30-13:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:45:31.428Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:10.946Z"
     },
     "showers": {
       "count": 11,
@@ -2852,12 +2954,24 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:45:31.960Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:12.384Z"
     },
     "fireplaces": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:45:34.313Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:14.520Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2989,7 +3103,13 @@
           "street": "康祥街 Hong Cheung Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:45:36.087Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:18.244Z"
     }
   }
 }

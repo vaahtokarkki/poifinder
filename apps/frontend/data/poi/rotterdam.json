@@ -1,6 +1,6 @@
 {
   "city": "rotterdam",
-  "generatedAt": "2026-09-11T10:29:46.433Z",
+  "generatedAt": "2026-09-13T08:42:47.486Z",
   "categories": {
     "toilets": {
       "count": 70,
@@ -504,7 +504,13 @@
           "lon": 4.42875
         }
       ],
-      "updatedAt": "2026-09-03T17:01:03.165Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 7,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:41:54.836Z"
     },
     "parking": {
       "count": 6676,
@@ -731,7 +737,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:04.885Z"
+      "stats": {
+        "free": 343,
+        "paid": 214,
+        "stepFree": 45,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:42:08.188Z"
     },
     "charging-stations": {
       "count": 1936,
@@ -849,7 +861,13 @@
           "lon": 4.588492
         }
       ],
-      "updatedAt": "2026-09-03T17:01:05.670Z"
+      "stats": {
+        "free": 8,
+        "paid": 1263,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:42:12.678Z"
     },
     "gas-stations": {
       "count": 98,
@@ -1090,7 +1108,13 @@
           "openingHours": "Mo-Fr 06:00-23:00; Sa-Su 08:00-23:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:06.314Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:14.310Z"
     },
     "ice-cream": {
       "count": 46,
@@ -1314,7 +1338,13 @@
           "address": "Van Beethovensingel 64"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:06.982Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:42:16.094Z"
     },
     "dog-parks": {
       "count": 61,
@@ -1338,7 +1368,13 @@
           "lon": 4.400213
         }
       ],
-      "updatedAt": "2026-09-03T17:01:07.473Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:42:17.364Z"
     },
     "picnic-spots": {
       "count": 338,
@@ -1351,7 +1387,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:08.907Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:19.889Z"
     },
     "viewpoints": {
       "count": 35,
@@ -1431,7 +1473,13 @@
           "lon": 4.410835
         }
       ],
-      "updatedAt": "2026-09-03T17:01:09.628Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:21.003Z"
     },
     "beaches": {
       "count": 18,
@@ -1455,7 +1503,13 @@
           "lon": 4.409303
         }
       ],
-      "updatedAt": "2026-09-03T17:01:10.290Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:22.224Z"
     },
     "atms": {
       "count": 234,
@@ -1495,6 +1549,24 @@
       "count": 276,
       "pois": [
         {
+          "id": "node/663288814",
+          "name": "Brievenbus",
+          "lat": 51.919009,
+          "lon": 4.475556
+        },
+        {
+          "id": "node/4659598286",
+          "name": "Post NLBrievenbus",
+          "lat": 51.919211,
+          "lon": 4.447983
+        },
+        {
+          "id": "node/848889532",
+          "name": "Franselaan",
+          "lat": 51.917543,
+          "lon": 4.418581
+        },
+        {
           "id": "node/3543826803",
           "lat": 51.925233,
           "lon": 4.47783,
@@ -1523,12 +1595,6 @@
           "lat": 51.923872,
           "lon": 4.485942,
           "street": "Meent"
-        },
-        {
-          "id": "node/663288814",
-          "name": "Brievenbus",
-          "lat": 51.919009,
-          "lon": 4.475556
         },
         {
           "id": "node/1067474210",
@@ -1662,21 +1728,15 @@
           "lat": 51.918192,
           "lon": 4.459419,
           "street": "Middellandplein"
-        },
-        {
-          "id": "node/5260397244",
-          "lat": 51.929899,
-          "lon": 4.458467,
-          "street": "Statenweg"
-        },
-        {
-          "id": "node/4856312601",
-          "lat": 51.920829,
-          "lon": 4.498212,
-          "street": "Oostmolenwerf"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:13.992Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:26.337Z"
     },
     "recycling": {
       "count": 2009,
@@ -1885,7 +1945,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:01:16.932Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:27.663Z"
     },
     "libraries": {
       "count": 118,
@@ -2091,7 +2157,13 @@
           "lon": 4.479849
         }
       ],
-      "updatedAt": "2026-09-03T17:01:17.607Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:29.245Z"
     },
     "outdoor-gyms": {
       "count": 39,
@@ -2161,7 +2233,13 @@
           "lon": 4.536765
         }
       ],
-      "updatedAt": "2026-09-03T17:01:19.446Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:30.644Z"
     },
     "shelters": {
       "count": 1,
@@ -2173,7 +2251,13 @@
           "street": "Capelseweg"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:21.160Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:34.223Z"
     },
     "rest-areas": {
       "count": 34,
@@ -2191,12 +2275,24 @@
           "lon": 4.462262
         }
       ],
-      "updatedAt": "2026-09-03T17:01:21.804Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:35.473Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:01:22.201Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:36.640Z"
     },
     "post-offices": {
       "count": 7,
@@ -2247,17 +2343,35 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:22.640Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:38.685Z"
     },
     "showers": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:01:23.028Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:40.270Z"
     },
     "fireplaces": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:01:24.148Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:42.921Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2472,7 +2586,13 @@
           "street": "Spittelerplaats"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:25.720Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:42:47.384Z"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "city": "detroit",
-  "generatedAt": "2026-09-11T10:33:11.554Z",
+  "generatedAt": "2026-09-13T09:37:36.565Z",
   "categories": {
     "toilets": {
       "count": 50,
@@ -372,7 +372,13 @@
           "lon": -83.043162
         }
       ],
-      "updatedAt": "2026-09-03T17:32:47.688Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:54.161Z"
     },
     "parking": {
       "count": 3211,
@@ -592,7 +598,13 @@
           "lon": -83.048504
         }
       ],
-      "updatedAt": "2026-09-03T17:32:49.101Z"
+      "stats": {
+        "free": 1002,
+        "paid": 239,
+        "stepFree": 620,
+        "partlyStepFree": 63
+      },
+      "updatedAt": "2026-09-13T09:37:00.772Z"
     },
     "charging-stations": {
       "count": 21,
@@ -671,7 +683,13 @@
           "lon": -83.07387
         }
       ],
-      "updatedAt": "2026-09-03T17:32:49.548Z"
+      "stats": {
+        "free": 4,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:01.624Z"
     },
     "gas-stations": {
       "count": 125,
@@ -816,7 +834,13 @@
           "address": "Gratiot Avenue 10070"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:50.049Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:03.191Z"
     },
     "ice-cream": {
       "count": 29,
@@ -1006,7 +1030,13 @@
           "openingHours": "\"Seasonal\""
         }
       ],
-      "updatedAt": "2026-09-03T17:32:50.629Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:04.257Z"
     },
     "dog-parks": {
       "count": 15,
@@ -1069,7 +1099,13 @@
           "address": "John R Street 9840"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:51.011Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:05.084Z"
     },
     "picnic-spots": {
       "count": 334,
@@ -1081,7 +1117,13 @@
           "context": "Midtown Dog Park"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:52.188Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:07.113Z"
     },
     "viewpoints": {
       "count": 17,
@@ -1105,7 +1147,13 @@
           "lon": -83.098759
         }
       ],
-      "updatedAt": "2026-09-03T17:32:52.748Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:08.531Z"
     },
     "beaches": {
       "count": 3,
@@ -1123,7 +1171,13 @@
           "lon": -82.956079
         }
       ],
-      "updatedAt": "2026-09-03T17:32:53.421Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:09.483Z"
     },
     "atms": {
       "count": 44,
@@ -1320,6 +1374,12 @@
       "count": 47,
       "pois": [
         {
+          "id": "node/7022725966",
+          "name": "Canada Post",
+          "lat": 42.28552,
+          "lon": -83.013042
+        },
+        {
           "id": "node/5965243581",
           "lat": 42.328585,
           "lon": -83.047029,
@@ -1492,15 +1552,15 @@
           "lat": 42.28724,
           "lon": -83.052565,
           "street": "Totten Street"
-        },
-        {
-          "id": "node/7891705942",
-          "lat": 42.370437,
-          "lon": -83.076946,
-          "street": "Lothrop Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:55.344Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:13.086Z"
     },
     "recycling": {
       "count": 66,
@@ -1604,7 +1664,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:57.643Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:14.362Z"
     },
     "libraries": {
       "count": 48,
@@ -1805,7 +1871,13 @@
           "lon": -83.13297
         }
       ],
-      "updatedAt": "2026-09-03T17:32:58.148Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:15.730Z"
     },
     "outdoor-gyms": {
       "count": 14,
@@ -1847,7 +1919,13 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:59.630Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:17.800Z"
     },
     "shelters": {
       "count": 58,
@@ -1961,17 +2039,35 @@
           "lon": -83.064711
         }
       ],
-      "updatedAt": "2026-09-03T17:33:01.278Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:22.206Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:33:01.787Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:24.263Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:33:02.149Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:25.610Z"
     },
     "post-offices": {
       "count": 24,
@@ -2119,17 +2215,35 @@
           "address": "Caniff Street 2933"
         }
       ],
-      "updatedAt": "2026-09-03T17:33:02.668Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:27.191Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:33:03.060Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:28.343Z"
     },
     "fireplaces": {
       "count": 36,
       "pois": [],
-      "updatedAt": "2026-09-03T17:33:04.027Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:30.605Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2364,7 +2478,13 @@
           "street": "Ralph C. Wilson, Jr. Trail"
         }
       ],
-      "updatedAt": "2026-09-03T17:33:05.805Z"
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:37:36.463Z"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "city": "cambridge",
-  "generatedAt": "2026-09-11T10:30:33.439Z",
+  "generatedAt": "2026-09-13T08:55:27.346Z",
   "categories": {
     "toilets": {
       "count": 72,
@@ -439,7 +439,13 @@
           "lon": 0.184903
         }
       ],
-      "updatedAt": "2026-09-03T17:09:30.842Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:54:48.586Z"
     },
     "parking": {
       "count": 1071,
@@ -655,7 +661,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:31.816Z"
+      "stats": {
+        "free": 277,
+        "paid": 88,
+        "stepFree": 11,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:51.732Z"
     },
     "charging-stations": {
       "count": 98,
@@ -745,7 +757,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:32.299Z"
+      "stats": {
+        "free": 1,
+        "paid": 31,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:52.726Z"
     },
     "gas-stations": {
       "count": 15,
@@ -833,7 +851,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:32.748Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:54:53.587Z"
     },
     "ice-cream": {
       "count": 5,
@@ -871,7 +895,13 @@
           "openingHours": "Mo-Th, Su 12:00-22:00; Fr, Sa 12:00-23:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:33.182Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:54.565Z"
     },
     "dog-parks": {
       "count": 5,
@@ -896,12 +926,24 @@
           "lon": 0.061876
         }
       ],
-      "updatedAt": "2026-09-03T17:09:33.586Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:55.626Z"
     },
     "picnic-spots": {
       "count": 202,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:34.744Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:58.856Z"
     },
     "viewpoints": {
       "count": 10,
@@ -925,7 +967,13 @@
           "lon": 0.189244
         }
       ],
-      "updatedAt": "2026-09-03T17:09:35.233Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:55:00.111Z"
     },
     "beaches": {
       "count": 5,
@@ -945,7 +993,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:35.673Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:55:01.301Z"
     },
     "atms": {
       "count": 51,
@@ -1042,6 +1096,13 @@
     "post-boxes": {
       "count": 281,
       "pois": [
+        {
+          "id": "node/10777609605",
+          "name": "Mailboxes for Turing Way apartments",
+          "lat": 52.217366,
+          "lon": 0.085711,
+          "address": "Turing Way"
+        },
         {
           "id": "node/343563259",
           "lat": 52.205662,
@@ -1215,15 +1276,15 @@
           "lat": 52.198214,
           "lon": 0.132749,
           "street": "Glisson Road"
-        },
-        {
-          "id": "node/20963369",
-          "lat": 52.199583,
-          "lon": 0.108861,
-          "street": "Newnham Walk"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:37.558Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:55:06.498Z"
     },
     "recycling": {
       "count": 200,
@@ -1421,7 +1482,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:40.393Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:55:07.741Z"
     },
     "libraries": {
       "count": 86,
@@ -1617,7 +1684,13 @@
           "lon": 0.117687
         }
       ],
-      "updatedAt": "2026-09-03T17:09:40.863Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:55:09.124Z"
     },
     "outdoor-gyms": {
       "count": 45,
@@ -1696,7 +1769,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:42.322Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:55:10.384Z"
     },
     "shelters": {
       "count": 4,
@@ -1708,17 +1787,35 @@
           "street": "The Limes"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:43.947Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:55:14.143Z"
     },
     "rest-areas": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:44.453Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:55:16.763Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:44.885Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:55:17.775Z"
     },
     "post-offices": {
       "count": 31,
@@ -1944,17 +2041,35 @@
           "address": "Fountain Lane 2"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:45.282Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:55:18.993Z"
     },
     "showers": {
       "count": 6,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:45.631Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:55:20.132Z"
     },
     "fireplaces": {
       "count": 6,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:46.572Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:55:21.833Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2166,7 +2281,13 @@
           "street": "Valiant Lane"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:47.970Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:55:27.244Z"
     }
   }
 }

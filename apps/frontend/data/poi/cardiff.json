@@ -1,6 +1,6 @@
 {
   "city": "cardiff",
-  "generatedAt": "2026-09-11T10:30:50.353Z",
+  "generatedAt": "2026-09-13T08:56:43.207Z",
   "categories": {
     "toilets": {
       "count": 47,
@@ -311,7 +311,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:18.944Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:13.865Z"
     },
     "parking": {
       "count": 1343,
@@ -517,7 +523,13 @@
           "lon": -3.203568
         }
       ],
-      "updatedAt": "2026-09-03T17:10:20.190Z"
+      "stats": {
+        "free": 102,
+        "paid": 109,
+        "stepFree": 2,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:56:16.331Z"
     },
     "charging-stations": {
       "count": 33,
@@ -544,7 +556,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:20.691Z"
+      "stats": {
+        "free": 0,
+        "paid": 5,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:17.426Z"
     },
     "gas-stations": {
       "count": 34,
@@ -625,7 +643,13 @@
           "lon": -3.130631
         }
       ],
-      "updatedAt": "2026-09-03T17:10:21.142Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:18.383Z"
     },
     "ice-cream": {
       "count": 13,
@@ -714,17 +738,35 @@
           "lon": -3.172064
         }
       ],
-      "updatedAt": "2026-09-03T17:10:21.707Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:19.348Z"
     },
     "dog-parks": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:22.087Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:20.244Z"
     },
     "picnic-spots": {
       "count": 104,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:23.348Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:23.233Z"
     },
     "viewpoints": {
       "count": 14,
@@ -742,12 +784,24 @@
           "lon": -3.24474
         }
       ],
-      "updatedAt": "2026-09-03T17:10:23.921Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:25.276Z"
     },
     "beaches": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:24.360Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:26.360Z"
     },
     "atms": {
       "count": 97,
@@ -900,12 +954,6 @@
           "lon": -3.17843
         },
         {
-          "id": "node/1050139904",
-          "lat": 51.481905,
-          "lon": -3.177114,
-          "street": "Queen Street"
-        },
-        {
           "id": "node/3426519742",
           "name": "St Mary Street North",
           "lat": 51.479998,
@@ -918,12 +966,6 @@
           "lon": -3.182038
         },
         {
-          "id": "node/8327665716",
-          "lat": 51.483396,
-          "lon": -3.177198,
-          "street": "Greyfriars Road"
-        },
-        {
           "id": "node/581059954",
           "name": "Westgate Street",
           "lat": 51.478599,
@@ -934,6 +976,96 @@
           "name": "King Edward VII Avenue",
           "lat": 51.484689,
           "lon": -3.179181
+        },
+        {
+          "id": "node/3426521600",
+          "name": "St Mary Street South",
+          "lat": 51.477123,
+          "lon": -3.176876
+        },
+        {
+          "id": "node/3426527349",
+          "name": "Lower Cathedral Road",
+          "lat": 51.481258,
+          "lon": -3.18887
+        },
+        {
+          "id": "node/1216567622",
+          "name": "Clare Street",
+          "lat": 51.477888,
+          "lon": -3.188143
+        },
+        {
+          "id": "node/3426512103",
+          "name": "Plasturton Gardens",
+          "lat": 51.485301,
+          "lon": -3.196287
+        },
+        {
+          "id": "node/8878137786",
+          "name": "Pen-y-Wain Road Postbox",
+          "lat": 51.497676,
+          "lon": -3.169874
+        },
+        {
+          "id": "node/8878137785",
+          "name": "Decomissioned Post Box",
+          "lat": 51.500032,
+          "lon": -3.17279
+        },
+        {
+          "id": "node/5330136923",
+          "name": "Shirley Road Postbox",
+          "lat": 51.501349,
+          "lon": -3.175773
+        },
+        {
+          "id": "node/7139216966",
+          "name": "Ty-Draw Road Postbox",
+          "lat": 51.502193,
+          "lon": -3.174121
+        },
+        {
+          "id": "node/12186652408",
+          "name": "Wild Gardens Road",
+          "lat": 51.51419,
+          "lon": -3.173671
+        },
+        {
+          "id": "node/11264923224",
+          "name": "Tyrwhitt Crescent",
+          "lat": 51.515329,
+          "lon": -3.177083
+        },
+        {
+          "id": "node/10847033941",
+          "name": "Heath Halt Road",
+          "lat": 51.5158,
+          "lon": -3.181828
+        },
+        {
+          "id": "node/9517456827",
+          "name": "Rhyd-y-penau Road Crossroads",
+          "lat": 51.519679,
+          "lon": -3.179521
+        },
+        {
+          "id": "node/1226817216",
+          "name": "Murch Postbox",
+          "lat": 51.433362,
+          "lon": -3.20919
+        },
+        {
+          "id": "node/1050139904",
+          "lat": 51.481905,
+          "lon": -3.177114,
+          "street": "Queen Street"
+        },
+        {
+          "id": "node/8327665716",
+          "lat": 51.483396,
+          "lon": -3.177198,
+          "street": "Greyfriars Road"
         },
         {
           "id": "node/8235793882",
@@ -954,12 +1086,6 @@
           "street": "Park Place"
         },
         {
-          "id": "node/3426521600",
-          "name": "St Mary Street South",
-          "lat": 51.477123,
-          "lon": -3.176876
-        },
-        {
           "id": "node/8327665715",
           "lat": 51.485515,
           "lon": -3.174427,
@@ -978,12 +1104,6 @@
           "street": "Central Square"
         },
         {
-          "id": "node/3426527349",
-          "name": "Lower Cathedral Road",
-          "lat": 51.481258,
-          "lon": -3.18887
-        },
-        {
           "id": "node/6879783399",
           "lat": 51.475169,
           "lon": -3.178767,
@@ -996,12 +1116,6 @@
           "street": "Adam Street"
         },
         {
-          "id": "node/1216567622",
-          "name": "Clare Street",
-          "lat": 51.477888,
-          "lon": -3.188143
-        },
-        {
           "id": "node/1233711060",
           "lat": 51.488149,
           "lon": -3.176279,
@@ -1012,69 +1126,15 @@
           "lat": 51.485772,
           "lon": -3.170229,
           "street": "West Grove"
-        },
-        {
-          "id": "node/9796616244",
-          "lat": 51.48821,
-          "lon": -3.173777,
-          "street": "Salisbury Road"
-        },
-        {
-          "id": "node/1172818650",
-          "lat": 51.488826,
-          "lon": -3.183957,
-          "street": "Corbett Road"
-        },
-        {
-          "id": "node/1038815866",
-          "lat": 51.48103,
-          "lon": -3.192289,
-          "street": "Cowbridge Road East"
-        },
-        {
-          "id": "node/1095528747",
-          "lat": 51.473195,
-          "lon": -3.178714,
-          "street": "Trade Street"
-        },
-        {
-          "id": "node/1233710973",
-          "lat": 51.490018,
-          "lon": -3.177917,
-          "street": "Miskin Street"
-        },
-        {
-          "id": "node/8177361922",
-          "lat": 51.484352,
-          "lon": -3.19244,
-          "street": "Cathedral Road"
-        },
-        {
-          "id": "node/1036629359",
-          "lat": 51.482878,
-          "lon": -3.164709,
-          "street": "Howard Gardens"
-        },
-        {
-          "id": "node/8177361214",
-          "lat": 51.472947,
-          "lon": -3.183658,
-          "street": "Hafod Street"
-        },
-        {
-          "id": "node/8231316979",
-          "lat": 51.486031,
-          "lon": -3.166128,
-          "street": "City Road"
-        },
-        {
-          "id": "node/5265735892",
-          "lat": 51.473774,
-          "lon": -3.187187,
-          "street": "Cornwall Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:26.524Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:29.208Z"
     },
     "recycling": {
       "count": 35,
@@ -1194,7 +1254,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:30.302Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:30.043Z"
     },
     "libraries": {
       "count": 23,
@@ -1362,7 +1428,13 @@
           "openingHours": "Mo 10:00-13:00,14:00-18:00; Tu 10:00-13:00,14:00-17:30; We 10:00-13:00,14:00-17:30; Th off; Fr 14:00-19:00; Sa 10:00-13:00; Su off"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:30.749Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:31.284Z"
     },
     "outdoor-gyms": {
       "count": 2,
@@ -1392,7 +1464,13 @@
           "lon": -3.196234
         }
       ],
-      "updatedAt": "2026-09-03T17:10:31.627Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:32.703Z"
     },
     "shelters": {
       "count": 1,
@@ -1404,7 +1482,13 @@
           "lon": -3.262582
         }
       ],
-      "updatedAt": "2026-09-03T17:10:32.350Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:34.113Z"
     },
     "rest-areas": {
       "count": 15,
@@ -1423,12 +1507,24 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:32.793Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:35.084Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:33.156Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:35.903Z"
     },
     "post-offices": {
       "count": 45,
@@ -1650,17 +1746,35 @@
           "lon": -3.246968
         }
       ],
-      "updatedAt": "2026-09-03T17:10:33.550Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:36.825Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:33.901Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:38.341Z"
     },
     "fireplaces": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:34.845Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:40.163Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1853,7 +1967,13 @@
           "street": "Port Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:36.281Z"
+      "stats": {
+        "free": 2,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:43.107Z"
     }
   }
 }

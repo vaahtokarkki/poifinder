@@ -1,6 +1,6 @@
 {
   "city": "nice",
-  "generatedAt": "2026-09-11T10:30:59.164Z",
+  "generatedAt": "2026-09-13T09:03:43.828Z",
   "categories": {
     "toilets": {
       "count": 86,
@@ -415,7 +415,13 @@
           "lon": 7.196509
         }
       ],
-      "updatedAt": "2026-09-03T17:13:49.814Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:00.673Z"
     },
     "parking": {
       "count": 690,
@@ -645,7 +651,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:13:50.844Z"
+      "stats": {
+        "free": 116,
+        "paid": 140,
+        "stepFree": 19,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:03:02.933Z"
     },
     "charging-stations": {
       "count": 67,
@@ -700,7 +712,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:13:51.311Z"
+      "stats": {
+        "free": 9,
+        "paid": 9,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:05.008Z"
     },
     "gas-stations": {
       "count": 41,
@@ -870,7 +888,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:13:51.823Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:03:06.645Z"
     },
     "ice-cream": {
       "count": 41,
@@ -1082,7 +1106,13 @@
           "lon": 7.276977
         }
       ],
-      "updatedAt": "2026-09-03T17:13:52.206Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:03:08.445Z"
     },
     "dog-parks": {
       "count": 14,
@@ -1094,12 +1124,24 @@
           "lon": 7.294555
         }
       ],
-      "updatedAt": "2026-09-03T17:13:52.568Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:03:09.752Z"
     },
     "picnic-spots": {
       "count": 89,
       "pois": [],
-      "updatedAt": "2026-09-03T17:13:53.668Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:12.815Z"
     },
     "viewpoints": {
       "count": 91,
@@ -1222,11 +1264,17 @@
         {
           "id": "node/1584068012",
           "name": "Mont Bastide",
-          "lat": 43.730032,
-          "lon": 7.350145
+          "lat": 43.730049,
+          "lon": 7.350152
         }
       ],
-      "updatedAt": "2026-09-03T17:13:54.172Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:14.513Z"
     },
     "beaches": {
       "count": 54,
@@ -1413,7 +1461,13 @@
           "lon": 7.333598
         }
       ],
-      "updatedAt": "2026-09-03T17:13:54.648Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:17.363Z"
     },
     "atms": {
       "count": 198,
@@ -1666,9 +1720,196 @@
       "updatedAt": "2026-09-11T10:30:55.740Z"
     },
     "post-boxes": {
-      "count": 190,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:13:56.435Z"
+      "count": 191,
+      "pois": [
+        {
+          "id": "node/2781042503",
+          "lat": 43.709296,
+          "lon": 7.262653,
+          "street": "Avenue Malausséna"
+        },
+        {
+          "id": "node/12361984892",
+          "lat": 43.709609,
+          "lon": 7.263732,
+          "street": "Rue du Général Hoche"
+        },
+        {
+          "id": "node/458747092",
+          "lat": 43.712201,
+          "lon": 7.260853,
+          "street": "Rue Michel-Ange"
+        },
+        {
+          "id": "node/441605507",
+          "lat": 43.707296,
+          "lon": 7.260747,
+          "street": "Rue Miollis"
+        },
+        {
+          "id": "node/295562427",
+          "lat": 43.71101,
+          "lon": 7.266545,
+          "street": "Avenue Caravadossi"
+        },
+        {
+          "id": "node/449076313",
+          "lat": 43.712817,
+          "lon": 7.258854,
+          "street": "Boulevard Auguste Raynaud"
+        },
+        {
+          "id": "node/451713371",
+          "lat": 43.708154,
+          "lon": 7.258097,
+          "street": "Rue Clément Roassal"
+        },
+        {
+          "id": "node/277114119",
+          "lat": 43.709235,
+          "lon": 7.267062,
+          "street": "Avenue George V"
+        },
+        {
+          "id": "node/452463449",
+          "lat": 43.706374,
+          "lon": 7.262388,
+          "street": "Rue Trachel"
+        },
+        {
+          "id": "node/4069671638",
+          "lat": 43.713451,
+          "lon": 7.265367,
+          "street": "Avenue Valrose"
+        },
+        {
+          "id": "node/9496269758",
+          "lat": 43.711962,
+          "lon": 7.255402,
+          "street": "Boulevard de Cessole"
+        },
+        {
+          "id": "node/452097557",
+          "lat": 43.706086,
+          "lon": 7.257605,
+          "street": "Rue Dabray"
+        },
+        {
+          "id": "node/441604107",
+          "lat": 43.707078,
+          "lon": 7.256139,
+          "street": "Boulevard Gambetta"
+        },
+        {
+          "id": "node/277113327",
+          "lat": 43.709595,
+          "lon": 7.269723,
+          "street": "Avenue du Docteur Ménard"
+        },
+        {
+          "id": "node/2988477934",
+          "lat": 43.711014,
+          "lon": 7.271095,
+          "street": "Boulevard de Cimiez"
+        },
+        {
+          "id": "node/3229629523",
+          "lat": 43.717225,
+          "lon": 7.261311,
+          "street": "Avenue Alfred Borriglione"
+        },
+        {
+          "id": "node/7043814166",
+          "lat": 43.703211,
+          "lon": 7.260201,
+          "street": "Avenue Thiers"
+        },
+        {
+          "id": "node/9555131687",
+          "lat": 43.708939,
+          "lon": 7.252143,
+          "street": "Avenue de Pessicart"
+        },
+        {
+          "id": "node/8220894705",
+          "lat": 43.716663,
+          "lon": 7.256359,
+          "street": "Avenue Cyrille Besset"
+        },
+        {
+          "id": "node/279526281",
+          "lat": 43.704611,
+          "lon": 7.269577,
+          "street": "Place Toselli"
+        },
+        {
+          "id": "node/277298134",
+          "lat": 43.717765,
+          "lon": 7.265852,
+          "street": "Avenue Maréchal Maunoury"
+        },
+        {
+          "id": "node/360364269",
+          "lat": 43.711292,
+          "lon": 7.250919,
+          "street": "Boulevard Mantega-Righi"
+        },
+        {
+          "id": "node/276877431",
+          "lat": 43.70189,
+          "lon": 7.260911,
+          "street": "Rue Gounod"
+        },
+        {
+          "id": "node/4580280159",
+          "lat": 43.702355,
+          "lon": 7.265971,
+          "street": "Avenue Georges Clemenceau"
+        },
+        {
+          "id": "node/2920631663",
+          "lat": 43.718477,
+          "lon": 7.264835,
+          "street": "Avenue de Brancolar"
+        },
+        {
+          "id": "node/7912783567",
+          "lat": 43.715046,
+          "lon": 7.271761,
+          "street": "Rue du Professeur Maurice Sureau"
+        },
+        {
+          "id": "node/7973849313",
+          "lat": 43.705311,
+          "lon": 7.271875,
+          "street": "Montée du Grand Palais"
+        },
+        {
+          "id": "node/2537057402",
+          "lat": 43.713889,
+          "lon": 7.250575,
+          "street": "Route de Pessicart"
+        },
+        {
+          "id": "node/11993663255",
+          "lat": 43.712339,
+          "lon": 7.274311,
+          "street": "Parc Athénée"
+        },
+        {
+          "id": "node/11550175229",
+          "lat": 43.704843,
+          "lon": 7.272428,
+          "street": "Avenue Desambrois"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:24.929Z"
     },
     "recycling": {
       "count": 466,
@@ -1873,10 +2114,16 @@
     "luggage-storage": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:13:58.905Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:27.100Z"
     },
     "libraries": {
-      "count": 52,
+      "count": 53,
       "pois": [
         {
           "id": "way/144378668",
@@ -2010,7 +2257,13 @@
           "address": "Avenue Jean Mermoz 18"
         }
       ],
-      "updatedAt": "2026-09-03T17:13:59.314Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:03:29.449Z"
     },
     "outdoor-gyms": {
       "count": 12,
@@ -2033,7 +2286,13 @@
           "lon": 7.178263
         }
       ],
-      "updatedAt": "2026-09-03T17:14:00.700Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:30.583Z"
     },
     "shelters": {
       "count": 16,
@@ -2051,17 +2310,35 @@
           "lon": 7.258245
         }
       ],
-      "updatedAt": "2026-09-03T17:14:01.366Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:32.424Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:14:01.828Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:33.676Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:14:02.242Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:34.704Z"
     },
     "post-offices": {
       "count": 42,
@@ -2308,17 +2585,35 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:14:02.789Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 28,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:35.914Z"
     },
     "showers": {
       "count": 61,
       "pois": [],
-      "updatedAt": "2026-09-03T17:14:03.788Z"
+      "stats": {
+        "free": 55,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:37.142Z"
     },
     "fireplaces": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:14:06.900Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:39.584Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2488,9 +2783,198 @@
       "updatedAt": "2026-08-18T03:58:24.688Z"
     },
     "bicycle-repair": {
-      "count": 1,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:14:08.528Z"
+      "count": 34,
+      "pois": [
+        {
+          "id": "node/9223133087",
+          "lat": 43.708942,
+          "lon": 7.261527,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Allée Philippe Séguin"
+        },
+        {
+          "id": "node/10773682501",
+          "lat": 43.712944,
+          "lon": 7.259935,
+          "fee": "no",
+          "street": "Rue Molière"
+        },
+        {
+          "id": "node/10538891698",
+          "lat": 43.715621,
+          "lon": 7.262539,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Avenue Saint-Lambert"
+        },
+        {
+          "id": "node/13571908035",
+          "lat": 43.7168,
+          "lon": 7.256811,
+          "fee": "no",
+          "street": "Boulevard Auguste Raynaud"
+        },
+        {
+          "id": "node/13571908036",
+          "lat": 43.699475,
+          "lon": 7.256304,
+          "fee": "no",
+          "street": "Boulevard Gambetta"
+        },
+        {
+          "id": "node/10766101088",
+          "lat": 43.700899,
+          "lon": 7.271742,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue Pastorelli"
+        },
+        {
+          "id": "node/13860602263",
+          "lat": 43.696735,
+          "lon": 7.256037,
+          "street": "Rue Bottero"
+        },
+        {
+          "id": "node/10308543571",
+          "lat": 43.70285,
+          "lon": 7.279005,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Avenue Saint-Jean-Baptiste"
+        },
+        {
+          "id": "node/13611393654",
+          "lat": 43.707809,
+          "lon": 7.281658,
+          "openingHours": "24/7",
+          "fee": "yes",
+          "street": "Don Bosco - Fac St J d'Angely"
+        },
+        {
+          "id": "node/9299996683",
+          "lat": 43.6948,
+          "lon": 7.264434,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Promenade des Anglais"
+        },
+        {
+          "id": "node/11840555708",
+          "lat": 43.709499,
+          "lon": 7.289695,
+          "fee": "no",
+          "street": "Avenue François Mitterrand"
+        },
+        {
+          "id": "node/12786137328",
+          "lat": 43.705938,
+          "lon": 7.290678,
+          "street": "Rue du Docteur Ciais"
+        },
+        {
+          "id": "node/10233208208",
+          "lat": 43.693246,
+          "lon": 7.281919,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Digue"
+        },
+        {
+          "id": "node/13020439557",
+          "lat": 43.697386,
+          "lon": 7.287372,
+          "street": "Boulevard Stalingrad"
+        },
+        {
+          "id": "node/9880548489",
+          "lat": 43.706876,
+          "lon": 7.292714,
+          "street": "Rue Laurent Giaume"
+        },
+        {
+          "id": "node/7966771317",
+          "lat": 43.699139,
+          "lon": 7.307881,
+          "street": "Quai de la Corderie"
+        },
+        {
+          "id": "node/13611393652",
+          "lat": 43.734378,
+          "lon": 7.302876,
+          "openingHours": "24/7",
+          "fee": "yes",
+          "street": "Boulevard Riba Roussa"
+        },
+        {
+          "id": "node/10274942471",
+          "lat": 43.677675,
+          "lon": 7.229456,
+          "fee": "no",
+          "street": "Allée Charles Martin Sauvagio"
+        },
+        {
+          "id": "node/13611393653",
+          "lat": 43.742757,
+          "lon": 7.315625,
+          "openingHours": "24/7",
+          "fee": "yes",
+          "street": "Boulevard François Suarez"
+        },
+        {
+          "id": "node/13572351397",
+          "lat": 43.6781,
+          "lon": 7.205264,
+          "fee": "no",
+          "street": "Avenue Simone Veil"
+        },
+        {
+          "id": "node/13611411327",
+          "lat": 43.666178,
+          "lon": 7.211528,
+          "fee": "no",
+          "street": "Promenade Général Édouard Corniglion-Molinier"
+        },
+        {
+          "id": "node/11462401636",
+          "lat": 43.682685,
+          "lon": 7.189311,
+          "street": "Chemin des Berges du Var"
+        },
+        {
+          "id": "node/13820540199",
+          "lat": 43.673767,
+          "lon": 7.191277,
+          "street": "Avenue du Onze Novembre"
+        },
+        {
+          "id": "node/11521623678",
+          "lat": 43.668368,
+          "lon": 7.192246,
+          "street": "Avenue du Général de Gaulle"
+        },
+        {
+          "id": "node/10841426179",
+          "lat": 43.660116,
+          "lon": 7.19504,
+          "fee": "no",
+          "street": "Avenue Eugène Donadeï"
+        },
+        {
+          "id": "node/12786137326",
+          "lat": 43.722489,
+          "lon": 7.357004,
+          "street": "Avenue de la Liberté"
+        }
+      ],
+      "stats": {
+        "free": 19,
+        "paid": 4,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:03:43.727Z"
     }
   }
 }

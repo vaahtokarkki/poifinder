@@ -1,6 +1,6 @@
 {
   "city": "frankfurt",
-  "generatedAt": "2026-09-11T10:29:11.810Z",
+  "generatedAt": "2026-09-13T08:34:53.827Z",
   "categories": {
     "toilets": {
       "count": 163,
@@ -465,7 +465,7 @@
       "updatedAt": "2026-09-11T10:29:06.409Z"
     },
     "playgrounds": {
-      "count": 681,
+      "count": 682,
       "pois": [
         {
           "id": "node/11777224845",
@@ -673,10 +673,16 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:40.211Z"
+      "stats": {
+        "free": 2,
+        "paid": 2,
+        "stepFree": 59,
+        "partlyStepFree": 27
+      },
+      "updatedAt": "2026-09-13T08:34:06.096Z"
     },
     "parking": {
-      "count": 2371,
+      "count": 2369,
       "pois": [
         {
           "id": "way/1111870971",
@@ -805,7 +811,7 @@
           "lat": 50.10719,
           "lon": 8.673379,
           "address": "Willy-Brandt-Platz 5",
-          "openingHours": "Einfahrt: Mo-So 6-24; Ausfahrt 24h",
+          "openingHours": "Mo-Su 06:00-24:00 \"Einfahrt\"; 24/7 \"Ausfahrt\"",
           "fee": "yes"
         },
         {
@@ -944,7 +950,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:41.731Z"
+      "stats": {
+        "free": 1471,
+        "paid": 212,
+        "stepFree": 215,
+        "partlyStepFree": 31
+      },
+      "updatedAt": "2026-09-13T08:34:14.735Z"
     },
     "charging-stations": {
       "count": 335,
@@ -1038,7 +1050,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:42.244Z"
+      "stats": {
+        "free": 13,
+        "paid": 42,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:34:16.191Z"
     },
     "gas-stations": {
       "count": 76,
@@ -1282,7 +1300,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:42.824Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 36,
+        "partlyStepFree": 13
+      },
+      "updatedAt": "2026-09-13T08:34:17.878Z"
     },
     "ice-cream": {
       "count": 91,
@@ -1513,7 +1537,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:43.470Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 14,
+        "partlyStepFree": 15
+      },
+      "updatedAt": "2026-09-13T08:34:19.452Z"
     },
     "dog-parks": {
       "count": 18,
@@ -1559,7 +1589,13 @@
           "lon": 8.581065
         }
       ],
-      "updatedAt": "2026-09-03T16:55:44.001Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:34:20.641Z"
     },
     "picnic-spots": {
       "count": 183,
@@ -1584,7 +1620,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:45.769Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:34:23.648Z"
     },
     "viewpoints": {
       "count": 42,
@@ -1682,12 +1724,24 @@
           "lon": 8.715026
         }
       ],
-      "updatedAt": "2026-09-03T16:55:46.491Z"
+      "stats": {
+        "free": 2,
+        "paid": 2,
+        "stepFree": 5,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:34:27.000Z"
     },
     "beaches": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T16:55:46.993Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:34:28.053Z"
     },
     "atms": {
       "count": 230,
@@ -2124,7 +2178,13 @@
           "street": "Fellnerstraße"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:49.562Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 23,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:34:34.995Z"
     },
     "recycling": {
       "count": 1050,
@@ -2340,7 +2400,13 @@
     "luggage-storage": {
       "count": 11,
       "pois": [],
-      "updatedAt": "2026-09-03T16:55:55.927Z"
+      "stats": {
+        "free": 0,
+        "paid": 4,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:34:36.356Z"
     },
     "libraries": {
       "count": 113,
@@ -2577,7 +2643,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:56.510Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 29,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:34:37.837Z"
     },
     "outdoor-gyms": {
       "count": 43,
@@ -2646,23 +2718,29 @@
           "address": "Frankfurter Landstraße 107"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:58.705Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:34:38.940Z"
     },
     "shelters": {
       "count": 28,
       "pois": [
+        {
+          "id": "node/1794677959",
+          "name": "Pilz",
+          "lat": 50.143516,
+          "lon": 8.675758
+        },
         {
           "id": "node/14031957093",
           "lat": 50.14159,
           "lon": 8.692802,
           "wheelchair": "no",
           "street": "Gießener Straße"
-        },
-        {
-          "id": "node/1794677959",
-          "name": "Pilz",
-          "lat": 50.143516,
-          "lon": 8.675758
         },
         {
           "id": "node/1637977368",
@@ -2725,7 +2803,13 @@
           "street": "Turnerschneise"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:00.728Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:34:43.012Z"
     },
     "rest-areas": {
       "count": 8,
@@ -2757,12 +2841,24 @@
           "lon": 8.764184
         }
       ],
-      "updatedAt": "2026-09-03T16:56:01.213Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:34:44.163Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:56:01.750Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:34:45.328Z"
     },
     "post-offices": {
       "count": 67,
@@ -2996,12 +3092,24 @@
           "openingHours": "Mo-Fr 08:00-12:00, 14:00-21:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:02.263Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:34:46.363Z"
     },
     "showers": {
       "count": 27,
       "pois": [],
-      "updatedAt": "2026-09-03T16:56:02.723Z"
+      "stats": {
+        "free": 2,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:34:47.360Z"
     },
     "fireplaces": {
       "count": 11,
@@ -3037,7 +3145,13 @@
           "lon": 8.665974
         }
       ],
-      "updatedAt": "2026-09-03T16:56:03.970Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:34:49.680Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3227,6 +3341,12 @@
       "count": 45,
       "pois": [
         {
+          "id": "node/10727389473",
+          "name": "zo.bike",
+          "lat": 50.110556,
+          "lon": 8.673202
+        },
+        {
           "id": "node/9026890852",
           "lat": 50.113398,
           "lon": 8.678087,
@@ -3241,12 +3361,6 @@
           "openingHours": "24/7",
           "fee": "no",
           "street": "Kurt-Schumacher-Straße"
-        },
-        {
-          "id": "node/10727389473",
-          "name": "zo.bike",
-          "lat": 50.110556,
-          "lon": 8.673202
         },
         {
           "id": "node/12345681683",
@@ -3445,7 +3559,13 @@
           "street": "Frankfurter Straße"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:06.132Z"
+      "stats": {
+        "free": 28,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:34:53.725Z"
     }
   }
 }

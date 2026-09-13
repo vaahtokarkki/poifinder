@@ -1,6 +1,6 @@
 {
   "city": "vancouver",
-  "generatedAt": "2026-09-11T10:33:19.473Z",
+  "generatedAt": "2026-09-13T09:39:43.802Z",
   "categories": {
     "toilets": {
       "count": 256,
@@ -517,7 +517,13 @@
           "lon": -123.088819
         }
       ],
-      "updatedAt": "2026-09-03T17:34:02.554Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:05.358Z"
     },
     "parking": {
       "count": 2089,
@@ -741,7 +747,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:03.791Z"
+      "stats": {
+        "free": 401,
+        "paid": 369,
+        "stepFree": 7,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:09.054Z"
     },
     "charging-stations": {
       "count": 37,
@@ -808,7 +820,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:04.348Z"
+      "stats": {
+        "free": 1,
+        "paid": 15,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:10.291Z"
     },
     "gas-stations": {
       "count": 75,
@@ -884,7 +902,13 @@
           "lon": -123.023221
         }
       ],
-      "updatedAt": "2026-09-03T17:34:04.850Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:12.173Z"
     },
     "ice-cream": {
       "count": 53,
@@ -1131,7 +1155,13 @@
           "openingHours": "Mo-Su 12:00-21:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:05.414Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:39:13.904Z"
     },
     "dog-parks": {
       "count": 35,
@@ -1205,7 +1235,13 @@
           "lon": -123.220549
         }
       ],
-      "updatedAt": "2026-09-03T17:34:05.867Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:39:15.621Z"
     },
     "picnic-spots": {
       "count": 571,
@@ -1217,7 +1253,13 @@
           "lon": -123.198943
         }
       ],
-      "updatedAt": "2026-09-03T17:34:07.361Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:18.766Z"
     },
     "viewpoints": {
       "count": 50,
@@ -1269,7 +1311,13 @@
           "lon": -123.117029
         }
       ],
-      "updatedAt": "2026-09-03T17:34:08.003Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:20.281Z"
     },
     "beaches": {
       "count": 88,
@@ -1353,7 +1401,13 @@
           "lon": -123.190619
         }
       ],
-      "updatedAt": "2026-09-03T17:34:08.512Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:21.755Z"
     },
     "atms": {
       "count": 184,
@@ -1601,6 +1655,12 @@
       "count": 496,
       "pois": [
         {
+          "id": "node/7434558069",
+          "name": "Canada Post",
+          "lat": 49.250366,
+          "lon": -123.153282
+        },
+        {
           "id": "node/3673755669",
           "lat": 49.28364,
           "lon": -123.122035,
@@ -1777,15 +1837,15 @@
           "lon": -123.130003,
           "wheelchair": "yes",
           "street": "Drake Street"
-        },
-        {
-          "id": "node/7434558069",
-          "name": "Canada Post",
-          "lat": 49.250366,
-          "lon": -123.153282
         }
       ],
-      "updatedAt": "2026-09-03T17:34:11.220Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:39:24.591Z"
     },
     "recycling": {
       "count": 54,
@@ -2002,7 +2062,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:34:13.947Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:25.823Z"
     },
     "libraries": {
       "count": 286,
@@ -2218,7 +2284,13 @@
           "lon": -123.081428
         }
       ],
-      "updatedAt": "2026-09-03T17:34:14.649Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:27.604Z"
     },
     "outdoor-gyms": {
       "count": 33,
@@ -2260,7 +2332,13 @@
           "lon": -123.112127
         }
       ],
-      "updatedAt": "2026-09-03T17:34:16.387Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:29.118Z"
     },
     "shelters": {
       "count": 16,
@@ -2278,17 +2356,35 @@
           "lon": -123.132875
         }
       ],
-      "updatedAt": "2026-09-03T17:34:17.897Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:33.349Z"
     },
     "rest-areas": {
       "count": 23,
       "pois": [],
-      "updatedAt": "2026-09-03T17:34:18.590Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:34.761Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:34:19.007Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:35.924Z"
     },
     "post-offices": {
       "count": 71,
@@ -2524,17 +2620,35 @@
           "openingHours": "Mo-Fr 09:00-21:00; Su 12:00-17:00; Sa 10:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:19.446Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 14,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:37.043Z"
     },
     "showers": {
       "count": 16,
       "pois": [],
-      "updatedAt": "2026-09-03T17:34:19.835Z"
+      "stats": {
+        "free": 9,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:38.404Z"
     },
     "fireplaces": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:34:21.086Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:40.413Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2905,7 +3019,13 @@
           "street": "Dollarton Highway"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:22.952Z"
+      "stats": {
+        "free": 6,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:43.700Z"
     }
   }
 }

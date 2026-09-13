@@ -1,6 +1,6 @@
 {
   "city": "mexico-city",
-  "generatedAt": "2026-09-11T10:33:21.734Z",
+  "generatedAt": "2026-09-13T09:43:14.428Z",
   "categories": {
     "toilets": {
       "count": 213,
@@ -604,7 +604,13 @@
           "lon": -99.102549
         }
       ],
-      "updatedAt": "2026-09-03T17:36:01.782Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:42:32.330Z"
     },
     "parking": {
       "count": 1796,
@@ -812,7 +818,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:03.031Z"
+      "stats": {
+        "free": 90,
+        "paid": 329,
+        "stepFree": 6,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:42:37.834Z"
     },
     "charging-stations": {
       "count": 7,
@@ -824,7 +836,13 @@
           "lon": -99.040932
         }
       ],
-      "updatedAt": "2026-09-03T17:36:03.660Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:42:39.293Z"
     },
     "gas-stations": {
       "count": 436,
@@ -1036,7 +1054,13 @@
           "address": "Avenida Parque de Chapultepec"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:05.002Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:42:41.074Z"
     },
     "ice-cream": {
       "count": 220,
@@ -1241,7 +1265,13 @@
           "openingHours": "Mo-Su 12:00-19:30"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:05.908Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T09:42:42.911Z"
     },
     "dog-parks": {
       "count": 27,
@@ -1285,7 +1315,13 @@
           "lon": -99.174421
         }
       ],
-      "updatedAt": "2026-09-03T17:36:06.412Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:42:43.835Z"
     },
     "picnic-spots": {
       "count": 226,
@@ -1331,7 +1367,13 @@
           "lon": -99.16991
         }
       ],
-      "updatedAt": "2026-09-03T17:36:07.666Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:42:46.396Z"
     },
     "viewpoints": {
       "count": 36,
@@ -1409,7 +1451,13 @@
           "lon": -99.219715
         }
       ],
-      "updatedAt": "2026-09-03T17:36:08.305Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:42:48.025Z"
     },
     "beaches": {
       "count": 4,
@@ -1439,7 +1487,13 @@
           "lon": -99.199158
         }
       ],
-      "updatedAt": "2026-09-03T17:36:08.888Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:42:49.844Z"
     },
     "atms": {
       "count": 371,
@@ -1651,6 +1705,34 @@
       "count": 9,
       "pois": [
         {
+          "id": "node/12657962301",
+          "name": "Buzón de Correos de México",
+          "lat": 19.384424,
+          "lon": -99.145643,
+          "address": "Calle Cumbres de Maltrata"
+        },
+        {
+          "id": "node/12228268002",
+          "name": "Estafeta",
+          "lat": 19.358964,
+          "lon": -99.121795
+        },
+        {
+          "id": "node/8103885100",
+          "name": "FedEx",
+          "lat": 19.344511,
+          "lon": -99.16109,
+          "address": "Avenida Miguel Ángel de Quevedo 742"
+        },
+        {
+          "id": "node/2341536694",
+          "name": "Correos de México San Angel",
+          "lat": 19.343994,
+          "lon": -99.190923,
+          "address": "Calle Doctor Gálvez 16",
+          "wheelchair": "no"
+        },
+        {
           "id": "node/13051505585",
           "lat": 19.434915,
           "lon": -99.157641,
@@ -1669,47 +1751,25 @@
           "street": "Calzada México - Tacuba"
         },
         {
-          "id": "node/12657962301",
-          "name": "Buzón de Correos de México",
-          "lat": 19.384424,
-          "lon": -99.145643,
-          "address": "Calle Cumbres de Maltrata"
-        },
-        {
-          "id": "node/12228268002",
-          "name": "Estafeta",
-          "lat": 19.358964,
-          "lon": -99.121795
-        },
-        {
           "id": "node/4838599321",
           "lat": 19.355607,
           "lon": -99.163504,
           "street": "Calle Berlín"
         },
         {
-          "id": "node/8103885100",
-          "name": "FedEx",
-          "lat": 19.344511,
-          "lon": -99.16109,
-          "address": "Avenida Miguel Ángel de Quevedo 742"
-        },
-        {
           "id": "node/5001911273",
           "lat": 19.345977,
           "lon": -99.176182,
           "street": "Avenida Miguel Ángel de Quevedo"
-        },
-        {
-          "id": "node/2341536694",
-          "name": "Correos de México San Angel",
-          "lat": 19.343994,
-          "lon": -99.190923,
-          "address": "Calle Doctor Gálvez 16",
-          "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:10.983Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:42:52.185Z"
     },
     "recycling": {
       "count": 39,
@@ -1895,7 +1955,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:36:13.570Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:42:53.456Z"
     },
     "libraries": {
       "count": 119,
@@ -2099,7 +2165,13 @@
           "openingHours": "Mo-Fr 10:00-20:00; Sa-Su 10:00-15:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:14.318Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:42:55.097Z"
     },
     "outdoor-gyms": {
       "count": 206,
@@ -2196,11 +2268,35 @@
           "lon": -99.062649
         }
       ],
-      "updatedAt": "2026-09-03T17:36:16.147Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:42:56.718Z"
     },
     "shelters": {
       "count": 191,
       "pois": [
+        {
+          "id": "way/1312945102",
+          "name": "Rincón Brujo",
+          "lat": 19.453777,
+          "lon": -99.169338
+        },
+        {
+          "id": "way/1360287760",
+          "name": "Palapas",
+          "lat": 19.49319,
+          "lon": -99.127075
+        },
+        {
+          "id": "node/12054604316",
+          "name": "Isla Solar Sustentable",
+          "lat": 19.504502,
+          "lon": -99.14782
+        },
         {
           "id": "node/12540859879",
           "lat": 19.413554,
@@ -2220,31 +2316,19 @@
           "street": "Foro Lindbergh"
         },
         {
-          "id": "way/1312945102",
-          "name": "Rincón Brujo",
-          "lat": 19.453777,
-          "lon": -99.169338
-        },
-        {
           "id": "node/12543005088",
           "lat": 19.411003,
           "lon": -99.16942,
           "street": "Calle Michoacán"
-        },
-        {
-          "id": "way/1360287760",
-          "name": "Palapas",
-          "lat": 19.49319,
-          "lon": -99.127075
-        },
-        {
-          "id": "node/12054604316",
-          "name": "Isla Solar Sustentable",
-          "lat": 19.504502,
-          "lon": -99.14782
         }
       ],
-      "updatedAt": "2026-09-03T17:36:17.989Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:01.884Z"
     },
     "rest-areas": {
       "count": 6,
@@ -2257,12 +2341,24 @@
           "openingHours": "Mo-Su 08:00-20:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:18.629Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:03.713Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:36:19.015Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:05.133Z"
     },
     "post-offices": {
       "count": 90,
@@ -2462,17 +2558,35 @@
           "lon": -99.15118
         }
       ],
-      "updatedAt": "2026-09-03T17:36:19.520Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:43:07.214Z"
     },
     "showers": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:36:19.968Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:08.202Z"
     },
     "fireplaces": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:36:21.316Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:09.922Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2633,6 +2747,54 @@
       "count": 20,
       "pois": [
         {
+          "id": "node/3416332616",
+          "name": "Taller de bicis",
+          "lat": 19.414349,
+          "lon": -99.169146
+        },
+        {
+          "id": "node/13892789658",
+          "name": "La Baika",
+          "lat": 19.419373,
+          "lon": -99.088962
+        },
+        {
+          "id": "node/3967544229",
+          "name": "Reparaciones Martinez",
+          "lat": 19.37691,
+          "lon": -99.19913
+        },
+        {
+          "id": "node/3967545490",
+          "name": "El Tapanco",
+          "lat": 19.375504,
+          "lon": -99.199168
+        },
+        {
+          "id": "node/12823619697",
+          "name": "BiciService",
+          "lat": 19.351204,
+          "lon": -99.159048
+        },
+        {
+          "id": "node/3967544258",
+          "name": "ska-p Bike",
+          "lat": 19.373171,
+          "lon": -99.199549
+        },
+        {
+          "id": "node/11845223789",
+          "name": "El Moreno",
+          "lat": 19.521369,
+          "lon": -99.156433
+        },
+        {
+          "id": "node/12103172933",
+          "name": "La Bikla",
+          "lat": 19.526226,
+          "lon": -99.143869
+        },
+        {
           "id": "node/3573212013",
           "lat": 19.427033,
           "lon": -99.137331,
@@ -2660,18 +2822,6 @@
           "street": "Avenida Monterrey"
         },
         {
-          "id": "node/3416332616",
-          "name": "Taller de bicis",
-          "lat": 19.414349,
-          "lon": -99.169146
-        },
-        {
-          "id": "node/13892789658",
-          "name": "La Baika",
-          "lat": 19.419373,
-          "lon": -99.088962
-        },
-        {
           "id": "node/4374225700",
           "lat": 19.423471,
           "lon": -99.18061,
@@ -2692,52 +2842,16 @@
           "street": "Calle Sur 20"
         },
         {
-          "id": "node/3967544229",
-          "name": "Reparaciones Martinez",
-          "lat": 19.37691,
-          "lon": -99.19913
-        },
-        {
           "id": "node/3967552732",
           "lat": 19.373114,
           "lon": -99.196588,
           "street": "Avenida del Rosal"
         },
         {
-          "id": "node/3967545490",
-          "name": "El Tapanco",
-          "lat": 19.375504,
-          "lon": -99.199168
-        },
-        {
-          "id": "node/12823619697",
-          "name": "BiciService",
-          "lat": 19.351204,
-          "lon": -99.159048
-        },
-        {
-          "id": "node/3967544258",
-          "name": "ska-p Bike",
-          "lat": 19.373171,
-          "lon": -99.199549
-        },
-        {
           "id": "node/11666263258",
           "lat": 19.520277,
           "lon": -99.129382,
           "street": "Calle San Juan"
-        },
-        {
-          "id": "node/11845223789",
-          "name": "El Moreno",
-          "lat": 19.521369,
-          "lon": -99.156433
-        },
-        {
-          "id": "node/12103172933",
-          "name": "La Bikla",
-          "lat": 19.526226,
-          "lon": -99.143869
         },
         {
           "id": "node/10938606805",
@@ -2760,7 +2874,13 @@
           "street": "Tercera Cerrada Chamilpa"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:23.002Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:14.326Z"
     }
   }
 }

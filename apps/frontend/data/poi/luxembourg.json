@@ -1,6 +1,6 @@
 {
   "city": "luxembourg",
-  "generatedAt": "2026-09-11T10:30:03.307Z",
+  "generatedAt": "2026-09-13T08:47:45.328Z",
   "categories": {
     "toilets": {
       "count": 82,
@@ -547,7 +547,13 @@
           "lon": 6.17751
         }
       ],
-      "updatedAt": "2026-09-03T17:03:59.248Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 15,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:46:58.145Z"
     },
     "parking": {
       "count": 2198,
@@ -769,7 +775,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:04:00.360Z"
+      "stats": {
+        "free": 256,
+        "paid": 626,
+        "stepFree": 51,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:47:01.373Z"
     },
     "charging-stations": {
       "count": 134,
@@ -983,7 +995,13 @@
           "lon": 6.134196
         }
       ],
-      "updatedAt": "2026-09-03T17:04:00.822Z"
+      "stats": {
+        "free": 2,
+        "paid": 13,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:02.344Z"
     },
     "gas-stations": {
       "count": 43,
@@ -1101,7 +1119,13 @@
           "lon": 6.118872
         }
       ],
-      "updatedAt": "2026-09-03T17:04:01.343Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:03.955Z"
     },
     "ice-cream": {
       "count": 11,
@@ -1171,7 +1195,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:04:01.778Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:05.190Z"
     },
     "dog-parks": {
       "count": 12,
@@ -1185,12 +1215,24 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:04:02.173Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:47:06.905Z"
     },
     "picnic-spots": {
       "count": 302,
       "pois": [],
-      "updatedAt": "2026-09-03T17:04:04.565Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:09.580Z"
     },
     "viewpoints": {
       "count": 78,
@@ -1290,12 +1332,24 @@
           "lon": 6.234584
         }
       ],
-      "updatedAt": "2026-09-03T17:04:05.201Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:10.833Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:04:05.645Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:12.164Z"
     },
     "atms": {
       "count": 111,
@@ -1416,6 +1470,19 @@
           "name": "Puits rouge",
           "lat": 49.611928,
           "lon": 6.13153
+        },
+        {
+          "id": "node/5745583326",
+          "name": "Post Packup",
+          "lat": 49.601301,
+          "lon": 6.063237,
+          "openingHours": "Mo-Su 00:00-23:59"
+        },
+        {
+          "id": "node/965438954",
+          "name": "Gemeng",
+          "lat": 49.567908,
+          "lon": 6.063664
         },
         {
           "id": "node/960584509",
@@ -1578,21 +1645,15 @@
           "lat": 49.621964,
           "lon": 6.12694,
           "street": "Rue des Cerisiers"
-        },
-        {
-          "id": "node/4324784661",
-          "lat": 49.601163,
-          "lon": 6.137807,
-          "street": "Rue Pierre Hentges"
-        },
-        {
-          "id": "node/4750972247",
-          "lat": 49.600568,
-          "lon": 6.128576,
-          "street": "Rue de Strasbourg"
         }
       ],
-      "updatedAt": "2026-09-03T17:04:08.246Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:24.304Z"
     },
     "recycling": {
       "count": 87,
@@ -1791,7 +1852,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:04:10.971Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:25.852Z"
     },
     "libraries": {
       "count": 28,
@@ -1891,7 +1958,13 @@
           "lon": 6.227419
         }
       ],
-      "updatedAt": "2026-09-03T17:04:11.421Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:47:27.464Z"
     },
     "outdoor-gyms": {
       "count": 75,
@@ -2157,12 +2230,24 @@
           "lon": 6.158991
         }
       ],
-      "updatedAt": "2026-09-03T17:04:12.920Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:29.327Z"
     },
     "shelters": {
       "count": 11,
       "pois": [],
-      "updatedAt": "2026-09-03T17:04:14.475Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:33.383Z"
     },
     "rest-areas": {
       "count": 7,
@@ -2180,12 +2265,24 @@
           "lon": 6.117235
         }
       ],
-      "updatedAt": "2026-09-03T17:04:14.985Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:35.405Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:04:15.427Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:36.722Z"
     },
     "post-offices": {
       "count": 14,
@@ -2275,7 +2372,13 @@
           "lon": 6.078784
         }
       ],
-      "updatedAt": "2026-09-03T17:04:15.901Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:47:37.942Z"
     },
     "showers": {
       "count": 2,
@@ -2290,12 +2393,24 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:04:16.245Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:38.860Z"
     },
     "fireplaces": {
       "count": 8,
       "pois": [],
-      "updatedAt": "2026-09-03T17:04:17.294Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:47:41.887Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2485,6 +2600,28 @@
       "count": 20,
       "pois": [
         {
+          "id": "node/3197587156",
+          "name": "mPump",
+          "lat": 49.598277,
+          "lon": 6.132943,
+          "fee": "no"
+        },
+        {
+          "id": "node/6996160833",
+          "name": "Station vélo Hesperange, réparation - lavage",
+          "lat": 49.572637,
+          "lon": 6.157029,
+          "fee": "no"
+        },
+        {
+          "id": "node/8863882219",
+          "name": "Station vélo Mamer, réparation - lavage",
+          "lat": 49.623589,
+          "lon": 6.024649,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
           "id": "node/2837956000",
           "lat": 49.610902,
           "lon": 6.131706,
@@ -2512,13 +2649,6 @@
           "lon": 6.15092,
           "openingHours": "Mo-Su 07:00-23:00",
           "street": "Rue de Pulvermühl"
-        },
-        {
-          "id": "node/3197587156",
-          "name": "mPump",
-          "lat": 49.598277,
-          "lon": 6.132943,
-          "fee": "no"
         },
         {
           "id": "node/11665166736",
@@ -2549,25 +2679,10 @@
           "street": "Route de Thionville"
         },
         {
-          "id": "node/6996160833",
-          "name": "Station vélo Hesperange, réparation - lavage",
-          "lat": 49.572637,
-          "lon": 6.157029,
-          "fee": "no"
-        },
-        {
           "id": "node/13142706139",
           "lat": 49.659526,
           "lon": 6.130158,
           "street": "Piste cyclable de l'Alzette"
-        },
-        {
-          "id": "node/8863882219",
-          "name": "Station vélo Mamer, réparation - lavage",
-          "lat": 49.623589,
-          "lon": 6.024649,
-          "openingHours": "24/7",
-          "fee": "no"
         },
         {
           "id": "node/8349336554",
@@ -2576,7 +2691,13 @@
           "street": "Chareli"
         }
       ],
-      "updatedAt": "2026-09-03T17:04:19.446Z"
+      "stats": {
+        "free": 13,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:47:45.226Z"
     }
   }
 }

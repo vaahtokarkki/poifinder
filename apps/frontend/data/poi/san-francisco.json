@@ -1,6 +1,6 @@
 {
   "city": "san-francisco",
-  "generatedAt": "2026-09-11T10:32:08.291Z",
+  "generatedAt": "2026-09-13T09:23:46.285Z",
   "categories": {
     "toilets": {
       "count": 257,
@@ -641,7 +641,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:37.870Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 48,
+        "partlyStepFree": 19
+      },
+      "updatedAt": "2026-09-13T09:22:54.764Z"
     },
     "parking": {
       "count": 1072,
@@ -869,7 +875,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:39.136Z"
+      "stats": {
+        "free": 130,
+        "paid": 163,
+        "stepFree": 21,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:23:02.388Z"
     },
     "charging-stations": {
       "count": 38,
@@ -941,7 +953,13 @@
           "lon": -122.453181
         }
       ],
-      "updatedAt": "2026-09-03T17:24:39.649Z"
+      "stats": {
+        "free": 7,
+        "paid": 14,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:04.284Z"
     },
     "gas-stations": {
       "count": 80,
@@ -1129,7 +1147,13 @@
           "lon": -122.472037
         }
       ],
-      "updatedAt": "2026-09-03T17:24:40.150Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:06.529Z"
     },
     "ice-cream": {
       "count": 57,
@@ -1372,7 +1396,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:40.648Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 23,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:07.937Z"
     },
     "dog-parks": {
       "count": 36,
@@ -1493,7 +1523,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:41.094Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:23:09.243Z"
     },
     "picnic-spots": {
       "count": 684,
@@ -1535,7 +1571,13 @@
           "lon": -122.505056
         }
       ],
-      "updatedAt": "2026-09-03T17:24:42.571Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:12.942Z"
     },
     "viewpoints": {
       "count": 128,
@@ -1733,7 +1775,13 @@
           "lon": -122.477806
         }
       ],
-      "updatedAt": "2026-09-03T17:24:43.068Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 3,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:23:14.833Z"
     },
     "beaches": {
       "count": 21,
@@ -1787,7 +1835,13 @@
           "lon": -122.506433
         }
       ],
-      "updatedAt": "2026-09-03T17:24:43.626Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:17.023Z"
     },
     "atms": {
       "count": 310,
@@ -2025,6 +2079,24 @@
       "count": 610,
       "pois": [
         {
+          "id": "node/10011997155",
+          "name": "USPS",
+          "lat": 37.7794,
+          "lon": -122.41664
+        },
+        {
+          "id": "node/13804125535",
+          "name": "Postal Box",
+          "lat": 37.756994,
+          "lon": -122.420759
+        },
+        {
+          "id": "node/6743297718",
+          "name": "McLaren Conference Center",
+          "lat": 37.775285,
+          "lon": -122.451343
+        },
+        {
           "id": "node/390186598",
           "lat": 37.774788,
           "lon": -122.419007,
@@ -2083,12 +2155,6 @@
           "lat": 37.779033,
           "lon": -122.421935,
           "street": "Fulton Street"
-        },
-        {
-          "id": "node/10011997155",
-          "name": "USPS",
-          "lat": 37.7794,
-          "lon": -122.41664
         },
         {
           "id": "node/10705572375",
@@ -2191,21 +2257,15 @@
           "lat": 37.782973,
           "lon": -122.419662,
           "street": "Eddy Street"
-        },
-        {
-          "id": "node/2723903186",
-          "lat": 37.768824,
-          "lon": -122.427089,
-          "street": "Market Street"
-        },
-        {
-          "id": "node/9966250324",
-          "lat": 37.770527,
-          "lon": -122.409709,
-          "street": "Bryant Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:46.258Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 19,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:23:22.505Z"
     },
     "recycling": {
       "count": 73,
@@ -2406,7 +2466,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:24:49.012Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:24.045Z"
     },
     "libraries": {
       "count": 131,
@@ -2639,7 +2705,13 @@
           "openingHours": "\"by appointment\", 13:00-16:30"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:49.609Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 31,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:23:25.742Z"
     },
     "outdoor-gyms": {
       "count": 44,
@@ -2791,12 +2863,24 @@
           "address": "Gilman Avenue 650"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:51.248Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:27.164Z"
     },
     "shelters": {
       "count": 13,
       "pois": [],
-      "updatedAt": "2026-09-03T17:24:52.995Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:32.881Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2810,12 +2894,24 @@
           "openingHours": "Mo-Fr 09:00-17:00; Sa 12:00-16:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:53.445Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:34.643Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:24:53.800Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:36.375Z"
     },
     "post-offices": {
       "count": 86,
@@ -3051,17 +3147,35 @@
           "lon": -122.395833
         }
       ],
-      "updatedAt": "2026-09-03T17:24:54.308Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 23,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:23:37.807Z"
     },
     "showers": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:24:54.666Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:38.943Z"
     },
     "fireplaces": {
       "count": 33,
       "pois": [],
-      "updatedAt": "2026-09-03T17:24:55.625Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:41.528Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3281,7 +3395,13 @@
           "street": "Funston Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:57.111Z"
+      "stats": {
+        "free": 1,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:46.184Z"
     }
   }
 }

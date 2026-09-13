@@ -1,6 +1,6 @@
 {
   "city": "porto",
-  "generatedAt": "2026-09-11T10:31:48.081Z",
+  "generatedAt": "2026-09-13T09:14:36.989Z",
   "categories": {
     "toilets": {
       "count": 334,
@@ -652,7 +652,13 @@
           "lon": -8.704761
         }
       ],
-      "updatedAt": "2026-09-03T17:19:31.649Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:13:54.064Z"
     },
     "parking": {
       "count": 3893,
@@ -874,7 +880,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:32.943Z"
+      "stats": {
+        "free": 565,
+        "paid": 477,
+        "stepFree": 60,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:57.496Z"
     },
     "charging-stations": {
       "count": 339,
@@ -1125,7 +1137,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:33.584Z"
+      "stats": {
+        "free": 8,
+        "paid": 284,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:00.419Z"
     },
     "gas-stations": {
       "count": 129,
@@ -1248,7 +1266,13 @@
           "lon": -8.683404
         }
       ],
-      "updatedAt": "2026-09-03T17:19:34.195Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:14:02.908Z"
     },
     "ice-cream": {
       "count": 58,
@@ -1446,7 +1470,13 @@
           "openingHours": "Mo-Su 10:00-23:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:34.789Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:04.896Z"
     },
     "dog-parks": {
       "count": 10,
@@ -1477,7 +1507,13 @@
           "lon": -8.57136
         }
       ],
-      "updatedAt": "2026-09-03T17:19:35.179Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:06.406Z"
     },
     "picnic-spots": {
       "count": 165,
@@ -1489,7 +1525,13 @@
           "lon": -8.587911
         }
       ],
-      "updatedAt": "2026-09-03T17:19:36.609Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:09.541Z"
     },
     "viewpoints": {
       "count": 111,
@@ -1686,7 +1728,13 @@
           "lon": -8.569965
         }
       ],
-      "updatedAt": "2026-09-03T17:19:37.244Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:11.182Z"
     },
     "beaches": {
       "count": 41,
@@ -1872,7 +1920,13 @@
           "lon": -8.710485
         }
       ],
-      "updatedAt": "2026-09-03T17:19:37.741Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:12.463Z"
     },
     "atms": {
       "count": 321,
@@ -2045,12 +2099,6 @@
       "count": 64,
       "pois": [
         {
-          "id": "node/11443699439",
-          "lat": 41.155583,
-          "lon": -8.62753,
-          "street": "Largo de Ferreira Lapa"
-        },
-        {
           "id": "node/2677636768",
           "name": "Correio Normal",
           "lat": 41.154442,
@@ -2061,6 +2109,25 @@
           "name": "Correio Azul",
           "lat": 41.15443,
           "lon": -8.630669
+        },
+        {
+          "id": "node/10047536095",
+          "name": "Correio do Protugal",
+          "lat": 41.143859,
+          "lon": -8.613727,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11397044068",
+          "name": "Azul",
+          "lat": 41.12625,
+          "lon": -8.605911
+        },
+        {
+          "id": "node/11443699439",
+          "lat": 41.155583,
+          "lon": -8.62753,
+          "street": "Largo de Ferreira Lapa"
         },
         {
           "id": "node/9028963353",
@@ -2155,13 +2222,6 @@
           "street": "Rua da Senhora do Porto"
         },
         {
-          "id": "node/10047536095",
-          "name": "Correio do Protugal",
-          "lat": 41.143859,
-          "lon": -8.613727,
-          "wheelchair": "yes"
-        },
-        {
           "id": "node/2973886573",
           "lat": 41.153325,
           "lon": -8.60484,
@@ -2221,15 +2281,15 @@
           "lat": 41.169928,
           "lon": -8.660379,
           "street": "Rua de Angola"
-        },
-        {
-          "id": "node/10130691592",
-          "lat": 41.157461,
-          "lon": -8.593922,
-          "street": "Avenida de Fernão de Magalhães"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:40.009Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:16.538Z"
     },
     "recycling": {
       "count": 2099,
@@ -2450,7 +2510,13 @@
           "lon": -8.614696
         }
       ],
-      "updatedAt": "2026-09-03T17:19:43.088Z"
+      "stats": {
+        "free": 1,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:18.102Z"
     },
     "libraries": {
       "count": 29,
@@ -2619,7 +2685,13 @@
           "openingHours": "Mo-Fr 09:00-19:00; Sa 09:30-12:30,13:30-17:30"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:43.682Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:19.468Z"
     },
     "outdoor-gyms": {
       "count": 50,
@@ -2686,12 +2758,24 @@
           "lon": -8.657523
         }
       ],
-      "updatedAt": "2026-09-03T17:19:45.620Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:21.302Z"
     },
     "shelters": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:19:46.467Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:23.626Z"
     },
     "rest-areas": {
       "count": 35,
@@ -2721,12 +2805,24 @@
           "lon": -8.56838
         }
       ],
-      "updatedAt": "2026-09-03T17:19:46.901Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:25.260Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:19:47.252Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:26.916Z"
     },
     "post-offices": {
       "count": 48,
@@ -2912,7 +3008,13 @@
           "openingHours": "Mo-Fr 09:00-12:30,14:00-18:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:47.706Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:14:28.921Z"
     },
     "showers": {
       "count": 18,
@@ -2927,12 +3029,24 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:48.260Z"
+      "stats": {
+        "free": 8,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:29.881Z"
     },
     "fireplaces": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T17:19:49.285Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:32.224Z"
     },
     "air-pumps": {
       "count": 1,
@@ -3056,19 +3170,25 @@
       "count": 15,
       "pois": [
         {
-          "id": "node/8643627271",
-          "lat": 41.151833,
-          "lon": -8.634218,
-          "fee": "no",
-          "street": "Rua do Gólgota"
-        },
-        {
           "id": "node/10949364872",
           "name": "Cicloficina Porto",
           "lat": 41.155068,
           "lon": -8.609458,
           "address": "Rua de João das Regras 151",
           "openingHours": "Mo-Tu,Th-Su off; We 17:00-18:00"
+        },
+        {
+          "id": "node/12444244086",
+          "name": "Bike It Up",
+          "lat": 41.1752,
+          "lon": -8.565625
+        },
+        {
+          "id": "node/8643627271",
+          "lat": 41.151833,
+          "lon": -8.634218,
+          "fee": "no",
+          "street": "Rua do Gólgota"
         },
         {
           "id": "node/11301570910",
@@ -3122,12 +3242,6 @@
           "street": "Rua de Brito Capelo"
         },
         {
-          "id": "node/12444244086",
-          "name": "Bike It Up",
-          "lat": 41.1752,
-          "lon": -8.565625
-        },
-        {
           "id": "node/12137034420",
           "lat": 41.11362,
           "lon": -8.589757,
@@ -3152,7 +3266,13 @@
           "street": "Rua Veloso Salgado"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:50.980Z"
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:14:36.888Z"
     }
   }
 }

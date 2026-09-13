@@ -1,6 +1,6 @@
 {
   "city": "brisbane",
-  "generatedAt": "2026-09-11T10:33:29.938Z",
+  "generatedAt": "2026-09-13T09:45:55.545Z",
   "categories": {
     "toilets": {
       "count": 305,
@@ -627,7 +627,13 @@
           "lon": 153.089869
         }
       ],
-      "updatedAt": "2026-09-03T17:37:45.609Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:06.096Z"
     },
     "parking": {
       "count": 1708,
@@ -869,7 +875,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:46.795Z"
+      "stats": {
+        "free": 640,
+        "paid": 89,
+        "stepFree": 70,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:45:11.132Z"
     },
     "charging-stations": {
       "count": 44,
@@ -1021,7 +1033,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:47.350Z"
+      "stats": {
+        "free": 2,
+        "paid": 4,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:12.964Z"
     },
     "gas-stations": {
       "count": 88,
@@ -1239,7 +1257,13 @@
           "lon": 152.959622
         }
       ],
-      "updatedAt": "2026-09-03T17:37:47.990Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 14,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:15.042Z"
     },
     "ice-cream": {
       "count": 44,
@@ -1446,7 +1470,13 @@
           "lon": 153.080549
         }
       ],
-      "updatedAt": "2026-09-03T17:37:48.579Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:45:17.247Z"
     },
     "dog-parks": {
       "count": 61,
@@ -1587,7 +1617,13 @@
           "lon": 152.982931
         }
       ],
-      "updatedAt": "2026-09-03T17:37:49.025Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 18,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:45:19.256Z"
     },
     "picnic-spots": {
       "count": 501,
@@ -1617,7 +1653,13 @@
           "lon": 152.945675
         }
       ],
-      "updatedAt": "2026-09-03T17:37:50.804Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:23.004Z"
     },
     "viewpoints": {
       "count": 54,
@@ -1715,7 +1757,13 @@
           "lon": 153.043003
         }
       ],
-      "updatedAt": "2026-09-03T17:37:51.525Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:24.224Z"
     },
     "beaches": {
       "count": 7,
@@ -1727,7 +1775,13 @@
           "lon": 153.024593
         }
       ],
-      "updatedAt": "2026-09-03T17:37:52.100Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:25.284Z"
     },
     "atms": {
       "count": 79,
@@ -1866,6 +1920,18 @@
     "post-boxes": {
       "count": 298,
       "pois": [
+        {
+          "id": "node/7902080163",
+          "name": "Express Post",
+          "lat": -27.474699,
+          "lon": 153.002375
+        },
+        {
+          "id": "node/317704241",
+          "name": "545",
+          "lat": -27.532826,
+          "lon": 153.025592
+        },
         {
           "id": "node/531571349",
           "lat": -27.4697,
@@ -2033,21 +2099,15 @@
           "lat": -27.466553,
           "lon": 153.008243,
           "street": "Black Street"
-        },
-        {
-          "id": "node/304154488",
-          "lat": -27.46904,
-          "lon": 153.00767,
-          "street": "Cribb Street"
-        },
-        {
-          "id": "node/6649838300",
-          "lat": -27.485215,
-          "lon": 153.027807,
-          "street": "Raymond Terrace"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:54.709Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:29.003Z"
     },
     "recycling": {
       "count": 394,
@@ -2252,7 +2312,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:37:57.197Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:30.303Z"
     },
     "libraries": {
       "count": 98,
@@ -2490,7 +2556,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:57.765Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 21,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:45:31.664Z"
     },
     "outdoor-gyms": {
       "count": 93,
@@ -2521,7 +2593,13 @@
           "address": "Vivian Street 55"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:59.865Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:33.301Z"
     },
     "shelters": {
       "count": 234,
@@ -2537,6 +2615,30 @@
           "name": "Brisbane Air Raid Shelter",
           "lat": -27.4811,
           "lon": 153.036667
+        },
+        {
+          "id": "node/7138301188",
+          "name": "Woolloongabba Air Raid Shelter",
+          "lat": -27.493949,
+          "lon": 153.042956
+        },
+        {
+          "id": "node/5319579020",
+          "name": "Hefferan Park Air Raid Shelter",
+          "lat": -27.500394,
+          "lon": 153.02924
+        },
+        {
+          "id": "node/5319646793",
+          "name": "Stones Corner Air Raid Shelter",
+          "lat": -27.498187,
+          "lon": 153.043657
+        },
+        {
+          "id": "node/11091443954",
+          "lat": -27.416362,
+          "lon": 153.021592,
+          "context": "Grange Forest Park Dog Off-Leash Area"
         },
         {
           "id": "node/7874045924",
@@ -2569,18 +2671,6 @@
           "street": "T.J. Doyle Memorial Park Drive"
         },
         {
-          "id": "node/7138301188",
-          "name": "Woolloongabba Air Raid Shelter",
-          "lat": -27.493949,
-          "lon": 153.042956
-        },
-        {
-          "id": "node/5319579020",
-          "name": "Hefferan Park Air Raid Shelter",
-          "lat": -27.500394,
-          "lon": 153.02924
-        },
-        {
           "id": "node/5258758565",
           "lat": -27.489597,
           "lon": 153.051815,
@@ -2597,12 +2687,6 @@
           "lat": -27.49877,
           "lon": 153.04191,
           "street": "Junction Street"
-        },
-        {
-          "id": "node/5319646793",
-          "name": "Stones Corner Air Raid Shelter",
-          "lat": -27.498187,
-          "lon": 153.043657
         },
         {
           "id": "node/316736357",
@@ -2640,12 +2724,6 @@
           "lat": -27.521178,
           "lon": 153.022708,
           "street": "Yeronga-Moorooka Bikeway"
-        },
-        {
-          "id": "node/11091443954",
-          "lat": -27.416362,
-          "lon": 153.021592,
-          "context": "Grange Forest Park Dog Off-Leash Area"
         },
         {
           "id": "node/13588707137",
@@ -2690,17 +2768,35 @@
           "street": "Snell Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:02.517Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:45:42.008Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:38:03.041Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:43.983Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:38:03.424Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:45.163Z"
     },
     "post-offices": {
       "count": 43,
@@ -2926,12 +3022,24 @@
           "lon": 152.980956
         }
       ],
-      "updatedAt": "2026-09-03T17:38:03.950Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:46.141Z"
     },
     "showers": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T17:38:04.424Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:46.904Z"
     },
     "fireplaces": {
       "count": 196,
@@ -2949,7 +3057,13 @@
           "lon": 153.01495
         }
       ],
-      "updatedAt": "2026-09-03T17:38:05.671Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:48.842Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3121,6 +3235,14 @@
       "count": 32,
       "pois": [
         {
+          "id": "node/4691591262",
+          "name": "Community Bike Repair Station",
+          "lat": -27.480431,
+          "lon": 153.024708,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
           "id": "node/1426686960",
           "lat": -27.474815,
           "lon": 153.021192,
@@ -3128,14 +3250,6 @@
           "openingHours": "24/7",
           "fee": "no",
           "street": "Clem Jones Promenade"
-        },
-        {
-          "id": "node/4691591262",
-          "name": "Community Bike Repair Station",
-          "lat": -27.480431,
-          "lon": 153.024708,
-          "openingHours": "24/7",
-          "fee": "no"
         },
         {
           "id": "node/7270874663",
@@ -3280,7 +3394,13 @@
           "street": "Samford Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:08.480Z"
+      "stats": {
+        "free": 13,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:55.444Z"
     }
   }
 }

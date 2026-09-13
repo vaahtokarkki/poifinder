@@ -1,6 +1,6 @@
 {
   "city": "athens",
-  "generatedAt": "2026-09-11T10:28:55.158Z",
+  "generatedAt": "2026-09-13T08:31:27.365Z",
   "categories": {
     "toilets": {
       "count": 111,
@@ -471,7 +471,13 @@
           "lon": 23.775165
         }
       ],
-      "updatedAt": "2026-09-03T16:52:29.709Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 6,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:31:07.397Z"
     },
     "parking": {
       "count": 918,
@@ -694,7 +700,13 @@
           "lon": 23.708266
         }
       ],
-      "updatedAt": "2026-09-03T16:52:30.987Z"
+      "stats": {
+        "free": 109,
+        "paid": 194,
+        "stepFree": 34,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:31:08.991Z"
     },
     "charging-stations": {
       "count": 442,
@@ -950,7 +962,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:31.776Z"
+      "stats": {
+        "free": 41,
+        "paid": 393,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:09.938Z"
     },
     "gas-stations": {
       "count": 526,
@@ -1132,7 +1150,13 @@
           "lon": 23.646643
         }
       ],
-      "updatedAt": "2026-09-03T16:52:32.417Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 14,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:31:10.848Z"
     },
     "ice-cream": {
       "count": 90,
@@ -1348,7 +1372,13 @@
           "lon": 23.730672
         }
       ],
-      "updatedAt": "2026-09-03T16:52:32.930Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 9
+      },
+      "updatedAt": "2026-09-13T08:31:11.704Z"
     },
     "dog-parks": {
       "count": 27,
@@ -1401,7 +1431,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:33.446Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:31:12.268Z"
     },
     "picnic-spots": {
       "count": 158,
@@ -1419,7 +1455,13 @@
           "lon": 23.693371
         }
       ],
-      "updatedAt": "2026-09-03T16:52:34.848Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:13.925Z"
     },
     "viewpoints": {
       "count": 59,
@@ -1514,7 +1556,13 @@
           "lon": 23.797876
         }
       ],
-      "updatedAt": "2026-09-03T16:52:35.581Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:31:14.743Z"
     },
     "beaches": {
       "count": 7,
@@ -1544,7 +1592,13 @@
           "lon": 23.69829
         }
       ],
-      "updatedAt": "2026-09-03T16:52:36.073Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:15.405Z"
     },
     "atms": {
       "count": 506,
@@ -1782,6 +1836,24 @@
       "count": 165,
       "pois": [
         {
+          "id": "node/12139640042",
+          "name": "Ελτα",
+          "lat": 37.97867,
+          "lon": 23.729953
+        },
+        {
+          "id": "node/7370227791",
+          "name": "Briefkasten (Helenic Post)",
+          "lat": 37.976812,
+          "lon": 23.710277
+        },
+        {
+          "id": "node/10982617304",
+          "name": "Ελληνικά Ταχυδρομεία",
+          "lat": 37.9803,
+          "lon": 23.761486
+        },
+        {
           "id": "node/13204740784",
           "lat": 37.983095,
           "lon": 23.729263,
@@ -1841,12 +1913,6 @@
           "lat": 37.981752,
           "lon": 23.733778,
           "street": "Ιπποκράτους"
-        },
-        {
-          "id": "node/12139640042",
-          "name": "Ελτα",
-          "lat": 37.97867,
-          "lon": 23.729953
         },
         {
           "id": "node/13506142428",
@@ -1951,21 +2017,15 @@
           "lat": 37.997116,
           "lon": 23.724685,
           "street": "Αλκαμένους"
-        },
-        {
-          "id": "node/13418318436",
-          "lat": 37.995457,
-          "lon": 23.718826,
-          "street": "Αγίας Σοφίας"
-        },
-        {
-          "id": "node/13797888059",
-          "lat": 37.970384,
-          "lon": 23.731753,
-          "street": "Βασιλίσσης Αμαλίας"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:38.709Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:17.250Z"
     },
     "recycling": {
       "count": 1063,
@@ -2182,7 +2242,13 @@
           "lon": 23.723609
         }
       ],
-      "updatedAt": "2026-09-03T16:52:41.512Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:17.871Z"
     },
     "libraries": {
       "count": 61,
@@ -2409,7 +2475,13 @@
           "openingHours": "Tu,Th,Sa 09:00-14:00; We,Fr 14:00-20:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:42.083Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:31:18.586Z"
     },
     "outdoor-gyms": {
       "count": 58,
@@ -2458,23 +2530,17 @@
           "lon": 23.672536
         }
       ],
-      "updatedAt": "2026-09-03T16:52:43.948Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:19.303Z"
     },
     "shelters": {
       "count": 13,
       "pois": [
-        {
-          "id": "node/5521445787",
-          "lat": 37.94441,
-          "lon": 23.70461,
-          "street": "Κουντουριώτου"
-        },
-        {
-          "id": "node/13371868094",
-          "lat": 37.95487,
-          "lon": 23.679509,
-          "street": "Θεσσαλονίκης"
-        },
         {
           "id": "node/4808595981",
           "name": "κιόσκι",
@@ -2492,9 +2558,27 @@
           "name": "ΕΟΣ Ηλιούπολης",
           "lat": 37.937703,
           "lon": 23.777835
+        },
+        {
+          "id": "node/5521445787",
+          "lat": 37.94441,
+          "lon": 23.70461,
+          "street": "Κουντουριώτου"
+        },
+        {
+          "id": "node/13371868094",
+          "lat": 37.95487,
+          "lon": 23.679509,
+          "street": "Θεσσαλονίκης"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:45.778Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:21.461Z"
     },
     "rest-areas": {
       "count": 5,
@@ -2518,12 +2602,24 @@
           "lon": 23.742624
         }
       ],
-      "updatedAt": "2026-09-03T16:52:46.268Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:22.241Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:52:46.628Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:22.721Z"
     },
     "post-offices": {
       "count": 123,
@@ -2740,12 +2836,24 @@
           "openingHours": "Mo-Fr 09:00-14:45"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:47.145Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:31:23.458Z"
     },
     "showers": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T16:52:47.530Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:24.017Z"
     },
     "fireplaces": {
       "count": 4,
@@ -2758,7 +2866,13 @@
           "address": "Θηβών 238"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:48.474Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:25.383Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2966,16 +3080,16 @@
       "count": 9,
       "pois": [
         {
-          "id": "node/10749288853",
-          "lat": 37.971985,
-          "lon": 23.756028,
-          "street": "Ευφρονίου"
-        },
-        {
           "id": "node/6155539350",
           "name": "Bikers House",
           "lat": 38.013717,
           "lon": 23.719596
+        },
+        {
+          "id": "node/10749288853",
+          "lat": 37.971985,
+          "lon": 23.756028,
+          "street": "Ευφρονίου"
         },
         {
           "id": "node/13027193239",
@@ -3010,7 +3124,13 @@
           "street": "Καποδιστρίου"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:50.063Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:27.263Z"
     }
   }
 }

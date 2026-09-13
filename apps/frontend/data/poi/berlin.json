@@ -1,6 +1,6 @@
 {
   "city": "berlin",
-  "generatedAt": "2026-09-11T10:29:04.189Z",
+  "generatedAt": "2026-09-13T08:32:06.226Z",
   "categories": {
     "toilets": {
       "count": 979,
@@ -480,7 +480,7 @@
       "updatedAt": "2026-09-11T10:28:54.325Z"
     },
     "playgrounds": {
-      "count": 3373,
+      "count": 3375,
       "pois": [
         {
           "id": "way/1054177698",
@@ -689,10 +689,16 @@
           "lon": 13.398063
         }
       ],
-      "updatedAt": "2026-09-03T16:52:59.843Z"
+      "stats": {
+        "free": 3,
+        "paid": 1,
+        "stepFree": 355,
+        "partlyStepFree": 184
+      },
+      "updatedAt": "2026-09-13T08:31:30.159Z"
     },
     "parking": {
-      "count": 29107,
+      "count": 29105,
       "pois": [
         {
           "id": "way/37434692",
@@ -850,6 +856,14 @@
           "fee": "no"
         },
         {
+          "id": "node/321347086",
+          "name": "Forum Landsberger Allee",
+          "lat": 52.529258,
+          "lon": 13.456293,
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
           "id": "way/1388655169",
           "name": "Qwello Chargig Station",
           "lat": 52.554327,
@@ -910,19 +924,18 @@
           "lat": 52.48368,
           "lon": 13.37767,
           "fee": "no"
-        },
-        {
-          "id": "way/26709558",
-          "name": "Bauhaus",
-          "lat": 52.503615,
-          "lon": 13.343862,
-          "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:04.272Z"
+      "stats": {
+        "free": 17530,
+        "paid": 6834,
+        "stepFree": 590,
+        "partlyStepFree": 93
+      },
+      "updatedAt": "2026-09-13T08:31:35.068Z"
     },
     "charging-stations": {
-      "count": 1403,
+      "count": 1404,
       "pois": [
         {
           "id": "node/1272843208",
@@ -1079,6 +1092,13 @@
           "fee": "yes"
         },
         {
+          "id": "node/14143438868",
+          "name": "EnBW Ladestation",
+          "lat": 52.480362,
+          "lon": 13.384582,
+          "openingHours": "24/7"
+        },
+        {
           "id": "node/7335715723",
           "name": "Allego",
           "lat": 52.561821,
@@ -1136,15 +1156,15 @@
           "lat": 52.481701,
           "lon": 13.356707,
           "fee": "yes"
-        },
-        {
-          "id": "node/9749380820",
-          "name": "has-to-be",
-          "lat": 52.478549,
-          "lon": 13.363789
         }
       ],
-      "updatedAt": "2026-09-03T16:53:05.337Z"
+      "stats": {
+        "free": 31,
+        "paid": 380,
+        "stepFree": 12,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:31:36.483Z"
     },
     "gas-stations": {
       "count": 212,
@@ -1181,6 +1201,24 @@
           "lat": 52.530777,
           "lon": 13.441158,
           "address": "Margarete-Sommer-Straße 2",
+          "openingHours": "24/7",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "way/255182361",
+          "name": "TotalEnergies Chausseestraße",
+          "lat": 52.537348,
+          "lon": 13.375547,
+          "address": "Chausseestraße 61",
+          "openingHours": "24/7",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "way/379688485",
+          "name": "TotalEnergies Tempelhofer Ufer",
+          "lat": 52.500476,
+          "lon": 13.376666,
+          "address": "Tempelhofer Ufer 33-35",
           "openingHours": "24/7",
           "wheelchair": "yes"
         },
@@ -1375,29 +1413,18 @@
           "lon": 13.370642,
           "address": "Greinerstraße 10",
           "openingHours": "Mo-Fr 07:00-16:00; Sa 09:00-12:00"
-        },
-        {
-          "id": "node/175706216",
-          "name": "sun",
-          "lat": 52.598712,
-          "lon": 13.331957,
-          "address": "Oranienburger Straße 181",
-          "openingHours": "24/7",
-          "wheelchair": "limited"
-        },
-        {
-          "id": "node/9544555544",
-          "name": "1. FC Union Zapfstelle",
-          "lat": 52.45378,
-          "lon": 13.513034,
-          "address": "Michael-Brückner-Straße 26-31",
-          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:06.573Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 113,
+        "partlyStepFree": 26
+      },
+      "updatedAt": "2026-09-13T08:31:37.919Z"
     },
     "ice-cream": {
-      "count": 352,
+      "count": 353,
       "pois": [
         {
           "id": "node/5726198088",
@@ -1652,7 +1679,13 @@
           "openingHours": "Mo-Su 13:00-18:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:07.671Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 88,
+        "partlyStepFree": 40
+      },
+      "updatedAt": "2026-09-13T08:31:39.597Z"
     },
     "dog-parks": {
       "count": 52,
@@ -1857,10 +1890,16 @@
           "lon": 13.240928
         }
       ],
-      "updatedAt": "2026-09-03T16:53:08.569Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 22,
+        "partlyStepFree": 10
+      },
+      "updatedAt": "2026-09-13T08:31:40.598Z"
     },
     "picnic-spots": {
-      "count": 601,
+      "count": 607,
       "pois": [
         {
           "id": "node/4868547737",
@@ -1905,7 +1944,13 @@
           "lon": 13.428314
         }
       ],
-      "updatedAt": "2026-09-03T16:53:10.848Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:31:43.844Z"
     },
     "viewpoints": {
       "count": 153,
@@ -2124,7 +2169,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:12.069Z"
+      "stats": {
+        "free": 0,
+        "paid": 5,
+        "stepFree": 25,
+        "partlyStepFree": 13
+      },
+      "updatedAt": "2026-09-13T08:31:45.264Z"
     },
     "beaches": {
       "count": 34,
@@ -2200,7 +2251,13 @@
           "lon": 13.256154
         }
       ],
-      "updatedAt": "2026-09-03T16:53:12.905Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:46.512Z"
     },
     "atms": {
       "count": 1201,
@@ -2454,6 +2511,45 @@
       "count": 1763,
       "pois": [
         {
+          "id": "node/308593857",
+          "name": "Anton-Wilhelm-Amo-Str. 50, 10117 Berlin",
+          "lat": 52.512207,
+          "lon": 13.390132
+        },
+        {
+          "id": "node/308817072",
+          "name": "Briefkasten",
+          "lat": 52.55081,
+          "lon": 13.409873,
+          "address": "Schivelbeiner Straße 39"
+        },
+        {
+          "id": "node/7834692986",
+          "name": "PIN",
+          "lat": 52.526489,
+          "lon": 13.345454,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/2784118962",
+          "name": "Pin AG",
+          "lat": 52.471611,
+          "lon": 13.365655
+        },
+        {
+          "id": "node/316534138",
+          "name": "Kurfürstendamm 142, 10709 Berlin",
+          "lat": 52.498084,
+          "lon": 13.297621
+        },
+        {
+          "id": "node/12536150619",
+          "name": "Briefkasten Deutsche Post",
+          "lat": 52.455799,
+          "lon": 13.315311,
+          "openingHours": "Mo-Fr 15:45-15:45; Sa 12:30-12:30"
+        },
+        {
           "id": "node/618984847",
           "lat": 52.521789,
           "lon": 13.407873,
@@ -2605,45 +2701,15 @@
           "lat": 52.529932,
           "lon": 13.403234,
           "street": "Torstraße"
-        },
-        {
-          "id": "node/369600823",
-          "lat": 52.519913,
-          "lon": 13.388474,
-          "street": "Friedrichstraße"
-        },
-        {
-          "id": "node/3378605031",
-          "lat": 52.513512,
-          "lon": 13.417765,
-          "street": "Brückenstraße"
-        },
-        {
-          "id": "node/2131611353",
-          "lat": 52.511226,
-          "lon": 13.414569,
-          "street": "Köpenicker Straße"
-        },
-        {
-          "id": "node/8987986417",
-          "lat": 52.520359,
-          "lon": 13.422479,
-          "street": "Karl-Marx-Allee"
-        },
-        {
-          "id": "node/8710421861",
-          "lat": 52.528279,
-          "lon": 13.416559,
-          "street": "Prenzlauer Allee"
-        },
-        {
-          "id": "node/332272201",
-          "lat": 52.521911,
-          "lon": 13.386759,
-          "street": "Schiffbauerdamm"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:16.852Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 71,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T08:31:49.158Z"
     },
     "recycling": {
       "count": 2151,
@@ -2893,7 +2959,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:21.243Z"
+      "stats": {
+        "free": 1,
+        "paid": 12,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:31:50.069Z"
     },
     "libraries": {
       "count": 226,
@@ -3148,7 +3220,13 @@
           "lon": 13.376662
         }
       ],
-      "updatedAt": "2026-09-03T16:53:22.732Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 68,
+        "partlyStepFree": 21
+      },
+      "updatedAt": "2026-09-13T08:31:51.648Z"
     },
     "outdoor-gyms": {
       "count": 379,
@@ -3382,23 +3460,17 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:25.601Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:52.746Z"
     },
     "shelters": {
       "count": 71,
       "pois": [
-        {
-          "id": "node/4726833643",
-          "lat": 52.548706,
-          "lon": 13.399985,
-          "street": "Schwedter Straße"
-        },
-        {
-          "id": "node/12874960392",
-          "lat": 52.525952,
-          "lon": 13.347494,
-          "street": "Turmstraße"
-        },
         {
           "id": "node/8071355380",
           "name": "Raucherbereich",
@@ -3418,40 +3490,16 @@
           "lon": 13.344993
         },
         {
-          "id": "node/582188083",
-          "lat": 52.497396,
-          "lon": 13.472735,
-          "street": "Flaschenkai"
-        },
-        {
-          "id": "node/12731427741",
-          "lat": 52.527366,
-          "lon": 13.482962,
-          "street": "Herzbergstraße"
-        },
-        {
           "id": "node/1759668812",
           "name": "Schrainer House",
           "lat": 52.518114,
           "lon": 13.515705
         },
         {
-          "id": "node/12866615376",
-          "lat": 52.463688,
-          "lon": 13.298201,
-          "street": "Podbielskiallee"
-        },
-        {
           "id": "way/1013340212",
           "name": "Linden-Pavillion",
           "lat": 52.46846,
           "lon": 13.52209
-        },
-        {
-          "id": "node/3488735211",
-          "lat": 52.452552,
-          "lon": 13.507111,
-          "street": "Breiter Weg"
         },
         {
           "id": "way/1353882794",
@@ -3465,9 +3513,51 @@
           "lat": 52.602357,
           "lon": 13.494505,
           "wheelchair": "limited"
+        },
+        {
+          "id": "node/4726833643",
+          "lat": 52.548706,
+          "lon": 13.399985,
+          "street": "Schwedter Straße"
+        },
+        {
+          "id": "node/12874960392",
+          "lat": 52.525952,
+          "lon": 13.347494,
+          "street": "Turmstraße"
+        },
+        {
+          "id": "node/582188083",
+          "lat": 52.497396,
+          "lon": 13.472735,
+          "street": "Flaschenkai"
+        },
+        {
+          "id": "node/12731427741",
+          "lat": 52.527366,
+          "lon": 13.482962,
+          "street": "Herzbergstraße"
+        },
+        {
+          "id": "node/12866615376",
+          "lat": 52.463688,
+          "lon": 13.298201,
+          "street": "Podbielskiallee"
+        },
+        {
+          "id": "node/3488735211",
+          "lat": 52.452552,
+          "lon": 13.507111,
+          "street": "Breiter Weg"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:28.766Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:31:56.616Z"
     },
     "rest-areas": {
       "count": 1,
@@ -3480,12 +3570,24 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:29.573Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:57.633Z"
     },
     "dump-stations": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T16:53:30.150Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:58.227Z"
     },
     "post-offices": {
       "count": 161,
@@ -3724,7 +3826,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:30.821Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 40,
+        "partlyStepFree": 8
+      },
+      "updatedAt": "2026-09-13T08:31:59.286Z"
     },
     "showers": {
       "count": 114,
@@ -3738,7 +3846,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:31.483Z"
+      "stats": {
+        "free": 36,
+        "paid": 4,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:32:00.166Z"
     },
     "fireplaces": {
       "count": 36,
@@ -3762,7 +3876,13 @@
           "lon": 13.476851
         }
       ],
-      "updatedAt": "2026-09-03T16:53:32.824Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:32:02.216Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3935,6 +4055,73 @@
       "count": 89,
       "pois": [
         {
+          "id": "node/12103901310",
+          "name": "Bike tools stand",
+          "lat": 52.527033,
+          "lon": 13.362455
+        },
+        {
+          "id": "node/1307139596",
+          "name": "Regenbogenfabrik Fahrrad-Selbsthilfe-Werkstatt",
+          "lat": 52.495977,
+          "lon": 13.426058,
+          "address": "Lausitzer Straße 21a",
+          "openingHours": "Tu-Fr 13:00-19:00; Sa 11:00-16:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/2491758393",
+          "name": "Plattenladen",
+          "lat": 52.480028,
+          "lon": 13.434036,
+          "address": "Neckarstraße 19",
+          "openingHours": "Mo,We 18:00-21:00; Th[1] 18:00-21:00 \"betreut nur von FLINTA*\""
+        },
+        {
+          "id": "node/9460830304",
+          "name": "Fahrradladen Sonnenalle",
+          "lat": 52.479055,
+          "lon": 13.445863,
+          "openingHours": "Tu, We, Fr 10:00-18:30"
+        },
+        {
+          "id": "node/6176650520",
+          "name": "SJB e.V. Selbsthilfewerkstatt",
+          "lat": 52.568427,
+          "lon": 13.379226
+        },
+        {
+          "id": "node/12388080701",
+          "name": "ADAC Radservice-Station",
+          "lat": 52.490949,
+          "lon": 13.33061,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/9633251516",
+          "name": "Steg Bikes",
+          "lat": 52.575959,
+          "lon": 13.349799,
+          "address": "Alt-Reinickendorf 29",
+          "openingHours": "Mo-Th 08:00-15:30; Fr 08:00-14:30"
+        },
+        {
+          "id": "node/12118355694",
+          "name": "Fahrradhof Schmargendorf",
+          "lat": 52.473309,
+          "lon": 13.296244,
+          "address": "Breite Straße 46",
+          "openingHours": "Mo-Fr 14:00-18:00; Sa 10:00-16:00"
+        },
+        {
+          "id": "node/8689771266",
+          "name": "bikerepair",
+          "lat": 52.588932,
+          "lon": 13.324784,
+          "fee": "no"
+        },
+        {
           "id": "node/12087960037",
           "lat": 52.517336,
           "lon": 13.399421,
@@ -4045,21 +4232,6 @@
           "street": "Historische Ladestraße"
         },
         {
-          "id": "node/12103901310",
-          "name": "Bike tools stand",
-          "lat": 52.527033,
-          "lon": 13.362455
-        },
-        {
-          "id": "node/1307139596",
-          "name": "Regenbogenfabrik Fahrrad-Selbsthilfe-Werkstatt",
-          "lat": 52.495977,
-          "lon": 13.426058,
-          "address": "Lausitzer Straße 21a",
-          "openingHours": "Tu-Fr 13:00-19:00; Sa 11:00-16:00",
-          "wheelchair": "no"
-        },
-        {
           "id": "node/6793655352",
           "lat": 52.504088,
           "lon": 13.444076,
@@ -4110,52 +4282,15 @@
           "lon": 13.371188,
           "openingHours": "24/7",
           "street": "Yorckbrücke 5"
-        },
-        {
-          "id": "node/13267357267",
-          "lat": 52.553973,
-          "lon": 13.392164,
-          "street": "Jülicher Straße"
-        },
-        {
-          "id": "node/13536879576",
-          "lat": 52.510764,
-          "lon": 13.462435,
-          "street": "Grünberger Straße"
-        },
-        {
-          "id": "node/12015524111",
-          "lat": 52.497052,
-          "lon": 13.455694,
-          "street": "Fanny-Zobel-Straße"
-        },
-        {
-          "id": "node/12156121101",
-          "lat": 52.488809,
-          "lon": 13.362644,
-          "street": "Crellestraße"
-        },
-        {
-          "id": "node/5696776138",
-          "lat": 52.50252,
-          "lon": 13.344313,
-          "fee": "no",
-          "street": "Bayreuther Straße"
-        },
-        {
-          "id": "node/11879404586",
-          "lat": 52.532693,
-          "lon": 13.339262,
-          "street": "Bremer Straße"
-        },
-        {
-          "id": "node/5793902273",
-          "lat": 52.496121,
-          "lon": 13.346488,
-          "street": "Martin-Luther-Straße"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:36.994Z"
+      "stats": {
+        "free": 44,
+        "paid": 4,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:32:06.125Z"
     }
   }
 }

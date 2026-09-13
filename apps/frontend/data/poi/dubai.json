@@ -1,6 +1,6 @@
 {
   "city": "dubai",
-  "generatedAt": "2026-09-11T10:34:43.510Z",
+  "generatedAt": "2026-09-13T10:03:44.832Z",
   "categories": {
     "toilets": {
       "count": 144,
@@ -351,7 +351,13 @@
           "lon": 55.19061
         }
       ],
-      "updatedAt": "2026-09-03T17:48:05.348Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:06.843Z"
     },
     "parking": {
       "count": 1102,
@@ -554,7 +560,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:06.573Z"
+      "stats": {
+        "free": 93,
+        "paid": 198,
+        "stepFree": 2,
+        "partlyStepFree": 14
+      },
+      "updatedAt": "2026-09-13T10:03:09.987Z"
     },
     "charging-stations": {
       "count": 12,
@@ -597,7 +609,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:06.960Z"
+      "stats": {
+        "free": 3,
+        "paid": 5,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:12.023Z"
     },
     "gas-stations": {
       "count": 95,
@@ -694,7 +712,13 @@
           "lon": 55.351853
         }
       ],
-      "updatedAt": "2026-09-03T17:48:07.482Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T10:03:13.849Z"
     },
     "ice-cream": {
       "count": 48,
@@ -863,7 +887,13 @@
           "lon": 55.351708
         }
       ],
-      "updatedAt": "2026-09-03T17:48:08.061Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T10:03:15.821Z"
     },
     "dog-parks": {
       "count": 2,
@@ -882,12 +912,24 @@
           "lon": 55.27691
         }
       ],
-      "updatedAt": "2026-09-03T17:48:08.447Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:17.285Z"
     },
     "picnic-spots": {
       "count": 32,
       "pois": [],
-      "updatedAt": "2026-09-03T17:48:09.510Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:20.765Z"
     },
     "viewpoints": {
       "count": 28,
@@ -963,7 +1005,13 @@
           "lon": 55.293397
         }
       ],
-      "updatedAt": "2026-09-03T17:48:10.152Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T10:03:21.710Z"
     },
     "beaches": {
       "count": 59,
@@ -1050,7 +1098,13 @@
           "lon": 55.301504
         }
       ],
-      "updatedAt": "2026-09-03T17:48:10.663Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T10:03:23.043Z"
     },
     "atms": {
       "count": 180,
@@ -1267,6 +1321,12 @@
           "lon": 55.333871
         },
         {
+          "id": "node/5441184935",
+          "name": "seabreeze cargo",
+          "lat": 25.111773,
+          "lon": 55.227609
+        },
+        {
           "id": "node/13816857583",
           "lat": 25.259903,
           "lon": 55.326313,
@@ -1291,19 +1351,19 @@
           "street": "شارع أبو هيل"
         },
         {
-          "id": "node/5441184935",
-          "name": "seabreeze cargo",
-          "lat": 25.111773,
-          "lon": 55.227609
-        },
-        {
           "id": "node/3957479111",
           "lat": 25.294984,
           "lon": 55.330691,
           "street": "شارع الخليج"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:12.449Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:25.930Z"
     },
     "recycling": {
       "count": 11,
@@ -1356,7 +1416,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:48:14.450Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:27.162Z"
     },
     "libraries": {
       "count": 11,
@@ -1419,7 +1485,13 @@
           "lon": 55.350289
         }
       ],
-      "updatedAt": "2026-09-03T17:48:14.982Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:28.743Z"
     },
     "outdoor-gyms": {
       "count": 10,
@@ -1485,22 +1557,46 @@
           "lon": 55.233186
         }
       ],
-      "updatedAt": "2026-09-03T17:48:16.472Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:30.098Z"
     },
     "shelters": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:48:17.420Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:31.503Z"
     },
     "rest-areas": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-09-03T17:48:17.875Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:32.883Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:48:18.227Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:34.063Z"
     },
     "post-offices": {
       "count": 30,
@@ -1627,7 +1723,13 @@
           "lon": 55.347322
         }
       ],
-      "updatedAt": "2026-09-03T17:48:18.683Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:35.864Z"
     },
     "showers": {
       "count": 19,
@@ -1645,12 +1747,24 @@
           "lon": 55.362795
         }
       ],
-      "updatedAt": "2026-09-03T17:48:19.027Z"
+      "stats": {
+        "free": 2,
+        "paid": 6,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T10:03:38.043Z"
     },
     "fireplaces": {
       "count": 21,
       "pois": [],
-      "updatedAt": "2026-09-03T17:48:19.967Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:40.203Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1721,7 +1835,13 @@
           "street": "41c شارع"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:21.290Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:03:44.731Z"
     }
   }
 }

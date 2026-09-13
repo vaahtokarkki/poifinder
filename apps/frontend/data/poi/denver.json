@@ -1,6 +1,6 @@
 {
   "city": "denver",
-  "generatedAt": "2026-09-11T10:32:24.387Z",
+  "generatedAt": "2026-09-13T09:28:22.178Z",
   "categories": {
     "toilets": {
       "count": 540,
@@ -352,7 +352,13 @@
           "lon": -105.005358
         }
       ],
-      "updatedAt": "2026-09-03T17:27:38.686Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:27:32.554Z"
     },
     "parking": {
       "count": 3965,
@@ -565,7 +571,13 @@
           "address": "Emerson Street 901"
         }
       ],
-      "updatedAt": "2026-09-03T17:27:40.244Z"
+      "stats": {
+        "free": 133,
+        "paid": 144,
+        "stepFree": 12,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:27:39.659Z"
     },
     "charging-stations": {
       "count": 17,
@@ -628,7 +640,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:27:40.725Z"
+      "stats": {
+        "free": 0,
+        "paid": 10,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:27:41.126Z"
     },
     "gas-stations": {
       "count": 143,
@@ -835,7 +853,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:27:41.357Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:27:42.741Z"
     },
     "ice-cream": {
       "count": 60,
@@ -1054,7 +1078,13 @@
           "address": "North Oneida Street 2211"
         }
       ],
-      "updatedAt": "2026-09-03T17:27:41.981Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:27:45.092Z"
     },
     "dog-parks": {
       "count": 21,
@@ -1130,7 +1160,13 @@
           "lon": -104.897471
         }
       ],
-      "updatedAt": "2026-09-03T17:27:42.421Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:27:46.764Z"
     },
     "picnic-spots": {
       "count": 357,
@@ -1190,7 +1226,13 @@
           "lon": -105.001981
         }
       ],
-      "updatedAt": "2026-09-03T17:27:43.600Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:27:48.941Z"
     },
     "viewpoints": {
       "count": 8,
@@ -1220,12 +1262,24 @@
           "lon": -105.005597
         }
       ],
-      "updatedAt": "2026-09-03T17:27:44.327Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:27:50.371Z"
     },
     "beaches": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T17:27:44.822Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:27:51.636Z"
     },
     "atms": {
       "count": 154,
@@ -1462,6 +1516,19 @@
       "count": 64,
       "pois": [
         {
+          "id": "node/907142275",
+          "name": "USPS Mail Collection/Drop Box",
+          "lat": 39.719496,
+          "lon": -104.952096,
+          "address": "Milwaukee Street 222"
+        },
+        {
+          "id": "node/1442548435",
+          "name": "USPS",
+          "lat": 39.707441,
+          "lon": -104.968613
+        },
+        {
           "id": "node/5759405121",
           "lat": 39.735153,
           "lon": -104.990096,
@@ -1628,22 +1695,15 @@
           "lat": 39.755458,
           "lon": -105.02398,
           "street": "Eliot Street"
-        },
-        {
-          "id": "node/907142275",
-          "name": "USPS Mail Collection/Drop Box",
-          "lat": 39.719496,
-          "lon": -104.952096,
-          "address": "Milwaukee Street 222"
-        },
-        {
-          "id": "node/1442548435",
-          "name": "USPS",
-          "lat": 39.707441,
-          "lon": -104.968613
         }
       ],
-      "updatedAt": "2026-09-03T17:27:47.235Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:27:55.569Z"
     },
     "recycling": {
       "count": 19,
@@ -1746,7 +1806,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:27:49.448Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:27:57.152Z"
     },
     "libraries": {
       "count": 70,
@@ -1970,7 +2036,13 @@
           "lon": -105.068247
         }
       ],
-      "updatedAt": "2026-09-03T17:27:49.948Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:27:59.005Z"
     },
     "outdoor-gyms": {
       "count": 2,
@@ -1986,7 +2058,13 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:27:51.402Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:00.440Z"
     },
     "shelters": {
       "count": 38,
@@ -2016,17 +2094,35 @@
           "lon": -105.012749
         }
       ],
-      "updatedAt": "2026-09-03T17:27:53.045Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:07.611Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:27:53.487Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:08.813Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:27:53.847Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:10.245Z"
     },
     "post-offices": {
       "count": 25,
@@ -2141,7 +2237,13 @@
           "openingHours": "Mo-Fr 10:00-18:00; Sa 10:00-16:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:27:54.285Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:11.724Z"
     },
     "showers": {
       "count": 25,
@@ -2215,7 +2317,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:27:54.675Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:13.025Z"
     },
     "fireplaces": {
       "count": 9,
@@ -2238,7 +2346,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:27:55.818Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:15.192Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2381,18 +2495,25 @@
           "address": "Tremont Place 1432"
         },
         {
-          "id": "node/6648209066",
-          "lat": 39.730793,
-          "lon": -104.991588,
-          "openingHours": "24/7",
-          "street": "Cherry Creek Trail"
-        },
-        {
           "id": "node/3371306249",
           "name": "Fix-It Station",
           "lat": 39.742308,
           "lon": -105.004261,
           "openingHours": "24/7"
+        },
+        {
+          "id": "node/3524527842",
+          "name": "Maverick Suspension",
+          "lat": 39.732132,
+          "lon": -105.01347,
+          "address": "Vallejo Street 999"
+        },
+        {
+          "id": "node/6648209066",
+          "lat": 39.730793,
+          "lon": -104.991588,
+          "openingHours": "24/7",
+          "street": "Cherry Creek Trail"
         },
         {
           "id": "node/3371306248",
@@ -2414,13 +2535,6 @@
           "lon": -105.001286,
           "openingHours": "24/7",
           "street": "Wewatta Street"
-        },
-        {
-          "id": "node/3524527842",
-          "name": "Maverick Suspension",
-          "lat": 39.732132,
-          "lon": -105.01347,
-          "address": "Vallejo Street 999"
         },
         {
           "id": "node/13850145457",
@@ -2505,7 +2619,13 @@
           "street": "South Platte River Drive"
         }
       ],
-      "updatedAt": "2026-09-03T17:27:57.791Z"
+      "stats": {
+        "free": 5,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:22.078Z"
     }
   }
 }

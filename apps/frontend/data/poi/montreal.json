@@ -1,6 +1,6 @@
 {
   "city": "montreal",
-  "generatedAt": "2026-09-11T10:33:12.256Z",
+  "generatedAt": "2026-09-13T09:40:43.814Z",
   "categories": {
     "toilets": {
       "count": 187,
@@ -503,7 +503,13 @@
           "lon": -73.607721
         }
       ],
-      "updatedAt": "2026-09-03T17:34:30.443Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 11
+      },
+      "updatedAt": "2026-09-13T09:39:45.628Z"
     },
     "parking": {
       "count": 3400,
@@ -723,7 +729,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:32.411Z"
+      "stats": {
+        "free": 353,
+        "paid": 244,
+        "stepFree": 20,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:39:51.240Z"
     },
     "charging-stations": {
       "count": 546,
@@ -764,7 +776,13 @@
           "address": "Rue Ferrier 5350"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:33.105Z"
+      "stats": {
+        "free": 4,
+        "paid": 40,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:56.300Z"
     },
     "gas-stations": {
       "count": 125,
@@ -872,7 +890,13 @@
           "lon": -73.536069
         }
       ],
-      "updatedAt": "2026-09-03T17:34:33.828Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:39:58.379Z"
     },
     "ice-cream": {
       "count": 96,
@@ -1085,7 +1109,13 @@
           "address": "Rue Rachel Est 970"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:34.661Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T09:40:00.324Z"
     },
     "dog-parks": {
       "count": 46,
@@ -1302,7 +1332,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:35.308Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:40:02.466Z"
     },
     "picnic-spots": {
       "count": 2111,
@@ -1357,7 +1393,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:36.822Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 21,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:40:08.284Z"
     },
     "viewpoints": {
       "count": 66,
@@ -1471,7 +1513,13 @@
           "lon": -73.496723
         }
       ],
-      "updatedAt": "2026-09-03T17:34:37.728Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:09.893Z"
     },
     "beaches": {
       "count": 7,
@@ -1503,7 +1551,13 @@
           "lon": -73.560192
         }
       ],
-      "updatedAt": "2026-09-03T17:34:38.382Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:11.103Z"
     },
     "atms": {
       "count": 215,
@@ -1750,6 +1804,12 @@
       "count": 570,
       "pois": [
         {
+          "id": "node/11769857469",
+          "name": "Face à face - organisme",
+          "lat": 45.493908,
+          "lon": -73.581581
+        },
+        {
           "id": "node/13014420066",
           "lat": 45.501728,
           "lon": -73.566571,
@@ -1922,15 +1982,15 @@
           "lat": 45.500514,
           "lon": -73.554785,
           "street": "Rue Saint-Pierre"
-        },
-        {
-          "id": "node/998100161",
-          "lat": 45.502698,
-          "lon": -73.58039,
-          "street": "Avenue du Docteur-Penfield"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:41.588Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:17.641Z"
     },
     "recycling": {
       "count": 430,
@@ -2141,7 +2201,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:34:44.882Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:19.145Z"
     },
     "libraries": {
       "count": 190,
@@ -2368,7 +2434,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:45.913Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 27,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:40:21.710Z"
     },
     "outdoor-gyms": {
       "count": 91,
@@ -2399,7 +2471,13 @@
           "address": "Chemin de la Rive 101"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:48.901Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:23.191Z"
     },
     "shelters": {
       "count": 29,
@@ -2411,16 +2489,22 @@
           "lon": -73.591782
         },
         {
-          "id": "node/4320437845",
-          "lat": 45.51225,
-          "lon": -73.537344,
-          "street": "Chemin du Haut-contour"
-        },
-        {
           "id": "way/1243714691",
           "name": "Le refuge",
           "lat": 45.513464,
           "lon": -73.536484
+        },
+        {
+          "id": "way/158585249",
+          "name": "Kiosque du Parc Molson",
+          "lat": 45.549698,
+          "lon": -73.592078
+        },
+        {
+          "id": "node/4320437845",
+          "lat": 45.51225,
+          "lon": -73.537344,
+          "street": "Chemin du Haut-contour"
         },
         {
           "id": "node/9910744975",
@@ -2433,15 +2517,15 @@
           "lat": 45.458913,
           "lon": -73.595609,
           "street": "Rue De Biencourt"
-        },
-        {
-          "id": "way/158585249",
-          "name": "Kiosque du Parc Molson",
-          "lat": 45.549698,
-          "lon": -73.592078
         }
       ],
-      "updatedAt": "2026-09-03T17:34:53.208Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:26.805Z"
     },
     "rest-areas": {
       "count": 2,
@@ -2459,12 +2543,24 @@
           "lon": -73.557255
         }
       ],
-      "updatedAt": "2026-09-03T17:34:53.947Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:27.845Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:34:54.467Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:28.854Z"
     },
     "post-offices": {
       "count": 78,
@@ -2608,17 +2704,35 @@
           "address": "Rue Chabanel Ouest 353"
         }
       ],
-      "updatedAt": "2026-09-03T17:34:55.122Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:40:30.411Z"
     },
     "showers": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T17:34:55.648Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:31.423Z"
     },
     "fireplaces": {
       "count": 11,
       "pois": [],
-      "updatedAt": "2026-09-03T17:34:56.867Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:33.470Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2718,6 +2832,31 @@
       "count": 81,
       "pois": [
         {
+          "id": "node/7450479404",
+          "name": "Biciborne",
+          "lat": 45.516457,
+          "lon": -73.575091
+        },
+        {
+          "id": "node/5667508565",
+          "name": "Outils Vélo",
+          "lat": 45.520565,
+          "lon": -73.535556
+        },
+        {
+          "id": "node/6154017173",
+          "name": "Bici Borne",
+          "lat": 45.480207,
+          "lon": -73.597039
+        },
+        {
+          "id": "node/4268270675",
+          "name": "Station de réparation de vélos",
+          "lat": 45.503899,
+          "lon": -73.617419,
+          "openingHours": "24/7"
+        },
+        {
           "id": "node/14041997990",
           "lat": 45.500678,
           "lon": -73.572064,
@@ -2790,12 +2929,6 @@
           "street": "Rue Berri"
         },
         {
-          "id": "node/7450479404",
-          "name": "Biciborne",
-          "lat": 45.516457,
-          "lon": -73.575091
-        },
-        {
           "id": "node/13244247055",
           "lat": 45.49986,
           "lon": -73.54459,
@@ -2848,18 +2981,6 @@
           "street": "Rue Sainte-Catherine Est"
         },
         {
-          "id": "node/5667508565",
-          "name": "Outils Vélo",
-          "lat": 45.520565,
-          "lon": -73.535556
-        },
-        {
-          "id": "node/6154017173",
-          "name": "Bici Borne",
-          "lat": 45.480207,
-          "lon": -73.597039
-        },
-        {
           "id": "node/2140175832",
           "lat": 45.47101,
           "lon": -73.563415,
@@ -2894,13 +3015,6 @@
           "street": "Rue Bercy"
         },
         {
-          "id": "node/4268270675",
-          "name": "Station de réparation de vélos",
-          "lat": 45.503899,
-          "lon": -73.617419,
-          "openingHours": "24/7"
-        },
-        {
           "id": "node/5732949571",
           "lat": 45.533839,
           "lon": -73.591849,
@@ -2916,7 +3030,13 @@
           "street": "Chemin de la Côte-des-Neiges"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:02.169Z"
+      "stats": {
+        "free": 32,
+        "paid": 5,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:43.712Z"
     }
   }
 }

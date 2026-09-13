@@ -1,10 +1,28 @@
 {
   "city": "san-diego",
-  "generatedAt": "2026-09-11T10:32:32.500Z",
+  "generatedAt": "2026-09-13T09:30:27.053Z",
   "categories": {
     "post-boxes": {
       "count": 72,
       "pois": [
+        {
+          "id": "node/7275792571",
+          "name": "USPS",
+          "lat": 32.715761,
+          "lon": -117.14087
+        },
+        {
+          "id": "node/4806880665",
+          "name": "Mail Box Drop Box",
+          "lat": 32.762816,
+          "lon": -117.088829
+        },
+        {
+          "id": "node/7623335793",
+          "name": "UPS",
+          "lat": 32.801463,
+          "lon": -117.140299
+        },
         {
           "id": "node/11916879975",
           "lat": 32.71694,
@@ -16,12 +34,6 @@
           "lat": 32.725254,
           "lon": -117.160162,
           "street": "5th Avenue"
-        },
-        {
-          "id": "node/7275792571",
-          "name": "USPS",
-          "lat": 32.715761,
-          "lon": -117.14087
         },
         {
           "id": "node/7633442510",
@@ -171,25 +183,19 @@
           "street": "Del Mar Avenue"
         },
         {
-          "id": "node/4806880665",
-          "name": "Mail Box Drop Box",
-          "lat": 32.762816,
-          "lon": -117.088829
-        },
-        {
           "id": "node/13011736346",
           "lat": 32.74319,
           "lon": -117.249039,
           "street": "Sunset Cliffs Boulevard"
-        },
-        {
-          "id": "node/7623335793",
-          "name": "UPS",
-          "lat": 32.801463,
-          "lon": -117.140299
         }
       ],
-      "updatedAt": "2026-09-03T17:28:55.295Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:08.051Z"
     },
     "recycling": {
       "count": 75,
@@ -370,7 +376,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:28:57.584Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:09.260Z"
     },
     "libraries": {
       "count": 72,
@@ -590,7 +602,13 @@
           "openingHours": "Mo,Th,Fr 09:30-18:00; Tu,We 11:30-20:00; Sa 09:30-15:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:58.169Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:10.542Z"
     },
     "outdoor-gyms": {
       "count": 44,
@@ -665,7 +683,13 @@
           "lon": -117.224203
         }
       ],
-      "updatedAt": "2026-09-03T17:29:00.010Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:11.820Z"
     },
     "shelters": {
       "count": 41,
@@ -677,17 +701,35 @@
           "lon": -117.227691
         }
       ],
-      "updatedAt": "2026-09-03T17:29:02.769Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:15.686Z"
     },
     "rest-areas": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:29:03.282Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:16.851Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:29:03.720Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:17.728Z"
     },
     "toilets": {
       "count": 263,
@@ -1192,7 +1234,13 @@
           "lon": -117.088038
         }
       ],
-      "updatedAt": "2026-09-03T17:28:47.154Z"
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:29:42.842Z"
     },
     "parking": {
       "count": 2578,
@@ -1414,7 +1462,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:48.592Z"
+      "stats": {
+        "free": 262,
+        "paid": 115,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:29:48.458Z"
     },
     "charging-stations": {
       "count": 45,
@@ -1512,7 +1566,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:49.104Z"
+      "stats": {
+        "free": 0,
+        "paid": 18,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:29:49.366Z"
     },
     "gas-stations": {
       "count": 115,
@@ -1718,7 +1778,13 @@
           "lon": -117.068387
         }
       ],
-      "updatedAt": "2026-09-03T17:28:49.681Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:29:50.290Z"
     },
     "ice-cream": {
       "count": 48,
@@ -1930,7 +1996,13 @@
           "lon": -117.234665
         }
       ],
-      "updatedAt": "2026-09-03T17:28:50.180Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:29:51.421Z"
     },
     "dog-parks": {
       "count": 24,
@@ -2027,12 +2099,24 @@
           "lon": -117.225383
         }
       ],
-      "updatedAt": "2026-09-03T17:28:50.622Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:29:52.803Z"
     },
     "picnic-spots": {
       "count": 681,
       "pois": [],
-      "updatedAt": "2026-09-03T17:28:51.734Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:29:55.184Z"
     },
     "viewpoints": {
       "count": 20,
@@ -2057,7 +2141,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:52.287Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:29:57.017Z"
     },
     "beaches": {
       "count": 59,
@@ -2147,7 +2237,13 @@
           "lon": -117.253804
         }
       ],
-      "updatedAt": "2026-09-03T17:28:52.877Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:29:58.406Z"
     },
     "atms": {
       "count": 181,
@@ -2487,17 +2583,35 @@
           "openingHours": "Mo-Fr 08:00-18:00; Sa,Su 10:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:04.181Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:18.891Z"
     },
     "showers": {
       "count": 12,
       "pois": [],
-      "updatedAt": "2026-09-03T17:29:04.653Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:20.584Z"
     },
     "fireplaces": {
       "count": 58,
       "pois": [],
-      "updatedAt": "2026-09-03T17:29:05.961Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:22.958Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2738,7 +2852,13 @@
           "street": "West Canyon Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:07.461Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:26.951Z"
     }
   }
 }

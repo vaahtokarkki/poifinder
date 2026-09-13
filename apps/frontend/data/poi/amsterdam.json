@@ -1,6 +1,6 @@
 {
   "city": "amsterdam",
-  "generatedAt": "2026-09-11T10:29:45.243Z",
+  "generatedAt": "2026-09-13T08:41:50.146Z",
   "categories": {
     "toilets": {
       "count": 163,
@@ -575,7 +575,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:31.682Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 94,
+        "partlyStepFree": 31
+      },
+      "updatedAt": "2026-09-13T08:40:59.583Z"
     },
     "parking": {
       "count": 4920,
@@ -807,7 +813,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:33.563Z"
+      "stats": {
+        "free": 321,
+        "paid": 842,
+        "stepFree": 81,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:41:04.602Z"
     },
     "charging-stations": {
       "count": 1154,
@@ -904,7 +916,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:34.368Z"
+      "stats": {
+        "free": 5,
+        "paid": 252,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:41:06.269Z"
     },
     "gas-stations": {
       "count": 64,
@@ -1152,7 +1170,13 @@
           "openingHours": "Mo-Fr 05:00-21:00; Sa 07:00-21:00; Su 08:00-21:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:35.029Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:41:07.904Z"
     },
     "ice-cream": {
       "count": 70,
@@ -1390,7 +1414,13 @@
           "lon": 4.853913
         }
       ],
-      "updatedAt": "2026-09-03T17:00:35.858Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:41:09.654Z"
     },
     "dog-parks": {
       "count": 85,
@@ -1430,7 +1460,13 @@
           "lon": 4.9267
         }
       ],
-      "updatedAt": "2026-09-03T17:00:36.424Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:41:10.904Z"
     },
     "picnic-spots": {
       "count": 1113,
@@ -1454,7 +1490,13 @@
           "lon": 4.83135
         }
       ],
-      "updatedAt": "2026-09-03T17:00:37.998Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:41:14.787Z"
     },
     "viewpoints": {
       "count": 41,
@@ -1558,7 +1600,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:38.821Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:41:18.923Z"
     },
     "beaches": {
       "count": 32,
@@ -1633,7 +1681,13 @@
           "lon": 4.893706
         }
       ],
-      "updatedAt": "2026-09-03T17:00:39.541Z"
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:41:21.191Z"
     },
     "atms": {
       "count": 329,
@@ -1670,6 +1724,12 @@
     "post-boxes": {
       "count": 311,
       "pois": [
+        {
+          "id": "node/5058077183",
+          "name": "Brievenbus",
+          "lat": 52.3538,
+          "lon": 4.930924
+        },
         {
           "id": "node/7835815656",
           "lat": 52.368946,
@@ -1845,15 +1905,15 @@
           "lat": 52.358384,
           "lon": 4.923283,
           "street": "Derde Oosterparkstraat"
-        },
-        {
-          "id": "node/117074976",
-          "lat": 52.359603,
-          "lon": 4.88342,
-          "street": "Hobbemastraat"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:42.677Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:41:27.646Z"
     },
     "recycling": {
       "count": 3079,
@@ -2075,7 +2135,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:45.840Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:41:28.560Z"
     },
     "libraries": {
       "count": 209,
@@ -2290,7 +2356,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:46.500Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 20,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:41:29.750Z"
     },
     "outdoor-gyms": {
       "count": 130,
@@ -2382,23 +2454,17 @@
           "lon": 5.016262
         }
       ],
-      "updatedAt": "2026-09-03T17:00:48.669Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:41:30.822Z"
     },
     "shelters": {
       "count": 56,
       "pois": [
-        {
-          "id": "node/12088604067",
-          "lat": 52.387067,
-          "lon": 4.878149,
-          "street": "Brettenpad"
-        },
-        {
-          "id": "node/13231712738",
-          "lat": 52.391404,
-          "lon": 4.872292,
-          "street": "Zaanhof"
-        },
         {
           "id": "way/1298641122",
           "name": "DVVA",
@@ -2412,16 +2478,28 @@
           "lon": 4.932619
         },
         {
-          "id": "node/8271944000",
-          "lat": 52.37954,
-          "lon": 4.958041,
-          "street": "Zuider IJdijk"
-        },
-        {
           "id": "way/670204947",
           "name": "Rokershok",
           "lat": 52.346803,
           "lon": 4.837122
+        },
+        {
+          "id": "node/12088604067",
+          "lat": 52.387067,
+          "lon": 4.878149,
+          "street": "Brettenpad"
+        },
+        {
+          "id": "node/13231712738",
+          "lat": 52.391404,
+          "lon": 4.872292,
+          "street": "Zaanhof"
+        },
+        {
+          "id": "node/8271944000",
+          "lat": 52.37954,
+          "lon": 4.958041,
+          "street": "Zuider IJdijk"
         },
         {
           "id": "node/9506307636",
@@ -2442,7 +2520,13 @@
           "street": "Haarlerbergweg"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:50.782Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:41:36.632Z"
     },
     "rest-areas": {
       "count": 14,
@@ -2460,12 +2544,24 @@
           "lon": 4.964111
         }
       ],
-      "updatedAt": "2026-09-03T17:00:51.421Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:41:39.142Z"
     },
     "dump-stations": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:00:51.807Z"
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:41:40.243Z"
     },
     "post-offices": {
       "count": 26,
@@ -2643,12 +2739,24 @@
           "lon": 4.94775
         }
       ],
-      "updatedAt": "2026-09-03T17:00:52.248Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:41:41.405Z"
     },
     "showers": {
       "count": 20,
       "pois": [],
-      "updatedAt": "2026-09-03T17:00:52.646Z"
+      "stats": {
+        "free": 4,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:41:42.523Z"
     },
     "fireplaces": {
       "count": 29,
@@ -2672,7 +2780,13 @@
           "lon": 4.860672
         }
       ],
-      "updatedAt": "2026-09-03T17:00:53.767Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:41:44.755Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2883,13 +2997,6 @@
       "count": 18,
       "pois": [
         {
-          "id": "node/13121604101",
-          "lat": 52.376011,
-          "lon": 4.910287,
-          "openingHours": "Mo-Th 09:00-15:30",
-          "street": "Oosterdokskade"
-        },
-        {
           "id": "node/6903369319",
           "name": "Fietsenwerkplaats Smerig",
           "lat": 52.353433,
@@ -2920,6 +3027,13 @@
           "lon": 4.872579,
           "address": "Van Hallstraat 294",
           "openingHours": "Mo-Fr 08:00-17:00; Sa 09:00-17:00"
+        },
+        {
+          "id": "node/13121604101",
+          "lat": 52.376011,
+          "lon": 4.910287,
+          "openingHours": "Mo-Th 09:00-15:30",
+          "street": "Oosterdokskade"
         },
         {
           "id": "node/12059385481",
@@ -3002,7 +3116,13 @@
           "street": "Langsom"
         }
       ],
-      "updatedAt": "2026-09-03T17:00:55.622Z"
+      "stats": {
+        "free": 4,
+        "paid": 5,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:41:50.045Z"
     }
   }
 }

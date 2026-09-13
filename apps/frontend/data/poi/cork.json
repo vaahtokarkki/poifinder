@@ -1,6 +1,6 @@
 {
   "city": "cork",
-  "generatedAt": "2026-09-11T10:30:56.922Z",
+  "generatedAt": "2026-09-13T08:59:06.123Z",
   "categories": {
     "toilets": {
       "count": 41,
@@ -217,7 +217,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:35.360Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:58:21.396Z"
     },
     "parking": {
       "count": 1930,
@@ -450,7 +456,13 @@
           "lon": -8.512876
         }
       ],
-      "updatedAt": "2026-09-03T17:11:36.575Z"
+      "stats": {
+        "free": 285,
+        "paid": 63,
+        "stepFree": 112,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:58:24.438Z"
     },
     "charging-stations": {
       "count": 42,
@@ -552,7 +564,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:36.968Z"
+      "stats": {
+        "free": 7,
+        "paid": 26,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:25.632Z"
     },
     "gas-stations": {
       "count": 49,
@@ -750,7 +768,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:37.408Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 23,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:27.384Z"
     },
     "ice-cream": {
       "count": 7,
@@ -802,7 +826,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:37.861Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:58:28.664Z"
     },
     "dog-parks": {
       "count": 1,
@@ -815,7 +845,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:38.207Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:58:29.736Z"
     },
     "picnic-spots": {
       "count": 61,
@@ -833,7 +869,13 @@
           "lon": -8.544143
         }
       ],
-      "updatedAt": "2026-09-03T17:11:39.387Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:32.644Z"
     },
     "viewpoints": {
       "count": 12,
@@ -897,7 +939,13 @@
           "lon": -8.535825
         }
       ],
-      "updatedAt": "2026-09-03T17:11:39.956Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:58:34.413Z"
     },
     "beaches": {
       "count": 1,
@@ -909,7 +957,13 @@
           "lon": -8.575212
         }
       ],
-      "updatedAt": "2026-09-03T17:11:40.344Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:35.824Z"
     },
     "atms": {
       "count": 62,
@@ -986,18 +1040,6 @@
       "count": 95,
       "pois": [
         {
-          "id": "node/4311938623",
-          "lat": 51.898198,
-          "lon": -8.475362,
-          "street": "Daunt's Square"
-        },
-        {
-          "id": "node/1813924856",
-          "lat": 51.898359,
-          "lon": -8.477499,
-          "street": "Liberty Street"
-        },
-        {
           "id": "node/1339492655",
           "name": "An Post Washington Street",
           "lat": 51.897669,
@@ -1008,6 +1050,127 @@
           "name": "Patrick St.",
           "lat": 51.898433,
           "lon": -8.472639
+        },
+        {
+          "id": "node/2413013506",
+          "name": "Elizabeth Fort",
+          "lat": 51.894463,
+          "lon": -8.477522
+        },
+        {
+          "id": "node/1962590589",
+          "name": "St. Patrick's Place",
+          "lat": 51.902186,
+          "lon": -8.469903
+        },
+        {
+          "id": "node/4004069914",
+          "name": "Copley St",
+          "lat": 51.895356,
+          "lon": -8.46831
+        },
+        {
+          "id": "node/7367387638",
+          "name": "Barrackton Post Office",
+          "lat": 51.906081,
+          "lon": -8.462028
+        },
+        {
+          "id": "node/742417639",
+          "name": "Post Pillar",
+          "lat": 51.891939,
+          "lon": -8.493991
+        },
+        {
+          "id": "node/881277256",
+          "name": "Pouladuff Post Office",
+          "lat": 51.881947,
+          "lon": -8.485879
+        },
+        {
+          "id": "node/1186268691",
+          "name": "Cliffton",
+          "lat": 51.905203,
+          "lon": -8.447944
+        },
+        {
+          "id": "node/7280664690",
+          "name": "Blackpool Retail Park",
+          "lat": 51.917018,
+          "lon": -8.473151
+        },
+        {
+          "id": "node/7418704603",
+          "name": "Gordan's Cross",
+          "lat": 51.909699,
+          "lon": -8.450295
+        },
+        {
+          "id": "node/2086608462",
+          "name": "Honan Home",
+          "lat": 51.904474,
+          "lon": -8.442623
+        },
+        {
+          "id": "node/1818862727",
+          "name": "Fox & Hounds",
+          "lat": 51.917167,
+          "lon": -8.447314
+        },
+        {
+          "id": "node/538539617",
+          "name": "Ballintemple Post Office",
+          "lat": 51.895882,
+          "lon": -8.432643,
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/7223017375",
+          "name": "North Point Bus Park",
+          "lat": 51.924165,
+          "lon": -8.490243
+        },
+        {
+          "id": "node/7418704475",
+          "name": "Tivoli",
+          "lat": 51.902978,
+          "lon": -8.430198
+        },
+        {
+          "id": "node/941485393",
+          "name": "Windsor",
+          "lat": 51.877744,
+          "lon": -8.424888
+        },
+        {
+          "id": "node/843321415",
+          "name": "Mount Oval",
+          "lat": 51.869426,
+          "lon": -8.407327
+        },
+        {
+          "id": "node/6356280022",
+          "name": "Kerry Pike",
+          "lat": 51.909289,
+          "lon": -8.561464
+        },
+        {
+          "id": "node/6877677825",
+          "name": "Glanmire Post Office",
+          "lat": 51.930464,
+          "lon": -8.395834
+        },
+        {
+          "id": "node/4311938623",
+          "lat": 51.898198,
+          "lon": -8.475362,
+          "street": "Daunt's Square"
+        },
+        {
+          "id": "node/1813924856",
+          "lat": 51.898359,
+          "lon": -8.477499,
+          "street": "Liberty Street"
         },
         {
           "id": "node/1813924829",
@@ -1057,118 +1220,15 @@
           "lat": 51.902237,
           "lon": -8.478686,
           "street": "Shandon Street"
-        },
-        {
-          "id": "node/2413013506",
-          "name": "Elizabeth Fort",
-          "lat": 51.894463,
-          "lon": -8.477522
-        },
-        {
-          "id": "node/1962590589",
-          "name": "St. Patrick's Place",
-          "lat": 51.902186,
-          "lon": -8.469903
-        },
-        {
-          "id": "node/4992521939",
-          "lat": 51.897944,
-          "lon": -8.467149,
-          "street": "Parnell Place"
-        },
-        {
-          "id": "node/4004069914",
-          "name": "Copley St",
-          "lat": 51.895356,
-          "lon": -8.46831
-        },
-        {
-          "id": "node/2955790342",
-          "lat": 51.897265,
-          "lon": -8.484361,
-          "address": "Dyke Parade",
-          "street": "Mardyke Street"
-        },
-        {
-          "id": "node/13050708471",
-          "lat": 51.894289,
-          "lon": -8.481703,
-          "street": "Bishop Street"
-        },
-        {
-          "id": "node/13009986115",
-          "lat": 51.901519,
-          "lon": -8.467653,
-          "street": "Harleys Street"
-        },
-        {
-          "id": "node/9292810168",
-          "lat": 51.897591,
-          "lon": -8.464571,
-          "street": "Albert Quay"
-        },
-        {
-          "id": "node/8615309756",
-          "lat": 51.902356,
-          "lon": -8.466252,
-          "street": "Belgrave Avenue"
-        },
-        {
-          "id": "node/8572975131",
-          "lat": 51.894683,
-          "lon": -8.465179,
-          "street": "Anglesea Street"
-        },
-        {
-          "id": "node/1012964245",
-          "lat": 51.900051,
-          "lon": -8.488699,
-          "street": "Sunday's Well Road"
-        },
-        {
-          "id": "node/1186271682",
-          "lat": 51.902188,
-          "lon": -8.463526,
-          "street": "York Hill"
-        },
-        {
-          "id": "node/12805112780",
-          "lat": 51.8957,
-          "lon": -8.489126,
-          "street": "Donovans Road"
-        },
-        {
-          "id": "node/648624569",
-          "lat": 51.902555,
-          "lon": -8.461901,
-          "street": "Summerhill North"
-        },
-        {
-          "id": "node/8615309755",
-          "lat": 51.903352,
-          "lon": -8.461458,
-          "street": "Wellington Road"
-        },
-        {
-          "id": "node/7367387638",
-          "name": "Barrackton Post Office",
-          "lat": 51.906081,
-          "lon": -8.462028
-        },
-        {
-          "id": "node/1845875129",
-          "lat": 51.887543,
-          "lon": -8.484978,
-          "street": "Lough Road"
-        },
-        {
-          "id": "node/13157743863",
-          "lat": 51.894545,
-          "lon": -8.494974,
-          "street": "Gaol Walk"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:42.610Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:58:44.804Z"
     },
     "recycling": {
       "count": 33,
@@ -1291,7 +1351,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:11:44.827Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:46.383Z"
     },
     "libraries": {
       "count": 14,
@@ -1398,7 +1464,13 @@
           "lon": -8.567325
         }
       ],
-      "updatedAt": "2026-09-03T17:11:45.281Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:58:47.305Z"
     },
     "outdoor-gyms": {
       "count": 18,
@@ -1434,7 +1506,13 @@
           "lon": -8.545257
         }
       ],
-      "updatedAt": "2026-09-03T17:11:46.547Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:48.603Z"
     },
     "shelters": {
       "count": 8,
@@ -1446,17 +1524,35 @@
           "lon": -8.438654
         }
       ],
-      "updatedAt": "2026-09-03T17:11:47.940Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:53.102Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:11:48.402Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:54.345Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:11:48.723Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:55.664Z"
     },
     "post-offices": {
       "count": 28,
@@ -1676,7 +1772,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:49.191Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:58:57.145Z"
     },
     "showers": {
       "count": 2,
@@ -1689,12 +1791,24 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:49.720Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:58.271Z"
     },
     "fireplaces": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:11:50.733Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:59:01.711Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1889,7 +2003,13 @@
           "street": "The Marina"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:52.541Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:59:06.022Z"
     }
   }
 }

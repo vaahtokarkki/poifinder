@@ -1,6 +1,6 @@
 {
   "city": "kotka",
-  "generatedAt": "2026-09-11T10:27:44.909Z",
+  "generatedAt": "2026-09-13T08:23:50.282Z",
   "categories": {
     "toilets": {
       "count": 15,
@@ -97,7 +97,13 @@
           "lon": 26.875842
         }
       ],
-      "updatedAt": "2026-09-03T16:42:43.103Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:31.295Z"
     },
     "parking": {
       "count": 256,
@@ -176,7 +182,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:44.480Z"
+      "stats": {
+        "free": 81,
+        "paid": 4,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:32.547Z"
     },
     "charging-stations": {
       "count": 8,
@@ -210,7 +222,13 @@
           "lon": 26.931682
         }
       ],
-      "updatedAt": "2026-09-03T16:42:45.135Z"
+      "stats": {
+        "free": 0,
+        "paid": 4,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:33.224Z"
     },
     "gas-stations": {
       "count": 22,
@@ -356,7 +374,13 @@
           "address": "Suurniitynkatu 1"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:45.729Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:34.003Z"
     },
     "ice-cream": {
       "count": 3,
@@ -368,17 +392,35 @@
           "lon": 26.948014
         }
       ],
-      "updatedAt": "2026-09-03T16:42:46.168Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:34.853Z"
     },
     "dog-parks": {
       "count": 6,
       "pois": [],
-      "updatedAt": "2026-09-03T16:42:46.520Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:35.403Z"
     },
     "picnic-spots": {
       "count": 13,
       "pois": [],
-      "updatedAt": "2026-09-03T16:42:47.579Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:36.953Z"
     },
     "viewpoints": {
       "count": 18,
@@ -418,7 +460,13 @@
           "lon": 26.972014
         }
       ],
-      "updatedAt": "2026-09-03T16:42:48.076Z"
+      "stats": {
+        "free": 4,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:37.643Z"
     },
     "beaches": {
       "count": 12,
@@ -448,7 +496,13 @@
           "lon": 26.864405
         }
       ],
-      "updatedAt": "2026-09-03T16:42:48.513Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:38.394Z"
     },
     "atms": {
       "count": 6,
@@ -510,7 +564,13 @@
           "street": "Lautakatontie"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:49.829Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:39.683Z"
     },
     "recycling": {
       "count": 7,
@@ -553,7 +613,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:42:51.526Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:40.255Z"
     },
     "libraries": {
       "count": 4,
@@ -589,7 +655,13 @@
           "address": "Karhulantie 40"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:52.001Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:40.982Z"
     },
     "outdoor-gyms": {
       "count": 4,
@@ -613,19 +685,26 @@
           "address": "Santalahdentie 150",
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "node/8034614288",
+          "name": "Leirikeskus Luovi",
+          "lat": 60.524927,
+          "lon": 27.020424,
+          "address": "Luovintie"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:52.782Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:41.814Z"
     },
     "shelters": {
       "count": 8,
       "pois": [
-        {
-          "id": "node/12851739190",
-          "lat": 60.450956,
-          "lon": 26.888684,
-          "street": "Mussalon kuntorata"
-        },
         {
           "id": "node/7253683114",
           "name": "Laavu",
@@ -637,34 +716,76 @@
           "name": "Kirkkokankaan laavu",
           "lat": 60.505393,
           "lon": 26.840528
+        },
+        {
+          "id": "node/12851739190",
+          "lat": 60.450956,
+          "lon": 26.888684,
+          "street": "Mussalon kuntorata"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:54.133Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:44.303Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:42:54.507Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:45.063Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:42:54.822Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:45.600Z"
     },
     "post-offices": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:42:55.228Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:46.303Z"
     },
     "showers": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T16:42:55.547Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:46.928Z"
     },
     "fireplaces": {
       "count": 13,
       "pois": [],
-      "updatedAt": "2026-09-03T16:42:56.588Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:48.691Z"
     },
     "bicycle-repair": {
       "count": 1,
@@ -678,7 +799,13 @@
           "street": "Lehmusbulevardi"
         }
       ],
-      "updatedAt": "2026-09-03T16:42:57.646Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:50.180Z"
     },
     "benches": {
       "count": 121,

@@ -1,6 +1,6 @@
 {
   "city": "turku",
-  "generatedAt": "2026-09-11T10:26:19.107Z",
+  "generatedAt": "2026-09-13T08:18:54.627Z",
   "categories": {
     "toilets": {
       "count": 55,
@@ -177,7 +177,7 @@
       "updatedAt": "2026-09-11T10:26:14.727Z"
     },
     "playgrounds": {
-      "count": 632,
+      "count": 631,
       "pois": [
         {
           "id": "way/25893254",
@@ -343,12 +343,6 @@
           "lon": 22.236032
         },
         {
-          "id": "node/6670259760",
-          "name": "Leo's Leikkimaa",
-          "lat": 60.447205,
-          "lon": 22.320655
-        },
-        {
           "id": "way/516128317",
           "name": "Jaska Jokusen leikkipuisto",
           "lat": 60.464834,
@@ -359,12 +353,24 @@
           "name": "Kaerlan päivähoitoyksikön leikkipaikka",
           "lat": 60.479402,
           "lon": 22.278276
+        },
+        {
+          "id": "way/491624850",
+          "name": "Teräsrautelanpuiston leikkipaikka",
+          "lat": 60.475404,
+          "lon": 22.23498
         }
       ],
-      "updatedAt": "2026-09-03T16:37:36.700Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:29.364Z"
     },
     "parking": {
-      "count": 3392,
+      "count": 3394,
       "pois": [
         {
           "id": "way/1207799675",
@@ -583,7 +589,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:38.093Z"
+      "stats": {
+        "free": 1138,
+        "paid": 313,
+        "stepFree": 23,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:18:32.606Z"
     },
     "charging-stations": {
       "count": 56,
@@ -713,7 +725,13 @@
           "lon": 22.351365
         }
       ],
-      "updatedAt": "2026-09-03T16:37:38.642Z"
+      "stats": {
+        "free": 5,
+        "paid": 33,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:33.431Z"
     },
     "gas-stations": {
       "count": 61,
@@ -946,7 +964,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:39.224Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:35.177Z"
     },
     "ice-cream": {
       "count": 9,
@@ -988,7 +1012,13 @@
           "lon": 22.200508
         }
       ],
-      "updatedAt": "2026-09-03T16:37:39.802Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:36.143Z"
     },
     "dog-parks": {
       "count": 25,
@@ -1133,12 +1163,24 @@
           "address": "Vaakunatie 10"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:40.189Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:37.021Z"
     },
     "picnic-spots": {
       "count": 262,
       "pois": [],
-      "updatedAt": "2026-09-03T16:37:41.700Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:38.773Z"
     },
     "viewpoints": {
       "count": 37,
@@ -1193,7 +1235,13 @@
           "lon": 22.385333
         }
       ],
-      "updatedAt": "2026-09-03T16:37:42.348Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:39.523Z"
     },
     "beaches": {
       "count": 15,
@@ -1241,7 +1289,13 @@
           "lon": 22.397773
         }
       ],
-      "updatedAt": "2026-09-03T16:37:42.848Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:40.124Z"
     },
     "atms": {
       "count": 47,
@@ -1468,8 +1522,8 @@
         },
         {
           "id": "node/11234142281",
-          "lat": 60.448511,
-          "lon": 22.23704,
+          "lat": 60.448539,
+          "lon": 22.237002,
           "address": "Kirstintasku 3",
           "street": "Artturinkatu"
         },
@@ -1492,7 +1546,13 @@
           "street": "Takamaantie"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:45.094Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:42.064Z"
     },
     "recycling": {
       "count": 549,
@@ -1696,7 +1756,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:37:48.338Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:42.744Z"
     },
     "libraries": {
       "count": 28,
@@ -1876,7 +1942,13 @@
           "address": "Lautakunnankatu 1"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:49.310Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:43.610Z"
     },
     "outdoor-gyms": {
       "count": 63,
@@ -1957,17 +2029,17 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:37:51.428Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:44.267Z"
     },
     "shelters": {
       "count": 22,
       "pois": [
-        {
-          "id": "node/13159410406",
-          "lat": 60.437061,
-          "lon": 22.244044,
-          "street": "Laivurinkatu"
-        },
         {
           "id": "way/413096267",
           "name": "Hiihtomajan avoin ulkorakennus",
@@ -1979,9 +2051,21 @@
           "name": "Haunisten altaan laavu",
           "lat": 60.502595,
           "lon": 22.199079
+        },
+        {
+          "id": "node/13159410406",
+          "lat": 60.437061,
+          "lon": 22.244044,
+          "street": "Laivurinkatu"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:53.026Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:47.629Z"
     },
     "rest-areas": {
       "count": 13,
@@ -2011,12 +2095,24 @@
           "lon": 22.216838
         }
       ],
-      "updatedAt": "2026-09-03T16:37:53.589Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:48.475Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:37:54.052Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:49.144Z"
     },
     "post-offices": {
       "count": 6,
@@ -2071,7 +2167,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:54.648Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:18:49.945Z"
     },
     "showers": {
       "count": 8,
@@ -2084,12 +2186,24 @@
           "address": "Rykmentintie 51"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:55.180Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:50.526Z"
     },
     "fireplaces": {
       "count": 24,
       "pois": [],
-      "updatedAt": "2026-09-03T16:37:56.723Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:52.656Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2177,6 +2291,21 @@
       "count": 12,
       "pois": [
         {
+          "id": "node/11124010007",
+          "name": "Pyörän kylmäasema",
+          "lat": 60.466684,
+          "lon": 22.292049
+        },
+        {
+          "id": "way/694438496",
+          "name": "Motonet",
+          "lat": 60.422263,
+          "lon": 22.378267,
+          "address": "Varastomiehenkatu 4",
+          "openingHours": "Mo-Fr 09:00-21:00; Sa 09:00-19:00; Su 10:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/9881349648",
           "lat": 60.449687,
           "lon": 22.271463,
@@ -2231,24 +2360,15 @@
           "openingHours": "24/7",
           "fee": "no",
           "street": "Vanha Hämeentie"
-        },
-        {
-          "id": "node/11124010007",
-          "name": "Pyörän kylmäasema",
-          "lat": 60.466684,
-          "lon": 22.292049
-        },
-        {
-          "id": "way/694438496",
-          "name": "Motonet",
-          "lat": 60.422263,
-          "lon": 22.378267,
-          "address": "Varastomiehenkatu 4",
-          "openingHours": "Mo-Fr 09:00-21:00; Sa 09:00-19:00; Su 10:00-18:00",
-          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:58.176Z"
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:54.526Z"
     }
   }
 }

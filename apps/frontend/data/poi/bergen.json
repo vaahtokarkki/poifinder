@@ -1,6 +1,6 @@
 {
   "city": "bergen",
-  "generatedAt": "2026-09-11T10:28:03.470Z",
+  "generatedAt": "2026-09-13T08:25:56.323Z",
   "categories": {
     "toilets": {
       "count": 61,
@@ -449,10 +449,16 @@
           "lon": 5.310015
         }
       ],
-      "updatedAt": "2026-09-03T16:45:04.711Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:25:36.643Z"
     },
     "parking": {
-      "count": 1122,
+      "count": 1123,
       "pois": [
         {
           "id": "node/3966509367",
@@ -675,7 +681,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:05.933Z"
+      "stats": {
+        "free": 97,
+        "paid": 90,
+        "stepFree": 4,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:25:38.364Z"
     },
     "charging-stations": {
       "count": 54,
@@ -874,7 +886,13 @@
           "lon": 5.273459
         }
       ],
-      "updatedAt": "2026-09-03T16:45:06.449Z"
+      "stats": {
+        "free": 4,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:39.083Z"
     },
     "gas-stations": {
       "count": 26,
@@ -1047,7 +1065,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:06.949Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:39.741Z"
     },
     "ice-cream": {
       "count": 5,
@@ -1081,17 +1105,35 @@
           "lon": 5.320672
         }
       ],
-      "updatedAt": "2026-09-03T16:45:07.542Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:25:40.488Z"
     },
     "dog-parks": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T16:45:08.008Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:41.205Z"
     },
     "picnic-spots": {
       "count": 343,
       "pois": [],
-      "updatedAt": "2026-09-03T16:45:09.406Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:42.768Z"
     },
     "viewpoints": {
       "count": 123,
@@ -1194,7 +1236,13 @@
           "lon": 5.19151
         }
       ],
-      "updatedAt": "2026-09-03T16:45:10.048Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:25:43.606Z"
     },
     "beaches": {
       "count": 17,
@@ -1214,7 +1262,13 @@
           "lon": 5.314774
         }
       ],
-      "updatedAt": "2026-09-03T16:45:10.623Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:44.508Z"
     },
     "atms": {
       "count": 25,
@@ -1447,7 +1501,13 @@
           "street": "Ladegårdsgaten"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:12.521Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:46.909Z"
     },
     "recycling": {
       "count": 363,
@@ -1654,10 +1714,16 @@
           "openingHours": "Mo-Fr 10:00-13:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:14.988Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:47.563Z"
     },
     "libraries": {
-      "count": 21,
+      "count": 24,
       "pois": [
         {
           "id": "node/2048372541",
@@ -1726,10 +1792,23 @@
           "lon": 5.331517
         },
         {
+          "id": "node/14140464376",
+          "name": "Bergen Offentlige Bibliotek - Laksevåg bibliotek",
+          "lat": 60.386738,
+          "lon": 5.298908,
+          "openingHours": "Mo-Th 10:00-19:00; Fr-Sa 10:00-16:00"
+        },
+        {
           "id": "node/8861153024",
           "name": "Lesekiosk Sandviken Brannstasjon",
           "lat": 60.405732,
           "lon": 5.323986
+        },
+        {
+          "id": "node/14140464378",
+          "name": "Bergen Offentlige Bibliotek - Ny-Krohnborg fellesbibliotek",
+          "lat": 60.374933,
+          "lon": 5.334643
         },
         {
           "id": "node/10218219817",
@@ -1749,6 +1828,13 @@
           "lat": 60.361469,
           "lon": 5.368215,
           "openingHours": "Mo,We 12:00-19:00, Tu,Th 10:00-16:00, Fr 10:00-15:30, Sa 10:00-16:00"
+        },
+        {
+          "id": "node/14140464377",
+          "name": "Bergen Offentlige Bibliotek, Barnas BibLab",
+          "lat": 60.356665,
+          "lon": 5.359121,
+          "openingHours": "Mo-Th 12:00-18:00; Fr 12:00-16:00; Sa 10:00-16:00"
         },
         {
           "id": "node/6151332814",
@@ -1777,7 +1863,13 @@
           "lon": 5.23518
         }
       ],
-      "updatedAt": "2026-09-03T16:45:15.431Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:48.143Z"
     },
     "outdoor-gyms": {
       "count": 22,
@@ -1829,23 +1921,17 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:16.824Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:48.843Z"
     },
     "shelters": {
       "count": 27,
       "pois": [
-        {
-          "id": "node/4681820869",
-          "lat": 60.393825,
-          "lon": 5.344317,
-          "street": "Fløyfjellet"
-        },
-        {
-          "id": "node/11638251690",
-          "lat": 60.379418,
-          "lon": 5.311552,
-          "street": "Løvstakktunnelen"
-        },
         {
           "id": "node/1932861233",
           "name": "Regnhytten",
@@ -1883,18 +1969,6 @@
           "lon": 5.335111
         },
         {
-          "id": "node/9888023463",
-          "lat": 60.368498,
-          "lon": 5.333891,
-          "street": "Løvstien"
-        },
-        {
-          "id": "node/9889730983",
-          "lat": 60.412669,
-          "lon": 5.365662,
-          "street": "Rundemansveien"
-        },
-        {
           "id": "node/7952680502",
           "name": "Munkegrind",
           "lat": 60.425781,
@@ -1911,9 +1985,39 @@
           "name": "Hellegrind",
           "lat": 60.434475,
           "lon": 5.300385
+        },
+        {
+          "id": "node/4681820869",
+          "lat": 60.393825,
+          "lon": 5.344317,
+          "street": "Fløyfjellet"
+        },
+        {
+          "id": "node/11638251690",
+          "lat": 60.379418,
+          "lon": 5.311552,
+          "street": "Løvstakktunnelen"
+        },
+        {
+          "id": "node/9888023463",
+          "lat": 60.368498,
+          "lon": 5.333891,
+          "street": "Løvstien"
+        },
+        {
+          "id": "node/9889730983",
+          "lat": 60.412669,
+          "lon": 5.365662,
+          "street": "Rundemansveien"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:18.787Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:51.000Z"
     },
     "rest-areas": {
       "count": 2,
@@ -1925,12 +2029,24 @@
           "lon": 5.218358
         }
       ],
-      "updatedAt": "2026-09-03T16:45:19.361Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:51.581Z"
     },
     "dump-stations": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T16:45:19.707Z"
+      "stats": {
+        "free": 2,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:52.058Z"
     },
     "post-offices": {
       "count": 37,
@@ -2149,17 +2265,35 @@
           "openingHours": "Mo-Sa 07:00-23:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:20.101Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:52.669Z"
     },
     "showers": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T16:45:20.460Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:53.167Z"
     },
     "fireplaces": {
       "count": 61,
       "pois": [],
-      "updatedAt": "2026-09-03T16:45:21.701Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:54.728Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2271,7 +2405,13 @@
           "street": "Minde allé"
         }
       ],
-      "updatedAt": "2026-09-03T16:45:22.880Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:56.223Z"
     }
   }
 }

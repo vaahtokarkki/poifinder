@@ -1,6 +1,6 @@
 {
   "city": "istanbul",
-  "generatedAt": "2026-09-11T10:34:28.091Z",
+  "generatedAt": "2026-09-13T10:02:24.946Z",
   "categories": {
     "toilets": {
       "count": 251,
@@ -532,7 +532,13 @@
           "lon": 29.083525
         }
       ],
-      "updatedAt": "2026-09-03T17:47:12.997Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T10:01:40.108Z"
     },
     "parking": {
       "count": 1889,
@@ -748,7 +754,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:14.610Z"
+      "stats": {
+        "free": 71,
+        "paid": 349,
+        "stepFree": 24,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T10:01:43.762Z"
     },
     "charging-stations": {
       "count": 32,
@@ -957,7 +969,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:15.141Z"
+      "stats": {
+        "free": 0,
+        "paid": 22,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:44.945Z"
     },
     "gas-stations": {
       "count": 243,
@@ -1170,7 +1188,13 @@
           "lon": 29.065462
         }
       ],
-      "updatedAt": "2026-09-03T17:47:15.742Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T10:01:47.032Z"
     },
     "ice-cream": {
       "count": 85,
@@ -1372,7 +1396,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:16.762Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T10:01:49.102Z"
     },
     "dog-parks": {
       "count": 19,
@@ -1396,7 +1426,13 @@
           "lon": 29.094308
         }
       ],
-      "updatedAt": "2026-09-03T17:47:17.573Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T10:01:50.704Z"
     },
     "picnic-spots": {
       "count": 73,
@@ -1513,7 +1549,13 @@
           "lon": 28.893524
         }
       ],
-      "updatedAt": "2026-09-03T17:47:18.841Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:55.222Z"
     },
     "viewpoints": {
       "count": 111,
@@ -1606,7 +1648,13 @@
           "lon": 28.858931
         }
       ],
-      "updatedAt": "2026-09-03T17:47:19.648Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:56.886Z"
     },
     "beaches": {
       "count": 8,
@@ -1637,7 +1685,13 @@
           "lon": 29.049894
         }
       ],
-      "updatedAt": "2026-09-03T17:47:20.227Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:58.103Z"
     },
     "atms": {
       "count": 1387,
@@ -1849,6 +1903,12 @@
       "count": 13,
       "pois": [
         {
+          "id": "node/13953645298",
+          "name": "Yurtiçi Kargo",
+          "lat": 40.960259,
+          "lon": 29.094375
+        },
+        {
           "id": "node/5113620618",
           "lat": 41.007178,
           "lon": 28.979651,
@@ -1902,15 +1962,15 @@
           "lat": 41.084562,
           "lon": 29.005386,
           "street": "İsmet İnönü Caddesi"
-        },
-        {
-          "id": "node/13953645298",
-          "name": "Yurtiçi Kargo",
-          "lat": 40.960259,
-          "lon": 29.094375
         }
       ],
-      "updatedAt": "2026-09-03T17:47:22.169Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:02:02.197Z"
     },
     "recycling": {
       "count": 139,
@@ -2118,7 +2178,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:25.034Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:02:03.543Z"
     },
     "libraries": {
       "count": 189,
@@ -2334,7 +2400,13 @@
           "address": "Ankara Caddesi"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:25.701Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T10:02:06.132Z"
     },
     "outdoor-gyms": {
       "count": 69,
@@ -2365,7 +2437,13 @@
           "address": "Birlik Sokak 9B"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:27.748Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:02:07.524Z"
     },
     "shelters": {
       "count": 32,
@@ -2377,7 +2455,13 @@
           "street": "Yavuz Selim Caddesi"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:29.561Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:02:12.371Z"
     },
     "rest-areas": {
       "count": 30,
@@ -2421,12 +2505,24 @@
           "lon": 28.845479
         }
       ],
-      "updatedAt": "2026-09-03T17:47:30.128Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:02:14.015Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:47:30.602Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:02:15.404Z"
     },
     "post-offices": {
       "count": 192,
@@ -2640,7 +2736,13 @@
           "address": "Doktor Fahri Atabey Caddesi 106/B"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:31.139Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T10:02:16.965Z"
     },
     "showers": {
       "count": 8,
@@ -2664,7 +2766,13 @@
           "lon": 29.026164
         }
       ],
-      "updatedAt": "2026-09-03T17:47:31.512Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:02:18.603Z"
     },
     "fireplaces": {
       "count": 1,
@@ -2676,7 +2784,13 @@
           "lon": 28.964726
         }
       ],
-      "updatedAt": "2026-09-03T17:47:32.547Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:02:20.916Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2746,6 +2860,19 @@
       "count": 10,
       "pois": [
         {
+          "id": "node/8944139970",
+          "name": "Atölye 25,4",
+          "lat": 40.970979,
+          "lon": 29.042845
+        },
+        {
+          "id": "node/11085506828",
+          "name": "Velo İstanbul Bisiklet Mağazası Ve Tamir",
+          "lat": 40.986819,
+          "lon": 28.871737,
+          "address": "Zümrüt Evler Sokağı"
+        },
+        {
           "id": "node/12846575449",
           "lat": 41.021781,
           "lon": 28.976409,
@@ -2778,19 +2905,6 @@
           "street": "Talimhane Caddesi"
         },
         {
-          "id": "node/8944139970",
-          "name": "Atölye 25,4",
-          "lat": 40.970979,
-          "lon": 29.042845
-        },
-        {
-          "id": "node/11085506828",
-          "name": "Velo İstanbul Bisiklet Mağazası Ve Tamir",
-          "lat": 40.986819,
-          "lon": 28.871737,
-          "address": "Zümrüt Evler Sokağı"
-        },
-        {
           "id": "node/13910262023",
           "lat": 41.063591,
           "lon": 28.891638,
@@ -2805,7 +2919,13 @@
           "street": "Selen Çıkmazı"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:34.174Z"
+      "stats": {
+        "free": 3,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:02:24.845Z"
     }
   }
 }

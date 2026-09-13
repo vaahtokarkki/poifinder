@@ -1,6 +1,6 @@
 {
   "city": "sapporo",
-  "generatedAt": "2026-09-11T10:33:56.486Z",
+  "generatedAt": "2026-09-13T09:56:17.282Z",
   "categories": {
     "toilets": {
       "count": 328,
@@ -390,7 +390,13 @@
           "lon": 141.430281
         }
       ],
-      "updatedAt": "2026-09-03T17:43:24.586Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:55:35.022Z"
     },
     "parking": {
       "count": 2552,
@@ -611,7 +617,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:43:26.137Z"
+      "stats": {
+        "free": 223,
+        "paid": 661,
+        "stepFree": 32,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:55:39.940Z"
     },
     "charging-stations": {
       "count": 13,
@@ -632,7 +644,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:43:26.603Z"
+      "stats": {
+        "free": 0,
+        "paid": 6,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:55:41.603Z"
     },
     "gas-stations": {
       "count": 197,
@@ -785,7 +803,13 @@
           "lon": 141.434104
         }
       ],
-      "updatedAt": "2026-09-03T17:43:27.152Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:55:47.969Z"
     },
     "ice-cream": {
       "count": 8,
@@ -837,12 +861,24 @@
           "lon": 141.296924
         }
       ],
-      "updatedAt": "2026-09-03T17:43:27.648Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:55:49.261Z"
     },
     "dog-parks": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:43:28.010Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:55:50.425Z"
     },
     "picnic-spots": {
       "count": 24,
@@ -866,7 +902,13 @@
           "lon": 141.32984
         }
       ],
-      "updatedAt": "2026-09-03T17:43:29.048Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:55:52.504Z"
     },
     "viewpoints": {
       "count": 9,
@@ -898,12 +940,24 @@
           "lon": 141.32244
         }
       ],
-      "updatedAt": "2026-09-03T17:43:29.627Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:55:53.983Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:43:30.007Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:55:55.085Z"
     },
     "atms": {
       "count": 1047,
@@ -1123,6 +1177,24 @@
       "count": 295,
       "pois": [
         {
+          "id": "node/5403959900",
+          "name": "札幌南十条局",
+          "lat": 43.046984,
+          "lon": 141.350093
+        },
+        {
+          "id": "node/6988713396",
+          "name": "アンケートボックス",
+          "lat": 43.045574,
+          "lon": 141.351929
+        },
+        {
+          "id": "node/3650077471",
+          "name": "郵便ポスト",
+          "lat": 43.050687,
+          "lon": 141.298519
+        },
+        {
           "id": "node/2289890558",
           "lat": 43.061255,
           "lon": 141.354199,
@@ -1241,27 +1313,15 @@
           "lat": 43.052772,
           "lon": 141.367545,
           "street": "旭山公園米里線"
-        },
-        {
-          "id": "node/5403959900",
-          "name": "札幌南十条局",
-          "lat": 43.046984,
-          "lon": 141.350093
-        },
-        {
-          "id": "node/6988713396",
-          "name": "アンケートボックス",
-          "lat": 43.045574,
-          "lon": 141.351929
-        },
-        {
-          "id": "node/3650077471",
-          "name": "郵便ポスト",
-          "lat": 43.050687,
-          "lon": 141.298519
         }
       ],
-      "updatedAt": "2026-09-03T17:43:32.947Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:55:58.082Z"
     },
     "recycling": {
       "count": 10,
@@ -1366,7 +1426,13 @@
           "lon": 141.350863
         }
       ],
-      "updatedAt": "2026-09-03T17:43:35.327Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:55:59.856Z"
     },
     "libraries": {
       "count": 15,
@@ -1467,7 +1533,13 @@
           "lon": 141.329713
         }
       ],
-      "updatedAt": "2026-09-03T17:43:35.848Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:03.725Z"
     },
     "outdoor-gyms": {
       "count": 12,
@@ -1490,17 +1562,17 @@
           "lon": 141.28227
         }
       ],
-      "updatedAt": "2026-09-03T17:43:37.307Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:05.382Z"
     },
     "shelters": {
       "count": 34,
       "pois": [
-        {
-          "id": "node/6437880297",
-          "lat": 43.047194,
-          "lon": 141.354618,
-          "street": "南9条広場"
-        },
         {
           "id": "node/9269441088",
           "name": "あずまや",
@@ -1519,19 +1591,43 @@
           "name": "風の丘",
           "lat": 43.03901,
           "lon": 141.311155
+        },
+        {
+          "id": "node/6437880297",
+          "lat": 43.047194,
+          "lon": 141.354618,
+          "street": "南9条広場"
         }
       ],
-      "updatedAt": "2026-09-03T17:43:38.890Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:09.503Z"
     },
     "rest-areas": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T17:43:39.347Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:10.320Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:43:39.708Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:11.448Z"
     },
     "post-offices": {
       "count": 162,
@@ -1731,12 +1827,24 @@
           "openingHours": "Mo-Fr 09:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:43:40.243Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T09:56:13.448Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:43:40.588Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:14.705Z"
     },
     "fireplaces": {
       "count": 1,
@@ -1748,7 +1856,13 @@
           "lon": 141.356549
         }
       ],
-      "updatedAt": "2026-09-03T17:43:41.807Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:16.113Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1830,7 +1944,13 @@
     "bicycle-repair": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:43:42.152Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:17.180Z"
     }
   }
 }

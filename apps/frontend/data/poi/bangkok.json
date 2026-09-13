@@ -1,6 +1,6 @@
 {
   "city": "bangkok",
-  "generatedAt": "2026-09-11T10:34:14.172Z",
+  "generatedAt": "2026-09-13T10:00:50.287Z",
   "categories": {
     "toilets": {
       "count": 456,
@@ -536,7 +536,13 @@
           "lon": 100.40895
         }
       ],
-      "updatedAt": "2026-09-03T17:46:17.108Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T10:00:05.424Z"
     },
     "parking": {
       "count": 1083,
@@ -730,7 +736,13 @@
           "lon": 100.527245
         }
       ],
-      "updatedAt": "2026-09-03T17:46:18.385Z"
+      "stats": {
+        "free": 40,
+        "paid": 51,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T10:00:11.899Z"
     },
     "charging-stations": {
       "count": 38,
@@ -761,7 +773,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:18.909Z"
+      "stats": {
+        "free": 1,
+        "paid": 10,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:13.595Z"
     },
     "gas-stations": {
       "count": 250,
@@ -955,7 +973,13 @@
           "lon": 100.567724
         }
       ],
-      "updatedAt": "2026-09-03T17:46:19.571Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T10:00:16.488Z"
     },
     "ice-cream": {
       "count": 113,
@@ -1162,7 +1186,13 @@
           "lon": 100.530103
         }
       ],
-      "updatedAt": "2026-09-03T17:46:20.054Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T10:00:18.504Z"
     },
     "dog-parks": {
       "count": 8,
@@ -1194,7 +1224,13 @@
           "address": "ซอยสุขุมวิท 49 8/3"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:20.445Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:19.801Z"
     },
     "picnic-spots": {
       "count": 88,
@@ -1212,7 +1248,13 @@
           "lon": 100.543635
         }
       ],
-      "updatedAt": "2026-09-03T17:46:21.962Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:23.181Z"
     },
     "viewpoints": {
       "count": 48,
@@ -1298,12 +1340,24 @@
           "lon": 100.575874
         }
       ],
-      "updatedAt": "2026-09-03T17:46:22.788Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:25.121Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:46:23.302Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:26.696Z"
     },
     "atms": {
       "count": 758,
@@ -1512,6 +1566,54 @@
       "count": 293,
       "pois": [
         {
+          "id": "node/7329389638",
+          "name": "Postcode 10100 2/11",
+          "lat": 13.74872,
+          "lon": 100.5053
+        },
+        {
+          "id": "node/7333235624",
+          "name": "Postcode 10400",
+          "lat": 13.754631,
+          "lon": 100.528049
+        },
+        {
+          "id": "node/7333348169",
+          "name": "Postcode 10400 5/12",
+          "lat": 13.752968,
+          "lon": 100.532789
+        },
+        {
+          "id": "node/7314493773",
+          "name": "Postcode 10330  2/2",
+          "lat": 13.742563,
+          "lon": 100.530361
+        },
+        {
+          "id": "node/7314493760",
+          "name": "Postcode 10330 3/19",
+          "lat": 13.738473,
+          "lon": 100.529759
+        },
+        {
+          "id": "node/7313680506",
+          "name": "Postcode 10330  2/3",
+          "lat": 13.730318,
+          "lon": 100.535126
+        },
+        {
+          "id": "node/7312316634",
+          "name": "Postcode 10330 2/5",
+          "lat": 13.734669,
+          "lon": 100.545927
+        },
+        {
+          "id": "node/12181341543",
+          "name": "One Bangkok Tower 3 Pick-up/Drop-off Point",
+          "lat": 13.7265,
+          "lon": 100.546982
+        },
+        {
           "id": "node/3036907382",
           "lat": 13.754737,
           "lon": 100.50142,
@@ -1638,61 +1740,19 @@
           "street": "ถนนสามเสน"
         },
         {
-          "id": "node/7329389638",
-          "name": "Postcode 10100 2/11",
-          "lat": 13.74872,
-          "lon": 100.5053
-        },
-        {
           "id": "node/2078002943",
           "lat": 13.751725,
           "lon": 100.509531,
           "street": "ซอยแม้นศรี"
-        },
-        {
-          "id": "node/12741085043",
-          "lat": 13.747146,
-          "lon": 100.500234,
-          "street": "ถนนเจริญกรุง"
-        },
-        {
-          "id": "node/5868944788",
-          "lat": 13.765351,
-          "lon": 100.498909,
-          "street": "ซอยสามเสน 3"
-        },
-        {
-          "id": "node/2430684792",
-          "lat": 13.763325,
-          "lon": 100.495194,
-          "street": "ถนนพระอาทิตย์"
-        },
-        {
-          "id": "node/12433480202",
-          "lat": 13.74787,
-          "lon": 100.507673,
-          "street": "ถนนหลวง"
-        },
-        {
-          "id": "node/11384130035",
-          "lat": 13.759875,
-          "lon": 100.512198,
-          "street": "ถนนนครสวรรค์"
-        },
-        {
-          "id": "node/12429533408",
-          "lat": 13.745777,
-          "lon": 100.499451,
-          "street": "ถนนตรีเพชร"
-        },
-        {
-          "id": "node/6417227814",
-          "lat": 13.767695,
-          "lon": 100.500017,
-          "street": "ถนนวิสุทธิกษัตริย์"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:25.944Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:31.774Z"
     },
     "recycling": {
       "count": 18,
@@ -1788,7 +1848,13 @@
     "luggage-storage": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T17:46:29.287Z"
+      "stats": {
+        "free": 1,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:33.210Z"
     },
     "libraries": {
       "count": 64,
@@ -1991,7 +2057,13 @@
           "address": "สีลม 19 2"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:30.268Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:34.635Z"
     },
     "outdoor-gyms": {
       "count": 39,
@@ -2068,7 +2140,13 @@
           "address": "1519 Soi Lat Phrao 41 Yaek 6-4, Khwaeng Samsen Nok, Khet Huai Khwang, Krung Thep Maha Nakhon 10310"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:32.940Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:35.616Z"
     },
     "shelters": {
       "count": 9,
@@ -2080,7 +2158,13 @@
           "street": "ทางเดินริมน้ำแม่น้ำเจ้าพระยา"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:35.425Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:40.041Z"
     },
     "rest-areas": {
       "count": 48,
@@ -2128,12 +2212,24 @@
           "lon": 100.488905
         }
       ],
-      "updatedAt": "2026-09-03T17:46:35.992Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:41.411Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:46:36.723Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:42.476Z"
     },
     "post-offices": {
       "count": 83,
@@ -2336,7 +2432,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:38.068Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:43.471Z"
     },
     "showers": {
       "count": 10,
@@ -2362,12 +2464,24 @@
           "lon": 100.540191
         }
       ],
-      "updatedAt": "2026-09-03T17:46:38.448Z"
+      "stats": {
+        "free": 2,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:44.500Z"
     },
     "fireplaces": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:46:39.707Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:46.244Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2528,7 +2642,13 @@
           "street": "ซอยกรุงเทพ-นนทบุรี 42"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:40.909Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:50.185Z"
     }
   }
 }

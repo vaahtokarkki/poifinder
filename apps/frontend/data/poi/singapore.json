@@ -1,6 +1,6 @@
 {
   "city": "singapore",
-  "generatedAt": "2026-09-11T10:34:18.453Z",
+  "generatedAt": "2026-09-13T10:00:03.414Z",
   "categories": {
     "toilets": {
       "count": 705,
@@ -624,7 +624,13 @@
           "lon": 103.850985
         }
       ],
-      "updatedAt": "2026-09-03T17:45:43.734Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 100,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:59:20.272Z"
     },
     "parking": {
       "count": 2559,
@@ -826,7 +832,13 @@
           "lon": 103.8482
         }
       ],
-      "updatedAt": "2026-09-03T17:45:45.357Z"
+      "stats": {
+        "free": 28,
+        "paid": 326,
+        "stepFree": 57,
+        "partlyStepFree": 10
+      },
+      "updatedAt": "2026-09-13T09:59:23.922Z"
     },
     "charging-stations": {
       "count": 98,
@@ -928,7 +940,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:45:45.848Z"
+      "stats": {
+        "free": 3,
+        "paid": 29,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:24.804Z"
     },
     "gas-stations": {
       "count": 174,
@@ -1146,7 +1164,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:45:46.601Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 20,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:59:26.154Z"
     },
     "ice-cream": {
       "count": 125,
@@ -1357,7 +1381,13 @@
           "lon": 103.833581
         }
       ],
-      "updatedAt": "2026-09-03T17:45:47.348Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T09:59:29.485Z"
     },
     "dog-parks": {
       "count": 27,
@@ -1415,7 +1445,13 @@
           "lon": 103.774873
         }
       ],
-      "updatedAt": "2026-09-03T17:45:47.921Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:31.107Z"
     },
     "picnic-spots": {
       "count": 119,
@@ -1433,7 +1469,13 @@
           "lon": 103.822485
         }
       ],
-      "updatedAt": "2026-09-03T17:45:49.628Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:34.588Z"
     },
     "viewpoints": {
       "count": 112,
@@ -1634,7 +1676,13 @@
           "lon": 103.818975
         }
       ],
-      "updatedAt": "2026-09-03T17:45:50.540Z"
+      "stats": {
+        "free": 3,
+        "paid": 2,
+        "stepFree": 11,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:59:36.103Z"
     },
     "beaches": {
       "count": 18,
@@ -1658,7 +1706,13 @@
           "lon": 103.822003
         }
       ],
-      "updatedAt": "2026-09-03T17:45:51.199Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:37.431Z"
     },
     "atms": {
       "count": 1037,
@@ -1891,6 +1945,31 @@
       "count": 129,
       "pois": [
         {
+          "id": "node/10214574617",
+          "name": "21 Mandalay",
+          "lat": 1.322864,
+          "lon": 103.848864
+        },
+        {
+          "id": "node/6295026860",
+          "name": "SingPost",
+          "lat": 1.300438,
+          "lon": 103.857127
+        },
+        {
+          "id": "node/9905123623",
+          "name": "Sengkang Central Post Office Boxes",
+          "lat": 1.392743,
+          "lon": 103.893792,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/4613525590",
+          "name": "Postbox",
+          "lat": 1.304566,
+          "lon": 103.908273
+        },
+        {
           "id": "node/8568727655",
           "lat": 1.350026,
           "lon": 103.835149,
@@ -2013,12 +2092,6 @@
           "street": "Jalan Ampas"
         },
         {
-          "id": "node/10214574617",
-          "name": "21 Mandalay",
-          "lat": 1.322864,
-          "lon": 103.848864
-        },
-        {
           "id": "node/2332890360",
           "lat": 1.31176,
           "lon": 103.830555,
@@ -2053,27 +2126,15 @@
           "lat": 1.319095,
           "lon": 103.850198,
           "street": "Moulmein Road"
-        },
-        {
-          "id": "node/7322197055",
-          "lat": 1.322786,
-          "lon": 103.853965,
-          "street": "Whampoa Drive"
-        },
-        {
-          "id": "node/2686158855",
-          "lat": 1.350722,
-          "lon": 103.864804,
-          "street": "Serangoon Avenue 3"
-        },
-        {
-          "id": "node/1668588220",
-          "lat": 1.307807,
-          "lon": 103.8297,
-          "street": "Claymore Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:45:54.415Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:59:44.054Z"
     },
     "recycling": {
       "count": 94,
@@ -2276,7 +2337,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:45:58.659Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:45.010Z"
     },
     "libraries": {
       "count": 54,
@@ -2496,7 +2563,13 @@
           "lon": 103.773395
         }
       ],
-      "updatedAt": "2026-09-03T17:45:59.229Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:59:46.306Z"
     },
     "outdoor-gyms": {
       "count": 1414,
@@ -2642,7 +2715,13 @@
           "lon": 103.762621
         }
       ],
-      "updatedAt": "2026-09-03T17:46:01.670Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:47.925Z"
     },
     "shelters": {
       "count": 237,
@@ -2709,72 +2788,10 @@
           "lon": 103.804697
         },
         {
-          "id": "node/7869056421",
-          "lat": 1.343771,
-          "lon": 103.83548,
-          "street": "MacRitchie Nature Trail"
-        },
-        {
           "id": "way/585704609",
           "name": "Twin Gazebos",
           "lat": 1.366931,
           "lon": 103.832684
-        },
-        {
-          "id": "node/7273720643",
-          "lat": 1.371274,
-          "lon": 103.825249,
-          "street": "Boardwalk"
-        },
-        {
-          "id": "node/8427227355",
-          "lat": 1.327307,
-          "lon": 103.820639,
-          "street": "Kheam Hock Road"
-        },
-        {
-          "id": "node/2085846430",
-          "lat": 1.361087,
-          "lon": 103.845765,
-          "wheelchair": "yes",
-          "street": "Kallang Park Connector"
-        },
-        {
-          "id": "node/7565539573",
-          "lat": 1.329853,
-          "lon": 103.841778,
-          "street": "Jalan Toa Payoh"
-        },
-        {
-          "id": "node/6909495120",
-          "lat": 1.320833,
-          "lon": 103.83301,
-          "wheelchair": "yes",
-          "street": "Goldhill Avenue"
-        },
-        {
-          "id": "node/6511646347",
-          "lat": 1.327732,
-          "lon": 103.845082,
-          "street": "Ah Hood Road"
-        },
-        {
-          "id": "node/6340941509",
-          "lat": 1.330185,
-          "lon": 103.848354,
-          "street": "Whampoa Park Connector"
-        },
-        {
-          "id": "node/8022135601",
-          "lat": 1.32228,
-          "lon": 103.842771,
-          "street": "Jalan Novena"
-        },
-        {
-          "id": "node/9703421873",
-          "lat": 1.321834,
-          "lon": 103.796466,
-          "street": "Jalan Haji Alias"
         },
         {
           "id": "node/394490324",
@@ -2802,12 +2819,6 @@
           "lon": 103.777444
         },
         {
-          "id": "node/7451041938",
-          "lat": 1.329372,
-          "lon": 103.855805,
-          "street": "Kim Keat Link"
-        },
-        {
           "id": "way/172345906",
           "name": "Summit Hut",
           "lat": 1.354619,
@@ -2831,9 +2842,82 @@
           "name": "Jungle Fall Hut",
           "lat": 1.355929,
           "lon": 103.773685
+        },
+        {
+          "id": "node/5599632725",
+          "name": "Piper Hut",
+          "lat": 1.377788,
+          "lon": 103.78077
+        },
+        {
+          "id": "way/1006761126",
+          "name": "Garden With A View",
+          "lat": 1.403311,
+          "lon": 103.795222
+        },
+        {
+          "id": "node/8199098449",
+          "name": "Pavilion 2",
+          "lat": 1.304004,
+          "lon": 103.867277,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/9858422908",
+          "name": "Pavilion 7",
+          "lat": 1.291684,
+          "lon": 103.864709
+        },
+        {
+          "id": "node/3452221520",
+          "name": "Look-out Point",
+          "lat": 1.282148,
+          "lon": 103.791793
+        },
+        {
+          "id": "way/684985144",
+          "name": "Ray Bay",
+          "lat": 1.259145,
+          "lon": 103.819046
+        },
+        {
+          "id": "way/172008291",
+          "name": "The Coliseum",
+          "lat": 1.257307,
+          "lon": 103.81982
+        },
+        {
+          "id": "node/5367713466",
+          "name": "Block 111 Shelter",
+          "lat": 1.324443,
+          "lon": 103.911073
+        },
+        {
+          "id": "way/692845674",
+          "name": "Hut 11C",
+          "lat": 1.297862,
+          "lon": 103.905517
+        },
+        {
+          "id": "node/7869056421",
+          "lat": 1.343771,
+          "lon": 103.83548,
+          "street": "MacRitchie Nature Trail"
+        },
+        {
+          "id": "node/7273720643",
+          "lat": 1.371274,
+          "lon": 103.825249,
+          "street": "Boardwalk"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:04.329Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:52.597Z"
     },
     "rest-areas": {
       "count": 9,
@@ -2851,12 +2935,24 @@
           "lon": 103.779421
         }
       ],
-      "updatedAt": "2026-09-03T17:46:04.987Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:53.794Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:46:05.447Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:54.763Z"
     },
     "post-offices": {
       "count": 48,
@@ -3093,12 +3189,24 @@
           "address": "Aljunied Avenue 2 119"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:05.901Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:59:55.652Z"
     },
     "showers": {
       "count": 15,
       "pois": [],
-      "updatedAt": "2026-09-03T17:46:06.412Z"
+      "stats": {
+        "free": 12,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:57.408Z"
     },
     "fireplaces": {
       "count": 96,
@@ -3266,7 +3374,13 @@
           "lon": 103.911599
         }
       ],
-      "updatedAt": "2026-09-03T17:46:07.661Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:59:59.243Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3435,6 +3549,18 @@
       "count": 18,
       "pois": [
         {
+          "id": "node/7754959902",
+          "name": "T4 / EGT Scooter",
+          "lat": 1.35274,
+          "lon": 103.73984
+        },
+        {
+          "id": "node/12941564850",
+          "name": "Rollite Cycling",
+          "lat": 1.443046,
+          "lon": 103.777938
+        },
+        {
           "id": "node/11297639074",
           "lat": 1.326684,
           "lon": 103.845087,
@@ -3456,12 +3582,6 @@
           "wheelchair": "yes",
           "fee": "no",
           "street": "OCBC Square"
-        },
-        {
-          "id": "node/7754959902",
-          "name": "T4 / EGT Scooter",
-          "lat": 1.35274,
-          "lon": 103.73984
         },
         {
           "id": "node/10082996557",
@@ -3510,12 +3630,6 @@
           "street": "Siloso Beach Walk"
         },
         {
-          "id": "node/12941564850",
-          "name": "Rollite Cycling",
-          "lat": 1.443046,
-          "lon": 103.777938
-        },
-        {
           "id": "node/13483177684",
           "lat": 1.308856,
           "lon": 103.910587,
@@ -3529,7 +3643,13 @@
           "street": "Punggol Promenade Riverside Walk"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:10.459Z"
+      "stats": {
+        "free": 10,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:03.312Z"
     }
   }
 }

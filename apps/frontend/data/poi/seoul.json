@@ -1,6 +1,6 @@
 {
   "city": "seoul",
-  "generatedAt": "2026-09-11T10:34:08.271Z",
+  "generatedAt": "2026-09-13T09:57:51.767Z",
   "categories": {
     "toilets": {
       "count": 696,
@@ -598,7 +598,13 @@
           "lon": 126.902739
         }
       ],
-      "updatedAt": "2026-09-03T17:44:10.571Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:01.187Z"
     },
     "parking": {
       "count": 4589,
@@ -787,7 +793,13 @@
           "lon": 126.992688
         }
       ],
-      "updatedAt": "2026-09-03T17:44:12.446Z"
+      "stats": {
+        "free": 36,
+        "paid": 100,
+        "stepFree": 15,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:57:07.318Z"
     },
     "charging-stations": {
       "count": 75,
@@ -886,7 +898,13 @@
           "lon": 126.939786
         }
       ],
-      "updatedAt": "2026-09-03T17:44:12.968Z"
+      "stats": {
+        "free": 0,
+        "paid": 22,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:08.719Z"
     },
     "gas-stations": {
       "count": 437,
@@ -1073,7 +1091,13 @@
           "lon": 126.959575
         }
       ],
-      "updatedAt": "2026-09-03T17:44:13.749Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:57:11.582Z"
     },
     "ice-cream": {
       "count": 119,
@@ -1262,7 +1286,13 @@
           "lon": 126.927066
         }
       ],
-      "updatedAt": "2026-09-03T17:44:14.536Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:57:13.306Z"
     },
     "dog-parks": {
       "count": 7,
@@ -1286,7 +1316,13 @@
           "lon": 126.848973
         }
       ],
-      "updatedAt": "2026-09-03T17:44:14.982Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:15.076Z"
     },
     "picnic-spots": {
       "count": 173,
@@ -1341,7 +1377,13 @@
           "lon": 127.025151
         }
       ],
-      "updatedAt": "2026-09-03T17:44:16.403Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:18.871Z"
     },
     "viewpoints": {
       "count": 150,
@@ -1529,7 +1571,13 @@
           "lon": 126.917219
         }
       ],
-      "updatedAt": "2026-09-03T17:44:17.066Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:20.815Z"
     },
     "beaches": {
       "count": 2,
@@ -1547,7 +1595,13 @@
           "lon": 127.083394
         }
       ],
-      "updatedAt": "2026-09-03T17:44:17.647Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:22.983Z"
     },
     "atms": {
       "count": 324,
@@ -1752,6 +1806,36 @@
       "count": 35,
       "pois": [
         {
+          "id": "node/4658611045",
+          "name": "빨강 우체통",
+          "lat": 37.554332,
+          "lon": 126.930651
+        },
+        {
+          "id": "node/3272576057",
+          "name": "무인우편창구",
+          "lat": 37.536661,
+          "lon": 126.886553
+        },
+        {
+          "id": "node/11821418351",
+          "name": "Seoul Trail Stamp Desk",
+          "lat": 37.56182,
+          "lon": 126.864627
+        },
+        {
+          "id": "node/11821418334",
+          "name": "[Seoul Trail] Stamp Desk",
+          "lat": 37.563786,
+          "lon": 126.85656
+        },
+        {
+          "id": "node/11830212645",
+          "name": "[Seoul Trail] Stamp Deck",
+          "lat": 37.553216,
+          "lon": 127.099974
+        },
+        {
           "id": "node/3053006112",
           "lat": 37.566815,
           "lon": 126.976948,
@@ -1780,12 +1864,6 @@
           "lat": 37.540737,
           "lon": 126.946313,
           "street": "큰우물로"
-        },
-        {
-          "id": "node/4658611045",
-          "name": "빨강 우체통",
-          "lat": 37.554332,
-          "lon": 126.930651
         },
         {
           "id": "node/12968679051",
@@ -1848,12 +1926,6 @@
           "street": "아차산로7길"
         },
         {
-          "id": "node/3272576057",
-          "name": "무인우편창구",
-          "lat": 37.536661,
-          "lon": 126.886553
-        },
-        {
           "id": "node/6219855109",
           "lat": 37.536888,
           "lon": 126.884612,
@@ -1866,12 +1938,6 @@
           "street": "도영로7길"
         },
         {
-          "id": "node/11821418351",
-          "name": "Seoul Trail Stamp Desk",
-          "lat": 37.56182,
-          "lon": 126.864627
-        },
-        {
           "id": "node/12468337531",
           "lat": 37.506959,
           "lon": 126.892171,
@@ -1882,18 +1948,6 @@
           "lat": 37.527976,
           "lon": 126.874463,
           "street": "목동서로"
-        },
-        {
-          "id": "node/11821418334",
-          "name": "[Seoul Trail] Stamp Desk",
-          "lat": 37.563786,
-          "lon": 126.85656
-        },
-        {
-          "id": "node/11830212645",
-          "name": "[Seoul Trail] Stamp Deck",
-          "lat": 37.553216,
-          "lon": 127.099974
         },
         {
           "id": "node/13654408924",
@@ -1920,7 +1974,13 @@
           "street": "디지털로"
         }
       ],
-      "updatedAt": "2026-09-03T17:44:20.290Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:27.909Z"
     },
     "recycling": {
       "count": 718,
@@ -2151,7 +2211,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:44:24.868Z"
+      "stats": {
+        "free": 1,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:57:29.220Z"
     },
     "libraries": {
       "count": 446,
@@ -2351,7 +2417,13 @@
           "lon": 126.957077
         }
       ],
-      "updatedAt": "2026-09-03T17:44:25.769Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:57:32.614Z"
     },
     "outdoor-gyms": {
       "count": 287,
@@ -2484,7 +2556,13 @@
           "lon": 126.949802
         }
       ],
-      "updatedAt": "2026-09-03T17:44:27.829Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:34.112Z"
     },
     "shelters": {
       "count": 16,
@@ -2520,7 +2598,13 @@
           "street": "서울둘레길"
         }
       ],
-      "updatedAt": "2026-09-03T17:44:30.021Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:39.421Z"
     },
     "rest-areas": {
       "count": 12,
@@ -2563,12 +2647,24 @@
           "lon": 127.1009
         }
       ],
-      "updatedAt": "2026-09-03T17:44:31.052Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:40.988Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:44:31.527Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:42.087Z"
     },
     "post-offices": {
       "count": 321,
@@ -2785,7 +2881,13 @@
           "address": "마포대로 174"
         }
       ],
-      "updatedAt": "2026-09-03T17:44:32.309Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:44.063Z"
     },
     "showers": {
       "count": 7,
@@ -2797,7 +2899,13 @@
           "lon": 127.084101
         }
       ],
-      "updatedAt": "2026-09-03T17:44:32.787Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:45.195Z"
     },
     "fireplaces": {
       "count": 2,
@@ -2809,7 +2917,13 @@
           "lon": 127.018232
         }
       ],
-      "updatedAt": "2026-09-03T17:44:34.132Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:47.632Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3036,7 +3150,13 @@
           "street": "월드컵로"
         }
       ],
-      "updatedAt": "2026-09-03T17:44:35.501Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:57:51.666Z"
     }
   }
 }

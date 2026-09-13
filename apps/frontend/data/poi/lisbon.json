@@ -1,6 +1,6 @@
 {
   "city": "lisbon",
-  "generatedAt": "2026-09-11T10:31:32.672Z",
+  "generatedAt": "2026-09-13T09:13:52.535Z",
   "categories": {
     "toilets": {
       "count": 294,
@@ -637,7 +637,13 @@
           "lon": -9.117028
         }
       ],
-      "updatedAt": "2026-09-03T17:19:00.509Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 14,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:13:00.225Z"
     },
     "parking": {
       "count": 4142,
@@ -884,7 +890,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:02.550Z"
+      "stats": {
+        "free": 878,
+        "paid": 297,
+        "stepFree": 67,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:13:10.386Z"
     },
     "charging-stations": {
       "count": 610,
@@ -1126,7 +1138,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:03.239Z"
+      "stats": {
+        "free": 10,
+        "paid": 548,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:16.281Z"
     },
     "gas-stations": {
       "count": 96,
@@ -1215,7 +1233,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:03.888Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:17.591Z"
     },
     "ice-cream": {
       "count": 88,
@@ -1432,7 +1456,13 @@
           "lon": -9.158634
         }
       ],
-      "updatedAt": "2026-09-03T17:19:04.469Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:13:18.732Z"
     },
     "dog-parks": {
       "count": 51,
@@ -1570,7 +1600,13 @@
           "lon": -9.145338
         }
       ],
-      "updatedAt": "2026-09-03T17:19:04.909Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:13:19.841Z"
     },
     "picnic-spots": {
       "count": 188,
@@ -1723,7 +1759,13 @@
           "lon": -9.151101
         }
       ],
-      "updatedAt": "2026-09-03T17:19:06.529Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:22.056Z"
     },
     "viewpoints": {
       "count": 136,
@@ -1935,7 +1977,13 @@
           "address": "Rua Presidente Arriaga"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:07.429Z"
+      "stats": {
+        "free": 2,
+        "paid": 6,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:24.103Z"
     },
     "beaches": {
       "count": 5,
@@ -1959,7 +2007,13 @@
           "lon": -9.113532
         }
       ],
-      "updatedAt": "2026-09-03T17:19:07.922Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:25.495Z"
     },
     "atms": {
       "count": 528,
@@ -2196,6 +2250,18 @@
       "count": 193,
       "pois": [
         {
+          "id": "node/5139183328",
+          "name": "Briefkasten",
+          "lat": 38.724792,
+          "lon": -9.150699
+        },
+        {
+          "id": "node/4230866489",
+          "name": "habitação",
+          "lat": 38.656503,
+          "lon": -9.156694
+        },
+        {
           "id": "node/4538524107",
           "lat": 38.722218,
           "lon": -9.139179,
@@ -2298,12 +2364,6 @@
           "street": "Rua Castilho"
         },
         {
-          "id": "node/5139183328",
-          "name": "Briefkasten",
-          "lat": 38.724792,
-          "lon": -9.150699
-        },
-        {
           "id": "node/736963042",
           "lat": 38.717273,
           "lon": -9.150095,
@@ -2368,15 +2428,15 @@
           "lat": 38.730845,
           "lon": -9.150753,
           "street": "Avenida António Augusto de Aguiar"
-        },
-        {
-          "id": "node/13394421233",
-          "lat": 38.710892,
-          "lon": -9.145869,
-          "street": "Largo do Calhariz"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:10.548Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:32.530Z"
     },
     "recycling": {
       "count": 858,
@@ -2584,7 +2644,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:16.005Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:34.283Z"
     },
     "libraries": {
       "count": 100,
@@ -2815,7 +2881,13 @@
           "openingHours": "Mo-Fr 10:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:16.629Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:13:36.153Z"
     },
     "outdoor-gyms": {
       "count": 199,
@@ -3060,7 +3132,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:18.709Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:37.764Z"
     },
     "shelters": {
       "count": 14,
@@ -3084,7 +3162,13 @@
           "lon": -9.189335
         }
       ],
-      "updatedAt": "2026-09-03T17:19:20.425Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:40.068Z"
     },
     "rest-areas": {
       "count": 14,
@@ -3120,12 +3204,24 @@
           "lon": -9.124063
         }
       ],
-      "updatedAt": "2026-09-03T17:19:21.025Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:41.533Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:19:21.415Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:42.423Z"
     },
     "post-offices": {
       "count": 66,
@@ -3246,12 +3342,24 @@
           "lon": -9.120912
         }
       ],
-      "updatedAt": "2026-09-03T17:19:21.923Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:13:43.881Z"
     },
     "showers": {
       "count": 6,
       "pois": [],
-      "updatedAt": "2026-09-03T17:19:22.412Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:45.341Z"
     },
     "fireplaces": {
       "count": 15,
@@ -3284,7 +3392,13 @@
           "address": "Mercado de Benfica"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:23.643Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:47.560Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3448,7 +3562,13 @@
           "street": "Rua de Angola"
         }
       ],
-      "updatedAt": "2026-09-03T17:19:25.455Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:13:52.433Z"
     }
   }
 }

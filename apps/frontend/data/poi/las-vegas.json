@@ -1,6 +1,6 @@
 {
   "city": "las-vegas",
-  "generatedAt": "2026-09-11T10:32:54.991Z",
+  "generatedAt": "2026-09-13T09:36:09.504Z",
   "categories": {
     "toilets": {
       "count": 49,
@@ -153,7 +153,13 @@
           "lon": -115.189337
         }
       ],
-      "updatedAt": "2026-09-03T17:32:05.470Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:31.603Z"
     },
     "parking": {
       "count": 773,
@@ -361,7 +367,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:06.524Z"
+      "stats": {
+        "free": 47,
+        "paid": 97,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:33.765Z"
     },
     "charging-stations": {
       "count": 23,
@@ -382,7 +394,13 @@
           "lon": -115.149636
         }
       ],
-      "updatedAt": "2026-09-03T17:32:07.021Z"
+      "stats": {
+        "free": 0,
+        "paid": 14,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:34.763Z"
     },
     "gas-stations": {
       "count": 168,
@@ -561,7 +579,13 @@
           "address": "West Craig Road 965"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:07.648Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:35:36.275Z"
     },
     "ice-cream": {
       "count": 26,
@@ -719,7 +743,13 @@
           "openingHours": "Mo-Su 11:00-22:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:08.160Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:38.204Z"
     },
     "dog-parks": {
       "count": 6,
@@ -737,12 +767,24 @@
           "lon": -115.17849
         }
       ],
-      "updatedAt": "2026-09-03T17:32:08.567Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:39.327Z"
     },
     "picnic-spots": {
       "count": 56,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:09.666Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:42.244Z"
     },
     "viewpoints": {
       "count": 2,
@@ -754,12 +796,24 @@
           "lon": -115.107467
         }
       ],
-      "updatedAt": "2026-09-03T17:32:10.240Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:44.023Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:10.674Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:45.504Z"
     },
     "atms": {
       "count": 67,
@@ -850,6 +904,12 @@
       "count": 4,
       "pois": [
         {
+          "id": "node/4455786589",
+          "name": "USPS",
+          "lat": 36.137769,
+          "lon": -115.06436
+        },
+        {
           "id": "node/7140786569",
           "lat": 36.144625,
           "lon": -115.192859,
@@ -864,19 +924,19 @@
           "street": "East Sahara Avenue"
         },
         {
-          "id": "node/4455786589",
-          "name": "USPS",
-          "lat": 36.137769,
-          "lon": -115.06436
-        },
-        {
           "id": "node/2672548534",
           "lat": 36.151698,
           "lon": -115.053632,
           "street": "South Christy Lane"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:12.161Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:48.247Z"
     },
     "recycling": {
       "count": 3,
@@ -911,7 +971,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:13.122Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:49.711Z"
     },
     "libraries": {
       "count": 9,
@@ -974,7 +1040,13 @@
           "address": "East Harris Avenue 5400"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:13.567Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:51.401Z"
     },
     "outdoor-gyms": {
       "count": 9,
@@ -1043,7 +1115,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:15.028Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:52.643Z"
     },
     "shelters": {
       "count": 21,
@@ -1055,17 +1133,35 @@
           "lon": -115.186487
         }
       ],
-      "updatedAt": "2026-09-03T17:32:15.810Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:55.335Z"
     },
     "rest-areas": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:16.253Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:57.045Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:16.607Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:58.972Z"
     },
     "post-offices": {
       "count": 28,
@@ -1190,17 +1286,35 @@
           "lon": -115.122377
         }
       ],
-      "updatedAt": "2026-09-03T17:32:17.048Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:00.803Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:17.393Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:02.012Z"
     },
     "fireplaces": {
       "count": 17,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:18.447Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:03.744Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1258,6 +1372,13 @@
       "count": 3,
       "pois": [
         {
+          "id": "node/5854119687",
+          "name": "UNLV Transit Center",
+          "lat": 36.104074,
+          "lon": -115.138914,
+          "openingHours": "24/7"
+        },
+        {
           "id": "node/6638835709",
           "lat": 36.168014,
           "lon": -115.138334,
@@ -1269,16 +1390,15 @@
           "lat": 36.144509,
           "lon": -115.083191,
           "street": "South Lamb Boulevard"
-        },
-        {
-          "id": "node/5854119687",
-          "name": "UNLV Transit Center",
-          "lat": 36.104074,
-          "lon": -115.138914,
-          "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:19.649Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:09.402Z"
     }
   }
 }

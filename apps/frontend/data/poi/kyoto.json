@@ -1,6 +1,6 @@
 {
   "city": "kyoto",
-  "generatedAt": "2026-09-11T10:33:49.892Z",
+  "generatedAt": "2026-09-13T09:53:41.702Z",
   "categories": {
     "toilets": {
       "count": 492,
@@ -582,7 +582,13 @@
           "lon": 135.740423
         }
       ],
-      "updatedAt": "2026-09-03T17:42:11.645Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:52:52.722Z"
     },
     "parking": {
       "count": 6737,
@@ -795,7 +801,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:42:13.487Z"
+      "stats": {
+        "free": 310,
+        "paid": 946,
+        "stepFree": 8,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:53:01.037Z"
     },
     "charging-stations": {
       "count": 7,
@@ -821,7 +833,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:42:14.008Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:02.164Z"
     },
     "gas-stations": {
       "count": 102,
@@ -966,7 +984,13 @@
           "lon": 135.700783
         }
       ],
-      "updatedAt": "2026-09-03T17:42:14.583Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:03.346Z"
     },
     "ice-cream": {
       "count": 17,
@@ -1027,7 +1051,13 @@
           "lon": 135.769883
         }
       ],
-      "updatedAt": "2026-09-03T17:42:15.028Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:04.546Z"
     },
     "dog-parks": {
       "count": 1,
@@ -1039,7 +1069,13 @@
           "lon": 135.766492
         }
       ],
-      "updatedAt": "2026-09-03T17:42:15.375Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:05.555Z"
     },
     "picnic-spots": {
       "count": 109,
@@ -1063,7 +1099,13 @@
           "lon": 135.766662
         }
       ],
-      "updatedAt": "2026-09-03T17:42:16.567Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:09.485Z"
     },
     "viewpoints": {
       "count": 93,
@@ -1197,12 +1239,24 @@
           "lon": 135.792979
         }
       ],
-      "updatedAt": "2026-09-03T17:42:17.128Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:11.760Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:42:17.520Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:12.833Z"
     },
     "atms": {
       "count": 165,
@@ -1408,6 +1462,30 @@
       "count": 416,
       "pois": [
         {
+          "id": "node/5965947795",
+          "name": "郵便差出箱一号丸型",
+          "lat": 35.009528,
+          "lon": 135.756656
+        },
+        {
+          "id": "node/8175455317",
+          "name": "西洞院四条上ル",
+          "lat": 35.004281,
+          "lon": 135.755038
+        },
+        {
+          "id": "node/2684568268",
+          "name": "郵便ポスト",
+          "lat": 35.021297,
+          "lon": 135.751648
+        },
+        {
+          "id": "node/3272442797",
+          "name": "ローソン大宮西小野堀町店内",
+          "lat": 35.055016,
+          "lon": 135.743813
+        },
+        {
           "id": "node/6695788085",
           "lat": 35.011888,
           "lon": 135.768808,
@@ -1547,12 +1625,6 @@
           "street": "衣棚通"
         },
         {
-          "id": "node/5965947795",
-          "name": "郵便差出箱一号丸型",
-          "lat": 35.009528,
-          "lon": 135.756656
-        },
-        {
           "id": "node/13927770074",
           "lat": 35.001736,
           "lon": 135.767185,
@@ -1569,27 +1641,15 @@
           "lat": 35.001923,
           "lon": 135.772679,
           "street": "大和大路"
-        },
-        {
-          "id": "node/12105600983",
-          "lat": 35.008688,
-          "lon": 135.75519,
-          "street": "西洞院通"
-        },
-        {
-          "id": "node/6534502982",
-          "lat": 35.014965,
-          "lon": 135.754261,
-          "street": "小川通"
-        },
-        {
-          "id": "node/12432533621",
-          "lat": 35.000076,
-          "lon": 135.764464,
-          "street": "高辻通"
         }
       ],
-      "updatedAt": "2026-09-03T17:42:19.983Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 14,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:53:18.666Z"
     },
     "recycling": {
       "count": 24,
@@ -1702,7 +1762,13 @@
     "luggage-storage": {
       "count": 8,
       "pois": [],
-      "updatedAt": "2026-09-03T17:42:22.587Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:20.525Z"
     },
     "libraries": {
       "count": 46,
@@ -1888,7 +1954,13 @@
           "lon": 135.770514
         }
       ],
-      "updatedAt": "2026-09-03T17:42:23.181Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:21.705Z"
     },
     "outdoor-gyms": {
       "count": 23,
@@ -1911,7 +1983,13 @@
           "lon": 135.79966
         }
       ],
-      "updatedAt": "2026-09-03T17:42:24.808Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:23.123Z"
     },
     "shelters": {
       "count": 50,
@@ -1921,12 +1999,6 @@
           "name": "藤棚",
           "lat": 35.006494,
           "lon": 135.761271
-        },
-        {
-          "id": "node/7927140830",
-          "lat": 35.013191,
-          "lon": 135.786016,
-          "street": "魚店通"
         },
         {
           "id": "way/368703900",
@@ -1951,9 +2023,21 @@
           "name": "陽開亭",
           "lat": 34.950163,
           "lon": 135.771506
+        },
+        {
+          "id": "node/7927140830",
+          "lat": 35.013191,
+          "lon": 135.786016,
+          "street": "魚店通"
         }
       ],
-      "updatedAt": "2026-09-03T17:42:26.449Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:27.995Z"
     },
     "rest-areas": {
       "count": 8,
@@ -1965,12 +2049,24 @@
           "lon": 135.698901
         }
       ],
-      "updatedAt": "2026-09-03T17:42:26.950Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:29.263Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:42:27.308Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:30.584Z"
     },
     "post-offices": {
       "count": 199,
@@ -2186,7 +2282,13 @@
           "openingHours": "Mo-Fr 09:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:42:27.889Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:53:33.406Z"
     },
     "showers": {
       "count": 10,
@@ -2258,7 +2360,13 @@
           "lon": 135.757589
         }
       ],
-      "updatedAt": "2026-09-03T17:42:28.270Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:34.621Z"
     },
     "fireplaces": {
       "count": 242,
@@ -2444,7 +2552,13 @@
           "lon": 135.804312
         }
       ],
-      "updatedAt": "2026-09-03T17:42:29.528Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:36.989Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2592,7 +2706,13 @@
           "street": "一条通"
         }
       ],
-      "updatedAt": "2026-09-03T17:42:30.789Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:41.600Z"
     }
   }
 }

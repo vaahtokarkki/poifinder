@@ -1,6 +1,6 @@
 {
   "city": "belfast",
-  "generatedAt": "2026-09-11T10:30:40.513Z",
+  "generatedAt": "2026-09-13T08:57:24.615Z",
   "categories": {
     "toilets": {
       "count": 53,
@@ -401,7 +401,13 @@
           "lon": -5.940795
         }
       ],
-      "updatedAt": "2026-09-03T17:10:41.161Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:44.722Z"
     },
     "parking": {
       "count": 2299,
@@ -623,7 +629,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:42.259Z"
+      "stats": {
+        "free": 150,
+        "paid": 79,
+        "stepFree": 22,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:47.756Z"
     },
     "charging-stations": {
       "count": 39,
@@ -729,7 +741,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:42.721Z"
+      "stats": {
+        "free": 21,
+        "paid": 15,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:49.089Z"
     },
     "gas-stations": {
       "count": 66,
@@ -937,7 +955,13 @@
           "address": "Saintfield Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:43.166Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:50.259Z"
     },
     "ice-cream": {
       "count": 15,
@@ -1024,7 +1048,13 @@
           "lon": -5.986131
         }
       ],
-      "updatedAt": "2026-09-03T17:10:43.668Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:51.817Z"
     },
     "dog-parks": {
       "count": 5,
@@ -1055,12 +1085,24 @@
           "lon": -5.940539
         }
       ],
-      "updatedAt": "2026-09-03T17:10:44.049Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:54.055Z"
     },
     "picnic-spots": {
       "count": 61,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:45.391Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:57.291Z"
     },
     "viewpoints": {
       "count": 14,
@@ -1092,7 +1134,13 @@
           "lon": -5.842103
         }
       ],
-      "updatedAt": "2026-09-03T17:10:45.961Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:56:59.231Z"
     },
     "beaches": {
       "count": 4,
@@ -1104,7 +1152,13 @@
           "lon": -5.898936
         }
       ],
-      "updatedAt": "2026-09-03T17:10:46.397Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:02.304Z"
     },
     "atms": {
       "count": 136,
@@ -1214,6 +1268,26 @@
     "post-boxes": {
       "count": 194,
       "pois": [
+        {
+          "id": "node/4007329355",
+          "name": "The Royal Hospitals",
+          "lat": 54.593022,
+          "lon": -5.954854
+        },
+        {
+          "id": "node/4359142146",
+          "name": "Lennoxvale",
+          "lat": 54.579413,
+          "lon": -5.939174,
+          "address": "Malone Road 52"
+        },
+        {
+          "id": "node/4359142145",
+          "name": "Windsor Avenue North",
+          "lat": 54.579366,
+          "lon": -5.942292,
+          "address": "Windsor Avenue"
+        },
         {
           "id": "node/3988582493",
           "lat": 54.597393,
@@ -1389,27 +1463,15 @@
           "lat": 54.611161,
           "lon": -5.935762,
           "street": "Antrim Road"
-        },
-        {
-          "id": "node/3626660947",
-          "lat": 54.583401,
-          "lon": -5.937095,
-          "street": "College Gardens"
-        },
-        {
-          "id": "node/4007329355",
-          "name": "The Royal Hospitals",
-          "lat": 54.593022,
-          "lon": -5.954854
-        },
-        {
-          "id": "node/3984149470",
-          "lat": 54.612302,
-          "lon": -5.929341,
-          "street": "Duncairn Gardens"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:48.606Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:08.314Z"
     },
     "recycling": {
       "count": 41,
@@ -1559,7 +1621,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:50.938Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:09.561Z"
     },
     "libraries": {
       "count": 22,
@@ -1723,7 +1791,13 @@
           "address": "High Street 86–88"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:51.441Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:10.539Z"
     },
     "outdoor-gyms": {
       "count": 15,
@@ -1753,22 +1827,46 @@
           "address": "Divis Road 16"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:52.727Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:11.524Z"
     },
     "shelters": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:53.387Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:12.963Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:53.827Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:14.106Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:54.261Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:15.010Z"
     },
     "post-offices": {
       "count": 58,
@@ -2014,12 +2112,24 @@
           "openingHours": "Mo-Th 08:30-17:30; Fr 09:00-17:30; Sa 09:00-12:30"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:54.646Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:15.932Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:10:55.008Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:17.745Z"
     },
     "fireplaces": {
       "count": 12,
@@ -2031,7 +2141,13 @@
           "lon": -5.935467
         }
       ],
-      "updatedAt": "2026-09-03T17:10:56.048Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:20.253Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2191,7 +2307,13 @@
           "street": "Martin Park"
         }
       ],
-      "updatedAt": "2026-09-03T17:10:57.988Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:24.513Z"
     }
   }
 }

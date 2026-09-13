@@ -1,6 +1,6 @@
 {
   "city": "paris",
-  "generatedAt": "2026-09-11T10:30:53.039Z",
+  "generatedAt": "2026-09-13T09:00:29.098Z",
   "categories": {
     "toilets": {
       "count": 1154,
@@ -452,7 +452,7 @@
       "updatedAt": "2026-09-11T10:30:46.331Z"
     },
     "playgrounds": {
-      "count": 1347,
+      "count": 1346,
       "pois": [
         {
           "id": "way/630886117",
@@ -645,7 +645,13 @@
           "lon": 2.364996
         }
       ],
-      "updatedAt": "2026-09-03T17:11:59.486Z"
+      "stats": {
+        "free": 4,
+        "paid": 5,
+        "stepFree": 28,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T08:59:12.772Z"
     },
     "parking": {
       "count": 3853,
@@ -867,10 +873,16 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:01.429Z"
+      "stats": {
+        "free": 259,
+        "paid": 1722,
+        "stepFree": 27,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:59:18.282Z"
     },
     "charging-stations": {
-      "count": 529,
+      "count": 530,
       "pois": [
         {
           "id": "node/2003145869",
@@ -1110,10 +1122,16 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:02.103Z"
+      "stats": {
+        "free": 11,
+        "paid": 261,
+        "stepFree": 20,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:59:20.329Z"
     },
     "gas-stations": {
-      "count": 137,
+      "count": 138,
       "pois": [
         {
           "id": "node/307372951",
@@ -1325,7 +1343,13 @@
           "lon": 2.396795
         }
       ],
-      "updatedAt": "2026-09-03T17:12:02.729Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 7
+      },
+      "updatedAt": "2026-09-13T08:59:21.891Z"
     },
     "ice-cream": {
       "count": 148,
@@ -1558,7 +1582,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:03.492Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 30,
+        "partlyStepFree": 15
+      },
+      "updatedAt": "2026-09-13T08:59:24.546Z"
     },
     "dog-parks": {
       "count": 77,
@@ -1644,7 +1674,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:04.006Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 25,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:59:26.606Z"
     },
     "picnic-spots": {
       "count": 545,
@@ -1662,7 +1698,13 @@
           "lon": 2.456466
         }
       ],
-      "updatedAt": "2026-09-03T17:12:05.583Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:59:30.759Z"
     },
     "viewpoints": {
       "count": 64,
@@ -1866,7 +1908,13 @@
           "lon": 2.454002
         }
       ],
-      "updatedAt": "2026-09-03T17:12:07.149Z"
+      "stats": {
+        "free": 3,
+        "paid": 3,
+        "stepFree": 8,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:59:34.057Z"
     },
     "beaches": {
       "count": 3,
@@ -1878,7 +1926,13 @@
           "lon": 2.378951
         }
       ],
-      "updatedAt": "2026-09-03T17:12:07.988Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:59:35.463Z"
     },
     "atms": {
       "count": 1611,
@@ -2119,7 +2173,7 @@
       "updatedAt": "2026-09-11T10:30:47.257Z"
     },
     "post-boxes": {
-      "count": 1844,
+      "count": 1841,
       "pois": [
         {
           "id": "node/1785271538",
@@ -2157,9 +2211,163 @@
           "name": "Simone Veil",
           "lat": 48.806838,
           "lon": 2.328611
+        },
+        {
+          "id": "node/259637337",
+          "lat": 48.856892,
+          "lon": 2.35344,
+          "wheelchair": "yes",
+          "street": "Rue de Rivoli"
+        },
+        {
+          "id": "node/2927812432",
+          "lat": 48.857956,
+          "lon": 2.352882,
+          "street": "Rue de la Verrerie"
+        },
+        {
+          "id": "node/259637327",
+          "lat": 48.855065,
+          "lon": 2.353575,
+          "street": "Rue de Brosse"
+        },
+        {
+          "id": "node/2211556519",
+          "lat": 48.857337,
+          "lon": 2.349476,
+          "street": "Avenue Victoria"
+        },
+        {
+          "id": "node/1166729341",
+          "lat": 48.857895,
+          "lon": 2.354883,
+          "street": "Rue des Archives"
+        },
+        {
+          "id": "node/4260550564",
+          "lat": 48.855321,
+          "lon": 2.35576,
+          "street": "Rue du Grenier sur l'Eau"
+        },
+        {
+          "id": "node/12789644408",
+          "lat": 48.857876,
+          "lon": 2.355842,
+          "street": "Rue de Moussy"
+        },
+        {
+          "id": "node/2650495610",
+          "lat": 48.859421,
+          "lon": 2.354212,
+          "wheelchair": "no",
+          "street": "Rue du Plâtre"
+        },
+        {
+          "id": "node/4406170837",
+          "lat": 48.855754,
+          "lon": 2.357029,
+          "street": "Rue François Miron"
+        },
+        {
+          "id": "node/4998774938",
+          "lat": 48.858105,
+          "lon": 2.356666,
+          "street": "Rue Aubriot"
+        },
+        {
+          "id": "node/1368057069",
+          "lat": 48.853291,
+          "lon": 2.353962,
+          "street": "Rue Jean du Bellay"
+        },
+        {
+          "id": "node/2211556538",
+          "lat": 48.85826,
+          "lon": 2.347418,
+          "street": "Rue Saint-Denis"
+        },
+        {
+          "id": "node/4458131402",
+          "lat": 48.853838,
+          "lon": 2.348602,
+          "street": "Parvis Notre-Dame - Place Jean-Paul II"
+        },
+        {
+          "id": "node/2536521756",
+          "lat": 48.85291,
+          "lon": 2.351545,
+          "street": "Rue du Cloître Notre-Dame"
+        },
+        {
+          "id": "node/2595414654",
+          "lat": 48.859659,
+          "lon": 2.34874,
+          "street": "Boulevard de Sébastopol"
+        },
+        {
+          "id": "node/3621911696",
+          "lat": 48.857938,
+          "lon": 2.357957,
+          "street": "Rue Vieille du Temple"
+        },
+        {
+          "id": "node/701537707",
+          "lat": 48.860562,
+          "lon": 2.355133,
+          "wheelchair": "yes",
+          "street": "Rue du Temple"
+        },
+        {
+          "id": "node/1166729196",
+          "lat": 48.860231,
+          "lon": 2.356196,
+          "wheelchair": "yes",
+          "street": "Rue Pecquay"
+        },
+        {
+          "id": "node/4176169086",
+          "lat": 48.859464,
+          "lon": 2.346789,
+          "street": "Rue des Lavandières Sainte-Opportune"
+        },
+        {
+          "id": "node/697571429",
+          "lat": 48.861333,
+          "lon": 2.353387,
+          "street": "Rue Beaubourg"
+        },
+        {
+          "id": "node/257629334",
+          "lat": 48.852263,
+          "lon": 2.348034,
+          "street": "Rue Lagrange"
+        },
+        {
+          "id": "node/2003145914",
+          "lat": 48.861943,
+          "lon": 2.352908,
+          "street": "Passage du Maure"
+        },
+        {
+          "id": "node/5750337769",
+          "lat": 48.855298,
+          "lon": 2.360123,
+          "street": "Place des Combattantes et Combattants du Sida"
+        },
+        {
+          "id": "node/1109569921",
+          "lat": 48.852601,
+          "lon": 2.346452,
+          "street": "Rue du Petit Pont"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:13.027Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:59:51.451Z"
     },
     "recycling": {
       "count": 3526,
@@ -2387,7 +2595,7 @@
       "updatedAt": "2026-09-11T10:30:49.511Z"
     },
     "luggage-storage": {
-      "count": 29,
+      "count": 28,
       "pois": [
         {
           "id": "node/4755453922",
@@ -2432,7 +2640,8 @@
           "id": "node/8987108171",
           "name": "Ouilockers",
           "lat": 48.853706,
-          "lon": 2.366236
+          "lon": 2.366236,
+          "wheelchair": "yes"
         },
         {
           "id": "node/14019594839",
@@ -2493,10 +2702,16 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:16.456Z"
+      "stats": {
+        "free": 3,
+        "paid": 13,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:59:52.592Z"
     },
     "libraries": {
-      "count": 576,
+      "count": 578,
       "pois": [
         {
           "id": "node/2997913294",
@@ -2691,6 +2906,7 @@
           "name": "Bibliothèque du CNAM",
           "lat": 48.866613,
           "lon": 2.354823,
+          "openingHours": "Mo 10:00-20:00; Tu 12:00-20:00; We-Fr 10:00-20:00; Sa 12:00-18:00; Aug 24-Sep 12 Mo-Sa 12:00-18:00",
           "wheelchair": "yes"
         },
         {
@@ -2727,7 +2943,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:17.202Z"
+      "stats": {
+        "free": 2,
+        "paid": 1,
+        "stepFree": 71,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:59:55.955Z"
     },
     "outdoor-gyms": {
       "count": 463,
@@ -2934,7 +3156,13 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:12:19.294Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:59:57.326Z"
     },
     "shelters": {
       "count": 31,
@@ -2950,9 +3178,33 @@
           "name": "Abri de Jardin",
           "lat": 48.874126,
           "lon": 2.248901
+        },
+        {
+          "id": "node/5154195164",
+          "lat": 48.878267,
+          "lon": 2.380104,
+          "street": "Avenue Puebla"
+        },
+        {
+          "id": "node/2320806073",
+          "lat": 48.805502,
+          "lon": 2.308354,
+          "street": "Avenue des Érables Champêtres"
+        },
+        {
+          "id": "node/4533510118",
+          "lat": 48.858711,
+          "lon": 2.259415,
+          "street": "Chemin de Ceinture du Lac Inférieur"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:20.928Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:00:02.256Z"
     },
     "rest-areas": {
       "count": 5,
@@ -2965,12 +3217,24 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:21.495Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:00:04.804Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:12:21.861Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:00:06.125Z"
     },
     "post-offices": {
       "count": 308,
@@ -3222,7 +3486,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:22.498Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 207,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T09:00:08.134Z"
     },
     "showers": {
       "count": 21,
@@ -3330,12 +3600,24 @@
           "lon": 2.400621
         }
       ],
-      "updatedAt": "2026-09-03T17:12:22.913Z"
+      "stats": {
+        "free": 4,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:00:09.760Z"
     },
     "fireplaces": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:12:23.962Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:00:12.464Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3474,8 +3756,39 @@
       "updatedAt": "2026-08-18T03:58:23.209Z"
     },
     "bicycle-repair": {
-      "count": 49,
+      "count": 182,
       "pois": [
+        {
+          "id": "node/11824620483",
+          "name": "CycloCube - Académie du Climat",
+          "lat": 48.856174,
+          "lon": 2.356287,
+          "openingHours": "We 18:30-21:00",
+          "fee": "yes"
+        },
+        {
+          "id": "node/11911859495",
+          "name": "66 Origin",
+          "lat": 48.860196,
+          "lon": 2.353635,
+          "address": "Simon le Franc 10",
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
+          "id": "node/11049894265",
+          "name": "Abri Alexandrie 02-03",
+          "lat": 48.868104,
+          "lon": 2.350831,
+          "fee": "no"
+        },
+        {
+          "id": "node/13016927297",
+          "name": "CycloCube - Beaux-Arts",
+          "lat": 48.857254,
+          "lon": 2.33424,
+          "openingHours": "Tu 12:00-14:30",
+          "fee": "yes"
+        },
         {
           "id": "node/11598329774",
           "name": "CycloCube - Césure",
@@ -3491,9 +3804,191 @@
           "lat": 48.83168,
           "lon": 2.359668,
           "fee": "no"
+        },
+        {
+          "id": "node/13016962903",
+          "name": "CycloCube La RocheFoucauld",
+          "lat": 48.832244,
+          "lon": 2.331079,
+          "openingHours": "We 18:00-21:00",
+          "fee": "yes"
+        },
+        {
+          "id": "node/11824620482",
+          "name": "CycloCube - Grands Moulins",
+          "lat": 48.830065,
+          "lon": 2.381396,
+          "openingHours": "Th 12:00-14:00",
+          "fee": "yes"
+        },
+        {
+          "id": "node/4894371577",
+          "name": "Pompe à vélo, pied et outils",
+          "lat": 48.84104,
+          "lon": 2.300616,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/13794098131",
+          "name": "repair and run",
+          "lat": 48.839394,
+          "lon": 2.301715,
+          "address": "Rue de Vaugirard 281",
+          "openingHours": "Mo-Th 10:00-19:00"
+        },
+        {
+          "id": "node/8550744621",
+          "name": "AR La Bonne Tambouille",
+          "lat": 48.895571,
+          "lon": 2.362297
+        },
+        {
+          "id": "node/4268470281",
+          "name": "La Cyclofficine de Paris",
+          "lat": 48.871597,
+          "lon": 2.411071,
+          "openingHours": "We 14:00-18:00; Sa 14:00-19:00"
+        },
+        {
+          "id": "node/7791407986",
+          "name": "Pompe en libre service (derrière la grille du parc)",
+          "lat": 48.832287,
+          "lon": 2.300515,
+          "fee": "no"
+        },
+        {
+          "id": "node/10819163030",
+          "name": "Cyclocube La Bricothèque",
+          "lat": 48.827965,
+          "lon": 2.303388,
+          "openingHours": "Sa 14:00-17:00",
+          "fee": "yes"
+        },
+        {
+          "id": "node/7638516419",
+          "name": "Pompe en libre service (derrière la grille de l'espace Paris Plaine)",
+          "lat": 48.82797,
+          "lon": 2.293309,
+          "openingHours": "Espace Paris Plaine",
+          "fee": "no"
+        },
+        {
+          "id": "node/11598327249",
+          "name": "CycloCube - Makabane",
+          "lat": 48.838523,
+          "lon": 2.278944,
+          "openingHours": "Th 18:00-20:00",
+          "fee": "yes"
+        },
+        {
+          "id": "node/9803914764",
+          "name": "Atelier de réparation de vélos",
+          "lat": 48.804862,
+          "lon": 2.363653,
+          "address": "Avenue de Paris 30",
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/13143275893",
+          "name": "JBCycle - mécanique vélo",
+          "lat": 48.880934,
+          "lon": 2.277692,
+          "address": "Rue du Commandant Pillot 8",
+          "openingHours": "Mo-Fr 09:00-18:00",
+          "fee": "yes"
+        },
+        {
+          "id": "node/13446032347",
+          "name": "Atelier solidaire Saint-Ouen",
+          "lat": 48.916807,
+          "lon": 2.33604
+        },
+        {
+          "id": "node/8240804534",
+          "name": "OhCyclo",
+          "lat": 48.864271,
+          "lon": 2.444438,
+          "address": "Boulevard Henri Barbusse 1",
+          "openingHours": "We-Fr 17:00-20:00; Sa 14:00-18:00"
+        },
+        {
+          "id": "node/9202783795",
+          "lat": 48.859775,
+          "lon": 2.348782,
+          "street": "Boulevard de Sébastopol"
+        },
+        {
+          "id": "node/6344648068",
+          "lat": 48.851911,
+          "lon": 2.34301,
+          "openingHours": "Mo-Sa 10:00-20:00, Su 11:00-20:00",
+          "fee": "no",
+          "street": "Rue Serpente"
+        },
+        {
+          "id": "node/12722380094",
+          "lat": 48.856579,
+          "lon": 2.364495,
+          "street": "Rue de Turenne"
+        },
+        {
+          "id": "node/9169821435",
+          "lat": 48.864251,
+          "lon": 2.361961,
+          "street": "Rue Perrée"
+        },
+        {
+          "id": "node/8090871117",
+          "lat": 48.8666,
+          "lon": 2.359843,
+          "street": "Rue du Vertbois"
+        },
+        {
+          "id": "node/9169821436",
+          "lat": 48.866592,
+          "lon": 2.361249,
+          "openingHours": "24/7",
+          "street": "Rue de Turbigo"
+        },
+        {
+          "id": "node/5460500413",
+          "lat": 48.867232,
+          "lon": 2.343992,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue du Louvre"
+        },
+        {
+          "id": "node/9169821438",
+          "lat": 48.868724,
+          "lon": 2.34325,
+          "street": "Rue Montmartre"
+        },
+        {
+          "id": "node/11183005257",
+          "lat": 48.870143,
+          "lon": 2.3497,
+          "fee": "no",
+          "street": "Rue Notre-Dame-de-Bonne-Nouvelle"
+        },
+        {
+          "id": "node/5552195191",
+          "lat": 48.867895,
+          "lon": 2.364863,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue du Faubourg du Temple"
         }
       ],
-      "updatedAt": "2026-09-03T17:12:25.728Z"
+      "stats": {
+        "free": 92,
+        "paid": 8,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:00:28.996Z"
     }
   }
 }

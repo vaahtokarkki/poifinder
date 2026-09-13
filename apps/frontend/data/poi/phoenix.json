@@ -1,6 +1,6 @@
 {
   "city": "phoenix",
-  "generatedAt": "2026-09-11T10:32:57.939Z",
+  "generatedAt": "2026-09-13T09:33:33.626Z",
   "categories": {
     "toilets": {
       "count": 185,
@@ -459,7 +459,13 @@
           "lon": -111.934203
         }
       ],
-      "updatedAt": "2026-09-03T17:30:31.013Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:42.589Z"
     },
     "parking": {
       "count": 3288,
@@ -668,7 +674,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:32.666Z"
+      "stats": {
+        "free": 310,
+        "paid": 80,
+        "stepFree": 14,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:46.761Z"
     },
     "charging-stations": {
       "count": 58,
@@ -724,7 +736,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:33.148Z"
+      "stats": {
+        "free": 5,
+        "paid": 23,
+        "stepFree": 11,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:48.043Z"
     },
     "gas-stations": {
       "count": 301,
@@ -937,7 +955,13 @@
           "address": "West Bethany Home Road 2440"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:33.902Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 13
+      },
+      "updatedAt": "2026-09-13T09:32:50.520Z"
     },
     "ice-cream": {
       "count": 69,
@@ -1139,7 +1163,13 @@
           "address": "West Southern Avenue 3901"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:34.628Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:51.861Z"
     },
     "dog-parks": {
       "count": 24,
@@ -1227,7 +1257,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:35.128Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:32:54.312Z"
     },
     "picnic-spots": {
       "count": 1362,
@@ -1299,7 +1335,13 @@
           "lon": -111.93975
         }
       ],
-      "updatedAt": "2026-09-03T17:30:36.688Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 188,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:01.604Z"
     },
     "viewpoints": {
       "count": 23,
@@ -1329,12 +1371,24 @@
           "lon": -112.073871
         }
       ],
-      "updatedAt": "2026-09-03T17:30:37.509Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:03.548Z"
     },
     "beaches": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T17:30:38.062Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:04.876Z"
     },
     "atms": {
       "count": 146,
@@ -1530,6 +1584,18 @@
       "count": 86,
       "pois": [
         {
+          "id": "node/12287650440",
+          "name": "LOCKER/MAILROOM",
+          "lat": 33.471289,
+          "lon": -111.988795
+        },
+        {
+          "id": "node/10296344935",
+          "name": "MailBoxes & More",
+          "lat": 33.377668,
+          "lon": -111.952934
+        },
+        {
           "id": "node/2657340948",
           "lat": 33.451004,
           "lon": -112.069892,
@@ -1656,12 +1722,6 @@
           "street": "East Thomas Road"
         },
         {
-          "id": "node/12287650440",
-          "name": "LOCKER/MAILROOM",
-          "lat": 33.471289,
-          "lon": -111.988795
-        },
-        {
           "id": "node/11264983210",
           "lat": 33.495032,
           "lon": -112.003775,
@@ -1702,15 +1762,15 @@
           "lat": 33.530304,
           "lon": -112.056387,
           "street": "North 12th Street"
-        },
-        {
-          "id": "node/5895092764",
-          "lat": 33.363449,
-          "lon": -112.083163,
-          "street": "South 7th Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:40.872Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:09.003Z"
     },
     "recycling": {
       "count": 100,
@@ -1926,7 +1986,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:30:44.428Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:10.400Z"
     },
     "libraries": {
       "count": 42,
@@ -2125,7 +2191,13 @@
           "address": "North Drinkwater Boulevard 3839"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:45.081Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:12.365Z"
     },
     "outdoor-gyms": {
       "count": 119,
@@ -2156,7 +2228,13 @@
           "address": "West McDowell Road 2825"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:47.135Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:14.831Z"
     },
     "shelters": {
       "count": 354,
@@ -2258,12 +2336,6 @@
           "lon": -112.153729
         },
         {
-          "id": "node/10838700359",
-          "lat": 33.414769,
-          "lon": -112.182665,
-          "street": "Cypress Ridge Community Walking Trail"
-        },
-        {
           "id": "way/137182817",
           "name": "Edward Forst Memorial",
           "lat": 33.44258,
@@ -2316,9 +2388,21 @@
           "name": "Pima Area 4",
           "lat": 33.583105,
           "lon": -112.067405
+        },
+        {
+          "id": "node/10838700359",
+          "lat": 33.414769,
+          "lon": -112.182665,
+          "street": "Cypress Ridge Community Walking Trail"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:49.061Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:20.262Z"
     },
     "rest-areas": {
       "count": 7,
@@ -2349,12 +2433,24 @@
           "lon": -112.205892
         }
       ],
-      "updatedAt": "2026-09-03T17:30:49.775Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:21.393Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:30:50.170Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:22.602Z"
     },
     "post-offices": {
       "count": 47,
@@ -2551,17 +2647,35 @@
           "address": "South 51st Street 11010"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:50.748Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:24.146Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:30:51.183Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:25.429Z"
     },
     "fireplaces": {
       "count": 328,
       "pois": [],
-      "updatedAt": "2026-09-03T17:30:52.329Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:27.768Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2813,7 +2927,13 @@
           "street": "East Baseline Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:30:54.083Z"
+      "stats": {
+        "free": 4,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:33.526Z"
     }
   }
 }

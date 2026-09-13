@@ -1,6 +1,6 @@
 {
   "city": "melbourne",
-  "generatedAt": "2026-09-11T10:33:37.218Z",
+  "generatedAt": "2026-09-13T09:45:04.350Z",
   "categories": {
     "toilets": {
       "count": 594,
@@ -624,7 +624,13 @@
           "lon": 144.978285
         }
       ],
-      "updatedAt": "2026-09-03T17:37:06.310Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 3,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:44:02.271Z"
     },
     "parking": {
       "count": 5061,
@@ -847,7 +853,13 @@
           "openingHours": "Mo-Fr 07:00-23:59"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:09.854Z"
+      "stats": {
+        "free": 802,
+        "paid": 247,
+        "stepFree": 17,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:44:10.983Z"
     },
     "charging-stations": {
       "count": 103,
@@ -885,7 +897,13 @@
           "lon": 145.046552
         }
       ],
-      "updatedAt": "2026-09-03T17:37:10.889Z"
+      "stats": {
+        "free": 14,
+        "paid": 28,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:12.831Z"
     },
     "gas-stations": {
       "count": 198,
@@ -1099,7 +1117,13 @@
           "address": "Epsom Road 1"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:12.581Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:14.593Z"
     },
     "ice-cream": {
       "count": 108,
@@ -1321,7 +1345,13 @@
           "openingHours": "Su-Th 12:00-22:00; Fr-Sa 12:00-23:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:14.223Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 22,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:19.185Z"
     },
     "dog-parks": {
       "count": 19,
@@ -1384,7 +1414,13 @@
           "lon": 144.910787
         }
       ],
-      "updatedAt": "2026-09-03T17:37:15.095Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:20.632Z"
     },
     "picnic-spots": {
       "count": 757,
@@ -1420,7 +1456,13 @@
           "lon": 144.957555
         }
       ],
-      "updatedAt": "2026-09-03T17:37:16.643Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:24.478Z"
     },
     "viewpoints": {
       "count": 74,
@@ -1564,7 +1606,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:17.371Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:26.024Z"
     },
     "beaches": {
       "count": 30,
@@ -1648,7 +1696,13 @@
           "lon": 144.986852
         }
       ],
-      "updatedAt": "2026-09-03T17:37:18.121Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:28.346Z"
     },
     "atms": {
       "count": 331,
@@ -1885,6 +1939,36 @@
       "count": 653,
       "pois": [
         {
+          "id": "node/2289931217",
+          "name": "Australia Post",
+          "lat": -37.818005,
+          "lon": 144.965112
+        },
+        {
+          "id": "node/4392883420",
+          "name": "Express Post",
+          "lat": -37.82015,
+          "lon": 144.943088
+        },
+        {
+          "id": "node/3074303034",
+          "name": "Parcel Lockers 24/7",
+          "lat": -37.791539,
+          "lon": 144.99469
+        },
+        {
+          "id": "node/599726879",
+          "name": "Elwood Post Office",
+          "lat": -37.873236,
+          "lon": 144.989993
+        },
+        {
+          "id": "node/8819559075",
+          "name": "AusPost Parcel Locker",
+          "lat": -37.744203,
+          "lon": 144.964078
+        },
+        {
           "id": "node/13841995135",
           "lat": -37.814775,
           "lon": 144.963289,
@@ -1939,12 +2023,6 @@
           "lat": -37.813654,
           "lon": 144.968641,
           "street": "Russell Street"
-        },
-        {
-          "id": "node/2289931217",
-          "name": "Australia Post",
-          "lat": -37.818005,
-          "lon": 144.965112
         },
         {
           "id": "node/2109657694",
@@ -2043,34 +2121,15 @@
           "lat": -37.808205,
           "lon": 144.978411,
           "street": "Victoria Parade"
-        },
-        {
-          "id": "node/12169093735",
-          "lat": -37.800357,
-          "lon": 144.964293,
-          "street": "Grattan Street"
-        },
-        {
-          "id": "node/472236181",
-          "lat": -37.801079,
-          "lon": 144.969253,
-          "address": "Grattan Street 7",
-          "street": "Erskine Lane"
-        },
-        {
-          "id": "node/553899204",
-          "lat": -37.826741,
-          "lon": 144.959358,
-          "street": "City Road"
-        },
-        {
-          "id": "node/282825881",
-          "lat": -37.801762,
-          "lon": 144.952976,
-          "street": "Chetwynd Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:21.086Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:33.840Z"
     },
     "recycling": {
       "count": 262,
@@ -2288,7 +2347,13 @@
           "lon": 144.951936
         }
       ],
-      "updatedAt": "2026-09-03T17:37:24.360Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:35.124Z"
     },
     "libraries": {
       "count": 161,
@@ -2531,7 +2596,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:25.200Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 42,
+        "partlyStepFree": 8
+      },
+      "updatedAt": "2026-09-13T09:44:36.469Z"
     },
     "outdoor-gyms": {
       "count": 88,
@@ -2612,7 +2683,13 @@
           "address": "Altona Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:27.621Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:37.957Z"
     },
     "shelters": {
       "count": 87,
@@ -2624,34 +2701,10 @@
           "lon": 144.97924
         },
         {
-          "id": "node/10307776648",
-          "lat": -37.793623,
-          "lon": 144.940308,
-          "street": "Buncle Street"
-        },
-        {
-          "id": "node/9427659110",
-          "lat": -37.796596,
-          "lon": 144.9205,
-          "street": "Anderson Walk"
-        },
-        {
           "id": "way/436087615",
           "name": "BBQ Shelter",
           "lat": -37.779463,
           "lon": 144.934678
-        },
-        {
-          "id": "node/9794049233",
-          "lat": -37.787231,
-          "lon": 144.917386,
-          "street": "Wetlands Way"
-        },
-        {
-          "id": "node/9075292380",
-          "lat": -37.769531,
-          "lon": 144.983627,
-          "street": "Merri Creek Trail"
         },
         {
           "id": "way/1350785010",
@@ -2677,6 +2730,30 @@
           "name": "shade sails",
           "lat": -37.736461,
           "lon": 144.972936
+        },
+        {
+          "id": "node/10307776648",
+          "lat": -37.793623,
+          "lon": 144.940308,
+          "street": "Buncle Street"
+        },
+        {
+          "id": "node/9427659110",
+          "lat": -37.796596,
+          "lon": 144.9205,
+          "street": "Anderson Walk"
+        },
+        {
+          "id": "node/9794049233",
+          "lat": -37.787231,
+          "lon": 144.917386,
+          "street": "Wetlands Way"
+        },
+        {
+          "id": "node/9075292380",
+          "lat": -37.769531,
+          "lon": 144.983627,
+          "street": "Merri Creek Trail"
         },
         {
           "id": "node/10211772030",
@@ -2709,7 +2786,13 @@
           "street": "Winton Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:30.554Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:44:42.488Z"
     },
     "rest-areas": {
       "count": 39,
@@ -2761,7 +2844,13 @@
           "lon": 144.848173
         }
       ],
-      "updatedAt": "2026-09-03T17:37:31.365Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:44.131Z"
     },
     "dump-stations": {
       "count": 1,
@@ -2775,7 +2864,13 @@
           "openingHours": "Mo-Su 08:00-15:30"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:31.894Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:45.423Z"
     },
     "post-offices": {
       "count": 154,
@@ -3011,12 +3106,24 @@
           "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:00; Su closed"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:32.633Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 22,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:47.573Z"
     },
     "showers": {
       "count": 14,
       "pois": [],
-      "updatedAt": "2026-09-03T17:37:33.056Z"
+      "stats": {
+        "free": 9,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:49.929Z"
     },
     "fireplaces": {
       "count": 278,
@@ -3046,7 +3153,13 @@
           "lon": 144.954812
         }
       ],
-      "updatedAt": "2026-09-03T17:37:34.510Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:44:55.259Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3164,6 +3277,58 @@
       "count": 90,
       "pois": [
         {
+          "id": "node/2418505224",
+          "name": "Bike Repair Station",
+          "lat": -37.797987,
+          "lon": 144.958538
+        },
+        {
+          "id": "node/3949579844",
+          "name": "Merri Creek Bike Repair Station",
+          "lat": -37.776911,
+          "lon": 144.989513,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/9104694414",
+          "name": "Tools and tyre pump",
+          "lat": -37.751374,
+          "lon": 144.962222
+        },
+        {
+          "id": "node/4771825590",
+          "name": "Bicycle Repair Station",
+          "lat": -37.775766,
+          "lon": 144.896009,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/11930472097",
+          "name": "Dragon bicycle hoops",
+          "lat": -37.818169,
+          "lon": 144.87784
+        },
+        {
+          "id": "node/9052730833",
+          "name": "Moreland council",
+          "lat": -37.743672,
+          "lon": 144.963147
+        },
+        {
+          "id": "node/8387150930",
+          "name": "Moreland Council Bike repair station.",
+          "lat": -37.742496,
+          "lon": 144.967845
+        },
+        {
+          "id": "node/11234707591",
+          "name": "Bike tools",
+          "lat": -37.742265,
+          "lon": 144.999974,
+          "openingHours": "24/7"
+        },
+        {
           "id": "node/13542299201",
           "lat": -37.821011,
           "lon": 144.961712,
@@ -3203,12 +3368,6 @@
           "lat": -37.798385,
           "lon": 144.96341,
           "street": "Monash Road"
-        },
-        {
-          "id": "node/2418505224",
-          "name": "Bike Repair Station",
-          "lat": -37.797987,
-          "lon": 144.958538
         },
         {
           "id": "node/6590027167",
@@ -3304,14 +3463,6 @@
           "street": "Wattle Street"
         },
         {
-          "id": "node/3949579844",
-          "name": "Merri Creek Bike Repair Station",
-          "lat": -37.776911,
-          "lon": 144.989513,
-          "openingHours": "24/7",
-          "fee": "no"
-        },
-        {
           "id": "node/2900798127",
           "lat": -37.771254,
           "lon": 144.959404,
@@ -3324,51 +3475,15 @@
           "lat": -37.854434,
           "lon": 144.982485,
           "street": "St Kilda Road"
-        },
-        {
-          "id": "node/2900798126",
-          "lat": -37.767764,
-          "lon": 144.959071,
-          "fee": "no",
-          "street": "Prentice Street"
-        },
-        {
-          "id": "node/3176128919",
-          "lat": -37.805944,
-          "lon": 144.90566,
-          "openingHours": "24/7",
-          "fee": "no",
-          "street": "Moreland Street"
-        },
-        {
-          "id": "node/5579708540",
-          "lat": -37.774406,
-          "lon": 144.998071,
-          "openingHours": "24/7",
-          "fee": "no",
-          "street": "High Street"
-        },
-        {
-          "id": "node/13518345001",
-          "lat": -37.856244,
-          "lon": 144.99193,
-          "openingHours": "24/7",
-          "street": "Peel Street"
-        },
-        {
-          "id": "node/6191482453",
-          "lat": -37.773917,
-          "lon": 144.915508,
-          "street": "St Leonards Road"
-        },
-        {
-          "id": "node/9101318090",
-          "lat": -37.759216,
-          "lon": 144.974607,
-          "street": "Holmes Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:37:37.752Z"
+      "stats": {
+        "free": 36,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:45:04.248Z"
     }
   }
 }

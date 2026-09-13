@@ -1,6 +1,6 @@
 {
   "city": "milan",
-  "generatedAt": "2026-09-11T10:31:43.029Z",
+  "generatedAt": "2026-09-13T09:16:14.645Z",
   "categories": {
     "toilets": {
       "count": 351,
@@ -488,7 +488,13 @@
           "lon": 9.287307
         }
       ],
-      "updatedAt": "2026-09-03T17:20:29.460Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:15:26.205Z"
     },
     "parking": {
       "count": 2986,
@@ -707,7 +713,13 @@
           "lon": 9.168351
         }
       ],
-      "updatedAt": "2026-09-03T17:20:31.072Z"
+      "stats": {
+        "free": 655,
+        "paid": 514,
+        "stepFree": 30,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:15:30.362Z"
     },
     "charging-stations": {
       "count": 252,
@@ -850,7 +862,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:31.870Z"
+      "stats": {
+        "free": 12,
+        "paid": 80,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:15:32.058Z"
     },
     "gas-stations": {
       "count": 268,
@@ -1057,7 +1075,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:32.537Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:15:33.679Z"
     },
     "ice-cream": {
       "count": 239,
@@ -1290,7 +1314,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:33.527Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 16
+      },
+      "updatedAt": "2026-09-13T09:15:35.210Z"
     },
     "dog-parks": {
       "count": 289,
@@ -1364,7 +1394,13 @@
           "lon": 9.289989
         }
       ],
-      "updatedAt": "2026-09-03T17:20:34.028Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 60,
+        "partlyStepFree": 19
+      },
+      "updatedAt": "2026-09-13T09:15:37.195Z"
     },
     "picnic-spots": {
       "count": 297,
@@ -1412,7 +1448,13 @@
           "lon": 9.092335
         }
       ],
-      "updatedAt": "2026-09-03T17:20:35.547Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:15:40.564Z"
     },
     "viewpoints": {
       "count": 12,
@@ -1451,12 +1493,24 @@
           "lon": 9.195685
         }
       ],
-      "updatedAt": "2026-09-03T17:20:36.360Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:15:42.003Z"
     },
     "beaches": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:20:37.009Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:15:43.051Z"
     },
     "atms": {
       "count": 431,
@@ -1673,6 +1727,24 @@
       "count": 294,
       "pois": [
         {
+          "id": "node/383294840",
+          "name": "Milano 56",
+          "lat": 45.473724,
+          "lon": 9.159971
+        },
+        {
+          "id": "node/1639394998",
+          "name": "Cassetta postale Milano 338",
+          "lat": 45.526602,
+          "lon": 9.162037
+        },
+        {
+          "id": "node/1639395038",
+          "name": "Cassetta postale Milano 955",
+          "lat": 45.528101,
+          "lon": 9.16081
+        },
+        {
           "id": "node/4170009289",
           "lat": 45.462126,
           "lon": 9.191417,
@@ -1835,27 +1907,15 @@
           "lat": 45.458151,
           "lon": 9.177639,
           "street": "Via Conca del Naviglio"
-        },
-        {
-          "id": "node/5613206369",
-          "lat": 45.475034,
-          "lon": 9.186854,
-          "street": "Largo Claudio Treves"
-        },
-        {
-          "id": "node/4654764522",
-          "lat": 45.455024,
-          "lon": 9.200522,
-          "street": "Via Orti"
-        },
-        {
-          "id": "node/4250036646",
-          "lat": 45.471991,
-          "lon": 9.202806,
-          "street": "Corso Venezia"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:39.924Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:15:48.547Z"
     },
     "recycling": {
       "count": 265,
@@ -2075,7 +2135,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:43.441Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:15:50.253Z"
     },
     "libraries": {
       "count": 77,
@@ -2316,7 +2382,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:44.066Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:15:51.718Z"
     },
     "outdoor-gyms": {
       "count": 72,
@@ -2392,17 +2464,17 @@
           "address": "Via Pescara 37"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:46.097Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:15:53.224Z"
     },
     "shelters": {
       "count": 49,
       "pois": [
-        {
-          "id": "node/2619654246",
-          "lat": 45.501144,
-          "lon": 9.245114,
-          "street": "Via don Giovanni Calabria"
-        },
         {
           "id": "way/1551828209",
           "name": "portico 1",
@@ -2428,13 +2500,25 @@
           "lon": 9.092335
         },
         {
+          "id": "node/2619654246",
+          "lat": 45.501144,
+          "lon": 9.245114,
+          "street": "Via don Giovanni Calabria"
+        },
+        {
           "id": "node/9325221264",
           "lat": 45.424589,
           "lon": 9.275674,
           "street": "Viale del Gelso"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:47.971Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:15:57.906Z"
     },
     "rest-areas": {
       "count": 12,
@@ -2471,12 +2555,24 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:48.621Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:15:59.549Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:20:49.008Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:16:01.191Z"
     },
     "post-offices": {
       "count": 121,
@@ -2723,17 +2819,35 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:49.783Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 19,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:16:03.525Z"
     },
     "showers": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:20:50.265Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:16:05.568Z"
     },
     "fireplaces": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:20:51.397Z"
+      "stats": {
+        "free": 0,
+        "paid": 4,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:16:10.324Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2863,6 +2977,18 @@
       "count": 15,
       "pois": [
         {
+          "id": "node/12250244786",
+          "name": "Fucine Vulcano",
+          "lat": 45.433385,
+          "lon": 9.228391
+        },
+        {
+          "id": "node/10603538691",
+          "name": "La Spicciola",
+          "lat": 45.511409,
+          "lon": 9.226619
+        },
+        {
           "id": "node/8868217615",
           "lat": 45.497071,
           "lon": 9.183729,
@@ -2875,22 +3001,10 @@
           "street": "Via Angelo Mosso"
         },
         {
-          "id": "node/12250244786",
-          "name": "Fucine Vulcano",
-          "lat": 45.433385,
-          "lon": 9.228391
-        },
-        {
           "id": "node/8580971553",
           "lat": 45.441814,
           "lon": 9.24138,
           "street": "Via Eugenio Colorni"
-        },
-        {
-          "id": "node/10603538691",
-          "name": "La Spicciola",
-          "lat": 45.511409,
-          "lon": 9.226619
         },
         {
           "id": "node/9248045243",
@@ -2911,7 +3025,13 @@
           "street": "Via Milano"
         }
       ],
-      "updatedAt": "2026-09-03T17:20:53.166Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:16:14.544Z"
     }
   }
 }

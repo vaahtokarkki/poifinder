@@ -1,6 +1,6 @@
 {
   "city": "leeds",
-  "generatedAt": "2026-09-11T10:30:36.279Z",
+  "generatedAt": "2026-09-13T08:53:04.624Z",
   "categories": {
     "toilets": {
       "count": 71,
@@ -376,7 +376,13 @@
           "address": "ABS Business Park"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:50.327Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:22.726Z"
     },
     "parking": {
       "count": 1365,
@@ -602,7 +608,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:51.395Z"
+      "stats": {
+        "free": 267,
+        "paid": 88,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:30.752Z"
     },
     "charging-stations": {
       "count": 51,
@@ -715,7 +727,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:51.871Z"
+      "stats": {
+        "free": 2,
+        "paid": 13,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:32.147Z"
     },
     "gas-stations": {
       "count": 64,
@@ -926,7 +944,13 @@
           "address": "Stile Hill Way 17"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:52.382Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:33.806Z"
     },
     "ice-cream": {
       "count": 16,
@@ -1019,7 +1043,13 @@
           "address": "Robin Lane 6"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:52.885Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:35.371Z"
     },
     "dog-parks": {
       "count": 4,
@@ -1037,12 +1067,24 @@
           "lon": -1.641362
         }
       ],
-      "updatedAt": "2026-09-03T17:07:53.266Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:37.004Z"
     },
     "picnic-spots": {
       "count": 69,
       "pois": [],
-      "updatedAt": "2026-09-03T17:07:54.608Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:39.401Z"
     },
     "viewpoints": {
       "count": 18,
@@ -1090,12 +1132,24 @@
           "lon": -1.586853
         }
       ],
-      "updatedAt": "2026-09-03T17:07:55.254Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:40.825Z"
     },
     "beaches": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:07:55.703Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:42.196Z"
     },
     "atms": {
       "count": 174,
@@ -1269,6 +1323,12 @@
     "post-boxes": {
       "count": 665,
       "pois": [
+        {
+          "id": "node/442573061",
+          "name": "Halton Post Office",
+          "lat": 53.799202,
+          "lon": -1.464735
+        },
         {
           "id": "node/357751925",
           "lat": 53.801167,
@@ -1444,15 +1504,15 @@
           "lon": -1.537419,
           "openingHours": "Mo-Fr 13:00-18:00",
           "street": "High Court Lane"
-        },
-        {
-          "id": "node/748781227",
-          "lat": 53.791776,
-          "lon": -1.551219,
-          "street": "Water Lane"
         }
       ],
-      "updatedAt": "2026-09-03T17:07:58.248Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:45.336Z"
     },
     "recycling": {
       "count": 137,
@@ -1653,7 +1713,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:03.673Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:46.221Z"
     },
     "libraries": {
       "count": 60,
@@ -1858,7 +1924,13 @@
           "lon": -1.538212
         }
       ],
-      "updatedAt": "2026-09-03T17:08:04.187Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:47.319Z"
     },
     "outdoor-gyms": {
       "count": 31,
@@ -1882,7 +1954,13 @@
           "address": "Kidacre Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:05.748Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:48.364Z"
     },
     "shelters": {
       "count": 3,
@@ -1894,7 +1972,13 @@
           "street": "Queenswood Drive"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:07.308Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:51.723Z"
     },
     "rest-areas": {
       "count": 5,
@@ -1913,12 +1997,24 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:07.823Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:53.031Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:08.168Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:54.565Z"
     },
     "post-offices": {
       "count": 68,
@@ -2144,12 +2240,24 @@
           "address": "Stonegate Road 175"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:08.609Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:52:56.164Z"
     },
     "showers": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:08.967Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:57.563Z"
     },
     "fireplaces": {
       "count": 4,
@@ -2173,7 +2281,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:09.903Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:52:59.668Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2404,7 +2518,13 @@
           "street": "Seacroft Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:11.325Z"
+      "stats": {
+        "free": 4,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:04.522Z"
     }
   }
 }

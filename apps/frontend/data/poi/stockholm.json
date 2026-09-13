@@ -1,6 +1,6 @@
 {
   "city": "stockholm",
-  "generatedAt": "2026-09-11T10:27:51.387Z",
+  "generatedAt": "2026-09-13T08:24:21.237Z",
   "categories": {
     "toilets": {
       "count": 254,
@@ -443,10 +443,16 @@
           "lon": 18.09587
         }
       ],
-      "updatedAt": "2026-09-03T16:43:07.770Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 6,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T08:23:52.079Z"
     },
     "parking": {
-      "count": 2651,
+      "count": 2646,
       "pois": [
         {
           "id": "node/512538843",
@@ -654,7 +660,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:10.538Z"
+      "stats": {
+        "free": 222,
+        "paid": 614,
+        "stepFree": 16,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:23:54.816Z"
     },
     "charging-stations": {
       "count": 145,
@@ -721,7 +733,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:11.069Z"
+      "stats": {
+        "free": 1,
+        "paid": 31,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:55.601Z"
     },
     "gas-stations": {
       "count": 53,
@@ -945,7 +963,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:11.597Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:23:56.513Z"
     },
     "ice-cream": {
       "count": 60,
@@ -1148,7 +1172,13 @@
           "openingHours": "We-Fr 11:00-18:00; Sa 11:00-17:00; Su 12:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:12.309Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:23:57.463Z"
     },
     "dog-parks": {
       "count": 85,
@@ -1379,7 +1409,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:12.809Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 30,
+        "partlyStepFree": 16
+      },
+      "updatedAt": "2026-09-13T08:23:58.524Z"
     },
     "picnic-spots": {
       "count": 852,
@@ -1403,7 +1439,13 @@
           "lon": 18.160774
         }
       ],
-      "updatedAt": "2026-09-03T16:43:14.422Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:24:01.435Z"
     },
     "viewpoints": {
       "count": 182,
@@ -1539,7 +1581,13 @@
           "lon": 17.997511
         }
       ],
-      "updatedAt": "2026-09-03T16:43:15.143Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:24:02.461Z"
     },
     "drinking-water": {
       "count": 52,
@@ -1811,7 +1859,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:15.787Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:03.346Z"
     },
     "atms": {
       "count": 122,
@@ -1904,6 +1958,12 @@
     "post-boxes": {
       "count": 377,
       "pois": [
+        {
+          "id": "node/3470883233",
+          "name": "utrikes inte lokalt",
+          "lat": 59.259511,
+          "lon": 18.095155
+        },
         {
           "id": "node/2334787622",
           "lat": 59.330632,
@@ -2077,15 +2137,15 @@
           "lat": 59.331773,
           "lon": 18.049433,
           "street": "Kungsbroplan"
-        },
-        {
-          "id": "node/2421935308",
-          "lat": 59.338133,
-          "lon": 18.079919,
-          "street": "Nybrogatan"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:18.530Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:05.876Z"
     },
     "recycling": {
       "count": 401,
@@ -2294,7 +2354,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:43:21.840Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:06.608Z"
     },
     "libraries": {
       "count": 54,
@@ -2515,7 +2581,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:22.407Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:07.389Z"
     },
     "outdoor-gyms": {
       "count": 171,
@@ -2748,34 +2820,22 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:24.665Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:08.451Z"
     },
     "shelters": {
       "count": 39,
       "pois": [
         {
-          "id": "node/3486827542",
-          "lat": 59.352415,
-          "lon": 18.066606,
-          "street": "Uggleviksvägen"
-        },
-        {
           "id": "way/44153573",
           "name": "Ugglevikskällan",
           "lat": 59.352744,
           "lon": 18.073349
-        },
-        {
-          "id": "node/12734253930",
-          "lat": 59.3482,
-          "lon": 18.034589,
-          "street": "Hagaesplanaden"
-        },
-        {
-          "id": "node/12734250399",
-          "lat": 59.347783,
-          "lon": 18.033276,
-          "street": "Gävlegatan"
         },
         {
           "id": "node/6837602845",
@@ -2822,18 +2882,6 @@
           "fee": "no"
         },
         {
-          "id": "node/5614816528",
-          "lat": 59.382911,
-          "lon": 17.982706,
-          "street": "Meanderslingan"
-        },
-        {
-          "id": "node/5614816535",
-          "lat": 59.383243,
-          "lon": 17.983446,
-          "street": "Dammtorps Allé"
-        },
-        {
           "id": "node/11950699840",
           "name": "Friluftskojan",
           "lat": 59.358621,
@@ -2844,22 +2892,70 @@
           "name": "Skogskåta",
           "lat": 59.388926,
           "lon": 17.990749
+        },
+        {
+          "id": "node/3486827542",
+          "lat": 59.352415,
+          "lon": 18.066606,
+          "street": "Uggleviksvägen"
+        },
+        {
+          "id": "node/12734253930",
+          "lat": 59.3482,
+          "lon": 18.034589,
+          "street": "Hagaesplanaden"
+        },
+        {
+          "id": "node/12734250399",
+          "lat": 59.347783,
+          "lon": 18.033276,
+          "street": "Gävlegatan"
+        },
+        {
+          "id": "node/5614816528",
+          "lat": 59.382911,
+          "lon": 17.982706,
+          "street": "Meanderslingan"
+        },
+        {
+          "id": "node/5614816535",
+          "lat": 59.383243,
+          "lon": 17.983446,
+          "street": "Dammtorps Allé"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:26.609Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:24:12.468Z"
     },
     "rest-areas": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:43:27.175Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:13.303Z"
     },
     "dump-stations": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T16:43:27.660Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:13.963Z"
     },
     "post-offices": {
-      "count": 34,
+      "count": 35,
       "pois": [
         {
           "id": "node/512538815",
@@ -3010,7 +3106,13 @@
           "lon": 17.966547
         }
       ],
-      "updatedAt": "2026-09-03T16:43:28.168Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:24:14.811Z"
     },
     "showers": {
       "count": 25,
@@ -3023,7 +3125,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:28.625Z"
+      "stats": {
+        "free": 14,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:15.420Z"
     },
     "fireplaces": {
       "count": 228,
@@ -3129,7 +3237,13 @@
           "lon": 17.993261
         }
       ],
-      "updatedAt": "2026-09-03T16:43:29.934Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 14,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:24:17.331Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3270,6 +3384,19 @@
     "bicycle-repair": {
       "count": 111,
       "pois": [
+        {
+          "id": "node/2724133861",
+          "name": "Bicycle pump",
+          "lat": 59.299954,
+          "lon": 18.030155,
+          "fee": "no"
+        },
+        {
+          "id": "node/7658292697",
+          "name": "Cykelpump",
+          "lat": 59.257851,
+          "lon": 18.081758
+        },
         {
           "id": "node/4418192790",
           "lat": 59.327047,
@@ -3460,23 +3587,15 @@
           "lon": 18.042839,
           "fee": "no",
           "street": "Hornsgatan"
-        },
-        {
-          "id": "node/10682047906",
-          "lat": 59.340524,
-          "lon": 18.037396,
-          "street": "Sankt Eriksgatan"
-        },
-        {
-          "id": "node/931247669",
-          "lat": 59.348633,
-          "lon": 18.073689,
-          "openingHours": "24/7",
-          "fee": "no",
-          "street": "Teknikringen"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:32.440Z"
+      "stats": {
+        "free": 70,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:21.136Z"
     }
   }
 }

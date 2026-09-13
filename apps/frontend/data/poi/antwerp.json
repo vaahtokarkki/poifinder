@@ -1,6 +1,6 @@
 {
   "city": "antwerp",
-  "generatedAt": "2026-09-11T10:30:04.994Z",
+  "generatedAt": "2026-09-13T08:46:08.049Z",
   "categories": {
     "toilets": {
       "count": 99,
@@ -599,7 +599,13 @@
           "lon": 4.460267
         }
       ],
-      "updatedAt": "2026-09-03T17:03:04.048Z"
+      "stats": {
+        "free": 2,
+        "paid": 1,
+        "stepFree": 2,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:45:26.448Z"
     },
     "parking": {
       "count": 1214,
@@ -827,7 +833,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:03:05.401Z"
+      "stats": {
+        "free": 274,
+        "paid": 94,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:45:29.850Z"
     },
     "charging-stations": {
       "count": 225,
@@ -932,7 +944,13 @@
           "lon": 4.483793
         }
       ],
-      "updatedAt": "2026-09-03T17:03:06.022Z"
+      "stats": {
+        "free": 5,
+        "paid": 74,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:45:31.067Z"
     },
     "gas-stations": {
       "count": 101,
@@ -1149,7 +1167,13 @@
           "address": "Boomsesteenweg 950"
         }
       ],
-      "updatedAt": "2026-09-03T17:03:06.610Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:45:32.370Z"
     },
     "ice-cream": {
       "count": 30,
@@ -1347,7 +1371,13 @@
           "openingHours": "Tu, Fr-Sa 14:00-20:00; We 15:00-20:00; Th 16:00-20:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:03:07.262Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:45:33.604Z"
     },
     "dog-parks": {
       "count": 87,
@@ -1403,12 +1433,24 @@
           "lon": 4.492689
         }
       ],
-      "updatedAt": "2026-09-03T17:03:07.702Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T08:45:34.725Z"
     },
     "picnic-spots": {
       "count": 231,
       "pois": [],
-      "updatedAt": "2026-09-03T17:03:09.200Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:45:37.381Z"
     },
     "viewpoints": {
       "count": 73,
@@ -1625,7 +1667,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:03:10.333Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 40,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:45:39.120Z"
     },
     "beaches": {
       "count": 2,
@@ -1643,7 +1691,13 @@
           "lon": 4.4633
         }
       ],
-      "updatedAt": "2026-09-03T17:03:11.009Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:45:40.863Z"
     },
     "atms": {
       "count": 71,
@@ -1739,6 +1793,37 @@
     "post-boxes": {
       "count": 137,
       "pois": [
+        {
+          "id": "node/1636646303",
+          "name": "Anselmostraat",
+          "lat": 51.207562,
+          "lon": 4.40354,
+          "address": "Anselmostraat 29"
+        },
+        {
+          "id": "node/495195124",
+          "name": "bpost",
+          "lat": 51.205617,
+          "lon": 4.417486
+        },
+        {
+          "id": "node/500349751",
+          "name": "Postkantoor Deurne Centrum",
+          "lat": 51.220978,
+          "lon": 4.461867
+        },
+        {
+          "id": "node/500355148",
+          "name": "Deurne Oost",
+          "lat": 51.219608,
+          "lon": 4.476217
+        },
+        {
+          "id": "node/11060052912",
+          "name": "Brievenbus",
+          "lat": 51.175482,
+          "lon": 4.436107
+        },
         {
           "id": "node/249426183",
           "lat": 51.218206,
@@ -1836,13 +1921,6 @@
           "street": "Museumstraat"
         },
         {
-          "id": "node/1636646303",
-          "name": "Anselmostraat",
-          "lat": 51.207562,
-          "lon": 4.40354,
-          "address": "Anselmostraat 29"
-        },
-        {
           "id": "node/10651694396",
           "lat": 51.208737,
           "lon": 4.393398,
@@ -1865,12 +1943,6 @@
           "lat": 51.211957,
           "lon": 4.426109,
           "street": "Provinciestraat"
-        },
-        {
-          "id": "node/495195124",
-          "name": "bpost",
-          "lat": 51.205617,
-          "lon": 4.417486
         },
         {
           "id": "node/2419116179",
@@ -1901,27 +1973,15 @@
           "lat": 51.201,
           "lon": 4.406451,
           "street": "Lange Lozanastraat"
-        },
-        {
-          "id": "node/11265450371",
-          "lat": 51.232098,
-          "lon": 4.424479,
-          "street": "Damplein"
-        },
-        {
-          "id": "node/402507596",
-          "lat": 51.20076,
-          "lon": 4.398159,
-          "street": "Fransenplaats"
-        },
-        {
-          "id": "node/9983127867",
-          "lat": 51.201152,
-          "lon": 4.410084,
-          "street": "Harmoniestraat"
         }
       ],
-      "updatedAt": "2026-09-03T17:03:13.629Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:45:50.169Z"
     },
     "recycling": {
       "count": 428,
@@ -2126,7 +2186,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:03:16.327Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:45:51.123Z"
     },
     "libraries": {
       "count": 45,
@@ -2334,7 +2400,13 @@
           "openingHours": "Tu-Th 10:00-20:00; Fr,Sa 10:00-17:00; Jul-Aug Th 10:00-17:00; Mo,Su off"
         }
       ],
-      "updatedAt": "2026-09-03T17:03:16.841Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:45:52.204Z"
     },
     "outdoor-gyms": {
       "count": 29,
@@ -2368,22 +2440,46 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:03:18.448Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:45:53.323Z"
     },
     "shelters": {
       "count": 8,
       "pois": [],
-      "updatedAt": "2026-09-03T17:03:20.188Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:45:58.778Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:03:20.695Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:46:00.263Z"
     },
     "dump-stations": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:03:21.060Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:46:01.122Z"
     },
     "post-offices": {
       "count": 20,
@@ -2491,17 +2587,35 @@
           "address": "Drie Eikenstraat 17"
         }
       ],
-      "updatedAt": "2026-09-03T17:03:21.581Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:46:01.944Z"
     },
     "showers": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:03:21.927Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:46:02.802Z"
     },
     "fireplaces": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:03:23.067Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:46:04.528Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2687,6 +2801,13 @@
           "lon": 4.421045
         },
         {
+          "id": "node/13579810071",
+          "name": "Bikeboost",
+          "lat": 51.17928,
+          "lon": 4.470283,
+          "openingHours": "24/7"
+        },
+        {
           "id": "node/12628082748",
           "lat": 51.218038,
           "lon": 4.453785,
@@ -2703,13 +2824,6 @@
           "street": "Roderveldlaan"
         },
         {
-          "id": "node/13579810071",
-          "name": "Bikeboost",
-          "lat": 51.17928,
-          "lon": 4.470283,
-          "openingHours": "24/7"
-        },
-        {
           "id": "node/13687942460",
           "lat": 51.242002,
           "lon": 4.49238,
@@ -2723,7 +2837,13 @@
           "street": "Vordensteinstraat"
         }
       ],
-      "updatedAt": "2026-09-03T17:03:24.530Z"
+      "stats": {
+        "free": 6,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:46:07.947Z"
     }
   }
 }

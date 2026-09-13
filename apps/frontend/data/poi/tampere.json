@@ -1,6 +1,6 @@
 {
   "city": "tampere",
-  "generatedAt": "2026-09-11T10:26:11.690Z",
+  "generatedAt": "2026-09-13T08:18:27.406Z",
   "categories": {
     "toilets": {
       "count": 94,
@@ -421,6 +421,12 @@
           "lon": 23.812332
         },
         {
+          "id": "way/1147589882",
+          "name": "Hautalaakso",
+          "lat": 61.503278,
+          "lon": 23.702601
+        },
+        {
           "id": "way/1079269303",
           "name": "Tehtaankallionpuisto",
           "lat": 61.471378,
@@ -477,18 +483,18 @@
           "lat": 61.466544,
           "lon": 23.827531,
           "address": "Koivikonkatu 4"
-        },
-        {
-          "id": "way/28829073",
-          "name": "Pikkupehkusuonpuisto",
-          "lat": 61.462681,
-          "lon": 23.822846
         }
       ],
-      "updatedAt": "2026-09-03T16:37:12.422Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:18:05.934Z"
     },
     "parking": {
-      "count": 1872,
+      "count": 1862,
       "pois": [
         {
           "id": "node/854149718",
@@ -734,7 +740,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:13.540Z"
+      "stats": {
+        "free": 393,
+        "paid": 148,
+        "stepFree": 37,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:18:08.169Z"
     },
     "charging-stations": {
       "count": 56,
@@ -826,7 +838,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:14.067Z"
+      "stats": {
+        "free": 6,
+        "paid": 33,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:08.963Z"
     },
     "gas-stations": {
       "count": 44,
@@ -1054,7 +1072,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:14.568Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:18:09.715Z"
     },
     "ice-cream": {
       "count": 6,
@@ -1104,7 +1128,13 @@
           "lon": 23.682187
         }
       ],
-      "updatedAt": "2026-09-03T16:37:15.069Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:10.583Z"
     },
     "dog-parks": {
       "count": 16,
@@ -1196,7 +1226,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:15.463Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:18:11.245Z"
     },
     "picnic-spots": {
       "count": 91,
@@ -1215,7 +1251,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:16.903Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:13.043Z"
     },
     "viewpoints": {
       "count": 54,
@@ -1286,7 +1328,13 @@
           "lon": 23.650155
         }
       ],
-      "updatedAt": "2026-09-03T16:37:17.548Z"
+      "stats": {
+        "free": 1,
+        "paid": 2,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:18:13.881Z"
     },
     "beaches": {
       "count": 54,
@@ -1485,7 +1533,13 @@
           "address": "Järvikatu 14"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:18.046Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:14.730Z"
     },
     "atms": {
       "count": 40,
@@ -1571,6 +1625,18 @@
       "count": 111,
       "pois": [
         {
+          "id": "node/2273548297",
+          "name": "Kirjelaatikko",
+          "lat": 61.498469,
+          "lon": 23.743773
+        },
+        {
+          "id": "node/2097717088",
+          "name": "Veisunkatu 22, 33820 Tampere",
+          "lat": 61.466676,
+          "lon": 23.800222
+        },
+        {
           "id": "node/11160699007",
           "lat": 61.497778,
           "lon": 23.759734,
@@ -1636,12 +1702,6 @@
           "lat": 61.4925,
           "lon": 23.751331,
           "street": "Pyhäjärvenkatu"
-        },
-        {
-          "id": "node/2273548297",
-          "name": "Kirjelaatikko",
-          "lat": 61.498469,
-          "lon": 23.743773
         },
         {
           "id": "node/2360668880",
@@ -1744,15 +1804,15 @@
           "lat": 61.501601,
           "lon": 23.799408,
           "street": "Teiskontie"
-        },
-        {
-          "id": "node/6356480611",
-          "lat": 61.506901,
-          "lon": 23.798299,
-          "street": "Reposuonkatu"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:20.546Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:16.582Z"
     },
     "recycling": {
       "count": 2110,
@@ -1862,7 +1922,13 @@
     "luggage-storage": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T16:37:23.002Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:17.163Z"
     },
     "libraries": {
       "count": 21,
@@ -2036,7 +2102,13 @@
           "openingHours": "Mo-Th 14:00-21:00; Fr 14:00-18:00; Sa-Su 10:00-15:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:23.528Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:18:17.842Z"
     },
     "outdoor-gyms": {
       "count": 67,
@@ -2180,7 +2252,13 @@
           "lon": 23.700386
         }
       ],
-      "updatedAt": "2026-09-03T16:37:25.282Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:18.683Z"
     },
     "shelters": {
       "count": 4,
@@ -2204,7 +2282,13 @@
           "street": "Ilmarinjärventie"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:26.921Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:20.621Z"
     },
     "rest-areas": {
       "count": 2,
@@ -2217,12 +2301,24 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:27.425Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:21.325Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:37:27.784Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:21.855Z"
     },
     "post-offices": {
       "count": 5,
@@ -2269,12 +2365,24 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:28.165Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:22.743Z"
     },
     "showers": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T16:37:28.529Z"
+      "stats": {
+        "free": 2,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:23.647Z"
     },
     "fireplaces": {
       "count": 36,
@@ -2347,7 +2455,13 @@
           "lon": 23.6652
         }
       ],
-      "updatedAt": "2026-09-03T16:37:29.468Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:25.291Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2417,6 +2531,14 @@
       "count": 5,
       "pois": [
         {
+          "id": "node/7889853298",
+          "name": "RV Pyöräpalvelu Lilja",
+          "lat": 61.501184,
+          "lon": 23.797071,
+          "address": "Teiskontie 21-23",
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
           "id": "node/3646334184",
           "lat": 61.499436,
           "lon": 23.759079,
@@ -2433,21 +2555,19 @@
           "street": "Rongankatu"
         },
         {
-          "id": "node/7889853298",
-          "name": "RV Pyöräpalvelu Lilja",
-          "lat": 61.501184,
-          "lon": 23.797071,
-          "address": "Teiskontie 21-23",
-          "openingHours": "Mo-Fr 09:00-17:00"
-        },
-        {
           "id": "node/13018945888",
           "lat": 61.449487,
           "lon": 23.859711,
           "street": "Korkeakoulunkatu"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:31.227Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:27.304Z"
     }
   }
 }

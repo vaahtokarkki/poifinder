@@ -1,6 +1,6 @@
 {
   "city": "philadelphia",
-  "generatedAt": "2026-09-11T10:32:40.450Z",
+  "generatedAt": "2026-09-13T09:29:04.707Z",
   "categories": {
     "toilets": {
       "count": 37,
@@ -410,7 +410,13 @@
           "lon": -75.177452
         }
       ],
-      "updatedAt": "2026-09-03T17:28:02.628Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:25.763Z"
     },
     "parking": {
       "count": 1866,
@@ -649,7 +655,13 @@
           "lon": -75.176129
         }
       ],
-      "updatedAt": "2026-09-03T17:28:03.900Z"
+      "stats": {
+        "free": 72,
+        "paid": 144,
+        "stepFree": 19,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:33.314Z"
     },
     "charging-stations": {
       "count": 15,
@@ -688,7 +700,13 @@
           "lon": -75.187381
         }
       ],
-      "updatedAt": "2026-09-03T17:28:04.297Z"
+      "stats": {
+        "free": 0,
+        "paid": 4,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:35.083Z"
     },
     "gas-stations": {
       "count": 87,
@@ -838,7 +856,13 @@
           "address": "Island Avenue 2450"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:04.792Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:36.385Z"
     },
     "ice-cream": {
       "count": 38,
@@ -1068,7 +1092,13 @@
           "address": "Island Avenue 2501"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:05.303Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:37.726Z"
     },
     "dog-parks": {
       "count": 22,
@@ -1174,7 +1204,13 @@
           "address": "Main Street 3720"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:05.867Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:28:38.841Z"
     },
     "picnic-spots": {
       "count": 170,
@@ -1270,7 +1306,13 @@
           "lon": -75.213484
         }
       ],
-      "updatedAt": "2026-09-03T17:28:07.041Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:41.801Z"
     },
     "viewpoints": {
       "count": 10,
@@ -1288,12 +1330,24 @@
           "lon": -75.193811
         }
       ],
-      "updatedAt": "2026-09-03T17:28:07.604Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:42.933Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:28:08.049Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:43.821Z"
     },
     "atms": {
       "count": 167,
@@ -1535,16 +1589,22 @@
       "count": 314,
       "pois": [
         {
-          "id": "node/14049094154",
-          "lat": 39.950905,
-          "lon": -75.165076,
-          "street": "Chestnut Street"
-        },
-        {
           "id": "node/2088872992",
           "name": "USPS",
           "lat": 39.950892,
           "lon": -75.165721
+        },
+        {
+          "id": "node/6599348642",
+          "name": "USPS Postbox",
+          "lat": 39.951,
+          "lon": -75.1974
+        },
+        {
+          "id": "node/14049094154",
+          "lat": 39.950905,
+          "lon": -75.165076,
+          "street": "Chestnut Street"
         },
         {
           "id": "node/7977009017",
@@ -1708,15 +1768,15 @@
           "lat": 39.950715,
           "lon": -75.155361,
           "street": "South 9th Street"
-        },
-        {
-          "id": "node/2080105549",
-          "lat": 39.944658,
-          "lon": -75.165543,
-          "street": "Lombard Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:10.294Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:47.503Z"
     },
     "recycling": {
       "count": 57,
@@ -1904,7 +1964,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:28:12.585Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:48.533Z"
     },
     "libraries": {
       "count": 106,
@@ -2142,7 +2208,13 @@
           "lon": -75.210124
         }
       ],
-      "updatedAt": "2026-09-03T17:28:13.208Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 21,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:28:50.125Z"
     },
     "outdoor-gyms": {
       "count": 19,
@@ -2249,22 +2321,46 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:28:14.680Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:51.424Z"
     },
     "shelters": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:28:15.322Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:53.263Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:28:15.712Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:54.348Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:28:16.145Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:55.523Z"
     },
     "post-offices": {
       "count": 42,
@@ -2466,12 +2562,24 @@
           "lon": -75.229808
         }
       ],
-      "updatedAt": "2026-09-03T17:28:16.661Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:57.134Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:28:17.048Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:28:58.642Z"
     },
     "fireplaces": {
       "count": 5,
@@ -2483,7 +2591,13 @@
           "lon": -75.152689
         }
       ],
-      "updatedAt": "2026-09-03T17:28:19.187Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:29:00.781Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2577,6 +2691,12 @@
       "count": 18,
       "pois": [
         {
+          "id": "node/4804809260",
+          "name": "Breakaway Bikes",
+          "lat": 39.983392,
+          "lon": -75.155478
+        },
+        {
           "id": "node/9080245236",
           "lat": 39.957999,
           "lon": -75.190784,
@@ -2634,12 +2754,6 @@
           "street": "West Norris Street"
         },
         {
-          "id": "node/4804809260",
-          "name": "Breakaway Bikes",
-          "lat": 39.983392,
-          "lon": -75.155478
-        },
-        {
           "id": "node/12633433306",
           "lat": 39.979248,
           "lon": -75.139429,
@@ -2668,7 +2782,13 @@
           "street": "South 46th Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:28:20.725Z"
+      "stats": {
+        "free": 4,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:29:04.605Z"
     }
   }
 }

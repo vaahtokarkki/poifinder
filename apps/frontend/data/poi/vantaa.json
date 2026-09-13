@@ -1,6 +1,6 @@
 {
   "city": "vantaa",
-  "generatedAt": "2026-09-11T10:26:28.602Z",
+  "generatedAt": "2026-09-13T08:19:18.181Z",
   "categories": {
     "toilets": {
       "count": 103,
@@ -596,7 +596,13 @@
           "lon": 25.056682
         }
       ],
-      "updatedAt": "2026-09-02T10:37:10.141Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:56.013Z"
     },
     "parking": {
       "count": 1829,
@@ -829,7 +835,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-02T10:40:03.158Z"
+      "stats": {
+        "free": 589,
+        "paid": 78,
+        "stepFree": 12,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:58.116Z"
     },
     "charging-stations": {
       "count": 55,
@@ -898,7 +910,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:59.549Z"
+      "stats": {
+        "free": 1,
+        "paid": 36,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:58.886Z"
     },
     "gas-stations": {
       "count": 71,
@@ -1145,7 +1163,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:00.129Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 21,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:59.748Z"
     },
     "ice-cream": {
       "count": 4,
@@ -1159,7 +1183,13 @@
           "openingHours": "Mo-Fr 11:00-21:00; Sa 11:00-22:00; Su 11:00-21:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:00.701Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:00.456Z"
     },
     "dog-parks": {
       "count": 55,
@@ -1354,7 +1384,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:01.141Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:19:01.325Z"
     },
     "picnic-spots": {
       "count": 272,
@@ -1409,7 +1445,13 @@
           "lon": 24.984531
         }
       ],
-      "updatedAt": "2026-09-03T16:38:02.662Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:02.920Z"
     },
     "viewpoints": {
       "count": 19,
@@ -1447,7 +1489,13 @@
           "lon": 24.897683
         }
       ],
-      "updatedAt": "2026-09-03T16:38:03.300Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:03.968Z"
     },
     "beaches": {
       "count": 12,
@@ -1493,7 +1541,13 @@
           "lon": 24.983154
         }
       ],
-      "updatedAt": "2026-09-03T16:38:03.943Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:04.700Z"
     },
     "atms": {
       "count": 70,
@@ -1565,6 +1619,12 @@
     "post-boxes": {
       "count": 90,
       "pois": [
+        {
+          "id": "node/2933451968",
+          "name": "Kelatie 15, 01450 Vantaa",
+          "lat": 60.349549,
+          "lon": 25.039047
+        },
         {
           "id": "node/1258669136",
           "lat": 60.293755,
@@ -1742,15 +1802,15 @@
           "lon": 24.968402,
           "wheelchair": "yes",
           "street": "Lentoasemantie"
-        },
-        {
-          "id": "node/4368466186",
-          "lat": 60.261066,
-          "lon": 24.983296,
-          "street": "Immolantie"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:06.465Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:06.781Z"
     },
     "recycling": {
       "count": 240,
@@ -1978,7 +2038,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:38:09.387Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:07.516Z"
     },
     "libraries": {
       "count": 21,
@@ -2126,7 +2192,7 @@
           "lat": 60.227529,
           "lon": 25.013025,
           "address": "Viikinkaari 11",
-          "openingHours": "Mo-Su 07:00-20:00",
+          "openingHours": "closed",
           "wheelchair": "yes"
         },
         {
@@ -2142,7 +2208,7 @@
           "name": "Viikin kampuskirjasto",
           "lat": 60.227346,
           "lon": 25.012731,
-          "openingHours": "Mo-Th 08:00-20:00; Fr 08:00-18:00; Sa 10:00-16:00"
+          "openingHours": "closed"
         },
         {
           "id": "node/11594468497",
@@ -2163,7 +2229,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:09.902Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 14,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:08.181Z"
     },
     "outdoor-gyms": {
       "count": 111,
@@ -2291,7 +2363,13 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:38:11.907Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:09.171Z"
     },
     "shelters": {
       "count": 21,
@@ -2333,7 +2411,13 @@
           "lon": 25.146673
         }
       ],
-      "updatedAt": "2026-09-03T16:38:13.807Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:11.710Z"
     },
     "rest-areas": {
       "count": 3,
@@ -2346,12 +2430,24 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:14.292Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:12.784Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:38:14.715Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:13.499Z"
     },
     "post-offices": {
       "count": 8,
@@ -2410,12 +2506,24 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:15.202Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:14.184Z"
     },
     "showers": {
       "count": 10,
       "pois": [],
-      "updatedAt": "2026-09-03T16:38:15.630Z"
+      "stats": {
+        "free": 3,
+        "paid": 3,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:19:14.641Z"
     },
     "fireplaces": {
       "count": 30,
@@ -2457,7 +2565,13 @@
           "lon": 24.984531
         }
       ],
-      "updatedAt": "2026-09-03T16:38:16.986Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:16.090Z"
     },
     "bicycle-repair": {
       "count": 4,
@@ -2483,7 +2597,13 @@
           "street": "Mellunmäenraitio"
         }
       ],
-      "updatedAt": "2026-09-03T16:38:18.422Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:19:18.079Z"
     },
     "benches": {
       "count": 1551,

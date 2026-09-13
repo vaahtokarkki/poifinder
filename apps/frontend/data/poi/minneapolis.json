@@ -1,6 +1,6 @@
 {
   "city": "minneapolis",
-  "generatedAt": "2026-09-11T10:32:48.073Z",
+  "generatedAt": "2026-09-13T09:34:19.587Z",
   "categories": {
     "toilets": {
       "count": 208,
@@ -508,7 +508,13 @@
           "lon": -93.236018
         }
       ],
-      "updatedAt": "2026-09-03T17:31:00.253Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:33:36.181Z"
     },
     "parking": {
       "count": 4457,
@@ -716,7 +722,13 @@
           "lon": -93.26151
         }
       ],
-      "updatedAt": "2026-09-03T17:31:01.719Z"
+      "stats": {
+        "free": 533,
+        "paid": 104,
+        "stepFree": 10,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:33:39.912Z"
     },
     "charging-stations": {
       "count": 33,
@@ -744,7 +756,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:02.208Z"
+      "stats": {
+        "free": 0,
+        "paid": 12,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:40.872Z"
     },
     "gas-stations": {
       "count": 89,
@@ -947,7 +965,13 @@
           "address": "Lilac Drive North 1875"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:02.708Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:42.503Z"
     },
     "ice-cream": {
       "count": 28,
@@ -1122,7 +1146,13 @@
           "address": "39th Avenue Northeast 27400"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:03.369Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:33:44.031Z"
     },
     "dog-parks": {
       "count": 30,
@@ -1235,12 +1265,24 @@
           "address": "North Russell Avenue 4701"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:03.876Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:45.485Z"
     },
     "picnic-spots": {
       "count": 485,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:05.138Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:48.162Z"
     },
     "viewpoints": {
       "count": 41,
@@ -1282,7 +1324,13 @@
           "lon": -93.203676
         }
       ],
-      "updatedAt": "2026-09-03T17:31:05.868Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:49.592Z"
     },
     "beaches": {
       "count": 19,
@@ -1377,7 +1425,13 @@
           "lon": -93.235265
         }
       ],
-      "updatedAt": "2026-09-03T17:31:06.466Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:50.972Z"
     },
     "atms": {
       "count": 70,
@@ -1520,6 +1574,18 @@
     "post-boxes": {
       "count": 145,
       "pois": [
+        {
+          "id": "node/8701819606",
+          "name": "USPS",
+          "lat": 44.970066,
+          "lon": -93.242862
+        },
+        {
+          "id": "node/3197982551",
+          "name": "Post Office Box",
+          "lat": 44.915992,
+          "lon": -93.278198
+        },
         {
           "id": "node/13733436681",
           "lat": 44.977697,
@@ -1687,21 +1753,15 @@
           "lat": 44.971184,
           "lon": -93.245394,
           "street": "19th Avenue South"
-        },
-        {
-          "id": "node/1674565865",
-          "lat": 44.988699,
-          "lon": -93.249577,
-          "street": "Southeast 3rd Avenue"
-        },
-        {
-          "id": "node/12299716615",
-          "lat": 44.966691,
-          "lon": -93.282226,
-          "street": "Oak Grove Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:08.985Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:55.440Z"
     },
     "recycling": {
       "count": 396,
@@ -1906,7 +1966,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:12.407Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:56.544Z"
     },
     "libraries": {
       "count": 480,
@@ -2138,7 +2204,13 @@
           "openingHours": "Mo-Tu 09:00-17:00; We-Th 12:00-20:00; Fr-Sa 09:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:12.999Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:57.733Z"
     },
     "outdoor-gyms": {
       "count": 6,
@@ -2154,22 +2226,35 @@
     "camp-sites": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:14.485Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:33:58.917Z"
     },
     "shelters": {
       "count": 59,
       "pois": [
         {
-          "id": "node/7517485437",
-          "lat": 45.031695,
-          "lon": -93.267203,
-          "street": "Northeast 35th Avenue"
-        },
-        {
           "id": "way/224273180",
           "name": "Visitors Shelter",
           "lat": 44.928156,
           "lon": -93.297138
+        },
+        {
+          "id": "relation/20750347",
+          "name": "Giggles' Campfire Grille",
+          "lat": 44.985621,
+          "lon": -93.168716,
+          "address": "Cooper Street 1520"
+        },
+        {
+          "id": "node/7517485437",
+          "lat": 45.031695,
+          "lon": -93.267203,
+          "street": "Northeast 35th Avenue"
         },
         {
           "id": "node/7266547231",
@@ -2196,30 +2281,41 @@
           "street": "Lee Avenue North"
         },
         {
-          "id": "relation/20750347",
-          "name": "Giggles' Campfire Grille",
-          "lat": 44.985621,
-          "lon": -93.168716,
-          "address": "Cooper Street 1520"
-        },
-        {
           "id": "node/7412883874",
           "lat": 44.949606,
           "lon": -93.173094,
           "street": "North Herschel Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:16.347Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:34:02.924Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:16.854Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:34:03.976Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:17.202Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:34:05.140Z"
     },
     "post-offices": {
       "count": 23,
@@ -2307,12 +2403,24 @@
           "lon": -93.334368
         }
       ],
-      "updatedAt": "2026-09-03T17:31:17.787Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:34:07.261Z"
     },
     "showers": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:18.182Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:34:08.303Z"
     },
     "fireplaces": {
       "count": 62,
@@ -2330,7 +2438,13 @@
           "lon": -93.346879
         }
       ],
-      "updatedAt": "2026-09-03T17:31:19.429Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:34:10.426Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2442,6 +2556,13 @@
       "count": 75,
       "pois": [
         {
+          "id": "node/11979528379",
+          "name": "fixit",
+          "lat": 44.989333,
+          "lon": -93.25713,
+          "fee": "no"
+        },
+        {
           "id": "node/13733471290",
           "lat": 44.974943,
           "lon": -93.265698,
@@ -2459,13 +2580,6 @@
           "lon": -93.250789,
           "fee": "no",
           "street": "Washington Avenue South"
-        },
-        {
-          "id": "node/11979528379",
-          "name": "fixit",
-          "lat": 44.989333,
-          "lon": -93.25713,
-          "fee": "no"
         },
         {
           "id": "node/11595024042",
@@ -2642,7 +2756,13 @@
           "street": "University Avenue Southeast"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:21.820Z"
+      "stats": {
+        "free": 31,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:34:19.485Z"
     }
   }
 }

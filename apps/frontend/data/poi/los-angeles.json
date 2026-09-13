@@ -1,6 +1,6 @@
 {
   "city": "los-angeles",
-  "generatedAt": "2026-09-11T10:32:15.152Z",
+  "generatedAt": "2026-09-13T09:21:47.587Z",
   "categories": {
     "toilets": {
       "count": 240,
@@ -548,7 +548,13 @@
           "lon": -118.357554
         }
       ],
-      "updatedAt": "2026-09-03T17:23:38.724Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:20:56.873Z"
     },
     "parking": {
       "count": 4317,
@@ -753,7 +759,13 @@
           "lon": -118.255924
         }
       ],
-      "updatedAt": "2026-09-03T17:23:40.970Z"
+      "stats": {
+        "free": 429,
+        "paid": 197,
+        "stepFree": 28,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:05.204Z"
     },
     "charging-stations": {
       "count": 64,
@@ -854,7 +866,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:41.602Z"
+      "stats": {
+        "free": 2,
+        "paid": 30,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:06.364Z"
     },
     "gas-stations": {
       "count": 419,
@@ -1058,7 +1076,13 @@
           "lon": -118.287294
         }
       ],
-      "updatedAt": "2026-09-03T17:23:42.633Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:21:08.032Z"
     },
     "ice-cream": {
       "count": 105,
@@ -1293,7 +1317,13 @@
           "openingHours": "Mo-Th 16:00-23:00; Fr-Su 14:00-24:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:43.569Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:09.838Z"
     },
     "dog-parks": {
       "count": 17,
@@ -1369,7 +1399,13 @@
           "lon": -118.256749
         }
       ],
-      "updatedAt": "2026-09-03T17:23:44.189Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:11.758Z"
     },
     "picnic-spots": {
       "count": 780,
@@ -1489,7 +1525,13 @@
           "lon": -118.185714
         }
       ],
-      "updatedAt": "2026-09-03T17:23:45.823Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:15.344Z"
     },
     "viewpoints": {
       "count": 59,
@@ -1642,12 +1684,24 @@
           "lon": -118.11314
         }
       ],
-      "updatedAt": "2026-09-03T17:23:46.933Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:17.103Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:23:47.573Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:18.323Z"
     },
     "atms": {
       "count": 332,
@@ -1881,6 +1935,38 @@
       "count": 142,
       "pois": [
         {
+          "id": "node/13427804701",
+          "name": "The UPS Store",
+          "lat": 34.047671,
+          "lon": -118.209208,
+          "address": "East Cesar E Chavez Avenue 7805"
+        },
+        {
+          "id": "node/902322546",
+          "name": "US Post Office Los Feliz Branch",
+          "lat": 34.104702,
+          "lon": -118.292203
+        },
+        {
+          "id": "node/10778352806",
+          "name": "9150600031",
+          "lat": 34.163236,
+          "lon": -118.308533,
+          "address": "South Chavez Street 1200"
+        },
+        {
+          "id": "node/2450046828",
+          "name": "USPS",
+          "lat": 34.142444,
+          "lon": -118.133329
+        },
+        {
+          "id": "node/2450046800",
+          "name": "FedEx",
+          "lat": 34.143427,
+          "lon": -118.131444
+        },
+        {
           "id": "node/4236384071",
           "lat": 34.050883,
           "lon": -118.248232,
@@ -1918,13 +2004,6 @@
           "street": "North Main Street"
         },
         {
-          "id": "node/13427804701",
-          "name": "The UPS Store",
-          "lat": 34.047671,
-          "lon": -118.209208,
-          "address": "East Cesar E Chavez Avenue 7805"
-        },
-        {
           "id": "node/11823821656",
           "lat": 34.060719,
           "lon": -118.20747,
@@ -1953,12 +2032,6 @@
           "lat": 34.095431,
           "lon": -118.291879,
           "street": "North Vermont Avenue"
-        },
-        {
-          "id": "node/902322546",
-          "name": "US Post Office Los Feliz Branch",
-          "lat": 34.104702,
-          "lon": -118.292203
         },
         {
           "id": "node/9968959349",
@@ -2043,27 +2116,15 @@
           "lat": 34.097926,
           "lon": -118.322173,
           "street": "West Sunset Boulevard"
-        },
-        {
-          "id": "node/11036721441",
-          "lat": 34.125412,
-          "lon": -118.203501,
-          "street": "Avenue 51"
-        },
-        {
-          "id": "node/8297470194",
-          "lat": 34.07692,
-          "lon": -118.149592,
-          "street": "West Valley Boulevard"
-        },
-        {
-          "id": "node/10698485756",
-          "lat": 34.133645,
-          "lon": -118.255083,
-          "street": "South Brand Boulevard"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:51.160Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:23.107Z"
     },
     "recycling": {
       "count": 22,
@@ -2146,7 +2207,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:23:53.433Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:24.416Z"
     },
     "libraries": {
       "count": 162,
@@ -2359,7 +2426,13 @@
           "lon": -118.20618
         }
       ],
-      "updatedAt": "2026-09-03T17:23:54.490Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:28.363Z"
     },
     "outdoor-gyms": {
       "count": 62,
@@ -2413,7 +2486,13 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:23:56.463Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:29.783Z"
     },
     "shelters": {
       "count": 86,
@@ -2431,17 +2510,35 @@
           "street": "Whittier Boulevard"
         }
       ],
-      "updatedAt": "2026-09-03T17:23:58.425Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:34.027Z"
     },
     "rest-areas": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:23:59.148Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:35.235Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:23:59.668Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:36.220Z"
     },
     "post-offices": {
       "count": 132,
@@ -2644,17 +2741,35 @@
           "lon": -118.304671
         }
       ],
-      "updatedAt": "2026-09-03T17:24:00.502Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:39.018Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:24:01.018Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:40.255Z"
     },
     "fireplaces": {
       "count": 6,
       "pois": [],
-      "updatedAt": "2026-09-03T17:24:02.568Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:42.784Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2983,7 +3098,13 @@
           "street": "North Canon Drive"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:04.923Z"
+      "stats": {
+        "free": 5,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:47.485Z"
     }
   }
 }

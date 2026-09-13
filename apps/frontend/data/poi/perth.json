@@ -1,6 +1,6 @@
 {
   "city": "perth",
-  "generatedAt": "2026-09-11T10:33:30.010Z",
+  "generatedAt": "2026-09-13T09:46:47.115Z",
   "categories": {
     "toilets": {
       "count": 350,
@@ -642,7 +642,13 @@
           "lon": 115.805686
         }
       ],
-      "updatedAt": "2026-09-03T17:38:17.403Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:45:57.562Z"
     },
     "parking": {
       "count": 1621,
@@ -857,7 +863,13 @@
           "lon": 115.833587
         }
       ],
-      "updatedAt": "2026-09-03T17:38:19.678Z"
+      "stats": {
+        "free": 174,
+        "paid": 158,
+        "stepFree": 15,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:01.356Z"
     },
     "charging-stations": {
       "count": 16,
@@ -896,7 +908,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:20.495Z"
+      "stats": {
+        "free": 0,
+        "paid": 7,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:02.781Z"
     },
     "gas-stations": {
       "count": 71,
@@ -1119,7 +1137,13 @@
           "lon": 115.934426
         }
       ],
-      "updatedAt": "2026-09-03T17:38:21.359Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:04.445Z"
     },
     "ice-cream": {
       "count": 38,
@@ -1289,7 +1313,13 @@
           "lon": 115.907813
         }
       ],
-      "updatedAt": "2026-09-03T17:38:21.949Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:06.071Z"
     },
     "dog-parks": {
       "count": 15,
@@ -1372,7 +1402,13 @@
           "lon": 115.780859
         }
       ],
-      "updatedAt": "2026-09-03T17:38:22.408Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:07.614Z"
     },
     "picnic-spots": {
       "count": 297,
@@ -1384,7 +1420,13 @@
           "context": "Woodville Reserve"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:23.589Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:10.824Z"
     },
     "viewpoints": {
       "count": 58,
@@ -1530,12 +1572,24 @@
           "lon": 115.830409
         }
       ],
-      "updatedAt": "2026-09-03T17:38:24.168Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:12.561Z"
     },
     "beaches": {
       "count": 21,
       "pois": [],
-      "updatedAt": "2026-09-03T17:38:24.602Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:14.933Z"
     },
     "atms": {
       "count": 88,
@@ -1757,6 +1811,32 @@
       "count": 156,
       "pois": [
         {
+          "id": "node/13511544339",
+          "name": "Express Post",
+          "lat": -31.95487,
+          "lon": 115.858752,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/600432260",
+          "name": "Subiaco",
+          "lat": -31.949797,
+          "lon": 115.824108
+        },
+        {
+          "id": "node/656023860",
+          "name": "Australia Post",
+          "lat": -31.944276,
+          "lon": 115.824311
+        },
+        {
+          "id": "node/13908947690",
+          "name": "Telstra Payphone",
+          "lat": -31.994717,
+          "lon": 115.797989,
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/13415885201",
           "lat": -31.951711,
           "lon": 115.859414,
@@ -1790,13 +1870,6 @@
           "lon": 115.85877,
           "wheelchair": "yes",
           "street": "London Court"
-        },
-        {
-          "id": "node/13511544339",
-          "name": "Express Post",
-          "lat": -31.95487,
-          "lon": 115.858752,
-          "wheelchair": "yes"
         },
         {
           "id": "node/6290444593",
@@ -1932,27 +2005,15 @@
           "lat": -31.942113,
           "lon": 115.84153,
           "street": "Oxford Close"
-        },
-        {
-          "id": "node/555854350",
-          "lat": -31.949996,
-          "lon": 115.838788,
-          "street": "Ord Street"
-        },
-        {
-          "id": "node/1937714557",
-          "lat": -31.933592,
-          "lon": 115.848173,
-          "street": "Richmond Street"
-        },
-        {
-          "id": "node/12141546972",
-          "lat": -31.930272,
-          "lon": 115.858056,
-          "street": "Angove Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:26.915Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 27,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:25.315Z"
     },
     "recycling": {
       "count": 46,
@@ -2107,7 +2168,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:38:29.273Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:27.063Z"
     },
     "libraries": {
       "count": 51,
@@ -2337,7 +2404,13 @@
           "openingHours": "Mo-Th 09:00-19:00; Fr-Sa 09:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:29.781Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:46:29.330Z"
     },
     "outdoor-gyms": {
       "count": 57,
@@ -2369,11 +2442,23 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:38:31.394Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:30.851Z"
     },
     "shelters": {
       "count": 121,
       "pois": [
+        {
+          "id": "node/4627862839",
+          "name": "Gazebo",
+          "lat": -31.900587,
+          "lon": 115.889845
+        },
         {
           "id": "node/13439473845",
           "lat": -31.952386,
@@ -2445,12 +2530,6 @@
           "street": "Olfe Street"
         },
         {
-          "id": "node/4627862839",
-          "name": "Gazebo",
-          "lat": -31.900587,
-          "lon": 115.889845
-        },
-        {
           "id": "node/13729450237",
           "lat": -31.913626,
           "lon": 115.925449,
@@ -2463,17 +2542,35 @@
           "street": "Katanning Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:33.248Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:46:35.914Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:38:33.807Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:37.823Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:38:34.147Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:39.250Z"
     },
     "post-offices": {
       "count": 46,
@@ -2650,7 +2747,13 @@
           "lon": 115.940138
         }
       ],
-      "updatedAt": "2026-09-03T17:38:34.684Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:41.286Z"
     },
     "showers": {
       "count": 10,
@@ -2662,12 +2765,24 @@
           "lon": 115.893005
         }
       ],
-      "updatedAt": "2026-09-03T17:38:35.034Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:42.135Z"
     },
     "fireplaces": {
       "count": 153,
       "pois": [],
-      "updatedAt": "2026-09-03T17:38:36.251Z"
+      "stats": {
+        "free": 9,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:43.984Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2815,6 +2930,13 @@
       "count": 28,
       "pois": [
         {
+          "id": "node/11710001545",
+          "lat": -31.926659,
+          "lon": 115.857609,
+          "fee": "no",
+          "context": "Woodville Reserve"
+        },
+        {
           "id": "node/10297695966",
           "lat": -31.940754,
           "lon": 115.858725,
@@ -2868,13 +2990,6 @@
           "openingHours": "24/7",
           "fee": "no",
           "street": "Oxford Street"
-        },
-        {
-          "id": "node/11710001545",
-          "lat": -31.926659,
-          "lon": 115.857609,
-          "fee": "no",
-          "context": "Woodville Reserve"
         },
         {
           "id": "node/3837222632",
@@ -2951,7 +3066,13 @@
           "street": "President Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:38.002Z"
+      "stats": {
+        "free": 11,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:47.013Z"
     }
   }
 }

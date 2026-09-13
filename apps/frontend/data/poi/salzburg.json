@@ -1,6 +1,6 @@
 {
   "city": "salzburg",
-  "generatedAt": "2026-09-11T10:29:26.803Z",
+  "generatedAt": "2026-09-13T08:37:49.651Z",
   "categories": {
     "toilets": {
       "count": 110,
@@ -647,7 +647,13 @@
           "lon": 12.971301
         }
       ],
-      "updatedAt": "2026-09-03T16:57:59.373Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:37:21.463Z"
     },
     "parking": {
       "count": 1428,
@@ -887,7 +893,13 @@
           "lon": 13.026531
         }
       ],
-      "updatedAt": "2026-09-03T16:58:06.771Z"
+      "stats": {
+        "free": 538,
+        "paid": 174,
+        "stepFree": 38,
+        "partlyStepFree": 9
+      },
+      "updatedAt": "2026-09-13T08:37:23.148Z"
     },
     "charging-stations": {
       "count": 126,
@@ -935,7 +947,13 @@
           "lon": 12.963889
         }
       ],
-      "updatedAt": "2026-09-03T16:58:07.421Z"
+      "stats": {
+        "free": 12,
+        "paid": 53,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:23.952Z"
     },
     "gas-stations": {
       "count": 60,
@@ -1102,7 +1120,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:08.189Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 17,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:37:25.022Z"
     },
     "ice-cream": {
       "count": 26,
@@ -1276,7 +1300,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:08.765Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:37:25.867Z"
     },
     "dog-parks": {
       "count": 12,
@@ -1322,12 +1352,24 @@
           "lon": 12.985691
         }
       ],
-      "updatedAt": "2026-09-03T16:58:09.287Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:37:26.545Z"
     },
     "picnic-spots": {
       "count": 69,
       "pois": [],
-      "updatedAt": "2026-09-03T16:58:10.726Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:28.262Z"
     },
     "viewpoints": {
       "count": 94,
@@ -1496,12 +1538,24 @@
           "lon": 13.115383
         }
       ],
-      "updatedAt": "2026-09-03T16:58:11.241Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 10,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:37:29.344Z"
     },
     "beaches": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T16:58:11.750Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:30.294Z"
     },
     "atms": {
       "count": 135,
@@ -1750,6 +1804,26 @@
       "count": 111,
       "pois": [
         {
+          "id": "node/265498427",
+          "name": "5027 Salzburg",
+          "lat": 47.80602,
+          "lon": 13.046506,
+          "address": "Schrannengasse 10C",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/13926486944",
+          "name": "Boîte aux lettres",
+          "lat": 47.811989,
+          "lon": 12.985635
+        },
+        {
+          "id": "node/6667994685",
+          "name": "Finkenstr. 1b",
+          "lat": 47.838751,
+          "lon": 12.96936
+        },
+        {
           "id": "node/1447853480",
           "lat": 47.812954,
           "lon": 13.054221,
@@ -1760,14 +1834,6 @@
           "lat": 47.813125,
           "lon": 13.050019,
           "street": "Breitenfelderstraße"
-        },
-        {
-          "id": "node/265498427",
-          "name": "5027 Salzburg",
-          "lat": 47.80602,
-          "lon": 13.046506,
-          "address": "Schrannengasse 10C",
-          "wheelchair": "yes"
         },
         {
           "id": "node/10712841763",
@@ -1919,21 +1985,15 @@
           "lat": 47.824417,
           "lon": 13.045297,
           "street": "Reimsstraße"
-        },
-        {
-          "id": "node/452437497",
-          "lat": 47.797831,
-          "lon": 13.037539,
-          "street": "Hildmannplatz"
-        },
-        {
-          "id": "node/445099296",
-          "lat": 47.793116,
-          "lon": 13.065322,
-          "street": "Ignaz-Rieder-Kai"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:14.137Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:33.061Z"
     },
     "recycling": {
       "count": 390,
@@ -2147,7 +2207,13 @@
     "luggage-storage": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T16:58:17.100Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:34.106Z"
     },
     "libraries": {
       "count": 30,
@@ -2297,7 +2363,13 @@
           "openingHours": "Tu,Th 14:00-18:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:17.541Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:35.313Z"
     },
     "outdoor-gyms": {
       "count": 20,
@@ -2397,7 +2469,13 @@
           "address": "Jakobistraße 30"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:19.869Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:36.383Z"
     },
     "shelters": {
       "count": 3,
@@ -2409,7 +2487,13 @@
           "street": "Zwieselstraße"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:21.988Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:40.003Z"
     },
     "rest-areas": {
       "count": 3,
@@ -2433,7 +2517,13 @@
           "lon": 13.113688
         }
       ],
-      "updatedAt": "2026-09-03T16:58:22.502Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:41.670Z"
     },
     "dump-stations": {
       "count": 3,
@@ -2446,7 +2536,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:22.861Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:42.704Z"
     },
     "post-offices": {
       "count": 27,
@@ -2647,17 +2743,35 @@
           "address": "Glanstraße 3"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:23.301Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:37:44.401Z"
     },
     "showers": {
       "count": 10,
       "pois": [],
-      "updatedAt": "2026-09-03T16:58:23.728Z"
+      "stats": {
+        "free": 5,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:45.201Z"
     },
     "fireplaces": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-09-03T16:58:24.750Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:46.801Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2788,6 +2902,21 @@
       "count": 35,
       "pois": [
         {
+          "id": "node/10076293814",
+          "name": "Bike Pump",
+          "lat": 47.824501,
+          "lon": 13.064997,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/11062769603",
+          "name": "Saris Deluxe Public Work Stand (ÖAMTC)",
+          "lat": 47.776267,
+          "lon": 13.067004,
+          "openingHours": "24/7"
+        },
+        {
           "id": "node/13839390401",
           "lat": 47.811691,
           "lon": 13.046382,
@@ -2854,14 +2983,6 @@
           "street": "Erzabt-Klotz-Straße"
         },
         {
-          "id": "node/10076293814",
-          "name": "Bike Pump",
-          "lat": 47.824501,
-          "lon": 13.064997,
-          "openingHours": "24/7",
-          "fee": "no"
-        },
-        {
           "id": "node/12112187241",
           "lat": 47.79199,
           "lon": 13.057009,
@@ -2915,13 +3036,6 @@
           "openingHours": "24/7",
           "fee": "no",
           "street": "Peter-Pfenninger-Straße"
-        },
-        {
-          "id": "node/11062769603",
-          "name": "Saris Deluxe Public Work Stand (ÖAMTC)",
-          "lat": 47.776267,
-          "lon": 13.067004,
-          "openingHours": "24/7"
         },
         {
           "id": "node/12199209168",
@@ -2983,7 +3097,13 @@
           "street": "Dammweg"
         }
       ],
-      "updatedAt": "2026-09-03T16:58:26.579Z"
+      "stats": {
+        "free": 15,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:49.550Z"
     }
   }
 }

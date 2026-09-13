@@ -1,6 +1,6 @@
 {
   "city": "warsaw",
-  "generatedAt": "2026-09-11T10:28:24.466Z",
+  "generatedAt": "2026-09-13T08:28:14.923Z",
   "categories": {
     "toilets": {
       "count": 458,
@@ -664,7 +664,13 @@
           "address": "Wrocławska 6A"
         }
       ],
-      "updatedAt": "2026-09-03T16:48:05.387Z"
+      "stats": {
+        "free": 1,
+        "paid": 3,
+        "stepFree": 7,
+        "partlyStepFree": 9
+      },
+      "updatedAt": "2026-09-13T08:27:50.212Z"
     },
     "parking": {
       "count": 12138,
@@ -880,7 +886,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:48:10.144Z"
+      "stats": {
+        "free": 2050,
+        "paid": 2450,
+        "stepFree": 44,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:27:53.302Z"
     },
     "charging-stations": {
       "count": 138,
@@ -1019,7 +1031,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:48:10.755Z"
+      "stats": {
+        "free": 24,
+        "paid": 32,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:54.145Z"
     },
     "gas-stations": {
       "count": 124,
@@ -1243,7 +1261,13 @@
           "lon": 21.077305
         }
       ],
-      "updatedAt": "2026-09-03T16:48:11.424Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 42,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:27:55.111Z"
     },
     "ice-cream": {
       "count": 159,
@@ -1497,7 +1521,13 @@
           "openingHours": "Mo-Fr 12:00-20:00; Sa-Su 10:00-20:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:48:12.242Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 47,
+        "partlyStepFree": 23
+      },
+      "updatedAt": "2026-09-13T08:27:56.388Z"
     },
     "dog-parks": {
       "count": 33,
@@ -1522,7 +1552,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T16:48:12.905Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:27:57.180Z"
     },
     "picnic-spots": {
       "count": 248,
@@ -1540,7 +1576,13 @@
           "lon": 21.034872
         }
       ],
-      "updatedAt": "2026-09-03T16:48:14.419Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:58.728Z"
     },
     "viewpoints": {
       "count": 76,
@@ -1646,7 +1688,13 @@
           "lon": 20.898744
         }
       ],
-      "updatedAt": "2026-09-03T16:48:15.339Z"
+      "stats": {
+        "free": 2,
+        "paid": 3,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:27:59.743Z"
     },
     "beaches": {
       "count": 24,
@@ -1697,7 +1745,13 @@
           "lon": 21.023783
         }
       ],
-      "updatedAt": "2026-09-03T16:48:15.988Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:28:00.610Z"
     },
     "atms": {
       "count": 1003,
@@ -1952,6 +2006,20 @@
       "count": 196,
       "pois": [
         {
+          "id": "node/4551966413",
+          "name": "Poczta Polska",
+          "lat": 52.212781,
+          "lon": 20.973222,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/2297560467",
+          "name": "Euronet",
+          "lat": 52.261308,
+          "lon": 20.961452,
+          "openingHours": "24/7"
+        },
+        {
           "id": "node/10075293123",
           "lat": 52.228042,
           "lon": 21.009558,
@@ -2119,21 +2187,15 @@
           "lat": 52.213527,
           "lon": 21.023606,
           "street": "Flory"
-        },
-        {
-          "id": "node/11059873634",
-          "lat": 52.219626,
-          "lon": 20.987409,
-          "street": "Adama Asnyka"
-        },
-        {
-          "id": "node/11916148915",
-          "lat": 52.226741,
-          "lon": 21.04166,
-          "street": "Zagórna"
         }
       ],
-      "updatedAt": "2026-09-03T16:48:19.238Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:28:02.526Z"
     },
     "recycling": {
       "count": 422,
@@ -2359,7 +2421,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:48:22.262Z"
+      "stats": {
+        "free": 3,
+        "paid": 6,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:28:03.233Z"
     },
     "libraries": {
       "count": 203,
@@ -2604,7 +2672,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:48:23.002Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 35,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:28:04.216Z"
     },
     "outdoor-gyms": {
       "count": 340,
@@ -2673,7 +2747,13 @@
     "camp-sites": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:48:25.718Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:28:05.102Z"
     },
     "shelters": {
       "count": 14,
@@ -2697,17 +2777,35 @@
           "street": "Urszuli"
         }
       ],
-      "updatedAt": "2026-09-03T16:48:27.953Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:28:07.544Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:48:28.449Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:28:08.275Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:48:28.913Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:28:08.818Z"
     },
     "post-offices": {
       "count": 182,
@@ -2952,17 +3050,35 @@
           "openingHours": "Mo-Fr 10:00-19:00; Sa 10:00-14:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:48:29.583Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 80,
+        "partlyStepFree": 8
+      },
+      "updatedAt": "2026-09-13T08:28:09.729Z"
     },
     "showers": {
       "count": 13,
       "pois": [],
-      "updatedAt": "2026-09-03T16:48:30.087Z"
+      "stats": {
+        "free": 2,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:28:10.481Z"
     },
     "fireplaces": {
       "count": 41,
       "pois": [],
-      "updatedAt": "2026-09-03T16:48:31.445Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:28:12.020Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3173,6 +3289,42 @@
       "count": 183,
       "pois": [
         {
+          "id": "node/3818434357",
+          "name": "Samoobsługowy serwis rowerowy",
+          "lat": 52.21257,
+          "lon": 20.952024,
+          "address": "Aleje Jerozolimskie",
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/11620107214",
+          "name": "Prywatna i zamknięta kluczem stacja naprawy rowerów",
+          "lat": 52.184742,
+          "lon": 21.011475,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/9863759107",
+          "name": "Kompresor",
+          "lat": 52.270826,
+          "lon": 20.932882
+        },
+        {
+          "id": "node/9863804019",
+          "name": "Stacja naprawy rowerów przed żabką",
+          "lat": 52.252206,
+          "lon": 20.912682
+        },
+        {
+          "id": "node/13358052862",
+          "name": "Punkt Rowerowy",
+          "lat": 52.292426,
+          "lon": 21.051318,
+          "openingHours": "24/7"
+        },
+        {
           "id": "node/11032913568",
           "lat": 52.229188,
           "lon": 21.0154,
@@ -3330,39 +3482,15 @@
           "openingHours": "Tu-Sa 10:00-18:00",
           "fee": "donation",
           "street": "Wolność"
-        },
-        {
-          "id": "node/7881095439",
-          "lat": 52.237099,
-          "lon": 21.043876,
-          "street": "Wybrzeże Szczecińskie"
-        },
-        {
-          "id": "node/9820520422",
-          "lat": 52.222433,
-          "lon": 21.047704,
-          "street": "Generała Mariusza Zaruskiego"
-        },
-        {
-          "id": "node/11014347960",
-          "lat": 52.230307,
-          "lon": 20.974327,
-          "street": "Giełdowa"
-        },
-        {
-          "id": "node/10967848734",
-          "lat": 52.250659,
-          "lon": 21.031832,
-          "street": "Księdza Ignacego Kłopotowskiego"
-        },
-        {
-          "id": "node/9727708119",
-          "lat": 52.206307,
-          "lon": 20.99994,
-          "street": "Rakowiecka"
         }
       ],
-      "updatedAt": "2026-09-03T16:48:34.247Z"
+      "stats": {
+        "free": 49,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:28:14.822Z"
     }
   }
 }

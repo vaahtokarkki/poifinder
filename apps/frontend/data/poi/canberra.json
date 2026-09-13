@@ -1,6 +1,6 @@
 {
   "city": "canberra",
-  "generatedAt": "2026-09-11T10:33:37.280Z",
+  "generatedAt": "2026-09-13T09:48:16.535Z",
   "categories": {
     "toilets": {
       "count": 163,
@@ -628,7 +628,13 @@
           "lon": 149.149216
         }
       ],
-      "updatedAt": "2026-09-03T17:39:11.069Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:36.326Z"
     },
     "parking": {
       "count": 1892,
@@ -835,7 +841,13 @@
           "lon": 149.112574
         }
       ],
-      "updatedAt": "2026-09-03T17:39:12.328Z"
+      "stats": {
+        "free": 672,
+        "paid": 212,
+        "stepFree": 13,
+        "partlyStepFree": 9
+      },
+      "updatedAt": "2026-09-13T09:47:42.633Z"
     },
     "charging-stations": {
       "count": 15,
@@ -869,7 +881,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:12.890Z"
+      "stats": {
+        "free": 3,
+        "paid": 5,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:43.843Z"
     },
     "gas-stations": {
       "count": 33,
@@ -1028,7 +1046,13 @@
           "lon": 149.142758
         }
       ],
-      "updatedAt": "2026-09-03T17:39:13.393Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:45.381Z"
     },
     "ice-cream": {
       "count": 8,
@@ -1079,7 +1103,13 @@
           "openingHours": "Mo-Th 09:00-17:30; Fr 09:00-21:00; Sa 09:00-17:00; Su 10:00-16:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:14.121Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:46.761Z"
     },
     "dog-parks": {
       "count": 4,
@@ -1099,7 +1129,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:14.507Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:48.020Z"
     },
     "picnic-spots": {
       "count": 476,
@@ -1147,7 +1183,13 @@
           "lon": 149.090389
         }
       ],
-      "updatedAt": "2026-09-03T17:39:15.932Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:50.314Z"
     },
     "viewpoints": {
       "count": 52,
@@ -1270,7 +1312,13 @@
           "lon": 149.197366
         }
       ],
-      "updatedAt": "2026-09-03T17:39:16.508Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:51.743Z"
     },
     "beaches": {
       "count": 15,
@@ -1288,7 +1336,13 @@
           "lon": 149.074003
         }
       ],
-      "updatedAt": "2026-09-03T17:39:17.100Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:53.215Z"
     },
     "atms": {
       "count": 68,
@@ -1413,6 +1467,12 @@
       "count": 48,
       "pois": [
         {
+          "id": "node/437253959",
+          "name": "Dickson Post Office",
+          "lat": -35.249985,
+          "lon": 149.139724
+        },
+        {
           "id": "node/9708962659",
           "lat": -35.280126,
           "lon": 149.131026,
@@ -1489,12 +1549,6 @@
           "lat": -35.250155,
           "lon": 149.139677,
           "street": "Joan Kellett Way"
-        },
-        {
-          "id": "node/437253959",
-          "name": "Dickson Post Office",
-          "lat": -35.249985,
-          "lon": 149.139724
         },
         {
           "id": "node/2183249859",
@@ -1593,7 +1647,13 @@
           "street": "Cook Place"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:19.147Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:57.348Z"
     },
     "recycling": {
       "count": 23,
@@ -1703,7 +1763,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:39:21.047Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:58.835Z"
     },
     "libraries": {
       "count": 24,
@@ -1857,7 +1923,13 @@
           "lon": 149.07247
         }
       ],
-      "updatedAt": "2026-09-03T17:39:21.563Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:59.983Z"
     },
     "outdoor-gyms": {
       "count": 40,
@@ -1921,7 +1993,13 @@
           "lon": 149.152533
         }
       ],
-      "updatedAt": "2026-09-03T17:39:23.133Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:00.843Z"
     },
     "shelters": {
       "count": 45,
@@ -1939,17 +2017,35 @@
           "street": "Mt Ainslie Summit Trail"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:24.948Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:04.764Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:39:25.460Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:05.755Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:39:25.812Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:06.840Z"
     },
     "post-offices": {
       "count": 25,
@@ -2086,7 +2182,13 @@
           "openingHours": "Mo-Fr 09:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:26.312Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:07.705Z"
     },
     "showers": {
       "count": 4,
@@ -2098,12 +2200,24 @@
           "lon": 149.100091
         }
       ],
-      "updatedAt": "2026-09-03T17:39:26.707Z"
+      "stats": {
+        "free": 1,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:48:08.660Z"
     },
     "fireplaces": {
       "count": 82,
       "pois": [],
-      "updatedAt": "2026-09-03T17:39:27.861Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:10.809Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2234,7 +2348,13 @@
           "street": "Cape Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:29.158Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:16.433Z"
     }
   }
 }

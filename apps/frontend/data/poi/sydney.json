@@ -1,6 +1,6 @@
 {
   "city": "sydney",
-  "generatedAt": "2026-09-11T10:33:22.753Z",
+  "generatedAt": "2026-09-13T09:43:59.968Z",
   "categories": {
     "toilets": {
       "count": 1045,
@@ -628,7 +628,13 @@
           "lon": 151.200901
         }
       ],
-      "updatedAt": "2026-09-03T17:36:31.924Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 10
+      },
+      "updatedAt": "2026-09-13T09:43:16.597Z"
     },
     "parking": {
       "count": 2494,
@@ -840,7 +846,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:33.479Z"
+      "stats": {
+        "free": 470,
+        "paid": 176,
+        "stepFree": 31,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:43:20.171Z"
     },
     "charging-stations": {
       "count": 106,
@@ -897,7 +909,13 @@
           "address": "King Street 338"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:33.989Z"
+      "stats": {
+        "free": 12,
+        "paid": 24,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:21.440Z"
     },
     "gas-stations": {
       "count": 190,
@@ -1103,7 +1121,13 @@
           "openingHours": "Mo-Sa 06:00-23:00; Su 06:00-22:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:34.645Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:43:23.052Z"
     },
     "ice-cream": {
       "count": 101,
@@ -1310,7 +1334,13 @@
           "openingHours": "Mo-Su 08:00-10:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:35.563Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 19,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:43:24.513Z"
     },
     "dog-parks": {
       "count": 39,
@@ -1375,7 +1405,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:36.067Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:43:25.505Z"
     },
     "picnic-spots": {
       "count": 1399,
@@ -1567,7 +1603,13 @@
           "lon": 151.147412
         }
       ],
-      "updatedAt": "2026-09-03T17:36:37.492Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:28.004Z"
     },
     "viewpoints": {
       "count": 293,
@@ -1767,7 +1809,13 @@
           "lon": 151.227883
         }
       ],
-      "updatedAt": "2026-09-03T17:36:38.221Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:43:30.351Z"
     },
     "beaches": {
       "count": 215,
@@ -1958,7 +2006,13 @@
           "lon": 151.279109
         }
       ],
-      "updatedAt": "2026-09-03T17:36:39.013Z"
+      "stats": {
+        "free": 10,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:31.763Z"
     },
     "atms": {
       "count": 212,
@@ -2190,6 +2244,63 @@
       "count": 436,
       "pois": [
         {
+          "id": "node/2573945624",
+          "name": "Australia Post Box (Standard + Express)",
+          "lat": -33.872332,
+          "lon": 151.225088
+        },
+        {
+          "id": "node/12050811604",
+          "name": "Rewind Photo Lab Dropbox",
+          "lat": -33.886524,
+          "lon": 151.201117
+        },
+        {
+          "id": "node/2787409644",
+          "name": "Red Post Box",
+          "lat": -33.889364,
+          "lon": 151.172365,
+          "address": "Cardigan Street 35"
+        },
+        {
+          "id": "node/589255695",
+          "name": "Australia Post",
+          "lat": -33.822609,
+          "lon": 151.201024
+        },
+        {
+          "id": "node/4293860350",
+          "name": "Marrickville Metro Shop Post Office",
+          "lat": -33.907177,
+          "lon": 151.172437,
+          "address": "Victoria Road 34"
+        },
+        {
+          "id": "node/325399284",
+          "name": "Maroubra Post Office",
+          "lat": -33.94135,
+          "lon": 151.238274
+        },
+        {
+          "id": "node/3796314260",
+          "name": "Check-In J",
+          "lat": -33.937533,
+          "lon": 151.165151
+        },
+        {
+          "id": "node/3796314261",
+          "name": "Gate 50",
+          "lat": -33.938448,
+          "lon": 151.165663
+        },
+        {
+          "id": "node/6280573102",
+          "name": "Postbox",
+          "lat": -33.827189,
+          "lon": 151.089588,
+          "address": "Cavell Avenue 15"
+        },
+        {
           "id": "node/10096952135",
           "lat": -33.868468,
           "lon": 151.211083,
@@ -2314,63 +2425,15 @@
           "lat": -33.877346,
           "lon": 151.212705,
           "street": "Oxford Street"
-        },
-        {
-          "id": "node/20930541",
-          "lat": -33.878754,
-          "lon": 151.20562,
-          "street": "George Street"
-        },
-        {
-          "id": "node/743328092",
-          "lat": -33.858251,
-          "lon": 151.208437,
-          "street": "Playfair Street"
-        },
-        {
-          "id": "node/595484134",
-          "lat": -33.879481,
-          "lon": 151.209435,
-          "street": "Wentworth Avenue"
-        },
-        {
-          "id": "node/13093105638",
-          "lat": -33.878947,
-          "lon": 151.214024,
-          "street": "Riley Street"
-        },
-        {
-          "id": "node/11237310579",
-          "lat": -33.876645,
-          "lon": 151.218721,
-          "street": "Forbes Street"
-        },
-        {
-          "id": "node/1648148472",
-          "lat": -33.858444,
-          "lon": 151.203767,
-          "street": "Argyle Street"
-        },
-        {
-          "id": "node/9507380123",
-          "lat": -33.871937,
-          "lon": 151.222873,
-          "street": "Victoria Street"
-        },
-        {
-          "id": "node/13202141394",
-          "lat": -33.856702,
-          "lon": 151.207165,
-          "street": "Lower Fort Street"
-        },
-        {
-          "id": "node/11179733560",
-          "lat": -33.874807,
-          "lon": 151.222834,
-          "street": "Bayswater Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:42.017Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:35.816Z"
     },
     "recycling": {
       "count": 176,
@@ -2581,7 +2644,13 @@
     "luggage-storage": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:36:45.287Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:36.890Z"
     },
     "libraries": {
       "count": 212,
@@ -2795,7 +2864,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:46.042Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 23,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:43:38.567Z"
     },
     "outdoor-gyms": {
       "count": 159,
@@ -2862,7 +2937,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:48.292Z"
+      "stats": {
+        "free": 1,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:40.229Z"
     },
     "shelters": {
       "count": 289,
@@ -2880,22 +2961,10 @@
           "lon": 151.209581
         },
         {
-          "id": "node/2854352901",
-          "lat": -33.892174,
-          "lon": 151.199452,
-          "street": "Gibbons Street"
-        },
-        {
           "id": "way/1486282303",
           "name": "Quarantine Boat Depot Beach Shack",
           "lat": -33.84517,
           "lon": 151.19486
-        },
-        {
-          "id": "node/7636971287",
-          "lat": -33.878019,
-          "lon": 151.179347,
-          "street": "Arcadia Lane"
         },
         {
           "id": "way/26341793",
@@ -2904,16 +2973,100 @@
           "lon": 151.176519
         },
         {
-          "id": "node/9526024406",
-          "lat": -33.895588,
-          "lon": 151.194815,
-          "street": "Village Square"
-        },
-        {
           "id": "way/739013327",
           "name": "Keanu Reeves Cage",
           "lat": -33.893266,
           "lon": 151.229369
+        },
+        {
+          "id": "way/562114396",
+          "name": "Gazebo",
+          "lat": -33.857831,
+          "lon": 151.257325
+        },
+        {
+          "id": "way/987696063",
+          "name": "Barbecue area",
+          "lat": -33.915298,
+          "lon": 151.210502
+        },
+        {
+          "id": "node/10910515685",
+          "name": "Koonjeree Rotunda",
+          "lat": -33.791839,
+          "lon": 151.155674
+        },
+        {
+          "id": "node/10910515679",
+          "name": "Gable Large",
+          "lat": -33.7937,
+          "lon": 151.149224
+        },
+        {
+          "id": "node/10910515684",
+          "name": "Blue Wren Rotunda",
+          "lat": -33.791436,
+          "lon": 151.153026
+        },
+        {
+          "id": "node/10910524216",
+          "name": "02",
+          "lat": -33.790202,
+          "lon": 151.146203
+        },
+        {
+          "id": "node/10910524217",
+          "name": "01",
+          "lat": -33.789934,
+          "lon": 151.146288
+        },
+        {
+          "id": "node/10910515682",
+          "name": "Blackbutt Rotunda 2",
+          "lat": -33.78997,
+          "lon": 151.14622
+        },
+        {
+          "id": "node/10910515683",
+          "name": "Blackbutt Rotunda 1",
+          "lat": -33.78989,
+          "lon": 151.14622
+        },
+        {
+          "id": "node/10910515680",
+          "name": "Commandment Rock Rotunda 2",
+          "lat": -33.78923,
+          "lon": 151.14654
+        },
+        {
+          "id": "node/10910515681",
+          "name": "Commandment Rock Rotunda 1",
+          "lat": -33.78902,
+          "lon": 151.14676
+        },
+        {
+          "id": "way/742857701",
+          "name": "Commandment Rock",
+          "lat": -33.788852,
+          "lon": 151.146675
+        },
+        {
+          "id": "node/2854352901",
+          "lat": -33.892174,
+          "lon": 151.199452,
+          "street": "Gibbons Street"
+        },
+        {
+          "id": "node/7636971287",
+          "lat": -33.878019,
+          "lon": 151.179347,
+          "street": "Arcadia Lane"
+        },
+        {
+          "id": "node/9526024406",
+          "lat": -33.895588,
+          "lon": 151.194815,
+          "street": "Village Square"
         },
         {
           "id": "node/13685942796",
@@ -2938,18 +3091,6 @@
           "lat": -33.908317,
           "lon": 151.196885,
           "street": "Bourke Road Cycleway"
-        },
-        {
-          "id": "way/562114396",
-          "name": "Gazebo",
-          "lat": -33.857831,
-          "lon": 151.257325
-        },
-        {
-          "id": "way/987696063",
-          "name": "Barbecue area",
-          "lat": -33.915298,
-          "lon": 151.210502
         },
         {
           "id": "node/13155093066",
@@ -2986,74 +3127,26 @@
           "lat": -33.797273,
           "lon": 151.174645,
           "street": "Eldora Lane"
-        },
-        {
-          "id": "node/4749917378",
-          "lat": -33.791769,
-          "lon": 151.185956,
-          "street": "Nicholson Street"
-        },
-        {
-          "id": "node/11555435228",
-          "lat": -33.819203,
-          "lon": 151.296959,
-          "street": "North Head Scenic Drive"
-        },
-        {
-          "id": "node/10910524158",
-          "lat": -33.792351,
-          "lon": 151.156449,
-          "street": "Riverside Drive"
-        },
-        {
-          "id": "node/10910515685",
-          "name": "Koonjeree Rotunda",
-          "lat": -33.791839,
-          "lon": 151.155674
-        },
-        {
-          "id": "node/3001710813",
-          "lat": -33.834144,
-          "lon": 151.109997,
-          "street": "McGowan Street"
-        },
-        {
-          "id": "node/3001710795",
-          "lat": -33.833929,
-          "lon": 151.110012,
-          "street": "Pellisier Road"
-        },
-        {
-          "id": "node/11006720400",
-          "lat": -33.900336,
-          "lon": 151.107777,
-          "street": "Brighton Avenue"
-        },
-        {
-          "id": "node/10910515679",
-          "name": "Gable Large",
-          "lat": -33.7937,
-          "lon": 151.149224
-        },
-        {
-          "id": "node/10910515684",
-          "name": "Blue Wren Rotunda",
-          "lat": -33.791436,
-          "lon": 151.153026
-        },
-        {
-          "id": "node/10910524233",
-          "lat": -33.791879,
-          "lon": 151.150926,
-          "street": "Max Allen Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:51.044Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:45.914Z"
     },
     "rest-areas": {
       "count": 12,
       "pois": [],
-      "updatedAt": "2026-09-03T17:36:52.092Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:47.407Z"
     },
     "dump-stations": {
       "count": 1,
@@ -3067,7 +3160,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:52.675Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:48.343Z"
     },
     "post-offices": {
       "count": 129,
@@ -3298,7 +3397,13 @@
           "openingHours": "Mo-Fr 09:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:53.628Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 17,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:43:49.820Z"
     },
     "showers": {
       "count": 108,
@@ -3312,7 +3417,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:54.296Z"
+      "stats": {
+        "free": 54,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T09:43:51.452Z"
     },
     "fireplaces": {
       "count": 308,
@@ -3371,7 +3482,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:55.608Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:54.166Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3762,7 +3879,13 @@
           "street": "Hampden Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:36:58.053Z"
+      "stats": {
+        "free": 6,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:43:59.866Z"
     }
   }
 }

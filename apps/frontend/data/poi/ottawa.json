@@ -1,6 +1,6 @@
 {
   "city": "ottawa",
-  "generatedAt": "2026-09-11T10:33:13.573Z",
+  "generatedAt": "2026-09-13T09:41:35.437Z",
   "categories": {
     "toilets": {
       "count": 162,
@@ -682,7 +682,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:08.827Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:40:48.672Z"
     },
     "parking": {
       "count": 3856,
@@ -903,7 +909,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:10.322Z"
+      "stats": {
+        "free": 487,
+        "paid": 144,
+        "stepFree": 10,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:55.079Z"
     },
     "charging-stations": {
       "count": 45,
@@ -950,7 +962,13 @@
           "lon": -75.69637
         }
       ],
-      "updatedAt": "2026-09-03T17:35:10.760Z"
+      "stats": {
+        "free": 4,
+        "paid": 9,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:56.401Z"
     },
     "gas-stations": {
       "count": 86,
@@ -1095,7 +1113,13 @@
           "address": "Rue de Cannes 245"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:11.269Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:40:57.662Z"
     },
     "ice-cream": {
       "count": 29,
@@ -1258,7 +1282,13 @@
           "lon": -75.772195
         }
       ],
-      "updatedAt": "2026-09-03T17:35:11.921Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:40:59.303Z"
     },
     "dog-parks": {
       "count": 12,
@@ -1315,7 +1345,13 @@
           "lon": -75.736148
         }
       ],
-      "updatedAt": "2026-09-03T17:35:12.367Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:41:00.601Z"
     },
     "picnic-spots": {
       "count": 995,
@@ -1441,7 +1477,13 @@
           "lon": -75.699089
         }
       ],
-      "updatedAt": "2026-09-03T17:35:13.772Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:03.410Z"
     },
     "viewpoints": {
       "count": 45,
@@ -1519,7 +1561,13 @@
           "lon": -75.779992
         }
       ],
-      "updatedAt": "2026-09-03T17:35:14.412Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:05.043Z"
     },
     "beaches": {
       "count": 10,
@@ -1568,7 +1616,13 @@
           "lon": -75.692273
         }
       ],
-      "updatedAt": "2026-09-03T17:35:14.907Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:06.095Z"
     },
     "atms": {
       "count": 130,
@@ -1818,6 +1872,24 @@
       "count": 1595,
       "pois": [
         {
+          "id": "node/3635992668",
+          "name": "Canada Post",
+          "lat": 45.406746,
+          "lon": -75.705831
+        },
+        {
+          "id": "node/5003532101",
+          "name": "Community Mailbox",
+          "lat": 45.381614,
+          "lon": -75.731244
+        },
+        {
+          "id": "node/2620472552",
+          "name": "Canada Post Mailbox",
+          "lat": 45.366742,
+          "lon": -75.734601
+        },
+        {
           "id": "node/5631157084",
           "lat": 45.421994,
           "lon": -75.696544,
@@ -1978,27 +2050,15 @@
           "lat": 45.428899,
           "lon": -75.69075,
           "street": "York Street"
-        },
-        {
-          "id": "node/5328242890",
-          "lat": 45.4295,
-          "lon": -75.691835,
-          "street": "Clarence Street"
-        },
-        {
-          "id": "node/5328242885",
-          "lat": 45.415356,
-          "lon": -75.706498,
-          "street": "Percy Street"
-        },
-        {
-          "id": "node/5419197951",
-          "lat": 45.413394,
-          "lon": -75.691737,
-          "street": "Frank Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:17.465Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:11.384Z"
     },
     "recycling": {
       "count": 26,
@@ -2109,7 +2169,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:35:19.767Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:13.003Z"
     },
     "libraries": {
       "count": 89,
@@ -2338,7 +2404,13 @@
           "openingHours": "Th 18:00-20:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:20.510Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:14.148Z"
     },
     "outdoor-gyms": {
       "count": 22,
@@ -2375,7 +2447,13 @@
           "lon": -75.769048
         }
       ],
-      "updatedAt": "2026-09-03T17:35:22.048Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:15.532Z"
     },
     "shelters": {
       "count": 11,
@@ -2393,17 +2471,35 @@
           "lon": -75.698978
         }
       ],
-      "updatedAt": "2026-09-03T17:35:23.848Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:20.043Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:35:24.357Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:21.515Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:35:24.705Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:23.390Z"
     },
     "post-offices": {
       "count": 44,
@@ -2540,17 +2636,35 @@
           "address": "Boulevard de l'Hôpital 465"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:25.148Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:24.971Z"
     },
     "showers": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:35:25.549Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:26.920Z"
     },
     "fireplaces": {
       "count": 18,
       "pois": [],
-      "updatedAt": "2026-09-03T17:35:26.567Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:29.743Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2673,6 +2787,13 @@
     "bicycle-repair": {
       "count": 92,
       "pois": [
+        {
+          "id": "node/2191038210",
+          "name": "Mec Air",
+          "lat": 45.391315,
+          "lon": -75.755269,
+          "fee": "no"
+        },
         {
           "id": "node/9383017517",
           "lat": 45.422263,
@@ -2861,16 +2982,15 @@
           "lon": -75.661541,
           "fee": "no",
           "street": "Montréal Road"
-        },
-        {
-          "id": "node/7259609928",
-          "lat": 45.401058,
-          "lon": -75.729635,
-          "fee": "yes",
-          "street": "Parkdale Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:35:29.219Z"
+      "stats": {
+        "free": 28,
+        "paid": 23,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:41:35.335Z"
     }
   }
 }

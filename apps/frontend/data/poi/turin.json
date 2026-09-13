@@ -1,6 +1,6 @@
 {
   "city": "turin",
-  "generatedAt": "2026-09-11T10:32:03.916Z",
+  "generatedAt": "2026-09-13T09:19:03.247Z",
   "categories": {
     "toilets": {
       "count": 172,
@@ -576,7 +576,13 @@
           "lon": 7.641327
         }
       ],
-      "updatedAt": "2026-09-03T17:22:09.052Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T09:18:14.790Z"
     },
     "parking": {
       "count": 1558,
@@ -791,7 +797,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:10.195Z"
+      "stats": {
+        "free": 725,
+        "paid": 94,
+        "stepFree": 47,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:18:19.090Z"
     },
     "charging-stations": {
       "count": 178,
@@ -923,7 +935,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:10.785Z"
+      "stats": {
+        "free": 4,
+        "paid": 69,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:18:20.447Z"
     },
     "gas-stations": {
       "count": 242,
@@ -1135,7 +1153,13 @@
           "address": "Corso Giovanni Agnelli 4"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:11.403Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:18:21.972Z"
     },
     "ice-cream": {
       "count": 136,
@@ -1363,7 +1387,13 @@
           "openingHours": "Mo-Fr 16:00-22:30; Sa 08:30-20:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:12.146Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 13
+      },
+      "updatedAt": "2026-09-13T09:18:23.502Z"
     },
     "dog-parks": {
       "count": 72,
@@ -1404,7 +1434,13 @@
           "address": "Via Juglaris"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:12.721Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 13
+      },
+      "updatedAt": "2026-09-13T09:18:24.954Z"
     },
     "picnic-spots": {
       "count": 226,
@@ -1432,7 +1468,13 @@
           "address": "Via dei Colli"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:14.068Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:18:29.341Z"
     },
     "viewpoints": {
       "count": 30,
@@ -1463,7 +1505,13 @@
           "lon": 7.784119
         }
       ],
-      "updatedAt": "2026-09-03T17:22:14.723Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:18:31.024Z"
     },
     "beaches": {
       "count": 1,
@@ -1475,7 +1523,13 @@
           "lon": 7.734508
         }
       ],
-      "updatedAt": "2026-09-03T17:22:15.230Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:18:32.996Z"
     },
     "atms": {
       "count": 170,
@@ -1688,6 +1742,12 @@
       "count": 75,
       "pois": [
         {
+          "id": "node/1150897255",
+          "name": "Poste Italiane",
+          "lat": 45.021428,
+          "lon": 7.623338
+        },
+        {
           "id": "node/9893231281",
           "lat": 45.070027,
           "lon": 7.685677,
@@ -1862,15 +1922,15 @@
           "lat": 45.072076,
           "lon": 7.667625,
           "street": "Via Sebastiano Grandis"
-        },
-        {
-          "id": "node/2097363629",
-          "lat": 45.083602,
-          "lon": 7.679577,
-          "street": "Via Francesco Cigna"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:18.536Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:18:41.579Z"
     },
     "recycling": {
       "count": 184,
@@ -2074,7 +2134,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:22:21.248Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:18:43.193Z"
     },
     "libraries": {
       "count": 51,
@@ -2307,7 +2373,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:21.748Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:18:44.507Z"
     },
     "outdoor-gyms": {
       "count": 56,
@@ -2384,7 +2456,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:23.503Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:18:45.958Z"
     },
     "shelters": {
       "count": 14,
@@ -2396,7 +2474,13 @@
           "street": "Via Edmondo De Amicis"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:24.983Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:18:49.800Z"
     },
     "rest-areas": {
       "count": 6,
@@ -2416,12 +2500,24 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:25.543Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:18:50.983Z"
     },
     "dump-stations": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-09-03T17:22:25.945Z"
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:18:52.290Z"
     },
     "post-offices": {
       "count": 77,
@@ -2616,17 +2712,35 @@
           "openingHours": "Mo-Fr 08:20-13:45; Sa 08:20-12:45"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:26.379Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:18:54.044Z"
     },
     "showers": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:22:26.781Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:18:55.224Z"
     },
     "fireplaces": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:22:27.928Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:18:58.163Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2808,7 +2922,13 @@
           "street": "Corso Orbassano"
         }
       ],
-      "updatedAt": "2026-09-03T17:22:29.353Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:19:03.146Z"
     }
   }
 }

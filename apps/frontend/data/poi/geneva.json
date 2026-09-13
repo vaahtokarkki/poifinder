@@ -1,6 +1,6 @@
 {
   "city": "geneva",
-  "generatedAt": "2026-09-11T10:29:34.384Z",
+  "generatedAt": "2026-09-13T08:39:27.427Z",
   "categories": {
     "toilets": {
       "count": 183,
@@ -481,7 +481,13 @@
           "lon": 6.230698
         }
       ],
-      "updatedAt": "2026-09-03T16:59:08.203Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:38:50.826Z"
     },
     "parking": {
       "count": 1477,
@@ -701,7 +707,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:09.239Z"
+      "stats": {
+        "free": 335,
+        "paid": 199,
+        "stepFree": 52,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T08:38:55.391Z"
     },
     "charging-stations": {
       "count": 69,
@@ -784,7 +796,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:09.748Z"
+      "stats": {
+        "free": 1,
+        "paid": 16,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:38:56.823Z"
     },
     "gas-stations": {
       "count": 89,
@@ -1001,7 +1019,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:10.249Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:38:58.163Z"
     },
     "ice-cream": {
       "count": 22,
@@ -1120,12 +1144,24 @@
           "address": "Rue Emma-Kammacher 5C"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:10.744Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:38:59.303Z"
     },
     "dog-parks": {
       "count": 20,
       "pois": [],
-      "updatedAt": "2026-09-03T16:59:11.165Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:39:00.383Z"
     },
     "picnic-spots": {
       "count": 363,
@@ -1149,7 +1185,13 @@
           "lon": 6.063063
         }
       ],
-      "updatedAt": "2026-09-03T16:59:12.746Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:02.512Z"
     },
     "viewpoints": {
       "count": 55,
@@ -1204,7 +1246,13 @@
           "lon": 6.221147
         }
       ],
-      "updatedAt": "2026-09-03T16:59:13.388Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:03.643Z"
     },
     "beaches": {
       "count": 45,
@@ -1310,7 +1358,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:14.888Z"
+      "stats": {
+        "free": 5,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:04.503Z"
     },
     "atms": {
       "count": 146,
@@ -1551,6 +1605,37 @@
       "count": 211,
       "pois": [
         {
+          "id": "node/13197356788",
+          "name": "Boîte aux lettres",
+          "lat": 46.197857,
+          "lon": 6.143104
+        },
+        {
+          "id": "node/653154473",
+          "name": "La Poste",
+          "lat": 46.191422,
+          "lon": 6.109283
+        },
+        {
+          "id": "node/653154470",
+          "name": "La Post",
+          "lat": 46.191714,
+          "lon": 6.103223
+        },
+        {
+          "id": "node/870003254",
+          "name": "Boite aux lettres de Meyrin Village",
+          "lat": 46.22829,
+          "lon": 6.072352
+        },
+        {
+          "id": "node/3523644586",
+          "name": "Cara douane",
+          "lat": 46.206765,
+          "lon": 6.245034,
+          "address": "Chemin des Bornes"
+        },
+        {
           "id": "node/11876192372",
           "lat": 46.203844,
           "lon": 6.141026,
@@ -1647,12 +1732,6 @@
           "street": "Boulevard de Saint-Georges"
         },
         {
-          "id": "node/13197356788",
-          "name": "Boîte aux lettres",
-          "lat": 46.197857,
-          "lon": 6.143104
-        },
-        {
           "id": "node/4054886306",
           "lat": 46.207653,
           "lon": 6.134526,
@@ -1705,33 +1784,15 @@
           "lat": 46.201747,
           "lon": 6.153556,
           "street": "Rond-Point de Rive"
-        },
-        {
-          "id": "node/4382171377",
-          "lat": 46.21147,
-          "lon": 6.149439,
-          "street": "Rue Abraham-Gevray"
-        },
-        {
-          "id": "node/1495553160",
-          "lat": 46.212718,
-          "lon": 6.142142,
-          "street": "Rue des Gares"
-        },
-        {
-          "id": "node/12307290714",
-          "lat": 46.199986,
-          "lon": 6.132565,
-          "street": "Boulevard Carl-Vogt"
-        },
-        {
-          "id": "node/6094833574",
-          "lat": 46.212192,
-          "lon": 6.137976,
-          "street": "Grottes"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:17.824Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:07.044Z"
     },
     "recycling": {
       "count": 765,
@@ -1949,7 +2010,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:59:20.630Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:07.925Z"
     },
     "libraries": {
       "count": 154,
@@ -2190,7 +2257,13 @@
           "openingHours": "Mo off; Tu-Fr 09:00-12:00 \"sur rendez-vous\""
         }
       ],
-      "updatedAt": "2026-09-03T16:59:21.180Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 17,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:39:09.544Z"
     },
     "outdoor-gyms": {
       "count": 154,
@@ -2322,7 +2395,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:22.863Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:10.445Z"
     },
     "shelters": {
       "count": 1,
@@ -2335,7 +2414,13 @@
           "address": "Chemin des Treize Arbres 200"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:23.705Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:12.104Z"
     },
     "rest-areas": {
       "count": 2,
@@ -2347,12 +2432,24 @@
           "lon": 6.188149
         }
       ],
-      "updatedAt": "2026-09-03T16:59:24.142Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:13.198Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:59:24.500Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:14.060Z"
     },
     "post-offices": {
       "count": 55,
@@ -2590,17 +2687,35 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:25.028Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 19,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:15.014Z"
     },
     "showers": {
       "count": 22,
       "pois": [],
-      "updatedAt": "2026-09-03T16:59:25.373Z"
+      "stats": {
+        "free": 5,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:15.944Z"
     },
     "fireplaces": {
       "count": 40,
       "pois": [],
-      "updatedAt": "2026-09-03T16:59:26.327Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:18.925Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2776,8 +2891,38 @@
       "updatedAt": "2026-08-18T03:58:13.539Z"
     },
     "bicycle-repair": {
-      "count": 52,
+      "count": 58,
       "pois": [
+        {
+          "id": "node/1804876738",
+          "name": "Péclôt 13",
+          "lat": 46.210325,
+          "lon": 6.138216,
+          "address": "Rue de l'Industrie 9",
+          "openingHours": "Mo-Fr 13:00-19:00; Sa 13:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/6573987070",
+          "name": "Fourrière des vélos",
+          "lat": 46.217978,
+          "lon": 6.121699,
+          "openingHours": "Tu-We 10:00-18:30"
+        },
+        {
+          "id": "node/13947829004",
+          "name": "Atelier Vélorution",
+          "lat": 46.25528,
+          "lon": 6.111778,
+          "address": "Rue de Genève 11",
+          "openingHours": "Sa 13:00-17:00"
+        },
+        {
+          "id": "node/10220916535",
+          "name": "Pompe à vélos",
+          "lat": 46.232903,
+          "lon": 6.074284
+        },
         {
           "id": "node/5387446859",
           "lat": 46.204761,
@@ -2805,15 +2950,6 @@
           "lat": 46.202978,
           "lon": 6.134228,
           "street": "Chemin du 23-Août"
-        },
-        {
-          "id": "node/1804876738",
-          "name": "Péclôt 13",
-          "lat": 46.210325,
-          "lon": 6.138216,
-          "address": "Rue de l'Industrie 9",
-          "openingHours": "Mo-Fr 13:00-19:00; Sa 13:00-18:00",
-          "wheelchair": "yes"
         },
         {
           "id": "node/11098065465",
@@ -2903,13 +3039,6 @@
           "street": "Rue de Veyrier"
         },
         {
-          "id": "node/6573987070",
-          "name": "Fourrière des vélos",
-          "lat": 46.217978,
-          "lon": 6.121699,
-          "openingHours": "Tu-We 10:00-18:30"
-        },
-        {
           "id": "node/11395896106",
           "lat": 46.184809,
           "lon": 6.150085,
@@ -2965,24 +3094,15 @@
           "lat": 46.227658,
           "lon": 6.12283,
           "street": "Chemin du Pommier"
-        },
-        {
-          "id": "node/8668843449",
-          "lat": 46.18755,
-          "lon": 6.105432,
-          "fee": "no",
-          "street": "Rue des Bossons"
-        },
-        {
-          "id": "node/10758440647",
-          "lat": 46.231832,
-          "lon": 6.110075,
-          "openingHours": "24/7",
-          "fee": "no",
-          "street": "Route de l'Aéroport"
         }
       ],
-      "updatedAt": "2026-09-03T16:59:28.375Z"
+      "stats": {
+        "free": 27,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:39:27.325Z"
     }
   }
 }

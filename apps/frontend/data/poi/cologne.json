@@ -1,6 +1,6 @@
 {
   "city": "cologne",
-  "generatedAt": "2026-09-11T10:29:15.199Z",
+  "generatedAt": "2026-09-13T08:34:03.829Z",
   "categories": {
     "toilets": {
       "count": 160,
@@ -562,10 +562,16 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:03.112Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 61,
+        "partlyStepFree": 30
+      },
+      "updatedAt": "2026-09-13T08:33:12.247Z"
     },
     "parking": {
-      "count": 12615,
+      "count": 12630,
       "pois": [
         {
           "id": "way/334212718",
@@ -798,10 +804,16 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:05.235Z"
+      "stats": {
+        "free": 1567,
+        "paid": 315,
+        "stepFree": 159,
+        "partlyStepFree": 32
+      },
+      "updatedAt": "2026-09-13T08:33:23.903Z"
     },
     "charging-stations": {
-      "count": 416,
+      "count": 417,
       "pois": [
         {
           "id": "node/12546051178",
@@ -811,7 +823,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:06.453Z"
+      "stats": {
+        "free": 25,
+        "paid": 193,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:33:25.439Z"
     },
     "gas-stations": {
       "count": 95,
@@ -1053,10 +1071,16 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:07.161Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 33,
+        "partlyStepFree": 9
+      },
+      "updatedAt": "2026-09-13T08:33:27.391Z"
     },
     "ice-cream": {
-      "count": 99,
+      "count": 97,
       "pois": [
         {
           "id": "node/633181834",
@@ -1237,7 +1261,7 @@
           "name": "Gelateria",
           "lat": 50.951793,
           "lon": 6.957334,
-          "openingHours": "Mo-Sa 10:00-21:30; Su 11:00-21:30",
+          "openingHours": "Mo-Su 09:30-21:00",
           "wheelchair": "yes"
         },
         {
@@ -1254,14 +1278,6 @@
           "name": "Eismanufaktur Marana",
           "lat": 50.92271,
           "lon": 6.958996
-        },
-        {
-          "id": "node/1772978939",
-          "name": "Bathasar",
-          "lat": 50.936608,
-          "lon": 6.936748,
-          "address": "Aachener Straße 18",
-          "wheelchair": "yes"
         },
         {
           "id": "node/1327646825",
@@ -1286,9 +1302,23 @@
           "lat": 50.92038,
           "lon": 6.959616,
           "openingHours": "Mo-Su 12:00-21:00"
+        },
+        {
+          "id": "node/4781159446",
+          "name": "Zanfino",
+          "lat": 50.958376,
+          "lon": 6.972908,
+          "openingHours": "\"abhängig nach Wetter und Nachfrage\"",
+          "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:07.989Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 20,
+        "partlyStepFree": 23
+      },
+      "updatedAt": "2026-09-13T08:33:28.884Z"
     },
     "dog-parks": {
       "count": 38,
@@ -1416,10 +1446,16 @@
           "lon": 6.86591
         }
       ],
-      "updatedAt": "2026-09-03T16:55:08.569Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:33:30.530Z"
     },
     "picnic-spots": {
-      "count": 172,
+      "count": 173,
       "pois": [
         {
           "id": "way/1275043188",
@@ -1428,7 +1464,13 @@
           "lon": 6.947718
         }
       ],
-      "updatedAt": "2026-09-03T16:55:10.183Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:33:33.112Z"
     },
     "viewpoints": {
       "count": 44,
@@ -1503,7 +1545,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:10.889Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 6,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:33:34.644Z"
     },
     "beaches": {
       "count": 26,
@@ -1517,7 +1565,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:11.453Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:33:35.763Z"
     },
     "atms": {
       "count": 279,
@@ -1955,7 +2009,13 @@
           "street": "Weidengasse"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:18.743Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:33:38.847Z"
     },
     "recycling": {
       "count": 803,
@@ -2163,7 +2223,13 @@
     "luggage-storage": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T16:55:21.861Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:33:40.004Z"
     },
     "libraries": {
       "count": 126,
@@ -2396,7 +2462,13 @@
           "openingHours": "Mo-Th 10:00-18:00; Fr 10:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:22.442Z"
+      "stats": {
+        "free": 6,
+        "paid": 0,
+        "stepFree": 25,
+        "partlyStepFree": 8
+      },
+      "updatedAt": "2026-09-13T08:33:43.498Z"
     },
     "outdoor-gyms": {
       "count": 69,
@@ -2479,22 +2551,28 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:24.305Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:33:45.370Z"
     },
     "shelters": {
-      "count": 30,
+      "count": 32,
       "pois": [
-        {
-          "id": "node/693035848",
-          "lat": 50.929121,
-          "lon": 6.900568,
-          "street": "Marcel-Proust-Promenade"
-        },
         {
           "id": "node/894153364",
           "lat": 50.928692,
           "lon": 6.88482,
           "context": "Hundefreilauffläche Stadtwald Lindenthal"
+        },
+        {
+          "id": "node/693035848",
+          "lat": 50.929121,
+          "lon": 6.900568,
+          "street": "Marcel-Proust-Promenade"
         },
         {
           "id": "node/14075135306",
@@ -2509,7 +2587,13 @@
           "street": "Ostmerheimer Straße"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:26.569Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:33:49.781Z"
     },
     "rest-areas": {
       "count": 2,
@@ -2523,15 +2607,27 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:27.141Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:33:51.221Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:55:27.528Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:33:52.244Z"
     },
     "post-offices": {
-      "count": 53,
+      "count": 51,
       "pois": [
         {
           "id": "node/787101166",
@@ -2765,12 +2861,24 @@
           "openingHours": "Mo-Fr 08:00-13:00,14:00-18:00; Sa 08:00-13:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:28.121Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:33:53.404Z"
     },
     "showers": {
       "count": 10,
       "pois": [],
-      "updatedAt": "2026-09-03T16:55:28.515Z"
+      "stats": {
+        "free": 5,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:33:54.500Z"
     },
     "fireplaces": {
       "count": 7,
@@ -2783,7 +2891,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:29.648Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:33:56.563Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2914,6 +3028,12 @@
       "count": 34,
       "pois": [
         {
+          "id": "node/4807328422",
+          "name": "Aral",
+          "lat": 50.952263,
+          "lon": 6.961278
+        },
+        {
           "id": "node/12180933746",
           "lat": 50.935172,
           "lon": 6.960934,
@@ -2941,12 +3061,6 @@
           "openingHours": "24/7",
           "fee": "no",
           "street": "Mauritiussteinweg"
-        },
-        {
-          "id": "node/4807328422",
-          "name": "Aral",
-          "lat": 50.952263,
-          "lon": 6.961278
         },
         {
           "id": "node/11659719357",
@@ -3098,7 +3212,13 @@
           "street": "Kölner Straße"
         }
       ],
-      "updatedAt": "2026-09-03T16:55:31.675Z"
+      "stats": {
+        "free": 13,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:34:03.727Z"
     }
   }
 }

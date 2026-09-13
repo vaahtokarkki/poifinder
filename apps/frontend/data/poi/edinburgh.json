@@ -1,6 +1,6 @@
 {
   "city": "edinburgh",
-  "generatedAt": "2026-09-11T10:30:28.664Z",
+  "generatedAt": "2026-09-13T08:50:59.582Z",
   "categories": {
     "toilets": {
       "count": 120,
@@ -511,7 +511,13 @@
           "lon": -3.313823
         }
       ],
-      "updatedAt": "2026-09-03T17:06:26.523Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:50:17.406Z"
     },
     "parking": {
       "count": 2242,
@@ -722,7 +728,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:27.781Z"
+      "stats": {
+        "free": 524,
+        "paid": 50,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:20.836Z"
     },
     "charging-stations": {
       "count": 113,
@@ -798,7 +810,13 @@
           "lon": -3.100604
         }
       ],
-      "updatedAt": "2026-09-03T17:06:28.247Z"
+      "stats": {
+        "free": 4,
+        "paid": 18,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:21.946Z"
     },
     "gas-stations": {
       "count": 33,
@@ -926,7 +944,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:28.752Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:23.004Z"
     },
     "ice-cream": {
       "count": 34,
@@ -1160,7 +1184,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:29.429Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:50:24.426Z"
     },
     "dog-parks": {
       "count": 1,
@@ -1172,12 +1202,24 @@
           "lon": -3.106544
         }
       ],
-      "updatedAt": "2026-09-03T17:06:29.903Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:25.662Z"
     },
     "picnic-spots": {
       "count": 302,
       "pois": [],
-      "updatedAt": "2026-09-03T17:06:31.329Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:29.373Z"
     },
     "viewpoints": {
       "count": 40,
@@ -1225,7 +1267,13 @@
           "lon": -3.270383
         }
       ],
-      "updatedAt": "2026-09-03T17:06:31.963Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:31.132Z"
     },
     "beaches": {
       "count": 18,
@@ -1279,7 +1327,13 @@
           "lon": -3.295742
         }
       ],
-      "updatedAt": "2026-09-03T17:06:32.548Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:32.762Z"
     },
     "atms": {
       "count": 224,
@@ -1472,6 +1526,12 @@
       "count": 556,
       "pois": [
         {
+          "id": "node/442983367",
+          "name": "Tesco",
+          "lat": 55.911263,
+          "lon": -3.238272
+        },
+        {
           "id": "node/283038448",
           "lat": 55.953431,
           "lon": -3.191544,
@@ -1645,15 +1705,15 @@
           "lat": 55.947276,
           "lon": -3.197921,
           "street": "Grassmarket"
-        },
-        {
-          "id": "node/305503134",
-          "lat": 55.961483,
-          "lon": -3.189821,
-          "street": "Bellevue Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:34.977Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:50:39.165Z"
     },
     "recycling": {
       "count": 487,
@@ -1856,7 +1916,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:06:37.585Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:40.955Z"
     },
     "libraries": {
       "count": 94,
@@ -2076,7 +2142,13 @@
           "openingHours": "Mo-We 10:00-20:00; Th-Sa 10:00-17:00; Su off"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:38.183Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:50:42.526Z"
     },
     "outdoor-gyms": {
       "count": 58,
@@ -2193,7 +2265,13 @@
           "address": "Bonaly Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:39.963Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:44.358Z"
     },
     "shelters": {
       "count": 2,
@@ -2205,7 +2283,13 @@
           "lon": -3.240208
         }
       ],
-      "updatedAt": "2026-09-03T17:06:41.573Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:49.993Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2217,12 +2301,24 @@
           "lon": -3.232481
         }
       ],
-      "updatedAt": "2026-09-03T17:06:42.188Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:50.910Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:06:42.548Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:51.883Z"
     },
     "post-offices": {
       "count": 56,
@@ -2466,17 +2562,35 @@
           "address": "Balgreen Road 166"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:43.023Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:52.704Z"
     },
     "showers": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:06:43.450Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:53.562Z"
     },
     "fireplaces": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:06:44.488Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:55.372Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2708,7 +2822,13 @@
           "street": "University Square"
         }
       ],
-      "updatedAt": "2026-09-03T17:06:45.928Z"
+      "stats": {
+        "free": 6,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:50:59.480Z"
     }
   }
 }

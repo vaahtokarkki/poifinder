@@ -1,6 +1,6 @@
 {
   "city": "espoo",
-  "generatedAt": "2026-09-11T10:26:04.546Z",
+  "generatedAt": "2026-09-13T08:18:04.246Z",
   "categories": {
     "toilets": {
       "count": 65,
@@ -310,7 +310,7 @@
       "updatedAt": "2026-09-11T10:25:58.513Z"
     },
     "playgrounds": {
-      "count": 422,
+      "count": 417,
       "pois": [
         {
           "id": "relation/19705631",
@@ -495,10 +495,16 @@
           "lon": 24.700412
         }
       ],
-      "updatedAt": "2026-09-03T16:36:48.683Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:40.801Z"
     },
     "parking": {
-      "count": 1682,
+      "count": 1686,
       "pois": [
         {
           "id": "way/24366789",
@@ -511,7 +517,7 @@
         },
         {
           "id": "way/129296329",
-          "name": "Espoon keskuksen pysäköintitalo",
+          "name": "Kannusillan pysäköintitalo",
           "lat": 60.205562,
           "lon": 24.653328,
           "address": "Kannusillankatu 2",
@@ -569,6 +575,13 @@
           "lat": 60.199156,
           "lon": 24.665288,
           "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "way/1547008773",
+          "name": "Koivuhovi",
+          "lat": 60.206576,
+          "lon": 24.702494,
           "fee": "no"
         },
         {
@@ -641,8 +654,8 @@
         {
           "id": "way/1415442165",
           "name": "P-Luoteisrinne",
-          "lat": 60.156513,
-          "lon": 24.708698,
+          "lat": 60.156511,
+          "lon": 24.708708,
           "fee": "yes"
         },
         {
@@ -699,7 +712,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:49.937Z"
+      "stats": {
+        "free": 506,
+        "paid": 27,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:43.163Z"
     },
     "charging-stations": {
       "count": 56,
@@ -902,7 +921,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:50.407Z"
+      "stats": {
+        "free": 2,
+        "paid": 32,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:43.957Z"
     },
     "gas-stations": {
       "count": 47,
@@ -1135,7 +1160,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:50.922Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:44.719Z"
     },
     "ice-cream": {
       "count": 2,
@@ -1149,7 +1180,13 @@
           "openingHours": "Mo-Fr 12:00-18:00; Sa 11:00-17:00; Su 12:00-16:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:51.413Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:45.563Z"
     },
     "dog-parks": {
       "count": 28,
@@ -1326,10 +1363,16 @@
           "lon": 24.799356
         }
       ],
-      "updatedAt": "2026-09-03T16:36:51.861Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:17:46.251Z"
     },
     "picnic-spots": {
-      "count": 276,
+      "count": 280,
       "pois": [
         {
           "id": "node/13773428533",
@@ -1362,7 +1405,13 @@
           "lon": 24.621381
         }
       ],
-      "updatedAt": "2026-09-03T16:36:53.203Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:47.527Z"
     },
     "viewpoints": {
       "count": 26,
@@ -1422,7 +1471,13 @@
           "lon": 24.691186
         }
       ],
-      "updatedAt": "2026-09-03T16:36:53.929Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:48.423Z"
     },
     "beaches": {
       "count": 30,
@@ -1517,7 +1572,13 @@
           "lon": 24.651038
         }
       ],
-      "updatedAt": "2026-09-03T16:36:54.484Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:49.320Z"
     },
     "atms": {
       "count": 28,
@@ -1748,7 +1809,13 @@
           "street": "Nuuksionkuja"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:56.777Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:51.794Z"
     },
     "recycling": {
       "count": 235,
@@ -1957,7 +2024,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:36:59.373Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:52.597Z"
     },
     "libraries": {
       "count": 11,
@@ -1996,11 +2069,11 @@
           "wheelchair": "yes"
         },
         {
-          "id": "way/165537663",
+          "id": "node/14151274713",
           "name": "Nöykkiön kirjasto",
-          "lat": 60.167679,
-          "lon": 24.663562,
-          "address": "Oxfotintie 4"
+          "lat": 60.167613,
+          "lon": 24.663592,
+          "address": "Oxfotiontie 3"
         },
         {
           "id": "node/4528483876",
@@ -2048,7 +2121,13 @@
           "address": "Veininkatu 24"
         }
       ],
-      "updatedAt": "2026-09-03T16:36:59.888Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:53.283Z"
     },
     "outdoor-gyms": {
       "count": 110,
@@ -2172,7 +2251,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:01.645Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:54.031Z"
     },
     "shelters": {
       "count": 17,
@@ -2196,17 +2281,35 @@
           "lon": 24.620847
         }
       ],
-      "updatedAt": "2026-09-03T16:37:03.388Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:56.660Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:37:03.901Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:57.543Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:37:04.248Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:58.230Z"
     },
     "post-offices": {
       "count": 6,
@@ -2250,12 +2353,24 @@
           "openingHours": "Mo-Fr 06:00-23:00; Sa 07:00-23:00; Su 08:00-23:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:04.632Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:17:59.183Z"
     },
     "showers": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T16:37:05.030Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:00.030Z"
     },
     "fireplaces": {
       "count": 15,
@@ -2294,7 +2409,13 @@
           "lon": 24.615956
         }
       ],
-      "updatedAt": "2026-09-03T16:37:05.981Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:01.643Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2491,7 +2612,13 @@
           "street": "Ahventie"
         }
       ],
-      "updatedAt": "2026-09-03T16:37:07.336Z"
+      "stats": {
+        "free": 8,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:18:04.144Z"
     }
   }
 }

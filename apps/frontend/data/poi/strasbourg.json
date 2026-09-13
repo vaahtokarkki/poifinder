@@ -1,6 +1,6 @@
 {
   "city": "strasbourg",
-  "generatedAt": "2026-09-11T10:31:07.549Z",
+  "generatedAt": "2026-09-13T09:06:16.936Z",
   "categories": {
     "toilets": {
       "count": 144,
@@ -612,10 +612,16 @@
           "lon": 7.733273
         }
       ],
-      "updatedAt": "2026-09-03T17:15:10.154Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:05:34.710Z"
     },
     "parking": {
-      "count": 3057,
+      "count": 3060,
       "pois": [
         {
           "id": "way/1001891414",
@@ -842,7 +848,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:11.866Z"
+      "stats": {
+        "free": 896,
+        "paid": 749,
+        "stepFree": 32,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:05:40.022Z"
     },
     "charging-stations": {
       "count": 203,
@@ -933,7 +945,13 @@
           "lon": 7.700558
         }
       ],
-      "updatedAt": "2026-09-03T17:15:12.309Z"
+      "stats": {
+        "free": 2,
+        "paid": 105,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:05:41.232Z"
     },
     "gas-stations": {
       "count": 43,
@@ -1155,7 +1173,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:12.783Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:05:42.266Z"
     },
     "ice-cream": {
       "count": 29,
@@ -1317,7 +1341,13 @@
           "lon": 7.655347
         }
       ],
-      "updatedAt": "2026-09-03T17:15:13.265Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:05:43.404Z"
     },
     "dog-parks": {
       "count": 17,
@@ -1342,12 +1372,24 @@
           "lon": 7.761614
         }
       ],
-      "updatedAt": "2026-09-03T17:15:13.662Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:05:44.483Z"
     },
     "picnic-spots": {
-      "count": 214,
+      "count": 218,
       "pois": [],
-      "updatedAt": "2026-09-03T17:15:14.908Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:05:47.161Z"
     },
     "viewpoints": {
       "count": 24,
@@ -1412,7 +1454,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:15.579Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:05:48.711Z"
     },
     "beaches": {
       "count": 9,
@@ -1436,7 +1484,13 @@
           "lon": 7.828067
         }
       ],
-      "updatedAt": "2026-09-03T17:15:16.108Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:05:50.291Z"
     },
     "atms": {
       "count": 213,
@@ -1691,9 +1745,186 @@
           "name": "Deutsche Post",
           "lat": 48.604673,
           "lon": 7.833876
+        },
+        {
+          "id": "node/4586990313",
+          "lat": 48.574112,
+          "lon": 7.753427,
+          "street": "Rue du Marksgarten"
+        },
+        {
+          "id": "node/4544555632",
+          "lat": 48.576205,
+          "lon": 7.752898,
+          "street": "Rue de la Première Armée"
+        },
+        {
+          "id": "node/8350066236",
+          "lat": 48.571194,
+          "lon": 7.756902,
+          "street": "Avenue Jean Jaurès"
+        },
+        {
+          "id": "node/4544555633",
+          "lat": 48.577464,
+          "lon": 7.752844,
+          "street": "Rue Sengenwald"
+        },
+        {
+          "id": "node/1403048252",
+          "lat": 48.573497,
+          "lon": 7.758788,
+          "street": "Passage André Chamson"
+        },
+        {
+          "id": "node/4165801658",
+          "lat": 48.578021,
+          "lon": 7.75093,
+          "street": "Rue des Bouchers"
+        },
+        {
+          "id": "node/4544555634",
+          "lat": 48.57779,
+          "lon": 7.756312,
+          "street": "Rue de Lucerne"
+        },
+        {
+          "id": "node/11734566707",
+          "lat": 48.576152,
+          "lon": 7.76008,
+          "street": "Rue du Jura"
+        },
+        {
+          "id": "node/3037744922",
+          "lat": 48.579875,
+          "lon": 7.749845,
+          "street": "Rue de l'Étal"
+        },
+        {
+          "id": "node/12222105498",
+          "lat": 48.576838,
+          "lon": 7.742504,
+          "street": "Rue des Glacières"
+        },
+        {
+          "id": "node/411894743",
+          "lat": 48.579802,
+          "lon": 7.757336,
+          "street": "Place de Zurich"
+        },
+        {
+          "id": "node/4922782379",
+          "lat": 48.581185,
+          "lon": 7.750523,
+          "street": "Place de la Cathédrale"
+        },
+        {
+          "id": "node/3273964874",
+          "lat": 48.578829,
+          "lon": 7.742956,
+          "street": "Rue Finkwiller"
+        },
+        {
+          "id": "node/4483149728",
+          "lat": 48.566439,
+          "lon": 7.7588,
+          "street": "Route du Polygone"
+        },
+        {
+          "id": "node/333324071",
+          "lat": 48.580848,
+          "lon": 7.746678,
+          "street": "Rue de la Division Leclerc"
+        },
+        {
+          "id": "node/2674878679",
+          "lat": 48.581449,
+          "lon": 7.748093,
+          "street": "Place Gutenberg"
+        },
+        {
+          "id": "node/564899239",
+          "lat": 48.583243,
+          "lon": 7.748806,
+          "street": "Rue du Temple Neuf"
+        },
+        {
+          "id": "node/1250274883",
+          "lat": 48.583323,
+          "lon": 7.755101,
+          "wheelchair": "limited",
+          "street": "Rue de la Courtine"
+        },
+        {
+          "id": "node/2426616610",
+          "lat": 48.581398,
+          "lon": 7.742443,
+          "wheelchair": "yes",
+          "street": "Place Benjamin Zix"
+        },
+        {
+          "id": "node/4431500995",
+          "lat": 48.579322,
+          "lon": 7.739416,
+          "street": "Place du Quartier Blanc"
+        },
+        {
+          "id": "node/9875344450",
+          "lat": 48.583764,
+          "lon": 7.752852,
+          "street": "Rue des Juifs"
+        },
+        {
+          "id": "node/3788151295",
+          "lat": 48.582723,
+          "lon": 7.743668,
+          "wheelchair": "yes",
+          "street": "Rue du 22 Novembre"
+        },
+        {
+          "id": "node/9009685079",
+          "lat": 48.583793,
+          "lon": 7.744459,
+          "street": "Place de l'Homme de Fer"
+        },
+        {
+          "id": "node/4544510712",
+          "lat": 48.585337,
+          "lon": 7.747674,
+          "street": "Rue de la Nuée Bleue"
+        },
+        {
+          "id": "node/4487737356",
+          "lat": 48.577683,
+          "lon": 7.76956,
+          "street": "Avenue du Général de Gaulle"
+        },
+        {
+          "id": "node/1262415921",
+          "lat": 48.584282,
+          "lon": 7.761623,
+          "street": "Place de l'Université"
+        },
+        {
+          "id": "node/1245322789",
+          "lat": 48.57738,
+          "lon": 7.733013,
+          "street": "Rue de Molsheim"
+        },
+        {
+          "id": "node/9345810153",
+          "lat": 48.561207,
+          "lon": 7.760351,
+          "street": "Place Henri Will"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:18.164Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:05:53.734Z"
     },
     "recycling": {
       "count": 704,
@@ -1917,7 +2148,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:20.653Z"
+      "stats": {
+        "free": 2,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:05:54.823Z"
     },
     "libraries": {
       "count": 105,
@@ -2140,7 +2377,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:21.148Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:05:55.914Z"
     },
     "outdoor-gyms": {
       "count": 102,
@@ -2210,12 +2453,31 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:22.803Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:05:57.327Z"
     },
     "shelters": {
       "count": 6,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:15:24.245Z"
+      "pois": [
+        {
+          "id": "node/13112830598",
+          "lat": 48.579437,
+          "lon": 7.666243,
+          "street": "Rue du Moulin"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:01.793Z"
     },
     "rest-areas": {
       "count": 3,
@@ -2240,12 +2502,24 @@
           "lon": 7.716381
         }
       ],
-      "updatedAt": "2026-09-03T17:15:24.821Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:02.983Z"
     },
     "dump-stations": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:15:25.165Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:04.143Z"
     },
     "post-offices": {
       "count": 46,
@@ -2487,7 +2761,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:25.562Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 31,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:05.943Z"
     },
     "showers": {
       "count": 26,
@@ -2508,12 +2788,24 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:26.288Z"
+      "stats": {
+        "free": 10,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:06:07.183Z"
     },
     "fireplaces": {
       "count": 26,
       "pois": [],
-      "updatedAt": "2026-09-03T17:15:27.304Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:09.215Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2628,8 +2920,146 @@
       "updatedAt": "2026-08-18T03:58:25.819Z"
     },
     "bicycle-repair": {
-      "count": 29,
+      "count": 42,
       "pois": [
+        {
+          "id": "node/11597508434",
+          "lat": 48.574052,
+          "lon": 7.75319,
+          "openingHours": "24/7",
+          "street": "Rue du Marksgarten"
+        },
+        {
+          "id": "node/10200185310",
+          "lat": 48.574625,
+          "lon": 7.750312,
+          "street": "Quai Fustel de Coulanges"
+        },
+        {
+          "id": "node/7743075185",
+          "lat": 48.574131,
+          "lon": 7.755283,
+          "street": "Place Dauphine"
+        },
+        {
+          "id": "node/10129122146",
+          "lat": 48.566229,
+          "lon": 7.758833,
+          "street": "Route du Polygone"
+        },
+        {
+          "id": "node/11401181777",
+          "lat": 48.577304,
+          "lon": 7.767852,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue de Rome"
+        },
+        {
+          "id": "node/11401181787",
+          "lat": 48.585709,
+          "lon": 7.743473,
+          "street": "Rue de Sébastopol"
+        },
+        {
+          "id": "node/7781574368",
+          "lat": 48.584786,
+          "lon": 7.735398,
+          "openingHours": "24/7",
+          "street": "Chemin des fiertés"
+        },
+        {
+          "id": "node/11401181778",
+          "lat": 48.577049,
+          "lon": 7.727862,
+          "street": "Sentier de la Caponnière"
+        },
+        {
+          "id": "node/10200141621",
+          "lat": 48.567609,
+          "lon": 7.726179,
+          "street": "Rue Martin Schongauer"
+        },
+        {
+          "id": "node/11402852065",
+          "lat": 48.590828,
+          "lon": 7.74453,
+          "street": "Rue de Haguenau"
+        },
+        {
+          "id": "node/11402852064",
+          "lat": 48.584227,
+          "lon": 7.775558,
+          "street": "Rue de l'Yser"
+        },
+        {
+          "id": "node/7902428285",
+          "lat": 48.58916,
+          "lon": 7.735653,
+          "openingHours": "24/7",
+          "street": "Rue Georges Wodli"
+        },
+        {
+          "id": "node/11401181786",
+          "lat": 48.555015,
+          "lon": 7.766536,
+          "street": "Avenue du Neuhof"
+        },
+        {
+          "id": "node/11401181783",
+          "lat": 48.549996,
+          "lon": 7.750894,
+          "street": "Place de l'Île de France"
+        },
+        {
+          "id": "node/10858104462",
+          "lat": 48.598538,
+          "lon": 7.760998,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Place Adrien Zeller"
+        },
+        {
+          "id": "node/9406680470",
+          "lat": 48.572427,
+          "lon": 7.794905,
+          "street": "Place de l'Hippodrome"
+        },
+        {
+          "id": "node/9056717389",
+          "lat": 48.599838,
+          "lon": 7.7679,
+          "fee": "no",
+          "street": "Quai du Canal de la Marne au Rhin"
+        },
+        {
+          "id": "node/11402852060",
+          "lat": 48.564906,
+          "lon": 7.706712,
+          "street": "Rue d'Ostwald"
+        },
+        {
+          "id": "node/10858104461",
+          "lat": 48.605185,
+          "lon": 7.747825,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Route de Bischwiller"
+        },
+        {
+          "id": "node/11402852053",
+          "lat": 48.586692,
+          "lon": 7.703945,
+          "street": "Rue Jacobi-Netter"
+        },
+        {
+          "id": "node/10185396377",
+          "lat": 48.602283,
+          "lon": 7.782921,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue Boecklin"
+        },
         {
           "id": "node/8162983933",
           "lat": 48.576123,
@@ -2641,9 +3071,61 @@
           "lat": 48.576469,
           "lon": 7.81532,
           "street": "Straßburger Straße"
+        },
+        {
+          "id": "node/10858104463",
+          "lat": 48.61287,
+          "lon": 7.773944,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue de l'Ill"
+        },
+        {
+          "id": "node/11402852063",
+          "lat": 48.580314,
+          "lon": 7.68726,
+          "street": "Avenue du Général de Gaulle"
+        },
+        {
+          "id": "node/11402852051",
+          "lat": 48.600784,
+          "lon": 7.69799,
+          "street": "Route d'Oberhausbergen"
+        },
+        {
+          "id": "node/11402852048",
+          "lat": 48.598726,
+          "lon": 7.695074,
+          "street": "Avenue Racine"
+        },
+        {
+          "id": "node/11401181785",
+          "lat": 48.52751,
+          "lon": 7.769431,
+          "street": "Rue Stéphanie"
+        },
+        {
+          "id": "node/10784164501",
+          "lat": 48.621323,
+          "lon": 7.755324,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue de la République"
+        },
+        {
+          "id": "node/11402852062",
+          "lat": 48.557378,
+          "lon": 7.682662,
+          "street": "Rue du Maréchal Foch"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:28.581Z"
+      "stats": {
+        "free": 10,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:16.834Z"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "city": "hobart",
-  "generatedAt": "2026-09-11T10:33:36.172Z",
+  "generatedAt": "2026-09-13T09:48:59.824Z",
   "categories": {
     "toilets": {
       "count": 117,
@@ -482,7 +482,13 @@
           "lon": 147.259718
         }
       ],
-      "updatedAt": "2026-09-03T17:39:33.813Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:18.644Z"
     },
     "parking": {
       "count": 594,
@@ -636,7 +642,13 @@
           "lon": 147.296299
         }
       ],
-      "updatedAt": "2026-09-03T17:39:34.755Z"
+      "stats": {
+        "free": 183,
+        "paid": 34,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:48:25.575Z"
     },
     "charging-stations": {
       "count": 15,
@@ -662,7 +674,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:35.141Z"
+      "stats": {
+        "free": 5,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:26.548Z"
     },
     "gas-stations": {
       "count": 30,
@@ -748,7 +766,13 @@
           "address": "Main Road 463"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:35.651Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:27.525Z"
     },
     "ice-cream": {
       "count": 2,
@@ -769,7 +793,13 @@
           "openingHours": "Tu-Fr 09:00-17:00; Sa, Su 10:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:36.092Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:48:28.931Z"
     },
     "dog-parks": {
       "count": 7,
@@ -800,7 +830,13 @@
           "lon": 147.349816
         }
       ],
-      "updatedAt": "2026-09-03T17:39:36.447Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:30.103Z"
     },
     "picnic-spots": {
       "count": 88,
@@ -867,7 +903,13 @@
           "context": "Apex Park"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:37.854Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:33.112Z"
     },
     "viewpoints": {
       "count": 22,
@@ -940,7 +982,13 @@
           "lon": 147.235649
         }
       ],
-      "updatedAt": "2026-09-03T17:39:38.502Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:34.280Z"
     },
     "beaches": {
       "count": 11,
@@ -1006,7 +1054,13 @@
           "lon": 147.35668
         }
       ],
-      "updatedAt": "2026-09-03T17:39:39.069Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:35.190Z"
     },
     "atms": {
       "count": 40,
@@ -1059,6 +1113,12 @@
     "post-boxes": {
       "count": 69,
       "pois": [
+        {
+          "id": "node/5700882032",
+          "name": "Express Post",
+          "lat": -42.872129,
+          "lon": 147.314281
+        },
         {
           "id": "node/4577044391",
           "lat": -42.883308,
@@ -1162,12 +1222,6 @@
           "street": "Macquarie Street"
         },
         {
-          "id": "node/5700882032",
-          "name": "Express Post",
-          "lat": -42.872129,
-          "lon": 147.314281
-        },
-        {
           "id": "node/2323881046",
           "lat": -42.893851,
           "lon": 147.316069,
@@ -1240,7 +1294,13 @@
           "street": "Huon Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:41.427Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:40.856Z"
     },
     "recycling": {
       "count": 44,
@@ -1437,7 +1497,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:39:43.429Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:42.092Z"
     },
     "libraries": {
       "count": 7,
@@ -1481,7 +1547,13 @@
           "openingHours": "Mo-Th 09:00-17:30; Fr 09:00-18:30; Sa 09:30-12:30; PH off"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:43.948Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:43.000Z"
     },
     "outdoor-gyms": {
       "count": 8,
@@ -1523,7 +1595,13 @@
           "lon": 147.337698
         }
       ],
-      "updatedAt": "2026-09-03T17:39:45.222Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:43.924Z"
     },
     "shelters": {
       "count": 52,
@@ -1533,12 +1611,6 @@
           "name": "Site 1",
           "lat": -42.906572,
           "lon": 147.294083
-        },
-        {
-          "id": "node/1875434103",
-          "lat": -42.848678,
-          "lon": 147.298541,
-          "street": "Intercity Cycleway"
         },
         {
           "id": "node/440599564",
@@ -1587,12 +1659,6 @@
           "name": "Hut 3 - Banksia",
           "lat": -42.848648,
           "lon": 147.253414
-        },
-        {
-          "id": "node/659020137",
-          "lat": -42.922319,
-          "lon": 147.25951,
-          "street": "Pipeline Track"
         },
         {
           "id": "way/760890461",
@@ -1655,12 +1721,6 @@
           "lon": 147.248839
         },
         {
-          "id": "node/13271959705",
-          "lat": -42.895941,
-          "lon": 147.237548,
-          "street": "Pinnacle Road"
-        },
-        {
           "id": "way/659807147",
           "name": "The Chalet",
           "lat": -42.889876,
@@ -1674,23 +1734,59 @@
           "wheelchair": "no"
         },
         {
+          "id": "node/1875434103",
+          "lat": -42.848678,
+          "lon": 147.298541,
+          "street": "Intercity Cycleway"
+        },
+        {
+          "id": "node/659020137",
+          "lat": -42.922319,
+          "lon": 147.25951,
+          "street": "Pipeline Track"
+        },
+        {
+          "id": "node/13271959705",
+          "lat": -42.895941,
+          "lon": 147.237548,
+          "street": "Pinnacle Road"
+        },
+        {
           "id": "node/12848454309",
           "lat": -42.823672,
           "lon": 147.271937,
           "street": "Montrose Bay Cycleway"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:46.859Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:48.544Z"
     },
     "rest-areas": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:39:47.341Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:50.123Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:39:47.661Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:51.637Z"
     },
     "post-offices": {
       "count": 14,
@@ -1792,12 +1888,24 @@
           "address": "Sugarloaf Road 42"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:48.046Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:48:53.025Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:39:48.409Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:54.083Z"
     },
     "fireplaces": {
       "count": 39,
@@ -1821,7 +1929,13 @@
           "lon": 147.246094
         }
       ],
-      "updatedAt": "2026-09-03T17:39:49.360Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:55.703Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1971,7 +2085,13 @@
           "street": "Alexander Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:50.509Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:48:59.723Z"
     }
   }
 }

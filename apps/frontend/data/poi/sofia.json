@@ -1,6 +1,6 @@
 {
   "city": "sofia",
-  "generatedAt": "2026-09-11T10:28:48.515Z",
+  "generatedAt": "2026-09-13T08:31:06.044Z",
   "categories": {
     "toilets": {
       "count": 169,
@@ -537,7 +537,13 @@
           "lon": 23.262373
         }
       ],
-      "updatedAt": "2026-09-03T16:52:04.018Z"
+      "stats": {
+        "free": 9,
+        "paid": 2,
+        "stepFree": 30,
+        "partlyStepFree": 10
+      },
+      "updatedAt": "2026-09-13T08:30:48.412Z"
     },
     "parking": {
       "count": 4050,
@@ -741,7 +747,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:05.508Z"
+      "stats": {
+        "free": 799,
+        "paid": 323,
+        "stepFree": 38,
+        "partlyStepFree": 10
+      },
+      "updatedAt": "2026-09-13T08:30:50.132Z"
     },
     "charging-stations": {
       "count": 183,
@@ -984,7 +996,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:06.089Z"
+      "stats": {
+        "free": 7,
+        "paid": 47,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:30:50.785Z"
     },
     "gas-stations": {
       "count": 181,
@@ -1198,7 +1216,13 @@
           "openingHours": "07:00-19:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:06.699Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 30,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:30:51.553Z"
     },
     "ice-cream": {
       "count": 37,
@@ -1429,7 +1453,13 @@
           "openingHours": "Mo-Su 10:00-21:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:07.142Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:30:52.123Z"
     },
     "dog-parks": {
       "count": 34,
@@ -1454,12 +1484,24 @@
           "address": "Корал"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:07.520Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:30:52.701Z"
     },
     "picnic-spots": {
       "count": 138,
       "pois": [],
-      "updatedAt": "2026-09-03T16:52:08.865Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:30:54.046Z"
     },
     "viewpoints": {
       "count": 9,
@@ -1484,12 +1526,24 @@
           "lon": 23.253589
         }
       ],
-      "updatedAt": "2026-09-03T16:52:09.354Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:30:54.773Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:52:09.792Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:30:55.363Z"
     },
     "atms": {
       "count": 602,
@@ -1714,6 +1768,19 @@
       "count": 58,
       "pois": [
         {
+          "id": "node/10967992578",
+          "name": "Speedy",
+          "lat": 42.694136,
+          "lon": 23.316791,
+          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-14:00, Su off"
+        },
+        {
+          "id": "node/10586407997",
+          "name": "Еконт",
+          "lat": 42.66243,
+          "lon": 23.27737
+        },
+        {
           "id": "node/9268383422",
           "lat": 42.697339,
           "lon": 23.324198,
@@ -1748,13 +1815,6 @@
           "lat": 42.693148,
           "lon": 23.324641,
           "street": "Стефан Караджа"
-        },
-        {
-          "id": "node/10967992578",
-          "name": "Speedy",
-          "lat": 42.694136,
-          "lon": 23.316791,
-          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-14:00, Su off"
         },
         {
           "id": "node/9268305000",
@@ -1887,15 +1947,15 @@
           "lat": 42.735521,
           "lon": 23.30555,
           "street": "Ген. Никола Жеков"
-        },
-        {
-          "id": "node/9268305008",
-          "lat": 42.669127,
-          "lon": 23.280262,
-          "street": "Ген. Стефан Тошев"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:11.934Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:30:56.856Z"
     },
     "recycling": {
       "count": 1645,
@@ -2126,7 +2186,13 @@
           "address": "бул. Евлоги и Христо Георгиеви"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:14.901Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:30:57.532Z"
     },
     "libraries": {
       "count": 23,
@@ -2243,7 +2309,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:15.348Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:30:58.152Z"
     },
     "outdoor-gyms": {
       "count": 212,
@@ -2267,7 +2339,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:17.188Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:30:58.705Z"
     },
     "shelters": {
       "count": 14,
@@ -2309,17 +2387,35 @@
           "street": "Под хотела"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:18.821Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:00.704Z"
     },
     "rest-areas": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T16:52:19.380Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:01.229Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:52:19.727Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:01.660Z"
     },
     "post-offices": {
       "count": 273,
@@ -2552,12 +2648,24 @@
           "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-13:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:20.276Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 22,
+        "partlyStepFree": 15
+      },
+      "updatedAt": "2026-09-13T08:31:02.329Z"
     },
     "showers": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:52:20.697Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:02.856Z"
     },
     "fireplaces": {
       "count": 5,
@@ -2569,7 +2677,13 @@
           "lon": 23.293636
         }
       ],
-      "updatedAt": "2026-09-03T16:52:21.743Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:04.213Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2733,7 +2847,13 @@
           "street": "бул. Цариградско шосе"
         }
       ],
-      "updatedAt": "2026-09-03T16:52:23.129Z"
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:31:05.942Z"
     }
   }
 }

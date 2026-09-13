@@ -1,6 +1,6 @@
 {
   "city": "adelaide",
-  "generatedAt": "2026-09-11T10:33:44.172Z",
+  "generatedAt": "2026-09-13T09:47:31.974Z",
   "categories": {
     "toilets": {
       "count": 231,
@@ -594,7 +594,13 @@
           "lon": 138.549594
         }
       ],
-      "updatedAt": "2026-09-03T17:38:44.508Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T09:46:48.508Z"
     },
     "parking": {
       "count": 6834,
@@ -821,7 +827,13 @@
           "lon": 138.57923
         }
       ],
-      "updatedAt": "2026-09-03T17:38:46.291Z"
+      "stats": {
+        "free": 316,
+        "paid": 92,
+        "stepFree": 16,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:46:53.440Z"
     },
     "charging-stations": {
       "count": 16,
@@ -835,7 +847,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:46.780Z"
+      "stats": {
+        "free": 1,
+        "paid": 7,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:54.601Z"
     },
     "gas-stations": {
       "count": 104,
@@ -1062,7 +1080,13 @@
           "address": "Greenhill Road 460-462"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:47.449Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:55.845Z"
     },
     "ice-cream": {
       "count": 17,
@@ -1160,7 +1184,13 @@
           "lon": 138.549305
         }
       ],
-      "updatedAt": "2026-09-03T17:38:47.947Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:46:57.784Z"
     },
     "dog-parks": {
       "count": 14,
@@ -1202,7 +1232,13 @@
           "lon": 138.673598
         }
       ],
-      "updatedAt": "2026-09-03T17:38:48.347Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:46:58.804Z"
     },
     "picnic-spots": {
       "count": 361,
@@ -1220,7 +1256,13 @@
           "lon": 138.677933
         }
       ],
-      "updatedAt": "2026-09-03T17:38:49.745Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:47:01.305Z"
     },
     "viewpoints": {
       "count": 14,
@@ -1274,12 +1316,24 @@
           "lon": 138.684507
         }
       ],
-      "updatedAt": "2026-09-03T17:38:50.762Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:02.843Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:38:51.528Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:03.944Z"
     },
     "atms": {
       "count": 50,
@@ -1375,6 +1429,25 @@
     "post-boxes": {
       "count": 159,
       "pois": [
+        {
+          "id": "node/2189586670",
+          "name": "Australia Post",
+          "lat": -34.950657,
+          "lon": 138.625327
+        },
+        {
+          "id": "node/11062668505",
+          "name": "AusPost",
+          "lat": -34.914769,
+          "lon": 138.649423
+        },
+        {
+          "id": "node/10978574405",
+          "name": "AusPost Postbox",
+          "lat": -34.90255,
+          "lon": 138.679977,
+          "address": "Moules Road"
+        },
         {
           "id": "node/12300294497",
           "lat": -34.928241,
@@ -1536,27 +1609,15 @@
           "lat": -34.924907,
           "lon": 138.623575,
           "street": "William Street"
-        },
-        {
-          "id": "node/13909544628",
-          "lat": -34.933369,
-          "lon": 138.624177,
-          "street": "Fullarton Road"
-        },
-        {
-          "id": "node/478711114",
-          "lat": -34.908672,
-          "lon": 138.596244,
-          "street": "Ward Street"
-        },
-        {
-          "id": "node/321517806",
-          "lat": -34.949453,
-          "lon": 138.594932,
-          "street": "Albert Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:38:54.482Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:10.296Z"
     },
     "recycling": {
       "count": 28,
@@ -1651,7 +1712,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:38:56.245Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:11.384Z"
     },
     "libraries": {
       "count": 89,
@@ -1856,7 +1923,13 @@
           "lon": 138.537775
         }
       ],
-      "updatedAt": "2026-09-03T17:38:56.891Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:12.525Z"
     },
     "outdoor-gyms": {
       "count": 42,
@@ -1918,7 +1991,13 @@
           "lon": 138.648082
         }
       ],
-      "updatedAt": "2026-09-03T17:38:58.647Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:13.764Z"
     },
     "shelters": {
       "count": 61,
@@ -1928,6 +2007,24 @@
           "lat": -34.936255,
           "lon": 138.608133,
           "context": "Pityarilla Dog Park"
+        },
+        {
+          "id": "way/732006384",
+          "name": "Covered Table and BBQ",
+          "lat": -34.879247,
+          "lon": 138.590659
+        },
+        {
+          "id": "way/1216960804",
+          "name": "Log cabin",
+          "lat": -34.908147,
+          "lon": 138.663792
+        },
+        {
+          "id": "way/751752768",
+          "name": "Shade shelter",
+          "lat": -34.992972,
+          "lon": 138.603441
         },
         {
           "id": "node/10581743100",
@@ -1966,22 +2063,10 @@
           "street": "Neville Avenue"
         },
         {
-          "id": "way/732006384",
-          "name": "Covered Table and BBQ",
-          "lat": -34.879247,
-          "lon": 138.590659
-        },
-        {
           "id": "node/9706326440",
           "lat": -34.940198,
           "lon": 138.660033,
           "street": "Russell Avenue"
-        },
-        {
-          "id": "way/1216960804",
-          "name": "Log cabin",
-          "lat": -34.908147,
-          "lon": 138.663792
         },
         {
           "id": "node/9126415617",
@@ -1990,19 +2075,19 @@
           "street": "Langman Grove"
         },
         {
-          "id": "way/751752768",
-          "name": "Shade shelter",
-          "lat": -34.992972,
-          "lon": 138.603441
-        },
-        {
           "id": "node/13073401623",
           "lat": -34.86594,
           "lon": 138.5635,
           "street": "Oban Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:00.869Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:17.561Z"
     },
     "rest-areas": {
       "count": 4,
@@ -2015,12 +2100,24 @@
           "address": "Stephen Terrace 88"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:01.340Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:18.881Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:39:01.768Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:19.803Z"
     },
     "post-offices": {
       "count": 47,
@@ -2209,17 +2306,35 @@
           "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:30; Su off"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:02.208Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:20.809Z"
     },
     "showers": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:39:02.561Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:22.143Z"
     },
     "fireplaces": {
       "count": 169,
       "pois": [],
-      "updatedAt": "2026-09-03T17:39:03.508Z"
+      "stats": {
+        "free": 22,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:24.521Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2407,7 +2522,13 @@
           "street": "First Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:05.242Z"
+      "stats": {
+        "free": 5,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:47:31.872Z"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "city": "chicago",
-  "generatedAt": "2026-09-11T10:32:06.001Z",
+  "generatedAt": "2026-09-13T09:22:51.366Z",
   "categories": {
     "toilets": {
       "count": 117,
@@ -611,7 +611,13 @@
           "lon": -87.699905
         }
       ],
-      "updatedAt": "2026-09-03T17:24:11.632Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:21:49.509Z"
     },
     "parking": {
       "count": 4044,
@@ -844,7 +850,13 @@
           "address": "East Randolph Street 20-32"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:13.257Z"
+      "stats": {
+        "free": 185,
+        "paid": 317,
+        "stepFree": 12,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:21:57.943Z"
     },
     "charging-stations": {
       "count": 51,
@@ -899,7 +911,13 @@
           "lon": -87.646799
         }
       ],
-      "updatedAt": "2026-09-03T17:24:13.841Z"
+      "stats": {
+        "free": 5,
+        "paid": 22,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:21:59.201Z"
     },
     "gas-stations": {
       "count": 257,
@@ -1116,7 +1134,13 @@
           "address": "North Broadway 4900"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:14.662Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:00.979Z"
     },
     "ice-cream": {
       "count": 111,
@@ -1340,7 +1364,13 @@
           "openingHours": "Su-Th 10:00-22:00; Fr,Sa 10:00-23:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:15.308Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:03.864Z"
     },
     "dog-parks": {
       "count": 56,
@@ -1496,7 +1526,13 @@
           "lon": -87.652217
         }
       ],
-      "updatedAt": "2026-09-03T17:24:15.888Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:22:05.283Z"
     },
     "picnic-spots": {
       "count": 255,
@@ -1646,7 +1682,13 @@
           "lon": -87.576016
         }
       ],
-      "updatedAt": "2026-09-03T17:24:17.072Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:10.147Z"
     },
     "viewpoints": {
       "count": 86,
@@ -1758,7 +1800,13 @@
           "lon": -87.713144
         }
       ],
-      "updatedAt": "2026-09-03T17:24:17.714Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:12.102Z"
     },
     "beaches": {
       "count": 16,
@@ -1851,7 +1899,13 @@
           "lon": -87.652052
         }
       ],
-      "updatedAt": "2026-09-03T17:24:18.368Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:14.033Z"
     },
     "atms": {
       "count": 406,
@@ -2265,7 +2319,13 @@
           "street": "East Randolph Drive"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:21.064Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:23.816Z"
     },
     "recycling": {
       "count": 46,
@@ -2461,7 +2521,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:24:23.747Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:24.765Z"
     },
     "libraries": {
       "count": 129,
@@ -2710,7 +2776,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:24.478Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 24,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:22:26.333Z"
     },
     "outdoor-gyms": {
       "count": 8,
@@ -2742,12 +2814,24 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:25.621Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:29.012Z"
     },
     "shelters": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T17:24:26.567Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:31.563Z"
     },
     "rest-areas": {
       "count": 5,
@@ -2766,12 +2850,24 @@
           "lon": -87.696774
         }
       ],
-      "updatedAt": "2026-09-03T17:24:27.055Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:34.163Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:24:27.469Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:36.214Z"
     },
     "post-offices": {
       "count": 77,
@@ -2997,7 +3093,13 @@
           "address": "West Division Street 5001"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:28.104Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:38.175Z"
     },
     "showers": {
       "count": 12,
@@ -3017,12 +3119,24 @@
           "address": "North Noble Street 1300"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:28.507Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:39.663Z"
     },
     "fireplaces": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-09-03T17:24:29.641Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:43.963Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3128,18 +3242,18 @@
       "count": 22,
       "pois": [
         {
-          "id": "node/3376088196",
-          "lat": 41.879099,
-          "lon": -87.621041,
-          "openingHours": "24/7",
-          "street": "South Columbus Drive"
-        },
-        {
           "id": "node/4253761740",
           "name": "Bicycle Repair Tool Stand",
           "lat": 41.889639,
           "lon": -87.644979,
           "openingHours": "24/7"
+        },
+        {
+          "id": "node/3376088196",
+          "lat": 41.879099,
+          "lon": -87.621041,
+          "openingHours": "24/7",
+          "street": "South Columbus Drive"
         },
         {
           "id": "node/11881565665",
@@ -3218,7 +3332,13 @@
           "street": "East 57th Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:24:31.468Z"
+      "stats": {
+        "free": 6,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:22:51.265Z"
     }
   }
 }

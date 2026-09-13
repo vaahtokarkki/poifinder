@@ -1,6 +1,6 @@
 {
   "city": "auckland",
-  "generatedAt": "2026-09-11T10:33:51.789Z",
+  "generatedAt": "2026-09-13T09:49:41.758Z",
   "categories": {
     "toilets": {
       "count": 262,
@@ -451,7 +451,13 @@
           "lon": 174.774772
         }
       ],
-      "updatedAt": "2026-09-03T17:39:56.562Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:49:01.372Z"
     },
     "parking": {
       "count": 1726,
@@ -666,7 +672,13 @@
           "lon": 174.769385
         }
       ],
-      "updatedAt": "2026-09-03T17:39:57.849Z"
+      "stats": {
+        "free": 153,
+        "paid": 110,
+        "stepFree": 11,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:04.327Z"
     },
     "charging-stations": {
       "count": 41,
@@ -749,7 +761,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:58.380Z"
+      "stats": {
+        "free": 2,
+        "paid": 9,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:05.160Z"
     },
     "gas-stations": {
       "count": 70,
@@ -889,7 +907,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:58.885Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:06.416Z"
     },
     "ice-cream": {
       "count": 42,
@@ -1100,7 +1124,13 @@
           "lon": 174.831963
         }
       ],
-      "updatedAt": "2026-09-03T17:39:59.531Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:07.768Z"
     },
     "dog-parks": {
       "count": 9,
@@ -1126,12 +1156,24 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:39:59.930Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:49:08.894Z"
     },
     "picnic-spots": {
       "count": 373,
       "pois": [],
-      "updatedAt": "2026-09-03T17:40:01.250Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:11.460Z"
     },
     "viewpoints": {
       "count": 60,
@@ -1204,7 +1246,13 @@
           "lon": 174.703141
         }
       ],
-      "updatedAt": "2026-09-03T17:40:01.886Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:12.681Z"
     },
     "beaches": {
       "count": 56,
@@ -1392,7 +1440,13 @@
           "lon": 174.856653
         }
       ],
-      "updatedAt": "2026-09-03T17:40:02.401Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:14.025Z"
     },
     "atms": {
       "count": 104,
@@ -1492,6 +1546,47 @@
     "post-boxes": {
       "count": 226,
       "pois": [
+        {
+          "id": "node/13946653103",
+          "name": "Newmarket",
+          "lat": -36.864284,
+          "lon": 174.779724,
+          "address": "Broadway 14"
+        },
+        {
+          "id": "node/13712775701",
+          "name": "NN Post",
+          "lat": -36.87793,
+          "lon": 174.75134,
+          "address": "Ewington Avenue"
+        },
+        {
+          "id": "node/14040559140",
+          "name": "NZ Post - private boxes",
+          "lat": -36.880293,
+          "lon": 174.798046,
+          "address": "Victoria Avenue 2a"
+        },
+        {
+          "id": "node/14062640306",
+          "name": "Meadowbank SC",
+          "lat": -36.876046,
+          "lon": 174.827714,
+          "address": "Saint Johns Road"
+        },
+        {
+          "id": "node/13676620304",
+          "name": "NZ Post",
+          "lat": -36.91047,
+          "lon": 174.775126
+        },
+        {
+          "id": "node/2089509527",
+          "name": "NewWorld",
+          "lat": -36.890008,
+          "lon": 174.831912,
+          "address": "Lunn Avenue"
+        },
         {
           "id": "node/847301184",
           "lat": -36.849198,
@@ -1635,46 +1730,15 @@
           "lat": -36.865376,
           "lon": 174.768049,
           "street": "Parkfield Terrace"
-        },
-        {
-          "id": "node/1176427399",
-          "lat": -36.857116,
-          "lon": 174.743648,
-          "street": "Richmond Road"
-        },
-        {
-          "id": "node/1176427393",
-          "lat": -36.856379,
-          "lon": 174.742731,
-          "street": "Brown Street"
-        },
-        {
-          "id": "node/2653514659",
-          "lat": -36.866359,
-          "lon": 174.757357,
-          "street": "New North Road"
-        },
-        {
-          "id": "node/319637290",
-          "lat": -36.866374,
-          "lon": 174.770503,
-          "street": "Mountain Road"
-        },
-        {
-          "id": "node/739420813",
-          "lat": -36.847336,
-          "lon": 174.787819,
-          "street": "Solent Street"
-        },
-        {
-          "id": "node/13946653103",
-          "name": "Newmarket",
-          "lat": -36.864284,
-          "lon": 174.779724,
-          "address": "Broadway 14"
         }
       ],
-      "updatedAt": "2026-09-03T17:40:04.704Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:17.527Z"
     },
     "recycling": {
       "count": 67,
@@ -1874,7 +1938,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:40:07.364Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:18.575Z"
     },
     "libraries": {
       "count": 64,
@@ -2104,7 +2174,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:40:07.870Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:22.945Z"
     },
     "outdoor-gyms": {
       "count": 92,
@@ -2171,7 +2247,13 @@
           "lon": 174.707582
         }
       ],
-      "updatedAt": "2026-09-03T17:40:09.608Z"
+      "stats": {
+        "free": 1,
+        "paid": 2,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:25.084Z"
     },
     "shelters": {
       "count": 23,
@@ -2189,19 +2271,25 @@
           "lon": 174.802487
         },
         {
-          "id": "node/9386874165",
-          "lat": -36.821978,
-          "lon": 174.711241,
-          "street": "Brian Norton Track"
-        },
-        {
           "id": "way/886408221",
           "name": "The Terrace",
           "lat": -36.784955,
           "lon": 174.75271
+        },
+        {
+          "id": "node/9386874165",
+          "lat": -36.821978,
+          "lon": 174.711241,
+          "street": "Brian Norton Track"
         }
       ],
-      "updatedAt": "2026-09-03T17:40:11.249Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:32.625Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2213,12 +2301,24 @@
           "lon": 174.75423
         }
       ],
-      "updatedAt": "2026-09-03T17:40:11.747Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:34.240Z"
     },
     "dump-stations": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:40:12.097Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:35.420Z"
     },
     "post-offices": {
       "count": 19,
@@ -2320,12 +2420,24 @@
           "address": "Hurstmere Road 28"
         }
       ],
-      "updatedAt": "2026-09-03T17:40:12.720Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:36.385Z"
     },
     "showers": {
       "count": 31,
       "pois": [],
-      "updatedAt": "2026-09-03T17:40:13.187Z"
+      "stats": {
+        "free": 12,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:37.364Z"
     },
     "fireplaces": {
       "count": 42,
@@ -2355,7 +2467,13 @@
           "lon": 174.786241
         }
       ],
-      "updatedAt": "2026-09-03T17:40:14.608Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:39.110Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2563,12 +2681,6 @@
       "count": 11,
       "pois": [
         {
-          "id": "node/10055059287",
-          "lat": -36.850857,
-          "lon": 174.761482,
-          "street": "Federal Street"
-        },
-        {
           "id": "way/928692849",
           "name": "EcoMatters Bike Hub",
           "lat": -36.842911,
@@ -2576,17 +2688,23 @@
           "openingHours": "Th-Su 10:00-14:00; PH off"
         },
         {
+          "id": "way/1295220526",
+          "name": "Bike Hub",
+          "lat": -36.858366,
+          "lon": 174.737586
+        },
+        {
+          "id": "node/10055059287",
+          "lat": -36.850857,
+          "lon": 174.761482,
+          "street": "Federal Street"
+        },
+        {
           "id": "node/6355095201",
           "lat": -36.841232,
           "lon": 174.758729,
           "openingHours": "24/7",
           "street": "Halsey Wharf"
-        },
-        {
-          "id": "way/1295220526",
-          "name": "Bike Hub",
-          "lat": -36.858366,
-          "lon": 174.737586
         },
         {
           "id": "node/10055059286",
@@ -2614,7 +2732,13 @@
           "street": "Hororata Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:40:16.047Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:49:41.656Z"
     }
   }
 }

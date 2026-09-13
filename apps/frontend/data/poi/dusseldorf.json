@@ -1,6 +1,6 @@
 {
   "city": "dusseldorf",
-  "generatedAt": "2026-09-11T10:29:27.066Z",
+  "generatedAt": "2026-09-13T08:36:24.180Z",
   "categories": {
     "toilets": {
       "count": 237,
@@ -428,7 +428,7 @@
       "updatedAt": "2026-09-11T10:29:20.950Z"
     },
     "playgrounds": {
-      "count": 796,
+      "count": 797,
       "pois": [
         {
           "id": "node/13730721780",
@@ -622,10 +622,16 @@
           "lon": 6.809577
         }
       ],
-      "updatedAt": "2026-09-03T16:56:48.213Z"
+      "stats": {
+        "free": 2,
+        "paid": 2,
+        "stepFree": 32,
+        "partlyStepFree": 25
+      },
+      "updatedAt": "2026-09-13T08:35:43.987Z"
     },
     "parking": {
-      "count": 3245,
+      "count": 3247,
       "pois": [
         {
           "id": "way/144140098",
@@ -879,10 +885,16 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:49.978Z"
+      "stats": {
+        "free": 1098,
+        "paid": 264,
+        "stepFree": 165,
+        "partlyStepFree": 48
+      },
+      "updatedAt": "2026-09-13T08:35:48.310Z"
     },
     "charging-stations": {
-      "count": 498,
+      "count": 501,
       "pois": [
         {
           "id": "node/10047834920",
@@ -1095,7 +1107,13 @@
           "lon": 6.67687
         }
       ],
-      "updatedAt": "2026-09-03T16:56:50.790Z"
+      "stats": {
+        "free": 18,
+        "paid": 230,
+        "stepFree": 3,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:35:50.249Z"
     },
     "gas-stations": {
       "count": 84,
@@ -1337,7 +1355,13 @@
           "openingHours": "Mo-Fr 06:00-22:00; Sa 07:00-22:00; Su 08:00-22:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:51.568Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 29,
+        "partlyStepFree": 12
+      },
+      "updatedAt": "2026-09-13T08:35:51.834Z"
     },
     "ice-cream": {
       "count": 80,
@@ -1572,7 +1596,13 @@
           "lon": 6.747617
         }
       ],
-      "updatedAt": "2026-09-03T16:56:53.048Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 21,
+        "partlyStepFree": 11
+      },
+      "updatedAt": "2026-09-13T08:35:53.145Z"
     },
     "dog-parks": {
       "count": 36,
@@ -1598,7 +1628,13 @@
           "lon": 6.832804
         }
       ],
-      "updatedAt": "2026-09-03T16:56:53.901Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:35:54.490Z"
     },
     "picnic-spots": {
       "count": 189,
@@ -1616,7 +1652,13 @@
           "lon": 6.824822
         }
       ],
-      "updatedAt": "2026-09-03T16:56:55.545Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:35:57.084Z"
     },
     "viewpoints": {
       "count": 41,
@@ -1697,7 +1739,13 @@
           "lon": 6.860443
         }
       ],
-      "updatedAt": "2026-09-03T16:56:56.368Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:35:58.621Z"
     },
     "beaches": {
       "count": 30,
@@ -1709,7 +1757,13 @@
           "lon": 6.752109
         }
       ],
-      "updatedAt": "2026-09-03T16:56:57.010Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:35:59.864Z"
     },
     "atms": {
       "count": 178,
@@ -1963,6 +2017,13 @@
       "count": 425,
       "pois": [
         {
+          "id": "node/1107471660",
+          "name": "Briefkasten",
+          "lat": 51.271673,
+          "lon": 6.773623,
+          "address": "Kalkumer Straße 159"
+        },
+        {
           "id": "node/1572056081",
           "lat": 51.227065,
           "lon": 6.772241,
@@ -2140,15 +2201,15 @@
           "lat": 51.227042,
           "lon": 6.756746,
           "street": "Düsseldorfer Straße"
-        },
-        {
-          "id": "node/1203314211",
-          "lat": 51.232357,
-          "lon": 6.788808,
-          "street": "Rochusstraße"
         }
       ],
-      "updatedAt": "2026-09-03T16:56:59.752Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:36:02.753Z"
     },
     "recycling": {
       "count": 1211,
@@ -2357,10 +2418,16 @@
     "luggage-storage": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T16:57:02.568Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:36:03.540Z"
     },
     "libraries": {
-      "count": 70,
+      "count": 71,
       "pois": [
         {
           "id": "node/1577235652",
@@ -2599,7 +2666,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:03.149Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 22,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:36:04.496Z"
     },
     "outdoor-gyms": {
       "count": 49,
@@ -2653,7 +2726,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:05.049Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:36:05.726Z"
     },
     "shelters": {
       "count": 57,
@@ -2701,7 +2780,13 @@
           "street": "Hülsenbuschweg"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:07.069Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:36:09.444Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2713,12 +2798,24 @@
           "lon": 6.841845
         }
       ],
-      "updatedAt": "2026-09-03T16:57:07.731Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:36:10.415Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:57:08.369Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:36:11.743Z"
     },
     "post-offices": {
       "count": 59,
@@ -2967,17 +3064,35 @@
           "openingHours": "Mo-Th 07:00-24:00, Fr 07:00-02:00, Sa 09:00-02:00, Su 11:00-24:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:08.929Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T08:36:14.461Z"
     },
     "showers": {
       "count": 19,
       "pois": [],
-      "updatedAt": "2026-09-03T16:57:09.501Z"
+      "stats": {
+        "free": 13,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:36:15.680Z"
     },
     "fireplaces": {
       "count": 17,
       "pois": [],
-      "updatedAt": "2026-09-03T16:57:11.388Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:36:17.905Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3108,6 +3223,13 @@
     "bicycle-repair": {
       "count": 52,
       "pois": [
+        {
+          "id": "node/13069418987",
+          "name": "Fahrrad-ReparaturStation",
+          "lat": 51.24677,
+          "lon": 6.791008,
+          "openingHours": "24/7"
+        },
         {
           "id": "node/12554479830",
           "lat": 51.230344,
@@ -3256,13 +3378,6 @@
           "street": "Columbusstraße"
         },
         {
-          "id": "node/13069418987",
-          "name": "Fahrrad-ReparaturStation",
-          "lat": 51.24677,
-          "lon": 6.791008,
-          "openingHours": "24/7"
-        },
-        {
           "id": "node/13677410745",
           "lat": 51.246061,
           "lon": 6.792876,
@@ -3318,7 +3433,13 @@
           "street": "Universitätsstraße"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:17.061Z"
+      "stats": {
+        "free": 18,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:36:24.079Z"
     }
   }
 }

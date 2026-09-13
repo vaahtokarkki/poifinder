@@ -1,6 +1,6 @@
 {
   "city": "london",
-  "generatedAt": "2026-09-11T10:30:20.657Z",
+  "generatedAt": "2026-09-13T08:48:55.616Z",
   "categories": {
     "toilets": {
       "count": 815,
@@ -631,7 +631,13 @@
           "lon": -0.162295
         }
       ],
-      "updatedAt": "2026-09-03T17:04:29.178Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 36,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:47:51.411Z"
     },
     "parking": {
       "count": 5092,
@@ -841,7 +847,13 @@
           "lon": -0.123828
         }
       ],
-      "updatedAt": "2026-09-03T17:04:31.920Z"
+      "stats": {
+        "free": 400,
+        "paid": 339,
+        "stepFree": 53,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:47:59.942Z"
     },
     "charging-stations": {
       "count": 872,
@@ -1055,7 +1067,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:04:37.552Z"
+      "stats": {
+        "free": 4,
+        "paid": 191,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:48:02.483Z"
     },
     "gas-stations": {
       "count": 194,
@@ -1267,7 +1285,13 @@
           "lon": -0.030001
         }
       ],
-      "updatedAt": "2026-09-03T17:04:38.722Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:48:04.199Z"
     },
     "ice-cream": {
       "count": 171,
@@ -1492,7 +1516,13 @@
           "address": "Park Street 4"
         }
       ],
-      "updatedAt": "2026-09-03T17:04:39.942Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 18,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:48:06.152Z"
     },
     "dog-parks": {
       "count": 66,
@@ -1613,7 +1643,13 @@
           "lon": -0.277449
         }
       ],
-      "updatedAt": "2026-09-03T17:04:40.658Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:48:08.145Z"
     },
     "picnic-spots": {
       "count": 1170,
@@ -1649,7 +1685,13 @@
           "lon": 0.012668
         }
       ],
-      "updatedAt": "2026-09-03T17:04:42.549Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:48:17.125Z"
     },
     "viewpoints": {
       "count": 106,
@@ -1844,7 +1886,13 @@
           "lon": -0.244091
         }
       ],
-      "updatedAt": "2026-09-03T17:04:43.581Z"
+      "stats": {
+        "free": 4,
+        "paid": 1,
+        "stepFree": 9,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:48:19.231Z"
     },
     "beaches": {
       "count": 80,
@@ -1923,7 +1971,13 @@
           "lon": -0.294668
         }
       ],
-      "updatedAt": "2026-09-03T17:04:44.493Z"
+      "stats": {
+        "free": 0,
+        "paid": 5,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:48:21.185Z"
     },
     "atms": {
       "count": 1355,
@@ -2168,6 +2222,73 @@
       "count": 4060,
       "pois": [
         {
+          "id": "node/4402475492",
+          "name": "The Penfold Postbox",
+          "lat": 51.516116,
+          "lon": -0.09714
+        },
+        {
+          "id": "node/3357928805",
+          "name": "Mail Boxes Etc",
+          "lat": 51.499052,
+          "lon": -0.165442
+        },
+        {
+          "id": "node/359239228",
+          "name": "159 Tooley Street",
+          "lat": 51.503623,
+          "lon": -0.080165
+        },
+        {
+          "id": "node/3535585698",
+          "name": "Palace Gate/Facing Freston Place",
+          "lat": 51.500734,
+          "lon": -0.184123
+        },
+        {
+          "id": "node/289569161",
+          "name": "Queensgate Gardens/Gloucester Road",
+          "lat": 51.496692,
+          "lon": -0.183314
+        },
+        {
+          "id": "node/3535572776",
+          "name": "Kensington High Street/Kensington Church St.",
+          "lat": 51.502086,
+          "lon": -0.191163
+        },
+        {
+          "id": "node/376496924",
+          "name": "Wrights Lane/Iverna Gardens",
+          "lat": 51.500241,
+          "lon": -0.193151
+        },
+        {
+          "id": "node/3520241210",
+          "name": "Bagleys Lane / New Kings Road",
+          "lat": 51.476664,
+          "lon": -0.192286
+        },
+        {
+          "id": "node/555072029",
+          "name": "Putney Sorting Office",
+          "lat": 51.460419,
+          "lon": -0.218786,
+          "address": "Burston Road 3"
+        },
+        {
+          "id": "node/658875447",
+          "name": "Chatsworth Way pillar box",
+          "lat": 51.435218,
+          "lon": -0.103921
+        },
+        {
+          "id": "node/1678645978",
+          "name": "Tesco - Colney Hatch",
+          "lat": 51.606996,
+          "lon": -0.154216
+        },
+        {
           "id": "node/345887767",
           "lat": 51.50716,
           "lon": -0.125481,
@@ -2280,75 +2401,15 @@
           "lat": 51.510691,
           "lon": -0.119419,
           "street": "Savoy Street"
-        },
-        {
-          "id": "node/1688441618",
-          "lat": 51.51246,
-          "lon": -0.133596,
-          "street": "Brewer Street"
-        },
-        {
-          "id": "node/8287713826",
-          "lat": 51.507128,
-          "lon": -0.137858,
-          "street": "Ryder Street"
-        },
-        {
-          "id": "node/1298729990",
-          "lat": 51.501236,
-          "lon": -0.129826,
-          "street": "Great George Street"
-        },
-        {
-          "id": "node/623357644",
-          "lat": 51.509025,
-          "lon": -0.137745,
-          "street": "Sackville Street"
-        },
-        {
-          "id": "node/675804717",
-          "lat": 51.506258,
-          "lon": -0.138083,
-          "street": "King Street"
-        },
-        {
-          "id": "node/824254553",
-          "lat": 51.512518,
-          "lon": -0.121343,
-          "street": "Russell Street"
-        },
-        {
-          "id": "node/11677063703",
-          "lat": 51.510554,
-          "lon": -0.137212,
-          "street": "Glasshouse Street"
-        },
-        {
-          "id": "node/466926227",
-          "lat": 51.511557,
-          "lon": -0.13652,
-          "street": "Lower James Street"
-        },
-        {
-          "id": "node/452215459",
-          "lat": 51.510126,
-          "lon": -0.138026,
-          "street": "Regent Street"
-        },
-        {
-          "id": "node/431358016",
-          "lat": 51.500798,
-          "lon": -0.131632,
-          "street": "Cockpit Steps"
-        },
-        {
-          "id": "node/4984100118",
-          "lat": 51.506394,
-          "lon": -0.139366,
-          "street": "St. James's Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:04:48.591Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 45,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:48:33.458Z"
     },
     "recycling": {
       "count": 1042,
@@ -2590,7 +2651,13 @@
           "lon": -0.141236
         }
       ],
-      "updatedAt": "2026-09-03T17:04:52.647Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:48:34.705Z"
     },
     "libraries": {
       "count": 291,
@@ -2809,7 +2876,13 @@
           "address": "Upper Woburn Place 14"
         }
       ],
-      "updatedAt": "2026-09-03T17:04:53.729Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 43,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:48:36.670Z"
     },
     "outdoor-gyms": {
       "count": 355,
@@ -3050,7 +3123,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:04:56.968Z"
+      "stats": {
+        "free": 0,
+        "paid": 6,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:48:38.563Z"
     },
     "shelters": {
       "count": 23,
@@ -3080,7 +3159,13 @@
           "lon": 0.010158
         }
       ],
-      "updatedAt": "2026-09-03T17:05:00.796Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:48:41.728Z"
     },
     "rest-areas": {
       "count": 4,
@@ -3092,7 +3177,13 @@
           "lon": -0.109301
         }
       ],
-      "updatedAt": "2026-09-03T17:05:01.622Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:48:42.760Z"
     },
     "dump-stations": {
       "count": 7,
@@ -3135,7 +3226,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:05:02.548Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:48:43.780Z"
     },
     "post-offices": {
       "count": 337,
@@ -3380,17 +3477,35 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:05:03.771Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 32,
+        "partlyStepFree": 13
+      },
+      "updatedAt": "2026-09-13T08:48:45.274Z"
     },
     "showers": {
       "count": 14,
       "pois": [],
-      "updatedAt": "2026-09-03T17:05:04.501Z"
+      "stats": {
+        "free": 8,
+        "paid": 3,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:48:46.256Z"
     },
     "fireplaces": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T17:05:06.248Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:48:48.273Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3797,7 +3912,13 @@
           "street": "Grove Vale"
         }
       ],
-      "updatedAt": "2026-09-03T17:05:10.102Z"
+      "stats": {
+        "free": 28,
+        "paid": 5,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:48:55.514Z"
     }
   }
 }

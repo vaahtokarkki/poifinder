@@ -1,6 +1,6 @@
 {
   "city": "vienna",
-  "generatedAt": "2026-09-11T10:29:24.823Z",
+  "generatedAt": "2026-09-13T08:37:20.177Z",
   "categories": {
     "toilets": {
       "count": 646,
@@ -651,7 +651,13 @@
           "lon": 16.31756
         }
       ],
-      "updatedAt": "2026-09-03T16:57:24.830Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 50,
+        "partlyStepFree": 29
+      },
+      "updatedAt": "2026-09-13T08:36:29.999Z"
     },
     "parking": {
       "count": 1968,
@@ -900,7 +906,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:26.644Z"
+      "stats": {
+        "free": 379,
+        "paid": 347,
+        "stepFree": 98,
+        "partlyStepFree": 10
+      },
+      "updatedAt": "2026-09-13T08:36:37.413Z"
     },
     "charging-stations": {
       "count": 628,
@@ -965,7 +977,13 @@
           "lon": 16.463384
         }
       ],
-      "updatedAt": "2026-09-03T16:57:28.818Z"
+      "stats": {
+        "free": 17,
+        "paid": 135,
+        "stepFree": 5,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:36:38.825Z"
     },
     "gas-stations": {
       "count": 148,
@@ -1211,7 +1229,13 @@
           "lon": 16.299707
         }
       ],
-      "updatedAt": "2026-09-03T16:57:29.554Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 39,
+        "partlyStepFree": 11
+      },
+      "updatedAt": "2026-09-13T08:36:40.410Z"
     },
     "ice-cream": {
       "count": 186,
@@ -1449,7 +1473,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:30.467Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 33,
+        "partlyStepFree": 22
+      },
+      "updatedAt": "2026-09-13T08:36:42.152Z"
     },
     "dog-parks": {
       "count": 162,
@@ -1537,7 +1567,13 @@
           "address": "Jedletzbergerstraße 2"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:31.117Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 79,
+        "partlyStepFree": 27
+      },
+      "updatedAt": "2026-09-13T08:36:44.446Z"
     },
     "picnic-spots": {
       "count": 2232,
@@ -1620,7 +1656,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:32.882Z"
+      "stats": {
+        "free": 0,
+        "paid": 14,
+        "stepFree": 7,
+        "partlyStepFree": 18
+      },
+      "updatedAt": "2026-09-13T08:36:50.584Z"
     },
     "viewpoints": {
       "count": 62,
@@ -1729,7 +1771,13 @@
           "lon": 16.322536
         }
       ],
-      "updatedAt": "2026-09-03T16:57:33.686Z"
+      "stats": {
+        "free": 0,
+        "paid": 5,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:36:52.301Z"
     },
     "beaches": {
       "count": 32,
@@ -1787,7 +1835,13 @@
           "lon": 16.351305
         }
       ],
-      "updatedAt": "2026-09-03T16:57:34.340Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:36:53.723Z"
     },
     "atms": {
       "count": 747,
@@ -2217,7 +2271,13 @@
           "street": "Landstraßer Hauptstraße"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:37.239Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:36:57.778Z"
     },
     "recycling": {
       "count": 2697,
@@ -2459,7 +2519,13 @@
           "lon": 16.372585
         }
       ],
-      "updatedAt": "2026-09-03T16:57:41.030Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:36:58.731Z"
     },
     "libraries": {
       "count": 233,
@@ -2696,7 +2762,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:41.809Z"
+      "stats": {
+        "free": 1,
+        "paid": 2,
+        "stepFree": 57,
+        "partlyStepFree": 8
+      },
+      "updatedAt": "2026-09-13T08:37:00.181Z"
     },
     "outdoor-gyms": {
       "count": 153,
@@ -2816,11 +2888,23 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:44.220Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:01.163Z"
     },
     "shelters": {
       "count": 21,
       "pois": [
+        {
+          "id": "way/176592604",
+          "name": "Salettl",
+          "lat": 48.235863,
+          "lon": 16.337022
+        },
         {
           "id": "node/12957669279",
           "lat": 48.218038,
@@ -2850,15 +2934,15 @@
           "lat": 48.203175,
           "lon": 16.319968,
           "street": "Auf der Schmelz"
-        },
-        {
-          "id": "way/176592604",
-          "name": "Salettl",
-          "lat": 48.235863,
-          "lon": 16.337022
         }
       ],
-      "updatedAt": "2026-09-03T16:57:45.970Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:05.804Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2870,12 +2954,24 @@
           "lon": 16.444244
         }
       ],
-      "updatedAt": "2026-09-03T16:57:46.547Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:07.365Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:57:46.948Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:08.770Z"
     },
     "post-offices": {
       "count": 113,
@@ -3141,7 +3237,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:47.540Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 56,
+        "partlyStepFree": 7
+      },
+      "updatedAt": "2026-09-13T08:37:10.169Z"
     },
     "showers": {
       "count": 61,
@@ -3162,7 +3264,13 @@
           "lon": 16.43003
         }
       ],
-      "updatedAt": "2026-09-03T16:57:47.968Z"
+      "stats": {
+        "free": 41,
+        "paid": 1,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:11.661Z"
     },
     "fireplaces": {
       "count": 24,
@@ -3245,7 +3353,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:49.085Z"
+      "stats": {
+        "free": 0,
+        "paid": 14,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:14.000Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3449,6 +3563,28 @@
           "fee": "no"
         },
         {
+          "id": "node/8503669385",
+          "name": "Radservicestation",
+          "lat": 48.216521,
+          "lon": 16.378236,
+          "address": "Große Sperlgasse 4",
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/5771108421",
+          "name": "Radlobby Radservice Station",
+          "lat": 48.214636,
+          "lon": 16.38823,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/10980109095",
+          "name": "Bicycle Repair tools",
+          "lat": 48.229148,
+          "lon": 16.453343
+        },
+        {
           "id": "node/9971573444",
           "lat": 48.203123,
           "lon": 16.376674,
@@ -3484,15 +3620,6 @@
           "lat": 48.215714,
           "lon": 16.380591,
           "street": "Schmelzgasse"
-        },
-        {
-          "id": "node/8503669385",
-          "name": "Radservicestation",
-          "lat": 48.216521,
-          "lon": 16.378236,
-          "address": "Große Sperlgasse 4",
-          "openingHours": "24/7",
-          "fee": "no"
         },
         {
           "id": "node/8366992171",
@@ -3531,13 +3658,6 @@
           "openingHours": "24/7",
           "fee": "no",
           "street": "Operngasse"
-        },
-        {
-          "id": "node/5771108421",
-          "name": "Radlobby Radservice Station",
-          "lat": 48.214636,
-          "lon": 16.38823,
-          "openingHours": "24/7"
         },
         {
           "id": "node/10295675335",
@@ -3657,17 +3777,15 @@
           "lon": 16.375742,
           "fee": "no",
           "street": "St.-Elisabeth-Platz"
-        },
-        {
-          "id": "node/8483716881",
-          "lat": 48.197013,
-          "lon": 16.351356,
-          "openingHours": "24/7",
-          "fee": "no",
-          "street": "Blümelgasse"
         }
       ],
-      "updatedAt": "2026-09-03T16:57:51.739Z"
+      "stats": {
+        "free": 79,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:37:20.076Z"
     }
   }
 }

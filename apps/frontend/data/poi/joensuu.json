@@ -1,6 +1,6 @@
 {
   "city": "joensuu",
-  "generatedAt": "2026-09-11T10:27:08.688Z",
+  "generatedAt": "2026-09-13T08:21:14.186Z",
   "categories": {
     "toilets": {
       "count": 14,
@@ -223,7 +223,13 @@
           "lon": 29.65576
         }
       ],
-      "updatedAt": "2026-09-03T16:40:08.145Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:20:52.414Z"
     },
     "parking": {
       "count": 556,
@@ -454,7 +460,13 @@
           "lon": 29.820379
         }
       ],
-      "updatedAt": "2026-09-03T16:40:09.061Z"
+      "stats": {
+        "free": 127,
+        "paid": 22,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:20:53.718Z"
     },
     "charging-stations": {
       "count": 15,
@@ -531,7 +543,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:09.542Z"
+      "stats": {
+        "free": 0,
+        "paid": 10,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:20:54.244Z"
     },
     "gas-stations": {
       "count": 19,
@@ -674,7 +692,13 @@
           "address": "Vanha valtatie 6"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:09.973Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:20:54.903Z"
     },
     "ice-cream": {
       "count": 4,
@@ -703,7 +727,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:10.424Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:20:55.525Z"
     },
     "dog-parks": {
       "count": 6,
@@ -739,7 +769,13 @@
           "lon": 29.694496
         }
       ],
-      "updatedAt": "2026-09-03T16:40:10.847Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:20:56.000Z"
     },
     "picnic-spots": {
       "count": 18,
@@ -751,7 +787,13 @@
           "lon": 29.67103
         }
       ],
-      "updatedAt": "2026-09-03T16:40:11.906Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:20:57.834Z"
     },
     "viewpoints": {
       "count": 4,
@@ -764,7 +806,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:12.414Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:20:58.859Z"
     },
     "beaches": {
       "count": 20,
@@ -836,7 +884,13 @@
           "lon": 29.687116
         }
       ],
-      "updatedAt": "2026-09-03T16:40:12.941Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:20:59.563Z"
     },
     "atms": {
       "count": 14,
@@ -875,6 +929,12 @@
       "count": 19,
       "pois": [
         {
+          "id": "node/11952241617",
+          "name": "Posti",
+          "lat": 62.598153,
+          "lon": 29.758901
+        },
+        {
           "id": "node/12877233213",
           "lat": 62.601462,
           "lon": 29.762518,
@@ -891,12 +951,6 @@
           "lat": 62.602936,
           "lon": 29.762548,
           "street": "Niskakatu"
-        },
-        {
-          "id": "node/11952241617",
-          "name": "Posti",
-          "lat": 62.598153,
-          "lon": 29.758901
         },
         {
           "id": "node/4825678216",
@@ -965,7 +1019,13 @@
           "street": "Kylmäojantie"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:14.505Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:01.385Z"
     },
     "recycling": {
       "count": 37,
@@ -1119,7 +1179,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:40:16.367Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:02.208Z"
     },
     "libraries": {
       "count": 8,
@@ -1185,7 +1251,13 @@
           "address": "Urheilupuistontie 2"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:16.751Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:03.002Z"
     },
     "outdoor-gyms": {
       "count": 14,
@@ -1223,7 +1295,13 @@
           "lon": 29.740006
         }
       ],
-      "updatedAt": "2026-09-03T16:40:18.088Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:03.900Z"
     },
     "shelters": {
       "count": 5,
@@ -1250,7 +1328,13 @@
           "lon": 29.85239
         }
       ],
-      "updatedAt": "2026-09-03T16:40:19.558Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:07.090Z"
     },
     "rest-areas": {
       "count": 1,
@@ -1263,12 +1347,24 @@
           "address": "Marjalantie 18"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:20.118Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:07.938Z"
     },
     "dump-stations": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T16:40:20.528Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:08.887Z"
     },
     "post-offices": {
       "count": 1,
@@ -1281,12 +1377,24 @@
           "openingHours": "Mo-Sa 07:00-22:00; Su 09:00-22:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:21.000Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:09.723Z"
     },
     "showers": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:40:21.320Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:10.441Z"
     },
     "fireplaces": {
       "count": 19,
@@ -1298,7 +1406,13 @@
           "lon": 29.762881
         }
       ],
-      "updatedAt": "2026-09-03T16:40:22.348Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:12.181Z"
     },
     "bicycle-repair": {
       "count": 4,
@@ -1316,7 +1430,13 @@
           "street": "Rauhankatu"
         }
       ],
-      "updatedAt": "2026-09-03T16:40:23.620Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:14.085Z"
     },
     "benches": {
       "count": 256,

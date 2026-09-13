@@ -1,6 +1,6 @@
 {
   "city": "fukuoka",
-  "generatedAt": "2026-09-11T10:34:15.559Z",
+  "generatedAt": "2026-09-13T09:56:56.693Z",
   "categories": {
     "toilets": {
       "count": 220,
@@ -409,7 +409,13 @@
           "lon": 130.426274
         }
       ],
-      "updatedAt": "2026-09-03T17:43:47.191Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:19.004Z"
     },
     "parking": {
       "count": 3828,
@@ -610,12 +616,24 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:43:48.803Z"
+      "stats": {
+        "free": 60,
+        "paid": 262,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:22.384Z"
     },
     "charging-stations": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:43:49.295Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:23.404Z"
     },
     "gas-stations": {
       "count": 98,
@@ -761,7 +779,13 @@
           "lon": 130.438878
         }
       ],
-      "updatedAt": "2026-09-03T17:43:50.222Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:24.665Z"
     },
     "ice-cream": {
       "count": 15,
@@ -833,7 +857,13 @@
           "lon": 130.360712
         }
       ],
-      "updatedAt": "2026-09-03T17:43:50.927Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:26.485Z"
     },
     "dog-parks": {
       "count": 2,
@@ -845,12 +875,24 @@
           "lon": 130.430701
         }
       ],
-      "updatedAt": "2026-09-03T17:43:51.280Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:28.431Z"
     },
     "picnic-spots": {
       "count": 31,
       "pois": [],
-      "updatedAt": "2026-09-03T17:43:52.253Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:31.528Z"
     },
     "viewpoints": {
       "count": 34,
@@ -949,7 +991,13 @@
           "lon": 130.363829
         }
       ],
-      "updatedAt": "2026-09-03T17:43:52.767Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:32.585Z"
     },
     "beaches": {
       "count": 9,
@@ -973,7 +1021,13 @@
           "lon": 130.421429
         }
       ],
-      "updatedAt": "2026-09-03T17:43:53.287Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:33.804Z"
     },
     "atms": {
       "count": 76,
@@ -1106,6 +1160,24 @@
       "count": 93,
       "pois": [
         {
+          "id": "node/13013850877",
+          "name": "郵便ポスト(レプリカ)",
+          "lat": 33.593695,
+          "lon": 130.411361
+        },
+        {
+          "id": "node/7092831586",
+          "name": "豊浜公園 郵便ぽすとq",
+          "lat": 33.589211,
+          "lon": 130.338287
+        },
+        {
+          "id": "node/707596155",
+          "name": "博多南郵便局",
+          "lat": 33.541796,
+          "lon": 130.464683
+        },
+        {
           "id": "node/6411395085",
           "lat": 33.590621,
           "lon": 130.401077,
@@ -1158,12 +1230,6 @@
           "lat": 33.595415,
           "lon": 130.408508,
           "street": "冷泉公園通り"
-        },
-        {
-          "id": "node/13013850877",
-          "name": "郵便ポスト(レプリカ)",
-          "lat": 33.593695,
-          "lon": 130.411361
         },
         {
           "id": "node/6794476618",
@@ -1272,21 +1338,15 @@
           "lat": 33.617514,
           "lon": 130.424775,
           "street": "福岡太宰府線"
-        },
-        {
-          "id": "node/6259194195",
-          "lat": 33.607273,
-          "lon": 130.439124,
-          "street": "篠栗街道"
-        },
-        {
-          "id": "node/11586685263",
-          "lat": 33.5821,
-          "lon": 130.35679,
-          "street": "西新１１号線"
         }
       ],
-      "updatedAt": "2026-09-03T17:43:55.276Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:37.637Z"
     },
     "recycling": {
       "count": 22,
@@ -1362,7 +1422,13 @@
     "luggage-storage": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:43:57.055Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:38.844Z"
     },
     "libraries": {
       "count": 16,
@@ -1466,7 +1532,13 @@
           "lon": 130.322023
         }
       ],
-      "updatedAt": "2026-09-03T17:43:57.432Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:56:40.298Z"
     },
     "outdoor-gyms": {
       "count": 7,
@@ -1513,7 +1585,13 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:43:58.747Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:42.423Z"
     },
     "shelters": {
       "count": 36,
@@ -1525,17 +1603,35 @@
           "lon": 130.387957
         }
       ],
-      "updatedAt": "2026-09-03T17:44:00.340Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:46.604Z"
     },
     "rest-areas": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:44:00.795Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:47.660Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:44:01.125Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:48.553Z"
     },
     "post-offices": {
       "count": 153,
@@ -1727,7 +1823,13 @@
           "lon": 130.386469
         }
       ],
-      "updatedAt": "2026-09-03T17:44:01.648Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:56:50.266Z"
     },
     "showers": {
       "count": 1,
@@ -1739,7 +1841,13 @@
           "lon": 130.399909
         }
       ],
-      "updatedAt": "2026-09-03T17:44:01.990Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:51.544Z"
     },
     "fireplaces": {
       "count": 3,
@@ -1751,7 +1859,13 @@
           "lon": 130.421676
         }
       ],
-      "updatedAt": "2026-09-03T17:44:02.840Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:53.565Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1809,7 +1923,13 @@
           "street": "城南学園通り"
         }
       ],
-      "updatedAt": "2026-09-03T17:44:04.020Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:56:56.591Z"
     }
   }
 }

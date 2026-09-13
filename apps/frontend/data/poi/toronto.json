@@ -1,6 +1,6 @@
 {
   "city": "toronto",
-  "generatedAt": "2026-09-11T10:33:04.791Z",
+  "generatedAt": "2026-09-13T09:39:03.234Z",
   "categories": {
     "toilets": {
       "count": 385,
@@ -620,7 +620,13 @@
           "lon": -79.26298
         }
       ],
-      "updatedAt": "2026-09-03T17:33:32.744Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 13,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:38:16.885Z"
     },
     "parking": {
       "count": 3339,
@@ -846,7 +852,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:33:34.454Z"
+      "stats": {
+        "free": 232,
+        "paid": 436,
+        "stepFree": 67,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T09:38:22.731Z"
     },
     "charging-stations": {
       "count": 43,
@@ -885,7 +897,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:33:35.008Z"
+      "stats": {
+        "free": 1,
+        "paid": 15,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:24.483Z"
     },
     "gas-stations": {
       "count": 125,
@@ -1074,7 +1092,13 @@
           "openingHours": "Mo-Fr 07:30-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:33:36.044Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:26.075Z"
     },
     "ice-cream": {
       "count": 110,
@@ -1285,7 +1309,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:33:37.167Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 17,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:38:27.723Z"
     },
     "dog-parks": {
       "count": 88,
@@ -1403,7 +1433,13 @@
           "lon": -79.250664
         }
       ],
-      "updatedAt": "2026-09-03T17:33:37.782Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:38:29.325Z"
     },
     "picnic-spots": {
       "count": 1000,
@@ -1511,7 +1547,13 @@
           "lon": -79.300311
         }
       ],
-      "updatedAt": "2026-09-03T17:33:39.442Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:33.852Z"
     },
     "viewpoints": {
       "count": 48,
@@ -1553,7 +1595,13 @@
           "lon": -79.293162
         }
       ],
-      "updatedAt": "2026-09-03T17:33:40.241Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:35.084Z"
     },
     "beaches": {
       "count": 66,
@@ -1650,7 +1698,13 @@
           "lon": -79.276666
         }
       ],
-      "updatedAt": "2026-09-03T17:33:40.825Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:36.288Z"
     },
     "atms": {
       "count": 387,
@@ -1883,6 +1937,24 @@
       "count": 999,
       "pois": [
         {
+          "id": "node/3229250781",
+          "name": "FedEx",
+          "lat": 43.646236,
+          "lon": -79.397659
+        },
+        {
+          "id": "node/8972824349",
+          "name": "Canada Post",
+          "lat": 43.657634,
+          "lon": -79.40416
+        },
+        {
+          "id": "node/682232907",
+          "name": "Post Office",
+          "lat": 43.671113,
+          "lon": -79.384647
+        },
+        {
           "id": "node/273325274",
           "lat": 43.653295,
           "lon": -79.38106,
@@ -2043,27 +2115,15 @@
           "lat": 43.658837,
           "lon": -79.382713,
           "street": "Gerrard Street West"
-        },
-        {
-          "id": "node/344473399",
-          "lat": 43.659138,
-          "lon": -79.385266,
-          "street": "Hayter Street"
-        },
-        {
-          "id": "node/527000456",
-          "lat": 43.647174,
-          "lon": -79.380121,
-          "street": "Wellington Street West"
-        },
-        {
-          "id": "node/412395619",
-          "lat": 43.656645,
-          "lon": -79.375659,
-          "street": "Mutual Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:33:43.277Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:41.113Z"
     },
     "recycling": {
       "count": 1024,
@@ -2261,7 +2321,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:33:46.150Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:42.564Z"
     },
     "libraries": {
       "count": 266,
@@ -2498,7 +2564,13 @@
           "address": "St George Street 120"
         }
       ],
-      "updatedAt": "2026-09-03T17:33:46.822Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 33,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:38:44.765Z"
     },
     "outdoor-gyms": {
       "count": 69,
@@ -2522,7 +2594,13 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:33:48.873Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:45.823Z"
     },
     "shelters": {
       "count": 22,
@@ -2558,17 +2636,35 @@
           "lon": -79.46606
         }
       ],
-      "updatedAt": "2026-09-03T17:33:50.707Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:49.729Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:33:51.272Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:51.245Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:33:51.667Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:53.016Z"
     },
     "post-offices": {
       "count": 111,
@@ -2788,7 +2884,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:33:52.228Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:54.526Z"
     },
     "showers": {
       "count": 4,
@@ -2812,12 +2914,24 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:33:52.767Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:55.686Z"
     },
     "fireplaces": {
       "count": 59,
       "pois": [],
-      "updatedAt": "2026-09-03T17:33:53.860Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:38:57.845Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2924,6 +3038,12 @@
       "count": 28,
       "pois": [
         {
+          "id": "node/4586348706",
+          "name": "Public Use Bike Pump and Tools",
+          "lat": 43.67378,
+          "lon": -79.388024
+        },
+        {
           "id": "node/12259528533",
           "lat": 43.665218,
           "lon": -79.383608,
@@ -2934,12 +3054,6 @@
           "lat": 43.668245,
           "lon": -79.399965,
           "street": "St George Street"
-        },
-        {
-          "id": "node/4586348706",
-          "name": "Public Use Bike Pump and Tools",
-          "lat": 43.67378,
-          "lon": -79.388024
         },
         {
           "id": "node/4449930328",
@@ -3050,7 +3164,13 @@
           "street": "Islington Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:33:55.715Z"
+      "stats": {
+        "free": 6,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:39:03.132Z"
     }
   }
 }

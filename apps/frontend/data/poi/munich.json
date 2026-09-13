@@ -1,6 +1,6 @@
 {
   "city": "munich",
-  "generatedAt": "2026-09-11T10:29:01.979Z",
+  "generatedAt": "2026-09-13T08:32:30.238Z",
   "categories": {
     "toilets": {
       "count": 406,
@@ -472,7 +472,7 @@
       "updatedAt": "2026-09-11T10:28:54.845Z"
     },
     "playgrounds": {
-      "count": 1769,
+      "count": 1770,
       "pois": [
         {
           "id": "way/350826655",
@@ -674,7 +674,13 @@
           "lon": 11.556049
         }
       ],
-      "updatedAt": "2026-09-03T16:53:51.189Z"
+      "stats": {
+        "free": 5,
+        "paid": 0,
+        "stepFree": 134,
+        "partlyStepFree": 66
+      },
+      "updatedAt": "2026-09-13T08:32:07.776Z"
     },
     "parking": {
       "count": 3748,
@@ -916,10 +922,16 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:53.310Z"
+      "stats": {
+        "free": 1520,
+        "paid": 444,
+        "stepFree": 287,
+        "partlyStepFree": 33
+      },
+      "updatedAt": "2026-09-13T08:32:10.206Z"
     },
     "charging-stations": {
-      "count": 671,
+      "count": 673,
       "pois": [
         {
           "id": "node/3246201117",
@@ -1104,7 +1116,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:54.008Z"
+      "stats": {
+        "free": 9,
+        "paid": 340,
+        "stepFree": 20,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:32:10.986Z"
     },
     "gas-stations": {
       "count": 111,
@@ -1303,10 +1321,16 @@
           "openingHours": "Mo-Fr 08:30-19:00; Sa 08:30-18:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:54.741Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 59,
+        "partlyStepFree": 21
+      },
+      "updatedAt": "2026-09-13T08:32:11.890Z"
     },
     "ice-cream": {
-      "count": 108,
+      "count": 109,
       "pois": [
         {
           "id": "node/2485842431",
@@ -1525,7 +1549,7 @@
           "name": "Il Gelato Italiano",
           "lat": 48.128179,
           "lon": 11.602304,
-          "openingHours": "Mo-Sa 10:00-22:00; Su 11:00-22:00",
+          "openingHours": "Mo-Su 09:55-21:30",
           "wheelchair": "no"
         },
         {
@@ -1546,14 +1570,20 @@
           "wheelchair": "no"
         },
         {
-          "id": "node/3752440159",
-          "name": "Eisdiele Adriano",
-          "lat": 48.129643,
-          "lon": 11.559035,
-          "openingHours": "11:00-23:00"
+          "id": "node/2859544446",
+          "name": "The Italian Bar",
+          "lat": 48.119033,
+          "lon": 11.583979,
+          "address": "Tegernseer Landstraße 9"
         }
       ],
-      "updatedAt": "2026-09-03T16:53:55.668Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 25,
+        "partlyStepFree": 21
+      },
+      "updatedAt": "2026-09-13T08:32:12.957Z"
     },
     "dog-parks": {
       "count": 4,
@@ -1579,12 +1609,24 @@
           "lon": 11.656473
         }
       ],
-      "updatedAt": "2026-09-03T16:53:56.185Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:32:13.528Z"
     },
     "picnic-spots": {
-      "count": 429,
+      "count": 440,
       "pois": [],
-      "updatedAt": "2026-09-03T16:53:57.853Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:32:15.100Z"
     },
     "viewpoints": {
       "count": 43,
@@ -1665,12 +1707,24 @@
           "lon": 11.494276
         }
       ],
-      "updatedAt": "2026-09-03T16:53:58.486Z"
+      "stats": {
+        "free": 0,
+        "paid": 4,
+        "stepFree": 8,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:32:16.031Z"
     },
     "beaches": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T16:53:59.060Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:32:16.843Z"
     },
     "atms": {
       "count": 462,
@@ -1921,6 +1975,18 @@
       "count": 631,
       "pois": [
         {
+          "id": "node/12120350031",
+          "name": "Zeitbriefkasten",
+          "lat": 48.150819,
+          "lon": 11.580441
+        },
+        {
+          "id": "node/7449193080",
+          "name": "Deutsche Post",
+          "lat": 48.155794,
+          "lon": 11.641527
+        },
+        {
           "id": "node/330924288",
           "lat": 48.134112,
           "lon": 11.582927,
@@ -2094,21 +2160,15 @@
           "lat": 48.142662,
           "lon": 11.578044,
           "street": "Residenzstraße"
-        },
-        {
-          "id": "node/280454149",
-          "lat": 48.126869,
-          "lon": 11.582353,
-          "street": "Zeppelinstraße"
-        },
-        {
-          "id": "node/3169874473",
-          "lat": 48.133862,
-          "lon": 11.569783,
-          "street": "Oberanger"
         }
       ],
-      "updatedAt": "2026-09-03T16:54:01.990Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 48,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:32:18.823Z"
     },
     "recycling": {
       "count": 925,
@@ -2336,7 +2396,13 @@
           "lon": 11.549689
         }
       ],
-      "updatedAt": "2026-09-03T16:54:06.905Z"
+      "stats": {
+        "free": 2,
+        "paid": 6,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:32:19.432Z"
     },
     "libraries": {
       "count": 155,
@@ -2579,7 +2645,13 @@
           "openingHours": "Mo-Fr 08:00-23:45; Sa 08:00-19:45; Su 10:00-17:45; PH off"
         }
       ],
-      "updatedAt": "2026-09-03T16:54:08.683Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 35,
+        "partlyStepFree": 13
+      },
+      "updatedAt": "2026-09-13T08:32:20.392Z"
     },
     "outdoor-gyms": {
       "count": 158,
@@ -2796,7 +2868,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:54:10.693Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:32:21.163Z"
     },
     "shelters": {
       "count": 46,
@@ -2806,6 +2884,18 @@
           "name": "Wetterpilz",
           "lat": 48.132511,
           "lon": 11.562978
+        },
+        {
+          "id": "way/845204808",
+          "name": "Qualmtempel/ Raucherpavilion",
+          "lat": 48.186848,
+          "lon": 11.549347
+        },
+        {
+          "id": "way/1553172286",
+          "name": "Raucherbereich",
+          "lat": 48.18892,
+          "lon": 11.549789
         },
         {
           "id": "node/12201081388",
@@ -2838,18 +2928,6 @@
           "street": "Aidenbachstraße"
         },
         {
-          "id": "way/845204808",
-          "name": "Qualmtempel/ Raucherpavilion",
-          "lat": 48.186848,
-          "lon": 11.549347
-        },
-        {
-          "id": "way/1553172286",
-          "name": "Raucherbereich",
-          "lat": 48.18892,
-          "lon": 11.549789
-        },
-        {
           "id": "node/4321211214",
           "lat": 48.090831,
           "lon": 11.64669,
@@ -2868,12 +2946,24 @@
           "street": "Östliche Achse Gebäude 46-66"
         }
       ],
-      "updatedAt": "2026-09-03T16:54:13.164Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:32:23.832Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:54:13.646Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:32:24.455Z"
     },
     "dump-stations": {
       "count": 2,
@@ -2885,10 +2975,16 @@
           "lon": 11.492316
         }
       ],
-      "updatedAt": "2026-09-03T16:54:14.039Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:32:24.982Z"
     },
     "post-offices": {
-      "count": 96,
+      "count": 95,
       "pois": [
         {
           "id": "node/1110098819",
@@ -3137,12 +3233,24 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T16:54:14.550Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 37,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T08:32:25.736Z"
     },
     "showers": {
       "count": 11,
       "pois": [],
-      "updatedAt": "2026-09-03T16:54:15.150Z"
+      "stats": {
+        "free": 2,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:32:26.283Z"
     },
     "fireplaces": {
       "count": 12,
@@ -3154,7 +3262,13 @@
           "lon": 11.558198
         }
       ],
-      "updatedAt": "2026-09-03T16:54:16.202Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:32:27.643Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3372,6 +3486,76 @@
       "count": 64,
       "pois": [
         {
+          "id": "node/9229367742",
+          "name": "LMU Philologicum",
+          "lat": 48.148904,
+          "lon": 11.579798,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/10752514709",
+          "name": "LMU Leopoldstraße",
+          "lat": 48.156232,
+          "lon": 11.583174
+        },
+        {
+          "id": "node/7041677745",
+          "name": "Münchner Freiheit",
+          "lat": 48.162828,
+          "lon": 11.586532
+        },
+        {
+          "id": "node/12090208574",
+          "name": "Gasteig HP8",
+          "lat": 48.112074,
+          "lon": 11.553856,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/14101043503",
+          "name": "ADAC Radservice-Station",
+          "lat": 48.13254,
+          "lon": 11.534893,
+          "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "node/9933514758",
+          "name": "Berg am Laim",
+          "lat": 48.133775,
+          "lon": 11.633302,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/12700471643",
+          "name": "Nachbarschaftsstation RESI",
+          "lat": 48.108917,
+          "lon": 11.637757,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/12744540651",
+          "name": "Domagkpark",
+          "lat": 48.183775,
+          "lon": 11.596509
+        },
+        {
+          "id": "node/12700471635",
+          "name": "Nachbarschaftsstation STEINI",
+          "lat": 48.109003,
+          "lon": 11.656703
+        },
+        {
+          "id": "node/6604087412",
+          "name": "Fahrrad-Luftpumpe",
+          "lat": 48.203292,
+          "lon": 11.612721,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
           "id": "node/9173687810",
           "lat": 48.135332,
           "lon": 11.588253,
@@ -3399,14 +3583,6 @@
           "lon": 11.600093,
           "openingHours": "24/7",
           "street": "Preysingstraße"
-        },
-        {
-          "id": "node/9229367742",
-          "name": "LMU Philologicum",
-          "lat": 48.148904,
-          "lon": 11.579798,
-          "openingHours": "24/7",
-          "fee": "no"
         },
         {
           "id": "node/11382190452",
@@ -3484,12 +3660,6 @@
           "street": "Hopfenpostpassage"
         },
         {
-          "id": "node/10752514709",
-          "name": "LMU Leopoldstraße",
-          "lat": 48.156232,
-          "lon": 11.583174
-        },
-        {
           "id": "node/9947737105",
           "lat": 48.136073,
           "lon": 11.54563,
@@ -3502,40 +3672,11 @@
           "street": "Ungsteiner Straße"
         },
         {
-          "id": "node/7041677745",
-          "name": "Münchner Freiheit",
-          "lat": 48.162828,
-          "lon": 11.586532
-        },
-        {
           "id": "node/8366936011",
           "lat": 48.120155,
           "lon": 11.617776,
           "openingHours": "24/7",
           "street": "Bad-Schachener-Straße"
-        },
-        {
-          "id": "node/12090208574",
-          "name": "Gasteig HP8",
-          "lat": 48.112074,
-          "lon": 11.553856,
-          "openingHours": "24/7"
-        },
-        {
-          "id": "node/14101043503",
-          "name": "ADAC Radservice-Station",
-          "lat": 48.13254,
-          "lon": 11.534893,
-          "openingHours": "24/7",
-          "fee": "yes"
-        },
-        {
-          "id": "node/9933514758",
-          "name": "Berg am Laim",
-          "lat": 48.133775,
-          "lon": 11.633302,
-          "openingHours": "24/7",
-          "fee": "no"
         },
         {
           "id": "node/10835336710",
@@ -3549,36 +3690,15 @@
           "lon": 11.624843,
           "fee": "yes",
           "street": "Lohengrinstraße"
-        },
-        {
-          "id": "node/13708653974",
-          "lat": 48.099369,
-          "lon": 11.60941,
-          "street": "Görzer Straße"
-        },
-        {
-          "id": "node/5297575499",
-          "lat": 48.126667,
-          "lon": 11.521753,
-          "street": "Grüntenstraße"
-        },
-        {
-          "id": "node/13232857769",
-          "lat": 48.148497,
-          "lon": 11.521286,
-          "openingHours": "24/7",
-          "fee": "no",
-          "street": "Wilhelm-Hale-Straße"
-        },
-        {
-          "id": "node/11110450052",
-          "lat": 48.102899,
-          "lon": 11.625471,
-          "fee": "no",
-          "street": "Ottobrunner Straße"
         }
       ],
-      "updatedAt": "2026-09-03T16:54:18.525Z"
+      "stats": {
+        "free": 26,
+        "paid": 4,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:32:30.135Z"
     }
   }
 }

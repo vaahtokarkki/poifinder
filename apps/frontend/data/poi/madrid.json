@@ -1,6 +1,6 @@
 {
   "city": "madrid",
-  "generatedAt": "2026-09-11T10:31:16.263Z",
+  "generatedAt": "2026-09-13T09:08:57.926Z",
   "categories": {
     "toilets": {
       "count": 236,
@@ -610,7 +610,13 @@
           "lon": -3.636726
         }
       ],
-      "updatedAt": "2026-09-03T17:16:23.933Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 30,
+        "partlyStepFree": 9
+      },
+      "updatedAt": "2026-09-13T09:08:11.393Z"
     },
     "parking": {
       "count": 3105,
@@ -831,7 +837,13 @@
           "lon": -3.71437
         }
       ],
-      "updatedAt": "2026-09-03T17:16:25.457Z"
+      "stats": {
+        "free": 914,
+        "paid": 289,
+        "stepFree": 31,
+        "partlyStepFree": 43
+      },
+      "updatedAt": "2026-09-13T09:08:16.357Z"
     },
     "charging-stations": {
       "count": 86,
@@ -917,7 +929,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:26.023Z"
+      "stats": {
+        "free": 2,
+        "paid": 20,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:17.524Z"
     },
     "gas-stations": {
       "count": 169,
@@ -1140,7 +1158,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:26.649Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T09:08:19.364Z"
     },
     "ice-cream": {
       "count": 142,
@@ -1357,7 +1381,13 @@
           "openingHours": "Mo-Su 11:00-22:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:27.373Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 14,
+        "partlyStepFree": 10
+      },
+      "updatedAt": "2026-09-13T09:08:21.907Z"
     },
     "dog-parks": {
       "count": 119,
@@ -1399,7 +1429,13 @@
           "lon": -3.610593
         }
       ],
-      "updatedAt": "2026-09-03T17:16:28.013Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:08:23.651Z"
     },
     "picnic-spots": {
       "count": 687,
@@ -1423,7 +1459,13 @@
           "lon": -3.708391
         }
       ],
-      "updatedAt": "2026-09-03T17:16:29.688Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:28.081Z"
     },
     "viewpoints": {
       "count": 87,
@@ -1594,12 +1636,24 @@
           "lon": -3.773947
         }
       ],
-      "updatedAt": "2026-09-03T17:16:31.024Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:29.604Z"
     },
     "beaches": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T17:16:31.593Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:30.904Z"
     },
     "atms": {
       "count": 926,
@@ -1827,6 +1881,18 @@
       "count": 388,
       "pois": [
         {
+          "id": "node/12640825074",
+          "name": "Paquetería Costa Sur",
+          "lat": 40.387063,
+          "lon": -3.704866
+        },
+        {
+          "id": "node/12634700129",
+          "name": "Paquetería Bolivia",
+          "lat": 40.386852,
+          "lon": -3.705255
+        },
+        {
           "id": "node/2955027356",
           "lat": 40.416551,
           "lon": -3.704347,
@@ -1995,21 +2061,15 @@
           "lat": 40.42728,
           "lon": -3.709345,
           "street": "Plaza de las Comendadoras"
-        },
-        {
-          "id": "node/3389183201",
-          "lat": 40.413824,
-          "lon": -3.718202,
-          "street": "Calle de Segovia"
-        },
-        {
-          "id": "node/3100162495",
-          "lat": 40.408264,
-          "lon": -3.692987,
-          "street": "Plaza del Emperador Carlos V"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:34.631Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:36.630Z"
     },
     "recycling": {
       "count": 1276,
@@ -2279,7 +2339,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:37.629Z"
+      "stats": {
+        "free": 0,
+        "paid": 15,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:37.743Z"
     },
     "libraries": {
       "count": 101,
@@ -2498,7 +2564,13 @@
           "lon": -3.671551
         }
       ],
-      "updatedAt": "2026-09-03T17:16:38.354Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 18,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:08:39.067Z"
     },
     "outdoor-gyms": {
       "count": 283,
@@ -2555,12 +2627,24 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:40.608Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:40.304Z"
     },
     "shelters": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:16:41.438Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:42.245Z"
     },
     "rest-areas": {
       "count": 15,
@@ -2590,12 +2674,24 @@
           "lon": -3.775765
         }
       ],
-      "updatedAt": "2026-09-03T17:16:41.947Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:43.901Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:16:42.333Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:45.284Z"
     },
     "post-offices": {
       "count": 91,
@@ -2767,17 +2863,35 @@
           "lon": -3.784981
         }
       ],
-      "updatedAt": "2026-09-03T17:16:43.121Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:08:46.745Z"
     },
     "showers": {
       "count": 35,
       "pois": [],
-      "updatedAt": "2026-09-03T17:16:43.568Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:48.043Z"
     },
     "fireplaces": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:16:44.621Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:50.395Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3041,7 +3155,13 @@
           "street": "Avenida de la Democracia"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:46.451Z"
+      "stats": {
+        "free": 2,
+        "paid": 8,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:57.824Z"
     }
   }
 }

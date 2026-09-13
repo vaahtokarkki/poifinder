@@ -1,6 +1,6 @@
 {
   "city": "atlanta",
-  "generatedAt": "2026-09-11T10:32:47.294Z",
+  "generatedAt": "2026-09-13T09:31:10.961Z",
   "categories": {
     "toilets": {
       "count": 32,
@@ -336,7 +336,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:12.320Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:30:29.884Z"
     },
     "parking": {
       "count": 1199,
@@ -566,7 +572,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:13.636Z"
+      "stats": {
+        "free": 186,
+        "paid": 163,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:35.754Z"
     },
     "charging-stations": {
       "count": 17,
@@ -602,7 +614,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:14.207Z"
+      "stats": {
+        "free": 1,
+        "paid": 4,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:37.161Z"
     },
     "gas-stations": {
       "count": 104,
@@ -724,7 +742,13 @@
           "address": "Flat Shoals Road Southeast 2345"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:14.708Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 17,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:38.925Z"
     },
     "ice-cream": {
       "count": 23,
@@ -893,7 +917,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:15.225Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:30:40.273Z"
     },
     "dog-parks": {
       "count": 31,
@@ -1005,7 +1035,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:15.693Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:30:41.983Z"
     },
     "picnic-spots": {
       "count": 70,
@@ -1035,7 +1071,13 @@
           "lon": -84.306346
         }
       ],
-      "updatedAt": "2026-09-03T17:29:16.945Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:44.904Z"
     },
     "viewpoints": {
       "count": 3,
@@ -1054,12 +1096,24 @@
           "address": "3rd Street Northwest 76"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:17.593Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:46.923Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:29:18.102Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:48.520Z"
     },
     "atms": {
       "count": 72,
@@ -1244,6 +1298,12 @@
       "count": 16,
       "pois": [
         {
+          "id": "node/4879481803",
+          "name": "USPS",
+          "lat": 33.774506,
+          "lon": -84.365998
+        },
+        {
           "id": "node/13660285087",
           "lat": 33.748419,
           "lon": -84.388537,
@@ -1286,12 +1346,6 @@
           "street": "Techwood Drive Northwest"
         },
         {
-          "id": "node/4879481803",
-          "name": "USPS",
-          "lat": 33.774506,
-          "lon": -84.365998
-        },
-        {
           "id": "node/2498531183",
           "lat": 33.775499,
           "lon": -84.358598,
@@ -1322,7 +1376,13 @@
           "street": "Oakview Road"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:19.994Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:52.066Z"
     },
     "recycling": {
       "count": 19,
@@ -1420,7 +1480,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:29:22.180Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:53.853Z"
     },
     "libraries": {
       "count": 46,
@@ -1633,7 +1699,13 @@
           "openingHours": "Mo-Tu 10:00-20:00; We-Sa 10:00-18:00; Su off"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:22.686Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:30:55.104Z"
     },
     "outdoor-gyms": {
       "count": 6,
@@ -1649,22 +1721,46 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:29:24.127Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:56.177Z"
     },
     "shelters": {
       "count": 19,
       "pois": [],
-      "updatedAt": "2026-09-03T17:29:24.862Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:57.591Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:29:25.324Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:30:59.274Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:29:25.762Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:31:00.986Z"
     },
     "post-offices": {
       "count": 29,
@@ -1840,17 +1936,35 @@
           "lon": -84.337452
         }
       ],
-      "updatedAt": "2026-09-03T17:29:26.283Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:31:02.745Z"
     },
     "showers": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:29:26.640Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:31:04.396Z"
     },
     "fireplaces": {
       "count": 6,
       "pois": [],
-      "updatedAt": "2026-09-03T17:29:27.788Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:31:06.543Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2199,7 +2313,13 @@
           "street": "Eagle Row"
         }
       ],
-      "updatedAt": "2026-09-03T17:29:29.628Z"
+      "stats": {
+        "free": 5,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:31:10.861Z"
     }
   }
 }

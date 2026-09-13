@@ -1,6 +1,6 @@
 {
   "city": "pittsburgh",
-  "generatedAt": "2026-09-11T10:32:55.890Z",
+  "generatedAt": "2026-09-13T09:36:52.177Z",
   "categories": {
     "toilets": {
       "count": 54,
@@ -425,7 +425,13 @@
           "lon": -79.946772
         }
       ],
-      "updatedAt": "2026-09-03T17:32:24.723Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:36:10.822Z"
     },
     "parking": {
       "count": 1330,
@@ -634,7 +640,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:26.028Z"
+      "stats": {
+        "free": 173,
+        "paid": 114,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:15.542Z"
     },
     "charging-stations": {
       "count": 7,
@@ -664,7 +676,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:26.560Z"
+      "stats": {
+        "free": 1,
+        "paid": 4,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:17.043Z"
     },
     "gas-stations": {
       "count": 85,
@@ -806,7 +824,13 @@
           "openingHours": "Mo-Fr 08:00-19:00; Sa 09:00-17:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:27.148Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:18.276Z"
     },
     "ice-cream": {
       "count": 35,
@@ -1033,7 +1057,13 @@
           "openingHours": "Mo-Th 14:00-21:00,Fr-Sa 12:00-21:30, Su 12:00-21:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:27.700Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:36:19.405Z"
     },
     "dog-parks": {
       "count": 21,
@@ -1082,7 +1112,13 @@
           "lon": -79.906219
         }
       ],
-      "updatedAt": "2026-09-03T17:32:28.102Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:21.224Z"
     },
     "picnic-spots": {
       "count": 93,
@@ -1094,12 +1130,24 @@
           "lon": -79.952542
         }
       ],
-      "updatedAt": "2026-09-03T17:32:29.431Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:23.586Z"
     },
     "viewpoints": {
       "count": 27,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:30.085Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:25.321Z"
     },
     "beaches": {
       "count": 44,
@@ -1117,7 +1165,13 @@
           "lon": -80.086239
         }
       ],
-      "updatedAt": "2026-09-03T17:32:30.515Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:27.106Z"
     },
     "atms": {
       "count": 87,
@@ -1337,6 +1391,25 @@
       "count": 162,
       "pois": [
         {
+          "id": "node/13939601685",
+          "name": "USPS Drop Box",
+          "lat": 40.430768,
+          "lon": -80.052461,
+          "address": "Noblestown Road 2103"
+        },
+        {
+          "id": "node/3216860466",
+          "name": "USPS",
+          "lat": 40.437018,
+          "lon": -79.923189
+        },
+        {
+          "id": "node/767607222",
+          "name": "Chislett and Greenwood",
+          "lat": 40.485483,
+          "lon": -79.925802
+        },
+        {
           "id": "node/12042086652",
           "lat": 40.441288,
           "lon": -79.994525,
@@ -1498,27 +1571,15 @@
           "lat": 40.450067,
           "lon": -80.027829,
           "street": "Beaver Avenue"
-        },
-        {
-          "id": "node/1272549925",
-          "lat": 40.427814,
-          "lon": -79.965599,
-          "street": "Cinema Drive"
-        },
-        {
-          "id": "node/7817810436",
-          "lat": 40.438271,
-          "lon": -79.961167,
-          "street": "Halket Street"
-        },
-        {
-          "id": "node/2985643033",
-          "lat": 40.426403,
-          "lon": -79.965807,
-          "street": "East Carson Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:32.643Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:32.814Z"
     },
     "recycling": {
       "count": 22,
@@ -1608,7 +1669,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:34.913Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:34.351Z"
     },
     "libraries": {
       "count": 148,
@@ -1804,7 +1871,13 @@
           "lon": -80.034741
         }
       ],
-      "updatedAt": "2026-09-03T17:32:35.418Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:36.004Z"
     },
     "outdoor-gyms": {
       "count": 7,
@@ -1820,7 +1893,13 @@
     "camp-sites": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:36.667Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:37.168Z"
     },
     "shelters": {
       "count": 33,
@@ -1830,12 +1909,6 @@
           "name": "Schenley Plaza Pavillion",
           "lat": 40.442501,
           "lon": -79.9525
-        },
-        {
-          "id": "node/4846860773",
-          "lat": 40.440884,
-          "lon": -79.947776,
-          "street": "Frew Street"
         },
         {
           "id": "way/392512337",
@@ -1892,12 +1965,6 @@
           "lon": -80.022197
         },
         {
-          "id": "node/3472291579",
-          "lat": 40.430165,
-          "lon": -79.914977,
-          "street": "Riverview Trail"
-        },
-        {
           "id": "way/347092613",
           "name": "Ross Township Firemen's Association Pavillion",
           "lat": 40.502913,
@@ -1920,19 +1987,49 @@
           "name": "Friends Grove Shelter",
           "lat": 40.503304,
           "lon": -80.042051
+        },
+        {
+          "id": "node/4846860773",
+          "lat": 40.440884,
+          "lon": -79.947776,
+          "street": "Frew Street"
+        },
+        {
+          "id": "node/3472291579",
+          "lat": 40.430165,
+          "lon": -79.914977,
+          "street": "Riverview Trail"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:38.268Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:41.189Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:38.781Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:42.058Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:39.127Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:43.163Z"
     },
     "post-offices": {
       "count": 27,
@@ -2109,12 +2206,24 @@
           "openingHours": "Mo-Fr 08:00-18:00, Sa 10:00-14:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:39.568Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:44.641Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:32:40.048Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:45.923Z"
     },
     "fireplaces": {
       "count": 8,
@@ -2129,7 +2238,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:40.992Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:36:48.026Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2391,7 +2506,13 @@
           "street": "Bakery Square Boulevard"
         }
       ],
-      "updatedAt": "2026-09-03T17:32:42.708Z"
+      "stats": {
+        "free": 5,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:36:52.076Z"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "city": "nashville",
-  "generatedAt": "2026-09-11T10:33:03.983Z",
+  "generatedAt": "2026-09-13T09:35:29.986Z",
   "categories": {
     "toilets": {
       "count": 17,
@@ -97,7 +97,13 @@
           "lon": -86.724198
         }
       ],
-      "updatedAt": "2026-09-03T17:31:45.321Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:34:55.384Z"
     },
     "parking": {
       "count": 1369,
@@ -290,7 +296,13 @@
           "lon": -86.767874
         }
       ],
-      "updatedAt": "2026-09-03T17:31:46.473Z"
+      "stats": {
+        "free": 37,
+        "paid": 31,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:34:58.228Z"
     },
     "charging-stations": {
       "count": 13,
@@ -334,7 +346,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:46.907Z"
+      "stats": {
+        "free": 2,
+        "paid": 4,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:34:59.521Z"
     },
     "gas-stations": {
       "count": 65,
@@ -453,7 +471,13 @@
           "lon": -86.69804
         }
       ],
-      "updatedAt": "2026-09-03T17:31:47.348Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:00.814Z"
     },
     "ice-cream": {
       "count": 18,
@@ -566,7 +590,13 @@
           "lon": -86.85131
         }
       ],
-      "updatedAt": "2026-09-03T17:31:47.868Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:02.278Z"
     },
     "dog-parks": {
       "count": 16,
@@ -603,12 +633,24 @@
           "address": "Ohio Avenue 5700"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:48.387Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:03.853Z"
     },
     "picnic-spots": {
       "count": 45,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:49.573Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:07.561Z"
     },
     "viewpoints": {
       "count": 5,
@@ -620,12 +662,24 @@
           "lon": -86.718972
         }
       ],
-      "updatedAt": "2026-09-03T17:31:50.151Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:10.113Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:50.535Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:11.416Z"
     },
     "atms": {
       "count": 24,
@@ -715,6 +769,13 @@
       "count": 5,
       "pois": [
         {
+          "id": "node/12490647301",
+          "name": "The UPS Store",
+          "lat": 36.129274,
+          "lon": -86.85526,
+          "address": "White Bridge Pike 73 #103"
+        },
+        {
           "id": "node/2407389194",
           "lat": 36.146768,
           "lon": -86.793208,
@@ -731,16 +792,15 @@
           "lat": 36.140858,
           "lon": -86.793548,
           "street": "16th Avenue South"
-        },
-        {
-          "id": "node/12490647301",
-          "name": "The UPS Store",
-          "lat": 36.129274,
-          "lon": -86.85526,
-          "address": "White Bridge Pike 73 #103"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:52.053Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:13.203Z"
     },
     "recycling": {
       "count": 11,
@@ -801,7 +861,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:53.865Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:14.182Z"
     },
     "libraries": {
       "count": 21,
@@ -950,7 +1016,13 @@
           "address": "Clarksville Pike 4400"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:54.315Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:15.243Z"
     },
     "outdoor-gyms": {
       "count": 4,
@@ -966,7 +1038,13 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:55.207Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:16.435Z"
     },
     "shelters": {
       "count": 5,
@@ -978,7 +1056,13 @@
           "lon": -86.805972
         }
       ],
-      "updatedAt": "2026-09-03T17:31:55.933Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:18.065Z"
     },
     "rest-areas": {
       "count": 12,
@@ -1060,12 +1144,24 @@
           "lon": -86.771862
         }
       ],
-      "updatedAt": "2026-09-03T17:31:56.368Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:19.087Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:56.754Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:20.306Z"
     },
     "post-offices": {
       "count": 17,
@@ -1151,17 +1247,35 @@
           "lon": -86.731849
         }
       ],
-      "updatedAt": "2026-09-03T17:31:57.161Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:22.124Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:57.507Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:24.303Z"
     },
     "fireplaces": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T17:31:58.547Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:26.682Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1315,7 +1429,13 @@
           "street": "Shadow Lane"
         }
       ],
-      "updatedAt": "2026-09-03T17:31:59.848Z"
+      "stats": {
+        "free": 5,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:35:29.885Z"
     }
   }
 }

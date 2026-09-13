@@ -1,6 +1,6 @@
 {
   "city": "rio-de-janeiro",
-  "generatedAt": "2026-09-11T10:34:39.729Z",
+  "generatedAt": "2026-09-13T10:07:37.407Z",
   "categories": {
     "toilets": {
       "count": 134,
@@ -334,7 +334,13 @@
           "openingHours": "Mo-Sa 08:00-20:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:50:19.821Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T10:06:59.389Z"
     },
     "parking": {
       "count": 1001,
@@ -553,12 +559,24 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:50:21.018Z"
+      "stats": {
+        "free": 26,
+        "paid": 128,
+        "stepFree": 7,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T10:07:04.291Z"
     },
     "charging-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:50:21.412Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:06.163Z"
     },
     "gas-stations": {
       "count": 260,
@@ -756,7 +774,13 @@
           "lon": -43.114336
         }
       ],
-      "updatedAt": "2026-09-03T17:50:22.081Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:07.972Z"
     },
     "ice-cream": {
       "count": 86,
@@ -953,7 +977,13 @@
           "address": "Rua Tiradentes 217"
         }
       ],
-      "updatedAt": "2026-09-03T17:50:22.643Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T10:07:09.386Z"
     },
     "dog-parks": {
       "count": 10,
@@ -978,7 +1008,13 @@
           "lon": -43.199775
         }
       ],
-      "updatedAt": "2026-09-03T17:50:23.040Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:10.420Z"
     },
     "picnic-spots": {
       "count": 80,
@@ -990,7 +1026,13 @@
           "lon": -43.211906
         }
       ],
-      "updatedAt": "2026-09-03T17:50:24.366Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:12.773Z"
     },
     "viewpoints": {
       "count": 104,
@@ -1181,7 +1223,13 @@
           "address": "Estrada do Redentor"
         }
       ],
-      "updatedAt": "2026-09-03T17:50:25.022Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T10:07:14.024Z"
     },
     "beaches": {
       "count": 75,
@@ -1367,7 +1415,13 @@
           "lon": -43.095212
         }
       ],
-      "updatedAt": "2026-09-03T17:50:25.588Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:15.097Z"
     },
     "atms": {
       "count": 257,
@@ -1577,6 +1631,24 @@
       "count": 38,
       "pois": [
         {
+          "id": "node/819310029",
+          "name": "ACF Azevedo Lima",
+          "lat": -22.924462,
+          "lon": -43.20404
+        },
+        {
+          "id": "node/819284920",
+          "name": "ACF Papequi",
+          "lat": -22.924907,
+          "lon": -43.211775
+        },
+        {
+          "id": "node/816125521",
+          "name": "ACF Clovis Bevilaqua",
+          "lat": -22.924657,
+          "lon": -43.235074
+        },
+        {
           "id": "node/480474338",
           "lat": -22.908798,
           "lon": -43.172804,
@@ -1625,12 +1697,6 @@
           "street": "Rua Silveira Martins"
         },
         {
-          "id": "node/819310029",
-          "name": "ACF Azevedo Lima",
-          "lat": -22.924462,
-          "lon": -43.20404
-        },
-        {
           "id": "node/4613040463",
           "lat": -22.940679,
           "lon": -43.177434,
@@ -1653,12 +1719,6 @@
           "lat": -22.903743,
           "lon": -43.216101,
           "street": "Avenida Pedro II"
-        },
-        {
-          "id": "node/819284920",
-          "name": "ACF Papequi",
-          "lat": -22.924907,
-          "lon": -43.211775
         },
         {
           "id": "node/3524202949",
@@ -1709,12 +1769,6 @@
           "street": "Rua Barata Ribeiro"
         },
         {
-          "id": "node/816125521",
-          "name": "ACF Clovis Bevilaqua",
-          "lat": -22.924657,
-          "lon": -43.235074
-        },
-        {
           "id": "node/885781995",
           "lat": -22.967102,
           "lon": -43.186356,
@@ -1757,7 +1811,13 @@
           "street": "Rua Prudente de Morais"
         }
       ],
-      "updatedAt": "2026-09-03T17:50:27.772Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:18.649Z"
     },
     "recycling": {
       "count": 10,
@@ -1823,7 +1883,13 @@
     "luggage-storage": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:50:29.827Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:19.830Z"
     },
     "libraries": {
       "count": 45,
@@ -2025,7 +2091,13 @@
           "openingHours": "Mo-Fr 09:00-21:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:50:30.341Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T10:07:21.185Z"
     },
     "outdoor-gyms": {
       "count": 117,
@@ -2095,7 +2167,13 @@
           "lon": -43.2212
         }
       ],
-      "updatedAt": "2026-09-03T17:50:32.254Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:22.604Z"
     },
     "shelters": {
       "count": 13,
@@ -2119,7 +2197,13 @@
           "street": "Avenida Dom Hélder Câmara"
         }
       ],
-      "updatedAt": "2026-09-03T17:50:33.853Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:25.939Z"
     },
     "rest-areas": {
       "count": 14,
@@ -2191,12 +2275,24 @@
           "lon": -43.06684
         }
       ],
-      "updatedAt": "2026-09-03T17:50:34.700Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:26.753Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:50:35.627Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:27.677Z"
     },
     "post-offices": {
       "count": 67,
@@ -2309,12 +2405,24 @@
           "lon": -43.239128
         }
       ],
-      "updatedAt": "2026-09-03T17:50:36.228Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:28.891Z"
     },
     "showers": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:50:36.673Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:30.084Z"
     },
     "fireplaces": {
       "count": 3,
@@ -2332,7 +2440,13 @@
           "lon": -43.209768
         }
       ],
-      "updatedAt": "2026-09-03T17:50:37.829Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:31.884Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2453,7 +2567,13 @@
           "street": "Rua Doutor Paulo César"
         }
       ],
-      "updatedAt": "2026-09-03T17:50:39.158Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:07:37.306Z"
     }
   }
 }

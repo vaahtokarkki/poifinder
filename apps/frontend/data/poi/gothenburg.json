@@ -1,6 +1,6 @@
 {
   "city": "gothenburg",
-  "generatedAt": "2026-09-11T10:27:54.970Z",
+  "generatedAt": "2026-09-13T08:24:51.439Z",
   "categories": {
     "toilets": {
       "count": 109,
@@ -412,7 +412,7 @@
       "updatedAt": "2026-09-11T10:27:49.884Z"
     },
     "playgrounds": {
-      "count": 973,
+      "count": 972,
       "pois": [
         {
           "id": "relation/5952718",
@@ -597,7 +597,13 @@
           "lon": 11.972868
         }
       ],
-      "updatedAt": "2026-09-03T16:43:40.552Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 5
+      },
+      "updatedAt": "2026-09-13T08:24:23.088Z"
     },
     "parking": {
       "count": 5261,
@@ -779,7 +785,13 @@
           "lon": 11.843414
         }
       ],
-      "updatedAt": "2026-09-03T16:43:42.030Z"
+      "stats": {
+        "free": 293,
+        "paid": 624,
+        "stepFree": 25,
+        "partlyStepFree": 4
+      },
+      "updatedAt": "2026-09-13T08:24:26.832Z"
     },
     "charging-stations": {
       "count": 214,
@@ -818,7 +830,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:42.589Z"
+      "stats": {
+        "free": 5,
+        "paid": 28,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:27.973Z"
     },
     "gas-stations": {
       "count": 88,
@@ -983,7 +1001,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:43.109Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:28.785Z"
     },
     "ice-cream": {
       "count": 27,
@@ -1146,7 +1170,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:43.686Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:30.023Z"
     },
     "dog-parks": {
       "count": 28,
@@ -1221,10 +1251,16 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:44.183Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:24:30.971Z"
     },
     "picnic-spots": {
-      "count": 710,
+      "count": 720,
       "pois": [
         {
           "id": "node/1594527854",
@@ -1251,7 +1287,13 @@
           "lon": 12.056277
         }
       ],
-      "updatedAt": "2026-09-03T16:43:46.269Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:33.866Z"
     },
     "viewpoints": {
       "count": 120,
@@ -1320,7 +1362,13 @@
           "lon": 12.050951
         }
       ],
-      "updatedAt": "2026-09-03T16:43:47.410Z"
+      "stats": {
+        "free": 4,
+        "paid": 1,
+        "stepFree": 3,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:24:35.143Z"
     },
     "beaches": {
       "count": 18,
@@ -1338,7 +1386,13 @@
           "lon": 12.064347
         }
       ],
-      "updatedAt": "2026-09-03T16:43:47.908Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:36.280Z"
     },
     "atms": {
       "count": 71,
@@ -1388,7 +1442,7 @@
       "updatedAt": "2026-09-11T10:27:50.426Z"
     },
     "post-boxes": {
-      "count": 256,
+      "count": 257,
       "pois": [
         {
           "id": "node/10994694620",
@@ -1571,7 +1625,13 @@
           "street": "Lilla Karlagatan"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:50.448Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:24:39.323Z"
     },
     "recycling": {
       "count": 450,
@@ -1777,7 +1837,13 @@
     "luggage-storage": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T16:43:53.483Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:40.203Z"
     },
     "libraries": {
       "count": 36,
@@ -1907,9 +1973,10 @@
         },
         {
           "id": "node/10727736782",
-          "name": "Världslitteraturhuset",
+          "name": "Gamlestadens bibliotek",
           "lat": 57.727741,
           "lon": 12.005496,
+          "address": "Gamlestads Torg 11",
           "openingHours": "Mo-Th 10:00-19:00, Fr 10:00-17:00, Sa 11:00-15:00",
           "wheelchair": "yes"
         },
@@ -2012,7 +2079,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:54.068Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:41.383Z"
     },
     "outdoor-gyms": {
       "count": 80,
@@ -2120,7 +2193,13 @@
           "address": "Lilla Regementsvägen 35"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:56.036Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:42.325Z"
     },
     "shelters": {
       "count": 19,
@@ -2147,12 +2226,6 @@
           "fee": "no"
         },
         {
-          "id": "node/11114535711",
-          "lat": 57.742586,
-          "lon": 12.053613,
-          "street": "A"
-        },
-        {
           "id": "node/762727697",
           "name": "Delsjön 3",
           "lat": 57.680561,
@@ -2165,9 +2238,21 @@
           "lat": 57.692732,
           "lon": 12.078127,
           "fee": "no"
+        },
+        {
+          "id": "node/11114535711",
+          "lat": 57.742586,
+          "lon": 12.053613,
+          "street": "A"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:57.963Z"
+      "stats": {
+        "free": 7,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:44.970Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2179,12 +2264,24 @@
           "lon": 12.027964
         }
       ],
-      "updatedAt": "2026-09-03T16:43:58.528Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:45.723Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:43:58.968Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:46.194Z"
     },
     "post-offices": {
       "count": 6,
@@ -2221,15 +2318,27 @@
           "address": "Klangfärgsgatan 2"
         }
       ],
-      "updatedAt": "2026-09-03T16:43:59.548Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:46.882Z"
     },
     "showers": {
       "count": 7,
       "pois": [],
-      "updatedAt": "2026-09-03T16:44:00.021Z"
+      "stats": {
+        "free": 4,
+        "paid": 2,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:47.395Z"
     },
     "fireplaces": {
-      "count": 174,
+      "count": 176,
       "pois": [
         {
           "id": "node/12171292595",
@@ -2257,7 +2366,13 @@
           "lon": 12.043436
         }
       ],
-      "updatedAt": "2026-09-03T16:44:01.052Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:48.926Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2601,7 +2716,13 @@
           "street": "Eketrägatan"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:03.276Z"
+      "stats": {
+        "free": 19,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:24:51.337Z"
     }
   }
 }

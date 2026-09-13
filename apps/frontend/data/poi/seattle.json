@@ -1,6 +1,6 @@
 {
   "city": "seattle",
-  "generatedAt": "2026-09-11T10:32:23.132Z",
+  "generatedAt": "2026-09-13T09:24:42.635Z",
   "categories": {
     "toilets": {
       "count": 155,
@@ -544,7 +544,13 @@
           "lon": -122.296085
         }
       ],
-      "updatedAt": "2026-09-03T17:25:03.546Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:23:48.528Z"
     },
     "parking": {
       "count": 2326,
@@ -769,7 +775,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:04.785Z"
+      "stats": {
+        "free": 383,
+        "paid": 265,
+        "stepFree": 24,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:23:55.374Z"
     },
     "charging-stations": {
       "count": 62,
@@ -850,7 +862,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:05.361Z"
+      "stats": {
+        "free": 7,
+        "paid": 18,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:57.045Z"
     },
     "gas-stations": {
       "count": 82,
@@ -976,7 +994,13 @@
           "lon": -122.376144
         }
       ],
-      "updatedAt": "2026-09-03T17:25:06.002Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:23:59.982Z"
     },
     "ice-cream": {
       "count": 54,
@@ -1211,7 +1235,13 @@
           "openingHours": "Mo,We,Th 15:00-21:00; Su 12:00-21:00; Fr 15:00-22:00; Sa 12:00-22:00; Tu off"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:06.587Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:24:02.721Z"
     },
     "dog-parks": {
       "count": 20,
@@ -1333,7 +1363,13 @@
           "lon": -122.226237
         }
       ],
-      "updatedAt": "2026-09-03T17:25:07.027Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:04.485Z"
     },
     "picnic-spots": {
       "count": 441,
@@ -1415,7 +1451,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:08.444Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:08.406Z"
     },
     "viewpoints": {
       "count": 84,
@@ -1537,7 +1579,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:09.269Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 5,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:24:12.166Z"
     },
     "beaches": {
       "count": 74,
@@ -1700,7 +1748,13 @@
           "lon": -122.417687
         }
       ],
-      "updatedAt": "2026-09-03T17:25:09.843Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:13.804Z"
     },
     "atms": {
       "count": 184,
@@ -1920,6 +1974,36 @@
       "count": 225,
       "pois": [
         {
+          "id": "node/4124757993",
+          "name": "USPS",
+          "lat": 47.609826,
+          "lon": -122.33647
+        },
+        {
+          "id": "node/6753625988",
+          "name": "UPS",
+          "lat": 47.609236,
+          "lon": -122.323314
+        },
+        {
+          "id": "node/6753623590",
+          "name": "FedEx",
+          "lat": 47.609253,
+          "lon": -122.323277
+        },
+        {
+          "id": "node/3374164993",
+          "name": "FedEx Box",
+          "lat": 47.613547,
+          "lon": -122.289357
+        },
+        {
+          "id": "node/1726088087",
+          "name": "Postal Drop Box",
+          "lat": 47.634318,
+          "lon": -122.280258
+        },
+        {
           "id": "node/5750308965",
           "lat": 47.607409,
           "lon": -122.33246,
@@ -1954,12 +2038,6 @@
           "lat": 47.608849,
           "lon": -122.336406,
           "street": "Union Street"
-        },
-        {
-          "id": "node/4124757993",
-          "name": "USPS",
-          "lat": 47.609826,
-          "lon": -122.33647
         },
         {
           "id": "node/4844765855",
@@ -2014,18 +2092,6 @@
           "lat": 47.6126,
           "lon": -122.334041,
           "street": "Pine Street"
-        },
-        {
-          "id": "node/6753625988",
-          "name": "UPS",
-          "lat": 47.609236,
-          "lon": -122.323314
-        },
-        {
-          "id": "node/6753623590",
-          "name": "FedEx",
-          "lat": 47.609253,
-          "lon": -122.323277
         },
         {
           "id": "node/3393331424",
@@ -2088,21 +2154,15 @@
           "lat": 47.59748,
           "lon": -122.327512,
           "street": "South Weller Street"
-        },
-        {
-          "id": "node/8633861244",
-          "lat": 47.610729,
-          "lon": -122.344245,
-          "street": "Western Avenue"
-        },
-        {
-          "id": "node/6065251995",
-          "lat": 47.612654,
-          "lon": -122.343134,
-          "street": "2nd Avenue Cycletrack"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:12.682Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:22.710Z"
     },
     "recycling": {
       "count": 419,
@@ -2308,7 +2368,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:25:16.640Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:24.364Z"
     },
     "libraries": {
       "count": 326,
@@ -2538,7 +2604,13 @@
           "address": "George Washington Lane Northeast 4060"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:23.070Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:24:25.860Z"
     },
     "outdoor-gyms": {
       "count": 19,
@@ -2554,7 +2626,13 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:25:24.925Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:27.280Z"
     },
     "shelters": {
       "count": 19,
@@ -2572,17 +2650,35 @@
           "lon": -122.240922
         }
       ],
-      "updatedAt": "2026-09-03T17:25:26.860Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:31.502Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:25:27.667Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:32.673Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:25:28.185Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:33.843Z"
     },
     "post-offices": {
       "count": 43,
@@ -2811,17 +2907,35 @@
           "openingHours": "Mo-Fr 08:00-18:00; Sa 08:30-15:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:28.896Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:35.023Z"
     },
     "showers": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T17:25:29.527Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:36.384Z"
     },
     "fireplaces": {
       "count": 65,
       "pois": [],
-      "updatedAt": "2026-09-03T17:25:30.947Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:38.201Z"
     },
     "air-pumps": {
       "count": 1,
@@ -3232,7 +3346,13 @@
           "street": "8th Avenue Northwest"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:37.526Z"
+      "stats": {
+        "free": 10,
+        "paid": 12,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:42.534Z"
     }
   }
 }

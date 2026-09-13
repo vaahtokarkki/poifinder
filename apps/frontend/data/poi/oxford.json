@@ -1,6 +1,6 @@
 {
   "city": "oxford",
-  "generatedAt": "2026-09-11T10:30:43.146Z",
+  "generatedAt": "2026-09-13T08:54:47.046Z",
   "categories": {
     "toilets": {
       "count": 75,
@@ -425,7 +425,13 @@
           "lon": -1.308253
         }
       ],
-      "updatedAt": "2026-09-03T17:09:01.127Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:54:15.537Z"
     },
     "parking": {
       "count": 657,
@@ -633,7 +639,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:08.691Z"
+      "stats": {
+        "free": 97,
+        "paid": 50,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:20.130Z"
     },
     "charging-stations": {
       "count": 39,
@@ -669,7 +681,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:09.128Z"
+      "stats": {
+        "free": 5,
+        "paid": 8,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:21.429Z"
     },
     "gas-stations": {
       "count": 13,
@@ -723,7 +741,13 @@
           "lon": -1.173757
         }
       ],
-      "updatedAt": "2026-09-03T17:09:09.648Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:22.724Z"
     },
     "ice-cream": {
       "count": 10,
@@ -806,12 +830,24 @@
           "lon": -1.216949
         }
       ],
-      "updatedAt": "2026-09-03T17:09:10.261Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:23.677Z"
     },
     "dog-parks": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:10.608Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:24.664Z"
     },
     "picnic-spots": {
       "count": 111,
@@ -823,7 +859,13 @@
           "lon": -1.295747
         }
       ],
-      "updatedAt": "2026-09-03T17:09:12.068Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:26.538Z"
     },
     "viewpoints": {
       "count": 28,
@@ -871,12 +913,24 @@
           "lon": -1.289148
         }
       ],
-      "updatedAt": "2026-09-03T17:09:12.563Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:27.521Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:12.962Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:28.523Z"
     },
     "atms": {
       "count": 69,
@@ -989,16 +1043,22 @@
       "count": 323,
       "pois": [
         {
-          "id": "node/323182890",
-          "lat": 51.75201,
-          "lon": -1.258004,
-          "street": "Carfax"
-        },
-        {
           "id": "node/515642197",
           "name": "St Aldates Oxford",
           "lat": 51.751035,
           "lon": -1.257255
+        },
+        {
+          "id": "node/274382290",
+          "name": "Old Botley, Oxford",
+          "lat": 51.753115,
+          "lon": -1.294129
+        },
+        {
+          "id": "node/323182890",
+          "lat": 51.75201,
+          "lon": -1.258004,
+          "street": "Carfax"
         },
         {
           "id": "node/545789506",
@@ -1162,15 +1222,15 @@
           "lat": 51.749753,
           "lon": -1.244455,
           "street": "Cowley Place"
-        },
-        {
-          "id": "node/347269925",
-          "lat": 51.759352,
-          "lon": -1.265277,
-          "street": "Walton Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:14.866Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:32.287Z"
     },
     "recycling": {
       "count": 71,
@@ -1369,7 +1429,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:17.309Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:33.055Z"
     },
     "libraries": {
       "count": 91,
@@ -1577,7 +1643,13 @@
           "lon": -1.263525
         }
       ],
-      "updatedAt": "2026-09-03T17:09:17.813Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:54:33.784Z"
     },
     "outdoor-gyms": {
       "count": 60,
@@ -1641,12 +1713,24 @@
           "lon": -1.371841
         }
       ],
-      "updatedAt": "2026-09-03T17:09:19.381Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:34.660Z"
     },
     "shelters": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:20.025Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:35.901Z"
     },
     "rest-areas": {
       "count": 19,
@@ -1658,12 +1742,24 @@
           "lon": -1.283173
         }
       ],
-      "updatedAt": "2026-09-03T17:09:20.587Z"
+      "stats": {
+        "free": 5,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:37.119Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:21.620Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:38.544Z"
     },
     "post-offices": {
       "count": 21,
@@ -1828,17 +1924,35 @@
           "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-13:00; PH off"
         }
       ],
-      "updatedAt": "2026-09-03T17:09:23.128Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:41.104Z"
     },
     "showers": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:24.003Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:41.716Z"
     },
     "fireplaces": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T17:09:25.308Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:43.333Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2028,7 +2142,13 @@
           "lon": -1.265251
         }
       ],
-      "updatedAt": "2026-09-03T17:09:26.482Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:46.944Z"
     }
   }
 }

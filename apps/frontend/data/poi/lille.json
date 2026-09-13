@@ -1,6 +1,6 @@
 {
   "city": "lille",
-  "generatedAt": "2026-09-11T10:31:21.568Z",
+  "generatedAt": "2026-09-13T09:07:13.124Z",
   "categories": {
     "toilets": {
       "count": 128,
@@ -526,10 +526,16 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:34.245Z"
+      "stats": {
+        "free": 3,
+        "paid": 1,
+        "stepFree": 11,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:06:20.358Z"
     },
     "parking": {
-      "count": 3759,
+      "count": 3760,
       "pois": [
         {
           "id": "way/50997113",
@@ -751,7 +757,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:35.719Z"
+      "stats": {
+        "free": 1291,
+        "paid": 116,
+        "stepFree": 129,
+        "partlyStepFree": 25
+      },
+      "updatedAt": "2026-09-13T09:06:26.624Z"
     },
     "charging-stations": {
       "count": 220,
@@ -862,7 +874,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:36.258Z"
+      "stats": {
+        "free": 26,
+        "paid": 111,
+        "stepFree": 12,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:28.097Z"
     },
     "gas-stations": {
       "count": 55,
@@ -1058,7 +1076,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:36.709Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:29.484Z"
     },
     "ice-cream": {
       "count": 13,
@@ -1075,7 +1099,7 @@
           "name": "Glaces Moustache",
           "lat": 50.638165,
           "lon": 3.062243,
-          "openingHours": "Mo 12:00-19:00; Tu-Th 12:00-22:00; Fr-Sa 12:00-23:00; Su 12:00-19:00",
+          "openingHours": "Mo 12:00-19:00; Tu-Th 12:00-22:00; Fr-Sa 08:00-24:00; Su 08:00-18:00",
           "wheelchair": "yes"
         },
         {
@@ -1138,7 +1162,13 @@
           "lon": 3.083515
         }
       ],
-      "updatedAt": "2026-09-03T17:15:37.148Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:31.324Z"
     },
     "dog-parks": {
       "count": 50,
@@ -1183,7 +1213,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:37.708Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:06:32.387Z"
     },
     "picnic-spots": {
       "count": 496,
@@ -1195,7 +1231,13 @@
           "lon": 3.138076
         }
       ],
-      "updatedAt": "2026-09-03T17:15:38.969Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:06:34.884Z"
     },
     "viewpoints": {
       "count": 9,
@@ -1207,12 +1249,24 @@
           "lon": 3.058679
         }
       ],
-      "updatedAt": "2026-09-03T17:15:39.595Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:36.692Z"
     },
     "beaches": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:15:40.046Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:38.422Z"
     },
     "atms": {
       "count": 266,
@@ -1462,9 +1516,189 @@
           "lat": 50.660277,
           "lon": 3.139316,
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/2947600892",
+          "lat": 50.629881,
+          "lon": 3.055929,
+          "street": "Rue Léon Gambetta"
+        },
+        {
+          "id": "node/5267690928",
+          "lat": 50.630511,
+          "lon": 3.050718,
+          "street": "Rue Meurein"
+        },
+        {
+          "id": "node/8568267666",
+          "lat": 50.633413,
+          "lon": 3.055008,
+          "street": "Rue Masséna"
+        },
+        {
+          "id": "node/7678298260",
+          "lat": 50.632408,
+          "lon": 3.062294,
+          "street": "Place de Béthune"
+        },
+        {
+          "id": "node/2947609774",
+          "lat": 50.632059,
+          "lon": 3.062873,
+          "street": "Rue Jeanne Maillotte"
+        },
+        {
+          "id": "node/1624347156",
+          "lat": 50.624199,
+          "lon": 3.061395,
+          "street": "Rue Barthélémy Delespaul"
+        },
+        {
+          "id": "node/6413968836",
+          "lat": 50.634566,
+          "lon": 3.060906,
+          "street": "Rue de l'Hôpital Militaire"
+        },
+        {
+          "id": "node/8568267710",
+          "lat": 50.623283,
+          "lon": 3.053533,
+          "street": "Rue d'Iéna"
+        },
+        {
+          "id": "node/6840119267",
+          "lat": 50.636082,
+          "lon": 3.053754,
+          "street": "Boulevard de la Liberté"
+        },
+        {
+          "id": "node/2389876127",
+          "lat": 50.634188,
+          "lon": 3.048714,
+          "street": "Boulevard Vauban"
+        },
+        {
+          "id": "node/13724638502",
+          "lat": 50.630209,
+          "lon": 3.068842,
+          "street": "Place Roger Salengro"
+        },
+        {
+          "id": "node/5237219121",
+          "lat": 50.634969,
+          "lon": 3.064757,
+          "street": "Parvis des Justes"
+        },
+        {
+          "id": "node/1043788552",
+          "lat": 50.636162,
+          "lon": 3.062449,
+          "street": "Rue Jean Roisin"
+        },
+        {
+          "id": "node/2096244881",
+          "lat": 50.622679,
+          "lon": 3.06387,
+          "street": "Rue de Wazemmes"
+        },
+        {
+          "id": "node/5376506086",
+          "lat": 50.628015,
+          "lon": 3.045054,
+          "street": "Rue des Frères Vaillant"
+        },
+        {
+          "id": "node/6362694736",
+          "lat": 50.637135,
+          "lon": 3.058167,
+          "street": "Rue de Tenremonde"
+        },
+        {
+          "id": "node/8567356644",
+          "lat": 50.6224,
+          "lon": 3.050403,
+          "street": "Résidence Magenta"
+        },
+        {
+          "id": "node/8570203850",
+          "lat": 50.621133,
+          "lon": 3.058755,
+          "street": "Rue des Meuniers"
+        },
+        {
+          "id": "node/5376506085",
+          "lat": 50.628422,
+          "lon": 3.043096,
+          "street": "Place du Maréchal Leclerc"
+        },
+        {
+          "id": "node/5853194415",
+          "lat": 50.619868,
+          "lon": 3.054096,
+          "street": "Rue Kuhlmann"
+        },
+        {
+          "id": "node/6484362984",
+          "lat": 50.638569,
+          "lon": 3.054217,
+          "street": "Rue du Gros Gérard"
+        },
+        {
+          "id": "node/8570171103",
+          "lat": 50.622332,
+          "lon": 3.067815,
+          "street": "Rue Dupetit Thouars"
+        },
+        {
+          "id": "node/5541407330",
+          "lat": 50.622316,
+          "lon": 3.067833,
+          "street": "Rue de Fontenoy"
+        },
+        {
+          "id": "node/1638925096",
+          "lat": 50.619845,
+          "lon": 3.061297,
+          "street": "Rue d'Artois"
+        },
+        {
+          "id": "node/4236323819",
+          "lat": 50.636371,
+          "lon": 3.069786,
+          "street": "Place de la Gare"
+        },
+        {
+          "id": "node/8007833526",
+          "lat": 50.626327,
+          "lon": 3.040689,
+          "street": "Boulevard Bigo-Danel"
+        },
+        {
+          "id": "node/8666073574",
+          "lat": 50.629065,
+          "lon": 3.074695,
+          "street": "Boulevard Louis XIV"
+        },
+        {
+          "id": "node/797522929",
+          "lat": 50.61798,
+          "lon": 3.060605,
+          "street": "Rue de Bapaume"
+        },
+        {
+          "id": "node/8567348822",
+          "lat": 50.634286,
+          "lon": 3.041055,
+          "street": "Rue Colbert"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:42.477Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 23,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T09:06:42.991Z"
     },
     "recycling": {
       "count": 602,
@@ -1680,7 +1914,13 @@
           "lon": 3.076622
         }
       ],
-      "updatedAt": "2026-09-03T17:15:44.848Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:44.445Z"
     },
     "libraries": {
       "count": 100,
@@ -1890,7 +2130,13 @@
           "openingHours": "Tu 14:00-18:00; We 10:00-12:30,14:00-18:00; Fr 14:00-18:00; Sa 10:00-12:30,14:00-18:00; Th,Su,Mo off"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:45.353Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:06:46.030Z"
     },
     "outdoor-gyms": {
       "count": 82,
@@ -1921,7 +2167,13 @@
           "address": "Chemin des Ramiers 1"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:47.008Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:47.324Z"
     },
     "shelters": {
       "count": 9,
@@ -1931,9 +2183,33 @@
           "name": "Préau",
           "lat": 50.649916,
           "lon": 2.998513
+        },
+        {
+          "id": "node/5607768764",
+          "lat": 50.640516,
+          "lon": 3.038335,
+          "street": "Allée Marie Willan"
+        },
+        {
+          "id": "node/2035164779",
+          "lat": 50.644995,
+          "lon": 3.042311,
+          "street": "Allée Amélie Suard"
+        },
+        {
+          "id": "node/11297905421",
+          "lat": 50.650743,
+          "lon": 3.026441,
+          "street": "Allée du Béguinage"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:48.545Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:51.361Z"
     },
     "rest-areas": {
       "count": 1,
@@ -1945,12 +2221,24 @@
           "lon": 3.099023
         }
       ],
-      "updatedAt": "2026-09-03T17:15:49.293Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:52.524Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:15:49.807Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:53.770Z"
     },
     "post-offices": {
       "count": 63,
@@ -2203,17 +2491,35 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:15:50.645Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 38,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:55.028Z"
     },
     "showers": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:15:51.468Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:57.144Z"
     },
     "fireplaces": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:15:53.586Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:06:59.681Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2382,9 +2688,234 @@
       "updatedAt": "2026-08-18T03:58:26.176Z"
     },
     "bicycle-repair": {
-      "count": 7,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:15:55.328Z"
+      "count": 75,
+      "pois": [
+        {
+          "id": "node/7272010082",
+          "name": "Station de réparation vélo - Citadelle",
+          "lat": 50.638112,
+          "lon": 3.050378,
+          "fee": "no"
+        },
+        {
+          "id": "node/5701699242",
+          "name": "Btwin Village",
+          "lat": 50.617623,
+          "lon": 3.084012
+        },
+        {
+          "id": "node/11522028725",
+          "name": "Les Mains dans le Guidon - Euratech",
+          "lat": 50.633109,
+          "lon": 3.01729,
+          "address": "Rue Gallieni 2",
+          "openingHours": "Mo-Tu 10:00-13:00,14:00-19:00; We 10:00-13:00,14:00-21:00; Th-Sa 10:00-13:00,14:00-19:00; PH off",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11691473894",
+          "name": "Point SOS vélo ADAV",
+          "lat": 50.639362,
+          "lon": 3.011473,
+          "openingHours": "Mo 13:30-17:30; Tu-Fr 08:30-12:00,13:30-17:30, Sa 08:30-12:00"
+        },
+        {
+          "id": "node/9492550069",
+          "lat": 50.634298,
+          "lon": 3.061963,
+          "street": "Rue Pierre Dupont"
+        },
+        {
+          "id": "node/13457574322",
+          "lat": 50.624902,
+          "lon": 3.068803,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Boulevard Jean-Baptiste Lebas"
+        },
+        {
+          "id": "node/9660970786",
+          "lat": 50.630733,
+          "lon": 3.071074,
+          "street": "Place Augustin Laurent"
+        },
+        {
+          "id": "node/7272372354",
+          "lat": 50.636249,
+          "lon": 3.069774,
+          "street": "Place de la Gare"
+        },
+        {
+          "id": "node/13725849507",
+          "lat": 50.617181,
+          "lon": 3.061869,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue de Jussieu"
+        },
+        {
+          "id": "node/13265899927",
+          "lat": 50.617806,
+          "lon": 3.049573,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue du Faubourg des Postes"
+        },
+        {
+          "id": "node/13456389546",
+          "lat": 50.631028,
+          "lon": 3.077513,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Avenue du Président Hoover"
+        },
+        {
+          "id": "node/8721875995",
+          "lat": 50.63279,
+          "lon": 3.036308,
+          "street": "1re Avenue"
+        },
+        {
+          "id": "node/9612554459",
+          "lat": 50.629647,
+          "lon": 3.035512,
+          "openingHours": "24/7",
+          "street": "Rue de Turenne"
+        },
+        {
+          "id": "node/13773261547",
+          "lat": 50.630398,
+          "lon": 3.035406,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Place Leroux de Fauquemont"
+        },
+        {
+          "id": "node/11363691360",
+          "lat": 50.638594,
+          "lon": 3.073563,
+          "street": "Avenue Le Corbusier"
+        },
+        {
+          "id": "node/13452986534",
+          "lat": 50.623987,
+          "lon": 3.079568,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue de Cambrai"
+        },
+        {
+          "id": "node/13898895810",
+          "lat": 50.639641,
+          "lon": 3.07688,
+          "fee": "no",
+          "street": "Place de Valladolid"
+        },
+        {
+          "id": "node/11748236172",
+          "lat": 50.642706,
+          "lon": 3.071786,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue des Urbanistes"
+        },
+        {
+          "id": "node/13692496478",
+          "lat": 50.620524,
+          "lon": 3.034038,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Avenue Beethoven"
+        },
+        {
+          "id": "node/13279121429",
+          "lat": 50.643122,
+          "lon": 3.073906,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Boulevard Victor Basch"
+        },
+        {
+          "id": "node/13030880667",
+          "lat": 50.631297,
+          "lon": 3.089173,
+          "street": "Rue Bourjembois"
+        },
+        {
+          "id": "node/13330637330",
+          "lat": 50.632873,
+          "lon": 3.089581,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue Pierre Legrand"
+        },
+        {
+          "id": "node/13315835534",
+          "lat": 50.631757,
+          "lon": 3.022652,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue Hegel"
+        },
+        {
+          "id": "node/13249435078",
+          "lat": 50.642346,
+          "lon": 3.088762,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue du Faubourg de Roubaix"
+        },
+        {
+          "id": "node/13169186227",
+          "lat": 50.616796,
+          "lon": 3.024709,
+          "fee": "no",
+          "street": "Rue de l'Épinette"
+        },
+        {
+          "id": "node/13049864813",
+          "lat": 50.65466,
+          "lon": 3.056366,
+          "street": "Voie Verte de la Deûle"
+        },
+        {
+          "id": "node/11918396289",
+          "lat": 50.605485,
+          "lon": 3.077816,
+          "street": "Place de Halle"
+        },
+        {
+          "id": "node/12097193631",
+          "lat": 50.654185,
+          "lon": 3.073681,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue du Général de Gaulle"
+        },
+        {
+          "id": "node/13848447177",
+          "lat": 50.642024,
+          "lon": 3.10203,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Avenue des Acacias"
+        },
+        {
+          "id": "node/13005099439",
+          "lat": 50.603851,
+          "lon": 3.028101,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Rue Ambroise Paré"
+        }
+      ],
+      "stats": {
+        "free": 52,
+        "paid": 2,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:13.022Z"
     }
   }
 }

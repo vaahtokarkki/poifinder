@@ -1,6 +1,6 @@
 {
   "city": "yokohama",
-  "generatedAt": "2026-09-11T10:34:09.292Z",
+  "generatedAt": "2026-09-13T09:54:28.412Z",
   "categories": {
     "toilets": {
       "count": 280,
@@ -415,7 +415,13 @@
           "lon": 139.637881
         }
       ],
-      "updatedAt": "2026-09-03T17:42:36.655Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:53:43.681Z"
     },
     "parking": {
       "count": 13413,
@@ -615,7 +621,13 @@
           "lon": 139.62829
         }
       ],
-      "updatedAt": "2026-09-03T17:42:38.730Z"
+      "stats": {
+        "free": 39,
+        "paid": 348,
+        "stepFree": 19,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:53:56.041Z"
     },
     "charging-stations": {
       "count": 6,
@@ -627,7 +639,13 @@
           "lon": 139.688299
         }
       ],
-      "updatedAt": "2026-09-03T17:42:39.187Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:53:57.433Z"
     },
     "gas-stations": {
       "count": 106,
@@ -795,7 +813,13 @@
           "lon": 139.568984
         }
       ],
-      "updatedAt": "2026-09-03T17:42:39.706Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:53:59.221Z"
     },
     "ice-cream": {
       "count": 9,
@@ -839,7 +863,13 @@
           "openingHours": "Mo-Su 10:00-21:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:42:40.207Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:00.935Z"
     },
     "dog-parks": {
       "count": 3,
@@ -857,12 +887,24 @@
           "lon": 139.624821
         }
       ],
-      "updatedAt": "2026-09-03T17:42:40.687Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:03.318Z"
     },
     "picnic-spots": {
       "count": 60,
       "pois": [],
-      "updatedAt": "2026-09-03T17:42:41.940Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:06.663Z"
     },
     "viewpoints": {
       "count": 81,
@@ -985,7 +1027,13 @@
           "lon": 139.63468
         }
       ],
-      "updatedAt": "2026-09-03T17:42:42.588Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:07.677Z"
     },
     "beaches": {
       "count": 2,
@@ -997,7 +1045,13 @@
           "lon": 139.676402
         }
       ],
-      "updatedAt": "2026-09-03T17:42:43.019Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:08.555Z"
     },
     "atms": {
       "count": 168,
@@ -1205,6 +1259,12 @@
       "count": 284,
       "pois": [
         {
+          "id": "node/6912314586",
+          "name": "郵便ポスト",
+          "lat": 35.449659,
+          "lon": 139.629905
+        },
+        {
           "id": "node/3567799917",
           "lat": 35.443162,
           "lon": 139.638073,
@@ -1337,12 +1397,6 @@
           "street": "山下公園通り"
         },
         {
-          "id": "node/6912314586",
-          "name": "郵便ポスト",
-          "lat": 35.449659,
-          "lon": 139.629905
-        },
-        {
           "id": "node/3219758086",
           "lat": 35.451888,
           "lon": 139.631236,
@@ -1386,7 +1440,13 @@
           "street": "医大通り"
         }
       ],
-      "updatedAt": "2026-09-03T17:42:45.356Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:11.462Z"
     },
     "recycling": {
       "count": 26,
@@ -1439,7 +1499,13 @@
     "luggage-storage": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T17:42:47.507Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:12.341Z"
     },
     "libraries": {
       "count": 15,
@@ -1533,7 +1599,13 @@
           "openingHours": "Tu-Fr 09:30-19:00; Sa,Su,PH 09:30-17:00; Mo off"
         }
       ],
-      "updatedAt": "2026-09-03T17:42:48.007Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:13.508Z"
     },
     "outdoor-gyms": {
       "count": 3,
@@ -1556,7 +1628,13 @@
     "camp-sites": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:42:49.421Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:14.785Z"
     },
     "shelters": {
       "count": 7,
@@ -1574,7 +1652,13 @@
           "lon": 139.577642
         }
       ],
-      "updatedAt": "2026-09-03T17:42:50.867Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:17.963Z"
     },
     "rest-areas": {
       "count": 3,
@@ -1592,12 +1676,24 @@
           "lon": 139.594995
         }
       ],
-      "updatedAt": "2026-09-03T17:42:51.287Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:19.460Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:42:51.724Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:20.990Z"
     },
     "post-offices": {
       "count": 144,
@@ -1787,7 +1883,13 @@
           "lon": 139.610844
         }
       ],
-      "updatedAt": "2026-09-03T17:42:52.254Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:23.156Z"
     },
     "showers": {
       "count": 20,
@@ -1909,7 +2011,13 @@
           "openingHours": "Mo-Su 15:00-00:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:42:52.728Z"
+      "stats": {
+        "free": 0,
+        "paid": 5,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:24.425Z"
     },
     "fireplaces": {
       "count": 8,
@@ -1945,7 +2053,13 @@
           "lon": 139.570402
         }
       ],
-      "updatedAt": "2026-09-03T17:42:53.765Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:26.764Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2002,7 +2116,13 @@
     "bicycle-repair": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:42:54.205Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:54:28.310Z"
     }
   }
 }

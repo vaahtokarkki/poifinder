@@ -1,6 +1,6 @@
 {
   "city": "rovaniemi",
-  "generatedAt": "2026-09-11T10:27:35.790Z",
+  "generatedAt": "2026-09-13T08:22:12.838Z",
   "categories": {
     "toilets": {
       "count": 23,
@@ -136,7 +136,13 @@
           "lon": 25.787592
         }
       ],
-      "updatedAt": "2026-09-03T16:41:06.011Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:55.186Z"
     },
     "parking": {
       "count": 314,
@@ -252,7 +258,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:07.009Z"
+      "stats": {
+        "free": 136,
+        "paid": 13,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:56.352Z"
     },
     "charging-stations": {
       "count": 19,
@@ -311,10 +323,16 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:07.411Z"
+      "stats": {
+        "free": 0,
+        "paid": 13,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:57.034Z"
     },
     "gas-stations": {
-      "count": 19,
+      "count": 18,
       "pois": [
         {
           "id": "node/434075080",
@@ -433,16 +451,15 @@
           "lat": 66.544325,
           "lon": 25.843354,
           "openingHours": "24/7"
-        },
-        {
-          "id": "node/678828453",
-          "name": "Neste Rovaniemi Napapiiri",
-          "lat": 66.545288,
-          "lon": 25.850722,
-          "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:07.889Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:21:57.703Z"
     },
     "ice-cream": {
       "count": 1,
@@ -454,7 +471,13 @@
           "lon": 25.73777
         }
       ],
-      "updatedAt": "2026-09-03T16:41:08.328Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:58.483Z"
     },
     "dog-parks": {
       "count": 2,
@@ -467,12 +490,24 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:08.689Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:21:59.103Z"
     },
     "picnic-spots": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T16:41:09.968Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:00.813Z"
     },
     "viewpoints": {
       "count": 19,
@@ -509,7 +544,13 @@
           "lon": 25.641488
         }
       ],
-      "updatedAt": "2026-09-03T16:41:10.541Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:01.855Z"
     },
     "beaches": {
       "count": 16,
@@ -572,7 +613,13 @@
           "lon": 25.842887
         }
       ],
-      "updatedAt": "2026-09-03T16:41:10.983Z"
+      "stats": {
+        "free": 2,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:02.492Z"
     },
     "atms": {
       "count": 17,
@@ -658,7 +705,13 @@
           "street": "Joulupukin Pajakylän keskusaukio"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:12.343Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:03.808Z"
     },
     "recycling": {
       "count": 14,
@@ -758,7 +811,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:41:14.226Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:04.412Z"
     },
     "libraries": {
       "count": 4,
@@ -792,7 +851,13 @@
           "address": "Napapiirintie"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:14.610Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:04.945Z"
     },
     "outdoor-gyms": {
       "count": 9,
@@ -838,7 +903,13 @@
           "address": "Joulupukintie 1"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:15.946Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:05.482Z"
     },
     "shelters": {
       "count": 27,
@@ -934,17 +1005,35 @@
           "lon": 25.63162
         }
       ],
-      "updatedAt": "2026-09-03T16:41:17.416Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:07.476Z"
     },
     "rest-areas": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:41:17.888Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:08.032Z"
     },
     "dump-stations": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T16:41:18.288Z"
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:08.588Z"
     },
     "post-offices": {
       "count": 2,
@@ -958,12 +1047,24 @@
           "openingHours": "Mo-Su 09:00-18:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:41:18.680Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:09.222Z"
     },
     "showers": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T16:41:18.995Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:09.740Z"
     },
     "fireplaces": {
       "count": 14,
@@ -981,12 +1082,24 @@
           "lon": 25.867156
         }
       ],
-      "updatedAt": "2026-09-03T16:41:20.235Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:11.080Z"
     },
     "bicycle-repair": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T16:41:21.327Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:22:12.738Z"
     },
     "benches": {
       "count": 66,

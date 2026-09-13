@@ -1,6 +1,6 @@
 {
   "city": "reykjavik",
-  "generatedAt": "2026-09-11T10:28:11.050Z",
+  "generatedAt": "2026-09-13T08:26:52.048Z",
   "categories": {
     "toilets": {
       "count": 36,
@@ -402,7 +402,13 @@
           "lon": -21.838462
         }
       ],
-      "updatedAt": "2026-09-03T16:46:13.883Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:26:36.672Z"
     },
     "parking": {
       "count": 2270,
@@ -550,7 +556,13 @@
           "address": "Krókháls 5"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:15.096Z"
+      "stats": {
+        "free": 799,
+        "paid": 122,
+        "stepFree": 25,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:26:38.040Z"
     },
     "charging-stations": {
       "count": 166,
@@ -767,7 +779,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:15.684Z"
+      "stats": {
+        "free": 11,
+        "paid": 113,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:38.614Z"
     },
     "gas-stations": {
       "count": 58,
@@ -813,7 +831,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:16.133Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:39.244Z"
     },
     "ice-cream": {
       "count": 29,
@@ -970,7 +994,13 @@
           "address": "Nethylur 2"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:16.581Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:26:39.833Z"
     },
     "dog-parks": {
       "count": 6,
@@ -994,12 +1024,24 @@
           "lon": -21.802859
         }
       ],
-      "updatedAt": "2026-09-03T16:46:17.048Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:40.325Z"
     },
     "picnic-spots": {
       "count": 95,
       "pois": [],
-      "updatedAt": "2026-09-03T16:46:18.589Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:41.583Z"
     },
     "viewpoints": {
       "count": 21,
@@ -1018,7 +1060,13 @@
           "lon": -21.859433
         }
       ],
-      "updatedAt": "2026-09-03T16:46:19.240Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:42.223Z"
     },
     "beaches": {
       "count": 29,
@@ -1090,7 +1138,13 @@
           "lon": -21.791287
         }
       ],
-      "updatedAt": "2026-09-03T16:46:19.688Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:42.832Z"
     },
     "atms": {
       "count": 40,
@@ -1335,7 +1389,13 @@
           "street": "Eyjaleið"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:21.458Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:44.513Z"
     },
     "recycling": {
       "count": 105,
@@ -1556,7 +1616,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:24.023Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:45.042Z"
     },
     "libraries": {
       "count": 14,
@@ -1658,7 +1724,13 @@
           "openingHours": "Mo-Th 10:00-18:00; Fr 11:00-18:00; Sa off; Su 12:00-16:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:24.421Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:45.563Z"
     },
     "outdoor-gyms": {
       "count": 15,
@@ -1703,17 +1775,35 @@
           "lon": -21.809832
         }
       ],
-      "updatedAt": "2026-09-03T16:46:25.700Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:46.077Z"
     },
     "shelters": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T16:46:26.547Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:47.235Z"
     },
     "rest-areas": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:46:27.023Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:47.763Z"
     },
     "dump-stations": {
       "count": 1,
@@ -1725,7 +1815,13 @@
           "lon": -21.873565
         }
       ],
-      "updatedAt": "2026-09-03T16:46:27.365Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:48.204Z"
     },
     "post-offices": {
       "count": 5,
@@ -1745,12 +1841,24 @@
           "lon": -21.845439
         }
       ],
-      "updatedAt": "2026-09-03T16:46:27.848Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:48.676Z"
     },
     "showers": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T16:46:28.201Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:26:49.103Z"
     },
     "fireplaces": {
       "count": 9,
@@ -1762,7 +1870,13 @@
           "lon": -21.913797
         }
       ],
-      "updatedAt": "2026-09-03T16:46:29.148Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:50.323Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1886,6 +2000,13 @@
       "count": 25,
       "pois": [
         {
+          "id": "node/3804192958",
+          "name": "Reiðhjólastöð N1 Fossvogi",
+          "lat": 64.117469,
+          "lon": -21.899571,
+          "fee": "no"
+        },
+        {
           "id": "node/10976762600",
           "lat": 64.143102,
           "lon": -21.951371,
@@ -1942,13 +2063,6 @@
           "street": "Sólarleið"
         },
         {
-          "id": "node/3804192958",
-          "name": "Reiðhjólastöð N1 Fossvogi",
-          "lat": 64.117469,
-          "lon": -21.899571,
-          "fee": "no"
-        },
-        {
           "id": "node/7770188755",
           "lat": 64.126241,
           "lon": -21.858497,
@@ -1983,7 +2097,13 @@
           "street": "Norðurfell"
         }
       ],
-      "updatedAt": "2026-09-03T16:46:30.667Z"
+      "stats": {
+        "free": 21,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:26:51.946Z"
     }
   }
 }

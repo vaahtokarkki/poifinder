@@ -1,6 +1,6 @@
 {
   "city": "brighton",
-  "generatedAt": "2026-09-11T10:30:27.207Z",
+  "generatedAt": "2026-09-13T08:54:13.908Z",
   "categories": {
     "toilets": {
       "count": 65,
@@ -248,7 +248,13 @@
           "lon": -0.06257
         }
       ],
-      "updatedAt": "2026-09-03T17:08:39.062Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:39.744Z"
     },
     "parking": {
       "count": 1047,
@@ -456,7 +462,13 @@
           "lon": -0.18947
         }
       ],
-      "updatedAt": "2026-09-03T17:08:40.971Z"
+      "stats": {
+        "free": 72,
+        "paid": 44,
+        "stepFree": 16,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:44.485Z"
     },
     "charging-stations": {
       "count": 65,
@@ -523,7 +535,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:41.569Z"
+      "stats": {
+        "free": 1,
+        "paid": 35,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:46.104Z"
     },
     "gas-stations": {
       "count": 24,
@@ -599,7 +617,13 @@
           "openingHours": "Mo-Fr 05:30-11:30; Sa 05:30-22:30; Su 07:00-19:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:42.094Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:48.186Z"
     },
     "ice-cream": {
       "count": 25,
@@ -730,7 +754,13 @@
           "address": "Basin Road South"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:42.623Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:53:49.654Z"
     },
     "dog-parks": {
       "count": 1,
@@ -742,12 +772,24 @@
           "lon": -0.150413
         }
       ],
-      "updatedAt": "2026-09-03T17:08:43.045Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:50.685Z"
     },
     "picnic-spots": {
       "count": 140,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:44.220Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:52.822Z"
     },
     "viewpoints": {
       "count": 6,
@@ -784,7 +826,13 @@
           "lon": -0.093777
         }
       ],
-      "updatedAt": "2026-09-03T17:08:44.805Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:53.864Z"
     },
     "beaches": {
       "count": 18,
@@ -820,7 +868,13 @@
           "lon": -0.245862
         }
       ],
-      "updatedAt": "2026-09-03T17:08:45.243Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:54.629Z"
     },
     "atms": {
       "count": 69,
@@ -933,6 +987,24 @@
     "post-boxes": {
       "count": 390,
       "pois": [
+        {
+          "id": "node/892734783",
+          "name": "Beaconsfield Road",
+          "lat": 50.837442,
+          "lon": -0.140346
+        },
+        {
+          "id": "node/827330532",
+          "name": "Florence Road",
+          "lat": 50.838116,
+          "lon": -0.136102
+        },
+        {
+          "id": "node/827334281",
+          "name": "Wilbury Road",
+          "lat": 50.827414,
+          "lon": -0.166811
+        },
         {
           "id": "node/2523514358",
           "lat": 50.822234,
@@ -1094,27 +1166,15 @@
           "lat": 50.825402,
           "lon": -0.148052,
           "street": "Upper North Street"
-        },
-        {
-          "id": "node/3813955391",
-          "lat": 50.820798,
-          "lon": -0.12564,
-          "street": "Upper Bedford Street"
-        },
-        {
-          "id": "node/1274103414",
-          "lat": 50.828651,
-          "lon": -0.144071,
-          "street": "Buckingham Road"
-        },
-        {
-          "id": "node/5920038465",
-          "lat": 50.82841,
-          "lon": -0.128867,
-          "street": "Ewart Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:48.160Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:58.138Z"
     },
     "recycling": {
       "count": 228,
@@ -1316,7 +1376,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:50.809Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:53:59.119Z"
     },
     "libraries": {
       "count": 27,
@@ -1500,7 +1566,13 @@
           "lon": -0.041861
         }
       ],
-      "updatedAt": "2026-09-03T17:08:51.262Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:00.144Z"
     },
     "outdoor-gyms": {
       "count": 6,
@@ -1536,22 +1608,46 @@
           "lon": -0.055786
         }
       ],
-      "updatedAt": "2026-09-03T17:08:52.033Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:01.165Z"
     },
     "shelters": {
       "count": 26,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:52.688Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:02.683Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:53.168Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:03.843Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:53.487Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:04.898Z"
     },
     "post-offices": {
       "count": 36,
@@ -1793,17 +1889,35 @@
           "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-12:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:53.881Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:06.121Z"
     },
     "showers": {
       "count": 3,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:54.220Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:07.636Z"
     },
     "fireplaces": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:08:55.168Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:09.912Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1941,7 +2055,13 @@
           "street": "Undercliff Walk"
         }
       ],
-      "updatedAt": "2026-09-03T17:08:56.448Z"
+      "stats": {
+        "free": 3,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:54:13.806Z"
     }
   }
 }

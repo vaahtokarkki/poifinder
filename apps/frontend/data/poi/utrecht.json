@@ -1,6 +1,6 @@
 {
   "city": "utrecht",
-  "generatedAt": "2026-09-11T10:29:57.261Z",
+  "generatedAt": "2026-09-13T08:43:42.032Z",
   "categories": {
     "toilets": {
       "count": 64,
@@ -554,7 +554,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:32.130Z"
+      "stats": {
+        "free": 3,
+        "paid": 3,
+        "stepFree": 28,
+        "partlyStepFree": 17
+      },
+      "updatedAt": "2026-09-13T08:42:51.164Z"
     },
     "parking": {
       "count": 8684,
@@ -782,7 +788,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:33.914Z"
+      "stats": {
+        "free": 700,
+        "paid": 752,
+        "stepFree": 53,
+        "partlyStepFree": 14
+      },
+      "updatedAt": "2026-09-13T08:43:00.859Z"
     },
     "charging-stations": {
       "count": 1395,
@@ -896,7 +908,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:34.775Z"
+      "stats": {
+        "free": 6,
+        "paid": 718,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:02.230Z"
     },
     "gas-stations": {
       "count": 65,
@@ -1138,7 +1156,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:35.365Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:43:03.265Z"
     },
     "ice-cream": {
       "count": 29,
@@ -1330,7 +1354,13 @@
           "lon": 5.105014
         }
       ],
-      "updatedAt": "2026-09-03T17:01:35.926Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:43:05.709Z"
     },
     "dog-parks": {
       "count": 51,
@@ -1382,7 +1412,13 @@
           "wheelchair": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:36.428Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:43:07.273Z"
     },
     "picnic-spots": {
       "count": 700,
@@ -1406,7 +1442,13 @@
           "lon": 5.181556
         }
       ],
-      "updatedAt": "2026-09-03T17:01:38.010Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:11.123Z"
     },
     "viewpoints": {
       "count": 18,
@@ -1438,7 +1480,13 @@
           "lon": 5.05278
         }
       ],
-      "updatedAt": "2026-09-03T17:01:38.752Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:12.543Z"
     },
     "beaches": {
       "count": 12,
@@ -1469,7 +1517,13 @@
           "lon": 5.024715
         }
       ],
-      "updatedAt": "2026-09-03T17:01:39.315Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:13.884Z"
     },
     "atms": {
       "count": 127,
@@ -1500,6 +1554,12 @@
     "post-boxes": {
       "count": 187,
       "pois": [
+        {
+          "id": "node/4244305338",
+          "name": "Zambesidreef",
+          "lat": 52.120632,
+          "lon": 5.110303
+        },
         {
           "id": "node/877813078",
           "lat": 52.089653,
@@ -1674,15 +1734,15 @@
           "lat": 52.09019,
           "lon": 5.143651,
           "street": "Stadhouderslaan"
-        },
-        {
-          "id": "node/12437460380",
-          "lat": 52.083062,
-          "lon": 5.139985,
-          "street": "Adriaen van Ostadelaan"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:42.159Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:19.307Z"
     },
     "recycling": {
       "count": 2562,
@@ -1899,7 +1959,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:44.874Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:21.223Z"
     },
     "libraries": {
       "count": 220,
@@ -2116,7 +2182,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:45.540Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:23.400Z"
     },
     "outdoor-gyms": {
       "count": 40,
@@ -2214,7 +2286,13 @@
           "address": "Burgemeester Van der Borchlaan 7"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:47.345Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:24.904Z"
     },
     "shelters": {
       "count": 13,
@@ -2250,7 +2328,13 @@
           "street": "Langerakbaan"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:49.368Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:29.721Z"
     },
     "rest-areas": {
       "count": 10,
@@ -2280,12 +2364,24 @@
           "lon": 5.063002
         }
       ],
-      "updatedAt": "2026-09-03T17:01:49.941Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:31.165Z"
     },
     "dump-stations": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:01:50.408Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:32.643Z"
     },
     "post-offices": {
       "count": 19,
@@ -2386,14 +2482,6 @@
           "wheelchair": "yes"
         },
         {
-          "id": "node/13775759253",
-          "name": "DPD  pakketpunt",
-          "lat": 52.088272,
-          "lon": 5.210266,
-          "address": "Kwikstaartlaan 12",
-          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:00-18:00; Su 10:00-18:00"
-        },
-        {
           "id": "node/12460871754",
           "name": "DHL pakketpunt",
           "lat": 52.088271,
@@ -2411,12 +2499,24 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:51.122Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:34.085Z"
     },
     "showers": {
       "count": 11,
       "pois": [],
-      "updatedAt": "2026-09-03T17:01:51.588Z"
+      "stats": {
+        "free": 3,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:35.084Z"
     },
     "fireplaces": {
       "count": 14,
@@ -2428,7 +2528,13 @@
           "lon": 5.100895
         }
       ],
-      "updatedAt": "2026-09-03T17:01:52.633Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:37.203Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2736,7 +2842,13 @@
           "street": "Brinkwal"
         }
       ],
-      "updatedAt": "2026-09-03T17:01:54.522Z"
+      "stats": {
+        "free": 5,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:43:41.930Z"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "city": "barcelona",
-  "generatedAt": "2026-09-11T10:31:32.397Z",
+  "generatedAt": "2026-09-13T09:09:59.123Z",
   "categories": {
     "toilets": {
       "count": 344,
@@ -557,7 +557,13 @@
           "lon": 2.227468
         }
       ],
-      "updatedAt": "2026-09-03T17:16:54.385Z"
+      "stats": {
+        "free": 40,
+        "paid": 0,
+        "stepFree": 53,
+        "partlyStepFree": 11
+      },
+      "updatedAt": "2026-09-13T09:09:02.944Z"
     },
     "parking": {
       "count": 1115,
@@ -783,7 +789,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:55.869Z"
+      "stats": {
+        "free": 253,
+        "paid": 428,
+        "stepFree": 75,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:09:08.073Z"
     },
     "charging-stations": {
       "count": 187,
@@ -996,7 +1008,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:56.598Z"
+      "stats": {
+        "free": 4,
+        "paid": 24,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:09:09.545Z"
     },
     "gas-stations": {
       "count": 140,
@@ -1221,7 +1239,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:57.410Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:09:11.144Z"
     },
     "ice-cream": {
       "count": 157,
@@ -1434,7 +1458,13 @@
           "address": "Carrer de Jaume I 1B"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:58.143Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T09:09:12.783Z"
     },
     "dog-parks": {
       "count": 141,
@@ -1471,7 +1501,13 @@
           "address": "Carrer de Joan Sales 2X"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:58.742Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 9
+      },
+      "updatedAt": "2026-09-13T09:09:14.104Z"
     },
     "picnic-spots": {
       "count": 306,
@@ -1514,7 +1550,13 @@
           "lon": 2.084707
         }
       ],
-      "updatedAt": "2026-09-03T17:17:00.342Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:09:17.352Z"
     },
     "viewpoints": {
       "count": 136,
@@ -1708,7 +1750,13 @@
           "lon": 2.13119
         }
       ],
-      "updatedAt": "2026-09-03T17:17:01.172Z"
+      "stats": {
+        "free": 0,
+        "paid": 4,
+        "stepFree": 3,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T09:09:19.749Z"
     },
     "beaches": {
       "count": 17,
@@ -1793,7 +1841,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:01.922Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:09:21.801Z"
     },
     "atms": {
       "count": 484,
@@ -2018,6 +2072,18 @@
       "count": 386,
       "pois": [
         {
+          "id": "node/13016532454",
+          "name": "Bústia",
+          "lat": 41.372691,
+          "lon": 2.167715
+        },
+        {
+          "id": "node/11945841369",
+          "name": "Amazon locker - berlmopan",
+          "lat": 41.412843,
+          "lon": 2.172979
+        },
+        {
           "id": "node/2487005887",
           "lat": 41.387411,
           "lon": 2.168226,
@@ -2184,21 +2250,15 @@
           "lat": 41.383213,
           "lon": 2.183594,
           "street": "Pla de Palau"
-        },
-        {
-          "id": "node/14107679928",
-          "lat": 41.378383,
-          "lon": 2.179263,
-          "street": "Plaça del Duc de Medinaceli"
-        },
-        {
-          "id": "node/3058125175",
-          "lat": 41.399492,
-          "lon": 2.169865,
-          "street": "Plaça de Mossèn Jacint Verdaguer"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:05.505Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:09:29.280Z"
     },
     "recycling": {
       "count": 4572,
@@ -2449,7 +2509,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:09.109Z"
+      "stats": {
+        "free": 0,
+        "paid": 4,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:09:30.923Z"
     },
     "libraries": {
       "count": 107,
@@ -2668,7 +2734,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:10.021Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 35,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:09:33.544Z"
     },
     "outdoor-gyms": {
       "count": 138,
@@ -2705,7 +2777,13 @@
           "address": "Passeig de Valldaura 15"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:12.288Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:09:35.163Z"
     },
     "shelters": {
       "count": 3,
@@ -2723,7 +2801,13 @@
           "street": "Carretera de les Aigües"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:14.128Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:09:41.700Z"
     },
     "rest-areas": {
       "count": 3,
@@ -2735,12 +2819,24 @@
           "lon": 2.117635
         }
       ],
-      "updatedAt": "2026-09-03T17:17:14.693Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:09:43.244Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:17:15.265Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:09:44.643Z"
     },
     "post-offices": {
       "count": 63,
@@ -2850,17 +2946,35 @@
           "openingHours": "Mo-Fr 08:30-20:30"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:15.762Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:09:45.985Z"
     },
     "showers": {
       "count": 65,
       "pois": [],
-      "updatedAt": "2026-09-03T17:17:16.209Z"
+      "stats": {
+        "free": 46,
+        "paid": 0,
+        "stepFree": 7,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:09:47.846Z"
     },
     "fireplaces": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:17:17.448Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:09:50.303Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3016,14 +3130,6 @@
           "fee": "no"
         },
         {
-          "id": "node/12230309781",
-          "lat": 41.387364,
-          "lon": 2.144683,
-          "openingHours": "24/7",
-          "fee": "no",
-          "street": "Carrer de París"
-        },
-        {
           "id": "node/5588884548",
           "name": "FGC Estació Plaça d'Espanya",
           "lat": 41.374642,
@@ -3036,21 +3142,6 @@
           "lat": 41.373641,
           "lon": 2.145564,
           "address": "Carretera de la Bordeta 44"
-        },
-        {
-          "id": "node/12250588543",
-          "lat": 41.394356,
-          "lon": 2.197515,
-          "address": "Carrer del Doctor Trueta 107-109",
-          "fee": "no",
-          "street": "Carrer del Doctor Trueta"
-        },
-        {
-          "id": "node/13175871512",
-          "lat": 41.384169,
-          "lon": 2.135253,
-          "fee": "yes",
-          "street": "Carrer de Novell"
         },
         {
           "id": "node/7678151621",
@@ -3067,6 +3158,45 @@
           "lon": 2.137711,
           "address": "Carrer de la Noguera Pallaresa 25",
           "openingHours": "Mo-Tu 16:00-20:00; Th-Fr 16:00-20:00"
+        },
+        {
+          "id": "node/11513593769",
+          "name": "Punt Bici",
+          "lat": 41.381201,
+          "lon": 2.1075,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/6370152862",
+          "name": "Esplugues Collserola",
+          "lat": 41.393581,
+          "lon": 2.093883,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/12230309781",
+          "lat": 41.387364,
+          "lon": 2.144683,
+          "openingHours": "24/7",
+          "fee": "no",
+          "street": "Carrer de París"
+        },
+        {
+          "id": "node/12250588543",
+          "lat": 41.394356,
+          "lon": 2.197515,
+          "address": "Carrer del Doctor Trueta 107-109",
+          "fee": "no",
+          "street": "Carrer del Doctor Trueta"
+        },
+        {
+          "id": "node/13175871512",
+          "lat": 41.384169,
+          "lon": 2.135253,
+          "fee": "yes",
+          "street": "Carrer de Novell"
         },
         {
           "id": "node/13905718796",
@@ -3170,14 +3300,6 @@
           "street": "Carrer de Narcís Monturiol"
         },
         {
-          "id": "node/11513593769",
-          "name": "Punt Bici",
-          "lat": 41.381201,
-          "lon": 2.1075,
-          "openingHours": "24/7",
-          "fee": "no"
-        },
-        {
           "id": "node/7385638228",
           "lat": 41.366085,
           "lon": 2.113583,
@@ -3189,15 +3311,15 @@
           "lat": 41.369772,
           "lon": 2.106987,
           "street": "Avinguda del Masnou"
-        },
-        {
-          "id": "node/12409752847",
-          "lat": 41.358473,
-          "lon": 2.113042,
-          "street": "Carretera del Mig"
         }
       ],
-      "updatedAt": "2026-09-03T17:17:19.832Z"
+      "stats": {
+        "free": 8,
+        "paid": 7,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:09:59.022Z"
     }
   }
 }

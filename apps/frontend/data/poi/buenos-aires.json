@@ -1,6 +1,6 @@
 {
   "city": "buenos-aires",
-  "generatedAt": "2026-09-11T10:34:31.030Z",
+  "generatedAt": "2026-09-13T10:05:13.057Z",
   "categories": {
     "toilets": {
       "count": 134,
@@ -533,7 +533,13 @@
           "lon": -58.502606
         }
       ],
-      "updatedAt": "2026-09-03T17:48:46.742Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 16,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T10:04:28.671Z"
     },
     "parking": {
       "count": 1180,
@@ -744,7 +750,13 @@
           "address": "Tucumán 3153"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:48.239Z"
+      "stats": {
+        "free": 86,
+        "paid": 362,
+        "stepFree": 3,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T10:04:36.737Z"
     },
     "charging-stations": {
       "count": 13,
@@ -796,7 +808,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:48.767Z"
+      "stats": {
+        "free": 0,
+        "paid": 7,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:04:38.312Z"
     },
     "gas-stations": {
       "count": 268,
@@ -997,7 +1015,13 @@
           "lon": -58.473086
         }
       ],
-      "updatedAt": "2026-09-03T17:48:49.440Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:04:41.504Z"
     },
     "ice-cream": {
       "count": 544,
@@ -1206,7 +1230,13 @@
           "lon": -58.39163
         }
       ],
-      "updatedAt": "2026-09-03T17:48:50.273Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 14,
+        "partlyStepFree": 8
+      },
+      "updatedAt": "2026-09-13T10:04:43.690Z"
     },
     "dog-parks": {
       "count": 56,
@@ -1231,7 +1261,13 @@
           "address": "Avenida Chorroarín 384"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:50.793Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:04:45.013Z"
     },
     "picnic-spots": {
       "count": 585,
@@ -1249,7 +1285,13 @@
           "lon": -58.442624
         }
       ],
-      "updatedAt": "2026-09-03T17:48:52.048Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:04:47.398Z"
     },
     "viewpoints": {
       "count": 50,
@@ -1327,12 +1369,24 @@
           "lon": -58.442625
         }
       ],
-      "updatedAt": "2026-09-03T17:48:52.608Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:04:49.444Z"
     },
     "beaches": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:48:53.127Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:04:50.813Z"
     },
     "atms": {
       "count": 482,
@@ -1561,6 +1615,18 @@
       "count": 68,
       "pois": [
         {
+          "id": "node/4842882539",
+          "name": "OCA Buzon",
+          "lat": -34.612473,
+          "lon": -58.373853
+        },
+        {
+          "id": "node/4289340904",
+          "name": "Correo Argentino",
+          "lat": -34.586901,
+          "lon": -58.385644
+        },
+        {
           "id": "node/12038695274",
           "lat": -34.603765,
           "lon": -58.380904,
@@ -1705,12 +1771,6 @@
           "street": "Riobamba"
         },
         {
-          "id": "node/4842882539",
-          "name": "OCA Buzon",
-          "lat": -34.612473,
-          "lon": -58.373853
-        },
-        {
           "id": "node/12014244657",
           "lat": -34.615534,
           "lon": -58.385999,
@@ -1733,15 +1793,15 @@
           "lat": -34.593037,
           "lon": -58.38978,
           "street": "Montevideo"
-        },
-        {
-          "id": "node/10738397580",
-          "lat": -34.617564,
-          "lon": -58.377407,
-          "street": "Piedras"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:55.547Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:04:55.440Z"
     },
     "recycling": {
       "count": 268,
@@ -1983,7 +2043,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:48:58.252Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:04:57.035Z"
     },
     "libraries": {
       "count": 91,
@@ -2200,7 +2266,13 @@
           "lon": -58.418554
         }
       ],
-      "updatedAt": "2026-09-03T17:48:58.748Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:04:58.505Z"
     },
     "outdoor-gyms": {
       "count": 249,
@@ -2259,12 +2331,24 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:49:00.688Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:00.340Z"
     },
     "shelters": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:49:01.627Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:02.520Z"
     },
     "rest-areas": {
       "count": 4,
@@ -2276,12 +2360,24 @@
           "lon": -58.388308
         }
       ],
-      "updatedAt": "2026-09-03T17:49:02.207Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:03.780Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:49:02.607Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:04.755Z"
     },
     "post-offices": {
       "count": 75,
@@ -2365,7 +2461,13 @@
           "openingHours": "Mo-Sa 09:00-18:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:49:03.125Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T10:05:05.621Z"
     },
     "showers": {
       "count": 13,
@@ -2379,12 +2481,24 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:49:03.521Z"
+      "stats": {
+        "free": 12,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:06.865Z"
     },
     "fireplaces": {
       "count": 42,
       "pois": [],
-      "updatedAt": "2026-09-03T17:49:04.567Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:09.117Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2490,6 +2604,14 @@
       "count": 19,
       "pois": [
         {
+          "id": "node/4309114499",
+          "name": "Bicicletería Paraná",
+          "lat": -34.607456,
+          "lon": -58.418698,
+          "address": "Bulnes 294",
+          "fee": "yes"
+        },
+        {
           "id": "node/7281521064",
           "lat": -34.610602,
           "lon": -58.409887,
@@ -2506,14 +2628,6 @@
           "lat": -34.609083,
           "lon": -58.417329,
           "street": "Mario Bravo"
-        },
-        {
-          "id": "node/4309114499",
-          "name": "Bicicletería Paraná",
-          "lat": -34.607456,
-          "lon": -58.418698,
-          "address": "Bulnes 294",
-          "fee": "yes"
         },
         {
           "id": "node/12297374021",
@@ -2582,7 +2696,13 @@
           "street": "Deheza"
         }
       ],
-      "updatedAt": "2026-09-03T17:49:07.483Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:12.955Z"
     }
   }
 }

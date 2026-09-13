@@ -1,6 +1,6 @@
 {
   "city": "boston",
-  "generatedAt": "2026-09-11T10:32:15.759Z",
+  "generatedAt": "2026-09-13T09:25:26.395Z",
   "categories": {
     "toilets": {
       "count": 182,
@@ -648,7 +648,13 @@
           "lon": -71.070378
         }
       ],
-      "updatedAt": "2026-09-03T17:25:49.242Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:24:45.153Z"
     },
     "parking": {
       "count": 2270,
@@ -881,7 +887,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:54.324Z"
+      "stats": {
+        "free": 363,
+        "paid": 194,
+        "stepFree": 14,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:24:49.505Z"
     },
     "charging-stations": {
       "count": 59,
@@ -972,7 +984,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:55.701Z"
+      "stats": {
+        "free": 5,
+        "paid": 26,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:51.071Z"
     },
     "gas-stations": {
       "count": 100,
@@ -1185,7 +1203,13 @@
           "address": "Boston Avenue 590"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:57.154Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:52.501Z"
     },
     "ice-cream": {
       "count": 65,
@@ -1405,7 +1429,13 @@
           "address": "Beacon Street 1010"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:58.869Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 10,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:24:55.243Z"
     },
     "dog-parks": {
       "count": 54,
@@ -1584,7 +1614,13 @@
           "address": "Newton Street and Goddard Avenue"
         }
       ],
-      "updatedAt": "2026-09-03T17:25:59.648Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:24:56.854Z"
     },
     "picnic-spots": {
       "count": 763,
@@ -1608,7 +1644,13 @@
           "lon": -71.088486
         }
       ],
-      "updatedAt": "2026-09-03T17:26:01.807Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:24:59.804Z"
     },
     "viewpoints": {
       "count": 59,
@@ -1685,7 +1727,13 @@
           "lon": -71.147128
         }
       ],
-      "updatedAt": "2026-09-03T17:26:02.840Z"
+      "stats": {
+        "free": 0,
+        "paid": 2,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:25:01.407Z"
     },
     "beaches": {
       "count": 61,
@@ -1775,7 +1823,13 @@
           "lon": -70.980095
         }
       ],
-      "updatedAt": "2026-09-03T17:26:03.749Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:25:02.844Z"
     },
     "atms": {
       "count": 265,
@@ -2011,6 +2065,38 @@
       "count": 388,
       "pois": [
         {
+          "id": "node/7921481795",
+          "name": "FedEx Drop Box",
+          "lat": 42.345814,
+          "lon": -71.08328,
+          "address": "Belvidere Street 101",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/617230474",
+          "name": "United States Postal Service",
+          "lat": 42.379543,
+          "lon": -71.096546
+        },
+        {
+          "id": "node/4455964264",
+          "name": "USPS",
+          "lat": 42.395794,
+          "lon": -71.084109
+        },
+        {
+          "id": "node/476056995",
+          "name": "Post office Box",
+          "lat": 42.3435,
+          "lon": -71.142698
+        },
+        {
+          "id": "node/5743653921",
+          "name": "Malden",
+          "lat": 42.427049,
+          "lon": -71.067008
+        },
+        {
           "id": "node/7623453155",
           "lat": 42.357749,
           "lon": -71.05928,
@@ -2165,46 +2251,15 @@
           "lat": 42.350238,
           "lon": -71.069343,
           "street": "Stuart Street"
-        },
-        {
-          "id": "node/7748212865",
-          "lat": 42.351606,
-          "lon": -71.071455,
-          "address": "Boylston Street 344",
-          "wheelchair": "yes",
-          "street": "Boylston Street"
-        },
-        {
-          "id": "node/13272572692",
-          "lat": 42.3486,
-          "lon": -71.065865,
-          "street": "Tremont Street"
-        },
-        {
-          "id": "node/7748212841",
-          "lat": 42.352969,
-          "lon": -71.073257,
-          "address": "Commonwealth Avenue 42",
-          "wheelchair": "yes",
-          "street": "Commonwealth Avenue"
-        },
-        {
-          "id": "node/7765630047",
-          "lat": 42.354818,
-          "lon": -71.075084,
-          "address": "Beacon Street 136",
-          "wheelchair": "yes",
-          "street": "Beacon Street"
-        },
-        {
-          "id": "node/9890769382",
-          "lat": 42.348871,
-          "lon": -71.071996,
-          "address": "Clarendon Street 133",
-          "street": "Berkeley Street"
         }
       ],
-      "updatedAt": "2026-09-03T17:26:06.320Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 62,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:25:06.738Z"
     },
     "recycling": {
       "count": 408,
@@ -2416,7 +2471,13 @@
     "luggage-storage": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:26:09.072Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:25:08.341Z"
     },
     "libraries": {
       "count": 255,
@@ -2627,7 +2688,13 @@
           "lon": -71.049933
         }
       ],
-      "updatedAt": "2026-09-03T17:26:09.906Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 17,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:25:11.089Z"
     },
     "outdoor-gyms": {
       "count": 29,
@@ -2665,12 +2732,24 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:26:11.727Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:25:12.495Z"
     },
     "shelters": {
       "count": 15,
       "pois": [],
-      "updatedAt": "2026-09-03T17:26:12.742Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:25:14.465Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2682,12 +2761,24 @@
           "lon": -71.073249
         }
       ],
-      "updatedAt": "2026-09-03T17:26:13.247Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:25:15.681Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:26:13.647Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:25:16.800Z"
     },
     "post-offices": {
       "count": 73,
@@ -2917,17 +3008,35 @@
           "address": "Holyoke Place 10"
         }
       ],
-      "updatedAt": "2026-09-03T17:26:14.150Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T09:25:17.942Z"
     },
     "showers": {
       "count": 10,
       "pois": [],
-      "updatedAt": "2026-09-03T17:26:14.607Z"
+      "stats": {
+        "free": 5,
+        "paid": 2,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:25:18.933Z"
     },
     "fireplaces": {
       "count": 11,
       "pois": [],
-      "updatedAt": "2026-09-03T17:26:15.935Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:25:20.911Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3112,6 +3221,14 @@
       "count": 60,
       "pois": [
         {
+          "id": "node/9148554586",
+          "name": "Kittie Knox Community Cycle Center",
+          "lat": 42.372034,
+          "lon": -71.076641,
+          "openingHours": "Mo-Su 07:00-19:00",
+          "fee": "no"
+        },
+        {
           "id": "node/3719053757",
           "lat": 42.35483,
           "lon": -71.055948,
@@ -3153,14 +3270,6 @@
           "openingHours": "24/7",
           "fee": "no",
           "street": "Dr. Paul Dudley White Path"
-        },
-        {
-          "id": "node/9148554586",
-          "name": "Kittie Knox Community Cycle Center",
-          "lat": 42.372034,
-          "lon": -71.076641,
-          "openingHours": "Mo-Su 07:00-19:00",
-          "fee": "no"
         },
         {
           "id": "node/3190278367",
@@ -3319,7 +3428,13 @@
           "street": "Morgan Way"
         }
       ],
-      "updatedAt": "2026-09-03T17:26:18.391Z"
+      "stats": {
+        "free": 16,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:25:26.293Z"
     }
   }
 }

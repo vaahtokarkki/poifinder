@@ -1,6 +1,6 @@
 {
   "city": "dublin",
-  "generatedAt": "2026-09-11T10:30:42.442Z",
+  "generatedAt": "2026-09-13T08:58:19.846Z",
   "categories": {
     "toilets": {
       "count": 140,
@@ -530,7 +530,13 @@
           "address": "Lakelands Road 9"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:03.789Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 19,
+        "partlyStepFree": 6
+      },
+      "updatedAt": "2026-09-13T08:57:29.324Z"
     },
     "parking": {
       "count": 2974,
@@ -753,7 +759,13 @@
           "address": "Earlsfort Terrace"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:05.382Z"
+      "stats": {
+        "free": 329,
+        "paid": 177,
+        "stepFree": 112,
+        "partlyStepFree": 7
+      },
+      "updatedAt": "2026-09-13T08:57:36.167Z"
     },
     "charging-stations": {
       "count": 111,
@@ -908,7 +920,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:05.943Z"
+      "stats": {
+        "free": 11,
+        "paid": 77,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:37.162Z"
     },
     "gas-stations": {
       "count": 97,
@@ -1145,7 +1163,13 @@
           "openingHours": "Mo-Su 06:00-22:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:06.447Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:57:38.505Z"
     },
     "ice-cream": {
       "count": 33,
@@ -1308,7 +1332,13 @@
           "openingHours": "Summer Weekends only"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:07.022Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:57:40.023Z"
     },
     "dog-parks": {
       "count": 6,
@@ -1326,7 +1356,13 @@
           "lon": -6.306604
         }
       ],
-      "updatedAt": "2026-09-03T17:11:07.449Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:57:41.301Z"
     },
     "picnic-spots": {
       "count": 237,
@@ -1338,7 +1374,13 @@
           "lon": -6.314185
         }
       ],
-      "updatedAt": "2026-09-03T17:11:08.783Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:44.023Z"
     },
     "viewpoints": {
       "count": 14,
@@ -1356,7 +1398,13 @@
           "lon": -6.253369
         }
       ],
-      "updatedAt": "2026-09-03T17:11:09.517Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:45.641Z"
     },
     "beaches": {
       "count": 9,
@@ -1386,7 +1434,13 @@
           "lon": -6.139379
         }
       ],
-      "updatedAt": "2026-09-03T17:11:10.013Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:46.903Z"
     },
     "atms": {
       "count": 234,
@@ -1600,52 +1654,10 @@
       "count": 578,
       "pois": [
         {
-          "id": "node/460836987",
-          "lat": 53.351434,
-          "lon": -6.260797,
-          "street": "O'Connell Street Upper"
-        },
-        {
-          "id": "node/2522619209",
-          "lat": 53.351208,
-          "lon": -6.258725,
-          "street": "Marlborough Street"
-        },
-        {
-          "id": "node/5304007532",
-          "lat": 53.348152,
-          "lon": -6.259323,
-          "street": "O'Connell Street Lower"
-        },
-        {
           "id": "node/2528630060",
           "name": "Lower Abbey Street",
           "lat": 53.348902,
           "lon": -6.256831
-        },
-        {
-          "id": "node/5366352904",
-          "lat": 53.346797,
-          "lon": -6.259464,
-          "street": "Aston Quay"
-        },
-        {
-          "id": "node/8946977845",
-          "lat": 53.347269,
-          "lon": -6.257121,
-          "street": "Hawkins Street"
-        },
-        {
-          "id": "node/1488938279",
-          "lat": 53.34858,
-          "lon": -6.255151,
-          "street": "Old Abbey Street"
-        },
-        {
-          "id": "node/460836976",
-          "lat": 53.353489,
-          "lon": -6.259291,
-          "street": "Parnell Street"
         },
         {
           "id": "node/3579557633",
@@ -1664,30 +1676,6 @@
           "name": "Jervis St. (Mary Street)",
           "lat": 53.34883,
           "lon": -6.26658
-        },
-        {
-          "id": "node/10066606427",
-          "lat": 53.345948,
-          "lon": -6.259245,
-          "street": "Westmoreland Street"
-        },
-        {
-          "id": "node/11248055094",
-          "lat": 53.345954,
-          "lon": -6.263066,
-          "street": "Wellington Quay"
-        },
-        {
-          "id": "node/5382975623",
-          "lat": 53.346007,
-          "lon": -6.256718,
-          "street": "Townsend Street"
-        },
-        {
-          "id": "node/1488934683",
-          "lat": 53.354294,
-          "lon": -6.260416,
-          "street": "North Great George's Street"
         },
         {
           "id": "node/908499549",
@@ -1709,58 +1697,10 @@
           "lon": -6.262597
         },
         {
-          "id": "node/5585362503",
-          "lat": 53.35138,
-          "lon": -6.250885,
-          "street": "Talbot Street"
-        },
-        {
-          "id": "node/728633843",
-          "lat": 53.343762,
-          "lon": -6.261323,
-          "street": "Saint Andrew Street"
-        },
-        {
-          "id": "node/460836870",
-          "lat": 53.355748,
-          "lon": -6.258192,
-          "street": "Grenville Street"
-        },
-        {
-          "id": "node/13613072755",
-          "lat": 53.350918,
-          "lon": -6.270461,
-          "street": "North King Street"
-        },
-        {
           "id": "node/3600957322",
           "name": "Talbot St (Amiens St)",
           "lat": 53.351458,
           "lon": -6.250314
-        },
-        {
-          "id": "node/3677046326",
-          "lat": 53.34962,
-          "lon": -6.249687,
-          "street": "Mayor Street Lower"
-        },
-        {
-          "id": "node/6046488094",
-          "lat": 53.343127,
-          "lon": -6.259115,
-          "street": "Nassau Street"
-        },
-        {
-          "id": "node/408986456",
-          "lat": 53.344076,
-          "lon": -6.266272,
-          "street": "Barnardo Square"
-        },
-        {
-          "id": "node/330259390",
-          "lat": 53.347009,
-          "lon": -6.249959,
-          "street": "City Quay"
         },
         {
           "id": "node/3579222550",
@@ -1769,19 +1709,139 @@
           "lon": -6.251303
         },
         {
-          "id": "node/3666499737",
-          "lat": 53.342172,
-          "lon": -6.262459,
-          "street": "Coppinger Row"
+          "id": "node/5565794152",
+          "name": "Delivery Only",
+          "lat": 53.349076,
+          "lon": -6.274796
         },
         {
-          "id": "node/2864529191",
-          "lat": 53.34566,
-          "lon": -6.271421,
-          "street": "Ormond Quay Upper"
+          "id": "node/3677044944",
+          "name": "Amiens St (CERT)",
+          "lat": 53.353854,
+          "lon": -6.247399
+        },
+        {
+          "id": "node/3465837626",
+          "name": "Richmond Street North",
+          "lat": 53.357726,
+          "lon": -6.250849
+        },
+        {
+          "id": "node/3796687444",
+          "name": "Kildare Street",
+          "lat": 53.340042,
+          "lon": -6.255557
+        },
+        {
+          "id": "node/6217439415",
+          "name": "Berkeley Road Post Office",
+          "lat": 53.358673,
+          "lon": -6.269678
+        },
+        {
+          "id": "node/1497890063",
+          "name": "Financial Centre (Mayor St. Lower)",
+          "lat": 53.349216,
+          "lon": -6.242464
+        },
+        {
+          "id": "node/281176049",
+          "name": "Erne Street Upper",
+          "lat": 53.342982,
+          "lon": -6.244741
+        },
+        {
+          "id": "node/698087517",
+          "name": "Phibsboro Road, Monck Place",
+          "lat": 53.358448,
+          "lon": -6.273446
+        },
+        {
+          "id": "node/3477753528",
+          "name": "(Delivery only)",
+          "lat": 53.356818,
+          "lon": -6.243991
+        },
+        {
+          "id": "node/5406199366",
+          "name": "Drumcondra Post Office",
+          "lat": 53.363081,
+          "lon": -6.258416
+        },
+        {
+          "id": "node/6206912368",
+          "name": "Phibsborough Post Office",
+          "lat": 53.360751,
+          "lon": -6.274352
+        },
+        {
+          "id": "node/3042312988",
+          "name": "Earlsfort Terrace Post Office",
+          "lat": 53.335798,
+          "lon": -6.257345
+        },
+        {
+          "id": "node/467744863",
+          "name": "Mespil Road",
+          "lat": 53.333269,
+          "lon": -6.247432
+        },
+        {
+          "id": "node/4444656289",
+          "name": "Upr. Leeson Street",
+          "lat": 53.331034,
+          "lon": -6.252035
+        },
+        {
+          "id": "node/2690892031",
+          "name": "Leonard's Corner Post Office",
+          "lat": 53.332098,
+          "lon": -6.275077
+        },
+        {
+          "id": "node/5859723702",
+          "name": "Burlington Road",
+          "lat": 53.331462,
+          "lon": -6.245507
+        },
+        {
+          "id": "node/782222024",
+          "name": "Ranelagh Road (Dartmouth Rd)",
+          "lat": 53.329067,
+          "lon": -6.258906
+        },
+        {
+          "id": "node/6240679034",
+          "name": "Portobello, Lr Rathmines Rd",
+          "lat": 53.328894,
+          "lon": -6.2646
+        },
+        {
+          "id": "node/13277999423",
+          "name": "Pembroke Road (Wellingon Rd)",
+          "lat": 53.332467,
+          "lon": -6.239865
+        },
+        {
+          "id": "node/13306731930",
+          "name": "Pembroke Road",
+          "lat": 53.332307,
+          "lon": -6.238346
+        },
+        {
+          "id": "node/3780380508",
+          "name": "Cabra Post Office",
+          "lat": 53.364766,
+          "lon": -6.286999
         }
       ],
-      "updatedAt": "2026-09-03T17:11:16.876Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 12,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:57:52.174Z"
     },
     "recycling": {
       "count": 148,
@@ -2008,7 +2068,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:11:20.067Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:57:54.224Z"
     },
     "libraries": {
       "count": 61,
@@ -2238,7 +2304,13 @@
           "address": "Rathmines Road Lower"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:20.564Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 16,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:57:58.381Z"
     },
     "outdoor-gyms": {
       "count": 86,
@@ -2254,7 +2326,13 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:11:22.468Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:00.748Z"
     },
     "shelters": {
       "count": 36,
@@ -2291,17 +2369,35 @@
           "street": "North City Business Park"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:24.403Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:06.385Z"
     },
     "rest-areas": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:11:24.820Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:07.764Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:11:25.220Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:09.181Z"
     },
     "post-offices": {
       "count": 81,
@@ -2540,12 +2636,24 @@
           "address": "Harold's Cross Road 67"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:25.742Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 28,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:58:10.827Z"
     },
     "showers": {
       "count": 5,
       "pois": [],
-      "updatedAt": "2026-09-03T17:11:26.220Z"
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:58:12.543Z"
     },
     "fireplaces": {
       "count": 2,
@@ -2566,7 +2674,13 @@
           "address": "Ravensdale Park 25"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:27.360Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:14.493Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2882,7 +2996,13 @@
           "street": "Car wash"
         }
       ],
-      "updatedAt": "2026-09-03T17:11:29.441Z"
+      "stats": {
+        "free": 10,
+        "paid": 10,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:58:19.744Z"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "city": "oslo",
-  "generatedAt": "2026-09-11T10:28:00.746Z",
+  "generatedAt": "2026-09-13T08:25:35.254Z",
   "categories": {
     "toilets": {
       "count": 160,
@@ -415,7 +415,7 @@
       "updatedAt": "2026-09-11T10:27:55.244Z"
     },
     "playgrounds": {
-      "count": 1074,
+      "count": 1075,
       "pois": [
         {
           "id": "node/3111593843",
@@ -604,7 +604,13 @@
           "wheelchair": "limited"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:35.020Z"
+      "stats": {
+        "free": 3,
+        "paid": 1,
+        "stepFree": 8,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T08:25:13.106Z"
     },
     "parking": {
       "count": 2040,
@@ -821,7 +827,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:37.460Z"
+      "stats": {
+        "free": 175,
+        "paid": 392,
+        "stepFree": 17,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:25:14.912Z"
     },
     "charging-stations": {
       "count": 264,
@@ -1036,7 +1048,13 @@
           "lon": 10.774147
         }
       ],
-      "updatedAt": "2026-09-03T16:44:38.379Z"
+      "stats": {
+        "free": 1,
+        "paid": 32,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:15.885Z"
     },
     "gas-stations": {
       "count": 67,
@@ -1243,7 +1261,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:39.219Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:16.562Z"
     },
     "ice-cream": {
       "count": 19,
@@ -1359,7 +1383,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:40.186Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:17.303Z"
     },
     "dog-parks": {
       "count": 11,
@@ -1404,10 +1434,16 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:40.850Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:17.911Z"
     },
     "picnic-spots": {
-      "count": 1525,
+      "count": 1526,
       "pois": [
         {
           "id": "way/819704339",
@@ -1440,7 +1476,13 @@
           "lon": 10.702719
         }
       ],
-      "updatedAt": "2026-09-03T16:44:42.946Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:19.535Z"
     },
     "viewpoints": {
       "count": 92,
@@ -1513,10 +1555,16 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:43.663Z"
+      "stats": {
+        "free": 1,
+        "paid": 1,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:20.485Z"
     },
     "beaches": {
-      "count": 138,
+      "count": 139,
       "pois": [
         {
           "id": "way/1536629929",
@@ -1615,7 +1663,13 @@
           "lon": 10.687284
         }
       ],
-      "updatedAt": "2026-09-03T16:44:44.244Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:21.225Z"
     },
     "atms": {
       "count": 49,
@@ -1740,7 +1794,7 @@
       "updatedAt": "2026-09-11T10:27:56.567Z"
     },
     "post-boxes": {
-      "count": 341,
+      "count": 340,
       "pois": [
         {
           "id": "node/4697141060",
@@ -1863,12 +1917,6 @@
           "street": "Grønlandsleiret"
         },
         {
-          "id": "node/9673684459",
-          "lat": 59.92172,
-          "lon": 10.75728,
-          "street": "Markveien"
-        },
-        {
           "id": "node/9673682911",
           "lat": 59.909273,
           "lon": 10.765851,
@@ -1921,9 +1969,21 @@
           "lat": 59.915031,
           "lon": 10.730343,
           "street": "7. juni-plassen"
+        },
+        {
+          "id": "node/9673677800",
+          "lat": 59.914476,
+          "lon": 10.774447,
+          "street": "Hagegata"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:46.476Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:23.477Z"
     },
     "recycling": {
       "count": 845,
@@ -2129,7 +2189,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:44:49.182Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:24.144Z"
     },
     "libraries": {
       "count": 57,
@@ -2341,7 +2407,13 @@
           "lon": 10.62255
         }
       ],
-      "updatedAt": "2026-09-03T16:44:49.759Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T08:25:24.949Z"
     },
     "outdoor-gyms": {
       "count": 121,
@@ -2420,7 +2492,13 @@
           "lon": 10.807903
         }
       ],
-      "updatedAt": "2026-09-03T16:44:51.618Z"
+      "stats": {
+        "free": 3,
+        "paid": 1,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:25:25.804Z"
     },
     "shelters": {
       "count": 23,
@@ -2430,12 +2508,6 @@
           "name": "Tiern",
           "lat": 59.897964,
           "lon": 10.7296
-        },
-        {
-          "id": "node/957625021",
-          "lat": 59.949004,
-          "lon": 10.711521,
-          "street": "Geologistien"
         },
         {
           "id": "node/11331371412",
@@ -2457,23 +2529,47 @@
           "lon": 10.819944
         },
         {
+          "id": "node/957625021",
+          "lat": 59.949004,
+          "lon": 10.711521,
+          "street": "Geologistien"
+        },
+        {
           "id": "node/1195725852",
           "lat": 59.975365,
           "lon": 10.677897,
           "street": "Korketrekkeren"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:53.325Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:28.661Z"
     },
     "rest-areas": {
       "count": 6,
       "pois": [],
-      "updatedAt": "2026-09-03T16:44:53.810Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:29.416Z"
     },
     "dump-stations": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T16:44:54.157Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:29.966Z"
     },
     "post-offices": {
       "count": 59,
@@ -2692,12 +2788,24 @@
           "openingHours": "Mo-Sa 07:00-23:00"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:54.603Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:30.667Z"
     },
     "showers": {
       "count": 21,
       "pois": [],
-      "updatedAt": "2026-09-03T16:44:55.040Z"
+      "stats": {
+        "free": 15,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T08:25:31.140Z"
     },
     "fireplaces": {
       "count": 236,
@@ -2740,7 +2848,13 @@
           "fee": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:56.088Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:32.760Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3006,7 +3120,13 @@
           "street": "Tangenveien"
         }
       ],
-      "updatedAt": "2026-09-03T16:44:57.899Z"
+      "stats": {
+        "free": 12,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T08:25:35.153Z"
     }
   }
 }

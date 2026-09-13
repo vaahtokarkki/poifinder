@@ -1,6 +1,6 @@
 {
   "city": "montpellier",
-  "generatedAt": "2026-09-11T10:31:17.600Z",
+  "generatedAt": "2026-09-13T09:08:08.326Z",
   "categories": {
     "toilets": {
       "count": 159,
@@ -592,10 +592,16 @@
           "lon": 3.878589
         }
       ],
-      "updatedAt": "2026-09-03T17:16:00.810Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:16.851Z"
     },
     "parking": {
-      "count": 2074,
+      "count": 2075,
       "pois": [
         {
           "id": "node/4434333600",
@@ -803,7 +809,13 @@
           "lon": 3.846131
         }
       ],
-      "updatedAt": "2026-09-03T17:16:01.958Z"
+      "stats": {
+        "free": 484,
+        "paid": 179,
+        "stepFree": 18,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:23.215Z"
     },
     "charging-stations": {
       "count": 143,
@@ -1002,7 +1014,13 @@
           "lon": 3.857212
         }
       ],
-      "updatedAt": "2026-09-03T17:16:02.422Z"
+      "stats": {
+        "free": 3,
+        "paid": 79,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:24.915Z"
     },
     "gas-stations": {
       "count": 36,
@@ -1162,7 +1180,13 @@
           "lon": 3.948022
         }
       ],
-      "updatedAt": "2026-09-03T17:16:02.859Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 9,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:26.968Z"
     },
     "ice-cream": {
       "count": 22,
@@ -1295,7 +1319,13 @@
           "lon": 3.902348
         }
       ],
-      "updatedAt": "2026-09-03T17:16:03.309Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:28.621Z"
     },
     "dog-parks": {
       "count": 45,
@@ -1490,7 +1520,13 @@
           "lon": 3.827037
         }
       ],
-      "updatedAt": "2026-09-03T17:16:03.727Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-09-13T09:07:33.415Z"
     },
     "picnic-spots": {
       "count": 325,
@@ -1508,7 +1544,13 @@
           "lon": 3.933558
         }
       ],
-      "updatedAt": "2026-09-03T17:16:04.830Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:38.760Z"
     },
     "viewpoints": {
       "count": 24,
@@ -1592,12 +1634,24 @@
           "lon": 3.792235
         }
       ],
-      "updatedAt": "2026-09-03T17:16:05.345Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:40.531Z"
     },
     "beaches": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:16:05.825Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:41.595Z"
     },
     "atms": {
       "count": 179,
@@ -1855,13 +1909,193 @@
       "count": 157,
       "pois": [
         {
+          "id": "node/11937361338",
+          "lat": 43.610818,
+          "lon": 3.87727,
+          "street": "Rue Foch"
+        },
+        {
+          "id": "node/5429097494",
+          "lat": 43.611281,
+          "lon": 3.873489,
+          "street": "Rue du Plan du Palais"
+        },
+        {
+          "id": "node/7896451385",
+          "lat": 43.612851,
+          "lon": 3.872593,
+          "street": "Boulevard Henri IV"
+        },
+        {
+          "id": "node/579783645",
+          "lat": 43.614002,
+          "lon": 3.880412,
+          "street": "Boulevard Louis Blanc"
+        },
+        {
+          "id": "node/299981982",
+          "lat": 43.615551,
+          "lon": 3.881148,
+          "street": "Rue Proudhon"
+        },
+        {
+          "id": "node/251344517",
+          "lat": 43.612876,
+          "lon": 3.869049,
+          "street": "Rue Richer de Belleval"
+        },
+        {
+          "id": "node/611607316",
+          "lat": 43.607139,
+          "lon": 3.869449,
+          "street": "Rue de la Raffinerie"
+        },
+        {
+          "id": "node/6779486484",
+          "lat": 43.617329,
+          "lon": 3.881595,
+          "street": "Rue de la Cavalerie"
+        },
+        {
+          "id": "node/2525937285",
+          "lat": 43.605273,
+          "lon": 3.883774,
+          "street": "Rue de la Méditerranée"
+        },
+        {
+          "id": "node/281766447",
+          "lat": 43.607725,
+          "lon": 3.886931,
+          "street": "Avenue Henri Frenay"
+        },
+        {
+          "id": "node/12061291302",
+          "lat": 43.606315,
+          "lon": 3.886338,
+          "street": "Avenue du Pont Juvénal"
+        },
+        {
+          "id": "node/247092023",
+          "lat": 43.615019,
+          "lon": 3.886826,
+          "street": "Avenue de Saint-Maur"
+        },
+        {
+          "id": "node/11012285273",
+          "lat": 43.605724,
+          "lon": 3.867345,
+          "street": "Place Bouschet de Bernard"
+        },
+        {
+          "id": "node/12061301847",
+          "lat": 43.603194,
+          "lon": 3.882299,
+          "street": "Place Carnot"
+        },
+        {
+          "id": "node/10680282308",
+          "lat": 43.60931,
+          "lon": 3.888689,
+          "street": "Boulevard d'Antigone"
+        },
+        {
+          "id": "node/12144297206",
+          "lat": 43.619698,
+          "lon": 3.873271,
+          "street": "Place Henri Krasucki"
+        },
+        {
+          "id": "node/250679940",
+          "lat": 43.612154,
+          "lon": 3.889858,
+          "street": "Rue du Moulin de Sémalen"
+        },
+        {
+          "id": "node/3141687029",
+          "lat": 43.603542,
+          "lon": 3.867887,
+          "street": "Boulevard Renouvier"
+        },
+        {
+          "id": "node/251350636",
+          "lat": 43.614988,
+          "lon": 3.864388,
+          "street": "Avenue d'Assas"
+        },
+        {
+          "id": "node/348425277",
+          "lat": 43.600437,
+          "lon": 3.879444,
+          "street": "Rue Frédéric Fabrèges"
+        },
+        {
+          "id": "node/280697595",
+          "lat": 43.607644,
+          "lon": 3.890677,
+          "street": "Rue Léon Blum"
+        },
+        {
+          "id": "node/105964248",
+          "lat": 43.621801,
+          "lon": 3.877171,
+          "street": "Rue des Loutres"
+        },
+        {
+          "id": "node/281267492",
+          "lat": 43.601,
+          "lon": 3.884395,
+          "street": "Rue Frédéric Bazille"
+        },
+        {
+          "id": "node/11642048709",
+          "lat": 43.605952,
+          "lon": 3.862417,
+          "street": "Rue du Faubourg Figuerolles"
+        },
+        {
+          "id": "node/6501795593",
+          "lat": 43.60539,
+          "lon": 3.891458,
+          "street": "Place Faulquier"
+        },
+        {
+          "id": "node/117981264",
+          "lat": 43.623293,
+          "lon": 3.873607,
+          "street": "Rue du Pré aux Clercs"
+        },
+        {
           "id": "node/4526685752",
           "lat": 43.600411,
           "lon": 3.887138,
-          "street": "Soleiado"
+          "street": "Avenue du Pont Trinquat"
+        },
+        {
+          "id": "node/5113365137",
+          "lat": 43.619233,
+          "lon": 3.890544,
+          "street": "Boulevard des Sports"
+        },
+        {
+          "id": "node/2304168733",
+          "lat": 43.598508,
+          "lon": 3.870235,
+          "street": "Rue Saint-Cléophas"
+        },
+        {
+          "id": "node/9352192419",
+          "lat": 43.613969,
+          "lon": 3.858307,
+          "street": "Avenue de l'École d'Agriculture Gabriel Buchet"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:08.005Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:47.435Z"
     },
     "recycling": {
       "count": 789,
@@ -2073,7 +2307,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:16:10.767Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:49.402Z"
     },
     "libraries": {
       "count": 74,
@@ -2305,7 +2545,13 @@
           "openingHours": "Tu 09:30-11:30,16:30-18:30; We 09:30-11:30,15:30-18:30; Fr 14:00-18:30; Sa 09:30-12:00; SH Tu,We 09:30-12:00; SH Fr off"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:11.168Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 15,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:50.793Z"
     },
     "outdoor-gyms": {
       "count": 35,
@@ -2397,12 +2643,24 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:12.887Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:52.521Z"
     },
     "shelters": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:16:13.670Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:54.450Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2414,12 +2672,24 @@
           "lon": 3.958404
         }
       ],
-      "updatedAt": "2026-09-03T17:16:14.068Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:55.821Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:16:14.389Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:07:57.304Z"
     },
     "post-offices": {
       "count": 36,
@@ -2679,17 +2949,35 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:16:14.874Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 30,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:00.684Z"
     },
     "showers": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:16:15.257Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:02.364Z"
     },
     "fireplaces": {
       "count": 4,
       "pois": [],
-      "updatedAt": "2026-09-03T17:16:16.100Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:04.203Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2846,9 +3134,97 @@
       "updatedAt": "2026-08-18T03:58:26.486Z"
     },
     "bicycle-repair": {
-      "count": 4,
-      "pois": [],
-      "updatedAt": "2026-09-03T17:16:17.156Z"
+      "count": 21,
+      "pois": [
+        {
+          "id": "node/8461273827",
+          "lat": 43.610531,
+          "lon": 3.875346,
+          "street": "Rue Saint-Firmin"
+        },
+        {
+          "id": "node/14091972972",
+          "lat": 43.609143,
+          "lon": 3.880363,
+          "street": "Place de la Comédie"
+        },
+        {
+          "id": "node/14032143751",
+          "lat": 43.602963,
+          "lon": 3.878055,
+          "street": "Rue Alexandra David-Neel"
+        },
+        {
+          "id": "node/9687323280",
+          "lat": 43.609701,
+          "lon": 3.865485,
+          "street": "Rue Jacques Draparnaud"
+        },
+        {
+          "id": "node/12529534056",
+          "lat": 43.625841,
+          "lon": 3.904894,
+          "street": "Véloligne A"
+        },
+        {
+          "id": "node/3747556376",
+          "lat": 43.608203,
+          "lon": 3.912656,
+          "fee": "no",
+          "street": "Avenue Président Pierre Mendès France"
+        },
+        {
+          "id": "node/12437028940",
+          "lat": 43.62871,
+          "lon": 3.903236,
+          "street": "Rue des Anémones"
+        },
+        {
+          "id": "node/13758676828",
+          "lat": 43.625208,
+          "lon": 3.90742,
+          "street": "Allée Lino Ventura"
+        },
+        {
+          "id": "node/12481648010",
+          "lat": 43.632195,
+          "lon": 3.899442,
+          "street": "Allée Marie Curie"
+        },
+        {
+          "id": "node/11875918420",
+          "lat": 43.637626,
+          "lon": 3.893222,
+          "street": "Allée Jean Marie Amelin"
+        },
+        {
+          "id": "node/11850313567",
+          "lat": 43.633758,
+          "lon": 3.921265,
+          "fee": "no",
+          "street": "Avenue de l'Europe"
+        },
+        {
+          "id": "node/12542016167",
+          "lat": 43.654424,
+          "lon": 3.881235,
+          "openingHours": "24/7",
+          "street": "Avenue Albert Camus"
+        },
+        {
+          "id": "node/13758660747",
+          "lat": 43.645106,
+          "lon": 3.916158,
+          "street": "Avenue de la Monnaie"
+        }
+      ],
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T09:08:08.224Z"
     }
   }
 }

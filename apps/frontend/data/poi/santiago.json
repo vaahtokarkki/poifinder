@@ -1,6 +1,6 @@
 {
   "city": "santiago",
-  "generatedAt": "2026-09-11T10:34:52.020Z",
+  "generatedAt": "2026-09-13T10:06:00.086Z",
   "categories": {
     "toilets": {
       "count": 185,
@@ -574,7 +574,13 @@
           "lon": -70.587929
         }
       ],
-      "updatedAt": "2026-09-03T17:49:13.689Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:16.695Z"
     },
     "parking": {
       "count": 819,
@@ -774,7 +780,13 @@
           "lon": -70.645829
         }
       ],
-      "updatedAt": "2026-09-03T17:49:15.092Z"
+      "stats": {
+        "free": 106,
+        "paid": 57,
+        "stepFree": 27,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:22.592Z"
     },
     "charging-stations": {
       "count": 31,
@@ -805,7 +817,13 @@
           "lon": -70.599133
         }
       ],
-      "updatedAt": "2026-09-03T17:49:15.567Z"
+      "stats": {
+        "free": 0,
+        "paid": 3,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:23.905Z"
     },
     "gas-stations": {
       "count": 180,
@@ -948,7 +966,13 @@
           "lon": -70.625871
         }
       ],
-      "updatedAt": "2026-09-03T17:49:16.128Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:25.702Z"
     },
     "ice-cream": {
       "count": 54,
@@ -1161,7 +1185,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:49:16.888Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:27.281Z"
     },
     "dog-parks": {
       "count": 18,
@@ -1202,7 +1232,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:49:17.332Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:29.241Z"
     },
     "picnic-spots": {
       "count": 51,
@@ -1232,7 +1268,13 @@
           "lon": -70.621206
         }
       ],
-      "updatedAt": "2026-09-03T17:49:18.741Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:32.167Z"
     },
     "viewpoints": {
       "count": 69,
@@ -1425,12 +1467,24 @@
           "lon": -70.712364
         }
       ],
-      "updatedAt": "2026-09-03T17:49:19.458Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:33.404Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:49:19.967Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:34.524Z"
     },
     "atms": {
       "count": 259,
@@ -1648,12 +1702,6 @@
       "count": 3,
       "pois": [
         {
-          "id": "node/11992918664",
-          "lat": -33.436927,
-          "lon": -70.651202,
-          "street": "Puente"
-        },
-        {
           "id": "node/4103696890",
           "name": "DHL - Western Union",
           "lat": -33.423638,
@@ -1665,9 +1713,21 @@
           "lat": -33.415423,
           "lon": -70.601314,
           "address": "Avenida El Bosque Norte 160"
+        },
+        {
+          "id": "node/11992918664",
+          "lat": -33.436927,
+          "lon": -70.651202,
+          "street": "Puente"
         }
       ],
-      "updatedAt": "2026-09-03T17:49:21.927Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:37.082Z"
     },
     "recycling": {
       "count": 118,
@@ -1883,7 +1943,13 @@
     "luggage-storage": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:49:25.121Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:38.604Z"
     },
     "libraries": {
       "count": 83,
@@ -2101,7 +2167,13 @@
           "address": "José Miguel de la Barra 480"
         }
       ],
-      "updatedAt": "2026-09-03T17:49:25.609Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 8,
+        "partlyStepFree": 3
+      },
+      "updatedAt": "2026-09-13T10:05:40.237Z"
     },
     "outdoor-gyms": {
       "count": 73,
@@ -2174,7 +2246,13 @@
     "camp-sites": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:49:27.527Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:41.501Z"
     },
     "shelters": {
       "count": 5,
@@ -2187,7 +2265,13 @@
           "wheelchair": "yes"
         }
       ],
-      "updatedAt": "2026-09-03T17:49:28.465Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:43.350Z"
     },
     "rest-areas": {
       "count": 5,
@@ -2207,12 +2291,24 @@
           "openingHours": "Mo-Fr 08:30-18:00, Sa 08:30-14:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:49:28.967Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:45.095Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:49:29.409Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:46.755Z"
     },
     "post-offices": {
       "count": 86,
@@ -2343,7 +2439,13 @@
           "lon": -70.74312
         }
       ],
-      "updatedAt": "2026-09-03T17:49:29.898Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-09-13T10:05:49.966Z"
     },
     "showers": {
       "count": 4,
@@ -2355,12 +2457,24 @@
           "lon": -70.618719
         }
       ],
-      "updatedAt": "2026-09-03T17:49:30.290Z"
+      "stats": {
+        "free": 0,
+        "paid": 1,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:51.336Z"
     },
     "fireplaces": {
       "count": 11,
       "pois": [],
-      "updatedAt": "2026-09-03T17:49:31.526Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:53.680Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2504,12 +2618,6 @@
           "openingHours": "Mo-Su 12:00-21:00"
         },
         {
-          "id": "node/4042321252",
-          "lat": -33.447003,
-          "lon": -70.679532,
-          "street": "Pasaje 52"
-        },
-        {
           "id": "node/4048567176",
           "name": "Taller de bicicletas \"Don Luis\"",
           "lat": -33.436534,
@@ -2522,17 +2630,44 @@
           "lon": -70.690986
         },
         {
+          "id": "node/4457085429",
+          "name": "Taller de Bicicletas Araya",
+          "lat": -33.465806,
+          "lon": -70.635776
+        },
+        {
+          "id": "node/9075135314",
+          "name": "CicloRecreoVía",
+          "lat": -33.41527,
+          "lon": -70.617614,
+          "fee": "no"
+        },
+        {
+          "id": "node/12181239636",
+          "name": "Simicleta",
+          "lat": -33.415192,
+          "lon": -70.61733,
+          "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/10945600622",
+          "name": "Taller Colaborativo de Bicicletas \"El Container\"",
+          "lat": -33.497962,
+          "lon": -70.608362
+        },
+        {
+          "id": "node/4042321252",
+          "lat": -33.447003,
+          "lon": -70.679532,
+          "street": "Pasaje 52"
+        },
+        {
           "id": "node/10158426908",
           "lat": -33.426956,
           "lon": -70.640316,
           "fee": "no",
           "street": "Avenida Perú"
-        },
-        {
-          "id": "node/4457085429",
-          "name": "Taller de Bicicletas Araya",
-          "lat": -33.465806,
-          "lon": -70.635776
         },
         {
           "id": "node/13483682751",
@@ -2557,21 +2692,6 @@
           "street": "Avenida Independencia"
         },
         {
-          "id": "node/9075135314",
-          "name": "CicloRecreoVía",
-          "lat": -33.41527,
-          "lon": -70.617614,
-          "fee": "no"
-        },
-        {
-          "id": "node/12181239636",
-          "name": "Simicleta",
-          "lat": -33.415192,
-          "lon": -70.61733,
-          "openingHours": "24/7",
-          "fee": "no"
-        },
-        {
           "id": "node/13728459082",
           "lat": -33.405534,
           "lon": -70.619511,
@@ -2583,15 +2703,15 @@
           "lat": -33.497251,
           "lon": -70.610598,
           "street": "Circunvalación Norte"
-        },
-        {
-          "id": "node/10945600622",
-          "name": "Taller Colaborativo de Bicicletas \"El Container\"",
-          "lat": -33.497962,
-          "lon": -70.608362
         }
       ],
-      "updatedAt": "2026-09-03T17:49:33.126Z"
+      "stats": {
+        "free": 7,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:05:59.986Z"
     }
   }
 }

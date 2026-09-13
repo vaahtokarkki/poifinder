@@ -1,6 +1,6 @@
 {
   "city": "kuala-lumpur",
-  "generatedAt": "2026-09-11T10:34:33.604Z",
+  "generatedAt": "2026-09-13T10:01:37.005Z",
   "categories": {
     "toilets": {
       "count": 194,
@@ -378,7 +378,13 @@
           "lon": 101.717355
         }
       ],
-      "updatedAt": "2026-09-03T17:46:46.661Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:51.804Z"
     },
     "parking": {
       "count": 1089,
@@ -576,7 +582,13 @@
           "address": "Jalan Pantai Baharu"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:48.246Z"
+      "stats": {
+        "free": 30,
+        "paid": 123,
+        "stepFree": 10,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:54.929Z"
     },
     "charging-stations": {
       "count": 43,
@@ -713,7 +725,13 @@
           "fee": "no"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:48.711Z"
+      "stats": {
+        "free": 4,
+        "paid": 25,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:56.792Z"
     },
     "gas-stations": {
       "count": 216,
@@ -929,7 +947,13 @@
           "openingHours": "24/7"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:49.381Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 5,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:00:59.445Z"
     },
     "ice-cream": {
       "count": 38,
@@ -1128,12 +1152,24 @@
           "openingHours": "Mo-Fr 14:00-23:00; Sa-Su 13:00-23:00"
         }
       ],
-      "updatedAt": "2026-09-03T17:46:49.955Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:00.983Z"
     },
     "dog-parks": {
       "count": 1,
       "pois": [],
-      "updatedAt": "2026-09-03T17:46:50.345Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:02.262Z"
     },
     "picnic-spots": {
       "count": 25,
@@ -1145,7 +1181,13 @@
           "lon": 101.635495
         }
       ],
-      "updatedAt": "2026-09-03T17:46:51.461Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:05.423Z"
     },
     "viewpoints": {
       "count": 35,
@@ -1280,12 +1322,24 @@
           "lon": 101.633785
         }
       ],
-      "updatedAt": "2026-09-03T17:46:52.027Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:06.936Z"
     },
     "beaches": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:46:52.462Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:09.142Z"
     },
     "atms": {
       "count": 362,
@@ -1504,12 +1558,6 @@
           "lon": 101.683642
         },
         {
-          "id": "node/5462263227",
-          "lat": 3.131631,
-          "lon": 101.687003,
-          "street": "Jalan Tun Sambanthan"
-        },
-        {
           "id": "node/5475997121",
           "name": "Pos Malaysia",
           "lat": 3.129826,
@@ -1534,16 +1582,46 @@
           "lon": 101.677173
         },
         {
-          "id": "node/3972814737",
-          "lat": 3.151959,
-          "lon": 101.698004,
-          "street": "Jalan Ampang"
-        },
-        {
           "id": "node/5468691221",
           "name": "KL 4-6",
           "lat": 3.123371,
           "lon": 101.676395
+        },
+        {
+          "id": "node/5913191694",
+          "name": "Pos Malaysia (Document only)",
+          "lat": 3.102202,
+          "lon": 101.708522
+        },
+        {
+          "id": "node/4685195489",
+          "name": "Mail Boxes Etc.",
+          "lat": 3.089967,
+          "lon": 101.6901
+        },
+        {
+          "id": "node/5694058422",
+          "name": "Pos Malaysia Jalan Ipoh",
+          "lat": 3.198231,
+          "lon": 101.678923
+        },
+        {
+          "id": "node/5694054021",
+          "name": "Jalan Ipoh",
+          "lat": 3.202976,
+          "lon": 101.673087
+        },
+        {
+          "id": "node/5462263227",
+          "lat": 3.131631,
+          "lon": 101.687003,
+          "street": "Jalan Tun Sambanthan"
+        },
+        {
+          "id": "node/3972814737",
+          "lat": 3.151959,
+          "lon": 101.698004,
+          "street": "Jalan Ampang"
         },
         {
           "id": "node/2909245751",
@@ -1595,12 +1673,6 @@
           "street": "Jalan Lombong"
         },
         {
-          "id": "node/5913191694",
-          "name": "Pos Malaysia (Document only)",
-          "lat": 3.102202,
-          "lon": 101.708522
-        },
-        {
           "id": "node/3014076970",
           "lat": 3.096855,
           "lon": 101.677449,
@@ -1623,12 +1695,6 @@
           "lat": 3.092955,
           "lon": 101.6752,
           "street": "Jalan Klang Lama"
-        },
-        {
-          "id": "node/4685195489",
-          "name": "Mail Boxes Etc.",
-          "lat": 3.089967,
-          "lon": 101.6901
         },
         {
           "id": "node/1522502709",
@@ -1665,21 +1731,15 @@
           "lat": 3.0984,
           "lon": 101.643919,
           "street": "Jalan Yong Shook Lin"
-        },
-        {
-          "id": "node/1555515921",
-          "lat": 3.101282,
-          "lon": 101.641295,
-          "street": "Jalan Barat"
-        },
-        {
-          "id": "node/5694058422",
-          "name": "Pos Malaysia Jalan Ipoh",
-          "lat": 3.198231,
-          "lon": 101.678923
         }
       ],
-      "updatedAt": "2026-09-03T17:46:54.545Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:13.807Z"
     },
     "recycling": {
       "count": 29,
@@ -1824,7 +1884,13 @@
           "lon": 101.70035
         }
       ],
-      "updatedAt": "2026-09-03T17:46:56.892Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:15.628Z"
     },
     "libraries": {
       "count": 34,
@@ -2017,7 +2083,13 @@
           "lon": 101.621777
         }
       ],
-      "updatedAt": "2026-09-03T17:46:57.405Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:17.626Z"
     },
     "outdoor-gyms": {
       "count": 34,
@@ -2109,11 +2181,23 @@
           "lon": 101.70271
         }
       ],
-      "updatedAt": "2026-09-03T17:46:59.061Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:19.500Z"
     },
     "shelters": {
       "count": 48,
       "pois": [
+        {
+          "id": "node/9120196762",
+          "name": "Bamboo Stop",
+          "lat": 3.162471,
+          "lon": 101.63457
+        },
         {
           "id": "node/12961129935",
           "lat": 3.136643,
@@ -2175,12 +2259,6 @@
           "street": "Jalan Sultan Yahya Petra"
         },
         {
-          "id": "node/9120196762",
-          "name": "Bamboo Stop",
-          "lat": 3.162471,
-          "lon": 101.63457
-        },
-        {
           "id": "node/13594297454",
           "lat": 3.08564,
           "lon": 101.665708,
@@ -2211,7 +2289,13 @@
           "street": "Jalan Memanda 9"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:01.000Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:24.437Z"
     },
     "rest-areas": {
       "count": 9,
@@ -2229,12 +2313,24 @@
           "lon": 101.732304
         }
       ],
-      "updatedAt": "2026-09-03T17:47:01.505Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:25.726Z"
     },
     "dump-stations": {
       "count": 0,
       "pois": [],
-      "updatedAt": "2026-09-03T17:47:02.027Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:26.922Z"
     },
     "post-offices": {
       "count": 109,
@@ -2441,17 +2537,35 @@
           "lon": 101.701925
         }
       ],
-      "updatedAt": "2026-09-03T17:47:02.640Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:29.222Z"
     },
     "showers": {
       "count": 8,
       "pois": [],
-      "updatedAt": "2026-09-03T17:47:03.063Z"
+      "stats": {
+        "free": 4,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:30.392Z"
     },
     "fireplaces": {
       "count": 2,
       "pois": [],
-      "updatedAt": "2026-09-03T17:47:04.010Z"
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:32.618Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2618,7 +2732,13 @@
           "street": "Jalan Jambu Mawar"
         }
       ],
-      "updatedAt": "2026-09-03T17:47:06.085Z"
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-09-13T10:01:36.903Z"
     }
   }
 }

@@ -725,6 +725,52 @@
 }
 
 /*
+ * The blurred surface must not be the scrolling one.
+ *
+ * MUI's popover paper carries `overflow-y: auto`, so the element this file
+ * puts a 24px backdrop-filter on is also the element the finger scrolls. That
+ * combination is a known way to fall off the compositor's fast path on
+ * Android: the browser has to recompute the blurred backdrop for every frame
+ * of the scroll, cannot keep up, and paints nothing until the gesture ends.
+ * The reported symptom was a menu that stayed blank while being dragged and
+ * filled in only on release.
+ *
+ * The fix separates the two jobs. The paper keeps the blur and stops
+ * scrolling; the list inside it becomes the scroller. The blurred box is then
+ * static, its backdrop is sampled once, and what moves is an ordinary
+ * composited scroll of the content above it.
+ *
+ * A flex column rather than `max-height: inherit` on the list, deliberately.
+ * The paper's height limit is a percentage calc from MUI's own classes, and
+ * inheriting a percentage re-resolves it against a different containing block;
+ * `min-height: 0` on a flex child is the version of this that does not depend
+ * on how MUI happens to express the limit.
+ *
+ * NOTE: this could not be verified here. Headless Firefox renders no
+ * backdrop-filter and cannot simulate a touch scroll, so only the layout was
+ * checked locally and the behaviour was confirmed on a device.
+ *
+ * The same shape exists elsewhere and is not yet changed: .layers-panel is
+ * blurred and scrolls itself, while .poi-popup-body and .bottom-sheet-content
+ * scroll inside a blurred parent, which is the milder form of it.
+ */
+.glass-ui .MuiMenu-paper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.glass-ui .MuiMenu-paper .MuiMenu-list {
+  flex: 1 1 auto;
+  /* Without this a flex child refuses to shrink below its content, and the
+     list would grow the paper instead of scrolling inside it */
+  min-height: 0;
+  overflow-y: auto;
+  /* The map behind must not take over once the list hits its end */
+  overscroll-behavior: contain;
+}
+
+/*
  * The group headings, which must not stick.
  *
  * MUI makes these `position: sticky` so a heading pins to the top of the list

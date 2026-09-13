@@ -156,6 +156,24 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
           // open menu, which scrolls the list back to the top as soon as the
           // last selection is cleared
           disableAutoFocusItem: true,
+          /*
+           * Close quickly. Open close to the pace it always had.
+           *
+           * The default is "auto", which derives the duration from the menu's
+           * height — and this menu is tall. At the 70vh ceiling that works out
+           * around 380ms, which is a long time to watch a list you have
+           * finished with, and it holds up everything waiting on the menu
+           * being gone rather than going.
+           *
+           * The intent was to cap only the exit and leave opening alone, but
+           * MUI's object form is typed for numbers on every key: "auto" is
+           * allowed as the whole value or not at all. So opening takes a fixed
+           * 250ms here, near MUI's own 225ms for an entering surface and a
+           * little quicker than the ~380ms auto was giving this menu. Closing
+           * is the half that was complained about and is cut hardest: it is a
+           * decision already made, and should get out of the way.
+           */
+          transitionDuration: { enter: 250, exit: 120 },
         }}
         sx={{
           background: "#fff",

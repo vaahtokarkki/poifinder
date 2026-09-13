@@ -843,6 +843,17 @@
  * of taps as well, which matters because the row sits under the menu's own
  * shadow.
  *
+ * WHY THE RETURN IS INSTANT, stated here because the two halves are a pair.
+ * This selector releases when MUI *unmounts* the paper, not when the menu is
+ * dismissed — the element stays in the DOM through its exit animation. So the
+ * chips were waiting for that animation and then fading in on top of it, and
+ * the two delays added up rather than overlapping. MUI's exit is derived from
+ * the menu's height and reached about 380ms at this menu's ceiling.
+ *
+ * Both halves were shortened. The exit is capped in the components, and the
+ * fade-in was removed altogether by declaring the transition only on this
+ * rule: there is no way for the return to feel slow if it does not animate.
+ *
  * `:has()` on the body because both menus are portalled out to it — MUI's
  * Modal defaults to `disablePortal: false`, so the open menu is a child of
  * body rather than of anything near the chips. Verified supported in the
@@ -996,10 +1007,15 @@
   margin-top: -8px;
   padding-bottom: 12px;
   margin-bottom: -12px;
-  /* Stated here rather than in a rule of its own, so there is one place that
-     describes this row. It is the going-away and the coming-back of the fade
-     above: quick, so the chips are already there as a menu finishes closing */
-  transition: opacity 0.16s var(--glass-ease), visibility 0.16s;
+  /*
+   * No transition here, deliberately, and this is the asymmetry that matters:
+   * the chips fade OUT but snap BACK.
+   *
+   * A transition only applies if the style being transitioned *to* carries
+   * one. Declaring it on the hidden rule below and not here means going away
+   * animates, while coming back is instant — which is what the return path
+   * needs, because it is already waiting on something else. See below.
+   */
 }
 
 /*

@@ -66,6 +66,12 @@ const LanguageSelect: React.FC<LanguageSelectProps> = ({ value, onChange, visibl
         onClose={() => setAnchor(null)}
         anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         transformOrigin={{ vertical: "top", horizontal: "right" }}
+        // The same timings the category menu takes, and for the same reason:
+        // both sit on one row, and two menus on the same row opening and
+        // closing at different speeds is worse than either speed on its own.
+        // Numbers rather than "auto" because MUI's object form is typed that
+        // way — see the longer note in CategorySelect
+        transitionDuration={{ enter: 250, exit: 120 }}
         slotProps={{ paper: { sx: { borderRadius: "12px", minWidth: 168 } } }}
       >
         {LOCALES.map((locale) => (

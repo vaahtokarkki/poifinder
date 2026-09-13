@@ -219,32 +219,35 @@
     inset 0 0 0 1px rgba(255, 255, 255, 0.4);
 
   /*
-   * Two shades of one turquoise, because the accent does two opposite jobs.
+   * Two shades of one blue, because the accent does two opposite jobs.
    *
-   * The triple is the FILL: a chosen preset, a lit map button. Light and
-   * cyan-leaning, and it is the one people actually perceive as the app's
-   * colour, because it arrives as a whole chip rather than as a few words.
+   * The triple is the FILL: a chosen preset, a lit map button. A true blue,
+   * lighter than the azure it started as, and it is the one people actually
+   * perceive as the app's colour, because it arrives as a whole chip rather
+   * than as a few words.
    *
    * The hex is the same hue as TEXT: links, the popup's close bar, the "what
    * this means" asides. Far deeper, and it has to be — small text of the fill
    * colour on a surface that is two thirds map is unreadable, which is a
-   * measurement rather than an opinion. At this value it reaches 4.99:1 on the
-   * thinnest panel and 5.63:1 on the popup, where the close bar lives.
+   * measurement rather than an opinion. At this value it reaches 5.37:1 on the
+   * thinnest panel and 6.06:1 on the popup, where the close bar lives.
    *
    * Splitting them was the fix for a real mistake: one token could only ever
    * disappoint one of the two, because the fill wants to be light and the text
    * wants to be dark. Nobody reads the hue of a six-word link as the accent of
    * an app, so the deep shade costs nothing visible.
    *
-   * WHAT A LIGHT ACCENT COSTS, and why it is affordable here. A pale fill
-   * cannot carry white on top of it: white on this turquoise measures 1.92:1.
-   * Every glyph and label that sits on the fill is near-black instead, which
-   * measures 8.55:1 and is what makes a light accent possible at all. If a
-   * future change puts white back on an accent fill, this is the note that
-   * explains why it looks broken.
+   * WHY THE FILL CAN BE THIS LIGHT, which is the thing to understand before
+   * changing either value. A pale fill cannot carry white on top of it — white
+   * on a fill this light measures under 2:1. Every glyph and label sitting on
+   * the fill is near-black instead, which measures 6.83:1 on the button and
+   * 9.42:1 on the chip wash. That inversion is what removed the ceiling on how
+   * light the accent may be; the colour is now chosen for how it looks rather
+   * than for what white can survive. If a future change puts white back on an
+   * accent fill, this is the note explaining why it suddenly looks broken.
    */
-  --glass-accent: 34, 193, 220;
-  --glass-accent-solid: #105f6e;
+  --glass-accent: 61, 155, 255;
+  --glass-accent-solid: #0a5299;
 
   /*
    * Ink. Near-black rather than black, and one step down for anything
@@ -426,18 +429,21 @@
    * The glyph is near-black, not white, and that is what lets the accent be a
    * light colour at all.
    *
-   * White on a filled accent was always the weak point — about 3:1 on the old
-   * azure, which is the floor the whole idiom runs at. Turquoise is lighter
-   * than azure by definition, and white on it measured 1.92:1, which is not a
-   * glyph, it is a smudge. For a while that one white arrow was the reason the
-   * accent could not be light.
+   * White on a filled accent was always the weak point — about 3:1 on the
+   * original azure, which is the floor the whole idiom runs at, and worse on
+   * anything lighter. For a while that one white arrow was the reason the
+   * accent could not be light at all: every step toward a brighter colour made
+   * the glyph on top of it harder to see.
    *
-   * Inverting it removes the constraint rather than working around it: the
-   * same ink the chips use measures 8.55:1 here. The colour is then free to be
-   * chosen for how it looks, which is the right way round.
+   * Inverting it removes the constraint instead of working around it. The same
+   * near-black the chips use measures 6.83:1 on this fill, and 9.42:1 on the
+   * thinner chip wash. The colour is then free to be chosen for how it looks,
+   * which is the right way round — and it is why the fill could be lightened
+   * afterwards for nothing.
    *
-   * Not the deep text shade — that lands near 2.5:1 on this fill, below even
-   * the 3:1 a glyph needs. It is ink or white, and white lost.
+   * Not the deep text shade either: on a fill this light it falls below even
+   * the 3:1 a glyph needs, let alone what text would want. It is ink or white,
+   * and white lost.
    */
   background-color: rgba(var(--glass-accent), 0.82);
   color: var(--glass-ink);

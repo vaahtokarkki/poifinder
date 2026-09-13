@@ -2035,10 +2035,28 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                 // own defaults and the popup exactly where it has always been
                 pane={modalPane}
                 autoPan={modalPane ? false : undefined}
+                // The modal closes with the bar below instead. Leaflet's own
+                // control is a 26px glyph in the corner, which is the right
+                // shape for a balloon hanging off a marker and the wrong one
+                // for a card in the middle of the screen
+                closeButton={modalPane ? false : undefined}
                 autoPanPaddingTopLeft={AUTO_PAN_PADDING_TOP_LEFT}
                 autoPanPaddingBottomRight={[POPUP_EDGE_GAP_PX, POPUP_EDGE_GAP_PX]}
               >
                 <RenderMarkerContents marker={marker} categories={categories} />
+                {modalPane && (
+                  // Outside RenderMarkerContents on purpose: that renders the
+                  // scrolling body, and a button inside it would be reachable
+                  // only after reading to the end of a shop with forty tags.
+                  // As its sibling it sits under the scroll area and stays put
+                  <button
+                    type="button"
+                    className="poi-popup-close"
+                    onClick={() => map.closePopup()}
+                  >
+                    {ui().controls.layers.close}
+                  </button>
+                )}
               </Popup>
             )}
           </Marker>

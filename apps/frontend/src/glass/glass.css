@@ -61,18 +61,18 @@
    * it stops being an object and becomes a smudge with an icon in it. There is
    * so little of it on screen that being opaque costs the map nothing.
    */
-  --glass-thin: rgba(255, 255, 255, 0.58);
+  --glass-thin: rgba(255, 255, 255, 0.46);
   /* A field, and the sheet while it is only peeking */
-  --glass-mid: rgba(255, 255, 255, 0.46);
+  --glass-mid: rgba(255, 255, 255, 0.34);
   /*
    * The large panels — the suggestion list, the routes card, the layers panel.
    * The thinnest, for the reason the buttons are the thickest: these cover a
    * third of the screen, and a third of the map behind an opaque sheet is a
    * map you have lost. This is the tint the whole look is recognisable by.
    */
-  --glass-panel: rgba(255, 255, 255, 0.4);
+  --glass-panel: rgba(255, 255, 255, 0.28);
   /* Dense content read at length: the point popup */
-  --glass-thick: rgba(255, 255, 255, 0.62);
+  --glass-thick: rgba(255, 255, 255, 0.5);
 
   /* The dark counterpart, for the two things on this map that were already
      dark and would look broken lightened: the passing remarks and the scrim */
@@ -168,6 +168,22 @@
    */
   --glass-lift: 0 2px 8px rgba(0, 0, 0, 0.18), 0 10px 30px rgba(0, 0, 0, 0.16);
   --glass-lift-high: 0 4px 14px rgba(0, 0, 0, 0.2), 0 18px 50px rgba(0, 0, 0, 0.22);
+  /*
+   * For anything sitting inside a container that clips its overflow.
+   *
+   * A soft shadow needs room to fade out in. Denied it, it does not fade — it
+   * is cut off mid-gradient, and a cut-off gradient is a hard-edged rectangle
+   * of shadow the exact size of whatever did the clipping. That is what put a
+   * grey box behind the tool column and a band across the preset row: two
+   * containers that must clip (one to collapse, one to scroll sideways) around
+   * children casting a 30px shadow into 8px and 0px of space respectively.
+   *
+   * Reaching 5px in total, so it fits the room those containers have. The
+   * alternative — giving them room — is not available: the tool group's clip
+   * is what makes its open and close animate, and widening its padding would
+   * let the folded buttons show through it.
+   */
+  --glass-lift-tight: 0 1px 4px rgba(0, 0, 0, 0.22);
 
   /*
    * The thickness, seen from inside. Nearly nothing now that the outline is
@@ -307,6 +323,17 @@
     transform 0.12s var(--glass-ease);
 }
 
+/*
+ * The four folded-away tools, whose group clips its own overflow so that it
+ * can collapse. Their shadow has 8px to live in, so it is the tight one — see
+ * --glass-lift-tight. The toggle and the locate button below are outside that
+ * clip and keep the full lift.
+ */
+.glass-ui .map-controls-group-inner .map-icon-button,
+.glass-ui .map-controls-group-inner .map-icon-button.active {
+  box-shadow: var(--glass-lift-tight), var(--glass-rim);
+}
+
 .glass-ui .map-icon-button:hover {
   background-color: var(--glass-mid);
 }
@@ -346,7 +373,7 @@
    */
   background-color: rgba(25, 118, 210, 0.8);
   color: #fff;
-  box-shadow: var(--glass-lift), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: var(--glass-lift-tight), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .glass-ui .map-icon-button.active:hover {
@@ -651,8 +678,14 @@
  *
  * The distance is the preset row exactly: the overlay's gap, the 32px chip,
  * and the gap again.
+ *
+ * Both menus, not just the picker's. The language button sits on the same row
+ * and its menu hangs off the same edge, so left alone it would be the one
+ * thing on this overlay still opening across the chips — and two menus on one
+ * row behaving differently is worse than either behaviour on its own. These
+ * are the only two MUI menus in the app.
  */
-.glass-ui .MuiMenu-paper.category-menu {
+.glass-ui .MuiMenu-paper {
   margin-top: calc(32px + var(--overlay-gap) * 2);
 }
 
@@ -691,7 +724,10 @@
   -webkit-backdrop-filter: var(--glass-blur-sm);
   backdrop-filter: var(--glass-blur-sm);
   border: 1px solid var(--glass-edge);
-  box-shadow: var(--glass-lift), var(--glass-rim);
+  /* The row scrolls sideways, so it clips — tight, for the reason the tool
+     group's buttons are. This row had it worst: no top padding at all, so a
+     30px shadow was being cut off flush with the top of every chip */
+  box-shadow: var(--glass-lift-tight), var(--glass-rim);
   color: var(--glass-ink);
 }
 
@@ -724,7 +760,7 @@
    */
   background-color: rgba(25, 118, 210, 0.8);
   color: #fff;
-  box-shadow: var(--glass-lift), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: var(--glass-lift-tight), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .glass-ui .category-presets .preset-chip.active .MuiChip-icon {
@@ -737,9 +773,20 @@
  * as padding and taken off again as margin, so the column above and below it
  * does not move.
  */
+/*
+ * Room for the chips' shadow on both edges, taken straight back off again as
+ * margin so nothing in the column above or below moves.
+ *
+ * The top matters more than the bottom and had none at all: `overflow-x: auto`
+ * computes `overflow-y` to `auto` as well, so this row clips vertically
+ * whether it means to or not, and it was cutting every chip's shadow off flush
+ * with its top edge.
+ */
 .glass-ui .category-presets {
+  padding-top: 6px;
+  margin-top: -6px;
   padding-bottom: 12px;
-  margin-bottom: -10px;
+  margin-bottom: -12px;
 }
 
 /*
@@ -900,6 +947,42 @@
  */
 .glass-ui .poi-popup-body {
   max-height: min(62vh, 460px);
+}
+
+/*
+ * The way out, as a bar across the foot of the card.
+ *
+ * It replaces Leaflet's close glyph, which is a 26px × in the top corner —
+ * fine on a balloon, poor on a modal, and on a phone it is a small target in
+ * the place a thumb reaches least. This is full width at the bottom, where the
+ * thumb already is.
+ *
+ * It is a sibling of the scrolling body rather than inside it, so it does not
+ * move: a point with forty tags scrolls under it and the way out stays on
+ * screen throughout. That is the whole requirement.
+ */
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-close {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.85em 1em calc(0.85em + env(safe-area-inset-bottom, 0px)) 1em;
+  border: none;
+  border-top: 1px solid var(--glass-hairline);
+  background: transparent;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--glass-accent-solid);
+  text-align: center;
+  cursor: pointer;
+  /* The body above it is a scroll box; this must not be dragged into it */
+  flex: 0 0 auto;
+}
+
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-close:hover,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-close:focus-visible {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 /*

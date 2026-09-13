@@ -156,10 +156,6 @@ const CategorySelect: React.FC<CategorySelectProps> = ({
           // open menu, which scrolls the list back to the top as soon as the
           // last selection is cleared
           disableAutoFocusItem: true,
-          // Names this menu so a theme can tell it from the language menu,
-          // which is the only other one on the map. Nothing reads it today
-          // except the glass stylesheet, which drops it clear of the preset row
-          slotProps: { paper: { className: "category-menu" } },
         }}
         sx={{
           background: "#fff",

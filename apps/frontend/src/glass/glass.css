@@ -103,25 +103,22 @@
    * The edge, and the one decision the whole look turns on: it is a drawn
    * line, not a highlight.
    *
-   * The instinct on glass is a bright white rim — light catching the bevel,
-   * which is how Apple does it. That is not this. Every surface here is
-   * outlined, and the outline is what holds a panel together when the panel is
-   * barely there: at these tints there is not enough tone difference between
-   * the glass and the map for an edge to read as anything, so it has to be
-   * stated rather than implied.
+   * A bright rim — light catching the bevel, which is how Apple does it.
    *
-   * How dark is a separate question from whether, and the first answer was too
-   * dark. Near-black draws a box: the eye reads the line first and the panel
-   * second, which on a map is exactly backwards. Taken far the other way the
-   * edge dissolves wherever the map happens to be pale — which is most of this
-   * basemap — and then the panel has nothing but its shadow, and shadows do
-   * not survive being cast onto white. A third of the way down still defines
-   * the shape everywhere without ever being the thing you notice.
+   * This went dark first, because the reference is outlined in near-black and
+   * because a stated edge is what holds a panel together when the panel is
+   * barely there. White asks something different of the design, and it is worth
+   * writing down what: over a light basemap a white line has almost nothing to
+   * contrast against, so for much of the screen the edge is not really there.
+   * What defines the panel then is the shadow, which is why --glass-lift below
+   * was strengthened at the same time as this was lightened. The two are one
+   * change and should be read together.
    *
-   * It only works over a light basemap, which is what this app has. On a dark
-   * map this line would disappear and the bright rim would be correct instead.
+   * Where it does earn its keep is against the dark parts of the map — water,
+   * a park, a dense block of buildings — and against the tinted active states,
+   * where it reads as a genuine lit rim rather than as an outline.
    */
-  --glass-edge: rgba(0, 0, 0, 0.35);
+  --glass-edge: rgba(255, 255, 255, 0.75);
 
   /*
    * The sheen across the face, as a background image so any element can carry
@@ -138,9 +135,17 @@
     rgba(255, 255, 255, 0) 45%
   );
 
-  /* Floating, at two heights: chrome sits low, panels and popups sit high */
-  --glass-lift: 0 2px 10px rgba(0, 0, 0, 0.1), 0 8px 28px rgba(0, 0, 0, 0.12);
-  --glass-lift-high: 0 4px 16px rgba(0, 0, 0, 0.12), 0 16px 48px rgba(0, 0, 0, 0.18);
+  /*
+   * Floating, at two heights: chrome sits low, panels and popups sit high.
+   *
+   * Deeper than they were, and not for taste — see --glass-edge above. With a
+   * white rim the edge stops separating these surfaces from a pale map, and
+   * something has to. The near shadow does most of that work, so it carries
+   * most of the increase; the far one only has to say how high the thing is
+   * floating.
+   */
+  --glass-lift: 0 2px 8px rgba(0, 0, 0, 0.18), 0 10px 30px rgba(0, 0, 0, 0.16);
+  --glass-lift-high: 0 4px 14px rgba(0, 0, 0, 0.2), 0 18px 50px rgba(0, 0, 0, 0.22);
 
   /*
    * The thickness, seen from inside. Nearly nothing now that the outline is
@@ -299,14 +304,24 @@
  * leaves the group to become a badge.
  */
 .glass-ui .map-icon-button.active {
-  background-color: rgba(24, 24, 27, 0.8);
-  border-color: rgba(0, 0, 0, 0.85);
+  /*
+   * Blue, as it was before any of this — the app's own #1976d2 rather than the
+   * iOS blue the links use, because "as before" means that colour. Tinted
+   * rather than filled: the map still comes through a lit control, which is
+   * what keeps it part of the same set as the unlit ones beside it.
+   *
+   * 0.8 rather than the 0.72 the links' blue would take. This is the darker,
+   * greyer of the two blues and it goes muddy over a blurred street map before
+   * the brighter one does, so it needs a little more of itself to stay read as
+   * a colour.
+   */
+  background-color: rgba(25, 118, 210, 0.8);
   color: #fff;
-  box-shadow: var(--glass-lift), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: var(--glass-lift), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .glass-ui .map-icon-button.active:hover {
-  background-color: rgba(24, 24, 27, 0.9);
+  background-color: rgba(25, 118, 210, 0.9);
 }
 
 /* ---------- Search ---------- */
@@ -644,10 +659,20 @@
  */
 .glass-ui .category-presets .preset-chip.active,
 .glass-ui .category-presets .preset-chip.active:hover {
-  background-color: rgba(24, 24, 27, 0.8);
-  border-color: rgba(0, 0, 0, 0.85);
+  /*
+   * Blue, as it was before any of this — the app's own #1976d2 rather than the
+   * iOS blue the links use, because "as before" means that colour. Tinted
+   * rather than filled: the map still comes through a lit control, which is
+   * what keeps it part of the same set as the unlit ones beside it.
+   *
+   * 0.8 rather than the 0.72 the links' blue would take. This is the darker,
+   * greyer of the two blues and it goes muddy over a blurred street map before
+   * the brighter one does, so it needs a little more of itself to stay read as
+   * a colour.
+   */
+  background-color: rgba(25, 118, 210, 0.8);
   color: #fff;
-  box-shadow: var(--glass-lift), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: var(--glass-lift), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .glass-ui .category-presets .preset-chip.active .MuiChip-icon {

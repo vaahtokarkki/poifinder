@@ -41,6 +41,18 @@
    * affordance and no area, so it is dense. A dropdown is mostly area, so it
    * is thin. The popup is the hard case — dense text *and* area — and it gets
    * the blur doing the work the tint would otherwise have to.
+   *
+   * HOW FAR THEY CAN GO. Not a matter of taste: every one of these was set by
+   * compositing it over the real blurred basemap and taking the contrast of
+   * the worst pixel out of roughly a million. The quietest grey in the app is
+   * what binds — the survey and edit footnotes — and with the ink set as it
+   * now stands it clears AA all the way down to about 0.30 tint. These sit
+   * well above that on purpose: the sample is one neighbourhood of one city,
+   * and a map with more water or more forest in it would push the worst pixel
+   * darker. The margin is what covers the places nobody measured.
+   *
+   * So: if a future change darkens the basemap, or lightens the ink, re-run
+   * the check before trusting these numbers.
    */
   /*
    * Small chrome — a button, a pill. The densest of the lot, which is the
@@ -49,18 +61,18 @@
    * it stops being an object and becomes a smudge with an icon in it. There is
    * so little of it on screen that being opaque costs the map nothing.
    */
-  --glass-thin: rgba(255, 255, 255, 0.68);
+  --glass-thin: rgba(255, 255, 255, 0.58);
   /* A field, and the sheet while it is only peeking */
-  --glass-mid: rgba(255, 255, 255, 0.55);
+  --glass-mid: rgba(255, 255, 255, 0.46);
   /*
    * The large panels — the suggestion list, the routes card, the layers panel.
    * The thinnest, for the reason the buttons are the thickest: these cover a
    * third of the screen, and a third of the map behind an opaque sheet is a
    * map you have lost. This is the tint the whole look is recognisable by.
    */
-  --glass-panel: rgba(255, 255, 255, 0.5);
+  --glass-panel: rgba(255, 255, 255, 0.4);
   /* Dense content read at length: the point popup */
-  --glass-thick: rgba(255, 255, 255, 0.72);
+  --glass-thick: rgba(255, 255, 255, 0.62);
 
   /* The dark counterpart, for the two things on this map that were already
      dark and would look broken lightened: the passing remarks and the scrim */
@@ -88,16 +100,26 @@
    *                saturated, and pushing them further turned every park into
    *                a bright smear behind the type. 150% still lifts the colour
    *                enough to look like glass rather than frosted plastic.
-   *   brightness — lifts the backdrop towards white before the tint goes over
-   *                it, which buys contrast for the text without making the
-   *                surface any more opaque. It is what lets the panels stay as
-   *                transparent as they are and still be readable.
+   * There was a third — brightness(1.06) — to lift the backdrop towards white
+   * and buy contrast without more opacity. It is gone, and it is worth saying
+   * why so nobody adds it back.
+   *
+   * On Chrome for Android it did not stay inside the control. The filtered
+   * region expanded to the bounds of the nearest composited layer, so the lift
+   * was painted across whole containers: a pale rectangle over the top overlay
+   * spanning the screen, and another over the folded tool group — stopping
+   * exactly where that group stops, which is what gave it away. Both are layer
+   * boundaries, the overlay by its z-index and the tool group by the opacity
+   * it animates.
+   *
+   * Blur and saturate are well behaved. A multi-function backdrop filter is
+   * not, and brightness is the fragile one. The contrast it was buying is paid
+   * for with tint instead, which is inert.
    */
-  --glass-blur: blur(24px) saturate(150%) brightness(1.06);
+  --glass-blur: blur(24px) saturate(150%);
   /* For the small things, where 24px of blur over a 44px button is just a
-     smear of the two pixels either side of it. They are dense enough not to
-     need the brightness lift doing much */
-  --glass-blur-sm: blur(12px) saturate(150%) brightness(1.03);
+     smear of the two pixels either side of it */
+  --glass-blur-sm: blur(12px) saturate(150%);
 
   /*
    * The edge, and the one decision the whole look turns on: it is a drawn
@@ -188,8 +210,15 @@
    * against a known white background; on a surface that is half map it has
    * nothing reliable to sit against, and #9aa0a6 — which is what the survey
    * and edit lines are in the opaque popup — disappears into a pale street.
+   *
+   * Darkened again when the brightness lift came out of --glass-blur. That
+   * lift was worth about 0.25 of a contrast ratio, which sounds like nothing
+   * and was the difference between this tone passing AA on the thinnest panel
+   * and failing it on a fifth of a percent of the map. Measured, not guessed:
+   * the check composites each tint over the real blurred basemap and takes the
+   * worst pixel.
    */
-  --glass-ink-faint: #67676f;
+  --glass-ink-faint: #5d5d65;
   /* Hairlines drawn on glass, which have to be a tint of what is behind rather
      than a grey, or they turn into visible grey lines when the map is dark */
   --glass-hairline: rgba(0, 0, 0, 0.09);
@@ -602,6 +631,29 @@
   background: transparent;
   color: var(--glass-ink-faint);
   font-weight: 700;
+}
+
+/*
+ * The category menu opens below the preset chips rather than over them.
+ *
+ * MUI hangs a Select's menu off the control itself, which put it straight on
+ * top of the preset row: half a row of chips showing past its edge, the menu
+ * starting mid-way through a thing it has nothing to do with, and two stacked
+ * translucent surfaces reading as one muddle. Dropped clear of them the
+ * overlay is a single column again — picker, chips, menu — and the chips stay
+ * legible, which matters because they are the other way of doing what the menu
+ * is for.
+ *
+ * A margin rather than a different anchor: MUI writes the position inline from
+ * its own measurement of the control, so a stylesheet cannot re-anchor it, but
+ * a margin moves the box after the fact and the collision handling still has
+ * its 70vh ceiling to work with.
+ *
+ * The distance is the preset row exactly: the overlay's gap, the 32px chip,
+ * and the gap again.
+ */
+.glass-ui .MuiMenu-paper.category-menu {
+  margin-top: calc(32px + var(--overlay-gap) * 2);
 }
 
 .glass-ui .MuiMenu-paper .MuiMenuItem-root {

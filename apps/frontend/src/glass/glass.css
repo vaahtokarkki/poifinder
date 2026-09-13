@@ -35,19 +35,36 @@
   /*
    * The tints, in the three densities anything here is allowed to be.
    *
-   * Which one a surface gets is decided by what is written on it, not by how
-   * big it is. Chrome you look past — a button, a pill, a status remark — takes
-   * the thin one. Anything carrying a sentence somebody has to read takes the
-   * thick one, because body text over a map that is being panned underneath is
-   * not a design decision, it is a bug.
+   * Which one a surface gets is decided by two things pulling against each
+   * other: how much text is on it, and how much of the map it covers. Dense
+   * text wants density behind it; area wants transparency. A button is all
+   * affordance and no area, so it is dense. A dropdown is mostly area, so it
+   * is thin. The popup is the hard case — dense text *and* area — and it gets
+   * the blur doing the work the tint would otherwise have to.
    */
-  --glass-thin: rgba(255, 255, 255, 0.5);
-  --glass-mid: rgba(255, 255, 255, 0.66);
-  --glass-thick: rgba(255, 255, 255, 0.82);
+  /*
+   * Small chrome — a button, a pill. The densest of the lot, which is the
+   * opposite of what seems obvious and is what the reference actually does: a
+   * 44px control has to read as a solid thing you can press, and at a low tint
+   * it stops being an object and becomes a smudge with an icon in it. There is
+   * so little of it on screen that being opaque costs the map nothing.
+   */
+  --glass-thin: rgba(255, 255, 255, 0.68);
+  /* A field, and the sheet while it is only peeking */
+  --glass-mid: rgba(255, 255, 255, 0.55);
+  /*
+   * The large panels — the suggestion list, the routes card, the layers panel.
+   * The thinnest, for the reason the buttons are the thickest: these cover a
+   * third of the screen, and a third of the map behind an opaque sheet is a
+   * map you have lost. This is the tint the whole look is recognisable by.
+   */
+  --glass-panel: rgba(255, 255, 255, 0.5);
+  /* Dense content read at length: the point popup */
+  --glass-thick: rgba(255, 255, 255, 0.72);
 
   /* The dark counterpart, for the two things on this map that were already
      dark and would look broken lightened: the passing remarks and the scrim */
-  --glass-dark: rgba(28, 28, 30, 0.62);
+  --glass-dark: rgba(28, 28, 30, 0.82);
 
   /*
    * The backdrop itself. The saturate is doing at least as much work as the
@@ -55,16 +72,48 @@
    * panel as green and blue, and without it every surface on this map is the
    * same warm grey whatever it happens to be sitting over.
    */
-  --glass-blur: blur(20px) saturate(180%);
-  /* For the small round things, where 20px of blur over a 44px disc is just a
-     smear of the two pixels either side of it */
-  --glass-blur-sm: blur(12px) saturate(180%);
+  /*
+   * Three jobs, not one, and the middle one is the reason this is not simply
+   * a blur:
+   *
+   *   blur       — destroys the map's detail behind the text. This is the only
+   *                thing keeping a street name under a panel from competing
+   *                with the words printed on it. Generous, because a timid
+   *                blur leaves legible map underneath, which is the worst of
+   *                both: not clean enough to read over, not clear enough to
+   *                read as map.
+   *   saturate   — was 180%, which is the number every liquid glass demo uses
+   *                and is wrong here. Those demos sit over photographs. This
+   *                sits over a map whose greens and yellows are already
+   *                saturated, and pushing them further turned every park into
+   *                a bright smear behind the type. 150% still lifts the colour
+   *                enough to look like glass rather than frosted plastic.
+   *   brightness — lifts the backdrop towards white before the tint goes over
+   *                it, which buys contrast for the text without making the
+   *                surface any more opaque. It is what lets the panels stay as
+   *                transparent as they are and still be readable.
+   */
+  --glass-blur: blur(24px) saturate(150%) brightness(1.06);
+  /* For the small things, where 24px of blur over a 44px button is just a
+     smear of the two pixels either side of it. They are dense enough not to
+     need the brightness lift doing much */
+  --glass-blur-sm: blur(12px) saturate(150%) brightness(1.03);
 
   /*
-   * The lit edge. A hairline rather than a border: it is a highlight along the
-   * rim, and at 1px of solid colour it reads as an outline drawn round a box.
+   * The edge, and the one decision the whole look turns on: it is a drawn
+   * line, not a highlight.
+   *
+   * The instinct on glass is a bright white rim — light catching the bevel,
+   * which is how Apple does it. That is not this. Every surface here is
+   * outlined in a crisp near-black hairline, and it is what holds a panel
+   * together when the panel is barely there: at these tints there is not
+   * enough tone difference between the glass and the map for an edge to read
+   * as anything, so the edge has to be stated rather than implied.
+   *
+   * It only works over a light basemap, which is what this app has. On a dark
+   * map this line would disappear and the bright rim would be correct instead.
    */
-  --glass-edge: rgba(255, 255, 255, 0.5);
+  --glass-edge: rgba(0, 0, 0, 0.82);
 
   /*
    * The sheen across the face, as a background image so any element can carry
@@ -77,18 +126,21 @@
    */
   --glass-sheen: linear-gradient(
     155deg,
-    rgba(255, 255, 255, 0.55),
-    rgba(255, 255, 255, 0.08) 38%,
-    rgba(255, 255, 255, 0) 62%
+    rgba(255, 255, 255, 0.16),
+    rgba(255, 255, 255, 0) 45%
   );
 
   /* Floating, at two heights: chrome sits low, panels and popups sit high */
   --glass-lift: 0 2px 10px rgba(0, 0, 0, 0.1), 0 8px 28px rgba(0, 0, 0, 0.12);
   --glass-lift-high: 0 4px 16px rgba(0, 0, 0, 0.12), 0 16px 48px rgba(0, 0, 0, 0.18);
 
-  /* The thickness, seen from inside: a bright top rim and a faint one below */
-  --glass-rim: inset 0 1px 0 rgba(255, 255, 255, 0.7),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+  /*
+   * The thickness, seen from inside. Nearly nothing now that the outline is
+   * doing the work — a whisper of light just inside the top edge, which is
+   * what keeps the dark hairline reading as the rim of something with depth
+   * rather than as a box drawn on the map.
+   */
+  --glass-rim: inset 0 1px 0 rgba(255, 255, 255, 0.3);
 
   /*
    * A control cut into a glass panel rather than laid on top of it. Dark and
@@ -116,8 +168,15 @@
    * the same grey that reads as quiet on white reads as unset on glass.
    */
   --glass-ink: #16161a;
-  --glass-ink-dim: #4b4b52;
-  --glass-ink-faint: #74747c;
+  --glass-ink-dim: #42424a;
+  /*
+   * The quietest tone anything here is allowed to be, and it is darker than
+   * the grey the opaque UI uses for the same lines. A footnote grey is chosen
+   * against a known white background; on a surface that is half map it has
+   * nothing reliable to sit against, and #9aa0a6 — which is what the survey
+   * and edit lines are in the opaque popup — disappears into a pale street.
+   */
+  --glass-ink-faint: #67676f;
   /* Hairlines drawn on glass, which have to be a tint of what is behind rather
      than a grey, or they turn into visible grey lines when the map is dark */
   --glass-hairline: rgba(0, 0, 0, 0.09);
@@ -127,6 +186,16 @@
      popup and the sheet under it are recognisably the same material */
   --glass-radius: 18px;
   --glass-radius-lg: 24px;
+  /*
+   * The map buttons are rounded squares rather than discs. It is the shape the
+   * reference uses and it is not arbitrary: a circle with a hard dark outline
+   * reads as a token or a badge, where the same outline on a squircle reads as
+   * a key. It also sits with the panels, which are rounded rectangles — one
+   * family of shapes rather than discs floating beside cards.
+   *
+   * The one line to change back to the opaque UI's circles is this one.
+   */
+  --glass-radius-btn: 15px;
 
   --glass-ease: cubic-bezier(0.2, 0.8, 0.3, 1);
 }
@@ -146,6 +215,7 @@
     --glass-thin: #fbfbfd;
     --glass-mid: #fbfbfd;
     --glass-thick: #fff;
+    --glass-panel: #fbfbfd;
     --glass-dark: #1c1c1e;
     --glass-well: #f0f0f4;
     --glass-sheen: none;
@@ -157,6 +227,7 @@
     --glass-thin: #fbfbfd;
     --glass-mid: #fbfbfd;
     --glass-thick: #fff;
+    --glass-panel: #fbfbfd;
     --glass-dark: #1c1c1e;
     --glass-well: #f0f0f4;
     --glass-sheen: none;
@@ -182,6 +253,7 @@
   -webkit-backdrop-filter: var(--glass-blur-sm);
   backdrop-filter: var(--glass-blur-sm);
   border: 1px solid var(--glass-edge);
+  border-radius: var(--glass-radius-btn);
   box-shadow: var(--glass-lift), var(--glass-rim);
   color: var(--glass-ink);
   /* The border is drawn outside the 44px the padding and the icon make, so it
@@ -219,15 +291,14 @@
  * leaves the group to become a badge.
  */
 .glass-ui .map-icon-button.active {
-  background-color: rgba(var(--glass-accent), 0.72);
-  border-color: rgba(255, 255, 255, 0.55);
+  background-color: rgba(24, 24, 27, 0.8);
+  border-color: rgba(0, 0, 0, 0.85);
   color: #fff;
-  box-shadow: var(--glass-lift), var(--glass-rim),
-    0 2px 12px rgba(var(--glass-accent), 0.4);
+  box-shadow: var(--glass-lift), inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .glass-ui .map-icon-button.active:hover {
-  background-color: rgba(var(--glass-accent), 0.82);
+  background-color: rgba(24, 24, 27, 0.9);
 }
 
 /* ---------- Search ---------- */
@@ -299,7 +370,7 @@
  * and it opens over whatever the map happens to be showing.
  */
 .glass-ui .MuiAutocomplete-popper .MuiPaper-root {
-  background-color: var(--glass-thick);
+  background-color: var(--glass-panel);
   background-image: var(--glass-sheen);
   -webkit-backdrop-filter: var(--glass-blur);
   backdrop-filter: var(--glass-blur);
@@ -331,7 +402,7 @@
 .glass-ui .MuiAutocomplete-popper .MuiAutocomplete-option:hover,
 .glass-ui .MuiAutocomplete-popper .MuiAutocomplete-option.Mui-focused,
 .glass-ui .MuiAutocomplete-popper .MuiAutocomplete-option[aria-selected="true"] {
-  background-color: rgba(var(--glass-accent), 0.14);
+  background-color: rgba(0, 0, 0, 0.07);
 }
 
 .glass-ui .MuiAutocomplete-popper .MuiAutocomplete-noOptions,
@@ -348,7 +419,7 @@
  * not an oversized pill.
  */
 .glass-ui .routes-card {
-  background-color: var(--glass-thick);
+  background-color: var(--glass-panel);
   background-image: var(--glass-sheen);
   -webkit-backdrop-filter: var(--glass-blur);
   backdrop-filter: var(--glass-blur);
@@ -409,16 +480,16 @@
  */
 .glass-ui .routes-card .MuiButton-root {
   border-radius: 999px;
-  border: 1px solid rgba(var(--glass-accent), 0.28);
-  background-color: rgba(var(--glass-accent), 0.12);
-  color: var(--glass-accent-solid);
+  border: 1px solid var(--glass-edge);
+  background-color: rgba(255, 255, 255, 0.5);
+  color: var(--glass-ink);
+  font-weight: 700;
   box-shadow: none;
   transition: background-color 0.18s var(--glass-ease);
 }
 
 .glass-ui .routes-card .MuiButton-root:hover {
-  background-color: rgba(var(--glass-accent), 0.2);
-  border-color: rgba(var(--glass-accent), 0.4);
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Nothing to submit yet. Flat and grey rather than a paler blue, so that "not
@@ -501,6 +572,54 @@
 }
 
 /* ---------- Point popups ---------- */
+
+/*
+ * A small modal rather than a balloon pinned to its marker.
+ *
+ * Leaflet writes `left`, `bottom` and a transform onto the popup to hang it off
+ * the point, which is why every line here has to shout — there is no other way
+ * to take an absolutely positioned popup off its anchor from a stylesheet.
+ *
+ * Worth doing. A tethered popup has to be small enough not to cover the point
+ * it belongs to, it drags the map around to fit itself on screen, and on a
+ * phone it ends up wherever the marker happened to be — often half under the
+ * search bar. A card in the middle is the same content with none of that: it
+ * is the one thing being read, it is always in the same place, and the tip
+ * pointing at a marker was never carrying much once the map had panned anyway.
+ *
+ * The tip goes with it. An arrow pointing at nothing in particular is worse
+ * than no arrow.
+ */
+.glass-ui .leaflet-popup.poi-popup {
+  position: fixed !important;
+  left: 50% !important;
+  top: 50% !important;
+  bottom: auto !important;
+  transform: translate(-50%, -50%) !important;
+  margin: 0 !important;
+  width: min(360px, calc(100vw - 32px)) !important;
+}
+
+.glass-ui .poi-popup .leaflet-popup-tip-container {
+  display: none;
+}
+
+/* No longer competing with the map for width: the modal states its own, so the
+   content fills it rather than being measured to the longest line in it */
+.glass-ui .poi-popup .leaflet-popup-content {
+  width: auto !important;
+  max-width: none;
+}
+
+/*
+ * And taller. The 320px ceiling was sized for a balloon hanging off a marker,
+ * where the whole constraint is that the popup must not cover the point it is
+ * describing. A modal in the middle of the screen has no such duty, and at
+ * 320px a shop with a dozen tags was a scroll box with two rows showing.
+ */
+.glass-ui .poi-popup-body {
+  max-height: min(62vh, 460px);
+}
 
 /*
  * Thick, and not up for negotiation: a popup is a name, an address and opening
@@ -619,7 +738,7 @@
 /* The button that opens it is a .map-icon-button and is already done above */
 
 .glass-ui .layers-panel {
-  background-color: var(--glass-thick);
+  background-color: var(--glass-panel);
   background-image: var(--glass-sheen);
   -webkit-backdrop-filter: var(--glass-blur);
   backdrop-filter: var(--glass-blur);
@@ -719,7 +838,7 @@
   border-top: 1px solid var(--glass-edge);
   border-radius: var(--glass-radius-lg) var(--glass-radius-lg) 0 0;
   box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1), 0 -16px 48px rgba(0, 0, 0, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
   color: var(--glass-ink);
   /* Follows the sheet's own 0.28s travel, so the material and the movement are
      one gesture rather than a slide and then a fade */
@@ -740,7 +859,7 @@
   border-top: 1px solid var(--glass-edge);
   border-radius: var(--glass-radius-lg) var(--glass-radius-lg) 0 0;
   box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1), 0 -16px 48px rgba(0, 0, 0, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
   color: var(--glass-ink);
 }
 

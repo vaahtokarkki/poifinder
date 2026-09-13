@@ -59,9 +59,6 @@ import {
   rankForKey,
   wikiTagLink,
 } from "./poiPopup";
-// The one place outside src/glass/ that asks whether the flag is on. See the
-// pane it builds below, and src/glass/index.ts for how to remove the flag
-import { glassUiRequested } from "./glass";
 
 /** Breathing room between an open popup and the edges of the map. */
 const POPUP_EDGE_GAP_PX = 24;
@@ -1406,10 +1403,10 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   const map = useMap();
 
   /**
-   * The pane the glass UI opens its popup in, and the reason it needs one.
+   * The pane the popup opens in, and the reason it needs one.
    *
-   * Under `?ui` the popup is not a balloon pinned to its marker but a card in
-   * the middle of the screen, which the stylesheet does with `position: fixed`.
+   * The popup is not a balloon pinned to its marker but a card in the middle
+   * of the screen, which the stylesheet does with `position: fixed`.
    * That cannot work from Leaflet's own popup pane: panning the map puts a
    * `transform` on `.leaflet-map-pane`, and an ancestor with a transform
    * becomes the containing block for every fixed descendant under it. So the
@@ -1425,7 +1422,6 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * the Popup below is rendered into it, and `map` never changes identity.
    */
   const modalPane = React.useMemo(() => {
-    if (!glassUiRequested()) return undefined;
     const name = "glassModal";
     if (!map.getPane(name)) {
       // Leaflet names the class after the pane, which would be

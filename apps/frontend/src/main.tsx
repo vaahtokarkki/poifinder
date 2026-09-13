@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import "leaflet/dist/leaflet.css";
 import "maplibre-gl/dist/maplibre-gl.css";
-// The liquid glass look, behind ?ui. Everything it owns is in that folder and
-// nothing outside it reads the flag: deleting the folder and this line removes
-// the experiment whole. See src/glass/index.ts
-import './glass'
+// The app's look. It was built behind a ?ui flag and is now simply the UI:
+// the class it hangs off is written into index.html, so this is a stylesheet
+// import and nothing more
+import './glass/glass.css'
 import App from './App.tsx'
 import { initAnalytics } from './analytics'
 import { warmCountries } from './analytics/countries'

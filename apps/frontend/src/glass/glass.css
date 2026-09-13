@@ -1,18 +1,47 @@
 /*
- * Liquid glass, behind `?ui`. See ./index.ts for how the flag is applied and
- * how to remove it.
+ * Liquid glass. This is the app's look — every visitor gets it.
  *
- * Every rule here is prefixed with `.glass-ui`, which is set on the root
- * element, so this file is inert until the flag asks for it and stripping the
- * prefix is all it takes to make it the only look. Nothing in here changes
- * layout: the same boxes sit in the same places, they are made of a different
- * material. That is deliberate — a flag that also moves things is a flag whose
- * two sides have to be tested as two apps.
+ * It was built behind a `?ui` flag and that flag is gone. What remains of it
+ * is the `.glass-ui` class every rule here is prefixed with, which is written
+ * into index.html on the <html> element.
  *
- * What it covers, which is what was asked for: the map controls, the search
- * and routing panels, the point popups, and the sheet. The category picker,
- * the preset chips and the language button are left alone on purpose and still
- * look the way they always did.
+ * DO NOT STRIP THAT PREFIX. It is tempting, now that nothing switches it off,
+ * and it would quietly break a large part of this file. These rules have to
+ * outrank MUI's own, and MUI injects its styles into <head> at runtime —
+ * after this stylesheet. `.glass-ui .MuiInputBase-root` beats
+ * `.MuiInputBase-root` on specificity; strip the prefix and the two tie, the
+ * later one wins, and the search field, the menus, the chips and the
+ * checkboxes all quietly revert to MUI's defaults. The extra class is load
+ * bearing. (An older version of this comment claimed the opposite. It was
+ * wrong.)
+ *
+ * WHERE THE CLASS LIVES, and a trap that already caught this project once.
+ * It is an attribute on the <html> element in index.html, written there rather
+ * than applied from JavaScript so that it is present on the first paint and no
+ * visitor sees an unstyled sheet flash past.
+ *
+ * It has to sit AFTER the lang attribute. scripts/prerender.mjs sets each
+ * translated page's locale by running a text substitution over the built
+ * shell, anchored on the opening tag up to the end of the lang value. A class
+ * placed ahead of lang stops that substitution finding its target, and every
+ * translated page ships declaring itself English.
+ *
+ * That is also why this explanation is here and not in index.html. The note
+ * that used to live beside the tag quoted prerender's search pattern, and the
+ * substitution matched the quotation instead of the real tag: the comment was
+ * rewritten, the tag was not, and 1,901 translated pages were built claiming
+ * lang="en". Prose about the shell is safe in a stylesheet. Anything
+ * resembling that pattern is not safe inside the shell itself.
+ *
+ * Nothing in here changes layout: the same boxes sit in the same places, they
+ * are made of a different material. That began as a rule for keeping a flag
+ * honest — two looks that also move things are two apps to test — and it is
+ * worth keeping now for a plainer reason: a stylesheet that only restates
+ * surfaces is one that can be read, and reverted, a rule at a time.
+ *
+ * What it covers: the map controls, the search and routing panels, the point
+ * popups, the sheet, the category picker and its menu, the preset chips and
+ * the language button. Which is to say all of the chrome drawn over the map.
  *
  * WHAT MAKES IT GLASS. Four things, and all four have to be there or it reads
  * as a plain translucent box:

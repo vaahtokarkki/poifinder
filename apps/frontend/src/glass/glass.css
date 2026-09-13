@@ -209,8 +209,27 @@
    * this one stays blue. The solid form is kept for the few places that need
    * to sit on white.
    */
+  /*
+   * Two shades of one blue, because it does two opposite jobs.
+   *
+   * The triple below is the FILL: a chosen preset, a lit map button. It is the
+   * vivid azure, and it is the one people actually perceive as the app's
+   * colour, because it arrives as a whole chip rather than as a few words.
+   * Freshness lives here.
+   *
+   * The hex is the same blue as TEXT: links, the popup's close bar, the
+   * "what this means" asides. Deeper, and it has to be. Small blue text on a
+   * surface that is two thirds map measured 2.50:1 at the vivid value, which
+   * is not a styling opinion, it is text people cannot read. Taken down to
+   * this it reaches 4.99:1 on the popup, where the close bar lives.
+   *
+   * Darkening costs nothing visible: nobody reads the hue of a six-word link
+   * as the accent of an app. Keeping one token for both was the mistake — the
+   * fill wanted to get brighter and the text wanted to get darker, and a
+   * single value could only disappoint one of them.
+   */
   --glass-accent: 10, 132, 255;
-  --glass-accent-solid: #0a84ff;
+  --glass-accent-solid: #0b5cba;
 
   /*
    * Ink. Near-black rather than black, and one step down for anything
@@ -361,23 +380,48 @@
  */
 .glass-ui .map-icon-button.active {
   /*
-   * Blue, as it was before any of this — the app's own #1976d2 rather than the
-   * iOS blue the links use, because "as before" means that colour. Tinted
-   * rather than filled: the map still comes through a lit control, which is
-   * what keeps it part of the same set as the unlit ones beside it.
+   * The lit state, and the only colour in this file that is not a neutral.
    *
-   * 0.8 rather than the 0.72 the links' blue would take. This is the darker,
-   * greyer of the two blues and it goes muddy over a blurred street map before
-   * the brighter one does, so it needs a little more of itself to stay read as
-   * a colour.
+   * It was the app's own #1976d2 — Material 700, a heavy and slightly grey
+   * blue. On an opaque button that reads as solid and deliberate; behind glass
+   * it reads as a flat painted rectangle from about 2013, which is exactly
+   * what it looked like. It is also the blue that goes muddy over a blurred
+   * street map, which was written down here and then ignored.
+   *
+   * Stated as the shared accent now rather than a literal, so the two things
+   * that light up — a map button and a chosen preset — cannot drift apart, and
+   * so the hue is one token to change rather than three.
+   *
+   * Three things make it read as lit rather than filled: it stays tinted, so
+   * the map still comes through; the inner rim is brighter than a neutral
+   * surface gets; and it spills a little of its own colour onto what is behind
+   * it. That last one is what a lit thing does and a painted one does not.
+   *
+   * The glow is kept to 6px deliberately. Both of these sit inside containers
+   * that clip — the tool group at 8px, the preset row at its top padding — and
+   * a generous glow would be cut off flush and bring back the grey rectangle
+   * that took three attempts to find. See --glass-lift-tight.
    */
-  background-color: rgba(25, 118, 210, 0.8);
+  /*
+   * 0.82 rather than a thinner tint, and the reason is the white label on top
+   * of it. The fill is accent mixed with whatever pale map is behind it, so
+   * the *less* accent there is the lighter the fill goes and the worse white
+   * reads on it. Measured: 2.72:1 at 0.76, about 3.0 here.
+   *
+   * It does not reach 4.5 and cannot. White on any blue vivid enough to look
+   * fresh sits near 3:1 — iOS runs its own white-on-blue at about 3.5 — and
+   * the only way up is a navy that would put us straight back where this
+   * started. Deliberate, and noted here so it is not mistaken for an oversight.
+   */
+  background-color: rgba(var(--glass-accent), 0.82);
   color: #fff;
-  box-shadow: var(--glass-lift-tight), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: var(--glass-lift-tight),
+    0 0 6px rgba(var(--glass-accent), 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
 }
 
 .glass-ui .map-icon-button.active:hover {
-  background-color: rgba(25, 118, 210, 0.9);
+  background-color: rgba(var(--glass-accent), 0.9);
 }
 
 /* ---------- Search ---------- */
@@ -748,19 +792,44 @@
 .glass-ui .category-presets .preset-chip.active,
 .glass-ui .category-presets .preset-chip.active:hover {
   /*
-   * Blue, as it was before any of this — the app's own #1976d2 rather than the
-   * iOS blue the links use, because "as before" means that colour. Tinted
-   * rather than filled: the map still comes through a lit control, which is
-   * what keeps it part of the same set as the unlit ones beside it.
+   * The lit state, and the only colour in this file that is not a neutral.
    *
-   * 0.8 rather than the 0.72 the links' blue would take. This is the darker,
-   * greyer of the two blues and it goes muddy over a blurred street map before
-   * the brighter one does, so it needs a little more of itself to stay read as
-   * a colour.
+   * It was the app's own #1976d2 — Material 700, a heavy and slightly grey
+   * blue. On an opaque button that reads as solid and deliberate; behind glass
+   * it reads as a flat painted rectangle from about 2013, which is exactly
+   * what it looked like. It is also the blue that goes muddy over a blurred
+   * street map, which was written down here and then ignored.
+   *
+   * Stated as the shared accent now rather than a literal, so the two things
+   * that light up — a map button and a chosen preset — cannot drift apart, and
+   * so the hue is one token to change rather than three.
+   *
+   * Three things make it read as lit rather than filled: it stays tinted, so
+   * the map still comes through; the inner rim is brighter than a neutral
+   * surface gets; and it spills a little of its own colour onto what is behind
+   * it. That last one is what a lit thing does and a painted one does not.
+   *
+   * The glow is kept to 6px deliberately. Both of these sit inside containers
+   * that clip — the tool group at 8px, the preset row at its top padding — and
+   * a generous glow would be cut off flush and bring back the grey rectangle
+   * that took three attempts to find. See --glass-lift-tight.
    */
-  background-color: rgba(25, 118, 210, 0.8);
+  /*
+   * 0.82 rather than a thinner tint, and the reason is the white label on top
+   * of it. The fill is accent mixed with whatever pale map is behind it, so
+   * the *less* accent there is the lighter the fill goes and the worse white
+   * reads on it. Measured: 2.72:1 at 0.76, about 3.0 here.
+   *
+   * It does not reach 4.5 and cannot. White on any blue vivid enough to look
+   * fresh sits near 3:1 — iOS runs its own white-on-blue at about 3.5 — and
+   * the only way up is a navy that would put us straight back where this
+   * started. Deliberate, and noted here so it is not mistaken for an oversight.
+   */
+  background-color: rgba(var(--glass-accent), 0.82);
   color: #fff;
-  box-shadow: var(--glass-lift-tight), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: var(--glass-lift-tight),
+    0 0 6px rgba(var(--glass-accent), 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
 }
 
 .glass-ui .category-presets .preset-chip.active .MuiChip-icon {
@@ -783,8 +852,10 @@
  * with its top edge.
  */
 .glass-ui .category-presets {
-  padding-top: 6px;
-  margin-top: -6px;
+  /* 8 rather than 6: the lit chip's glow reaches 6px and would otherwise be
+     clipped flush by exactly the pixel it needs */
+  padding-top: 8px;
+  margin-top: -8px;
   padding-bottom: 12px;
   margin-bottom: -12px;
 }

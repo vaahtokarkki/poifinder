@@ -253,7 +253,10 @@ body {
      toolbars, its bottom edge is not where the screen ends */
   position: fixed;
   right: 24px;
-  bottom: calc(24px + var(--sheet-offset, 0px));
+  /* Both offsets, added rather than compared: the sheet and the point panel
+     can be up at the same time, and clearing only the taller leaves this
+     furniture behind the other */
+  bottom: calc(24px + var(--sheet-offset, 0px) + var(--poi-panel-offset, 0px));
   z-index: 1200;
   display: flex;
   flex-direction: column;
@@ -329,7 +332,10 @@ body {
      under the mobile browser toolbars */
   position: fixed;
   left: 24px;
-  bottom: calc(24px + var(--sheet-offset, 0px));
+  /* Both offsets, added rather than compared: the sheet and the point panel
+     can be up at the same time, and clearing only the taller leaves this
+     furniture behind the other */
+  bottom: calc(24px + var(--sheet-offset, 0px) + var(--poi-panel-offset, 0px));
   z-index: 1200;
   display: flex;
   flex-direction: column;
@@ -567,7 +573,9 @@ button.layers-tile {
 
 /* The Leaflet attribution rides above the sheet as well */
 .leaflet-bottom.leaflet-right {
-  transform: translateY(calc(-1 * var(--sheet-offset, 0px)));
+  transform: translateY(
+    calc(-1 * (var(--sheet-offset, 0px) + var(--poi-panel-offset, 0px)))
+  );
   transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.3, 1);
 }
 
@@ -1418,7 +1426,10 @@ button.layers-tile {
   left: 50%;
   transform: translateX(-50%);
   /* Rides above the sheet, like the map controls do */
-  bottom: calc(24px + var(--sheet-offset, 0px));
+  /* Both offsets, added rather than compared: the sheet and the point panel
+     can be up at the same time, and clearing only the taller leaves this
+     furniture behind the other */
+  bottom: calc(24px + var(--sheet-offset, 0px) + var(--poi-panel-offset, 0px));
   z-index: 2200;
   display: flex;
   flex-direction: column;

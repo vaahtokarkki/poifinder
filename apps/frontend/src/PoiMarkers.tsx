@@ -122,64 +122,58 @@ const shapeFitPadding = () => {
   const sheet = Number.parseFloat(
     getComputedStyle(document.documentElement).getPropertyValue("--sheet-offset")
   );
+  /*
+   * The point panel, when one is open. Measured off the element rather than
+   * read from the custom property, because that property holds `min(46vh,
+   * 420px)` and a custom property computes to its own token rather than to a
+   * resolved length — there is no number in it to parse.
+   *
+   * Measuring is safe here only because the panel's height is fixed. Its
+   * content grows when the building lookup lands; its box does not, so this
+   * returns the same number before and after, and the fit is not re-run at a
+   * different size a second after it settled.
+   */
+  const panel = document.querySelector(".leaflet-popup.poi-popup");
+  const panelHeight = panel ? Math.round(panel.getBoundingClientRect().height) : 0;
   return {
     paddingTopLeft: [POPUP_EDGE_GAP_PX, overlayHeight + POPUP_EDGE_GAP_PX] as [number, number],
     paddingBottomRight: [
       POPUP_EDGE_GAP_PX,
-      (Number.isFinite(sheet) ? sheet : 0) + POPUP_EDGE_GAP_PX,
+      (Number.isFinite(sheet) ? sheet : 0) + panelHeight + POPUP_EDGE_GAP_PX,
     ] as [number, number],
   };
 };
 
 /**
- * Where to centre the map at `zoom` so that `bounds` is framed the way
- * fitBounds frames it, and the open popup sits clear of the edges the way its
- * own auto pan would leave it — both worked out before the move, so there is
- * one move rather than a zoom and then a correction.
+ * Where to centre the map at `zoom` so that `bounds` sits framed inside the
+ * padding, which is what fitBounds does and all a fixed panel needs.
+ *
+ * There used to be a second version of this which went on to correct for where
+ * the popup's own box landed relative to its marker — Leaflet's arithmetic for
+ * shoving a balloon clear of the screen edges. That correction is meaningless
+ * for a panel pinned to the bottom of the viewport: its box has no spatial
+ * relationship to the anchor any more, and worked through for a phone-sized
+ * screen it asked the map to move 24px to bring into view something already
+ * fixed and fully visible.
+ *
+ * It is deleted rather than kept for a rainy day. The panel is the only shape
+ * a popup takes now, so there was no caller left and no case it could serve.
  */
-const centerFittingPopup = (
+const centerFittingBounds = (
   map: LeafletMap,
   bounds: LatLngBounds,
   zoom: number,
   paddingTL: Point,
-  paddingBR: Point,
-  popup: LeafletPopup
-): LatLng => {
-  // As fitBounds centres the bounds inside its padding
-  const center = map
-    .project(bounds.getSouthWest(), zoom)
-    .add(map.project(bounds.getNorthEast(), zoom))
-    .divideBy(2)
-    .add(paddingBR.subtract(paddingTL).divideBy(2));
-
-  const element = popup.getElement();
-  const anchorLatLng = popup.getLatLng();
-  if (!element || !anchorLatLng) return map.unproject(center, zoom);
-
-  // The popup's box relative to the point it hangs from, in pixels, which is
-  // the same at every zoom
-  const anchor = map.latLngToContainerPoint(anchorLatLng);
-  const box = element.getBoundingClientRect();
-  const container = map.getContainer().getBoundingClientRect();
-  const offset = point(box.left - container.left - anchor.x, box.top - container.top - anchor.y);
-
-  // Leaflet's own auto pan arithmetic, done for the view about to be
-  const size = map.getSize();
-  const at = map
-    .project(anchorLatLng, zoom)
-    .add(offset)
-    .subtract(center.subtract(size.divideBy(2)));
-  const panTL = point(AUTO_PAN_PADDING_TOP_LEFT);
-  const panBR = point(POPUP_EDGE_GAP_PX, POPUP_EDGE_GAP_PX);
-  let dx = 0;
-  let dy = 0;
-  if (at.x + box.width + panBR.x > size.x) dx = at.x + box.width - size.x + panBR.x;
-  if (at.x - dx - panTL.x < 0) dx = at.x - panTL.x;
-  if (at.y + box.height + panBR.y > size.y) dy = at.y + box.height - size.y + panBR.y;
-  if (at.y - dy - panTL.y < 0) dy = at.y - panTL.y;
-
-  return map.unproject(center.add([dx, dy]), zoom);
-};
+  paddingBR: Point
+): LatLng =>
+  map.unproject(
+    map
+      .project(bounds.getSouthWest(), zoom)
+      .add(map.project(bounds.getNorthEast(), zoom))
+      .divideBy(2)
+      .add(paddingBR.subtract(paddingTL).divideBy(2)),
+    zoom
+  );
 
 /**
  * How close two points have to be, in pixels on the screen, before they are
@@ -1781,7 +1775,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
               return;
             }
             flyOwn(
-              centerFittingPopup(map, featureBounds, target, paddingTL, paddingBR, popup),
+              centerFittingBounds(map, featureBounds, target, paddingTL, paddingBR),
               target,
               FEATURE_FLY_IN_S
             );
@@ -1984,30 +1978,25 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                   openPopupRef.current = event.popup;
                   shownPopupRef.current = event.popup;
                   // Zooms in when far out, otherwise only moves the map if the
-                  // outline does not already fit.
-                  //
-                  // Skipped for the modal, which is the point of it: all of
-                  // this exists to get a balloon clear of the controls and the
-                  // screen edges, and a card in the middle of the screen is
-                  // already clear of both. The outline is still drawn — the
-                  // map just no longer moves to frame it
-                  if (!modalPane) fitShapeIntoView(marker, event.popup);
+                  // outline does not already fit — into the room above the
+                  // panel, which is what makes the split screen worth having
+                  fitShapeIntoView(marker, event.popup);
                 },
                 // Only if it is still ours: opening another popup closes this
                 // one, and the close arrives after the open it was caused by
                 popupclose: (event: PopupEvent) => {
                   setOpenShape(current => (current === key ? null : current));
                   // Whatever this popup was allowed to do is settled; the next
-                  // opening starts over, centered like the first one was.
-                  // Never for the modal: it was not given the right to pan in
-                  // the first place, and handing it back on close would let the
-                  // next opening move the map
-                  if (!modalPane) event.popup.options.autoPan = true;
+                  // opening starts over, centered like the first one was
+                  event.popup.options.autoPan = true;
                   if (openPopupRef.current === event.popup) {
                     openPopupRef.current = null;
                   }
-                  // Nothing to restore when nothing was moved
-                  if (!modalPane) restoreViewAfter(event.popup);
+                  // Back to the view it was opened from, unless the reader has
+                  // taken the map somewhere themselves in the meantime — see
+                  // the releaseMap effect, which drops the saved view on the
+                  // first deliberate drag or zoom
+                  restoreViewAfter(event.popup);
                 },
               };
 

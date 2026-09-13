@@ -1176,14 +1176,97 @@
   pointer-events: auto;
 }
 
+/*
+ * How tall the panel is, and why it is a fixed number rather than the height
+ * of its own content.
+ *
+ * The content grows after the panel opens. The enclosing-building lookup is a
+ * fetch, so a point inside a shopping centre gains a whole section — the
+ * borrowed rows and the building's own — a moment after you tapped it. A panel
+ * sized to its content would change height at that moment, which would change
+ * the room the map has, which would re-fit the feature: the map lurching a
+ * second after it settled, which is the very thing the auto-pan release
+ * machinery in PoiMarkers exists to prevent.
+ *
+ * Fixed, and the content scrolls inside. The map's share of the screen is then
+ * a constant the fit can be computed against once.
+ */
+.glass-ui {
+  --poi-panel-height: min(46vh, 420px);
+}
+
+/*
+ * The panel itself: across the foot of the screen, the map above it.
+ *
+ * This was a card in the middle of the screen, which read well and hid the one
+ * thing the card is about — the point, and the building outline drawn around
+ * it. Splitting the screen is what every map app does with this problem, and
+ * the machinery for it was already here: PoiMarkers fits the feature into
+ * whatever room is left and flies back on close.
+ */
 .glass-ui .leaflet-popup.poi-popup {
   position: fixed !important;
-  left: 50% !important;
-  top: 50% !important;
-  bottom: auto !important;
-  transform: translate(-50%, -50%) !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: auto !important;
+  bottom: 0 !important;
+  transform: none !important;
   margin: 0 !important;
-  width: min(360px, calc(100vw - 32px)) !important;
+  width: 100% !important;
+  height: var(--poi-panel-height);
+  display: flex;
+  flex-direction: column;
+}
+
+/* The glass card fills the panel rather than sitting in it, so the rounded top
+   edge is the panel's edge and the close bar lands on the screen's bottom */
+.glass-ui .poi-popup .leaflet-popup-content-wrapper {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--glass-radius-lg) var(--glass-radius-lg) 0 0;
+}
+
+.glass-ui .poi-popup .leaflet-popup-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+ * On a wide screen it becomes a card in the lower left, following the bottom
+ * sheet's own breakpoint and width so the two read as the same furniture
+ * rather than two conventions on one screen.
+ */
+@media (min-width: 900px) {
+  .glass-ui .leaflet-popup.poi-popup {
+    left: 16px !important;
+    right: auto !important;
+    width: 460px !important;
+  }
+
+  .glass-ui .poi-popup .leaflet-popup-content-wrapper {
+    border-radius: var(--glass-radius-lg);
+  }
+}
+
+/*
+ * While a panel is open the map furniture has to clear it, and so does the
+ * info sheet — which otherwise sits behind the panel arguing for the same
+ * strip of screen. Published as a variable so index.css can lift the controls
+ * by the sum of this and the sheet, rather than by whichever happens to be
+ * larger.
+ */
+.glass-ui body:has(.leaflet-popup.poi-popup) {
+  --poi-panel-offset: var(--poi-panel-height);
+}
+
+.glass-ui body:has(.leaflet-popup.poi-popup) .bottom-sheet {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.16s var(--glass-ease), visibility 0.16s;
 }
 
 .glass-ui .poi-popup .leaflet-popup-tip-container {
@@ -1204,7 +1287,12 @@
  * 320px a shop with a dozen tags was a scroll box with two rows showing.
  */
 .glass-ui .poi-popup-body {
-  max-height: min(62vh, 460px);
+  /* The panel states the height now; the body takes what is left after the
+     close bar and scrolls whatever does not fit */
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  overflow-y: auto;
 }
 
 /*

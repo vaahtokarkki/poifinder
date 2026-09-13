@@ -725,12 +725,32 @@
 }
 
 /*
- * The group headings. MUI gives these an opaque white background of their own
- * so they can stick to the top of a scrolling list without the rows showing
- * through — which on a glass menu paints a solid bar across it, once per
- * group. They keep the sticking; they lose the paint.
+ * The group headings, which must not stick.
+ *
+ * MUI makes these `position: sticky` so a heading pins to the top of the list
+ * while its own group scrolls past. That only works because MUI also gives
+ * them an opaque white background: the paint is what hides the rows sliding
+ * underneath. The two are one mechanism, not a style and a behaviour.
+ *
+ * This file used to take the paint away and keep the sticking, on the grounds
+ * that a white bar across a glass menu looks wrong. It does — but the result
+ * was worse: every pinned heading stayed visible with the next one pinning on
+ * top of it, so scrolling the category list printed "Featured" and "Amenities"
+ * over each other and the rows straight through both. The old comment here
+ * described doing exactly that and called it a decision.
+ *
+ * So the sticking goes instead. The headings scroll away with their groups,
+ * which costs a little orientation in a long list and is the honest price:
+ * anything opaque enough to make sticky work is the solid bar this was trying
+ * to avoid, and a second blurred surface inside an already blurred panel comes
+ * out as fog — see the note on the routes card.
+ *
+ * Done here rather than with MUI's `disableSticky` prop deliberately. The prop
+ * would change the opaque UI too, and there the paint is present and sticky
+ * behaves properly. This is a fact about glass menus, so it lives with them.
  */
 .glass-ui .MuiMenu-paper .MuiListSubheader-root {
+  position: static;
   background: transparent;
   color: var(--glass-ink-faint);
   font-weight: 700;
@@ -782,8 +802,24 @@
   color: var(--glass-ink-faint);
 }
 
+/*
+ * A ticked box takes the accent rather than plain ink — but the deep shade,
+ * not the bright one.
+ *
+ * The obvious choice is the colour the chips and the lit button wear, since
+ * that is what the accent looks like to anyone using this. It cannot be: that
+ * value is a light blue, this menu is a light panel, and the two measure
+ * 1.96:1 together — below even the 3:1 a glyph needs, never mind a control
+ * that tells you whether a category is on. It would be a tick you had to hunt
+ * for.
+ *
+ * So it takes the shade that exists for exactly this — the accent as it
+ * appears on a light surface, 5.37:1 here. Same blue, same family as the links
+ * and the chip icon; the fill is simply not the form of it that works on top
+ * of something pale. That is the whole reason these are two tokens.
+ */
 .glass-ui .MuiMenu-paper .MuiCheckbox-root.Mui-checked {
-  color: var(--glass-ink);
+  color: var(--glass-accent-solid);
 }
 
 /*

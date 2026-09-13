@@ -404,9 +404,14 @@
    * what it looked like. It is also the blue that goes muddy over a blurred
    * street map, which was written down here and then ignored.
    *
-   * Stated as the shared accent now rather than a literal, so the two things
-   * that light up — a map button and a chosen preset — cannot drift apart, and
-   * so the hue is one token to change rather than three.
+   * Stated as the shared accent rather than a literal, so the hue is one token
+   * to change rather than three.
+   *
+   * The two things that light up no longer look alike, and that is deliberate.
+   * A map button is one object against open map and can afford to be filled;
+   * the chosen preset sits in a row of six that was asked to recede, so it
+   * keeps its neighbours' transparency and says "chosen" with hue instead. See
+   * the note on .preset-chip.active. They share the colour, not the treatment.
    *
    * Three things make it read as lit rather than filled: it stays tinted, so
    * the map still comes through; the inner rim is brighter than a neutral
@@ -811,51 +816,45 @@
  * and weight, never with a colour, and a blue chip in a row of glass ones
  * stops being one of the set.
  */
+/*
+ * The chosen preset: as see-through as the chips either side of it.
+ *
+ * This used to be a filled blue chip, which made the selected one the heaviest
+ * object on the overlay — the one thing that had to shout sitting in the row
+ * that had just been asked to whisper. It is the same glass as its neighbours
+ * now, at the same 0.2, and what says "chosen" is the colour of the glass
+ * rather than the amount of it.
+ *
+ * That works because the hue survives the transparency where a fill would not.
+ * Composited over a typical map pixel the inactive chip lands on rgb(247,243,
+ * 233) — a warm off-white — and this one on rgb(198,218,233), which is plainly
+ * cool and plainly blue. Side by side the difference is not subtle.
+ *
+ * The label had to stop being white. At 0.82 white read at about 3:1, which
+ * was already poor; at 0.2 it measures 1.32:1, which is not a label at all. So
+ * it takes the same near-black the unselected chips use — 8.9:1 — and the row
+ * gains something from that too: every chip now says its name in one voice,
+ * and only the surface behind it changes.
+ *
+ * The blue note that white was carrying moves to two places that can hold it.
+ * The border goes accent, which outlines the selection without adding weight.
+ * The icon takes the deep accent at 3.18:1 — under the 4.5 a *text* colour
+ * would need, comfortably over the 3:1 that applies to an icon, which is the
+ * one place on this chip that distinction can be spent honestly.
+ *
+ * No glow, and no lift beyond its neighbours'. Both were what made this chip
+ * pop off the row.
+ */
 .glass-ui .category-presets .preset-chip.active,
 .glass-ui .category-presets .preset-chip.active:hover {
-  /*
-   * The lit state, and the only colour in this file that is not a neutral.
-   *
-   * It was the app's own #1976d2 — Material 700, a heavy and slightly grey
-   * blue. On an opaque button that reads as solid and deliberate; behind glass
-   * it reads as a flat painted rectangle from about 2013, which is exactly
-   * what it looked like. It is also the blue that goes muddy over a blurred
-   * street map, which was written down here and then ignored.
-   *
-   * Stated as the shared accent now rather than a literal, so the two things
-   * that light up — a map button and a chosen preset — cannot drift apart, and
-   * so the hue is one token to change rather than three.
-   *
-   * Three things make it read as lit rather than filled: it stays tinted, so
-   * the map still comes through; the inner rim is brighter than a neutral
-   * surface gets; and it spills a little of its own colour onto what is behind
-   * it. That last one is what a lit thing does and a painted one does not.
-   *
-   * The glow is kept to 6px deliberately. Both of these sit inside containers
-   * that clip — the tool group at 8px, the preset row at its top padding — and
-   * a generous glow would be cut off flush and bring back the grey rectangle
-   * that took three attempts to find. See --glass-lift-tight.
-   */
-  /*
-   * 0.82 rather than a thinner tint, and the reason is the white label on top
-   * of it. The fill is accent mixed with whatever pale map is behind it, so
-   * the *less* accent there is the lighter the fill goes and the worse white
-   * reads on it. Measured: 2.72:1 at 0.76, about 3.0 here.
-   *
-   * It does not reach 4.5 and cannot. White on any blue vivid enough to look
-   * fresh sits near 3:1 — iOS runs its own white-on-blue at about 3.5 — and
-   * the only way up is a navy that would put us straight back where this
-   * started. Deliberate, and noted here so it is not mistaken for an oversight.
-   */
-  background-color: rgba(var(--glass-accent), 0.82);
-  color: #fff;
-  box-shadow: var(--glass-lift-tight),
-    0 0 6px rgba(var(--glass-accent), 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+  background-color: rgba(var(--glass-accent), 0.2);
+  border-color: rgba(var(--glass-accent), 0.55);
+  color: var(--glass-ink);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), var(--glass-rim);
 }
 
 .glass-ui .category-presets .preset-chip.active .MuiChip-icon {
-  color: #fff;
+  color: var(--glass-accent-solid);
 }
 
 /*

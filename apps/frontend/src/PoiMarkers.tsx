@@ -13,7 +13,6 @@ import type {
   Map as LeafletMap,
   MarkerClusterGroup as LeafletClusterGroup,
   Point,
-  PointExpression,
   Popup as LeafletPopup,
   PopupEvent,
 } from "leaflet";
@@ -62,32 +61,6 @@ import {
 
 /** Breathing room between an open popup and the edges of the map. */
 const POPUP_EDGE_GAP_PX = 24;
-
-/**
- * How far Leaflet keeps an open popup from the top left of the map when it pans
- * to fit it on the screen.
- *
- * The top edge that matters is not the top of the map but the bottom of the
- * controls floating over it: panning a popup to y = 24 tucks its heading under
- * the category select and the preset chips. That overlay changes height as the
- * search bar opens, the chips come and go, or the phone is turned, and Leaflet
- * reads these values when it pans rather than when the popup is created, so it
- * gets an object that measures the overlay at that moment instead of a number
- * that was right when the marker was drawn.
- */
-const AUTO_PAN_PADDING_TOP_LEFT = {
-  get x() {
-    return POPUP_EDGE_GAP_PX;
-  },
-  get y() {
-    const overlay = document.querySelector(".map-overlay-top");
-    const overlayHeight = overlay?.getBoundingClientRect().height ?? 0;
-    return Math.round(overlayHeight) + POPUP_EDGE_GAP_PX;
-  },
-  // Leaflet takes any { x, y } here and reads the pair as it pans, which is
-  // what makes the getters above worth having. Its types only name the two
-  // shapes that get written literally, a Point or a tuple
-} as unknown as PointExpression;
 
 /**
  * The room to leave around an outline when the map is moved to fit it.
@@ -1779,11 +1752,19 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
               target,
               FEATURE_FLY_IN_S
             );
-            // Landed with the popup in view. From here on it pans the map as
-            // it always has, for when its content grows
-            map.once("moveend", () => {
-              if (openPopupRef.current === popup) popup.options.autoPan = true;
-            });
+            /*
+             * And it stays off. This used to hand auto panning back once the
+             * flight landed, so that a popup which grew could bring itself
+             * back into view.
+             *
+             * A panel cannot be out of view. It is fixed to the bottom of the
+             * screen at a fixed height, always wholly visible — so Leaflet's
+             * auto pan has nothing to correct and corrects anyway: it measures
+             * the panel, decides a 405px box at the foot of the screen needs
+             * room, and pans the map until the feature that was just framed is
+             * off the top. That is the same arithmetic that made
+             * centerFittingPopup wrong, arriving from inside Leaflet instead.
+             */
           };
           requestAnimationFrame(fly);
           return;
@@ -1986,9 +1967,9 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                 // one, and the close arrives after the open it was caused by
                 popupclose: (event: PopupEvent) => {
                   setOpenShape(current => (current === key ? null : current));
-                  // Whatever this popup was allowed to do is settled; the next
-                  // opening starts over, centered like the first one was
-                  event.popup.options.autoPan = true;
+                  // Auto pan is not handed back. A panel is always fully on the
+                  // screen, so there is never anything for it to pan into view
+                  // — and letting it try is what walked the map off the feature
                   if (openPopupRef.current === event.popup) {
                     openPopupRef.current = null;
                   }
@@ -2019,14 +2000,17 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                 // Both undefined without the flag, which leaves Leaflet on its
                 // own defaults and the popup exactly where it has always been
                 pane={modalPane}
-                autoPan={modalPane ? false : undefined}
-                // The modal closes with the bar below instead. Leaflet's own
-                // control is a 26px glyph in the corner, which is the right
+                // Never. A panel fixed to the foot of the screen is always
+                // wholly visible, so auto panning has nothing to bring into
+                // view and does damage trying — see the note in
+                // fitShapeIntoView. The padding props went with it: they only
+                // ever configured a pan that no longer happens
+                autoPan={false}
+                // The panel closes with the bar at its foot instead. Leaflet's
+                // own control is a 26px glyph in the corner, which is the right
                 // shape for a balloon hanging off a marker and the wrong one
-                // for a card in the middle of the screen
-                closeButton={modalPane ? false : undefined}
-                autoPanPaddingTopLeft={AUTO_PAN_PADDING_TOP_LEFT}
-                autoPanPaddingBottomRight={[POPUP_EDGE_GAP_PX, POPUP_EDGE_GAP_PX]}
+                // for a panel across the bottom of the screen
+                closeButton={false}
               >
                 <RenderMarkerContents marker={marker} categories={categories} />
                 {modalPane && (

@@ -1261,6 +1261,21 @@
  */
 .glass-ui body:has(.leaflet-popup.poi-popup) {
   --poi-panel-offset: var(--poi-panel-height);
+  /*
+   * And the sheet's offset goes to nothing, because the sheet itself is hidden
+   * two rules down.
+   *
+   * BottomSheet writes --sheet-offset onto <html> from an effect and keeps
+   * writing it whether or not the sheet can be seen. Left alone, the map
+   * controls cleared a 405px panel *and* a 172px sheet that was not on the
+   * screen, which put them level with the category row and sent the Leaflet
+   * attribution into the middle of the map.
+   *
+   * Declared on <body> so it shadows the inherited value from <html> for
+   * everything inside, without BottomSheet and this rule fighting over the
+   * same property on the same element.
+   */
+  --sheet-offset: 0px;
 }
 
 .glass-ui body:has(.leaflet-popup.poi-popup) .bottom-sheet {
@@ -1343,7 +1358,15 @@
   -webkit-backdrop-filter: var(--glass-blur);
   backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-edge);
-  border-radius: var(--glass-radius);
+  /*
+   * No radius here. The panel rules further up own the shape — square along
+   * the bottom where it meets the edge of the screen, rounded on top.
+   *
+   * This rule sits lower in the file at the same specificity, so a radius here
+   * wins on source order alone, and that is precisely what was happening: the
+   * square bottom was written, silently overridden, and never once appeared on
+   * a screen.
+   */
   box-shadow: var(--glass-lift-high), var(--glass-rim);
   color: var(--glass-ink);
 }

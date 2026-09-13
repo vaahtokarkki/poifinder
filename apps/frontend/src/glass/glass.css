@@ -521,6 +521,173 @@
   border-color: rgba(255, 69, 58, 0.5);
 }
 
+/* ---------- The category picker, the presets, the language button ---------- */
+
+/*
+ * The picker's trigger, made of the same thing the search field is — because
+ * they are the same slot. SearchBar renders *in place of* this control, one
+ * swapping for the other as the search opens and closes, and two things that
+ * trade places cannot be made of different material without the swap reading
+ * as a glitch.
+ */
+.glass-ui .category-select .MuiOutlinedInput-root {
+  background-color: var(--glass-mid);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-edge);
+  border-radius: 999px;
+  box-shadow: var(--glass-lift), var(--glass-rim);
+  color: var(--glass-ink);
+}
+
+/* MUI draws the outlined variant's border as a fieldset inside the control.
+   The edge above is the border now, and two of them read as a double rule */
+.glass-ui .category-select .MuiOutlinedInput-notchedOutline {
+  border: none;
+}
+
+.glass-ui .category-select .MuiSelect-icon,
+.glass-ui .category-select .MuiSvgIcon-root {
+  color: var(--glass-ink-dim);
+}
+
+/* The chosen categories, named inside the pill. Cut into it rather than laid
+   on top, the same as every other control that sits on a glass surface */
+.glass-ui .category-select .MuiChip-root {
+  background-color: var(--glass-well);
+  box-shadow: var(--glass-well-rim);
+  color: var(--glass-ink);
+}
+
+/*
+ * The menus — the category list and the language list, which are one rule
+ * because they should look like one thing. Scoped to `.MuiMenu-paper` rather
+ * than `.MuiPaper-root` on purpose: the latter would also catch the noise and
+ * air explanation dialogs, which are read at length and are not glass.
+ */
+.glass-ui .MuiMenu-paper {
+  background-color: var(--glass-panel);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-edge);
+  border-radius: var(--glass-radius);
+  box-shadow: var(--glass-lift-high), var(--glass-rim);
+  color: var(--glass-ink);
+}
+
+/*
+ * The group headings. MUI gives these an opaque white background of their own
+ * so they can stick to the top of a scrolling list without the rows showing
+ * through — which on a glass menu paints a solid bar across it, once per
+ * group. They keep the sticking; they lose the paint.
+ */
+.glass-ui .MuiMenu-paper .MuiListSubheader-root {
+  background: transparent;
+  color: var(--glass-ink-faint);
+  font-weight: 700;
+}
+
+.glass-ui .MuiMenu-paper .MuiMenuItem-root {
+  color: var(--glass-ink);
+}
+
+/* Monochrome, like the search suggestions: blue is for links here, never for
+   a fill */
+.glass-ui .MuiMenu-paper .MuiMenuItem-root:hover,
+.glass-ui .MuiMenu-paper .MuiMenuItem-root.Mui-selected,
+.glass-ui .MuiMenu-paper .MuiMenuItem-root.Mui-selected:hover,
+.glass-ui .MuiMenu-paper .MuiMenuItem-root.Mui-focusVisible {
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
+.glass-ui .MuiMenu-paper .MuiCheckbox-root {
+  color: var(--glass-ink-faint);
+}
+
+.glass-ui .MuiMenu-paper .MuiCheckbox-root.Mui-checked {
+  color: var(--glass-ink);
+}
+
+/*
+ * The preset chips. Glass pills at the button's density rather than the
+ * panel's: they are small, they are pressed, and there is a row of them with
+ * map showing between — which is already as much map as that strip can give up.
+ */
+.glass-ui .category-presets .MuiChip-root {
+  /* The 1px edge is drawn outside MUI's 32px chip, so the row would grow by
+     2px and push the loading pill down with it */
+  box-sizing: border-box;
+  background-color: var(--glass-thin);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
+  backdrop-filter: var(--glass-blur-sm);
+  border: 1px solid var(--glass-edge);
+  box-shadow: var(--glass-lift), var(--glass-rim);
+  color: var(--glass-ink);
+}
+
+.glass-ui .category-presets .MuiChip-root:hover {
+  background-color: var(--glass-thick);
+}
+
+.glass-ui .category-presets .MuiChip-icon {
+  color: var(--glass-ink-dim);
+}
+
+/*
+ * A chosen preset, inverted exactly as the lit map button is. Same decision as
+ * that button and for the same reason: the reference states emphasis with ink
+ * and weight, never with a colour, and a blue chip in a row of glass ones
+ * stops being one of the set.
+ */
+.glass-ui .category-presets .preset-chip.active,
+.glass-ui .category-presets .preset-chip.active:hover {
+  background-color: rgba(24, 24, 27, 0.8);
+  border-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  box-shadow: var(--glass-lift), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.glass-ui .category-presets .preset-chip.active .MuiChip-icon {
+  color: #fff;
+}
+
+/*
+ * The row scrolls sideways with its overflow clipped, and the chips now cast a
+ * far softer and wider shadow than the 2px of room it was leaving. Given back
+ * as padding and taken off again as margin, so the column above and below it
+ * does not move.
+ */
+.glass-ui .category-presets {
+  padding-bottom: 12px;
+  margin-bottom: -10px;
+}
+
+/*
+ * The language button. Deliberately still the quieter of the two controls on
+ * that row — it takes the button tint rather than the field tint the picker
+ * beside it gets, which is what keeps it reading as secondary now that both
+ * are made of the same stuff.
+ */
+.glass-ui .language-select {
+  /* Same 32px it has always been: the border would otherwise make it 34 and
+     it would no longer line up with the picker */
+  box-sizing: border-box;
+  background-color: var(--glass-thin);
+  background-image: var(--glass-sheen);
+  -webkit-backdrop-filter: var(--glass-blur-sm);
+  backdrop-filter: var(--glass-blur-sm);
+  border: 1px solid var(--glass-edge);
+  box-shadow: var(--glass-lift), var(--glass-rim);
+  color: var(--glass-ink-dim);
+}
+
+.glass-ui .language-select:hover {
+  background-color: var(--glass-thick);
+}
+
 /* ---------- The pills: loading, locating, the zoom hint, remarks ---------- */
 
 .glass-ui .map-loading {

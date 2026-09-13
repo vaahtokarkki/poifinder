@@ -33,6 +33,11 @@ const CategoryPresets: React.FC<CategoryPresetsProps> = ({
             label={presetLabel(preset)}
             icon={React.cloneElement(preset.icon, { fontSize: "small" })}
             clickable
+            // Whether the preset is on, said in a class as well as in the sx
+            // below. The sx is where the opaque UI's colours live and it cannot
+            // be reached by a stylesheet; a theme that wants to colour the two
+            // states differently needs something to select on
+            className={`preset-chip${active ? " active" : ""}`}
             // Picking the active preset again is the way back to no categories
             onClick={() => {
               analytics.presetToggled(preset.id, !active, preset.categories.length);

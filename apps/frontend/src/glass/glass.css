@@ -73,6 +73,22 @@
   --glass-panel: rgba(255, 255, 255, 0.28);
   /* Dense content read at length: the point popup */
   --glass-thick: rgba(255, 255, 255, 0.5);
+  /*
+   * The preset chips, and the reason they are not simply --glass-thin like
+   * every other small control.
+   *
+   * A map button is one 44px square and genuinely wants to read as a solid
+   * thing to press. The chip row is six of these end to end across the top of
+   * the map, and six small dense objects add up to a large dense object: at
+   * the button's tint the row read as a bar laid over the map rather than as
+   * labels floating on it. So these follow the panel rule — area wants
+   * transparency — even though each one is chip-sized.
+   *
+   * It can go this far because of what is written on it. Everywhere else the
+   * quiet footnote grey is what binds the tint; a chip carries one short label
+   * in near-black, which still measures above 11:1 down here.
+   */
+  --glass-chip: rgba(255, 255, 255, 0.2);
 
   /* The dark counterpart, for the two things on this map that were already
      dark and would look broken lightened: the passing remarks and the scrim */
@@ -763,20 +779,26 @@
   /* The 1px edge is drawn outside MUI's 32px chip, so the row would grow by
      2px and push the loading pill down with it */
   box-sizing: border-box;
-  background-color: var(--glass-thin);
+  background-color: var(--glass-chip);
   background-image: var(--glass-sheen);
   -webkit-backdrop-filter: var(--glass-blur-sm);
   backdrop-filter: var(--glass-blur-sm);
   border: 1px solid var(--glass-edge);
-  /* The row scrolls sideways, so it clips — tight, for the reason the tool
-     group's buttons are. This row had it worst: no top padding at all, so a
-     30px shadow was being cut off flush with the top of every chip */
-  box-shadow: var(--glass-lift-tight), var(--glass-rim);
+  /*
+   * Barely lifted at all. The row scrolls sideways so it clips, which is why
+   * this was already the tight shadow — but tight was still a button's
+   * shadow, and a button's shadow is what made these read as six things
+   * hovering above the overlay rather than sitting in it. What is left is
+   * enough to keep a chip off a pale street and no more.
+   */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), var(--glass-rim);
   color: var(--glass-ink);
 }
 
+/* A small step up rather than all the way to opaque: the jump to --glass-thick
+   was fine from the button tint and is a lurch from this one */
 .glass-ui .category-presets .MuiChip-root:hover {
-  background-color: var(--glass-thick);
+  background-color: var(--glass-mid);
 }
 
 .glass-ui .category-presets .MuiChip-icon {

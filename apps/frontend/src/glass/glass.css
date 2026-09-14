@@ -1259,7 +1259,7 @@
  * by the sum of this and the sheet, rather than by whichever happens to be
  * larger.
  */
-.glass-ui body:has(.leaflet-popup.poi-popup) {
+.glass-ui body.poi-panel-open {
   --poi-panel-offset: var(--poi-panel-height);
   /*
    * And the sheet's offset goes to nothing, because the sheet itself is hidden
@@ -1285,10 +1285,15 @@
  * the only question is how long it spends moving.
  *
  * Not at all. Shortening the slide was not enough: on the way back there is
- * nothing left to slide against. `:has()` stops matching the moment the popup
- * leaves the DOM, so the panel is already gone while the credit is still
- * crossing the map, and any visible travel reads as a stray line of text
- * floating over the middle of the screen on its own.
+ * nothing left to slide against — the panel is already going, and any visible
+ * travel reads as a stray line of text crossing an empty map on its own.
+ *
+ * Instant travel was not enough either, because the credit was still leaving
+ * too late. What holds it up is PANEL_OPEN_CLASS, and it used to be a `:has()`
+ * on the panel element, which outlives the panel by 200ms while Leaflet fades
+ * it out. The jump was clean and came a fifth of a second after there was
+ * anything left to clear, so the credit hung in mid-screen and then dropped.
+ * See PoiMarkers.
  *
  * So the panel's displacement is taken off `transform` and put on `bottom`,
  * where it can be given its own timing. The sheet keeps the animated transform
@@ -1320,8 +1325,8 @@
  * Leaflet attribution — which is why it is published rather than being folded
  * into these rules.
  */
-.glass-ui body:has(.leaflet-popup.poi-popup) .map-controls,
-.glass-ui body:has(.leaflet-popup.poi-popup) .map-layers {
+.glass-ui body.poi-panel-open .map-controls,
+.glass-ui body.poi-panel-open .map-layers {
   /*
    * They do not take the panel's offset, and this line is the whole of a
    * complaint: they were flying.
@@ -1344,7 +1349,7 @@
   transition: opacity 0.12s var(--glass-ease), visibility 0.12s, bottom 0s;
 }
 
-.glass-ui body:has(.leaflet-popup.poi-popup) .bottom-sheet {
+.glass-ui body.poi-panel-open .bottom-sheet {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.16s var(--glass-ease), visibility 0.16s;
@@ -1556,6 +1561,31 @@
   .glass-ui .layers-panel {
     border-radius: var(--glass-radius-lg);
   }
+}
+
+/*
+ * The button that opened it goes away while it is open.
+ *
+ * It never had to before: the button sits in the lower left and the panel
+ * covers the lower half of the screen, and index.css leaves it there on
+ * purpose — "under the panel", where a sheet of opaque white was the end of
+ * the matter. Glass is not the end of the matter. The panel is something you
+ * can see through, so an active blue button carried on showing through it,
+ * landing in the middle of the first overlay tile as a blurred blue lozenge
+ * with no way to press it.
+ *
+ * Hidden rather than moved: there is nowhere to move it to that is not either
+ * on top of the panel or off the screen, and it has nothing to say while the
+ * panel it opens is already open.
+ *
+ * `:has()` is sound here in a way it is not for the point panel — this panel
+ * is a conditional render and leaves the document the moment it closes, with
+ * no fade outliving it. See PANEL_OPEN_CLASS in PoiMarkers for that one.
+ */
+.glass-ui .map-layers:has(.layers-panel) .map-icon-button {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.12s var(--glass-ease), visibility 0.12s;
 }
 
 /* Barely there already, and on glass it can be barely there and still work:

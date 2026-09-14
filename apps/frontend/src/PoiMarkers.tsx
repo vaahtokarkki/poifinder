@@ -95,6 +95,27 @@ const ZOOM_TO_FEATURE_AT_OR_BELOW = 15;
  */
 const FEATURE_ZOOM = 16;
 /**
+ * Marks the document while a point panel is up, for the map furniture that has
+ * to make room for one.
+ *
+ * This was a `:has(.leaflet-popup.poi-popup)` in the stylesheet, which is the
+ * tidier thing to write and the wrong question to ask. It tests whether the
+ * element is in the document; what the furniture needs to know is whether
+ * there is a panel on the screen, and Leaflet keeps those apart — `onRemove`
+ * fades the popup and leaves the node in place for another 200ms. Everything
+ * that had moved aside stayed aside for that fifth of a second, with nothing
+ * visible to make room for.
+ *
+ * Set from the popup's own open and close handlers, so it follows the reader's
+ * tap rather than the DOM's bookkeeping.
+ */
+const PANEL_OPEN_CLASS = "poi-panel-open";
+
+function setPanelOpenClass(open: boolean): void {
+  document.body.classList.toggle(PANEL_OPEN_CLASS, open);
+}
+
+/**
  * How long the flight to a point takes, in seconds.
  *
  * Short. These were 0.36 in and 0.6 back, which is a considered, cinematic
@@ -1922,6 +1943,10 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * somewhere themselves, the popup gives up the right to move it. The flag
    * lives on the popup instance, so it comes back the next time it is opened.
    */
+  // A panel open at unmount would otherwise leave the mark behind, and the map
+  // furniture would hold its place for a panel that no longer exists
+  React.useEffect(() => () => setPanelOpenClass(false), []);
+
   React.useEffect(() => {
     const releaseMap = () => {
       const popup = openPopupRef.current;
@@ -2065,6 +2090,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                   // to this popup below
                   cancelPendingRestore();
                   analytics.poiPopupOpened(findCategory(marker, categories));
+                  setPanelOpenClass(true);
                   setOpenShape(key);
                   openPopupRef.current = event.popup;
                   shownPopupRef.current = event.popup;
@@ -2080,6 +2106,17 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                 // restore below was written as though the swap had already
                 // been announced. See pendingRestoreRef
                 popupclose: (event: PopupEvent) => {
+                  // Before the panel is gone, not after. Leaflet fades a popup
+                  // out and only removes the element 200ms later, so anything
+                  // keyed on the element being in the document goes on
+                  // believing there is a panel for a fifth of a second after
+                  // there is visibly nothing there. The Leaflet attribution
+                  // sits above the panel, and it spent that fifth of a second
+                  // hanging in the middle of an empty map before dropping.
+                  //
+                  // A swap removes this and adds it again in the same tick, so
+                  // nothing renders in between. See setPanelOpenClass
+                  setPanelOpenClass(false);
                   setOpenShape(current => (current === key ? null : current));
                   // Auto pan is not handed back. A panel is always fully on the
                   // screen, so there is never anything for it to pan into view

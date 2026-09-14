@@ -1445,8 +1445,9 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * open. Only ever one: see PoiShape
    */
   const [openShape, setOpenShape] = React.useState<string | null>(null);
-  /** Bumped when a fan closes, to take the points held back while it was open */
-  const [, setFanClosedAt] = React.useState(0);
+  /** Bumped when a fan or a panel closes, to take the points held back while
+      it was open */
+  const [, setPointsReleasedAt] = React.useState(0);
 
   const map = useMap();
 
@@ -1484,6 +1485,15 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   const openPopupRef = React.useRef<LeafletPopup | null>(null);
   /** The cluster group, for the one question below that has to be asked of it */
   const clusterRef = React.useRef<LeafletClusterGroup | null>(null);
+
+  /**
+   * Whether a point panel is up.
+   *
+   * A ref and not state because it is read while rendering, to decide whether
+   * to take a new list of points, and it has to be true by then: the map
+   * announces the open before anything the open causes. See shownMarkersRef
+   */
+  const panelUpRef = React.useRef(false);
 
   /**
    * Whether a group is currently fanned out.
@@ -1527,9 +1537,22 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * latest is taken when it closes — see the `unspiderfied` listener below.
    * Nothing the reader is looking at is missing either way: the points on the
    * screen are in both lists, and the rest arrive as the fan closes.
+   *
+   * A panel holds the list for the same reason, and it took a while to see
+   * that it is the same reason. A panel moves the map on the way in — it pans
+   * the point up into the strip above itself — so opening one is itself a move
+   * that recuts the list. Points arrive around the one just opened, one of
+   * them lands within the cluster radius of it, and the plugin answers by
+   * merging them: the marker leaves the map, React unmounts it, and the panel
+   * that was opening goes with it. What is left is a highlighted outline with
+   * no panel and a group disc over the top of it, which reads as the tap
+   * having clustered the map.
+   *
+   * Panning with a panel up is the same story told slower, which is why both
+   * were reported together.
    */
   const shownMarkersRef = React.useRef(markers);
-  if (!isSpiderfied()) shownMarkersRef.current = markers;
+  if (!isSpiderfied() && !panelUpRef.current) shownMarkersRef.current = markers;
   const shownMarkers = shownMarkersRef.current;
 
   const shapeMarker = shownMarkers.find(marker => shapeKey(marker) === openShape) ?? null;
@@ -1600,7 +1623,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
     // A fan that closes hands the list back: whatever arrived while it was
     // open is drawn now. See shownMarkersRef
     const cluster = clusterRef.current;
-    const showLatestPoints = () => setFanClosedAt(Date.now());
+    const showLatestPoints = () => setPointsReleasedAt(Date.now());
     cluster?.on("unspiderfied", showLatestPoints);
 
     return () => {
@@ -1987,13 +2010,24 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * otherwise leave the mark behind for good.
    */
   React.useEffect(() => {
-    const open = () => setPanelOpenClass(true);
-    const close = () => setPanelOpenClass(false);
+    const open = () => {
+      panelUpRef.current = true;
+      setPanelOpenClass(true);
+    };
+    const close = () => {
+      panelUpRef.current = false;
+      setPanelOpenClass(false);
+      // Whatever arrived while the panel held the list is drawn now. A swap
+      // opens the next panel in this same tick, so the hold never lifts
+      // between two panels and the list is taken once, at the end
+      setPointsReleasedAt(Date.now());
+    };
     map.on("popupopen", open);
     map.on("popupclose", close);
     return () => {
       map.off("popupopen", open);
       map.off("popupclose", close);
+      panelUpRef.current = false;
       setPanelOpenClass(false);
     };
   }, [map]);

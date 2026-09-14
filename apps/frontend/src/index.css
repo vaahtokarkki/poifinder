@@ -571,11 +571,11 @@ button.layers-tile {
   }
 }
 
-/* The Leaflet attribution rides above the sheet as well */
+/* The Leaflet attribution rides above the sheet as well.
+   The sheet only — the point panel moves this by `bottom` instead, because the
+   two displacements want opposite timing. See glass.css. */
 .leaflet-bottom.leaflet-right {
-  transform: translateY(
-    calc(-1 * (var(--sheet-offset, 0px) + var(--poi-panel-offset, 0px)))
-  );
+  transform: translateY(calc(-1 * var(--sheet-offset, 0px)));
   transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.3, 1);
 }
 

@@ -1284,13 +1284,27 @@
  * CARTO and OpenStreetMap credit and is not ours to remove — so it moves, and
  * the only question is how long it spends moving.
  *
- * Quickly. Its inherited 0.28s was tuned for the bottom sheet's own travel,
- * which is a gesture the reader is making and wants to see follow their
- * finger. This one is a consequence of something else entirely, and a long
- * slide across the map only adds to the traffic.
+ * Not at all. Shortening the slide was not enough: on the way back there is
+ * nothing left to slide against. `:has()` stops matching the moment the popup
+ * leaves the DOM, so the panel is already gone while the credit is still
+ * crossing the map, and any visible travel reads as a stray line of text
+ * floating over the middle of the screen on its own.
+ *
+ * So the panel's displacement is taken off `transform` and put on `bottom`,
+ * where it can be given its own timing. The sheet keeps the animated transform
+ * above — that travel follows the reader's finger and should be seen — while
+ * the panel's is instant in both directions, and the credit simply is where it
+ * belongs at both ends.
+ *
+ * Below the sheet's breakpoint only. Wider than that the panel is a card in
+ * the lower left and the attribution is bottom right, so they never share the
+ * space and it has no reason to move.
  */
-.glass-ui .leaflet-bottom.leaflet-right {
-  transition: transform 0.12s var(--glass-ease);
+@media (max-width: 899.98px) {
+  .glass-ui .leaflet-bottom.leaflet-right {
+    bottom: var(--poi-panel-offset, 0px);
+    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.3, 1), bottom 0s;
+  }
 }
 
 /*

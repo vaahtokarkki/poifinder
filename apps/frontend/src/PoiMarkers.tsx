@@ -1751,23 +1751,51 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
     Record<string, [number, number]>
   >({});
 
+  /**
+   * Corrections waiting for their panel to close.
+   *
+   * Moving a marker is not the small thing it looks like. The clustering
+   * plugin reclusters it where it lands, and if it lands within the cluster
+   * radius of another point the two are merged — which takes the marker off
+   * the map and closes its popup. The correction is computed from the outline
+   * the panel just fetched, so the panel asking for it is always open, and on
+   * an outline with a neighbour anywhere near the middle it shut itself the
+   * moment the outline arrived. The reader saw the panel vanish, the outline
+   * stay lit, and a group disc appear over a map that had not been clustered a
+   * second earlier.
+   *
+   * So the correction is held until the panel closes. It still lands before
+   * the point is next opened, which is all it was ever promised. Measured
+   * rather than reasoned: moving a marker 12px from its neighbour closes its
+   * popup and forms a cluster, the same move with nothing nearby does not.
+   */
+  const pendingInsideRef = React.useRef<Record<string, [number, number]>>({});
+
+  const flushInsidePositions = React.useCallback(() => {
+    const pending = pendingInsideRef.current;
+    const keys = Object.keys(pending);
+    if (keys.length === 0) return;
+    pendingInsideRef.current = {};
+    setInsidePositions(current => {
+      const next = { ...current };
+      for (const key of keys) next[key] ??= pending[key];
+      return next;
+    });
+  }, []);
+
   React.useEffect(() => {
     const shape = openElement?.shape;
     if (!shapeMarker || !shape || !shapeMarker.position) return;
-    // Moving a marker means removing it from the group and adding it back,
-    // which collapses a fan and closes the popup that asked for this outline
-    // in the first place. A pin a few metres off centre is worth less than the
-    // popup the reader is reading; the correction lands the next time this
-    // point is opened on its own. See isSpiderfied
+    // A fan collapses on a move as well, taking every popup in it. See
+    // isSpiderfied
     if (isSpiderfied()) return;
     const key = shapeKey(shapeMarker);
+    if (insidePositions[key] || pendingInsideRef.current[key]) return;
     if (shapeContains(shape, shapeMarker.position)) return;
     const inside = shapeSamplePoint(shape);
     if (!inside) return;
-    setInsidePositions(current =>
-      current[key] ? current : { ...current, [key]: inside }
-    );
-  }, [openElement, shapeMarker]);
+    pendingInsideRef.current[key] = inside;
+  }, [openElement, shapeMarker, insidePositions]);
 
   /**
    * A flight of ours, to a point or back from one. A flight fires its
@@ -2021,6 +2049,18 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
       // render to take effect. A swap sets the next one in this same tick
       openMarkerRef.current = null;
       setPointsReleasedAt(Date.now());
+      /*
+       * And the pins waiting to be corrected are moved, now that there is no
+       * panel for the move to close. A tick later, because this close may be
+       * the first half of a swap: the next panel opens in the same tick, and
+       * moving a pin under it could cluster the point it just opened and shut
+       * that one too. See pendingInsideRef and pendingRestoreRef, which defers
+       * for the same reason.
+       */
+      window.setTimeout(() => {
+        if (openMarkerRef.current) return;
+        flushInsidePositions();
+      }, 0);
     };
     map.on("popupopen", open);
     map.on("popupclose", close);
@@ -2030,7 +2070,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
       openMarkerRef.current = null;
       setPanelOpenClass(false);
     };
-  }, [map]);
+  }, [map, flushInsidePositions]);
 
   React.useEffect(() => {
     const releaseMap = () => {

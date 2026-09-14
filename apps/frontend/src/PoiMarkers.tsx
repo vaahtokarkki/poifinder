@@ -110,9 +110,33 @@ const FEATURE_ZOOM = 16;
  * tap rather than the DOM's bookkeeping.
  */
 const PANEL_OPEN_CLASS = "poi-panel-open";
+/**
+ * Marks the one frame in which the panel appears or goes away.
+ *
+ * Opening a panel moves the attribution by two properties at once, and only
+ * one of them was meant to be quick. `bottom` takes the panel's own height and
+ * is instant; the transform carries the bottom sheet's offset, which drops to
+ * nothing because the sheet is hidden behind a panel, and that one is animated
+ * over 0.28s for the sheet's sake. So the credit appeared a sheet's height too
+ * high — 172 pixels up, near the category row — and sailed down into place.
+ *
+ * The transform has to keep its animation for the sheet, which is dragged and
+ * should follow the finger. It only has to lose it for this one change, so the
+ * mark goes on with the toggle and comes off once the new position has been
+ * painted.
+ */
+const PANEL_JUMP_CLASS = "poi-panel-jump";
 
 function setPanelOpenClass(open: boolean): void {
-  document.body.classList.toggle(PANEL_OPEN_CLASS, open);
+  const { classList } = document.body;
+  if (classList.contains(PANEL_OPEN_CLASS) === open) return;
+  classList.add(PANEL_JUMP_CLASS);
+  classList.toggle(PANEL_OPEN_CLASS, open);
+  // Two frames: the first is the one the new position is painted in, and
+  // taking the mark off inside it would let the move animate after all
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => classList.remove(PANEL_JUMP_CLASS));
+  });
 }
 
 /**
@@ -1943,9 +1967,36 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * somewhere themselves, the popup gives up the right to move it. The flag
    * lives on the popup instance, so it comes back the next time it is opened.
    */
-  // A panel open at unmount would otherwise leave the mark behind, and the map
-  // furniture would hold its place for a panel that no longer exists
-  React.useEffect(() => () => setPanelOpenClass(false), []);
+  /*
+   * The mark goes on and comes off with the map's own popup events, not the
+   * marker's.
+   *
+   * Both are fired, one after the other, and the marker's is the one that can
+   * be missed. Panning re-clusters, a marker with a panel open can be absorbed
+   * into a cluster on the way, and React then unmounts it — handlers and all —
+   * before Leaflet gets to announce the close to it. The panel went, the mark
+   * stayed, and the map furniture spent the rest of the session making room
+   * for it: the attribution stranded mid-screen, the corner buttons and the
+   * sheet never coming back. `Popup.onRemove` fires this one at the map
+   * unconditionally, whatever became of the layer underneath.
+   *
+   * Every popup on this map is a point panel — there is one `<Popup>` in the
+   * app — so no test of which popup it is belongs here.
+   *
+   * The cleanup also covers unmount, where a panel open at the time would
+   * otherwise leave the mark behind for good.
+   */
+  React.useEffect(() => {
+    const open = () => setPanelOpenClass(true);
+    const close = () => setPanelOpenClass(false);
+    map.on("popupopen", open);
+    map.on("popupclose", close);
+    return () => {
+      map.off("popupopen", open);
+      map.off("popupclose", close);
+      setPanelOpenClass(false);
+    };
+  }, [map]);
 
   React.useEffect(() => {
     const releaseMap = () => {
@@ -2090,7 +2141,6 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                   // to this popup below
                   cancelPendingRestore();
                   analytics.poiPopupOpened(findCategory(marker, categories));
-                  setPanelOpenClass(true);
                   setOpenShape(key);
                   openPopupRef.current = event.popup;
                   shownPopupRef.current = event.popup;
@@ -2106,17 +2156,6 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                 // restore below was written as though the swap had already
                 // been announced. See pendingRestoreRef
                 popupclose: (event: PopupEvent) => {
-                  // Before the panel is gone, not after. Leaflet fades a popup
-                  // out and only removes the element 200ms later, so anything
-                  // keyed on the element being in the document goes on
-                  // believing there is a panel for a fifth of a second after
-                  // there is visibly nothing there. The Leaflet attribution
-                  // sits above the panel, and it spent that fifth of a second
-                  // hanging in the middle of an empty map before dropping.
-                  //
-                  // A swap removes this and adds it again in the same tick, so
-                  // nothing renders in between. See setPanelOpenClass
-                  setPanelOpenClass(false);
                   setOpenShape(current => (current === key ? null : current));
                   // Auto pan is not handed back. A panel is always fully on the
                   // screen, so there is never anything for it to pan into view

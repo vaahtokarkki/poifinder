@@ -1313,6 +1313,19 @@
 }
 
 /*
+ * And the transform holds still while the panel arrives or leaves.
+ *
+ * The sheet's offset goes to nothing when a panel covers it, which is a change
+ * to the same transform that follows the sheet under the finger — so opening a
+ * panel animated the credit down from a sheet's height above where it belongs.
+ * Suppressed only for the frame of the toggle, by PANEL_JUMP_CLASS, so the
+ * sheet keeps its own travel. See PoiMarkers.
+ */
+.glass-ui body.poi-panel-jump .leaflet-bottom.leaflet-right {
+  transition: none;
+}
+
+/*
  * The two corner buttons go with it.
  *
  * They are the tools for working the map — layers on one side, the fold-out

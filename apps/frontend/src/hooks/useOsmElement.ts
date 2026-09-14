@@ -76,6 +76,29 @@ const useLookup = <T,>(
     key ? store.answers.get(key) ?? null : null
   );
 
+  /*
+   * The answer is dropped the moment the question changes, during the render
+   * that changes it, and not in the effect below.
+   *
+   * The effect is a frame too late. Between a new key arriving and the effect
+   * clearing the old answer there is one render that pairs this key with the
+   * last key's answer, and callers cannot tell — they are handed a shape with
+   * nothing to say which point it belongs to. Opening a second point while the
+   * first was open read the outline of the first against the marker of the
+   * second, decided that marker was outside its own outline, and moved it to a
+   * point inside the *other* point's shape. The pin landed across the map on
+   * top of its neighbour and the two clustered.
+   *
+   * Setting state while rendering is the documented way to do this: React
+   * re-runs this component before committing anything, so nothing downstream
+   * ever observes the mismatched pair.
+   */
+  const [answeredKey, setAnsweredKey] = useState<string | null>(key);
+  if (answeredKey !== key) {
+    setAnsweredKey(key);
+    setAnswer(key ? store.answers.get(key) ?? null : null);
+  }
+
   useEffect(() => {
     if (!key) {
       setAnswer(null);

@@ -94,10 +94,22 @@ const ZOOM_TO_FEATURE_AT_OR_BELOW = 15;
  * sense of what they tapped.
  */
 const FEATURE_ZOOM = 16;
-/** How long the flight to a point takes, in seconds */
-const FEATURE_FLY_IN_S = 0.36;
+/**
+ * How long the flight to a point takes, in seconds.
+ *
+ * Short. These were 0.36 in and 0.6 back, which is a considered, cinematic
+ * pace and the wrong one: the flight is not the point, the thing at the end of
+ * it is, and half a second of travel between tapping and reading is half a
+ * second of nothing happening. Tapping through several points in a row spends
+ * more time in transit than at rest.
+ *
+ * The way back is quicker still. Arriving somewhere is worth a moment;
+ * returning to where you already were is not, and by then the reader has
+ * finished with the point and is looking at the map again.
+ */
+const FEATURE_FLY_IN_S = 0.22;
 /** And the flight back when its popup closes */
-const FEATURE_FLY_BACK_S = 0.6;
+const FEATURE_FLY_BACK_S = 0.25;
 
 const shapeFitPadding = () => {
   const overlay = document.querySelector(".map-overlay-top");
@@ -1590,6 +1602,30 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   /** The popup on the map, whether or not it may still pan it */
   const shownPopupRef = React.useRef<LeafletPopup | null>(null);
 
+  /**
+   * A restore waiting to see whether the reader is leaving, or just moving on
+   * to another point.
+   *
+   * Leaflet closes the open popup *before* it opens the next one — see
+   * Popup.openOn, which removes map._popup when autoClose is set and only then
+   * fires popupopen. So tapping a second marker reaches the close handler
+   * first, and restoring there sent the map flying back to where it started
+   * before the new point's fit could fly it in again: two flights arguing over
+   * the camera for the better part of a second.
+   *
+   * Waiting a tick tells the two cases apart. Nothing else happens in that
+   * tick if the reader closed the panel, so the restore runs. If a popup is
+   * opening it cancels this first, and the saved view is handed to the new
+   * popup instead, so closing that one still goes back where the first began.
+   */
+  const pendingRestoreRef = React.useRef<number | null>(null);
+
+  const cancelPendingRestore = React.useCallback(() => {
+    if (pendingRestoreRef.current === null) return;
+    window.clearTimeout(pendingRestoreRef.current);
+    pendingRestoreRef.current = null;
+  }, []);
+
   const rememberRestingView = React.useCallback(() => {
     const center = map.getCenter();
     restingViewRef.current = { center: [center.lat, center.lng], zoom: map.getZoom() };
@@ -1795,13 +1831,49 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
         }
       }
 
-      if (!corners) return;
-      const [south, west, north, east] = corners;
-      const bounds = latLngBounds([south, west], [north, east]);
-      if (map.getBounds().contains(bounds)) return;
+      /*
+       * Close enough already, so the zoom stays and the map only slides.
+       *
+       * This used to give up here for anything without an outline, which is
+       * most points: a bench or a post box got no movement at all and could
+       * sit behind the panel while its own panel described it. It now works
+       * from featureBounds, which is the outline where there is one and the
+       * point itself where there is not.
+       *
+       * And the question it asks has changed. It was `map.getBounds()
+       * .contains(...)`, which is the whole map — including the 400-odd pixels
+       * now underneath the panel. A feature hidden behind the panel answered
+       * "already visible" and nothing moved, which is exactly the complaint.
+       * What matters is the strip that can actually be seen: inside the
+       * padding, between the controls at the top and the panel at the foot.
+       */
+      if (!featureBounds) return;
 
+      const padding = shapeFitPadding();
+      const padTL = point(padding.paddingTopLeft);
+      const padBR = point(padding.paddingBottomRight);
+      const size = map.getSize();
+      const nw = map.latLngToContainerPoint(featureBounds.getNorthWest());
+      const se = map.latLngToContainerPoint(featureBounds.getSouthEast());
+      if (
+        nw.x >= padTL.x &&
+        nw.y >= padTL.y &&
+        se.x <= size.x - padBR.x &&
+        se.y <= size.y - padBR.y
+      ) {
+        return;
+      }
+
+      // Remember where this started, so closing the panel comes back here the
+      // same way it does after a zoom
+      if (resting) viewBeforeZoomRef.current ??= { ...resting, popup };
       ownMoveUntilRef.current = Date.now() + OWN_MOVE_GRACE_MS;
-      map.fitBounds(bounds, shapeFitPadding());
+      const held = map.getZoom();
+      flyOwn(
+        centerFittingBounds(map, featureBounds, held, padTL, padBR),
+        held,
+        FEATURE_FLY_IN_S
+      );
     },
     [map, flyOwn]
   );
@@ -1820,10 +1892,18 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
         if (!shownPopupRef.current) rememberRestingView();
         return;
       }
-      viewBeforeZoomRef.current = null;
-      flyOwn(saved.center, saved.zoom, FEATURE_FLY_BACK_S);
+      // Not yet: another popup may be opening, in which case this close is
+      // only the first half of a swap and the map should stay where it is.
+      // See pendingRestoreRef
+      cancelPendingRestore();
+      pendingRestoreRef.current = window.setTimeout(() => {
+        pendingRestoreRef.current = null;
+        if (viewBeforeZoomRef.current !== saved) return;
+        viewBeforeZoomRef.current = null;
+        flyOwn(saved.center, saved.zoom, FEATURE_FLY_BACK_S);
+      }, 0);
     },
-    [flyOwn, rememberRestingView]
+    [flyOwn, rememberRestingView, cancelPendingRestore]
   );
 
   /*
@@ -1978,6 +2058,12 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
               }
             : {
                 popupopen: (event: PopupEvent) => {
+                  // This open may be the second half of a swap: Leaflet closed
+                  // the previous popup on the way here, and that close left a
+                  // restore waiting a tick to find out. It is a swap, so the
+                  // map stays, and fitShapeIntoView hands the saved view over
+                  // to this popup below
+                  cancelPendingRestore();
                   analytics.poiPopupOpened(findCategory(marker, categories));
                   setOpenShape(key);
                   openPopupRef.current = event.popup;
@@ -1987,8 +2073,12 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                   // panel, which is what makes the split screen worth having
                   fitShapeIntoView(marker, event.popup);
                 },
-                // Only if it is still ours: opening another popup closes this
-                // one, and the close arrives after the open it was caused by
+                // Only if it is still ours. Opening another popup closes this
+                // one, and the close arrives BEFORE the open that caused it —
+                // Popup.openOn removes the previous popup and only then fires
+                // popupopen. An earlier note here had that backwards, and the
+                // restore below was written as though the swap had already
+                // been announced. See pendingRestoreRef
                 popupclose: (event: PopupEvent) => {
                   setOpenShape(current => (current === key ? null : current));
                   // Auto pan is not handed back. A panel is always fully on the
@@ -2021,8 +2111,8 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                 className="poi-popup"
                 maxWidth={380}
                 minWidth={260}
-                // Both undefined without the flag, which leaves Leaflet on its
-                // own defaults and the popup exactly where it has always been
+                // The pane that lets the panel be fixed to the screen rather
+                // than to the sliding map pane — see modalPane above
                 pane={modalPane}
                 // Never. A panel fixed to the foot of the screen is always
                 // wholly visible, so auto panning has nothing to bring into

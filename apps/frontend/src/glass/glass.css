@@ -1279,6 +1279,21 @@
 }
 
 /*
+ * The attribution travels the same 400-odd pixels when a panel opens, because
+ * it has to stay visible above one. It cannot simply be hidden — it is the
+ * CARTO and OpenStreetMap credit and is not ours to remove — so it moves, and
+ * the only question is how long it spends moving.
+ *
+ * Quickly. Its inherited 0.28s was tuned for the bottom sheet's own travel,
+ * which is a gesture the reader is making and wants to see follow their
+ * finger. This one is a consequence of something else entirely, and a long
+ * slide across the map only adds to the traffic.
+ */
+.glass-ui .leaflet-bottom.leaflet-right {
+  transition: transform 0.12s var(--glass-ease);
+}
+
+/*
  * The two corner buttons go with it.
  *
  * They are the tools for working the map — layers on one side, the fold-out
@@ -1293,9 +1308,26 @@
  */
 .glass-ui body:has(.leaflet-popup.poi-popup) .map-controls,
 .glass-ui body:has(.leaflet-popup.poi-popup) .map-layers {
+  /*
+   * They do not take the panel's offset, and this line is the whole of a
+   * complaint: they were flying.
+   *
+   * index.css gives both of these `transition: bottom 0.28s`, for the sheet
+   * sliding up and down under them. The panel offset changes `bottom` by four
+   * hundred pixels, so hiding them also sent them sailing up the screen on
+   * their way out — a long animated journey by two things nobody will look at
+   * again until they come back, and then a journey back down.
+   *
+   * Redefining the offset here rather than on the shared rule keeps the
+   * variable doing its job for what stays: the passing remarks and the
+   * attribution still clear the panel.
+   */
+  --poi-panel-offset: 0px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.16s var(--glass-ease), visibility 0.16s;
+  /* Only the fade, and quickly. `bottom` is named so the inherited 0.28s
+     cannot animate a position that is changing for a hidden element */
+  transition: opacity 0.12s var(--glass-ease), visibility 0.12s, bottom 0s;
 }
 
 .glass-ui body:has(.leaflet-popup.poi-popup) .bottom-sheet {

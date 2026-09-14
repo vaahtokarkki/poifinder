@@ -1964,9 +1964,18 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
         return;
       }
 
-      // Remember where this started, so closing the panel comes back here the
-      // same way it does after a zoom
-      if (resting) viewBeforeZoomRef.current ??= { ...resting, popup };
+      /*
+       * Where this started is not remembered, so closing the panel leaves the
+       * map here.
+       *
+       * The way back exists for the flight above, which takes the reader
+       * somewhere else entirely: several zoom levels in, to a point that was a
+       * dot among hundreds, and coming back is how they find the hundreds
+       * again. This is not that. The zoom is unchanged and the map has slid by
+       * part of a screen to bring a feature out from behind the panel — the
+       * reader is still looking at the same place, and sliding it back the
+       * moment they close the panel is the map moving for reasons of its own.
+       */
       ownMoveUntilRef.current = Date.now() + OWN_MOVE_GRACE_MS;
       const held = map.getZoom();
       flyOwn(

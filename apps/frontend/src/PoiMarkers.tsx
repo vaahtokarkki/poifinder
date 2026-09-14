@@ -1487,13 +1487,13 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   const clusterRef = React.useRef<LeafletClusterGroup | null>(null);
 
   /**
-   * Whether a point panel is up.
+   * The point whose panel is up, kept aside so the list cannot drop it.
    *
-   * A ref and not state because it is read while rendering, to decide whether
-   * to take a new list of points, and it has to be true by then: the map
-   * announces the open before anything the open causes. See shownMarkersRef
+   * A ref and not state because it is read while rendering, and it has to be
+   * set by then: the map announces the open before anything the open causes.
+   * See shownMarkersRef
    */
-  const panelUpRef = React.useRef(false);
+  const openMarkerRef = React.useRef<OverpassMarkerData | null>(null);
 
   /**
    * Whether a group is currently fanned out.
@@ -1538,22 +1538,26 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * Nothing the reader is looking at is missing either way: the points on the
    * screen are in both lists, and the rest arrive as the fan closes.
    *
-   * A panel holds the list for the same reason, and it took a while to see
-   * that it is the same reason. A panel moves the map on the way in — it pans
-   * the point up into the strip above itself — so opening one is itself a move
-   * that recuts the list. Points arrive around the one just opened, one of
-   * them lands within the cluster radius of it, and the plugin answers by
-   * merging them: the marker leaves the map, React unmounts it, and the panel
-   * that was opening goes with it. What is left is a highlighted outline with
-   * no panel and a group disc over the top of it, which reads as the tap
-   * having clustered the map.
+   * A panel does not hold the list — that was tried and was the wrong shape of
+   * fix. Holding every point back froze the map for the reader panning with a
+   * panel up, who then had nothing new to tap, and it was aimed at something
+   * that does not happen: adding and removing points around an open popup
+   * leaves it alone. What closes a popup is narrower, and only one of the ways
+   * is ours to prevent — the open point dropping out of this list, because the
+   * view moved past it, which unmounts its marker and takes the panel with it.
    *
-   * Panning with a panel up is the same story told slower, which is why both
-   * were reported together.
+   * So the open point is kept in the list by name, however the view is recut.
+   * See openMarkerRef, and removeOutsideVisibleBounds on the group for the
+   * plugin's own version of the same mistake.
    */
   const shownMarkersRef = React.useRef(markers);
-  if (!isSpiderfied() && !panelUpRef.current) shownMarkersRef.current = markers;
-  const shownMarkers = shownMarkersRef.current;
+  if (!isSpiderfied()) shownMarkersRef.current = markers;
+  const listedMarkers = shownMarkersRef.current;
+  const heldOpen = openMarkerRef.current;
+  const shownMarkers =
+    heldOpen && !listedMarkers.some(one => shapeKey(one) === shapeKey(heldOpen))
+      ? [...listedMarkers, heldOpen]
+      : listedMarkers;
 
   const shapeMarker = shownMarkers.find(marker => shapeKey(marker) === openShape) ?? null;
 
@@ -2010,16 +2014,12 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * otherwise leave the mark behind for good.
    */
   React.useEffect(() => {
-    const open = () => {
-      panelUpRef.current = true;
-      setPanelOpenClass(true);
-    };
+    const open = () => setPanelOpenClass(true);
     const close = () => {
-      panelUpRef.current = false;
       setPanelOpenClass(false);
-      // Whatever arrived while the panel held the list is drawn now. A swap
-      // opens the next panel in this same tick, so the hold never lifts
-      // between two panels and the list is taken once, at the end
+      // The point is no longer held in the list, and letting go of it needs a
+      // render to take effect. A swap sets the next one in this same tick
+      openMarkerRef.current = null;
       setPointsReleasedAt(Date.now());
     };
     map.on("popupopen", open);
@@ -2027,7 +2027,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
     return () => {
       map.off("popupopen", open);
       map.off("popupclose", close);
-      panelUpRef.current = false;
+      openMarkerRef.current = null;
       setPanelOpenClass(false);
     };
   }, [map]);
@@ -2111,6 +2111,19 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
         spiderfyDistanceMultiplier={1.6}
         // The hull drawn around a group of two is noise at this scale
         showCoverageOnHover={false}
+        /*
+         * Points off the edge of the screen stay on the map.
+         *
+         * The plugin's own thrift: on every moveend it takes markers outside
+         * the view off the map and puts back the ones that have come into it.
+         * Taking a marker off the map closes its popup, and a panel is a popup
+         * — so panning while reading one, far enough that its point goes off
+         * the edge, closed the panel and left the map to fly back on its own.
+         *
+         * The saving was never ours to want. The points on the map are the
+         * ones App has already cut to the view, a screen's worth.
+         */
+        removeOutsideVisibleBounds={false}
         // Adding a thousand markers at once should not freeze the map
         chunkedLoading
       >
@@ -2175,6 +2188,9 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                   // to this popup below
                   cancelPendingRestore();
                   analytics.poiPopupOpened(findCategory(marker, categories));
+                  // Set here rather than from the map's own popupopen, which
+                  // is handed the popup and not the point behind it
+                  openMarkerRef.current = marker;
                   setOpenShape(key);
                   openPopupRef.current = event.popup;
                   shownPopupRef.current = event.popup;

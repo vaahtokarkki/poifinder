@@ -659,13 +659,9 @@ button.layers-tile {
 
 @media (min-width: 900px) {
   /*
-   * How wide the panel down the left is.
-   *
-   * A plain length rather than a `min()` of two, because PoiMarkers reads this
-   * property to work out how much of the map is left to fit a feature into,
-   * and a custom property holding arithmetic computes to its own tokens rather
-   * than to a number — the same trap the point panel's height fell into. See
-   * shapeFitPadding.
+   * How wide the panel down the left is — and, because the map gives up
+   * exactly this much, how much narrower the map is while it is open. One
+   * number, stated once, so the two cannot drift apart.
    */
   :root {
     --side-sheet-width: 380px;
@@ -682,37 +678,44 @@ button.layers-tile {
   }
 
   /*
-   * The same content as a column down the left edge.
+   * The same content, docked down the left edge.
    *
-   * A shelf along the foot of a desktop window is a phone's answer to a phone's
-   * problem: one screen, two things wanting it, and a thumb to trade between
-   * them with. A desktop window has room for both at once, so the sheet stops
-   * being something to drag and becomes somewhere the text lives — full
-   * height, always scrolling, open or closed and nothing in between.
+   * A shelf along the foot of a desktop window is a phone's answer to a
+   * phone's problem: one screen, two things wanting it, and a thumb to trade
+   * between them with. A desktop window has room for both at once, so the
+   * sheet stops being something to drag and becomes somewhere the text lives —
+   * full height, always scrolling, open or closed and nothing in between.
+   *
+   * Docked, not floating: flush to three edges, square corners, and the map
+   * gives up the width rather than lending it. A card hovering over the map
+   * with its own margins is still the phone's sheet in a different coat — it
+   * hides what it is standing on, and everything underneath has to be shuffled
+   * out from under it. This one is part of the window's furniture: the rule
+   * further down narrows the map by exactly this width, so nothing is beneath
+   * the panel to be hidden, and the seam between them is a border.
    *
    * It states its own place entirely, because in this mode BottomSheet writes
    * no inline height or transform for it to fight with.
    */
   .bottom-sheet-side {
-    left: 16px;
+    left: 0;
     right: auto;
-    top: 16px;
-    bottom: 16px;
+    top: 0;
+    bottom: 0;
     width: var(--side-sheet-width);
     height: auto;
-    border-radius: 1em;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.18);
-    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.3, 1),
-      opacity 0.2s ease, visibility 0.28s;
+    border-radius: 0;
+    box-shadow: 1px 0 10px rgba(0, 0, 0, 0.12);
+    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.3, 1), visibility 0.28s;
   }
 
-  /* Closed, it leaves sideways — the direction it came from, and the one that
-     does not cross the map on its way out. `visibility` as well as the slide,
-     so a closed panel is not a page of links sitting off screen for the tab
-     key to walk into */
+  /* Closed, it leaves the way it came, and takes its width with it — the map
+     is widened by the rule below in the same moment. No fade: a docked panel
+     is a piece of the window, and pieces of a window do not dissolve.
+     `visibility` so a closed panel is not a page of links sitting off screen
+     for the tab key to walk into */
   .bottom-sheet-side[data-snap="hidden"] {
-    transform: translateX(calc(-100% - 24px));
-    opacity: 0;
+    transform: translateX(-100%);
     visibility: hidden;
   }
 
@@ -759,15 +762,17 @@ button.layers-tile {
   }
 
   /* The static block the prerender leaves behind is the panel until React
-     takes over, and has to be the same shape or the swap jumps */
+     takes over, and has to be the same shape or the swap jumps. It does not
+     narrow the map, because there is no map yet — the bundle that draws one
+     is the same one that replaces this */
   #seo-prerender {
-    left: 16px;
+    left: 0;
     right: auto;
-    top: 16px;
-    bottom: 16px;
+    top: 0;
+    bottom: 0;
     width: var(--side-sheet-width);
     height: auto;
-    border-radius: 1em;
+    border-radius: 0;
   }
 
   /* And no grab handle on it, because the panel it becomes has none: the bar
@@ -793,19 +798,26 @@ button.layers-tile {
   }
 
   /*
-   * What the panel displaces, it displaces sideways.
+   * And the map gives up the width, which is what makes the panel a side
+   * panel rather than a card lying on top of one.
    *
-   * The overlay column and the layers button both live at the left edge, which
-   * is now where the panel is. They move over by its width while it is open
-   * and come back when it closes — which is the whole reason BottomSheet marks
-   * the document rather than keeping the fact to itself.
+   * Everything the map draws inside its own container — the overlay column of
+   * controls, the attribution, the points themselves — moves with it for
+   * free, because the container is what moved. App tells Leaflet to measure
+   * itself again when this changes; see the invalidateSize effect there.
    */
-  body.side-sheet-open .map-overlay-top {
-    padding-left: calc(var(--side-sheet-width) + 32px);
+  body.side-sheet-open .map-root {
+    margin-left: var(--side-sheet-width);
+    width: calc(100% - var(--side-sheet-width));
   }
 
+  /*
+   * What does not move with it is the furniture pinned to the viewport rather
+   * than to the map: this one is fixed, because on a phone the map container
+   * runs under the browser's own toolbars. It clears the panel by hand.
+   */
   body.side-sheet-open .map-layers {
-    left: calc(var(--side-sheet-width) + 32px);
+    left: calc(var(--side-sheet-width) + 24px);
   }
 
   /*

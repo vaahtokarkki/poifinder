@@ -71,6 +71,15 @@ type BottomSheetProps = {
    * whatever it is given either way
    */
   page?: string;
+  /**
+   * Called when the sheet docks down the side of a wide window, or undocks.
+   *
+   * The map is narrowed by exactly the panel's width while it is docked, and
+   * Leaflet only knows the size of its container if it is told to look again.
+   * The sheet cannot tell it — it has no map — so it says what happened and
+   * App does the telling
+   */
+  onDockedChange?: (docked: boolean) => void;
   children: React.ReactNode;
 };
 
@@ -95,7 +104,13 @@ const peekHeightFromStyles = () => {
  * hidden. Dragging it all the way down dismisses it for the rest of the visit,
  * as in the Google Maps app.
  */
-const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, page, children }) => {
+const BottomSheet: React.FC<BottomSheetProps> = ({
+  peekHeight,
+  ref,
+  page,
+  onDockedChange,
+  children,
+}) => {
   const [measuredPeek] = useState(peekHeightFromStyles);
   const collapsedHeight = peekHeight ?? measuredPeek;
   const [fullHeight, setFullHeight] = useState(fullHeightForWindow);
@@ -123,6 +138,11 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, page, childr
 
   /** Whether this visit has already been counted as having read to the end */
   const readToEndRef = useRef(false);
+
+  /* Through a ref, so that a parent passing a fresh lambda on every render
+     does not turn every render into a fresh announcement */
+  const onDockedChangeRef = useRef(onDockedChange);
+  onDockedChangeRef.current = onDockedChange;
 
   /**
    * Report the one moment in a scroll worth knowing about: the reader reached
@@ -179,10 +199,17 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, page, childr
    * as a class rather than measured, so the stylesheet keeps the one number
    * for the panel's width.
    */
+  const docked = sidePanel && sideOpen;
   useEffect(() => {
-    document.body.classList.toggle(SIDE_PANEL_CLASS, sidePanel && sideOpen);
+    document.body.classList.toggle(SIDE_PANEL_CLASS, docked);
     return () => document.body.classList.remove(SIDE_PANEL_CLASS);
-  }, [sidePanel, sideOpen]);
+  }, [docked]);
+
+  // Said out loud as well, for the one thing a stylesheet cannot do about it:
+  // tell Leaflet its container is a different size now
+  useEffect(() => {
+    onDockedChangeRef.current?.(docked);
+  }, [docked]);
 
   // Keep the height in sync when the snap state or the window size changes
   useEffect(() => {

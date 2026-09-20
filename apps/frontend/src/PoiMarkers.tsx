@@ -190,29 +190,8 @@ const shapeFitPadding = () => {
    */
   const panel = document.querySelector(".leaflet-popup.poi-popup");
   const panelHeight = panel ? Math.round(panel.getBoundingClientRect().height) : 0;
-  /*
-   * And the column down the left, on a wide screen where the sheet is a panel
-   * rather than a shelf. It takes nothing off the bottom of the map — its
-   * --sheet-offset is zero — so it has to be counted here or a point fitted
-   * into the middle of the map lands behind it.
-   *
-   * Read from the property rather than measured, because the panel slides out
-   * when it closes and is still on the screen, at its full width, for the
-   * fifth of a second that takes. BottomSheet marks <body> the moment it
-   * closes, so the class is the honest answer and the width is a plain length
-   * the stylesheet keeps in one place.
-   */
-  const sideSheet = document.body.classList.contains("side-sheet-open")
-    ? Number.parseFloat(
-        getComputedStyle(document.body).getPropertyValue("--side-sheet-width")
-      )
-    : 0;
-  const sideWidth = Number.isFinite(sideSheet) ? sideSheet : 0;
   return {
-    paddingTopLeft: [
-      sideWidth + POPUP_EDGE_GAP_PX,
-      overlayHeight + POPUP_EDGE_GAP_PX,
-    ] as [number, number],
+    paddingTopLeft: [POPUP_EDGE_GAP_PX, overlayHeight + POPUP_EDGE_GAP_PX] as [number, number],
     paddingBottomRight: [
       POPUP_EDGE_GAP_PX,
       (Number.isFinite(sheet) ? sheet : 0) + panelHeight + POPUP_EDGE_GAP_PX,

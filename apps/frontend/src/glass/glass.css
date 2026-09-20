@@ -1299,14 +1299,16 @@
   }
 
   /*
-   * Beside the side panel rather than under it. On a phone the two are the
-   * same strip of screen and the point wins — the sheet is hidden while a
-   * panel is up, which is the rule further down. Here there is room for both,
-   * and taking the page away every time somebody taps a point would be a
-   * column of the window blinking in and out all session.
+   * Inside the map's own width rather than across the panel's. The popup is
+   * fixed to the viewport, which is the one thing narrowing the map does not
+   * move, so it is told where the map now starts. On a phone the sheet and
+   * the point panel are the same strip of screen and the point wins — the
+   * rule further down hides the sheet — but here there is room for both, and
+   * taking the page away every time somebody taps a point would be a column
+   * of the window blinking in and out all session.
    */
   .glass-ui body.side-sheet-open .leaflet-popup.poi-popup {
-    left: calc(var(--side-sheet-width) + 32px) !important;
+    left: calc(var(--side-sheet-width) + 16px) !important;
   }
 
   /* Both class names, so this outranks the rule further down that takes the
@@ -1776,23 +1778,29 @@
   background: rgba(0, 0, 0, 0.22);
 }
 
-/* On a wide screen the sheet is a panel down the left rather than a shelf on
-   the bottom edge, so it gets its corners and its rim all the way round */
+/* On a wide screen the sheet is docked down the left rather than lying along
+   the bottom edge, so the rim it keeps is the one seam it has with the map */
 @media (min-width: 900px) {
-  .glass-ui .bottom-sheet,
+  .glass-ui .bottom-sheet-side,
   .glass-ui #seo-prerender {
+    border: none;
+    border-right: 1px solid var(--glass-edge);
+    border-radius: 0;
+    box-shadow: 1px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* The fallback card, for a browser that could not tell us the window is
+     wide: still a sheet, so still a sheet's corners */
+  .glass-ui .bottom-sheet:not(.bottom-sheet-side) {
     border: 1px solid var(--glass-edge);
-    border-radius: var(--glass-radius-lg);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 16px 48px rgba(0, 0, 0, 0.14),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border-radius: var(--glass-radius-lg) var(--glass-radius-lg) 0 0;
   }
 
   /* The material's own transition is stated here as well, because naming one
      on .glass-ui .bottom-sheet above would otherwise outrank the slide the
      panel is placed with — see index.css */
   .glass-ui .bottom-sheet-side {
-    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.3, 1),
-      opacity 0.2s ease, visibility 0.28s,
+    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.3, 1), visibility 0.28s,
       background-color 0.28s var(--glass-ease);
   }
 

@@ -330,6 +330,35 @@ const App = () => {
   const sheetRef = useRef<BottomSheetHandle>(null);
 
   /**
+   * Whether the sheet is docked down the left of a wide window, which is the
+   * one state of it the map has to know about: while it is, the stylesheet
+   * narrows the map container by the panel's width.
+   */
+  const [sheetDocked, setSheetDocked] = useState(false);
+
+  /*
+   * And Leaflet is told to look at its container again.
+   *
+   * It caches the size and only measures on its own for a window resize, so a
+   * container that narrows underneath it leaves the map drawing at the old
+   * width: the centre is off by half the panel, and everything computed from
+   * the view — which points are in it, where a popup fits — is computed
+   * against a map that is not on the screen.
+   *
+   * Twice, because the panel takes 0.28s to slide and CSS gives the width to
+   * the map at once: the first call is for the frame the class changed in,
+   * the second catches whatever the animation settles on. `pan: false` keeps
+   * the centre where the reader left it — the map gets narrower, it does not
+   * travel.
+   */
+  useEffect(() => {
+    if (!map) return;
+    map.invalidateSize({ pan: false });
+    const settled = window.setTimeout(() => map.invalidateSize({ pan: false }), 320);
+    return () => window.clearTimeout(settled);
+  }, [map, sheetDocked]);
+
+  /**
    * Stable across renders on purpose: PoiMarkers only re-renders when this or
    * the markers change, and re-rendering it rebuilds every marker on the map
    */
@@ -1331,7 +1360,11 @@ const App = () => {
           root can be told from the same gesture on a city page. "map" is the
           route that was not prerendered at all: a shared link with coordinates,
           or an unknown city, which is the fallback content below */}
-      <BottomSheet ref={sheetRef} page={pageData?.kind ?? "map"}>
+      <BottomSheet
+        ref={sheetRef}
+        page={pageData?.kind ?? "map"}
+        onDockedChange={setSheetDocked}
+      >
         {pageData ? (
           // The whole sheet, guide included. The root used to have the guide
           // appended here instead, which put it below the prerendered block at

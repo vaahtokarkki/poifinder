@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { useMap } from "react-leaflet";
 import { ui } from "../copy";
 
 /**
@@ -47,6 +48,14 @@ const OVERSCROLL_TAKEOVER = 6;
  */
 const CLOSE_FRACTION = 0.65;
 
+/**
+ * What the panel's open height is, for the one case where it cannot be
+ * measured: a window resized while no panel was on the screen. It restates
+ * the ceiling in `--poi-panel-height` and is wrong only if that changes
+ * without this — which is why it is a last resort and not the first answer.
+ */
+const PEEK_FALLBACK = 420;
+
 /** As tall as the bottom sheet goes, and for the same reasons */
 const fullHeightForWindow = () =>
   Math.min(Math.round(window.innerHeight * 0.85), 680);
@@ -65,6 +74,7 @@ type PanelControls = {
 
 const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const handleRef = useRef<HTMLDivElement | null>(null);
+  const map = useMap();
 
   /**
    * Everything the gesture needs, in one box that survives a render.
@@ -78,6 +88,20 @@ const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     snap: "peek" as Snap,
     height: 0,
     start: null as { y: number; height: number } | null,
+    /**
+     * Whether this panel is the one on the screen.
+     *
+     * A handle outlives its popup — react-leaflet mounts the content on the
+     * first open and leaves it mounted through every close after it — so a
+     * map with twenty points tapped has twenty of these, nineteen of them
+     * attached to nothing. They must not speak for the screen: only the open
+     * one publishes the offset the map furniture clears.
+     *
+     * True at mount, because the mount IS the first open: the content is
+     * rendered in answer to that open, which is why it cannot be heard on the
+     * map event below.
+     */
+    open: true,
     onClose,
     /** Filled in once the panel is in the document — see the effect below */
     controls: null as PanelControls | null,
@@ -110,7 +134,31 @@ const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     const setHeight = (height: number) => {
       state.height = height;
       panel.style.height = `${height}px`;
+      /*
+       * And the furniture that has to clear the panel is told how much of it
+       * there is now.
+       *
+       * The stylesheet's own answer is the panel's full open height, which is
+       * right until a finger is on it: dragged down towards dismissal the
+       * panel shrinks and the Leaflet attribution, pinned a full panel's
+       * height above the bottom edge, was left hanging in the middle of the
+       * map with nothing underneath it.
+       *
+       * Capped at the open height, as the bottom sheet caps its own offset:
+       * dragging the panel up to fill the screen must not push the credit up
+       * with it. Written inline on <body>, where it shadows the rule in
+       * glass.css, and removed again when the panel closes — .map-layers adds
+       * this offset in whether or not a panel is open, so a stale one would
+       * leave that button hovering for the rest of the visit.
+       */
+      if (state.open)
+        document.body.style.setProperty(
+          "--poi-panel-offset",
+          `${Math.round(Math.min(height, state.peek))}px`
+        );
     };
+
+    const clearOffset = () => document.body.style.removeProperty("--poi-panel-offset");
 
     const applySnap = (snap: Snap) => {
       state.snap = snap;
@@ -123,13 +171,75 @@ const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     };
 
     const sizeToWindow = () => {
-      state.peek = measurePeek() || Math.round(window.innerHeight * 0.46);
+      /*
+       * A closed panel measures nothing: Leaflet takes the element out of the
+       * document to close a popup, and a rect taken then is zero. So a
+       * measurement is believed only if there is one, and otherwise the last
+       * good answer stands — the window it was taken in is the window we are
+       * still in, unless it was resized while the panel was away, and then
+       * the number below is what the stylesheet would have said anyway.
+       */
+      const measured = measurePeek();
+      state.peek =
+        measured ||
+        state.peek ||
+        Math.min(Math.round(window.innerHeight * 0.46), PEEK_FALLBACK);
       state.full = Math.max(fullHeightForWindow(), state.peek);
       if (!state.start) setHeight(heightFor(state.snap));
     };
 
     sizeToWindow();
     applySnap("peek");
+
+    /**
+     * Back to the open height, without the travel.
+     *
+     * This panel outlives the popup it is in: Leaflet closes a popup by taking
+     * its element out of the document and opens it again by putting the same
+     * element back, and React never unmounts anything in between. So the
+     * height a gesture left behind is the height the next reader is handed —
+     * dismiss a panel with a pull down and the next point opened at the two
+     * thirds of a panel the dismissal happened to end on, with the attribution
+     * still clearing a full one.
+     *
+     * Suppressing the transition for the reset is the difference between a
+     * panel that is simply the right size when it arrives and one that grows
+     * into place while it fades out.
+     */
+    const resetToPeek = () => {
+      panel.classList.add("poi-panel-dragging");
+      state.start = null;
+      sizeToWindow();
+      applySnap("peek");
+      requestAnimationFrame(() => panel.classList.remove("poi-panel-dragging"));
+    };
+
+    /*
+     * Asked of the map rather than of this popup, because a popup does not
+     * announce its own opening anywhere this can reach. Leaflet fires the map
+     * first and the marker second, so the reset lands before PoiMarkers reads
+     * the panel's height to work out how much room the map has left — which
+     * is the other half of the same bug.
+     */
+    const onPopupEvent = (event: { popup?: { getElement?: () => HTMLElement | undefined } }) => {
+      if (event.popup?.getElement?.() !== panel) return;
+      state.open = true;
+      resetToPeek();
+    };
+    /*
+     * Closing only lets go of the screen. The height is left exactly where the
+     * finger left it, because Leaflet fades a closing popup out over 200ms and
+     * a panel that springs back to full height on its way out is the dismissal
+     * undoing itself in front of the reader. Putting it right is the next
+     * open's business, above, which happens before the browser paints it.
+     */
+    const onPopupClosed = (event: Parameters<typeof onPopupEvent>[0]) => {
+      if (event.popup?.getElement?.() !== panel) return;
+      state.open = false;
+      clearOffset();
+    };
+    map.on("popupopen", onPopupEvent);
+    map.on("popupclose", onPopupClosed);
 
     const beginDrag = (y: number) => {
       state.start = { y, height: state.height };
@@ -263,10 +373,14 @@ const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       body.removeEventListener("touchend", onTouchEnd);
       body.removeEventListener("touchcancel", onTouchEnd);
       window.removeEventListener("resize", sizeToWindow);
+      map.off("popupopen", onPopupEvent);
+      map.off("popupclose", onPopupClosed);
+      if (state.open) clearOffset();
+      state.open = false;
       panel.style.height = "";
       panel.classList.remove("poi-panel-dragging");
     };
-  }, []);
+  }, [map]);
 
   const controls = () => stateRef.current.controls;
 

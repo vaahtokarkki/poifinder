@@ -14,7 +14,9 @@ type CategoryPresetsProps = {
 
 /**
  * A row of ready made category combinations, e.g. "Road trip" or "With kids".
- * Always one line, scrolled sideways when the presets do not all fit.
+ * Always one line, scrolled sideways when the presets do not all fit — which
+ * is a phone's problem: on a wide screen they sit on the picker's own row,
+ * where they all fit at once.
  */
 const CategoryPresets: React.FC<CategoryPresetsProps> = ({
   value,

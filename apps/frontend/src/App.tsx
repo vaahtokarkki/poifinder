@@ -1211,27 +1211,34 @@ const App = () => {
               />
             </div>
           )}
-          <div className="category-row">
-            <CategorySelect
+          {/* The picker, the language button and the chips, in one block so
+              that a wide screen can lay them out as one row — see the
+              breakpoint in index.css. On a phone it is the column it always
+              was, and the wrapper's own gap is the overlay's, so nothing
+              about that column moves */}
+          <div className="category-line">
+            <div className="category-row">
+              <CategorySelect
+                value={category}
+                onChange={setCategory}
+                // The search bar takes this slot while it is open
+                visible={!displaySearchItem}
+                onCommit={() => fetchMarkers(undefined, "categories")}
+              />
+              <LanguageSelect
+                value={locale}
+                onChange={chooseLocale}
+                // The same condition the category select uses: the search and
+                // route panels both take this row for themselves
+                visible={!displaySearchItem}
+              />
+            </div>
+            <CategoryPresets
               value={category}
-              onChange={setCategory}
-              // The search bar takes this slot while it is open
-              visible={!displaySearchItem}
-              onCommit={() => fetchMarkers(undefined, "categories")}
-            />
-            <LanguageSelect
-              value={locale}
-              onChange={chooseLocale}
-              // The same condition the category select uses: the search and
-              // route panels both take this row for themselves
-              visible={!displaySearchItem}
+              onSelect={handlePresetSelect}
+              visible={displaySearchItem !== "routes"}
             />
           </div>
-          <CategoryPresets
-            value={category}
-            onSelect={handlePresetSelect}
-            visible={displaySearchItem !== "routes"}
-          />
           {/* Last in the column, under the preset chips: a search running is
               the least of what is on this overlay, and the map stays usable
               throughout one */}

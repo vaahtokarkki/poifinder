@@ -1297,6 +1297,25 @@
   .glass-ui .poi-popup .leaflet-popup-content-wrapper {
     border-radius: var(--glass-radius-lg);
   }
+
+  /*
+   * Beside the side panel rather than under it. On a phone the two are the
+   * same strip of screen and the point wins — the sheet is hidden while a
+   * panel is up, which is the rule further down. Here there is room for both,
+   * and taking the page away every time somebody taps a point would be a
+   * column of the window blinking in and out all session.
+   */
+  .glass-ui body.side-sheet-open .leaflet-popup.poi-popup {
+    left: calc(var(--side-sheet-width) + 32px) !important;
+  }
+
+  /* Both class names, so this outranks the rule further down that takes the
+     sheet away while a point panel is up — that one is for the phone, where
+     they really are the same strip of screen */
+  .glass-ui body.poi-panel-open .bottom-sheet.bottom-sheet-side[data-snap="full"] {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 /*
@@ -1757,13 +1776,33 @@
   background: rgba(0, 0, 0, 0.22);
 }
 
-/* On a wide screen the sheet is a card in the corner rather than a shelf on
+/* On a wide screen the sheet is a panel down the left rather than a shelf on
    the bottom edge, so it gets its corners and its rim all the way round */
 @media (min-width: 900px) {
   .glass-ui .bottom-sheet,
   .glass-ui #seo-prerender {
     border: 1px solid var(--glass-edge);
-    border-radius: var(--glass-radius-lg) var(--glass-radius-lg) 0 0;
+    border-radius: var(--glass-radius-lg);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 16px 48px rgba(0, 0, 0, 0.14),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+
+  /* The material's own transition is stated here as well, because naming one
+     on .glass-ui .bottom-sheet above would otherwise outrank the slide the
+     panel is placed with — see index.css */
+  .glass-ui .bottom-sheet-side {
+    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.3, 1),
+      opacity 0.2s ease, visibility 0.28s,
+      background-color 0.28s var(--glass-ease);
+  }
+
+  .glass-ui .bottom-sheet-close {
+    color: var(--glass-ink-dim);
+  }
+
+  .glass-ui .bottom-sheet-close:hover {
+    background: rgba(0, 0, 0, 0.06);
+    color: var(--glass-ink);
   }
 }
 

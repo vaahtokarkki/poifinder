@@ -113,6 +113,35 @@ body {
   display: none;
 }
 
+/*
+ * The picker row and the chip row, as one block.
+ *
+ * On a phone this is exactly the column the two used to be — same order, same
+ * gap as the overlay's own, so the wrapper costs nothing and moves nothing. It
+ * exists for the wide screen, where the two become one row: see the
+ * breakpoint at the foot of this file.
+ */
+.category-line {
+  display: flex;
+  flex-direction: column;
+  gap: var(--overlay-gap);
+  width: 100%;
+  min-width: 0;
+  /* The overlay hands every child of its own pointer events back; this one is
+     two rows and the gap between them, and that gap belongs to the map */
+  pointer-events: none;
+}
+
+.category-line > * {
+  pointer-events: auto;
+}
+
+/* As with .category-row: with both rows gone the wrapper must not keep a gap
+   of its own in the overlay column */
+.category-line:empty {
+  display: none;
+}
+
 .language-select {
   margin-left: auto;
   flex: 0 0 auto;
@@ -545,13 +574,15 @@ button.layers-tile {
 
 @media (min-width: 900px) {
   /*
-   * The sheet takes the lower left corner on a wide screen, so the layers
-   * control stands just clear of it: 16px of margin, the sheet's own 460px,
-   * and 16px again. Its bottom stops moving for the same reason the map
-   * controls' does — nothing is above the sheet to be lifted off any more.
+   * The corner is the layers control's own again, because on a wide screen
+   * the sheet is a panel down the left and is not always there. It stands
+   * clear of that panel while one is open, by the rule at the foot of this
+   * file; closed, it has the corner to itself. Its bottom stops moving for
+   * the same reason the map controls' does — nothing is above the sheet to be
+   * lifted off any more.
    */
   .map-layers {
-    left: calc(16px + 460px + 16px);
+    left: 24px;
     bottom: 24px;
   }
 
@@ -627,12 +658,129 @@ button.layers-tile {
 }
 
 @media (min-width: 900px) {
+  /*
+   * How wide the panel down the left is.
+   *
+   * A plain length rather than a `min()` of two, because PoiMarkers reads this
+   * property to work out how much of the map is left to fit a feature into,
+   * and a custom property holding arithmetic computes to its own tokens rather
+   * than to a number — the same trap the point panel's height fell into. See
+   * shapeFitPadding.
+   */
+  :root {
+    --side-sheet-width: 380px;
+  }
+
   /* In the lower left corner, out of the way of the map controls, which keep
-     the right hand side to themselves */
+     the right hand side to themselves. This is the sheet that stayed a sheet:
+     BottomSheet turns it into the panel below wherever matchMedia can answer,
+     and this is what is left if it cannot */
   .bottom-sheet {
     left: 16px;
     right: auto;
     width: 460px;
+  }
+
+  /*
+   * The same content as a column down the left edge.
+   *
+   * A shelf along the foot of a desktop window is a phone's answer to a phone's
+   * problem: one screen, two things wanting it, and a thumb to trade between
+   * them with. A desktop window has room for both at once, so the sheet stops
+   * being something to drag and becomes somewhere the text lives — full
+   * height, always scrolling, open or closed and nothing in between.
+   *
+   * It states its own place entirely, because in this mode BottomSheet writes
+   * no inline height or transform for it to fight with.
+   */
+  .bottom-sheet-side {
+    left: 16px;
+    right: auto;
+    top: 16px;
+    bottom: 16px;
+    width: var(--side-sheet-width);
+    height: auto;
+    border-radius: 1em;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.18);
+    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.3, 1),
+      opacity 0.2s ease, visibility 0.28s;
+  }
+
+  /* Closed, it leaves sideways — the direction it came from, and the one that
+     does not cross the map on its way out. `visibility` as well as the slide,
+     so a closed panel is not a page of links sitting off screen for the tab
+     key to walk into */
+  .bottom-sheet-side[data-snap="hidden"] {
+    transform: translateX(calc(-100% - 24px));
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /*
+   * The way out, in the corner where a panel's close button belongs.
+   *
+   * The grab handle does not come with it: there is nothing to grab on a
+   * screen with no thumb near it, and the two states this panel has are a
+   * button's business. The way back in is the info button in the map controls,
+   * which has always opened the sheet.
+   */
+  .bottom-sheet-close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #5f6368;
+    font: inherit;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .bottom-sheet-close:hover {
+    background: rgba(0, 0, 0, 0.06);
+  }
+
+  .bottom-sheet-close:focus-visible {
+    outline: 2px solid #4caf50;
+    outline-offset: 2px;
+  }
+
+  /* Clear of that button, which floats over the first line of the text */
+  .bottom-sheet-side .bottom-sheet-content {
+    padding-top: 2.4em;
+  }
+
+  /* The static block the prerender leaves behind is the panel until React
+     takes over, and has to be the same shape or the swap jumps */
+  #seo-prerender {
+    left: 16px;
+    right: auto;
+    top: 16px;
+    bottom: 16px;
+    width: var(--side-sheet-width);
+    height: auto;
+    border-radius: 1em;
+  }
+
+  /* And no grab handle on it, because the panel it becomes has none: the bar
+     would be drawn for as long as the bundle takes and then turn into a close
+     button in the other corner */
+  #seo-prerender::before {
+    display: none;
+  }
+
+  /* Which leaves the text to clear the close button on its own, as
+     .bottom-sheet-side's content does */
+  .seo-prerender-inner {
+    padding-top: 2.4em;
   }
 
   /* Nothing sits above the sheet any more, the controls stay where they are */
@@ -642,6 +790,85 @@ button.layers-tile {
 
   .leaflet-bottom.leaflet-right {
     transform: none;
+  }
+
+  /*
+   * What the panel displaces, it displaces sideways.
+   *
+   * The overlay column and the layers button both live at the left edge, which
+   * is now where the panel is. They move over by its width while it is open
+   * and come back when it closes — which is the whole reason BottomSheet marks
+   * the document rather than keeping the fact to itself.
+   */
+  body.side-sheet-open .map-overlay-top {
+    padding-left: calc(var(--side-sheet-width) + 32px);
+  }
+
+  body.side-sheet-open .map-layers {
+    left: calc(var(--side-sheet-width) + 32px);
+  }
+
+  /*
+   * The overlay is a row on this screen, so it takes the width it needs rather
+   * than a phone's column measure. The room on the right is for the language
+   * button, which has left the row for the corner
+   */
+  .map-overlay-top {
+    max-width: none;
+    padding-right: 5em;
+  }
+
+  /* Except these: a search field and a route form are controls to fill in, and
+     a text input drawn across sixteen hundred pixels is not easier to use for
+     it. Only the category row needs the width, for the chips beside it */
+  .search-bar-row,
+  .routes-card {
+    max-width: 520px;
+  }
+
+  /*
+   * The picker and the chips share a row. There is no scrolling strip of chips
+   * here — the window is wide enough to show them beside the control they
+   * belong to, and a horizontal scroller nobody can flick is a poor thing to
+   * put on a desktop.
+   */
+  .category-line {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6em;
+  }
+
+  .category-line .category-row {
+    flex: 0 0 320px;
+    width: auto;
+  }
+
+  /* No bleed: the row is no longer edge to edge, it starts where the picker
+     beside it ends */
+  .category-line .category-presets {
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0;
+    padding: 0 0 2px 0;
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+  /*
+   * And the language button goes to the top right corner.
+   *
+   * It is the control you touch once a visit, and on a phone it earns its
+   * place beside the picker because there is no other place. Here it was
+   * sitting in the middle of a row of category chips, which is the one row on
+   * this screen somebody is reading — so it moves to the far corner, opposite
+   * everything else, where it can be found and otherwise ignored.
+   */
+  .language-select {
+    position: fixed;
+    top: 0.75em;
+    right: 1em;
+    z-index: 1200;
+    margin-left: 0;
   }
 }
 
@@ -877,13 +1104,7 @@ button.layers-tile {
   padding: 0.6em 1.25em 1.5em 1.25em;
 }
 
-@media (min-width: 900px) {
-  #seo-prerender {
-    left: 16px;
-    right: auto;
-    width: 460px;
-  }
-}
+
 
 /* ---------- POI list, questions and links ---------- */
 

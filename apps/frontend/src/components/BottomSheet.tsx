@@ -31,6 +31,30 @@ const DEFAULT_PEEK_HEIGHT = 172;
  */
 const READ_TO_END_SLACK = 24;
 
+/**
+ * Where the sheet stops being a shelf on the bottom edge and becomes a column
+ * down the left of the screen.
+ *
+ * The same 900px every other piece of this layout turns at, and the same
+ * reason: a sheet across the foot of a desktop window is a phone gesture
+ * wearing a desk's clothes. There is no thumb near the bottom of a monitor, a
+ * drag up and down to read is work a scrollbar already does, and the window is
+ * wide enough that the map loses nothing by giving up a column of it. So on a
+ * wide screen the same content becomes a panel: open, closed, and nothing in
+ * between — the peek state is a phone's answer to a screen that has no room
+ * for both things at once, which a desktop does.
+ */
+const SIDE_PANEL_QUERY = "(min-width: 900px)";
+
+/** Marks the document while the side panel is open, for the map furniture that
+ *  has to stand clear of it — the layers button and the top overlay */
+const SIDE_PANEL_CLASS = "side-sheet-open";
+
+const sidePanelMatches = () =>
+  typeof window !== "undefined" &&
+  typeof window.matchMedia === "function" &&
+  window.matchMedia(SIDE_PANEL_QUERY).matches;
+
 export type BottomSheetHandle = {
   /** Open the sheet all the way, even after it has been dismissed */
   expand: () => void;
@@ -77,6 +101,10 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, page, childr
   const [fullHeight, setFullHeight] = useState(fullHeightForWindow);
   const [snap, setSnap] = useState<SheetSnap>("peek");
   const [dragging, setDragging] = useState(false);
+  /** Whether this is a panel down the side rather than a sheet along the foot */
+  const [sidePanel, setSidePanel] = useState(sidePanelMatches);
+  /** Open or closed, which is all the two states a side panel has */
+  const sideOpen = snap !== "hidden";
 
   const heightFor = useCallback(
     (target: SheetSnap) => {
@@ -132,17 +160,43 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, page, childr
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  // Which of the two the sheet is, asked of the same breakpoint the stylesheet
+  // turns at rather than of the window width, so there is one answer and not
+  // two that could disagree by a pixel
+  useEffect(() => {
+    if (typeof window.matchMedia !== "function") return;
+    const query = window.matchMedia(SIDE_PANEL_QUERY);
+    const onChange = () => setSidePanel(query.matches);
+    onChange();
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, []);
+
+  /*
+   * The map furniture needs to know, because a panel down the left is in the
+   * way of things a sheet along the bottom never touched: the layers button in
+   * that corner, and the column of controls over the top of the map. Published
+   * as a class rather than measured, so the stylesheet keeps the one number
+   * for the panel's width.
+   */
+  useEffect(() => {
+    document.body.classList.toggle(SIDE_PANEL_CLASS, sidePanel && sideOpen);
+    return () => document.body.classList.remove(SIDE_PANEL_CLASS);
+  }, [sidePanel, sideOpen]);
+
   // Keep the height in sync when the snap state or the window size changes
   useEffect(() => {
     if (!dragging) setVisible(heightFor(snap));
   }, [snap, heightFor, dragging]);
 
   // The map controls and the Leaflet controls are lifted above the sheet, but
-  // only up to the peek height, so they stay reachable when it is fully open
+  // only up to the peek height, so they stay reachable when it is fully open.
+  // A side panel takes no room off the bottom of the screen at all, so it
+  // lifts nothing — what it displaces, it displaces sideways
   useEffect(() => {
-    const offset = Math.min(visible, heightFor("peek"));
+    const offset = sidePanel ? 0 : Math.min(visible, heightFor("peek"));
     document.documentElement.style.setProperty("--sheet-offset", `${offset}px`);
-  }, [visible, heightFor]);
+  }, [visible, heightFor, sidePanel]);
 
   const applySnap = (target: SheetSnap) => {
     setSnap(target);
@@ -212,8 +266,9 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, page, childr
   };
 
   // Only the fully open sheet scrolls its content, in the other states the
-  // content is a drag surface of its own
-  const contentScrolls = snap === "full" && !dragging;
+  // content is a drag surface of its own. A side panel is never anything but
+  // a page of text, so it always scrolls and is never dragged
+  const contentScrolls = sidePanel || (snap === "full" && !dragging);
   const contentDragHandlers = contentScrolls
     ? {}
     : {
@@ -228,8 +283,8 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, page, childr
    * once, so calling through a ref that every render refreshes is what keeps
    * them from dragging the sheet with the first render's idea of its height.
    */
-  const dragApiRef = useRef({ beginDrag, moveDrag, endDrag, contentScrolls });
-  dragApiRef.current = { beginDrag, moveDrag, endDrag, contentScrolls };
+  const dragApiRef = useRef({ beginDrag, moveDrag, endDrag, contentScrolls, sidePanel });
+  dragApiRef.current = { beginDrag, moveDrag, endDrag, contentScrolls, sidePanel };
 
   /**
    * Pulling the open sheet's content down past its top drags the sheet down
@@ -272,6 +327,9 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, page, childr
       lastY = y;
 
       if (!dragged) {
+        // A side panel has nowhere to be dragged to: it is open or it is
+        // closed, and the way out is the button in its corner
+        if (dragApiRef.current.sidePanel) return;
         // In every other state the content is already a drag surface, driven
         // by the pointer handlers above, and taking it over here as well would
         // move the sheet twice for one finger
@@ -318,22 +376,44 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, page, childr
 
   return (
     <section
-      className="bottom-sheet"
+      className={`bottom-sheet${sidePanel ? " bottom-sheet-side" : ""}`}
       // Which of the three states the sheet has settled in, on the element so
       // a stylesheet can tell a peeking sheet from an open one. It is a strip
       // of chrome over the map at one end of that drag and a page of text at
-      // the other, and those do not want the same surface
-      data-snap={snap}
+      // the other, and those do not want the same surface. A side panel has
+      // only the far end of that: it is a page of text or it is not there
+      data-snap={sidePanel ? (sideOpen ? "full" : "hidden") : snap}
       aria-label={ui().controls.about}
-      aria-hidden={snap === "hidden"}
-      style={{
-        height: fullHeight,
-        transform: `translateY(${fullHeight - visible}px)`,
-        transition: dragging ? "none" : "transform .28s cubic-bezier(.2,.8,.3,1)",
-        // Once dismissed the sheet is off screen, it must not catch any taps
-        pointerEvents: snap === "hidden" ? "none" : "auto",
-      }}
+      aria-hidden={!sideOpen}
+      style={
+        sidePanel
+          ? // The stylesheet places it, all of it: a panel that fills the left
+            // edge has no height to state and no drag to follow, and an inline
+            // transform here would be the one thing the CSS could not override
+            { pointerEvents: sideOpen ? "auto" : "none" }
+          : {
+              height: fullHeight,
+              transform: `translateY(${fullHeight - visible}px)`,
+              transition: dragging ? "none" : "transform .28s cubic-bezier(.2,.8,.3,1)",
+              // Once dismissed the sheet is off screen, it must not catch any taps
+              pointerEvents: snap === "hidden" ? "none" : "auto",
+            }
+      }
     >
+      {sidePanel ? (
+        /* The way out, and on this screen it has to be one: there is no thumb
+           to flick a panel away with, and the info button in the map controls
+           is the way back in */
+        <button
+          type="button"
+          className="bottom-sheet-close"
+          onClick={() => applySnap("hidden")}
+          title={ui().controls.layers.close}
+          aria-label={ui().controls.layers.close}
+        >
+          ×
+        </button>
+      ) : (
       <div
         className="bottom-sheet-handle"
         onPointerDown={startDrag}
@@ -355,6 +435,7 @@ const BottomSheet: React.FC<BottomSheetProps> = ({ peekHeight, ref, page, childr
       >
         <div className="bottom-sheet-grabber" />
       </div>
+      )}
       <div
         className="bottom-sheet-content"
         ref={contentRef}

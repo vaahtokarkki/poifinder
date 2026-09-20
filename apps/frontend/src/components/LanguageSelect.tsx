@@ -15,7 +15,9 @@ type LanguageSelectProps = {
 };
 
 /**
- * The language selector, next to the category picker on the same row.
+ * The language selector: next to the category picker on a phone, and in the
+ * top right corner of a wide screen, where the stylesheet sends it so the row
+ * of category chips can have that space — see the breakpoint in index.css.
  *
  * Each language is named by its endonym — its name in itself — and never by a
  * flag or by its English name. See copy/locales.ts for why; the short version

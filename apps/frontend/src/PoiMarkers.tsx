@@ -33,6 +33,7 @@ import type { TranslationFailure } from "./api/translate";
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
 import { shapeSamplePoint } from "./geo";
 import PoiShape from "./components/PoiShape";
+import PoiPanelHandle from "./components/PoiPanelHandle";
 import NoiseSection, { NOISE_WORTH_KNOWING } from "./components/NoiseSection";
 import AirSection from "./components/AirSection";
 import { noiseCoverageAtCenter, noiseTilesConfigured } from "./map/noiseTiles";
@@ -2301,6 +2302,10 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                 // for a panel across the bottom of the screen
                 closeButton={false}
               >
+                {/* Before the body, so the bar is the panel's top edge. It
+                    writes the panel's height for the length of a drag — see
+                    PoiPanelHandle */}
+                <PoiPanelHandle onClose={() => map.closePopup()} />
                 <RenderMarkerContents marker={marker} categories={categories} />
                 {modalPane && (
                   // Outside RenderMarkerContents on purpose: that renders the

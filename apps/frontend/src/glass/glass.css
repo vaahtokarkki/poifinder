@@ -1218,6 +1218,53 @@
   flex-direction: column;
 }
 
+/*
+ * The height is a starting point now, not a fact: PoiPanelHandle writes an
+ * inline height on this element as the grab bar is dragged, and the panel
+ * settles between half a screen and the sheet's own full height. This is what
+ * a settle looks like, and the opacity is Leaflet's fade, restated because
+ * naming a transition here replaces the one its own stylesheet sets.
+ */
+.glass-ui .leaflet-popup.poi-popup {
+  transition: height 0.28s cubic-bezier(0.2, 0.8, 0.3, 1), opacity 0.2s linear;
+}
+
+/* Under a finger it follows the finger, with nothing in between */
+.glass-ui .leaflet-popup.poi-popup.poi-panel-dragging {
+  transition: opacity 0.2s linear;
+}
+
+/*
+ * The grab bar, which is the bottom sheet's, down to the pixel. Two shelves
+ * slide up from the foot of this screen and there is no reason for a reader to
+ * have to learn them separately.
+ */
+.glass-ui .poi-popup .leaflet-popup-content .poi-panel-handle {
+  flex: 0 0 auto;
+  padding: 10px 0 8px 0;
+  cursor: grab;
+  /* The drag must not turn into a page scroll or a map pan */
+  touch-action: none;
+  user-select: none;
+}
+
+.glass-ui .poi-popup .leaflet-popup-content .poi-panel-handle:active {
+  cursor: grabbing;
+}
+
+.glass-ui .poi-panel-grabber {
+  width: 40px;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+/* The bar carries the top padding now, so the body stops carrying its own */
+.glass-ui .poi-panel-handle + .poi-popup-body {
+  padding-top: 0.2em;
+}
+
 /* The glass card fills the panel rather than sitting in it, so the rounded top
    edge is the panel's edge and the close bar lands on the screen's bottom */
 .glass-ui .poi-popup .leaflet-popup-content-wrapper {

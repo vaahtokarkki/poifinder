@@ -39,6 +39,7 @@ import AirSection from "./components/AirSection";
 import { noiseCoverageAtCenter, noiseTilesConfigured } from "./map/noiseTiles";
 import { airCoverageAtCenter, airTilesConfigured } from "./map/airTiles";
 import { useEnclosingBuilding, useOsmElement } from "./hooks/useOsmElement";
+import { useUserPosition } from "./hooks/index";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
 import {
   ADDRESS_RANK,
@@ -47,6 +48,7 @@ import {
   buildingRankForKey,
   capitaliseFirst,
   describeAddress,
+  describeDistance,
   describeEdit,
   describeSurvey,
   formatOpeningHours,
@@ -1235,6 +1237,24 @@ const RenderMarkerContents: React.FC<{
 }> = ({ marker, categories }) => {
   const { config, title, subtitle } = describeMarker(marker, categories);
   const category = findCategory(marker, categories);
+  /*
+   * How far away it is, when the device has said where the reader is.
+   *
+   * `hasGpsLock` rather than `initialized`, and the difference is the whole
+   * point of asking: a position restored from storage is where this browser
+   * was the last time it was open, which may be a different city and a week
+   * ago. A distance is a claim about right now, so it is made only from a fix
+   * the device has given during this visit.
+   *
+   * Subscribed here, in the one component that is mounted per open panel,
+   * rather than passed down from App: the position updates as the reader
+   * walks, and threading it through PoiMarkers would rebuild every marker on
+   * the map each time it did.
+   */
+  const { position: userPosition } = useUserPosition();
+  const distance = userPosition.hasGpsLock
+    ? describeDistance(marker.position, userPosition)
+    : null;
   const rows = buildPopupRows(marker.tags);
   const survey = describeSurvey(marker.tags);
   const edited = describeEdit(marker.timestamp);
@@ -1290,6 +1310,11 @@ const RenderMarkerContents: React.FC<{
         <div className="poi-popup-heading">
           <h3 className="poi-popup-title">{title}</h3>
           {subtitle && <p className="poi-popup-subtitle">{subtitle}</p>}
+          {/* Under the name, above everything the tags say, because it is the
+              first question anybody asks of a point they can see on a map and
+              the only answer on this panel that is about the reader rather
+              than about the place */}
+          {distance && <p className="poi-popup-distance">{distance}</p>}
         </div>
       </div>
 

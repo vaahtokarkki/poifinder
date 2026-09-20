@@ -235,6 +235,8 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     noExtraDetails: "{name} — keine weiteren Angaben",
     address: "Adresse",
     fromBuilding: "Aus diesem Gebäude",
+    distanceMetres: "{distance} m entfernt",
+    distanceKm: "{distance} km entfernt",
     lastChecked: "Zuletzt geprüft",
     lastEdited: "Zuletzt bearbeitet",
     editInOsm: "Diesen Punkt in OpenStreetMap bearbeiten",

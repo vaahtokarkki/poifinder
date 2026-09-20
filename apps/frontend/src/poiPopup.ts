@@ -1,4 +1,4 @@
-import { getLocale, resolve, ui } from "./copy";
+import { getLocale, interpolate, resolve, ui } from "./copy";
 /**
  * What a popup says about a point, and in what order.
  *
@@ -116,6 +116,77 @@ export const describeAddress = (tags: Record<string, string>): string | null => 
     : tags["addr:housenumber"];
   if (!address) return null;
   return tags["addr:unit"] ? `${address}, unit ${tags["addr:unit"]}` : address;
+};
+
+/* ---------- How far away it is, when the device knows where you are ---------- */
+
+/** Mean radius of the earth in metres, which is what turns degrees into a walk */
+const EARTH_RADIUS_M = 6371008.8;
+
+const toRadians = (degrees: number) => (degrees * Math.PI) / 180;
+
+/**
+ * Great circle distance in metres.
+ *
+ * Haversine, and written out rather than taken from turf: the distances in a
+ * popup are a few hundred metres and the whole calculation is six lines, while
+ * pulling in a geodesy package for it would put a dependency between the
+ * reader and the one number they asked for. Accurate to a few metres over any
+ * distance somebody would walk, which is better than the fix it is measured
+ * from.
+ */
+export const distanceInMetres = (
+  from: [number, number],
+  to: [number, number]
+): number => {
+  const [lat1, lon1] = from;
+  const [lat2, lon2] = to;
+  const dLat = toRadians(lat2 - lat1);
+  const dLon = toRadians(lon2 - lon1);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) * Math.sin(dLon / 2) ** 2;
+  return 2 * EARTH_RADIUS_M * Math.asin(Math.min(1, Math.sqrt(a)));
+};
+
+/**
+ * How far it is, in as much precision as the number deserves and no more.
+ *
+ * Rounded to ten metres under a kilometre, because a consumer GPS fix in a
+ * street of buildings is good to about that on a good day and to rather worse
+ * on a bad one — "127 m away" states a confidence the device does not have,
+ * and "130 m" says the same true thing without pretending. Over a kilometre it
+ * goes to kilometres with one decimal, and past ten to none at all: the
+ * difference between 12 km and 12.4 km changes nothing for somebody deciding
+ * whether to walk.
+ *
+ * This is a straight line, not a route. It is the honest thing a map can say
+ * without asking a routing server, and it is what the reader is looking at:
+ * the point is on the screen with them, and the line between the blue dot and
+ * it is the distance they can see.
+ */
+export const describeDistance = (
+  marker: [number, number] | undefined,
+  user: { lat?: number; lng?: number } | undefined
+): string | null => {
+  if (!marker || user?.lat === undefined || user?.lng === undefined) return null;
+  const metres = distanceInMetres(marker, [user.lat, user.lng]);
+  if (!Number.isFinite(metres)) return null;
+
+  const locale = getLocale();
+  if (metres < 1000) {
+    const rounded = Math.max(10, Math.round(metres / 10) * 10);
+    return interpolate(ui().poi.distanceMetres, {
+      distance: rounded.toLocaleString(locale),
+    });
+  }
+  const km = metres / 1000;
+  return interpolate(ui().poi.distanceKm, {
+    distance: km.toLocaleString(locale, {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: km < 10 ? 1 : 0,
+    }),
+  });
 };
 
 /* ---------- When somebody last stood in front of it ---------- */

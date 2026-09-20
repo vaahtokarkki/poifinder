@@ -260,6 +260,18 @@ export type UiCopy = {
     noExtraDetails: string;
     address: string;
     fromBuilding: string;
+    /**
+     * How far the point is from the reader, shown only when the device has
+     * given a fix this session.
+     *
+     * Two strings rather than one with a unit parameter, because where the
+     * number goes in the sentence is a property of the language and not of the
+     * unit: English puts it first and names the distance after it, French and
+     * Spanish lead with the preposition. The unit itself is not translated —
+     * m and km are the same symbols in every deck here.
+     */
+    distanceMetres: string;
+    distanceKm: string;
     lastChecked: string;
     lastEdited: string;
     /**

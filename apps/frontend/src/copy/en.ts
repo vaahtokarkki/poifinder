@@ -879,6 +879,8 @@ const ui: CopyDeck["ui"] = {
     noExtraDetails: "{name} — no extra details",
     address: "Address",
     fromBuilding: "From this building",
+    distanceMetres: "{distance} m away",
+    distanceKm: "{distance} km away",
     lastChecked: "Last checked",
     lastEdited: "Last edited",
     editInOsm: "Edit this point in OpenStreetMap",

@@ -1332,6 +1332,22 @@ button.layers-tile {
   color: #5f6368;
 }
 
+/*
+ * And how far away it is, directly under the name.
+ *
+ * Scoped through `.leaflet-popup-content` for the same reason the subtitle
+ * above is: Leaflet's own `p` rule would otherwise give it a line and a half
+ * of air at each end. It reads as the subtitle's equal rather than as another
+ * fact about the place — same size, a little darker, because unlike the
+ * category it is a number somebody is about to act on.
+ */
+.poi-popup .leaflet-popup-content .poi-popup-distance {
+  margin: 2px 0 0 0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #3c4043;
+}
+
 .poi-popup-rows {
   margin: 0.8em 0 0 0;
   padding: 0;

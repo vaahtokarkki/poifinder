@@ -1,9 +1,9 @@
 {
   "city": "vienna",
-  "generatedAt": "2026-09-13T08:37:20.177Z",
+  "generatedAt": "2026-09-20T08:58:30.469Z",
   "categories": {
     "toilets": {
-      "count": 646,
+      "count": 647,
       "pois": [
         {
           "id": "node/1511404879",
@@ -234,15 +234,15 @@
         }
       ],
       "stats": {
-        "free": 388,
+        "free": 389,
         "paid": 109,
-        "stepFree": 306,
+        "stepFree": 307,
         "partlyStepFree": 21
       },
-      "updatedAt": "2026-09-11T10:29:14.003Z"
+      "updatedAt": "2026-09-20T08:57:53.007Z"
     },
     "drinking-water": {
-      "count": 1444,
+      "count": 1449,
       "pois": [
         {
           "id": "node/13096883701",
@@ -452,15 +452,15 @@
         }
       ],
       "stats": {
-        "free": 412,
+        "free": 413,
         "paid": 0,
         "stepFree": 226,
         "partlyStepFree": 15
       },
-      "updatedAt": "2026-09-11T10:29:17.298Z"
+      "updatedAt": "2026-09-20T08:57:55.790Z"
     },
     "playgrounds": {
-      "count": 1291,
+      "count": 1294,
       "pois": [
         {
           "id": "way/123272249",
@@ -657,10 +657,10 @@
         "stepFree": 50,
         "partlyStepFree": 29
       },
-      "updatedAt": "2026-09-13T08:36:29.999Z"
+      "updatedAt": "2026-09-20T08:57:56.996Z"
     },
     "parking": {
-      "count": 1968,
+      "count": 1973,
       "pois": [
         {
           "id": "node/11543539902",
@@ -908,14 +908,14 @@
       ],
       "stats": {
         "free": 379,
-        "paid": 347,
+        "paid": 349,
         "stepFree": 98,
         "partlyStepFree": 10
       },
-      "updatedAt": "2026-09-13T08:36:37.413Z"
+      "updatedAt": "2026-09-20T08:57:58.849Z"
     },
     "charging-stations": {
-      "count": 628,
+      "count": 631,
       "pois": [
         {
           "id": "node/13430458558",
@@ -983,7 +983,7 @@
         "stepFree": 5,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-13T08:36:38.825Z"
+      "updatedAt": "2026-09-20T08:57:59.574Z"
     },
     "gas-stations": {
       "count": 148,
@@ -1232,13 +1232,13 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 39,
+        "stepFree": 40,
         "partlyStepFree": 11
       },
-      "updatedAt": "2026-09-13T08:36:40.410Z"
+      "updatedAt": "2026-09-20T08:58:00.258Z"
     },
     "ice-cream": {
-      "count": 186,
+      "count": 187,
       "pois": [
         {
           "id": "node/3482140759",
@@ -1382,7 +1382,9 @@
           "id": "node/13593134905",
           "name": "Eisbazar",
           "lat": 48.21311,
-          "lon": 16.381588
+          "lon": 16.381588,
+          "address": "Praterstraße 12",
+          "openingHours": "Mo-Su 13:00-21:00"
         },
         {
           "id": "node/3673072238",
@@ -1479,7 +1481,7 @@
         "stepFree": 33,
         "partlyStepFree": 22
       },
-      "updatedAt": "2026-09-13T08:36:42.152Z"
+      "updatedAt": "2026-09-20T08:58:01.102Z"
     },
     "dog-parks": {
       "count": 162,
@@ -1573,10 +1575,10 @@
         "stepFree": 79,
         "partlyStepFree": 27
       },
-      "updatedAt": "2026-09-13T08:36:44.446Z"
+      "updatedAt": "2026-09-20T08:58:01.732Z"
     },
     "picnic-spots": {
-      "count": 2232,
+      "count": 2247,
       "pois": [
         {
           "id": "node/5242974426",
@@ -1662,7 +1664,7 @@
         "stepFree": 7,
         "partlyStepFree": 18
       },
-      "updatedAt": "2026-09-13T08:36:50.584Z"
+      "updatedAt": "2026-09-20T08:58:03.493Z"
     },
     "viewpoints": {
       "count": 62,
@@ -1777,7 +1779,7 @@
         "stepFree": 8,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:36:52.301Z"
+      "updatedAt": "2026-09-20T08:58:04.332Z"
     },
     "beaches": {
       "count": 32,
@@ -1841,10 +1843,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:36:53.723Z"
+      "updatedAt": "2026-09-20T08:58:04.953Z"
     },
     "atms": {
-      "count": 747,
+      "count": 749,
       "pois": [
         {
           "id": "node/413658398",
@@ -2004,6 +2006,14 @@
           "lon": 16.377095
         },
         {
+          "id": "node/14160219399",
+          "name": "Hypo Oberösterreich",
+          "lat": 48.196816,
+          "lon": 16.37551,
+          "address": "Prinz-Eugen-Straße 8",
+          "openingHours": "Mo-We 08:30-12:30; Th 08:30-12:30,14:00-16:30; Fr 08:30-12:30; PH off"
+        },
+        {
           "id": "node/618284022",
           "name": "Smartcash",
           "lat": 48.196659,
@@ -2070,13 +2080,6 @@
           "lat": 48.221441,
           "lon": 16.352621,
           "openingHours": "Mo-Fr 08:00-13:30;PH off"
-        },
-        {
-          "id": "node/3930572822",
-          "name": "Geldautomat",
-          "lat": 48.213847,
-          "lon": 16.402069,
-          "wheelchair": "no"
         }
       ],
       "stats": {
@@ -2085,10 +2088,10 @@
         "stepFree": 230,
         "partlyStepFree": 21
       },
-      "updatedAt": "2026-09-11T10:29:18.555Z"
+      "updatedAt": "2026-09-20T08:58:05.987Z"
     },
     "post-boxes": {
-      "count": 688,
+      "count": 690,
       "pois": [
         {
           "id": "node/2497685331",
@@ -2277,10 +2280,10 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:36:57.778Z"
+      "updatedAt": "2026-09-20T08:58:07.901Z"
     },
     "recycling": {
-      "count": 2697,
+      "count": 2714,
       "pois": [
         {
           "id": "node/315299985",
@@ -2507,7 +2510,7 @@
         "stepFree": 32,
         "partlyStepFree": 7
       },
-      "updatedAt": "2026-09-11T10:29:21.135Z"
+      "updatedAt": "2026-09-20T08:58:12.795Z"
     },
     "luggage-storage": {
       "count": 6,
@@ -2525,7 +2528,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:36:58.731Z"
+      "updatedAt": "2026-09-20T08:58:13.361Z"
     },
     "libraries": {
       "count": 233,
@@ -2768,7 +2771,7 @@
         "stepFree": 57,
         "partlyStepFree": 8
       },
-      "updatedAt": "2026-09-13T08:37:00.181Z"
+      "updatedAt": "2026-09-20T08:58:14.123Z"
     },
     "outdoor-gyms": {
       "count": 153,
@@ -2872,7 +2875,7 @@
         "stepFree": 10,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-11T10:29:22.679Z"
+      "updatedAt": "2026-09-20T08:58:15.488Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2894,7 +2897,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:37:01.163Z"
+      "updatedAt": "2026-09-20T08:58:16.126Z"
     },
     "shelters": {
       "count": 21,
@@ -2942,7 +2945,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:37:05.804Z"
+      "updatedAt": "2026-09-20T08:58:17.929Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2960,7 +2963,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:37:07.365Z"
+      "updatedAt": "2026-09-20T08:58:18.489Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2971,7 +2974,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:37:08.770Z"
+      "updatedAt": "2026-09-20T08:58:18.902Z"
     },
     "post-offices": {
       "count": 113,
@@ -3243,7 +3246,7 @@
         "stepFree": 56,
         "partlyStepFree": 7
       },
-      "updatedAt": "2026-09-13T08:37:10.169Z"
+      "updatedAt": "2026-09-20T08:58:19.632Z"
     },
     "showers": {
       "count": 61,
@@ -3270,7 +3273,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:37:11.661Z"
+      "updatedAt": "2026-09-20T08:58:20.190Z"
     },
     "fireplaces": {
       "count": 24,
@@ -3359,7 +3362,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:37:14.000Z"
+      "updatedAt": "2026-09-20T08:58:22.489Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3367,7 +3370,7 @@
       "updatedAt": "2026-08-17T04:03:36.165Z"
     },
     "benches": {
-      "count": 17896,
+      "count": 17991,
       "pois": [
         {
           "id": "node/5335094482",
@@ -3544,7 +3547,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-11T10:29:24.721Z"
+      "updatedAt": "2026-09-20T08:58:30.368Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3552,7 +3555,7 @@
       "updatedAt": "2026-08-18T03:58:12.479Z"
     },
     "bicycle-repair": {
-      "count": 118,
+      "count": 117,
       "pois": [
         {
           "id": "node/8503606505",
@@ -3780,12 +3783,12 @@
         }
       ],
       "stats": {
-        "free": 79,
+        "free": 78,
         "paid": 0,
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:37:20.076Z"
+      "updatedAt": "2026-09-20T08:58:25.141Z"
     }
   }
 }

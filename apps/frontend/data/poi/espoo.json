@@ -1,9 +1,9 @@
 {
   "city": "espoo",
-  "generatedAt": "2026-09-13T08:18:04.246Z",
+  "generatedAt": "2026-09-20T08:34:37.142Z",
   "categories": {
     "toilets": {
-      "count": 65,
+      "count": 66,
       "pois": [
         {
           "id": "node/13338295686",
@@ -18,6 +18,12 @@
           "openingHours": "\"by appointment only\"",
           "wheelchair": "yes",
           "context": "Virastotalo 3"
+        },
+        {
+          "id": "node/14168668904",
+          "lat": 60.207022,
+          "lon": 24.65613,
+          "context": "Valtuustotalo"
         },
         {
           "id": "node/14026380920",
@@ -83,7 +89,7 @@
           "lat": 60.1558,
           "lon": 24.624626,
           "address": "Marinsatamantie 10",
-          "openingHours": "Mo-Tu 10:00-15:30, We-Fr 10:00-21:00, Sa 10:00-19:00, Su 11:00-18:00"
+          "openingHours": "Mo-Fr 11:00-15:00; Sa-Su 12:00-16:00"
         },
         {
           "id": "way/22873940",
@@ -138,7 +144,7 @@
         "stepFree": 15,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-11T10:25:55.919Z"
+      "updatedAt": "2026-09-20T08:34:12.026Z"
     },
     "drinking-water": {
       "count": 22,
@@ -307,10 +313,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-11T10:25:58.513Z"
+      "updatedAt": "2026-09-20T08:34:13.814Z"
     },
     "playgrounds": {
-      "count": 417,
+      "count": 416,
       "pois": [
         {
           "id": "relation/19705631",
@@ -501,10 +507,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:40.801Z"
+      "updatedAt": "2026-09-20T08:34:14.812Z"
     },
     "parking": {
-      "count": 1686,
+      "count": 1675,
       "pois": [
         {
           "id": "way/24366789",
@@ -634,7 +640,8 @@
           "id": "way/488118497",
           "name": "Espoonlahden pysäköintialue",
           "lat": 60.180738,
-          "lon": 24.574151
+          "lon": 24.574151,
+          "openingHours": "24/7"
         },
         {
           "id": "way/132895312",
@@ -650,6 +657,13 @@
           "lon": 24.631376,
           "address": "Kiviruukinkatu 2",
           "fee": "yes"
+        },
+        {
+          "id": "way/908207594",
+          "name": "Kallvikin uimarannan parkkipaikka",
+          "lat": 60.162608,
+          "lon": 24.593306,
+          "openingHours": "24/7"
         },
         {
           "id": "way/1415442165",
@@ -713,12 +727,12 @@
         }
       ],
       "stats": {
-        "free": 506,
+        "free": 509,
         "paid": 27,
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:43.163Z"
+      "updatedAt": "2026-09-20T08:34:16.142Z"
     },
     "charging-stations": {
       "count": 56,
@@ -927,7 +941,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:43.957Z"
+      "updatedAt": "2026-09-20T08:34:16.653Z"
     },
     "gas-stations": {
       "count": 47,
@@ -994,6 +1008,14 @@
           "openingHours": "24/7"
         },
         {
+          "id": "way/168919267",
+          "name": "St1 Helmisimpukka Espoo Bemböle",
+          "lat": 60.222943,
+          "lon": 24.672471,
+          "address": "Bellinmäki 2",
+          "openingHours": "Mo-Fr 05:00-00:00; Sa 06:00-00:00; Su 08:00-00:00"
+        },
+        {
           "id": "node/13654421526",
           "name": "St1 Espoo Latokaski",
           "lat": 60.173689,
@@ -1051,7 +1073,9 @@
           "id": "node/58699845",
           "name": "Neste Mankki",
           "lat": 60.19193,
-          "lon": 24.570252
+          "lon": 24.570252,
+          "address": "Lapinkyläntie 5",
+          "openingHours": "Mo-Fr 05:00-19:00; Sa-Su 08:00-18:00"
         },
         {
           "id": "way/322063349",
@@ -1150,14 +1174,6 @@
           "name": "Teboil Express",
           "lat": 60.161701,
           "lon": 24.717264
-        },
-        {
-          "id": "node/51540569",
-          "name": "Teboil Espoo Martinmäki",
-          "lat": 60.151897,
-          "lon": 24.664418,
-          "address": "Höyrylaivantie 29",
-          "openingHours": "24/7"
         }
       ],
       "stats": {
@@ -1166,7 +1182,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:44.719Z"
+      "updatedAt": "2026-09-20T08:34:17.238Z"
     },
     "ice-cream": {
       "count": 2,
@@ -1186,7 +1202,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:45.563Z"
+      "updatedAt": "2026-09-20T08:34:17.766Z"
     },
     "dog-parks": {
       "count": 28,
@@ -1244,7 +1260,8 @@
           "name": "Kauklahden Urheilupuiston koira-aitaus",
           "lat": 60.193874,
           "lon": 24.58439,
-          "address": "Asgård 20"
+          "address": "Asgård 20",
+          "openingHours": "24/7"
         },
         {
           "id": "way/82107104",
@@ -1369,10 +1386,10 @@
         "stepFree": 4,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-13T08:17:46.251Z"
+      "updatedAt": "2026-09-20T08:34:18.335Z"
     },
     "picnic-spots": {
-      "count": 280,
+      "count": 283,
       "pois": [
         {
           "id": "node/13773428533",
@@ -1411,7 +1428,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:47.527Z"
+      "updatedAt": "2026-09-20T08:34:19.413Z"
     },
     "viewpoints": {
       "count": 26,
@@ -1477,7 +1494,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:48.423Z"
+      "updatedAt": "2026-09-20T08:34:20.102Z"
     },
     "beaches": {
       "count": 30,
@@ -1578,10 +1595,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:49.320Z"
+      "updatedAt": "2026-09-20T08:34:20.934Z"
     },
     "atms": {
-      "count": 28,
+      "count": 27,
       "pois": [
         {
           "id": "node/277394465",
@@ -1623,7 +1640,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-11T10:25:58.987Z"
+      "updatedAt": "2026-09-20T08:34:21.606Z"
     },
     "post-boxes": {
       "count": 65,
@@ -1815,7 +1832,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:51.794Z"
+      "updatedAt": "2026-09-20T08:34:23.394Z"
     },
     "recycling": {
       "count": 235,
@@ -2019,7 +2036,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-11T10:26:01.162Z"
+      "updatedAt": "2026-09-20T08:34:25.606Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2030,7 +2047,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:52.597Z"
+      "updatedAt": "2026-09-20T08:34:26.048Z"
     },
     "libraries": {
       "count": 11,
@@ -2073,14 +2090,15 @@
           "name": "Nöykkiön kirjasto",
           "lat": 60.167613,
           "lon": 24.663592,
-          "address": "Oxfotiontie 3"
+          "address": "Oxfotintie 4"
         },
         {
           "id": "node/4528483876",
           "name": "Saunalahden kirjasto",
           "lat": 60.168715,
           "lon": 24.614798,
-          "address": "Brinkinmäentie 1"
+          "address": "Brinkinmäentie 1",
+          "openingHours": "Mo-Fr 15:00-20:00; Sa-Su 06:00-16:00"
         },
         {
           "id": "node/13247800236",
@@ -2127,7 +2145,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:53.283Z"
+      "updatedAt": "2026-09-20T08:34:26.577Z"
     },
     "outdoor-gyms": {
       "count": 110,
@@ -2237,7 +2255,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-11T10:26:02.555Z"
+      "updatedAt": "2026-09-20T08:34:27.685Z"
     },
     "camp-sites": {
       "count": 2,
@@ -2257,7 +2275,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:54.031Z"
+      "updatedAt": "2026-09-20T08:34:28.257Z"
     },
     "shelters": {
       "count": 17,
@@ -2287,7 +2305,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:56.660Z"
+      "updatedAt": "2026-09-20T08:34:30.803Z"
     },
     "rest-areas": {
       "count": 0,
@@ -2298,7 +2316,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:57.543Z"
+      "updatedAt": "2026-09-20T08:34:31.308Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2309,7 +2327,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:58.230Z"
+      "updatedAt": "2026-09-20T08:34:31.753Z"
     },
     "post-offices": {
       "count": 6,
@@ -2359,7 +2377,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:17:59.183Z"
+      "updatedAt": "2026-09-20T08:34:32.308Z"
     },
     "showers": {
       "count": 5,
@@ -2370,7 +2388,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:18:00.030Z"
+      "updatedAt": "2026-09-20T08:34:32.979Z"
     },
     "fireplaces": {
       "count": 15,
@@ -2415,7 +2433,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:18:01.643Z"
+      "updatedAt": "2026-09-20T08:34:34.093Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2423,7 +2441,7 @@
       "updatedAt": "2026-08-17T04:02:24.050Z"
     },
     "benches": {
-      "count": 940,
+      "count": 943,
       "pois": [
         {
           "id": "node/12655735261",
@@ -2459,13 +2477,13 @@
           "id": "node/13748219447",
           "lat": 60.206108,
           "lon": 24.654264,
-          "street": "Lehteri"
+          "street": "Virastopiha"
         },
         {
-          "id": "node/13748219448",
-          "lat": 60.206149,
-          "lon": 24.654311,
-          "street": "Virastopiha"
+          "id": "node/13748219446",
+          "lat": 60.206121,
+          "lon": 24.654176,
+          "street": "Lehteri"
         },
         {
           "id": "node/12655498117",
@@ -2552,7 +2570,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-11T10:26:04.445Z"
+      "updatedAt": "2026-09-20T08:34:37.042Z"
     },
     "compressed-air": {
       "count": 4,
@@ -2618,7 +2636,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:18:04.144Z"
+      "updatedAt": "2026-09-20T08:34:35.726Z"
     }
   }
 }

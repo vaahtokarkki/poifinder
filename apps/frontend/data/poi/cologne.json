@@ -1,6 +1,6 @@
 {
   "city": "cologne",
-  "generatedAt": "2026-09-13T08:34:03.829Z",
+  "generatedAt": "2026-09-20T08:56:09.621Z",
   "categories": {
     "toilets": {
       "count": 160,
@@ -213,7 +213,7 @@
         "stepFree": 80,
         "partlyStepFree": 14
       },
-      "updatedAt": "2026-09-11T10:29:06.173Z"
+      "updatedAt": "2026-09-20T08:55:08.462Z"
     },
     "drinking-water": {
       "count": 27,
@@ -367,7 +367,7 @@
         "stepFree": 14,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-11T10:29:08.637Z"
+      "updatedAt": "2026-09-20T08:55:12.848Z"
     },
     "playgrounds": {
       "count": 979,
@@ -568,10 +568,10 @@
         "stepFree": 61,
         "partlyStepFree": 30
       },
-      "updatedAt": "2026-09-13T08:33:12.247Z"
+      "updatedAt": "2026-09-20T08:55:15.188Z"
     },
     "parking": {
-      "count": 12630,
+      "count": 12638,
       "pois": [
         {
           "id": "way/334212718",
@@ -641,6 +641,7 @@
           "lat": 50.937268,
           "lon": 6.9497,
           "address": "Krebsgasse 1",
+          "openingHours": "Mo-Sa 07:00-24:00; Su,PH off",
           "fee": "yes"
         },
         {
@@ -805,15 +806,15 @@
         }
       ],
       "stats": {
-        "free": 1567,
-        "paid": 315,
+        "free": 1588,
+        "paid": 313,
         "stepFree": 159,
         "partlyStepFree": 32
       },
-      "updatedAt": "2026-09-13T08:33:23.903Z"
+      "updatedAt": "2026-09-20T08:55:21.276Z"
     },
     "charging-stations": {
-      "count": 417,
+      "count": 420,
       "pois": [
         {
           "id": "node/12546051178",
@@ -829,7 +830,7 @@
         "stepFree": 1,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-13T08:33:25.439Z"
+      "updatedAt": "2026-09-20T08:55:23.192Z"
     },
     "gas-stations": {
       "count": 95,
@@ -1077,7 +1078,7 @@
         "stepFree": 33,
         "partlyStepFree": 9
       },
-      "updatedAt": "2026-09-13T08:33:27.391Z"
+      "updatedAt": "2026-09-20T08:55:27.231Z"
     },
     "ice-cream": {
       "count": 97,
@@ -1318,7 +1319,7 @@
         "stepFree": 20,
         "partlyStepFree": 23
       },
-      "updatedAt": "2026-09-13T08:33:28.884Z"
+      "updatedAt": "2026-09-20T08:55:29.248Z"
     },
     "dog-parks": {
       "count": 38,
@@ -1398,7 +1399,7 @@
         {
           "id": "way/931873865",
           "name": "Hundefreilauffläche Stadtwald Lindenthal",
-          "lat": 50.927428,
+          "lat": 50.927425,
           "lon": 6.885577,
           "wheelchair": "no"
         },
@@ -1452,7 +1453,7 @@
         "stepFree": 15,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-13T08:33:30.530Z"
+      "updatedAt": "2026-09-20T08:55:30.649Z"
     },
     "picnic-spots": {
       "count": 173,
@@ -1470,7 +1471,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:33:33.112Z"
+      "updatedAt": "2026-09-20T08:55:32.680Z"
     },
     "viewpoints": {
       "count": 44,
@@ -1551,7 +1552,7 @@
         "stepFree": 6,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-13T08:33:34.644Z"
+      "updatedAt": "2026-09-20T08:55:33.773Z"
     },
     "beaches": {
       "count": 26,
@@ -1571,10 +1572,10 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-13T08:33:35.763Z"
+      "updatedAt": "2026-09-20T08:55:34.792Z"
     },
     "atms": {
-      "count": 279,
+      "count": 280,
       "pois": [
         {
           "id": "node/633181862",
@@ -1626,15 +1627,6 @@
           "lon": 6.952449,
           "address": "Appellhofplatz 1",
           "openingHours": "Mo,Th 09:00-18:00; Tu,We 09:00-16:00; Fr 09:00-13:00; PH off",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/255305437",
-          "name": "BBBank",
-          "lat": 50.942673,
-          "lon": 6.956941,
-          "address": "Dompropst-Ketzer-Straße 1-9",
-          "openingHours": "Mo-Th 09:00-13:00, Mo,We 14:00-16:00, Tu,Th 14:00-18:00, Fr 09:00-14:00",
           "wheelchair": "yes"
         },
         {
@@ -1700,6 +1692,15 @@
           "lat": 50.927535,
           "lon": 6.957592,
           "address": "Severinstraße 149",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/7445009466",
+          "name": "BBBank",
+          "lat": 50.936853,
+          "lon": 6.977536,
+          "address": "Deutzer Freiheit 116",
+          "openingHours": "Mo,We 09:00-13:00,14:00-16:00; Tu,Th 09:00-13:00,14:00-18:00; Fr 09:00-14:00; Sa,Su,PH off",
           "wheelchair": "yes"
         },
         {
@@ -1819,10 +1820,10 @@
       "stats": {
         "free": 0,
         "paid": 1,
-        "stepFree": 114,
+        "stepFree": 113,
         "partlyStepFree": 15
       },
-      "updatedAt": "2026-09-11T10:29:09.373Z"
+      "updatedAt": "2026-09-20T08:55:36.932Z"
     },
     "post-boxes": {
       "count": 439,
@@ -2015,10 +2016,10 @@
         "stepFree": 13,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-13T08:33:38.847Z"
+      "updatedAt": "2026-09-20T08:55:41.299Z"
     },
     "recycling": {
-      "count": 803,
+      "count": 804,
       "pois": [
         {
           "id": "node/12138724958",
@@ -2218,7 +2219,7 @@
         "stepFree": 7,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-11T10:29:11.549Z"
+      "updatedAt": "2026-09-20T08:55:46.372Z"
     },
     "luggage-storage": {
       "count": 3,
@@ -2229,7 +2230,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:33:40.004Z"
+      "updatedAt": "2026-09-20T08:55:47.317Z"
     },
     "libraries": {
       "count": 126,
@@ -2279,6 +2280,13 @@
           "lat": 50.934391,
           "lon": 6.950713,
           "address": "Leonhard-Tietz-Straße 10"
+        },
+        {
+          "id": "node/13954077272",
+          "name": "Bücherschrank",
+          "lat": 50.932529,
+          "lon": 6.952891,
+          "openingHours": "24/7"
         },
         {
           "id": "node/1514253044",
@@ -2453,13 +2461,6 @@
           "lat": 50.927912,
           "lon": 6.926945,
           "openingHours": "Mo-Fr 09:00-18:00"
-        },
-        {
-          "id": "node/11980761747",
-          "name": "Institut für Altertumskunde",
-          "lat": 50.927798,
-          "lon": 6.926741,
-          "openingHours": "Mo-Th 10:00-18:00; Fr 10:00-17:00"
         }
       ],
       "stats": {
@@ -2468,7 +2469,7 @@
         "stepFree": 25,
         "partlyStepFree": 8
       },
-      "updatedAt": "2026-09-13T08:33:43.498Z"
+      "updatedAt": "2026-09-20T08:55:48.560Z"
     },
     "outdoor-gyms": {
       "count": 69,
@@ -2512,7 +2513,7 @@
         "stepFree": 3,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-11T10:29:12.955Z"
+      "updatedAt": "2026-09-20T08:55:51.071Z"
     },
     "camp-sites": {
       "count": 4,
@@ -2557,15 +2558,15 @@
         "stepFree": 0,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-13T08:33:45.370Z"
+      "updatedAt": "2026-09-20T08:55:52.008Z"
     },
     "shelters": {
       "count": 32,
       "pois": [
         {
           "id": "node/894153364",
-          "lat": 50.928692,
-          "lon": 6.88482,
+          "lat": 50.928704,
+          "lon": 6.884824,
           "context": "Hundefreilauffläche Stadtwald Lindenthal"
         },
         {
@@ -2593,7 +2594,7 @@
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:33:49.781Z"
+      "updatedAt": "2026-09-20T08:55:55.307Z"
     },
     "rest-areas": {
       "count": 2,
@@ -2613,7 +2614,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:33:51.221Z"
+      "updatedAt": "2026-09-20T08:55:56.609Z"
     },
     "dump-stations": {
       "count": 1,
@@ -2624,7 +2625,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:33:52.244Z"
+      "updatedAt": "2026-09-20T08:55:57.884Z"
     },
     "post-offices": {
       "count": 51,
@@ -2643,7 +2644,8 @@
           "name": "Nova Post",
           "lat": 50.937706,
           "lon": 6.949936,
-          "address": "Am Alten Posthof 4"
+          "address": "Am Alten Posthof 4",
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 10:00-18:00"
         },
         {
           "id": "node/1579250002",
@@ -2672,7 +2674,8 @@
           "id": "node/1327646790",
           "name": "DHL",
           "lat": 50.951983,
-          "lon": 6.95924
+          "lon": 6.95924,
+          "openingHours": "Mo-Su 12:00-21:00"
         },
         {
           "id": "node/265755473",
@@ -2867,7 +2870,7 @@
         "stepFree": 11,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-13T08:33:53.404Z"
+      "updatedAt": "2026-09-20T08:55:58.796Z"
     },
     "showers": {
       "count": 10,
@@ -2878,7 +2881,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:33:54.500Z"
+      "updatedAt": "2026-09-20T08:56:00.115Z"
     },
     "fireplaces": {
       "count": 7,
@@ -2897,7 +2900,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:33:56.563Z"
+      "updatedAt": "2026-09-20T08:56:02.035Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2905,7 +2908,7 @@
       "updatedAt": "2026-08-17T04:03:27.031Z"
     },
     "benches": {
-      "count": 5900,
+      "count": 5914,
       "pois": [
         {
           "id": "node/5619231201",
@@ -3010,7 +3013,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-11T10:29:15.097Z"
+      "updatedAt": "2026-09-20T08:56:09.519Z"
     },
     "compressed-air": {
       "count": 8,
@@ -3218,7 +3221,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-13T08:34:03.727Z"
+      "updatedAt": "2026-09-20T08:56:06.219Z"
     }
   }
 }

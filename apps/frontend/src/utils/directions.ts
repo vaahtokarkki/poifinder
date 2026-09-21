@@ -30,3 +30,14 @@ export function directionsUrl(lat: number, lng: number, label?: string): string 
 
   return `https://www.google.com/maps/dir/?api=1&destination=${coords}&travelmode=walking`;
 }
+
+/**
+ * Whether this link hands off to an app rather than loading a page.
+ *
+ * It decides the target, and getting it wrong is visible: a `geo:` URI is
+ * swallowed by Android's chooser and never loads anything, so opening it in a
+ * new tab leaves an empty one behind — which is what the reader finds when
+ * they come back from the map app. An https link does load a page, and that
+ * is worth a tab of its own so the map here is not lost.
+ */
+export const opensInApp = (url: string): boolean => !url.startsWith("http");

@@ -33,7 +33,7 @@ import { TranslationError, translate } from "./api/translate";
 import type { TranslationFailure } from "./api/translate";
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
 import { shapeSamplePoint } from "./geo";
-import { directionsUrl } from "./utils/directions";
+import { directionsUrl, opensInApp } from "./utils/directions";
 import PoiShape from "./components/PoiShape";
 import PoiPanelHandle from "./components/PoiPanelHandle";
 import NoiseSection, { NOISE_WORTH_KNOWING } from "./components/NoiseSection";
@@ -2251,6 +2251,9 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
           // rather than the middle of the roof. Absent on a marker that never
           // had a position, and then there is nothing to route to
           const routeTo = insidePositions[key] ?? marker.position;
+          const routeHref = routeTo
+            ? directionsUrl(routeTo[0], routeTo[1], marker.name)
+            : null;
           // Every point with a popup opens the shape slot, drawn or not: a node
           // may turn out to be standing in a building, and there is no telling
           // which until its popup asks
@@ -2357,12 +2360,14 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                         width it had. An anchor rather than a button because
                         the target is another app, and a long press should
                         offer to copy it like any other link */}
-                    {routeTo && (
+                    {routeHref && (
                       <a
                         className="poi-popup-directions"
-                        href={directionsUrl(routeTo[0], routeTo[1], marker.name)}
-                        target="_blank"
-                        rel="noreferrer"
+                        href={routeHref}
+                        // In place for an app link, which loads no page: a new
+                        // tab for one is a blank tab left behind the chooser
+                        target={opensInApp(routeHref) ? undefined : "_blank"}
+                        rel={opensInApp(routeHref) ? undefined : "noreferrer"}
                         title={ui().controls.directions}
                         aria-label={ui().controls.directions}
                         onClick={() => analytics.poiDirectionsOpened(markerCategory)}

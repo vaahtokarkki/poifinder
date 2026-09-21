@@ -41,4 +41,17 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
+# Two backlink crawlers, turned away for the same reason as the training ones
+# above: they take a copy and send nothing back. On 20 Sep 2026 AhrefsBot made
+# 675 requests and SemrushBot 307, about a quarter of all traffic to the zone
+# that day, and neither has ever produced a referral — their crawl feeds a
+# subscription tool for auditing somebody else's link profile, not a reader
+# looking for a drinking fountain. Both honour robots.txt.
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
 Sitemap: https://wayside.cc/sitemap.xml

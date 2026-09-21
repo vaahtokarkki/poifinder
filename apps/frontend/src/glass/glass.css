@@ -1474,14 +1474,47 @@
  * move: a point with forty tags scrolls under it and the way out stays on
  * screen throughout. That is the whole requirement.
  */
+/*
+ * The bar at the foot of the panel: leaving, and one way out to a map app.
+ *
+ * A row rather than two stacked buttons, and the split is deliberately uneven.
+ * Closing is what almost every tap down here is for, so it keeps the width and
+ * the centred label it always had; directions are worth a corner, not a bar of
+ * their own. The row carries the hairline and the safe-area padding so the two
+ * children line up against the same edges.
+ */
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-actions {
+  display: flex;
+  align-items: stretch;
+  border-top: 1px solid var(--glass-hairline);
+  /* The body above it is a scroll box; this must not be dragged into it */
+  flex: 0 0 auto;
+}
+
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-directions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  padding: 0 1.15em calc(0px + env(safe-area-inset-bottom, 0px)) 1.15em;
+  border-left: 1px solid var(--glass-hairline);
+  color: var(--glass-accent-solid);
+  text-decoration: none;
+}
+
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-directions:hover,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-directions:focus-visible {
+  background: rgba(0, 0, 0, 0.05);
+}
+
 .glass-ui .poi-popup .leaflet-popup-content .poi-popup-close {
   display: block;
-  width: 100%;
+  /* The rest of the row, with the label still centred in what is left */
+  flex: 1 1 auto;
   box-sizing: border-box;
   margin: 0;
   padding: 0.85em 1em calc(0.85em + env(safe-area-inset-bottom, 0px)) 1em;
   border: none;
-  border-top: 1px solid var(--glass-hairline);
   background: transparent;
   font: inherit;
   font-size: 0.9rem;

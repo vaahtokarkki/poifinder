@@ -1,6 +1,7 @@
 import React from "react";
 import { Marker, Popup, useMap } from "react-leaflet";
 import ParkIcon from '@mui/icons-material/Park';
+import DirectionsIcon from "@mui/icons-material/Directions";
 import { renderToString } from "react-dom/server";
 import { categoryDisplay } from "./seo/categories";
 import { interpolate, ui } from "./copy";
@@ -32,6 +33,7 @@ import { TranslationError, translate } from "./api/translate";
 import type { TranslationFailure } from "./api/translate";
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
 import { shapeSamplePoint } from "./geo";
+import { directionsUrl } from "./utils/directions";
 import PoiShape from "./components/PoiShape";
 import PoiPanelHandle from "./components/PoiPanelHandle";
 import NoiseSection, { NOISE_WORTH_KNOWING } from "./components/NoiseSection";
@@ -2244,6 +2246,11 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
           const { title } = describeMarker(marker, categories);
 
           const key = shapeKey(marker);
+          // Where a directions link should point: the same spot the marker is
+          // drawn at, which for a point found inside a building is its door
+          // rather than the middle of the roof. Absent on a marker that never
+          // had a position, and then there is nothing to route to
+          const routeTo = insidePositions[key] ?? marker.position;
           // Every point with a popup opens the shape slot, drawn or not: a node
           // may turn out to be standing in a building, and there is no telling
           // which until its popup asks
@@ -2337,13 +2344,33 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                   // scrolling body, and a button inside it would be reachable
                   // only after reading to the end of a shop with forty tags.
                   // As its sibling it sits under the scroll area and stays put
-                  <button
-                    type="button"
-                    className="poi-popup-close"
-                    onClick={() => map.closePopup()}
-                  >
-                    {ui().controls.layers.close}
-                  </button>
+                  <div className="poi-popup-actions">
+                    <button
+                      type="button"
+                      className="poi-popup-close"
+                      onClick={() => map.closePopup()}
+                    >
+                      {ui().controls.layers.close}
+                    </button>
+                    {/* Small, and to the side: leaving is what most taps on
+                        this bar are for, and the label that says so keeps the
+                        width it had. An anchor rather than a button because
+                        the target is another app, and a long press should
+                        offer to copy it like any other link */}
+                    {routeTo && (
+                      <a
+                        className="poi-popup-directions"
+                        href={directionsUrl(routeTo[0], routeTo[1], marker.name)}
+                        target="_blank"
+                        rel="noreferrer"
+                        title={ui().controls.directions}
+                        aria-label={ui().controls.directions}
+                        onClick={() => analytics.poiDirectionsOpened(markerCategory)}
+                      >
+                        <DirectionsIcon fontSize="small" />
+                      </a>
+                    )}
+                  </div>
                 )}
               </Popup>
             )}

@@ -204,6 +204,16 @@ export const analytics = {
    * reads as which kinds of place people actually stop to look at, against the
    * `query` events above which say what they asked to see.
    */
+  /**
+   * The directions button at the foot of a popup, which hands the point to
+   * whatever map app the reader has. Counted by category because the answer
+   * to "did anyone want this" differs between a toilet you are walking to and
+   * a bench you are standing next to
+   */
+  poiDirectionsOpened(category: CATEGORIES | null): void {
+    trackEvent("POI", "directions", categoryName(category));
+  },
+
   poiPopupOpened(category: CATEGORIES | null): void {
     trackEvent("POI", "popup open", categoryName(category));
     // The popup's links only exist now. Matomo marks the ones it has already

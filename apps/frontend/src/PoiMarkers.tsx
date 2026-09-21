@@ -2,6 +2,7 @@ import React from "react";
 import { Marker, Popup, useMap } from "react-leaflet";
 import ParkIcon from '@mui/icons-material/Park';
 import DirectionsIcon from "@mui/icons-material/Directions";
+import IosShareIcon from "@mui/icons-material/IosShare";
 import { renderToString } from "react-dom/server";
 import { categoryDisplay } from "./seo/categories";
 import { interpolate, ui } from "./copy";
@@ -12,6 +13,7 @@ import type {
   LatLngBounds,
   LatLngExpression,
   Map as LeafletMap,
+  Marker as LeafletMarkerInstance,
   MarkerClusterGroup as LeafletClusterGroup,
   Point,
   Popup as LeafletPopup,
@@ -34,6 +36,7 @@ import type { TranslationFailure } from "./api/translate";
 import MarkerClusterGroup from "./components/MarkerClusterGroup";
 import { shapeSamplePoint } from "./geo";
 import { directionsUrl, opensInApp } from "./utils/directions";
+import { poiShareUrl } from "./utils/poiLink";
 import PoiShape from "./components/PoiShape";
 import PoiPanelHandle from "./components/PoiPanelHandle";
 import NoiseSection, { NOISE_WORTH_KNOWING } from "./components/NoiseSection";
@@ -335,6 +338,13 @@ type DynamicMarkersProps = {
   categories: CATEGORIES[];
   /** Said in a line at the bottom of the screen, for points with nothing to show */
   onNotice?: (message: string) => void;
+  /**
+   * The point a shared link named, fetched by id before this renders.
+   *
+   * It is drawn and opened whatever the categories say, because somebody sent
+   * it: a link to a bench is followed by a reader whose map shows toilets
+   */
+  focus?: OverpassMarkerData | null;
 };
 
 // Reusable icon rendering function
@@ -1467,6 +1477,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   markers,
   categories,
   onNotice,
+  focus = null,
 }) => {
   /**
    * The point whose outline is on the map, which is the point whose popup is
@@ -1582,12 +1593,74 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
   if (!isSpiderfied()) shownMarkersRef.current = markers;
   const listedMarkers = shownMarkersRef.current;
   const heldOpen = openMarkerRef.current;
-  const shownMarkers =
+  const openedMarkers =
     heldOpen && !listedMarkers.some(one => shapeKey(one) === shapeKey(heldOpen))
       ? [...listedMarkers, heldOpen]
       : listedMarkers;
 
+  /**
+   * The shared point rides along with the list whether or not the query that
+   * fills it would have returned it — wrong category, not yet loaded, or a
+   * viewport that never covered it. It is the one point that has to be there.
+   */
+  const shownMarkers =
+    focus && !openedMarkers.some(one => shapeKey(one) === shapeKey(focus))
+      ? [...openedMarkers, focus]
+      : openedMarkers;
+
   const shapeMarker = shownMarkers.find(marker => shapeKey(marker) === openShape) ?? null;
+
+  /**
+   * Open the shared point's panel once, as soon as its marker exists.
+   *
+   * Through the cluster group when there is one: a marker swallowed by a
+   * cluster is not on the map at all and has no panel to open, and
+   * zoomToShowLayer is the plugin's own way of saying "show me this one" —
+   * it expands or zooms as far as it has to and then runs the callback.
+   */
+  const focusKey = focus ? shapeKey(focus) : null;
+  const focusOpenedRef = React.useRef<string | null>(null);
+  const openFocusPopup = React.useCallback(
+    (instance: LeafletMarkerInstance | null) => {
+      if (!instance || !focusKey || focusOpenedRef.current === focusKey) return;
+      focusOpenedRef.current = focusKey;
+      const cluster = clusterRef.current;
+      if (cluster && typeof cluster.zoomToShowLayer === "function") {
+        cluster.zoomToShowLayer(instance, () => instance.openPopup());
+        return;
+      }
+      instance.openPopup();
+    },
+    [focusKey]
+  );
+
+  /**
+   * Hand one point to whatever the browser has: the share sheet on a phone,
+   * the clipboard everywhere else. The clipboard is the branch that needs
+   * telling — a sheet is its own confirmation, a silent copy is not — so only
+   * that one says so, in the same passing line a point with no details uses.
+   */
+  const sharePoint = React.useCallback(
+    async (marker: OverpassMarkerData, category: CATEGORIES | null) => {
+      const url = poiShareUrl(marker);
+      const method = typeof navigator.share === "function" ? "native" : "clipboard";
+      try {
+        if (method === "native") {
+          await navigator.share({ title: describeMarker(marker, categories).title, url });
+        } else {
+          await navigator.clipboard.writeText(url);
+          onNotice?.(ui().notices.poiLinkCopied);
+        }
+        analytics.poiShared(category, method, true);
+      } catch (error) {
+        // Dismissing the sheet is not a failure, and must not be reported as one
+        if (error instanceof Error && error.name === "AbortError") return;
+        analytics.poiShared(category, method, false);
+        onNotice?.(ui().notices.copyFailed);
+      }
+    },
+    [categories, onNotice]
+  );
 
   /**
    * Keep a fanned out group open until the reader closes it.
@@ -2316,6 +2389,7 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
             position={insidePositions[key] ?? marker.position}
             icon={getMarkerIcon(marker, categories)}
             eventHandlers={eventHandlers}
+            ref={key === focusKey ? openFocusPopup : undefined}
           >
             {hasDetails && (
               <Popup
@@ -2354,6 +2428,15 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                       onClick={() => map.closePopup()}
                     >
                       {ui().controls.layers.close}
+                    </button>
+                    <button
+                      type="button"
+                      className="poi-popup-share"
+                      title={ui().controls.sharePoi}
+                      aria-label={ui().controls.sharePoi}
+                      onClick={() => void sharePoint(marker, markerCategory)}
+                    >
+                      <IosShareIcon fontSize="small" />
                     </button>
                     {/* Small, and to the side: leaving is what most taps on
                         this bar are for, and the label that says so keeps the

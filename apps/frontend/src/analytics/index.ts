@@ -205,6 +205,22 @@ export const analytics = {
    * `query` events above which say what they asked to see.
    */
   /**
+   * The share button at the foot of a popup, and what the browser did with it.
+   *
+   * The same pair as the map level share above — a native sheet or the
+   * clipboard, and whether it worked — kept apart from it because they are
+   * different acts: one sends the view somebody is looking at, the other sends
+   * one place. Which categories get shared is the interesting half
+   */
+  poiShared(
+    category: CATEGORIES | null,
+    method: "native" | "clipboard",
+    ok: boolean
+  ): void {
+    trackEvent("POI", `share: ${method}`, categoryName(category), ok ? 1 : 0);
+  },
+
+  /**
    * The directions button at the foot of a popup, which hands the point to
    * whatever map app the reader has. Counted by category because the answer
    * to "did anyone want this" differs between a toilet you are walking to and

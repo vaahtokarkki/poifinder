@@ -347,6 +347,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     },
     myLocation: "Centra la mappa sulla tua posizione",
     share: "Condividi questa vista",
+    sharePoi: "Condividi questo punto",
     toggleSearch: "Mostra o nascondi la barra di ricerca",
     directions: "Indicazioni stradali",
     language: "Lingua",
@@ -373,7 +374,11 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       "La posizione è bloccata per questo sito. Attivala nelle impostazioni del browser, poi tocca di nuovo il pulsante.",
     locationUnavailable: "Non è stato possibile trovare la tua posizione. Riprova all'aperto.",
     fetchFailed: "Il caricamento dei punti da Overpass non è riuscito. Riprova.",
-    linkCopied: "Link copiato negli appunti",
+    linkCopied:
+      "Link a questa vista della mappa copiato negli appunti",
+    poiLinkCopied:
+      "Link a questo punto copiato negli appunti",
+    poiNotFound: "Questo punto non è più sulla mappa.",
     copyFailed: "Non è stato possibile copiare il link negli appunti.",
     shareRouteMissing: "Coordinate di partenza o di arrivo non trovate.",
     routeFailed: "Il calcolo del percorso non è riuscito: ",

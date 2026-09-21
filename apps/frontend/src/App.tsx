@@ -12,7 +12,7 @@ import RoutesBar from "./components/RoutesBar";
 import SearchBar from "./components/SearchBar";
 import UserPositionMarker from "./components/UserPositionMarker";
 import { fetchRouteGeoJSON } from "./api/ors.ts";
-import { fetchOverpassMarkers, OverpassMarkerData } from "./api/overpass.ts";
+import { fetchOsmMarker, fetchOverpassMarkers, OverpassMarkerData } from "./api/overpass.ts";
 import type { OverpassProgress } from "./api/overpass.ts";
 import Loading from "./components/Loading";
 import LocatingChip from "./components/LocatingChip";
@@ -60,6 +60,7 @@ import { saveMapLocation, loadMapLocation } from "./utils/mapLocationStorage";
 import { loadGPSLocation } from "./utils/gpsLocationStorage";
 import { loadPois, savePois, poiCacheMatchesCategories, isPoiCacheUpToDate } from "./utils/poiStorage";
 import { loadCategories, saveCategories, parseCategories, serializeCategories } from "./utils/categoryStorage";
+import { parsePoiRef } from "./utils/poiLink";
 import { analytics, type QueryTrigger } from "./analytics";
 import { countryAt } from "./analytics/countries";
 
@@ -68,6 +69,16 @@ import { countryAt } from "./analytics/countries";
  * region, which Overpass answers slowly and the map cannot draw readably
  */
 const MIN_POI_ZOOM = 14;
+
+/**
+ * How close the map goes for a point somebody was sent.
+ *
+ * Closer than MIN_POI_ZOOM, and for a different reason: that one is the zoom
+ * at which loading points is worth doing at all, this is the zoom at which one
+ * point is obviously the subject. Never zooms out — a reader who followed the
+ * link from a city page is already closer than this.
+ */
+const POI_FOCUS_ZOOM = 17;
 
 /** How long the map has to stand still before the new view is loaded */
 const AUTO_FETCH_DELAY_MS = 700;
@@ -242,6 +253,8 @@ const App = () => {
   // Only kept in state so the zoom hint can be rendered from it
   const [zoom, setZoom] = useState<number | null>(null);
   const [markers, setMarkers] = useState<OverpassMarkerData[]>([]);
+  /** The point a shared link named, once it has been fetched by id */
+  const [focusMarker, setFocusMarker] = useState<OverpassMarkerData | null>(null);
   const [filteredMarkers, setFilteredMarkers] = useState<OverpassMarkerData[]>([]);
   const [map, setMap] = useState<Map | null>(null);
   const [routeGeoJson, setRouteGeoJson] = useState<FeatureCollection | null>(null);
@@ -421,6 +434,51 @@ const App = () => {
 
   /** True while a move we triggered ourselves is being handled */
   const isProgrammaticMove = () => Date.now() - programmaticMoveAtRef.current <= 1000;
+
+  /**
+   * The point a shared link asks for, fetched by its OpenStreetMap id.
+   *
+   * By id rather than by looking through what the map has loaded, which is
+   * what makes a shared link work for somebody whose categories are different
+   * from the sender's: the lookup needs no category, no viewport and no
+   * waiting for the area query. One small query, and the panel has everything
+   * it renders from.
+   *
+   * Runs once, when the map exists — {@link setMapView} needs it, and until
+   * then there is nowhere to put the point.
+   */
+  const poiRequestedRef = useRef(false);
+  useEffect(() => {
+    if (!map || poiRequestedRef.current) return;
+    const ref = parsePoiRef(window.location.search);
+    if (!ref) return;
+    poiRequestedRef.current = true;
+
+    let cancelled = false;
+    fetchOsmMarker(ref.type, ref.id)
+      .then((marker) => {
+        if (cancelled) return;
+        if (!marker?.position) {
+          // Deleted from OpenStreetMap since the link was made, or never in
+          // our extract. The coordinates in the link have already put the map
+          // in the right place, so all that is left is to say so
+          showNotice(ui().notices.poiNotFound);
+          return;
+        }
+        setFocusMarker(marker);
+        // A link is as deliberate a destination as a search: the GPS fix must
+        // not pull the map off it when it lands
+        userMovedMapRef.current = true;
+        setMapView(marker.position, Math.max(map.getZoom(), POI_FOCUS_ZOOM));
+      })
+      .catch(() => {
+        if (!cancelled) showNotice(ui().notices.poiNotFound);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [map, setMapView, showNotice]);
 
   const getBbox = (): [number, number, number, number] | null => {
     if (!map) return null;
@@ -1343,7 +1401,12 @@ const App = () => {
             needs Leaflet's own attribution control, which useMap reaches */}
         <OverlayAttribution noiseVisible={noiseVisible} airVisible={airVisible} />
         <UserPositionMarker position={userPosition} />
-        <PoiMarkers markers={filteredMarkers} categories={category} onNotice={showNotice} />
+        <PoiMarkers
+          markers={filteredMarkers}
+          categories={category}
+          onNotice={showNotice}
+          focus={focusMarker}
+        />
         {routeGeoJson && displaySearchItem === "routes" && (
           <GeoJSON
             data={routeGeoJson}

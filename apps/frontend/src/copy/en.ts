@@ -1021,6 +1021,7 @@ const ui: CopyDeck["ui"] = {
     },
     myLocation: "Center map to your location",
     share: "Share this view",
+    sharePoi: "Share this point",
     toggleSearch: "Show/hide search bar",
     directions: "Directions",
     language: "Language",
@@ -1045,7 +1046,11 @@ const ui: CopyDeck["ui"] = {
     locationDenied:
       "Location is off for this site. Turn it on in your browser settings, then tap the button again.",
     locationUnavailable: "Could not find your location. Try again outside, under open sky.",
-    linkCopied: "Link copied to clipboard",
+    linkCopied:
+      "Link to this map view copied to clipboard",
+    poiLinkCopied:
+      "Link to this point copied to clipboard",
+    poiNotFound: "That point is not on the map any more.",
     copyFailed: "Could not copy the link to the clipboard.",
     shareRouteMissing: "Could not get start or end location coordinates.",
     routeFailed: "Failed to fetch route: ",

@@ -492,6 +492,57 @@ export async function fetchOverpassElement(
   return { shape: shapeFromElements(elements), tags: self?.tags ?? {} };
 }
 
+/**
+ * One point asked for by id, for a link that names a single place.
+ *
+ * An id lookup rather than a search of the area, and the difference is what
+ * makes a shared link work at all: the recipient need not have the point's
+ * category switched on, the viewport query need not have reached it, and
+ * nothing has to be guessed from coordinates. The tags come back with it, so
+ * the category is worked out here the same way it is for every other marker.
+ *
+ * `out center` so that a way or a relation arrives with the single point a
+ * marker is dropped at; a node already is that point. No spatial filter
+ * anywhere in it, which is what keeps this inside the self hosted instance's
+ * query guard — see apps/overpass/njs/query-guard.js, which refuses a query
+ * that says *where* before it says *what*, and lets an id lookup through.
+ *
+ * Null when the id is not in the data: deleted from OpenStreetMap since the
+ * link was made, or never in our filtered extract to begin with. Both are the
+ * same answer to a reader, and the caller says so.
+ */
+export async function fetchOsmMarker(
+  type: "node" | "way" | "relation",
+  id: number | string
+): Promise<OverpassMarkerData | null> {
+  const statement = type === "node" ? "node" : type === "way" ? "way" : "rel";
+  const elements = await runOverpassQuery(
+    `${OVERPASS_QUERY_PROLOGUE};${statement}(id:${id});out center;`
+  );
+  const self = elements.find(
+    element => element.type === type && String(element.id) === String(id)
+  );
+  if (!self) return null;
+
+  const position: [number, number] | null =
+    self.lat !== undefined && self.lon !== undefined
+      ? [self.lat, self.lon]
+      : self.center
+        ? [self.center.lat, self.center.lon]
+        : null;
+  if (!position) return null;
+
+  return {
+    id: self.id,
+    position,
+    geom: point([position[1], position[0]]),
+    name: self.tags?.name,
+    tags: self.tags,
+    type: self.type,
+    timestamp: self.timestamp,
+  };
+}
+
 /* ---------- The building a point is standing in ---------- */
 
 /**

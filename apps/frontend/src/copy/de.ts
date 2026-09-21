@@ -378,6 +378,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     },
     myLocation: "Karte auf deinen Standort zentrieren",
     share: "Diesen Ausschnitt teilen",
+    sharePoi: "Diesen Punkt teilen",
     toggleSearch: "Suchleiste ein- oder ausblenden",
     directions: "Route",
     language: "Sprache",
@@ -404,7 +405,11 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       "Dein Standort konnte nicht ermittelt werden. Versuche es im Freien noch einmal.",
     fetchFailed:
       "Die Punkte konnten nicht von der Overpass-API geladen werden. Bitte versuche es erneut.",
-    linkCopied: "Link in die Zwischenablage kopiert",
+    linkCopied:
+      "Link zu diesem Kartenausschnitt in die Zwischenablage kopiert",
+    poiLinkCopied:
+      "Link zu diesem Punkt in die Zwischenablage kopiert",
+    poiNotFound: "Diesen Punkt gibt es auf der Karte nicht mehr.",
     copyFailed: "Der Link konnte nicht in die Zwischenablage kopiert werden.",
     shareRouteMissing: "Start- oder Zielkoordinaten konnten nicht ermittelt werden.",
     routeFailed: "Route konnte nicht geladen werden: ",

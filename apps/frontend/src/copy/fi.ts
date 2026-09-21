@@ -366,6 +366,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     },
     myLocation: "Keskitä kartta sijaintiisi",
     share: "Jaa tämä näkymä",
+    sharePoi: "Jaa tämä piste",
     toggleSearch: "Näytä tai piilota hakupalkki",
     directions: "Reittiohjeet",
     language: "Kieli",
@@ -390,7 +391,11 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       "Sijainnin käyttö on estetty tältä sivustolta. Salli se selaimen asetuksista ja napauta painiketta uudelleen.",
     locationUnavailable: "Sijaintiasi ei löytynyt. Kokeile uudelleen ulkona, avoimen taivaan alla.",
     fetchFailed: "Pisteiden haku Overpass-rajapinnasta epäonnistui. Yritä uudelleen.",
-    linkCopied: "Linkki kopioitu leikepöydälle",
+    linkCopied:
+      "Linkki tähän karttanäkymään kopioitu leikepöydälle",
+    poiLinkCopied:
+      "Linkki tähän pisteeseen kopioitu leikepöydälle",
+    poiNotFound: "Tätä pistettä ei enää ole kartalla.",
     copyFailed: "Linkin kopiointi leikepöydälle ei onnistunut.",
     shareRouteMissing: "Lähtö- tai määränpään koordinaatteja ei saatu.",
     routeFailed: "Reitin haku epäonnistui: ",

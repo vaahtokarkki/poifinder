@@ -353,6 +353,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     },
     myLocation: "Centrer la carte sur ta position",
     share: "Partager cette vue",
+    sharePoi: "Partager ce point",
     toggleSearch: "Afficher ou masquer la barre de recherche",
     directions: "Itinéraire",
     language: "Langue",
@@ -379,7 +380,11 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       "La localisation est bloquée pour ce site. Active-la dans les réglages du navigateur, puis appuie de nouveau sur le bouton.",
     locationUnavailable: "Impossible de trouver ta position. Réessaie dehors, à ciel ouvert.",
     fetchFailed: "Le chargement des points depuis Overpass a échoué. Réessaie.",
-    linkCopied: "Lien copié dans le presse-papiers",
+    linkCopied:
+      "Lien vers cette vue de la carte copié dans le presse-papiers",
+    poiLinkCopied:
+      "Lien vers ce point copié dans le presse-papiers",
+    poiNotFound: "Ce point n'est plus sur la carte.",
     copyFailed: "Impossible de copier le lien dans le presse-papiers.",
     shareRouteMissing: "Coordonnées de départ ou d'arrivée introuvables.",
     routeFailed: "Le calcul de l'itinéraire a échoué : ",

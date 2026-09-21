@@ -493,6 +493,8 @@ export type UiCopy = {
     };
     myLocation: string;
     share: string;
+    /** The share button inside a point's popup, which sends that one place */
+    sharePoi: string;
     toggleSearch: string;
     directions: string;
     /** The language selector itself, which has to be reachable in any language */
@@ -530,7 +532,12 @@ export type UiCopy = {
      */
     locationDenied: string;
     locationUnavailable: string;
+    /** The map level share: the view, not a place */
     linkCopied: string;
+    /** The popup's share button, said in the passing line rather than a banner */
+    poiLinkCopied: string;
+    /** A shared link whose point is not in the data any more */
+    poiNotFound: string;
     copyFailed: string;
     shareRouteMissing: string;
     routeFailed: string;

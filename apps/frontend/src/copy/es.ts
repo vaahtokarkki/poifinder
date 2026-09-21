@@ -351,6 +351,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     },
     myLocation: "Centrar el mapa en tu ubicación",
     share: "Compartir esta vista",
+    sharePoi: "Compartir este punto",
     toggleSearch: "Mostrar u ocultar la barra de búsqueda",
     directions: "Cómo llegar",
     language: "Idioma",
@@ -377,7 +378,11 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       "La ubicación está bloqueada para este sitio. Actívala en los ajustes del navegador y vuelve a tocar el botón.",
     locationUnavailable: "No se pudo encontrar tu ubicación. Inténtalo de nuevo al aire libre.",
     fetchFailed: "No se pudieron cargar los puntos desde Overpass. Inténtalo de nuevo.",
-    linkCopied: "Enlace copiado al portapapeles",
+    linkCopied:
+      "Enlace a esta vista del mapa copiado al portapapeles",
+    poiLinkCopied:
+      "Enlace a este punto copiado al portapapeles",
+    poiNotFound: "Ese punto ya no está en el mapa.",
     copyFailed: "No se pudo copiar el enlace al portapapeles.",
     shareRouteMissing: "No se encontraron las coordenadas de origen o de destino.",
     routeFailed: "No se pudo calcular la ruta: ",

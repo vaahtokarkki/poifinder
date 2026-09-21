@@ -1491,19 +1491,30 @@
   flex: 0 0 auto;
 }
 
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-share,
 .glass-ui .poi-popup .leaflet-popup-content .poi-popup-directions {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  /* Hard against the right edge even if the close button ever goes away */
-  margin-left: auto;
+  margin: 0;
   padding: 0 1.15em calc(0px + env(safe-area-inset-bottom, 0px)) 1.15em;
+  border: none;
   border-left: 1px solid var(--glass-hairline);
+  background: transparent;
+  font: inherit;
   color: var(--glass-accent-solid);
   text-decoration: none;
+  cursor: pointer;
 }
 
+/* The pair sits hard against the right edge, whatever is to the left of it */
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-share {
+  margin-left: auto;
+}
+
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-share:hover,
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-share:focus-visible,
 .glass-ui .poi-popup .leaflet-popup-content .poi-popup-directions:hover,
 .glass-ui .poi-popup .leaflet-popup-content .poi-popup-directions:focus-visible {
   background: rgba(0, 0, 0, 0.05);

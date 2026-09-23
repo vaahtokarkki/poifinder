@@ -50,7 +50,7 @@ const SIDE_PANEL_QUERY = "(min-width: 900px)";
  *  has to stand clear of it — the layers button and the top overlay */
 const SIDE_PANEL_CLASS = "side-sheet-open";
 
-const sidePanelMatches = () =>
+export const sidePanelMatches = () =>
   typeof window !== "undefined" &&
   typeof window.matchMedia === "function" &&
   window.matchMedia(SIDE_PANEL_QUERY).matches;

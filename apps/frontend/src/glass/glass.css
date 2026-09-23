@@ -1283,40 +1283,57 @@
 }
 
 /*
- * On a wide screen it becomes a card in the lower left, following the bottom
- * sheet's own breakpoint and width so the two read as the same furniture
- * rather than two conventions on one screen.
+ * On a wide screen it becomes the side panel: docked down the left edge, full
+ * height, in exactly the column the info sheet uses.
+ *
+ * It was a card in the lower left, beside the sheet, which left two columns of
+ * text competing for the reader and a map squeezed between them. A point is
+ * what the reader asked about the moment they tapped it, so it takes the
+ * sheet's place rather than standing next to it. The sheet is only hidden
+ * underneath — by the rule further down that does the same on a phone — and
+ * keeps its own open state, so closing the point brings the page back exactly
+ * as it was, and a sheet that was closed stays closed.
+ *
+ * The map gives up the width while the panel is up, as it does for the sheet:
+ * see the .map-root rule in index.css, and PoiMarkers, which tells Leaflet.
  */
 @media (min-width: 900px) {
   .glass-ui .leaflet-popup.poi-popup {
-    left: 16px !important;
+    left: 0 !important;
     right: auto !important;
-    width: 460px !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: var(--side-sheet-width) !important;
+    /* Over the inline height PoiPanelHandle writes for a drag, which has no
+       business here: the panel is the window's height and nothing else */
+    height: auto !important;
   }
 
-  .glass-ui .poi-popup .leaflet-popup-content-wrapper {
-    border-radius: var(--glass-radius-lg);
+  /* The sheet's own material and seam, so the swap is one column changing
+     what it says rather than one panel replacing another */
+  .glass-ui .leaflet-popup.poi-popup .leaflet-popup-content-wrapper {
+    background-color: rgba(255, 255, 255, 0.96);
+    border: none;
+    border-right: 1px solid var(--glass-edge);
+    border-radius: 0;
+    box-shadow: 1px 0 10px rgba(0, 0, 0, 0.1);
   }
 
-  /*
-   * Inside the map's own width rather than across the panel's. The popup is
-   * fixed to the viewport, which is the one thing narrowing the map does not
-   * move, so it is told where the map now starts. On a phone the sheet and
-   * the point panel are the same strip of screen and the point wins — the
-   * rule further down hides the sheet — but here there is room for both, and
-   * taking the page away every time somebody taps a point would be a column
-   * of the window blinking in and out all session.
-   */
-  .glass-ui body.side-sheet-open .leaflet-popup.poi-popup {
-    left: calc(var(--side-sheet-width) + 16px) !important;
+  /* Nothing to grab: the panel is open or closed, and the bar at its foot is
+     the way out */
+  .glass-ui .poi-popup .leaflet-popup-content .poi-panel-handle {
+    display: none;
   }
 
-  /* Both class names, so this outranks the rule further down that takes the
-     sheet away while a point panel is up — that one is for the phone, where
-     they really are the same strip of screen */
-  .glass-ui body.poi-panel-open .bottom-sheet.bottom-sheet-side[data-snap="full"] {
-    opacity: 1;
-    visibility: visible;
+  /* So the body carries its own top padding again */
+  .glass-ui .poi-panel-handle + .poi-popup-body {
+    padding-top: 0.85em;
+  }
+
+  /* Nothing to clear along the bottom edge: the panel is down the side, and
+     over the inline offset PoiPanelHandle publishes for a phone's panel */
+  .glass-ui body.poi-panel-open {
+    --poi-panel-offset: 0px !important;
   }
 }
 

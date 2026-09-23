@@ -39,6 +39,7 @@ import { directionsUrl, opensInApp } from "./utils/directions";
 import { poiShareUrl } from "./utils/poiLink";
 import PoiShape from "./components/PoiShape";
 import PoiPanelHandle from "./components/PoiPanelHandle";
+import { sidePanelMatches } from "./components/BottomSheet";
 import NoiseSection, { NOISE_WORTH_KNOWING } from "./components/NoiseSection";
 import AirSection from "./components/AirSection";
 import { noiseCoverageAtCenter, noiseTilesConfigured } from "./map/noiseTiles";
@@ -196,7 +197,10 @@ const shapeFitPadding = () => {
    * different size a second after it settled.
    */
   const panel = document.querySelector(".leaflet-popup.poi-popup");
-  const panelHeight = panel ? Math.round(panel.getBoundingClientRect().height) : 0;
+  // Docked down the side of a wide window it is beside the map, which has
+  // already given up its width, and there is nothing underneath it to clear
+  const panelHeight =
+    panel && !sidePanelMatches() ? Math.round(panel.getBoundingClientRect().height) : 0;
   return {
     paddingTopLeft: [POPUP_EDGE_GAP_PX, overlayHeight + POPUP_EDGE_GAP_PX] as [number, number],
     paddingBottomRight: [
@@ -2152,9 +2156,22 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * otherwise leave the mark behind for good.
    */
   React.useEffect(() => {
-    const open = () => setPanelOpenClass(true);
+    /*
+     * On a wide screen the panel is docked down the left and the map gives up
+     * that width, so Leaflet has to measure itself again — at once, because
+     * the point's own popupopen follows this one in the same tick and fits the
+     * point into the map it finds. A swap closes and opens in one tick, so the
+     * map widens and narrows again before anything is painted. `pan: false`,
+     * as for the sheet: the map gets narrower, it does not travel. A phone's
+     * map does not change size, and Leaflet returns early when it has not.
+     */
+    const open = () => {
+      setPanelOpenClass(true);
+      map.invalidateSize({ pan: false });
+    };
     const close = () => {
       setPanelOpenClass(false);
+      map.invalidateSize({ pan: false });
       // The point is no longer held in the list, and letting go of it needs a
       // render to take effect. A swap sets the next one in this same tick
       openMarkerRef.current = null;

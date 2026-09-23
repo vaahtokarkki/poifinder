@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
 import { ui } from "../copy";
+import { sidePanelMatches } from "./BottomSheet";
 
 /**
  * The grab bar at the top of a point panel, and the gestures that go with it.
@@ -365,6 +366,9 @@ const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       lastY = y;
 
       if (!dragging) {
+        // Docked down the side of a wide window the panel is open or closed,
+        // like the sheet there, and a pull at the top of it is only a scroll
+        if (sidePanelMatches()) return;
         // Measured from wherever the content reached its top rather than from
         // where the finger went down, so a scroll down, back up and down again
         // inside one gesture is still a scroll

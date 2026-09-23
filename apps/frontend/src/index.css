@@ -805,8 +805,13 @@ button.layers-tile {
    * controls, the attribution, the points themselves — moves with it for
    * free, because the container is what moved. App tells Leaflet to measure
    * itself again when this changes; see the invalidateSize effect there.
+   *
+   * A point panel takes the same column, so the map gives it up for that as
+   * well — and PoiMarkers does the telling, because the fit to the point has
+   * to be worked out against the narrowed map in the same tick.
    */
-  body.side-sheet-open .map-root {
+  body.side-sheet-open .map-root,
+  body.poi-panel-open .map-root {
     margin-left: var(--side-sheet-width);
     width: calc(100% - var(--side-sheet-width));
   }

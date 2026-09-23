@@ -1250,7 +1250,10 @@ const App = () => {
   return (
     <>
       <MapContainer
-        center={[60, 25]}
+        // Central Helsinki, for the moment before any location is known. The
+        // round [60, 25] this used to be is open water in the Gulf of Finland,
+        // which at zoom 15 is a blank blue screen
+        center={[60.1699, 24.9384]}
         zoom={15}
         // The zoom range used to come from the raster TileLayer, which carried
         // Leaflet's default ceiling of 18. A vector layer declares nothing of

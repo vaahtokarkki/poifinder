@@ -1,310 +1,6539 @@
 {
- "generatedAt": "2026-09-23T08:01:44.939Z",
+ "generatedAt": "2026-09-23T08:26:15.046Z",
  "cities": {
-  "helsinki": [
+  "aarhus": [],
+  "adelaide": [
    {
-    "id": "Q1292442",
-    "lat": 60.144643,
-    "lon": 24.979564,
+    "id": "Q705557",
+    "lat": -34.920643,
+    "lon": 138.603942,
+    "sitelinks": 24,
+    "names": {
+     "default": "Art Gallery of South Australia",
+     "fr": "galerie d'art d'Australie-Méridionale",
+     "en": "Art Gallery of South Australia",
+     "de": "Art Gallery of South Australia",
+     "es": "Art Gallery of South Australia",
+     "it": "Art Gallery of South Australia"
+    }
+   }
+  ],
+  "amsterdam": [
+   {
+    "id": "Q190804",
+    "lat": 52.36,
+    "lon": 4.885278,
+    "sitelinks": 70,
+    "names": {
+     "default": "Rijksmuseum",
+     "fr": "Rijksmuseum",
+     "es": "Rijksmuseum",
+     "it": "Rijksmuseum",
+     "de": "Rijksmuseum",
+     "en": "Rijksmuseum",
+     "fi": "Rijksmuseum"
+    }
+   },
+   {
+    "id": "Q224124",
+    "lat": 52.358333,
+    "lon": 4.881111,
+    "sitelinks": 60,
+    "names": {
+     "default": "Van Gogh Museum",
+     "fr": "musée Van-Gogh",
+     "es": "Museo van Gogh",
+     "it": "Van Gogh Museum",
+     "de": "Van Gogh Museum",
+     "en": "Van Gogh Museum",
+     "fi": "Van Gogh -museo"
+    }
+   },
+   {
+    "id": "Q165366",
+    "lat": 52.375147,
+    "lon": 4.88404,
+    "sitelinks": 38,
+    "names": {
+     "default": "Anne Frank House",
+     "fr": "maison Anne Frank",
+     "es": "Casa de Ana Frank",
+     "en": "Anne Frank House",
+     "fi": "Anne Frankin talo",
+     "it": "casa di Anne Frank",
+     "de": "Anne-Frank-Haus"
+    }
+   },
+   {
+    "id": "Q1056152",
+    "lat": 52.373167,
+    "lon": 4.891361,
+    "sitelinks": 37,
+    "names": {
+     "default": "Royal Palace of Amsterdam",
+     "fr": "palais royal d'Amsterdam",
+     "es": "Palacio Real de Ámsterdam",
+     "en": "Royal Palace of Amsterdam",
+     "it": "Palazzo Reale",
+     "de": "Paleis op de Dam",
+     "fi": "Amsterdamin kuninkaallinen palatsi"
+    }
+   },
+   {
+    "id": "Q713124",
+    "lat": 52.366111,
+    "lon": 4.916667,
+    "sitelinks": 30,
+    "names": {
+     "default": "Natura Artis Magistra",
+     "fr": "Artis",
+     "en": "Natura Artis Magistra",
+     "de": "Artis",
+     "it": "Artis",
+     "es": "Artis",
+     "fi": "Artis (eläintarha)"
+    }
+   },
+   {
+    "id": "Q277316",
+    "lat": 52.369444,
+    "lon": 4.901389,
+    "sitelinks": 28,
+    "names": {
+     "default": "Rembrandt House Museum",
+     "de": "Museum Het Rembrandthuis",
+     "en": "Rembrandt House Museum",
+     "es": "Museo Casa de Rembrandt",
+     "fr": "musée de la maison de Rembrandt",
+     "it": "Rembrandthuis"
+    }
+   }
+  ],
+  "antwerp": [
+   {
+    "id": "Q5901",
+    "lat": 51.220268,
+    "lon": 4.40025,
+    "sitelinks": 39,
+    "names": {
+     "default": "Onze-Lieve-Vrouwekathedraal",
+     "en": "Onze-Lieve-Vrouwekathedraal",
+     "fr": "cathédrale Notre-Dame d'Anvers",
+     "de": "Liebfrauenkathedrale",
+     "es": "Catedral de Amberes",
+     "fi": "Onze-Lieve-Vrouwekathedraal",
+     "it": "cattedrale di Anversa"
+    }
+   },
+   {
+    "id": "Q1471477",
+    "lat": 51.208819,
+    "lon": 4.394349,
+    "sitelinks": 27,
+    "names": {
+     "default": "Royal Museum of Fine Arts Antwerp",
+     "fr": "musée royal des Beaux-Arts d'Anvers",
+     "en": "Royal Museum of Fine Arts Antwerp",
+     "es": "Museo Real de Bellas Artes de Amberes",
+     "it": "Museo reale di belle arti di Anversa",
+     "de": "Königliches Museum der Schönen Künste",
+     "fi": "Antwerpenin kuninkaallinen taidemuseo"
+    }
+   },
+   {
+    "id": "Q775644",
+    "lat": 51.217222,
+    "lon": 4.409444,
+    "sitelinks": 24,
+    "names": {
+     "default": "Rubenshuis",
+     "fr": "maison de Rubens",
+     "de": "Rubenshuis",
+     "en": "Rubenshuis",
+     "es": "Rubenshuis",
+     "fi": "Rubenshuis",
+     "it": "Rubenshuis"
+    }
+   }
+  ],
+  "athens": [
+   {
+    "id": "Q10288",
+    "lat": 37.971527,
+    "lon": 23.726601,
+    "sitelinks": 137,
+    "names": {
+     "default": "Parthenon",
+     "en": "Parthenon",
+     "fr": "Parthénon",
+     "it": "Partenone",
+     "de": "Parthenon",
+     "es": "Partenón",
+     "fi": "Parthenon"
+    }
+   },
+   {
+    "id": "Q193093",
+    "lat": 37.992359,
+    "lon": 23.708059,
+    "sitelinks": 68,
+    "names": {
+     "default": "Platonic Academy",
+     "fr": "Académie de Platon",
+     "es": "Academia de Atenas",
+     "it": "Accademia di Atene",
+     "de": "Platonische Akademie",
+     "en": "Platonic Academy",
+     "fi": "Platonin Akatemia"
+    }
+   },
+   {
+    "id": "Q208811",
+    "lat": 37.968333,
+    "lon": 23.741111,
+    "sitelinks": 47,
+    "names": {
+     "default": "Panathenaic Stadium",
+     "fr": "stade panathénaïque",
+     "es": "Estadio Panathinaikó",
+     "it": "stadio Panathinaiko",
+     "de": "Panathinaiko-Stadion",
+     "en": "Panathenaic Stadium",
+     "fi": "Panathinaïkó-stadion"
+    }
+   },
+   {
+    "id": "Q1160664",
+    "lat": 37.97402,
+    "lon": 23.74334,
+    "sitelinks": 43,
+    "names": {
+     "default": "Lyceum",
+     "en": "Lyceum",
+     "fr": "Lycée",
+     "de": "Lykeion",
+     "it": "Liceo",
+     "es": "Liceo",
+     "fi": "Lykeion"
+    }
+   },
+   {
+    "id": "Q637187",
+    "lat": 37.989167,
+    "lon": 23.732222,
+    "sitelinks": 41,
+    "names": {
+     "default": "National Archaeological Museum of Athens",
+     "fr": "musée national archéologique d'Athènes",
+     "en": "National Archaeological Museum of Athens",
+     "de": "Archäologisches Nationalmuseum",
+     "it": "museo archeologico nazionale di Atene",
+     "es": "Museo Arqueológico Nacional de Atenas",
+     "fi": "Kansallinen arkeologinen museo"
+    }
+   },
+   {
+    "id": "Q1123019",
+    "lat": 37.969372,
+    "lon": 23.733078,
+    "sitelinks": 38,
+    "names": {
+     "default": "Temple of Olympian Zeus",
+     "fr": "Olympiéion",
+     "en": "Temple of Olympian Zeus",
+     "es": "Templo de Zeus Olímpico",
+     "it": "Tempio di Zeus Olimpio",
+     "de": "Olympieion",
+     "fi": "Olympoksen Zeuksen temppeli"
+    }
+   }
+  ],
+  "atlanta": [
+   {
+    "id": "Q1155919",
+    "lat": 33.76343,
+    "lon": -84.395075,
+    "sitelinks": 25,
+    "names": {
+     "default": "Georgia Aquarium",
+     "fr": "Aquarium de Géorgie",
+     "es": "Acuario de Georgia",
+     "en": "Georgia Aquarium",
+     "de": "Georgia Aquarium",
+     "it": "acquario della Georgia"
+    }
+   }
+  ],
+  "auckland": [
+   {
+    "id": "Q722125",
+    "lat": -36.848472,
+    "lon": 174.762306,
+    "sitelinks": 38,
+    "names": {
+     "default": "Sky Tower",
+     "fr": "Sky Tower",
+     "es": "Sky Tower",
+     "en": "Sky Tower",
+     "fi": "Sky Tower",
+     "de": "Sky Tower",
+     "it": "Sky Tower"
+    }
+   }
+  ],
+  "austin": [],
+  "bangkok": [
+   {
+    "id": "Q873769",
+    "lat": 13.750139,
+    "lon": 100.492028,
+    "sitelinks": 48,
+    "names": {
+     "default": "Grand Palace",
+     "fr": "palais royal",
+     "en": "Grand Palace",
+     "es": "Gran Palacio de Bangkok",
+     "fi": "Suuri palatsi",
+     "it": "grande palazzo reale",
+     "de": "Großer Palast"
+    }
+   },
+   {
+    "id": "Q1255815",
+    "lat": 13.757826,
+    "lon": 100.492307,
+    "sitelinks": 24,
+    "names": {
+     "default": "Bangkok National Museum",
+     "de": "Nationalmuseum Bangkok",
+     "en": "Bangkok National Museum",
+     "es": "Museo nacional de Bangkok",
+     "fr": "musée national de Bangkok",
+     "it": "Museo nazionale di Bangkok"
+    }
+   },
+   {
+    "id": "Q1092231",
+    "lat": 13.769167,
+    "lon": 100.496806,
+    "sitelinks": 20,
+    "names": {
+     "default": "Rama VIII Bridge",
+     "de": "Rama-VIII.-Brücke",
+     "en": "Rama VIII Bridge",
+     "es": "puente Rama VIII",
+     "it": "Ponte Rama VIII",
+     "fr": "pont Rama VIII"
+    }
+   },
+   {
+    "id": "Q1186076",
+    "lat": 13.756667,
+    "lon": 100.501667,
+    "sitelinks": 20,
+    "names": {
+     "default": "Democracy Monument",
+     "en": "Democracy Monument",
+     "fi": "Demokratian muistomerkki",
+     "de": "Demokratiedenkmal",
+     "es": "Monumento a la Democracia",
+     "it": "Monumento alla Democrazia"
+    }
+   }
+  ],
+  "barcelona": [
+   {
+    "id": "Q48435",
+    "lat": 41.40369,
+    "lon": 2.17433,
+    "sitelinks": 109,
+    "names": {
+     "default": "Basilica and Expiatory Church of the Holy Family",
+     "es": "Templo Expiatorio de la Sagrada Familia",
+     "fi": "Sagrada Família",
+     "fr": "Sagrada Família",
+     "it": "Sagrada Família",
+     "de": "Sagrada Família",
+     "en": "Basilica and Expiatory Church of the Holy Family"
+    }
+   },
+   {
+    "id": "Q212867",
+    "lat": 41.413611,
+    "lon": 2.152778,
+    "sitelinks": 55,
+    "names": {
+     "default": "Park Güell",
+     "fr": "parc Güell",
+     "es": "Park Güell",
+     "it": "parco Güell",
+     "de": "Park Güell",
+     "en": "Park Güell",
+     "fi": "Güellin puisto"
+    }
+   },
+   {
+    "id": "Q17155",
+    "lat": 41.383889,
+    "lon": 2.176389,
+    "sitelinks": 44,
+    "names": {
+     "default": "Cathedral of the Holy Cross and Saint Eulalia",
+     "en": "Cathedral of the Holy Cross and Saint Eulalia",
+     "de": "Kathedrale von Barcelona",
+     "es": "Catedral de Santa Eulalia de Barcelona",
+     "fr": "cathédrale Sainte-Eulalie de Barcelone",
+     "it": "cattedrale di Barcellona",
+     "fi": "Pyhän Ristin ja Pyhän Eulaalian katedraali"
+    }
+   },
+   {
+    "id": "Q822881",
+    "lat": 41.387031,
+    "lon": 2.170079,
+    "sitelinks": 37,
+    "names": {
+     "default": "Plaça de Catalunya",
+     "fr": "place de Catalogne",
+     "es": "plaza de Cataluña",
+     "en": "Plaça de Catalunya",
+     "it": "plaça de Catalunya",
+     "de": "Plaça de Catalunya",
+     "fi": "Plaça de Catalunya"
+    }
+   },
+   {
+    "id": "Q746333",
+    "lat": 41.403487,
+    "lon": 2.150643,
+    "sitelinks": 33,
+    "names": {
+     "default": "Casa Vicens",
+     "fr": "Casa Vicens",
+     "en": "Casa Vicens",
+     "es": "Casa Vicens",
+     "it": "Casa Vicens",
+     "de": "Casa Vicens"
+    }
+   },
+   {
+    "id": "Q597051",
+    "lat": 41.37882,
+    "lon": 2.17439,
+    "sitelinks": 33,
+    "names": {
+     "default": "Palau Güell",
+     "de": "Palau Güell",
+     "en": "Palau Güell",
+     "es": "Palacio Güell",
+     "fr": "palais Güell",
+     "it": "Palazzo Güell"
+    }
+   }
+  ],
+  "basel": [
+   {
+    "id": "Q194626",
+    "lat": 47.554167,
+    "lon": 7.594167,
+    "sitelinks": 27,
+    "names": {
+     "default": "Kunstmuseum Basel",
+     "fr": "Kunstmuseum Bâle",
+     "es": "Museo de Arte de Basilea",
+     "en": "Kunstmuseum Basel",
+     "de": "Kunstmuseum Basel",
+     "it": "Kunstmuseum Basel",
+     "fi": "Kunstmuseum Basel"
+    }
+   },
+   {
+    "id": "Q205682",
+    "lat": 47.591667,
+    "lon": 7.590278,
+    "sitelinks": 23,
+    "names": {
+     "default": "Three Countries Bridge",
+     "de": "Dreiländerbrücke",
+     "en": "Three Countries Bridge",
+     "es": "puente de los Tres Países",
+     "fr": "passerelle des Trois-Pays",
+     "it": "Ponte dei Tre Paesi"
+    }
+   }
+  ],
+  "belfast": [],
+  "bergen": [
+   {
+    "id": "Q819531",
+    "lat": 60.393889,
+    "lon": 5.330556,
+    "sitelinks": 22,
+    "names": {
+     "default": "Bergen Cathedral",
+     "fr": "cathédrale de Bergen",
+     "en": "Bergen Cathedral",
+     "de": "Bergen Domkirke",
+     "fi": "Bergenin tuomiokirkko",
+     "es": "Catedral de San Olaf de Bergen",
+     "it": "cattedrale di Bergen"
+    }
+   }
+  ],
+  "berlin": [
+   {
+    "id": "Q82425",
+    "lat": 52.516272,
+    "lon": 13.377722,
+    "sitelinks": 86,
+    "names": {
+     "default": "Brandenburg Gate",
+     "es": "Puerta de Brandeburgo",
+     "fi": "Brandenburgin portti",
+     "fr": "porte de Brandebourg",
+     "it": "Porta di Brandeburgo",
+     "de": "Brandenburger Tor",
+     "en": "Brandenburg Gate"
+    }
+   },
+   {
+    "id": "Q157298",
+    "lat": 52.521,
+    "lon": 13.396,
+    "sitelinks": 61,
+    "names": {
+     "default": "Pergamon Museum",
+     "fr": "musée de Pergame",
+     "es": "Museo de Pérgamo",
+     "it": "Pergamonmuseum",
+     "de": "Pergamonmuseum",
+     "en": "Pergamon Museum",
+     "fi": "Pergamon-museo"
+    }
+   },
+   {
+    "id": "Q151356",
+    "lat": 52.520833,
+    "lon": 13.409444,
+    "sitelinks": 58,
+    "names": {
+     "default": "Fernsehturm Berlin",
+     "fr": "Fernsehturm de Berlin",
+     "es": "Torre de televisión de Berlin",
+     "it": "torre della televisione di Berlino",
+     "de": "Berliner Fernsehturm",
+     "en": "Fernsehturm Berlin",
+     "fi": "Berliinin televisiotorni"
+    }
+   },
+   {
+    "id": "Q154828",
+    "lat": 52.508333,
+    "lon": 13.3375,
     "sitelinks": 52,
     "names": {
-     "default": "Suomenlinna",
-     "en": "Suomenlinna",
-     "fi": "Suomenlinna",
-     "de": "Suomenlinna",
-     "fr": "Suomenlinna",
-     "it": "Suomenlinna",
-     "es": "Suomenlinna"
+     "default": "Berlin Zoological Garden",
+     "fr": "jardin zoologique de Berlin",
+     "es": "Jardín zoológico de Berlín",
+     "it": "Zoologischer Garten",
+     "de": "Zoologischer Garten Berlin",
+     "en": "Berlin Zoological Garden",
+     "fi": "Zoologischer Garten Berlin"
     }
    },
    {
-    "id": "Q738015",
-    "lat": 60.170682,
-    "lon": 24.952114,
-    "sitelinks": 49,
+    "id": "Q154563",
+    "lat": 52.519167,
+    "lon": 13.401111,
+    "sitelinks": 51,
     "names": {
-     "default": "Helsinki Cathedral",
-     "en": "Helsinki Cathedral",
-     "fi": "Helsingin tuomiokirkko",
-     "de": "Dom von Helsinki",
-     "fr": "cathédrale luthérienne d'Helsinki",
-     "it": "cattedrale di Helsinki",
-     "es": "Catedral de Helsinki"
+     "default": "Berlin Cathedral",
+     "fr": "Berliner Dom",
+     "es": "Catedral de Berlín",
+     "it": "duomo di Berlino",
+     "de": "Berliner Dom",
+     "en": "Berlin Cathedral",
+     "fi": "Berliner Dom"
     }
    },
    {
-    "id": "Q754507",
-    "lat": 60.170022,
-    "lon": 24.944068,
+    "id": "Q152252",
+    "lat": 52.508944,
+    "lon": 13.376333,
+    "sitelinks": 50,
+    "names": {
+     "default": "Potsdamer Platz",
+     "fr": "Potsdamer Platz",
+     "es": "Potsdamer Platz",
+     "it": "Potsdamer Platz",
+     "de": "Potsdamer Platz",
+     "en": "Potsdamer Platz",
+     "fi": "Potsdamer Platz"
+    }
+   }
+  ],
+  "bern": [
+   {
+    "id": "Q246105",
+    "lat": 46.948056,
+    "lon": 7.447778,
+    "sitelinks": 25,
+    "names": {
+     "default": "Zytglogge",
+     "fr": "Zytglogge",
+     "en": "Zytglogge",
+     "de": "Zytglogge",
+     "es": "Zytgloggeturm",
+     "it": "Torre Zytglogge"
+    }
+   },
+   {
+    "id": "Q194622",
+    "lat": 46.951111,
+    "lon": 7.443333,
+    "sitelinks": 21,
+    "names": {
+     "default": "Kunstmuseum Bern",
+     "de": "Kunstmuseum Bern",
+     "fr": "musée des Beaux-Arts de Berne",
+     "en": "Kunstmuseum Bern",
+     "it": "Kunstmuseum Bern",
+     "es": "Museo de Bellas Artes de Berna"
+    }
+   }
+  ],
+  "bilbao": [
+   {
+    "id": "Q179199",
+    "lat": 43.26883,
+    "lon": -2.934099,
+    "sitelinks": 68,
+    "names": {
+     "default": "Guggenheim Museum Bilbao",
+     "fr": "musée Guggenheim Bilbao",
+     "es": "Museo Guggenheim Bilbao",
+     "it": "Guggenheim Museum Bilbao",
+     "de": "Guggenheim-Museum Bilbao",
+     "en": "Guggenheim Museum Bilbao",
+     "fi": "Guggenheim-museo"
+    }
+   },
+   {
+    "id": "Q2350964",
+    "lat": 43.256944,
+    "lon": -2.923889,
+    "sitelinks": 30,
+    "names": {
+     "default": "St. James' Cathedral",
+     "fr": "cathédrale de Bilbao",
+     "es": "Catedral de Santiago Apóstol",
+     "en": "St. James' Cathedral",
+     "it": "cattedrale di Bilbao",
+     "de": "Kathedrale von Bilbao"
+    }
+   },
+   {
+    "id": "Q127064",
+    "lat": 43.265974,
+    "lon": -2.93785,
+    "sitelinks": 21,
+    "names": {
+     "default": "Bilbao Fine Arts Museum",
+     "de": "Museo de Bellas Artes de Bilbao",
+     "en": "Bilbao Fine Arts Museum",
+     "es": "Museo de Bellas Artes de Bilbao",
+     "fr": "musée des Beaux-Arts de Bilbao"
+    }
+   }
+  ],
+  "birmingham": [
+   {
+    "id": "Q1799857",
+    "lat": 52.480278,
+    "lon": -1.903611,
+    "sitelinks": 23,
+    "names": {
+     "default": "Birmingham Museum and Art Gallery",
+     "en": "Birmingham Museum and Art Gallery",
+     "fr": "Birmingham Museum and Art Gallery",
+     "de": "Birmingham Museum and Art Gallery",
+     "es": "Museo y Galería de Arte de Birmingham",
+     "it": "Museo e galleria d'arte di Birmingham"
+    }
+   }
+  ],
+  "bologna": [
+   {
+    "id": "Q810103",
+    "lat": 44.493382,
+    "lon": 11.343285,
+    "sitelinks": 23,
+    "names": {
+     "default": "San Petronio Basilica",
+     "fr": "basilique San Petronio",
+     "en": "San Petronio Basilica",
+     "de": "Basilika San Petronio",
+     "it": "basilica di San Petronio",
+     "es": "basílica de San Petronio"
+    }
+   }
+  ],
+  "bordeaux": [
+   {
+    "id": "Q656738",
+    "lat": 44.837642,
+    "lon": -0.5778,
+    "sitelinks": 25,
+    "names": {
+     "default": "Bordeaux Cathedral",
+     "it": "cattedrale di Bordeaux",
+     "de": "Kathedrale von Bordeaux",
+     "en": "Bordeaux Cathedral",
+     "es": "Catedral de Burdeos",
+     "fr": "cathédrale Saint-André de Bordeaux"
+    }
+   }
+  ],
+  "boston": [
+   {
+    "id": "Q49133",
+    "lat": 42.339444,
+    "lon": -71.094167,
+    "sitelinks": 45,
+    "names": {
+     "default": "Museum of Fine Arts Boston",
+     "en": "Museum of Fine Arts Boston",
+     "de": "Museum of Fine Arts Boston",
+     "es": "Museo de Bellas Artes de Boston",
+     "fi": "Museum of Fine Arts Boston",
+     "fr": "musée des Beaux-Arts de Boston",
+     "it": "Museum of Fine Arts Boston"
+    }
+   },
+   {
+    "id": "Q49135",
+    "lat": 42.33818,
+    "lon": -71.099121,
+    "sitelinks": 29,
+    "names": {
+     "default": "Isabella Stewart Gardner Museum",
+     "en": "Isabella Stewart Gardner Museum",
+     "de": "Isabella Stewart Gardner Museum",
+     "es": "museo Isabella Stewart Gardner",
+     "fr": "musée Isabella-Stewart-Gardner",
+     "it": "Isabella Stewart-Gardner Museum",
+     "fi": "Isabella Stewart Gardner Museum"
+    }
+   },
+   {
+    "id": "Q11643",
+    "lat": 42.321944,
+    "lon": -71.0625,
+    "sitelinks": 21,
+    "names": {
+     "default": "Museum of Bad Art",
+     "en": "Museum of Bad Art",
+     "fr": "Museum of Bad Art",
+     "es": "Museum of Bad Art",
+     "de": "Museum of Bad Art",
+     "it": "Museum of Bad Art"
+    }
+   }
+  ],
+  "bratislava": [
+   {
+    "id": "Q593311",
+    "lat": 48.142222,
+    "lon": 17.1,
+    "sitelinks": 47,
+    "names": {
+     "default": "Bratislava Castle",
+     "de": "Bratislavaer Burg",
+     "en": "Bratislava Castle",
+     "es": "Castillo de Bratislava",
+     "fi": "Bratislavan linna",
+     "fr": "château de Bratislava",
+     "it": "castello di Bratislava"
+    }
+   },
+   {
+    "id": "Q837291",
+    "lat": 48.13833,
+    "lon": 17.10444,
+    "sitelinks": 36,
+    "names": {
+     "default": "Bridge of the Slovak National Uprising",
+     "fr": "pont du Soulèvement national slovaque",
+     "en": "Bridge of the Slovak National Uprising",
+     "fi": "Nový most",
+     "it": "Nový Most",
+     "de": "Brücke des Slowakischen Nationalaufstandes",
+     "es": "Most SNP"
+    }
+   },
+   {
+    "id": "Q239560",
+    "lat": 48.141944,
+    "lon": 17.104722,
+    "sitelinks": 33,
+    "names": {
+     "default": "St. Martin's Cathedral, Bratislava",
+     "de": "Martinsdom",
+     "en": "St. Martin's Cathedral, Bratislava",
+     "fi": "Pyhän Martinuksen katedraali",
+     "fr": "cathédrale Saint-Martin de Bratislava",
+     "it": "duomo di San Martino",
+     "es": "Catedral de San Martín"
+    }
+   },
+   {
+    "id": "Q1093925",
+    "lat": 48.1402,
+    "lon": 17.1129,
     "sitelinks": 31,
     "names": {
-     "default": "Ateneum",
-     "en": "Ateneum",
-     "fi": "Ateneum",
-     "de": "Ateneum",
-     "fr": "musée d'art Ateneum",
-     "it": "Ateneum",
-     "es": "Ateneum"
+     "default": "Slovak National Museum",
+     "de": "Slowakisches Nationalmuseum",
+     "en": "Slovak National Museum",
+     "fi": "Slovakian kansallismuseo",
+     "es": "Museo nacional Eslovaco",
+     "fr": "musée national slovaque",
+     "it": "Museo nazionale slovacco"
+    }
+   },
+   {
+    "id": "Q568640",
+    "lat": 48.149444,
+    "lon": 17.107778,
+    "sitelinks": 27,
+    "names": {
+     "default": "Grassalkovich Palace",
+     "de": "Palais Grassalkovich",
+     "en": "Grassalkovich Palace",
+     "fi": "Grassalkovichin palatsi",
+     "fr": "palais Grassalkovitch",
+     "it": "palazzo Grasalkovič",
+     "es": "Palacio Grassalkovich"
+    }
+   },
+   {
+    "id": "Q579043",
+    "lat": 48.143389,
+    "lon": 17.116833,
+    "sitelinks": 25,
+    "names": {
+     "default": "Church of St. Elisabeth",
+     "de": "St. Elisabeth",
+     "en": "Church of St. Elisabeth",
+     "fi": "Pyhän Elisabetin kirkko",
+     "fr": "église Sainte-Élisabeth de Bratislava",
+     "it": "chiesa Blu",
+     "es": "La iglesia de St. Isabel"
+    }
+   }
+  ],
+  "brighton": [
+   {
+    "id": "Q62364",
+    "lat": 50.822364,
+    "lon": -0.137717,
+    "sitelinks": 36,
+    "names": {
+     "default": "Royal Pavilion",
+     "fr": "Brighton Pavilion",
+     "es": "Royal Pavilion",
+     "en": "Royal Pavilion",
+     "fi": "Royal Pavilion",
+     "it": "Royal Pavilion",
+     "de": "Royal Pavilion"
+    }
+   }
+  ],
+  "brisbane": [],
+  "bristol": [
+   {
+    "id": "Q162170",
+    "lat": 51.455,
+    "lon": -2.62776,
+    "sitelinks": 26,
+    "names": {
+     "default": "Clifton Suspension Bridge",
+     "de": "Clifton Suspension Bridge",
+     "en": "Clifton Suspension Bridge",
+     "fr": "pont suspendu de Clifton",
+     "es": "puente colgante de Clifton",
+     "it": "ponte sospeso di Clifton",
+     "fi": "Cliftonin riippusilta"
+    }
+   },
+   {
+    "id": "Q744086",
+    "lat": 51.4492,
+    "lon": -2.6084,
+    "sitelinks": 26,
+    "names": {
+     "default": "SS Great Britain",
+     "de": "Great Britain",
+     "en": "SS Great Britain",
+     "es": "SS Great Britain",
+     "fr": "Great Britain",
+     "fi": "SS Great Britain",
+     "it": "Great Britain"
+    }
+   },
+   {
+    "id": "Q917917",
+    "lat": 51.451667,
+    "lon": -2.600556,
+    "sitelinks": 24,
+    "names": {
+     "default": "Bristol Cathedral",
+     "fr": "cathédrale de la Sainte-et-Indivisible-Trinité de Bristol",
+     "en": "Bristol Cathedral",
+     "de": "Bristol Cathedral",
+     "it": "cattedrale di Bristol",
+     "fi": "Bristolin tuomiokirkko",
+     "es": "Catedral de Brístol"
+    }
+   }
+  ],
+  "brussels": [
+   {
+    "id": "Q215429",
+    "lat": 50.846708,
+    "lon": 4.352538,
+    "sitelinks": 56,
+    "names": {
+     "default": "Grand-Place",
+     "fr": "Grand-Place",
+     "es": "Grand-Place",
+     "it": "Grand-Place",
+     "en": "Grand-Place",
+     "fi": "Grand-Place",
+     "de": "Grand-Place"
+    }
+   },
+   {
+    "id": "Q269654",
+    "lat": 50.847778,
+    "lon": 4.360278,
+    "sitelinks": 36,
+    "names": {
+     "default": "Cathedral of St. Michael and St. Gudula",
+     "en": "Cathedral of St. Michael and St. Gudula",
+     "de": "Kathedrale St. Michael und St. Gudula",
+     "es": "Catedral de San Miguel y Santa Gúdula de Bruselas",
+     "fr": "cathédrale Saints-Michel-et-Gudule",
+     "it": "concattedrale di San Michele e Santa Gudula"
+    }
+   },
+   {
+    "id": "Q377500",
+    "lat": 50.84168,
+    "lon": 4.358238,
+    "sitelinks": 32,
+    "names": {
+     "default": "Royal Museums of Fine Arts of Belgium",
+     "de": "Königliche Museen der Schönen Künste",
+     "en": "Royal Museums of Fine Arts of Belgium",
+     "es": "Museos Reales de Bellas Artes de Bélgica",
+     "fr": "musées royaux des Beaux-Arts de Belgique",
+     "it": "Museo reale delle belle arti del Belgio"
+    }
+   },
+   {
+    "id": "Q846006",
+    "lat": 50.866667,
+    "lon": 4.317222,
+    "sitelinks": 32,
+    "names": {
+     "default": "National Basilica of the Sacred Heart",
+     "fr": "basilique nationale du Sacré-Cœur",
+     "es": "basílica del Sagrado Corazón",
+     "en": "National Basilica of the Sacred Heart",
+     "it": "basilica del Sacro Cuore",
+     "de": "Nationalbasilika des Heiligen Herzens"
+    }
+   },
+   {
+    "id": "Q1995367",
+    "lat": 50.824169,
+    "lon": 4.355561,
+    "sitelinks": 25,
+    "names": {
+     "default": "Horta Museum",
+     "fr": "musée Horta",
+     "es": "Museo Horta",
+     "en": "Horta Museum",
+     "it": "Horta Museum",
+     "de": "Horta-Museum"
+    }
+   },
+   {
+    "id": "Q46012",
+    "lat": 50.839939,
+    "lon": 4.378761,
+    "sitelinks": 21,
+    "names": {
+     "default": "House of European History",
+     "en": "House of European History",
+     "es": "Casa de la Historia Europea",
+     "de": "Haus der Europäischen Geschichte",
+     "fr": "maison de l'Histoire européenne",
+     "it": "Casa della Storia europea",
+     "fi": "Euroopan historian talo"
+    }
+   }
+  ],
+  "bucharest": [
+   {
+    "id": "Q164150",
+    "lat": 44.4275,
+    "lon": 26.0875,
+    "sitelinks": 45,
+    "names": {
+     "default": "Palace of the Parliament",
+     "de": "Parlamentspalast",
+     "en": "Palace of the Parliament",
+     "es": "Palacio del Parlamento Rumano",
+     "fi": "Romanian parlamenttitalo",
+     "fr": "palais du Parlement",
+     "it": "Palazzo del Parlamento"
+    }
+   },
+   {
+    "id": "Q1428093",
+    "lat": 44.42591,
+    "lon": 26.08226,
+    "sitelinks": 32,
+    "names": {
+     "default": "National Cathedral",
+     "de": "Nationalkathedrale",
+     "en": "National Cathedral",
+     "es": "Catedral de la Salvación del Pueblo",
+     "fr": "cathédrale du salut de la nation",
+     "it": "Cattedrale della Salvezza del Popolo",
+     "fi": "Kansan pelastuksen katedraali"
+    }
+   },
+   {
+    "id": "Q638278",
+    "lat": 44.467278,
+    "lon": 26.078361,
+    "sitelinks": 25,
+    "names": {
+     "default": "Arcul de Triumf Bucharest",
+     "fr": "arc de triomphe",
+     "en": "Arcul de Triumf Bucharest",
+     "de": "Arcul de Triumf Bukarest",
+     "it": "Arco di Trionfo Bucarest",
+     "es": "Arcul de Triumf"
+    }
+   },
+   {
+    "id": "Q1319192",
+    "lat": 44.43978,
+    "lon": 26.09598,
+    "sitelinks": 21,
+    "names": {
+     "default": "National Museum of Art of Romania",
+     "de": "Nationales Kunstmuseum von Rumänien",
+     "fr": "musée national d'Art de Roumanie",
+     "en": "National Museum of Art of Romania",
+     "it": "Museo nazionale d'arte rumena",
+     "es": "National Museum of Art of Romania"
+    }
+   },
+   {
+    "id": "Q1514860",
+    "lat": 44.42457,
+    "lon": 26.09782,
+    "sitelinks": 20,
+    "names": {
+     "default": "Romanian Patriarchal Cathedral",
+     "de": "Patriarchalkathedrale von Bukarest",
+     "en": "Romanian Patriarchal Cathedral",
+     "es": "Catedral Patriarcal de Bucarest",
+     "fr": "cathédrale patriarcale de Bucarest",
+     "it": "cattedrale dei Santi Costantino ed Elena"
+    }
+   }
+  ],
+  "budapest": [
+   {
+    "id": "Q465534",
+    "lat": 47.49891,
+    "lon": 19.04353,
+    "sitelinks": 46,
+    "names": {
+     "default": "Széchenyi Chain Bridge",
+     "fr": "Széchenyi Lánchíd",
+     "es": "puente de las Cadenas",
+     "it": "Ponte delle Catene",
+     "de": "Széchenyi-Kettenbrücke",
+     "en": "Széchenyi Chain Bridge",
+     "fi": "Széchenyin ketjusilta"
+    }
+   },
+   {
+    "id": "Q299973",
+    "lat": 47.51528,
+    "lon": 19.07806,
+    "sitelinks": 46,
+    "names": {
+     "default": "Heroes' Square",
+     "de": "Heldenplatz",
+     "en": "Heroes' Square",
+     "es": "Plaza de los Héroes",
+     "fi": "Sankarien aukio",
+     "fr": "place des Héros",
+     "it": "piazza degli Eroi"
+    }
+   },
+   {
+    "id": "Q338665",
+    "lat": 47.500833,
+    "lon": 19.053889,
+    "sitelinks": 42,
+    "names": {
+     "default": "St. Stephen's Basilica",
+     "de": "St.-Stephans-Basilika",
+     "en": "St. Stephen's Basilica",
+     "es": "basílica de San Esteban",
+     "fi": "Pyhän Tapanin kirkko",
+     "fr": "basilique Saint-Étienne de Pest",
+     "it": "basilica di Santo Stefano"
+    }
+   },
+   {
+    "id": "Q493133",
+    "lat": 47.501944,
+    "lon": 19.034167,
+    "sitelinks": 39,
+    "names": {
+     "default": "Matthias Church",
+     "fr": "église Notre-Dame-de-l'Assomption de Budavár",
+     "es": "iglesia de Matías",
+     "en": "Matthias Church",
+     "fi": "Matiaksenkirkko",
+     "it": "chiesa di Mattia",
+     "de": "Matthiaskirche"
+    }
+   },
+   {
+    "id": "Q915195",
+    "lat": 47.485556,
+    "lon": 19.055,
+    "sitelinks": 34,
+    "names": {
+     "default": "Liberty Bridge",
+     "de": "Freiheitsbrücke",
+     "en": "Liberty Bridge",
+     "fi": "Vapaudensilta",
+     "fr": "pont de la Liberté",
+     "it": "ponte della Libertà",
+     "es": "puente de la Libertad"
+    }
+   },
+   {
+    "id": "Q914141",
+    "lat": 47.491111,
+    "lon": 19.062778,
+    "sitelinks": 33,
+    "names": {
+     "default": "Hungarian National Museum",
+     "es": "Museo Nacional Húngaro",
+     "fi": "Unkarin kansallismuseo",
+     "it": "Museo nazionale ungherese",
+     "fr": "Musée national hongrois",
+     "en": "Hungarian National Museum",
+     "de": "Ungarisches Nationalmuseum"
+    }
+   }
+  ],
+  "buenos-aires": [
+   {
+    "id": "Q1126357",
+    "lat": -34.608333,
+    "lon": -58.371944,
+    "sitelinks": 28,
+    "names": {
+     "default": "Plaza de Mayo",
+     "fr": "place de Mai",
+     "es": "Plaza de Mayo",
+     "en": "Plaza de Mayo",
+     "it": "plaza de Mayo",
+     "de": "Plaza de Mayo",
+     "fi": "Plaza de Mayo"
+    }
+   },
+   {
+    "id": "Q831389",
+    "lat": -34.60376,
+    "lon": -58.38162,
+    "sitelinks": 25,
+    "names": {
+     "default": "Obelisco de Buenos Aires",
+     "es": "Obelisco de Buenos Aires",
+     "de": "Obelisk von Buenos Aires",
+     "en": "Obelisco de Buenos Aires",
+     "fr": "obélisque de Buenos Aires",
+     "it": "Obelisco di Buenos Aires"
+    }
+   },
+   {
+    "id": "Q1848918",
+    "lat": -34.583986,
+    "lon": -58.39297,
+    "sitelinks": 23,
+    "names": {
+     "default": "National Museum of Fine Arts, Argentina",
+     "de": "Museo Nacional de Bellas Artes",
+     "fr": "musée national des Beaux-Arts Buenos Aires",
+     "es": "Museo Nacional de Bellas Artes",
+     "en": "National Museum of Fine Arts, Argentina",
+     "it": "Museo nazionale delle belle arti"
+    }
+   },
+   {
+    "id": "Q2336867",
+    "lat": -34.607939,
+    "lon": -58.364911,
+    "sitelinks": 23,
+    "names": {
+     "default": "Puente de la Mujer",
+     "fr": "Puente de la Mujer",
+     "en": "Puente de la Mujer",
+     "es": "Puente de la Mujer",
+     "it": "Puente de la Mujer",
+     "de": "Puente de la Mujer"
+    }
+   }
+  ],
+  "calgary": [],
+  "cambridge": [
+   {
+    "id": "Q1421440",
+    "lat": 52.200278,
+    "lon": 0.119444,
+    "sitelinks": 30,
+    "names": {
+     "default": "Fitzwilliam Museum",
+     "fr": "Fitzwilliam Museum",
+     "en": "Fitzwilliam Museum",
+     "de": "Fitzwilliam-Museum",
+     "es": "Museo Fitzwilliam",
+     "it": "Fitzwilliam Museum"
+    }
+   },
+   {
+    "id": "Q1263246",
+    "lat": 52.204722,
+    "lon": 0.116389,
+    "sitelinks": 25,
+    "names": {
+     "default": "King's College Chapel",
+     "en": "King's College Chapel",
+     "fr": "King's College Chapel",
+     "es": "Capilla del King's College",
+     "de": "King's College Chapel",
+     "it": "Cappella del King's College"
+    }
+   }
+  ],
+  "canberra": [
+   {
+    "id": "Q623578",
+    "lat": -35.296389,
+    "lon": 149.129444,
+    "sitelinks": 59,
+    "names": {
+     "default": "National Library of Australia",
+     "fr": "bibliothèque nationale d'Australie",
+     "es": "Biblioteca Nacional de Australia",
+     "en": "National Library of Australia",
+     "de": "National Library of Australia",
+     "fi": "Australian kansalliskirjasto",
+     "it": "Biblioteca nazionale australiana"
+    }
+   },
+   {
+    "id": "Q795228",
+    "lat": -35.300278,
+    "lon": 149.136389,
+    "sitelinks": 29,
+    "names": {
+     "default": "National Gallery of Australia",
+     "de": "National Gallery of Australia",
+     "fr": "Galerie nationale d'Australie",
+     "en": "National Gallery of Australia",
+     "it": "National Gallery of Australia",
+     "es": "Galería Nacional de Australia",
+     "fi": "Australian kansallisgalleria"
+    }
+   },
+   {
+    "id": "Q1858105",
+    "lat": -35.308056,
+    "lon": 149.124444,
+    "sitelinks": 27,
+    "names": {
+     "default": "Parliament House",
+     "de": "Parliament House",
+     "fr": "Parliament House",
+     "en": "Parliament House",
+     "es": "Parliament House",
+     "it": "Palazzo del Parlamento (Canberra)"
+    }
+   },
+   {
+    "id": "Q782783",
+    "lat": -35.280472,
+    "lon": 149.149056,
+    "sitelinks": 22,
+    "names": {
+     "default": "Australian War Memorial",
+     "fr": "mémorial australien de la guerre",
+     "en": "Australian War Memorial",
+     "de": "Australian War Memorial",
+     "es": "Memorial de Guerra Australiano",
+     "it": "Australian War Memorial"
+    }
+   },
+   {
+    "id": "Q1967496",
+    "lat": -35.2931,
+    "lon": 149.121,
+    "sitelinks": 22,
+    "names": {
+     "default": "National Museum of Australia",
+     "fr": "National Museum of Australia",
+     "en": "National Museum of Australia",
+     "de": "National Museum of Australia",
+     "fi": "Australian kansallismuseo",
+     "es": "Museo Nacional de Australia",
+     "it": "Museo nazionale dell'Australia"
+    }
+   }
+  ],
+  "cape-town": [
+   {
+    "id": "Q1049562",
+    "lat": -33.925908,
+    "lon": 18.427725,
+    "sitelinks": 28,
+    "names": {
+     "default": "Castle of Good Hope",
+     "fr": "fort de Bonne-Espérance",
+     "en": "Castle of Good Hope",
+     "de": "Castle of Good Hope",
+     "es": "Castillo de Buena Esperanza",
+     "fi": "Hyväntoivon linna",
+     "it": "Castello di Buona Speranza"
+    }
+   }
+  ],
+  "cardiff": [
+   {
+    "id": "Q1035742",
+    "lat": 51.482309,
+    "lon": -3.181106,
+    "sitelinks": 28,
+    "names": {
+     "default": "Cardiff Castle",
+     "fr": "château de Cardiff",
+     "en": "Cardiff Castle",
+     "de": "Cardiff Castle",
+     "it": "castello di Cardiff",
+     "es": "Castillo de Cardiff",
+     "fi": "Cardiffin linna"
+    }
+   },
+   {
+    "id": "Q1321874",
+    "lat": 51.485577,
+    "lon": -3.177128,
+    "sitelinks": 24,
+    "names": {
+     "default": "National Museum Cardiff",
+     "de": "National Museum Cardiff",
+     "en": "National Museum Cardiff",
+     "es": "Museo y Galería Nacional de Cardiff",
+     "it": "National Museum of Wales",
+     "fr": "musée national de Cardiff"
+    }
+   },
+   {
+    "id": "Q747856",
+    "lat": 51.495833,
+    "lon": -3.218056,
+    "sitelinks": 20,
+    "names": {
+     "default": "Llandaff Cathedral",
+     "en": "Llandaff Cathedral",
+     "fr": "cathédrale de Llandaff",
+     "it": "cattedrale di Llandaff",
+     "de": "Kathedrale von Llandaff",
+     "fi": "Llandaffin tuomiokirkko",
+     "es": "Catedral de Llandaff"
+    }
+   }
+  ],
+  "chicago": [
+   {
+    "id": "Q239303",
+    "lat": 41.879444,
+    "lon": -87.623889,
+    "sitelinks": 41,
+    "names": {
+     "default": "Art Institute of Chicago",
+     "es": "Instituto de Arte de Chicago",
+     "en": "Art Institute of Chicago",
+     "fr": "Art Institute of Chicago",
+     "it": "Art Institute of Chicago",
+     "de": "Art Institute of Chicago",
+     "fi": "Art Institute of Chicago"
+    }
+   },
+   {
+    "id": "Q1122595",
+    "lat": 41.866278,
+    "lon": -87.617039,
+    "sitelinks": 30,
+    "names": {
+     "default": "Field Museum of Natural History",
+     "fr": "musée Field",
+     "es": "Museo Field de Historia Natural",
+     "en": "Field Museum of Natural History",
+     "it": "Field Museum",
+     "de": "Field Museum of Natural History",
+     "fi": "Field Museum of Natural History"
+    }
+   },
+   {
+    "id": "Q358052",
+    "lat": 41.866153,
+    "lon": -87.606675,
+    "sitelinks": 21,
+    "names": {
+     "default": "Adler Planetarium",
+     "fr": "Adler Planetarium",
+     "en": "Adler Planetarium",
+     "de": "Adler-Planetarium",
+     "es": "Planetario Adler"
+    }
+   }
+  ],
+  "christchurch": [],
+  "cologne": [
+   {
+    "id": "Q4176",
+    "lat": 50.941389,
+    "lon": 6.958333,
+    "sitelinks": 85,
+    "names": {
+     "default": "Cologne Cathedral",
+     "de": "Kölner Dom",
+     "fr": "cathédrale de Cologne",
+     "en": "Cologne Cathedral",
+     "it": "duomo di Colonia",
+     "es": "Catedral de Colonia",
+     "fi": "Kölnin tuomiokirkko"
+    }
+   },
+   {
+    "id": "Q696762",
+    "lat": 50.941389,
+    "lon": 6.965556,
+    "sitelinks": 26,
+    "names": {
+     "default": "Hohenzollern Bridge",
+     "fr": "pont Hohenzollern",
+     "en": "Hohenzollern Bridge",
+     "es": "puente Hohenzollern",
+     "de": "Hohenzollernbrücke",
+     "it": "Hohenzollernbrücke"
+    }
+   },
+   {
+    "id": "Q700959",
+    "lat": 50.9375,
+    "lon": 6.958611,
+    "sitelinks": 25,
+    "names": {
+     "default": "Wallraf–Richartz Museum",
+     "fr": "musée Wallraf-Richartz",
+     "en": "Wallraf–Richartz Museum",
+     "es": "Museo Wallraf-Richartz",
+     "it": "Wallraf-Richartz Museum",
+     "de": "Wallraf-Richartz-Museum & Fondation Corboud"
+    }
+   }
+  ],
+  "copenhagen": [
+   {
+    "id": "Q211053",
+    "lat": 55.684028,
+    "lon": 12.593333,
+    "sitelinks": 44,
+    "names": {
+     "default": "Amalienborg",
+     "fr": "Amalienborg",
+     "es": "Palacio de Amalienborg",
+     "it": "Palazzo di Amalienborg",
+     "de": "Schloss Amalienborg",
+     "en": "Amalienborg",
+     "fi": "Amalienborgin linna"
+    }
+   },
+   {
+    "id": "Q110289",
+    "lat": 55.673611,
+    "lon": 12.568333,
+    "sitelinks": 40,
+    "names": {
+     "default": "Tivoli Gardens",
+     "fr": "jardins de Tivoli",
+     "es": "Jardines de Tivoli",
+     "it": "giardini di Tivoli",
+     "de": "Tivoli",
+     "en": "Tivoli Gardens",
+     "fi": "Kööpenhaminan Tivoli"
+    }
+   },
+   {
+    "id": "Q940733",
+    "lat": 55.675833,
+    "lon": 12.578889,
+    "sitelinks": 40,
+    "names": {
+     "default": "Christiansborg Palace",
+     "fr": "palais de Christiansborg",
+     "es": "Palacio de Christiansborg",
+     "en": "Christiansborg Palace",
+     "fi": "Christiansborg",
+     "it": "Palazzo di Christiansborg",
+     "de": "Christiansborg"
+    }
+   },
+   {
+    "id": "Q206101",
+    "lat": 55.68566,
+    "lon": 12.57748,
+    "sitelinks": 38,
+    "names": {
+     "default": "Rosenborg Castle",
+     "de": "Schloss Rosenborg",
+     "en": "Rosenborg Castle",
+     "es": "Castillo de Rosenborg",
+     "fr": "château de Rosenborg",
+     "it": "castello di Rosenborg",
+     "fi": "Rosenborgin linna"
+    }
+   },
+   {
+    "id": "Q671384",
+    "lat": 55.68889,
+    "lon": 12.57861,
+    "sitelinks": 33,
+    "names": {
+     "default": "Statens Museum for Kunst",
+     "fr": "Statens Museum for Kunst",
+     "de": "Statens Museum for Kunst",
+     "en": "Statens Museum for Kunst",
+     "it": "Statens Museum for Kunst",
+     "es": "Galería Nacional de Dinamarca",
+     "fi": "Statens Museum for Kunst"
+    }
+   },
+   {
+    "id": "Q650849",
+    "lat": 55.716583,
+    "lon": 12.533611,
+    "sitelinks": 30,
+    "names": {
+     "default": "Grundtvig's Church",
+     "de": "Grundtvigskirche",
+     "en": "Grundtvig's Church",
+     "es": "iglesia de Grundtvig",
+     "fi": "Grundtvigin kirkko",
+     "fr": "église de Grundtvig",
+     "it": "chiesa di Grundtvig"
+    }
+   }
+  ],
+  "cork": [],
+  "dallas": [
+   {
+    "id": "Q745866",
+    "lat": 32.78756,
+    "lon": -96.800893,
+    "sitelinks": 21,
+    "names": {
+     "default": "Dallas Museum of Art",
+     "de": "Dallas Museum of Art",
+     "en": "Dallas Museum of Art",
+     "es": "Museo de Arte de Dallas",
+     "fr": "Musée d'Art de Dallas",
+     "it": "Dallas Museum of Art"
+    }
+   }
+  ],
+  "denver": [
+   {
+    "id": "Q1189960",
+    "lat": 39.737188,
+    "lon": -104.989345,
+    "sitelinks": 25,
+    "names": {
+     "default": "Denver Art Museum",
+     "fr": "Musée d'Art de Denver",
+     "en": "Denver Art Museum",
+     "de": "Denver Art Museum",
+     "it": "Denver Art Museum",
+     "es": "Museo de Arte de Denver"
+    }
+   }
+  ],
+  "detroit": [
+   {
+    "id": "Q1201549",
+    "lat": 42.359444,
+    "lon": -83.064722,
+    "sitelinks": 29,
+    "names": {
+     "default": "Detroit Institute of Arts",
+     "fr": "Detroit Institute of Arts",
+     "en": "Detroit Institute of Arts",
+     "de": "Detroit Institute of Arts",
+     "it": "Detroit Institute of Arts",
+     "es": "Detroit Institute of Arts"
+    }
+   }
+  ],
+  "dubai": [
+   {
+    "id": "Q12495",
+    "lat": 25.197222,
+    "lon": 55.274167,
+    "sitelinks": 140,
+    "names": {
+     "default": "Burj Khalifa",
+     "en": "Burj Khalifa",
+     "fr": "Burj Khalifa",
+     "it": "Burj Khalifa",
+     "de": "Burj Khalifa",
+     "es": "Burj Khalifa",
+     "fi": "Burj Khalifa"
+    }
+   },
+   {
+    "id": "Q22948398",
+    "lat": 25.21912,
+    "lon": 55.2821,
+    "sitelinks": 22,
+    "names": {
+     "default": "Museum of the Future",
+     "en": "Museum of the Future",
+     "de": "Museum der Zukunft (Dubai)",
+     "fr": "Musée du futur",
+     "it": "Museo del futuro",
+     "es": "Museo del futuro",
+     "fi": "Tulevaisuuden museo"
+    }
+   }
+  ],
+  "dublin": [
+   {
+    "id": "Q742767",
+    "lat": 53.343109,
+    "lon": -6.267394,
+    "sitelinks": 39,
+    "names": {
+     "default": "Dublin Castle",
+     "fr": "château de Dublin",
+     "es": "Castillo de Dublín",
+     "en": "Dublin Castle",
+     "it": "castello di Dublino",
+     "de": "Dublin Castle"
+    }
+   },
+   {
+    "id": "Q846365",
+    "lat": 53.339444,
+    "lon": -6.271389,
+    "sitelinks": 34,
+    "names": {
+     "default": "St Patrick's Cathedral",
+     "fr": "cathédrale Saint-Patrick de Dublin",
+     "en": "St Patrick's Cathedral",
+     "es": "Catedral de San Patricio de Dublín",
+     "it": "cattedrale di San Patrizio",
+     "de": "St. Patrick’s Cathedral",
+     "fi": "Pyhän Patrickin katedraali"
+    }
+   },
+   {
+    "id": "Q1672830",
+    "lat": 53.341111,
+    "lon": -6.254444,
+    "sitelinks": 33,
+    "names": {
+     "default": "National Library of Ireland",
+     "fr": "bibliothèque nationale d'Irlande",
+     "en": "National Library of Ireland",
+     "de": "Irische Nationalbibliothek",
+     "es": "Biblioteca Nacional de Irlanda",
+     "fi": "Irlannin kansalliskirjasto",
+     "it": "Biblioteca Nazionale d'Irlanda"
+    }
+   },
+   {
+    "id": "Q1134365",
+    "lat": 53.34972,
+    "lon": -6.26028,
+    "sitelinks": 32,
+    "names": {
+     "default": "Spire of Dublin",
+     "fr": "Spire de Dublin",
+     "en": "Spire of Dublin",
+     "es": "Spire de Dublín",
+     "it": "The Spire",
+     "de": "The Spire",
+     "fi": "Spire of Dublin"
+    }
+   },
+   {
+    "id": "Q1193916",
+    "lat": 53.346944,
+    "lon": -6.241111,
+    "sitelinks": 25,
+    "names": {
+     "default": "Samuel Beckett Bridge",
+     "de": "Samuel Beckett Bridge",
+     "fr": "pont Samuel Beckett",
+     "es": "puente Samuel Beckett",
+     "en": "Samuel Beckett Bridge",
+     "it": "Samuel Beckett Bridge"
+    }
+   },
+   {
+    "id": "Q1049842",
+    "lat": 53.341667,
+    "lon": -6.309444,
+    "sitelinks": 25,
+    "names": {
+     "default": "Kilmainham Gaol",
+     "fr": "prison de Kilmainham",
+     "en": "Kilmainham Gaol",
+     "es": "Kilmainham Gaol",
+     "it": "Kilmainham Gaol",
+     "de": "Kilmainham Gaol",
+     "fi": "Kilmainhamin vankila"
+    }
+   }
+  ],
+  "dusseldorf": [],
+  "edinburgh": [
+   {
+    "id": "Q212065",
+    "lat": 55.9487,
+    "lon": -3.20073,
+    "sitelinks": 58,
+    "names": {
+     "default": "Edinburgh Castle",
+     "fr": "château d'Édimbourg",
+     "es": "Castillo de Edimburgo",
+     "it": "castello di Edimburgo",
+     "de": "Edinburgh Castle",
+     "en": "Edinburgh Castle",
+     "fi": "Edinburghin linna"
+    }
+   },
+   {
+    "id": "Q505950",
+    "lat": 55.9527,
+    "lon": -3.17229,
+    "sitelinks": 44,
+    "names": {
+     "default": "Holyrood Palace",
+     "fr": "palais de Holyrood",
+     "es": "Palacio de Holyrood",
+     "it": "Palazzo di Holyrood",
+     "de": "Holyrood Palace",
+     "en": "Holyrood Palace",
+     "fi": "Holyroodin palatsi"
+    }
+   },
+   {
+    "id": "Q942713",
+    "lat": 55.9509,
+    "lon": -3.195661,
+    "sitelinks": 39,
+    "names": {
+     "default": "Scottish National Gallery",
+     "fr": "Galerie nationale d'Écosse",
+     "en": "Scottish National Gallery",
+     "es": "Galería nacional de Escocia",
+     "fi": "National Gallery of Scotland",
+     "it": "National Gallery of Scotland",
+     "de": "Schottische Nationalgalerie"
+    }
+   },
+   {
+    "id": "Q1633842",
+    "lat": 55.946944,
+    "lon": -3.19,
+    "sitelinks": 33,
+    "names": {
+     "default": "National Museum of Scotland",
+     "de": "National Museum of Scotland",
+     "en": "National Museum of Scotland",
+     "es": "Museo de Escocia",
+     "fr": "musée national d'Écosse",
+     "it": "Museum of Scotland"
+    }
+   },
+   {
+    "id": "Q1529544",
+    "lat": 55.982133,
+    "lon": -3.177302,
+    "sitelinks": 23,
+    "names": {
+     "default": "HMY Britannia",
+     "de": "HMY Britannia",
+     "fr": "Britannia",
+     "en": "HMY Britannia",
+     "es": "HMY Britannia",
+     "fi": "HMY Britannia",
+     "it": "HMY Britannia"
+    }
+   }
+  ],
+  "espoo": [],
+  "florence": [
+   {
+    "id": "Q51252",
+    "lat": 43.768333,
+    "lon": 11.255278,
+    "sitelinks": 73,
+    "names": {
+     "default": "Uffizi Gallery",
+     "it": "Palazzo degli Uffizi",
+     "en": "Uffizi Gallery",
+     "de": "Uffizien",
+     "es": "Galería Uffizi",
+     "fi": "Uffizi",
+     "fr": "galerie des Offices"
+    }
+   },
+   {
+    "id": "Q191739",
+    "lat": 43.773056,
+    "lon": 11.256944,
+    "sitelinks": 71,
+    "names": {
+     "default": "Florence Cathedral",
+     "fr": "cathédrale Santa Maria del Fiore",
+     "es": "Santa María del Fiore",
+     "it": "Cattedrale di Santa Maria del Fiore",
+     "de": "Kathedrale von Florenz",
+     "en": "Florence Cathedral",
+     "fi": "Santa Maria del Fiore"
+    }
+   },
+   {
+    "id": "Q29286",
+    "lat": 43.765153,
+    "lon": 11.250008,
+    "sitelinks": 59,
+    "names": {
+     "default": "Palazzo Pitti",
+     "fr": "palais Pitti",
+     "es": "Palacio Pitti",
+     "it": "Palazzo Pitti",
+     "de": "Palazzo Pitti",
+     "en": "Palazzo Pitti",
+     "fi": "Palazzo Pitti"
+    }
+   },
+   {
+    "id": "Q51177",
+    "lat": 43.76845,
+    "lon": 11.26274,
+    "sitelinks": 47,
+    "names": {
+     "default": "Basilica of Santa Croce",
+     "it": "basilica di Santa Croce",
+     "de": "Santa Croce",
+     "en": "Basilica of Santa Croce",
+     "es": "basílica de la Santa Cruz",
+     "fi": "Basilica di Santa Croce",
+     "fr": "basilique Santa Croce de Florence"
+    }
+   },
+   {
+    "id": "Q388448",
+    "lat": 43.770398,
+    "lon": 11.258008,
+    "sitelinks": 40,
+    "names": {
+     "default": "Bargello National Museum",
+     "en": "Bargello National Museum",
+     "es": "Bargello",
+     "fi": "Bargellon kansallinen museo",
+     "fr": "Musée national du Bargello",
+     "it": "Museo nazionale del Bargello",
+     "de": "Bargello"
+    }
+   },
+   {
+    "id": "Q51175",
+    "lat": 43.7743,
+    "lon": 11.249367,
+    "sitelinks": 39,
+    "names": {
+     "default": "Basilica of Santa Maria Novella",
+     "it": "basilica di Santa Maria Novella",
+     "en": "Basilica of Santa Maria Novella",
+     "de": "Santa Maria Novella",
+     "es": "iglesia de Santa María Novella",
+     "fi": "Santa Maria Novella",
+     "fr": "basilique Santa Maria Novella"
+    }
+   }
+  ],
+  "frankfurt": [
+   {
+    "id": "Q163804",
+    "lat": 50.10322,
+    "lon": 8.67388,
+    "sitelinks": 32,
+    "names": {
+     "default": "Städel Museum",
+     "fr": "musée Städel",
+     "en": "Städel Museum",
+     "es": "Museo Städel",
+     "it": "Städelsches Kunstinstitut",
+     "de": "Städelsches Kunstinstitut",
+     "fi": "Städel Museum"
+    }
+   },
+   {
+    "id": "Q198106",
+    "lat": 50.111111,
+    "lon": 8.680833,
+    "sitelinks": 31,
+    "names": {
+     "default": "St. Paul's Church, Frankfurt am Main",
+     "fr": "église Saint-Paul de Francfort",
+     "es": "Paulskirche",
+     "fi": "Paavalinkirkko",
+     "it": "Paulskirche",
+     "de": "Frankfurter Paulskirche",
+     "en": "St. Paul's Church, Frankfurt am Main"
+    }
+   },
+   {
+    "id": "Q57341",
+    "lat": 50.110556,
+    "lon": 8.685,
+    "sitelinks": 30,
+    "names": {
+     "default": "Frankfurt Cathedral",
+     "en": "Frankfurt Cathedral",
+     "de": "Kaiserdom St. Bartholomäus",
+     "es": "catedral de Fráncfort del Meno",
+     "fr": "cathédrale Saint-Barthélemy de Francfort",
+     "it": "duomo di Francoforte sul Meno"
+    }
+   },
+   {
+    "id": "Q706441",
+    "lat": 50.1175,
+    "lon": 8.651667,
+    "sitelinks": 21,
+    "names": {
+     "default": "Senckenberg Museum",
+     "de": "Senckenberg-Naturmuseum",
+     "fr": "muséum Senckenberg",
+     "es": "Museo de Senckenberg",
+     "en": "Senckenberg Museum",
+     "it": "Senckenberg Naturmuseum"
+    }
+   }
+  ],
+  "fukuoka": [],
+  "geneva": [
+   {
+    "id": "Q684661",
+    "lat": 46.207388,
+    "lon": 6.155904,
+    "sitelinks": 37,
+    "names": {
+     "default": "Jet d'Eau",
+     "fr": "Jet d'eau de Genève",
+     "en": "Jet d'Eau",
+     "fi": "Jet d'Eau",
+     "it": "Jet d'eau",
+     "de": "Jet d’eau",
+     "es": "Jet d'Eau"
+    }
+   },
+   {
+    "id": "Q666516",
+    "lat": 46.201111,
+    "lon": 6.148611,
+    "sitelinks": 26,
+    "names": {
+     "default": "St. Pierre Cathedral",
+     "de": "Kathedrale Sankt Peter",
+     "fr": "cathédrale Saint-Pierre de Genève",
+     "es": "Catedral de Ginebra",
+     "en": "St. Pierre Cathedral",
+     "it": "cattedrale di Ginevra",
+     "fi": "Pyhän Pietarin katedraali (Geneve)"
+    }
+   },
+   {
+    "id": "Q679075",
+    "lat": 46.199304,
+    "lon": 6.151574,
+    "sitelinks": 21,
+    "names": {
+     "default": "Museum of Art and History Geneva",
+     "de": "Musée d'Art et d'Histoire de Genève",
+     "fr": "Musée d’Art et d’Histoire de Genève",
+     "en": "Museum of Art and History Geneva",
+     "es": "Museo de Arte e Historia de Ginebra",
+     "it": "Musée d'art et d'histoire di Ginevra",
+     "fi": "Taiteen ja historian museo"
+    }
+   }
+  ],
+  "ghent": [
+   {
+    "id": "Q938154",
+    "lat": 51.052974,
+    "lon": 3.727059,
+    "sitelinks": 28,
+    "names": {
+     "default": "St Bavo's Cathedral",
+     "de": "St.-Bavo-Kathedrale",
+     "en": "St Bavo's Cathedral",
+     "es": "Catedral de San Bavón",
+     "fr": "cathédrale Saint-Bavon de Gand",
+     "it": "cattedrale di San Bavone"
+    }
+   },
+   {
+    "id": "Q2365880",
+    "lat": 51.037975,
+    "lon": 3.724244,
+    "sitelinks": 25,
+    "names": {
+     "default": "Museum of Fine Arts Ghent (MSK)",
+     "en": "Museum of Fine Arts Ghent (MSK)",
+     "es": "Museo de Bellas Artes de Gante",
+     "fr": "musée des beaux-arts de Gand",
+     "it": "Museo di belle arti di Gand",
+     "de": "Museum für Schöne Künste Gent"
+    }
+   },
+   {
+    "id": "Q1543972",
+    "lat": 51.057222,
+    "lon": 3.720556,
+    "sitelinks": 22,
+    "names": {
+     "default": "Gravensteen",
+     "en": "Gravensteen",
+     "de": "Gravensteen",
+     "fr": "château des comtes de Flandre",
+     "it": "castello dei conti di Fiandra",
+     "es": "Castillo de los Condes de Gante"
+    }
+   }
+  ],
+  "glasgow": [
+   {
+    "id": "Q1061094",
+    "lat": 55.868608,
+    "lon": -4.290636,
+    "sitelinks": 33,
+    "names": {
+     "default": "Kelvingrove Art Gallery and Museum",
+     "fr": "Kelvingrove Art Gallery and Museum",
+     "es": "Museo Kelvingrove",
+     "en": "Kelvingrove Art Gallery and Museum",
+     "fi": "Kelvingrove Art Gallery and Museum",
+     "it": "Kelvingrove Art Gallery and Museum",
+     "de": "Kelvingrove Art Gallery and Museum"
+    }
+   },
+   {
+    "id": "Q748106",
+    "lat": 55.86605,
+    "lon": -4.263746,
+    "sitelinks": 29,
+    "names": {
+     "default": "Glasgow School of Art",
+     "de": "Glasgow School of Art",
+     "en": "Glasgow School of Art",
+     "es": "Escuela de arte de Glaslow",
+     "fi": "Glasgow School of Art",
+     "fr": "Glasgow School of Art",
+     "it": "Glasgow School of Art"
+    }
+   },
+   {
+    "id": "Q1473348",
+    "lat": 55.8631,
+    "lon": -4.2346,
+    "sitelinks": 27,
+    "names": {
+     "default": "Glasgow Cathedral",
+     "fr": "cathédrale Saint-Mungo de Glasgow",
+     "es": "Catedral de Glasgow",
+     "en": "Glasgow Cathedral",
+     "it": "cattedrale di Glasgow",
+     "de": "St. Mungo’s Cathedral"
+    }
+   },
+   {
+    "id": "Q7338547",
+    "lat": 55.865111,
+    "lon": -4.306389,
+    "sitelinks": 20,
+    "names": {
+     "default": "Riverside Museum",
+     "en": "Riverside Museum",
+     "fr": "Riverside Museum",
+     "es": "Riverside Museum",
+     "it": "Museo di Riverside",
+     "de": "Riverside Museum"
+    }
+   }
+  ],
+  "gothenburg": [
+   {
+    "id": "Q1413270",
+    "lat": 57.695556,
+    "lon": 11.99,
+    "sitelinks": 30,
+    "names": {
+     "default": "Liseberg",
+     "fr": "Liseberg",
+     "en": "Liseberg",
+     "es": "Liseberg",
+     "fi": "Liseberg",
+     "de": "Liseberg",
+     "it": "Liseberg"
+    }
+   },
+   {
+    "id": "Q1992004",
+    "lat": 57.696389,
+    "lon": 11.980556,
+    "sitelinks": 23,
+    "names": {
+     "default": "Gothenburg Museum of Art",
+     "en": "Gothenburg Museum of Art",
+     "fr": "musée des Beaux-Arts de Göteborg",
+     "de": "Göteborgs konstmuseum",
+     "it": "Göteborgs konstmuseum",
+     "es": "Museo de Bellas Artes de Gotemburgo",
+     "fi": "Göteborgin taidemuseo"
+    }
+   }
+  ],
+  "hamburg": [
+   {
+    "id": "Q169542",
+    "lat": 53.555,
+    "lon": 10.003056,
+    "sitelinks": 34,
+    "names": {
+     "default": "Hamburger Kunsthalle",
+     "fr": "Kunsthalle de Hambourg",
+     "es": "Kunsthalle de Hamburgo",
+     "en": "Hamburger Kunsthalle",
+     "fi": "Hampurin taidehalli",
+     "it": "Hamburger Kunsthalle",
+     "de": "Hamburger Kunsthalle"
+    }
+   },
+   {
+    "id": "Q425622",
+    "lat": 53.5475,
+    "lon": 9.990556,
+    "sitelinks": 31,
+    "names": {
+     "default": "St. Nicholas Church, Hamburg",
+     "it": "chiesa di San Nicola",
+     "de": "Ehemalige Hauptkirche St. Nikolai",
+     "en": "St. Nicholas Church, Hamburg",
+     "es": "iglesia de San Nicolás",
+     "fr": "église Saint-Nicolas de Hambourg"
+    }
+   },
+   {
+    "id": "Q685524",
+    "lat": 53.543823,
+    "lon": 9.988945,
+    "sitelinks": 30,
+    "names": {
+     "default": "Miniatur Wunderland",
+     "fr": "Miniatur-Wunderland",
+     "es": "Miniatur-Wunderland",
+     "en": "Miniatur Wunderland",
+     "fi": "Miniatur Wunderland",
+     "it": "Miniatur Wunderland",
+     "de": "Miniatur Wunderland"
+    }
+   },
+   {
+    "id": "Q674472",
+    "lat": 53.548333,
+    "lon": 9.978889,
+    "sitelinks": 27,
+    "names": {
+     "default": "St. Michaelis Church, Hamburg",
+     "de": "Hauptkirche St. Michaelis",
+     "en": "St. Michaelis Church, Hamburg",
+     "es": "iglesia de San Miguel",
+     "fr": "église Saint-Michel de Hambourg",
+     "it": "chiesa di San Michele"
+    }
+   }
+  ],
+  "hameenlinna": [
+   {
+    "id": "Q1012561",
+    "lat": 61.003513,
+    "lon": 24.459819,
+    "sitelinks": 24,
+    "names": {
+     "default": "Häme Castle",
+     "en": "Häme Castle",
+     "de": "Burg Häme",
+     "it": "castello di Häme",
+     "fi": "Hämeen linna",
+     "fr": "château du Häme",
+     "es": "Castillo de Häme"
+    }
+   }
+  ],
+  "helsinki": [
+   {
+    "id": "Q738015",
+    "lat": 60.170378,
+    "lon": 24.952177,
+    "sitelinks": 51,
+    "names": {
+     "default": "Helsinki Cathedral",
+     "fr": "cathédrale luthérienne d'Helsinki",
+     "en": "Helsinki Cathedral",
+     "es": "Catedral de Helsinki",
+     "fi": "Helsingin tuomiokirkko",
+     "it": "cattedrale di Helsinki",
+     "de": "Dom von Helsinki"
+    }
+   },
+   {
+    "id": "Q1044613",
+    "lat": 60.171048,
+    "lon": 24.941449,
+    "sitelinks": 35,
+    "names": {
+     "default": "Helsinki Central Railway Station",
+     "en": "Helsinki Central Railway Station",
+     "fi": "Helsingin päärautatieasema",
+     "it": "stazione centrale di Helsinki",
+     "de": "Helsinki Hauptbahnhof",
+     "es": "Estación Central de Helsinki",
+     "fr": "Helsinki-centrale"
+    }
+   },
+   {
+    "id": "Q523268",
+    "lat": 60.167576,
+    "lon": 24.9515,
+    "sitelinks": 28,
+    "names": {
+     "default": "Havis Amanda",
+     "de": "Havis Amanda",
+     "en": "Havis Amanda",
+     "fi": "Havis Amanda",
+     "fr": "Havis Amanda",
+     "es": "Havis Amanda",
+     "it": "Havis Amanda"
     }
    },
    {
     "id": "Q1418136",
-    "lat": 60.174963,
-    "lon": 24.9316,
+    "lat": 60.174979,
+    "lon": 24.931561,
     "sitelinks": 28,
     "names": {
      "default": "National Museum of Finland",
-     "en": "National Museum of Finland",
-     "fi": "Suomen kansallismuseo",
-     "de": "Finnisches Nationalmuseum",
      "fr": "musée national de Finlande",
-     "it": "Museo Nazionale Finlandese",
-     "es": "Museo Nacional de Finlandia"
+     "en": "National Museum of Finland",
+     "de": "Finnisches Nationalmuseum",
+     "fi": "Suomen kansallismuseo",
+     "es": "Museo Nacional de Finlandia",
+     "it": "Museo Nazionale Finlandese"
     }
    },
    {
     "id": "Q1132809",
-    "lat": 60.172967,
-    "lon": 24.925204,
-    "sitelinks": 27,
+    "lat": 60.173005,
+    "lon": 24.925241,
+    "sitelinks": 28,
     "names": {
      "default": "Temppeliaukio Church",
-     "en": "Temppeliaukio Church",
-     "fi": "Temppeliaukion kirkko",
-     "de": "Temppeliaukio-Kirche",
      "fr": "église Temppeliaukio d'Helsinki",
+     "en": "Temppeliaukio Church",
+     "es": "iglesia de Temppeliaukio",
+     "fi": "Temppeliaukion kirkko",
      "it": "Temppeliaukion kirkko",
-     "es": "iglesia de Temppeliaukio"
+     "de": "Temppeliaukio-Kirche"
     }
    },
    {
     "id": "Q1355001",
-    "lat": 60.168458,
-    "lon": 24.959948,
-    "sitelinks": 26,
+    "lat": 60.168518,
+    "lon": 24.959942,
+    "sitelinks": 27,
     "names": {
      "default": "Uspenski Cathedral",
+     "fr": "cathédrale Ouspenski",
      "en": "Uspenski Cathedral",
      "fi": "Uspenskin katedraali",
      "de": "Uspenski-Kathedrale",
-     "fr": "cathédrale Ouspenski",
-     "it": "cattedrale Uspenski",
-     "es": "Catedral Ortodoxa Uspenski"
+     "es": "Catedral Ortodoxa Uspenski",
+     "it": "cattedrale Uspenski"
     }
    }
   ],
+  "hobart": [],
+  "hong-kong": [
+   {
+    "id": "Q908216",
+    "lat": 22.293547,
+    "lon": 114.172025,
+    "sitelinks": 25,
+    "names": {
+     "default": "Hong Kong Museum of Art",
+     "en": "Hong Kong Museum of Art",
+     "de": "Hong Kong Museum of Art",
+     "fr": "musée d'art de Hong Kong",
+     "es": "Hong Kong Museum of Art",
+     "it": "Hong Kong Museum of Art"
+    }
+   }
+  ],
+  "honolulu": [
+   {
+    "id": "Q423525",
+    "lat": 21.306622,
+    "lon": -157.858958,
+    "sitelinks": 26,
+    "names": {
+     "default": "ʻIolani Palace",
+     "en": "ʻIolani Palace",
+     "de": "ʻIolani-Palast",
+     "it": "Iolani Palace",
+     "es": "Palacio 'Iolani",
+     "fr": "palais ʻIolani",
+     "fi": "ʻIolanin palatsi"
+    }
+   }
+  ],
+  "houston": [
+   {
+    "id": "Q1565911",
+    "lat": 29.725605,
+    "lon": -95.390539,
+    "sitelinks": 25,
+    "names": {
+     "default": "Museum of Fine Arts, Houston",
+     "de": "Museum of Fine Arts Houston",
+     "en": "Museum of Fine Arts, Houston",
+     "es": "Museo de Bellas Artes de Houston",
+     "fr": "musée des Beaux-Arts de Houston",
+     "it": "Houston Museum of Fine Arts",
+     "fi": "Museum of Fine Arts, Houston"
+    }
+   }
+  ],
+  "istanbul": [
+   {
+    "id": "Q12506",
+    "lat": 41.008333,
+    "lon": 28.98,
+    "sitelinks": 152,
+    "names": {
+     "default": "Hagia Sophia",
+     "en": "Hagia Sophia",
+     "fr": "Sainte-Sophie",
+     "it": "basilica di Santa Sofia",
+     "de": "Hagia Sophia",
+     "fi": "Hagia Sofia",
+     "es": "Santa Sofía"
+    }
+   },
+   {
+    "id": "Q170495",
+    "lat": 41.013,
+    "lon": 28.984,
+    "sitelinks": 79,
+    "names": {
+     "default": "Topkapı Palace",
+     "fr": "palais de Topkapı",
+     "es": "palacio de Topkapı",
+     "it": "Palazzo di Topkapı",
+     "de": "Topkapı-Palast",
+     "en": "Topkapı Palace",
+     "fi": "Topkapın palatsi"
+    }
+   },
+   {
+    "id": "Q91274",
+    "lat": 41.025632,
+    "lon": 28.974153,
+    "sitelinks": 58,
+    "names": {
+     "default": "Galata Tower",
+     "de": "Galataturm",
+     "en": "Galata Tower",
+     "es": "Torre de Gálata",
+     "fr": "tour de Galata",
+     "it": "Torre di Galata",
+     "fi": "Galatan torni"
+    }
+   },
+   {
+    "id": "Q274141",
+    "lat": 41.039444,
+    "lon": 29.001667,
+    "sitelinks": 53,
+    "names": {
+     "default": "Dolmabahçe Palace",
+     "fr": "palais de Dolmabahçe",
+     "es": "palacio de Dolmabahçe",
+     "it": "Palazzo di Dolmabahçe",
+     "de": "Dolmabahçe-Palast",
+     "en": "Dolmabahçe Palace",
+     "fi": "Dolmabahçen palatsi"
+    }
+   },
+   {
+    "id": "Q736072",
+    "lat": 41.036944,
+    "lon": 28.985833,
+    "sitelinks": 50,
+    "names": {
+     "default": "Taksim Square",
+     "fr": "place Taksim",
+     "es": "Plaza Taksim",
+     "en": "Taksim Square",
+     "fi": "Taksim-aukio",
+     "it": "piazza Taksim",
+     "de": "Taksim-Platz"
+    }
+   },
+   {
+    "id": "Q848397",
+    "lat": 41.021111,
+    "lon": 29.004167,
+    "sitelinks": 45,
+    "names": {
+     "default": "Maiden's Tower",
+     "fr": "tour de Léandre",
+     "en": "Maiden's Tower",
+     "it": "Torre di Leandro",
+     "de": "Leanderturm",
+     "es": "Torre de la Doncella"
+    }
+   }
+  ],
+  "joensuu": [],
+  "jyvaskyla": [],
+  "kotka": [],
+  "kouvola": [],
   "krakow": [
    {
     "id": "Q638519",
-    "lat": 50.054644,
-    "lon": 19.93548,
-    "sitelinks": 43,
+    "lat": 50.054639,
+    "lon": 19.935417,
+    "sitelinks": 45,
     "names": {
      "default": "Wawel Cathedral",
-     "en": "Wawel Cathedral",
-     "fi": "Wawelin katedraali",
-     "de": "Wawel-Kathedrale",
      "fr": "cathédrale du Wawel",
+     "es": "Catedral de Wawel",
      "it": "cattedrale del Wawel",
-     "es": "Catedral de Wawel"
+     "de": "Wawel-Kathedrale",
+     "en": "Wawel Cathedral",
+     "fi": "Wawelin katedraali"
     }
    },
    {
     "id": "Q1143171",
-    "lat": 50.061657,
-    "lon": 19.93945,
-    "sitelinks": 36,
+    "lat": 50.061667,
+    "lon": 19.939167,
+    "sitelinks": 37,
     "names": {
      "default": "St. Mary's Basilica in Kraków",
+     "fr": "basilique Sainte-Marie de Cracovie",
+     "es": "basílica de Santa María",
      "en": "St. Mary's Basilica in Kraków",
      "fi": "Mariankirkko",
-     "de": "Marienkirche",
-     "fr": "basilique Sainte-Marie de Cracovie",
      "it": "basilica di Santa Maria",
-     "es": "basílica de Santa María"
+     "de": "Marienkirche"
     }
    },
    {
     "id": "Q195311",
-    "lat": 50.060438,
-    "lon": 19.923608,
-    "sitelinks": 29,
+    "lat": 50.060278,
+    "lon": 19.923889,
+    "sitelinks": 31,
     "names": {
      "default": "National Museum in Kraków",
-     "en": "National Museum in Kraków",
-     "fi": "Krakovan kansallismuseo",
      "de": "Nationalmuseum in Krakau",
      "fr": "musée national de Cracovie",
+     "en": "National Museum in Kraków",
      "it": "Museo nazionale di Cracovia",
-     "es": "Museo Nacional de Cracovia"
+     "es": "Museo Nacional de Cracovia",
+     "fi": "Krakovan kansallismuseo"
     }
    },
    {
     "id": "Q1450630",
-    "lat": 50.064814,
-    "lon": 19.94023,
-    "sitelinks": 29,
+    "lat": 50.064641,
+    "lon": 19.939967,
+    "sitelinks": 30,
     "names": {
      "default": "Czartoryski Museum",
-     "en": "Czartoryski Museum",
      "de": "Czartoryski-Museum",
+     "en": "Czartoryski Museum",
+     "es": "Museo Czartoryski",
      "fr": "musée Czartoryski",
-     "it": "Museo Czartoryski",
-     "es": "Museo Czartoryski"
-    }
-   },
-   {
-    "id": "Q286522",
-    "lat": 50.047446,
-    "lon": 19.961702,
-    "sitelinks": 26,
-    "names": {
-     "default": "Oskar Schindler's Enamel Factory",
-     "en": "Oskar Schindler's Enamel Factory",
-     "fi": "Fabryka Schindlera",
-     "de": "Fabryka Emalia Oskara Schindlera",
-     "fr": "Deutsche Emailwarenfabrik",
-     "it": "Fabbrica di Schindler",
-     "es": "Fábrica de Oskar Schindler"
+     "it": "Museo Czartoryski"
     }
    },
    {
     "id": "Q377904",
-    "lat": 50.078848,
-    "lon": 19.990557,
-    "sitelinks": 23,
+    "lat": 50.077667,
+    "lon": 19.992417,
+    "sitelinks": 24,
     "names": {
      "default": "Polish Aviation Museum",
-     "en": "Polish Aviation Museum",
-     "fi": "Puolan ilmailumuseo",
      "de": "Polnisches Luftfahrtmuseum",
+     "en": "Polish Aviation Museum",
+     "es": "Museo Polaco de Aviación",
+     "fi": "Puolan ilmailumuseo",
      "fr": "musée de l'aviation polonaise",
-     "it": "Museo dell'aviazione polacca",
-     "es": "Museo Polaco de Aviación"
+     "it": "Museo dell'aviazione polacca"
+    }
+   },
+   {
+    "id": "Q722446",
+    "lat": 50.03805,
+    "lon": 19.95844,
+    "sitelinks": 23,
+    "names": {
+     "default": "Krakus Mound",
+     "fr": "tumulus de Krakus",
+     "en": "Krakus Mound",
+     "de": "Krak-Hügel",
+     "es": "túmulo de Krakus",
+     "it": "tumulo di Krakus"
+    }
+   }
+  ],
+  "kuala-lumpur": [
+   {
+    "id": "Q917630",
+    "lat": 3.13758,
+    "lon": 101.68739,
+    "sitelinks": 25,
+    "names": {
+     "default": "National Museum of Malaysia",
+     "de": "National Museum",
+     "en": "National Museum of Malaysia",
+     "es": "Museo nacional de Malasia",
+     "fr": "musée national de Malaisie",
+     "it": "Museo nazionale della Malaysia"
+    }
+   },
+   {
+    "id": "Q3043065",
+    "lat": 3.14882,
+    "lon": 101.69367,
+    "sitelinks": 22,
+    "names": {
+     "default": "Independence Square",
+     "fr": "place de l'Indépendance",
+     "en": "Independence Square",
+     "es": "Plaza Merdeka",
+     "de": "Unabhängigkeitsplatz"
+    }
+   },
+   {
+    "id": "Q3330187",
+    "lat": 3.14292,
+    "lon": 101.689,
+    "sitelinks": 21,
+    "names": {
+     "default": "Islamic Arts Museum Malaysia",
+     "fr": "musée des arts islamiques de Malaisie",
+     "en": "Islamic Arts Museum Malaysia",
+     "fi": "Malesian islamilaisen taiteen museo",
+     "it": "Museo d'arte islamica della Malaysia",
+     "de": "Islamic Arts Museum Malaysia"
+    }
+   }
+  ],
+  "kuopio": [],
+  "kyoto": [
+   {
+    "id": "Q1202239",
+    "lat": 35.025278,
+    "lon": 135.762222,
+    "sitelinks": 33,
+    "names": {
+     "default": "Kyoto Imperial Palace",
+     "de": "Kaiserpalast Kyōto",
+     "fr": "palais impérial de Kyoto",
+     "es": "Palacio Imperial de Kioto",
+     "en": "Kyoto Imperial Palace",
+     "it": "Kyōto-gosho",
+     "fi": "Kioton keisarillinen palatsi"
+    }
+   },
+   {
+    "id": "Q1013399",
+    "lat": 35.014167,
+    "lon": 135.7475,
+    "sitelinks": 29,
+    "names": {
+     "default": "Nijō Castle",
+     "fr": "château de Nijō",
+     "en": "Nijō Castle",
+     "it": "Castello Nijō",
+     "de": "Burg Nijō",
+     "es": "Castillo Nijō",
+     "fi": "Nijōn linna"
+    }
+   },
+   {
+    "id": "Q304501",
+    "lat": 35.013611,
+    "lon": 135.742222,
+    "sitelinks": 25,
+    "names": {
+     "default": "Heian Palace",
+     "de": "Heian-Palast",
+     "en": "Heian Palace",
+     "es": "Palacio Heian",
+     "fi": "Heian-palatsi",
+     "fr": "palais Heian"
+    }
+   },
+   {
+    "id": "Q147286",
+    "lat": 34.989993,
+    "lon": 135.773121,
+    "sitelinks": 25,
+    "names": {
+     "default": "Kyoto National Museum",
+     "fr": "musée national de Kyoto",
+     "es": "Museo Nacional de Kioto",
+     "en": "Kyoto National Museum",
+     "it": "Museo Nazionale di Kyoto",
+     "de": "Nationalmuseum Kyōto",
+     "fi": "Kioton kansallismuseo"
+    }
+   },
+   {
+    "id": "Q1201304",
+    "lat": 34.9875,
+    "lon": 135.759167,
+    "sitelinks": 21,
+    "names": {
+     "default": "Kyoto Tower",
+     "de": "Kyōto Tower",
+     "fr": "tour de Kyoto",
+     "es": "Torre de Kioto",
+     "en": "Kyoto Tower",
+     "it": "Kyoto Tower"
+    }
+   }
+  ],
+  "lahti": [],
+  "lappeenranta": [],
+  "las-vegas": [
+   {
+    "id": "Q845846",
+    "lat": 36.14746,
+    "lon": -115.15603,
+    "sitelinks": 32,
+    "names": {
+     "default": "The STRAT Hotel, Casino & SkyPod",
+     "fr": "The STRAT Hotel, Casino & SkyPod",
+     "es": "The STRAT Hotel, Casino & SkyPod",
+     "en": "The STRAT Hotel, Casino & SkyPod",
+     "fi": "Stratosphere Las Vegas",
+     "it": "The STRAT Hotel, Casino & SkyPod",
+     "de": "The STRAT Hotel, Casino & SkyPod"
+    }
+   }
+  ],
+  "leeds": [],
+  "lille": [],
+  "lisbon": [
+   {
+    "id": "Q999002",
+    "lat": 38.7075,
+    "lon": -9.136389,
+    "sitelinks": 32,
+    "names": {
+     "default": "Praça do Comércio",
+     "de": "Praça do Comércio",
+     "en": "Praça do Comércio",
+     "es": "Praça do Comércio",
+     "fr": "praça do Comércio",
+     "it": "Praça do Comércio",
+     "fi": "Praça do Comércio"
+    }
+   },
+   {
+    "id": "Q432290",
+    "lat": 38.70985,
+    "lon": -9.132983,
+    "sitelinks": 32,
+    "names": {
+     "default": "Lisbon Cathedral",
+     "it": "cattedrale di Lisbona",
+     "de": "Kathedrale von Lissabon",
+     "en": "Lisbon Cathedral",
+     "es": "Catedral de Lisboa",
+     "fi": "Lissabonin tuomiokirkko",
+     "fr": "cathédrale Santa Maria Maior de Lisbonne"
+    }
+   },
+   {
+    "id": "Q636780",
+    "lat": 38.71389,
+    "lon": -9.13333,
+    "sitelinks": 31,
+    "names": {
+     "default": "Castle of Saint George",
+     "de": "Castelo de São Jorge",
+     "en": "Castle of Saint George",
+     "es": "Castillo de San Jorge de Lisboa",
+     "fr": "château de Saint-Georges",
+     "it": "castello di São Jorge",
+     "fi": "Castelo de São Jorge"
+    }
+   },
+   {
+    "id": "Q212459",
+    "lat": 38.7053,
+    "lon": -9.16072,
+    "sitelinks": 26,
+    "names": {
+     "default": "National Museum of Ancient Art",
+     "de": "Museu Nacional de Arte Antiga",
+     "en": "National Museum of Ancient Art",
+     "es": "Museo Nacional de Arte Antiguo",
+     "fr": "Musée national d'Art ancien",
+     "it": "Museo nazionale d'arte antica",
+     "fi": "Kansallinen vanhan taiteen museo"
+    }
+   },
+   {
+    "id": "Q211262",
+    "lat": 38.736667,
+    "lon": -9.154167,
+    "sitelinks": 26,
+    "names": {
+     "default": "Calouste Gulbenkian Museum",
+     "fr": "musée Calouste-Gulbenkian",
+     "es": "Museo Calouste Gulbenkian",
+     "en": "Calouste Gulbenkian Museum",
+     "it": "Museo Calouste Gulbenkian",
+     "de": "Museum Calouste Gulbenkian"
+    }
+   },
+   {
+    "id": "Q1601019",
+    "lat": 38.715,
+    "lon": -9.125,
+    "sitelinks": 23,
+    "names": {
+     "default": "Church of Santa Engrácia",
+     "de": "Igreja de Santa Engrácia",
+     "en": "Church of Santa Engrácia",
+     "es": "Igreja de Santa Engrácia",
+     "it": "chiesa di Santa Engrácia",
+     "fr": "Panthéon national"
+    }
+   }
+  ],
+  "liverpool": [
+   {
+    "id": "Q1866506",
+    "lat": 53.39751,
+    "lon": -2.97305,
+    "sitelinks": 28,
+    "names": {
+     "default": "Liverpool Cathedral",
+     "fr": "cathédrale de Liverpool",
+     "en": "Liverpool Cathedral",
+     "de": "Liverpool Cathedral",
+     "it": "cattedrale di Liverpool",
+     "es": "Catedral de Liverpool"
+    }
+   },
+   {
+    "id": "Q1470975",
+    "lat": 53.404722,
+    "lon": -2.968889,
+    "sitelinks": 25,
+    "names": {
+     "default": "Liverpool Metropolitan Cathedral",
+     "fr": "cathédrale métropolitaine du Christ-Roi de Liverpool",
+     "en": "Liverpool Metropolitan Cathedral",
+     "de": "Liverpool Metropolitan Cathedral",
+     "it": "cattedrale metropolitana di Cristo Re",
+     "es": "Catedral Metropolitana de Liverpool"
+    }
+   },
+   {
+    "id": "Q1536471",
+    "lat": 53.410068,
+    "lon": -2.979666,
+    "sitelinks": 22,
+    "names": {
+     "default": "Walker Art Gallery",
+     "de": "Walker Art Gallery",
+     "en": "Walker Art Gallery",
+     "fr": "Walker Art Gallery",
+     "it": "Walker Art Gallery",
+     "es": "Walker Art Gallery"
+    }
+   }
+  ],
+  "ljubljana": [
+   {
+    "id": "Q2075156",
+    "lat": 46.048712,
+    "lon": 14.508635,
+    "sitelinks": 31,
+    "names": {
+     "default": "Ljubljana Castle",
+     "fr": "château de Ljubljana",
+     "es": "Castillo de Liubliana",
+     "en": "Ljubljana Castle",
+     "fi": "Ljubljanan linna",
+     "it": "Castello di Lubiana",
+     "de": "Laibacher Schloss"
+    }
+   },
+   {
+    "id": "Q660029",
+    "lat": 46.051944,
+    "lon": 14.510278,
+    "sitelinks": 25,
+    "names": {
+     "default": "Dragon Bridge",
+     "en": "Dragon Bridge",
+     "es": "puente de los Dragones",
+     "fr": "pont des Dragons",
+     "it": "Ponte dei Draghi",
+     "de": "Drachenbrücke"
+    }
+   },
+   {
+    "id": "Q676315",
+    "lat": 46.051082,
+    "lon": 14.506205,
+    "sitelinks": 24,
+    "names": {
+     "default": "Triple Bridge",
+     "fr": "Tromostovje",
+     "de": "Tromostovje",
+     "en": "Triple Bridge",
+     "fi": "Tromostovje",
+     "it": "Triplo ponte",
+     "es": "puente Triple"
+    }
+   },
+   {
+    "id": "Q1953536",
+    "lat": 46.05396,
+    "lon": 14.50025,
+    "sitelinks": 23,
+    "names": {
+     "default": "National Gallery of Slovenia",
+     "de": "Slowenische Nationalgalerie",
+     "en": "National Gallery of Slovenia",
+     "es": "Galería nacional de Eslovenia",
+     "fr": "Galerie nationale de Slovénie",
+     "it": "Galleria nazionale della Slovenia"
+    }
+   },
+   {
+    "id": "Q3436372",
+    "lat": 46.055,
+    "lon": 14.471667,
+    "sitelinks": 21,
+    "names": {
+     "default": "Ljubljana Zoo",
+     "en": "Ljubljana Zoo",
+     "es": "Zoológico de Liubliana",
+     "fr": "zoo de Ljubljana",
+     "it": "zoo di Lubiana",
+     "de": "Zoo Ljubljana"
+    }
+   }
+  ],
+  "london": [
+   {
+    "id": "Q6373",
+    "lat": 51.519444,
+    "lon": -0.126944,
+    "sitelinks": 109,
+    "names": {
+     "default": "British Museum",
+     "en": "British Museum",
+     "fr": "British Museum",
+     "de": "British Museum",
+     "es": "Museo Británico",
+     "fi": "British Museum",
+     "it": "British Museum"
+    }
+   },
+   {
+    "id": "Q42182",
+    "lat": 51.501,
+    "lon": -0.142,
+    "sitelinks": 95,
+    "names": {
+     "default": "Buckingham Palace",
+     "es": "Palacio de Buckingham",
+     "fi": "Buckinghamin palatsi",
+     "fr": "palais de Buckingham",
+     "it": "Palazzo di Buckingham",
+     "de": "Buckingham Palace",
+     "en": "Buckingham Palace"
+    }
+   },
+   {
+    "id": "Q5933",
+    "lat": 51.4994,
+    "lon": -0.127367,
+    "sitelinks": 91,
+    "names": {
+     "default": "Westminster Abbey",
+     "en": "Westminster Abbey",
+     "de": "Westminsterabtei",
+     "fr": "abbaye de Westminster",
+     "es": "Abadía de Westminster",
+     "fi": "Westminster Abbey",
+     "it": "abbazia di Westminster"
+    }
+   },
+   {
+    "id": "Q62378",
+    "lat": 51.5082,
+    "lon": -0.076198,
+    "sitelinks": 88,
+    "names": {
+     "default": "Tower of London",
+     "es": "Torre de Londres",
+     "fi": "Lontoon Tower",
+     "fr": "tour de Londres",
+     "it": "Torre di Londra",
+     "de": "Tower of London",
+     "en": "Tower of London"
+    }
+   },
+   {
+    "id": "Q83125",
+    "lat": 51.505556,
+    "lon": -0.075278,
+    "sitelinks": 86,
+    "names": {
+     "default": "Tower Bridge",
+     "es": "puente de la Torre",
+     "fi": "Tower Bridge",
+     "fr": "Tower Bridge",
+     "it": "Tower Bridge",
+     "de": "Tower Bridge",
+     "en": "Tower Bridge"
+    }
+   },
+   {
+    "id": "Q130206",
+    "lat": 51.508056,
+    "lon": -0.087778,
+    "sitelinks": 78,
+    "names": {
+     "default": "London Bridge",
+     "en": "London Bridge",
+     "de": "London Bridge",
+     "es": "London Bridge",
+     "fi": "London Bridge",
+     "fr": "pont de Londres",
+     "it": "London Bridge"
+    }
+   }
+  ],
+  "los-angeles": [
+   {
+    "id": "Q1134646",
+    "lat": 34.053274,
+    "lon": -118.250432,
+    "sitelinks": 22,
+    "names": {
+     "default": "Museum of Contemporary Art, Los Angeles",
+     "de": "Museum of Contemporary Art, Los Angeles",
+     "fr": "musée d'art contemporain de Los Angeles",
+     "en": "Museum of Contemporary Art, Los Angeles",
+     "es": "Museo de Arte Contemporáneo, Los Angeles",
+     "it": "Museum of Contemporary Art di Los Angeles"
+    }
+   }
+  ],
+  "luxembourg": [
+   {
+    "id": "Q1348719",
+    "lat": 49.609667,
+    "lon": 6.131556,
+    "sitelinks": 24,
+    "names": {
+     "default": "Notre-Dame Cathedral",
+     "fr": "cathédrale Notre-Dame de Luxembourg",
+     "es": "Catedral de Santa María de Luxemburgo",
+     "en": "Notre-Dame Cathedral",
+     "fi": "Notre Damen katedraali",
+     "it": "cattedrale di Notre-Dame",
+     "de": "Kathedrale unserer lieben Frau"
+    }
+   },
+   {
+    "id": "Q585990",
+    "lat": 49.616389,
+    "lon": 6.138889,
+    "sitelinks": 22,
+    "names": {
+     "default": "Fort Thüngen",
+     "de": "Fort Thüngen",
+     "en": "Fort Thüngen",
+     "fi": "Fort Thüngen",
+     "fr": "Fort Thüngen",
+     "es": "Fort Thüngen"
+    }
+   }
+  ],
+  "lyon": [
+   {
+    "id": "Q511",
+    "lat": 45.766944,
+    "lon": 4.833611,
+    "sitelinks": 28,
+    "names": {
+     "default": "Museum of Fine Arts of Lyon",
+     "en": "Museum of Fine Arts of Lyon",
+     "fr": "musée des Beaux-Arts de Lyon",
+     "de": "Musée des Beaux-Arts de Lyon",
+     "es": "Museo de Bellas Artes de Lyon",
+     "it": "Museo di belle arti di Lione"
+    }
+   },
+   {
+    "id": "Q1516",
+    "lat": 45.762292,
+    "lon": 4.822556,
+    "sitelinks": 25,
+    "names": {
+     "default": "Basilica of Notre-Dame de Fourvière",
+     "fr": "basilique Notre-Dame de Fourvière",
+     "en": "Basilica of Notre-Dame de Fourvière",
+     "de": "Notre-Dame de Fourvière",
+     "es": "basílica Notre-Dame de Fourvière",
+     "it": "basilica di Notre-Dame de Fourvière",
+     "fi": "Basilica Notre Dame de Fourvière"
+    }
+   }
+  ],
+  "madrid": [
+   {
+    "id": "Q160112",
+    "lat": 40.413889,
+    "lon": -3.692222,
+    "sitelinks": 80,
+    "names": {
+     "default": "Museo del Prado",
+     "es": "Museo del Prado",
+     "fi": "Museo del Prado",
+     "fr": "musée du Prado",
+     "it": "Museo del Prado",
+     "de": "Museo del Prado",
+     "en": "Museo del Prado"
+    }
+   },
+   {
+    "id": "Q460889",
+    "lat": 40.408571,
+    "lon": -3.693996,
+    "sitelinks": 46,
+    "names": {
+     "default": "Museo Nacional Centro de Arte Reina Sofía",
+     "fr": "musée national centre d'art Reina Sofía",
+     "es": "Museo Nacional Centro de Arte Reina Sofía",
+     "it": "Museo Nacional Centro de Arte Reina Sofía",
+     "de": "Museo Reina Sofía",
+     "en": "Museo Nacional Centro de Arte Reina Sofía",
+     "fi": "Museo Reina Sofía"
+    }
+   },
+   {
+    "id": "Q171517",
+    "lat": 40.417955,
+    "lon": -3.714312,
+    "sitelinks": 45,
+    "names": {
+     "default": "Royal Palace of Madrid",
+     "fr": "palais royal de Madrid",
+     "es": "Palacio Real de Madrid",
+     "it": "Palazzo reale di Madrid",
+     "de": "Königspalast Madrid",
+     "en": "Royal Palace of Madrid",
+     "fi": "Palacio Real de Madrid"
+    }
+   },
+   {
+    "id": "Q176251",
+    "lat": 40.416041,
+    "lon": -3.694925,
+    "sitelinks": 37,
+    "names": {
+     "default": "Thyssen-Bornemisza Museum",
+     "de": "Museo Thyssen-Bornemisza",
+     "en": "Thyssen-Bornemisza Museum",
+     "es": "Museo Nacional Thyssen-Bornemisza",
+     "fr": "musée Thyssen-Bornemisza",
+     "it": "Museo Thyssen-Bornemisza",
+     "fi": "Museo Thyssen-Bornemisza"
+    }
+   },
+   {
+    "id": "Q1123493",
+    "lat": 40.415456,
+    "lon": -3.707381,
+    "sitelinks": 37,
+    "names": {
+     "default": "Main Square",
+     "fr": "Plaza Mayor de Madrid",
+     "en": "Main Square",
+     "es": "Plaza Mayor de Madrid",
+     "fi": "Plaza Mayor",
+     "it": "plaza Mayor",
+     "de": "Plaza Major"
+    }
+   },
+   {
+    "id": "Q1131807",
+    "lat": 40.415,
+    "lon": -3.683889,
+    "sitelinks": 34,
+    "names": {
+     "default": "El Retiro Park",
+     "fr": "parc du Retiro",
+     "en": "El Retiro Park",
+     "es": "Parque del Retiro",
+     "fi": "Parque del Buen Retiro",
+     "it": "parco del Retiro",
+     "de": "Parque del Retiro"
+    }
+   }
+  ],
+  "malaga": [
+   {
+    "id": "Q1582758",
+    "lat": 36.720042,
+    "lon": -4.42012,
+    "sitelinks": 30,
+    "names": {
+     "default": "Cathedral Basilica of the Virgin of Incarnation",
+     "de": "Iglesia Catedral de la Encarnación",
+     "fr": "Iglesia Catedral de la Encarnación",
+     "en": "Cathedral Basilica of the Virgin of Incarnation",
+     "es": "Iglesia Catedral de la Encarnación",
+     "it": "cattedrale di Málaga"
+    }
+   },
+   {
+    "id": "Q3127243",
+    "lat": 36.721181,
+    "lon": -4.415746,
+    "sitelinks": 24,
+    "names": {
+     "default": "Alcazaba of Málaga",
+     "de": "Alcazaba",
+     "fr": "Alcazaba",
+     "en": "Alcazaba of Málaga",
+     "es": "Alcazaba de Málaga",
+     "it": "Alcazaba di Málaga"
+    }
+   }
+  ],
+  "malmo": [
+   {
+    "id": "Q1810918",
+    "lat": 55.605,
+    "lon": 12.9875,
+    "sitelinks": 24,
+    "names": {
+     "default": "Malmö Castle",
+     "de": "Schloss Malmö",
+     "fr": "château de Malmö",
+     "en": "Malmö Castle",
+     "it": "castello di Malmö",
+     "es": "Castillo de Malmö",
+     "fi": "Malmöhusin linna"
+    }
+   }
+  ],
+  "manchester": [
+   {
+    "id": "Q600367",
+    "lat": 53.477,
+    "lon": -2.23,
+    "sitelinks": 21,
+    "names": {
+     "default": "Manchester Piccadilly station",
+     "fr": "Manchester Piccadilly",
+     "de": "Manchester Piccadilly Station",
+     "en": "Manchester Piccadilly station",
+     "it": "stazione di Manchester Piccadilly",
+     "es": "Estación de Mánchester Piccadilly"
+    }
+   },
+   {
+    "id": "Q1323117",
+    "lat": 53.485833,
+    "lon": -2.242083,
+    "sitelinks": 21,
+    "names": {
+     "default": "English Football Hall of Fame",
+     "fr": "English Football Hall of Fame",
+     "en": "English Football Hall of Fame",
+     "fi": "English Football Hall of Fame",
+     "it": "Hall of Fame del calcio inglese",
+     "de": "English Football Hall of Fame",
+     "es": "Salón de la Fama del fútbol inglés"
+    }
+   },
+   {
+    "id": "Q2638817",
+    "lat": 53.478611,
+    "lon": -2.241389,
+    "sitelinks": 20,
+    "names": {
+     "default": "Manchester Art Gallery",
+     "fr": "Manchester City Art Galleries",
+     "en": "Manchester Art Gallery",
+     "es": "Manchester Art Gallery",
+     "de": "Manchester Art Gallery",
+     "it": "Manchester Art Gallery"
+    }
+   }
+  ],
+  "marseille": [
+   {
+    "id": "Q622500",
+    "lat": 43.279861,
+    "lon": 5.325139,
+    "sitelinks": 40,
+    "names": {
+     "default": "Château d'If",
+     "fr": "château d'If",
+     "es": "Castillo de If",
+     "it": "Castello d'If",
+     "de": "Château d’If",
+     "en": "Château d'If",
+     "fi": "Ifin linna"
+    }
+   },
+   {
+    "id": "Q975925",
+    "lat": 43.28395,
+    "lon": 5.371232,
+    "sitelinks": 29,
+    "names": {
+     "default": "Notre-Dame de la Garde",
+     "es": "Notre-Dame de la Garde",
+     "de": "Notre-Dame de la Garde",
+     "en": "Notre-Dame de la Garde",
+     "fi": "Notre-Dame de la Garde",
+     "fr": "basilique Notre-Dame-de-la-Garde",
+     "it": "Notre-Dame-de-la-Garde"
+    }
+   },
+   {
+    "id": "Q1419757",
+    "lat": 43.299804,
+    "lon": 5.364925,
+    "sitelinks": 25,
+    "names": {
+     "default": "Marseille Cathedral",
+     "fr": "cathédrale Sainte-Marie-Majeure",
+     "es": "Catedral de Marsella",
+     "en": "Marseille Cathedral",
+     "fi": "Marseillen katedraali",
+     "it": "cattedrale di Marsiglia",
+     "de": "Kathedrale von Marseille"
+    }
+   },
+   {
+    "id": "Q2808698",
+    "lat": 43.296937,
+    "lon": 5.361139,
+    "sitelinks": 23,
+    "names": {
+     "default": "Museum of European and Mediterranean Civilisations",
+     "fr": "musée des civilisations de l'Europe et de la Méditerranée",
+     "en": "Museum of European and Mediterranean Civilisations",
+     "de": "Museum der Zivilisationen Europas und des Mittelmeers",
+     "fi": "MuCEM",
+     "it": "Museo delle Civiltà dell'Europa e del Mediterraneo",
+     "es": "Museo de las civilizaciones de Europa y del Mediterráneo"
+    }
+   }
+  ],
+  "melbourne": [
+   {
+    "id": "Q1464509",
+    "lat": -37.8225,
+    "lon": 144.968889,
+    "sitelinks": 31,
+    "names": {
+     "default": "National Gallery of Victoria",
+     "fr": "musée national du Victoria",
+     "en": "National Gallery of Victoria",
+     "es": "Galería Nacional de Victoria",
+     "it": "National Gallery of Victoria",
+     "de": "National Gallery of Victoria"
+    }
+   },
+   {
+    "id": "Q1138670",
+    "lat": -37.8101,
+    "lon": 144.976,
+    "sitelinks": 21,
+    "names": {
+     "default": "St Patrick's Cathedral",
+     "fr": "cathédrale Saint-Patrick",
+     "es": "Catedral de San Patricio de Melbourne",
+     "en": "St Patrick's Cathedral",
+     "fi": "Pyhän Patrickin katedraali",
+     "de": "St. Patrick’s Cathedral",
+     "it": "cattedrale di San Patrizio"
+    }
+   },
+   {
+    "id": "Q1353869",
+    "lat": -37.803337,
+    "lon": 144.971445,
+    "sitelinks": 20,
+    "names": {
+     "default": "Melbourne Museum",
+     "de": "Melbourne Museum",
+     "fr": "musée de Melbourne",
+     "en": "Melbourne Museum",
+     "fi": "Melbournen museo"
+    }
+   },
+   {
+    "id": "Q578027",
+    "lat": -37.784762,
+    "lon": 144.952095,
+    "sitelinks": 20,
+    "names": {
+     "default": "Melbourne Zoo",
+     "en": "Melbourne Zoo",
+     "fi": "Melbournen eläintarha",
+     "fr": "jardin zoologique royal de Melbourne",
+     "it": "zoo di Melbourne",
+     "de": "Melbourne Zoo"
+    }
+   }
+  ],
+  "mexico-city": [
+   {
+    "id": "Q610961",
+    "lat": 19.434394,
+    "lon": -99.133082,
+    "sitelinks": 61,
+    "names": {
+     "default": "Mexico City Metropolitan Cathedral",
+     "fr": "cathédrale Métropolitaine de Mexico",
+     "de": "Kathedrale von Mexiko-Stadt",
+     "en": "Mexico City Metropolitan Cathedral",
+     "es": "Catedral Metropolitana de la Ciudad de México",
+     "it": "cattedrale di Città del Messico",
+     "fi": "Catedral Metropolitana de la Asunción de María"
+    }
+   },
+   {
+    "id": "Q928541",
+    "lat": 19.427,
+    "lon": -99.16771,
+    "sitelinks": 25,
+    "names": {
+     "default": "Angel of Independence",
+     "es": "Monumento a la Independencia",
+     "de": "El Ángel de la Independencia",
+     "en": "Angel of Independence",
+     "fi": "El Ángel de la Independencia",
+     "fr": "Ángel de la Independencia",
+     "it": "Colonna dell'indipendenza"
+    }
+   },
+   {
+    "id": "Q1389520",
+    "lat": 19.436179,
+    "lon": -99.154629,
+    "sitelinks": 20,
+    "names": {
+     "default": "Monumento a la Revolución",
+     "de": "Monumento a la Revolución",
+     "en": "Monumento a la Revolución",
+     "es": "Monumento a la Revolución",
+     "fr": "monument à la Révolution"
+    }
+   }
+  ],
+  "miami": [],
+  "milan": [
+   {
+    "id": "Q18068",
+    "lat": 45.463968,
+    "lon": 9.190578,
+    "sitelinks": 78,
+    "names": {
+     "default": "Milan Cathedral",
+     "de": "Mailänder Dom",
+     "es": "Catedral de Milán",
+     "fi": "Duomo di Milano",
+     "fr": "dôme de Milan",
+     "it": "Duomo di Milano",
+     "en": "Milan Cathedral"
+    }
+   },
+   {
+    "id": "Q244952",
+    "lat": 45.465833,
+    "lon": 9.171111,
+    "sitelinks": 54,
+    "names": {
+     "default": "Santa Maria delle Grazie",
+     "fr": "église Santa Maria delle Grazie de Milan",
+     "es": "Santa Maria delle Grazie",
+     "de": "Santa Maria delle Grazie",
+     "en": "Santa Maria delle Grazie",
+     "fi": "Santa Maria delle Grazie",
+     "it": "chiesa di Santa Maria delle Grazie"
+    }
+   },
+   {
+    "id": "Q23354",
+    "lat": 45.471005,
+    "lon": 9.179693,
+    "sitelinks": 44,
+    "names": {
+     "default": "Sforza Castle",
+     "fr": "château des Sforza",
+     "de": "Castello Sforzesco",
+     "en": "Sforza Castle",
+     "es": "Castillo Sforzesco",
+     "fi": "Castello Sforzesco",
+     "it": "Castello Sforzesco"
+    }
+   },
+   {
+    "id": "Q150066",
+    "lat": 45.471955,
+    "lon": 9.187815,
+    "sitelinks": 37,
+    "names": {
+     "default": "Pinacoteca di Brera",
+     "fr": "pinacothèque de Brera",
+     "en": "Pinacoteca di Brera",
+     "es": "Pinacoteca de Brera",
+     "it": "Pinacoteca di Brera",
+     "de": "Pinacoteca di Brera"
+    }
+   },
+   {
+    "id": "Q1071570",
+    "lat": 45.4625,
+    "lon": 9.175833,
+    "sitelinks": 25,
+    "names": {
+     "default": "Basilica of Sant'Ambrogio",
+     "de": "Sant’Ambrogio",
+     "fr": "basilique Saint-Ambroise",
+     "es": "basílica de san Ambrosio",
+     "en": "Basilica of Sant'Ambrogio",
+     "it": "basilica di Sant'Ambrogio"
+    }
+   },
+   {
+    "id": "Q525297",
+    "lat": 45.486231,
+    "lon": 9.216767,
+    "sitelinks": 25,
+    "names": {
+     "default": "Piazzale Loreto",
+     "de": "Piazzale Loreto",
+     "en": "Piazzale Loreto",
+     "es": "Plaza de Loreto",
+     "it": "piazzale Loreto",
+     "fr": "Piazzale Loreto",
+     "fi": "Piazzale Loreto"
+    }
+   }
+  ],
+  "minneapolis": [
+   {
+    "id": "Q1700481",
+    "lat": 44.958611,
+    "lon": -93.274167,
+    "sitelinks": 23,
+    "names": {
+     "default": "Minneapolis Institute of Art",
+     "de": "Minneapolis Institute of Art",
+     "en": "Minneapolis Institute of Art",
+     "es": "Instituto de Arte de Mineápolis",
+     "fr": "Minneapolis Institute of Art",
+     "it": "Minneapolis Institute of Art",
+     "fi": "Minneapolis Institute of Art"
+    }
+   }
+  ],
+  "montpellier": [
+   {
+    "id": "Q1519002",
+    "lat": 43.611736,
+    "lon": 3.880192,
+    "sitelinks": 26,
+    "names": {
+     "default": "Musée Fabre",
+     "de": "Musée Fabre",
+     "fr": "musée Fabre",
+     "es": "Museo Fabre",
+     "en": "Musée Fabre",
+     "fi": "Musée Fabre",
+     "it": "Museo Fabre"
+    }
+   }
+  ],
+  "montreal": [
+   {
+    "id": "Q887686",
+    "lat": 45.504444,
+    "lon": -73.556111,
+    "sitelinks": 26,
+    "names": {
+     "default": "Notre-Dame Basilica",
+     "fr": "basilique Notre-Dame de Montréal",
+     "es": "basílica Notre-Dame de Montreal",
+     "en": "Notre-Dame Basilica",
+     "fi": "Notre-Dame de Montréal",
+     "it": "basilica di Notre-Dame di Montréal",
+     "de": "Notre-Dame de Montréal"
+    }
+   },
+   {
+    "id": "Q860812",
+    "lat": 45.49915,
+    "lon": -73.579757,
+    "sitelinks": 24,
+    "names": {
+     "default": "Montreal Museum of Fine Arts",
+     "de": "Musée des beaux-arts de Montréal",
+     "fr": "Musée des beaux-arts de Montréal",
+     "en": "Montreal Museum of Fine Arts",
+     "es": "Museo de bellas artes de Montreal",
+     "it": "Museo delle belle arti di Montréal"
+    }
+   }
+  ],
+  "munich": [
+   {
+    "id": "Q131617",
+    "lat": 48.13,
+    "lon": 11.583333,
+    "sitelinks": 55,
+    "names": {
+     "default": "Deutsches Museum",
+     "fr": "Deutsches Museum",
+     "es": "Deutsches Museum",
+     "it": "Deutsches Museum",
+     "de": "Deutsches Museum",
+     "en": "Deutsches Museum",
+     "fi": "Deutsches Museum"
+    }
+   },
+   {
+    "id": "Q154568",
+    "lat": 48.148291,
+    "lon": 11.569985,
+    "sitelinks": 47,
+    "names": {
+     "default": "Alte Pinakothek",
+     "fr": "Alte Pinakothek",
+     "es": "Pinacoteca Antigua de Múnich",
+     "it": "Alte Pinakothek",
+     "de": "Alte Pinakothek",
+     "en": "Alte Pinakothek",
+     "fi": "Alte Pinakothek"
+    }
+   },
+   {
+    "id": "Q167193",
+    "lat": 48.138579,
+    "lon": 11.573616,
+    "sitelinks": 44,
+    "names": {
+     "default": "Frauenkirche",
+     "fr": "cathédrale Notre-Dame de Munich",
+     "es": "Catedral de Nuestra Señora de Múnich",
+     "en": "Frauenkirche",
+     "fi": "Frauenkirche",
+     "it": "Frauenkirche",
+     "de": "Frauenkirche, München"
+    }
+   },
+   {
+    "id": "Q162077",
+    "lat": 48.146566,
+    "lon": 11.56582,
+    "sitelinks": 40,
+    "names": {
+     "default": "Glyptothek",
+     "fr": "Glyptothèque de Munich",
+     "en": "Glyptothek",
+     "es": "Gliptoteca de Múnich",
+     "it": "Gliptoteca",
+     "de": "Glyptothek"
+    }
+   },
+   {
+    "id": "Q686548",
+    "lat": 48.141049,
+    "lon": 11.578714,
+    "sitelinks": 30,
+    "names": {
+     "default": "Munich Residence",
+     "fr": "résidence de Munich",
+     "en": "Munich Residence",
+     "es": "Residencia de Múnich",
+     "it": "Residenza di Monaco di Baviera",
+     "de": "Residenz München",
+     "fi": "Residenz-palatsi"
+    }
+   },
+   {
+    "id": "Q703212",
+    "lat": 48.17667,
+    "lon": 11.55917,
+    "sitelinks": 27,
+    "names": {
+     "default": "BMW Museum",
+     "de": "BMW-Museum",
+     "fr": "musée BMW",
+     "en": "BMW Museum",
+     "es": "Museo BMW",
+     "it": "Museo BMW"
+    }
+   }
+  ],
+  "nagoya": [
+   {
+    "id": "Q648629",
+    "lat": 35.185556,
+    "lon": 136.898611,
+    "sitelinks": 40,
+    "names": {
+     "default": "Nagoya Castle",
+     "fr": "château de Nagoya",
+     "es": "Castillo Nagoya",
+     "de": "Burg Nagoya",
+     "en": "Nagoya Castle",
+     "fi": "Nagoyan linna",
+     "it": "Castello di Nagoya"
+    }
+   }
+  ],
+  "nantes": [
+   {
+    "id": "Q1423005",
+    "lat": 47.21843,
+    "lon": -1.55017,
+    "sitelinks": 36,
+    "names": {
+     "default": "Nantes Cathedral",
+     "fr": "cathédrale Saint-Pierre-et-Saint-Paul",
+     "es": "Catedral de Nantes",
+     "en": "Nantes Cathedral",
+     "it": "cattedrale di Nantes",
+     "de": "Kathedrale von Nantes",
+     "fi": "Nantesin katedraali"
+    }
+   }
+  ],
+  "naples": [
+   {
+    "id": "Q637248",
+    "lat": 40.853611,
+    "lon": 14.250556,
+    "sitelinks": 39,
+    "names": {
+     "default": "Naples National Archaeological Museum",
+     "en": "Naples National Archaeological Museum",
+     "de": "Archäologisches Nationalmuseum Neapel",
+     "it": "Museo archeologico nazionale di Napoli",
+     "fr": "musée archéologique national de Naples",
+     "fi": "Napolin arkeologinen museo",
+     "es": "Museo Arqueológico Nacional de Nápoles"
+    }
+   },
+   {
+    "id": "Q290549",
+    "lat": 40.86699,
+    "lon": 14.250346,
+    "sitelinks": 35,
+    "names": {
+     "default": "Museo di Capodimonte",
+     "de": "Museo Nazionale di Capodimonte",
+     "en": "Museo di Capodimonte",
+     "es": "Museo Nacional de Capodimonte",
+     "fr": "musée de Capodimonte",
+     "it": "Museo nazionale di Capodimonte",
+     "fi": "Capodimonten museo"
+    }
+   },
+   {
+    "id": "Q781219",
+    "lat": 40.838376,
+    "lon": 14.253807,
+    "sitelinks": 35,
+    "names": {
+     "default": "Castel Nuovo",
+     "de": "Castel Nuovo",
+     "en": "Castel Nuovo",
+     "es": "Castel Nuovo",
+     "fr": "Castel Nuovo",
+     "it": "Maschio Angioino"
+    }
+   },
+   {
+    "id": "Q256486",
+    "lat": 40.852606,
+    "lon": 14.259528,
+    "sitelinks": 32,
+    "names": {
+     "default": "Naples Cathedral",
+     "de": "Kathedrale von Neapel",
+     "en": "Naples Cathedral",
+     "es": "Catedral de Nápoles",
+     "fi": "Napolin tuomiokirkko",
+     "fr": "cathédrale Notre-Dame-de-l'Assomption de Naples",
+     "it": "cattedrale di Napoli"
+    }
+   },
+   {
+    "id": "Q426339",
+    "lat": 40.836136,
+    "lon": 14.249283,
+    "sitelinks": 30,
+    "names": {
+     "default": "Royal Palace of Naples",
+     "en": "Royal Palace of Naples",
+     "es": "Palacio Real de Nápoles",
+     "fr": "palais royal de Naples",
+     "it": "Palazzo Reale",
+     "de": "Königlicher Palast in Neapel"
+    }
+   },
+   {
+    "id": "Q645041",
+    "lat": 40.828315,
+    "lon": 14.247656,
+    "sitelinks": 28,
+    "names": {
+     "default": "Castel dell'Ovo",
+     "de": "Castel dell’Ovo",
+     "en": "Castel dell'Ovo",
+     "es": "Castel dell'Ovo",
+     "fr": "Castello dell’ovo",
+     "it": "Castel dell'ovo"
+    }
+   }
+  ],
+  "nashville": [
+   {
+    "id": "Q680685",
+    "lat": 36.158333,
+    "lon": -86.776111,
+    "sitelinks": 25,
+    "names": {
+     "default": "Country Music Hall of Fame and Museum",
+     "it": "Country Music Hall of Fame",
+     "de": "Country Music Hall of Fame",
+     "en": "Country Music Hall of Fame and Museum",
+     "es": "Museo y Salón de la Fama del Country",
+     "fr": "Country Music Hall of Fame",
+     "fi": "Country Music Hall of Fame"
+    }
+   },
+   {
+    "id": "Q1467467",
+    "lat": 36.1496,
+    "lon": -86.8135,
+    "sitelinks": 20,
+    "names": {
+     "default": "Parthenon",
+     "fr": "Parthénon de Nashville",
+     "es": "Partenón",
+     "en": "Parthenon",
+     "fi": "Parthenon",
+     "it": "Partenone",
+     "de": "Parthenon"
+    }
+   }
+  ],
+  "new-orleans": [],
+  "new-york": [
+   {
+    "id": "Q9202",
+    "lat": 40.689209,
+    "lon": -74.044425,
+    "sitelinks": 157,
+    "names": {
+     "default": "Statue of Liberty",
+     "en": "Statue of Liberty",
+     "fr": "statue de la Liberté",
+     "it": "Statua della Libertà",
+     "de": "Freiheitsstatue",
+     "es": "Estatua de la Libertad",
+     "fi": "Vapaudenpatsas"
+    }
+   },
+   {
+    "id": "Q125006",
+    "lat": 40.705667,
+    "lon": -73.996333,
+    "sitelinks": 84,
+    "names": {
+     "default": "Brooklyn Bridge",
+     "en": "Brooklyn Bridge",
+     "de": "Brooklyn Bridge",
+     "es": "Puente de Brooklyn",
+     "fi": "Brooklynin silta",
+     "fr": "pont de Brooklyn",
+     "it": "ponte di Brooklyn"
+    }
+   },
+   {
+    "id": "Q1136137",
+    "lat": 40.711389,
+    "lon": -74.013611,
+    "sitelinks": 35,
+    "names": {
+     "default": "National September 11 Memorial & Museum",
+     "fr": "mémorial du 11-Septembre",
+     "es": "National September 11 Memorial & Museum",
+     "en": "National September 11 Memorial & Museum",
+     "fi": "National September 11 Memorial & Museum",
+     "it": "National September 11 Memorial & Museum",
+     "de": "National September 11 Memorial and Museum"
+    }
+   },
+   {
+    "id": "Q866896",
+    "lat": 40.70801,
+    "lon": -74.01221,
+    "sitelinks": 31,
+    "names": {
+     "default": "Trinity Church",
+     "fr": "église de la Trinité",
+     "en": "Trinity Church",
+     "es": "iglesia de la Trinidad",
+     "it": "Trinity Church",
+     "de": "Trinity Church",
+     "fi": "Trinity Church"
+    }
+   },
+   {
+    "id": "Q110000",
+    "lat": 40.742222,
+    "lon": -73.988056,
+    "sitelinks": 31,
+    "names": {
+     "default": "Madison Square and Madison Square Park",
+     "en": "Madison Square and Madison Square Park",
+     "de": "Madison Square",
+     "fi": "Madison Square",
+     "fr": "Madison Square",
+     "es": "Madison Square"
+    }
+   },
+   {
+    "id": "Q639791",
+    "lat": 40.7396,
+    "lon": -74.0089,
+    "sitelinks": 30,
+    "names": {
+     "default": "Whitney Museum of American Art",
+     "it": "Whitney Museum of American Art",
+     "de": "Whitney Museum of American Art",
+     "en": "Whitney Museum of American Art",
+     "es": "Museo Whitney de Arte Estadounidense",
+     "fi": "Whitney Museum of American Art",
+     "fr": "Whitney Museum of American Art"
+    }
+   }
+  ],
+  "nice": [],
+  "osaka": [
+   {
+    "id": "Q321242",
+    "lat": 34.687222,
+    "lon": 135.525833,
+    "sitelinks": 51,
+    "names": {
+     "default": "Osaka Castle",
+     "fr": "château d'Osaka",
+     "es": "Castillo Osaka",
+     "it": "Castello di Osaka",
+     "de": "Burg Ōsaka",
+     "en": "Osaka Castle",
+     "fi": "Osakan linna"
+    }
+   },
+   {
+    "id": "Q1148463",
+    "lat": 34.652222,
+    "lon": 135.506111,
+    "sitelinks": 23,
+    "names": {
+     "default": "Tsūtenkaku",
+     "fr": "Tsūtenkaku",
+     "en": "Tsūtenkaku",
+     "es": "Tsūtenkaku",
+     "fi": "Tsūtenkaku",
+     "it": "Tsūtenkaku",
+     "de": "Tsūtenkaku"
+    }
+   }
+  ],
+  "oslo": [
+   {
+    "id": "Q844926",
+    "lat": 59.90575,
+    "lon": 10.755306,
+    "sitelinks": 38,
+    "names": {
+     "default": "Munch Museum",
+     "fr": "musée Munch",
+     "en": "Munch Museum",
+     "es": "Museo Munch",
+     "fi": "Munch-museo",
+     "it": "Museo Munch",
+     "de": "Munch-Museum Oslo"
+    }
+   },
+   {
+    "id": "Q644464",
+    "lat": 59.906606,
+    "lon": 10.736248,
+    "sitelinks": 37,
+    "names": {
+     "default": "Akershus Fortress",
+     "fr": "citadelle d'Akershus",
+     "es": "Fortaleza de Akershus",
+     "it": "Fortezza di Akershus",
+     "de": "Festung Akershus",
+     "en": "Akershus Fortress",
+     "fi": "Akershusin linna"
+    }
+   },
+   {
+    "id": "Q1063209",
+    "lat": 59.912319,
+    "lon": 10.746958,
+    "sitelinks": 33,
+    "names": {
+     "default": "Oslo Cathedral",
+     "de": "Osloer Dom",
+     "en": "Oslo Cathedral",
+     "es": "Catedral del Salvador de Oslo",
+     "fi": "Oslon tuomiokirkko",
+     "fr": "cathédrale d'Oslo",
+     "it": "cattedrale di Oslo"
+    }
+   },
+   {
+    "id": "Q863932",
+    "lat": 59.917222,
+    "lon": 10.7275,
+    "sitelinks": 32,
+    "names": {
+     "default": "Royal Palace, Oslo",
+     "fr": "palais royal d'Oslo",
+     "es": "Palacio Real de Oslo",
+     "en": "Royal Palace, Oslo",
+     "fi": "Oslon kuninkaallinen linna",
+     "it": "Palazzo reale di Oslo",
+     "de": "Königliches Schloss Oslo"
+    }
+   },
+   {
+    "id": "Q7460945",
+    "lat": 59.927667,
+    "lon": 10.698889,
+    "sitelinks": 28,
+    "names": {
+     "default": "Vigeland installation",
+     "en": "Vigeland installation",
+     "it": "Installazione Vigeland",
+     "fr": "Installation Vigeland",
+     "es": "Instalación de Vigeland",
+     "fi": "Vigelandin puisto",
+     "de": "Vigelandsanlegget"
+    }
+   },
+   {
+    "id": "Q1132918",
+    "lat": 59.911667,
+    "lon": 10.729167,
+    "sitelinks": 27,
+    "names": {
+     "default": "National Museum of Art, Architecture and Design",
+     "fr": "Musée national de Norvège",
+     "es": "Museo Nacional de Arte, Arquitectura y Diseño",
+     "en": "National Museum of Art, Architecture and Design",
+     "fi": "Nasjonalmuseet for kunst, arkitektur og design",
+     "it": "Museo nazionale d'arte, architettura e disegno",
+     "de": "Nationalmuseum Oslo"
+    }
+   }
+  ],
+  "ottawa": [
+   {
+    "id": "Q1068063",
+    "lat": 45.429535,
+    "lon": -75.698906,
+    "sitelinks": 33,
+    "names": {
+     "default": "National Gallery of Canada",
+     "fr": "Musée des beaux-arts du Canada",
+     "es": "Galería Nacional de Canadá",
+     "en": "National Gallery of Canada",
+     "it": "National Gallery of Canada",
+     "de": "National Gallery of Canada",
+     "fi": "National Gallery of Canada"
+    }
+   },
+   {
+    "id": "Q1032269",
+    "lat": 45.429722,
+    "lon": -75.708889,
+    "sitelinks": 23,
+    "names": {
+     "default": "Canadian Museum of History",
+     "fr": "Musée canadien de l’histoire",
+     "en": "Canadian Museum of History",
+     "de": "Kanadas Nationalmuseum für Geschichte und Gesellschaft",
+     "it": "Canadian Museum of History",
+     "es": "Canadian Museum of History"
+    }
+   },
+   {
+    "id": "Q1032232",
+    "lat": 45.412778,
+    "lon": -75.688889,
+    "sitelinks": 20,
+    "names": {
+     "default": "Canadian Museum of Nature",
+     "fr": "musée canadien de la nature",
+     "en": "Canadian Museum of Nature",
+     "de": "Kanadisches Naturkundemuseum",
+     "es": "Museo Canadiense de la Naturaleza"
+    }
+   }
+  ],
+  "oulu": [],
+  "oxford": [
+   {
+    "id": "Q636400",
+    "lat": 51.75556,
+    "lon": -1.26056,
+    "sitelinks": 46,
+    "names": {
+     "default": "Ashmolean Museum",
+     "de": "Ashmolean Museum",
+     "en": "Ashmolean Museum",
+     "es": "museo Ashmolean",
+     "fi": "Ashmolean Museum",
+     "fr": "Ashmolean Museum",
+     "it": "Ashmolean Museum"
+    }
+   },
+   {
+    "id": "Q1760005",
+    "lat": 51.759028,
+    "lon": -1.256416,
+    "sitelinks": 25,
+    "names": {
+     "default": "Oxford University Museum of Natural History",
+     "de": "Oxford University Museum of Natural History",
+     "fr": "musée d'histoire naturelle de l'Université d'Oxford",
+     "es": "Museo de Historia Natural de la Universidad de Oxford",
+     "en": "Oxford University Museum of Natural History",
+     "it": "Museo di Storia naturale dell'Università di Oxford"
+    }
+   },
+   {
+    "id": "Q1736208",
+    "lat": 51.75,
+    "lon": -1.254722,
+    "sitelinks": 23,
+    "names": {
+     "default": "Christ Church Cathedral, Oxford",
+     "fr": "cathédrale Christ Church d'Oxford",
+     "en": "Christ Church Cathedral, Oxford",
+     "fi": "Oxfordin tuomiokirkko",
+     "de": "Kathedrale von Oxford",
+     "it": "cattedrale di Cristo",
+     "es": "catedral de Oxford"
     }
    }
   ],
   "paris": [
    {
     "id": "Q243",
-    "lat": 48.85826,
-    "lon": 2.294501,
-    "sitelinks": 177,
+    "lat": 48.858296,
+    "lon": 2.294479,
+    "sitelinks": 191,
     "names": {
      "default": "Eiffel Tower",
-     "en": "Eiffel Tower",
-     "fi": "Eiffel-torni",
-     "de": "Eiffelturm",
-     "fr": "tour Eiffel",
      "it": "torre Eiffel",
-     "es": "torre Eiffel"
+     "fi": "Eiffel-torni",
+     "fr": "tour Eiffel",
+     "es": "torre Eiffel",
+     "de": "Eiffelturm",
+     "en": "Eiffel Tower"
     }
    },
    {
     "id": "Q19675",
-    "lat": 48.861147,
-    "lon": 2.335864,
-    "sitelinks": 158,
+    "lat": 48.861111,
+    "lon": 2.335833,
+    "sitelinks": 169,
     "names": {
      "default": "Louvre Museum",
-     "en": "Louvre Museum",
+     "es": "Museo del Louvre",
      "fi": "Louvre",
-     "de": "Louvre",
-     "fr": "Musée du Louvre",
      "it": "Museo del Louvre",
-     "es": "Museo del Louvre"
-    }
-   },
-   {
-    "id": "Q23402",
-    "lat": 48.859919,
-    "lon": 2.326526,
-    "sitelinks": 120,
-    "names": {
-     "default": "Musée d'Orsay",
-     "en": "Musée d'Orsay",
-     "fi": "Musée d’Orsay",
-     "de": "Musée d’Orsay",
-     "fr": "musée d'Orsay",
-     "it": "Museo d'Orsay",
-     "es": "Museo de Orsay"
+     "fr": "Musée du Louvre",
+     "de": "Louvre",
+     "en": "Louvre Museum"
     }
    },
    {
     "id": "Q2981",
-    "lat": 48.852937,
-    "lon": 2.34987,
-    "sitelinks": 116,
+    "lat": 48.853,
+    "lon": 2.3498,
+    "sitelinks": 125,
     "names": {
      "default": "Notre-Dame de Paris",
-     "en": "Notre-Dame de Paris",
-     "fi": "Notre Dame",
-     "de": "Notre-Dame de Paris",
      "fr": "cathédrale Notre-Dame de Paris",
-     "it": "Notre-Dame di Parigi",
-     "es": "Catedral de Notre-Dame de París"
+     "en": "Notre-Dame de Paris",
+     "de": "Notre-Dame de Paris",
+     "es": "Catedral de Notre-Dame de París",
+     "fi": "Notre Dame",
+     "it": "Notre-Dame di Parigi"
     }
    },
    {
-    "id": "Q550",
-    "lat": 48.870757,
-    "lon": 2.305331,
-    "sitelinks": 88,
+    "id": "Q23402",
+    "lat": 48.859972,
+    "lon": 2.326527,
+    "sitelinks": 122,
     "names": {
-     "default": "avenue des Champs-Élysées",
-     "en": "avenue des Champs-Élysées",
-     "fi": "Avenue des Champs-Élysées",
-     "de": "Avenue des Champs-Élysées",
-     "fr": "avenue des Champs-Élysées",
-     "it": "Champs-Élysées",
-     "es": "Avenida de los Campos Elíseos"
+     "default": "Musée d'Orsay",
+     "es": "Museo de Orsay",
+     "fi": "Musée d’Orsay",
+     "it": "Museo d'Orsay",
+     "fr": "musée d'Orsay",
+     "de": "Musée d’Orsay",
+     "en": "Musée d'Orsay"
     }
    },
    {
     "id": "Q1865480",
-    "lat": 48.852699,
-    "lon": 2.368777,
-    "sitelinks": 84,
+    "lat": 48.853333,
+    "lon": 2.369167,
+    "sitelinks": 86,
     "names": {
      "default": "Bastille",
-     "en": "Bastille",
-     "fi": "Bastilji",
-     "de": "Bastille",
-     "fr": "Bastille",
      "it": "Bastiglia",
-     "es": "Bastilla"
+     "de": "Bastille",
+     "en": "Bastille",
+     "es": "Bastilla",
+     "fi": "Bastilji",
+     "fr": "Bastille"
+    }
+   },
+   {
+    "id": "Q64436",
+    "lat": 48.87378,
+    "lon": 2.29504,
+    "sitelinks": 85,
+    "names": {
+     "default": "Arc de Triomphe",
+     "es": "Arco de Triunfo de París",
+     "fi": "Riemukaari",
+     "fr": "arc de triomphe de l'Étoile",
+     "it": "Arco di Trionfo",
+     "de": "Triumphbogen",
+     "en": "Arc de Triomphe"
+    }
+   }
+  ],
+  "perth": [],
+  "philadelphia": [
+   {
+    "id": "Q390028",
+    "lat": 39.948889,
+    "lon": -75.15,
+    "sitelinks": 47,
+    "names": {
+     "default": "Independence Hall",
+     "fr": "Independence Hall",
+     "es": "Independence Hall",
+     "it": "Independence Hall",
+     "de": "Independence Hall",
+     "en": "Independence Hall",
+     "fi": "Independence Hall"
+    }
+   },
+   {
+    "id": "Q510324",
+    "lat": 39.965833,
+    "lon": -75.181389,
+    "sitelinks": 36,
+    "names": {
+     "default": "Philadelphia Museum of Art",
+     "fr": "Philadelphia Museum of Art",
+     "de": "Philadelphia Museum of Art",
+     "es": "Museo de Arte de Filadelfia",
+     "fi": "Philadelphian taidemuseo",
+     "it": "Philadelphia Museum of Art",
+     "en": "Philadelphia Museum of Art"
+    }
+   },
+   {
+    "id": "Q507603",
+    "lat": 39.939167,
+    "lon": -75.132778,
+    "sitelinks": 31,
+    "names": {
+     "default": "USS New Jersey",
+     "de": "USS New Jersey",
+     "en": "USS New Jersey",
+     "es": "USS New Jersey",
+     "fi": "USS New Jersey",
+     "fr": "USS New Jersey",
+     "it": "USS New Jersey"
+    }
+   },
+   {
+    "id": "Q1952033",
+    "lat": 39.955683,
+    "lon": -75.163217,
+    "sitelinks": 21,
+    "names": {
+     "default": "Pennsylvania Academy of the Fine Arts",
+     "de": "Pennsylvania Academy of the Fine Arts",
+     "en": "Pennsylvania Academy of the Fine Arts",
+     "fi": "Pennsylvanian kuvataideakatemia",
+     "fr": "Pennsylvania Academy of the Fine Arts",
+     "it": "Pennsylvania Academy of the Fine Arts",
+     "es": "Academia de Bellas Artes de Pensilvania"
+    }
+   },
+   {
+    "id": "Q339484",
+    "lat": 39.958056,
+    "lon": -75.173611,
+    "sitelinks": 20,
+    "names": {
+     "default": "Franklin Institute",
+     "de": "Franklin Institute",
+     "en": "Franklin Institute",
+     "fr": "Franklin Institute",
+     "fi": "Franklin-instituutti",
+     "it": "Franklin Institute",
+     "es": "Franklin Institute"
+    }
+   }
+  ],
+  "phoenix": [],
+  "pittsburgh": [
+   {
+    "id": "Q1043983",
+    "lat": 40.443611,
+    "lon": -79.95,
+    "sitelinks": 22,
+    "names": {
+     "default": "Carnegie Museum of Natural History",
+     "fr": "musée Carnegie d'histoire naturelle",
+     "en": "Carnegie Museum of Natural History",
+     "de": "Carnegie Museum of Natural History",
+     "it": "Carnegie Natural History Museum",
+     "es": "Museo Carnegie de Historia Natural"
+    }
+   }
+  ],
+  "pori": [],
+  "portland": [],
+  "porto": [
+   {
+    "id": "Q1322447",
+    "lat": 41.139722,
+    "lon": -8.609444,
+    "sitelinks": 30,
+    "names": {
+     "default": "Luiz I Bridge",
+     "fr": "pont Dom-Luís",
+     "es": "puente Don Luis I",
+     "en": "Luiz I Bridge",
+     "it": "Ponte Dom Luís I",
+     "de": "Luis I Brücke"
+    }
+   },
+   {
+    "id": "Q1441255",
+    "lat": 41.142818,
+    "lon": -8.611203,
+    "sitelinks": 23,
+    "names": {
+     "default": "Porto Cathedral",
+     "de": "Kathedrale von Porto",
+     "en": "Porto Cathedral",
+     "es": "Catedral de Oporto",
+     "fr": "cathédrale de Porto",
+     "it": "cattedrale di Porto"
+    }
+   },
+   {
+    "id": "Q1550899",
+    "lat": 41.139817,
+    "lon": -8.59702,
+    "sitelinks": 22,
+    "names": {
+     "default": "Ponte de D. Maria Pia",
+     "de": "Ponte Maria Pia",
+     "fr": "pont Maria Pia",
+     "es": "puente María Pía",
+     "en": "Ponte de D. Maria Pia",
+     "it": "Ponte Maria Pia"
+    }
+   },
+   {
+    "id": "Q1371109",
+    "lat": 41.141369,
+    "lon": -8.615686,
+    "sitelinks": 21,
+    "names": {
+     "default": "Palácio da Bolsa",
+     "de": "Palácio da Bolsa",
+     "en": "Palácio da Bolsa",
+     "es": "Palacio de la Bolsa de Oporto",
+     "fr": "palais de la Bourse",
+     "it": "Palácio da Bolsa"
+    }
+   }
+  ],
+  "porvoo": [],
+  "prague": [
+   {
+    "id": "Q193369",
+    "lat": 50.09,
+    "lon": 14.4,
+    "sitelinks": 64,
+    "names": {
+     "default": "Prague Castle",
+     "fr": "château de Prague",
+     "es": "Castillo de Praga",
+     "it": "castello di Praga",
+     "de": "Prager Burg",
+     "en": "Prague Castle",
+     "fi": "Prahan linna"
+    }
+   },
+   {
+    "id": "Q204871",
+    "lat": 50.086389,
+    "lon": 14.411944,
+    "sitelinks": 62,
+    "names": {
+     "default": "Charles Bridge",
+     "fr": "pont Charles",
+     "es": "puente Carlos",
+     "it": "ponte Carlo",
+     "de": "Karlsbrücke",
+     "en": "Charles Bridge",
+     "fi": "Kaarlensilta"
+    }
+   },
+   {
+    "id": "Q729370",
+    "lat": 50.08699,
+    "lon": 14.4207,
+    "sitelinks": 46,
+    "names": {
+     "default": "Prague Astronomical Clock",
+     "fr": "horloge astronomique de Prague",
+     "es": "Reloj astronómico de Praga",
+     "en": "Prague Astronomical Clock",
+     "it": "Orologio astronomico di Praga",
+     "de": "Prager Rathausuhr",
+     "fi": "Prahan astronominen kello"
+    }
+   },
+   {
+    "id": "Q188112",
+    "lat": 50.079843,
+    "lon": 14.430417,
+    "sitelinks": 41,
+    "names": {
+     "default": "National Museum in Prague",
+     "de": "Tschechisches Nationalmuseum",
+     "en": "National Museum in Prague",
+     "es": "Museo Nacional de Praga",
+     "fi": "Prahan kansallismuseo",
+     "fr": "musée national de Prague",
+     "it": "Museo nazionale di Praga"
+    }
+   },
+   {
+    "id": "Q847613",
+    "lat": 50.082308,
+    "lon": 14.426141,
+    "sitelinks": 41,
+    "names": {
+     "default": "Wenceslas Square",
+     "fr": "place Venceslas",
+     "en": "Wenceslas Square",
+     "es": "Plaza de Wenceslao",
+     "it": "piazza San Venceslao",
+     "de": "Wenzelsplatz",
+     "fi": "Venceslauksen aukio"
+    }
+   },
+   {
+    "id": "Q616334",
+    "lat": 50.064427,
+    "lon": 14.417644,
+    "sitelinks": 40,
+    "names": {
+     "default": "Vyšehrad",
+     "de": "Vyšehrad",
+     "en": "Vyšehrad",
+     "fi": "Vyšehrad",
+     "fr": "Vyšehrad",
+     "it": "Vyšehrad",
+     "es": "Vyšehrad"
+    }
+   }
+  ],
+  "rauma": [],
+  "reykjavik": [
+   {
+    "id": "Q271466",
+    "lat": 64.141944,
+    "lon": -21.926944,
+    "sitelinks": 43,
+    "names": {
+     "default": "Hallgrímskirkja",
+     "fr": "Hallgrímskirkja",
+     "es": "Hallgrímskirkja",
+     "it": "Hallgrímskirkja",
+     "de": "Hallgrímskirkja",
+     "en": "Hallgrímskirkja",
+     "fi": "Hallgrímskirkja"
+    }
+   },
+   {
+    "id": "Q177174",
+    "lat": 64.148497,
+    "lon": -21.93578,
+    "sitelinks": 41,
+    "names": {
+     "default": "Icelandic Phallological Museum",
+     "de": "Isländisches Phallusmuseum",
+     "en": "Icelandic Phallological Museum",
+     "es": "Faloteca islandesa",
+     "fr": "musée phallologique islandais",
+     "it": "Museo fallologico islandese",
+     "fi": "Islannin fallosmuseo"
+    }
+   },
+   {
+    "id": "Q626963",
+    "lat": 64.141902,
+    "lon": -21.948111,
+    "sitelinks": 25,
+    "names": {
+     "default": "National Museum of Iceland",
+     "de": "Isländisches Nationalmuseum",
+     "es": "Museo Nacional de Islandia",
+     "en": "National Museum of Iceland",
+     "fr": "musée national d'Islande",
+     "it": "Museo nazionale d'Islanda",
+     "fi": "Islannin kansallismuseo"
+    }
+   },
+   {
+    "id": "Q116484",
+    "lat": 64.163239,
+    "lon": -21.859467,
+    "sitelinks": 23,
+    "names": {
+     "default": "Imagine Peace Tower",
+     "fr": "tour Imagine Peace",
+     "en": "Imagine Peace Tower",
+     "es": "Torre imagina la paz",
+     "it": "Imagine Peace Tower"
+    }
+   },
+   {
+    "id": "Q794242",
+    "lat": 64.14744,
+    "lon": -21.94855,
+    "sitelinks": 21,
+    "names": {
+     "default": "Landakotskirkja",
+     "fr": "cathédrale-basilique du Christ-Roi de Reykjavik",
+     "es": "Catedral de Cristo Rey de Reikiavik",
+     "en": "Landakotskirkja",
+     "fi": "Landakotskirkja",
+     "de": "Landakotskirkja",
+     "it": "cattedrale di Cristo Re"
+    }
+   }
+  ],
+  "riga": [
+   {
+    "id": "Q1133059",
+    "lat": 56.949167,
+    "lon": 24.104444,
+    "sitelinks": 42,
+    "names": {
+     "default": "Riga Cathedral",
+     "en": "Riga Cathedral",
+     "fi": "Riian tuomiokirkko",
+     "it": "cattedrale di Riga",
+     "de": "Dom zu Riga",
+     "fr": "cathédrale protestante de Riga",
+     "es": "Catedral de Riga"
+    }
+   },
+   {
+    "id": "Q337179",
+    "lat": 56.951556,
+    "lon": 24.113222,
+    "sitelinks": 41,
+    "names": {
+     "default": "Freedom Monument",
+     "fr": "monument de la Liberté",
+     "es": "Monumento a la Libertad",
+     "it": "Monumento alla Libertà",
+     "de": "Freiheitsdenkmal",
+     "en": "Freedom Monument",
+     "fi": "Vapauden muistomerkki"
+    }
+   },
+   {
+    "id": "Q322183",
+    "lat": 56.95095,
+    "lon": 24.100636,
+    "sitelinks": 40,
+    "names": {
+     "default": "Riga Castle",
+     "fr": "château de Riga",
+     "en": "Riga Castle",
+     "es": "Castillo de Riga",
+     "it": "castello di Riga",
+     "de": "Rigaer Schloss",
+     "fi": "Riian linna"
+    }
+   },
+   {
+    "id": "Q727809",
+    "lat": 56.9475,
+    "lon": 24.109444,
+    "sitelinks": 38,
+    "names": {
+     "default": "St. Peter's Church",
+     "fr": "église Saint-Pierre",
+     "en": "St. Peter's Church",
+     "fi": "Pyhän Pietarin kirkko",
+     "it": "chiesa di San Pietro",
+     "de": "Petrikirche",
+     "es": "iglesia de San Pedro"
+    }
+   },
+   {
+    "id": "Q830319",
+    "lat": 56.923889,
+    "lon": 24.136944,
+    "sitelinks": 34,
+    "names": {
+     "default": "Riga Radio and TV Tower",
+     "fr": "tour TV Riga",
+     "en": "Riga Radio and TV Tower",
+     "fi": "Riian radio- ja televisiotorni",
+     "de": "Fernsehturm Riga",
+     "es": "Torre de Radio y TV de Riga",
+     "it": "Torre della televisione di Riga"
+    }
+   }
+  ],
+  "rio-de-janeiro": [
+   {
+    "id": "Q20048515",
+    "lat": -22.897111,
+    "lon": -43.187394,
+    "sitelinks": 27,
+    "names": {
+     "default": "Valongo Wharf",
+     "en": "Valongo Wharf",
+     "fr": "quai de Valongo",
+     "de": "Valongo-Kai",
+     "es": "Muelle de Valongo",
+     "it": "Sito archeologico della banchina di Valongo"
+    }
+   },
+   {
+    "id": "Q2411716",
+    "lat": -22.910925,
+    "lon": -43.180711,
+    "sitelinks": 26,
+    "names": {
+     "default": "Rio de Janeiro Cathedral",
+     "fr": "cathédrale Saint-Sébastien de Rio de Janeiro",
+     "es": "Catedral de San Sebastián",
+     "en": "Rio de Janeiro Cathedral",
+     "it": "cattedrale di Rio de Janeiro",
+     "de": "Catedral Metropolitana de São Sebastião de Rio de Janeiro"
+    }
+   },
+   {
+    "id": "Q1573239",
+    "lat": -22.907778,
+    "lon": -43.126111,
+    "sitelinks": 22,
+    "names": {
+     "default": "Niterói Contemporary Art Museum",
+     "de": "Museu de Arte Contemporânea de Niterói",
+     "en": "Niterói Contemporary Art Museum",
+     "es": "Museo de Arte Contemporáneo de Niterói",
+     "fr": "musée d'art contemporain de Niterói",
+     "it": "museo d'arte contemporanea di Niterói"
+    }
+   }
+  ],
+  "rome": [
+   {
+    "id": "Q10285",
+    "lat": 41.890278,
+    "lon": 12.492222,
+    "sitelinks": 148,
+    "names": {
+     "default": "Colosseum",
+     "en": "Colosseum",
+     "fr": "Colisée",
+     "it": "Colosseo",
+     "de": "Kolosseum",
+     "es": "Coliseo",
+     "fi": "Colosseum"
+    }
+   },
+   {
+    "id": "Q12512",
+    "lat": 41.902222,
+    "lon": 12.453417,
+    "sitelinks": 129,
+    "names": {
+     "default": "St. Peter's Basilica",
+     "en": "St. Peter's Basilica",
+     "fr": "basilique Saint-Pierre",
+     "it": "basilica di San Pietro",
+     "de": "Petersdom",
+     "es": "basílica de San Pedro",
+     "fi": "Pietarinkirkko"
+    }
+   },
+   {
+    "id": "Q99309",
+    "lat": 41.898611,
+    "lon": 12.476944,
+    "sitelinks": 81,
+    "names": {
+     "default": "Pantheon",
+     "fr": "Panthéon",
+     "de": "Pantheon",
+     "en": "Pantheon",
+     "es": "Panteón de Agripa",
+     "fi": "Pantheon",
+     "it": "Pantheon"
+    }
+   },
+   {
+    "id": "Q180212",
+    "lat": 41.8922,
+    "lon": 12.4852,
+    "sitelinks": 72,
+    "names": {
+     "default": "Roman Forum",
+     "fr": "Forum Romain",
+     "es": "Foro Romano",
+     "it": "Foro Romano",
+     "de": "Forum Romanum",
+     "en": "Roman Forum",
+     "fi": "Forum Romanum"
+    }
+   },
+   {
+    "id": "Q185382",
+    "lat": 41.900932,
+    "lon": 12.483313,
+    "sitelinks": 68,
+    "names": {
+     "default": "Trevi Fountain",
+     "fr": "fontaine de Trevi",
+     "es": "Fontana di Trevi",
+     "it": "Fontana di Trevi",
+     "de": "Trevi-Brunnen",
+     "en": "Trevi Fountain",
+     "fi": "Fontana di Trevi"
+    }
+   },
+   {
+    "id": "Q83425",
+    "lat": 41.902183,
+    "lon": 12.457239,
+    "sitelinks": 66,
+    "names": {
+     "default": "Saint Peter's Square",
+     "fr": "place Saint-Pierre",
+     "es": "Plaza de San Pedro",
+     "it": "piazza San Pietro",
+     "de": "Petersplatz",
+     "en": "Saint Peter's Square",
+     "fi": "Pietarinaukio"
+    }
+   }
+  ],
+  "rotterdam": [
+   {
+    "id": "Q679527",
+    "lat": 51.914215,
+    "lon": 4.473341,
+    "sitelinks": 32,
+    "names": {
+     "default": "Museum Boijmans Van Beuningen",
+     "de": "Museum Boijmans Van Beuningen",
+     "en": "Museum Boijmans Van Beuningen",
+     "es": "Museo Boymans Van Beuningen",
+     "fr": "musée Boijmans Van Beuningen",
+     "it": "Museo Boijmans Van Beuningen",
+     "fi": "Boijmans van Beuningen -museo"
+    }
+   },
+   {
+    "id": "Q1348188",
+    "lat": 51.90864,
+    "lon": 4.48654,
+    "sitelinks": 27,
+    "names": {
+     "default": "Erasmusbrug",
+     "en": "Erasmusbrug",
+     "de": "Erasmusbrücke",
+     "fr": "pont Érasme",
+     "it": "Erasmusbrug",
+     "es": "Erasmusbrug"
+    }
+   },
+   {
+    "id": "Q969215",
+    "lat": 51.905389,
+    "lon": 4.466583,
+    "sitelinks": 25,
+    "names": {
+     "default": "Euromast",
+     "it": "Euromast",
+     "de": "Euromast",
+     "en": "Euromast",
+     "fi": "Euromast",
+     "fr": "Euromast",
+     "es": "Euromast"
+    }
+   }
+  ],
+  "rovaniemi": [],
+  "salzburg": [
+   {
+    "id": "Q679292",
+    "lat": 47.795,
+    "lon": 13.0473,
+    "sitelinks": 40,
+    "names": {
+     "default": "Hohensalzburg Fortress",
+     "en": "Hohensalzburg Fortress",
+     "es": "Fortaleza de Hohensalzburg",
+     "fi": "Festung Hohensalzburg",
+     "it": "Hohensalzburg",
+     "de": "Festung Hohensalzburg",
+     "fr": "forteresse de Hohensalzburg"
+    }
+   },
+   {
+    "id": "Q258908",
+    "lat": 47.797778,
+    "lon": 13.046944,
+    "sitelinks": 36,
+    "names": {
+     "default": "Salzburg Cathedral",
+     "de": "Salzburger Dom",
+     "en": "Salzburg Cathedral",
+     "es": "Catedral de Salzburgo",
+     "fr": "cathédrale Saint-Rupert de Salzbourg",
+     "it": "cattedrale di Salisburgo"
+    }
+   }
+  ],
+  "san-diego": [
+   {
+    "id": "Q818395",
+    "lat": 32.736111,
+    "lon": -117.151389,
+    "sitelinks": 36,
+    "names": {
+     "default": "San Diego Zoo",
+     "fr": "zoo de San Diego",
+     "en": "San Diego Zoo",
+     "es": "Zoológico de San Diego",
+     "it": "zoo di San Diego",
+     "de": "San Diego Zoo"
+    }
+   }
+  ],
+  "san-francisco": [
+   {
+    "id": "Q913672",
+    "lat": 37.785718,
+    "lon": -122.401051,
+    "sitelinks": 33,
+    "names": {
+     "default": "San Francisco Museum of Modern Art",
+     "fr": "musée d'Art moderne de San Francisco",
+     "en": "San Francisco Museum of Modern Art",
+     "es": "Museo de Arte Moderno de San Francisco",
+     "it": "Museum of Modern Art",
+     "de": "San Francisco Museum of Modern Art",
+     "fi": "San Francisco Museum of Modern Art"
+    }
+   },
+   {
+    "id": "Q930276",
+    "lat": 37.801944,
+    "lon": -122.418889,
+    "sitelinks": 29,
+    "names": {
+     "default": "Lombard Street",
+     "fr": "Lombard Street",
+     "de": "Lombard Street",
+     "en": "Lombard Street",
+     "es": "Lombard Street",
+     "fi": "Lombard Street",
+     "it": "Lombard Street"
+    }
+   },
+   {
+    "id": "Q1470276",
+    "lat": 37.771469,
+    "lon": -122.468676,
+    "sitelinks": 25,
+    "names": {
+     "default": "M. H. de Young Memorial Museum",
+     "fr": "De Young Museum",
+     "es": "M. H. de Young Memorial Museum",
+     "en": "M. H. de Young Memorial Museum",
+     "it": "De Young Memorial Museum",
+     "de": "M. H. de Young Memorial Museum"
+    }
+   },
+   {
+    "id": "Q1107297",
+    "lat": 37.8025,
+    "lon": -122.405833,
+    "sitelinks": 21,
+    "names": {
+     "default": "Coit Tower",
+     "fr": "Coit Tower",
+     "en": "Coit Tower",
+     "de": "Coit Tower",
+     "it": "Coit Tower",
+     "fi": "Coit Tower",
+     "es": "Coit Tower"
+    }
+   }
+  ],
+  "santiago": [
+   {
+    "id": "Q775376",
+    "lat": -33.435322,
+    "lon": -70.643569,
+    "sitelinks": 21,
+    "names": {
+     "default": "Chilean National Museum of Fine Arts",
+     "de": "Museo Nacional de Bellas Artes",
+     "en": "Chilean National Museum of Fine Arts",
+     "es": "Museo Nacional de Bellas Artes",
+     "fr": "musée national des beaux-arts",
+     "it": "Museo nazionale delle belle arti (Cile)"
+    }
+   }
+  ],
+  "sao-paulo": [
+   {
+    "id": "Q82941",
+    "lat": -23.561111,
+    "lon": -46.655833,
+    "sitelinks": 65,
+    "names": {
+     "default": "São Paulo Museum of Art",
+     "es": "Museo de Arte de São Paulo",
+     "fi": "São Paulon taidemuseo",
+     "fr": "musée d'art de São Paulo",
+     "it": "Museo d'arte di San Paolo",
+     "de": "Museu de Arte de São Paulo",
+     "en": "São Paulo Museum of Art"
+    }
+   },
+   {
+    "id": "Q1050668",
+    "lat": -23.551247,
+    "lon": -46.634374,
+    "sitelinks": 25,
+    "names": {
+     "default": "São Paulo Cathedral",
+     "en": "São Paulo Cathedral",
+     "de": "Catedral da Sé",
+     "fr": "cathédrale métropolitaine de São Paulo",
+     "it": "cattedrale Metropolitana di San Paolo",
+     "es": "Catedral Metropolitana de São Paulo"
+    }
+   }
+  ],
+  "sapporo": [],
+  "seattle": [
+   {
+    "id": "Q5317",
+    "lat": 47.6204,
+    "lon": -122.3491,
+    "sitelinks": 45,
+    "names": {
+     "default": "Space Needle",
+     "en": "Space Needle",
+     "fr": "Space Needle",
+     "it": "Space Needle",
+     "de": "Space Needle",
+     "es": "Space Needle",
+     "fi": "Space Needle"
+    }
+   }
+  ],
+  "seoul": [
+   {
+    "id": "Q477157",
+    "lat": 37.579444,
+    "lon": 126.991667,
+    "sitelinks": 50,
+    "names": {
+     "default": "Changdeokgung",
+     "fr": "Changdeokgung",
+     "es": "Changdeokgung",
+     "it": "Changdeokgung",
+     "de": "Changdeokgung",
+     "en": "Changdeokgung",
+     "fi": "Changdokkung"
+    }
+   },
+   {
+    "id": "Q482485",
+    "lat": 37.579884,
+    "lon": 126.9768,
+    "sitelinks": 45,
+    "names": {
+     "default": "Gyeongbokgung",
+     "fi": "Gyeongbok",
+     "en": "Gyeongbokgung"
+    }
+   },
+   {
+    "id": "Q494577",
+    "lat": 37.586692,
+    "lon": 126.974864,
+    "sitelinks": 42,
+    "names": {
+     "default": "Blue House",
+     "fr": "maison Bleue",
+     "en": "Blue House",
+     "es": "Casa Azul",
+     "de": "Blaues Haus",
+     "it": "Casa Blu",
+     "fi": "Sininen talo"
+    }
+   },
+   {
+    "id": "Q465345",
+    "lat": 37.559972,
+    "lon": 126.975308,
+    "sitelinks": 39,
+    "names": {
+     "default": "Namdaemun",
+     "fr": "Namdaemun",
+     "es": "Namdaemun",
+     "it": "Namdaemun",
+     "de": "Namdaemun",
+     "en": "Namdaemun",
+     "fi": "Sungnyemun"
+    }
+   },
+   {
+    "id": "Q494407",
+    "lat": 37.523889,
+    "lon": 126.980278,
+    "sitelinks": 38,
+    "names": {
+     "default": "National Museum of Korea",
+     "fr": "musée national de Corée",
+     "es": "Museo Nacional de Corea",
+     "en": "National Museum of Korea",
+     "it": "Museo nazionale della Corea",
+     "de": "Koreanisches Nationalmuseum",
+     "fi": "Korean kansallismuseo"
+    }
+   },
+   {
+    "id": "Q69134",
+    "lat": 37.551216,
+    "lon": 126.988276,
+    "sitelinks": 32,
+    "names": {
+     "default": "Namsan Seoul Tower",
+     "en": "Namsan Seoul Tower",
+     "de": "N Seoul Tower",
+     "es": "N Seoul Tower",
+     "fr": "N Seoul Tower",
+     "it": "Seoul Tower"
+    }
+   }
+  ],
+  "seville": [
+   {
+    "id": "Q231606",
+    "lat": 37.385742,
+    "lon": -5.993096,
+    "sitelinks": 63,
+    "names": {
+     "default": "Seville Cathedral",
+     "fr": "cathédrale Notre-Dame-du-Siège de Séville",
+     "es": "Catedral de Santa María de la Sede de Sevilla",
+     "it": "Cattedrale di Siviglia",
+     "de": "Iglesia Catedral de Santa María",
+     "en": "Seville Cathedral",
+     "fi": "Sevillan katedraali"
+    }
+   },
+   {
+    "id": "Q943873",
+    "lat": 37.382455,
+    "lon": -5.996296,
+    "sitelinks": 34,
+    "names": {
+     "default": "Torre del Oro",
+     "fr": "Torre del Oro",
+     "fi": "Torre del Oro",
+     "it": "Torre dell'Oro",
+     "de": "Torre del Oro",
+     "en": "Torre del Oro",
+     "es": "Torre del Oro"
+    }
+   },
+   {
+    "id": "Q956018",
+    "lat": 37.37708,
+    "lon": -5.986901,
+    "sitelinks": 27,
+    "names": {
+     "default": "Plaza de España",
+     "es": "plaza de España",
+     "de": "Plaza de España",
+     "en": "Plaza de España",
+     "fr": "place d'Espagne",
+     "it": "plaza de España",
+     "fi": "Plaza de España (Sevilla)"
+    }
+   },
+   {
+    "id": "Q1353494",
+    "lat": 37.413333,
+    "lon": -5.990278,
+    "sitelinks": 23,
+    "names": {
+     "default": "Puente del Alamillo",
+     "fr": "pont de l'Alamillo",
+     "en": "Puente del Alamillo",
+     "es": "puente del Alamillo",
+     "fi": "Puente del Alamillo",
+     "it": "ponte dell'Alamillo",
+     "de": "Alamillo-Brücke"
+    }
+   },
+   {
+    "id": "Q2274061",
+    "lat": 37.385959,
+    "lon": -5.998407,
+    "sitelinks": 22,
+    "names": {
+     "default": "Plaza de toros de la Maestranza",
+     "es": "plaza de toros de la Real Maestranza",
+     "en": "Plaza de toros de la Maestranza",
+     "it": "Plaza de Toros di Siviglia",
+     "fr": "arènes de la Real Maestranza de Caballería de Séville"
+    }
+   }
+  ],
+  "singapore": [],
+  "sofia": [
+   {
+    "id": "Q43282",
+    "lat": 42.695839,
+    "lon": 23.332969,
+    "sitelinks": 52,
+    "names": {
+     "default": "Alexander Nevsky Cathedral",
+     "fr": "cathédrale Alexandre-Nevski de Sofia",
+     "es": "Catedral de Alejandro Nevski de Sofía",
+     "it": "cattedrale di Aleksandăr Nevski",
+     "de": "Alexander-Newski-Kathedrale",
+     "en": "Alexander Nevsky Cathedral",
+     "fi": "Aleksanteri Nevskin katedraali"
+    }
+   },
+   {
+    "id": "Q1497827",
+    "lat": 42.696331,
+    "lon": 23.324564,
+    "sitelinks": 25,
+    "names": {
+     "default": "National Archaeological Museum, Bulgaria",
+     "de": "Nationales Archäologisches Museum",
+     "en": "National Archaeological Museum, Bulgaria",
+     "es": "Museo Arqueológico Nacional",
+     "fr": "Musée archéologique national",
+     "it": "Museo archeologico nazionale"
+    }
+   }
+  ],
+  "stockholm": [
+   {
+    "id": "Q750444",
+    "lat": 59.326667,
+    "lon": 18.071667,
+    "sitelinks": 44,
+    "names": {
+     "default": "Stockholm Palace",
+     "fr": "palais royal de Stockholm",
+     "es": "Palacio Real de Estocolmo",
+     "en": "Stockholm Palace",
+     "fi": "Tukholman kuninkaanlinna",
+     "it": "Palazzo Reale di Stoccolma",
+     "de": "Stockholmer Schloss"
+    }
+   },
+   {
+    "id": "Q901371",
+    "lat": 59.32807,
+    "lon": 18.09139,
+    "sitelinks": 40,
+    "names": {
+     "default": "Vasa Museum",
+     "fr": "musée Vasa",
+     "es": "Museo Vasa",
+     "en": "Vasa Museum",
+     "fi": "Vasan museo",
+     "it": "Museo Vasa",
+     "de": "Vasa-Museum"
+    }
+   },
+   {
+    "id": "Q842858",
+    "lat": 59.328611,
+    "lon": 18.078056,
+    "sitelinks": 39,
+    "names": {
+     "default": "Nationalmuseum",
+     "fr": "Nationalmuseum",
+     "es": "Museo Nacional de Estocolmo",
+     "en": "Nationalmuseum",
+     "fi": "Ruotsin kansallismuseo",
+     "it": "Museo nazionale di Stoccolma",
+     "de": "Schwedisches Nationalmuseum"
+    }
+   },
+   {
+    "id": "Q725108",
+    "lat": 59.32445,
+    "lon": 18.101,
+    "sitelinks": 39,
+    "names": {
+     "default": "Skansen",
+     "fr": "Skansen",
+     "en": "Skansen",
+     "es": "Skansen",
+     "fi": "Ulkoilmamuseo Skansen",
+     "it": "Skansen",
+     "de": "Freilichtmuseum Skansen"
+    }
+   },
+   {
+    "id": "Q1420103",
+    "lat": 59.368889,
+    "lon": 18.053611,
+    "sitelinks": 32,
+    "names": {
+     "default": "Swedish Museum of Natural History",
+     "fr": "Musée suédois d'histoire naturelle",
+     "es": "Museo Nacional de Historia Natural de Suecia",
+     "en": "Swedish Museum of Natural History",
+     "fi": "Valtion luonnonhistoriallinen museo",
+     "de": "Schwedisches Museum für Naturkunde",
+     "it": "Museo svedese di storia naturale"
+    }
+   },
+   {
+    "id": "Q657118",
+    "lat": 59.324722,
+    "lon": 18.064722,
+    "sitelinks": 31,
+    "names": {
+     "default": "Riddarholm Church",
+     "fr": "église de Riddarholm",
+     "de": "Riddarholmkirche",
+     "en": "Riddarholm Church",
+     "es": "iglesia de Riddarholmen",
+     "fi": "Riddarholmskyrkan",
+     "it": "chiesa di Riddarholmen"
+    }
+   }
+  ],
+  "strasbourg": [
+   {
+    "id": "Q745460",
+    "lat": 48.58189,
+    "lon": 7.751056,
+    "sitelinks": 51,
+    "names": {
+     "default": "Cathedral of Our Lady of Strasbourg",
+     "fr": "cathédrale Notre-Dame de Strasbourg",
+     "de": "Straßburger Münster",
+     "en": "Cathedral of Our Lady of Strasbourg",
+     "es": "Catedral de Estrasburgo",
+     "fi": "Strasbourgin katedraali",
+     "it": "cattedrale di Strasburgo"
+    }
+   }
+  ],
+  "stuttgart": [
+   {
+    "id": "Q707377",
+    "lat": 48.78855,
+    "lon": 9.23376,
+    "sitelinks": 25,
+    "names": {
+     "default": "Mercedes-Benz Museum",
+     "de": "Mercedes-Benz Museum",
+     "fr": "musée Mercedes-Benz de Stuttgart",
+     "en": "Mercedes-Benz Museum",
+     "es": "Museo Mercedes-Benz",
+     "fi": "Mercedes-Benz-museo",
+     "it": "Museo Mercedes-Benz"
+    }
+   },
+   {
+    "id": "Q384841",
+    "lat": 48.776962,
+    "lon": 9.179698,
+    "sitelinks": 22,
+    "names": {
+     "default": "Old Castle",
+     "de": "Altes Schloss",
+     "en": "Old Castle",
+     "fi": "Altes Schloss",
+     "fr": "Vieux château de Stuttgart",
+     "es": "Castillo Antiguo de Stuttgart",
+     "it": "Vecchio castello"
+    }
+   }
+  ],
+  "sydney": [
+   {
+    "id": "Q54495",
+    "lat": -33.852232,
+    "lon": 151.210684,
+    "sitelinks": 68,
+    "names": {
+     "default": "Sydney Harbour Bridge",
+     "en": "Sydney Harbour Bridge",
+     "de": "Sydney Harbour Bridge",
+     "es": "puente de la bahía de Sídney",
+     "fi": "Sydney Harbour Bridge",
+     "fr": "Harbour Bridge",
+     "it": "Sydney Harbour Bridge"
+    }
+   },
+   {
+    "id": "Q827268",
+    "lat": -33.870278,
+    "lon": 151.208889,
+    "sitelinks": 32,
+    "names": {
+     "default": "Sydney Tower",
+     "fr": "Sydney Tower",
+     "en": "Sydney Tower",
+     "es": "Sydney Tower",
+     "fi": "Sydney Tower",
+     "it": "Torre di Sydney",
+     "de": "Sydney Tower"
+    }
+   },
+   {
+    "id": "Q769416",
+    "lat": -33.8743,
+    "lon": 151.213,
+    "sitelinks": 26,
+    "names": {
+     "default": "Australian Museum",
+     "de": "Australian Museum",
+     "en": "Australian Museum",
+     "es": "Museo Australiano",
+     "fr": "Australian Museum"
+    }
+   },
+   {
+    "id": "Q1064813",
+    "lat": -33.843333,
+    "lon": 151.241111,
+    "sitelinks": 25,
+    "names": {
+     "default": "Taronga Zoo",
+     "fr": "zoo de Taronga",
+     "en": "Taronga Zoo",
+     "fi": "Taronga Zoo",
+     "it": "Taronga Zoo",
+     "de": "Taronga Zoo",
+     "es": "Zoo de Taronga"
+    }
+   },
+   {
+    "id": "Q705551",
+    "lat": -33.868611,
+    "lon": 151.217222,
+    "sitelinks": 24,
+    "names": {
+     "default": "Art Gallery of New South Wales",
+     "fr": "Galerie d'art de Nouvelle-Galles du Sud",
+     "en": "Art Gallery of New South Wales",
+     "de": "Art Gallery of New South Wales",
+     "es": "Galería de Arte de Nueva Gales del Sur",
+     "it": "Art Gallery of New South Wales"
+    }
+   },
+   {
+    "id": "Q690242",
+    "lat": -33.86,
+    "lon": 151.208889,
+    "sitelinks": 23,
+    "names": {
+     "default": "Museum of Contemporary Art Australia",
+     "de": "Museum of Contemporary Art Australia",
+     "en": "Museum of Contemporary Art Australia",
+     "fr": "musée d'Art contemporain d'Australie",
+     "it": "Museum of Contemporary Art Australia"
+    }
+   }
+  ],
+  "taipei": [
+   {
+    "id": "Q540794",
+    "lat": 25.034444,
+    "lon": 121.521667,
+    "sitelinks": 33,
+    "names": {
+     "default": "Chiang Kai-shek Memorial Hall",
+     "de": "Nationale Chiang-Kai-shek-Gedächtnishalle",
+     "en": "Chiang Kai-shek Memorial Hall",
+     "es": "Salón Conmemorativo de Chiang Kai-shek",
+     "fr": "mémorial de Tchang Kaï-chek",
+     "it": "Chiang Kai-shek Memorial Hall"
+    }
+   }
+  ],
+  "tallinn": [
+   {
+    "id": "Q859010",
+    "lat": 59.435556,
+    "lon": 24.737222,
+    "sitelinks": 43,
+    "names": {
+     "default": "Toompea Castle",
+     "fr": "château de Toompea",
+     "en": "Toompea Castle",
+     "de": "Tallinner Schloss",
+     "it": "castello di Toompea",
+     "fi": "Toompean linna",
+     "es": "Castillo de Toompea"
+    }
+   },
+   {
+    "id": "Q613788",
+    "lat": 59.435922,
+    "lon": 24.742756,
+    "sitelinks": 36,
+    "names": {
+     "default": "St. Nicholas' Church",
+     "de": "Nikolaikirche",
+     "en": "St. Nicholas' Church",
+     "fi": "Pyhän Nikolaoksen kirkko",
+     "fr": "église Saint-Nicolas",
+     "it": "chiesa di San Nicola",
+     "es": "iglesia de San Nicolás (Tallin)"
+    }
+   },
+   {
+    "id": "Q834511",
+    "lat": 59.441389,
+    "lon": 24.747778,
+    "sitelinks": 35,
+    "names": {
+     "default": "St. Olaf's Church",
+     "fr": "Saint-Olaf",
+     "en": "St. Olaf's Church",
+     "fi": "Olevisten kirkko",
+     "it": "chiesa di Sant'Olav",
+     "de": "Olaikirche",
+     "es": "iglesia de San Olaf (Tallin)"
+    }
+   },
+   {
+    "id": "Q7722735",
+    "lat": 59.43852,
+    "lon": 24.791,
+    "sitelinks": 32,
+    "names": {
+     "default": "Kadriorg Palace",
+     "de": "Schloss Katharinental",
+     "en": "Kadriorg Palace",
+     "es": "Palacio Kadriorg",
+     "fi": "Kadriorgin palatsi",
+     "fr": "château de Kadriorg",
+     "it": "Palazzo Kadriorg"
+    }
+   },
+   {
+    "id": "Q919611",
+    "lat": 59.436389,
+    "lon": 24.796389,
+    "sitelinks": 30,
+    "names": {
+     "default": "Kumu",
+     "de": "Kumu",
+     "en": "Kumu",
+     "fi": "Kumu",
+     "fr": "Kumu",
+     "it": "Kumu",
+     "es": "Kumu (museo)"
+    }
+   },
+   {
+    "id": "Q2322737",
+    "lat": 59.438056,
+    "lon": 24.748611,
+    "sitelinks": 23,
+    "names": {
+     "default": "St. Peter's and St. Paul's Cathedral",
+     "de": "St. Peter und Paul",
+     "en": "St. Peter's and St. Paul's Cathedral",
+     "it": "cattedrale dei Santi Pietro e Paolo",
+     "fr": "église Saint-Pierre-et-Saint-Paul de Tallinn",
+     "es": "Catedral de San Pedro y San Pablo"
+    }
+   }
+  ],
+  "tampere": [
+   {
+    "id": "Q1236638",
+    "lat": 61.5025,
+    "lon": 23.769722,
+    "sitelinks": 23,
+    "names": {
+     "default": "Tampere Cathedral",
+     "fr": "cathédrale de Tampere",
+     "en": "Tampere Cathedral",
+     "fi": "Tampereen tuomiokirkko",
+     "de": "Dom von Tampere",
+     "es": "Catedral de Tampere",
+     "it": "cattedrale di Tampere"
+    }
+   },
+   {
+    "id": "Q2624126",
+    "lat": 61.495833,
+    "lon": 23.781667,
+    "sitelinks": 21,
+    "names": {
+     "default": "Moomin Museum",
+     "en": "Moomin Museum",
+     "fi": "Muumimuseo",
+     "fr": "musée des Moumines",
+     "de": "Mumin-Museum",
+     "es": "Museo Mumin"
+    }
+   }
+  ],
+  "tel-aviv": [
+   {
+    "id": "Q796764",
+    "lat": 32.113811,
+    "lon": 34.805261,
+    "sitelinks": 30,
+    "names": {
+     "default": "Museum of the Jewish People at Beit Hatfutsot",
+     "en": "Museum of the Jewish People at Beit Hatfutsot",
+     "es": "Museo de la Diáspora",
+     "de": "Beit Hatefutsot",
+     "fr": "musée du peuple juif - ANU"
+    }
+   },
+   {
+    "id": "Q840618",
+    "lat": 32.103153,
+    "lon": 34.796417,
+    "sitelinks": 27,
+    "names": {
+     "default": "Eretz Israel Museum",
+     "fr": "musée Eretz Israël",
+     "es": "Museo Eretz Israel",
+     "en": "Eretz Israel Museum",
+     "it": "Museo Terra di Israele",
+     "de": "Eretz Israel Museum"
+    }
+   },
+   {
+    "id": "Q1267958",
+    "lat": 32.0775,
+    "lon": 34.786667,
+    "sitelinks": 25,
+    "names": {
+     "default": "Tel Aviv Museum of Art",
+     "de": "Tel Aviv Museum für Kunst",
+     "en": "Tel Aviv Museum of Art",
+     "fr": "musée d'Art de Tel Aviv",
+     "it": "Museo d'arte di Tel Aviv",
+     "es": "Museo de Arte de Tel Aviv"
+    }
+   },
+   {
+    "id": "Q2915104",
+    "lat": 32.080833,
+    "lon": 34.780556,
+    "sitelinks": 22,
+    "names": {
+     "default": "Rabin Square",
+     "en": "Rabin Square",
+     "es": "Plaza Rabin",
+     "fr": "place Rabin",
+     "it": "Piazza Rabin"
+    }
+   }
+  ],
+  "the-hague": [
+   {
+    "id": "Q221092",
+    "lat": 52.080389,
+    "lon": 4.314306,
+    "sitelinks": 49,
+    "names": {
+     "default": "Mauritshuis",
+     "de": "Mauritshuis",
+     "en": "Mauritshuis",
+     "es": "Mauritshuis",
+     "fi": "Mauritshuis",
+     "fr": "Mauritshuis",
+     "it": "Mauritshuis"
+    }
+   },
+   {
+    "id": "Q747322",
+    "lat": 52.099403,
+    "lon": 4.297558,
+    "sitelinks": 35,
+    "names": {
+     "default": "Madurodam",
+     "fr": "Madurodam",
+     "en": "Madurodam",
+     "es": "Madurodam",
+     "it": "Madurodam",
+     "de": "Madurodam"
+    }
+   },
+   {
+    "id": "Q1072284",
+    "lat": 52.093056,
+    "lon": 4.343889,
+    "sitelinks": 25,
+    "names": {
+     "default": "Huis ten Bosch",
+     "fr": "Huis ten Bosch",
+     "es": "Palacio Huis ten Bosch",
+     "en": "Huis ten Bosch",
+     "de": "Huis ten Bosch",
+     "fi": "Huis ten Bosch",
+     "it": "Huis ten Bosch"
+    }
+   },
+   {
+    "id": "Q1499958",
+    "lat": 52.089722,
+    "lon": 4.280556,
+    "sitelinks": 21,
+    "names": {
+     "default": "Kunstmuseum Den Haag",
+     "fr": "musée d'Art de La Haye",
+     "en": "Kunstmuseum Den Haag",
+     "de": "Kunstmuseum Den Haag",
+     "it": "Gemeentemuseum Den Haag",
+     "es": "Kunstmuseum Den Haag",
+     "fi": "Gemeentemuseum Den Haag"
+    }
+   }
+  ],
+  "tokyo": [],
+  "toronto": [
+   {
+    "id": "Q134883",
+    "lat": 43.642753,
+    "lon": -79.387147,
+    "sitelinks": 80,
+    "names": {
+     "default": "CN Tower",
+     "es": "Torre CN",
+     "fi": "CN Tower",
+     "fr": "tour CN",
+     "it": "CN Tower",
+     "de": "CN Tower",
+     "en": "CN Tower"
+    }
+   },
+   {
+    "id": "Q649250",
+    "lat": 43.667572,
+    "lon": -79.394683,
+    "sitelinks": 38,
+    "names": {
+     "default": "Royal Ontario Museum",
+     "de": "Royal Ontario Museum",
+     "en": "Royal Ontario Museum",
+     "es": "Museo Real de Ontario",
+     "fr": "Musée royal de l'Ontario",
+     "it": "Museo reale dell'Ontario"
+    }
+   },
+   {
+    "id": "Q670250",
+    "lat": 43.653613,
+    "lon": -79.39278,
+    "sitelinks": 28,
+    "names": {
+     "default": "Art Gallery of Ontario",
+     "it": "Art Gallery of Ontario",
+     "de": "Art Gallery of Ontario",
+     "en": "Art Gallery of Ontario",
+     "es": "Galería de Arte de Ontario",
+     "fr": "Musée des beaux-arts de l'Ontario"
+    }
+   },
+   {
+    "id": "Q607810",
+    "lat": 43.656028,
+    "lon": -79.380125,
+    "sitelinks": 22,
+    "names": {
+     "default": "Yonge Dundas Square",
+     "fr": "square Sankofa",
+     "de": "Dundas Square",
+     "en": "Yonge Dundas Square",
+     "es": "Dundas Square",
+     "fi": "Yonge–Dundas Square"
+    }
+   },
+   {
+    "id": "Q1046446",
+    "lat": 43.678117,
+    "lon": -79.409342,
+    "sitelinks": 21,
+    "names": {
+     "default": "Casa Loma",
+     "en": "Casa Loma",
+     "de": "Casa Loma",
+     "fr": "Casa Loma",
+     "es": "Casa Loma",
+     "it": "Casa Loma"
+    }
+   }
+  ],
+  "toulouse": [
+   {
+    "id": "Q1094325",
+    "lat": 43.586917,
+    "lon": 1.493278,
+    "sitelinks": 28,
+    "names": {
+     "default": "City of Space",
+     "fr": "Cité de l'espace",
+     "it": "Cité de l'espace",
+     "de": "Cité de l’espace",
+     "es": "Cité de l'espace",
+     "en": "City of Space",
+     "fi": "Cité de l'espace"
+    }
+   },
+   {
+    "id": "Q1010268",
+    "lat": 43.608485,
+    "lon": 1.442126,
+    "sitelinks": 25,
+    "names": {
+     "default": "Basilica of St. Sernin",
+     "fr": "basilique Saint-Sernin de Toulouse",
+     "es": "basílica de San Sernín",
+     "en": "Basilica of St. Sernin",
+     "it": "basilica di Saint-Sernin",
+     "de": "St-Sernin"
+    }
+   },
+   {
+    "id": "Q2737833",
+    "lat": 43.5999,
+    "lon": 1.4504,
+    "sitelinks": 20,
+    "names": {
+     "default": "Toulouse Cathedral",
+     "fr": "cathédrale Saint-Étienne de Toulouse",
+     "es": "Catedral de Toulouse",
+     "en": "Toulouse Cathedral",
+     "it": "Cattedrale di Santo Stefano",
+     "de": "Kathedrale von Toulouse"
+    }
+   },
+   {
+    "id": "Q422",
+    "lat": 43.593056,
+    "lon": 1.449167,
+    "sitelinks": 20,
+    "names": {
+     "default": "Muséum de Toulouse",
+     "fr": "muséum de Toulouse",
+     "en": "Muséum de Toulouse",
+     "de": "Muséum de Toulouse",
+     "es": "Museo de Toulouse",
+     "it": "Museo di Tolosa"
+    }
+   }
+  ],
+  "turin": [
+   {
+    "id": "Q19877",
+    "lat": 45.068333,
+    "lon": 7.684444,
+    "sitelinks": 38,
+    "names": {
+     "default": "Museo Egizio",
+     "it": "Museo Egizio di Torino",
+     "de": "Museo Egizio",
+     "en": "Museo Egizio",
+     "es": "Museo Egipcio de Turín",
+     "fr": "Musée Égyptologique de Turin",
+     "fi": "Torinon egyptiläinen museo"
+    }
+   },
+   {
+    "id": "Q958699",
+    "lat": 45.07332,
+    "lon": 7.685435,
+    "sitelinks": 35,
+    "names": {
+     "default": "Turin Cathedral",
+     "fr": "cathédrale Saint-Jean-Baptiste de Turin",
+     "en": "Turin Cathedral",
+     "es": "Catedral de Turín",
+     "fi": "Torinon tuomiokirkko",
+     "it": "Duomo di Torino",
+     "de": "Turiner Dom"
+    }
+   },
+   {
+    "id": "Q201902",
+    "lat": 45.06898,
+    "lon": 7.69324,
+    "sitelinks": 35,
+    "names": {
+     "default": "Mole Antonelliana",
+     "de": "Mole Antonelliana",
+     "en": "Mole Antonelliana",
+     "es": "Mole Antonelliana",
+     "fr": "Mole Antonelliana",
+     "it": "Mole Antonelliana",
+     "fi": "Mole Antonelliana"
     }
    }
   ],
   "turku": [
    {
     "id": "Q1187606",
-    "lat": 60.452447,
-    "lon": 22.278477,
+    "lat": 60.452461,
+    "lon": 22.278529,
     "sitelinks": 32,
     "names": {
      "default": "Turku Cathedral",
-     "en": "Turku Cathedral",
-     "fi": "Turun tuomiokirkko",
      "de": "Dom von Turku",
      "fr": "cathédrale de Turku",
+     "en": "Turku Cathedral",
+     "fi": "Turun tuomiokirkko",
      "it": "cattedrale di Turku",
      "es": "Catedral de Turku"
     }
    },
    {
     "id": "Q136893",
-    "lat": 60.435354,
-    "lon": 22.228748,
-    "sitelinks": 30,
+    "lat": 60.435282,
+    "lon": 22.227639,
+    "sitelinks": 31,
     "names": {
      "default": "Turku Castle",
-     "en": "Turku Castle",
-     "fi": "Turun linna",
-     "de": "Burg Turku",
      "fr": "château de Turku",
+     "en": "Turku Castle",
+     "es": "Castillo de Turku",
+     "fi": "Turun linna",
      "it": "castello di Turku",
-     "es": "Castillo de Turku"
+     "de": "Burg Turku"
+    }
+   }
+  ],
+  "utrecht": [
+   {
+    "id": "Q914231",
+    "lat": 52.085333,
+    "lon": 5.147597,
+    "sitelinks": 36,
+    "names": {
+     "default": "Rietveld Schröder House",
+     "fr": "maison Schröder de Rietveld",
+     "es": "Casa Rietveld Schröder",
+     "en": "Rietveld Schröder House",
+     "fi": "Rietveld-Schröder-talo",
+     "it": "casa Rietveld Schröder",
+     "de": "Rietveld-Schröder-Haus"
+    }
+   },
+   {
+    "id": "Q936545",
+    "lat": 52.09092,
+    "lon": 5.122233,
+    "sitelinks": 29,
+    "names": {
+     "default": "St. Martin's Cathedral, Utrecht",
+     "fr": "cathédrale Saint-Martin d'Utrecht",
+     "en": "St. Martin's Cathedral, Utrecht",
+     "de": "Utrechter Dom",
+     "es": "Catedral de San Martín",
+     "it": "Duomo di Utrecht"
+    }
+   }
+  ],
+  "vaasa": [],
+  "valencia": [
+   {
+    "id": "Q239935",
+    "lat": 39.454528,
+    "lon": -0.350364,
+    "sitelinks": 40,
+    "names": {
+     "default": "City of Arts and Sciences",
+     "fr": "cité des arts et des sciences",
+     "es": "Ciudad de las Artes y las Ciencias",
+     "it": "Ciutat de les Arts i les Ciències",
+     "de": "Stadt der Künste und Wissenschaften",
+     "en": "City of Arts and Sciences"
+    }
+   },
+   {
+    "id": "Q1466926",
+    "lat": 39.475611,
+    "lon": -0.375139,
+    "sitelinks": 30,
+    "names": {
+     "default": "Valencia Cathedral",
+     "fr": "cathédrale Sainte-Marie de Valence",
+     "en": "Valencia Cathedral",
+     "es": "Catedral de Santa María de Valencia",
+     "it": "cattedrale di Valencia",
+     "de": "Kathedrale von Valencia"
+    }
+   }
+  ],
+  "vancouver": [
+   {
+    "id": "Q371960",
+    "lat": 49.2829,
+    "lon": -123.12,
+    "sitelinks": 20,
+    "names": {
+     "default": "Vancouver Art Gallery",
+     "en": "Vancouver Art Gallery",
+     "de": "Vancouver Art Gallery",
+     "es": "Galería de Arte de Vancouver",
+     "fr": "Galerie d'art de Vancouver"
+    }
+   }
+  ],
+  "vantaa": [],
+  "venice": [
+   {
+    "id": "Q172988",
+    "lat": 45.434444,
+    "lon": 12.339722,
+    "sitelinks": 65,
+    "names": {
+     "default": "St Mark's Basilica",
+     "fr": "basilique Saint-Marc",
+     "es": "basílica de San Marcos",
+     "it": "basilica di San Marco",
+     "de": "Markusdom",
+     "en": "St Mark's Basilica",
+     "fi": "Basilica di San Marco"
+    }
+   },
+   {
+    "id": "Q52505",
+    "lat": 45.438008,
+    "lon": 12.335639,
+    "sitelinks": 52,
+    "names": {
+     "default": "Rialto Bridge",
+     "it": "ponte di Rialto",
+     "es": "puente de Rialto",
+     "en": "Rialto Bridge",
+     "de": "Rialtobrücke",
+     "fr": "pont du Rialto",
+     "fi": "Rialton silta"
+    }
+   },
+   {
+    "id": "Q52531",
+    "lat": 45.43057,
+    "lon": 12.33473,
+    "sitelinks": 46,
+    "names": {
+     "default": "Santa Maria della Salute",
+     "it": "basilica di Santa Maria della Salute",
+     "de": "Santa Maria della Salute",
+     "en": "Santa Maria della Salute",
+     "es": "basílica de Santa Maria della Salute",
+     "fr": "basilique Santa Maria della Salute de Venise"
+    }
+   },
+   {
+    "id": "Q338330",
+    "lat": 45.431078,
+    "lon": 12.328139,
+    "sitelinks": 42,
+    "names": {
+     "default": "Gallerie dell'Accademia",
+     "fr": "Galeries de l'Académie",
+     "en": "Gallerie dell'Accademia",
+     "de": "Gallerie dell'Accademia",
+     "it": "Gallerie dell'Accademia",
+     "es": "Galería de la Academia de Venecia",
+     "fi": "Gallerie dell'Accademia"
+    }
+   },
+   {
+    "id": "Q820872",
+    "lat": 45.440556,
+    "lon": 12.333889,
+    "sitelinks": 35,
+    "names": {
+     "default": "Ca' d'Oro",
+     "fr": "Ca' d'Oro",
+     "en": "Ca' d'Oro",
+     "es": "Ca' d'Oro",
+     "it": "Ca' d'Oro",
+     "de": "Ca’ d’Oro"
+    }
+   },
+   {
+    "id": "Q224961",
+    "lat": 45.43693,
+    "lon": 12.32649,
+    "sitelinks": 32,
+    "names": {
+     "default": "Santa Maria Gloriosa dei Frari",
+     "fr": "basilique Sainte-Marie-Glorieuse-des-Frères de Venise",
+     "es": "basílica de Santa María dei Frari",
+     "it": "Basilica di Santa Maria Gloriosa dei Frari",
+     "de": "Santa Maria Gloriosa dei Frari",
+     "en": "Santa Maria Gloriosa dei Frari"
+    }
+   }
+  ],
+  "vienna": [
+   {
+    "id": "Q211818",
+    "lat": 48.1934,
+    "lon": 16.380519,
+    "sitelinks": 61,
+    "names": {
+     "default": "Belvedere",
+     "fr": "palais du Belvédère",
+     "es": "Palacio Belvedere",
+     "it": "Belvedere",
+     "de": "Schloss Belvedere",
+     "en": "Belvedere",
+     "fi": "Belvedere"
+    }
+   },
+   {
+    "id": "Q5943",
+    "lat": 48.208427,
+    "lon": 16.373256,
+    "sitelinks": 60,
+    "names": {
+     "default": "St. Stephen's Cathedral",
+     "en": "St. Stephen's Cathedral",
+     "de": "Stephansdom",
+     "es": "Catedral de San Esteban",
+     "fi": "Stephansdom",
+     "fr": "cathédrale Saint-Étienne de Vienne",
+     "it": "cattedrale metropolitana di Santo Stefano"
+    }
+   },
+   {
+    "id": "Q46242",
+    "lat": 48.206389,
+    "lon": 16.365278,
+    "sitelinks": 55,
+    "names": {
+     "default": "Hofburg Palace",
+     "fr": "Hofburg",
+     "es": "Palacio Imperial de Hofburg",
+     "it": "Hofburg",
+     "de": "Hofburg",
+     "en": "Hofburg Palace",
+     "fi": "Hofburg"
+    }
+   },
+   {
+    "id": "Q95569",
+    "lat": 48.203881,
+    "lon": 16.3616,
+    "sitelinks": 52,
+    "names": {
+     "default": "Kunsthistorisches Museum",
+     "en": "Kunsthistorisches Museum",
+     "de": "Kunsthistorisches Museum Wien",
+     "fr": "musée d'Histoire de l'art de Vienne",
+     "es": "Museo de Historia del Arte de Viena",
+     "it": "Kunsthistorisches Museum",
+     "fi": "Wienin taidehistoriallinen museo"
+    }
+   },
+   {
+    "id": "Q408847",
+    "lat": 48.198281,
+    "lon": 16.371881,
+    "sitelinks": 41,
+    "names": {
+     "default": "Karlskirche",
+     "fr": "église Saint-Charles-Borromée",
+     "en": "Karlskirche",
+     "es": "iglesia de San Carlos Borromeo",
+     "fi": "Karlskirche",
+     "it": "chiesa di San Carlo Borromeo",
+     "de": "Wiener Karlskirche"
+    }
+   },
+   {
+    "id": "Q414219",
+    "lat": 48.201389,
+    "lon": 16.365278,
+    "sitelinks": 38,
+    "names": {
+     "default": "Academy of Fine Arts Vienna",
+     "fr": "Académie des beaux-arts de Vienne",
+     "en": "Academy of Fine Arts Vienna",
+     "de": "Akademie der bildenden Künste Wien",
+     "it": "Accademia di belle arti di Vienna",
+     "fi": "Wienin kuvataideakatemia",
+     "es": "Academia de Bellas Artes de Viena"
+    }
+   }
+  ],
+  "vilnius": [
+   {
+    "id": "Q1281237",
+    "lat": 54.685889,
+    "lon": 25.287878,
+    "sitelinks": 35,
+    "names": {
+     "default": "Vilnius Cathedral",
+     "de": "Kathedrale St. Stanislaus",
+     "en": "Vilnius Cathedral",
+     "es": "Catedral de Vilna",
+     "fi": "Vilnan tuomiokirkko",
+     "fr": "cathédrale Saint-Stanislas de Vilnius",
+     "it": "cattedrale di Vilnius"
+    }
+   },
+   {
+    "id": "Q937212",
+    "lat": 54.674444,
+    "lon": 25.289444,
+    "sitelinks": 29,
+    "names": {
+     "default": "Gate of Dawn",
+     "fr": "porte de l'Aurore",
+     "en": "Gate of Dawn",
+     "it": "porta dell'Aurora",
+     "de": "Tor der Morgenröte",
+     "es": "Puerta del Alba"
+    }
+   },
+   {
+    "id": "Q1577652",
+    "lat": 54.68316,
+    "lon": 25.285871,
+    "sitelinks": 26,
+    "names": {
+     "default": "Presidential Palace of Lithuania",
+     "de": "Präsidentenpalast",
+     "fr": "palais présidentiel de Vilnius",
+     "en": "Presidential Palace of Lithuania",
+     "fi": "Presidentinlinna",
+     "es": "palacio presidencial de Lituania",
+     "it": "Palazzo presidenziale di Vilnius"
+    }
+   },
+   {
+    "id": "Q937290",
+    "lat": 54.683056,
+    "lon": 25.293333,
+    "sitelinks": 26,
+    "names": {
+     "default": "Church of St. Anne, Vilnius",
+     "es": "iglesia de Santa Ana",
+     "de": "St. Anna",
+     "en": "Church of St. Anne, Vilnius",
+     "fr": "église Sainte-Anne de Vilnius",
+     "it": "chiesa di Sant'Anna"
+    }
+   },
+   {
+    "id": "Q1407353",
+    "lat": 54.687111,
+    "lon": 25.214611,
+    "sitelinks": 22,
+    "names": {
+     "default": "Vilnius TV Tower",
+     "fr": "tour de Vilnius",
+     "en": "Vilnius TV Tower",
+     "de": "Fernsehturm Vilnius",
+     "fi": "Vilnan televisiotorni",
+     "es": "Torre de TV de Vilna"
+    }
+   },
+   {
+    "id": "Q1283798",
+    "lat": 54.694167,
+    "lon": 25.306389,
+    "sitelinks": 22,
+    "names": {
+     "default": "Church of St. Peter and St. Paul, Vilnius",
+     "de": "St. Peter und Paul",
+     "en": "Church of St. Peter and St. Paul, Vilnius",
+     "es": "iglesia de San Pedro y San Pablo",
+     "fi": "Pyhän Pietarin ja Pyhän Paavalin kirkko",
+     "fr": "église Saint-Pierre-et-Saint-Paul de Vilnius",
+     "it": "chiesa di San Pietro e San Paolo"
+    }
+   }
+  ],
+  "warsaw": [
+   {
+    "id": "Q167566",
+    "lat": 52.231667,
+    "lon": 21.006389,
+    "sitelinks": 51,
+    "names": {
+     "default": "Palace of Culture and Science",
+     "fr": "palais de la culture et de la science",
+     "es": "Palacio de la Cultura y la Ciencia",
+     "it": "Palazzo della Cultura e della Scienza",
+     "de": "Kulturpalast",
+     "en": "Palace of Culture and Science",
+     "fi": "Kulttuurin ja tieteen palatsi"
+    }
+   },
+   {
+    "id": "Q756098",
+    "lat": 52.247778,
+    "lon": 21.014167,
+    "sitelinks": 43,
+    "names": {
+     "default": "Royal Castle in Warsaw",
+     "fr": "palais royal de Varsovie",
+     "en": "Royal Castle in Warsaw",
+     "es": "Castillo Real de Varsovia",
+     "it": "Castello Reale di Varsavia",
+     "de": "Königliches Schloss Warschau",
+     "fi": "Varsovan linna"
+    }
+   },
+   {
+    "id": "Q153306",
+    "lat": 52.231667,
+    "lon": 21.024722,
+    "sitelinks": 36,
+    "names": {
+     "default": "National Museum in Warsaw",
+     "de": "Nationalmuseum Warschau",
+     "fr": "musée national de Varsovie",
+     "en": "National Museum in Warsaw",
+     "es": "Museo Nacional de Varsovia",
+     "it": "Museo nazionale di Varsavia",
+     "fi": "Muzeum Narodowe w Warszawie"
+    }
+   },
+   {
+    "id": "Q376169",
+    "lat": 52.243,
+    "lon": 21.011,
+    "sitelinks": 31,
+    "names": {
+     "default": "Grand Theatre",
+     "de": "Teatr Wielki",
+     "en": "Grand Theatre",
+     "es": "Gran Teatro Wielki",
+     "fr": "Grand Théâtre de Varsovie",
+     "it": "Grand Theatre"
+    }
+   },
+   {
+    "id": "Q429069",
+    "lat": 52.249444,
+    "lon": 20.993056,
+    "sitelinks": 29,
+    "names": {
+     "default": "Museum of the History of Polish Jews",
+     "de": "Museum der Geschichte der polnischen Juden",
+     "en": "Museum of the History of Polish Jews",
+     "fi": "Puolan juutalaisten historiallinen museo",
+     "fr": "musée de l'Histoire des Juifs polonais",
+     "it": "Museo della storia degli ebrei polacchi",
+     "es": "Museo POLIN de Historia de los Judíos Polacos"
+    }
+   },
+   {
+    "id": "Q345276",
+    "lat": 52.21512,
+    "lon": 21.03582,
+    "sitelinks": 26,
+    "names": {
+     "default": "Łazienki Palace",
+     "en": "Łazienki Palace",
+     "de": "Łazienki-Palast",
+     "es": "Palacio Łazienki",
+     "fr": "palais Łazienki",
+     "it": "Palazzo sull'acqua",
+     "fi": "Łazienki-palatsi"
+    }
+   }
+  ],
+  "washington": [
+   {
+    "id": "Q35525",
+    "lat": 38.897778,
+    "lon": -77.036667,
+    "sitelinks": 143,
+    "names": {
+     "default": "White House",
+     "es": "Casa Blanca",
+     "fi": "Valkoinen talo",
+     "fr": "Maison-Blanche",
+     "it": "Casa Bianca",
+     "de": "Weißes Haus",
+     "en": "White House"
+    }
+   },
+   {
+    "id": "Q178114",
+    "lat": 38.889475,
+    "lon": -77.035244,
+    "sitelinks": 70,
+    "names": {
+     "default": "Washington Monument",
+     "fr": "Washington Monument",
+     "es": "Monumento a Washington",
+     "it": "Monumento a Washington",
+     "de": "Washington Monument",
+     "en": "Washington Monument",
+     "fi": "Washington-monumentti"
+    }
+   },
+   {
+    "id": "Q131626",
+    "lat": 38.888889,
+    "lon": -77.026,
+    "sitelinks": 70,
+    "names": {
+     "default": "Smithsonian Institution",
+     "fr": "Smithsonian Institution",
+     "es": "Institución Smithsonian",
+     "it": "Smithsonian Institution",
+     "de": "Smithsonian Institution",
+     "en": "Smithsonian Institution",
+     "fi": "Smithsonian-instituutti"
+    }
+   },
+   {
+    "id": "Q214867",
+    "lat": 38.891389,
+    "lon": -77.02,
+    "sitelinks": 60,
+    "names": {
+     "default": "National Gallery of Art",
+     "fr": "National Gallery of Art",
+     "es": "Galería Nacional de Arte",
+     "it": "National Gallery of Art",
+     "de": "National Gallery of Art",
+     "fi": "National Gallery of Art"
+    }
+   },
+   {
+    "id": "Q213559",
+    "lat": 38.889278,
+    "lon": -77.050139,
+    "sitelinks": 53,
+    "names": {
+     "default": "Lincoln Memorial",
+     "fr": "Lincoln Memorial",
+     "es": "Monumento a Lincoln",
+     "it": "Lincoln Memorial",
+     "de": "Lincoln Memorial",
+     "en": "Lincoln Memorial",
+     "fi": "Lincolnin muistomerkki"
+    }
+   },
+   {
+    "id": "Q668710",
+    "lat": 38.930611,
+    "lon": -77.070556,
+    "sitelinks": 44,
+    "names": {
+     "default": "Washington National Cathedral",
+     "it": "cattedrale dei Santi Pietro e Paolo",
+     "de": "Washington National Cathedral",
+     "en": "Washington National Cathedral",
+     "es": "Catedral Nacional de Washington",
+     "fi": "Washington National Cathedral",
+     "fr": "cathédrale nationale de Washington"
+    }
+   }
+  ],
+  "wellington": [
+   {
+    "id": "Q915603",
+    "lat": -41.290556,
+    "lon": 174.781944,
+    "sitelinks": 33,
+    "names": {
+     "default": "Museum of New Zealand Te Papa Tongarewa",
+     "de": "Museum of New Zealand Te Papa Tongarewa",
+     "en": "Museum of New Zealand Te Papa Tongarewa",
+     "es": "Museo de Nueva Zelanda Te Papa Tongarewa",
+     "fr": "musée de Nouvelle-Zélande Te Papa Tongarewa",
+     "it": "Museo della Nuova Zelanda Te Papa Tongarewa"
+    }
+   }
+  ],
+  "yokohama": [],
+  "york": [
+   {
+    "id": "Q252575",
+    "lat": 53.961944,
+    "lon": -1.081944,
+    "sitelinks": 42,
+    "names": {
+     "default": "York Minster",
+     "de": "York Minster",
+     "en": "York Minster",
+     "es": "Catedral de York",
+     "fi": "Yorkin tuomiokirkko",
+     "fr": "cathédrale d'York",
+     "it": "cattedrale di York"
+    }
+   },
+   {
+    "id": "Q80637",
+    "lat": 53.955833,
+    "lon": -1.08,
+    "sitelinks": 24,
+    "names": {
+     "default": "York Castle",
+     "fr": "château d'York",
+     "en": "York Castle",
+     "fi": "Yorkin linna",
+     "de": "York Castle",
+     "it": "castello di York",
+     "es": "Castillo de York"
+    }
+   },
+   {
+    "id": "Q579958",
+    "lat": 53.9598,
+    "lon": -1.09771,
+    "sitelinks": 23,
+    "names": {
+     "default": "National Railway Museum",
+     "de": "National Railway Museum",
+     "en": "National Railway Museum",
+     "fi": "National Railway Museum",
+     "fr": "British National Railway Museum",
+     "it": "National Railway Museum",
+     "es": "Museo Nacional del Ferrocarril de York"
+    }
+   }
+  ],
+  "zagreb": [
+   {
+    "id": "Q312220",
+    "lat": 45.814444,
+    "lon": 15.979722,
+    "sitelinks": 41,
+    "names": {
+     "default": "Zagreb Cathedral",
+     "fr": "cathédrale de Zagreb",
+     "en": "Zagreb Cathedral",
+     "es": "Catedral de Zagreb",
+     "fi": "Zagrebin katedraali",
+     "de": "Kathedrale zu Zagreb",
+     "it": "cattedrale di Zagabria"
+    }
+   },
+   {
+    "id": "Q1637186",
+    "lat": 45.816111,
+    "lon": 15.973889,
+    "sitelinks": 29,
+    "names": {
+     "default": "St. Mark's Church in Zagreb",
+     "de": "St.-Markus-Kirche",
+     "fr": "église Saint-Marc de Zagreb",
+     "en": "St. Mark's Church in Zagreb",
+     "es": "iglesia de San Marcos",
+     "it": "chiesa di San Marco"
+    }
+   },
+   {
+    "id": "Q220113",
+    "lat": 45.8221,
+    "lon": 16.021285,
+    "sitelinks": 22,
+    "names": {
+     "default": "Zagreb Zoo",
+     "fr": "parc zoologique de Zagreb",
+     "en": "Zagreb Zoo",
+     "fi": "Zagrebin eläintarha",
+     "de": "Zoo Zagreb",
+     "es": "Jardín zoológico de Zagreb",
+     "it": "parco zoologico di Zagreb"
+    }
+   }
+  ],
+  "zurich": [
+   {
+    "id": "Q684948",
+    "lat": 47.37,
+    "lon": 8.544167,
+    "sitelinks": 30,
+    "names": {
+     "default": "Grossmünster",
+     "fr": "Grossmünster",
+     "en": "Grossmünster",
+     "es": "Grossmünster",
+     "fi": "Grossmünster",
+     "it": "Grossmünster",
+     "de": "Grossmünster"
+    }
+   },
+   {
+    "id": "Q691896",
+    "lat": 47.379167,
+    "lon": 8.539722,
+    "sitelinks": 26,
+    "names": {
+     "default": "National Museum Zurich",
+     "de": "Landesmuseum Zürich",
+     "fr": "Musée national de Zurich",
+     "en": "National Museum Zurich",
+     "es": "Museo Nacional de Zúrich",
+     "it": "Museo nazionale Zurigo"
     }
    }
   ]

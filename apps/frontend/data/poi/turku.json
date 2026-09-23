@@ -1,9 +1,9 @@
 {
   "city": "turku",
-  "generatedAt": "2026-09-20T08:35:26.405Z",
+  "generatedAt": "2026-09-23T08:26:33.670Z",
   "categories": {
     "toilets": {
-      "count": 55,
+      "count": 56,
       "pois": [
         {
           "id": "node/9552185501",
@@ -45,6 +45,13 @@
           "lon": 22.277841,
           "fee": "no",
           "context": "Turun tuomiokirkko"
+        },
+        {
+          "id": "node/14190019306",
+          "lat": 60.453775,
+          "lon": 22.279872,
+          "wheelchair": "yes",
+          "context": "Astra"
         },
         {
           "id": "way/35406346",
@@ -141,10 +148,30 @@
       "stats": {
         "free": 25,
         "paid": 7,
-        "stepFree": 17,
+        "stepFree": 20,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-20T08:35:03.208Z"
+      "near": [
+        {
+          "landmark": "Q1187606",
+          "within": 3,
+          "distance": 42,
+          "bearing": 244,
+          "poi": "node/13112331655",
+          "lat": 60.452295,
+          "lon": 22.277841
+        },
+        {
+          "landmark": "Q136893",
+          "within": 3,
+          "distance": 176,
+          "bearing": 56,
+          "poi": "way/1320580218",
+          "lat": 60.436174,
+          "lon": 22.230285
+        }
+      ],
+      "updatedAt": "2026-09-23T08:26:32.052Z"
     },
     "drinking-water": {
       "count": 12,
@@ -174,7 +201,27 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:35:04.990Z"
+      "near": [
+        {
+          "landmark": "Q1187606",
+          "within": 0,
+          "distance": 524,
+          "bearing": 72,
+          "poi": "node/12460883098",
+          "lat": 60.453919,
+          "lon": 22.28761
+        },
+        {
+          "landmark": "Q136893",
+          "within": 1,
+          "distance": 79,
+          "bearing": 92,
+          "poi": "node/9134636415",
+          "lat": 60.435253,
+          "lon": 22.22908
+        }
+      ],
+      "updatedAt": "2026-09-23T08:26:33.569Z"
     },
     "playgrounds": {
       "count": 631,

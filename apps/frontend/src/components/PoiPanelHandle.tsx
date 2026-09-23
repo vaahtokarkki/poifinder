@@ -131,6 +131,27 @@ const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
     const heightFor = (snap: Snap) => (snap === "peek" ? state.peek : state.full);
 
+    /**
+     * How tall the panel may grow: as tall as its content, and no taller than
+     * the ceiling the window allows.
+     *
+     * A fixed ceiling let a drinking fountain with a name and a coordinate be
+     * dragged up into a mostly empty page — a gesture that promised more and
+     * showed a blank. What is left to read is the part of the body that
+     * overflows at the height the panel has now, so that is what it may add.
+     * Nothing overflowing means the panel is already showing everything, and
+     * full is simply peek.
+     *
+     * Asked when a gesture starts rather than kept current, because the
+     * content moves on its own — the building lookup lands, the details
+     * arrive — and the only moment the answer matters is when somebody reaches
+     * for the handle.
+     */
+    const measureFull = () => {
+      const overflow = Math.max(0, body.scrollHeight - body.clientHeight);
+      state.full = Math.max(state.peek, Math.min(fullHeightForWindow(), state.height + overflow));
+    };
+
     const setHeight = (height: number) => {
       state.height = height;
       panel.style.height = `${height}px`;
@@ -184,7 +205,7 @@ const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         measured ||
         state.peek ||
         Math.min(Math.round(window.innerHeight * 0.46), PEEK_FALLBACK);
-      state.full = Math.max(fullHeightForWindow(), state.peek);
+      measureFull();
       if (!state.start) setHeight(heightFor(state.snap));
     };
 
@@ -242,6 +263,7 @@ const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     map.on("popupclose", onPopupClosed);
 
     const beginDrag = (y: number) => {
+      measureFull();
       state.start = { y, height: state.height };
       panel.classList.add("poi-panel-dragging");
     };
@@ -298,12 +320,18 @@ const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       beginDrag,
       moveDrag,
       endDrag,
-      expand: () => applySnap("full"),
+      expand: () => {
+        measureFull();
+        applySnap("full");
+      },
       /* The way out of a full panel is the way back to a peeking one; the way
          out of a peeking one is off the screen, which is what the pull down
          does with a finger */
       collapse: () => (state.snap === "full" ? applySnap("peek") : state.onClose()),
-      toggle: () => applySnap(state.snap === "full" ? "peek" : "full"),
+      toggle: () => {
+        measureFull();
+        applySnap(state.snap === "full" ? "peek" : "full");
+      },
     };
 
     /**

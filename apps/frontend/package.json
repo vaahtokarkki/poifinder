@@ -10,6 +10,7 @@
     "prerender": "node scripts/prerender.mjs",
     "seo:overlap": "node scripts/check-overlap.mjs",
     "seo:data": "node scripts/fetch-poi-data.mjs",
+    "seo:landmarks": "node scripts/fetch-landmarks.mjs",
     "copy:check": "node scripts/check-copy.mjs",
     "copy:nouns": "node scripts/check-nouns.mjs",
     "overpass:filters": "node scripts/generate-osmium-filter.mjs",

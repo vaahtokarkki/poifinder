@@ -186,6 +186,24 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       one: "Alla on listattu niistä yksi: {examples}.",
       other: "Alla on listattu niistä {listed}, muun muassa {examples}.",
     },
+    landmarksHeading: "{noun} nähtävyyksien lähellä: {sights}",
+    landmarkWithin: "{count} alle {radius} metrin päässä",
+    landmarkNoneWithin: "ei yhtään alle {radius} metrin päässä",
+    landmarkClosest: "lähin {distance} m {direction}",
+    landmarkDirections: {
+      n: "pohjoiseen",
+      ne: "koilliseen",
+      e: "itään",
+      se: "kaakkoon",
+      s: "etelään",
+      sw: "lounaaseen",
+      w: "länteen",
+      nw: "luoteeseen",
+    },
+    landmarksNote:
+      "Etäisyydet linnuntietä kunkin nähtävyyden keskeltä. Etäisyys avaa kohteen kartalla.",
+    categoryDescriptionNear:
+      "{noun} {cityIn}: {count} kartalla, myös nähtävyyksien lähellä: {sights}. Maksuton, ilman kirjautumista.",
     countryTitle: "{noun} {countryIn} kartalla — {count} kohdetta {cities} kaupungissa | {site}",
     countryDescription:
       "{noun} {countryIn}: {count} kohdetta {cities} kaupungissa, kaikki yhdellä kartalla OpenStreetMapin pohjalta. Maksuton, ilman kirjautumista, toimii puhelimella.",

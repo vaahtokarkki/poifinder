@@ -58,6 +58,7 @@ Run from the repo root; each delegates to the workspace that owns it.
 | `npm run dev` | The app, on `--host` so a phone on the same network can open it |
 | `npm run build` | `vite build` then the prerender |
 | `npm run seo:data` | Refreshes `apps/frontend/data/poi/*.json` from Overpass |
+| `npm run seo:landmarks` | Refreshes `apps/frontend/data/landmarks.json`, the sights each city page measures its nearest toilet and fountain from. Rarely: the weekly refresh does the measuring |
 | `npm run deploy` | Builds and pushes to Cloudflare |
 | `npm run overpass:filters` | Regenerates `apps/overpass/osmium-filter.txt` from `CATEGORY_CONFIG` |
 | `npm run noise:cities` | Regenerates `apps/noise/cities.json` from `CITIES` |

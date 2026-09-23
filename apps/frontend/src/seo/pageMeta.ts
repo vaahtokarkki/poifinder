@@ -5,6 +5,7 @@ import {
   categoryHeading,
   categoryNoun,
   categoryPlural,
+  categorySearchHeading,
   categorySingular,
   findCategorySeo,
   localize,
@@ -12,6 +13,7 @@ import {
 } from "./categories";
 import type { CityNames, CategorySeo, Vocab } from "./categories";
 import type { CategoryPageData, CountryPageData, PoiEntry } from "./pageData";
+import type { LandmarkEntry } from "./landmarks";
 import { formatCount } from "./format";
 import { DEFAULT_LOCALE, LOCALES, getLocale, interpolate, resolve, selectPlural, ui } from "../copy";
 import type { Locale } from "../copy";
@@ -778,7 +780,9 @@ export function vocabForRoute(route: Route): Vocab {
 
 export function titleFor(route: Route, count: number): string {
   const { city, categorySeo } = route;
-  const noun = capitalizeFirst(categoryPlural(categorySeo, vocabForRoute(route)));
+  const vocab = vocabForRoute(route);
+  const noun =
+    categorySearchHeading(categorySeo, vocab) ?? capitalizeFirst(categoryPlural(categorySeo, vocab));
   return interpolate(ui().page.categoryTitle, {
     noun,
     ...cityNames(city),
@@ -787,7 +791,11 @@ export function titleFor(route: Route, count: number): string {
   });
 }
 
-export function descriptionFor(route: Route, count: number): string {
+export function descriptionFor(
+  route: Route,
+  count: number,
+  landmarks: LandmarkEntry[] = []
+): string {
   const { city, categorySeo } = route;
   // The noun has to agree with the count: 163 routes hold a single point, and
   // "1 public showers in Adelaide" was what every one of their descriptions said
@@ -795,18 +803,41 @@ export function descriptionFor(route: Route, count: number): string {
   // Sentence case on the finished string: English opens with the count and is
   // already fine, Finnish opens with the noun and the deck stores nouns in the
   // lower case form a sentence uses mid way through
+  //
+  // With sights, the description names them instead of the feature list: the
+  // snippet is what a person standing at the Trevi Fountain reads before
+  // choosing a result, and the name of where they are standing is the whole
+  // of what they are matching it against
   return capitalizeFirst(
-    interpolate(ui().page.categoryDescription, {
-      noun,
-      ...cityNames(city),
-      count: formatCount(count),
-    })
+    interpolate(
+      landmarks.length > 0 ? ui().page.categoryDescriptionNear : ui().page.categoryDescription,
+      {
+        noun,
+        ...cityNames(city),
+        count: formatCount(count),
+        sights: sightList(landmarks),
+      }
+    )
   );
 }
 
+/**
+ * The first few sights as a list in the page's language: "the Colosseum,
+ * Pantheon and Trevi Fountain" in English, "…, Pantheon et Fontaine de Trevi"
+ * in French. Three, because a heading or a snippet that names six places is
+ * a list nobody finishes reading
+ */
+export function sightList(landmarks: LandmarkEntry[], limit = 3): string {
+  const names = landmarks.slice(0, limit).map((landmark) => landmark.name);
+  return new Intl.ListFormat(getLocale(), { type: "conjunction" }).format(names);
+}
+
 export function headingFor(route: Route): string {
+  const vocab = vocabForRoute(route);
   return interpolate(ui().page.categoryHeading, {
-    noun: categoryHeading(route.categorySeo, vocabForRoute(route)),
+    noun:
+      categorySearchHeading(route.categorySeo, vocab) ??
+      categoryHeading(route.categorySeo, vocab),
     ...cityNames(route.city),
   });
 }
@@ -1114,7 +1145,7 @@ export function buildJsonLd(route: Route, data: CategoryPageData): object[] {
     "@id": url,
     url,
     name: heading,
-    description: descriptionFor(route, data.count),
+    description: descriptionFor(route, data.count, data.landmarks),
     dateModified: data.updatedAt,
     isPartOf: { "@type": "WebSite", name: SITE_NAME, url: homeUrl() },
     mainEntity: { "@id": `${url}#list` },
@@ -1125,7 +1156,7 @@ export function buildJsonLd(route: Route, data: CategoryPageData): object[] {
     "@type": "ItemList",
     "@id": `${url}#list`,
     name: heading,
-    description: descriptionFor(route, data.count),
+    description: descriptionFor(route, data.count, data.landmarks),
     url,
     numberOfItems: data.count,
     itemListOrder: "https://schema.org/ItemListUnordered",

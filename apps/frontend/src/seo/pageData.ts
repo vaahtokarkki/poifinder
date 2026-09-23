@@ -6,6 +6,8 @@
  * data, which is what keeps the static HTML honest: everything a crawler sees
  * in the prerendered markup is also what a visitor sees in the sheet.
  */
+import type { LandmarkEntry } from "./landmarks";
+
 export const PAGE_DATA_ELEMENT_ID = "__wayside_page__";
 
 export type PoiEntry = {
@@ -68,6 +70,13 @@ export type CategoryPageData = {
    * before the field existed, and the summary simply says less for those
    */
   stats?: { free: number; paid: number; stepFree: number; partlyStepFree: number };
+  /**
+   * The city's best known sights and the nearest of these points to each,
+   * named in the page's language. Only on the categories that carry
+   * `nearLandmarks`, and only where the city has sights close enough to say
+   * something true about — see src/seo/landmarks.ts
+   */
+  landmarks?: LandmarkEntry[];
   /**
    * Which neighbouring pages exist. Internal links are only worth anything if
    * they resolve, and only the build knows which routes cleared the threshold,

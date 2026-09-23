@@ -172,6 +172,24 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       one: "La lista de abajo muestra {listed}: {examples}.",
       other: "La lista de abajo muestra {listed}, entre ellos {examples}.",
     },
+    landmarksHeading: "{noun} cerca de los monumentos: {sights}",
+    landmarkWithin: "{count} a menos de {radius} m",
+    landmarkNoneWithin: "ninguno a menos de {radius} m",
+    landmarkClosest: "el más cercano a {distance} m {direction}",
+    landmarkDirections: {
+      n: "al norte",
+      ne: "al noreste",
+      e: "al este",
+      se: "al sureste",
+      s: "al sur",
+      sw: "al suroeste",
+      w: "al oeste",
+      nw: "al noroeste",
+    },
+    landmarksNote:
+      "Distancias en línea recta desde el centro de cada monumento. La distancia abre el punto en el mapa.",
+    categoryDescriptionNear:
+      "{count} {noun} en {city} en un mapa, y los más cercanos a {sights}. Gratis, sin registro.",
     countryTitle:
       "{noun} en {countryIn} en un mapa — {count} en {cities} {cityUnit} | {site}",
     countryDescription:

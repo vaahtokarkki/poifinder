@@ -88,6 +88,22 @@ async function main() {
         poiData.set(parsed.city, parsed);
       }
     }
+    // The sights the landmark sections are about, by city. Optional, and the
+    // distances themselves travel in data/poi — see src/seo/landmarks.ts
+    const landmarksFile = path.join(DATA_DIR, "..", "landmarks.json");
+    const landmarksByCity = existsSync(landmarksFile)
+      ? JSON.parse(await readFile(landmarksFile, "utf8")).cities ?? {}
+      : {};
+    const { landmarkName } = await server.ssrLoadModule("/src/seo/landmarks.ts");
+    /** A route's proximity rows with each sight named in one locale */
+    const landmarksFor = (route, locale) => {
+      const sights = new Map((landmarksByCity[route.city.slug] ?? []).map((l) => [l.id, l]));
+      return (route.near ?? []).flatMap(({ landmark, ...rest }) => {
+        const sight = sights.get(landmark);
+        return sight ? [{ name: landmarkName(sight, locale), ...rest }] : [];
+      });
+    };
+
     if (poiData.size === 0) {
       console.warn(
         "! data/poi is empty, only the map root will be prerendered.\n" +
@@ -128,6 +144,7 @@ async function main() {
           count: entry.count,
           pois,
           stats: entry.stats,
+          near: categorySeo.nearLandmarks ? entry.near : undefined,
           indexable,
           // The narrower question: of the pages fit to index at all, the ones
           // Google is asked for. See GOOGLE_CATEGORIES in pageMeta.ts
@@ -302,6 +319,7 @@ async function main() {
       // built from the same call so the two cannot drift apart
       for (const locale of meta.localesForRoute(route.city, route.categorySeo.slug)) {
         setLocale(locale);
+        const landmarks = landmarksFor(route, locale);
         const pageData = {
           kind: "category",
           citySlug: route.city.slug,
@@ -313,6 +331,7 @@ async function main() {
             ? { hasCountryHub: true }
             : {}),
           ...(route.stats ? { stats: route.stats } : {}),
+          ...(landmarks.length > 0 ? { landmarks } : {}),
           updatedAt: route.updatedAt,
           ...(locale === "en" ? {} : { locale }),
         };
@@ -322,7 +341,7 @@ async function main() {
             route.city.slug
           }/${route.categorySeo.slug}`,
           title: meta.titleFor(routeArg, route.count),
-          description: meta.descriptionFor(routeArg, route.count),
+          description: meta.descriptionFor(routeArg, route.count, landmarks),
           canonical: meta.categoryUrl(route.city.slug, route.categorySeo.slug, locale),
           jsonLd: meta.buildJsonLd(routeArg, pageData),
           pageData,

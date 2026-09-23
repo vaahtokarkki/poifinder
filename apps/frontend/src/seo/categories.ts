@@ -89,6 +89,12 @@ export type CategorySeo = {
    * only after `enclosedBy` has had its turn.
    */
   placedByStreet?: boolean;
+  /**
+   * Whether the page lists how far the city's best known sights are from the
+   * nearest of these points. The two needs a visitor has standing at a sight
+   * they do not know, and nothing else — see src/seo/landmarks.ts
+   */
+  nearLandmarks?: boolean;
   /** schema.org type of a single point, Place when nothing fits better */
   schemaType: string;
 };
@@ -98,6 +104,7 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     category: CATEGORIES.Toilets,
     slug: "toilets",
     enclosedBy: ["building", "area"],
+    nearLandmarks: true,
     schemaType: "PublicToilet",
   },
   {
@@ -110,6 +117,7 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     // fountains could make it into a list: Prague had 241 on the map and six
     // rows, and a page that short is mostly the template around it
     placedByStreet: true,
+    nearLandmarks: true,
     schemaType: "Place",
   },
   {
@@ -391,6 +399,23 @@ export function categoryPlural(
   locale: Locale = getLocale()
 ): string {
   return localizeFor(copyOf(entry, locale).plural, vocab, locale);
+}
+
+/**
+ * The noun a <title> and an <h1> use: what people search for, where the deck
+ * says it differs from what the category is called. See `searchHeading`
+ */
+export function categorySearchHeading(
+  entry: CategorySeo,
+  vocab: Vocab,
+  locale: Locale = getLocale()
+): string | null {
+  const noun = copyOf(entry, locale).searchHeading;
+  // A translated entry is merged over the English one, so a deck that says
+  // nothing inherits the English noun — and "Drinking fountains Helsingissä"
+  // is what a Finnish title then reads. Only a noun the locale gave itself
+  if (!noun || (locale !== "en" && noun === copyOf(entry, "en").searchHeading)) return null;
+  return localizeFor(noun, vocab, locale);
 }
 
 /** The sentence case heading noun, in the city's English */

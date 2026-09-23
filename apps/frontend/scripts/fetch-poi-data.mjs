@@ -246,6 +246,55 @@ function toCandidates(elements, city) {
     .sort((a, b) => a._distance - b._distance);
 }
 
+/** Compass bearing from one point to another, in whole degrees */
+function bearingDegrees(fromLat, fromLon, toLat, toLon) {
+  const toRad = (deg) => (deg * Math.PI) / 180;
+  const dLon = toRad(toLon - fromLon);
+  const y = Math.sin(dLon) * Math.cos(toRad(toLat));
+  const x =
+    Math.cos(toRad(fromLat)) * Math.sin(toRad(toLat)) -
+    Math.sin(toRad(fromLat)) * Math.cos(toRad(toLat)) * Math.cos(dLon);
+  return Math.round(((Math.atan2(y, x) * 180) / Math.PI + 360) % 360);
+}
+
+/**
+ * How far each of the city's sights is from the nearest of these points, and
+ * how many stand within walking distance of it.
+ *
+ * Against every point the query returned, not the thirty stored: the nearest
+ * toilet to the Colosseum is very likely an unnamed one no list would carry.
+ * A sight with nothing inside LANDMARK_MAX_DISTANCE is left out, because a
+ * page answering "toilets near the Pantheon" with a 2 km walk has not
+ * answered it. See src/seo/landmarks.ts
+ */
+function landmarkProximity(candidates, landmarks, { LANDMARK_RADIUS, LANDMARK_MAX_DISTANCE }) {
+  return landmarks.flatMap((landmark) => {
+    let nearest = null;
+    let nearestDistance = Infinity;
+    let within = 0;
+    for (const candidate of candidates) {
+      const distance = distanceMeters(landmark.lat, landmark.lon, candidate.lat, candidate.lon);
+      if (distance <= LANDMARK_RADIUS) within++;
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearest = candidate;
+      }
+    }
+    if (!nearest || nearestDistance > LANDMARK_MAX_DISTANCE) return [];
+    return [
+      {
+        landmark: landmark.id,
+        within,
+        distance: Math.round(nearestDistance),
+        bearing: bearingDegrees(landmark.lat, landmark.lon, nearest.lat, nearest.lon),
+        poi: nearest.id,
+        lat: nearest.lat,
+        lon: nearest.lon,
+      },
+    ];
+  });
+}
+
 /**
  * The rows worth storing, one per distinct identity.
  *
@@ -626,6 +675,14 @@ async function main() {
       "/src/constants.ts"
     );
 
+    const landmarkConfig = await server.ssrLoadModule("/src/seo/landmarks.ts");
+    // Written by scripts/fetch-landmarks.mjs, and optional: without it the
+    // pages simply have no landmark section
+    const landmarksFile = path.join(ROOT, "data", "landmarks.json");
+    const landmarksByCity = existsSync(landmarksFile)
+      ? JSON.parse(await readFile(landmarksFile, "utf8")).cities ?? {}
+      : {};
+
     const endpoints = SELF_HOSTED_URL ? [SELF_HOSTED_URL] : [...OVERPASS_API_CONFIG.URLS];
     if (SELF_HOSTED_URL) console.log(`Using self hosted Overpass at ${SELF_HOSTED_URL}`);
     const force = args.get("force") === "true";
@@ -796,11 +853,18 @@ async function main() {
             await sleep(DELAY_MS);
           }
 
+          const landmarks = landmarksByCity[city.slug] ?? [];
+          const near =
+            categorySeo.nearLandmarks && landmarks.length > 0
+              ? landmarkProximity(candidates, landmarks, landmarkConfig)
+              : [];
+
           const pois = selectPois(candidates);
           result[categorySeo.slug] = {
             count: elements.length,
             pois,
             stats: tagStats(elements),
+            ...(near.length > 0 ? { near } : {}),
             // Per category, not per city: when one query fails and the rest
             // succeed, only the ones that succeeded may claim to be current
             updatedAt: new Date().toISOString(),

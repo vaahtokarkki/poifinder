@@ -197,6 +197,24 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
       one: "{listed} davon steht in der Liste unten: {examples}.",
       other: "{listed} davon stehen in der Liste unten, darunter {examples}.",
     },
+    landmarksHeading: "{noun} bei Sehenswürdigkeiten: {sights}",
+    landmarkWithin: "{count} im Umkreis von {radius} m",
+    landmarkNoneWithin: "keine im Umkreis von {radius} m",
+    landmarkClosest: "nächste {distance} m {direction}",
+    landmarkDirections: {
+      n: "nördlich",
+      ne: "nordöstlich",
+      e: "östlich",
+      se: "südöstlich",
+      s: "südlich",
+      sw: "südwestlich",
+      w: "westlich",
+      nw: "nordwestlich",
+    },
+    landmarksNote:
+      "Luftlinie ab der Mitte jeder Sehenswürdigkeit. Die Entfernung öffnet den Punkt auf der Karte.",
+    categoryDescriptionNear:
+      "{count} {noun} in {city} auf einer Karte, dazu die nächsten bei {sights}. Kostenlos, ohne Anmeldung.",
     countryTitle:
       "{noun} in {countryIn} auf der Karte — {count} Punkte in {cities} Städten | {site}",
     countryDescription:

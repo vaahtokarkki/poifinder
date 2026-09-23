@@ -64,6 +64,15 @@ export type CategoryCopy = {
   intro: PluralMessage;
   /** Questions people actually search for, answered specifically */
   faq: FaqMessage[];
+  /**
+   * The noun a page's <title> and <h1> use in place of `plural` and
+   * `heading`, where what people type is not what the category is called.
+   * Nobody searches for "drinking water points"; they search for drinking
+   * fountains. Only the two places a search result is matched against take
+   * it — the running text keeps the accurate noun, which also covers taps
+   * and wells
+   */
+  searchHeading?: string;
 };
 
 /**
@@ -209,6 +218,22 @@ export type UiCopy = {
     summaryFeeFree: Message;
     summaryStepFree: Message;
     summaryListed: Message;
+    /**
+     * The section listing how far the city's best known sights are from the
+     * nearest point — see src/seo/landmarks.ts. `{sights}` is the names,
+     * already joined as a list in the page's language. Everything else in
+     * the rows is a number, a name or a compass direction, so the section
+     * reads differently in every city by construction
+     */
+    landmarksHeading: string;
+    landmarkWithin: Message;
+    landmarkNoneWithin: string;
+    landmarkClosest: string;
+    /** Where the nearest point lies from the sight, as the closest phrase ends */
+    landmarkDirections: Record<"n" | "ne" | "e" | "se" | "s" | "sw" | "w" | "nw", string>;
+    landmarksNote: string;
+    /** The meta description of a page that has the section */
+    categoryDescriptionNear: string;
     /**
      * The country hub: one category across a whole country.
      *

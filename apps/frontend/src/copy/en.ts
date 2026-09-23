@@ -51,6 +51,7 @@ const categories: CopyDeck["categories"] = {
     plural: "drinking water points",
     singular: "drinking water point",
     heading: "Drinking water",
+    searchHeading: "Drinking fountains",
     intro: {
       one: "One place to refill a bottle is mapped in {city}. Points that are tagged as non potable are filtered out, so what you see is water you can actually drink.",
       other: "{count} places to refill a bottle are mapped in {city}: public drinking fountains, tap points, wells, and fountains where the water is confirmed potable. Points that are tagged as non potable are filtered out, so what you see is water you can actually drink.",
@@ -843,6 +844,24 @@ const ui: CopyDeck["ui"] = {
       one: "{listed} is listed below: {examples}.",
       other: "{listed} are listed below, among them {examples}.",
     },
+    landmarksHeading: "{noun} near {sights}",
+    landmarkWithin: { one: "{count} within {radius} m", other: "{count} within {radius} m" },
+    landmarkNoneWithin: "none within {radius} m",
+    landmarkClosest: "closest {distance} m {direction}",
+    landmarkDirections: {
+      n: "to the north",
+      ne: "to the north-east",
+      e: "to the east",
+      se: "to the south-east",
+      s: "to the south",
+      sw: "to the south-west",
+      w: "to the west",
+      nw: "to the north-west",
+    },
+    landmarksNote:
+      "Straight-line distances from the middle of each sight. The distance opens that point on the map.",
+    categoryDescriptionNear:
+      "{count} {noun} in {city} on one map, and the closest to {sights}. Opening hours, fees and accessibility where OpenStreetMap has them. Free, no signup.",
     countryTitle:
       "{noun} in {countryIn} on a map — {count} across {cities} {cityUnit} | {site}",
     countryDescription:

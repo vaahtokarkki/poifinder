@@ -375,7 +375,8 @@ const RenderMarkerIcon = (
   /**
    * Whether this is the point whose panel is open. The panel covers half the
    * screen and says nothing about where on the map it came from, so the marker
-   * answers instead: larger, on a solid disc, ringed in its own colour
+   * answers instead: the same size, but on a solid disc and ringed in its own
+   * colour
    */
   active: boolean = false
 ) => {
@@ -387,13 +388,12 @@ const RenderMarkerIcon = (
       <span class="poi-marker-disc" style="
         background:${active ? "#fff" : "#fff6"};
         border-radius:50%;
-        box-shadow:${active ? `0 0 0 3px ${ink}, 0 3px 10px rgba(0,0,0,0.35)` : "0 2px 8px rgba(0,0,0,0.15)"};
+        box-shadow:${active ? `0 0 0 2px ${ink}, ` : ""}0 2px 8px rgba(0,0,0,0.15);
         display:flex;
         align-items:center;
         justify-content:center;
         border: 2px solid ${active ? "#fff" : "#fff6"};
         color: ${ink};
-        ${active ? "transform:scale(1.35);transform-origin:50% 100%;" : ""}
       ">
         ${renderToString(React.cloneElement(iconElement))}
       </span>
@@ -988,21 +988,38 @@ const cssColour = (value: string): { css: string; hex: boolean } | null => {
     : null;
 };
 
+/**
+ * The swatch is a button: a tap shows the value as tagged — the hex, for most
+ * of them — in a bubble over it, for the reader who wants the code rather than
+ * the colour. There is no hover on a phone, so a title alone never shows.
+ */
 const ColourValue: React.FC<{ css: string; label: string | null; title: string }> = ({
   css,
   label,
   title,
-}) => (
-  <span className="poi-popup-colour" title={title}>
-    <span
-      className="poi-popup-colour-swatch"
-      style={{ background: css }}
-      role="img"
-      aria-label={title}
-    />
-    {label}
-  </span>
-);
+}) => {
+  const [shown, setShown] = React.useState(false);
+  return (
+    <span className="poi-popup-colour">
+      <button
+        type="button"
+        className="poi-popup-colour-swatch"
+        style={{ background: css }}
+        aria-label={title}
+        aria-expanded={shown}
+        onClick={() => setShown(open => !open)}
+        onBlur={() => setShown(false)}
+      >
+        {shown && (
+          <span className="poi-popup-colour-bubble" role="status">
+            {title}
+          </span>
+        )}
+      </button>
+      {label}
+    </span>
+  );
+};
 
 /** One line of the popup: a label, a value, and how the value should be read */
 type PopupRow = {
@@ -1384,9 +1401,9 @@ const RenderMarkerContents: React.FC<{
    * A bare point — an `amenity=toilets` node and nothing else — used to open
    * onto two dates and two edit links, one pair for the point and one for a
    * nameless building that had nothing to say either. Four footnotes about
-   * nothing read as clutter, so the point's say it once in a card that owns
-   * the gap, and a building with neither a name nor a row is left out: it is
-   * already drawn on the map, and a heading with no content under it is noise
+   * nothing read as clutter, so the gap is named in a card of its own, and a
+   * building with neither a name nor a row is left out: it is already drawn on
+   * the map, and a heading with no content under it is noise
    */
   const hasOwnDetails = rows.length > 0 || inherited.length > 0;
   const buildingHasSomething = Boolean(buildingName) || buildingRows.length > 0;
@@ -1429,38 +1446,26 @@ const RenderMarkerContents: React.FC<{
           each object's dates follow that object's rows. Set out the other way
           round the popup ended on four date lines in a row, two about a
           shopping centre and two about a toilet, in the order nobody reads */}
-      {hasOwnDetails ? (
-        <>
-          {survey && <p className="poi-popup-survey">{survey}</p>}
-          {edited && <p className="poi-popup-edited">{edited}</p>}
-
-          {/* What to do about those two dates, offered where they are read: at
-              the foot of the point's own block, and again at the foot of the
-              building's, because each is a separate object with its own record
-              to correct */}
-          {editUrl && (
-            <EditInOsm
-              href={editUrl}
-              label={ui().poi.editInOsm}
-              object="point"
-              category={category}
-            />
-          )}
-        </>
-      ) : (
+      {!hasOwnDetails && (
         <div className="poi-popup-empty">
           <p className="poi-popup-empty-text">{ui().poi.noDetailsYet}</p>
-          {survey && <p className="poi-popup-survey">{survey}</p>}
-          {edited && <p className="poi-popup-edited">{edited}</p>}
-          {editUrl && (
-            <EditInOsm
-              href={editUrl}
-              label={ui().poi.addDetailsInOsm}
-              object="point"
-              category={category}
-            />
-          )}
         </div>
+      )}
+
+      {survey && <p className="poi-popup-survey">{survey}</p>}
+      {edited && <p className="poi-popup-edited">{edited}</p>}
+
+      {/* What to do about those two dates, offered where they are read: at the
+          foot of the point's own block, and again at the foot of the
+          building's, because each is a separate object with its own record to
+          correct */}
+      {editUrl && (
+        <EditInOsm
+          href={editUrl}
+          label={ui().poi.editInOsm}
+          object="point"
+          category={category}
+        />
       )}
 
       {building && buildingHasSomething && (

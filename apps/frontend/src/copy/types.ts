@@ -312,8 +312,6 @@ export type UiCopy = {
      * waiting to be filled rather than as a list of footnotes about nothing
      */
     noDetailsYet: string;
-    /** {@link editInOsm}, worded for that case: there is nothing to edit yet */
-    addDetailsInOsm: string;
     /**
      * Modelled traffic noise, shown only when the tiles that carry it are
      * configured and loaded. See src/map/noiseTiles.ts and apps/noise.

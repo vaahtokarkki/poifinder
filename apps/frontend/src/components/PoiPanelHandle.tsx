@@ -133,15 +133,15 @@ const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     const heightFor = (snap: Snap) => (snap === "peek" ? state.peek : state.full);
 
     /**
-     * How tall the panel may grow: as tall as its content, and no taller than
-     * the ceiling the window allows.
+     * How tall the panel may grow: all the way, or not at all.
      *
-     * A fixed ceiling let a drinking fountain with a name and a coordinate be
-     * dragged up into a mostly empty page — a gesture that promised more and
-     * showed a blank. What is left to read is the part of the body that
-     * overflows at the height the panel has now, so that is what it may add.
-     * Nothing overflowing means the panel is already showing everything, and
-     * full is simply peek.
+     * A drinking fountain with a name and a coordinate has nothing more to
+     * show, and dragging it up into a mostly empty page would be a gesture
+     * that promised more and showed a blank — so when nothing overflows, full
+     * is simply peek. But when there is more to read, the panel goes to the
+     * full height the window allows rather than stopping wherever the content
+     * happens to end: a panel that settles at some in-between height reads as
+     * stuck halfway, and there are only ever the two states.
      *
      * Asked when a gesture starts rather than kept current, because the
      * content moves on its own — the building lookup lands, the details
@@ -150,7 +150,10 @@ const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
      */
     const measureFull = () => {
       const overflow = Math.max(0, body.scrollHeight - body.clientHeight);
-      state.full = Math.max(state.peek, Math.min(fullHeightForWindow(), state.height + overflow));
+      // Measured against the height the panel has now, so a panel already
+      // open to full, with everything showing, still counts as one that grows
+      const needed = state.height + overflow;
+      state.full = needed > state.peek + 1 ? Math.max(state.peek, fullHeightForWindow()) : state.peek;
     };
 
     const setHeight = (height: number) => {

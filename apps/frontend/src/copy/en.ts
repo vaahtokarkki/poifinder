@@ -903,6 +903,8 @@ const ui: CopyDeck["ui"] = {
     lastChecked: "Last checked",
     lastEdited: "Last edited",
     editInOsm: "Edit this point in OpenStreetMap",
+    noDetailsYet: "No details have been mapped for this place yet.",
+    addDetailsInOsm: "Add details in OpenStreetMap",
     noise: {
       label: "Traffic noise",
       quiet: "Quiet",

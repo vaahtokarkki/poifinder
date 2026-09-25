@@ -1646,6 +1646,20 @@
   border-top-color: var(--glass-hairline-strong);
 }
 
+/* The empty state is cut into the glass the same way the chips are */
+.glass-ui .poi-popup-empty {
+  background-color: var(--glass-well);
+  box-shadow: var(--glass-well-rim);
+}
+
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-empty-text {
+  color: var(--glass-ink);
+}
+
+.glass-ui .poi-popup .leaflet-popup-content .poi-popup-empty .poi-popup-edit-link {
+  color: var(--glass-accent-solid);
+}
+
 /* The short answers. A well rather than a filled chip, which is the same move
    the routing fields make: this sits on glass, so it is cut into it */
 .glass-ui .poi-popup-chip {

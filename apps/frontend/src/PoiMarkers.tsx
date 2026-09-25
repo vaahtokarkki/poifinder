@@ -371,21 +371,29 @@ const RenderMarkerIcon = (
    * on: these are the points to walk to when you were buying a coffee anyway,
    * and the condition is the first thing worth knowing about them.
    */
-  muted: boolean = false
+  muted: boolean = false,
+  /**
+   * Whether this is the point whose panel is open. The panel covers half the
+   * screen and says nothing about where on the map it came from, so the marker
+   * answers instead: larger, on a solid disc, ringed in its own colour
+   */
+  active: boolean = false
 ) => {
   const size = 25;
+  const ink = muted ? MUTED_COLOR : color;
   return divIcon({
-    className: "",
+    className: active ? "poi-marker-active" : "",
     html: `<div style="display:flex;align-items:center;justify-content:center;">
-      <span style="
-        background:#fff6;
+      <span class="poi-marker-disc" style="
+        background:${active ? "#fff" : "#fff6"};
         border-radius:50%;
-        box-shadow:0 2px 8px rgba(0,0,0,0.15);
+        box-shadow:${active ? `0 0 0 3px ${ink}, 0 3px 10px rgba(0,0,0,0.35)` : "0 2px 8px rgba(0,0,0,0.15)"};
         display:flex;
         align-items:center;
         justify-content:center;
-        border: 2px solid #fff6;
-        color: ${muted ? MUTED_COLOR : color};
+        border: 2px solid ${active ? "#fff" : "#fff6"};
+        color: ${ink};
+        ${active ? "transform:scale(1.35);transform-origin:50% 100%;" : ""}
       ">
         ${renderToString(React.cloneElement(iconElement))}
       </span>
@@ -513,6 +521,16 @@ const isDisused = (marker: OverpassMarkerData) => marker.tags?.disused === "yes"
  * separate colours would make them compare shades instead of reading a map.
  * The popup is where the difference is spelled out.
  */
+/**
+ * Whether a toilet is one the reader cannot use at all: `access=private` is a
+ * staff toilet, or one in somebody's home, and there is no purchase that gets
+ * a passer-by through the door. Unlike a customers-only toilet it is not a
+ * weaker offer but no offer, so it is left off the map rather than greyed.
+ */
+const isPrivateToilet = (marker: OverpassMarkerData, selected: readonly CATEGORIES[]) =>
+  marker.tags?.access?.toLowerCase() === "private" &&
+  findCategory(marker, selected) === CATEGORIES.Toilets;
+
 const isMuted = (marker: OverpassMarkerData) =>
   isCustomersOnly(marker) || isDisused(marker);
 
@@ -543,7 +561,11 @@ const getMarkerColor = (
   return category !== null ? CATEGORY_CONFIG[category].color : UNCATEGORISED_COLOR;
 };
 
-const getMarkerIcon = (marker: OverpassMarkerData, selected: readonly CATEGORIES[]) => {
+const getMarkerIcon = (
+  marker: OverpassMarkerData,
+  selected: readonly CATEGORIES[],
+  active = false
+) => {
   const category = findCategory(marker, selected);
   const paidIcon = marker.tags?.fee === "yes" && category !== null
     ? PAID_ICONS[category]
@@ -557,21 +579,22 @@ const getMarkerIcon = (marker: OverpassMarkerData, selected: readonly CATEGORIES
    * explicit rather than becoming a ??
    */
   const key =
-    category === null
+    (category === null
       ? `uncategorised:${muted ? "muted" : "open"}`
       : `${category}:${paidIcon ? "paid" : "free"}:${changingTable ? "baby" : "plain"}:${
           muted ? "muted" : "open"
-        }`;
+        }`) + (active ? ":active" : "");
 
   let icon = iconCache.get(key);
   if (!icon) {
     icon =
       category === null
-        ? RenderMarkerIcon(<ParkIcon />, UNCATEGORISED_COLOR, muted)
+        ? RenderMarkerIcon(<ParkIcon />, UNCATEGORISED_COLOR, muted, active)
         : RenderMarkerIcon(
             paidIcon ?? CATEGORY_CONFIG[category].icon,
             getMarkerColor(marker, selected),
-            muted
+            muted,
+            active
           );
     iconCache.set(key, icon);
   }
@@ -943,6 +966,44 @@ const ValueText: React.FC<{ value: string; tag: string; wikiUrl?: string }> = ({
     <>{formatValue(value)}</>
   );
 
+/** `colour`, `building:colour` and the rest of the family, either spelling */
+const isColourKey = (key: string) => /(^|:)colou?r$/.test(key);
+
+/** A bare hex code, which is how most colour tags are written */
+const HEX_COLOUR = /^#?([0-9a-f]{3}|[0-9a-f]{6})$/i;
+
+/**
+ * The CSS colour a colour tag stands for, or nothing when the browser does not
+ * recognise it. `#a0522d` means nothing to a reader and a box painted in it
+ * says everything, so the hex is drawn rather than printed. A named colour is
+ * drawn too, but keeps its name beside the box: "white" is already words.
+ */
+const cssColour = (value: string): { css: string; hex: boolean } | null => {
+  const trimmed = value.trim();
+  if (HEX_COLOUR.test(trimmed))
+    return { css: trimmed.startsWith("#") ? trimmed : `#${trimmed}`, hex: true };
+  const named = trimmed.toLowerCase().replace(/[\s_]/g, "");
+  return typeof CSS !== "undefined" && CSS.supports?.("color", named)
+    ? { css: named, hex: false }
+    : null;
+};
+
+const ColourValue: React.FC<{ css: string; label: string | null; title: string }> = ({
+  css,
+  label,
+  title,
+}) => (
+  <span className="poi-popup-colour" title={title}>
+    <span
+      className="poi-popup-colour-swatch"
+      style={{ background: css }}
+      role="img"
+      aria-label={title}
+    />
+    {label}
+  </span>
+);
+
 /** One line of the popup: a label, a value, and how the value should be read */
 type PopupRow = {
   /** React key, and the tag the label links to on the wiki */
@@ -1061,6 +1122,7 @@ const PopupRows: React.FC<{ rows: PopupRow[]; keyPrefix: string }> = ({
        */
       const valueWikiUrl =
         written || rowHref ? undefined : tagValueWikiUrl(key, valueStr);
+      const colour = !written && isColourKey(key) ? cssColour(valueStr) : null;
 
       return (
         <div
@@ -1079,7 +1141,13 @@ const PopupRows: React.FC<{ rows: PopupRow[]; keyPrefix: string }> = ({
             </a>
           </dt>
           <dd>
-            {canTranslate ? (
+            {colour ? (
+              <ColourValue
+                css={colour.css}
+                label={colour.hex ? null : formatValue(valueStr)}
+                title={valueStr}
+              />
+            ) : canTranslate ? (
               <TranslatableValue value={valueStr} isProse={isProse} />
             ) : rowHref || key === "website" || key === "url" || isUrl(valueStr) ? (
               <a
@@ -1312,6 +1380,16 @@ const RenderMarkerContents: React.FC<{
    * stands inside it by definition. iD selects the building either way
    */
   const buildingEditUrl = osmEditUrlForRef(building?.ref, marker.position);
+  /**
+   * A bare point — an `amenity=toilets` node and nothing else — used to open
+   * onto two dates and two edit links, one pair for the point and one for a
+   * nameless building that had nothing to say either. Four footnotes about
+   * nothing read as clutter, so the point's say it once in a card that owns
+   * the gap, and a building with neither a name nor a row is left out: it is
+   * already drawn on the map, and a heading with no content under it is noise
+   */
+  const hasOwnDetails = rows.length > 0 || inherited.length > 0;
+  const buildingHasSomething = Boolean(buildingName) || buildingRows.length > 0;
 
   return (
     <div className="poi-popup-body">
@@ -1351,23 +1429,41 @@ const RenderMarkerContents: React.FC<{
           each object's dates follow that object's rows. Set out the other way
           round the popup ended on four date lines in a row, two about a
           shopping centre and two about a toilet, in the order nobody reads */}
-      {survey && <p className="poi-popup-survey">{survey}</p>}
-      {edited && <p className="poi-popup-edited">{edited}</p>}
+      {hasOwnDetails ? (
+        <>
+          {survey && <p className="poi-popup-survey">{survey}</p>}
+          {edited && <p className="poi-popup-edited">{edited}</p>}
 
-      {/* What to do about those two dates, offered where they are read: at the
-          foot of the point's own block, and again at the foot of the
-          building's, because each is a separate object with its own record to
-          correct */}
-      {editUrl && (
-        <EditInOsm
-          href={editUrl}
-          label={ui().poi.editInOsm}
-          object="point"
-          category={category}
-        />
+          {/* What to do about those two dates, offered where they are read: at
+              the foot of the point's own block, and again at the foot of the
+              building's, because each is a separate object with its own record
+              to correct */}
+          {editUrl && (
+            <EditInOsm
+              href={editUrl}
+              label={ui().poi.editInOsm}
+              object="point"
+              category={category}
+            />
+          )}
+        </>
+      ) : (
+        <div className="poi-popup-empty">
+          <p className="poi-popup-empty-text">{ui().poi.noDetailsYet}</p>
+          {survey && <p className="poi-popup-survey">{survey}</p>}
+          {edited && <p className="poi-popup-edited">{edited}</p>}
+          {editUrl && (
+            <EditInOsm
+              href={editUrl}
+              label={ui().poi.addDetailsInOsm}
+              object="point"
+              category={category}
+            />
+          )}
+        </div>
       )}
 
-      {building && (
+      {building && buildingHasSomething && (
         <div className="poi-popup-building">
           <p className="poi-popup-building-label">
             {buildingName
@@ -1593,8 +1689,12 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
    * See openMarkerRef, and removeOutsideVisibleBounds on the group for the
    * plugin's own version of the same mistake.
    */
-  const shownMarkersRef = React.useRef(markers);
-  if (!isSpiderfied()) shownMarkersRef.current = markers;
+  const usableMarkers = React.useMemo(
+    () => markers.filter(marker => !isPrivateToilet(marker, categories)),
+    [markers, categories]
+  );
+  const shownMarkersRef = React.useRef(usableMarkers);
+  if (!isSpiderfied()) shownMarkersRef.current = usableMarkers;
   const listedMarkers = shownMarkersRef.current;
   const heldOpen = openMarkerRef.current;
   const openedMarkers =
@@ -2404,7 +2504,10 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                this one was the exception. See shapeKey */
             key={key}
             position={insidePositions[key] ?? marker.position}
-            icon={getMarkerIcon(marker, categories)}
+            icon={getMarkerIcon(marker, categories, openShape === key)}
+            // Above its neighbours, so a crowd of points cannot hide the one
+            // the panel is about
+            zIndexOffset={openShape === key ? 1000 : 0}
             eventHandlers={eventHandlers}
             ref={key === focusKey ? openFocusPopup : undefined}
           >

@@ -1290,6 +1290,9 @@ button.layers-tile {
   gap: 0.65em;
   /* Clear of the close button */
   padding-right: 1.4em;
+  /* Room between the name and whatever comes first under it, so the heading
+     reads as a heading rather than as the first line of the list */
+  margin-bottom: 0.6em;
 }
 
 .poi-popup-icon {
@@ -1408,6 +1411,22 @@ button.layers-tile {
   white-space: nowrap;
   background: #f1f3f4;
   color: #3c4043;
+}
+
+/* A colour tag, drawn as the colour. The edge keeps white and near-white
+   visible against the panel */
+.poi-popup-colour {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+}
+
+.poi-popup-colour-swatch {
+  display: inline-block;
+  width: 2.2em;
+  height: 1.1em;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
 }
 
 /* `access=customers`: the one qualification set as an answer, and the line the
@@ -1652,6 +1671,41 @@ button.layers-tile {
  */
 .poi-popup .leaflet-popup-content .poi-popup-building .poi-popup-survey {
   margin-top: 0.5em;
+}
+
+/*
+ * A point with nothing to say about itself: one card that says so and offers
+ * the fix, with the dates tucked inside it, rather than a trail of footnotes.
+ */
+.poi-popup-empty {
+  margin-top: 0.8em;
+  padding: 0.75em 0.9em;
+  border-radius: 10px;
+  background: #f1f3f4;
+}
+
+.poi-popup .leaflet-popup-content .poi-popup-empty-text {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #3c4043;
+}
+
+.poi-popup .leaflet-popup-content .poi-popup-empty .poi-popup-survey,
+.poi-popup .leaflet-popup-content .poi-popup-empty .poi-popup-edited {
+  margin-top: 0.4em;
+}
+
+.poi-popup .leaflet-popup-content .poi-popup-empty .poi-popup-survey + .poi-popup-edited {
+  margin-top: 0.15em;
+}
+
+.poi-popup .leaflet-popup-content .poi-popup-empty .poi-popup-edit {
+  margin-top: 0.55em;
+  font-size: 0.8rem;
+}
+
+.poi-popup .leaflet-popup-content .poi-popup-empty .poi-popup-edit-link {
+  color: #1a73e8;
 }
 
 /* And the building's own edit link, set to that block's tighter spacing rather

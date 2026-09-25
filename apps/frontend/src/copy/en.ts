@@ -902,6 +902,7 @@ const ui: CopyDeck["ui"] = {
     distanceKm: "{distance} km away",
     lastChecked: "Last checked",
     lastEdited: "Last edited",
+    lastCheckedAndEdited: "Last checked and edited",
     editInOsm: "Edit this point in OpenStreetMap",
     noDetailsYet: "No details have been mapped for this place yet.",
     noise: {
@@ -1003,6 +1004,7 @@ const ui: CopyDeck["ui"] = {
     inBuilding: "In {building}",
     buildingLastChecked: "Building last checked",
     buildingLastEdited: "Building last edited",
+    buildingLastCheckedAndEdited: "Building last checked and edited",
     editBuildingInOsm: "Edit the building in OpenStreetMap",
   },
 

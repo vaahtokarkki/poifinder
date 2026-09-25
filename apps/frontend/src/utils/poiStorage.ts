@@ -33,11 +33,15 @@ export function savePois(pois: Omit<CachedPois, "timestamp">): void {
     timestamp: Date.now(),
   };
 
-  while (attempt.markers.length > 0) {
+  // At least once, whatever the count: an area with nothing in it is a valid
+  // answer worth caching, and skipping the loop for it used to log a failure
+  // and wipe the previous cache for a save that was never tried
+  for (;;) {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(attempt));
       return;
     } catch {
+      if (attempt.markers.length === 0) break;
       // Most likely the quota is exceeded, retry with half of the markers
       attempt = {
         ...attempt,

@@ -257,6 +257,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     distanceKm: "{distance} km entfernt",
     lastChecked: "Zuletzt geprüft",
     lastEdited: "Zuletzt bearbeitet",
+    lastCheckedAndEdited: "Zuletzt geprüft und bearbeitet",
     editInOsm: "Diesen Punkt in OpenStreetMap bearbeiten",
     noDetailsYet: "Für diesen Ort sind noch keine Angaben erfasst.",
     noise: {
@@ -359,6 +360,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     inBuilding: "In {building}",
     buildingLastChecked: "Gebäude zuletzt geprüft",
     buildingLastEdited: "Gebäude zuletzt bearbeitet",
+    buildingLastCheckedAndEdited: "Gebäude zuletzt geprüft und bearbeitet",
     editBuildingInOsm: "Gebäude in OpenStreetMap bearbeiten",
   },
 

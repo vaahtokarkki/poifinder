@@ -299,6 +299,8 @@ export type UiCopy = {
     distanceKm: string;
     lastChecked: string;
     lastEdited: string;
+    /** Both of the above in one line, when the survey and the edit are the same date */
+    lastCheckedAndEdited: string;
     /**
      * The link under those two dates, to the point open in OpenStreetMap's
      * editor. Names both the object and where it is being opened: a popup can
@@ -463,6 +465,8 @@ export type UiCopy = {
     inBuilding: string;
     buildingLastChecked: string;
     buildingLastEdited: string;
+    /** As {@link lastCheckedAndEdited}, for the building */
+    buildingLastCheckedAndEdited: string;
     /** As {@link editInOsm}, for the building rather than the point */
     editBuildingInOsm: string;
   };

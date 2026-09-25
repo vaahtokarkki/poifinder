@@ -44,6 +44,7 @@ import NoiseSection, { NOISE_WORTH_KNOWING } from "./components/NoiseSection";
 import AirSection from "./components/AirSection";
 import { noiseCoverageAtCenter, noiseTilesConfigured } from "./map/noiseTiles";
 import { airCoverageAtCenter, airTilesConfigured } from "./map/airTiles";
+import { getGlMap, onGlMapChange } from "./map/glMap";
 import { useEnclosingBuilding, useOsmElement } from "./hooks/useOsmElement";
 import { useUserPosition } from "./hooks/index";
 import { PaidParkingIcon, PaidToiletIcon } from "./icons";
@@ -57,6 +58,7 @@ import {
   describeDistance,
   describeEdit,
   describeSurvey,
+  surveyMatchesEdit,
   formatOpeningHours,
   isInheritedFromBuilding,
   isTimetableKey,
@@ -661,7 +663,19 @@ const formatLinkLabel = (href: string) => {
  * the category already said, addressing meta, and the wiki cross references.
  */
 const isDisplayableTag = (key: string, value: string) => {
-  if (key === "access" && value === "yes") return false;
+  /**
+   * `public` and `permissive` say what `yes` does — that anybody may walk in —
+   * and on this map that is the default. `permissive` read out as "Open to
+   * the public" was a row about nothing
+   */
+  if (key === "access" && ["yes", "public", "permissive"].includes(value)) return false;
+  /**
+   * Where the data came from, and the street-level photos a mapper took of
+   * it: `source=survey`, `source:date`, `panoramax=<uuid>`, `mapillary=<id>`.
+   * Notes from one mapper to the next, and an id or a dataset name is nothing
+   * a visitor can use
+   */
+  if (/^(source|panoramax|mapillary)(\b|[:_])/.test(key)) return false;
   /**
    * Read by a row that is written rather than listed: the address, and when it
    * was last checked. Listing them again underneath would say everything twice,
@@ -1357,8 +1371,14 @@ const RenderMarkerContents: React.FC<{
     ? describeDistance(marker.position, userPosition)
     : null;
   const rows = buildPopupRows(marker.tags);
-  const survey = describeSurvey(marker.tags);
-  const edited = describeEdit(marker.timestamp);
+  // One line when the survey and the edit are the same date: see surveyMatchesEdit
+  const pointDatesMatch = surveyMatchesEdit(marker.tags, marker.timestamp);
+  const survey = pointDatesMatch ? null : describeSurvey(marker.tags);
+  const edited = describeEdit(
+    marker.timestamp,
+    undefined,
+    pointDatesMatch ? ui().poi.lastCheckedAndEdited : ui().poi.lastEdited
+  );
   const editUrl = osmEditUrl(marker);
 
   /**
@@ -1381,15 +1401,16 @@ const RenderMarkerContents: React.FC<{
    * under each would leave the reader to work out which was which from the
    * indentation
    */
-  const buildingSurvey = describeSurvey(
-    building?.tags,
-    undefined,
-    ui().poi.buildingLastChecked
-  );
+  const buildingDatesMatch = surveyMatchesEdit(building?.tags, building?.timestamp);
+  const buildingSurvey = buildingDatesMatch
+    ? null
+    : describeSurvey(building?.tags, undefined, ui().poi.buildingLastChecked);
   const buildingEdited = describeEdit(
     building?.timestamp,
     undefined,
-    ui().poi.buildingLastEdited
+    buildingDatesMatch
+      ? ui().poi.buildingLastCheckedAndEdited
+      : ui().poi.buildingLastEdited
   );
   /**
    * The building has no centre of its own here — the lookup answers with its
@@ -2368,6 +2389,47 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
     const answer = noiseCoverageAtCenter();
     if (answer !== "unknown") noiseCoverageRef.current = answer === "covered";
   }
+  /**
+   * And one render when the answer settles, which the above cannot ask for.
+   *
+   * On a fresh load the points arrive before the overlay tiles do, so the
+   * first render reads "unknown" and keeps the ref's default of no coverage.
+   * Nothing re-rendered the list after that, and a bare playground — no tags,
+   * but a noise band and an air reading worth showing — answered a tap with
+   * "no extra details" until some unrelated change happened to redraw it.
+   *
+   * Asked on the GL map's `idle`, when the tiles in view have loaded, and a
+   * render is asked for only when a definite answer differs from the one held:
+   * "unknown" is still not an answer, so the flip-flop described above cannot
+   * come back through here. In practice this is once per session, plus once
+   * each time a pan crosses the edge of a covered area.
+   */
+  const [, setCoverageSettledAt] = React.useState(0);
+  React.useEffect(() => {
+    if (!airTilesConfigured && !noiseTilesConfigured) return;
+    const differs = (answer: string, held: boolean) =>
+      answer !== "unknown" && (answer === "covered") !== held;
+    const check = () => {
+      if (
+        (airTilesConfigured && differs(airCoverageAtCenter(), airCoverageRef.current)) ||
+        (noiseTilesConfigured && differs(noiseCoverageAtCenter(), noiseCoverageRef.current))
+      )
+        setCoverageSettledAt(Date.now());
+    };
+    let gl = getGlMap();
+    gl?.on("idle", check);
+    const stop = onGlMapChange(() => {
+      gl?.off("idle", check);
+      gl = getGlMap();
+      gl?.on("idle", check);
+    });
+    check();
+    return () => {
+      stop();
+      gl?.off("idle", check);
+    };
+  }, []);
+
   const airCovered = airTilesConfigured && airCoverageRef.current;
   const noiseCovered = noiseTilesConfigured && noiseCoverageRef.current;
 

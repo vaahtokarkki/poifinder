@@ -299,6 +299,35 @@ export const describeEdit = (
   return months < 0 ? `${lead} ${when}` : `${lead} ${when} · ${relativeAge(months)}`;
 };
 
+/**
+ * Whether the survey and the last edit name the same date, as far as the
+ * survey date goes: a `check_date=2025-10` matches an edit on any day of
+ * October 2025, and a full date only the edit made that day.
+ *
+ * The common case rather than a coincidence. A mapper who stands in front of
+ * a fountain and confirms it sets `check_date` in the same edit, and the popup
+ * then said "Last checked October 2025" over "Last edited October 15, 2025" —
+ * two lines, one fact.
+ */
+export const surveyMatchesEdit = (
+  tags: Record<string, string> | undefined,
+  timestamp: string | undefined
+): boolean => {
+  const raw = CHECK_DATE_KEYS.map(key => tags?.[key]).find(Boolean)?.trim();
+  const match = raw?.match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/);
+  if (!match || !timestamp) return false;
+  const edited = new Date(timestamp);
+  if (Number.isNaN(edited.getTime())) return false;
+  const [, year, month, day] = match;
+  // A year alone is too coarse to call the same date as anything
+  if (!month) return false;
+  return (
+    edited.getFullYear() === Number(year) &&
+    edited.getMonth() === Number(month) - 1 &&
+    (!day || edited.getDate() === Number(day))
+  );
+};
+
 /* ---------- Fixing it, at the source ---------- */
 
 /**

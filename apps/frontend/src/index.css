@@ -1413,6 +1413,15 @@ button.layers-tile {
   color: #3c4043;
 }
 
+/* Several links in one value, the photos of one service: wrapped as a row of
+   words rather than stacked, and right aligned like any other value */
+.poi-popup-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.2em 0.8em;
+}
+
 /* A colour tag, drawn as the colour. The edge keeps white and near-white
    visible against the panel */
 .poi-popup-colour {

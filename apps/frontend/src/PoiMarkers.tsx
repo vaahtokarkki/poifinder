@@ -59,6 +59,7 @@ import {
   describeEdit,
   describeSurvey,
   surveyMatchesEdit,
+  photoLinks,
   formatOpeningHours,
   isInheritedFromBuilding,
   isTimetableKey,
@@ -1050,6 +1051,8 @@ type PopupRow = {
   href?: string;
   /** What the link says, where the host it points at is not the useful part */
   linkLabel?: string;
+  /** Several links in one row: the photos of one service, see photoLinks */
+  links?: { href: string; label: string }[];
 };
 
 /**
@@ -1096,6 +1099,28 @@ const buildPopupRows = (tags: Record<string, string> = {}): PopupRow[] => {
     });
   }
 
+  /*
+   * Street-level photos, one row per service however many keys they were
+   * spread across. The row keeps the key's own name; the links say "Photo",
+   * numbered once there is more than one to tell apart
+   */
+  for (const { service, hrefs } of photoLinks(tags)) {
+    rows.push({
+      key: service,
+      label: labelFor(service),
+      value: "",
+      written: true,
+      links: hrefs.map((href, index) => ({
+        href,
+        label:
+          hrefs.length === 1
+            ? ui().poi.photo
+            : interpolate(ui().poi.photoNumbered, { number: String(index + 1) }),
+      })),
+      rank: rankForKey(service),
+    });
+  }
+
   // Stable, so tags of equal rank keep the order the contributor wrote them
   return rows.sort((a, b) => a.rank - b.rank);
 };
@@ -1129,7 +1154,7 @@ const PopupRows: React.FC<{ rows: PopupRow[]; keyPrefix: string }> = ({
   keyPrefix,
 }) => (
   <dl className="poi-popup-rows">
-    {rows.map(({ key, label, value: valueStr, written, href: rowHref, linkLabel }) => {
+    {rows.map(({ key, label, value: valueStr, written, href: rowHref, linkLabel, links }) => {
       const isCustomers = !written && isCustomersChip(key, valueStr);
       const isYesNo =
         (!written && YES_NO_ANSWERS.has(valueStr.toLowerCase())) || isCustomers;
@@ -1172,7 +1197,21 @@ const PopupRows: React.FC<{ rows: PopupRow[]; keyPrefix: string }> = ({
             </a>
           </dt>
           <dd>
-            {colour ? (
+            {links ? (
+              <span className="poi-popup-links">
+                {links.map(link => (
+                  <a
+                    key={link.href}
+                    className="poi-popup-link"
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </span>
+            ) : colour ? (
               <ColourValue
                 css={colour.css}
                 label={colour.hex ? null : formatValue(valueStr)}

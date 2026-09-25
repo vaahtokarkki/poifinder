@@ -231,6 +231,8 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     lastCheckedAndEdited: "Ultimo controllo e modifica",
     editInOsm: "Modifica questo punto su OpenStreetMap",
     noDetailsYet: "Per questo luogo non sono ancora stati mappati dettagli.",
+    photo: "Foto",
+    photoNumbered: "Foto {number}",
     noise: {
       label: "Rumore del traffico",
       quiet: "Silenzioso",

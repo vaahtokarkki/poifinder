@@ -905,6 +905,8 @@ const ui: CopyDeck["ui"] = {
     lastCheckedAndEdited: "Last checked and edited",
     editInOsm: "Edit this point in OpenStreetMap",
     noDetailsYet: "No details have been mapped for this place yet.",
+    photo: "Photo",
+    photoNumbered: "Photo {number}",
     noise: {
       label: "Traffic noise",
       quiet: "Quiet",

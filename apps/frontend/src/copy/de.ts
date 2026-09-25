@@ -260,6 +260,8 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     lastCheckedAndEdited: "Zuletzt geprüft und bearbeitet",
     editInOsm: "Diesen Punkt in OpenStreetMap bearbeiten",
     noDetailsYet: "Für diesen Ort sind noch keine Angaben erfasst.",
+    photo: "Foto",
+    photoNumbered: "Foto {number}",
     noise: {
       label: "Verkehrslärm",
       quiet: "Ruhig",

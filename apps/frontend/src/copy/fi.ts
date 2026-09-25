@@ -249,6 +249,8 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     lastCheckedAndEdited: "Tarkistettu ja muokattu viimeksi",
     editInOsm: "Muokkaa pistettä OpenStreetMapissa",
     noDetailsYet: "Tälle paikalle ei ole vielä merkitty lisätietoja.",
+    photo: "Kuva",
+    photoNumbered: "Kuva {number}",
     noise: {
       label: "Liikennemelu",
       quiet: "Hiljainen",

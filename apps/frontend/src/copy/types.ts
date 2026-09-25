@@ -314,6 +314,10 @@ export type UiCopy = {
      * waiting to be filled rather than as a list of footnotes about nothing
      */
     noDetailsYet: string;
+    /** The link to a street-level photo, when a point has one */
+    photo: string;
+    /** The same when it has several, numbered in tag order */
+    photoNumbered: string;
     /**
      * Modelled traffic noise, shown only when the tiles that carry it are
      * configured and loaded. See src/map/noiseTiles.ts and apps/noise.

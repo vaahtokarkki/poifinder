@@ -444,6 +444,8 @@ const TAG_RANKS: Record<string, number> = {
   website: 65,
   url: 65,
   wikipedia: 66,
+  panoramax: 66,
+  mapillary: 66,
   wikidata: 67,
 };
 
@@ -659,4 +661,72 @@ export const wikiTagLink = (
   const href = kind === "wikipedia" ? wikipediaUrl(value) : kind === "wikidata" ? wikidataUrl(value) : undefined;
   const label = kind === "wikipedia" ? wikipediaLabel(value) : kind === "wikidata" ? wikidataLabel(value) : undefined;
   return href && label ? { href, label } : undefined;
+};
+
+/* ---------- Street-level photos ---------- */
+
+/**
+ * The street-level photo services a mapper can point at, and how an id in each
+ * becomes a page showing that photo.
+ *
+ * Panoramax is federated: a photo lives on one of several servers, and the
+ * tag carries only its id. The meta catalogue at api.panoramax.xyz searches
+ * all of them, so its viewer is the one link that works whichever server the
+ * photo is on.
+ */
+const PHOTO_SERVICES = {
+  panoramax: {
+    id: /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i,
+    url: (id: string) => `https://api.panoramax.xyz/#focus=pic&pic=${id.toLowerCase()}`,
+  },
+  mapillary: {
+    id: /^\d+$/,
+    url: (id: string) => `https://www.mapillary.com/app/?pKey=${id}`,
+  },
+} as const;
+
+export type PhotoService = keyof typeof PHOTO_SERVICES;
+
+/**
+ * `panoramax`, `panoramax:0`, `mapillary:2` — the bare key and its numbered
+ * forms, which is how a mapper adds a second photo of the same thing
+ */
+const PHOTO_KEY = /^(panoramax|mapillary)(?::\d+)?$/;
+
+/** Whether a tag holds a street-level photo id */
+export const isPhotoKey = (key: string): boolean => PHOTO_KEY.test(key);
+
+/**
+ * Every photo a point links to, grouped by service, as links a reader can
+ * follow. What a photo shows is the question a list of tags cannot answer —
+ * whether the playground has a fence, which side of the building the toilet
+ * door is on — and the id alone showed nothing at all.
+ *
+ * The numbered keys and semicolon lists are flattened into one row per
+ * service, in key order so `panoramax:0` comes before `panoramax:1`. A value
+ * that is not a valid id for its service is dropped rather than shown raw, as
+ * an unlinkable Wikidata tag is.
+ */
+export const photoLinks = (
+  tags: Record<string, string> = {}
+): { service: PhotoService; hrefs: string[] }[] => {
+  const byService = new Map<PhotoService, string[]>();
+  const keys = Object.keys(tags)
+    .filter(isPhotoKey)
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+  for (const key of keys) {
+    const service = key.match(PHOTO_KEY)![1] as PhotoService;
+    const { id, url } = PHOTO_SERVICES[service];
+    const hrefs = byService.get(service) ?? [];
+    for (const part of tags[key].split(";")) {
+      const value = part.trim();
+      if (!id.test(value)) continue;
+      const href = url(value);
+      if (!hrefs.includes(href)) hrefs.push(href);
+    }
+    byService.set(service, hrefs);
+  }
+  return [...byService]
+    .filter(([, hrefs]) => hrefs.length > 0)
+    .map(([service, hrefs]) => ({ service, hrefs }));
 };

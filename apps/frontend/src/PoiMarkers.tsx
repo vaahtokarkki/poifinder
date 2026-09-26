@@ -1793,12 +1793,35 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
     (instance: LeafletMarkerInstance | null) => {
       if (!instance || !focusKey || focusOpenedRef.current === focusKey) return;
       focusOpenedRef.current = focusKey;
-      const cluster = clusterRef.current;
-      if (cluster && typeof cluster.zoomToShowLayer === "function") {
-        cluster.zoomToShowLayer(instance, () => instance.openPopup());
-        return;
-      }
-      instance.openPopup();
+      /*
+       * Not yet, though. React hands over the ref while it commits, and
+       * react-leaflet adds the marker to the cluster group and binds its panel
+       * in effects that run after that — later still with chunkedLoading,
+       * which feeds markers to the group a batch at a time. Asked at once,
+       * zoomToShowLayer read `__parent._zoom` off a marker that had no parent
+       * yet and threw, openPopup had no panel to open, and the flag above made
+       * sure nothing ever asked again: a shared link drew its point and left
+       * the reader to find it and tap it.
+       *
+       * So it waits for both, a frame at a time, and gives up after a few
+       * seconds rather than opening a panel long after the reader has moved on
+       */
+      const giveUpAt = Date.now() + 8000;
+      const open = () => {
+        if (focusOpenedRef.current !== focusKey) return;
+        const cluster = clusterRef.current;
+        const grouped = !cluster || Boolean((instance as { __parent?: unknown }).__parent);
+        if (!grouped || !instance.getPopup()) {
+          if (Date.now() < giveUpAt) requestAnimationFrame(open);
+          return;
+        }
+        if (cluster && typeof cluster.zoomToShowLayer === "function") {
+          cluster.zoomToShowLayer(instance, () => instance.openPopup());
+          return;
+        }
+        instance.openPopup();
+      };
+      requestAnimationFrame(open);
     },
     [focusKey]
   );

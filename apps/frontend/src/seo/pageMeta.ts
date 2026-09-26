@@ -169,7 +169,16 @@ export const MIN_NAMED_POIS_FOR_PAGE = 5;
 export const PAUSED_CATEGORIES: ReadonlySet<string> = new Set([
   "parking",
   "libraries",
-  "playgrounds",
+  /*
+   * playgrounds came back out on 2026-09-26, for every engine but Google.
+   * The pause was about Google's crawl, and GOOGLE_CATEGORIES below now does
+   * that job on its own: a category missing from it is `googlebot` noindex and
+   * absent from sitemap.xml whatever this set says. Kept here, playgrounds
+   * were `robots` noindex as well, which hid them from Bing and from Applebot
+   * — and the iPhone visitors Applebot sends are the parents these pages are
+   * for. Parent blogs are also where the outreach links are coming from, and
+   * a link to a page no engine may index is worth less than it should be
+   */
   "ice-cream",
   "viewpoints",
   // Second wave, 2026-08-29 — see above

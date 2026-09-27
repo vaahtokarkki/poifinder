@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { GeoJSON, MapContainer, useMapEvent } from "react-leaflet";
 import BasemapLayer from "./components/BasemapLayer";
 import OverlayAttribution from "./components/OverlayAttribution";
+import OneFingerZoom from "./components/OneFingerZoom";
 import CategorySelect from "./components/CategorySelect";
 import LanguageSelect from "./components/LanguageSelect";
 import PoiMarkers from "./PoiMarkers";
@@ -1268,6 +1269,7 @@ const App = () => {
         ref={setMap}
       >
         <MapPanHandler onMove={handleMapPan} />
+        <OneFingerZoom />
         <div className="map-overlay-top" ref={overlayRef}>
           <SearchBar
             onSearch={(_, coords, extent) => {

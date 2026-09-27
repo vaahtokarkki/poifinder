@@ -1,6 +1,6 @@
 {
   "city": "espoo",
-  "generatedAt": "2026-09-23T08:26:28.138Z",
+  "generatedAt": "2026-09-27T09:14:59.951Z",
   "categories": {
     "toilets": {
       "count": 66,
@@ -316,8 +316,14 @@
       "updatedAt": "2026-09-23T08:26:28.037Z"
     },
     "playgrounds": {
-      "count": 416,
+      "count": 417,
       "pois": [
+        {
+          "id": "way/1256875799",
+          "name": "Lakelanpuiston leikkipaikka",
+          "lat": 60.207002,
+          "lon": 24.657332
+        },
         {
           "id": "relation/19705631",
           "name": "Entressen leikkipaikka",
@@ -493,12 +499,6 @@
           "name": "Kuurinniityn leikkipuisto",
           "lat": 60.195263,
           "lon": 24.710426
-        },
-        {
-          "id": "way/258708118",
-          "name": "Rusakkopuiston leikkipaikka",
-          "lat": 60.224936,
-          "lon": 24.700412
         }
       ],
       "stats": {
@@ -507,10 +507,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:14.812Z"
+      "updatedAt": "2026-09-27T09:14:28.390Z"
     },
     "parking": {
-      "count": 1675,
+      "count": 1687,
       "pois": [
         {
           "id": "way/24366789",
@@ -727,12 +727,12 @@
         }
       ],
       "stats": {
-        "free": 509,
+        "free": 514,
         "paid": 27,
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:16.142Z"
+      "updatedAt": "2026-09-27T09:14:30.279Z"
     },
     "charging-stations": {
       "count": 56,
@@ -941,7 +941,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:16.653Z"
+      "updatedAt": "2026-09-27T09:14:31.162Z"
     },
     "gas-stations": {
       "count": 47,
@@ -1182,7 +1182,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:17.238Z"
+      "updatedAt": "2026-09-27T09:14:32.108Z"
     },
     "ice-cream": {
       "count": 2,
@@ -1202,10 +1202,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:17.766Z"
+      "updatedAt": "2026-09-27T09:14:33.059Z"
     },
     "dog-parks": {
-      "count": 28,
+      "count": 27,
       "pois": [
         {
           "id": "way/1090833509",
@@ -1339,10 +1339,10 @@
           "address": "Nuijalantie 16"
         },
         {
-          "id": "node/13186338565",
+          "id": "way/1552338435",
           "name": "Luoman koira- & voimametsä",
-          "lat": 60.189819,
-          "lon": 24.540679,
+          "lat": 60.189826,
+          "lon": 24.538715,
           "address": "Karlsborgintie 121"
         },
         {
@@ -1386,10 +1386,10 @@
         "stepFree": 4,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-20T08:34:18.335Z"
+      "updatedAt": "2026-09-27T09:14:33.781Z"
     },
     "picnic-spots": {
-      "count": 283,
+      "count": 285,
       "pois": [
         {
           "id": "node/13773428533",
@@ -1428,7 +1428,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:19.413Z"
+      "updatedAt": "2026-09-27T09:14:35.525Z"
     },
     "viewpoints": {
       "count": 26,
@@ -1494,7 +1494,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:20.102Z"
+      "updatedAt": "2026-09-27T09:14:36.599Z"
     },
     "beaches": {
       "count": 30,
@@ -1595,7 +1595,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:20.934Z"
+      "updatedAt": "2026-09-27T09:14:37.699Z"
     },
     "atms": {
       "count": 27,
@@ -1640,10 +1640,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:21.606Z"
+      "updatedAt": "2026-09-27T09:14:38.765Z"
     },
     "post-boxes": {
-      "count": 65,
+      "count": 64,
       "pois": [
         {
           "id": "node/332543291",
@@ -1802,12 +1802,6 @@
           "street": "Kuunkehrä"
         },
         {
-          "id": "node/1012030375",
-          "lat": 60.17552,
-          "lon": 24.734027,
-          "street": "Ruomelanpolku"
-        },
-        {
           "id": "node/12551324527",
           "lat": 60.153886,
           "lon": 24.643311,
@@ -1824,6 +1818,12 @@
           "lat": 60.249222,
           "lon": 24.59188,
           "street": "Nuuksionkuja"
+        },
+        {
+          "id": "node/10837659450",
+          "lat": 60.166847,
+          "lon": 24.734482,
+          "street": "Komeetankatu"
         }
       ],
       "stats": {
@@ -1832,10 +1832,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:23.394Z"
+      "updatedAt": "2026-09-27T09:14:40.789Z"
     },
     "recycling": {
-      "count": 235,
+      "count": 229,
       "pois": [
         {
           "id": "node/13077679502",
@@ -1961,12 +1961,6 @@
           "street": "Teirinsyrjä"
         },
         {
-          "id": "node/14109279474",
-          "lat": 60.215009,
-          "lon": 24.647213,
-          "street": "Nimismiehenmäki"
-        },
-        {
           "id": "node/332550794",
           "lat": 60.208475,
           "lon": 24.635553,
@@ -2028,6 +2022,12 @@
           "lat": 60.181312,
           "lon": 24.669059,
           "street": "Lehtikaskenkuja"
+        },
+        {
+          "id": "node/415416227",
+          "lat": 60.19958,
+          "lon": 24.705071,
+          "street": "Kuurinmäentie"
         }
       ],
       "stats": {
@@ -2036,7 +2036,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:25.606Z"
+      "updatedAt": "2026-09-27T09:14:43.690Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2047,7 +2047,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:26.048Z"
+      "updatedAt": "2026-09-27T09:14:44.429Z"
     },
     "libraries": {
       "count": 11,
@@ -2145,10 +2145,10 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:26.577Z"
+      "updatedAt": "2026-09-27T09:14:45.175Z"
     },
     "outdoor-gyms": {
-      "count": 110,
+      "count": 111,
       "pois": [
         {
           "id": "node/14070305333",
@@ -2221,7 +2221,7 @@
         {
           "id": "way/966490977",
           "name": "Espoonlahden urheilupuiston ulkokuntosali",
-          "lat": 60.14523,
+          "lat": 60.145167,
           "lon": 24.662358
         },
         {
@@ -2233,8 +2233,8 @@
         {
           "id": "way/511309156",
           "name": "Koulumäen ulkokuntoiluvälineet",
-          "lat": 60.14466,
-          "lon": 24.668516
+          "lat": 60.144659,
+          "lon": 24.668508
         },
         {
           "id": "way/507796897",
@@ -2255,7 +2255,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:27.685Z"
+      "updatedAt": "2026-09-27T09:14:47.060Z"
     },
     "camp-sites": {
       "count": 2,
@@ -2275,7 +2275,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:28.257Z"
+      "updatedAt": "2026-09-27T09:14:48.049Z"
     },
     "shelters": {
       "count": 17,
@@ -2305,7 +2305,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:30.803Z"
+      "updatedAt": "2026-09-27T09:14:50.579Z"
     },
     "rest-areas": {
       "count": 0,
@@ -2316,7 +2316,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:31.308Z"
+      "updatedAt": "2026-09-27T09:14:51.420Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2327,7 +2327,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:31.753Z"
+      "updatedAt": "2026-09-27T09:14:51.972Z"
     },
     "post-offices": {
       "count": 6,
@@ -2377,7 +2377,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:32.308Z"
+      "updatedAt": "2026-09-27T09:14:52.894Z"
     },
     "showers": {
       "count": 5,
@@ -2388,7 +2388,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:32.979Z"
+      "updatedAt": "2026-09-27T09:14:53.640Z"
     },
     "fireplaces": {
       "count": 15,
@@ -2433,7 +2433,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:34.093Z"
+      "updatedAt": "2026-09-27T09:14:55.607Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2441,7 +2441,7 @@
       "updatedAt": "2026-08-17T04:02:24.050Z"
     },
     "benches": {
-      "count": 943,
+      "count": 947,
       "pois": [
         {
           "id": "node/12655735261",
@@ -2570,7 +2570,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:37.042Z"
+      "updatedAt": "2026-09-27T09:14:59.850Z"
     },
     "compressed-air": {
       "count": 4,
@@ -2636,7 +2636,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-20T08:34:35.726Z"
+      "updatedAt": "2026-09-27T09:14:57.659Z"
     }
   }
 }

@@ -34,6 +34,23 @@ const OUTPUT = path.resolve(ROOT, "..", "overpass", "osmium-filter.txt");
 const BROAD_TAGS = new Set(["building=retail", "leisure=pitch", "man_made=tower"]);
 
 /**
+ * Tags imported ahead of the category that will use them.
+ *
+ * A new category ships in two steps, because the database is rebuilt weekly
+ * and a full reimport takes hours: first the data, then the UI. Listed here, a
+ * tag is kept in the extract while no category asks for it yet, so the
+ * reimport can run and finish before any visitor can pick a category that
+ * would answer empty everywhere. Once the category exists in CATEGORY_CONFIG
+ * its own filters carry the tag and the entry here should be removed.
+ */
+const IMPORT_AHEAD = [
+  // Trash bins: street bins, and the larger containers. The category can
+  // narrow the second with [access!=private]; the import keeps both
+  { tag: "amenity=waste_basket", for: "TrashBins (upcoming)" },
+  { tag: "amenity=waste_disposal", for: "TrashBins (upcoming)" },
+];
+
+/**
  * Split "[amenity=fuel]" or '[a=b][c~"d"]' into its conditions. Values may
  * contain anything but a closing bracket, which is enough for the filters we
  * write by hand in CATEGORY_CONFIG.
@@ -94,6 +111,11 @@ async function main() {
         if (!tags.has(tag)) tags.set(tag, new Set());
         tags.get(tag).add(name);
       }
+    }
+
+    for (const { tag, for: name } of IMPORT_AHEAD) {
+      if (!tags.has(tag)) tags.set(tag, new Set());
+      tags.get(tag).add(name);
     }
 
     const lines = [...tags]

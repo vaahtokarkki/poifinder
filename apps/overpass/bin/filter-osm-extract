@@ -39,6 +39,13 @@ set -euo pipefail
 
 FILTER_FILE=${WAYSIDE_FILTER_FILE:-/opt/wayside/osmium-filter.txt}
 
+# The narrower filter join-buildings picks its points with: the tags whose
+# categories want the building around a point, without the street furniture
+# that stands at a kerb. Generated beside osmium-filter.txt; an image from
+# before it existed falls back to the full filter, which is the old behaviour
+JOIN_FILTER_FILE=${WAYSIDE_JOIN_FILTER_FILE:-/opt/wayside/building-join-filter.txt}
+[[ -s $JOIN_FILTER_FILE ]] || JOIN_FILTER_FILE=$FILTER_FILE
+
 # Whether to put the buildings the points stand in back into the extract. On
 # for everyone, because a toilet the app cannot name the building of is most of
 # a toilet nobody finds. Turn it off on a machine where the extra pass over the
@@ -136,7 +143,7 @@ if [[ $JOIN_BUILDINGS == true ]]; then
 		--source="$SOURCE" \
 		--source-format="$FORMAT" \
 		--pois="$FILTERED" \
-		--expressions="$FILTER_FILE" \
+		--expressions="$JOIN_FILTER_FILE" \
 		--output="$TARGET" \
 		"${OUTPUT_FORMAT[@]}"
 	rm -f "$FILTERED"

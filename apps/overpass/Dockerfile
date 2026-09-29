@@ -20,7 +20,7 @@ RUN apt-get update \
 
 # Generated from CATEGORY_CONFIG by `npm run overpass:filters`. Baked in rather
 # than mounted, so an image always says which categories it was built for
-COPY osmium-filter.txt /opt/wayside/osmium-filter.txt
+COPY osmium-filter.txt building-join-filter.txt /opt/wayside/
 
 # The region lists, for the servers that build their extract a country at a
 # time rather than a continent at once. europe-regions.txt is the countries

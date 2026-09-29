@@ -85,6 +85,24 @@ export type CategoryConfig = {
   icon: CategoryIcon;
   color: string;
   group: CATEGORY_GROUP; 
+  /**
+   * Set false for the categories where the building around a point is noise.
+   *
+   * The popup asks for the building a point stands in, and the import keeps
+   * every building that contains an imported point so there is one to find.
+   * That is the whole answer for a toilet in a shopping centre — "Iso Omena,
+   * level 2" — and nothing but noise for a bench or a bin, which stands at a
+   * kerb, and where the nearest outline is a block of flats nobody is looking
+   * for. It was also wrong in the other direction: a street toilet in Paris
+   * came out as "In Hôtel de Coulanges", the building behind it.
+   *
+   * Set false and the popup skips the lookup and the outline, and
+   * generate-osmium-filter leaves the category's tags out of
+   * building-join-filter.txt, so the import stops keeping buildings on their
+   * account. A tag shared with a category that still wants buildings keeps
+   * them: the join works per tag, not per category.
+   */
+  buildingLookup?: false;
 };
 
 // Main config object
@@ -94,12 +112,14 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(ParkIcon),
     color: "#388e3c",
     group: CATEGORY_GROUP.Essentials,
+    buildingLookup: false,
   },
   [CATEGORIES.PostBoxes]: {
     filters: ["[amenity=post_box]"],
     icon: React.createElement(LocalPostOfficeIcon),
     color: "#d32f2f",
     group: CATEGORY_GROUP.Essentials,
+    buildingLookup: false,
   },
   [CATEGORIES.Toilets]: {
     // The second filter is buildings that say they have a toilet without being
@@ -122,6 +142,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(LocalGasStationIcon),
     color: "#fbc02d",
     group: CATEGORY_GROUP.Car,
+    buildingLookup: false,
   },
   [CATEGORIES.ChargingStation]: {
     filters: ["[amenity=charging_station]"],
@@ -134,6 +155,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(LocalParkingIcon),
     color: "#1976d2",
     group: CATEGORY_GROUP.Car,
+    buildingLookup: false,
   },
   [CATEGORIES.Icecream]: {
     filters: ["[amenity=ice_cream]", "[shop=ice_cream]", "[cuisine=ice_cream]"],
@@ -154,6 +176,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(DeckIcon),
     color: "#1B5E20",
     group: CATEGORY_GROUP.Nature,
+    buildingLookup: false,
   },
   [CATEGORIES.TentSite]: {
     // Caravan sites alongside the tent ones: the van life preset sends people
@@ -162,18 +185,21 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(BedtimeIcon),
     color: "#212121",
     group: CATEGORY_GROUP.Nature,
+    buildingLookup: false,
   },
   [CATEGORIES.Beach]: {
     filters: ["[natural=beach]", "[leisure=swimming_area]"],
     icon: React.createElement(BeachAccessIcon),
     color: "#FFD600",
     group: CATEGORY_GROUP.Nature,
+    buildingLookup: false,
   },
   [CATEGORIES.DogPark]: {
     filters: ["[leisure=dog_park]"],
     icon: React.createElement(PetsIcon),
     color: "#3E2723",
     group: CATEGORY_GROUP.Nature,
+    buildingLookup: false,
   },
   [CATEGORIES.RestArea]: {
     // rest_area is the layby, services is the full motorway stop with fuel and
@@ -182,12 +208,14 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(NaturePeopleIcon),
     color: "#0D47A1",
     group: CATEGORY_GROUP.Car,
+    buildingLookup: false,
   },
   [CATEGORIES.Recycling]: {
     filters: ["[amenity=recycling]"],
     icon: React.createElement(RecyclingIcon),
     color: "green",
     group: CATEGORY_GROUP.Essentials,
+    buildingLookup: false,
   },
   [CATEGORIES.Atm]: {
     // Standalone machines, plus banks and shops that have one
@@ -202,6 +230,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(TableRestaurantIcon),
     color: "#795548",
     group: CATEGORY_GROUP.Nature,
+    buildingLookup: false,
   },
   [CATEGORIES.LuggageStorage]: {
     filters: ["[amenity=luggage_locker]", "[amenity=left_luggage]"],
@@ -220,6 +249,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(LandscapeIcon),
     color: "#7B1FA2",
     group: CATEGORY_GROUP.Nature,
+    buildingLookup: false,
   },
   [CATEGORIES.DrinkingWater]: {
     // Every common way a free, potable water source is tagged. Plain
@@ -242,6 +272,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(RvHookupIcon),
     color: "#5D4037",
     group: CATEGORY_GROUP.Car,
+    buildingLookup: false,
   },
   [CATEGORIES.OutdoorGym]: {
     // Outdoor gyms are tagged both as fitness stations and as fitness pitches
@@ -249,6 +280,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(FitnessCenterIcon),
     color: "#E64A19",
     group: CATEGORY_GROUP.Nature,
+    buildingLookup: false,
   },
   [CATEGORIES.Library]: {
     // Public libraries, plus the street bookcases and book exchange boxes
@@ -286,6 +318,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(OutdoorGrillIcon),
     color: "#FF6F00",
     group: CATEGORY_GROUP.Nature,
+    buildingLookup: false,
   },
   [CATEGORIES.BicycleRepair]: {
     /**
@@ -308,6 +341,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(HandymanIcon),
     color: "#00897B",
     group: CATEGORY_GROUP.Essentials,
+    buildingLookup: false,
   },
   [CATEGORIES.Bench]: {
     // By far the largest category here, and the reason the extract grew. Worth
@@ -317,6 +351,7 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     icon: React.createElement(ChairAltIcon),
     color: "#9E9D24",
     group: CATEGORY_GROUP.Essentials,
+    buildingLookup: false,
   },
 };
 

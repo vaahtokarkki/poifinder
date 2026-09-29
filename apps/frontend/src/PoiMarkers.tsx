@@ -1126,6 +1126,17 @@ const buildPopupRows = (tags: Record<string, string> = {}): PopupRow[] => {
 };
 
 /** What to call a point, and what to say underneath */
+/**
+ * Whether the building around this point is worth asking for. False for the
+ * categories that set `buildingLookup: false` — a bench, a bin, a post box —
+ * where the nearest outline is somebody's block of flats rather than an
+ * answer. A point of no known category keeps the lookup, as before
+ */
+const looksUpBuilding = (marker: OverpassMarkerData, selected: readonly CATEGORIES[]) => {
+  const category = findCategory(marker, selected);
+  return category === null || CATEGORY_CONFIG[category].buildingLookup !== false;
+};
+
 const describeMarker = (marker: OverpassMarkerData, selected: readonly CATEGORIES[]) => {
   const category = findCategory(marker, selected);
   const config = category !== null ? CATEGORY_CONFIG[category] : null;
@@ -1427,7 +1438,9 @@ const RenderMarkerContents: React.FC<{
    * either way — see the doc on splitBuildingRows
    */
   const building = useEnclosingBuilding(
-    isDrawn(marker) || !marker.position ? null : marker.position
+    isDrawn(marker) || !marker.position || !looksUpBuilding(marker, categories)
+      ? null
+      : marker.position
   );
   const { inherited, own: buildingRows } = building
     ? splitBuildingRows(building, marker, rows)
@@ -2717,7 +2730,9 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
       {/* Outside the cluster group, which takes its children to be markers.
           Keyed by the point, so switching between two open popups starts a new
           fetch rather than redrawing the first one in the second one's colour */}
-      {shapeMarker && (
+      {/* A point whose category skips the building has no outline to draw:
+          the enclosing building was its only shape. Drawn points keep theirs */}
+      {shapeMarker && (isDrawn(shapeMarker) || looksUpBuilding(shapeMarker, categories)) && (
         <PoiShape
           key={shapeKey(shapeMarker)}
           marker={shapeMarker}

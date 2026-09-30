@@ -411,6 +411,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     searchPlaceholder: "Ort suchen",
     routeHeading: "Punkte entlang der Route suchen",
     routeSubmit: "Route suchen",
+    routeRadius: "Suchradius",
     routeReset: "Route zurücksetzen",
     routeActive: "Punkte entlang der Route von {start} nach {end}",
     routeYourLocation: "deinem Standort",

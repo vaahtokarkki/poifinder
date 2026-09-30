@@ -1081,6 +1081,7 @@ const ui: CopyDeck["ui"] = {
     searchPlaceholder: "Search for location",
     routeHeading: "Search points along route",
     routeSubmit: "Search route",
+    routeRadius: "Search radius",
     routeReset: "Reset route",
     routeActive: "Displaying points along route from {start} to {end}",
     routeYourLocation: "your location",

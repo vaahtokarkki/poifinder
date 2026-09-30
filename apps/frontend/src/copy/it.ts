@@ -380,6 +380,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     searchPlaceholder: "Cerca un luogo",
     routeHeading: "Cerca punti lungo un percorso",
     routeSubmit: "Calcola il percorso",
+    routeRadius: "Raggio di ricerca",
     routeReset: "Cancella il percorso",
     routeActive: "Punti mostrati tra {start} e {end}",
     routeYourLocation: "la tua posizione",

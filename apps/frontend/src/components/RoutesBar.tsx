@@ -1,27 +1,41 @@
 import React, { useState } from "react";
-import { Button, Card, CardContent, Typography } from "@mui/material";
-import DeleteIcon from '@mui/icons-material/Delete';
+import { Button, MenuItem, TextField, Typography } from "@mui/material";
 import GeocodeAutoComplete from "./GeocodeAutocomplete";
-import { interpolate, ui } from "../copy";
+import { ui } from "../copy";
+
+/** How far either side of the route points are looked for, in metres */
+export const ROUTE_RADII = [100, 250, 500, 1000, 2000] as const;
+export const DEFAULT_ROUTE_RADIUS = 500;
+
+/** What the form was filled in with, kept by the app while the route is shown */
+export type RouteQuery = {
+  startLabel: string;
+  start: [number, number] | null;
+  endLabel: string;
+  end: [number, number];
+  radius: number;
+};
 
 type RoutesBarProps = {
-  onSearch: (start: [number, number] | null, end: [number, number]) => void;
-  placeholder?: string;
+  onSearch: (query: RouteQuery) => void;
+  /** The query of the route on the map, so reopening the form shows it again */
+  initial?: RouteQuery | null;
   visible?: boolean;
-  displayRouteInfo?: boolean;
-  deleteRoute?: () => void;
 };
+
+const formatRadius = (metres: number) =>
+  metres >= 1000 ? `${metres / 1000} km` : `${metres} m`;
 
 const RoutesBar: React.FC<RoutesBarProps> = ({
   onSearch,
+  initial,
   visible = true,
-  displayRouteInfo = false,
-  deleteRoute,
 }) => {
-  const [startLocationValue, setStartLocationValue] = useState("");
-  const [endLocationValue, setEndLocationValue] = useState("");
-  const [startCoords, setStartCoords] = useState<[number, number] | null>(null);
-  const [endCoords, setEndCoords] = useState<[number, number] | null>(null);
+  const [startLocationValue, setStartLocationValue] = useState(initial?.startLabel ?? "");
+  const [endLocationValue, setEndLocationValue] = useState(initial?.endLabel ?? "");
+  const [startCoords, setStartCoords] = useState<[number, number] | null>(initial?.start ?? null);
+  const [endCoords, setEndCoords] = useState<[number, number] | null>(initial?.end ?? null);
+  const [radius, setRadius] = useState(initial?.radius ?? DEFAULT_ROUTE_RADIUS);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,39 +43,16 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
       // Prevent submit if either coordinate is missing
       return;
     }
-    onSearch(startCoords, endCoords);
+    onSearch({
+      startLabel: startLocationValue,
+      start: startCoords,
+      endLabel: endLocationValue,
+      end: endCoords,
+      radius,
+    });
   };
 
   if (!visible) return null;
-
-  if (displayRouteInfo) {
-    return (
-      <div>
-        <Typography variant="h2" style={{fontSize: "1rem", margin: "0 auto .7em auto", padding: "0 1em"}}>
-            {interpolate(ui().controls.routeActive, {
-              start: startLocationValue || ui().controls.routeYourLocation,
-              end: endLocationValue || "-",
-            })}
-        </Typography>
-        <Button
-          size="small"
-          variant="outlined"
-          startIcon={<DeleteIcon />}
-          color="error"
-          style={{margin: "0 1em", marginTop: ".5em", textTransform: "none"}}
-          onClick={() => {
-            setStartLocationValue("");
-            setEndLocationValue("");
-            setStartCoords(undefined);
-            setEndCoords(undefined);
-            if (deleteRoute) deleteRoute();
-          }}
-        >
-          {ui().controls.routeReset}
-        </Button>
-      </div>
-    );
-  }
 
   return (
     <>
@@ -71,28 +62,46 @@ const RoutesBar: React.FC<RoutesBarProps> = ({
       <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", zIndex: 1000, maxWidth: 350}} >
         <GeocodeAutoComplete
           placeholder={ui().controls.routeStart}
+          initialValue={startLocationValue}
           onSelect={(label, coords) => {
             setStartLocationValue(label);
-            setStartCoords(coords);
+            setStartCoords(coords ?? null);
           }}
           onClear={() => {
             setStartLocationValue("");
-            setStartCoords(undefined);
+            setStartCoords(null);
           }}
           styles={{border: "1px solid #0000001a"}}
         />
         <GeocodeAutoComplete
           placeholder={ui().controls.routeEnd}
+          initialValue={endLocationValue}
           onSelect={(label, coords) => {
             setEndLocationValue(label);
-            setEndCoords(coords);
+            setEndCoords(coords ?? null);
           }}
           onClear={() => {
             setEndLocationValue("");
-            setEndCoords(undefined);
+            setEndCoords(null);
           }}
           styles={{border: "1px solid #0000001a"}}
         />
+        <TextField
+          select
+          size="small"
+          label={ui().controls.routeRadius}
+          value={radius}
+          onChange={(e) => setRadius(Number(e.target.value))}
+          sx={{
+            margin: ".5em 1em",
+            background: "#fff",
+            "& .MuiOutlinedInput-root": { borderRadius: "1.5em" },
+          }}
+        >
+          {ROUTE_RADII.map((r) => (
+            <MenuItem key={r} value={r}>{formatRadius(r)}</MenuItem>
+          ))}
+        </TextField>
         <Button
           variant="outlined"
           style={{ textTransform: "none", margin: "0 .5em" }}

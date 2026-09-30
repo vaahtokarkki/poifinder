@@ -19,6 +19,8 @@ type GeocodeAutoCompleteProps = {
   autoFocus?: boolean;
   /** Replaces the built in clear button at the end of the field */
   endAction?: React.ReactNode;
+  /** What the field starts with, e.g. a place picked before it was last closed */
+  initialValue?: string;
 };
 
 /**
@@ -48,8 +50,9 @@ const GeocodeAutocomplete: React.FC<GeocodeAutoCompleteProps> = ({
   onClear,
   autoFocus = false,
   endAction,
+  initialValue = "",
 }) => {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(initialValue);
   const [options, setOptions] = useState<Suggestion[]>([]);
   const [loading, setLoading] = useState(false);
   const debounceRef = useRef<NodeJS.Timeout | null>(null);

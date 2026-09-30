@@ -9,7 +9,7 @@ import OneFingerZoom from "./components/OneFingerZoom";
 import CategorySelect from "./components/CategorySelect";
 import LanguageSelect from "./components/LanguageSelect";
 import PoiMarkers from "./PoiMarkers";
-import RoutesBar from "./components/RoutesBar";
+import RoutesBar, { DEFAULT_ROUTE_RADIUS, type RouteQuery } from "./components/RoutesBar";
 import SearchBar from "./components/SearchBar";
 import UserPositionMarker from "./components/UserPositionMarker";
 import { fetchRouteGeoJSON } from "./api/ors.ts";
@@ -260,6 +260,8 @@ const App = () => {
   const [filteredMarkers, setFilteredMarkers] = useState<OverpassMarkerData[]>([]);
   const [map, setMap] = useState<Map | null>(null);
   const [routeGeoJson, setRouteGeoJson] = useState<FeatureCollection | null>(null);
+  /** What the route on the map was asked with, to refill the form and size the corridor */
+  const [routeQuery, setRouteQuery] = useState<RouteQuery | null>(null);
   const [appInitialized, setAppInitialized] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [shareMessage, setShareMessage] = useState<string | null>(null);
@@ -525,9 +527,9 @@ const App = () => {
     if (routeGeoJson) {
       // The line is thinned out first: ORS hands over every bend of the road,
       // and a buffer around all of them is a polygon Overpass chokes on. 0.0005
-      // degrees is tens of metres, well inside the 500 metre corridor
+      // degrees is tens of metres, well inside even the narrowest corridor
       const feature = simplify(routeGeoJson.features[0], { tolerance: 0.0005 });
-      polygon = buffer(feature, 500, { units: 'meters' });
+      polygon = buffer(feature, routeQuery?.radius ?? DEFAULT_ROUTE_RADIUS, { units: 'meters' });
     }
 
     // Everything that decides what the server is asked, as one string. The
@@ -538,7 +540,7 @@ const App = () => {
     const key = [
       [...categories].sort().join(","),
       fetchBbox.join(","),
-      polygon ? `route:${routeGeoJson?.bbox?.join(",")}` : "view",
+      polygon ? `route:${routeGeoJson?.bbox?.join(",")}:${routeQuery?.radius}` : "view",
     ].join("|");
 
     const inFlight = fetchInFlightRef.current;
@@ -915,10 +917,8 @@ const App = () => {
     }
   }, [map, userPosition, setMapView]);
 
-  const handleRouteSearch = async (
-    start: [number, number] | null,
-    end: [number, number]
-  ) => {
+  const handleRouteSearch = async (query: RouteQuery) => {
+    const { start, end } = query;
     try {
       setLoading(true); // Start loading
 
@@ -950,6 +950,7 @@ const App = () => {
 
       // Store route in state and display on map. The panel has done its job,
       // the map goes back to its usual controls with a chip for the route
+      setRouteQuery(query);
       setRouteGeoJson(routeGeoJson);
       setMarkers([]); // Reset markers after successful route search
       setDisplaySearchItem(null);
@@ -1284,7 +1285,7 @@ const App = () => {
           />
           {displaySearchItem === "routes" && (
             <div className="routes-card">
-              <RoutesBar onSearch={handleRouteSearch} visible />
+              <RoutesBar onSearch={handleRouteSearch} initial={routeQuery} visible />
             </div>
           )}
           {/* The picker, the language button and the chips, in one block so
@@ -1324,7 +1325,13 @@ const App = () => {
           <LocatingChip />
         </div>
         <ZoomInHint onClick={handleZoomInClick} visible={zoomHintVisible} />
-        <RouteHint visible={!!routeGeoJson} onClose={() => setRouteGeoJson(null)} />
+        <RouteHint
+          visible={!!routeGeoJson}
+          onClose={() => {
+            setRouteGeoJson(null);
+            setRouteQuery(null);
+          }}
+        />
         <div className="map-controls">
           <div
             className={`map-controls-group${controlsExpanded ? " open" : ""}`}

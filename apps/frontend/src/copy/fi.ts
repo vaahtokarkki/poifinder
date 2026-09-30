@@ -399,6 +399,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     searchPlaceholder: "Hae sijaintia",
     routeHeading: "Hae pisteitä reitin varrelta",
     routeSubmit: "Hae reitti",
+    routeRadius: "Hakusäde",
     routeReset: "Tyhjennä reitti",
     routeActive: "Näytetään pisteet reitiltä {start} – {end}",
     routeYourLocation: "sijaintisi",

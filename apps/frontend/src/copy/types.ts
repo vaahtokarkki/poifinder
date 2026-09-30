@@ -544,6 +544,8 @@ export type UiCopy = {
     /** The route panel, which is its own small screen inside the map */
     routeHeading: string;
     routeSubmit: string;
+    /** The label of the corridor width select, how far from the route to look */
+    routeRadius: string;
     routeReset: string;
     /** Reads "Displaying points along route from {start} to {end}" */
     routeActive: string;

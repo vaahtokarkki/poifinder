@@ -1,7 +1,7 @@
 {
   "data_format": 1,
   "data_url": "https://wayside.cc/taginfo.json",
-  "data_updated": "20260911T181154Z",
+  "data_updated": "20260930T084755Z",
   "project": {
     "name": "Wayside",
     "description": "Free map of drinking water, toilets, benches and other small amenities for people on foot, with city pages built from OpenStreetMap.",
@@ -19,7 +19,7 @@
         "way",
         "relation"
       ],
-      "description": "Fireplaces & BBQ, Parking and Playgrounds skip points tagged access=private"
+      "description": "Fireplaces & BBQ, Parking, Playgrounds and Trash bins skip points tagged access=private"
     },
     {
       "key": "amenity",
@@ -240,6 +240,26 @@
         "relation"
       ],
       "description": "Shown on the map as Toilets"
+    },
+    {
+      "key": "amenity",
+      "value": "waste_basket",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Trash bins"
+    },
+    {
+      "key": "amenity",
+      "value": "waste_disposal",
+      "object_types": [
+        "node",
+        "way",
+        "relation"
+      ],
+      "description": "Shown on the map as Trash bins when also tagged access!=private"
     },
     {
       "key": "amenity",

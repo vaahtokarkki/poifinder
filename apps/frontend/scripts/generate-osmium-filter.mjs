@@ -50,10 +50,8 @@ const BROAD_TAGS = new Set(["building=retail", "leisure=pitch", "man_made=tower"
  * its own filters carry the tag and the entry here should be removed.
  */
 const IMPORT_AHEAD = [
-  // Trash bins: street bins, and the larger containers. The category can
-  // narrow the second with [access!=private]; the import keeps both
-  { tag: "amenity=waste_basket", for: "TrashBins (upcoming)", buildingLookup: false },
-  { tag: "amenity=waste_disposal", for: "TrashBins (upcoming)", buildingLookup: false },
+  // Empty between new categories. The last one through here was TrashBins:
+  // { tag: "amenity=waste_basket", for: "TrashBins (upcoming)", buildingLookup: false },
 ];
 
 /**

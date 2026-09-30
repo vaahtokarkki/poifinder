@@ -261,6 +261,14 @@ const CATEGORY_SEO_LIST: CategorySeo[] = [
     placedByStreet: true,
     schemaType: "Place",
   },
+  {
+    category: CATEGORIES.TrashBins,
+    slug: "trash-bins",
+    // Street furniture like benches and post boxes: nobody names a bin, and
+    // the street it stands on is how anyone would say where it is
+    placedByStreet: true,
+    schemaType: "Place",
+  },
 ];
 
 /**

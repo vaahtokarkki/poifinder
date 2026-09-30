@@ -46,6 +46,7 @@ const nouns: Record<string, Partial<CategoryCopy>> = {
   "fireplaces": { plural: "aree barbecue", singular: "area barbecue", heading: "Aree barbecue" },
   "bicycle-repair": { plural: "ciclofficine", singular: "ciclofficina", heading: "Ciclofficine" },
   "benches": { plural: "panchine", singular: "panchina", heading: "Panchine" },
+  "trash-bins": { plural: "cestini", singular: "cestino", heading: "Cestini" },
 };
 
 export const itCategories: Record<string, Partial<CategoryCopy>> = nouns;

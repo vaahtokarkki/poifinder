@@ -76,6 +76,7 @@ const nouns: Record<string, Partial<CategoryCopy>> = {
     heading: "Pyöränhuoltopisteet",
   },
   benches: { plural: "penkit", singular: "penkki", heading: "Penkit" },
+  "trash-bins": { plural: "roskikset", singular: "roskis", heading: "Roskikset" },
 };
 
 /**

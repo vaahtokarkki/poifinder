@@ -54,6 +54,7 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     fireplaces: "Barbecue",
     "bicycle-repair": "Réparation de vélos",
     benches: "Bancs",
+    "trash-bins": "Poubelles",
   },
 
   groups: {

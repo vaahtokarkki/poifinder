@@ -674,6 +674,32 @@ const categories: CopyDeck["categories"] = {
       },
     ],
   },
+  "trash-bins": {
+    plural: "trash bins",
+    singular: "trash bin",
+    heading: "Trash bins",
+    intro: {
+      one: "One public trash bin is mapped in {city}. A wrapper, a coffee cup or a dog bag needs somewhere to go, and in a city that removed its street bins the nearest one can be a long walk away.",
+      other: "{count} public trash bins are mapped in {city}. A wrapper, a coffee cup or a dog bag needs somewhere to go, and in a city that removed its street bins the nearest one can be a long walk away.",
+    },
+    faq: [
+      {
+        q: "Where are the trash bins in {city}?",
+        a: {
+          one: "The map shows the one mapped bin. Parks, bus stops and busy streets are where bins usually stand.",
+          other: "The map shows {count} mapped bins, clustered until you zoom in far enough for them to separate. Parks, bus stops and busy streets are where they concentrate.",
+        },
+      },
+      {
+        q: "Does it show dog waste bins?",
+        a: "Yes, where they are mapped. A bin for dog waste is mapped as a bin with a note saying so, and that note shows in the point details, along with a bag dispenser if there is one.",
+      },
+      {
+        q: "Are recycling points included?",
+        a: "No. Recycling containers for glass, paper, plastic and clothing are their own category. Switch on Recycling as well to see both.",
+      },
+    ],
+  },
 };
 
 const commonFaq: CopyDeck["commonFaq"] = [
@@ -719,6 +745,7 @@ const ui: CopyDeck["ui"] = {
     fireplaces: "Fireplaces & BBQ",
     "bicycle-repair": "Bike repair",
     benches: "Benches",
+    "trash-bins": "Trash bins",
   },
 
   groups: {

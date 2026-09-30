@@ -29,6 +29,7 @@ import ShowerIcon from '@mui/icons-material/Shower';
 import OutdoorGrillIcon from '@mui/icons-material/OutdoorGrill';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import ChairAltIcon from '@mui/icons-material/ChairAlt';
+import DeleteIcon from '@mui/icons-material/Delete';
 import * as React from "react";
 import { getLocale, ui } from "./copy";
 import type { Locale } from "./copy";
@@ -65,6 +66,9 @@ export enum CATEGORIES {
   // because appending would leave a dead number that share links still decode
   BicycleRepair,
   Bench,
+  // Appended, never inserted: the number is what share links and saved
+  // selections store, so a category in the middle would renumber the rest
+  TrashBins,
 }
 
 export enum CATEGORY_GROUP {
@@ -353,6 +357,23 @@ export const CATEGORY_CONFIG: Record<CATEGORIES, CategoryConfig> = {
     group: CATEGORY_GROUP.Essentials,
     buildingLookup: false,
   },
+  [CATEGORIES.TrashBins]: {
+    /**
+     * Street bins, and the larger containers where they are open to anyone.
+     *
+     * `waste_basket` is the bin on a lamp post or at a park bench, which is
+     * what somebody holding a wrapper or a dog bag is looking for.
+     * `waste_disposal` is the larger container, and a good share of those are
+     * a block of flats' own bins — 18,134 of 319,237 worldwide say
+     * `access=private` outright — so those are left out. Recycling is its own
+     * category and stays there.
+     */
+    filters: ["[amenity=waste_basket]", "[amenity=waste_disposal][access!=private]"],
+    icon: React.createElement(DeleteIcon),
+    color: "#546E7A",
+    group: CATEGORY_GROUP.Essentials,
+    buildingLookup: false,
+  },
 };
 
 /**
@@ -451,6 +472,8 @@ export const CATEGORY_PRESETS: CategoryPreset[] = [
       CATEGORIES.DogPark,
       CATEGORIES.DrinkingWater,
       CATEGORIES.Toilets,
+      // Somewhere to leave the bag, which is the other half of a dog walk
+      CATEGORIES.TrashBins,
     ],
   },
   {

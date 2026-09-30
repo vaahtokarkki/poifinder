@@ -678,6 +678,12 @@ const isDisplayableTag = (key: string, value: string) => {
    */
   if (/^(source|panoramax|mapillary)(\b|[:_])/.test(key)) return false;
   /**
+   * Height above sea level, and how it was measured: `ele=30.5`,
+   * `ele:msl`, `ele:source=GPS`. A surveyor's reading of the GPS, which says
+   * nothing to somebody looking for a bin or a bench
+   */
+  if (/^ele(\b|[:_])/.test(key)) return false;
+  /**
    * Read by a row that is written rather than listed: the address, and when it
    * was last checked. Listing them again underneath would say everything twice,
    * in worse words the second time

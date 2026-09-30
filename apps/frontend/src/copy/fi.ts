@@ -370,6 +370,8 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     closeSearch: "Sulje haku",
     selectCategories: "Valitse kartalla näytettävät kategoriat",
     zoomInHint: "Lähennä ladataksesi uusia pisteitä",
+    routeHint: "Näytetään pisteet reitin varrelta",
+    closeRoute: "Sulje reitti",
     routeStart: "Sijaintisi",
     routeEnd: "Määränpää",
     chooseCategories: "Valitse kategoriat",

@@ -351,6 +351,8 @@ const ui: NonNullable<LocaleDeck["ui"]> = {
     closeSearch: "Chiudi la ricerca",
     selectCategories: "Scegli le categorie da mostrare sulla mappa",
     zoomInHint: "Ingrandisci per caricare nuovi punti",
+    routeHint: "Punti lungo il percorso",
+    closeRoute: "Chiudi il percorso",
     routeStart: "La tua posizione",
     routeEnd: "Destinazione",
     chooseCategories: "Scegli le categorie",

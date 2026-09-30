@@ -1,4 +1,4 @@
-import { bbox as bboxOf, buffer } from "@turf/turf";
+import { bbox as bboxOf, buffer, simplify } from "@turf/turf";
 import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
 import { Map, latLngBounds, point as pixelPoint } from 'leaflet';
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -18,6 +18,7 @@ import type { OverpassProgress } from "./api/overpass.ts";
 import Loading from "./components/Loading";
 import LocatingChip from "./components/LocatingChip";
 import ZoomInHint from "./components/ZoomInHint";
+import RouteHint from "./components/RouteHint";
 import { requestUserPosition, useGpsStatus, useUserPosition } from "./hooks/index";
 import { requestDeviceHeadingPermission } from "./hooks/useDeviceHeading";
 import { CATEGORIES } from "./constants";
@@ -510,8 +511,10 @@ const App = () => {
       return Promise.resolve();
     }
 
-    // Too far out to query, the hint asks for a closer look instead
-    if (map.getZoom() < MIN_POI_ZOOM) return Promise.resolve();
+    // Too far out to query, the hint asks for a closer look instead. A route
+    // is queried along its own line rather than the view, so the zoom it was
+    // fitted at does not matter
+    if (!routeGeoJson && map.getZoom() < MIN_POI_ZOOM) return Promise.resolve();
 
     // Query wider than the screen, so the points are already there when the
     // view moves a little — whether the reader nudged the map or a popup panned
@@ -519,11 +522,11 @@ const App = () => {
     const fetchBbox = padBbox(bbox, map.getZoom());
 
     let polygon: Feature<Polygon | MultiPolygon> | undefined = undefined;
-    if (
-      displaySearchItem === "routes" &&
-      routeGeoJson
-    ) {
-      const feature = routeGeoJson.features[0]
+    if (routeGeoJson) {
+      // The line is thinned out first: ORS hands over every bend of the road,
+      // and a buffer around all of them is a polygon Overpass chokes on. 0.0005
+      // degrees is tens of metres, well inside the 500 metre corridor
+      const feature = simplify(routeGeoJson.features[0], { tolerance: 0.0005 });
       polygon = buffer(feature, 500, { units: 'meters' });
     }
 
@@ -535,7 +538,7 @@ const App = () => {
     const key = [
       [...categories].sort().join(","),
       fetchBbox.join(","),
-      polygon ? "route" : "view",
+      polygon ? `route:${routeGeoJson?.bbox?.join(",")}` : "view",
     ].join("|");
 
     const inFlight = fetchInFlightRef.current;
@@ -610,10 +613,11 @@ const App = () => {
     if (autoFetchTimerRef.current) window.clearTimeout(autoFetchTimerRef.current);
     autoFetchTimerRef.current = window.setTimeout(() => {
       autoFetchTimerRef.current = null;
-      if (!map || category.length === 0 || map.getZoom() < MIN_POI_ZOOM) return;
+      if (!map || category.length === 0) return;
       // A route query follows the route rather than the view, panning along it
       // would only ask for the same points again
-      if (displaySearchItem === "routes") return;
+      if (routeGeoJson) return;
+      if (map.getZoom() < MIN_POI_ZOOM) return;
 
       const bbox = getBbox();
       if (!bbox) return;
@@ -944,9 +948,11 @@ const App = () => {
         end: [endCoords[1], endCoords[0]], // ORS expects [lng, lat]
       });
 
-      // Store route in state and display on map
+      // Store route in state and display on map. The panel has done its job,
+      // the map goes back to its usual controls with a chip for the route
       setRouteGeoJson(routeGeoJson);
       setMarkers([]); // Reset markers after successful route search
+      setDisplaySearchItem(null);
 
       // Zoom map to bbox of the route
       if (routeGeoJson && routeGeoJson.bbox && map) {
@@ -971,37 +977,23 @@ const App = () => {
     }
   };
 
+  // Load the points along a new route, and those of the view again once the
+  // route is closed. Skipped on mount, the initial load has its own path
+  const hadRouteRef = useRef(false);
   useEffect(() => {
-    if (
-      displaySearchItem === "routes" &&
-      routeGeoJson &&
-      routeGeoJson.bbox &&
-      map
-    ) {
-      // bbox: [minLon, minLat, maxLon, maxLat]
-      const [[minLat, minLon], [maxLat, maxLon]] = [
-        [routeGeoJson.bbox[1], routeGeoJson.bbox[0]],
-        [routeGeoJson.bbox[3], routeGeoJson.bbox[2]],
-      ];
-      const bounds = latLngBounds(
-        [minLat, minLon],
-        [maxLat, maxLon]
-      );
-      userMovedMapRef.current = true;
-      map.fitBounds(bounds, { padding: [40, 40] });
-    }
-  }, [displaySearchItem, routeGeoJson, map]);
-
-  useEffect(() => {
-    if (
-      displaySearchItem === "routes" &&
-      routeGeoJson &&
-      markers.length === 0 // Only fetch if markers are empty
-    ) {
+    if (routeGeoJson) {
+      hadRouteRef.current = true;
       fetchMarkers(undefined, "route");
+      return;
     }
-
-  }, [routeGeoJson, displaySearchItem]);
+    if (!hadRouteRef.current) return;
+    hadRouteRef.current = false;
+    // The route's points are not what the view would load, so forget them
+    setMarkers([]);
+    setFilteredMarkers([]);
+    requestedBboxRef.current = null;
+    fetchMarkers(undefined, "pan");
+  }, [routeGeoJson]);
 
   // 1. Parse city/category/query params on mount (no fetchMarkers here)
   useEffect(() => {
@@ -1144,7 +1136,7 @@ const App = () => {
   }, [map, markers]);
 
   const zoomHintVisible =
-    zoom !== null && zoom < MIN_POI_ZOOM && displaySearchItem !== "routes";
+    zoom !== null && zoom < MIN_POI_ZOOM && !routeGeoJson;
 
   // How often people end up too far out for the points to load. On the
   // transition, so this counts arrivals at that zoom rather than renders
@@ -1292,15 +1284,7 @@ const App = () => {
           />
           {displaySearchItem === "routes" && (
             <div className="routes-card">
-              <RoutesBar
-                onSearch={handleRouteSearch}
-                deleteRoute={() => {
-                  setRouteGeoJson(null);
-                  setMarkers([]); // Reset markers when route is deleted
-                }}
-                visible
-                displayRouteInfo={!!routeGeoJson}
-              />
+              <RoutesBar onSearch={handleRouteSearch} visible />
             </div>
           )}
           {/* The picker, the language button and the chips, in one block so
@@ -1340,6 +1324,7 @@ const App = () => {
           <LocatingChip />
         </div>
         <ZoomInHint onClick={handleZoomInClick} visible={zoomHintVisible} />
+        <RouteHint visible={!!routeGeoJson} onClose={() => setRouteGeoJson(null)} />
         <div className="map-controls">
           <div
             className={`map-controls-group${controlsExpanded ? " open" : ""}`}
@@ -1412,8 +1397,10 @@ const App = () => {
           onNotice={showNotice}
           focus={focusMarker}
         />
-        {routeGeoJson && displaySearchItem === "routes" && (
+        {routeGeoJson && (
           <GeoJSON
+            // GeoJSON only reads its data on mount, a new route needs a new layer
+            key={routeGeoJson.bbox?.join(",")}
             data={routeGeoJson}
             style={{
               color: "#1976d2",

@@ -1052,6 +1052,8 @@ const ui: CopyDeck["ui"] = {
     closeSearch: "Close search",
     selectCategories: "Select the categories to show on the map",
     zoomInHint: "Zoom in to load new points",
+    routeHint: "Displaying points along route",
+    closeRoute: "Close route",
     routeStart: "Your location",
     routeEnd: "Destination location",
     chooseCategories: "Choose categories",

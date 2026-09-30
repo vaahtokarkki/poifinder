@@ -490,6 +490,8 @@ export type UiCopy = {
     closeSearch: string;
     selectCategories: string;
     zoomInHint: string;
+    routeHint: string;
+    closeRoute: string;
     routeStart: string;
     routeEnd: string;
     chooseCategories: string;

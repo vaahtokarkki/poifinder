@@ -101,6 +101,9 @@ export function initAnalytics(): void {
   push(["setCustomUrl", trackedUrl()]);
   push(["setDocumentTitle", document.title]);
   push(["trackPageView"]);
+  // Every landing says what it is, right beside its pageview: see landingKind
+  const landing = landingKind();
+  trackEvent("Visit", landing.action, landing.name);
   // Clicks out to OpenStreetMap, Wikidata and the rest. Only the links in the
   // document at this point; the popups add theirs later, see poiPopupOpened
   push(["enableLinkTracking"]);
@@ -109,6 +112,77 @@ export function initAnalytics(): void {
   script.async = true;
   script.src = `${MATOMO_URL}matomo.js`;
   document.head.appendChild(script);
+}
+
+/**
+ * The keys the app writes while it is used, read here before it writes any of
+ * them. Any one of them present means this browser has been here before; none
+ * means it has not, as far as it can still tell
+ */
+const STATE_KEYS = [
+  "wayside_map_location",
+  "wayside_categories",
+  "wayside_locale",
+  "wayside_pois",
+  "wayside_gps_location",
+  "wayside_translations",
+];
+
+/** The two of them that carry a time, which is what the age bucket reads */
+const TIMESTAMPED_KEYS = ["wayside_pois", "wayside_gps_location"];
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+/**
+ * New or returning, worked out from what this browser kept from last time.
+ *
+ * There is no visitor id behind this and none is sent. Cookies are off, so
+ * Matomo counts every visit as new; the app's own saved state — where the map
+ * was left, the categories, the cached points — is what can tell a return
+ * apart, and only the answer leaves the device: "returning", and roughly how
+ * long since the last visit. No timestamp, no key, nothing to join two visits.
+ *
+ * What it cannot see, and so what the numbers mean: cleared storage and
+ * private windows read as new, so the returning share is a floor. Safari wipes
+ * script-written storage after seven days without a visit unless the site is
+ * on the home screen, so on iPhones the longer buckets are undercounted.
+ *
+ * Read before anything in the app writes, which is why it lives here: this
+ * runs ahead of the first render, and every write happens after it.
+ *
+ * "storage blocked" is a browser that will not let the site keep anything,
+ * which is also a browser where saved categories and the cached map never
+ * come back — worth knowing the size of on its own.
+ */
+function landingKind(): { action: string; name?: string } {
+  let storage: Storage;
+  try {
+    storage = window.localStorage;
+    const probe = "wayside_storage_probe";
+    storage.setItem(probe, "1");
+    storage.removeItem(probe);
+  } catch {
+    return { action: "storage blocked" };
+  }
+  try {
+    if (!STATE_KEYS.some((key) => storage.getItem(key) !== null)) return { action: "new" };
+    let newest = 0;
+    for (const key of TIMESTAMPED_KEYS) {
+      try {
+        const stamp = JSON.parse(storage.getItem(key) ?? "null")?.timestamp;
+        if (typeof stamp === "number" && stamp > newest) newest = stamp;
+      } catch {
+        // A value from an older version that is not JSON says nothing about age
+      }
+    }
+    if (!newest) return { action: "returning", name: "unknown" };
+    const days = (Date.now() - newest) / DAY_MS;
+    const name =
+      days < 1 ? "same day" : days <= 7 ? "1-7 days" : days <= 30 ? "8-30 days" : "30+ days";
+    return { action: "returning", name };
+  } catch {
+    return { action: "storage blocked" };
+  }
 }
 
 /** One event. `value` has to be a number, Matomo sums and averages it */
@@ -337,6 +411,41 @@ export const analytics = {
     outcome: "centered" | "cached" | "locating" | "denied" | "unavailable"
   ): void {
     trackEvent("Map", "my location", outcome);
+  },
+
+  /**
+   * What became of a tap that had to wait for the device: a fix, with how
+   * many seconds it took as the value, or none within LOCATE_GIVE_UP_MS.
+   *
+   * The tap itself only says "locating", and in two weeks 65 visits said that
+   * against 26 that recorded any ending at all. A fix that lands after the
+   * "no fix" still reports, with its real time, so a slow GPS shows as slow
+   * rather than as a failure
+   */
+  myLocationResolved(result: "fix" | "no fix", seconds?: number): void {
+    trackEvent("Map", "my location: result", result, seconds);
+  },
+
+  /**
+   * A visit that arrived on somebody's shared link to one point, and whether
+   * the point could still be found. Only the category: the link's id and
+   * coordinates are left out for the same reason the URL is trimmed above
+   */
+  sharedLinkOpened(category: CATEGORIES | null, found: boolean): void {
+    trackEvent("POI", found ? "shared link: opened" : "shared link: not found", categoryName(category));
+  },
+
+  /**
+   * The point panel pulled up to full height, or pulled down and away. Expand
+   * says the panel had more to read than its first view showed; the swipe
+   * says how often the close bar is not how people leave
+   */
+  poiPanelExpanded(): void {
+    trackEvent("POI", "panel: expand");
+  },
+
+  poiPanelSwipedClosed(): void {
+    trackEvent("POI", "panel: swipe close");
   },
 
   /**

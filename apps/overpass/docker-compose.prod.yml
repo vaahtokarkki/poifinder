@@ -692,8 +692,10 @@ services:
   #   VITE_OVERPASS_API_URL=https://<funnel-host>/api/interpreter   (unchanged)
   #   VITE_NOISE_TILES_URL=https://<funnel-host>/tiles              (new)
   #
-  # The client's own address still reaches Overpass. Caddy appends its hop to
-  # X-Forwarded-For, and the nginx inside the Overpass image sets
+  # The client's own address still reaches Overpass. Caddy trusts the tunnel's
+  # X-Forwarded-For (trusted_proxies below — without it Caddy 2.6+ replaces
+  # the header with its own peer, the Docker gateway) and appends its hop, and
+  # the nginx inside the Overpass image sets
   # `real_ip_recursive on` while trusting loopback and the Docker bridge
   # ranges, so it walks past both proxies to the real client. See
   # initdb.d/15-access-log.sh — that is what the access log and the per-address
@@ -775,6 +777,17 @@ configs:
 
       	# Nothing needs the admin API, and it listens on 2019 by default
       	admin off
+
+      	# Believe the forwarding headers the tunnel sets. Every connection here
+      	# arrives from loopback or the Docker bridge — cloudflared on the host,
+      	# or the Tailscale funnel, through the published port — and since Caddy
+      	# 2.6 an X-Forwarded-For from a peer it does not trust is replaced, not
+      	# appended to. Without this, Overpass saw every visitor as the Docker
+      	# gateway: the access log had no client addresses, and the per-address
+      	# rate limit was one bucket shared by everybody
+      	servers {
+      		trusted_proxies static private_ranges
+      	}
       }
 
       # Any host, on the container's port 80. No hostname to match, because the

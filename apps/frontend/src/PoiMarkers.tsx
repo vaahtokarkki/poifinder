@@ -2755,4 +2755,12 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
  * this list rebinds every marker on the map. Repainting it because a message
  * appeared at the bottom of the screen is how clicks went missing.
  */
+/**
+ * The category a point would be drawn as with nothing selected, for the one
+ * caller outside the map that needs to name it: a shared link, where the
+ * point arrives by id rather than through a category
+ */
+export const categoryOfMarker = (marker: OverpassMarkerData): CATEGORIES | null =>
+  findCategory(marker, []);
+
 export default React.memo(PoiMarkers);

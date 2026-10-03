@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
 import { ui } from "../copy";
 import { sidePanelMatches } from "./BottomSheet";
+import { analytics } from "../analytics";
 
 /**
  * The grab bar at the top of a point panel, and the gestures that go with it.
@@ -186,6 +187,11 @@ const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     const clearOffset = () => document.body.style.removeProperty("--poi-panel-offset");
 
     const applySnap = (snap: Snap) => {
+      // Counted when the panel really grows: full is peek when there is
+      // nothing more to show, and a snap to where it already is is no expand
+      if (snap === "full" && state.snap !== "full" && state.full > state.peek) {
+        analytics.poiPanelExpanded();
+      }
       state.snap = snap;
       setHeight(heightFor(snap));
       handle.setAttribute("aria-expanded", String(snap === "full"));
@@ -297,6 +303,7 @@ const PoiPanelHandle: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
       // Pulled down far enough that letting go means letting go
       if (state.height < state.peek * CLOSE_FRACTION) {
+        analytics.poiPanelSwipedClosed();
         state.onClose();
         return;
       }

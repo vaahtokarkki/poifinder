@@ -8,7 +8,7 @@ import OverlayAttribution from "./components/OverlayAttribution";
 import OneFingerZoom from "./components/OneFingerZoom";
 import CategorySelect from "./components/CategorySelect";
 import LanguageSelect from "./components/LanguageSelect";
-import PoiMarkers from "./PoiMarkers";
+import PoiMarkers, { categoryOfMarker } from "./PoiMarkers";
 import RoutesBar, { DEFAULT_ROUTE_RADIUS, type RouteQuery } from "./components/RoutesBar";
 import SearchBar from "./components/SearchBar";
 import UserPositionMarker from "./components/UserPositionMarker";
@@ -71,6 +71,13 @@ import { countryAt } from "./analytics/countries";
  * region, which Overpass answers slowly and the map cannot draw readably
  */
 const MIN_POI_ZOOM = 14;
+
+/**
+ * How long a locate tap may wait for the device before it is recorded as "no
+ * fix". Generous on purpose: a cold GPS in a street of tall buildings can take
+ * this long, and a slow fix is a different finding from none
+ */
+const LOCATE_GIVE_UP_MS = 30_000;
 
 /**
  * How close the map goes for a point somebody was sent.
@@ -402,6 +409,8 @@ const App = () => {
   const gpsLockCenteringDoneRef = useRef(false);
   // A locate tap that could not be answered yet, waiting on the first fix
   const pendingLocateRef = useRef(false);
+  /** When the waiting tap above was made, so a fix can say how long it took */
+  const pendingLocateAtRef = useRef(0);
   // The IP lookup of a visit that has no location of its own. It is started
   // before the map exists, so the first view is centered as early as it can be
   const ipLocationRef = useRef<Promise<[number, number] | null> | null>(null);
@@ -466,9 +475,11 @@ const App = () => {
           // Deleted from OpenStreetMap since the link was made, or never in
           // our extract. The coordinates in the link have already put the map
           // in the right place, so all that is left is to say so
+          analytics.sharedLinkOpened(marker ? categoryOfMarker(marker) : null, false);
           showNotice(ui().notices.poiNotFound);
           return;
         }
+        analytics.sharedLinkOpened(categoryOfMarker(marker), true);
         setFocusMarker(marker);
         // A link is as deliberate a destination as a search: the GPS fix must
         // not pull the map off it when it lands
@@ -476,7 +487,9 @@ const App = () => {
         setMapView(marker.position, Math.max(map.getZoom(), POI_FOCUS_ZOOM));
       })
       .catch(() => {
-        if (!cancelled) showNotice(ui().notices.poiNotFound);
+        if (cancelled) return;
+        analytics.sharedLinkOpened(null, false);
+        showNotice(ui().notices.poiNotFound);
       });
 
     return () => {
@@ -843,7 +856,13 @@ const App = () => {
       // point: the permission sheet now arrives with a reason in front of it.
       // The centring happens in the effect below, when the fix lands
       pendingLocateRef.current = true;
+      pendingLocateAtRef.current = Date.now();
       analytics.myLocationUsed(hasPosition ? "cached" : "locating");
+      // The device may never answer, and a tap that ends in silence would
+      // otherwise leave no record of how it ended
+      window.setTimeout(() => {
+        if (pendingLocateRef.current) analytics.myLocationResolved("no fix");
+      }, LOCATE_GIVE_UP_MS);
       requestUserPosition();
       return;
     }
@@ -866,6 +885,10 @@ const App = () => {
       typeof userPosition.lng === "number"
     ) {
       pendingLocateRef.current = false;
+      analytics.myLocationResolved(
+        "fix",
+        Math.round((Date.now() - pendingLocateAtRef.current) / 1000)
+      );
       // This tap is the visitor asking to be moved, so it counts as the one
       // automatic centring the session gets
       gpsLockCenteringDoneRef.current = true;

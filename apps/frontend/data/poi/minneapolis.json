@@ -1,9 +1,9 @@
 {
   "city": "minneapolis",
-  "generatedAt": "2026-09-27T10:05:50.998Z",
+  "generatedAt": "2026-10-04T10:41:48.070Z",
   "categories": {
     "toilets": {
-      "count": 208,
+      "count": 216,
       "pois": [
         {
           "id": "node/13993589139",
@@ -244,11 +244,25 @@
           "lon": -93.284565
         }
       ],
-      "updatedAt": "2026-09-23T08:32:17.229Z"
+      "updatedAt": "2026-10-04T10:41:22.962Z"
     },
     "drinking-water": {
-      "count": 169,
+      "count": 176,
       "pois": [
+        {
+          "id": "way/177770053",
+          "name": "Culligan Water",
+          "lat": 44.981437,
+          "lon": -93.168366,
+          "address": "Dan Patch Avenue 1629"
+        },
+        {
+          "id": "node/14167625324",
+          "lat": 44.977631,
+          "lon": -93.265248,
+          "fee": "no",
+          "street": "Minneapolis Skyway"
+        },
         {
           "id": "node/11254268770",
           "lat": 44.976264,
@@ -308,12 +322,6 @@
           "wheelchair": "yes",
           "fee": "no",
           "street": "Southeast 6th Avenue"
-        },
-        {
-          "id": "node/6416686200",
-          "lat": 44.970335,
-          "lon": -93.278296,
-          "street": "Minneapolis Skyway"
         },
         {
           "id": "node/11911515093",
@@ -457,18 +465,12 @@
           "wheelchair": "yes",
           "fee": "no",
           "street": "East River Parkway"
-        },
-        {
-          "id": "node/6789396989",
-          "lat": 44.950105,
-          "lon": -93.296829,
-          "street": "Midtown Corridor"
         }
       ],
       "stats": {
-        "free": 107,
+        "free": 111,
         "paid": 0,
-        "stepFree": 81,
+        "stepFree": 82,
         "partlyStepFree": 2
       },
       "near": [
@@ -482,10 +484,10 @@
           "lon": -93.284564
         }
       ],
-      "updatedAt": "2026-09-23T08:32:19.042Z"
+      "updatedAt": "2026-10-04T10:41:25.025Z"
     },
     "playgrounds": {
-      "count": 405,
+      "count": 408,
       "pois": [
         {
           "id": "way/1247368436",
@@ -506,8 +508,14 @@
           "lon": -93.252939
         },
         {
+          "id": "way/1557631072",
+          "name": "Nature Play Area",
+          "lat": 44.960168,
+          "lon": -93.315917
+        },
+        {
           "id": "node/14046289796",
-          "name": "Andrew J. Foss Memorial Mud Pit",
+          "name": "Andrew J. Foss and Stephen Vasseur Memorial Mudhole",
           "lat": 44.961455,
           "lon": -93.31775
         },
@@ -536,10 +544,10 @@
         "stepFree": 9,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:05:28.104Z"
+      "updatedAt": "2026-10-04T10:41:26.121Z"
     },
     "parking": {
-      "count": 4457,
+      "count": 4549,
       "pois": [
         {
           "id": "way/126015101",
@@ -575,6 +583,13 @@
           "name": "517 Marquette Garage",
           "lat": 44.977608,
           "lon": -93.269293,
+          "openingHours": "24/7"
+        },
+        {
+          "id": "way/1164471675",
+          "name": "5th Avenue Parking Ramp",
+          "lat": 44.974646,
+          "lon": -93.265613,
           "openingHours": "24/7"
         },
         {
@@ -655,6 +670,13 @@
           "fee": "yes"
         },
         {
+          "id": "way/28525216",
+          "name": "Mar-Ten Parking Ramp",
+          "lat": 44.97351,
+          "lon": -93.272595,
+          "openingHours": "24/7"
+        },
+        {
           "id": "way/28490447",
           "name": "Leamington Municipal Ramp",
           "lat": 44.972033,
@@ -722,44 +744,33 @@
           "id": "node/12896949903",
           "name": "Plaza Parking Garage",
           "lat": 44.970693,
-          "lon": -93.27443
+          "lon": -93.27443,
+          "address": "S 12th St 117"
         },
         {
           "id": "way/1525636042",
           "name": "Parking Lot G",
           "lat": 44.967814,
           "lon": -93.262035
-        },
-        {
-          "id": "way/38400157",
-          "name": "St. Anthony Falls Ramp",
-          "lat": 44.98587,
-          "lon": -93.254219,
-          "fee": "yes"
-        },
-        {
-          "id": "way/1525636041",
-          "name": "Parking Lot H",
-          "lat": 44.966797,
-          "lon": -93.26151
         }
       ],
       "stats": {
-        "free": 533,
-        "paid": 104,
+        "free": 546,
+        "paid": 111,
         "stepFree": 10,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:05:29.546Z"
+      "updatedAt": "2026-10-04T10:41:27.481Z"
     },
     "charging-stations": {
       "count": 33,
       "pois": [
         {
-          "id": "node/6433139142",
+          "id": "node/6433139143",
           "name": "ChargePoint",
-          "lat": 44.974001,
-          "lon": -93.24475
+          "lat": 44.974147,
+          "lon": -93.244042,
+          "fee": "no"
         },
         {
           "id": "node/12944744273",
@@ -779,15 +790,15 @@
         }
       ],
       "stats": {
-        "free": 0,
+        "free": 1,
         "paid": 12,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:30.041Z"
+      "updatedAt": "2026-10-04T10:41:27.963Z"
     },
     "gas-stations": {
-      "count": 89,
+      "count": 90,
       "pois": [
         {
           "id": "way/152600029",
@@ -993,10 +1004,10 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:30.885Z"
+      "updatedAt": "2026-10-04T10:41:28.684Z"
     },
     "ice-cream": {
-      "count": 28,
+      "count": 30,
       "pois": [
         {
           "id": "node/1087602330",
@@ -1058,6 +1069,12 @@
           "openingHours": "Mo-Fr 12:00-22:00; Sa 12:00-23:00; Su 12:00-22:00"
         },
         {
+          "id": "node/14197341210",
+          "name": "Zero Degrees",
+          "lat": 44.948182,
+          "lon": -93.252938
+        },
+        {
           "id": "node/10243480639",
           "name": "Freschez Dulce Antojito",
           "lat": 44.948503,
@@ -1076,7 +1093,8 @@
           "lat": 45.013027,
           "lon": -93.250209,
           "address": "Northeast Lowry Avenue 816",
-          "openingHours": "We-Fr 16:00-20:00; Sa-Su 12:00-20:00"
+          "openingHours": "We-Fr 16:00-20:00; Sa-Su 12:00-20:00",
+          "wheelchair": "yes"
         },
         {
           "id": "node/13681612406",
@@ -1171,10 +1189,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 5,
+        "stepFree": 7,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:05:31.716Z"
+      "updatedAt": "2026-10-04T10:41:29.343Z"
     },
     "dog-parks": {
       "count": 30,
@@ -1293,10 +1311,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:32.298Z"
+      "updatedAt": "2026-10-04T10:41:29.840Z"
     },
     "picnic-spots": {
-      "count": 485,
+      "count": 508,
       "pois": [],
       "stats": {
         "free": 0,
@@ -1304,10 +1322,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:33.679Z"
+      "updatedAt": "2026-10-04T10:41:30.909Z"
     },
     "viewpoints": {
-      "count": 41,
+      "count": 42,
       "pois": [
         {
           "id": "node/2317828868",
@@ -1334,10 +1352,10 @@
           "lon": -93.203464
         },
         {
-          "id": "node/2025023787",
+          "id": "way/1553547200",
           "name": "Minnesota State Fair Fire Tower",
-          "lat": 44.979625,
-          "lon": -93.173329
+          "lat": 44.979632,
+          "lon": -93.173345
         },
         {
           "id": "node/13962574481",
@@ -1352,7 +1370,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:34.421Z"
+      "updatedAt": "2026-10-04T10:41:31.543Z"
     },
     "beaches": {
       "count": 19,
@@ -1453,10 +1471,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:35.079Z"
+      "updatedAt": "2026-10-04T10:41:32.040Z"
     },
     "atms": {
-      "count": 70,
+      "count": 75,
       "pois": [
         {
           "id": "node/6560546757",
@@ -1474,7 +1492,8 @@
           "id": "node/5355792487",
           "name": "U.S. Bank",
           "lat": 44.976407,
-          "lon": -93.271848
+          "lon": -93.271848,
+          "address": "S 8th St 80"
         },
         {
           "id": "node/5355792475",
@@ -1591,7 +1610,7 @@
         "stepFree": 6,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:05:36.033Z"
+      "updatedAt": "2026-10-04T10:41:32.704Z"
     },
     "post-boxes": {
       "count": 145,
@@ -1657,9 +1676,9 @@
           "street": "South 2nd Street"
         },
         {
-          "id": "node/12645553574",
-          "lat": 44.97477,
-          "lon": -93.273299,
+          "id": "node/12645553575",
+          "lat": 44.974774,
+          "lon": -93.273315,
           "street": "South 9th Street"
         },
         {
@@ -1756,7 +1775,7 @@
           "id": "node/5863720443",
           "lat": 44.970004,
           "lon": -93.278396,
-          "street": "West Grant Street"
+          "street": "West Grant Street Bikeway"
         },
         {
           "id": "node/6773414143",
@@ -1765,10 +1784,10 @@
           "street": "4th Street Northeast"
         },
         {
-          "id": "node/1314717647",
-          "lat": 44.9703,
-          "lon": -93.247654,
-          "street": "South 4th Street"
+          "id": "node/14178169873",
+          "lat": 44.970011,
+          "lon": -93.24733,
+          "street": "Cedar Avenue South"
         },
         {
           "id": "node/3671183005",
@@ -1783,11 +1802,17 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:37.383Z"
+      "updatedAt": "2026-10-04T10:41:33.910Z"
     },
     "recycling": {
-      "count": 396,
+      "count": 401,
       "pois": [
+        {
+          "id": "node/5996783628",
+          "lat": 44.9708,
+          "lon": -93.279053,
+          "context": "Hyatt Regency Minneapolis"
+        },
         {
           "id": "node/14069567212",
           "name": "Electronics Recycling of MN",
@@ -1922,6 +1947,13 @@
           "street": "Hennepin Avenue"
         },
         {
+          "id": "node/14167535684",
+          "lat": 44.974872,
+          "lon": -93.272007,
+          "openingHours": "24/7",
+          "street": "Marquette Avenue"
+        },
+        {
           "id": "node/12036685561",
           "lat": 44.976023,
           "lon": -93.273423,
@@ -1938,12 +1970,6 @@
           "lat": 44.978147,
           "lon": -93.274989,
           "street": "North 7th Street"
-        },
-        {
-          "id": "node/12385255145",
-          "lat": 44.973222,
-          "lon": -93.273322,
-          "street": "Marquette Avenue"
         },
         {
           "id": "node/13829508406",
@@ -1970,11 +1996,10 @@
           "street": "Loring Greenway"
         },
         {
-          "id": "node/14106190730",
-          "lat": 44.969646,
-          "lon": -93.277955,
-          "openingHours": "24/7",
-          "street": "Nicollet Avenue"
+          "id": "node/14158714844",
+          "lat": 44.988354,
+          "lon": -93.265499,
+          "street": "West Island Avenue"
         }
       ],
       "stats": {
@@ -1983,7 +2008,7 @@
         "stepFree": 2,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:05:39.212Z"
+      "updatedAt": "2026-10-04T10:41:35.511Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1994,13 +2019,13 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:39.705Z"
+      "updatedAt": "2026-10-04T10:41:36.010Z"
     },
     "libraries": {
-      "count": 480,
+      "count": 497,
       "pois": [
         {
-          "id": "relation/21107574",
+          "id": "way/546472304",
           "name": "Minneapolis Central Library",
           "lat": 44.980582,
           "lon": -93.270085,
@@ -2080,8 +2105,8 @@
         {
           "id": "way/113737044",
           "name": "MCAD Library",
-          "lat": 44.957678,
-          "lon": -93.274746,
+          "lat": 44.957681,
+          "lon": -93.27475,
           "address": "Stevens Avenue 2501"
         },
         {
@@ -2232,7 +2257,7 @@
         "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:40.453Z"
+      "updatedAt": "2026-10-04T10:41:36.589Z"
     },
     "outdoor-gyms": {
       "count": 6,
@@ -2243,7 +2268,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:41.399Z"
+      "updatedAt": "2026-10-04T10:41:37.462Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2254,23 +2279,16 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:41.971Z"
+      "updatedAt": "2026-10-04T10:41:37.945Z"
     },
     "shelters": {
-      "count": 59,
+      "count": 58,
       "pois": [
         {
           "id": "way/224273180",
           "name": "Visitors Shelter",
           "lat": 44.928156,
           "lon": -93.297138
-        },
-        {
-          "id": "relation/20750347",
-          "name": "Giggles' Campfire Grille",
-          "lat": 44.985621,
-          "lon": -93.168716,
-          "address": "Cooper Street 1520"
         },
         {
           "id": "node/7517485437",
@@ -2315,7 +2333,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:43.986Z"
+      "updatedAt": "2026-10-04T10:41:39.864Z"
     },
     "rest-areas": {
       "count": 0,
@@ -2326,7 +2344,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:44.559Z"
+      "updatedAt": "2026-10-04T10:41:40.345Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2337,7 +2355,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:45.039Z"
+      "updatedAt": "2026-10-04T10:41:40.740Z"
     },
     "post-offices": {
       "count": 23,
@@ -2352,7 +2370,9 @@
           "id": "node/13451748961",
           "name": "USPS",
           "lat": 44.975955,
-          "lon": -93.274161
+          "lon": -93.274161,
+          "address": "S 8th St 110",
+          "openingHours": "Mo-Fr 07:30-17:00; Sa-Su off"
         },
         {
           "id": "way/89061957",
@@ -2428,10 +2448,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 1,
+        "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:45.694Z"
+      "updatedAt": "2026-10-04T10:41:41.187Z"
     },
     "showers": {
       "count": 1,
@@ -2442,10 +2462,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:46.179Z"
+      "updatedAt": "2026-10-04T10:41:41.568Z"
     },
     "fireplaces": {
-      "count": 62,
+      "count": 64,
       "pois": [
         {
           "id": "way/494550349",
@@ -2466,7 +2486,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:47.587Z"
+      "updatedAt": "2026-10-04T10:41:42.832Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2474,7 +2494,7 @@
       "updatedAt": "2026-08-17T04:06:13.854Z"
     },
     "benches": {
-      "count": 1970,
+      "count": 2010,
       "pois": [
         {
           "id": "node/13966530987",
@@ -2567,7 +2587,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:50.896Z"
+      "updatedAt": "2026-10-04T10:41:46.045Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2575,7 +2595,7 @@
       "updatedAt": "2026-08-18T03:58:38.473Z"
     },
     "bicycle-repair": {
-      "count": 75,
+      "count": 79,
       "pois": [
         {
           "id": "node/11979528379",
@@ -2602,6 +2622,12 @@
           "lon": -93.250789,
           "fee": "no",
           "street": "Washington Avenue South"
+        },
+        {
+          "id": "node/14205700329",
+          "lat": 44.985803,
+          "lon": -93.276439,
+          "street": "North 3rd Street"
         },
         {
           "id": "node/11595024042",
@@ -2737,6 +2763,12 @@
           "street": "Bryant Avenue Bikeway"
         },
         {
+          "id": "node/14208299894",
+          "lat": 44.940088,
+          "lon": -93.270505,
+          "street": "4th Avenue South"
+        },
+        {
           "id": "node/9376252537",
           "lat": 44.95213,
           "lon": -93.225531,
@@ -2762,20 +2794,6 @@
           "lon": -93.233599,
           "fee": "no",
           "street": "Northeast Garfield Street"
-        },
-        {
-          "id": "node/7390772387",
-          "lat": 44.953706,
-          "lon": -93.220051,
-          "fee": "no",
-          "street": "East 27th Street"
-        },
-        {
-          "id": "node/11230247024",
-          "lat": 44.968677,
-          "lon": -93.209922,
-          "fee": "no",
-          "street": "University Avenue Southeast"
         }
       ],
       "stats": {
@@ -2784,7 +2802,175 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:49.538Z"
+      "updatedAt": "2026-10-04T10:41:44.713Z"
+    },
+    "trash-bins": {
+      "count": 1065,
+      "pois": [
+        {
+          "id": "node/13733436680",
+          "lat": 44.977593,
+          "lon": -93.264962,
+          "street": "South 4th Street"
+        },
+        {
+          "id": "node/13966530994",
+          "lat": 44.977941,
+          "lon": -93.264742,
+          "street": "Minneapolis Skyway"
+        },
+        {
+          "id": "node/13733469605",
+          "lat": 44.976454,
+          "lon": -93.265386,
+          "street": "4th Avenue South"
+        },
+        {
+          "id": "node/11196287490",
+          "lat": 44.975635,
+          "lon": -93.262447,
+          "street": "Portland Avenue"
+        },
+        {
+          "id": "node/14073883889",
+          "lat": 44.981172,
+          "lon": -93.263273,
+          "street": "3rd Avenue South"
+        },
+        {
+          "id": "node/11196287495",
+          "lat": 44.975088,
+          "lon": -93.26106,
+          "street": "Park Avenue"
+        },
+        {
+          "id": "node/14112939264",
+          "lat": 44.978651,
+          "lon": -93.270608,
+          "street": "South 5th Street"
+        },
+        {
+          "id": "node/11971383974",
+          "lat": 44.979118,
+          "lon": -93.270459,
+          "street": "Nicollet Mall"
+        },
+        {
+          "id": "node/13712927967",
+          "lat": 44.978021,
+          "lon": -93.258899,
+          "street": "Washington Avenue South"
+        },
+        {
+          "id": "node/13996575267",
+          "lat": 44.981568,
+          "lon": -93.261099,
+          "street": "Bank of America City Steps"
+        },
+        {
+          "id": "node/12777807318",
+          "lat": 44.981205,
+          "lon": -93.260171,
+          "street": "General Mills Plaza"
+        },
+        {
+          "id": "node/13996575261",
+          "lat": 44.980984,
+          "lon": -93.25986,
+          "street": "James I. Rice West River Parkway"
+        },
+        {
+          "id": "node/13942852339",
+          "lat": 44.981384,
+          "lon": -93.269867,
+          "street": "Hennepin Avenue Bikeway"
+        },
+        {
+          "id": "node/12777807313",
+          "lat": 44.981829,
+          "lon": -93.260845,
+          "street": "James I Rice Parkway Trail"
+        },
+        {
+          "id": "node/11145703215",
+          "lat": 44.982657,
+          "lon": -93.268097,
+          "street": "Hennepin Avenue"
+        },
+        {
+          "id": "node/13704699213",
+          "lat": 44.982231,
+          "lon": -93.269451,
+          "street": "North Washington Avenue"
+        },
+        {
+          "id": "node/14167515951",
+          "lat": 44.974846,
+          "lon": -93.272026,
+          "street": "Marquette Avenue"
+        },
+        {
+          "id": "node/13900540245",
+          "lat": 44.976155,
+          "lon": -93.256409,
+          "street": "South 9th Avenue"
+        },
+        {
+          "id": "node/13629208523",
+          "lat": 44.981424,
+          "lon": -93.272472,
+          "street": "North 1st Avenue"
+        },
+        {
+          "id": "node/13850634153",
+          "lat": 44.979025,
+          "lon": -93.274172,
+          "street": "North 6th Street"
+        },
+        {
+          "id": "node/12870055622",
+          "lat": 44.981685,
+          "lon": -93.273339,
+          "street": "North 4th Street"
+        },
+        {
+          "id": "node/13658654924",
+          "lat": 44.978166,
+          "lon": -93.275008,
+          "street": "North 7th Street"
+        },
+        {
+          "id": "node/13996575266",
+          "lat": 44.977449,
+          "lon": -93.254506,
+          "street": "South 2nd Street"
+        },
+        {
+          "id": "node/12793964543",
+          "lat": 44.976194,
+          "lon": -93.254495,
+          "street": "10th Avenue South"
+        },
+        {
+          "id": "node/13996575268",
+          "lat": 44.97831,
+          "lon": -93.253811,
+          "street": "West River Parkway"
+        },
+        {
+          "id": "node/13829499394",
+          "lat": 44.974418,
+          "lon": -93.275824,
+          "street": "South 10th Street"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:41:47.969Z"
     }
   }
 }

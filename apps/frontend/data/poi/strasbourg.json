@@ -1,9 +1,9 @@
 {
   "city": "strasbourg",
-  "generatedAt": "2026-09-27T09:52:27.148Z",
+  "generatedAt": "2026-10-04T10:25:46.808Z",
   "categories": {
     "toilets": {
-      "count": 144,
+      "count": 143,
       "pois": [
         {
           "id": "node/5930111830",
@@ -114,6 +114,7 @@
           "id": "node/13970086055",
           "lat": 48.589855,
           "lon": 7.776342,
+          "openingHours": "24/7",
           "context": "Bad Bowl Strasbourg"
         },
         {
@@ -210,7 +211,7 @@
       "stats": {
         "free": 65,
         "paid": 5,
-        "stepFree": 65,
+        "stepFree": 64,
         "partlyStepFree": 4
       },
       "near": [
@@ -224,10 +225,10 @@
           "lon": 7.750968
         }
       ],
-      "updatedAt": "2026-09-23T08:30:28.556Z"
+      "updatedAt": "2026-10-04T10:25:21.197Z"
     },
     "drinking-water": {
-      "count": 98,
+      "count": 100,
       "pois": [
         {
           "id": "node/7871715066",
@@ -299,6 +300,12 @@
           "street": "Place Sainte-Madeleine"
         },
         {
+          "id": "node/14155803050",
+          "lat": 48.581172,
+          "lon": 7.751561,
+          "street": "Place du Château"
+        },
+        {
           "id": "node/9197007410",
           "lat": 48.579955,
           "lon": 7.74471,
@@ -338,17 +345,17 @@
           "street": "Rue de Chalampé"
         },
         {
-          "id": "node/11107538811",
-          "lat": 48.579367,
-          "lon": 7.739385,
-          "street": "Place du Quartier Blanc"
-        },
-        {
           "id": "node/6953810589",
           "lat": 48.58048,
           "lon": 7.740723,
           "wheelchair": "yes",
           "street": "Quai du Woerthel"
+        },
+        {
+          "id": "node/11107538811",
+          "lat": 48.579443,
+          "lon": 7.739376,
+          "street": "Place du Quartier Blanc"
         },
         {
           "id": "node/10951200830",
@@ -417,12 +424,6 @@
           "lat": 48.588242,
           "lon": 7.748583,
           "street": "Place Charles de Foucauld"
-        },
-        {
-          "id": "node/14128018303",
-          "lat": 48.584353,
-          "lon": 7.736243,
-          "street": "Rue du Maire Kuss"
         }
       ],
       "stats": {
@@ -434,7 +435,7 @@
       "near": [
         {
           "landmark": "Q745460",
-          "within": 7,
+          "within": 8,
           "distance": 85,
           "bearing": 244,
           "poi": "node/10961107945",
@@ -442,7 +443,7 @@
           "lon": 7.750017
         }
       ],
-      "updatedAt": "2026-09-23T08:30:30.083Z"
+      "updatedAt": "2026-10-04T10:25:23.306Z"
     },
     "playgrounds": {
       "count": 384,
@@ -640,10 +641,10 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:05.163Z"
+      "updatedAt": "2026-10-04T10:25:24.309Z"
     },
     "parking": {
-      "count": 3060,
+      "count": 3233,
       "pois": [
         {
           "id": "way/1001891414",
@@ -871,15 +872,15 @@
         }
       ],
       "stats": {
-        "free": 896,
-        "paid": 749,
+        "free": 1063,
+        "paid": 751,
         "stepFree": 32,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:52:06.401Z"
+      "updatedAt": "2026-10-04T10:25:25.574Z"
     },
     "charging-stations": {
-      "count": 203,
+      "count": 202,
       "pois": [
         {
           "id": "node/3282993768",
@@ -973,7 +974,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:06.924Z"
+      "updatedAt": "2026-10-04T10:25:26.106Z"
     },
     "gas-stations": {
       "count": 43,
@@ -1201,7 +1202,7 @@
         "stepFree": 8,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:52:07.489Z"
+      "updatedAt": "2026-10-04T10:25:26.604Z"
     },
     "ice-cream": {
       "count": 29,
@@ -1269,7 +1270,7 @@
           "lat": 48.58225,
           "lon": 7.749259,
           "address": "Rue des Orfèvres 19",
-          "openingHours": "Mo-Sa 10:00-19:00"
+          "openingHours": "Mo-Fr 10:00-13:00,14:00-19:00; Sa 10:00-19:00"
         },
         {
           "id": "node/9341091587",
@@ -1369,7 +1370,7 @@
         "stepFree": 6,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T09:52:08.140Z"
+      "updatedAt": "2026-10-04T10:25:27.176Z"
     },
     "dog-parks": {
       "count": 17,
@@ -1400,10 +1401,10 @@
         "stepFree": 6,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:52:08.667Z"
+      "updatedAt": "2026-10-04T10:25:27.683Z"
     },
     "picnic-spots": {
-      "count": 218,
+      "count": 219,
       "pois": [],
       "stats": {
         "free": 0,
@@ -1411,7 +1412,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:09.932Z"
+      "updatedAt": "2026-10-04T10:25:28.910Z"
     },
     "viewpoints": {
       "count": 24,
@@ -1482,7 +1483,7 @@
         "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:10.789Z"
+      "updatedAt": "2026-10-04T10:25:29.643Z"
     },
     "beaches": {
       "count": 9,
@@ -1512,7 +1513,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:11.917Z"
+      "updatedAt": "2026-10-04T10:25:30.228Z"
     },
     "atms": {
       "count": 213,
@@ -1551,7 +1552,8 @@
           "id": "node/2015872085",
           "name": "Caisse d'Épargne",
           "lat": 48.577452,
-          "lon": 7.753553
+          "lon": 7.753553,
+          "openingHours": "Tu 08:30-12:00; Fr-Sa 08:30-12:00"
         },
         {
           "id": "node/3037744921",
@@ -1611,7 +1613,9 @@
           "id": "node/6742704381",
           "name": "LCL",
           "lat": 48.5739,
-          "lon": 7.765658
+          "lon": 7.765658,
+          "openingHours": "Tu-We 08:30-12:00,13:45-18:00; Th 08:30-12:00,14:45-18:00; Fr 08:30-12:00,13:45-18:00; Sa 08:30-12:30",
+          "wheelchair": "yes"
         },
         {
           "id": "node/263361921",
@@ -1650,6 +1654,13 @@
           "lat": 48.585534,
           "lon": 7.756724,
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/7146827568",
+          "name": "CMH Crédit Mutuel",
+          "lat": 48.585079,
+          "lon": 7.743316,
+          "openingHours": "\"sur rendez-vous\""
         },
         {
           "id": "node/1997374579",
@@ -1735,26 +1746,18 @@
           "lon": 7.70883,
           "openingHours": "Mo-Fr 09:00-12:00,14:00-17:00; Sa 09:00-12:00; PH off; 2024 Apr 16 09:00-12:00,15:00-17:00; 2024 May 20 off",
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/205379592",
-          "name": "Strasbourg Robertsau",
-          "lat": 48.600156,
-          "lon": 7.780462,
-          "openingHours": "Mo-Fr 08:30-12:00,13:30-18:00; Sa 08:30-12:30",
-          "wheelchair": "yes"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 70,
+        "stepFree": 71,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:52:12.666Z"
+      "updatedAt": "2026-10-04T10:25:30.982Z"
     },
     "post-boxes": {
-      "count": 196,
+      "count": 197,
       "pois": [
         {
           "id": "node/2294737157",
@@ -1946,10 +1949,10 @@
         "stepFree": 6,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:52:14.011Z"
+      "updatedAt": "2026-10-04T10:25:32.730Z"
     },
     "recycling": {
-      "count": 704,
+      "count": 717,
       "pois": [
         {
           "id": "node/13386744394",
@@ -1971,12 +1974,6 @@
           "name": "Composteurs publics",
           "lat": 48.585644,
           "lon": 7.758762
-        },
-        {
-          "id": "node/6440673635",
-          "name": "Composteur public",
-          "lat": 48.59097,
-          "lon": 7.745677
         },
         {
           "id": "way/105068401",
@@ -2142,6 +2139,12 @@
           "lat": 48.575348,
           "lon": 7.759259,
           "street": "Rue du Mont Blanc"
+        },
+        {
+          "id": "node/7902431187",
+          "lat": 48.568123,
+          "lon": 7.753638,
+          "street": "Rue de Soultzmatt"
         }
       ],
       "stats": {
@@ -2150,7 +2153,7 @@
         "stepFree": 66,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:16.058Z"
+      "updatedAt": "2026-10-04T10:25:34.706Z"
     },
     "luggage-storage": {
       "count": 6,
@@ -2176,7 +2179,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:16.623Z"
+      "updatedAt": "2026-10-04T10:25:35.249Z"
     },
     "libraries": {
       "count": 105,
@@ -2405,10 +2408,10 @@
         "stepFree": 16,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:52:17.201Z"
+      "updatedAt": "2026-10-04T10:25:35.825Z"
     },
     "outdoor-gyms": {
-      "count": 102,
+      "count": 104,
       "pois": [
         {
           "id": "way/1060647493",
@@ -2447,7 +2450,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:18.267Z"
+      "updatedAt": "2026-10-04T10:25:36.869Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2481,7 +2484,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:18.840Z"
+      "updatedAt": "2026-10-04T10:25:37.358Z"
     },
     "shelters": {
       "count": 6,
@@ -2499,7 +2502,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:20.753Z"
+      "updatedAt": "2026-10-04T10:25:39.112Z"
     },
     "rest-areas": {
       "count": 3,
@@ -2530,7 +2533,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:21.330Z"
+      "updatedAt": "2026-10-04T10:25:39.708Z"
     },
     "dump-stations": {
       "count": 2,
@@ -2541,10 +2544,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:21.780Z"
+      "updatedAt": "2026-10-04T10:25:40.108Z"
     },
     "post-offices": {
-      "count": 46,
+      "count": 45,
       "pois": [
         {
           "id": "node/213738672",
@@ -2789,7 +2792,7 @@
         "stepFree": 31,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:22.281Z"
+      "updatedAt": "2026-10-04T10:25:40.604Z"
     },
     "showers": {
       "count": 26,
@@ -2816,7 +2819,7 @@
         "stepFree": 1,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:52:22.755Z"
+      "updatedAt": "2026-10-04T10:25:40.999Z"
     },
     "fireplaces": {
       "count": 26,
@@ -2827,7 +2830,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:23.990Z"
+      "updatedAt": "2026-10-04T10:25:42.229Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2835,7 +2838,7 @@
       "updatedAt": "2026-08-17T04:04:57.403Z"
     },
     "benches": {
-      "count": 2626,
+      "count": 2662,
       "pois": [
         {
           "id": "node/13175342065",
@@ -2934,7 +2937,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:27.046Z"
+      "updatedAt": "2026-10-04T10:25:45.069Z"
     },
     "compressed-air": {
       "count": 2,
@@ -3147,7 +3150,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:52:25.714Z"
+      "updatedAt": "2026-10-04T10:25:43.729Z"
+    },
+    "trash-bins": {
+      "count": 1647,
+      "pois": [
+        {
+          "id": "node/13338823684",
+          "name": "Point fumeur",
+          "lat": 48.578918,
+          "lon": 7.762935
+        },
+        {
+          "id": "node/12071043976",
+          "lat": 48.573535,
+          "lon": 7.753334,
+          "street": "Parc de l'Étoile"
+        },
+        {
+          "id": "node/13176568670",
+          "lat": 48.57423,
+          "lon": 7.753901,
+          "street": "Accès Parking Bus"
+        },
+        {
+          "id": "node/13176568660",
+          "lat": 48.574098,
+          "lon": 7.754075,
+          "street": "Strasbourg Place de l'Étoile"
+        },
+        {
+          "id": "node/9066522500",
+          "lat": 48.575047,
+          "lon": 7.753073,
+          "street": "Quai Fustel de Coulanges"
+        },
+        {
+          "id": "node/3262156229",
+          "lat": 48.573895,
+          "lon": 7.749042,
+          "street": "Chemin du Lohmühle"
+        },
+        {
+          "id": "node/13075827663",
+          "lat": 48.571975,
+          "lon": 7.7551,
+          "street": "Avenue Jean Jaurès"
+        },
+        {
+          "id": "node/10799198967",
+          "lat": 48.57264,
+          "lon": 7.75582,
+          "street": "Route de Vienne"
+        },
+        {
+          "id": "node/13169129079",
+          "lat": 48.570811,
+          "lon": 7.753367,
+          "street": "Rue du Grand Couronné"
+        },
+        {
+          "id": "node/6329851258",
+          "lat": 48.571609,
+          "lon": 7.755366,
+          "street": "Étoile Polygone"
+        },
+        {
+          "id": "node/13075827678",
+          "lat": 48.575263,
+          "lon": 7.756035,
+          "street": "Quai des Alpes"
+        },
+        {
+          "id": "node/13171872200",
+          "lat": 48.57008,
+          "lon": 7.752679,
+          "street": "Allée du Schluthfeld"
+        },
+        {
+          "id": "node/6755009655",
+          "lat": 48.577097,
+          "lon": 7.751609,
+          "street": "Rue Paul Reiss"
+        },
+        {
+          "id": "node/9909634411",
+          "lat": 48.577172,
+          "lon": 7.749381,
+          "street": "Place de l'Hôpital"
+        },
+        {
+          "id": "node/3036785114",
+          "lat": 48.577627,
+          "lon": 7.752851,
+          "street": "Place d'Austerlitz"
+        },
+        {
+          "id": "node/6736498000",
+          "lat": 48.577571,
+          "lon": 7.753447,
+          "street": "Rue de la Brigade Alsace-Lorraine"
+        },
+        {
+          "id": "node/13114388205",
+          "lat": 48.577112,
+          "lon": 7.755407,
+          "street": "Rue de Berne"
+        },
+        {
+          "id": "node/10614618707",
+          "lat": 48.573878,
+          "lon": 7.758578,
+          "street": "Quai Jeanne Helbling"
+        },
+        {
+          "id": "node/11358128600",
+          "lat": 48.574725,
+          "lon": 7.758481,
+          "street": "Place de la Liberté de Penser et d'Expression"
+        },
+        {
+          "id": "node/13075827688",
+          "lat": 48.575232,
+          "lon": 7.758287,
+          "street": "Quai du Général Koenig"
+        },
+        {
+          "id": "node/6329824355",
+          "lat": 48.568718,
+          "lon": 7.751623,
+          "street": "La Colmarienne"
+        },
+        {
+          "id": "node/6329824358",
+          "lat": 48.568532,
+          "lon": 7.751592,
+          "street": "Route de l'Hôpital"
+        },
+        {
+          "id": "node/6173219687",
+          "lat": 48.578118,
+          "lon": 7.750136,
+          "street": "Rue de la Première Armée"
+        },
+        {
+          "id": "node/13381227374",
+          "lat": 48.573069,
+          "lon": 7.760116,
+          "street": "Avenue du Rhin"
+        },
+        {
+          "id": "node/7178291379",
+          "lat": 48.578676,
+          "lon": 7.753946,
+          "street": "Rue des Couples"
+        },
+        {
+          "id": "node/13070304421",
+          "lat": 48.578917,
+          "lon": 7.754153,
+          "street": "Place des Orphelins"
+        },
+        {
+          "id": "node/12469165078",
+          "lat": 48.578895,
+          "lon": 7.755149,
+          "street": "Rue des Orphelins"
+        },
+        {
+          "id": "node/10880820635",
+          "lat": 48.579288,
+          "lon": 7.751188,
+          "street": "Place du Corbeau"
+        },
+        {
+          "id": "node/13092062209",
+          "lat": 48.573406,
+          "lon": 7.761224,
+          "street": "Place Jeanne Helbling"
+        },
+        {
+          "id": "node/10880820636",
+          "lat": 48.579417,
+          "lon": 7.751158,
+          "street": "Quai des Bateliers"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:25:46.706Z"
     }
   }
 }

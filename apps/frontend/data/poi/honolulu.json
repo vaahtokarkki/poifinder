@@ -1,9 +1,9 @@
 {
   "city": "honolulu",
-  "generatedAt": "2026-09-27T10:07:50.383Z",
+  "generatedAt": "2026-10-04T10:44:03.370Z",
   "categories": {
     "toilets": {
-      "count": 180,
+      "count": 183,
       "pois": [
         {
           "id": "node/9576718221",
@@ -11,6 +11,12 @@
           "lon": -157.858502,
           "wheelchair": "limited",
           "context": "Hosoi Chapel"
+        },
+        {
+          "id": "node/14135170645",
+          "lat": 21.314335,
+          "lon": -157.860603,
+          "context": "Maunakea Tower"
         },
         {
           "id": "node/5326874323",
@@ -103,10 +109,10 @@
           "lon": -157.862007
         }
       ],
-      "updatedAt": "2026-09-23T08:32:33.716Z"
+      "updatedAt": "2026-10-04T10:43:43.910Z"
     },
     "drinking-water": {
-      "count": 51,
+      "count": 52,
       "pois": [
         {
           "id": "node/4959322211",
@@ -163,6 +169,12 @@
           "street": "Diamond Head Summit Trail"
         },
         {
+          "id": "node/14143603657",
+          "lat": 21.365762,
+          "lon": -157.90183,
+          "street": "Moanalualani Place"
+        },
+        {
           "id": "node/13993971036",
           "lat": 21.36064,
           "lon": -157.909362,
@@ -186,16 +198,22 @@
           "lon": -157.858573
         }
       ],
-      "updatedAt": "2026-09-23T08:32:35.047Z"
+      "updatedAt": "2026-10-04T10:43:45.588Z"
     },
     "playgrounds": {
-      "count": 81,
+      "count": 89,
       "pois": [
         {
           "id": "way/471365787",
           "name": "Nuuanu Valley Park Playground",
           "lat": 21.335602,
           "lon": -157.838192
+        },
+        {
+          "id": "way/1535298078",
+          "name": "Splash Park",
+          "lat": 21.3606,
+          "lon": -157.909009
         }
       ],
       "stats": {
@@ -204,10 +222,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:32.559Z"
+      "updatedAt": "2026-10-04T10:43:46.496Z"
     },
     "parking": {
-      "count": 991,
+      "count": 1038,
       "pois": [
         {
           "id": "relation/11361694",
@@ -288,13 +306,6 @@
           "name": "Judiciary Complex Parking Structure",
           "lat": 21.301565,
           "lon": -157.860914
-        },
-        {
-          "id": "way/494951461",
-          "name": "Piano Lot",
-          "lat": 21.293636,
-          "lon": -157.86068,
-          "fee": "yes"
         },
         {
           "id": "way/302694919",
@@ -398,18 +409,24 @@
           "name": "Airport Cell Phone Waiting Area",
           "lat": 21.33755,
           "lon": -157.921114
+        },
+        {
+          "id": "way/1532183913",
+          "name": "Lot E",
+          "lat": 21.366313,
+          "lon": -157.903306
         }
       ],
       "stats": {
-        "free": 141,
-        "paid": 54,
+        "free": 142,
+        "paid": 52,
         "stepFree": 11,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:07:33.591Z"
+      "updatedAt": "2026-10-04T10:43:47.368Z"
     },
     "charging-stations": {
-      "count": 6,
+      "count": 8,
       "pois": [
         {
           "id": "node/3664132886",
@@ -423,7 +440,7 @@
           "name": "Tesla Supercharger",
           "lat": 21.278556,
           "lon": -157.826171,
-          "address": "Kalākaua Aveenue 2330",
+          "address": "Kalākaua Avenue 2330",
           "openingHours": "24/7",
           "wheelchair": "yes",
           "fee": "yes"
@@ -435,7 +452,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:34.049Z"
+      "updatedAt": "2026-10-04T10:43:47.816Z"
     },
     "gas-stations": {
       "count": 51,
@@ -481,8 +498,8 @@
         {
           "id": "way/126698638",
           "name": "Costco Gasoline",
-          "lat": 21.319297,
-          "lon": -157.872059,
+          "lat": 21.319295,
+          "lon": -157.87204,
           "address": "Alakawa Street 525",
           "openingHours": "Mo-Fr 04:30-22:30; Sa-Su 04:30-20:30"
         },
@@ -532,10 +549,10 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:34.568Z"
+      "updatedAt": "2026-10-04T10:43:48.304Z"
     },
     "ice-cream": {
-      "count": 41,
+      "count": 49,
       "pois": [
         {
           "id": "node/8668128621",
@@ -684,10 +701,11 @@
           "openingHours": "Mo-Su 07:00-22:00"
         },
         {
-          "id": "node/14132779204",
+          "id": "node/14135568310",
           "name": "Lahaina Shave Ice",
-          "lat": 21.278018,
-          "lon": -157.833524
+          "lat": 21.2798,
+          "lon": -157.831227,
+          "address": "Beach Walk 247"
         },
         {
           "id": "node/13411619415",
@@ -711,54 +729,56 @@
           "address": "Kalākaua Avenue 2250"
         },
         {
+          "id": "node/14134543774",
+          "name": "Mosa",
+          "lat": 21.279786,
+          "lon": -157.828238
+        },
+        {
+          "id": "node/14144730487",
+          "name": "Ao Gelato",
+          "lat": 21.279408,
+          "lon": -157.828376,
+          "address": "Kalākaua Avenue 2250",
+          "openingHours": "11:00-21:45"
+        },
+        {
           "id": "node/11898079838",
           "name": "Island Vintage Shave Ice",
           "lat": 21.27872,
           "lon": -157.828727
         },
         {
+          "id": "node/14134574200",
+          "name": "Ululani's Shave Ice",
+          "lat": 21.27996,
+          "lon": -157.827096
+        },
+        {
+          "id": "node/14181719713",
+          "name": "Kith Treats",
+          "lat": 21.277915,
+          "lon": -157.828033,
+          "address": "Kalākaua Avenue 2301",
+          "openingHours": "10:00-21:00"
+        },
+        {
           "id": "node/4515779689",
           "name": "Premium Matcha Cafe Maiko",
-          "lat": 21.279489,
-          "lon": -157.825776,
+          "lat": 21.279505,
+          "lon": -157.825756,
           "address": "Kūhiō Avenue 2310",
           "openingHours": "Mo-Su 11:30-21:00",
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/12015943435",
-          "name": "Magnolia Ice Cream and Treats",
-          "lat": 21.278707,
-          "lon": -157.825927
-        },
-        {
-          "id": "node/13360909212",
-          "name": "Asato's",
-          "lat": 21.275983,
-          "lon": -157.8252,
-          "address": "Kalākaua Avenue 2424",
-          "openingHours": "11:00-21:00"
-        },
-        {
-          "id": "node/14133640266",
-          "name": "Hammerhead Ice Cream Co.",
-          "lat": 21.275929,
-          "lon": -157.823
-        },
-        {
-          "id": "node/10189306219",
-          "name": "Double Fat Ice Cream",
-          "lat": 21.274644,
-          "lon": -157.823679
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
         "stepFree": 3,
-        "partlyStepFree": 1
+        "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:07:35.107Z"
+      "updatedAt": "2026-10-04T10:43:48.759Z"
     },
     "dog-parks": {
       "count": 6,
@@ -777,6 +797,12 @@
           "lon": -157.826012
         },
         {
+          "id": "way/1535298094",
+          "name": "Community Dog Park",
+          "lat": 21.359246,
+          "lon": -157.910683
+        },
+        {
           "id": "way/446832401",
           "name": "Diamond Head Bark Park",
           "lat": 21.267175,
@@ -789,10 +815,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:35.590Z"
+      "updatedAt": "2026-10-04T10:43:49.108Z"
     },
     "picnic-spots": {
-      "count": 162,
+      "count": 163,
       "pois": [
         {
           "id": "node/11081949247",
@@ -807,10 +833,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:36.640Z"
+      "updatedAt": "2026-10-04T10:43:50.010Z"
     },
     "viewpoints": {
-      "count": 23,
+      "count": 26,
       "pois": [
         {
           "id": "node/6403273289",
@@ -823,18 +849,6 @@
           "name": "Tantalus Lookout",
           "lat": 21.313424,
           "lon": -157.822865
-        },
-        {
-          "id": "node/11081921319",
-          "name": "Scenic View",
-          "lat": 21.313532,
-          "lon": -157.822764
-        },
-        {
-          "id": "node/2355538818",
-          "name": "Scenic Overlook",
-          "lat": 21.313917,
-          "lon": -157.819385
         },
         {
           "id": "node/12646677981",
@@ -874,7 +888,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:37.219Z"
+      "updatedAt": "2026-10-04T10:43:50.583Z"
     },
     "beaches": {
       "count": 25,
@@ -894,7 +908,7 @@
         {
           "id": "relation/3524264",
           "name": "Duke Paoa Kahanamoku Beach Park",
-          "lat": 21.28033,
+          "lat": 21.280338,
           "lon": -157.836635
         },
         {
@@ -936,10 +950,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:37.757Z"
+      "updatedAt": "2026-10-04T10:43:51.013Z"
     },
     "atms": {
-      "count": 90,
+      "count": 91,
       "pois": [
         {
           "id": "node/10688046115",
@@ -1081,10 +1095,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 4,
+        "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:38.361Z"
+      "updatedAt": "2026-10-04T10:43:51.537Z"
     },
     "post-boxes": {
       "count": 47,
@@ -1118,12 +1132,6 @@
           "lat": 21.306615,
           "lon": -157.860883,
           "street": "Richards Street"
-        },
-        {
-          "id": "node/2343946738",
-          "lat": 21.312917,
-          "lon": -157.862261,
-          "street": "North Pauahi Street"
         },
         {
           "id": "node/7698902039",
@@ -1198,6 +1206,12 @@
           "street": "Ena Road"
         },
         {
+          "id": "node/14221090563",
+          "lat": 21.284277,
+          "lon": -157.831117,
+          "street": "Namahana Street"
+        },
+        {
           "id": "node/4496304890",
           "lat": 21.283019,
           "lon": -157.830233,
@@ -1246,7 +1260,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:39.571Z"
+      "updatedAt": "2026-10-04T10:43:52.463Z"
     },
     "recycling": {
       "count": 7,
@@ -1276,18 +1290,28 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:41.167Z"
+      "updatedAt": "2026-10-04T10:43:53.798Z"
     },
     "luggage-storage": {
-      "count": 0,
-      "pois": [],
+      "count": 1,
+      "pois": [
+        {
+          "id": "node/14181719711",
+          "name": "Nalu Storage",
+          "lat": 21.277379,
+          "lon": -157.827704,
+          "address": "Kalākaua Avenue 2201",
+          "openingHours": "24/7",
+          "fee": "yes"
+        }
+      ],
       "stats": {
         "free": 0,
-        "paid": 0,
+        "paid": 1,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:41.660Z"
+      "updatedAt": "2026-10-04T10:43:54.188Z"
     },
     "libraries": {
       "count": 21,
@@ -1407,7 +1431,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:42.199Z"
+      "updatedAt": "2026-10-04T10:43:54.612Z"
     },
     "outdoor-gyms": {
       "count": 19,
@@ -1431,7 +1455,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:43.149Z"
+      "updatedAt": "2026-10-04T10:43:55.408Z"
     },
     "camp-sites": {
       "count": 1,
@@ -1449,10 +1473,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:43.599Z"
+      "updatedAt": "2026-10-04T10:43:55.787Z"
     },
     "shelters": {
-      "count": 6,
+      "count": 7,
       "pois": [
         {
           "id": "way/1510435556",
@@ -1467,7 +1491,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:45.179Z"
+      "updatedAt": "2026-10-04T10:43:57.105Z"
     },
     "rest-areas": {
       "count": 0,
@@ -1478,7 +1502,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:45.679Z"
+      "updatedAt": "2026-10-04T10:43:57.483Z"
     },
     "dump-stations": {
       "count": 0,
@@ -1489,7 +1513,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:46.071Z"
+      "updatedAt": "2026-10-04T10:43:57.837Z"
     },
     "post-offices": {
       "count": 20,
@@ -1574,7 +1598,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:46.539Z"
+      "updatedAt": "2026-10-04T10:43:58.229Z"
     },
     "showers": {
       "count": 19,
@@ -1585,7 +1609,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:46.979Z"
+      "updatedAt": "2026-10-04T10:43:58.581Z"
     },
     "fireplaces": {
       "count": 0,
@@ -1596,7 +1620,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:47.999Z"
+      "updatedAt": "2026-10-04T10:43:59.720Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1604,8 +1628,14 @@
       "updatedAt": "2026-08-17T04:06:26.526Z"
     },
     "benches": {
-      "count": 163,
+      "count": 166,
       "pois": [
+        {
+          "id": "node/14143548711",
+          "lat": 21.311679,
+          "lon": -157.852243,
+          "street": "Magellan Avenue"
+        },
         {
           "id": "node/4908301965",
           "lat": 21.309159,
@@ -1649,7 +1679,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:50.281Z"
+      "updatedAt": "2026-10-04T10:44:01.827Z"
     },
     "compressed-air": {
       "count": 0,
@@ -1673,7 +1703,109 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:07:49.218Z"
+      "updatedAt": "2026-10-04T10:44:00.829Z"
+    },
+    "trash-bins": {
+      "count": 93,
+      "pois": [
+        {
+          "id": "node/9279004950",
+          "lat": 21.316361,
+          "lon": -157.855128,
+          "street": "Diamond Lane"
+        },
+        {
+          "id": "node/9849147383",
+          "lat": 21.292782,
+          "lon": -157.851709,
+          "street": "Auahi Street"
+        },
+        {
+          "id": "node/2988676283",
+          "lat": 21.290565,
+          "lon": -157.852871,
+          "street": "Ala Moana Park Drive"
+        },
+        {
+          "id": "node/2995106636",
+          "lat": 21.290524,
+          "lon": -157.847794,
+          "street": "Ala Moana Boulevard"
+        },
+        {
+          "id": "node/10767763384",
+          "lat": 21.294478,
+          "lon": -157.830985,
+          "street": "Algaroba Street"
+        },
+        {
+          "id": "node/12862077960",
+          "lat": 21.285661,
+          "lon": -157.838576,
+          "street": "Hobron Lane"
+        },
+        {
+          "id": "node/4496304889",
+          "lat": 21.282325,
+          "lon": -157.829533,
+          "street": "Kūhiō Avenue"
+        },
+        {
+          "id": "node/10762947155",
+          "lat": 21.28493,
+          "lon": -157.813328,
+          "street": "Charles Street"
+        },
+        {
+          "id": "node/4494606292",
+          "lat": 21.276248,
+          "lon": -157.819417,
+          "street": "Ala Wai Foot Path"
+        },
+        {
+          "id": "node/4495149993",
+          "lat": 21.270084,
+          "lon": -157.822295,
+          "street": "Kalākaua Avenue"
+        },
+        {
+          "id": "node/9577000763",
+          "lat": 21.275996,
+          "lon": -157.8146,
+          "street": "Castle Street"
+        },
+        {
+          "id": "node/9577000761",
+          "lat": 21.27597,
+          "lon": -157.81461,
+          "street": "Kanaina Avenue"
+        },
+        {
+          "id": "node/11200715755",
+          "lat": 21.340211,
+          "lon": -157.90946,
+          "street": "Enger Street"
+        },
+        {
+          "id": "node/13956922466",
+          "lat": 21.279704,
+          "lon": -157.806477,
+          "street": "8th Avenue"
+        },
+        {
+          "id": "node/9611863295",
+          "lat": 21.33232,
+          "lon": -157.918563,
+          "street": "Rodgers Boulevard"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:44:03.269Z"
     }
   }
 }

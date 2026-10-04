@@ -1,6 +1,6 @@
 {
   "city": "warsaw",
-  "generatedAt": "2026-09-27T09:30:10.627Z",
+  "generatedAt": "2026-10-04T09:59:53.125Z",
   "categories": {
     "toilets": {
       "count": 458,
@@ -69,12 +69,6 @@
           "context": "Hala Koszyki"
         },
         {
-          "id": "node/10936164264",
-          "lat": 52.233152,
-          "lon": 21.024074,
-          "context": "Chopin"
-        },
-        {
           "id": "node/9977281553",
           "lat": 52.233214,
           "lon": 21.000305,
@@ -125,8 +119,16 @@
           "context": "Rotacyjny Dom Kultury"
         },
         {
+          "id": "way/152107775",
+          "name": "Młodsza Siostra",
+          "lat": 52.237722,
+          "lon": 21.029724,
+          "address": "Dobra 14/16",
+          "openingHours": "Mo-Fr 12:00-24:00; Sa-Su 12:00-02:00"
+        },
+        {
           "id": "way/1201210007",
-          "name": "Automatyczna toaleta miejskia",
+          "name": "Automatyczna toaleta miejska",
           "lat": 52.219243,
           "lon": 21.026693,
           "openingHours": "24/7",
@@ -245,9 +247,9 @@
         }
       ],
       "stats": {
-        "free": 247,
-        "paid": 65,
-        "stepFree": 246,
+        "free": 245,
+        "paid": 66,
+        "stepFree": 247,
         "partlyStepFree": 9
       },
       "near": [
@@ -271,7 +273,7 @@
         },
         {
           "landmark": "Q153306",
-          "within": 9,
+          "within": 8,
           "distance": 78,
           "bearing": 36,
           "poi": "node/9984134344",
@@ -306,10 +308,10 @@
           "lon": 21.036425
         }
       ],
-      "updatedAt": "2026-09-23T08:27:40.961Z"
+      "updatedAt": "2026-10-04T09:59:20.410Z"
     },
     "drinking-water": {
-      "count": 152,
+      "count": 153,
       "pois": [
         {
           "id": "node/13512298397",
@@ -347,13 +349,6 @@
           "fee": "no"
         },
         {
-          "id": "way/960187163",
-          "name": "Ujęcie wody oligoceńskiej",
-          "lat": 52.260774,
-          "lon": 21.029583,
-          "address": "Plac generała Józefa Hallera 8A"
-        },
-        {
           "id": "node/13091958268",
           "name": "Drinking Water",
           "lat": 52.26385,
@@ -364,6 +359,12 @@
           "name": "Ujęcia wody oligoceńskiej",
           "lat": 52.202894,
           "lon": 20.966845
+        },
+        {
+          "id": "node/3797117990",
+          "name": "Ujęcie wody oligoceńskiej",
+          "lat": 52.241617,
+          "lon": 20.946726
         },
         {
           "id": "node/10809018173",
@@ -438,11 +439,9 @@
           "street": "Tunel Wisłostrady"
         },
         {
-          "id": "node/12160542257",
-          "lat": 52.242812,
-          "lon": 21.02851,
-          "wheelchair": "yes",
-          "fee": "no",
+          "id": "node/14166195981",
+          "lat": 52.241084,
+          "lon": 21.031437,
           "street": "Bulwar generała George'a Smitha Pattona"
         },
         {
@@ -518,18 +517,18 @@
       "stats": {
         "free": 53,
         "paid": 0,
-        "stepFree": 25,
-        "partlyStepFree": 5
+        "stepFree": 27,
+        "partlyStepFree": 6
       },
       "near": [
         {
           "landmark": "Q167566",
-          "within": 2,
-          "distance": 67,
-          "bearing": 30,
-          "poi": "node/12977964047",
-          "lat": 52.232192,
-          "lon": 21.00688
+          "within": 1,
+          "distance": 146,
+          "bearing": 76,
+          "poi": "node/12977964048",
+          "lat": 52.231992,
+          "lon": 21.008468
         },
         {
           "landmark": "Q756098",
@@ -577,10 +576,10 @@
           "lon": 21.034037
         }
       ],
-      "updatedAt": "2026-09-23T08:27:43.314Z"
+      "updatedAt": "2026-10-04T09:59:23.803Z"
     },
     "playgrounds": {
-      "count": 1237,
+      "count": 1247,
       "pois": [
         {
           "id": "node/13567257454",
@@ -620,8 +619,8 @@
         {
           "id": "way/148615899",
           "name": "Warszawska Strefa Rodziny",
-          "lat": 52.252508,
-          "lon": 21.010942
+          "lat": 52.252518,
+          "lon": 21.010955
         },
         {
           "id": "way/1428260352",
@@ -690,6 +689,7 @@
           "name": "Fiku-Miku",
           "lat": 52.233284,
           "lon": 21.09452,
+          "openingHours": "Mo-Sa 09:00-21:00; Su 10:00-20:00",
           "fee": "yes"
         },
         {
@@ -780,12 +780,12 @@
         "free": 1,
         "paid": 3,
         "stepFree": 7,
-        "partlyStepFree": 9
+        "partlyStepFree": 10
       },
-      "updatedAt": "2026-09-27T09:29:39.949Z"
+      "updatedAt": "2026-10-04T09:59:25.226Z"
     },
     "parking": {
-      "count": 12138,
+      "count": 12231,
       "pois": [
         {
           "id": "way/30258343",
@@ -891,15 +891,15 @@
         {
           "id": "way/23660927",
           "name": "ZTP Bugaj",
-          "lat": 52.250867,
-          "lon": 21.015072,
+          "lat": 52.25089,
+          "lon": 21.015128,
           "fee": "yes"
         },
         {
           "id": "way/25865136",
           "name": "ZTP Boleść",
           "lat": 52.252059,
-          "lon": 21.013131,
+          "lon": 21.013133,
           "fee": "yes"
         },
         {
@@ -999,15 +999,15 @@
         }
       ],
       "stats": {
-        "free": 2050,
-        "paid": 2450,
+        "free": 2042,
+        "paid": 2534,
         "stepFree": 44,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:29:43.849Z"
+      "updatedAt": "2026-10-04T09:59:26.893Z"
     },
     "charging-stations": {
-      "count": 138,
+      "count": 137,
       "pois": [
         {
           "id": "node/5185432854",
@@ -1144,12 +1144,12 @@
         }
       ],
       "stats": {
-        "free": 24,
+        "free": 23,
         "paid": 32,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:44.523Z"
+      "updatedAt": "2026-10-04T09:59:27.497Z"
     },
     "gas-stations": {
       "count": 124,
@@ -1195,6 +1195,14 @@
           "lat": 52.224337,
           "lon": 20.963961,
           "address": "Ignacego Prądzyńskiego"
+        },
+        {
+          "id": "way/1015693809",
+          "name": "CPN",
+          "lat": 52.254638,
+          "lon": 21.042427,
+          "openingHours": "Mo-Sa 06:00-22:00; Su 07:00-17:00",
+          "wheelchair": "yes"
         },
         {
           "id": "way/759155490",
@@ -1365,24 +1373,18 @@
           "name": "AUTO GAZ",
           "lat": 52.242385,
           "lon": 21.099764
-        },
-        {
-          "id": "way/837440256",
-          "name": "stacja paliw - biopaliwo",
-          "lat": 52.268994,
-          "lon": 21.077305
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 42,
+        "stepFree": 43,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T09:29:45.363Z"
+      "updatedAt": "2026-10-04T09:59:28.238Z"
     },
     "ice-cream": {
-      "count": 159,
+      "count": 162,
       "pois": [
         {
           "id": "node/7134288685",
@@ -1435,15 +1437,6 @@
           "address": "Nowy Świat 35",
           "openingHours": "Mo-Th 10:00-21:00; Fr-Su 10:00-22:00",
           "wheelchair": "no"
-        },
-        {
-          "id": "node/617034281",
-          "name": "Häagen-Dazs",
-          "lat": 52.233927,
-          "lon": 21.01931,
-          "address": "Nowy Świat 36",
-          "openingHours": "Mo-Su 11:00-22:00",
-          "wheelchair": "limited"
         },
         {
           "id": "node/7132939985",
@@ -1631,15 +1624,24 @@
           "lat": 52.220328,
           "lon": 20.983051,
           "openingHours": "Mo-Fr 12:00-20:00; Sa-Su 10:00-20:00"
+        },
+        {
+          "id": "node/448025906",
+          "name": "W. Hoduń",
+          "lat": 52.250127,
+          "lon": 21.010903,
+          "address": "Nowomiejska 9",
+          "openingHours": "Mo-Su 10:00-20:00",
+          "wheelchair": "limited"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 47,
-        "partlyStepFree": 23
+        "stepFree": 48,
+        "partlyStepFree": 22
       },
-      "updatedAt": "2026-09-27T09:29:46.292Z"
+      "updatedAt": "2026-10-04T09:59:29.078Z"
     },
     "dog-parks": {
       "count": 33,
@@ -1670,10 +1672,10 @@
         "stepFree": 4,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:29:46.939Z"
+      "updatedAt": "2026-10-04T09:59:29.747Z"
     },
     "picnic-spots": {
-      "count": 248,
+      "count": 251,
       "pois": [
         {
           "id": "node/13184099697",
@@ -1694,10 +1696,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:48.493Z"
+      "updatedAt": "2026-10-04T09:59:31.064Z"
     },
     "viewpoints": {
-      "count": 76,
+      "count": 77,
       "pois": [
         {
           "id": "node/2403816317",
@@ -1737,8 +1739,8 @@
         {
           "id": "node/4106662489",
           "name": "Gnojna Góra",
-          "lat": 52.24996,
-          "lon": 21.014098,
+          "lat": 52.249976,
+          "lon": 21.014121,
           "wheelchair": "yes"
         },
         {
@@ -1806,7 +1808,7 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:49.499Z"
+      "updatedAt": "2026-10-04T09:59:31.983Z"
     },
     "beaches": {
       "count": 24,
@@ -1863,10 +1865,10 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:29:50.439Z"
+      "updatedAt": "2026-10-04T09:59:32.723Z"
     },
     "atms": {
-      "count": 1003,
+      "count": 1005,
       "pois": [
         {
           "id": "node/8917221212",
@@ -2109,13 +2111,13 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 496,
+        "stepFree": 504,
         "partlyStepFree": 57
       },
-      "updatedAt": "2026-09-27T09:29:51.593Z"
+      "updatedAt": "2026-10-04T09:59:33.495Z"
     },
     "post-boxes": {
-      "count": 196,
+      "count": 197,
       "pois": [
         {
           "id": "node/4551966413",
@@ -2307,10 +2309,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:53.183Z"
+      "updatedAt": "2026-10-04T09:59:34.987Z"
     },
     "recycling": {
-      "count": 422,
+      "count": 426,
       "pois": [
         {
           "id": "node/9817526469",
@@ -2415,6 +2417,12 @@
           "street": "Chmielna"
         },
         {
+          "id": "node/14188697318",
+          "lat": 52.222859,
+          "lon": 21.010895,
+          "street": "Piękna"
+        },
+        {
           "id": "node/10109725635",
           "lat": 52.222607,
           "lon": 21.007426,
@@ -2427,6 +2435,12 @@
           "lon": 20.99569,
           "openingHours": "24/7",
           "street": "Twarda"
+        },
+        {
+          "id": "node/14160364349",
+          "lat": 52.2174,
+          "lon": 21.018519,
+          "street": "Aleja Armii Ludowej"
         },
         {
           "id": "node/12651845250",
@@ -2498,19 +2512,6 @@
           "lon": 21.05282,
           "openingHours": "24/7",
           "street": "Galijska"
-        },
-        {
-          "id": "node/13639362118",
-          "lat": 52.242734,
-          "lon": 20.975214,
-          "openingHours": "24/7",
-          "street": "Edwarda Gibalskiego"
-        },
-        {
-          "id": "node/12085337484",
-          "lat": 52.202312,
-          "lon": 21.01813,
-          "street": "Wiśniowa"
         }
       ],
       "stats": {
@@ -2519,7 +2520,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:55.996Z"
+      "updatedAt": "2026-10-04T09:59:37.241Z"
     },
     "luggage-storage": {
       "count": 16,
@@ -2539,7 +2540,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:56.640Z"
+      "updatedAt": "2026-10-04T09:59:37.795Z"
     },
     "libraries": {
       "count": 203,
@@ -2790,10 +2791,10 @@
         "stepFree": 35,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T09:29:57.552Z"
+      "updatedAt": "2026-10-04T09:59:38.638Z"
     },
     "outdoor-gyms": {
-      "count": 340,
+      "count": 341,
       "pois": [
         {
           "id": "way/866400658",
@@ -2852,9 +2853,9 @@
         "free": 4,
         "paid": 0,
         "stepFree": 9,
-        "partlyStepFree": 4
+        "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T09:29:59.170Z"
+      "updatedAt": "2026-10-04T09:59:40.012Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2865,16 +2866,22 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:59.899Z"
+      "updatedAt": "2026-10-04T09:59:41.242Z"
     },
     "shelters": {
-      "count": 14,
+      "count": 17,
       "pois": [
         {
           "id": "node/11983476645",
           "lat": 52.237275,
           "lon": 20.968798,
           "street": "Eustachego Tyszkiewicza"
+        },
+        {
+          "id": "node/14140260393",
+          "lat": 52.241652,
+          "lon": 20.949423,
+          "street": "Aleja Narcyzy Żmichowskiej"
         },
         {
           "id": "node/6547971012",
@@ -2895,7 +2902,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:30:02.558Z"
+      "updatedAt": "2026-10-04T09:59:44.383Z"
     },
     "rest-areas": {
       "count": 0,
@@ -2906,7 +2913,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:30:03.192Z"
+      "updatedAt": "2026-10-04T09:59:44.947Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2917,10 +2924,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:30:03.711Z"
+      "updatedAt": "2026-10-04T09:59:45.323Z"
     },
     "post-offices": {
-      "count": 182,
+      "count": 187,
       "pois": [
         {
           "id": "node/8857651318",
@@ -2997,6 +3004,14 @@
           "openingHours": "Mo-We,Fr 08:00-11:00,11:30-15:00; Th 08:00-11:00,11:30-20:00"
         },
         {
+          "id": "way/636405046",
+          "name": "Lyca Mobile",
+          "lat": 52.241654,
+          "lon": 20.988253,
+          "openingHours": "Mo-Fr 10:00-19:00; Sa 10:00-15:00",
+          "wheelchair": "no"
+        },
+        {
           "id": "node/10735524575",
           "name": "DHL ServicePoint",
           "lat": 52.2078,
@@ -3029,15 +3044,6 @@
           "wheelchair": "yes"
         },
         {
-          "id": "node/4858108668",
-          "name": "Urząd Pocztowy Warszawa 12",
-          "lat": 52.204201,
-          "lon": 21.014263,
-          "address": "Kazimierzowska 53/55",
-          "openingHours": "Mo-Fr 08:00-20:00; Sa 08:00-14:00",
-          "wheelchair": "yes"
-        },
-        {
           "id": "node/12115457780",
           "name": "Ivancom",
           "lat": 52.23318,
@@ -3061,13 +3067,6 @@
           "address": "Ząbkowska 50",
           "openingHours": "Mo-Fr 08:00-20:00",
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/448435621",
-          "name": "Warszawa 52",
-          "lat": 52.260939,
-          "lon": 21.031131,
-          "openingHours": "Mo-Fr 08:00-20:00"
         },
         {
           "id": "node/2294543077",
@@ -3160,15 +3159,23 @@
           "lat": 52.258873,
           "lon": 20.96517,
           "openingHours": "Mo-Fr 10:00-19:00; Sa 10:00-14:00"
+        },
+        {
+          "id": "node/6408777245",
+          "name": "FUP Warszawa 113",
+          "lat": 52.190562,
+          "lon": 20.992108,
+          "address": "Wawrzyńca Żuławskiego 2",
+          "openingHours": "Mo 08:00-20:00, Tu-Fr 09:00-11:30, Tu-Fr 12:00-16:00"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 80,
+        "stepFree": 84,
         "partlyStepFree": 8
       },
-      "updatedAt": "2026-09-27T09:30:04.386Z"
+      "updatedAt": "2026-10-04T09:59:45.989Z"
     },
     "showers": {
       "count": 13,
@@ -3179,7 +3186,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:30:04.891Z"
+      "updatedAt": "2026-10-04T09:59:46.417Z"
     },
     "fireplaces": {
       "count": 41,
@@ -3190,7 +3197,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:30:06.516Z"
+      "updatedAt": "2026-10-04T09:59:47.860Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3198,7 +3205,7 @@
       "updatedAt": "2026-08-17T04:02:54.998Z"
     },
     "benches": {
-      "count": 16407,
+      "count": 16524,
       "pois": [
         {
           "id": "node/9841227755",
@@ -3272,8 +3279,8 @@
         {
           "id": "node/1315597641",
           "name": "Ławeczka Williama Heerleina Lindleya",
-          "lat": 52.254038,
-          "lon": 21.010886
+          "lat": 52.254031,
+          "lon": 21.010889
         },
         {
           "id": "node/12052360045",
@@ -3390,7 +3397,7 @@
         "stepFree": 16,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:30:10.525Z"
+      "updatedAt": "2026-10-04T09:59:51.342Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3398,7 +3405,7 @@
       "updatedAt": "2026-08-18T03:58:05.999Z"
     },
     "bicycle-repair": {
-      "count": 183,
+      "count": 184,
       "pois": [
         {
           "id": "node/3818434357",
@@ -3447,6 +3454,12 @@
           "lat": 52.22911,
           "lon": 21.00544,
           "street": "Emilii Plater"
+        },
+        {
+          "id": "node/14182787013",
+          "lat": 52.222929,
+          "lon": 21.015911,
+          "street": "Marszałkowska"
         },
         {
           "id": "node/6001228449",
@@ -3586,23 +3599,117 @@
           "lat": 52.237528,
           "lon": 20.983176,
           "street": "Ogrodowa"
-        },
-        {
-          "id": "node/8459025400",
-          "lat": 52.241051,
-          "lon": 20.98427,
-          "openingHours": "Tu-Sa 10:00-18:00",
-          "fee": "donation",
-          "street": "Wolność"
         }
       ],
       "stats": {
-        "free": 49,
+        "free": 50,
         "paid": 1,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:30:08.765Z"
+      "updatedAt": "2026-10-04T09:59:49.738Z"
+    },
+    "trash-bins": {
+      "count": 8184,
+      "pois": [
+        {
+          "id": "node/13336685379",
+          "name": "Psi pakiet",
+          "lat": 52.218419,
+          "lon": 21.030582
+        },
+        {
+          "id": "way/1390451171",
+          "name": "Gabaryty",
+          "lat": 52.293859,
+          "lon": 21.034944
+        },
+        {
+          "id": "node/5642734884",
+          "lat": 52.229493,
+          "lon": 21.012369,
+          "street": "Marszałkowska"
+        },
+        {
+          "id": "node/12979339665",
+          "lat": 52.229764,
+          "lon": 21.012589,
+          "street": "Aleje Jerozolimskie"
+        },
+        {
+          "id": "node/5642734875",
+          "lat": 52.228927,
+          "lon": 21.01267,
+          "street": "Nowogrodzka"
+        },
+        {
+          "id": "node/1780190403",
+          "lat": 52.230167,
+          "lon": 21.010907,
+          "street": "Patelnia"
+        },
+        {
+          "id": "node/8742583386",
+          "lat": 52.230111,
+          "lon": 21.009949,
+          "street": "Pasaż Wisławy Szymborskiej"
+        },
+        {
+          "id": "node/10569436829",
+          "lat": 52.228033,
+          "lon": 21.013261,
+          "street": "Żurawia"
+        },
+        {
+          "id": "node/12979455744",
+          "lat": 52.227992,
+          "lon": 21.010524,
+          "street": "Poznańska"
+        },
+        {
+          "id": "node/12979515178",
+          "lat": 52.230001,
+          "lon": 21.008259,
+          "street": "Pasaż Anny Świrszczyńskiej"
+        },
+        {
+          "id": "node/5642734885",
+          "lat": 52.227174,
+          "lon": 21.013669,
+          "street": "Wspólna"
+        },
+        {
+          "id": "node/10169099694",
+          "lat": 52.229849,
+          "lon": 21.016678,
+          "street": "Krucza"
+        },
+        {
+          "id": "node/10569436837",
+          "lat": 52.227482,
+          "lon": 21.014922,
+          "street": "Parkingowa"
+        },
+        {
+          "id": "node/8742814930",
+          "lat": 52.232261,
+          "lon": 21.009793,
+          "street": "Złota"
+        },
+        {
+          "id": "node/12888414050",
+          "lat": 52.231812,
+          "lon": 21.008332,
+          "street": "Wielka"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T09:59:53.023Z"
     }
   }
 }

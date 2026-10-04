@@ -1,9 +1,9 @@
 {
   "city": "singapore",
-  "generatedAt": "2026-09-27T10:18:12.206Z",
+  "generatedAt": "2026-10-04T10:55:56.164Z",
   "categories": {
     "toilets": {
-      "count": 705,
+      "count": 720,
       "pois": [
         {
           "id": "node/563630419",
@@ -221,15 +221,15 @@
         }
       ],
       "stats": {
-        "free": 211,
+        "free": 212,
         "paid": 9,
-        "stepFree": 166,
+        "stepFree": 168,
         "partlyStepFree": 11
       },
-      "updatedAt": "2026-09-23T08:33:55.537Z"
+      "updatedAt": "2026-10-04T10:55:27.974Z"
     },
     "drinking-water": {
-      "count": 181,
+      "count": 185,
       "pois": [
         {
           "id": "node/9106311557",
@@ -354,6 +354,13 @@
           "street": "Wallace Trail"
         },
         {
+          "id": "node/14208391718",
+          "lat": 1.311248,
+          "lon": 103.794824,
+          "fee": "no",
+          "street": "Lorong Mambong"
+        },
+        {
           "id": "node/7082575999",
           "lat": 1.397141,
           "lon": 103.803054,
@@ -420,24 +427,18 @@
           "lat": 1.287429,
           "lon": 103.815408,
           "street": "Ramp"
-        },
-        {
-          "id": "node/12882643332",
-          "lat": 1.305609,
-          "lon": 103.867311,
-          "street": "Kallang Riverside Park"
         }
       ],
       "stats": {
-        "free": 56,
+        "free": 57,
         "paid": 1,
         "stepFree": 37,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-23T08:33:57.532Z"
+      "updatedAt": "2026-10-04T10:55:30.449Z"
     },
     "playgrounds": {
-      "count": 1873,
+      "count": 1894,
       "pois": [
         {
           "id": "way/117038444",
@@ -630,10 +631,10 @@
         "stepFree": 100,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T10:17:47.269Z"
+      "updatedAt": "2026-10-04T10:55:31.469Z"
     },
     "parking": {
-      "count": 2559,
+      "count": 2616,
       "pois": [
         {
           "id": "relation/5964829",
@@ -669,7 +670,8 @@
           "id": "way/562357570",
           "name": "410A MSCP",
           "lat": 1.363226,
-          "lon": 103.835473
+          "lon": 103.835473,
+          "address": "Sin Ming Avenue 410A"
         },
         {
           "id": "way/758718734",
@@ -706,6 +708,13 @@
           "fee": "yes"
         },
         {
+          "id": "way/102413585",
+          "name": "104C MSCP",
+          "lat": 1.371927,
+          "lon": 103.838333,
+          "address": "Ang Mo Kio Street 11 104C"
+        },
+        {
           "id": "node/2655461554",
           "name": "HDB Hub",
           "lat": 1.33355,
@@ -731,6 +740,7 @@
           "name": "8A MSCP",
           "lat": 1.316691,
           "lon": 103.806178,
+          "address": "Empress Road 8A",
           "openingHours": "24/7",
           "fee": "yes"
         },
@@ -824,21 +834,15 @@
           "name": "Carpark 16",
           "lat": 1.37956,
           "lon": 103.850199
-        },
-        {
-          "id": "way/198467609",
-          "name": "Carpark 8",
-          "lat": 1.381704,
-          "lon": 103.8482
         }
       ],
       "stats": {
         "free": 28,
-        "paid": 326,
+        "paid": 334,
         "stepFree": 57,
         "partlyStepFree": 10
       },
-      "updatedAt": "2026-09-27T10:17:48.706Z"
+      "updatedAt": "2026-10-04T10:55:32.905Z"
     },
     "charging-stations": {
       "count": 98,
@@ -946,7 +950,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:17:49.267Z"
+      "updatedAt": "2026-10-04T10:55:33.468Z"
     },
     "gas-stations": {
       "count": 174,
@@ -1170,10 +1174,10 @@
         "stepFree": 20,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:17:50.020Z"
+      "updatedAt": "2026-10-04T10:55:34.123Z"
     },
     "ice-cream": {
-      "count": 125,
+      "count": 128,
       "pois": [
         {
           "id": "node/7728516556",
@@ -1323,6 +1327,13 @@
           "openingHours": "Mo-Th 12:00-23:00; Fr 12:00-00:00; Sa 11:00-00:00; Su 11:00-23:00"
         },
         {
+          "id": "node/4368147027",
+          "name": "Sweet Checks",
+          "lat": 1.311553,
+          "lon": 103.794913,
+          "address": "Lorong Mambong 24"
+        },
+        {
           "id": "node/3828293357",
           "name": "The Daily Scoop",
           "lat": 1.310429,
@@ -1373,12 +1384,6 @@
           "lat": 1.304128,
           "lon": 103.809547,
           "address": "Dempsey Road 8"
-        },
-        {
-          "id": "node/2491856445",
-          "name": "Walls Ice Cream Outlet",
-          "lat": 1.303829,
-          "lon": 103.833581
         }
       ],
       "stats": {
@@ -1387,7 +1392,7 @@
         "stepFree": 12,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T10:17:50.874Z"
+      "updatedAt": "2026-10-04T10:55:34.783Z"
     },
     "dog-parks": {
       "count": 27,
@@ -1451,7 +1456,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:17:51.437Z"
+      "updatedAt": "2026-10-04T10:55:35.265Z"
     },
     "picnic-spots": {
       "count": 119,
@@ -1475,7 +1480,7 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:17:52.698Z"
+      "updatedAt": "2026-10-04T10:55:36.619Z"
     },
     "viewpoints": {
       "count": 112,
@@ -1682,7 +1687,7 @@
         "stepFree": 11,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:17:53.439Z"
+      "updatedAt": "2026-10-04T10:55:37.431Z"
     },
     "beaches": {
       "count": 18,
@@ -1712,10 +1717,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:17:54.159Z"
+      "updatedAt": "2026-10-04T10:55:37.995Z"
     },
     "atms": {
-      "count": 1037,
+      "count": 1033,
       "pois": [
         {
           "id": "node/1699621323",
@@ -1936,10 +1941,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 139,
+        "stepFree": 138,
         "partlyStepFree": 10
       },
-      "updatedAt": "2026-09-27T10:17:54.910Z"
+      "updatedAt": "2026-10-04T10:55:38.761Z"
     },
     "post-boxes": {
       "count": 129,
@@ -2134,7 +2139,7 @@
         "stepFree": 7,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:17:56.614Z"
+      "updatedAt": "2026-10-04T10:55:40.169Z"
     },
     "recycling": {
       "count": 94,
@@ -2158,19 +2163,6 @@
           "context": "Aperia Mall"
         },
         {
-          "id": "node/9739046630",
-          "lat": 1.308292,
-          "lon": 103.862195,
-          "context": "Kitchener Complex"
-        },
-        {
-          "id": "node/12238610429",
-          "lat": 1.379002,
-          "lon": 103.764827,
-          "openingHours": "24/7",
-          "context": "Blk 180"
-        },
-        {
           "id": "node/11090494205",
           "lat": 1.298086,
           "lon": 103.854268,
@@ -2178,23 +2170,11 @@
           "context": "National Library"
         },
         {
-          "id": "node/13701338017",
-          "lat": 1.31545,
-          "lon": 103.8727,
-          "context": "Geylang West Community Club"
-        },
-        {
           "id": "node/5479250994",
           "name": "Recycling Trashcan",
           "lat": 1.287316,
           "lon": 103.814623,
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/9345938587",
-          "lat": 1.296902,
-          "lon": 103.780991,
-          "context": "Lim Seng Tjoe Lecture Theatre (LT 27)"
         },
         {
           "id": "node/6009667389",
@@ -2277,6 +2257,13 @@
           "street": "Jalan Tenteram"
         },
         {
+          "id": "node/12238610429",
+          "lat": 1.379002,
+          "lon": 103.764827,
+          "openingHours": "24/7",
+          "street": "Lompang Road"
+        },
+        {
           "id": "node/12885535202",
           "lat": 1.298572,
           "lon": 103.852615,
@@ -2324,6 +2311,25 @@
           "lat": 1.280044,
           "lon": 103.802342,
           "street": "Floral Walk"
+        },
+        {
+          "id": "node/13032507895",
+          "lat": 1.281133,
+          "lon": 103.844527,
+          "street": "Sago Lane"
+        },
+        {
+          "id": "node/11019796408",
+          "lat": 1.382468,
+          "lon": 103.894789,
+          "wheelchair": "yes",
+          "street": "Compassvale Link"
+        },
+        {
+          "id": "node/12213651284",
+          "lat": 1.321277,
+          "lon": 103.739265,
+          "street": "Teban Place"
         }
       ],
       "stats": {
@@ -2332,10 +2338,10 @@
         "stepFree": 4,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:17:58.917Z"
+      "updatedAt": "2026-10-04T10:55:42.312Z"
     },
     "luggage-storage": {
-      "count": 1,
+      "count": 2,
       "pois": [],
       "stats": {
         "free": 0,
@@ -2343,7 +2349,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:17:59.426Z"
+      "updatedAt": "2026-10-04T10:55:42.827Z"
     },
     "libraries": {
       "count": 54,
@@ -2380,12 +2386,6 @@
           "wheelchair": "yes"
         },
         {
-          "id": "node/9938262351",
-          "name": "nlb_logo",
-          "lat": 1.333642,
-          "lon": 103.850318
-        },
-        {
           "id": "way/122728028",
           "name": "Toa Payoh Public Library",
           "lat": 1.333497,
@@ -2414,7 +2414,7 @@
         },
         {
           "id": "way/52975976",
-          "name": "Queenstown Community Library",
+          "name": "Queenstown Public Library",
           "lat": 1.298615,
           "lon": 103.805434,
           "address": "Margaret Drive 53",
@@ -2474,6 +2474,12 @@
           "name": "Kwa Geok Choo Law Library",
           "lat": 1.295171,
           "lon": 103.848842
+        },
+        {
+          "id": "node/14191336501",
+          "name": "Shaw Library",
+          "lat": 1.301938,
+          "lon": 103.780122
         },
         {
           "id": "way/44414539",
@@ -2569,10 +2575,10 @@
         "stepFree": 16,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:18:00.179Z"
+      "updatedAt": "2026-10-04T10:55:43.481Z"
     },
     "outdoor-gyms": {
-      "count": 1414,
+      "count": 1439,
       "pois": [
         {
           "id": "way/488811881",
@@ -2606,13 +2612,6 @@
           "lat": 1.329988,
           "lon": 103.842843,
           "openingHours": "24/7"
-        },
-        {
-          "id": "node/4030869989",
-          "name": "Exercise equipment",
-          "lat": 1.334843,
-          "lon": 103.847065,
-          "wheelchair": "yes"
         },
         {
           "id": "node/11049197176",
@@ -2651,10 +2650,10 @@
           "lon": 103.879455
         },
         {
-          "id": "node/6082896386",
+          "id": "way/1556159056",
           "name": "Senior Citizens Fitness Corner",
-          "lat": 1.362381,
-          "lon": 103.75268,
+          "lat": 1.362308,
+          "lon": 103.752673,
           "wheelchair": "yes"
         },
         {
@@ -2697,7 +2696,7 @@
         "stepFree": 59,
         "partlyStepFree": 6
       },
-      "updatedAt": "2026-09-27T10:18:01.689Z"
+      "updatedAt": "2026-10-04T10:55:44.740Z"
     },
     "camp-sites": {
       "count": 2,
@@ -2721,7 +2720,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:02.278Z"
+      "updatedAt": "2026-10-04T10:55:45.230Z"
     },
     "shelters": {
       "count": 237,
@@ -2917,10 +2916,10 @@
         "stepFree": 11,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:04.864Z"
+      "updatedAt": "2026-10-04T10:55:47.764Z"
     },
     "rest-areas": {
-      "count": 9,
+      "count": 8,
       "pois": [
         {
           "id": "node/6373343759",
@@ -2941,7 +2940,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:05.491Z"
+      "updatedAt": "2026-10-04T10:55:48.328Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2952,10 +2951,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:06.016Z"
+      "updatedAt": "2026-10-04T10:55:48.719Z"
     },
     "post-offices": {
-      "count": 48,
+      "count": 47,
       "pois": [
         {
           "id": "node/3101559694",
@@ -3129,14 +3128,6 @@
           "openingHours": "Mo-Fr 08:30-17:00; Sa 08:30-13:00"
         },
         {
-          "id": "node/1345464552",
-          "name": "Clementi Central Post Office",
-          "lat": 1.315108,
-          "lon": 103.764493,
-          "address": "Commonwealth Avenue West 3155",
-          "openingHours": "Mo-Fr 08:00-18:00; Sa-Su,PH closed"
-        },
-        {
           "id": "node/4583782806",
           "name": "Tiong Bahru Post Office",
           "lat": 1.285689,
@@ -3187,6 +3178,14 @@
           "lat": 1.320079,
           "lon": 103.886713,
           "address": "Aljunied Avenue 2 119"
+        },
+        {
+          "id": "node/4583782800",
+          "name": "Raffles Place Post Office",
+          "lat": 1.28321,
+          "lon": 103.852207,
+          "address": "Collyer Quay 10",
+          "openingHours": "Mo-Fr 08:30-18:00; Sa-Su off"
         }
       ],
       "stats": {
@@ -3195,21 +3194,21 @@
         "stepFree": 13,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T10:18:06.705Z"
+      "updatedAt": "2026-10-04T10:55:49.220Z"
     },
     "showers": {
-      "count": 15,
+      "count": 17,
       "pois": [],
       "stats": {
-        "free": 12,
-        "paid": 0,
+        "free": 13,
+        "paid": 1,
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:07.271Z"
+      "updatedAt": "2026-10-04T10:55:49.717Z"
     },
     "fireplaces": {
-      "count": 96,
+      "count": 97,
       "pois": [
         {
           "id": "node/11754633824",
@@ -3380,7 +3379,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:08.798Z"
+      "updatedAt": "2026-10-04T10:55:50.971Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3388,7 +3387,7 @@
       "updatedAt": "2026-08-17T04:07:25.775Z"
     },
     "benches": {
-      "count": 1130,
+      "count": 1137,
       "pois": [
         {
           "id": "way/569797276",
@@ -3538,7 +3537,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:12.104Z"
+      "updatedAt": "2026-10-04T10:55:54.156Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3546,7 +3545,7 @@
       "updatedAt": "2026-08-18T03:58:50.087Z"
     },
     "bicycle-repair": {
-      "count": 18,
+      "count": 19,
       "pois": [
         {
           "id": "node/7754959902",
@@ -3649,7 +3648,200 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:10.587Z"
+      "updatedAt": "2026-10-04T10:55:52.807Z"
+    },
+    "trash-bins": {
+      "count": 602,
+      "pois": [
+        {
+          "id": "way/153136693",
+          "name": "Rubbish Dump",
+          "lat": 1.372242,
+          "lon": 103.846885
+        },
+        {
+          "id": "node/5479253044",
+          "name": "Waste Basket",
+          "lat": 1.287363,
+          "lon": 103.814628,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/5479248714",
+          "name": "Trash",
+          "lat": 1.287306,
+          "lon": 103.814739
+        },
+        {
+          "id": "node/6180761786",
+          "name": "Cortina",
+          "lat": 1.283885,
+          "lon": 103.86082
+        },
+        {
+          "id": "node/11013711653",
+          "lat": 1.356996,
+          "lon": 103.812723,
+          "street": "Sime Track"
+        },
+        {
+          "id": "node/4961703021",
+          "lat": 1.360208,
+          "lon": 103.827186,
+          "street": "Venus Drive"
+        },
+        {
+          "id": "node/11039879152",
+          "lat": 1.342787,
+          "lon": 103.830625,
+          "street": "Lornie Trail"
+        },
+        {
+          "id": "node/11283742911",
+          "lat": 1.356561,
+          "lon": 103.834061,
+          "street": "Jalan Sembilang"
+        },
+        {
+          "id": "node/11283742893",
+          "lat": 1.360206,
+          "lon": 103.832507,
+          "street": "Bright Hill Drive"
+        },
+        {
+          "id": "node/13343567697",
+          "lat": 1.344621,
+          "lon": 103.834867,
+          "street": "MacRitchie Nature Trail"
+        },
+        {
+          "id": "node/11362235879",
+          "lat": 1.363309,
+          "lon": 103.833328,
+          "street": "Sin Ming Avenue"
+        },
+        {
+          "id": "node/7043060206",
+          "lat": 1.370484,
+          "lon": 103.827825,
+          "street": "Old Upper Thomson Road Park Connector"
+        },
+        {
+          "id": "node/10750656852",
+          "lat": 1.347452,
+          "lon": 103.840626,
+          "street": "North-South Corridor"
+        },
+        {
+          "id": "node/13037318642",
+          "lat": 1.336487,
+          "lon": 103.839679,
+          "street": "Toa Payoh Link"
+        },
+        {
+          "id": "node/13037318643",
+          "lat": 1.338614,
+          "lon": 103.841671,
+          "street": "Toa Payoh Rise"
+        },
+        {
+          "id": "node/9942991120",
+          "lat": 1.358429,
+          "lon": 103.844958,
+          "street": "Bishan Street 22"
+        },
+        {
+          "id": "node/8362785325",
+          "lat": 1.33097,
+          "lon": 103.836986,
+          "street": "Denham Road"
+        },
+        {
+          "id": "node/13037403924",
+          "lat": 1.338077,
+          "lon": 103.843856,
+          "street": "Lorong 1 Toa Payoh"
+        },
+        {
+          "id": "node/12543170672",
+          "lat": 1.325124,
+          "lon": 103.82719,
+          "street": "Whitley Road"
+        },
+        {
+          "id": "node/11350445619",
+          "lat": 1.33523,
+          "lon": 103.842123,
+          "street": "Toa Payoh West"
+        },
+        {
+          "id": "node/10287172715",
+          "lat": 1.322953,
+          "lon": 103.812595,
+          "street": "Tan Kim Cheng Road"
+        },
+        {
+          "id": "node/6813552043",
+          "lat": 1.321588,
+          "lon": 103.818873,
+          "street": "Cave"
+        },
+        {
+          "id": "node/7690900609",
+          "lat": 1.32213,
+          "lon": 103.826357,
+          "street": "Malcolm Road"
+        },
+        {
+          "id": "node/9560555936",
+          "lat": 1.385261,
+          "lon": 103.820673,
+          "street": "Rambutan Trail"
+        },
+        {
+          "id": "node/11573236351",
+          "lat": 1.32084,
+          "lon": 103.833071,
+          "street": "Goldhill Avenue"
+        },
+        {
+          "id": "node/5034063645",
+          "lat": 1.318199,
+          "lon": 103.815952,
+          "street": "Red Brick Path"
+        },
+        {
+          "id": "node/11039879145",
+          "lat": 1.326323,
+          "lon": 103.842382,
+          "street": "Balestier Road"
+        },
+        {
+          "id": "node/5017964200",
+          "lat": 1.369733,
+          "lon": 103.849458,
+          "street": "Ang Mo Kio Avenue 8"
+        },
+        {
+          "id": "node/10287172726",
+          "lat": 1.327466,
+          "lon": 103.844064,
+          "street": "Jalan Dusun"
+        },
+        {
+          "id": "node/6749838648",
+          "lat": 1.327661,
+          "lon": 103.845585,
+          "street": "Ah Hood Road"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-10-04T10:55:56.062Z"
     }
   }
 }

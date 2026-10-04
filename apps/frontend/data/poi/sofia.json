@@ -1,17 +1,10 @@
 {
   "city": "sofia",
-  "generatedAt": "2026-09-27T09:33:36.550Z",
+  "generatedAt": "2026-10-04T10:03:41.502Z",
   "categories": {
     "toilets": {
-      "count": 169,
+      "count": 173,
       "pois": [
-        {
-          "id": "node/11938894741",
-          "lat": 42.699838,
-          "lon": 23.321568,
-          "wheelchair": "yes",
-          "context": "Kaufland"
-        },
         {
           "id": "way/107401809",
           "name": "Mall of Sofia",
@@ -50,6 +43,14 @@
           "wheelchair": "no",
           "fee": "no",
           "context": "Храм Преображение Господне"
+        },
+        {
+          "id": "node/12847221310",
+          "lat": 42.689615,
+          "lon": 23.302127,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Kaufland"
         },
         {
           "id": "node/13576306476",
@@ -110,7 +111,6 @@
           "name": "Новите халби",
           "lat": 42.675823,
           "lon": 23.29437,
-          "address": "Нишава бл. 20",
           "openingHours": "Mo-Su 10:00-22:00",
           "wheelchair": "limited"
         },
@@ -190,9 +190,9 @@
         }
       ],
       "stats": {
-        "free": 63,
-        "paid": 23,
-        "stepFree": 52,
+        "free": 64,
+        "paid": 24,
+        "stepFree": 54,
         "partlyStepFree": 4
       },
       "near": [
@@ -215,10 +215,10 @@
           "lon": 23.325857
         }
       ],
-      "updatedAt": "2026-09-23T08:28:06.156Z"
+      "updatedAt": "2026-10-04T10:03:18.367Z"
     },
     "drinking-water": {
-      "count": 165,
+      "count": 167,
       "pois": [
         {
           "id": "node/300981607",
@@ -324,7 +324,7 @@
           "lat": 42.695744,
           "lon": 23.324874,
           "fee": "no",
-          "street": "Княз Александър I"
+          "street": "Съборна"
         },
         {
           "id": "node/12837097870",
@@ -334,8 +334,8 @@
         },
         {
           "id": "node/12871174246",
-          "lat": 42.696691,
-          "lon": 23.314974,
+          "lat": 42.696695,
+          "lon": 23.314903,
           "street": "Позитано"
         },
         {
@@ -386,7 +386,8 @@
         {
           "id": "node/7908635904",
           "lat": 42.693303,
-          "lon": 23.335598,
+          "lon": 23.335596,
+          "fee": "no",
           "street": "Св. Климент Охридски"
         },
         {
@@ -416,7 +417,7 @@
         }
       ],
       "stats": {
-        "free": 29,
+        "free": 31,
         "paid": 1,
         "stepFree": 17,
         "partlyStepFree": 5
@@ -441,10 +442,10 @@
           "lon": 23.324874
         }
       ],
-      "updatedAt": "2026-09-23T08:28:07.682Z"
+      "updatedAt": "2026-10-04T10:03:20.339Z"
     },
     "playgrounds": {
-      "count": 1284,
+      "count": 1291,
       "pois": [
         {
           "id": "way/1328854604",
@@ -583,10 +584,10 @@
         "stepFree": 30,
         "partlyStepFree": 10
       },
-      "updatedAt": "2026-09-27T09:33:16.290Z"
+      "updatedAt": "2026-10-04T10:03:21.345Z"
     },
     "parking": {
-      "count": 4050,
+      "count": 4074,
       "pois": [
         {
           "id": "node/8750163259",
@@ -594,14 +595,6 @@
           "lat": 42.698357,
           "lon": 23.319082,
           "openingHours": "Mo-Su 00:00-24:00",
-          "fee": "yes"
-        },
-        {
-          "id": "node/2934031298",
-          "name": "Гладстон",
-          "lat": 42.691181,
-          "lon": 23.322732,
-          "wheelchair": "yes",
           "fee": "yes"
         },
         {
@@ -684,8 +677,8 @@
         {
           "id": "way/1303469680",
           "name": "Паркинг „Западен парк“",
-          "lat": 42.715526,
-          "lon": 23.278848,
+          "lat": 42.71554,
+          "lon": 23.278851,
           "openingHours": "24/7",
           "fee": "yes"
         },
@@ -777,7 +770,7 @@
           "name": "P2",
           "lat": 42.687988,
           "lon": 23.415471,
-          "fee": "no"
+          "fee": "yes"
         },
         {
           "id": "way/397987677",
@@ -788,15 +781,15 @@
         }
       ],
       "stats": {
-        "free": 799,
-        "paid": 323,
-        "stepFree": 38,
+        "free": 798,
+        "paid": 327,
+        "stepFree": 39,
         "partlyStepFree": 10
       },
-      "updatedAt": "2026-09-27T09:33:17.320Z"
+      "updatedAt": "2026-10-04T10:03:22.587Z"
     },
     "charging-stations": {
-      "count": 183,
+      "count": 189,
       "pois": [
         {
           "id": "node/13677511901",
@@ -1037,15 +1030,15 @@
         }
       ],
       "stats": {
-        "free": 7,
-        "paid": 47,
-        "stepFree": 2,
+        "free": 8,
+        "paid": 51,
+        "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:17.822Z"
+      "updatedAt": "2026-10-04T10:03:23.173Z"
     },
     "gas-stations": {
-      "count": 181,
+      "count": 180,
       "pois": [
         {
           "id": "node/254476910",
@@ -1222,8 +1215,8 @@
         {
           "id": "way/700629898",
           "name": "Rompetrol",
-          "lat": 42.663156,
-          "lon": 23.291375,
+          "lat": 42.663138,
+          "lon": 23.291341,
           "address": "Тодор Каблешков 74",
           "openingHours": "24/7",
           "wheelchair": "yes"
@@ -1262,10 +1255,10 @@
         "stepFree": 30,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T09:33:18.470Z"
+      "updatedAt": "2026-10-04T10:03:23.759Z"
     },
     "ice-cream": {
-      "count": 37,
+      "count": 38,
       "pois": [
         {
           "id": "node/6906532392",
@@ -1306,9 +1299,8 @@
         {
           "id": "node/3019219513",
           "name": "Лампата градина кристал",
-          "lat": 42.694127,
-          "lon": 23.328783,
-          "address": "Георги С. Раковски 123",
+          "lat": 42.694141,
+          "lon": 23.328743,
           "openingHours": "Mo-Su,PH 10:00-22:00"
         },
         {
@@ -1336,8 +1328,8 @@
         {
           "id": "node/12116565424",
           "name": "Raffy",
-          "lat": 42.69063,
-          "lon": 23.319732,
+          "lat": 42.690633,
+          "lon": 23.319711,
           "openingHours": "Mo-Su 11:00-22:00"
         },
         {
@@ -1349,15 +1341,6 @@
           "wheelchair": "yes"
         },
         {
-          "id": "node/4236514247",
-          "name": "Gelateria Naturale",
-          "lat": 42.692428,
-          "lon": 23.330779,
-          "address": "Цар Иван Шишман 12А",
-          "openingHours": "Mo-Su 09:00-21:00",
-          "wheelchair": "no"
-        },
-        {
           "id": "node/2914448605",
           "name": "Gelateria Italiana",
           "lat": 42.689586,
@@ -1365,11 +1348,18 @@
           "openingHours": "Mo-Su,PH 10:00-22:00"
         },
         {
+          "id": "node/4236514247",
+          "name": "Gelateria Naturale",
+          "lat": 42.692411,
+          "lon": 23.330796,
+          "openingHours": "Mo-Su 09:00-21:00",
+          "wheelchair": "no"
+        },
+        {
           "id": "node/4529298943",
           "name": "Fancy Bubbles",
           "lat": 42.691866,
           "lon": 23.330232,
-          "address": "Цар Иван Шишман 18",
           "openingHours": "Mo-Su 11:00-20:00"
         },
         {
@@ -1383,7 +1373,6 @@
           "name": "Amore Gelati",
           "lat": 42.689469,
           "lon": 23.327725,
-          "address": "Цар Иван Шишман 41",
           "openingHours": "May-Sep: Mo-Su,PH 10:00-22:00; Oct-Apr: Mo-Su,PH 10:00-20:00",
           "wheelchair": "yes"
         },
@@ -1392,7 +1381,6 @@
           "name": "Vivaldi",
           "lat": 42.687266,
           "lon": 23.31817,
-          "address": "Верила 1",
           "openingHours": "Mo-Su,PH 10:00-22:00"
         },
         {
@@ -1464,10 +1452,11 @@
         },
         {
           "id": "node/12813798791",
-          "name": "Gelato",
+          "name": "Gelato Pavilion",
           "lat": 42.669567,
           "lon": 23.352647,
-          "openingHours": "Mo-Su 10:00-21:00"
+          "openingHours": "Mo-Su 10:00-21:00",
+          "wheelchair": "no"
         },
         {
           "id": "node/5614811023",
@@ -1499,7 +1488,7 @@
         "stepFree": 6,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:33:18.999Z"
+      "updatedAt": "2026-10-04T10:03:24.244Z"
     },
     "dog-parks": {
       "count": 34,
@@ -1530,10 +1519,10 @@
         "stepFree": 10,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:33:19.462Z"
+      "updatedAt": "2026-10-04T10:03:24.696Z"
     },
     "picnic-spots": {
-      "count": 138,
+      "count": 145,
       "pois": [],
       "stats": {
         "free": 0,
@@ -1541,7 +1530,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:20.672Z"
+      "updatedAt": "2026-10-04T10:03:25.888Z"
     },
     "viewpoints": {
       "count": 9,
@@ -1572,7 +1561,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:21.319Z"
+      "updatedAt": "2026-10-04T10:03:26.442Z"
     },
     "beaches": {
       "count": 0,
@@ -1583,10 +1572,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:21.831Z"
+      "updatedAt": "2026-10-04T10:03:26.880Z"
     },
     "atms": {
-      "count": 602,
+      "count": 604,
       "pois": [
         {
           "id": "node/13760714659",
@@ -1644,16 +1633,16 @@
         {
           "id": "node/2912830925",
           "name": "Общинска банка",
-          "lat": 42.693873,
-          "lon": 23.319945,
+          "lat": 42.69389,
+          "lon": 23.319944,
           "openingHours": "Mo-Fr 08:30-16:00",
           "wheelchair": "limited"
         },
         {
           "id": "node/2912828263",
           "name": "Инвестбанк",
-          "lat": 42.693903,
-          "lon": 23.31976,
+          "lat": 42.69392,
+          "lon": 23.319759,
           "openingHours": "Mo-Fr 09:00-17:30",
           "wheelchair": "limited"
         },
@@ -1666,26 +1655,23 @@
         {
           "id": "node/4512833487",
           "name": "Централна Кооперативна Банка",
-          "lat": 42.693869,
-          "lon": 23.326012,
-          "address": "Иван Вазов 2",
+          "lat": 42.693864,
+          "lon": 23.326006,
           "openingHours": "Mo-Fr 08:30-17:00"
         },
         {
           "id": "node/4497008213",
           "name": "Allianz",
-          "lat": 42.695296,
-          "lon": 23.328597,
-          "address": "бул. Цар Освободител 8",
+          "lat": 42.695314,
+          "lon": 23.328613,
           "openingHours": "Mo-Fr 09:00-17:00",
           "wheelchair": "yes"
         },
         {
           "id": "node/3688606632",
           "name": "DBank",
-          "lat": 42.692898,
-          "lon": 23.3275,
-          "address": "Георги С. Раковски 133"
+          "lat": 42.69293,
+          "lon": 23.327453
         },
         {
           "id": "node/1697418902",
@@ -1802,10 +1788,10 @@
         "stepFree": 57,
         "partlyStepFree": 16
       },
-      "updatedAt": "2026-09-27T09:33:22.422Z"
+      "updatedAt": "2026-10-04T10:03:27.458Z"
     },
     "post-boxes": {
-      "count": 58,
+      "count": 59,
       "pois": [
         {
           "id": "node/10967992578",
@@ -1848,12 +1834,6 @@
           "id": "node/9268383430",
           "lat": 42.693187,
           "lon": 23.324674,
-          "street": "Дякон Игнатий"
-        },
-        {
-          "id": "node/9268383429",
-          "lat": 42.693148,
-          "lon": 23.324641,
           "street": "Стефан Караджа"
         },
         {
@@ -1947,15 +1927,16 @@
           "street": "бул. Акад. Иван Евстратиев Гешов"
         },
         {
-          "id": "node/9268305010",
-          "lat": 42.684608,
-          "lon": 23.297871,
+          "id": "node/14136538814",
+          "lat": 42.684806,
+          "lon": 23.298131,
           "street": "Ами Буе"
         },
         {
           "id": "node/9268305009",
           "lat": 42.681423,
           "lon": 23.299344,
+          "wheelchair": "yes",
           "street": "Урвич"
         },
         {
@@ -1987,18 +1968,24 @@
           "lat": 42.735521,
           "lon": 23.30555,
           "street": "Ген. Никола Жеков"
+        },
+        {
+          "id": "node/9268305008",
+          "lat": 42.669127,
+          "lon": 23.280262,
+          "street": "Ген. Стефан Тошев"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 0,
+        "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:23.548Z"
+      "updatedAt": "2026-10-04T10:03:28.566Z"
     },
     "recycling": {
-      "count": 1645,
+      "count": 1671,
       "pois": [
         {
           "id": "node/11986114908",
@@ -2187,10 +2174,10 @@
         "stepFree": 4,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:33:25.253Z"
+      "updatedAt": "2026-10-04T10:03:30.190Z"
     },
     "luggage-storage": {
-      "count": 12,
+      "count": 13,
       "pois": [
         {
           "id": "node/12656815996",
@@ -2202,10 +2189,10 @@
         },
         {
           "id": "node/12312372250",
-          "name": "Lockers Center - Luggage Storage",
+          "name": "Lockers Center",
           "lat": 42.695559,
           "lon": 23.321735,
-          "openingHours": "Open 24 hours",
+          "openingHours": "24/7",
           "fee": "yes"
         },
         {
@@ -2227,15 +2214,15 @@
         }
       ],
       "stats": {
-        "free": 0,
+        "free": 1,
         "paid": 3,
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:33:25.774Z"
+      "updatedAt": "2026-10-04T10:03:30.648Z"
     },
     "libraries": {
-      "count": 23,
+      "count": 25,
       "pois": [
         {
           "id": "node/1746089734",
@@ -2262,7 +2249,7 @@
         },
         {
           "id": "way/157740213",
-          "name": "Национална библиотека \"Св. св. Кирил и Методий\"",
+          "name": "Национална библиотека „Св. св. Кирил и Методий“",
           "lat": 42.694824,
           "lon": 23.335996,
           "address": "бул. Васил Левски 88",
@@ -2271,17 +2258,10 @@
         },
         {
           "id": "relation/3899540",
-          "name": "Университетска библиотека \"Св. Климент Охридски\"",
+          "name": "Университетска библиотека „Св. Климент Охридски“",
           "lat": 42.693618,
           "lon": 23.335747,
           "openingHours": "Mo-Fr 08:00-20:00"
-        },
-        {
-          "id": "node/11769137869",
-          "name": "Г. Ст. Раковски",
-          "lat": 42.683107,
-          "lon": 23.327423,
-          "openingHours": "Mo,Tu,Th,Fr 10:00-18:00; We 13:00-18:00"
         },
         {
           "id": "node/2606819324",
@@ -2293,8 +2273,8 @@
         {
           "id": "node/12565779455",
           "name": "Пробуда 1946",
-          "lat": 42.678221,
-          "lon": 23.329859,
+          "lat": 42.678159,
+          "lon": 23.329777,
           "openingHours": "Mo 13:00-17:00; Tu-Fr 12:00-16:00"
         },
         {
@@ -2352,21 +2332,21 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 0,
+        "stepFree": 1,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:33:26.363Z"
+      "updatedAt": "2026-10-04T10:03:31.158Z"
     },
     "outdoor-gyms": {
-      "count": 212,
+      "count": 216,
       "pois": [],
       "stats": {
-        "free": 6,
+        "free": 1,
         "paid": 0,
-        "stepFree": 7,
-        "partlyStepFree": 3
+        "stepFree": 2,
+        "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:33:27.359Z"
+      "updatedAt": "2026-10-04T10:03:32.126Z"
     },
     "camp-sites": {
       "count": 2,
@@ -2385,7 +2365,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:27.929Z"
+      "updatedAt": "2026-10-04T10:03:32.627Z"
     },
     "shelters": {
       "count": 14,
@@ -2433,7 +2413,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:29.860Z"
+      "updatedAt": "2026-10-04T10:03:34.513Z"
     },
     "rest-areas": {
       "count": 4,
@@ -2444,7 +2424,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:30.534Z"
+      "updatedAt": "2026-10-04T10:03:34.940Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2455,10 +2435,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:30.997Z"
+      "updatedAt": "2026-10-04T10:03:35.283Z"
     },
     "post-offices": {
-      "count": 273,
+      "count": 275,
       "pois": [
         {
           "id": "node/254473371",
@@ -2490,7 +2470,7 @@
         {
           "id": "node/6054199185",
           "name": "Три уши",
-          "lat": 42.695876,
+          "lat": 42.695873,
           "lon": 23.316331,
           "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-14:00"
         },
@@ -2499,8 +2479,14 @@
           "name": "Централна поща",
           "lat": 42.693195,
           "lon": 23.324731,
-          "address": "Ген. Йосиф В. Гурко 6",
           "openingHours": "Mo-Fr 08:00-20:00; Sa 08:30-19:00; Su 08:30-13:00"
+        },
+        {
+          "id": "node/12269094417",
+          "name": "EMS Булпост",
+          "lat": 42.693446,
+          "lon": 23.32562,
+          "openingHours": "Mo-Fr 08:00-18:00; Sa 09:00-13:00; Su off"
         },
         {
           "id": "node/11746614771",
@@ -2545,7 +2531,6 @@
           "name": "Parcel Shop Юлек",
           "lat": 42.688242,
           "lon": 23.325355,
-          "address": "бул. Патриарх Евтимий 19А",
           "openingHours": "Mo-Fr 10:00-19:00"
         },
         {
@@ -2575,7 +2560,6 @@
           "name": "ПТТС София 63-1463",
           "lat": 42.687337,
           "lon": 23.316956,
-          "address": "Цар Асен 72",
           "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-13:00"
         },
         {
@@ -2678,23 +2662,15 @@
           "name": "Лео Експрес",
           "lat": 42.720937,
           "lon": 23.329572
-        },
-        {
-          "id": "node/254473448",
-          "name": "ПТТС София 25-1225",
-          "lat": 42.717841,
-          "lon": 23.342522,
-          "address": "Свързочник 2",
-          "openingHours": "Mo-Fr 08:00-19:00; Sa 08:30-13:00"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 22,
+        "stepFree": 25,
         "partlyStepFree": 15
       },
-      "updatedAt": "2026-09-27T09:33:31.586Z"
+      "updatedAt": "2026-10-04T10:03:35.800Z"
     },
     "showers": {
       "count": 1,
@@ -2705,7 +2681,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:32.042Z"
+      "updatedAt": "2026-10-04T10:03:36.187Z"
     },
     "fireplaces": {
       "count": 5,
@@ -2723,7 +2699,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:33.379Z"
+      "updatedAt": "2026-10-04T10:03:37.220Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2731,7 +2707,7 @@
       "updatedAt": "2026-08-17T04:03:15.136Z"
     },
     "benches": {
-      "count": 5627,
+      "count": 5802,
       "pois": [
         {
           "id": "node/13610732313",
@@ -2818,7 +2794,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:36.448Z"
+      "updatedAt": "2026-10-04T10:03:39.760Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2837,8 +2813,8 @@
         },
         {
           "id": "node/14081648283",
-          "lat": 42.712761,
-          "lon": 23.274688,
+          "lat": 42.712749,
+          "lon": 23.274677,
           "fee": "no",
           "street": "бул. Д-р Петър Дертлиев"
         },
@@ -2893,7 +2869,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:34.999Z"
+      "updatedAt": "2026-10-04T10:03:38.536Z"
+    },
+    "trash-bins": {
+      "count": 4367,
+      "pois": [
+        {
+          "id": "node/13008744482",
+          "lat": 42.697718,
+          "lon": 23.322282,
+          "street": "бул. Княз Александър Дондуков"
+        },
+        {
+          "id": "node/11824790256",
+          "lat": 42.697865,
+          "lon": 23.321373,
+          "street": "бул. Тодор Александров"
+        },
+        {
+          "id": "node/13008720396",
+          "lat": 42.698172,
+          "lon": 23.322285,
+          "street": "бул. Княгиня Мария Луиза"
+        },
+        {
+          "id": "node/13297091202",
+          "lat": 42.69846,
+          "lon": 23.320572,
+          "street": "Георг Вашингтон"
+        },
+        {
+          "id": "node/13297091210",
+          "lat": 42.697005,
+          "lon": 23.320416,
+          "street": "Ломска"
+        },
+        {
+          "id": "node/13297091211",
+          "lat": 42.695959,
+          "lon": 23.321011,
+          "street": "бул. Витоша"
+        },
+        {
+          "id": "node/13383715900",
+          "lat": 42.699574,
+          "lon": 23.32142,
+          "street": "Пиротска"
+        },
+        {
+          "id": "node/13383715890",
+          "lat": 42.696191,
+          "lon": 23.323746,
+          "street": "Съборна"
+        },
+        {
+          "id": "node/13417866267",
+          "lat": 42.696958,
+          "lon": 23.319314,
+          "street": "бул. Александър Стамболийски"
+        },
+        {
+          "id": "node/13383715894",
+          "lat": 42.696287,
+          "lon": 23.324049,
+          "street": "Леге"
+        },
+        {
+          "id": "node/13417866266",
+          "lat": 42.696995,
+          "lon": 23.319054,
+          "street": "Княз Борис I"
+        },
+        {
+          "id": "node/13691849702",
+          "lat": 42.699838,
+          "lon": 23.323345,
+          "street": "Искър"
+        },
+        {
+          "id": "node/13691840994",
+          "lat": 42.700084,
+          "lon": 23.322872,
+          "street": "Екзарх Йосиф"
+        },
+        {
+          "id": "node/12425968253",
+          "lat": 42.695259,
+          "lon": 23.322695,
+          "street": "Позитано"
+        },
+        {
+          "id": "node/12425968241",
+          "lat": 42.695021,
+          "lon": 23.322623,
+          "street": "Цар Калоян"
+        },
+        {
+          "id": "node/12989033127",
+          "lat": 42.69488,
+          "lon": 23.321487,
+          "street": "Алабин"
+        },
+        {
+          "id": "node/6611904445",
+          "lat": 42.698688,
+          "lon": 23.32572,
+          "street": "Веслец"
+        },
+        {
+          "id": "node/10138226716",
+          "lat": 42.700106,
+          "lon": 23.32434,
+          "street": "Сердика"
+        },
+        {
+          "id": "node/13297188667",
+          "lat": 42.700897,
+          "lon": 23.322542,
+          "street": "Централни хали"
+        },
+        {
+          "id": "node/13623721870",
+          "lat": 42.694512,
+          "lon": 23.319505,
+          "street": "Цар Асен"
+        },
+        {
+          "id": "node/6677512960",
+          "lat": 42.701143,
+          "lon": 23.323585,
+          "street": "Цар Симеон"
+        },
+        {
+          "id": "node/5237095832",
+          "lat": 42.697383,
+          "lon": 23.316759,
+          "street": "Братя Миладинови"
+        },
+        {
+          "id": "node/13623721876",
+          "lat": 42.694108,
+          "lon": 23.319281,
+          "street": "Иван Денкоглу"
+        },
+        {
+          "id": "node/13605647297",
+          "lat": 42.693329,
+          "lon": 23.321368,
+          "street": "Христо Белчев"
+        },
+        {
+          "id": "node/13656296128",
+          "lat": 42.693329,
+          "lon": 23.32251,
+          "street": "Ангел Кънчев"
+        },
+        {
+          "id": "node/13623721875",
+          "lat": 42.693527,
+          "lon": 23.319087,
+          "street": "Кърниградска"
+        },
+        {
+          "id": "node/14089395881",
+          "lat": 42.69988,
+          "lon": 23.316098,
+          "street": "Ул. Пиротска"
+        },
+        {
+          "id": "node/13662794729",
+          "lat": 42.697145,
+          "lon": 23.315397,
+          "street": "бул. Христо Ботев"
+        },
+        {
+          "id": "node/13634569054",
+          "lat": 42.694439,
+          "lon": 23.316956,
+          "street": "Цар Самуил"
+        },
+        {
+          "id": "node/5967478540",
+          "lat": 42.692603,
+          "lon": 23.321635,
+          "street": "Солунска"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 3,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:03:41.400Z"
     }
   }
 }

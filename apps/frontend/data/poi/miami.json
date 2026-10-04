@@ -1,6 +1,6 @@
 {
   "city": "miami",
-  "generatedAt": "2026-09-27T10:03:26.327Z",
+  "generatedAt": "2026-10-04T10:39:03.308Z",
   "categories": {
     "toilets": {
       "count": 40,
@@ -67,7 +67,7 @@
         "stepFree": 9,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-23T08:31:57.787Z"
+      "updatedAt": "2026-10-04T10:38:42.517Z"
     },
     "drinking-water": {
       "count": 32,
@@ -177,7 +177,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-23T08:31:59.206Z"
+      "updatedAt": "2026-10-04T10:38:44.640Z"
     },
     "playgrounds": {
       "count": 63,
@@ -196,10 +196,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:07.402Z"
+      "updatedAt": "2026-10-04T10:38:45.555Z"
     },
     "parking": {
-      "count": 588,
+      "count": 587,
       "pois": [
         {
           "id": "way/300211768",
@@ -267,7 +267,8 @@
           "id": "way/463472265",
           "name": "Lot 41",
           "lat": 25.775894,
-          "lon": -80.190905
+          "lon": -80.190905,
+          "fee": "yes"
         },
         {
           "id": "way/398246348",
@@ -281,6 +282,7 @@
           "name": "Garage 3",
           "lat": 25.776643,
           "lon": -80.190888,
+          "openingHours": "Mo-Su 00:00-24:00",
           "fee": "yes"
         },
         {
@@ -406,11 +408,11 @@
       ],
       "stats": {
         "free": 30,
-        "paid": 94,
+        "paid": 100,
         "stepFree": 11,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:03:08.543Z"
+      "updatedAt": "2026-10-04T10:38:46.600Z"
     },
     "charging-stations": {
       "count": 14,
@@ -445,10 +447,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:08.999Z"
+      "updatedAt": "2026-10-04T10:38:46.981Z"
     },
     "gas-stations": {
-      "count": 79,
+      "count": 83,
       "pois": [
         {
           "id": "node/13318127260",
@@ -554,12 +556,6 @@
           "lat": 25.794415,
           "lon": -80.141593,
           "address": "Alton Road 1840"
-        },
-        {
-          "id": "relation/17818558",
-          "name": "Biscayne Gas",
-          "lat": 25.825794,
-          "lon": -80.187156
         }
       ],
       "stats": {
@@ -568,10 +564,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:09.600Z"
+      "updatedAt": "2026-10-04T10:38:47.557Z"
     },
     "ice-cream": {
-      "count": 36,
+      "count": 37,
       "pois": [
         {
           "id": "node/13149501982",
@@ -616,6 +612,14 @@
           "lat": 25.803729,
           "lon": -80.196358,
           "address": "Northwest 29th Street 56"
+        },
+        {
+          "id": "node/14181075708",
+          "name": "Edgewater Ice Cream",
+          "lat": 25.8073,
+          "lon": -80.186989,
+          "address": "Northeast 7th Avenue 3131",
+          "openingHours": "Mo-Th 14:00-23:00; Fr 13:00-18:00; Su 13:00-23:00"
         },
         {
           "id": "node/7557799364",
@@ -752,7 +756,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:10.110Z"
+      "updatedAt": "2026-10-04T10:38:48.055Z"
     },
     "dog-parks": {
       "count": 13,
@@ -765,7 +769,7 @@
         },
         {
           "id": "way/1161844915",
-          "name": "Bayfront Park DEog Park",
+          "name": "Bayfront Park Dog Park",
           "lat": 25.773158,
           "lon": -80.185344,
           "wheelchair": "yes"
@@ -795,7 +799,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:10.660Z"
+      "updatedAt": "2026-10-04T10:38:48.445Z"
     },
     "picnic-spots": {
       "count": 57,
@@ -806,7 +810,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:11.800Z"
+      "updatedAt": "2026-10-04T10:38:49.587Z"
     },
     "viewpoints": {
       "count": 2,
@@ -825,7 +829,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:12.429Z"
+      "updatedAt": "2026-10-04T10:38:50.067Z"
     },
     "beaches": {
       "count": 23,
@@ -886,7 +890,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:13.020Z"
+      "updatedAt": "2026-10-04T10:38:50.508Z"
     },
     "atms": {
       "count": 56,
@@ -993,7 +997,9 @@
           "id": "way/436106260",
           "name": "Citibank",
           "lat": 25.774129,
-          "lon": -80.136857
+          "lon": -80.136857,
+          "address": "5th Street 830",
+          "openingHours": "Mo-Fr 09:00-17:00"
         },
         {
           "id": "node/7206567784",
@@ -1001,6 +1007,14 @@
           "lat": 25.787507,
           "lon": -80.140754,
           "address": "Alton Road 1501"
+        },
+        {
+          "id": "way/255394260",
+          "name": "City National Bank",
+          "lat": 25.774295,
+          "lon": -80.133322,
+          "address": "Collins Avenue 446",
+          "openingHours": "Mo-Th 08:30-16:00; Fr 08:30-18:00"
         },
         {
           "id": "node/5614448856",
@@ -1042,7 +1056,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:13.601Z"
+      "updatedAt": "2026-10-04T10:38:51.016Z"
     },
     "post-boxes": {
       "count": 14,
@@ -1133,7 +1147,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:14.662Z"
+      "updatedAt": "2026-10-04T10:38:51.997Z"
     },
     "recycling": {
       "count": 34,
@@ -1183,7 +1197,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:16.284Z"
+      "updatedAt": "2026-10-04T10:38:53.471Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1194,10 +1208,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:16.719Z"
+      "updatedAt": "2026-10-04T10:38:53.842Z"
     },
     "libraries": {
-      "count": 28,
+      "count": 29,
       "pois": [
         {
           "id": "node/367824134",
@@ -1303,6 +1317,14 @@
           "lon": -80.162488
         },
         {
+          "id": "node/14152736102",
+          "name": "Bookleggers Library",
+          "lat": 25.806899,
+          "lon": -80.204946,
+          "address": "Northwest 32nd Street 561",
+          "openingHours": "Tu-Su 12:00-17:00"
+        },
+        {
           "id": "node/12551975880",
           "name": "Miami-Dade Public Library, South Shore Branch",
           "lat": 25.770501,
@@ -1399,7 +1421,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:17.299Z"
+      "updatedAt": "2026-10-04T10:38:54.342Z"
     },
     "outdoor-gyms": {
       "count": 23,
@@ -1410,7 +1432,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:18.800Z"
+      "updatedAt": "2026-10-04T10:38:55.209Z"
     },
     "camp-sites": {
       "count": 0,
@@ -1421,7 +1443,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:19.449Z"
+      "updatedAt": "2026-10-04T10:38:55.629Z"
     },
     "shelters": {
       "count": 4,
@@ -1445,7 +1467,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:20.193Z"
+      "updatedAt": "2026-10-04T10:38:56.477Z"
     },
     "rest-areas": {
       "count": 1,
@@ -1456,7 +1478,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:20.834Z"
+      "updatedAt": "2026-10-04T10:38:56.915Z"
     },
     "dump-stations": {
       "count": 0,
@@ -1467,7 +1489,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:21.256Z"
+      "updatedAt": "2026-10-04T10:38:57.272Z"
     },
     "post-offices": {
       "count": 18,
@@ -1597,7 +1619,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:21.779Z"
+      "updatedAt": "2026-10-04T10:38:57.717Z"
     },
     "showers": {
       "count": 13,
@@ -1608,7 +1630,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:22.214Z"
+      "updatedAt": "2026-10-04T10:38:58.101Z"
     },
     "fireplaces": {
       "count": 0,
@@ -1619,7 +1641,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:23.439Z"
+      "updatedAt": "2026-10-04T10:38:59.139Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1696,7 +1718,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:26.226Z"
+      "updatedAt": "2026-10-04T10:39:01.662Z"
     },
     "compressed-air": {
       "count": 0,
@@ -1773,7 +1795,163 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:03:24.928Z"
+      "updatedAt": "2026-10-04T10:39:00.456Z"
+    },
+    "trash-bins": {
+      "count": 198,
+      "pois": [
+        {
+          "id": "node/12684945640",
+          "lat": 25.761818,
+          "lon": -80.195544,
+          "street": "M-Path"
+        },
+        {
+          "id": "node/12684945638",
+          "lat": 25.761453,
+          "lon": -80.195616,
+          "street": "Southwest 13th Street"
+        },
+        {
+          "id": "node/7566672593",
+          "lat": 25.758714,
+          "lon": -80.194462,
+          "street": "Southwest 15th Road"
+        },
+        {
+          "id": "node/7566672595",
+          "lat": 25.758664,
+          "lon": -80.194496,
+          "street": "South Miami Avenue"
+        },
+        {
+          "id": "node/12677966855",
+          "lat": 25.765459,
+          "lon": -80.19422,
+          "street": "Southwest 9th Street"
+        },
+        {
+          "id": "node/9586586509",
+          "lat": 25.759988,
+          "lon": -80.196668,
+          "street": "Southwest 1st Avenue"
+        },
+        {
+          "id": "node/7566653053",
+          "lat": 25.758052,
+          "lon": -80.196985,
+          "street": "Southwest 17th Road"
+        },
+        {
+          "id": "node/7564001999",
+          "lat": 25.755706,
+          "lon": -80.196444,
+          "street": "Brickell Avenue"
+        },
+        {
+          "id": "node/7684177901",
+          "lat": 25.773919,
+          "lon": -80.194501,
+          "street": "West Flagler Street"
+        },
+        {
+          "id": "node/14051718910",
+          "lat": 25.774569,
+          "lon": -80.187896,
+          "street": "Biscayne Boulevard"
+        },
+        {
+          "id": "node/9045362892",
+          "lat": 25.775087,
+          "lon": -80.201474,
+          "street": "Miami River Greenway"
+        },
+        {
+          "id": "node/9045362911",
+          "lat": 25.775126,
+          "lon": -80.201441,
+          "street": "Northwest North River Drive"
+        },
+        {
+          "id": "node/7685223097",
+          "lat": 25.780559,
+          "lon": -80.197824,
+          "street": "Northwest 2nd Avenue"
+        },
+        {
+          "id": "node/7685223094",
+          "lat": 25.780657,
+          "lon": -80.197542,
+          "street": "Northwest 7th Street"
+        },
+        {
+          "id": "node/7685331090",
+          "lat": 25.785148,
+          "lon": -80.19052,
+          "street": "Northeast 2nd Avenue"
+        },
+        {
+          "id": "node/13884927236",
+          "lat": 25.788345,
+          "lon": -80.189927,
+          "street": "Northeast 14th Street"
+        },
+        {
+          "id": "node/7797180871",
+          "lat": 25.7619,
+          "lon": -80.22638,
+          "street": "Southwest 19th Avenue"
+        },
+        {
+          "id": "node/9347880426",
+          "lat": 25.765047,
+          "lon": -80.228043,
+          "street": "Southwest 20th Avenue"
+        },
+        {
+          "id": "node/8999103698",
+          "lat": 25.760023,
+          "lon": -80.228315,
+          "street": "Southwest 21st Avenue"
+        },
+        {
+          "id": "node/13204944979",
+          "lat": 25.756166,
+          "lon": -80.229805,
+          "street": "Southwest 17th Lane"
+        },
+        {
+          "id": "node/8067143420",
+          "lat": 25.747323,
+          "lon": -80.227041,
+          "street": "Southwest 24th Street"
+        },
+        {
+          "id": "node/13386651183",
+          "lat": 25.735735,
+          "lon": -80.228385,
+          "street": "Siegendorf Bicycle Path"
+        },
+        {
+          "id": "node/7574144659",
+          "lat": 25.772424,
+          "lon": -80.139702,
+          "street": "Alton Road"
+        },
+        {
+          "id": "node/7571860700",
+          "lat": 25.775667,
+          "lon": -80.140493,
+          "street": "6th Street"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:39:03.207Z"
     }
   }
 }

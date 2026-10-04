@@ -1,9 +1,9 @@
 {
   "city": "los-angeles",
-  "generatedAt": "2026-09-27T09:59:41.846Z",
+  "generatedAt": "2026-10-04T10:34:43.951Z",
   "categories": {
     "toilets": {
-      "count": 240,
+      "count": 241,
       "pois": [
         {
           "id": "node/4078612328",
@@ -11,6 +11,12 @@
           "lon": -118.249149,
           "address": "South Broadway 317",
           "context": "Laughlin Annex/Lyon Building"
+        },
+        {
+          "id": "node/14212742444",
+          "lat": 34.052391,
+          "lon": -118.25122,
+          "context": "One California Plaza"
         },
         {
           "id": "node/4578721477",
@@ -222,32 +228,26 @@
           "lat": 34.028002,
           "lon": -118.377379,
           "context": "Syd Kronenthal Recreation Center"
-        },
-        {
-          "id": "node/13921160786",
-          "lat": 34.095345,
-          "lon": -118.371754,
-          "context": "William S. Hart House"
         }
       ],
       "stats": {
-        "free": 16,
+        "free": 17,
         "paid": 0,
-        "stepFree": 58,
+        "stepFree": 59,
         "partlyStepFree": 1
       },
       "near": [
         {
           "landmark": "Q1134646",
-          "within": 3,
-          "distance": 279,
-          "bearing": 155,
-          "poi": "node/4078612328",
-          "lat": 34.050997,
-          "lon": -118.249149
+          "within": 4,
+          "distance": 122,
+          "bearing": 216,
+          "poi": "node/14212742444",
+          "lat": 34.052391,
+          "lon": -118.25122
         }
       ],
-      "updatedAt": "2026-09-23T08:31:26.275Z"
+      "updatedAt": "2026-10-04T10:34:12.214Z"
     },
     "drinking-water": {
       "count": 128,
@@ -460,10 +460,10 @@
           "lon": -118.25057
         }
       ],
-      "updatedAt": "2026-09-23T08:31:28.667Z"
+      "updatedAt": "2026-10-04T10:34:15.270Z"
     },
     "playgrounds": {
-      "count": 385,
+      "count": 386,
       "pois": [
         {
           "id": "way/501406427",
@@ -576,10 +576,10 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:14.331Z"
+      "updatedAt": "2026-10-04T10:34:16.485Z"
     },
     "parking": {
-      "count": 4317,
+      "count": 4324,
       "pois": [
         {
           "id": "way/427942890",
@@ -782,15 +782,15 @@
         }
       ],
       "stats": {
-        "free": 429,
+        "free": 430,
         "paid": 197,
         "stepFree": 28,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:16.385Z"
+      "updatedAt": "2026-10-04T10:34:18.150Z"
     },
     "charging-stations": {
-      "count": 64,
+      "count": 85,
       "pois": [
         {
           "id": "node/12944743770",
@@ -894,10 +894,10 @@
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:17.000Z"
+      "updatedAt": "2026-10-04T10:34:18.777Z"
     },
     "gas-stations": {
-      "count": 419,
+      "count": 417,
       "pois": [
         {
           "id": "node/3211936879",
@@ -1104,10 +1104,10 @@
         "stepFree": 6,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:59:17.827Z"
+      "updatedAt": "2026-10-04T10:34:19.628Z"
     },
     "ice-cream": {
-      "count": 105,
+      "count": 106,
       "pois": [
         {
           "id": "node/11374569651",
@@ -1307,6 +1307,12 @@
           "openingHours": "Mo-Su 12:00-23:00"
         },
         {
+          "id": "node/14136246736",
+          "name": "Wanderlust Creamery",
+          "lat": 34.116541,
+          "lon": -118.262005
+        },
+        {
           "id": "node/11880159577",
           "name": "Jenni's Ice Creams",
           "lat": 34.109105,
@@ -1329,23 +1335,15 @@
           "lon": -118.327793,
           "address": "Fountain Avenue 1253",
           "openingHours": "Mo-Th 16:00-23:00; Fr-Sa 15:00-00:00; Su 15:00-23:00"
-        },
-        {
-          "id": "node/6685627875",
-          "name": "After's Ice Cream",
-          "lat": 34.101831,
-          "lon": -118.324669,
-          "address": "Hollywood Boulevard 6201",
-          "openingHours": "Mo-Th 16:00-23:00; Fr-Su 14:00-24:00"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 8,
+        "stepFree": 9,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:18.848Z"
+      "updatedAt": "2026-10-04T10:34:20.464Z"
     },
     "dog-parks": {
       "count": 17,
@@ -1427,7 +1425,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:19.420Z"
+      "updatedAt": "2026-10-04T10:34:20.962Z"
     },
     "picnic-spots": {
       "count": 780,
@@ -1553,7 +1551,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:20.911Z"
+      "updatedAt": "2026-10-04T10:34:22.223Z"
     },
     "viewpoints": {
       "count": 59,
@@ -1712,7 +1710,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:21.822Z"
+      "updatedAt": "2026-10-04T10:34:22.937Z"
     },
     "beaches": {
       "count": 0,
@@ -1723,7 +1721,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:22.559Z"
+      "updatedAt": "2026-10-04T10:34:23.602Z"
     },
     "atms": {
       "count": 332,
@@ -1951,7 +1949,7 @@
         "stepFree": 8,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:23.489Z"
+      "updatedAt": "2026-10-04T10:34:24.560Z"
     },
     "post-boxes": {
       "count": 142,
@@ -2146,7 +2144,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:25.386Z"
+      "updatedAt": "2026-10-04T10:34:26.494Z"
     },
     "recycling": {
       "count": 22,
@@ -2224,7 +2222,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:27.359Z"
+      "updatedAt": "2026-10-04T10:34:28.394Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2235,10 +2233,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:27.940Z"
+      "updatedAt": "2026-10-04T10:34:28.882Z"
     },
     "libraries": {
-      "count": 162,
+      "count": 163,
       "pois": [
         {
           "id": "relation/6366080",
@@ -2454,7 +2452,7 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:29.065Z"
+      "updatedAt": "2026-10-04T10:34:29.938Z"
     },
     "outdoor-gyms": {
       "count": 62,
@@ -2503,7 +2501,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:30.452Z"
+      "updatedAt": "2026-10-04T10:34:31.327Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2514,7 +2512,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:31.171Z"
+      "updatedAt": "2026-10-04T10:34:32.052Z"
     },
     "shelters": {
       "count": 86,
@@ -2538,7 +2536,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:33.419Z"
+      "updatedAt": "2026-10-04T10:34:33.967Z"
     },
     "rest-areas": {
       "count": 5,
@@ -2549,7 +2547,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:34.059Z"
+      "updatedAt": "2026-10-04T10:34:34.704Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2560,7 +2558,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:34.600Z"
+      "updatedAt": "2026-10-04T10:34:35.137Z"
     },
     "post-offices": {
       "count": 132,
@@ -2769,7 +2767,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:35.325Z"
+      "updatedAt": "2026-10-04T10:34:35.806Z"
     },
     "showers": {
       "count": 0,
@@ -2780,7 +2778,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:35.899Z"
+      "updatedAt": "2026-10-04T10:34:36.307Z"
     },
     "fireplaces": {
       "count": 6,
@@ -2791,7 +2789,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:37.219Z"
+      "updatedAt": "2026-10-04T10:34:37.648Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2799,7 +2797,7 @@
       "updatedAt": "2026-08-17T04:05:38.663Z"
     },
     "benches": {
-      "count": 730,
+      "count": 733,
       "pois": [
         {
           "id": "node/4723311770",
@@ -2964,7 +2962,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:41.744Z"
+      "updatedAt": "2026-10-04T10:34:41.297Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3126,7 +3124,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:40.104Z"
+      "updatedAt": "2026-10-04T10:34:39.758Z"
+    },
+    "trash-bins": {
+      "count": 521,
+      "pois": [
+        {
+          "id": "node/12164460450",
+          "lat": 34.052326,
+          "lon": -118.24311,
+          "street": "North Main Street"
+        },
+        {
+          "id": "node/4269128754",
+          "lat": 34.051763,
+          "lon": -118.245457,
+          "street": "South Spring Street"
+        },
+        {
+          "id": "node/4227033278",
+          "lat": 34.046397,
+          "lon": -118.248678,
+          "street": "South Main Street"
+        },
+        {
+          "id": "node/12912960831",
+          "lat": 34.058967,
+          "lon": -118.239887,
+          "street": "North Broadway"
+        },
+        {
+          "id": "node/4409181654",
+          "lat": 34.056085,
+          "lon": -118.235603,
+          "street": "Union Station Underground Walkway"
+        },
+        {
+          "id": "node/5002264627",
+          "lat": 34.044341,
+          "lon": -118.251837,
+          "street": "Harlem Place"
+        },
+        {
+          "id": "node/5002266127",
+          "lat": 34.045195,
+          "lon": -118.253154,
+          "street": "West 7th Street"
+        },
+        {
+          "id": "node/5002216529",
+          "lat": 34.043299,
+          "lon": -118.250658,
+          "street": "East 7th Street"
+        },
+        {
+          "id": "node/12912999139",
+          "lat": 34.061975,
+          "lon": -118.237633,
+          "street": "New High Street"
+        },
+        {
+          "id": "node/9915349581",
+          "lat": 34.045843,
+          "lon": -118.256145,
+          "street": "South Olive Street"
+        },
+        {
+          "id": "node/5002246023",
+          "lat": 34.041774,
+          "lon": -118.252361,
+          "street": "South Los Angeles Street"
+        },
+        {
+          "id": "node/9920533384",
+          "lat": 34.04523,
+          "lon": -118.257122,
+          "street": "West 8th Street"
+        },
+        {
+          "id": "node/13107848708",
+          "lat": 34.066407,
+          "lon": -118.254493,
+          "street": "West Temple Street"
+        },
+        {
+          "id": "node/9908481086",
+          "lat": 34.041678,
+          "lon": -118.261752,
+          "street": "South Grand Avenue"
+        },
+        {
+          "id": "node/9908581272",
+          "lat": 34.041495,
+          "lon": -118.26181,
+          "street": "West 11th Street"
+        },
+        {
+          "id": "node/9879308481",
+          "lat": 34.039518,
+          "lon": -118.260315,
+          "street": "South Hill Street"
+        },
+        {
+          "id": "node/9908132623",
+          "lat": 34.040838,
+          "lon": -118.261913,
+          "street": "Margo Street"
+        },
+        {
+          "id": "node/5002237725",
+          "lat": 34.037035,
+          "lon": -118.258433,
+          "street": "East 12th Street"
+        },
+        {
+          "id": "node/9879299375",
+          "lat": 34.038601,
+          "lon": -118.261053,
+          "street": "West 12th Street"
+        },
+        {
+          "id": "node/5002265022",
+          "lat": 34.034523,
+          "lon": -118.257095,
+          "street": "East Pico Boulevard"
+        },
+        {
+          "id": "node/5002237727",
+          "lat": 34.03512,
+          "lon": -118.258346,
+          "street": "Santee Street"
+        },
+        {
+          "id": "node/5002249321",
+          "lat": 34.032659,
+          "lon": -118.254232,
+          "street": "South San Pedro Street"
+        },
+        {
+          "id": "node/9913667922",
+          "lat": 34.039254,
+          "lon": -118.264902,
+          "street": "West Pico Boulevard"
+        },
+        {
+          "id": "node/5002264621",
+          "lat": 34.029731,
+          "lon": -118.255978,
+          "street": "East 16th Street"
+        },
+        {
+          "id": "node/11035046593",
+          "lat": 34.075271,
+          "lon": -118.261335,
+          "street": "Glendale Boulevard"
+        },
+        {
+          "id": "node/13972756905",
+          "lat": 34.078923,
+          "lon": -118.250539,
+          "street": "Elysian Park Drive"
+        },
+        {
+          "id": "node/11035043128",
+          "lat": 34.075949,
+          "lon": -118.261245,
+          "street": "Park Avenue"
+        },
+        {
+          "id": "node/14188359702",
+          "lat": 34.079401,
+          "lon": -118.214893,
+          "street": "Pasadena Avenue"
+        },
+        {
+          "id": "node/6047237637",
+          "lat": 34.025878,
+          "lon": -118.280891,
+          "street": "Royal Street"
+        },
+        {
+          "id": "node/6047237638",
+          "lat": 34.025231,
+          "lon": -118.282478,
+          "street": "West 32nd Street"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:34:43.849Z"
     }
   }
 }

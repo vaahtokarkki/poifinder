@@ -1,9 +1,9 @@
 {
   "city": "budapest",
-  "generatedAt": "2026-09-27T09:31:40.330Z",
+  "generatedAt": "2026-10-04T10:01:34.126Z",
   "categories": {
     "toilets": {
-      "count": 531,
+      "count": 554,
       "pois": [
         {
           "id": "node/5842060852",
@@ -207,6 +207,15 @@
           "openingHours": "Mo-Su 06:00-22:00"
         },
         {
+          "id": "way/43009051",
+          "name": "Lurdy Ház",
+          "lat": 47.470928,
+          "lon": 19.084174,
+          "address": "Könyves Kálmán körút 12-14",
+          "openingHours": "Mo-Su 06:00-22:00",
+          "wheelchair": "yes"
+        },
+        {
           "id": "way/256119011",
           "name": "MOL",
           "lat": 47.496184,
@@ -223,21 +232,12 @@
           "address": "Kerepesi út 42-46",
           "openingHours": "Mo-Su 08:00-24:00",
           "wheelchair": "yes"
-        },
-        {
-          "id": "way/26836537",
-          "name": "Duna Plaza bevásárlóközpont",
-          "lat": 47.549954,
-          "lon": 19.072594,
-          "address": "Váci út 178",
-          "openingHours": "Mo-Sa 10:00-21:00; Su 10:00-19:00",
-          "wheelchair": "yes"
         }
       ],
       "stats": {
-        "free": 156,
+        "free": 170,
         "paid": 136,
-        "stepFree": 155,
+        "stepFree": 158,
         "partlyStepFree": 13
       },
       "near": [
@@ -279,7 +279,7 @@
         },
         {
           "landmark": "Q915195",
-          "within": 22,
+          "within": 24,
           "distance": 323,
           "bearing": 56,
           "poi": "node/5998693751",
@@ -296,10 +296,10 @@
           "lon": 19.062928
         }
       ],
-      "updatedAt": "2026-09-23T08:27:51.504Z"
+      "updatedAt": "2026-10-04T10:01:03.412Z"
     },
     "drinking-water": {
-      "count": 862,
+      "count": 871,
       "pois": [
         {
           "id": "node/1805112779",
@@ -329,6 +329,12 @@
           "lat": 47.5036,
           "lon": 19.028853,
           "openingHours": "sunrise-sunset"
+        },
+        {
+          "id": "node/4694562310",
+          "name": "Budapesti Lány",
+          "lat": 47.486027,
+          "lon": 19.045087
         },
         {
           "id": "node/2545452246",
@@ -488,19 +494,13 @@
           "lat": 47.501865,
           "lon": 19.045457,
           "street": "Id. Antall József rakpart"
-        },
-        {
-          "id": "node/3325716676",
-          "lat": 47.492645,
-          "lon": 19.038156,
-          "street": "Kőműves lépcső"
         }
       ],
       "stats": {
-        "free": 88,
+        "free": 94,
         "paid": 1,
-        "stepFree": 62,
-        "partlyStepFree": 20
+        "stepFree": 63,
+        "partlyStepFree": 21
       },
       "near": [
         {
@@ -558,7 +558,7 @@
           "lon": 19.062715
         }
       ],
-      "updatedAt": "2026-09-23T08:27:53.095Z"
+      "updatedAt": "2026-10-04T10:01:05.446Z"
     },
     "playgrounds": {
       "count": 557,
@@ -761,6 +761,14 @@
           "lon": 19.026525
         },
         {
+          "id": "way/581675730",
+          "name": "Klauzál téri játszótér",
+          "lat": 47.499345,
+          "lon": 19.06373,
+          "wheelchair": "limited",
+          "fee": "no"
+        },
+        {
           "id": "way/55581546",
           "name": "Hollósy játszótér",
           "lat": 47.494591,
@@ -780,24 +788,18 @@
           "openingHours": "06:00-sunset",
           "wheelchair": "no",
           "fee": "no"
-        },
-        {
-          "id": "way/326940162",
-          "name": "MOMKult Játszótér",
-          "lat": 47.490339,
-          "lon": 19.017424
         }
       ],
       "stats": {
-        "free": 22,
+        "free": 25,
         "paid": 2,
-        "stepFree": 50,
-        "partlyStepFree": 34
+        "stepFree": 51,
+        "partlyStepFree": 35
       },
-      "updatedAt": "2026-09-27T09:31:16.428Z"
+      "updatedAt": "2026-10-04T10:01:06.546Z"
     },
     "parking": {
-      "count": 2340,
+      "count": 2347,
       "pois": [
         {
           "id": "node/7010149903",
@@ -831,15 +833,6 @@
           "lat": 47.495404,
           "lon": 19.027975,
           "address": "Pálya utca 11",
-          "fee": "yes"
-        },
-        {
-          "id": "relation/19378946",
-          "name": "Bazilika Garázs",
-          "lat": 47.500628,
-          "lon": 19.05237,
-          "openingHours": "24/7",
-          "wheelchair": "yes",
           "fee": "yes"
         },
         {
@@ -918,7 +911,7 @@
           "id": "way/378961649",
           "name": "Park and Go",
           "lat": 47.509401,
-          "lon": 19.03144,
+          "lon": 19.031394,
           "address": "Varsányi Irén utca 11-13",
           "fee": "yes"
         },
@@ -1046,18 +1039,27 @@
           "openingHours": "24/7",
           "wheelchair": "no",
           "fee": "yes"
+        },
+        {
+          "id": "way/279369637",
+          "name": "Mária utcai parkoló",
+          "lat": 47.488767,
+          "lon": 19.068901,
+          "address": "Mária utca 38-40",
+          "openingHours": "24/7",
+          "fee": "yes"
         }
       ],
       "stats": {
-        "free": 806,
-        "paid": 477,
-        "stepFree": 41,
+        "free": 808,
+        "paid": 475,
+        "stepFree": 39,
         "partlyStepFree": 28
       },
-      "updatedAt": "2026-09-27T09:31:17.970Z"
+      "updatedAt": "2026-10-04T10:01:09.135Z"
     },
     "charging-stations": {
-      "count": 350,
+      "count": 351,
       "pois": [
         {
           "id": "node/4313873492",
@@ -1283,7 +1285,7 @@
         "stepFree": 7,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:31:18.613Z"
+      "updatedAt": "2026-10-04T10:01:10.263Z"
     },
     "gas-stations": {
       "count": 112,
@@ -1395,10 +1397,10 @@
         "stepFree": 56,
         "partlyStepFree": 8
       },
-      "updatedAt": "2026-09-27T09:31:19.429Z"
+      "updatedAt": "2026-10-04T10:01:11.402Z"
     },
     "ice-cream": {
-      "count": 99,
+      "count": 100,
       "pois": [
         {
           "id": "node/13147859202",
@@ -1650,10 +1652,10 @@
         "stepFree": 11,
         "partlyStepFree": 9
       },
-      "updatedAt": "2026-09-27T09:31:20.164Z"
+      "updatedAt": "2026-10-04T10:01:12.537Z"
     },
     "dog-parks": {
-      "count": 174,
+      "count": 175,
       "pois": [
         {
           "id": "way/219446073",
@@ -1694,6 +1696,12 @@
           "name": "Tisza utcai kutyafuttató",
           "lat": 47.525109,
           "lon": 19.05776
+        },
+        {
+          "id": "way/1560562670",
+          "name": "Tisza utcai kiskutyás futtató",
+          "lat": 47.524973,
+          "lon": 19.058315
         },
         {
           "id": "relation/19293733",
@@ -1801,10 +1809,10 @@
       "stats": {
         "free": 2,
         "paid": 0,
-        "stepFree": 51,
+        "stepFree": 52,
         "partlyStepFree": 12
       },
-      "updatedAt": "2026-09-27T09:31:20.920Z"
+      "updatedAt": "2026-10-04T10:01:13.411Z"
     },
     "picnic-spots": {
       "count": 547,
@@ -1852,7 +1860,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:22.252Z"
+      "updatedAt": "2026-10-04T10:01:14.617Z"
     },
     "viewpoints": {
       "count": 181,
@@ -2010,8 +2018,8 @@
         {
           "id": "way/315396361",
           "name": "Széchenyi-emlékmű és -kilátó",
-          "lat": 47.494641,
-          "lon": 18.987345
+          "lat": 47.494646,
+          "lon": 18.987351
         },
         {
           "id": "node/9706674540",
@@ -2057,7 +2065,7 @@
         "stepFree": 10,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T09:31:22.980Z"
+      "updatedAt": "2026-10-04T10:01:15.339Z"
     },
     "beaches": {
       "count": 5,
@@ -2099,10 +2107,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:23.643Z"
+      "updatedAt": "2026-10-04T10:01:15.829Z"
     },
     "atms": {
-      "count": 753,
+      "count": 750,
       "pois": [
         {
           "id": "node/4303197556",
@@ -2137,6 +2145,14 @@
           "name": "CoinATM Bitcoin ATM",
           "lat": 47.496558,
           "lon": 19.051683
+        },
+        {
+          "id": "node/13670974497",
+          "name": "Raiffeisen Bank ATM",
+          "lat": 47.506013,
+          "lon": 19.037969,
+          "address": "Batthyány tér 5-6",
+          "openingHours": "24/7"
         },
         {
           "id": "node/10873276495",
@@ -2235,8 +2251,8 @@
         {
           "id": "node/654080564",
           "name": "K&H Bank",
-          "lat": 47.511305,
-          "lon": 19.032484,
+          "lat": 47.511359,
+          "lon": 19.032497,
           "address": "Margit körút 43-45",
           "openingHours": "Mo 08:00-17:00; Tu 08:00-16:00; We 08:00-18:00; Th 08:00-16:00; Fr 08:00-15:00"
         },
@@ -2316,25 +2332,18 @@
           "address": "Október huszonharmadika utca 8-10",
           "openingHours": "Mo-Sa 10:00-21:00; Su 10:00-19:00; PH off",
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/789945441",
-          "name": "KDB Bank",
-          "lat": 47.472654,
-          "lon": 19.032373,
-          "wheelchair": "limited"
         }
       ],
       "stats": {
         "free": 1,
         "paid": 0,
-        "stepFree": 148,
+        "stepFree": 147,
         "partlyStepFree": 24
       },
-      "updatedAt": "2026-09-27T09:31:24.366Z"
+      "updatedAt": "2026-10-04T10:01:16.504Z"
     },
     "post-boxes": {
-      "count": 227,
+      "count": 228,
       "pois": [
         {
           "id": "node/5998737295",
@@ -2513,8 +2522,8 @@
         },
         {
           "id": "node/9790268140",
-          "lat": 47.494849,
-          "lon": 19.062765,
+          "lat": 47.494853,
+          "lon": 19.062752,
           "street": "Puskin utca"
         }
       ],
@@ -2524,10 +2533,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:25.888Z"
+      "updatedAt": "2026-10-04T10:01:17.696Z"
     },
     "recycling": {
-      "count": 366,
+      "count": 365,
       "pois": [
         {
           "id": "node/13734391989",
@@ -2654,7 +2663,7 @@
         },
         {
           "id": "node/6281167956",
-          "name": "INTER-METAL",
+          "name": "Inter-Metal Recycling",
           "lat": 47.436096,
           "lon": 19.064716,
           "address": "Budafoki út 5-7",
@@ -2736,10 +2745,10 @@
         "stepFree": 7,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:31:28.001Z"
+      "updatedAt": "2026-10-04T10:01:19.583Z"
     },
     "luggage-storage": {
-      "count": 22,
+      "count": 23,
       "pois": [
         {
           "id": "node/13413134880",
@@ -2801,10 +2810,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:28.504Z"
+      "updatedAt": "2026-10-04T10:01:20.076Z"
     },
     "libraries": {
-      "count": 96,
+      "count": 98,
       "pois": [
         {
           "id": "node/735205817",
@@ -2990,6 +2999,14 @@
           "openingHours": "Mo-Th 09:00-17:00; Fr 08:00-16:00"
         },
         {
+          "id": "node/14142050801",
+          "name": "Közkincs Közösségi Könyvtár",
+          "lat": 47.49479,
+          "lon": 19.062882,
+          "address": "Rákóczi út 11",
+          "openingHours": "Mo-Fr 14:00-18:00"
+        },
+        {
           "id": "node/12704382598",
           "name": "Kiskönyvtár",
           "lat": 47.509189,
@@ -3022,14 +3039,6 @@
           "address": "Teréz körút 2-4",
           "openingHours": "Mo-Tu,Th 09:00-19:00; We 12:00-19:00; Fr 09:00-18:00; Sa 10:00-14:00; 2026 Jun 22-2026 Aug 30 Mo,We-Th 12:00-18:00; 2026 Jun 22-2026 Aug 30 Tu,Fr 09:00-15:00; 2026 Jun 22-2026 Aug 30 Sa off; 2026 Aug 20-21 off; PH off",
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/6800527179",
-          "name": "Török utcai Könyvtár",
-          "lat": 47.515763,
-          "lon": 19.036804,
-          "address": "Török utca 7-9",
-          "openingHours": "Mo,We-Th 11:00-19:00; Tu,Fr 10:00-16:00; Sa 10:00-14:00; 2026 Jun 22-2026 Aug 30 Sa off; 2026 Jul 06-2026 Aug 02 off; 2026 Aug 20-21 off; PH off"
         }
       ],
       "stats": {
@@ -3038,10 +3047,10 @@
         "stepFree": 12,
         "partlyStepFree": 6
       },
-      "updatedAt": "2026-09-27T09:31:29.246Z"
+      "updatedAt": "2026-10-04T10:01:20.823Z"
     },
     "outdoor-gyms": {
-      "count": 151,
+      "count": 152,
       "pois": [
         {
           "id": "way/1340610771",
@@ -3070,6 +3079,13 @@
           "lat": 47.512192,
           "lon": 19.031624,
           "openingHours": "24/7",
+          "fee": "no"
+        },
+        {
+          "id": "node/417031662",
+          "name": "Klauzál téri fitnesz park",
+          "lat": 47.499867,
+          "lon": 19.063644,
           "fee": "no"
         },
         {
@@ -3139,10 +3155,10 @@
       "stats": {
         "free": 8,
         "paid": 0,
-        "stepFree": 6,
+        "stepFree": 7,
         "partlyStepFree": 7
       },
-      "updatedAt": "2026-09-27T09:31:30.824Z"
+      "updatedAt": "2026-10-04T10:01:22.077Z"
     },
     "camp-sites": {
       "count": 4,
@@ -3184,7 +3200,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:31.451Z"
+      "updatedAt": "2026-10-04T10:01:22.718Z"
     },
     "shelters": {
       "count": 26,
@@ -3258,10 +3274,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:33.433Z"
+      "updatedAt": "2026-10-04T10:01:25.337Z"
     },
     "rest-areas": {
-      "count": 3,
+      "count": 4,
       "pois": [
         {
           "id": "way/658007774",
@@ -3276,7 +3292,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:34.009Z"
+      "updatedAt": "2026-10-04T10:01:25.900Z"
     },
     "dump-stations": {
       "count": 1,
@@ -3287,10 +3303,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:34.470Z"
+      "updatedAt": "2026-10-04T10:01:26.288Z"
     },
     "post-offices": {
-      "count": 70,
+      "count": 69,
       "pois": [
         {
           "id": "node/12520178156",
@@ -3373,6 +3389,15 @@
           "address": "Dunavirág utca 2-6"
         },
         {
+          "id": "way/251575935",
+          "name": "Kiskorona Irodaház",
+          "lat": 47.538959,
+          "lon": 19.041469,
+          "address": "Kiscelli utca 7-9",
+          "openingHours": "Mo-Fr 08:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/6251713715",
           "name": "Kormányablak posta",
           "lat": 47.518924,
@@ -3403,21 +3428,28 @@
         "stepFree": 33,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T09:31:35.141Z"
+      "updatedAt": "2026-10-04T10:01:26.864Z"
     },
     "showers": {
-      "count": 24,
-      "pois": [],
+      "count": 25,
+      "pois": [
+        {
+          "id": "way/1558076785",
+          "name": "Zuhanyzó",
+          "lat": 47.473546,
+          "lon": 19.059845
+        }
+      ],
       "stats": {
         "free": 4,
         "paid": 1,
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:35.658Z"
+      "updatedAt": "2026-10-04T10:01:27.308Z"
     },
     "fireplaces": {
-      "count": 96,
+      "count": 97,
       "pois": [
         {
           "id": "node/4365935916",
@@ -3462,7 +3494,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:36.980Z"
+      "updatedAt": "2026-10-04T10:01:28.748Z"
     },
     "air-pumps": {
       "count": 2,
@@ -3470,7 +3502,7 @@
       "updatedAt": "2026-08-17T04:03:02.025Z"
     },
     "benches": {
-      "count": 9912,
+      "count": 9976,
       "pois": [
         {
           "id": "node/5842060856",
@@ -3662,7 +3694,7 @@
         "stepFree": 16,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:31:40.228Z"
+      "updatedAt": "2026-10-04T10:01:32.164Z"
     },
     "compressed-air": {
       "count": 2,
@@ -3670,7 +3702,7 @@
       "updatedAt": "2026-08-18T03:58:07.127Z"
     },
     "bicycle-repair": {
-      "count": 80,
+      "count": 79,
       "pois": [
         {
           "id": "node/5299717912",
@@ -3742,9 +3774,9 @@
         },
         {
           "id": "node/13374217272",
-          "lat": 47.511105,
-          "lon": 19.03206,
-          "street": "Margit körút"
+          "lat": 47.511162,
+          "lon": 19.032042,
+          "street": "Keleti Károly utca"
         },
         {
           "id": "node/3326811911",
@@ -3889,7 +3921,200 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:31:38.765Z"
+      "updatedAt": "2026-10-04T10:01:30.702Z"
+    },
+    "trash-bins": {
+      "count": 8999,
+      "pois": [
+        {
+          "id": "node/9261764975",
+          "name": "Zárt szemétlerakó",
+          "lat": 47.545417,
+          "lon": 19.081779
+        },
+        {
+          "id": "node/6779426777",
+          "name": "Bencsics Konténer",
+          "lat": 47.53566,
+          "lon": 19.101221,
+          "address": "Komáromi út 14"
+        },
+        {
+          "id": "node/1835855741",
+          "name": "Szemétledobó",
+          "lat": 47.486107,
+          "lon": 19.143387
+        },
+        {
+          "id": "node/11465715708",
+          "lat": 47.497933,
+          "lon": 19.040128,
+          "street": "Clark Ádám tér"
+        },
+        {
+          "id": "node/11945589175",
+          "lat": 47.49814,
+          "lon": 19.039404,
+          "street": "Budavári alagút"
+        },
+        {
+          "id": "node/11945589220",
+          "lat": 47.498424,
+          "lon": 19.039453,
+          "street": "Király lépcső"
+        },
+        {
+          "id": "node/11945473064",
+          "lat": 47.497773,
+          "lon": 19.038963,
+          "street": "Szent György tér"
+        },
+        {
+          "id": "node/11945589222",
+          "lat": 47.497614,
+          "lon": 19.041476,
+          "street": "Friedrich Born rakpart"
+        },
+        {
+          "id": "node/12906393440",
+          "lat": 47.497306,
+          "lon": 19.038906,
+          "street": "Habsburg lépcső"
+        },
+        {
+          "id": "node/13899157606",
+          "lat": 47.496692,
+          "lon": 19.039536,
+          "street": "Savoyai terasz"
+        },
+        {
+          "id": "node/14054760060",
+          "lat": 47.499964,
+          "lon": 19.040021,
+          "street": "Jégverem utca"
+        },
+        {
+          "id": "node/5834154005",
+          "lat": 47.499802,
+          "lon": 19.03834,
+          "street": "Hunyadi János út"
+        },
+        {
+          "id": "node/9162342332",
+          "lat": 47.495772,
+          "lon": 19.038823,
+          "street": "Stöckl-lépcső"
+        },
+        {
+          "id": "node/9209700867",
+          "lat": 47.495256,
+          "lon": 19.040171,
+          "street": "Oroszlános udvar"
+        },
+        {
+          "id": "node/5787170880",
+          "lat": 47.49547,
+          "lon": 19.038191,
+          "street": "Palota út"
+        },
+        {
+          "id": "node/5642557399",
+          "lat": 47.495576,
+          "lon": 19.042515,
+          "street": "Ybl Miklós tér"
+        },
+        {
+          "id": "node/14054412192",
+          "lat": 47.500976,
+          "lon": 19.039372,
+          "street": "Fő utca"
+        },
+        {
+          "id": "node/5787170882",
+          "lat": 47.4952,
+          "lon": 19.037823,
+          "street": "Váralja utca"
+        },
+        {
+          "id": "node/4285006661",
+          "lat": 47.501069,
+          "lon": 19.040037,
+          "street": "Bem rakpart"
+        },
+        {
+          "id": "node/5469629547",
+          "lat": 47.498726,
+          "lon": 19.035558,
+          "street": "Tóth Árpád sétány"
+        },
+        {
+          "id": "node/5834154011",
+          "lat": 47.500462,
+          "lon": 19.037107,
+          "street": "Szalag lépcső"
+        },
+        {
+          "id": "node/5834154010",
+          "lat": 47.500692,
+          "lon": 19.037274,
+          "street": "Szalag utca"
+        },
+        {
+          "id": "node/5787193376",
+          "lat": 47.494613,
+          "lon": 19.038454,
+          "street": "Dózsa György tér"
+        },
+        {
+          "id": "node/5786820099",
+          "lat": 47.499546,
+          "lon": 19.035449,
+          "street": "Dísz tér"
+        },
+        {
+          "id": "node/6079637131",
+          "lat": 47.493944,
+          "lon": 19.038733,
+          "street": "Attila út"
+        },
+        {
+          "id": "node/11822869704",
+          "lat": 47.502038,
+          "lon": 19.039444,
+          "street": "Halász utca"
+        },
+        {
+          "id": "node/12899860009",
+          "lat": 47.49401,
+          "lon": 19.042423,
+          "street": "Kemal Atatürk sétaút"
+        },
+        {
+          "id": "node/12798308973",
+          "lat": 47.501079,
+          "lon": 19.036131,
+          "street": "Csónak utca"
+        },
+        {
+          "id": "node/14054517145",
+          "lat": 47.501176,
+          "lon": 19.036286,
+          "street": "Donáti utca"
+        },
+        {
+          "id": "node/5834154015",
+          "lat": 47.501084,
+          "lon": 19.036119,
+          "street": "Jezsuita lépcső"
+        }
+      ],
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 20,
+        "partlyStepFree": 10
+      },
+      "updatedAt": "2026-10-04T10:01:34.024Z"
     }
   }
 }

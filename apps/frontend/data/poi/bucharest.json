@@ -1,9 +1,9 @@
 {
   "city": "bucharest",
-  "generatedAt": "2026-09-27T09:33:15.268Z",
+  "generatedAt": "2026-10-04T10:03:16.938Z",
   "categories": {
     "toilets": {
-      "count": 177,
+      "count": 180,
       "pois": [
         {
           "id": "node/10029009617",
@@ -66,12 +66,12 @@
         },
         {
           "id": "node/11009381377",
-          "name": "B&B",
           "lat": 44.445459,
           "lon": 26.063231,
           "address": "Splaiul Independenței 210-210B",
           "openingHours": "Mo-Sa 06:30-23:00; Su 06:30-22:00",
-          "fee": "no"
+          "fee": "no",
+          "context": "Centrul Comercial Orhideea"
         },
         {
           "id": "way/43269897",
@@ -155,9 +155,9 @@
         }
       ],
       "stats": {
-        "free": 102,
+        "free": 103,
         "paid": 6,
-        "stepFree": 21,
+        "stepFree": 22,
         "partlyStepFree": 24
       },
       "near": [
@@ -181,7 +181,7 @@
         },
         {
           "landmark": "Q638278",
-          "within": 5,
+          "within": 6,
           "distance": 56,
           "bearing": 352,
           "poi": "node/3965443837",
@@ -207,22 +207,17 @@
           "lon": 26.101103
         }
       ],
-      "updatedAt": "2026-09-23T08:28:03.278Z"
+      "updatedAt": "2026-10-04T10:02:54.320Z"
     },
     "drinking-water": {
-      "count": 255,
+      "count": 254,
       "pois": [
         {
-          "id": "node/9028283118",
+          "id": "node/9028283119",
           "name": "Apa",
-          "lat": 44.426884,
-          "lon": 26.103745
-        },
-        {
-          "id": "node/9031441317",
-          "name": "Cișmea",
-          "lat": 44.42669,
-          "lon": 26.101142
+          "lat": 44.429143,
+          "lon": 26.10226,
+          "fee": "no"
         },
         {
           "id": "node/11924502531",
@@ -235,6 +230,12 @@
           "name": "Cijmea apa",
           "lat": 44.437339,
           "lon": 26.078935
+        },
+        {
+          "id": "node/4223729593",
+          "name": "Cișmea",
+          "lat": 44.446514,
+          "lon": 26.090457
         },
         {
           "id": "node/9091604418",
@@ -304,6 +305,18 @@
           "lon": 26.169387
         },
         {
+          "id": "node/9028283118",
+          "lat": 44.426884,
+          "lon": 26.103745,
+          "street": "Bulevardul Unirii"
+        },
+        {
+          "id": "node/9031441217",
+          "lat": 44.427057,
+          "lon": 26.101162,
+          "street": "Piața Unirii"
+        },
+        {
           "id": "node/6639560485",
           "lat": 44.429214,
           "lon": 26.102218,
@@ -320,12 +333,6 @@
           "lat": 44.432311,
           "lon": 26.104068,
           "street": "Pasajul Latin"
-        },
-        {
-          "id": "node/11182692037",
-          "lat": 44.427466,
-          "lon": 26.093075,
-          "street": "Bulevardul Unirii"
         },
         {
           "id": "node/2291339798",
@@ -376,12 +383,6 @@
           "street": "Intrarea Vasile Păun"
         },
         {
-          "id": "node/2315300437",
-          "lat": 44.436851,
-          "lon": 26.090019,
-          "street": "Parterul central"
-        },
-        {
           "id": "node/11992913169",
           "lat": 44.43317,
           "lon": 26.084669,
@@ -395,7 +396,7 @@
         }
       ],
       "stats": {
-        "free": 38,
+        "free": 39,
         "paid": 0,
         "stepFree": 9,
         "partlyStepFree": 1
@@ -447,10 +448,10 @@
           "lon": 26.101142
         }
       ],
-      "updatedAt": "2026-09-23T08:28:05.026Z"
+      "updatedAt": "2026-10-04T10:02:56.368Z"
     },
     "playgrounds": {
-      "count": 777,
+      "count": 782,
       "pois": [
         {
           "id": "node/2459265735",
@@ -549,8 +550,8 @@
         {
           "id": "node/2280760088",
           "name": "Loc de Joacă pentru Copii",
-          "lat": 44.389181,
-          "lon": 26.091017
+          "lat": 44.389197,
+          "lon": 26.09103
         },
         {
           "id": "node/6903979316",
@@ -620,12 +621,6 @@
           "lon": 26.083904
         },
         {
-          "id": "node/2351278616",
-          "name": "Loc joaca",
-          "lat": 44.382028,
-          "lon": 26.111763
-        },
-        {
           "id": "node/2791579382",
           "name": "închirieri biciclete",
           "lat": 44.471278,
@@ -637,6 +632,14 @@
           "lat": 44.383409,
           "lon": 26.125841,
           "address": "Strada Moldovița 4"
+        },
+        {
+          "id": "node/11533501374",
+          "name": "Let's Play",
+          "lat": 44.398996,
+          "lon": 26.044071,
+          "address": "Șoseaua Alexandriei 152",
+          "openingHours": "Mo-Su 09:00-21:00"
         }
       ],
       "stats": {
@@ -645,10 +648,10 @@
         "stepFree": 5,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:32:53.154Z"
+      "updatedAt": "2026-10-04T10:02:57.379Z"
     },
     "parking": {
-      "count": 2881,
+      "count": 2905,
       "pois": [
         {
           "id": "way/197738034",
@@ -855,15 +858,15 @@
         }
       ],
       "stats": {
-        "free": 233,
-        "paid": 166,
+        "free": 226,
+        "paid": 167,
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:54.462Z"
+      "updatedAt": "2026-10-04T10:02:58.421Z"
     },
     "charging-stations": {
-      "count": 67,
+      "count": 68,
       "pois": [
         {
           "id": "node/11086770673",
@@ -989,7 +992,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:54.981Z"
+      "updatedAt": "2026-10-04T10:02:58.857Z"
     },
     "gas-stations": {
       "count": 193,
@@ -1214,9 +1217,9 @@
         "free": 0,
         "paid": 0,
         "stepFree": 13,
-        "partlyStepFree": 3
+        "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T09:32:55.841Z"
+      "updatedAt": "2026-10-04T10:02:59.426Z"
     },
     "ice-cream": {
       "count": 37,
@@ -1422,23 +1425,16 @@
         "stepFree": 1,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T09:32:56.538Z"
+      "updatedAt": "2026-10-04T10:02:59.994Z"
     },
     "dog-parks": {
-      "count": 53,
+      "count": 57,
       "pois": [
         {
-          "id": "way/163137311",
+          "id": "way/1562806137",
           "name": "Parc pentru câini",
-          "lat": 44.451229,
-          "lon": 26.041787,
-          "wheelchair": "limited"
-        },
-        {
-          "id": "way/1480961800",
-          "name": "Țarc câini",
-          "lat": 44.419027,
-          "lon": 26.015103
+          "lat": 44.468916,
+          "lon": 26.139054
         }
       ],
       "stats": {
@@ -1447,7 +1443,7 @@
         "stepFree": 5,
         "partlyStepFree": 11
       },
-      "updatedAt": "2026-09-27T09:32:57.058Z"
+      "updatedAt": "2026-10-04T10:03:00.443Z"
     },
     "picnic-spots": {
       "count": 32,
@@ -1465,7 +1461,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:58.355Z"
+      "updatedAt": "2026-10-04T10:03:01.503Z"
     },
     "viewpoints": {
       "count": 26,
@@ -1509,7 +1505,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:59.058Z"
+      "updatedAt": "2026-10-04T10:03:02.148Z"
     },
     "beaches": {
       "count": 3,
@@ -1520,23 +1516,11 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:59.630Z"
+      "updatedAt": "2026-10-04T10:03:02.589Z"
     },
     "atms": {
-      "count": 684,
+      "count": 603,
       "pois": [
-        {
-          "id": "node/7072636090",
-          "name": "Euronet",
-          "lat": 44.425463,
-          "lon": 26.103629
-        },
-        {
-          "id": "node/10000060580",
-          "name": "Raiffeisen Bank",
-          "lat": 44.427349,
-          "lon": 26.100406
-        },
         {
           "id": "node/1563413172",
           "name": "First Bank",
@@ -1570,24 +1554,12 @@
           "wheelchair": "limited"
         },
         {
-          "id": "node/7071986524",
-          "name": "ATM Euronet Hotel Europa Royale",
-          "lat": 44.429498,
-          "lon": 26.101559
-        },
-        {
           "id": "node/7266806934",
           "name": "Centrul de Podologie Ahile",
           "lat": 44.42925,
           "lon": 26.104479,
           "address": "Bulevardul Ion Constantin Brătianu 39",
           "openingHours": "Mo-Fr 10:00-20:00"
-        },
-        {
-          "id": "node/7072038767",
-          "name": "ATM Euronet Hanul lui Manuc",
-          "lat": 44.429762,
-          "lon": 26.102222
         },
         {
           "id": "node/11559666181",
@@ -1598,37 +1570,12 @@
           "openingHours": "24/7"
         },
         {
-          "id": "node/7072148319",
-          "name": "ATM Euronet Antique Hostel",
-          "lat": 44.429652,
-          "lon": 26.099797
-        },
-        {
-          "id": "node/7072094252",
-          "name": "ATM Euronet Hotel Concorde",
-          "lat": 44.429729,
-          "lon": 26.099415
-        },
-        {
           "id": "node/10775253365",
           "name": "ATM Multibanco",
           "lat": 44.429983,
           "lon": 26.099937,
           "address": "Strada Franceză 46",
           "openingHours": "24/7"
-        },
-        {
-          "id": "node/7072030137",
-          "name": "ATM Euronet Tezaur Unirii",
-          "lat": 44.430427,
-          "lon": 26.103349
-        },
-        {
-          "id": "node/7080689121",
-          "name": "ATM Alpha Bank",
-          "lat": 44.430369,
-          "lon": 26.100486,
-          "wheelchair": "yes"
         },
         {
           "id": "node/2690812695",
@@ -1646,23 +1593,17 @@
           "address": "Bulevardul Unirii"
         },
         {
-          "id": "node/7072147467",
-          "name": "ATM Euronet Hotel Prince Park Residence",
-          "lat": 44.422893,
-          "lon": 26.098603
-        },
-        {
-          "id": "node/7071986573",
-          "name": "ATM Euronet Unirii",
-          "lat": 44.430011,
-          "lon": 26.107501
-        },
-        {
           "id": "node/4997248609",
           "name": "Patria Bank",
           "lat": 44.430645,
           "lon": 26.106545,
           "address": "Strada Sfânta Vineri 11"
+        },
+        {
+          "id": "node/1814904459",
+          "name": "Raiffeisen Bank",
+          "lat": 44.431618,
+          "lon": 26.103006
         },
         {
           "id": "node/1439641536",
@@ -1696,12 +1637,6 @@
           "address": "Spaiul Unirii"
         },
         {
-          "id": "node/7072038764",
-          "name": "ATM Euronet X Hostel",
-          "lat": 44.431086,
-          "lon": 26.107729
-        },
-        {
           "id": "node/5183790886",
           "name": "UniCredit Bank",
           "lat": 44.423139,
@@ -1718,31 +1653,112 @@
           "wheelchair": "no"
         },
         {
-          "id": "node/7072636089",
-          "name": "ATM Euronet La doi pași",
-          "lat": 44.429705,
-          "lon": 26.094475
+          "id": "node/3871191447",
+          "name": "Banca Transilvania",
+          "lat": 44.430875,
+          "lon": 26.091659
         },
         {
-          "id": "node/7106661977",
-          "name": "ATM OTP Bank",
-          "lat": 44.431626,
-          "lon": 26.111128
+          "id": "node/9195987991",
+          "name": "Vista Bank",
+          "lat": 44.437707,
+          "lon": 26.097682,
+          "address": "Calea Victoriei 60",
+          "openingHours": "Mo-Fr 09:00-16:00",
+          "wheelchair": "limited"
         },
         {
-          "id": "node/7072108593",
-          "name": "ATM Euronet Hotel Liad",
-          "lat": 44.434356,
-          "lon": 26.105858
+          "id": "node/7018311391",
+          "name": "Libra Bank Regina Elisabeta",
+          "lat": 44.434457,
+          "lon": 26.090184,
+          "address": "Bulevardul Regina Elisabeta 63",
+          "openingHours": "Mo-Fr 09:00-17:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/2757850673",
+          "name": "Alpha Bank - Unirii",
+          "lat": 44.425544,
+          "lon": 26.11988,
+          "openingHours": "Mo-Fr 09:00-17:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/6321068877",
+          "name": "Libra Bank",
+          "lat": 44.438363,
+          "lon": 26.094011,
+          "address": "Strada Ion Câmpineanu 29",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/4549374248",
+          "name": "Libra Bank Magheru",
+          "lat": 44.441102,
+          "lon": 26.099375,
+          "openingHours": "Mo-Fr 09:00-17:00",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "node/2388108677",
+          "name": "Catena",
+          "lat": 44.433127,
+          "lon": 26.121132,
+          "address": "Calea Călărașilor 133",
+          "openingHours": "Mo-Fr 08:00-22:00; Sa,Su 08:00-18:00"
+        },
+        {
+          "id": "node/7027263838",
+          "name": "Libra Bank Sediul Central",
+          "lat": 44.423007,
+          "lon": 26.123052
+        },
+        {
+          "id": "node/11068961015",
+          "name": "Miele",
+          "lat": 44.441025,
+          "lon": 26.095098,
+          "address": "Calea Victoriei 63-81",
+          "openingHours": "Mo-Fr 10:00-19:00; Sa 10:00-16:00"
+        },
+        {
+          "id": "node/2724943502",
+          "name": "Idea Bank",
+          "lat": 44.426198,
+          "lon": 26.124638,
+          "address": "Bulevardul Unirii",
+          "openingHours": "Mo-Fr 09:00-17:00",
+          "wheelchair": "no"
+        },
+        {
+          "id": "node/4689972818",
+          "name": "BRD Șerban Vodă",
+          "lat": 44.410935,
+          "lon": 26.09937,
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
+          "id": "node/7016390934",
+          "name": "OTP Bank",
+          "lat": 44.412451,
+          "lon": 26.114757
+        },
+        {
+          "id": "node/1563503686",
+          "name": "ATM - Raiffeisen Bank - INTERBRANDS",
+          "lat": 44.415988,
+          "lon": 26.084172,
+          "address": "Șoseaua Viilor 14"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 77,
-        "partlyStepFree": 47
+        "stepFree": 72,
+        "partlyStepFree": 46
       },
-      "updatedAt": "2026-09-27T09:33:00.387Z"
+      "updatedAt": "2026-10-04T10:03:03.163Z"
     },
     "post-boxes": {
       "count": 12,
@@ -1803,7 +1819,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:01.920Z"
+      "updatedAt": "2026-10-04T10:03:04.064Z"
     },
     "recycling": {
       "count": 101,
@@ -2004,7 +2020,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:04.093Z"
+      "updatedAt": "2026-10-04T10:03:06.144Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -2025,7 +2041,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:04.591Z"
+      "updatedAt": "2026-10-04T10:03:06.633Z"
     },
     "libraries": {
       "count": 52,
@@ -2260,7 +2276,7 @@
         "stepFree": 2,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T09:33:05.240Z"
+      "updatedAt": "2026-10-04T10:03:07.237Z"
     },
     "outdoor-gyms": {
       "count": 25,
@@ -2271,7 +2287,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:06.318Z"
+      "updatedAt": "2026-10-04T10:03:08.168Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2282,7 +2298,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:06.899Z"
+      "updatedAt": "2026-10-04T10:03:08.729Z"
     },
     "shelters": {
       "count": 2,
@@ -2293,7 +2309,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:08.771Z"
+      "updatedAt": "2026-10-04T10:03:10.343Z"
     },
     "rest-areas": {
       "count": 8,
@@ -2312,7 +2328,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:09.440Z"
+      "updatedAt": "2026-10-04T10:03:10.898Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2323,7 +2339,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:09.929Z"
+      "updatedAt": "2026-10-04T10:03:11.296Z"
     },
     "post-offices": {
       "count": 74,
@@ -2561,7 +2577,7 @@
         "stepFree": 9,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:33:10.512Z"
+      "updatedAt": "2026-10-04T10:03:11.736Z"
     },
     "showers": {
       "count": 1,
@@ -2579,7 +2595,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:11.051Z"
+      "updatedAt": "2026-10-04T10:03:12.078Z"
     },
     "fireplaces": {
       "count": 0,
@@ -2590,7 +2606,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:12.499Z"
+      "updatedAt": "2026-10-04T10:03:13.028Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2598,7 +2614,7 @@
       "updatedAt": "2026-08-17T04:03:12.967Z"
     },
     "benches": {
-      "count": 1509,
+      "count": 1510,
       "pois": [
         {
           "id": "node/452656152",
@@ -2709,7 +2725,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:15.166Z"
+      "updatedAt": "2026-10-04T10:03:15.444Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2738,7 +2754,157 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:33:13.910Z"
+      "updatedAt": "2026-10-04T10:03:14.337Z"
+    },
+    "trash-bins": {
+      "count": 382,
+      "pois": [
+        {
+          "id": "node/10210292814",
+          "name": "Hârtie",
+          "lat": 44.440434,
+          "lon": 26.099749
+        },
+        {
+          "id": "node/10210234199",
+          "name": "Plastic/Metal",
+          "lat": 44.440459,
+          "lon": 26.099746
+        },
+        {
+          "id": "node/10587289657",
+          "name": "Hârtie/Carton",
+          "lat": 44.454217,
+          "lon": 26.08623
+        },
+        {
+          "id": "node/13682388409",
+          "lat": 44.430587,
+          "lon": 26.098594,
+          "street": "Strada Franceză"
+        },
+        {
+          "id": "node/13682358241",
+          "lat": 44.430818,
+          "lon": 26.098265,
+          "street": "Strada Poștei"
+        },
+        {
+          "id": "node/11108005008",
+          "lat": 44.431871,
+          "lon": 26.099387,
+          "street": "Strada Stavropoleos"
+        },
+        {
+          "id": "node/12918893301",
+          "lat": 44.431982,
+          "lon": 26.097173,
+          "street": "Calea Victoriei"
+        },
+        {
+          "id": "node/11192835082",
+          "lat": 44.433215,
+          "lon": 26.100486,
+          "street": "Strada Doamnei"
+        },
+        {
+          "id": "node/11190283311",
+          "lat": 44.432403,
+          "lon": 26.110988,
+          "street": "Strada Constantin F. Robescu"
+        },
+        {
+          "id": "node/13197962985",
+          "lat": 44.435059,
+          "lon": 26.102972,
+          "street": "Bulevardul Ion C. Brătianu"
+        },
+        {
+          "id": "node/13197979411",
+          "lat": 44.435415,
+          "lon": 26.103021,
+          "street": "Bulevardul Carol I"
+        },
+        {
+          "id": "node/11241098606",
+          "lat": 44.42164,
+          "lon": 26.112632,
+          "street": "Aleea Apahida"
+        },
+        {
+          "id": "node/13008467752",
+          "lat": 44.435579,
+          "lon": 26.099553,
+          "street": "Strada Edgar Quinet"
+        },
+        {
+          "id": "node/11241098604",
+          "lat": 44.421666,
+          "lon": 26.113743,
+          "street": "Aleea Dimitrie Anghel"
+        },
+        {
+          "id": "node/11241098602",
+          "lat": 44.421351,
+          "lon": 26.114549,
+          "street": "Strada Alexandru Vlahuță"
+        },
+        {
+          "id": "node/11610732592",
+          "lat": 44.414563,
+          "lon": 26.105813,
+          "street": "Bulevardul Gheorghe Șincai"
+        },
+        {
+          "id": "node/11193041116",
+          "lat": 44.437028,
+          "lon": 26.090751,
+          "street": "Aleea Magnoliei"
+        },
+        {
+          "id": "node/13148181965",
+          "lat": 44.416164,
+          "lon": 26.113643,
+          "street": "Calea Văcărești"
+        },
+        {
+          "id": "node/10210276274",
+          "lat": 44.440844,
+          "lon": 26.099933,
+          "street": "Bulevardul General Gheorghe Magheru"
+        },
+        {
+          "id": "node/13005838171",
+          "lat": 44.43319,
+          "lon": 26.08457,
+          "street": "Splaiul Independenței"
+        },
+        {
+          "id": "node/2997613218",
+          "lat": 44.42494,
+          "lon": 26.124231,
+          "street": "Strada Andrei Bârseanu"
+        },
+        {
+          "id": "node/13635171393",
+          "lat": 44.426991,
+          "lon": 26.126205,
+          "street": "Strada Profesor Moise Nicoară"
+        },
+        {
+          "id": "node/10210290953",
+          "lat": 44.44448,
+          "lon": 26.098953,
+          "street": "Strada George Enescu"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:03:16.837Z"
     }
   }
 }

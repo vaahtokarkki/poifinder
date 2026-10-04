@@ -1,9 +1,9 @@
 {
   "city": "austin",
-  "generatedAt": "2026-09-27T10:02:22.790Z",
+  "generatedAt": "2026-10-04T10:37:48.785Z",
   "categories": {
     "toilets": {
-      "count": 71,
+      "count": 74,
       "pois": [
         {
           "id": "node/7935765897",
@@ -65,9 +65,10 @@
         {
           "id": "way/25795473",
           "name": "Perry-Castañeda Library",
-          "lat": 30.282757,
+          "lat": 30.282754,
           "lon": -97.738194,
-          "address": "East 21st Street 101"
+          "address": "East 21st Street 101",
+          "openingHours": "Mo-Su 07:00-20:00"
         },
         {
           "id": "node/12706029179",
@@ -75,6 +76,19 @@
           "lon": -97.754615,
           "wheelchair": "yes",
           "context": "H-E-B"
+        },
+        {
+          "id": "node/14195620601",
+          "lat": 30.231113,
+          "lon": -97.757113,
+          "context": "Munday Library"
+        },
+        {
+          "id": "node/14195620701",
+          "lat": 30.229904,
+          "lon": -97.755878,
+          "wheelchair": "yes",
+          "context": "Holy Cross Hall"
         },
         {
           "id": "way/52720170",
@@ -112,13 +126,13 @@
       "stats": {
         "free": 8,
         "paid": 0,
-        "stepFree": 20,
+        "stepFree": 21,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-23T08:31:49.063Z"
+      "updatedAt": "2026-10-04T10:37:25.778Z"
     },
     "drinking-water": {
-      "count": 158,
+      "count": 159,
       "pois": [
         {
           "id": "node/3712045959",
@@ -362,7 +376,7 @@
         "stepFree": 34,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-23T08:31:50.904Z"
+      "updatedAt": "2026-10-04T10:37:27.830Z"
     },
     "playgrounds": {
       "count": 142,
@@ -425,10 +439,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:02.292Z"
+      "updatedAt": "2026-10-04T10:37:28.836Z"
     },
     "parking": {
-      "count": 1656,
+      "count": 1660,
       "pois": [
         {
           "id": "way/99725033",
@@ -528,7 +542,8 @@
           "id": "way/1021335881",
           "name": "Health Center Garage",
           "lat": 30.2765,
-          "lon": -97.735393
+          "lon": -97.735393,
+          "address": "Trinity Street 1601"
         },
         {
           "id": "relation/12267042",
@@ -547,7 +562,8 @@
           "id": "way/124952573",
           "name": "Guadalupe Garage",
           "lat": 30.279526,
-          "lon": -97.743236
+          "lon": -97.743236,
+          "address": "West 17th Street 417"
         },
         {
           "id": "way/381834561",
@@ -618,6 +634,7 @@
           "name": "San Antonio Garage",
           "lat": 30.288686,
           "lon": -97.742661,
+          "address": "San Antonio Street 2420",
           "openingHours": "24/7",
           "fee": "yes"
         },
@@ -644,12 +661,12 @@
         }
       ],
       "stats": {
-        "free": 222,
-        "paid": 88,
+        "free": 223,
+        "paid": 91,
         "stepFree": 8,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T10:02:03.625Z"
+      "updatedAt": "2026-10-04T10:37:29.903Z"
     },
     "charging-stations": {
       "count": 148,
@@ -898,7 +915,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:04.140Z"
+      "updatedAt": "2026-10-04T10:37:30.337Z"
     },
     "gas-stations": {
       "count": 139,
@@ -1090,7 +1107,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:04.722Z"
+      "updatedAt": "2026-10-04T10:37:30.837Z"
     },
     "ice-cream": {
       "count": 25,
@@ -1221,7 +1238,7 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:05.382Z"
+      "updatedAt": "2026-10-04T10:37:31.347Z"
     },
     "dog-parks": {
       "count": 35,
@@ -1291,10 +1308,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:05.920Z"
+      "updatedAt": "2026-10-04T10:37:31.788Z"
     },
     "picnic-spots": {
-      "count": 223,
+      "count": 237,
       "pois": [],
       "stats": {
         "free": 0,
@@ -1302,7 +1319,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:06.979Z"
+      "updatedAt": "2026-10-04T10:37:32.857Z"
     },
     "viewpoints": {
       "count": 27,
@@ -1362,7 +1379,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:07.640Z"
+      "updatedAt": "2026-10-04T10:37:33.496Z"
     },
     "beaches": {
       "count": 0,
@@ -1373,17 +1390,11 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:08.209Z"
+      "updatedAt": "2026-10-04T10:37:33.947Z"
     },
     "atms": {
       "count": 67,
       "pois": [
-        {
-          "id": "node/1481721331",
-          "name": "Prosperity Bank",
-          "lat": 30.267103,
-          "lon": -97.741545
-        },
         {
           "id": "way/1213502016",
           "name": "7-Eleven",
@@ -1496,7 +1507,7 @@
         "stepFree": 9,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:08.860Z"
+      "updatedAt": "2026-10-04T10:37:34.516Z"
     },
     "post-boxes": {
       "count": 17,
@@ -1580,10 +1591,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:10.239Z"
+      "updatedAt": "2026-10-04T10:37:35.547Z"
     },
     "recycling": {
-      "count": 71,
+      "count": 82,
       "pois": [
         {
           "id": "node/11399466705",
@@ -1662,10 +1673,28 @@
           "street": "Pfluger Pedestrian Bridge"
         },
         {
+          "id": "node/14141197495",
+          "lat": 30.279619,
+          "lon": -97.738737,
+          "street": "West 18th Street"
+        },
+        {
+          "id": "node/14141220135",
+          "lat": 30.280403,
+          "lon": -97.738085,
+          "street": "East Martin Luther King Jr Boulevard"
+        },
+        {
           "id": "node/13816337218",
           "lat": 30.281894,
           "lon": -97.735,
           "street": "Jester Circle"
+        },
+        {
+          "id": "node/14156653381",
+          "lat": 30.283077,
+          "lon": -97.737718,
+          "street": "Speedway"
         },
         {
           "id": "node/13819487815",
@@ -1680,16 +1709,16 @@
           "street": "Nueces Street"
         },
         {
+          "id": "node/14158907646",
+          "lat": 30.289247,
+          "lon": -97.7367,
+          "street": "East Dean Keeton Street"
+        },
+        {
           "id": "node/12644643776",
           "lat": 30.290215,
           "lon": -97.74124,
           "street": "Guadalupe Street"
-        },
-        {
-          "id": "node/7848132569",
-          "lat": 30.287547,
-          "lon": -97.727224,
-          "street": "East Dean Keeton Street"
         },
         {
           "id": "node/13836488923",
@@ -1758,7 +1787,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:12.240Z"
+      "updatedAt": "2026-10-04T10:37:37.374Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1769,10 +1798,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:12.739Z"
+      "updatedAt": "2026-10-04T10:37:37.824Z"
     },
     "libraries": {
-      "count": 33,
+      "count": 34,
       "pois": [
         {
           "id": "way/328649859",
@@ -1800,7 +1829,8 @@
           "id": "node/368162040",
           "name": "Texas State Law Library",
           "lat": 30.276236,
-          "lon": -97.741983
+          "lon": -97.741983,
+          "openingHours": "Mo-Fr 08:00-17:00"
         },
         {
           "id": "way/379188695",
@@ -1819,21 +1849,24 @@
           "id": "way/30905872",
           "name": "Collections Deposit Library",
           "lat": 30.278768,
-          "lon": -97.733045
+          "lon": -97.733045,
+          "address": "Red River Street 1810"
         },
         {
           "id": "way/25795473",
           "name": "Perry-Castañeda Library",
-          "lat": 30.282757,
+          "lat": 30.282754,
           "lon": -97.738194,
-          "address": "East 21st Street 101"
+          "address": "East 21st Street 101",
+          "openingHours": "Mo-Su 07:00-20:00"
         },
         {
           "id": "node/12923867753",
           "name": "Perry-Castañeda Library Map Collection",
           "lat": 30.282833,
           "lon": -97.738505,
-          "address": "East 21st Street 101"
+          "address": "East 21st Street 101",
+          "openingHours": "Mo-Th 09:00-20:45; Fr 09:00-17:45; Su 12:00-20:45"
         },
         {
           "id": "way/382368504",
@@ -1841,6 +1874,13 @@
           "lat": 30.269557,
           "lon": -97.724044,
           "address": "Angelina Street 1161"
+        },
+        {
+          "id": "node/14156417241",
+          "name": "Life Science Library",
+          "lat": 30.28586,
+          "lon": -97.739651,
+          "address": "Inner Campus Circle"
         },
         {
           "id": "node/13912750063",
@@ -1905,7 +1945,8 @@
           "id": "way/188589265",
           "name": "Munday Library",
           "lat": 30.23113,
-          "lon": -97.75744
+          "lon": -97.75744,
+          "openingHours": "Mo-Th 08:00-22:00; Fr 08:00-17:00; Sa 12:00-17:00; Su 13:00-22:00"
         },
         {
           "id": "way/383809193",
@@ -1957,7 +1998,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:13.319Z"
+      "updatedAt": "2026-10-04T10:37:38.273Z"
     },
     "outdoor-gyms": {
       "count": 37,
@@ -1975,7 +2016,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:14.339Z"
+      "updatedAt": "2026-10-04T10:37:39.189Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2007,7 +2048,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:14.832Z"
+      "updatedAt": "2026-10-04T10:37:39.677Z"
     },
     "shelters": {
       "count": 25,
@@ -2044,7 +2085,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:16.680Z"
+      "updatedAt": "2026-10-04T10:37:41.257Z"
     },
     "rest-areas": {
       "count": 0,
@@ -2055,7 +2096,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:17.191Z"
+      "updatedAt": "2026-10-04T10:37:41.762Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2066,10 +2107,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:17.614Z"
+      "updatedAt": "2026-10-04T10:37:42.237Z"
     },
     "post-offices": {
-      "count": 22,
+      "count": 24,
       "pois": [
         {
           "id": "node/3849779946",
@@ -2083,7 +2124,9 @@
           "id": "node/12577833092",
           "name": "The UPS Store",
           "lat": 30.265116,
-          "lon": -97.738356
+          "lon": -97.738356,
+          "address": "E 4th St, Austin, TX 78701 500",
+          "openingHours": "Tu-Fr 08:00-18:00; Sa 10:00-17:00; Su 10:00-16:00; PH off"
         },
         {
           "id": "way/1350764220",
@@ -2162,6 +2205,12 @@
           "lon": -97.806864,
           "address": "Bee Caves Road 3736",
           "openingHours": "Mo-Fr 09:00-18:00"
+        },
+        {
+          "id": "node/14224752524",
+          "name": "DHL",
+          "lat": 30.325308,
+          "lon": -97.727277
         }
       ],
       "stats": {
@@ -2170,7 +2219,7 @@
         "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:18.142Z"
+      "updatedAt": "2026-10-04T10:37:42.905Z"
     },
     "showers": {
       "count": 3,
@@ -2181,10 +2230,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:18.619Z"
+      "updatedAt": "2026-10-04T10:37:43.436Z"
     },
     "fireplaces": {
-      "count": 21,
+      "count": 22,
       "pois": [],
       "stats": {
         "free": 0,
@@ -2192,7 +2241,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:19.739Z"
+      "updatedAt": "2026-10-04T10:37:44.827Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2200,7 +2249,7 @@
       "updatedAt": "2026-08-17T04:05:54.173Z"
     },
     "benches": {
-      "count": 698,
+      "count": 772,
       "pois": [
         {
           "id": "node/13918655823",
@@ -2281,10 +2330,28 @@
           "street": "Ann & Roy Butler Hike and Bike Trail"
         },
         {
+          "id": "node/14133972479",
+          "lat": 30.273076,
+          "lon": -97.740913,
+          "street": "Great Walk"
+        },
+        {
+          "id": "node/14134130015",
+          "lat": 30.272925,
+          "lon": -97.740414,
+          "street": "State Capitol Driveway"
+        },
+        {
           "id": "node/13841808654",
           "lat": 30.260933,
           "lon": -97.741216,
           "street": "Waller Creek Greenbelt Trail"
+        },
+        {
+          "id": "node/14134130024",
+          "lat": 30.273462,
+          "lon": -97.739405,
+          "street": "East 12th Street"
         },
         {
           "id": "node/9531265660",
@@ -2297,12 +2364,6 @@
           "lat": 30.266316,
           "lon": -97.751238,
           "street": "West 2nd Street"
-        },
-        {
-          "id": "node/8014244534",
-          "lat": 30.265815,
-          "lon": -97.751408,
-          "street": "Shoal Creek Trail"
         }
       ],
       "stats": {
@@ -2311,7 +2372,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:22.688Z"
+      "updatedAt": "2026-10-04T10:37:47.283Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2319,7 +2380,7 @@
       "updatedAt": "2026-08-18T03:58:35.266Z"
     },
     "bicycle-repair": {
-      "count": 25,
+      "count": 24,
       "pois": [
         {
           "id": "node/3376087173",
@@ -2342,13 +2403,6 @@
           "street": "Cummings Street"
         },
         {
-          "id": "node/5416883398",
-          "lat": 30.282732,
-          "lon": -97.737649,
-          "openingHours": "24/7",
-          "street": "Speedway"
-        },
-        {
           "id": "node/4496338941",
           "lat": 30.283463,
           "lon": -97.733847,
@@ -2359,6 +2413,12 @@
           "lat": 30.282224,
           "lon": -97.731306,
           "street": "Robert Dedman Drive"
+        },
+        {
+          "id": "node/12032128575",
+          "lat": 30.284667,
+          "lon": -97.737185,
+          "street": "Speedway"
         },
         {
           "id": "node/3585224997",
@@ -2449,7 +2509,175 @@
         "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:21.483Z"
+      "updatedAt": "2026-10-04T10:37:46.238Z"
+    },
+    "trash-bins": {
+      "count": 660,
+      "pois": [
+        {
+          "id": "node/3131167529",
+          "lat": 30.269849,
+          "lon": -97.742298,
+          "street": "West 8th Street"
+        },
+        {
+          "id": "node/3131167430",
+          "lat": 30.269785,
+          "lon": -97.742029,
+          "street": "East 8th Street"
+        },
+        {
+          "id": "node/12566236249",
+          "lat": 30.266191,
+          "lon": -97.746062,
+          "street": "Lavaca Street"
+        },
+        {
+          "id": "node/3131167929",
+          "lat": 30.269478,
+          "lon": -97.740921,
+          "street": "Brazos Street"
+        },
+        {
+          "id": "node/4304618028",
+          "lat": 30.264355,
+          "lon": -97.744027,
+          "street": "East 2nd Street"
+        },
+        {
+          "id": "node/4304672631",
+          "lat": 30.264164,
+          "lon": -97.744133,
+          "street": "Congress Avenue"
+        },
+        {
+          "id": "node/3131167329",
+          "lat": 30.27038,
+          "lon": -97.74329,
+          "street": "Colorado Street"
+        },
+        {
+          "id": "node/12516662241",
+          "lat": 30.267225,
+          "lon": -97.746873,
+          "street": "Guadalupe Street"
+        },
+        {
+          "id": "node/8997551769",
+          "lat": 30.2675,
+          "lon": -97.747559,
+          "street": "West 4th Street"
+        },
+        {
+          "id": "node/4304662808",
+          "lat": 30.263421,
+          "lon": -97.744284,
+          "street": "East Cesar Chavez Street"
+        },
+        {
+          "id": "node/8999352179",
+          "lat": 30.268125,
+          "lon": -97.747595,
+          "street": "West 5th Street"
+        },
+        {
+          "id": "node/11100010925",
+          "lat": 30.265082,
+          "lon": -97.739031,
+          "street": "East 4th Street"
+        },
+        {
+          "id": "node/3206564423",
+          "lat": 30.271334,
+          "lon": -97.743217,
+          "street": "West 9th Street"
+        },
+        {
+          "id": "node/12390950624",
+          "lat": 30.269299,
+          "lon": -97.73847,
+          "street": "Trinity Street"
+        },
+        {
+          "id": "node/8361642353",
+          "lat": 30.262459,
+          "lon": -97.74477,
+          "street": "Ann & Roy Butler Hike and Bike Trail"
+        },
+        {
+          "id": "node/8929660918",
+          "lat": 30.267857,
+          "lon": -97.749027,
+          "street": "Nueces Street"
+        },
+        {
+          "id": "node/3218108788",
+          "lat": 30.272692,
+          "lon": -97.741416,
+          "street": "West 11th Street"
+        },
+        {
+          "id": "node/13918655821",
+          "lat": 30.261986,
+          "lon": -97.740066,
+          "street": "Waller Creek Greenbelt Trail"
+        },
+        {
+          "id": "node/9291369878",
+          "lat": 30.265908,
+          "lon": -97.749705,
+          "street": "West 2nd Street"
+        },
+        {
+          "id": "node/14134114003",
+          "lat": 30.272799,
+          "lon": -97.740675,
+          "street": "State Capitol Driveway"
+        },
+        {
+          "id": "node/14134090066",
+          "lat": 30.272967,
+          "lon": -97.741003,
+          "street": "Great Walk"
+        },
+        {
+          "id": "node/8072634612",
+          "lat": 30.267055,
+          "lon": -97.750123,
+          "street": "West 3rd Street"
+        },
+        {
+          "id": "node/3286375618",
+          "lat": 30.27227,
+          "lon": -97.738976,
+          "street": "East 11th Street"
+        },
+        {
+          "id": "node/12641089026",
+          "lat": 30.27081,
+          "lon": -97.74907,
+          "street": "West 7th Street"
+        },
+        {
+          "id": "node/12641063742",
+          "lat": 30.270786,
+          "lon": -97.749137,
+          "street": "Rio Grande Street"
+        },
+        {
+          "id": "node/13918655819",
+          "lat": 30.262522,
+          "lon": -97.737569,
+          "street": "Sabine Street"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:37:48.683Z"
     }
   }
 }

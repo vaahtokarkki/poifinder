@@ -1,9 +1,9 @@
 {
   "city": "new-york",
-  "generatedAt": "2026-09-27T09:59:13.114Z",
+  "generatedAt": "2026-10-04T10:34:10.036Z",
   "categories": {
     "toilets": {
-      "count": 403,
+      "count": 405,
       "pois": [
         {
           "id": "node/6946750310",
@@ -40,6 +40,19 @@
           "lon": -74.016147,
           "wheelchair": "yes",
           "context": "The Solaire"
+        },
+        {
+          "id": "node/10659606024",
+          "lat": 40.718796,
+          "lon": -73.992931,
+          "wheelchair": "yes",
+          "context": "Central Communications Building"
+        },
+        {
+          "id": "node/14202239797",
+          "lat": 40.705182,
+          "lon": -74.018073,
+          "context": "Wagner Park Pavilion"
         },
         {
           "id": "node/3706396010",
@@ -202,24 +215,12 @@
           "lat": 40.68914,
           "lon": -74.044761,
           "context": "Statue of Liberty"
-        },
-        {
-          "id": "node/6327876240",
-          "lat": 40.689692,
-          "lon": -74.046073,
-          "context": "Gift Pavilion"
-        },
-        {
-          "id": "node/6304108187",
-          "lat": 40.743029,
-          "lon": -73.973421,
-          "context": "Helen L. and Martin S. Kimmel Pavilion"
         }
       ],
       "stats": {
-        "free": 72,
-        "paid": 2,
-        "stepFree": 115,
+        "free": 74,
+        "paid": 1,
+        "stepFree": 117,
         "partlyStepFree": 7
       },
       "near": [
@@ -278,10 +279,10 @@
           "lon": -74.008335
         }
       ],
-      "updatedAt": "2026-09-23T08:31:22.334Z"
+      "updatedAt": "2026-10-04T10:33:41.195Z"
     },
     "drinking-water": {
-      "count": 948,
+      "count": 956,
       "pois": [
         {
           "id": "node/11416176605",
@@ -442,8 +443,8 @@
         },
         {
           "id": "node/5058253762",
-          "lat": 40.714862,
-          "lon": -74.00268,
+          "lat": 40.714832,
+          "lon": -74.002696,
           "street": "Lafayette Street"
         },
         {
@@ -474,9 +475,9 @@
         }
       ],
       "stats": {
-        "free": 227,
+        "free": 229,
         "paid": 2,
-        "stepFree": 212,
+        "stepFree": 213,
         "partlyStepFree": 14
       },
       "near": [
@@ -509,7 +510,7 @@
         },
         {
           "landmark": "Q110000",
-          "within": 3,
+          "within": 4,
           "distance": 54,
           "bearing": 46,
           "poi": "node/2396631631",
@@ -526,10 +527,10 @@
           "lon": -74.008276
         }
       ],
-      "updatedAt": "2026-09-23T08:31:24.333Z"
+      "updatedAt": "2026-10-04T10:33:43.643Z"
     },
     "playgrounds": {
-      "count": 894,
+      "count": 898,
       "pois": [
         {
           "id": "way/165673075",
@@ -570,7 +571,7 @@
         },
         {
           "id": "way/307027678",
-          "name": "(Hester St. Playground) Children's Play Area",
+          "name": "Hester St. Playground",
           "lat": 40.717142,
           "lon": -73.99389
         },
@@ -607,9 +608,9 @@
         },
         {
           "id": "way/1450105348",
-          "name": "(Rivington St. Playground) Children's Play Area",
-          "lat": 40.721368,
-          "lon": -73.991742
+          "name": "Rivington St. Playground",
+          "lat": 40.721371,
+          "lon": -73.991735
         },
         {
           "id": "way/230751647",
@@ -633,7 +634,7 @@
         },
         {
           "id": "way/1079527157",
-          "name": "(Houston Street Playground) Children's Play Area",
+          "name": "Houston Street Playground",
           "lat": 40.722755,
           "lon": -73.991029
         },
@@ -729,13 +730,13 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 27,
+        "stepFree": 26,
         "partlyStepFree": 7
       },
-      "updatedAt": "2026-09-27T09:58:48.531Z"
+      "updatedAt": "2026-10-04T10:33:44.856Z"
     },
     "parking": {
-      "count": 1544,
+      "count": 1555,
       "pois": [
         {
           "id": "way/278078905",
@@ -962,15 +963,15 @@
         }
       ],
       "stats": {
-        "free": 89,
-        "paid": 235,
+        "free": 88,
+        "paid": 236,
         "stepFree": 27,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:58:49.959Z"
+      "updatedAt": "2026-10-04T10:33:46.491Z"
     },
     "charging-stations": {
-      "count": 63,
+      "count": 72,
       "pois": [
         {
           "id": "node/5621655899",
@@ -993,6 +994,13 @@
           "lon": -74.01584,
           "address": "Vesey Street 250",
           "openingHours": "24/7",
+          "fee": "yes"
+        },
+        {
+          "id": "node/14138393062",
+          "name": "FLO",
+          "lat": 40.724566,
+          "lon": -73.95458,
           "fee": "yes"
         },
         {
@@ -1027,12 +1035,6 @@
           "lon": -73.977526
         },
         {
-          "id": "node/10824611698",
-          "name": "FLO",
-          "lat": 40.649161,
-          "lon": -74.006551
-        },
-        {
           "id": "node/6695934519",
           "name": "Queens Supercharger",
           "lat": 40.73508,
@@ -1043,11 +1045,11 @@
       ],
       "stats": {
         "free": 0,
-        "paid": 12,
+        "paid": 15,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:50.600Z"
+      "updatedAt": "2026-10-04T10:33:47.044Z"
     },
     "gas-stations": {
       "count": 232,
@@ -1267,7 +1269,7 @@
         "stepFree": 6,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:58:51.323Z"
+      "updatedAt": "2026-10-04T10:33:47.790Z"
     },
     "ice-cream": {
       "count": 231,
@@ -1493,7 +1495,7 @@
         "stepFree": 26,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:58:52.167Z"
+      "updatedAt": "2026-10-04T10:33:48.563Z"
     },
     "dog-parks": {
       "count": 88,
@@ -1689,10 +1691,10 @@
           "lon": -73.96899
         },
         {
-          "id": "way/1201839441",
-          "name": "Astro's Community Dog Run",
-          "lat": 40.758121,
-          "lon": -73.997105
+          "id": "way/1500772502",
+          "name": "Silwer Towers Dog Park",
+          "lat": 40.760738,
+          "lon": -73.999859
         }
       ],
       "stats": {
@@ -1701,10 +1703,10 @@
         "stepFree": 9,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:58:52.733Z"
+      "updatedAt": "2026-10-04T10:33:49.124Z"
     },
     "picnic-spots": {
-      "count": 1411,
+      "count": 1422,
       "pois": [
         {
           "id": "way/1201723648",
@@ -1743,7 +1745,7 @@
         "stepFree": 10,
         "partlyStepFree": 8
       },
-      "updatedAt": "2026-09-27T09:58:54.200Z"
+      "updatedAt": "2026-10-04T10:33:50.519Z"
     },
     "viewpoints": {
       "count": 91,
@@ -1900,7 +1902,7 @@
         "stepFree": 7,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:55.008Z"
+      "updatedAt": "2026-10-04T10:33:51.325Z"
     },
     "beaches": {
       "count": 18,
@@ -1949,10 +1951,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:55.838Z"
+      "updatedAt": "2026-10-04T10:33:51.895Z"
     },
     "atms": {
-      "count": 1754,
+      "count": 1755,
       "pois": [
         {
           "id": "node/8226530660",
@@ -2193,13 +2195,13 @@
       "stats": {
         "free": 0,
         "paid": 1,
-        "stepFree": 223,
-        "partlyStepFree": 20
+        "stepFree": 222,
+        "partlyStepFree": 21
       },
-      "updatedAt": "2026-09-27T09:58:56.780Z"
+      "updatedAt": "2026-10-04T10:33:52.676Z"
     },
     "post-boxes": {
-      "count": 1123,
+      "count": 1125,
       "pois": [
         {
           "id": "node/9925032217",
@@ -2391,23 +2393,11 @@
         "stepFree": 13,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:58.116Z"
+      "updatedAt": "2026-10-04T10:33:53.996Z"
     },
     "recycling": {
       "count": 359,
       "pois": [
-        {
-          "id": "node/11461123852",
-          "lat": 40.713768,
-          "lon": -74.009,
-          "context": "Chambers Street–World Trade Center–Park Place–Cortlandt Street"
-        },
-        {
-          "id": "node/11374409718",
-          "lat": 40.71051,
-          "lon": -74.007421,
-          "context": "Fulton Street"
-        },
         {
           "id": "node/6341782748",
           "name": "FMJ Mini Center Recycle Corp",
@@ -2548,10 +2538,40 @@
           "street": "Duane Street"
         },
         {
+          "id": "node/11374409718",
+          "lat": 40.71051,
+          "lon": -74.007421,
+          "street": "Nassau Street"
+        },
+        {
+          "id": "node/11411576692",
+          "lat": 40.712598,
+          "lon": -74.009626,
+          "street": "Barclay Street"
+        },
+        {
+          "id": "node/11460901656",
+          "lat": 40.712883,
+          "lon": -74.009696,
+          "street": "Church Street"
+        },
+        {
+          "id": "node/11372507974",
+          "lat": 40.710161,
+          "lon": -74.007715,
+          "street": "Fulton Street"
+        },
+        {
           "id": "node/11411576697",
           "lat": 40.712073,
           "lon": -74.009957,
           "street": "Vesey Street"
+        },
+        {
+          "id": "node/11374406724",
+          "lat": 40.709611,
+          "lon": -74.006339,
+          "street": "William Street"
         },
         {
           "id": "node/11460901620",
@@ -2566,28 +2586,10 @@
           "street": "Gold Street"
         },
         {
-          "id": "node/11392483810",
-          "lat": 40.715104,
-          "lon": -74.002289,
-          "street": "Worth Street"
-        },
-        {
           "id": "node/9909954517",
           "lat": 40.714994,
           "lon": -74.00213,
           "street": "Centre Street"
-        },
-        {
-          "id": "node/11503466074",
-          "lat": 40.715664,
-          "lon": -74.002892,
-          "street": "Lafayette Street"
-        },
-        {
-          "id": "node/11372463160",
-          "lat": 40.709568,
-          "lon": -74.008535,
-          "street": "John Street"
         }
       ],
       "stats": {
@@ -2596,7 +2598,7 @@
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:59.941Z"
+      "updatedAt": "2026-10-04T10:33:55.760Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2607,7 +2609,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:00.491Z"
+      "updatedAt": "2026-10-04T10:33:56.242Z"
     },
     "libraries": {
       "count": 290,
@@ -2857,10 +2859,10 @@
         "stepFree": 63,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T09:59:01.284Z"
+      "updatedAt": "2026-10-04T10:33:56.999Z"
     },
     "outdoor-gyms": {
-      "count": 79,
+      "count": 80,
       "pois": [
         {
           "id": "way/1213862027",
@@ -2882,7 +2884,7 @@
         "stepFree": 4,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:59:02.861Z"
+      "updatedAt": "2026-10-04T10:33:58.177Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2893,7 +2895,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:03.509Z"
+      "updatedAt": "2026-10-04T10:33:58.827Z"
     },
     "shelters": {
       "count": 29,
@@ -2929,7 +2931,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:05.640Z"
+      "updatedAt": "2026-10-04T10:34:00.785Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2948,7 +2950,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:06.279Z"
+      "updatedAt": "2026-10-04T10:34:01.427Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2959,10 +2961,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:06.752Z"
+      "updatedAt": "2026-10-04T10:34:01.827Z"
     },
     "post-offices": {
-      "count": 159,
+      "count": 161,
       "pois": [
         {
           "id": "node/5978556764",
@@ -3013,7 +3015,7 @@
         },
         {
           "id": "node/2183010448",
-          "name": "FedEx",
+          "name": "FedEx Office",
           "lat": 40.704452,
           "lon": -74.011415,
           "wheelchair": "yes"
@@ -3120,14 +3122,6 @@
           "openingHours": "Mo-Fr 09:00-17:00; Sa 08:00-13:00"
         },
         {
-          "id": "node/6237624833",
-          "name": "FedEx Office",
-          "lat": 40.752469,
-          "lon": -73.989801,
-          "address": "7th Avenue 488",
-          "openingHours": "24/7"
-        },
-        {
           "id": "node/5891774857",
           "name": "Times Plaza Carrier Annex",
           "lat": 40.680545,
@@ -3156,6 +3150,14 @@
           "lon": -73.987049,
           "address": "8th Street 256",
           "openingHours": "Mo-Fr 09:00-17:00; Sa 08:00-13:00"
+        },
+        {
+          "id": "node/5213966921",
+          "name": "FedEx",
+          "lat": 40.755468,
+          "lon": -73.983183,
+          "address": "6th Avenue 1120",
+          "wheelchair": "yes"
         },
         {
           "id": "node/5401978058",
@@ -3190,7 +3192,7 @@
         "stepFree": 32,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:59:07.410Z"
+      "updatedAt": "2026-10-04T10:34:02.403Z"
     },
     "showers": {
       "count": 9,
@@ -3201,7 +3203,7 @@
         "stepFree": 8,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:07.938Z"
+      "updatedAt": "2026-10-04T10:34:02.888Z"
     },
     "fireplaces": {
       "count": 66,
@@ -3236,8 +3238,10 @@
         {
           "id": "node/2275479427",
           "name": "Black Rabbit",
-          "lat": 40.730093,
-          "lon": -73.956422
+          "lat": 40.730091,
+          "lon": -73.95661,
+          "address": "Greenpoint Avenue 91",
+          "openingHours": "Mo-Th 16:00-02:00; Fr 16:00-04:00; Sa 14:00-04:00; Su 14:00-02:00"
         },
         {
           "id": "node/14127538594",
@@ -3305,7 +3309,7 @@
         "stepFree": 7,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:09.361Z"
+      "updatedAt": "2026-10-04T10:34:04.443Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3313,7 +3317,7 @@
       "updatedAt": "2026-08-17T04:05:36.367Z"
     },
     "benches": {
-      "count": 12333,
+      "count": 12414,
       "pois": [
         {
           "id": "relation/17722706",
@@ -3412,7 +3416,7 @@
         "stepFree": 37,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:13.012Z"
+      "updatedAt": "2026-10-04T10:34:08.060Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3583,7 +3587,151 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:11.467Z"
+      "updatedAt": "2026-10-04T10:34:06.485Z"
+    },
+    "trash-bins": {
+      "count": 4480,
+      "pois": [
+        {
+          "id": "node/7004346064",
+          "name": "Trash Can Recycle",
+          "lat": 40.805927,
+          "lon": -73.965201
+        },
+        {
+          "id": "node/11350133311",
+          "lat": 40.713023,
+          "lon": -74.005618,
+          "street": "City Hall Park Greenway"
+        },
+        {
+          "id": "node/9595762792",
+          "lat": 40.712227,
+          "lon": -74.005886,
+          "street": "Steve Flanders Square"
+        },
+        {
+          "id": "node/9597526119",
+          "lat": 40.712021,
+          "lon": -74.006449,
+          "street": "Park Row"
+        },
+        {
+          "id": "node/9595746868",
+          "lat": 40.713422,
+          "lon": -74.006794,
+          "street": "Broadway"
+        },
+        {
+          "id": "node/11461129551",
+          "lat": 40.713091,
+          "lon": -74.00741,
+          "street": "Murray Street"
+        },
+        {
+          "id": "node/11349151116",
+          "lat": 40.7116,
+          "lon": -74.005839,
+          "street": "Spruce Street"
+        },
+        {
+          "id": "node/11401559326",
+          "lat": 40.713513,
+          "lon": -74.004694,
+          "street": "Chambers Street"
+        },
+        {
+          "id": "node/11350133527",
+          "lat": 40.711335,
+          "lon": -74.00651,
+          "street": "Beekman Street"
+        },
+        {
+          "id": "node/9595779582",
+          "lat": 40.713262,
+          "lon": -74.004063,
+          "street": "Centre Street"
+        },
+        {
+          "id": "node/9909827199",
+          "lat": 40.713784,
+          "lon": -74.003717,
+          "street": "Reade Street"
+        },
+        {
+          "id": "node/9338923400",
+          "lat": 40.710887,
+          "lon": -74.005212,
+          "street": "William Street"
+        },
+        {
+          "id": "node/9925038418",
+          "lat": 40.711266,
+          "lon": -74.004275,
+          "street": "Frankfort Street"
+        },
+        {
+          "id": "node/11411576892",
+          "lat": 40.712795,
+          "lon": -74.008685,
+          "street": "Park Place"
+        },
+        {
+          "id": "node/11411576762",
+          "lat": 40.71262,
+          "lon": -74.008913,
+          "street": "Barclay Street"
+        },
+        {
+          "id": "node/11515468923",
+          "lat": 40.713827,
+          "lon": -74.008682,
+          "street": "Church Street"
+        },
+        {
+          "id": "node/11380040123",
+          "lat": 40.714099,
+          "lon": -74.003517,
+          "street": "Lafayette Street"
+        },
+        {
+          "id": "node/11506618871",
+          "lat": 40.71523,
+          "lon": -74.005549,
+          "street": "Duane Street"
+        },
+        {
+          "id": "node/11374743730",
+          "lat": 40.711228,
+          "lon": -74.008528,
+          "street": "Ann Street"
+        },
+        {
+          "id": "node/11515468963",
+          "lat": 40.714365,
+          "lon": -74.008538,
+          "street": "Warren Street"
+        },
+        {
+          "id": "node/11374409719",
+          "lat": 40.710501,
+          "lon": -74.007428,
+          "street": "Nassau Street"
+        },
+        {
+          "id": "node/9925067117",
+          "lat": 40.710838,
+          "lon": -74.003816,
+          "street": "Gold Street"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-10-04T10:34:09.935Z"
     }
   }
 }

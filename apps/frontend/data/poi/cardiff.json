@@ -1,9 +1,9 @@
 {
   "city": "cardiff",
-  "generatedAt": "2026-09-27T09:48:08.767Z",
+  "generatedAt": "2026-10-04T10:20:27.169Z",
   "categories": {
     "toilets": {
-      "count": 47,
+      "count": 48,
       "pois": [
         {
           "id": "node/11826693495",
@@ -61,6 +61,15 @@
           "context": "Wales Millennium Centre"
         },
         {
+          "id": "node/14184706789",
+          "name": "Tesco Customer Toilets",
+          "lat": 51.49797,
+          "lon": -3.205714,
+          "openingHours": "Mo-Sa 06:00-00:00; Su 10:00-16:00",
+          "wheelchair": "designated",
+          "fee": "no"
+        },
+        {
           "id": "node/1047815664",
           "lat": 51.454816,
           "lon": -3.162592,
@@ -76,14 +85,6 @@
           "openingHours": "Mo-Sa 07:00-22:00; Su 10:00-16:00",
           "fee": "no",
           "context": "Morrisons"
-        },
-        {
-          "id": "node/2323271274",
-          "name": "Tesco Pengam Green",
-          "lat": 51.487436,
-          "lon": -3.128017,
-          "openingHours": "Mo-Sa 00:00-23:59; Su 10:00-16:00",
-          "wheelchair": "yes"
         },
         {
           "id": "node/13043437038",
@@ -136,6 +137,8 @@
           "id": "node/13808282991",
           "lat": 51.538844,
           "lon": -3.12961,
+          "wheelchair": "yes",
+          "fee": "no",
           "context": "Welcome Break Cardiff Gate"
         },
         {
@@ -147,7 +150,7 @@
         }
       ],
       "stats": {
-        "free": 28,
+        "free": 31,
         "paid": 0,
         "stepFree": 14,
         "partlyStepFree": 1
@@ -181,11 +184,17 @@
           "lon": -3.21781
         }
       ],
-      "updatedAt": "2026-09-23T08:29:55.913Z"
+      "updatedAt": "2026-10-04T10:20:07.387Z"
     },
     "drinking-water": {
-      "count": 23,
+      "count": 25,
       "pois": [
+        {
+          "id": "node/14203242001",
+          "name": "CSM water refill",
+          "lat": 51.49632,
+          "lon": -3.214179
+        },
         {
           "id": "node/12050088738",
           "lat": 51.48035,
@@ -202,6 +211,14 @@
           "wheelchair": "yes",
           "fee": "no",
           "street": "Castle Arcade"
+        },
+        {
+          "id": "node/14140934335",
+          "lat": 51.480012,
+          "lon": -3.175593,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Town Wall South"
         },
         {
           "id": "node/13004729901",
@@ -255,15 +272,15 @@
         }
       ],
       "stats": {
-        "free": 16,
+        "free": 17,
         "paid": 0,
-        "stepFree": 13,
+        "stepFree": 14,
         "partlyStepFree": 0
       },
       "near": [
         {
           "landmark": "Q1035742",
-          "within": 3,
+          "within": 4,
           "distance": 163,
           "bearing": 180,
           "poi": "node/9876835258",
@@ -278,12 +295,21 @@
           "poi": "node/9876835263",
           "lat": 51.487761,
           "lon": -3.179418
+        },
+        {
+          "landmark": "Q747856",
+          "within": 1,
+          "distance": 274,
+          "bearing": 79,
+          "poi": "node/14203242001",
+          "lat": 51.49632,
+          "lon": -3.214179
         }
       ],
-      "updatedAt": "2026-09-23T08:29:57.244Z"
+      "updatedAt": "2026-10-04T10:20:09.143Z"
     },
     "playgrounds": {
-      "count": 159,
+      "count": 169,
       "pois": [
         {
           "id": "node/13329084060",
@@ -366,10 +392,10 @@
         "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:49.461Z"
+      "updatedAt": "2026-10-04T10:20:10.163Z"
     },
     "parking": {
-      "count": 1343,
+      "count": 1383,
       "pois": [
         {
           "id": "way/812617674",
@@ -495,22 +521,10 @@
           "fee": "yes"
         },
         {
-          "id": "way/972674537",
-          "name": "Staff & Blue Badge Holder Parking",
-          "lat": 51.482193,
-          "lon": -3.192515
-        },
-        {
           "id": "way/922788735",
           "name": "Novotel Customer Car Park",
           "lat": 51.476055,
           "lon": -3.168137
-        },
-        {
-          "id": "way/972674548",
-          "name": "Patient & Visitor Parking",
-          "lat": 51.481414,
-          "lon": -3.193899
         },
         {
           "id": "way/1272069098",
@@ -523,7 +537,8 @@
           "id": "way/406679902",
           "name": "Wellington Street Car Park",
           "lat": 51.480714,
-          "lon": -3.195092
+          "lon": -3.195092,
+          "fee": "yes"
         },
         {
           "id": "node/12455552124",
@@ -561,24 +576,37 @@
         },
         {
           "id": "way/217193683",
-          "name": "Pontcanna Fields Pay and Display Car Park",
+          "name": "Pontcanna Fields Car Park",
           "lat": 51.490974,
           "lon": -3.201342
         },
         {
           "id": "way/1480612701",
-          "name": "Turning Head Pay and Display Car Park",
+          "name": "Turning Head Car Park",
           "lat": 51.489292,
           "lon": -3.203568
+        },
+        {
+          "id": "relation/19915075",
+          "name": "Lidl Customer Car Park",
+          "lat": 51.47453,
+          "lon": -3.204383,
+          "fee": "no"
+        },
+        {
+          "id": "way/27027467",
+          "name": "Red Dragon Centre Customer Parking",
+          "lat": 51.467423,
+          "lon": -3.162502
         }
       ],
       "stats": {
-        "free": 102,
+        "free": 108,
         "paid": 109,
         "stepFree": 2,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:47:50.599Z"
+      "updatedAt": "2026-10-04T10:20:11.016Z"
     },
     "charging-stations": {
       "count": 33,
@@ -611,7 +639,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:51.199Z"
+      "updatedAt": "2026-10-04T10:20:11.463Z"
     },
     "gas-stations": {
       "count": 34,
@@ -629,16 +657,17 @@
           "lon": -3.189919
         },
         {
+          "id": "way/86217325",
+          "name": "Valero",
+          "lat": 51.469804,
+          "lon": -3.195743,
+          "address": "Sloper Road 145"
+        },
+        {
           "id": "way/159561128",
           "name": "Asda",
           "lat": 51.472379,
           "lon": -3.206477
-        },
-        {
-          "id": "way/27628658",
-          "name": "Shell",
-          "lat": 51.465347,
-          "lon": -3.199016
         },
         {
           "id": "way/95208307",
@@ -659,6 +688,12 @@
           "lat": 51.455398,
           "lon": -3.186946,
           "openingHours": "24/7"
+        },
+        {
+          "id": "way/27726844",
+          "name": "Shell",
+          "lat": 51.496466,
+          "lon": -3.141929
         },
         {
           "id": "way/749962991",
@@ -698,7 +733,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:51.780Z"
+      "updatedAt": "2026-10-04T10:20:11.973Z"
     },
     "ice-cream": {
       "count": 13,
@@ -793,7 +828,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:52.353Z"
+      "updatedAt": "2026-10-04T10:20:12.543Z"
     },
     "dog-parks": {
       "count": 1,
@@ -804,10 +839,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:52.820Z"
+      "updatedAt": "2026-10-04T10:20:12.997Z"
     },
     "picnic-spots": {
-      "count": 104,
+      "count": 105,
       "pois": [],
       "stats": {
         "free": 0,
@@ -815,7 +850,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:53.979Z"
+      "updatedAt": "2026-10-04T10:20:13.908Z"
     },
     "viewpoints": {
       "count": 14,
@@ -839,7 +874,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:54.612Z"
+      "updatedAt": "2026-10-04T10:20:14.460Z"
     },
     "beaches": {
       "count": 1,
@@ -850,10 +885,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:55.140Z"
+      "updatedAt": "2026-10-04T10:20:14.897Z"
     },
     "atms": {
-      "count": 97,
+      "count": 98,
       "pois": [
         {
           "id": "node/1049796735",
@@ -991,7 +1026,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:55.881Z"
+      "updatedAt": "2026-10-04T10:20:15.473Z"
     },
     "post-boxes": {
       "count": 329,
@@ -1183,7 +1218,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:57.080Z"
+      "updatedAt": "2026-10-04T10:20:16.471Z"
     },
     "recycling": {
       "count": 35,
@@ -1203,26 +1238,12 @@
           "context": "Morrisons"
         },
         {
-          "id": "node/12026589184",
-          "lat": 51.446051,
-          "lon": -3.185717,
-          "openingHours": "Mo-Sa 07:00-23:00,10:00-16:00",
-          "context": "Tesco"
-        },
-        {
           "id": "way/920605271",
           "name": "Lamby Way Household Waste Recycling Centre",
           "lat": 51.497505,
           "lon": -3.12251,
           "address": "Lamby Way",
           "openingHours": "Mo-Su 08:30-16:30"
-        },
-        {
-          "id": "node/12402670406",
-          "lat": 51.53038,
-          "lon": -3.138276,
-          "openingHours": "Mo-Sa 07:30-21:00; Su 10:00-16:00",
-          "context": "Waitrose"
         },
         {
           "id": "node/12017430671",
@@ -1286,6 +1307,13 @@
           "street": "Pont Y Werin"
         },
         {
+          "id": "node/12026589184",
+          "lat": 51.446051,
+          "lon": -3.185717,
+          "openingHours": "Mo-Sa 07:00-23:00,10:00-16:00",
+          "street": "Terra Nova Way"
+        },
+        {
           "id": "node/12041630602",
           "lat": 51.488364,
           "lon": -3.27716,
@@ -1298,7 +1326,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:59.111Z"
+      "updatedAt": "2026-10-04T10:20:18.077Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1309,7 +1337,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:59.705Z"
+      "updatedAt": "2026-10-04T10:20:18.536Z"
     },
     "libraries": {
       "count": 23,
@@ -1367,7 +1395,7 @@
           "name": "STAR Hub",
           "lat": 51.48448,
           "lon": -3.143169,
-          "address": "Muirton Road 18",
+          "address": "Muirton Road",
           "openingHours": "Mo-Tu 09:00-18:00; We 10:00-19:00; Th-Fr 09:00-18:00; Sa 09:00-15:00; Su off",
           "wheelchair": "yes"
         },
@@ -1483,10 +1511,10 @@
         "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:00.560Z"
+      "updatedAt": "2026-10-04T10:20:18.977Z"
     },
     "outdoor-gyms": {
-      "count": 2,
+      "count": 3,
       "pois": [
         {
           "id": "way/174980387",
@@ -1501,7 +1529,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:01.151Z"
+      "updatedAt": "2026-10-04T10:20:19.492Z"
     },
     "camp-sites": {
       "count": 2,
@@ -1519,7 +1547,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:01.672Z"
+      "updatedAt": "2026-10-04T10:20:19.999Z"
     },
     "shelters": {
       "count": 1,
@@ -1537,10 +1565,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:02.500Z"
+      "updatedAt": "2026-10-04T10:20:20.734Z"
     },
     "rest-areas": {
-      "count": 15,
+      "count": 16,
       "pois": [
         {
           "id": "way/1268245462",
@@ -1562,7 +1590,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:03.020Z"
+      "updatedAt": "2026-10-04T10:20:21.182Z"
     },
     "dump-stations": {
       "count": 0,
@@ -1573,7 +1601,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:03.461Z"
+      "updatedAt": "2026-10-04T10:20:21.536Z"
     },
     "post-offices": {
       "count": 45,
@@ -1672,8 +1700,8 @@
         {
           "id": "node/1040498468",
           "name": "Broadway Post Office",
-          "lat": 51.489035,
-          "lon": -3.152128
+          "lat": 51.489064,
+          "lon": -3.152185
         },
         {
           "id": "node/1040498500",
@@ -1801,7 +1829,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:03.921Z"
+      "updatedAt": "2026-10-04T10:20:21.977Z"
     },
     "showers": {
       "count": 0,
@@ -1812,7 +1840,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:04.359Z"
+      "updatedAt": "2026-10-04T10:20:22.327Z"
     },
     "fireplaces": {
       "count": 0,
@@ -1823,7 +1851,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:05.480Z"
+      "updatedAt": "2026-10-04T10:20:23.377Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1831,7 +1859,7 @@
       "updatedAt": "2026-08-17T04:04:33.003Z"
     },
     "benches": {
-      "count": 1174,
+      "count": 1185,
       "pois": [
         {
           "id": "node/7409338225",
@@ -1948,7 +1976,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:08.666Z"
+      "updatedAt": "2026-10-04T10:20:25.708Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2022,7 +2050,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:07.246Z"
+      "updatedAt": "2026-10-04T10:20:24.698Z"
+    },
+    "trash-bins": {
+      "count": 245,
+      "pois": [
+        {
+          "id": "node/11099446727",
+          "lat": 51.481223,
+          "lon": -3.178588,
+          "street": "St. John Street"
+        },
+        {
+          "id": "node/10924044928",
+          "lat": 51.480851,
+          "lon": -3.178522,
+          "street": "Church Street"
+        },
+        {
+          "id": "node/13118936061",
+          "lat": 51.482912,
+          "lon": -3.179069,
+          "street": "Kingsway"
+        },
+        {
+          "id": "node/13111798467",
+          "lat": 51.483193,
+          "lon": -3.178247,
+          "street": "The Friary"
+        },
+        {
+          "id": "node/13111207055",
+          "lat": 51.483396,
+          "lon": -3.177887,
+          "street": "Greyfriars Road"
+        },
+        {
+          "id": "node/12128037689",
+          "lat": 51.479355,
+          "lon": -3.176335,
+          "street": "The Hayes"
+        },
+        {
+          "id": "node/12128141930",
+          "lat": 51.479127,
+          "lon": -3.176158,
+          "street": "Barry Lane"
+        },
+        {
+          "id": "node/12706113616",
+          "lat": 51.481483,
+          "lon": -3.174043,
+          "street": "Charles Street"
+        },
+        {
+          "id": "node/14182527702",
+          "lat": 51.483218,
+          "lon": -3.183498,
+          "street": "Lady Bute's Bridge"
+        },
+        {
+          "id": "node/11064993827",
+          "lat": 51.480939,
+          "lon": -3.184644,
+          "street": "Castle Street"
+        },
+        {
+          "id": "node/12128338229",
+          "lat": 51.485789,
+          "lon": -3.179433,
+          "street": "City Hall Road"
+        },
+        {
+          "id": "node/12128368643",
+          "lat": 51.485891,
+          "lon": -3.180312,
+          "street": "King Edward VII Avenue"
+        },
+        {
+          "id": "node/13326214484",
+          "lat": 51.485851,
+          "lon": -3.176582,
+          "street": "Park Place"
+        },
+        {
+          "id": "node/12128372980",
+          "lat": 51.486322,
+          "lon": -3.179401,
+          "street": "Museum Avenue"
+        },
+        {
+          "id": "node/12330860863",
+          "lat": 51.475802,
+          "lon": -3.178749,
+          "street": "East Subway"
+        },
+        {
+          "id": "node/12128376604",
+          "lat": 51.487426,
+          "lon": -3.18143,
+          "street": "College Road"
+        },
+        {
+          "id": "node/12025425535",
+          "lat": 51.475078,
+          "lon": -3.178912,
+          "street": "West Subway"
+        },
+        {
+          "id": "node/8041157033",
+          "lat": 51.477301,
+          "lon": -3.1691,
+          "street": "Smart Way"
+        },
+        {
+          "id": "node/8041157007",
+          "lat": 51.477112,
+          "lon": -3.168048,
+          "street": "Ellen Street"
+        },
+        {
+          "id": "node/1496485281",
+          "lat": 51.474102,
+          "lon": -3.170759,
+          "street": "Lloyd George Avenue"
+        },
+        {
+          "id": "node/762270663",
+          "lat": 51.473655,
+          "lon": -3.169719,
+          "street": "Vellacott Close"
+        },
+        {
+          "id": "node/762270633",
+          "lat": 51.473832,
+          "lon": -3.169108,
+          "street": "Craiglee Drive"
+        },
+        {
+          "id": "node/12206949803",
+          "lat": 51.471126,
+          "lon": -3.182026,
+          "street": "Taff Embankment"
+        },
+        {
+          "id": "node/9167596011",
+          "lat": 51.490653,
+          "lon": -3.188151,
+          "street": "North Road"
+        },
+        {
+          "id": "node/13484775943",
+          "lat": 51.481493,
+          "lon": -3.197566,
+          "street": "Cowbridge Road East"
+        },
+        {
+          "id": "node/12427193563",
+          "lat": 51.472778,
+          "lon": -3.191276,
+          "street": "Maitland Place"
+        },
+        {
+          "id": "node/12883609805",
+          "lat": 51.493919,
+          "lon": -3.184998,
+          "street": "Llantrisant Street"
+        },
+        {
+          "id": "node/12025425558",
+          "lat": 51.468635,
+          "lon": -3.180531,
+          "street": "Bargoed Street"
+        },
+        {
+          "id": "node/13484775948",
+          "lat": 51.481282,
+          "lon": -3.200027,
+          "street": "Albert Street"
+        },
+        {
+          "id": "node/10771634893",
+          "lat": 51.493197,
+          "lon": -3.168966,
+          "street": "Plasnewydd Road"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:20:27.068Z"
     }
   }
 }

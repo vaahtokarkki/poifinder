@@ -1,9 +1,9 @@
 {
   "city": "san-francisco",
-  "generatedAt": "2026-09-27T10:00:30.342Z",
+  "generatedAt": "2026-10-04T10:35:38.344Z",
   "categories": {
     "toilets": {
-      "count": 257,
+      "count": 259,
       "pois": [
         {
           "id": "node/13128930108",
@@ -233,9 +233,9 @@
         }
       ],
       "stats": {
-        "free": 107,
+        "free": 108,
         "paid": 2,
-        "stepFree": 121,
+        "stepFree": 122,
         "partlyStepFree": 1
       },
       "near": [
@@ -276,11 +276,17 @@
           "lon": -122.406006
         }
       ],
-      "updatedAt": "2026-09-23T08:31:33.713Z"
+      "updatedAt": "2026-10-04T10:35:14.136Z"
     },
     "drinking-water": {
-      "count": 257,
+      "count": 260,
       "pois": [
+        {
+          "id": "node/13174517494",
+          "lat": 37.779163,
+          "lon": -122.401484,
+          "context": "Yerba Buena Dog Park"
+        },
         {
           "id": "node/708463429",
           "lat": 37.770726,
@@ -333,12 +339,6 @@
           "lat": 37.769393,
           "lon": -122.433463,
           "street": "Duboce Avenue"
-        },
-        {
-          "id": "node/13174517494",
-          "lat": 37.779163,
-          "lon": -122.401484,
-          "street": "Harrison Street"
         },
         {
           "id": "node/11777326264",
@@ -481,9 +481,9 @@
         }
       ],
       "stats": {
-        "free": 110,
+        "free": 112,
         "paid": 1,
-        "stepFree": 58,
+        "stepFree": 60,
         "partlyStepFree": 2
       },
       "near": [
@@ -524,7 +524,7 @@
           "lon": -122.405845
         }
       ],
-      "updatedAt": "2026-09-23T08:31:35.359Z"
+      "updatedAt": "2026-10-04T10:35:16.184Z"
     },
     "playgrounds": {
       "count": 171,
@@ -723,10 +723,10 @@
         "stepFree": 48,
         "partlyStepFree": 19
       },
-      "updatedAt": "2026-09-27T10:00:07.851Z"
+      "updatedAt": "2026-10-04T10:35:17.184Z"
     },
     "parking": {
-      "count": 1072,
+      "count": 1074,
       "pois": [
         {
           "id": "node/1804730955",
@@ -815,11 +815,11 @@
           "fee": "yes"
         },
         {
-          "id": "node/1236745500",
+          "id": "way/1557953651",
           "name": "Walgreens & Live Fit Gym Underground Parking Garage",
-          "lat": 37.766635,
-          "lon": -122.429689,
-          "address": "Market Street 2145"
+          "lat": 37.766555,
+          "lon": -122.429638,
+          "fee": "no"
         },
         {
           "id": "node/4395534972",
@@ -889,6 +889,7 @@
           "name": "5th and Mission Garage",
           "lat": 37.78337,
           "lon": -122.405087,
+          "address": "Mission Street 833",
           "fee": "yes"
         },
         {
@@ -953,15 +954,22 @@
       ],
       "stats": {
         "free": 130,
-        "paid": 163,
+        "paid": 164,
         "stepFree": 21,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:00:09.200Z"
+      "updatedAt": "2026-10-04T10:35:18.432Z"
     },
     "charging-stations": {
-      "count": 38,
+      "count": 42,
       "pois": [
+        {
+          "id": "node/12727146333",
+          "name": "Revel - Mission District",
+          "lat": 37.768905,
+          "lon": -122.419534,
+          "address": "Erie Street 199"
+        },
         {
           "id": "node/11198865786",
           "name": "EVgo",
@@ -1035,7 +1043,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:09.781Z"
+      "updatedAt": "2026-10-04T10:35:18.924Z"
     },
     "gas-stations": {
       "count": 80,
@@ -1110,8 +1118,8 @@
         {
           "id": "node/2148537238",
           "name": "Dogpatch Biofuels",
-          "lat": 37.756481,
-          "lon": -122.392799
+          "lat": 37.756476,
+          "lon": -122.392802
         },
         {
           "id": "node/2338226229",
@@ -1229,7 +1237,7 @@
         "stepFree": 11,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:10.540Z"
+      "updatedAt": "2026-10-04T10:35:19.513Z"
     },
     "ice-cream": {
       "count": 57,
@@ -1415,7 +1423,8 @@
           "name": "Angela's",
           "lat": 37.751665,
           "lon": -122.426493,
-          "address": "24th Street 3751"
+          "address": "24th Street 3751",
+          "openingHours": "Su-Th 12:00-21:30; Fr,Sa 12:00-22:00"
         },
         {
           "id": "node/1478520961",
@@ -1478,7 +1487,7 @@
         "stepFree": 23,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:11.266Z"
+      "updatedAt": "2026-10-04T10:35:20.078Z"
     },
     "dog-parks": {
       "count": 36,
@@ -1503,6 +1512,12 @@
           "lat": 37.769633,
           "lon": -122.432351,
           "wheelchair": "yes"
+        },
+        {
+          "id": "way/1427215209",
+          "name": "Yerba Buena Dog Park",
+          "lat": 37.779225,
+          "lon": -122.401209
         },
         {
           "id": "way/56645382",
@@ -1539,8 +1554,8 @@
         {
           "id": "way/908908429",
           "name": "Avalon Dogpatch Dog Park",
-          "lat": 37.760322,
-          "lon": -122.391837,
+          "lat": 37.760319,
+          "lon": -122.39184,
           "address": "Indiana Street 791-785"
         },
         {
@@ -1605,7 +1620,7 @@
         "stepFree": 5,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:00:11.869Z"
+      "updatedAt": "2026-10-04T10:35:20.575Z"
     },
     "picnic-spots": {
       "count": 684,
@@ -1653,7 +1668,7 @@
         "stepFree": 10,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:13.380Z"
+      "updatedAt": "2026-10-04T10:35:21.693Z"
     },
     "viewpoints": {
       "count": 128,
@@ -1857,7 +1872,7 @@
         "stepFree": 3,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T10:00:14.198Z"
+      "updatedAt": "2026-10-04T10:35:22.257Z"
     },
     "beaches": {
       "count": 21,
@@ -1917,7 +1932,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:14.882Z"
+      "updatedAt": "2026-10-04T10:35:22.755Z"
     },
     "atms": {
       "count": 310,
@@ -2149,10 +2164,10 @@
         "stepFree": 65,
         "partlyStepFree": 7
       },
-      "updatedAt": "2026-09-27T10:00:15.672Z"
+      "updatedAt": "2026-10-04T10:35:23.339Z"
     },
     "post-boxes": {
-      "count": 610,
+      "count": 609,
       "pois": [
         {
           "id": "node/10011997155",
@@ -2341,7 +2356,7 @@
         "stepFree": 19,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:00:17.204Z"
+      "updatedAt": "2026-10-04T10:35:24.446Z"
     },
     "recycling": {
       "count": 73,
@@ -2537,7 +2552,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:19.470Z"
+      "updatedAt": "2026-10-04T10:35:26.202Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2548,10 +2563,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:19.919Z"
+      "updatedAt": "2026-10-04T10:35:26.688Z"
     },
     "libraries": {
-      "count": 131,
+      "count": 138,
       "pois": [
         {
           "id": "way/24446086",
@@ -2570,11 +2585,12 @@
           "openingHours": "24/7"
         },
         {
-          "id": "node/14088907401",
+          "id": "node/14038495202",
           "name": "Prelinger Library",
           "lat": 37.775239,
           "lon": -122.409503,
-          "address": "8th Street 301"
+          "address": "8th Street 301",
+          "openingHours": "Tu 11:00-17:00; We 12:30-19:00; Su 13:30-16:00"
         },
         {
           "id": "node/368168766",
@@ -2787,7 +2803,7 @@
         "stepFree": 31,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T10:00:20.582Z"
+      "updatedAt": "2026-10-04T10:35:27.262Z"
     },
     "outdoor-gyms": {
       "count": 44,
@@ -2920,7 +2936,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:21.700Z"
+      "updatedAt": "2026-10-04T10:35:28.208Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2945,7 +2961,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:22.214Z"
+      "updatedAt": "2026-10-04T10:35:28.868Z"
     },
     "shelters": {
       "count": 13,
@@ -2956,7 +2972,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:23.939Z"
+      "updatedAt": "2026-10-04T10:35:30.490Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2976,7 +2992,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:24.461Z"
+      "updatedAt": "2026-10-04T10:35:30.989Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2987,7 +3003,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:24.900Z"
+      "updatedAt": "2026-10-04T10:35:31.348Z"
     },
     "post-offices": {
       "count": 86,
@@ -3229,7 +3245,7 @@
         "stepFree": 23,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T10:00:25.481Z"
+      "updatedAt": "2026-10-04T10:35:31.846Z"
     },
     "showers": {
       "count": 1,
@@ -3240,7 +3256,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:25.974Z"
+      "updatedAt": "2026-10-04T10:35:32.238Z"
     },
     "fireplaces": {
       "count": 33,
@@ -3251,7 +3267,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:27.299Z"
+      "updatedAt": "2026-10-04T10:35:33.482Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3259,7 +3275,7 @@
       "updatedAt": "2026-08-17T04:05:43.123Z"
     },
     "benches": {
-      "count": 3316,
+      "count": 3346,
       "pois": [
         {
           "id": "node/9432629254",
@@ -3406,7 +3422,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:30.240Z"
+      "updatedAt": "2026-10-04T10:35:36.166Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3414,7 +3430,7 @@
       "updatedAt": "2026-08-18T03:58:33.466Z"
     },
     "bicycle-repair": {
-      "count": 12,
+      "count": 13,
       "pois": [
         {
           "id": "node/3309257523",
@@ -3443,6 +3459,14 @@
           "lat": 37.780685,
           "lon": -122.394548,
           "street": "Varney Place"
+        },
+        {
+          "id": "node/14190464001",
+          "lat": 37.797784,
+          "lon": -122.40934,
+          "address": "Broadway 734;736;740",
+          "openingHours": "24/7",
+          "street": "Broadway"
         },
         {
           "id": "node/11254215571",
@@ -3477,7 +3501,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:28.820Z"
+      "updatedAt": "2026-10-04T10:35:34.838Z"
+    },
+    "trash-bins": {
+      "count": 1244,
+      "pois": [
+        {
+          "id": "node/10555180060",
+          "lat": 37.774856,
+          "lon": -122.419361,
+          "street": "Market Street"
+        },
+        {
+          "id": "node/13514733425",
+          "lat": 37.77474,
+          "lon": -122.419112,
+          "street": "Van Ness Bus Rapid Transit"
+        },
+        {
+          "id": "node/12182767531",
+          "lat": 37.775108,
+          "lon": -122.422482,
+          "street": "Oak Street"
+        },
+        {
+          "id": "node/10719963012",
+          "lat": 37.776084,
+          "lon": -122.422738,
+          "street": "Gough Street"
+        },
+        {
+          "id": "node/10719963013",
+          "lat": 37.776005,
+          "lon": -122.422971,
+          "street": "Fell Street"
+        },
+        {
+          "id": "node/11198865797",
+          "lat": 37.778054,
+          "lon": -122.420702,
+          "street": "Grove Street"
+        },
+        {
+          "id": "node/6612383951",
+          "lat": 37.779356,
+          "lon": -122.416892,
+          "street": "Larkin Street"
+        },
+        {
+          "id": "node/10705572377",
+          "lat": 37.773621,
+          "lon": -122.425361,
+          "street": "Page Street"
+        },
+        {
+          "id": "node/10555180061",
+          "lat": 37.779964,
+          "lon": -122.420539,
+          "street": "McAllister Street"
+        },
+        {
+          "id": "node/10693862612",
+          "lat": 37.778663,
+          "lon": -122.414105,
+          "street": "Stevenson Street"
+        },
+        {
+          "id": "node/11296125209",
+          "lat": 37.772427,
+          "lon": -122.425928,
+          "street": "Haight Street"
+        },
+        {
+          "id": "node/10542243240",
+          "lat": 37.781844,
+          "lon": -122.420814,
+          "street": "Turk Street"
+        },
+        {
+          "id": "node/9394828617",
+          "lat": 37.779888,
+          "lon": -122.411932,
+          "street": "7th Street"
+        },
+        {
+          "id": "node/10542243249",
+          "lat": 37.782764,
+          "lon": -122.420999,
+          "street": "Eddy Street"
+        },
+        {
+          "id": "node/9394802457",
+          "lat": 37.781744,
+          "lon": -122.41392,
+          "street": "Leavenworth Street"
+        },
+        {
+          "id": "node/11558519646",
+          "lat": 37.77396,
+          "lon": -122.40863,
+          "street": "8th Street"
+        },
+        {
+          "id": "node/6564052379",
+          "lat": 37.78127,
+          "lon": -122.411995,
+          "street": "Jones Street"
+        },
+        {
+          "id": "node/9966250323",
+          "lat": 37.770536,
+          "lon": -122.409702,
+          "street": "Bryant Street"
+        },
+        {
+          "id": "node/9394828246",
+          "lat": 37.77669,
+          "lon": -122.408083,
+          "street": "Folsom Street"
+        },
+        {
+          "id": "node/9536589866",
+          "lat": 37.771053,
+          "lon": -122.430341,
+          "street": "Fillmore Street"
+        },
+        {
+          "id": "node/9705865883",
+          "lat": 37.784426,
+          "lon": -122.415931,
+          "street": "Ellis Street"
+        },
+        {
+          "id": "node/10028262798",
+          "lat": 37.782365,
+          "lon": -122.410486,
+          "street": "Taylor Street"
+        },
+        {
+          "id": "node/9735505806",
+          "lat": 37.785119,
+          "lon": -122.418039,
+          "street": "O'Farrell Street"
+        },
+        {
+          "id": "node/9501084485",
+          "lat": 37.766162,
+          "lon": -122.426709,
+          "street": "Dolores Street"
+        },
+        {
+          "id": "node/5878388351",
+          "lat": 37.776856,
+          "lon": -122.406024,
+          "street": "Sherman Street"
+        },
+        {
+          "id": "node/10917024204",
+          "lat": 37.770248,
+          "lon": -122.406954,
+          "street": "Brannan Street"
+        },
+        {
+          "id": "node/10689773924",
+          "lat": 37.785187,
+          "lon": -122.424859,
+          "street": "Geary Boulevard"
+        },
+        {
+          "id": "node/10135827277",
+          "lat": 37.777412,
+          "lon": -122.433368,
+          "street": "Fulton Street"
+        },
+        {
+          "id": "node/11263215443",
+          "lat": 37.766245,
+          "lon": -122.42898,
+          "street": "Church Street"
+        },
+        {
+          "id": "node/10718390142",
+          "lat": 37.765685,
+          "lon": -122.410685,
+          "street": "16th Street"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-10-04T10:35:38.242Z"
     }
   }
 }

@@ -1,9 +1,9 @@
 {
   "city": "sydney",
-  "generatedAt": "2026-09-27T10:10:46.695Z",
+  "generatedAt": "2026-10-04T10:47:25.667Z",
   "categories": {
     "toilets": {
-      "count": 1045,
+      "count": 1055,
       "pois": [
         {
           "id": "node/6077594937",
@@ -231,9 +231,9 @@
         }
       ],
       "stats": {
-        "free": 592,
+        "free": 598,
         "paid": 3,
-        "stepFree": 470,
+        "stepFree": 476,
         "partlyStepFree": 36
       },
       "near": [
@@ -257,7 +257,7 @@
         },
         {
           "landmark": "Q769416",
-          "within": 25,
+          "within": 26,
           "distance": 24,
           "bearing": 103,
           "poi": "way/16748926",
@@ -292,10 +292,10 @@
           "lon": 151.20899
         }
       ],
-      "updatedAt": "2026-09-23T08:32:56.336Z"
+      "updatedAt": "2026-10-04T10:46:58.063Z"
     },
     "drinking-water": {
-      "count": 1308,
+      "count": 1313,
       "pois": [
         {
           "id": "node/4055969197",
@@ -486,10 +486,10 @@
         }
       ],
       "stats": {
-        "free": 153,
+        "free": 159,
         "paid": 2,
-        "stepFree": 79,
-        "partlyStepFree": 14
+        "stepFree": 80,
+        "partlyStepFree": 15
       },
       "near": [
         {
@@ -547,10 +547,10 @@
           "lon": 151.208076
         }
       ],
-      "updatedAt": "2026-09-23T08:32:58.098Z"
+      "updatedAt": "2026-10-04T10:47:00.277Z"
     },
     "playgrounds": {
-      "count": 825,
+      "count": 826,
       "pois": [
         {
           "id": "way/271608910",
@@ -746,10 +746,10 @@
         "stepFree": 12,
         "partlyStepFree": 10
       },
-      "updatedAt": "2026-09-27T10:10:20.430Z"
+      "updatedAt": "2026-10-04T10:47:01.489Z"
     },
     "parking": {
-      "count": 2494,
+      "count": 2498,
       "pois": [
         {
           "id": "node/20827946",
@@ -839,13 +839,6 @@
           "lon": 151.198149
         },
         {
-          "id": "node/6171639324",
-          "name": "Opera House Car Park",
-          "lat": -33.859668,
-          "lon": 151.213631,
-          "fee": "yes"
-        },
-        {
           "id": "node/20930508",
           "name": "Sussex Centre",
           "lat": -33.878136,
@@ -857,6 +850,7 @@
           "name": "Goulburn Street Car Park",
           "lat": -33.879047,
           "lon": 151.208834,
+          "openingHours": "Mo-Su,PH 00:00-24:00",
           "fee": "yes"
         },
         {
@@ -864,6 +858,13 @@
           "name": "Kiss and Ride",
           "lat": -33.860021,
           "lon": 151.20255
+        },
+        {
+          "id": "way/1555873656",
+          "name": "Opera House Car Park",
+          "lat": -33.85881,
+          "lon": 151.214774,
+          "fee": "yes"
         },
         {
           "id": "relation/5691879",
@@ -959,12 +960,12 @@
         }
       ],
       "stats": {
-        "free": 470,
-        "paid": 176,
+        "free": 482,
+        "paid": 178,
         "stepFree": 31,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:10:21.990Z"
+      "updatedAt": "2026-10-04T10:47:02.916Z"
     },
     "charging-stations": {
       "count": 106,
@@ -1027,10 +1028,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:22.560Z"
+      "updatedAt": "2026-10-04T10:47:03.404Z"
     },
     "gas-stations": {
-      "count": 190,
+      "count": 192,
       "pois": [
         {
           "id": "way/271040461",
@@ -1212,25 +1213,25 @@
           "lon": 151.199309
         },
         {
+          "id": "way/1559799044",
+          "name": "Franks Automotive & Independant Fuel",
+          "lat": -33.913134,
+          "lon": 151.162039,
+          "address": "Marrickville Road 72-81",
+          "openingHours": "Mo-Fr 07:00-17:30; Sa 07:00-13:00"
+        },
+        {
+          "id": "node/338532411",
+          "name": "Franks Automotive",
+          "lat": -33.913192,
+          "lon": 151.162068
+        },
+        {
           "id": "node/2643644414",
           "name": "BP Mascot",
           "lat": -33.92837,
           "lon": 151.195185,
           "address": "Botany Road 1077"
-        },
-        {
-          "id": "node/4279164098",
-          "name": "Metro Petroleum Tempe",
-          "lat": -33.920287,
-          "lon": 151.167567,
-          "openingHours": "24/7"
-        },
-        {
-          "id": "node/2283838747",
-          "name": "OTR",
-          "lat": -33.805908,
-          "lon": 151.198949,
-          "openingHours": "Mo-Sa 06:00-23:00; Su 06:00-22:00"
         }
       ],
       "stats": {
@@ -1239,10 +1240,10 @@
         "stepFree": 15,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:10:23.290Z"
+      "updatedAt": "2026-10-04T10:47:04.061Z"
     },
     "ice-cream": {
-      "count": 101,
+      "count": 105,
       "pois": [
         {
           "id": "node/12878726880",
@@ -1335,8 +1336,14 @@
           "name": "Andersen’s Ice Cream",
           "lat": -33.875075,
           "lon": 151.20076,
-          "address": "Darling Dr 14",
+          "address": "Darling Drive 14",
           "openingHours": "Mo-Su 10:30-23:30"
+        },
+        {
+          "id": "node/14157181030",
+          "name": "Mapp",
+          "lat": -33.878821,
+          "lon": 151.21495
         },
         {
           "id": "node/2985610057",
@@ -1352,6 +1359,12 @@
           "lon": 151.201671,
           "address": "Steam Mill Lane 18",
           "openingHours": "Su-Th 12:00-22:00; Fr-Sa 12:00-23:00"
+        },
+        {
+          "id": "node/14157181018",
+          "name": "C9 Chocolate & Helato",
+          "lat": -33.880166,
+          "lon": 151.21659
         },
         {
           "id": "node/13540733952",
@@ -1429,30 +1442,15 @@
           "address": "Enmore Road 63-71",
           "openingHours": "Su-Th 11:30-22:30; Fr-Sa 11:30-23:30",
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/13707141467",
-          "name": "Aisukurimu",
-          "lat": -33.898639,
-          "lon": 151.174452,
-          "address": "Enmore Road 97"
-        },
-        {
-          "id": "node/2789598735",
-          "name": "Cow and the Moon",
-          "lat": -33.898911,
-          "lon": 151.172012,
-          "address": "Enmore Road 181",
-          "openingHours": "Mo-Su 08:00-10:00"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 19,
+        "stepFree": 22,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:10:24.025Z"
+      "updatedAt": "2026-10-04T10:47:04.817Z"
     },
     "dog-parks": {
       "count": 39,
@@ -1508,13 +1506,6 @@
           "lat": -33.796498,
           "lon": 151.135413,
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/8829376853",
-          "name": "Forestville War Memorial Playing Fields (Melwood Oval)",
-          "lat": -33.762418,
-          "lon": 151.20981,
-          "wheelchair": "no"
         }
       ],
       "stats": {
@@ -1523,10 +1514,10 @@
         "stepFree": 12,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:10:24.596Z"
+      "updatedAt": "2026-10-04T10:47:05.377Z"
     },
     "picnic-spots": {
-      "count": 1399,
+      "count": 1410,
       "pois": [
         {
           "id": "node/599159185",
@@ -1721,10 +1712,10 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:25.980Z"
+      "updatedAt": "2026-10-04T10:47:06.543Z"
     },
     "viewpoints": {
-      "count": 293,
+      "count": 305,
       "pois": [
         {
           "id": "way/197801072",
@@ -1927,7 +1918,7 @@
         "stepFree": 4,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:10:26.799Z"
+      "updatedAt": "2026-10-04T10:47:07.360Z"
     },
     "beaches": {
       "count": 215,
@@ -2109,7 +2100,7 @@
           "id": "way/10420683",
           "name": "Cobblers Beach",
           "lat": -33.825879,
-          "lon": 151.262837
+          "lon": 151.262862
         },
         {
           "id": "way/176725266",
@@ -2124,10 +2115,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:28.031Z"
+      "updatedAt": "2026-10-04T10:47:08.021Z"
     },
     "atms": {
-      "count": 212,
+      "count": 211,
       "pois": [
         {
           "id": "node/2525930243",
@@ -2192,6 +2183,12 @@
           "name": "St.George",
           "lat": -33.861934,
           "lon": 151.20991
+        },
+        {
+          "id": "node/14157193862",
+          "name": "Oxford Convenience",
+          "lat": -33.878056,
+          "lon": 151.213482
         },
         {
           "id": "node/11411663490",
@@ -2334,14 +2331,6 @@
           "lat": -33.796139,
           "lon": 151.277072,
           "openingHours": "Mo-Su 09:00-17:00"
-        },
-        {
-          "id": "node/3023985833",
-          "name": "NAB rediATM",
-          "lat": -33.863013,
-          "lon": 151.088233,
-          "openingHours": "24/7",
-          "wheelchair": "yes"
         }
       ],
       "stats": {
@@ -2350,10 +2339,10 @@
         "stepFree": 26,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T10:10:29.283Z"
+      "updatedAt": "2026-10-04T10:47:08.670Z"
     },
     "post-boxes": {
-      "count": 436,
+      "count": 437,
       "pois": [
         {
           "id": "node/2573945624",
@@ -2379,13 +2368,6 @@
           "name": "Australia Post",
           "lat": -33.822609,
           "lon": 151.201024
-        },
-        {
-          "id": "node/4293860350",
-          "name": "Marrickville Metro Shop Post Office",
-          "lat": -33.907177,
-          "lon": 151.172437,
-          "address": "Victoria Road 34"
         },
         {
           "id": "node/325399284",
@@ -2537,6 +2519,12 @@
           "lat": -33.877346,
           "lon": 151.212705,
           "street": "Oxford Street"
+        },
+        {
+          "id": "node/20930541",
+          "lat": -33.878754,
+          "lon": 151.20562,
+          "street": "George Street"
         }
       ],
       "stats": {
@@ -2545,10 +2533,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:30.981Z"
+      "updatedAt": "2026-10-04T10:47:09.935Z"
     },
     "recycling": {
-      "count": 176,
+      "count": 179,
       "pois": [
         {
           "id": "node/12513329323",
@@ -2751,7 +2739,7 @@
         "stepFree": 7,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:10:33.370Z"
+      "updatedAt": "2026-10-04T10:47:11.828Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -2762,10 +2750,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:34.100Z"
+      "updatedAt": "2026-10-04T10:47:12.381Z"
     },
     "libraries": {
-      "count": 212,
+      "count": 213,
       "pois": [
         {
           "id": "node/13251057249",
@@ -2982,10 +2970,10 @@
         "stepFree": 23,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:10:34.763Z"
+      "updatedAt": "2026-10-04T10:47:13.161Z"
     },
     "outdoor-gyms": {
-      "count": 159,
+      "count": 162,
       "pois": [
         {
           "id": "node/7836267460",
@@ -2998,7 +2986,7 @@
           "name": "Federal Park Fitness Equipment",
           "lat": -33.875056,
           "lon": 151.176598,
-          "address": "2a Chapman Road",
+          "address": "Chapman Road 2A",
           "openingHours": "24/7",
           "wheelchair": "limited",
           "fee": "no"
@@ -3020,9 +3008,9 @@
         "free": 1,
         "paid": 0,
         "stepFree": 6,
-        "partlyStepFree": 3
+        "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T10:10:36.200Z"
+      "updatedAt": "2026-10-04T10:47:14.333Z"
     },
     "camp-sites": {
       "count": 3,
@@ -3055,10 +3043,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:36.778Z"
+      "updatedAt": "2026-10-04T10:47:14.880Z"
     },
     "shelters": {
-      "count": 289,
+      "count": 292,
       "pois": [
         {
           "id": "relation/17436204",
@@ -3223,9 +3211,9 @@
           "street": "The Great North Walk"
         },
         {
-          "id": "node/9907847041",
-          "lat": -33.827869,
-          "lon": 151.145788,
+          "id": "node/9907847040",
+          "lat": -33.827903,
+          "lon": 151.145738,
           "street": "Loop Road"
         },
         {
@@ -3247,7 +3235,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:39.152Z"
+      "updatedAt": "2026-10-04T10:47:17.120Z"
     },
     "rest-areas": {
       "count": 12,
@@ -3258,7 +3246,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:39.719Z"
+      "updatedAt": "2026-10-04T10:47:17.748Z"
     },
     "dump-stations": {
       "count": 1,
@@ -3278,10 +3266,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:40.201Z"
+      "updatedAt": "2026-10-04T10:47:18.143Z"
     },
     "post-offices": {
-      "count": 129,
+      "count": 124,
       "pois": [
         {
           "id": "node/5996637987",
@@ -3330,11 +3318,18 @@
         },
         {
           "id": "node/10096970394",
-          "name": "Australia Post",
+          "name": "Royal Exchange Post Office",
           "lat": -33.862761,
           "lon": 151.209242,
           "openingHours": "Mo-Fr 09:00-17:00",
           "wheelchair": "no"
+        },
+        {
+          "id": "node/12039317545",
+          "name": "Kent Street Post Office",
+          "lat": -33.863924,
+          "lon": 151.203864,
+          "openingHours": "Mo-Fr 09:00-17:00"
         },
         {
           "id": "node/20827869",
@@ -3346,12 +3341,19 @@
         },
         {
           "id": "node/1085489535",
-          "name": "Haymarket Post Shop",
+          "name": "Haymarket Post Office",
           "lat": -33.880289,
           "lon": 151.206573,
           "address": "Pitt Street 477",
-          "openingHours": "Mo-Fr 08:00-17:00, Sa 09:30-13:00",
+          "openingHours": "Mo-Fr 09:00-17:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/12071142967",
+          "name": "Pyrmont Post Office",
+          "lat": -33.869695,
+          "lon": 151.194773,
+          "openingHours": "Mo-Fr 09:00-17:00"
         },
         {
           "id": "node/9996542234",
@@ -3360,6 +3362,22 @@
           "lon": 151.225413,
           "address": "Macleay Street 50-58",
           "openingHours": "Mo-Fr 09:00-17:00; Sa 09:30-13:00"
+        },
+        {
+          "id": "node/4229084363",
+          "name": "Surry Hills Post Office",
+          "lat": -33.887298,
+          "lon": 151.213833,
+          "address": "Crown Street 500",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:30-13:00"
+        },
+        {
+          "id": "node/3977545159",
+          "name": "Broadway Post Office",
+          "lat": -33.883175,
+          "lon": 151.193868,
+          "address": "Bay Street 1-21",
+          "openingHours": "Mo-We 09:00-17:00; Th 09:00-18:00; Fr 09:00-17:00; Sa 09:30-13:00"
         },
         {
           "id": "node/9996542235",
@@ -3384,11 +3402,18 @@
           "openingHours": "Mo-Fr 09:00-17:00; Sa 09:30-13:00"
         },
         {
+          "id": "node/253116039",
+          "name": "Milsons Point Post Office",
+          "lat": -33.845541,
+          "lon": 151.212298,
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
           "id": "node/4295529354",
           "name": "Edgecliff Post Office",
           "lat": -33.878963,
           "lon": 151.235337,
-          "address": "South Head Road 203-233",
+          "address": "New South Head Road 203-233",
           "openingHours": "Mo-Fr 09:00-17:00"
         },
         {
@@ -3396,6 +3421,28 @@
           "name": "Redfern Post Office",
           "lat": -33.892313,
           "lon": 151.201267
+        },
+        {
+          "id": "node/426219570",
+          "name": "McMahons Point Post Office",
+          "lat": -33.844532,
+          "lon": 151.204432,
+          "address": "Blues Point Road 125",
+          "openingHours": "Mo-Fr 08:30-17:30; Sa 09:00-12:00"
+        },
+        {
+          "id": "node/4071269497",
+          "name": "Sydney University Post Office",
+          "lat": -33.885788,
+          "lon": 151.187653,
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
+          "id": "node/253491390",
+          "name": "Balmain Post Office",
+          "lat": -33.856528,
+          "lon": 151.177591,
+          "openingHours": "Mo-Fr 09:00-17:00"
         },
         {
           "id": "node/9875619085",
@@ -3424,7 +3471,14 @@
           "name": "Double Bay Post Office",
           "lat": -33.877328,
           "lon": 151.244856,
-          "address": "South Head Road 469-473"
+          "address": "New South Head Road 469-473"
+        },
+        {
+          "id": "node/13812800861",
+          "name": "North Sydney Post Office",
+          "lat": -33.838012,
+          "lon": 151.206605,
+          "openingHours": "Mo-Fr 09:00-17:00"
         },
         {
           "id": "way/414771366",
@@ -3440,82 +3494,15 @@
           "lon": 151.170554,
           "openingHours": "Mo-Fr 09:00-17:00; Sa,Su off",
           "wheelchair": "yes"
-        },
-        {
-          "id": "way/427325030",
-          "name": "Neutral Bay Post Office",
-          "lat": -33.831314,
-          "lon": 151.221038,
-          "address": "Military Road 135",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/2337743128",
-          "name": "Newtown Post Shop",
-          "lat": -33.898082,
-          "lon": 151.177216,
-          "address": "Enmore Road 21-25",
-          "openingHours": "Mo-Fr 09:00-17:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/3529607346",
-          "name": "Greenwich Post Office",
-          "lat": -33.831417,
-          "lon": 151.186328,
-          "address": "Greenwich Road 91a"
-        },
-        {
-          "id": "node/4312386623",
-          "name": "Cremorne Junction Post Office",
-          "lat": -33.829403,
-          "lon": 151.229884
-        },
-        {
-          "id": "node/4293860347",
-          "name": "Enmore Post Office",
-          "lat": -33.89915,
-          "lon": 151.171196,
-          "address": "Enmore Road 203"
-        },
-        {
-          "id": "node/4295529352",
-          "name": "Bellevue Hill Post Office",
-          "lat": -33.886652,
-          "lon": 151.258734,
-          "address": "Victoria Road 196-204",
-          "openingHours": "24/7"
-        },
-        {
-          "id": "node/2625875986",
-          "name": "Post Office Crows Nest",
-          "lat": -33.824521,
-          "lon": 151.19758,
-          "address": "Pacific Highway 460",
-          "openingHours": "Mo-Fr 09:00-17:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/363375392",
-          "name": "Cammeray Post Office",
-          "lat": -33.822236,
-          "lon": 151.210253
-        },
-        {
-          "id": "way/684721001",
-          "name": "Alexandria Business Hub",
-          "lat": -33.916232,
-          "lon": 151.198232,
-          "openingHours": "Mo-Fr 09:00-17:00"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 17,
+        "stepFree": 15,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:10:40.862Z"
+      "updatedAt": "2026-10-04T10:47:18.658Z"
     },
     "showers": {
       "count": 108,
@@ -3535,10 +3522,10 @@
         "stepFree": 5,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T10:10:41.380Z"
+      "updatedAt": "2026-10-04T10:47:19.088Z"
     },
     "fireplaces": {
-      "count": 308,
+      "count": 315,
       "pois": [
         {
           "id": "node/6415329585",
@@ -3600,7 +3587,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:42.921Z"
+      "updatedAt": "2026-10-04T10:47:20.447Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3608,7 +3595,7 @@
       "updatedAt": "2026-08-17T04:06:42.060Z"
     },
     "benches": {
-      "count": 7167,
+      "count": 7226,
       "pois": [
         {
           "id": "node/5839258266",
@@ -3797,7 +3784,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:46.593Z"
+      "updatedAt": "2026-10-04T10:47:23.722Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3823,6 +3810,7 @@
           "id": "node/6539604040",
           "lat": -33.878141,
           "lon": 151.201979,
+          "fee": "no",
           "street": "Tumbalong Boulevard"
         },
         {
@@ -3992,12 +3980,192 @@
         }
       ],
       "stats": {
-        "free": 6,
+        "free": 7,
         "paid": 0,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:45.032Z"
+      "updatedAt": "2026-10-04T10:47:22.454Z"
+    },
+    "trash-bins": {
+      "count": 1741,
+      "pois": [
+        {
+          "id": "node/12841090960",
+          "name": "Cheapest Load of Rubbish",
+          "lat": -33.907973,
+          "lon": 151.181147
+        },
+        {
+          "id": "node/5565659087",
+          "name": "UNSW Waste Bin",
+          "lat": -33.918235,
+          "lon": 151.231253
+        },
+        {
+          "id": "node/5236004598",
+          "name": "A3 - Central area",
+          "lat": -33.790538,
+          "lon": 151.144035
+        },
+        {
+          "id": "node/5235929297",
+          "name": "A2 CommRm/Amenities nr office",
+          "lat": -33.789152,
+          "lon": 151.143645
+        },
+        {
+          "id": "node/13337407388",
+          "name": "Bin",
+          "lat": -33.871477,
+          "lon": 151.092547
+        },
+        {
+          "id": "node/10910524208",
+          "name": "Garbage",
+          "lat": -33.783378,
+          "lon": 151.145278
+        },
+        {
+          "id": "node/10966374211",
+          "lat": -33.869086,
+          "lon": 151.209411,
+          "street": "King Street"
+        },
+        {
+          "id": "node/9892778759",
+          "lat": -33.869246,
+          "lon": 151.208354,
+          "street": "Pitt Street Mall"
+        },
+        {
+          "id": "node/10966374257",
+          "lat": -33.867819,
+          "lon": 151.208488,
+          "street": "Pitt Street"
+        },
+        {
+          "id": "node/5104336823",
+          "lat": -33.867676,
+          "lon": 151.208567,
+          "street": "Martin Place"
+        },
+        {
+          "id": "node/10966374254",
+          "lat": -33.867394,
+          "lon": 151.208419,
+          "street": "Pitt Street Cycleway"
+        },
+        {
+          "id": "node/10966374226",
+          "lat": -33.870396,
+          "lon": 151.209559,
+          "street": "Castlereagh Street"
+        },
+        {
+          "id": "node/10966374216",
+          "lat": -33.870532,
+          "lon": 151.210139,
+          "street": "Elizabeth Street"
+        },
+        {
+          "id": "node/10966368342",
+          "lat": -33.870679,
+          "lon": 151.209315,
+          "street": "Market Street"
+        },
+        {
+          "id": "node/10966374207",
+          "lat": -33.867894,
+          "lon": 151.211319,
+          "street": "Phillip Street"
+        },
+        {
+          "id": "node/10966374210",
+          "lat": -33.86858,
+          "lon": 151.206902,
+          "street": "King Street Cycleway"
+        },
+        {
+          "id": "node/10966368356",
+          "lat": -33.868395,
+          "lon": 151.206926,
+          "street": "George Street"
+        },
+        {
+          "id": "node/9892765633",
+          "lat": -33.869674,
+          "lon": 151.206897,
+          "street": "Temperance Lane"
+        },
+        {
+          "id": "node/10774407329",
+          "lat": -33.867609,
+          "lon": 151.207021,
+          "street": "Barrack Street"
+        },
+        {
+          "id": "node/6571962256",
+          "lat": -33.869147,
+          "lon": 151.211961,
+          "street": "Macquarie Street"
+        },
+        {
+          "id": "node/10966374242",
+          "lat": -33.867067,
+          "lon": 151.207195,
+          "street": "Angel Place"
+        },
+        {
+          "id": "node/10966374208",
+          "lat": -33.866103,
+          "lon": 151.209826,
+          "street": "Richard Johnson Square"
+        },
+        {
+          "id": "node/10966374241",
+          "lat": -33.866338,
+          "lon": 151.207296,
+          "street": "Palings Lane"
+        },
+        {
+          "id": "node/10966368336",
+          "lat": -33.867503,
+          "lon": 151.20594,
+          "street": "York Street"
+        },
+        {
+          "id": "node/10966374209",
+          "lat": -33.86657,
+          "lon": 151.212107,
+          "street": "Hunter Street"
+        },
+        {
+          "id": "node/10966374240",
+          "lat": -33.865903,
+          "lon": 151.207341,
+          "street": "Wynyard Station Hunter Connection Tunnel"
+        },
+        {
+          "id": "node/10966368376",
+          "lat": -33.870141,
+          "lon": 151.205363,
+          "street": "Clarence Street"
+        },
+        {
+          "id": "node/10966368354",
+          "lat": -33.865363,
+          "lon": 151.210459,
+          "street": "Bligh Street"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 6,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:47:25.565Z"
     }
   }
 }

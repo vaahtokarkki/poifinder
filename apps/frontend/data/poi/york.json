@@ -1,6 +1,6 @@
 {
   "city": "york",
-  "generatedAt": "2026-09-27T09:47:48.577Z",
+  "generatedAt": "2026-10-04T10:20:06.053Z",
   "categories": {
     "toilets": {
       "count": 71,
@@ -40,11 +40,13 @@
           "wheelchair": "no"
         },
         {
-          "id": "node/11243670880",
-          "lat": 53.958839,
-          "lon": -1.080336,
-          "wheelchair": "yes",
-          "context": "Marks & Spencer"
+          "id": "way/59090939",
+          "name": "Marks & Spencer",
+          "lat": 53.958863,
+          "lon": -1.080323,
+          "address": "Pavement 9",
+          "openingHours": "Mo-Sa 08:00-19:00; Su 11:00-17:00",
+          "wheelchair": "yes"
         },
         {
           "id": "node/1533616161",
@@ -205,7 +207,7 @@
           "lon": -1.096431
         }
       ],
-      "updatedAt": "2026-09-23T08:29:53.601Z"
+      "updatedAt": "2026-10-04T10:19:41.641Z"
     },
     "drinking-water": {
       "count": 6,
@@ -254,7 +256,7 @@
           "lon": -1.09365
         }
       ],
-      "updatedAt": "2026-09-23T08:29:54.787Z"
+      "updatedAt": "2026-10-04T10:19:44.246Z"
     },
     "playgrounds": {
       "count": 147,
@@ -410,7 +412,7 @@
         "stepFree": 0,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:47:29.880Z"
+      "updatedAt": "2026-10-04T10:19:45.080Z"
     },
     "parking": {
       "count": 637,
@@ -617,7 +619,8 @@
           "id": "way/130307528",
           "name": "Asda",
           "lat": 53.962937,
-          "lon": -1.072321
+          "lon": -1.072321,
+          "fee": "no"
         },
         {
           "id": "way/413461953",
@@ -641,12 +644,12 @@
         }
       ],
       "stats": {
-        "free": 270,
+        "free": 273,
         "paid": 59,
         "stepFree": 20,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:31.028Z"
+      "updatedAt": "2026-10-04T10:19:46.038Z"
     },
     "charging-stations": {
       "count": 43,
@@ -720,7 +723,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:31.520Z"
+      "updatedAt": "2026-10-04T10:19:46.547Z"
     },
     "gas-stations": {
       "count": 15,
@@ -824,7 +827,7 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:32.100Z"
+      "updatedAt": "2026-10-04T10:19:47.040Z"
     },
     "ice-cream": {
       "count": 9,
@@ -848,7 +851,8 @@
           "name": "Amorino",
           "lat": 53.95889,
           "lon": -1.080827,
-          "address": "Parliament Street 39"
+          "address": "Parliament Street 39",
+          "wheelchair": "limited"
         },
         {
           "id": "node/6138262600",
@@ -898,9 +902,9 @@
         "free": 0,
         "paid": 0,
         "stepFree": 0,
-        "partlyStepFree": 0
+        "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:47:32.690Z"
+      "updatedAt": "2026-10-04T10:19:47.483Z"
     },
     "dog-parks": {
       "count": 7,
@@ -931,10 +935,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:33.120Z"
+      "updatedAt": "2026-10-04T10:19:47.837Z"
     },
     "picnic-spots": {
-      "count": 165,
+      "count": 167,
       "pois": [],
       "stats": {
         "free": 0,
@@ -942,7 +946,7 @@
         "stepFree": 4,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:47:34.220Z"
+      "updatedAt": "2026-10-04T10:19:48.966Z"
     },
     "viewpoints": {
       "count": 5,
@@ -960,7 +964,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:34.792Z"
+      "updatedAt": "2026-10-04T10:19:49.907Z"
     },
     "beaches": {
       "count": 2,
@@ -978,7 +982,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:35.312Z"
+      "updatedAt": "2026-10-04T10:19:50.724Z"
     },
     "atms": {
       "count": 87,
@@ -1038,7 +1042,7 @@
           "lat": 53.958564,
           "lon": -1.080278,
           "address": "Parliament Street 47",
-          "openingHours": "Mo,Tu,Th,Fr 09:00-17:00; We 09:30-17:00; Sa 09:00-14:00",
+          "openingHours": "Mo-Tu,Th-Fr 09:30-16:30; We 10:00-16:30; Sa 09:30-13:00; Su off",
           "wheelchair": "yes"
         },
         {
@@ -1118,7 +1122,7 @@
         "stepFree": 12,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:47:36.001Z"
+      "updatedAt": "2026-10-04T10:19:51.617Z"
     },
     "post-boxes": {
       "count": 257,
@@ -1310,7 +1314,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:37.134Z"
+      "updatedAt": "2026-10-04T10:19:53.194Z"
     },
     "recycling": {
       "count": 31,
@@ -1450,7 +1454,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:39.465Z"
+      "updatedAt": "2026-10-04T10:19:54.784Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -1470,7 +1474,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:40.060Z"
+      "updatedAt": "2026-10-04T10:19:55.202Z"
     },
     "libraries": {
       "count": 30,
@@ -1642,7 +1646,7 @@
         "stepFree": 8,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:40.660Z"
+      "updatedAt": "2026-10-04T10:19:55.639Z"
     },
     "outdoor-gyms": {
       "count": 14,
@@ -1660,7 +1664,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:41.579Z"
+      "updatedAt": "2026-10-04T10:19:56.476Z"
     },
     "camp-sites": {
       "count": 31,
@@ -1856,7 +1860,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:42.102Z"
+      "updatedAt": "2026-10-04T10:19:56.981Z"
     },
     "shelters": {
       "count": 0,
@@ -1867,7 +1871,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:42.913Z"
+      "updatedAt": "2026-10-04T10:19:57.722Z"
     },
     "rest-areas": {
       "count": 2,
@@ -1885,7 +1889,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:43.450Z"
+      "updatedAt": "2026-10-04T10:19:58.162Z"
     },
     "dump-stations": {
       "count": 1,
@@ -1896,7 +1900,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:43.872Z"
+      "updatedAt": "2026-10-04T10:19:58.517Z"
     },
     "post-offices": {
       "count": 27,
@@ -2108,7 +2112,7 @@
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:44.399Z"
+      "updatedAt": "2026-10-04T10:19:59.114Z"
     },
     "showers": {
       "count": 2,
@@ -2119,7 +2123,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:44.820Z"
+      "updatedAt": "2026-10-04T10:19:59.588Z"
     },
     "fireplaces": {
       "count": 16,
@@ -2130,7 +2134,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:46.060Z"
+      "updatedAt": "2026-10-04T10:20:01.763Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2138,7 +2142,7 @@
       "updatedAt": "2026-08-17T04:04:30.866Z"
     },
     "benches": {
-      "count": 1292,
+      "count": 1303,
       "pois": [
         {
           "id": "way/146669675",
@@ -2184,16 +2188,16 @@
           "street": "Museum Street"
         },
         {
+          "id": "node/14207375639",
+          "lat": 53.960812,
+          "lon": -1.088255,
+          "street": "Dame Judi Dench Walk"
+        },
+        {
           "id": "node/1533606540",
           "lat": 53.959693,
           "lon": -1.089153,
           "street": "Station Avenue"
-        },
-        {
-          "id": "node/12020372767",
-          "lat": 53.960724,
-          "lon": -1.088989,
-          "street": "Dame Judi Dench Walk"
         },
         {
           "id": "node/1955977880",
@@ -2272,12 +2276,6 @@
           "lat": 53.961695,
           "lon": -1.083713,
           "street": "High Petergate"
-        },
-        {
-          "id": "node/6324371960",
-          "lat": 53.961348,
-          "lon": -1.083167,
-          "street": "Kleiser' s Court"
         }
       ],
       "stats": {
@@ -2286,7 +2284,7 @@
         "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:48.477Z"
+      "updatedAt": "2026-10-04T10:20:04.667Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2294,7 +2292,7 @@
       "updatedAt": "2026-08-18T03:58:21.387Z"
     },
     "bicycle-repair": {
-      "count": 14,
+      "count": 13,
       "pois": [
         {
           "id": "node/10815534958",
@@ -2331,12 +2329,6 @@
           "lat": 53.941269,
           "lon": -1.047332,
           "street": "Garrowby Way"
-        },
-        {
-          "id": "node/5685842223",
-          "lat": 53.947572,
-          "lon": -1.029366,
-          "street": "Deramore Lane"
         }
       ],
       "stats": {
@@ -2345,7 +2337,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:47:47.377Z"
+      "updatedAt": "2026-10-04T10:20:03.461Z"
+    },
+    "trash-bins": {
+      "count": 495,
+      "pois": [
+        {
+          "id": "node/6286216688",
+          "name": "Ashtray",
+          "lat": 53.946219,
+          "lon": -1.058367
+        },
+        {
+          "id": "node/6293789956",
+          "lat": 53.959671,
+          "lon": -1.087936,
+          "street": "Lendal Bridge"
+        },
+        {
+          "id": "node/7199682534",
+          "lat": 53.958992,
+          "lon": -1.08903,
+          "street": "Station Road"
+        },
+        {
+          "id": "node/5301673769",
+          "lat": 53.960041,
+          "lon": -1.084604,
+          "street": "St Helen's Square"
+        },
+        {
+          "id": "node/5301673767",
+          "lat": 53.960448,
+          "lon": -1.084519,
+          "street": "Blake Street"
+        },
+        {
+          "id": "node/7200476956",
+          "lat": 53.95948,
+          "lon": -1.084377,
+          "street": "Coney Street"
+        },
+        {
+          "id": "node/5891074446",
+          "lat": 53.959848,
+          "lon": -1.083226,
+          "street": "Davygate"
+        },
+        {
+          "id": "node/9036355303",
+          "lat": 53.962122,
+          "lon": -1.089389,
+          "street": "Marygate"
+        },
+        {
+          "id": "node/7199682015",
+          "lat": 53.958624,
+          "lon": -1.090755,
+          "street": "City Walls"
+        },
+        {
+          "id": "node/5891096614",
+          "lat": 53.961744,
+          "lon": -1.084078,
+          "street": "Duncombe Place"
+        },
+        {
+          "id": "node/11830519743",
+          "lat": 53.957304,
+          "lon": -1.087131,
+          "street": "Micklegate"
+        },
+        {
+          "id": "node/11942044678",
+          "lat": 53.961892,
+          "lon": -1.083594,
+          "street": "High Petergate"
+        },
+        {
+          "id": "node/11822485315",
+          "lat": 53.959304,
+          "lon": -1.081972,
+          "street": "Parliament Street"
+        },
+        {
+          "id": "node/6036939034",
+          "lat": 53.962446,
+          "lon": -1.09093,
+          "street": "Frederic Street"
+        },
+        {
+          "id": "node/11822439100",
+          "lat": 53.959683,
+          "lon": -1.081752,
+          "street": "Saint Sampson's Square"
+        },
+        {
+          "id": "node/5902187154",
+          "lat": 53.96169,
+          "lon": -1.082185,
+          "street": "Minster Gates"
+        },
+        {
+          "id": "node/6414548132",
+          "lat": 53.96098,
+          "lon": -1.093128,
+          "street": "Cinder Lane"
+        },
+        {
+          "id": "node/11822443690",
+          "lat": 53.959832,
+          "lon": -1.081221,
+          "street": "Church Street"
+        },
+        {
+          "id": "node/6143471786",
+          "lat": 53.963702,
+          "lon": -1.087127,
+          "street": "Bootham"
+        },
+        {
+          "id": "node/5891096612",
+          "lat": 53.961716,
+          "lon": -1.081388,
+          "street": "Deangate"
+        },
+        {
+          "id": "node/11978969130",
+          "lat": 53.960028,
+          "lon": -1.079945,
+          "street": "Colliergate"
+        },
+        {
+          "id": "node/5902187151",
+          "lat": 53.962109,
+          "lon": -1.080708,
+          "street": "The Queen's Path"
+        },
+        {
+          "id": "node/11909890860",
+          "lat": 53.958306,
+          "lon": -1.08036,
+          "street": "Coppergate"
+        },
+        {
+          "id": "node/11942034462",
+          "lat": 53.962899,
+          "lon": -1.081572,
+          "street": "Minster Yard"
+        },
+        {
+          "id": "node/14056906301",
+          "lat": 53.957282,
+          "lon": -1.080173,
+          "street": "St Mary's Square"
+        },
+        {
+          "id": "node/4317556295",
+          "lat": 53.955057,
+          "lon": -1.084945,
+          "street": "Carr's Lane"
+        },
+        {
+          "id": "node/5904407511",
+          "lat": 53.959031,
+          "lon": -1.078184,
+          "street": "The Stonebow"
+        },
+        {
+          "id": "node/12999733229",
+          "lat": 53.95837,
+          "lon": -1.096158,
+          "street": "Cinder Street"
+        },
+        {
+          "id": "node/7418250509",
+          "lat": 53.954352,
+          "lon": -1.086689,
+          "street": "Lower Priory Street"
+        },
+        {
+          "id": "node/10126546818",
+          "lat": 53.954204,
+          "lon": -1.082139,
+          "street": "Terry Avenue"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:20:05.952Z"
     }
   }
 }

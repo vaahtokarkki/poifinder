@@ -1,9 +1,9 @@
 {
   "city": "barcelona",
-  "generatedAt": "2026-09-27T09:54:06.063Z",
+  "generatedAt": "2026-10-04T10:27:50.905Z",
   "categories": {
     "toilets": {
-      "count": 344,
+      "count": 345,
       "pois": [
         {
           "id": "node/5385230422",
@@ -127,6 +127,14 @@
           "openingHours": "Mo-Fr 10:00-14:00,16:00-20:00; PH off"
         },
         {
+          "id": "node/13672711065",
+          "lat": 41.384742,
+          "lon": 2.185465,
+          "wheelchair": "yes",
+          "fee": "no",
+          "context": "Estació de França"
+        },
+        {
           "id": "node/6977518385",
           "lat": 41.375841,
           "lon": 2.17636,
@@ -207,9 +215,9 @@
         }
       ],
       "stats": {
-        "free": 94,
-        "paid": 23,
-        "stepFree": 62,
+        "free": 98,
+        "paid": 24,
+        "stepFree": 63,
         "partlyStepFree": 7
       },
       "near": [
@@ -268,10 +276,10 @@
           "lon": 2.174959
         }
       ],
-      "updatedAt": "2026-09-23T08:30:41.117Z"
+      "updatedAt": "2026-10-04T10:27:17.949Z"
     },
     "drinking-water": {
-      "count": 2126,
+      "count": 2130,
       "pois": [
         {
           "id": "node/430607924",
@@ -362,6 +370,13 @@
           "name": "Blancanieves con Cervatillo",
           "lat": 41.399552,
           "lon": 2.152852,
+          "fee": "no"
+        },
+        {
+          "id": "node/8697074902",
+          "name": "Font de Bacus",
+          "lat": 41.369321,
+          "lon": 2.156183,
           "fee": "no"
         },
         {
@@ -469,24 +484,18 @@
           "lon": 2.165453,
           "fee": "no",
           "street": "Carrer de la Diputació"
-        },
-        {
-          "id": "node/4790482084",
-          "lat": 41.389382,
-          "lon": 2.165515,
-          "street": "Rambla de Catalunya"
         }
       ],
       "stats": {
-        "free": 1517,
+        "free": 1514,
         "paid": 0,
-        "stepFree": 103,
-        "partlyStepFree": 20
+        "stepFree": 102,
+        "partlyStepFree": 22
       },
       "near": [
         {
           "landmark": "Q48435",
-          "within": 23,
+          "within": 24,
           "distance": 102,
           "bearing": 228,
           "poi": "node/3616716537",
@@ -539,10 +548,10 @@
           "lon": 2.17289
         }
       ],
-      "updatedAt": "2026-09-23T08:30:43.191Z"
+      "updatedAt": "2026-10-04T10:27:20.570Z"
     },
     "playgrounds": {
-      "count": 1192,
+      "count": 1196,
       "pois": [
         {
           "id": "way/37480082",
@@ -558,7 +567,7 @@
         },
         {
           "id": "way/667865848",
-          "name": "Node Ludic",
+          "name": "Node Lúdic",
           "lat": 41.403482,
           "lon": 2.185052
         },
@@ -670,12 +679,12 @@
         }
       ],
       "stats": {
-        "free": 40,
+        "free": 41,
         "paid": 0,
-        "stepFree": 53,
+        "stepFree": 55,
         "partlyStepFree": 11
       },
-      "updatedAt": "2026-09-27T09:53:39.902Z"
+      "updatedAt": "2026-10-04T10:27:21.859Z"
     },
     "parking": {
       "count": 1115,
@@ -835,7 +844,7 @@
         },
         {
           "id": "node/9107170716",
-          "name": "Parking Ciutat Vella",
+          "name": "Interparking Les Rambles - Teatre liceu",
           "lat": 41.3809,
           "lon": 2.172281,
           "address": "Carrer de l' Hospital 25",
@@ -903,14 +912,14 @@
       ],
       "stats": {
         "free": 253,
-        "paid": 428,
+        "paid": 431,
         "stepFree": 75,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:53:41.537Z"
+      "updatedAt": "2026-10-04T10:27:23.125Z"
     },
     "charging-stations": {
-      "count": 187,
+      "count": 186,
       "pois": [
         {
           "id": "node/13572777014",
@@ -1126,7 +1135,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:42.123Z"
+      "updatedAt": "2026-10-04T10:27:23.758Z"
     },
     "gas-stations": {
       "count": 140,
@@ -1357,10 +1366,10 @@
         "stepFree": 16,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:53:42.941Z"
+      "updatedAt": "2026-10-04T10:27:24.599Z"
     },
     "ice-cream": {
-      "count": 157,
+      "count": 160,
       "pois": [
         {
           "id": "node/12365130360",
@@ -1576,10 +1585,10 @@
         "stepFree": 15,
         "partlyStepFree": 6
       },
-      "updatedAt": "2026-09-27T09:53:43.763Z"
+      "updatedAt": "2026-10-04T10:27:25.245Z"
     },
     "dog-parks": {
-      "count": 141,
+      "count": 142,
       "pois": [
         {
           "id": "way/1337820786",
@@ -1594,10 +1603,16 @@
           "lon": 2.186448
         },
         {
+          "id": "relation/21371288",
+          "name": "Àrea d'Esbarjo per a Gossos - Parc de Monterols",
+          "lat": 41.402166,
+          "lon": 2.139829
+        },
+        {
           "id": "way/1525886809",
           "name": "Platja per a gossos",
-          "lat": 41.405467,
-          "lon": 2.219654
+          "lat": 41.405442,
+          "lon": 2.219653
         },
         {
           "id": "way/956069450",
@@ -1619,7 +1634,7 @@
         "stepFree": 16,
         "partlyStepFree": 9
       },
-      "updatedAt": "2026-09-27T09:53:44.401Z"
+      "updatedAt": "2026-10-04T10:27:25.997Z"
     },
     "picnic-spots": {
       "count": 306,
@@ -1668,7 +1683,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:45.921Z"
+      "updatedAt": "2026-10-04T10:27:27.298Z"
     },
     "viewpoints": {
       "count": 136,
@@ -1700,8 +1715,9 @@
         {
           "id": "way/646563774",
           "name": "Torre de Jaume I",
-          "lat": 41.372073,
-          "lon": 2.180108,
+          "lat": 41.372079,
+          "lon": 2.180111,
+          "openingHours": "PH off",
           "fee": "yes"
         },
         {
@@ -1767,6 +1783,12 @@
           "name": "Mirador del Llobregat",
           "lat": 41.367019,
           "lon": 2.143752
+        },
+        {
+          "id": "node/7603117271",
+          "name": "Mirador del Passeig del Trencaones",
+          "lat": 41.363577,
+          "lon": 2.187496
         },
         {
           "id": "node/7966536066",
@@ -1838,10 +1860,10 @@
           "lon": 2.10375
         },
         {
-          "id": "node/6335771061",
-          "name": "Mirador del parc del Tibidabo",
-          "lat": 41.421222,
-          "lon": 2.119542
+          "id": "node/9937580750",
+          "name": "Àrea Panoràmica",
+          "lat": 41.42149,
+          "lon": 2.120228
         },
         {
           "id": "node/9937632560",
@@ -1854,12 +1876,6 @@
           "name": "Mirador dels Xiprers",
           "lat": 41.389719,
           "lon": 2.100123
-        },
-        {
-          "id": "way/1289686074",
-          "name": "Mirador de la Rabassada",
-          "lat": 41.43145,
-          "lon": 2.13119
         }
       ],
       "stats": {
@@ -1868,10 +1884,10 @@
         "stepFree": 3,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:53:46.933Z"
+      "updatedAt": "2026-10-04T10:27:28.404Z"
     },
     "beaches": {
-      "count": 17,
+      "count": 18,
       "pois": [
         {
           "id": "relation/7333373",
@@ -1919,13 +1935,13 @@
           "id": "relation/2175045",
           "name": "Platja de la Nova Mar Bella",
           "lat": 41.40174,
-          "lon": 2.215491
+          "lon": 2.215385
         },
         {
           "id": "relation/2175042",
           "name": "Platja de Llevant",
-          "lat": 41.404415,
-          "lon": 2.218238
+          "lat": 41.4044,
+          "lon": 2.218243
         },
         {
           "id": "relation/2154299",
@@ -1959,10 +1975,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:47.678Z"
+      "updatedAt": "2026-10-04T10:27:29.257Z"
     },
     "atms": {
-      "count": 484,
+      "count": 489,
       "pois": [
         {
           "id": "node/704048811",
@@ -2071,9 +2087,10 @@
         },
         {
           "id": "node/6723380297",
-          "name": "Caixer-Cajero",
-          "lat": 41.388003,
-          "lon": 2.180392
+          "name": "Caixer - ATM - Cajero",
+          "lat": 41.388011,
+          "lon": 2.180416,
+          "address": "Plaça de Sant Agustí Vell 6"
         },
         {
           "id": "node/4254711366",
@@ -2082,10 +2099,10 @@
           "lon": 2.177237
         },
         {
-          "id": "node/10202261245",
+          "id": "node/10202251479",
           "name": "Cajero automático bbva",
-          "lat": 41.381319,
-          "lon": 2.15792
+          "lat": 41.381101,
+          "lon": 2.157918
         },
         {
           "id": "node/10845754821",
@@ -2159,13 +2176,13 @@
         },
         {
           "id": "node/3006698813",
-          "name": "Avanca",
+          "name": "Abanca",
           "lat": 41.407712,
           "lon": 2.15878
         },
         {
           "id": "node/11172113924",
-          "name": "BitBase - Cajero Bitcoin",
+          "name": "BitBase - Caixer  Bitcoin",
           "lat": 41.405262,
           "lon": 2.19122,
           "openingHours": "Mo-Sa 09:30-22:00; Su 12:00-20:00",
@@ -2178,10 +2195,10 @@
         "stepFree": 49,
         "partlyStepFree": 12
       },
-      "updatedAt": "2026-09-27T09:53:48.510Z"
+      "updatedAt": "2026-10-04T10:27:30.021Z"
     },
     "post-boxes": {
-      "count": 386,
+      "count": 385,
       "pois": [
         {
           "id": "node/13016532454",
@@ -2370,10 +2387,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:50.159Z"
+      "updatedAt": "2026-10-04T10:27:31.750Z"
     },
     "recycling": {
-      "count": 4572,
+      "count": 4667,
       "pois": [
         {
           "id": "node/6742628757",
@@ -2570,10 +2587,10 @@
         "stepFree": 12,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T09:53:52.490Z"
+      "updatedAt": "2026-10-04T10:27:34.046Z"
     },
     "luggage-storage": {
-      "count": 19,
+      "count": 20,
       "pois": [
         {
           "id": "node/11978097071",
@@ -2623,14 +2640,14 @@
       ],
       "stats": {
         "free": 0,
-        "paid": 4,
+        "paid": 5,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:53.035Z"
+      "updatedAt": "2026-10-04T10:27:34.969Z"
     },
     "libraries": {
-      "count": 107,
+      "count": 108,
       "pois": [
         {
           "id": "node/2941663858",
@@ -2852,10 +2869,10 @@
         "stepFree": 35,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:53.866Z"
+      "updatedAt": "2026-10-04T10:27:36.341Z"
     },
     "outdoor-gyms": {
-      "count": 138,
+      "count": 139,
       "pois": [
         {
           "id": "node/11118439405",
@@ -2874,12 +2891,12 @@
         "free": 2,
         "paid": 0,
         "stepFree": 4,
-        "partlyStepFree": 2
+        "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:53:55.281Z"
+      "updatedAt": "2026-10-04T10:27:38.097Z"
     },
     "camp-sites": {
-      "count": 1,
+      "count": 2,
       "pois": [
         {
           "id": "node/13390851501",
@@ -2891,11 +2908,11 @@
       ],
       "stats": {
         "free": 0,
-        "paid": 0,
+        "paid": 1,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:55.998Z"
+      "updatedAt": "2026-10-04T10:27:38.828Z"
     },
     "shelters": {
       "count": 3,
@@ -2919,7 +2936,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:58.240Z"
+      "updatedAt": "2026-10-04T10:27:41.137Z"
     },
     "rest-areas": {
       "count": 3,
@@ -2937,7 +2954,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:58.952Z"
+      "updatedAt": "2026-10-04T10:27:41.770Z"
     },
     "dump-stations": {
       "count": 1,
@@ -2948,7 +2965,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:59.477Z"
+      "updatedAt": "2026-10-04T10:27:42.228Z"
     },
     "post-offices": {
       "count": 63,
@@ -3012,6 +3029,14 @@
           "address": "Carrer de Roger de Llúria 129"
         },
         {
+          "id": "node/14183515147",
+          "name": "Oficina de Correus",
+          "lat": 41.381617,
+          "lon": 2.181242,
+          "openingHours": "Mo-Fr 08:30-20:30; PH off",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/11308435591",
           "name": "GLS",
           "lat": 41.400378,
@@ -3034,13 +3059,6 @@
           "openingHours": "Mo-Fr 08:30-20:30"
         },
         {
-          "id": "node/1621857134",
-          "name": "Oficina de Correus",
-          "lat": 41.433442,
-          "lon": 2.215129,
-          "address": "Carrer de les Monges 7"
-        },
-        {
           "id": "node/617248482",
           "name": "Correus i telègrafs. Sucursal 1",
           "lat": 41.437919,
@@ -3061,10 +3079,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 12,
+        "stepFree": 13,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:54:00.096Z"
+      "updatedAt": "2026-10-04T10:27:42.711Z"
     },
     "showers": {
       "count": 65,
@@ -3075,7 +3093,7 @@
         "stepFree": 7,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:54:00.770Z"
+      "updatedAt": "2026-10-04T10:27:43.161Z"
     },
     "fireplaces": {
       "count": 2,
@@ -3086,7 +3104,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:54:01.992Z"
+      "updatedAt": "2026-10-04T10:27:44.498Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3094,7 +3112,7 @@
       "updatedAt": "2026-08-17T04:05:06.220Z"
     },
     "benches": {
-      "count": 5570,
+      "count": 5616,
       "pois": [
         {
           "id": "node/10202552091",
@@ -3211,7 +3229,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:54:05.962Z"
+      "updatedAt": "2026-10-04T10:27:48.591Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3431,7 +3449,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:54:04.108Z"
+      "updatedAt": "2026-10-04T10:27:46.814Z"
+    },
+    "trash-bins": {
+      "count": 2320,
+      "pois": [
+        {
+          "id": "node/10202565155",
+          "name": "Papelera",
+          "lat": 41.388679,
+          "lon": 2.172322
+        },
+        {
+          "id": "node/10207972246",
+          "name": "container sólo residuos",
+          "lat": 41.414667,
+          "lon": 2.181955
+        },
+        {
+          "id": "node/9695566016",
+          "name": "Contenedores",
+          "lat": 41.371823,
+          "lon": 2.126953
+        },
+        {
+          "id": "node/13907402245",
+          "name": "Punt Verd",
+          "lat": 41.348422,
+          "lon": 2.139448
+        },
+        {
+          "id": "node/9776538016",
+          "lat": 41.388005,
+          "lon": 2.169874,
+          "street": "Passeig de Gràcia (lateral Llobregat)"
+        },
+        {
+          "id": "node/13839474968",
+          "lat": 41.38743,
+          "lon": 2.170179,
+          "street": "Plaça de Catalunya"
+        },
+        {
+          "id": "node/9776551335",
+          "lat": 41.388206,
+          "lon": 2.170142,
+          "street": "Passeig de Gràcia"
+        },
+        {
+          "id": "node/13624904346",
+          "lat": 41.388585,
+          "lon": 2.167173,
+          "street": "Gran Via de les Corts Catalanes"
+        },
+        {
+          "id": "node/9775646163",
+          "lat": 41.385567,
+          "lon": 2.168149,
+          "street": "Carrer de Pelai"
+        },
+        {
+          "id": "node/9775685730",
+          "lat": 41.385492,
+          "lon": 2.169977,
+          "street": "La Rambla"
+        },
+        {
+          "id": "node/7041600884",
+          "lat": 41.388468,
+          "lon": 2.171152,
+          "street": "Ronda de Sant Pere"
+        },
+        {
+          "id": "node/11930114343",
+          "lat": 41.387516,
+          "lon": 2.172017,
+          "street": "Carrer de Fontanella"
+        },
+        {
+          "id": "node/13624910826",
+          "lat": 41.389656,
+          "lon": 2.165961,
+          "street": "Carrer de la Diputació"
+        },
+        {
+          "id": "node/7041674320",
+          "lat": 41.38429,
+          "lon": 2.168797,
+          "street": "Carrer de les Ramelleres"
+        },
+        {
+          "id": "node/9775801787",
+          "lat": 41.389565,
+          "lon": 2.165474,
+          "street": "Rambla de Catalunya"
+        },
+        {
+          "id": "node/9768916617",
+          "lat": 41.385944,
+          "lon": 2.164459,
+          "street": "Plaça de la Universitat"
+        },
+        {
+          "id": "node/13624781676",
+          "lat": 41.383918,
+          "lon": 2.166812,
+          "street": "Carrer de Montalegre"
+        },
+        {
+          "id": "node/7041674324",
+          "lat": 41.383551,
+          "lon": 2.169044,
+          "street": "Passatge d'Elisabets"
+        },
+        {
+          "id": "node/12618049805",
+          "lat": 41.390418,
+          "lon": 2.172088,
+          "street": "Carrer de Casp"
+        },
+        {
+          "id": "node/9770284617",
+          "lat": 41.385179,
+          "lon": 2.164075,
+          "street": "Ronda de Sant Antoni"
+        },
+        {
+          "id": "node/12618037262",
+          "lat": 41.390563,
+          "lon": 2.172122,
+          "street": "Carrer de Roger de Llúria"
+        },
+        {
+          "id": "node/13826008531",
+          "lat": 41.385797,
+          "lon": 2.162933,
+          "street": "Carrer d'Aribau"
+        },
+        {
+          "id": "node/4804203377",
+          "lat": 41.385437,
+          "lon": 2.174549,
+          "street": "Carrer dels Capellans"
+        },
+        {
+          "id": "node/13839331425",
+          "lat": 41.384003,
+          "lon": 2.174111,
+          "street": "Carrer de Cucurulla"
+        },
+        {
+          "id": "node/7041600856",
+          "lat": 41.381966,
+          "lon": 2.1694,
+          "street": "Carrer del Doctor Dou"
+        },
+        {
+          "id": "node/6996892988",
+          "lat": 41.381919,
+          "lon": 2.167574,
+          "street": "Carrer del Peu de la Creu"
+        },
+        {
+          "id": "node/12704228115",
+          "lat": 41.392093,
+          "lon": 2.164615,
+          "street": "Carrer d'Aragó"
+        },
+        {
+          "id": "node/7041600858",
+          "lat": 41.38184,
+          "lon": 2.169801,
+          "street": "Carrer Floristes de la Rambla"
+        },
+        {
+          "id": "node/11104803171",
+          "lat": 41.390752,
+          "lon": 2.17473,
+          "street": "Carrer d'Ausiàs Marc"
+        },
+        {
+          "id": "node/6398495697",
+          "lat": 41.381687,
+          "lon": 2.169605,
+          "street": "Carrer del Carme"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:27:50.804Z"
     }
   }
 }

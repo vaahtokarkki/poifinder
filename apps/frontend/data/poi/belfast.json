@@ -1,9 +1,9 @@
 {
   "city": "belfast",
-  "generatedAt": "2026-09-27T09:48:28.114Z",
+  "generatedAt": "2026-10-04T10:20:50.410Z",
   "categories": {
     "toilets": {
-      "count": 53,
+      "count": 55,
       "pois": [
         {
           "id": "node/1233490771",
@@ -21,10 +21,10 @@
           "fee": "no"
         },
         {
-          "id": "node/11407281244",
-          "lat": 54.598825,
-          "lon": -5.925437,
-          "context": "Victoria Square"
+          "id": "way/715755018",
+          "name": "Victoria Square",
+          "lat": 54.59836,
+          "lon": -5.925605
         },
         {
           "id": "node/1233499887",
@@ -178,15 +178,15 @@
         }
       ],
       "stats": {
-        "free": 18,
+        "free": 19,
         "paid": 5,
-        "stepFree": 29,
+        "stepFree": 31,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-23T08:29:58.475Z"
+      "updatedAt": "2026-10-04T10:20:28.597Z"
     },
     "drinking-water": {
-      "count": 9,
+      "count": 13,
       "pois": [
         {
           "id": "node/6794561592",
@@ -207,10 +207,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-23T08:29:59.906Z"
+      "updatedAt": "2026-10-04T10:20:30.537Z"
     },
     "playgrounds": {
-      "count": 153,
+      "count": 154,
       "pois": [
         {
           "id": "way/480854157",
@@ -291,8 +291,8 @@
         {
           "id": "way/396747960",
           "name": "Grove Playgound",
-          "lat": 54.620081,
-          "lon": -5.92594
+          "lat": 54.620095,
+          "lon": -5.92595
         },
         {
           "id": "way/440925768",
@@ -316,8 +316,8 @@
         {
           "id": "way/205694218",
           "name": "Waterworks/Westland small playground",
-          "lat": 54.622892,
-          "lon": -5.945446
+          "lat": 54.622904,
+          "lon": -5.945458
         },
         {
           "id": "way/460772778",
@@ -407,15 +407,15 @@
         "stepFree": 9,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:09.681Z"
+      "updatedAt": "2026-10-04T10:20:31.543Z"
     },
     "parking": {
-      "count": 2299,
+      "count": 2370,
       "pois": [
         {
           "id": "way/367802456",
           "name": "NCP Montgomery Street",
-          "lat": 54.596824,
+          "lat": 54.596826,
           "lon": -5.92703,
           "openingHours": "Mo-Fr 07:00-22:00; Su 10:00-22:00",
           "fee": "yes"
@@ -430,8 +430,8 @@
         {
           "id": "way/97211235",
           "name": "NCP Belfast The Tannery",
-          "lat": 54.599872,
-          "lon": -5.935181,
+          "lat": 54.599866,
+          "lon": -5.9351,
           "wheelchair": "yes",
           "fee": "yes"
         },
@@ -631,11 +631,11 @@
       ],
       "stats": {
         "free": 150,
-        "paid": 79,
+        "paid": 81,
         "stepFree": 22,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:10.919Z"
+      "updatedAt": "2026-10-04T10:20:32.620Z"
     },
     "charging-stations": {
       "count": 39,
@@ -747,7 +747,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:11.423Z"
+      "updatedAt": "2026-10-04T10:20:33.344Z"
     },
     "gas-stations": {
       "count": 66,
@@ -799,8 +799,8 @@
         {
           "id": "way/618579153",
           "name": "Solo",
-          "lat": 54.598141,
-          "lon": -5.958363,
+          "lat": 54.598146,
+          "lon": -5.958368,
           "address": "Springfield Road"
         },
         {
@@ -961,10 +961,10 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:12.022Z"
+      "updatedAt": "2026-10-04T10:20:33.923Z"
     },
     "ice-cream": {
-      "count": 15,
+      "count": 16,
       "pois": [
         {
           "id": "node/6732348041",
@@ -992,6 +992,12 @@
           "lon": -5.922698
         },
         {
+          "id": "way/1319254929",
+          "name": "Rossi's Ice Cream",
+          "lat": 54.615609,
+          "lon": -5.936882
+        },
+        {
           "id": "way/673633868",
           "name": "Mauds Ormeau",
           "lat": 54.577592,
@@ -1017,7 +1023,8 @@
           "id": "node/3874851607",
           "name": "Morelli's",
           "lat": 54.600392,
-          "lon": -5.875696
+          "lon": -5.875696,
+          "address": "Belmont Road 44"
         },
         {
           "id": "node/3220336239",
@@ -1039,7 +1046,8 @@
           "id": "node/4938122230",
           "name": "Chill",
           "lat": 54.632617,
-          "lon": -5.947173
+          "lon": -5.947173,
+          "address": "Cavehill Road 311"
         },
         {
           "id": "node/9846939458",
@@ -1054,7 +1062,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:12.580Z"
+      "updatedAt": "2026-10-04T10:20:34.485Z"
     },
     "dog-parks": {
       "count": 5,
@@ -1091,7 +1099,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:13.060Z"
+      "updatedAt": "2026-10-04T10:20:34.883Z"
     },
     "picnic-spots": {
       "count": 61,
@@ -1102,7 +1110,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:14.280Z"
+      "updatedAt": "2026-10-04T10:20:35.881Z"
     },
     "viewpoints": {
       "count": 14,
@@ -1140,7 +1148,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:14.927Z"
+      "updatedAt": "2026-10-04T10:20:36.514Z"
     },
     "beaches": {
       "count": 4,
@@ -1158,10 +1166,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:15.600Z"
+      "updatedAt": "2026-10-04T10:20:37.020Z"
     },
     "atms": {
-      "count": 136,
+      "count": 135,
       "pois": [
         {
           "id": "node/3930506805",
@@ -1177,16 +1185,16 @@
           "lon": -5.929969
         },
         {
-          "id": "node/6260947395",
-          "name": "Ulster Bank",
-          "lat": 54.59785,
-          "lon": -5.930402
-        },
-        {
           "id": "node/6736485331",
           "name": "Halifax",
           "lat": 54.597362,
           "lon": -5.931094
+        },
+        {
+          "id": "node/6260947395",
+          "name": "Ulster Bank",
+          "lat": 54.597849,
+          "lon": -5.930456
         },
         {
           "id": "way/717288054",
@@ -1263,10 +1271,10 @@
         "stepFree": 14,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:16.182Z"
+      "updatedAt": "2026-10-04T10:20:37.598Z"
     },
     "post-boxes": {
-      "count": 194,
+      "count": 204,
       "pois": [
         {
           "id": "node/4007329355",
@@ -1360,6 +1368,12 @@
           "street": "Royal Avenue"
         },
         {
+          "id": "node/14140588590",
+          "lat": 54.594479,
+          "lon": -5.936062,
+          "street": "Halt@Weaverscross"
+        },
+        {
           "id": "node/4204422389",
           "lat": 54.591419,
           "lon": -5.92589,
@@ -1375,8 +1389,8 @@
         },
         {
           "id": "node/3988582492",
-          "lat": 54.602894,
-          "lon": -5.923289,
+          "lat": 54.602906,
+          "lon": -5.923363,
           "street": "Tomb Street"
         },
         {
@@ -1385,6 +1399,12 @@
           "lon": -5.931178,
           "address": "Donegall Street 122",
           "street": "Donegall Street"
+        },
+        {
+          "id": "node/14140589031",
+          "lat": 54.591236,
+          "lon": -5.937047,
+          "street": "Sandy Row"
         },
         {
           "id": "node/12804270947",
@@ -1432,37 +1452,22 @@
           "street": "North Queen Street"
         },
         {
-          "id": "node/4012358203",
-          "lat": 54.608545,
-          "lon": -5.941112,
-          "address": "Crumlin Road",
-          "street": "Crumlin Road"
+          "id": "node/14137891076",
+          "lat": 54.586144,
+          "lon": -5.929894,
+          "street": "University Street"
         },
         {
-          "id": "node/6214256199",
-          "lat": 54.588755,
-          "lon": -5.947539,
-          "street": "Thalia Street"
+          "id": "node/14137934413",
+          "lat": 54.586487,
+          "lon": -5.935794,
+          "street": "University Road"
         },
         {
-          "id": "node/560171870",
-          "lat": 54.585538,
-          "lon": -5.941061,
-          "address": "Lisburn Road",
-          "street": "Lisburn Road"
-        },
-        {
-          "id": "node/3988152304",
-          "lat": 54.610433,
-          "lon": -5.925472,
-          "address": "Brougham Street",
-          "street": "Brougham Street"
-        },
-        {
-          "id": "node/4031412950",
-          "lat": 54.611161,
-          "lon": -5.935762,
-          "street": "Antrim Road"
+          "id": "node/14140516681",
+          "lat": 54.588754,
+          "lon": -5.944121,
+          "street": "Donegall Road"
         }
       ],
       "stats": {
@@ -1471,7 +1476,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:17.261Z"
+      "updatedAt": "2026-10-04T10:20:38.726Z"
     },
     "recycling": {
       "count": 41,
@@ -1486,8 +1491,8 @@
         {
           "id": "way/1033795626",
           "name": "Springfield Road Civic Amenity Site",
-          "lat": 54.598366,
-          "lon": -5.960022
+          "lat": 54.598371,
+          "lon": -5.960029
         },
         {
           "id": "way/392089631",
@@ -1616,7 +1621,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:18.942Z"
+      "updatedAt": "2026-10-04T10:20:40.464Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1627,10 +1632,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:19.400Z"
+      "updatedAt": "2026-10-04T10:20:40.914Z"
     },
     "libraries": {
-      "count": 22,
+      "count": 24,
       "pois": [
         {
           "id": "way/689960676",
@@ -1643,17 +1648,15 @@
         {
           "id": "way/26370077",
           "name": "Bar Library",
-          "lat": 54.596973,
-          "lon": -5.923186,
+          "lat": 54.597021,
+          "lon": -5.923218,
           "address": "Chichester Street 91"
         },
         {
-          "id": "relation/8334606",
+          "id": "node/14162782031",
           "name": "Belfast Central Library",
-          "lat": 54.603045,
-          "lon": -5.931725,
-          "address": "Royal Avenue",
-          "wheelchair": "yes"
+          "lat": 54.60297,
+          "lon": -5.931408
         },
         {
           "id": "way/488438856",
@@ -1797,7 +1800,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:19.981Z"
+      "updatedAt": "2026-10-04T10:20:41.421Z"
     },
     "outdoor-gyms": {
       "count": 15,
@@ -1808,7 +1811,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:21.079Z"
+      "updatedAt": "2026-10-04T10:20:42.304Z"
     },
     "camp-sites": {
       "count": 3,
@@ -1833,7 +1836,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:21.580Z"
+      "updatedAt": "2026-10-04T10:20:42.877Z"
     },
     "shelters": {
       "count": 0,
@@ -1844,7 +1847,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:22.416Z"
+      "updatedAt": "2026-10-04T10:20:43.623Z"
     },
     "rest-areas": {
       "count": 0,
@@ -1855,7 +1858,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:22.940Z"
+      "updatedAt": "2026-10-04T10:20:44.068Z"
     },
     "dump-stations": {
       "count": 0,
@@ -1866,7 +1869,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:23.369Z"
+      "updatedAt": "2026-10-04T10:20:44.417Z"
     },
     "post-offices": {
       "count": 58,
@@ -2118,7 +2121,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:23.886Z"
+      "updatedAt": "2026-10-04T10:20:44.854Z"
     },
     "showers": {
       "count": 0,
@@ -2129,7 +2132,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:24.319Z"
+      "updatedAt": "2026-10-04T10:20:45.203Z"
     },
     "fireplaces": {
       "count": 12,
@@ -2147,7 +2150,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:25.560Z"
+      "updatedAt": "2026-10-04T10:20:46.242Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2155,7 +2158,7 @@
       "updatedAt": "2026-08-17T04:04:35.141Z"
     },
     "benches": {
-      "count": 434,
+      "count": 444,
       "pois": [
         {
           "id": "node/13063318128",
@@ -2278,7 +2281,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:28.008Z"
+      "updatedAt": "2026-10-04T10:20:48.757Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2313,7 +2316,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:26.867Z"
+      "updatedAt": "2026-10-04T10:20:47.558Z"
+    },
+    "trash-bins": {
+      "count": 586,
+      "pois": [
+        {
+          "id": "node/13063318130",
+          "lat": 54.597496,
+          "lon": -5.930113,
+          "street": "Donegall Place"
+        },
+        {
+          "id": "node/13382293621",
+          "lat": 54.597352,
+          "lon": -5.93052,
+          "street": "Donegall Square North"
+        },
+        {
+          "id": "node/12985331571",
+          "lat": 54.59713,
+          "lon": -5.928993,
+          "street": "Donegall Square East"
+        },
+        {
+          "id": "node/13094709097",
+          "lat": 54.597398,
+          "lon": -5.928778,
+          "street": "Callender Street"
+        },
+        {
+          "id": "node/13382293622",
+          "lat": 54.59732,
+          "lon": -5.931522,
+          "street": "Wellington Place"
+        },
+        {
+          "id": "node/13371803815",
+          "lat": 54.596924,
+          "lon": -5.931505,
+          "street": "Donegall Square West"
+        },
+        {
+          "id": "node/12278888975",
+          "lat": 54.597415,
+          "lon": -5.928504,
+          "street": "Chichester Street"
+        },
+        {
+          "id": "node/13090716686",
+          "lat": 54.596487,
+          "lon": -5.931609,
+          "street": "Wellington Street"
+        },
+        {
+          "id": "node/13094668531",
+          "lat": 54.596038,
+          "lon": -5.928369,
+          "street": "May Street"
+        },
+        {
+          "id": "node/13094699293",
+          "lat": 54.598635,
+          "lon": -5.92799,
+          "street": "Castle Lane"
+        },
+        {
+          "id": "node/13364637942",
+          "lat": 54.595848,
+          "lon": -5.932129,
+          "street": "Howard Street"
+        },
+        {
+          "id": "node/13094256294",
+          "lat": 54.59911,
+          "lon": -5.931132,
+          "street": "Castle Street"
+        },
+        {
+          "id": "node/12993845395",
+          "lat": 54.595604,
+          "lon": -5.928407,
+          "street": "Adelaide Street"
+        },
+        {
+          "id": "node/13094811039",
+          "lat": 54.598128,
+          "lon": -5.933253,
+          "street": "Queen Street"
+        },
+        {
+          "id": "node/6906995465",
+          "lat": 54.599255,
+          "lon": -5.929258,
+          "street": "Castle Place"
+        },
+        {
+          "id": "node/12988019228",
+          "lat": 54.598839,
+          "lon": -5.92772,
+          "street": "Arthur Square"
+        },
+        {
+          "id": "node/14006256036",
+          "lat": 54.596281,
+          "lon": -5.93327,
+          "street": "Upper Queen Street"
+        },
+        {
+          "id": "node/12988019217",
+          "lat": 54.599106,
+          "lon": -5.928196,
+          "street": "Cornmarket"
+        },
+        {
+          "id": "node/6906995467",
+          "lat": 54.599715,
+          "lon": -5.927518,
+          "street": "Wilson's Court"
+        },
+        {
+          "id": "node/12351516710",
+          "lat": 54.596535,
+          "lon": -5.934898,
+          "street": "Fisherwick Place"
+        },
+        {
+          "id": "node/12985342545",
+          "lat": 54.600234,
+          "lon": -5.929979,
+          "street": "Rosemary Street"
+        },
+        {
+          "id": "node/12351615285",
+          "lat": 54.598008,
+          "lon": -5.935153,
+          "street": "College Square North"
+        },
+        {
+          "id": "node/13725086707",
+          "lat": 54.600414,
+          "lon": -5.930757,
+          "street": "Royal Avenue"
+        },
+        {
+          "id": "node/12351508980",
+          "lat": 54.595553,
+          "lon": -5.934767,
+          "street": "Great Victoria Street"
+        },
+        {
+          "id": "node/13338751949",
+          "lat": 54.600066,
+          "lon": -5.926485,
+          "street": "High Street"
+        },
+        {
+          "id": "node/11271363669",
+          "lat": 54.59509,
+          "lon": -5.935051,
+          "street": "Glengall Street"
+        },
+        {
+          "id": "node/12987891077",
+          "lat": 54.600689,
+          "lon": -5.927757,
+          "street": "Waring Street"
+        },
+        {
+          "id": "node/13338636551",
+          "lat": 54.598375,
+          "lon": -5.924074,
+          "street": "Victoria Street"
+        },
+        {
+          "id": "node/12987914204",
+          "lat": 54.600245,
+          "lon": -5.925737,
+          "street": "Church Lane"
+        },
+        {
+          "id": "node/13580016398",
+          "lat": 54.595654,
+          "lon": -5.936819,
+          "street": "Grosvenor Road"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:20:50.308Z"
     }
   }
 }

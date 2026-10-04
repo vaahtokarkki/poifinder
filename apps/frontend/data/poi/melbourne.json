@@ -1,10 +1,18 @@
 {
   "city": "melbourne",
-  "generatedAt": "2026-09-27T10:11:14.752Z",
+  "generatedAt": "2026-10-04T10:47:56.952Z",
   "categories": {
     "toilets": {
-      "count": 594,
+      "count": 597,
       "pois": [
+        {
+          "id": "way/46854371",
+          "name": "Melbourne's GPO",
+          "lat": -37.813594,
+          "lon": 144.963307,
+          "address": "Bourke Street 350",
+          "openingHours": "Mo-Th 10:00-18:00; Fr 10:00-20:00; Sa 10:00-18:00; Su 11:00-17:00"
+        },
         {
           "id": "node/6138135275",
           "lat": -37.813698,
@@ -220,21 +228,12 @@
           "lat": -37.822262,
           "lon": 144.980869,
           "context": "Kia Arena"
-        },
-        {
-          "id": "relation/18892045",
-          "name": "Grainger Museum",
-          "lat": -37.797291,
-          "lon": 144.958434,
-          "address": "Royal Parade 48",
-          "openingHours": "\"by appointment\"",
-          "wheelchair": "limited"
         }
       ],
       "stats": {
-        "free": 280,
+        "free": 284,
         "paid": 1,
-        "stepFree": 221,
+        "stepFree": 223,
         "partlyStepFree": 23
       },
       "near": [
@@ -275,10 +274,10 @@
           "lon": 144.951576
         }
       ],
-      "updatedAt": "2026-09-23T08:32:59.653Z"
+      "updatedAt": "2026-10-04T10:47:27.402Z"
     },
     "drinking-water": {
-      "count": 1064,
+      "count": 1068,
       "pois": [
         {
           "id": "node/10858980903",
@@ -315,6 +314,12 @@
           "name": "Fairchild Fountain",
           "lat": -37.866461,
           "lon": 144.975096
+        },
+        {
+          "id": "node/14156540596",
+          "name": "Bottle refiller and drinking water",
+          "lat": -37.754169,
+          "lon": 144.945916
         },
         {
           "id": "node/12192338622",
@@ -459,24 +464,18 @@
           "lon": 144.961063,
           "fee": "no",
           "street": "Franklin Street"
-        },
-        {
-          "id": "node/13712448555",
-          "lat": -37.807639,
-          "lon": 144.964035,
-          "street": "Bowen Street"
         }
       ],
       "stats": {
-        "free": 149,
+        "free": 151,
         "paid": 0,
-        "stepFree": 51,
+        "stepFree": 50,
         "partlyStepFree": 13
       },
       "near": [
         {
           "landmark": "Q1464509",
-          "within": 26,
+          "within": 27,
           "distance": 47,
           "bearing": 161,
           "poi": "node/12272263675",
@@ -511,10 +510,10 @@
           "lon": 144.952401
         }
       ],
-      "updatedAt": "2026-09-23T08:33:01.588Z"
+      "updatedAt": "2026-10-04T10:47:29.964Z"
     },
     "playgrounds": {
-      "count": 884,
+      "count": 885,
       "pois": [
         {
           "id": "way/505273480",
@@ -539,6 +538,12 @@
           "name": "Eades Park Playground",
           "lat": -37.807106,
           "lon": 144.95141
+        },
+        {
+          "id": "way/1561482290",
+          "name": "Bedford Street Pocket Park",
+          "lat": -37.803086,
+          "lon": 144.955647
         },
         {
           "id": "node/1046730100",
@@ -692,12 +697,6 @@
           "name": "Lumley Playground",
           "lat": -37.852463,
           "lon": 145.000241
-        },
-        {
-          "id": "way/45032778",
-          "name": "St Kilda Adventure Playground",
-          "lat": -37.86254,
-          "lon": 144.978285
         }
       ],
       "stats": {
@@ -706,10 +705,10 @@
         "stepFree": 3,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T10:10:47.907Z"
+      "updatedAt": "2026-10-04T10:47:31.187Z"
     },
     "parking": {
-      "count": 5061,
+      "count": 5070,
       "pois": [
         {
           "id": "node/415265443",
@@ -930,12 +929,12 @@
         }
       ],
       "stats": {
-        "free": 802,
+        "free": 811,
         "paid": 247,
         "stepFree": 17,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:10:49.570Z"
+      "updatedAt": "2026-10-04T10:47:32.455Z"
     },
     "charging-stations": {
       "count": 103,
@@ -979,7 +978,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:50.180Z"
+      "updatedAt": "2026-10-04T10:47:32.992Z"
     },
     "gas-stations": {
       "count": 198,
@@ -1078,6 +1077,13 @@
           "address": "Flemington Road 235"
         },
         {
+          "id": "way/453226346",
+          "name": "Ampol Foodary",
+          "lat": -37.807788,
+          "lon": 144.992055,
+          "openingHours": "24/7"
+        },
+        {
           "id": "node/12418140408",
           "name": "United Fitzroy",
           "lat": -37.79091,
@@ -1146,12 +1152,6 @@
           "lon": 144.997282
         },
         {
-          "id": "node/3249049197",
-          "name": "Kerby",
-          "lat": -37.777816,
-          "lon": 144.922727
-        },
-        {
           "id": "way/386285737",
           "name": "BP East Prahran",
           "lat": -37.853431,
@@ -1164,14 +1164,6 @@
           "name": "Metro Petroleum",
           "lat": -37.758518,
           "lon": 144.974828
-        },
-        {
-          "id": "node/3387040992",
-          "name": "Ampol Foodary",
-          "lat": -37.795296,
-          "lon": 145.035854,
-          "address": "Willsmere Road 115",
-          "openingHours": "24/7"
         },
         {
           "id": "node/2131827274",
@@ -1191,6 +1183,13 @@
           "lat": -37.770761,
           "lon": 144.905837,
           "address": "Epsom Road 1"
+        },
+        {
+          "id": "node/4543863821",
+          "name": "BP RIO motors",
+          "lat": -37.755924,
+          "lon": 144.994431,
+          "address": "St Georges Road"
         }
       ],
       "stats": {
@@ -1199,10 +1198,10 @@
         "stepFree": 8,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:51.138Z"
+      "updatedAt": "2026-10-04T10:47:33.658Z"
     },
     "ice-cream": {
-      "count": 108,
+      "count": 112,
       "pois": [
         {
           "id": "node/9731738515",
@@ -1427,7 +1426,7 @@
         "stepFree": 22,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:51.948Z"
+      "updatedAt": "2026-10-04T10:47:34.305Z"
     },
     "dog-parks": {
       "count": 19,
@@ -1496,10 +1495,10 @@
         "stepFree": 7,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:52.599Z"
+      "updatedAt": "2026-10-04T10:47:34.798Z"
     },
     "picnic-spots": {
-      "count": 757,
+      "count": 763,
       "pois": [
         {
           "id": "node/10759151287",
@@ -1538,7 +1537,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:53.937Z"
+      "updatedAt": "2026-10-04T10:47:36.062Z"
     },
     "viewpoints": {
       "count": 74,
@@ -1688,7 +1687,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:54.863Z"
+      "updatedAt": "2026-10-04T10:47:36.883Z"
     },
     "beaches": {
       "count": 30,
@@ -1778,10 +1777,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:55.612Z"
+      "updatedAt": "2026-10-04T10:47:37.468Z"
     },
     "atms": {
-      "count": 331,
+      "count": 324,
       "pois": [
         {
           "id": "node/613313406",
@@ -1831,11 +1830,10 @@
           "address": "Swanston Street 186"
         },
         {
-          "id": "node/595441836",
+          "id": "node/600745062",
           "name": "ANZ",
-          "lat": -37.813159,
-          "lon": 144.965757,
-          "wheelchair": "yes"
+          "lat": -37.812389,
+          "lon": 144.965383
         },
         {
           "id": "node/1015598739",
@@ -2006,13 +2004,13 @@
       "stats": {
         "free": 1,
         "paid": 2,
-        "stepFree": 43,
+        "stepFree": 39,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T10:10:56.546Z"
+      "updatedAt": "2026-10-04T10:47:38.323Z"
     },
     "post-boxes": {
-      "count": 653,
+      "count": 652,
       "pois": [
         {
           "id": "node/2289931217",
@@ -2205,10 +2203,10 @@
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:10:57.888Z"
+      "updatedAt": "2026-10-04T10:47:39.511Z"
     },
     "recycling": {
-      "count": 262,
+      "count": 268,
       "pois": [
         {
           "id": "node/13206122247",
@@ -2411,7 +2409,7 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:00.016Z"
+      "updatedAt": "2026-10-04T10:47:42.099Z"
     },
     "luggage-storage": {
       "count": 5,
@@ -2429,7 +2427,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:00.657Z"
+      "updatedAt": "2026-10-04T10:47:42.649Z"
     },
     "libraries": {
       "count": 161,
@@ -2675,10 +2673,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 42,
+        "stepFree": 43,
         "partlyStepFree": 8
       },
-      "updatedAt": "2026-09-27T10:11:01.481Z"
+      "updatedAt": "2026-10-04T10:47:43.402Z"
     },
     "outdoor-gyms": {
       "count": 88,
@@ -2727,7 +2725,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:03.020Z"
+      "updatedAt": "2026-10-04T10:47:44.657Z"
     },
     "camp-sites": {
       "count": 4,
@@ -2765,7 +2763,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:03.759Z"
+      "updatedAt": "2026-10-04T10:47:45.377Z"
     },
     "shelters": {
       "count": 87,
@@ -2868,7 +2866,7 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:11:06.541Z"
+      "updatedAt": "2026-10-04T10:47:47.538Z"
     },
     "rest-areas": {
       "count": 39,
@@ -2926,7 +2924,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:07.339Z"
+      "updatedAt": "2026-10-04T10:47:48.348Z"
     },
     "dump-stations": {
       "count": 1,
@@ -2946,10 +2944,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:07.872Z"
+      "updatedAt": "2026-10-04T10:47:48.777Z"
     },
     "post-offices": {
-      "count": 154,
+      "count": 150,
       "pois": [
         {
           "id": "node/612757127",
@@ -2960,10 +2958,11 @@
         },
         {
           "id": "node/4269463940",
-          "name": "Australia Post",
+          "name": "Melbourne Flinders Lane Post Office",
           "lat": -37.816663,
           "lon": 144.965033,
-          "address": "Collins Street 271"
+          "address": "Collins Street 271",
+          "openingHours": "Mo-Fr 09:00-17:00"
         },
         {
           "id": "node/2196974290",
@@ -3005,6 +3004,13 @@
           "openingHours": "Mo-Fr 08:00-17:30; Sa 09:00-12:00"
         },
         {
+          "id": "node/282825873",
+          "name": "North Melbourne Post Office",
+          "lat": -37.803385,
+          "lon": 144.949803,
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:30"
+        },
+        {
           "id": "node/12413958853",
           "name": "Carlton LPO",
           "lat": -37.798101,
@@ -3038,6 +3044,13 @@
           "name": "East Melbourne Post Shop",
           "lat": -37.816316,
           "lon": 144.986008
+        },
+        {
+          "id": "node/10588214056",
+          "name": "Parkville Post Office",
+          "lat": -37.795358,
+          "lon": 144.957718,
+          "openingHours": "Mo-Fr 08:30-17:30; PH off"
         },
         {
           "id": "way/389455411",
@@ -3135,6 +3148,13 @@
           "address": "Victoria Street 314"
         },
         {
+          "id": "node/976335655",
+          "name": "Richmond East Post Office",
+          "lat": -37.829443,
+          "lon": 144.997448,
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:00"
+        },
+        {
           "id": "way/844236266",
           "name": "Albert Park Post Shop",
           "lat": -37.844735,
@@ -3155,40 +3175,15 @@
           "name": "South Yarra Post Office",
           "lat": -37.838828,
           "lon": 144.989665
-        },
-        {
-          "id": "node/3342960344",
-          "name": "St Kilda Road Post Shop",
-          "lat": -37.844056,
-          "lon": 144.978963,
-          "address": "St Kilda Road 509",
-          "openingHours": "Mo-Fr 09:00-17:00"
-        },
-        {
-          "id": "node/247627078",
-          "name": "Clifton Hill LPO",
-          "lat": -37.788551,
-          "lon": 144.99195,
-          "address": "Queens Parade 179",
-          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:00; Su closed",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/246102998",
-          "name": "Fitzroy North Post Office",
-          "lat": -37.783245,
-          "lon": 144.984357,
-          "address": "Scotchmer Street 155",
-          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:00; Su closed"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 22,
+        "stepFree": 23,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:08.600Z"
+      "updatedAt": "2026-10-04T10:47:49.369Z"
     },
     "showers": {
       "count": 14,
@@ -3199,7 +3194,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:09.119Z"
+      "updatedAt": "2026-10-04T10:47:49.792Z"
     },
     "fireplaces": {
       "count": 278,
@@ -3235,7 +3230,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:10.661Z"
+      "updatedAt": "2026-10-04T10:47:51.245Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3243,7 +3238,7 @@
       "updatedAt": "2026-08-17T04:06:44.316Z"
     },
     "benches": {
-      "count": 4951,
+      "count": 5018,
       "pois": [
         {
           "id": "node/13774807965",
@@ -3328,12 +3323,6 @@
           "lat": -37.810438,
           "lon": 144.964458,
           "street": "Little Lonsdale Street"
-        },
-        {
-          "id": "node/13784725903",
-          "lat": -37.814809,
-          "lon": 144.958713,
-          "street": "Thomson Street"
         }
       ],
       "stats": {
@@ -3342,7 +3331,7 @@
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:14.650Z"
+      "updatedAt": "2026-10-04T10:47:55.209Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3350,7 +3339,7 @@
       "updatedAt": "2026-08-18T03:58:43.348Z"
     },
     "bicycle-repair": {
-      "count": 90,
+      "count": 91,
       "pois": [
         {
           "id": "node/2418505224",
@@ -3559,7 +3548,133 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:13.250Z"
+      "updatedAt": "2026-10-04T10:47:53.776Z"
+    },
+    "trash-bins": {
+      "count": 2128,
+      "pois": [
+        {
+          "id": "node/3472628036",
+          "lat": -37.814113,
+          "lon": 144.963242,
+          "street": "Bourke Street Mall"
+        },
+        {
+          "id": "node/13230030008",
+          "lat": -37.814457,
+          "lon": 144.963128,
+          "street": "Elizabeth Street"
+        },
+        {
+          "id": "node/12146857330",
+          "lat": -37.81455,
+          "lon": 144.961806,
+          "street": "Bourke Street"
+        },
+        {
+          "id": "node/2701086300",
+          "lat": -37.812079,
+          "lon": 144.962624,
+          "street": "Lonsdale Street"
+        },
+        {
+          "id": "node/13130053059",
+          "lat": -37.811851,
+          "lon": 144.964765,
+          "street": "Swanston Street"
+        },
+        {
+          "id": "node/13200417754",
+          "lat": -37.813784,
+          "lon": 144.960288,
+          "street": "Queen Street"
+        },
+        {
+          "id": "node/9748242980",
+          "lat": -37.81623,
+          "lon": 144.96366,
+          "street": "Collins Street"
+        },
+        {
+          "id": "node/6357531502",
+          "lat": -37.81371,
+          "lon": 144.966577,
+          "street": "Tivoli Arcade"
+        },
+        {
+          "id": "node/2379760392",
+          "lat": -37.811141,
+          "lon": 144.964672,
+          "street": "Albert Coates Lane"
+        },
+        {
+          "id": "node/13851006529",
+          "lat": -37.810621,
+          "lon": 144.961632,
+          "street": "Menzies Alley"
+        },
+        {
+          "id": "node/5980747990",
+          "lat": -37.81115,
+          "lon": 144.965764,
+          "street": "Shilling Lane"
+        },
+        {
+          "id": "node/5290694936",
+          "lat": -37.809793,
+          "lon": 144.962738,
+          "street": "La Trobe Street"
+        },
+        {
+          "id": "node/4719654689",
+          "lat": -37.816871,
+          "lon": 144.965697,
+          "street": "Flinders Lane"
+        },
+        {
+          "id": "node/13208031235",
+          "lat": -37.811723,
+          "lon": 144.967749,
+          "street": "Russell Street"
+        },
+        {
+          "id": "node/9632348632",
+          "lat": -37.816476,
+          "lon": 144.959191,
+          "street": "Menzies Lane"
+        },
+        {
+          "id": "node/13722022701",
+          "lat": -37.81788,
+          "lon": 144.964374,
+          "street": "Flinders Court"
+        },
+        {
+          "id": "node/13206121767",
+          "lat": -37.813821,
+          "lon": 144.957526,
+          "street": "William Street"
+        },
+        {
+          "id": "node/11104106110",
+          "lat": -37.809004,
+          "lon": 144.963394,
+          "street": "Little La Trobe Street"
+        },
+        {
+          "id": "node/13130011472",
+          "lat": -37.809467,
+          "lon": 144.960226,
+          "street": "A'Beckett Street"
+        }
+      ],
+      "stats": {
+        "free": 3,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-10-04T10:47:56.850Z"
     }
   }
 }

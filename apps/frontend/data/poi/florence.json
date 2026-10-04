@@ -1,9 +1,9 @@
 {
   "city": "florence",
-  "generatedAt": "2026-09-27T09:57:26.452Z",
+  "generatedAt": "2026-10-04T10:32:02.257Z",
   "categories": {
     "toilets": {
-      "count": 108,
+      "count": 113,
       "pois": [
         {
           "id": "node/4354490790",
@@ -117,6 +117,8 @@
           "id": "node/937492356",
           "lat": 43.75748,
           "lon": 11.288831,
+          "wheelchair": "yes",
+          "fee": "no",
           "context": "Centro Commerciale Gavinana"
         },
         {
@@ -188,9 +190,9 @@
         }
       ],
       "stats": {
-        "free": 33,
-        "paid": 30,
-        "stepFree": 55,
+        "free": 34,
+        "paid": 29,
+        "stepFree": 58,
         "partlyStepFree": 5
       },
       "near": [
@@ -205,12 +207,12 @@
         },
         {
           "landmark": "Q191739",
-          "within": 6,
-          "distance": 159,
-          "bearing": 289,
-          "poi": "node/10123185317",
-          "lat": 43.773512,
-          "lon": 11.255065
+          "within": 5,
+          "distance": 166,
+          "bearing": 296,
+          "poi": "node/2724221264",
+          "lat": 43.773722,
+          "lon": 11.255088
         },
         {
           "landmark": "Q29286",
@@ -232,7 +234,7 @@
         },
         {
           "landmark": "Q388448",
-          "within": 6,
+          "within": 5,
           "distance": 110,
           "bearing": 143,
           "poi": "node/3426422284",
@@ -241,7 +243,7 @@
         },
         {
           "landmark": "Q51175",
-          "within": 10,
+          "within": 9,
           "distance": 37,
           "bearing": 219,
           "poi": "node/3426437563",
@@ -249,10 +251,10 @@
           "lon": 11.249081
         }
       ],
-      "updatedAt": "2026-09-23T08:31:08.108Z"
+      "updatedAt": "2026-10-04T10:31:40.136Z"
     },
     "drinking-water": {
-      "count": 294,
+      "count": 300,
       "pois": [
         {
           "id": "node/4486010620",
@@ -458,7 +460,7 @@
         }
       ],
       "stats": {
-        "free": 54,
+        "free": 56,
         "paid": 3,
         "stepFree": 28,
         "partlyStepFree": 3
@@ -519,10 +521,10 @@
           "lon": 11.25049
         }
       ],
-      "updatedAt": "2026-09-23T08:31:09.778Z"
+      "updatedAt": "2026-10-04T10:31:42.192Z"
     },
     "playgrounds": {
-      "count": 95,
+      "count": 96,
       "pois": [
         {
           "id": "way/126592240",
@@ -606,10 +608,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:04.740Z"
+      "updatedAt": "2026-10-04T10:31:43.183Z"
     },
     "parking": {
-      "count": 946,
+      "count": 952,
       "pois": [
         {
           "id": "node/6331457510",
@@ -830,15 +832,15 @@
         }
       ],
       "stats": {
-        "free": 270,
-        "paid": 84,
+        "free": 273,
+        "paid": 85,
         "stepFree": 6,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:57:05.970Z"
+      "updatedAt": "2026-10-04T10:31:44.243Z"
     },
     "charging-stations": {
-      "count": 95,
+      "count": 96,
       "pois": [
         {
           "id": "way/1460557062",
@@ -876,6 +878,14 @@
           "lon": 11.242501
         },
         {
+          "id": "node/14213091101",
+          "name": "Eni charging station",
+          "lat": 43.75673,
+          "lon": 11.199081,
+          "address": "Via di Torregalli",
+          "openingHours": "24/7"
+        },
+        {
           "id": "node/5548656580",
           "name": "Firenze Supercharger",
           "lat": 43.810237,
@@ -891,7 +901,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:06.480Z"
+      "updatedAt": "2026-10-04T10:31:44.678Z"
     },
     "gas-stations": {
       "count": 125,
@@ -1046,10 +1056,10 @@
         "stepFree": 5,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:57:07.081Z"
+      "updatedAt": "2026-10-04T10:31:45.179Z"
     },
     "ice-cream": {
-      "count": 118,
+      "count": 119,
       "pois": [
         {
           "id": "node/2292273537",
@@ -1058,12 +1068,6 @@
           "lon": 11.255361,
           "address": "Piazza della Signoria 16r",
           "wheelchair": "limited"
-        },
-        {
-          "id": "node/4222800057",
-          "name": "Crea il Tuo Gelato",
-          "lat": 43.770176,
-          "lon": 11.255443
         },
         {
           "id": "node/10804030674",
@@ -1155,7 +1159,13 @@
           "lat": 43.766657,
           "lon": 11.254699,
           "address": "Via dei Bardi 31",
-          "openingHours": "11:30-23"
+          "openingHours": "11:30-23:00"
+        },
+        {
+          "id": "node/14197439102",
+          "name": "Cantina del Gelato Il Gelato Artigianale",
+          "lat": 43.76662,
+          "lon": 11.254753
         },
         {
           "id": "node/4415509693",
@@ -1175,11 +1185,11 @@
         },
         {
           "id": "node/2361869699",
-          "name": "Gelateria Edoardo",
+          "name": "Edoardo",
           "lat": 43.772551,
           "lon": 11.257699,
           "address": "Piazza del Duomo 45 R",
-          "openingHours": "11:30-23:00",
+          "openingHours": "Mo-Su 11:00-22:30",
           "wheelchair": "no"
         },
         {
@@ -1190,12 +1200,6 @@
           "address": "Via dei Benci 24 R",
           "openingHours": "12:00-01:00",
           "wheelchair": "no"
-        },
-        {
-          "id": "node/12529810117",
-          "name": "Edoardo",
-          "lat": 43.767229,
-          "lon": 11.252494
         },
         {
           "id": "node/12079888126",
@@ -1275,6 +1279,14 @@
           "lat": 43.771487,
           "lon": 11.261385,
           "openingHours": "08:00-23:00"
+        },
+        {
+          "id": "node/4222799747",
+          "name": "Gelateria La Tris",
+          "lat": 43.774372,
+          "lon": 11.254853,
+          "address": "Borgo San Lorenzo 41",
+          "wheelchair": "limited"
         }
       ],
       "stats": {
@@ -1283,7 +1295,7 @@
         "stepFree": 6,
         "partlyStepFree": 10
       },
-      "updatedAt": "2026-09-27T09:57:07.722Z"
+      "updatedAt": "2026-10-04T10:31:45.677Z"
     },
     "dog-parks": {
       "count": 42,
@@ -1364,10 +1376,10 @@
         "stepFree": 2,
         "partlyStepFree": 7
       },
-      "updatedAt": "2026-09-27T09:57:08.240Z"
+      "updatedAt": "2026-10-04T10:31:46.068Z"
     },
     "picnic-spots": {
-      "count": 64,
+      "count": 65,
       "pois": [],
       "stats": {
         "free": 0,
@@ -1375,10 +1387,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:09.440Z"
+      "updatedAt": "2026-10-04T10:31:47.118Z"
     },
     "viewpoints": {
-      "count": 47,
+      "count": 48,
       "pois": [
         {
           "id": "node/5934103586",
@@ -1430,7 +1442,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:10.087Z"
+      "updatedAt": "2026-10-04T10:31:47.745Z"
     },
     "beaches": {
       "count": 2,
@@ -1441,10 +1453,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:10.775Z"
+      "updatedAt": "2026-10-04T10:31:48.249Z"
     },
     "atms": {
-      "count": 143,
+      "count": 142,
       "pois": [
         {
           "id": "node/5961484187",
@@ -1617,14 +1629,6 @@
           "lon": 11.224582
         },
         {
-          "id": "node/11925854975",
-          "name": "Bitcoin ATM - Shitcoins.club",
-          "lat": 43.81135,
-          "lon": 11.234143,
-          "address": "Via delle Panche 236",
-          "openingHours": "24/7"
-        },
-        {
           "id": "node/9195363919",
           "name": "Poste Italiane",
           "lat": 43.753378,
@@ -1645,7 +1649,7 @@
         "stepFree": 15,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:57:11.422Z"
+      "updatedAt": "2026-10-04T10:31:48.825Z"
     },
     "post-boxes": {
       "count": 74,
@@ -1837,10 +1841,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:12.702Z"
+      "updatedAt": "2026-10-04T10:31:50.044Z"
     },
     "recycling": {
-      "count": 906,
+      "count": 921,
       "pois": [
         {
           "id": "node/9963469566",
@@ -2032,11 +2036,11 @@
       ],
       "stats": {
         "free": 0,
-        "paid": 2,
+        "paid": 3,
         "stepFree": 9,
         "partlyStepFree": 8
       },
-      "updatedAt": "2026-09-27T09:57:14.457Z"
+      "updatedAt": "2026-10-04T10:31:51.731Z"
     },
     "luggage-storage": {
       "count": 11,
@@ -2096,10 +2100,10 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:57:15.180Z"
+      "updatedAt": "2026-10-04T10:31:52.229Z"
     },
     "libraries": {
-      "count": 307,
+      "count": 308,
       "pois": [
         {
           "id": "node/7325281903",
@@ -2132,17 +2136,18 @@
           "lon": 11.254981
         },
         {
-          "id": "node/1280743174",
-          "name": "Biblioteca di Palagio di Parte Guelfa",
-          "lat": 43.769748,
-          "lon": 11.253946,
-          "openingHours": "Mo 14:00-22:00; Tu-Fr 09:00-22:00; Sa 09:00-13:00; Su 10:00-18:00"
-        },
-        {
           "id": "node/7325281879",
           "name": "Biblioteca dell'Accademia delle Arti del Disegno",
           "lat": 43.770762,
           "lon": 11.254576
+        },
+        {
+          "id": "way/1560755450",
+          "name": "Biblioteca di Palagio di parte Guelfa",
+          "lat": 43.769719,
+          "lon": 11.253777,
+          "address": "Piazza di Parte Guelfa",
+          "openingHours": "Mo 14:00-22:00; Tu-Fr 09:00-22:00; Sa 09:00-13:00; Su 10:00-18:00"
         },
         {
           "id": "node/7325280177",
@@ -2292,10 +2297,10 @@
         "stepFree": 8,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:57:16.121Z"
+      "updatedAt": "2026-10-04T10:31:52.729Z"
     },
     "outdoor-gyms": {
-      "count": 13,
+      "count": 14,
       "pois": [
         {
           "id": "node/9120113824",
@@ -2317,7 +2322,7 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:57:17.793Z"
+      "updatedAt": "2026-10-04T10:31:53.648Z"
     },
     "camp-sites": {
       "count": 8,
@@ -2389,7 +2394,7 @@
         "stepFree": 1,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:57:18.380Z"
+      "updatedAt": "2026-10-04T10:31:54.204Z"
     },
     "shelters": {
       "count": 0,
@@ -2400,7 +2405,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:19.220Z"
+      "updatedAt": "2026-10-04T10:31:55.040Z"
     },
     "rest-areas": {
       "count": 15,
@@ -2442,7 +2447,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:19.860Z"
+      "updatedAt": "2026-10-04T10:31:55.548Z"
     },
     "dump-stations": {
       "count": 2,
@@ -2453,7 +2458,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:20.347Z"
+      "updatedAt": "2026-10-04T10:31:55.908Z"
     },
     "post-offices": {
       "count": 51,
@@ -2610,7 +2615,7 @@
         "stepFree": 4,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:57:20.900Z"
+      "updatedAt": "2026-10-04T10:31:56.334Z"
     },
     "showers": {
       "count": 4,
@@ -2621,7 +2626,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:21.381Z"
+      "updatedAt": "2026-10-04T10:31:56.733Z"
     },
     "fireplaces": {
       "count": 0,
@@ -2632,7 +2637,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:23.599Z"
+      "updatedAt": "2026-10-04T10:31:57.877Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2640,12 +2645,12 @@
       "updatedAt": "2026-08-17T04:05:25.383Z"
     },
     "benches": {
-      "count": 1355,
+      "count": 1365,
       "pois": [
         {
-          "id": "node/7976727159",
-          "lat": 43.769515,
-          "lon": 11.256287,
+          "id": "node/14214352844",
+          "lat": 43.769533,
+          "lon": 11.256201,
           "street": "Via dei Gondi"
         },
         {
@@ -2763,7 +2768,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:26.350Z"
+      "updatedAt": "2026-10-04T10:32:00.481Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2787,7 +2792,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:24.952Z"
+      "updatedAt": "2026-10-04T10:31:59.085Z"
+    },
+    "trash-bins": {
+      "count": 704,
+      "pois": [
+        {
+          "id": "node/12031700695",
+          "name": "Müll",
+          "lat": 43.767148,
+          "lon": 11.265046
+        },
+        {
+          "id": "node/14214331816",
+          "lat": 43.769523,
+          "lon": 11.256249,
+          "street": "Via dei Gondi"
+        },
+        {
+          "id": "node/6419098004",
+          "lat": 43.769994,
+          "lon": 11.255338,
+          "street": "Via dei Calzaiuoli"
+        },
+        {
+          "id": "node/6419098001",
+          "lat": 43.770221,
+          "lon": 11.255232,
+          "street": "Via Porta Rossa"
+        },
+        {
+          "id": "node/6419098018",
+          "lat": 43.769879,
+          "lon": 11.254098,
+          "street": "Piazza del Mercato Nuovo"
+        },
+        {
+          "id": "node/14022297672",
+          "lat": 43.769315,
+          "lon": 11.254076,
+          "street": "Via Por Santa Maria"
+        },
+        {
+          "id": "node/3519960201",
+          "lat": 43.768738,
+          "lon": 11.254066,
+          "street": "Piazza San Stefano"
+        },
+        {
+          "id": "node/3999092734",
+          "lat": 43.770229,
+          "lon": 11.257816,
+          "street": "Via della Vigna Vecchia"
+        },
+        {
+          "id": "node/6419098035",
+          "lat": 43.770251,
+          "lon": 11.253509,
+          "street": "Pellicceria"
+        },
+        {
+          "id": "node/6419098029",
+          "lat": 43.770236,
+          "lon": 11.252817,
+          "street": "Piazza dei Davanzati"
+        },
+        {
+          "id": "node/6391901651",
+          "lat": 43.772168,
+          "lon": 11.256721,
+          "street": "Piazzetta Cardinale Giovanni Benelli"
+        },
+        {
+          "id": "node/13398209384",
+          "lat": 43.766959,
+          "lon": 11.254262,
+          "street": "Via dei Bardi"
+        },
+        {
+          "id": "node/13546805260",
+          "lat": 43.771591,
+          "lon": 11.252742,
+          "street": "Via dei Vecchietti"
+        },
+        {
+          "id": "node/6357265877",
+          "lat": 43.772213,
+          "lon": 11.257932,
+          "street": "Piazza di Santa Maria in Campo"
+        },
+        {
+          "id": "node/12713994735",
+          "lat": 43.772677,
+          "lon": 11.25559,
+          "street": "Piazza del Duomo"
+        },
+        {
+          "id": "node/13398209379",
+          "lat": 43.767333,
+          "lon": 11.252652,
+          "street": "Via dei Guicciardini"
+        },
+        {
+          "id": "node/12713995041",
+          "lat": 43.772837,
+          "lon": 11.255152,
+          "street": "Piazza San Giovanni"
+        },
+        {
+          "id": "node/13398209385",
+          "lat": 43.766191,
+          "lon": 11.256338,
+          "street": "Lungarno Torrigiani"
+        },
+        {
+          "id": "node/11929322169",
+          "lat": 43.770976,
+          "lon": 11.260677,
+          "street": "Via dei Pandolfini"
+        },
+        {
+          "id": "node/9146725184",
+          "lat": 43.765701,
+          "lon": 11.255912,
+          "street": "Via del Canneto"
+        },
+        {
+          "id": "node/9137579734",
+          "lat": 43.77271,
+          "lon": 11.25227,
+          "street": "Via dei Pecori"
+        },
+        {
+          "id": "node/12081455143",
+          "lat": 43.773671,
+          "lon": 11.255477,
+          "street": "Via dei Martelli"
+        },
+        {
+          "id": "node/9970645387",
+          "lat": 43.765606,
+          "lon": 11.25834,
+          "street": "Ponte alle Grazie"
+        },
+        {
+          "id": "node/6792375137",
+          "lat": 43.772628,
+          "lon": 11.251313,
+          "street": "Piazza degli Antinori"
+        },
+        {
+          "id": "node/6008487179",
+          "lat": 43.76716,
+          "lon": 11.25057,
+          "street": "Via dello Sprone"
+        },
+        {
+          "id": "node/9970645386",
+          "lat": 43.765544,
+          "lon": 11.258519,
+          "street": "Pista Ciclabile Arno Sx"
+        },
+        {
+          "id": "node/12713989580",
+          "lat": 43.772983,
+          "lon": 11.251576,
+          "street": "Via dei Rondinelli"
+        },
+        {
+          "id": "node/13395855065",
+          "lat": 43.765422,
+          "lon": 11.25846,
+          "street": "Lungarno Serristori"
+        },
+        {
+          "id": "node/9968514955",
+          "lat": 43.77354,
+          "lon": 11.252056,
+          "street": "Via Panzani"
+        },
+        {
+          "id": "node/6384353725",
+          "lat": 43.773523,
+          "lon": 11.25193,
+          "street": "Canto de' Carnesecchi"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:32:02.155Z"
     }
   }
 }

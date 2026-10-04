@@ -1,9 +1,9 @@
 {
   "city": "calgary",
-  "generatedAt": "2026-09-27T10:09:53.545Z",
+  "generatedAt": "2026-10-04T10:46:26.858Z",
   "categories": {
     "toilets": {
-      "count": 120,
+      "count": 121,
       "pois": [
         {
           "id": "node/4369869323",
@@ -210,13 +210,13 @@
       "stats": {
         "free": 23,
         "paid": 3,
-        "stepFree": 35,
+        "stepFree": 36,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-23T08:32:50.002Z"
+      "updatedAt": "2026-10-04T10:46:02.603Z"
     },
     "drinking-water": {
-      "count": 33,
+      "count": 34,
       "pois": [
         {
           "id": "node/4218361459",
@@ -224,6 +224,13 @@
           "lat": 51.063751,
           "lon": -114.156003,
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/14212618830",
+          "name": "Bulk Water Station Northeast",
+          "lat": 51.09134,
+          "lon": -114.003398,
+          "address": "42 Avenue NE 2440"
         },
         {
           "id": "node/13937647077",
@@ -308,10 +315,10 @@
         "stepFree": 6,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-23T08:32:51.556Z"
+      "updatedAt": "2026-10-04T10:46:04.749Z"
     },
     "playgrounds": {
-      "count": 482,
+      "count": 485,
       "pois": [
         {
           "id": "node/4234109589",
@@ -476,10 +483,10 @@
         "stepFree": 29,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:09:31.949Z"
+      "updatedAt": "2026-10-04T10:46:05.862Z"
     },
     "parking": {
-      "count": 2482,
+      "count": 2600,
       "pois": [
         {
           "id": "way/266876165",
@@ -718,15 +725,15 @@
         }
       ],
       "stats": {
-        "free": 601,
-        "paid": 365,
+        "free": 666,
+        "paid": 368,
         "stepFree": 92,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:09:33.203Z"
+      "updatedAt": "2026-10-04T10:46:07.014Z"
     },
     "charging-stations": {
-      "count": 47,
+      "count": 46,
       "pois": [
         {
           "id": "node/13294042524",
@@ -785,11 +792,11 @@
       ],
       "stats": {
         "free": 3,
-        "paid": 20,
+        "paid": 19,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:33.703Z"
+      "updatedAt": "2026-10-04T10:46:07.436Z"
     },
     "gas-stations": {
       "count": 125,
@@ -805,7 +812,7 @@
         },
         {
           "id": "node/4949409289",
-          "name": "Gas Plus",
+          "name": "11th Ave Gas Plus",
           "lat": 51.042586,
           "lon": -114.060539,
           "address": "11 Avenue SE 204",
@@ -814,10 +821,11 @@
         },
         {
           "id": "node/2714971363",
-          "name": "Esso",
-          "lat": 51.04088,
-          "lon": -114.061357,
-          "address": "1 Street SE 1201"
+          "name": "Esso 7-Eleven 37778",
+          "lat": 51.041066,
+          "lon": -114.061315,
+          "address": "1 Street SE 1201",
+          "openingHours": "Mo-Su 05:00-24:00"
         },
         {
           "id": "node/1110057525",
@@ -831,23 +839,34 @@
           "id": "node/2757566786",
           "name": "Petro-Canada",
           "lat": 51.035601,
-          "lon": -114.071297,
+          "lon": -114.071068,
           "address": "4 Street SW 1920",
           "openingHours": "24/7",
           "wheelchair": "yes"
         },
         {
           "id": "node/1365062903",
-          "name": "Centex",
+          "name": "Centex Memorial",
           "lat": 51.05124,
           "lon": -114.051437,
-          "address": "4 Street NE 12"
+          "address": "4 Street NE 12",
+          "openingHours": "24/7"
         },
         {
           "id": "node/256191709",
           "name": "Petro Canada",
           "lat": 51.052812,
-          "lon": -114.094358
+          "lon": -114.094358,
+          "address": "Kensington Road NW 1438",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/2538538781",
+          "name": "ESSO 7-Eleven 37784",
+          "lat": 51.0307,
+          "lon": -114.095,
+          "address": "14 Street SW 2619",
+          "openingHours": "Mo-Th 06:00-24:00; Fr-Su 06:00-24:00"
         },
         {
           "id": "node/9545920521",
@@ -858,10 +877,53 @@
           "openingHours": "Mo-Fr 06:00-22:00; Sa-Su 07:00-22:00"
         },
         {
-          "id": "way/149608840",
-          "name": "7-Eleven",
-          "lat": 51.066654,
-          "lon": -114.056848
+          "id": "node/9398106284",
+          "name": "Esso",
+          "lat": 51.067272,
+          "lon": -114.056932,
+          "address": "16 Avenue NE 256",
+          "openingHours": "24/7"
+        },
+        {
+          "id": "node/5254309194",
+          "name": "Centex Kensington Auto",
+          "lat": 51.052354,
+          "lon": -114.110744,
+          "address": "Kensington Road NW 2201",
+          "openingHours": "Mo-Th 07:00-22:00; Fr 08:00-21:00; Sa 08:00-20:00; Su 07:00-22:00"
+        },
+        {
+          "id": "node/14210111671",
+          "name": "Co-op North Hill",
+          "lat": 51.067273,
+          "lon": -114.049865,
+          "address": "16 Avenue NE 616",
+          "openingHours": "Mo-Fr 06:00-22:00; Sa-Su 07:00-22:00"
+        },
+        {
+          "id": "node/809646604",
+          "name": "Centex",
+          "lat": 51.073019,
+          "lon": -114.062799,
+          "address": "Centre Street N 2323",
+          "openingHours": "Mo-Th 06:00-22:30; Fr 06:30-22:30; Sa 07:00-22:30; Su 06:00-22:30"
+        },
+        {
+          "id": "node/196715417",
+          "name": "Centex Northhill",
+          "lat": 51.0672,
+          "lon": -114.10169,
+          "address": "16 Avenue NW 1740",
+          "openingHours": "Mo-Fr 06:00-23:00; Sa 07:00-23:00; Su 06:00-23:00"
+        },
+        {
+          "id": "node/5254270689",
+          "name": "ESSO 7-Eleven 37787",
+          "lat": 51.057516,
+          "lon": -114.117513,
+          "address": "Crowchild Trail NW 614",
+          "openingHours": "24/7",
+          "wheelchair": "yes"
         },
         {
           "id": "node/12434673729",
@@ -869,6 +931,14 @@
           "lat": 51.037675,
           "lon": -114.122686,
           "address": "17 Avenue SW 2623"
+        },
+        {
+          "id": "node/4321588900",
+          "name": "Centex Inglewood",
+          "lat": 51.036614,
+          "lon": -114.018218,
+          "address": "19 Street SE 808",
+          "openingHours": "Mo-Th 06:00-21:00; Fr 07:00-21:00; Sa 08:00-21:00; Su 06:00-22:00"
         },
         {
           "id": "node/7494974643",
@@ -879,27 +949,59 @@
           "openingHours": "Mo-Fr 06:00-22:00; Sa-Su 07:00-22:00"
         },
         {
+          "id": "way/1338788641",
+          "name": "Centex Edmonton Trail",
+          "lat": 51.080265,
+          "lon": -114.055266,
+          "address": "Edmonton Trail NE 3111",
+          "openingHours": "Mo-Su 06:00-23:00"
+        },
+        {
           "id": "node/1093140809",
-          "name": "Tempo",
-          "lat": 51.006429,
-          "lon": -114.068854,
+          "name": "Tempo Chinook",
+          "lat": 51.006433,
+          "lon": -114.068897,
           "address": "Macleod Trail SW 5316",
           "openingHours": "Mo-Su 06:00-22:00"
         },
         {
           "id": "way/1488457913",
-          "name": "Domo",
+          "name": "Domo Calgary - Collingwood",
           "lat": 51.082823,
           "lon": -114.096463,
           "address": "Northmount Drive NW 791"
         },
         {
-          "id": "way/541177888",
-          "name": "Husky",
-          "lat": 51.046136,
-          "lon": -114.142709,
+          "id": "way/1330343665",
+          "name": "Parkdale Gas Plus",
+          "lat": 51.057044,
+          "lon": -114.135509,
+          "address": "3 Avenue NW 3307"
+        },
+        {
+          "id": "node/6270760316",
+          "name": "Tempo Killarney",
+          "lat": 51.029892,
+          "lon": -114.137372,
+          "address": "26 Avenue SW 3503",
+          "openingHours": "Mo-Su 07:00-21:00"
+        },
+        {
+          "id": "node/266330515",
+          "name": "Tempo Bow Trail",
+          "lat": 51.046007,
+          "lon": -114.142851,
           "address": "Bow Trail SW 3824",
-          "openingHours": "Mo-Su 06:00-23:00"
+          "openingHours": "Mo-Fr 06:00-22:00",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/989007004",
+          "name": "BVD Travel Centre - Calgary 7 Ave",
+          "lat": 51.058814,
+          "lon": -114.000761,
+          "address": "7 Avenue NE 2504",
+          "openingHours": "Mo-Su 06:00-22:00"
         },
         {
           "id": "way/1452260009",
@@ -915,114 +1017,40 @@
           "address": "Moraine Road NE"
         },
         {
-          "id": "node/252839563",
-          "name": "Esso Express",
-          "lat": 51.095711,
-          "lon": -114.062852,
-          "address": "Centre Street N 4823"
+          "id": "node/665701792",
+          "name": "ESSO 7-Eleven 37785",
+          "lat": 51.022183,
+          "lon": -114.140746,
+          "address": "37 Street SW 3508",
+          "openingHours": "24/7"
         },
         {
-          "id": "node/12452467256",
-          "name": "Flying J",
-          "lat": 51.074787,
-          "lon": -114.00487
+          "id": "node/6587773186",
+          "name": "Crossroads Gas Plus",
+          "lat": 51.070945,
+          "lon": -114.004858,
+          "address": "20 Avenue NE 2364",
+          "openingHours": "24/7"
         },
         {
-          "id": "way/284765293",
-          "name": "Canpro",
-          "lat": 51.073753,
-          "lon": -114.002716
-        },
-        {
-          "id": "way/261125748",
-          "name": "Calgary Co-op Gas Bar Kingsland",
-          "lat": 50.99189,
-          "lon": -114.072339,
-          "address": "Macleod Trail S 6905",
-          "openingHours": "Mo-Fr 06:00-23:00; Sa-Su 07:00-23:00"
-        },
-        {
-          "id": "way/540300783",
-          "name": "Calgary Co-op Gas Bar",
-          "lat": 51.038165,
-          "lon": -113.987043,
-          "address": "17 Avenue SE 3330",
-          "openingHours": "Mo-Fr 09:00-21:00"
-        },
-        {
-          "id": "node/8955302456",
-          "name": "Canadian Tire Gas+",
-          "lat": 51.059809,
-          "lon": -113.985536,
-          "address": "8 Avenue NE 3516"
-        },
-        {
-          "id": "way/436810752",
-          "name": "Costco Gasoline",
-          "lat": 50.989877,
-          "lon": -114.044695,
-          "openingHours": "Mo-Fr 06:00-21:30; Sa 06:00-20:30; Su 06:00-19:30"
-        },
-        {
-          "id": "way/540471533",
-          "name": "Lakeview Husky",
-          "lat": 50.994943,
-          "lon": -114.118449,
-          "address": "Crowchild Trail SW 6633"
-        },
-        {
-          "id": "node/1158847516",
-          "name": "Petro-Pass",
-          "lat": 51.007971,
-          "lon": -113.999945
-        },
-        {
-          "id": "node/12468118610",
-          "name": "Calgary Co-op Gas Bar Richmond Road",
-          "lat": 51.018874,
-          "lon": -114.157383,
-          "address": "Richmond Road SW 4940",
-          "openingHours": "Mo-Fr 06:00-22:00; Sa-Su 07:00-22:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/149591905",
-          "name": "Calgary Co-op",
-          "lat": 50.987578,
-          "lon": -114.043582,
-          "address": "Heritage Gate SE 6",
-          "openingHours": "Mo-Fr 06:00-22:00; Sa 07:00-22:00; Su 08:00-22:00"
-        },
-        {
-          "id": "node/253435563",
-          "name": "Fas Gas",
-          "lat": 50.987805,
-          "lon": -114.040452
-        },
-        {
-          "id": "way/110884444",
-          "name": "Superstore Gas Bar",
-          "lat": 51.071058,
-          "lon": -113.984222
-        },
-        {
-          "id": "way/1337600698",
-          "name": "Co-op",
-          "lat": 51.07067,
-          "lon": -114.161027,
-          "wheelchair": "yes"
+          "id": "node/821552737",
+          "name": "Southview Esso",
+          "lat": 51.037502,
+          "lon": -113.992836,
+          "address": "17 Avenue SE 2825",
+          "openingHours": "24/7"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 17,
+        "stepFree": 16,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:09:34.350Z"
+      "updatedAt": "2026-10-04T10:46:07.960Z"
     },
     "ice-cream": {
-      "count": 36,
+      "count": 38,
       "pois": [
         {
           "id": "node/13751430224",
@@ -1039,6 +1067,13 @@
           "address": "Centre Street SE 206",
           "openingHours": "Mo-Th 16:00-22:00; Fr 16:00-23:00; Sa 14:00-23:00; Su 14:00-22:30",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/14181717802",
+          "name": "Moo’s Country Ice Cream",
+          "lat": 51.053232,
+          "lon": -114.075923,
+          "address": "Eau Claire Avenue SW 698"
         },
         {
           "id": "node/9697510220",
@@ -1100,6 +1135,13 @@
           "lon": -114.051483,
           "address": "4 Street NE 236",
           "openingHours": "Mo-Su 12:00-22:00"
+        },
+        {
+          "id": "node/14181721701",
+          "name": "Milk Ice Cream Club",
+          "lat": 51.060831,
+          "lon": -114.06204,
+          "address": "Centre Street N 1000"
         },
         {
           "id": "node/11562455655",
@@ -1208,10 +1250,10 @@
         "stepFree": 3,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:09:35.000Z"
+      "updatedAt": "2026-10-04T10:46:08.532Z"
     },
     "dog-parks": {
-      "count": 39,
+      "count": 40,
       "pois": [
         {
           "id": "way/1459352003",
@@ -1277,12 +1319,6 @@
           "wheelchair": "limited"
         },
         {
-          "id": "way/264214825",
-          "name": "Off-leash dog park",
-          "lat": 51.019307,
-          "lon": -114.142205
-        },
-        {
           "id": "way/23725425",
           "name": "Thorncliff off-leash area 5",
           "lat": 51.09725,
@@ -1307,6 +1343,12 @@
           "lon": -113.968834
         },
         {
+          "id": "way/1558409060",
+          "name": "North Service Centre Dog Training",
+          "lat": 51.111049,
+          "lon": -114.033971
+        },
+        {
           "id": "way/490372623",
           "name": "Nose Hill Park Off-Leash Area",
           "lat": 51.113322,
@@ -1326,10 +1368,10 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:09:35.590Z"
+      "updatedAt": "2026-10-04T10:46:09.034Z"
     },
     "picnic-spots": {
-      "count": 489,
+      "count": 496,
       "pois": [
         {
           "id": "node/13383853951",
@@ -1489,7 +1531,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:36.812Z"
+      "updatedAt": "2026-10-04T10:46:10.329Z"
     },
     "viewpoints": {
       "count": 16,
@@ -1520,7 +1562,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:37.529Z"
+      "updatedAt": "2026-10-04T10:46:10.963Z"
     },
     "beaches": {
       "count": 3,
@@ -1538,7 +1580,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:38.119Z"
+      "updatedAt": "2026-10-04T10:46:11.403Z"
     },
     "atms": {
       "count": 114,
@@ -1737,10 +1779,10 @@
         "stepFree": 15,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:09:38.959Z"
+      "updatedAt": "2026-10-04T10:46:11.983Z"
     },
     "post-boxes": {
-      "count": 206,
+      "count": 207,
       "pois": [
         {
           "id": "node/13159903675",
@@ -1929,10 +1971,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:40.231Z"
+      "updatedAt": "2026-10-04T10:46:13.104Z"
     },
     "recycling": {
-      "count": 126,
+      "count": 127,
       "pois": [
         {
           "id": "way/281651668",
@@ -2135,7 +2177,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:42.491Z"
+      "updatedAt": "2026-10-04T10:46:14.919Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2146,7 +2188,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:42.930Z"
+      "updatedAt": "2026-10-04T10:46:15.363Z"
     },
     "libraries": {
       "count": 55,
@@ -2331,7 +2373,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:43.519Z"
+      "updatedAt": "2026-10-04T10:46:15.943Z"
     },
     "outdoor-gyms": {
       "count": 24,
@@ -2342,7 +2384,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:44.592Z"
+      "updatedAt": "2026-10-04T10:46:16.863Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2353,7 +2395,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:45.159Z"
+      "updatedAt": "2026-10-04T10:46:17.434Z"
     },
     "shelters": {
       "count": 8,
@@ -2371,7 +2413,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:47.119Z"
+      "updatedAt": "2026-10-04T10:46:19.008Z"
     },
     "rest-areas": {
       "count": 6,
@@ -2406,9 +2448,10 @@
         },
         {
           "id": "way/217074584",
-          "name": "Husky Travel Centre",
-          "lat": 51.080489,
-          "lon": -113.999662
+          "name": "BVD Travel Centre",
+          "lat": 51.080487,
+          "lon": -113.999661,
+          "address": "Barlow Trail NE 3200"
         }
       ],
       "stats": {
@@ -2417,7 +2460,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:47.783Z"
+      "updatedAt": "2026-10-04T10:46:19.588Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2428,7 +2471,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:48.273Z"
+      "updatedAt": "2026-10-04T10:46:19.976Z"
     },
     "post-offices": {
       "count": 35,
@@ -2436,8 +2479,8 @@
         {
           "id": "node/12791145612",
           "name": "Canada Post",
-          "lat": 51.045401,
-          "lon": -114.069009,
+          "lat": 51.04526,
+          "lon": -114.069208,
           "address": "8 Avenue SW 315",
           "openingHours": "Mo-Fr 08:30-18:00; Sa 10:00-17:00"
         },
@@ -2488,18 +2531,18 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:48.806Z"
+      "updatedAt": "2026-10-04T10:46:20.424Z"
     },
     "showers": {
-      "count": 1,
+      "count": 2,
       "pois": [],
       "stats": {
         "free": 0,
-        "paid": 0,
+        "paid": 1,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:49.259Z"
+      "updatedAt": "2026-10-04T10:46:20.805Z"
     },
     "fireplaces": {
       "count": 15,
@@ -2510,7 +2553,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:50.499Z"
+      "updatedAt": "2026-10-04T10:46:21.957Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2518,7 +2561,7 @@
       "updatedAt": "2026-08-17T04:06:37.663Z"
     },
     "benches": {
-      "count": 2798,
+      "count": 2818,
       "pois": [
         {
           "id": "node/9282082732",
@@ -2569,7 +2612,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:53.444Z"
+      "updatedAt": "2026-10-04T10:46:24.929Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2577,7 +2620,7 @@
       "updatedAt": "2026-08-18T03:58:42.266Z"
     },
     "bicycle-repair": {
-      "count": 19,
+      "count": 30,
       "pois": [
         {
           "id": "node/3835080337",
@@ -2627,6 +2670,12 @@
           "street": "Petro-Pass"
         },
         {
+          "id": "node/14182311451",
+          "lat": 51.045661,
+          "lon": -114.141636,
+          "street": "Bow Trail SW"
+        },
+        {
           "id": "node/12525229600",
           "lat": 51.076988,
           "lon": -114.125336,
@@ -2660,6 +2709,24 @@
           "lon": -114.157659,
           "fee": "no",
           "street": "39 Avenue SW"
+        },
+        {
+          "id": "node/14183938072",
+          "lat": 50.980082,
+          "lon": -114.060441,
+          "street": "Frobisher Boulevard SE"
+        },
+        {
+          "id": "node/14182311484",
+          "lat": 51.110383,
+          "lon": -114.061708,
+          "street": "64 Avenue NE"
+        },
+        {
+          "id": "node/14184209248",
+          "lat": 51.060471,
+          "lon": -114.179861,
+          "street": "Patterson Boulevard SW"
         }
       ],
       "stats": {
@@ -2668,7 +2735,187 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:52.207Z"
+      "updatedAt": "2026-10-04T10:46:23.665Z"
+    },
+    "trash-bins": {
+      "count": 1222,
+      "pois": [
+        {
+          "id": "node/4870465487",
+          "lat": 51.044728,
+          "lon": -114.070671,
+          "street": "9 Avenue SW"
+        },
+        {
+          "id": "node/4870465488",
+          "lat": 51.044934,
+          "lon": -114.070396,
+          "street": "3 Street SW"
+        },
+        {
+          "id": "node/12827226114",
+          "lat": 51.045702,
+          "lon": -114.068856,
+          "street": "8 Avenue SW"
+        },
+        {
+          "id": "node/12169033087",
+          "lat": 51.04263,
+          "lon": -114.074229,
+          "street": "11 Avenue SW"
+        },
+        {
+          "id": "node/4870465500",
+          "lat": 51.044544,
+          "lon": -114.065703,
+          "street": "1 Street SW"
+        },
+        {
+          "id": "node/12239883431",
+          "lat": 51.048731,
+          "lon": -114.071797,
+          "street": "5 Avenue SW"
+        },
+        {
+          "id": "node/12613424312",
+          "lat": 51.040675,
+          "lon": -114.076747,
+          "street": "13 Avenue SW"
+        },
+        {
+          "id": "node/12060351365",
+          "lat": 51.049336,
+          "lon": -114.067837,
+          "street": "2 Street SW"
+        },
+        {
+          "id": "node/12613424372",
+          "lat": 51.040015,
+          "lon": -114.076802,
+          "street": "14 Avenue SW"
+        },
+        {
+          "id": "node/4870465506",
+          "lat": 51.044685,
+          "lon": -114.062943,
+          "street": "9 Avenue SE"
+        },
+        {
+          "id": "node/6988879914",
+          "lat": 51.043903,
+          "lon": -114.08116,
+          "street": "10 Avenue SW"
+        },
+        {
+          "id": "node/12967008165",
+          "lat": 51.046476,
+          "lon": -114.080927,
+          "street": "8 Street SW"
+        },
+        {
+          "id": "node/9810274166",
+          "lat": 51.039407,
+          "lon": -114.076657,
+          "street": "6 Street SW"
+        },
+        {
+          "id": "node/12264666329",
+          "lat": 51.04682,
+          "lon": -114.062712,
+          "street": "South Bow Park"
+        },
+        {
+          "id": "node/12966985152",
+          "lat": 51.048041,
+          "lon": -114.080898,
+          "street": "6 Avenue SW"
+        },
+        {
+          "id": "node/13861112149",
+          "lat": 51.047596,
+          "lon": -114.06222,
+          "street": "6 Avenue SE"
+        },
+        {
+          "id": "node/9724407425",
+          "lat": 51.037959,
+          "lon": -114.071385,
+          "street": "4 Street SW"
+        },
+        {
+          "id": "node/11916552343",
+          "lat": 51.051373,
+          "lon": -114.070206,
+          "street": "2 Avenue SW"
+        },
+        {
+          "id": "node/9249572119",
+          "lat": 51.04871,
+          "lon": -114.063161,
+          "street": "Centre Street S"
+        },
+        {
+          "id": "node/13267519603",
+          "lat": 51.037953,
+          "lon": -114.074455,
+          "street": "5 Street SW"
+        },
+        {
+          "id": "node/12113938096",
+          "lat": 51.037759,
+          "lon": -114.070857,
+          "street": "17 Avenue SW"
+        },
+        {
+          "id": "node/4870465511",
+          "lat": 51.044427,
+          "lon": -114.060816,
+          "street": "1 Street SE"
+        },
+        {
+          "id": "node/9249562149",
+          "lat": 51.051649,
+          "lon": -114.069934,
+          "street": "Barclay Parade SW"
+        },
+        {
+          "id": "node/9249562168",
+          "lat": 51.049193,
+          "lon": -114.063145,
+          "street": "4 Avenue SW"
+        },
+        {
+          "id": "node/13095732704",
+          "lat": 51.042381,
+          "lon": -114.061004,
+          "street": "11 Avenue SE"
+        },
+        {
+          "id": "node/13068027959",
+          "lat": 51.050817,
+          "lon": -114.07826,
+          "street": "3 Avenue SW"
+        },
+        {
+          "id": "node/9249572061",
+          "lat": 51.051261,
+          "lon": -114.06631,
+          "street": "Daqing Square"
+        },
+        {
+          "id": "node/9395196886",
+          "lat": 51.046545,
+          "lon": -114.060238,
+          "street": "7 Avenue SE"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:46:26.756Z"
     }
   }
 }

@@ -1,9 +1,9 @@
 {
   "city": "riga",
-  "generatedAt": "2026-09-27T09:29:04.348Z",
+  "generatedAt": "2026-10-04T09:58:55.225Z",
   "categories": {
     "toilets": {
-      "count": 241,
+      "count": 244,
       "pois": [
         {
           "id": "node/11818269126",
@@ -28,9 +28,9 @@
           "context": "Gastronomijas paviljons"
         },
         {
-          "id": "node/12038042666",
-          "lat": 56.946774,
-          "lon": 24.12007,
+          "id": "node/14216360964",
+          "lat": 56.946669,
+          "lon": 24.118922,
           "fee": "yes",
           "context": "Rīgas Centrālā stacija"
         },
@@ -178,8 +178,8 @@
       ],
       "stats": {
         "free": 104,
-        "paid": 56,
-        "stepFree": 105,
+        "paid": 57,
+        "stepFree": 107,
         "partlyStepFree": 6
       },
       "near": [
@@ -220,10 +220,10 @@
           "lon": 24.106575
         }
       ],
-      "updatedAt": "2026-09-23T08:27:35.016Z"
+      "updatedAt": "2026-10-04T09:58:31.328Z"
     },
     "drinking-water": {
-      "count": 62,
+      "count": 66,
       "pois": [
         {
           "id": "node/7685815249",
@@ -363,21 +363,30 @@
         },
         {
           "id": "node/14110356091",
-          "lat": 56.964714,
-          "lon": 24.160011,
+          "lat": 56.964649,
+          "lon": 24.159971,
           "street": "Kroņu iela"
         },
         {
-          "id": "node/11021995971",
-          "lat": 56.977248,
-          "lon": 24.144147,
+          "id": "node/13929562493",
+          "lat": 56.961379,
+          "lon": 24.045997,
+          "wheelchair": "yes",
           "fee": "no",
-          "street": "Invalīdu iela"
+          "street": "Tapešu iela"
+        },
+        {
+          "id": "node/13958558936",
+          "lat": 56.952233,
+          "lon": 24.033764,
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Jūrmalas gatve"
         },
         {
           "id": "node/13897214984",
-          "lat": 56.911281,
-          "lon": 24.077087,
+          "lat": 56.911321,
+          "lon": 24.077082,
           "street": "Dzelzceļa iela"
         },
         {
@@ -435,19 +444,12 @@
           "wheelchair": "yes",
           "fee": "no",
           "street": "Mārupītes gatve"
-        },
-        {
-          "id": "node/9756612690",
-          "lat": 57.005848,
-          "lon": 24.156651,
-          "fee": "no",
-          "street": "Atpūtas aleja"
         }
       ],
       "stats": {
-        "free": 46,
+        "free": 51,
         "paid": 2,
-        "stepFree": 20,
+        "stepFree": 26,
         "partlyStepFree": 0
       },
       "near": [
@@ -488,10 +490,10 @@
           "lon": 24.106614
         }
       ],
-      "updatedAt": "2026-09-23T08:27:36.612Z"
+      "updatedAt": "2026-10-04T09:58:33.291Z"
     },
     "playgrounds": {
-      "count": 612,
+      "count": 615,
       "pois": [
         {
           "id": "node/5942842109",
@@ -575,10 +577,10 @@
         "stepFree": 2,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:28:30.895Z"
+      "updatedAt": "2026-10-04T09:58:34.301Z"
     },
     "parking": {
-      "count": 3361,
+      "count": 3417,
       "pois": [
         {
           "id": "way/87493962",
@@ -772,13 +774,6 @@
           "fee": "no"
         },
         {
-          "id": "way/296333751",
-          "name": "MV",
-          "lat": 56.991811,
-          "lon": 24.169336,
-          "fee": "yes"
-        },
-        {
           "id": "way/37973979",
           "name": "Krons Auto",
           "lat": 56.953283,
@@ -791,18 +786,27 @@
           "lat": 56.946677,
           "lon": 24.21305,
           "address": "Augusta Deglava iela 149"
+        },
+        {
+          "id": "way/704388106",
+          "name": "Zaļā autostāvvieta",
+          "lat": 56.981527,
+          "lon": 24.203633,
+          "address": "Brīvības gatve 372",
+          "openingHours": "Mo-Su 07:00-24:00",
+          "fee": "no"
         }
       ],
       "stats": {
-        "free": 539,
-        "paid": 354,
+        "free": 550,
+        "paid": 366,
         "stepFree": 4,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:28:33.096Z"
+      "updatedAt": "2026-10-04T09:58:35.460Z"
     },
     "charging-stations": {
-      "count": 130,
+      "count": 138,
       "pois": [
         {
           "id": "node/7843182858",
@@ -883,15 +887,15 @@
         }
       ],
       "stats": {
-        "free": 3,
+        "free": 4,
         "paid": 20,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:33.920Z"
+      "updatedAt": "2026-10-04T09:58:36.026Z"
     },
     "gas-stations": {
-      "count": 134,
+      "count": 135,
       "pois": [
         {
           "id": "node/1588926696",
@@ -935,12 +939,18 @@
           "openingHours": "24/7"
         },
         {
-          "id": "way/1156050589",
+          "id": "way/1554558764",
           "name": "Straujupīte",
-          "lat": 56.957549,
-          "lon": 24.071631,
-          "address": "Ūdens iela 29",
-          "openingHours": "24/7"
+          "lat": 56.950485,
+          "lon": 24.073186,
+          "address": "Daugavgrīvas iela 29"
+        },
+        {
+          "id": "way/1554557352",
+          "name": "Viada",
+          "lat": 56.929385,
+          "lon": 24.106483,
+          "address": "Mūkusalas iela 59"
         },
         {
           "id": "way/117031664",
@@ -955,13 +965,6 @@
           "name": "marine fuel",
           "lat": 56.933783,
           "lon": 24.138596
-        },
-        {
-          "id": "way/1076155258",
-          "name": "Viada",
-          "lat": 56.933514,
-          "lon": 24.145864,
-          "address": "Krasta iela 50"
         },
         {
           "id": "node/1603682405",
@@ -1070,7 +1073,7 @@
         "stepFree": 9,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:34.913Z"
+      "updatedAt": "2026-10-04T09:58:36.600Z"
     },
     "ice-cream": {
       "count": 13,
@@ -1109,7 +1112,9 @@
           "name": "Skrīveru mājas saldējums",
           "lat": 56.95545,
           "lon": 24.124641,
-          "address": "Tērbatas iela 37"
+          "address": "Tērbatas iela 37",
+          "openingHours": "Mo-Sa 11:00-20:00; Su 11:00-18:00",
+          "wheelchair": "limited"
         },
         {
           "id": "node/2175818749",
@@ -1150,9 +1155,9 @@
         "free": 0,
         "paid": 0,
         "stepFree": 2,
-        "partlyStepFree": 0
+        "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:28:35.927Z"
+      "updatedAt": "2026-10-04T09:58:37.093Z"
     },
     "dog-parks": {
       "count": 7,
@@ -1170,10 +1175,10 @@
         "stepFree": 2,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:28:36.619Z"
+      "updatedAt": "2026-10-04T09:58:37.537Z"
     },
     "picnic-spots": {
-      "count": 169,
+      "count": 170,
       "pois": [
         {
           "id": "node/4972092923",
@@ -1188,7 +1193,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:38.479Z"
+      "updatedAt": "2026-10-04T09:58:38.576Z"
     },
     "viewpoints": {
       "count": 22,
@@ -1235,10 +1240,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:39.637Z"
+      "updatedAt": "2026-10-04T09:58:39.123Z"
     },
     "beaches": {
-      "count": 44,
+      "count": 43,
       "pois": [
         {
           "id": "way/210267844",
@@ -1277,10 +1282,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:40.605Z"
+      "updatedAt": "2026-10-04T09:58:39.707Z"
     },
     "atms": {
-      "count": 304,
+      "count": 305,
       "pois": [
         {
           "id": "node/452517381",
@@ -1383,20 +1388,14 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 13,
+        "stepFree": 15,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:28:41.592Z"
+      "updatedAt": "2026-10-04T09:58:40.289Z"
     },
     "post-boxes": {
-      "count": 49,
+      "count": 47,
       "pois": [
-        {
-          "id": "node/1826053129",
-          "lat": 56.948466,
-          "lon": 24.107433,
-          "street": "Mazā Jaunavu iela"
-        },
         {
           "id": "node/264752654",
           "lat": 56.946376,
@@ -1411,8 +1410,8 @@
         },
         {
           "id": "node/4293541735",
-          "lat": 56.946803,
-          "lon": 24.120988,
+          "lat": 56.946867,
+          "lon": 24.120853,
           "street": "A tunelis"
         },
         {
@@ -1570,6 +1569,12 @@
           "lat": 56.98557,
           "lon": 24.171309,
           "street": "Čiekurkalna 2. līnija"
+        },
+        {
+          "id": "node/8107775502",
+          "lat": 56.968554,
+          "lon": 24.196099,
+          "street": "Lielvārdes iela"
         }
       ],
       "stats": {
@@ -1578,10 +1583,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:43.606Z"
+      "updatedAt": "2026-10-04T09:58:41.390Z"
     },
     "recycling": {
-      "count": 303,
+      "count": 306,
       "pois": [
         {
           "id": "node/12116908928",
@@ -1613,13 +1618,6 @@
           "lon": 24.0672,
           "address": "Kalnciema iela 38",
           "context": "Lidl"
-        },
-        {
-          "id": "node/14078424307",
-          "name": "Ljana",
-          "lat": 56.94956,
-          "lon": 24.150523,
-          "address": "Vagonu iela 17"
         },
         {
           "id": "node/12843989712",
@@ -1769,18 +1767,24 @@
           "lon": 24.062661,
           "openingHours": "24/7",
           "street": "Reņģes iela"
+        },
+        {
+          "id": "node/11878681834",
+          "lat": 56.956747,
+          "lon": 24.155559,
+          "street": "Jāņa Asara iela"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 1,
+        "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:46.801Z"
+      "updatedAt": "2026-10-04T09:58:43.251Z"
     },
     "luggage-storage": {
-      "count": 0,
+      "count": 1,
       "pois": [],
       "stats": {
         "free": 0,
@@ -1788,10 +1792,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:47.479Z"
+      "updatedAt": "2026-10-04T09:58:43.688Z"
     },
     "libraries": {
-      "count": 43,
+      "count": 42,
       "pois": [
         {
           "id": "way/159024970",
@@ -1828,7 +1832,8 @@
           "name": "Dabaszinātņu bibliotēka",
           "lat": 56.9367,
           "lon": 24.097418,
-          "address": "Jelgavas iela 1"
+          "address": "Jelgavas iela 1",
+          "wheelchair": "yes"
         },
         {
           "id": "node/7934593699",
@@ -1836,7 +1841,8 @@
           "lat": 56.93597,
           "lon": 24.097092,
           "address": "Jelgavas iela 3",
-          "openingHours": "24/7"
+          "openingHours": "24/7",
+          "wheelchair": "yes"
         },
         {
           "id": "way/165353616",
@@ -1863,10 +1869,11 @@
         },
         {
           "id": "node/13681042784",
-          "name": "Āgenskalna fliālbibliotēka",
+          "name": "Āgenskalna filiālbibliotēka",
           "lat": 56.936012,
           "lon": 24.076939,
-          "address": "Eduarda Smiļģa iela 46"
+          "address": "Eduarda Smiļģa iela 46",
+          "openingHours": "Mo-Fr 10:00-18:00; Sa 10:00-17:00; Jun-Aug Mo off"
         },
         {
           "id": "way/164369738",
@@ -2004,10 +2011,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 1,
+        "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:48.320Z"
+      "updatedAt": "2026-10-04T09:58:44.196Z"
     },
     "outdoor-gyms": {
       "count": 135,
@@ -2034,10 +2041,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 3,
+        "stepFree": 2,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:28:50.079Z"
+      "updatedAt": "2026-10-04T09:58:45.168Z"
     },
     "camp-sites": {
       "count": 5,
@@ -2075,10 +2082,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:50.944Z"
+      "updatedAt": "2026-10-04T09:58:45.742Z"
     },
     "shelters": {
-      "count": 16,
+      "count": 21,
       "pois": [
         {
           "id": "node/2954334969",
@@ -2111,7 +2118,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:53.960Z"
+      "updatedAt": "2026-10-04T09:58:47.543Z"
     },
     "rest-areas": {
       "count": 7,
@@ -2129,7 +2136,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:55.117Z"
+      "updatedAt": "2026-10-04T09:58:47.965Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2140,7 +2147,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:55.674Z"
+      "updatedAt": "2026-10-04T09:58:48.322Z"
     },
     "post-offices": {
       "count": 22,
@@ -2148,8 +2155,8 @@
         {
           "id": "node/3304009892",
           "name": "Klientu centrs \"Origo\"",
-          "lat": 56.946892,
-          "lon": 24.118936,
+          "lat": 56.946891,
+          "lon": 24.118844,
           "address": "Stacijas laukums 2",
           "openingHours": "Mo-Fr 07:00-20:00; Sa 09:00-18:00; Su 10:00-18:00"
         },
@@ -2334,7 +2341,7 @@
         "stepFree": 4,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:28:56.461Z"
+      "updatedAt": "2026-10-04T09:58:48.753Z"
     },
     "showers": {
       "count": 1,
@@ -2352,25 +2359,18 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:56.990Z"
+      "updatedAt": "2026-10-04T09:58:49.108Z"
     },
     "fireplaces": {
-      "count": 21,
-      "pois": [
-        {
-          "id": "node/5981105499",
-          "name": "Eternal flame",
-          "lat": 56.987549,
-          "lon": 24.144742
-        }
-      ],
+      "count": 20,
+      "pois": [],
       "stats": {
         "free": 0,
         "paid": 0,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:59.539Z"
+      "updatedAt": "2026-10-04T09:58:51.040Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2378,7 +2378,7 @@
       "updatedAt": "2026-08-17T04:02:50.425Z"
     },
     "benches": {
-      "count": 5001,
+      "count": 5211,
       "pois": [
         {
           "id": "node/1387261810",
@@ -2501,7 +2501,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:04.246Z"
+      "updatedAt": "2026-10-04T09:58:53.533Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2509,7 +2509,7 @@
       "updatedAt": "2026-08-18T03:58:05.279Z"
     },
     "bicycle-repair": {
-      "count": 44,
+      "count": 48,
       "pois": [
         {
           "id": "node/5578188538",
@@ -2601,6 +2601,18 @@
           "street": "Klusā iela"
         },
         {
+          "id": "node/13958558970",
+          "lat": 56.952238,
+          "lon": 24.033548,
+          "street": "Jūrmalas gatve"
+        },
+        {
+          "id": "node/14177639803",
+          "lat": 56.91127,
+          "lon": 24.077214,
+          "street": "Dzelzceļa iela"
+        },
+        {
           "id": "node/12293818692",
           "lat": 56.950699,
           "lon": 24.186624,
@@ -2615,6 +2627,12 @@
           "wheelchair": "yes",
           "fee": "no",
           "street": "Sējas iela"
+        },
+        {
+          "id": "node/13960261056",
+          "lat": 56.961167,
+          "lon": 24.01407,
+          "street": "Dammes iela"
         },
         {
           "id": "node/9957996167",
@@ -2665,12 +2683,162 @@
         }
       ],
       "stats": {
-        "free": 20,
+        "free": 21,
         "paid": 2,
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:02.312Z"
+      "updatedAt": "2026-10-04T09:58:52.468Z"
+    },
+    "trash-bins": {
+      "count": 2408,
+      "pois": [
+        {
+          "id": "node/6974491080",
+          "lat": 56.949397,
+          "lon": 24.104717,
+          "street": "Doma laukums"
+        },
+        {
+          "id": "node/12384516438",
+          "lat": 56.949721,
+          "lon": 24.108551,
+          "street": "Meistaru iela"
+        },
+        {
+          "id": "node/13070959899",
+          "lat": 56.947817,
+          "lon": 24.106726,
+          "street": "Kaļķu iela"
+        },
+        {
+          "id": "node/12384516436",
+          "lat": 56.949755,
+          "lon": 24.108828,
+          "street": "Līvu laukums"
+        },
+        {
+          "id": "node/13369260356",
+          "lat": 56.947488,
+          "lon": 24.107163,
+          "street": "Kungu iela"
+        },
+        {
+          "id": "node/12076836637",
+          "lat": 56.950145,
+          "lon": 24.100876,
+          "street": "Poļu gāte"
+        },
+        {
+          "id": "node/12076851680",
+          "lat": 56.948275,
+          "lon": 24.101469,
+          "street": "11. novembra krastmalas veloceļš"
+        },
+        {
+          "id": "node/11964617009",
+          "lat": 56.952005,
+          "lon": 24.104376,
+          "street": "Noliktavas iela"
+        },
+        {
+          "id": "node/12076836635",
+          "lat": 56.950235,
+          "lon": 24.100771,
+          "street": "Daugavas gāte"
+        },
+        {
+          "id": "node/13362144611",
+          "lat": 56.948436,
+          "lon": 24.109365,
+          "street": "Konventa sēta"
+        },
+        {
+          "id": "node/13371809563",
+          "lat": 56.947617,
+          "lon": 24.108639,
+          "street": "Reformācijas laukums"
+        },
+        {
+          "id": "node/11964617003",
+          "lat": 56.952434,
+          "lon": 24.10459,
+          "street": "Jēkaba iela"
+        },
+        {
+          "id": "node/12116859510",
+          "lat": 56.946635,
+          "lon": 24.105306,
+          "street": "11. novembra krastmala"
+        },
+        {
+          "id": "node/13114491860",
+          "lat": 56.947763,
+          "lon": 24.109523,
+          "street": "Skārņu iela"
+        },
+        {
+          "id": "node/12116859514",
+          "lat": 56.946512,
+          "lon": 24.105662,
+          "street": "Grēcinieku iela"
+        },
+        {
+          "id": "node/11088726892",
+          "lat": 56.951771,
+          "lon": 24.110158,
+          "street": "Zigfrīda Annas Meierovica bulvāris"
+        },
+        {
+          "id": "node/13369268774",
+          "lat": 56.948065,
+          "lon": 24.110967,
+          "street": "Jāņa sēta"
+        },
+        {
+          "id": "node/12116870244",
+          "lat": 56.950253,
+          "lon": 24.112288,
+          "street": "Aspazijas bulvāris"
+        },
+        {
+          "id": "node/14024325587",
+          "lat": 56.953554,
+          "lon": 24.104455,
+          "street": "Kronvalda bulvāris"
+        },
+        {
+          "id": "node/12119770301",
+          "lat": 56.951594,
+          "lon": 24.112566,
+          "street": "Brīvības laukums"
+        },
+        {
+          "id": "node/13478750720",
+          "lat": 56.952926,
+          "lon": 24.111061,
+          "street": "Raiņa bulvāris"
+        },
+        {
+          "id": "node/13362144688",
+          "lat": 56.951986,
+          "lon": 24.114045,
+          "street": "Brīvības bulvāris"
+        },
+        {
+          "id": "node/14099104184",
+          "lat": 56.951167,
+          "lon": 24.115991,
+          "street": "Inženieru iela"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T09:58:55.124Z"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "city": "berlin",
-  "generatedAt": "2026-09-27T09:34:43.029Z",
+  "generatedAt": "2026-10-04T10:04:59.550Z",
   "categories": {
     "toilets": {
       "count": 979,
@@ -152,7 +152,7 @@
           "lat": 52.503902,
           "lon": 13.398227,
           "address": "Alte Jakobstraße 124-128",
-          "openingHours": "Mo, We-Su 10:00-18:00",
+          "openingHours": "Mo,We-Su 10:00-18:00",
           "wheelchair": "yes",
           "fee": "yes"
         },
@@ -259,9 +259,9 @@
         }
       ],
       "stats": {
-        "free": 451,
+        "free": 458,
         "paid": 274,
-        "stepFree": 539,
+        "stepFree": 544,
         "partlyStepFree": 50
       },
       "near": [
@@ -320,10 +320,10 @@
           "lon": 13.376698
         }
       ],
-      "updatedAt": "2026-09-23T08:28:13.113Z"
+      "updatedAt": "2026-10-04T10:04:11.042Z"
     },
     "drinking-water": {
-      "count": 340,
+      "count": 345,
       "pois": [
         {
           "id": "node/8722868012",
@@ -346,6 +346,12 @@
           "lon": 13.444802,
           "openingHours": "24/7",
           "fee": "no"
+        },
+        {
+          "id": "node/14227224901",
+          "name": "Brunnen",
+          "lat": 52.550974,
+          "lon": 13.435529
         },
         {
           "id": "way/417323996",
@@ -479,6 +485,7 @@
           "id": "node/11139103183",
           "lat": 52.514405,
           "lon": 13.40654,
+          "fee": "no",
           "street": "Mühlendamm"
         },
         {
@@ -518,17 +525,10 @@
           "wheelchair": "limited",
           "fee": "no",
           "street": "Strausberger Platz"
-        },
-        {
-          "id": "node/5814732183",
-          "lat": 52.507967,
-          "lon": 13.390155,
-          "wheelchair": "limited",
-          "street": "Friedrichstraße"
         }
       ],
       "stats": {
-        "free": 165,
+        "free": 170,
         "paid": 0,
         "stepFree": 79,
         "partlyStepFree": 50
@@ -581,18 +581,18 @@
         },
         {
           "landmark": "Q152252",
-          "within": 2,
-          "distance": 166,
-          "bearing": 244,
-          "poi": "node/13167755015",
-          "lat": 52.508287,
-          "lon": 13.374123
+          "within": 3,
+          "distance": 152,
+          "bearing": 253,
+          "poi": "node/14219471512",
+          "lat": 52.508542,
+          "lon": 13.374189
         }
       ],
-      "updatedAt": "2026-09-23T08:28:16.191Z"
+      "updatedAt": "2026-10-04T10:04:14.985Z"
     },
     "playgrounds": {
-      "count": 3381,
+      "count": 3398,
       "pois": [
         {
           "id": "way/1054177698",
@@ -675,6 +675,18 @@
           "lat": 52.532929,
           "lon": 13.403045,
           "wheelchair": "yes"
+        },
+        {
+          "id": "way/48299212",
+          "name": "Spielplatz Berolinastraße",
+          "lat": 52.521264,
+          "lon": 13.426516
+        },
+        {
+          "id": "way/263825994",
+          "name": "Spielplatz und Plansche Weydemeyerstraße",
+          "lat": 52.521181,
+          "lon": 13.427462
         },
         {
           "id": "way/983630496",
@@ -786,31 +798,18 @@
           "name": "Kletterfelsen-Spielplatz",
           "lat": 52.543763,
           "lon": 13.414367
-        },
-        {
-          "id": "way/49208697",
-          "name": "Regenbogenspielplatz im Mauerpark",
-          "lat": 52.544772,
-          "lon": 13.401615,
-          "wheelchair": "limited"
-        },
-        {
-          "id": "way/169711536",
-          "name": "degewo Graunstraße",
-          "lat": 52.544778,
-          "lon": 13.398063
         }
       ],
       "stats": {
         "free": 3,
         "paid": 1,
-        "stepFree": 355,
-        "partlyStepFree": 184
+        "stepFree": 354,
+        "partlyStepFree": 185
       },
-      "updatedAt": "2026-09-27T09:34:02.598Z"
+      "updatedAt": "2026-10-04T10:04:16.799Z"
     },
     "parking": {
-      "count": 29110,
+      "count": 29122,
       "pois": [
         {
           "id": "way/37434692",
@@ -1039,15 +1038,15 @@
         }
       ],
       "stats": {
-        "free": 17536,
-        "paid": 6835,
-        "stepFree": 590,
+        "free": 17546,
+        "paid": 6832,
+        "stepFree": 589,
         "partlyStepFree": 93
       },
-      "updatedAt": "2026-09-27T09:34:05.752Z"
+      "updatedAt": "2026-10-04T10:04:20.221Z"
     },
     "charging-stations": {
-      "count": 1410,
+      "count": 1419,
       "pois": [
         {
           "id": "node/1272843208",
@@ -1272,11 +1271,11 @@
       ],
       "stats": {
         "free": 31,
-        "paid": 381,
+        "paid": 386,
         "stepFree": 12,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T09:34:07.028Z"
+      "updatedAt": "2026-10-04T10:04:21.693Z"
     },
     "gas-stations": {
       "count": 212,
@@ -1533,10 +1532,10 @@
         "stepFree": 113,
         "partlyStepFree": 26
       },
-      "updatedAt": "2026-09-27T09:34:08.383Z"
+      "updatedAt": "2026-10-04T10:04:23.001Z"
     },
     "ice-cream": {
-      "count": 356,
+      "count": 359,
       "pois": [
         {
           "id": "node/5726198088",
@@ -1623,6 +1622,12 @@
           "address": "Max-Beer-Straße 33",
           "openingHours": "Nov 1-Jan 31 Fr-Su 12:00-23:00; Feb 1-Mar 31 Th-Su 12:00-23:00; Apr 1-Oct 31 Mo-Su 12:00-23:00",
           "wheelchair": "no"
+        },
+        {
+          "id": "node/3886926175",
+          "name": "Ice Cream",
+          "lat": 52.512493,
+          "lon": 13.406835
         },
         {
           "id": "node/9888934886",
@@ -1778,24 +1783,15 @@
           "address": "Brunnenstraße 156",
           "openingHours": "Mo-Sa 12:30-19:00; Su 12:00-19:00",
           "wheelchair": "no"
-        },
-        {
-          "id": "node/5886792723",
-          "name": "Early Bird",
-          "lat": 52.532017,
-          "lon": 13.423362,
-          "address": "Winsstraße 68",
-          "openingHours": "Mo-Fr 07:00-18:00; Sa,Su 08:00-19:00",
-          "wheelchair": "no"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 88,
+        "stepFree": 89,
         "partlyStepFree": 40
       },
-      "updatedAt": "2026-09-27T09:34:09.702Z"
+      "updatedAt": "2026-10-04T10:04:24.240Z"
     },
     "dog-parks": {
       "count": 52,
@@ -2006,10 +2002,10 @@
         "stepFree": 22,
         "partlyStepFree": 10
       },
-      "updatedAt": "2026-09-27T09:34:10.742Z"
+      "updatedAt": "2026-10-04T10:04:25.076Z"
     },
     "picnic-spots": {
-      "count": 608,
+      "count": 616,
       "pois": [
         {
           "id": "node/4868547737",
@@ -2060,10 +2056,10 @@
         "stepFree": 2,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T09:34:13.120Z"
+      "updatedAt": "2026-10-04T10:04:27.008Z"
     },
     "viewpoints": {
-      "count": 153,
+      "count": 155,
       "pois": [
         {
           "id": "node/10651702805",
@@ -2259,12 +2255,6 @@
           "wheelchair": "yes"
         },
         {
-          "id": "node/13888917030",
-          "name": "Saschaseck",
-          "lat": 52.576117,
-          "lon": 13.263632
-        },
-        {
           "id": "node/1447377048",
           "name": "Gärten der Welt",
           "lat": 52.537483,
@@ -2285,7 +2275,7 @@
         "stepFree": 25,
         "partlyStepFree": 13
       },
-      "updatedAt": "2026-09-27T09:34:15.060Z"
+      "updatedAt": "2026-10-04T10:04:28.617Z"
     },
     "beaches": {
       "count": 34,
@@ -2367,10 +2357,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:34:16.409Z"
+      "updatedAt": "2026-10-04T10:04:29.763Z"
     },
     "atms": {
-      "count": 1202,
+      "count": 1201,
       "pois": [
         {
           "id": "node/1819929366",
@@ -2612,13 +2602,13 @@
       "stats": {
         "free": 2,
         "paid": 7,
-        "stepFree": 402,
+        "stepFree": 401,
         "partlyStepFree": 93
       },
-      "updatedAt": "2026-09-27T09:34:17.673Z"
+      "updatedAt": "2026-10-04T10:04:31.133Z"
     },
     "post-boxes": {
-      "count": 1762,
+      "count": 1761,
       "pois": [
         {
           "id": "node/308593857",
@@ -2816,13 +2806,13 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 71,
-        "partlyStepFree": 6
+        "stepFree": 72,
+        "partlyStepFree": 7
       },
-      "updatedAt": "2026-09-27T09:34:19.452Z"
+      "updatedAt": "2026-10-04T10:04:32.909Z"
     },
     "recycling": {
-      "count": 2154,
+      "count": 2160,
       "pois": [
         {
           "id": "way/28198135",
@@ -3042,7 +3032,7 @@
         "stepFree": 88,
         "partlyStepFree": 12
       },
-      "updatedAt": "2026-09-27T09:34:22.575Z"
+      "updatedAt": "2026-10-04T10:04:35.975Z"
     },
     "luggage-storage": {
       "count": 23,
@@ -3075,10 +3065,10 @@
         "stepFree": 1,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:34:23.279Z"
+      "updatedAt": "2026-10-04T10:04:36.843Z"
     },
     "libraries": {
-      "count": 227,
+      "count": 226,
       "pois": [
         {
           "id": "way/569067822",
@@ -3091,11 +3081,11 @@
         },
         {
           "id": "relation/18475778",
-          "name": "Berliner Stadtbibliothek",
+          "name": "Berliner Stadtbibliothek (BStB)",
           "lat": 52.515712,
           "lon": 13.404377,
           "address": "Breite Straße 30-36",
-          "openingHours": "Sa 10:00-19:00; Mo-Fr 10:00-21:00; Su,PH off",
+          "openingHours": "Mo 10:00-21:00; Tu 10:00-21:00; We 10:00-21:00; Th 10:00-21:00; Fr 10:00-21:00; Sa 10:00-19:00; PH off",
           "wheelchair": "yes"
         },
         {
@@ -3105,7 +3095,7 @@
           "lon": 13.395109,
           "address": "Am Kupfergraben 5",
           "openingHours": "Mo-Fr 10:00-18:00; Feb 17-Apr 10, PH Mo-Fr 10:00-16:00",
-          "wheelchair": "yes"
+          "wheelchair": "no"
         },
         {
           "id": "node/4534948890",
@@ -3137,6 +3127,7 @@
           "name": "Kinderbücherbox",
           "lat": 52.512351,
           "lon": 13.405587,
+          "openingHours": "Mo-Fr 08:00-16:30",
           "wheelchair": "yes"
         },
         {
@@ -3205,7 +3196,7 @@
           "lat": 52.531606,
           "lon": 13.398696,
           "address": "Brunnenstraße 181",
-          "openingHours": "Mo-Fr 10:00-19:30; Sa 10:00-14:00",
+          "openingHours": "Mo 10:00-19:30; Tu 10:00-19:30; We 10:00-19:30; Th 10:00-19:30; Fr 10:00-19:30; Sa 10:00-14:00; PH off",
           "wheelchair": "yes"
         },
         {
@@ -3266,12 +3257,12 @@
         },
         {
           "id": "node/4432723694",
-          "name": "Bibliothek Am Wasserturm",
+          "name": "Bibliothek am Wasserturm",
           "lat": 52.533158,
           "lon": 13.419505,
-          "address": "Prenzlauer Allee 227-228",
-          "openingHours": "Mo-Sa 08:00-22:00",
-          "wheelchair": "limited"
+          "address": "Prenzlauer Allee 227/228",
+          "openingHours": "Mo 08:00-22:00; Tu 08:00-22:00; We 08:00-22:00; Th 08:00-22:00; Fr 08:00-22:00; Sa 08:00-22:00; Su off; PH off",
+          "wheelchair": "yes"
         },
         {
           "id": "node/5533888846",
@@ -3333,13 +3324,13 @@
       "stats": {
         "free": 3,
         "paid": 0,
-        "stepFree": 68,
-        "partlyStepFree": 21
+        "stepFree": 79,
+        "partlyStepFree": 12
       },
-      "updatedAt": "2026-09-27T09:34:24.508Z"
+      "updatedAt": "2026-10-04T10:04:38.190Z"
     },
     "outdoor-gyms": {
-      "count": 379,
+      "count": 385,
       "pois": [
         {
           "id": "way/1420840914",
@@ -3538,9 +3529,9 @@
         "free": 0,
         "paid": 0,
         "stepFree": 25,
-        "partlyStepFree": 15
+        "partlyStepFree": 14
       },
-      "updatedAt": "2026-09-27T09:34:26.575Z"
+      "updatedAt": "2026-10-04T10:04:40.113Z"
     },
     "camp-sites": {
       "count": 4,
@@ -3582,7 +3573,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:34:27.822Z"
+      "updatedAt": "2026-10-04T10:04:41.044Z"
     },
     "shelters": {
       "count": 72,
@@ -3673,7 +3664,7 @@
         "stepFree": 1,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:34:31.838Z"
+      "updatedAt": "2026-10-04T10:04:44.803Z"
     },
     "rest-areas": {
       "count": 1,
@@ -3692,7 +3683,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:34:32.742Z"
+      "updatedAt": "2026-10-04T10:04:46.038Z"
     },
     "dump-stations": {
       "count": 2,
@@ -3703,10 +3694,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:34:33.329Z"
+      "updatedAt": "2026-10-04T10:04:46.705Z"
     },
     "post-offices": {
-      "count": 161,
+      "count": 165,
       "pois": [
         {
           "id": "node/89274887",
@@ -3831,6 +3822,12 @@
           "wheelchair": "limited"
         },
         {
+          "id": "node/14184995690",
+          "name": "DPD Pickup",
+          "lat": 52.493734,
+          "lon": 13.415022
+        },
+        {
           "id": "node/12309529501",
           "name": "DHL Postfiliale 543",
           "lat": 52.547483,
@@ -3932,23 +3929,15 @@
           "address": "Karl-Heinrich-Ulrichs-Straße 11",
           "openingHours": "Mo 08:00-12:00,13:00-16:00; Tu-Fr 08:00-12:00,13:00-18:00; Sa 08:00-13:00",
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/1617243582",
-          "name": "Post-Shop",
-          "lat": 52.525071,
-          "lon": 13.466216,
-          "openingHours": "Mo-Fr 09:00-18:00; Sa 09:00-13:00",
-          "wheelchair": "yes"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 40,
+        "stepFree": 39,
         "partlyStepFree": 8
       },
-      "updatedAt": "2026-09-27T09:34:34.160Z"
+      "updatedAt": "2026-10-04T10:04:47.458Z"
     },
     "showers": {
       "count": 114,
@@ -3968,10 +3957,10 @@
         "stepFree": 2,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:34:34.880Z"
+      "updatedAt": "2026-10-04T10:04:48.313Z"
     },
     "fireplaces": {
-      "count": 36,
+      "count": 37,
       "pois": [
         {
           "id": "node/12847412335",
@@ -3998,7 +3987,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:34:36.838Z"
+      "updatedAt": "2026-10-04T10:04:50.461Z"
     },
     "air-pumps": {
       "count": 0,
@@ -4006,7 +3995,7 @@
       "updatedAt": "2026-08-17T04:03:19.933Z"
     },
     "benches": {
-      "count": 26852,
+      "count": 27009,
       "pois": [
         {
           "id": "node/12914839800",
@@ -4196,7 +4185,7 @@
         "stepFree": 16,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:34:42.926Z"
+      "updatedAt": "2026-10-04T10:04:56.653Z"
     },
     "compressed-air": {
       "count": 20,
@@ -4253,8 +4242,8 @@
         {
           "id": "node/9633251516",
           "name": "Steg Bikes",
-          "lat": 52.575959,
-          "lon": 13.349799,
+          "lat": 52.575148,
+          "lon": 13.348672,
           "address": "Alt-Reinickendorf 29",
           "openingHours": "Mo-Th 08:00-15:30; Fr 08:00-14:30"
         },
@@ -4442,7 +4431,145 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:34:40.548Z"
+      "updatedAt": "2026-10-04T10:04:54.168Z"
+    },
+    "trash-bins": {
+      "count": 17444,
+      "pois": [
+        {
+          "id": "way/49261780",
+          "name": "Sperrmüllcontainer",
+          "lat": 52.55101,
+          "lon": 13.403046
+        },
+        {
+          "id": "node/12914871135",
+          "name": "Mülleimer",
+          "lat": 52.488798,
+          "lon": 13.382462
+        },
+        {
+          "id": "node/12828705108",
+          "name": "Parkranger",
+          "lat": 52.47484,
+          "lon": 13.437519
+        },
+        {
+          "id": "node/2856612733",
+          "name": "Wuhletal-Wanderweg",
+          "lat": 52.526107,
+          "lon": 13.57693
+        },
+        {
+          "id": "node/10884300055",
+          "lat": 52.519769,
+          "lon": 13.404929,
+          "street": "Spandauer Straße"
+        },
+        {
+          "id": "node/10884300056",
+          "lat": 52.520016,
+          "lon": 13.404394,
+          "street": "Karl-Liebknecht-Straße"
+        },
+        {
+          "id": "node/10196222647",
+          "lat": 52.520055,
+          "lon": 13.405771,
+          "street": "Spandauer Straße/Marienkirche"
+        },
+        {
+          "id": "node/12072332734",
+          "lat": 52.520812,
+          "lon": 13.405943,
+          "street": "Rosenstraße"
+        },
+        {
+          "id": "node/11056232378",
+          "lat": 52.520598,
+          "lon": 13.403666,
+          "street": "Spreegasse"
+        },
+        {
+          "id": "node/6449593423",
+          "lat": 52.520561,
+          "lon": 13.403105,
+          "street": "St. Wolfgang-Straße"
+        },
+        {
+          "id": "node/9124166719",
+          "lat": 52.521452,
+          "lon": 13.404728,
+          "street": "Heidereutergasse"
+        },
+        {
+          "id": "node/10196222656",
+          "lat": 52.518996,
+          "lon": 13.402623,
+          "street": "Vera-Brittain-Ufer"
+        },
+        {
+          "id": "node/10884300059",
+          "lat": 52.518901,
+          "lon": 13.402445,
+          "street": "Liebknechtbrücke"
+        },
+        {
+          "id": "node/12070730161",
+          "lat": 52.518457,
+          "lon": 13.403037,
+          "street": "Spreeufer"
+        },
+        {
+          "id": "node/12044782823",
+          "lat": 52.518337,
+          "lon": 13.406839,
+          "street": "Rathausstraße"
+        },
+        {
+          "id": "node/10760401255",
+          "lat": 52.522016,
+          "lon": 13.404638,
+          "street": "Rochstraße"
+        },
+        {
+          "id": "node/10884252627",
+          "lat": 52.518596,
+          "lon": 13.401649,
+          "street": "Schloßplatz"
+        },
+        {
+          "id": "node/13785058781",
+          "lat": 52.522308,
+          "lon": 13.403335,
+          "street": "Litfaß-Platz"
+        },
+        {
+          "id": "node/12044782819",
+          "lat": 52.517872,
+          "lon": 13.407466,
+          "street": "Am Nußbaum"
+        },
+        {
+          "id": "node/13344538564",
+          "lat": 52.521608,
+          "lon": 13.408514,
+          "street": "S+U Alexanderplatz/Memhardstraße"
+        },
+        {
+          "id": "node/13946404710",
+          "lat": 52.522633,
+          "lon": 13.404136,
+          "street": "An der Spandauer Brücke"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 86,
+        "partlyStepFree": 22
+      },
+      "updatedAt": "2026-10-04T10:04:59.448Z"
     }
   }
 }

@@ -1,9 +1,9 @@
 {
   "city": "prague",
-  "generatedAt": "2026-09-27T09:31:15.092Z",
+  "generatedAt": "2026-10-04T10:01:01.528Z",
   "categories": {
     "toilets": {
-      "count": 359,
+      "count": 365,
       "pois": [
         {
           "id": "node/619170355",
@@ -178,6 +178,14 @@
           "context": "Městská knihovna v Praze – Ústřední knihovna"
         },
         {
+          "id": "node/1946542615",
+          "lat": 50.085957,
+          "lon": 14.414148,
+          "openingHours": "Mo-Su 09:00-22:00",
+          "fee": "yes",
+          "context": "U Šalamouna"
+        },
+        {
           "id": "way/382843342",
           "name": "Nový Smíchov",
           "lat": 50.073153,
@@ -227,20 +235,13 @@
           "lat": 50.053152,
           "lon": 14.517476,
           "openingHours": "Mo-Fr 06:30-22:00; Sa,Su 07:00-22:00"
-        },
-        {
-          "id": "node/12492460239",
-          "name": "Café Park Zahrádky",
-          "lat": 50.106725,
-          "lon": 14.519236,
-          "wheelchair": "yes"
         }
       ],
       "stats": {
-        "free": 123,
-        "paid": 122,
+        "free": 126,
+        "paid": 124,
         "stepFree": 129,
-        "partlyStepFree": 12
+        "partlyStepFree": 14
       },
       "near": [
         {
@@ -298,31 +299,16 @@
           "lon": 14.416889
         }
       ],
-      "updatedAt": "2026-09-23T08:27:48.123Z"
+      "updatedAt": "2026-10-04T10:00:27.224Z"
     },
     "drinking-water": {
-      "count": 288,
+      "count": 279,
       "pois": [
         {
-          "id": "node/14002069401",
-          "name": "Osvěžítko, mlžítko",
-          "lat": 50.068095,
-          "lon": 14.415094
-        },
-        {
-          "id": "node/9955034081",
-          "name": "Brčko",
-          "lat": 50.097576,
-          "lon": 14.404854,
-          "wheelchair": "yes",
-          "fee": "no"
-        },
-        {
-          "id": "node/11903879303",
-          "name": "Brčko Pohořelec",
-          "lat": 50.087753,
-          "lon": 14.387885,
-          "fee": "no"
+          "id": "node/14139614501",
+          "name": "Mlžítko, osvěžítko",
+          "lat": 50.073208,
+          "lon": 14.415146
         },
         {
           "id": "node/9020762329",
@@ -335,6 +321,24 @@
           "name": "Pítko",
           "lat": 50.120409,
           "lon": 14.403959
+        },
+        {
+          "id": "node/3517331514",
+          "name": "Rak",
+          "lat": 50.032112,
+          "lon": 14.482393,
+          "openingHours": "24/7",
+          "wheelchair": "limited",
+          "fee": "no"
+        },
+        {
+          "id": "node/14079654604",
+          "name": "Faun",
+          "lat": 50.024899,
+          "lon": 14.492232,
+          "openingHours": "24/7",
+          "wheelchair": "limited",
+          "fee": "no"
         },
         {
           "id": "node/503309229",
@@ -356,14 +360,20 @@
         },
         {
           "id": "node/13429021025",
-          "lat": 50.080305,
-          "lon": 14.440754,
+          "lat": 50.080316,
+          "lon": 14.440687,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
           "street": "promenáda Pawla Adamowicze"
         },
         {
           "id": "node/4305061077",
           "lat": 50.076062,
-          "lon": 14.448708,
+          "lon": 14.448699,
+          "openingHours": "08:00-21:00",
+          "wheelchair": "yes",
+          "fee": "no",
           "street": "Slezská"
         },
         {
@@ -377,14 +387,20 @@
         },
         {
           "id": "node/9988082187",
-          "lat": 50.069849,
-          "lon": 14.447584,
+          "lat": 50.069842,
+          "lon": 14.447629,
+          "openingHours": "24/7",
+          "wheelchair": "no",
+          "fee": "no",
           "street": "Rybalkova"
         },
         {
           "id": "node/3762000728",
           "lat": 50.080317,
           "lon": 14.448739,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
           "street": "Škroupovo náměstí"
         },
         {
@@ -398,8 +414,11 @@
         },
         {
           "id": "node/1358756046",
-          "lat": 50.085077,
-          "lon": 14.434017,
+          "lat": 50.085065,
+          "lon": 14.434041,
+          "openingHours": "08:00-19:00",
+          "wheelchair": "yes",
+          "fee": "no",
           "street": "Opletalova"
         },
         {
@@ -415,6 +434,7 @@
           "id": "node/6571875561",
           "lat": 50.081599,
           "lon": 14.424893,
+          "openingHours": "Mo-Fr 09:00-19:00; Sa 10:00-18:00",
           "wheelchair": "yes",
           "fee": "no",
           "street": "Vodičkova"
@@ -423,6 +443,7 @@
           "id": "node/11182125240",
           "lat": 50.082638,
           "lon": 14.425481,
+          "openingHours": "24/7",
           "wheelchair": "yes",
           "fee": "no",
           "street": "Václavské náměstí"
@@ -455,26 +476,31 @@
           "street": "Karlovo náměstí"
         },
         {
+          "id": "node/9102077590",
+          "lat": 50.083763,
+          "lon": 14.424354,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Můstek"
+        },
+        {
           "id": "node/2213334809",
-          "lat": 50.070529,
-          "lon": 14.454749,
+          "lat": 50.070476,
+          "lon": 14.454707,
+          "openingHours": "yes",
+          "wheelchair": "yes",
           "fee": "no",
           "street": "Norská"
         },
         {
           "id": "node/9082938588",
-          "lat": 50.069067,
-          "lon": 14.453577,
+          "lat": 50.069072,
+          "lon": 14.453566,
+          "openingHours": "24/7",
           "wheelchair": "yes",
           "fee": "no",
-          "street": "Holandská"
-        },
-        {
-          "id": "node/9082683839",
-          "lat": 50.080843,
-          "lon": 14.454735,
-          "fee": "no",
-          "street": "Bořivojova"
+          "street": "Vršovické náměstí"
         },
         {
           "id": "node/9082812232",
@@ -493,13 +519,6 @@
           "wheelchair": "yes",
           "fee": "no",
           "street": "Kostnické náměstí"
-        },
-        {
-          "id": "node/1787426874",
-          "lat": 50.083536,
-          "lon": 14.423364,
-          "fee": "no",
-          "street": "Můstek"
         },
         {
           "id": "node/3670590094",
@@ -530,16 +549,28 @@
         },
         {
           "id": "node/4342247851",
-          "lat": 50.084608,
-          "lon": 14.42061,
+          "lat": 50.084615,
+          "lon": 14.420588,
+          "openingHours": "yes",
+          "wheelchair": "no",
+          "fee": "no",
           "street": "Havelská"
+        },
+        {
+          "id": "node/290650248",
+          "lat": 50.072502,
+          "lon": 14.415145,
+          "openingHours": "24/7",
+          "wheelchair": "yes",
+          "fee": "no",
+          "street": "Palackého náměstí"
         }
       ],
       "stats": {
-        "free": 192,
+        "free": 251,
         "paid": 0,
-        "stepFree": 125,
-        "partlyStepFree": 21
+        "stepFree": 181,
+        "partlyStepFree": 35
       },
       "near": [
         {
@@ -554,11 +585,11 @@
         {
           "landmark": "Q204871",
           "within": 4,
-          "distance": 212,
+          "distance": 214,
           "bearing": 288,
           "poi": "node/4317651934",
-          "lat": 50.086966,
-          "lon": 14.409107
+          "lat": 50.086974,
+          "lon": 14.40908
         },
         {
           "landmark": "Q729370",
@@ -580,7 +611,7 @@
         },
         {
           "landmark": "Q847613",
-          "within": 8,
+          "within": 9,
           "distance": 60,
           "bearing": 308,
           "poi": "node/11182125240",
@@ -589,18 +620,18 @@
         },
         {
           "landmark": "Q616334",
-          "within": 6,
-          "distance": 122,
-          "bearing": 224,
-          "poi": "node/4305072956",
-          "lat": 50.063647,
-          "lon": 14.41645
+          "within": 4,
+          "distance": 260,
+          "bearing": 110,
+          "poi": "node/3809563992",
+          "lat": 50.063622,
+          "lon": 14.421069
         }
       ],
-      "updatedAt": "2026-09-23T08:27:49.973Z"
+      "updatedAt": "2026-10-04T10:00:29.832Z"
     },
     "playgrounds": {
-      "count": 1026,
+      "count": 1035,
       "pois": [
         {
           "id": "node/14092801301",
@@ -733,8 +764,8 @@
         {
           "id": "way/106951384",
           "name": "Pod Karlovým mostem",
-          "lat": 50.087122,
-          "lon": 14.409319,
+          "lat": 50.0871,
+          "lon": 14.409325,
           "openingHours": "Mo-Su 08:00-17:00"
         },
         {
@@ -796,13 +827,13 @@
       "stats": {
         "free": 1,
         "paid": 4,
-        "stepFree": 27,
-        "partlyStepFree": 27
+        "stepFree": 30,
+        "partlyStepFree": 28
       },
-      "updatedAt": "2026-09-27T09:30:43.827Z"
+      "updatedAt": "2026-10-04T10:00:31.261Z"
     },
     "parking": {
-      "count": 8168,
+      "count": 8295,
       "pois": [
         {
           "id": "way/826232798",
@@ -1027,15 +1058,15 @@
         }
       ],
       "stats": {
-        "free": 2280,
-        "paid": 1720,
+        "free": 2279,
+        "paid": 1728,
         "stepFree": 54,
         "partlyStepFree": 15
       },
-      "updatedAt": "2026-09-27T09:30:47.230Z"
+      "updatedAt": "2026-10-04T10:00:33.036Z"
     },
     "charging-stations": {
-      "count": 435,
+      "count": 455,
       "pois": [
         {
           "id": "node/3245916268",
@@ -1057,13 +1088,6 @@
           "fee": "yes"
         },
         {
-          "id": "node/10144791295",
-          "name": "PREpoint",
-          "lat": 50.049245,
-          "lon": 14.434985,
-          "fee": "yes"
-        },
-        {
           "id": "node/6137201082",
           "name": "PREpoint Pražská energetika",
           "lat": 50.069021,
@@ -1078,6 +1102,13 @@
           "fee": "yes"
         },
         {
+          "id": "node/10144791294",
+          "name": "PREpoint",
+          "lat": 50.042083,
+          "lon": 14.433336,
+          "fee": "yes"
+        },
+        {
           "id": "node/11008357086",
           "name": "PRE Point",
           "lat": 50.072401,
@@ -1087,7 +1118,8 @@
           "id": "node/14056284484",
           "name": "NabijBike",
           "lat": 50.115213,
-          "lon": 14.41624
+          "lon": 14.41624,
+          "fee": "no"
         },
         {
           "id": "way/1456135833",
@@ -1138,15 +1170,15 @@
         }
       ],
       "stats": {
-        "free": 6,
-        "paid": 103,
+        "free": 7,
+        "paid": 100,
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:30:48.335Z"
+      "updatedAt": "2026-10-04T10:00:33.632Z"
     },
     "gas-stations": {
-      "count": 147,
+      "count": 145,
       "pois": [
         {
           "id": "way/389878530",
@@ -1234,9 +1266,9 @@
         },
         {
           "id": "node/95162906",
-          "name": "Shell, Bohdalecká",
-          "lat": 50.060362,
-          "lon": 14.470151,
+          "name": "Shell",
+          "lat": 50.060213,
+          "lon": 14.47022,
           "openingHours": "24/7"
         },
         {
@@ -1252,15 +1284,6 @@
           "lat": 50.083238,
           "lon": 14.478008,
           "openingHours": "05:00-22:00"
-        },
-        {
-          "id": "node/457462430",
-          "name": "Shell",
-          "lat": 50.051368,
-          "lon": 14.410917,
-          "address": "Strakonická",
-          "openingHours": "Mo-Su 06:00-22:00",
-          "wheelchair": "yes"
         },
         {
           "id": "node/306397575",
@@ -1284,7 +1307,7 @@
         },
         {
           "id": "node/9980614726",
-          "name": "Tomegas Jižní spojka",
+          "name": "Tomegas",
           "lat": 50.059294,
           "lon": 14.482764
         },
@@ -1359,18 +1382,24 @@
           "lat": 50.06062,
           "lon": 14.506656,
           "openingHours": "06:00-22:00"
+        },
+        {
+          "id": "node/3634590165",
+          "name": "TVAJA CNG",
+          "lat": 50.077606,
+          "lon": 14.510607
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 26,
+        "stepFree": 27,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:30:49.561Z"
+      "updatedAt": "2026-10-04T10:00:34.285Z"
     },
     "ice-cream": {
-      "count": 62,
+      "count": 60,
       "pois": [
         {
           "id": "way/825356419",
@@ -1402,13 +1431,6 @@
           "lat": 50.070775,
           "lon": 14.44528,
           "openingHours": "May-Sep Mo-Fr 13:00-21:00; May-Sep Sa,Su 11:00-20:00; Oct-Apr Mo off; Oct-Apr Tu-Fr 12:00-20:00"
-        },
-        {
-          "id": "node/9714379828",
-          "name": "Grom",
-          "lat": 50.080186,
-          "lon": 14.429758,
-          "openingHours": "Mo-Fr 07:00-22:30; Sa, Su 10:00-22:30"
         },
         {
           "id": "node/3311586821",
@@ -1585,6 +1607,12 @@
           "lon": 14.491011
         },
         {
+          "id": "node/11137236313",
+          "name": "Točená domeček",
+          "lat": 50.070655,
+          "lon": 14.507609
+        },
+        {
           "id": "node/1776247750",
           "name": "Lucerna",
           "lat": 50.083914,
@@ -1597,10 +1625,10 @@
         "stepFree": 2,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T09:30:51.018Z"
+      "updatedAt": "2026-10-04T10:00:35.338Z"
     },
     "dog-parks": {
-      "count": 48,
+      "count": 49,
       "pois": [
         {
           "id": "way/1136706506",
@@ -1687,13 +1715,13 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 13,
+        "stepFree": 14,
         "partlyStepFree": 6
       },
-      "updatedAt": "2026-09-27T09:30:52.067Z"
+      "updatedAt": "2026-10-04T10:00:36.196Z"
     },
     "picnic-spots": {
-      "count": 272,
+      "count": 280,
       "pois": [
         {
           "id": "node/8556808728",
@@ -1732,10 +1760,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:30:54.170Z"
+      "updatedAt": "2026-10-04T10:00:37.464Z"
     },
     "viewpoints": {
-      "count": 255,
+      "count": 256,
       "pois": [
         {
           "id": "node/6483803187",
@@ -1759,6 +1787,15 @@
           "lon": 14.427757,
           "openingHours": "Nov-Feb 10:00-18:00; Mar,Oct 10:00-20:00; Apr-Sep 10:00-22:00",
           "wheelchair": "no"
+        },
+        {
+          "id": "way/1559946260",
+          "name": "Fly Vista rooftop bar",
+          "lat": 50.082172,
+          "lon": 14.419671,
+          "openingHours": "Mo-We 07:30-01:00, Th-Fr 07:30-03:00, Sa 08:00-03:00, Su 08:00-01:00",
+          "wheelchair": "no",
+          "fee": "yes"
         },
         {
           "id": "node/5010970673",
@@ -1819,8 +1856,8 @@
         {
           "id": "node/13928217453",
           "name": "Modulární Vyhlídka",
-          "lat": 50.067162,
-          "lon": 14.4054,
+          "lat": 50.067144,
+          "lon": 14.405463,
           "wheelchair": "no"
         },
         {
@@ -1853,7 +1890,7 @@
           "name": "Petřínská rozhledna",
           "lat": 50.083508,
           "lon": 14.395096,
-          "openingHours": "Oct-Mar 10:00-18:00; Apr-Aug 09:00-19:00; Sep 09:00-18:00",
+          "openingHours": "Nov-Mar 10:00-18:00; Apr-Aug 09:00-19:00; Sep-Oct 09:00-18:00",
           "wheelchair": "yes",
           "fee": "yes"
         },
@@ -1877,7 +1914,7 @@
         },
         {
           "id": "node/13405299725",
-          "name": "Skála Rozloučení",
+          "name": "skála Rozloučení",
           "lat": 50.042013,
           "lon": 14.41289
         },
@@ -1932,23 +1969,15 @@
           "name": "Cibulka",
           "lat": 50.064731,
           "lon": 14.355884
-        },
-        {
-          "id": "node/8119614623",
-          "name": "Rozhledna Sofie",
-          "lat": 50.005317,
-          "lon": 14.418058,
-          "wheelchair": "no",
-          "fee": "no"
         }
       ],
       "stats": {
         "free": 8,
-        "paid": 6,
+        "paid": 7,
         "stepFree": 12,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:30:55.082Z"
+      "updatedAt": "2026-10-04T10:00:38.188Z"
     },
     "beaches": {
       "count": 6,
@@ -1973,23 +2002,16 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:30:56.039Z"
+      "updatedAt": "2026-10-04T10:00:38.843Z"
     },
     "atms": {
-      "count": 780,
+      "count": 783,
       "pois": [
         {
           "id": "node/3930699833",
           "name": "ČSOB",
           "lat": 50.075414,
           "lon": 14.439419
-        },
-        {
-          "id": "node/13925817702",
-          "name": "ATM Euronet bankomat",
-          "lat": 50.076392,
-          "lon": 14.439088,
-          "openingHours": "Mo 09:00-18:00; Tu 09:00-18:00; We 09:00-18:00; Th 09:00-18:00; Fr 09:00-18:00; Sa 09:00-18:00"
         },
         {
           "id": "node/365476974",
@@ -2103,14 +2125,6 @@
           "lon": 14.445298
         },
         {
-          "id": "node/457719601",
-          "name": "Sberbank",
-          "lat": 50.078972,
-          "lon": 14.421408,
-          "address": "Lazarská 8",
-          "openingHours": "Mo,We 09:00-18:00; Tu,Th 09:00-17:00; Fr 09:00-16:00"
-        },
-        {
           "id": "node/6945979971",
           "name": "Fio",
           "lat": 50.06377,
@@ -2137,13 +2151,6 @@
           "lat": 50.086429,
           "lon": 14.42744,
           "openingHours": "Mo-Su 10:00-20:00"
-        },
-        {
-          "id": "node/3410705818",
-          "name": "Českà Spořitelna",
-          "lat": 50.088214,
-          "lon": 14.428974,
-          "openingHours": "24/7"
         },
         {
           "id": "node/11160513690",
@@ -2190,18 +2197,38 @@
           "name": "ATM",
           "lat": 50.072236,
           "lon": 14.406437
+        },
+        {
+          "id": "node/5507975182",
+          "name": "mBank",
+          "lat": 50.09485,
+          "lon": 14.450195,
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/11633855656",
+          "name": "Bitcoinmat",
+          "lat": 50.067947,
+          "lon": 14.468964,
+          "openingHours": "Mo-Su 09:00-21:00"
+        },
+        {
+          "id": "node/13556797701",
+          "name": "Partners Banka",
+          "lat": 50.098139,
+          "lon": 14.43345
         }
       ],
       "stats": {
         "free": 0,
         "paid": 3,
         "stepFree": 104,
-        "partlyStepFree": 9
+        "partlyStepFree": 10
       },
-      "updatedAt": "2026-09-27T09:30:56.981Z"
+      "updatedAt": "2026-10-04T10:00:39.693Z"
     },
     "post-boxes": {
-      "count": 497,
+      "count": 496,
       "pois": [
         {
           "id": "node/3292070786",
@@ -2369,7 +2396,7 @@
           "id": "node/1212829066",
           "lat": 50.065516,
           "lon": 14.448575,
-          "street": "U Vršovického nádraží"
+          "street": "U vršovického nádraží"
         },
         {
           "id": "node/10958938458",
@@ -2390,10 +2417,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:30:58.320Z"
+      "updatedAt": "2026-10-04T10:00:40.796Z"
     },
     "recycling": {
-      "count": 2555,
+      "count": 2575,
       "pois": [
         {
           "id": "node/2919876683",
@@ -2443,8 +2470,8 @@
         {
           "id": "node/1761916942",
           "name": "Clothing donation drop box",
-          "lat": 50.082151,
-          "lon": 14.501135
+          "lat": 50.082141,
+          "lon": 14.501152
         },
         {
           "id": "way/371604671",
@@ -2456,7 +2483,7 @@
           "id": "way/544200827",
           "name": "Sběrný dvůr Praha 5",
           "lat": 50.054325,
-          "lon": 14.373587
+          "lon": 14.37355
         },
         {
           "id": "node/12396633589",
@@ -2599,9 +2626,9 @@
         "free": 0,
         "paid": 0,
         "stepFree": 26,
-        "partlyStepFree": 68
+        "partlyStepFree": 88
       },
-      "updatedAt": "2026-09-27T09:31:00.438Z"
+      "updatedAt": "2026-10-04T10:00:42.860Z"
     },
     "luggage-storage": {
       "count": 10,
@@ -2620,7 +2647,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:01.179Z"
+      "updatedAt": "2026-10-04T10:00:43.797Z"
     },
     "libraries": {
       "count": 141,
@@ -2750,7 +2777,8 @@
           "name": "Knihovna Šporkova paláce",
           "lat": 50.087319,
           "lon": 14.43022,
-          "openingHours": "Mo-Th 10:00-15:45"
+          "openingHours": "Mo-Th 10:00-15:45",
+          "wheelchair": "yes"
         },
         {
           "id": "node/351948694",
@@ -2787,7 +2815,7 @@
         },
         {
           "id": "node/3196599842",
-          "name": "Knihovna Václava Havla",
+          "name": "1. prezidentská knihovna",
           "lat": 50.080747,
           "lon": 14.417344,
           "openingHours": "Mo-Su 09:00-17:00"
@@ -2805,7 +2833,7 @@
           "lat": 50.07697,
           "lon": 14.414448,
           "address": "Masarykovo nábřeží 2017/8",
-          "openingHours": "Mo 09:00-15:00; Tu 09:00-15:00; We 12:00-18:00;"
+          "openingHours": "Mo 09:00-15:00; Tu 09:00-15:00; We 12:00-18:00"
         },
         {
           "id": "node/5684405850",
@@ -2852,19 +2880,20 @@
           "name": "Knihovna Ústavu filosofie a religionistiky",
           "lat": 50.088745,
           "lon": 14.415903,
-          "openingHours": "Mo-Th 10:00-19:00; Fr 10:00-16:00"
+          "openingHours": "Mo-Th 10:00-19:00; Fr 10:00-16:00",
+          "wheelchair": "yes"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 1,
-        "stepFree": 23,
+        "stepFree": 25,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:31:01.921Z"
+      "updatedAt": "2026-10-04T10:00:44.858Z"
     },
     "outdoor-gyms": {
-      "count": 207,
+      "count": 210,
       "pois": [
         {
           "id": "way/1423352318",
@@ -2924,10 +2953,10 @@
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:03.413Z"
+      "updatedAt": "2026-10-04T10:00:46.913Z"
     },
     "camp-sites": {
-      "count": 15,
+      "count": 16,
       "pois": [
         {
           "id": "way/337435408",
@@ -2950,6 +2979,12 @@
           "lat": 50.092214,
           "lon": 14.473042,
           "wheelchair": "limited"
+        },
+        {
+          "id": "node/14203335201",
+          "name": "Prag",
+          "lat": 50.105928,
+          "lon": 14.442535
         },
         {
           "id": "way/627518567",
@@ -3034,10 +3069,10 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:31:04.229Z"
+      "updatedAt": "2026-10-04T10:00:48.257Z"
     },
     "shelters": {
-      "count": 49,
+      "count": 51,
       "pois": [
         {
           "id": "node/3206002655",
@@ -3096,7 +3131,7 @@
         "stepFree": 1,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:31:06.762Z"
+      "updatedAt": "2026-10-04T10:00:52.183Z"
     },
     "rest-areas": {
       "count": 5,
@@ -3107,7 +3142,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:07.482Z"
+      "updatedAt": "2026-10-04T10:00:53.222Z"
     },
     "dump-stations": {
       "count": 0,
@@ -3118,7 +3153,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:07.959Z"
+      "updatedAt": "2026-10-04T10:00:53.747Z"
     },
     "post-offices": {
       "count": 53,
@@ -3292,7 +3327,7 @@
           "lat": 50.110536,
           "lon": 14.445709,
           "address": "Jankovcova 516/38",
-          "openingHours": "Mon - Fri: 8:00 - 16:30"
+          "openingHours": "Mo-Fr 08:00-16:30"
         },
         {
           "id": "node/290299566",
@@ -3336,7 +3371,7 @@
           "lat": 50.057402,
           "lon": 14.501924,
           "address": "Malinová 1739/1",
-          "openingHours": "Mo,We 10:00-12:00 13:00-18:00, Tu,Th,Fr 10:00-12:00 13:00-16:00",
+          "openingHours": "Mo,We 10:00-12:00, 13:00-18:00, Tu,Th,Fr 10:00-12:00, 13:00-16:00",
           "wheelchair": "yes"
         },
         {
@@ -3381,7 +3416,7 @@
         "stepFree": 29,
         "partlyStepFree": 11
       },
-      "updatedAt": "2026-09-27T09:31:08.538Z"
+      "updatedAt": "2026-10-04T10:00:54.619Z"
     },
     "showers": {
       "count": 16,
@@ -3392,10 +3427,10 @@
         "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:09.059Z"
+      "updatedAt": "2026-10-04T10:00:55.069Z"
     },
     "fireplaces": {
-      "count": 72,
+      "count": 73,
       "pois": [],
       "stats": {
         "free": 0,
@@ -3403,7 +3438,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:10.899Z"
+      "updatedAt": "2026-10-04T10:00:56.313Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3411,7 +3446,7 @@
       "updatedAt": "2026-08-17T04:02:59.715Z"
     },
     "benches": {
-      "count": 13721,
+      "count": 13861,
       "pois": [
         {
           "id": "node/8240946933",
@@ -3438,16 +3473,16 @@
           "lon": 14.448188
         },
         {
+          "id": "node/14203866236",
+          "name": "Lavička Václava Havla",
+          "lat": 50.087151,
+          "lon": 14.417708
+        },
+        {
           "id": "node/12396553921",
           "name": "Lavička Jaroslava Foglara č.3 Záhada Hlavolamu",
           "lat": 50.082904,
           "lon": 14.408031
-        },
-        {
-          "id": "node/2859658229",
-          "name": "Lavička Václava Havla",
-          "lat": 50.085704,
-          "lon": 14.405239
         },
         {
           "id": "node/9394003698",
@@ -3466,12 +3501,6 @@
           "name": "Lavičička",
           "lat": 50.112816,
           "lon": 14.486415
-        },
-        {
-          "id": "node/3517331547",
-          "name": "Lavička",
-          "lat": 50.032154,
-          "lon": 14.482099
         },
         {
           "id": "node/11187967467",
@@ -3546,7 +3575,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:14.990Z"
+      "updatedAt": "2026-10-04T10:00:59.761Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3695,7 +3724,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:31:13.143Z"
+      "updatedAt": "2026-10-04T10:00:58.040Z"
+    },
+    "trash-bins": {
+      "count": 4898,
+      "pois": [
+        {
+          "id": "node/12009097393",
+          "name": "Fixpoint",
+          "lat": 50.081459,
+          "lon": 14.433638
+        },
+        {
+          "id": "node/4893810113",
+          "name": "BigBelly Solar",
+          "lat": 50.082078,
+          "lon": 14.407615
+        },
+        {
+          "id": "node/9099168510",
+          "lat": 50.074866,
+          "lon": 14.435745,
+          "street": "náměstí Míru"
+        },
+        {
+          "id": "node/13195818955",
+          "lat": 50.075387,
+          "lon": 14.440877,
+          "street": "Korunní"
+        },
+        {
+          "id": "node/14133860508",
+          "lat": 50.072513,
+          "lon": 14.438675,
+          "street": "Záhřebská"
+        },
+        {
+          "id": "node/14133861604",
+          "lat": 50.072158,
+          "lon": 14.438528,
+          "street": "Americká"
+        },
+        {
+          "id": "node/14131026132",
+          "lat": 50.072566,
+          "lon": 14.440746,
+          "street": "Jana Masaryka"
+        },
+        {
+          "id": "node/12853564915",
+          "lat": 50.073922,
+          "lon": 14.432824,
+          "street": "Bělehradská"
+        },
+        {
+          "id": "node/14133923537",
+          "lat": 50.072098,
+          "lon": 14.439853,
+          "street": "Varšavská"
+        },
+        {
+          "id": "node/8923544819",
+          "lat": 50.075209,
+          "lon": 14.431833,
+          "street": "Tylovo náměstí"
+        },
+        {
+          "id": "node/14133861698",
+          "lat": 50.071697,
+          "lon": 14.436548,
+          "street": "Belgická"
+        },
+        {
+          "id": "node/12961047160",
+          "lat": 50.079593,
+          "lon": 14.440138,
+          "street": "promenáda Pawla Adamowicze"
+        },
+        {
+          "id": "node/13932016083",
+          "lat": 50.079155,
+          "lon": 14.433663,
+          "street": "Španělská"
+        },
+        {
+          "id": "node/14122788527",
+          "lat": 50.078974,
+          "lon": 14.432995,
+          "street": "Rubešova"
+        },
+        {
+          "id": "node/14133909972",
+          "lat": 50.071011,
+          "lon": 14.439777,
+          "street": "Máchova"
+        },
+        {
+          "id": "node/14122788529",
+          "lat": 50.078646,
+          "lon": 14.43242,
+          "street": "Škrétova"
+        },
+        {
+          "id": "node/14122788528",
+          "lat": 50.078587,
+          "lon": 14.432186,
+          "street": "Legerova"
+        },
+        {
+          "id": "node/12573749375",
+          "lat": 50.075325,
+          "lon": 14.429968,
+          "street": "náměstí I. P. Pavlova"
+        },
+        {
+          "id": "node/6024976074",
+          "lat": 50.079236,
+          "lon": 14.432237,
+          "street": "Vinohradská"
+        },
+        {
+          "id": "node/13610096864",
+          "lat": 50.074356,
+          "lon": 14.445706,
+          "street": "Moravská"
+        },
+        {
+          "id": "node/12790177424",
+          "lat": 50.075194,
+          "lon": 14.429187,
+          "street": "Sokolská"
+        },
+        {
+          "id": "node/12919050199",
+          "lat": 50.071956,
+          "lon": 14.430075,
+          "street": "Fügnerovo náměstí"
+        },
+        {
+          "id": "node/10562306876",
+          "lat": 50.080674,
+          "lon": 14.432589,
+          "street": "Wilsonova"
+        },
+        {
+          "id": "node/12790174679",
+          "lat": 50.075459,
+          "lon": 14.427818,
+          "street": "Ječná"
+        },
+        {
+          "id": "node/13852623597",
+          "lat": 50.076059,
+          "lon": 14.448247,
+          "street": "Slezská"
+        },
+        {
+          "id": "node/13294240788",
+          "lat": 50.074927,
+          "lon": 14.427134,
+          "street": "Kateřinská"
+        },
+        {
+          "id": "node/11482477487",
+          "lat": 50.075237,
+          "lon": 14.448621,
+          "street": "U vodárny"
+        },
+        {
+          "id": "node/12875925565",
+          "lat": 50.072922,
+          "lon": 14.427352,
+          "street": "Na Bojišti"
+        },
+        {
+          "id": "node/12875931645",
+          "lat": 50.071767,
+          "lon": 14.427981,
+          "street": "Ke Karlovu"
+        },
+        {
+          "id": "node/12430227342",
+          "lat": 50.078425,
+          "lon": 14.448581,
+          "street": "náměstí Jiřího z Poděbrad"
+        }
+      ],
+      "stats": {
+        "free": 1,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-10-04T10:01:01.426Z"
     }
   }
 }

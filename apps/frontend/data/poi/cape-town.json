@@ -1,15 +1,22 @@
 {
   "city": "cape-town",
-  "generatedAt": "2026-09-27T10:20:19.426Z",
+  "generatedAt": "2026-10-04T10:58:25.684Z",
   "categories": {
     "toilets": {
-      "count": 51,
+      "count": 52,
       "pois": [
         {
           "id": "node/1955260315",
           "lat": -33.93482,
           "lon": 18.417732,
           "context": "Gardens Centre"
+        },
+        {
+          "id": "node/14159317079",
+          "lat": -33.909017,
+          "lon": 18.423242,
+          "fee": "yes",
+          "context": "No5 Silo"
         },
         {
           "id": "way/39086350",
@@ -40,8 +47,8 @@
         }
       ],
       "stats": {
-        "free": 15,
-        "paid": 0,
+        "free": 16,
+        "paid": 1,
         "stepFree": 6,
         "partlyStepFree": 0
       },
@@ -56,11 +63,18 @@
           "lon": 18.417979
         }
       ],
-      "updatedAt": "2026-09-23T08:34:13.577Z"
+      "updatedAt": "2026-10-04T10:58:05.924Z"
     },
     "drinking-water": {
-      "count": 27,
+      "count": 34,
       "pois": [
+        {
+          "id": "node/14225246201",
+          "name": "My Work",
+          "lat": -33.923064,
+          "lon": 18.419314,
+          "address": "Burg Street 42"
+        },
         {
           "id": "node/11773425560",
           "lat": -33.920035,
@@ -86,12 +100,6 @@
           "lon": 18.414344
         },
         {
-          "id": "node/4358975980",
-          "lat": -33.94231,
-          "lon": 18.394763,
-          "street": "Tafelberg Road"
-        },
-        {
           "id": "node/5022920608",
           "lat": -33.900884,
           "lon": 18.400279,
@@ -104,11 +112,17 @@
           "street": "Sea Point Promenade"
         },
         {
+          "id": "node/14175278904",
+          "lat": -33.987456,
+          "lon": 18.431596,
+          "street": "Smuts Track"
+        },
+        {
           "id": "node/12020020127",
           "lat": -33.989495,
           "lon": 18.430602,
           "fee": "no",
-          "street": "Tree Canopy Walkway"
+          "street": "Centenary Tree Canopy Walkway"
         },
         {
           "id": "node/10289181304",
@@ -123,7 +137,18 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-23T08:34:14.748Z"
+      "near": [
+        {
+          "landmark": "Q1049562",
+          "within": 0,
+          "distance": 838,
+          "bearing": 292,
+          "poi": "node/14225246201",
+          "lat": -33.923064,
+          "lon": 18.419314
+        }
+      ],
+      "updatedAt": "2026-10-04T10:58:07.604Z"
     },
     "playgrounds": {
       "count": 88,
@@ -193,7 +218,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:01.900Z"
+      "updatedAt": "2026-10-04T10:58:08.539Z"
     },
     "parking": {
       "count": 717,
@@ -373,7 +398,7 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:02.829Z"
+      "updatedAt": "2026-10-04T10:58:09.595Z"
     },
     "charging-stations": {
       "count": 1,
@@ -384,7 +409,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:03.308Z"
+      "updatedAt": "2026-10-04T10:58:09.979Z"
     },
     "gas-stations": {
       "count": 59,
@@ -477,7 +502,7 @@
         "stepFree": 12,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:20:03.883Z"
+      "updatedAt": "2026-10-04T10:58:10.423Z"
     },
     "ice-cream": {
       "count": 18,
@@ -601,7 +626,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:04.447Z"
+      "updatedAt": "2026-10-04T10:58:10.858Z"
     },
     "dog-parks": {
       "count": 6,
@@ -638,7 +663,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:04.920Z"
+      "updatedAt": "2026-10-04T10:58:11.207Z"
     },
     "picnic-spots": {
       "count": 68,
@@ -662,7 +687,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:06.073Z"
+      "updatedAt": "2026-10-04T10:58:12.129Z"
     },
     "viewpoints": {
       "count": 49,
@@ -760,7 +785,7 @@
         "stepFree": 16,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:06.659Z"
+      "updatedAt": "2026-10-04T10:58:12.780Z"
     },
     "beaches": {
       "count": 26,
@@ -874,7 +899,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:07.221Z"
+      "updatedAt": "2026-10-04T10:58:13.211Z"
     },
     "atms": {
       "count": 101,
@@ -967,7 +992,7 @@
         "stepFree": 19,
         "partlyStepFree": 6
       },
-      "updatedAt": "2026-09-27T10:20:07.756Z"
+      "updatedAt": "2026-10-04T10:58:13.721Z"
     },
     "post-boxes": {
       "count": 19,
@@ -1081,7 +1106,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:08.802Z"
+      "updatedAt": "2026-10-04T10:58:14.762Z"
     },
     "recycling": {
       "count": 10,
@@ -1123,7 +1148,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:10.341Z"
+      "updatedAt": "2026-10-04T10:58:16.239Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1134,7 +1159,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:10.879Z"
+      "updatedAt": "2026-10-04T10:58:16.568Z"
     },
     "libraries": {
       "count": 17,
@@ -1265,7 +1290,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:11.460Z"
+      "updatedAt": "2026-10-04T10:58:17.072Z"
     },
     "outdoor-gyms": {
       "count": 12,
@@ -1276,7 +1301,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:12.356Z"
+      "updatedAt": "2026-10-04T10:58:17.937Z"
     },
     "camp-sites": {
       "count": 1,
@@ -1294,10 +1319,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:12.871Z"
+      "updatedAt": "2026-10-04T10:58:18.441Z"
     },
     "shelters": {
-      "count": 10,
+      "count": 11,
       "pois": [
         {
           "id": "way/26543847",
@@ -1344,7 +1369,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:14.572Z"
+      "updatedAt": "2026-10-04T10:58:20.039Z"
     },
     "rest-areas": {
       "count": 2,
@@ -1355,7 +1380,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:15.052Z"
+      "updatedAt": "2026-10-04T10:58:20.568Z"
     },
     "dump-stations": {
       "count": 0,
@@ -1366,7 +1391,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:15.491Z"
+      "updatedAt": "2026-10-04T10:58:20.935Z"
     },
     "post-offices": {
       "count": 12,
@@ -1430,7 +1455,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:15.970Z"
+      "updatedAt": "2026-10-04T10:58:21.330Z"
     },
     "showers": {
       "count": 2,
@@ -1441,7 +1466,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:16.396Z"
+      "updatedAt": "2026-10-04T10:58:21.720Z"
     },
     "fireplaces": {
       "count": 1,
@@ -1452,7 +1477,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:17.639Z"
+      "updatedAt": "2026-10-04T10:58:22.825Z"
     },
     "air-pumps": {
       "count": 0,
@@ -1460,7 +1485,7 @@
       "updatedAt": "2026-08-17T04:07:38.542Z"
     },
     "benches": {
-      "count": 280,
+      "count": 358,
       "pois": [
         {
           "id": "node/6226939816",
@@ -1601,7 +1626,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:19.325Z"
+      "updatedAt": "2026-10-04T10:58:24.297Z"
     },
     "compressed-air": {
       "count": 0,
@@ -1617,7 +1642,193 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:20:18.112Z"
+      "updatedAt": "2026-10-04T10:58:23.233Z"
+    },
+    "trash-bins": {
+      "count": 81,
+      "pois": [
+        {
+          "id": "node/2415434496",
+          "lat": -33.93109,
+          "lon": 18.416197,
+          "street": "Dunkley Street"
+        },
+        {
+          "id": "node/2415449061",
+          "lat": -33.930128,
+          "lon": 18.415147,
+          "street": "Avenue Street"
+        },
+        {
+          "id": "node/2415434499",
+          "lat": -33.932183,
+          "lon": 18.41509,
+          "street": "Hatfield Street"
+        },
+        {
+          "id": "node/11778588256",
+          "lat": -33.909401,
+          "lon": 18.420794,
+          "street": "West Quay Road"
+        },
+        {
+          "id": "node/11778592077",
+          "lat": -33.907797,
+          "lon": 18.420237,
+          "street": "Bascule Bridge"
+        },
+        {
+          "id": "node/2662096984",
+          "lat": -33.907299,
+          "lon": 18.410913,
+          "street": "Helen Suzman Boulevard"
+        },
+        {
+          "id": "node/2662096979",
+          "lat": -33.906881,
+          "lon": 18.411689,
+          "street": "Portswood Road"
+        },
+        {
+          "id": "node/2662096973",
+          "lat": -33.905693,
+          "lon": 18.412716,
+          "street": "Granger Bay Boulevard"
+        },
+        {
+          "id": "node/2662097012",
+          "lat": -33.907707,
+          "lon": 18.406583,
+          "street": "Main Road"
+        },
+        {
+          "id": "node/2684690471",
+          "lat": -33.90779,
+          "lon": 18.405302,
+          "street": "Grove Road"
+        },
+        {
+          "id": "node/2662096942",
+          "lat": -33.901108,
+          "lon": 18.421793,
+          "street": "Breakwater Lane"
+        },
+        {
+          "id": "node/11813592971",
+          "lat": -33.908149,
+          "lon": 18.399304,
+          "street": "Saint Bedes Road"
+        },
+        {
+          "id": "node/11773409438",
+          "lat": -33.916456,
+          "lon": 18.392789,
+          "street": "High Level Road"
+        },
+        {
+          "id": "node/11815170786",
+          "lat": -33.907987,
+          "lon": 18.397678,
+          "street": "Three Anchor Bay Road"
+        },
+        {
+          "id": "node/11773425561",
+          "lat": -33.920052,
+          "lon": 18.390874,
+          "street": "Saint Johns Road"
+        },
+        {
+          "id": "node/11773324026",
+          "lat": -33.910086,
+          "lon": 18.395401,
+          "street": "Frere Road"
+        },
+        {
+          "id": "node/13421632380",
+          "lat": -33.899437,
+          "lon": 18.409848,
+          "street": "Beach Road"
+        },
+        {
+          "id": "node/2694284848",
+          "lat": -33.913168,
+          "lon": 18.391835,
+          "street": "London Road"
+        },
+        {
+          "id": "node/2696474848",
+          "lat": -33.913968,
+          "lon": 18.391377,
+          "street": "Albany Road"
+        },
+        {
+          "id": "node/2684734456",
+          "lat": -33.908486,
+          "lon": 18.394419,
+          "street": "Marine Road"
+        },
+        {
+          "id": "node/2696432238",
+          "lat": -33.916026,
+          "lon": 18.389657,
+          "street": "Holmfirth Road"
+        },
+        {
+          "id": "node/2696432225",
+          "lat": -33.915667,
+          "lon": 18.389697,
+          "street": "Milton Road"
+        },
+        {
+          "id": "node/13421649210",
+          "lat": -33.89962,
+          "lon": 18.404237,
+          "street": "Mouille Point Promenade"
+        },
+        {
+          "id": "node/2692329599",
+          "lat": -33.917468,
+          "lon": 18.388466,
+          "street": "Arthurs Road"
+        },
+        {
+          "id": "node/5029238787",
+          "lat": -33.908694,
+          "lon": 18.392724,
+          "street": "Sea Point Promenade"
+        },
+        {
+          "id": "node/2688093434",
+          "lat": -33.919231,
+          "lon": 18.386273,
+          "street": "Regent Road"
+        },
+        {
+          "id": "node/11781158840",
+          "lat": -33.930802,
+          "lon": 18.376752,
+          "street": "Kloof Road"
+        },
+        {
+          "id": "node/6226939819",
+          "lat": -33.949653,
+          "lon": 18.378678,
+          "street": "Victoria Road"
+        },
+        {
+          "id": "node/11985663227",
+          "lat": -33.957805,
+          "lon": 18.462173,
+          "street": "Rugby Road"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:58:25.583Z"
     }
   }
 }

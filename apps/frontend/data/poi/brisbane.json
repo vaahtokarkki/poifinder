@@ -1,9 +1,9 @@
 {
   "city": "brisbane",
-  "generatedAt": "2026-09-27T10:11:37.547Z",
+  "generatedAt": "2026-10-04T10:48:23.173Z",
   "categories": {
     "toilets": {
-      "count": 305,
+      "count": 307,
       "pois": [
         {
           "id": "way/141001636",
@@ -137,6 +137,12 @@
           "context": "Bar Spritz"
         },
         {
+          "id": "node/10220961417",
+          "lat": -27.481042,
+          "lon": 153.02537,
+          "context": "River Quay"
+        },
+        {
           "id": "node/7293758493",
           "lat": -27.462395,
           "lon": 153.035891,
@@ -221,26 +227,18 @@
           "lat": -27.494683,
           "lon": 153.029267,
           "context": "Boggo Road Village"
-        },
-        {
-          "id": "way/245240793",
-          "name": "Gasworks",
-          "lat": -27.450868,
-          "lon": 153.044346,
-          "address": "Skyring Terrace 76",
-          "openingHours": "Mo-Su,PH 00:00-24:00"
         }
       ],
       "stats": {
-        "free": 184,
+        "free": 186,
         "paid": 3,
-        "stepFree": 149,
+        "stepFree": 152,
         "partlyStepFree": 12
       },
-      "updatedAt": "2026-09-23T08:33:03.212Z"
+      "updatedAt": "2026-10-04T10:47:58.561Z"
     },
     "drinking-water": {
-      "count": 888,
+      "count": 890,
       "pois": [
         {
           "id": "node/4698400430",
@@ -431,12 +429,12 @@
         }
       ],
       "stats": {
-        "free": 146,
+        "free": 147,
         "paid": 1,
-        "stepFree": 58,
+        "stepFree": 59,
         "partlyStepFree": 18
       },
-      "updatedAt": "2026-09-23T08:33:04.925Z"
+      "updatedAt": "2026-10-04T10:48:00.807Z"
     },
     "playgrounds": {
       "count": 377,
@@ -633,10 +631,10 @@
         "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:15.853Z"
+      "updatedAt": "2026-10-04T10:48:01.705Z"
     },
     "parking": {
-      "count": 1708,
+      "count": 1717,
       "pois": [
         {
           "id": "node/3157376085",
@@ -764,6 +762,13 @@
           "fee": "no"
         },
         {
+          "id": "node/1585275238",
+          "name": "South Bank Car Park",
+          "lat": -27.477444,
+          "lon": 153.021636,
+          "fee": "yes"
+        },
+        {
           "id": "relation/5383753",
           "name": "SEC Car Park",
           "lat": -27.478105,
@@ -866,22 +871,15 @@
           "lon": 153.031433,
           "openingHours": "24/7",
           "fee": "yes"
-        },
-        {
-          "id": "way/10637268",
-          "name": "Sports Lane",
-          "lat": -27.449182,
-          "lon": 153.017726,
-          "fee": "yes"
         }
       ],
       "stats": {
-        "free": 640,
-        "paid": 89,
+        "free": 642,
+        "paid": 90,
         "stepFree": 70,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T10:11:17.196Z"
+      "updatedAt": "2026-10-04T10:48:02.864Z"
     },
     "charging-stations": {
       "count": 44,
@@ -1039,10 +1037,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:17.700Z"
+      "updatedAt": "2026-10-04T10:48:03.363Z"
     },
     "gas-stations": {
-      "count": 88,
+      "count": 89,
       "pois": [
         {
           "id": "node/327131035",
@@ -1072,6 +1070,12 @@
           "address": "Wellington Road 96"
         },
         {
+          "id": "node/14202454852",
+          "name": "United",
+          "lat": -27.487918,
+          "lon": 153.036392
+        },
+        {
           "id": "node/304154478",
           "name": "Tony Reed Mechanical Repairs",
           "lat": -27.452905,
@@ -1079,9 +1083,10 @@
         },
         {
           "id": "node/293657146",
-          "name": "Tyres & More",
+          "name": "Quill Petroleum",
           "lat": -27.45526,
           "lon": 153.00722,
+          "address": "Musgrave Road 153",
           "wheelchair": "yes"
         },
         {
@@ -1138,19 +1143,18 @@
           "address": "Enoggera Road 85"
         },
         {
-          "id": "way/868533874",
-          "name": "BP Connect",
-          "lat": -27.439543,
-          "lon": 153.049318,
-          "address": "Kingsford Smith Drive 126",
-          "openingHours": "24/7"
-        },
-        {
           "id": "way/424221923",
           "name": "Coles Express",
           "lat": -27.452123,
           "lon": 153.061915,
           "address": "Oxford Street 209"
+        },
+        {
+          "id": "way/387596090",
+          "name": "BP Connect",
+          "lat": -27.439476,
+          "lon": 153.049513,
+          "openingHours": "24/7"
         },
         {
           "id": "way/1364949247",
@@ -1249,12 +1253,6 @@
           "lat": -27.531511,
           "lon": 153.016803,
           "address": "Ipswich Road 1029"
-        },
-        {
-          "id": "node/13747458391",
-          "name": "BP The Gap",
-          "lat": -27.446769,
-          "lon": 152.959622
         }
       ],
       "stats": {
@@ -1263,10 +1261,10 @@
         "stepFree": 14,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:18.349Z"
+      "updatedAt": "2026-10-04T10:48:03.937Z"
     },
     "ice-cream": {
-      "count": 44,
+      "count": 45,
       "pois": [
         {
           "id": "node/1546536179",
@@ -1400,12 +1398,6 @@
           "address": "Baroona Road 151"
         },
         {
-          "id": "node/5077991674",
-          "name": "Baskin & Robins",
-          "lat": -27.466023,
-          "lon": 152.997181
-        },
-        {
           "id": "way/521112090",
           "name": "Cold Rock",
           "lat": -27.465631,
@@ -1417,8 +1409,8 @@
         {
           "id": "node/14127570201",
           "name": "C9 Chocolate & Gelato",
-          "lat": -27.495882,
-          "lon": 153.02899
+          "lat": -27.495916,
+          "lon": 153.028953
         },
         {
           "id": "node/4828069813",
@@ -1468,6 +1460,12 @@
           "name": "The Chocolate Komberry",
           "lat": -27.444299,
           "lon": 153.080549
+        },
+        {
+          "id": "node/5139069972",
+          "name": "Komberry Scroll",
+          "lat": -27.444235,
+          "lon": 153.080565
         }
       ],
       "stats": {
@@ -1476,10 +1474,10 @@
         "stepFree": 5,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:11:19.028Z"
+      "updatedAt": "2026-10-04T10:48:04.504Z"
     },
     "dog-parks": {
-      "count": 61,
+      "count": 62,
       "pois": [
         {
           "id": "way/28867790",
@@ -1506,7 +1504,8 @@
           "name": "Waterfront Dog Park",
           "lat": -27.448663,
           "lon": 153.04507,
-          "address": "Waterloo Street 35"
+          "address": "Waterloo Street 35",
+          "wheelchair": "yes"
         },
         {
           "id": "way/597584580",
@@ -1620,10 +1619,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 18,
+        "stepFree": 20,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T10:11:19.594Z"
+      "updatedAt": "2026-10-04T10:48:05.017Z"
     },
     "picnic-spots": {
       "count": 501,
@@ -1659,7 +1658,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:20.921Z"
+      "updatedAt": "2026-10-04T10:48:06.177Z"
     },
     "viewpoints": {
       "count": 54,
@@ -1763,7 +1762,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:21.642Z"
+      "updatedAt": "2026-10-04T10:48:06.891Z"
     },
     "beaches": {
       "count": 7,
@@ -1781,10 +1780,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:22.230Z"
+      "updatedAt": "2026-10-04T10:48:07.403Z"
     },
     "atms": {
-      "count": 79,
+      "count": 80,
       "pois": [
         {
           "id": "node/1546536183",
@@ -1915,10 +1914,10 @@
         "stepFree": 10,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:22.878Z"
+      "updatedAt": "2026-10-04T10:48:07.977Z"
     },
     "post-boxes": {
-      "count": 298,
+      "count": 295,
       "pois": [
         {
           "id": "node/7902080163",
@@ -2107,17 +2106,11 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:24.095Z"
+      "updatedAt": "2026-10-04T10:48:09.096Z"
     },
     "recycling": {
-      "count": 394,
+      "count": 392,
       "pois": [
-        {
-          "id": "node/13806709906",
-          "lat": -27.473027,
-          "lon": 153.018941,
-          "context": "Queensland Art Gallery"
-        },
         {
           "id": "node/6795260067",
           "name": "TOMRA",
@@ -2175,16 +2168,16 @@
           "street": "Ann Street"
         },
         {
+          "id": "node/14208316865",
+          "lat": -27.470112,
+          "lon": 153.022983,
+          "street": "Adelaide Street"
+        },
+        {
           "id": "node/13255251064",
           "lat": -27.471687,
           "lon": 153.024204,
           "street": "George Street"
-        },
-        {
-          "id": "node/13520809236",
-          "lat": -27.467682,
-          "lon": 153.025871,
-          "street": "Adelaide Street"
         },
         {
           "id": "node/13520883173",
@@ -2299,6 +2292,12 @@
           "lat": -27.469887,
           "lon": 153.017015,
           "street": "Kurilpa Bridge"
+        },
+        {
+          "id": "node/9387069643",
+          "lat": -27.476269,
+          "lon": 153.028879,
+          "street": "Main Drive"
         }
       ],
       "stats": {
@@ -2307,7 +2306,7 @@
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:25.933Z"
+      "updatedAt": "2026-10-04T10:48:10.715Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2318,10 +2317,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:26.479Z"
+      "updatedAt": "2026-10-04T10:48:11.204Z"
     },
     "libraries": {
-      "count": 98,
+      "count": 99,
       "pois": [
         {
           "id": "node/1594499259",
@@ -2562,7 +2561,7 @@
         "stepFree": 21,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:11:27.139Z"
+      "updatedAt": "2026-10-04T10:48:11.876Z"
     },
     "outdoor-gyms": {
       "count": 93,
@@ -2580,7 +2579,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:28.320Z"
+      "updatedAt": "2026-10-04T10:48:12.961Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2599,7 +2598,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:28.886Z"
+      "updatedAt": "2026-10-04T10:48:13.443Z"
     },
     "shelters": {
       "count": 234,
@@ -2774,7 +2773,7 @@
         "stepFree": 8,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T10:11:31.248Z"
+      "updatedAt": "2026-10-04T10:48:15.875Z"
     },
     "rest-areas": {
       "count": 0,
@@ -2785,7 +2784,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:31.750Z"
+      "updatedAt": "2026-10-04T10:48:16.376Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2796,11 +2795,18 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:32.186Z"
+      "updatedAt": "2026-10-04T10:48:16.758Z"
     },
     "post-offices": {
-      "count": 43,
+      "count": 42,
       "pois": [
+        {
+          "id": "node/1081855504",
+          "name": "George Street Post Office",
+          "lat": -27.469468,
+          "lon": 153.022661,
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
         {
           "id": "relation/17252786",
           "name": "General Post Office",
@@ -2819,6 +2825,13 @@
           "openingHours": "Mo-Fr 08:30-17:30; Sa 09:00-12:00"
         },
         {
+          "id": "node/111438327",
+          "name": "Spring Hill Post Office",
+          "lat": -27.460805,
+          "lon": 153.023153,
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
           "id": "node/577402532",
           "name": "Post Office",
           "lat": -27.478912,
@@ -2827,9 +2840,10 @@
         },
         {
           "id": "node/494599471",
-          "name": "Australia Post",
+          "name": "Fortitude Valley Post Office",
           "lat": -27.456266,
-          "lon": 153.03465
+          "lon": 153.03465,
+          "openingHours": "Mo-Fr 09:00-17:00"
         },
         {
           "id": "node/7100980149",
@@ -2876,6 +2890,13 @@
           "lon": 153.035291
         },
         {
+          "id": "node/8263382997",
+          "name": "New Farm Post Office",
+          "lat": -27.46743,
+          "lon": 153.0472,
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:30"
+        },
+        {
           "id": "node/315048551",
           "name": "Kelvin Grove News",
           "lat": -27.451334,
@@ -2905,6 +2926,15 @@
           "openingHours": "Mo-Fr 06:00-16:00"
         },
         {
+          "id": "way/970243491",
+          "name": "Newstead Post Office",
+          "lat": -27.442772,
+          "lon": 153.042621,
+          "address": "Ross Street 32",
+          "openingHours": "Mo-Fr 08:30-17:00; Sa 09:00-11:00",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/2394633743",
           "name": "Australia Post St Lucia Post Shop",
           "lat": -27.498623,
@@ -2927,6 +2957,14 @@
           "name": "Newmarket",
           "lat": -27.437289,
           "lon": 153.007892,
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
+          "id": "way/424225892",
+          "name": "Bulimba Post Office",
+          "lat": -27.451377,
+          "lon": 153.060825,
+          "address": "Oxford Street 190",
           "openingHours": "Mo-Fr 09:00-17:00"
         },
         {
@@ -2959,6 +2997,14 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/445923818",
+          "name": "Annerley Post Office",
+          "lat": -27.512286,
+          "lon": 153.031201,
+          "openingHours": "Mo-Fr 09:00-17:00",
+          "wheelchair": "yes"
+        },
+        {
           "id": "way/60720911",
           "name": "Grange Post Office",
           "lat": -27.426119,
@@ -2974,52 +3020,12 @@
           "address": "Logan Road 614"
         },
         {
-          "id": "node/12342638540",
-          "name": "Yeronga LPO",
-          "lat": -27.517173,
-          "lon": 153.016684,
-          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-12:00",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/11164378562",
-          "name": "Australia Post - Alderley LPO",
-          "lat": -27.425032,
-          "lon": 153.000259,
-          "address": "Samford Road 19",
-          "openingHours": "Mo,We,Fr 09:00-17:00; Tu,Th 09:00-18:00"
-        },
-        {
-          "id": "way/1283847187",
-          "name": "Indooroopilly Centre",
-          "lat": -27.499151,
-          "lon": 152.972532,
-          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:30",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/318299595",
-          "name": "Moorooka Post Office",
-          "lat": -27.531727,
-          "lon": 153.023693
-        },
-        {
-          "id": "node/8819581751",
-          "name": "Tarragindi LPO",
-          "lat": -27.530578,
-          "lon": 153.04216
-        },
-        {
-          "id": "node/697145891",
-          "name": "Cannon Hill Post Office",
-          "lat": -27.470963,
-          "lon": 153.098128
-        },
-        {
-          "id": "node/1561367194",
-          "name": "Graceville East Licensed Post Office",
-          "lat": -27.523972,
-          "lon": 152.980956
+          "id": "node/12644688426",
+          "name": "Hamilton Central Post Office",
+          "lat": -27.438934,
+          "lon": 153.064512,
+          "address": "Racecourse Road 11",
+          "openingHours": "Mo-Fr 09:00-17:00"
         }
       ],
       "stats": {
@@ -3028,7 +3034,7 @@
         "stepFree": 13,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:32.776Z"
+      "updatedAt": "2026-10-04T10:48:17.278Z"
     },
     "showers": {
       "count": 3,
@@ -3039,10 +3045,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:33.230Z"
+      "updatedAt": "2026-10-04T10:48:17.660Z"
     },
     "fireplaces": {
-      "count": 196,
+      "count": 197,
       "pois": [
         {
           "id": "node/5519470826",
@@ -3063,7 +3069,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:34.360Z"
+      "updatedAt": "2026-10-04T10:48:18.809Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3071,7 +3077,7 @@
       "updatedAt": "2026-08-17T04:06:46.520Z"
     },
     "benches": {
-      "count": 2520,
+      "count": 2567,
       "pois": [
         {
           "id": "node/14121307855",
@@ -3158,9 +3164,9 @@
           "street": "Albert Street"
         },
         {
-          "id": "node/13255210191",
-          "lat": -27.471514,
-          "lon": 153.024018,
+          "id": "node/14208320109",
+          "lat": -27.470437,
+          "lon": 153.023114,
           "street": "George Street"
         },
         {
@@ -3210,12 +3216,6 @@
           "lat": -27.467188,
           "lon": 153.020871,
           "street": "Roma Street"
-        },
-        {
-          "id": "node/12818149211",
-          "lat": -27.474445,
-          "lon": 153.027706,
-          "street": "Alice Street"
         }
       ],
       "stats": {
@@ -3224,7 +3224,7 @@
         "stepFree": 0,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T10:11:37.446Z"
+      "updatedAt": "2026-10-04T10:48:21.630Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3232,7 +3232,7 @@
       "updatedAt": "2026-08-18T03:58:43.687Z"
     },
     "bicycle-repair": {
-      "count": 32,
+      "count": 34,
       "pois": [
         {
           "id": "node/4691591262",
@@ -3305,6 +3305,12 @@
           "street": "Campbell Place"
         },
         {
+          "id": "node/14179829001",
+          "lat": -27.498429,
+          "lon": 153.028,
+          "street": "Annerley Road"
+        },
+        {
           "id": "node/3114182104",
           "lat": -27.498173,
           "lon": 153.01815,
@@ -3369,6 +3375,12 @@
           "street": "Burrows Street"
         },
         {
+          "id": "node/14179827301",
+          "lat": -27.50824,
+          "lon": 153.025169,
+          "street": "Brougham Street"
+        },
+        {
           "id": "node/10315867081",
           "lat": -27.489853,
           "lon": 152.986006,
@@ -3400,7 +3412,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:36.188Z"
+      "updatedAt": "2026-10-04T10:48:20.435Z"
+    },
+    "trash-bins": {
+      "count": 1026,
+      "pois": [
+        {
+          "id": "node/14076504762",
+          "lat": -27.470478,
+          "lon": 153.025806,
+          "street": "Elizabeth Street"
+        },
+        {
+          "id": "node/8109990008",
+          "lat": -27.468881,
+          "lon": 153.024652,
+          "street": "Inner Northern Busway"
+        },
+        {
+          "id": "node/14076504761",
+          "lat": -27.470582,
+          "lon": 153.025905,
+          "street": "CityLink Cycleway"
+        },
+        {
+          "id": "node/5902948787",
+          "lat": -27.468752,
+          "lon": 153.024742,
+          "street": "Adelaide Street"
+        },
+        {
+          "id": "node/13286375064",
+          "lat": -27.46818,
+          "lon": 153.024075,
+          "street": "Ann Street"
+        },
+        {
+          "id": "node/14208305939",
+          "lat": -27.47035,
+          "lon": 153.023027,
+          "street": "George Street"
+        },
+        {
+          "id": "node/13520876507",
+          "lat": -27.467448,
+          "lon": 153.025973,
+          "street": "Edward Street"
+        },
+        {
+          "id": "node/13520878223",
+          "lat": -27.471439,
+          "lon": 153.022445,
+          "street": "South East Busway"
+        },
+        {
+          "id": "node/13375596641",
+          "lat": -27.470489,
+          "lon": 153.029218,
+          "street": "Mary Street"
+        },
+        {
+          "id": "node/13588048072",
+          "lat": -27.466398,
+          "lon": 153.027951,
+          "street": "Creek Street"
+        },
+        {
+          "id": "node/12816248702",
+          "lat": -27.465695,
+          "lon": 153.022918,
+          "street": "Wickham Terrace"
+        },
+        {
+          "id": "node/13295858766",
+          "lat": -27.474107,
+          "lon": 153.028144,
+          "street": "Alice Street"
+        },
+        {
+          "id": "node/9797595283",
+          "lat": -27.472683,
+          "lon": 153.03058,
+          "street": "Bunya Walk"
+        },
+        {
+          "id": "node/13668143962",
+          "lat": -27.472214,
+          "lon": 153.030867,
+          "street": "Kangaroo Point Bridge"
+        },
+        {
+          "id": "node/14075901412",
+          "lat": -27.473661,
+          "lon": 153.020311,
+          "street": "Clem Jones Promenade"
+        },
+        {
+          "id": "node/6304953184",
+          "lat": -27.472012,
+          "lon": 153.01895,
+          "street": "Cultural Centre Tunnel"
+        },
+        {
+          "id": "node/14225681971",
+          "lat": -27.474192,
+          "lon": 153.029773,
+          "street": "Central Path"
+        },
+        {
+          "id": "node/13716248747",
+          "lat": -27.465557,
+          "lon": 153.030227,
+          "street": "Wharf Street"
+        },
+        {
+          "id": "node/8670144744",
+          "lat": -27.473781,
+          "lon": 153.0197,
+          "street": "Stanley Street"
+        },
+        {
+          "id": "node/13288247679",
+          "lat": -27.475376,
+          "lon": 153.028514,
+          "street": "Palm Avenue"
+        },
+        {
+          "id": "node/13286375060",
+          "lat": -27.463488,
+          "lon": 153.026142,
+          "street": "Astor Terrace"
+        },
+        {
+          "id": "node/12611670164",
+          "lat": -27.474059,
+          "lon": 153.030468,
+          "street": "Hill's Avenue Boardwalk"
+        },
+        {
+          "id": "node/13362826582",
+          "lat": -27.475233,
+          "lon": 153.021097,
+          "street": "Ramp to Neville Bonner Bridge"
+        },
+        {
+          "id": "node/5164353790",
+          "lat": -27.473237,
+          "lon": 153.018772,
+          "street": "Melbourne Street Overpass"
+        },
+        {
+          "id": "node/12818123302",
+          "lat": -27.475792,
+          "lon": 153.028421,
+          "street": "Main Drive"
+        },
+        {
+          "id": "node/7048767050",
+          "lat": -27.475597,
+          "lon": 153.020875,
+          "street": "Grand Arbour"
+        },
+        {
+          "id": "node/12632255826",
+          "lat": -27.476394,
+          "lon": 153.027753,
+          "street": "Musgrave Lane"
+        },
+        {
+          "id": "node/9952017635",
+          "lat": -27.463995,
+          "lon": 153.020521,
+          "street": "Upper Promenade"
+        },
+        {
+          "id": "node/13363178330",
+          "lat": -27.475391,
+          "lon": 153.020129,
+          "street": "Russell Street"
+        },
+        {
+          "id": "node/8896206179",
+          "lat": -27.469876,
+          "lon": 153.017025,
+          "street": "Kurilpa Bridge"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:48:23.071Z"
     }
   }
 }

@@ -1,9 +1,9 @@
 {
   "city": "seattle",
-  "generatedAt": "2026-09-27T10:00:52.713Z",
+  "generatedAt": "2026-10-04T10:36:03.310Z",
   "categories": {
     "toilets": {
-      "count": 155,
+      "count": 156,
       "pois": [
         {
           "id": "node/7684336148",
@@ -118,7 +118,7 @@
           "lat": 47.611689,
           "lon": -122.303061,
           "address": "23rd Avenue 1101",
-          "wheelchair": "limited"
+          "wheelchair": "no"
         },
         {
           "id": "node/5080085322",
@@ -179,6 +179,15 @@
           "context": "Graham Visitors Center"
         },
         {
+          "id": "way/136051469",
+          "name": "Safeway",
+          "lat": 47.579817,
+          "lon": -122.386029,
+          "address": "California Avenue Southwest 2622",
+          "openingHours": "05:00-24:00",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/7557922540",
           "lat": 47.649136,
           "lon": -122.310665,
@@ -212,20 +221,13 @@
           "lon": -122.307459,
           "fee": "no",
           "context": "Bloedel Hall"
-        },
-        {
-          "id": "node/8625233365",
-          "lat": 47.651491,
-          "lon": -122.306932,
-          "fee": "no",
-          "context": "Winkenwerder Hall"
         }
       ],
       "stats": {
-        "free": 40,
+        "free": 41,
         "paid": 0,
-        "stepFree": 64,
-        "partlyStepFree": 4
+        "stepFree": 65,
+        "partlyStepFree": 3
       },
       "near": [
         {
@@ -238,7 +240,7 @@
           "lon": -122.350669
         }
       ],
-      "updatedAt": "2026-09-23T08:31:36.691Z"
+      "updatedAt": "2026-10-04T10:35:40.023Z"
     },
     "drinking-water": {
       "count": 130,
@@ -262,9 +264,9 @@
           "street": "2nd Avenue Cycletrack"
         },
         {
-          "id": "node/13082587170",
-          "lat": 47.603245,
-          "lon": -122.338001,
+          "id": "node/14145559241",
+          "lat": 47.603199,
+          "lon": -122.337968,
           "street": "Waterfront Bike Path"
         },
         {
@@ -448,10 +450,10 @@
           "lon": -122.349188
         }
       ],
-      "updatedAt": "2026-09-23T08:31:38.433Z"
+      "updatedAt": "2026-10-04T10:35:42.417Z"
     },
     "playgrounds": {
-      "count": 226,
+      "count": 223,
       "pois": [
         {
           "id": "way/1099750452",
@@ -572,7 +574,7 @@
         "stepFree": 2,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:00:31.481Z"
+      "updatedAt": "2026-10-04T10:35:43.519Z"
     },
     "parking": {
       "count": 2326,
@@ -798,15 +800,15 @@
         }
       ],
       "stats": {
-        "free": 383,
+        "free": 386,
         "paid": 265,
         "stepFree": 24,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:00:32.730Z"
+      "updatedAt": "2026-10-04T10:35:44.672Z"
     },
     "charging-stations": {
-      "count": 62,
+      "count": 63,
       "pois": [
         {
           "id": "node/14097911792",
@@ -874,7 +876,9 @@
           "id": "node/11554294369",
           "name": "Charge Seattle",
           "lat": 47.57121,
-          "lon": -122.328583
+          "lon": -122.328583,
+          "address": "S Spokane St 409",
+          "fee": "yes"
         },
         {
           "id": "node/14098386837",
@@ -886,11 +890,11 @@
       ],
       "stats": {
         "free": 7,
-        "paid": 18,
+        "paid": 20,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:33.301Z"
+      "updatedAt": "2026-10-04T10:35:45.176Z"
     },
     "gas-stations": {
       "count": 82,
@@ -921,6 +925,7 @@
           "lat": 47.615068,
           "lon": -122.312173,
           "address": "East Madison Street 1516",
+          "openingHours": "24/7",
           "wheelchair": "yes"
         },
         {
@@ -946,7 +951,8 @@
           "name": "Morrison's North Star Marine",
           "lat": 47.645207,
           "lon": -122.345331,
-          "address": "Westlake Avenue North 2732"
+          "address": "Westlake Avenue North 2732",
+          "openingHours": "Apr-May 09:00-18:00; Jun-Aug 08:00-20:00; Sep-Oct 09:00-18:00; Nov-Mar 09:00-15:00"
         },
         {
           "id": "way/136051471",
@@ -1022,7 +1028,7 @@
         "stepFree": 8,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:34.021Z"
+      "updatedAt": "2026-10-04T10:35:45.744Z"
     },
     "ice-cream": {
       "count": 54,
@@ -1133,7 +1139,8 @@
           "name": "Sweet Alchemy Ice Creamery",
           "lat": 47.613736,
           "lon": -122.317611,
-          "address": "11th Avenue 1424"
+          "address": "11th Avenue 1424",
+          "openingHours": "Su 12:00-21:00; Tu-Th 12:00-22:00; Fr-Sa 12:00-23:00"
         },
         {
           "id": "node/2158750217",
@@ -1263,7 +1270,7 @@
         "stepFree": 13,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:00:34.680Z"
+      "updatedAt": "2026-10-04T10:35:46.336Z"
     },
     "dog-parks": {
       "count": 20,
@@ -1391,7 +1398,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:35.199Z"
+      "updatedAt": "2026-10-04T10:35:46.752Z"
     },
     "picnic-spots": {
       "count": 441,
@@ -1479,7 +1486,7 @@
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:36.607Z"
+      "updatedAt": "2026-10-04T10:35:47.968Z"
     },
     "viewpoints": {
       "count": 84,
@@ -1607,7 +1614,7 @@
         "stepFree": 5,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:00:37.341Z"
+      "updatedAt": "2026-10-04T10:35:48.603Z"
     },
     "beaches": {
       "count": 74,
@@ -1776,7 +1783,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:37.980Z"
+      "updatedAt": "2026-10-04T10:35:49.251Z"
     },
     "atms": {
       "count": 184,
@@ -1974,7 +1981,7 @@
           "lat": 47.665243,
           "lon": -122.312867,
           "address": "University Way Northeast 5000",
-          "openingHours": "Mo-Fr 09:30-17:00; Sa 10:00-13:00; Su off"
+          "openingHours": "Mo-Th 09:30-17:00; Fr 09:00-18:00; Sa,Su off"
         },
         {
           "id": "node/9102233778",
@@ -1990,10 +1997,10 @@
         "stepFree": 16,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:00:38.721Z"
+      "updatedAt": "2026-10-04T10:35:49.858Z"
     },
     "post-boxes": {
-      "count": 225,
+      "count": 224,
       "pois": [
         {
           "id": "node/4124757993",
@@ -2184,10 +2191,10 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:39.852Z"
+      "updatedAt": "2026-10-04T10:35:50.942Z"
     },
     "recycling": {
-      "count": 419,
+      "count": 422,
       "pois": [
         {
           "id": "node/1950289013",
@@ -2361,22 +2368,22 @@
           "street": "9th Avenue"
         },
         {
+          "id": "node/14145559229",
+          "lat": 47.603353,
+          "lon": -122.338103,
+          "street": "Waterfront Bike Path"
+        },
+        {
+          "id": "node/14145559243",
+          "lat": 47.602978,
+          "lon": -122.337744,
+          "street": "Marion Street Pedestrian Bridge"
+        },
+        {
           "id": "node/5054942160",
           "lat": 47.611026,
           "lon": -122.334566,
           "street": "Pike Street"
-        },
-        {
-          "id": "node/14005398232",
-          "lat": 47.601823,
-          "lon": -122.336713,
-          "street": "Waterfront Bike Path"
-        },
-        {
-          "id": "node/14005376542",
-          "lat": 47.60079,
-          "lon": -122.333221,
-          "street": "South Washington Street"
         }
       ],
       "stats": {
@@ -2385,7 +2392,7 @@
         "stepFree": 31,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:41.789Z"
+      "updatedAt": "2026-10-04T10:35:52.468Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2396,10 +2403,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:42.360Z"
+      "updatedAt": "2026-10-04T10:35:52.988Z"
     },
     "libraries": {
-      "count": 326,
+      "count": 338,
       "pois": [
         {
           "id": "way/37056442",
@@ -2430,6 +2437,14 @@
           "lat": 47.608833,
           "lon": -122.318857,
           "address": "11th Avenue 725"
+        },
+        {
+          "id": "node/9760483105",
+          "name": "Capitol Hill Tool Library",
+          "lat": 47.614645,
+          "lon": -122.326112,
+          "address": "Crawford Place 1552",
+          "openingHours": "Su 16:00-19:00; Mo-Th 18:00-21:00; Fr off, Sa 09:00-12:00"
         },
         {
           "id": "node/2327732065",
@@ -2617,13 +2632,6 @@
           "lon": -122.307024,
           "openingHours": "Mo-Th 09:00-20:00; Fr 09:00-17:00; Su 13:00-20:00",
           "wheelchair": "yes"
-        },
-        {
-          "id": "way/26447602",
-          "name": "Odegaard Undergraduate Library",
-          "lat": 47.656472,
-          "lon": -122.310366,
-          "address": "George Washington Lane Northeast 4060"
         }
       ],
       "stats": {
@@ -2632,7 +2640,7 @@
         "stepFree": 12,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:00:43.027Z"
+      "updatedAt": "2026-10-04T10:35:53.560Z"
     },
     "outdoor-gyms": {
       "count": 19,
@@ -2643,7 +2651,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:44.088Z"
+      "updatedAt": "2026-10-04T10:35:54.472Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2654,7 +2662,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:44.669Z"
+      "updatedAt": "2026-10-04T10:35:54.907Z"
     },
     "shelters": {
       "count": 19,
@@ -2678,7 +2686,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:46.451Z"
+      "updatedAt": "2026-10-04T10:35:55.842Z"
     },
     "rest-areas": {
       "count": 0,
@@ -2689,7 +2697,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:46.959Z"
+      "updatedAt": "2026-10-04T10:35:56.282Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2700,7 +2708,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:47.379Z"
+      "updatedAt": "2026-10-04T10:35:56.636Z"
     },
     "post-offices": {
       "count": 43,
@@ -2765,7 +2773,7 @@
         },
         {
           "id": "node/2327596766",
-          "name": "Belltown Home Office",
+          "name": "Box & Brew",
           "lat": 47.616201,
           "lon": -122.348942,
           "address": "2nd Avenue 2606"
@@ -2800,7 +2808,8 @@
           "name": "Queen Anne Post Office",
           "lat": 47.622909,
           "lon": -122.355791,
-          "address": "1st Avenue North 415"
+          "address": "1st Avenue North 415",
+          "openingHours": "Mo-Fr 08:30-18:00; Sa 09:00-15:00"
         },
         {
           "id": "way/98568679",
@@ -2815,7 +2824,8 @@
           "name": "Interbay Carrier Annex",
           "lat": 47.637133,
           "lon": -122.375697,
-          "address": "15th Avenue West 2010"
+          "address": "15th Avenue West 2010",
+          "openingHours": "Mo-Fr 08:30-16:30; Sa 08:30-12:00"
         },
         {
           "id": "node/9276473126",
@@ -2865,7 +2875,8 @@
           "name": "Magnolia Mailbox",
           "lat": 47.639974,
           "lon": -122.398974,
-          "address": "West Wheeler Street 3213"
+          "address": "West Wheeler Street 3213",
+          "openingHours": "Mo-Fr 09:00-17:30; Sa 09:00-15:00"
         },
         {
           "id": "way/224037413",
@@ -2902,7 +2913,8 @@
           "name": "Ballard Carrier Annex",
           "lat": 47.661719,
           "lon": -122.369733,
-          "address": "9th Avenue Northwest 4501"
+          "address": "9th Avenue Northwest 4501",
+          "openingHours": "Mo-Sa 08:00-16:00"
         },
         {
           "id": "way/1050033196",
@@ -2935,7 +2947,7 @@
         "stepFree": 7,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:47.972Z"
+      "updatedAt": "2026-10-04T10:35:57.143Z"
     },
     "showers": {
       "count": 3,
@@ -2946,10 +2958,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:48.397Z"
+      "updatedAt": "2026-10-04T10:35:57.488Z"
     },
     "fireplaces": {
-      "count": 65,
+      "count": 61,
       "pois": [],
       "stats": {
         "free": 0,
@@ -2957,7 +2969,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:49.529Z"
+      "updatedAt": "2026-10-04T10:35:58.537Z"
     },
     "air-pumps": {
       "count": 1,
@@ -2965,7 +2977,7 @@
       "updatedAt": "2026-08-17T04:05:45.324Z"
     },
     "benches": {
-      "count": 2360,
+      "count": 2383,
       "pois": [
         {
           "id": "node/1950322167",
@@ -3020,6 +3032,12 @@
           "lat": 47.608724,
           "lon": -122.338525,
           "street": "2nd Avenue"
+        },
+        {
+          "id": "node/14145559236",
+          "lat": 47.602863,
+          "lon": -122.337668,
+          "street": "Waterfront Bike Path"
         },
         {
           "id": "node/12968504977",
@@ -3094,6 +3112,12 @@
           "street": "2nd Avenue Cycletrack"
         },
         {
+          "id": "node/14135981890",
+          "lat": 47.602601,
+          "lon": -122.322006,
+          "street": "Fir Street"
+        },
+        {
           "id": "node/12043000599",
           "lat": 47.613049,
           "lon": -122.337389,
@@ -3104,12 +3128,6 @@
           "lat": 47.606932,
           "lon": -122.320592,
           "street": "Broadway"
-        },
-        {
-          "id": "node/6794431864",
-          "lat": 47.602642,
-          "lon": -122.321746,
-          "street": "Fir Street"
         },
         {
           "id": "node/13874605297",
@@ -3140,12 +3158,6 @@
           "lat": 47.609775,
           "lon": -122.320962,
           "street": "Broadway & Marion Street"
-        },
-        {
-          "id": "node/12095776120",
-          "lat": 47.612943,
-          "lon": -122.323835,
-          "street": "East Union Street"
         }
       ],
       "stats": {
@@ -3154,7 +3166,7 @@
         "stepFree": 13,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:00:52.611Z"
+      "updatedAt": "2026-10-04T10:36:01.621Z"
     },
     "compressed-air": {
       "count": 1,
@@ -3374,7 +3386,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:51.389Z"
+      "updatedAt": "2026-10-04T10:36:00.240Z"
+    },
+    "trash-bins": {
+      "count": 1119,
+      "pois": [
+        {
+          "id": "node/6289989569",
+          "name": "Kelley Ross Pharmacy",
+          "lat": 47.60714,
+          "lon": -122.328764
+        },
+        {
+          "id": "node/6287462040",
+          "name": "Harborview Ninth and Jefferson Street Pharmacy",
+          "lat": 47.604048,
+          "lon": -122.324176
+        },
+        {
+          "id": "node/6290074819",
+          "name": "Swedish Arnold Pavilion Pharmacy",
+          "lat": 47.609903,
+          "lon": -122.323085
+        },
+        {
+          "id": "node/6290068956",
+          "name": "Seattle Meds Pharmacy",
+          "lat": 47.610258,
+          "lon": -122.322077
+        },
+        {
+          "id": "node/6289977988",
+          "name": "ICHS - International District",
+          "lat": 47.596124,
+          "lon": -122.322052
+        },
+        {
+          "id": "node/6290132743",
+          "name": "Seattle Indian Health Board",
+          "lat": 47.597215,
+          "lon": -122.318154
+        },
+        {
+          "id": "node/6290119428",
+          "name": "Kaiser Permamente Pharmacy Capitol Hill",
+          "lat": 47.619575,
+          "lon": -122.31249
+        },
+        {
+          "id": "node/6290140783",
+          "name": "Carolyn Downs Community Health Clinic Pharmacy",
+          "lat": 47.601348,
+          "lon": -122.304478
+        },
+        {
+          "id": "node/6290114643",
+          "name": "Seattle Cancer Care Alliance Pharmacy",
+          "lat": 47.626432,
+          "lon": -122.329733
+        },
+        {
+          "id": "node/6290108924",
+          "name": "QFC Pharmacey #881",
+          "lat": 47.624692,
+          "lon": -122.347284
+        },
+        {
+          "id": "node/6290118775",
+          "name": "Country Doctor Community Health Clinic Pharmacy",
+          "lat": 47.623644,
+          "lon": -122.307137
+        },
+        {
+          "id": "node/6290142786",
+          "name": "Costco Pharmacy #001",
+          "lat": 47.565123,
+          "lon": -122.329771
+        },
+        {
+          "id": "node/6290088623",
+          "name": "University of Washington Medical Center Pharmacy Operations",
+          "lat": 47.64888,
+          "lon": -122.306855
+        },
+        {
+          "id": "node/6290089365",
+          "name": "UW Police Department",
+          "lat": 47.654399,
+          "lon": -122.312462
+        },
+        {
+          "id": "node/6290125287",
+          "name": "QFC Pharmacy #883",
+          "lat": 47.56128,
+          "lon": -122.385082
+        },
+        {
+          "id": "node/12832275773",
+          "name": "U-District Sharps Disposal Box",
+          "lat": 47.663046,
+          "lon": -122.315137
+        },
+        {
+          "id": "node/12832229363",
+          "name": "Ravenna Park Sharps Disposal Box",
+          "lat": 47.672249,
+          "lon": -122.311813
+        },
+        {
+          "id": "node/4098502008",
+          "lat": 47.606383,
+          "lon": -122.332981,
+          "street": "Atsuhiko and Ina Goodwin Tateuchi Plaza"
+        },
+        {
+          "id": "node/1950295507",
+          "lat": 47.606766,
+          "lon": -122.33142,
+          "street": "Madison Street"
+        },
+        {
+          "id": "node/11806464786",
+          "lat": 47.606979,
+          "lon": -122.33233,
+          "street": "5th Avenue"
+        },
+        {
+          "id": "node/3655950333",
+          "lat": 47.606279,
+          "lon": -122.334427,
+          "street": "3rd Avenue"
+        },
+        {
+          "id": "node/3831148002",
+          "lat": 47.607247,
+          "lon": -122.333878,
+          "street": "4th Avenue"
+        },
+        {
+          "id": "node/13874623241",
+          "lat": 47.605329,
+          "lon": -122.335125,
+          "street": "2nd Avenue Cycletrack"
+        },
+        {
+          "id": "node/8735384582",
+          "lat": 47.604003,
+          "lon": -122.330428,
+          "street": "Cherry Street"
+        },
+        {
+          "id": "node/13765326751",
+          "lat": 47.608562,
+          "lon": -122.333842,
+          "street": "University Street"
+        },
+        {
+          "id": "node/4100407816",
+          "lat": 47.608073,
+          "lon": -122.334874,
+          "street": "4th Avenue Cycletrack"
+        },
+        {
+          "id": "node/11164103988",
+          "lat": 47.608897,
+          "lon": -122.331623,
+          "street": "Seneca Street"
+        },
+        {
+          "id": "node/13764558179",
+          "lat": 47.609147,
+          "lon": -122.331001,
+          "street": "Hubbell Place"
+        },
+        {
+          "id": "node/14005411202",
+          "lat": 47.603112,
+          "lon": -122.33338,
+          "street": "2nd Avenue"
+        },
+        {
+          "id": "node/6177471616",
+          "lat": 47.607458,
+          "lon": -122.326622,
+          "street": "9th Avenue"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 32,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:36:03.208Z"
     }
   }
 }

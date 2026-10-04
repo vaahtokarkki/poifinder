@@ -1,9 +1,9 @@
 {
   "city": "salzburg",
-  "generatedAt": "2026-09-27T09:38:16.446Z",
+  "generatedAt": "2026-10-04T10:09:02.966Z",
   "categories": {
     "toilets": {
-      "count": 111,
+      "count": 114,
       "pois": [
         {
           "id": "way/1274259281",
@@ -103,6 +103,7 @@
           "id": "node/11167710915",
           "lat": 47.805214,
           "lon": 13.033844,
+          "wheelchair": "yes",
           "context": "Augustiner Bräustübl"
         },
         {
@@ -246,9 +247,9 @@
         }
       ],
       "stats": {
-        "free": 61,
+        "free": 62,
         "paid": 15,
-        "stepFree": 61,
+        "stepFree": 66,
         "partlyStepFree": 2
       },
       "near": [
@@ -271,7 +272,7 @@
           "lon": 13.045715
         }
       ],
-      "updatedAt": "2026-09-23T08:28:41.357Z"
+      "updatedAt": "2026-10-04T10:08:40.480Z"
     },
     "drinking-water": {
       "count": 80,
@@ -496,10 +497,10 @@
           "lon": 13.048338
         }
       ],
-      "updatedAt": "2026-09-23T08:28:42.947Z"
+      "updatedAt": "2026-10-04T10:08:42.623Z"
     },
     "playgrounds": {
-      "count": 203,
+      "count": 204,
       "pois": [
         {
           "id": "node/1448020339",
@@ -693,10 +694,10 @@
         "stepFree": 10,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:37:55.568Z"
+      "updatedAt": "2026-10-04T10:08:43.724Z"
     },
     "parking": {
-      "count": 1448,
+      "count": 1457,
       "pois": [
         {
           "id": "way/1422370025",
@@ -818,6 +819,13 @@
           "fee": "no"
         },
         {
+          "id": "way/1563057498",
+          "name": "Hotel Flair parking",
+          "lat": 47.818837,
+          "lon": 13.045534,
+          "fee": "yes"
+        },
+        {
           "id": "node/1158432797",
           "name": "Tiefgarage Barmherzige Brüder",
           "lat": 47.797529,
@@ -924,24 +932,18 @@
           "name": "Parkplatz Hauser Stuben",
           "lat": 47.806612,
           "lon": 13.026531
-        },
-        {
-          "id": "node/2181274921",
-          "name": "Hauser Stuben",
-          "lat": 47.80662,
-          "lon": 13.026525
         }
       ],
       "stats": {
-        "free": 539,
-        "paid": 173,
+        "free": 540,
+        "paid": 175,
         "stepFree": 38,
         "partlyStepFree": 11
       },
-      "updatedAt": "2026-09-27T09:37:56.709Z"
+      "updatedAt": "2026-10-04T10:08:44.685Z"
     },
     "charging-stations": {
-      "count": 126,
+      "count": 130,
       "pois": [
         {
           "id": "way/1551125459",
@@ -1000,7 +1002,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:37:57.221Z"
+      "updatedAt": "2026-10-04T10:08:45.201Z"
     },
     "gas-stations": {
       "count": 60,
@@ -1173,10 +1175,10 @@
         "stepFree": 17,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:37:57.810Z"
+      "updatedAt": "2026-10-04T10:08:45.699Z"
     },
     "ice-cream": {
-      "count": 26,
+      "count": 25,
       "pois": [
         {
           "id": "node/6039466753",
@@ -1241,7 +1243,8 @@
           "id": "node/12756041513",
           "name": "Eisl Eis",
           "lat": 47.800247,
-          "lon": 13.042529
+          "lon": 13.042529,
+          "openingHours": "Mo-Su 11:00-19:00"
         },
         {
           "id": "node/5204290718",
@@ -1269,17 +1272,17 @@
           "wheelchair": "no"
         },
         {
+          "id": "node/14058935201",
+          "name": "Moritz Eis",
+          "lat": 47.800047,
+          "lon": 13.040568,
+          "address": "Getreidegasse 48"
+        },
+        {
           "id": "node/12857065476",
           "name": "Hoefinger Eis",
           "lat": 47.797426,
           "lon": 13.045864
-        },
-        {
-          "id": "node/14058918301",
-          "name": "Moritz Eis",
-          "lat": 47.800032,
-          "lon": 13.040564,
-          "address": "Getreidegasse 48"
         },
         {
           "id": "node/5434309263",
@@ -1353,7 +1356,7 @@
         "stepFree": 6,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:37:58.402Z"
+      "updatedAt": "2026-10-04T10:08:46.198Z"
     },
     "dog-parks": {
       "count": 12,
@@ -1405,7 +1408,7 @@
         "stepFree": 6,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:37:58.859Z"
+      "updatedAt": "2026-10-04T10:08:46.588Z"
     },
     "picnic-spots": {
       "count": 69,
@@ -1416,10 +1419,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:00.051Z"
+      "updatedAt": "2026-10-04T10:08:47.624Z"
     },
     "viewpoints": {
-      "count": 94,
+      "count": 95,
       "pois": [
         {
           "id": "node/1575992395",
@@ -1591,7 +1594,7 @@
         "stepFree": 10,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:38:00.801Z"
+      "updatedAt": "2026-10-04T10:08:48.194Z"
     },
     "beaches": {
       "count": 3,
@@ -1602,7 +1605,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:01.467Z"
+      "updatedAt": "2026-10-04T10:08:48.683Z"
     },
     "atms": {
       "count": 135,
@@ -1845,10 +1848,10 @@
         "stepFree": 47,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:38:02.222Z"
+      "updatedAt": "2026-10-04T10:08:49.345Z"
     },
     "post-boxes": {
-      "count": 111,
+      "count": 112,
       "pois": [
         {
           "id": "node/265498427",
@@ -2040,10 +2043,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:03.520Z"
+      "updatedAt": "2026-10-04T10:08:50.463Z"
     },
     "recycling": {
-      "count": 390,
+      "count": 391,
       "pois": [
         {
           "id": "node/12507215211",
@@ -2111,8 +2114,8 @@
         {
           "id": "node/1454048962",
           "name": "Wertstoffhof der Gemeinde Ainring",
-          "lat": 47.818275,
-          "lon": 12.960418,
+          "lat": 47.818281,
+          "lon": 12.960493,
           "openingHours": "We 14:00-18:00; Fr 09:00-12:00,14:00-18:00; Sa 09:00-12:00"
         },
         {
@@ -2249,7 +2252,7 @@
         "stepFree": 12,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:05.613Z"
+      "updatedAt": "2026-10-04T10:08:52.131Z"
     },
     "luggage-storage": {
       "count": 3,
@@ -2260,7 +2263,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:06.179Z"
+      "updatedAt": "2026-10-04T10:08:52.629Z"
     },
     "libraries": {
       "count": 30,
@@ -2416,7 +2419,7 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:06.762Z"
+      "updatedAt": "2026-10-04T10:08:53.138Z"
     },
     "outdoor-gyms": {
       "count": 20,
@@ -2465,7 +2468,7 @@
         "stepFree": 1,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:38:07.838Z"
+      "updatedAt": "2026-10-04T10:08:54.009Z"
     },
     "camp-sites": {
       "count": 6,
@@ -2522,7 +2525,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:08.412Z"
+      "updatedAt": "2026-10-04T10:08:54.576Z"
     },
     "shelters": {
       "count": 3,
@@ -2540,7 +2543,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:10.119Z"
+      "updatedAt": "2026-10-04T10:08:56.018Z"
     },
     "rest-areas": {
       "count": 3,
@@ -2570,7 +2573,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:10.781Z"
+      "updatedAt": "2026-10-04T10:08:56.526Z"
     },
     "dump-stations": {
       "count": 3,
@@ -2589,7 +2592,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:11.219Z"
+      "updatedAt": "2026-10-04T10:08:56.878Z"
     },
     "post-offices": {
       "count": 27,
@@ -2796,7 +2799,7 @@
         "stepFree": 10,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:38:11.739Z"
+      "updatedAt": "2026-10-04T10:08:57.323Z"
     },
     "showers": {
       "count": 10,
@@ -2807,7 +2810,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:12.212Z"
+      "updatedAt": "2026-10-04T10:08:57.677Z"
     },
     "fireplaces": {
       "count": 7,
@@ -2818,7 +2821,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:13.332Z"
+      "updatedAt": "2026-10-04T10:08:58.823Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2826,7 +2829,7 @@
       "updatedAt": "2026-08-17T04:03:38.335Z"
     },
     "benches": {
-      "count": 1766,
+      "count": 1765,
       "pois": [
         {
           "id": "node/3352227216",
@@ -2938,7 +2941,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:16.344Z"
+      "updatedAt": "2026-10-04T10:09:01.407Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3150,7 +3153,187 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:38:14.983Z"
+      "updatedAt": "2026-10-04T10:09:00.220Z"
+    },
+    "trash-bins": {
+      "count": 729,
+      "pois": [
+        {
+          "id": "node/631995865",
+          "lat": 47.81008,
+          "lon": 13.056763,
+          "street": "Wilhelmsederstraße"
+        },
+        {
+          "id": "node/8863368019",
+          "lat": 47.809951,
+          "lon": 13.057029,
+          "street": "Sterneckstraße"
+        },
+        {
+          "id": "node/13076256488",
+          "lat": 47.810358,
+          "lon": 13.05075,
+          "street": "Bayerhamerstraße"
+        },
+        {
+          "id": "node/12713457541",
+          "lat": 47.811615,
+          "lon": 13.047813,
+          "street": "Merianstraße"
+        },
+        {
+          "id": "node/12309517195",
+          "lat": 47.807488,
+          "lon": 13.062965,
+          "street": "Doblerweg"
+        },
+        {
+          "id": "node/5344711761",
+          "lat": 47.81069,
+          "lon": 13.046537,
+          "street": "Weiserstraße"
+        },
+        {
+          "id": "node/12713707286",
+          "lat": 47.811831,
+          "lon": 13.04689,
+          "street": "Hauptbahnhof"
+        },
+        {
+          "id": "node/13066627151",
+          "lat": 47.804639,
+          "lon": 13.049312,
+          "street": "Linzer Gasse"
+        },
+        {
+          "id": "node/5338831439",
+          "lat": 47.814068,
+          "lon": 13.0481,
+          "street": "Flixbus Salzburg Hauptbahnhof"
+        },
+        {
+          "id": "node/4144914564",
+          "lat": 47.802864,
+          "lon": 13.056326,
+          "street": "Weg zur Oberen Stadtaussicht"
+        },
+        {
+          "id": "node/2949853113",
+          "lat": 47.804147,
+          "lon": 13.048741,
+          "street": "Glockengasse"
+        },
+        {
+          "id": "node/5351705588",
+          "lat": 47.807995,
+          "lon": 13.04445,
+          "street": "Auerspergstraße"
+        },
+        {
+          "id": "node/13200950362",
+          "lat": 47.812849,
+          "lon": 13.045074,
+          "street": "Südtiroler Platz"
+        },
+        {
+          "id": "node/11962991451",
+          "lat": 47.81241,
+          "lon": 13.044453,
+          "street": "Rainerstraße"
+        },
+        {
+          "id": "node/13821628217",
+          "lat": 47.812028,
+          "lon": 13.043802,
+          "street": "Ferdinand-Porsche-Straße"
+        },
+        {
+          "id": "node/14173643288",
+          "lat": 47.801405,
+          "lon": 13.052281,
+          "street": "Südweg"
+        },
+        {
+          "id": "node/12568374167",
+          "lat": 47.802809,
+          "lon": 13.047265,
+          "street": "Stefan-Zweig-Weg"
+        },
+        {
+          "id": "node/8022471195",
+          "lat": 47.809139,
+          "lon": 13.041861,
+          "street": "Humboldtstraße"
+        },
+        {
+          "id": "node/1941620477",
+          "lat": 47.805612,
+          "lon": 13.043172,
+          "street": "Mirabellplatz"
+        },
+        {
+          "id": "node/14049446701",
+          "lat": 47.806795,
+          "lon": 13.042356,
+          "street": "Franz-Josef-Straße"
+        },
+        {
+          "id": "node/13913044032",
+          "lat": 47.809458,
+          "lon": 13.04149,
+          "street": "Hans-Prodinger-Straße"
+        },
+        {
+          "id": "node/14049420604",
+          "lat": 47.806209,
+          "lon": 13.042409,
+          "street": "Bernhard-Paumgartner-Weg"
+        },
+        {
+          "id": "node/13066537286",
+          "lat": 47.802435,
+          "lon": 13.045705,
+          "street": "Stefan-Zweig-Platz"
+        },
+        {
+          "id": "node/13913037047",
+          "lat": 47.809241,
+          "lon": 13.040507,
+          "street": "Plainstraße"
+        },
+        {
+          "id": "node/13695232703",
+          "lat": 47.805932,
+          "lon": 13.068776,
+          "street": "Fürbergstraße"
+        },
+        {
+          "id": "node/13742888402",
+          "lat": 47.803007,
+          "lon": 13.066248,
+          "street": "Borromäumstraße"
+        },
+        {
+          "id": "node/1691714507",
+          "lat": 47.802006,
+          "lon": 13.045143,
+          "street": "Dreifaltigkeitsgasse"
+        },
+        {
+          "id": "node/9940965124",
+          "lat": 47.800165,
+          "lon": 13.049646,
+          "street": "Giselakai"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:09:02.864Z"
     }
   }
 }

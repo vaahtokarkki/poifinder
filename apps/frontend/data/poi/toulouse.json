@@ -1,9 +1,9 @@
 {
   "city": "toulouse",
-  "generatedAt": "2026-09-27T09:51:40.086Z",
+  "generatedAt": "2026-10-04T10:24:51.659Z",
   "categories": {
     "toilets": {
-      "count": 223,
+      "count": 225,
       "pois": [
         {
           "id": "node/2904778854",
@@ -65,6 +65,8 @@
           "id": "node/14144246300",
           "lat": 43.600389,
           "lon": 1.430774,
+          "wheelchair": "yes",
+          "fee": "no",
           "context": "efFORMip"
         },
         {
@@ -96,13 +98,6 @@
           "lon": 1.393475,
           "address": "Route de Bayonne 36-54",
           "openingHours": "Mo-Sa 08:30-21:00"
-        },
-        {
-          "id": "node/14109824801",
-          "name": "Toilet",
-          "lat": 43.558403,
-          "lon": 1.446534,
-          "openingHours": "24/7"
         },
         {
           "id": "way/52443604",
@@ -145,9 +140,9 @@
         }
       ],
       "stats": {
-        "free": 143,
+        "free": 146,
         "paid": 5,
-        "stepFree": 120,
+        "stepFree": 122,
         "partlyStepFree": 6
       },
       "near": [
@@ -188,10 +183,10 @@
           "lon": 1.449367
         }
       ],
-      "updatedAt": "2026-09-23T08:30:22.414Z"
+      "updatedAt": "2026-10-04T10:24:23.778Z"
     },
     "drinking-water": {
-      "count": 354,
+      "count": 361,
       "pois": [
         {
           "id": "node/1428924036",
@@ -200,16 +195,16 @@
           "lon": 1.436674
         },
         {
+          "id": "node/14160174501",
+          "name": "Robinet d'eau potable",
+          "lat": 43.610272,
+          "lon": 1.431642
+        },
+        {
           "id": "node/13013837275",
           "name": "Fontaine à eau",
           "lat": 43.615686,
           "lon": 1.417896
-        },
-        {
-          "id": "node/12923091701",
-          "name": "Robinet public extérieur salle d'arme",
-          "lat": 43.545771,
-          "lon": 1.481347
         },
         {
           "id": "node/12040211569",
@@ -379,7 +374,7 @@
         }
       ],
       "stats": {
-        "free": 44,
+        "free": 45,
         "paid": 0,
         "stepFree": 26,
         "partlyStepFree": 3
@@ -422,7 +417,7 @@
           "lon": 1.449591
         }
       ],
-      "updatedAt": "2026-09-23T08:30:24.100Z"
+      "updatedAt": "2026-10-04T10:24:25.952Z"
     },
     "playgrounds": {
       "count": 407,
@@ -614,10 +609,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:17.303Z"
+      "updatedAt": "2026-10-04T10:24:26.947Z"
     },
     "parking": {
-      "count": 2468,
+      "count": 2464,
       "pois": [
         {
           "id": "node/452946535",
@@ -847,12 +842,12 @@
         }
       ],
       "stats": {
-        "free": 1198,
+        "free": 1200,
         "paid": 121,
         "stepFree": 28,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:51:18.534Z"
+      "updatedAt": "2026-10-04T10:24:28.505Z"
     },
     "charging-stations": {
       "count": 210,
@@ -1080,7 +1075,7 @@
         "stepFree": 24,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:19.103Z"
+      "updatedAt": "2026-10-04T10:24:28.989Z"
     },
     "gas-stations": {
       "count": 60,
@@ -1296,10 +1291,10 @@
         "stepFree": 6,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:51:19.762Z"
+      "updatedAt": "2026-10-04T10:24:29.710Z"
     },
     "ice-cream": {
-      "count": 20,
+      "count": 22,
       "pois": [
         {
           "id": "node/9976961517",
@@ -1308,6 +1303,13 @@
           "lon": 1.443882,
           "openingHours": "Su-Th 12:00-22:30; Fr,Sa 12:00-23:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/2448370151",
+          "name": "Bältis",
+          "lat": 43.604972,
+          "lon": 1.443222,
+          "openingHours": "Mo-Su 12:00-23:00"
         },
         {
           "id": "node/2457312513",
@@ -1331,6 +1333,13 @@
           "name": "Le Bellini Glacier",
           "lat": 43.604008,
           "lon": 1.442804
+        },
+        {
+          "id": "node/4383839442",
+          "name": "Yogolicious",
+          "lat": 43.604737,
+          "lon": 1.442418,
+          "wheelchair": "yes"
         },
         {
           "id": "node/2458144425",
@@ -1397,7 +1406,7 @@
           "name": "Glaces Moustache",
           "lat": 43.603699,
           "lon": 1.435054,
-          "openingHours": "Mo 13:00-19:30; Tu-Su 13:00-24:00",
+          "openingHours": "Mo-Th 13:00-19:00; Fr-Sa 13:00-23:00; Su 13:00-19:00",
           "wheelchair": "yes"
         },
         {
@@ -1439,13 +1448,13 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 4,
+        "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:20.580Z"
+      "updatedAt": "2026-10-04T10:24:30.391Z"
     },
     "dog-parks": {
-      "count": 25,
+      "count": 26,
       "pois": [
         {
           "id": "relation/14657133",
@@ -1466,10 +1475,10 @@
         "stepFree": 14,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:51:21.180Z"
+      "updatedAt": "2026-10-04T10:24:30.881Z"
     },
     "picnic-spots": {
-      "count": 549,
+      "count": 558,
       "pois": [
         {
           "id": "way/1275944010",
@@ -1485,7 +1494,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:22.609Z"
+      "updatedAt": "2026-10-04T10:24:32.218Z"
     },
     "viewpoints": {
       "count": 29,
@@ -1503,7 +1512,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:23.329Z"
+      "updatedAt": "2026-10-04T10:24:33.037Z"
     },
     "beaches": {
       "count": 0,
@@ -1514,7 +1523,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:23.980Z"
+      "updatedAt": "2026-10-04T10:24:33.618Z"
     },
     "atms": {
       "count": 305,
@@ -1546,7 +1555,7 @@
           "name": "Crédit Mutuel",
           "lat": 43.605548,
           "lon": 1.445552,
-          "openingHours": "Tu,We 09:00-13:00,14:00-17:45; Th 09:00-12:15,14:00-17:45; Fr 09:00-13:00,14:00-17:45; Sa 09:00-12:30"
+          "openingHours": "Tu 09:00-11:35,14:00-17:45; We-Fr 09:00-13:00,14:00-17:45; Sa 09:00-12:30"
         },
         {
           "id": "node/340356627",
@@ -1570,7 +1579,7 @@
           "lat": 43.605349,
           "lon": 1.447612,
           "address": "Place du Président Wilson 18",
-          "openingHours": "Mo-Fr 09:00-12:30,13:45-17:45"
+          "openingHours": "Mo-We 09:00-12:30,13:45-17:45; Th 09:00-12:30,14:45-17:45; Fr 09:00-12:30,13:45-17:35"
         },
         {
           "id": "node/2450406667",
@@ -1758,10 +1767,10 @@
         "stepFree": 83,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:51:24.729Z"
+      "updatedAt": "2026-10-04T10:24:34.284Z"
     },
     "post-boxes": {
-      "count": 352,
+      "count": 350,
       "pois": [
         {
           "id": "node/2408802261",
@@ -1912,14 +1921,6 @@
           "street": "Boulevard Armand Duportal"
         },
         {
-          "id": "node/3484435640",
-          "lat": 43.602838,
-          "lon": 1.454395,
-          "address": "Place Saint-Aubin",
-          "wheelchair": "yes",
-          "street": "Boulevard Jules Michelet"
-        },
-        {
           "id": "node/4895263548",
           "lat": 43.612492,
           "lon": 1.445693,
@@ -1968,18 +1969,25 @@
           "lon": 1.454091,
           "address": "Place Dominique Martin Dupuy 26",
           "street": "Rue du Pont Montaudran"
+        },
+        {
+          "id": "node/1371014756",
+          "lat": 43.610128,
+          "lon": 1.434455,
+          "address": "Rue Lejeune",
+          "street": "Rue Lejeune"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 4,
+        "stepFree": 3,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:51:26.246Z"
+      "updatedAt": "2026-10-04T10:24:35.674Z"
     },
     "recycling": {
-      "count": 1518,
+      "count": 1520,
       "pois": [
         {
           "id": "node/5818162643",
@@ -2182,9 +2190,9 @@
         "free": 0,
         "paid": 0,
         "stepFree": 9,
-        "partlyStepFree": 0
+        "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:51:28.151Z"
+      "updatedAt": "2026-10-04T10:24:37.420Z"
     },
     "luggage-storage": {
       "count": 2,
@@ -2202,10 +2210,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:28.700Z"
+      "updatedAt": "2026-10-04T10:24:38.123Z"
     },
     "libraries": {
-      "count": 191,
+      "count": 193,
       "pois": [
         {
           "id": "node/1827276725",
@@ -2434,7 +2442,7 @@
         "stepFree": 15,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:51:29.442Z"
+      "updatedAt": "2026-10-04T10:24:39.199Z"
     },
     "outdoor-gyms": {
       "count": 123,
@@ -2468,7 +2476,8 @@
           "id": "node/12362222676",
           "name": "On Air",
           "lat": 43.649018,
-          "lon": 1.368757
+          "lon": 1.368757,
+          "openingHours": "Mo-Fr 06:00-23:00; Sa-Su 08:00-20:00"
         }
       ],
       "stats": {
@@ -2477,7 +2486,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:30.901Z"
+      "updatedAt": "2026-10-04T10:24:41.066Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2509,7 +2518,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:31.540Z"
+      "updatedAt": "2026-10-04T10:24:41.708Z"
     },
     "shelters": {
       "count": 10,
@@ -2520,7 +2529,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:33.358Z"
+      "updatedAt": "2026-10-04T10:24:44.008Z"
     },
     "rest-areas": {
       "count": 10,
@@ -2568,7 +2577,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:33.940Z"
+      "updatedAt": "2026-10-04T10:24:44.564Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2579,7 +2588,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:34.413Z"
+      "updatedAt": "2026-10-04T10:24:44.923Z"
     },
     "post-offices": {
       "count": 68,
@@ -2846,7 +2855,7 @@
         "stepFree": 34,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:35.002Z"
+      "updatedAt": "2026-10-04T10:24:45.425Z"
     },
     "showers": {
       "count": 3,
@@ -2874,7 +2883,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:35.512Z"
+      "updatedAt": "2026-10-04T10:24:45.810Z"
     },
     "fireplaces": {
       "count": 14,
@@ -2885,7 +2894,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:36.840Z"
+      "updatedAt": "2026-10-04T10:24:46.964Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2893,7 +2902,7 @@
       "updatedAt": "2026-08-17T04:04:53.084Z"
     },
     "benches": {
-      "count": 4354,
+      "count": 4396,
       "pois": [
         {
           "id": "node/13610072466",
@@ -2974,7 +2983,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:39.984Z"
+      "updatedAt": "2026-10-04T10:24:49.965Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3111,12 +3120,186 @@
         }
       ],
       "stats": {
-        "free": 13,
+        "free": 14,
         "paid": 4,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:51:38.628Z"
+      "updatedAt": "2026-10-04T10:24:48.496Z"
+    },
+    "trash-bins": {
+      "count": 2802,
+      "pois": [
+        {
+          "id": "node/13013876971",
+          "name": "Poubelle",
+          "lat": 43.613464,
+          "lon": 1.416708
+        },
+        {
+          "id": "node/13011383763",
+          "name": "Poubelle urbaine",
+          "lat": 43.599135,
+          "lon": 1.410695
+        },
+        {
+          "id": "node/13011395909",
+          "name": "Poubelle de rue",
+          "lat": 43.599394,
+          "lon": 1.40876
+        },
+        {
+          "id": "node/13401769576",
+          "lat": 43.605115,
+          "lon": 1.443841,
+          "street": "Rue Charles de Rémusat"
+        },
+        {
+          "id": "node/5602645650",
+          "lat": 43.604558,
+          "lon": 1.44485,
+          "street": "Rue Ernest Roschach"
+        },
+        {
+          "id": "node/11012086081",
+          "lat": 43.604723,
+          "lon": 1.44488,
+          "street": "Rue Lafayette"
+        },
+        {
+          "id": "node/11012089236",
+          "lat": 43.604844,
+          "lon": 1.443493,
+          "street": "Place du Capitole"
+        },
+        {
+          "id": "node/5602645651",
+          "lat": 43.604309,
+          "lon": 1.44494,
+          "street": "Quai 2"
+        },
+        {
+          "id": "node/10816282638",
+          "lat": 43.604042,
+          "lon": 1.444671,
+          "street": "Rue du Poids de l'Huile"
+        },
+        {
+          "id": "node/10816282636",
+          "lat": 43.604305,
+          "lon": 1.445232,
+          "street": "Quai 1"
+        },
+        {
+          "id": "node/11012089233",
+          "lat": 43.604592,
+          "lon": 1.442954,
+          "street": "Rue Dominique Baudis"
+        },
+        {
+          "id": "node/10072816727",
+          "lat": 43.604804,
+          "lon": 1.445749,
+          "street": "Rue d'Alsace-Lorraine"
+        },
+        {
+          "id": "node/11022843087",
+          "lat": 43.604896,
+          "lon": 1.442658,
+          "street": "Rue des Lois"
+        },
+        {
+          "id": "node/3854705838",
+          "lat": 43.603484,
+          "lon": 1.44483,
+          "street": "Rue Saint-Pantaléon"
+        },
+        {
+          "id": "node/10298059080",
+          "lat": 43.604925,
+          "lon": 1.446335,
+          "street": "Rue du Rempart Villeneuve"
+        },
+        {
+          "id": "node/10298059083",
+          "lat": 43.605194,
+          "lon": 1.446326,
+          "street": "Rue Caussette"
+        },
+        {
+          "id": "node/13401763819",
+          "lat": 43.604128,
+          "lon": 1.446334,
+          "street": "Rue Lapeyrouse"
+        },
+        {
+          "id": "node/3856830511",
+          "lat": 43.60346,
+          "lon": 1.445962,
+          "street": "Rue du Lieutenant-Colonel Pélissier"
+        },
+        {
+          "id": "node/11012086074",
+          "lat": 43.604833,
+          "lon": 1.446967,
+          "street": "Place du Président Wilson"
+        },
+        {
+          "id": "node/10298059085",
+          "lat": 43.606192,
+          "lon": 1.44613,
+          "street": "Rue Rivals"
+        },
+        {
+          "id": "node/7399408972",
+          "lat": 43.602691,
+          "lon": 1.444868,
+          "street": "Rue des Puits-Clos"
+        },
+        {
+          "id": "node/13649656232",
+          "lat": 43.606557,
+          "lon": 1.442796,
+          "street": "Rue Montoyol"
+        },
+        {
+          "id": "node/10298059056",
+          "lat": 43.605979,
+          "lon": 1.44658,
+          "street": "Place Victor Hugo"
+        },
+        {
+          "id": "node/11012089242",
+          "lat": 43.604715,
+          "lon": 1.441222,
+          "street": "Rue Jean-Antoine Romiguières"
+        },
+        {
+          "id": "node/11012089246",
+          "lat": 43.604748,
+          "lon": 1.441194,
+          "street": "Rue Antoine Deville"
+        },
+        {
+          "id": "node/11012086063",
+          "lat": 43.604377,
+          "lon": 1.447318,
+          "street": "Rue Saint-Antoine du T"
+        },
+        {
+          "id": "node/11371077093",
+          "lat": 43.60388,
+          "lon": 1.44724,
+          "street": "Rue Montardy"
+        }
+      ],
+      "stats": {
+        "free": 2,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:24:51.557Z"
     }
   }
 }

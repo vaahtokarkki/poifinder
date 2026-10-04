@@ -1,6 +1,6 @@
 {
   "city": "dublin",
-  "generatedAt": "2026-09-27T09:48:54.230Z",
+  "generatedAt": "2026-10-04T10:21:19.258Z",
   "categories": {
     "toilets": {
       "count": 140,
@@ -78,7 +78,7 @@
           "id": "node/14107099652",
           "lat": 53.34421,
           "lon": -6.255172,
-          "context": "Book of Kells Experience Red Pavilion"
+          "context": "Red Pavilion"
         },
         {
           "id": "way/230143024",
@@ -201,7 +201,7 @@
           "id": "node/10617057062",
           "lat": 53.340054,
           "lon": -6.255107,
-          "context": "National Museum of Ireland, Kildare Street"
+          "context": "National Museum of Ireland, Archaeology"
         },
         {
           "id": "node/11324921294",
@@ -235,9 +235,9 @@
         }
       ],
       "stats": {
-        "free": 55,
+        "free": 56,
         "paid": 2,
-        "stepFree": 64,
+        "stepFree": 63,
         "partlyStepFree": 5
       },
       "near": [
@@ -296,10 +296,10 @@
           "lon": -6.299455
         }
       ],
-      "updatedAt": "2026-09-23T08:30:01.297Z"
+      "updatedAt": "2026-10-04T10:20:52.098Z"
     },
     "drinking-water": {
-      "count": 43,
+      "count": 44,
       "pois": [
         {
           "id": "node/804635460",
@@ -414,13 +414,6 @@
           "street": "Courtyard"
         },
         {
-          "id": "node/7173100706",
-          "lat": 53.28809,
-          "lon": -6.242623,
-          "wheelchair": "yes",
-          "street": "Town Square"
-        },
-        {
           "id": "node/12246588805",
           "lat": 53.302433,
           "lon": -6.182295,
@@ -495,10 +488,10 @@
           "lon": -6.233745
         }
       ],
-      "updatedAt": "2026-09-23T08:30:03.014Z"
+      "updatedAt": "2026-10-04T10:20:54.724Z"
     },
     "playgrounds": {
-      "count": 222,
+      "count": 224,
       "pois": [
         {
           "id": "way/291297945",
@@ -639,10 +632,10 @@
         "stepFree": 19,
         "partlyStepFree": 6
       },
-      "updatedAt": "2026-09-27T09:48:30.026Z"
+      "updatedAt": "2026-10-04T10:20:55.846Z"
     },
     "parking": {
-      "count": 2974,
+      "count": 2971,
       "pois": [
         {
           "id": "way/343889421",
@@ -863,12 +856,12 @@
         }
       ],
       "stats": {
-        "free": 329,
-        "paid": 177,
+        "free": 339,
+        "paid": 179,
         "stepFree": 112,
         "partlyStepFree": 7
       },
-      "updatedAt": "2026-09-27T09:48:31.581Z"
+      "updatedAt": "2026-10-04T10:20:57.310Z"
     },
     "charging-stations": {
       "count": 111,
@@ -1029,10 +1022,10 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:32.165Z"
+      "updatedAt": "2026-10-04T10:20:57.877Z"
     },
     "gas-stations": {
-      "count": 97,
+      "count": 96,
       "pois": [
         {
           "id": "way/815313216",
@@ -1173,14 +1166,6 @@
           "address": "Malahide Road"
         },
         {
-          "id": "relation/7241970",
-          "name": "Circle K Fortfield",
-          "lat": 53.310574,
-          "lon": -6.302598,
-          "address": "Fortfield Road",
-          "openingHours": "24/7"
-        },
-        {
           "id": "way/580773205",
           "name": "McKee Ave Service Station",
           "lat": 53.391072,
@@ -1264,6 +1249,14 @@
           "lon": -6.282968,
           "address": "Grange Road",
           "openingHours": "Mo-Su 06:00-22:00"
+        },
+        {
+          "id": "way/648668704",
+          "name": "Circle K Parkway West",
+          "lat": 53.352941,
+          "lon": -6.363788,
+          "address": "Palmerston Bypass",
+          "openingHours": "24/7"
         }
       ],
       "stats": {
@@ -1272,10 +1265,10 @@
         "stepFree": 16,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:48:33.302Z"
+      "updatedAt": "2026-10-04T10:20:58.525Z"
     },
     "ice-cream": {
-      "count": 33,
+      "count": 32,
       "pois": [
         {
           "id": "way/435840486",
@@ -1320,7 +1313,7 @@
           "name": "Mr Sweet",
           "lat": 53.356246,
           "lon": -6.265422,
-          "address": "Blessington Street"
+          "address": "Blessington Street 1a"
         },
         {
           "id": "node/12087084518",
@@ -1338,11 +1331,12 @@
           "address": "Anne Street South 18"
         },
         {
-          "id": "way/244928630",
+          "id": "node/6185125931",
           "name": "Scoop",
-          "lat": 53.341419,
-          "lon": -6.265574,
-          "address": "Aungier Street 82"
+          "lat": 53.341426,
+          "lon": -6.265571,
+          "address": "Aungier Street 82",
+          "wheelchair": "yes"
         },
         {
           "id": "node/6329261885",
@@ -1432,7 +1426,7 @@
           "name": "Ice Cream Van (Summer weekends only)",
           "lat": 53.299484,
           "lon": -6.343551,
-          "openingHours": "Summer Weekends only"
+          "openingHours": "Sa-Su \"Summer Weekends only\""
         }
       ],
       "stats": {
@@ -1441,7 +1435,7 @@
         "stepFree": 9,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:48:33.963Z"
+      "updatedAt": "2026-10-04T10:20:59.298Z"
     },
     "dog-parks": {
       "count": 6,
@@ -1465,10 +1459,10 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:48:34.495Z"
+      "updatedAt": "2026-10-04T10:20:59.793Z"
     },
     "picnic-spots": {
-      "count": 237,
+      "count": 238,
       "pois": [
         {
           "id": "node/337982102",
@@ -1483,7 +1477,7 @@
         "stepFree": 15,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:35.828Z"
+      "updatedAt": "2026-10-04T10:21:00.969Z"
     },
     "viewpoints": {
       "count": 14,
@@ -1507,7 +1501,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:36.637Z"
+      "updatedAt": "2026-10-04T10:21:01.680Z"
     },
     "beaches": {
       "count": 9,
@@ -1543,7 +1537,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:37.220Z"
+      "updatedAt": "2026-10-04T10:21:02.257Z"
     },
     "atms": {
       "count": 234,
@@ -1638,7 +1632,7 @@
           "name": "Halston Street Credit Union",
           "lat": 53.347556,
           "lon": -6.268669,
-          "address": "Capel Street",
+          "address": "Capel Street 146",
           "wheelchair": "limited"
         },
         {
@@ -1663,14 +1657,6 @@
           "lat": 53.361162,
           "lon": -6.272884,
           "address": "Phibsborough Road"
-        },
-        {
-          "id": "way/681196392",
-          "name": "PTSB",
-          "lat": 53.367005,
-          "lon": -6.255833,
-          "address": "Drumcondra Road Lower 130",
-          "openingHours": "Mo-Fr 10:00-17:00"
         },
         {
           "id": "way/983727324",
@@ -1751,10 +1737,10 @@
         "stepFree": 96,
         "partlyStepFree": 11
       },
-      "updatedAt": "2026-09-27T09:48:38.065Z"
+      "updatedAt": "2026-10-04T10:21:02.919Z"
     },
     "post-boxes": {
-      "count": 578,
+      "count": 577,
       "pois": [
         {
           "id": "node/2528630060",
@@ -1941,10 +1927,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 12,
+        "stepFree": 13,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:48:39.796Z"
+      "updatedAt": "2026-10-04T10:21:04.110Z"
     },
     "recycling": {
       "count": 148,
@@ -2032,6 +2018,7 @@
           "lat": 53.341742,
           "lon": -6.214334,
           "address": "Pigeon House Road",
+          "openingHours": "Mo-We 09:00-17:00; Th-Fr 09:00-18:00; Sa 09:00-16:00; PH 09:00-16:00 open \"Bank Holidays\"; PH closed \"Good Friday\"",
           "wheelchair": "limited"
         },
         {
@@ -2093,7 +2080,7 @@
           "lat": 53.405821,
           "lon": -6.276542,
           "address": "Saint Margaret's Road",
-          "openingHours": "Mo-weds 09:00-17:00; Thu-Fri 09:00-18:00; Sat 09:00-16:00"
+          "openingHours": "Mo-We 09:00-17:00; Th-Fr 09:00-18:00; Sa 09:00-16:00"
         },
         {
           "id": "way/805747888",
@@ -2166,7 +2153,7 @@
         "stepFree": 2,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:48:42.434Z"
+      "updatedAt": "2026-10-04T10:21:06.343Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -2177,7 +2164,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:42.929Z"
+      "updatedAt": "2026-10-04T10:21:06.837Z"
     },
     "libraries": {
       "count": 61,
@@ -2370,6 +2357,7 @@
           "lat": 53.341517,
           "lon": -6.226438,
           "address": "Fitzwilliam Street",
+          "openingHours": "Mo,We 12:45-16:00,16:45-20:00; Tu,Th-Sa 10:00-13:00,14:00-17:00; Su 07:45-17:00; PH closed",
           "wheelchair": "yes"
         },
         {
@@ -2382,7 +2370,8 @@
           "id": "way/360511275",
           "name": "G Block - Cregan Library",
           "lat": 53.372061,
-          "lon": -6.253812
+          "lon": -6.253812,
+          "address": "Drumcondra Road Upper"
         },
         {
           "id": "node/3570903004",
@@ -2413,7 +2402,7 @@
         "stepFree": 16,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:48:43.662Z"
+      "updatedAt": "2026-10-04T10:21:07.406Z"
     },
     "outdoor-gyms": {
       "count": 86,
@@ -2424,7 +2413,7 @@
         "stepFree": 0,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:48:44.794Z"
+      "updatedAt": "2026-10-04T10:21:08.529Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2435,7 +2424,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:45.427Z"
+      "updatedAt": "2026-10-04T10:21:09.109Z"
     },
     "shelters": {
       "count": 36,
@@ -2478,7 +2467,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:47.463Z"
+      "updatedAt": "2026-10-04T10:21:11.037Z"
     },
     "rest-areas": {
       "count": 0,
@@ -2489,7 +2478,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:48.100Z"
+      "updatedAt": "2026-10-04T10:21:11.602Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2500,10 +2489,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:48.580Z"
+      "updatedAt": "2026-10-04T10:21:11.994Z"
     },
     "post-offices": {
-      "count": 81,
+      "count": 80,
       "pois": [
         {
           "id": "node/13894872988",
@@ -2742,10 +2731,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 28,
+        "stepFree": 27,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:48:49.103Z"
+      "updatedAt": "2026-10-04T10:21:12.493Z"
     },
     "showers": {
       "count": 5,
@@ -2756,7 +2745,7 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:48:49.573Z"
+      "updatedAt": "2026-10-04T10:21:12.903Z"
     },
     "fireplaces": {
       "count": 2,
@@ -2783,7 +2772,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:51.000Z"
+      "updatedAt": "2026-10-04T10:21:14.124Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2791,7 +2780,7 @@
       "updatedAt": "2026-08-17T04:04:37.407Z"
     },
     "benches": {
-      "count": 1849,
+      "count": 1876,
       "pois": [
         {
           "id": "node/12358550662",
@@ -2926,7 +2915,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:54.129Z"
+      "updatedAt": "2026-10-04T10:21:17.085Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2934,7 +2923,7 @@
       "updatedAt": "2026-08-18T03:58:22.467Z"
     },
     "bicycle-repair": {
-      "count": 30,
+      "count": 29,
       "pois": [
         {
           "id": "node/12055264326",
@@ -3010,12 +2999,6 @@
           "lon": -6.326999,
           "fee": "yes",
           "street": "Tyrconnell Road"
-        },
-        {
-          "id": "node/8013965379",
-          "lat": 53.310292,
-          "lon": -6.303023,
-          "street": "Fortfield Road"
         },
         {
           "id": "node/7615991612",
@@ -3105,7 +3088,116 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:48:52.866Z"
+      "updatedAt": "2026-10-04T10:21:15.798Z"
+    },
+    "trash-bins": {
+      "count": 1736,
+      "pois": [
+        {
+          "id": "node/12649798282",
+          "name": "Camera_publique360",
+          "lat": 53.348948,
+          "lon": -6.259902
+        },
+        {
+          "id": "node/3597714540",
+          "name": "Heyer Meat Exports Ltd.",
+          "lat": 53.327249,
+          "lon": -6.264871,
+          "address": "Rathmines Road Lower 118-120"
+        },
+        {
+          "id": "node/12656942315",
+          "lat": 53.349908,
+          "lon": -6.260321,
+          "street": "O'Connell Street Upper"
+        },
+        {
+          "id": "node/12656942324",
+          "lat": 53.349679,
+          "lon": -6.260454,
+          "street": "O'Connell Street Lower"
+        },
+        {
+          "id": "node/12656987159",
+          "lat": 53.349765,
+          "lon": -6.260654,
+          "street": "Henry Street"
+        },
+        {
+          "id": "node/12640485733",
+          "lat": 53.349906,
+          "lon": -6.259362,
+          "street": "North Earl Street"
+        },
+        {
+          "id": "node/12656942318",
+          "lat": 53.350418,
+          "lon": -6.260328,
+          "street": "Cathedral Street"
+        },
+        {
+          "id": "node/14067857705",
+          "lat": 53.350454,
+          "lon": -6.258391,
+          "street": "Marlborough Street"
+        },
+        {
+          "id": "node/12645321273",
+          "lat": 53.350153,
+          "lon": -6.25805,
+          "street": "Talbot Street"
+        },
+        {
+          "id": "node/12656942338",
+          "lat": 53.348256,
+          "lon": -6.260053,
+          "street": "Middle Abbey Street"
+        },
+        {
+          "id": "node/12656942311",
+          "lat": 53.351346,
+          "lon": -6.260944,
+          "street": "O'Connell Upper"
+        },
+        {
+          "id": "node/6157780525",
+          "lat": 53.348683,
+          "lon": -6.258227,
+          "street": "Abbey Street Lower"
+        },
+        {
+          "id": "node/9812652622",
+          "lat": 53.347744,
+          "lon": -6.258748,
+          "street": "Harbour Court"
+        },
+        {
+          "id": "node/5579666107",
+          "lat": 53.352066,
+          "lon": -6.260294,
+          "street": "Cathal Brugha Street"
+        },
+        {
+          "id": "node/5596965623",
+          "lat": 53.347791,
+          "lon": -6.25849,
+          "street": "Eden Quay"
+        },
+        {
+          "id": "node/12658323421",
+          "lat": 53.347546,
+          "lon": -6.259574,
+          "street": "Bachelors Walk"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 2
+      },
+      "updatedAt": "2026-10-04T10:21:19.157Z"
     }
   }
 }

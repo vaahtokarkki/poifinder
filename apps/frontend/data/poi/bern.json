@@ -1,6 +1,6 @@
 {
   "city": "bern",
-  "generatedAt": "2026-09-27T09:39:52.932Z",
+  "generatedAt": "2026-10-04T10:10:58.141Z",
   "categories": {
     "toilets": {
       "count": 176,
@@ -175,10 +175,10 @@
         }
       ],
       "stats": {
-        "free": 95,
+        "free": 96,
         "paid": 9,
-        "stepFree": 68,
-        "partlyStepFree": 6
+        "stepFree": 69,
+        "partlyStepFree": 7
       },
       "near": [
         {
@@ -200,10 +200,10 @@
           "lon": 7.44101
         }
       ],
-      "updatedAt": "2026-09-23T08:28:53.070Z"
+      "updatedAt": "2026-10-04T10:10:32.306Z"
     },
     "drinking-water": {
-      "count": 316,
+      "count": 315,
       "pois": [
         {
           "id": "node/5638521740",
@@ -271,12 +271,6 @@
           "name": "Anna-Seiler-Brunnen",
           "lat": 46.948156,
           "lon": 7.444296
-        },
-        {
-          "id": "node/11211883688",
-          "name": "Moses Fountain",
-          "lat": 46.94741,
-          "lon": 7.450566
         },
         {
           "id": "relation/8144012",
@@ -387,6 +381,12 @@
           "name": "Gerechtigkeitsbrunnen",
           "lat": 46.948281,
           "lon": 7.454065
+        },
+        {
+          "id": "relation/9210684",
+          "name": "Maybrunnen",
+          "lat": 46.94886,
+          "lon": 7.454576
         }
       ],
       "stats": {
@@ -398,7 +398,7 @@
       "near": [
         {
           "landmark": "Q246105",
-          "within": 40,
+          "within": 39,
           "distance": 6,
           "bearing": 175,
           "poi": "node/5638521740",
@@ -415,7 +415,7 @@
           "lon": 7.443441
         }
       ],
-      "updatedAt": "2026-09-23T08:28:54.865Z"
+      "updatedAt": "2026-10-04T10:10:35.305Z"
     },
     "playgrounds": {
       "count": 397,
@@ -617,7 +617,7 @@
         "stepFree": 11,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:39:30.339Z"
+      "updatedAt": "2026-10-04T10:10:36.299Z"
     },
     "parking": {
       "count": 1160,
@@ -843,12 +843,12 @@
         }
       ],
       "stats": {
-        "free": 227,
-        "paid": 194,
+        "free": 234,
+        "paid": 193,
         "stepFree": 37,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:39:31.627Z"
+      "updatedAt": "2026-10-04T10:10:37.247Z"
     },
     "charging-stations": {
       "count": 81,
@@ -971,7 +971,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:32.141Z"
+      "updatedAt": "2026-10-04T10:10:37.744Z"
     },
     "gas-stations": {
       "count": 75,
@@ -1194,7 +1194,7 @@
         "stepFree": 9,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:32.888Z"
+      "updatedAt": "2026-10-04T10:10:38.243Z"
     },
     "ice-cream": {
       "count": 23,
@@ -1210,7 +1210,9 @@
           "id": "node/11857007232",
           "name": "Baci di Berna",
           "lat": 46.947809,
-          "lon": 7.4503
+          "lon": 7.4503,
+          "address": "Kramgasse",
+          "openingHours": "Mo-Su 10:00-22:00"
         },
         {
           "id": "node/7638435071",
@@ -1325,7 +1327,7 @@
         "stepFree": 2,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:39:33.552Z"
+      "updatedAt": "2026-10-04T10:10:38.821Z"
     },
     "dog-parks": {
       "count": 2,
@@ -1336,10 +1338,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:34.062Z"
+      "updatedAt": "2026-10-04T10:10:39.260Z"
     },
     "picnic-spots": {
-      "count": 246,
+      "count": 247,
       "pois": [
         {
           "id": "node/8952105623",
@@ -1378,7 +1380,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:35.222Z"
+      "updatedAt": "2026-10-04T10:10:40.328Z"
     },
     "viewpoints": {
       "count": 43,
@@ -1436,7 +1438,7 @@
         "stepFree": 1,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:39:36.060Z"
+      "updatedAt": "2026-10-04T10:10:41.056Z"
     },
     "beaches": {
       "count": 3,
@@ -1447,20 +1449,11 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:36.662Z"
+      "updatedAt": "2026-10-04T10:10:41.555Z"
     },
     "atms": {
-      "count": 135,
+      "count": 131,
       "pois": [
-        {
-          "id": "node/3112734446",
-          "name": "UBS",
-          "lat": 46.947578,
-          "lon": 7.444746,
-          "address": "Bundesplatz 2",
-          "openingHours": "Mo-Fr 09:00-12:00,13:00-17:00",
-          "wheelchair": "yes"
-        },
         {
           "id": "node/362847971",
           "name": "Bancomat Valiant Bundeplatz",
@@ -1469,6 +1462,13 @@
           "address": "Bundesplatz 4",
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "node/313812141",
+          "name": "UBS",
+          "lat": 46.947754,
+          "lon": 7.44345,
+          "wheelchair": "yes"
         },
         {
           "id": "node/2335774614",
@@ -1585,13 +1585,13 @@
       "stats": {
         "free": 0,
         "paid": 3,
-        "stepFree": 37,
+        "stepFree": 34,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:39:37.300Z"
+      "updatedAt": "2026-10-04T10:10:42.125Z"
     },
     "post-boxes": {
-      "count": 430,
+      "count": 429,
       "pois": [
         {
           "id": "node/3234804465",
@@ -1795,10 +1795,10 @@
         "stepFree": 8,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:38.654Z"
+      "updatedAt": "2026-10-04T10:10:43.273Z"
     },
     "recycling": {
-      "count": 247,
+      "count": 252,
       "pois": [
         {
           "id": "node/11190606622",
@@ -2015,7 +2015,7 @@
         "stepFree": 13,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T09:39:40.722Z"
+      "updatedAt": "2026-10-04T10:10:45.237Z"
     },
     "luggage-storage": {
       "count": 4,
@@ -2026,7 +2026,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:41.297Z"
+      "updatedAt": "2026-10-04T10:10:45.783Z"
     },
     "libraries": {
       "count": 100,
@@ -2281,7 +2281,7 @@
         "stepFree": 19,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:41.959Z"
+      "updatedAt": "2026-10-04T10:10:46.425Z"
     },
     "outdoor-gyms": {
       "count": 113,
@@ -2353,7 +2353,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:43.020Z"
+      "updatedAt": "2026-10-04T10:10:47.502Z"
     },
     "camp-sites": {
       "count": 4,
@@ -2388,7 +2388,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:43.593Z"
+      "updatedAt": "2026-10-04T10:10:48.138Z"
     },
     "shelters": {
       "count": 6,
@@ -2412,7 +2412,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:46.292Z"
+      "updatedAt": "2026-10-04T10:10:50.023Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2430,10 +2430,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:46.799Z"
+      "updatedAt": "2026-10-04T10:10:50.769Z"
     },
     "dump-stations": {
-      "count": 1,
+      "count": 3,
       "pois": [],
       "stats": {
         "free": 1,
@@ -2441,10 +2441,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:47.241Z"
+      "updatedAt": "2026-10-04T10:10:51.229Z"
     },
     "post-offices": {
-      "count": 31,
+      "count": 30,
       "pois": [
         {
           "id": "node/670517115",
@@ -2515,7 +2515,7 @@
           "name": "Poststelle 3084 Wabern",
           "lat": 46.928764,
           "lon": 7.450893,
-          "openingHours": "Mo-Fr 08:00-12:00,14:00-18:00; Su,PH off; Sa 08:30-11:00",
+          "openingHours": "Mo-Fr 08:00-12:00,14:00-18:00; Sa 08:30-11:00",
           "wheelchair": "yes"
         },
         {
@@ -2694,10 +2694,10 @@
         "stepFree": 13,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:39:47.760Z"
+      "updatedAt": "2026-10-04T10:10:51.753Z"
     },
     "showers": {
-      "count": 48,
+      "count": 49,
       "pois": [],
       "stats": {
         "free": 10,
@@ -2705,7 +2705,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:48.239Z"
+      "updatedAt": "2026-10-04T10:10:52.148Z"
     },
     "fireplaces": {
       "count": 170,
@@ -2759,7 +2759,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:49.560Z"
+      "updatedAt": "2026-10-04T10:10:53.598Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2767,7 +2767,7 @@
       "updatedAt": "2026-08-17T04:03:47.342Z"
     },
     "benches": {
-      "count": 3103,
+      "count": 3111,
       "pois": [
         {
           "id": "node/3928988801",
@@ -2890,7 +2890,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:52.831Z"
+      "updatedAt": "2026-10-04T10:10:56.503Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3127,7 +3127,199 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:39:51.416Z"
+      "updatedAt": "2026-10-04T10:10:55.145Z"
+    },
+    "trash-bins": {
+      "count": 1436,
+      "pois": [
+        {
+          "id": "node/4034905289",
+          "name": "Robidog",
+          "lat": 46.957468,
+          "lon": 7.450592
+        },
+        {
+          "id": "node/12280837431",
+          "lat": 46.947974,
+          "lon": 7.447126,
+          "street": "Marktgasse"
+        },
+        {
+          "id": "node/11893486380",
+          "lat": 46.948301,
+          "lon": 7.447423,
+          "street": "Zytglogge"
+        },
+        {
+          "id": "node/6122316564",
+          "lat": 46.947978,
+          "lon": 7.447892,
+          "street": "Bim Zytglogge"
+        },
+        {
+          "id": "node/6122316566",
+          "lat": 46.947907,
+          "lon": 7.448356,
+          "street": "Kramgasse"
+        },
+        {
+          "id": "node/13844687929",
+          "lat": 46.948842,
+          "lon": 7.446632,
+          "street": "Zeughausgasse"
+        },
+        {
+          "id": "node/7904577884",
+          "lat": 46.94703,
+          "lon": 7.447728,
+          "street": "Casinoplatz"
+        },
+        {
+          "id": "node/5739863719",
+          "lat": 46.949313,
+          "lon": 7.44772,
+          "street": "Kornhausplatz"
+        },
+        {
+          "id": "node/2571652571",
+          "lat": 46.947152,
+          "lon": 7.449233,
+          "street": "Bibliotheksgässchen"
+        },
+        {
+          "id": "node/11019726573",
+          "lat": 46.946361,
+          "lon": 7.44603,
+          "street": "Bundesterrasse"
+        },
+        {
+          "id": "node/8743791020",
+          "lat": 46.949356,
+          "lon": 7.449765,
+          "street": "Brunngasshalde"
+        },
+        {
+          "id": "node/6126908717",
+          "lat": 46.947379,
+          "lon": 7.444448,
+          "street": "Bundesplatz"
+        },
+        {
+          "id": "node/9758338277",
+          "lat": 46.950216,
+          "lon": 7.44733,
+          "street": "Reckweg"
+        },
+        {
+          "id": "node/6974915624",
+          "lat": 46.949952,
+          "lon": 7.445545,
+          "street": "Schüttestrasse"
+        },
+        {
+          "id": "node/2570850913",
+          "lat": 46.946096,
+          "lon": 7.449685,
+          "street": "Aarstrasse"
+        },
+        {
+          "id": "node/6109422567",
+          "lat": 46.950457,
+          "lon": 7.448586,
+          "street": "Altenbergsteg"
+        },
+        {
+          "id": "node/11035478406",
+          "lat": 46.945589,
+          "lon": 7.449199,
+          "street": "Dalmaziquai"
+        },
+        {
+          "id": "node/4551320766",
+          "lat": 46.94683,
+          "lon": 7.451323,
+          "street": "Münsterplattform"
+        },
+        {
+          "id": "node/11432115098",
+          "lat": 46.948855,
+          "lon": 7.443247,
+          "street": "Neuengasse"
+        },
+        {
+          "id": "node/9758373635",
+          "lat": 46.949418,
+          "lon": 7.45134,
+          "street": "Langmauerweg"
+        },
+        {
+          "id": "node/14076011288",
+          "lat": 46.945825,
+          "lon": 7.444179,
+          "street": "Münzrain"
+        },
+        {
+          "id": "node/6943709839",
+          "lat": 46.951081,
+          "lon": 7.446573,
+          "street": "Uferweg"
+        },
+        {
+          "id": "node/11856635029",
+          "lat": 46.94847,
+          "lon": 7.452057,
+          "street": "Rathausgasse"
+        },
+        {
+          "id": "node/11559990279",
+          "lat": 46.947577,
+          "lon": 7.452405,
+          "street": "Kreuzgasse"
+        },
+        {
+          "id": "node/11428936466",
+          "lat": 46.947934,
+          "lon": 7.442291,
+          "street": "Spitalgasse"
+        },
+        {
+          "id": "node/11428936460",
+          "lat": 46.948065,
+          "lon": 7.442148,
+          "street": "Ryffligässchen"
+        },
+        {
+          "id": "node/6334108891",
+          "lat": 46.944382,
+          "lon": 7.448819,
+          "street": "Helvetiaplatz"
+        },
+        {
+          "id": "node/11035478207",
+          "lat": 46.947288,
+          "lon": 7.441779,
+          "street": "Gurtengasse"
+        },
+        {
+          "id": "node/10017898387",
+          "lat": 46.946647,
+          "lon": 7.44199,
+          "street": "Bundesgasse"
+        },
+        {
+          "id": "node/10845618706",
+          "lat": 46.948614,
+          "lon": 7.45318,
+          "street": "Postgasse"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 4,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:10:58.039Z"
     }
   }
 }

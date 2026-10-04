@@ -1,9 +1,9 @@
 {
   "city": "london",
-  "generatedAt": "2026-09-27T09:43:50.874Z",
+  "generatedAt": "2026-10-04T10:15:31.637Z",
   "categories": {
     "toilets": {
-      "count": 815,
+      "count": 816,
       "pois": [
         {
           "id": "node/339925126",
@@ -67,6 +67,7 @@
           "lat": 51.51332,
           "lon": -0.130198,
           "address": "Greek Street 28",
+          "openingHours": "Mo-Su 09:30-18:00",
           "wheelchair": "no"
         },
         {
@@ -101,15 +102,6 @@
           "lon": -0.119364,
           "wheelchair": "no",
           "context": "County Hall"
-        },
-        {
-          "id": "way/156620024",
-          "name": "Flat White",
-          "lat": 51.513611,
-          "lon": -0.13477,
-          "address": "Berwick Street 17",
-          "openingHours": "Mo-Fr 08:30-17:00; Sa 09:00-18:00; Su 09:30-17:30",
-          "wheelchair": "yes"
         },
         {
           "id": "node/5834430785",
@@ -155,13 +147,6 @@
           "lon": -0.113509,
           "openingHours": "24/7",
           "fee": "no"
-        },
-        {
-          "id": "way/272198116",
-          "name": "The Clachan",
-          "lat": 51.513527,
-          "lon": -0.140227,
-          "address": "Kingly Street 34"
         },
         {
           "id": "way/65489530",
@@ -233,12 +218,29 @@
           "wheelchair": "yes",
           "fee": "no",
           "context": "Museum Extension"
+        },
+        {
+          "id": "way/208908055",
+          "name": "Drunch",
+          "lat": 51.513974,
+          "lon": -0.147048,
+          "address": "Woodstock Street 1",
+          "wheelchair": "limited"
+        },
+        {
+          "id": "way/230342061",
+          "name": "PaStation",
+          "lat": 51.520654,
+          "lon": -0.134649,
+          "address": "Tottenham Court Road 76",
+          "openingHours": "Mo-Th 00:00-01:00, 11:00-00:00; Fr-Su 00:00-02:00, 11:00-00:00; PH open",
+          "wheelchair": "yes"
         }
       ],
       "stats": {
-        "free": 335,
-        "paid": 70,
-        "stepFree": 317,
+        "free": 336,
+        "paid": 68,
+        "stepFree": 318,
         "partlyStepFree": 34
       },
       "near": [
@@ -254,11 +256,11 @@
         {
           "landmark": "Q42182",
           "within": 3,
-          "distance": 274,
-          "bearing": 87,
+          "distance": 267,
+          "bearing": 85,
           "poi": "node/6795663398",
-          "lat": 51.501135,
-          "lon": -0.138045
+          "lat": 51.501222,
+          "lon": -0.138152
         },
         {
           "landmark": "Q5933",
@@ -289,7 +291,7 @@
         },
         {
           "landmark": "Q130206",
-          "within": 13,
+          "within": 14,
           "distance": 245,
           "bearing": 304,
           "poi": "node/1723656498",
@@ -297,10 +299,10 @@
           "lon": -0.090704
         }
       ],
-      "updatedAt": "2026-09-23T08:29:22.640Z"
+      "updatedAt": "2026-10-04T10:14:47.234Z"
     },
     "drinking-water": {
-      "count": 476,
+      "count": 486,
       "pois": [
         {
           "id": "node/5421414806",
@@ -492,9 +494,9 @@
         }
       ],
       "stats": {
-        "free": 165,
-        "paid": 2,
-        "stepFree": 65,
+        "free": 172,
+        "paid": 1,
+        "stepFree": 66,
         "partlyStepFree": 6
       },
       "near": [
@@ -510,11 +512,11 @@
         {
           "landmark": "Q42182",
           "within": 3,
-          "distance": 279,
-          "bearing": 86,
+          "distance": 268,
+          "bearing": 85,
           "poi": "node/6795663399",
-          "lat": 51.501177,
-          "lon": -0.137974
+          "lat": 51.501205,
+          "lon": -0.13814
         },
         {
           "landmark": "Q5933",
@@ -545,7 +547,7 @@
         },
         {
           "landmark": "Q130206",
-          "within": 7,
+          "within": 8,
           "distance": 175,
           "bearing": 320,
           "poi": "node/12168532322",
@@ -553,10 +555,10 @@
           "lon": -0.089418
         }
       ],
-      "updatedAt": "2026-09-23T08:29:25.621Z"
+      "updatedAt": "2026-10-04T10:14:51.291Z"
     },
     "playgrounds": {
-      "count": 2184,
+      "count": 2199,
       "pois": [
         {
           "id": "relation/7929522",
@@ -570,7 +572,7 @@
           "name": "Covent Garden Playground",
           "lat": 51.513712,
           "lon": -0.120657,
-          "wheelchair": "no"
+          "wheelchair": "yes"
         },
         {
           "id": "way/654983753",
@@ -608,6 +610,12 @@
           "name": "Wren Mews Playground",
           "lat": 51.49225,
           "lon": -0.115409
+        },
+        {
+          "id": "way/1175360787",
+          "name": "Pedlar’s Park Children’s Playground",
+          "lat": 51.490972,
+          "lon": -0.119908
         },
         {
           "id": "node/3637396650",
@@ -735,24 +743,18 @@
           "name": "Gloucester Gate Playground",
           "lat": 51.534907,
           "lon": -0.148928
-        },
-        {
-          "id": "way/95983711",
-          "name": "Hanover Gate Playground",
-          "lat": 51.529273,
-          "lon": -0.162295
         }
       ],
       "stats": {
         "free": 2,
         "paid": 0,
-        "stepFree": 36,
+        "stepFree": 37,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:43:12.798Z"
+      "updatedAt": "2026-10-04T10:14:53.006Z"
     },
     "parking": {
-      "count": 5092,
+      "count": 5116,
       "pois": [
         {
           "id": "node/4851419432",
@@ -912,15 +914,6 @@
           "fee": "yes"
         },
         {
-          "id": "way/59850731",
-          "name": "Oxford Street Car Park",
-          "lat": 51.516478,
-          "lon": -0.145042,
-          "openingHours": "24/7",
-          "wheelchair": "yes",
-          "fee": "yes"
-        },
-        {
           "id": "node/10834294543",
           "name": "Novotel car park",
           "lat": 51.494201,
@@ -957,18 +950,24 @@
           "name": "Berners Street Car Park",
           "lat": 51.523541,
           "lon": -0.123828
+        },
+        {
+          "id": "node/388111142",
+          "name": "Woburn Place Car Park",
+          "lat": 51.523771,
+          "lon": -0.126509
         }
       ],
       "stats": {
-        "free": 400,
-        "paid": 339,
-        "stepFree": 53,
+        "free": 401,
+        "paid": 338,
+        "stepFree": 52,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:43:15.165Z"
+      "updatedAt": "2026-10-04T10:14:55.439Z"
     },
     "charging-stations": {
-      "count": 872,
+      "count": 876,
       "pois": [
         {
           "id": "node/5584773894",
@@ -1181,11 +1180,11 @@
       ],
       "stats": {
         "free": 4,
-        "paid": 191,
+        "paid": 196,
         "stepFree": 2,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:43:16.225Z"
+      "updatedAt": "2026-10-04T10:14:56.342Z"
     },
     "gas-stations": {
       "count": 194,
@@ -1403,10 +1402,10 @@
         "stepFree": 15,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:43:17.776Z"
+      "updatedAt": "2026-10-04T10:14:57.381Z"
     },
     "ice-cream": {
-      "count": 171,
+      "count": 173,
       "pois": [
         {
           "id": "way/71408543",
@@ -1504,6 +1503,13 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/14157775736",
+          "name": "Sundaes Gelato",
+          "lat": 51.512251,
+          "lon": -0.133529,
+          "wheelchair": "no"
+        },
+        {
           "id": "node/9888022517",
           "name": "Bilmonte",
           "lat": 51.511643,
@@ -1563,10 +1569,10 @@
           "wheelchair": "yes"
         },
         {
-          "id": "way/157779536",
+          "id": "node/5451273853",
           "name": "Snowflake",
-          "lat": 51.513704,
-          "lon": -0.133968,
+          "lat": 51.513693,
+          "lon": -0.134002,
           "address": "Wardour Street 102",
           "wheelchair": "yes"
         },
@@ -1593,6 +1599,13 @@
           "openingHours": "Mo-Sa 11:30-23:00; Su 12:00-22:00"
         },
         {
+          "id": "node/14209868541",
+          "name": "Magda Gelato & Cafe",
+          "lat": 51.518775,
+          "lon": -0.140545,
+          "address": "Great Titchfield Street 76"
+        },
+        {
           "id": "way/664789308",
           "name": "Festok",
           "lat": 51.515889,
@@ -1612,20 +1625,6 @@
           "lat": 51.499569,
           "lon": -0.096381,
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/4056807329",
-          "name": "Snowflake Gelato",
-          "lat": 51.514606,
-          "lon": -0.161968,
-          "address": "Edgware Road 44"
-        },
-        {
-          "id": "node/5960124885",
-          "name": "Gelateria 3 Bis",
-          "lat": 51.505488,
-          "lon": -0.091551,
-          "address": "Park Street 4"
         }
       ],
       "stats": {
@@ -1634,10 +1633,10 @@
         "stepFree": 18,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T09:43:19.220Z"
+      "updatedAt": "2026-10-04T10:14:58.929Z"
     },
     "dog-parks": {
-      "count": 66,
+      "count": 67,
       "pois": [
         {
           "id": "way/1012051871",
@@ -1689,6 +1688,12 @@
           "lat": 51.56133,
           "lon": -0.154687,
           "wheelchair": "no"
+        },
+        {
+          "id": "way/415304947",
+          "name": "South Park Dog Park",
+          "lat": 51.467996,
+          "lon": -0.194587
         },
         {
           "id": "way/613145907",
@@ -1761,10 +1766,10 @@
         "stepFree": 10,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T09:43:20.261Z"
+      "updatedAt": "2026-10-04T10:14:59.758Z"
     },
     "picnic-spots": {
-      "count": 1170,
+      "count": 1240,
       "pois": [
         {
           "id": "way/41690524",
@@ -1803,7 +1808,7 @@
         "stepFree": 11,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:43:22.662Z"
+      "updatedAt": "2026-10-04T10:15:01.516Z"
     },
     "viewpoints": {
       "count": 106,
@@ -1887,7 +1892,8 @@
           "id": "node/1672235731",
           "name": "Parliament Hill",
           "lat": 51.55962,
-          "lon": -0.159772
+          "lon": -0.159772,
+          "wheelchair": "yes"
         },
         {
           "id": "way/38083615",
@@ -2001,10 +2007,10 @@
       "stats": {
         "free": 4,
         "paid": 1,
-        "stepFree": 9,
+        "stepFree": 10,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:43:24.187Z"
+      "updatedAt": "2026-10-04T10:15:02.724Z"
     },
     "beaches": {
       "count": 80,
@@ -2089,10 +2095,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:43:25.323Z"
+      "updatedAt": "2026-10-04T10:15:03.777Z"
     },
     "atms": {
-      "count": 1355,
+      "count": 1350,
       "pois": [
         {
           "id": "node/1557467257",
@@ -2181,13 +2187,6 @@
           "address": "Strand 125-130",
           "openingHours": "Mo-Su 07:00-23:00",
           "wheelchair": "limited"
-        },
-        {
-          "id": "way/807588036",
-          "name": "Global Exchange Currency Exchange",
-          "lat": 51.515241,
-          "lon": -0.141361,
-          "wheelchair": "yes"
         },
         {
           "id": "node/623428328",
@@ -2320,18 +2319,24 @@
           "address": "White Kennett Street 11",
           "openingHours": "Mo-Fr 09:00-18:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/13144191522",
+          "name": "Wyndham Road Post Office",
+          "lat": 51.477788,
+          "lon": -0.101073
         }
       ],
       "stats": {
-        "free": 220,
+        "free": 221,
         "paid": 41,
-        "stepFree": 191,
-        "partlyStepFree": 21
+        "stepFree": 188,
+        "partlyStepFree": 22
       },
-      "updatedAt": "2026-09-27T09:43:26.873Z"
+      "updatedAt": "2026-10-04T10:15:05.322Z"
     },
     "post-boxes": {
-      "count": 4060,
+      "count": 4069,
       "pois": [
         {
           "id": "node/4402475492",
@@ -2521,10 +2526,10 @@
         "stepFree": 45,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:43:28.634Z"
+      "updatedAt": "2026-10-04T10:15:07.173Z"
     },
     "recycling": {
-      "count": 1042,
+      "count": 1039,
       "pois": [
         {
           "id": "node/4328124860",
@@ -2728,7 +2733,7 @@
         "stepFree": 6,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:43:31.741Z"
+      "updatedAt": "2026-10-04T10:15:10.241Z"
     },
     "luggage-storage": {
       "count": 11,
@@ -2769,10 +2774,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:43:32.440Z"
+      "updatedAt": "2026-10-04T10:15:11.247Z"
     },
     "libraries": {
-      "count": 291,
+      "count": 292,
       "pois": [
         {
           "id": "node/639178748",
@@ -2992,12 +2997,12 @@
         "free": 0,
         "paid": 0,
         "stepFree": 43,
-        "partlyStepFree": 3
+        "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:43:33.894Z"
+      "updatedAt": "2026-10-04T10:15:12.603Z"
     },
     "outdoor-gyms": {
-      "count": 355,
+      "count": 359,
       "pois": [
         {
           "id": "way/323167848",
@@ -3012,10 +3017,28 @@
           "lon": -0.151587
         },
         {
+          "id": "node/14168880324",
+          "name": "Primrose Hill Acro Jam",
+          "lat": 51.539002,
+          "lon": -0.158348
+        },
+        {
           "id": "node/8878500298",
           "name": "De Beauvoir Estate gym trail",
           "lat": 51.538923,
           "lon": -0.084504
+        },
+        {
+          "id": "node/14168861246",
+          "name": "Clapham Common Acro Yoga Jam",
+          "lat": 51.461878,
+          "lon": -0.145193
+        },
+        {
+          "id": "way/1276214823",
+          "name": "Steel Warriors Ruskin Park Outdoor Gym",
+          "lat": 51.465252,
+          "lon": -0.09478
         },
         {
           "id": "node/9481745359",
@@ -3072,6 +3095,13 @@
           "lon": -0.032972
         },
         {
+          "id": "way/771007189",
+          "name": "Steel Warriors Finsbury Park Outdoor Gym",
+          "lat": 51.57381,
+          "lon": -0.103138,
+          "wheelchair": "limited"
+        },
+        {
           "id": "node/5173154022",
           "name": "Pull Up Bar",
           "lat": 51.540111,
@@ -3088,6 +3118,12 @@
           "name": "Gymnastic rings",
           "lat": 51.540093,
           "lon": -0.030646
+        },
+        {
+          "id": "way/694462805",
+          "name": "Steel Warriors Langdon Park Outdoor Gym",
+          "lat": 51.515867,
+          "lon": -0.013583
         },
         {
           "id": "way/1420401222",
@@ -3132,6 +3168,12 @@
           "lon": -0.015329
         },
         {
+          "id": "way/1355256734",
+          "name": "Steel Warriors Stratford Outdoor Gym",
+          "lat": 51.539218,
+          "lon": -0.004566
+        },
+        {
           "id": "way/190522078",
           "name": "The Sandlings Fitness Area",
           "lat": 51.592362,
@@ -3142,24 +3184,6 @@
           "name": "Palewell Common Outdoor Gym",
           "lat": 51.45908,
           "lon": -0.259132
-        },
-        {
-          "id": "way/1322873189",
-          "name": "Green Gym",
-          "lat": 51.411999,
-          "lon": -0.147452
-        },
-        {
-          "id": "node/7772136156",
-          "name": "Outdoor Trampolin",
-          "lat": 51.502384,
-          "lon": 0.037637
-        },
-        {
-          "id": "way/1042461119",
-          "name": "Northumberland Park Fitness Area",
-          "lat": 51.602995,
-          "lon": -0.059722
         }
       ],
       "stats": {
@@ -3168,7 +3192,7 @@
         "stepFree": 7,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:43:35.963Z"
+      "updatedAt": "2026-10-04T10:15:14.703Z"
     },
     "camp-sites": {
       "count": 9,
@@ -3241,7 +3265,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:43:36.881Z"
+      "updatedAt": "2026-10-04T10:15:15.643Z"
     },
     "shelters": {
       "count": 23,
@@ -3277,7 +3301,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:43:39.521Z"
+      "updatedAt": "2026-10-04T10:15:17.962Z"
     },
     "rest-areas": {
       "count": 4,
@@ -3295,7 +3319,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:43:40.535Z"
+      "updatedAt": "2026-10-04T10:15:18.877Z"
     },
     "dump-stations": {
       "count": 7,
@@ -3344,10 +3368,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:43:41.268Z"
+      "updatedAt": "2026-10-04T10:15:19.627Z"
     },
     "post-offices": {
-      "count": 337,
+      "count": 339,
       "pois": [
         {
           "id": "way/99952351",
@@ -3432,10 +3456,10 @@
           "openingHours": "Mo-Fr 09:00-18:00; Sa 09:30-17:00"
         },
         {
-          "id": "way/40836845",
+          "id": "node/14178896107",
           "name": "Great Portland Street Post Office",
-          "lat": 51.517527,
-          "lon": -0.141315,
+          "lat": 51.517543,
+          "lon": -0.141373,
           "address": "Great Portland Street 54-56",
           "wheelchair": "limited"
         },
@@ -3581,10 +3605,10 @@
           "lon": -0.12025
         },
         {
-          "id": "way/90404402",
+          "id": "node/14181043759",
           "name": "London Bridge Post Office",
-          "lat": 51.505223,
-          "lon": -0.088764,
+          "lat": 51.505285,
+          "lon": -0.088968,
           "address": "Borough High Street",
           "wheelchair": "yes"
         }
@@ -3592,13 +3616,13 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 32,
+        "stepFree": 33,
         "partlyStepFree": 13
       },
-      "updatedAt": "2026-09-27T09:43:42.285Z"
+      "updatedAt": "2026-10-04T10:15:20.469Z"
     },
     "showers": {
-      "count": 14,
+      "count": 15,
       "pois": [],
       "stats": {
         "free": 8,
@@ -3606,7 +3630,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:43:42.932Z"
+      "updatedAt": "2026-10-04T10:15:21.116Z"
     },
     "fireplaces": {
       "count": 4,
@@ -3617,7 +3641,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:43:44.553Z"
+      "updatedAt": "2026-10-04T10:15:23.057Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3625,7 +3649,7 @@
       "updatedAt": "2026-08-17T04:04:07.663Z"
     },
     "benches": {
-      "count": 14962,
+      "count": 15117,
       "pois": [
         {
           "id": "node/538090930",
@@ -3815,7 +3839,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:43:50.772Z"
+      "updatedAt": "2026-10-04T10:15:28.703Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3921,12 +3945,6 @@
           "id": "node/6562794995",
           "lat": 51.525304,
           "lon": -0.088815,
-          "street": "Mallow Street"
-        },
-        {
-          "id": "node/13037368486",
-          "lat": 51.525503,
-          "lon": -0.087675,
           "street": "Old Street"
         },
         {
@@ -4022,6 +4040,13 @@
           "lon": -0.075671,
           "fee": "yes",
           "street": "Grove Vale"
+        },
+        {
+          "id": "node/9237820437",
+          "lat": 51.55953,
+          "lon": -0.085424,
+          "fee": "no",
+          "street": "Clissold Road"
         }
       ],
       "stats": {
@@ -4030,7 +4055,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:43:48.526Z"
+      "updatedAt": "2026-10-04T10:15:26.332Z"
+    },
+    "trash-bins": {
+      "count": 6585,
+      "pois": [
+        {
+          "id": "node/12731459568",
+          "name": "General waste",
+          "lat": 51.475068,
+          "lon": -0.105242
+        },
+        {
+          "id": "node/6633187882",
+          "name": "Little Venice Rubbish Disposal",
+          "lat": 51.521382,
+          "lon": -0.184558
+        },
+        {
+          "id": "node/1118877104",
+          "name": "Globe Town Community Recycling Centre",
+          "lat": 51.523465,
+          "lon": -0.047766
+        },
+        {
+          "id": "node/203729672",
+          "name": "Limehouse Basin Rubbish Disposal",
+          "lat": 51.509823,
+          "lon": -0.03668
+        },
+        {
+          "id": "node/6638667052",
+          "name": "Victoria Park Old Ford Lock Rubbish Disposal",
+          "lat": 51.53261,
+          "lon": -0.045587
+        },
+        {
+          "id": "node/6752990472",
+          "name": "Old Ford Lock Rubbish Disposal",
+          "lat": 51.538081,
+          "lon": -0.021132
+        },
+        {
+          "id": "node/8590121347",
+          "name": "Dog Waste Bin",
+          "lat": 51.479477,
+          "lon": -0.251596
+        },
+        {
+          "id": "node/8590096221",
+          "name": "General Waste Bin",
+          "lat": 51.479464,
+          "lon": -0.251809
+        },
+        {
+          "id": "node/3146283022",
+          "name": "Stonebridge Rubbish Disposal",
+          "lat": 51.597792,
+          "lon": -0.050051
+        },
+        {
+          "id": "node/3287732461",
+          "lat": 51.507356,
+          "lon": -0.128497,
+          "street": "Trafalgar Square"
+        },
+        {
+          "id": "node/3287721662",
+          "lat": 51.507454,
+          "lon": -0.129221,
+          "street": "Cockspur Street"
+        },
+        {
+          "id": "node/7165063053",
+          "lat": 51.508058,
+          "lon": -0.126652,
+          "street": "Strand"
+        },
+        {
+          "id": "node/13904968355",
+          "lat": 51.507039,
+          "lon": -0.125066,
+          "street": "Northumberland Avenue"
+        },
+        {
+          "id": "node/3287727762",
+          "lat": 51.507893,
+          "lon": -0.131391,
+          "street": "Haymarket"
+        },
+        {
+          "id": "node/10621539397",
+          "lat": 51.510051,
+          "lon": -0.130385,
+          "street": "Leicester Square"
+        },
+        {
+          "id": "node/8999736717",
+          "lat": 51.507958,
+          "lon": -0.133097,
+          "street": "Waterloo Place"
+        },
+        {
+          "id": "node/4153627592",
+          "lat": 51.507344,
+          "lon": -0.134648,
+          "street": "St James's Square"
+        },
+        {
+          "id": "node/4415640802",
+          "lat": 51.511271,
+          "lon": -0.12428,
+          "street": "Inigo Place"
+        },
+        {
+          "id": "node/3287723461",
+          "lat": 51.509736,
+          "lon": -0.13462,
+          "street": "Regent Street St James's"
+        },
+        {
+          "id": "node/12797775578",
+          "lat": 51.512797,
+          "lon": -0.127119,
+          "street": "Upper St Martin's Lane"
+        },
+        {
+          "id": "node/3287720761",
+          "lat": 51.510013,
+          "lon": -0.135751,
+          "street": "Regent Street"
+        },
+        {
+          "id": "node/4190435885",
+          "lat": 51.509217,
+          "lon": -0.136546,
+          "street": "Piccadilly"
+        },
+        {
+          "id": "node/5012281291",
+          "lat": 51.512196,
+          "lon": -0.122644,
+          "street": "Covent Garden"
+        },
+        {
+          "id": "node/12797751549",
+          "lat": 51.513655,
+          "lon": -0.127002,
+          "street": "Monmouth Street"
+        },
+        {
+          "id": "node/12797751548",
+          "lat": 51.513699,
+          "lon": -0.127099,
+          "street": "Seven Dials"
+        },
+        {
+          "id": "node/12797751551",
+          "lat": 51.513768,
+          "lon": -0.127158,
+          "street": "Earlham Street"
+        },
+        {
+          "id": "node/12998846980",
+          "lat": 51.504378,
+          "lon": -0.118683,
+          "street": "The Queen's Walk"
+        },
+        {
+          "id": "node/12797751550",
+          "lat": 51.513808,
+          "lon": -0.126847,
+          "street": "Shorts Gardens"
+        },
+        {
+          "id": "node/4170525436",
+          "lat": 51.507729,
+          "lon": -0.138885,
+          "street": "Jermyn Street"
+        },
+        {
+          "id": "node/13009749976",
+          "lat": 51.511589,
+          "lon": -0.136997,
+          "street": "Golden Square"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 11,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:15:31.535Z"
     }
   }
 }

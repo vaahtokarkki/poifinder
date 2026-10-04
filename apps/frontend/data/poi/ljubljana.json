@@ -1,24 +1,24 @@
 {
   "city": "ljubljana",
-  "generatedAt": "2026-09-27T09:32:27.287Z",
+  "generatedAt": "2026-10-04T10:02:25.972Z",
   "categories": {
     "toilets": {
-      "count": 53,
+      "count": 56,
       "pois": [
-        {
-          "id": "node/5164661263",
-          "lat": 46.058185,
-          "lon": 14.509867,
-          "openingHours": "05:00-22:00",
-          "fee": "no",
-          "context": "Železniška postaja"
-        },
         {
           "id": "node/13173200136",
           "lat": 46.05083,
           "lon": 14.507244,
           "wheelchair": "designated",
+          "fee": "no",
           "context": "Kresija"
+        },
+        {
+          "id": "node/14180561120",
+          "lat": 46.050237,
+          "lon": 14.509773,
+          "fee": "yes",
+          "context": "Spodnja postaja vzpenjače"
         },
         {
           "id": "node/13173428601",
@@ -60,6 +60,12 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/14197338745",
+          "lat": 46.065492,
+          "lon": 14.543035,
+          "context": "Dvorana A"
+        },
+        {
           "id": "node/10790923592",
           "lat": 46.069203,
           "lon": 14.542599,
@@ -96,7 +102,7 @@
       "near": [
         {
           "landmark": "Q2075156",
-          "within": 13,
+          "within": 14,
           "distance": 41,
           "bearing": 285,
           "poi": "node/10996533193",
@@ -105,7 +111,7 @@
         },
         {
           "landmark": "Q660029",
-          "within": 8,
+          "within": 9,
           "distance": 17,
           "bearing": 177,
           "poi": "way/1036392129",
@@ -114,7 +120,7 @@
         },
         {
           "landmark": "Q676315",
-          "within": 13,
+          "within": 14,
           "distance": 22,
           "bearing": 275,
           "poi": "node/59228584",
@@ -140,7 +146,7 @@
           "lon": 14.471692
         }
       ],
-      "updatedAt": "2026-09-23T08:27:57.233Z"
+      "updatedAt": "2026-10-04T10:02:00.818Z"
     },
     "drinking-water": {
       "count": 115,
@@ -428,10 +434,10 @@
           "lon": 14.471994
         }
       ],
-      "updatedAt": "2026-09-23T08:27:58.771Z"
+      "updatedAt": "2026-10-04T10:02:02.900Z"
     },
     "playgrounds": {
-      "count": 274,
+      "count": 278,
       "pois": [
         {
           "id": "relation/14867153",
@@ -525,10 +531,10 @@
         "stepFree": 4,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:32:06.181Z"
+      "updatedAt": "2026-10-04T10:02:04.004Z"
     },
     "parking": {
-      "count": 2644,
+      "count": 2660,
       "pois": [
         {
           "id": "way/186547118",
@@ -755,15 +761,15 @@
         }
       ],
       "stats": {
-        "free": 505,
-        "paid": 195,
+        "free": 510,
+        "paid": 193,
         "stepFree": 27,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:32:07.741Z"
+      "updatedAt": "2026-10-04T10:02:05.174Z"
     },
     "charging-stations": {
-      "count": 82,
+      "count": 83,
       "pois": [
         {
           "id": "node/6132278944",
@@ -814,6 +820,13 @@
           "fee": "yes"
         },
         {
+          "id": "node/14163047446",
+          "name": "Petrol Barje Jug",
+          "lat": 46.028728,
+          "lon": 14.478999,
+          "fee": "yes"
+        },
+        {
           "id": "node/4439637036",
           "name": "Mercator Šiška",
           "lat": 46.087626,
@@ -832,14 +845,14 @@
       ],
       "stats": {
         "free": 6,
-        "paid": 15,
+        "paid": 16,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:08.305Z"
+      "updatedAt": "2026-10-04T10:02:05.754Z"
     },
     "gas-stations": {
-      "count": 48,
+      "count": 47,
       "pois": [
         {
           "id": "way/192056147",
@@ -1054,10 +1067,10 @@
           "openingHours": "Mo-Su 06:00-22:00"
         },
         {
-          "id": "node/11922096062",
+          "id": "way/1149364710",
           "name": "SiLNG",
-          "lat": 46.063277,
-          "lon": 14.567161
+          "lat": 46.063284,
+          "lon": 14.5672
         },
         {
           "id": "way/90112183",
@@ -1083,7 +1096,7 @@
         "stepFree": 11,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:08.959Z"
+      "updatedAt": "2026-10-04T10:02:06.324Z"
     },
     "ice-cream": {
       "count": 20,
@@ -1212,7 +1225,7 @@
         "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:09.539Z"
+      "updatedAt": "2026-10-04T10:02:06.828Z"
     },
     "dog-parks": {
       "count": 8,
@@ -1237,7 +1250,7 @@
         "stepFree": 3,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:32:10.011Z"
+      "updatedAt": "2026-10-04T10:02:07.218Z"
     },
     "picnic-spots": {
       "count": 221,
@@ -1287,7 +1300,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:11.386Z"
+      "updatedAt": "2026-10-04T10:02:08.297Z"
     },
     "viewpoints": {
       "count": 19,
@@ -1312,7 +1325,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:12.035Z"
+      "updatedAt": "2026-10-04T10:02:08.948Z"
     },
     "beaches": {
       "count": 10,
@@ -1338,7 +1351,7 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:32:12.618Z"
+      "updatedAt": "2026-10-04T10:02:09.518Z"
     },
     "atms": {
       "count": 154,
@@ -1380,7 +1393,7 @@
         },
         {
           "id": "node/12895043741",
-          "name": "Delavska Hranilnica",
+          "name": "Delavska hranilnica",
           "lat": 46.053869,
           "lon": 14.506272,
           "openingHours": "Mo-Tu 08:00-12:00,13:00-16:00; We 08:00-12:00,13:00-16:30; Th 08:00-12:00,13:00-16:00; Fr 08:00-12:00,13:00-15:30; Sa-Su off",
@@ -1539,7 +1552,7 @@
         "stepFree": 19,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:13.202Z"
+      "updatedAt": "2026-10-04T10:02:10.085Z"
     },
     "post-boxes": {
       "count": 80,
@@ -1561,12 +1574,6 @@
           "lat": 46.053172,
           "lon": 14.506604,
           "street": "Miklošičeva cesta"
-        },
-        {
-          "id": "node/4504187390",
-          "lat": 46.058043,
-          "lon": 14.511373,
-          "street": "Trg Osvobodilne fronte"
         },
         {
           "id": "node/12880255990",
@@ -1600,8 +1607,8 @@
         },
         {
           "id": "node/4083416935",
-          "lat": 46.054066,
-          "lon": 14.514577,
+          "lat": 46.054067,
+          "lon": 14.514565,
           "street": "Tabor"
         },
         {
@@ -1714,8 +1721,8 @@
         },
         {
           "id": "node/7151590885",
-          "lat": 46.06593,
-          "lon": 14.492397,
+          "lat": 46.066025,
+          "lon": 14.492261,
           "street": "Na jami"
         },
         {
@@ -1723,6 +1730,12 @@
           "lat": 46.067838,
           "lon": 14.49532,
           "street": "Černetova ulica"
+        },
+        {
+          "id": "node/2974514322",
+          "lat": 46.043106,
+          "lon": 14.505829,
+          "street": "Trnovski pristan"
         }
       ],
       "stats": {
@@ -1731,7 +1744,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:14.580Z"
+      "updatedAt": "2026-10-04T10:02:11.419Z"
     },
     "recycling": {
       "count": 344,
@@ -1838,21 +1851,21 @@
         "stepFree": 43,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:16.389Z"
+      "updatedAt": "2026-10-04T10:02:13.026Z"
     },
     "luggage-storage": {
-      "count": 1,
+      "count": 0,
       "pois": [],
       "stats": {
         "free": 0,
-        "paid": 1,
+        "paid": 0,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:16.891Z"
+      "updatedAt": "2026-10-04T10:02:13.517Z"
     },
     "libraries": {
-      "count": 31,
+      "count": 32,
       "pois": [
         {
           "id": "way/140118468",
@@ -1862,12 +1875,6 @@
           "address": "Kersnikova ulica 2",
           "openingHours": "Mo,We-Fr 08:00-20:00; Tu 10:00-20:00; Sa 08:00-13:00",
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/10868027812",
-          "name": "Little Free Library",
-          "lat": 46.049985,
-          "lon": 14.503582
         },
         {
           "id": "node/1078282872",
@@ -2087,10 +2094,10 @@
         "stepFree": 16,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:17.471Z"
+      "updatedAt": "2026-10-04T10:02:13.963Z"
     },
     "outdoor-gyms": {
-      "count": 115,
+      "count": 116,
       "pois": [
         {
           "id": "node/8519289361",
@@ -2124,7 +2131,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:18.522Z"
+      "updatedAt": "2026-10-04T10:02:14.936Z"
     },
     "camp-sites": {
       "count": 6,
@@ -2175,7 +2182,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:19.099Z"
+      "updatedAt": "2026-10-04T10:02:15.420Z"
     },
     "shelters": {
       "count": 5,
@@ -2194,7 +2201,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:21.059Z"
+      "updatedAt": "2026-10-04T10:02:17.008Z"
     },
     "rest-areas": {
       "count": 4,
@@ -2212,7 +2219,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:21.619Z"
+      "updatedAt": "2026-10-04T10:02:17.577Z"
     },
     "dump-stations": {
       "count": 3,
@@ -2231,7 +2238,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:22.059Z"
+      "updatedAt": "2026-10-04T10:02:17.966Z"
     },
     "post-offices": {
       "count": 33,
@@ -2303,7 +2310,7 @@
           "lat": 46.064062,
           "lon": 14.494117,
           "address": "Celovška cesta 73",
-          "openingHours": "Mo,Tu,Th,Fr 09:00-17:00, We 09:00-18:00",
+          "openingHours": "Mo,Tu,Th,Fr 08:00-11:00, We 12:00-14:00, Mo,Tu,Th,Fr 12:00-15:00, We 15:00-18:00; Sa,Su,PH off",
           "wheelchair": "yes"
         },
         {
@@ -2317,8 +2324,8 @@
         {
           "id": "node/10686073295",
           "name": "Pogodbeno prevzemno mesto Pošte Slovenije",
-          "lat": 46.063442,
-          "lon": 14.524635,
+          "lat": 46.063421,
+          "lon": 14.524638,
           "address": "Savska cesta 3a",
           "openingHours": "Mo-Fr 09:00-18:00",
           "wheelchair": "yes"
@@ -2489,7 +2496,7 @@
         "stepFree": 8,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:32:22.639Z"
+      "updatedAt": "2026-10-04T10:02:18.404Z"
     },
     "showers": {
       "count": 3,
@@ -2500,7 +2507,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:23.063Z"
+      "updatedAt": "2026-10-04T10:02:18.758Z"
     },
     "fireplaces": {
       "count": 4,
@@ -2518,7 +2525,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:24.289Z"
+      "updatedAt": "2026-10-04T10:02:20.003Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2526,7 +2533,7 @@
       "updatedAt": "2026-08-17T04:03:08.727Z"
     },
     "benches": {
-      "count": 2939,
+      "count": 2958,
       "pois": [
         {
           "id": "node/9306958352",
@@ -2679,7 +2686,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:27.186Z"
+      "updatedAt": "2026-10-04T10:02:23.768Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2687,7 +2694,7 @@
       "updatedAt": "2026-08-18T03:58:07.826Z"
     },
     "bicycle-repair": {
-      "count": 11,
+      "count": 12,
       "pois": [
         {
           "id": "way/250815058",
@@ -2734,7 +2741,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:32:25.908Z"
+      "updatedAt": "2026-10-04T10:02:21.761Z"
+    },
+    "trash-bins": {
+      "count": 654,
+      "pois": [
+        {
+          "id": "node/12098237496",
+          "name": "Waste basket",
+          "lat": 46.074467,
+          "lon": 14.485365
+        },
+        {
+          "id": "node/10245466414",
+          "lat": 46.056888,
+          "lon": 14.505358,
+          "street": "Dvořakova ulica"
+        },
+        {
+          "id": "node/13089520629",
+          "lat": 46.056451,
+          "lon": 14.50527,
+          "street": "Slovenska cesta"
+        },
+        {
+          "id": "node/10245466613",
+          "lat": 46.056006,
+          "lon": 14.504971,
+          "street": "Trg Franceta Štiglica"
+        },
+        {
+          "id": "node/10245466475",
+          "lat": 46.055831,
+          "lon": 14.503929,
+          "street": "Kersnikova ulica"
+        },
+        {
+          "id": "node/9701655044",
+          "lat": 46.056286,
+          "lon": 14.508099,
+          "street": "Miklošičeva cesta"
+        },
+        {
+          "id": "node/10706996127",
+          "lat": 46.058886,
+          "lon": 14.506237,
+          "street": "Dunajska cesta"
+        },
+        {
+          "id": "node/9701655035",
+          "lat": 46.055337,
+          "lon": 14.507706,
+          "street": "Čufarjeva ulica"
+        },
+        {
+          "id": "node/10767313850",
+          "lat": 46.054766,
+          "lon": 14.506642,
+          "street": "Tavčarjeva ulica"
+        },
+        {
+          "id": "node/9307249112",
+          "lat": 46.056106,
+          "lon": 14.502122,
+          "street": "Gosposvetska"
+        },
+        {
+          "id": "node/8692892236",
+          "lat": 46.054214,
+          "lon": 14.506612,
+          "street": "Dalmatinova ulica"
+        },
+        {
+          "id": "node/9552001166",
+          "lat": 46.053979,
+          "lon": 14.505808,
+          "street": "Nazorjeva ulica"
+        },
+        {
+          "id": "node/10285026013",
+          "lat": 46.054898,
+          "lon": 14.502446,
+          "street": "Park slovenske reformacije"
+        },
+        {
+          "id": "node/10285026014",
+          "lat": 46.054764,
+          "lon": 14.502309,
+          "street": "Župančičeva ulica"
+        },
+        {
+          "id": "node/11089410844",
+          "lat": 46.055916,
+          "lon": 14.510264,
+          "street": "Slomškova ulica"
+        },
+        {
+          "id": "node/9688630354",
+          "lat": 46.055258,
+          "lon": 14.510788,
+          "street": "Resljeva cesta"
+        },
+        {
+          "id": "node/10310602671",
+          "lat": 46.057473,
+          "lon": 14.499897,
+          "street": "Celovška cesta"
+        },
+        {
+          "id": "node/9503335060",
+          "lat": 46.053624,
+          "lon": 14.509802,
+          "street": "Komenskega ulica"
+        },
+        {
+          "id": "node/14058484545",
+          "lat": 46.052542,
+          "lon": 14.503337,
+          "street": "Cankarjeva cesta"
+        },
+        {
+          "id": "node/12097366558",
+          "lat": 46.052299,
+          "lon": 14.50739,
+          "street": "Mali trg"
+        },
+        {
+          "id": "node/10884366161",
+          "lat": 46.052807,
+          "lon": 14.502376,
+          "street": "Beethovnova ulica"
+        },
+        {
+          "id": "node/10706475701",
+          "lat": 46.051874,
+          "lon": 14.50705,
+          "street": "Trubarjeva cesta"
+        },
+        {
+          "id": "node/7006025024",
+          "lat": 46.056318,
+          "lon": 14.498263,
+          "street": "Lattermannov drevored"
+        },
+        {
+          "id": "node/9512323559",
+          "lat": 46.051636,
+          "lon": 14.505944,
+          "street": "Prešernov trg"
+        },
+        {
+          "id": "node/10735968706",
+          "lat": 46.058289,
+          "lon": 14.498442,
+          "street": "Jakopičev drevored"
+        },
+        {
+          "id": "node/10706469657",
+          "lat": 46.051802,
+          "lon": 14.507948,
+          "street": "Za Čreslom"
+        },
+        {
+          "id": "node/9525560435",
+          "lat": 46.051829,
+          "lon": 14.50844,
+          "street": "Petkovškovo nabrežje"
+        },
+        {
+          "id": "node/9561485365",
+          "lat": 46.055172,
+          "lon": 14.513291,
+          "street": "Kotnikova ulica"
+        },
+        {
+          "id": "node/9548215627",
+          "lat": 46.051512,
+          "lon": 14.504091,
+          "street": "Knafljev prehod"
+        },
+        {
+          "id": "node/10553230863",
+          "lat": 46.051906,
+          "lon": 14.50235,
+          "street": "Tomšičeva ulica"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 2,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:02:25.871Z"
     }
   }
 }

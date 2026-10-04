@@ -1,9 +1,9 @@
 {
   "city": "naples",
-  "generatedAt": "2026-09-27T09:58:04.667Z",
+  "generatedAt": "2026-10-04T10:32:46.189Z",
   "categories": {
     "toilets": {
-      "count": 61,
+      "count": 62,
       "pois": [
         {
           "id": "node/9392812451",
@@ -24,6 +24,7 @@
           "lat": 40.850491,
           "lon": 14.255045,
           "openingHours": "24/7",
+          "wheelchair": "no",
           "fee": "yes"
         },
         {
@@ -162,8 +163,8 @@
         }
       ],
       "stats": {
-        "free": 22,
-        "paid": 10,
+        "free": 23,
+        "paid": 12,
         "stepFree": 12,
         "partlyStepFree": 3
       },
@@ -206,7 +207,7 @@
         },
         {
           "landmark": "Q426339",
-          "within": 2,
+          "within": 3,
           "distance": 134,
           "bearing": 354,
           "poi": "node/5256314779",
@@ -223,10 +224,10 @@
           "lon": 14.24809
         }
       ],
-      "updatedAt": "2026-09-23T08:31:13.640Z"
+      "updatedAt": "2026-10-04T10:32:24.967Z"
     },
     "drinking-water": {
-      "count": 168,
+      "count": 169,
       "pois": [
         {
           "id": "node/14048831601",
@@ -283,12 +284,6 @@
           "lat": 40.860314,
           "lon": 14.270681,
           "street": "Piazza Luigi Poderico"
-        },
-        {
-          "id": "node/9164520515",
-          "lat": 40.850648,
-          "lon": 14.25494,
-          "street": "Largo Proprio D'Arianiello"
         },
         {
           "id": "node/5862318935",
@@ -412,6 +407,12 @@
           "lat": 40.869367,
           "lon": 14.24852,
           "street": "Via Francesco Curia"
+        },
+        {
+          "id": "node/9164836898",
+          "lat": 40.855223,
+          "lon": 14.237031,
+          "street": "Piazza Enrico De Leva"
         }
       ],
       "stats": {
@@ -423,7 +424,7 @@
       "near": [
         {
           "landmark": "Q637248",
-          "within": 7,
+          "within": 6,
           "distance": 75,
           "bearing": 101,
           "poi": "node/13192514754",
@@ -450,7 +451,7 @@
         },
         {
           "landmark": "Q256486",
-          "within": 4,
+          "within": 3,
           "distance": 169,
           "bearing": 257,
           "poi": "node/9164710269",
@@ -476,7 +477,7 @@
           "lon": 14.247575
         }
       ],
-      "updatedAt": "2026-09-23T08:31:15.066Z"
+      "updatedAt": "2026-10-04T10:32:26.733Z"
     },
     "playgrounds": {
       "count": 75,
@@ -507,10 +508,10 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:57:46.239Z"
+      "updatedAt": "2026-10-04T10:32:27.680Z"
     },
     "parking": {
-      "count": 738,
+      "count": 737,
       "pois": [
         {
           "id": "node/6657407522",
@@ -712,27 +713,26 @@
           "lon": 14.28479
         },
         {
-          "id": "way/243494280",
-          "name": "\"Spalti\"",
-          "lat": 40.837624,
-          "lon": 14.25261,
-          "fee": "yes"
-        },
-        {
           "id": "node/9177873891",
           "name": "Parcheggio del Parco",
           "lat": 40.866696,
           "lon": 14.253604,
           "fee": "yes"
+        },
+        {
+          "id": "node/9581562883",
+          "name": "Parcheggio Torre 1-5",
+          "lat": 40.865838,
+          "lon": 14.285045
         }
       ],
       "stats": {
-        "free": 120,
+        "free": 121,
         "paid": 73,
         "stepFree": 9,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:47.267Z"
+      "updatedAt": "2026-10-04T10:32:28.760Z"
     },
     "charging-stations": {
       "count": 25,
@@ -758,7 +758,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:47.719Z"
+      "updatedAt": "2026-10-04T10:32:29.196Z"
     },
     "gas-stations": {
       "count": 270,
@@ -873,10 +873,22 @@
           "lon": 14.294793
         },
         {
+          "id": "node/12365240794",
+          "name": "VE Carburanti",
+          "lat": 40.84969,
+          "lon": 14.236661
+        },
+        {
           "id": "way/636088417",
           "name": "Esso Doganella",
           "lat": 40.872261,
           "lon": 14.284914
+        },
+        {
+          "id": "node/5853343368",
+          "name": "Tiber Carburanti",
+          "lat": 40.849834,
+          "lon": 14.236084
         },
         {
           "id": "node/1979805358",
@@ -935,18 +947,6 @@
           "lat": 40.882231,
           "lon": 14.21721,
           "address": "Via Nuova Toscanella"
-        },
-        {
-          "id": "node/227973805",
-          "name": "Metano",
-          "lat": 40.884248,
-          "lon": 14.216961
-        },
-        {
-          "id": "relation/8804638",
-          "name": "Eco",
-          "lat": 40.902128,
-          "lon": 14.261464
         }
       ],
       "stats": {
@@ -955,10 +955,10 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:48.303Z"
+      "updatedAt": "2026-10-04T10:32:29.877Z"
     },
     "ice-cream": {
-      "count": 46,
+      "count": 47,
       "pois": [
         {
           "id": "node/4813603246",
@@ -1088,6 +1088,13 @@
           "openingHours": "Mo-Su 10:30-21:00"
         },
         {
+          "id": "node/5257721036",
+          "name": "Grom",
+          "lat": 40.838796,
+          "lon": 14.248492,
+          "address": "Via Toledo 207"
+        },
+        {
           "id": "node/5256502119",
           "name": "Clotilde",
           "lat": 40.838349,
@@ -1104,9 +1111,11 @@
         },
         {
           "id": "node/7193493298",
-          "name": "Cento",
+          "name": "Cento - gelato artigianale italiano",
           "lat": 40.836694,
-          "lon": 14.247516
+          "lon": 14.247516,
+          "address": "Via Chiaia 13",
+          "openingHours": "Sa-Su 10:30-00:00; Mo-Th 10:30-22:00; Fr 10:30-23:00"
         },
         {
           "id": "node/12090916391",
@@ -1154,14 +1163,6 @@
           "lat": 40.831274,
           "lon": 14.223973,
           "address": "Via Ferdinando Galiani 4"
-        },
-        {
-          "id": "node/5024988525",
-          "name": "Gelateria Del Gallo",
-          "lat": 40.851538,
-          "lon": 14.333394,
-          "address": "Via Angelo Camillo De Meis 60/62",
-          "openingHours": "Mo-Su 09:30-01:00"
         }
       ],
       "stats": {
@@ -1170,7 +1171,7 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:57:48.888Z"
+      "updatedAt": "2026-10-04T10:32:30.384Z"
     },
     "dog-parks": {
       "count": 6,
@@ -1181,7 +1182,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:49.359Z"
+      "updatedAt": "2026-10-04T10:32:31.042Z"
     },
     "picnic-spots": {
       "count": 20,
@@ -1192,7 +1193,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:50.509Z"
+      "updatedAt": "2026-10-04T10:32:32.243Z"
     },
     "viewpoints": {
       "count": 54,
@@ -1246,7 +1247,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:51.146Z"
+      "updatedAt": "2026-10-04T10:32:32.877Z"
     },
     "beaches": {
       "count": 18,
@@ -1286,10 +1287,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:51.680Z"
+      "updatedAt": "2026-10-04T10:32:33.382Z"
     },
     "atms": {
-      "count": 111,
+      "count": 112,
       "pois": [
         {
           "id": "node/7158648883",
@@ -1463,7 +1464,7 @@
         "stepFree": 1,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:57:52.321Z"
+      "updatedAt": "2026-10-04T10:32:33.900Z"
     },
     "post-boxes": {
       "count": 37,
@@ -1649,22 +1650,16 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:53.387Z"
+      "updatedAt": "2026-10-04T10:32:34.875Z"
     },
     "recycling": {
-      "count": 81,
+      "count": 82,
       "pois": [
         {
           "id": "way/262862997",
           "name": "Isola Ecologica Ponte della Maddalena",
           "lat": 40.845119,
           "lon": 14.277418
-        },
-        {
-          "id": "node/13181344962",
-          "lat": 40.845033,
-          "lon": 14.257414,
-          "context": "Università degli Studi di Napoli Federico II - Sede Centrale"
         },
         {
           "id": "way/262385767",
@@ -1837,6 +1832,12 @@
           "lat": 40.891555,
           "lon": 14.218346,
           "street": "Corso Chiaiano"
+        },
+        {
+          "id": "node/9300540853",
+          "lat": 40.908164,
+          "lon": 14.259124,
+          "street": "Via Atellana"
         }
       ],
       "stats": {
@@ -1845,7 +1846,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:55.374Z"
+      "updatedAt": "2026-10-04T10:32:36.644Z"
     },
     "luggage-storage": {
       "count": 4,
@@ -1870,7 +1871,7 @@
           "lat": 40.854405,
           "lon": 14.271778,
           "address": "Corso Meridionale 4",
-          "openingHours": "Mo-Sa 8:30-19:00; Su 9:00-19:00",
+          "openingHours": "Mo-Sa 08:30-19:00; Su 09:00-19:00",
           "fee": "yes"
         },
         {
@@ -1888,7 +1889,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:55.899Z"
+      "updatedAt": "2026-10-04T10:32:37.149Z"
     },
     "libraries": {
       "count": 25,
@@ -2029,7 +2030,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:56.430Z"
+      "updatedAt": "2026-10-04T10:32:37.653Z"
     },
     "outdoor-gyms": {
       "count": 4,
@@ -2040,7 +2041,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:57.456Z"
+      "updatedAt": "2026-10-04T10:32:38.548Z"
     },
     "camp-sites": {
       "count": 2,
@@ -2066,10 +2067,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:57.980Z"
+      "updatedAt": "2026-10-04T10:32:39.057Z"
     },
     "shelters": {
-      "count": 16,
+      "count": 15,
       "pois": [
         {
           "id": "way/987910075",
@@ -2084,7 +2085,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:58.787Z"
+      "updatedAt": "2026-10-04T10:32:39.923Z"
     },
     "rest-areas": {
       "count": 13,
@@ -2114,7 +2115,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:59.312Z"
+      "updatedAt": "2026-10-04T10:32:40.351Z"
     },
     "dump-stations": {
       "count": 2,
@@ -2125,7 +2126,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:59.739Z"
+      "updatedAt": "2026-10-04T10:32:40.745Z"
     },
     "post-offices": {
       "count": 56,
@@ -2167,12 +2168,6 @@
           "name": "Poste Italiane - Napoli 35",
           "lat": 40.831949,
           "lon": 14.243254
-        },
-        {
-          "id": "node/6424022830",
-          "name": "Ufficio postale Via Fontana",
-          "lat": 40.858829,
-          "lon": 14.224065
         },
         {
           "id": "node/4121739211",
@@ -2248,7 +2243,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:00.270Z"
+      "updatedAt": "2026-10-04T10:32:41.228Z"
     },
     "showers": {
       "count": 4,
@@ -2259,7 +2254,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:00.727Z"
+      "updatedAt": "2026-10-04T10:32:41.580Z"
     },
     "fireplaces": {
       "count": 0,
@@ -2270,7 +2265,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:01.952Z"
+      "updatedAt": "2026-10-04T10:32:42.523Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2278,7 +2273,7 @@
       "updatedAt": "2026-08-17T04:05:29.715Z"
     },
     "benches": {
-      "count": 629,
+      "count": 630,
       "pois": [
         {
           "id": "node/13514124987",
@@ -2371,6 +2366,12 @@
           "street": "Vico Paradisiello"
         },
         {
+          "id": "node/14176088259",
+          "lat": 40.853362,
+          "lon": 14.251296,
+          "street": "Piazza Museo Nazionale"
+        },
+        {
           "id": "node/13272713371",
           "lat": 40.849775,
           "lon": 14.250308,
@@ -2431,7 +2432,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:04.567Z"
+      "updatedAt": "2026-10-04T10:32:44.700Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2454,7 +2455,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:03.361Z"
+      "updatedAt": "2026-10-04T10:32:43.656Z"
+    },
+    "trash-bins": {
+      "count": 252,
+      "pois": [
+        {
+          "id": "node/13181391523",
+          "lat": 40.851572,
+          "lon": 14.268728,
+          "street": "Piazza Ipogea"
+        },
+        {
+          "id": "node/13181339982",
+          "lat": 40.85049,
+          "lon": 14.266459,
+          "street": "Via Eletto Genoino"
+        },
+        {
+          "id": "node/13181368156",
+          "lat": 40.852282,
+          "lon": 14.271783,
+          "street": "Piazza Giuseppe Garibaldi"
+        },
+        {
+          "id": "node/9350124130",
+          "lat": 40.850382,
+          "lon": 14.27339,
+          "street": "Via Galileo Ferraris"
+        },
+        {
+          "id": "node/13181375202",
+          "lat": 40.848924,
+          "lon": 14.263778,
+          "street": "Corso Umberto Primo"
+        },
+        {
+          "id": "node/7947318685",
+          "lat": 40.845818,
+          "lon": 14.266907,
+          "street": "Via Nuova Marina"
+        },
+        {
+          "id": "node/13181316294",
+          "lat": 40.845733,
+          "lon": 14.258508,
+          "street": "Via Antonio Tari"
+        },
+        {
+          "id": "node/14087292372",
+          "lat": 40.848471,
+          "lon": 14.254966,
+          "street": "Vico San Domenico Maggiore"
+        },
+        {
+          "id": "node/14087292371",
+          "lat": 40.848415,
+          "lon": 14.254941,
+          "street": "Via Benedetto Croce"
+        },
+        {
+          "id": "node/8979511184",
+          "lat": 40.849805,
+          "lon": 14.253356,
+          "street": "Vicoletto San Pietro a Maiella"
+        },
+        {
+          "id": "node/8979511144",
+          "lat": 40.849852,
+          "lon": 14.253325,
+          "street": "Piazza Luigi Miraglia"
+        },
+        {
+          "id": "node/6982408043",
+          "lat": 40.856632,
+          "lon": 14.282211,
+          "street": "Sottopasso della Costituzione"
+        },
+        {
+          "id": "node/13181323453",
+          "lat": 40.84382,
+          "lon": 14.25604,
+          "street": "Piazza Giovanni Bovio"
+        },
+        {
+          "id": "node/13181324465",
+          "lat": 40.843443,
+          "lon": 14.25568,
+          "street": "Via Marchese Campodisola"
+        },
+        {
+          "id": "node/13566846763",
+          "lat": 40.847202,
+          "lon": 14.252437,
+          "street": "Cortile Santa Chiara"
+        },
+        {
+          "id": "node/6982408042",
+          "lat": 40.858391,
+          "lon": 14.282602,
+          "street": "Sottopasso E2-E4"
+        },
+        {
+          "id": "node/13566560525",
+          "lat": 40.847295,
+          "lon": 14.251917,
+          "street": "Piazza del Gesù Nuovo"
+        },
+        {
+          "id": "node/13994782879",
+          "lat": 40.852811,
+          "lon": 14.249955,
+          "street": "Piazza Museo Nazionale"
+        },
+        {
+          "id": "node/13181293166",
+          "lat": 40.841598,
+          "lon": 14.25451,
+          "street": "Via Agostino Depretis"
+        },
+        {
+          "id": "node/12053693993",
+          "lat": 40.847815,
+          "lon": 14.24957,
+          "street": "Via Cisterna dell'Olio"
+        },
+        {
+          "id": "node/11020817855",
+          "lat": 40.855776,
+          "lon": 14.287071,
+          "street": "Via Taddeo Da Sessa"
+        },
+        {
+          "id": "node/13994464716",
+          "lat": 40.858452,
+          "lon": 14.248284,
+          "street": "Via Santa Teresa degli Scalzi"
+        },
+        {
+          "id": "node/6044992418",
+          "lat": 40.842733,
+          "lon": 14.250036,
+          "street": "Via Armando Diaz"
+        },
+        {
+          "id": "node/5375074184",
+          "lat": 40.843868,
+          "lon": 14.248979,
+          "street": "Via Toledo"
+        },
+        {
+          "id": "node/9948799087",
+          "lat": 40.840368,
+          "lon": 14.252321,
+          "street": "Via Medina"
+        },
+        {
+          "id": "node/13994465738",
+          "lat": 40.858607,
+          "lon": 14.248104,
+          "street": "Emiciclo di Capodimonte"
+        },
+        {
+          "id": "node/5347560727",
+          "lat": 40.843455,
+          "lon": 14.249034,
+          "street": "Via Enrico Toti"
+        },
+        {
+          "id": "node/5325449112",
+          "lat": 40.842486,
+          "lon": 14.24968,
+          "street": "Largo Enrico Berlinguer"
+        },
+        {
+          "id": "node/9947877368",
+          "lat": 40.841235,
+          "lon": 14.250886,
+          "street": "Largo Francesco Torraca"
+        },
+        {
+          "id": "node/9948799085",
+          "lat": 40.84016,
+          "lon": 14.251967,
+          "street": "Piazza Municipio"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:32:46.087Z"
     }
   }
 }

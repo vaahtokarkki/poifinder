@@ -1,9 +1,9 @@
 {
   "city": "milan",
-  "generatedAt": "2026-09-27T09:57:03.934Z",
+  "generatedAt": "2026-10-04T10:31:38.644Z",
   "categories": {
     "toilets": {
-      "count": 351,
+      "count": 352,
       "pois": [
         {
           "id": "node/5940596685",
@@ -117,23 +117,9 @@
           "id": "node/4612338077",
           "lat": 45.477975,
           "lon": 9.228756,
+          "wheelchair": "no",
           "fee": "no",
           "context": "Edificio 6 – Giulio Natta"
-        },
-        {
-          "id": "node/4612299023",
-          "lat": 45.477464,
-          "lon": 9.229348,
-          "fee": "no",
-          "context": "Edificio 9 – Giuseppe Bruni"
-        },
-        {
-          "id": "node/9386630988",
-          "name": "Public Restroom",
-          "lat": 45.474907,
-          "lon": 9.101464,
-          "wheelchair": "yes",
-          "fee": "no"
         },
         {
           "id": "way/87370734",
@@ -183,9 +169,9 @@
         }
       ],
       "stats": {
-        "free": 122,
-        "paid": 59,
-        "stepFree": 114,
+        "free": 121,
+        "paid": 60,
+        "stepFree": 120,
         "partlyStepFree": 5
       },
       "near": [
@@ -244,10 +230,10 @@
           "lon": 9.216838
         }
       ],
-      "updatedAt": "2026-09-23T08:31:04.795Z"
+      "updatedAt": "2026-10-04T10:31:09.383Z"
     },
     "drinking-water": {
-      "count": 845,
+      "count": 846,
       "pois": [
         {
           "id": "node/12749955367",
@@ -447,9 +433,9 @@
         }
       ],
       "stats": {
-        "free": 113,
-        "paid": 4,
-        "stepFree": 59,
+        "free": 117,
+        "paid": 3,
+        "stepFree": 60,
         "partlyStepFree": 13
       },
       "near": [
@@ -473,7 +459,7 @@
         },
         {
           "landmark": "Q23354",
-          "within": 12,
+          "within": 13,
           "distance": 86,
           "bearing": 145,
           "poi": "node/5414611349",
@@ -508,7 +494,7 @@
           "lon": 9.218234
         }
       ],
-      "updatedAt": "2026-09-23T08:31:06.795Z"
+      "updatedAt": "2026-10-04T10:31:12.011Z"
     },
     "playgrounds": {
       "count": 664,
@@ -606,10 +592,10 @@
         "stepFree": 10,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:56:38.811Z"
+      "updatedAt": "2026-10-04T10:31:13.218Z"
     },
     "parking": {
-      "count": 2986,
+      "count": 2983,
       "pois": [
         {
           "id": "node/9888148679",
@@ -737,7 +723,8 @@
           "id": "node/2125505429",
           "name": "Pam",
           "lat": 45.460905,
-          "lon": 9.173264
+          "lon": 9.173264,
+          "fee": "no"
         },
         {
           "id": "way/1426218570",
@@ -803,6 +790,12 @@
           "address": "Via Corrado Guglielmo Rontgen 1"
         },
         {
+          "id": "node/14216198701",
+          "name": "Garage",
+          "lat": 45.456629,
+          "lon": 9.207289
+        },
+        {
           "id": "node/12923304774",
           "name": "Parcheggio Autosilo Medaglie d'Oro",
           "lat": 45.451097,
@@ -817,24 +810,18 @@
           "lon": 9.173095,
           "address": "Via Mortara 13",
           "fee": "yes"
-        },
-        {
-          "id": "node/2125507373",
-          "name": "Esselunga",
-          "lat": 45.459617,
-          "lon": 9.168351
         }
       ],
       "stats": {
-        "free": 655,
-        "paid": 514,
+        "free": 658,
+        "paid": 518,
         "stepFree": 30,
-        "partlyStepFree": 3
+        "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T09:56:40.259Z"
+      "updatedAt": "2026-10-04T10:31:14.802Z"
     },
     "charging-stations": {
-      "count": 252,
+      "count": 254,
       "pois": [
         {
           "id": "node/11283958200",
@@ -980,7 +967,7 @@
         "stepFree": 4,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:56:41.077Z"
+      "updatedAt": "2026-10-04T10:31:15.425Z"
     },
     "gas-stations": {
       "count": 268,
@@ -1021,10 +1008,10 @@
           "address": "Viale Papiniano 54"
         },
         {
-          "id": "node/227643024",
+          "id": "node/227642847",
           "name": "Total",
-          "lat": 45.449146,
-          "lon": 9.185962
+          "lat": 45.447634,
+          "lon": 9.183471
         },
         {
           "id": "way/467178945",
@@ -1110,7 +1097,8 @@
           "id": "node/227518788",
           "name": "Grifo",
           "lat": 45.430675,
-          "lon": 9.177997
+          "lon": 9.177997,
+          "openingHours": "Mo-Su 00:00-24:00"
         },
         {
           "id": "node/13997524818",
@@ -1193,7 +1181,7 @@
         "stepFree": 15,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:56:41.826Z"
+      "updatedAt": "2026-10-04T10:31:16.081Z"
     },
     "ice-cream": {
       "count": 239,
@@ -1326,6 +1314,14 @@
           "wheelchair": "no"
         },
         {
+          "id": "node/5486065954",
+          "name": "Antica Gelateria Matteo",
+          "lat": 45.471848,
+          "lon": 9.184136,
+          "address": "Via Pontaccio 23",
+          "wheelchair": "limited"
+        },
+        {
           "id": "node/4608491850",
           "name": "Gelato fatto con amore",
           "lat": 45.466037,
@@ -1416,23 +1412,15 @@
           "lat": 45.453924,
           "lon": 9.180321,
           "address": "Corso di Porta Ticinese 96"
-        },
-        {
-          "id": "node/5808074659",
-          "name": "Gelateria Vero",
-          "lat": 45.475755,
-          "lon": 9.183882,
-          "address": "Corso Giuseppe Garibaldi 60",
-          "wheelchair": "no"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
         "stepFree": 16,
-        "partlyStepFree": 16
+        "partlyStepFree": 17
       },
-      "updatedAt": "2026-09-27T09:56:42.644Z"
+      "updatedAt": "2026-10-04T10:31:16.924Z"
     },
     "dog-parks": {
       "count": 289,
@@ -1512,7 +1500,7 @@
         "stepFree": 60,
         "partlyStepFree": 19
       },
-      "updatedAt": "2026-09-27T09:56:43.364Z"
+      "updatedAt": "2026-10-04T10:31:17.499Z"
     },
     "picnic-spots": {
       "count": 297,
@@ -1566,7 +1554,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:56:44.893Z"
+      "updatedAt": "2026-10-04T10:31:18.769Z"
     },
     "viewpoints": {
       "count": 12,
@@ -1611,7 +1599,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:56:45.732Z"
+      "updatedAt": "2026-10-04T10:31:19.580Z"
     },
     "beaches": {
       "count": 1,
@@ -1622,10 +1610,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:56:46.385Z"
+      "updatedAt": "2026-10-04T10:31:20.157Z"
     },
     "atms": {
-      "count": 431,
+      "count": 432,
       "pois": [
         {
           "id": "node/4170003889",
@@ -1833,10 +1821,10 @@
         "stepFree": 49,
         "partlyStepFree": 18
       },
-      "updatedAt": "2026-09-27T09:56:47.223Z"
+      "updatedAt": "2026-10-04T10:31:21.042Z"
     },
     "post-boxes": {
-      "count": 294,
+      "count": 292,
       "pois": [
         {
           "id": "node/383294840",
@@ -2027,10 +2015,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:56:48.563Z"
+      "updatedAt": "2026-10-04T10:31:22.465Z"
     },
     "recycling": {
-      "count": 265,
+      "count": 264,
       "pois": [
         {
           "id": "node/8704775464",
@@ -2227,7 +2215,7 @@
         "stepFree": 7,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:56:50.819Z"
+      "updatedAt": "2026-10-04T10:31:25.151Z"
     },
     "luggage-storage": {
       "count": 4,
@@ -2253,10 +2241,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:56:51.431Z"
+      "updatedAt": "2026-10-04T10:31:25.705Z"
     },
     "libraries": {
-      "count": 77,
+      "count": 78,
       "pois": [
         {
           "id": "node/3207374438",
@@ -2500,10 +2488,10 @@
         "stepFree": 16,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:56:52.182Z"
+      "updatedAt": "2026-10-04T10:31:26.364Z"
     },
     "outdoor-gyms": {
-      "count": 72,
+      "count": 73,
       "pois": [
         {
           "id": "way/641267018",
@@ -2548,7 +2536,7 @@
         "stepFree": 2,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:56:53.434Z"
+      "updatedAt": "2026-10-04T10:31:27.623Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2582,7 +2570,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:56:54.072Z"
+      "updatedAt": "2026-10-04T10:31:28.268Z"
     },
     "shelters": {
       "count": 49,
@@ -2630,7 +2618,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:56:56.260Z"
+      "updatedAt": "2026-10-04T10:31:30.236Z"
     },
     "rest-areas": {
       "count": 12,
@@ -2673,7 +2661,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:56:56.900Z"
+      "updatedAt": "2026-10-04T10:31:30.885Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2684,10 +2672,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:56:57.359Z"
+      "updatedAt": "2026-10-04T10:31:31.278Z"
     },
     "post-offices": {
-      "count": 121,
+      "count": 122,
       "pois": [
         {
           "id": "node/715948260",
@@ -2872,7 +2860,8 @@
           "lat": 45.465347,
           "lon": 9.163849,
           "address": "Via Emilio Motta 5",
-          "openingHours": "Mo-Fr 08:20-13:35, Sa 08:20-12:35; Su off"
+          "openingHours": "Mo-Fr 08:20-13:35, Sa 08:20-12:35; Su off",
+          "wheelchair": "yes"
         },
         {
           "id": "node/2604178463",
@@ -2934,10 +2923,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 19,
+        "stepFree": 20,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T09:56:58.292Z"
+      "updatedAt": "2026-10-04T10:31:31.857Z"
     },
     "showers": {
       "count": 5,
@@ -2948,7 +2937,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:56:59.037Z"
+      "updatedAt": "2026-10-04T10:31:32.281Z"
     },
     "fireplaces": {
       "count": 5,
@@ -2959,7 +2948,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:00.400Z"
+      "updatedAt": "2026-10-04T10:31:33.428Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2967,7 +2956,7 @@
       "updatedAt": "2026-08-17T04:05:23.292Z"
     },
     "benches": {
-      "count": 7478,
+      "count": 7511,
       "pois": [
         {
           "id": "node/4170014591",
@@ -3078,7 +3067,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:03.833Z"
+      "updatedAt": "2026-10-04T10:31:36.702Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3143,7 +3132,200 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:57:02.220Z"
+      "updatedAt": "2026-10-04T10:31:35.223Z"
+    },
+    "trash-bins": {
+      "count": 4503,
+      "pois": [
+        {
+          "id": "node/4170021892",
+          "lat": 45.463859,
+          "lon": 9.190184,
+          "street": "Piazza del Duomo"
+        },
+        {
+          "id": "node/13845975201",
+          "lat": 45.464779,
+          "lon": 9.190642,
+          "street": "Via Ugo Foscolo"
+        },
+        {
+          "id": "node/4170020694",
+          "lat": 45.463344,
+          "lon": 9.189841,
+          "street": "Via Dogana"
+        },
+        {
+          "id": "node/13719050001",
+          "lat": 45.463252,
+          "lon": 9.18999,
+          "street": "Via Guglielmo Marconi"
+        },
+        {
+          "id": "node/4170020989",
+          "lat": 45.463235,
+          "lon": 9.189778,
+          "street": "Duomo (M1,M3)"
+        },
+        {
+          "id": "node/4170016912",
+          "lat": 45.463192,
+          "lon": 9.190564,
+          "street": "Piazzetta Reale"
+        },
+        {
+          "id": "node/4381970992",
+          "lat": 45.464798,
+          "lon": 9.188599,
+          "street": "Via Giuseppe Mengoni"
+        },
+        {
+          "id": "node/12012732019",
+          "lat": 45.465457,
+          "lon": 9.190096,
+          "street": "Galleria Vittorio Emanuele Secondo"
+        },
+        {
+          "id": "node/4381972070",
+          "lat": 45.464725,
+          "lon": 9.188252,
+          "street": "Piazza dei Mercanti"
+        },
+        {
+          "id": "node/3007564283",
+          "lat": 45.463623,
+          "lon": 9.188208,
+          "street": "Via Torino"
+        },
+        {
+          "id": "node/13931684602",
+          "lat": 45.462749,
+          "lon": 9.189847,
+          "street": "Piazza Armando Diaz"
+        },
+        {
+          "id": "node/5350658255",
+          "lat": 45.465294,
+          "lon": 9.191392,
+          "street": "Via San Raffaele"
+        },
+        {
+          "id": "node/4170013193",
+          "lat": 45.462766,
+          "lon": 9.189396,
+          "street": "Via Gaetano Giardino"
+        },
+        {
+          "id": "node/4381971660",
+          "lat": 45.464833,
+          "lon": 9.18797,
+          "street": "Via Mercanti"
+        },
+        {
+          "id": "node/4381972103",
+          "lat": 45.465652,
+          "lon": 9.189191,
+          "street": "Via Tommaso Grossi"
+        },
+        {
+          "id": "node/5350658262",
+          "lat": 45.465599,
+          "lon": 9.191349,
+          "street": "Galleria Ciro Fontana"
+        },
+        {
+          "id": "node/5350658243",
+          "lat": 45.464961,
+          "lon": 9.192291,
+          "street": "Via Santa Radegonda"
+        },
+        {
+          "id": "node/4381971972",
+          "lat": 45.465273,
+          "lon": 9.187863,
+          "street": "Via Farine"
+        },
+        {
+          "id": "node/4381971969",
+          "lat": 45.465116,
+          "lon": 9.187654,
+          "street": "Passaggio Santa Margherita"
+        },
+        {
+          "id": "node/4381971591",
+          "lat": 45.464697,
+          "lon": 9.187352,
+          "street": "Passaggio Scuole Palatine"
+        },
+        {
+          "id": "node/3007564281",
+          "lat": 45.463156,
+          "lon": 9.187684,
+          "street": "Via Speronari"
+        },
+        {
+          "id": "node/13740344301",
+          "lat": 45.464788,
+          "lon": 9.192671,
+          "street": "Corso Vittorio Emanuele Secondo"
+        },
+        {
+          "id": "node/5417251225",
+          "lat": 45.46439,
+          "lon": 9.187188,
+          "street": "Via Orefici"
+        },
+        {
+          "id": "node/6763569167",
+          "lat": 45.462548,
+          "lon": 9.188425,
+          "street": "Via Giuseppe Mazzini"
+        },
+        {
+          "id": "node/3030452595",
+          "lat": 45.462721,
+          "lon": 9.192159,
+          "street": "Via Francesco Pecorari"
+        },
+        {
+          "id": "node/13935756201",
+          "lat": 45.466365,
+          "lon": 9.190331,
+          "street": "Via Tommaso Marino"
+        },
+        {
+          "id": "node/4170007492",
+          "lat": 45.462036,
+          "lon": 9.19037,
+          "street": "Via Flavio Baracchini"
+        },
+        {
+          "id": "node/5499376566",
+          "lat": 45.466254,
+          "lon": 9.191046,
+          "wheelchair": "yes",
+          "street": "Piazza San Fedele"
+        },
+        {
+          "id": "node/3227232936",
+          "lat": 45.465913,
+          "lon": 9.19206,
+          "street": "Via Ulrico Hoepli"
+        },
+        {
+          "id": "node/4170006869",
+          "lat": 45.462047,
+          "lon": 9.191275,
+          "street": "Via Paolo da Cannobio"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 47,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:31:38.543Z"
     }
   }
 }

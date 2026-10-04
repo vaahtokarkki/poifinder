@@ -1,6 +1,6 @@
 {
   "city": "madrid",
-  "generatedAt": "2026-09-27T09:53:38.813Z",
+  "generatedAt": "2026-10-04T10:27:16.166Z",
   "categories": {
     "toilets": {
       "count": 236,
@@ -218,9 +218,9 @@
         }
       ],
       "stats": {
-        "free": 102,
+        "free": 101,
         "paid": 28,
-        "stepFree": 95,
+        "stepFree": 96,
         "partlyStepFree": 8
       },
       "near": [
@@ -279,10 +279,10 @@
           "lon": -3.683965
         }
       ],
-      "updatedAt": "2026-09-23T08:30:37.801Z"
+      "updatedAt": "2026-10-04T10:26:48.322Z"
     },
     "drinking-water": {
-      "count": 1599,
+      "count": 1606,
       "pois": [
         {
           "id": "node/1556708373",
@@ -473,10 +473,10 @@
         }
       ],
       "stats": {
-        "free": 97,
+        "free": 109,
         "paid": 0,
-        "stepFree": 75,
-        "partlyStepFree": 12
+        "stepFree": 81,
+        "partlyStepFree": 14
       },
       "near": [
         {
@@ -517,7 +517,7 @@
         },
         {
           "landmark": "Q1123493",
-          "within": 22,
+          "within": 23,
           "distance": 95,
           "bearing": 163,
           "poi": "node/11255230071",
@@ -534,10 +534,10 @@
           "lon": -3.684068
         }
       ],
-      "updatedAt": "2026-09-23T08:30:39.574Z"
+      "updatedAt": "2026-10-04T10:26:50.708Z"
     },
     "playgrounds": {
-      "count": 1516,
+      "count": 1519,
       "pois": [
         {
           "id": "node/11703991950",
@@ -716,10 +716,10 @@
           "lon": -3.634467
         },
         {
-          "id": "way/845324495",
-          "name": "Mesa de ping pong",
-          "lat": 40.401741,
-          "lon": -3.636726
+          "id": "way/1023980956",
+          "name": "Área Infantil Chirivita 24",
+          "lat": 40.373038,
+          "lon": -3.743749
         }
       ],
       "stats": {
@@ -728,10 +728,10 @@
         "stepFree": 30,
         "partlyStepFree": 9
       },
-      "updatedAt": "2026-09-27T09:53:16.044Z"
+      "updatedAt": "2026-10-04T10:26:51.696Z"
     },
     "parking": {
-      "count": 3105,
+      "count": 3120,
       "pois": [
         {
           "id": "node/13240433276",
@@ -756,10 +756,11 @@
           "fee": "yes"
         },
         {
-          "id": "node/347603099",
-          "name": "Parking Plaza Mayor",
-          "lat": 40.415168,
-          "lon": -3.707243
+          "id": "relation/21382798",
+          "name": "Aparcamiento Plaza Mayor",
+          "lat": 40.415531,
+          "lon": -3.707365,
+          "fee": "yes"
         },
         {
           "id": "node/623922454",
@@ -796,7 +797,8 @@
           "name": "Garajes Luna",
           "lat": 40.422962,
           "lon": -3.706101,
-          "address": "Calle de Pizarro 7"
+          "address": "Calle de Pizarro 7",
+          "fee": "yes"
         },
         {
           "id": "node/370152113",
@@ -856,10 +858,12 @@
           "fee": "yes"
         },
         {
-          "id": "relation/14451679",
+          "id": "node/3324433019",
           "name": "Aparcamiento Plaza de España",
-          "lat": 40.423389,
-          "lon": -3.712465
+          "lat": 40.422837,
+          "lon": -3.711946,
+          "wheelchair": "no",
+          "fee": "yes"
         },
         {
           "id": "node/300748727",
@@ -950,12 +954,12 @@
         }
       ],
       "stats": {
-        "free": 914,
-        "paid": 289,
-        "stepFree": 31,
+        "free": 919,
+        "paid": 293,
+        "stepFree": 33,
         "partlyStepFree": 43
       },
-      "updatedAt": "2026-09-27T09:53:17.574Z"
+      "updatedAt": "2026-10-04T10:26:53.041Z"
     },
     "charging-stations": {
       "count": 86,
@@ -1047,10 +1051,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:18.300Z"
+      "updatedAt": "2026-10-04T10:26:53.478Z"
     },
     "gas-stations": {
-      "count": 169,
+      "count": 170,
       "pois": [
         {
           "id": "node/614981405",
@@ -1276,10 +1280,10 @@
         "stepFree": 11,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T09:53:19.543Z"
+      "updatedAt": "2026-10-04T10:26:54.218Z"
     },
     "ice-cream": {
-      "count": 142,
+      "count": 148,
       "pois": [
         {
           "id": "node/1782593803",
@@ -1359,11 +1363,11 @@
           "lon": -3.703196
         },
         {
-          "id": "node/12809692472",
+          "id": "node/3715230145",
           "name": "Don Nino",
-          "lat": 40.418501,
-          "lon": -3.70509,
-          "openingHours": "PH off"
+          "lat": 40.418473,
+          "lon": -3.705064,
+          "address": "Calle Preciados 11"
         },
         {
           "id": "node/6985287087",
@@ -1405,7 +1409,7 @@
           "lat": 40.414644,
           "lon": -3.705436,
           "address": "C. De Atocha 4",
-          "openingHours": "We-Su 14:00-22:00"
+          "openingHours": "We-Su 11:30-22:30"
         },
         {
           "id": "node/6507000059",
@@ -1457,6 +1461,12 @@
           "lon": -3.709271
         },
         {
+          "id": "node/14213644860",
+          "name": "Crepes & waffles",
+          "lat": 40.419388,
+          "lon": -3.698907
+        },
+        {
           "id": "node/2449728808",
           "name": "Sienna",
           "lat": 40.411998,
@@ -1483,14 +1493,6 @@
           "lat": 40.421156,
           "lon": -3.707714,
           "address": "Gran Vía 49"
-        },
-        {
-          "id": "node/13716967838",
-          "name": "The Goood Açaí - Hortaleza",
-          "lat": 40.421844,
-          "lon": -3.700046,
-          "address": "Calle de Hortaleza 25",
-          "openingHours": "Mo-Su 11:00-22:00"
         }
       ],
       "stats": {
@@ -1499,7 +1501,7 @@
         "stepFree": 14,
         "partlyStepFree": 10
       },
-      "updatedAt": "2026-09-27T09:53:20.268Z"
+      "updatedAt": "2026-10-04T10:26:54.958Z"
     },
     "dog-parks": {
       "count": 119,
@@ -1547,7 +1549,7 @@
         "stepFree": 13,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:53:21.041Z"
+      "updatedAt": "2026-10-04T10:26:55.604Z"
     },
     "picnic-spots": {
       "count": 687,
@@ -1577,10 +1579,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:22.321Z"
+      "updatedAt": "2026-10-04T10:26:56.730Z"
     },
     "viewpoints": {
-      "count": 87,
+      "count": 89,
       "pois": [
         {
           "id": "node/6481335785",
@@ -1735,6 +1737,12 @@
           "lon": -3.684835
         },
         {
+          "id": "way/223083334",
+          "name": "Espectáculos de aves",
+          "lat": 40.408134,
+          "lon": -3.764972
+        },
+        {
           "id": "node/4680308296",
           "name": "Puente de la Cea",
           "lat": 40.449465,
@@ -1746,6 +1754,12 @@
           "name": "Mirador de 360 grados",
           "lat": 40.438419,
           "lon": -3.773947
+        },
+        {
+          "id": "way/1558762789",
+          "name": "Exibición de aves",
+          "lat": 40.391981,
+          "lon": -3.615226
         }
       ],
       "stats": {
@@ -1754,7 +1768,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:23.241Z"
+      "updatedAt": "2026-10-04T10:26:57.364Z"
     },
     "beaches": {
       "count": 3,
@@ -1765,10 +1779,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:23.812Z"
+      "updatedAt": "2026-10-04T10:26:57.948Z"
     },
     "atms": {
-      "count": 926,
+      "count": 922,
       "pois": [
         {
           "id": "node/178821240",
@@ -1984,13 +1998,13 @@
       "stats": {
         "free": 0,
         "paid": 13,
-        "stepFree": 73,
+        "stepFree": 72,
         "partlyStepFree": 23
       },
-      "updatedAt": "2026-09-27T09:53:24.654Z"
+      "updatedAt": "2026-10-04T10:26:58.704Z"
     },
     "post-boxes": {
-      "count": 388,
+      "count": 390,
       "pois": [
         {
           "id": "node/12640825074",
@@ -2181,10 +2195,10 @@
         "stepFree": 8,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:25.936Z"
+      "updatedAt": "2026-10-04T10:27:00.046Z"
     },
     "recycling": {
-      "count": 1276,
+      "count": 1281,
       "pois": [
         {
           "id": "node/9422209946",
@@ -2390,7 +2404,7 @@
         "stepFree": 8,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:53:27.899Z"
+      "updatedAt": "2026-10-04T10:27:02.016Z"
     },
     "luggage-storage": {
       "count": 21,
@@ -2457,7 +2471,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:28.400Z"
+      "updatedAt": "2026-10-04T10:27:02.583Z"
     },
     "libraries": {
       "count": 101,
@@ -2514,7 +2528,7 @@
           "lat": 40.426499,
           "lon": -3.699295,
           "address": "Calle de Barceló 4",
-          "openingHours": "Mo-Fr 8:30-21:00; Jun 15-Sep 15 Mo-Fr 8:30-20:00; PH off; Dec 24 off; Dec 31 off",
+          "openingHours": "Mo-Fr 08:30-21:00; Jun 15-Sep 15 Mo-Fr 08:30-20:00; PH off; Dec 24 off; Dec 31 off",
           "wheelchair": "limited"
         },
         {
@@ -2644,17 +2658,17 @@
           "openingHours": "Mo-Fr 09:00-14:00"
         },
         {
-          "id": "node/11715886431",
-          "name": "Sala de estudio",
-          "lat": 40.400212,
-          "lon": -3.686559,
-          "openingHours": "Mo-Su 08:00-21:00"
-        },
-        {
           "id": "node/8807212208",
           "name": "Biblioteca de Ciencias de la Docuñentación",
           "lat": 40.438069,
           "lon": -3.701466
+        },
+        {
+          "id": "node/11715886431",
+          "name": "Sala de Estudio",
+          "lat": 40.39988,
+          "lon": -3.686516,
+          "openingHours": "Mo-Su 08:00-21:00"
         },
         {
           "id": "way/319406629",
@@ -2682,10 +2696,10 @@
         "stepFree": 18,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:53:29.223Z"
+      "updatedAt": "2026-10-04T10:27:03.239Z"
     },
     "outdoor-gyms": {
-      "count": 283,
+      "count": 286,
       "pois": [
         {
           "id": "node/11939352481",
@@ -2722,10 +2736,10 @@
       "stats": {
         "free": 2,
         "paid": 0,
-        "stepFree": 4,
+        "stepFree": 6,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:53:30.560Z"
+      "updatedAt": "2026-10-04T10:27:04.417Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2745,7 +2759,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:31.190Z"
+      "updatedAt": "2026-10-04T10:27:05.053Z"
     },
     "shelters": {
       "count": 2,
@@ -2756,7 +2770,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:32.020Z"
+      "updatedAt": "2026-10-04T10:27:05.908Z"
     },
     "rest-areas": {
       "count": 15,
@@ -2792,7 +2806,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:32.657Z"
+      "updatedAt": "2026-10-04T10:27:06.869Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2803,7 +2817,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:33.140Z"
+      "updatedAt": "2026-10-04T10:27:07.388Z"
     },
     "post-offices": {
       "count": 91,
@@ -2981,7 +2995,7 @@
         "stepFree": 16,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:53:33.728Z"
+      "updatedAt": "2026-10-04T10:27:08.159Z"
     },
     "showers": {
       "count": 35,
@@ -2992,7 +3006,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:34.200Z"
+      "updatedAt": "2026-10-04T10:27:08.825Z"
     },
     "fireplaces": {
       "count": 0,
@@ -3003,7 +3017,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:35.413Z"
+      "updatedAt": "2026-10-04T10:27:11.308Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3011,7 +3025,7 @@
       "updatedAt": "2026-08-17T04:05:04.025Z"
     },
     "benches": {
-      "count": 8091,
+      "count": 8156,
       "pois": [
         {
           "id": "node/7563785866",
@@ -3147,6 +3161,12 @@
           "street": "Calle de los Estudios"
         },
         {
+          "id": "node/14191226361",
+          "lat": 40.411979,
+          "lon": -3.705604,
+          "street": "Calle del Duque de Alba"
+        },
+        {
           "id": "node/11697025903",
           "lat": 40.412992,
           "lon": -3.699282,
@@ -3163,12 +3183,6 @@
           "lat": 40.415329,
           "lon": -3.696948,
           "street": "Calle de San Agustín"
-        },
-        {
-          "id": "node/6503522660",
-          "lat": 40.416648,
-          "lon": -3.711155,
-          "street": "Plaza de Santiago"
         }
       ],
       "stats": {
@@ -3177,7 +3191,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:38.710Z"
+      "updatedAt": "2026-10-04T10:27:14.574Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3185,15 +3199,8 @@
       "updatedAt": "2026-08-18T03:58:26.886Z"
     },
     "bicycle-repair": {
-      "count": 19,
+      "count": 18,
       "pois": [
-        {
-          "id": "node/3997458286",
-          "name": "Bicicletas Dinamo",
-          "lat": 40.400314,
-          "lon": -3.721827,
-          "address": "Avenida del Manzanares 1"
-        },
         {
           "id": "node/11228847648",
           "lat": 40.386711,
@@ -3273,7 +3280,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:53:37.282Z"
+      "updatedAt": "2026-10-04T10:27:13.025Z"
+    },
+    "trash-bins": {
+      "count": 4128,
+      "pois": [
+        {
+          "id": "node/10879377927",
+          "name": "Contenedor Residuos",
+          "lat": 40.431397,
+          "lon": -3.663074
+        },
+        {
+          "id": "node/4317894294",
+          "lat": 40.416537,
+          "lon": -3.704509,
+          "street": "Plaza de la Puerta del Sol"
+        },
+        {
+          "id": "node/13039727301",
+          "lat": 40.417303,
+          "lon": -3.701269,
+          "street": "Calle de Alcalá"
+        },
+        {
+          "id": "node/12853963679",
+          "lat": 40.41896,
+          "lon": -3.701828,
+          "street": "Calle de los Jardines"
+        },
+        {
+          "id": "node/11240927694",
+          "lat": 40.418489,
+          "lon": -3.706554,
+          "street": "Plaza de San Martín"
+        },
+        {
+          "id": "node/11240927705",
+          "lat": 40.418861,
+          "lon": -3.706332,
+          "street": "Calle del Postigo de San Martín"
+        },
+        {
+          "id": "node/11240815682",
+          "lat": 40.417145,
+          "lon": -3.708106,
+          "street": "Calle de las Hileras"
+        },
+        {
+          "id": "node/12853998846",
+          "lat": 40.419581,
+          "lon": -3.701386,
+          "street": "Calle del Caballero de Gracia"
+        },
+        {
+          "id": "node/11252424293",
+          "lat": 40.418591,
+          "lon": -3.69961,
+          "street": "Calle de la Virgen de los Peligros"
+        },
+        {
+          "id": "node/11240816057",
+          "lat": 40.419264,
+          "lon": -3.707458,
+          "street": "Calle de las Veneras"
+        },
+        {
+          "id": "node/11238707473",
+          "lat": 40.420729,
+          "lon": -3.704707,
+          "street": "Calle de Concepción Arenal"
+        },
+        {
+          "id": "node/11238707471",
+          "lat": 40.420834,
+          "lon": -3.704422,
+          "street": "Travesía del Horno de la Mata"
+        },
+        {
+          "id": "node/11238691362",
+          "lat": 40.420994,
+          "lon": -3.703941,
+          "street": "Calle del Desengaño"
+        },
+        {
+          "id": "node/11238707485",
+          "lat": 40.42098,
+          "lon": -3.704938,
+          "street": "Plaza de Santa María Soledad Torres Acosta"
+        },
+        {
+          "id": "node/11252470366",
+          "lat": 40.41978,
+          "lon": -3.699535,
+          "street": "Gran Vía"
+        },
+        {
+          "id": "node/12872733024",
+          "lat": 40.416254,
+          "lon": -3.709874,
+          "street": "Calle de Santiago"
+        },
+        {
+          "id": "node/9067769832",
+          "lat": 40.421374,
+          "lon": -3.704993,
+          "street": "Calle de la Luna"
+        },
+        {
+          "id": "node/11238659712",
+          "lat": 40.421485,
+          "lon": -3.704946,
+          "street": "Corredera Baja de San Pablo"
+        },
+        {
+          "id": "node/13918158767",
+          "lat": 40.413636,
+          "lon": -3.699084,
+          "street": "Calle de las Huertas"
+        },
+        {
+          "id": "node/11238694977",
+          "lat": 40.421241,
+          "lon": -3.706433,
+          "street": "Calle de Silva"
+        },
+        {
+          "id": "node/6433320437",
+          "lat": 40.412053,
+          "lon": -3.705345,
+          "street": "Plaza de Tirso de Molina"
+        },
+        {
+          "id": "node/11697025917",
+          "lat": 40.413434,
+          "lon": -3.699101,
+          "street": "Calle del León"
+        },
+        {
+          "id": "node/13158208237",
+          "lat": 40.420258,
+          "lon": -3.708528,
+          "street": "Plaza de Santo Domingo"
+        },
+        {
+          "id": "node/5196697021",
+          "lat": 40.420671,
+          "lon": -3.699368,
+          "street": "Calle de las Infantas"
+        },
+        {
+          "id": "node/11240754579",
+          "lat": 40.420684,
+          "lon": -3.708293,
+          "street": "Calle de San Bernardo"
+        },
+        {
+          "id": "node/11234230463",
+          "lat": 40.421876,
+          "lon": -3.701778,
+          "street": "Calle de Valverde"
+        },
+        {
+          "id": "node/11234230468",
+          "lat": 40.421954,
+          "lon": -3.702066,
+          "street": "Calle de la Puebla"
+        },
+        {
+          "id": "node/11697025893",
+          "lat": 40.412509,
+          "lon": -3.699606,
+          "street": "Calle de Atocha"
+        },
+        {
+          "id": "node/13920910077",
+          "lat": 40.415242,
+          "lon": -3.696952,
+          "street": "Calle de San Agustín"
+        },
+        {
+          "id": "node/11238616581",
+          "lat": 40.422146,
+          "lon": -3.705202,
+          "street": "Calle de San Roque"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:27:16.064Z"
     }
   }
 }

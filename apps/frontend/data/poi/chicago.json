@@ -1,9 +1,9 @@
 {
   "city": "chicago",
-  "generatedAt": "2026-09-27T10:00:06.827Z",
+  "generatedAt": "2026-10-04T10:35:12.640Z",
   "categories": {
     "toilets": {
-      "count": 117,
+      "count": 119,
       "pois": [
         {
           "id": "node/9850356147",
@@ -74,7 +74,8 @@
           "id": "way/210542757",
           "name": "11th Street Comfort Station",
           "lat": 41.869035,
-          "lon": -87.620078
+          "lon": -87.620078,
+          "fee": "no"
         },
         {
           "id": "node/9453552414",
@@ -101,6 +102,15 @@
           "lat": 41.871588,
           "lon": -87.649395,
           "context": "Lecture Center E"
+        },
+        {
+          "id": "way/210680163",
+          "name": "Starbucks Reserve",
+          "lat": 41.893886,
+          "lon": -87.62464,
+          "address": "North Michigan Avenue 646",
+          "openingHours": "Mo-Th 07:00-23:00,Fr 07:00-00:00,Sa-Su 08:00-12:00",
+          "wheelchair": "yes"
         },
         {
           "id": "node/11988046129",
@@ -199,19 +209,12 @@
           "lat": 41.92046,
           "lon": -87.634389,
           "context": "Regenstein Small Mammal & Reptile House"
-        },
-        {
-          "id": "way/209784575",
-          "name": "Barrett Park Fieldhouse",
-          "lat": 41.852428,
-          "lon": -87.676314,
-          "address": "West Cermak Road 2008"
         }
       ],
       "stats": {
-        "free": 13,
+        "free": 16,
         "paid": 0,
-        "stepFree": 23,
+        "stepFree": 24,
         "partlyStepFree": 0
       },
       "near": [
@@ -243,10 +246,10 @@
           "lon": -87.607794
         }
       ],
-      "updatedAt": "2026-09-23T08:31:30.458Z"
+      "updatedAt": "2026-10-04T10:34:45.964Z"
     },
     "drinking-water": {
-      "count": 179,
+      "count": 180,
       "pois": [
         {
           "id": "node/13446791501",
@@ -392,6 +395,13 @@
           "street": "18th Street Access Path"
         },
         {
+          "id": "node/14174024381",
+          "lat": 41.891975,
+          "lon": -87.607655,
+          "fee": "no",
+          "street": "East Grand Avenue"
+        },
+        {
           "id": "node/2019419833",
           "lat": 41.871521,
           "lon": -87.658501,
@@ -438,16 +448,10 @@
           "lat": 41.844292,
           "lon": -87.646664,
           "street": "South Halsted Street"
-        },
-        {
-          "id": "node/13037381878",
-          "lat": 41.894028,
-          "lon": -87.674328,
-          "street": "West Huron Street"
         }
       ],
       "stats": {
-        "free": 29,
+        "free": 30,
         "paid": 1,
         "stepFree": 19,
         "partlyStepFree": 0
@@ -481,10 +485,10 @@
           "lon": -87.607483
         }
       ],
-      "updatedAt": "2026-09-23T08:31:32.424Z"
+      "updatedAt": "2026-10-04T10:34:48.356Z"
     },
     "playgrounds": {
-      "count": 651,
+      "count": 650,
       "pois": [
         {
           "id": "way/351225015",
@@ -569,6 +573,13 @@
           "name": "Skinner Park Playground",
           "lat": 41.879666,
           "lon": -87.660027
+        },
+        {
+          "id": "way/327524879",
+          "name": "Eckhart Playground",
+          "lat": 41.896443,
+          "lon": -87.660613,
+          "wheelchair": "yes"
         },
         {
           "id": "way/1418673588",
@@ -661,24 +672,18 @@
           "lat": 41.930811,
           "lon": -87.637668,
           "address": "North Cannon Drive 2650"
-        },
-        {
-          "id": "way/116607565",
-          "name": "North Playground",
-          "lat": 41.8662,
-          "lon": -87.699905
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 11,
+        "stepFree": 12,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:59:43.061Z"
+      "updatedAt": "2026-10-04T10:34:49.562Z"
     },
     "parking": {
-      "count": 4044,
+      "count": 4077,
       "pois": [
         {
           "id": "way/73748001",
@@ -898,7 +903,9 @@
           "name": "Washington Franklin Self Park",
           "lat": 41.883572,
           "lon": -87.634918,
-          "address": "West Washington Street 230"
+          "address": "West Washington Street 230",
+          "openingHours": "24/7",
+          "fee": "yes"
         },
         {
           "id": "way/108240979",
@@ -909,15 +916,15 @@
         }
       ],
       "stats": {
-        "free": 185,
-        "paid": 317,
+        "free": 192,
+        "paid": 319,
         "stepFree": 12,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:59:44.599Z"
+      "updatedAt": "2026-10-04T10:34:51.459Z"
     },
     "charging-stations": {
-      "count": 51,
+      "count": 53,
       "pois": [
         {
           "id": "node/10284734629",
@@ -956,11 +963,23 @@
           "lon": -87.645312
         },
         {
+          "id": "node/14105655903",
+          "name": "Red E",
+          "lat": 41.91029,
+          "lon": -87.66732
+        },
+        {
           "id": "node/13356142701",
           "name": "Costco Lincoln Park",
           "lat": 41.930034,
           "lon": -87.67603,
           "fee": "yes"
+        },
+        {
+          "id": "node/14099118961",
+          "name": "Tesla Destination Charger",
+          "lat": 41.927818,
+          "lon": -87.685882
         },
         {
           "id": "node/11102242505",
@@ -975,7 +994,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:45.160Z"
+      "updatedAt": "2026-10-04T10:34:52.058Z"
     },
     "gas-stations": {
       "count": 257,
@@ -1125,8 +1144,7 @@
           "id": "way/1512293513",
           "name": "Amoco",
           "lat": 41.924551,
-          "lon": -87.70271,
-          "address": "West Fullerton Avenue 3001"
+          "lon": -87.70271
         },
         {
           "id": "way/493467370",
@@ -1198,10 +1216,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:45.991Z"
+      "updatedAt": "2026-10-04T10:34:52.738Z"
     },
     "ice-cream": {
-      "count": 111,
+      "count": 112,
       "pois": [
         {
           "id": "node/7874385736",
@@ -1292,6 +1310,14 @@
           "address": "East Grand Avenue 600"
         },
         {
+          "id": "way/548624437",
+          "name": "Paulo Gelato & Chocolate",
+          "lat": 41.896414,
+          "lon": -87.654926,
+          "address": "West Chicago Avenue 1058",
+          "openingHours": "Mo-Fr 16:00-21:00; Sa-Su 14:00-21:00"
+        },
+        {
           "id": "way/210222498",
           "name": "La Michoacana",
           "lat": 41.856729,
@@ -1352,7 +1378,8 @@
           "name": "The Original Rainbow Cone",
           "lat": 41.903439,
           "lon": -87.67201,
-          "address": "West Division Street 1750"
+          "address": "West Division Street 1750",
+          "openingHours": "Su-We 11:00-22:00; Th-Sa 11:00-23:00"
         },
         {
           "id": "node/12908161188",
@@ -1360,7 +1387,7 @@
           "lat": 41.83825,
           "lon": -87.641937,
           "address": "West 31st Street 608",
-          "openingHours": "Su-Th 12:00-22:00; Fr-Sa 12:00-22:30",
+          "openingHours": "Mo-Su 12:00-22:00",
           "wheelchair": "yes"
         },
         {
@@ -1368,6 +1395,14 @@
           "name": "Annette's Italian Ice",
           "lat": 41.918377,
           "lon": -87.65204
+        },
+        {
+          "id": "node/10122139317",
+          "name": "Chills Italian Ice",
+          "lat": 41.903,
+          "lon": -87.678462,
+          "address": "West Division Street 2029",
+          "wheelchair": "yes"
         },
         {
           "id": "node/11168362633",
@@ -1405,30 +1440,15 @@
           "lat": 41.91737,
           "lon": -87.687633,
           "address": "North Western Avenue 1960"
-        },
-        {
-          "id": "node/11160738305",
-          "name": "Brothers Creamery Frozen Custard",
-          "lat": 41.93576,
-          "lon": -87.644421,
-          "address": "North Broadway 2928"
-        },
-        {
-          "id": "node/5651992037",
-          "name": "Oberweis",
-          "lat": 41.937965,
-          "lon": -87.653894,
-          "address": "North Sheffield Avenue 3055",
-          "openingHours": "Su-Th 10:00-22:00; Fr,Sa 10:00-23:00"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 9,
+        "stepFree": 10,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:46.822Z"
+      "updatedAt": "2026-10-04T10:34:53.479Z"
     },
     "dog-parks": {
       "count": 56,
@@ -1484,6 +1504,12 @@
           "lat": 41.910126,
           "lon": -87.643814,
           "address": "North Larrabee Street 1514"
+        },
+        {
+          "id": "way/206621731",
+          "name": "Churchill Dog Friendly Area",
+          "lat": 41.914242,
+          "lon": -87.676747
         },
         {
           "id": "way/158977042",
@@ -1590,10 +1616,10 @@
         "stepFree": 5,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:59:47.477Z"
+      "updatedAt": "2026-10-04T10:34:53.978Z"
     },
     "picnic-spots": {
-      "count": 255,
+      "count": 257,
       "pois": [
         {
           "id": "way/318326456",
@@ -1746,7 +1772,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:48.851Z"
+      "updatedAt": "2026-10-04T10:34:55.297Z"
     },
     "viewpoints": {
       "count": 86,
@@ -1864,7 +1890,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:49.879Z"
+      "updatedAt": "2026-10-04T10:34:56.101Z"
     },
     "beaches": {
       "count": 16,
@@ -1963,10 +1989,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:50.720Z"
+      "updatedAt": "2026-10-04T10:34:56.755Z"
     },
     "atms": {
-      "count": 406,
+      "count": 411,
       "pois": [
         {
           "id": "node/1619646627",
@@ -2066,6 +2092,13 @@
           "lat": 41.88539,
           "lon": -87.632947,
           "address": "North LaSalle Street 180"
+        },
+        {
+          "id": "node/10925578812",
+          "name": "State Bank of India",
+          "lat": 41.886173,
+          "lon": -87.632741,
+          "address": "North LaSalle Street 200"
         },
         {
           "id": "node/2578981199",
@@ -2176,13 +2209,6 @@
           "lon": -87.632232,
           "address": "West North Avenue 100",
           "openingHours": "Mo-Fr 08:30-17:30; Sa 08:30-12:00"
-        },
-        {
-          "id": "way/317483048",
-          "name": "Verve",
-          "lat": 41.890683,
-          "lon": -87.67661,
-          "address": "West Grand Avenue 1959"
         }
       ],
       "stats": {
@@ -2191,10 +2217,10 @@
         "stepFree": 19,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:51.764Z"
+      "updatedAt": "2026-10-04T10:34:57.518Z"
     },
     "post-boxes": {
-      "count": 1108,
+      "count": 1125,
       "pois": [
         {
           "id": "node/12648370573",
@@ -2383,17 +2409,11 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:53.105Z"
+      "updatedAt": "2026-10-04T10:34:58.700Z"
     },
     "recycling": {
-      "count": 46,
+      "count": 47,
       "pois": [
-        {
-          "id": "node/12828774728",
-          "lat": 41.876035,
-          "lon": -87.631835,
-          "context": "425 South Financial Place"
-        },
         {
           "id": "node/13138417385",
           "name": "Near South Residential Recycling Drop Off Center",
@@ -2574,7 +2594,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:55.065Z"
+      "updatedAt": "2026-10-04T10:35:00.661Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2585,7 +2605,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:55.659Z"
+      "updatedAt": "2026-10-04T10:35:01.168Z"
     },
     "libraries": {
       "count": 129,
@@ -2674,7 +2694,8 @@
           "lat": 41.853841,
           "lon": -87.632174,
           "address": "South Wentworth Avenue 2100",
-          "openingHours": "Mo,We 12:00-20:00; Tu,Th 10:00-18:00; Fr-Sa 09:00-17:00; Su 13:00-17:00"
+          "openingHours": "Mo,We 12:00-20:00; Tu,Th 10:00-18:00; Fr-Sa 09:00-17:00; Su 13:00-17:00",
+          "wheelchair": "yes"
         },
         {
           "id": "way/210680471",
@@ -2837,13 +2858,13 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 24,
+        "stepFree": 25,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:59:56.489Z"
+      "updatedAt": "2026-10-04T10:35:02.137Z"
     },
     "outdoor-gyms": {
-      "count": 8,
+      "count": 11,
       "pois": [
         {
           "id": "way/1022111528",
@@ -2858,7 +2879,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:57.139Z"
+      "updatedAt": "2026-10-04T10:35:02.798Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2867,7 +2888,7 @@
           "id": "way/24869363",
           "name": "McCormick Place Parking Lot B Overflow",
           "lat": 41.844427,
-          "lon": -87.612553,
+          "lon": -87.61255,
           "address": "South Moe Drive 3050",
           "fee": "yes"
         }
@@ -2878,7 +2899,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:57.789Z"
+      "updatedAt": "2026-10-04T10:35:03.475Z"
     },
     "shelters": {
       "count": 4,
@@ -2889,7 +2910,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:58.719Z"
+      "updatedAt": "2026-10-04T10:35:04.515Z"
     },
     "rest-areas": {
       "count": 5,
@@ -2914,7 +2935,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:59.299Z"
+      "updatedAt": "2026-10-04T10:35:05.197Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2925,7 +2946,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:59:59.772Z"
+      "updatedAt": "2026-10-04T10:35:05.586Z"
     },
     "post-offices": {
       "count": 77,
@@ -3157,7 +3178,7 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:00.501Z"
+      "updatedAt": "2026-10-04T10:35:06.172Z"
     },
     "showers": {
       "count": 12,
@@ -3183,7 +3204,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:01.276Z"
+      "updatedAt": "2026-10-04T10:35:06.675Z"
     },
     "fireplaces": {
       "count": 7,
@@ -3194,7 +3215,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:02.887Z"
+      "updatedAt": "2026-10-04T10:35:08.039Z"
     },
     "air-pumps": {
       "count": 0,
@@ -3202,7 +3223,7 @@
       "updatedAt": "2026-08-17T04:05:40.946Z"
     },
     "benches": {
-      "count": 1649,
+      "count": 1664,
       "pois": [
         {
           "id": "node/4410755216",
@@ -3281,6 +3302,12 @@
           "lat": 41.873468,
           "lon": -87.629266,
           "street": "Dearborn Street Bikeway"
+        },
+        {
+          "id": "node/10945323474",
+          "lat": 41.878307,
+          "lon": -87.636093,
+          "street": "West Jackson Boulevard"
         }
       ],
       "stats": {
@@ -3289,7 +3316,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:06.725Z"
+      "updatedAt": "2026-10-04T10:35:10.898Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3297,7 +3324,7 @@
       "updatedAt": "2026-08-18T03:58:33.072Z"
     },
     "bicycle-repair": {
-      "count": 22,
+      "count": 23,
       "pois": [
         {
           "id": "node/4253761740",
@@ -3319,6 +3346,13 @@
           "lon": -87.652425,
           "fee": "no",
           "street": "West Carroll Avenue"
+        },
+        {
+          "id": "node/14144291298",
+          "lat": 41.873453,
+          "lon": -87.669245,
+          "openingHours": "24/7",
+          "street": "South Paulina Street"
         },
         {
           "id": "node/9384325690",
@@ -3396,7 +3430,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:00:05.051Z"
+      "updatedAt": "2026-10-04T10:35:09.592Z"
+    },
+    "trash-bins": {
+      "count": 538,
+      "pois": [
+        {
+          "id": "node/4452658759",
+          "name": "Clark & Drummond",
+          "lat": 41.930769,
+          "lon": -87.644038
+        },
+        {
+          "id": "node/13570676598",
+          "lat": 41.878042,
+          "lon": -87.629203,
+          "street": "South Dearborn Street"
+        },
+        {
+          "id": "node/12705113480",
+          "lat": 41.878014,
+          "lon": -87.631519,
+          "street": "West Jackson Boulevard"
+        },
+        {
+          "id": "node/13604216260",
+          "lat": 41.876495,
+          "lon": -87.629927,
+          "street": "South Federal Street"
+        },
+        {
+          "id": "node/13182018618",
+          "lat": 41.878261,
+          "lon": -87.632157,
+          "street": "South LaSalle Street"
+        },
+        {
+          "id": "node/12661038383",
+          "lat": 41.876554,
+          "lon": -87.628612,
+          "street": "South Plymouth Court"
+        },
+        {
+          "id": "node/11163317683",
+          "lat": 41.876797,
+          "lon": -87.627786,
+          "street": "South State Street"
+        },
+        {
+          "id": "node/12148021188",
+          "lat": 41.879565,
+          "lon": -87.627862,
+          "street": "West Adams Street"
+        },
+        {
+          "id": "node/12729938664",
+          "lat": 41.875763,
+          "lon": -87.629837,
+          "street": "West Ida B. Wells Drive"
+        },
+        {
+          "id": "node/12716828802",
+          "lat": 41.880606,
+          "lon": -87.629479,
+          "street": "Dearborn Street Bikeway"
+        },
+        {
+          "id": "node/6551670046",
+          "lat": 41.878166,
+          "lon": -87.625971,
+          "street": "South Wabash Avenue"
+        },
+        {
+          "id": "node/12920300778",
+          "lat": 41.87673,
+          "lon": -87.6338,
+          "street": "South Wells Street"
+        },
+        {
+          "id": "node/12731618349",
+          "lat": 41.874761,
+          "lon": -87.62793,
+          "street": "Harrison Street Bikeway"
+        },
+        {
+          "id": "node/13570545043",
+          "lat": 41.878495,
+          "lon": -87.624494,
+          "street": "Pedway"
+        },
+        {
+          "id": "node/10111601499",
+          "lat": 41.879456,
+          "lon": -87.624527,
+          "street": "South Michigan Avenue"
+        },
+        {
+          "id": "node/6990688880",
+          "lat": 41.876203,
+          "lon": -87.634913,
+          "street": "South Franklin Street"
+        },
+        {
+          "id": "node/12729371504",
+          "lat": 41.879454,
+          "lon": -87.636634,
+          "street": "South Lower Wacker Service Drive"
+        },
+        {
+          "id": "node/12637519827",
+          "lat": 41.872216,
+          "lon": -87.628513,
+          "street": "West Polk Street"
+        },
+        {
+          "id": "node/14138014946",
+          "lat": 41.884395,
+          "lon": -87.629928,
+          "street": "West Randolph Street"
+        },
+        {
+          "id": "node/13231439536",
+          "lat": 41.883081,
+          "lon": -87.635233,
+          "street": "Washington Street Bikeway"
+        },
+        {
+          "id": "node/11350125857",
+          "lat": 41.880356,
+          "lon": -87.621111,
+          "street": "South Columbus Drive"
+        },
+        {
+          "id": "node/12637507419",
+          "lat": 41.87061,
+          "lon": -87.629473,
+          "street": "South Park Terrace"
+        },
+        {
+          "id": "node/13565326874",
+          "lat": 41.885641,
+          "lon": -87.630887,
+          "street": "North Clark Street"
+        },
+        {
+          "id": "node/11170856857",
+          "lat": 41.883964,
+          "lon": -87.622573,
+          "street": "Chase Promenade North"
+        },
+        {
+          "id": "node/12342387623",
+          "lat": 41.881763,
+          "lon": -87.639564,
+          "street": "South Canal Street"
+        },
+        {
+          "id": "node/12342387646",
+          "lat": 41.882003,
+          "lon": -87.639837,
+          "street": "Taxi Lane"
+        },
+        {
+          "id": "node/12912848511",
+          "lat": 41.879412,
+          "lon": -87.641015,
+          "street": "Clinton Street Bikeway"
+        },
+        {
+          "id": "node/12288326611",
+          "lat": 41.877938,
+          "lon": -87.64118,
+          "street": "South Clinton Street"
+        },
+        {
+          "id": "node/12342387625",
+          "lat": 41.883012,
+          "lon": -87.639608,
+          "street": "North Canal Street"
+        },
+        {
+          "id": "node/12160480554",
+          "lat": 41.886755,
+          "lon": -87.632272,
+          "street": "West Lower Wacker Service Drive"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:35:12.538Z"
     }
   }
 }

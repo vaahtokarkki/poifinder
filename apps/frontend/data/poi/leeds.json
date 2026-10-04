@@ -1,9 +1,9 @@
 {
   "city": "leeds",
-  "generatedAt": "2026-09-27T09:46:08.392Z",
+  "generatedAt": "2026-10-04T10:18:07.349Z",
   "categories": {
     "toilets": {
-      "count": 71,
+      "count": 74,
       "pois": [
         {
           "id": "node/5648164584",
@@ -19,6 +19,14 @@
           "address": "Albion Street Ground Floor",
           "openingHours": "Mo-Fr 08:00-20:00; Sa 08:00-19:00; Su 11:00-17:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "relation/21386283",
+          "name": "Fat Hippo",
+          "lat": 53.795625,
+          "lon": -1.544727,
+          "address": "Boar Lane 22-23",
+          "openingHours": "Mo-Th,Su 11:45-21:30; Fr-Sa 11:45-22:00"
         },
         {
           "id": "node/345024395",
@@ -172,22 +180,39 @@
           "context": "The Refuel Hub"
         },
         {
+          "id": "way/317012267",
+          "name": "Pudsey Library",
+          "lat": 53.795619,
+          "lon": -1.663977,
+          "address": "Church Lane",
+          "openingHours": "Mo-Fr 09:00-17:00 open; Tu 10:00-17:00 open; We 09:00-19:00 open; Sa 10:00-16:00 open; Su closed"
+        },
+        {
           "id": "node/6767661131",
           "lat": 53.79337,
           "lon": -1.667201,
           "context": "Pudsey Parish Church"
+        },
+        {
+          "id": "way/90189699",
+          "name": "Asda",
+          "lat": 53.803807,
+          "lon": -1.671318,
+          "address": "Stanningley Bypass",
+          "openingHours": "Mo-Fr 06:00-24:00; Sa 06:00-22:00; Su 11:00-17:00",
+          "wheelchair": "yes"
         }
       ],
       "stats": {
         "free": 26,
         "paid": 1,
-        "stepFree": 21,
+        "stepFree": 22,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-23T08:29:41.557Z"
+      "updatedAt": "2026-10-04T10:17:43.365Z"
     },
     "drinking-water": {
-      "count": 13,
+      "count": 14,
       "pois": [
         {
           "id": "node/11759089380",
@@ -221,11 +246,9 @@
           "street": "Red Route"
         },
         {
-          "id": "node/12085115148",
-          "lat": 53.794465,
-          "lon": -1.548626,
-          "wheelchair": "yes",
-          "fee": "no",
+          "id": "node/14205976873",
+          "lat": 53.794603,
+          "lon": -1.547655,
           "street": "Sandford Street"
         },
         {
@@ -247,10 +270,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-23T08:29:43.011Z"
+      "updatedAt": "2026-10-04T10:17:45.463Z"
     },
     "playgrounds": {
-      "count": 186,
+      "count": 187,
       "pois": [
         {
           "id": "node/5648164582",
@@ -382,10 +405,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:47.293Z"
+      "updatedAt": "2026-10-04T10:17:46.594Z"
     },
     "parking": {
-      "count": 1365,
+      "count": 1406,
       "pois": [
         {
           "id": "node/8175751317",
@@ -517,8 +540,8 @@
         {
           "id": "way/878565862",
           "name": "Trinity Leeds Car Park",
-          "lat": 53.795154,
-          "lon": -1.544613,
+          "lat": 53.795157,
+          "lon": -1.544572,
           "openingHours": "24/7",
           "fee": "yes"
         },
@@ -609,12 +632,12 @@
         }
       ],
       "stats": {
-        "free": 267,
+        "free": 271,
         "paid": 88,
         "stepFree": 9,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:48.523Z"
+      "updatedAt": "2026-10-04T10:17:47.658Z"
     },
     "charging-stations": {
       "count": 51,
@@ -733,7 +756,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:49.040Z"
+      "updatedAt": "2026-10-04T10:17:48.083Z"
     },
     "gas-stations": {
       "count": 64,
@@ -817,8 +840,8 @@
         {
           "id": "way/462802001",
           "name": "BP St.Chads",
-          "lat": 53.828962,
-          "lon": -1.585003
+          "lat": 53.828976,
+          "lon": -1.584945
         },
         {
           "id": "way/284436751",
@@ -950,7 +973,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:49.684Z"
+      "updatedAt": "2026-10-04T10:17:48.656Z"
     },
     "ice-cream": {
       "count": 16,
@@ -1049,7 +1072,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:50.360Z"
+      "updatedAt": "2026-10-04T10:17:49.226Z"
     },
     "dog-parks": {
       "count": 4,
@@ -1073,18 +1096,18 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:50.922Z"
+      "updatedAt": "2026-10-04T10:17:49.623Z"
     },
     "picnic-spots": {
-      "count": 69,
+      "count": 71,
       "pois": [],
       "stats": {
         "free": 1,
         "paid": 0,
-        "stepFree": 1,
+        "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:52.173Z"
+      "updatedAt": "2026-10-04T10:17:50.735Z"
     },
     "viewpoints": {
       "count": 18,
@@ -1138,7 +1161,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:52.820Z"
+      "updatedAt": "2026-10-04T10:17:51.302Z"
     },
     "beaches": {
       "count": 2,
@@ -1149,10 +1172,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:53.407Z"
+      "updatedAt": "2026-10-04T10:17:51.802Z"
     },
     "atms": {
-      "count": 174,
+      "count": 179,
       "pois": [
         {
           "id": "node/333799087",
@@ -1224,17 +1247,20 @@
         {
           "id": "node/6022850207",
           "name": "The Co-operative Bank",
-          "lat": 53.797446,
-          "lon": -1.544547,
+          "lat": 53.797457,
+          "lon": -1.544529,
           "address": "Commercial Street 19-20",
-          "openingHours": "Mo-Fr 09:00-16:00"
+          "openingHours": "Mo-We, Fr 10:00-14:00",
+          "wheelchair": "yes"
         },
         {
           "id": "node/6022850214",
           "name": "Halifax",
-          "lat": 53.797295,
-          "lon": -1.544209,
-          "address": "Commercial Street 32"
+          "lat": 53.797296,
+          "lon": -1.544163,
+          "address": "Commercial Street 32",
+          "openingHours": "Mo-Tu, Th-Fr 09:30-16:30; We 10:00-16:30; Sa 09:30-15:00",
+          "wheelchair": "yes"
         },
         {
           "id": "node/333799015",
@@ -1299,6 +1325,14 @@
           "openingHours": "Su-Th 06:00-21:00; Fr-Sa 06:00-22:00"
         },
         {
+          "id": "node/340071337",
+          "name": "Bramley DIY Plus",
+          "lat": 53.814122,
+          "lon": -1.632678,
+          "address": "Upper Town Street 300",
+          "openingHours": "Mo-Fr 08:30-17:30; Sa 09:00-13:00"
+        },
+        {
           "id": "node/7593715030",
           "name": "RBS",
           "lat": 53.82222,
@@ -1314,11 +1348,11 @@
       ],
       "stats": {
         "free": 23,
-        "paid": 6,
-        "stepFree": 5,
+        "paid": 7,
+        "stepFree": 10,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:54.048Z"
+      "updatedAt": "2026-10-04T10:17:52.372Z"
     },
     "post-boxes": {
       "count": 665,
@@ -1336,6 +1370,12 @@
           "street": "Great George Street"
         },
         {
+          "id": "node/333799091",
+          "lat": 53.799941,
+          "lon": -1.547336,
+          "street": "Alexander Street"
+        },
+        {
           "id": "node/2098803183",
           "lat": 53.799419,
           "lon": -1.550668,
@@ -1343,8 +1383,8 @@
         },
         {
           "id": "node/118610816",
-          "lat": 53.798997,
-          "lon": -1.547239,
+          "lat": 53.798996,
+          "lon": -1.547186,
           "street": "South Parade"
         },
         {
@@ -1497,13 +1537,6 @@
           "lat": 53.795135,
           "lon": -1.537451,
           "street": "High Court"
-        },
-        {
-          "id": "node/320998063",
-          "lat": 53.795145,
-          "lon": -1.537419,
-          "openingHours": "Mo-Fr 13:00-18:00",
-          "street": "High Court Lane"
         }
       ],
       "stats": {
@@ -1512,10 +1545,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:55.262Z"
+      "updatedAt": "2026-10-04T10:17:53.654Z"
     },
     "recycling": {
-      "count": 137,
+      "count": 141,
       "pois": [
         {
           "id": "node/8733003540",
@@ -1560,13 +1593,20 @@
           "id": "way/928979134",
           "name": "Pudsey Household Waste Recycling Centre",
           "lat": 53.805121,
-          "lon": -1.654746
+          "lon": -1.654746,
+          "address": "Richardshaw Road"
         },
         {
           "id": "node/1825650336",
           "name": "Freedom House",
           "lat": 53.729664,
           "lon": -1.560804
+        },
+        {
+          "id": "node/14206751561",
+          "lat": 53.799709,
+          "lon": -1.547327,
+          "street": "The Headrow"
         },
         {
           "id": "node/13011115248",
@@ -1579,6 +1619,18 @@
           "lat": 53.801523,
           "lon": -1.54305,
           "street": "Wade Lane"
+        },
+        {
+          "id": "node/14180987893",
+          "lat": 53.799081,
+          "lon": -1.54327,
+          "street": "Lands Lane"
+        },
+        {
+          "id": "node/14206723885",
+          "lat": 53.797434,
+          "lon": -1.545243,
+          "street": "Albion Street"
         },
         {
           "id": "node/4449807813",
@@ -1682,24 +1734,6 @@
           "lat": 53.814967,
           "lon": -1.564444,
           "street": "Victoria Road"
-        },
-        {
-          "id": "node/13145016435",
-          "lat": 53.813097,
-          "lon": -1.572777,
-          "street": "Cardigan Lane"
-        },
-        {
-          "id": "node/3225929769",
-          "lat": 53.811314,
-          "lon": -1.575816,
-          "street": "Back Ashville Grove"
-        },
-        {
-          "id": "node/308513447",
-          "lat": 53.781827,
-          "lon": -1.543752,
-          "street": "Moor Crescent Chase"
         }
       ],
       "stats": {
@@ -1708,7 +1742,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:57.320Z"
+      "updatedAt": "2026-10-04T10:17:55.645Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1719,10 +1753,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:57.779Z"
+      "updatedAt": "2026-10-04T10:17:56.082Z"
     },
     "libraries": {
-      "count": 60,
+      "count": 61,
       "pois": [
         {
           "id": "node/21468571",
@@ -1736,9 +1770,11 @@
         {
           "id": "node/920423335",
           "name": "The Leeds Library",
-          "lat": 53.797471,
-          "lon": -1.544459,
-          "address": "Commercial Street 18"
+          "lat": 53.797476,
+          "lon": -1.544446,
+          "address": "Commercial Street 18",
+          "openingHours": "Mo-We 10:00-18:00; Th 10:00-19:00; Fr 10:00-17:00; Sa 10:00-16:00",
+          "wheelchair": "limited"
         },
         {
           "id": "way/148436017",
@@ -1928,9 +1964,9 @@
         "free": 0,
         "paid": 0,
         "stepFree": 3,
-        "partlyStepFree": 0
+        "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:45:58.356Z"
+      "updatedAt": "2026-10-04T10:17:56.655Z"
     },
     "outdoor-gyms": {
       "count": 31,
@@ -1941,7 +1977,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:59.339Z"
+      "updatedAt": "2026-10-04T10:17:57.582Z"
     },
     "camp-sites": {
       "count": 1,
@@ -1960,7 +1996,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:45:59.899Z"
+      "updatedAt": "2026-10-04T10:17:58.156Z"
     },
     "shelters": {
       "count": 3,
@@ -1978,7 +2014,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:46:01.840Z"
+      "updatedAt": "2026-10-04T10:17:59.955Z"
     },
     "rest-areas": {
       "count": 5,
@@ -2003,7 +2039,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:46:02.413Z"
+      "updatedAt": "2026-10-04T10:18:00.797Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2014,7 +2050,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:46:02.927Z"
+      "updatedAt": "2026-10-04T10:18:01.147Z"
     },
     "post-offices": {
       "count": 68,
@@ -2246,7 +2282,7 @@
         "stepFree": 2,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:46:03.582Z"
+      "updatedAt": "2026-10-04T10:18:01.585Z"
     },
     "showers": {
       "count": 2,
@@ -2257,7 +2293,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:46:04.051Z"
+      "updatedAt": "2026-10-04T10:18:01.987Z"
     },
     "fireplaces": {
       "count": 4,
@@ -2287,7 +2323,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:46:05.278Z"
+      "updatedAt": "2026-10-04T10:18:03.123Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2295,7 +2331,7 @@
       "updatedAt": "2026-08-17T04:04:20.444Z"
     },
     "benches": {
-      "count": 750,
+      "count": 779,
       "pois": [
         {
           "id": "node/2121087119",
@@ -2331,7 +2367,7 @@
           "id": "node/8747378030",
           "lat": 53.799918,
           "lon": -1.54894,
-          "street": "Centenary Street"
+          "street": "Calverley Street"
         },
         {
           "id": "node/8747378021",
@@ -2400,9 +2436,9 @@
           "street": "Wheelchair lift"
         },
         {
-          "id": "node/8762153269",
+          "id": "node/8762176422",
           "lat": 53.797757,
-          "lon": -1.547367,
+          "lon": -1.547364,
           "street": "Bond Street"
         },
         {
@@ -2452,6 +2488,12 @@
           "lat": 53.79659,
           "lon": -1.547693,
           "street": "City Square"
+        },
+        {
+          "id": "node/9366138721",
+          "lat": 53.799084,
+          "lon": -1.542239,
+          "street": "Briggate"
         }
       ],
       "stats": {
@@ -2460,7 +2502,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:46:08.290Z"
+      "updatedAt": "2026-10-04T10:18:05.644Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2468,8 +2510,14 @@
       "updatedAt": "2026-08-18T03:58:19.704Z"
     },
     "bicycle-repair": {
-      "count": 13,
+      "count": 14,
       "pois": [
+        {
+          "id": "node/14206651860",
+          "lat": 53.79952,
+          "lon": -1.547342,
+          "street": "The Headrow"
+        },
         {
           "id": "node/9420709682",
           "lat": 53.805057,
@@ -2524,7 +2572,151 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:46:07.000Z"
+      "updatedAt": "2026-10-04T10:18:04.558Z"
+    },
+    "trash-bins": {
+      "count": 3137,
+      "pois": [
+        {
+          "id": "node/7429087948",
+          "lat": 53.800961,
+          "lon": -1.548984,
+          "street": "Calverley Street"
+        },
+        {
+          "id": "node/7429088038",
+          "lat": 53.800813,
+          "lon": -1.54972,
+          "street": "Great George Street"
+        },
+        {
+          "id": "node/7429088176",
+          "lat": 53.800292,
+          "lon": -1.549267,
+          "street": "Victoria Square"
+        },
+        {
+          "id": "node/4362565016",
+          "lat": 53.801614,
+          "lon": -1.54893,
+          "street": "Millennium Square"
+        },
+        {
+          "id": "node/7429088242",
+          "lat": 53.800369,
+          "lon": -1.54737,
+          "street": "St Anne's Street"
+        },
+        {
+          "id": "node/7429088342",
+          "lat": 53.799706,
+          "lon": -1.548634,
+          "street": "The Headrow"
+        },
+        {
+          "id": "node/7429088208",
+          "lat": 53.800619,
+          "lon": -1.54717,
+          "street": "Cookridge Street"
+        },
+        {
+          "id": "node/7429088294",
+          "lat": 53.800157,
+          "lon": -1.547344,
+          "street": "Alexander Street"
+        },
+        {
+          "id": "node/7429088413",
+          "lat": 53.799432,
+          "lon": -1.549236,
+          "street": "East Parade"
+        },
+        {
+          "id": "node/7429088003",
+          "lat": 53.802155,
+          "lon": -1.54786,
+          "street": "Portland Crescent"
+        },
+        {
+          "id": "node/7429088061",
+          "lat": 53.801986,
+          "lon": -1.547362,
+          "street": "Portland Gate"
+        },
+        {
+          "id": "node/7429088505",
+          "lat": 53.799167,
+          "lon": -1.548033,
+          "street": "South Parade"
+        },
+        {
+          "id": "node/7429088401",
+          "lat": 53.799712,
+          "lon": -1.551534,
+          "street": "Oxford Row"
+        },
+        {
+          "id": "node/7429088317",
+          "lat": 53.79977,
+          "lon": -1.551854,
+          "street": "Westgate"
+        },
+        {
+          "id": "node/7429088521",
+          "lat": 53.799353,
+          "lon": -1.546923,
+          "street": "Park Row"
+        },
+        {
+          "id": "node/7429087997",
+          "lat": 53.802733,
+          "lon": -1.548843,
+          "street": "Portland Way"
+        },
+        {
+          "id": "node/7429088375",
+          "lat": 53.801236,
+          "lon": -1.552485,
+          "street": "Thoresby Place"
+        },
+        {
+          "id": "node/7429088243",
+          "lat": 53.801736,
+          "lon": -1.545561,
+          "street": "Woodhouse Lane"
+        },
+        {
+          "id": "node/11061521780",
+          "lat": 53.799068,
+          "lon": -1.551842,
+          "street": "Park Square North"
+        },
+        {
+          "id": "node/11061521792",
+          "lat": 53.798769,
+          "lon": -1.551236,
+          "street": "Park Square East"
+        },
+        {
+          "id": "node/7429088520",
+          "lat": 53.800498,
+          "lon": -1.545023,
+          "street": "Albion Street"
+        },
+        {
+          "id": "node/7429088115",
+          "lat": 53.799894,
+          "lon": -1.55303,
+          "street": "Park Lane"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:18:07.249Z"
     }
   }
 }

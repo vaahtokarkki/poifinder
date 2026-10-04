@@ -1,9 +1,9 @@
 {
   "city": "perth",
-  "generatedAt": "2026-09-27T10:11:58.848Z",
+  "generatedAt": "2026-10-04T10:48:47.230Z",
   "categories": {
     "toilets": {
-      "count": 350,
+      "count": 361,
       "pois": [
         {
           "id": "node/13483111473",
@@ -133,11 +133,11 @@
           "fee": "no"
         },
         {
-          "id": "way/1373601187",
-          "name": "Public Toilet",
-          "lat": -31.954895,
-          "lon": 115.87007,
-          "address": "Wellington Street",
+          "id": "node/14148509302",
+          "name": "All Access Toilet RH",
+          "lat": -31.950527,
+          "lon": 115.8708,
+          "address": "City Farm Place 1",
           "wheelchair": "yes",
           "fee": "no"
         },
@@ -207,6 +207,7 @@
           "lat": -31.943217,
           "lon": 115.877106,
           "address": "West Parade 116",
+          "openingHours": "Mo 06:45-21:55; Tu 06:45-20:10; We-Th 06:45-20:50; Fr 06:45-23:50; Sa 06:45-18:20; Su 08:40-21:30",
           "wheelchair": "yes",
           "fee": "no"
         },
@@ -235,6 +236,15 @@
           "fee": "no"
         },
         {
+          "id": "node/14165517676",
+          "name": "All Gender LH",
+          "lat": -31.942833,
+          "lon": 115.841802,
+          "address": "Loftus Street 3-5",
+          "wheelchair": "yes",
+          "fee": "no"
+        },
+        {
           "id": "node/11812837427",
           "lat": -31.932372,
           "lon": 115.858822,
@@ -254,26 +264,18 @@
           "wheelchair": "no",
           "fee": "no",
           "context": "North Perth Town Hall Complex"
-        },
-        {
-          "id": "node/531307964",
-          "name": "Tuart Toilets",
-          "lat": -31.96256,
-          "lon": 115.840208,
-          "wheelchair": "yes",
-          "fee": "no"
         }
       ],
       "stats": {
-        "free": 169,
+        "free": 178,
         "paid": 1,
-        "stepFree": 112,
+        "stepFree": 115,
         "partlyStepFree": 8
       },
-      "updatedAt": "2026-09-23T08:33:06.291Z"
+      "updatedAt": "2026-10-04T10:48:24.583Z"
     },
     "drinking-water": {
-      "count": 345,
+      "count": 352,
       "pois": [
         {
           "id": "node/13435928001",
@@ -308,12 +310,6 @@
           "lon": 115.841157,
           "wheelchair": "yes",
           "fee": "no"
-        },
-        {
-          "id": "node/10284026510",
-          "name": "Gibbney reserve drinking fountain",
-          "lat": -31.932137,
-          "lon": 115.90594
         },
         {
           "id": "node/6243829487",
@@ -471,18 +467,24 @@
           "lon": 115.857553,
           "fee": "no",
           "street": "Geoffrey Bolton Way"
+        },
+        {
+          "id": "node/11062886500",
+          "lat": -31.942908,
+          "lon": 115.858094,
+          "street": "Stuart Street"
         }
       ],
       "stats": {
-        "free": 100,
+        "free": 106,
         "paid": 1,
-        "stepFree": 55,
-        "partlyStepFree": 11
+        "stepFree": 58,
+        "partlyStepFree": 12
       },
-      "updatedAt": "2026-09-23T08:33:07.758Z"
+      "updatedAt": "2026-10-04T10:48:26.548Z"
     },
     "playgrounds": {
-      "count": 290,
+      "count": 291,
       "pois": [
         {
           "id": "way/1343457492",
@@ -648,10 +650,10 @@
         "stepFree": 5,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T10:11:38.362Z"
+      "updatedAt": "2026-10-04T10:48:27.445Z"
     },
     "parking": {
-      "count": 1621,
+      "count": 1625,
       "pois": [
         {
           "id": "node/9622787510",
@@ -675,6 +677,14 @@
           "name": "Roe Street Car Park",
           "lat": -31.948653,
           "lon": 115.856983,
+          "fee": "yes"
+        },
+        {
+          "id": "way/554204694",
+          "name": "Pier Street Car Park",
+          "lat": -31.953665,
+          "lon": 115.862742,
+          "address": "Pier Street 87-89",
           "fee": "yes"
         },
         {
@@ -712,7 +722,6 @@
           "name": "Royal Perth Hospital Carpark",
           "lat": -31.952296,
           "lon": 115.867219,
-          "address": "Lord Street Z",
           "wheelchair": "yes",
           "fee": "yes"
         },
@@ -855,21 +864,15 @@
           "lat": -31.965983,
           "lon": 115.837178,
           "fee": "no"
-        },
-        {
-          "id": "way/111791997",
-          "name": "Pines Carpark",
-          "lat": -31.961626,
-          "lon": 115.833587
         }
       ],
       "stats": {
-        "free": 174,
+        "free": 177,
         "paid": 158,
         "stepFree": 15,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:39.586Z"
+      "updatedAt": "2026-10-04T10:48:28.711Z"
     },
     "charging-stations": {
       "count": 16,
@@ -914,7 +917,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:40.055Z"
+      "updatedAt": "2026-10-04T10:48:29.143Z"
     },
     "gas-stations": {
       "count": 71,
@@ -1134,7 +1137,8 @@
           "id": "way/1080426213",
           "name": "Vibe Ascot IGA Xpress",
           "lat": -31.935951,
-          "lon": 115.934426
+          "lon": 115.934426,
+          "openingHours": "24/7"
         }
       ],
       "stats": {
@@ -1143,7 +1147,7 @@
         "stepFree": 8,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:40.703Z"
+      "updatedAt": "2026-10-04T10:48:29.724Z"
     },
     "ice-cream": {
       "count": 38,
@@ -1165,25 +1169,25 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/14094112277",
+          "name": "Yo-Chi",
+          "lat": -31.952218,
+          "lon": 115.859792,
+          "address": "Murray Street 200-204",
+          "openingHours": "Mo-Th,Su 10:00-21:30; Fr-Sa 10:00-22:30",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/11169677676",
           "name": "Kuld Creamery",
           "lat": -31.949749,
           "lon": 115.858532
         },
         {
-          "id": "node/14094112277",
-          "name": "Yo-Chi",
-          "lat": -31.952251,
-          "lon": 115.859721,
-          "address": "Murray Street 200-204",
-          "openingHours": "Mo-Th,Su 10:00-21:30; Fr-Sa 10:00-22:30",
-          "wheelchair": "yes"
-        },
-        {
           "id": "node/6919991258",
           "name": "Ben & Jerry‘s",
-          "lat": -31.948628,
-          "lon": 115.858659,
+          "lat": -31.948619,
+          "lon": 115.858679,
           "wheelchair": "no"
         },
         {
@@ -1302,8 +1306,8 @@
         {
           "id": "node/13587107114",
           "name": "Machi Machi",
-          "lat": -31.986359,
-          "lon": 115.904402,
+          "lat": -31.986295,
+          "lon": 115.904371,
           "wheelchair": "yes"
         },
         {
@@ -1319,7 +1323,7 @@
         "stepFree": 12,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:41.300Z"
+      "updatedAt": "2026-10-04T10:48:30.229Z"
     },
     "dog-parks": {
       "count": 15,
@@ -1408,10 +1412,10 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:41.809Z"
+      "updatedAt": "2026-10-04T10:48:30.668Z"
     },
     "picnic-spots": {
-      "count": 297,
+      "count": 305,
       "pois": [
         {
           "id": "node/13461845473",
@@ -1426,7 +1430,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:43.034Z"
+      "updatedAt": "2026-10-04T10:48:31.659Z"
     },
     "viewpoints": {
       "count": 58,
@@ -1448,12 +1452,6 @@
           "name": "Mount Eliza Lookout",
           "lat": -31.963423,
           "lon": 115.840361
-        },
-        {
-          "id": "node/13159115105",
-          "name": "see viewpoint",
-          "lat": -31.9726,
-          "lon": 115.85709
         },
         {
           "id": "way/1274392791",
@@ -1578,10 +1576,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:43.679Z"
+      "updatedAt": "2026-10-04T10:48:32.308Z"
     },
     "beaches": {
-      "count": 21,
+      "count": 29,
       "pois": [],
       "stats": {
         "free": 0,
@@ -1589,7 +1587,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:44.254Z"
+      "updatedAt": "2026-10-04T10:48:32.748Z"
     },
     "atms": {
       "count": 88,
@@ -1623,7 +1621,7 @@
         },
         {
           "id": "node/1361227671",
-          "name": "Swatch Perth",
+          "name": "Swatch",
           "lat": -31.952483,
           "lon": 115.858198,
           "address": "William Street 140",
@@ -1663,15 +1661,6 @@
           "lon": 115.861032,
           "address": "William Street 323",
           "wheelchair": "limited"
-        },
-        {
-          "id": "node/14062981968",
-          "name": "ATM",
-          "lat": -31.953018,
-          "lon": 115.855741,
-          "address": "Hay Street 790",
-          "openingHours": "24/7",
-          "wheelchair": "yes"
         },
         {
           "id": "node/6622349785",
@@ -1748,6 +1737,15 @@
           "wheelchair": "limited"
         },
         {
+          "id": "node/14053904704",
+          "name": "ATM",
+          "lat": -31.934025,
+          "lon": 115.872715,
+          "address": "Beaufort Street 672A",
+          "openingHours": "24/7",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/2866917953",
           "name": "rediAtm",
           "lat": -31.936871,
@@ -1805,10 +1803,10 @@
         "stepFree": 43,
         "partlyStepFree": 6
       },
-      "updatedAt": "2026-09-27T10:11:44.849Z"
+      "updatedAt": "2026-10-04T10:48:33.245Z"
     },
     "post-boxes": {
-      "count": 156,
+      "count": 157,
       "pois": [
         {
           "id": "node/13511544339",
@@ -1818,16 +1816,17 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/738807643",
+          "name": "Australia Post",
+          "lat": -31.955238,
+          "lon": 115.873412,
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/600432260",
           "name": "Subiaco",
           "lat": -31.949797,
           "lon": 115.824108
-        },
-        {
-          "id": "node/656023860",
-          "name": "Australia Post",
-          "lat": -31.944276,
-          "lon": 115.824311
         },
         {
           "id": "node/13908947690",
@@ -1845,8 +1844,8 @@
         },
         {
           "id": "node/13588864167",
-          "lat": -31.947378,
-          "lon": 115.860433,
+          "lat": -31.947392,
+          "lon": 115.860452,
           "wheelchair": "yes",
           "street": "William Street"
         },
@@ -1863,6 +1862,12 @@
           "lon": 115.860534,
           "wheelchair": "yes",
           "street": "Hay Street"
+        },
+        {
+          "id": "node/14166378739",
+          "lat": -31.954252,
+          "lon": 115.863201,
+          "street": "Murray Street"
         },
         {
           "id": "node/13511544338",
@@ -1945,12 +1950,6 @@
           "street": "Harvest Terrace"
         },
         {
-          "id": "node/738807643",
-          "lat": -31.955238,
-          "lon": 115.873412,
-          "street": "Bennett Street"
-        },
-        {
           "id": "node/4448681043",
           "lat": -31.954866,
           "lon": 115.845461,
@@ -1980,6 +1979,7 @@
           "id": "node/9951888817",
           "lat": -31.953076,
           "lon": 115.878973,
+          "wheelchair": "yes",
           "street": "Royal Street"
         },
         {
@@ -2010,10 +2010,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 27,
+        "stepFree": 30,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:46.277Z"
+      "updatedAt": "2026-10-04T10:48:34.445Z"
     },
     "recycling": {
       "count": 46,
@@ -2050,19 +2050,15 @@
           "id": "node/12418071433",
           "name": "Perth City Farm Community Recycling Hub",
           "lat": -31.950453,
-          "lon": 115.870712
+          "lon": 115.870712,
+          "openingHours": "Mo-Fr 09:00-16:00",
+          "wheelchair": "yes"
         },
         {
           "id": "node/13159120553",
           "name": "green waste container",
           "lat": -31.973016,
           "lon": 115.857456
-        },
-        {
-          "id": "node/11286234534",
-          "lat": -31.947003,
-          "lon": 115.832572,
-          "context": "Officeworks"
         },
         {
           "id": "node/11853099625",
@@ -2082,6 +2078,12 @@
           "lat": -31.971599,
           "lon": 115.85356,
           "street": "Mindeerup Plaza"
+        },
+        {
+          "id": "node/11286234534",
+          "lat": -31.947003,
+          "lon": 115.832572,
+          "street": "Hay Street"
         },
         {
           "id": "node/12647145608",
@@ -2160,10 +2162,10 @@
       "stats": {
         "free": 1,
         "paid": 0,
-        "stepFree": 1,
+        "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:47.947Z"
+      "updatedAt": "2026-10-04T10:48:36.107Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2174,7 +2176,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:48.409Z"
+      "updatedAt": "2026-10-04T10:48:36.560Z"
     },
     "libraries": {
       "count": 51,
@@ -2250,8 +2252,10 @@
         {
           "id": "node/1565971334",
           "name": "Maylands Public Library",
-          "lat": -31.93112,
-          "lon": 115.895055
+          "lat": -31.930884,
+          "lon": 115.895127,
+          "address": "Eighth Avenue 28",
+          "wheelchair": "yes"
         },
         {
           "id": "node/13451934501",
@@ -2407,13 +2411,13 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 15,
+        "stepFree": 16,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T10:11:48.988Z"
+      "updatedAt": "2026-10-04T10:48:37.067Z"
     },
     "outdoor-gyms": {
-      "count": 57,
+      "count": 58,
       "pois": [
         {
           "id": "node/13626310037",
@@ -2437,7 +2441,7 @@
         "stepFree": 13,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:50.058Z"
+      "updatedAt": "2026-10-04T10:48:37.930Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2448,10 +2452,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:50.729Z"
+      "updatedAt": "2026-10-04T10:48:38.508Z"
     },
     "shelters": {
-      "count": 121,
+      "count": 124,
       "pois": [
         {
           "id": "node/4627862839",
@@ -2548,7 +2552,7 @@
         "stepFree": 12,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:11:52.710Z"
+      "updatedAt": "2026-10-04T10:48:40.298Z"
     },
     "rest-areas": {
       "count": 0,
@@ -2559,7 +2563,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:53.219Z"
+      "updatedAt": "2026-10-04T10:48:40.800Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2570,17 +2574,11 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:53.649Z"
+      "updatedAt": "2026-10-04T10:48:41.158Z"
     },
     "post-offices": {
-      "count": 46,
+      "count": 43,
       "pois": [
-        {
-          "id": "node/6919986720",
-          "name": "Australia Post",
-          "lat": -31.947778,
-          "lon": 115.858828
-        },
         {
           "id": "node/13452781501",
           "name": "Perth Business Centre",
@@ -2600,11 +2598,33 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/1093396178",
+          "name": "Perth Cloisters Sq Post Office",
+          "lat": -31.952535,
+          "lon": 115.853301,
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
+          "id": "node/6594606314",
+          "name": "East Perth Post Office",
+          "lat": -31.958407,
+          "lon": 115.871252,
+          "address": "Hay Street 249",
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
           "id": "way/44038978",
           "name": "West Perth",
           "lat": -31.949264,
           "lon": 115.843007,
           "address": "Hay Street 1195"
+        },
+        {
+          "id": "node/9810201861",
+          "name": "North Perth Post Office",
+          "lat": -31.93035,
+          "lon": 115.858055,
+          "openingHours": "Mo-Fr 08:30-17:00; Sa 08:30-13:30"
         },
         {
           "id": "node/2863454807",
@@ -2614,10 +2634,31 @@
           "openingHours": "Mo-Fr 09:00-17:00"
         },
         {
+          "id": "node/14188960834",
+          "name": "Leederville Post Office",
+          "lat": -31.9363,
+          "lon": 115.841701,
+          "openingHours": "Mo-Fr 08:00-17:00; Sa 10:00-14:00"
+        },
+        {
+          "id": "node/13159144041",
+          "name": "South Perth Post Office",
+          "lat": -31.972134,
+          "lon": 115.852057,
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
           "id": "node/1072464122",
           "name": "Leederville",
           "lat": -31.940893,
           "lon": 115.832932
+        },
+        {
+          "id": "node/9754653817",
+          "name": "South Perth Angelo Street Post Office",
+          "lat": -31.980964,
+          "lon": 115.863292,
+          "openingHours": "Mo-Fr 08:30-17:00; Sa 09:00-12:30"
         },
         {
           "id": "way/153203591",
@@ -2627,6 +2668,13 @@
           "address": "Rokeby Road 164",
           "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:30; Su off",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/10992198573",
+          "name": "Subiaco Post Office",
+          "lat": -31.949942,
+          "lon": 115.824097,
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:30"
         },
         {
           "id": "way/225708363",
@@ -2649,6 +2697,28 @@
           "lon": 115.818956
         },
         {
+          "id": "node/12367644513",
+          "name": "Subiaco Nicholson Rd Post Office",
+          "lat": -31.956222,
+          "lon": 115.814829,
+          "openingHours": "Mo-Fr 08:30-18:00; Sa 08:30-13:00"
+        },
+        {
+          "id": "way/527869785",
+          "name": "Victoria Park Post Office",
+          "lat": -31.974829,
+          "lon": 115.897893,
+          "openingHours": "Mo-Fr 09:00-17:00"
+        },
+        {
+          "id": "node/6189532888",
+          "name": "Como Post Office",
+          "lat": -31.989808,
+          "lon": 115.870212,
+          "address": "Canning Highway 262B",
+          "openingHours": "Mo-Fr 08:30-17:00; Sa 09:00-12:00"
+        },
+        {
           "id": "way/1150051055",
           "name": "Autralia Post - Yokine South LPO",
           "lat": -31.910145,
@@ -2664,11 +2734,36 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/51330006",
+          "name": "Wembley Post Office",
+          "lat": -31.941004,
+          "lon": 115.81126,
+          "address": "Cambridge Street 341",
+          "openingHours": "Mo-Fr 08:00-17:00; Sa 08:30-12:30"
+        },
+        {
           "id": "node/11520560696",
           "name": "Bedford West LPO",
           "lat": -31.910044,
           "lon": 115.887193,
           "address": "Grand Promenade 180B"
+        },
+        {
+          "id": "node/12698790211",
+          "name": "East Victoria Park Post Office",
+          "lat": -31.984782,
+          "lon": 115.901945,
+          "address": "Albany Highway 789",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:30",
+          "wheelchair": "yes"
+        },
+        {
+          "id": "node/33172413",
+          "name": "Broadway Nedlands Post Office",
+          "lat": -31.983815,
+          "lon": 115.815052,
+          "address": "Broadway 88",
+          "openingHours": "Mo-Fr 08:30-17:00; Sa 08:30-14:30"
         },
         {
           "id": "way/1022739880",
@@ -2703,48 +2798,6 @@
           "lat": -31.895476,
           "lon": 115.872921,
           "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:30"
-        },
-        {
-          "id": "node/41184963",
-          "name": "Nedlands Post Office",
-          "lat": -31.979386,
-          "lon": 115.802963
-        },
-        {
-          "id": "node/296110862",
-          "name": "Canning Bridge",
-          "lat": -32.012509,
-          "lon": 115.848943
-        },
-        {
-          "id": "node/311310172",
-          "name": "Cloverdale Post Office",
-          "lat": -31.965984,
-          "lon": 115.934387,
-          "address": "Belmont Avenue 227",
-          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:00-12:30",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/4594138904",
-          "name": "Australia Post - Manning LPO",
-          "lat": -32.014972,
-          "lon": 115.86853,
-          "address": "Welwyn Avenue 15"
-        },
-        {
-          "id": "node/914247324",
-          "name": "Claremont North Post Office",
-          "lat": -31.971235,
-          "lon": 115.787822,
-          "openingHours": "Mo-Fr 08:30-17:00; Sa 08:30-12:30",
-          "wheelchair": "yes"
-        },
-        {
-          "id": "node/606292010",
-          "name": "Belmont East",
-          "lat": -31.946625,
-          "lon": 115.940138
         }
       ],
       "stats": {
@@ -2753,7 +2806,7 @@
         "stepFree": 7,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:54.180Z"
+      "updatedAt": "2026-10-04T10:48:41.666Z"
     },
     "showers": {
       "count": 10,
@@ -2771,10 +2824,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:54.604Z"
+      "updatedAt": "2026-10-04T10:48:42.043Z"
     },
     "fireplaces": {
-      "count": 153,
+      "count": 156,
       "pois": [],
       "stats": {
         "free": 9,
@@ -2782,7 +2835,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:56.034Z"
+      "updatedAt": "2026-10-04T10:48:43.199Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2790,7 +2843,7 @@
       "updatedAt": "2026-08-17T04:06:48.663Z"
     },
     "benches": {
-      "count": 1430,
+      "count": 1447,
       "pois": [
         {
           "id": "node/9591448317",
@@ -2919,7 +2972,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:58.746Z"
+      "updatedAt": "2026-10-04T10:48:45.743Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3072,7 +3125,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:11:57.560Z"
+      "updatedAt": "2026-10-04T10:48:44.621Z"
+    },
+    "trash-bins": {
+      "count": 666,
+      "pois": [
+        {
+          "id": "node/9591155592",
+          "name": "Recycling And Waste Bins",
+          "lat": -31.959386,
+          "lon": 115.813411
+        },
+        {
+          "id": "node/9591263050",
+          "name": "Waste And Recycling Bins",
+          "lat": -31.960943,
+          "lon": 115.812551
+        },
+        {
+          "id": "node/11002643357",
+          "lat": -31.949443,
+          "lon": 115.86045,
+          "street": "James Street Mall"
+        },
+        {
+          "id": "node/11068633850",
+          "lat": -31.951457,
+          "lon": 115.859578,
+          "street": "Wellington Street"
+        },
+        {
+          "id": "node/13434499902",
+          "lat": -31.951909,
+          "lon": 115.859725,
+          "street": "Forrest Place"
+        },
+        {
+          "id": "node/13520917903",
+          "lat": -31.94987,
+          "lon": 115.862361,
+          "street": "Beaufort Street"
+        },
+        {
+          "id": "node/9724024517",
+          "lat": -31.948879,
+          "lon": 115.861369,
+          "street": "Francis Street"
+        },
+        {
+          "id": "node/9724024717",
+          "lat": -31.948395,
+          "lon": 115.861685,
+          "street": "Museum Street"
+        },
+        {
+          "id": "node/9724024518",
+          "lat": -31.947763,
+          "lon": 115.861806,
+          "street": "Aberdeen Street"
+        },
+        {
+          "id": "node/13588864169",
+          "lat": -31.947465,
+          "lon": 115.8604,
+          "street": "William Street"
+        },
+        {
+          "id": "node/9724024422",
+          "lat": -31.947325,
+          "lon": 115.861998,
+          "street": "Lipfert Street"
+        },
+        {
+          "id": "node/9765665727",
+          "lat": -31.949794,
+          "lon": 115.856284,
+          "street": "Karak Walk"
+        },
+        {
+          "id": "node/13432312003",
+          "lat": -31.952102,
+          "lon": 115.856576,
+          "street": "Murray Street"
+        },
+        {
+          "id": "node/13452637292",
+          "lat": -31.948785,
+          "lon": 115.864516,
+          "street": "Stirling Street"
+        },
+        {
+          "id": "node/9765665734",
+          "lat": -31.949534,
+          "lon": 115.856112,
+          "street": "King Street"
+        },
+        {
+          "id": "node/13511271564",
+          "lat": -31.954627,
+          "lon": 115.860465,
+          "street": "Hay Street"
+        },
+        {
+          "id": "node/11062886496",
+          "lat": -31.947057,
+          "lon": 115.857379,
+          "street": "Lake Street"
+        },
+        {
+          "id": "node/9765665728",
+          "lat": -31.9501,
+          "lon": 115.85533,
+          "street": "Fremantle Railway PSP"
+        },
+        {
+          "id": "node/13450175441",
+          "lat": -31.947494,
+          "lon": 115.86445,
+          "street": "Newcastle Street"
+        },
+        {
+          "id": "node/13417907120",
+          "lat": -31.952339,
+          "lon": 115.865396,
+          "street": "Moore Street"
+        },
+        {
+          "id": "node/9765665750",
+          "lat": -31.94934,
+          "lon": 115.854971,
+          "street": "Telethon Avenue"
+        },
+        {
+          "id": "node/13434422301",
+          "lat": -31.951934,
+          "lon": 115.865993,
+          "street": "East Perth PSP"
+        },
+        {
+          "id": "node/13446169179",
+          "lat": -31.946876,
+          "lon": 115.864615,
+          "street": "Parry Street"
+        },
+        {
+          "id": "node/11703402401",
+          "lat": -31.956012,
+          "lon": 115.860837,
+          "street": "St Georges Terrace"
+        },
+        {
+          "id": "node/12237910023",
+          "lat": -31.956424,
+          "lon": 115.859641,
+          "street": "Barrack Street"
+        },
+        {
+          "id": "node/12338812787",
+          "lat": -31.946944,
+          "lon": 115.85482,
+          "street": "James Street"
+        },
+        {
+          "id": "node/12888336672",
+          "lat": -31.946485,
+          "lon": 115.855214,
+          "street": "Moon Chow Promenade"
+        },
+        {
+          "id": "node/9741277917",
+          "lat": -31.956322,
+          "lon": 115.863276,
+          "street": "Irwin Street"
+        },
+        {
+          "id": "node/12338812790",
+          "lat": -31.946421,
+          "lon": 115.854825,
+          "street": "Shenton Street"
+        },
+        {
+          "id": "node/14124763626",
+          "lat": -31.954934,
+          "lon": 115.865832,
+          "street": "Victoria Square"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:48:47.129Z"
     }
   }
 }

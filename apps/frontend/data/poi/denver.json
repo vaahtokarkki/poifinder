@@ -1,9 +1,9 @@
 {
   "city": "denver",
-  "generatedAt": "2026-09-27T10:02:45.408Z",
+  "generatedAt": "2026-10-04T10:38:16.573Z",
   "categories": {
     "toilets": {
-      "count": 540,
+      "count": 542,
       "pois": [
         {
           "id": "node/11933844717",
@@ -20,6 +20,15 @@
           "openingHours": "Mo-Th, Sa, Su 10:00-17:00; Fr 10:00-20:00",
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "way/315707015",
+          "name": "Denver Central Library",
+          "lat": 39.737449,
+          "lon": -104.988211,
+          "address": "West 14th Avenue 10",
+          "openingHours": "Mo-Th 10:00-18:00; Fr 10:00-17:00; Sa-Su 11:00-17:00",
+          "wheelchair": "yes"
         },
         {
           "id": "node/6166667470",
@@ -43,6 +52,16 @@
           "lon": -104.99329,
           "address": "Delaware Street 1235",
           "wheelchair": "yes"
+        },
+        {
+          "id": "way/105429742",
+          "name": "History Colorado Center",
+          "lat": 39.735684,
+          "lon": -104.986739,
+          "address": "North Broadway 1200",
+          "openingHours": "Mo-Su 10:00-17:00; Dec 30 10:00-15:00; Nov Th[4] off; Dec 25 off; Jan 01 off",
+          "wheelchair": "yes",
+          "fee": "yes"
         },
         {
           "id": "node/4498335986",
@@ -181,30 +200,18 @@
           "name": "Men's Restroom R300D",
           "lat": 39.742043,
           "lon": -105.002202
-        },
-        {
-          "id": "way/1070476650",
-          "name": "Women's Restroom R0001C",
-          "lat": 39.743993,
-          "lon": -105.001136
-        },
-        {
-          "id": "way/1072129737",
-          "name": "Women's Restroom R3001C",
-          "lat": 39.743998,
-          "lon": -105.001135
         }
       ],
       "stats": {
         "free": 1,
-        "paid": 1,
-        "stepFree": 35,
+        "paid": 2,
+        "stepFree": 37,
         "partlyStepFree": 4
       },
       "near": [
         {
           "landmark": "Q1189960",
-          "within": 6,
+          "within": 8,
           "distance": 28,
           "bearing": 321,
           "poi": "way/35205743",
@@ -212,10 +219,10 @@
           "lon": -104.989554
         }
       ],
-      "updatedAt": "2026-09-23T08:31:52.210Z"
+      "updatedAt": "2026-10-04T10:37:50.464Z"
     },
     "drinking-water": {
-      "count": 17,
+      "count": 19,
       "pois": [
         {
           "id": "node/4219800992",
@@ -268,9 +275,9 @@
         }
       ],
       "stats": {
-        "free": 3,
+        "free": 4,
         "paid": 0,
-        "stepFree": 1,
+        "stepFree": 2,
         "partlyStepFree": 0
       },
       "near": [
@@ -284,10 +291,10 @@
           "lon": -104.988846
         }
       ],
-      "updatedAt": "2026-09-23T08:31:53.778Z"
+      "updatedAt": "2026-10-04T10:37:52.848Z"
     },
     "playgrounds": {
-      "count": 476,
+      "count": 478,
       "pois": [
         {
           "id": "way/702934506",
@@ -380,10 +387,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:23.791Z"
+      "updatedAt": "2026-10-04T10:37:53.955Z"
     },
     "parking": {
-      "count": 3965,
+      "count": 3968,
       "pois": [
         {
           "id": "way/100225057",
@@ -594,15 +601,15 @@
         }
       ],
       "stats": {
-        "free": 133,
+        "free": 135,
         "paid": 144,
         "stepFree": 12,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:02:25.141Z"
+      "updatedAt": "2026-10-04T10:37:55.117Z"
     },
     "charging-stations": {
-      "count": 17,
+      "count": 21,
       "pois": [
         {
           "id": "node/4404165620",
@@ -668,7 +675,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:25.719Z"
+      "updatedAt": "2026-10-04T10:37:55.617Z"
     },
     "gas-stations": {
       "count": 143,
@@ -881,10 +888,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:26.366Z"
+      "updatedAt": "2026-10-04T10:37:56.189Z"
     },
     "ice-cream": {
-      "count": 60,
+      "count": 61,
       "pois": [
         {
           "id": "node/5325284780",
@@ -916,6 +923,15 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/14204457840",
+          "name": "High Point Creamery",
+          "lat": 39.754634,
+          "lon": -104.996585,
+          "address": "19th Street 1601",
+          "openingHours": "Mo-Sa 12:00-20:00; Su 12:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/7221605519",
           "name": "Frozen Yogurt",
           "lat": 39.75515,
@@ -938,13 +954,6 @@
           "name": "Wazee Market Gelato",
           "lat": 39.755587,
           "lon": -104.994658
-        },
-        {
-          "id": "node/4577576048",
-          "name": "High Point Creamery",
-          "lat": 39.759486,
-          "lon": -104.984478,
-          "address": "Larimer Street 2669"
         },
         {
           "id": "node/10241518878",
@@ -1103,10 +1112,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 6,
+        "stepFree": 7,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:27.100Z"
+      "updatedAt": "2026-10-04T10:37:56.763Z"
     },
     "dog-parks": {
       "count": 21,
@@ -1188,10 +1197,10 @@
         "stepFree": 1,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:02:27.611Z"
+      "updatedAt": "2026-10-04T10:37:57.202Z"
     },
     "picnic-spots": {
-      "count": 357,
+      "count": 366,
       "pois": [
         {
           "id": "way/340230310",
@@ -1254,7 +1263,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:28.840Z"
+      "updatedAt": "2026-10-04T10:37:58.270Z"
     },
     "viewpoints": {
       "count": 8,
@@ -1290,7 +1299,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:29.660Z"
+      "updatedAt": "2026-10-04T10:37:58.908Z"
     },
     "beaches": {
       "count": 4,
@@ -1301,10 +1310,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:30.307Z"
+      "updatedAt": "2026-10-04T10:37:59.482Z"
     },
     "atms": {
-      "count": 154,
+      "count": 153,
       "pois": [
         {
           "id": "node/581294831",
@@ -1335,12 +1344,11 @@
           "address": "Stout Street 1630"
         },
         {
-          "id": "node/6661276024",
+          "id": "node/1999117562",
           "name": "7-Eleven",
-          "lat": 39.746317,
-          "lon": -104.993886,
-          "address": "16th Street 820",
-          "wheelchair": "yes"
+          "lat": 39.746347,
+          "lon": -104.997409,
+          "address": "Arapahoe Street 1438"
         },
         {
           "id": "node/1393657213",
@@ -1529,13 +1537,13 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 13,
+        "stepFree": 12,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:02:31.143Z"
+      "updatedAt": "2026-10-04T10:38:00.243Z"
     },
     "post-boxes": {
-      "count": 64,
+      "count": 68,
       "pois": [
         {
           "id": "node/907142275",
@@ -1551,6 +1559,12 @@
           "lon": -104.968613
         },
         {
+          "id": "node/14207238101",
+          "lat": 39.738345,
+          "lon": -104.993496,
+          "street": "West 14th Avenue"
+        },
+        {
           "id": "node/5759405121",
           "lat": 39.735153,
           "lon": -104.990096,
@@ -1561,6 +1575,12 @@
           "lat": 39.736986,
           "lon": -104.984958,
           "street": "Sherman Street"
+        },
+        {
+          "id": "node/14210316501",
+          "lat": 39.733736,
+          "lon": -104.985901,
+          "street": "East 11th Avenue"
         },
         {
           "id": "node/7460275651",
@@ -1609,12 +1629,6 @@
           "lat": 39.749746,
           "lon": -104.998591,
           "street": "Market Street"
-        },
-        {
-          "id": "node/3436439036",
-          "lat": 39.733769,
-          "lon": -104.975449,
-          "street": "East 11th Avenue"
         },
         {
           "id": "node/1237658830",
@@ -1683,6 +1697,12 @@
           "street": "High Street"
         },
         {
+          "id": "node/14181950346",
+          "lat": 39.718934,
+          "lon": -104.987335,
+          "street": "South Broadway"
+        },
+        {
           "id": "node/1806216963",
           "lat": 39.750824,
           "lon": -104.960897,
@@ -1705,18 +1725,6 @@
           "lat": 39.764422,
           "lon": -104.972735,
           "street": "East Bruce Randolph Avenue"
-        },
-        {
-          "id": "node/13863947832",
-          "lat": 39.735062,
-          "lon": -104.951834,
-          "street": "Milwaukee Street"
-        },
-        {
-          "id": "node/11261019795",
-          "lat": 39.755458,
-          "lon": -105.02398,
-          "street": "Eliot Street"
         }
       ],
       "stats": {
@@ -1725,7 +1733,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:32.481Z"
+      "updatedAt": "2026-10-04T10:38:01.628Z"
     },
     "recycling": {
       "count": 19,
@@ -1823,7 +1831,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:34.301Z"
+      "updatedAt": "2026-10-04T10:38:03.415Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1834,10 +1842,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:34.824Z"
+      "updatedAt": "2026-10-04T10:38:03.916Z"
     },
     "libraries": {
-      "count": 70,
+      "count": 76,
       "pois": [
         {
           "id": "way/315707015",
@@ -1845,7 +1853,8 @@
           "lat": 39.737449,
           "lon": -104.988211,
           "address": "West 14th Avenue 10",
-          "openingHours": "Mo-Th 10:00-18:00; Fr 10:00-17:00; Sa-Su 11:00-17:00"
+          "openingHours": "Mo-Th 10:00-18:00; Fr 10:00-17:00; Sa-Su 11:00-17:00",
+          "wheelchair": "yes"
         },
         {
           "id": "node/3406590882",
@@ -1873,7 +1882,9 @@
           "name": "John \"Thunderbird Man\" Emhoolah, Jr. Branch - Denver Public Library",
           "lat": 39.727102,
           "lon": -104.998905,
-          "address": "North Santa Fe Drive 675"
+          "address": "North Santa Fe Drive 675",
+          "openingHours": "Mo-Th 10:00-18:00; Fr 10:00-17:00; Sa-Su off",
+          "wheelchair": "yes"
         },
         {
           "id": "way/326362623",
@@ -1889,14 +1900,6 @@
           "lat": 39.752434,
           "lon": -104.981533,
           "address": "Welton Street 2401"
-        },
-        {
-          "id": "node/12639707401",
-          "name": "Denver Tool Library",
-          "lat": 39.725386,
-          "lon": -104.99775,
-          "address": "Santa Fe Drive 555",
-          "openingHours": "Tu, Th 14:00-19:00; Sa-Su 10:00-15:00"
         },
         {
           "id": "node/12134732951",
@@ -1934,7 +1937,8 @@
           "lat": 39.739954,
           "lon": -105.029521,
           "address": "Irving Street 1498",
-          "openingHours": "Mo-We 09:00-18:00; Th 09:00-20:00; Fr-Su 10:00-17:00"
+          "openingHours": "Mo-We 09:00-18:00; Th 09:00-20:00; Fr-Su 10:00-17:00",
+          "wheelchair": "yes"
         },
         {
           "id": "node/11334675374",
@@ -1984,6 +1988,14 @@
           "openingHours": "Mo-Tu 10:00-20:00, We-Th 10:00-18:00, Fr-Sa 10:00-17:00"
         },
         {
+          "id": "node/14133860102",
+          "name": "Denver Public Library: Lena Archuleta Branch",
+          "lat": 39.709566,
+          "lon": -105.030297,
+          "address": "West Nevada Place 3300 #2",
+          "openingHours": "Mo-Tu 10:00-20:00; We-Th 10:00-18:00; Fr-Sa 10:00-17:00"
+        },
+        {
           "id": "node/366395675",
           "name": "Eugene Field Branch Denver Public Library",
           "lat": 39.701687,
@@ -2019,10 +2031,12 @@
         },
         {
           "id": "way/47325838",
-          "name": "Decker Branch Denver Public Library",
-          "lat": 39.6892,
+          "name": "Decker Branch Library",
+          "lat": 39.689195,
           "lon": -104.983102,
-          "address": "South Logan Street 1501"
+          "address": "South Logan Street 1501",
+          "openingHours": "Mo-Th 10:00-18:00, Fr-Sa 10:00-17:00",
+          "wheelchair": "yes"
         },
         {
           "id": "node/9056459231",
@@ -2061,10 +2075,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 5,
+        "stepFree": 9,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:35.466Z"
+      "updatedAt": "2026-10-04T10:38:04.497Z"
     },
     "outdoor-gyms": {
       "count": 2,
@@ -2075,7 +2089,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:36.510Z"
+      "updatedAt": "2026-10-04T10:38:05.456Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2086,7 +2100,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:37.072Z"
+      "updatedAt": "2026-10-04T10:38:06.082Z"
     },
     "shelters": {
       "count": 38,
@@ -2122,7 +2136,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:38.891Z"
+      "updatedAt": "2026-10-04T10:38:08.085Z"
     },
     "rest-areas": {
       "count": 0,
@@ -2133,7 +2147,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:39.460Z"
+      "updatedAt": "2026-10-04T10:38:08.836Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2144,17 +2158,18 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:39.940Z"
+      "updatedAt": "2026-10-04T10:38:09.292Z"
     },
     "post-offices": {
-      "count": 25,
+      "count": 26,
       "pois": [
         {
           "id": "node/358949398",
           "name": "Mile High Station Denver Post Office",
           "lat": 39.738308,
           "lon": -104.993551,
-          "address": "West 14th Avenue 450"
+          "address": "West 14th Avenue 450",
+          "openingHours": "Mo-Fr 09:00-17:00; Sa 09:30-12:30"
         },
         {
           "id": "node/1393657187",
@@ -2162,6 +2177,14 @@
           "lat": 39.748676,
           "lon": -104.997772,
           "address": "Larimer Street 1512"
+        },
+        {
+          "id": "node/14140567705",
+          "name": "Denver Post Office",
+          "lat": 39.751019,
+          "lon": -104.989292,
+          "address": "20th Street 951",
+          "openingHours": "Mo-Fr 08:30-18:00; Sa 09:00-18:00"
         },
         {
           "id": "way/148748800",
@@ -2265,7 +2288,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:40.529Z"
+      "updatedAt": "2026-10-04T10:38:09.811Z"
     },
     "showers": {
       "count": 25,
@@ -2345,7 +2368,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:40.999Z"
+      "updatedAt": "2026-10-04T10:38:10.267Z"
     },
     "fireplaces": {
       "count": 9,
@@ -2374,7 +2397,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:42.319Z"
+      "updatedAt": "2026-10-04T10:38:11.697Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2382,7 +2405,7 @@
       "updatedAt": "2026-08-17T04:05:56.435Z"
     },
     "benches": {
-      "count": 823,
+      "count": 840,
       "pois": [
         {
           "id": "node/13104588410",
@@ -2499,7 +2522,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:45.306Z"
+      "updatedAt": "2026-10-04T10:38:14.748Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2647,7 +2670,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:02:44.031Z"
+      "updatedAt": "2026-10-04T10:38:13.480Z"
+    },
+    "trash-bins": {
+      "count": 348,
+      "pois": [
+        {
+          "id": "node/10166567756",
+          "name": "Trash Barrel",
+          "lat": 39.732639,
+          "lon": -104.921581
+        },
+        {
+          "id": "node/7463868992",
+          "lat": 39.737175,
+          "lon": -104.98772,
+          "street": "North Broadway"
+        },
+        {
+          "id": "node/14181950348",
+          "lat": 39.735492,
+          "lon": -104.988729,
+          "street": "Acoma Plaza of the Arts"
+        },
+        {
+          "id": "node/12133396500",
+          "lat": 39.74071,
+          "lon": -104.99517,
+          "street": "Emily’s Alley"
+        },
+        {
+          "id": "node/12222408830",
+          "lat": 39.738141,
+          "lon": -104.997599,
+          "street": "North Speer Boulevard"
+        },
+        {
+          "id": "node/7460275650",
+          "lat": 39.743583,
+          "lon": -104.997953,
+          "street": "Champa Street"
+        },
+        {
+          "id": "node/10942600140",
+          "lat": 39.745597,
+          "lon": -104.995325,
+          "street": "15th Street"
+        },
+        {
+          "id": "node/7271069550",
+          "lat": 39.739962,
+          "lon": -105.002261,
+          "street": "West Colfax Avenue"
+        },
+        {
+          "id": "node/6662827182",
+          "lat": 39.7477,
+          "lon": -104.995745,
+          "street": "Arapahoe Street"
+        },
+        {
+          "id": "node/11175527893",
+          "lat": 39.743506,
+          "lon": -105.002086,
+          "street": "11th Street"
+        },
+        {
+          "id": "node/11175471863",
+          "lat": 39.729017,
+          "lon": -104.99279,
+          "street": "Delaware Street"
+        },
+        {
+          "id": "node/5764274115",
+          "lat": 39.735039,
+          "lon": -104.977224,
+          "street": "East 12th Avenue"
+        },
+        {
+          "id": "node/13027431682",
+          "lat": 39.742469,
+          "lon": -105.00384,
+          "street": "Elevator #1"
+        },
+        {
+          "id": "node/5764288753",
+          "lat": 39.738996,
+          "lon": -104.975389,
+          "street": "Ogden Street"
+        },
+        {
+          "id": "node/12052495905",
+          "lat": 39.738475,
+          "lon": -105.006034,
+          "street": "Exit Stair E1"
+        },
+        {
+          "id": "node/6629216947",
+          "lat": 39.749631,
+          "lon": -104.99841,
+          "street": "Market Street"
+        },
+        {
+          "id": "node/7308181022",
+          "lat": 39.746545,
+          "lon": -105.002977,
+          "street": "12th Street"
+        },
+        {
+          "id": "node/12629928468",
+          "lat": 39.744232,
+          "lon": -105.005454,
+          "street": "Elevator 4"
+        },
+        {
+          "id": "node/12047108803",
+          "lat": 39.744672,
+          "lon": -105.005361,
+          "street": "Larimer Way"
+        },
+        {
+          "id": "node/12047108800",
+          "lat": 39.744879,
+          "lon": -105.006242,
+          "street": "9th Street"
+        },
+        {
+          "id": "node/12528014748",
+          "lat": 39.725406,
+          "lon": -104.989699,
+          "street": "West 6th Avenue"
+        },
+        {
+          "id": "node/12110303843",
+          "lat": 39.742748,
+          "lon": -105.007972,
+          "street": "7th Street"
+        },
+        {
+          "id": "node/12629928430",
+          "lat": 39.744592,
+          "lon": -105.007533,
+          "street": "8th Street"
+        },
+        {
+          "id": "node/12629927787",
+          "lat": 39.745343,
+          "lon": -105.008022,
+          "street": "Elevator 3"
+        },
+        {
+          "id": "node/7463691741",
+          "lat": 39.752088,
+          "lon": -105.000945,
+          "street": "Wynkoop Plaza"
+        },
+        {
+          "id": "node/12110079195",
+          "lat": 39.742924,
+          "lon": -105.009668,
+          "street": "Elevator 1"
+        },
+        {
+          "id": "node/12805109161",
+          "lat": 39.752157,
+          "lon": -105.002247,
+          "street": "Tail Tracks Plaza"
+        },
+        {
+          "id": "node/7474257492",
+          "lat": 39.752822,
+          "lon": -105.001012,
+          "street": "Union Station Train Hall"
+        },
+        {
+          "id": "node/7471721794",
+          "lat": 39.755052,
+          "lon": -104.993478,
+          "street": "Blake Street"
+        },
+        {
+          "id": "node/7465217187",
+          "lat": 39.754173,
+          "lon": -105.000046,
+          "street": "Union Station Pedestrian Bridge"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:38:16.471Z"
     }
   }
 }

@@ -1,9 +1,9 @@
 {
   "city": "tallinn",
-  "generatedAt": "2026-09-27T09:28:28.809Z",
+  "generatedAt": "2026-10-04T09:58:29.861Z",
   "categories": {
     "toilets": {
-      "count": 198,
+      "count": 199,
       "pois": [
         {
           "id": "node/10128167093",
@@ -173,7 +173,7 @@
           "lat": 59.408575,
           "lon": 24.688766,
           "address": "A. H. Tammsaare tee 104a",
-          "openingHours": "08:00-22:00",
+          "openingHours": "07:00-22:00",
           "wheelchair": "yes"
         },
         {
@@ -246,18 +246,27 @@
           "address": "Turu plats 4",
           "openingHours": "Mo-Fr 08:00-22:00; Sa,Su 10:00-23:00",
           "wheelchair": "no"
+        },
+        {
+          "id": "way/226264851",
+          "name": "Magaziin",
+          "lat": 59.365685,
+          "lon": 24.760805,
+          "address": "Viljandi mnt 41b",
+          "openingHours": "Mo-Fr 10:00-20:00; Sa-Su 09:00-19:00",
+          "wheelchair": "yes"
         }
       ],
       "stats": {
-        "free": 90,
+        "free": 89,
         "paid": 27,
-        "stepFree": 78,
+        "stepFree": 80,
         "partlyStepFree": 3
       },
       "near": [
         {
           "landmark": "Q859010",
-          "within": 9,
+          "within": 8,
           "distance": 100,
           "bearing": 229,
           "poi": "node/9099606666",
@@ -266,12 +275,12 @@
         },
         {
           "landmark": "Q613788",
-          "within": 9,
-          "distance": 41,
-          "bearing": 160,
-          "poi": "node/12949113101",
-          "lat": 59.435571,
-          "lon": 24.743004
+          "within": 8,
+          "distance": 178,
+          "bearing": 250,
+          "poi": "node/557300870",
+          "lat": 59.435362,
+          "lon": 24.739807
         },
         {
           "landmark": "Q834511",
@@ -302,7 +311,7 @@
         },
         {
           "landmark": "Q2322737",
-          "within": 12,
+          "within": 11,
           "distance": 24,
           "bearing": 61,
           "poi": "node/4933816222",
@@ -310,7 +319,7 @@
           "lon": 24.74899
         }
       ],
-      "updatedAt": "2026-09-23T08:27:31.945Z"
+      "updatedAt": "2026-10-04T09:58:05.165Z"
     },
     "drinking-water": {
       "count": 84,
@@ -587,10 +596,10 @@
           "lon": 24.75231
         }
       ],
-      "updatedAt": "2026-09-23T08:27:33.687Z"
+      "updatedAt": "2026-10-04T09:58:07.109Z"
     },
     "playgrounds": {
-      "count": 795,
+      "count": 796,
       "pois": [
         {
           "id": "way/810778729",
@@ -723,7 +732,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:27:58.334Z"
+      "updatedAt": "2026-10-04T09:58:08.041Z"
     },
     "parking": {
       "count": 3940,
@@ -901,75 +910,23 @@
         }
       ],
       "stats": {
-        "free": 664,
-        "paid": 451,
+        "free": 667,
+        "paid": 450,
         "stepFree": 14,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:00.220Z"
+      "updatedAt": "2026-10-04T09:58:10.298Z"
     },
     "charging-stations": {
-      "count": 146,
-      "pois": [
-        {
-          "id": "node/7846484113",
-          "name": "Schuko charging",
-          "lat": 59.434051,
-          "lon": 24.763698
-        },
-        {
-          "id": "way/1502185344",
-          "name": "Alexela Balti jaama laadimisjaam",
-          "lat": 59.43961,
-          "lon": 24.736503,
-          "openingHours": "24/7",
-          "fee": "yes"
-        },
-        {
-          "id": "node/12337330520",
-          "name": "Vonk EV",
-          "lat": 59.42775,
-          "lon": 24.777243
-        },
-        {
-          "id": "node/9007250151",
-          "name": "Eleport",
-          "lat": 59.45209,
-          "lon": 24.730883
-        },
-        {
-          "id": "node/3740255293",
-          "name": "Kari 7",
-          "lat": 59.448536,
-          "lon": 24.697647
-        },
-        {
-          "id": "way/1474486822",
-          "name": "Enefit Volt",
-          "lat": 59.407338,
-          "lon": 24.694531,
-          "fee": "yes"
-        },
-        {
-          "id": "node/9748689023",
-          "name": "ChargePoint",
-          "lat": 59.408419,
-          "lon": 24.68824
-        },
-        {
-          "id": "node/4067832462",
-          "name": "Elmo",
-          "lat": 59.425015,
-          "lon": 24.642075
-        }
-      ],
+      "count": 255,
+      "pois": [],
       "stats": {
-        "free": 1,
-        "paid": 61,
-        "stepFree": 1,
+        "free": 2,
+        "paid": 194,
+        "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:00.951Z"
+      "updatedAt": "2026-10-04T09:58:11.124Z"
     },
     "gas-stations": {
       "count": 96,
@@ -1234,7 +1191,7 @@
         "stepFree": 37,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:01.701Z"
+      "updatedAt": "2026-10-04T09:58:11.642Z"
     },
     "ice-cream": {
       "count": 14,
@@ -1323,7 +1280,7 @@
         "stepFree": 5,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:28:02.474Z"
+      "updatedAt": "2026-10-04T09:58:12.202Z"
     },
     "dog-parks": {
       "count": 40,
@@ -1348,10 +1305,10 @@
         "stepFree": 8,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T09:28:03.149Z"
+      "updatedAt": "2026-10-04T09:58:12.717Z"
     },
     "picnic-spots": {
-      "count": 175,
+      "count": 184,
       "pois": [],
       "stats": {
         "free": 2,
@@ -1359,7 +1316,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:04.613Z"
+      "updatedAt": "2026-10-04T09:58:13.928Z"
     },
     "viewpoints": {
       "count": 36,
@@ -1407,7 +1364,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:05.439Z"
+      "updatedAt": "2026-10-04T09:58:14.470Z"
     },
     "beaches": {
       "count": 18,
@@ -1471,7 +1428,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:06.199Z"
+      "updatedAt": "2026-10-04T09:58:14.978Z"
     },
     "atms": {
       "count": 177,
@@ -1573,7 +1530,7 @@
         "stepFree": 23,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:28:07.049Z"
+      "updatedAt": "2026-10-04T09:58:15.563Z"
     },
     "post-boxes": {
       "count": 68,
@@ -1765,10 +1722,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:08.597Z"
+      "updatedAt": "2026-10-04T09:58:16.685Z"
     },
     "recycling": {
-      "count": 667,
+      "count": 669,
       "pois": [
         {
           "id": "node/9594395717",
@@ -1797,12 +1754,6 @@
           "lat": 59.43251,
           "lon": 24.733745,
           "openingHours": "Sa-Su 10:00-15:00"
-        },
-        {
-          "id": "node/12736926355",
-          "name": "Põnev Pood Taaskasutus",
-          "lat": 59.425577,
-          "lon": 24.700758
         },
         {
           "id": "node/11309441998",
@@ -1975,6 +1926,12 @@
           "lon": 24.738402,
           "openingHours": "24/7",
           "street": "Balti jaama tunnel"
+        },
+        {
+          "id": "node/9557936530",
+          "lat": 59.429183,
+          "lon": 24.760929,
+          "street": "Imanta"
         }
       ],
       "stats": {
@@ -1983,7 +1940,7 @@
         "stepFree": 12,
         "partlyStepFree": 6
       },
-      "updatedAt": "2026-09-27T09:28:10.941Z"
+      "updatedAt": "2026-10-04T09:58:18.375Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -2002,7 +1959,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:11.459Z"
+      "updatedAt": "2026-10-04T09:58:18.816Z"
     },
     "libraries": {
       "count": 43,
@@ -2048,11 +2005,10 @@
           "openingHours": "Mo-Fr 10:00-20:00; Sa 10:00-17:00"
         },
         {
-          "id": "way/200690759",
+          "id": "node/599655456",
           "name": "Eesti Lastekirjanduse Keskus",
-          "lat": 59.442334,
-          "lon": 24.748847,
-          "address": "Pikk 73",
+          "lat": 59.442343,
+          "lon": 24.748898,
           "openingHours": "Mo-Fr 10:00-18:00; Sa 11:00-16:00",
           "wheelchair": "no"
         },
@@ -2136,11 +2092,10 @@
           "openingHours": "Tu,We,Fr 11:00-18:00; Th 12:00-19:00; Sa 10:00-17:00"
         },
         {
-          "id": "way/113749207",
-          "name": "Sääse Raamatukogu",
-          "lat": 59.410148,
-          "lon": 24.70404,
-          "address": "Sõpruse pst 186b",
+          "id": "node/14154048508",
+          "name": "Sääse raamatukogu",
+          "lat": 59.410119,
+          "lon": 24.703985,
           "openingHours": "Mo-We,Fr 11:00-18:00; Th 12:00-19:00; Sa 10:00-17:00; Mo,Su,PH off"
         },
         {
@@ -2232,7 +2187,7 @@
         "stepFree": 11,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:28:12.193Z"
+      "updatedAt": "2026-10-04T09:58:19.476Z"
     },
     "outdoor-gyms": {
       "count": 177,
@@ -2257,7 +2212,7 @@
         "stepFree": 8,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:28:13.919Z"
+      "updatedAt": "2026-10-04T09:58:20.448Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2283,7 +2238,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:14.957Z"
+      "updatedAt": "2026-10-04T09:58:20.949Z"
     },
     "shelters": {
       "count": 23,
@@ -2301,7 +2256,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:18.100Z"
+      "updatedAt": "2026-10-04T09:58:22.605Z"
     },
     "rest-areas": {
       "count": 5,
@@ -2319,7 +2274,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:18.939Z"
+      "updatedAt": "2026-10-04T09:58:23.090Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2330,7 +2285,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:19.591Z"
+      "updatedAt": "2026-10-04T09:58:23.443Z"
     },
     "post-offices": {
       "count": 13,
@@ -2422,7 +2377,7 @@
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:20.470Z"
+      "updatedAt": "2026-10-04T09:58:23.897Z"
     },
     "showers": {
       "count": 8,
@@ -2433,7 +2388,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:21.064Z"
+      "updatedAt": "2026-10-04T09:58:24.282Z"
     },
     "fireplaces": {
       "count": 27,
@@ -2444,7 +2399,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:23.422Z"
+      "updatedAt": "2026-10-04T09:58:25.523Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2452,7 +2407,7 @@
       "updatedAt": "2026-08-17T04:02:48.276Z"
     },
     "benches": {
-      "count": 7509,
+      "count": 7580,
       "pois": [
         {
           "id": "node/8358840202",
@@ -2503,7 +2458,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:28.707Z"
+      "updatedAt": "2026-10-04T09:58:28.306Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2726,7 +2681,85 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:28:26.576Z"
+      "updatedAt": "2026-10-04T09:58:27.089Z"
+    },
+    "trash-bins": {
+      "count": 6074,
+      "pois": [
+        {
+          "id": "node/2396749933",
+          "name": "Hobujaama",
+          "lat": 59.437666,
+          "lon": 24.757454
+        },
+        {
+          "id": "node/10013461207",
+          "lat": 59.437306,
+          "lon": 24.75374,
+          "street": "Mere pst"
+        },
+        {
+          "id": "node/10013461204",
+          "lat": 59.437219,
+          "lon": 24.754319,
+          "street": "Narva mnt"
+        },
+        {
+          "id": "node/10013461212",
+          "lat": 59.437214,
+          "lon": 24.75246,
+          "street": "Vana-Viru"
+        },
+        {
+          "id": "node/9966400162",
+          "lat": 59.436712,
+          "lon": 24.75236,
+          "street": "Viru"
+        },
+        {
+          "id": "node/9966400160",
+          "lat": 59.436158,
+          "lon": 24.752602,
+          "street": "Pärnu mnt"
+        },
+        {
+          "id": "node/9921093106",
+          "lat": 59.438039,
+          "lon": 24.753319,
+          "street": "Inseneri"
+        },
+        {
+          "id": "node/9006925989",
+          "lat": 59.437641,
+          "lon": 24.755248,
+          "street": "Roseni"
+        },
+        {
+          "id": "node/10013472117",
+          "lat": 59.437242,
+          "lon": 24.751559,
+          "street": "Aia"
+        },
+        {
+          "id": "node/13840688836",
+          "lat": 59.43571,
+          "lon": 24.754459,
+          "street": "Estonia pst"
+        },
+        {
+          "id": "node/10235298980",
+          "lat": 59.436433,
+          "lon": 24.750983,
+          "street": "Virumäe suveteater"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T09:58:29.761Z"
     }
   }
 }

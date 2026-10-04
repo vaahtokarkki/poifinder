@@ -1,9 +1,9 @@
 {
   "city": "vancouver",
-  "generatedAt": "2026-09-27T10:08:38.943Z",
+  "generatedAt": "2026-10-04T10:44:56.714Z",
   "categories": {
     "toilets": {
-      "count": 256,
+      "count": 257,
       "pois": [
         {
           "id": "node/9654710915",
@@ -39,6 +39,13 @@
           "lat": 49.286979,
           "lon": -123.108941,
           "context": "Seabus Terminal"
+        },
+        {
+          "id": "node/14161661422",
+          "lat": 49.289125,
+          "lon": -123.110861,
+          "wheelchair": "yes",
+          "context": "Canada Place"
         },
         {
           "id": "way/37111511",
@@ -164,6 +171,15 @@
           "openingHours": "dawn-dusk"
         },
         {
+          "id": "way/23824617",
+          "name": "London Drugs",
+          "lat": 49.327753,
+          "lon": -123.071338,
+          "address": "Lonsdale Avenue 2032",
+          "openingHours": "Mo-Fr 08:00-22:00; Sa 09:00-22:00; Su 10:00-21:00; PH 10:00-21:00",
+          "wheelchair": "yes"
+        },
+        {
           "id": "node/4726949711",
           "name": "Elm Park Washrooms",
           "lat": 49.233447,
@@ -201,26 +217,13 @@
           "name": "Eldon Park Fieldhouse",
           "lat": 49.34559,
           "lon": -123.104432
-        },
-        {
-          "id": "node/4726952294",
-          "name": "Maple Grove Park Washrooms",
-          "lat": 49.223239,
-          "lon": -123.159533,
-          "openingHours": "sunrise-sunset"
-        },
-        {
-          "id": "way/332994052",
-          "name": "Kirkstone Park Washrooms",
-          "lat": 49.329709,
-          "lon": -123.043818
         }
       ],
       "stats": {
         "free": 59,
         "paid": 0,
-        "stepFree": 81,
-        "partlyStepFree": 2
+        "stepFree": 83,
+        "partlyStepFree": 3
       },
       "near": [
         {
@@ -233,16 +236,23 @@
           "lon": -123.119938
         }
       ],
-      "updatedAt": "2026-09-23T08:32:39.658Z"
+      "updatedAt": "2026-10-04T10:44:32.968Z"
     },
     "drinking-water": {
-      "count": 260,
+      "count": 265,
       "pois": [
         {
           "id": "node/14084472501",
           "name": "Drinking fountain station",
           "lat": 49.283474,
           "lon": -123.104457
+        },
+        {
+          "id": "node/3680264414",
+          "name": "Joe Fortes Drinking Fountain",
+          "lat": 49.28555,
+          "lon": -123.14241,
+          "wheelchair": "limited"
         },
         {
           "id": "node/5129095621",
@@ -424,18 +434,10 @@
           "lon": -123.1065,
           "fee": "no",
           "street": "Athletes Way"
-        },
-        {
-          "id": "node/9654374679",
-          "lat": 49.29183,
-          "lon": -123.137935,
-          "wheelchair": "yes",
-          "fee": "no",
-          "street": "Gilford Street Pathway"
         }
       ],
       "stats": {
-        "free": 79,
+        "free": 81,
         "paid": 1,
         "stepFree": 30,
         "partlyStepFree": 1
@@ -451,10 +453,10 @@
           "lon": -123.120123
         }
       ],
-      "updatedAt": "2026-09-23T08:32:41.374Z"
+      "updatedAt": "2026-10-04T10:44:35.083Z"
     },
     "playgrounds": {
-      "count": 544,
+      "count": 538,
       "pois": [
         {
           "id": "node/13910253277",
@@ -545,10 +547,10 @@
         "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:16.546Z"
+      "updatedAt": "2026-10-04T10:44:36.067Z"
     },
     "parking": {
-      "count": 2089,
+      "count": 2092,
       "pois": [
         {
           "id": "way/1055850799",
@@ -638,12 +640,6 @@
           "lon": -123.10548,
           "address": "Expo Boulevard 80",
           "fee": "yes"
-        },
-        {
-          "id": "way/450825828",
-          "name": "The Chain & Forge",
-          "lat": 49.27144,
-          "lon": -123.134835
         },
         {
           "id": "way/1252551198",
@@ -767,18 +763,25 @@
           "lat": 49.341901,
           "lon": -123.113294,
           "fee": "yes"
+        },
+        {
+          "id": "way/1038781091",
+          "name": "Capilano Park Road Parking Lot 1",
+          "lat": 49.346908,
+          "lon": -123.113263,
+          "fee": "no"
         }
       ],
       "stats": {
-        "free": 401,
-        "paid": 369,
+        "free": 403,
+        "paid": 374,
         "stepFree": 7,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:17.691Z"
+      "updatedAt": "2026-10-04T10:44:37.127Z"
     },
     "charging-stations": {
-      "count": 37,
+      "count": 36,
       "pois": [
         {
           "id": "node/13676000801",
@@ -848,7 +851,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:18.257Z"
+      "updatedAt": "2026-10-04T10:44:37.673Z"
     },
     "gas-stations": {
       "count": 75,
@@ -930,10 +933,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:18.938Z"
+      "updatedAt": "2026-10-04T10:44:38.238Z"
     },
     "ice-cream": {
-      "count": 53,
+      "count": 56,
       "pois": [
         {
           "id": "node/12824182646",
@@ -1032,6 +1035,12 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/14148788009",
+          "name": "Casa Dolce",
+          "lat": 49.290824,
+          "lon": -123.126996
+        },
+        {
           "id": "node/5581881764",
           "name": "Soft Peaks Ice Cream",
           "lat": 49.283604,
@@ -1044,6 +1053,13 @@
           "lat": 49.286631,
           "lon": -123.14109,
           "address": "Davie Street 1752"
+        },
+        {
+          "id": "node/9657558864",
+          "name": "Mashti",
+          "lat": 49.287597,
+          "lon": -123.141068,
+          "address": "Denman Street 1168"
         },
         {
           "id": "node/14061866057",
@@ -1072,8 +1088,8 @@
         {
           "id": "node/3994476663",
           "name": "Rain or Shine Ice Cream",
-          "lat": 49.267924,
-          "lon": -123.148654,
+          "lat": 49.267933,
+          "lon": -123.148651,
           "address": "West 4th Avenue 1926",
           "openingHours": "Mo-Su 12:00-22:00"
         },
@@ -1159,31 +1175,15 @@
           "lat": 49.310473,
           "lon": -123.081652,
           "address": "Carrie Cates Court 123"
-        },
-        {
-          "id": "node/4828947743",
-          "name": "Little Spoon Ice Cream",
-          "lat": 49.264266,
-          "lon": -123.171855,
-          "address": "West Broadway 2967",
-          "openingHours": "Mo-Su 13:00-22:00"
-        },
-        {
-          "id": "node/13286707887",
-          "name": "Welcome Parlour Ice Cream",
-          "lat": 49.309778,
-          "lon": -123.078664,
-          "address": "Victory Ship Way 125",
-          "openingHours": "Mo-Su 12:00-21:00"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 16,
+        "stepFree": 17,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:08:19.583Z"
+      "updatedAt": "2026-10-04T10:44:38.805Z"
     },
     "dog-parks": {
       "count": 35,
@@ -1260,13 +1260,13 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 12,
+        "stepFree": 14,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:08:20.177Z"
+      "updatedAt": "2026-10-04T10:44:39.238Z"
     },
     "picnic-spots": {
-      "count": 571,
+      "count": 574,
       "pois": [
         {
           "id": "way/95896621",
@@ -1281,10 +1281,10 @@
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:21.660Z"
+      "updatedAt": "2026-10-04T10:44:40.328Z"
     },
     "viewpoints": {
-      "count": 50,
+      "count": 51,
       "pois": [
         {
           "id": "node/889550078",
@@ -1339,7 +1339,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:22.499Z"
+      "updatedAt": "2026-10-04T10:44:40.963Z"
     },
     "beaches": {
       "count": 88,
@@ -1429,10 +1429,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:23.139Z"
+      "updatedAt": "2026-10-04T10:44:41.481Z"
     },
     "atms": {
-      "count": 184,
+      "count": 187,
       "pois": [
         {
           "id": "node/9707802614",
@@ -1668,13 +1668,13 @@
       "stats": {
         "free": 0,
         "paid": 4,
-        "stepFree": 54,
+        "stepFree": 58,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:23.806Z"
+      "updatedAt": "2026-10-04T10:44:42.059Z"
     },
     "post-boxes": {
-      "count": 496,
+      "count": 498,
       "pois": [
         {
           "id": "node/7434558069",
@@ -1865,12 +1865,12 @@
         "free": 0,
         "paid": 0,
         "stepFree": 8,
-        "partlyStepFree": 1
+        "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:08:25.060Z"
+      "updatedAt": "2026-10-04T10:44:43.099Z"
     },
     "recycling": {
-      "count": 54,
+      "count": 55,
       "pois": [
         {
           "id": "node/9065844152",
@@ -1932,14 +1932,16 @@
           "id": "way/525506459",
           "name": "Joe's Recycling",
           "lat": 49.24585,
-          "lon": -123.100696
+          "lon": -123.100696,
+          "openingHours": "Mo-Fr 09:30-17:30; Sa 10:00-17:00; Su 11:00-17:00"
         },
         {
           "id": "node/13443906646",
           "name": "Return-It - Grandview",
           "lat": 49.257964,
           "lon": -123.045312,
-          "address": "Grandview Highway 2890"
+          "address": "Grandview Highway 2890",
+          "openingHours": "Tu-Su 09:00-17:00; PH off"
         },
         {
           "id": "node/7196556956",
@@ -2079,7 +2081,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:27.127Z"
+      "updatedAt": "2026-10-04T10:44:45.084Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2090,10 +2092,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:27.659Z"
+      "updatedAt": "2026-10-04T10:44:45.588Z"
     },
     "libraries": {
-      "count": 286,
+      "count": 287,
       "pois": [
         {
           "id": "way/37111640",
@@ -2192,6 +2194,14 @@
           "address": "Napier Street 1661",
           "openingHours": "Mo-We 09:30-20:00; Sa-Su 09:30-17:00; Th-Fr 09:30-18:00",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/14220426109",
+          "name": "My Little Libraire",
+          "lat": 49.266565,
+          "lon": -123.167687,
+          "address": "West 6th Avenue 2752",
+          "wheelchair": "limited"
         },
         {
           "id": "node/644342011",
@@ -2298,21 +2308,15 @@
           "address": "East Hastings Street 2674",
           "openingHours": "Tu-We 09:30-19:00; Th-Fr 09:30-18:00; Sa-Su 09:30-17:00",
           "wheelchair": "yes"
-        },
-        {
-          "id": "node/8433368870",
-          "name": "Ross Street Library",
-          "lat": 49.244277,
-          "lon": -123.081428
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
         "stepFree": 9,
-        "partlyStepFree": 0
+        "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:08:28.222Z"
+      "updatedAt": "2026-10-04T10:44:46.088Z"
     },
     "outdoor-gyms": {
       "count": 33,
@@ -2330,7 +2334,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:29.410Z"
+      "updatedAt": "2026-10-04T10:44:47.118Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2360,7 +2364,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:29.980Z"
+      "updatedAt": "2026-10-04T10:44:47.600Z"
     },
     "shelters": {
       "count": 16,
@@ -2384,7 +2388,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:32.071Z"
+      "updatedAt": "2026-10-04T10:44:49.225Z"
     },
     "rest-areas": {
       "count": 23,
@@ -2395,7 +2399,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:32.627Z"
+      "updatedAt": "2026-10-04T10:44:49.788Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2406,10 +2410,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:33.059Z"
+      "updatedAt": "2026-10-04T10:44:50.123Z"
     },
     "post-offices": {
-      "count": 71,
+      "count": 73,
       "pois": [
         {
           "id": "node/7229566463",
@@ -2645,21 +2649,21 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 14,
+        "stepFree": 16,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:33.581Z"
+      "updatedAt": "2026-10-04T10:44:50.579Z"
     },
     "showers": {
-      "count": 16,
+      "count": 17,
       "pois": [],
       "stats": {
-        "free": 9,
+        "free": 10,
         "paid": 0,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:34.059Z"
+      "updatedAt": "2026-10-04T10:44:50.963Z"
     },
     "fireplaces": {
       "count": 5,
@@ -2670,7 +2674,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:35.378Z"
+      "updatedAt": "2026-10-04T10:44:52.203Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2678,7 +2682,7 @@
       "updatedAt": "2026-08-17T04:06:31.003Z"
     },
     "benches": {
-      "count": 4105,
+      "count": 4120,
       "pois": [
         {
           "id": "node/6346226598",
@@ -2726,6 +2730,12 @@
           "lat": 49.268048,
           "lon": -123.152527,
           "wheelchair": "no"
+        },
+        {
+          "id": "node/12089525174",
+          "name": "Khalil Fong Memorial Bench",
+          "lat": 49.297574,
+          "lon": -123.154058
         },
         {
           "id": "node/6336259808",
@@ -2872,12 +2882,6 @@
           "lat": 49.283026,
           "lon": -123.124712,
           "street": "Haro Street"
-        },
-        {
-          "id": "node/13650873039",
-          "lat": 49.285732,
-          "lon": -123.122756,
-          "street": "Thurlow Street"
         }
       ],
       "stats": {
@@ -2886,7 +2890,7 @@
         "stepFree": 218,
         "partlyStepFree": 52
       },
-      "updatedAt": "2026-09-27T10:08:38.841Z"
+      "updatedAt": "2026-10-04T10:44:54.961Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3047,7 +3051,129 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:37.467Z"
+      "updatedAt": "2026-10-04T10:44:53.758Z"
+    },
+    "trash-bins": {
+      "count": 910,
+      "pois": [
+        {
+          "id": "node/6535560952",
+          "name": "Garbage bin",
+          "lat": 49.279324,
+          "lon": -123.120728
+        },
+        {
+          "id": "node/5133538523",
+          "lat": 49.282635,
+          "lon": -123.121592,
+          "street": "Hornby Street"
+        },
+        {
+          "id": "node/12121434802",
+          "lat": 49.283318,
+          "lon": -123.120356,
+          "street": "šxʷƛ̓ənəq Xwtl’e7énḵ Square"
+        },
+        {
+          "id": "node/5132015222",
+          "lat": 49.281995,
+          "lon": -123.120658,
+          "street": "Robson Street"
+        },
+        {
+          "id": "node/5135902326",
+          "lat": 49.282976,
+          "lon": -123.119095,
+          "street": "Howe Street"
+        },
+        {
+          "id": "node/5145496321",
+          "lat": 49.281492,
+          "lon": -123.119729,
+          "street": "Granville Street"
+        },
+        {
+          "id": "node/5131257423",
+          "lat": 49.283979,
+          "lon": -123.121979,
+          "wheelchair": "yes",
+          "street": "Burrard Street"
+        },
+        {
+          "id": "node/4689910789",
+          "lat": 49.284137,
+          "lon": -123.121742,
+          "street": "Alberni Street"
+        },
+        {
+          "id": "node/4833821621",
+          "lat": 49.281551,
+          "lon": -123.122966,
+          "street": "Smithe Street"
+        },
+        {
+          "id": "node/9661039860",
+          "lat": 49.284763,
+          "lon": -123.121421,
+          "street": "Royal Centre"
+        },
+        {
+          "id": "node/12477156187",
+          "lat": 49.28201,
+          "lon": -123.117206,
+          "street": "Seymour Street"
+        },
+        {
+          "id": "node/4689886693",
+          "lat": 49.285145,
+          "lon": -123.120199,
+          "street": "Melville Street"
+        },
+        {
+          "id": "node/12477160386",
+          "lat": 49.281661,
+          "lon": -123.117119,
+          "street": "West Georgia Street"
+        },
+        {
+          "id": "node/10085649279",
+          "lat": 49.285093,
+          "lon": -123.118549,
+          "wheelchair": "yes",
+          "street": "Dunsmuir Street"
+        },
+        {
+          "id": "node/8899655481",
+          "lat": 49.285701,
+          "lon": -123.122873,
+          "street": "Thurlow Street"
+        },
+        {
+          "id": "node/9956044566",
+          "lat": 49.279564,
+          "lon": -123.118468,
+          "street": "Richards Street"
+        },
+        {
+          "id": "node/4858336422",
+          "lat": 49.279866,
+          "lon": -123.123847,
+          "street": "Nelson Street"
+        },
+        {
+          "id": "node/5129095721",
+          "lat": 49.285318,
+          "lon": -123.11603,
+          "street": "West Pender Street"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 13,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:44:56.612Z"
     }
   }
 }

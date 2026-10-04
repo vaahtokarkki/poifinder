@@ -1,9 +1,9 @@
 {
   "city": "phoenix",
-  "generatedAt": "2026-09-27T10:05:27.187Z",
+  "generatedAt": "2026-10-04T10:41:21.482Z",
   "categories": {
     "toilets": {
-      "count": 185,
+      "count": 187,
       "pois": [
         {
           "id": "node/8715578259",
@@ -214,7 +214,7 @@
         "stepFree": 31,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-23T08:32:13.822Z"
+      "updatedAt": "2026-10-04T10:40:51.122Z"
     },
     "drinking-water": {
       "count": 232,
@@ -247,7 +247,7 @@
           "id": "node/10972324630",
           "lat": 33.448368,
           "lon": -112.070744,
-          "street": "10031"
+          "street": "East Washington Street"
         },
         {
           "id": "node/2129584310",
@@ -274,7 +274,7 @@
           "lon": -112.069109,
           "wheelchair": "yes",
           "fee": "no",
-          "street": "10014"
+          "street": "East Jefferson Street"
         },
         {
           "id": "node/12104487898",
@@ -371,12 +371,6 @@
           "street": "West Glenrosa Avenue"
         },
         {
-          "id": "node/13471216540",
-          "lat": 33.448113,
-          "lon": -111.999839,
-          "street": "East Washington Street"
-        },
-        {
           "id": "node/10174400330",
           "lat": 33.507915,
           "lon": -112.099674,
@@ -407,6 +401,13 @@
           "lat": 33.437423,
           "lon": -111.994195,
           "street": "B23 Jetway"
+        },
+        {
+          "id": "node/12015534533",
+          "lat": 33.514572,
+          "lon": -112.045357,
+          "fee": "no",
+          "street": "North Las Casitas Place"
         }
       ],
       "stats": {
@@ -415,7 +416,7 @@
         "stepFree": 22,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-23T08:32:15.893Z"
+      "updatedAt": "2026-10-04T10:40:53.910Z"
     },
     "playgrounds": {
       "count": 405,
@@ -465,16 +466,17 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:01.962Z"
+      "updatedAt": "2026-10-04T10:40:55.119Z"
     },
     "parking": {
-      "count": 3288,
+      "count": 3320,
       "pois": [
         {
-          "id": "node/13374993301",
+          "id": "way/37057949",
           "name": "Regency Garage",
-          "lat": 33.448886,
-          "lon": -112.071526
+          "lat": 33.449022,
+          "lon": -112.071904,
+          "fee": "yes"
         },
         {
           "id": "way/37057888",
@@ -680,7 +682,7 @@
         "stepFree": 14,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:03.457Z"
+      "updatedAt": "2026-10-04T10:40:56.683Z"
     },
     "charging-stations": {
       "count": 58,
@@ -742,10 +744,10 @@
         "stepFree": 11,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:04.016Z"
+      "updatedAt": "2026-10-04T10:40:57.239Z"
     },
     "gas-stations": {
-      "count": 301,
+      "count": 303,
       "pois": [
         {
           "id": "way/128141491",
@@ -961,16 +963,22 @@
         "stepFree": 5,
         "partlyStepFree": 13
       },
-      "updatedAt": "2026-09-27T10:05:04.845Z"
+      "updatedAt": "2026-10-04T10:40:58.085Z"
     },
     "ice-cream": {
-      "count": 69,
+      "count": 72,
       "pois": [
         {
           "id": "node/10738443580",
           "name": "The Yard",
           "lat": 33.447342,
           "lon": -112.074074
+        },
+        {
+          "id": "node/14135889041",
+          "name": "Cold Stone Creamery",
+          "lat": 33.452697,
+          "lon": -112.068538
         },
         {
           "id": "node/9733909813",
@@ -985,6 +993,13 @@
           "lon": -112.086636,
           "address": "North Grand Avenue 1028",
           "openingHours": "Tu-Th 12:00-00:00; Fr, Sa 12:00-01:00; Su 12:00-22:00"
+        },
+        {
+          "id": "node/14136270252",
+          "name": "Oh My Gurt",
+          "lat": 33.457049,
+          "lon": -112.090863,
+          "address": "West McKinley Street 1344"
         },
         {
           "id": "node/9583689872",
@@ -1100,12 +1115,6 @@
           "lon": -111.996702
         },
         {
-          "id": "node/8535599727",
-          "name": "Cold Stone Creamery",
-          "lat": 33.507648,
-          "lon": -112.03985
-        },
-        {
           "id": "node/12454199550",
           "name": "Frost",
           "lat": 33.510343,
@@ -1154,13 +1163,6 @@
           "name": "Sweet Disciple",
           "lat": 33.513499,
           "lon": -112.130712
-        },
-        {
-          "id": "node/14028081502",
-          "name": "Laveen Ice Cream & More",
-          "lat": 33.391238,
-          "lon": -112.142677,
-          "address": "West Southern Avenue 3901"
         }
       ],
       "stats": {
@@ -1169,7 +1171,7 @@
         "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:05.861Z"
+      "updatedAt": "2026-10-04T10:40:58.823Z"
     },
     "dog-parks": {
       "count": 24,
@@ -1263,10 +1265,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:06.439Z"
+      "updatedAt": "2026-10-04T10:40:59.325Z"
     },
     "picnic-spots": {
-      "count": 1362,
+      "count": 1367,
       "pois": [
         {
           "id": "node/8751311139",
@@ -1341,7 +1343,7 @@
         "stepFree": 188,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:07.758Z"
+      "updatedAt": "2026-10-04T10:41:00.488Z"
     },
     "viewpoints": {
       "count": 23,
@@ -1377,7 +1379,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:08.572Z"
+      "updatedAt": "2026-10-04T10:41:01.410Z"
     },
     "beaches": {
       "count": 3,
@@ -1388,10 +1390,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:09.311Z"
+      "updatedAt": "2026-10-04T10:41:02.096Z"
     },
     "atms": {
-      "count": 146,
+      "count": 148,
       "pois": [
         {
           "id": "node/1318226501",
@@ -1578,10 +1580,10 @@
         "stepFree": 1,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T10:05:10.231Z"
+      "updatedAt": "2026-10-04T10:41:02.937Z"
     },
     "post-boxes": {
-      "count": 86,
+      "count": 87,
       "pois": [
         {
           "id": "node/12287650440",
@@ -1770,10 +1772,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:12.114Z"
+      "updatedAt": "2026-10-04T10:41:04.564Z"
     },
     "recycling": {
-      "count": 100,
+      "count": 101,
       "pois": [
         {
           "id": "node/9598372360",
@@ -1825,8 +1827,8 @@
         {
           "id": "way/1420308856",
           "name": "SA Recycling",
-          "lat": 33.417513,
-          "lon": -112.100413,
+          "lat": 33.417515,
+          "lon": -112.100414,
           "address": "South 19th Avenue 3052"
         },
         {
@@ -1981,7 +1983,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:14.462Z"
+      "updatedAt": "2026-10-04T10:41:06.920Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -1992,7 +1994,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:15.010Z"
+      "updatedAt": "2026-10-04T10:41:07.417Z"
     },
     "libraries": {
       "count": 42,
@@ -2153,10 +2155,11 @@
         },
         {
           "id": "way/888053875",
-          "name": "Guadalupe Branch Library",
+          "name": "Guadalupe Library",
           "lat": 33.362025,
           "lon": -111.96263,
-          "address": "South Avenida del Yaqui 9241"
+          "address": "South Avenida del Yaqui 9241",
+          "openingHours": "Mo 10:00-19:00; Tu-Th 10:00-18:00; Fr-Sa 10:00-17:00; Su off; PH off"
         },
         {
           "id": "way/943324393",
@@ -2172,7 +2175,7 @@
           "lat": 33.539276,
           "lon": -112.184361,
           "address": "North 58th Avenue 7010",
-          "openingHours": "Mo,Th 13:00-20:00; Tu,We 10:00-17:00; Sa 13:00-17:00",
+          "openingHours": "Mo,Th 13:00-20:00; Tu,We 10:00-17:00; Sa 10:00-17:00; Su 13:00-17:00",
           "wheelchair": "yes"
         },
         {
@@ -2188,7 +2191,8 @@
           "name": "Civic Center Library",
           "lat": 33.491927,
           "lon": -111.92054,
-          "address": "North Drinkwater Boulevard 3839"
+          "address": "North Drinkwater Boulevard 3839",
+          "openingHours": "Mo-Th 09:00-18:00; Fr-Sa 10:00-17:00; Su 13:00-17:00"
         }
       ],
       "stats": {
@@ -2197,7 +2201,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:15.930Z"
+      "updatedAt": "2026-10-04T10:41:08.160Z"
     },
     "outdoor-gyms": {
       "count": 119,
@@ -2215,7 +2219,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:17.197Z"
+      "updatedAt": "2026-10-04T10:41:09.536Z"
     },
     "camp-sites": {
       "count": 5,
@@ -2234,7 +2238,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:17.912Z"
+      "updatedAt": "2026-10-04T10:41:10.169Z"
     },
     "shelters": {
       "count": 354,
@@ -2402,7 +2406,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:19.860Z"
+      "updatedAt": "2026-10-04T10:41:12.167Z"
     },
     "rest-areas": {
       "count": 7,
@@ -2439,7 +2443,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:20.601Z"
+      "updatedAt": "2026-10-04T10:41:12.800Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2450,7 +2454,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:21.123Z"
+      "updatedAt": "2026-10-04T10:41:13.308Z"
     },
     "post-offices": {
       "count": 47,
@@ -2653,7 +2657,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:21.779Z"
+      "updatedAt": "2026-10-04T10:41:14.360Z"
     },
     "showers": {
       "count": 0,
@@ -2664,7 +2668,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:22.298Z"
+      "updatedAt": "2026-10-04T10:41:14.962Z"
     },
     "fireplaces": {
       "count": 328,
@@ -2675,7 +2679,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:23.829Z"
+      "updatedAt": "2026-10-04T10:41:16.418Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2806,9 +2810,9 @@
           "street": "West Jackson Street"
         },
         {
-          "id": "node/8770469558",
-          "lat": 33.448803,
-          "lon": -112.06548,
+          "id": "node/8770469557",
+          "lat": 33.448839,
+          "lon": -112.065491,
           "street": "North 7th Street"
         },
         {
@@ -2824,7 +2828,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:27.086Z"
+      "updatedAt": "2026-10-04T10:41:19.577Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2933,7 +2937,187 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:05:25.781Z"
+      "updatedAt": "2026-10-04T10:41:18.196Z"
+    },
+    "trash-bins": {
+      "count": 7988,
+      "pois": [
+        {
+          "id": "way/324034725",
+          "name": "Sunnyslope Transit Center",
+          "lat": 33.566904,
+          "lon": -112.068908
+        },
+        {
+          "id": "node/2299632836",
+          "lat": 33.447944,
+          "lon": -112.075238,
+          "street": "South 1st Avenue"
+        },
+        {
+          "id": "node/2299632851",
+          "lat": 33.448371,
+          "lon": -112.075458,
+          "street": "West Washington Street"
+        },
+        {
+          "id": "node/2299632843",
+          "lat": 33.448322,
+          "lon": -112.076723,
+          "street": "Marvin Andrews Way"
+        },
+        {
+          "id": "node/4825953481",
+          "lat": 33.451294,
+          "lon": -112.073204,
+          "street": "East Van Buren Street"
+        },
+        {
+          "id": "node/5224154412",
+          "lat": 33.447053,
+          "lon": -112.07736,
+          "street": "West Jefferson Street"
+        },
+        {
+          "id": "node/5197114675",
+          "lat": 33.451299,
+          "lon": -112.075639,
+          "street": "West Van Buren Street"
+        },
+        {
+          "id": "node/2299632860",
+          "lat": 33.452048,
+          "lon": -112.073966,
+          "street": "North Central Avenue"
+        },
+        {
+          "id": "node/9998825367",
+          "lat": 33.450906,
+          "lon": -112.069829,
+          "street": "North 3rd Street"
+        },
+        {
+          "id": "node/9941579283",
+          "lat": 33.448787,
+          "lon": -112.080483,
+          "street": "North 5th Avenue"
+        },
+        {
+          "id": "node/9908600830",
+          "lat": 33.453915,
+          "lon": -112.074924,
+          "street": "North 1st Avenue"
+        },
+        {
+          "id": "node/9998825640",
+          "lat": 33.450653,
+          "lon": -112.067743,
+          "street": "Diocese of Phoenix Parking Garaage"
+        },
+        {
+          "id": "node/4825954035",
+          "lat": 33.45441,
+          "lon": -112.07348,
+          "street": "East Fillmore Street"
+        },
+        {
+          "id": "node/4825954050",
+          "lat": 33.454785,
+          "lon": -112.074575,
+          "street": "West Fillmore Street"
+        },
+        {
+          "id": "node/4265677908",
+          "lat": 33.451633,
+          "lon": -112.067351,
+          "street": "North 5th Street"
+        },
+        {
+          "id": "node/9670465946",
+          "lat": 33.450931,
+          "lon": -112.08171,
+          "street": "North 6th Avenue"
+        },
+        {
+          "id": "node/9670511533",
+          "lat": 33.454307,
+          "lon": -112.078714,
+          "street": "North 4th Avenue"
+        },
+        {
+          "id": "node/4950087226",
+          "lat": 33.444806,
+          "lon": -112.081397,
+          "street": "West Jackson Street"
+        },
+        {
+          "id": "node/10034819469",
+          "lat": 33.449222,
+          "lon": -112.065372,
+          "street": "East Adams Street"
+        },
+        {
+          "id": "node/9669190201",
+          "lat": 33.447754,
+          "lon": -112.082703,
+          "street": "South 7th Avenue"
+        },
+        {
+          "id": "node/4825953456",
+          "lat": 33.447596,
+          "lon": -112.06528,
+          "street": "South 7th Street"
+        },
+        {
+          "id": "node/4825953455",
+          "lat": 33.448636,
+          "lon": -112.064903,
+          "street": "North 7th Street"
+        },
+        {
+          "id": "node/4825953449",
+          "lat": 33.447049,
+          "lon": -112.064658,
+          "street": "East Jefferson Street Frontage Road"
+        },
+        {
+          "id": "node/4825954009",
+          "lat": 33.454769,
+          "lon": -112.068028,
+          "street": "North 4th Street"
+        },
+        {
+          "id": "node/9085522521",
+          "lat": 33.449122,
+          "lon": -112.083984,
+          "street": "West Adams Street"
+        },
+        {
+          "id": "node/4649117325",
+          "lat": 33.450147,
+          "lon": -112.08448,
+          "street": "North 9th Avenue"
+        },
+        {
+          "id": "node/9052345110",
+          "lat": 33.455372,
+          "lon": -112.067298,
+          "street": "East Pierce Street"
+        },
+        {
+          "id": "node/7952992574",
+          "lat": 33.452236,
+          "lon": -112.06333,
+          "street": "East Polk Street"
+        }
+      ],
+      "stats": {
+        "free": 7,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:41:21.380Z"
     }
   }
 }

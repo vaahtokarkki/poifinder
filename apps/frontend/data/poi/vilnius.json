@@ -1,9 +1,9 @@
 {
   "city": "vilnius",
-  "generatedAt": "2026-09-27T09:29:37.187Z",
+  "generatedAt": "2026-10-04T09:59:18.412Z",
   "categories": {
     "toilets": {
-      "count": 109,
+      "count": 110,
       "pois": [
         {
           "id": "node/13985887417",
@@ -245,7 +245,7 @@
         }
       ],
       "stats": {
-        "free": 50,
+        "free": 51,
         "paid": 17,
         "stepFree": 36,
         "partlyStepFree": 2
@@ -297,10 +297,10 @@
           "lon": 25.304347
         }
       ],
-      "updatedAt": "2026-09-23T08:27:37.780Z"
+      "updatedAt": "2026-10-04T09:58:56.627Z"
     },
     "drinking-water": {
-      "count": 182,
+      "count": 175,
       "pois": [
         {
           "id": "node/14080184101",
@@ -406,12 +406,6 @@
           "street": "Užupio g."
         },
         {
-          "id": "node/5590690561",
-          "lat": 54.698499,
-          "lon": 25.278713,
-          "street": "Giedraičių g."
-        },
-        {
           "id": "node/6466705218",
           "lat": 54.69818,
           "lon": 25.27335,
@@ -470,12 +464,6 @@
           "street": "Šilutės g."
         },
         {
-          "id": "node/7003730866",
-          "lat": 54.70123,
-          "lon": 25.274638,
-          "street": "Kernavės g."
-        },
-        {
           "id": "node/5495636019",
           "lat": 54.673566,
           "lon": 25.266597,
@@ -492,6 +480,18 @@
           "lat": 54.678248,
           "lon": 25.302781,
           "street": "Paupio g."
+        },
+        {
+          "id": "node/9815680365",
+          "lat": 54.684754,
+          "lon": 25.307353,
+          "street": "Filaretų g."
+        },
+        {
+          "id": "node/8696708318",
+          "lat": 54.681162,
+          "lon": 25.306105,
+          "street": "Žvirgždyno g."
         }
       ],
       "stats": {
@@ -547,10 +547,10 @@
           "lon": 25.309744
         }
       ],
-      "updatedAt": "2026-09-23T08:27:39.220Z"
+      "updatedAt": "2026-10-04T09:58:58.569Z"
     },
     "playgrounds": {
-      "count": 996,
+      "count": 1002,
       "pois": [
         {
           "id": "way/608109641",
@@ -606,10 +606,10 @@
         "stepFree": 7,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:29:06.239Z"
+      "updatedAt": "2026-10-04T09:58:59.681Z"
     },
     "parking": {
-      "count": 1970,
+      "count": 1980,
       "pois": [
         {
           "id": "way/290285966",
@@ -720,8 +720,8 @@
         {
           "id": "way/377962913",
           "name": "Verkių slėnis",
-          "lat": 54.728913,
-          "lon": 25.292693,
+          "lat": 54.728924,
+          "lon": 25.292682,
           "fee": "no"
         },
         {
@@ -839,15 +839,15 @@
         }
       ],
       "stats": {
-        "free": 631,
-        "paid": 462,
+        "free": 634,
+        "paid": 483,
         "stepFree": 69,
         "partlyStepFree": 14
       },
-      "updatedAt": "2026-09-27T09:29:08.182Z"
+      "updatedAt": "2026-10-04T09:59:00.721Z"
     },
     "charging-stations": {
-      "count": 155,
+      "count": 161,
       "pois": [
         {
           "id": "node/9862616431",
@@ -872,7 +872,8 @@
           "id": "node/7030047495",
           "name": "Forum Palace",
           "lat": 54.698134,
-          "lon": 25.265643
+          "lon": 25.265643,
+          "openingHours": "24/7"
         },
         {
           "id": "node/7931268946",
@@ -958,11 +959,11 @@
       ],
       "stats": {
         "free": 3,
-        "paid": 74,
+        "paid": 78,
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:08.927Z"
+      "updatedAt": "2026-10-04T09:59:01.145Z"
     },
     "gas-stations": {
       "count": 91,
@@ -1079,7 +1080,7 @@
         },
         {
           "id": "way/105854007",
-          "name": "Ecoil",
+          "name": "Jozita",
           "lat": 54.703204,
           "lon": 25.257448,
           "address": "Ukmergės g. 130",
@@ -1172,10 +1173,10 @@
           "wheelchair": "yes"
         },
         {
-          "id": "node/13658269328",
+          "id": "node/14181347137",
           "name": "Neste „Litexpo“",
-          "lat": 54.673423,
-          "lon": 25.224068,
+          "lat": 54.673418,
+          "lon": 25.224061,
           "address": "Parodų g. 1A",
           "openingHours": "24/7"
         },
@@ -1227,7 +1228,7 @@
         "stepFree": 24,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T09:29:10.002Z"
+      "updatedAt": "2026-10-04T09:59:01.658Z"
     },
     "ice-cream": {
       "count": 3,
@@ -1246,6 +1247,7 @@
           "name": "Soprano",
           "lat": 54.710629,
           "lon": 25.264966,
+          "address": "Ozo g. 25",
           "openingHours": "Mo-Su 10:00-22:00"
         },
         {
@@ -1263,21 +1265,21 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:11.139Z"
+      "updatedAt": "2026-10-04T09:59:02.149Z"
     },
     "dog-parks": {
-      "count": 25,
+      "count": 24,
       "pois": [],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 7,
+        "stepFree": 6,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:29:11.940Z"
+      "updatedAt": "2026-10-04T09:59:02.600Z"
     },
     "picnic-spots": {
-      "count": 99,
+      "count": 98,
       "pois": [
         {
           "id": "node/5661047121",
@@ -1298,7 +1300,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:13.690Z"
+      "updatedAt": "2026-10-04T09:59:04.192Z"
     },
     "viewpoints": {
       "count": 53,
@@ -1508,7 +1510,7 @@
         "stepFree": 8,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:29:14.841Z"
+      "updatedAt": "2026-10-04T09:59:04.838Z"
     },
     "beaches": {
       "count": 13,
@@ -1522,8 +1524,8 @@
         {
           "id": "relation/4235045",
           "name": "Žirmūnų paplūdimys",
-          "lat": 54.723238,
-          "lon": 25.312387
+          "lat": 54.723242,
+          "lon": 25.312391
         },
         {
           "id": "relation/5764064",
@@ -1541,7 +1543,7 @@
           "id": "relation/3937297",
           "name": "Valakampių II-asis paplūdimys",
           "lat": 54.742302,
-          "lon": 25.292935
+          "lon": 25.29285
         },
         {
           "id": "relation/6673696",
@@ -1568,7 +1570,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:15.820Z"
+      "updatedAt": "2026-10-04T09:59:05.328Z"
     },
     "atms": {
       "count": 172,
@@ -1627,13 +1629,15 @@
           "name": "Citadele",
           "lat": 54.697137,
           "lon": 25.299002,
+          "address": "Žirmūnų g. 2",
           "openingHours": "24/7"
         },
         {
           "id": "node/7669506500",
           "name": "Medus",
           "lat": 54.675553,
-          "lon": 25.256842
+          "lon": 25.256842,
+          "address": "Kedrų g. 4"
         },
         {
           "id": "node/2175790105",
@@ -1672,6 +1676,7 @@
           "name": "SEB automobiliams",
           "lat": 54.673239,
           "lon": 25.224154,
+          "address": "Parodų g. 1A",
           "openingHours": "24/7"
         },
         {
@@ -1697,10 +1702,10 @@
         "stepFree": 33,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:29:17.024Z"
+      "updatedAt": "2026-10-04T09:59:05.917Z"
     },
     "post-boxes": {
-      "count": 5,
+      "count": 7,
       "pois": [
         {
           "id": "node/12187842503",
@@ -1719,6 +1724,12 @@
           "lat": 54.686333,
           "lon": 25.323688,
           "street": "Stepono Batoro g."
+        },
+        {
+          "id": "node/14188791701",
+          "lat": 54.642493,
+          "lon": 25.205067,
+          "street": "Valkininkų g."
         }
       ],
       "stats": {
@@ -1727,10 +1738,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:18.580Z"
+      "updatedAt": "2026-10-04T09:59:06.767Z"
     },
     "recycling": {
-      "count": 1172,
+      "count": 1182,
       "pois": [
         {
           "id": "node/4232428858",
@@ -1752,7 +1763,8 @@
           "id": "node/5314842568",
           "name": "Maxima taromatas",
           "lat": 54.702042,
-          "lon": 25.289548
+          "lon": 25.289548,
+          "openingHours": "Mo-Su 08:00-22:00"
         },
         {
           "id": "way/210655358",
@@ -1932,7 +1944,7 @@
         "stepFree": 1,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:29:21.592Z"
+      "updatedAt": "2026-10-04T09:59:08.373Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -1943,16 +1955,17 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:22.260Z"
+      "updatedAt": "2026-10-04T09:59:08.820Z"
     },
     "libraries": {
-      "count": 59,
+      "count": 60,
       "pois": [
         {
           "id": "node/1961888763",
           "name": "Lietuvos žemės ūkio biblioteka",
           "lat": 54.687781,
           "lon": 25.277288,
+          "address": "Gedimino pr. 19",
           "wheelchair": "yes"
         },
         {
@@ -2160,7 +2173,8 @@
           "id": "node/1523911801",
           "name": "VU TVM biblioteka",
           "lat": 54.724926,
-          "lon": 25.336514
+          "lon": 25.336514,
+          "address": "Saulėtekio al. 22"
         },
         {
           "id": "node/746872060",
@@ -2185,7 +2199,7 @@
         "stepFree": 10,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:23.108Z"
+      "updatedAt": "2026-10-04T09:59:09.338Z"
     },
     "outdoor-gyms": {
       "count": 118,
@@ -2196,7 +2210,7 @@
         "stepFree": 4,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T09:29:24.651Z"
+      "updatedAt": "2026-10-04T09:59:10.303Z"
     },
     "camp-sites": {
       "count": 3,
@@ -2225,7 +2239,7 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:29:25.492Z"
+      "updatedAt": "2026-10-04T09:59:10.720Z"
     },
     "shelters": {
       "count": 2,
@@ -2236,7 +2250,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:27.160Z"
+      "updatedAt": "2026-10-04T09:59:11.467Z"
     },
     "rest-areas": {
       "count": 0,
@@ -2247,7 +2261,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:28.039Z"
+      "updatedAt": "2026-10-04T09:59:11.905Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2258,7 +2272,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:28.579Z"
+      "updatedAt": "2026-10-04T09:59:12.257Z"
     },
     "post-offices": {
       "count": 25,
@@ -2316,7 +2330,8 @@
           "name": "Vilniaus 53-asis paštas",
           "lat": 54.642529,
           "lon": 25.204919,
-          "address": "Valkininkų g. 5"
+          "address": "Valkininkų g. 5",
+          "openingHours": "Mo-We 09:00-17:00; Th-Fr 08:00-16:00; Sa 08:00-12:00"
         },
         {
           "id": "way/184075797",
@@ -2332,7 +2347,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:29.339Z"
+      "updatedAt": "2026-10-04T09:59:12.703Z"
     },
     "showers": {
       "count": 1,
@@ -2343,10 +2358,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:29.952Z"
+      "updatedAt": "2026-10-04T09:59:13.060Z"
     },
     "fireplaces": {
-      "count": 23,
+      "count": 24,
       "pois": [],
       "stats": {
         "free": 0,
@@ -2354,7 +2369,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:32.700Z"
+      "updatedAt": "2026-10-04T09:59:14.400Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2362,7 +2377,7 @@
       "updatedAt": "2026-08-17T04:02:52.598Z"
     },
     "benches": {
-      "count": 2174,
+      "count": 2213,
       "pois": [
         {
           "id": "node/5104668634",
@@ -2492,7 +2507,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:37.085Z"
+      "updatedAt": "2026-10-04T09:59:16.726Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2544,7 +2559,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:29:34.760Z"
+      "updatedAt": "2026-10-04T09:59:15.662Z"
+    },
+    "trash-bins": {
+      "count": 663,
+      "pois": [
+        {
+          "id": "node/14039526370",
+          "lat": 54.687106,
+          "lon": 25.280139,
+          "street": "Gedimino pr."
+        },
+        {
+          "id": "node/5048760879",
+          "lat": 54.689259,
+          "lon": 25.275424,
+          "street": "A. Jakšto g."
+        },
+        {
+          "id": "node/11240664337",
+          "lat": 54.691004,
+          "lon": 25.279635,
+          "street": "Kalvarijų g."
+        },
+        {
+          "id": "node/13104169644",
+          "lat": 54.684108,
+          "lon": 25.284323,
+          "street": "L. Stuokos-Gucevičiaus g."
+        },
+        {
+          "id": "node/13289575239",
+          "lat": 54.691215,
+          "lon": 25.278139,
+          "street": "A. Goštauto g."
+        },
+        {
+          "id": "node/13104057526",
+          "lat": 54.68304,
+          "lon": 25.279706,
+          "street": "Vilniaus g."
+        },
+        {
+          "id": "node/13247646488",
+          "lat": 54.684996,
+          "lon": 25.286341,
+          "street": "Šventaragio g."
+        },
+        {
+          "id": "node/6536996362",
+          "lat": 54.689018,
+          "lon": 25.272284,
+          "street": "Vasario 16-osios g."
+        },
+        {
+          "id": "node/12999541473",
+          "lat": 54.682762,
+          "lon": 25.277264,
+          "street": "Pylimo g."
+        },
+        {
+          "id": "node/12140789363",
+          "lat": 54.687787,
+          "lon": 25.28795,
+          "street": "T. Vrublevskio g."
+        },
+        {
+          "id": "node/12430147004",
+          "lat": 54.691945,
+          "lon": 25.2777,
+          "street": "Upės g."
+        },
+        {
+          "id": "node/4180698722",
+          "lat": 54.692452,
+          "lon": 25.279074,
+          "street": "K. Vasiliausko skv."
+        },
+        {
+          "id": "node/3529391827",
+          "lat": 54.688455,
+          "lon": 25.28876,
+          "street": "Arsenalo g."
+        },
+        {
+          "id": "node/14103757620",
+          "lat": 54.682541,
+          "lon": 25.28684,
+          "street": "Universiteto g."
+        },
+        {
+          "id": "node/13072500389",
+          "lat": 54.693006,
+          "lon": 25.2735,
+          "street": "Baltasis tiltas"
+        },
+        {
+          "id": "node/13104093611",
+          "lat": 54.681584,
+          "lon": 25.286501,
+          "street": "Gaono g."
+        },
+        {
+          "id": "node/14039707488",
+          "lat": 54.691694,
+          "lon": 25.288965,
+          "street": "Rinktinės g."
+        },
+        {
+          "id": "node/3391823455",
+          "lat": 54.694178,
+          "lon": 25.27585,
+          "street": "Šnipiškių g."
+        },
+        {
+          "id": "node/6089454485",
+          "lat": 54.681216,
+          "lon": 25.287641,
+          "street": "Švarco g."
+        },
+        {
+          "id": "node/11146012706",
+          "lat": 54.692166,
+          "lon": 25.269089,
+          "street": "Lukiškių g."
+        },
+        {
+          "id": "node/12944450001",
+          "lat": 54.695172,
+          "lon": 25.279763,
+          "street": "Konstitucijos pr."
+        },
+        {
+          "id": "node/12944450501",
+          "lat": 54.695297,
+          "lon": 25.279373,
+          "street": "Lecho Kačinskio g."
+        },
+        {
+          "id": "node/13104036444",
+          "lat": 54.680905,
+          "lon": 25.28871,
+          "street": "Didžioji g."
+        },
+        {
+          "id": "node/12140777520",
+          "lat": 54.682628,
+          "lon": 25.291492,
+          "street": "A. Volano g."
+        },
+        {
+          "id": "node/11240660037",
+          "lat": 54.695375,
+          "lon": 25.281028,
+          "street": "Lvivo g."
+        },
+        {
+          "id": "node/12948997703",
+          "lat": 54.679322,
+          "lon": 25.283756,
+          "street": "Vokiečių g."
+        },
+        {
+          "id": "node/3283987019",
+          "lat": 54.684457,
+          "lon": 25.26621,
+          "street": "M. Valančiaus g."
+        },
+        {
+          "id": "node/13103599245",
+          "lat": 54.686644,
+          "lon": 25.293988,
+          "street": "Trispalvės al."
+        },
+        {
+          "id": "node/11117178637",
+          "lat": 54.690792,
+          "lon": 25.266797,
+          "street": "Kražių g."
+        },
+        {
+          "id": "node/10113981749",
+          "lat": 54.678812,
+          "lon": 25.276741,
+          "street": "Vingrių g."
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T09:59:18.311Z"
     }
   }
 }

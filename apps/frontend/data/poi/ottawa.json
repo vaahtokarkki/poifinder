@@ -1,9 +1,9 @@
 {
   "city": "ottawa",
-  "generatedAt": "2026-09-27T10:09:31.049Z",
+  "generatedAt": "2026-10-04T10:46:01.088Z",
   "categories": {
     "toilets": {
-      "count": 162,
+      "count": 166,
       "pois": [
         {
           "id": "node/6719067655",
@@ -56,6 +56,15 @@
           "wheelchair": "yes"
         },
         {
+          "id": "way/68588424",
+          "name": "Rideau Centre",
+          "lat": 45.425334,
+          "lon": -75.691255,
+          "address": "Rideau Street 50",
+          "openingHours": "Mo-Sa 10:00-21:00; Su 11:00-18:00",
+          "wheelchair": "yes"
+        },
+        {
           "id": "way/204071758",
           "name": "Jack Purcell Community Centre",
           "lat": 45.415817,
@@ -63,6 +72,14 @@
           "address": "Jack Purcell Lane 320",
           "openingHours": "Mo-Fr 07:30-21:00; Sa 08:30-21:00; Su 09:00-20:00",
           "fee": "no"
+        },
+        {
+          "id": "way/459469005",
+          "name": "Sharpfle Coffee & Bar",
+          "lat": 45.429338,
+          "lon": -75.690854,
+          "address": "York Street 111",
+          "openingHours": "Th-Mo 11:00-18:00; We 11:00-16:00; Tu off"
         },
         {
           "id": "node/7545755985",
@@ -110,6 +127,13 @@
           "lon": -75.684043,
           "address": "Rideau Street 336",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/6719016814",
+          "lat": 45.426992,
+          "lon": -75.713179,
+          "fee": "no",
+          "context": "Place du Centre"
         },
         {
           "id": "way/307248561",
@@ -216,38 +240,12 @@
           "openingHours": "08:00-16:00",
           "wheelchair": "yes",
           "fee": "no"
-        },
-        {
-          "id": "way/321498040",
-          "name": "Anina's Cafe",
-          "lat": 45.439974,
-          "lon": -75.661275,
-          "address": "Joffre-Bélanger Way 280",
-          "openingHours": "Mo-Th 08:00-16:00; Fr 08:00-17:00; Sa-Su 08:00-15:00",
-          "wheelchair": "limited"
-        },
-        {
-          "id": "node/4731443322",
-          "lat": 45.416509,
-          "lon": -75.65221,
-          "wheelchair": "yes",
-          "context": "Ottawa Train Station"
-        },
-        {
-          "id": "way/68586564",
-          "name": "Ottawa Public Library - Rockcliffe Park Branch",
-          "lat": 45.450716,
-          "lon": -75.678667,
-          "address": "Springfield Road 380",
-          "openingHours": "Mo-Tu 13:00-20:30; We 10:00-17:00; Th 13:00-20:30; Fr 14:00-18:00; Sa 10:00-14:00",
-          "wheelchair": "2",
-          "fee": "no"
         }
       ],
       "stats": {
-        "free": 60,
+        "free": 61,
         "paid": 2,
-        "stepFree": 45,
+        "stepFree": 46,
         "partlyStepFree": 3
       },
       "near": [
@@ -262,7 +260,7 @@
         },
         {
           "landmark": "Q1032269",
-          "within": 2,
+          "within": 3,
           "distance": 65,
           "bearing": 185,
           "poi": "way/68588595",
@@ -279,7 +277,7 @@
           "lon": -75.686484
         }
       ],
-      "updatedAt": "2026-09-23T08:32:46.929Z"
+      "updatedAt": "2026-10-04T10:45:36.149Z"
     },
     "drinking-water": {
       "count": 116,
@@ -505,7 +503,7 @@
           "lon": -75.688719
         }
       ],
-      "updatedAt": "2026-09-23T08:32:48.672Z"
+      "updatedAt": "2026-10-04T10:45:38.307Z"
     },
     "playgrounds": {
       "count": 728,
@@ -746,7 +744,7 @@
         "stepFree": 13,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T10:09:09.046Z"
+      "updatedAt": "2026-10-04T10:45:39.303Z"
     },
     "parking": {
       "count": 3856,
@@ -968,12 +966,12 @@
         }
       ],
       "stats": {
-        "free": 487,
-        "paid": 144,
+        "free": 489,
+        "paid": 145,
         "stepFree": 10,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:10.287Z"
+      "updatedAt": "2026-10-04T10:45:40.470Z"
     },
     "charging-stations": {
       "count": 45,
@@ -1026,7 +1024,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:10.837Z"
+      "updatedAt": "2026-10-04T10:45:41.088Z"
     },
     "gas-stations": {
       "count": 86,
@@ -1177,10 +1175,10 @@
         "stepFree": 5,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:09:11.568Z"
+      "updatedAt": "2026-10-04T10:45:42.055Z"
     },
     "ice-cream": {
-      "count": 29,
+      "count": 30,
       "pois": [
         {
           "id": "node/6761628260",
@@ -1285,7 +1283,8 @@
           "name": "Moo Shu Ice Cream",
           "lat": 45.401709,
           "lon": -75.726786,
-          "address": "Wellington Street West 1130"
+          "address": "Wellington Street West 1130",
+          "openingHours": "Mo 11:00-22:00; Tu off; We-Fr 11:00-22:00; Sa-Su 10:00-22:00"
         },
         {
           "id": "node/4727926485",
@@ -1301,6 +1300,14 @@
           "lat": 45.399858,
           "lon": -75.73231,
           "address": "Wellington Street West 1235"
+        },
+        {
+          "id": "way/461140627",
+          "name": "Dairy Queen",
+          "lat": 45.421227,
+          "lon": -75.74718,
+          "address": "Boulevard Alexandre-Taché 413",
+          "openingHours": "Su-Th 10:00-22:00; Fr-Sa 10:00-23:00"
         },
         {
           "id": "node/7535605085",
@@ -1346,7 +1353,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:12.239Z"
+      "updatedAt": "2026-10-04T10:45:42.830Z"
     },
     "dog-parks": {
       "count": 12,
@@ -1409,10 +1416,10 @@
         "stepFree": 1,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:09:12.739Z"
+      "updatedAt": "2026-10-04T10:45:43.323Z"
     },
     "picnic-spots": {
-      "count": 995,
+      "count": 982,
       "pois": [
         {
           "id": "way/488975641",
@@ -1541,10 +1548,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:14.020Z"
+      "updatedAt": "2026-10-04T10:45:44.443Z"
     },
     "viewpoints": {
-      "count": 45,
+      "count": 46,
       "pois": [
         {
           "id": "node/7127264485",
@@ -1625,7 +1632,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:14.659Z"
+      "updatedAt": "2026-10-04T10:45:45.083Z"
     },
     "beaches": {
       "count": 10,
@@ -1680,10 +1687,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:15.319Z"
+      "updatedAt": "2026-10-04T10:45:45.668Z"
     },
     "atms": {
-      "count": 130,
+      "count": 132,
       "pois": [
         {
           "id": "way/131639106",
@@ -1924,7 +1931,7 @@
         "stepFree": 29,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:16.091Z"
+      "updatedAt": "2026-10-04T10:45:46.230Z"
     },
     "post-boxes": {
       "count": 1595,
@@ -2116,23 +2123,11 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:17.413Z"
+      "updatedAt": "2026-10-04T10:45:47.353Z"
     },
     "recycling": {
       "count": 26,
       "pois": [
-        {
-          "id": "node/5163831281",
-          "lat": 45.382761,
-          "lon": -75.698238,
-          "context": "Tory Building"
-        },
-        {
-          "id": "node/5127642425",
-          "lat": 45.381198,
-          "lon": -75.698941,
-          "context": "Loeb Building"
-        },
         {
           "id": "way/68853727",
           "name": "Écocentre du boulevard de la Carrière",
@@ -2186,16 +2181,22 @@
           "street": "Carleton Avenue"
         },
         {
+          "id": "node/5163831281",
+          "lat": 45.382761,
+          "lon": -75.698238,
+          "street": "Tunnel F"
+        },
+        {
           "id": "node/5169590386",
           "lat": 45.382733,
           "lon": -75.696181,
           "street": "Campus Avenue"
         },
         {
-          "id": "node/5172012174",
-          "lat": 45.382518,
-          "lon": -75.698438,
-          "street": "Tunnel F"
+          "id": "node/5127642425",
+          "lat": 45.381198,
+          "lon": -75.698941,
+          "street": "Tunnel G"
         },
         {
           "id": "node/5158221243",
@@ -2222,7 +2223,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:19.301Z"
+      "updatedAt": "2026-10-04T10:45:49.008Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2233,7 +2234,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:19.828Z"
+      "updatedAt": "2026-10-04T10:45:49.588Z"
     },
     "libraries": {
       "count": 89,
@@ -2344,7 +2345,8 @@
           "id": "node/5697750392",
           "name": "Ottawa Trans Library",
           "lat": 45.405922,
-          "lon": -75.722059
+          "lon": -75.722059,
+          "openingHours": "Mo 15:00-19:00; Tu 12:00-17:00; We-Th 15:00-19:00; Sa 12:00-17:00"
         },
         {
           "id": "way/189115093",
@@ -2468,7 +2470,7 @@
         "stepFree": 12,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:20.558Z"
+      "updatedAt": "2026-10-04T10:45:50.166Z"
     },
     "outdoor-gyms": {
       "count": 22,
@@ -2493,7 +2495,7 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:09:21.647Z"
+      "updatedAt": "2026-10-04T10:45:51.195Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2511,7 +2513,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:22.219Z"
+      "updatedAt": "2026-10-04T10:45:51.683Z"
     },
     "shelters": {
       "count": 11,
@@ -2535,7 +2537,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:23.957Z"
+      "updatedAt": "2026-10-04T10:45:53.396Z"
     },
     "rest-areas": {
       "count": 0,
@@ -2546,7 +2548,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:24.529Z"
+      "updatedAt": "2026-10-04T10:45:53.886Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2557,7 +2559,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:24.959Z"
+      "updatedAt": "2026-10-04T10:45:54.283Z"
     },
     "post-offices": {
       "count": 44,
@@ -2700,7 +2702,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:25.648Z"
+      "updatedAt": "2026-10-04T10:45:54.780Z"
     },
     "showers": {
       "count": 1,
@@ -2711,7 +2713,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:26.109Z"
+      "updatedAt": "2026-10-04T10:45:55.163Z"
     },
     "fireplaces": {
       "count": 18,
@@ -2722,7 +2724,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:27.239Z"
+      "updatedAt": "2026-10-04T10:45:56.421Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2730,7 +2732,7 @@
       "updatedAt": "2026-08-17T04:06:35.503Z"
     },
     "benches": {
-      "count": 4369,
+      "count": 4372,
       "pois": [
         {
           "id": "node/12150032079",
@@ -2835,7 +2837,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:30.944Z"
+      "updatedAt": "2026-10-04T10:45:59.434Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2843,7 +2845,7 @@
       "updatedAt": "2026-08-18T03:58:41.928Z"
     },
     "bicycle-repair": {
-      "count": 92,
+      "count": 93,
       "pois": [
         {
           "id": "node/2191038210",
@@ -3048,7 +3050,121 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:29.371Z"
+      "updatedAt": "2026-10-04T10:45:58.155Z"
+    },
+    "trash-bins": {
+      "count": 659,
+      "pois": [
+        {
+          "id": "node/6871603439",
+          "lat": 45.42149,
+          "lon": -75.698772,
+          "street": "Queen Street"
+        },
+        {
+          "id": "node/6871415459",
+          "lat": 45.420195,
+          "lon": -75.695296,
+          "street": "Laurier Avenue West"
+        },
+        {
+          "id": "node/7184895071",
+          "lat": 45.423346,
+          "lon": -75.698064,
+          "street": "Wellington Street"
+        },
+        {
+          "id": "node/7387699817",
+          "lat": 45.423359,
+          "lon": -75.696098,
+          "street": "Sparks Street"
+        },
+        {
+          "id": "node/975865133",
+          "lat": 45.420098,
+          "lon": -75.700289,
+          "street": "Bank Street"
+        },
+        {
+          "id": "node/6871603421",
+          "lat": 45.42029,
+          "lon": -75.701779,
+          "street": "Level C2"
+        },
+        {
+          "id": "node/2801329326",
+          "lat": 45.419487,
+          "lon": -75.692907,
+          "street": "Nepean Street"
+        },
+        {
+          "id": "node/2801296739",
+          "lat": 45.420297,
+          "lon": -75.692188,
+          "street": "Elgin Street"
+        },
+        {
+          "id": "node/12062495564",
+          "lat": 45.42646,
+          "lon": -75.698616,
+          "street": "Canal Lane"
+        },
+        {
+          "id": "node/6871603390",
+          "lat": 45.419294,
+          "lon": -75.704024,
+          "street": "Concourse Level"
+        },
+        {
+          "id": "node/12062515999",
+          "lat": 45.426757,
+          "lon": -75.698272,
+          "street": "Ottawa River Pathway"
+        },
+        {
+          "id": "node/7141656554",
+          "lat": 45.426461,
+          "lon": -75.694052,
+          "street": "Sussex Drive"
+        },
+        {
+          "id": "node/6872086945",
+          "lat": 45.422861,
+          "lon": -75.689461,
+          "street": "Rideau Canal Eastern Pathway"
+        },
+        {
+          "id": "node/6871415390",
+          "lat": 45.417095,
+          "lon": -75.702838,
+          "street": "Minto Place Corridor"
+        },
+        {
+          "id": "node/12206175679",
+          "lat": 45.418033,
+          "lon": -75.690215,
+          "street": "Somerset Street West"
+        },
+        {
+          "id": "node/13920945981",
+          "lat": 45.427064,
+          "lon": -75.692359,
+          "street": "ByWard Market Square"
+        },
+        {
+          "id": "node/7141656567",
+          "lat": 45.427951,
+          "lon": -75.695338,
+          "street": "Clarence Street"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:46:00.987Z"
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "city": "kuala-lumpur",
-  "generatedAt": "2026-09-27T10:18:56.754Z",
+  "generatedAt": "2026-10-04T10:56:48.830Z",
   "categories": {
     "toilets": {
       "count": 194,
@@ -17,6 +17,12 @@
           "lat": 3.134257,
           "lon": 101.685433,
           "context": "KL Sentral"
+        },
+        {
+          "id": "node/4837957923",
+          "lat": 3.143731,
+          "lon": 101.688825,
+          "context": "Hornbill Restaurant and Cafe"
         },
         {
           "id": "node/13586146009",
@@ -199,16 +205,10 @@
           "lat": 3.117458,
           "lon": 101.659479,
           "context": "Blok C"
-        },
-        {
-          "id": "node/4667647452",
-          "lat": 3.110517,
-          "lon": 101.665878,
-          "context": "The Vertical Podium"
         }
       ],
       "stats": {
-        "free": 15,
+        "free": 14,
         "paid": 14,
         "stepFree": 38,
         "partlyStepFree": 2
@@ -234,18 +234,18 @@
         },
         {
           "landmark": "Q3330187",
-          "within": 9,
-          "distance": 9,
-          "bearing": 332,
-          "poi": "node/7217636181",
-          "lat": 3.142992,
-          "lon": 101.688961
+          "within": 8,
+          "distance": 18,
+          "bearing": 44,
+          "poi": "way/1559953907",
+          "lat": 3.143039,
+          "lon": 101.689115
         }
       ],
-      "updatedAt": "2026-09-23T08:34:02.076Z"
+      "updatedAt": "2026-10-04T10:56:25.548Z"
     },
     "drinking-water": {
-      "count": 31,
+      "count": 33,
       "pois": [
         {
           "id": "node/13629839386",
@@ -261,6 +261,12 @@
           "lon": 101.683657
         },
         {
+          "id": "node/14191292101",
+          "name": "Coway Tempat Wudhu Lelaki Masjid Jamek",
+          "lat": 3.149373,
+          "lon": 101.695841
+        },
+        {
           "id": "node/10815468171",
           "name": "Water Vending Machine",
           "lat": 3.150598,
@@ -272,6 +278,12 @@
           "lat": 3.126349,
           "lon": 101.660764,
           "fee": "yes"
+        },
+        {
+          "id": "node/14211066801",
+          "name": "Coway",
+          "lat": 3.172119,
+          "lon": 101.721955
         },
         {
           "id": "node/5444916586",
@@ -335,12 +347,12 @@
         },
         {
           "landmark": "Q3043065",
-          "within": 3,
-          "distance": 392,
-          "bearing": 114,
-          "poi": "node/13638683275",
-          "lat": 3.147408,
-          "lon": 101.696902
+          "within": 4,
+          "distance": 249,
+          "bearing": 76,
+          "poi": "node/14191292101",
+          "lat": 3.149373,
+          "lon": 101.695841
         },
         {
           "landmark": "Q3330187",
@@ -352,11 +364,17 @@
           "lon": 101.689246
         }
       ],
-      "updatedAt": "2026-09-23T08:34:03.726Z"
+      "updatedAt": "2026-10-04T10:56:28.059Z"
     },
     "playgrounds": {
       "count": 182,
       "pois": [
+        {
+          "id": "relation/21406737",
+          "name": "Children's Playground",
+          "lat": 3.146055,
+          "lon": 101.687429
+        },
         {
           "id": "way/323298042",
           "name": "Fantasy Planet",
@@ -442,10 +460,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:34.882Z"
+      "updatedAt": "2026-10-04T10:56:28.980Z"
     },
     "parking": {
-      "count": 1089,
+      "count": 1099,
       "pois": [
         {
           "id": "way/472304337",
@@ -453,6 +471,12 @@
           "lat": 3.13806,
           "lon": 101.688825,
           "fee": "yes"
+        },
+        {
+          "id": "way/806123801",
+          "name": "Kuala Lumpur Bird Park",
+          "lat": 3.143417,
+          "lon": 101.688218
         },
         {
           "id": "way/244562548",
@@ -631,22 +655,15 @@
           "name": "The Atas",
           "lat": 3.109194,
           "lon": 101.686632
-        },
-        {
-          "id": "node/4712134776",
-          "name": "Parking Lot, Stadium Hoki KL",
-          "lat": 3.11912,
-          "lon": 101.664154,
-          "address": "Jalan Pantai Baharu"
         }
       ],
       "stats": {
-        "free": 30,
-        "paid": 123,
+        "free": 34,
+        "paid": 127,
         "stepFree": 10,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:36.225Z"
+      "updatedAt": "2026-10-04T10:56:30.238Z"
     },
     "charging-stations": {
       "count": 43,
@@ -789,7 +806,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:36.818Z"
+      "updatedAt": "2026-10-04T10:56:30.730Z"
     },
     "gas-stations": {
       "count": 216,
@@ -1011,10 +1028,10 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:37.550Z"
+      "updatedAt": "2026-10-04T10:56:31.405Z"
     },
     "ice-cream": {
-      "count": 38,
+      "count": 43,
       "pois": [
         {
           "id": "node/12278628388",
@@ -1065,10 +1082,34 @@
           "openingHours": "Mo-Su 10:00-22:00"
         },
         {
+          "id": "node/14184076338",
+          "name": "Lalapop",
+          "lat": 3.140049,
+          "lon": 101.707382
+        },
+        {
           "id": "node/13687643067",
           "name": "Sangkaya",
           "lat": 3.145215,
           "lon": 101.70653
+        },
+        {
+          "id": "node/14184076359",
+          "name": "Ben Gong's Tea & Dessert",
+          "lat": 3.139971,
+          "lon": 101.707472
+        },
+        {
+          "id": "node/14180386151",
+          "name": "Yobe",
+          "lat": 3.141378,
+          "lon": 101.707448
+        },
+        {
+          "id": "node/14184076332",
+          "name": "Sakanoue Kakigori",
+          "lat": 3.139789,
+          "lon": 101.708175
         },
         {
           "id": "node/9495833738",
@@ -1186,28 +1227,6 @@
           "lon": 101.705177,
           "address": "Jalan 1/125D",
           "openingHours": "Mo-Su 10:00-00:00"
-        },
-        {
-          "id": "node/10591073565",
-          "name": "Piccoli Lotti",
-          "lat": 3.134563,
-          "lon": 101.627206
-        },
-        {
-          "id": "node/10971377305",
-          "name": "The Ice Cream Bar",
-          "lat": 3.110872,
-          "lon": 101.622308,
-          "address": "Jalan 21/22 18G",
-          "openingHours": "Mo-Su 11:30-23:00"
-        },
-        {
-          "id": "node/10951141805",
-          "name": "softsrve",
-          "lat": 3.109752,
-          "lon": 101.622654,
-          "address": "Jalan 21/11A 5",
-          "openingHours": "Mo-Fr 14:00-23:00; Sa-Su 13:00-23:00"
         }
       ],
       "stats": {
@@ -1216,7 +1235,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:38.199Z"
+      "updatedAt": "2026-10-04T10:56:31.904Z"
     },
     "dog-parks": {
       "count": 1,
@@ -1227,10 +1246,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:38.678Z"
+      "updatedAt": "2026-10-04T10:56:32.250Z"
     },
     "picnic-spots": {
-      "count": 25,
+      "count": 34,
       "pois": [
         {
           "id": "node/9120196845",
@@ -1245,7 +1264,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:39.831Z"
+      "updatedAt": "2026-10-04T10:56:33.323Z"
     },
     "viewpoints": {
       "count": 35,
@@ -1386,7 +1405,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:40.549Z"
+      "updatedAt": "2026-10-04T10:56:33.880Z"
     },
     "beaches": {
       "count": 0,
@@ -1397,7 +1416,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:41.159Z"
+      "updatedAt": "2026-10-04T10:56:34.318Z"
     },
     "atms": {
       "count": 362,
@@ -1601,10 +1620,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 5,
-        "partlyStepFree": 0
+        "stepFree": 4,
+        "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:18:41.904Z"
+      "updatedAt": "2026-10-04T10:56:34.912Z"
     },
     "post-boxes": {
       "count": 49,
@@ -1797,7 +1816,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:43.323Z"
+      "updatedAt": "2026-10-04T10:56:36.173Z"
     },
     "recycling": {
       "count": 29,
@@ -1821,22 +1840,10 @@
           "lon": 101.694081
         },
         {
-          "id": "node/12260385272",
-          "lat": 3.167712,
-          "lon": 101.699319,
-          "context": "AT"
-        },
-        {
           "id": "way/1210466023",
           "name": "Perniagaan Logam Krishna Sdn Bhd",
           "lat": 3.111174,
           "lon": 101.704353
-        },
-        {
-          "id": "node/12277770905",
-          "lat": 3.121986,
-          "lon": 101.654611,
-          "context": "J05 - New Chemistry (D)"
         },
         {
           "id": "way/1226958508",
@@ -1888,6 +1895,12 @@
           "street": "Lingkaran Wawasan"
         },
         {
+          "id": "node/12260385272",
+          "lat": 3.167712,
+          "lon": 101.699319,
+          "street": "Jalan Raja Muda Abdul Aziz"
+        },
+        {
           "id": "node/11350500394",
           "lat": 3.121924,
           "lon": 101.657126,
@@ -1930,7 +1943,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:45.214Z"
+      "updatedAt": "2026-10-04T10:56:37.843Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -1948,7 +1961,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:45.746Z"
+      "updatedAt": "2026-10-04T10:56:38.290Z"
     },
     "libraries": {
       "count": 34,
@@ -1970,8 +1983,8 @@
         {
           "id": "way/466008170",
           "name": "Perpustakaan Kuala Lumpur",
-          "lat": 3.147508,
-          "lon": 101.692778,
+          "lat": 3.147516,
+          "lon": 101.692773,
           "address": "Jalan Raja 1",
           "openingHours": "Mo 14:00-18:45; Tu-Fr 10:00-18:45; Sa,Su 10:00-17:00; Sa[1] off; Su[1] off; PH off"
         },
@@ -2147,7 +2160,7 @@
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:46.328Z"
+      "updatedAt": "2026-10-04T10:56:38.797Z"
     },
     "outdoor-gyms": {
       "count": 34,
@@ -2227,7 +2240,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:47.338Z"
+      "updatedAt": "2026-10-04T10:56:39.739Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2245,7 +2258,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:47.849Z"
+      "updatedAt": "2026-10-04T10:56:40.248Z"
     },
     "shelters": {
       "count": 48,
@@ -2353,7 +2366,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:51.017Z"
+      "updatedAt": "2026-10-04T10:56:42.262Z"
     },
     "rest-areas": {
       "count": 9,
@@ -2377,7 +2390,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:51.524Z"
+      "updatedAt": "2026-10-04T10:56:42.830Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2388,10 +2401,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:51.949Z"
+      "updatedAt": "2026-10-04T10:56:43.188Z"
     },
     "post-offices": {
-      "count": 109,
+      "count": 111,
       "pois": [
         {
           "id": "node/1585294175",
@@ -2601,7 +2614,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:52.480Z"
+      "updatedAt": "2026-10-04T10:56:43.679Z"
     },
     "showers": {
       "count": 8,
@@ -2612,7 +2625,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:52.950Z"
+      "updatedAt": "2026-10-04T10:56:44.025Z"
     },
     "fireplaces": {
       "count": 2,
@@ -2623,7 +2636,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:53.975Z"
+      "updatedAt": "2026-10-04T10:56:44.968Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2631,7 +2644,7 @@
       "updatedAt": "2026-08-17T04:07:29.955Z"
     },
     "benches": {
-      "count": 194,
+      "count": 195,
       "pois": [
         {
           "id": "node/10914814832",
@@ -2736,7 +2749,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:56.652Z"
+      "updatedAt": "2026-10-04T10:56:47.214Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2796,7 +2809,157 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:18:55.460Z"
+      "updatedAt": "2026-10-04T10:56:46.181Z"
+    },
+    "trash-bins": {
+      "count": 45,
+      "pois": [
+        {
+          "id": "way/359491727",
+          "name": "Tempat Sampah",
+          "lat": 3.126589,
+          "lon": 101.661488
+        },
+        {
+          "id": "way/1033418698",
+          "name": "J37 - Trash House",
+          "lat": 3.12634,
+          "lon": 101.653459
+        },
+        {
+          "id": "node/12122520933",
+          "name": "Pusat Pembuangan Sampah",
+          "lat": 3.106741,
+          "lon": 101.668348
+        },
+        {
+          "id": "node/13259789148",
+          "lat": 3.140665,
+          "lon": 101.690882,
+          "street": "Jalan Perdana"
+        },
+        {
+          "id": "node/13329817264",
+          "lat": 3.143823,
+          "lon": 101.691484,
+          "street": "Jalan Cenderasari"
+        },
+        {
+          "id": "node/12387667805",
+          "lat": 3.146173,
+          "lon": 101.68726,
+          "street": "Jalan Tembusu"
+        },
+        {
+          "id": "node/12330535268",
+          "lat": 3.141422,
+          "lon": 101.696101,
+          "street": "Jalan Tun H.S. Lee"
+        },
+        {
+          "id": "node/12961070185",
+          "lat": 3.139195,
+          "lon": 101.69852,
+          "street": "Jalan Belfield"
+        },
+        {
+          "id": "node/4336477789",
+          "lat": 3.142729,
+          "lon": 101.698487,
+          "street": "Jalan Sultan"
+        },
+        {
+          "id": "node/12615757883",
+          "lat": 3.151057,
+          "lon": 101.693401,
+          "street": "Jalan Parlimen"
+        },
+        {
+          "id": "node/13483438349",
+          "lat": 3.125389,
+          "lon": 101.683366,
+          "street": "Riverside Promenade"
+        },
+        {
+          "id": "node/13052362595",
+          "lat": 3.148159,
+          "lon": 101.713842,
+          "street": "Jalan Bukit Bintang"
+        },
+        {
+          "id": "node/13159856865",
+          "lat": 3.152995,
+          "lon": 101.713188,
+          "street": "Jalan Pinang"
+        },
+        {
+          "id": "node/13091998169",
+          "lat": 3.162628,
+          "lon": 101.708344,
+          "street": "Lorong Raja Muda Musa 3"
+        },
+        {
+          "id": "node/13091998174",
+          "lat": 3.163072,
+          "lon": 101.708422,
+          "street": "Lorong Raja Muda Musa 4"
+        },
+        {
+          "id": "node/12976251542",
+          "lat": 3.156773,
+          "lon": 101.714414,
+          "street": "Lorong Kuda"
+        },
+        {
+          "id": "node/11941106389",
+          "lat": 3.161583,
+          "lon": 101.711941,
+          "street": "Jalan Yap Kwan Seng"
+        },
+        {
+          "id": "node/11350500395",
+          "lat": 3.121893,
+          "lon": 101.657352,
+          "street": "Lingkungan Budi"
+        },
+        {
+          "id": "node/4049516659",
+          "lat": 3.104628,
+          "lon": 101.658427,
+          "street": "\"E2\" Entrance"
+        },
+        {
+          "id": "node/10941247771",
+          "lat": 3.133996,
+          "lon": 101.751643,
+          "street": "Jalan Pandan Indah 6/1"
+        },
+        {
+          "id": "node/13740292164",
+          "lat": 3.20537,
+          "lon": 101.666523,
+          "street": "Jalan Jambu Jerteh"
+        },
+        {
+          "id": "node/13740292158",
+          "lat": 3.206396,
+          "lon": 101.666653,
+          "street": "Jalan Kepong"
+        },
+        {
+          "id": "node/13093812720",
+          "lat": 3.185829,
+          "lon": 101.633004,
+          "street": "Persiaran Residen"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 1,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:56:48.729Z"
     }
   }
 }

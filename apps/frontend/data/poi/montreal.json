@@ -1,9 +1,9 @@
 {
   "city": "montreal",
-  "generatedAt": "2026-09-27T10:09:08.130Z",
+  "generatedAt": "2026-10-04T10:45:34.630Z",
   "categories": {
     "toilets": {
-      "count": 187,
+      "count": 205,
       "pois": [
         {
           "id": "node/13894543406",
@@ -30,6 +30,13 @@
           "lat": 45.507375,
           "lon": -73.5656,
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/14214730230",
+          "lat": 45.494656,
+          "lon": -73.577804,
+          "fee": "no",
+          "context": "FB - Faubourg Tower"
         },
         {
           "id": "node/2693806074",
@@ -117,6 +124,7 @@
           "id": "node/4320213772",
           "lat": 45.512861,
           "lon": -73.534542,
+          "wheelchair": "yes",
           "context": "Complexe Aquatique"
         },
         {
@@ -202,27 +210,19 @@
           "context": "Chalet Therrien"
         },
         {
-          "id": "node/1647922986",
-          "lat": 45.466961,
-          "lon": -73.591162,
-          "openingHours": "09:30-16:15",
-          "fee": "no",
-          "context": "Logette d'écluses - Lock Building"
-        },
-        {
-          "id": "node/1106702190",
-          "lat": 45.524641,
-          "lon": -73.522427,
-          "wheelchair": "yes",
-          "fee": "no",
-          "context": "Terminus Longueuil"
+          "id": "way/542450799",
+          "name": "Metro",
+          "lat": 45.536063,
+          "lon": -73.513886,
+          "address": "Rue Saint-Charles Ouest 395",
+          "wheelchair": "yes"
         }
       ],
       "stats": {
-        "free": 40,
+        "free": 41,
         "paid": 0,
-        "stepFree": 69,
-        "partlyStepFree": 10
+        "stepFree": 70,
+        "partlyStepFree": 11
       },
       "near": [
         {
@@ -237,17 +237,17 @@
         {
           "landmark": "Q860812",
           "within": 0,
-          "distance": 635,
-          "bearing": 60,
-          "poi": "way/1021815227",
-          "lat": 45.502045,
-          "lon": -73.572727
+          "distance": 522,
+          "bearing": 163,
+          "poi": "node/14214730230",
+          "lat": 45.494656,
+          "lon": -73.577804
         }
       ],
-      "updatedAt": "2026-09-23T08:32:43.053Z"
+      "updatedAt": "2026-10-04T10:45:00.960Z"
     },
     "drinking-water": {
-      "count": 562,
+      "count": 569,
       "pois": [
         {
           "id": "node/8786814920",
@@ -267,7 +267,8 @@
           "id": "node/5013108123",
           "name": "Spot pêche parc cité havre",
           "lat": 45.506559,
-          "lon": -73.542896
+          "lon": -73.542896,
+          "fee": "no"
         },
         {
           "id": "node/5715798321",
@@ -364,6 +365,12 @@
           "street": "Avenue du Parc"
         },
         {
+          "id": "node/14214730227",
+          "lat": 45.497563,
+          "lon": -73.579215,
+          "street": "Rue Bishop"
+        },
+        {
           "id": "node/6725055436",
           "lat": 45.502854,
           "lon": -73.553137,
@@ -433,20 +440,13 @@
           "lat": 45.48983,
           "lon": -73.574207,
           "street": "Terrasse Coursol"
-        },
-        {
-          "id": "node/11781149631",
-          "lat": 45.511237,
-          "lon": -73.57987,
-          "fee": "no",
-          "street": "Chemin Olmsted"
         }
       ],
       "stats": {
-        "free": 150,
+        "free": 154,
         "paid": 1,
         "stepFree": 84,
-        "partlyStepFree": 10
+        "partlyStepFree": 11
       },
       "near": [
         {
@@ -460,18 +460,18 @@
         },
         {
           "landmark": "Q860812",
-          "within": 0,
-          "distance": 507,
-          "bearing": 34,
-          "poi": "node/5762455453",
-          "lat": 45.502939,
-          "lon": -73.576137
+          "within": 1,
+          "distance": 181,
+          "bearing": 167,
+          "poi": "node/14214730227",
+          "lat": 45.497563,
+          "lon": -73.579215
         }
       ],
-      "updatedAt": "2026-09-23T08:32:45.446Z"
+      "updatedAt": "2026-10-04T10:45:03.775Z"
     },
     "playgrounds": {
-      "count": 686,
+      "count": 698,
       "pois": [
         {
           "id": "way/1279463230",
@@ -546,13 +546,13 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 16,
+        "stepFree": 15,
         "partlyStepFree": 11
       },
-      "updatedAt": "2026-09-27T10:08:40.164Z"
+      "updatedAt": "2026-10-04T10:45:05.066Z"
     },
     "parking": {
-      "count": 3400,
+      "count": 3403,
       "pois": [
         {
           "id": "node/8688293260",
@@ -771,11 +771,11 @@
       ],
       "stats": {
         "free": 353,
-        "paid": 244,
+        "paid": 246,
         "stepFree": 20,
         "partlyStepFree": 4
       },
-      "updatedAt": "2026-09-27T10:08:42.045Z"
+      "updatedAt": "2026-10-04T10:45:06.626Z"
     },
     "charging-stations": {
       "count": 546,
@@ -822,10 +822,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:42.686Z"
+      "updatedAt": "2026-10-04T10:45:07.205Z"
     },
     "gas-stations": {
-      "count": 125,
+      "count": 124,
       "pois": [
         {
           "id": "node/237603335",
@@ -876,15 +876,9 @@
         },
         {
           "id": "node/798956299",
-          "name": "Canadian Tire",
+          "name": "Petro Canada",
           "lat": 45.470741,
           "lon": -73.563692
-        },
-        {
-          "id": "way/233740288",
-          "name": "Petro Canada",
-          "lat": 45.525671,
-          "lon": -73.598062
         },
         {
           "id": "way/233740287",
@@ -928,6 +922,14 @@
           "name": "Harnois",
           "lat": 45.557954,
           "lon": -73.536069
+        },
+        {
+          "id": "way/964272491",
+          "name": "Canadian Tire",
+          "lat": 45.556143,
+          "lon": -73.619445,
+          "openingHours": "24/7",
+          "wheelchair": "limited"
         }
       ],
       "stats": {
@@ -936,10 +938,10 @@
         "stepFree": 5,
         "partlyStepFree": 3
       },
-      "updatedAt": "2026-09-27T10:08:43.488Z"
+      "updatedAt": "2026-10-04T10:45:08.037Z"
     },
     "ice-cream": {
-      "count": 96,
+      "count": 97,
       "pois": [
         {
           "id": "node/12194842853",
@@ -1155,10 +1157,10 @@
         "stepFree": 4,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T10:08:44.421Z"
+      "updatedAt": "2026-10-04T10:45:08.978Z"
     },
     "dog-parks": {
-      "count": 46,
+      "count": 48,
       "pois": [
         {
           "id": "way/488490559",
@@ -1180,13 +1182,15 @@
           "name": "Gallery dog park",
           "lat": 45.490536,
           "lon": -73.559548,
-          "address": "Rue Olier 1345"
+          "address": "Rue Olier 1345",
+          "wheelchair": "yes"
         },
         {
           "id": "way/606863911",
           "name": "Aire d'exercice canin pour petits chiens",
           "lat": 45.490334,
-          "lon": -73.559909
+          "lon": -73.559909,
+          "wheelchair": "yes"
         },
         {
           "id": "way/1149170974",
@@ -1278,6 +1282,13 @@
           "address": "Rue de Bellechasse 1602"
         },
         {
+          "id": "way/1558241681",
+          "name": "Parc de la Fontaine Dog Park",
+          "lat": 45.46342,
+          "lon": -73.543473,
+          "address": "Place de la Fontaine 570"
+        },
+        {
           "id": "way/1025578889",
           "name": "Parc à chiens du parc du Pélican",
           "lat": 45.54334,
@@ -1363,31 +1374,30 @@
           "lat": 45.445427,
           "lon": -73.5995,
           "address": "Bd de la Vérendrye 7503"
-        },
-        {
-          "id": "way/1081747923",
-          "name": "Parc à chiens du parc Trenholme",
-          "lat": 45.461445,
-          "lon": -73.632233,
-          "wheelchair": "yes"
         }
       ],
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 7,
+        "stepFree": 9,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:08:45.061Z"
+      "updatedAt": "2026-10-04T10:45:09.624Z"
     },
     "picnic-spots": {
-      "count": 2111,
+      "count": 2226,
       "pois": [
         {
           "id": "way/73147221",
           "name": "Parc Drolet-Rachel",
           "lat": 45.521659,
           "lon": -73.58004
+        },
+        {
+          "id": "way/82249721",
+          "name": "Abri de la colline",
+          "lat": 45.514137,
+          "lon": -73.533126
         },
         {
           "id": "way/1057752078",
@@ -1436,10 +1446,10 @@
       "stats": {
         "free": 1,
         "paid": 0,
-        "stepFree": 21,
+        "stepFree": 23,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:08:46.700Z"
+      "updatedAt": "2026-10-04T10:45:11.864Z"
     },
     "viewpoints": {
       "count": 66,
@@ -1559,7 +1569,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:47.720Z"
+      "updatedAt": "2026-10-04T10:45:12.834Z"
     },
     "beaches": {
       "count": 7,
@@ -1597,10 +1607,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:48.449Z"
+      "updatedAt": "2026-10-04T10:45:13.508Z"
     },
     "atms": {
-      "count": 215,
+      "count": 216,
       "pois": [
         {
           "id": "node/1205171479",
@@ -1619,7 +1629,8 @@
           "id": "node/3081654307",
           "name": "Banque Scotia",
           "lat": 45.500954,
-          "lon": -73.572246
+          "lon": -73.572246,
+          "wheelchair": "no"
         },
         {
           "id": "node/4466460989",
@@ -1838,10 +1849,10 @@
         "stepFree": 67,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:08:49.385Z"
+      "updatedAt": "2026-10-04T10:45:15.086Z"
     },
     "post-boxes": {
-      "count": 570,
+      "count": 580,
       "pois": [
         {
           "id": "node/11769857469",
@@ -2030,10 +2041,10 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:51.094Z"
+      "updatedAt": "2026-10-04T10:45:16.453Z"
     },
     "recycling": {
-      "count": 430,
+      "count": 451,
       "pois": [
         {
           "id": "node/2975994117",
@@ -2236,7 +2247,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:53.092Z"
+      "updatedAt": "2026-10-04T10:45:18.339Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2247,10 +2258,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:53.629Z"
+      "updatedAt": "2026-10-04T10:45:19.227Z"
     },
     "libraries": {
-      "count": 190,
+      "count": 196,
       "pois": [
         {
           "id": "way/19912993",
@@ -2480,10 +2491,10 @@
         "stepFree": 27,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:08:54.380Z"
+      "updatedAt": "2026-10-04T10:45:20.529Z"
     },
     "outdoor-gyms": {
-      "count": 91,
+      "count": 95,
       "pois": [
         {
           "id": "node/12788166960",
@@ -2498,7 +2509,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:55.880Z"
+      "updatedAt": "2026-10-04T10:45:21.808Z"
     },
     "camp-sites": {
       "count": 1,
@@ -2517,7 +2528,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:56.599Z"
+      "updatedAt": "2026-10-04T10:45:22.521Z"
     },
     "shelters": {
       "count": 29,
@@ -2533,6 +2544,12 @@
           "name": "Le refuge",
           "lat": 45.513464,
           "lon": -73.536484
+        },
+        {
+          "id": "way/82249721",
+          "name": "Abri de la colline",
+          "lat": 45.514137,
+          "lon": -73.533126
         },
         {
           "id": "way/158585249",
@@ -2565,7 +2582,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:59.218Z"
+      "updatedAt": "2026-10-04T10:45:24.685Z"
     },
     "rest-areas": {
       "count": 2,
@@ -2589,7 +2606,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:08:59.927Z"
+      "updatedAt": "2026-10-04T10:45:25.324Z"
     },
     "dump-stations": {
       "count": 1,
@@ -2600,10 +2617,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:00.539Z"
+      "updatedAt": "2026-10-04T10:45:25.763Z"
     },
     "post-offices": {
-      "count": 78,
+      "count": 79,
       "pois": [
         {
           "id": "node/4391137824",
@@ -2750,10 +2767,10 @@
         "stepFree": 16,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T10:09:01.280Z"
+      "updatedAt": "2026-10-04T10:45:26.339Z"
     },
     "showers": {
-      "count": 4,
+      "count": 10,
       "pois": [],
       "stats": {
         "free": 1,
@@ -2761,7 +2778,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:01.791Z"
+      "updatedAt": "2026-10-04T10:45:26.772Z"
     },
     "fireplaces": {
       "count": 11,
@@ -2772,7 +2789,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:03.289Z"
+      "updatedAt": "2026-10-04T10:45:28.122Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2780,7 +2797,7 @@
       "updatedAt": "2026-08-17T04:06:33.250Z"
     },
     "benches": {
-      "count": 7484,
+      "count": 7825,
       "pois": [
         {
           "id": "node/4511129738",
@@ -2861,7 +2878,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:08.028Z"
+      "updatedAt": "2026-10-04T10:45:32.421Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2869,7 +2886,7 @@
       "updatedAt": "2026-08-18T03:58:41.567Z"
     },
     "bicycle-repair": {
-      "count": 81,
+      "count": 83,
       "pois": [
         {
           "id": "node/7450479404",
@@ -3071,12 +3088,193 @@
         }
       ],
       "stats": {
-        "free": 32,
+        "free": 34,
         "paid": 5,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:09:06.361Z"
+      "updatedAt": "2026-10-04T10:45:30.907Z"
+    },
+    "trash-bins": {
+      "count": 2234,
+      "pois": [
+        {
+          "id": "node/6611838740",
+          "name": "Site de dépôt - Matières Organiques",
+          "lat": 45.490418,
+          "lon": -73.56014
+        },
+        {
+          "id": "node/486768867",
+          "name": "Complexe du Fort",
+          "lat": 45.49173,
+          "lon": -73.581518,
+          "address": "Rue Sainte-Catherine Ouest 2000"
+        },
+        {
+          "id": "node/12959759024",
+          "name": "Cigarette Disposal",
+          "lat": 45.453758,
+          "lon": -73.642292
+        },
+        {
+          "id": "node/14054959801",
+          "lat": 45.502013,
+          "lon": -73.567945,
+          "street": "Place Monseigneur-Charbonneau"
+        },
+        {
+          "id": "node/8017189688",
+          "lat": 45.503112,
+          "lon": -73.566165,
+          "street": "Côte du Beaver Hall"
+        },
+        {
+          "id": "node/11147439159",
+          "lat": 45.499024,
+          "lon": -73.566484,
+          "street": "Rue de La Gauchetière Ouest"
+        },
+        {
+          "id": "node/10867212901",
+          "lat": 45.499369,
+          "lon": -73.569544,
+          "street": "Boulevard René-Lévesque Ouest"
+        },
+        {
+          "id": "node/12879212301",
+          "lat": 45.501928,
+          "lon": -73.562977,
+          "street": "Rue du Square Victoria"
+        },
+        {
+          "id": "node/10865602131",
+          "lat": 45.499521,
+          "lon": -73.570385,
+          "street": "Rue Metcalfe"
+        },
+        {
+          "id": "node/12879211497",
+          "lat": 45.502335,
+          "lon": -73.562957,
+          "street": "Avenue Viger Ouest"
+        },
+        {
+          "id": "node/12088080568",
+          "lat": 45.499604,
+          "lon": -73.571169,
+          "street": "Rue Peel"
+        },
+        {
+          "id": "node/10941313941",
+          "lat": 45.498373,
+          "lon": -73.568504,
+          "street": "Passerelle du complexe Place du Canada"
+        },
+        {
+          "id": "node/9197980883",
+          "lat": 45.505276,
+          "lon": -73.567743,
+          "street": "Rue Sainte-Catherine Ouest"
+        },
+        {
+          "id": "node/13928631432",
+          "lat": 45.500709,
+          "lon": -73.562346,
+          "street": "Rue Saint-Antoine Ouest"
+        },
+        {
+          "id": "node/11151469332",
+          "lat": 45.498215,
+          "lon": -73.564854,
+          "street": "Rue Mansfield"
+        },
+        {
+          "id": "node/10013636165",
+          "lat": 45.497309,
+          "lon": -73.567014,
+          "street": "Esplanade sud"
+        },
+        {
+          "id": "node/10867310440",
+          "lat": 45.497185,
+          "lon": -73.569438,
+          "street": "Avenue des Canadiens-de-Montréal"
+        },
+        {
+          "id": "node/12239523253",
+          "lat": 45.496706,
+          "lon": -73.568592,
+          "street": "Place des Canadiens"
+        },
+        {
+          "id": "node/12070820623",
+          "lat": 45.503138,
+          "lon": -73.560328,
+          "street": "Rue Saint-Antoine Est"
+        },
+        {
+          "id": "node/12070828612",
+          "lat": 45.50329,
+          "lon": -73.560363,
+          "street": "Rue Saint-Pierre"
+        },
+        {
+          "id": "node/12879211461",
+          "lat": 45.504824,
+          "lon": -73.561203,
+          "street": "Rue Jeanne-Mance"
+        },
+        {
+          "id": "node/10013255292",
+          "lat": 45.496693,
+          "lon": -73.564612,
+          "street": "Rue de la Cathédrale"
+        },
+        {
+          "id": "node/10013255291",
+          "lat": 45.496684,
+          "lon": -73.564614,
+          "street": "Rue Saint-Jacques"
+        },
+        {
+          "id": "node/4346227591",
+          "lat": 45.503978,
+          "lon": -73.57484,
+          "street": "Rue Sherbrooke Ouest"
+        },
+        {
+          "id": "node/11179493522",
+          "lat": 45.500336,
+          "lon": -73.575427,
+          "street": "Boulevard De Maisonneuve Ouest"
+        },
+        {
+          "id": "node/10739671704",
+          "lat": 45.496893,
+          "lon": -73.561837,
+          "street": "Rue de l'Inspecteur"
+        },
+        {
+          "id": "node/9844532975",
+          "lat": 45.49478,
+          "lon": -73.568815,
+          "street": "Rue de la Montagne"
+        },
+        {
+          "id": "node/10075507403",
+          "lat": 45.494871,
+          "lon": -73.564549,
+          "street": "Rue Jean-D'Estrées"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:45:34.528Z"
     }
   }
 }

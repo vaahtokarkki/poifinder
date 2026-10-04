@@ -1,9 +1,9 @@
 {
   "city": "washington",
-  "generatedAt": "2026-09-27T10:01:38.397Z",
+  "generatedAt": "2026-10-04T10:36:57.827Z",
   "categories": {
     "toilets": {
-      "count": 137,
+      "count": 138,
       "pois": [
         {
           "id": "node/5569778492",
@@ -51,7 +51,7 @@
           "lon": -77.027271,
           "wheelchair": "yes",
           "fee": "no",
-          "context": "Freer Gallery of Art"
+          "context": "National Museum of Asian Art"
         },
         {
           "id": "node/13084301247",
@@ -85,6 +85,12 @@
           "lon": -77.024957,
           "wheelchair": "yes",
           "context": "800 Maine"
+        },
+        {
+          "id": "node/14135369415",
+          "lat": 38.908812,
+          "lon": -76.997555,
+          "context": "Union Market"
         },
         {
           "id": "node/13143061268",
@@ -172,10 +178,10 @@
           "lon": -77.049846
         }
       ],
-      "updatedAt": "2026-09-23T08:31:42.936Z"
+      "updatedAt": "2026-10-04T10:36:34.805Z"
     },
     "drinking-water": {
-      "count": 181,
+      "count": 182,
       "pois": [
         {
           "id": "node/13831998501",
@@ -314,6 +320,13 @@
           "street": "Jefferson Drive Southwest"
         },
         {
+          "id": "node/5356863581",
+          "lat": 38.888103,
+          "lon": -77.041392,
+          "fee": "no",
+          "street": "Ash Road"
+        },
+        {
           "id": "node/2385312373",
           "lat": 38.912519,
           "lon": -77.012809,
@@ -354,14 +367,6 @@
           "lat": 38.891332,
           "lon": -77.018532,
           "street": "The Link"
-        },
-        {
-          "id": "node/10998537330",
-          "lat": 38.927322,
-          "lon": -77.046452,
-          "wheelchair": "yes",
-          "fee": "no",
-          "street": "Kid's Farm"
         }
       ],
       "stats": {
@@ -426,10 +431,10 @@
           "lon": -77.072854
         }
       ],
-      "updatedAt": "2026-09-23T08:31:44.746Z"
+      "updatedAt": "2026-10-04T10:36:37.105Z"
     },
     "playgrounds": {
-      "count": 269,
+      "count": 276,
       "pois": [
         {
           "id": "way/1479340134",
@@ -511,10 +516,10 @@
           "lon": -77.03353
         },
         {
-          "id": "node/358959751",
+          "id": "way/1553655447",
           "name": "Volta Street Playground",
-          "lat": 38.910066,
-          "lon": -77.066563,
+          "lat": 38.910065,
+          "lon": -77.06657,
           "openingHours": "dawn-dusk"
         },
         {
@@ -528,6 +533,12 @@
           "name": "Reservoir Park Playground",
           "lat": 38.923196,
           "lon": -77.01059
+        },
+        {
+          "id": "way/1553655437",
+          "name": "Burleith Tot Lot",
+          "lat": 38.914902,
+          "lon": -77.069071
         },
         {
           "id": "way/748873041",
@@ -584,10 +595,10 @@
           "lon": -77.003758
         },
         {
-          "id": "node/5943316127",
+          "id": "way/1558827061",
           "name": "Lovejoy Playground",
-          "lat": 38.895944,
-          "lon": -76.990507
+          "lat": 38.895927,
+          "lon": -76.990566
         },
         {
           "id": "way/863348796",
@@ -606,12 +617,6 @@
           "name": "Newark Park Playground",
           "lat": 38.935385,
           "lon": -77.076792
-        },
-        {
-          "id": "way/480302407",
-          "name": "Little Kids Playground",
-          "lat": 38.940351,
-          "lon": -77.071673
         }
       ],
       "stats": {
@@ -620,10 +625,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:17.901Z"
+      "updatedAt": "2026-10-04T10:36:38.117Z"
     },
     "parking": {
-      "count": 3246,
+      "count": 3223,
       "pois": [
         {
           "id": "node/1319717730",
@@ -722,13 +727,6 @@
           "lat": 38.92112,
           "lon": -77.041416,
           "address": "18th Street Northwest 2421 18th St NW",
-          "fee": "yes"
-        },
-        {
-          "id": "node/4421426914",
-          "name": "Parking Garage",
-          "lat": 38.89597,
-          "lon": -77.020829,
           "fee": "yes"
         },
         {
@@ -832,18 +830,25 @@
           "lon": -77.036395,
           "wheelchair": "yes",
           "fee": "yes"
+        },
+        {
+          "id": "way/744059722",
+          "name": "Physician Office Parking Garage",
+          "lat": 38.929377,
+          "lon": -77.012809,
+          "fee": "yes"
         }
       ],
       "stats": {
-        "free": 134,
+        "free": 135,
         "paid": 78,
-        "stepFree": 30,
+        "stepFree": 29,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:19.050Z"
+      "updatedAt": "2026-10-04T10:36:39.483Z"
     },
     "charging-stations": {
-      "count": 32,
+      "count": 33,
       "pois": [
         {
           "id": "node/10820793326",
@@ -886,10 +891,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:19.559Z"
+      "updatedAt": "2026-10-04T10:36:39.988Z"
     },
     "gas-stations": {
-      "count": 93,
+      "count": 91,
       "pois": [
         {
           "id": "node/1689216734",
@@ -915,10 +920,12 @@
           "wheelchair": "yes"
         },
         {
-          "id": "way/48168467",
+          "id": "node/2788370146",
           "name": "Sunoco",
-          "lat": 38.916755,
-          "lon": -77.034123
+          "lat": 38.907787,
+          "lon": -77.023708,
+          "address": "9th Street Northwest 1317",
+          "openingHours": "24/7"
         },
         {
           "id": "way/67132449",
@@ -1074,7 +1081,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:20.209Z"
+      "updatedAt": "2026-10-04T10:36:40.557Z"
     },
     "ice-cream": {
       "count": 49,
@@ -1260,6 +1267,12 @@
           "address": "Maine Avenue Southwest 1142"
         },
         {
+          "id": "node/14135369420",
+          "name": "The Creamery at Union Market",
+          "lat": 38.908619,
+          "lon": -76.99721
+        },
+        {
           "id": "node/11872121395",
           "name": "Pitango Gelato",
           "lat": 38.876658,
@@ -1273,14 +1286,6 @@
           "lat": 38.935782,
           "lon": -77.057982,
           "address": "Connecticut Avenue Northwest 3501"
-        },
-        {
-          "id": "node/807174498",
-          "name": "Rita's Italian Ice",
-          "lat": 38.900413,
-          "lon": -76.992098,
-          "address": "H Street Northeast 1014",
-          "openingHours": "Mo-Su 10:00-21:00"
         },
         {
           "id": "node/9707796829",
@@ -1302,10 +1307,10 @@
         "stepFree": 5,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:20.880Z"
+      "updatedAt": "2026-10-04T10:36:41.057Z"
     },
     "dog-parks": {
-      "count": 34,
+      "count": 35,
       "pois": [
         {
           "id": "way/48207326",
@@ -1431,10 +1436,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:21.398Z"
+      "updatedAt": "2026-10-04T10:36:41.496Z"
     },
     "picnic-spots": {
-      "count": 276,
+      "count": 277,
       "pois": [
         {
           "id": "way/1275454018",
@@ -1601,7 +1606,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:22.640Z"
+      "updatedAt": "2026-10-04T10:36:42.619Z"
     },
     "viewpoints": {
       "count": 20,
@@ -1640,7 +1645,7 @@
         "stepFree": 4,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:23.272Z"
+      "updatedAt": "2026-10-04T10:36:43.248Z"
     },
     "beaches": {
       "count": 1,
@@ -1658,10 +1663,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:23.787Z"
+      "updatedAt": "2026-10-04T10:36:43.762Z"
     },
     "atms": {
-      "count": 192,
+      "count": 189,
       "pois": [
         {
           "id": "node/1934653317",
@@ -1704,16 +1709,18 @@
           "openingHours": "Mo-Th 09:00-16:00; Fr 09:00-17:00"
         },
         {
+          "id": "node/751881204",
+          "name": "Bank of America",
+          "lat": 38.903476,
+          "lon": -77.033643,
+          "address": "Vermont Avenue Northwest 1090",
+          "openingHours": "Mo-Fr 10:00-16:00"
+        },
+        {
           "id": "node/3008727685",
           "name": "PNC Bank",
           "lat": 38.909847,
           "lon": -77.032158
-        },
-        {
-          "id": "node/4085394889",
-          "name": "Bank of America",
-          "lat": 38.902324,
-          "lon": -77.037466
         },
         {
           "id": "node/4085394690",
@@ -1895,10 +1902,10 @@
         "stepFree": 18,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:01:24.440Z"
+      "updatedAt": "2026-10-04T10:36:44.343Z"
     },
     "post-boxes": {
-      "count": 209,
+      "count": 210,
       "pois": [
         {
           "id": "node/367143740",
@@ -2087,7 +2094,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:25.737Z"
+      "updatedAt": "2026-10-04T10:36:45.471Z"
     },
     "recycling": {
       "count": 64,
@@ -2279,7 +2286,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:27.727Z"
+      "updatedAt": "2026-10-04T10:36:47.283Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2290,10 +2297,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:28.261Z"
+      "updatedAt": "2026-10-04T10:36:47.719Z"
     },
     "libraries": {
-      "count": 98,
+      "count": 99,
       "pois": [
         {
           "id": "node/4867674826",
@@ -2362,7 +2369,7 @@
           "lat": 38.898691,
           "lon": -77.024766,
           "address": "G Street Northwest 901",
-          "openingHours": "Mo-Th 09:30-21:00; Fr,Sa 09:30-17:30; Su 13:00-17:00"
+          "openingHours": "Mo-Th 09:30-21:00; Fr-Sa 09:30-17:30; Su 13:00-17:00"
         },
         {
           "id": "node/7945524482",
@@ -2398,6 +2405,13 @@
           "lat": 38.922271,
           "lon": -77.019345,
           "address": "Howard PI Northwest 500"
+        },
+        {
+          "id": "way/48040887",
+          "name": "Edward Bennett Williams Law Library",
+          "lat": 38.89873,
+          "lon": -77.013052,
+          "address": "G Street Northwest 111"
         },
         {
           "id": "node/367142119",
@@ -2512,14 +2526,6 @@
           "lon": -77.002798,
           "address": "2nd Street Southeast 120",
           "wheelchair": "yes"
-        },
-        {
-          "id": "way/48037323",
-          "name": "Southwest Neighborhood Library",
-          "lat": 38.878677,
-          "lon": -77.0158,
-          "address": "Wesley Place Southwest 900",
-          "openingHours": "Su 13:00-17:00; Mo-Th 09:30-21:00; Fr,Sa 09:30-17:30"
         }
       ],
       "stats": {
@@ -2528,10 +2534,10 @@
         "stepFree": 9,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:28.808Z"
+      "updatedAt": "2026-10-04T10:36:48.297Z"
     },
     "outdoor-gyms": {
-      "count": 17,
+      "count": 18,
       "pois": [
         {
           "id": "node/358959829",
@@ -2546,7 +2552,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:29.968Z"
+      "updatedAt": "2026-10-04T10:36:49.286Z"
     },
     "camp-sites": {
       "count": 0,
@@ -2557,7 +2563,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:30.631Z"
+      "updatedAt": "2026-10-04T10:36:49.770Z"
     },
     "shelters": {
       "count": 23,
@@ -2575,7 +2581,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:31.558Z"
+      "updatedAt": "2026-10-04T10:36:50.627Z"
     },
     "rest-areas": {
       "count": 1,
@@ -2586,7 +2592,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:32.152Z"
+      "updatedAt": "2026-10-04T10:36:51.122Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2597,7 +2603,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:32.660Z"
+      "updatedAt": "2026-10-04T10:36:51.469Z"
     },
     "post-offices": {
       "count": 67,
@@ -2823,7 +2829,7 @@
         "stepFree": 5,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T10:01:33.226Z"
+      "updatedAt": "2026-10-04T10:36:51.916Z"
     },
     "showers": {
       "count": 0,
@@ -2834,10 +2840,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:33.704Z"
+      "updatedAt": "2026-10-04T10:36:52.307Z"
     },
     "fireplaces": {
-      "count": 22,
+      "count": 23,
       "pois": [],
       "stats": {
         "free": 0,
@@ -2845,7 +2851,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:35.239Z"
+      "updatedAt": "2026-10-04T10:36:53.352Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2853,7 +2859,7 @@
       "updatedAt": "2026-08-17T04:05:49.790Z"
     },
     "benches": {
-      "count": 2155,
+      "count": 2168,
       "pois": [
         {
           "id": "node/5355165911",
@@ -2940,7 +2946,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:38.296Z"
+      "updatedAt": "2026-10-04T10:36:56.116Z"
     },
     "compressed-air": {
       "count": 0,
@@ -3113,7 +3119,199 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T10:01:37.105Z"
+      "updatedAt": "2026-10-04T10:36:54.841Z"
+    },
+    "trash-bins": {
+      "count": 545,
+      "pois": [
+        {
+          "id": "node/497415940",
+          "name": "099",
+          "lat": 38.929182,
+          "lon": -77.050926
+        },
+        {
+          "id": "node/497415924",
+          "name": "101",
+          "lat": 38.929057,
+          "lon": -77.051334
+        },
+        {
+          "id": "node/497415912",
+          "name": "103",
+          "lat": 38.928926,
+          "lon": -77.052039
+        },
+        {
+          "id": "node/497415917",
+          "name": "105",
+          "lat": 38.92933,
+          "lon": -77.05215
+        },
+        {
+          "id": "node/497415786",
+          "name": "106",
+          "lat": 38.929404,
+          "lon": -77.05224
+        },
+        {
+          "id": "node/497415868",
+          "name": "107",
+          "lat": 38.92969,
+          "lon": -77.052132
+        },
+        {
+          "id": "node/497415888",
+          "name": "093",
+          "lat": 38.929826,
+          "lon": -77.051884
+        },
+        {
+          "id": "node/497415838",
+          "name": "068",
+          "lat": 38.930105,
+          "lon": -77.053514
+        },
+        {
+          "id": "node/497415851",
+          "name": "066",
+          "lat": 38.930076,
+          "lon": -77.053818
+        },
+        {
+          "id": "node/497415844",
+          "name": "117",
+          "lat": 38.930582,
+          "lon": -77.052783
+        },
+        {
+          "id": "node/497415874",
+          "name": "072",
+          "lat": 38.930274,
+          "lon": -77.05358
+        },
+        {
+          "id": "node/497415855",
+          "name": "076",
+          "lat": 38.930322,
+          "lon": -77.053512
+        },
+        {
+          "id": "node/497415750",
+          "name": "114",
+          "lat": 38.930789,
+          "lon": -77.052399
+        },
+        {
+          "id": "node/497415872",
+          "name": "052",
+          "lat": 38.930122,
+          "lon": -77.054052
+        },
+        {
+          "id": "node/497415833",
+          "name": "115",
+          "lat": 38.930743,
+          "lon": -77.052602
+        },
+        {
+          "id": "node/497415738",
+          "name": "118",
+          "lat": 38.930626,
+          "lon": -77.053076
+        },
+        {
+          "id": "node/497415816",
+          "name": "039",
+          "lat": 38.930248,
+          "lon": -77.054068
+        },
+        {
+          "id": "node/497415910",
+          "name": "078",
+          "lat": 38.930572,
+          "lon": -77.053369
+        },
+        {
+          "id": "node/497415903",
+          "name": "034",
+          "lat": 38.930044,
+          "lon": -77.054591
+        },
+        {
+          "id": "node/497415800",
+          "name": "077",
+          "lat": 38.930551,
+          "lon": -77.053493
+        },
+        {
+          "id": "node/497415776",
+          "name": "033",
+          "lat": 38.929997,
+          "lon": -77.054763
+        },
+        {
+          "id": "node/497415781",
+          "name": "037",
+          "lat": 38.930247,
+          "lon": -77.054272
+        },
+        {
+          "id": "node/497415900",
+          "name": "036",
+          "lat": 38.930194,
+          "lon": -77.054418
+        },
+        {
+          "id": "node/497415938",
+          "name": "040",
+          "lat": 38.930321,
+          "lon": -77.054159
+        },
+        {
+          "id": "node/497415818",
+          "name": "041",
+          "lat": 38.930415,
+          "lon": -77.054013
+        },
+        {
+          "id": "node/497415821",
+          "name": "121",
+          "lat": 38.930876,
+          "lon": -77.053024
+        },
+        {
+          "id": "node/497415836",
+          "name": "111",
+          "lat": 38.931399,
+          "lon": -77.051921
+        },
+        {
+          "id": "node/497415745",
+          "name": "110",
+          "lat": 38.931508,
+          "lon": -77.051856
+        },
+        {
+          "id": "node/497415935",
+          "name": "122",
+          "lat": 38.931392,
+          "lon": -77.052487
+        },
+        {
+          "id": "node/12015503210",
+          "lat": 38.907338,
+          "lon": -77.031799,
+          "street": "N Street Northwest"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 0
+      },
+      "updatedAt": "2026-10-04T10:36:57.725Z"
     }
   }
 }

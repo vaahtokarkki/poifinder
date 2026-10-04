@@ -1,9 +1,9 @@
 {
   "city": "turin",
-  "generatedAt": "2026-09-27T09:58:26.365Z",
+  "generatedAt": "2026-10-04T10:33:11.733Z",
   "categories": {
     "toilets": {
-      "count": 172,
+      "count": 175,
       "pois": [
         {
           "id": "node/6851396191",
@@ -101,6 +101,13 @@
           "wheelchair": "yes"
         },
         {
+          "id": "node/14145236679",
+          "lat": 45.04589,
+          "lon": 7.664333,
+          "fee": "no",
+          "context": "Esselunga"
+        },
+        {
           "id": "node/5102613761",
           "name": "Toilette",
           "lat": 45.046958,
@@ -131,13 +138,6 @@
           "context": "Ex Fiat Lingotto"
         },
         {
-          "id": "node/6649819789",
-          "lat": 45.036087,
-          "lon": 7.65767,
-          "openingHours": "Mo-Sa 08:30-20:30; Su 09:00-20:00",
-          "context": "Millecity Center"
-        },
-        {
           "id": "way/165944880",
           "name": "Centro Commerciale Area 12",
           "lat": 45.110164,
@@ -163,9 +163,9 @@
         }
       ],
       "stats": {
-        "free": 81,
+        "free": 85,
         "paid": 22,
-        "stepFree": 46,
+        "stepFree": 48,
         "partlyStepFree": 7
       },
       "near": [
@@ -197,10 +197,10 @@
           "lon": 7.693218
         }
       ],
-      "updatedAt": "2026-09-23T08:31:16.376Z"
+      "updatedAt": "2026-10-04T10:32:47.608Z"
     },
     "drinking-water": {
-      "count": 823,
+      "count": 826,
       "pois": [
         {
           "id": "node/422774692",
@@ -410,7 +410,7 @@
         }
       ],
       "stats": {
-        "free": 133,
+        "free": 137,
         "paid": 6,
         "stepFree": 67,
         "partlyStepFree": 11
@@ -444,10 +444,10 @@
           "lon": 7.694234
         }
       ],
-      "updatedAt": "2026-09-23T08:31:17.885Z"
+      "updatedAt": "2026-10-04T10:32:49.721Z"
     },
     "playgrounds": {
-      "count": 313,
+      "count": 315,
       "pois": [
         {
           "id": "way/1291894961",
@@ -493,6 +493,18 @@
           "lon": 7.716181
         },
         {
+          "id": "way/960203146",
+          "name": "deledda",
+          "lat": 45.074891,
+          "lon": 7.719272
+        },
+        {
+          "id": "way/960203145",
+          "name": "Area giochi \"Terenzio Magliano\"",
+          "lat": 45.074733,
+          "lon": 7.719761
+        },
+        {
           "id": "way/23251666",
           "name": "Giardino Peppino Impastato",
           "lat": 45.095652,
@@ -510,6 +522,12 @@
           "name": "Giardino Oreste Leonardi",
           "lat": 45.059527,
           "lon": 7.648058
+        },
+        {
+          "id": "way/448718771",
+          "name": "Giardino Spanzotti",
+          "lat": 45.071884,
+          "lon": 7.644115
         },
         {
           "id": "way/1287713139",
@@ -613,25 +631,6 @@
           "name": "Area bimbi",
           "lat": 45.025706,
           "lon": 7.647145
-        },
-        {
-          "id": "way/886573410",
-          "name": "via Carolina Invernizio/via Luigi Palma di Cesnola",
-          "lat": 45.021847,
-          "lon": 7.654105,
-          "wheelchair": "yes"
-        },
-        {
-          "id": "way/1041278040",
-          "name": "Giardino Nicola Calipari",
-          "lat": 45.065587,
-          "lon": 7.610591
-        },
-        {
-          "id": "way/315805107",
-          "name": "Giardino Pubblico Iannetti",
-          "lat": 45.114336,
-          "lon": 7.641327
         }
       ],
       "stats": {
@@ -640,10 +639,10 @@
         "stepFree": 10,
         "partlyStepFree": 5
       },
-      "updatedAt": "2026-09-27T09:58:05.563Z"
+      "updatedAt": "2026-10-04T10:32:50.720Z"
     },
     "parking": {
-      "count": 1558,
+      "count": 1564,
       "pois": [
         {
           "id": "way/22953965",
@@ -655,8 +654,9 @@
         {
           "id": "node/5997788087",
           "name": "Parcheggio GTT Santo Stefano",
-          "lat": 45.073908,
-          "lon": 7.683846
+          "lat": 45.073864,
+          "lon": 7.683451,
+          "fee": "yes"
         },
         {
           "id": "node/249248499",
@@ -856,15 +856,15 @@
         }
       ],
       "stats": {
-        "free": 725,
-        "paid": 94,
+        "free": 730,
+        "paid": 95,
         "stepFree": 47,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:06.608Z"
+      "updatedAt": "2026-10-04T10:32:51.973Z"
     },
     "charging-stations": {
-      "count": 178,
+      "count": 179,
       "pois": [
         {
           "id": "node/10024930204",
@@ -995,14 +995,14 @@
       ],
       "stats": {
         "free": 4,
-        "paid": 69,
+        "paid": 70,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:07.121Z"
+      "updatedAt": "2026-10-04T10:32:52.467Z"
     },
     "gas-stations": {
-      "count": 242,
+      "count": 239,
       "pois": [
         {
           "id": "node/5255625928",
@@ -1053,7 +1053,8 @@
           "id": "node/227858497",
           "name": "Esso",
           "lat": 45.083056,
-          "lon": 7.679167
+          "lon": 7.679167,
+          "openingHours": "24/7"
         },
         {
           "id": "node/227968467",
@@ -1217,7 +1218,7 @@
         "stepFree": 8,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:58:07.764Z"
+      "updatedAt": "2026-10-04T10:32:53.045Z"
     },
     "ice-cream": {
       "count": 136,
@@ -1391,7 +1392,8 @@
           "lat": 45.070891,
           "lon": 7.696668,
           "address": "Via Santa Giulia 32",
-          "openingHours": "Mo 15:00-22:00; Tu-Sa 12:00-00:00; Su 11:00-21:00"
+          "openingHours": "Mo 15:00-22:00; Tu-Sa 12:00-00:00; Su 11:00-21:00",
+          "wheelchair": "yes"
         },
         {
           "id": "node/12837021602",
@@ -1448,10 +1450,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 5,
+        "stepFree": 6,
         "partlyStepFree": 13
       },
-      "updatedAt": "2026-09-27T09:58:08.502Z"
+      "updatedAt": "2026-10-04T10:32:53.609Z"
     },
     "dog-parks": {
       "count": 72,
@@ -1498,11 +1500,17 @@
         "stepFree": 11,
         "partlyStepFree": 13
       },
-      "updatedAt": "2026-09-27T09:58:09.012Z"
+      "updatedAt": "2026-10-04T10:32:54.043Z"
     },
     "picnic-spots": {
-      "count": 226,
+      "count": 228,
       "pois": [
+        {
+          "id": "way/1561045888",
+          "name": "Oasi dei Bajno",
+          "lat": 45.091426,
+          "lon": 7.743372
+        },
         {
           "id": "node/6484130153",
           "name": "Area picnic di Pian Gambino",
@@ -1532,7 +1540,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:10.160Z"
+      "updatedAt": "2026-10-04T10:32:55.197Z"
     },
     "viewpoints": {
       "count": 30,
@@ -1569,7 +1577,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:11.000Z"
+      "updatedAt": "2026-10-04T10:32:55.836Z"
     },
     "beaches": {
       "count": 1,
@@ -1587,16 +1595,17 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:11.572Z"
+      "updatedAt": "2026-10-04T10:32:56.332Z"
     },
     "atms": {
-      "count": 170,
+      "count": 171,
       "pois": [
         {
           "id": "node/2068316283",
           "name": "Banca Sella",
           "lat": 45.07107,
-          "lon": 7.684283
+          "lon": 7.684283,
+          "openingHours": "Mo-Fr 08:30-13:25,14:40-15:40"
         },
         {
           "id": "node/2068316274",
@@ -1791,10 +1800,10 @@
       "stats": {
         "free": 0,
         "paid": 0,
-        "stepFree": 13,
+        "stepFree": 14,
         "partlyStepFree": 8
       },
-      "updatedAt": "2026-09-27T09:58:12.244Z"
+      "updatedAt": "2026-10-04T10:32:56.999Z"
     },
     "post-boxes": {
       "count": 75,
@@ -1988,22 +1997,16 @@
         "stepFree": 1,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:58:13.586Z"
+      "updatedAt": "2026-10-04T10:32:58.205Z"
     },
     "recycling": {
-      "count": 184,
+      "count": 183,
       "pois": [
         {
           "id": "way/321793381",
           "name": "Ecocentro Circoscrizione 7",
           "lat": 45.079617,
           "lon": 7.699464
-        },
-        {
-          "id": "node/12960999655",
-          "lat": 45.081236,
-          "lon": 7.676368,
-          "context": "Basilica di Maria Ausiliatrice"
         },
         {
           "id": "way/960204572",
@@ -2013,12 +2016,6 @@
           "address": "Via Amedeo Ravina 19a",
           "openingHours": "Mo-Sa 07:15-18:30; Su 07:30-13:00",
           "fee": "no"
-        },
-        {
-          "id": "node/2872678209",
-          "lat": 45.066199,
-          "lon": 7.659919,
-          "context": "Officine Grandi Riparazioni"
         },
         {
           "id": "node/12522629340",
@@ -2179,6 +2176,18 @@
           "lat": 45.061191,
           "lon": 7.698073,
           "street": "Via Vittorio Amedeo Gioanetti"
+        },
+        {
+          "id": "node/13990812803",
+          "lat": 45.059555,
+          "lon": 7.678209,
+          "street": "Via Nizza"
+        },
+        {
+          "id": "node/1466778774",
+          "lat": 45.057825,
+          "lon": 7.686419,
+          "street": "Corso Massimo D'Azeglio"
         }
       ],
       "stats": {
@@ -2187,7 +2196,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:15.477Z"
+      "updatedAt": "2026-10-04T10:32:59.864Z"
     },
     "luggage-storage": {
       "count": 1,
@@ -2198,7 +2207,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:15.986Z"
+      "updatedAt": "2026-10-04T10:33:00.363Z"
     },
     "libraries": {
       "count": 51,
@@ -2437,7 +2446,7 @@
         "stepFree": 11,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:58:16.568Z"
+      "updatedAt": "2026-10-04T10:33:00.937Z"
     },
     "outdoor-gyms": {
       "count": 56,
@@ -2491,7 +2500,7 @@
         "stepFree": 2,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:58:17.700Z"
+      "updatedAt": "2026-10-04T10:33:01.985Z"
     },
     "camp-sites": {
       "count": 2,
@@ -2501,6 +2510,7 @@
           "name": "Caio Mario parking area",
           "lat": 45.028638,
           "lon": 7.640537,
+          "address": "Corso Giovanni Agnelli",
           "wheelchair": "yes",
           "fee": "yes"
         },
@@ -2520,7 +2530,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:18.341Z"
+      "updatedAt": "2026-10-04T10:33:02.656Z"
     },
     "shelters": {
       "count": 14,
@@ -2538,7 +2548,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:20.175Z"
+      "updatedAt": "2026-10-04T10:33:04.346Z"
     },
     "rest-areas": {
       "count": 6,
@@ -2564,7 +2574,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:20.819Z"
+      "updatedAt": "2026-10-04T10:33:04.916Z"
     },
     "dump-stations": {
       "count": 7,
@@ -2575,10 +2585,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:21.291Z"
+      "updatedAt": "2026-10-04T10:33:05.308Z"
     },
     "post-offices": {
-      "count": 77,
+      "count": 78,
       "pois": [
         {
           "id": "node/248408431",
@@ -2612,6 +2622,12 @@
           "address": "Via Enrico D'Ovidio 8",
           "openingHours": "Mo-Fr 08:20-13:35; Sa 08:20-12:35",
           "wheelchair": "yes"
+        },
+        {
+          "id": "node/14142368791",
+          "name": "TNT Point ️",
+          "lat": 45.068311,
+          "lon": 7.715516
         },
         {
           "id": "node/3361891088",
@@ -2776,7 +2792,7 @@
         "stepFree": 9,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-09-27T09:58:21.870Z"
+      "updatedAt": "2026-10-04T10:33:05.745Z"
     },
     "showers": {
       "count": 2,
@@ -2787,7 +2803,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:22.339Z"
+      "updatedAt": "2026-10-04T10:33:06.147Z"
     },
     "fireplaces": {
       "count": 5,
@@ -2798,7 +2814,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:23.483Z"
+      "updatedAt": "2026-10-04T10:33:07.387Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2806,7 +2822,7 @@
       "updatedAt": "2026-08-17T04:05:31.843Z"
     },
     "benches": {
-      "count": 2509,
+      "count": 2523,
       "pois": [
         {
           "id": "node/9381862717",
@@ -2941,7 +2957,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-09-27T09:58:26.264Z"
+      "updatedAt": "2026-10-04T10:33:10.049Z"
     },
     "compressed-air": {
       "count": 0,
@@ -2986,7 +3002,175 @@
         "stepFree": 0,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-09-27T09:58:24.900Z"
+      "updatedAt": "2026-10-04T10:33:08.748Z"
+    },
+    "trash-bins": {
+      "count": 1221,
+      "pois": [
+        {
+          "id": "node/10767978605",
+          "lat": 45.07038,
+          "lon": 7.687288,
+          "street": "Via Giuseppe Verdi"
+        },
+        {
+          "id": "node/10767978005",
+          "lat": 45.070666,
+          "lon": 7.68733,
+          "street": "Piazza Castello"
+        },
+        {
+          "id": "node/12526904509",
+          "lat": 45.069218,
+          "lon": 7.685995,
+          "street": "Via Cesare Battisti"
+        },
+        {
+          "id": "node/13990550871",
+          "lat": 45.06859,
+          "lon": 7.686167,
+          "street": "Aula della Camera italiana"
+        },
+        {
+          "id": "node/13097856138",
+          "lat": 45.071488,
+          "lon": 7.684801,
+          "street": "Via Giuseppe Garibaldi"
+        },
+        {
+          "id": "node/13097856137",
+          "lat": 45.071664,
+          "lon": 7.684926,
+          "street": "Via Palazzo di Città"
+        },
+        {
+          "id": "node/13990524747",
+          "lat": 45.068368,
+          "lon": 7.686337,
+          "street": "Via Principe Amedeo"
+        },
+        {
+          "id": "node/13596077623",
+          "lat": 45.068585,
+          "lon": 7.684691,
+          "street": "Via Accademia delle Scienze"
+        },
+        {
+          "id": "node/13990550353",
+          "lat": 45.067926,
+          "lon": 7.685784,
+          "street": "Via Carlo Alberto"
+        },
+        {
+          "id": "node/12549198360",
+          "lat": 45.07075,
+          "lon": 7.682792,
+          "street": "Via Pietro Micca"
+        },
+        {
+          "id": "node/10765654007",
+          "lat": 45.072055,
+          "lon": 7.690317,
+          "street": "Viale dei Partigiani"
+        },
+        {
+          "id": "node/10765657905",
+          "lat": 45.069087,
+          "lon": 7.690829,
+          "street": "Via Gioachino Rossini"
+        },
+        {
+          "id": "node/13596086005",
+          "lat": 45.067873,
+          "lon": 7.684203,
+          "street": "Via Giuseppe Luigi Lagrange"
+        },
+        {
+          "id": "node/3774212369",
+          "lat": 45.073118,
+          "lon": 7.684939,
+          "street": "Piazza San Giovanni"
+        },
+        {
+          "id": "node/10765654405",
+          "lat": 45.072472,
+          "lon": 7.690217,
+          "street": "Viale Primo Maggio"
+        },
+        {
+          "id": "node/8901699218",
+          "lat": 45.072523,
+          "lon": 7.682829,
+          "street": "Piazza Corpus Domini"
+        },
+        {
+          "id": "node/13991845405",
+          "lat": 45.068592,
+          "lon": 7.682349,
+          "street": "Via Santa Teresa"
+        },
+        {
+          "id": "node/7074547275",
+          "lat": 45.066699,
+          "lon": 7.6886,
+          "street": "Piazza Carlo Emanuele II"
+        },
+        {
+          "id": "node/10225588117",
+          "lat": 45.070704,
+          "lon": 7.692489,
+          "street": "Scala A"
+        },
+        {
+          "id": "node/13759107900",
+          "lat": 45.06883,
+          "lon": 7.692727,
+          "street": "Via Montebello"
+        },
+        {
+          "id": "node/7807689283",
+          "lat": 45.068379,
+          "lon": 7.693134,
+          "street": "Via Alessandro Riberi"
+        },
+        {
+          "id": "node/13991710302",
+          "lat": 45.071998,
+          "lon": 7.680492,
+          "street": "Via San Francesco d'Assisi"
+        },
+        {
+          "id": "node/5941324648",
+          "lat": 45.064947,
+          "lon": 7.688126,
+          "street": "Via Giovanni Giolitti"
+        },
+        {
+          "id": "node/12849405841",
+          "lat": 45.068026,
+          "lon": 7.693985,
+          "street": "Via Sant'Ottavio"
+        },
+        {
+          "id": "node/10767957105",
+          "lat": 45.075814,
+          "lon": 7.685772,
+          "street": "Corso Regina Margherita"
+        },
+        {
+          "id": "node/5998290326",
+          "lat": 45.073538,
+          "lon": 7.680318,
+          "street": "Via Gian Francesco Bellezia"
+        }
+      ],
+      "stats": {
+        "free": 0,
+        "paid": 0,
+        "stepFree": 0,
+        "partlyStepFree": 1
+      },
+      "updatedAt": "2026-10-04T10:33:11.631Z"
     }
   }
 }

@@ -2610,6 +2610,19 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                   // map stays, and fitShapeIntoView hands the saved view over
                   // to this popup below
                   cancelPendingRestore();
+                  /*
+                   * Zooming out folds this marker into a cluster, and the
+                   * cluster group does that by taking the marker off the map.
+                   * Leaflet's bindPopup closes a popup whose layer is removed,
+                   * so the panel shut on its own the moment the point was
+                   * clustered. The panel is a card at the foot of the screen,
+                   * not a balloon on the marker, and needs nothing from the
+                   * marker being drawn — so for as long as it is open, a
+                   * removal leaves it alone. The point stays visible through
+                   * the highlight drawn outside the clusters below
+                   */
+                  const layer = event.target as LeafletMarkerInstance;
+                  layer.off("remove", layer.closePopup);
                   analytics.poiPopupOpened(findCategory(marker, categories));
                   // Set here rather than from the map's own popupopen, which
                   // is handed the popup and not the point behind it
@@ -2629,6 +2642,12 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
                 // restore below was written as though the swap had already
                 // been announced. See pendingRestoreRef
                 popupclose: (event: PopupEvent) => {
+                  // Leaflet's own behaviour back, once the panel is closed.
+                  // Off first, so a close that follows an open twice never
+                  // leaves the listener on two times
+                  const layer = event.target as LeafletMarkerInstance;
+                  layer.off("remove", layer.closePopup);
+                  layer.on("remove", layer.closePopup);
                   setOpenShape(current => (current === key ? null : current));
                   // Auto pan is not handed back. A panel is always fully on the
                   // screen, so there is never anything for it to pan into view
@@ -2738,6 +2757,21 @@ const PoiMarkers: React.FC<DynamicMarkersProps> = ({
           fetch rather than redrawing the first one in the second one's colour */}
       {/* A point whose category skips the building has no outline to draw:
           the enclosing building was its only shape. Drawn points keep theirs */}
+      {/* The selected point, drawn outside the cluster group for as long as its
+          panel is open, so zooming out folds the real marker into a cluster
+          but never hides where the point is. Not interactive: taps fall
+          through to whatever is underneath, the real marker included, and
+          the copy goes with the panel */}
+      {shapeMarker && (insidePositions[shapeKey(shapeMarker)] ?? shapeMarker.position) && (
+        <Marker
+          key={`selected-${shapeKey(shapeMarker)}`}
+          position={(insidePositions[shapeKey(shapeMarker)] ?? shapeMarker.position)!}
+          icon={getMarkerIcon(shapeMarker, categories, true)}
+          interactive={false}
+          keyboard={false}
+          zIndexOffset={2000}
+        />
+      )}
       {shapeMarker && (isDrawn(shapeMarker) || looksUpBuilding(shapeMarker, categories)) && (
         <PoiShape
           key={shapeKey(shapeMarker)}

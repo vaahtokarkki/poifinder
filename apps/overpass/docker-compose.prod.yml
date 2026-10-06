@@ -1,6 +1,7 @@
 # Overpass API on the server, with the settings written in rather than read
-# from a .env file. This one file is the whole deployment: copy it to the box
-# and `docker compose -f docker-compose.prod.yml up -d`.
+# from a .env file. This file and the Caddyfile next to it are the whole
+# deployment: copy both to the box and
+# `docker compose -f docker-compose.prod.yml up -d`.
 #
 #   docker compose -f docker-compose.prod.yml up -d          start, or apply a change
 #   docker compose -f docker-compose.prod.yml logs -f        watch it
@@ -32,7 +33,8 @@
 # OVERPASS_DATA_DIR and OVERPASS_CACHE_DIR are read from a .env file next to
 # this one (Compose loads it automatically; see .env.prod.example) rather than
 # written in here, because they differ by machine. Everything else about this
-# deployment stays in this one file on purpose.
+# deployment stays in this file on purpose, except Caddy's configuration,
+# which is the Caddyfile beside it — see the caddy service for why.
 #
 # The split exists to keep an import's writes off whatever disk
 # OVERPASS_DATA_DIR is on: OVERPASS_CACHE_DIR holds the download, the filter
@@ -732,10 +734,17 @@ services:
       # every hour. Same arrangement, second path: the builder writes, this
       # reads, and neither container needs the other to be running
       - /mnt/hdd1/air/tiles:/srv/air:ro
-
-    configs:
-      - source: caddyfile
-        target: /etc/caddy/Caddyfile
+      # Caddy's configuration, the file next to this one. A bind mount and not
+      # an inline `configs` entry, which is what it used to be: compose copies
+      # those into the container when it creates it, watchtower recreates from
+      # the old container's settings and knows nothing of them, and so a new
+      # caddy:2-alpine came up on the image's "Caddy works!" page with the API
+      # gone. A mount is part of the container's settings and survives that.
+      #
+      # After editing it: `docker compose restart caddy`. A restart rather than
+      # a reload, because an editor that saves by replacing the file leaves the
+      # container holding the old one until it starts again
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
 
     labels:
       com.centurylinklabs.watchtower.enable: "true"
@@ -755,214 +764,12 @@ networks:
     name: wayside-matomo
 
 # Written into the container at start rather than bind mounted from a path on
-# the host, so that this file is still the whole deployment: copy it to the
-# box, and the settings come with it. Needs Docker Compose v2.23.1 or newer,
-# which is where `content` landed
+# the host, so the settings come with this file. Needs Docker Compose v2.23.1
+# or newer, which is where `content` landed.
+#
+# Only safe on a container watchtower leaves alone, which Matomo is: one that
+# watchtower recreates comes back without these. That is why Caddy's is a file
 configs:
-  # The whole of Caddy's configuration, written into the container at start
-  # rather than bind mounted, so this file stays the entire deployment
-  caddyfile:
-    content: |
-      {
-      	# No ACME, no certificates, no redirect to https. The Tailscale funnel
-      	# terminates TLS on the public name and forwards cleartext here, so
-      	# everything Caddy would otherwise do about HTTPS is either duplicated
-      	# work or a challenge it cannot pass — the name does not resolve to
-      	# this machine.
-      	#
-      	# auto_https off rather than relying on the bare `:80` below to imply
-      	# it: the site address and the TLS behaviour are two settings, and one
-      	# of them being changed later should not quietly switch ACME back on
-      	auto_https off
-
-      	# Nothing needs the admin API, and it listens on 2019 by default
-      	admin off
-
-      	# Believe the forwarding headers the tunnel sets. Every connection here
-      	# arrives from loopback or the Docker bridge — cloudflared on the host,
-      	# or the Tailscale funnel, through the published port — and since Caddy
-      	# 2.6 an X-Forwarded-For from a peer it does not trust is replaced, not
-      	# appended to. Without this, Overpass saw every visitor as the Docker
-      	# gateway: the access log had no client addresses, and the per-address
-      	# rate limit was one bucket shared by everybody
-      	servers {
-      		trusted_proxies static private_ranges
-      	}
-      }
-
-      # Any host, on the container's port 80. No hostname to match, because the
-      # funnel is the only thing that can reach this and it is the funnel that
-      # knows the public name — writing it here as well would be a second place
-      # to update the day it changes
-      :80 {
-      	# Overpass. handle rather than handle_path: the interpreter really is
-      	# at /api/interpreter on the upstream, so the prefix stays on
-      	handle /api/* {
-      		# No CORS header here on purpose. The Overpass container sets its own
-      		# from OVERPASS_CORS_ORIGIN, and a second Access-Control-Allow-Origin
-      		# on the same response is not "more permissive" — a browser rejects
-      		# the pair outright, and the map falls back to the public mirrors
-      		# with nothing in the log to say why
-      		reverse_proxy overpass:80 {
-      			# These queries are slow by design: OVERPASS_TIME above allows 480
-      			# seconds of server time, and the default proxy timeout would cut a
-      			# long one off at the socket while the server was still working
-      			transport http {
-      				response_header_timeout 120s
-      				read_timeout 120s
-      			}
-      		}
-      	}
-
-      	# The noise tiles, straight off the disk. `current` is the symlink the
-      	# builder swaps, so a rebuild is visible without restarting anything
-      	handle_path /tiles/* {
-      		root * /srv/tiles/current
-
-      		# `defer` matters, and so does every line in here.
-      		#
-      		# Without defer these are applied before file_server runs, and
-      		# file_server then overwrites Content-Type with the octet-stream it
-      		# sniffed — Caddy has no mime type for .pbf — and MapLibre will not
-      		# parse a tile that arrives as octet-stream.
-      		#
-      		# Content-Encoding is declared rather than produced. tippecanoe
-      		# writes the tiles gzipped and they are served as they lie, which is
-      		# both smaller on disk and free at request time. Caddy's own `encode`
-      		# was tried here and measured at no compression at all on this
-      		# content — 49,758 bytes out of 49,733 in, against 38,744 for
-      		# gzip -9 — because it emits stored blocks on a streamed file
-      		header {
-      			defer
-      			Content-Type "application/x-protobuf"
-      			Content-Encoding "gzip"
-
-      			# The app is served from wayside.cc and this is another origin, so
-      			# the tiles need this to be readable at all. Unlike the Overpass
-      			# block above, nothing upstream sets it — these are files
-      			Access-Control-Allow-Origin "*"
-
-      			# Ten minutes fresh, then a day of serving the old tile while a
-      			# new one is fetched behind it.
-      			#
-      			# The tile URLs carry no hash — /tiles/12/2200/1343.pbf is the same
-      			# path whatever built it — so a cache entry is the only thing
-      			# standing between a rebuild and a reader, and at the day this
-      			# used to be a reader who had opened the map that morning saw the
-      			# old model until the evening.
-      			#
-      			# stale-while-revalidate is what makes ten minutes affordable: the
-      			# reader still gets an instant tile from cache, the browser
-      			# refetches it in the background, and the next pan has the new
-      			# one. A map asks for dozens of tiles a screen, so revalidating
-      			# each of them in the foreground — max-age=0, or no-cache — would
-      			# put a round trip in front of every one of them
-      			Cache-Control "public, max-age=600, stale-while-revalidate=86400"
-
-      			-Server
-      		}
-
-      		file_server
-      	}
-
-      	# The air quality tiles, and the station snapshot beside them. Same
-      	# arrangement as /tiles above — files off the disk, under the symlink
-      	# the builder swaps — with one difference that matters.
-      	#
-      	# Two kinds of file share this root. The tiles are protobuf and
-      	# stations.json is JSON, and getting either Content-Type wrong is a
-      	# silent failure: MapLibre will not parse a tile that arrives as
-      	# octet-stream, and fetch() will not parse JSON that arrives as
-      	# protobuf.
-      	#
-      	# Note the block form on the two matched headers. `header @pbf defer
-      	# Content-Type "..."` is valid Caddyfile and does something else
-      	# entirely — it parses `defer` as the field name and sets a header
-      	# called "defer" — so the tiles go out with whatever file_server
-      	# sniffed, which for .pbf is nothing at all. That cost an afternoon
-      	# once; it is written the long way here so it cannot happen again.
-      	handle_path /air/* {
-      		root * /srv/air/current
-
-      		header {
-      			defer
-
-      			# The app is served from wayside.cc and this is another origin
-      			Access-Control-Allow-Origin "*"
-
-      			# Shorter than the noise tiles', because this is rebuilt every
-      			# hour rather than by hand: five minutes fresh, then an hour of
-      			# serving the old tile while a new one is fetched behind it. A
-      			# reader who leaves the map open sees the new hour on their
-      			# next pan rather than the next morning
-      			Cache-Control "public, max-age=300, stale-while-revalidate=3600"
-
-      			-Server
-      		}
-
-      		# Declared rather than produced, and only for the two files the
-      		# builder actually writes gzipped. wayside.json and tippecanoe's own
-      		# metadata.json share this root and are plain JSON — declaring gzip
-      		# on those too was a real bug, not a harmless overstatement: a client
-      		# that trusts the header enough to decode by it (curl among them)
-      		# fails outright on a body that was never compressed
-      		@gzipped path *.pbf /stations.json
-      		header @gzipped Content-Encoding "gzip"
-
-      		@pbf path *.pbf
-      		header @pbf {
-      			defer
-      			Content-Type "application/x-protobuf"
-      		}
-
-      		@json path *.json
-      		header @json {
-      			defer
-      			Content-Type "application/json; charset=utf-8"
-      		}
-
-      		file_server
-      	}
-
-      	# Nothing else is served from this name. A bare 404 rather than a
-      	# redirect to the site: this host is an API endpoint, and anything
-      	# asking it for a page is not a reader who took a wrong turn
-      	handle {
-      		respond 404
-      	}
-
-      	# A tile with nothing in it is not an error. MapLibre treats 404 as an
-      	# empty tile but logs it first; 204 says the same thing without filling
-      	# a visitor's console with our infrastructure. `close` matters too — a
-      	# 204 must carry no body, or the Content-Encoding set above would be
-      	# describing a gzip stream that is not there.
-      	#
-      	# At the site level rather than inside the /tiles block, because
-      	# handle_errors is not an ordered handler and Caddy refuses it nested
-      	# in a handle_path. It needs no path matcher even so: the `respond 404`
-      	# above produces a *response* rather than an error, so the only thing
-      	# that ever reaches here with a 404 is file_server missing a tile
-      	handle_errors {
-      		@missing expression {err.status_code} == 404
-
-      		# Content-Encoding survives from the header block above even though
-      		# nothing reaches file_server to produce a body — Caddy carries
-      		# response headers into error handling rather than resetting them.
-      		# Left in, a 204 with no body ends up declaring a gzip stream that
-      		# is not there, and a client that decodes by the header (a browser
-      		# among them) sees a hard fetch error instead of the empty tile
-      		# this was written to produce
-      		header @missing -Content-Encoding
-      		respond @missing 204 {
-      			close
-      		}
-      	}
-
-      	log {
-      		output stdout
-      		format console
-      	}
-      }
   matomo-common-config:
     content: |
       ; Matomo settings that are not the installer's to write and not the admin

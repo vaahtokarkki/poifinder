@@ -1,9 +1,9 @@
 {
   "city": "espoo",
-  "generatedAt": "2026-10-04T09:48:27.808Z",
+  "generatedAt": "2026-10-11T10:00:21.414Z",
   "categories": {
     "toilets": {
-      "count": 65,
+      "count": 66,
       "pois": [
         {
           "id": "node/13338295686",
@@ -40,8 +40,8 @@
         },
         {
           "id": "node/5819801155",
-          "lat": 60.21672,
-          "lon": 24.66295,
+          "lat": 60.216718,
+          "lon": 24.662923,
           "wheelchair": "yes",
           "fee": "no",
           "context": "IKEA"
@@ -78,10 +78,13 @@
           "wheelchair": "yes"
         },
         {
-          "id": "node/12021280962",
-          "lat": 60.163175,
-          "lon": 24.707015,
-          "context": "Kauppakeskus Merituuli"
+          "id": "way/80940837",
+          "name": "Kauppakeskus Merituuli",
+          "lat": 60.163475,
+          "lon": 24.706788,
+          "address": "Finnoonlaaksontie 9",
+          "openingHours": "Mo-Sa 08:00-21:00; Su 10:00-18:00",
+          "wheelchair": "yes"
         },
         {
           "id": "way/226900559",
@@ -141,10 +144,10 @@
       "stats": {
         "free": 32,
         "paid": 0,
-        "stepFree": 15,
+        "stepFree": 16,
         "partlyStepFree": 1
       },
-      "updatedAt": "2026-10-04T09:48:01.811Z"
+      "updatedAt": "2026-10-11T09:59:56.984Z"
     },
     "drinking-water": {
       "count": 22,
@@ -313,10 +316,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:03.544Z"
+      "updatedAt": "2026-10-11T09:59:58.702Z"
     },
     "playgrounds": {
-      "count": 447,
+      "count": 451,
       "pois": [
         {
           "id": "way/1256875799",
@@ -489,16 +492,16 @@
           "lon": 24.706048
         },
         {
-          "id": "way/893812022",
-          "name": "Latokasken asukaspuiston leikkikenttä",
-          "lat": 60.178098,
-          "lon": 24.662822
-        },
-        {
           "id": "way/382755055",
           "name": "Kuurinniityn leikkipuisto",
           "lat": 60.195263,
           "lon": 24.710426
+        },
+        {
+          "id": "way/258708118",
+          "name": "Rusakkopuiston leikkipaikka",
+          "lat": 60.224936,
+          "lon": 24.700412
         }
       ],
       "stats": {
@@ -507,10 +510,10 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:04.666Z"
+      "updatedAt": "2026-10-11T09:59:59.614Z"
     },
     "parking": {
-      "count": 1700,
+      "count": 1698,
       "pois": [
         {
           "id": "way/24366789",
@@ -735,15 +738,15 @@
         }
       ],
       "stats": {
-        "free": 519,
+        "free": 518,
         "paid": 27,
         "stepFree": 6,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:05.825Z"
+      "updatedAt": "2026-10-11T10:00:00.856Z"
     },
     "charging-stations": {
-      "count": 56,
+      "count": 55,
       "pois": [
         {
           "id": "node/6201859996",
@@ -758,26 +761,19 @@
           "lon": 24.654041
         },
         {
-          "id": "way/1228950866",
-          "name": "Tesla Supercharger",
-          "lat": 60.214501,
-          "lon": 24.652912,
-          "openingHours": "24/7",
-          "fee": "yes"
-        },
-        {
-          "id": "way/1228950865",
+          "id": "relation/20296842",
           "name": "Espoo West Supercharger",
-          "lat": 60.21465,
-          "lon": 24.653139,
+          "lat": 60.214605,
+          "lon": 24.653136,
           "openingHours": "24/7",
           "fee": "yes"
         },
         {
           "id": "way/1357865164",
           "name": "Neste Lataus Espoo Muurala",
-          "lat": 60.214651,
-          "lon": 24.652828,
+          "lat": 60.214654,
+          "lon": 24.652824,
+          "address": "Nimismiehenpelto 1",
           "openingHours": "24/7",
           "fee": "yes"
         },
@@ -832,6 +828,7 @@
           "name": "Recharge McDonald's Suomenoja",
           "lat": 60.161988,
           "lon": 24.711345,
+          "address": "Finnoonlaaksontie 14",
           "openingHours": "24/7",
           "fee": "yes"
         },
@@ -953,20 +950,22 @@
       ],
       "stats": {
         "free": 2,
-        "paid": 34,
+        "paid": 33,
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:06.385Z"
+      "updatedAt": "2026-10-11T10:00:01.418Z"
     },
     "gas-stations": {
       "count": 47,
       "pois": [
         {
-          "id": "node/54693628",
+          "id": "way/1563804463",
           "name": "Neste Espoo Muurala",
-          "lat": 60.214844,
-          "lon": 24.652692,
+          "lat": 60.214989,
+          "lon": 24.652688,
+          "address": "Nimismiehenpelto 1",
+          "openingHours": "Mo-Fr 05:00-21:00; Sa 07:00-20:00; Su 08:00-20:00",
           "wheelchair": "yes"
         },
         {
@@ -1198,7 +1197,7 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:07.345Z"
+      "updatedAt": "2026-10-11T10:00:02.079Z"
     },
     "ice-cream": {
       "count": 2,
@@ -1218,7 +1217,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:08.308Z"
+      "updatedAt": "2026-10-11T10:00:02.736Z"
     },
     "dog-parks": {
       "count": 27,
@@ -1329,8 +1328,8 @@
         {
           "id": "way/499860263",
           "name": "Viherkallionpuiston koira-aitaus",
-          "lat": 60.22789,
-          "lon": 24.750228,
+          "lat": 60.227858,
+          "lon": 24.750207,
           "address": "Viherkalliontie 11"
         },
         {
@@ -1402,7 +1401,7 @@
         "stepFree": 4,
         "partlyStepFree": 2
       },
-      "updatedAt": "2026-10-04T09:48:08.756Z"
+      "updatedAt": "2026-10-11T10:00:03.325Z"
     },
     "picnic-spots": {
       "count": 285,
@@ -1444,7 +1443,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:09.958Z"
+      "updatedAt": "2026-10-11T10:00:04.536Z"
     },
     "viewpoints": {
       "count": 26,
@@ -1510,7 +1509,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:10.516Z"
+      "updatedAt": "2026-10-11T10:00:05.167Z"
     },
     "beaches": {
       "count": 30,
@@ -1611,7 +1610,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:11.028Z"
+      "updatedAt": "2026-10-11T10:00:05.822Z"
     },
     "atms": {
       "count": 27,
@@ -1656,7 +1655,7 @@
         "stepFree": 2,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:11.597Z"
+      "updatedAt": "2026-10-11T10:00:06.410Z"
     },
     "post-boxes": {
       "count": 64,
@@ -1848,10 +1847,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:12.829Z"
+      "updatedAt": "2026-10-11T10:00:07.705Z"
     },
     "recycling": {
-      "count": 232,
+      "count": 233,
       "pois": [
         {
           "id": "node/13077679502",
@@ -2052,7 +2051,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:14.658Z"
+      "updatedAt": "2026-10-11T10:00:09.534Z"
     },
     "luggage-storage": {
       "count": 0,
@@ -2063,7 +2062,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:15.136Z"
+      "updatedAt": "2026-10-11T10:00:09.982Z"
     },
     "libraries": {
       "count": 11,
@@ -2161,10 +2160,10 @@
         "stepFree": 3,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:15.637Z"
+      "updatedAt": "2026-10-11T10:00:10.543Z"
     },
     "outdoor-gyms": {
-      "count": 111,
+      "count": 109,
       "pois": [
         {
           "id": "node/14070305333",
@@ -2217,10 +2216,10 @@
           "lon": 24.722724
         },
         {
-          "id": "way/1336273806",
+          "id": "way/1336273805",
           "name": "Hansavalkaman pallokentän ulkokuntoiluvälineet",
-          "lat": 60.19173,
-          "lon": 24.586178
+          "lat": 60.191728,
+          "lon": 24.585673
         },
         {
           "id": "way/1435832406",
@@ -2271,7 +2270,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:16.635Z"
+      "updatedAt": "2026-10-11T10:00:11.593Z"
     },
     "camp-sites": {
       "count": 2,
@@ -2291,7 +2290,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:17.569Z"
+      "updatedAt": "2026-10-11T10:00:12.110Z"
     },
     "shelters": {
       "count": 17,
@@ -2321,7 +2320,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:19.687Z"
+      "updatedAt": "2026-10-11T10:00:13.956Z"
     },
     "rest-areas": {
       "count": 0,
@@ -2332,7 +2331,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:20.245Z"
+      "updatedAt": "2026-10-11T10:00:14.522Z"
     },
     "dump-stations": {
       "count": 0,
@@ -2343,7 +2342,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:20.602Z"
+      "updatedAt": "2026-10-11T10:00:14.956Z"
     },
     "post-offices": {
       "count": 6,
@@ -2393,7 +2392,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:20.993Z"
+      "updatedAt": "2026-10-11T10:00:15.467Z"
     },
     "showers": {
       "count": 5,
@@ -2404,7 +2403,7 @@
         "stepFree": 1,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:21.397Z"
+      "updatedAt": "2026-10-11T10:00:15.950Z"
     },
     "fireplaces": {
       "count": 15,
@@ -2449,7 +2448,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:22.737Z"
+      "updatedAt": "2026-10-11T10:00:17.076Z"
     },
     "air-pumps": {
       "count": 0,
@@ -2457,7 +2456,7 @@
       "updatedAt": "2026-08-17T04:02:24.050Z"
     },
     "benches": {
-      "count": 950,
+      "count": 958,
       "pois": [
         {
           "id": "node/12655735261",
@@ -2586,7 +2585,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:25.195Z"
+      "updatedAt": "2026-10-11T10:00:19.839Z"
     },
     "compressed-air": {
       "count": 4,
@@ -2652,10 +2651,10 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:24.148Z"
+      "updatedAt": "2026-10-11T10:00:18.656Z"
     },
     "trash-bins": {
-      "count": 684,
+      "count": 688,
       "pois": [
         {
           "id": "node/11733844710",
@@ -2844,7 +2843,7 @@
         "stepFree": 0,
         "partlyStepFree": 0
       },
-      "updatedAt": "2026-10-04T09:48:27.707Z"
+      "updatedAt": "2026-10-11T10:00:21.311Z"
     }
   }
 }
